@@ -118,15 +118,15 @@ Best option is, to filter the ADSI statement by something like *'get all user st
     sn AS [LastName],  
     givenName AS [FirstName],  
     title AS [Title],  
-    Mail as [MailAddress],
+    Mail as [MailAddress],  
     department AS [Department],  
     l AS [Location],  
     postalCode AS [PostCode],  
-    streetAddress AS [Street],
+    streetAddress AS [Street],  
     st AS [State]  
 FROM (  
-    SELECT *
-    FROM OpenQuery(ADSI, '
+    SELECT *  
+    FROM OpenQuery(ADSI, '  
         SELECT  
             UserPrincipalName,  
             DisplayName,  
@@ -137,41 +137,42 @@ FROM (
             title,  
             Mail,  
             l,  
-            postalCode,
+            postalCode,  
             streetAddress,  
             st  
-        FROM ''LDAP://gag.de/DC=gag,DC=de''  
+        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''  
         WHERE objectClass =  ''User''  
         AND objectCategory = ''Person''  
         AND sn=''*''  
         AND givenName = ''*''  
-        <strong>AND sAMAccountName <= ''j''</strong>
-    ')
+        <strong>AND sAMAccountName &lt;= ''j''</strong>
+    ')  
 
-    <strong>UNION ALL</strong>
+    <strong>UNION ALL</strong>  
 
     SELECT *  
     FROM OpenQuery(ADSI, '  
-        SELECT <em><...same as above></em>  
-        FROM ''LDAP://gag.de/DC=gag,DC=de''  
+        SELECT <em>[...same as above]</em>  
+        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''  
         WHERE objectClass =  ''User''  
         AND objectCategory = ''Person''  
         AND sn=''*''  
         AND givenName = ''*''  
-        <strong>AND sAMAccountName > ''j'' AND sAMAccountName < ''p''</strong>  
+        <strong>AND sAMAccountName &gt; ''j''</strong>  
+        <strong>AND sAMAccountName &lt; ''p''</strong>  
     ')
 
-    <strong>UNION ALL</strong>
+    <strong>UNION ALL</strong>  
 
-    SELECT *
-    FROM OpenQuery(ADSI,  '
-        SELECT <em><...same as above></em>
-        FROM ''LDAP://gag.de/DC=gag,DC=de''
-        WHERE objectClass =  ''User''
-        AND objectCategory = ''Person''
-        AND sn=''*'' AND givenName = ''*''
-        <strong>AND sAMAccountName >= ''p''</strong>
-    ')
+    SELECT *  
+    FROM OpenQuery(ADSI,  '  
+        SELECT <em>[...same as above]</em>  
+        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''  
+        WHERE objectClass =  ''User''  
+        AND objectCategory = ''Person''  
+        AND sn=''*'' AND givenName = ''*''  
+        <strong>AND sAMAccountName &gt;= ''p''</strong>  
+    ')  
 ) AD</code>
 </pre>
 
@@ -180,7 +181,7 @@ When you store this as a VIEW, you can join it wherever you want on SQL Server:
 <pre>
 <code>CREATE VIEW [dbo].[vADUsers]
 AS
-    <em><...SQL code from above></em>
+    <em>[...SQL code from above]</em>
 
 GO</code>
 </pre>
@@ -202,7 +203,7 @@ To show the Project that there is a Linked Server called ``ADSI``, just add foll
 
 CREATE VIEW [dbo].[vADUsers]
 AS
-    <em><...SQL code from above></em></code>
+    <em>[...SQL code from above]</em></code>
 </pre>
 
 This mimics the adding of a Linked Server, but will be ignored by SQL Server on publish, because you already have a Linked Server with this name. The project is happy with it.
@@ -270,34 +271,34 @@ FROM (
         AND objectCategory = ''Person''
         AND sn=''*''
         AND givenName = ''*''
-        AND sAMAccountName <= ''j''
+        AND sAMAccountName &gt;= ''j''  
     ')
 
-    UNION ALL
+    UNION ALL  
 
-    SELECT *
-    FROM OpenQuery(ADSI, '
-        SELECT <em><...same as above></em>
-        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''
-        WHERE objectClass =  ''User''
-        AND objectCategory = ''Person''
+    SELECT *  
+    FROM OpenQuery(ADSI, '  
+        SELECT <em>[...same as above]</em>  
+        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''  
+        WHERE objectClass =  ''User''  
+        AND objectCategory = ''Person''  
         AND sn=''*''  
-        AND givenName = ''*''
-        AND sAMAccountName > ''j''
-        AND sAMAccountName < ''p''
+        AND givenName = ''*''  
+        AND sAMAccountName &lt; ''j''  
+        AND sAMAccountName &gt; ''p''  
     ')
 
-    UNION ALL
+    UNION ALL  
 
-    SELECT *
-    FROM OpenQuery(ADSI,  '
-        SELECT <em><...same as above></em>
-        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''
-        WHERE objectClass =  ''User''
-        AND objectCategory = ''Person''
-        AND sn=''*''
-        AND givenName = ''*''
-        AND sAMAccountName >= ''p''
+    SELECT *  
+    FROM OpenQuery(ADSI,  '  
+        SELECT <em>[...same as above]</em>  
+        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''  
+        WHERE objectClass =  ''User''  
+        AND objectCategory = ''Person''  
+        AND sn=''*''  
+        AND givenName = ''*''  
+        AND sAMAccountName &lt;= ''p''  
     ')
 ) AD</code>
 </pre>

@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="kiko.io">
 <meta property="og:description" content="If you are working with a database project and try to work with data from the Active Directory via a linked server, you have the problem that you have to announce the data structure of the AD data in">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-21T15:31:10.952Z">
+<meta property="og:updated_time" content="2019-09-22T10:28:51.429Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How-To: Visual Studio Database Project and ADSI">
 <meta name="twitter:description" content="If you are working with a database project and try to work with data from the Active Directory via a linked server, you have the problem that you have to announce the data structure of the AD data in">
@@ -191,15 +191,15 @@ FROM OpenQuery(ADSI, &apos;
     sn AS [LastName],  
     givenName AS [FirstName],  
     title AS [Title],  
-    Mail as [MailAddress],
+    Mail as [MailAddress],  
     department AS [Department],  
     l AS [Location],  
     postalCode AS [PostCode],  
-    streetAddress AS [Street],
+    streetAddress AS [Street],  
     st AS [State]  
 FROM (  
-    SELECT *
-    FROM OpenQuery(ADSI, '
+    SELECT *  
+    FROM OpenQuery(ADSI, '  
         SELECT  
             UserPrincipalName,  
             DisplayName,  
@@ -210,49 +210,50 @@ FROM (
             title,  
             Mail,  
             l,  
-            postalCode,
+            postalCode,  
             streetAddress,  
             st  
-        FROM ''LDAP://gag.de/DC=gag,DC=de''  
+        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''  
         WHERE objectClass =  ''User''  
         AND objectCategory = ''Person''  
         AND sn=''*''  
         AND givenName = ''*''  
-        <strong>AND sAMAccountName <= ''j''< strong>
-    ')
+        <strong>AND sAMAccountName &lt;= ''j''</strong>
+    ')  
 
-    <strong>UNION ALL</strong>
+    <strong>UNION ALL</strong>  
 
     SELECT *  
     FROM OpenQuery(ADSI, '  
-        SELECT <em><...same as above></...same></em>  
-        FROM ''LDAP://gag.de/DC=gag,DC=de''  
+        SELECT <em>[...same as above]</em>  
+        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''  
         WHERE objectClass =  ''User''  
         AND objectCategory = ''Person''  
         AND sn=''*''  
         AND givenName = ''*''  
-        <strong>AND sAMAccountName > ''j'' AND sAMAccountName < ''p''</strong>  
+        <strong>AND sAMAccountName &gt; ''j''</strong>  
+        <strong>AND sAMAccountName &lt; ''p''</strong>  
     ')
 
-    <strong>UNION ALL</strong>
+    <strong>UNION ALL</strong>  
 
-    SELECT *
-    FROM OpenQuery(ADSI,  '
-        SELECT <em><...same as above></...same></em>
-        FROM ''LDAP://gag.de/DC=gag,DC=de''
-        WHERE objectClass =  ''User''
-        AND objectCategory = ''Person''
-        AND sn=''*'' AND givenName = ''*''
-        <strong>AND sAMAccountName >= ''p''</strong>
-    ')
-) AD</=></strong></code>
+    SELECT *  
+    FROM OpenQuery(ADSI,  '  
+        SELECT <em>[...same as above]</em>  
+        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''  
+        WHERE objectClass =  ''User''  
+        AND objectCategory = ''Person''  
+        AND sn=''*'' AND givenName = ''*''  
+        <strong>AND sAMAccountName &gt;= ''p''</strong>  
+    ')  
+) AD</code>
 </pre>
 
 <p>When you store this as a VIEW, you can join it wherever you want on SQL Server:</p>
 <pre>
 <code>CREATE VIEW [dbo].[vADUsers]
 AS
-    <em><...sql code from above></...sql></em>
+    <em>[...SQL code from above]</em>
 
 GO</code>
 </pre>
@@ -269,7 +270,7 @@ GO</code>
 
 CREATE VIEW [dbo].[vADUsers]
 AS
-    <em><...sql code from above></...sql></em></code>
+    <em>[...SQL code from above]</em></code>
 </pre>
 
 <p>This mimics the adding of a Linked Server, but will be ignored by SQL Server on publish, because you already have a Linked Server with this name. The project is happy with it.</p>
@@ -333,29 +334,36 @@ FROM (
         AND objectCategory = ''Person''
         AND sn=''*''
         AND givenName = ''*''
-        AND sAMAccountName <= ''j'' ') union all select * from openquery(adsi, ' <em><...same as above>
-        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''
-        WHERE objectClass =  ''User''
-        AND objectCategory = ''Person''
+        AND sAMAccountName &gt;= ''j''  
+    ')
+
+    UNION ALL  
+
+    SELECT *  
+    FROM OpenQuery(ADSI, '  
+        SELECT <em>[...same as above]</em>  
+        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''  
+        WHERE objectClass =  ''User''  
+        AND objectCategory = ''Person''  
         AND sn=''*''  
-        AND givenName = ''*''
-        AND sAMAccountName > ''j''
-        AND sAMAccountName < ''p''
+        AND givenName = ''*''  
+        AND sAMAccountName &lt; ''j''  
+        AND sAMAccountName &gt; ''p''  
     ')
 
-    UNION ALL
+    UNION ALL  
 
-    SELECT *
-    FROM OpenQuery(ADSI,  '
-        SELECT <em><...same as above></...same></em>
-        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''
-        WHERE objectClass =  ''User''
-        AND objectCategory = ''Person''
-        AND sn=''*''
-        AND givenName = ''*''
-        AND sAMAccountName >= ''p''
+    SELECT *  
+    FROM OpenQuery(ADSI,  '  
+        SELECT <em>[...same as above]</em>  
+        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''  
+        WHERE objectClass =  ''User''  
+        AND objectCategory = ''Person''  
+        AND sn=''*''  
+        AND givenName = ''*''  
+        AND sAMAccountName &lt;= ''p''  
     ')
-) AD</...same></=></code>
+) AD</code>
 </pre>
 
 <p>Now, you can fetch data from Active Directory and store the code in a Database Project.</p>
@@ -364,7 +372,7 @@ FROM (
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kristofzerbe.github.io/kiko.io/2019/09/17/How-To-Visual-Studio-Database-Project-and-ADSI/" data-id="ck0un6aqn0000ckl9bbtjdly6" class="article-share-link">Share</a>
+      <a data-url="https://kristofzerbe.github.io/kiko.io/2019/09/17/How-To-Visual-Studio-Database-Project-and-ADSI/" data-id="ck0utxdj50000xsl9ecrv7ncp" class="article-share-link">Share</a>
       
         <a href="https://kristofzerbe.github.io/kiko.io/2019/09/17/How-To-Visual-Studio-Database-Project-and-ADSI/#disqus_thread" class="article-comment-link">Comments</a>
       
