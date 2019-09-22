@@ -1,10 +1,13 @@
 ---
 title: 'How-To: Visual Studio Database Project and ADSI'
 date: 2019-09-17 17:03:00
+updated: 2019-09-22 12:45:00
 tags: 
     - ADSI
     - Visual Studio
     - Database Project
+categories: 
+    - SQL
 ---
 If you are working with a database project and try to work with data from the Active Directory via a linked server, you have the problem that you have to announce the data structure of the AD data in order to get the project compiled.
 
