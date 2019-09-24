@@ -9,11 +9,11 @@ tags:
 categories: 
     - SQL
 ---
-If you are working with a database project and try to work with data from the Active Directory via a linked server, you have the problem that you have to announce the data structure of the AD data in order to get the project compiled.
+If you are working with a Visual Studio Database Project and have to deal with data from the Active Directory via a Linked Server, you have to announce the data structure of the AD data in order to get the project compiled. 
+<!-- more -->
+### Step 1 - Linking to the Active Directory
 
-### Linking to the Active Directory
-
-First of all you have to connect your SQL Server to the AD permanently, via following SQL script:
+First of all you have to connect your SQL Server to the AD permanently, by running  following SQL script once on your SQL Server:
 
     USE [master]
     GO
@@ -69,10 +69,9 @@ First of all you have to connect your SQL Server to the AD permanently, via foll
         @optname=N'remote proc transaction promotion', @optvalue=N'true'
     GO
 
-### Fetching ADSI data  
+### Step 2 - Fetching ADSI data  
 
-To get data, you use ``OpenQuery`` against the Linked Server.
-In order to get only persons and no system accounts, you should filter out all users,which has no firstname (``givenName``) or lastname (``sn``):
+To get data, use ``OpenQuery`` against the Linked Server. In order to get only persons and no system accounts, you should filter out all users, which has no firstname (``givenName``) or lastname (``sn``):
 
     SELECT 
         UserPrincipalName, 
@@ -108,8 +107,7 @@ In order to get only persons and no system accounts, you should filter out all u
         AND givenName = ''*'' 
     ')    
 
-In most cases you're done with that ... except your organisation has more the 900 users!  
-Then you have to split the fetch in several requests, because SQL Server quits with an error, when trying to read more than 900 records via ADSI.  
+In most cases you're done with that ... except your organisation has more the 900 users! Then you have to split the fetch in several requests, because SQL Server quits with an error, when trying to read more than 900 records via ADSI.  
 
 Best option is, to filter the ADSI statement by something like *'get all user starting with a to j'*, when you are sure, that in this case less than 900 records will be given back and repeat the statement several times and glue the data together via a ``UNION`` statement:
 
@@ -189,9 +187,9 @@ AS
 GO</code>
 </pre>
 
-### SQL Server Database Project
+### Step 3 - SQL Server Database Project
 
-If you work with a SQL Server Database Project, to have the complete structure of your database available in a version control system, you will get some reference errors on compiling and publishing your newly added SQL-View ``vADUsers`` and some objects which rely on the View, because of following problems:
+If you work with a SQL Server Database Project, to have the complete structure of your database available in a version control system, you will get some reference errors on compiling and publishing your newly added SQL View ``vADUsers`` and on some objects, which rely on this View, because of following problems:
 
 1. Project doesn't know the Linked Server `ADSI`
 2. The structure (fields) of the data source is unknown
@@ -306,6 +304,6 @@ FROM (
 ) AD</code>
 </pre>
 
-Now, you can fetch data from Active Directory and store the code in a Database Project.
+Now, you can fetch data from Active Directory and store the code in a Database Project properly.
 
 HAPPY CODING :)

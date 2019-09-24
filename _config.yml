@@ -37,7 +37,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -48,11 +48,11 @@ highlight:
   
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
-# per_page: Posts displayed per page. (0 = disable pagination)
+# per_page: Posts displayed per page. (0 = disable pagination) -> due to infinite_scroll
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 10
+  per_page: 0
   order_by: -date
   
 # Category & Tag
@@ -77,19 +77,30 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: landscape
 
-# # Deployment
+# # Deployment - NOT NECESSARY
 # ## Docs: https://hexo.io/docs/deployment.html
 # deploy:
 #   type: git
 #   repo: git@github.com:kristofzerbe/kristofzerbe.github.io.git
 #   branch: master
 
+# Feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+
 # DISQUS comments
 disqus_enabled: true
 disqus_shortname: kiko-io
 count: true
 
-# Manifest
+# Manifest: https://github.com/lavas-project/hexo-pwa
 pwa:
   manifest:
     path: /manifest.json
@@ -107,3 +118,22 @@ pwa:
       theme_color: '#025ab1'
       background_color: '#dddddd'
       display: standalone
+
+# Search File: https://github.com/wzpan/hexo-generator-search
+search:
+  path: search.json
+  field: post
+  content: true
+
+# Sitemap File: https://github.com/hexojs/hexo-generator-sitemap
+sitemap:
+  path: sitemap.xml
+  template: ./sitemap-template.xml
+
+# Infinite Scroll: https://github.com/FrontendSophie/hexo-infinite-scroll
+infinite_scroll:
+  post: .post
+  showNum: 5
+  loadTime: 400
+  style: line-scale
+  color: #025ab1

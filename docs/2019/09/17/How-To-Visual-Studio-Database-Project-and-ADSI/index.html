@@ -7,18 +7,18 @@
   
   <title>How-To: Visual Studio Database Project and ADSI | kiko.io</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="If you are working with a database project and try to work with data from the Active Directory via a linked server, you have the problem that you have to announce the data structure of the AD data in">
+  <meta name="description" content="If you are working with a Visual Studio Database Project and have to deal with data from the Active Directory via a Linked Server, you have to announce the data structure of the AD data in order to ge">
 <meta name="keywords" content="ADSI,Visual Studio,Database Project">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How-To: Visual Studio Database Project and ADSI">
 <meta property="og:url" content="https://kiko.io/2019/09/17/How-To-Visual-Studio-Database-Project-and-ADSI/index.html">
 <meta property="og:site_name" content="kiko.io">
-<meta property="og:description" content="If you are working with a database project and try to work with data from the Active Directory via a linked server, you have the problem that you have to announce the data structure of the AD data in">
+<meta property="og:description" content="If you are working with a Visual Studio Database Project and have to deal with data from the Active Directory via a Linked Server, you have to announce the data structure of the AD data in order to ge">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2019-09-22T10:45:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How-To: Visual Studio Database Project and ADSI">
-<meta name="twitter:description" content="If you are working with a database project and try to work with data from the Active Directory via a linked server, you have the problem that you have to announce the data structure of the AD data in">
+<meta name="twitter:description" content="If you are working with a Visual Studio Database Project and have to deal with data from the Active Directory via a Linked Server, you have to announce the data structure of the AD data in order to ge">
   
     <link rel="alternate" href="/atom.xml" title="kiko.io" type="application/atom+xml">
   
@@ -56,8 +56,6 @@
           <a class="main-nav-link" href="/">Home</a>
         
           <a class="main-nav-link" href="/archives">Archives</a>
-        
-          <a class="main-nav-link" href="https://github.com/kristofzerbe">GitHub</a>
         
       </nav>
       <nav id="sub-nav">
@@ -99,8 +97,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>If you are working with a database project and try to work with data from the Active Directory via a linked server, you have the problem that you have to announce the data structure of the AD data in order to get the project compiled.</p>
-<h3 id="Linking-to-the-Active-Directory"><a href="#Linking-to-the-Active-Directory" class="headerlink" title="Linking to the Active Directory"></a>Linking to the Active Directory</h3><p>First of all you have to connect your SQL Server to the AD permanently, via following SQL script:</p>
+        <p>If you are working with a Visual Studio Database Project and have to deal with data from the Active Directory via a Linked Server, you have to announce the data structure of the AD data in order to get the project compiled. </p>
+<a id="more"></a>
+<h3 id="Step-1-Linking-to-the-Active-Directory"><a href="#Step-1-Linking-to-the-Active-Directory" class="headerlink" title="Step 1 - Linking to the Active Directory"></a>Step 1 - Linking to the Active Directory</h3><p>First of all you have to connect your SQL Server to the AD permanently, by running  following SQL script once on your SQL Server:</p>
 <pre><code>USE [master]
 GO
 EXEC master.dbo.sp_addlinkedserver @server = N&apos;ADSI&apos;, 
@@ -153,7 +152,7 @@ EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;,
 GO
 EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
     @optname=N&apos;remote proc transaction promotion&apos;, @optvalue=N&apos;true&apos;
-GO</code></pre><h3 id="Fetching-ADSI-data"><a href="#Fetching-ADSI-data" class="headerlink" title="Fetching ADSI data"></a>Fetching ADSI data</h3><p>To get data, you use <code>OpenQuery</code> against the Linked Server.<br>In order to get only persons and no system accounts, you should filter out all users,which has no firstname (<code>givenName</code>) or lastname (<code>sn</code>):</p>
+GO</code></pre><h3 id="Step-2-Fetching-ADSI-data"><a href="#Step-2-Fetching-ADSI-data" class="headerlink" title="Step 2 - Fetching ADSI data"></a>Step 2 - Fetching ADSI data</h3><p>To get data, use <code>OpenQuery</code> against the Linked Server. In order to get only persons and no system accounts, you should filter out all users, which has no firstname (<code>givenName</code>) or lastname (<code>sn</code>):</p>
 <pre><code>SELECT 
     UserPrincipalName, 
     DisplayName, 
@@ -186,7 +185,7 @@ FROM OpenQuery(ADSI, &apos;
     AND objectCategory = &apos;&apos;Person&apos;&apos; 
     AND sn=&apos;&apos;*&apos;&apos; 
     AND givenName = &apos;&apos;*&apos;&apos; 
-&apos;)    </code></pre><p>In most cases you’re done with that … except your organisation has more the 900 users!<br>Then you have to split the fetch in several requests, because SQL Server quits with an error, when trying to read more than 900 records via ADSI.  </p>
+&apos;)    </code></pre><p>In most cases you’re done with that … except your organisation has more the 900 users! Then you have to split the fetch in several requests, because SQL Server quits with an error, when trying to read more than 900 records via ADSI.  </p>
 <p>Best option is, to filter the ADSI statement by something like <em>‘get all user starting with a to j’</em>, when you are sure, that in this case less than 900 records will be given back and repeat the statement several times and glue the data together via a <code>UNION</code> statement:</p>
 <pre>
 <code>SELECT  
@@ -263,7 +262,7 @@ AS
 GO</code>
 </pre>
 
-<h3 id="SQL-Server-Database-Project"><a href="#SQL-Server-Database-Project" class="headerlink" title="SQL Server Database Project"></a>SQL Server Database Project</h3><p>If you work with a SQL Server Database Project, to have the complete structure of your database available in a version control system, you will get some reference errors on compiling and publishing your newly added SQL-View <code>vADUsers</code> and some objects which rely on the View, because of following problems:</p>
+<h3 id="Step-3-SQL-Server-Database-Project"><a href="#Step-3-SQL-Server-Database-Project" class="headerlink" title="Step 3 - SQL Server Database Project"></a>Step 3 - SQL Server Database Project</h3><p>If you work with a SQL Server Database Project, to have the complete structure of your database available in a version control system, you will get some reference errors on compiling and publishing your newly added SQL View <code>vADUsers</code> and on some objects, which rely on this View, because of following problems:</p>
 <ol>
 <li>Project doesn’t know the Linked Server <code>ADSI</code></li>
 <li>The structure (fields) of the data source is unknown</li>
@@ -371,13 +370,13 @@ FROM (
 ) AD</code>
 </pre>
 
-<p>Now, you can fetch data from Active Directory and store the code in a Database Project.</p>
+<p>Now, you can fetch data from Active Directory and store the code in a Database Project properly.</p>
 <p>HAPPY CODING :)</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kiko.io/2019/09/17/How-To-Visual-Studio-Database-Project-and-ADSI/" data-id="ck0wd6ckc00000cbknz03c541" class="article-share-link">Share</a>
+      <a data-url="https://kiko.io/2019/09/17/How-To-Visual-Studio-Database-Project-and-ADSI/" data-id="ck0worxle0000rsl9vs7yqp02" class="article-share-link">Share</a>
       
         <a href="https://kiko.io/2019/09/17/How-To-Visual-Studio-Database-Project-and-ADSI/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -465,8 +464,6 @@ FROM (
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
   
-    <a href="https://github.com/kristofzerbe" class="mobile-nav-link">GitHub</a>
-  
 </nav>
     
 <script>
@@ -511,6 +508,10 @@ FROM (
   }
 </style>
 
+<script src="//cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@2.0.0/dist/main.js"></script> 
+<script>
+    infiniteScroll()
+</script>
   </div>
 </body>
 </html>

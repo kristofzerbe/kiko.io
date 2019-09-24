@@ -52,8 +52,6 @@
         
           <a class="main-nav-link" href="/archives">Archives</a>
         
-          <a class="main-nav-link" href="https://github.com/kristofzerbe">GitHub</a>
-        
       </nav>
       <nav id="sub-nav">
         
@@ -96,285 +94,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>If you are working with a database project and try to work with data from the Active Directory via a linked server, you have the problem that you have to announce the data structure of the AD data in order to get the project compiled.</p>
-<h3 id="Linking-to-the-Active-Directory"><a href="#Linking-to-the-Active-Directory" class="headerlink" title="Linking to the Active Directory"></a>Linking to the Active Directory</h3><p>First of all you have to connect your SQL Server to the AD permanently, via following SQL script:</p>
-<pre><code>USE [master]
-GO
-EXEC master.dbo.sp_addlinkedserver @server = N&apos;ADSI&apos;, 
-    @srvproduct=N&apos;Active Directory Service Interfaces&apos;, 
-    @provider=N&apos;ADSDSOObject&apos;, 
-    @datasrc=N&apos;adsdatasource&apos;
-
-EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N&apos;ADSI&apos;,
-    @useself=N&apos;False&apos;,
-    @locallogin=NULL,
-    @rmtuser=N&apos;mydomain\myadminuser&apos;,
-    @rmtpassword=&apos;mypassword&apos;
-GO
-
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;collation compatible&apos;, @optvalue=N&apos;false&apos;
-GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;data access&apos;, @optvalue=N&apos;true&apos;
-GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;dist&apos;, @optvalue=N&apos;false&apos;
-GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;pub&apos;, @optvalue=N&apos;false&apos;
-GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;rpc&apos;, @optvalue=N&apos;false&apos;
-GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;rpc out&apos;, @optvalue=N&apos;false&apos;
-GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;sub&apos;, @optvalue=N&apos;false&apos;
-GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;connect timeout&apos;, @optvalue=N&apos;0&apos;
-GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;collation name&apos;, @optvalue=null
-GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;lazy schema validation&apos;, @optvalue=N&apos;false&apos;
-GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;query timeout&apos;, @optvalue=N&apos;0&apos;
-GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;use remote collation&apos;, @optvalue=N&apos;true&apos;
-GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;remote proc transaction promotion&apos;, @optvalue=N&apos;true&apos;
-GO</code></pre><h3 id="Fetching-ADSI-data"><a href="#Fetching-ADSI-data" class="headerlink" title="Fetching ADSI data"></a>Fetching ADSI data</h3><p>To get data, you use <code>OpenQuery</code> against the Linked Server.<br>In order to get only persons and no system accounts, you should filter out all users,which has no firstname (<code>givenName</code>) or lastname (<code>sn</code>):</p>
-<pre><code>SELECT 
-    UserPrincipalName, 
-    DisplayName, 
-    sAMAccountName AS [SamAccountName], 
-    sn AS [LastName], 
-    givenName AS [FirstName], 
-    title AS [Title], 
-    Mail as [MailAddress],
-    department AS [Department],
-    l AS [Location], 
-    postalCode AS [PostCode], 
-    streetAddress AS [Street],
-    st AS [State]
-FROM OpenQuery(ADSI, &apos;
-    SELECT 
-        UserPrincipalName, 
-        DisplayName, 
-        sAMAccountName, 
-        sn, 
-        givenName, 
-        department,
-        title, 
-        Mail, 
-        l, 
-        postalCode, 
-        streetAddress, 
-        st
-    FROM &apos;&apos;LDAP://mydomain.de/DC=mydomain,DC=de&apos;&apos; 
-    WHERE objectClass =  &apos;&apos;User&apos;&apos; 
-    AND objectCategory = &apos;&apos;Person&apos;&apos; 
-    AND sn=&apos;&apos;*&apos;&apos; 
-    AND givenName = &apos;&apos;*&apos;&apos; 
-&apos;)    </code></pre><p>In most cases you’re done with that … except your organisation has more the 900 users!<br>Then you have to split the fetch in several requests, because SQL Server quits with an error, when trying to read more than 900 records via ADSI.  </p>
-<p>Best option is, to filter the ADSI statement by something like <em>‘get all user starting with a to j’</em>, when you are sure, that in this case less than 900 records will be given back and repeat the statement several times and glue the data together via a <code>UNION</code> statement:</p>
-<pre>
-<code>SELECT  
-    UserPrincipalName,  
-    DisplayName,  
-    sAMAccountName AS [SamAccountName],  
-    sn AS [LastName],  
-    givenName AS [FirstName],  
-    title AS [Title],  
-    Mail as [MailAddress],  
-    department AS [Department],  
-    l AS [Location],  
-    postalCode AS [PostCode],  
-    streetAddress AS [Street],  
-    st AS [State]  
-FROM (  
-    SELECT *  
-    FROM OpenQuery(ADSI, '  
-        SELECT  
-            UserPrincipalName,  
-            DisplayName,  
-            sAMAccountName,  
-            sn,  
-            givenName,  
-            department,  
-            title,  
-            Mail,  
-            l,  
-            postalCode,  
-            streetAddress,  
-            st  
-        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''  
-        WHERE objectClass =  ''User''  
-        AND objectCategory = ''Person''  
-        AND sn=''*''  
-        AND givenName = ''*''  
-        <strong>AND sAMAccountName &lt;= ''j''</strong>
-    ')  
-
-    <strong>UNION ALL</strong>  
-
-    SELECT *  
-    FROM OpenQuery(ADSI, '  
-        SELECT <em>[...same as above]</em>  
-        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''  
-        WHERE objectClass =  ''User''  
-        AND objectCategory = ''Person''  
-        AND sn=''*''  
-        AND givenName = ''*''  
-        <strong>AND sAMAccountName &gt; ''j''</strong>  
-        <strong>AND sAMAccountName &lt; ''p''</strong>  
-    ')
-
-    <strong>UNION ALL</strong>  
-
-    SELECT *  
-    FROM OpenQuery(ADSI,  '  
-        SELECT <em>[...same as above]</em>  
-        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''  
-        WHERE objectClass =  ''User''  
-        AND objectCategory = ''Person''  
-        AND sn=''*'' AND givenName = ''*''  
-        <strong>AND sAMAccountName &gt;= ''p''</strong>  
-    ')  
-) AD</code>
-</pre>
-
-<p>When you store this as a VIEW, you can join it wherever you want on SQL Server:</p>
-<pre>
-<code>CREATE VIEW [dbo].[vADUsers]
-AS
-    <em>[...SQL code from above]</em>
-
-GO</code>
-</pre>
-
-<h3 id="SQL-Server-Database-Project"><a href="#SQL-Server-Database-Project" class="headerlink" title="SQL Server Database Project"></a>SQL Server Database Project</h3><p>If you work with a SQL Server Database Project, to have the complete structure of your database available in a version control system, you will get some reference errors on compiling and publishing your newly added SQL-View <code>vADUsers</code> and some objects which rely on the View, because of following problems:</p>
-<ol>
-<li>Project doesn’t know the Linked Server <code>ADSI</code></li>
-<li>The structure (fields) of the data source is unknown</li>
-</ol>
-<h4 id="Declare-the-Linked-Server"><a href="#Declare-the-Linked-Server" class="headerlink" title="Declare the Linked Server"></a>Declare the Linked Server</h4><p>To show the Project that there is a Linked Server called <code>ADSI</code>, just add following lines at the start of your view:</p>
-<pre>
-<code><strong>sp_addlinkedserver 'ADSI'</strong>
-<strong>GO</strong>
-
-CREATE VIEW [dbo].[vADUsers]
-AS
-    <em>[...SQL code from above]</em></code>
-</pre>
-
-<p>This mimics the adding of a Linked Server, but will be ignored by SQL Server on publish, because you already have a Linked Server with this name. The project is happy with it.</p>
-<h4 id="Declare-the-data-structure"><a href="#Declare-the-data-structure" class="headerlink" title="Declare the data structure"></a>Declare the data structure</h4><p>When you use the SQL-View <code>vADUsers</code> in a Stored Procedure for example, this object won’t compile, because the project knows nothing about the fields of the ADSI data source. The SELECT in the view is not enough. You have to add an empty <code>SELECT</code> to the View <code>vADUsers</code>, just for the declaration of the fields and without returning any records and join this via <code>UNION</code> with the other statements:</p>
-<pre>
-<code>sp_addlinkedserver 'ADSI'
-GO
-
-CREATE VIEW [dbo].[vtADAllUsers]
-AS
-
-SELECT
-    UserPrincipalName,
-    DisplayName,
-    sAMAccountName AS [SamAccountName],
-    sn AS [LastName],
-    givenName AS [FirstName],
-    title AS [Title],
-    Mail as [MailAddress],
-    department AS [Department],
-    l AS [Location],
-    postalCode AS [PostCode],
-    streetAddress AS [Street],
-    st AS [State]
-FROM (
-
-    -- Fake SELECT to declare the structure of the view<strong>
-    SELECT TOP 0
-        '' UserPrincipalName,
-        '' DisplayName,
-        '' sAMAccountName,
-        '' sn,
-        '' givenName,
-        '' department,
-        '' title,
-        '' Mail,
-        '' l,
-        '' postalCode,
-        '' streetAddress,
-        '' st
-
-    UNION ALL</strong>
-
-    SELECT *
-    FROM OpenQuery(ADSI, '
-        SELECT
-            UserPrincipalName,
-            DisplayName,
-            sAMAccountName,
-            sn,
-            givenName,
-            department,
-            title,
-            Mail,
-            l,
-            postalCode,
-            streetAddress,
-            st
-        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''
-        WHERE objectClass =  ''User''
-        AND objectCategory = ''Person''
-        AND sn=''*''
-        AND givenName = ''*''
-        AND sAMAccountName &gt;= ''j''  
-    ')
-
-    UNION ALL  
-
-    SELECT *  
-    FROM OpenQuery(ADSI, '  
-        SELECT <em>[...same as above]</em>  
-        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''  
-        WHERE objectClass =  ''User''  
-        AND objectCategory = ''Person''  
-        AND sn=''*''  
-        AND givenName = ''*''  
-        AND sAMAccountName &lt; ''j''  
-        AND sAMAccountName &gt; ''p''  
-    ')
-
-    UNION ALL  
-
-    SELECT *  
-    FROM OpenQuery(ADSI,  '  
-        SELECT <em>[...same as above]</em>  
-        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''  
-        WHERE objectClass =  ''User''  
-        AND objectCategory = ''Person''  
-        AND sn=''*''  
-        AND givenName = ''*''  
-        AND sAMAccountName &lt;= ''p''  
-    ')
-) AD</code>
-</pre>
-
-<p>Now, you can fetch data from Active Directory and store the code in a Database Project.</p>
-<p>HAPPY CODING :)</p>
-
+        <p>If you are working with a Visual Studio Database Project and have to deal with data from the Active Directory via a Linked Server, you have to announce the data structure of the AD data in order to get the project compiled. </p>
+        
+          <p class="article-more-link">
+            <a href="/2019/09/17/How-To-Visual-Studio-Database-Project-and-ADSI/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kiko.io/2019/09/17/How-To-Visual-Studio-Database-Project-and-ADSI/" data-id="ck0wd6ckc00000cbknz03c541" class="article-share-link">Share</a>
+      <a data-url="https://kiko.io/2019/09/17/How-To-Visual-Studio-Database-Project-and-ADSI/" data-id="ck0worxle0000rsl9vs7yqp02" class="article-share-link">Share</a>
       
         <a href="https://kiko.io/2019/09/17/How-To-Visual-Studio-Database-Project-and-ADSI/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -458,8 +187,6 @@ FROM (
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
   
-    <a href="https://github.com/kristofzerbe" class="mobile-nav-link">GitHub</a>
-  
 </nav>
     
 <script>
@@ -502,6 +229,10 @@ FROM (
   }
 </style>
 
+<script src="//cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@2.0.0/dist/main.js"></script> 
+<script>
+    infiniteScroll()
+</script>
   </div>
 </body>
 </html>
