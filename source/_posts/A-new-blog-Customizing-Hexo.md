@@ -122,4 +122,4 @@ Its nice to support the reader on scolling by providing a Scroll-To-Top button. 
 --- 
 
 ## Related
-* [A New Blog (Part One): VS Code, Hexo and GitHub Pages](/categories/Tools/A-new-blog-VS-Code-Hexo-and-GitHub-Pages/)
+* [A New Blog (Part One): VS Code, Hexo and GitHub Pages](/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/)

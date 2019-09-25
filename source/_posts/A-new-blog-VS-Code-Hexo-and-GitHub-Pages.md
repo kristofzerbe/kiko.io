@@ -106,4 +106,4 @@ Last step was to enable **Enforce HTTPS** in the repositories settings.
 ---
 
 ## Related
-* [A New Blog (Part Two): Customizing Hexo](/categories/Tools/A-new-blog-Customizing-Hexo/)
+* [A New Blog (Part Two): Customizing Hexo](/categories/Tools/A-New-Blog-Customizing-Hexo/)
