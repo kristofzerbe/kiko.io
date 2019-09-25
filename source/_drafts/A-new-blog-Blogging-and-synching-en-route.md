@@ -1,5 +1,5 @@
 ---
-title: 'A New Blog: Blogging and synching en route'
+title: 'A New Blog: Blogging and Synching en route'
 tags: 
     - VS Code
     - Hexo
