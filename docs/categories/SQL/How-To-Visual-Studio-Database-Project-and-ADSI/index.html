@@ -11,11 +11,11 @@
 <meta name="keywords" content="ADSI,Visual Studio,Database Project">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How-To: Visual Studio Database Project and ADSI">
-<meta property="og:url" content="https://kiko.io/2019/09/17/How-To-Visual-Studio-Database-Project-and-ADSI/index.html">
+<meta property="og:url" content="https://kiko.io/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/index.html">
 <meta property="og:site_name" content="kiko.io">
 <meta property="og:description" content="If you are working with a Visual Studio Database Project and have to deal with data from the Active Directory via a Linked Server, you have to announce the data structure of the AD data in order to ge">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-22T10:45:00.000Z">
+<meta property="og:updated_time" content="2019-09-21T22:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How-To: Visual Studio Database Project and ADSI">
 <meta name="twitter:description" content="If you are working with a Visual Studio Database Project and have to deal with data from the Active Directory via a Linked Server, you have to announce the data structure of the AD data in order to ge">
@@ -73,8 +73,8 @@
       <div class="outer">
         <section id="main"><article id="post-How-To-Visual-Studio-Database-Project-and-ADSI" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/09/17/How-To-Visual-Studio-Database-Project-and-ADSI/" class="article-date">
-  <time datetime="2019-09-17T15:03:00.000Z" itemprop="datePublished">2019-09-17</time>
+    <a href="/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/" class="article-date">
+  <time datetime="2019-09-16T22:00:00.000Z" itemprop="datePublished">2019-09-17</time>
 </a>
     
   <div class="article-category">
@@ -97,9 +97,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>If you are working with a Visual Studio Database Project and have to deal with data from the Active Directory via a Linked Server, you have to announce the data structure of the AD data in order to get the project compiled. </p>
+        <p>If you are working with a Visual Studio Database Project and have to deal with data from the Active Directory via a Linked Server, you have to announce the data structure of the AD data in order to get the project compiled.</p>
 <a id="more"></a>
-<h3 id="Step-1-Linking-to-the-Active-Directory"><a href="#Step-1-Linking-to-the-Active-Directory" class="headerlink" title="Step 1 - Linking to the Active Directory"></a>Step 1 - Linking to the Active Directory</h3><p>First of all you have to connect your SQL Server to the AD permanently, by running  following SQL script once on your SQL Server:</p>
+<h2 id="Step-1-Linking-to-the-Active-Directory"><a href="#Step-1-Linking-to-the-Active-Directory" class="headerlink" title="Step 1 - Linking to the Active Directory"></a>Step 1 - Linking to the Active Directory</h2><p>First of all you have to connect your SQL Server to the AD permanently, by running  following SQL script once on your SQL Server:</p>
 <pre><code>USE [master]
 GO
 EXEC master.dbo.sp_addlinkedserver @server = N&apos;ADSI&apos;, 
@@ -152,7 +152,7 @@ EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;,
 GO
 EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
     @optname=N&apos;remote proc transaction promotion&apos;, @optvalue=N&apos;true&apos;
-GO</code></pre><h3 id="Step-2-Fetching-ADSI-data"><a href="#Step-2-Fetching-ADSI-data" class="headerlink" title="Step 2 - Fetching ADSI data"></a>Step 2 - Fetching ADSI data</h3><p>To get data, use <code>OpenQuery</code> against the Linked Server. In order to get only persons and no system accounts, you should filter out all users, which has no firstname (<code>givenName</code>) or lastname (<code>sn</code>):</p>
+GO</code></pre><h2 id="Step-2-Fetching-ADSI-data"><a href="#Step-2-Fetching-ADSI-data" class="headerlink" title="Step 2 - Fetching ADSI data"></a>Step 2 - Fetching ADSI data</h2><p>To get data, use <code>OpenQuery</code> against the Linked Server. In order to get only persons and no system accounts, you should filter out all users, which has no firstname (<code>givenName</code>) or lastname (<code>sn</code>):</p>
 <pre><code>SELECT 
     UserPrincipalName, 
     DisplayName, 
@@ -262,12 +262,12 @@ AS
 GO</code>
 </pre>
 
-<h3 id="Step-3-SQL-Server-Database-Project"><a href="#Step-3-SQL-Server-Database-Project" class="headerlink" title="Step 3 - SQL Server Database Project"></a>Step 3 - SQL Server Database Project</h3><p>If you work with a SQL Server Database Project, to have the complete structure of your database available in a version control system, you will get some reference errors on compiling and publishing your newly added SQL View <code>vADUsers</code> and on some objects, which rely on this View, because of following problems:</p>
+<h2 id="Step-3-SQL-Server-Database-Project"><a href="#Step-3-SQL-Server-Database-Project" class="headerlink" title="Step 3 - SQL Server Database Project"></a>Step 3 - SQL Server Database Project</h2><p>If you work with a SQL Server Database Project, to have the complete structure of your database available in a version control system, you will get some reference errors on compiling and publishing your newly added SQL View <code>vADUsers</code> and on some objects, which rely on this View, because of following problems:</p>
 <ol>
 <li>Project doesn’t know the Linked Server <code>ADSI</code></li>
 <li>The structure (fields) of the data source is unknown</li>
 </ol>
-<h4 id="Declare-the-Linked-Server"><a href="#Declare-the-Linked-Server" class="headerlink" title="Declare the Linked Server"></a>Declare the Linked Server</h4><p>To show the Project that there is a Linked Server called <code>ADSI</code>, just add following lines at the start of your view:</p>
+<h3 id="Declare-the-Linked-Server"><a href="#Declare-the-Linked-Server" class="headerlink" title="Declare the Linked Server"></a>Declare the Linked Server</h3><p>To show the Project that there is a Linked Server called <code>ADSI</code>, just add following lines at the start of your view:</p>
 <pre>
 <code><strong>sp_addlinkedserver 'ADSI'</strong>
 <strong>GO</strong>
@@ -278,7 +278,7 @@ AS
 </pre>
 
 <p>This mimics the adding of a Linked Server, but will be ignored by SQL Server on publish, because you already have a Linked Server with this name. The project is happy with it.</p>
-<h4 id="Declare-the-data-structure"><a href="#Declare-the-data-structure" class="headerlink" title="Declare the data structure"></a>Declare the data structure</h4><p>When you use the SQL-View <code>vADUsers</code> in a Stored Procedure for example, this object won’t compile, because the project knows nothing about the fields of the ADSI data source. The SELECT in the view is not enough. You have to add an empty <code>SELECT</code> to the View <code>vADUsers</code>, just for the declaration of the fields and without returning any records and join this via <code>UNION</code> with the other statements:</p>
+<h3 id="Declare-the-data-structure"><a href="#Declare-the-data-structure" class="headerlink" title="Declare the data structure"></a>Declare the data structure</h3><p>When you use the SQL-View <code>vADUsers</code> in a Stored Procedure for example, this object won’t compile, because the project knows nothing about the fields of the ADSI data source. The SELECT in the view is not enough. You have to add an empty <code>SELECT</code> to the View <code>vADUsers</code>, just for the declaration of the fields and without returning any records and join this via <code>UNION</code> with the other statements:</p>
 <pre>
 <code>sp_addlinkedserver 'ADSI'
 GO
@@ -376,9 +376,9 @@ FROM (
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kiko.io/2019/09/17/How-To-Visual-Studio-Database-Project-and-ADSI/" data-id="ck0worxle0000rsl9vs7yqp02" class="article-share-link">Share</a>
+      <a data-url="https://kiko.io/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/" data-id="ck0zf5qz9000w7kbkzhen2svl" class="article-share-link">Share</a>
       
-        <a href="https://kiko.io/2019/09/17/How-To-Visual-Studio-Database-Project-and-ADSI/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="https://kiko.io/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ADSI/">ADSI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Database-Project/">Database Project</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>
@@ -387,6 +387,20 @@ FROM (
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/categories/Tools/A-new-blog-VS-Code-Hexo-and-GitHub-Pages/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          A New Blog: VS Code, Hexo and GitHub Pages
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
@@ -404,7 +418,7 @@ FROM (
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a></li></ul>
     </div>
   </div>
 
@@ -414,7 +428,7 @@ FROM (
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ADSI/">ADSI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database-Project/">Database Project</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ADSI/">ADSI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database-Project/">Database Project</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VS-Code/">VS Code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>
     </div>
   </div>
 
@@ -437,7 +451,15 @@ FROM (
       <ul>
         
           <li>
-            <a href="/2019/09/17/How-To-Visual-Studio-Database-Project-and-ADSI/">How-To: Visual Studio Database Project and ADSI</a>
+            <a href="/categories/Tools/A-new-blog-Customizing-Hexo/">A New Blog: Customizing Hexo</a>
+          </li>
+        
+          <li>
+            <a href="/categories/Tools/A-new-blog-VS-Code-Hexo-and-GitHub-Pages/">A New Blog: VS Code, Hexo and GitHub Pages</a>
+          </li>
+        
+          <li>
+            <a href="/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/">How-To: Visual Studio Database Project and ADSI</a>
           </li>
         
       </ul>
@@ -469,7 +491,7 @@ FROM (
 <script>
   var disqus_shortname = 'kiko-io';
   
-  var disqus_url = 'https://kiko.io/2019/09/17/How-To-Visual-Studio-Database-Project-and-ADSI/';
+  var disqus_url = 'https://kiko.io/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/';
   
   (function(){
     var dsq = document.createElement('script');
@@ -510,7 +532,11 @@ FROM (
 
 <script src="//cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@2.0.0/dist/main.js"></script> 
 <script>
-    infiniteScroll()
+    infiniteScroll({
+      showNum: 5,
+      style: 'line-scale',
+      color: '#025ab1'
+    })
 </script>
   </div>
 </body>

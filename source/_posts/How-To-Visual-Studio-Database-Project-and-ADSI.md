@@ -1,7 +1,7 @@
 ---
 title: 'How-To: Visual Studio Database Project and ADSI'
-date: 2019-09-17 17:03:00
-updated: 2019-09-22 12:45:00
+date: 2019-09-17
+updated: 2019-09-22
 tags: 
     - ADSI
     - Visual Studio
@@ -9,9 +9,9 @@ tags:
 categories: 
     - SQL
 ---
-If you are working with a Visual Studio Database Project and have to deal with data from the Active Directory via a Linked Server, you have to announce the data structure of the AD data in order to get the project compiled. 
+If you are working with a Visual Studio Database Project and have to deal with data from the Active Directory via a Linked Server, you have to announce the data structure of the AD data in order to get the project compiled.
 <!-- more -->
-### Step 1 - Linking to the Active Directory
+## Step 1 - Linking to the Active Directory
 
 First of all you have to connect your SQL Server to the AD permanently, by running  following SQL script once on your SQL Server:
 
@@ -69,7 +69,7 @@ First of all you have to connect your SQL Server to the AD permanently, by runni
         @optname=N'remote proc transaction promotion', @optvalue=N'true'
     GO
 
-### Step 2 - Fetching ADSI data  
+## Step 2 - Fetching ADSI data  
 
 To get data, use ``OpenQuery`` against the Linked Server. In order to get only persons and no system accounts, you should filter out all users, which has no firstname (``givenName``) or lastname (``sn``):
 
@@ -187,14 +187,14 @@ AS
 GO</code>
 </pre>
 
-### Step 3 - SQL Server Database Project
+## Step 3 - SQL Server Database Project
 
 If you work with a SQL Server Database Project, to have the complete structure of your database available in a version control system, you will get some reference errors on compiling and publishing your newly added SQL View ``vADUsers`` and on some objects, which rely on this View, because of following problems:
 
 1. Project doesn't know the Linked Server `ADSI`
 2. The structure (fields) of the data source is unknown
 
-#### Declare the Linked Server
+### Declare the Linked Server
 
 To show the Project that there is a Linked Server called ``ADSI``, just add following lines at the start of your view:
 
@@ -209,7 +209,7 @@ AS
 
 This mimics the adding of a Linked Server, but will be ignored by SQL Server on publish, because you already have a Linked Server with this name. The project is happy with it.
 
-#### Declare the data structure
+### Declare the data structure
 
 When you use the SQL-View ``vADUsers`` in a Stored Procedure for example, this object won't compile, because the project knows nothing about the fields of the ADSI data source. The SELECT in the view is not enough. You have to add an empty ``SELECT`` to the View ``vADUsers``, just for the declaration of the fields and without returning any records and join this via ``UNION`` with the other statements:
 
