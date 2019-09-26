@@ -15,10 +15,12 @@
 <meta property="og:site_name" content="kiko.io">
 <meta property="og:description" content="Hexo is a great tool to get quick results, when you decide to have a blog and its defaults are practical, but it’s power lies in the possiblities of customization via plugins. On the official plugin p">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-26T06:50:43.221Z">
+<meta property="og:image" content="https://kiko.io/categories/Tools/A-New-Blog-Customizing-Hexo/vscode-1.png">
+<meta property="og:updated_time" content="2019-09-26T08:23:18.596Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A New Blog: Customizing Hexo">
 <meta name="twitter:description" content="Hexo is a great tool to get quick results, when you decide to have a blog and its defaults are practical, but it’s power lies in the possiblities of customization via plugins. On the official plugin p">
+<meta name="twitter:image" content="https://kiko.io/categories/Tools/A-New-Blog-Customizing-Hexo/vscode-1.png">
   
     <link rel="alternate" href="/atom.xml" title="kiko.io" type="application/atom+xml">
   
@@ -102,11 +104,10 @@
 <a id="more"></a>
 
 <h3 id="Relative-Image-Path"><a href="#Relative-Image-Path" class="headerlink" title="Relative Image Path"></a>Relative Image Path</h3><p>The build-in way to include images in your posts works fine, but it is a little aside the normal way to declare images in Markdown. The plugin [Hexo Asset Link] corrects that. After installing via <code>npm install hexo-asset-link --save</code> you can write this:</p>
-<pre><code>![Test Image](hello-world/image-1.png)</code></pre><p><strong>UPDATE</strong>: Actually the plugin <a href="https://github.com/liolok/hexo-asset-link/issues/3" target="_blank" rel="noopener">destroys external links</a>, so don’t use it until this is fixed.</p>
+<pre><code>![Test Image](hello-world/image-1.png)</code></pre><p><strong>UPDATE</strong>: Actually the plugin <a href="https://github.com/liolok/hexo-asset-link/issues/3" target="_blank" rel="noopener">destroys external links</a>, so don’t use it until this is fixed … or go to <strong>node_modules</strong> &gt; <strong>hexo-asset-link</strong> &gt; <strong>index.js</strong> in your project and change in line 22 <code>protocal</code> to <code>protocol</code>.</p>
 <h3 id="Hide-Posts"><a href="#Hide-Posts" class="headerlink" title="Hide Posts"></a>Hide Posts</h3><p>A new Hexo project comes with a sample post called <code>Hello World</code>. This is fine to play around with, but you don’t want to publish it. Here comes a Hexo plugin to the rescue called <a href="https://github.com/printempw/hexo-hide-posts" target="_blank" rel="noopener">Hexo Hide Posts</a>. After installing, you just have to write <code>hidden: true</code> to the Front Matter of you post and it won’t be shown on the blog, but it is still available by URL.</p>
 <h3 id="Static-Files"><a href="#Static-Files" class="headerlink" title="Static Files"></a>Static Files</h3><p>Hexo has the concept of <a href="https://hexo.io/docs/asset-folders" target="_blank" rel="noopener">Assets Folders</a>, but for static files, beside article based files, I find it more useful to have a STATIC folder and copy the contents on every build into the publish folder. A good helper for this approach is the plugin <a href="https://github.com/niahoo/hexo-generator-copy" target="_blank" rel="noopener">Hexo Generator Copy</a>. Install it by running <code>npm install hexo-generator-copy --save</code> and add <code>static_dir: static</code> to your <code>_config.yml</code> and you are done.</p>
-{% asset_img vscode-1.png "Hexo Static Files" %}
-
+<p><img src="/categories/Tools/A-New-Blog-Customizing-Hexo/vscode-1.png" alt="Hexo Static Files"></p>
 <h3 id="Feed"><a href="#Feed" class="headerlink" title="Feed"></a>Feed</h3><p>The default Hexo layout has an Atom Feed icon in the upper right corner, but strangely no feed file is generated on build. You need to install the plugin <a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="noopener">Hexo Feed Generator</a> to fix this, by running <code>npm install hexo-generator-feed --save</code> and copy following section into the <code>_config.yml</code>:</p>
 <pre><code>feed:
     type: atom

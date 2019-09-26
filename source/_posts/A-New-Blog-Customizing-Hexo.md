@@ -21,7 +21,7 @@ The build-in way to include images in your posts works fine, but it is a little 
 
     ![Test Image](hello-world/image-1.png)
 
-**UPDATE**: Actually the plugin [destroys external links](https://github.com/liolok/hexo-asset-link/issues/3), so don't use it until this is fixed.
+**UPDATE**: Actually the plugin [destroys external links](https://github.com/liolok/hexo-asset-link/issues/3), so don't use it until this is fixed ... or go to **node_modules** &gt; **hexo-asset-link** &gt; **index.js** in your project and change in line 22 ``protocal`` to ``protocol``.
 
 ### Hide Posts
 
@@ -31,7 +31,7 @@ A new Hexo project comes with a sample post called ``Hello World``. This is fine
 
 Hexo has the concept of [Assets Folders](https://hexo.io/docs/asset-folders), but for static files, beside article based files, I find it more useful to have a STATIC folder and copy the contents on every build into the publish folder. A good helper for this approach is the plugin [Hexo Generator Copy](https://github.com/niahoo/hexo-generator-copy). Install it by running ``npm install hexo-generator-copy --save`` and add ``static_dir: static`` to your ``_config.yml`` and you are done.
 
-{% asset_img vscode-1.png "Hexo Static Files" %}
+![Hexo Static Files](A-New-Blog-Customizing-Hexo/vscode-1.png)
 
 ### Feed
 
@@ -121,7 +121,8 @@ Its nice to support the reader on scolling by providing a Scroll-To-Top button. 
     }
     </style>
 
---- 
+---
 
 ## Related
+
 * [A New Blog (Part One): VS Code, Hexo and GitHub Pages](/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/)
