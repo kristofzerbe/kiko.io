@@ -3,7 +3,7 @@
     column(sidebar-column)
 
 .widget-wrap
-  margin: block-margin 0
+  margin: widget-margin 0
 
 .widget-title
   @extend $block-caption
@@ -14,11 +14,23 @@
   border: 1px solid color-widget-border
   padding: 0 15px
   a
-    color: color-link
+    color: color-widget-link
     text-decoration: none
     &:hover
-      text-decoration: underline
+      text-decoration: none
   ul, ol, dl
     ul, ol, dl
       margin-left: 15px
       list-style: disc
+    li
+      transition: all .1s ease
+      line-height: 18px            
+      border-left: 2px color-border solid
+      margin: 6px 0 6px -12px
+      padding: 0 10px      
+      &:hover
+        border-left: 4px color-link solid
+        margin-left: -13px;
+        padding-left: 9px
+        a 
+          color: color-link
