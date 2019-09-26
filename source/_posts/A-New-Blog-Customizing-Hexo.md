@@ -21,6 +21,8 @@ The build-in way to include images in your posts works fine, but it is a little 
 
     ![Test Image](hello-world/image-1.png)
 
+**UPDATE**: Actually the plugin [destroys external links](https://github.com/liolok/hexo-asset-link/issues/3), so don't use it until this is fixed.
+
 ### Hide Posts
 
 A new Hexo project comes with a sample post called ``Hello World``. This is fine to play around with, but you don't want to publish it. Here comes a Hexo plugin to the rescue called [Hexo Hide Posts](https://github.com/printempw/hexo-hide-posts). After installing, you just have to write ``hidden: true`` to the Front Matter of you post and it won't be shown on the blog, but it is still available by URL.
@@ -29,7 +31,7 @@ A new Hexo project comes with a sample post called ``Hello World``. This is fine
 
 Hexo has the concept of [Assets Folders](https://hexo.io/docs/asset-folders), but for static files, beside article based files, I find it more useful to have a STATIC folder and copy the contents on every build into the publish folder. A good helper for this approach is the plugin [Hexo Generator Copy](https://github.com/niahoo/hexo-generator-copy). Install it by running ``npm install hexo-generator-copy --save`` and add ``static_dir: static`` to your ``_config.yml`` and you are done.
 
-![Hexo Static Files](A-new-blog-Customizing-Hexo/vscode-1.png)
+{% asset_img vscode-1.png "Hexo Static Files" %}
 
 ### Feed
 

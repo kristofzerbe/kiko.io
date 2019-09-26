@@ -31,7 +31,7 @@ I decided to write an article just in HTML and publish it on my personal GitHub 
 5. Install dependencies with ``npm install``
 6. Done
 
-![New Hexo Project](A-new-blog-VS-Code-Hexo-and-GitHub-Pages/vscode-1.png)
+{% asset_img vscode-1.png "New Hexo Project" %}
 
 ## Writing
 
@@ -43,7 +43,7 @@ Hexo has posts and drafts, whereat drafts has to published via a Hexo command to
 Every post/draft starts with its header (so called [Front Matter](https://hexo.io/docs/front-matter)) to store some meta data, which describes the post, like ``title``, ``date``, ``tags`` or ``categories``. This is used by Hexo to classify and arrange your post during the build.
 
 ### Markdown
-Hexo posts/drafts are written in [Markdown](https://en.wikipedia.org/wiki/Markdown). A good syntax reference is the [Markdown Guide](https://www.markdownguide.org/basic-syntax/). 
+Hexo posts/drafts are written in [Markdown](https://en.wikipedia.org/wiki/Markdown). A good syntax reference is the [Markdown Guide](https://www.markdownguide.org/basic-syntax/).
 
 ### Excerpt
 Is is usual to show a short excerpt an the start page of a blog, to keep it compact and teasering the user to click on a READ MORE button. To achieve this, you just have to add following comment to your article. Everything above is the excerpt and everything below is only shown, when you enter the article:
@@ -58,7 +58,8 @@ In your Markdown you reference your image with:
 
     {% asset_img image-1.png "Test Image" %}
 
-![Image](A-new-blog-VS-Code-Hexo-and-GitHub-Pages/vscode-2.png)
+
+{% asset_img vscode-2.png "Image" %}
 
 ## Build
 
@@ -84,7 +85,7 @@ Most complex task for me was to publish the new blog on [GitHub Pages](https://p
 
 The simple solution was to create a new repository, named after my my blog **kiko.io**, to store everything and point the GitHub Page to the subdirectory **docs** in settings of the repository.
 
-![GitHub Settings](A-new-blog-VS-Code-Hexo-and-GitHub-Pages/github-1.png)
+{% asset_img github-1.png "GitHub Settings" %}
 
 By overriding the default publish folder of Hexo in ``_config.yml``, everything was set up. Commit and Push via git...
 
