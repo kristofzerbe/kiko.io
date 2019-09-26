@@ -7,7 +7,8 @@ tags:
   - Blogging
 categories:
   - Tools
-date: 2019-09-24 00:00:00
+date: 2019-09-24 12:10:00
+updated: 2019-09-26 15:00:00
 ---
 
 Hexo is a great tool to get quick results, when you decide to have a blog and its defaults are practical, but it's power lies in the possiblities of customization via plugins. On the [official plugin page](https://hexo.io/plugins/index.html), there are actually 302 plugins listed, but there are many more and no wish will be unsatisfied.
