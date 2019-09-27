@@ -43,7 +43,7 @@ Hexo has posts and drafts, whereat drafts has to published via a Hexo command to
 Every post/draft starts with its header (so called [Front Matter](https://hexo.io/docs/front-matter)) to store some meta data, which describes the post, like ``title``, ``date``, ``tags`` or ``categories``. This is used by Hexo to classify and arrange your post during the build.
 
 ### Markdown
-Hexo posts/drafts are written in [Markdown](https://en.wikipedia.org/wiki/Markdown). A good syntax reference is the [Markdown Guide](https://www.markdownguide.org/basic-syntax/).
+Hexo posts/drafts are written in [Markdown](https://en.wikipedia.org/wiki/Markdown). Good syntax reference are the [Markdown Guide](https://www.markdownguide.org/basic-syntax/) and the more detailed [Markdown Syntax Guide](https://sourceforge.net/p/hexo/wiki/markdown_syntax/).
 
 ### Excerpt
 Is is usual to show a short excerpt an the start page of a blog, to keep it compact and teasering the user to click on a READ MORE button. To achieve this, you just have to add following comment to your article. Everything above is the excerpt and everything below is only shown, when you enter the article:
