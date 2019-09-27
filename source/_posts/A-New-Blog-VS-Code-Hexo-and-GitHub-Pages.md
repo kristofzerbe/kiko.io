@@ -31,7 +31,7 @@ I decided to write an article just in HTML and publish it on my personal GitHub 
 5. Install dependencies with ``npm install``
 6. Done
 
-{% asset_img vscode-1.png "New Hexo Project" %}
+![New Hexo Project](A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/vscode-1.png)
 
 ## Writing
 
@@ -58,8 +58,7 @@ In your Markdown you reference your image with:
 
     {% asset_img image-1.png "Test Image" %}
 
-
-{% asset_img vscode-2.png "Image" %}
+![Reference Image](A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/vscode-2.png)
 
 ## Build
 
@@ -67,29 +66,31 @@ Hexo is a website generator, so a build will generate the whole website in a spe
 
     public_dir: public
 
-To wipe the output folder run the command:
+To wipe the output folder, run the command:
 
     hexo clean
 
-To start the build run:
+To start the build, run:
 
     hexo generate
 
-To view the website via the build-in local Hexo server run:
+To view the website via the build-in local Hexo server, run:
 
     hexo server
 
 ## Publishing
 
-Most complex task for me was to publish the new blog on [GitHub Pages](https://pages.github.com/). My first approach was to use my personal page, as I did with my single HTML file, but this didn't work, because I wanted to store the whole project on GitHub and it is not possible to point a personal page to the subdirectory **docs** or use a different branch as **master**.
+Most "complex" task was to publish the new blog on [GitHub Pages](https://pages.github.com/). My first approach was to use my personal page, as I did with my single HTML file, but this didn't work, because I wanted to store the whole project on GitHub and it is not possible to point a personal page to the subdirectory **docs** or use a different branch as **master**.
 
-The simple solution was to create a new repository, named after my my blog **kiko.io**, to store everything and point the GitHub Page to the subdirectory **docs** in settings of the repository.
+The simple solution was to create a new repository, named after my my blog **kiko.io**, to store teh whole project and point the GitHub Page to the subdirectory **docs** in the settings of the repository.
 
-{% asset_img github-1.png "GitHub Settings" %}
+![GitHub Settings](A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/github-1.png)
 
-By overriding the default publish folder of Hexo in ``_config.yml``, everything was set up. Commit and Push via git...
+By overriding the default publish folder of Hexo in ``_config.yml`` ...
 
     public_dir: docs
+
+... everything was set up. Commit and Push via git and done.
 
 Hexo has its own deploying mechanism and it is advisable to disable it, by commenting out the Deployment section ``_config.yml``.
 
@@ -102,7 +103,7 @@ To point the domain to GitHub, I had to create following ``A`` records in my dom
 * 185.199.110.153
 * 185.199.111.153
 
-Last step was to enable **Enforce HTTPS** in the repositories settings. 
+Last step was to enable **Enforce HTTPS** in the repositories settings.
 
 ---
 

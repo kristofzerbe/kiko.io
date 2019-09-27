@@ -11,7 +11,7 @@ date: 2019-09-24 12:10:00
 updated: 2019-09-26 15:00:00
 ---
 
-Hexo is a great tool to get quick results, when you decide to have a blog and its defaults are practical, but it's power lies in the possiblities of customization via plugins. On the [official plugin page](https://hexo.io/plugins/index.html), there are actually 302 plugins listed, but there are many more and no wish will be unsatisfied.
+Hexo is a great tool to get quick results (see [Part One of this series](/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/)), when you decide to have a blog and its defaults are practical, but it's power lies in the possiblities of customization via plugins. On the [official plugin page](https://hexo.io/plugins/index.html), there are actually 302 plugins listed, but there are many more and no wish will be unsatisfied.
 
 I will show you which of these I found worth to work with...
 <!-- more -->
@@ -22,7 +22,17 @@ The build-in way to include images in your posts works fine, but it is a little 
 
     ![Test Image](hello-world/image-1.png)
 
-**UPDATE**: Actually the plugin [destroys external links](https://github.com/liolok/hexo-asset-link/issues/3), so don't use it until this is fixed ... or go to **node_modules** &gt; **hexo-asset-link** &gt; **index.js** in your project and change in line 22 ``protocal`` to ``protocol``.
+The best is, that VS Code's Markdown can now show the image.
+
+---
+
+**UPDATE**:  
+Actually the plugin [destroys external links](https://github.com/liolok/hexo-asset-link/issues/3), so don't use it until this is fixed ... or go to **node_modules** &gt; **hexo-asset-link** &gt; **index.js** in your project and change in line 22 ``protocal`` to ``protocol``.
+
+**UPDATE from Update**:  
+[liolok](https://github.com/liolok), the author of the plugin has merged my pull request and published a new new version without the typo. It works now as expected.
+
+---
 
 ### Hide Posts
 
