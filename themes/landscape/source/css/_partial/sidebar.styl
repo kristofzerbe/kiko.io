@@ -19,16 +19,64 @@ else
       list-style: decimal
 
 .widget.about
-  padding-bottom: 1em  
+  padding-bottom: 1em
   * 
     display: block
     margin: 0 auto
-  img 
-    width: 120px
+  .avatar
+    position: relative 
+    width: 120px 
+    img 
+      width: 120px
+    a.fab
+      &:hover
+        &:before
+          opacity: 1
+      &:before
+        font-family: fa-icon-brands
+        position: absolute
+        font-size: 16px;
+        opacity: 0.42
+    a.fa-github
+      &:hover  
+        color: #6e5494
+      &:before
+        content: "\f09b"
+        top: -10px
+        right: 0px
+    a.fa-xing
+      &:hover  
+        color: #026466
+      &:before
+        content: "\f168"
+        top: 10px
+        right: -12px  
+    a.fa-linkedin
+      &:hover  
+        color: #0077b5
+      &:before
+        content: "\f0e1"
+        top: 38px
+        right: -23px
+    a.fa-500px
+      &:hover  
+        color: #0099e5
+      &:before
+        content: "\f26e"
+        top: 65px
+        right: -20px  
+    a.fa-twitter
+      &:hover  
+        color: #1da1f2
+      &:before
+        content: "\f099"
+        top: 91px
+        right: -12px  
+
   h3, p
     text-align: center  
   h3 
-    margin: 10px 0
+    margin: 15px 0 10px
     text-transform: uppercase
   p
     line-height: 18px
