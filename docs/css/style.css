@@ -1308,7 +1308,7 @@ pre .javascript .function {
   }
 }
 .widget-wrap {
-  margin: 2em 0;
+  margin: 2em 1em;
 }
 .widget {
   color: #777;
@@ -1390,15 +1390,68 @@ pre .javascript .function {
   display: block;
   margin: 0 auto;
 }
-.widget.about img {
+.widget.about .avatar {
+  position: relative;
   width: 120px;
+}
+.widget.about .avatar img {
+  width: 120px;
+}
+.widget.about .avatar a.fab:hover:before {
+  opacity: 1;
+}
+.widget.about .avatar a.fab:before {
+  font-family: FontAwesome5Brands;
+  position: absolute;
+  font-size: 16px;
+  opacity: 0.42;
+}
+.widget.about .avatar a.fa-github:hover {
+  color: #6e5494;
+}
+.widget.about .avatar a.fa-github:before {
+  content: "\f09b";
+  top: -10px;
+  right: 0px;
+}
+.widget.about .avatar a.fa-xing:hover {
+  color: #026466;
+}
+.widget.about .avatar a.fa-xing:before {
+  content: "\f168";
+  top: 10px;
+  right: -12px;
+}
+.widget.about .avatar a.fa-linkedin:hover {
+  color: #0077b5;
+}
+.widget.about .avatar a.fa-linkedin:before {
+  content: "\f0e1";
+  top: 38px;
+  right: -23px;
+}
+.widget.about .avatar a.fa-500px:hover {
+  color: #0099e5;
+}
+.widget.about .avatar a.fa-500px:before {
+  content: "\f26e";
+  top: 65px;
+  right: -20px;
+}
+.widget.about .avatar a.fa-twitter:hover {
+  color: #1da1f2;
+}
+.widget.about .avatar a.fa-twitter:before {
+  content: "\f099";
+  top: 91px;
+  right: -12px;
 }
 .widget.about h3,
 .widget.about p {
   text-align: center;
 }
 .widget.about h3 {
-  margin: 10px 0;
+  margin: 15px 0 10px;
   text-transform: uppercase;
 }
 .widget.about p {
