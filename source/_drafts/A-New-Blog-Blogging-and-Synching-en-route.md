@@ -59,6 +59,6 @@ With this editor and it's helpers, I'm just two clicks away from publishing a ne
 
 ## Writing on Android
 
-There are a lot of Markdown editors available on Google Play, but one is outstanding: [iA Writer for Android](https://ia.net/writer/support/android). I can open my posts or drafts directly from my Dropbox, without the need of any sychronization. Open, write, close, done.
+There are a lot of Markdown editors available on Google Play, but one is outstanding: [iA Writer for Android](https://ia.net/writer/support/android). I can open my posts or drafts directly from Dropbox, without the need of any sychronization. Open, write, close, done.
 
 ![iA Writer Android](A-New-Blog-Blogging-and-Synching-en-route/ia-writer-1.png)
