@@ -48,16 +48,16 @@ Hexo has the concept of [Assets Folders](https://hexo.io/docs/asset-folders), bu
 
 The default Hexo layout has an Atom Feed icon in the upper right corner, but strangely no feed file is generated on build. You need to install the plugin [Hexo Feed Generator](https://github.com/hexojs/hexo-generator-feed) to fix this, by running ``npm install hexo-generator-feed --save`` and copy following section into the ``_config.yml``:
 
-``` yaml
-    feed:
-        type: atom
-        path: atom.xml
-        limit: 20
-        hub:
-        content:
-        content_limit: 140
-        content_limit_delim: ' '
-        order_by: -date
+```yaml
+feed:
+    type: atom
+    path: atom.xml
+    limit: 20
+    hub:
+    content:
+    content_limit: 140
+    content_limit_delim: ' '
+    order_by: -date
 ```
 
 ### Manifest for PWA
@@ -66,34 +66,34 @@ In these modern times it's always a good idea, that your blog feels like an App.
 
 To bind this file into your blog, you can use the plugin [Hexo PWA](https://github.com/lavas-project/hexo-pwa). Run ``npm install --save hexo-pwa`` and copy following section to your ``_config.yml``, where you take the settings from your generated manifest file:
 
-``` yaml
-    pwa:
-        manifest:
-            path: /manifest.json
-            body:
-            name: myblog.de
-            short_name: My Blog
-            icons:
-                - src: /images/icon-192x192.png
-                sizes: 192x192
-                type: image/png
-                - src: /images/icon-512x512.png
-                sizes: 512x512
-                type: image/png
-            start_url: /index.html
-            theme_color: '#025ab1'
-            background_color: '#dddddd'
-            display: standalone
+```yaml
+pwa:
+    manifest:
+        path: /manifest.json
+        body:
+        name: myblog.de
+        short_name: My Blog
+        icons:
+            - src: /images/icon-192x192.png
+            sizes: 192x192
+            type: image/png
+            - src: /images/icon-512x512.png
+            sizes: 512x512
+            type: image/png
+        start_url: /index.html
+        theme_color: '#025ab1'
+        background_color: '#dddddd'
+        display: standalone
 ```
 
 ### Sitemap File
 
 To help [Google](https://support.google.com/webmasters/answer/183668) and others a bit to index your blog, it is advisable to provide a sitemap file. Here comes [Hexo Generator Sitemap](https://github.com/hexojs/hexo-generator-sitemap) to the rescue. Install it by running the command ``npm install hexo-generator-sitemap --save``. You can configure it via ``_config.yml``:
 
-``` yaml
-    sitemap:
-        path: sitemap.xml
-        template: ./sitemap-template.xml
+```yaml
+sitemap:
+    path: sitemap.xml
+    template: ./sitemap-template.xml
 ```
 
 The plugin installation doesn't create the needed ``sitemap-template`` file, so be sure you grab a copy from the plugins repository: [https://github.com/hexojs/hexo-generator-sitemap/blob/master/sitemap.xml](https://github.com/hexojs/hexo-generator-sitemap/blob/master/sitemap.xml)
@@ -102,46 +102,46 @@ The plugin installation doesn't create the needed ``sitemap-template`` file, so 
 
 Hexo doesn't have a commenting system, but it's prepared to stick [Disqus](https://disqus.com/) comments under each article. Just create a new Disqus account for your blog and note the given short name. By adding following section to the ``_config.yml`` Hexo shows the commenting section:
 
-``` yaml
-    disqus_enabled: true
-    disqus_shortname: my-blog
+```yaml
+disqus_enabled: true
+disqus_shortname: my-blog
 ```
 
 ### Inifinite Scroll
 
 Hexo shows as much articles at the start page as configured in ``_config.yml`` under ``index_generator.per_page``, but it's nicer to load more articles as you scroll by using the Hexo script [Inifinite Scroll](https://github.com/FrontendSophie/hexo-infinite-scroll). Install by adding following little script in **themes** & gt; **layout** &gt; **_partial** &gt; **after-footer.ejs**
 
-``` html
-    <script src="//cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@2.0.0/dist/main.js"></script> 
-    <script>
-        infiniteScroll({
-        showNum: 5,
-        style: 'line-scale',
-        color: '#025ab1'
-        })
-    </script>
+```html
+<script src="//cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@2.0.0/dist/main.js"></script> 
+<script>
+    infiniteScroll({
+    showNum: 5,
+    style: 'line-scale',
+    color: '#025ab1'
+    })
+</script>
 ```
 
 ### Back To Top
 
 Its nice to support the reader on scolling by providing a Scroll-To-Top button. The easiest way to get this, is the script [Vanilla Back To Top](https://github.com/vfeskov/vanilla-back-to-top). Just add follwing to **themes** &gt;**layout** &gt; **_partial** &gt; **after-footer.ejs**:
 
-``` html
-    <script>addBackToTop({
-        diameter: 30,
-        backgroundColor: 'rgb(0, 90, 180)',
-        textColor: '#fff'
-    })
-    </script>
-    <style>
-    #back-to-top {
-        border-radius: 0;
-        opacity: 0.6;
-    }
-    #back-to-top:hover {
-        opacity: 1;
-    }
-    </style>
+```html
+<script>addBackToTop({
+    diameter: 30,
+    backgroundColor: 'rgb(0, 90, 180)',
+    textColor: '#fff'
+})
+</script>
+<style>
+#back-to-top {
+    border-radius: 0;
+    opacity: 0.6;
+}
+#back-to-top:hover {
+    opacity: 1;
+}
+</style>
 ```
 
 ## Related
