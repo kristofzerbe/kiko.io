@@ -1,5 +1,6 @@
 ---
 title: 'A New Blog: Blogging and Synching en route'
+subtitle: Part Three
 tags:
   - VS Code
   - Hexo
@@ -7,12 +8,7 @@ tags:
   - Blogging
 categories:
   - Tools
-date: 2019-10-01 12:01:00
-subtitle:
----
-
-*This is Part Three of a series. I recommend to read [Part One](/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/) and [Part Two](/categories/Tools/A-New-Blog-Customizing-Hexo), to understand how I'm getting here...*
-
+date: 2019-10-01 12:01
 ---
 
 I work with several devices, some Windows, some Android, and sometimes I have time to write on my articles at home (Notebook, Tablet), in my spare time in the office (Desktop, Laptop) or on my way to somewhere (Smartphone). Right now I'm am in a barber shop, waiting for my haircut and write these lines. So, wherever I am, I need the Hexo project locally, but in sync on a digital device.
