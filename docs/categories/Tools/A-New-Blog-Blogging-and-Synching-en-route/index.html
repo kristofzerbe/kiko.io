@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://kiko.io/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/icon-gitlens.png">
 <meta property="og:image" content="https://kiko.io/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/icon-gitgraph.png">
 <meta property="og:image" content="https://kiko.io/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/ia-writer-1.png">
-<meta property="og:updated_time" content="2019-10-01T10:08:15.454Z">
+<meta property="og:updated_time" content="2019-10-01T10:10:32.320Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A New Blog: Blogging and Synching en route">
 <meta name="twitter:description" content="This is Part Three of a series. I recommend to read Part One and Part Two, to understand how I’m getting here…  I work with several devices, some Windows, some Android, and sometimes I have time to wr">
@@ -143,25 +143,26 @@
 <p>It expects the Hexo Command File to be named <code>hexo-commands.txt</code>, located in the same folder, and provides the following commands:</p>
 <p><strong>newdraft: “&lt;title&gt;”</strong> … runs</p>
 <ol>
-<li><figure class="highlight plain"><figcaption><span>new draft "<title>"```</title></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Creates a new draft.</span><br><span class="line"></span><br><span class="line">**postdraft: &quot;&amp;lt;filename without extension&amp;gt;&quot;** ... runs</span><br><span class="line"></span><br><span class="line">1. ```hexo publish &quot;&lt;filename without extension&gt;&quot;</span><br></pre></td></tr></table></figure>
-
-</li>
+<li><code>hexo new draft &quot;&lt;title&gt;&quot;</code></li>
+</ol>
+<p>Creates a new draft.</p>
+<p><strong>postdraft: “&lt;filename without extension&gt;”</strong> … runs</p>
+<ol>
+<li><code>hexo publish &quot;&lt;filename without extension&gt;&quot;</code></li>
 </ol>
 <p>Makes a post out of a draft.</p>
 <p><strong>regenerate</strong> … runs</p>
 <ol>
-<li><figure class="highlight plain"><figcaption><span>clean```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2. ```hexo generate</span><br></pre></td></tr></table></figure>
-
-</li>
+<li><code>hexo clean</code></li>
+<li><code>hexo generate</code></li>
 </ol>
 <p>Wipes all Hexo static pages and generates them new.</p>
 <p><strong>publish</strong> … runs</p>
 <ol>
-<li><figure class="highlight plain"><figcaption><span>generate```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2. ```git add &quot;source/*&quot; &quot;docs/*&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight plain"><figcaption><span>commit -m "Remote publication via HexoCommander"```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4. ```git push origin master</span><br></pre></td></tr></table></figure>
-
-</li>
+<li><code>hexo generate</code></li>
+<li><code>git add &quot;source/*&quot; &quot;docs/*&quot;</code></li>
+<li><code>git commit -m &quot;Remote publication via HexoCommander&quot;</code></li>
+<li><code>git push origin master</code></li>
 </ol>
 <p>Generates Hexo static pages, stage changes on drafts, posts and static pages, commits the changes with a generic message and pushes them to the server.</p>
 <h3 id="Running-the-demon"><a href="#Running-the-demon" class="headerlink" title="Running the demon"></a>Running the demon</h3><p>I would have never expected, that the trickiest part was to get HexoCommander running via Windows Task Scheduler. What a mess! I finally find the solution <a href="https://social.msdn.microsoft.com/Forums/SqlServer/en-US/29446adf-8304-4b9f-bbc4-95daf2941d53/program-runs-fine-but-task-scheduler-wont-run-it?forum=winserver2008appcompatabilityandcertification" target="_blank" rel="noopener">here</a>:</p>
