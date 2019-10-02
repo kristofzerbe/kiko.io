@@ -1,6 +1,6 @@
 ---
 title: 'A New Blog: Customizing Hexo'
-subtitle: Part Two
+subtitle: 'Part Two of having fun with Hexo and GitHub Pages'
 tags:
   - VS Code
   - Hexo

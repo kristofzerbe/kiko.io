@@ -1,6 +1,6 @@
 ---
 title: 'A New Blog: Blogging and Synching en route'
-subtitle: Part Three
+subtitle: 'Part Three of having fun with Hexo and GitHub Pages'
 tags:
   - VS Code
   - Hexo
