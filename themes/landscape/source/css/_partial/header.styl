@@ -83,9 +83,9 @@ $nav-link
   @extend $nav-link
   font-family: fa-icon-solid
   text-align: center
-  font-size: font-size
-  width: font-size
-  height: font-size
+  font-size: icon-size
+  width: icon-size
+  height: icon-size
   padding: 20px 15px
   position: relative
   cursor: pointer
@@ -107,6 +107,22 @@ $nav-link
 #sub-nav
   float: right
   margin-right: -15px
+
+#nav-home-link.main-nav-link
+  &:before
+    font-family: fa-icon-solid
+    font-size: icon-home-size
+    width: icon-home-size
+    height: icon-home-size
+    content: "\f060"
+
+#nav-home-link
+  &:before
+    content: "\f015"
+
+#nav-archives-link
+  &:before
+    content: "\f187"
 
 #nav-rss-link
   &:before
