@@ -433,9 +433,9 @@ body {
 .nav-icon {
   font-family: FontAwesome5Solid;
   text-align: center;
-  font-size: 14px;
-  width: 14px;
-  height: 14px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
   padding: 20px 15px;
   position: relative;
   cursor: pointer;
@@ -463,6 +463,19 @@ body {
 #sub-nav {
   float: right;
   margin-right: -15px;
+}
+#nav-home-link.main-nav-link:before {
+  font-family: FontAwesome5Solid;
+  font-size: 22px;
+  width: 22px;
+  height: 22px;
+  content: "\f060";
+}
+#nav-home-link:before {
+  content: "\f015";
+}
+#nav-archives-link:before {
+  content: "\f187";
 }
 #nav-rss-link:before {
   content: "\f09e";
@@ -1288,20 +1301,30 @@ pre .javascript .function {
     left: 0;
     width: 280px;
     height: 100%;
-    background: #191919;
+    background: #fff;
     border-right: 1px solid #fff;
   }
 }
 @media screen and (max-width: 479px) {
   .mobile-nav-link {
     display: block;
-    color: #777;
+    color: #555;
     text-decoration: none;
-    padding: 15px 20px;
+    padding: 25px 25px 5px;
     font-weight: bold;
   }
   .mobile-nav-link:hover {
     color: #fff;
+  }
+  .mobile-nav-link:before {
+    font-family: FontAwesome5Solid;
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+  }
+  .sub-nav-link {
+    display: none;
   }
 }
 @media screen and (min-width: 768px) {
