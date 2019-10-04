@@ -4,9 +4,27 @@
     <h1>kiko.io</h1>
     <p>by <span>Kristof Zerbe</span></p>
   </div>
-  <% for (var i in theme.nav_main_mobile){ %>
-    <a href="<%- url_for(theme.nav_main_mobile[i]) %>" 
-       id="nav-<%= i%>-link" 
-       class="mobile-nav-link"><%= __(i) %></a>
+  
+  <div id="mobile-nav-menu">
+    <% for (var i in theme.nav_main_mobile){ %>
+      <a href="<%- url_for(theme.nav_main_mobile[i]) %>" 
+        id="nav-<%= i%>-link" 
+        class="mobile-nav-link"><%= __(i) %></a>
+    <% } %>
+  </div>
+
+  <% if (site.posts.length){ %>
+    <div id="mobile-nav-recent-posts">
+      <h3><%= __('recent_posts') %></h3>
+      <div class="recent-posts-wrapper">
+        <ul>
+          <% site.posts.sort('date', -1).limit(5).each(function(post){ %>
+            <li>
+              <a href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a>
+            </li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
   <% } %>
 </nav>

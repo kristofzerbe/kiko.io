@@ -13,45 +13,60 @@
     padding: 10px 25px 20px 25px
     background-color: color-background
     box-shadow: inset -12px 0px 14px -18px #000
+    img.avatar
+      width: 64px
+      height: 64px
+      position: absolute
+      top: 15px;
+      right: 20px;
+    h1 
+      font-family: font-sans
+      font-variant: small-caps
+      font-weight: 800
+      font-size: 42px
+      line-height: 42px
+      letter-spacing: 2px
+    p
+      color: color-grey
+      padding-left: 2px
+      padding-top: 4px
+      span 
+        text-transform: uppercase
 
-  #mobile-nav-header img.avatar
-    width: 64px
-    height: 64px
-    position: absolute
-    top: 15px;
-    right: 20px;
-    
-  #mobile-nav-header h1 
-    font-family: font-sans
-    font-variant: small-caps
-    font-weight: 800
-    font-size: 42px
-    line-height: 42px
-    letter-spacing: 2px
-  
-  #mobile-nav-header p
-    color: color-grey
-    padding-left: 2px
-    padding-top: 4px
+  #mobile-nav-menu
+    padding: 20px 25px 0 25px
+    .mobile-nav-link
+      display: block
+      color: color-default
+      text-decoration: none
+      padding: 10px 0
+      font-weight: bold
+      &:hover
+        color: #fff
+      &:before
+        font-family: fa-icon-solid
+        font-size: icon-mobile-size
+        width: icon-mobile-size
+        height: icon-mobile-size
+        margin-right: 12px;
 
-  #mobile-nav-header p span 
-    text-transform: uppercase
+  #mobile-nav-recent-posts
+    margin-top: 20px;
+    padding: 10px 25px 20px 25px;
+    color: color-grey;
+    h3
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1em;
+      line-height: 1em;
+      font-weight: bold;
+    a
+      display: inline-block
+      margin-bottom: 10px
+      color: color-widget-link
+      text-decoration: none
 
 @media mq-mobile
-  .mobile-nav-link
-    display: block
-    color: color-default
-    text-decoration: none
-    padding: 25px 25px 5px
-    font-weight: bold
-    &:hover
-      color: #fff
-    &:before
-      font-family: fa-icon-solid
-      font-size: icon-mobile-size
-      width: icon-mobile-size
-      height: icon-mobile-size
-      margin-right: 12px;
 
   .sub-nav-link
     display: none
