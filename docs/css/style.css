@@ -214,6 +214,7 @@ body {
   }
 }
 .article-date,
+.article-comment-link,
 .article-category-link,
 .archive-year,
 .widget-title {
@@ -562,7 +563,18 @@ body {
 .article-date {
   float: left;
   margin-bottom: 8px;
+  margin-right: 30px;
   font-size: 12px;
+}
+.article-comment-link {
+  float: left;
+  font-size: 12px;
+  font-weight: normal;
+}
+.article-comment-link:before {
+  content: "\f27a";
+  font-family: FontAwesome5Solid;
+  padding-right: 8px;
 }
 .article-category {
   position: absolute;
@@ -776,24 +788,6 @@ a.article-title:hover {
 }
 .article-tag-list-link:before {
   content: "#";
-}
-.article-comment-link {
-  float: right;
-}
-.article-comment-link:before {
-  content: "\f27a";
-  font-family: FontAwesome5Solid;
-  padding-right: 8px;
-}
-.article-share-link {
-  cursor: pointer;
-  float: right;
-  margin-left: 20px;
-}
-.article-share-link:before {
-  content: "\f1e0";
-  font-family: FontAwesome5Solid;
-  padding-right: 6px;
 }
 #article-nav {
   position: relative;
