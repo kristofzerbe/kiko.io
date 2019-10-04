@@ -1,14 +1,14 @@
 ---
 title: 'A New Blog: Customizing Hexo'
 subtitle: 'Part Two of having fun with Hexo and GitHub Pages'
+date: 2019-09-24 12:10:00
+updated: 2019-09-26 15:00:00
 tags:
   - VS Code
   - Hexo
   - Blogging
 categories:
   - Tools
-date: 2019-09-24 12:10:00
-updated: 2019-09-26 15:00:00
 ---
 
 Hexo is a great tool to get quick results (see [Part One of this series](/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/)), when you decide to have a blog and its defaults are practical, but it's power lies in the possiblities of customization via plugins. On the [official plugin page](https://hexo.io/plugins/index.html), there are actually 302 plugins listed, but there are many more and no wish will be unsatisfied.

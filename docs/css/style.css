@@ -548,6 +548,9 @@ body {
 .article-inner {
   overflow: hidden;
 }
+.article-meta {
+  position: relative;
+}
 .article-meta:before,
 .article-meta:after {
   content: "";
@@ -560,16 +563,29 @@ body {
   float: left;
 }
 .article-category {
-  float: left;
-  line-height: 1em;
-  color: #ccc;
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  line-height: 2em;
   margin-left: 8px;
+  -webkit-box-shadow: 1px 2px 3px #ddd;
+  box-shadow: 1px 2px 3px #ddd;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: #bbb;
 }
-.article-category:before {
-  content: "\2022";
+.article-category.category-sql {
+  background-color: #82bfb5;
+}
+.article-category.category-tools {
+  background-color: #9cb7f0;
+}
+.article-category.category-javascript {
+  background-color: #e9c496;
 }
 .article-category-link {
   margin: 0 12px 1em;
+  color: #fff;
 }
 .article-header {
   padding: 20px 20px 0;
@@ -1464,7 +1480,7 @@ pre .javascript .function {
   list-style: decimal;
 }
 .widget.about {
-  padding-bottom: 1em;
+  padding: 1em 0;
 }
 .widget.about * {
   display: block;

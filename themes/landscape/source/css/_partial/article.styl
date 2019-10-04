@@ -7,22 +7,38 @@
 
 .article-meta
   clearfix()
+  position: relative;
 
 .article-date
   @extend $block-caption
   float: left
 
 .article-category
-  float: left
-  line-height: 1em
-  color: #ccc
-  margin-left: 8px
-  &:before
-    content: "\2022"
+  // float: left
+  // line-height: 1em
+  // color: #ccc
+  // margin-left: 8px
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  line-height: 2em;
+  margin-left: 8px;
+  box-shadow: 1px 2px 3px #ddd;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: #bbb;
+
+.article-category.category-sql
+  background-color: color-category-sql;
+.article-category.category-tools
+  background-color: color-category-tools;
+.article-category.category-javascript
+  background-color: color-category-javascript
 
 .article-category-link
   @extend $block-caption
   margin: 0 12px 1em
+  color: #ffff
 
 .article-header
   padding: article-padding article-padding 0

@@ -1,6 +1,7 @@
 ---
 title: 'A New Blog: VS Code, Hexo and GitHub Pages'
 subtitle: 'Part One of having fun with Hexo and GitHub Pages'
+date: 2019-09-24 12:00:00
 tags:
   - VS Code
   - Hexo
@@ -8,7 +9,6 @@ tags:
   - Blogging
 categories:
   - Tools
-date: 2019-09-24 12:00:00
 ---
 
 A few days ago I puzzled over a technical problem regarding SQL Server, Active Directory and Visual Studio Database Projects. With tips, hints and snippets from several websites I got it running and the solution was absolutely memorable. For myself and for others. Nothing is harder than to know 'you did this before...', but not to remember how.
