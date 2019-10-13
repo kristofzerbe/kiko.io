@@ -1,8 +1,10 @@
 ---
 title: 'A New Blog: Customizing Hexo'
 subtitle: 'Part Two of having fun with Hexo and GitHub Pages'
-date: 2019-09-24 12:10:00
-updated: 2019-09-26 15:00:00
+series: 'A New Blog'
+part: 2
+date: 2019-09-24
+updated: 2019-09-26
 tags:
   - VS Code
   - Hexo

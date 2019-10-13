@@ -1,7 +1,9 @@
 ---
 title: 'A New Blog: Blogging and Synching en route'
 subtitle: 'Part Three of having fun with Hexo and GitHub Pages'
-date: 2019-10-01 12:01
+series: 'A New Blog'
+part: 3
+date: 2019-10-01
 tags:
   - VS Code
   - Hexo
