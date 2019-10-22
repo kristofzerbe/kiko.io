@@ -74,6 +74,10 @@ body
   font: font-size font-sans
   -webkit-text-size-adjust: 100%
 
+@media prefers-dark
+  body
+    background: dark-color-background
+
 .outer
   clearfix()
   max-width: (column-width + gutter-width) * columns + gutter-width
@@ -106,7 +110,7 @@ body
   left: 0
   transition: 0.2s ease-out
   z-index: 1
-  background: color-background
+  // background: color-background
   .mobile-nav-on &
     left: mobile-nav-width
 

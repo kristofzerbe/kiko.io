@@ -15,6 +15,14 @@
     bottom: 0
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.2))
 
+@media prefers-dark
+  #header
+    border-bottom-color: dark-color-border
+    &:before
+      background: linear-gradient(rgba(0, 0, 0, 0.4), transparent)
+    &:after
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7))
+
 #header-outer
   height: 100%
   position: relative
@@ -32,6 +40,10 @@
   background: url(banner-url) center #000
   background-size: contain
   z-index: -1
+
+@media prefers-dark
+  #banner
+    filter: brightness(85%);
 
 #header-title
   text-align: center

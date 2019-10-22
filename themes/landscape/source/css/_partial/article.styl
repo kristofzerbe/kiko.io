@@ -5,6 +5,12 @@
   @extend $block
   overflow: hidden
 
+@media prefers-dark
+  .article-inner
+    background: dark-color-block
+    box-shadow: 1px 2px 3px dark-color-border
+    border: 1px solid dark-color-border
+
 .article-meta
   clearfix()
   position: relative;
@@ -17,6 +23,10 @@
   font-size: 12px
   letter-spacing: 1px
 
+@media prefers-dark
+  .article-date
+    color: dark-color-header
+
 .article-comment-link
   @extend $block-caption
   float: left
@@ -28,16 +38,20 @@
   .hide
     display: none
 
+@media prefers-dark
+  .article-comment-link
+    color: dark-color-header
+
 .article-category
   position: absolute;
-  top: 2px;
+  top: 8px;
   right: 12px;
   line-height: 2em;
   margin-left: 8px;
-  box-shadow: 1px 2px 3px #ddd;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  background-color: #bbb;
+  box-shadow: 1px 2px 3px color-border;
+  border: none;
+  border-radius: 2px;
+  background-color: color-header;
 
 .article-category.category-sql
   background-color: color-category-sql;
@@ -46,10 +60,26 @@
 .article-category.category-javascript
   background-color: color-category-javascript
 
+@media prefers-dark
+  .article-category
+    box-shadow: 1px 2px 3px dark-color-border;
+    background-color: dark-color-header;
+
+  .article-category.category-sql
+    background-color: dark-color-category-sql;
+  .article-category.category-tools
+    background-color: dark-color-category-tools;
+  .article-category.category-javascript
+    background-color: dark-color-category-javascript
+
 .article-category-link
   @extend $block-caption
   margin: 0 12px 1em
-  color: #ffff
+  color: color-category-link
+
+@media prefers-dark
+  .article-category-link
+    color: dark-color-category-link
 
 .article-header
   padding: article-padding article-padding 0
@@ -63,6 +93,12 @@
   transition: color 0.2s
   a&:hover
     color: color-link
+
+@media prefers-dark
+  .article-title
+    color: dark-color-default
+    a&:hover
+      color: dark-color-link
 
 .article-subtitle
   font-size: 1.2em
@@ -152,6 +188,20 @@
       height: 100%
       margin-top: 0
 
+@media prefers-dark
+  .article-entry
+    color: dark-color-default
+    a
+      color: dark-color-link
+    img, video
+      filter: brightness(85%);
+    th
+      border-bottom: 3px solid dark-color-border-article
+    td
+      border-bottom: 1px solid dark-color-border-article
+    .caption
+      color: color-grey    
+
 .article-more-link a
   display: inline-block
   line-height: 1em
@@ -162,8 +212,14 @@
   text-decoration: none
   &:hover
     background: color-link
-    color: #fff
     text-decoration: none
+
+@media prefers-dark
+  .article-more-link a
+    background: dark-color-border-article
+    color: dark-color-grey
+    &:hover
+      background: dark-color-background
 
 .article-footer
   clearfix()
@@ -177,6 +233,14 @@
     text-decoration: none
     &:hover
       color: color-default
+
+@media prefers-dark
+  .article-footer
+    border-top-color: dark-color-border-article
+    a
+      color: dark-color-grey
+      &:hover
+        color: dark-color-default
 
 .article-tag-list-item
   float: left
@@ -205,7 +269,7 @@
       content: ""
       border-radius: 50%
       background: color-grey
-      box-shadow: 0 1px 2px #fff
+      // box-shadow: 0 1px 2px #fff
 
 .article-nav-link-wrap
   text-decoration: none
@@ -246,80 +310,80 @@
   line-height: line-height
   margin-top: 0.5em
 
-.article-share-box
-  position: absolute
-  display: none
-  background: #fff
-  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2)
-  border-radius: 3px
-  margin-left: -145px
-  overflow: hidden
-  z-index: 1
-  &.on
-    display: block
+// .article-share-box
+//   position: absolute
+//   display: none
+//   background: #fff
+//   box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2)
+//   border-radius: 3px
+//   margin-left: -145px
+//   overflow: hidden
+//   z-index: 1
+//   &.on
+//     display: block
 
-.article-share-input
-  width: 100%
-  background: none
-  box-sizing: border-box
-  font: 14px font-sans
-  padding: 0 15px
-  color: color-default
-  outline: none
-  border: 1px solid color-border-article
-  border-radius: 3px 3px 0 0
-  height: 36px
-  line-height: 36px
+// .article-share-input
+//   width: 100%
+//   background: none
+//   box-sizing: border-box
+//   font: 14px font-sans
+//   padding: 0 15px
+//   color: color-default
+//   outline: none
+//   border: 1px solid color-border-article
+//   border-radius: 3px 3px 0 0
+//   height: 36px
+//   line-height: 36px
 
-.article-share-links
-  clearfix()
-  background: color-background
+// .article-share-links
+//   clearfix()
+//   background: color-background
 
-$article-share-link
-  width: 64px
-  height: 36px
-  display: block
-  float: left
-  position: relative
-  color: #999
-  &:before
-    font-size: 20px
-    font-family: fa-icon-brands
-    absolute-center(@font-size)
-    text-align: center
-  &:hover
-    color: #fff
+// $article-share-link
+//   width: 64px
+//   height: 36px
+//   display: block
+//   float: left
+//   position: relative
+//   color: #999
+//   &:before
+//     font-size: 20px
+//     font-family: fa-icon-brands
+//     absolute-center(@font-size)
+//     text-align: center
+//   &:hover
+//     color: #fff
 
-.article-share-twitter
-  @extend $article-share-link
-  &:before
-    content: "\f099"
-  &:hover
-    background: color-twitter
+// .article-share-twitter
+//   @extend $article-share-link
+//   &:before
+//     content: "\f099"
+//   &:hover
+//     background: color-twitter
 
-.article-share-facebook
-  @extend $article-share-link
-  &:before
-    content: "\f082"
-  &:hover
-    background: color-facebook
+// .article-share-facebook
+//   @extend $article-share-link
+//   &:before
+//     content: "\f082"
+//   &:hover
+//     background: color-facebook
 
-.article-share-pinterest
-  @extend $article-share-link
-  &:before
-    content: "\f0d2"
-  &:hover
-    background: color-pinterest
+// .article-share-pinterest
+//   @extend $article-share-link
+//   &:before
+//     content: "\f0d2"
+//   &:hover
+//     background: color-pinterest
 
-.article-share-google
-  @extend $article-share-link
-  &:before
-    content: "\f0d5"
-  &:hover
-    background: color-google
+// .article-share-google
+//   @extend $article-share-link
+//   &:before
+//     content: "\f0d5"
+//   &:hover
+//     background: color-google
 
 .article-gallery
-  background: #000
+  background: color-default
   position: relative
 
 .article-gallery-photos
