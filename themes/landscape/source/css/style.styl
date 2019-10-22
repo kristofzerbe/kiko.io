@@ -70,12 +70,14 @@ html, body, #container
   height: 100%
 
 body
+  color: color-foreground
   background: color-background
   font: font-size font-sans
   -webkit-text-size-adjust: 100%
 
 @media prefers-dark
   body
+    color: dark-color-foreground
     background: dark-color-background
 
 .outer
@@ -110,9 +112,13 @@ body
   left: 0
   transition: 0.2s ease-out
   z-index: 1
-  // background: color-background
+  background: color-background
   .mobile-nav-on &
     left: mobile-nav-width
+
+@media prefers-dark
+    #wrap
+      background: dark-color-background
 
 if sidebar and sidebar isnt bottom
   #main

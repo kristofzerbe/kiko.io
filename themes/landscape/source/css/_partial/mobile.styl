@@ -5,9 +5,13 @@
     left: 0
     width: mobile-nav-width
     height: 100%
-    background: color-mobile-nav-background
+    background: color-block
     border-right: 1px solid #fff
     box-shadow: inset -12px 0px 14px -18px rgba(0,0,0,1)
+
+  @media prefers-dark
+    #mobile-nav
+      background: dark-color-block
 
   #mobile-nav-header
     padding: 10px 25px 20px 25px
@@ -33,6 +37,14 @@
       span 
         text-transform: uppercase
 
+  @media prefers-dark
+    #mobile-nav-header
+      background-color: dark-color-background
+      img.avatar
+        filter: brightness(85%)
+      p
+        color: dark-color-grey
+
   #mobile-nav-menu
     padding: 20px 25px 0 25px
     .mobile-nav-link
@@ -50,10 +62,15 @@
         height: icon-mobile-size
         margin-right: 12px;
 
+  @media prefers-dark
+    #mobile-nav-menu
+      .mobile-nav-link
+        color: dark-color-default
+
   #mobile-nav-recent-posts
     margin-top: 20px;
     padding: 10px 25px 20px 25px;
-    color: color-grey;
+    color: color-header;
     h3
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -65,6 +82,12 @@
       margin-bottom: 10px
       color: color-widget-link
       text-decoration: none
+
+  @media prefers-dark
+    #mobile-nav-recent-posts
+      color: dark-color-header;
+      a
+        color: dark-color-widget-link
 
 @media mq-mobile
 
