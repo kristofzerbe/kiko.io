@@ -14,6 +14,7 @@ date: 2019-10-23 15:28:04
 Due to the fact, that nowadays everybody is talking about Dark Modes for Browsers and Operating Systems, in order to save battery or for easier reading (uhh, really?), I decided my blog should support that.
 
 ![Switching Dark Mode in Windows 10](Hexo-and-the-Dark-Mode/screen-recording-1.gif)
+<!-- more -->
 
 Starting point is the new media query ``prefers-color-scheme``, which is actually supported by all modern browsers.
 
