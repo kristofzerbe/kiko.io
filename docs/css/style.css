@@ -1523,15 +1523,20 @@ pre .javascript .function {
     width: 280px;
     height: 100%;
     background: #fff;
-    border-right: 1px solid #fff;
+  }
+  #mobile-nav:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    content: '';
     -webkit-box-shadow: inset -12px 0px 14px -18px #000;
     box-shadow: inset -12px 0px 14px -18px #000;
   }
   #mobile-nav-header {
     padding: 10px 25px 20px 25px;
     background-color: #f1f1f1;
-    -webkit-box-shadow: inset -12px 0px 14px -18px #000;
-    box-shadow: inset -12px 0px 14px -18px #000;
   }
   #mobile-nav-header img.avatar {
     width: 64px;
@@ -1561,7 +1566,7 @@ pre .javascript .function {
   }
   #mobile-nav-menu .mobile-nav-link {
     display: block;
-    color: #555;
+    color: #111;
     text-decoration: none;
     padding: 10px 0;
     font-weight: bold;
@@ -1622,7 +1627,7 @@ pre .javascript .function {
 }
 @media screen and (max-width: 479px) and (prefers-color-scheme: dark) {
   .mobile-nav-link {
-    color: #dadada;
+    color: #eee !important;
   }
 }
 @media screen and (max-width: 479px) and (prefers-color-scheme: dark) {
@@ -1632,7 +1637,7 @@ pre .javascript .function {
 }
 @media screen and (max-width: 479px) and (prefers-color-scheme: dark) {
   a {
-    color: #ddd;
+    color: #ddd !important;
   }
 }
 @media screen and (min-width: 768px) {
