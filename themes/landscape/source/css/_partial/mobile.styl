@@ -6,16 +6,16 @@
     width: mobile-nav-width
     height: 100%
     background: color-block
+    @media prefers-dark
+      background: dark-color-block
     border-right: 1px solid #fff
     box-shadow: inset -12px 0px 14px -18px rgba(0,0,0,1)
-
-  @media prefers-dark
-    #mobile-nav
-      background: dark-color-block
 
   #mobile-nav-header
     padding: 10px 25px 20px 25px
     background-color: color-background
+    @media prefers-dark
+      background-color: dark-color-background
     box-shadow: inset -12px 0px 14px -18px #000
     img.avatar
       width: 64px
@@ -23,6 +23,8 @@
       position: absolute
       top: 15px;
       right: 20px;
+      @media prefers-dark
+        filter: brightness(85%)
     h1 
       font-family: font-sans
       font-variant: small-caps
@@ -32,24 +34,20 @@
       letter-spacing: 2px
     p
       color: color-grey
+      @media prefers-dark
+        color: dark-color-grey
       padding-left: 2px
       padding-top: 4px
       span 
         text-transform: uppercase
 
-  @media prefers-dark
-    #mobile-nav-header
-      background-color: dark-color-background
-      img.avatar
-        filter: brightness(85%)
-      p
-        color: dark-color-grey
-
   #mobile-nav-menu
     padding: 20px 25px 0 25px
     .mobile-nav-link
       display: block
-      color: color-default
+      color: color-foreground
+      @media prefers-dark
+        color: dark-color-foreground !important
       text-decoration: none
       padding: 10px 0
       font-weight: bold
@@ -62,15 +60,12 @@
         height: icon-mobile-size
         margin-right: 12px;
 
-  @media prefers-dark
-    #mobile-nav-menu
-      .mobile-nav-link
-        color: dark-color-default
-
   #mobile-nav-recent-posts
-    margin-top: 20px;
-    padding: 10px 25px 20px 25px;
-    color: color-header;
+    margin-top: 20px
+    padding: 10px 25px 20px 25px
+    color: color-header
+    @media prefers-dark
+      color: dark-color-header
     h3
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -81,13 +76,9 @@
       display: inline-block
       margin-bottom: 10px
       color: color-widget-link
+      @media prefers-dark
+        color: dark-color-widget-link !important
       text-decoration: none
-
-  @media prefers-dark
-    #mobile-nav-recent-posts
-      color: dark-color-header;
-      a
-        color: dark-color-widget-link
 
 @media mq-mobile
 

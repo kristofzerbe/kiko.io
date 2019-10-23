@@ -2,6 +2,8 @@
   height: banner-height
   position: relative
   border-bottom: 1px solid color-border
+  @media prefers-dark
+    border-bottom-color: dark-color-border
   &:before, &:after
     content: ""
     position: absolute
@@ -11,16 +13,12 @@
   &:before
     top: 0
     background: linear-gradient(rgba(0, 0, 0, 0.2), transparent)
+    @media prefers-dark
+      background: linear-gradient(rgba(0, 0, 0, 0.4), transparent)
   &:after
     bottom: 0
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.2))
-
-@media prefers-dark
-  #header
-    border-bottom-color: dark-color-border
-    &:before
-      background: linear-gradient(rgba(0, 0, 0, 0.4), transparent)
-    &:after
+    @media prefers-dark
       background: linear-gradient(transparent, rgba(0, 0, 0, 0.7))
 
 #header-outer
@@ -40,9 +38,7 @@
   background: url(banner-url) center #000
   background-size: contain
   z-index: -1
-
-@media prefers-dark
-  #banner
+  @media prefers-dark
     filter: brightness(75%);
 
 #header-title

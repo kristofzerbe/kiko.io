@@ -47,13 +47,20 @@ $line-numbers
     font-family: font-mono
   code
     color: highlight-inlinecode-foreground
+    @media prefers-dark
+      color: dark-highlight-inlinecode-foreground
     padding: 0 0.3em
   pre
     @extend $code-block
     background: highlight-background
     color: highlight-foreground
+    @media prefers-dark
+      background: dark-highlight-background
+      color: dark-highlight-foreground
     code
       color: highlight-foreground
+      @media prefers-dark
+        color: dark-highlight-foreground
       background: none
       text-shadow: none
       padding: 0
@@ -61,6 +68,9 @@ $line-numbers
     @extend $code-block
     background: highlight-background
     color: highlight-foreground
+    @media prefers-dark
+      background: dark-highlight-background
+      color: dark-highlight-foreground
     pre
       border: none
       margin: 0
@@ -82,6 +92,8 @@ $line-numbers
     .gutter pre
       @extend $line-numbers
       color: highlight-line-numbers
+      @media prefers-dark
+        color: dark-highlight-line-numbers
       text-align: right
       padding-right: 20px
     .line
@@ -127,27 +139,12 @@ $line-numbers
           &:hover
             text-decoration: underline
 
-@media prefers-dark
-  .article-entry
-    pre
-      @extend $dark-code-block
-      background: dark-highlight-background
-      color: dark-highlight-foreground
-      code
-        color: dark-highlight-foreground
-    .highlight
-      @extend $dark-code-block
-      background: dark-highlight-background
-      color: dark-highlight-foreground
-    code
-      color: dark-highlight-inlinecode-foreground
-    .gutter pre
-      color: dark-highlight-line-numbers
-
 pre
   .comment
   .title
     color: highlight-comment
+    @media prefers-dark
+      color: dark-highlight-comment
   .variable
   .attribute
   .tag
@@ -161,6 +158,8 @@ pre
   .css .class
   .css .pseudo
     color: highlight-red
+    @media prefers-dark
+      color: dark-highlight-red
   .number
   .preprocessor
   .built_in
@@ -168,10 +167,14 @@ pre
   .params
   .constant
     color: highlight-orange
+    @media prefers-dark
+      color: dark-highlight-orange
   .class
   .ruby .class .title
   .css .rules .attribute
     color: highlight-green
+    @media prefers-dark
+      color: dark-highlight-green
   .string
   .value
   .inheritance
@@ -179,8 +182,12 @@ pre
   .ruby .symbol
   .xml .cdata
     color: highlight-blue
+    @media prefers-dark
+      color: dark-highlight-blue
   .css .hexcolor
     color: highlight-aqua
+    @media prefers-dark
+      color: dark-highlight-aqua
   .function
   .python .decorator
   .python .title
@@ -190,58 +197,10 @@ pre
   .javascript .title
   .coffeescript .title
     color: highlight-blue
+    @media prefers-dark
+      color: dark-highlight-blue
   .keyword
   .javascript .function
     color: highlight-purple
-
-@media prefers-dark
-  pre
-    .comment
-    .title
-      color: dark-highlight-comment
-    .variable
-    .attribute
-    .tag
-    .regexp
-    .ruby .constant
-    .xml .tag .title
-    .xml .pi
-    .xml .doctype
-    .html .doctype
-    .css .id
-    .css .class
-    .css .pseudo
-      color: dark-highlight-red
-    .number
-    .preprocessor
-    .built_in
-    .literal
-    .params
-    .constant
-      color: dark-highlight-orange
-    .class
-    .ruby .class .title
-    .css .rules .attribute
-      color: dark-highlight-green
-    .string
-    .value
-    .inheritance
-    .header
-    .ruby .symbol
-    .xml .cdata
-      color: dark-highlight-blue
-    .css .hexcolor
-      color: dark-highlight-aqua
-    .function
-    .python .decorator
-    .python .title
-    .ruby .function .title
-    .ruby .title .keyword
-    .perl .sub
-    .javascript .title
-    .coffeescript .title
-      color: highlight-blue
-    .keyword
-    .javascript .function
+    @media prefers-dark
       color: dark-highlight-purple
-

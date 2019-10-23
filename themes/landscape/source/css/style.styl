@@ -72,13 +72,11 @@ html, body, #container
 body
   color: color-foreground
   background: color-background
-  font: font-size font-sans
-  -webkit-text-size-adjust: 100%
-
-@media prefers-dark
-  body
+  @media prefers-dark
     color: dark-color-foreground
     background: dark-color-background
+  font: font-size font-sans
+  -webkit-text-size-adjust: 100%
 
 .outer
   clearfix()
@@ -113,12 +111,10 @@ body
   transition: 0.2s ease-out
   z-index: 1
   background: color-background
+  @media prefers-dark
+      background: dark-color-background
   .mobile-nav-on &
     left: mobile-nav-width
-
-@media prefers-dark
-    #wrap
-      background: dark-color-background
 
 if sidebar and sidebar isnt bottom
   #main

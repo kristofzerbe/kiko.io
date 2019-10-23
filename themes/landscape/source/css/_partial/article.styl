@@ -5,11 +5,11 @@
   @extend $block
   overflow: hidden
 
-@media prefers-dark
-  .article-inner
-    background: dark-color-block
-    box-shadow: 1px 2px 3px dark-color-border
-    border: 1px solid dark-color-border
+// @media prefers-dark
+//   .article-inner
+//     background: dark-color-block
+//     box-shadow: 1px 2px 3px dark-color-border
+//     border: 1px solid dark-color-border
 
 .article-meta
   clearfix()
@@ -23,9 +23,9 @@
   font-size: 12px
   letter-spacing: 1px
 
-@media prefers-dark
-  .article-date
-    color: dark-color-header
+// @media prefers-dark
+//   .article-date
+//     color: dark-color-header
 
 .article-comment-link
   @extend $block-caption
@@ -38,9 +38,9 @@
   .hide
     display: none
 
-@media prefers-dark
-  .article-comment-link
-    color: dark-color-header
+// @media prefers-dark
+//   .article-comment-link
+//     color: dark-color-header
 
 .article-category
   position: absolute;
@@ -52,33 +52,30 @@
   border: none;
   border-radius: 2px;
   background-color: color-header;
-
-.article-category.category-sql
-  background-color: color-category-sql;
-.article-category.category-tools
-  background-color: color-category-tools;
-.article-category.category-javascript
-  background-color: color-category-javascript
-
-@media prefers-dark
-  .article-category
+  @media prefers-dark  
     box-shadow: 1px 2px 3px dark-color-border;
     background-color: dark-color-header;
 
-  .article-category.category-sql
+.article-category.category-sql
+  background-color: color-category-sql;
+  @media prefers-dark  
     background-color: dark-color-category-sql;
-  .article-category.category-tools
+
+.article-category.category-tools
+  background-color: color-category-tools;
+  @media prefers-dark  
     background-color: dark-color-category-tools;
-  .article-category.category-javascript
+
+.article-category.category-javascript
+  background-color: color-category-javascript
+  @media prefers-dark  
     background-color: dark-color-category-javascript
 
 .article-category-link
   @extend $block-caption
   margin: 0 12px 1em
   color: color-category-link
-
-@media prefers-dark
-  .article-category-link
+  @media prefers-dark
     color: dark-color-category-link
 
 .article-header
@@ -88,16 +85,14 @@
   text-decoration: none
   font-size: 2em
   font-weight: bold
-  color: color-default
   line-height: line-height-title
   transition: color 0.2s
+  color: color-default
+  @media prefers-dark
+    color: dark-color-default
   a&:hover
     color: color-link
-
-@media prefers-dark
-  .article-title
-    color: dark-color-default
-    a&:hover
+    @media prefers-dark
       color: dark-color-link
 
 .article-subtitle
@@ -109,6 +104,8 @@
   @extend $base-style
   clearfix()
   color: color-default
+  @media prefers-dark
+    color: dark-color-default
   padding: 0 article-padding
   p, table
     line-height: line-height
@@ -120,6 +117,8 @@
     margin: line-height-title 0
   a
     color: color-link
+    @media prefers-dark
+      color: dark-color-link
     text-decoration: none
     &:hover
       text-decoration: underline
@@ -131,6 +130,8 @@
     height: auto
     display: block
     margin: auto
+    @media prefers-dark
+      filter: brightness(85%)
   iframe
     border: none
   table
@@ -139,11 +140,15 @@
     border-spacing: 0
   th
     font-weight: bold
-    border-bottom: 3px solid color-border-article
     padding-bottom: 0.5em
+    border-bottom: 3px solid color-border-article
+    @media prefers-dark
+      border-bottom: 3px solid dark-color-border-article
   td
-    border-bottom: 1px solid color-border-article
     padding: 10px 0
+    border-bottom: 1px solid color-border-article
+    @media prefers-dark
+      border-bottom: 3px solid dark-color-border-article
   blockquote
     font-family: font-serif
     font-size: 1.4em
@@ -169,6 +174,8 @@
       margin-left: 1em
   .caption
     color: color-grey
+    @media prefers-dark
+      color: dark-color-grey
     display: block
     font-size: 0.9em
     margin-top: 0.5em
@@ -188,20 +195,6 @@
       height: 100%
       margin-top: 0
 
-@media prefers-dark
-  .article-entry
-    color: dark-color-default
-    a
-      color: dark-color-link
-    img, video
-      filter: brightness(85%);
-    th
-      border-bottom: 3px solid dark-color-border-article
-    td
-      border-bottom: 1px solid dark-color-border-article
-    .caption
-      color: color-grey    
-
 .article-more-link a
   display: inline-block
   line-height: 1em
@@ -209,16 +202,14 @@
   padding: 10px
   background: color-border-article
   color: color-grey
-  text-decoration: none
-  &:hover
-    background: color-link
-    text-decoration: none
-
-@media prefers-dark
-  .article-more-link a
+  @media prefers-dark
     background: dark-color-border-article
     color: dark-color-grey
-    &:hover
+  text-decoration: none
+  &:hover    
+    text-decoration: none
+    background: color-link
+    @media prefers-dark
       background: dark-color-background
 
 .article-footer
@@ -226,20 +217,18 @@
   font-size: 0.85em
   line-height: line-height
   border-top: 1px solid color-border-article
+  @media prefers-dark
+    border-top-color: dark-color-border-article
   padding-top: line-height
   margin: 0 article-padding article-padding
   a
-    color: color-grey
     text-decoration: none
+    color: color-grey
+    @media prefers-dark
+      color: dark-color-grey
     &:hover
       color: color-default
-
-@media prefers-dark
-  .article-footer
-    border-top-color: dark-color-border-article
-    a
-      color: dark-color-grey
-      &:hover
+      @media prefers-dark
         color: dark-color-default
 
 .article-tag-list-item
@@ -384,6 +373,8 @@
 
 .article-gallery
   background: color-default
+  @media prefers-dark
+    background: dark-color-default
   position: relative
 
 .article-gallery-photos
