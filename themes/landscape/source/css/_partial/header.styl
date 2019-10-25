@@ -2,7 +2,9 @@
   height: banner-height
   position: relative
   border-bottom: 1px solid color-border
-  @media prefers-dark
+  // @media prefers-dark
+  //   border-bottom-color: dark-color-border
+  /[data-theme="dark"] &
     border-bottom-color: dark-color-border
   &:before, &:after
     content: ""
@@ -13,12 +15,16 @@
   &:before
     top: 0
     background: linear-gradient(rgba(0, 0, 0, 0.2), transparent)
-    @media prefers-dark
+    // @media prefers-dark
+    //   background: linear-gradient(rgba(0, 0, 0, 0.4), transparent)
+    /[data-theme="dark"] &
       background: linear-gradient(rgba(0, 0, 0, 0.4), transparent)
   &:after
     bottom: 0
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.2))
-    @media prefers-dark
+    // @media prefers-dark
+    //   background: linear-gradient(transparent, rgba(0, 0, 0, 0.7))
+    /[data-theme="dark"] &
       background: linear-gradient(transparent, rgba(0, 0, 0, 0.7))
 
 #header-outer
@@ -38,8 +44,10 @@
   background: url(banner-url) center #000
   background-size: contain
   z-index: -1
-  @media prefers-dark
-    filter: brightness(75%);
+  // @media prefers-dark
+  //   filter: brightness(75%)
+  /[data-theme="dark"] &
+    filter: brightness(75%)
 
 #header-title
   text-align: center
@@ -108,7 +116,7 @@ $nav-link
 #main-nav-toggle
   display: none
   &:before
-    content: "\f0c9"
+    content: icon-bars
   @media mq-mobile
     display: block
 
@@ -122,23 +130,23 @@ $nav-link
     font-size: icon-home-size
     width: icon-home-size
     height: icon-home-size
-    content: "\f060"
+    content: icon-arrow-left
 
 #nav-home-link
   &:before
-    content: "\f015"
+    content: icon-home
 
 #nav-archives-link
   &:before
-    content: "\f187"
+    content: icon-box
 
 #nav-rss-link
   &:before
-    content: "\f09e"
+    content: icon-rss
 
 #nav-search-btn
   &:before
-    content: "\f002"
+    content: icon-search
 
 #search-form-wrap
   position: absolute

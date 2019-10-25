@@ -680,9 +680,15 @@
       <footer id="footer">
   
   <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 <a href="https://github.com/kristofzerbe">Kristof Zerbe</a><br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/" target="_blank">GitHub</a>
+    <div class="inner">
+        <div id="footer-info">
+          &copy; 2019 <a href="https://github.com/kristofzerbe">Kristof Zerbe</a><br>
+          Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/" target="_blank">GitHub</a>
+        </div>
+        <div id="footer-theme">          
+          <input type="checkbox" id="theme-switch">
+          <label for="theme-switch"></label>
+        </div>
     </div>
   </div>
 </footer>
@@ -741,7 +747,8 @@
     </div>
   
 </nav>
-    
+    <!-- DISQUS -->
+
 <script>
   var disqus_shortname = 'kiko-io';
   
@@ -757,20 +764,30 @@
 </script>
 
 
+<!-- LIBRARIES -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
+<!-- FANCYBOX -->
 
   <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
+<!-- MAIN-SCRIPT (THEME.LANDSCAPE.SOURCE.JS) -->
 <script src="/js/script.js"></script>
 
+<!-- ANALYTICS -->
+<!-- 
+ -->
 
+<!-- DARK MODE TOGGLE -->
+<script src="/js/dark-mode-toggle.js"></script>
 
-<script>addBackToTop({
-  diameter: 30
-})
+<!-- BACK-TO-TOP -->
+<script>
+  addBackToTop({
+    diameter: 30
+  })
 </script>
 <style>
   #back-to-top {
@@ -790,14 +807,6 @@
   }
 </style>
 
-<script src="//cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@2.0.0/dist/main.js"></script> 
-<script>
-    infiniteScroll({
-      showNum: 5,
-      style: 'line-scale',
-      color: '#025ab1'
-    })
-</script>
   </div>
 </body>
 </html>

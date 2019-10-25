@@ -117,7 +117,7 @@
     setTimeout(function(){
       isMobileNavAnim = false;
     }, mobileNavAnimDuration);
-  }
+  };
 
   $('#main-nav-toggle').on('click', function(){
     if (isMobileNavAnim) return;

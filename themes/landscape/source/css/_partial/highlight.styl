@@ -47,19 +47,26 @@ $line-numbers
     font-family: font-mono
   code
     color: highlight-inlinecode-foreground
-    @media prefers-dark
+    // @media prefers-dark
+    //   color: dark-highlight-inlinecode-foreground
+    /[data-theme="dark"] &
       color: dark-highlight-inlinecode-foreground
     padding: 0 0.3em
   pre
     @extend $code-block
     background: highlight-background
     color: highlight-foreground
-    @media prefers-dark
+    // @media prefers-dark
+    //   background: dark-highlight-background
+    //   color: dark-highlight-foreground
+    /[data-theme="dark"] &
       background: dark-highlight-background
       color: dark-highlight-foreground
     code
       color: highlight-foreground
-      @media prefers-dark
+      // @media prefers-dark
+      //   color: dark-highlight-foreground
+      /[data-theme="dark"] &
         color: dark-highlight-foreground
       background: none
       text-shadow: none
@@ -68,7 +75,10 @@ $line-numbers
     @extend $code-block
     background: highlight-background
     color: highlight-foreground
-    @media prefers-dark
+    // @media prefers-dark
+    //   background: dark-highlight-background
+    //   color: dark-highlight-foreground
+    /[data-theme="dark"] &
       background: dark-highlight-background
       color: dark-highlight-foreground
     pre
@@ -92,7 +102,9 @@ $line-numbers
     .gutter pre
       @extend $line-numbers
       color: highlight-line-numbers
-      @media prefers-dark
+      // @media prefers-dark
+      //   color: dark-highlight-line-numbers
+      /[data-theme="dark"] &
         color: dark-highlight-line-numbers
       text-align: right
       padding-right: 20px
@@ -143,7 +155,9 @@ pre
   .comment
   .title
     color: highlight-comment
-    @media prefers-dark
+    // @media prefers-dark
+    //   color: dark-highlight-comment
+    /[data-theme="dark"] &
       color: dark-highlight-comment
   .variable
   .attribute
@@ -158,7 +172,9 @@ pre
   .css .class
   .css .pseudo
     color: highlight-red
-    @media prefers-dark
+    // @media prefers-dark
+    //   color: dark-highlight-red
+    /[data-theme="dark"] &
       color: dark-highlight-red
   .number
   .preprocessor
@@ -167,13 +183,17 @@ pre
   .params
   .constant
     color: highlight-orange
-    @media prefers-dark
+    // @media prefers-dark
+    //   color: dark-highlight-orange
+    /[data-theme="dark"] &
       color: dark-highlight-orange
   .class
   .ruby .class .title
   .css .rules .attribute
     color: highlight-green
-    @media prefers-dark
+    // @media prefers-dark
+    //   color: dark-highlight-green
+    /[data-theme="dark"] &
       color: dark-highlight-green
   .string
   .value
@@ -182,11 +202,15 @@ pre
   .ruby .symbol
   .xml .cdata
     color: highlight-blue
-    @media prefers-dark
+    // @media prefers-dark
+    //   color: dark-highlight-blue
+    /[data-theme="dark"] &
       color: dark-highlight-blue
   .css .hexcolor
     color: highlight-aqua
-    @media prefers-dark
+    // @media prefers-dark
+    //   color: dark-highlight-aqua
+    /[data-theme="dark"] &
       color: dark-highlight-aqua
   .function
   .python .decorator
@@ -197,10 +221,14 @@ pre
   .javascript .title
   .coffeescript .title
     color: highlight-blue
-    @media prefers-dark
+    // @media prefers-dark
+    //   color: dark-highlight-blue
+    /[data-theme="dark"] &
       color: dark-highlight-blue
   .keyword
   .javascript .function
     color: highlight-purple
-    @media prefers-dark
+    // @media prefers-dark
+    //   color: dark-highlight-purple
+    /[data-theme="dark"] &
       color: dark-highlight-purple

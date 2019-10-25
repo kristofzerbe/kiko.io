@@ -9,11 +9,12 @@
 
 .archive-year
   @extend $block-caption
-
-@media prefers-dark
-  .archive-year
+  color: color-header
+  // @media prefers-dark
+  //   color: dark-color-header
+  /[data-theme="dark"] &
     color: dark-color-header
-
+      
 .archives
   column-gap: 10px
   @media mq-tablet
@@ -28,9 +29,14 @@
   @extend $block
   padding: 10px
   margin-bottom: 15px
-
-@media prefers-dark
-  .archive-article-inner
+  background: color-block
+  box-shadow: 1px 2px 3px color-border
+  border: 1px solid color-border
+  // @media prefers-dark
+  //   background: dark-color-block
+  //   box-shadow: 1px 2px 3px dark-color-border
+  //   border: 1px solid dark-color-border
+  /[data-theme="dark"] &
     background: dark-color-block
     box-shadow: 1px 2px 3px dark-color-border
     border: 1px solid dark-color-border
@@ -39,15 +45,17 @@
   text-decoration: none
   font-weight: bold
   color: color-default
+  // @media prefers-dark
+  //   color: dark-color-default
+  /[data-theme="dark"] &
+    color: dark-color-default
   transition: color 0.2s
   line-height: line-height
   &:hover
     color: color-link
-
-@media prefers-dark
-  .archive-article-title
-    color: dark-color-default
-    &:hover
+    // @media prefers-dark
+    //   color: dark-color-link
+    /[data-theme="dark"] &
       color: dark-color-link
 
 .archive-article-footer

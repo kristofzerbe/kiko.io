@@ -3,9 +3,15 @@
     <%- partial('_partial/sidebar') %>
   <% } %>
   <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; <%= date(new Date(), 'YYYY') %> <a href="https://github.com/kristofzerbe"><%= config.author || config.title %></a><br>
-      <%= __('powered_by') %> <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/" target="_blank">GitHub</a>
+    <div class="inner">
+        <div id="footer-info">
+          &copy; <%= date(new Date(), 'YYYY') %> <a href="https://github.com/kristofzerbe"><%= config.author || config.title %></a><br>
+          <%= __('powered_by') %> <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/" target="_blank">GitHub</a>
+        </div>
+        <div id="footer-theme">          
+          <input type="checkbox" id="theme-switch">
+          <label for="theme-switch"></label>
+        </div>
     </div>
   </div>
 </footer>
