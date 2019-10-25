@@ -2,8 +2,6 @@
   height: banner-height
   position: relative
   border-bottom: 1px solid color-border
-  // @media prefers-dark
-  //   border-bottom-color: dark-color-border
   /[data-theme="dark"] &
     border-bottom-color: dark-color-border
   &:before, &:after
@@ -15,15 +13,11 @@
   &:before
     top: 0
     background: linear-gradient(rgba(0, 0, 0, 0.2), transparent)
-    // @media prefers-dark
-    //   background: linear-gradient(rgba(0, 0, 0, 0.4), transparent)
     /[data-theme="dark"] &
       background: linear-gradient(rgba(0, 0, 0, 0.4), transparent)
   &:after
     bottom: 0
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.2))
-    // @media prefers-dark
-    //   background: linear-gradient(transparent, rgba(0, 0, 0, 0.7))
     /[data-theme="dark"] &
       background: linear-gradient(transparent, rgba(0, 0, 0, 0.7))
 
@@ -44,8 +38,6 @@
   background: url(banner-url) center #000
   background-size: contain
   z-index: -1
-  // @media prefers-dark
-  //   filter: brightness(75%)
   /[data-theme="dark"] &
     filter: brightness(75%)
 

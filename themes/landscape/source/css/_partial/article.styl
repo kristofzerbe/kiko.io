@@ -7,10 +7,6 @@
   background: color-block
   box-shadow: 1px 2px 3px color-border
   border: 1px solid color-border
-  // @media prefers-dark
-  //   background: dark-color-block
-  //   box-shadow: 1px 2px 3px dark-color-border
-  //   border-color: dark-color-border
   /[data-theme="dark"] &
     background: dark-color-block
     box-shadow: 1px 2px 3px dark-color-border
@@ -23,16 +19,8 @@
 .article-date
   @extend $block-caption
   color: color-header
-  // @media prefers-dark
-  //   color: dark-color-header
-  //   background: dark-color-block
-  //   box-shadow: 1px 2px 3px dark-color-border
-  //   border-color: dark-color-border
   /[data-theme="dark"] &
     color: dark-color-header
-    background: dark-color-block
-    box-shadow: 1px 2px 3px dark-color-border
-    border-color: dark-color-border
   float: left
   margin-bottom: 8px
   margin-right: 20px
@@ -42,8 +30,6 @@
 .article-comment-link
   @extend $block-caption
   color: color-header
-  // @media prefers-dark
-  //   color: dark-color-header
   /[data-theme="dark"] &
     color: dark-color-header
   float: left
@@ -65,31 +51,22 @@
   border: none;
   border-radius: 2px;
   background-color: color-header;
-  // @media prefers-dark  
-  //   box-shadow: 1px 2px 3px dark-color-border;
-  //   background-color: dark-color-header;
   /[data-theme="dark"] &
     box-shadow: 1px 2px 3px dark-color-border;
     background-color: dark-color-header;
 
 .article-category.category-sql
   background-color: color-category-sql;
-  // @media prefers-dark  
-  //   background-color: dark-color-category-sql;
   /[data-theme="dark"] &
     background-color: dark-color-category-sql;
 
 .article-category.category-tools
   background-color: color-category-tools;
-  // @media prefers-dark  
-  //   background-color: dark-color-category-tools;
   /[data-theme="dark"] &
     background-color: dark-color-category-tools;
 
 .article-category.category-javascript
   background-color: color-category-javascript
-  // @media prefers-dark  
-  //   background-color: dark-color-category-javascript
   /[data-theme="dark"] &
     background-color: dark-color-category-javascript
 
@@ -97,8 +74,6 @@
   @extend $block-caption
   margin: 0 12px 1em
   color: color-category-link
-  // @media prefers-dark
-  //   color: dark-color-category-link
   /[data-theme="dark"] &
     color: dark-color-category-link
 
@@ -112,14 +87,10 @@
   line-height: line-height-title
   transition: color 0.2s
   color: color-default
-  // @media prefers-dark
-  //   color: dark-color-default
   /[data-theme="dark"] &
     color: dark-color-default
   a&:hover
     color: color-link
-    // @media prefers-dark
-    //   color: dark-color-link
     /[data-theme="dark"] &
       color: dark-color-link
 
@@ -132,8 +103,6 @@
   @extend $base-style
   clearfix()
   color: color-default
-  // @media prefers-dark
-  //   color: dark-color-default
   /[data-theme="dark"] &
     color: dark-color-default
   padding: 0 article-padding
@@ -145,17 +114,17 @@
   h1, h2, h3, h4, h5, h6
     line-height: line-height-title
     margin: line-height-title 0
-  a
-    color: color-link
-    text-decoration: none
-    // @media prefers-dark
-    //   color: dark-color-link
-    //   text-decoration: underline
-    /[data-theme="dark"] &
-      color: dark-color-link
-      text-decoration: underline
-    &:hover
-      text-decoration: underline
+  :not(.article-more-link)
+    a
+      color: color-link
+      text-decoration: none
+      /[data-theme="dark"] &
+        color: dark-color-link
+        border-bottom: dark-color-link-border 1px solid
+      &:hover
+        border-bottom: color-link 1px solid
+        /[data-theme="dark"] &
+          border-bottom: dark-color-link 1px solid
   ul, ol, dl
     margin-top: line-height
     margin-bottom: line-height
@@ -164,8 +133,6 @@
     height: auto
     display: block
     margin: auto
-    // @media prefers-dark
-    //   filter: brightness(85%)
     /[data-theme="dark"] &
       filter: brightness(85%)
   iframe
@@ -178,15 +145,11 @@
     font-weight: bold
     padding-bottom: 0.5em
     border-bottom: 3px solid color-border-article
-    // @media prefers-dark
-    //   border-bottom: 3px solid dark-color-border-article
     /[data-theme="dark"] &
       border-bottom: 3px solid dark-color-border-article
   td
     padding: 10px 0
     border-bottom: 1px solid color-border-article
-    // @media prefers-dark
-    //   border-bottom: 3px solid dark-color-border-article
     /[data-theme="dark"] &
       border-bottom: 3px solid dark-color-border-article
   blockquote
@@ -214,8 +177,6 @@
       margin-left: 1em
   .caption
     color: color-grey
-    // @media prefers-dark
-    //   color: dark-color-grey
     /[data-theme="dark"] &
       color: dark-color-grey
     display: block
@@ -244,9 +205,6 @@
   padding: 10px
   background: color-border-article
   color: color-grey
-  // @media prefers-dark
-  //   background: dark-color-border-article
-  //   color: dark-color-grey
   /[data-theme="dark"] &
     background: dark-color-border-article
     color: dark-color-grey
@@ -255,9 +213,6 @@
     text-decoration: none
     background: color-link
     color: color-block
-    // @media prefers-dark
-    //   background: dark-color-background
-    //   color: dark-color-link
     /[data-theme="dark"] &
       background: dark-color-background
       color: dark-color-link
@@ -267,8 +222,6 @@
   font-size: 0.85em
   line-height: line-height
   border-top: 1px solid color-border-article
-  // @media prefers-dark
-  //   border-top-color: dark-color-border-article
   /[data-theme="dark"] &
     border-top-color: dark-color-border-article
   padding-top: line-height
@@ -276,14 +229,10 @@
   a
     text-decoration: none
     color: color-grey
-    // @media prefers-dark
-    //   color: dark-color-grey
     /[data-theme="dark"] &
       color: dark-color-grey
     &:hover
       color: color-default
-      // @media prefers-dark
-      //   color: dark-color-default
       /[data-theme="dark"] &
         color: dark-color-default
 
@@ -346,82 +295,8 @@
   line-height: line-height
   margin-top: 0.5em
 
-// .article-share-box
-//   position: absolute
-//   display: none
-//   background: #fff
-//   box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2)
-//   border-radius: 3px
-//   margin-left: -145px
-//   overflow: hidden
-//   z-index: 1
-//   &.on
-//     display: block
-
-// .article-share-input
-//   width: 100%
-//   background: none
-//   box-sizing: border-box
-//   font: 14px font-sans
-//   padding: 0 15px
-//   color: color-default
-//   outline: none
-//   border: 1px solid color-border-article
-//   border-radius: 3px 3px 0 0
-//   height: 36px
-//   line-height: 36px
-
-// .article-share-links
-//   clearfix()
-//   background: color-background
-
-// $article-share-link
-//   width: 64px
-//   height: 36px
-//   display: block
-//   float: left
-//   position: relative
-//   color: #999
-//   &:before
-//     font-size: 20px
-//     font-family: fa-icon-brands
-//     absolute-center(@font-size)
-//     text-align: center
-//   &:hover
-//     color: #fff
-
-// .article-share-twitter
-//   @extend $article-share-link
-//   &:before
-//     content: icon-twitter
-//   &:hover
-//     background: color-twitter
-
-// .article-share-facebook
-//   @extend $article-share-link
-//   &:before
-//     content: icon-facebook
-//   &:hover
-//     background: color-facebook
-
-// .article-share-pinterest
-//   @extend $article-share-link
-//   &:before
-//     content: icon-pinterest
-//   &:hover
-//     background: color-pinterest
-
-// .article-share-google
-//   @extend $article-share-link
-//   &:before
-//     content: icon-google
-//   &:hover
-//     background: color-google
-
 .article-gallery
   background: color-default
-  // @media prefers-dark
-  //   background: dark-color-default
   /[data-theme="dark"] &
     background: dark-color-default
   position: relative
