@@ -44,13 +44,13 @@ To support the automatic browser/OS-based automatic switch in Hexo, where [Stylu
 // existing color variables
 color-background = #f1f1f1
 color-foreground = #111
-color-default = #555
+color-border = #ddd
 ...
 
 // new dark color variables
 dark-color-background = #111
 dark-color-foreground = #eee
-dark-color-default = #dadada
+dark-color-border = #000
 ...
 
 // new media query variable
@@ -84,10 +84,7 @@ $block
 The same changes I had to do in every template ``styl`` file, where one of the colors or other mode dependent style was used. For example:
 
 ```styl
-...
-
 #mobile-nav-header
-  ...
   background-color: color-background
   @media prefers-dark
     background-color: dark-color-background
@@ -95,8 +92,30 @@ The same changes I had to do in every template ``styl`` file, where one of the c
     ...
     @media prefers-dark
       filter: brightness(85%)
+```
 
-...
+This will be rendered as:
+
+```css
+  #mobile-nav-header {
+    background-color: #f1f1f1;
+  }
+  @media (prefers-color-scheme: dark) {
+      #mobile-nav-header {
+      background-color: #111;
+    }
+  }
+
+  #mobile-nav-header img.avatar {
+    ...
+  }
+  @media (prefers-color-scheme: dark) {
+    filter: brightness(85%);
+  }
 ```
 
 Please note the use of ``filter:brightness()`` in the example. It is always advisable to darken the images too, because they can really pop out on dark backgrounds.
+
+## Related
+
+* [Hexo and the Dark Mode ... revised](/categories/Tools/Hexo-and-the-Dark-Mode-revised)

@@ -5,6 +5,10 @@
   
 
   
+  
+  <!-- DARK MODE TOGGLE -->
+  <script src="/js/dark-mode-toggle.js"></script>
+
   <title>kiko.io</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
@@ -72,6 +76,63 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Hexo-and-the-Dark-Mode-revised" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/categories/Tools/Hexo-and-the-Dark-Mode-revised/" class="article-date">
+  <time datetime="2019-10-26T12:08:05.000Z" itemprop="datePublished">26 Oct 2019</time>
+</a>
+    
+      <a href="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode-revised/#disqus_thread" class="article-comment-link"></a>
+    
+    
+  <div class="article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/categories/Tools/Hexo-and-the-Dark-Mode-revised/">Hexo and the Dark Mode ... revised</a>
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle" itemprop="name">
+        Second approach to implement &#39;prefers-color-scheme&#39;
+    </h2>
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>While writing my post <a href="/categories/Tools/Hexo-and-the-Dark-Mode">Hexo and the Dark Mode</a> a few days ago, I thought it would be nice, if I could switch between the normal (light) and the dark theme I’ve created for the support of the OS-related Dark Mode manually. The only thing I needed was a toggle element and a little bit of JavaScript.</p>
+<p>Of course, I couldn’t manipulate the <a href="https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-color-scheme" target="_blank" rel="noopener">media query <code>prefers-color-scheme</code></a> itself, but introduce a different way by blog uses it. Instead of implementing the media query directly into my CSS (or Stylus) code, I used a root selector, which can be manipulated by JavaScript … something like this:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: white;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-attr">[data-theme="dark"]</span> <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: black;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/categories/Tools/Hexo-and-the-Dark-Mode-revised/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <!-- <a data-url="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode-revised/" data-id="ck27iu9kl0001ucl9d81f9rh6" class="article-share-link">Share</a> -->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dark-Mode/">Dark Mode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stylus/">Stylus</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Hexo-and-the-Dark-Mode" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/categories/Tools/Hexo-and-the-Dark-Mode/" class="article-date">
@@ -116,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode/" data-id="ck23bcmh60006zwbkc2vu0c00" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode/" data-id="ck27iu9kq0004ucl900kk0ie8" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dark-Mode/">Dark Mode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stylus/">Stylus</a></li></ul>
@@ -172,7 +233,65 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/" data-id="ck23bcmgw0000zwbkyx3e26dl" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/" data-id="ck27iu9kf0000ucl9my9o0138" class="article-share-link">Share</a> -->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/">VS Code</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-A-New-Blog-VS-Code-Hexo-and-GitHub-Pages" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/" class="article-date">
+  <time datetime="2019-09-23T22:00:00.000Z" itemprop="datePublished">24 Sep 2019</time>
+</a>
+    
+      <a href="https://kiko.io/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/#disqus_thread" class="article-comment-link"></a>
+    
+    
+  <div class="article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/">A New Blog: VS Code, Hexo and GitHub Pages</a>
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle" itemprop="name">
+        Part One of having fun with Hexo and GitHub Pages
+    </h2>
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>A few days ago I puzzled over a technical problem regarding SQL Server, Active Directory and Visual Studio Database Projects. With tips, hints and snippets from several websites I got it running and the solution was absolutely memorable. For myself and for others. Nothing is harder than to know ‘you did this before…’, but not to remember how.</p>
+<p>Because of this strong leaning towards oblivion, I started over 20 years ago my very first website <strong>zerbit.de</strong>, manually crafted with Classic ASP and a SQL Server database as backend, with an editor, tagging, categories and so on. It was really exciting to build this blog from scratch and writing articles for it, but it was so time consuming to expand the features of the website and keep it running, that some day I quit it silently.</p>
+<p>So, to document the solution mentioned above, I could use tools like OneNote or others, like in the past years, but this would be just for me and not for all developers, who have a similar problem. I felt it would be unfair to participate from the knowledge of others to get my solution and dont give something back.</p>
+<p>I decided to write an article just in HTML and publish it on my personal GitHub Page that I didn’t used so far. Ok, just Text … ugly. Just a little CSS and a little more structure and maybe I should do something with Vue JS … STOP … It would be better to pick one of the cool new static website generators based on Node.js, to detain myself from inventing the wheel again and save my time to write articles. So I did a little research and found <a href="https://hexo.io" target="_blank" rel="noopener">HEXO</a> … Bingo! I can work with my favorite editor <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">Visual Studio Code</a>, its all HTML, JavaScript and CSS, I can write my articles in Markdown and Hexo has a lot of helpers for stuff Markdown doesn’t provide, it produces static files and works only with files, therefore no need for a database … and it is well documented.</p>
+        
+          <p class="article-more-link">
+            <a href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <!-- <a data-url="https://kiko.io/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/" data-id="ck27iu9kr0005ucl936ytkbb9" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/">VS Code</a></li></ul>
@@ -228,7 +347,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/A-New-Blog-Customizing-Hexo/" data-id="ck23bcmh10001zwbk2skqx6ga" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/A-New-Blog-Customizing-Hexo/" data-id="ck27iu9ln000wucl98kaj0yte" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/">VS Code</a></li></ul>
@@ -240,116 +359,12 @@
 
 
   
-    <article id="post-A-New-Blog-VS-Code-Hexo-and-GitHub-Pages" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/" class="article-date">
-  <time datetime="2019-09-23T22:00:00.000Z" itemprop="datePublished">24 Sep 2019</time>
-</a>
-    
-      <a href="https://kiko.io/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/#disqus_thread" class="article-comment-link"></a>
-    
-    
-  <div class="article-category category-tools">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/">A New Blog: VS Code, Hexo and GitHub Pages</a>
-    </h1>
-  
-
-        
-    <h2 class="article-subtitle" itemprop="name">
-        Part One of having fun with Hexo and GitHub Pages
-    </h2>
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>A few days ago I puzzled over a technical problem regarding SQL Server, Active Directory and Visual Studio Database Projects. With tips, hints and snippets from several websites I got it running and the solution was absolutely memorable. For myself and for others. Nothing is harder than to know ‘you did this before…’, but not to remember how.</p>
-<p>Because of this strong leaning towards oblivion, I started over 20 years ago my very first website <strong>zerbit.de</strong>, manually crafted with Classic ASP and a SQL Server database as backend, with an editor, tagging, categories and so on. It was really exciting to build this blog from scratch and writing articles for it, but it was so time consuming to expand the features of the website and keep it running, that some day I quit it silently.</p>
-<p>So, to document the solution mentioned above, I could use tools like OneNote or others, like in the past years, but this would be just for me and not for all developers, who have a similar problem. I felt it would be unfair to participate from the knowledge of others to get my solution and dont give something back.</p>
-<p>I decided to write an article just in HTML and publish it on my personal GitHub Page that I didn’t used so far. Ok, just Text … ugly. Just a little CSS and a little more structure and maybe I should do something with Vue JS … STOP … It would be better to pick one of the cool new static website generators based on Node.js, to detain myself from inventing the wheel again and save my time to write articles. So I did a little research and found <a href="https://hexo.io" target="_blank" rel="noopener">HEXO</a> … Bingo! I can work with my favorite editor <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">Visual Studio Code</a>, its all HTML, JavaScript and CSS, I can write my articles in Markdown and Hexo has a lot of helpers for stuff Markdown doesn’t provide, it produces static files and works only with files, therefore no need for a database … and it is well documented.</p>
-        
-          <p class="article-more-link">
-            <a href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/" data-id="ck23bcmh40004zwbkvhi3v64k" class="article-share-link">Share</a> -->
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/">VS Code</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
 
 
-  
-    <article id="post-How-To-Visual-Studio-Database-Project-and-ADSI" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/" class="article-date">
-  <time datetime="2019-09-16T22:00:00.000Z" itemprop="datePublished">17 Sep 2019</time>
-</a>
+  <nav id="page-nav">
     
-      <a href="https://kiko.io/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/#disqus_thread" class="article-comment-link"></a>
-    
-    
-  <div class="article-category category-sql">
-    <a class="article-category-link" href="/categories/SQL/">SQL</a> 
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/">How-To: Visual Studio Database Project and ADSI</a>
-    </h1>
-  
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>If you are working with a Visual Studio Database Project and have to deal with data from the Active Directory via a Linked Server, you have to announce the data structure of the AD data in order to get the project compiled.</p>
-        
-          <p class="article-more-link">
-            <a href="/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/" data-id="ck23bcmhq0016zwbkrmyg3qou" class="article-share-link">Share</a> -->
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ADSI/">ADSI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Database-Project/">Database Project</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
 
 </section>
         
@@ -379,6 +394,10 @@
       <ul>
         
           <li>
+            <a href="/categories/Tools/Hexo-and-the-Dark-Mode-revised/">Hexo and the Dark Mode ... revised</a>
+          </li>
+        
+          <li>
             <a href="/categories/Tools/Hexo-and-the-Dark-Mode/">Hexo and the Dark Mode</a>
           </li>
         
@@ -387,15 +406,11 @@
           </li>
         
           <li>
-            <a href="/categories/Tools/A-New-Blog-Customizing-Hexo/">A New Blog: Customizing Hexo</a>
-          </li>
-        
-          <li>
             <a href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/">A New Blog: VS Code, Hexo and GitHub Pages</a>
           </li>
         
           <li>
-            <a href="/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/">How-To: Visual Studio Database Project and ADSI</a>
+            <a href="/categories/Tools/A-New-Blog-Customizing-Hexo/">A New Blog: Customizing Hexo</a>
           </li>
         
       </ul>
@@ -407,7 +422,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">4</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">5</span></li></ul>
     </div>
   </div>
 
@@ -417,7 +432,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ADSI/">ADSI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogging/">Blogging</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dark-Mode/">Dark Mode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database-Project/">Database Project</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Stylus/">Stylus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VS-Code/">VS Code</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ADSI/">ADSI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogging/">Blogging</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dark-Mode/">Dark Mode</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database-Project/">Database Project</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Stylus/">Stylus</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VS-Code/">VS Code</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -427,7 +442,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -482,6 +497,10 @@
         <ul>
           
             <li>
+              <a href="/categories/Tools/Hexo-and-the-Dark-Mode-revised/">Hexo and the Dark Mode ... revised</a>
+            </li>
+          
+            <li>
               <a href="/categories/Tools/Hexo-and-the-Dark-Mode/">Hexo and the Dark Mode</a>
             </li>
           
@@ -490,15 +509,11 @@
             </li>
           
             <li>
-              <a href="/categories/Tools/A-New-Blog-Customizing-Hexo/">A New Blog: Customizing Hexo</a>
-            </li>
-          
-            <li>
               <a href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/">A New Blog: VS Code, Hexo and GitHub Pages</a>
             </li>
           
             <li>
-              <a href="/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/">How-To: Visual Studio Database Project and ADSI</a>
+              <a href="/categories/Tools/A-New-Blog-Customizing-Hexo/">A New Blog: Customizing Hexo</a>
             </li>
           
         </ul>
@@ -536,9 +551,6 @@
 <!-- ANALYTICS -->
 <!-- 
  -->
-
-<!-- DARK MODE TOGGLE -->
-<script src="/js/dark-mode-toggle.js"></script>
 
 <!-- BACK-TO-TOP -->
 <script>

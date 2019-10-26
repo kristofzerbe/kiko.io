@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head><link rel=manifest href=/manifest.json><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  
+  <!-- DARK MODE TOGGLE -->
+  <script src="/js/dark-mode-toggle.js"></script>
+
+  <title>Hexo and the Dark Mode ... revised | kiko.io</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="While writing my post Hexo and the Dark Mode a few days ago, I thought it would be nice, if I could switch between the normal (light) and the dark theme I’ve created for the support of the OS-related">
+<meta name="keywords" content="Hexo,CSS,Stylus,Dark Mode,JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo and the Dark Mode ... revised">
+<meta property="og:url" content="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode-revised/index.html">
+<meta property="og:site_name" content="kiko.io">
+<meta property="og:description" content="While writing my post Hexo and the Dark Mode a few days ago, I thought it would be nice, if I could switch between the normal (light) and the dark theme I’ve created for the support of the OS-related">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-26T13:40:05.555Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo and the Dark Mode ... revised">
+<meta name="twitter:description" content="While writing my post Hexo and the Dark Mode a few days ago, I thought it would be nice, if I could switch between the normal (light) and the dark theme I’ve created for the support of the OS-related">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">kiko.io</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Memorable Tech Stuff</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" id="nav-home-link" href="/"></a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-archives-link" 
+             class="nav-icon sub-nav-link"
+             href="/archives"
+             title="Archives"></a>
+        
+          <a id="nav-rss-link" 
+             class="nav-icon sub-nav-link"
+             href="/atom.xml"
+             title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kiko.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Hexo-and-the-Dark-Mode-revised" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/categories/Tools/Hexo-and-the-Dark-Mode-revised/" class="article-date">
+  <time datetime="2019-10-26T12:08:05.000Z" itemprop="datePublished">26 Oct 2019</time>
+</a>
+    
+      <a href="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode-revised/#disqus_thread" class="article-comment-link"></a>
+    
+    
+  <div class="article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo and the Dark Mode ... revised
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle" itemprop="name">
+        Second approach to implement &#39;prefers-color-scheme&#39;
+    </h2>
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>While writing my post <a href="/categories/Tools/Hexo-and-the-Dark-Mode">Hexo and the Dark Mode</a> a few days ago, I thought it would be nice, if I could switch between the normal (light) and the dark theme I’ve created for the support of the OS-related Dark Mode manually. The only thing I needed was a toggle element and a little bit of JavaScript.</p>
+<p>Of course, I couldn’t manipulate the <a href="https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-color-scheme" target="_blank" rel="noopener">media query <code>prefers-color-scheme</code></a> itself, but introduce a different way by blog uses it. Instead of implementing the media query directly into my CSS (or Stylus) code, I used a root selector, which can be manipulated by JavaScript … something like this:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: white;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-attr">[data-theme="dark"]</span> <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: black;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p>In every Stylus file, where I used <code>@media prefers-dark</code> to achieve the automatic switch by the OS, I changed this line into <code>/[data-theme=&quot;dark&quot;] &amp;</code> :</p>
+<figure class="highlight styl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#mobile-nav-header</span><br><span class="line">  <span class="attribute">background-color</span>: color-background</span><br><span class="line">  /[data-theme=<span class="string">"dark"</span>] &amp;</span><br><span class="line">    <span class="attribute">background-color</span>: dark-color-background</span><br><span class="line">  <span class="selector-tag">img</span>.avatar</span><br><span class="line">    ...</span><br><span class="line">    /[data-theme=<span class="string">"dark"</span>] &amp;</span><br><span class="line">      <span class="attribute">filter</span>: brightness(<span class="number">85%</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Some explations on the <a href="http://stylus-lang.com/docs/selectors.html" target="_blank" rel="noopener">Stylus syntax</a>: <code>/</code> means the root of the DOM and <code>&amp;</code> points to the parent selector. Therefore the example will be rendered into this:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#mobile-nav-header</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#f1f1f1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme="dark"]</span> <span class="selector-id">#mobile-nav-header</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#111</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#mobile-nav-header</span> <span class="selector-tag">img</span><span class="selector-class">.avatar</span> &#123;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme="dark"]</span> <span class="selector-id">#mobile-nav-header</span> <span class="selector-tag">img</span><span class="selector-class">.avatar</span></span><br><span class="line">    <span class="selector-tag">filter</span>: <span class="selector-tag">brightness</span>(85%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Only Problem was, that the “Root + Parent” Stylus selector doesn’t work in the block variables in the <code>_extend.styl</code> and I had to copy all theme relevant styles directly to the elements, where such a block was used by using <code>@extend &lt;block-name&gt;</code>.</p>
+<h3 id="The-Toggle-Switch"><a href="#The-Toggle-Switch" class="headerlink" title="The Toggle Switch"></a>The Toggle Switch</h3><p>In the <code>footer.ejs</code> I added a toggle checkbox, where I could bind my JavaScript…</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"footer-theme"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">id</span>=<span class="string">"theme-switch"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"theme-switch"</span>&gt;</span><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>… and some CSS in the <code>footer.styl</code>, to make it look good:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-id">#theme-switch</span><span class="selector-attr">[type=checkbox]</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>:none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-id">#theme-switch</span><span class="selector-attr">[type=checkbox]</span> + <span class="selector-tag">label</span></span><br><span class="line">  <span class="selector-tag">height</span>: 16<span class="selector-tag">px</span></span><br><span class="line">  <span class="selector-tag">width</span>: 16<span class="selector-tag">px</span></span><br><span class="line">  <span class="selector-tag">display</span>: <span class="selector-tag">inline-block</span></span><br><span class="line">  <span class="selector-tag">padding</span>: 12<span class="selector-tag">px</span></span><br><span class="line">  <span class="selector-tag">font-size</span>: 22<span class="selector-tag">px</span></span><br><span class="line">  <span class="selector-tag">cursor</span>: <span class="selector-tag">pointer</span></span><br><span class="line">  &amp;<span class="selector-pseudo">:before</span></span><br><span class="line">    <span class="selector-tag">display</span>: <span class="selector-tag">inline-block</span></span><br><span class="line">    <span class="selector-tag">font-size</span>: <span class="selector-tag">inherit</span></span><br><span class="line">    <span class="selector-tag">text-rendering</span>: <span class="selector-tag">auto</span></span><br><span class="line">    <span class="selector-tag">-webkit-font-smoothing</span>: <span class="selector-tag">antialiased</span></span><br><span class="line">    <span class="selector-tag">font-family</span>: <span class="selector-tag">fa-icon-solid</span></span><br><span class="line">    <span class="selector-tag">content</span>: <span class="selector-tag">icon-moon</span></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-id">#theme-switch</span><span class="selector-attr">[type=checkbox]</span><span class="selector-pseudo">:checked</span> + <span class="selector-tag">label</span></span><br><span class="line">  &amp;<span class="selector-pseudo">:before</span></span><br><span class="line">    <span class="selector-tag">content</span>: <span class="selector-tag">icon-sun</span></span><br></pre></td></tr></table></figure>
+
+<p>The <code>icon</code> variables are defined in the <code>_variables.styl</code> like this:</p>
+<figure class="highlight styl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">icon</span>-moon = <span class="string">"\f186"</span></span><br><span class="line"><span class="attribute">icon</span>-sun = <span class="string">"\f185"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="The-JavaScript"><a href="#The-JavaScript" class="headerlink" title="The JavaScript"></a>The JavaScript</h3><p>Everything was now prepared to implement the switching code in JavaScript, which should support a manual switch by clicking the toggle as well as the automatic switch by the OS.</p>
+<h2 id="Related"><a href="#Related" class="headerlink" title="Related"></a>Related</h2><ul>
+<li><a href="/categories/Tools/Hexo-and-the-Dark-Mode">Hexo and the Dark Mode</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- <a data-url="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode-revised/" data-id="ck27iu9kl0001ucl9d81f9rh6" class="article-share-link">Share</a> -->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dark-Mode/">Dark Mode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stylus/">Stylus</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/categories/Tools/Hexo-and-the-Dark-Mode/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hexo and the Dark Mode</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+    <div class="widget about">
+        <div class="avatar">
+            <img src="/images/kristof-zerbe.png">
+            <a href="https://github.com/kristofzerbe" target="blank" class="fab fa-github"></a>
+            <a href="https://www.xing.com/profile/Kristof_Zerbe" target="blank" class="fab fa-xing"></a>
+            <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" target="blank" class="fab fa-linkedin"></a>      
+            <a href="https://500px.com/kikon" target="blank" class="fab fa-500px"></a>
+            <a href="https://twitter.com/kristofz" target="blank" class="fab fa-twitter"></a>
+        </div>
+        <h3>Kristof Zerbe</h3>
+        <p>
+            Developer and Team Lead located in Wiesbaden, Germany
+        </p>
+    </div>
+</div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/categories/Tools/Hexo-and-the-Dark-Mode-revised/">Hexo and the Dark Mode ... revised</a>
+          </li>
+        
+          <li>
+            <a href="/categories/Tools/Hexo-and-the-Dark-Mode/">Hexo and the Dark Mode</a>
+          </li>
+        
+          <li>
+            <a href="/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/">A New Blog: Blogging and Synching en route</a>
+          </li>
+        
+          <li>
+            <a href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/">A New Blog: VS Code, Hexo and GitHub Pages</a>
+          </li>
+        
+          <li>
+            <a href="/categories/Tools/A-New-Blog-Customizing-Hexo/">A New Blog: Customizing Hexo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ADSI/">ADSI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogging/">Blogging</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dark-Mode/">Dark Mode</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database-Project/">Database Project</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Stylus/">Stylus</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VS-Code/">VS Code</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div class="inner">
+        <div id="footer-info">
+          &copy; 2019 <a href="https://github.com/kristofzerbe">Kristof Zerbe</a><br>
+          Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/" target="_blank">GitHub</a>
+        </div>
+        <div id="footer-theme">          
+          <input type="checkbox" id="theme-switch">
+          <label for="theme-switch"></label>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  <div id="mobile-nav-header">
+    <img class="avatar" src="/images/kristof-zerbe.png">
+    <h1>kiko.io</h1>
+    <p>by <span>Kristof Zerbe</span></p>
+  </div>
+  
+  <div id="mobile-nav-menu">
+    
+      <a href="/" 
+        id="nav-home-link" 
+        class="mobile-nav-link">Home</a>
+    
+      <a href="/archives" 
+        id="nav-archives-link" 
+        class="mobile-nav-link">Archives</a>
+    
+      <a href="/atom.xml" 
+        id="nav-rss-link" 
+        class="mobile-nav-link">RSS Feed</a>
+    
+  </div>
+
+  
+    <div id="mobile-nav-recent-posts">
+      <h3>Recent Posts</h3>
+      <div class="recent-posts-wrapper">
+        <ul>
+          
+            <li>
+              <a href="/categories/Tools/Hexo-and-the-Dark-Mode-revised/">Hexo and the Dark Mode ... revised</a>
+            </li>
+          
+            <li>
+              <a href="/categories/Tools/Hexo-and-the-Dark-Mode/">Hexo and the Dark Mode</a>
+            </li>
+          
+            <li>
+              <a href="/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/">A New Blog: Blogging and Synching en route</a>
+            </li>
+          
+            <li>
+              <a href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/">A New Blog: VS Code, Hexo and GitHub Pages</a>
+            </li>
+          
+            <li>
+              <a href="/categories/Tools/A-New-Blog-Customizing-Hexo/">A New Blog: Customizing Hexo</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  
+</nav>
+    <!-- DISQUS -->
+
+<script>
+  var disqus_shortname = 'kiko-io';
+  
+  var disqus_url = 'https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode-revised/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- LIBRARIES -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<!-- FANCYBOX -->
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<!-- MAIN-SCRIPT (THEME.LANDSCAPE.SOURCE.JS) -->
+<script src="/js/script.js"></script>
+
+<!-- ANALYTICS -->
+<!-- 
+ -->
+
+<!-- BACK-TO-TOP -->
+<script>
+  addBackToTop({
+    diameter: 30
+  })
+</script>
+<style>
+  #back-to-top {
+    background-color: #888;
+    color: #fff;
+    border-radius: 0;
+    opacity: 0.5;
+  }
+  #back-to-top:hover {
+    background-color: #0069dc;
+    opacity: 1;
+  }
+  #back-to-top svg {
+    height: 20px;    
+    width: 20px; 
+    margin: 6px auto 0;   
+  }
+</style>
+
+  </div>
+</body>
+</html>
