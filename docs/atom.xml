@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kiko.io/"/>
-  <updated>2019-10-26T13:40:05.555Z</updated>
+  <updated>2019-10-26T14:21:19.935Z</updated>
   <id>https://kiko.io/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode-revised/"/>
     <id>https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode-revised/</id>
     <published>2019-10-26T12:08:05.000Z</published>
-    <updated>2019-10-26T13:40:05.555Z</updated>
+    <updated>2019-10-26T14:21:19.935Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;While writing my post &lt;a href=&quot;/categories/Tools/Hexo-and-the-Dark-Mode&quot;&gt;Hexo and the Dark Mode&lt;/a&gt; a few days ago, I thought it would be nice, if I could switch between the normal (light) and the dark theme I’ve created for the support of the OS-related Dark Mode manually. The only thing I needed was a toggle element and a little bit of JavaScript.&lt;/p&gt;
+      &lt;p&gt;While writing my post &lt;a href=&quot;/categories/Tools/Hexo-and-the-Dark-Mode&quot;&gt;Hexo and the Dark Mode&lt;/a&gt; a few days ago, I thought it would be nice, if I could switch between the normal (light) and the dark theme, I’ve created for the support of the OS-related Dark Mode, even manually. The only thing I needed was a toggle element and a little bit of JavaScript.&lt;/p&gt;
 &lt;p&gt;Of course, I couldn’t manipulate the &lt;a href=&quot;https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-color-scheme&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;media query &lt;code&gt;prefers-color-scheme&lt;/code&gt;&lt;/a&gt; itself, but introduce a different way by blog uses it. Instead of implementing the media query directly into my CSS (or Stylus) code, I used a root selector, which can be manipulated by JavaScript … something like this:&lt;/p&gt;
 &lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;body&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;background-color&lt;/span&gt;: white;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;color&lt;/span&gt;: black;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-attr&quot;&gt;[data-theme=&quot;dark&quot;]&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;body&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;background-color&lt;/span&gt;: black;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;color&lt;/span&gt;: white;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     

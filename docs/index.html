@@ -5,10 +5,6 @@
   
 
   
-  
-  <!-- DARK MODE TOGGLE -->
-  <script src="/js/dark-mode-toggle.js"></script>
-
   <title>kiko.io</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
@@ -110,7 +106,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>While writing my post <a href="/categories/Tools/Hexo-and-the-Dark-Mode">Hexo and the Dark Mode</a> a few days ago, I thought it would be nice, if I could switch between the normal (light) and the dark theme I’ve created for the support of the OS-related Dark Mode manually. The only thing I needed was a toggle element and a little bit of JavaScript.</p>
+        <p>While writing my post <a href="/categories/Tools/Hexo-and-the-Dark-Mode">Hexo and the Dark Mode</a> a few days ago, I thought it would be nice, if I could switch between the normal (light) and the dark theme, I’ve created for the support of the OS-related Dark Mode, even manually. The only thing I needed was a toggle element and a little bit of JavaScript.</p>
 <p>Of course, I couldn’t manipulate the <a href="https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-color-scheme" target="_blank" rel="noopener">media query <code>prefers-color-scheme</code></a> itself, but introduce a different way by blog uses it. Instead of implementing the media query directly into my CSS (or Stylus) code, I used a root selector, which can be manipulated by JavaScript … something like this:</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: white;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-attr">[data-theme="dark"]</span> <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: black;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
@@ -521,7 +517,10 @@
     </div>
   
 </nav>
-    <!-- DISQUS -->
+    <!-- DARK MODE TOGGLE -->
+<script src="/js/dark-mode-toggle.js"></script>
+
+<!-- DISQUS -->
 
 <script>
   var disqus_shortname = 'kiko-io';

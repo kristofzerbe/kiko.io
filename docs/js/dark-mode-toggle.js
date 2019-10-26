@@ -1,21 +1,29 @@
 /* https://stackoverflow.com/questions/56300132/how-to-over-ride-css-prefers-color-scheme-setting
 */
 
-function detectColorScheme(){
+function detectColorScheme() {
     var theme = "light"; //default
 
+    // get last used theme from local cache
     if(localStorage.getItem("theme")){
-        if(localStorage.getItem("theme") == "dark"){
+        if(localStorage.getItem("theme") === "dark"){
             theme = "dark";
         }
-    } else if(!window.matchMedia) { //matchMedia not supported    
+    } else if(!window.matchMedia) { 
+        // matchMedia not supported  
         return false;
     } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            theme = "dark";
+        // OS has set Dark Mode
+        theme = "dark";
     }
-    document.documentElement.setAttribute("data-theme", theme);
+
+    // set detected theme
+    if (theme === "dark") {
+        setThemeDark();
+    } else {
+        setThemeLight();
+    }
 }
-detectColorScheme();
 
 const toggleTheme = document.querySelector('input#theme-switch[type="checkbox"]');
 
@@ -30,7 +38,7 @@ function setThemeLight() {
     toggleTheme.checked = false;
 }
 
-//listener for theme change by toggle
+// Listener for theme change by toggle
 toggleTheme.addEventListener('change', function(e) {
     if (e.target.checked) {
         setThemeDark();
@@ -39,7 +47,7 @@ toggleTheme.addEventListener('change', function(e) {
     }
 }, false);
 
-//listener for theme change by OS
+// Listener for theme change by OS
 var toggleOS = window.matchMedia('(prefers-color-scheme: dark)');
 toggleOS.addEventListener('change', function (e) {
     if (e.matches) {
@@ -49,5 +57,5 @@ toggleOS.addEventListener('change', function (e) {
     }
 });
 
-//pre-check toggle
-toggleTheme.checked = (document.documentElement.getAttribute("data-theme") == "dark");
+// call theme detection
+detectColorScheme();

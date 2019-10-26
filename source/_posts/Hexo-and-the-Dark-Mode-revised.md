@@ -76,7 +76,7 @@ In the ``footer.ejs`` I added a toggle checkbox, where I could bind my JavaScrip
 
 ... and some CSS in the ``footer.styl``, to style it:
 
-```css
+```styl
 input#theme-switch[type=checkbox] {
   display:none;
 }
