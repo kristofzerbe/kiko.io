@@ -1117,7 +1117,6 @@ a.article-title:hover {
   -webkit-box-shadow: 1px 2px 3px #ddd;
   box-shadow: 1px 2px 3px #ddd;
   border: 1px solid #ddd;
-  border-radius: 3px;
   text-align: center;
   color: #777;
   overflow: hidden;
@@ -1130,6 +1129,12 @@ a.article-title:hover {
 #page-nav:after {
   clear: both;
 }
+[data-theme="dark"] #page-nav {
+  background: #222;
+  -webkit-box-shadow: 1px 2px 3px #000;
+  box-shadow: 1px 2px 3px #000;
+  border: 1px solid #000;
+}
 #page-nav a,
 #page-nav span {
   padding: 10px 20px;
@@ -1141,8 +1146,11 @@ a.article-title:hover {
   text-decoration: none;
 }
 #page-nav a:hover {
-  background: #777;
+  background: #0069dc;
   color: #fff;
+}
+[data-theme="dark"] #page-nav a:hover {
+  background: #111;
 }
 #page-nav .prev {
   float: left;
