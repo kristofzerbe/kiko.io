@@ -67,11 +67,12 @@
     }, mobileNavAnimDuration);
   };
 
-  $(document).hammer().on('swiperight', function (e) {
+  // https://stackoverflow.com/questions/24163202/javascript-touch-movement-track-when-user-swipes-from-edges
+  $("#container").hammer().on('swiperight', function (e) {
     var endPoint = e.gesture.pointers[0].pageX;
     var distance = e.gesture.distance;
     var origin = endPoint - distance;
-
+console.log(origin);
     if (origin <= 15) {
         // They swiped, starting from no more than 15px away from the edge. 
         if ($('#main-nav-toggle').is(':visible')) {
