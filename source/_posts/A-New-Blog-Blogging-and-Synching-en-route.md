@@ -1,6 +1,7 @@
 ---
 title: 'A New Blog: Blogging and Synching en route'
 subtitle: 'Part Three of having fun with Hexo and GitHub Pages'
+xphoto: '19-07 Schottland-0364.jpg'
 series: 'A New Blog'
 part: 3
 date: 2019-10-01

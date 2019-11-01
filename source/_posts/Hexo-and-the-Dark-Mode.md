@@ -1,6 +1,7 @@
 ---
 title: Hexo and the Dark Mode
 subtitle: First approach to implement 'prefers-color-scheme'
+xphoto: '19-07 Schottland-0024.jpg'
 tags:
   - Hexo
   - CSS

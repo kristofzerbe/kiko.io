@@ -1,6 +1,7 @@
 ---
 title: 'A New Blog: Customizing Hexo'
 subtitle: 'Part Two of having fun with Hexo and GitHub Pages'
+xphoto: '19-07 Schottland-0198.jpg'
 series: 'A New Blog'
 part: 2
 date: 2019-09-24

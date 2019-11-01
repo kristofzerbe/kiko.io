@@ -1,6 +1,7 @@
 ---
 title: 'A New Blog: VS Code, Hexo and GitHub Pages'
 subtitle: 'Part One of having fun with Hexo and GitHub Pages'
+xphoto: '19-07 Schottland-0405.jpg'
 series: 'A New Blog'
 part: 1
 date: 2019-09-24

@@ -1,5 +1,6 @@
 ---
 title: 'How-To: Visual Studio Database Project and ADSI'
+xphoto: '19-05 Israel-0516.jpg'
 date: 2019-09-17
 tags: 
     - ADSI

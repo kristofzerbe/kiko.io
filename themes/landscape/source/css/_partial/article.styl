@@ -12,9 +12,22 @@
     box-shadow: 1px 2px 3px dark-color-border
     border-color: dark-color-border
 
+.article-photo
+  height: 150px
+  width: 100%
+  object-fit: cover
+  transform: scale(1)
+  transform-style: preserve-3d
+  transition: all ease-out .6s  
+  filter: brightness(75%);
+  &:hover
+    transform: scale(1.1)
+    filter: brightness(100%);
+
 .article-meta
   clearfix()
   position: relative;
+  z-index: 99
 
 .article-date
   @extend $block-caption
@@ -47,12 +60,12 @@
   right: 12px;
   line-height: 2em;
   margin-left: 8px;
-  box-shadow: 1px 2px 3px color-border;
+  box-shadow: 1px 1px 3px color-default;
   border: none;
   border-radius: 2px;
   background-color: color-header;
   /[data-theme="dark"] &
-    box-shadow: 1px 2px 3px dark-color-border;
+    box-shadow: 1px 1px 3px dark-color-border;
     background-color: dark-color-header;
 
 .article-category.category-sql
@@ -202,19 +215,25 @@
   display: inline-block
   line-height: 1em
   font-size: 0.9em;
-  padding: 10px
-  background: color-border-article
+  font-weight: 300
   color: color-grey
+  position: relative
+  &:after
+    content: icon-caret-right
+    font-family: fa-icon-solid
+    color: color-link
+    font-size: 18px;
+    position: absolute;
+    right: -16px;    
   /[data-theme="dark"] &
-    background: dark-color-border-article
     color: dark-color-grey
+    &:after
+      color: dark-color-link
   text-decoration: none
   &:hover    
     text-decoration: none
-    background: color-link
-    color: color-block
+    color: color-link
     /[data-theme="dark"] &
-      background: dark-color-background
       color: dark-color-link
 
 .article-footer
