@@ -27,4 +27,14 @@
       </div>
     </div>
   <% } %>
+
+  <% if (site.categories.length){ %>
+    <div id="mobile-nav-categories">
+      <h3><%= __('categories') %></h3>
+      <div class="categories-wrapper">
+        <%- list_categories({show_count: theme.show_count}) %>
+      </div>
+    </div>
+  <% } %>
+
 </nav>
