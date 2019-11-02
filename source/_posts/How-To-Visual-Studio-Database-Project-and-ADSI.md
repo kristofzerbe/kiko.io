@@ -1,6 +1,8 @@
 ---
 title: 'How-To: Visual Studio Database Project and ADSI'
-xphoto: '19-05 Israel-0516.jpg'
+photograph: '19-05 Israel-0516.jpg'
+photographName: 'Jaffa Accessoirs'
+photographLink: 'https://500px.com/photo/1005490988/Jaffa-Accessoirs-by-Kristof-Zerbe'
 date: 2019-09-17
 tags: 
     - ADSI

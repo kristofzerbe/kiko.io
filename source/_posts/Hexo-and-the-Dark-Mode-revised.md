@@ -1,7 +1,9 @@
 ---
 title: Hexo and the Dark Mode ... revised
 subtitle: Second approach to implement 'prefers-color-scheme'
-xphoto: '19-07 Schottland-0025.jpg'
+photograph: '19-07 Schottland-0025.jpg'
+photographName: 'Glencoe River'
+photographLink: 'https://500px.com/photo/1005490038/Glencoe-River-by-Kristof-Zerbe'
 tags:
   - Hexo
   - CSS
