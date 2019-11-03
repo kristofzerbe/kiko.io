@@ -4,11 +4,22 @@
 .archives
   clearfix()
 
+// .archive-title
+//   font-size: 1.6em
+//   font-weight: bold
+//   line-height: line-height-title
+//   margin-top: 1em
+//   margin-bottom: 1em
+//   color: color-default
+//   /[data-theme="dark"] &
+//     color: dark-color-default
+
 .archive-year-wrap
   margin-bottom: 1em
 
 .archive-year
   @extend $block-caption
+  margin-left: 0
   color: color-header
   /[data-theme="dark"] &
     color: dark-color-header
@@ -35,18 +46,52 @@
     box-shadow: 1px 2px 3px dark-color-border
     border: 1px solid dark-color-border
 
+.archive-article-photo
+    height: 90px
+    width: calc(100% + 20px)
+    margin: -10px 0 10px -10px
+    object-fit: cover
+    transform: scale(1)
+    transform-style: preserve-3d
+    transition: all ease-out .4s  
+    opacity: 0.3
+    filter: grayscale(1) contrast(0.5)
+    /[data-theme="dark"] &
+        opacity: 0.75
+        filter: grayscale(1) contrast(0.5) brightness(0.6)
+
+.archive-article-inner
+  &:hover
+    .archive-article-photo
+      transform: scale(1.05)
+      opacity: 1
+      filter: grayscale(0) contrast(1)
+      /[data-theme="dark"] &
+          opacity: 1
+          filter: grayscale(0) contrast(1) brightness(0.75)
+
 .archive-article-title
+  display: inline-block
+  margin-top: 5px
+  margin-bottom: 5px
   text-decoration: none
+  line-height: line-height-title
+  font-size: 16px
   font-weight: bold
   color: color-default
   /[data-theme="dark"] &
     color: dark-color-default
   transition: color 0.2s
-  line-height: line-height
   &:hover
     color: color-link
     /[data-theme="dark"] &
       color: dark-color-link
+
+.archive-article-subtitle
+  line-height: line-height-subtitle
+  font-size: 0.9em
+  color: color-header 
+  margin-top: 2px
 
 .archive-article-footer
   margin-top: 1em

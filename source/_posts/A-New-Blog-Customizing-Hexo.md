@@ -1,9 +1,10 @@
 ---
 title: 'A New Blog: Customizing Hexo'
 subtitle: 'Part Two of having fun with Hexo and GitHub Pages'
-photograph: '19-07 Schottland-0198.jpg'
-photographName: 'Thistle Fence'
-photographLink: 'https://500px.com/photo/1005489951/Thistle-Fence-by-Kristof-Zerbe'
+photograph: 
+    file: '19-07 Schottland-0198.jpg'
+    name: 'Thistle Fence'
+    link: 'https://500px.com/photo/1005489951/Thistle-Fence-by-Kristof-Zerbe'
 series: 'A New Blog'
 part: 2
 date: 2019-09-24

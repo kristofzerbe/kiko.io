@@ -1,17 +1,14 @@
 <% if (!index && post.photograph){ %>
 <style>
   #banner {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 75%), url("/photos/<%= post.photograph %>");
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 75%), url("/photos/<%= post.photograph.file %>");
     background-size: cover;
   }
 </style>
-<% } %>
-
-<% if (!index && post.photographName && post.photographLink){ %>
 <script>
   var photoLink = document.getElementById("header-photo-link");
-  photoLink.href = "<%= post.photographLink%>";
-  photoLink.innerHTML = "see <strong><%= post.photographName%></strong> at 500px";
+  photoLink.href = "<%= post.photograph.link%>";
+  photoLink.innerHTML = "see <strong><%= post.photograph.name%></strong> at 500px";
 </script>
 <% } %>
   
@@ -24,10 +21,8 @@
     <%- partial('post/category') %>
   </div>
   <div class="article-inner">
-    <% if (index && post.photograph){ %>
-      <a href="<%- url_for(post.path) %>">
-        <img class="article-photo" src="/photos/<%= post.photograph %>" />
-      </a>
+    <% if (index){ %>
+      <%- partial('post/photograph', {class_name: 'article-photo'}) %>
     <% } %>
     <!-- <%- partial('post/gallery') %> -->
     <% if (post.link || post.title){ %>

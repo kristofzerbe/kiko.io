@@ -1,9 +1,10 @@
 ---
 title: 'A New Blog: Blogging and Synching en route'
 subtitle: 'Part Three of having fun with Hexo and GitHub Pages'
-photograph: '19-07 Schottland-0364.jpg'
-photographName: 'Tiny Scots 5'
-photographLink: 'https://500px.com/photo/1002617359/Tiny-Scots-5-by-Kristof-Zerbe'
+photograph: 
+  file: '19-07 Schottland-0364.jpg'
+  name: 'Tiny Scots 5'
+  link: 'https://500px.com/photo/1002617359/Tiny-Scots-5-by-Kristof-Zerbe'
 series: 'A New Blog'
 part: 3
 date: 2019-10-01

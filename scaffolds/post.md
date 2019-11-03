@@ -1,9 +1,10 @@
 ---
 title: {{ title }}
 subtitle: 
-photograph: ''
-photographName: ''
-photographLink: ''
+photograph: 
+    file: ''
+    name: ''
+    link: ''
 date: {{ date }}
 tags:
 categories:
