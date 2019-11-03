@@ -726,7 +726,7 @@ body {
   text-decoration: none;
   font-size: 2em;
   font-weight: bold;
-  line-height: 1.1em;
+  line-height: 1.3em;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
   -ms-transition: color 0.2s;
@@ -781,8 +781,8 @@ a.article-title:hover {
 .article-entry h4,
 .article-entry h5,
 .article-entry h6 {
-  line-height: 1.1em;
-  margin: 1.1em 0;
+  line-height: 1.3em;
+  margin: 1.3em 0;
 }
 .article-entry :not(.article-more-link) a {
   color: #0069dc;
@@ -1100,6 +1100,7 @@ a.article-title:hover {
   margin-bottom: 1em;
 }
 .archive-year {
+  margin-left: 0;
   color: #bbb;
 }
 [data-theme="dark"] .archive-year {
@@ -1144,15 +1145,55 @@ a.article-title:hover {
   box-shadow: 1px 2px 3px #000;
   border: 1px solid #000;
 }
+.archive-article-photo {
+  height: 90px;
+  width: calc(100% + 20px);
+  margin: -10px 0 10px -10px;
+  object-fit: cover;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: all ease-out 0.4s;
+  -moz-transition: all ease-out 0.4s;
+  -ms-transition: all ease-out 0.4s;
+  transition: all ease-out 0.4s;
+  opacity: 0.3;
+  filter: grayscale(1) contrast(0.5);
+}
+[data-theme="dark"] .archive-article-photo {
+  opacity: 0.75;
+  filter: grayscale(1) contrast(0.5) brightness(0.6);
+}
+.archive-article-inner:hover .archive-article-photo {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  opacity: 1;
+  filter: grayscale(0) contrast(1);
+}
+[data-theme="dark"] .archive-article-inner:hover .archive-article-photo {
+  opacity: 1;
+  filter: grayscale(0) contrast(1) brightness(0.75);
+}
 .archive-article-title {
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 5px;
   text-decoration: none;
+  line-height: 1.3em;
+  font-size: 16px;
   font-weight: bold;
   color: #555;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
   -ms-transition: color 0.2s;
   transition: color 0.2s;
-  line-height: 1.6em;
 }
 [data-theme="dark"] .archive-article-title {
   color: #dadada;
@@ -1162,6 +1203,12 @@ a.article-title:hover {
 }
 [data-theme="dark"] .archive-article-title:hover {
   color: #fff;
+}
+.archive-article-subtitle {
+  line-height: 1.2em;
+  font-size: 0.9em;
+  color: #bbb;
+  margin-top: 2px;
 }
 .archive-article-footer {
   margin-top: 1em;
