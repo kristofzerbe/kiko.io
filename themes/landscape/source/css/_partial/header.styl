@@ -1,9 +1,14 @@
 #header
+  width: 100%
   height: banner-height
-  position: relative
+  position: fixed
+  z-index: 999
+  overflow: hidden;
   border-bottom: 1px solid color-border
+  background-color: color-default
   /[data-theme="dark"] &
     border-bottom-color: dark-color-border
+    background-color: dark-color-border
   &:before, &:after
     content: ""
     position: absolute
@@ -21,6 +26,9 @@
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.2))
     /[data-theme="dark"] &
       background: linear-gradient(transparent, rgba(0, 0, 0, 0.5))
+
+#content
+  padding-top: banner-height
 
 #header-outer
   height: 100%
@@ -54,17 +62,26 @@
   background-position: center
   background-color: #000
   background-size: contain
+  opacity: 1
   z-index: -1
   /[data-theme="dark"] &
-    filter: brightness(75%)
+    opacity: 0.75
 
 #header-title
   text-align: center
-  height: logo-size
+  height: title-size
   position: absolute
-  top: 50%
+  top: 10%
   left: 0
-  margin-top: -120px
+
+#title-wrap
+  font-size: title-size
+  line-height: title-size
+
+#subtitle-wrap
+  font-size: subtitle-size
+  line-height: subtitle-size
+  margin-top: (subtitle-size / 3) * 2
 
 $logo-text
   text-decoration: none
@@ -76,18 +93,11 @@ $logo-text
   font-family: "Open Sans", sans-serif
   font-variant: small-caps
   font-weight: 800
-  font-size: logo-size
-  line-height: logo-size
   letter-spacing: 2px
 
 #subtitle
   @extend $logo-text
-  font-size: subtitle-size
-  line-height: subtitle-size
   letter-spacing: 1px
-
-#subtitle-wrap
-  margin-top: 12px
 
 #main-nav
   float: left

@@ -156,7 +156,7 @@ body {
 }
 [data-theme="dark"] body {
   color: #eee;
-  background: #111;
+  background: #222;
 }
 .outer {
   max-width: 1220px;
@@ -208,7 +208,7 @@ body {
   background: #f1f1f1;
 }
 [data-theme="dark"] #wrap {
-  background: #111;
+  background: #222;
 }
 .mobile-nav-on #wrap {
   left: 280px;
@@ -341,12 +341,17 @@ body {
   font-weight: bold;
 }
 #header {
+  width: 100%;
   height: 300px;
-  position: relative;
+  position: fixed;
+  z-index: 999;
+  overflow: hidden;
   border-bottom: 1px solid #ddd;
+  background-color: #555;
 }
 [data-theme="dark"] #header {
   border-bottom-color: #000;
+  background-color: #000;
 }
 #header:before,
 #header:after {
@@ -382,6 +387,9 @@ body {
   background: -moz-linear-gradient(transparent, rgba(0,0,0,0.5));
   background: -ms-linear-gradient(transparent, rgba(0,0,0,0.5));
   background: linear-gradient(transparent, rgba(0,0,0,0.5));
+}
+#content {
+  padding-top: 300px;
 }
 #header-outer {
   height: 100%;
@@ -419,18 +427,27 @@ body {
   -webkit-background-size: contain;
   -moz-background-size: contain;
   background-size: contain;
+  opacity: 1;
   z-index: -1;
 }
 [data-theme="dark"] #banner {
-  filter: brightness(75%);
+  opacity: 0.75;
 }
 #header-title {
   text-align: center;
   height: 67px;
   position: absolute;
-  top: 50%;
+  top: 10%;
   left: 0;
-  margin-top: -120px;
+}
+#title-wrap {
+  font-size: 67px;
+  line-height: 67px;
+}
+#subtitle-wrap {
+  font-size: 16px;
+  line-height: 16px;
+  margin-top: 10.666666666666666px;
 }
 #logo,
 #subtitle {
@@ -442,17 +459,10 @@ body {
   font-family: "Open Sans", sans-serif;
   font-variant: small-caps;
   font-weight: 800;
-  font-size: 67px;
-  line-height: 67px;
   letter-spacing: 2px;
 }
 #subtitle {
-  font-size: 16px;
-  line-height: 16px;
   letter-spacing: 1px;
-}
-#subtitle-wrap {
-  margin-top: 12px;
 }
 #main-nav {
   float: left;
@@ -598,7 +608,7 @@ body {
   border: 1px solid #ddd;
 }
 [data-theme="dark"] .article-inner {
-  background: #222;
+  background: #333;
   -webkit-box-shadow: 1px 2px 3px #000;
   box-shadow: 1px 2px 3px #000;
   border-color: #000;
@@ -1074,7 +1084,7 @@ a.article-title:hover {
   margin: 2.5em 0;
 }
 [data-theme="dark"] #comments {
-  background: #222;
+  background: #333;
   -webkit-box-shadow: 1px 2px 3px #000;
   box-shadow: 1px 2px 3px #000;
   border: 1px solid #000;
@@ -1151,7 +1161,7 @@ a.article-title:hover {
   border: 1px solid #ddd;
 }
 [data-theme="dark"] .archive-article-inner {
-  background: #222;
+  background: #333;
   -webkit-box-shadow: 1px 2px 3px #000;
   box-shadow: 1px 2px 3px #000;
   border: 1px solid #000;
@@ -1251,7 +1261,7 @@ a.article-title:hover {
   clear: both;
 }
 [data-theme="dark"] #page-nav {
-  background: #222;
+  background: #333;
   -webkit-box-shadow: 1px 2px 3px #000;
   box-shadow: 1px 2px 3px #000;
   border: 1px solid #000;
@@ -1271,7 +1281,7 @@ a.article-title:hover {
   color: #fff;
 }
 [data-theme="dark"] #page-nav a:hover {
-  background: #111;
+  background: #222;
 }
 #page-nav .prev {
   float: left;
@@ -1300,7 +1310,7 @@ a.article-title:hover {
   color: #bbb;
 }
 [data-theme="dark"] #footer {
-  background: #222;
+  background: #000;
 }
 #footer a {
   color: #eee;
@@ -1373,7 +1383,7 @@ input#theme-switch[type=checkbox]:checked + label:before {
   color: #4d4d4c;
 }
 [data-theme="dark"] .article-entry pre {
-  background: #111;
+  background: #222;
   color: #f1f1f1;
 }
 .article-entry pre code {
@@ -1390,7 +1400,7 @@ input#theme-switch[type=checkbox]:checked + label:before {
   color: #4d4d4c;
 }
 [data-theme="dark"] .article-entry .highlight {
-  background: #111;
+  background: #222;
   color: #f1f1f1;
 }
 .article-entry .highlight pre {
@@ -1596,6 +1606,18 @@ pre .javascript .function {
   color: #ae70d5;
 }
 @media screen and (max-width: 479px) {
+  #header-title {
+    height: 50px;
+  }
+  #title-wrap {
+    font-size: 50px;
+    line-height: 50px;
+  }
+  #subtitle-wrap {
+    font-size: 11px;
+    line-height: 11px;
+    margin-top: 5.5px;
+  }
   #mobile-nav {
     position: absolute;
     top: 0;
@@ -1605,7 +1627,7 @@ pre .javascript .function {
     background: #fff;
   }
   [data-theme="dark"] #mobile-nav {
-    background: #222;
+    background: #333;
   }
   #mobile-nav:before {
     position: absolute;
@@ -1622,7 +1644,7 @@ pre .javascript .function {
     background-color: #f1f1f1;
   }
   [data-theme="dark"] #mobile-nav-header {
-    background-color: #111;
+    background-color: #222;
   }
   #mobile-nav-header img.avatar {
     width: 64px;
