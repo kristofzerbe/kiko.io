@@ -62,31 +62,34 @@
   background-position: center
   background-color: #000
   background-size: contain
-  opacity: 1
+  filter: brightness(1)
   z-index: -1
   /[data-theme="dark"] &
-    opacity: 0.75
+    filter: brightness(0.75)
 
 #header-title
   text-align: center
   height: title-size
   position: absolute
-  top: 10%
+  top: 30px
   left: 0
-
-#title-wrap
-  font-size: title-size
-  line-height: title-size
-
-#subtitle-wrap
-  font-size: subtitle-size
-  line-height: subtitle-size
-  margin-top: (subtitle-size / 3) * 2
+  // z-index: 999 ... TODO: either logo or icons not clickable
 
 $logo-text
   text-decoration: none
   color: #fff
   font-weight: 300
+
+#title-wrap
+  font-size: title-size
+  line-height: title-size
+
+#subtitle
+  @extend $logo-text
+  font-size: subtitle-size
+  line-height: subtitle-size
+  margin-top: (subtitle-size / 3) * 2
+  letter-spacing: 1px
 
 #logo
   @extend $logo-text
@@ -94,10 +97,7 @@ $logo-text
   font-variant: small-caps
   font-weight: 800
   letter-spacing: 2px
-
-#subtitle
-  @extend $logo-text
-  letter-spacing: 1px
+  display: inline-block
 
 #main-nav
   float: left

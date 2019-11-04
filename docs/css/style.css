@@ -427,42 +427,41 @@ body {
   -webkit-background-size: contain;
   -moz-background-size: contain;
   background-size: contain;
-  opacity: 1;
+  filter: brightness(1);
   z-index: -1;
 }
 [data-theme="dark"] #banner {
-  opacity: 0.75;
+  filter: brightness(0.75);
 }
 #header-title {
   text-align: center;
   height: 67px;
   position: absolute;
-  top: 10%;
+  top: 30px;
   left: 0;
+}
+#subtitle,
+#logo {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 300;
 }
 #title-wrap {
   font-size: 67px;
   line-height: 67px;
 }
-#subtitle-wrap {
+#subtitle {
   font-size: 16px;
   line-height: 16px;
   margin-top: 10.666666666666666px;
-}
-#logo,
-#subtitle {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 300;
+  letter-spacing: 1px;
 }
 #logo {
   font-family: "Open Sans", sans-serif;
   font-variant: small-caps;
   font-weight: 800;
   letter-spacing: 2px;
-}
-#subtitle {
-  letter-spacing: 1px;
+  display: inline-block;
 }
 #main-nav {
   float: left;
@@ -1613,10 +1612,10 @@ pre .javascript .function {
     font-size: 50px;
     line-height: 50px;
   }
-  #subtitle-wrap {
-    font-size: 11px;
-    line-height: 11px;
-    margin-top: 5.5px;
+  #subtitle {
+    font-size: 12px;
+    line-height: 12px;
+    margin-top: 6px;
   }
   #mobile-nav {
     position: absolute;

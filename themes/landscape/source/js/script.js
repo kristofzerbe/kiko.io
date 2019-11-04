@@ -5,24 +5,27 @@
       headerOffset = 60,
       headerPhotoLinkOpacity = parseFloat($("#header-photo-link").css("opacity")),
       headerTitleFontSize = parseFloat($("#title-wrap").css("font-size")),
-      headerTop = parseFloat($("#header-title").position().top / ($("#header-title").parent().height()) * 100); //to get top percentage
+      headerTop = parseFloat($("#header-title").css("top"));
   function scrollHeader() {
-    var h = headerHeight - headerOffset;
-    var st = $(document).scrollTop();    
-    var d = (h - st);
+    var h = headerHeight - headerOffset,
+        st = $(document).scrollTop(),  
+        d = (h - st),
+        p = (d / h),
+        hfs = headerTitleFontSize / 5 * 3;
     if (d > 0) {
-      var p = (d / h);
       $("#header").css("height", d + headerOffset + "px");
       $("#header-photo-link").css("opacity", headerPhotoLinkOpacity * p);
       $("#banner").css("opacity", p);
       $("#title-wrap").css("font-size", headerTitleFontSize - ( headerTitleFontSize / 3) * (1 - p) );
-      $("#header-title").css("top", headerTop - (20 * (1 -p)) + "%"); //TODO: mobile top...
-      $("#subtitle-wrap").css("opacity", p);
+      $("#header-title").css("top", headerTop - (hfs * (1 - p)) + "px");
+      $("#subtitle").css("opacity", p);
     } else {
       $("#header").css("height", headerOffset + "px");
       $("#header-photo-link").css("opacity", 0);
       $("#banner").css("opacity", 0);
-      $("#subtitle-wrap").css("opacity", 0);
+      $("#title-wrap").css("font-size", headerTitleFontSize - ( headerTitleFontSize / 3) * (1) );      
+      $("#header-title").css("top", headerTop - (hfs * (1)) + "px");      
+      $("#subtitle").css("opacity", 0);
     }    
   }
   scrollHeader();
