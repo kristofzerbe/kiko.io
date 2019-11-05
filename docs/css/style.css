@@ -346,7 +346,6 @@ body {
   position: fixed;
   z-index: 999;
   overflow: hidden;
-  border-bottom: 1px solid #ddd;
   background-color: #555;
 }
 [data-theme="dark"] #header {
@@ -1605,6 +1604,12 @@ pre .javascript .function {
   color: #ae70d5;
 }
 @media screen and (max-width: 479px) {
+  #header {
+    height: 230px;
+  }
+  #content {
+    padding-top: 230px;
+  }
   #header-title {
     height: 50px;
   }
@@ -1686,9 +1691,6 @@ pre .javascript .function {
   }
   [data-theme="dark"] #mobile-nav-menu .mobile-nav-link {
     color: #eee !important;
-  }
-  #mobile-nav-menu .mobile-nav-link:hover {
-    color: #fff;
   }
   #mobile-nav-menu .mobile-nav-link:before {
     font-family: FontAwesome5Solid;

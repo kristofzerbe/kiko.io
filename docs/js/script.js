@@ -1,36 +1,55 @@
 (function($){
 
   //Scroll Header
-  var headerHeight = $("#header").height(),
-      headerOffset = 60,
-      headerPhotoLinkOpacity = parseFloat($("#header-photo-link").css("opacity")),
-      headerTitleFontSize = parseFloat($("#title-wrap").css("font-size")),
-      headerTop = parseFloat($("#header-title").css("top"));
+  var header = {
+    height: 0,
+    top: 0,
+    offset: 60,
+    photoLinkOpacity: 0,
+    titleFontSize: 0
+  };
+  function initHeader() {
+    //reset inline css
+    $("#header").css("height", "");
+    $("#header-title").css("top", "");
+    $("#header-photo-link").css("opacity", "");
+    $("#title-wrap").css("font-size", "");
+    //set from given css
+    header.height = $("#header").height();
+    header.top = parseFloat($("#header-title").css("top"));
+    header.photoLinkOpacity = parseFloat($("#header-photo-link").css("opacity"));
+    header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
+    
+    scrollHeader();
+  }
   function scrollHeader() {
-    var h = headerHeight - headerOffset,
+    var h = header.height - header.offset,
         st = $(document).scrollTop(),  
         d = (h - st),
         p = (d / h),
-        hfs = headerTitleFontSize / 5 * 3;
+        hfs = header.titleFontSize / 5 * 3;
     if (d > 0) {
-      $("#header").css("height", d + headerOffset + "px");
-      $("#header-photo-link").css("opacity", headerPhotoLinkOpacity * p);
+      $("#header").css("height", d + header.offset + "px");
+      $("#header-photo-link").css("opacity", header.photoLinkOpacity * p);
       $("#banner").css("opacity", p);
-      $("#title-wrap").css("font-size", headerTitleFontSize - ( headerTitleFontSize / 3) * (1 - p) );
-      $("#header-title").css("top", headerTop - (hfs * (1 - p)) + "px");
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1 - p) );
+      $("#header-title").css("top", header.top - (hfs * (1 - p)) + "px");
       $("#subtitle").css("opacity", p);
     } else {
-      $("#header").css("height", headerOffset + "px");
+      $("#header").css("height", header.offset + "px");
       $("#header-photo-link").css("opacity", 0);
       $("#banner").css("opacity", 0);
-      $("#title-wrap").css("font-size", headerTitleFontSize - ( headerTitleFontSize / 3) * (1) );      
-      $("#header-title").css("top", headerTop - (hfs * (1)) + "px");      
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );      
+      $("#header-title").css("top", header.top - (hfs * (1)) + "px");      
       $("#subtitle").css("opacity", 0);
     }    
   }
-  scrollHeader();
+  initHeader();
   $(window).scroll(function() {
     scrollHeader();
+  });
+  $(window).on('resize', function() {
+    initHeader();
   });
 
   // Search
