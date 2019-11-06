@@ -117,9 +117,10 @@
     }, mobileNavAnimDuration);
   };
 
+  delete Hammer.defaults.cssProps.userSelect;
   // https://stackoverflow.com/questions/24163202/javascript-touch-movement-track-when-user-swipes-from-edges
   // https://github.com/hammerjs/hammer.js/issues/1065
-  $("#container").hammer().on('swiperight', function (e) {
+  $("#container").hammer({ inputClass: Hammer.TouchInput }).on('swiperight', function (e) {
     var endPoint = e.gesture.pointers[0].pageX;
     var distance = e.gesture.distance;
     var origin = endPoint - distance;
@@ -141,7 +142,7 @@
       }
     }
   }); 
-  $("#container").hammer().on('swipeleft', function (e) {
+  $("#container").hammer({ inputClass: Hammer.TouchInput }).on('swipeleft', function (e) {
     var eNext = $("#article-nav-newer");
     if (eNext.length) {
       console.log(eNext.attr('href'));
