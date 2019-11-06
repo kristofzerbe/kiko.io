@@ -123,27 +123,30 @@
     var endPoint = e.gesture.pointers[0].pageX;
     var distance = e.gesture.distance;
     var origin = endPoint - distance;
-console.log(origin);
+    // console.log(origin);
     if (origin <= 15) {
-        // They swiped, starting from no more than 15px away from the edge. 
-        if ($('#main-nav-toggle').is(':visible')) {
-          if (isMobileNavAnim) return;
-          startMobileNavAnim();
-          $container.toggleClass('mobile-nav-on');
-          stopMobileNavAnim();  
-        }
+      // They swiped, starting from no more than 15px away from the edge. 
+      if ($('#main-nav-toggle').is(':visible')) {
+        if (isMobileNavAnim) return;
+        startMobileNavAnim();
+        $container.toggleClass('mobile-nav-on');
+        stopMobileNavAnim();  
       }
-      if (origin > 50) {
-        var eNext = $("#article-nav-older");
-        if (eNext.length ) {
-          eNext.click();
-        }
+    } else {
+      var ePrev = $("#article-nav-older");
+      if (ePrev.length) {
+        console.log(ePrev.attr('href'));
+        //ePrev.click();
+        window.location.href = ePrev.attr('href');
       }
+    }
   }); 
   $("#container").hammer().on('swipeleft', function (e) {
-    var ePrev = $("#article-nav-newer");
-    if (ePrev.length ) {
-      ePrev.click();
+    var eNext = $("#article-nav-newer");
+    if (eNext.length) {
+      console.log(eNext.attr('href'));
+      //eNext.click();
+      window.location.href = eNext.attr('href');
     }
   }); 
 
