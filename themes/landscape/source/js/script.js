@@ -133,7 +133,19 @@ console.log(origin);
           stopMobileNavAnim();  
         }
       }
-  });  
+      if (origin > 50) {
+        var eNext = $("#article-nav-older");
+        if (eNext.length ) {
+          eNext.click();
+        }
+      }
+  }); 
+  $("#container").hammer().on('swipeleft', function (e) {
+    var ePrev = $("#article-nav-newer");
+    if (ePrev.length ) {
+      ePrev.click();
+    }
+  }); 
 
   $('#main-nav-toggle').on('click', function(){
     if (isMobileNavAnim) return;
