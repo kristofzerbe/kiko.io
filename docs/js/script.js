@@ -1,5 +1,40 @@
 (function($){
 
+  //Swipe Events
+  delete Hammer.defaults.cssProps.userSelect;
+  // https://stackoverflow.com/questions/24163202/javascript-touch-movement-track-when-user-swipes-from-edges
+  // https://github.com/hammerjs/hammer.js/issues/1065
+  $("#container").hammer({ inputClass: Hammer.TouchInput }).on('swiperight', function (e) {
+    var endPoint = e.gesture.pointers[0].pageX;
+    var distance = e.gesture.distance;
+    var origin = endPoint - distance;
+    // console.log(origin);
+    if (origin <= 15) {
+      // They swiped, starting from no more than 15px away from the edge. 
+      if ($('#main-nav-toggle').is(':visible')) {
+        if (isMobileNavAnim) return;
+        startMobileNavAnim();
+        $container.toggleClass('mobile-nav-on');
+        stopMobileNavAnim();  
+      }
+    } else {
+      var ePrev = $("#article-nav-older");
+      if (ePrev.length) {
+        console.log(ePrev.attr('href'));
+        //ePrev.click();
+        window.location.href = ePrev.attr('href');
+      }
+    }
+  }); 
+  $("#container").hammer({ inputClass: Hammer.TouchInput }).on('swipeleft', function (e) {
+    var eNext = $("#article-nav-newer");
+    if (eNext.length) {
+      console.log(eNext.attr('href'));
+      //eNext.click();
+      window.location.href = eNext.attr('href');
+    }
+  }); 
+
   //Scroll Header
   var header = {
     height: 0,
@@ -116,40 +151,6 @@
       isMobileNavAnim = false;
     }, mobileNavAnimDuration);
   };
-
-  delete Hammer.defaults.cssProps.userSelect;
-  // https://stackoverflow.com/questions/24163202/javascript-touch-movement-track-when-user-swipes-from-edges
-  // https://github.com/hammerjs/hammer.js/issues/1065
-  $("#container").hammer().on('swiperight', function (e) {
-    var endPoint = e.gesture.pointers[0].pageX;
-    var distance = e.gesture.distance;
-    var origin = endPoint - distance;
-    // console.log(origin);
-    if (origin <= 15) {
-      // They swiped, starting from no more than 15px away from the edge. 
-      if ($('#main-nav-toggle').is(':visible')) {
-        if (isMobileNavAnim) return;
-        startMobileNavAnim();
-        $container.toggleClass('mobile-nav-on');
-        stopMobileNavAnim();  
-      }
-    } else {
-      var ePrev = $("#article-nav-older");
-      if (ePrev.length) {
-        console.log(ePrev.attr('href'));
-        //ePrev.click();
-        window.location.href = ePrev.attr('href');
-      }
-    }
-  }); 
-  $("#container").hammer().on('swipeleft', function (e) {
-    var eNext = $("#article-nav-newer");
-    if (eNext.length) {
-      console.log(eNext.attr('href'));
-      //eNext.click();
-      window.location.href = eNext.attr('href');
-    }
-  }); 
 
   $('#main-nav-toggle').on('click', function(){
     if (isMobileNavAnim) return;
