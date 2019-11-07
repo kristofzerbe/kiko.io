@@ -7,7 +7,7 @@ photograph:
     link: 'https://500px.com/photo/1005489951/Thistle-Fence-by-Kristof-Zerbe'
 series: 'A New Blog'
 part: 2
-date: 2019-09-24
+date: 2019-09-25
 updated: 2019-09-26
 tags:
   - VS Code
