@@ -21,8 +21,8 @@
       var ePrev = $("#article-nav-older");
       if (ePrev.length) {
         console.log(ePrev.attr('href'));
-        //ePrev.click();
-        window.location.href = ePrev.attr('href');
+        //window.location.href = ePrev.attr('href');
+        Barba.Pjax.goTo(ePrev.attr('href'));
       }
     }
   }); 
@@ -30,8 +30,8 @@
     var eNext = $("#article-nav-newer");
     if (eNext.length) {
       console.log(eNext.attr('href'));
-      //eNext.click();
-      window.location.href = eNext.attr('href');
+      //window.location.href = eNext.attr('href');
+      Barba.Pjax.goTo(eNext.attr('href'));
     }
   }); 
 

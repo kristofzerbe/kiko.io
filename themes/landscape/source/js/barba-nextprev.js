@@ -1,7 +1,7 @@
 // from https://barba.js.org/v1/demo/nextprev/
 
 document.addEventListener("DOMContentLoaded", function() {
-  var lastElementClicked;
+  // var lastElementClicked;
   // var PrevLink = document.querySelector('a.prev');
   // var NextLink = document.querySelector('a.next');
 
@@ -12,12 +12,13 @@ document.addEventListener("DOMContentLoaded", function() {
   Barba.Prefetch.init();
 
   Barba.Dispatcher.on('linkClicked', function(el) {
-    lastElementClicked = el;
+    // lastElementClicked = el;
+    return false;
   });
 
   var MovePage = Barba.BaseTransition.extend({
     start: function() {
-      this.originalThumb = lastElementClicked;
+      // this.originalThumb = lastElementClicked;
 
       Promise
         .all([this.newContainerLoading, this.scrollTop()])
