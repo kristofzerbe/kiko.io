@@ -12,7 +12,9 @@ date: 2019-11-26 16:51:17
 subtitle:
 ---
 
-Often it is important to trigger an event, after the user of your website/web app has filled but an text input. You have to do something with the given value in JavaScript. The intended event for this is ``change``, which will be triggered, when the user has ended changing by leaving the input with his cursor, mostly by using the TAB key. This works at some degree, if there is a physical keyboard, but not really on mobile devices ... and for me is leaving the fields often too late to start the upcoming event.
+Often it is important to trigger an event, after the user of your website/web app has filled out an text input. You have to do something with the given value in JavaScript. 
+
+The intended event for this is ``change``, which will be triggered, when the user has ended changing by leaving the input with his cursor, mostly by using the TAB key. This works at some degree, if there is a physical keyboard, but not really on mobile devices ... and for me is leaving the field often too late to start the upcoming event.
 
 <!-- more -->
 
