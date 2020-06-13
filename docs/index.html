@@ -24,6 +24,7 @@
   <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/style.css">
   <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="kiko.io" type="application/atom+xml">
 </head>
 </html>
 <body id="body">  
@@ -82,6 +83,93 @@
   
     
   
+<article id="post-Localization-with-resource-files-in-JavaScript-web-apps" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/" class="article-date">
+  <time datetime="2020-06-13T13:49:10.000Z" itemprop="datePublished">13 Jun 2020</time>
+</a>
+    <!-- 
+      <a href="https://kiko.io/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/#disqus_thread" class="article-comment-link"></a>
+     -->
+    
+  <div class="article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+    <a href="/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/">
+        <img class="article-photo" src="/photos/tablet/" />
+    </a>
+
+    
+    <!--  -->
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/">Localization with resource files in JavaScript web apps</a>
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle" itemprop="name">
+        How to work with Visual Studio resource files for localization in Single Page Applications
+    </h2>
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+
+
+<p>There are plenty of editors out there to help you writing JavaScript web applications. As I’m working in my daily life with Visual Studio, it is a obvious choice for me. </p>
+<p>One of the most time saving tools in VS is the plugin <a href="https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager" target="_blank" rel="noopener">ResXManager</a>, which is an awesome assistant on managing the translations for a Desktop- or ASP.NET-App, which uses XML-based RESX files.</p>
+<p>Mostly very localization is based on key/value pairs, defined in separate files for every language provided.</p>
+<p>Implementing several languages in pure JavaScript apps is a little more difficult, because it makes no sense to deal with big XML files in JS. All localization libraries in the market uses JSON for storing the translations and it is a little bit of work to find the right one for your requirements.</p>
+<!-- more -->
+
+<p>For a current project I use  <a href="https://github.com/Irrelon/jquery-lang-js" target="_blank" rel="noopener">jquery-lang</a>, because it provides the switch of the apps UI language without reloading and it is easy to implement. Thanks Rob Evans for your work…</p>
+<p>The definition of “tokens” in one JSON file for each language is quite easy:</p>
+<p><strong>…/languages/en.json</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"token"</span>: &#123;</span><br><span class="line">        <span class="string">"my-test"</span>: <span class="string">"My Test in English"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>…/languages/en.json</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"token"</span>: &#123;</span><br><span class="line">        <span class="string">"my-test"</span>: <span class="string">"Mein Test in Deutsch"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The usage also:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">data-lang-token</span>=<span class="string">"my-test"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Having this, the most time consuming work is to enter the translations to the localization files. If you have hundreds of them, it is hard to keep the 2, 3 or more language files in sync. You need a helper…</p>
+<p>And here comes ResXManager to the rescue, if you work with VS … but it needs a conversation from RESX to the JSON format jquery-lang uses and this a task, which can be done on building the JS app, by using a task runner like <a href="https://gruntjs.com/" target="_blank" rel="noopener">Grunt</a>.</p>
+<p>As there was no Grunt plugin/task out there to fit my needs, I have created  <a href="https://github.com/kristofzerbe/grunt-resource2json" target="_blank" rel="noopener">grunt-resource2json</a>. The configuration in the <strong>gruntfile.js</strong> is like </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">grunt.initConfig(&#123;</span><br><span class="line">    resource2json: &#123;</span><br><span class="line">      convert: &#123;</span><br><span class="line">        options: &#123;</span><br><span class="line">          format: "jquery-lang"</span><br><span class="line">        &#125;,</span><br><span class="line">        files: [</span><br><span class="line">          &#123;</span><br><span class="line">            input: "resources/Resource.resx",</span><br><span class="line">            output: "build/langpacks/en.json"</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            input: "resources/Resource.de-DE.resx",</span><br><span class="line">            output: "build/langpacks/de.json"</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            input: "resources/Resource.es-ES.resx",</span><br><span class="line">            output: "build/langpacks/es.json"</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>It takes one RESX file (input) and converts it to a JSON file (output) in an array of files.</p>
+<p>The heavy work in the plugin is done by the library <a href="https://www.npmjs.com/package/xml2js" target="_blank" rel="noopener">xml2js</a>, wich Transforms the complete XML of the RESX file into a JSON object in one call. All I had to do was to write all DATA nodes in a loop into the jquery-lang given structure.</p>
+<p>Currently supported is the format for jquery-lang only, but it would be awesome, if you fork the code on <a href="https://github.com/kristofzerbe/grunt-resource2json" target="_blank" rel="noopener">GitHub</a> and send me a Pull Request with the implementation of your needed format.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- <a data-url="https://kiko.io/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/" data-id="ckbdp4qh9000eikhz05jxlwvi" class="article-share-link">Share</a> -->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Localization/">Localization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Resource/">Resource</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual-Studio</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    
+  
 <article id="post-TFS-DevOps-Delete-Remote-Workspace" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/" class="article-date">
@@ -128,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/" data-id="ck76ekptx0009s4l90f1gudzm" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/" data-id="ckbdp4qh3000aikhz5dqz5fzh" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TFS-DevOps/">TFS/DevOps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>
@@ -189,7 +277,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/JavaScript/Better-Input-Change-Event/" data-id="ck76ekptq0005s4l9hms0c48i" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/JavaScript/Better-Input-Change-Event/" data-id="ckbdp4qgi0005ikhzhemdi4pj" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -255,7 +343,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode-revised/" data-id="ck76ekpu4000gs4l96wu4fpl4" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode-revised/" data-id="ckbdp4qgp0006ikhz7aj6dgsy" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dark-Mode/">Dark Mode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stylus/">Stylus</a></li></ul>
@@ -320,75 +408,10 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode/" data-id="ck76ekptt0006s4l9dbsn67d8" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode/" data-id="ckbdp4qgy0009ikhzyuwi3y7c" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dark-Mode/">Dark Mode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stylus/">Stylus</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    
-  
-<article id="post-A-New-Blog-Blogging-and-Synching-en-route" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/" class="article-date">
-  <time datetime="2019-09-30T22:00:00.000Z" itemprop="datePublished">01 Oct 2019</time>
-</a>
-    <!-- 
-      <a href="https://kiko.io/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/#disqus_thread" class="article-comment-link"></a>
-     -->
-    
-  <div class="article-category category-tools">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-      
-    <a href="/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/">
-        <img class="article-photo" src="/photos/tablet/19-07 Schottland-0364.jpg" />
-    </a>
-
-    
-    <!--  -->
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/">A New Blog: Blogging and Synching en route</a>
-    </h1>
-  
-
-        
-    <h2 class="article-subtitle" itemprop="name">
-        Part Three of having fun with Hexo and GitHub Pages
-    </h2>
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>I work with several devices, some Windows, some Android, and sometimes I have time to write on my articles at home (Notebook, Tablet), in my spare time in the office (Desktop, Laptop) or on my way to somewhere (Smartphone). Right now I’m am in a barber shop, waiting for my haircut and write these lines. So, wherever I am, I need the Hexo project locally, but in sync on a digital device.</p>
-<p>The blog is synced via Dropbox, but hosted on GitHub Pages, so on every device I need the  publishing functions of Git too.</p>
-        
-          <p class="article-more-link">
-            <a href="/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/" data-id="ck76ekpt70000s4l9moiz3ck1" class="article-share-link">Share</a> -->
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/">VS Code</a></li></ul>
 
     </footer>
   </div>
@@ -434,6 +457,10 @@
       <ul>
         
           <li>
+            <a href="/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/">Localization with resource files in JavaScript web apps</a>
+          </li>
+        
+          <li>
             <a href="/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/">TFS/DevOps: Delete Remote Workspace</a>
           </li>
         
@@ -449,10 +476,6 @@
             <a href="/categories/Tools/Hexo-and-the-Dark-Mode/">Hexo and the Dark Mode</a>
           </li>
         
-          <li>
-            <a href="/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/">A New Blog: Blogging and Synching en route</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -462,7 +485,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">6</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -472,7 +495,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ADSI/">ADSI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogging/">Blogging</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dark-Mode/">Dark Mode</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database-Project/">Database Project</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Stylus/">Stylus</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TFS-DevOps/">TFS/DevOps</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VS-Code/">VS Code</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ADSI/">ADSI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogging/">Blogging</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dark-Mode/">Dark Mode</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database-Project/">Database Project</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Localization/">Localization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Resource/">Resource</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Stylus/">Stylus</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TFS-DevOps/">TFS/DevOps</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VS-Code/">VS Code</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual-Studio</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -482,7 +505,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -537,6 +560,10 @@
         <ul>
           
             <li>
+              <a href="/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/">Localization with resource files in JavaScript web apps</a>
+            </li>
+          
+            <li>
               <a href="/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/">TFS/DevOps: Delete Remote Workspace</a>
             </li>
           
@@ -552,10 +579,6 @@
               <a href="/categories/Tools/Hexo-and-the-Dark-Mode/">Hexo and the Dark Mode</a>
             </li>
           
-            <li>
-              <a href="/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/">A New Blog: Blogging and Synching en route</a>
-            </li>
-          
         </ul>
       </div>
     </div>
@@ -565,7 +588,7 @@
     <div id="mobile-nav-categories">
       <h3>Categories</h3>
       <div class="categories-wrapper">
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">6</span></li></ul>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">6</span></li></ul>
       </div>
     </div>
   
