@@ -63,7 +63,7 @@ Having this, the most time consuming work is to enter the translations to the lo
 
 And here comes ResXManager to the rescue, if you work with VS ... but it needs a conversation from RESX to the JSON format jquery-lang uses and this a task, which can be done on building the JS app, by using a task runner like [Grunt](https://gruntjs.com/).
 
-As there was no Grunt plugin/task out there to fit my needs, I have created  [grunt-resource2json](https://github.com/kristofzerbe/grunt-resource2json). The configuration in the **gruntfile.js** is like 
+As there was no Grunt plugin/task out there to fit my needs, I have created  **[grunt-resource2json](https://github.com/kristofzerbe/grunt-resource2json)**. The configuration in the **gruntfile.js** is like 
 
 ```json
 grunt.initConfig({

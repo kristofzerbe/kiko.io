@@ -101,7 +101,7 @@
     
       
     <a href="/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/">
-        <img class="article-photo" src="/photos/tablet/" />
+        <img class="article-photo" src="/photos/tablet/19-05 Israel-0161.jpg" />
     </a>
 
     
@@ -124,39 +124,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-
-<p>There are plenty of editors out there to help you writing JavaScript web applications. As I’m working in my daily life with Visual Studio, it is a obvious choice for me. </p>
+        <p>There are plenty of editors out there to help you writing JavaScript web applications. As I’m working in my daily life with Visual Studio, it is a obvious choice for me. </p>
 <p>One of the most time saving tools in VS is the plugin <a href="https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager" target="_blank" rel="noopener">ResXManager</a>, which is an awesome assistant on managing the translations for a Desktop- or ASP.NET-App, which uses XML-based RESX files.</p>
-<p>Mostly very localization is based on key/value pairs, defined in separate files for every language provided.</p>
-<p>Implementing several languages in pure JavaScript apps is a little more difficult, because it makes no sense to deal with big XML files in JS. All localization libraries in the market uses JSON for storing the translations and it is a little bit of work to find the right one for your requirements.</p>
-<!-- more -->
-
-<p>For a current project I use  <a href="https://github.com/Irrelon/jquery-lang-js" target="_blank" rel="noopener">jquery-lang</a>, because it provides the switch of the apps UI language without reloading and it is easy to implement. Thanks Rob Evans for your work…</p>
-<p>The definition of “tokens” in one JSON file for each language is quite easy:</p>
-<p><strong>…/languages/en.json</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"token"</span>: &#123;</span><br><span class="line">        <span class="string">"my-test"</span>: <span class="string">"My Test in English"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>…/languages/en.json</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"token"</span>: &#123;</span><br><span class="line">        <span class="string">"my-test"</span>: <span class="string">"Mein Test in Deutsch"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>The usage also:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">data-lang-token</span>=<span class="string">"my-test"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>Having this, the most time consuming work is to enter the translations to the localization files. If you have hundreds of them, it is hard to keep the 2, 3 or more language files in sync. You need a helper…</p>
-<p>And here comes ResXManager to the rescue, if you work with VS … but it needs a conversation from RESX to the JSON format jquery-lang uses and this a task, which can be done on building the JS app, by using a task runner like <a href="https://gruntjs.com/" target="_blank" rel="noopener">Grunt</a>.</p>
-<p>As there was no Grunt plugin/task out there to fit my needs, I have created  <a href="https://github.com/kristofzerbe/grunt-resource2json" target="_blank" rel="noopener">grunt-resource2json</a>. The configuration in the <strong>gruntfile.js</strong> is like </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">grunt.initConfig(&#123;</span><br><span class="line">    resource2json: &#123;</span><br><span class="line">      convert: &#123;</span><br><span class="line">        options: &#123;</span><br><span class="line">          format: "jquery-lang"</span><br><span class="line">        &#125;,</span><br><span class="line">        files: [</span><br><span class="line">          &#123;</span><br><span class="line">            input: "resources/Resource.resx",</span><br><span class="line">            output: "build/langpacks/en.json"</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            input: "resources/Resource.de-DE.resx",</span><br><span class="line">            output: "build/langpacks/de.json"</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            input: "resources/Resource.es-ES.resx",</span><br><span class="line">            output: "build/langpacks/es.json"</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
-
-<p>It takes one RESX file (input) and converts it to a JSON file (output) in an array of files.</p>
-<p>The heavy work in the plugin is done by the library <a href="https://www.npmjs.com/package/xml2js" target="_blank" rel="noopener">xml2js</a>, wich Transforms the complete XML of the RESX file into a JSON object in one call. All I had to do was to write all DATA nodes in a loop into the jquery-lang given structure.</p>
-<p>Currently supported is the format for jquery-lang only, but it would be awesome, if you fork the code on <a href="https://github.com/kristofzerbe/grunt-resource2json" target="_blank" rel="noopener">GitHub</a> and send me a Pull Request with the implementation of your needed format.</p>
-
+        
+          <p class="article-more-link">
+            <a href="/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/" data-id="ckbdp4qh9000eikhz05jxlwvi" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/" data-id="ckbdpo1vk000ak0hzqpf4lxo7" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Localization/">Localization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Resource/">Resource</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual-Studio</a></li></ul>
@@ -216,7 +194,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/" data-id="ckbdp4qh3000aikhz5dqz5fzh" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/" data-id="ckbdpo1vp000ek0hzccgwfb0h" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TFS-DevOps/">TFS/DevOps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>
@@ -277,7 +255,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/JavaScript/Better-Input-Change-Event/" data-id="ckbdp4qgi0005ikhzhemdi4pj" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/JavaScript/Better-Input-Change-Event/" data-id="ckbdpo1v80005k0hz7pf3f1j1" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -343,7 +321,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode-revised/" data-id="ckbdp4qgp0006ikhz7aj6dgsy" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode-revised/" data-id="ckbdpo1vb0006k0hzay8di7fw" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dark-Mode/">Dark Mode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stylus/">Stylus</a></li></ul>
@@ -408,7 +386,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode/" data-id="ckbdp4qgy0009ikhzyuwi3y7c" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode/" data-id="ckbdpo1vh0009k0hziuh9xmyt" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dark-Mode/">Dark Mode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stylus/">Stylus</a></li></ul>

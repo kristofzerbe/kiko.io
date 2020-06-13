@@ -7,18 +7,18 @@
   
   <title>kiko.io | Localization with resource files in JavaScript web apps</title>
   <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="There are plenty of editors out there to help you writing JavaScript web applications. As I’m working in my daily life with Visual Studio, it is a obvious choice for me.  One of the most time savin">
+  <meta name="description" content="There are plenty of editors out there to help you writing JavaScript web applications. As I’m working in my daily life with Visual Studio, it is a obvious choice for me.  One of the most time saving t">
 <meta name="keywords" content="Visual-Studio,Resource,Localization">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Localization with resource files in JavaScript web apps">
 <meta property="og:url" content="https://kiko.io/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/index.html">
 <meta property="og:site_name" content="kiko.io">
-<meta property="og:description" content="There are plenty of editors out there to help you writing JavaScript web applications. As I’m working in my daily life with Visual Studio, it is a obvious choice for me.  One of the most time savin">
+<meta property="og:description" content="There are plenty of editors out there to help you writing JavaScript web applications. As I’m working in my daily life with Visual Studio, it is a obvious choice for me.  One of the most time saving t">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-06-13T13:49:10.910Z">
+<meta property="og:updated_time" content="2020-06-13T14:05:49.065Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Localization with resource files in JavaScript web apps">
-<meta name="twitter:description" content="There are plenty of editors out there to help you writing JavaScript web applications. As I’m working in my daily life with Visual Studio, it is a obvious choice for me.  One of the most time savin">
+<meta name="twitter:description" content="There are plenty of editors out there to help you writing JavaScript web applications. As I’m working in my daily life with Visual Studio, it is a obvious choice for me.  One of the most time saving t">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -89,19 +89,19 @@
     background-size: cover;
   }
   @media screen and (max-width: 479px) {
-    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/"); }
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/19-05 Israel-0161.jpg"); }
   }
   @media screen and (min-width: 480px) and (max-width: 767px) {
-    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/"); }
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/19-05 Israel-0161.jpg"); }
   }
   @media screen and (min-width: 768px) {
-    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/"); }    
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/19-05 Israel-0161.jpg"); }    
   }
 </style>
 <script>
   var photoLink = document.getElementById("header-photo-link");
-  photoLink.href = "";
-  photoLink.innerHTML = "see <strong></strong> at 500px";
+  photoLink.href = "https://500px.com/photo/1005493426/Zern-by-Kristof-Zerbe";
+  photoLink.innerHTML = "see <strong>Zern</strong> at 500px";
 </script>
 
   
@@ -140,16 +140,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-
-<p>There are plenty of editors out there to help you writing JavaScript web applications. As I’m working in my daily life with Visual Studio, it is a obvious choice for me. </p>
+        <p>There are plenty of editors out there to help you writing JavaScript web applications. As I’m working in my daily life with Visual Studio, it is a obvious choice for me. </p>
 <p>One of the most time saving tools in VS is the plugin <a href="https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager" target="_blank" rel="noopener">ResXManager</a>, which is an awesome assistant on managing the translations for a Desktop- or ASP.NET-App, which uses XML-based RESX files.</p>
+<a id="more"></a>
+
 <p>Mostly very localization is based on key/value pairs, defined in separate files for every language provided.</p>
 <p>Implementing several languages in pure JavaScript apps is a little more difficult, because it makes no sense to deal with big XML files in JS. All localization libraries in the market uses JSON for storing the translations and it is a little bit of work to find the right one for your requirements.</p>
 <!-- more -->
 
-<p>For a current project I use  <a href="https://github.com/Irrelon/jquery-lang-js" target="_blank" rel="noopener">jquery-lang</a>, because it provides the switch of the apps UI language without reloading and it is easy to implement. Thanks Rob Evans for your work…</p>
+<h2 id="Localization-in-JavaScript"><a href="#Localization-in-JavaScript" class="headerlink" title="Localization in JavaScript"></a>Localization in JavaScript</h2><p>For a current project I use  <a href="https://github.com/Irrelon/jquery-lang-js" target="_blank" rel="noopener">jquery-lang</a>, because it provides the switch of the apps UI language without reloading and it is easy to implement. Thanks Rob Evans for your work…</p>
 <p>The definition of “tokens” in one JSON file for each language is quite easy:</p>
 <p><strong>…/languages/en.json</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"token"</span>: &#123;</span><br><span class="line">        <span class="string">"my-test"</span>: <span class="string">"My Test in English"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -160,9 +159,9 @@
 <p>The usage also:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">data-lang-token</span>=<span class="string">"my-test"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>Having this, the most time consuming work is to enter the translations to the localization files. If you have hundreds of them, it is hard to keep the 2, 3 or more language files in sync. You need a helper…</p>
+<h2 id="Using-RESX-and-convert-to-JSON-on-build"><a href="#Using-RESX-and-convert-to-JSON-on-build" class="headerlink" title="Using RESX and convert to JSON on build"></a>Using RESX and convert to JSON on build</h2><p>Having this, the most time consuming work is to enter the translations to the localization files. If you have hundreds of them, it is hard to keep the 2, 3 or more language files in sync. You need a helper…</p>
 <p>And here comes ResXManager to the rescue, if you work with VS … but it needs a conversation from RESX to the JSON format jquery-lang uses and this a task, which can be done on building the JS app, by using a task runner like <a href="https://gruntjs.com/" target="_blank" rel="noopener">Grunt</a>.</p>
-<p>As there was no Grunt plugin/task out there to fit my needs, I have created  <a href="https://github.com/kristofzerbe/grunt-resource2json" target="_blank" rel="noopener">grunt-resource2json</a>. The configuration in the <strong>gruntfile.js</strong> is like </p>
+<p>As there was no Grunt plugin/task out there to fit my needs, I have created  <strong><a href="https://github.com/kristofzerbe/grunt-resource2json" target="_blank" rel="noopener">grunt-resource2json</a></strong>. The configuration in the <strong>gruntfile.js</strong> is like </p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">grunt.initConfig(&#123;</span><br><span class="line">    resource2json: &#123;</span><br><span class="line">      convert: &#123;</span><br><span class="line">        options: &#123;</span><br><span class="line">          format: "jquery-lang"</span><br><span class="line">        &#125;,</span><br><span class="line">        files: [</span><br><span class="line">          &#123;</span><br><span class="line">            input: "resources/Resource.resx",</span><br><span class="line">            output: "build/langpacks/en.json"</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            input: "resources/Resource.de-DE.resx",</span><br><span class="line">            output: "build/langpacks/de.json"</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            input: "resources/Resource.es-ES.resx",</span><br><span class="line">            output: "build/langpacks/es.json"</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
 
 <p>It takes one RESX file (input) and converts it to a JSON file (output) in an array of files.</p>
@@ -172,7 +171,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/" data-id="ckbdp4qh9000eikhz05jxlwvi" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/" data-id="ckbdpo1vk000ak0hzqpf4lxo7" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Localization/">Localization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Resource/">Resource</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual-Studio</a></li></ul>
