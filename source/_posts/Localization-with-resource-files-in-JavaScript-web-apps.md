@@ -16,17 +16,19 @@ categories:
 date: 2020-06-13 15:49:10
 ---
 
-<!-- more -->
-
 There are plenty of editors out there to help you writing JavaScript web applications. As I'm working in my daily life with Visual Studio, it is a obvious choice for me. 
 
 One of the most time saving tools in VS is the plugin [ResXManager](https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager), which is an awesome assistant on managing the translations for a Desktop- or ASP.NET-App, which uses XML-based RESX files.
+
+<!-- more -->
 
 Mostly very localization is based on key/value pairs, defined in separate files for every language provided.
 
 Implementing several languages in pure JavaScript apps is a little more difficult, because it makes no sense to deal with big XML files in JS. All localization libraries in the market uses JSON for storing the translations and it is a little bit of work to find the right one for your requirements.
 
 <!-- more -->
+
+## Localization in JavaScript
 
 For a current project I use  [jquery-lang](https://github.com/Irrelon/jquery-lang-js), because it provides the switch of the apps UI language without reloading and it is easy to implement. Thanks Rob Evans for your work...
 
@@ -54,6 +56,8 @@ The usage also:
 ```html
 <div lang="en" data-lang-token="my-test">
 ```
+
+## Using RESX and convert to JSON on build
 
 Having this, the most time consuming work is to enter the translations to the localization files. If you have hundreds of them, it is hard to keep the 2, 3 or more language files in sync. You need a helper...
 
