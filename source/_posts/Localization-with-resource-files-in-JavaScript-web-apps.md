@@ -92,6 +92,6 @@ grunt.initConfig({
 
 It takes one RESX file (input) and converts it to a JSON file (output) in an array of files.
 
-The heavy work in the plugin is done by the library [xml2js](https://www.npmjs.com/package/xml2js), wich Transforms the complete XML of the RESX file into a JSON object in one call. All I had to do was to write all DATA nodes in a loop into the jquery-lang given structure.
+The heavy work in the plugin is done by the library [xml2js](https://www.npmjs.com/package/xml2js), which transforms the complete XML of the RESX file into a JSON object in one call. All I had to do, was to write all DATA nodes in a loop into the jquery-lang given structure and save it as JSON.
 
 Currently supported is the format for jquery-lang only, but it would be awesome, if you fork the code on [GitHub](https://github.com/kristofzerbe/grunt-resource2json) and send me a Pull Request with the implementation of your needed format.
