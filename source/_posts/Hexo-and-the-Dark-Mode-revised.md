@@ -9,7 +9,6 @@ tags:
   - Hexo
   - CSS
   - Stylus
-  - JavaScript
   - Dark Mode
 categories:
   - Tools
