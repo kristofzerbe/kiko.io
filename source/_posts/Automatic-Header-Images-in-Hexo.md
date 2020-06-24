@@ -37,7 +37,7 @@ It is always advisable to provide one image for every device class, in order to 
          | ...
 ```
 
-The ``mobile`` images are at least 480 pixels wide, the ``tablet`` variants 768 pixels and the standard or ``normal`` one 1280 pixels. 
+The ``mobile`` images are at least 480 pixels wide, the ``tablet`` variants 768 pixels and the standard or ``normal`` one 1280 pixels.
 
 While creating the JPG files, it is important to compress them with a tool like [JPEGMini](https://www.jpegmini.com/) to save data while loading.
 
@@ -54,7 +54,7 @@ photograph:
 
 ## Usage in Theme
 
-It relies on your Hexo theme, how to use a header image. In my theme (derived from the standard theme) I just added following code in the ``article.js`` to show the individual header image as a background image at the top of the article:
+It relies on your Hexo theme, how to use a header image. In my theme (derived from the standard theme) I just added following code in the ``article.js`` to show the individual header image as a background image at the top of the article: 
 
 ```html
 <% if (!index && post.photograph){ %>
