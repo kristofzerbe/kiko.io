@@ -44,7 +44,7 @@ The definition of "tokens" in one JSON file for each language is quite easy:
 }
 ```
 
-**.../languages/en.json**
+**.../languages/de.json**
 ```js
 {
     "token": {

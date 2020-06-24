@@ -111,7 +111,7 @@ https://500px.com/photo/123456789/My-Lovely-Image
 
 ## Automate binding and provisioning on new post
 
-Developers are lazy and I do not make an exception. Having all these pool images and the meta informations, it would be nice, if Hexo just picks and processes one of the pool folders automatically, when I'm creating a new post by calling ``hexo new "My shiny new post"`` ... and It was easier then I thought.
+Developers are lazy and I do not make an exception. Having all these pool images and the meta informations, it would be nice, if Hexo just picks and processes one of the pool folders automatically, when I'm creating a new post by calling ``hexo new "My shiny new post"`` ... and it was easier then I thought.
 
 ### Where to place the code for the automatism
 
@@ -119,14 +119,14 @@ Hexo has a great [API](https://hexo.io/api/) to write [plugins](https://hexo.io/
 
 Therefore, lets use a script called ``\scripts\process-photo-on-new.js`` ...
 
-### Things an automatism should do
+### Things an automatism should do - Step by Step
 
 1. Hook into the creation of a post
 2. Pick randomly one of the pool images
 3. Place the content of the meta.txt in the Frontmatter
 4. Move the 3 device-dependend images into the ``photos`` folder
 
-#### 1. Hook into the creation of a post
+#### Step 1 - Hook into the creation of a post
 
 The needed event, the automatism can hook on, is:
 
@@ -156,7 +156,7 @@ hexo.on('new', function(post){
 });
 ```
 
-#### 2. Pick randomly one of the pool images
+#### Step 2 - Pick randomly one of the pool images
 
 There are some build-in variables to get the full path, for example, of the ``source`` folder, we can use to define the needed paths to the ``pool`` and the ``photo`` folder.
 
@@ -172,7 +172,7 @@ hexo.on('new', function(post){
 });
 ```
 
-Next, we need to preload the Hexo FS library for file access, to list the content of the ``poolDir``, including the subfolders, and filter out the meta files. Out of the resulting array we pick one randomly to use for the new post:
+Next, we need to preload the Hexo FS library for file access, to list the content of the ``poolDir``, including the subfolders, and filter out the meta files. Out of the resulting array we pick one randomly, to use for the new post:
 
 ```javascript
 const front = require('hexo-front-matter');
@@ -198,7 +198,7 @@ hexo.on('new', function(post){
 });
 ```
 
-#### 3. Place the content of the meta.txt in the Frontmatter
+#### Step 3 - Place the content of the meta.txt in the Frontmatter
 
 Now we have to read the meta file, place the data in the Frontmatter and save the article file:
 
@@ -234,9 +234,9 @@ hexo.on('new', function(post){
 });
 ```
 
-#### 4. Move the 3 device-dependend images into the photos folder
+#### Step 4 - Move the 3 device-dependend images into the photos folder
 
-Last but not least, we have to move the pool images into the ``photos`` folder and at least remove the pool folder:
+Last but not least, we have to move the pool images into the ``photos`` folder and remove the pool folder with all its processed content:
 
 ```javascript
 const front = require('hexo-front-matter');
@@ -290,3 +290,5 @@ hexo.on('new', function(post){
 
 });
 ```
+
+Now it so easy to write a new post, because almost everything is set and I can concentrate on the article. Also, it is a nice surprise to see, which photo the script has chosen. The only thing I have to do from time to time, is to refill the pool folder with new images.
