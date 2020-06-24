@@ -292,3 +292,7 @@ hexo.on('new', function(post){
 ```
 
 Now it so easy to write a new post, because almost everything is set and I can concentrate on the article. Also, it is a nice surprise to see, which photo the script has chosen. The only thing I have to do from time to time, is to refill the pool folder with new images.
+
+## Related
+
+* [A New Blog (Part Two): Customizing Hexo](/categories/Tools/A-New-Blog-Customizing-Hexo/)
