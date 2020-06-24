@@ -1,6 +1,6 @@
 ---
 title: Hello World
-date: 2019-09-17
+date: 2019-09-17 12:00:00
 hidden: true
 categories: 
     - Test
