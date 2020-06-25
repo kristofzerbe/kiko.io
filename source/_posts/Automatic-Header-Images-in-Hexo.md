@@ -193,7 +193,7 @@ hexo.on('new', function(post){
   // pick one randomly
   var metaFile = metaFiles[Math.floor(Math.random() * metaFiles.length)];
 
-  // get the name of the picked photo
+  // get the name of the picked photo (foldername)
   var photoName = metaFile.split("\\")[0];
 });
 ```
@@ -215,6 +215,7 @@ hexo.on('new', function(post){
   var files = fs.listDirSync(poolDir);
   var metaFiles = files.filter(file => file.match(/.*[\\]meta.txt/g));
   var metaFile = metaFiles[Math.floor(Math.random() * metaFiles.length)];
+  var photoName = metaFile.split("\\")[0];
 
   // read meta file
   var meta = fs.readFileSync(poolDir + "\\" + metaFile);
@@ -251,6 +252,7 @@ hexo.on('new', function(post){
   var files = fs.listDirSync(poolDir);
   var metaFiles = files.filter(file => file.match(/.*[\\]meta.txt/g));
   var metaFile = metaFiles[Math.floor(Math.random() * metaFiles.length)];
+  var photoName = metaFile.split("\\")[0];
 
   var meta = fs.readFileSync(poolDir + "\\" + metaFile);
   var metas = meta.split("\n");
@@ -268,25 +270,25 @@ hexo.on('new', function(post){
   fs.copyFile(
     poolDir + "\\" + photoName + "\\normal.jpg",
     photosDir + "\\normal\\" + photoName + ".jpg",
-      function() {
+    function() {
 
-        //copy tablet image
-        fs.copyFile(
-          poolDir + "\\" + photoName + "\\tablet.jpg",
-          photosDir + "\\tablet\\" + photoName + ".jpg",
-          function() {
+      //copy tablet image
+      fs.copyFile(
+        poolDir + "\\" + photoName + "\\tablet.jpg",
+        photosDir + "\\tablet\\" + photoName + ".jpg",
+        function() {
 
-            //copy mobile image
-            fs.copyFile(
-              poolDir + "\\" + photoName + "\\mobile.jpg",
-              photosDir + "\\mobile\\" + photoName + ".jpg",
-              function() {
+          //copy mobile image
+          fs.copyFile(
+            poolDir + "\\" + photoName + "\\mobile.jpg",
+            photosDir + "\\mobile\\" + photoName + ".jpg",
+            function() {
 
-                //remove orphaned pool folder
-                fs.rmdirSync(poolDir + "\\" + photoName);
-              });
-          });
-      });
+              //remove processed pool folder
+              fs.rmdirSync(poolDir + "\\" + photoName);
+            });
+        });
+    });
 
 });
 ```
