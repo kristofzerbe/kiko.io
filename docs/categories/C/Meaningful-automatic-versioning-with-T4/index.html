@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head><link rel=manifest href=/manifest.json><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>kiko.io | Meaningful automatic versioning with T4</title>
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Every developer has to have an idea of versioning his products. If you work with Visual Studio you have the Assembly Information in the project properties dialog, to enter it manually everytime you wa">
+<meta name="keywords" content="Visual Studio,Versioning,T4">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Meaningful automatic versioning with T4">
+<meta property="og:url" content="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/index.html">
+<meta property="og:site_name" content="kiko.io">
+<meta property="og:description" content="Every developer has to have an idea of versioning his products. If you work with Visual Studio you have the Assembly Information in the project properties dialog, to enter it manually everytime you wa">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/AssemblyInformationDialog.png">
+<meta property="og:image" content="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/DuplicateAttributes.png">
+<meta property="og:image" content="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/ChangeAssemblyInfo.png">
+<meta property="og:image" content="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/BuildLog.png">
+<meta property="og:image" content="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/PostBuildEvent.png">
+<meta property="og:image" content="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/screencast-build-hexocommander.gif">
+<meta property="og:updated_time" content="2020-06-28T23:44:49.164Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Meaningful automatic versioning with T4">
+<meta name="twitter:description" content="Every developer has to have an idea of versioning his products. If you work with Visual Studio you have the Assembly Information in the project properties dialog, to enter it manually everytime you wa">
+<meta name="twitter:image" content="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/AssemblyInformationDialog.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="kiko.io" type="application/atom+xml">
+</head>
+</html>
+<body id="body">  
+  <div id="container" class="container">
+    <div class="inner-container">
+      <div id="wrap">
+        <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <a href="#" id="header-photo-link"></a>
+    <div id="header-title" class="inner">
+        <a href="/" id="logo">
+          <h1 id="title-wrap">kiko.io</h1>
+        </a>
+      
+        <h2 id="subtitle">
+          Memorable Tech Stuff
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" id="nav-home-link" href="/"></a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-archives-link" 
+             class="nav-icon sub-nav-link"
+             href="/archives"
+             title="Archives"></a>
+        
+          <a id="nav-rss-link" 
+             class="nav-icon sub-nav-link"
+             href="/atom.xml"
+             title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kiko.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+<script>
+  if (location.pathname === "/") {
+    document.getElementById("nav-home-link").style.display = 'none';
+  }
+</script>
+        <div id="content" class="outer">
+          <section id="main">
+<style>
+  #banner {
+    background-size: cover;
+  }
+  @media screen and (max-width: 479px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/D70_7184.jpg"); }
+  }
+  @media screen and (min-width: 480px) and (max-width: 767px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/D70_7184.jpg"); }
+  }
+  @media screen and (min-width: 768px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/D70_7184.jpg"); }    
+  }
+</style>
+<script>
+  var photoLink = document.getElementById("header-photo-link");
+  photoLink.href = "https://500px.com/photo/260478557";
+  photoLink.innerHTML = "see <strong>Specialita&#39; Toscane</strong> at 500px";
+</script>
+
+  
+<article id="post-Meaningful-automatic-versioning-with-T4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/categories/C/Meaningful-automatic-versioning-with-T4/" class="article-date">
+  <time datetime="2020-06-27T15:57:18.000Z" itemprop="datePublished">27 Jun 2020</time>
+</a>
+    <!-- 
+      <a href="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/#disqus_thread" class="article-comment-link"></a>
+     -->
+    
+  <div class="article-category category-c#">
+    <a class="article-category-link" href="/categories/C/">C#</a> 
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    <!--  -->
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Meaningful automatic versioning with T4
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle" itemprop="name">
+        How to implement versioning in C# projects the better way
+    </h2>
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Every developer has to have an idea of versioning his products. If you work with Visual Studio you have the <code>Assembly Information</code> in the project properties dialog, to enter it manually everytime you want to release a new version:</p>
+<p><img src="/categories/C/Meaningful-automatic-versioning-with-T4/AssemblyInformationDialog.png" alt="Assembly Information Dialog"></p>
+<p>The four fields are: MAJOR, MINOR, BUILD, REVISION.</p>
+<p>But seriously … who does that? I guess 99% of all C# developers are entering the <code>AssemblyInfo.cs</code> and enter the famous 2 asterisks into the version declaration of BUILD and REVISION, to let Visual Studio do the incrementation job:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">assembly: AssemblyVersion(<span class="meta-string">"1.0.*.*"</span>)</span>]</span><br><span class="line">[<span class="meta">assembly: AssemblyFileVersion(<span class="meta-string">"1.0.*.*"</span>)</span>]</span><br></pre></td></tr></table></figure>
+
+<p>But this is not the end of the possibilities … Let’s do it more meaningful, with some goodies and still automatic…</p>
+<a id="more"></a>
+
+<h3 id="More-informative-versioning"><a href="#More-informative-versioning" class="headerlink" title="More informative versioning"></a>More informative versioning</h3><p>A build with an increased MAJOR version number means, that there are significant changes in the product, even breaking changes. This always should be set manually.</p>
+<p>Also the MINOR. It stands for significant functional extensions of the product.</p>
+<p>How does Visual Studio calculate BUILD and REVISION?</p>
+<blockquote>
+<p>When specifying a version, you have to at least specify major. If you specify major and minor, you can specify an asterisk for build. This will cause <strong>build</strong> to be equal to the <strong>number of days since January 1, 2000 local time</strong>, and for <strong>revision</strong> to be equal to the <strong>number of seconds since midnight local time, divided by 2</strong>.</p>
+</blockquote>
+<p>But, the BUILD number should explain, how often a software with a particular MAJOR.MINOR has been build, due to minor changes and bug fixes.</p>
+<p>The “Asterisk” REVISION number is a little weird, but at least with the BUILD number unique. But it says nothing. Better to pick up the idea of a date calculated, unique number, but not an arbitrary date … let’s take the date the project has started.</p>
+<p>For example: <strong>1.2.16.158</strong> … reads version 1.2 with 16 builds on the 158’th day after the project has started.</p>
+<h3 id="Start-with-T4"><a href="#Start-with-T4" class="headerlink" title="Start with T4"></a>Start with T4</h3><p>T4 (Text Template Transformation Toolkit) is a templating system in Visual Studio for generating text files during design time. It is very suitable to even generate code. Read about it <a href="https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates" target="_blank" rel="noopener">here</a> and <a href="https://docs.microsoft.com/en-us/visualstudio/modeling/writing-a-t4-text-template" target="_blank" rel="noopener">here</a>.</p>
+<p>A Text Template (.tt) has <strong>Directives</strong> (how the template is processed), <strong>Text blocks</strong> (text copied to the output) and <strong>Control blocks</strong> (program code).</p>
+<p>For our versioning template, we start with this in a new file named <strong><code>AssemblyVersion.tt</code></strong>:</p>
+<p><em>Directives</em>:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">#@</span> <span class="attr">template</span> <span class="attr">hostspecific</span>=<span class="string">"true"</span> <span class="attr">language</span>=<span class="string">"C#"</span> #&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">#@</span> <span class="attr">output</span> <span class="attr">extension</span>=<span class="string">".cs"</span> #&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><em>Control block</em>:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="meta">#</span></span><br><span class="line">  <span class="keyword">int</span> major = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">int</span> minor = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">int</span> build = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">int</span> revision = <span class="number">0</span>;</span><br><span class="line"><span class="meta">#&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><em>Text block</em>:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// This code was generated by a tool. Any changes made manually will be lost</span></span><br><span class="line"><span class="comment">// the next time this code is regenerated.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> System.Reflection;</span><br><span class="line"></span><br><span class="line">[<span class="meta">assembly: AssemblyVersion(<span class="meta-string">"&lt;#= $"</span>&#123;major&#125;.&#123;minor&#125;.&#123;build&#125;.&#123;revision&#125;<span class="meta-string">" #&gt;"</span>)</span>]</span><br><span class="line">[<span class="meta">assembly: AssemblyFileVersion(<span class="meta-string">"&lt;#= $"</span>&#123;major&#125;.&#123;minor&#125;.&#123;build&#125;.&#123;revision&#125;<span class="meta-string">" #&gt;"</span>)</span>]</span><br></pre></td></tr></table></figure>
+
+<p>On saving the TT file, a new CS file with the same name will be created automatically and you got an error like this:</p>
+<p><img src="/categories/C/Meaningful-automatic-versioning-with-T4/DuplicateAttributes.png" alt="Duplicate Attributes Error"></p>
+<h4 id="A-new-place-for-version-info"><a href="#A-new-place-for-version-info" class="headerlink" title="A new place for version info"></a>A new place for version info</h4><p>Th error occurs, because we have now <strong>two</strong> <code>AssemblyVersion</code> and <code>AssemblyFileVersion</code> attributes in our project. We need to comment out the original in <code>Properties\AssemblyInfo.cs</code>:</p>
+<p><img src="/categories/C/Meaningful-automatic-versioning-with-T4/ChangeAssemblyInfo.png" alt="Change AssemblyInfo.cs"></p>
+<h4 id="Structural-Considerations"><a href="#Structural-Considerations" class="headerlink" title="Structural Considerations"></a>Structural Considerations</h4><p>It makes sense to store all needed files for the new versioning system in a new root folder of the project, named <strong>AssemblyVersion</strong>, starting with the <code>AssemblyVersion.tt</code>, because there will be more files later on.</p>
+<h3 id="New-app-information-file"><a href="#New-app-information-file" class="headerlink" title="New app information file"></a>New app information file</h3><p>As we replaced the original version attributes in the project with those from our generated  <code>AssemblyVersion.cs</code>, we cannot control the MAJOR and MINOR version number via the project property dialog any longer. We need a new approach on that, which can be edited easily and processed automatically.</p>
+<h4 id="AssemblyVersion-json"><a href="#AssemblyVersion-json" class="headerlink" title="AssemblyVersion.json"></a>AssemblyVersion.json</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"initialDate"</span>: <span class="string">"2019-09-29"</span>,</span><br><span class="line">  <span class="string">"versions"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"major"</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="string">"minor"</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="string">"releaseDate"</span>: <span class="string">""</span>,</span><br><span class="line">      <span class="string">"remarks"</span>: <span class="string">"Some cool new features; New versioning system"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"major"</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="string">"minor"</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="string">"releaseDate"</span>: <span class="string">"2019-10-01"</span>,</span><br><span class="line">      <span class="string">"remarks"</span>: <span class="string">"Initial Release"</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>This new JSON file has two main items:</p>
+<ul>
+<li><code>initialDate</code> - the date the project has started, to calculate the REVISION later on</li>
+<li><code>versions</code> - a list with all different MAJOR/MINOR versions we have done so far, with at least one without a release date … the one with the highest <code>major</code> and <code>minor</code>.</li>
+</ul>
+<p>The <code>remarks</code> attribute of a list item holds some information about the changes in a new version. Together with <code>releaseDate</code>, useful for a possible release history, shown in the product itself.</p>
+<h4 id="Library-references-in-T4"><a href="#Library-references-in-T4" class="headerlink" title="Library references in T4"></a>Library references in T4</h4><p>T4 runs in its own app domain, therefore it can use built-in libraries as <code>System.IO</code>, but not third-party libraries like <code>Newtonsoft.JSON</code>. </p>
+<p>We could reference those libraries from the projects package folder via the absolute path (if we use it in our product), but when we are running a NuGet update, the reference will break. </p>
+<p>It is advisable to store such libraries directly in a fixed folder, like <strong>AssemblyVersion\Libraries</strong>. They won’t have any impact to our product, because the are only used while design time.</p>
+<h3 id="The-MAJOR-and-MINOR"><a href="#The-MAJOR-and-MINOR" class="headerlink" title="The MAJOR and MINOR"></a>The MAJOR and MINOR</h3><p>To process the new <code>AssemblyVersion.json</code> in the template, we need some new directives for referencing the needed libraries and the import of the appropriate namepaces:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">#@</span> <span class="attr">assembly</span> <span class="attr">name</span>=<span class="string">"System.Core"</span> #&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">#@</span> <span class="attr">assembly</span> <span class="attr">name</span>=<span class="string">"$(SolutionDir)\AssemblyVersion\Libraries\Newtonsoft.Json.dll"</span> #&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">#@</span> <span class="attr">import</span> <span class="attr">namespace</span>=<span class="string">"System.IO"</span> #&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">#@</span> <span class="attr">import</span> <span class="attr">namespace</span>=<span class="string">"System.Linq"</span> #&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">#@</span> <span class="attr">import</span> <span class="attr">namespace</span>=<span class="string">"Newtonsoft.Json"</span> #&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Via the use of the T4 variable <code>$(SolutionDir)</code>, we can point to our copy of Newtonsoft JSON.</p>
+<p>Now we can read and convert the JSON into an anonymous object and get the highest values of MAJOR and MINOR:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="meta">#</span></span><br><span class="line">    <span class="keyword">string</span> avPath = <span class="keyword">this</span>.Host.ResolvePath(<span class="string">"AssemblyVersion.json"</span>);</span><br><span class="line">    <span class="keyword">string</span> avJson = File.ReadAllText(avPath);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> avDefinition = <span class="keyword">new</span> &#123;</span><br><span class="line">        initialDate = <span class="string">""</span>,</span><br><span class="line">        versions = <span class="keyword">new</span> [] &#123;</span><br><span class="line">            <span class="keyword">new</span> &#123;</span><br><span class="line">                major = <span class="number">0</span>,</span><br><span class="line">                minor = <span class="number">0</span>,</span><br><span class="line">                releaseDate = <span class="string">""</span>,</span><br><span class="line">                remarks = <span class="string">""</span> &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">var</span> avObject = JsonConvert.DeserializeAnonymousType(avJson, avDefinition);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Get highest Major/Minor from versions list</span></span><br><span class="line">    <span class="keyword">var</span> maxVersion = avObject.versions</span><br><span class="line">      .OrderByDescending(i =&gt; i.major)</span><br><span class="line">      .ThenByDescending(j =&gt; j.minor)</span><br><span class="line">      .First();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Set MAJOR</span></span><br><span class="line">    <span class="keyword">int</span> major = maxVersion.major;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Set MINOR</span></span><br><span class="line">    <span class="keyword">int</span> minor = maxVersion.minor;</span><br><span class="line"><span class="meta">#&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="The-BuildLog"><a href="#The-BuildLog" class="headerlink" title="The BuildLog"></a>The BuildLog</h3><p>In order to get the version number for BUILD, we need a method to count and store every build that has been run, separated by the MAJOR/MINOR versions. This is a job for a <strong>Post-build event</strong>, which can be configured in the project properties dialog. The event uses shell commands as they are used on the command line.</p>
+<p>What the commands should do:&nbsp;&nbsp;&nbsp;Write a new line with the current date and time in a log file, named after the MAJOR/MINOR version and stored in the folder <strong>AssemblyVersion\BuildLogs</strong>.</p>
+<p><img src="/categories/C/Meaningful-automatic-versioning-with-T4/BuildLog.png" alt="Build Log"></p>
+<h4 id="Extending-build-event-macros"><a href="#Extending-build-event-macros" class="headerlink" title="Extending build event macros"></a>Extending build event macros</h4><p>Shell commands for build events are supporting built-in variables, so called ‘macros’, like <code>$(ProjectDir)</code> (which returns the project directory path), but there is no such macro for the current version number. We have to introduce it via extending the project with a new build target.</p>
+<p>Unload the project in Visual Studio for editing the CSPROJ (or VBPROJ) file of your product manually and write the following definition just before the end-tag:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">PropertyGroup</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">PostBuildEventDependsOn</span>&gt;</span></span><br><span class="line">    $(PostBuildEventDependsOn);</span><br><span class="line">    PostBuildMacros;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">PostBuildEventDependsOn</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">PropertyGroup</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">Target</span> <span class="attr">Name</span>=<span class="string">"PostBuildMacros"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">GetAssemblyIdentity</span> <span class="attr">AssemblyFiles</span>=<span class="string">"$(TargetPath)"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Output</span> <span class="attr">TaskParameter</span>=<span class="string">"Assemblies"</span> <span class="attr">ItemName</span>=<span class="string">"Targets"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">GetAssemblyIdentity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ItemGroup</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">VersionNumber</span> <span class="attr">Include</span>=<span class="string">"@(Targets-&gt;'%(Version)')"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ItemGroup</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Target</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>After reloading the project in Visual Studio, we can use <code>@(VersionNumber)</code> in our commands.</p>
+<h4 id="CreateBuildLog-bat"><a href="#CreateBuildLog-bat" class="headerlink" title="CreateBuildLog.bat"></a>CreateBuildLog.bat</h4><p>The event build editor is not very comfortable, so we create the batch file <code>CreateBuildLog.bat</code> in our <strong>AssemblyVersion</strong> folder and use this as the post build event command.</p>
+<p><strong>IMPORTANT: The BuildLog folder must exist, before running the following command the first time!</strong></p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="comment">REM --Get parameters</span></span><br><span class="line"><span class="built_in">set</span> PROJECT_DIR=%<span class="number">1</span></span><br><span class="line"><span class="built_in">set</span> VERSION_NUMBER=%<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">REM --Set what to log</span></span><br><span class="line"><span class="built_in">set</span> LOG_LINE=<span class="variable">%DATE%</span> <span class="variable">%TIME%</span></span><br><span class="line"></span><br><span class="line"><span class="comment">REM --Inform the user</span></span><br><span class="line"><span class="built_in">set</span> MSG=CreateBuildLog '<span class="variable">%LOG_LINE%</span>' <span class="keyword">for</span> version <span class="variable">%VERSION_NUMBER%</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">%MSG%</span></span><br><span class="line"></span><br><span class="line"><span class="comment">REM --Get version parts</span></span><br><span class="line"><span class="keyword">FOR</span> /f "tokens=<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span> delims=." <span class="variable">%%a</span> <span class="keyword">IN</span> ("<span class="variable">%VERSION_NUMBER%</span>") <span class="keyword">do</span> (</span><br><span class="line">	<span class="built_in">set</span> MAJOR=<span class="variable">%%a</span></span><br><span class="line">	<span class="built_in">set</span> MINOR=<span class="variable">%%b</span></span><br><span class="line">	<span class="built_in">set</span> BUILD=<span class="variable">%%c</span></span><br><span class="line">	<span class="built_in">set</span> REVISION=<span class="variable">%%d</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">REM --Define BuildLog file and folder </span></span><br><span class="line"><span class="built_in">set</span> BUILDLOG_FILE=<span class="variable">%MAJOR%</span>.<span class="variable">%MINOR%</span>.log</span><br><span class="line"><span class="built_in">set</span> BUILDLOG_FOLDER=<span class="variable">%PROJECT_DIR%</span>\AssemblyVersion\BuildLogs</span><br><span class="line"></span><br><span class="line"><span class="comment">REM --Write current date and time as new line in the file</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">%LOG_LINE%</span> &gt;&gt; <span class="variable">%BUILDLOG_FOLDER%</span>\<span class="variable">%BUILDLOG_FILE%</span>"</span><br></pre></td></tr></table></figure>
+
+<p><img src="/categories/C/Meaningful-automatic-versioning-with-T4/PostBuildEvent.png" alt="Post Build Event"></p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"$(ProjectDir)\AssemblyVersion\CreateBuildLog.bat" "$(ProjectDir)" @(VersionNumber)</span><br></pre></td></tr></table></figure>
+
+<h3 id="The-BUILD"><a href="#The-BUILD" class="headerlink" title="The BUILD"></a>The BUILD</h3><p>As we have now the BuildLogs, we can use them in the template:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="meta">#</span></span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Get BuildLog of max version</span></span><br><span class="line">    <span class="keyword">string</span> buildlogFolder = <span class="keyword">this</span>.Host.ResolvePath(<span class="string">"BuildLogs"</span>);</span><br><span class="line">    <span class="keyword">string</span> buildLog = </span><br><span class="line">      buildlogFolder + <span class="string">"\\"</span> +</span><br><span class="line">      maxVersion.major + <span class="string">"."</span> +</span><br><span class="line">      maxVersion.minor + <span class="string">".log"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Get number of lines from BuildLog or create a new log (!)</span></span><br><span class="line">    <span class="keyword">var</span> buildCount = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (File.Exists(buildLog)) &#123;</span><br><span class="line">        buildCount = File.ReadLines(buildLog).Count() + <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        File.Create(buildLog).Dispose();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Set BUILD</span></span><br><span class="line">    <span class="keyword">int</span> build = buildCount;</span><br><span class="line"><span class="meta">#&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Very important is to create the log file, if it doesn’t exists! Otherwise the build will always fail, because the version attributes can’t be created.</p>
+<h3 id="The-REVISION"><a href="#The-REVISION" class="headerlink" title="The REVISION"></a>The REVISION</h3><p>At least we have to set the REVISION number, by calculating the difference between the current date and the <code>initialDate</code>, which we have previously read from the <code>AssemblyVersion.json</code>:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="meta">#</span></span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Set REVISION</span></span><br><span class="line">    <span class="keyword">var</span> dateCreated = DateTime.Parse(avObject.initialDate);</span><br><span class="line">    <span class="keyword">int</span> revision = (DateTime.Now.Date - dateCreated.Date).Days;</span><br><span class="line"><span class="meta">#&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Transforming-T4-template-on-build"><a href="#Transforming-T4-template-on-build" class="headerlink" title="Transforming T4 template on build"></a>Transforming T4 template on build</h3><p>The last hurdle is to run the text transformation every time you build your product. Until now it runs only on saving the <code>AssemblyVersion.tt</code>.</p>
+<p>A great helper on that was Thomas Levesque’s post <a href="https://thomaslevesque.com/2017/11/13/transform-t4-templates-as-part-of-the-build-and-pass-variables-from-the-project/" target="_blank" rel="noopener">“Transform T4 templates as part of the build, and pass variables from the project”</a>, where he describes every difficulty to reach this goal.</p>
+<p>To make it short: We have to edit the CSPROJ file again, to introduce TextTemplating to MSBuild.</p>
+<p>First we need following near the beginning of the projects XML:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">PropertyGroup</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">VisualStudioVersion</span> <span class="attr">Condition</span>=<span class="string">"'$(VisualStudioVersion)' == ''"</span>&gt;</span></span><br><span class="line">      16.0</span><br><span class="line">    <span class="tag">&lt;/<span class="name">VisualStudioVersion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">VSToolsPath</span> <span class="attr">Condition</span>=<span class="string">"'$(VSToolsPath)' == ''"</span>&gt;</span></span><br><span class="line">      $(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</span><br><span class="line">    <span class="tag">&lt;/<span class="name">VSToolsPath</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">TransformOnBuild</span>&gt;</span>true<span class="tag">&lt;/<span class="name">TransformOnBuild</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">OverwriteReadOnlyOutputFiles</span>&gt;</span>true<span class="tag">&lt;/<span class="name">OverwriteReadOnlyOutputFiles</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">TransformOutOfDateOnly</span>&gt;</span>false<span class="tag">&lt;/<span class="name">TransformOutOfDateOnly</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">PropertyGroup</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Secondly add the IMPORT of the TextTemplating target AFTER the CSharp target:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Import</span> <span class="attr">Project</span>=<span class="string">"$(MSBuildToolsPath)\Microsoft.CSharp.targets"</span> /&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;<span class="name">Import</span> <span class="attr">Project</span>=<span class="string">"$(VSToolsPath)\TextTemplating\Microsoft.TextTemplating.targets"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>If you build your product now, a new build log is created and the version numbers BUILD and REVISION are automatically increased.</p>
+<h3 id="See-it-in-action"><a href="#See-it-in-action" class="headerlink" title="See it in action"></a>See it in action</h3><p>The project where I implemented this versioning first is <a href="https://github.com/kristofzerbe/HexoCommander" target="_blank" rel="noopener">HexoCommander</a>. Feel free to download the code and see how the new versioning mechanism works.</p>
+<p><img src="/categories/C/Meaningful-automatic-versioning-with-T4/screencast-build-hexocommander.gif" alt="Screencast Build HexoCommander"></p>
+<p>Enjoy versioning…</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- <a data-url="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/" data-id="ckbxwzim7000k8cl91ctrl4x9" class="article-share-link">Share</a> -->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/T4/">T4</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Versioning/">Versioning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/categories/Tools/Automatic-Header-Images-in-Hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Automatic Header Images in Hexo</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+          
+            <aside id="sidebar">
+  
+    <div class="widget-wrap">
+    <div class="widget about">
+        <div class="avatar">
+            <img src="/images/kristof-zerbe.png">
+            <a href="https://github.com/kristofzerbe" target="blank" class="fab fa-github"></a>
+            <a href="https://www.xing.com/profile/Kristof_Zerbe" target="blank" class="fab fa-xing"></a>
+            <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" target="blank" class="fab fa-linkedin"></a>      
+            <a href="https://500px.com/kikon" target="blank" class="fab fa-500px"></a>
+            <a href="https://twitter.com/kristofz" target="blank" class="fab fa-twitter"></a>
+        </div>
+        <h3>Kristof Zerbe</h3>
+        <p>
+            Developer and Team Lead located in Wiesbaden, Germany
+        </p>
+    </div>
+</div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/categories/C/Meaningful-automatic-versioning-with-T4/">Meaningful automatic versioning with T4</a>
+          </li>
+        
+          <li>
+            <a href="/categories/Tools/Automatic-Header-Images-in-Hexo/">Automatic Header Images in Hexo</a>
+          </li>
+        
+          <li>
+            <a href="/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/">Localization with resource files in JavaScript web apps</a>
+          </li>
+        
+          <li>
+            <a href="/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/">TFS/DevOps: Delete Remote Workspace</a>
+          </li>
+        
+          <li>
+            <a href="/categories/JavaScript/Better-Input-Change-Event/">Better Input Change Event</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C#</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ADSI/">ADSI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogging/">Blogging</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dark-Mode/">Dark Mode</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database-Project/">Database Project</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Localization/">Localization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Resource/">Resource</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Stylus/">Stylus</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/T4/">T4</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TFS-DevOps/">TFS/DevOps</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VS-Code/">VS Code</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Versioning/">Versioning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+          
+        </div>
+        <footer id="footer">
+  
+  <div class="outer">
+    <div class="inner">
+        <div id="footer-info">
+          &copy; 2020 <a href="https://github.com/kristofzerbe">Kristof Zerbe</a><br>
+          Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/" target="_blank">GitHub</a>
+        </div>
+        <div id="footer-theme">          
+          <input type="checkbox" id="theme-switch">
+          <label for="theme-switch"></label>
+        </div>
+    </div>
+  </div>
+</footer>
+      </div>
+      <nav id="mobile-nav">
+  <div id="mobile-nav-header">
+    <img class="avatar" src="/images/kristof-zerbe.png">
+    <h1>kiko.io</h1>
+    <p>by <span>Kristof Zerbe</span></p>
+  </div>
+  
+  <div id="mobile-nav-menu">
+    
+      <a href="/" 
+        id="nav-home-link" 
+        class="mobile-nav-link">Home</a>
+    
+      <a href="/archives" 
+        id="nav-archives-link" 
+        class="mobile-nav-link">Archives</a>
+    
+      <a href="/atom.xml" 
+        id="nav-rss-link" 
+        class="mobile-nav-link">RSS Feed</a>
+    
+  </div>
+
+  
+    <div id="mobile-nav-recent-posts">
+      <h3>Recent Posts</h3>
+      <div class="recent-posts-wrapper">
+        <ul>
+          
+            <li>
+              <a href="/categories/C/Meaningful-automatic-versioning-with-T4/">Meaningful automatic versioning with T4</a>
+            </li>
+          
+            <li>
+              <a href="/categories/Tools/Automatic-Header-Images-in-Hexo/">Automatic Header Images in Hexo</a>
+            </li>
+          
+            <li>
+              <a href="/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/">Localization with resource files in JavaScript web apps</a>
+            </li>
+          
+            <li>
+              <a href="/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/">TFS/DevOps: Delete Remote Workspace</a>
+            </li>
+          
+            <li>
+              <a href="/categories/JavaScript/Better-Input-Change-Event/">Better Input Change Event</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  
+
+  
+    <div id="mobile-nav-categories">
+      <h3>Categories</h3>
+      <div class="categories-wrapper">
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C#</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">7</span></li></ul>
+      </div>
+    </div>
+  
+
+</nav>
+      <!-- DARK MODE TOGGLE -->
+<script src="/js/dark-mode-toggle.js"></script>
+
+<!-- DISQUS -->
+
+<script>
+  var disqus_shortname = 'kiko-io';
+  
+  var disqus_url = 'https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- LIBRARIES -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<!-- FANCYBOX -->
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<!-- HAMMER -->
+<script src="/hammer/hammer.js"></script>
+<script src="/hammer/jquery.hammer.js"></script>
+
+<!-- BARBA -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.1/TweenMax.min.js"></script>
+<script src="/js/barba-nextprev.js"></script> -->
+
+<!-- MAIN-SCRIPT (THEME.LANDSCAPE.SOURCE.JS) -->
+<script src="/js/script.js"></script>
+
+<!-- ANALYTICS -->
+<!-- 
+ -->
+
+<!-- BACK-TO-TOP -->
+<script>
+  addBackToTop({
+    diameter: 30
+  })
+</script>
+<style>
+  #back-to-top {
+    background-color: #888;
+    color: #fff;
+    border-radius: 0;
+    opacity: 0.5;
+  }
+  #back-to-top:hover {
+    background-color: #0069dc;
+    opacity: 1;
+  }
+  #back-to-top svg {
+    height: 20px;    
+    width: 20px; 
+    margin: 6px auto 0;   
+  }
+</style>
+
+    </div>
+  </div>
+</body>
+</html>
