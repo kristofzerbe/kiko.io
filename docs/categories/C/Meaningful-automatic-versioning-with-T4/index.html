@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/BuildLog.png">
 <meta property="og:image" content="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/PostBuildEvent.png">
 <meta property="og:image" content="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/screencast-build-hexocommander.gif">
-<meta property="og:updated_time" content="2020-06-28T23:44:49.000Z">
+<meta property="og:updated_time" content="2020-07-05T21:04:01.385Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Meaningful automatic versioning with T4">
 <meta name="twitter:description" content="Every developer has to have an idea of versioning his products. If you work with Visual Studio you have the Assembly Information in the project properties dialog, to enter it manually everytime you wa">
@@ -159,9 +159,9 @@
 <h3 id="More-informative-versioning"><a href="#More-informative-versioning" class="headerlink" title="More informative versioning"></a>More informative versioning</h3><p>A build with an increased MAJOR version number means, that there are significant changes in the product, even breaking changes. This always should be set manually.</p>
 <p>Also the MINOR. It stands for significant functional extensions of the product.</p>
 <p>How does Visual Studio calculate BUILD and REVISION?</p>
-<blockquote>
-<p>When specifying a version, you have to at least specify major. If you specify major and minor, you can specify an asterisk for build. This will cause <strong>build</strong> to be equal to the <strong>number of days since January 1, 2000 local time</strong>, and for <strong>revision</strong> to be equal to the <strong>number of seconds since midnight local time, divided by 2</strong>.</p>
+<blockquote><p>When specifying a version, you have to at least specify major. If you specify major and minor, you can specify an asterisk for build. This will cause <strong>build</strong> to be equal to the <strong>number of days since January 1, 2000 local time</strong>, and for <strong>revision</strong> to be equal to the <strong>number of seconds since midnight local time, divided by 2</strong>.</p>
 </blockquote>
+
 <p>But, the BUILD number should explain, how often a software with a particular MAJOR.MINOR has been build, due to minor changes and bug fixes.</p>
 <p>The “Asterisk” REVISION number is a little weird, but at least with the BUILD number unique. But it says nothing. Better to pick up the idea of a date calculated, unique number, but not an arbitrary date … let’s take the date the project has started.</p>
 <p>For example: <strong>1.2.16.158</strong> … reads version 1.2 with 16 builds on the 158’th day after the project has started.</p>

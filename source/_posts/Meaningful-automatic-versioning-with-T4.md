@@ -38,7 +38,9 @@ Also the MINOR. It stands for significant functional extensions of the product.
 
 How does Visual Studio calculate BUILD and REVISION?
 
-> When specifying a version, you have to at least specify major. If you specify major and minor, you can specify an asterisk for build. This will cause **build** to be equal to the **number of days since January 1, 2000 local time**, and for **revision** to be equal to the **number of seconds since midnight local time, divided by 2**.
+{% blockquote %}
+When specifying a version, you have to at least specify major. If you specify major and minor, you can specify an asterisk for build. This will cause **build** to be equal to the **number of days since January 1, 2000 local time**, and for **revision** to be equal to the **number of seconds since midnight local time, divided by 2**.
+{% endblockquote %}
 
 But, the BUILD number should explain, how often a software with a particular MAJOR.MINOR has been build, due to minor changes and bug fixes.
 

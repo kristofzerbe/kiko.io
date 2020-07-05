@@ -32,7 +32,7 @@ On their website is a small configurator for a script to implement in each post,
 
 The script had to be included to my Hexo ``article.js``:
 
-```js
+```ejs
 <% if (!index && post.comments){ %>
   <script src="https://utteranc.es/client.js"
     repo="kristofzerbe/kiko.io"
@@ -40,7 +40,7 @@ The script had to be included to my Hexo ``article.js``:
     theme="github-light"
     crossorigin="anonymous"
     async>
-</script>
+  </script>
 <% } %>
 ```
 
