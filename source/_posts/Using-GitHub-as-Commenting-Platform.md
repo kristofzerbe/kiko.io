@@ -11,7 +11,7 @@ tags:
 categories:
   - Tools
 date: 2020-07-05 14:55:16
-subtitle: Integrate Utteranc's GitHub Issue Commenting to Hexo
+subtitle: Integrate Utterances' GitHub Issue Commenting to Hexo
 ---
 
 If you run a blog, it is always advisable to integrate a commenting system, in order to get feedback on your posts from your readers.
@@ -44,8 +44,8 @@ The script had to be included to my Hexo ``article.js``:
 <% } %>
 ```
 
-That's pretty much it. On entering the first comment, utteranc told me to install the needed GitHub App to my repo, in order to make it work ... and done.
+That's pretty much it. On entering the first comment, Utterances told me to install the needed GitHub App to my repo, in order to make it work ... and done.
 
-![Utteranc GitHub App](Using-GitHub-as-Commenting-Platform/utteranc-github-app.png)
+![Utterances GitHub App](Using-GitHub-as-Commenting-Platform/utteranc-github-app.png)
 
 The result you see below ...
