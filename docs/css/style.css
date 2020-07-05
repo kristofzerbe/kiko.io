@@ -245,19 +245,19 @@ body {
 }
 .article-entry h2,
 .widget h2 {
-  font-size: 1.5em;
+  font-size: 1.7em;
 }
 .article-entry h3,
 .widget h3 {
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 .article-entry h4,
 .widget h4 {
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 .article-entry h5,
 .widget h5 {
-  font-size: 1em;
+  font-size: 1.1em;
 }
 .article-entry h6,
 .widget h6 {
@@ -390,6 +390,12 @@ body {
 }
 #content {
   padding-top: 300px;
+}
+body.article-view #header {
+  height: 500px;
+}
+body.article-view #content {
+  padding-top: 500px;
 }
 #header-outer {
   height: 100%;
@@ -779,10 +785,12 @@ a.article-title:hover {
 .article-entry h1,
 .article-entry h2,
 .article-entry h3,
-.article-entry h4,
-.article-entry h5,
-.article-entry h6 {
+.article-entry h5 {
   font-weight: bold;
+}
+.article-entry h4,
+.article-entry h6 {
+  font-weight: normal;
 }
 .article-entry h1,
 .article-entry h2,
@@ -848,10 +856,15 @@ a.article-title:hover {
   border-bottom: 3px solid #666;
 }
 .article-entry blockquote {
+  border-left: 4px #c0c0c0 solid;
+  padding-left: 10px;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.4em;
-  margin: 1.6em 20px;
-  text-align: center;
+  font-size: 110%;
+  margin: 1.6em 0;
+  text-align: left;
+}
+.article-entry blockquote p {
+  line-height: 1.4em;
 }
 .article-entry blockquote footer {
   font-size: 14px;
@@ -1072,6 +1085,10 @@ a.article-title:hover {
   display: block;
   max-width: 100%;
   margin: 0 auto;
+}
+.utterances {
+  margin: 0;
+  max-width: 100%;
 }
 #comments {
   background: #fff;
@@ -1606,10 +1623,10 @@ pre .javascript .function {
 }
 @media screen and (max-width: 479px) {
   #header {
-    height: 230px;
+    height: 230px !important;
   }
   #content {
-    padding-top: 230px;
+    padding-top: 230px !important;
   }
   #header-title {
     height: 50px;
