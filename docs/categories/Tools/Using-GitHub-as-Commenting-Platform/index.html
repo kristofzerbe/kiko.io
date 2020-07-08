@@ -16,7 +16,7 @@
 <meta property="og:description" content="If you run a blog, it is always advisable to integrate a commenting system, in order to get feedback on your posts from your readers. So did I, when I start this blog and I decided to use the Disqus p">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://kiko.io/categories/Tools/Using-GitHub-as-Commenting-Platform/utteranc-github-app.png">
-<meta property="og:updated_time" content="2020-07-05T21:21:22.022Z">
+<meta property="og:updated_time" content="2020-07-06T13:07:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Using GitHub as Commenting Platform">
 <meta name="twitter:description" content="If you run a blog, it is always advisable to integrate a commenting system, in order to get feedback on your posts from your readers. So did I, when I start this blog and I decided to use the Disqus p">
@@ -148,7 +148,7 @@
 <a id="more"></a>
 
 <p>As I read a post from on <a href="https://thomaslevesque.com" target="_blank" rel="noopener">Thomas Lavesques’ blog</a>, to solve another problem, his commenting section came to my attention: <strong><a href="https://utteranc.es/" target="_blank" rel="noopener">utteranc.es</a></strong> … exactly the solution I needed! Thanx guys…</p>
-<p>On their website is a small configurator for a script to implement in each post, wich needs only few information:</p>
+<p>On their website is a small configurator for a script to implement in each post, which needs only few information:</p>
 <ul>
 <li>Name of the Repo</li>
 <li>How the mapping of the post to the Issues should work</li>
@@ -164,7 +164,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/Using-GitHub-as-Commenting-Platform/" data-id="ckc95yeta000gwwhzjufhkvup" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/Using-GitHub-as-Commenting-Platform/" data-id="ckcd6x8il000evgbkbimj3viw" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -189,13 +189,12 @@
 <!--  -->
 
 
-  <script src="https://utteranc.es/client.js"
-    repo="kristofzerbe/kiko.io"
-    issue-term="pathname"
-    theme="github-light"
-    crossorigin="anonymous"
-    async>
-</script>
+  <div id="comment-placeholder"></div>
+  <script>
+    window.addEventListener('load', function () {
+      insertUtterancesCommentBlock();
+    })    
+  </script>
 </section>
           
             <aside id="sidebar">
@@ -361,7 +360,7 @@
   
 
 </nav>
-      <!-- DARK MODE TOGGLE -->
+      <script src="/js/utterances-comment.js"></script>
 <script src="/js/dark-mode-toggle.js"></script>
 
 <!-- DISQUS -->

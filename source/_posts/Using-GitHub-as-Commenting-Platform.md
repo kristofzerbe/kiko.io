@@ -24,7 +24,7 @@ As I host this blog at GitHub (see [A New Blog (Part One): VS Code, Hexo and Git
 
 As I read a post from on [Thomas Lavesques' blog](https://thomaslevesque.com), to solve another problem, his commenting section came to my attention: **[utteranc.es](https://utteranc.es/)** ... exactly the solution I needed! Thanx guys...
 
-On their website is a small configurator for a script to implement in each post, wich needs only few information:
+On their website is a small configurator for a script to implement in each post, which needs only few information:
 
 * Name of the Repo
 * How the mapping of the post to the Issues should work

@@ -73,11 +73,10 @@
 <% } %> -->
 
 <% if (!index && post.comments){ %>
-  <script src="https://utteranc.es/client.js"
-    repo="kristofzerbe/kiko.io"
-    issue-term="pathname"
-    theme="github-light"
-    crossorigin="anonymous"
-    async>
-</script>
+  <div id="comment-placeholder"></div>
+  <script>
+    window.addEventListener('load', function () {
+      insertUtterancesCommentBlock();
+    })    
+  </script>
 <% } %>
