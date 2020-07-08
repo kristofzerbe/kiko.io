@@ -49,3 +49,60 @@ That's pretty much it. On entering the first comment, Utterances told me to inst
 ![Utterances GitHub App](Using-GitHub-as-Commenting-Platform/utteranc-github-app.png)
 
 The result you see below ...
+
+### UPDATE...
+
+The utterances script tag has the attribute ``theme``, to tell utterances  which style should be delivered. There are several themes available, but if users are able to switch between light or dark mode on the page (see [Hexo and the Dark Mode](/categories/Tools/Hexo-and-the-Dark-Mode), the comment block shold change also to an suitable theme.
+
+On order to respond on a mode change, it is necessary to write a more dynamic script loading. First we define a function in a global script file to load the utterances script via JS:
+
+```js
+function insertUtterancesCommentBlock() {
+    var commentTheme = "github-light";
+    if(localStorage.getItem("theme")) {
+      if(localStorage.getItem("theme") === "dark"){
+        commentTheme = "github-dark";
+      }
+    }
+    const scriptId = "comment-theme-script";
+    const existingScript = document.getElementById(scriptId);
+    if (!existingScript) {
+      const commentScript = document.createElement("script");
+      commentScript.id = scriptId;
+      commentScript.src = "https://utteranc.es/client.js";
+      commentScript.setAttribute("repo", "kristofzerbe/kiko.io");
+      commentScript.setAttribute("issue-term", "pathname");
+      commentScript.setAttribute("theme", commentTheme);
+      commentScript.setAttribute("crossorigin", "anonymous");
+      const placeholder = document.getElementById("comment-placeholder");
+      placeholder.innerHTML = "";
+      placeholder.appendChild(commentScript);
+    }
+}
+```
+
+Then we change the placement in the EJS file by defining a placeholder  and ensuring that the script above is loaded, before we call it:
+
+```ejs
+<div id="comment-placeholder"></div>
+<script>
+  window.addEventListener('load', function () {
+    insertUtterancesCommentBlock();
+  })
+</script>
+```
+
+On my blog, everytime the user switches between light/dark mode the ``body`` tag will be decorated with the data tag ``data-theme`` and the value of the mode, to control the rendered style. To keep the loading of the utterances script independent from this functionality, we just have to listen to this change via ``MutationObserver``:
+
+```js
+//observe theme change, to adjust comment block theme
+var target = document.documentElement,
+    observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.attributionName === "data-theme" );
+                insertUtterancesCommentBlock();
+            });        
+    }),
+    config = { attributes: true };
+observer.observe(target, config);
+```
