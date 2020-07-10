@@ -54,7 +54,7 @@ The result you see below ...
 
 The utterances script tag has the attribute ``theme``, to tell utterances  which style should be delivered. There are several themes available, but if users are able to switch between light or dark mode on the page (see [Hexo and the Dark Mode](/categories/Tools/Hexo-and-the-Dark-Mode)), the comment block should change to an suitable theme also.
 
-On order to respond on a mode change, it is necessary to write a more dynamic script loading. 
+On order to respond on a mode change, it is necessary to write a more dynamic script loading.
 
 First we define a function in a global script file to load the utterances script via JS:
 

@@ -31,3 +31,4 @@ var target = document.documentElement,
     }),
     config = { attributes: true };
 observer.observe(target, config);
+ 
