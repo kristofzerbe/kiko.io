@@ -490,9 +490,38 @@ body {
   font-size: 18px;
   width: 18px;
   height: 18px;
-  padding: 20px 15px;
+  padding: 20px 12px;
   position: relative;
   cursor: pointer;
+}
+#header-theme {
+  position: relative;
+  display: inline;
+  padding: 20px 0;
+}
+#header-theme input#theme-switch[type=checkbox] {
+  display: none;
+}
+#header-theme input#theme-switch[type=checkbox] + label {
+  color: #fff;
+  opacity: 0.6;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  padding: 18px 15px 16px 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+#header-theme input#theme-switch[type=checkbox] + label:before {
+  display: inline-block;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: FontAwesome5Solid;
+  content: "\f186";
+}
+#header-theme input#theme-switch[type=checkbox]:checked + label:before {
+  content: "\f185";
 }
 .main-nav-link {
   font-weight: 300;
@@ -1329,33 +1358,6 @@ a.article-title:hover {
 #footer-info {
   line-height: 1.6em;
   font-size: 0.85em;
-}
-#footer-theme {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-input#theme-switch[type=checkbox] {
-  display: none;
-}
-input#theme-switch[type=checkbox] + label {
-  height: 16px;
-  width: 16px;
-  display: inline-block;
-  padding: 12px;
-  font-size: 22px;
-  cursor: pointer;
-}
-input#theme-switch[type=checkbox] + label:before {
-  display: inline-block;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-family: FontAwesome5Solid;
-  content: "\f186";
-}
-input#theme-switch[type=checkbox]:checked + label:before {
-  content: "\f185";
 }
 .article-entry pre,
 .article-entry .highlight {
