@@ -120,9 +120,34 @@ $nav-link
   font-size: icon-size
   width: icon-size
   height: icon-size
-  padding: 20px 15px
+  padding: 20px 12px
   position: relative
   cursor: pointer
+
+#header-theme
+  position: relative
+  display: inline
+  padding: 20px 0
+  input#theme-switch[type=checkbox]
+      display:none
+    input#theme-switch[type=checkbox] + label
+      color: color-header
+      height: 18px
+      width: 18px
+      display: inline-block
+      padding: 18px 15px 16px 10px
+      font-size: 18px
+      cursor: pointer
+      &:before    
+        display: inline-block
+        font-size: inherit
+        text-rendering: auto
+        -webkit-font-smoothing: antialiased
+        font-family: fa-icon-solid
+        content: icon-moon
+    input#theme-switch[type=checkbox]:checked + label
+      &:before
+        content: icon-sun
 
 .main-nav-link
   @extend $nav-link
