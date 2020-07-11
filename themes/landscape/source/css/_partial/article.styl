@@ -67,32 +67,22 @@
 
 .article-category
   position: absolute;
-  top: 2px;
+  top: 20px;
   right: 12px;
   line-height: 2em;
   margin-left: 8px;
-  box-shadow: 1px 1px 3px color-default;
   border: none;
   border-radius: 0;
-  background-color: color-header;
+  background-color: color-category-link-background;
+  transition: all 0.6s ease-out
   /[data-theme="dark"] &
-    box-shadow: 1px 1px 3px dark-color-border;
-    background-color: dark-color-header;
-
-.article-category.category-sql
-  background-color: color-category-sql;
-  /[data-theme="dark"] &
-    background-color: dark-color-category-sql;
-
-.article-category.category-tools
-  background-color: color-category-tools;
-  /[data-theme="dark"] &
-    background-color: dark-color-category-tools;
-
-.article-category.category-javascript
-  background-color: color-category-javascript
-  /[data-theme="dark"] &
-    background-color: dark-color-category-javascript
+    background-color: dark-color-category-link-background;
+  &:hover
+    a
+      color: color-link
+    /[data-theme="dark"] &
+      a 
+        color: dark-color-link
 
 .article-category-link
   @extend $block-caption
