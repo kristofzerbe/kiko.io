@@ -84,6 +84,26 @@
     initHeader();
   });
 
+  // Scroll-In Header Image
+  function isVisibleInViewPort(e) {
+    var viewTop = $(window).scrollTop();
+    var viewBottom = viewTop + $(window).height();
+  
+    var eTop = $(e).offset().top;
+    var eBottom = eTop + $(e).height();
+  
+    return ((eBottom <= viewBottom) && (eTop >= viewTop));
+  }
+  $(window).on('scroll', function() {
+    $(".article-photo").each(function() {
+      if (isVisibleInViewPort($(this))) {
+        $(this).addClass("in-view");
+      } else {
+        $(this).removeClass("in-view");
+      }
+    });
+  });
+
   // Search
   var $searchWrap = $('#search-form-wrap'),
     isSearchAnim = false,

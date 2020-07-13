@@ -5,15 +5,20 @@
   
 
   
-  <title>kiko.io | Tag: jQuery</title>
+  <title>kiko.io | Change CSS class when element scrolls into viewport</title>
   <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="kiko.io">
-<meta property="og:url" content="https://kiko.io/tags/jQuery/index.html">
+  <meta name="description" content="I had a neat visual gimmick on the start page of this blog, that the gray-scaled header image of a post in the list scaled up to 100% and became colored, when the user hovered over it: 123456789101112">
+<meta name="keywords" content="jQuery,CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Change CSS class when element scrolls into viewport">
+<meta property="og:url" content="https://kiko.io/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/index.html">
 <meta property="og:site_name" content="kiko.io">
+<meta property="og:description" content="I had a neat visual gimmick on the start page of this blog, that the gray-scaled header image of a post in the list scaled up to 100% and became colored, when the user hovered over it: 123456789101112">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-07-13T16:43:06.904Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kiko.io">
+<meta name="twitter:title" content="Change CSS class when element scrolls into viewport">
+<meta name="twitter:description" content="I had a neat visual gimmick on the start page of this blog, that the gray-scaled header image of a post in the list scaled up to 100% and became colored, when the user hovered over it: 123456789101112">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -82,86 +87,109 @@
   }
 </script>
         <div id="content" class="outer">
-          <section id="main"><h1 class="archive-title"><span style="font-weight:normal;">Archives <span style="opacity:0.5">|</span> Tag</span>&nbsp;jQuery</h1>
-
+          <section id="main">
+<style>
+  #banner {
+    background-size: cover;
+  }
+  @media screen and (max-width: 479px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/D70_7695.jpg"); }
+  }
+  @media screen and (min-width: 480px) and (max-width: 767px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/D70_7695.jpg"); }
+  }
+  @media screen and (min-width: 768px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/D70_7695.jpg"); }    
+  }
+</style>
+<script>
+  var body = document.getElementById("body");
+  body.classList.add("article-view");
+  var photoLink = document.getElementById("header-photo-link");
+  photoLink.href = "https://500px.com/photo/260478167";
+  photoLink.innerHTML = "see <strong>Onion Broken</strong> at 500px";
+</script>
 
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-    <a href="/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/">
-        <img class="archive-article-photo" src="/photos/tablet/D70_7695.jpg" />
-    </a>
-
-      <a href="/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/" class="archive-article-date">
+<article id="post-Change-CSS-class-when-element-scrolls-into-viewport" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/" class="article-date">
   <time datetime="2020-07-13T16:24:39.000Z" itemprop="datePublished">13 Jul 2020</time>
 </a>
-      
+    <!--  -->
+    
+  <div class="article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    <!--  -->
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/">Change CSS class when element scrolls into viewport</a>
+    <h1 class="article-title" itemprop="name">
+      Change CSS class when element scrolls into viewport
     </h1>
   
 
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
-    </header>
+        <p>I had a neat visual gimmick on the start page of this blog, that the gray-scaled header image of a post in the list scaled up to 100% and became colored, when the user hovered over it:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.article-inner</span> <span class="selector-class">.article-photo</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">object-fit</span>: cover;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(1);</span><br><span class="line">  <span class="attribute">transform-style</span>: preserve-<span class="number">3</span>d;</span><br><span class="line">  <span class="attribute">transition</span>: all ease-out <span class="number">0.6s</span>;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.3</span>;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(1) <span class="built_in">contrast</span>(0.5);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.article-inner</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.article-photo</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(1.1);</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(0) <span class="built_in">contrast</span>(1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Nice, but a little bit useless on smartphones or tablets, where a hover  doesn’t really work.</p>
+<a id="more"></a>
+
+<p>A better idea was to transform the header image automatically, when it becomes visible to the user. So I changed the HOVER statement into a class…</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.article-inner</span> <span class="selector-class">.article-photo</span><span class="selector-class">.in-view</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(1.1);</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(0) <span class="built_in">contrast</span>(1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>… and wrote a little JS function to determine the point, where the images is fully visible in the viewport:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isVisibleInViewPort</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> viewTop = $(<span class="built_in">window</span>).scrollTop();</span><br><span class="line">  <span class="keyword">var</span> viewBottom = viewTop + $(<span class="built_in">window</span>).height();</span><br><span class="line">  <span class="keyword">var</span> eTop = $(e).offset().top;</span><br><span class="line">  <span class="keyword">var</span> eBottom = eTop + $(e).height();</span><br><span class="line">  <span class="keyword">return</span> ((eBottom &lt;= viewBottom) &amp;&amp; (eTop &gt;= viewTop));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>This function I only had to bind to the windows scroll event to all header images:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">window</span>).on(<span class="string">'scroll'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  $(<span class="string">".article-photo"</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (isVisibleInViewPort($(<span class="keyword">this</span>))) &#123;</span><br><span class="line">      $(<span class="keyword">this</span>).addClass(<span class="string">"in-view"</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      $(<span class="keyword">this</span>).removeClass(<span class="string">"in-view"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- <a data-url="https://kiko.io/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/" data-id="ckckqknka0009f8l92x8l3qgv" class="article-share-link">Share</a> -->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+
+    </footer>
   </div>
-</article>
   
     
+      <div id="comment-placeholder"></div>
+      <script>
+        window.addEventListener('load', function () {
+          insertUtterancesCommentBlock();
+        })    
+      </script>
     
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-    <a href="/categories/JavaScript/Better-Input-Change-Event/">
-        <img class="archive-article-photo" src="/photos/tablet/19-05 Israel-0624.jpg" />
+<nav id="article-nav">
+  
+  
+    <a href="/categories/Discoveries/Discoveries-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Discoveries #1</div>
     </a>
-
-      <a href="/categories/JavaScript/Better-Input-Change-Event/" class="archive-article-date">
-  <time datetime="2019-11-26T15:51:17.000Z" itemprop="datePublished">26 Nov 2019</time>
-</a>
-      
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/categories/JavaScript/Better-Input-Change-Event/">Better Input Change Event</a>
-    </h1>
-  
+</nav>
 
-      
-    </header>
-  </div>
+  
 </article>
-  
-  
-    </div></section>
-  
 
-
-
-
+<!--  -->
 </section>
           
             <aside id="sidebar">

@@ -7,9 +7,9 @@ photograph:
     link: ''
 date: {{ date }}
 tags:
-    - 
+    - xxx
 categories:
-    - 
+    - xxx
 ---
 
 
