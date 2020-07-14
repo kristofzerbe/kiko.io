@@ -95,7 +95,7 @@
     return ((eBottom <= viewBottom) && (eTop >= viewTop));
   }
   $(window).on('scroll', function() {
-    $(".article-photo").each(function() {
+    $(".article-photo, .archive-article-photo").each(function() {
       if (isVisibleInViewPort($(this))) {
         $(this).addClass("in-view");
       } else {

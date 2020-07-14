@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="kiko.io">
 <meta property="og:description" content="I had a neat visual gimmick on the start page of this blog, that the gray-scaled header image of a post in the list scaled up to 100% and became colored, when the user hovered over it: 123456789101112">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-07-13T16:43:06.904Z">
+<meta property="og:updated_time" content="2020-07-14T06:19:46.364Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Change CSS class when element scrolls into viewport">
 <meta name="twitter:description" content="I had a neat visual gimmick on the start page of this blog, that the gray-scaled header image of a post in the list scaled up to 100% and became colored, when the user hovered over it: 123456789101112">
@@ -143,23 +143,23 @@
         <p>I had a neat visual gimmick on the start page of this blog, that the gray-scaled header image of a post in the list scaled up to 100% and became colored, when the user hovered over it:</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.article-inner</span> <span class="selector-class">.article-photo</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">object-fit</span>: cover;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(1);</span><br><span class="line">  <span class="attribute">transform-style</span>: preserve-<span class="number">3</span>d;</span><br><span class="line">  <span class="attribute">transition</span>: all ease-out <span class="number">0.6s</span>;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.3</span>;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(1) <span class="built_in">contrast</span>(0.5);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.article-inner</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.article-photo</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(1.1);</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(0) <span class="built_in">contrast</span>(1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>Nice, but a little bit useless on smartphones or tablets, where a hover  doesn’t really work.</p>
+<p>Nice, but a little bit useless on smartphones or tablets, where HOVER  doesn’t really work.</p>
 <a id="more"></a>
 
-<p>A better idea was to transform the header image automatically, when it becomes visible to the user. So I changed the HOVER statement into a class…</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.article-inner</span> <span class="selector-class">.article-photo</span><span class="selector-class">.in-view</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(1.1);</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(0) <span class="built_in">contrast</span>(1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>A better idea was to transform the header image automatically, when it becomes visible to the user. So I changed the HOVER selector into a class…</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.article-photo</span><span class="selector-class">.in-view</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(1.1);</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(0) <span class="built_in">contrast</span>(1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>… and wrote a little JS function to determine the point, where the images is fully visible in the viewport:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isVisibleInViewPort</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> viewTop = $(<span class="built_in">window</span>).scrollTop();</span><br><span class="line">  <span class="keyword">var</span> viewBottom = viewTop + $(<span class="built_in">window</span>).height();</span><br><span class="line">  <span class="keyword">var</span> eTop = $(e).offset().top;</span><br><span class="line">  <span class="keyword">var</span> eBottom = eTop + $(e).height();</span><br><span class="line">  <span class="keyword">return</span> ((eBottom &lt;= viewBottom) &amp;&amp; (eTop &gt;= viewTop));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>This function I only had to bind to the windows scroll event to all header images:</p>
+<p>This function I had to bind to the windows scroll event to all header images only:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">window</span>).on(<span class="string">'scroll'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  $(<span class="string">".article-photo"</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (isVisibleInViewPort($(<span class="keyword">this</span>))) &#123;</span><br><span class="line">      $(<span class="keyword">this</span>).addClass(<span class="string">"in-view"</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      $(<span class="keyword">this</span>).removeClass(<span class="string">"in-view"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/" data-id="ckckqknka0009f8l92x8l3qgv" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/" data-id="ckclk6h8w000658hzkrzdqtqy" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -358,7 +358,8 @@
 <!--  -->
 
 <!-- LIBRARIES -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+<script src="/jquery/jquery.min.js"></script>
 
 <!-- FANCYBOX -->
 

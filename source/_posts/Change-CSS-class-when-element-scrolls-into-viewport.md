@@ -39,7 +39,7 @@ Nice, but a little bit useless on smartphones or tablets, where HOVER  doesn't r
 A better idea was to transform the header image automatically, when it becomes visible to the user. So I changed the HOVER selector into a class...
 
 ```css
-.article-inner .article-photo.in-view {
+.article-photo.in-view {
     transform: scale(1.1);
     opacity: 1;
     filter: grayscale(0) contrast(1);

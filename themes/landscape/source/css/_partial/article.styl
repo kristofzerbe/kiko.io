@@ -25,14 +25,13 @@
     opacity: 0.75
     filter: grayscale(1) contrast(0.5) brightness(0.6)
 
-.article-inner
-  .article-photo.in-view
-      transform: scale(1.1)
+.article-photo.in-view
+    transform: scale(1.1)
+    opacity: 1
+    filter: grayscale(0) contrast(1)
+    /[data-theme="dark"] &
       opacity: 1
-      filter: grayscale(0) contrast(1)
-      /[data-theme="dark"] &
-        opacity: 1
-        filter: grayscale(0) contrast(1) brightness(0.75)
+      filter: grayscale(0) contrast(1) brightness(0.75)
 
 .article-meta
   clearfix()

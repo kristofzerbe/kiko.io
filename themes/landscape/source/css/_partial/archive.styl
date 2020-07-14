@@ -60,15 +60,13 @@
         opacity: 0.75
         filter: grayscale(1) contrast(0.5) brightness(0.6)
 
-.archive-article-inner
-  &:hover
-    .archive-article-photo
-      transform: scale(1.05)
+.archive-article-photo.in-view
+  transform: scale(1.05)
+  opacity: 1
+  filter: grayscale(0) contrast(1)
+  /[data-theme="dark"] &
       opacity: 1
-      filter: grayscale(0) contrast(1)
-      /[data-theme="dark"] &
-          opacity: 1
-          filter: grayscale(0) contrast(1) brightness(0.75)
+      filter: grayscale(0) contrast(1) brightness(0.75)
 
 .archive-article-title
   display: inline-block
