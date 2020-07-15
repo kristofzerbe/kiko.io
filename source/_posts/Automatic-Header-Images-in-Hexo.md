@@ -4,6 +4,8 @@ photograph:
   file: D70_7344.jpg
   name: Non Toccare
   link: 'https://500px.com/photo/1017605762'
+series: 'A New Blog'
+part: 6
 tags:
   - Hexo
   - Blogging
