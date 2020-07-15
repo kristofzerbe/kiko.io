@@ -4,6 +4,8 @@ photograph:
   file: D70_7695.jpg
   name: Onion Broken
   link: 'https://500px.com/photo/260478167'
+series: 'A New Blog'
+part: 7
 tags:
   - jQuery
   - CSS

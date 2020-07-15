@@ -4,6 +4,8 @@ photograph:
   file: D70_7530.jpg
   name: Untitled
   link: 'https://500px.com/photo/1017605689'
+series: 'A New Blog'
+part: 6
 tags:
   - Blogging
   - Hexo
