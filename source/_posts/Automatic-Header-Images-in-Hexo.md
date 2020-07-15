@@ -12,7 +12,7 @@ tags:
 categories:
   - Tools
 date: 2020-06-22 17:49:16
-subtitle:
+subtitle: Use static images randomly for posts via Hexo script
 ---
 
 Every article in this blog has an individual header image, to bring a little bit color into it. In this post I will show you how I deal with the images in using and automatic provisioning.
