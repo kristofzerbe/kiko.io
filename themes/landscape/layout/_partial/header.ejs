@@ -1,7 +1,22 @@
 <header id="header">
-  <div id="banner"></div>
+  <a href="#" id="header-photo-link"></a>
+  <div id="banner">
+    <nav id="header-nav" role="navigation">
+      <ul class="menu">
+        <% for (var i in theme.nav_menu){ %>
+          <li class="menu-item" id="nav-<%= i%>-link" >
+            <a 
+              class="nav-icon sub-nav-link"
+              href="<%- url_for(theme.nav_menu[i]) %>"
+              title="<%= __(i) %>">
+                <span><%= __(i) %></span>
+              </a>
+          </li>
+        <% } %>
+      </ul>
+    </nav>
+  </div>
   <div id="header-outer" class="outer">
-    <a href="#" id="header-photo-link"></a>
     <div id="header-title" class="inner">
         <a href="<%- url_for() %>" id="logo">
           <h1 id="title-wrap"><%= config.title %></h1>
@@ -13,25 +28,32 @@
       <% } %>
     </div>
     <div id="header-inner" class="inner">
+      
+      <% /* %>
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"></a>
         <% if (page.path !== "index.html") { %>
           <a class="main-nav-link" id="nav-home-link" href="<%- url_for('/') %>"></a>
         <% } %>
       </nav>
+      <% */ %>
+
       <nav id="sub-nav">
+        <% /* %>
         <% for (var i in theme.nav_sub){ %>
           <a id="nav-<%= i%>-link" 
              class="nav-icon sub-nav-link"
              href="<%- url_for(theme.nav_sub[i]) %>"
              title="<%= __(i) %>"></a>
         <% } %>
-        <a id="nav-search-btn" class="nav-icon" title="<%= __('search') %>"></a>
-        <div id="header-theme">          
+        <% */ %>
+        <a id="sub-nav-search" class="sub-nav-icon" title="<%= __('search') %>"></a>
+        <div id="sub-nav-theme">          
           <input type="checkbox" id="theme-switch">
           <label for="theme-switch"></label>
         </div>
       </nav>
+
       <div id="search-form-wrap">
         <%- search_form({button: '&#xF002;'}) %>
       </div>

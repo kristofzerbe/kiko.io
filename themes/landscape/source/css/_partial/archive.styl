@@ -31,6 +31,48 @@
   @media mq-normal
     column-count: 3
 
+.archive-list-navigation
+  padding: 20px 20px 20px 0
+  display: flex
+  justify-content: flex-start
+  flex-wrap: nowrap
+  overflow-x: auto
+  border-bottom: 1px dashed color-header
+  border-top: 1px dashed color-header
+  /[data-theme="dark"] &
+    border-bottom: 1px dashed dark-color-header
+    border-top: 1px dashed dark-color-header
+  .archive-list-wrapper
+    flex: 0 0 auto
+    padding-right: 20px
+    h2
+      font-weight: bold
+      font-size: 16px
+      margin-bottom: 10px
+    ul
+      display: flex
+      justify-content: flex-start
+      flex-direction: column
+      flex-wrap: wrap
+      max-height: 200px;
+      li
+        flex: 1 0 25%
+        padding-right: 40px
+        box-sizing: border-box
+        line-height: 22px
+        a
+          color: color-widget-link
+          /[data-theme="dark"] &
+            color: dark-color-widget-link
+          text-decoration: none
+          &:hover
+            text-decoration: none
+        &:hover
+          a
+            color: color-link
+            /[data-theme="dark"] &
+              color: dark-color-link
+
 .archive-article
   avoid-column-break()
 

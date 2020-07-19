@@ -19,33 +19,31 @@
     background: linear-gradient(rgba(0, 0, 0, 0.2), transparent)
     /[data-theme="dark"] &
       background: linear-gradient(rgba(0, 0, 0, 0.4), transparent)
-  &:after
-    bottom: 0
-    height: 24px
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.2))
-    /[data-theme="dark"] &
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.5))
-
+  
 #content
   padding-top: banner-height
 
 #header-outer
-  height: 100%
   position: relative
+  z-index: 99
 
 #header-photo-link
   position: absolute
-  bottom: 8px
-  right: 12px
-  color: #fff
-  font-size: 80%
+  display: block
+  top: 16px
+  right: 99%
+  white-space: nowrap
+  color: rgba(255, 255, 255, 0.6)
+  font-size: 90%
   text-decoration: none
   z-index: 99
-  opacity: 0.8
+  transform: rotate(270deg)
+  transform-origin: right top
+  transition: all 0.2s ease-out
   &:hover
-    opacity: 1
+    color: rgba(255, 255, 255, 1)
   strong 
-    font-weight: 600;
+    font-weight: 600
 
 #header-inner
   position: relative
@@ -64,7 +62,68 @@
   filter: brightness(1)
   z-index: -1
   /[data-theme="dark"] &
-    filter: brightness(0.75)
+    filter: brightness(0.9)
+
+#header-nav
+  position: absolute
+  bottom: 0
+  width: 100%
+  height: auto
+  backdrop-filter: blur(5px) brightness(90%)
+  box-sizing: content-box
+  overflow-x: scroll
+  overflow-y: hidden
+  -webkit-overflow-scrolling: touch
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .menu
+    display: flex
+    list-style: none
+    margin: 0
+    padding: 0
+    .menu-item
+      /* sets the initial main size of a each menu item */ 
+      flex-basis: 80px 
+      -ms-flex-negative: 0
+      /* don't allow menu item to shrink below 120px when there isn’t enough space on the row. */
+      flex-shrink: 0
+      /* allow items to grow up to 150px wide if the container is big enough */
+      flex-grow: 1
+      max-width: 100px
+      margin: 0 2px
+      text-overflow: ellipsis;
+      a
+        color: #ffffff
+        font-weight: bold
+        text-decoration: none
+        text-align: center
+        display: inline-block
+        width: 100%
+        padding: 11px 0
+
+#nav-home-link,
+#nav-rss-link
+  flex-basis: 50px !important
+  max-width: 50px !important
+  a
+    &:before
+      font-family: fa-icon-solid
+      font-size: icon-home-size
+      width: icon-home-size
+      height: icon-home-size
+    span 
+      display: none
+
+#nav-home-link
+  a
+    &:before
+      content: icon-arrow-left
+
+#nav-rss-link
+  a
+    &:before
+      content: icon-rss
 
 #header-title
   text-align: center
@@ -72,7 +131,8 @@
   position: absolute
   top: 30px
   left: 0
-  // z-index: 999 ... TODO: either logo or icons not clickable
+  width: calc(100% - 60px);
+  margin: 0 30px;
 
 $logo-text
   text-decoration: none
@@ -98,23 +158,23 @@ $logo-text
   letter-spacing: 2px
   display: inline-block
 
-#main-nav
-  float: left
-  margin-left: -15px
+#sub-nav
+  float: right
+  margin-right: -15px
 
-$nav-link
+$sub-nav-link
   float: left
   color: #fff
   opacity: 0.6
   text-decoration: none
-  transition: opacity 0.2s
+  transition: opacity 0.2s ease-out
   display: block
   padding: 20px 15px
   &:hover
     opacity: 1
 
-.nav-icon
-  @extend $nav-link
+.sub-nav-icon
+  @extend $sub-nav-link
   font-family: fa-icon-solid
   text-align: center
   font-size: icon-size
@@ -124,7 +184,7 @@ $nav-link
   position: relative
   cursor: pointer
 
-#header-theme
+#sub-nav-theme
   position: relative
   display: inline
   padding: 20px 0
@@ -150,49 +210,7 @@ $nav-link
       &:before
         content: icon-sun
 
-.main-nav-link
-  @extend $nav-link
-  font-weight: 300
-  letter-spacing: 1px
-  @media mq-mobile
-    display: none
-
-#main-nav-toggle
-  display: none
-  &:before
-    content: icon-bars
-  @media mq-mobile
-    display: block
-
-#sub-nav
-  float: right
-  margin-right: -15px
-
-#nav-home-link.main-nav-link
-  &:before
-    font-family: fa-icon-solid
-    font-size: icon-home-size
-    width: icon-home-size
-    height: icon-home-size
-    content: icon-arrow-left
-
-#nav-home-link
-  &:before
-    content: icon-home
-
-#nav-archives-link
-  &:before
-    content: icon-archive
-
-#nav-tags-link
-  &:before
-    content: icon-tag
-
-#nav-rss-link
-  &:before
-    content: icon-rss
-
-#nav-search-btn
+#sub-nav-search
   &:before
     content: icon-search
 
