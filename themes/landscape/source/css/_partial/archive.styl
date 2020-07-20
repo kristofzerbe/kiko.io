@@ -37,12 +37,9 @@
   justify-content: flex-start
   flex-wrap: nowrap
   overflow-x: auto
-  background: linear-gradient(90deg, rgba(241,241,241,1) 30%, rgba(255,255,255,1) 90%, rgba(241,241,241,1) 100%)
-  // border-bottom: 1px dashed color-header
-  // border-top: 1px dashed color-header
+  background: linear-gradient(90deg, color-background 30%, color-block 80%, color-background 100%)
   /[data-theme="dark"] &
-    border-bottom: 1px dashed dark-color-header
-    border-top: 1px dashed dark-color-header
+    background: linear-gradient(90deg, dark-color-background 30%, dark-color-block 80%, dark-color-background 100%)
   .archive-list-wrapper
     flex: 0 0 auto
     padding-right: 20px
@@ -64,13 +61,13 @@
         transition: all .1s ease
         border-left: 2px color-border solid
         /[data-theme="dark"] &
-          border-color: dark-color-link-border
+          border-color: dark-color-border
         margin: 1px 0 1px 0
         padding: 0 30px 0 6px
         &:hover
           border-left: 4px color-link solid
           /[data-theme="dark"] &
-            border-color: dark-color-link-border-hover
+            border-color: dark-color-border-hover
           margin-left: -1px;
           padding-left: 5px
         a
