@@ -59,15 +59,13 @@ And here's the [Stylus](https://stylus-lang.com/docs) code for my approach:
   overflow-y: hidden
   
   // BACKDROP-FILTER
-  @supports (backdrop-filter: none)
-    backdrop-filter: blur(5px) brightness(90%)
+  backdrop-filter: blur(5px) brightness(90%)
   @supports not (backdrop-filter: none)
     background: rgba(0,0,0,0.25)
   
   // SCROLLBAR
-  @supports (webkit-scrollbar)
-    &::-webkit-scrollbar
-      display: none
+  &::-webkit-scrollbar
+    display: none
   @supports not (webkit-scrollbar)  
     scrollbar-width: none
   

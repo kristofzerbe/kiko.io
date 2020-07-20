@@ -461,6 +461,7 @@ body {
   bottom: 0;
   width: 100%;
   height: auto;
+  backdrop-filter: blur(5px) brightness(90%);
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -468,20 +469,13 @@ body {
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
 }
-@supports (backdrop-filter: none) {
-  #header-nav {
-    backdrop-filter: blur(5px) brightness(90%);
-  }
-}
 @supports not (backdrop-filter: none) {
   #header-nav {
     background: rgba(0,0,0,0.25);
   }
 }
-@supports (webkit-scrollbar) {
-  #header-nav::-webkit-scrollbar {
-    display: none;
-  }
+#header-nav::-webkit-scrollbar {
+  display: none;
 }
 @supports not (webkit-scrollbar) {
   #header-nav {

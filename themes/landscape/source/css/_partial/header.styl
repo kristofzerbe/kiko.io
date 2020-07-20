@@ -73,17 +73,15 @@
   bottom: 0
   width: 100%
   height: auto  
-  @supports (backdrop-filter: none)
-    backdrop-filter: blur(5px) brightness(90%)
+  backdrop-filter: blur(5px) brightness(90%)
   @supports not (backdrop-filter: none)
     background: rgba(0,0,0,0.25)
   box-sizing: content-box
   overflow-x: scroll
   overflow-y: hidden
   -webkit-overflow-scrolling: touch
-  @supports (webkit-scrollbar)
-    &::-webkit-scrollbar
-      display: none
+  &::-webkit-scrollbar
+    display: none
   @supports not (webkit-scrollbar)  
     scrollbar-width: none
   .menu
