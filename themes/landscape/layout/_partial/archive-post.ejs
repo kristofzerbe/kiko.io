@@ -2,12 +2,16 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
       <%- partial('post/photograph', {class_name: 'archive-article-photo'}) %>
-      <div class="archive-article-content">
-        <%- partial('post/date', {class_name: 'archive-article-date', date_format: 'DD MMM YYYY'}) %>
-        <%- partial('post/series', {class_name: 'archive-article-series'}) %>
-        <%- partial('post/title', {class_name: 'archive-article-title'}) %>
-        <%- partial('post/subtitle', {class_name: 'archive-article-subtitle'}) %>  
-      </div>
     </header>
-  </div>
+    <div class="archive-article-content">
+      <%- partial('post/date', {class_name: 'archive-article-date', date_format: 'DD MMM YYYY'}) %>
+      <%- partial('post/category', {class_name: 'archive-article-category'}) %>
+      <%- partial('post/series', {class_name: 'archive-article-series'}) %>
+      <%- partial('post/title', {class_name: 'archive-article-title'}) %>
+      <%- partial('post/subtitle', {class_name: 'archive-article-subtitle'}) %>              
+    </div>
+    <div class="archive-article-footer">
+      <%- partial('post/tag', { class_name: 'archive-article-tags' }) %>
+    </div>
+</div>
 </article>

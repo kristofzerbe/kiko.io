@@ -80,12 +80,11 @@
     /[data-theme="dark"] &
       a 
         color: dark-color-link
-
-.article-category-link
-  @extend $block-caption
-  color: color-header
-  /[data-theme="dark"] &
-    color: dark-color-header
+  .article-category-link
+    @extend $block-caption
+    color: color-header
+    /[data-theme="dark"] &
+      color: dark-color-header
 
 .article-header
   padding: article-padding article-padding 0
@@ -257,19 +256,22 @@
     border-top-color: dark-color-border-article
   padding-top: line-height
   margin: 0 article-padding article-padding
+
+.article-tags 
+  float: right
   a
     text-decoration: none
     color: color-grey
     /[data-theme="dark"] &
       color: dark-color-grey
     &:hover
-      color: color-default
+      color: color-link
       /[data-theme="dark"] &
-        color: dark-color-default
+        color: dark-color-link
 
 .article-tag-list-item
   float: left
-  margin-right: 10px
+  margin-left: 10px
 
 .article-tag-list-link
   &:before

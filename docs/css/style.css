@@ -222,7 +222,7 @@ body {
 }
 .article-date,
 .article-comment-link,
-.article-category-link,
+.article-category .article-category-link,
 .archive-year,
 .widget-title {
   text-decoration: none;
@@ -776,10 +776,10 @@ body {
 [data-theme="dark"] .article-category:hover a {
   color: #fff;
 }
-.article-category-link {
+.article-category .article-category-link {
   color: #bbb;
 }
-[data-theme="dark"] .article-category-link {
+[data-theme="dark"] .article-category .article-category-link {
   color: #666;
 }
 .article-header {
@@ -1021,22 +1021,25 @@ a.article-title:hover {
 [data-theme="dark"] .article-footer {
   border-top-color: #666;
 }
-.article-footer a {
+.article-tags {
+  float: right;
+}
+.article-tags a {
   text-decoration: none;
   color: #777;
 }
-[data-theme="dark"] .article-footer a {
+[data-theme="dark"] .article-tags a {
   color: #999;
 }
-.article-footer a:hover {
-  color: #555;
+.article-tags a:hover {
+  color: #0069dc;
 }
-[data-theme="dark"] .article-footer a:hover {
-  color: #dadada;
+[data-theme="dark"] .article-tags a:hover {
+  color: #fff;
 }
 .article-tag-list-item {
   float: left;
-  margin-right: 10px;
+  margin-left: 10px;
 }
 .article-tag-list-link:before {
   content: "#";
@@ -1239,8 +1242,10 @@ a.article-title:hover {
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   overflow-x: auto;
-  border-bottom: 1px dashed #bbb;
-  border-top: 1px dashed #bbb;
+  background: -webkit-linear-gradient(0deg, #f1f1f1 30%, #fff 90%, #f1f1f1 100%);
+  background: -moz-linear-gradient(0deg, #f1f1f1 30%, #fff 90%, #f1f1f1 100%);
+  background: -ms-linear-gradient(0deg, #f1f1f1 30%, #fff 90%, #f1f1f1 100%);
+  background: linear-gradient(90deg, #f1f1f1 30%, #fff 90%, #f1f1f1 100%);
 }
 [data-theme="dark"] .archive-list-navigation {
   border-bottom: 1px dashed #666;
@@ -1296,6 +1301,24 @@ a.article-title:hover {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   line-height: 22px;
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+  -ms-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  border-left: 2px #ddd solid;
+  margin: 1px 0 1px 0;
+  padding: 0 30px 0 6px;
+}
+[data-theme="dark"] .archive-list-navigation .archive-list-wrapper ul li {
+  border-color: #777;
+}
+.archive-list-navigation .archive-list-wrapper ul li:hover {
+  border-left: 4px #0069dc solid;
+  margin-left: -1px;
+  padding-left: 5px;
+}
+[data-theme="dark"] .archive-list-navigation .archive-list-wrapper ul li:hover {
+  border-color: #529ef1;
 }
 .archive-list-navigation .archive-list-wrapper ul li a {
   color: #555;
@@ -1322,6 +1345,7 @@ a.article-title:hover {
 .archive-article-inner {
   padding: 10px;
   margin-bottom: 15px;
+  overflow: hidden;
   background: #fff;
   -webkit-box-shadow: 1px 2px 3px #ddd;
   box-shadow: 1px 2px 3px #ddd;
@@ -1370,18 +1394,18 @@ a.article-title:hover {
   filter: grayscale(0) contrast(1) brightness(0.75);
 }
 .archive-article-content {
-  padding: 10px;
+  padding: 0 5px 15px;
 }
-.archive-article-date {
-  text-decoration: none;
+.archive-article-date,
+.archive-article-category {
   font-size: 0.85em;
   line-height: 1em;
   margin-bottom: 1.5em;
-  display: block;
-  color: #777;
+  display: inline-block;
 }
-[data-theme="dark"] .archive-article-date {
-  color: #999;
+.archive-article-category {
+  float: right;
+  display: inline-block;
 }
 .archive-article-series {
   line-height: 1.6em;
@@ -1418,11 +1442,38 @@ a.article-title:hover {
 .archive-article-subtitle {
   line-height: 1.4em;
   font-size: 1em;
-  color: #bbb;
   margin-top: 2px;
+  color: #777;
+}
+[data-theme="dark"] .archive-article-subtitle {
+  color: #999;
 }
 .archive-article-footer {
-  margin-top: 1em;
+  font-size: 0.75em;
+}
+.archive-article-tags li {
+  float: right;
+}
+.archive-article-date,
+.archive-article-category a,
+.archive-article-tags a {
+  text-decoration: none;
+  color: #bbb;
+}
+[data-theme="dark"] .archive-article-date,
+[data-theme="dark"] .archive-article-category a,
+[data-theme="dark"] .archive-article-tags a {
+  color: #666;
+}
+.archive-article-date:hover,
+.archive-article-category a:hover,
+.archive-article-tags a:hover {
+  color: #0069dc;
+}
+[data-theme="dark"] .archive-article-date:hover,
+[data-theme="dark"] .archive-article-category a:hover,
+[data-theme="dark"] .archive-article-tags a:hover {
+  color: #fff;
 }
 #page-nav {
   margin: 2.5em auto;

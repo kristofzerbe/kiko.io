@@ -37,8 +37,9 @@
   justify-content: flex-start
   flex-wrap: nowrap
   overflow-x: auto
-  border-bottom: 1px dashed color-header
-  border-top: 1px dashed color-header
+  background: linear-gradient(90deg, rgba(241,241,241,1) 30%, rgba(255,255,255,1) 90%, rgba(241,241,241,1) 100%)
+  // border-bottom: 1px dashed color-header
+  // border-top: 1px dashed color-header
   /[data-theme="dark"] &
     border-bottom: 1px dashed dark-color-header
     border-top: 1px dashed dark-color-header
@@ -60,6 +61,18 @@
         padding-right: 40px
         box-sizing: border-box
         line-height: 22px
+        transition: all .1s ease
+        border-left: 2px color-border solid
+        /[data-theme="dark"] &
+          border-color: dark-color-link-border
+        margin: 1px 0 1px 0
+        padding: 0 30px 0 6px
+        &:hover
+          border-left: 4px color-link solid
+          /[data-theme="dark"] &
+            border-color: dark-color-link-border-hover
+          margin-left: -1px;
+          padding-left: 5px
         a
           color: color-widget-link
           /[data-theme="dark"] &
@@ -80,6 +93,7 @@
   @extend $block
   padding: 10px
   margin-bottom: 15px
+  overflow: hidden  
   background: color-block
   box-shadow: 1px 2px 3px color-border
   border: 1px solid color-border
@@ -111,17 +125,18 @@
       filter: grayscale(0) contrast(1) brightness(0.75)
 
 .archive-article-content
-  padding: 10px
+  padding: 0 5px 15px
 
-.archive-article-date  
-  text-decoration: none
+.archive-article-date,
+.archive-article-category
   font-size: 0.85em
   line-height: 1em
   margin-bottom: 1.5em
-  display: block
-  color: color-grey
-  /[data-theme="dark"] &
-    color: dark-color-grey
+  display: inline-block
+
+.archive-article-category
+  float: right
+  display: inline-block
 
 .archive-article-series
   line-height: line-height
@@ -151,11 +166,29 @@
 .archive-article-subtitle
   line-height: line-height-subtitle
   font-size: 1em
-  color: color-header 
   margin-top: 2px
+  color: color-grey
+  /[data-theme="dark"] &
+    color: dark-color-grey
 
 .archive-article-footer
-  margin-top: 1em
+  font-size: 0.75em
+
+.archive-article-tags
+  li
+    float: right
+
+.archive-article-date,
+.archive-article-category a,
+.archive-article-tags a
+  text-decoration: none
+  color: color-header
+  /[data-theme="dark"] &
+    color: dark-color-header
+  &:hover
+    color: color-link
+    /[data-theme="dark"] &
+      color: dark-color-link
 
 #page-nav
   clearfix()

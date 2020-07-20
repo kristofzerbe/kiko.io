@@ -1,8 +1,8 @@
 <% if (page.month) { %>
-    <h1 class="archive-title"><span style="font-weight:normal;">Archives <span style="opacity:0.5">|</span> Month</span>&nbsp;<%= moment().month(page.month).subtract(1, "month").format('MMMM') %> <%= page.year %></h1>
+    <h1 class="archive-title"><span style="font-weight:normal;">Archives <span style="opacity:0.5">|</span> </span>&nbsp;<%= moment().month(page.month).subtract(1, "month").format('MMMM') %> <%= page.year %></h1>
 <% } else { %>
     <% if (page.year) { %>
-        <h1 class="archive-title"><span style="font-weight:normal;">Archives <span style="opacity:0.5">|</span> Year</span>&nbsp;<%= page.year %></h1>
+        <h1 class="archive-title"><span style="font-weight:normal;">Archives <span style="opacity:0.5">|</span> </span>&nbsp;<%= page.year %></h1>
     <% } else { %>
         <h1 class="archive-title">Archives</h1>
     <% } %>

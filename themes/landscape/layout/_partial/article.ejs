@@ -25,7 +25,7 @@
 <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
   <div class="article-meta">
     <%- partial('post/date', {class_name: 'article-date', date_format: 'DD MMM YYYY'}) %>
-    <%- partial('post/category') %>
+    <%- partial('post/category', { class_name: 'article-category' }) %>
   </div>
   <div class="article-inner">
     <% if (index){ %>
@@ -53,7 +53,7 @@
     <footer class="article-footer">
       <!-- <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link"><%= __('share') %></a> -->
       
-      <%- partial('post/tag') %>
+      <%- partial('post/tag', { class_name: 'article-tags' }) %>
     </footer>
   </div>
   <% if (!index){ %>
