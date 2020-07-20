@@ -461,7 +461,6 @@ body {
   bottom: 0;
   width: 100%;
   height: auto;
-  backdrop-filter: blur(5px) brightness(90%);
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -469,8 +468,25 @@ body {
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
 }
-#header-nav::-webkit-scrollbar {
-  display: none;
+@supports (backdrop-filter: none) {
+  #header-nav {
+    backdrop-filter: blur(5px) brightness(90%);
+  }
+}
+@supports not (backdrop-filter: none) {
+  #header-nav {
+    background: rgba(0,0,0,0.25);
+  }
+}
+@supports (webkit-scrollbar) {
+  #header-nav::-webkit-scrollbar {
+    display: none;
+  }
+}
+@supports not (webkit-scrollbar) {
+  #header-nav {
+    scrollbar-width: none;
+  }
 }
 #header-nav .menu {
   display: -webkit-box;
@@ -1026,9 +1042,8 @@ a.article-title:hover {
 .article-footer {
   font-size: 0.85em;
   line-height: 1.6em;
-  border-top: 1px solid #eee;
   padding-top: 1.6em;
-  margin: 0 30px 30px;
+  margin: 0 30px 20px;
 }
 .article-footer:before,
 .article-footer:after {
@@ -1037,9 +1052,6 @@ a.article-title:hover {
 }
 .article-footer:after {
   clear: both;
-}
-[data-theme="dark"] .article-footer {
-  border-top-color: #666;
 }
 .article-tags {
   float: right;
@@ -1891,7 +1903,18 @@ pre .javascript .function {
   text-decoration: none;
 }
 .widget p a {
-  font-weight: bold;
+  color: #0069dc;
+  text-decoration: none;
+}
+[data-theme="dark"] .widget p a {
+  color: #fff;
+  border-bottom: #777 1px solid;
+}
+.widget p a:hover {
+  border-bottom: #0069dc 1px solid;
+}
+[data-theme="dark"] .widget p a:hover {
+  border-bottom: #fff 1px solid;
 }
 .widget ul ul,
 .widget ol ul,

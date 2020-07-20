@@ -29,7 +29,16 @@
       text-decoration: none
   p
     a
-      font-weight: bold
+      color: color-link
+      text-decoration: none
+      /[data-theme="dark"] &
+        color: dark-color-link
+        border-bottom: dark-color-link-border 1px solid
+      &:hover
+        border-bottom: color-link 1px solid
+        /[data-theme="dark"] &
+          border-bottom: dark-color-link 1px solid
+
   ul, ol, dl
     ul, ol, dl
       margin-left: 15px
