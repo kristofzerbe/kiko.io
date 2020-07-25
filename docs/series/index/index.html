@@ -5,20 +5,15 @@
   
 
   
-  <title>kiko.io | Better Input Change Event</title>
+  <title>kiko.io | Index for Index</title>
   <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Often it is important to trigger an event, after the user of your website/web app has filled out an text input. You have to do something with the given value in JavaScript. The intended event for this">
-<meta name="keywords" content="jQuery">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Better Input Change Event">
-<meta property="og:url" content="https://kiko.io/categories/JavaScript/Better-Input-Change-Event/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Index for Index">
+<meta property="og:url" content="https://kiko.io/series/index/index.html">
 <meta property="og:site_name" content="kiko.io">
-<meta property="og:description" content="Often it is important to trigger an event, after the user of your website/web app has filled out an text input. You have to do something with the given value in JavaScript. The intended event for this">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-06-22T12:24:56.667Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Better Input Change Event">
-<meta name="twitter:description" content="Often it is important to trigger an event, after the user of your website/web app has filled out an text input. You have to do something with the given value in JavaScript. The intended event for this">
+<meta name="twitter:title" content="Index for Index">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -109,49 +104,28 @@
 </script>
         <div id="content" class="outer">
           <section id="main">
-<style>
-  #banner {
-    background-size: cover;
-  }
-  @media screen and (max-width: 479px) {
-    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/19-05 Israel-0624.jpg"); }
-  }
-  @media screen and (min-width: 480px) and (max-width: 767px) {
-    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/19-05 Israel-0624.jpg"); }
-  }
-  @media screen and (min-width: 768px) {
-    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/19-05 Israel-0624.jpg"); }    
-  }
-</style>
-<script>
-  var body = document.getElementById("body");
-  body.classList.add("article-view");
-  var photoLink = document.getElementById("header-photo-link");
-  photoLink.href = "https://500px.com/photo/1001751283/Jerusalem-Seat-by-Kristof-Zerbe";
-  photoLink.innerHTML = "see <strong>Jerusalem Seat</strong> at 500px";
-</script>
-
   
-<article id="post-Better-Input-Change-Event" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+  
+<article id="-" class="article article-type-" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/categories/JavaScript/Better-Input-Change-Event/" class="article-date">
-  <time datetime="2019-11-26T15:51:17.000Z" itemprop="datePublished">26 Nov 2019</time>
+    <a href="/series\a-new-blog\index.html" class="article-date">
+  <time datetime="2020-07-25T16:22:39.057Z" itemprop="datePublished">25 Jul 2020</time>
 </a>
     
-  <div class="article-category category-javascript">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
-  </div>
-
   </div>
   <div class="article-inner">
+    
+      
     
     
       <header class="article-header">
         
         
   
-    <h1 class="article-title" itemprop="name">
-      Better Input Change Event
+    <h1 itemprop="name">
+      <a class="article-title" href="/series\a-new-blog\index.html">A New Blog</a>
     </h1>
   
 
@@ -160,62 +134,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Often it is important to trigger an event, after the user of your website/web app has filled out an text input. You have to do something with the given value in JavaScript.</p>
-<p>The intended event for this is <code>change</code>, which will be triggered, when the user has ended changing by leaving the input with his cursor, mostly by using the TAB key. This works at some degree, if there is a physical keyboard, but not really on mobile devices … and for me is leaving the field often too late to start the upcoming event.</p>
-<a id="more"></a>
-
-<p>A better way to show the user the result of his entered value, could be the event <code>input</code> which fires on every key stroke, but could be way to often, if the triggered event is for example an AJAX call.</p>
-<p>Best solution is, to observe the users key strokes and trigger the event, when he stops typing. Then there is no extra action needed by the user and the event isn’t triggered multiple times. </p>
-<p>Here’s an implementation with jQuery:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#my-text-input"</span>).keyup(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $<span class="keyword">this</span> = $(<span class="keyword">this</span>);</span><br><span class="line">    clearTimeout($.data(<span class="keyword">this</span>, <span class="string">'timer'</span>));</span><br><span class="line">    <span class="keyword">var</span> wait = setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//do something with the value...</span></span><br><span class="line"></span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">    $(<span class="keyword">this</span>).data(<span class="string">'timer'</span>, wait);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>Important is to wipe and set the timer on every key up, to achive that the event will be executed after 1 second after the last key stroke only.</p>
-
+        
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/JavaScript/Better-Input-Change-Event/" data-id="ckd1v3mub00074kl9w6cmsghg" class="article-share-link">Share</a> -->
+      <!-- <a data-url="" data-id="" class="article-share-link">Share</a> -->
       
       
-  <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>  
-  </div>
-
     </footer>
   </div>
-  
-    
-      <div id="comment-placeholder"></div>
-      <script>
-        window.addEventListener('load', function () {
-          insertUtterancesCommentBlock();
-        })    
-      </script>
-    
-    
-<nav id="article-nav">
-  
-    <a href="/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          TFS/DevOps: Delete Remote Workspace
-        
-      </div>
-    </a>
-  
-  
-    <a href="/categories/Tools/Hexo-and-the-Dark-Mode-revised/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hexo and the Dark Mode ... revised</div>
-    </a>
-  
-</nav>
-
   
 </article>
 
 <!--  -->
+
+  
+
+
+
+
 </section>
           
             <aside id="sidebar">

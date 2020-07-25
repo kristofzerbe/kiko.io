@@ -1,7 +1,7 @@
 (function($){
 
   //Swipe Events
-  delete Hammer.defaults.cssProps.userSelect;
+  // delete Hammer.defaults.cssProps.userSelect;
 
   //MOBILE MENU SWIPE
   // https://stackoverflow.com/questions/24163202/javascript-touch-movement-track-when-user-swipes-from-edges
@@ -30,14 +30,14 @@
   // }); 
 
   //SWIPE NEXT (Doesn't work...!?)
-  $("#container").hammer({ inputClass: Hammer.TouchInput }).on('swipeleft', function (e) {
-    var eNext = $("#article-nav-newer");
-    if (eNext.length) {
-      console.log(eNext.attr('href'));
-      //window.location.href = eNext.attr('href');
-      Barba.Pjax.goTo(eNext.attr('href'));
-    }
-  }); 
+  // $("#container").hammer({ inputClass: Hammer.TouchInput }).on('swipeleft', function (e) {
+  //   var eNext = $("#article-nav-newer");
+  //   if (eNext.length) {
+  //     console.log(eNext.attr('href'));
+  //     //window.location.href = eNext.attr('href');
+  //     Barba.Pjax.goTo(eNext.attr('href'));
+  //   }
+  // }); 
 
   //Scroll Header
   var header = {
@@ -47,6 +47,7 @@
     photoLinkOpacity: 0,
     titleFontSize: 0
   };
+
   function initHeader() {
     $("#header").css("height", ""); //reset inline css
     $("#header-title").css("top", "");
@@ -58,6 +59,7 @@
     header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
     scrollHeader();
   }
+
   function scrollHeader() {
     var h = header.height - header.offset,
         st = $(document).scrollTop(),  
@@ -80,14 +82,6 @@
       $("#subtitle").css("opacity", 0);
     }    
   }
-  initHeader();
-  $(window).scroll(function() {
-    scrollHeader();
-  });
-  $(window).on('resize', function() {
-    initHeader();
-  });
-
   // Scroll-In Header Image
   function isVisibleInViewPort(e) {
     var viewTop = $(window).scrollTop();
@@ -98,7 +92,12 @@
   
     return ((eBottom <= viewBottom) && (eTop >= viewTop));
   }
+  
+  initHeader();
+
   $(window).on('scroll', function() {
+    scrollHeader();
+
     $(".article-photo, .archive-article-photo").each(function() {
       if (isVisibleInViewPort($(this))) {
         $(this).addClass("in-view");
@@ -106,6 +105,10 @@
         $(this).removeClass("in-view");
       }
     });
+  });
+
+  $(window).on('resize', function() {
+    initHeader();
   });
 
   // Search

@@ -1286,7 +1286,6 @@ a.article-title:hover {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding-right: 20px;
 }
 .archive-list-navigation .archive-list-wrapper h2 {
   font-weight: bold;
@@ -1324,18 +1323,33 @@ a.article-title:hover {
   -webkit-flex: 1 0 25%;
   -ms-flex: 1 0 25%;
   flex: 1 0 25%;
-  padding-right: 40px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  line-height: 22px;
+  line-height: 24px;
   -webkit-transition: all 0.1s ease;
   -moz-transition: all 0.1s ease;
   -ms-transition: all 0.1s ease;
   transition: all 0.1s ease;
   border-left: 2px #ddd solid;
   margin: 1px 0 1px 0;
-  padding: 0 30px 0 6px;
+  padding: 0 20px 0 10px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
 }
 [data-theme="dark"] .archive-list-navigation .archive-list-wrapper ul li {
   border-color: #000;
@@ -1343,12 +1357,15 @@ a.article-title:hover {
 .archive-list-navigation .archive-list-wrapper ul li:hover {
   border-left: 4px #0069dc solid;
   margin-left: -1px;
-  padding-left: 5px;
+  padding-left: 9px;
 }
 [data-theme="dark"] .archive-list-navigation .archive-list-wrapper ul li:hover {
   border-color: dark-color-border-hover;
 }
 .archive-list-navigation .archive-list-wrapper ul li a {
+  display: block;
+  width: calc(100% - 40px);
+  margin-right: 20px;
   color: #555;
   text-decoration: none;
 }
@@ -1358,11 +1375,23 @@ a.article-title:hover {
 .archive-list-navigation .archive-list-wrapper ul li a:hover {
   text-decoration: none;
 }
-.archive-list-navigation .archive-list-wrapper ul li:hover a {
+.archive-list-navigation .archive-list-wrapper ul li:hover a,
+.archive-list-navigation .archive-list-wrapper ul li:hover span {
   color: #0069dc;
 }
-[data-theme="dark"] .archive-list-navigation .archive-list-wrapper ul li:hover a {
+[data-theme="dark"] .archive-list-navigation .archive-list-wrapper ul li:hover a,
+[data-theme="dark"] .archive-list-navigation .archive-list-wrapper ul li:hover span {
   color: #fff;
+}
+.archive-list-navigation .archive-list-wrapper ul li span {
+  padding-left: 0;
+  height: 22px;
+  width: 22px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+[data-theme="dark"] .archive-list-navigation .archive-list-wrapper ul li span {
+  background-color: #222;
 }
 .archive-article {
   -webkit-column-break-inside: avoid;
@@ -2070,16 +2099,6 @@ pre .javascript .function {
   padding-left: 5px;
   color: #777;
   font-size: 0.85em;
-}
-.category-list-count:before,
-.tag-list-count:before,
-.archive-list-count:before {
-  content: "(";
-}
-.category-list-count:after,
-.tag-list-count:after,
-.archive-list-count:after {
-  content: ")";
 }
 .tagcloud a {
   margin-right: 5px;

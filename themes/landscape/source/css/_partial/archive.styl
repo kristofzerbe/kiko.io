@@ -42,7 +42,6 @@
     background: linear-gradient(90deg, dark-color-background 30%, dark-color-block 80%, dark-color-background 100%)
   .archive-list-wrapper
     flex: 0 0 auto
-    padding-right: 20px
     h2
       font-weight: bold
       font-size: 16px
@@ -55,22 +54,27 @@
       max-height: 200px;
       li
         flex: 1 0 25%
-        padding-right: 40px
         box-sizing: border-box
-        line-height: 22px
+        line-height: 24px
         transition: all .1s ease
         border-left: 2px color-border solid
         /[data-theme="dark"] &
           border-color: dark-color-border
         margin: 1px 0 1px 0
-        padding: 0 30px 0 6px
+        padding: 0 20px 0 10px
+        display: flex
+        flex-direction: row
+        justify-content: space-between
         &:hover
           border-left: 4px color-link solid
           /[data-theme="dark"] &
             border-color: dark-color-border-hover
           margin-left: -1px;
-          padding-left: 5px
+          padding-left: 9px
         a
+          display: block
+          width: calc(100% - 40px)
+          margin-right: 20px
           color: color-widget-link
           /[data-theme="dark"] &
             color: dark-color-widget-link
@@ -78,10 +82,18 @@
           &:hover
             text-decoration: none
         &:hover
-          a
+          a, span
             color: color-link
             /[data-theme="dark"] &
               color: dark-color-link
+        span 
+          padding-left: 0
+          height: 22px
+          width: 22px
+          text-align: center
+          background-color: color-background
+          /[data-theme="dark"] &
+            background-color: dark-color-background
 
 .archive-article
   avoid-column-break()
