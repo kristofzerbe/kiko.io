@@ -1643,7 +1643,6 @@ a.article-title:hover {
   padding: 30px 30px 0;
 }
 .anything-entry {
-  text-decoration: none;
   font-size: 2em;
   font-weight: bold;
   line-height: 1.4em;
@@ -1651,16 +1650,34 @@ a.article-title:hover {
   -moz-transition: color 0.2s;
   -ms-transition: color 0.2s;
   transition: color 0.2s;
+}
+.anything-entry a {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  text-decoration: none;
+  width: 100%;
   color: #555;
 }
-[data-theme="dark"] .anything-entry {
+[data-theme="dark"] .anything-entry a {
   color: #dadada;
 }
-a.anything-entry:hover {
+.anything-entry a:hover {
   color: #0069dc;
 }
-[data-theme="dark"] a.anything-entry:hover {
+[data-theme="dark"] .anything-entry a:hover {
   color: #fff;
+}
+.anything-entry a em {
+  opacity: 0.25;
 }
 .anything-content {
   color: #555;
