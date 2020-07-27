@@ -4,6 +4,8 @@ photograph:
   file: 19-05 Israel-0221.jpg
   name: Ceasarea View
   link: 'https://500px.com/photo/1001750729/Ceasarea-View-by-Kristof-Zerbe'
+series: Discoveries
+part: 1
 tags:
   - Great Finds
 categories:

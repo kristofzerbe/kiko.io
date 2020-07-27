@@ -237,7 +237,8 @@ body {
   }
 }
 .article-inner,
-.archive-article-inner {
+.archive-article-inner,
+.anything-inner {
   border-radius: 2px;
 }
 .article-date,
@@ -254,51 +255,64 @@ body {
   font-weight: bold;
 }
 .article-entry h1,
+.anything-content h1,
 .widget h1 {
   font-size: 2em;
 }
 .article-entry h2,
+.anything-content h2,
 .widget h2 {
   font-size: 1.7em;
 }
 .article-entry h3,
+.anything-content h3,
 .widget h3 {
   font-size: 1.5em;
 }
 .article-entry h4,
+.anything-content h4,
 .widget h4 {
   font-size: 1.3em;
 }
 .article-entry h5,
+.anything-content h5,
 .widget h5 {
   font-size: 1.1em;
 }
 .article-entry h6,
+.anything-content h6,
 .widget h6 {
   font-size: 1em;
   color: #777;
 }
 .article-entry hr,
+.anything-content hr,
 .widget hr {
   border: 1px dashed #eee;
 }
 [data-theme="dark"] .article-entry hr,
+[data-theme="dark"] .anything-content hr,
 [data-theme="dark"] .widget hr {
   border: 1px dashed #666;
 }
 .article-entry strong,
+.anything-content strong,
 .widget strong {
   font-weight: bold;
 }
 .article-entry em,
+.anything-content em,
 .widget em,
 .article-entry cite,
+.anything-content cite,
 .widget cite {
   font-style: italic;
 }
 .article-entry sup,
+.anything-content sup,
 .widget sup,
 .article-entry sub,
+.anything-content sub,
 .widget sub {
   font-size: 0.75em;
   line-height: 0;
@@ -306,52 +320,67 @@ body {
   vertical-align: baseline;
 }
 .article-entry sup,
+.anything-content sup,
 .widget sup {
   top: -0.5em;
 }
 .article-entry sub,
+.anything-content sub,
 .widget sub {
   bottom: -0.2em;
 }
 .article-entry small,
+.anything-content small,
 .widget small {
   font-size: 0.85em;
 }
 .article-entry acronym,
+.anything-content acronym,
 .widget acronym,
 .article-entry abbr,
+.anything-content abbr,
 .widget abbr {
   border-bottom: 1px dotted;
 }
 .article-entry ul,
+.anything-content ul,
 .widget ul,
 .article-entry ol,
+.anything-content ol,
 .widget ol,
 .article-entry dl,
+.anything-content dl,
 .widget dl {
   margin: 0 20px;
   line-height: 1.6em;
 }
 .article-entry ul ul,
+.anything-content ul ul,
 .widget ul ul,
 .article-entry ol ul,
+.anything-content ol ul,
 .widget ol ul,
 .article-entry ul ol,
+.anything-content ul ol,
 .widget ul ol,
 .article-entry ol ol,
+.anything-content ol ol,
 .widget ol ol {
   margin-top: 0;
   margin-bottom: 0;
 }
 .article-entry ul,
+.anything-content ul,
 .widget ul {
   list-style: disc;
 }
 .article-entry ol,
+.anything-content ol,
 .widget ol {
   list-style: decimal;
 }
 .article-entry dt,
+.anything-content dt,
 .widget dt {
   font-weight: bold;
 }
@@ -509,7 +538,6 @@ body {
   -webkit-flex-grow: 1;
   flex-grow: 1;
   max-width: 100px;
-  margin: 0 2px;
   text-overflow: ellipsis;
 }
 #header-nav .menu .menu-item a {
@@ -519,7 +547,9 @@ body {
   text-align: center;
   display: inline-block;
   width: 100%;
-  padding: 11px 0;
+  padding: 10px 0;
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 #nav-home-link,
 #nav-rss-link {
@@ -1593,6 +1623,63 @@ a.article-title:hover {
 }
 #page-nav .space {
   color: #ddd;
+}
+.anything-wrap {
+  margin: 2.5em 0;
+}
+.anything-inner {
+  background: #fff;
+  -webkit-box-shadow: 1px 2px 3px #ddd;
+  box-shadow: 1px 2px 3px #ddd;
+  border: 1px solid #ddd;
+}
+[data-theme="dark"] .anything-inner {
+  background: #333;
+  -webkit-box-shadow: 1px 2px 3px #000;
+  box-shadow: 1px 2px 3px #000;
+  border-color: #000;
+}
+.anything-header {
+  padding: 30px 30px 0;
+}
+.anything-entry {
+  text-decoration: none;
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.4em;
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -ms-transition: color 0.2s;
+  transition: color 0.2s;
+  color: #555;
+}
+[data-theme="dark"] .anything-entry {
+  color: #dadada;
+}
+a.anything-entry:hover {
+  color: #0069dc;
+}
+[data-theme="dark"] a.anything-entry:hover {
+  color: #fff;
+}
+.anything-content {
+  color: #555;
+  padding: 0 30px;
+}
+.anything-content:before,
+.anything-content:after {
+  content: "";
+  display: table;
+}
+.anything-content:after {
+  clear: both;
+}
+[data-theme="dark"] .anything-content {
+  color: #dadada;
+}
+.anything-content p {
+  line-height: 1.6em;
+  margin: 1.6em 0;
 }
 #footer {
   background: #555;

@@ -1,0 +1,16 @@
+<div id="index-<%= item.key %>" class="anything-wrap"
+     data-index="<%= index %>" data-key="<%= item.key %>">
+  <div class="anything-inner">
+    <header class="anything-header">
+      <h1 class="anything-entry" itemprop="name">
+        <a href="<%- url_for(item.path) %>">
+          <span><%= item.title %></span>
+          <em><%= item.count %> Articles</em>
+        </a>
+      </h1>
+    </header> 
+    <div class="anything-content">
+      <%- partial('anything-' + index, { key: item.key }) %>
+    </div>
+  </div>
+</div>

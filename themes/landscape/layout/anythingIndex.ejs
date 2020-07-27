@@ -1,0 +1,5 @@
+<h1 class="archive-title"><%= page.index %></h1>
+<% page.posts.each(function(item){ %>
+    <%- partial('_partial/anythingEntry', 
+    { item: item, index: page.index }) %>
+<% }) %>
