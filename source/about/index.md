@@ -35,7 +35,7 @@ Find some of my photographs on **500px** --- [https://500px.com/p/kikon](https:/
 
 I'm a creative person and most people are shaking their heads in disbelief, when I'm telling them, that IT has a lot to do with creativity and not with math.
 
-While learning a lot of stuff about business as an industrial clerk trainee at the German headquarter of [Prime Computer](https://de.wikipedia.org/wiki/Prime_Computer) around 1987 (the decent profession), there was a guy in the warehouse, Colin Urquhart, who was working with a new type of computer, a x68 machine from IBM and he taught me something about it and ignited my fascination about the possibilities of a computer.
+While learning a lot of stuff about business as an industrial clerk trainee at the German headquarter of [Prime Computer](https://de.wikipedia.org/wiki/Prime_Computer) around 1990 (the decent profession), there was a guy in the warehouse, Colin Urquhart, who was working with a new type of computer, a x68 machine from IBM and he taught me something about it and ignited my fascination about the possibilities of a computer.
 
 <div style="width: 150px; margin: 0 0 20px 20px; float: right">
 <img src="logo-prime.png" style="width: 150px; float: left;" />
@@ -49,7 +49,7 @@ While learning a lot of stuff about business as an industrial clerk trainee at t
 <img src="logo-allgeier-experts.png" style="width: 150px; float: left;" />
 </div>
 
-Some years later I got in touch with a brand-new i386DX computer from Escom and started to fiddle around on how to achieve this or that under MS-DOS, installing Windows 3.x from a dozen of 3.5 discs, connecting via a 14.4k modem to the FidoNet (greets to all the guys from the 45er Infosystems) and talk shop with my fellow students at the [University of Applied Aciences, Wiesbaden](https://de.wikipedia.org/wiki/Hochschule_RheinMain), department of economics.
+A little later I got in touch with a i386DX computer from Escom and started to fiddle around on how to achieve this or that under MS-DOS, installing Windows 3.x from a dozen of 3.5 discs, connecting via a 14.4k modem to the FidoNet (greets to all the guys from the 45er Infosystems) and talk shop with my fellow students at the [University of Applied Aciences, Wiesbaden](https://de.wikipedia.org/wiki/Hochschule_RheinMain), department of economics.
 
 One of our teachers gave me a copy of Microsoft Access 1.0 and I started to explore the possibilities of this new relational database system. A short time later, our professor for computer science wanted to switch teaching DBase towards Access and so I became his assistant and held some class hours, where one of my students, having a little company on selling hardware, was asking me someday, if I was interested building Access-based software for his clients. I said yes. My starting point into a career as a freelance software developer.
 
