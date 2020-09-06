@@ -1,0 +1,52 @@
+.page-title
+  font-size: 1.6em
+  font-weight: bold
+  line-height: line-height-title
+  text-transform: uppercase
+  margin-top: 1em
+  margin-bottom: 1em
+  color: color-default
+  /[data-theme="dark"] &
+    color: dark-color-default
+
+.page-content
+  section 
+      @extend $block
+      margin: 2em 0;
+      overflow: hidden
+      background: color-block
+      box-shadow: 1px 2px 3px color-border
+      border: 1px solid color-border
+      padding: 30px
+      /[data-theme="dark"] &
+        background: dark-color-block
+        box-shadow: 1px 2px 3px dark-color-border
+        border-color: dark-color-border
+      @extend $base-style
+      color: color-default
+      /[data-theme="dark"] &
+        color: dark-color-default
+      padding: 0 article-padding
+      p, table
+        line-height: line-height
+        margin: line-height 0
+      h1, h2, h3, h5
+        font-weight: bold
+      h4, h6
+        font-weight: normal
+      h1, h2, h3, h4, h5, h6
+        line-height: line-height-title
+        margin: 1em 0 0.75em
+      a
+        color: color-link
+        text-decoration: none
+        /[data-theme="dark"] &
+          color: dark-color-link
+          border-bottom: dark-color-link-border 1px solid
+        &:hover
+          border-bottom: color-link 1px solid
+          /[data-theme="dark"] &
+            border-bottom: dark-color-link 1px solid
+      ul, ol, dl
+        margin-top: line-height
+        margin-bottom: line-height

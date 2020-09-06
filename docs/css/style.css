@@ -229,7 +229,7 @@ body {
   background: #222;
 }
 @media screen and (min-width: 768px) {
-  #main {
+  main {
     display: inline;
     float: left;
     width: 73.33333333333333%;
@@ -238,6 +238,7 @@ body {
 }
 .article-inner,
 .archive-article-inner,
+.page-content section,
 .anything-inner {
   border-radius: 2px;
 }
@@ -255,63 +256,76 @@ body {
   font-weight: bold;
 }
 .article-entry h1,
+.page-content section h1,
 .anything-content h1,
 .widget h1 {
   font-size: 2em;
 }
 .article-entry h2,
+.page-content section h2,
 .anything-content h2,
 .widget h2 {
   font-size: 1.7em;
 }
 .article-entry h3,
+.page-content section h3,
 .anything-content h3,
 .widget h3 {
   font-size: 1.5em;
 }
 .article-entry h4,
+.page-content section h4,
 .anything-content h4,
 .widget h4 {
   font-size: 1.3em;
 }
 .article-entry h5,
+.page-content section h5,
 .anything-content h5,
 .widget h5 {
   font-size: 1.1em;
 }
 .article-entry h6,
+.page-content section h6,
 .anything-content h6,
 .widget h6 {
   font-size: 1em;
   color: #777;
 }
 .article-entry hr,
+.page-content section hr,
 .anything-content hr,
 .widget hr {
   border: 1px dashed #eee;
 }
 [data-theme="dark"] .article-entry hr,
+[data-theme="dark"] .page-content section hr,
 [data-theme="dark"] .anything-content hr,
 [data-theme="dark"] .widget hr {
   border: 1px dashed #666;
 }
 .article-entry strong,
+.page-content section strong,
 .anything-content strong,
 .widget strong {
   font-weight: bold;
 }
 .article-entry em,
+.page-content section em,
 .anything-content em,
 .widget em,
 .article-entry cite,
+.page-content section cite,
 .anything-content cite,
 .widget cite {
   font-style: italic;
 }
 .article-entry sup,
+.page-content section sup,
 .anything-content sup,
 .widget sup,
 .article-entry sub,
+.page-content section sub,
 .anything-content sub,
 .widget sub {
   font-size: 0.75em;
@@ -320,66 +334,81 @@ body {
   vertical-align: baseline;
 }
 .article-entry sup,
+.page-content section sup,
 .anything-content sup,
 .widget sup {
   top: -0.5em;
 }
 .article-entry sub,
+.page-content section sub,
 .anything-content sub,
 .widget sub {
   bottom: -0.2em;
 }
 .article-entry small,
+.page-content section small,
 .anything-content small,
 .widget small {
   font-size: 0.85em;
 }
 .article-entry acronym,
+.page-content section acronym,
 .anything-content acronym,
 .widget acronym,
 .article-entry abbr,
+.page-content section abbr,
 .anything-content abbr,
 .widget abbr {
   border-bottom: 1px dotted;
 }
 .article-entry ul,
+.page-content section ul,
 .anything-content ul,
 .widget ul,
 .article-entry ol,
+.page-content section ol,
 .anything-content ol,
 .widget ol,
 .article-entry dl,
+.page-content section dl,
 .anything-content dl,
 .widget dl {
   margin: 0 20px;
   line-height: 1.6em;
 }
 .article-entry ul ul,
+.page-content section ul ul,
 .anything-content ul ul,
 .widget ul ul,
 .article-entry ol ul,
+.page-content section ol ul,
 .anything-content ol ul,
 .widget ol ul,
 .article-entry ul ol,
+.page-content section ul ol,
 .anything-content ul ol,
 .widget ul ol,
 .article-entry ol ol,
+.page-content section ol ol,
 .anything-content ol ol,
 .widget ol ol {
   margin-top: 0;
   margin-bottom: 0;
 }
 .article-entry ul,
+.page-content section ul,
 .anything-content ul,
 .widget ul {
   list-style: disc;
 }
 .article-entry ol,
+.page-content section ol,
 .anything-content ol,
 .widget ol {
   list-style: decimal;
 }
 .article-entry dt,
+.page-content section dt,
 .anything-content dt,
 .widget dt {
   font-weight: bold;
@@ -519,26 +548,22 @@ body {
   display: box;
   display: flex;
   list-style: none;
-  margin: 0;
+  margin: 0 0 0 10px;
   padding: 0;
 }
 #header-nav .menu .menu-item {
-/* sets the initial main size of a each menu item */
-  -webkit-flex-basis: 80px;
-  flex-basis: 80px;
-  -ms-flex-negative: 0;
-/* don't allow menu item to shrink below 120px when there isn’t enough space on the row. */
+  -webkit-flex-basis: 40px;
+  flex-basis: 40px;
   -webkit-flex-shrink: 0;
   flex-shrink: 0;
-/* allow items to grow up to 150px wide if the container is big enough */
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  -ms-box-flex: 1;
-  box-flex: 1;
-  -webkit-flex-grow: 1;
-  flex-grow: 1;
+  -webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  -ms-box-flex: 0;
+  box-flex: 0;
+  -webkit-flex-grow: 0;
+  flex-grow: 0;
   max-width: 100px;
-  text-overflow: ellipsis;
+  margin: auto 10px;
 }
 #header-nav .menu .menu-item a {
   color: #fff;
@@ -550,12 +575,13 @@ body {
   padding: 10px 0;
   font-size: 1rem;
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 #nav-home-link,
 #nav-rss-link {
-  -webkit-flex-basis: 50px !important;
-  flex-basis: 50px !important;
-  max-width: 50px !important;
+  margin: 0 !important;
 }
 #nav-home-link a:before,
 #nav-rss-link a:before {
@@ -743,7 +769,7 @@ body {
   border-color: #000;
 }
 .article-photo {
-  height: 175px;
+  height: 150px;
   width: 100%;
   object-fit: cover;
   -webkit-transform: scale(1);
@@ -760,6 +786,16 @@ body {
   transition: all ease-out 0.6s;
   opacity: 0.3;
   filter: grayscale(1) contrast(0.5);
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .article-photo {
+    height: 175px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .article-photo {
+    height: 200px;
+  }
 }
 [data-theme="dark"] .article-photo {
   opacity: 0.75;
@@ -1243,6 +1279,7 @@ a.article-title:hover {
   font-size: 1.6em;
   font-weight: bold;
   line-height: 1.4em;
+  text-transform: uppercase;
   margin-top: 1em;
   margin-bottom: 1em;
   color: #555;
@@ -1623,6 +1660,82 @@ a.article-title:hover {
 }
 #page-nav .space {
   color: #ddd;
+}
+.page-title {
+  font-size: 1.6em;
+  font-weight: bold;
+  line-height: 1.4em;
+  text-transform: uppercase;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: #555;
+}
+[data-theme="dark"] .page-title {
+  color: #dadada;
+}
+.page-content section {
+  margin: 2em 0;
+  overflow: hidden;
+  background: #fff;
+  -webkit-box-shadow: 1px 2px 3px #ddd;
+  box-shadow: 1px 2px 3px #ddd;
+  border: 1px solid #ddd;
+  padding: 30px;
+  color: #555;
+  padding: 0 30px;
+}
+[data-theme="dark"] .page-content section {
+  background: #333;
+  -webkit-box-shadow: 1px 2px 3px #000;
+  box-shadow: 1px 2px 3px #000;
+  border-color: #000;
+}
+[data-theme="dark"] .page-content section {
+  color: #dadada;
+}
+.page-content section p,
+.page-content section table {
+  line-height: 1.6em;
+  margin: 1.6em 0;
+}
+.page-content section h1,
+.page-content section h2,
+.page-content section h3,
+.page-content section h5 {
+  font-weight: bold;
+}
+.page-content section h4,
+.page-content section h6 {
+  font-weight: normal;
+}
+.page-content section h1,
+.page-content section h2,
+.page-content section h3,
+.page-content section h4,
+.page-content section h5,
+.page-content section h6 {
+  line-height: 1.4em;
+  margin: 1em 0 0.75em;
+}
+.page-content section a {
+  color: #0069dc;
+  text-decoration: none;
+}
+[data-theme="dark"] .page-content section a {
+  color: #fff;
+  border-bottom: #777 1px solid;
+}
+.page-content section a:hover {
+  border-bottom: #0069dc 1px solid;
+}
+[data-theme="dark"] .page-content section a:hover {
+  border-bottom: #fff 1px solid;
+}
+.page-content section ul,
+.page-content section ol,
+.page-content section dl {
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
 }
 .anything-wrap {
   margin: 2.5em 0;

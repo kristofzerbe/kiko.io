@@ -92,12 +92,8 @@
   
     return ((eBottom <= viewBottom) && (eTop >= viewTop));
   }
-  
-  initHeader();
 
-  $(window).on('scroll', function() {
-    scrollHeader();
-
+  function initViewportArticleImage() {
     $(".article-photo, .archive-article-photo").each(function() {
       if (isVisibleInViewPort($(this))) {
         $(this).addClass("in-view");
@@ -105,11 +101,20 @@
         $(this).removeClass("in-view");
       }
     });
+  }
+  
+  $(window).on('scroll', function() {
+    scrollHeader();
+    initViewportArticleImage();
   });
 
   $(window).on('resize', function() {
     initHeader();
+    initViewportArticleImage();
   });
+
+  initHeader();
+  initViewportArticleImage();
 
   // Search
   var $searchWrap = $('#search-form-wrap'),
