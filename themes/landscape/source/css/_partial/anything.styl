@@ -34,6 +34,8 @@
         color: dark-color-link
     em
       opacity: 0.25
+      font-size: 0.75em
+      line-height: 2em
 
 .anything-content
   @extend $base-style
@@ -42,6 +44,16 @@
   /[data-theme="dark"] &
     color: dark-color-default
   padding: 0 article-padding
+  a
+    text-decoration: none
+    color: color-link
+    /[data-theme="dark"] &
+      color: dark-color-link
+      border-bottom: dark-color-link-border 1px solid
+    &:hover
+      border-bottom: color-link 1px solid
+      /[data-theme="dark"] &
+        border-bottom: dark-color-link 1px solid
   p
     line-height: line-height
     margin: line-height 0
