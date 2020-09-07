@@ -6,10 +6,10 @@ photograph:
   link: 'https://500px.com/photo/1001751386/Jerusalem-Marks-by-Kristof-Zerbe'
 series: Discoveries
 part: 2
-tags:
-  - Great Finds
 categories:
   - Discoveries
+tags:
+  - Great Finds
 date: 2020-09-07 17:54:50
 subtitle:
 ---
@@ -31,7 +31,7 @@ New month, new discoveries. We will deal with key bindings, downloads on the fly
 ## tinykeys - Modern library for keybindings
 by Jamie kyle : [https://jamiebuilds.github.io/tinykeys/](https://jamiebuilds.github.io/tinykeys/)
 
-![tinykey](Discoveries-2/tinkeys.png)
+![tinykey](Discoveries-2/tinykeys.png)
 
 Very easy to use key binding library for JavaScript. Supports key sequences and modifier keys.
 

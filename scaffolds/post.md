@@ -6,10 +6,11 @@ photograph:
     name: ''
     link: ''
 date: {{ date }}
-tags:
-    - xxx
 categories:
     - xxx
+tags:
+    - xxx
+
 ---
 
 
