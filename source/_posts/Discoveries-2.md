@@ -15,7 +15,6 @@ subtitle:
 ---
 New month, new discoveries. We will deal with key bindings, downloads on the fly, a lot of animations and contrasting images. Have fun, trying out these stunning solutions.
 
-* Long-press event handler
 * tinykeys - Modern library for keybindings
 * Creating files in JavaScript in your browser
 * CSS Animated Google Fonts
