@@ -86,5 +86,6 @@ My colleagues always start to giggle, when I'm telling them that I've found a ne
 **[7Zip](https://www.7-zip.org/)** --- File packing the Open Source way
 **[DeepL](https://www.deepl.com/translator)** --- Best translator ever seen
 **[USBDLM](https://www.uwe-sieber.de/usbdlm_e.html)** --- Stop looking, start knowing USB Drive Letters
+**[Sizer 4.0](http://www.brianapps.net/sizer4/)** --- Predefined resizing windows
 
 </section>
