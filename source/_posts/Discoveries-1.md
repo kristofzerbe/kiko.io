@@ -17,7 +17,7 @@ Due to my daily routine, I'm reading a lot of articles on the web regarding soft
 
 The most interesting stuff ends up on my Pocket list, which grows from day to day. Hard to find the pearls, when I need them. This recurring posts will throw a stroke of light on them.
 
-They are maybe not the newest finds, not the fanciest ones, but remarkable for me and maybe for you also. 
+They are maybe not the newest finds, not the fanciest ones, but remarkable for me and maybe for you also.
 
 * Pure CSS halftone portrait from .jpg source
 * ScrollTrigger - Highlight Text
