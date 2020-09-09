@@ -65,7 +65,8 @@
         st = $(document).scrollTop(),  
         d = (h - st),
         p = (d / h),
-        hfs = header.titleFontSize / 5 * 3;
+        hfs = header.titleFontSize / 5 * 3,
+        jSide = $("aside");
     if (d > 0) {
       $("#header").css("height", d + header.offset + "px");
       $("#header-photo-link").css("opacity", header.photoLinkOpacity * p);
@@ -73,6 +74,7 @@
       $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1 - p) );
       $("#header-title").css("top", header.top - (hfs * (1 - p)) + "px");
       $("#subtitle").css("opacity", p);
+      jSide.css("max-width", "").css("position", "").css("top", "");
     } else {
       $("#header").css("height", header.offset + "px");
       $("#header-photo-link").css("opacity", 0);
@@ -80,6 +82,9 @@
       $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );      
       $("#header-title").css("top", header.top - (hfs * (1)) + "px");      
       $("#subtitle").css("opacity", 0);
+      if (window.matchMedia("screen and (min-width: 768px)").matches) {
+        jSide.css("max-width", $("aside").width()).css("position", "fixed").css("top", "60px");
+      }
     }    
   }
   // Scroll-In Header Image
