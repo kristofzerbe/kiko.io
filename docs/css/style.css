@@ -1285,13 +1285,26 @@ a.article-title:hover {
   font-size: 1.6em;
   font-weight: bold;
   line-height: 1.4em;
-  text-transform: uppercase;
   margin-top: 1em;
   margin-bottom: 1em;
   color: #555;
 }
 [data-theme="dark"] .archive-title {
   color: #dadada;
+}
+.archive-title span {
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.archive-title span b {
+  padding: 0 8px;
+  text-transform: none;
+  font-weight: normal;
+  opacity: 0.5;
+}
+.archive-title span em {
+  text-transform: none;
+  font-variant: normal;
 }
 .archive-year-wrap {
   margin-bottom: 1em;
@@ -1724,8 +1737,8 @@ a.article-title:hover {
   margin: 1em 0 0.75em;
 }
 .page-content section a {
-  color: #0069dc;
   text-decoration: none;
+  color: #0069dc;
 }
 [data-theme="dark"] .page-content section a {
   color: #fff;

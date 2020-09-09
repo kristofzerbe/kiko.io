@@ -30,7 +30,11 @@ The easiest way to get rid of the unused server workspace in 3 steps:
 
 ### Step 1
 
-Run **Developer Command Prompt** from Visual Studio 2019 and login with your Azure DevOps credentials. You need to have administration rights...!
+Run **Developer Command Prompt** with Administrator privileges from Visual Studio 2019 and login with your Azure DevOps credentials. If the Login dialog doesn't show up, force it by executing:
+
+```txt
+tf.exe workspace
+```
 
 ### Step 2
 
@@ -51,6 +55,16 @@ tf workspace /delete {WORKSPACE.name};{WORKSPACE.ownerid}
 ```
 
 Now your new colleague can create his own workspace on the same machine.
+
+**UPDATE:**  
+In case you want to switch your own DevOps account to another and use the same folder as before, you can certainly delete the local workspace, but this wont help, because you are still logged in at TeamExplorer and the folder knows to whom it belongs. Solution is easy:
+
+1. Quit Visual Studio
+2. Rename folder in ``***_OLD`` or something
+3. Create new folder with the same name
+4. Enter ``C:\Users\YOUR-NAME\appdata\Local\Microsoft\Team Foundation\VS-VERSION\Cache`` and emtpy the folder to let Visual Studio forget who you are
+5. Remove all your Remote Workspaces as described above
+6. Start Visual Studio, connect in TeamExplorer to your TFS server and map the code to your folder
 
 ## Related
 * [Use Team Foundation version control commands](https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/use-team-foundation-version-control-commands?view=azure-devops)

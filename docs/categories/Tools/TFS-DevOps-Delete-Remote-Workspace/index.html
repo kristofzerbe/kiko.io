@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="kiko.io">
 <meta property="og:description" content="If you are working with freelance developers and Azure DevOps/TFS with TFVC (Team Foundation Version Control) in your company, maybe this will look familiar to you: You hire a new freelancer and you w">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-06-21T14:15:21.613Z">
+<meta property="og:updated_time" content="2020-09-09T10:37:05.186Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TFS&#x2F;DevOps: Delete Remote Workspace">
 <meta name="twitter:description" content="If you are working with freelance developers and Azure DevOps/TFS with TFVC (Team Foundation Version Control) in your company, maybe this will look familiar to you: You hire a new freelancer and you w">
@@ -182,7 +182,9 @@
 <p>The variable xxx stands for the blocked folder, yyy for the workspace/machine name and zzz for the users id on Azure DevOps.</p>
 <p>Unfortunately, there is no visual management console on Azure DevOps to manage your server workspaces, but there is a command line tool called <strong><a href="https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/use-team-foundation-version-control-commands?view=azure-devops" target="_blank" rel="noopener">tf.exe</a></strong>.</p>
 <p>The easiest way to get rid of the unused server workspace in 3 steps:</p>
-<h3 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h3><p>Run <strong>Developer Command Prompt</strong> from Visual Studio 2019 and login with your Azure DevOps credentials. You need to have administration rights…!</p>
+<h3 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h3><p>Run <strong>Developer Command Prompt</strong> with Administrator privileges from Visual Studio 2019 and login with your Azure DevOps credentials. If the Login dialog doesn’t show up, force it by executing:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tf.exe workspace</span><br></pre></td></tr></table></figure>
+
 <h3 id="Step-2"><a href="#Step-2" class="headerlink" title="Step 2"></a>Step 2</h3><p>Get a list of all remote workspaces available in your DevOps Collection by running the command:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tf.exe workspaces /computer:* /owner:* /format:xml &gt; c:\temp\workspaces.xml</span><br></pre></td></tr></table></figure>
 
@@ -191,6 +193,15 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tf workspace /delete &#123;WORKSPACE.name&#125;;&#123;WORKSPACE.ownerid&#125;</span><br></pre></td></tr></table></figure>
 
 <p>Now your new colleague can create his own workspace on the same machine.</p>
+<p><strong>UPDATE:</strong><br>In case you want to switch your own DevOps account to another and use the same folder as before, you can certainly delete the local workspace, but this wont help, because you are still logged in at TeamExplorer and the folder knows to whom it belongs. Solution is easy:</p>
+<ol>
+<li>Quit Visual Studio</li>
+<li>Rename folder in <code>***_OLD</code> or something</li>
+<li>Create new folder with the same name</li>
+<li>Enter <code>C:\Users\YOUR-NAME\appdata\Local\Microsoft\Team Foundation\VS-VERSION\Cache</code> and emtpy the folder to let Visual Studio forget who you are</li>
+<li>Remove all your Remote Workspaces as described above</li>
+<li>Start Visual Studio, connect in TeamExplorer to your TFS server and map the code to your folder</li>
+</ol>
 <h2 id="Related"><a href="#Related" class="headerlink" title="Related"></a>Related</h2><ul>
 <li><a href="https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/use-team-foundation-version-control-commands?view=azure-devops" target="_blank" rel="noopener">Use Team Foundation version control commands</a></li>
 <li><a href="https://stackoverflow.com/questions/28298771/how-to-remove-tfs-workspace-mapping-for-another-user/28299407" target="_blank" rel="noopener">How to remove TFS workspace mapping for another user
@@ -200,7 +211,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/" data-id="cket2ohth00180wl9y1q7yum2" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/" data-id="ckev90u0i000y6shzpebhc44b" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
