@@ -82,7 +82,7 @@
       $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );      
       $("#header-title").css("top", header.top - (hfs * (1)) + "px");      
       $("#subtitle").css("opacity", 0);
-      if (window.matchMedia("screen and (min-width: 768px)").matches) {
+      if (window.matchMedia("screen and (min-width: 768px)").matches & window.innerHeight > (jSide.height() + 60)) {
         jSide.css("max-width", $("aside").width()).css("position", "fixed").css("top", "60px");
       }
     }    
@@ -153,16 +153,21 @@
     stopSearchAnim();
   });
 
-  // Caption
+  // Caption & Image Links
   $('.article-entry').each(function(i){
     $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
+      if ($(this).parent().is('a')) return;
+      if ($(this).parent().hasClass('luminous')) return;
 
       var alt = this.alt;
+      var src = this.src;
+      var newSrc = src + "?w=768";
+      var newHref = src + "?w=1200";
 
       if (alt) $(this).after('<span class="caption">' + alt + '</span>');
 
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+      $(this).attr("src", newSrc);
+      $(this).wrap('<a href="' + newHref + '" title="' + alt + '" class="luminous"></a>');
     });
 
     $(this).find('.fancybox').each(function(){
@@ -170,36 +175,8 @@
     });
   });
 
-  if ($.fancybox){
-    $('.fancybox').fancybox();
-  }
-
-  // Mobile nav
-  // var $container = $('#container'),
-  //   isMobileNavAnim = false,
-  //   mobileNavAnimDuration = 200;
-
-  // var startMobileNavAnim = function(){
-  //   isMobileNavAnim = true;
-  // };
-
-  // var stopMobileNavAnim = function(){
-  //   setTimeout(function(){
-  //     isMobileNavAnim = false;
-  //   }, mobileNavAnimDuration);
-  // };
-
-  // $('#main-nav-toggle').on('click', function(){
-  //   if (isMobileNavAnim) return;
-  //   startMobileNavAnim();
-  //   $container.toggleClass('mobile-nav-on');
-  //   stopMobileNavAnim();
-  // });
-
-  // $('#wrap').on('click', function(){
-  //   if (isMobileNavAnim || !$container.hasClass('mobile-nav-on')) return;
-
-  //   $container.removeClass('mobile-nav-on');
-  // });
+  $('a.luminous').each(function(i, el) {
+    new Luminous(el);
+  });
 
 })(jQuery);

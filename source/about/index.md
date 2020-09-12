@@ -127,4 +127,7 @@ Stop looking, start knowing USB Drive Letters
 **[Sizer 4.0](http://www.brianapps.net/sizer4/)**
 Predefined resizing windows
 
+**[FileMenu Tools](https://www.lopesoft.com/index.php/en/download/filemenu-tools)**
+Helper for the Windows Explorer context menu
+
 </section>

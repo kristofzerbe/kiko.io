@@ -35,7 +35,7 @@ They are maybe not the newest finds, not the fanciest ones, but remarkable for m
 ## Pure CSS halftone portrait from .jpg source
 by Ana Tudor : [https://codepen.io/thebabydino/pen/LYGGwrm](https://codepen.io/thebabydino/pen/LYGGwrm)
 
-![Pure CSS Halftone](Discoveries-1/pure-css-halftone.jpg)
+[![Pure CSS Halftone](Discoveries-1/pure-css-halftone.jpg)](https://codepen.io/thebabydino/pen/LYGGwrm)
 
 Ana, author at [CSS Tricks](https://css-tricks.com/author/thebabydino/), shows a CSS-only technique to convert an image into a halftone one.
 
@@ -44,7 +44,7 @@ Ana, author at [CSS Tricks](https://css-tricks.com/author/thebabydino/), shows a
 ## ScrollTrigger - Highlight Text
 by Ryan Mulligan : [https://codepen.io/hexagoncircle/details/gOPMwvd](https://codepen.io/hexagoncircle/details/gOPMwvd)
 
-![ScrollTrigger Highlight Text](Discoveries-1/scrolltrigger-highlight-text.jpg)
+[![ScrollTrigger Highlight Text](Discoveries-1/scrolltrigger-highlight-text.jpg)](https://codepen.io/hexagoncircle/details/gOPMwvd)
 
 We all highlight important text passages for our readers. Ryan does the in an unusual, butt cool way by using GSAP ScrollTrigger.
 
@@ -53,16 +53,16 @@ We all highlight important text passages for our readers. Ryan does the in an un
 ## Tiny long-press event handler
 by MudOnTire : [https://github.com/MudOnTire/web-long-press](https://github.com/MudOnTire/web-long-press)
 
-![Long-Press Event Handler](Discoveries-1/long-press-event-handler.jpg)
+[![Long-Press Event Handler](Discoveries-1/long-press-event-handler.jpg)](https://github.com/MudOnTire/web-long-press)
 
 Vanilla JS multi-instance handling of long press event the easy way.
 
 ---
 
 ## Show More/Less
-by Grzegorz Tomicki : (https://github.com/tomik23/show-more)[https://github.com/tomik23/show-more]
+by Grzegorz Tomicki : [https://github.com/tomik23/show-more](https://github.com/tomik23/show-more)
 
-![Show More](Discoveries-1/show-more.jpg)
+[![Show More](Discoveries-1/show-more.jpg)](https://github.com/tomik23/show-more)
 
 Grzegorz's little JS helper to cut texts, lists and even tables and show a MORE link.
 
@@ -71,7 +71,7 @@ Grzegorz's little JS helper to cut texts, lists and even tables and show a MORE 
 ## 3D banners with ScrollTrigger
 by supamike : [https://codepen.io/supamike/full/KKVqXmR](https://codepen.io/supamike/full/KKVqXmR)
 
-![3d Banners with SrollTrigger](Discoveries-1/3d-banners-scrolltrigger.jpg)
+[![3d Banners with SrollTrigger](Discoveries-1/3d-banners-scrolltrigger.jpg)](https://codepen.io/supamike/full/KKVqXmR)
 
 Awesome 3D effect on scrolling made with [ScrollTrigger](https://greensock.com/scrolltrigger/).
 
@@ -80,7 +80,7 @@ Awesome 3D effect on scrolling made with [ScrollTrigger](https://greensock.com/s
 ## Image Compare Viewer
 by Kyle Wetton : [https://image-compare-viewer.netlify.app/](https://image-compare-viewer.netlify.app/)
 
-![Image Compare Viewer](Discoveries-1/image-compare-viewer.jpg)
+[![Image Compare Viewer](Discoveries-1/image-compare-viewer.jpg)](https://image-compare-viewer.netlify.app/)
 
 Comparison slider in Vanilla JS to compare BEFORE and AFTER images, which works responsively on every device.
 
@@ -89,7 +89,7 @@ Comparison slider in Vanilla JS to compare BEFORE and AFTER images, which works 
 ## Add Read or Scroll Progress Bar To A Website To Indicate Read Progress
 by Jun711 : [https://jun711.github.io/web/add-scroll-progress-bar-to-a-website-to-indicate-read-progress/](https://jun711.github.io/web/add-scroll-progress-bar-to-a-website-to-indicate-read-progress/)
 
-![Read Progress Bar](Discoveries-1/read-progress-bar.jpg)
+[![Read Progress Bar](Discoveries-1/read-progress-bar.jpg)](https://jun711.github.io/web/add-scroll-progress-bar-to-a-website-to-indicate-read-progress/)
 
 A classic, simply explained...
 
@@ -100,6 +100,6 @@ Here another approach: [CSS Tricks: Reading Position Indicator](https://css-tric
 ## How to Get a Progressive Web App into the Google Play Store
 by Mateusz Rybczonek : [https://css-tricks.com/how-to-get-a-progressive-web-app-into-the-google-play-store/](https://css-tricks.com/how-to-get-a-progressive-web-app-into-the-google-play-store/)
 
-![Get PWA Into Play Store](Discoveries-1/get-pwa-into-play-store.jpg)
+[![Get PWA Into Play Store](Discoveries-1/get-pwa-into-play-store.jpg)](https://css-tricks.com/how-to-get-a-progressive-web-app-into-the-google-play-store/)
 
 Mateusz describes very detailed how offer your PWA as an App via Google Play Store.

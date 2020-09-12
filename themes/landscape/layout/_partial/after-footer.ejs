@@ -1,47 +1,24 @@
 <%- js('js/utterances-comment.js') %>
 <%- js('js/dark-mode-toggle.js') %>
 
-<!-- DISQUS -->
-<!-- <% if (config.disqus_shortname){ %> -->
-<!-- <script>
-  var disqus_shortname = '<%= config.disqus_shortname %>';
-  <% if (page.permalink){ %>
-  var disqus_url = '<%= page.permalink %>';
-  <% } %>
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/<% if (page.comments) { %>embed.js<% } else { %>count.js<% } %>';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-<% } %> -->
-
 <!-- LIBRARIES -->
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
 <%- js('jquery/jquery.min.js') %>
 
-<!-- FANCYBOX -->
-<% if (theme.fancybox){ %>
-  <%- css('fancybox/jquery.fancybox') %>
-  <%- js('fancybox/jquery.fancybox.pack') %>
-<% } %>
+<!-- LUMINOUS -->
+<%- js('luminous/luminous.min.js') %>
 
 <!-- HAMMER -->
-<%- js('hammer/hammer.js') %>
-<%- js('hammer/jquery.hammer.js') %>
+<%#- js('hammer/hammer.js') %>
+<%#- js('hammer/jquery.hammer.js') %>
 
 <!-- BARBA -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.1/TweenMax.min.js"></script>
-<%- js('js/barba-nextprev.js') %> -->
+<%# <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script> %>
+<%# <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.1/TweenMax.min.js"></script> %>
+<%#- js('js/barba-nextprev.js') %>
 
 <!-- MAIN-SCRIPT (THEME.LANDSCAPE.SOURCE.JS) -->
 <%- js('js/script') %>
-
-<!-- ANALYTICS -->
-<!-- <%- partial('gauges-analytics') %> -->
 
 <!-- BACK-TO-TOP -->
 <script>
