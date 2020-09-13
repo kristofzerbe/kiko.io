@@ -82,7 +82,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
         <a href="/" id="logo">
-          <h1 id="title-wrap">kiko.io</h1>
+          <h1 id="title-wrap"></h1>
         </a>
       
         <h2 id="subtitle">
@@ -172,7 +172,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/Automatic-Header-Images-in-Hexo/" data-id="ckezcxapz0007i8l91tupgrlt" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/Automatic-Header-Images-in-Hexo/" data-id="ckf1agx8h0035ashz9452i8fv" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -237,7 +237,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/" data-id="ckezcxas30011i8l9l2pgyv0i" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/" data-id="ckf1agx4x000vashzi8zeygbf" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -297,7 +297,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/" data-id="ckezcxasi0018i8l9dx3ojwrp" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/" data-id="ckf1agx56000zashz159uxcb2" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -358,7 +358,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/JavaScript/Better-Input-Change-Event/" data-id="ckezcxaqg000ai8l9j82waiab" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/JavaScript/Better-Input-Change-Event/" data-id="ckf1agx340007ashz6lcjc9bg" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -428,7 +428,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode-revised/" data-id="ckezcxarb000ni8l9xrbup0z7" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode-revised/" data-id="ckf1agx4f000lashzkl4596r9" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -497,7 +497,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode/" data-id="ckezcxari000ri8l97uydl5ka" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode/" data-id="ckf1agx4l000nashzusxf09sd" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -566,7 +566,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/" data-id="ckezcxaoc0000i8l9dhfps1cl" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/" data-id="ckf1agx2k0002ashz0ftfzzmb" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -635,7 +635,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/A-New-Blog-Customizing-Hexo/" data-id="ckezcxaov0002i8l9b5osla6f" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/A-New-Blog-Customizing-Hexo/" data-id="ckf1agx240000ashzare2d2dw" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -737,6 +737,7 @@
       </div>
       <script src="/js/utterances-comment.js"></script>
 <script src="/js/dark-mode-toggle.js"></script>
+<script src="/js/AutoTyping.js"></script>
 
 <!-- LIBRARIES -->
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
@@ -757,11 +758,31 @@
 <!-- MAIN-SCRIPT (THEME.LANDSCAPE.SOURCE.JS) -->
 <script src="/js/script.js"></script>
 
-<!-- BACK-TO-TOP -->
 <script>
+  //BACK-TO-TOP
   addBackToTop({
     diameter: 30
   })
+
+// TODO: AUTOTYPING
+//$("#title-wrap").text("kiko.io");
+new AutoTyping({
+  id: 'title-wrap',
+  typeText: ['kiko.io'],
+  textColor: '#fff',
+  typeSpeed: 100,
+  typeDelay: 100,
+  cursor: '',
+  deleteSpeed: 0,
+  deleteDelay: 500,
+  typeInfinity: true,
+  callBack: {
+    counter: 1,
+    method: function(counter){
+      //$("#title-wrap").css("height", $("#title-wrap").height() + "px").empty().text("kiko.io");
+    }
+  }
+}).init();
 </script>
 
     </div>

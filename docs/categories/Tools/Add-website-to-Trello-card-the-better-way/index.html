@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://kiko.io/categories/Tools/Add-website-to-Trello-card-the-better-way/card-via-share.png">
 <meta property="og:image" content="https://kiko.io/categories/Tools/Add-website-to-Trello-card-the-better-way/open-bookmarklet.gif">
 <meta property="og:image" content="https://kiko.io/categories/Tools/Add-website-to-Trello-card-the-better-way/card-via-bookmarklet.png">
-<meta property="og:updated_time" content="2020-09-07T21:30:02.260Z">
+<meta property="og:updated_time" content="2020-09-07T21:30:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Add website to Trello card the better way">
 <meta name="twitter:description" content="I was looking for a new way to store interesting website articles for reading later, as Pocket, my favourite tool until here, gets worse and worse. As I am a big Trello fan, I wanted to give it a chan">
@@ -92,7 +92,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
         <a href="/" id="logo">
-          <h1 id="title-wrap">kiko.io</h1>
+          <h1 id="title-wrap"></h1>
         </a>
       
         <h2 id="subtitle">
@@ -201,7 +201,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/Add-website-to-Trello-card-the-better-way/" data-id="ckezcxapk0006i8l9hwlg3jzd" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/Add-website-to-Trello-card-the-better-way/" data-id="ckf1agx300006ashzeroedj6q" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -321,6 +321,7 @@
       </div>
       <script src="/js/utterances-comment.js"></script>
 <script src="/js/dark-mode-toggle.js"></script>
+<script src="/js/AutoTyping.js"></script>
 
 <!-- LIBRARIES -->
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
@@ -341,11 +342,31 @@
 <!-- MAIN-SCRIPT (THEME.LANDSCAPE.SOURCE.JS) -->
 <script src="/js/script.js"></script>
 
-<!-- BACK-TO-TOP -->
 <script>
+  //BACK-TO-TOP
   addBackToTop({
     diameter: 30
   })
+
+// TODO: AUTOTYPING
+//$("#title-wrap").text("kiko.io");
+new AutoTyping({
+  id: 'title-wrap',
+  typeText: ['kiko.io'],
+  textColor: '#fff',
+  typeSpeed: 100,
+  typeDelay: 100,
+  cursor: '',
+  deleteSpeed: 0,
+  deleteDelay: 500,
+  typeInfinity: true,
+  callBack: {
+    counter: 1,
+    method: function(counter){
+      //$("#title-wrap").css("height", $("#title-wrap").height() + "px").empty().text("kiko.io");
+    }
+  }
+}).init();
 </script>
 
     </div>

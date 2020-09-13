@@ -6,7 +6,7 @@
   <title>kiko.io | A New Blog: Blogging and Synching en route</title>
   <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="I work with several devices, some Windows, some Android, and sometimes I have time to write on my articles at home (Notebook, Tablet), in my spare time in the office (Desktop, Laptop) or on my way to">
-<meta name="keywords" content="VS Code,Hexo,GitHub,Blogging">
+<meta name="keywords" content="VS Code,Hexo,Blogging,GitHub">
 <meta property="og:type" content="article">
 <meta property="og:title" content="A New Blog: Blogging and Synching en route">
 <meta property="og:url" content="https://kiko.io/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/index.html">
@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://kiko.io/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/icon-gitlens.png">
 <meta property="og:image" content="https://kiko.io/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/icon-gitgraph.png">
 <meta property="og:image" content="https://kiko.io/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/ia-writer-1.png">
-<meta property="og:updated_time" content="2020-07-26T13:09:59.328Z">
+<meta property="og:updated_time" content="2020-06-22T12:23:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A New Blog: Blogging and Synching en route">
 <meta name="twitter:description" content="I work with several devices, some Windows, some Android, and sometimes I have time to write on my articles at home (Notebook, Tablet), in my spare time in the office (Desktop, Laptop) or on my way to">
@@ -95,7 +95,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
         <a href="/" id="logo">
-          <h1 id="title-wrap">kiko.io</h1>
+          <h1 id="title-wrap"></h1>
         </a>
       
         <h2 id="subtitle">
@@ -277,7 +277,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/" data-id="ckezcxaoc0000i8l9dhfps1cl" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/" data-id="ckf1agx2k0002ashz0ftfzzmb" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -397,6 +397,7 @@
       </div>
       <script src="/js/utterances-comment.js"></script>
 <script src="/js/dark-mode-toggle.js"></script>
+<script src="/js/AutoTyping.js"></script>
 
 <!-- LIBRARIES -->
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
@@ -417,11 +418,31 @@
 <!-- MAIN-SCRIPT (THEME.LANDSCAPE.SOURCE.JS) -->
 <script src="/js/script.js"></script>
 
-<!-- BACK-TO-TOP -->
 <script>
+  //BACK-TO-TOP
   addBackToTop({
     diameter: 30
   })
+
+// TODO: AUTOTYPING
+//$("#title-wrap").text("kiko.io");
+new AutoTyping({
+  id: 'title-wrap',
+  typeText: ['kiko.io'],
+  textColor: '#fff',
+  typeSpeed: 100,
+  typeDelay: 100,
+  cursor: '',
+  deleteSpeed: 0,
+  deleteDelay: 500,
+  typeInfinity: true,
+  callBack: {
+    counter: 1,
+    method: function(counter){
+      //$("#title-wrap").css("height", $("#title-wrap").height() + "px").empty().text("kiko.io");
+    }
+  }
+}).init();
 </script>
 
     </div>

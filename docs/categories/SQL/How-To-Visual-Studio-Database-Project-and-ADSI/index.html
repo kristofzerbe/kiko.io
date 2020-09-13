@@ -6,7 +6,7 @@
   <title>kiko.io | How-To: Visual Studio Database Project and ADSI</title>
   <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="If you are working with a Visual Studio Database Project and have to deal with data from the Active Directory via a Linked Server, you have to announce the data structure of the AD data in order to ge">
-<meta name="keywords" content="ADSI,Visual Studio,Database Project">
+<meta name="keywords" content="Visual Studio,ADSI,Database Project">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How-To: Visual Studio Database Project and ADSI">
 <meta property="og:url" content="https://kiko.io/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/index.html">
@@ -87,7 +87,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
         <a href="/" id="logo">
-          <h1 id="title-wrap">kiko.io</h1>
+          <h1 id="title-wrap"></h1>
         </a>
       
         <h2 id="subtitle">
@@ -451,7 +451,7 @@ FROM (
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/" data-id="ckezcxarw000yi8l93e37nkwt" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/" data-id="ckf1agx8j0036ashz44zdawux" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -566,6 +566,7 @@ FROM (
       </div>
       <script src="/js/utterances-comment.js"></script>
 <script src="/js/dark-mode-toggle.js"></script>
+<script src="/js/AutoTyping.js"></script>
 
 <!-- LIBRARIES -->
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
@@ -586,11 +587,31 @@ FROM (
 <!-- MAIN-SCRIPT (THEME.LANDSCAPE.SOURCE.JS) -->
 <script src="/js/script.js"></script>
 
-<!-- BACK-TO-TOP -->
 <script>
+  //BACK-TO-TOP
   addBackToTop({
     diameter: 30
   })
+
+// TODO: AUTOTYPING
+//$("#title-wrap").text("kiko.io");
+new AutoTyping({
+  id: 'title-wrap',
+  typeText: ['kiko.io'],
+  textColor: '#fff',
+  typeSpeed: 100,
+  typeDelay: 100,
+  cursor: '',
+  deleteSpeed: 0,
+  deleteDelay: 500,
+  typeInfinity: true,
+  callBack: {
+    counter: 1,
+    method: function(counter){
+      //$("#title-wrap").css("height", $("#title-wrap").height() + "px").empty().text("kiko.io");
+    }
+  }
+}).init();
 </script>
 
     </div>

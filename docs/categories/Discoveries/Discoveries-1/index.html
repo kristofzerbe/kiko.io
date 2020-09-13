@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://kiko.io/categories/Discoveries/Discoveries-1/image-compare-viewer.jpg">
 <meta property="og:image" content="https://kiko.io/categories/Discoveries/Discoveries-1/read-progress-bar.jpg">
 <meta property="og:image" content="https://kiko.io/categories/Discoveries/Discoveries-1/get-pwa-into-play-store.jpg">
-<meta property="og:updated_time" content="2020-09-12T08:43:47.662Z">
+<meta property="og:updated_time" content="2020-09-12T08:43:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Discoveries #1">
 <meta name="twitter:description" content="Due to my daily routine, I’m reading a lot of articles on the web regarding software development.  The most interesting stuff ends up on my Pocket list, which grows from day to day. Hard to find the p">
@@ -96,7 +96,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
         <a href="/" id="logo">
-          <h1 id="title-wrap">kiko.io</h1>
+          <h1 id="title-wrap"></h1>
         </a>
       
         <h2 id="subtitle">
@@ -237,7 +237,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Discoveries/Discoveries-1/" data-id="ckezcxaqt000fi8l9hjyucnjv" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Discoveries/Discoveries-1/" data-id="ckf1agx3x000bashzo57tiwuk" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -357,6 +357,7 @@
       </div>
       <script src="/js/utterances-comment.js"></script>
 <script src="/js/dark-mode-toggle.js"></script>
+<script src="/js/AutoTyping.js"></script>
 
 <!-- LIBRARIES -->
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
@@ -377,11 +378,31 @@
 <!-- MAIN-SCRIPT (THEME.LANDSCAPE.SOURCE.JS) -->
 <script src="/js/script.js"></script>
 
-<!-- BACK-TO-TOP -->
 <script>
+  //BACK-TO-TOP
   addBackToTop({
     diameter: 30
   })
+
+// TODO: AUTOTYPING
+//$("#title-wrap").text("kiko.io");
+new AutoTyping({
+  id: 'title-wrap',
+  typeText: ['kiko.io'],
+  textColor: '#fff',
+  typeSpeed: 100,
+  typeDelay: 100,
+  cursor: '',
+  deleteSpeed: 0,
+  deleteDelay: 500,
+  typeInfinity: true,
+  callBack: {
+    counter: 1,
+    method: function(counter){
+      //$("#title-wrap").css("height", $("#title-wrap").height() + "px").empty().text("kiko.io");
+    }
+  }
+}).init();
 </script>
 
     </div>

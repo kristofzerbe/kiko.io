@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="kiko.io">
 <meta property="og:description" content="Often it is important to trigger an event, after the user of your website/web app has filled out an text input. You have to do something with the given value in JavaScript. The intended event for this">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-06-22T12:24:56.667Z">
+<meta property="og:updated_time" content="2019-11-26T16:09:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Better Input Change Event">
 <meta name="twitter:description" content="Often it is important to trigger an event, after the user of your website/web app has filled out an text input. You have to do something with the given value in JavaScript. The intended event for this">
@@ -87,7 +87,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
         <a href="/" id="logo">
-          <h1 id="title-wrap">kiko.io</h1>
+          <h1 id="title-wrap"></h1>
         </a>
       
         <h2 id="subtitle">
@@ -186,7 +186,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/JavaScript/Better-Input-Change-Event/" data-id="ckezcxaqg000ai8l9j82waiab" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/JavaScript/Better-Input-Change-Event/" data-id="ckf1agx340007ashz6lcjc9bg" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -306,6 +306,7 @@
       </div>
       <script src="/js/utterances-comment.js"></script>
 <script src="/js/dark-mode-toggle.js"></script>
+<script src="/js/AutoTyping.js"></script>
 
 <!-- LIBRARIES -->
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
@@ -326,11 +327,31 @@
 <!-- MAIN-SCRIPT (THEME.LANDSCAPE.SOURCE.JS) -->
 <script src="/js/script.js"></script>
 
-<!-- BACK-TO-TOP -->
 <script>
+  //BACK-TO-TOP
   addBackToTop({
     diameter: 30
   })
+
+// TODO: AUTOTYPING
+//$("#title-wrap").text("kiko.io");
+new AutoTyping({
+  id: 'title-wrap',
+  typeText: ['kiko.io'],
+  textColor: '#fff',
+  typeSpeed: 100,
+  typeDelay: 100,
+  cursor: '',
+  deleteSpeed: 0,
+  deleteDelay: 500,
+  typeInfinity: true,
+  callBack: {
+    counter: 1,
+    method: function(counter){
+      //$("#title-wrap").css("height", $("#title-wrap").height() + "px").empty().text("kiko.io");
+    }
+  }
+}).init();
 </script>
 
     </div>

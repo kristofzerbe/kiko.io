@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://kiko.io/about/index/logo-goetzfried.png">
 <meta property="og:image" content="https://kiko.io/about/index/logo-seperator.png">
 <meta property="og:image" content="https://kiko.io/about/index/logo-allgeier-experts.png">
-<meta property="og:updated_time" content="2020-09-11T10:23:03.000Z">
+<meta property="og:updated_time" content="2020-09-11T10:23:03.607Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="About">
 <meta name="twitter:description" content="Hi there!I’m Kristof from the lovely snoring Wiesbaden, in sometimes too hot and most times to cold Germany.I love three things: Software Development, Photography and first and foremost the brightes">
@@ -96,7 +96,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
         <a href="/" id="logo">
-          <h1 id="title-wrap">kiko.io</h1>
+          <h1 id="title-wrap"></h1>
         </a>
       
         <h2 id="subtitle">
@@ -287,6 +287,7 @@
       </div>
       <script src="/js/utterances-comment.js"></script>
 <script src="/js/dark-mode-toggle.js"></script>
+<script src="/js/AutoTyping.js"></script>
 
 <!-- LIBRARIES -->
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
@@ -307,11 +308,31 @@
 <!-- MAIN-SCRIPT (THEME.LANDSCAPE.SOURCE.JS) -->
 <script src="/js/script.js"></script>
 
-<!-- BACK-TO-TOP -->
 <script>
+  //BACK-TO-TOP
   addBackToTop({
     diameter: 30
   })
+
+// TODO: AUTOTYPING
+//$("#title-wrap").text("kiko.io");
+new AutoTyping({
+  id: 'title-wrap',
+  typeText: ['kiko.io'],
+  textColor: '#fff',
+  typeSpeed: 100,
+  typeDelay: 100,
+  cursor: '',
+  deleteSpeed: 0,
+  deleteDelay: 500,
+  typeInfinity: true,
+  callBack: {
+    counter: 1,
+    method: function(counter){
+      //$("#title-wrap").css("height", $("#title-wrap").height() + "px").empty().text("kiko.io");
+    }
+  }
+}).init();
 </script>
 
     </div>

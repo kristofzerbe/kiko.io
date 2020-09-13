@@ -170,7 +170,7 @@
       $(this).wrap('<a href="' + newHref + '" title="' + alt + '" class="luminous"></a>');
     });
 
-    $(this).find('.fancybox').each(function(){
+    $(this).find('.luminous').each(function(){
       $(this).attr('rel', 'article' + i);
     });
   });

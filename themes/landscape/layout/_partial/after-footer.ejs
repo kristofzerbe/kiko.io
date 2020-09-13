@@ -1,5 +1,6 @@
 <%- js('js/utterances-comment.js') %>
 <%- js('js/dark-mode-toggle.js') %>
+<%- js('js/AutoTyping.js') %>
 
 <!-- LIBRARIES -->
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
@@ -20,9 +21,22 @@
 <!-- MAIN-SCRIPT (THEME.LANDSCAPE.SOURCE.JS) -->
 <%- js('js/script') %>
 
-<!-- BACK-TO-TOP -->
 <script>
+  //BACK-TO-TOP
   addBackToTop({
     diameter: 30
   })
+
+// AUTOTYPING
+//$("#title-wrap").text("<%= config.title %>");
+new AutoTyping({
+  id: 'title-wrap',
+  typeText: ['<%= config.title %>'],
+  textColor: '#fff',
+  typeSpeed: 100,
+  typeDelay: 1000,
+  showCursor: false,
+  delete: false,
+  typeInfinity: false
+}).init();
 </script>

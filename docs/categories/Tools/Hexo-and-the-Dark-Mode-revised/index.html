@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="kiko.io">
 <meta property="og:description" content="While writing my post Hexo and the Dark Mode a few days ago, I thought it would be nice, if I could switch between the normal (light) and the dark theme, I’ve created for the support of the OS-related">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-07-14T13:56:09.000Z">
+<meta property="og:updated_time" content="2020-07-14T13:56:09.841Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo and the Dark Mode ... revised">
 <meta name="twitter:description" content="While writing my post Hexo and the Dark Mode a few days ago, I thought it would be nice, if I could switch between the normal (light) and the dark theme, I’ve created for the support of the OS-related">
@@ -87,7 +87,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
         <a href="/" id="logo">
-          <h1 id="title-wrap">kiko.io</h1>
+          <h1 id="title-wrap"></h1>
         </a>
       
         <h2 id="subtitle">
@@ -216,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode-revised/" data-id="ckezcxarb000ni8l9xrbup0z7" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode-revised/" data-id="ckf1agx4f000lashzkl4596r9" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -336,6 +336,7 @@
       </div>
       <script src="/js/utterances-comment.js"></script>
 <script src="/js/dark-mode-toggle.js"></script>
+<script src="/js/AutoTyping.js"></script>
 
 <!-- LIBRARIES -->
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
@@ -356,11 +357,31 @@
 <!-- MAIN-SCRIPT (THEME.LANDSCAPE.SOURCE.JS) -->
 <script src="/js/script.js"></script>
 
-<!-- BACK-TO-TOP -->
 <script>
+  //BACK-TO-TOP
   addBackToTop({
     diameter: 30
   })
+
+// TODO: AUTOTYPING
+//$("#title-wrap").text("kiko.io");
+new AutoTyping({
+  id: 'title-wrap',
+  typeText: ['kiko.io'],
+  textColor: '#fff',
+  typeSpeed: 100,
+  typeDelay: 100,
+  cursor: '',
+  deleteSpeed: 0,
+  deleteDelay: 500,
+  typeInfinity: true,
+  callBack: {
+    counter: 1,
+    method: function(counter){
+      //$("#title-wrap").css("height", $("#title-wrap").height() + "px").empty().text("kiko.io");
+    }
+  }
+}).init();
 </script>
 
     </div>
