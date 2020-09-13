@@ -177,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Discoveries/Discoveries-2/" data-id="ckf1bhyx5000fpghz0wz6n5vs" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Discoveries/Discoveries-2/" data-id="ckf1bzap3000ftghzny8zk1bg" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -247,7 +247,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/Add-website-to-Trello-card-the-better-way/" data-id="ckf1bhyvw0006pghz335ox9ra" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/Add-website-to-Trello-card-the-better-way/" data-id="ckf1bzao80006tghzpq9w7hcq" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -316,7 +316,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/UI-Design/Horizontal-navigation-menu-above-an-image/" data-id="ckf1bhz190024pghzthh81b68" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/UI-Design/Horizontal-navigation-menu-above-an-image/" data-id="ckf1bzaph000qtghz4dhxr6uh" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -383,7 +383,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/" data-id="ckf1bhyws000apghzdnal3gx4" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/" data-id="ckf1bzaoi000atghzc0oey9oo" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -459,7 +459,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Discoveries/Discoveries-1/" data-id="ckf1bhywx000bpghzovyv4pb3" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Discoveries/Discoveries-1/" data-id="ckf1bzaov000btghzmce73o8q" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -527,7 +527,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/Dopamine-How-Software-should-be/" data-id="ckf1bhyxc000hpghzf5jhnu83" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/Dopamine-How-Software-should-be/" data-id="ckf1bzap6000htghzwugs1aeb" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -597,7 +597,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/Using-GitHub-as-Commenting-Platform/" data-id="ckf1bhz1w002epghzffbwvvww" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/Using-GitHub-as-Commenting-Platform/" data-id="ckf1bzapw0011tghz1u267c0l" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -667,7 +667,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/" data-id="ckf1bhz4p0034pghzdby4ntnr" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/" data-id="ckf1bzas50037tghzv0x7spd6" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -797,17 +797,21 @@
   })
 
 // AUTOTYPING
-//$("#title-wrap").text("kiko.io");
-new AutoTyping({
-  id: 'title-wrap',
-  typeText: ['kiko.io'],
-  textColor: '#fff',
-  typeSpeed: 100,
-  typeDelay: 1000,
-  showCursor: false,
-  delete: false,
-  typeInfinity: false
-}).init();
+if (getCookie("typing")) {
+  $("#title-wrap").text("kiko.io");
+} else {
+  new AutoTyping({
+    id: 'title-wrap',
+    typeText: ['kiko.io'],
+    textColor: '#fff',
+    typeSpeed: 100,
+    typeDelay: 1000,
+    showCursor: false,
+    delete: false,
+    typeInfinity: false
+  }).init();
+  setCookie("typing", true, 0)
+}
 </script>
 
     </div>

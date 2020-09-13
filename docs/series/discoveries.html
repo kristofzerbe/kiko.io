@@ -180,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Discoveries/Discoveries-2/" data-id="ckf1bhyx5000fpghz0wz6n5vs" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Discoveries/Discoveries-2/" data-id="ckf1bzap3000ftghzny8zk1bg" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -256,7 +256,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Discoveries/Discoveries-1/" data-id="ckf1bhywx000bpghzovyv4pb3" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Discoveries/Discoveries-1/" data-id="ckf1bzaov000btghzmce73o8q" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -381,17 +381,21 @@
   })
 
 // AUTOTYPING
-//$("#title-wrap").text("kiko.io");
-new AutoTyping({
-  id: 'title-wrap',
-  typeText: ['kiko.io'],
-  textColor: '#fff',
-  typeSpeed: 100,
-  typeDelay: 1000,
-  showCursor: false,
-  delete: false,
-  typeInfinity: false
-}).init();
+if (getCookie("typing")) {
+  $("#title-wrap").text("kiko.io");
+} else {
+  new AutoTyping({
+    id: 'title-wrap',
+    typeText: ['kiko.io'],
+    textColor: '#fff',
+    typeSpeed: 100,
+    typeDelay: 1000,
+    showCursor: false,
+    delete: false,
+    typeInfinity: false
+  }).init();
+  setCookie("typing", true, 0)
+}
 </script>
 
     </div>

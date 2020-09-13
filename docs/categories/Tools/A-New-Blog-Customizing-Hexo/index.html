@@ -220,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/A-New-Blog-Customizing-Hexo/" data-id="ckf1bhyv50002pghzg8u9g6bl" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/A-New-Blog-Customizing-Hexo/" data-id="ckf1bzanv0002tghz6fo5c9h1" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -368,17 +368,21 @@
   })
 
 // AUTOTYPING
-//$("#title-wrap").text("kiko.io");
-new AutoTyping({
-  id: 'title-wrap',
-  typeText: ['kiko.io'],
-  textColor: '#fff',
-  typeSpeed: 100,
-  typeDelay: 1000,
-  showCursor: false,
-  delete: false,
-  typeInfinity: false
-}).init();
+if (getCookie("typing")) {
+  $("#title-wrap").text("kiko.io");
+} else {
+  new AutoTyping({
+    id: 'title-wrap',
+    typeText: ['kiko.io'],
+    textColor: '#fff',
+    typeSpeed: 100,
+    typeDelay: 1000,
+    showCursor: false,
+    delete: false,
+    typeInfinity: false
+  }).init();
+  setCookie("typing", true, 0)
+}
 </script>
 
     </div>
