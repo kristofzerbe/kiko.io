@@ -23,6 +23,8 @@
  *
  * Copyright © 2020 Igor Stojcic (https://igor.smarty.rs) | MIT license
  * https://github.com/igor-stojcic/AutoTyping
+ * 
+ * Pimped by Kristof Zerbe
 */
 
 function AutoTyping(options) {
@@ -65,29 +67,42 @@ function AutoTyping(options) {
     }else{
       options.typeInfinity = false;
     }
+    if (options.delete == undefined || options.delete == true || typeof(options.delete) != 'boolean') {
+      options.delete = true;
+    }else{
+      options.delete = false;
+    }
+    if (options.showCursor == undefined || options.showCursor == true || typeof(options.showCursor) != 'boolean') {
+      options.showCursor = true;
+    }else{
+      options.showCursor = false;
+    }
   
     this.typingElement = document.querySelector('#' + options.id);
+
     //hidden element for prevent that the main element when typing / deleting appears and disappears
     var ePlaceholder = document.createElement("span");
     ePlaceholder.className = "typing-placeholder";
     this.helpingElement = this.typingElement.appendChild(ePlaceholder);
-    this.helpingElement.innerHTML = '.';
+    this.helpingElement.innerHTML = '';
     this.helpingElement.style.visibility = 'hidden';
 
     var eText = document.createElement("span");
     eText.className = "typing-text";
-
     this.typingArea = this.typingElement.appendChild(eText);
-    var eCursor = document.createElement("span");
-    eCursor.className = "typing-cursor";
 
-    this.cursor = this.typingElement.appendChild(eCursor);
+    if (options.showCursor) {
+      var eCursor = document.createElement("span");
+      eCursor.className = "typing-cursor";
+      this.cursor = this.typingElement.appendChild(eCursor);
+      this.cursor.style.color = options.cursorColor;
+      this.cursor.innerHTML = options.cursor;
+      this.cursorSpeed = options.cursorSpeed;  
+    }
+
     this.typeSpeed = options.typeSpeed;
     this.typeSpeedRandom = options.typeRandom;
     this.typingArea.style.color = options.textColor;
-    this.cursor.style.color = options.cursorColor;
-    this.cursor.innerHTML = options.cursor;
-    this.cursorSpeed = options.cursorSpeed;
     this.typeText = options.typeText;
     this.deleteSpeed = options.deleteSpeed;
     this.deleteDelay = options.deleteDelay;
@@ -111,8 +126,11 @@ function AutoTyping(options) {
             }
           }
         }
-        clearInterval(blinkcursor);//stop blinking cursor
-        this.cursor.style.visibility = 'visible';
+        if (options.showCursor) {
+          clearInterval(blinkcursor);//stop blinking cursor
+          this.cursor.style.visibility = 'visible';  
+        }
+
         let tempArr = [];
         let text = this.typeText[counter].split("");
         counter++;
@@ -136,23 +154,28 @@ function AutoTyping(options) {
             let blinking = blink.bind(this);
             function blink () {
               if (temp == 0) {
-                this.cursor.style.visibility = 'hidden';
+                if (options.showCursor) this.cursor.style.visibility = 'hidden';
                 temp = 1;
               }else{
-                this.cursor.style.visibility = 'visible';
+                if (options.showCursor) this.cursor.style.visibility = 'visible';
                 temp = 0;
               }
             }
-            blinkcursor = setInterval(blinking,this.cursorSpeed);
+            if (options.showCursor) blinkcursor = setInterval(blinking,this.cursorSpeed);
   
-            setTimeout(deleteTypingText,this.deleteDelay);//delete typing
+            if (options.delete) {
+              setTimeout(deleteTypingText,this.deleteDelay);//delete typing
+            }
           }
         }
         //settings for deleting typing text
         let deleteTypingText = deleteTyping.bind(this);
         function deleteTyping() {
-          clearInterval(blinkcursor);//stop blinking cursor
-          this.cursor.style.visibility = 'visible';
+          if (options.showCursor) {
+            clearInterval(blinkcursor);//stop blinking cursor
+            this.cursor.style.visibility = 'visible';  
+          }
+
           tempArr.pop();
           let delText = '';
           for (let i = 0; i < tempArr.length; i++) {
@@ -167,18 +190,21 @@ function AutoTyping(options) {
             let blinking = blink.bind(this);
             function blink () {
               if (temp == 0) {
-                this.cursor.style.visibility = 'hidden';
+                if (options.showCursor) this.cursor.style.visibility = 'hidden';
                 temp = 1;
               }else{
-                this.cursor.style.visibility = 'visible';
+                if (options.showCursor) this.cursor.style.visibility = 'visible';
                 temp = 0;
               }
             }
-            blinkcursor = setInterval(blinking,this.cursorSpeed);
+            if (options.showCursor) blinkcursor = setInterval(blinking,this.cursorSpeed);
             //stop app or not
             if (!this.typeInfinity && !counterText) {
-              clearInterval(blinkcursor);
-              this.cursor.style.visibility = 'hidden';
+
+              if (options.showCursor) {
+                clearInterval(blinkcursor);
+                this.cursor.style.visibility = 'hidden';  
+              }
               return;
             }else{
               if (this.callBack) {
