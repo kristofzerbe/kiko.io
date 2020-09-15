@@ -1,44 +1,5 @@
 (function($){
 
-  //Swipe Events
-  // delete Hammer.defaults.cssProps.userSelect;
-
-  //MOBILE MENU SWIPE
-  // https://stackoverflow.com/questions/24163202/javascript-touch-movement-track-when-user-swipes-from-edges
-  // https://github.com/hammerjs/hammer.js/issues/1065
-  // $("#container").hammer({ inputClass: Hammer.TouchInput }).on('swiperight', function (e) {
-  //   var endPoint = e.gesture.pointers[0].pageX;
-  //   var distance = e.gesture.distance;
-  //   var origin = endPoint - distance;
-  //   // console.log(origin);
-  //   if (origin <= 15) {
-  //     // They swiped, starting from no more than 15px away from the edge. 
-  //     if ($('#main-nav-toggle').is(':visible')) {
-  //       if (isMobileNavAnim) return;
-  //       startMobileNavAnim();
-  //       $container.toggleClass('mobile-nav-on');
-  //       stopMobileNavAnim();  
-  //     }
-  //   } else {
-  //     var ePrev = $("#article-nav-older");
-  //     if (ePrev.length) {
-  //       console.log(ePrev.attr('href'));
-  //       //window.location.href = ePrev.attr('href');
-  //       Barba.Pjax.goTo(ePrev.attr('href'));
-  //     }
-  //   }
-  // }); 
-
-  //SWIPE NEXT (Doesn't work...!?)
-  // $("#container").hammer({ inputClass: Hammer.TouchInput }).on('swipeleft', function (e) {
-  //   var eNext = $("#article-nav-newer");
-  //   if (eNext.length) {
-  //     console.log(eNext.attr('href'));
-  //     //window.location.href = eNext.attr('href');
-  //     Barba.Pjax.goTo(eNext.attr('href'));
-  //   }
-  // }); 
-
   //Scroll Header
   var header = {
     height: 0,
@@ -191,3 +152,66 @@ function setCookie(name, value, days) {
   document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
 }
 function deleteCookie(name) { setCookie(name, '', -1); }
+
+/* DARK MODE TOGGLE 
+ * https://stackoverflow.com/questions/56300132/how-to-over-ride-css-prefers-color-scheme-setting
+ */
+
+function detectColorScheme() {
+  var theme = "light"; //default
+
+  // get last used theme from local cache
+  if(localStorage.getItem("theme")){
+      if(localStorage.getItem("theme") === "dark"){
+          theme = "dark";
+      }
+  } else if(!window.matchMedia) { 
+      // matchMedia not supported  
+      return false;
+  } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      // OS has set Dark Mode
+      theme = "dark";
+  }
+
+  // set detected theme
+  if (theme === "dark") {
+      setThemeDark();
+  } else {
+      setThemeLight();
+  }
+}
+
+const toggleTheme = document.querySelector('input#theme-switch[type="checkbox"]');
+
+function setThemeDark() {
+  localStorage.setItem('theme', 'dark');
+  document.documentElement.setAttribute('data-theme', 'dark');
+  toggleTheme.checked = true;
+}
+function setThemeLight() {
+  localStorage.setItem('theme', 'light');
+  document.documentElement.setAttribute('data-theme', 'light');
+  toggleTheme.checked = false;
+}
+
+// Listener for theme change by toggle
+toggleTheme.addEventListener('change', function(e) {
+  if (e.target.checked) {
+      setThemeDark();
+  } else {
+      setThemeLight();
+  }
+}, false);
+
+// Listener for theme change by OS
+var toggleOS = window.matchMedia('(prefers-color-scheme: dark)');
+toggleOS.addEventListener('change', function (e) {
+  if (e.matches) {
+      setThemeDark();
+  } else {
+      setThemeLight();
+  }
+});
+
+// call theme detection
+detectColorScheme();

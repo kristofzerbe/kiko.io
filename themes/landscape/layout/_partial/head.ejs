@@ -20,18 +20,18 @@
   }
   %>
   <title><%= config.title %><% if (title){ %> | <%= title %><% } %></title>
-  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-  <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
+  <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <%#- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
+
   <% if (theme.rss){ %>
     <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml">
   <% } %>
+
   <% if (theme.favicon){ %>
     <link rel="icon" href="<%- theme.favicon %>">
   <% } %>
-  <% if (config.highlight.enable){ %>
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <% } %>
-  <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-  <%- css('css/style') %>
-  <%- css('luminous/luminous-basic.css') %>
+
+  <%- css('css/dist/bundle.min.css') %>  
+  <%- css('css/style') %>  
 </head>
