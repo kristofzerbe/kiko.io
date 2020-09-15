@@ -54,7 +54,6 @@ module.exports = function(grunt){
       asset_scripts: {
         options: { separator: '\n' },
         src: [
-          'themes/landscape/assets/fade-in-page.js',
           'themes/landscape/assets/luminous.js',
           'themes/landscape/assets/AutoTyping.js',
           'themes/landscape/assets/utterances-comment.js',
@@ -64,7 +63,6 @@ module.exports = function(grunt){
       },
       asset_styles: {
         src: [
-          'themes/landscape/assets/fade-in-page.css',
           'themes/landscape/assets/luminous-basic.css'
         ],
         dest: 'themes/landscape/tmp/asset-bundle.css'
