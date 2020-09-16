@@ -25,6 +25,7 @@
     <div class="inner-container">
       <div id="wrap">
         <header id="header">
+  <a href="#" id="header-photo-expand" class="fullsizable"></a>
   <a href="#" id="header-photo-link"></a>
   <div id="banner">
     <nav id="header-nav" role="navigation">
@@ -127,6 +128,8 @@
 <script>
   var body = document.getElementById("body");
   body.classList.add("article-view");
+  var photoExpand = document.getElementById("header-photo-expand");
+  photoExpand.href = "/photos/normal/D70_7530.jpg";
   var photoLink = document.getElementById("header-photo-link");
   photoLink.href = "https://500px.com/photo/1017605689";
   photoLink.innerHTML = "see <strong>Untitled</strong> at 500px";
@@ -200,7 +203,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/Using-GitHub-as-Commenting-Platform/" data-id="ckf4zs084001cagl9ptjkyosq" class="article-share-link">Share</a> -->
+      <!-- <a data-url="https://kiko.io/categories/Tools/Using-GitHub-as-Commenting-Platform/" data-id="ckf5migij0011ucbkkw2qt849" class="article-share-link">Share</a> -->
       
       
   <div class="article-tags">
@@ -329,22 +332,27 @@
     diameter: 30
   })
 
-// AUTOTYPING
-if (getCookie("typing")) {
-  $("#title-wrap").text("kiko.io");
-} else {
-  new AutoTyping({
-    id: 'title-wrap',
-    typeText: ['kiko.io'],
-    textColor: '#fff',
-    typeSpeed: 100,
-    typeDelay: 1000,
-    showCursor: false,
-    delete: false,
-    typeInfinity: false
-  }).init();
-  setCookie("typing", true, 1)
-}
+  // AUTOTYPING
+  if (getCookie("typing")) {
+    $("#title-wrap").text("kiko.io");
+  } else {
+    new AutoTyping({
+      id: 'title-wrap',
+      typeText: ['kiko.io'],
+      textColor: '#fff',
+      typeSpeed: 100,
+      typeDelay: 1000,
+      showCursor: false,
+      delete: false,
+      typeInfinity: false
+    }).init();
+    setCookie("typing", true, 1)
+  }
+
+  //FULLSIZABLE
+  $(function() {
+    $("a.fullsizable").fullsizable();
+  });
 </script>
 
     </div>

@@ -25,6 +25,7 @@
     <div class="inner-container">
       <div id="wrap">
         <header id="header">
+  <a href="#" id="header-photo-expand" class="fullsizable"></a>
   <a href="#" id="header-photo-link"></a>
   <div id="banner">
     <nav id="header-nav" role="navigation">
@@ -365,22 +366,27 @@
     diameter: 30
   })
 
-// AUTOTYPING
-if (getCookie("typing")) {
-  $("#title-wrap").text("kiko.io");
-} else {
-  new AutoTyping({
-    id: 'title-wrap',
-    typeText: ['kiko.io'],
-    textColor: '#fff',
-    typeSpeed: 100,
-    typeDelay: 1000,
-    showCursor: false,
-    delete: false,
-    typeInfinity: false
-  }).init();
-  setCookie("typing", true, 1)
-}
+  // AUTOTYPING
+  if (getCookie("typing")) {
+    $("#title-wrap").text("kiko.io");
+  } else {
+    new AutoTyping({
+      id: 'title-wrap',
+      typeText: ['kiko.io'],
+      textColor: '#fff',
+      typeSpeed: 100,
+      typeDelay: 1000,
+      showCursor: false,
+      delete: false,
+      typeInfinity: false
+    }).init();
+    setCookie("typing", true, 1)
+  }
+
+  //FULLSIZABLE
+  $(function() {
+    $("a.fullsizable").fullsizable();
+  });
 </script>
 
     </div>

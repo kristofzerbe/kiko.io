@@ -58,12 +58,14 @@ module.exports = function(grunt){
           'themes/landscape/assets/AutoTyping.js',
           'themes/landscape/assets/utterances-comment.js',
           'themes/landscape/assets/vanilla-back-to-top.js',
+          'themes/landscape/assets/jquery-fullsizable.js'
         ],
         dest: 'themes/landscape/tmp/asset-bundle.js'
       },
       asset_styles: {
         src: [
-          'themes/landscape/assets/luminous-basic.css'
+          'themes/landscape/assets/luminous-basic.css',
+          'themes/landscape/assets/jquery-fullsizable.css'
         ],
         dest: 'themes/landscape/tmp/asset-bundle.css'
       }

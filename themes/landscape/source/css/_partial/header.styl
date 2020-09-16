@@ -31,21 +31,39 @@
   position: relative
   z-index: 99
 
-#header-photo-link
+#header-photo-expand,
+#header-photo-link  
+  display: none
+
+.article-view #header-photo-expand,
+.article-view #header-photo-link  
   position: absolute
   display: block
-  top: 16px
-  right: 99%
-  white-space: nowrap
   color: rgba(255, 255, 255, 0.6)
+  transition: all 0.2s ease-out
+  &:hover
+    color: rgba(255, 255, 255, 1)
+
+#header-photo-expand
+  top: 0
+  width: 16px
+  height: 16px
+  padding: 10px
+  font-family: FontAwesome5Solid
+  z-index: 100
+  &:before
+    content: "\f065"
+
+#header-photo-link
+  top: 32px
+  right: 100%
+  padding: 7px
+  white-space: nowrap
   font-size: 90%
   text-decoration: none
   z-index: 99
   transform: rotate(270deg)
   transform-origin: right top
-  transition: all 0.2s ease-out
-  &:hover
-    color: rgba(255, 255, 255, 1)
   strong 
     font-weight: 600
 

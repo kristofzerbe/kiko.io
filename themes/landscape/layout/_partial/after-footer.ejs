@@ -9,20 +9,25 @@
     diameter: 30
   })
 
-// AUTOTYPING
-if (getCookie("typing")) {
-  $("#title-wrap").text("<%= config.title %>");
-} else {
-  new AutoTyping({
-    id: 'title-wrap',
-    typeText: ['<%= config.title %>'],
-    textColor: '#fff',
-    typeSpeed: 100,
-    typeDelay: 1000,
-    showCursor: false,
-    delete: false,
-    typeInfinity: false
-  }).init();
-  setCookie("typing", true, 1)
-}
+  // AUTOTYPING
+  if (getCookie("typing")) {
+    $("#title-wrap").text("<%= config.title %>");
+  } else {
+    new AutoTyping({
+      id: 'title-wrap',
+      typeText: ['<%= config.title %>'],
+      textColor: '#fff',
+      typeSpeed: 100,
+      typeDelay: 1000,
+      showCursor: false,
+      delete: false,
+      typeInfinity: false
+    }).init();
+    setCookie("typing", true, 1)
+  }
+
+  //FULLSIZABLE
+  $(function() {
+    $("a.fullsizable").fullsizable();
+  });
 </script>

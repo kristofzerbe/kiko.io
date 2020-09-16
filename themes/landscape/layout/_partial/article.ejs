@@ -16,6 +16,8 @@
 <script>
   var body = document.getElementById("body");
   body.classList.add("article-view");
+  var photoExpand = document.getElementById("header-photo-expand");
+  photoExpand.href = "/photos/normal/<%= post.photograph.file %>";
   var photoLink = document.getElementById("header-photo-link");
   photoLink.href = "<%= post.photograph.link%>";
   photoLink.innerHTML = "see <strong><%= post.photograph.name%></strong> at 500px";
