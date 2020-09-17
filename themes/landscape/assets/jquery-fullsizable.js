@@ -348,7 +348,7 @@ Options:
       var fs_dom;
   
       fs_dom = $image_holder.get(0);
-      if (fs_dom.requestFullScreen || fs_dom.webkitRequestFullScreen || fs_dom.mozRequestFullScreen) {
+      if (fs_dom.requestFullScreen || fs_dom.webkitRequestFullScreen || fs_dom.mozRequestFullScreen || fs_dom.msRequestFullScreen) {
         return true;
       } else {
         return false;
@@ -371,7 +371,7 @@ Options:
         }
       } else if (fs_dom.webkitRequestFullScreen) {
         if (document.webkitIsFullScreen || force_close) {
-          return document.webkitCancelFullScreen();
+          return document.webkitExitFullScreen();
         } else {
           return fs_dom.webkitRequestFullScreen();
         }
@@ -380,6 +380,12 @@ Options:
           return document.mozCancelFullScreen();
         } else {
           return fs_dom.mozRequestFullScreen();
+        }
+      } else if (fs_dom.msRequestFullScreen) {
+        if (document.msIsFullScreen || force_close) {
+          return document.msExitFullScreen();
+        } else {
+          return fs_dom.msRequestFullScreen();
         }
       }
     };

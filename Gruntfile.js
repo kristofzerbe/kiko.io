@@ -65,7 +65,8 @@ module.exports = function(grunt){
       asset_styles: {
         src: [
           'themes/landscape/assets/luminous-basic.css',
-          'themes/landscape/assets/jquery-fullsizable.css'
+          'themes/landscape/assets/jquery-fullsizable.css',
+          'themes/landscape/assets/jquery-fullsizable-fontawesome.css'
         ],
         dest: 'themes/landscape/tmp/asset-bundle.css'
       }
