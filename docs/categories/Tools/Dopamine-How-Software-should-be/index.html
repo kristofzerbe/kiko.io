@@ -190,16 +190,19 @@
 
       
         <div class="article-permalink"">
-    <input id="article-permalink" value="https://kiko.io/categories/Tools/Dopamine-How-Software-should-be/" data-id="ckfbdtvcg000hz4hzyild9qx3" />
+    <input id="article-permalink" value="https://kiko.io/categories/Tools/Dopamine-How-Software-should-be/" data-id="ckfbe6s0m000h4ghzxs24rrbq" />
     <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
     <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
 </div>
 <script>
+    var copyText = document.querySelector("#article-permalink");
+    copyText.disabled = true;
     function copyPermalink() {
-        var copyText = document.querySelector("#article-permalink");
+        copyText.disabled = false;
         copyText.select();
         document.execCommand("copy");
         copyText.blur();
+        copyText.disabled = true;
 
         var permalink = copyText.value;
         copyText.classList.add("fade-out-500");

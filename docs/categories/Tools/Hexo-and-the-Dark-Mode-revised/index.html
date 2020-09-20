@@ -215,16 +215,19 @@
 
       
         <div class="article-permalink"">
-    <input id="article-permalink" value="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode-revised/" data-id="ckfbdtvcm000lz4hzhdum2d03" />
+    <input id="article-permalink" value="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode-revised/" data-id="ckfbe6s0r000l4ghz9j5tmyne" />
     <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
     <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
 </div>
 <script>
+    var copyText = document.querySelector("#article-permalink");
+    copyText.disabled = true;
     function copyPermalink() {
-        var copyText = document.querySelector("#article-permalink");
+        copyText.disabled = false;
         copyText.select();
         document.execCommand("copy");
         copyText.blur();
+        copyText.disabled = true;
 
         var permalink = copyText.value;
         copyText.classList.add("fade-out-500");

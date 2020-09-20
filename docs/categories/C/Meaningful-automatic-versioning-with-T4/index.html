@@ -268,16 +268,19 @@
 
       
         <div class="article-permalink"">
-    <input id="article-permalink" value="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/" data-id="ckfbdtvtd003fz4hzlvhtinh3" />
+    <input id="article-permalink" value="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/" data-id="ckfbe6sga003c4ghzax27rjd6" />
     <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
     <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
 </div>
 <script>
+    var copyText = document.querySelector("#article-permalink");
+    copyText.disabled = true;
     function copyPermalink() {
-        var copyText = document.querySelector("#article-permalink");
+        copyText.disabled = false;
         copyText.select();
         document.execCommand("copy");
         copyText.blur();
+        copyText.disabled = true;
 
         var permalink = copyText.value;
         copyText.classList.add("fade-out-500");

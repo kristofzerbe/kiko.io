@@ -450,16 +450,19 @@ FROM (
 
       
         <div class="article-permalink"">
-    <input id="article-permalink" value="https://kiko.io/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/" data-id="ckfbdtvt6003dz4hzz1smf9u0" />
+    <input id="article-permalink" value="https://kiko.io/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/" data-id="ckfbe6sgf003e4ghz24cvv9nq" />
     <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
     <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
 </div>
 <script>
+    var copyText = document.querySelector("#article-permalink");
+    copyText.disabled = true;
     function copyPermalink() {
-        var copyText = document.querySelector("#article-permalink");
+        copyText.disabled = false;
         copyText.select();
         document.execCommand("copy");
         copyText.blur();
+        copyText.disabled = true;
 
         var permalink = copyText.value;
         copyText.classList.add("fade-out-500");

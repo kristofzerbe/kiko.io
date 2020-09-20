@@ -49,9 +49,15 @@ As I read a little bit about the possibilities to copy text into the clipboard v
     <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
 </div>
 <script>
+  var copyText = document.querySelector("#article-permalink");
+  
+  //Disable Input by default
+  copyText.disabled = true;
+
   function copyPermalink() {
-    var copyText = document.querySelector("#article-permalink");
-    
+    //Enable Input
+    copyText.disabled = false;
+
     //Select permalink text
     copyText.select();
 
@@ -60,6 +66,9 @@ As I read a little bit about the possibilities to copy text into the clipboard v
 
     //Remove selection again
     copyText.blur();
+
+    //Disable Input again
+    copyText.disabled = true;
   }
 </script>
 ```
@@ -106,11 +115,14 @@ I extended my ``animation.styl`` (Hexo works with [Stylus](https://stylus-lang.c
     <a class="article-action action-copy" href="javascript:copyPermalink();"></a>
 </div>
 <script>
+  var copyText = document.querySelector("#article-permalink");
+  copyText.disabled = true;
   function copyPermalink() {
-    var copyText = document.querySelector("#article-permalink");
-    copyText.select();
-    document.execCommand("copy");
-    copyText.blur();
+      copyText.disabled = false;
+      copyText.select();
+      document.execCommand("copy");
+      copyText.blur();
+      copyText.disabled = true;
 
     //Store original text
     var permalink = copyText.value;

@@ -224,16 +224,19 @@
 
       
         <div class="article-permalink"">
-    <input id="article-permalink" value="https://kiko.io/categories/Discoveries/Discoveries-2/" data-id="ckfbdtvcc000fz4hz61p6en77" />
+    <input id="article-permalink" value="https://kiko.io/categories/Discoveries/Discoveries-2/" data-id="ckfbe6s0j000f4ghzqk4t0ko8" />
     <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
     <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
 </div>
 <script>
+    var copyText = document.querySelector("#article-permalink");
+    copyText.disabled = true;
     function copyPermalink() {
-        var copyText = document.querySelector("#article-permalink");
+        copyText.disabled = false;
         copyText.select();
         document.execCommand("copy");
         copyText.blur();
+        copyText.disabled = true;
 
         var permalink = copyText.value;
         copyText.classList.add("fade-out-500");
