@@ -1,0 +1,43 @@
+<div class="<%= class_name %>"">
+    <input id="article-permalink" value="<%- post.permalink %>" data-id="<%= post._id %>" />
+    <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
+    <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
+</div>
+<script>
+    function copyPermalink() {
+        var copyText = document.querySelector("#article-permalink");
+        copyText.select();
+        document.execCommand("copy");
+        copyText.blur();
+
+        var permalink = copyText.value;
+        copyText.classList.add("fade-out-500");
+        setTimeout(function(){
+            copyText.value = "copied to clipboard";
+            copyText.classList.remove("fade-out-500");
+            copyText.classList.add("fade-in-1000");
+            setTimeout(function() {
+                copyText.classList.add("fade-out-500");
+                setTimeout(function() {
+                    copyText.value = permalink;
+                    copyText.classList.remove("fade-out-500");
+                    setTimeout(function() {
+                        copyText.classList.remove("fade-in-1000");
+                    }, 500);
+                }, 500);
+            }, 2000);
+        }, 500);
+    }
+
+    if (navigator.share === undefined) {
+        var shareLink = document.querySelector("#action-share");
+        shareLink.style.display = "none";
+    } 
+    
+    function sharePermalink() {
+        navigator.share({
+            title: "<%- post.title %>",
+            url: "<%- post.permalink %>",
+        })
+    }
+</script>

@@ -230,40 +230,34 @@
       height: 100%
       margin-top: 0
 
-.article-more-link a
-  display: inline-block
-  line-height: 1em
-  font-size: 0.9em;
-  font-weight: 300
-  color: color-grey
-  position: relative
-  &:after
-    content: icon-caret-right
-    font-family: fa-icon-solid
-    color: color-link
-    font-size: 18px;
-    position: absolute;
-    right: -16px;    
-  /[data-theme="dark"] &
-    color: dark-color-grey
-    &:after
-      color: dark-color-link
-  text-decoration: none
-  &:hover    
+.article-more-link 
+  margin: 0 !important
+  a
+    display: inline-block
+    font-size: 0.9em;
+    line-height: 1em
+    position: relative
     text-decoration: none
-    color: color-link
+    padding: 12px 16px
+    background-color: color-button
+    color: color-button-link
     /[data-theme="dark"] &
-      color: dark-color-link
+      background-color: dark-color-button
+      color: dark-color-button-link
+    &:hover    
+      color: color-link
+      /[data-theme="dark"] &
+        color: dark-color-link
 
 .article-footer
-  clearfix()
   font-size: 0.85em
   line-height: line-height
   padding-top: line-height
   margin: 0 article-padding 20px
 
-.article-tags 
-  float: right
+.article-tags,
+.article-permalink
+  display: block
   a
     text-decoration: none
     color: color-grey
@@ -274,13 +268,52 @@
       /[data-theme="dark"] &
         color: dark-color-link
 
-.article-tag-list-item
-  float: left
-  margin-left: 10px
+.article-permalink
+  padding-top: line-height
+  margin-top: line-height
+  border-top: 1px color-border solid
+  display: flex
+  flex-direction: row
+  a
+    cursor: pointer
+  input
+    background: transparent
+    text-align: right
+    margin-right: 10px
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    width: calc(100% - 80px)
+    flex: 1 1 auto
+    border: 0
+    outline: 0
+    color: color-grey
+    :focus outline:none !important
+    /[data-theme="dark"] &
+      color: dark-color-grey
+  .article-action
+    width: 24px
+    height: 24px
+    flex: 0 0 auto
+    padding-left: 10px
+    &:before
+      font-family: fa-icon-solid
+      font-size: 20px
+  #action-copy
+    &:before
+      content: icon-copy
+  #action-share
+    &:before
+      content: icon-share
 
-.article-tag-list-link
-  &:before
-    content: "#"
+.article-tag-list
+  overflow: auto
+  .article-tag-list-item
+    float: right
+    margin-left: 10px
+    .article-tag-list-link
+      &:before
+        content: "#"
 
 #article-nav
   clearfix()

@@ -52,10 +52,11 @@
         <%- post.content %>
       <% } %>
     </div>
-    <footer class="article-footer">
-      <!-- <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link"><%= __('share') %></a> -->
-      
+    <footer class="article-footer">      
       <%- partial('post/tag', { class_name: 'article-tags' }) %>
+      <% if (!index){ %>
+        <%- partial('post/permalink', { class_name: 'article-permalink' }) %>
+      <% } %>
     </footer>
   </div>
   <% if (!index){ %>
@@ -70,11 +71,3 @@
     <%- partial('post/nav') %>
   <% } %>
 </article>
-
-<!-- <% if (!index && post.comments && config.disqus_shortname){ %>
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
-<% } %> -->

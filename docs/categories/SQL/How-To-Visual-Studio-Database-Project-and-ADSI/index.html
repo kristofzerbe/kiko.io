@@ -442,14 +442,58 @@ FROM (
 
       
     </div>
-    <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/" data-id="ckf9urpja00378khze6ys9a3w" class="article-share-link">Share</a> -->
-      
+    <footer class="article-footer">      
       
   <div class="article-tags">
     <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ADSI/">ADSI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Database-Project/">Database Project</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>  
   </div>
 
+      
+        <div class="article-permalink"">
+    <input id="article-permalink" value="https://kiko.io/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/" data-id="ckfbdksdo003d9whzlxsiivci" />
+    <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
+    <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
+</div>
+<script>
+    function copyPermalink() {
+        var copyText = document.querySelector("#article-permalink");
+        copyText.select();
+        document.execCommand("copy");
+        copyText.blur();
+
+        var permalink = copyText.value;
+        copyText.classList.add("fade-out-500");
+        setTimeout(function(){
+            copyText.value = "copied to clipboard";
+            copyText.classList.remove("fade-out-500");
+            copyText.classList.add("fade-in-1000");
+            setTimeout(function() {
+                copyText.classList.add("fade-out-500");
+                setTimeout(function() {
+                    copyText.value = permalink;
+                    copyText.classList.remove("fade-out-500");
+                    setTimeout(function() {
+                        copyText.classList.remove("fade-in-1000");
+                    }, 500);
+                }, 500);
+            }, 2000);
+        }, 500);
+    }
+
+    if (navigator.share === undefined) {
+        var shareLink = document.querySelector("#action-share");
+        shareLink.style.display = "none";
+    } 
+    
+    function sharePermalink() {
+        navigator.share({
+            title: "How-To: Visual Studio Database Project and ADSI",
+            url: "https://kiko.io/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/",
+        })
+    }
+</script>
+
+      
     </footer>
   </div>
   
@@ -477,10 +521,7 @@ FROM (
 </nav>
 
   
-</article>
-
-<!--  -->
-</main>
+</article></main>
           
             <aside id="sidebar">
   
@@ -508,6 +549,10 @@ FROM (
       <ul>
         
           <li>
+            <a href="/categories/JavaScript/Pimping-the-Permalink/">Pimping the Permalink</a>
+          </li>
+        
+          <li>
             <a href="/categories/Discoveries/Discoveries-2/">Discoveries #2</a>
           </li>
         
@@ -521,10 +566,6 @@ FROM (
         
           <li>
             <a href="/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/">Change CSS class when element scrolls into viewport</a>
-          </li>
-        
-          <li>
-            <a href="/categories/Discoveries/Discoveries-1/">Discoveries #1</a>
           </li>
         
       </ul>

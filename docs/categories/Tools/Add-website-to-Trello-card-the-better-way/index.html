@@ -187,14 +187,58 @@
 
       
     </div>
-    <footer class="article-footer">
-      <!-- <a data-url="https://kiko.io/categories/Tools/Add-website-to-Trello-card-the-better-way/" data-id="ckf9urp6600068khzuvygq7v7" class="article-share-link">Share</a> -->
-      
+    <footer class="article-footer">      
       
   <div class="article-tags">
     <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Browser/">Browser</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Trello/">Trello</a></li></ul>  
   </div>
 
+      
+        <div class="article-permalink"">
+    <input id="article-permalink" value="https://kiko.io/categories/Tools/Add-website-to-Trello-card-the-better-way/" data-id="ckfbdks0d00069whz4wj8kkip" />
+    <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
+    <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
+</div>
+<script>
+    function copyPermalink() {
+        var copyText = document.querySelector("#article-permalink");
+        copyText.select();
+        document.execCommand("copy");
+        copyText.blur();
+
+        var permalink = copyText.value;
+        copyText.classList.add("fade-out-500");
+        setTimeout(function(){
+            copyText.value = "copied to clipboard";
+            copyText.classList.remove("fade-out-500");
+            copyText.classList.add("fade-in-1000");
+            setTimeout(function() {
+                copyText.classList.add("fade-out-500");
+                setTimeout(function() {
+                    copyText.value = permalink;
+                    copyText.classList.remove("fade-out-500");
+                    setTimeout(function() {
+                        copyText.classList.remove("fade-in-1000");
+                    }, 500);
+                }, 500);
+            }, 2000);
+        }, 500);
+    }
+
+    if (navigator.share === undefined) {
+        var shareLink = document.querySelector("#action-share");
+        shareLink.style.display = "none";
+    } 
+    
+    function sharePermalink() {
+        navigator.share({
+            title: "Add website to Trello card the better way",
+            url: "https://kiko.io/categories/Tools/Add-website-to-Trello-card-the-better-way/",
+        })
+    }
+</script>
+
+      
     </footer>
   </div>
   
@@ -227,10 +271,7 @@
 </nav>
 
   
-</article>
-
-<!--  -->
-</main>
+</article></main>
           
             <aside id="sidebar">
   
@@ -258,6 +299,10 @@
       <ul>
         
           <li>
+            <a href="/categories/JavaScript/Pimping-the-Permalink/">Pimping the Permalink</a>
+          </li>
+        
+          <li>
             <a href="/categories/Discoveries/Discoveries-2/">Discoveries #2</a>
           </li>
         
@@ -271,10 +316,6 @@
         
           <li>
             <a href="/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/">Change CSS class when element scrolls into viewport</a>
-          </li>
-        
-          <li>
-            <a href="/categories/Discoveries/Discoveries-1/">Discoveries #1</a>
           </li>
         
       </ul>
