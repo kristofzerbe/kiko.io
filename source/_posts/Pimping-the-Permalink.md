@@ -164,22 +164,26 @@ I extended my ``animation.styl`` (Hexo works with [Stylus](https://stylus-lang.c
 </script>
 ```
 
-First mission completed.
-
 ### Share
 
-The second feature should be a little more complicated, because I didn't want to use one of the sharing libraries out there, whose business model is based on my readers data. Always keep conservative on implementing third party stuff, because you never know what they are doing with the data.
+The second permalink feature was a little bit trickier, because I didn't want to use one of the sharing libraries out there, whose business model is based on my readers data (always keep conservative on implementing third party stuff, because you never know what they are doing with the data). But a couple of months ago I read about a new native browser API for WebApps on the rise: **Web Share API**.
 
-Since 2019 [W3C](https://www.w3.org/) is working on a **Web Share API**, *for sharing text, links and other content to an arbitrary destination of the user's choice*. On 27 August 2020 the published a [Working Draft](https://www.w3.org/TR/web-share/) and on 16 September 2020 the latest [Editors Draft](https://w3c.github.io/web-share/). Brand new stuff. The browser support is not the best yet, but it will be getting better in th near feature, especially as Edge Chrome is one of the early adopter.
+Since 2019 [W3C](https://www.w3.org/) is working on this API, *for sharing text, links and other content to an arbitrary destination of the user's choice*. On 27 August 2020 the published a [Working Draft](https://www.w3.org/TR/web-share/) and on 16 September 2020 the latest [Editors Draft](https://w3c.github.io/web-share/).
 
 ![Can I Use - Web Share, state today](Pimping-the-Permalink/caniuse-web-share.png)
 
-[web.dev](https://web.dev/web-share/) lists very important requirements on using this new feature in JavaScript:
+Brand new stuff. The browser support is not the best yet, but it will be getting better in the near feature, especially as Edge Chrome is one of the early adopters.
+
+![Web Share in Edge Chrome](Pimping-the-Permalink/web-share-edge-chrome.png)
+
+[web.dev](https://web.dev/web-share/) lists important requirements on using this new feature in JavaScript:
 
 * It can only be used on a site that supports HTTPS
 * It must be invoked in response to a user action such as a click
 
-But it can share URL's, text and even files! A raw implementation can be:
+But it can share URL's, text and even files! 
+
+A raw implementation can be:
 
 ```js
 if (navigator.share === undefined) {
@@ -221,7 +225,7 @@ I refrain to implement a fallback, rather I would like to show the appropriate b
 </script>
 ```
 
-More information abou Web Share API:
+More information about Web Share API:
 
 * [W3C Web Share Test](https://w3c.github.io/web-share/demos/share-files.html)
 * [heise Developer: Features von übermorgen: Die Web Share API und die Web Share Target API (German)](https://www.heise.de/developer/artikel/Features-von-uebermorgen-Die-Web-Share-API-und-die-Web-Share-Target-API-3506197.html)
