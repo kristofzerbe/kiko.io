@@ -1,3 +1,4 @@
+<% if (post.photograph){ %>
 <style>
   #banner {
     background-size: cover;
@@ -12,6 +13,14 @@
     #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/<%= post.photograph.file %>"); }    
   }
 </style>
+<% } %>
+
+<% if (post.title === '404') { %>
+  <script>
+    var root = document.documentElement;
+    root.classList.add("gray");
+  </script> 
+<% } %>
 
 <h1 class="page-title"><%= post.title %></h1>
 
