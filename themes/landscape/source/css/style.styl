@@ -34,8 +34,22 @@ html, body, #container
   height: 100%
 
 html.gray
-  #banner, img
+  #banner, img, svg
     filter: grayscale(1) !important
+
+html.gray[data-theme="light"]
+  #content
+    p, a
+      color: #111 !important
+    li:hover
+      border-color: #111 !important
+
+html.gray[data-theme="dark"]
+  #content 
+    p, a
+      color: #fff !important
+    li:hover
+      border-color: #fff !important
 
 body
   color: color-foreground
