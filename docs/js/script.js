@@ -1,5 +1,11 @@
 (function($){
 
+  // var resources = window.performance.getEntriesByType("resource");
+  // resources.forEach(function (resource) {
+  //   if (!resource.name.startsWith(document.location.href))
+  //     console.log(resource.name + " : " + (resource.domainLookupEnd - resource.domainLookupStart));
+  // });
+
   //Scroll Header
   var header = {
     height: 0,

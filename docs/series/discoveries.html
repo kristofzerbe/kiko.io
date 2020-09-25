@@ -77,7 +77,9 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
         <a href="/" id="logo">
-          <h1 id="title-wrap"></h1>
+          <h1 id="title-wrap">
+            <span style="opacity:0.1;">kiko.io</span>
+          </h1>
         </a>
       
         <h2 id="subtitle">
@@ -336,10 +338,10 @@
             &copy; 2020 <a href="https://github.com/kristofzerbe">Kristof Zerbe</a><br>
             Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/" target="_blank">GitHub</a>  
           </div>
-          <div style="">
+          <div>
             <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" 
                     data-name="bmc-button" data-slug="kikoio" 
-                    data-font="Cookie" data-text="Buy me a coffee" data-emoji="" 
+                    data-font="Arial" data-text="Buy me a coffee" data-emoji="" 
                     data-color="#55555" data-outline-color="#fff" data-font-color="#fff" data-coffee-color="#fd0" ></script>
           </div>
         </div>
@@ -362,21 +364,19 @@
   })
 
   // AUTOTYPING
-  if (getCookie("typing")) {
-    $("#title-wrap").text("kiko.io");
-  } else {
+  setTimeout(function() {
+    $("#title-wrap").empty();
     new AutoTyping({
       id: 'title-wrap',
       typeText: ['kiko.io'],
       textColor: '#fff',
       typeSpeed: 100,
-      typeDelay: 1000,
+      typeDelay: 100,
       showCursor: false,
       delete: false,
       typeInfinity: false
     }).init();
-    setCookie("typing", true, 1)
-  }
+  }, 250);
 
   //FULLSIZABLE
   $(function() {

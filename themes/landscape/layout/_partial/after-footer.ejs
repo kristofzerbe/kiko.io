@@ -10,21 +10,19 @@
   })
 
   // AUTOTYPING
-  if (getCookie("typing")) {
-    $("#title-wrap").text("<%= config.title %>");
-  } else {
+  setTimeout(function() {
+    $("#title-wrap").empty();
     new AutoTyping({
       id: 'title-wrap',
       typeText: ['<%= config.title %>'],
       textColor: '#fff',
       typeSpeed: 100,
-      typeDelay: 1000,
+      typeDelay: 100,
       showCursor: false,
       delete: false,
       typeInfinity: false
     }).init();
-    setCookie("typing", true, 1)
-  }
+  }, 250);
 
   //FULLSIZABLE
   $(function() {
