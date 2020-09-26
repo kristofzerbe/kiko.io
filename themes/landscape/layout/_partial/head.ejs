@@ -19,10 +19,27 @@
     title = __('tag') + ': ' + page.tag;
   }
   %>
-  <title><%= config.title %><% if (title){ %> | <%= title %><% } %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <%#- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
+
+  <title><%= config.title %><% if (title){ %> | <%= title %><% } %></title>
+  <meta name="title" content="<%= config.title %> - <%= config.subtitle %>">
+  <meta name="description" content="<%= config.description %>">
+  <!-- Schema.org for Google -->
+  <meta itemprop="name" content="<%= config.title %> - <%= config.subtitle %>">
+  <meta itemprop="description" content="<%= config.description %>">
+  <meta itemprop="image" content="<%= config.heroimage %>"> 
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="<%= config.title %> - <%= config.subtitle %>">
+  <meta property="og:url" content="https://<%= config.title %>">
+  <meta property="og:description" content="<%= config.description %>">
+  <meta property="og:image" content="<%= config.heroimage %>">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://<%= config.title %>">
+  <meta property="twitter:title" content="<%= config.title %> - <%= config.subtitle %>">
+  <meta property="twitter:description" content="<%= config.description %>">
+  <meta property="twitter:image" content="<%= config.heroimage %>">
 
   <% if (theme.rss){ %>
     <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml">

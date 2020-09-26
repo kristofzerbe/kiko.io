@@ -9,12 +9,6 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 
 ![TEST](kiko.io-icon.png)
 
-## Quick Start
-
-{% fa_inline share fa %}
-
-{% fa_css %}
-
 ### Create a new post
 
 ``` bash
@@ -39,3 +33,61 @@ $ hexo generate
 
 More info: [Generating](https://hexo.io/docs/generating.html)
 
+### Tag Plugin: Blockqoute
+
+```
+{% blockquote [author[, source]] [link] [source_link_title] %}
+```
+<br/>
+{% blockquote AUTHOR, REFERENCE %}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.
+{% endblockquote %}
+
+### Tag Plugin: Include Posts
+
+```
+{% post_path filename %}
+{% post_link filename [title] [escape] %}
+```
+<br/>
+{% post_path hello-world %}
+<br>
+{% post_link hello-world %}
+
+### Tag Plugin: Codeblock
+
+```
+{% codeblock [title] [lang:language] [url] [link text] [additional options] %}
+` ` ` [language] [title] [url] [link text] code snippet ` ` `
+```
+<br/>
+{% codeblock lang:js _.compact http://underscorejs.org/#compact Underscore.js %}
+_.compact([0, 1, false, 2, '', 3]);
+=> [1, 2, 3]
+{% endcodeblock %}
+
+### Tag Plugin: Include Code
+
+Default path: source/downloads/code
+
+```
+{% include_code [title] [lang:language] [from:line] [to:line] path/to/file %}
+```
+<br/>
+{% include_code lang:javascript test.js %}
+
+### Tag Plugin: JSFiddle
+
+```
+{% jsfiddle shorttag [tabs] [skin] [width] [height] %}
+```
+<br/>
+{% jsfiddle tvxTg html,css,result dark 800 300 %}
+
+### Tag Plugin: IFrame
+
+```
+{% iframe url [width] [height] %}
+```
+<br/>
+{% iframe https://kiko.io/about 800 300 %}
