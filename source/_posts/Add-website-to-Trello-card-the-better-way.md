@@ -28,7 +28,9 @@ The result, website's title and Url set, is nice at best:
 
 <!-- more -->
 
-***HINT: The following approach works best in the Google Chrome browser.***
+{% alertbox info %}
+The following approach works best in the Google Chrome browser.
+{% endalertbox %}
 
 First, a Bookmarklet is a small piece of JavaScript, which is stored as a bookmark in your browser. As you can't actually create such a Bookmarklet in your Android Chrome, you have to create it in your desktop Chrome and switch on the bookmark sync of chrome. You should right away choose a short, concise name for the bookmark, so you find it easier in Android Chrome afterwards. I called it **2TrelloCard**, because few websites start with an number.
 

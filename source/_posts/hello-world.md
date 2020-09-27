@@ -33,6 +33,34 @@ $ hexo generate
 
 More info: [Generating](https://hexo.io/docs/generating.html)
 
+### Tag Plugin: AlertBox (/Scripts)
+
+```
+{% alertbox [type=exclamation|question|warning|info|success] %}
+    content
+{% endalertbox %}
+```
+
+{% alertbox exclamation %}
+Alert Box: **Exclamation**
+{% endalertbox %}
+
+{% alertbox warning %}
+Alert Box: **Warning**
+{% endalertbox %}
+
+{% alertbox info %}
+Alert Box: **Info**
+{% endalertbox %}
+
+{% alertbox success %}
+Alert Box: **Success**
+{% endalertbox %}
+
+{% alertbox question %}
+Alert Box: **Question**
+{% endalertbox %}
+
 ### Tag Plugin: Blockqoute
 
 ```
@@ -82,7 +110,7 @@ Default path: source/downloads/code
 {% jsfiddle shorttag [tabs] [skin] [width] [height] %}
 ```
 <br/>
-{% jsfiddle tvxTg html,css,result dark 800 300 %}
+{% jsfiddle tvxTg html,css,result dark 100% 300 %}
 
 ### Tag Plugin: IFrame
 
@@ -90,4 +118,4 @@ Default path: source/downloads/code
 {% iframe url [width] [height] %}
 ```
 <br/>
-{% iframe https://kiko.io/about 800 300 %}
+{% iframe https://kiko.io/about 100% 300 %}

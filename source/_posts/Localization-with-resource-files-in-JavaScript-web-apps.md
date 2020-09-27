@@ -35,8 +35,7 @@ For a current project I use  [jquery-lang](https://github.com/Irrelon/jquery-lan
 
 The definition of "tokens" in one JSON file for each language is quite easy:
 
-**.../languages/en.json**
-```js
+```js ../languages/en.json
 {
     "token": {
         "my-test": "My Test in English"
@@ -44,8 +43,7 @@ The definition of "tokens" in one JSON file for each language is quite easy:
 }
 ```
 
-**.../languages/de.json**
-```js
+```js ../languages/de.json
 {
     "token": {
         "my-test": "Mein Test in Deutsch"
@@ -66,7 +64,7 @@ And here comes ResXManager to the rescue, if you work with VS ... but it needs a
 
 As there was no Grunt plugin/task out there to fit my needs, I have created  **grunt-resource2json** ([GitHub](https://github.com/kristofzerbe/grunt-resource2json), [NPM](https://www.npmjs.com/package/grunt-resource2json)). The configuration in the **gruntfile.js** is like: 
 
-```json
+```json gruntfile.js
 grunt.initConfig({
     resource2json: {
       convert: {

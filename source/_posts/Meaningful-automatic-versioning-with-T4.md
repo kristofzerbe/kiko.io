@@ -226,7 +226,9 @@ After reloading the project in Visual Studio, we can use ``@(VersionNumber)`` in
 
 The event build editor is not very comfortable, so we create the batch file ``CreateBuildLog.bat`` in our **AssemblyVersion** folder and use this as the post build event command.
 
-**IMPORTANT: The BuildLog folder must exist, before running the following command the first time!**
+{% alertbox exclamation %}
+The BuildLog folder must exist, before running the following command the first time!
+{% endalertbox %}
 
 ```bat
 @echo off

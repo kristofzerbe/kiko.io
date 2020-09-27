@@ -56,7 +56,7 @@ tf workspace /delete {WORKSPACE.name};{WORKSPACE.ownerid}
 
 Now your new colleague can create his own workspace on the same machine.
 
-**UPDATE:**  
+### Update
 In case you want to switch your own DevOps account to another and use the same folder as before, you can certainly delete the local workspace, but this wont help, because you are still logged in at TeamExplorer and the folder knows to whom it belongs. Solution is easy:
 
 1. Quit Visual Studio

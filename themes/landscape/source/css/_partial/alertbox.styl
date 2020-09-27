@@ -1,0 +1,69 @@
+.alertbox 
+  position: relative
+  padding: 20px 20px 20px 32px
+  margin: 20px 0
+
+.alertbox.alertbox-exclamation
+  border-left: 4px rgb(255,204,0) solid
+  background-color: rgba(255,204,0,0.2)
+
+.alertbox.alertbox-question
+  border-left: 4px rgb(221,0,255) solid
+  background-color: rgba(221,0,255,0.2)
+
+.alertbox.alertbox-warning
+  border-left: 4px rgb(226,37,0) solid
+  background-color: rgba(226,37,0,0.2)
+
+.alertbox.alertbox-info
+  border-left: 4px rgb(0,136,224) solid
+  background-color: rgba(0,136,224,0.2)
+
+.alertbox.alertbox-success
+  border-left: 4px rgb(0,187,28) solid
+  background-color: rgba(0,187,28,0.2)
+
+.alertbox::before 
+  position: absolute
+  width: 41px
+  height: 41px
+  top: -13px
+  left: -22px
+  display: block
+  border-radius: 50%
+  content: ""
+  background: color-block
+  /[data-theme="dark"] &
+    background: dark-color-block  
+
+.alertbox::after 
+  position: absolute
+  display: block
+  top: -8px
+  left: -16px
+  font-family: 'FontAwesome5Solid'
+  font-size: 28px
+
+.alertbox.alertbox-exclamation::after
+  color: rgb(255,204,0)
+  content: "\f06a"
+
+.alertbox.alertbox-question::after
+  color: rgb(221,0,255)
+  content: "\f059"
+
+.alertbox.alertbox-warning::after
+  color: rgb(226,37,0)
+  content: "\f057"
+
+.alertbox.alertbox-info::after
+  color: rgb(0,136,224)
+  content: "\f05a"
+
+.alertbox.alertbox-success::after
+  color: rgb(0,187,28)
+  content: "\f058"
+
+.alertbox * 
+  margin: 0 !important
+
