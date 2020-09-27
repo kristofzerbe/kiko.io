@@ -1,16 +1,17 @@
 ---
 title: {{ title }}
 subtitle: 
-photograph: 
-    file: ''
-    name: ''
-    link: ''
 date: {{ date }}
+photograph: 
+  file: ''
+  name: ''
+  link: ''
 categories:
-    - xxx
+  - xxx
 tags:
-    - xxx
-
+  - xxx
+related:
+  - xxx
 ---
 
 

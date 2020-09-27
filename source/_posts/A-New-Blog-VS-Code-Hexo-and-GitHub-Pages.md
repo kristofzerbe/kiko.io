@@ -15,6 +15,9 @@ tags:
   - Blogging
 categories:
   - Tools
+related:
+  - A-New-Blog-Customizing-Hexo
+  - A-New-Blog-Blogging-and-Synching-en-route
 ---
 
 A few days ago I puzzled over a technical problem regarding SQL Server, Active Directory and Visual Studio Database Projects. With tips, hints and snippets from several websites I got it running and the solution was absolutely memorable. For myself and for others. Nothing is harder than to know 'you did this before...', but not to remember how.
@@ -110,10 +113,3 @@ To point the domain to GitHub, I had to create following ``A`` records in my dom
 * 185.199.111.153
 
 Last step was to enable **Enforce HTTPS** in the repositories settings.
-
----
-
-## Related
-
-* [A New Blog (Part Two): Customizing Hexo](/categories/Tools/A-New-Blog-Customizing-Hexo/)
-* [A New Blog (Part Three): Blogging and Synching en route](/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/)

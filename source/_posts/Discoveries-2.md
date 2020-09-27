@@ -1,5 +1,6 @@
 ---
 title: 'Discoveries #2'
+subtitle:
 photograph:
   file: 19-05 Israel-0661.jpg
   name: Jerusalem Marks
@@ -11,7 +12,8 @@ categories:
 tags:
   - Great Finds
 date: 2020-09-07 17:54:50
-subtitle:
+related:
+  - Discoveries-1
 ---
 New month, new discoveries. We will deal with key bindings, downloads on the fly, a lot of animations and contrasting images. Have fun, trying out these stunning solutions.
 

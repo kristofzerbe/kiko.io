@@ -15,6 +15,9 @@ tags:
 categories:
   - Tools
 date: 2019-10-23 15:28:04
+related:
+  - Hexo-and-the-Dark-Mode-revised
+  - A-New-Blog-Customizing-Hexo
 ---
 
 Due to the fact, that nowadays everybody is talking about Dark Modes for Browsers and Operating Systems, in order to save battery or for easier reading (uhh, really?), I decided my blog should support that.
@@ -121,7 +124,3 @@ This will be rendered as:
 ```
 
 Please note the use of ``filter:brightness()`` in the example. It is always advisable to darken the images too, because they can really pop out on dark backgrounds.
-
-## Related
-
-* [Hexo and the Dark Mode ... revised](/categories/Tools/Hexo-and-the-Dark-Mode-revised)

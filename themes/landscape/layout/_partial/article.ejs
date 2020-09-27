@@ -60,6 +60,11 @@
     </footer>
   </div>
   <% if (!index){ %>
+    <% if (post.related){ %>
+      <div class="xxx">
+        <%- partial('post/related') %>
+      </div>
+    <% } %>
     <% if (!index && post.comments){ %>
       <div id="comment-placeholder"></div>
       <script>

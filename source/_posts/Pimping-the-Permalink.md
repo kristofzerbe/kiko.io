@@ -14,6 +14,9 @@ categories:
   - JavaScript
 date: 2020-09-20 16:30:37
 subtitle: How to copy and share the permalink programatically
+related:
+  - Horizontal-navigation-menu-above-an-image
+  - A-New-Blog-VS-Code-Hexo-and-GitHub-Pages
 ---
 
 Until now I did not show the permalink under my posts in this blog, but in the past I had sometimes the need to pass one of the links and it was not very user-friendly, on desktop as well as on mobile. Not the One-Click experience I prefer.

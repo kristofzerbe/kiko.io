@@ -375,6 +375,7 @@ body {
   }
 }
 .article-inner,
+.article-related,
 .archive-article-inner,
 .page-content section,
 .anything-inner {
@@ -394,36 +395,42 @@ body {
   font-weight: 600;
 }
 .article-entry h1,
+.article-related h1,
 .page-content section h1,
 .anything-content h1,
 .widget h1 {
   font-size: 2em;
 }
 .article-entry h2,
+.article-related h2,
 .page-content section h2,
 .anything-content h2,
 .widget h2 {
   font-size: 1.7em;
 }
 .article-entry h3,
+.article-related h3,
 .page-content section h3,
 .anything-content h3,
 .widget h3 {
   font-size: 1.5em;
 }
 .article-entry h4,
+.article-related h4,
 .page-content section h4,
 .anything-content h4,
 .widget h4 {
   font-size: 1.3em;
 }
 .article-entry h5,
+.article-related h5,
 .page-content section h5,
 .anything-content h5,
 .widget h5 {
   font-size: 1.1em;
 }
 .article-entry h6,
+.article-related h6,
 .page-content section h6,
 .anything-content h6,
 .widget h6 {
@@ -431,38 +438,45 @@ body {
   color: #777;
 }
 .article-entry hr,
+.article-related hr,
 .page-content section hr,
 .anything-content hr,
 .widget hr {
   border: 1px dashed #eee;
 }
 [data-theme="dark"] .article-entry hr,
+[data-theme="dark"] .article-related hr,
 [data-theme="dark"] .page-content section hr,
 [data-theme="dark"] .anything-content hr,
 [data-theme="dark"] .widget hr {
   border: 1px dashed #666;
 }
 .article-entry strong,
+.article-related strong,
 .page-content section strong,
 .anything-content strong,
 .widget strong {
   font-weight: 600;
 }
 .article-entry em,
+.article-related em,
 .page-content section em,
 .anything-content em,
 .widget em,
 .article-entry cite,
+.article-related cite,
 .page-content section cite,
 .anything-content cite,
 .widget cite {
   font-style: italic;
 }
 .article-entry sup,
+.article-related sup,
 .page-content section sup,
 .anything-content sup,
 .widget sup,
 .article-entry sub,
+.article-related sub,
 .page-content section sub,
 .anything-content sub,
 .widget sub {
@@ -472,42 +486,50 @@ body {
   vertical-align: baseline;
 }
 .article-entry sup,
+.article-related sup,
 .page-content section sup,
 .anything-content sup,
 .widget sup {
   top: -0.5em;
 }
 .article-entry sub,
+.article-related sub,
 .page-content section sub,
 .anything-content sub,
 .widget sub {
   bottom: -0.2em;
 }
 .article-entry small,
+.article-related small,
 .page-content section small,
 .anything-content small,
 .widget small {
   font-size: 0.85em;
 }
 .article-entry acronym,
+.article-related acronym,
 .page-content section acronym,
 .anything-content acronym,
 .widget acronym,
 .article-entry abbr,
+.article-related abbr,
 .page-content section abbr,
 .anything-content abbr,
 .widget abbr {
   border-bottom: 1px dotted;
 }
 .article-entry ul,
+.article-related ul,
 .page-content section ul,
 .anything-content ul,
 .widget ul,
 .article-entry ol,
+.article-related ol,
 .page-content section ol,
 .anything-content ol,
 .widget ol,
 .article-entry dl,
+.article-related dl,
 .page-content section dl,
 .anything-content dl,
 .widget dl {
@@ -515,18 +537,22 @@ body {
   line-height: 1.6em;
 }
 .article-entry ul ul,
+.article-related ul ul,
 .page-content section ul ul,
 .anything-content ul ul,
 .widget ul ul,
 .article-entry ol ul,
+.article-related ol ul,
 .page-content section ol ul,
 .anything-content ol ul,
 .widget ol ul,
 .article-entry ul ol,
+.article-related ul ol,
 .page-content section ul ol,
 .anything-content ul ol,
 .widget ul ol,
 .article-entry ol ol,
+.article-related ol ol,
 .page-content section ol ol,
 .anything-content ol ol,
 .widget ol ol {
@@ -534,18 +560,21 @@ body {
   margin-bottom: 0;
 }
 .article-entry ul,
+.article-related ul,
 .page-content section ul,
 .anything-content ul,
 .widget ul {
   list-style: disc;
 }
 .article-entry ol,
+.article-related ol,
 .page-content section ol,
 .anything-content ol,
 .widget ol {
   list-style: decimal;
 }
 .article-entry dt,
+.article-related dt,
 .page-content section dt,
 .anything-content dt,
 .widget dt {
@@ -920,14 +949,16 @@ body {
 .article {
   margin: 2.5em 0;
 }
-.article-inner {
+.article-inner,
+.article-related {
   overflow: hidden;
   background: #fff;
   -webkit-box-shadow: 1px 2px 3px #ddd;
   box-shadow: 1px 2px 3px #ddd;
   border: 1px solid #ddd;
 }
-[data-theme="dark"] .article-inner {
+[data-theme="dark"] .article-inner,
+[data-theme="dark"] .article-related {
   background: #333;
   -webkit-box-shadow: 1px 2px 3px #000;
   box-shadow: 1px 2px 3px #000;
@@ -1082,106 +1113,146 @@ a.article-title:hover {
   margin-top: 0.75em;
   color: #bbb;
 }
-.article-entry {
+.article-entry,
+.article-related {
   color: #555;
   padding: 0 30px;
 }
 .article-entry:before,
-.article-entry:after {
+.article-related:before,
+.article-entry:after,
+.article-related:after {
   content: "";
   display: table;
 }
-.article-entry:after {
+.article-entry:after,
+.article-related:after {
   clear: both;
 }
-[data-theme="dark"] .article-entry {
+[data-theme="dark"] .article-entry,
+[data-theme="dark"] .article-related {
   color: #dadada;
 }
 .article-entry p,
-.article-entry table {
+.article-related p,
+.article-entry table,
+.article-related table {
   line-height: 1.6em;
   margin: 1.6em 0;
 }
 .article-entry h1,
+.article-related h1,
 .article-entry h2,
+.article-related h2,
 .article-entry h3,
-.article-entry h5 {
+.article-related h3,
+.article-entry h5,
+.article-related h5 {
   font-weight: 600;
 }
 .article-entry h4,
-.article-entry h6 {
+.article-related h4,
+.article-entry h6,
+.article-related h6 {
   font-weight: normal;
 }
 .article-entry h1,
+.article-related h1,
 .article-entry h2,
+.article-related h2,
 .article-entry h3,
+.article-related h3,
 .article-entry h4,
+.article-related h4,
 .article-entry h5,
-.article-entry h6 {
+.article-related h5,
+.article-entry h6,
+.article-related h6 {
   line-height: 1.2em;
   margin: 1.2em 0;
 }
-.article-entry :not(.article-more-link) a {
+.article-entry :not(.article-more-link) a,
+.article-related :not(.article-more-link) a {
   color: #0069dc;
   text-decoration: none;
 }
-[data-theme="dark"] .article-entry :not(.article-more-link) a {
+[data-theme="dark"] .article-entry :not(.article-more-link) a,
+[data-theme="dark"] .article-related :not(.article-more-link) a {
   color: #fff;
   border-bottom: #777 1px solid;
 }
-.article-entry :not(.article-more-link) a:hover {
+.article-entry :not(.article-more-link) a:hover,
+.article-related :not(.article-more-link) a:hover {
   border-bottom: #0069dc 1px solid;
 }
-[data-theme="dark"] .article-entry :not(.article-more-link) a:hover {
+[data-theme="dark"] .article-entry :not(.article-more-link) a:hover,
+[data-theme="dark"] .article-related :not(.article-more-link) a:hover {
   border-bottom: #fff 1px solid;
 }
 .article-entry ul,
+.article-related ul,
 .article-entry ol,
-.article-entry dl {
+.article-related ol,
+.article-entry dl,
+.article-related dl {
   margin-top: 1.6em;
   margin-bottom: 1.6em;
 }
 .article-entry ul li,
+.article-related ul li,
 .article-entry ol li,
-.article-entry dl li {
+.article-related ol li,
+.article-entry dl li,
+.article-related dl li {
   line-height: 1.6em;
   margin-bottom: 10px;
 }
 .article-entry img,
-.article-entry video {
+.article-related img,
+.article-entry video,
+.article-related video {
   max-width: 100%;
   height: auto;
   display: block;
   margin: auto;
 }
 [data-theme="dark"] .article-entry img,
-[data-theme="dark"] .article-entry video {
+[data-theme="dark"] .article-related img,
+[data-theme="dark"] .article-entry video,
+[data-theme="dark"] .article-related video {
   filter: brightness(85%);
 }
-.article-entry iframe {
+.article-entry iframe,
+.article-related iframe {
   border: none;
 }
-.article-entry table {
+.article-entry table,
+.article-related table {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
 }
-.article-entry th {
+.article-entry th,
+.article-related th {
   font-weight: 600;
   padding-bottom: 0.5em;
   border-bottom: 3px solid #eee;
 }
-[data-theme="dark"] .article-entry th {
+[data-theme="dark"] .article-entry th,
+[data-theme="dark"] .article-related th {
   border-bottom: 3px solid #666;
 }
-.article-entry td {
+.article-entry td,
+.article-related td {
   padding: 10px 0;
   border-bottom: 1px solid #eee;
 }
-[data-theme="dark"] .article-entry td {
+[data-theme="dark"] .article-entry td,
+[data-theme="dark"] .article-related td {
   border-bottom: 3px solid #666;
 }
-.article-entry blockquote {
+.article-entry blockquote,
+.article-related blockquote {
   border-left: 4px #c0c0c0 solid;
   padding-left: 10px;
   font-family: Georgia, "Times New Roman", serif;
@@ -1189,32 +1260,39 @@ a.article-title:hover {
   margin: 1.6em 0;
   text-align: left;
 }
-.article-entry blockquote p {
+.article-entry blockquote p,
+.article-related blockquote p {
   line-height: 1.4em;
 }
-.article-entry blockquote footer {
+.article-entry blockquote footer,
+.article-related blockquote footer {
   font-size: 14px;
   margin: 1.6em 0;
   font-family: -apple-system, BlinkMacSystemFont, "Open Sans", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
-.article-entry blockquote footer cite:before {
+.article-entry blockquote footer cite:before,
+.article-related blockquote footer cite:before {
   content: "—";
   padding: 0 0.5em;
 }
-.article-entry .pullquote {
+.article-entry .pullquote,
+.article-related .pullquote {
   text-align: left;
   width: 45%;
   margin: 0;
 }
-.article-entry .pullquote.left {
+.article-entry .pullquote.left,
+.article-related .pullquote.left {
   margin-left: 0.5em;
   margin-right: 1em;
 }
-.article-entry .pullquote.right {
+.article-entry .pullquote.right,
+.article-related .pullquote.right {
   margin-right: 0.5em;
   margin-left: 1em;
 }
-.article-entry .caption {
+.article-entry .caption,
+.article-related .caption {
   color: #777;
   display: block;
   font-size: 0.9em;
@@ -1222,18 +1300,23 @@ a.article-title:hover {
   position: relative;
   text-align: center;
 }
-[data-theme="dark"] .article-entry .caption {
+[data-theme="dark"] .article-entry .caption,
+[data-theme="dark"] .article-related .caption {
   color: #999;
 }
-.article-entry .video-container {
+.article-entry .video-container,
+.article-related .video-container {
   position: relative;
   padding-top: 56.25%;
   height: 0;
   overflow: hidden;
 }
 .article-entry .video-container iframe,
+.article-related .video-container iframe,
 .article-entry .video-container object,
-.article-entry .video-container embed {
+.article-related .video-container object,
+.article-entry .video-container embed,
+.article-related .video-container embed {
   position: absolute;
   top: 0;
   left: 0;
@@ -1263,6 +1346,10 @@ a.article-title:hover {
 }
 [data-theme="dark"] .article-more-link a:hover {
   color: #fff;
+}
+.article-related {
+  margin-top: 1.6em;
+  padding-bottom: 1.6em;
 }
 .article-footer {
   font-size: 0.85em;

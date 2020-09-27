@@ -13,6 +13,9 @@ categories:
   - UI-Design
 date: 2020-07-20 15:55:47
 subtitle: How to deal with coverage, readability and scrollbars
+related:
+  - Automatic-Header-Images-in-Hexo
+  - A-New-Blog-VS-Code-Hexo-and-GitHub-Pages
 ---
 
 I changed the main menu of my blog, because I wanted to get rid of the hamburger menu on the upper left, which was shown only for smartphones, but was not really reachable conveniently. Beside that it made no sense to have different navigations for different devices.

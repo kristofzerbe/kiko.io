@@ -1,5 +1,6 @@
 ---
 title: Change CSS class when element scrolls into viewport
+subtitle:
 photograph:
   file: D70_7695.jpg
   name: Onion Broken
@@ -12,7 +13,6 @@ tags:
 categories:
   - JavaScript
 date: 2020-07-13 18:24:39
-subtitle:
 ---
 I had a neat visual gimmick on the start page of this blog, that the gray-scaled header image of a post in the list scaled up to 100% and became colored, when the user hovered over it:
 

@@ -14,6 +14,9 @@ categories:
   - Tools
 date: 2020-07-05 14:55:16
 subtitle: Integrate Utterances' GitHub Issue Commenting to Hexo
+related:
+  - A-New-Blog-Customizing-Hexo
+  - A-New-Blog-VS-Code-Hexo-and-GitHub-Pages
 ---
 
 If you run a blog, it is always advisable to integrate a commenting system, in order to get feedback on your posts from your readers.

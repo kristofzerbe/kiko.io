@@ -15,6 +15,9 @@ tags:
 categories:
   - Tools
 date: 2019-10-26 14:08:05
+related:
+  - Hexo-and-the-Dark-Mode
+  - A-New-Blog-Customizing-Hexo
 ---
 
 While writing my post [Hexo and the Dark Mode](/categories/Tools/Hexo-and-the-Dark-Mode) a few days ago, I thought it would be nice, if I could switch between the normal (light) and the dark theme, I've created for the support of the OS-related Dark Mode, even manually. The only thing I needed was a toggle element and a little bit of JavaScript.
@@ -185,7 +188,3 @@ detectColorScheme();
 ```
 
 By using the both ``addEventListener``'s, each switch will be recognized and this approach is capable to support even more themes, just by using different values in the ``data-theme`` attribute.
-
-## Related
-
-* [Hexo and the Dark Mode](/categories/Tools/Hexo-and-the-Dark-Mode)

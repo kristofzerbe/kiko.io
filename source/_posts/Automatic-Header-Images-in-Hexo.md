@@ -13,6 +13,9 @@ categories:
   - Tools
 date: 2020-06-22 17:49:16
 subtitle: Use static images randomly for posts via Hexo script
+related:
+  - Hexo-and-the-Dark-Mode-revised
+  - A-New-Blog-Customizing-Hexo
 ---
 
 Every article in this blog has an individual header image, to bring a little bit color into it. In this post I will show you how I deal with the images in using and automatic provisioning.
@@ -296,7 +299,3 @@ hexo.on('new', function(post){
 ```
 
 Now it so easy to write a new post, because almost everything is set and I can concentrate on the article. Also, it is a nice surprise to see, which photo the script has chosen. The only thing I have to do from time to time, is to refill the pool folder with new images.
-
-## Related
-
-* [A New Blog (Part Two): Customizing Hexo](/categories/Tools/A-New-Blog-Customizing-Hexo/)

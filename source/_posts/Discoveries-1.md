@@ -1,5 +1,6 @@
 ---
 title: 'Discoveries #1'
+subtitle:
 photograph:
   file: 19-05 Israel-0221.jpg
   name: Ceasarea View
@@ -11,7 +12,8 @@ tags:
 categories:
   - Discoveries
 date: 2020-07-12 09:55:10
-subtitle:
+related:
+  - Discoveries-2
 ---
 Due to my daily routine, I'm reading a lot of articles on the web regarding software development. 
 

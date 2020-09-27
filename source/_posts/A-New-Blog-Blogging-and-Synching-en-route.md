@@ -15,6 +15,9 @@ tags:
   - Blogging
 categories:
   - Tools
+related:
+  - A-New-Blog-Customizing-Hexo
+  - A-New-Blog-VS-Code-Hexo-and-GitHub-Pages
 ---
 
 I work with several devices, some Windows, some Android, and sometimes I have time to write on my articles at home (Notebook, Tablet), in my spare time in the office (Desktop, Laptop) or on my way to somewhere (Smartphone). Right now I'm am in a barber shop, waiting for my haircut and write these lines. So, wherever I am, I need the Hexo project locally, but in sync on a digital device.
@@ -150,10 +153,3 @@ I would have never expected, that the trickiest part was to get HexoCommander ru
      * Start In: **%systemroot%\Syswow64\\**
 
 Because some executing commands in the chain are NOT 64-bit, I had to force Task Scheduler to run the 32-bit Command Shell in its own path (see 'Start In' and don't forget the closing backslash) and take the 32-bit compiled HexoCommander as argument after the parameter ```/C``` (forcing command to terminate), including its own argument for defining the real working directory. Mind bending, but works...
-
----
-
-## Related
-
-* [A New Blog (Part One): VS Code, Hexo and GitHub Pages](/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/)
-* [A New Blog (Part Two): Customizing Hexo](/categories/Tools/A-New-Blog-Customizing-Hexo/)

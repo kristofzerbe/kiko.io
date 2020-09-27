@@ -1,0 +1,22 @@
+<% if (post.related && post.related.length){ %>
+  <div class="article-related">
+    <h2>Related</h2>
+    <ul>
+      <% post.related.forEach(function(item) { %>
+        <% 
+          var post = site.posts.filter(function(post) {
+            return post.slug.toLowerCase() === item.toLowerCase();
+          });
+          post.each(function(p) { //console.log(p);
+        %>
+          <li>
+            <a href="<%- url_for(p.path) %>"><%- p.title %></a><br>
+            <small><%- p.subtitle %></small>
+          </li>
+        <%
+          }); 
+        %>
+      <% }) %>
+    </ul>
+  </div>
+<% } %>

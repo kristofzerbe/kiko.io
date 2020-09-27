@@ -1,7 +1,8 @@
 .article
   margin: block-margin 0
 
-.article-inner
+.article-inner,
+.article-related
   @extend $block
   overflow: hidden
   background: color-block
@@ -122,7 +123,8 @@
   margin-top: subtitle-margin
   color: color-header
 
-.article-entry
+.article-entry,
+.article-related
   @extend $base-style
   clearfix()
   color: color-default
@@ -249,6 +251,10 @@
       /[data-theme="dark"] &
         color: dark-color-link
 
+.article-related
+  margin-top: line-height
+  padding-bottom: line-height
+  
 .article-footer
   font-size: 0.85em
   line-height: line-height

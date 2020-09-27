@@ -95,7 +95,7 @@
     <div id="header-title" class="inner">
         <a href="/" id="logo">
           <h1 id="title-wrap">
-            <span style="opacity:0.1;">kiko.io</span>
+            <span style="opacity:0.2;">kiko.io</span>
           </h1>
         </a>
       
@@ -250,9 +250,6 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> front = <span class="built_in">require</span>(<span class="string">'hexo-front-matter'</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'hexo-fs'</span>);</span><br><span class="line"></span><br><span class="line">hexo.on(<span class="string">'new'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">post</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> post = front.parse(data.content);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> poolDir = hexo.source_dir.replace(<span class="string">"\source"</span>, hexo.config.static_dir) + <span class="string">"pool"</span>;</span><br><span class="line">  <span class="keyword">var</span> photosDir = hexo.source_dir.replace(<span class="string">"\source"</span>, hexo.config.static_dir) + <span class="string">"photos"</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> files = fs.listDirSync(poolDir);</span><br><span class="line">  <span class="keyword">var</span> metaFiles = files.filter(<span class="function"><span class="params">file</span> =&gt;</span> file.match(<span class="regexp">/.*[\\]meta.txt/g</span>));</span><br><span class="line">  <span class="keyword">var</span> metaFile = metaFiles[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * metaFiles.length)];</span><br><span class="line">  <span class="keyword">var</span> photoName = metaFile.split(<span class="string">"\\"</span>)[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> meta = fs.readFileSync(poolDir + <span class="string">"\\"</span> + metaFile);</span><br><span class="line">  <span class="keyword">var</span> metas = meta.split(<span class="string">"\n"</span>);</span><br><span class="line"></span><br><span class="line">  post.photograph.file = photoName + <span class="string">".jpg"</span>;</span><br><span class="line">  post.photograph.name = metas[<span class="number">0</span>];</span><br><span class="line">  post.photograph.link = metas[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">  postStr = front.stringify(post);</span><br><span class="line">  postStr = <span class="string">'---\n'</span> + postStr;</span><br><span class="line"></span><br><span class="line">  fs.writeFile(data.path, postStr, <span class="string">'utf-8'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//copy normal image</span></span><br><span class="line">  fs.copyFile(</span><br><span class="line">    poolDir + <span class="string">"\\"</span> + photoName + <span class="string">"\\normal.jpg"</span>,</span><br><span class="line">    photosDir + <span class="string">"\\normal\\"</span> + photoName + <span class="string">".jpg"</span>,</span><br><span class="line">    <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">      <span class="comment">//copy tablet image</span></span><br><span class="line">      fs.copyFile(</span><br><span class="line">        poolDir + <span class="string">"\\"</span> + photoName + <span class="string">"\\tablet.jpg"</span>,</span><br><span class="line">        photosDir + <span class="string">"\\tablet\\"</span> + photoName + <span class="string">".jpg"</span>,</span><br><span class="line">        <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">          <span class="comment">//copy mobile image</span></span><br><span class="line">          fs.copyFile(</span><br><span class="line">            poolDir + <span class="string">"\\"</span> + photoName + <span class="string">"\\mobile.jpg"</span>,</span><br><span class="line">            photosDir + <span class="string">"\\mobile\\"</span> + photoName + <span class="string">".jpg"</span>,</span><br><span class="line">            <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">              <span class="comment">//remove processed pool folder</span></span><br><span class="line">              fs.rmdirSync(poolDir + <span class="string">"\\"</span> + photoName);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <p>Now it so easy to write a new post, because almost everything is set and I can concentrate on the article. Also, it is a nice surprise to see, which photo the script has chosen. The only thing I have to do from time to time, is to refill the pool folder with new images.</p>
-<h2 id="Related"><a href="#Related" class="headerlink" title="Related"></a>Related</h2><ul>
-<li><a href="/categories/Tools/A-New-Blog-Customizing-Hexo/">A New Blog (Part Two): Customizing Hexo</a></li>
-</ul>
 
       
     </div>
@@ -264,7 +261,7 @@
 
       
         <div class="article-permalink"">
-    <input id="article-permalink" value="https://kiko.io/categories/Tools/Automatic-Header-Images-in-Hexo/" data-id="ckfl1rlri000bocl9t7afbv0l" />
+    <input id="article-permalink" value="https://kiko.io/categories/Tools/Automatic-Header-Images-in-Hexo/" data-id="ckfl7w2js000bq4l9uo7ou1u2" />
     <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
     <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
 </div>
@@ -314,6 +311,32 @@
     </footer>
   </div>
   
+    
+      <div class="xxx">
+        
+  <div class="article-related">
+    <h2>Related</h2>
+    <ul>
+      
+        
+          <li>
+            <a href="/categories/Tools/Hexo-and-the-Dark-Mode-revised/">Hexo and the Dark Mode ... revised</a><br>
+            <small>Second approach to implement 'prefers-color-scheme'</small>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/categories/Tools/A-New-Blog-Customizing-Hexo/">A New Blog: Customizing Hexo</a><br>
+            <small>Part Two of having fun with Hexo and GitHub Pages</small>
+          </li>
+        
+      
+    </ul>
+  </div>
+
+      </div>
+    
     
       <div id="comment-placeholder"></div>
       <script>
