@@ -191,13 +191,27 @@ const toggleTheme = document.querySelector('input#theme-switch[type="checkbox"]'
 
 function setThemeDark() {
   localStorage.setItem('theme', 'dark');
-  document.documentElement.setAttribute('data-theme', 'dark');
+  document.documentElement.setAttribute('data-theme', 'dark');    
   toggleTheme.checked = true;
+  setCodepenTheme();
 }
 function setThemeLight() {
   localStorage.setItem('theme', 'light');
-  document.documentElement.setAttribute('data-theme', 'light');
+  document.documentElement.setAttribute('data-theme', 'light');  
   toggleTheme.checked = false;
+  setCodepenTheme();
+}
+
+function setCodepenTheme() {
+  //https://codepen.io/kristofzerbe/embed/xxxxx?height=400&default-tab=js,result&theme-id=dark
+  var pens = document.getElementsByClassName("codepen");
+  for (var i = 0; i < pens.length; i++) {
+    var src = pens[i].src;
+    const arr = src.split("?");
+    const params = arr[1].split("&").slice(0,-1);
+    src = arr[0] + "?" + params.join("&") + "&theme-id=" + localStorage.getItem("theme");
+    pens[i].src = src;
+  }
 }
 
 // Listener for theme change by toggle

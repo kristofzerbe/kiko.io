@@ -5,7 +5,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>kiko.io | Discoveries #1</title>
+  <title>kiko.io | Device Class Detection in JavaScript</title>
   <meta name="title" content="kiko.io - Memorable Tech Stuff">
   <meta name="description" content="Blog about Development &amp; Photography">
   <!-- Schema.org for Google -->
@@ -135,34 +135,34 @@
     background-size: cover;
   }
   @media screen and (max-width: 479px) {
-    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/19-05 Israel-0221.jpg"); }
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/19-05 Israel-0145.jpg"); }
   }
   @media screen and (min-width: 480px) and (max-width: 767px) {
-    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/19-05 Israel-0221.jpg"); }
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/19-05 Israel-0145.jpg"); }
   }
   @media screen and (min-width: 768px) {
-    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/19-05 Israel-0221.jpg"); }    
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/19-05 Israel-0145.jpg"); }    
   }
 </style>
 <script>
   var body = document.getElementById("body");
   body.classList.add("article-view");
   var photoExpand = document.getElementById("header-photo-expand");
-  photoExpand.href = "/photos/normal/19-05 Israel-0221.jpg";
+  photoExpand.href = "/photos/normal/19-05 Israel-0145.jpg";
   var photoLink = document.getElementById("header-photo-link");
-  photoLink.href = "https://500px.com/photo/1001750729/Ceasarea-View-by-Kristof-Zerbe";
-  photoLink.innerHTML = "see <strong>Ceasarea View</strong> at 500px";
+  photoLink.href = "https://500px.com/photo/1001750615/Jaffa-Pepsi-by-Kristof-Zerbe";
+  photoLink.innerHTML = "see <strong>Jaffa Pepsi</strong> at 500px";
 </script>
 
   
-<article id="post-Discoveries-1" class="article article-type-post" itemscope itemprop="blogPost">
+<article id="post-Device-Class-Detection-in-JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/categories/Discoveries/Discoveries-1/" class="article-date">
-  <time datetime="2020-07-12T07:55:10.000Z" itemprop="datePublished">12 Jul 2020</time>
+    <a href="/categories/JavaScript/Device-Class-Detection-in-JavaScript/" class="article-date">
+  <time datetime="2020-09-28T13:27:17.000Z" itemprop="datePublished">28 Sep 2020</time>
 </a>
     
-  <div class="article-category category-discoveries">
-    <a class="article-category-link" href="/categories/Discoveries/">Discoveries</a> 
+  <div class="article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
   </div>
 
   </div>
@@ -173,140 +173,46 @@
         
 
 
-    <p class="article-series" itemprop="name">
-        Discoveries, Part 1
-    </p>
-
         
   
     <h1 class="article-title" itemprop="name">
-      Discoveries #1
+      Device Class Detection in JavaScript
     </h1>
   
 
         
+    <h2 class="article-subtitle" itemprop="name">
+        The unusual way by using CSS Media Queries
+    </h2>
+
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Due to my daily routine, I’m reading a lot of articles on the web regarding software development. </p>
-<p>The most interesting stuff ends up on my Pocket list, which grows from day to day. Hard to find the pearls, when I need them. This recurring posts will throw a stroke of light on them.</p>
-<p>They are maybe not the newest finds, not the fanciest ones, but remarkable for me and maybe for you also.</p>
-<ul>
-<li>Pure CSS halftone portrait from .jpg source</li>
-<li>ScrollTrigger - Highlight Text</li>
-<li>Tiny long-press event handler</li>
-<li>Show More/Less</li>
-<li>3D banners with ScrollTrigger</li>
-<li>Image Compare Viewer</li>
-<li>Add Read or Scroll Progress Bar To A Website To Indicate Read Progress</li>
-<li>How to Get a Progressive Web App into the Google Play Store</li>
-</ul>
+        <p>In some occasions it is necessary to know which device a user is using while writing JavaScript Web Apps. Should be nothing regarding layout, because for this we have <a href="https://developer.mozilla.org/de/docs/Web/CSS/Media_Queries/Using_media_queries" target="_blank" rel="noopener"><code>CSS Media Queries</code></a>. </p>
+<p>Somewhere around 2011 W3C introduced <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia" target="_blank" rel="noopener"><code>matchMedia()</code></a>, which <em>returns a MediaQueryList object that can be used to detemnine if the document matches the media query string.</em> The using is pretty straightforward and feels a bit like RegEx matching in JS:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mediaQuery = <span class="built_in">window</span>.matchMedia(<span class="string">'(min-width: 1025px)'</span>)</span><br><span class="line"><span class="keyword">if</span> (mediaQuery.matches) &#123;</span><br><span class="line">  <span class="comment">// do something...  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>If you are interested in this API, you will find good introductions to the topic <a href="https://css-tricks.com/working-with-javascript-media-queries/" target="_blank" rel="noopener">here</a>, <a href="https://hacks.mozilla.org/2012/06/using-window-matchmedia-to-do-media-queries-in-javascript/" target="_blank" rel="noopener">here</a> and <a href="https://www.mediaevent.de/javascript/window-matchMedia.html" target="_blank" rel="noopener">here (German)</a>.</p>
+<p>One point of criticism on this pure JS approach can be, that you have to maintain the breakpoints in addition to CSS … <strong>but why not use these existing breakpoints in JS</strong>?</p>
 <a id="more"></a>
 
+<p>If you implement a feature that is based on the different device classes, you don’t have to determine the current class with dozens of lines of JavaScript code, if you just can ask the DOM.</p>
+<h2 id="The-CSS-JS-Breakpoint-Hack"><a href="#The-CSS-JS-Breakpoint-Hack" class="headerlink" title="The CSS/JS Breakpoint Hack"></a>The CSS/JS Breakpoint Hack</h2><p>For this approach, we take advantage of the fact, that CSS can be used to define not only styles, but also content. We always use it, when showing an icon by using a symbol font like FontAwesome:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">my-fancy-icon</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: FontAwesome5Solid;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">"\f186"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    <hr>
-    <h2 style="margin-bottom: 10px;">
-      Pure CSS halftone portrait from .jpg source
-    </h2>
-    <small>by Ana Tudor&nbsp;:&nbsp;<a href="https://codepen.io/thebabydino/pen/LYGGwrm" target="_blank" rel="noopener">https://codepen.io/thebabydino/pen/LYGGwrm</a></small>
-    <p>Ana, author at <a href="https://css-tricks.com/author/thebabydino/" target="_blank" rel="noopener">CSS Tricks</a>, shows a CSS-only technique to convert an image into a halftone one.</p>
+<p>Mixed with a <code>@media</code> rule, we can “inject” the needed device value into the DOM, for example into the <code>BODY</code> tag, but you can take whatever you want:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">1025px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">body</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">"DESKTOP"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    <a style="display:block; margin: 10px 0 30px;" href="https://codepen.io/thebabydino/pen/LYGGwrm" target="_blank" rel="noopener">
-      <img src="/categories/Discoveries/Discoveries-1/pure-css-halftone.jpg" alt="Pure CSS Halftone">
-    </a>
-  
+<p>Just one line more in the masses of CSS code to make a Web App responsive, but with this one you can do without many lines of JS.</p>
+<p>Now you can read out this value via JavaScript by getting the styles of the tag and get the injected content:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> style = <span class="built_in">window</span>.getComputedStyle(<span class="built_in">document</span>.querySelector(<span class="string">"body"</span>), <span class="string">":before"</span>);</span><br><span class="line"><span class="keyword">var</span> breakpoint = style.getPropertyValue(<span class="string">"content"</span>).replace(<span class="regexp">/\"/g</span>, <span class="string">""</span>);</span><br></pre></td></tr></table></figure>
 
+<p>It is advisable to embed this request into an event listener of <code>DOMContentLoaded</code>, because the rule has to be set, before you can access it.</p>
+<p>See a simple working pen:</p>
 
-    <hr>
-    <h2 style="margin-bottom: 10px;">
-      ScrollTrigger - Highlight Text
-    </h2>
-    <small>by Ryan Mulligan&nbsp;:&nbsp;<a href="https://codepen.io/hexagoncircle/details/gOPMwvd" target="_blank" rel="noopener">https://codepen.io/hexagoncircle/details/gOPMwvd</a></small>
-    <p>We all highlight important text passages for our readers. Ryan does the in an unusual, butt cool way by using GSAP ScrollTrigger.</p>
-
-    <a style="display:block; margin: 10px 0 30px;" href="https://codepen.io/hexagoncircle/details/gOPMwvd" target="_blank" rel="noopener">
-      <img src="/categories/Discoveries/Discoveries-1/scrolltrigger-highlight-text.jpg" alt="ScrollTrigger Highlight Text">
-    </a>
-  
-
-
-    <hr>
-    <h2 style="margin-bottom: 10px;">
-      Tiny long-press event handler
-    </h2>
-    <small>by MudOnTire&nbsp;:&nbsp;<a href="https://github.com/MudOnTire/web-long-press" target="_blank" rel="noopener">https://github.com/MudOnTire/web-long-press</a></small>
-    <p>Vanilla JS multi-instance handling of long press event the easy way.</p>
-
-    <a style="display:block; margin: 10px 0 30px;" href="https://github.com/MudOnTire/web-long-press" target="_blank" rel="noopener">
-      <img src="/categories/Discoveries/Discoveries-1/long-press-event-handler.jpg" alt="Long-Press Event Handler">
-    </a>
-  
-
-
-    <hr>
-    <h2 style="margin-bottom: 10px;">
-      Show More/Less
-    </h2>
-    <small>by Grzegorz Tomicki&nbsp;:&nbsp;<a href="https://github.com/tomik23/show-more" target="_blank" rel="noopener">https://github.com/tomik23/show-more</a></small>
-    <p>Grzegorz’s little JS helper to cut texts, lists and even tables and show a MORE link.</p>
-
-    <a style="display:block; margin: 10px 0 30px;" href="https://github.com/tomik23/show-more" target="_blank" rel="noopener">
-      <img src="/categories/Discoveries/Discoveries-1/show-more.jpg" alt="Show More">
-    </a>
-  
-
-
-    <hr>
-    <h2 style="margin-bottom: 10px;">
-      3D banners with ScrollTrigger
-    </h2>
-    <small>by supamike&nbsp;:&nbsp;<a href="https://codepen.io/supamike/full/KKVqXmR" target="_blank" rel="noopener">https://codepen.io/supamike/full/KKVqXmR</a></small>
-    <p>Awesome 3D effect on scrolling made with <a href="https://greensock.com/scrolltrigger/" target="_blank" rel="noopener">ScrollTrigger</a>.</p>
-
-    <a style="display:block; margin: 10px 0 30px;" href="https://codepen.io/supamike/full/KKVqXmR" target="_blank" rel="noopener">
-      <img src="/categories/Discoveries/Discoveries-1/3d-banners-with-scrolltrigger.jpg" alt="3d Banners with ScrollTrigger">
-    </a>
-  
-
-
-    <hr>
-    <h2 style="margin-bottom: 10px;">
-      Image Compare Viewer
-    </h2>
-    <small>by Kyle Wetton&nbsp;:&nbsp;<a href="https://image-compare-viewer.netlify.app/" target="_blank" rel="noopener">https://image-compare-viewer.netlify.app/</a></small>
-    <p>Comparison slider in Vanilla JS to compare BEFORE and AFTER images, which works responsively on every device.</p>
-
-    <a style="display:block; margin: 10px 0 30px;" href="https://image-compare-viewer.netlify.app/" target="_blank" rel="noopener">
-      <img src="/categories/Discoveries/Discoveries-1/image-compare-viewer.jpg" alt="Image Compare Viewer">
-    </a>
-  
-
-
-    <hr>
-    <h2 style="margin-bottom: 10px;">
-      Add Read or Scroll Progress Bar To A Website To Indicate Read Progress
-    </h2>
-    <small>by Jun711&nbsp;:&nbsp;<a href="https://jun711.github.io/web/add-scroll-progress-bar-to-a-website-to-indicate-read-progress/" target="_blank" rel="noopener">https://jun711.github.io/web/add-scroll-progress-bar-to-a-website-to-indicate-read-progress/</a></small>
-    <p>A classic, simply explained…</p>
-<p>Here another approach: <a href="https://css-tricks.com/reading-position-indicator/" target="_blank" rel="noopener">CSS Tricks: Reading Position Indicator</a></p>
-
-    <a style="display:block; margin: 10px 0 30px;" href="https://jun711.github.io/web/add-scroll-progress-bar-to-a-website-to-indicate-read-progress/" target="_blank" rel="noopener">
-      <img src="/categories/Discoveries/Discoveries-1/read-progress-bar.jpg" alt="Read Progress Bar">
-    </a>
-  
-
-
-    <hr>
-    <h2 style="margin-bottom: 10px;">
-      How to Get a Progressive Web App into the Google Play Store
-    </h2>
-    <small>by Mateusz Rybczonek&nbsp;:&nbsp;<a href="https://css-tricks.com/how-to-get-a-progressive-web-app-into-the-google-play-store/" target="_blank" rel="noopener">https://css-tricks.com/how-to-get-a-progressive-web-app-into-the-google-play-store/</a></small>
-    <p>Mateusz describes very detailed how offer your PWA as an App via Google Play Store.  </p>
-
-    <a style="display:block; margin: 10px 0 30px;" href="https://css-tricks.com/how-to-get-a-progressive-web-app-into-the-google-play-store/" target="_blank" rel="noopener">
-      <img src="/categories/Discoveries/Discoveries-1/get-pwa-into-play-store.jpg" alt="Get PWA Into Play Store">
-    </a>
+    <iframe height="400" id="codepen-WNwWjBR" class="codepen" src="https://codepen.io/kristofzerbe/embed/WNwWjBR?height=400&default-tab=css,result&theme-id=dark" style="width: 100%;" scrolling="no" title="Codepen: CSS/JS Breakpoint Hack" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+    </iframe>
   
 
       
@@ -314,12 +220,12 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Great-Finds/">Great Finds</a></li></ul>  
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Browser/">Browser</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>  
   </div>
 
       
         <div class="article-permalink"">
-    <input id="article-permalink" value="https://kiko.io/categories/Discoveries/Discoveries-1/" data-id="ckfn3vnzy000i48hzyxgn96bi" />
+    <input id="article-permalink" value="https://kiko.io/categories/JavaScript/Device-Class-Detection-in-JavaScript/" data-id="ckfn3vnzw000g48hzoc7drrnt" />
     <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
     <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
 </div>
@@ -359,8 +265,8 @@
     
     function sharePermalink() {
         navigator.share({
-            title: "Discoveries #1",
-            url: "https://kiko.io/categories/Discoveries/Discoveries-1/",
+            title: "Device Class Detection in JavaScript",
+            url: "https://kiko.io/categories/JavaScript/Device-Class-Detection-in-JavaScript/",
         })
     }
 </script>
@@ -378,7 +284,7 @@
       
         
           <li>
-            <a href="/categories/Discoveries/Discoveries-2/">Discoveries #2</a>
+            <a href="/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/">Change CSS class when element scrolls into viewport</a>
             <small></small>
           </li>
         
@@ -399,19 +305,10 @@
     
 <nav id="article-nav">
   
-    <a href="/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Change CSS class when element scrolls into viewport
-        
-      </div>
-    </a>
   
-  
-    <a href="/categories/Tools/Dopamine-How-Software-should-be/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/categories/Tools/404-Page-in-Hexo-for-GitHub-Pages/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Dopamine: How Software should be...</div>
+      <div class="article-nav-title">404 Page in Hexo for GitHub Pages</div>
     </a>
   
 </nav>
