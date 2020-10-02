@@ -2,7 +2,7 @@
 title: Device Class Detection in JavaScript
 subtitle: The unusual way by using CSS Media Queries
 date: 2020-09-28 15:27:17
-hitcounter: Ygcbq-mWm
+hitcountId: Ygcbq-mWm
 photograph:
   file: 19-05 Israel-0145.jpg
   name: Jaffa Pepsi

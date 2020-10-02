@@ -3,7 +3,7 @@ title: 'A New Blog: Customizing Hexo'
 subtitle: 'Part Two of having fun with Hexo and GitHub Pages'
 date: 2019-09-25
 updated: 2019-09-26
-hitcounter: 7RpTJjWHK
+hitcountId: 7RpTJjWHK
 photograph: 
     file: '19-07 Schottland-0198.jpg'
     name: 'Thistle Fence'

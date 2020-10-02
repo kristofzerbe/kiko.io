@@ -2,7 +2,7 @@
 title: 'TFS/DevOps: Delete Remote Workspace'
 subtitle: 
 date: 2020-02-28
-hitcounter: sJDU55wjd
+hitcountId: sJDU55wjd
 photograph:
   file: '18-09 Kroatien-0061.jpg'
   name: 'Untitled'

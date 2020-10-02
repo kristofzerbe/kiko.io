@@ -2,7 +2,7 @@
 title: Add website to Trello card the better way
 subtitle: Avoid default share, use the Trello bookmarklet
 date: 2020-09-07 15:17:21
-hitcounter: ZjE6qHc68
+hitcountId: ZjE6qHc68
 photograph:
   file: 19-05 Israel-0321.jpg
   name: Haifa Roses

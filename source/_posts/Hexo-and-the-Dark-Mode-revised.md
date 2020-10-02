@@ -2,7 +2,7 @@
 title: Hexo and the Dark Mode ... revised
 subtitle: Second approach to implement 'prefers-color-scheme'
 date: 2019-10-26 14:08:05
-hitcounter: xLnwzj48N
+hitcountId: xLnwzj48N
 photograph: 
     file: '19-07 Schottland-0025.jpg'
     name: 'Glencoe River'

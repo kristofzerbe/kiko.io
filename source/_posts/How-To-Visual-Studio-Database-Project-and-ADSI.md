@@ -2,7 +2,7 @@
 title: 'How-To: Visual Studio Database Project and ADSI'
 subtitle:
 date: 2019-09-17 12:00:01
-hitcounter: UIXkEVsBO
+hitcountId: UIXkEVsBO
 photograph: 
     file: '19-05 Israel-0516.jpg'
     name: 'Jaffa Accessoirs'

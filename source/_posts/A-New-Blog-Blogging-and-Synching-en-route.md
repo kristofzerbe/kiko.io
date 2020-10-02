@@ -2,7 +2,7 @@
 title: 'A New Blog: Blogging and Synching en route'
 subtitle: 'Part Three of having fun with Hexo and GitHub Pages'
 date: 2019-10-01
-hitcounter: 8zUseeDXU
+hitcountId: 8zUseeDXU
 photograph: 
   file: '19-07 Schottland-0364.jpg'
   name: 'Tiny Scots 5'

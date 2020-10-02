@@ -35,7 +35,22 @@
   <link rel="stylesheet" href="/css/style.css">  
 
   <script>
-    var hitcountId = '0HVlGZW77';
+    var hitcountConfig = {
+      id: '0HVlGZW77',
+      webUrl: 'https://hitcount.io',
+      apiUrl: 'https://hitcount.io/api/{id}',
+      size: '12',
+      background: {
+        light: '555',
+        dark: '777'
+      },
+      color: {
+        light: '000',
+        dark: '666'
+      },
+      digits: '5'
+    }
+
   </script>
 
 <link rel="alternate" href="/atom.xml" title="kiko.io" type="application/atom+xml">
@@ -252,7 +267,7 @@
 
       
         <div class="article-permalink"">
-    <input id="article-permalink" value="https://kiko.io/categories/JavaScript/Pimping-the-Permalink/" data-id="ckfsglnd2001jicl9m9k1cs8y" />
+    <input id="article-permalink" value="https://kiko.io/categories/JavaScript/Pimping-the-Permalink/" data-id="ckfskmepq001i8wl9hz6z5q13" />
     <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
     <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
 </div>
@@ -473,15 +488,6 @@
     $("a.fullsizable").fullsizable();
   });
 
-  //HITCOUNT
-  if (location.hostname !== "localhost" && hitcountId) {
-    const hitcounter = `
-      <a href="https://hitcount.io" target="__blank">
-        <img alt="Hit counter" src="https://hitcount.io/api/${hitcountId}?background=555&color=777&size=12&digits=5">
-      </a>
-    `;
-    document.getElementById("hitcounter").insertAdjacentHTML('afterbegin', hitcounter);
-  }
 </script>
 
     </div>

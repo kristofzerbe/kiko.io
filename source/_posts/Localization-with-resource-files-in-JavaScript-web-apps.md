@@ -4,7 +4,7 @@ subtitle: >-
   How to work with Visual Studio resource files for localization in Single Page
   Applications
 date: 2020-06-13 15:49:10
-hitcounter: snTaPGHLs
+hitcountId: snTaPGHLs
 photograph:
   file: '19-05 Israel-0161.jpg'
   name: 'Zern'

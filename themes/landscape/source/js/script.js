@@ -194,12 +194,14 @@ function setThemeDark() {
   document.documentElement.setAttribute('data-theme', 'dark');    
   toggleTheme.checked = true;
   setCodepenTheme();
+  setHitCount(hitcountConfig);
 }
 function setThemeLight() {
   localStorage.setItem('theme', 'light');
   document.documentElement.setAttribute('data-theme', 'light');  
   toggleTheme.checked = false;
   setCodepenTheme();
+  setHitCount(hitcountConfig);
 }
 
 function setCodepenTheme() {
@@ -211,6 +213,39 @@ function setCodepenTheme() {
     const params = arr[1].split("&").slice(0,-1);
     src = arr[0] + "?" + params.join("&") + "&theme-id=" + localStorage.getItem("theme");
     pens[i].src = src;
+  }
+}
+
+function setHitCount(config) {
+  if (location.hostname !== "localhost" && config.id) {
+
+    if (localStorage.getItem("theme") === "light") {
+      background = config.background.light;
+      color = config.background.dark;
+    } else {
+      background = config.color.light;
+      color = config.color.dark;
+    }
+
+    const imgUrl = 
+      config.apiUrl.replace("{id}", config.id)  + 
+        "?background=" + background + 
+        "&color=" + color + 
+        "&size=" + config.size + 
+        "&digits=" + config.digits;
+    
+    const hitcounter = `
+      <a href="${config.webUrl}" target="__blank">
+        <img alt="Hitcount" src="${imgUrl}" />
+      </a>
+    `;
+
+    const wrapper = document.getElementById("hitcounter");
+    if (!wrapper.querySelector("a img")) {
+      wrapper.insertAdjacentHTML('afterbegin', hitcounter);
+    } else {
+      wrapper.querySelector("a img").src = imgUrl;
+    }
   }
 }
 
