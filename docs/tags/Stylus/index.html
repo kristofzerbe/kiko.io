@@ -34,6 +34,10 @@
   <link rel="stylesheet" href="/css/dist/bundle.min.css">  
   <link rel="stylesheet" href="/css/style.css">  
 
+  <script>
+    var hitcountId = '';
+  </script>
+
 <link rel="alternate" href="/atom.xml" title="kiko.io" type="application/atom+xml">
 </head>
 </html>
@@ -456,24 +460,8 @@
         <ul id="footer-dots">
           <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" target="_blank" title="SearchConsole"></a></li>
           <li id="hitcounter"></li>
-        </ul>
-        
-          <input id="hitcounter-id" type="hidden" value="" />
-        
-        <script>
-          if (location.hostname != "localhost") {
-            const id = document.getElementById("hitcounter-id").value;
-            if (id) {
-              const hitcounter = `
-                <a href="https://hitcount.io" target="__blank">
-                  <img alt="Hit counter" src="https://hitcount.io/api/{ID}${id}?background=555&color=777&size=12&digits=5">
-                </a>
-              `;
-              document.getElementById("hitcounter").insertAdjacentHTML('afterbegin', hitcounter);
-            }
-          }
-        </script>
-  </div>
+        </ul>        
+    </div>
   </div>
 </footer>
       </div>
@@ -507,6 +495,16 @@
   $(function() {
     $("a.fullsizable").fullsizable();
   });
+
+  //HITCOUNT
+  if (location.hostname !== "localhost" && hitcountId) {
+    const hitcounter = `
+      <a href="https://hitcount.io" target="__blank">
+        <img alt="Hit counter" src="https://hitcount.io/api/${hitcountId}?background=555&color=777&size=12&digits=5">
+      </a>
+    `;
+    document.getElementById("hitcounter").insertAdjacentHTML('afterbegin', hitcounter);
+  }
 </script>
 
     </div>

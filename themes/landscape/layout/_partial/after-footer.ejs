@@ -28,4 +28,14 @@
   $(function() {
     $("a.fullsizable").fullsizable();
   });
+
+  //HITCOUNT
+  if (location.hostname !== "localhost" && hitcountId) {
+    const hitcounter = `
+      <a href="<%= config.hitcounter.url %>" target="__blank">
+        <img alt="Hit counter" src="<%= config.hitcounter.src %>${hitcountId}?background=<%= config.hitcounter.background %>&color=<%= config.hitcounter.color %>&size=<%= config.hitcounter.size %>&digits=<%= config.hitcounter.digits %>">
+      </a>
+    `;
+    document.getElementById("hitcounter").insertAdjacentHTML('afterbegin', hitcounter);
+  }
 </script>
