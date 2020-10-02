@@ -1,6 +1,8 @@
 ---
 title: Device Class Detection in JavaScript
 subtitle: The unusual way by using CSS Media Queries
+date: 2020-09-28 15:27:17
+hitcounter: Ygcbq-mWm
 photograph:
   file: 19-05 Israel-0145.jpg
   name: Jaffa Pepsi
@@ -13,7 +15,6 @@ tags:
   - Browser
 related:
   - Change-CSS-class-when-element-scrolls-into-viewport
-date: 2020-09-28 15:27:17
 ---
 In some occasions it is necessary to know which device a user is using while writing JavaScript Web Apps. Should be nothing regarding layout, because for this we have [``CSS Media Queries``](https://developer.mozilla.org/de/docs/Web/CSS/Media_Queries/Using_media_queries). 
 

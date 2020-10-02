@@ -1,5 +1,8 @@
 ---
 title: 404 Page in Hexo for GitHub Pages
+subtitle: Provide an error page automatically when resource not found
+date: 2020-09-23 14:28:50
+hitcounter: ATCM9aP77
 photograph:
   file: 19-07 Schottland-0935.jpg
   name: Tattoo Tuba
@@ -12,8 +15,6 @@ tags:
   - GitHub
   - Hexo
   - Error
-date: 2020-09-23 14:28:50
-subtitle: Provide an error page automatically when resource not found
 related:
   - Pimping-the-Permalink
   - A-New-Blog-VS-Code-Hexo-and-GitHub-Pages

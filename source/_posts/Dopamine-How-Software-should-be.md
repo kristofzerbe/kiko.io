@@ -1,5 +1,8 @@
 ---
 title: 'Dopamine: How Software should be...'
+subtitle: A great media player for Windows 10
+date: 2020-07-10 13:49:09
+hitcounter: uOIjbQ4SU
 photograph:
   file: 19-05 Israel-0143.jpg
   name: Jaffa Antiques
@@ -8,8 +11,6 @@ tags:
   - Great Finds
 categories:
   - Tools
-date: 2020-07-10 13:49:09
-subtitle: A great media player for Windows 10
 ---
 
 Not very often, when I'm looking for a new tool to replace some annoying or outdated piece of software, I have to blog about it ... but from time to time, I'm discovering pearls, worth to lose a word about.

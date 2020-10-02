@@ -1,5 +1,8 @@
 ---
 title: Meaningful automatic versioning with T4
+subtitle: How to implement versioning in C# projects the better way
+date: 2020-06-27 17:57:18
+hitcounter: QNUckq078
 photograph:
   file: D70_7184.jpg
   name: Specialita' Toscane
@@ -10,8 +13,6 @@ tags:
   - Visual Studio
 categories:
   - C#
-date: 2020-06-27 17:57:18
-subtitle: How to implement versioning in C# projects the better way
 ---
 
 Every developer has to have an idea of versioning his products. If you work with Visual Studio you have the ``Assembly Information`` in the project properties dialog, to enter it manually everytime you want to release a new version:

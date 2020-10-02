@@ -1,11 +1,12 @@
 ---
 title: 'TFS/DevOps: Delete Remote Workspace'
+subtitle: 
+date: 2020-02-28
+hitcounter: sJDU55wjd
 photograph:
   file: '18-09 Kroatien-0061.jpg'
   name: 'Untitled'
   link: 'https://500px.com/photo/303714001/-by-Kristof-Zerbe'
-date: 2020-02-28
-subtitle: 
 tags:
   - TFS/DevOps
   - Visual Studio

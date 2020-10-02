@@ -1,6 +1,8 @@
 ---
 title: 'Discoveries #1'
 subtitle:
+date: 2020-07-12 09:55:10
+hitcounter: XYqLZNtv8
 photograph:
   file: 19-05 Israel-0221.jpg
   name: Ceasarea View
@@ -11,7 +13,6 @@ tags:
   - Great Finds
 categories:
   - Discoveries
-date: 2020-07-12 09:55:10
 related:
   - Discoveries-2
 ---

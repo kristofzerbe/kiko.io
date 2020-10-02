@@ -1,6 +1,8 @@
 ---
 title: Better Input Change Event
 subtitle:
+date: 2019-11-26 16:51:17
+hitcounter: RKcaB07GD
 photograph:
   file: '19-05 Israel-0624.jpg'
   name: 'Jerusalem Seat'
@@ -9,7 +11,6 @@ tags:
   - jQuery
 categories:
   - JavaScript
-date: 2019-11-26 16:51:17
 ---
 
 Often it is important to trigger an event, after the user of your website/web app has filled out an text input. You have to do something with the given value in JavaScript.

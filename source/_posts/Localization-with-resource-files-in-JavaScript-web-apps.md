@@ -3,6 +3,8 @@ title: Localization with resource files in JavaScript web apps
 subtitle: >-
   How to work with Visual Studio resource files for localization in Single Page
   Applications
+date: 2020-06-13 15:49:10
+hitcounter: snTaPGHLs
 photograph:
   file: '19-05 Israel-0161.jpg'
   name: 'Zern'
@@ -14,7 +16,6 @@ tags:
   - GitHub
 categories:
   - JavaScript
-date: 2020-06-13 15:49:10
 ---
 
 There are plenty of editors out there to help you writing JavaScript web applications. As I'm working in my daily life with Visual Studio, it is a obvious choice for me. 

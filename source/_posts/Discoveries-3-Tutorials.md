@@ -1,6 +1,8 @@
 ---
 title: 'Discoveries #3 - Tutorials'
 subtitle:
+date: 2020-09-29 12:02:10
+hitcounter: tGTmls7SI
 photograph:
   file: 18-09 Kroatien-0112.jpg
   name: Untitled
@@ -14,7 +16,6 @@ tags:
 related:
   - Discoveries-2
   - Discoveries-1
-date: 2020-09-29 12:02:10
 ---
 Some articles I stumble upon in my daily routine of reading news and blogs are diving very deep in a certain topic, especially if they are describing the basics of techniques I use every day. 
 

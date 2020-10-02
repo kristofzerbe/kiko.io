@@ -17,8 +17,27 @@
           </div>
         </div>
         <ul id="footer-dots">
-          <li><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" target="_blank" title="SearchConsole"></a></li>
-        </ul> 
+          <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" target="_blank" title="SearchConsole"></a></li>
+          <li id="hitcounter"></li>
+        </ul>
+        <% if (is_post() || is_page()){ %>
+          <input id="hitcounter-id" type="hidden" value="<%= page.hitcounter %>" />
+        <% } else { %>
+          <input id="hitcounter-id" type="hidden" value="<%= config.hitcounter.index_id %>" />
+        <% } %>
+        <script>
+          if (location.hostname != "localhost") {
+            const id = document.getElementById("hitcounter-id").value;
+            if (id) {
+              const hitcounter = `
+                <a href="<%= config.hitcounter.url %>" target="__blank">
+                  <img alt="Hit counter" src="<%= config.hitcounter.src %>${id}?background=<%= config.hitcounter.background %>&color=<%= config.hitcounter.color %>&size=<%= config.hitcounter.size %>&digits=<%= config.hitcounter.digits %>">
+                </a>
+              `;
+              document.getElementById("hitcounter").insertAdjacentHTML('afterbegin', hitcounter);
+            }
+          }
+        </script>
   </div>
   </div>
 </footer>

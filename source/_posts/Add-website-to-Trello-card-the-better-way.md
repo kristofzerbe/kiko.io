@@ -1,5 +1,8 @@
 ---
 title: Add website to Trello card the better way
+subtitle: Avoid default share, use the Trello bookmarklet
+date: 2020-09-07 15:17:21
+hitcounter: ZjE6qHc68
 photograph:
   file: 19-05 Israel-0321.jpg
   name: Haifa Roses
@@ -9,8 +12,6 @@ categories:
 tags:
   - Trello
   - Browser
-date: 2020-09-07 15:17:21
-subtitle: Avoid default share, use the Trello bookmarklet
 ---
 I was looking for a new way to store interesting website articles for reading later, as Pocket, my favourite tool until here, gets worse and worse. As I am a big [Trello](https://trello.com) fan, I wanted to give it a chance to be Pockets successor on my smartphone, where I'm reading mostly.
 

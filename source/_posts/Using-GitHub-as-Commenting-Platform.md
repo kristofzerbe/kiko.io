@@ -1,5 +1,8 @@
 ---
 title: Using GitHub as Commenting Platform
+subtitle: Integrate Utterances' GitHub Issue Commenting to Hexo
+date: 2020-07-05 14:55:16
+hitcounter: 7bpnXwXAW
 photograph:
   file: D70_7530.jpg
   name: Untitled
@@ -12,8 +15,6 @@ tags:
   - GitHub
 categories:
   - Tools
-date: 2020-07-05 14:55:16
-subtitle: Integrate Utterances' GitHub Issue Commenting to Hexo
 related:
   - Automatic-Header-Images-in-Hexo
   - A-New-Blog-Customizing-Hexo
