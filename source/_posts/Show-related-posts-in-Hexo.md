@@ -40,7 +40,7 @@ This plugin, available at [GitHub](https://github.com/nkmk/hexo-list-related-pos
 
 ### Plugin: hexo-related-posts
 
-[Sergey Zwezdin](https://github.com/sergeyzwezdin/hexo-related-posts) made much more effort in his solution. The plugins depends on statistic methodologies like [Stemming](https://en.wikipedia.org/wiki/Stemming) and [TF/IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf), provided by the Node library [Natural](https://github.com/NaturalNode/natural). It has plenty setting, options like weighting and reserved words in order to optimize results.
+[Sergey Zwezdin](https://github.com/sergeyzwezdin/hexo-related-posts) made much more effort in his solution. The plugins depends on statistic methodologies like [Stemming](https://en.wikipedia.org/wiki/Stemming) and [TF/IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf), provided by the Node library [Natural](https://github.com/NaturalNode/natural). It has plenty setting options like weighting and reserved words in order to optimize results.
 
 **Advantages**:
 
@@ -94,7 +94,7 @@ In your ``article.ejs`` add a new partial called **related** to the place where 
 
 In the folder ``themes/landscape/layout/_partial/post``, where all partials are stored which belongs to posts, create the new partial file:
 
-```html related.ejs "remove the comments, because they doesn't belong to EJS"
+```html related.ejs
 <% if (post.related && post.related.length){ %>
   <div class="article-related">
     <h2>Related</h2>
@@ -126,6 +126,6 @@ In the folder ``themes/landscape/layout/_partial/post``, where all partials are 
 
 In this partial we loop through the Frontmatter list of related posts, determine the post by the given slug and render an archive panel for each post.
 
-In the ``site.posts`` list should always contain a slug once, therefore getting an array of posts and looping is just a precuation.
+The list ``site.posts`` should always contain a slug just once, therefore getting an array of posts and looping is just a precuation.
 
 What you are getting you can see below...
