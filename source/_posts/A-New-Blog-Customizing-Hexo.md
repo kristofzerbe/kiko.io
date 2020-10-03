@@ -17,6 +17,7 @@ tags:
 categories:
   - Tools
 related:
+  - Automatic-Header-Images-in-Hexo
   - A-New-Blog-VS-Code-Hexo-and-GitHub-Pages
   - A-New-Blog-Blogging-and-Synching-en-route
 ---

@@ -10,7 +10,10 @@ photograph:
 tags:
   - jQuery
 categories:
-  - JavaScript
+  - JavaScript#
+related:
+  - Device-Class-Detection-in-JavaScript
+  - Change-CSS-class-when-element-scrolls-into-viewport
 ---
 
 Often it is important to trigger an event, after the user of your website/web app has filled out an text input. You have to do something with the given value in JavaScript.

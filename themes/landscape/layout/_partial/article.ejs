@@ -26,18 +26,18 @@
   
 <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <%- partial('post/date', {class_name: 'article-date', date_format: 'DD MMM YYYY'}) %>
+    <%- partial('post/date', { class_name: 'article-date', date_format: 'DD MMM YYYY' }) %>
     <%- partial('post/category', { class_name: 'article-category' }) %>
   </div>
   <div class="article-inner">
     <% if (index){ %>
-      <%- partial('post/photograph', {class_name: 'article-photo'}) %>
+      <%- partial('post/photograph', { class_name: 'article-photo' }) %>
     <% } %>
     <% if (post.link || post.title){ %>
       <header class="article-header">
-        <%- partial('post/series', {class_name: 'article-series'}) %>
-        <%- partial('post/title', {class_name: 'article-title'}) %>
-        <%- partial('post/subtitle', {class_name: 'article-subtitle'}) %>
+        <%- partial('post/series', { class_name: 'article-series' }) %>
+        <%- partial('post/title', { class_name: 'article-title', show_link: false }) %>
+        <%- partial('post/subtitle', { class_name: 'article-subtitle' }) %>
       </header>
     <% } %>
     <div class="article-entry" itemprop="articleBody">
@@ -60,19 +60,8 @@
     </footer>
   </div>
   <% if (!index){ %>
-    <% if (post.related){ %>
-      <div class="xxx">
-        <%- partial('post/related') %>
-      </div>
-    <% } %>
-    <% if (!index && post.comments){ %>
-      <div id="comment-placeholder"></div>
-      <script>
-        window.addEventListener('load', function () {
-          insertUtterancesCommentBlock();
-        })    
-      </script>
-    <% } %>
+    <%- partial('post/related') %>
+    <%- partial('post/comments') %>
     <%- partial('post/nav') %>
   <% } %>
 </article>

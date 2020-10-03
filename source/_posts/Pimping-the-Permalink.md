@@ -17,6 +17,7 @@ categories:
   - JavaScript
 related:
   - Horizontal-navigation-menu-above-an-image
+  - A-New-Blog-Customizing-Hexo
   - A-New-Blog-VS-Code-Hexo-and-GitHub-Pages
 ---
 
@@ -37,7 +38,7 @@ As I run my blog with [Hexo](https://hexo.io), I deal with ``EJS`` files. To sho
 
 The partial file looked like this in this step:
 
-```js
+```html
 <div class="<%= class_name %>"">
     <a id="article-permalink" href="<%- post.permalink %>"><%- post.permalink %></a>
 </div>

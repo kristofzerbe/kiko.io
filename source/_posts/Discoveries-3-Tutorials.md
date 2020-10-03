@@ -16,6 +16,7 @@ tags:
 related:
   - Discoveries-2
   - Discoveries-1
+  - Dopamine-How-Software-should-be
 ---
 Some articles I stumble upon in my daily routine of reading news and blogs are diving very deep in a certain topic, especially if they are describing the basics of techniques I use every day. 
 

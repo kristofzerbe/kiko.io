@@ -11,6 +11,9 @@ tags:
   - Great Finds
 categories:
   - Tools
+related:
+  - Discoveries-2
+  - Discoveries-1
 ---
 
 Not very often, when I'm looking for a new tool to replace some annoying or outdated piece of software, I have to blog about it ... but from time to time, I'm discovering pearls, worth to lose a word about.

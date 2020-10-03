@@ -17,6 +17,7 @@ categories:
 related:
   - Hexo-and-the-Dark-Mode-revised
   - A-New-Blog-Customizing-Hexo
+  - A-New-Blog-VS-Code-Hexo-and-GitHub-Pages
 ---
 
 Every article in this blog has an individual header image, to bring a little bit color into it. In this post I will show you how I deal with the images in using and automatic provisioning.

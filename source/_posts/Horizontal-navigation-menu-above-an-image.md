@@ -16,6 +16,7 @@ categories:
   - UI-Design
 related:
   - Automatic-Header-Images-in-Hexo
+  - A-New-Blog-Customizing-Hexo
   - A-New-Blog-VS-Code-Hexo-and-GitHub-Pages
 ---
 

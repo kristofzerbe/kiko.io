@@ -17,6 +17,7 @@ tags:
 categories:
   - Tools
 related:
+  - Using-GitHub-as-Commenting-Platform
   - A-New-Blog-Customizing-Hexo
   - A-New-Blog-VS-Code-Hexo-and-GitHub-Pages
 ---

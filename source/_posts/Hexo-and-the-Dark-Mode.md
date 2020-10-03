@@ -19,6 +19,7 @@ categories:
 related:
   - Hexo-and-the-Dark-Mode-revised
   - A-New-Blog-Customizing-Hexo
+  - A-New-Blog-VS-Code-Hexo-and-GitHub-Pages
 ---
 
 Due to the fact, that nowadays everybody is talking about Dark Modes for Browsers and Operating Systems, in order to save battery or for easier reading (uhh, really?), I decided my blog should support that.
