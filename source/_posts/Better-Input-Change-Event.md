@@ -10,7 +10,7 @@ photograph:
 tags:
   - jQuery
 categories:
-  - JavaScript#
+  - JavaScript
 related:
   - Device-Class-Detection-in-JavaScript
   - Change-CSS-class-when-element-scrolls-into-viewport

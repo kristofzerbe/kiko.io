@@ -12,7 +12,8 @@ part: 10
 tags:
   - CSS
   - Stylus
-  - JavaScript
+  - Hexo
+  - Share
 categories:
   - JavaScript
 related:

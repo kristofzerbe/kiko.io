@@ -10,7 +10,7 @@ photograph:
 categories:
   - JavaScript
 tags:
-  - JavaScript
+  - MediaQuery
   - CSS
   - Browser
 related:
