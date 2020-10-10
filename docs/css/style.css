@@ -1586,7 +1586,7 @@ a.article-title:hover {
   }
 }
 .archive-list-navigation {
-  padding: 20px 20px 20px 0;
+  padding: 20px 20px 5px 0;
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -1728,6 +1728,15 @@ a.article-title:hover {
 }
 [data-theme="dark"] .archive-list-navigation .archive-list-wrapper ul li span {
   background-color: #222;
+}
+.archive-list-wrapper.archive-list-months ul {
+  display: block;
+  overflow: auto;
+  max-height: 190px;
+  padding-left: 1px;
+}
+.archive-list-wrapper.archive-list-months ul::-webkit-scrollbar {
+  width: 0px;
 }
 .archive-article {
   -webkit-column-break-inside: avoid;

@@ -2,7 +2,7 @@
   Discovery Tag
 
   Syntax
-  {% discovery [title] [author] [url] [imgFolder] [imgTitle] [imgExt] %}
+  {% discovery [title] [author] [url] [imgFolder] [imgFile] %}
     content
   {% enddiscovery %}
 
@@ -10,16 +10,15 @@
 
 hexo.extend.tag.register("discovery", function(args, content){
 
-  var title, author, url, imgFolder, imgTitle, imgSrc, imgExt;
+  var title, author, url, imgFolder, imgFile, imgSrc;
 
   title = args[0];
   author = args[1];
   url = args[2];
   imgFolder = args[3];
-  imgTitle = args[4];
-  imgExt = args[5];
+  imgFile = args[4];
 
-  imgSrc = imgFolder + "/" + imgTitle.toLowerCase().split(" ").join("-") + '.' + imgExt;
+  imgSrc = imgFolder + "/" + imgFile;
 
   content = hexo.render.renderSync({ text: content, engine: 'markdown' });
 
@@ -31,7 +30,7 @@ hexo.extend.tag.register("discovery", function(args, content){
     <small>by ${author}&nbsp;:&nbsp;<a href="${url}" target="_blank" rel="noopener">${url}</a></small>
     ${content}
     <a style="display:block; margin: 10px 0 30px;" href="${url}" target="_blank" rel="noopener">
-      <img src="${imgSrc}" alt="${imgTitle}" />
+      <img src="${imgSrc}" alt="${title}" />
     </a>
   `;
 
