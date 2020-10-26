@@ -17,11 +17,11 @@ related:
   - Automatic-Header-Images-in-Hexo
 ---
 
-In all times photography was a process: First you shoot you images, then you process them and in the third step you publish them elsewhere.
+In all times photography was a process: First you shoot you images, then you edit them and in the third step you publish them elsewhere.
 
 Today **Adobe Lightroom** is a de-facto standard in photo processing, especially when you shoot RAW images. And I mean [Lightroom Classic](https://www.adobe.com/de/products/photoshop-lightroom-classic.html) and not the new web/smartphone based software, which doesn't come even close to the desktop application yet.
 
-I use Lightroom for all purposes after I shot my images: editing, cataloguing, managing and ... publishing. On püpublishing Lightroom offers you two approaches: *Export* and *Publish*. While *Export* is mainly for creating JPG copies of edited RAW images, *Publish* goes one step further and gives you the ability to do "something" with your exported JPG's, for example upload them on Flickr, Instagram, 500px or to your own web server via FTP. Major difference to *Export* is, that *Publish* keeps your images in sync. Everytime you change the source images, the defined publish services recognizes and offer you to re-publish your image.
+I use Lightroom for all purposes after I shot my images: editing, cataloguing, managing and ... publishing. On publishing Lightroom offers you two approaches: *Export* and *Publish*. While *Export* is mainly for creating JPG copies of edited RAW images, *Publish* goes one step further and gives you the ability to do "something" with your exported JPG's, for example upload them on Flickr, Instagram, 500px or to your own web server via FTP. Major difference to *Export* is, that *Publish* keeps your images in sync. Everytime you change the source images, the defined publish services recognizes and offer you to re-publish your image.
 
 ![Lightroom Publish](Folder-based-publishing-in-Lightroom/lr-re-publish.png)
 
@@ -31,7 +31,9 @@ My workflow for quite some time is to publish my photos on the hard drive, in a 
 
 <!-- more -->
 
-Important on this approach is, to have a coherent output folder structure in order find a particular image afterwards. I store my RAW images on an external hard drive in a structure like this:
+Important on this approach is, to have a coherent output folder structure in order find a particular image afterwards.
+
+I store my RAW images on an external hard drive in a structure like this:
 
 ```txt
 <Drive:\>
@@ -40,7 +42,7 @@ Important on this approach is, to have a coherent output folder structure in ord
           ->  <Year>-<Month> <Eventname>
 ```
 
-First step after shooting, is to copy all RAW files from the SD Card into a new subfolder of the current year. From there I import them into my Lightroom catalog.
+First step after shooting is to copy all RAW files from the SD Card into a new subfolder of the current year. From there I import them into my Lightroom catalog.
 
 After sorting, rejecting, editing and flagging in Lightroom, I have to "export" the 4- and 5-star rated images into the cloud. There I have a slightly different structure, with a different root folder name and without the year:
 
