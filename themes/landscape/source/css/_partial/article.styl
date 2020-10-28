@@ -139,8 +139,8 @@
   h1, h2, h3, h4, h5, h6
     line-height: line-height-title
     margin: line-height-title 0
-  :not(.article-more-link)
     a
+    :not(.button)
       color: color-link
       text-decoration: none
       /[data-theme="dark"] &
@@ -161,8 +161,11 @@
     height: auto
     display: block
     margin: auto
-    /[data-theme="dark"] &
+    /[data-theme="dark"] &:not(.image-compare)
       filter: brightness(85%)
+  .image-compare.image-modified
+    max-width: none
+    height: 100%
   iframe
     border: none
   table
@@ -230,24 +233,33 @@
       height: 100%
       margin-top: 0
 
-.article-more-link 
+.article-more-link,
+.download-link
   margin: 0 !important
-  a
+  a.button
     display: inline-block
+    text-align: center
     font-size: 0.9em;
-    line-height: 1em
     position: relative
     text-decoration: none
-    padding: 12px 16px
+    padding: 10px 15px
+    transition: all .2s ease-in
     background-color: color-button
     color: color-button-link
     /[data-theme="dark"] &
       background-color: dark-color-button
       color: dark-color-button-link
     &:hover    
-      color: color-link
-      /[data-theme="dark"] &
-        color: dark-color-link
+      background-color: dark-color-button
+      color: dark-color-link
+
+.download-link
+  margin: 20px 0 !important
+  text-align: center
+  @media mq-mobile
+    a
+      strong 
+        display: inline-block
 
 .article-related,
 .article-comments

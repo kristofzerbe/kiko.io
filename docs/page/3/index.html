@@ -31,8 +31,12 @@
     <link rel="icon" href="/favicon.ico">
   
 
-  <link rel="stylesheet" href="/css/dist/bundle.min.css">  
+  <link rel="stylesheet" href="/css/dist/bundle.min.css">
+  <link rel="stylesheet" href="/css/dist/image-compare-viewer.min.css">  
   <link rel="stylesheet" href="/css/style.css">  
+
+  <script src="/js/tools.js"></script>
+  <script src="/js/dist/image-compare-viewer.min.js"></script>
 
   <script>
     var hitcountConfig = {
@@ -153,6 +157,74 @@
   
     
   
+<article id="post-Meaningful-automatic-versioning-with-T4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/categories/C/Meaningful-automatic-versioning-with-T4/" class="article-date">
+  <time datetime="2020-06-27T15:57:18.000Z" itemprop="datePublished">27 Jun 2020</time>
+</a>
+    
+  <div class="article-category category-c#">
+    <a class="article-category-link" href="/categories/C/">C#</a> 
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+    <a href="/categories/C/Meaningful-automatic-versioning-with-T4/">
+        <img class="article-photo" src="/photos/tablet/D70_7184.jpg" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/categories/C/Meaningful-automatic-versioning-with-T4/">Meaningful automatic versioning with T4</a>
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle" itemprop="name">
+        How to implement versioning in C# projects the better way
+    </h2>
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Every developer has to have an idea of versioning his products. If you work with Visual Studio you have the <code>Assembly Information</code> in the project properties dialog, to enter it manually everytime you want to release a new version:</p>
+<p><img src="/categories/C/Meaningful-automatic-versioning-with-T4/AssemblyInformationDialog.png" alt="Assembly Information Dialog"></p>
+<p>The four fields are: MAJOR, MINOR, BUILD, REVISION.</p>
+<p>But seriously … who does that? I guess 99% of all C# developers are entering the <code>AssemblyInfo.cs</code> and enter the famous 2 asterisks into the version declaration of BUILD and REVISION, to let Visual Studio do the incrementation job:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">assembly: AssemblyVersion(<span class="meta-string">"1.0.*.*"</span>)</span>]</span><br><span class="line">[<span class="meta">assembly: AssemblyFileVersion(<span class="meta-string">"1.0.*.*"</span>)</span>]</span><br></pre></td></tr></table></figure>
+
+<p>But this is not the end of the possibilities … Let’s do it more meaningful, with some goodies and still automatic…</p>
+        
+          <p class="article-more-link">
+            <a class="button" href="/categories/C/Meaningful-automatic-versioning-with-T4/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/T4/">T4</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Versioning/">Versioning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>  
+  </div>
+
+      
+    </footer>
+  </div>
+  
+</article>
+  
+    
+  
 <article id="post-Automatic-Header-Images-in-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/categories/Tools/Automatic-Header-Images-in-Hexo/" class="article-date">
@@ -201,7 +273,7 @@
 <p>For serving these pictures I use a static folder, as described in <a href="/categories/Tools/A-New-Blog-Customizing-Hexo/">A New Blog: Customizing Hexo</a>. The hard work is done by the plugin <a href="https://github.com/niahoo/hexo-generator-copy" target="_blank" rel="noopener">Hexo Generator Copy</a>, which copies the static files into the <code>public_dir</code> while generating.</p>
         
           <p class="article-more-link">
-            <a href="/categories/Tools/Automatic-Header-Images-in-Hexo/#more">Read More</a>
+            <a class="button" href="/categories/Tools/Automatic-Header-Images-in-Hexo/#more">Read More</a>
           </p>
         
       
@@ -264,7 +336,7 @@
 <p>One of the most time saving tools in VS is the plugin <a href="https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager" target="_blank" rel="noopener">ResXManager</a>, which is an awesome assistant on managing the translations for a Desktop- or ASP.NET-App, which uses XML-based RESX files.</p>
         
           <p class="article-more-link">
-            <a href="/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/#more">Read More</a>
+            <a class="button" href="/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/#more">Read More</a>
           </p>
         
       
@@ -322,7 +394,7 @@
         <p>If you are working with freelance developers and Azure DevOps/TFS with TFVC (Team Foundation Version Control) in your company, maybe this will look familiar to you: You hire a new freelancer and you want to reuse the hardware, including the complete software setup, to bring him/her to work as fast and straightforward as possible. You set up a new Azure Devops account with all necessary permissions and you think you’re done. No you are not…</p>
         
           <p class="article-more-link">
-            <a href="/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/#more">Read More</a>
+            <a class="button" href="/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/#more">Read More</a>
           </p>
         
       
@@ -381,7 +453,7 @@
 <p>The intended event for this is <code>change</code>, which will be triggered, when the user has ended changing by leaving the input with his cursor, mostly by using the TAB key. This works at some degree, if there is a physical keyboard, but not really on mobile devices … and for me is leaving the field often too late to start the upcoming event.</p>
         
           <p class="article-more-link">
-            <a href="/categories/JavaScript/Better-Input-Change-Event/#more">Read More</a>
+            <a class="button" href="/categories/JavaScript/Better-Input-Change-Event/#more">Read More</a>
           </p>
         
       
@@ -449,7 +521,7 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: white;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-attr">[data-theme="dark"]</span> <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: black;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
           <p class="article-more-link">
-            <a href="/categories/Tools/Hexo-and-the-Dark-Mode-revised/#more">Read More</a>
+            <a class="button" href="/categories/Tools/Hexo-and-the-Dark-Mode-revised/#more">Read More</a>
           </p>
         
       
@@ -516,7 +588,7 @@
 <p><img src="/categories/Tools/Hexo-and-the-Dark-Mode/screen-recording-1.gif" alt="Switching Dark Mode in Windows 10"></p>
         
           <p class="article-more-link">
-            <a href="/categories/Tools/Hexo-and-the-Dark-Mode/#more">Read More</a>
+            <a class="button" href="/categories/Tools/Hexo-and-the-Dark-Mode/#more">Read More</a>
           </p>
         
       
@@ -583,7 +655,7 @@
 <p>The blog is synced via Dropbox, but hosted on GitHub Pages, so on every device I need the  publishing functions of Git too.</p>
         
           <p class="article-more-link">
-            <a href="/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/#more">Read More</a>
+            <a class="button" href="/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/#more">Read More</a>
           </p>
         
       
@@ -592,73 +664,6 @@
       
   <div class="article-tags">
     <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/">VS Code</a></li></ul>  
-  </div>
-
-      
-    </footer>
-  </div>
-  
-</article>
-  
-    
-  
-<article id="post-A-New-Blog-Customizing-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/categories/Tools/A-New-Blog-Customizing-Hexo/" class="article-date">
-  <time datetime="2019-09-24T22:00:00.000Z" itemprop="datePublished">25 Sep 2019</time>
-</a>
-    
-  <div class="article-category category-tools">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-      
-    <a href="/categories/Tools/A-New-Blog-Customizing-Hexo/">
-        <img class="article-photo" src="/photos/tablet/19-07 Schottland-0198.jpg" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-    <p class="article-series" itemprop="name">
-        A New Blog, Part 2
-    </p>
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/categories/Tools/A-New-Blog-Customizing-Hexo/">A New Blog: Customizing Hexo</a>
-    </h1>
-  
-
-        
-    <h2 class="article-subtitle" itemprop="name">
-        Part Two of having fun with Hexo and GitHub Pages
-    </h2>
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Hexo is a great tool to get quick results (see <a href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/">Part One of this series</a>), when you decide to have a blog and its defaults are practical, but it’s power lies in the possiblities of customization via plugins. On the <a href="https://hexo.io/plugins/index.html" target="_blank" rel="noopener">official plugin page</a>, there are actually 302 plugins listed, but there are many more and no wish will be unsatisfied.</p>
-<p>I will show you which of these I found worth to work with…</p>
-        
-          <p class="article-more-link">
-            <a href="/categories/Tools/A-New-Blog-Customizing-Hexo/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/">VS Code</a></li></ul>  
   </div>
 
       
@@ -704,6 +709,10 @@
       <ul>
         
           <li>
+            <a href="/categories/Photo-Editing/Israeli-Presets-for-Lightroom/">Israeli Presets for Lightroom</a>
+          </li>
+        
+          <li>
             <a href="/categories/Photo-Editing/Folder-based-publishing-in-Lightroom/">Folder based publishing in Lightroom</a>
           </li>
         
@@ -717,10 +726,6 @@
         
           <li>
             <a href="/categories/Tools/Show-related-posts-in-Hexo/">Show related posts in Hexo</a>
-          </li>
-        
-          <li>
-            <a href="/categories/Discoveries/Discoveries-3-Tutorials/">Discoveries #3 - Tutorials</a>
           </li>
         
       </ul>

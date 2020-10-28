@@ -122,7 +122,7 @@
 
   // Caption & Image Links
   $('.article-entry').each(function(i){
-    $(this).find('img').each(function(){
+    $(this).find('img:not(.image-compare)').each(function(){
       if ($(this).parent().is('a')) return;
       if ($(this).parent().hasClass('luminous')) return;
 

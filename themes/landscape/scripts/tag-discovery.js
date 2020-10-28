@@ -27,7 +27,7 @@ hexo.extend.tag.register("discovery", function(args, content){
     <h2 style="margin-bottom: 10px;">
       ${title}
     </h2>
-    <small>by ${author}&nbsp;:&nbsp;<a href="${url}" target="_blank" rel="noopener">${url}</a></small>
+    <small>by ${author}&nbsp;<br><a href="${url}" target="_blank" rel="noopener">${url}</a></small>
     ${content}
     <a style="display:block; margin: 10px 0 30px;" href="${url}" target="_blank" rel="noopener">
       <img src="${imgSrc}" alt="${title}" />

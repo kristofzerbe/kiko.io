@@ -44,6 +44,14 @@ module.exports = function(grunt){
           'TTF/*'
         ],
         dest: 'themes/landscape/source/css/fonts/sourcecodepro'
+      },
+      imagecompare_js: {
+        src: 'themes/landscape/assets/image-compare-viewer.min.js',
+        dest: 'themes/landscape/source/js/dist/image-compare-viewer.min.js'
+      },
+      imagecompare_css: {
+        src: 'themes/landscape/assets/image-compare-viewer.min.css',
+        dest: 'themes/landscape/source/css/dist/image-compare-viewer.min.css'
       }
     },
     _clean: {
