@@ -15,6 +15,7 @@ tags:
   - Plugin
 related:
   - Automatic-Header-Images-in-Hexo
+  - Israeli-Presets-for-Lightroom
 ---
 
 In all times photography was a process: First you shoot you images, then you edit them and in the third step you publish them elsewhere.

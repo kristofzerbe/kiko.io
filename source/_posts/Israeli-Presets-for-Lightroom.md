@@ -14,7 +14,6 @@ tags:
   - Presets
 related:
   - Folder-based-publishing-in-Lightroom
-  - Israeli-Presets-for-Lightroom
 ---
 
 I'm a travel and event photo enthusiast, which means I'm shooting a lot of photographs on vacation or at special events only a few times a year. After I'm back home and start the image processing, I develop a particular look for my images of the past vacation or event. This has a lot to do with my mood and is very intuitive. Not all images are the same in terms of composition and light and so I create usually 3 or 4 different presets each time during image processing.
