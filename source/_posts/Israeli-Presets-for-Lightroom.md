@@ -4,15 +4,16 @@ subtitle:
 date: 2020-10-27 15:07:20
 hitcountId: zHxUEZeSw
 photograph:
-  file: DSC_2443.jpg
-  name: Winch
-  link: 'https://500px.com/photo/80797993'
+  file: 19-05 Israel-0498.jpg
+  name: Dead Sea Colors
+  link: 'https://500px.com/photo/1001751158/Dead-Sea-Colors-by-Kristof-Zerbe'
 categories:
   - Photo-Editing
 tags:
   - Lightroom
   - Presets
 related:
+  - Indian-Presets-for-Lightroom
   - Folder-based-publishing-in-Lightroom
 ---
 
