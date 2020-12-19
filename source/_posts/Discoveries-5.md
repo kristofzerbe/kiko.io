@@ -17,7 +17,7 @@ related:
   - Discoveries-4
   - Discoveries-3-Tutorials
 ---
-In this episode of **Discoveries** everything is (almost) about images and the web. There are so many pitfalls to do it wrong, but many more possibilities to do it right, especially with these resources I found in the last few weeks.
+In this episode of the **Discoveries** (almost) everything is about images and the web. There are so many pitfalls to do it wrong, but many more possibilities to do it right, especially with these resources I found in the last few weeks.
 
 * ASP.NET Core Image Resizing Middleware
 * Best way to lazy load images for maximum performance
@@ -38,7 +38,7 @@ In this episode of **Discoveries** everything is (almost) about images and the w
   Delivering images on the web is difficult due to different devices and bandwidths. Adrian shows how to achieve a maximum of performance on lazy loading images via native JavaScript.
 {% enddiscovery %}
 
-{% discovery "image orientation on the web" "Michael Scharnagl" https://justmarkup.com/articles/2019-10-21-image-orientation/ Discoveries-5 IMAGE.png %}
+{% discovery "image orientation on the web" "Michael Scharnagl" https://justmarkup.com/articles/2019-10-21-image-orientation/ Discoveries-5 image-orientation-on-the-web.png %}
   Automatic uploading and viewing images fails sometimes on portrait shots, because of misintrepretated orientation information by the different browsers. Michael adresses this problem with a Node.JS solution.
 {% enddiscovery %}
 
