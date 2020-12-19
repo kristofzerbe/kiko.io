@@ -19,14 +19,16 @@ related:
 ---
 In this episode of the **Discoveries** (almost) everything is about images and the web. There are so many pitfalls to do it wrong, but many more possibilities to do it right, especially with these resources I found in the last few weeks.
 
-* ASP.NET Core Image Resizing Middleware
-* Best way to lazy load images for maximum performance
-* image orientation on the web
-* cosha - Colorful shadows for your images
-* parax-bg - Parallax Backgrounds
-* parax - Parallax Elements
-* Luminous Lightbox
-* Tiny-Swiper - Image Carousel
+{% anchorlist 
+  "ASP.NET Core Image Resizing Middleware|aspnet-core-image-resizing-middleware" 
+  "Best way to lazy load images for maximum performance|best-way-lazy-load-images" 
+  "image orientation on the web|image-orientation-on-the-web" 
+  "cosha - Colorful shadows for your images|cosha" 
+  "parax-bg - Parallax Backgrounds|parax-bg" 
+  "parax - Parallax Elements|parax" 
+  "Luminous Lightbox|luminous" 
+  "Tiny-Swiper - Image Carousel|tiny-swiper" 
+%}
 
 <!-- more -->
 
@@ -34,7 +36,7 @@ In this episode of the **Discoveries** (almost) everything is about images and t
   Jeremy shows in his blog post the possibilities of dealing with images in ASP.NET Core in terms of format, orientation and quality. A must read for every .NET developer.
 {% enddiscovery %}
 
-{% discovery "Best way to lazy load images for maximum performance" "ADRIAN BECE" https://blog.prototyp.digital/best-way-to-lazy-load-images-for-maximum-performance/ Discoveries-5 best-way-lazy-load-images.png %}
+{% discovery "Best way to lazy load images for maximum performance" "Adrian Bece" https://blog.prototyp.digital/best-way-to-lazy-load-images-for-maximum-performance/ Discoveries-5 best-way-lazy-load-images.png %}
   Delivering images on the web is difficult due to different devices and bandwidths. Adrian shows how to achieve a maximum of performance on lazy loading images via native JavaScript.
 {% enddiscovery %}
 

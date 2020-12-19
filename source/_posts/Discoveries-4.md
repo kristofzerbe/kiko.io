@@ -20,15 +20,16 @@ related:
 ---
 It is so amazing how many cool stuff developers around the world are producing these days. Or they do what they always do, but I have more time to read about their smart ideas and solutions. This month I have 8 pearls for you:
 
-* waitForElementTransition()
-* Using Flexbox and text ellipsis together
-* Using Trello as a Super Simple CMS
-* Memorize Scroll Position Across Page Loads
-* A free guide to HTML5 &lt;head&gt; elements
-* BVSelect - Vanilla JS
-* A clock that represents the time as hex color values
-* Animate.css - Just-add-water CSS animations
-
+{% anchorlist 
+  "waitForElementTransition()|waitForElementTransition" 
+  "Using Flexbox and text ellipsis together|flexbox-and-ellipsis" 
+  "Using Trello as a Super Simple CMS|using-trello-as-cms" 
+  "Memorize Scroll Position Across Page Loads|memorize-scroll-position" 
+  "A free guide to HTML5 &lt;head&gt; elements|head-dev" 
+  "BVSelect - Vanilla JS|bv-select" 
+  "A clock that represents the time as hex color values|hex-time" 
+  "Animate.css - Just-add-water CSS animations|animate-css"
+%}
 <!-- more -->
 
 {% discovery "waitForElementTransition()" "Mark Kennedy" https://github.com/mkay581/wait-for-element-transition Discoveries-4 waitForElementTransition.png %}

@@ -19,11 +19,12 @@ hexo.extend.tag.register("discovery", function(args, content){
   imgFile = args[4];
 
   imgSrc = imgFolder + "/" + imgFile;
+  anchorId = imgFile.split('.')[0];
 
   content = hexo.render.renderSync({ text: content, engine: 'markdown' });
 
   var element = `
-    <hr/>
+    <hr id="${anchorId}"/>
     <h2 style="margin-bottom: 10px;">
       ${title}
     </h2>
