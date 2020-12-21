@@ -145,23 +145,22 @@
   h1, h2, h3, h4, h5, h6
     line-height: line-height-title
     margin: line-height-title 0
-    a
-    :not(.button)
-      color: color-link
-      text-decoration: none
+  a:not(.button)
+    color: color-link
+    text-decoration: none
+    /[data-theme="dark"] &
+      color: dark-color-link
+      border-bottom: dark-color-link-border 1px solid
+    &:hover
+      border-bottom: color-link 1px solid
       /[data-theme="dark"] &
-        color: dark-color-link
-        border-bottom: dark-color-link-border 1px solid
-      &:hover
-        border-bottom: color-link 1px solid
-        /[data-theme="dark"] &
-          border-bottom: dark-color-link 1px solid
+        border-bottom: dark-color-link 1px solid
   ul, ol, dl
     margin-top: line-height
     margin-bottom: line-height
     li
       line-height: line-height
-      margin-bottom: 10px
+      margin-bottom: 6px
   img, video
     max-width: 100%
     height: auto
