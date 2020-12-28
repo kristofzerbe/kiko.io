@@ -10,7 +10,7 @@
   var header = {
     height: 0,
     top: 0,
-    offset: 60,
+    offset: 55,
     photoLinkOpacity: 0,
     titleFontSize: 0
   };
