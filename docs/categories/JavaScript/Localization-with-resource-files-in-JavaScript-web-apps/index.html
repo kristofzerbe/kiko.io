@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel=manifest href=/site.webmanifest><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>kiko.io | Localization with resource files in JavaScript web apps</title>
+  <meta name="title" content="kiko.io - Memorable Tech Stuff">
+  <meta name="description" content="Blog about Development &amp; Photography">
+  <!-- Schema.org for Google -->
+  <meta itemprop="name" content="kiko.io - Memorable Tech Stuff">
+  <meta itemprop="description" content="Blog about Development &amp; Photography">
+  <meta itemprop="image" content="https://kiko.io/images/hero.jpg"> 
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="kiko.io - Memorable Tech Stuff">
+  <meta property="og:url" content="https://kiko.io">
+  <meta property="og:description" content="Blog about Development &amp; Photography">
+  <meta property="og:image" content="https://kiko.io/images/hero.jpg">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://kiko.io">
+  <meta property="twitter:title" content="kiko.io - Memorable Tech Stuff">
+  <meta property="twitter:description" content="Blog about Development &amp; Photography">
+  <meta property="twitter:image" content="https://kiko.io/images/hero.jpg">
+
+  <link rel="preconnect" href="https://hitcount.io">
+
+  <link rel="preload" href="/css/fonts/cookie/cookie-v12-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-lightitalic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-semibold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-semibolditalic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-bolditalic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-extrabold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-extrabolditalic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Regular.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-It.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Bold.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link rel="stylesheet" href="/css/dist/bundle.min.css">
+  <link rel="stylesheet" href="/css/dist/image-compare-viewer.min.css">  
+  <link rel="stylesheet" href="/css/style.css">  
+
+  <script src="/js/tools.js"></script>
+  <script src="/js/dist/image-compare-viewer.min.js"></script>
+
+  <script>
+    var hitcountConfig = {
+      id: 'snTaPGHLs',
+      webUrl: 'https://hitcount.io',
+      apiUrl: 'https://hitcount.io/api/{id}',
+      size: '12',
+      background: {
+        light: '555',
+        dark: '777'
+      },
+      color: {
+        light: '000',
+        dark: '666'
+      },
+      digits: '5'
+    }
+
+  </script>
+
+<link rel="alternate" href="/atom.xml" title="kiko.io" type="application/atom+xml">
+</head>
+</html>
+<body id="body">  
+  <div id="container" class="container">
+    <div class="inner-container">
+      <div id="wrap">
+        <header id="header">
+  <a href="#" id="header-photo-expand" class="fullsizable"></a>
+  <a href="#" id="header-photo-link"></a>
+  <div id="banner">
+    <nav id="header-nav" role="navigation">
+      <ul class="menu">
+        
+          <li class="menu-item" id="nav-home-link" >
+            <a 
+              class="nav-icon sub-nav-link"
+              href="/">
+                <span>Home</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-about-link" >
+            <a 
+              class="nav-icon sub-nav-link"
+              href="/about">
+                <span>About</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-archives-link" >
+            <a 
+              class="nav-icon sub-nav-link"
+              href="/archives">
+                <span>Archives</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-series-link" >
+            <a 
+              class="nav-icon sub-nav-link"
+              href="/series">
+                <span>series</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-rss-link" >
+            <a 
+              class="nav-icon sub-nav-link"
+              href="/atom.xml">
+                <span>RSS Feed</span>
+              </a>
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+        <a href="/" id="logo">
+          <h1 id="title-wrap">
+            <span style="opacity:0.2;">kiko.io</span>
+          </h1>
+        </a>
+      
+        <h2 id="subtitle">
+          Memorable Tech Stuff
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      
+      
+
+      <nav id="sub-nav">
+        
+        <a id="sub-nav-search" class="sub-nav-icon" title="Search"></a>
+        <div id="sub-nav-theme">          
+          <input type="checkbox" id="theme-switch">
+          <label for="theme-switch"></label>
+        </div>
+      </nav>
+
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kiko.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+<script>
+  if (location.pathname === "/") {
+    document.getElementById("nav-home-link").style.display = 'none';
+  }
+</script>
+        <div id="content" class="outer">
+          <main>
+<style>
+  #banner {
+    background-size: cover;
+  }
+  @media screen and (max-width: 479px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/19-05 Israel-0161.jpg"); }
+  }
+  @media screen and (min-width: 480px) and (max-width: 767px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/19-05 Israel-0161.jpg"); }
+  }
+  @media screen and (min-width: 768px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/19-05 Israel-0161.jpg"); }    
+  }
+</style>
+<script>
+  var body = document.getElementById("body");
+  body.classList.add("article-view");
+  var photoExpand = document.getElementById("header-photo-expand");
+  photoExpand.href = "/photos/normal/19-05 Israel-0161.jpg";
+  var photoLink = document.getElementById("header-photo-link");
+  photoLink.href = "https://500px.com/photo/1005493426/Zern-by-Kristof-Zerbe";
+  photoLink.innerHTML = "see <strong>Zern</strong> at 500px";
+</script>
+
+  
+<article id="post-Localization-with-resource-files-in-JavaScript-web-apps" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/" class="article-date">
+  <time datetime="2020-06-13T13:49:10.000Z" itemprop="datePublished">13 Jun 2020</time>
+</a>
+    
+  <div class="article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+
+
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Localization with resource files in JavaScript web apps
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle" itemprop="name">
+        How to work with Visual Studio resource files for localization in Single Page Applications
+    </h2>
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>There are plenty of editors out there to help you writing JavaScript web applications. As I’m working in my daily life with Visual Studio, it is a obvious choice for me. </p>
+<p>One of the most time saving tools in VS is the plugin <a href="https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager" target="_blank" rel="noopener">ResXManager</a>, which is an awesome assistant on managing the translations for a Desktop- or ASP.NET-App, which uses XML-based RESX files.</p>
+<a id="more"></a>
+
+<p>Mostly very localization is based on key/value pairs, defined in separate files for every language provided.</p>
+<p>Implementing several languages in pure JavaScript apps is a little more difficult, because it makes no sense to deal with big XML files in JS. All localization libraries in the market uses JSON for storing the translations and it is a little bit of work to find the right one for your requirements.</p>
+<!-- more -->
+
+<h2 id="Localization-in-JavaScript"><a href="#Localization-in-JavaScript" class="headerlink" title="Localization in JavaScript"></a>Localization in JavaScript</h2><p>For a current project I use  <a href="https://github.com/Irrelon/jquery-lang-js" target="_blank" rel="noopener">jquery-lang</a>, because it provides the switch of the apps UI language without reloading and it is easy to implement. Thanks Rob Evans for your work…</p>
+<p>The definition of “tokens” in one JSON file for each language is quite easy:</p>
+<figure class="highlight js"><figcaption><span>../languages/en.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"token"</span>: &#123;</span><br><span class="line">        <span class="string">"my-test"</span>: <span class="string">"My Test in English"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><figcaption><span>../languages/de.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"token"</span>: &#123;</span><br><span class="line">        <span class="string">"my-test"</span>: <span class="string">"Mein Test in Deutsch"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The usage also:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">data-lang-token</span>=<span class="string">"my-test"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Using-RESX-and-convert-to-JSON-on-build"><a href="#Using-RESX-and-convert-to-JSON-on-build" class="headerlink" title="Using RESX and convert to JSON on build"></a>Using RESX and convert to JSON on build</h2><p>Having this, the most time consuming work is to enter the translations to the localization files. If you have hundreds of them, it is hard to keep the 2, 3 or more language files in sync. You need a helper…</p>
+<p>And here comes ResXManager to the rescue, if you work with VS … but it needs a conversation from RESX to the JSON format jquery-lang uses and this a task, which can be done on building the JS app, by using a task runner like <a href="https://gruntjs.com/" target="_blank" rel="noopener">Grunt</a>.</p>
+<p>As there was no Grunt plugin/task out there to fit my needs, I have created  <strong>grunt-resource2json</strong> (<a href="https://github.com/kristofzerbe/grunt-resource2json" target="_blank" rel="noopener">GitHub</a>, <a href="https://www.npmjs.com/package/grunt-resource2json" target="_blank" rel="noopener">NPM</a>). The configuration in the <strong>gruntfile.js</strong> is like: </p>
+<figure class="highlight"><figcaption><span>gruntfile.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">grunt.initConfig(&#123;</span><br><span class="line">    resource2json: &#123;</span><br><span class="line">      convert: &#123;</span><br><span class="line">        options: &#123;</span><br><span class="line">          format: "jquery-lang"</span><br><span class="line">        &#125;,</span><br><span class="line">        files: [</span><br><span class="line">          &#123;</span><br><span class="line">            input: "resources/Resource.resx",</span><br><span class="line">            output: "build/langpacks/en.json"</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            input: "resources/Resource.de-DE.resx",</span><br><span class="line">            output: "build/langpacks/de.json"</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            input: "resources/Resource.es-ES.resx",</span><br><span class="line">            output: "build/langpacks/es.json"</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>It takes one RESX file (input) and converts it to a JSON file (output) in an array of files.</p>
+<p>The heavy work in the plugin is done by the library <a href="https://www.npmjs.com/package/xml2js" target="_blank" rel="noopener">xml2js</a>, which transforms the complete XML of the RESX file into a JSON object in one call. All I had to do, was to write all DATA nodes in a loop into the jquery-lang given structure and save it as JSON.</p>
+<p>Currently supported is the format for jquery-lang only, but it would be awesome, if you fork the code on <a href="https://github.com/kristofzerbe/grunt-resource2json" target="_blank" rel="noopener">GitHub</a> and send me a Pull Request with the implementation of your needed format.</p>
+
+      
+    </div>
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Localization/">Localization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Resource/">Resource</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>  
+  </div>
+
+      
+        <div class="article-permalink"">
+    <input id="article-permalink" value="https://kiko.io/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/" data-id="ckj8zraj30030iwl9kyug50md" />
+    <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
+    <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
+</div>
+<script>
+    var copyText = document.querySelector("#article-permalink");
+    copyText.disabled = true;
+    function copyPermalink() {
+        copyText.disabled = false;
+        copyText.select();
+        document.execCommand("copy");
+        copyText.blur();
+        copyText.disabled = true;
+
+        var permalink = copyText.value;
+        copyText.classList.add("fade-out-500");
+        setTimeout(function(){
+            copyText.value = "copied to clipboard";
+            copyText.classList.remove("fade-out-500");
+            copyText.classList.add("fade-in-1000");
+            setTimeout(function() {
+                copyText.classList.add("fade-out-500");
+                setTimeout(function() {
+                    copyText.value = permalink;
+                    copyText.classList.remove("fade-out-500");
+                    setTimeout(function() {
+                        copyText.classList.remove("fade-in-1000");
+                    }, 500);
+                }, 500);
+            }, 2000);
+        }, 500);
+    }
+
+    if (navigator.share === undefined) {
+        var shareLink = document.querySelector("#action-share");
+        shareLink.style.display = "none";
+    } 
+    
+    function sharePermalink() {
+        navigator.share({
+            title: "Localization with resource files in JavaScript web apps",
+            url: "https://kiko.io/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/",
+        })
+    }
+</script>
+
+      
+    </footer>
+  </div>
+  
+    
+  <div class="article-related">
+    <h2>Related</h2>
+    <div class="archives">
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/categories/JavaScript/Device-Class-Detection-in-JavaScript/">
+        <img class="archive-article-photo" src="/photos/tablet/19-05 Israel-0145.jpg" alt="Jaffa Pepsi" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/categories/JavaScript/Device-Class-Detection-in-JavaScript/" class="archive-article-date">
+  <time datetime="2020-09-28T13:27:17.000Z" itemprop="datePublished">28 Sep 2020</time>
+</a>
+      
+  <div class="archive-article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+      
+
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/categories/JavaScript/Device-Class-Detection-in-JavaScript/">Device Class Detection in JavaScript</a>
+    </h1>
+  
+
+      
+    <h2 class="archive-article-subtitle" itemprop="name">
+        The unusual way by using CSS Media Queries
+    </h2>
+              
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Browser/">Browser</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MediaQuery/">MediaQuery</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/categories/JavaScript/Better-Input-Change-Event/">
+        <img class="archive-article-photo" src="/photos/tablet/19-05 Israel-0624.jpg" alt="Jerusalem Seat" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/categories/JavaScript/Better-Input-Change-Event/" class="archive-article-date">
+  <time datetime="2019-11-26T15:51:17.000Z" itemprop="datePublished">26 Nov 2019</time>
+</a>
+      
+  <div class="archive-article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+      
+
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/categories/JavaScript/Better-Input-Change-Event/">Better Input Change Event</a>
+    </h1>
+  
+
+                    
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+    </div>
+  </div>
+
+    <div class="article-comments">
+  <h2>Comments</h2>
+  <div id="comment-placeholder"></div>
+  <script>
+    window.addEventListener('load', function () {
+      insertUtterancesCommentBlock();
+    })    
+  </script>
+</div>
+    
+<nav id="article-nav">
+  
+    <a href="/categories/Tools/Automatic-Header-Images-in-Hexo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Automatic Header Images in Hexo
+        
+      </div>
+    </a>
+  
+  
+    <a href="/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">TFS/DevOps: Delete Remote Workspace</div>
+    </a>
+  
+</nav>
+
+  
+</article></main>
+          
+            <aside id="sidebar">
+  
+    <div class="widget-wrap">
+    <div class="widget about">
+        <div class="avatar">
+            <a href="/about"><img src="/images/kristof-zerbe.png" alt="Kristof Zerbe"></a>
+            <a href="https://github.com/kristofzerbe" target="blank" class="fab fa-github"></a>
+            <a href="https://www.xing.com/profile/Kristof_Zerbe" target="blank" class="fab fa-xing"></a>
+            <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" target="blank" class="fab fa-linkedin"></a>      
+            <a href="https://500px.com/kikon" target="blank" class="fab fa-500px"></a>
+            <a href="https://twitter.com/kristofz" target="blank" class="fab fa-twitter"></a>
+        </div>
+        <h3>Kristof Zerbe</h3>
+        <p>
+            Developer and Team Lead located in Wiesbaden, Germany
+        </p>
+    </div>
+</div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/categories/Tools/Spice-Up-Windows-Terminal/">Spice Up Windows Terminal</a>
+          </li>
+        
+          <li>
+            <a href="/categories/Discoveries/Discoveries-5/">Discoveries #5</a>
+          </li>
+        
+          <li>
+            <a href="/categories/Photo-Editing/Indian-Presets-for-Lightroom/">Indian Presets for Lightroom</a>
+          </li>
+        
+          <li>
+            <a href="/categories/Photo-Editing/Israeli-Presets-for-Lightroom/">Israeli Presets for Lightroom</a>
+          </li>
+        
+          <li>
+            <a href="/categories/Photo-Editing/Folder-based-publishing-in-Lightroom/">Folder based publishing in Lightroom</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+
+  <div class="widget widget-wrap">
+    <p>
+      Want more? This way ... to the <a href="/archives">archives</a>
+    </p>
+  </div>  
+</aside>
+          
+        </div>
+        <footer id="footer">
+  
+  <div class="outer">
+    <div class="inner">
+        <div id="footer-info">
+          <div>
+            &copy; 2020 <a href="https://github.com/kristofzerbe">Kristof Zerbe</a><br>
+            Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/" target="_blank">GitHub</a>  
+          </div>
+          <div>
+            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" 
+                    data-name="bmc-button" data-slug="kikoio" 
+                    data-font="Arial" data-text="Buy me a coffee" data-emoji="" 
+                    data-color="#55555" data-outline-color="#fff" data-font-color="#fff" data-coffee-color="#fd0" ></script>
+          </div>
+        </div>
+        <ul id="footer-dots">
+          <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" target="_blank" title="SearchConsole"></a></li>
+          <li id="hitcounter"></li>
+        </ul>        
+    </div>
+  </div>
+</footer>
+      </div>
+      <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/dist/bundle.min.js"></script>
+<script src="/js/script.js"></script>
+
+<script>
+  //BACK-TO-TOP
+  addBackToTop({
+    diameter: 30
+  })
+
+  // AUTOTYPING
+  setTimeout(function() {
+    $("#title-wrap").empty();
+    new AutoTyping({
+      id: 'title-wrap',
+      typeText: ['kiko.io'],
+      textColor: '#fff',
+      typeSpeed: 100,
+      typeDelay: 100,
+      showCursor: false,
+      delete: false,
+      typeInfinity: false
+    }).init();
+  }, 1000);
+
+  //FULLSIZABLE
+  $(function() {
+    $("a.fullsizable").fullsizable();
+  });
+
+</script>
+
+    </div>
+  </div>
+</body>
+</html>

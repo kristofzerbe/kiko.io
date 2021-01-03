@@ -19,16 +19,15 @@ related:
 ---
 New month, new discoveries. We will deal with key bindings, downloads on the fly, a lot of animations and contrasting images. Have fun, trying out these stunning solutions.
 
-{% anchorlist 
-  "tinykeys - Modern library for keybindings|tinykeys" 
-  "Creating files in JavaScript in your browser|creating-files-in-javascript" 
-  "CSS Animated Google Fonts|css-animated-fonts" 
-  "Skeleton Screen CSS|skeleton-screen-css" 
-  "More Control Over CSS Borders With background-image|more-control-over-css-borders" 
-  "A CSS-only, animated, wrapping underline|css-only-animated-wrapping-underline" 
-  "Nailing the Perfect Contrast Between Light Text and a Background Image|nailing-the-perfect-contrast" 
-  "Contrast.js|contrast-js" 
-%}
+* tinykeys - Modern library for keybindings
+* Creating files in JavaScript in your browser
+* CSS Animated Google Fonts
+* Skeleton Screen CSS
+* More Control Over CSS Borders With background-image
+* A CSS-only, animated, wrapping underline
+* Nailing the Perfect Contrast Between Light Text and a Background Image
+* Contrast.js
+
 <!-- more -->
 
 {% discovery 'tinykeys - Modern library for keybindings' 'Jamie Kyle' https://jamiebuilds.github.io/tinykeys Discoveries-2 tinykeys.png %}

@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel=manifest href=/site.webmanifest><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>kiko.io | How-To: Visual Studio Database Project and ADSI</title>
+  <meta name="title" content="kiko.io - Memorable Tech Stuff">
+  <meta name="description" content="Blog about Development &amp; Photography">
+  <!-- Schema.org for Google -->
+  <meta itemprop="name" content="kiko.io - Memorable Tech Stuff">
+  <meta itemprop="description" content="Blog about Development &amp; Photography">
+  <meta itemprop="image" content="https://kiko.io/images/hero.jpg"> 
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="kiko.io - Memorable Tech Stuff">
+  <meta property="og:url" content="https://kiko.io">
+  <meta property="og:description" content="Blog about Development &amp; Photography">
+  <meta property="og:image" content="https://kiko.io/images/hero.jpg">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://kiko.io">
+  <meta property="twitter:title" content="kiko.io - Memorable Tech Stuff">
+  <meta property="twitter:description" content="Blog about Development &amp; Photography">
+  <meta property="twitter:image" content="https://kiko.io/images/hero.jpg">
+
+  <link rel="preconnect" href="https://hitcount.io">
+
+  <link rel="preload" href="/css/fonts/cookie/cookie-v12-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-lightitalic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-semibold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-semibolditalic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-bolditalic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-extrabold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-extrabolditalic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Regular.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-It.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Bold.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link rel="stylesheet" href="/css/dist/bundle.min.css">
+  <link rel="stylesheet" href="/css/dist/image-compare-viewer.min.css">  
+  <link rel="stylesheet" href="/css/style.css">  
+
+  <script src="/js/tools.js"></script>
+  <script src="/js/dist/image-compare-viewer.min.js"></script>
+
+  <script>
+    var hitcountConfig = {
+      id: 'UIXkEVsBO',
+      webUrl: 'https://hitcount.io',
+      apiUrl: 'https://hitcount.io/api/{id}',
+      size: '12',
+      background: {
+        light: '555',
+        dark: '777'
+      },
+      color: {
+        light: '000',
+        dark: '666'
+      },
+      digits: '5'
+    }
+
+  </script>
+
+<link rel="alternate" href="/atom.xml" title="kiko.io" type="application/atom+xml">
+</head>
+</html>
+<body id="body">  
+  <div id="container" class="container">
+    <div class="inner-container">
+      <div id="wrap">
+        <header id="header">
+  <a href="#" id="header-photo-expand" class="fullsizable"></a>
+  <a href="#" id="header-photo-link"></a>
+  <div id="banner">
+    <nav id="header-nav" role="navigation">
+      <ul class="menu">
+        
+          <li class="menu-item" id="nav-home-link" >
+            <a 
+              class="nav-icon sub-nav-link"
+              href="/">
+                <span>Home</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-about-link" >
+            <a 
+              class="nav-icon sub-nav-link"
+              href="/about">
+                <span>About</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-archives-link" >
+            <a 
+              class="nav-icon sub-nav-link"
+              href="/archives">
+                <span>Archives</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-series-link" >
+            <a 
+              class="nav-icon sub-nav-link"
+              href="/series">
+                <span>series</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-rss-link" >
+            <a 
+              class="nav-icon sub-nav-link"
+              href="/atom.xml">
+                <span>RSS Feed</span>
+              </a>
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+        <a href="/" id="logo">
+          <h1 id="title-wrap">
+            <span style="opacity:0.2;">kiko.io</span>
+          </h1>
+        </a>
+      
+        <h2 id="subtitle">
+          Memorable Tech Stuff
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      
+      
+
+      <nav id="sub-nav">
+        
+        <a id="sub-nav-search" class="sub-nav-icon" title="Search"></a>
+        <div id="sub-nav-theme">          
+          <input type="checkbox" id="theme-switch">
+          <label for="theme-switch"></label>
+        </div>
+      </nav>
+
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kiko.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+<script>
+  if (location.pathname === "/") {
+    document.getElementById("nav-home-link").style.display = 'none';
+  }
+</script>
+        <div id="content" class="outer">
+          <main>
+<style>
+  #banner {
+    background-size: cover;
+  }
+  @media screen and (max-width: 479px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/19-05 Israel-0516.jpg"); }
+  }
+  @media screen and (min-width: 480px) and (max-width: 767px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/19-05 Israel-0516.jpg"); }
+  }
+  @media screen and (min-width: 768px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/19-05 Israel-0516.jpg"); }    
+  }
+</style>
+<script>
+  var body = document.getElementById("body");
+  body.classList.add("article-view");
+  var photoExpand = document.getElementById("header-photo-expand");
+  photoExpand.href = "/photos/normal/19-05 Israel-0516.jpg";
+  var photoLink = document.getElementById("header-photo-link");
+  photoLink.href = "https://500px.com/photo/1005490988/Jaffa-Accessoirs-by-Kristof-Zerbe";
+  photoLink.innerHTML = "see <strong>Jaffa Accessoirs</strong> at 500px";
+</script>
+
+  
+<article id="post-How-To-Visual-Studio-Database-Project-and-ADSI" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/" class="article-date">
+  <time datetime="2019-09-17T10:00:01.000Z" itemprop="datePublished">17 Sep 2019</time>
+</a>
+    
+  <div class="article-category category-sql">
+    <a class="article-category-link" href="/categories/SQL/">SQL</a> 
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+
+
+        
+  
+    <h1 class="article-title" itemprop="name">
+      How-To: Visual Studio Database Project and ADSI
+    </h1>
+  
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>If you are working with a Visual Studio Database Project and have to deal with data from the Active Directory via a Linked Server, you have to announce the data structure of the AD data in order to get the project compiled.</p>
+<a id="more"></a>
+<h2 id="Step-1-Linking-to-the-Active-Directory"><a href="#Step-1-Linking-to-the-Active-Directory" class="headerlink" title="Step 1 - Linking to the Active Directory"></a>Step 1 - Linking to the Active Directory</h2><p>First of all you have to connect your SQL Server to the AD permanently, by running  following SQL script once on your SQL Server:</p>
+<pre><code>USE [master]
+GO
+EXEC master.dbo.sp_addlinkedserver @server = N&apos;ADSI&apos;, 
+    @srvproduct=N&apos;Active Directory Service Interfaces&apos;, 
+    @provider=N&apos;ADSDSOObject&apos;, 
+    @datasrc=N&apos;adsdatasource&apos;
+
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N&apos;ADSI&apos;,
+    @useself=N&apos;False&apos;,
+    @locallogin=NULL,
+    @rmtuser=N&apos;mydomain\myadminuser&apos;,
+    @rmtpassword=&apos;mypassword&apos;
+GO
+
+EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
+    @optname=N&apos;collation compatible&apos;, @optvalue=N&apos;false&apos;
+GO
+EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
+    @optname=N&apos;data access&apos;, @optvalue=N&apos;true&apos;
+GO
+EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
+    @optname=N&apos;dist&apos;, @optvalue=N&apos;false&apos;
+GO
+EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
+    @optname=N&apos;pub&apos;, @optvalue=N&apos;false&apos;
+GO
+EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
+    @optname=N&apos;rpc&apos;, @optvalue=N&apos;false&apos;
+GO
+EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
+    @optname=N&apos;rpc out&apos;, @optvalue=N&apos;false&apos;
+GO
+EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
+    @optname=N&apos;sub&apos;, @optvalue=N&apos;false&apos;
+GO
+EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
+    @optname=N&apos;connect timeout&apos;, @optvalue=N&apos;0&apos;
+GO
+EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
+    @optname=N&apos;collation name&apos;, @optvalue=null
+GO
+EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
+    @optname=N&apos;lazy schema validation&apos;, @optvalue=N&apos;false&apos;
+GO
+EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
+    @optname=N&apos;query timeout&apos;, @optvalue=N&apos;0&apos;
+GO
+EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
+    @optname=N&apos;use remote collation&apos;, @optvalue=N&apos;true&apos;
+GO
+EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
+    @optname=N&apos;remote proc transaction promotion&apos;, @optvalue=N&apos;true&apos;
+GO</code></pre><h2 id="Step-2-Fetching-ADSI-data"><a href="#Step-2-Fetching-ADSI-data" class="headerlink" title="Step 2 - Fetching ADSI data"></a>Step 2 - Fetching ADSI data</h2><p>To get data, use <code>OpenQuery</code> against the Linked Server. In order to get only persons and no system accounts, you should filter out all users, which has no firstname (<code>givenName</code>) or lastname (<code>sn</code>):</p>
+<pre><code>SELECT 
+    UserPrincipalName, 
+    DisplayName, 
+    sAMAccountName AS [SamAccountName], 
+    sn AS [LastName], 
+    givenName AS [FirstName], 
+    title AS [Title], 
+    Mail as [MailAddress],
+    department AS [Department],
+    l AS [Location], 
+    postalCode AS [PostCode], 
+    streetAddress AS [Street],
+    st AS [State]
+FROM OpenQuery(ADSI, &apos;
+    SELECT 
+        UserPrincipalName, 
+        DisplayName, 
+        sAMAccountName, 
+        sn, 
+        givenName, 
+        department,
+        title, 
+        Mail, 
+        l, 
+        postalCode, 
+        streetAddress, 
+        st
+    FROM &apos;&apos;LDAP://mydomain.de/DC=mydomain,DC=de&apos;&apos; 
+    WHERE objectClass =  &apos;&apos;User&apos;&apos; 
+    AND objectCategory = &apos;&apos;Person&apos;&apos; 
+    AND sn=&apos;&apos;*&apos;&apos; 
+    AND givenName = &apos;&apos;*&apos;&apos; 
+&apos;)    </code></pre><p>In most cases you’re done with that … except your organisation has more the 900 users! Then you have to split the fetch in several requests, because SQL Server quits with an error, when trying to read more than 900 records via ADSI.  </p>
+<p>Best option is, to filter the ADSI statement by something like <em>‘get all user starting with a to j’</em>, when you are sure, that in this case less than 900 records will be given back and repeat the statement several times and glue the data together via a <code>UNION</code> statement:</p>
+<pre>
+<code>SELECT  
+    UserPrincipalName,  
+    DisplayName,  
+    sAMAccountName AS [SamAccountName],  
+    sn AS [LastName],  
+    givenName AS [FirstName],  
+    title AS [Title],  
+    Mail as [MailAddress],  
+    department AS [Department],  
+    l AS [Location],  
+    postalCode AS [PostCode],  
+    streetAddress AS [Street],  
+    st AS [State]  
+FROM (  
+    SELECT *  
+    FROM OpenQuery(ADSI, '  
+        SELECT  
+            UserPrincipalName,  
+            DisplayName,  
+            sAMAccountName,  
+            sn,  
+            givenName,  
+            department,  
+            title,  
+            Mail,  
+            l,  
+            postalCode,  
+            streetAddress,  
+            st  
+        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''  
+        WHERE objectClass =  ''User''  
+        AND objectCategory = ''Person''  
+        AND sn=''*''  
+        AND givenName = ''*''  
+        <strong>AND sAMAccountName &lt;= ''j''</strong>
+    ')  
+
+    <strong>UNION ALL</strong>  
+
+    SELECT *  
+    FROM OpenQuery(ADSI, '  
+        SELECT <em>[...same as above]</em>  
+        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''  
+        WHERE objectClass =  ''User''  
+        AND objectCategory = ''Person''  
+        AND sn=''*''  
+        AND givenName = ''*''  
+        <strong>AND sAMAccountName &gt; ''j''</strong>  
+        <strong>AND sAMAccountName &lt; ''p''</strong>  
+    ')
+
+    <strong>UNION ALL</strong>  
+
+    SELECT *  
+    FROM OpenQuery(ADSI,  '  
+        SELECT <em>[...same as above]</em>  
+        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''  
+        WHERE objectClass =  ''User''  
+        AND objectCategory = ''Person''  
+        AND sn=''*'' AND givenName = ''*''  
+        <strong>AND sAMAccountName &gt;= ''p''</strong>  
+    ')  
+) AD</code>
+</pre>
+
+<p>When you store this as a VIEW, you can join it wherever you want on SQL Server:</p>
+<pre>
+<code>CREATE VIEW [dbo].[vADUsers]
+AS
+    <em>[...SQL code from above]</em>
+
+GO</code>
+</pre>
+
+<h2 id="Step-3-SQL-Server-Database-Project"><a href="#Step-3-SQL-Server-Database-Project" class="headerlink" title="Step 3 - SQL Server Database Project"></a>Step 3 - SQL Server Database Project</h2><p>If you work with a SQL Server Database Project, to have the complete structure of your database available in a version control system, you will get some reference errors on compiling and publishing your newly added SQL View <code>vADUsers</code> and on some objects, which rely on this View, because of following problems:</p>
+<ol>
+<li>Project doesn’t know the Linked Server <code>ADSI</code></li>
+<li>The structure (fields) of the data source is unknown</li>
+</ol>
+<h3 id="Declare-the-Linked-Server"><a href="#Declare-the-Linked-Server" class="headerlink" title="Declare the Linked Server"></a>Declare the Linked Server</h3><p>To show the Project that there is a Linked Server called <code>ADSI</code>, just add following lines at the start of your view:</p>
+<pre>
+<code><strong>sp_addlinkedserver 'ADSI'</strong>
+<strong>GO</strong>
+
+CREATE VIEW [dbo].[vADUsers]
+AS
+    <em>[...SQL code from above]</em></code>
+</pre>
+
+<p>This mimics the adding of a Linked Server, but will be ignored by SQL Server on publish, because you already have a Linked Server with this name. The project is happy with it.</p>
+<h3 id="Declare-the-data-structure"><a href="#Declare-the-data-structure" class="headerlink" title="Declare the data structure"></a>Declare the data structure</h3><p>When you use the SQL-View <code>vADUsers</code> in a Stored Procedure for example, this object won’t compile, because the project knows nothing about the fields of the ADSI data source. The SELECT in the view is not enough. You have to add an empty <code>SELECT</code> to the View <code>vADUsers</code>, just for the declaration of the fields and without returning any records and join this via <code>UNION</code> with the other statements:</p>
+<pre>
+<code>sp_addlinkedserver 'ADSI'
+GO
+
+CREATE VIEW [dbo].[vtADAllUsers]
+AS
+
+SELECT
+    UserPrincipalName,
+    DisplayName,
+    sAMAccountName AS [SamAccountName],
+    sn AS [LastName],
+    givenName AS [FirstName],
+    title AS [Title],
+    Mail as [MailAddress],
+    department AS [Department],
+    l AS [Location],
+    postalCode AS [PostCode],
+    streetAddress AS [Street],
+    st AS [State]
+FROM (
+
+    -- Fake SELECT to declare the structure of the view<strong>
+    SELECT TOP 0
+        '' UserPrincipalName,
+        '' DisplayName,
+        '' sAMAccountName,
+        '' sn,
+        '' givenName,
+        '' department,
+        '' title,
+        '' Mail,
+        '' l,
+        '' postalCode,
+        '' streetAddress,
+        '' st
+
+    UNION ALL</strong>
+
+    SELECT *
+    FROM OpenQuery(ADSI, '
+        SELECT
+            UserPrincipalName,
+            DisplayName,
+            sAMAccountName,
+            sn,
+            givenName,
+            department,
+            title,
+            Mail,
+            l,
+            postalCode,
+            streetAddress,
+            st
+        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''
+        WHERE objectClass =  ''User''
+        AND objectCategory = ''Person''
+        AND sn=''*''
+        AND givenName = ''*''
+        AND sAMAccountName &gt;= ''j''  
+    ')
+
+    UNION ALL  
+
+    SELECT *  
+    FROM OpenQuery(ADSI, '  
+        SELECT <em>[...same as above]</em>  
+        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''  
+        WHERE objectClass =  ''User''  
+        AND objectCategory = ''Person''  
+        AND sn=''*''  
+        AND givenName = ''*''  
+        AND sAMAccountName &lt; ''j''  
+        AND sAMAccountName &gt; ''p''  
+    ')
+
+    UNION ALL  
+
+    SELECT *  
+    FROM OpenQuery(ADSI,  '  
+        SELECT <em>[...same as above]</em>  
+        FROM ''LDAP://mydomain.de/DC=mydomain,DC=de''  
+        WHERE objectClass =  ''User''  
+        AND objectCategory = ''Person''  
+        AND sn=''*''  
+        AND givenName = ''*''  
+        AND sAMAccountName &lt;= ''p''  
+    ')
+) AD</code>
+</pre>
+
+<p>Now, you can fetch data from Active Directory and store the code in a Database Project properly.</p>
+<p>HAPPY CODING :)</p>
+
+      
+    </div>
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ADSI/">ADSI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Database-Project/">Database Project</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>  
+  </div>
+
+      
+        <div class="article-permalink"">
+    <input id="article-permalink" value="https://kiko.io/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/" data-id="ckj8zraih002giwl9gtkns1p4" />
+    <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
+    <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
+</div>
+<script>
+    var copyText = document.querySelector("#article-permalink");
+    copyText.disabled = true;
+    function copyPermalink() {
+        copyText.disabled = false;
+        copyText.select();
+        document.execCommand("copy");
+        copyText.blur();
+        copyText.disabled = true;
+
+        var permalink = copyText.value;
+        copyText.classList.add("fade-out-500");
+        setTimeout(function(){
+            copyText.value = "copied to clipboard";
+            copyText.classList.remove("fade-out-500");
+            copyText.classList.add("fade-in-1000");
+            setTimeout(function() {
+                copyText.classList.add("fade-out-500");
+                setTimeout(function() {
+                    copyText.value = permalink;
+                    copyText.classList.remove("fade-out-500");
+                    setTimeout(function() {
+                        copyText.classList.remove("fade-in-1000");
+                    }, 500);
+                }, 500);
+            }, 2000);
+        }, 500);
+    }
+
+    if (navigator.share === undefined) {
+        var shareLink = document.querySelector("#action-share");
+        shareLink.style.display = "none";
+    } 
+    
+    function sharePermalink() {
+        navigator.share({
+            title: "How-To: Visual Studio Database Project and ADSI",
+            url: "https://kiko.io/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/",
+        })
+    }
+</script>
+
+      
+    </footer>
+  </div>
+  
+    
+    <div class="article-comments">
+  <h2>Comments</h2>
+  <div id="comment-placeholder"></div>
+  <script>
+    window.addEventListener('load', function () {
+      insertUtterancesCommentBlock();
+    })    
+  </script>
+</div>
+    
+<nav id="article-nav">
+  
+    <a href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          A New Blog: VS Code, Hexo and GitHub Pages
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article></main>
+          
+            <aside id="sidebar">
+  
+    <div class="widget-wrap">
+    <div class="widget about">
+        <div class="avatar">
+            <a href="/about"><img src="/images/kristof-zerbe.png" alt="Kristof Zerbe"></a>
+            <a href="https://github.com/kristofzerbe" target="blank" class="fab fa-github"></a>
+            <a href="https://www.xing.com/profile/Kristof_Zerbe" target="blank" class="fab fa-xing"></a>
+            <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" target="blank" class="fab fa-linkedin"></a>      
+            <a href="https://500px.com/kikon" target="blank" class="fab fa-500px"></a>
+            <a href="https://twitter.com/kristofz" target="blank" class="fab fa-twitter"></a>
+        </div>
+        <h3>Kristof Zerbe</h3>
+        <p>
+            Developer and Team Lead located in Wiesbaden, Germany
+        </p>
+    </div>
+</div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/categories/Tools/Spice-Up-Windows-Terminal/">Spice Up Windows Terminal</a>
+          </li>
+        
+          <li>
+            <a href="/categories/Discoveries/Discoveries-5/">Discoveries #5</a>
+          </li>
+        
+          <li>
+            <a href="/categories/Photo-Editing/Indian-Presets-for-Lightroom/">Indian Presets for Lightroom</a>
+          </li>
+        
+          <li>
+            <a href="/categories/Photo-Editing/Israeli-Presets-for-Lightroom/">Israeli Presets for Lightroom</a>
+          </li>
+        
+          <li>
+            <a href="/categories/Photo-Editing/Folder-based-publishing-in-Lightroom/">Folder based publishing in Lightroom</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+
+  <div class="widget widget-wrap">
+    <p>
+      Want more? This way ... to the <a href="/archives">archives</a>
+    </p>
+  </div>  
+</aside>
+          
+        </div>
+        <footer id="footer">
+  
+  <div class="outer">
+    <div class="inner">
+        <div id="footer-info">
+          <div>
+            &copy; 2020 <a href="https://github.com/kristofzerbe">Kristof Zerbe</a><br>
+            Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/" target="_blank">GitHub</a>  
+          </div>
+          <div>
+            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" 
+                    data-name="bmc-button" data-slug="kikoio" 
+                    data-font="Arial" data-text="Buy me a coffee" data-emoji="" 
+                    data-color="#55555" data-outline-color="#fff" data-font-color="#fff" data-coffee-color="#fd0" ></script>
+          </div>
+        </div>
+        <ul id="footer-dots">
+          <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" target="_blank" title="SearchConsole"></a></li>
+          <li id="hitcounter"></li>
+        </ul>        
+    </div>
+  </div>
+</footer>
+      </div>
+      <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/dist/bundle.min.js"></script>
+<script src="/js/script.js"></script>
+
+<script>
+  //BACK-TO-TOP
+  addBackToTop({
+    diameter: 30
+  })
+
+  // AUTOTYPING
+  setTimeout(function() {
+    $("#title-wrap").empty();
+    new AutoTyping({
+      id: 'title-wrap',
+      typeText: ['kiko.io'],
+      textColor: '#fff',
+      typeSpeed: 100,
+      typeDelay: 100,
+      showCursor: false,
+      delete: false,
+      typeInfinity: false
+    }).init();
+  }, 1000);
+
+  //FULLSIZABLE
+  $(function() {
+    $("a.fullsizable").fullsizable();
+  });
+
+</script>
+
+    </div>
+  </div>
+</body>
+</html>
