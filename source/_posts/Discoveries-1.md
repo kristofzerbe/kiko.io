@@ -22,15 +22,16 @@ The most interesting stuff ends up on my Pocket list, which grows from day to da
 
 They are maybe not the newest finds, not the fanciest ones, but remarkable for me and maybe for you also.
 
-* Pure CSS halftone portrait from .jpg source
-* ScrollTrigger - Highlight Text
-* Tiny long-press event handler
-* Show More/Less
-* 3D banners with ScrollTrigger
-* Image Compare Viewer
-* Add Read or Scroll Progress Bar To A Website To Indicate Read Progress
-* How to Get a Progressive Web App into the Google Play Store
-
+{% anchorlist 
+  "Pure CSS halftone portrait from .jpg source|pure-css-halftone" 
+  "ScrollTrigger - Highlight Text|scrolltrigger-highlight-text" 
+  "Tiny long-press event handler|long-press-event-handler" 
+  "Show More/Less|show-more" 
+  "3D banners with ScrollTrigger|3d-banners-with-scrolltrigger" 
+  "Image Compare Viewer|image-compare-viewer" 
+  "Add Read or Scroll Progress Bar To A Website To Indicate Read Progress|read-progress-bar" 
+  "How to Get a Progressive Web App into the Google Play Store|get-pwa-into-play-store" 
+%}
 <!-- more -->
 
 {% discovery 'Pure CSS halftone portrait from .jpg source' 'Ana Tudor' https://codepen.io/thebabydino/pen/LYGGwrm Discoveries-1 pure-css-halftone.jpg %}

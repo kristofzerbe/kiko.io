@@ -7,6 +7,8 @@ photograph:
   file: 19-05 Israel-0498.jpg
   name: Dead Sea Colors
   link: 'https://500px.com/photo/1001751158/Dead-Sea-Colors-by-Kristof-Zerbe'
+series: Lightroom Presets
+part: 1
 categories:
   - Photo-Editing
 tags:

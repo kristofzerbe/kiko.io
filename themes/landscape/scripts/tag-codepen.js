@@ -1,5 +1,5 @@
 /*
-  Codepan Tag - Customized from https://github.com/bibixx/hexo-tag-codepen
+  Codepen Tag - Customized from https://github.com/bibixx/hexo-tag-codepen
 
   Syntax:
   {% codepen [slugHash] [title] [defaultTabs] [height] [width] %}
