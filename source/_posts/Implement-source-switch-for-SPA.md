@@ -26,7 +26,7 @@ But the whole thing had one disadvantage: Debugging for example in Chrome Dev To
 
 First step was to replace the SCRIPT and LINK tags in die ``index.html`` with a dynamic loading approach using JavaScript.
 
-### Dynamic JS loading
+## Dynamic JS loading
 
 For some custom code it was necessary to load the plugins previously, because of dependencies.
 
@@ -59,7 +59,7 @@ addScriptAsync("Build/vendor.min.js").then(function() {
 });
 ```
 
-### Dynamic CSS loading
+## Dynamic CSS loading
 
 Loading CSS is pretty straightforward and includes an ``id`` as parameter, in order to be able to access the style afterwards, for example when tehh user is chanhing the SPA's theme: 
 
@@ -81,7 +81,7 @@ addStylesheet("Build/vendor.css");
 addStylesheet("Build/custom.css");
 ```
 
-### Consider the environment
+## Consider the environment
 
 Now everything was set up to implement a switch, depending on whether the SPA was started locally or in production.
 

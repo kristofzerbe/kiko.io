@@ -944,8 +944,8 @@ body {
 .article-inner {
   overflow: hidden;
   background: #fff;
-  -webkit-box-shadow: 1px 2px 3px #ddd;
-  box-shadow: 1px 2px 3px #ddd;
+  -webkit-box-shadow: 1px 2px 20px 5px #ddd;
+  box-shadow: 1px 2px 20px 5px #ddd;
   border: 1px solid #ddd;
 }
 [data-theme="dark"] .article-inner {
@@ -1292,7 +1292,7 @@ a.article-title:hover {
 }
 .article-more-link a.button:hover,
 .download-link a.button:hover {
-  background-color: #555;
+  background-color: #0069dc;
   color: #fff;
 }
 .download-link {
@@ -2090,6 +2090,10 @@ a.article-title:hover {
   text-decoration: none;
   width: 100%;
   color: #555;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 [data-theme="dark"] .anything-entry a {
   color: #dadada;
@@ -2100,10 +2104,27 @@ a.article-title:hover {
 [data-theme="dark"] .anything-entry a:hover {
   color: #fff;
 }
+.anything-entry a:hover em {
+  background-color: #0069dc;
+  color: #fff;
+}
 .anything-entry a em {
-  opacity: 0.25;
-  font-size: 0.75em;
-  line-height: 1.8em;
+  font-size: 0.6em;
+  line-height: 1.6em;
+  padding: 5px;
+  min-width: 80px;
+  max-height: 26px;
+  text-align: center;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  background-color: #eee;
+  color: #555;
+}
+[data-theme="dark"] .anything-entry a em {
+  background-color: #555;
+  color: #bbb;
 }
 .anything-content {
   color: #555;
@@ -2953,11 +2974,27 @@ pre .javascript .function {
 .widget.about .avatar {
   position: relative;
   width: 120px;
+  border: 1px transparent solid;
 }
-.widget.about .avatar img {
+.widget.about .avatar a {
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.widget.about .avatar a:not(.fab) {
+  border-radius: 50%;
+}
+.widget.about .avatar a:not(.fab):hover {
+  border-color: #ddd;
+  -webkit-box-shadow: 1px 2px 20px 5px #ddd;
+  box-shadow: 1px 2px 20px 5px #ddd;
+}
+.widget.about .avatar a:not(.fab) img {
   width: 120px;
+  border-radius: 50%;
 }
-[data-theme="dark"] .widget.about .avatar img {
+[data-theme="dark"] .widget.about .avatar a:not(.fab) img {
   filter: brightness(85%);
 }
 .widget.about .avatar a.fab:hover:before {

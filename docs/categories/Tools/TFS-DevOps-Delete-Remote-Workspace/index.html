@@ -247,15 +247,15 @@
 <p>The variable xxx stands for the blocked folder, yyy for the workspace/machine name and zzz for the users id on Azure DevOps.</p>
 <p>Unfortunately, there is no visual management console on Azure DevOps to manage your server workspaces, but there is a command line tool called <strong><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/use-team-foundation-version-control-commands?view=azure-devops">tf.exe</a></strong>.</p>
 <p>The easiest way to get rid of the unused server workspace in 3 steps:</p>
-<h3 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h3><p>Run <strong>Developer Command Prompt</strong> with Administrator privileges from Visual Studio 2019 and login with your Azure DevOps credentials. If the Login dialog doesn’t show up, force it by executing:</p>
+<h2 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h2><p>Run <strong>Developer Command Prompt</strong> with Administrator privileges from Visual Studio 2019 and login with your Azure DevOps credentials. If the Login dialog doesn’t show up, force it by executing:</p>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tf.exe workspace</span><br></pre></td></tr></table></figure>
-<h3 id="Step-2"><a href="#Step-2" class="headerlink" title="Step 2"></a>Step 2</h3><p>Get a list of all remote workspaces available in your DevOps Collection by running the command:</p>
+<h2 id="Step-2"><a href="#Step-2" class="headerlink" title="Step 2"></a>Step 2</h2><p>Get a list of all remote workspaces available in your DevOps Collection by running the command:</p>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tf.exe workspaces /computer:* /owner:* /format:xml &gt; c:\temp\workspaces.xml</span><br></pre></td></tr></table></figure>
 <p>You can get a list of all your workspaces by running <code>tf workspaces</code>, but the list only shows you the <code>owner</code>, but not the necessary <code>ownerid</code> and … it is nicer to have a file to search in.</p>
-<h3 id="Step-3"><a href="#Step-3" class="headerlink" title="Step 3"></a>Step 3</h3><p>Find the abandoned workspace in the list and note its <code>name</code> and  <code>ownerid</code> for running the command:</p>
+<h2 id="Step-3"><a href="#Step-3" class="headerlink" title="Step 3"></a>Step 3</h2><p>Find the abandoned workspace in the list and note its <code>name</code> and  <code>ownerid</code> for running the command:</p>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tf workspace /delete &#123;WORKSPACE.name&#125;;&#123;WORKSPACE.ownerid&#125;</span><br></pre></td></tr></table></figure>
 <p>Now your new colleague can create his own workspace on the same machine.</p>
-<h3 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h3><p>In case you want to switch your own DevOps account to another and use the same folder as before, you can certainly delete the local workspace, but this wont help, because you are still logged in at TeamExplorer and the folder knows to whom it belongs. Solution is easy:</p>
+<h2 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h2><p>In case you want to switch your own DevOps account to another and use the same folder as before, you can certainly delete the local workspace, but this wont help, because you are still logged in at TeamExplorer and the folder knows to whom it belongs. Solution is easy:</p>
 <ol>
 <li>Quit Visual Studio</li>
 <li>Rename folder in <code>***_OLD</code> or something</li>
@@ -264,11 +264,12 @@
 <li>Remove all your Remote Workspaces as described above</li>
 <li>Start Visual Studio, connect in TeamExplorer to your TFS server and map the code to your folder</li>
 </ol>
-<h2 id="Related"><a href="#Related" class="headerlink" title="Related"></a>Related</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/use-team-foundation-version-control-commands?view=azure-devops">Use Team Foundation version control commands</a></li>
-<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/28298771/how-to-remove-tfs-workspace-mapping-for-another-user/28299407">How to remove TFS workspace mapping for another user
-</a></li>
-</ul>
+
+        <h2>More Info</h2>
+        <ul class="moreinfo-list">
+            <li>Microsoft Docs: <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/use-team-foundation-version-control-commands?view=azure-devops">Use Team Foundation version control commands</a></li><li>Stackoverflow: <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/28298771/how-to-remove-tfs-workspace-mapping-for-another-user/28299407">How to remove TFS workspace mapping for another user</a></li>
+        </ul>
+    
 
       
     </div>
@@ -280,7 +281,7 @@
 
       
         <div class="article-permalink"">
-    <input id="article-permalink" value="https://kiko.io/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/" data-id="ckjihx20w005pu0l9gvvk0v0b" />
+    <input id="article-permalink" value="https://kiko.io/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/" data-id="ckjiro4rk0052x4l912xl33gq" />
     <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
     <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
 </div>
@@ -330,9 +331,7 @@
     </footer>
   </div>
   
-    
     <div class="article-comments">
-  <h2>Comments</h2>
   <div id="comment-placeholder"></div>
   <script>
     window.addEventListener('load', function () {
@@ -340,6 +339,7 @@
     })    
   </script>
 </div>
+    
     
 <nav id="article-nav">
   

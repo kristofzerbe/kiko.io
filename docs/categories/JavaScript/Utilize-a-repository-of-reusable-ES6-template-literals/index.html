@@ -248,12 +248,12 @@
 <p>But there is one “restriction”, you have to be aware of: the interpolation (substitution of the expressions) is done at declaration time and not at runtime. You can’t define your literals seperatly, take one and make your substitution as you need it, like you would do with <a target="_blank" rel="noopener" href="https://handlebarsjs.com/">Handlebars</a> or other templating engines. Therefore the name <em>template</em> literals is a bit misleading. But … there is a way to achieve this anyway…</p>
 <a id="more"></a>
 
-<h3 id="Tagged-Templates"><a href="#Tagged-Templates" class="headerlink" title="Tagged Templates"></a>Tagged Templates</h3><p>Beside Template Literals, ES6 introduced <strong>Tagged Templates</strong> (exact: Tagged Template Literals). These tags are functions, which allows you to parse a Template Literal. Definition is like this:</p>
+<h2 id="Tagged-Templates"><a href="#Tagged-Templates" class="headerlink" title="Tagged Templates"></a>Tagged Templates</h2><p>Beside Template Literals, ES6 introduced <strong>Tagged Templates</strong> (exact: Tagged Template Literals). These tags are functions, which allows you to parse a Template Literal. Definition is like this:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myTag</span>(<span class="params">literals, ...expressions</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//do the substitution and return a string</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>You can use these tags by prefixing you literal:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myTag<span class="string">`Hello <span class="subst">$&#123;firstName&#125;</span> <span class="subst">$&#123;lastName&#125;</span>!`</span></span><br></pre></td></tr></table></figure>
 <p>Using Tagged Templates to build a template repository would mean, you have to write one tag function for every template … doable, but time consuming.</p>
-<h3 id="Dynamic-Tag-Function"><a href="#Dynamic-Tag-Function" class="headerlink" title="Dynamic Tag Function"></a>Dynamic Tag Function</h3><p>To avoid this, we can write a universal tag function, which utilizes the <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/Function">Function constructor</a>, to create the tag function dynamically:</p>
+<h2 id="Dynamic-Tag-Function"><a href="#Dynamic-Tag-Function" class="headerlink" title="Dynamic Tag Function"></a>Dynamic Tag Function</h2><p>To avoid this, we can write a universal tag function, which utilizes the <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/Function">Function constructor</a>, to create the tag function dynamically:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fillTemplate</span>(<span class="params">templateString, templateVars</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> func = <span class="keyword">new</span> <span class="built_in">Function</span>(</span><br><span class="line">    ...Object.keys(templateVars),  </span><br><span class="line">    <span class="string">&quot;return `&quot;</span> + templateString + <span class="string">&quot;`;&quot;</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> func(...Object.values(templateVars));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     <div class="alertbox alertbox-warning">
@@ -262,9 +262,8 @@
     </div>
   
 
-<h3 id="Let’s-see-an-example…"><a href="#Let’s-see-an-example…" class="headerlink" title="Let’s see an example…"></a>Let’s see an example…</h3><p>Given is a tiny web app with the following structure:</p>
-<p><strong>index.html</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Reusable ES6 template literals<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;/src/style.css&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">main</span> <span class="attr">id</span>=<span class="string">&quot;main&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;src/index.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Let’s-see-an-example…"><a href="#Let’s-see-an-example…" class="headerlink" title="Let’s see an example…"></a>Let’s see an example…</h2><p>Given is a tiny web app with the following structure:</p>
+<figure class="highlight html"><figcaption><span>index.html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Reusable ES6 template literals<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;/src/style.css&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">main</span> <span class="attr">id</span>=<span class="string">&quot;main&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;src/index.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><figcaption><span>index.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; App &#125; <span class="keyword">from</span> <span class="string">&quot;./app.js&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> App();</span><br><span class="line"></span><br><span class="line">app.init();</span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><figcaption><span>app.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">init</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> &#123; App &#125;;</span><br></pre></td></tr></table></figure>
 <p>What we want to do now, is to load some images into the <code>main</code> element, by using a more or less complex element structure:</p>
@@ -276,6 +275,12 @@
 <figure class="highlight js"><figcaption><span>app.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Import Template module</span></span><br><span class="line"><span class="keyword">import</span> &#123; Templates &#125; <span class="keyword">from</span> <span class="string">&quot;./templates.js&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">init</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Initialize Templates</span></span><br><span class="line">    <span class="built_in">this</span>._templates = <span class="keyword">new</span> Templates();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Insert photo into MAIN element</span></span><br><span class="line">    <span class="keyword">let</span> main = <span class="built_in">document</span>.getElementById(<span class="string">&quot;main&quot;</span>);</span><br><span class="line">    main.insertAdjacentHTML(</span><br><span class="line">      <span class="string">&quot;beforeend&quot;</span>,</span><br><span class="line">      <span class="built_in">this</span>._templates.photo(&#123;</span><br><span class="line">        file: <span class="string">&quot;my-photo.jpg&quot;</span>,</span><br><span class="line">        url: <span class="string">&quot;https://link-to-my.photo.com&quot;</span></span><br><span class="line">      &#125;)</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> &#123; App &#125;;</span><br></pre></td></tr></table></figure>
 <p>See it live at <a target="_blank" rel="noopener" href="https://codesandbox.io/s/reusable-es6-template-literals-4iyor?file=/src/templates.js">codesandbox.io</a>.</p>
 
+        <h2>More Info</h2>
+        <ul class="moreinfo-list">
+            <li>Stackoverflow: <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/30003353/can-es6-template-literals-be-substituted-at-runtime-or-reused">Can ES6 template literals be substituted at runtime (or reused)?</a></li><li>Github/Adelphos: <a target="_blank" rel="noopener" href="https://github.com/Adelphos/ES6-Reuseable-Template">ES6-Reuseable-Template</a></li>
+        </ul>
+    
+
       
     </div>
     <footer class="article-footer">      
@@ -286,7 +291,7 @@
 
       
         <div class="article-permalink"">
-    <input id="article-permalink" value="https://kiko.io/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/" data-id="ckjihzmlf0000l4l97n4h8jd4" />
+    <input id="article-permalink" value="https://kiko.io/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/" data-id="ckjiro4rr0058x4l95pm2dtvz" />
     <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
     <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
 </div>
@@ -336,6 +341,14 @@
     </footer>
   </div>
   
+    <div class="article-comments">
+  <div id="comment-placeholder"></div>
+  <script>
+    window.addEventListener('load', function () {
+      insertUtterancesCommentBlock();
+    })    
+  </script>
+</div>
     
   <div class="article-related">
     <h2>Related</h2>
@@ -482,15 +495,6 @@
     </div>
   </div>
 
-    <div class="article-comments">
-  <h2>Comments</h2>
-  <div id="comment-placeholder"></div>
-  <script>
-    window.addEventListener('load', function () {
-      insertUtterancesCommentBlock();
-    })    
-  </script>
-</div>
     
 <nav id="article-nav">
   

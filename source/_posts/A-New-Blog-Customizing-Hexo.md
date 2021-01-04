@@ -27,7 +27,7 @@ Hexo is a great tool to get quick results (see [Part One of this series](/catego
 I will show you which of these I found worth to work with...
 <!-- more -->
 
-### Relative Image Path
+## Relative Image Path
 
 The build-in way to include images in your posts works fine, but it is a little aside the normal way to declare images in Markdown. The plugin [Hexo Asset Link] corrects that. After installing via ``npm install hexo-asset-link --save`` you can write this:
 
@@ -45,17 +45,17 @@ Actually the plugin [destroys external links](https://github.com/liolok/hexo-ass
 
 ---
 
-### Hide Posts
+## Hide Posts
 
 A new Hexo project comes with a sample post called ``Hello World``. This is fine to play around with, but you don't want to publish it. Here comes a Hexo plugin to the rescue called [Hexo Hide Posts](https://github.com/printempw/hexo-hide-posts). After installing, you just have to write ``hidden: true`` to the Front Matter of you post and it won't be shown on the blog, but it is still available by URL.
 
-### Static Files
+## Static Files
 
 Hexo has the concept of [Assets Folders](https://hexo.io/docs/asset-folders), but for static files, beside article based files, I find it more useful to have a STATIC folder and copy the contents on every build into the publish folder. A good helper for this approach is the plugin [Hexo Generator Copy](https://github.com/niahoo/hexo-generator-copy). Install it by running ``npm install hexo-generator-copy --save`` and add ``static_dir: static`` to your ``_config.yml`` and you are done.
 
     ![Hexo Static Files](A-New-Blog-Customizing-Hexo/vscode-1.png)
 
-### Feed
+## Feed
 
 The default Hexo layout has an Atom Feed icon in the upper right corner, but strangely no feed file is generated on build. You need to install the plugin [Hexo Feed Generator](https://github.com/hexojs/hexo-generator-feed) to fix this, by running ``npm install hexo-generator-feed --save`` and copy following section into the ``_config.yml``:
 
@@ -71,7 +71,7 @@ feed:
     order_by: -date
 ```
 
-### Manifest for PWA
+## Manifest for PWA
 
 In these modern times it's always a good idea, that your blog feels like an App. For this you need a manifest file (JSON) an several icons (PNG). You can generate these files very fast with the [Web App Manifest Generator](https://app-manifest.firebaseapp.com) and store it in your static folder.
 
@@ -97,7 +97,7 @@ pwa:
         display: standalone
 ```
 
-### Sitemap File
+## Sitemap File
 
 To help [Google](https://support.google.com/webmasters/answer/183668) and others a bit to index your blog, it is advisable to provide a sitemap file. Here comes [Hexo Generator Sitemap](https://github.com/hexojs/hexo-generator-sitemap) to the rescue. Install it by running the command ``npm install hexo-generator-sitemap --save``. You can configure it via ``_config.yml``:
 
@@ -109,7 +109,7 @@ sitemap:
 
 The plugin installation doesn't create the needed ``sitemap-template`` file, so be sure you grab a copy from the plugins repository: [https://github.com/hexojs/hexo-generator-sitemap/blob/master/sitemap.xml](https://github.com/hexojs/hexo-generator-sitemap/blob/master/sitemap.xml)
 
-### Commenting
+## Commenting
 
 Hexo doesn't have a commenting system, but it's prepared to stick [Disqus](https://disqus.com/) comments under each article. Just create a new Disqus account for your blog and note the given short name. By adding following section to the ``_config.yml`` Hexo shows the commenting section:
 
@@ -118,7 +118,7 @@ disqus_enabled: true
 disqus_shortname: my-blog
 ```
 
-### Inifinite Scroll
+## Inifinite Scroll
 
 Hexo shows as much articles at the start page as configured in ``_config.yml`` under ``index_generator.per_page``, but it's nicer to load more articles as you scroll by using the Hexo script [Inifinite Scroll](https://github.com/FrontendSophie/hexo-infinite-scroll). Install by adding following little script in **themes** & gt; **layout** &gt; **_partial** &gt; **after-footer.ejs**
 
@@ -133,7 +133,7 @@ Hexo shows as much articles at the start page as configured in ``_config.yml`` u
 </script>
 ```
 
-### Back To Top
+## Back To Top
 
 Its nice to support the reader on scolling by providing a Scroll-To-Top button. The easiest way to get this, is the script [Vanilla Back To Top](https://github.com/vfeskov/vanilla-back-to-top). Just add follwing to **themes** &gt;**layout** &gt; **_partial** &gt; **after-footer.ejs**:
 

@@ -53,7 +53,7 @@ But there is one "restriction", you have to be aware of: the interpolation (subs
 
 <!-- more -->
 
-### Tagged Templates
+## Tagged Templates
 
 Beside Template Literals, ES6 introduced **Tagged Templates** (exact: Tagged Template Literals). These tags are functions, which allows you to parse a Template Literal. Definition is like this:
 
@@ -70,7 +70,7 @@ myTag`Hello ${firstName} ${lastName}!`
 
 Using Tagged Templates to build a template repository would mean, you have to write one tag function for every template ... doable, but time consuming.
 
-### Dynamic Tag Function
+## Dynamic Tag Function
 
 To avoid this, we can write a universal tag function, which utilizes the [Function constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/Function), to create the tag function dynamically:
 
@@ -89,12 +89,11 @@ function fillTemplate(templateString, templateVars) {
     Don't use this approach on user inputs as expressions, to avoid XSS!
 {% endalertbox %}
 
-### Let's see an example...
+## Let's see an example...
 
 Given is a tiny web app with the following structure:
 
-**index.html**
-```html
+```html index.html
 <!DOCTYPE html>
 <html>
   <head>
@@ -195,3 +194,14 @@ export { App };
 ```
 
 See it live at [codesandbox.io](https://codesandbox.io/s/reusable-es6-template-literals-4iyor?file=/src/templates.js).
+
+{% moreinfo '{ "list": [
+  [
+    "Stackoverflow", "Can ES6 template literals be substituted at runtime (or reused)?",
+    "https://stackoverflow.com/questions/30003353/can-es6-template-literals-be-substituted-at-runtime-or-reused"
+  ],
+  [
+    "Github/Adelphos", "ES6-Reuseable-Template",
+    "https://github.com/Adelphos/ES6-Reuseable-Template"
+  ]
+]}' %}

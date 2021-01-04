@@ -73,7 +73,7 @@ Some explanations on the [Stylus syntax](http://stylus-lang.com/docs/selectors.h
 
 Only problem was: the "Root + Parent" Stylus selector doesn't work in the block variables in the ``_extend.styl``. So I had to copy all theme relevant styles directly to the elements, where such a block was used: ``@extend <block-name>``.
 
-### The Toggle Switch
+## The Toggle Switch
 
 In the ``footer.ejs`` I added a toggle checkbox, where I could bind my JavaScript...
 
@@ -118,7 +118,7 @@ icon-moon = "\f186"
 icon-sun = "\f185"
 ```
 
-### The JavaScript
+## The JavaScript
 
 Everything was now prepared to implement the switching code in JavaScript, which should support a manual switch by clicking the toggle element as well as the automatic switch by the OS.
 

@@ -51,6 +51,7 @@ The HTML is simple:
   </ul>
 </nav>
 ```
+
 And here's the [Stylus](https://stylus-lang.com/docs) code for my approach:
 
 ```styl

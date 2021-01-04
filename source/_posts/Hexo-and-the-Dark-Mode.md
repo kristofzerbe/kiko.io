@@ -29,7 +29,7 @@ Due to the fact, that nowadays everybody is talking about Dark Modes for Browser
 
 Starting point is the new media query ``prefers-color-scheme``, which is actually supported by all modern browsers.
 
-### Technique
+## Technique
 
 My first read was Tom Brow's [Dark mode in a website with CSS](https://tombrow.com/dark-mode-website-css), where he shows how to use the media query. Simplified, this is it, assuming the light version is the default:
 
@@ -47,7 +47,7 @@ body {
 }
 ```
 
-### Pimping CSS for automatic switching
+## Pimping CSS for automatic switching
 
 To support the automatic browser/OS-based automatic switch in Hexo, where [Stylus](http://stylus-lang.com/) is used, I had to change some template files. First the ``_variables.styl``:
 

@@ -264,7 +264,7 @@
 <p>That’s pretty much it. On entering the first comment, Utterances told me to install the needed GitHub App to my repo, in order to make it work … and done.</p>
 <p><img src="/categories/Tools/Using-GitHub-as-Commenting-Platform/utteranc-github-app.png" alt="Utterances GitHub App"></p>
 <p>The result you see below …</p>
-<h3 id="UPDATE…"><a href="#UPDATE…" class="headerlink" title="UPDATE…"></a>UPDATE…</h3><p>The utterances script tag has the attribute <code>theme</code>, to tell utterances  which style should be delivered. There are several themes available, but if users are able to switch between light or dark mode on the page (see <a href="/categories/Tools/Hexo-and-the-Dark-Mode">Hexo and the Dark Mode</a>), the comment block should change to an suitable theme also.</p>
+<h2 id="UPDATE…"><a href="#UPDATE…" class="headerlink" title="UPDATE…"></a>UPDATE…</h2><p>The utterances script tag has the attribute <code>theme</code>, to tell utterances  which style should be delivered. There are several themes available, but if users are able to switch between light or dark mode on the page (see <a href="/categories/Tools/Hexo-and-the-Dark-Mode">Hexo and the Dark Mode</a>), the comment block should change to an suitable theme also.</p>
 <p>On order to respond on a mode change, it is necessary to write a more dynamic script loading.</p>
 <p>First we define a function in a global script file to load the utterances script via JS:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertUtterancesCommentBlock</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> commentTheme = <span class="string">&quot;github-light&quot;</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">localStorage</span>.getItem(<span class="string">&quot;theme&quot;</span>) === <span class="string">&quot;dark&quot;</span>)&#123;</span><br><span class="line">      commentTheme = <span class="string">&quot;github-dark&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> scriptId = <span class="string">&quot;comment-theme-script&quot;</span>;</span><br><span class="line">    <span class="keyword">const</span> existingScript = <span class="built_in">document</span>.getElementById(scriptId);</span><br><span class="line">    <span class="keyword">if</span> (!existingScript) &#123;</span><br><span class="line">      <span class="keyword">const</span> commentScript = <span class="built_in">document</span>.createElement(<span class="string">&quot;script&quot;</span>);</span><br><span class="line">      commentScript.id = scriptId;</span><br><span class="line">      commentScript.src = <span class="string">&quot;https://utteranc.es/client.js&quot;</span>;</span><br><span class="line">      commentScript.setAttribute(<span class="string">&quot;repo&quot;</span>, <span class="string">&quot;kristofzerbe/kiko.io&quot;</span>);</span><br><span class="line">      commentScript.setAttribute(<span class="string">&quot;issue-term&quot;</span>, <span class="string">&quot;pathname&quot;</span>);</span><br><span class="line">      commentScript.setAttribute(<span class="string">&quot;theme&quot;</span>, commentTheme);</span><br><span class="line">      commentScript.setAttribute(<span class="string">&quot;crossorigin&quot;</span>, <span class="string">&quot;anonymous&quot;</span>);</span><br><span class="line">      <span class="keyword">const</span> placeholder = <span class="built_in">document</span>.getElementById(<span class="string">&quot;comment-placeholder&quot;</span>);</span><br><span class="line">      placeholder.innerHTML = <span class="string">&quot;&quot;</span>;</span><br><span class="line">      placeholder.appendChild(commentScript);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -282,7 +282,7 @@
 
       
         <div class="article-permalink"">
-    <input id="article-permalink" value="https://kiko.io/categories/Tools/Using-GitHub-as-Commenting-Platform/" data-id="ckjihx20w005qu0l91bvwgb0z" />
+    <input id="article-permalink" value="https://kiko.io/categories/Tools/Using-GitHub-as-Commenting-Platform/" data-id="ckjiro4ro0056x4l9c0mn2f85" />
     <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
     <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
 </div>
@@ -332,6 +332,14 @@
     </footer>
   </div>
   
+    <div class="article-comments">
+  <div id="comment-placeholder"></div>
+  <script>
+    window.addEventListener('load', function () {
+      insertUtterancesCommentBlock();
+    })    
+  </script>
+</div>
     
   <div class="article-related">
     <h2>Related</h2>
@@ -490,15 +498,6 @@
     </div>
   </div>
 
-    <div class="article-comments">
-  <h2>Comments</h2>
-  <div id="comment-placeholder"></div>
-  <script>
-    window.addEventListener('load', function () {
-      insertUtterancesCommentBlock();
-    })    
-  </script>
-</div>
     
 <nav id="article-nav">
   

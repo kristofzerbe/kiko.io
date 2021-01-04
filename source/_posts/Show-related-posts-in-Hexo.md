@@ -25,7 +25,7 @@ In the default Hexo theme **Landscape**, on which this blog is based, there is n
 
 <!-- more -->
 
-### Plugin: hexo-list-related-posts
+## Plugin: hexo-list-related-posts
 
 This plugin, available at [GitHub](https://github.com/nkmk/hexo-list-related-posts) is pretty lean and generates a list of links to related posts based on tags. It just counts how often a tag is occuring and shows a list of related posts either by count descending or randomly.
 
@@ -38,7 +38,7 @@ This plugin, available at [GitHub](https://github.com/nkmk/hexo-list-related-pos
 * Necessity of a sophisticated tag system
 * Technical approach
 
-### Plugin: hexo-related-posts
+## Plugin: hexo-related-posts
 
 [Sergey Zwezdin](https://github.com/sergeyzwezdin/hexo-related-posts) made much more effort in his solution. The plugins depends on statistic methodologies like [Stemming](https://en.wikipedia.org/wiki/Stemming) and [TF/IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf), provided by the Node library [Natural](https://github.com/NaturalNode/natural). It has plenty setting options like weighting and reserved words in order to optimize results.
 
@@ -52,7 +52,7 @@ This plugin, available at [GitHub](https://github.com/nkmk/hexo-list-related-pos
 * Necessity of maintaining reserved words
 * Technical approach
 
-### Manually Curated
+## Manually Curated
 
 One point, that no technical solution can achieve is: you can guide the reader through your blog, by pointing out posts, which doesn't really belong to the topic, but tries to give him a wider perspective on your thoughts or work. This is only possible, if you link the related posts manually. Here is a way to implement the requirements...
 

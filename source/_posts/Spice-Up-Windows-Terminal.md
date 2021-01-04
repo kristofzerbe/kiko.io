@@ -78,10 +78,30 @@ Set-Theme Paradox
 
 *Paradox* is one of 27 themes available. You will find all themes in your DOCUMENTS folder under ``..\WindowsPowerShell\Modules\oh-my-posh\<version>\Themes`` and some visual representations at [https://github.com/JanDeDobbeleer/oh-my-posh?#themes](https://github.com/JanDeDobbeleer/oh-my-posh?#themes).
 
-## Links and more info
-- [**Windows Store** - Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701)
-- [**Microsoft** - Cascadia Code PL](https://github.com/microsoft/cascadia-code)
-- [**GitHub** - JanDeDobbeleer/oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh)
-- [**Microsoft Docs** - Set up Powerline in Windows Terminal](https://docs.microsoft.com/de-de/windows/terminal/tutorials/powerline-setup)
-- [**Scott Hanselman** - How to make a pretty prompt in Windows Terminal with Powerline, Nerd Fonts, Cascadia Code, WSL, and oh-my-posh](https://www.hanselman.com/blog/how-to-make-a-pretty-prompt-in-windows-terminal-with-powerline-nerd-fonts-cascadia-code-wsl-and-ohmyposh)
-- [**Scott Hanselman** - Taking your PowerShell prompt to the next level with Windows Terminal and Oh my Posh 3](https://www.hanselman.com/blog/taking-your-powershell-prompt-to-the-next-level-with-windows-terminal-and-oh-my-posh-3)
+
+{% moreinfo '{ "list": [
+  [
+    "Windows Store", "Windows Terminal",
+    "https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701"
+  ],
+  [
+    "Microsoft", "Cascadia Code PL",
+    "https://github.com/microsoft/cascadia-code"
+  ],
+  [
+    "GitHub", "JanDeDobbeleer/oh-my-posh",
+    "https://github.com/JanDeDobbeleer/oh-my-posh"
+  ],
+  [
+    "Microsoft Docs", "Set up Powerline in Windows Terminal",
+    "https://docs.microsoft.com/de-de/windows/terminal/tutorials/powerline-setup"
+  ],
+  [
+    "Scott Hanselman", "How to make a pretty prompt in Windows Terminal with Powerline, Nerd Fonts, Cascadia Code, WSL, and oh-my-posh",
+    "https://www.hanselman.com/blog/how-to-make-a-pretty-prompt-in-windows-terminal-with-powerline-nerd-fonts-cascadia-code-wsl-and-ohmyposh"
+  ],
+  [
+    "Scott Hanselman", "Taking your PowerShell prompt to the next level with Windows Terminal and Oh my Posh 3",
+    "https://www.hanselman.com/blog/taking-your-powershell-prompt-to-the-next-level-with-windows-terminal-and-oh-my-posh-3"
+  ]
+]}' %}

@@ -31,7 +31,7 @@ But seriously ... who does that? I guess 99% of all C# developers are entering t
 But this is not the end of the possibilities ... Let's do it more meaningful, with some goodies and still automatic...
 <!-- more -->
 
-### More informative versioning
+## More informative versioning
 
 A build with an increased MAJOR version number means, that there are significant changes in the product, even breaking changes. This always should be set manually.
 
@@ -49,7 +49,7 @@ The "Asterisk" REVISION number is a little weird, but at least with the BUILD nu
 
 For example: **1.2.16.158** ... reads version 1.2 with 16 builds on the 158'th day after the project has started.
 
-### Start with T4
+## Start with T4
 
 T4 (Text Template Transformation Toolkit) is a templating system in Visual Studio for generating text files during design time. It is very suitable to even generate code. Read about it [here](https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates) and [here](https://docs.microsoft.com/en-us/visualstudio/modeling/writing-a-t4-text-template).
 
@@ -91,21 +91,21 @@ On saving the TT file, a new CS file with the same name will be created automati
 
 ![Duplicate Attributes Error](Meaningful-automatic-versioning-with-T4/DuplicateAttributes.png)
 
-#### A new place for version info
+### A new place for version info
 
 Th error occurs, because we have now **two** ``AssemblyVersion`` and ``AssemblyFileVersion`` attributes in our project. We need to comment out the original in ``Properties\AssemblyInfo.cs``:
 
 ![Change AssemblyInfo.cs](Meaningful-automatic-versioning-with-T4/ChangeAssemblyInfo.png)
 
-#### Structural Considerations
+### Structural Considerations
 
 It makes sense to store all needed files for the new versioning system in a new root folder of the project, named **AssemblyVersion**, starting with the ``AssemblyVersion.tt``, because there will be more files later on.
 
-### New app information file
+## New app information file
 
 As we replaced the original version attributes in the project with those from our generated  ``AssemblyVersion.cs``, we cannot control the MAJOR and MINOR version number via the project property dialog any longer. We need a new approach on that, which can be edited easily and processed automatically.
 
-#### AssemblyVersion.json
+### AssemblyVersion.json
 
 ```js
 {
@@ -133,7 +133,7 @@ This new JSON file has two main items:
 
 The ``remarks`` attribute of a list item holds some information about the changes in a new version. Together with ``releaseDate``, useful for a possible release history, shown in the product itself.
 
-#### Library references in T4
+### Library references in T4
 
 T4 runs in its own app domain, therefore it can use built-in libraries as ``System.IO``, but not third-party libraries like ``Newtonsoft.JSON``. 
 
@@ -141,7 +141,7 @@ We could reference those libraries from the projects package folder via the abso
 
 It is advisable to store such libraries directly in a fixed folder, like **AssemblyVersion\Libraries**. They won't have any impact to our product, because the are only used while design time.
 
-### The MAJOR and MINOR
+## The MAJOR and MINOR
 
 To process the new ``AssemblyVersion.json`` in the template, we need some new directives for referencing the needed libraries and the import of the appropriate namepaces:
 
@@ -189,7 +189,7 @@ Now we can read and convert the JSON into an anonymous object and get the highes
 #>
 ```
 
-### The BuildLog
+## The BuildLog
 
 In order to get the version number for BUILD, we need a method to count and store every build that has been run, separated by the MAJOR/MINOR versions. This is a job for a **Post-build event**, which can be configured in the project properties dialog. The event uses shell commands as they are used on the command line.
 
@@ -197,7 +197,7 @@ What the commands should do:&nbsp;&nbsp;&nbsp;Write a new line with the current 
 
 ![Build Log](Meaningful-automatic-versioning-with-T4/BuildLog.png)
 
-#### Extending build event macros
+### Extending build event macros
 
 Shell commands for build events are supporting built-in variables, so called 'macros', like ``$(ProjectDir)`` (which returns the project directory path), but there is no such macro for the current version number. We have to introduce it via extending the project with a new build target.
 
@@ -223,7 +223,7 @@ Unload the project in Visual Studio for editing the CSPROJ (or VBPROJ) file of y
 
 After reloading the project in Visual Studio, we can use ``@(VersionNumber)`` in our commands.
 
-#### CreateBuildLog.bat
+### CreateBuildLog.bat
 
 The event build editor is not very comfortable, so we create the batch file ``CreateBuildLog.bat`` in our **AssemblyVersion** folder and use this as the post build event command.
 
@@ -267,7 +267,7 @@ echo %LOG_LINE% >> %BUILDLOG_FOLDER%\%BUILDLOG_FILE%"
 "$(ProjectDir)\AssemblyVersion\CreateBuildLog.bat" "$(ProjectDir)" @(VersionNumber)
 ```
 
-### The BUILD
+## The BUILD
 
 As we have now the BuildLogs, we can use them in the template:
 
@@ -297,7 +297,7 @@ As we have now the BuildLogs, we can use them in the template:
 
 Very important is to create the log file, if it doesn't exists! Otherwise the build will always fail, because the version attributes can't be created.
 
-### The REVISION
+## The REVISION
 
 At least we have to set the REVISION number, by calculating the difference between the current date and the ``initialDate``, which we have previously read from the ``AssemblyVersion.json``:
 
@@ -311,7 +311,7 @@ At least we have to set the REVISION number, by calculating the difference betwe
 #>
 ```
 
-### Transforming T4 template on build
+## Transforming T4 template on build
 
 The last hurdle is to run the text transformation every time you build your product. Until now it runs only on saving the ``AssemblyVersion.tt``.
 
@@ -345,7 +345,7 @@ Secondly add the IMPORT of the TextTemplating target AFTER the CSharp target:
 
 If you build your product now, a new build log is created and the version numbers BUILD and REVISION are automatically increased.
 
-### See it in action
+## See it in action
 
 The project where I implemented this versioning first is [HexoCommander](https://github.com/kristofzerbe/HexoCommander). Feel free to download the code and see how the new versioning mechanism works.
 

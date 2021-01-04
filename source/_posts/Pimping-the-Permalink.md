@@ -28,7 +28,7 @@ My goal was to show the permalink and, even more important, provide a simple way
 
 <!-- more -->
 
-### Display
+## Display
 As I run my blog with [Hexo](https://hexo.io), I deal with ``EJS`` files. To show the permalink in my ``article.ejs``, was quite simple. First step was to create a new partial file named ``permalink.ejs``, to be called every time when the complete article has to be rendered:
 
 ```js
@@ -45,7 +45,7 @@ The partial file looked like this in this step:
 </div>
 ```
 
-### Copy
+## Copy
 
 As I read a little bit about the possibilities to copy text into the clipboard via JavaScript on [MDN](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Interact_with_the_clipboard), it became obvious that a link is not the best solution, because using the ``exeCommand`` needs to have something selected and this is difficult on anchors. Then ... do it with an input:
 
@@ -170,7 +170,7 @@ I extended my ``animation.styl`` (Hexo works with [Stylus](https://stylus-lang.c
 </script>
 ```
 
-### Share
+## Share
 
 The second permalink feature was a little bit trickier, because I didn't want to use one of the sharing libraries out there, whose business model is based on my readers data (always keep conservative on implementing third party stuff, because you never know what they are doing with the data). But a couple of months ago I read about a new native browser API for WebApps on the rise: **Web Share API**.
 
@@ -231,8 +231,17 @@ I refrain to implement a fallback, rather I would like to show the appropriate b
 </script>
 ```
 
-More information about Web Share API:
-
-* [W3C Web Share Test](https://w3c.github.io/web-share/demos/share-files.html)
-* [heise Developer: Features von übermorgen: Die Web Share API und die Web Share Target API (German)](https://www.heise.de/developer/artikel/Features-von-uebermorgen-Die-Web-Share-API-und-die-Web-Share-Target-API-3506197.html)
-* [CSS-Tricks: How to Use the Web Share API](https://css-tricks.com/how-to-use-the-web-share-api/)
+{% moreinfo '{ "list": [
+  [
+  "w3c.github.io", "W3C Web Share Test",
+  "https://w3c.github.io/web-share/demos/share-files.html"
+  ],
+  [
+  "heise Developer", "Features von übermorgen: Die Web Share API und die Web Share Target API (German)",
+  "https://www.heise.de/developer/artikel/Features-von-uebermorgen-Die-Web-Share-API-und-die-Web-Share-Target-API-3506197.html"
+  ],
+  [
+  "CSS-Tricks", "How to Use the Web Share API",
+  "https://css-tricks.com/how-to-use-the-web-share-api/"
+  ]
+]}' %}

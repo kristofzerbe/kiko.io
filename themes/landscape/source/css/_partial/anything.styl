@@ -26,16 +26,29 @@
     text-decoration: none
     width: 100%
     color: color-default
+    transition: all .2s ease-in
     /[data-theme="dark"] &
       color: dark-color-default
     &:hover
       color: color-link
       /[data-theme="dark"] &
         color: dark-color-link
+      em
+        background-color: color-link
+        color: dark-color-link
     em
-      opacity: 0.25
-      font-size: 0.75em
-      line-height: 1.8em
+      font-size: 0.6em
+      line-height: 1.6em
+      padding: 5px
+      min-width: 80px
+      max-height: 26px
+      text-align: center
+      transition: all .2s ease-in
+      background-color: color-button
+      color: color-button-link
+      /[data-theme="dark"] &
+        background-color: dark-color-button
+        color: dark-color-button-link        
 
 .anything-content
   @extend $base-style

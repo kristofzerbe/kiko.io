@@ -29,7 +29,7 @@ Unfortunately, there is no visual management console on Azure DevOps to manage y
 
 The easiest way to get rid of the unused server workspace in 3 steps:
 
-### Step 1
+## Step 1
 
 Run **Developer Command Prompt** with Administrator privileges from Visual Studio 2019 and login with your Azure DevOps credentials. If the Login dialog doesn't show up, force it by executing:
 
@@ -37,7 +37,7 @@ Run **Developer Command Prompt** with Administrator privileges from Visual Studi
 tf.exe workspace
 ```
 
-### Step 2
+## Step 2
 
 Get a list of all remote workspaces available in your DevOps Collection by running the command:
 
@@ -47,7 +47,7 @@ tf.exe workspaces /computer:* /owner:* /format:xml > c:\temp\workspaces.xml
 
 You can get a list of all your workspaces by running ``tf workspaces``, but the list only shows you the ``owner``, but not the necessary ``ownerid`` and ... it is nicer to have a file to search in.
 
-### Step 3
+## Step 3
 
 Find the abandoned workspace in the list and note its ``name`` and  ``ownerid`` for running the command:
 
@@ -57,7 +57,7 @@ tf workspace /delete {WORKSPACE.name};{WORKSPACE.ownerid}
 
 Now your new colleague can create his own workspace on the same machine.
 
-### Update
+## Update
 In case you want to switch your own DevOps account to another and use the same folder as before, you can certainly delete the local workspace, but this wont help, because you are still logged in at TeamExplorer and the folder knows to whom it belongs. Solution is easy:
 
 1. Quit Visual Studio
@@ -67,7 +67,14 @@ In case you want to switch your own DevOps account to another and use the same f
 5. Remove all your Remote Workspaces as described above
 6. Start Visual Studio, connect in TeamExplorer to your TFS server and map the code to your folder
 
-## Related
-* [Use Team Foundation version control commands](https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/use-team-foundation-version-control-commands?view=azure-devops)
-* [How to remove TFS workspace mapping for another user
-](https://stackoverflow.com/questions/28298771/how-to-remove-tfs-workspace-mapping-for-another-user/28299407)
+
+{% moreinfo '{ "list": [
+  [
+    "Microsoft Docs", "Use Team Foundation version control commands",
+    "https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/use-team-foundation-version-control-commands?view=azure-devops"
+  ],
+  [
+    "Stackoverflow", "How to remove TFS workspace mapping for another user",
+    "https://stackoverflow.com/questions/28298771/how-to-remove-tfs-workspace-mapping-for-another-user/28299407"
+  ]
+]}' %}
