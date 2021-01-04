@@ -109,7 +109,6 @@ Given is a tiny web app with the following structure:
 </html>
 ```
 
-**index.js**
 ```js index.js
 import { App } from "./app.js";
 
@@ -118,8 +117,7 @@ const app = new App();
 app.init();
 ```
 
-**app.js**
-```js
+```js app.js
 class App {
   init() {
     //do something
@@ -139,8 +137,7 @@ What we want to do now, is to load some images into the `main` element, by using
 
 To separate our templates from the main code, we create a template module, which contains the dynamic tag function from above and a `photo` template we want to use in our app
 
-**template.js**
-```js
+```js template.js
 class Templates {
 
   //Template
@@ -172,8 +169,7 @@ The template retrieves a `data` object, with the values of the defined expressio
 
 This we can use now in our app code:
 
-**app.js**
-```js
+```js app.js
 //Import Template module
 import { Templates } from "./templates.js";
 
