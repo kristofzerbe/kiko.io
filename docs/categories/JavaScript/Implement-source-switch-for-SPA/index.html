@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><link rel=manifest href=/site.webmanifest><meta name="generator" content="Hexo 3.9.0">
+<head><link rel=manifest href=/site.webmanifest>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,12 +52,22 @@
     <link rel="icon" href="/favicon.ico">
   
 
-  <link rel="stylesheet" href="/css/dist/bundle.min.css">
-  <link rel="stylesheet" href="/css/dist/image-compare-viewer.min.css">  
-  <link rel="stylesheet" href="/css/style.css">  
+  
+<link rel="stylesheet" href="/css/dist/bundle.min.css">
 
-  <script src="/js/tools.js"></script>
-  <script src="/js/dist/image-compare-viewer.min.js"></script>
+  
+<link rel="stylesheet" href="/css/dist/image-compare-viewer.min.css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+  
+
+  
+<script src="/js/tools.js"></script>
+
+  
+<script src="/js/dist/image-compare-viewer.min.js"></script>
+
 
   <script>
     var hitcountConfig = {
@@ -78,9 +88,9 @@
 
   </script>
 
-<link rel="alternate" href="/atom.xml" title="kiko.io" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="kiko.io" type="application/atom+xml">
 </head>
-</html>
+
 <body id="body">  
   <div id="container" class="container">
     <div class="inner-container">
@@ -233,38 +243,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>A while ago I wrote a Single Page Application (SPA) with jQuery and and decided to use some useful plugins to avoid reinventing the wheel. To keep the delivered sources small, I used the bundler <a href="https://gulpjs.com/" target="_blank" rel="noopener">Gulp</a>, to pack all JS plugins in a single file and another one for my custom JS code. I used the same procedure with the CSS files.</p>
+        <p>A while ago I wrote a Single Page Application (SPA) with jQuery and and decided to use some useful plugins to avoid reinventing the wheel. To keep the delivered sources small, I used the bundler <a target="_blank" rel="noopener" href="https://gulpjs.com/">Gulp</a>, to pack all JS plugins in a single file and another one for my custom JS code. I used the same procedure with the CSS files.</p>
 <p>The SPA contained only a single HTML file in which all bundeled sources and needed HTML template blocks were included, in order to load most of the stuff while starting the app, when the users sees a GMail-like  loading screen.</p>
-<p>But the whole thing had one disadvantage: Debugging for example in Chrome Dev Tool is not a joy, if the code is packed with <a href="https://www.npmjs.com/package/gulp-concat" target="_blank" rel="noopener">Gulp Concat</a> and <a href="https://www.npmjs.com/package/gulp-concat" target="_blank" rel="noopener">Gulp Uglify</a>. It would be much more convenient, if the source loading can be done depending on the environment.</p>
+<p>But the whole thing had one disadvantage: Debugging for example in Chrome Dev Tool is not a joy, if the code is packed with <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/gulp-concat">Gulp Concat</a> and <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/gulp-concat">Gulp Uglify</a>. It would be much more convenient, if the source loading can be done depending on the environment.</p>
 <a id="more"></a>
 
 <p>First step was to replace the SCRIPT and LINK tags in die <code>index.html</code> with a dynamic loading approach using JavaScript.</p>
 <h3 id="Dynamic-JS-loading"><a href="#Dynamic-JS-loading" class="headerlink" title="Dynamic JS loading"></a>Dynamic JS loading</h3><p>For some custom code it was necessary to load the plugins previously, because of dependencies.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addScriptAsync</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">    script.type = <span class="string">"text/javascript"</span>;</span><br><span class="line">    script.src = url;</span><br><span class="line"></span><br><span class="line">    script.addEventListener(<span class="string">"load"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      resolve(script);</span><br><span class="line">    &#125;, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    script.addEventListener(<span class="string">"error"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      reject(script);</span><br><span class="line">    &#125;, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>].appendChild(script);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addScriptAsync</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">&quot;script&quot;</span>);</span><br><span class="line">    script.type = <span class="string">&quot;text/javascript&quot;</span>;</span><br><span class="line">    script.src = url;</span><br><span class="line"></span><br><span class="line">    script.addEventListener(<span class="string">&quot;load&quot;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      resolve(script);</span><br><span class="line">    &#125;, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    script.addEventListener(<span class="string">&quot;error&quot;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      reject(script);</span><br><span class="line">    &#125;, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">document</span>.getElementsByTagName(<span class="string">&#x27;head&#x27;</span>)[<span class="number">0</span>].appendChild(script);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>By returning a <code>Promise</code>, the calling code is able to wait for a dependent source to load:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">addScriptAsync(<span class="string">"Build/vendor.min.js"</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  addScriptAsync(<span class="string">"Build/custom.min.js"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">addScriptAsync(<span class="string">&quot;Build/vendor.min.js&quot;</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  addScriptAsync(<span class="string">&quot;Build/custom.min.js&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h3 id="Dynamic-CSS-loading"><a href="#Dynamic-CSS-loading" class="headerlink" title="Dynamic CSS loading"></a>Dynamic CSS loading</h3><p>Loading CSS is pretty straightforward and includes an <code>id</code> as parameter, in order to be able to access the style afterwards, for example when tehh user is chanhing the SPA’s theme: </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addStylesheet</span>(<span class="params">url, id</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> stylesheet = <span class="built_in">document</span>.createElement(<span class="string">'link'</span>);</span><br><span class="line">  stylesheet.rel = <span class="string">'stylesheet'</span>;</span><br><span class="line">  stylesheet.type = <span class="string">'text/css'</span>;</span><br><span class="line">  stylesheet.href = url;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (id) &#123; stylesheet.setAttribute(<span class="string">"id"</span>, id); &#125;</span><br><span class="line">  <span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>].appendChild(stylesheet);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">addStylesheet(<span class="string">"Build/vendor.css"</span>);</span><br><span class="line">addStylesheet(<span class="string">"Build/custom.css"</span>);</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addStylesheet</span>(<span class="params">url, id</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> stylesheet = <span class="built_in">document</span>.createElement(<span class="string">&#x27;link&#x27;</span>);</span><br><span class="line">  stylesheet.rel = <span class="string">&#x27;stylesheet&#x27;</span>;</span><br><span class="line">  stylesheet.type = <span class="string">&#x27;text/css&#x27;</span>;</span><br><span class="line">  stylesheet.href = url;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (id) &#123; stylesheet.setAttribute(<span class="string">&quot;id&quot;</span>, id); &#125;</span><br><span class="line">  <span class="built_in">document</span>.getElementsByTagName(<span class="string">&#x27;head&#x27;</span>)[<span class="number">0</span>].appendChild(stylesheet);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">addStylesheet(<span class="string">&quot;Build/vendor.css&quot;</span>);</span><br><span class="line">addStylesheet(<span class="string">&quot;Build/custom.css&quot;</span>);</span><br></pre></td></tr></table></figure>
 <h3 id="Consider-the-environment"><a href="#Consider-the-environment" class="headerlink" title="Consider the environment"></a>Consider the environment</h3><p>Now everything was set up to implement a switch, depending on whether the SPA was started locally or in production.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> _DEV = (<span class="built_in">window</span>.location.hostname.indexOf(<span class="string">"localhost"</span>) !== <span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line">addStylesheet(<span class="string">"Build/vendor.css"</span>);</span><br><span class="line"><span class="keyword">if</span> (_DEV) &#123;</span><br><span class="line">  addStylesheet(<span class="string">"Libraries/styles.css"</span>);</span><br><span class="line">  addStylesheet(<span class="string">"Libraries/helpers.css"</span>);</span><br><span class="line">  ...</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  addStylesheet(<span class="string">"Build/custom.css"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">addScriptAsync(<span class="string">"Build/vendor.min.js"</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (_DEV) &#123;</span><br><span class="line">    addScriptAsync(<span class="string">"Libraries/prototypes.js"</span>)</span><br><span class="line">      .then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> addScriptAsync(<span class="string">"Libraries/tools.js"</span>); &#125;)</span><br><span class="line">      .then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> addScriptAsync(<span class="string">"Libraries/app.js"</span>); &#125;)</span><br><span class="line">      ...</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> addScriptAsync(<span class="string">"Build/custom.min.js"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> _DEV = (<span class="built_in">window</span>.location.hostname.indexOf(<span class="string">&quot;localhost&quot;</span>) !== -<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">addStylesheet(<span class="string">&quot;Build/vendor.css&quot;</span>);</span><br><span class="line"><span class="keyword">if</span> (_DEV) &#123;</span><br><span class="line">  addStylesheet(<span class="string">&quot;Libraries/styles.css&quot;</span>);</span><br><span class="line">  addStylesheet(<span class="string">&quot;Libraries/helpers.css&quot;</span>);</span><br><span class="line">  ...</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  addStylesheet(<span class="string">&quot;Build/custom.css&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">addScriptAsync(<span class="string">&quot;Build/vendor.min.js&quot;</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (_DEV) &#123;</span><br><span class="line">    addScriptAsync(<span class="string">&quot;Libraries/prototypes.js&quot;</span>)</span><br><span class="line">      .then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> addScriptAsync(<span class="string">&quot;Libraries/tools.js&quot;</span>); &#125;)</span><br><span class="line">      .then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> addScriptAsync(<span class="string">&quot;Libraries/app.js&quot;</span>); &#125;)</span><br><span class="line">      ...</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> addScriptAsync(<span class="string">&quot;Build/custom.min.js&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bundling/">Bundling</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SPA/">SPA</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bundling/" rel="tag">Bundling</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SPA/" rel="tag">SPA</a></li></ul>  
   </div>
 
       
         <div class="article-permalink"">
-    <input id="article-permalink" value="https://kiko.io/categories/JavaScript/Implement-source-switch-for-SPA/" data-id="ckj8zrajx003kiwl98nc0h0q9" />
+    <input id="article-permalink" value="https://kiko.io/categories/JavaScript/Implement-source-switch-for-SPA/" data-id="ckjihx1zg001ou0l9aebh4czq" />
     <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
     <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
 </div>
@@ -353,7 +358,7 @@
     <div class="archive-article-footer">
       
   <div class="archive-article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li></ul>  
   </div>
 
     </div>
@@ -399,7 +404,7 @@
     <div class="archive-article-footer">
       
   <div class="archive-article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Localization/">Localization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Resource/">Resource</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Localization/" rel="tag">Localization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Resource/" rel="tag">Resource</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/" rel="tag">Visual Studio</a></li></ul>  
   </div>
 
     </div>
@@ -468,6 +473,10 @@
       <ul>
         
           <li>
+            <a href="/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/">Utilize a repository of reusable ES6 template literals</a>
+          </li>
+        
+          <li>
             <a href="/categories/Tools/Spice-Up-Windows-Terminal/">Spice Up Windows Terminal</a>
           </li>
         
@@ -481,10 +490,6 @@
         
           <li>
             <a href="/categories/Photo-Editing/Israeli-Presets-for-Lightroom/">Israeli Presets for Lightroom</a>
-          </li>
-        
-          <li>
-            <a href="/categories/Photo-Editing/Folder-based-publishing-in-Lightroom/">Folder based publishing in Lightroom</a>
           </li>
         
       </ul>
@@ -507,7 +512,7 @@
     <div class="inner">
         <div id="footer-info">
           <div>
-            &copy; 2020 <a href="https://github.com/kristofzerbe">Kristof Zerbe</a><br>
+            &copy; 2021 <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe">Kristof Zerbe</a><br>
             Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/" target="_blank">GitHub</a>  
           </div>
           <div>
@@ -526,9 +531,15 @@
 </footer>
       </div>
       <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+
 <script src="/js/jquery.min.js"></script>
+
+
 <script src="/js/dist/bundle.min.js"></script>
+
+
 <script src="/js/script.js"></script>
+
 
 <script>
   //BACK-TO-TOP

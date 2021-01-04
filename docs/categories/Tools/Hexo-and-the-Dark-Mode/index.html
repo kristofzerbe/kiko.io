@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><link rel=manifest href=/site.webmanifest><meta name="generator" content="Hexo 3.9.0">
+<head><link rel=manifest href=/site.webmanifest>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,12 +52,22 @@
     <link rel="icon" href="/favicon.ico">
   
 
-  <link rel="stylesheet" href="/css/dist/bundle.min.css">
-  <link rel="stylesheet" href="/css/dist/image-compare-viewer.min.css">  
-  <link rel="stylesheet" href="/css/style.css">  
+  
+<link rel="stylesheet" href="/css/dist/bundle.min.css">
 
-  <script src="/js/tools.js"></script>
-  <script src="/js/dist/image-compare-viewer.min.js"></script>
+  
+<link rel="stylesheet" href="/css/dist/image-compare-viewer.min.css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+  
+
+  
+<script src="/js/tools.js"></script>
+
+  
+<script src="/js/dist/image-compare-viewer.min.js"></script>
+
 
   <script>
     var hitcountConfig = {
@@ -78,9 +88,9 @@
 
   </script>
 
-<link rel="alternate" href="/atom.xml" title="kiko.io" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="kiko.io" type="application/atom+xml">
 </head>
-</html>
+
 <body id="body">  
   <div id="container" class="container">
     <div class="inner-container">
@@ -242,21 +252,16 @@
 <a id="more"></a>
 
 <p>Starting point is the new media query <code>prefers-color-scheme</code>, which is actually supported by all modern browsers.</p>
-<h3 id="Technique"><a href="#Technique" class="headerlink" title="Technique"></a>Technique</h3><p>My first read was Tom Brow’s <a href="https://tombrow.com/dark-mode-website-css" target="_blank" rel="noopener">Dark mode in a website with CSS</a>, where he shows how to use the media query. Simplified, this is it, assuming the light version is the default:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: white;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> (prefers-color-scheme: dark) &#123;</span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: black;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Pimping-CSS-for-automatic-switching"><a href="#Pimping-CSS-for-automatic-switching" class="headerlink" title="Pimping CSS for automatic switching"></a>Pimping CSS for automatic switching</h3><p>To support the automatic browser/OS-based automatic switch in Hexo, where <a href="http://stylus-lang.com/" target="_blank" rel="noopener">Stylus</a> is used, I had to change some template files. First the <code>_variables.styl</code>:</p>
-<figure class="highlight styl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// existing color variables</span></span><br><span class="line"><span class="attribute">color</span>-background = <span class="number">#f1f1f1</span></span><br><span class="line"><span class="attribute">color</span>-foreground = <span class="number">#111</span></span><br><span class="line"><span class="attribute">color</span>-border = <span class="number">#ddd</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">// new dark color variables</span></span><br><span class="line">dark-<span class="attribute">color</span>-background = <span class="number">#111</span></span><br><span class="line">dark-<span class="attribute">color</span>-foreground = <span class="number">#eee</span></span><br><span class="line">dark-<span class="attribute">color</span>-border = <span class="number">#000</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">// new media query variable</span></span><br><span class="line">prefers-dark = <span class="string">"(prefers-color-scheme: dark)"</span></span><br></pre></td></tr></table></figure>
-
+<h3 id="Technique"><a href="#Technique" class="headerlink" title="Technique"></a>Technique</h3><p>My first read was Tom Brow’s <a target="_blank" rel="noopener" href="https://tombrow.com/dark-mode-website-css">Dark mode in a website with CSS</a>, where he shows how to use the media query. Simplified, this is it, assuming the light version is the default:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: white;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">prefers-color-scheme:</span> dark) &#123;</span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: black;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Pimping-CSS-for-automatic-switching"><a href="#Pimping-CSS-for-automatic-switching" class="headerlink" title="Pimping CSS for automatic switching"></a>Pimping CSS for automatic switching</h3><p>To support the automatic browser/OS-based automatic switch in Hexo, where <a target="_blank" rel="noopener" href="http://stylus-lang.com/">Stylus</a> is used, I had to change some template files. First the <code>_variables.styl</code>:</p>
+<figure class="highlight styl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// existing color variables</span></span><br><span class="line"><span class="attribute">color</span>-background = <span class="number">#f1f1f1</span></span><br><span class="line"><span class="attribute">color</span>-foreground = <span class="number">#111</span></span><br><span class="line"><span class="attribute">color</span>-border = <span class="number">#ddd</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">// new dark color variables</span></span><br><span class="line">dark-<span class="attribute">color</span>-background = <span class="number">#111</span></span><br><span class="line">dark-<span class="attribute">color</span>-foreground = <span class="number">#eee</span></span><br><span class="line">dark-<span class="attribute">color</span>-border = <span class="number">#000</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">// new media query variable</span></span><br><span class="line">prefers-dark = <span class="string">&quot;(prefers-color-scheme: dark)&quot;</span></span><br></pre></td></tr></table></figure>
 <p>Next step was to change the <code>_extend.styl</code>, where some Stylus variables are defining complete blocks to extend. Here I had to supplement all lines, where something mode-dependend was defined, by adding the new <code>prefers-dark</code> media query and beneath the new ‘dark’ equivalence of the style:</p>
 <figure class="highlight styl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$base</span>-style</span><br><span class="line">  hr</span><br><span class="line">    ...</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> dashed color-border-article</span><br><span class="line">    @media prefers-dark</span><br><span class="line">      <span class="attribute">border</span>: <span class="number">1px</span> dashed dark-color-border-article</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line"><span class="variable">$block</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="attribute">background</span>: color-block</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">1px</span> <span class="number">2px</span> <span class="number">3px</span> color-border</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid color-border</span><br><span class="line">  @media prefers-dark</span><br><span class="line">    <span class="attribute">background</span>: dark-color-block</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">1px</span> <span class="number">2px</span> <span class="number">3px</span> dark-color-border</span><br><span class="line">    <span class="attribute">border-color</span>: dark-color-border</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
 <p>The same changes I had to do in every template <code>styl</code> file, where one of the colors or other mode dependent style was used. For example:</p>
 <figure class="highlight styl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#mobile-nav-header</span><br><span class="line">  <span class="attribute">background-color</span>: color-background</span><br><span class="line">  @media prefers-dark</span><br><span class="line">    <span class="attribute">background-color</span>: dark-color-background</span><br><span class="line">  <span class="selector-tag">img</span>.avatar</span><br><span class="line">    ...</span><br><span class="line">    @media prefers-dark</span><br><span class="line">      <span class="attribute">filter</span>: brightness(<span class="number">85%</span>)</span><br></pre></td></tr></table></figure>
-
 <p>This will be rendered as:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#mobile-nav-header</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#f1f1f1</span>;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> (prefers-color-scheme: dark) &#123;</span><br><span class="line">    <span class="selector-id">#mobile-nav-header</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#111</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#mobile-nav-header</span> <span class="selector-tag">img</span><span class="selector-class">.avatar</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> (prefers-color-scheme: dark) &#123;</span><br><span class="line">  <span class="selector-tag">filter</span>: <span class="selector-tag">brightness</span>(85%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#mobile-nav-header</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#f1f1f1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">prefers-color-scheme:</span> dark) &#123;</span><br><span class="line">    <span class="selector-id">#mobile-nav-header</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#111</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#mobile-nav-header</span> <span class="selector-tag">img</span><span class="selector-class">.avatar</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">prefers-color-scheme:</span> dark) &#123;</span><br><span class="line">  <span class="selector-tag">filter</span>: <span class="selector-tag">brightness</span>(85%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Please note the use of <code>filter:brightness()</code> in the example. It is always advisable to darken the images too, because they can really pop out on dark backgrounds.</p>
 
       
@@ -264,12 +269,12 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dark-Mode/">Dark Mode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stylus/">Stylus</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dark-Mode/" rel="tag">Dark Mode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stylus/" rel="tag">Stylus</a></li></ul>  
   </div>
 
       
         <div class="article-permalink"">
-    <input id="article-permalink" value="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode/" data-id="ckj8zraim002liwl9hbemhnk0" />
+    <input id="article-permalink" value="https://kiko.io/categories/Tools/Hexo-and-the-Dark-Mode/" data-id="ckjihx1zb001cu0l96ma242ui" />
     <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
     <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
 </div>
@@ -366,7 +371,7 @@
     <div class="archive-article-footer">
       
   <div class="archive-article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dark-Mode/">Dark Mode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stylus/">Stylus</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dark-Mode/" rel="tag">Dark Mode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stylus/" rel="tag">Stylus</a></li></ul>  
   </div>
 
     </div>
@@ -416,7 +421,7 @@
     <div class="archive-article-footer">
       
   <div class="archive-article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/">VS Code</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/" rel="tag">VS Code</a></li></ul>  
   </div>
 
     </div>
@@ -466,7 +471,7 @@
     <div class="archive-article-footer">
       
   <div class="archive-article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/">VS Code</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/" rel="tag">VS Code</a></li></ul>  
   </div>
 
     </div>
@@ -535,6 +540,10 @@
       <ul>
         
           <li>
+            <a href="/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/">Utilize a repository of reusable ES6 template literals</a>
+          </li>
+        
+          <li>
             <a href="/categories/Tools/Spice-Up-Windows-Terminal/">Spice Up Windows Terminal</a>
           </li>
         
@@ -548,10 +557,6 @@
         
           <li>
             <a href="/categories/Photo-Editing/Israeli-Presets-for-Lightroom/">Israeli Presets for Lightroom</a>
-          </li>
-        
-          <li>
-            <a href="/categories/Photo-Editing/Folder-based-publishing-in-Lightroom/">Folder based publishing in Lightroom</a>
           </li>
         
       </ul>
@@ -574,7 +579,7 @@
     <div class="inner">
         <div id="footer-info">
           <div>
-            &copy; 2020 <a href="https://github.com/kristofzerbe">Kristof Zerbe</a><br>
+            &copy; 2021 <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe">Kristof Zerbe</a><br>
             Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/" target="_blank">GitHub</a>  
           </div>
           <div>
@@ -593,9 +598,15 @@
 </footer>
       </div>
       <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+
 <script src="/js/jquery.min.js"></script>
+
+
 <script src="/js/dist/bundle.min.js"></script>
+
+
 <script src="/js/script.js"></script>
+
 
 <script>
   //BACK-TO-TOP

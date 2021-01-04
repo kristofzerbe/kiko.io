@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kiko.io/"/>
-  <updated>2020-12-24T16:18:13.730Z</updated>
+  <updated>2021-01-04T11:45:41.178Z</updated>
   <id>https://kiko.io/</id>
   
   <author>
@@ -17,6 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Utilize a repository of reusable ES6 template literals</title>
+    <link href="https://kiko.io/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/"/>
+    <id>https://kiko.io/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/</id>
+    <published>2021-01-03T12:29:01.000Z</published>
+    <updated>2021-01-04T11:45:41.178Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;The &lt;a href=&quot;http://es6-features.org/#StringInterpolation&quot;&gt;&lt;strong&gt;Template Literals&lt;/strong&gt;&lt;/a&gt; introduced with ES6 are very useful to deal with multiline strings, because they support &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Expression_interpolation&quot;&gt;embedded expressions&lt;/a&gt;. Gone are the days of endless string concatination or replacing variables in a string by using RegEx.&lt;/p&gt;
+&lt;p&gt;Instead of… &lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; url = ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; file = ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; template = &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;string&quot;&gt;&amp;#x27;&amp;lt;div class=&amp;quot;photo&amp;quot;&amp;gt;&amp;#x27;&lt;/span&gt; + &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;string&quot;&gt;&amp;#x27;&amp;lt;a href=&amp;quot;&amp;#x27;&lt;/span&gt; + url + &lt;span class=&quot;string&quot;&gt;&amp;quot;&amp;#x27; + &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;        &amp;#x27;style=&amp;quot;&lt;/span&gt;background-image: url(&lt;span class=&quot;string&quot;&gt;&amp;#x27; + file + &amp;#x27;&lt;/span&gt;)&lt;span class=&quot;string&quot;&gt;&amp;quot;&amp;lt;/a&amp;gt;&amp;#x27; + &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;  &amp;#x27;&amp;lt;/div&amp;gt;&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;… you can write:&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; url = ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; file = ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; template = &lt;span class=&quot;string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;  &amp;lt;div class=&amp;quot;photo&amp;quot;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;    &amp;lt;a href=&amp;quot;&lt;span class=&quot;subst&quot;&gt;$&amp;#123;url&amp;#125;&lt;/span&gt;/&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;    style=&amp;quot;background-image: url(&lt;span class=&quot;subst&quot;&gt;$&amp;#123;file&amp;#125;&lt;/span&gt;);&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;  &amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;`&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;It’s much cleaner and easier to handle, as you can copy your needed HTML right into your code and surround it by &lt;strong&gt;backtick&lt;/strong&gt; (!) characters. Insert your variable placeholders (expressions), indicated by a dollar sign and curly braces, and you are done.&lt;/p&gt;
+&lt;p&gt;But there is one “restriction”, you have to be aware of: the interpolation (substitution of the expressions) is done at declaration time and not at runtime. You can’t define your literals seperatly, take one and make your substitution as you need it, like you would do with &lt;a href=&quot;https://handlebarsjs.com/&quot;&gt;Handlebars&lt;/a&gt; or other templating engines. Therefore the name &lt;em&gt;template&lt;/em&gt; literals is a bit misleading. But … there is a way to achieve this anyway…&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://kiko.io/categories/JavaScript/"/>
+    
+    
+      <category term="ES6" scheme="https://kiko.io/tags/ES6/"/>
+    
+      <category term="Templating" scheme="https://kiko.io/tags/Templating/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Spice Up Windows Terminal</title>
     <link href="https://kiko.io/categories/Tools/Spice-Up-Windows-Terminal/"/>
     <id>https://kiko.io/categories/Tools/Spice-Up-Windows-Terminal/</id>
@@ -25,7 +54,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;Working with the PowerShell in 2020 means fun, because of the new &lt;a href=&quot;https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;strong&gt;Windows Terminal&lt;/strong&gt; (get it from Windows Store)&lt;/a&gt;. It has more power as the old Powershell Console and it is visually adaptable to your personal taste, by installing the wonderful theming engine &lt;a href=&quot;https://github.com/JanDeDobbeleer/oh-my-posh&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;strong&gt;oh-my-posh&lt;/strong&gt; from Jan De Dobbeleer&lt;/a&gt;.&lt;/p&gt;
+      &lt;p&gt;Working with the PowerShell in 2020 means fun, because of the new &lt;a href=&quot;https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701&quot;&gt;&lt;strong&gt;Windows Terminal&lt;/strong&gt; (get it from Windows Store)&lt;/a&gt;. It has more power as the old Powershell Console and it is visually adaptable to your personal taste, by installing the wonderful theming engine &lt;a href=&quot;https://github.com/JanDeDobbeleer/oh-my-posh&quot;&gt;&lt;strong&gt;oh-my-posh&lt;/strong&gt; from Jan De Dobbeleer&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/categories/Tools/Spice-Up-Windows-Terminal/terminal-original.png&quot; alt=&quot;Original Terminal&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/categories/Tools/Spice-Up-Windows-Terminal/terminal-oh-my-posh.png&quot; alt=&quot;Terminal with oh-my-posh&quot;&gt;&lt;/p&gt;
 &lt;p&gt;To get Oh-My-Posh properly run, there are several steps to do I want to show here in a nutshell…&lt;/p&gt;
@@ -77,7 +106,7 @@
     <link href="https://kiko.io/categories/Photo-Editing/Indian-Presets-for-Lightroom/"/>
     <id>https://kiko.io/categories/Photo-Editing/Indian-Presets-for-Lightroom/</id>
     <published>2020-10-28T13:07:20.000Z</published>
-    <updated>2020-10-28T13:47:38.358Z</updated>
+    <updated>2021-01-04T11:25:24.097Z</updated>
     
     <summary type="html">
     
@@ -100,7 +129,7 @@
     <link href="https://kiko.io/categories/Photo-Editing/Israeli-Presets-for-Lightroom/"/>
     <id>https://kiko.io/categories/Photo-Editing/Israeli-Presets-for-Lightroom/</id>
     <published>2020-10-27T14:07:20.000Z</published>
-    <updated>2020-10-28T13:23:15.116Z</updated>
+    <updated>2021-01-04T11:25:24.351Z</updated>
     
     <summary type="html">
     
@@ -129,7 +158,7 @@
     <summary type="html">
     
       &lt;p&gt;In all times photography was a process: First you shoot you images, then you edit them and in the third step you publish them elsewhere.&lt;/p&gt;
-&lt;p&gt;Today &lt;strong&gt;Adobe Lightroom&lt;/strong&gt; is a de-facto standard in photo processing, especially when you shoot RAW images. And I mean &lt;a href=&quot;https://www.adobe.com/de/products/photoshop-lightroom-classic.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Lightroom Classic&lt;/a&gt; and not the new web/smartphone based software, which doesn’t come even close to the desktop application yet.&lt;/p&gt;
+&lt;p&gt;Today &lt;strong&gt;Adobe Lightroom&lt;/strong&gt; is a de-facto standard in photo processing, especially when you shoot RAW images. And I mean &lt;a href=&quot;https://www.adobe.com/de/products/photoshop-lightroom-classic.html&quot;&gt;Lightroom Classic&lt;/a&gt; and not the new web/smartphone based software, which doesn’t come even close to the desktop application yet.&lt;/p&gt;
 &lt;p&gt;I use Lightroom for all purposes after I shot my images: editing, cataloguing, managing and … publishing. On publishing Lightroom offers you two approaches: &lt;em&gt;Export&lt;/em&gt; and &lt;em&gt;Publish&lt;/em&gt;. While &lt;em&gt;Export&lt;/em&gt; is mainly for creating JPG copies of edited RAW images, &lt;em&gt;Publish&lt;/em&gt; goes one step further and gives you the ability to do “something” with your exported JPG’s, for example upload them on Flickr, Instagram, 500px or to your own web server via FTP. Major difference to &lt;em&gt;Export&lt;/em&gt; is, that &lt;em&gt;Publish&lt;/em&gt; keeps your images in sync. Everytime you change the source images, the defined publish services recognizes and offer you to re-publish your image.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/categories/Photo-Editing/Folder-based-publishing-in-Lightroom/lr-re-publish.png&quot; alt=&quot;Lightroom Publish&quot;&gt;&lt;/p&gt;
 &lt;p&gt;In the past years I tried a lot of Lightroom plugins for publishing on several platforms, but it doesn’t work out for long, because all these platforms change their API almost every year (or are stamped) and the sparely maintained 3rd party plugins break.&lt;/p&gt;
@@ -154,7 +183,7 @@
     <link href="https://kiko.io/categories/Discoveries/Discoveries-4/"/>
     <id>https://kiko.io/categories/Discoveries/Discoveries-4/</id>
     <published>2020-10-10T13:27:47.000Z</published>
-    <updated>2020-12-19T16:51:07.893Z</updated>
+    <updated>2021-01-03T10:52:22.522Z</updated>
     
     <summary type="html">
     
@@ -186,9 +215,9 @@
     
     <summary type="html">
     
-      &lt;p&gt;A while ago I wrote a Single Page Application (SPA) with jQuery and and decided to use some useful plugins to avoid reinventing the wheel. To keep the delivered sources small, I used the bundler &lt;a href=&quot;https://gulpjs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Gulp&lt;/a&gt;, to pack all JS plugins in a single file and another one for my custom JS code. I used the same procedure with the CSS files.&lt;/p&gt;
+      &lt;p&gt;A while ago I wrote a Single Page Application (SPA) with jQuery and and decided to use some useful plugins to avoid reinventing the wheel. To keep the delivered sources small, I used the bundler &lt;a href=&quot;https://gulpjs.com/&quot;&gt;Gulp&lt;/a&gt;, to pack all JS plugins in a single file and another one for my custom JS code. I used the same procedure with the CSS files.&lt;/p&gt;
 &lt;p&gt;The SPA contained only a single HTML file in which all bundeled sources and needed HTML template blocks were included, in order to load most of the stuff while starting the app, when the users sees a GMail-like  loading screen.&lt;/p&gt;
-&lt;p&gt;But the whole thing had one disadvantage: Debugging for example in Chrome Dev Tool is not a joy, if the code is packed with &lt;a href=&quot;https://www.npmjs.com/package/gulp-concat&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Gulp Concat&lt;/a&gt; and &lt;a href=&quot;https://www.npmjs.com/package/gulp-concat&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Gulp Uglify&lt;/a&gt;. It would be much more convenient, if the source loading can be done depending on the environment.&lt;/p&gt;
+&lt;p&gt;But the whole thing had one disadvantage: Debugging for example in Chrome Dev Tool is not a joy, if the code is packed with &lt;a href=&quot;https://www.npmjs.com/package/gulp-concat&quot;&gt;Gulp Concat&lt;/a&gt; and &lt;a href=&quot;https://www.npmjs.com/package/gulp-concat&quot;&gt;Gulp Uglify&lt;/a&gt;. It would be much more convenient, if the source loading can be done depending on the environment.&lt;/p&gt;
     
     </summary>
     
@@ -231,25 +260,30 @@
     <link href="https://kiko.io/categories/Discoveries/Discoveries-3-Tutorials/"/>
     <id>https://kiko.io/categories/Discoveries/Discoveries-3-Tutorials/</id>
     <published>2020-09-29T10:02:10.000Z</published>
-    <updated>2020-10-10T15:20:06.679Z</updated>
+    <updated>2021-01-04T11:25:25.622Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;Some articles I stumble upon in my daily routine of reading news and blogs are diving very deep in a certain topic, especially if they are describing the basics of techniques I use every day. &lt;/p&gt;
 &lt;p&gt;All of the following reading tips are of the type “ahh, that’s why this works like that” or “uuh, I just scatch on the surface on that”. Take your time and read the articles in detail. We all never stop learning and it’s a pleasure to do so…&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;CSS&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;CSS Viewport Units&lt;/li&gt;
-&lt;li&gt;Grid for layout, Flexbox for components&lt;/li&gt;
-&lt;li&gt;How CSS Perspective Works&lt;/li&gt;
-&lt;li&gt;Linearly Scale font-size with CSS clamp() Based on the Viewport&lt;/li&gt;
-&lt;li&gt;Learn CSS Centering&lt;/li&gt;
-&lt;/ul&gt;
+
+        &lt;ul class=&quot;simplelist&quot;&gt;
+            &lt;li&gt;CSS Viewport Units&lt;/li&gt;&lt;li&gt;Grid for layout, Flexbox for components&lt;/li&gt;&lt;li&gt;How CSS Perspective Works&lt;/li&gt;&lt;li&gt;Linearly Scale font-size with CSS clamp() Based on the Viewport&lt;/li&gt;&lt;li&gt;Learn CSS Centering&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul class=&quot;anchorlist&quot; style=&quot;display:none;&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;#css-viewport-units&quot;&gt;CSS Viewport Units&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#grid-for-layout-flexbox-for-components&quot;&gt;Grid for layout, Flexbox for components&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#how-css-perspective-works&quot;&gt;How CSS Perspective Works&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#linearly-scale-font-size-with-clamp&quot;&gt;Linearly Scale font-size with CSS clamp() Based on the Viewport&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#centering-in-css&quot;&gt;Learn CSS Centering&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    
+
 &lt;p&gt;&lt;strong&gt;JavaScript&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The Flavors of Object-Oriented Programming (in JavaScript)&lt;/li&gt;
-&lt;li&gt;Understanding the Event Loop, Callbacks, Promises, and Async/Await in JavaScript&lt;/li&gt;
-&lt;/ul&gt;
+
+        &lt;ul class=&quot;simplelist&quot;&gt;
+            &lt;li&gt;The Flavors of Object-Oriented Programming (in JavaScript)&lt;/li&gt;&lt;li&gt;Understanding the Event Loop, Callbacks, Promises, and Async/Await in JavaScript&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul class=&quot;anchorlist&quot; style=&quot;display:none;&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;#the-flavors-of-object-oriented-programming&quot;&gt;The Flavors of Object-Oriented Programming (in JavaScript)&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#understanding-the-event-loop&quot;&gt;Understanding the Event Loop, Callbacks, Promises, and Async/Await in JavaScript&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
     
     </summary>
     
@@ -270,11 +304,10 @@
     
     <summary type="html">
     
-      &lt;p&gt;In some occasions it is necessary to know which device a user is using while writing JavaScript Web Apps. Should be nothing regarding layout, because for this we have &lt;a href=&quot;https://developer.mozilla.org/de/docs/Web/CSS/Media_Queries/Using_media_queries&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;code&gt;CSS Media Queries&lt;/code&gt;&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt;Somewhere around 2011 W3C introduced &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;code&gt;matchMedia()&lt;/code&gt;&lt;/a&gt;, which &lt;em&gt;returns a MediaQueryList object that can be used to detemnine if the document matches the media query string.&lt;/em&gt; The using is pretty straightforward and feels a bit like RegEx matching in JS:&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; mediaQuery = &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.matchMedia(&lt;span class=&quot;string&quot;&gt;&#39;(min-width: 1025px)&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (mediaQuery.matches) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// do something...  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;If you are interested in this API, you will find good introductions to the topic &lt;a href=&quot;https://css-tricks.com/working-with-javascript-media-queries/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;here&lt;/a&gt;, &lt;a href=&quot;https://hacks.mozilla.org/2012/06/using-window-matchmedia-to-do-media-queries-in-javascript/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;https://www.mediaevent.de/javascript/window-matchMedia.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;here (German)&lt;/a&gt;.&lt;/p&gt;
+      &lt;p&gt;In some occasions it is necessary to know which device a user is using while writing JavaScript Web Apps. Should be nothing regarding layout, because for this we have &lt;a href=&quot;https://developer.mozilla.org/de/docs/Web/CSS/Media_Queries/Using_media_queries&quot;&gt;&lt;code&gt;CSS Media Queries&lt;/code&gt;&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Somewhere around 2011 W3C introduced &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia&quot;&gt;&lt;code&gt;matchMedia()&lt;/code&gt;&lt;/a&gt;, which &lt;em&gt;returns a MediaQueryList object that can be used to detemnine if the document matches the media query string.&lt;/em&gt; The using is pretty straightforward and feels a bit like RegEx matching in JS:&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; mediaQuery = &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.matchMedia(&lt;span class=&quot;string&quot;&gt;&amp;#x27;(min-width: 1025px)&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (mediaQuery.matches) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// do something...  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;If you are interested in this API, you will find good introductions to the topic &lt;a href=&quot;https://css-tricks.com/working-with-javascript-media-queries/&quot;&gt;here&lt;/a&gt;, &lt;a href=&quot;https://hacks.mozilla.org/2012/06/using-window-matchmedia-to-do-media-queries-in-javascript/&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;https://www.mediaevent.de/javascript/window-matchMedia.html&quot;&gt;here (German)&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;One point of criticism on this pure JS approach can be, that you have to maintain the breakpoints in addition to CSS … &lt;strong&gt;but why not use these existing breakpoints in JS&lt;/strong&gt;?&lt;/p&gt;
     
     </summary>
@@ -285,9 +318,9 @@
     
       <category term="Browser" scheme="https://kiko.io/tags/Browser/"/>
     
-      <category term="MediaQuery" scheme="https://kiko.io/tags/MediaQuery/"/>
-    
       <category term="CSS" scheme="https://kiko.io/tags/CSS/"/>
+    
+      <category term="MediaQuery" scheme="https://kiko.io/tags/MediaQuery/"/>
     
   </entry>
   
@@ -300,7 +333,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;As this blog is a static one, generated by &lt;a href=&quot;https://hexo.io&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt; and hostet at &lt;a href=&quot;https://pages.github.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;, the page which was shown, when a user enters an Url which points to nowhere, was the default GitHub 404 page.&lt;/p&gt;
+      &lt;p&gt;As this blog is a static one, generated by &lt;a href=&quot;https://hexo.io&quot;&gt;Hexo&lt;/a&gt; and hostet at &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub&lt;/a&gt;, the page which was shown, when a user enters an Url which points to nowhere, was the default GitHub 404 page.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/categories/Tools/404-Page-in-Hexo-for-GitHub-Pages/github-404-page.png&quot; alt=&quot;GitHub 404 Page&quot;&gt;&lt;/p&gt;
     
     </summary>
@@ -309,9 +342,9 @@
       <category term="Tools" scheme="https://kiko.io/categories/Tools/"/>
     
     
-      <category term="Hexo" scheme="https://kiko.io/tags/Hexo/"/>
-    
       <category term="GitHub" scheme="https://kiko.io/tags/GitHub/"/>
+    
+      <category term="Hexo" scheme="https://kiko.io/tags/Hexo/"/>
     
       <category term="Error" scheme="https://kiko.io/tags/Error/"/>
     
@@ -350,21 +383,18 @@
     <link href="https://kiko.io/categories/Discoveries/Discoveries-2/"/>
     <id>https://kiko.io/categories/Discoveries/Discoveries-2/</id>
     <published>2020-09-07T15:54:50.000Z</published>
-    <updated>2020-10-10T15:13:05.318Z</updated>
+    <updated>2021-01-04T11:25:25.379Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;New month, new discoveries. We will deal with key bindings, downloads on the fly, a lot of animations and contrasting images. Have fun, trying out these stunning solutions.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;tinykeys - Modern library for keybindings&lt;/li&gt;
-&lt;li&gt;Creating files in JavaScript in your browser&lt;/li&gt;
-&lt;li&gt;CSS Animated Google Fonts&lt;/li&gt;
-&lt;li&gt;Skeleton Screen CSS&lt;/li&gt;
-&lt;li&gt;More Control Over CSS Borders With background-image&lt;/li&gt;
-&lt;li&gt;A CSS-only, animated, wrapping underline&lt;/li&gt;
-&lt;li&gt;Nailing the Perfect Contrast Between Light Text and a Background Image&lt;/li&gt;
-&lt;li&gt;Contrast.js&lt;/li&gt;
-&lt;/ul&gt;
+
+        &lt;ul class=&quot;simplelist&quot;&gt;
+            &lt;li&gt;tinykeys - Modern library for keybindings&lt;/li&gt;&lt;li&gt;Creating files in JavaScript in your browser&lt;/li&gt;&lt;li&gt;CSS Animated Google Fonts&lt;/li&gt;&lt;li&gt;Skeleton Screen CSS&lt;/li&gt;&lt;li&gt;More Control Over CSS Borders With background-image&lt;/li&gt;&lt;li&gt;A CSS-only, animated, wrapping underline&lt;/li&gt;&lt;li&gt;Nailing the Perfect Contrast Between Light Text and a Background Image&lt;/li&gt;&lt;li&gt;Contrast.js&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul class=&quot;anchorlist&quot; style=&quot;display:none;&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;#tinykeys&quot;&gt;tinykeys - Modern library for keybindings&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#creating-files-in-javascript&quot;&gt;Creating files in JavaScript in your browser&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#css-animated-fonts&quot;&gt;CSS Animated Google Fonts&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#skeleton-screen-css&quot;&gt;Skeleton Screen CSS&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#more-control-over-css-borders&quot;&gt;More Control Over CSS Borders With background-image&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#css-only-animated-wrapping-underline&quot;&gt;A CSS-only, animated, wrapping underline&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#nailing-the-perfect-contrast&quot;&gt;Nailing the Perfect Contrast Between Light Text and a Background Image&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#contrast-js&quot;&gt;Contrast.js&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
     
     </summary>
     
@@ -385,13 +415,13 @@
     
     <summary type="html">
     
-      &lt;p&gt;I was looking for a new way to store interesting website articles for reading later, as Pocket, my favourite tool until here, gets worse and worse. As I am a big &lt;a href=&quot;https://trello.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Trello&lt;/a&gt; fan, I wanted to give it a chance to be Pockets successor on my smartphone, where I’m reading mostly.&lt;/p&gt;
+      &lt;p&gt;I was looking for a new way to store interesting website articles for reading later, as Pocket, my favourite tool until here, gets worse and worse. As I am a big &lt;a href=&quot;https://trello.com&quot;&gt;Trello&lt;/a&gt; fan, I wanted to give it a chance to be Pockets successor on my smartphone, where I’m reading mostly.&lt;/p&gt;
 &lt;p&gt;On installing the Trello Android app, you will find a new SHARE target &lt;strong&gt;Add new Trello card&lt;/strong&gt;, which is comfortable to use:&lt;/p&gt;
 &lt;p&gt;(Sry, for the German screenshots ;)&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/categories/Tools/Add-website-to-Trello-card-the-better-way/android-share-website.png&quot; alt=&quot;Android&amp;#39;s default share with New Trello Card&quot;&gt;&lt;/p&gt;
 &lt;p&gt;The result, website’s title and Url set, is nice at best:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/categories/Tools/Add-website-to-Trello-card-the-better-way/card-via-share.png&quot; alt=&quot;Trello card via Android Share&quot;&gt;&lt;/p&gt;
-&lt;p&gt;… but Trello has a &lt;strong&gt;&lt;a href=&quot;https://trello.com/add-card&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Bookmarklet&lt;/a&gt;&lt;/strong&gt;, which does the job much better.&lt;/p&gt;
+&lt;p&gt;… but Trello has a &lt;strong&gt;&lt;a href=&quot;https://trello.com/add-card&quot;&gt;Bookmarklet&lt;/a&gt;&lt;/strong&gt;, which does the job much better.&lt;/p&gt;
     
     </summary>
     
@@ -439,8 +469,7 @@
     <summary type="html">
     
       &lt;p&gt;I had a neat visual gimmick on the start page of this blog, that the gray-scaled header image of a post in the list scaled up to 100% and became colored, when the user hovered over it:&lt;/p&gt;
-&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.article-inner&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.article-photo&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;150px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;100%&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;object-fit&lt;/span&gt;: cover;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;scale&lt;/span&gt;(1);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;transform-style&lt;/span&gt;: preserve-&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;d;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;transition&lt;/span&gt;: all ease-out &lt;span class=&quot;number&quot;&gt;0.6s&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;opacity&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0.3&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;filter&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;grayscale&lt;/span&gt;(1) &lt;span class=&quot;built_in&quot;&gt;contrast&lt;/span&gt;(0.5);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.article-inner&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:hover&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.article-photo&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;scale&lt;/span&gt;(1.1);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;opacity&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;filter&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;grayscale&lt;/span&gt;(0) &lt;span class=&quot;built_in&quot;&gt;contrast&lt;/span&gt;(1);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.article-inner&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.article-photo&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;150px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;100%&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;object-fit&lt;/span&gt;: cover;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;scale&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;transform-style&lt;/span&gt;: preserve-&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;d;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;transition&lt;/span&gt;: all ease-out &lt;span class=&quot;number&quot;&gt;0.6s&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;opacity&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0.3&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;filter&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;grayscale&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) &lt;span class=&quot;built_in&quot;&gt;contrast&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.article-inner&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:hover&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.article-photo&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;scale&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;1.1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;opacity&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;filter&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;grayscale&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) &lt;span class=&quot;built_in&quot;&gt;contrast&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;Nice, but a little bit useless on smartphones or tablets, where HOVER  doesn’t really work.&lt;/p&gt;
     
     </summary>
@@ -460,23 +489,20 @@
     <link href="https://kiko.io/categories/Discoveries/Discoveries-1/"/>
     <id>https://kiko.io/categories/Discoveries/Discoveries-1/</id>
     <published>2020-07-12T07:55:10.000Z</published>
-    <updated>2020-10-10T15:18:29.982Z</updated>
+    <updated>2021-01-04T11:25:24.904Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;Due to my daily routine, I’m reading a lot of articles on the web regarding software development. &lt;/p&gt;
 &lt;p&gt;The most interesting stuff ends up on my Pocket list, which grows from day to day. Hard to find the pearls, when I need them. This recurring posts will throw a stroke of light on them.&lt;/p&gt;
 &lt;p&gt;They are maybe not the newest finds, not the fanciest ones, but remarkable for me and maybe for you also.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Pure CSS halftone portrait from .jpg source&lt;/li&gt;
-&lt;li&gt;ScrollTrigger - Highlight Text&lt;/li&gt;
-&lt;li&gt;Tiny long-press event handler&lt;/li&gt;
-&lt;li&gt;Show More/Less&lt;/li&gt;
-&lt;li&gt;3D banners with ScrollTrigger&lt;/li&gt;
-&lt;li&gt;Image Compare Viewer&lt;/li&gt;
-&lt;li&gt;Add Read or Scroll Progress Bar To A Website To Indicate Read Progress&lt;/li&gt;
-&lt;li&gt;How to Get a Progressive Web App into the Google Play Store&lt;/li&gt;
-&lt;/ul&gt;
+
+        &lt;ul class=&quot;simplelist&quot;&gt;
+            &lt;li&gt;Pure CSS halftone portrait from .jpg source&lt;/li&gt;&lt;li&gt;ScrollTrigger - Highlight Text&lt;/li&gt;&lt;li&gt;Tiny long-press event handler&lt;/li&gt;&lt;li&gt;Show More/Less&lt;/li&gt;&lt;li&gt;3D banners with ScrollTrigger&lt;/li&gt;&lt;li&gt;Image Compare Viewer&lt;/li&gt;&lt;li&gt;Add Read or Scroll Progress Bar To A Website To Indicate Read Progress&lt;/li&gt;&lt;li&gt;How to Get a Progressive Web App into the Google Play Store&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul class=&quot;anchorlist&quot; style=&quot;display:none;&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;#pure-css-halftone&quot;&gt;Pure CSS halftone portrait from .jpg source&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#scrolltrigger-highlight-text&quot;&gt;ScrollTrigger - Highlight Text&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#long-press-event-handler&quot;&gt;Tiny long-press event handler&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#show-more&quot;&gt;Show More/Less&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#3d-banners-with-scrolltrigger&quot;&gt;3D banners with ScrollTrigger&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#image-compare-viewer&quot;&gt;Image Compare Viewer&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#read-progress-bar&quot;&gt;Add Read or Scroll Progress Bar To A Website To Indicate Read Progress&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#get-pwa-into-play-store&quot;&gt;How to Get a Progressive Web App into the Google Play Store&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
     
     </summary>
     
@@ -500,7 +526,7 @@
       &lt;p&gt;Not very often, when I’m looking for a new tool to replace some annoying or outdated piece of software, I have to blog about it … but from time to time, I’m discovering pearls, worth to lose a word about.&lt;/p&gt;
 &lt;p&gt;The Windows 10 built-in media player Groove is (to be kind) … nice, but it is more or less a leftover from Microsoft’s attempt to create a competitor to iTunes, years ago. The crippeled UI is not the most modern and I was more than once annoyed about its usability.&lt;/p&gt;
 &lt;p&gt;Doing a research for a good alternative, you stumble always over the usual suspects: MediaMonkey, Foobar2000, Winamp, VLC or even Media Player Classic!? Not modern enough, not user friendly enough, not lean enough.&lt;/p&gt;
-&lt;p&gt;I really don’t remember where, but there was a screenshot of a player, which seems to be the complete opposite of the others: &lt;strong&gt;Dopamine&lt;/strong&gt; from &lt;a href=&quot;https://www.digimezzo.com/software/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Digimezzo&lt;/a&gt;, a project by the Belgian developer &lt;a href=&quot;https://twitter.com/RaphaelGodart&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Raphaël Godart&lt;/a&gt;…&lt;/p&gt;
+&lt;p&gt;I really don’t remember where, but there was a screenshot of a player, which seems to be the complete opposite of the others: &lt;strong&gt;Dopamine&lt;/strong&gt; from &lt;a href=&quot;https://www.digimezzo.com/software/&quot;&gt;Digimezzo&lt;/a&gt;, a project by the Belgian developer &lt;a href=&quot;https://twitter.com/RaphaelGodart&quot;&gt;Raphaël Godart&lt;/a&gt;…&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/categories/Tools/Dopamine-How-Software-should-be/screenshot_dopamine_202.png&quot; alt=&quot;Screenshot Dopamine 2.0.2.&quot;&gt;&lt;/p&gt;
     
     </summary>
@@ -523,7 +549,7 @@
     <summary type="html">
     
       &lt;p&gt;If you run a blog, it is always advisable to integrate a commenting system, in order to get feedback on your posts from your readers.&lt;/p&gt;
-&lt;p&gt;So did I, when I start this blog and I decided to use the &lt;a href=&quot;https://disqus.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Disqus platform&lt;/a&gt;, as it was very easy to integrate … but I always had a bad feeling about a third-party platform collecting data from my readers. Disqus is probably not without reason under criticism by many people in the community.&lt;/p&gt;
+&lt;p&gt;So did I, when I start this blog and I decided to use the &lt;a href=&quot;https://disqus.com&quot;&gt;Disqus platform&lt;/a&gt;, as it was very easy to integrate … but I always had a bad feeling about a third-party platform collecting data from my readers. Disqus is probably not without reason under criticism by many people in the community.&lt;/p&gt;
 &lt;p&gt;As I host this blog at GitHub (see &lt;a href=&quot;/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/&quot;&gt;A New Blog (Part One): VS Code, Hexo and GitHub Pages&lt;/a&gt;) I was looking for a solution to host the comments also on my prefered platform. There were some solutions, which uses GitHub Issues for this and wanted to implement something like that someday.&lt;/p&gt;
     
     </summary>
@@ -532,42 +558,11 @@
       <category term="Tools" scheme="https://kiko.io/categories/Tools/"/>
     
     
-      <category term="Hexo" scheme="https://kiko.io/tags/Hexo/"/>
-    
       <category term="GitHub" scheme="https://kiko.io/tags/GitHub/"/>
     
+      <category term="Hexo" scheme="https://kiko.io/tags/Hexo/"/>
+    
       <category term="Blogging" scheme="https://kiko.io/tags/Blogging/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Meaningful automatic versioning with T4</title>
-    <link href="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/"/>
-    <id>https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/</id>
-    <published>2020-06-27T15:57:18.000Z</published>
-    <updated>2020-10-02T18:12:08.995Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Every developer has to have an idea of versioning his products. If you work with Visual Studio you have the &lt;code&gt;Assembly Information&lt;/code&gt; in the project properties dialog, to enter it manually everytime you want to release a new version:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/categories/C/Meaningful-automatic-versioning-with-T4/AssemblyInformationDialog.png&quot; alt=&quot;Assembly Information Dialog&quot;&gt;&lt;/p&gt;
-&lt;p&gt;The four fields are: MAJOR, MINOR, BUILD, REVISION.&lt;/p&gt;
-&lt;p&gt;But seriously … who does that? I guess 99% of all C# developers are entering the &lt;code&gt;AssemblyInfo.cs&lt;/code&gt; and enter the famous 2 asterisks into the version declaration of BUILD and REVISION, to let Visual Studio do the incrementation job:&lt;/p&gt;
-&lt;figure class=&quot;highlight c#&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[&lt;span class=&quot;meta&quot;&gt;assembly: AssemblyVersion(&lt;span class=&quot;meta-string&quot;&gt;&quot;1.0.*.*&quot;&lt;/span&gt;)&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[&lt;span class=&quot;meta&quot;&gt;assembly: AssemblyFileVersion(&lt;span class=&quot;meta-string&quot;&gt;&quot;1.0.*.*&quot;&lt;/span&gt;)&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;But this is not the end of the possibilities … Let’s do it more meaningful, with some goodies and still automatic…&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="C#" scheme="https://kiko.io/categories/C/"/>
-    
-    
-      <category term="Visual Studio" scheme="https://kiko.io/tags/Visual-Studio/"/>
-    
-      <category term="Versioning" scheme="https://kiko.io/tags/Versioning/"/>
-    
-      <category term="T4" scheme="https://kiko.io/tags/T4/"/>
     
   </entry>
   

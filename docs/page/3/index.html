@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><link rel=manifest href=/site.webmanifest><meta name="generator" content="Hexo 3.9.0">
+<head><link rel=manifest href=/site.webmanifest>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,12 +52,22 @@
     <link rel="icon" href="/favicon.ico">
   
 
-  <link rel="stylesheet" href="/css/dist/bundle.min.css">
-  <link rel="stylesheet" href="/css/dist/image-compare-viewer.min.css">  
-  <link rel="stylesheet" href="/css/style.css">  
+  
+<link rel="stylesheet" href="/css/dist/bundle.min.css">
 
-  <script src="/js/tools.js"></script>
-  <script src="/js/dist/image-compare-viewer.min.js"></script>
+  
+<link rel="stylesheet" href="/css/dist/image-compare-viewer.min.css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+  
+
+  
+<script src="/js/tools.js"></script>
+
+  
+<script src="/js/dist/image-compare-viewer.min.js"></script>
+
 
   <script>
     var hitcountConfig = {
@@ -78,9 +88,9 @@
 
   </script>
 
-<link rel="alternate" href="/atom.xml" title="kiko.io" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="kiko.io" type="application/atom+xml">
 </head>
-</html>
+
 <body id="body">  
   <div id="container" class="container">
     <div class="inner-container">
@@ -178,6 +188,70 @@
   
     
   
+<article id="post-Change-CSS-class-when-element-scrolls-into-viewport" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/" class="article-date">
+  <time datetime="2020-07-13T16:24:39.000Z" itemprop="datePublished">13 Jul 2020</time>
+</a>
+    
+  <div class="article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+    <a href="/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/">
+        <img class="article-photo" src="/photos/tablet/D70_7695.jpg" alt="Onion Broken" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+    <p class="article-series" itemprop="name">
+        A New Blog, Part 8
+    </p>
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/">Change CSS class when element scrolls into viewport</a>
+    </h1>
+  
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I had a neat visual gimmick on the start page of this blog, that the gray-scaled header image of a post in the list scaled up to 100% and became colored, when the user hovered over it:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.article-inner</span> <span class="selector-class">.article-photo</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">object-fit</span>: cover;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="attribute">transform-style</span>: preserve-<span class="number">3</span>d;</span><br><span class="line">  <span class="attribute">transition</span>: all ease-out <span class="number">0.6s</span>;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.3</span>;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">1</span>) <span class="built_in">contrast</span>(<span class="number">0.5</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.article-inner</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.article-photo</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">0</span>) <span class="built_in">contrast</span>(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Nice, but a little bit useless on smartphones or tablets, where HOVER  doesn’t really work.</p>
+        
+          <p class="article-more-link">
+            <a class="button" href="/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li></ul>  
+  </div>
+
+      
+    </footer>
+  </div>
+  
+</article>
+  
+    
+  
 <article id="post-Discoveries-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/categories/Discoveries/Discoveries-1/" class="article-date">
@@ -221,16 +295,13 @@
         <p>Due to my daily routine, I’m reading a lot of articles on the web regarding software development. </p>
 <p>The most interesting stuff ends up on my Pocket list, which grows from day to day. Hard to find the pearls, when I need them. This recurring posts will throw a stroke of light on them.</p>
 <p>They are maybe not the newest finds, not the fanciest ones, but remarkable for me and maybe for you also.</p>
-<ul>
-<li>Pure CSS halftone portrait from .jpg source</li>
-<li>ScrollTrigger - Highlight Text</li>
-<li>Tiny long-press event handler</li>
-<li>Show More/Less</li>
-<li>3D banners with ScrollTrigger</li>
-<li>Image Compare Viewer</li>
-<li>Add Read or Scroll Progress Bar To A Website To Indicate Read Progress</li>
-<li>How to Get a Progressive Web App into the Google Play Store</li>
-</ul>
+
+        <ul class="simplelist">
+            <li>Pure CSS halftone portrait from .jpg source</li><li>ScrollTrigger - Highlight Text</li><li>Tiny long-press event handler</li><li>Show More/Less</li><li>3D banners with ScrollTrigger</li><li>Image Compare Viewer</li><li>Add Read or Scroll Progress Bar To A Website To Indicate Read Progress</li><li>How to Get a Progressive Web App into the Google Play Store</li>
+        </ul>
+        <ul class="anchorlist" style="display:none;">
+            <li><a href="#pure-css-halftone">Pure CSS halftone portrait from .jpg source</a></li><li><a href="#scrolltrigger-highlight-text">ScrollTrigger - Highlight Text</a></li><li><a href="#long-press-event-handler">Tiny long-press event handler</a></li><li><a href="#show-more">Show More/Less</a></li><li><a href="#3d-banners-with-scrolltrigger">3D banners with ScrollTrigger</a></li><li><a href="#image-compare-viewer">Image Compare Viewer</a></li><li><a href="#read-progress-bar">Add Read or Scroll Progress Bar To A Website To Indicate Read Progress</a></li><li><a href="#get-pwa-into-play-store">How to Get a Progressive Web App into the Google Play Store</a></li>
+        </ul>
         
           <p class="article-more-link">
             <a class="button" href="/categories/Discoveries/Discoveries-1/">Read More</a>
@@ -241,7 +312,7 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Great-Finds/">Great Finds</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Great-Finds/" rel="tag">Great Finds</a></li></ul>  
   </div>
 
       
@@ -295,7 +366,7 @@
         <p>Not very often, when I’m looking for a new tool to replace some annoying or outdated piece of software, I have to blog about it … but from time to time, I’m discovering pearls, worth to lose a word about.</p>
 <p>The Windows 10 built-in media player Groove is (to be kind) … nice, but it is more or less a leftover from Microsoft’s attempt to create a competitor to iTunes, years ago. The crippeled UI is not the most modern and I was more than once annoyed about its usability.</p>
 <p>Doing a research for a good alternative, you stumble always over the usual suspects: MediaMonkey, Foobar2000, Winamp, VLC or even Media Player Classic!? Not modern enough, not user friendly enough, not lean enough.</p>
-<p>I really don’t remember where, but there was a screenshot of a player, which seems to be the complete opposite of the others: <strong>Dopamine</strong> from <a href="https://www.digimezzo.com/software/" target="_blank" rel="noopener">Digimezzo</a>, a project by the Belgian developer <a href="https://twitter.com/RaphaelGodart" target="_blank" rel="noopener">Raphaël Godart</a>…</p>
+<p>I really don’t remember where, but there was a screenshot of a player, which seems to be the complete opposite of the others: <strong>Dopamine</strong> from <a target="_blank" rel="noopener" href="https://www.digimezzo.com/software/">Digimezzo</a>, a project by the Belgian developer <a target="_blank" rel="noopener" href="https://twitter.com/RaphaelGodart">Raphaël Godart</a>…</p>
 <p><img src="/categories/Tools/Dopamine-How-Software-should-be/screenshot_dopamine_202.png" alt="Screenshot Dopamine 2.0.2."></p>
         
           <p class="article-more-link">
@@ -307,7 +378,7 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Great-Finds/">Great Finds</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Great-Finds/" rel="tag">Great Finds</a></li></ul>  
   </div>
 
       
@@ -363,7 +434,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>If you run a blog, it is always advisable to integrate a commenting system, in order to get feedback on your posts from your readers.</p>
-<p>So did I, when I start this blog and I decided to use the <a href="https://disqus.com" target="_blank" rel="noopener">Disqus platform</a>, as it was very easy to integrate … but I always had a bad feeling about a third-party platform collecting data from my readers. Disqus is probably not without reason under criticism by many people in the community.</p>
+<p>So did I, when I start this blog and I decided to use the <a target="_blank" rel="noopener" href="https://disqus.com">Disqus platform</a>, as it was very easy to integrate … but I always had a bad feeling about a third-party platform collecting data from my readers. Disqus is probably not without reason under criticism by many people in the community.</p>
 <p>As I host this blog at GitHub (see <a href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/">A New Blog (Part One): VS Code, Hexo and GitHub Pages</a>) I was looking for a solution to host the comments also on my prefered platform. There were some solutions, which uses GitHub Issues for this and wanted to implement something like that someday.</p>
         
           <p class="article-more-link">
@@ -375,7 +446,7 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
   </div>
 
       
@@ -430,8 +501,7 @@
 <p><img src="/categories/C/Meaningful-automatic-versioning-with-T4/AssemblyInformationDialog.png" alt="Assembly Information Dialog"></p>
 <p>The four fields are: MAJOR, MINOR, BUILD, REVISION.</p>
 <p>But seriously … who does that? I guess 99% of all C# developers are entering the <code>AssemblyInfo.cs</code> and enter the famous 2 asterisks into the version declaration of BUILD and REVISION, to let Visual Studio do the incrementation job:</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">assembly: AssemblyVersion(<span class="meta-string">"1.0.*.*"</span>)</span>]</span><br><span class="line">[<span class="meta">assembly: AssemblyFileVersion(<span class="meta-string">"1.0.*.*"</span>)</span>]</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">assembly: AssemblyVersion(<span class="meta-string">&quot;1.0.*.*&quot;</span>)</span>]</span><br><span class="line">[<span class="meta">assembly: AssemblyFileVersion(<span class="meta-string">&quot;1.0.*.*&quot;</span>)</span>]</span><br></pre></td></tr></table></figure>
 <p>But this is not the end of the possibilities … Let’s do it more meaningful, with some goodies and still automatic…</p>
         
           <p class="article-more-link">
@@ -443,7 +513,7 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/T4/">T4</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Versioning/">Versioning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/T4/" rel="tag">T4</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Versioning/" rel="tag">Versioning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/" rel="tag">Visual Studio</a></li></ul>  
   </div>
 
       
@@ -499,7 +569,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Every article in this blog has an individual header image, to bring a little bit color into it. In this post I will show you how I deal with the images in using and automatic provisioning.</p>
-<p>For serving these pictures I use a static folder, as described in <a href="/categories/Tools/A-New-Blog-Customizing-Hexo/">A New Blog: Customizing Hexo</a>. The hard work is done by the plugin <a href="https://github.com/niahoo/hexo-generator-copy" target="_blank" rel="noopener">Hexo Generator Copy</a>, which copies the static files into the <code>public_dir</code> while generating.</p>
+<p>For serving these pictures I use a static folder, as described in <a href="/categories/Tools/A-New-Blog-Customizing-Hexo/">A New Blog: Customizing Hexo</a>. The hard work is done by the plugin <a target="_blank" rel="noopener" href="https://github.com/niahoo/hexo-generator-copy">Hexo Generator Copy</a>, which copies the static files into the <code>public_dir</code> while generating.</p>
         
           <p class="article-more-link">
             <a class="button" href="/categories/Tools/Automatic-Header-Images-in-Hexo/">Read More</a>
@@ -510,7 +580,7 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
   </div>
 
       
@@ -562,7 +632,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>There are plenty of editors out there to help you writing JavaScript web applications. As I’m working in my daily life with Visual Studio, it is a obvious choice for me. </p>
-<p>One of the most time saving tools in VS is the plugin <a href="https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager" target="_blank" rel="noopener">ResXManager</a>, which is an awesome assistant on managing the translations for a Desktop- or ASP.NET-App, which uses XML-based RESX files.</p>
+<p>One of the most time saving tools in VS is the plugin <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager">ResXManager</a>, which is an awesome assistant on managing the translations for a Desktop- or ASP.NET-App, which uses XML-based RESX files.</p>
         
           <p class="article-more-link">
             <a class="button" href="/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/">Read More</a>
@@ -573,7 +643,7 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Localization/">Localization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Resource/">Resource</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Localization/" rel="tag">Localization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Resource/" rel="tag">Resource</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/" rel="tag">Visual Studio</a></li></ul>  
   </div>
 
       
@@ -631,66 +701,7 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TFS-DevOps/">TFS/DevOps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>  
-  </div>
-
-      
-    </footer>
-  </div>
-  
-</article>
-  
-    
-  
-<article id="post-Better-Input-Change-Event" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/categories/JavaScript/Better-Input-Change-Event/" class="article-date">
-  <time datetime="2019-11-26T15:51:17.000Z" itemprop="datePublished">26 Nov 2019</time>
-</a>
-    
-  <div class="article-category category-javascript">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-      
-    <a href="/categories/JavaScript/Better-Input-Change-Event/">
-        <img class="article-photo" src="/photos/tablet/19-05 Israel-0624.jpg" alt="Jerusalem Seat" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/categories/JavaScript/Better-Input-Change-Event/">Better Input Change Event</a>
-    </h1>
-  
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Often it is important to trigger an event, after the user of your website/web app has filled out an text input. You have to do something with the given value in JavaScript.</p>
-<p>The intended event for this is <code>change</code>, which will be triggered, when the user has ended changing by leaving the input with his cursor, mostly by using the TAB key. This works at some degree, if there is a physical keyboard, but not really on mobile devices … and for me is leaving the field often too late to start the upcoming event.</p>
-        
-          <p class="article-more-link">
-            <a class="button" href="/categories/JavaScript/Better-Input-Change-Event/">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TFS-DevOps/" rel="tag">TFS/DevOps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/" rel="tag">Visual Studio</a></li></ul>  
   </div>
 
       
@@ -705,7 +716,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Previous</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Previous</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
   </nav>
 
 </main>
@@ -736,6 +747,10 @@
       <ul>
         
           <li>
+            <a href="/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/">Utilize a repository of reusable ES6 template literals</a>
+          </li>
+        
+          <li>
             <a href="/categories/Tools/Spice-Up-Windows-Terminal/">Spice Up Windows Terminal</a>
           </li>
         
@@ -749,10 +764,6 @@
         
           <li>
             <a href="/categories/Photo-Editing/Israeli-Presets-for-Lightroom/">Israeli Presets for Lightroom</a>
-          </li>
-        
-          <li>
-            <a href="/categories/Photo-Editing/Folder-based-publishing-in-Lightroom/">Folder based publishing in Lightroom</a>
           </li>
         
       </ul>
@@ -775,7 +786,7 @@
     <div class="inner">
         <div id="footer-info">
           <div>
-            &copy; 2020 <a href="https://github.com/kristofzerbe">Kristof Zerbe</a><br>
+            &copy; 2021 <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe">Kristof Zerbe</a><br>
             Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/" target="_blank">GitHub</a>  
           </div>
           <div>
@@ -794,9 +805,15 @@
 </footer>
       </div>
       <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+
 <script src="/js/jquery.min.js"></script>
+
+
 <script src="/js/dist/bundle.min.js"></script>
+
+
 <script src="/js/script.js"></script>
+
 
 <script>
   //BACK-TO-TOP

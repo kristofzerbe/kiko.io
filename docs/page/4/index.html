@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><link rel=manifest href=/site.webmanifest><meta name="generator" content="Hexo 3.9.0">
+<head><link rel=manifest href=/site.webmanifest>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,12 +52,22 @@
     <link rel="icon" href="/favicon.ico">
   
 
-  <link rel="stylesheet" href="/css/dist/bundle.min.css">
-  <link rel="stylesheet" href="/css/dist/image-compare-viewer.min.css">  
-  <link rel="stylesheet" href="/css/style.css">  
+  
+<link rel="stylesheet" href="/css/dist/bundle.min.css">
 
-  <script src="/js/tools.js"></script>
-  <script src="/js/dist/image-compare-viewer.min.js"></script>
+  
+<link rel="stylesheet" href="/css/dist/image-compare-viewer.min.css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+  
+
+  
+<script src="/js/tools.js"></script>
+
+  
+<script src="/js/dist/image-compare-viewer.min.js"></script>
+
 
   <script>
     var hitcountConfig = {
@@ -78,9 +88,9 @@
 
   </script>
 
-<link rel="alternate" href="/atom.xml" title="kiko.io" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="kiko.io" type="application/atom+xml">
 </head>
-</html>
+
 <body id="body">  
   <div id="container" class="container">
     <div class="inner-container">
@@ -178,6 +188,65 @@
   
     
   
+<article id="post-Better-Input-Change-Event" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/categories/JavaScript/Better-Input-Change-Event/" class="article-date">
+  <time datetime="2019-11-26T15:51:17.000Z" itemprop="datePublished">26 Nov 2019</time>
+</a>
+    
+  <div class="article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+    <a href="/categories/JavaScript/Better-Input-Change-Event/">
+        <img class="article-photo" src="/photos/tablet/19-05 Israel-0624.jpg" alt="Jerusalem Seat" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/categories/JavaScript/Better-Input-Change-Event/">Better Input Change Event</a>
+    </h1>
+  
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Often it is important to trigger an event, after the user of your website/web app has filled out an text input. You have to do something with the given value in JavaScript.</p>
+<p>The intended event for this is <code>change</code>, which will be triggered, when the user has ended changing by leaving the input with his cursor, mostly by using the TAB key. This works at some degree, if there is a physical keyboard, but not really on mobile devices … and for me is leaving the field often too late to start the upcoming event.</p>
+        
+          <p class="article-more-link">
+            <a class="button" href="/categories/JavaScript/Better-Input-Change-Event/">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li></ul>  
+  </div>
+
+      
+    </footer>
+  </div>
+  
+</article>
+  
+    
+  
 <article id="post-Hexo-and-the-Dark-Mode-revised" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/categories/Tools/Hexo-and-the-Dark-Mode-revised/" class="article-date">
@@ -223,8 +292,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>While writing my post <a href="/categories/Tools/Hexo-and-the-Dark-Mode">Hexo and the Dark Mode</a> a few days ago, I thought it would be nice, if I could switch between the normal (light) and the dark theme, I’ve created for the support of the OS-related Dark Mode, even manually. The only thing I needed was a toggle element and a little bit of JavaScript.</p>
-<p>Of course, I couldn’t manipulate the <a href="https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-color-scheme" target="_blank" rel="noopener">media query <code>prefers-color-scheme</code></a> itself, but introduce a different way by blog uses it. Instead of implementing the media query directly into my CSS (or Stylus) code, I used a root selector, which can be manipulated by JavaScript … something like this:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: white;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-attr">[data-theme="dark"]</span> <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: black;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Of course, I couldn’t manipulate the <a target="_blank" rel="noopener" href="https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-color-scheme">media query <code>prefers-color-scheme</code></a> itself, but introduce a different way by blog uses it. Instead of implementing the media query directly into my CSS (or Stylus) code, I used a root selector, which can be manipulated by JavaScript … something like this:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: white;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: black;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
           <p class="article-more-link">
             <a class="button" href="/categories/Tools/Hexo-and-the-Dark-Mode-revised/">Read More</a>
@@ -235,7 +304,7 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dark-Mode/">Dark Mode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stylus/">Stylus</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dark-Mode/" rel="tag">Dark Mode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stylus/" rel="tag">Stylus</a></li></ul>  
   </div>
 
       
@@ -302,7 +371,7 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dark-Mode/">Dark Mode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stylus/">Stylus</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dark-Mode/" rel="tag">Dark Mode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stylus/" rel="tag">Stylus</a></li></ul>  
   </div>
 
       
@@ -369,7 +438,7 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/">VS Code</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/" rel="tag">VS Code</a></li></ul>  
   </div>
 
       
@@ -424,7 +493,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Hexo is a great tool to get quick results (see <a href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/">Part One of this series</a>), when you decide to have a blog and its defaults are practical, but it’s power lies in the possiblities of customization via plugins. On the <a href="https://hexo.io/plugins/index.html" target="_blank" rel="noopener">official plugin page</a>, there are actually 302 plugins listed, but there are many more and no wish will be unsatisfied.</p>
+        <p>Hexo is a great tool to get quick results (see <a href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/">Part One of this series</a>), when you decide to have a blog and its defaults are practical, but it’s power lies in the possiblities of customization via plugins. On the <a target="_blank" rel="noopener" href="https://hexo.io/plugins/index.html">official plugin page</a>, there are actually 302 plugins listed, but there are many more and no wish will be unsatisfied.</p>
 <p>I will show you which of these I found worth to work with…</p>
         
           <p class="article-more-link">
@@ -436,7 +505,7 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/">VS Code</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/" rel="tag">VS Code</a></li></ul>  
   </div>
 
       
@@ -494,7 +563,7 @@
         <p>A few days ago I puzzled over a technical problem regarding SQL Server, Active Directory and Visual Studio Database Projects. With tips, hints and snippets from several websites I got it running and the solution was absolutely memorable. For myself and for others. Nothing is harder than to know ‘you did this before…’, but not to remember how.</p>
 <p>Because of this strong leaning towards oblivion, I started over 20 years ago my very first website <strong>zerbit.de</strong>, manually crafted with Classic ASP and a SQL Server database as backend, with an editor, tagging, categories and so on. It was really exciting to build this blog from scratch and writing articles for it, but it was so time consuming to expand the features of the website and keep it running, that some day I quit it silently.</p>
 <p>So, to document the solution mentioned above, I could use tools like OneNote or others, like in the past years, but this would be just for me and not for all developers, who have a similar problem. I felt it would be unfair to participate from the knowledge of others to get my solution and dont give something back.</p>
-<p>I decided to write an article just in HTML and publish it on my personal GitHub Page that I didn’t used so far. Ok, just Text … ugly. Just a little CSS and a little more structure and maybe I should do something with Vue JS … STOP … It would be better to pick one of the cool new static website generators based on Node.js, to detain myself from inventing the wheel again and save my time to write articles. So I did a little research and found <a href="https://hexo.io" target="_blank" rel="noopener">HEXO</a> … Bingo! I can work with my favorite editor <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">Visual Studio Code</a>, its all HTML, JavaScript and CSS, I can write my articles in Markdown and Hexo has a lot of helpers for stuff Markdown doesn’t provide, it produces static files and works only with files, therefore no need for a database … and it is well documented.</p>
+<p>I decided to write an article just in HTML and publish it on my personal GitHub Page that I didn’t used so far. Ok, just Text … ugly. Just a little CSS and a little more structure and maybe I should do something with Vue JS … STOP … It would be better to pick one of the cool new static website generators based on Node.js, to detain myself from inventing the wheel again and save my time to write articles. So I did a little research and found <a target="_blank" rel="noopener" href="https://hexo.io">HEXO</a> … Bingo! I can work with my favorite editor <a target="_blank" rel="noopener" href="https://code.visualstudio.com/">Visual Studio Code</a>, its all HTML, JavaScript and CSS, I can write my articles in Markdown and Hexo has a lot of helpers for stuff Markdown doesn’t provide, it produces static files and works only with files, therefore no need for a database … and it is well documented.</p>
         
           <p class="article-more-link">
             <a class="button" href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/">Read More</a>
@@ -505,7 +574,7 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/">VS Code</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/" rel="tag">VS Code</a></li></ul>  
   </div>
 
       
@@ -563,7 +632,7 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ADSI/">ADSI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Database-Project/">Database Project</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ADSI/" rel="tag">ADSI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Database-Project/" rel="tag">Database Project</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/" rel="tag">Visual Studio</a></li></ul>  
   </div>
 
       
@@ -578,7 +647,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Previous</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Previous</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
   </nav>
 
 </main>
@@ -609,6 +678,10 @@
       <ul>
         
           <li>
+            <a href="/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/">Utilize a repository of reusable ES6 template literals</a>
+          </li>
+        
+          <li>
             <a href="/categories/Tools/Spice-Up-Windows-Terminal/">Spice Up Windows Terminal</a>
           </li>
         
@@ -622,10 +695,6 @@
         
           <li>
             <a href="/categories/Photo-Editing/Israeli-Presets-for-Lightroom/">Israeli Presets for Lightroom</a>
-          </li>
-        
-          <li>
-            <a href="/categories/Photo-Editing/Folder-based-publishing-in-Lightroom/">Folder based publishing in Lightroom</a>
           </li>
         
       </ul>
@@ -648,7 +717,7 @@
     <div class="inner">
         <div id="footer-info">
           <div>
-            &copy; 2020 <a href="https://github.com/kristofzerbe">Kristof Zerbe</a><br>
+            &copy; 2021 <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe">Kristof Zerbe</a><br>
             Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/" target="_blank">GitHub</a>  
           </div>
           <div>
@@ -667,9 +736,15 @@
 </footer>
       </div>
       <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+
 <script src="/js/jquery.min.js"></script>
+
+
 <script src="/js/dist/bundle.min.js"></script>
+
+
 <script src="/js/script.js"></script>
+
 
 <script>
   //BACK-TO-TOP

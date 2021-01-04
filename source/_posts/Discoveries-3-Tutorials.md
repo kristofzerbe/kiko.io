@@ -23,15 +23,21 @@ Some articles I stumble upon in my daily routine of reading news and blogs are d
 All of the following reading tips are of the type "ahh, that's why this works like that" or "uuh, I just scatch on the surface on that". Take your time and read the articles in detail. We all never stop learning and it's a pleasure to do so...
 
 **CSS**
-* CSS Viewport Units
-* Grid for layout, Flexbox for components
-* How CSS Perspective Works
-* Linearly Scale font-size with CSS clamp() Based on the Viewport
-* Learn CSS Centering
- 
+
+{% anchorlist 
+  "CSS Viewport Units|css-viewport-units" 
+  "Grid for layout, Flexbox for components|grid-for-layout-flexbox-for-components" 
+  "How CSS Perspective Works|how-css-perspective-works" 
+  "Linearly Scale font-size with CSS clamp() Based on the Viewport|linearly-scale-font-size-with-clamp" 
+  "Learn CSS Centering|centering-in-css" 
+%}
+
 **JavaScript**
-* The Flavors of Object-Oriented Programming (in JavaScript)
-* Understanding the Event Loop, Callbacks, Promises, and Async/Await in JavaScript
+
+{% anchorlist 
+  "The Flavors of Object-Oriented Programming (in JavaScript)|the-flavors-of-object-oriented-programming" 
+  "Understanding the Event Loop, Callbacks, Promises, and Async/Await in JavaScript|understanding-the-event-loop" 
+%}
 
 <!-- more -->
 

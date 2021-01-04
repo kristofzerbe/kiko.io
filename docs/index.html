@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><link rel=manifest href=/site.webmanifest><meta name="generator" content="Hexo 3.9.0">
+<head><link rel=manifest href=/site.webmanifest>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,12 +52,22 @@
     <link rel="icon" href="/favicon.ico">
   
 
-  <link rel="stylesheet" href="/css/dist/bundle.min.css">
-  <link rel="stylesheet" href="/css/dist/image-compare-viewer.min.css">  
-  <link rel="stylesheet" href="/css/style.css">  
+  
+<link rel="stylesheet" href="/css/dist/bundle.min.css">
 
-  <script src="/js/tools.js"></script>
-  <script src="/js/dist/image-compare-viewer.min.js"></script>
+  
+<link rel="stylesheet" href="/css/dist/image-compare-viewer.min.css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+  
+
+  
+<script src="/js/tools.js"></script>
+
+  
+<script src="/js/dist/image-compare-viewer.min.js"></script>
+
 
   <script>
     var hitcountConfig = {
@@ -78,9 +88,9 @@
 
   </script>
 
-<link rel="alternate" href="/atom.xml" title="kiko.io" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="kiko.io" type="application/atom+xml">
 </head>
-</html>
+
 <body id="body">  
   <div id="container" class="container">
     <div class="inner-container">
@@ -178,6 +188,70 @@
   
     
   
+<article id="post-Utilize-a-repository-of-reusable-ES6-template-literals" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/" class="article-date">
+  <time datetime="2021-01-03T12:29:01.000Z" itemprop="datePublished">03 Jan 2021</time>
+</a>
+    
+  <div class="article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+    <a href="/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/">
+        <img class="article-photo" src="/photos/tablet/DSC_7897.jpg" alt="Rusted Bike" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/">Utilize a repository of reusable ES6 template literals</a>
+    </h1>
+  
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>The <a target="_blank" rel="noopener" href="http://es6-features.org/#StringInterpolation"><strong>Template Literals</strong></a> introduced with ES6 are very useful to deal with multiline strings, because they support <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Expression_interpolation">embedded expressions</a>. Gone are the days of endless string concatination or replacing variables in a string by using RegEx.</p>
+<p>Instead of… </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> url = ...</span><br><span class="line"><span class="keyword">var</span> file = ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> template = </span><br><span class="line">  <span class="string">&#x27;&lt;div class=&quot;photo&quot;&gt;&#x27;</span> + </span><br><span class="line">     <span class="string">&#x27;&lt;a href=&quot;&#x27;</span> + url + <span class="string">&quot;&#x27; + </span></span><br><span class="line"><span class="string">        &#x27;style=&quot;</span>background-image: url(<span class="string">&#x27; + file + &#x27;</span>)<span class="string">&quot;&lt;/a&gt;&#x27; + </span></span><br><span class="line"><span class="string">  &#x27;&lt;/div&gt;&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>… you can write:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> url = ...</span><br><span class="line"><span class="keyword">var</span> file = ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> template = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;div class=&quot;photo&quot;&gt;</span></span><br><span class="line"><span class="string">    &lt;a href=&quot;<span class="subst">$&#123;url&#125;</span>/&quot;</span></span><br><span class="line"><span class="string">    style=&quot;background-image: url(<span class="subst">$&#123;file&#125;</span>);&quot;&gt;&lt;/a&gt;</span></span><br><span class="line"><span class="string">  &lt;/div&gt;</span></span><br><span class="line"><span class="string">`</span>,</span><br></pre></td></tr></table></figure>
+<p>It’s much cleaner and easier to handle, as you can copy your needed HTML right into your code and surround it by <strong>backtick</strong> (!) characters. Insert your variable placeholders (expressions), indicated by a dollar sign and curly braces, and you are done.</p>
+<p>But there is one “restriction”, you have to be aware of: the interpolation (substitution of the expressions) is done at declaration time and not at runtime. You can’t define your literals seperatly, take one and make your substitution as you need it, like you would do with <a target="_blank" rel="noopener" href="https://handlebarsjs.com/">Handlebars</a> or other templating engines. Therefore the name <em>template</em> literals is a bit misleading. But … there is a way to achieve this anyway…</p>
+        
+          <p class="article-more-link">
+            <a class="button" href="/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Templating/" rel="tag">Templating</a></li></ul>  
+  </div>
+
+      
+    </footer>
+  </div>
+  
+</article>
+  
+    
+  
 <article id="post-Spice-Up-Windows-Terminal" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/categories/Tools/Spice-Up-Windows-Terminal/" class="article-date">
@@ -218,7 +292,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Working with the PowerShell in 2020 means fun, because of the new <a href="https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701" target="_blank" rel="noopener"><strong>Windows Terminal</strong> (get it from Windows Store)</a>. It has more power as the old Powershell Console and it is visually adaptable to your personal taste, by installing the wonderful theming engine <a href="https://github.com/JanDeDobbeleer/oh-my-posh" target="_blank" rel="noopener"><strong>oh-my-posh</strong> from Jan De Dobbeleer</a>.</p>
+        <p>Working with the PowerShell in 2020 means fun, because of the new <a target="_blank" rel="noopener" href="https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701"><strong>Windows Terminal</strong> (get it from Windows Store)</a>. It has more power as the old Powershell Console and it is visually adaptable to your personal taste, by installing the wonderful theming engine <a target="_blank" rel="noopener" href="https://github.com/JanDeDobbeleer/oh-my-posh"><strong>oh-my-posh</strong> from Jan De Dobbeleer</a>.</p>
 <p><img src="/categories/Tools/Spice-Up-Windows-Terminal/terminal-original.png" alt="Original Terminal"></p>
 <p><img src="/categories/Tools/Spice-Up-Windows-Terminal/terminal-oh-my-posh.png" alt="Terminal with oh-my-posh"></p>
 <p>To get Oh-My-Posh properly run, there are several steps to do I want to show here in a nutshell…</p>
@@ -232,7 +306,7 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PowerShell/">PowerShell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Theming/">Theming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/">Windows</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PowerShell/" rel="tag">PowerShell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Theming/" rel="tag">Theming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>  
   </div>
 
       
@@ -301,7 +375,7 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Great-Finds/">Great Finds</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Great-Finds/" rel="tag">Great Finds</a></li></ul>  
   </div>
 
       
@@ -336,6 +410,10 @@
         
 
 
+    <p class="article-series" itemprop="name">
+        Lightroom Presets, Part 2
+    </p>
+
         
   
     <h1 itemprop="name">
@@ -359,7 +437,7 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lightroom/">Lightroom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Presets/">Presets</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lightroom/" rel="tag">Lightroom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Presets/" rel="tag">Presets</a></li></ul>  
   </div>
 
       
@@ -394,6 +472,10 @@
         
 
 
+    <p class="article-series" itemprop="name">
+        Lightroom Presets, Part 1
+    </p>
+
         
   
     <h1 itemprop="name">
@@ -418,7 +500,7 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lightroom/">Lightroom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Presets/">Presets</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lightroom/" rel="tag">Lightroom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Presets/" rel="tag">Presets</a></li></ul>  
   </div>
 
       
@@ -466,7 +548,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>In all times photography was a process: First you shoot you images, then you edit them and in the third step you publish them elsewhere.</p>
-<p>Today <strong>Adobe Lightroom</strong> is a de-facto standard in photo processing, especially when you shoot RAW images. And I mean <a href="https://www.adobe.com/de/products/photoshop-lightroom-classic.html" target="_blank" rel="noopener">Lightroom Classic</a> and not the new web/smartphone based software, which doesn’t come even close to the desktop application yet.</p>
+<p>Today <strong>Adobe Lightroom</strong> is a de-facto standard in photo processing, especially when you shoot RAW images. And I mean <a target="_blank" rel="noopener" href="https://www.adobe.com/de/products/photoshop-lightroom-classic.html">Lightroom Classic</a> and not the new web/smartphone based software, which doesn’t come even close to the desktop application yet.</p>
 <p>I use Lightroom for all purposes after I shot my images: editing, cataloguing, managing and … publishing. On publishing Lightroom offers you two approaches: <em>Export</em> and <em>Publish</em>. While <em>Export</em> is mainly for creating JPG copies of edited RAW images, <em>Publish</em> goes one step further and gives you the ability to do “something” with your exported JPG’s, for example upload them on Flickr, Instagram, 500px or to your own web server via FTP. Major difference to <em>Export</em> is, that <em>Publish</em> keeps your images in sync. Everytime you change the source images, the defined publish services recognizes and offer you to re-publish your image.</p>
 <p><img src="/categories/Photo-Editing/Folder-based-publishing-in-Lightroom/lr-re-publish.png" alt="Lightroom Publish"></p>
 <p>In the past years I tried a lot of Lightroom plugins for publishing on several platforms, but it doesn’t work out for long, because all these platforms change their API almost every year (or are stamped) and the sparely maintained 3rd party plugins break.</p>
@@ -481,7 +563,7 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lightroom/">Lightroom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Plugin/">Plugin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Publishing/">Publishing</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lightroom/" rel="tag">Lightroom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Plugin/" rel="tag">Plugin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Publishing/" rel="tag">Publishing</a></li></ul>  
   </div>
 
       
@@ -550,7 +632,7 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Great-Finds/">Great Finds</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Great-Finds/" rel="tag">Great Finds</a></li></ul>  
   </div>
 
       
@@ -601,9 +683,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>A while ago I wrote a Single Page Application (SPA) with jQuery and and decided to use some useful plugins to avoid reinventing the wheel. To keep the delivered sources small, I used the bundler <a href="https://gulpjs.com/" target="_blank" rel="noopener">Gulp</a>, to pack all JS plugins in a single file and another one for my custom JS code. I used the same procedure with the CSS files.</p>
+        <p>A while ago I wrote a Single Page Application (SPA) with jQuery and and decided to use some useful plugins to avoid reinventing the wheel. To keep the delivered sources small, I used the bundler <a target="_blank" rel="noopener" href="https://gulpjs.com/">Gulp</a>, to pack all JS plugins in a single file and another one for my custom JS code. I used the same procedure with the CSS files.</p>
 <p>The SPA contained only a single HTML file in which all bundeled sources and needed HTML template blocks were included, in order to load most of the stuff while starting the app, when the users sees a GMail-like  loading screen.</p>
-<p>But the whole thing had one disadvantage: Debugging for example in Chrome Dev Tool is not a joy, if the code is packed with <a href="https://www.npmjs.com/package/gulp-concat" target="_blank" rel="noopener">Gulp Concat</a> and <a href="https://www.npmjs.com/package/gulp-concat" target="_blank" rel="noopener">Gulp Uglify</a>. It would be much more convenient, if the source loading can be done depending on the environment.</p>
+<p>But the whole thing had one disadvantage: Debugging for example in Chrome Dev Tool is not a joy, if the code is packed with <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/gulp-concat">Gulp Concat</a> and <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/gulp-concat">Gulp Uglify</a>. It would be much more convenient, if the source loading can be done depending on the environment.</p>
         
           <p class="article-more-link">
             <a class="button" href="/categories/JavaScript/Implement-source-switch-for-SPA/">Read More</a>
@@ -614,70 +696,7 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bundling/">Bundling</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SPA/">SPA</a></li></ul>  
-  </div>
-
-      
-    </footer>
-  </div>
-  
-</article>
-  
-    
-  
-<article id="post-Show-related-posts-in-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/categories/Tools/Show-related-posts-in-Hexo/" class="article-date">
-  <time datetime="2020-10-03T11:17:03.000Z" itemprop="datePublished">03 Oct 2020</time>
-</a>
-    
-  <div class="article-category category-tools">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-      
-    <a href="/categories/Tools/Show-related-posts-in-Hexo/">
-        <img class="article-photo" src="/photos/tablet/18-09 Kroatien-0323.jpg" alt="Untitled" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-    <p class="article-series" itemprop="name">
-        A New Blog, Part 12
-    </p>
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/categories/Tools/Show-related-posts-in-Hexo/">Show related posts in Hexo</a>
-    </h1>
-  
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>It is always nice to point the readers of your blog’s articles to related posts, they might be interested in. They stay a little longer to understand what you have to offer and increases the likelihood that they become loyal readers, followers or subscribers. Related posts has become a standard on delivering news and posts.</p>
-<p>In the default Hexo theme <strong>Landscape</strong>, on which this blog is based, there is no such function built in, but as the Hexo community is very busy, there are some plugins you can use.</p>
-        
-          <p class="article-more-link">
-            <a class="button" href="/categories/Tools/Show-related-posts-in-Hexo/">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bundling/" rel="tag">Bundling</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SPA/" rel="tag">SPA</a></li></ul>  
   </div>
 
       
@@ -692,7 +711,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
   </nav>
 
 </main>
@@ -723,6 +742,10 @@
       <ul>
         
           <li>
+            <a href="/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/">Utilize a repository of reusable ES6 template literals</a>
+          </li>
+        
+          <li>
             <a href="/categories/Tools/Spice-Up-Windows-Terminal/">Spice Up Windows Terminal</a>
           </li>
         
@@ -736,10 +759,6 @@
         
           <li>
             <a href="/categories/Photo-Editing/Israeli-Presets-for-Lightroom/">Israeli Presets for Lightroom</a>
-          </li>
-        
-          <li>
-            <a href="/categories/Photo-Editing/Folder-based-publishing-in-Lightroom/">Folder based publishing in Lightroom</a>
           </li>
         
       </ul>
@@ -762,7 +781,7 @@
     <div class="inner">
         <div id="footer-info">
           <div>
-            &copy; 2020 <a href="https://github.com/kristofzerbe">Kristof Zerbe</a><br>
+            &copy; 2021 <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe">Kristof Zerbe</a><br>
             Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/" target="_blank">GitHub</a>  
           </div>
           <div>
@@ -781,9 +800,15 @@
 </footer>
       </div>
       <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+
 <script src="/js/jquery.min.js"></script>
+
+
 <script src="/js/dist/bundle.min.js"></script>
+
+
 <script src="/js/script.js"></script>
+
 
 <script>
   //BACK-TO-TOP
