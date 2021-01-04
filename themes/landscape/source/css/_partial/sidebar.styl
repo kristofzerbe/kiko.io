@@ -27,13 +27,15 @@ else
     position: relative 
     width: 120px 
     border: 1px transparent solid
-    a
-      transition: all .2s ease-in
     a:not(.fab)
       border-radius: 50%;
       &:hover
         border-color: color-border
         box-shadow: 1px 2px 20px 5px color-border
+        /[data-theme="dark"] &
+          border-color: dark-color-border
+          box-shadow: 1px 2px 20px 5px dark-color-border
+
       img 
         width: 120px
         border-radius: 50%;
