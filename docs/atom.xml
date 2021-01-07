@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kiko.io/"/>
-  <updated>2021-01-04T14:23:46.905Z</updated>
+  <updated>2021-01-07T17:50:30.215Z</updated>
   <id>https://kiko.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>How to prevent duplicate events</title>
+    <link href="https://kiko.io/categories/JavaScript/How-to-prevent-duplicate-events/"/>
+    <id>https://kiko.io/categories/JavaScript/How-to-prevent-duplicate-events/</id>
+    <published>2021-01-07T16:22:25.000Z</published>
+    <updated>2021-01-07T17:50:30.215Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I’m working on a new web app that contains a sliding out panel with some additional information on the selected element. This panel can be closed by the user via the ESC key. The implementation on initializing the panel seems very straight forward:&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Panel&lt;/span&gt;() &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;init&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.addEventListener(&lt;span class=&quot;string&quot;&gt;&amp;quot;keydown&amp;quot;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;event&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(event.key === &lt;span class=&quot;string&quot;&gt;&amp;quot;Escape&amp;quot;&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//close the panel&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Problem is: the panel, which is part of the basic HTML, will be initialized with its content and functionality in a ES6 class. So … on every init, another event listener is added.&lt;/p&gt;
+&lt;p&gt;You can easily figure that out, by calling &lt;code&gt;getEventListeners(document)&lt;/code&gt; in the Chrome DevTools:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/categories/JavaScript/How-to-prevent-duplicate-events/chromedevtools-multiple-listeners.png&quot; alt=&quot;Chrome DevTools: Multiple Event Listeners&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://kiko.io/categories/JavaScript/"/>
+    
+    
+      <category term="Events" scheme="https://kiko.io/tags/Events/"/>
+    
+  </entry>
   
   <entry>
     <title>Utilize a repository of reusable ES6 template literals</title>
@@ -536,33 +561,6 @@
     
     
       <category term="Great Finds" scheme="https://kiko.io/tags/Great-Finds/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Using GitHub as Commenting Platform</title>
-    <link href="https://kiko.io/categories/Tools/Using-GitHub-as-Commenting-Platform/"/>
-    <id>https://kiko.io/categories/Tools/Using-GitHub-as-Commenting-Platform/</id>
-    <published>2020-07-05T12:55:16.000Z</published>
-    <updated>2021-01-04T14:23:46.899Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;If you run a blog, it is always advisable to integrate a commenting system, in order to get feedback on your posts from your readers.&lt;/p&gt;
-&lt;p&gt;So did I, when I start this blog and I decided to use the &lt;a href=&quot;https://disqus.com&quot;&gt;Disqus platform&lt;/a&gt;, as it was very easy to integrate … but I always had a bad feeling about a third-party platform collecting data from my readers. Disqus is probably not without reason under criticism by many people in the community.&lt;/p&gt;
-&lt;p&gt;As I host this blog at GitHub (see &lt;a href=&quot;/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/&quot;&gt;A New Blog (Part One): VS Code, Hexo and GitHub Pages&lt;/a&gt;) I was looking for a solution to host the comments also on my prefered platform. There were some solutions, which uses GitHub Issues for this and wanted to implement something like that someday.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Tools" scheme="https://kiko.io/categories/Tools/"/>
-    
-    
-      <category term="GitHub" scheme="https://kiko.io/tags/GitHub/"/>
-    
-      <category term="Hexo" scheme="https://kiko.io/tags/Hexo/"/>
-    
-      <category term="Blogging" scheme="https://kiko.io/tags/Blogging/"/>
     
   </entry>
   
