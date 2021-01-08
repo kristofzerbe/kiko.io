@@ -63,6 +63,12 @@
     background: linear-gradient(90deg, dark-color-background 30%, dark-color-block 80%, dark-color-background 100%)
   .archive-list-wrapper
     flex: 0 0 auto
+    padding-right: 25px
+    transition: all .2s ease
+    &:hover
+      color: color-link
+      /[data-theme="dark"] &
+        color: dark-color-link
     h2
       font-weight: 600
       font-size: 16px
@@ -77,12 +83,12 @@
         flex: 1 0 25%
         box-sizing: border-box
         line-height: 24px
-        transition: all .1s ease
+        transition: all .2s ease
         border-left: 2px color-border solid
         /[data-theme="dark"] &
           border-color: dark-color-border
         margin: 1px 0 1px 0
-        padding: 0 20px 0 10px
+        padding: 0 8px 0 10px
         display: flex
         flex-direction: row
         justify-content: space-between

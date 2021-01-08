@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel=manifest href=/site.webmanifest>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>kiko.io | Use and manage multiple Node.js versions on Windows 10</title>
+  <meta name="title" content="kiko.io - Memorable Tech Stuff">
+  <meta name="description" content="Blog about Development &amp; Photography">
+  <!-- Schema.org for Google -->
+  <meta itemprop="name" content="kiko.io - Memorable Tech Stuff">
+  <meta itemprop="description" content="Blog about Development &amp; Photography">
+  <meta itemprop="image" content="https://kiko.io/images/hero.jpg"> 
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="kiko.io - Memorable Tech Stuff">
+  <meta property="og:url" content="https://kiko.io">
+  <meta property="og:description" content="Blog about Development &amp; Photography">
+  <meta property="og:image" content="https://kiko.io/images/hero.jpg">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://kiko.io">
+  <meta property="twitter:title" content="kiko.io - Memorable Tech Stuff">
+  <meta property="twitter:description" content="Blog about Development &amp; Photography">
+  <meta property="twitter:image" content="https://kiko.io/images/hero.jpg">
+
+  <link rel="preconnect" href="https://hitcount.io">
+
+  <link rel="preload" href="/css/fonts/cookie/cookie-v12-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-lightitalic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-semibold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-semibolditalic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-bolditalic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-extrabold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-extrabolditalic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Regular.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-It.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Bold.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  
+<link rel="stylesheet" href="/css/dist/bundle.min.css">
+
+  
+<link rel="stylesheet" href="/css/dist/image-compare-viewer.min.css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+  
+
+  
+<script src="/js/tools.js"></script>
+
+  
+<script src="/js/dist/image-compare-viewer.min.js"></script>
+
+
+  <script>
+    var hitcountConfig = {
+      id: '',
+      webUrl: 'https://hitcount.io',
+      apiUrl: 'https://hitcount.io/api/{id}',
+      size: '12',
+      background: {
+        light: '555',
+        dark: '777'
+      },
+      color: {
+        light: '000',
+        dark: '666'
+      },
+      digits: '5'
+    }
+
+  </script>
+
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="kiko.io" type="application/atom+xml">
+</head>
+
+<body id="body">  
+  <div id="container" class="container">
+    <div class="inner-container">
+      <div id="wrap">
+        <header id="header">
+  <a href="#" id="header-photo-expand" class="fullsizable"></a>
+  <a href="#" id="header-photo-link"></a>
+  <div id="banner">
+    <nav id="header-nav" role="navigation">
+      <ul class="menu">
+        
+          <li class="menu-item" id="nav-home-link" >
+            <a 
+              class="nav-icon sub-nav-link"
+              href="/">
+                <span>Home</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-about-link" >
+            <a 
+              class="nav-icon sub-nav-link"
+              href="/about">
+                <span>About</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-archives-link" >
+            <a 
+              class="nav-icon sub-nav-link"
+              href="/archives">
+                <span>Archives</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-series-link" >
+            <a 
+              class="nav-icon sub-nav-link"
+              href="/series">
+                <span>series</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-rss-link" >
+            <a 
+              class="nav-icon sub-nav-link"
+              href="/atom.xml">
+                <span>RSS Feed</span>
+              </a>
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+        <a href="/" id="logo">
+          <h1 id="title-wrap">
+            <span style="opacity:0.2;">kiko.io</span>
+          </h1>
+        </a>
+      
+        <h2 id="subtitle">
+          Memorable Tech Stuff
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      
+      
+
+      <nav id="sub-nav">
+        
+        <a id="sub-nav-search" class="sub-nav-icon" title="Search"></a>
+        <div id="sub-nav-theme">          
+          <input type="checkbox" id="theme-switch">
+          <label for="theme-switch"></label>
+        </div>
+      </nav>
+
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kiko.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+<script>
+  if (location.pathname === "/") {
+    document.getElementById("nav-home-link").style.display = 'none';
+  }
+</script>
+        <div id="content" class="outer">
+          <main>
+<style>
+  #banner {
+    background-size: cover;
+  }
+  @media screen and (max-width: 479px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/D70_8671.jpg"); }
+  }
+  @media screen and (min-width: 480px) and (max-width: 767px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/D70_8671.jpg"); }
+  }
+  @media screen and (min-width: 768px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/D70_8671.jpg"); }    
+  }
+</style>
+<script>
+  var body = document.getElementById("body");
+  body.classList.add("article-view");
+  var photoExpand = document.getElementById("header-photo-expand");
+  photoExpand.href = "/photos/normal/D70_8671.jpg";
+  var photoLink = document.getElementById("header-photo-link");
+  photoLink.href = "https://500px.com/photo/172323451/Sky-Rally-III-by-Kristof-Zerbe/";
+  photoLink.innerHTML = "see <strong>Sky Rally III</strong> at 500px";
+</script>
+
+  
+<article id="post-Use-and-manage-multiple-Node-js-versions-on-Windows-10" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/categories/Tools/Use-and-manage-multiple-Node-js-versions-on-Windows-10/" class="article-date">
+  <time datetime="2021-01-08T12:47:22.000Z" itemprop="datePublished">08 Jan 2021</time>
+</a>
+    
+  <div class="article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+
+
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Use and manage multiple Node.js versions on Windows 10
+    </h1>
+  
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>For a new project I needed to have Node 14 running on my Windows 10 machine, so installation was done quickly via downloading and running the setup file.</p>
+<p>A short time later I wanted to write a new blog post here on kiko.io, which depends on the Node.js based static site generator <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> … and ran into several problems. First of all my hero image processing script (see <a href="/categories/Tools/Automatic-Header-Images-in-Hexo/" title="Automatic Header Images in Hexo">Automatic Header Images in Hexo</a>) returned an exception. The script uses <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-fs">hexo-fs</a> and the problem is known quite some time, according to this <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues/4263">Github issue</a>. The guys recommend to downgrade to an older version of Node.js … :(</p>
+<p>Ok … I needed a solution to install multiple Node.js versions and switch between them, depending on which project I want to work on … and there is one: <strong><a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows">nvm-windows</a></strong> by Corey Butler!</p>
+<a id="more"></a>
+
+<p>This Node.js version manager for Windows 10 is working similar to the often mentioned <a target="_blank" rel="noopener" href="https://github.com/tj/n">n</a> and <a target="_blank" rel="noopener" href="https://github.com/nvm-sh/nvm">nvm</a>, which supports Linux and Mac only. The latest release of <strong>nvm-windows</strong> can be downloaded here: <a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows/releases">https://github.com/coreybutler/nvm-windows/releases</a>.</p>
+<p>The setup is pretty straight forward and asks you at the very end, if the currently installed Node.js version should be managed by it. Confirmed…</p>
+<p>There are just a few basic commands to know:</p>
+<p><strong>List available Node.js versions</strong></p>
+<figure class="highlight ps"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm list available</span><br></pre></td></tr></table></figure>
+<p><img src="/categories/Tools/Use-and-manage-multiple-Node-js-versions-on-Windows-10/nvm-list-available.png" alt="nvm install"></p>
+<p><strong>Install needed Node.js version</strong></p>
+<figure class="highlight ps"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install &lt;version&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/categories/Tools/Use-and-manage-multiple-Node-js-versions-on-Windows-10/nvm-install.png" alt="nvm install"></p>
+<p><strong><em>Switch to particular Node.js version</em></strong></p>
+<figure class="highlight ps"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm use &lt;version&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/categories/Tools/Use-and-manage-multiple-Node-js-versions-on-Windows-10/nvm-use.png" alt="nvm use"></p>
+<p><strong><em>List all installed Node.js versions</em></strong></p>
+<figure class="highlight ps"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+<p><img src="/categories/Tools/Use-and-manage-multiple-Node-js-versions-on-Windows-10/nvm-ls.png" alt="nvm ls"></p>
+
+    <div class="alertbox alertbox-exclamation">
+      <p>In case you have Node.js version dependend utilities installed globally, you need to run <code>npm install -g</code> after switching the version.</p>
+
+    </div>
+  
+
+
+        <h2>More Info</h2>
+        <ul class="moreinfo-list">
+            <li>Github: <a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows">coreybutler/nvm-windows</a></li><li>Microsoft Docs: <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows/nodejs/setup-on-windows">Set up your Node.js development environment directly on Windows</a></li>
+        </ul>
+    
+      
+    </div>
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>  
+  </div>
+
+      
+        <div class="article-permalink"">
+    <input id="article-permalink" value="https://kiko.io/categories/Tools/Use-and-manage-multiple-Node-js-versions-on-Windows-10/" data-id="ckjodt6f500008gl95wta7yfj" />
+    <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
+    <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
+</div>
+<script>
+    var copyText = document.querySelector("#article-permalink");
+    copyText.disabled = true;
+    function copyPermalink() {
+        copyText.disabled = false;
+        copyText.select();
+        document.execCommand("copy");
+        copyText.blur();
+        copyText.disabled = true;
+
+        var permalink = copyText.value;
+        copyText.classList.add("fade-out-500");
+        setTimeout(function(){
+            copyText.value = "copied to clipboard";
+            copyText.classList.remove("fade-out-500");
+            copyText.classList.add("fade-in-1000");
+            setTimeout(function() {
+                copyText.classList.add("fade-out-500");
+                setTimeout(function() {
+                    copyText.value = permalink;
+                    copyText.classList.remove("fade-out-500");
+                    setTimeout(function() {
+                        copyText.classList.remove("fade-in-1000");
+                    }, 500);
+                }, 500);
+            }, 2000);
+        }, 500);
+    }
+
+    if (navigator.share === undefined) {
+        var shareLink = document.querySelector("#action-share");
+        shareLink.style.display = "none";
+    } 
+    
+    function sharePermalink() {
+        navigator.share({
+            title: "Use and manage multiple Node.js versions on Windows 10",
+            url: "https://kiko.io/categories/Tools/Use-and-manage-multiple-Node-js-versions-on-Windows-10/",
+        })
+    }
+</script>
+
+      
+    </footer>
+  </div>
+  
+    <div class="article-comments">
+  <div id="comment-placeholder"></div>
+  <script>
+    window.addEventListener('load', function () {
+      insertUtterancesCommentBlock();
+    })    
+  </script>
+</div>
+    
+  <div class="article-related">
+    <h2>Related</h2>
+    <div class="archives">
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/categories/Tools/Automatic-Header-Images-in-Hexo/">
+        <img class="archive-article-photo" src="/photos/tablet/D70_7344.jpg" alt="Non Toccare" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/categories/Tools/Automatic-Header-Images-in-Hexo/" class="archive-article-date">
+  <time datetime="2020-06-22T15:49:16.000Z" itemprop="datePublished">22 Jun 2020</time>
+</a>
+      
+  <div class="archive-article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+      
+
+
+    <p class="archive-article-series" itemprop="name">
+        A New Blog, Part 6
+    </p>
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/categories/Tools/Automatic-Header-Images-in-Hexo/">Automatic Header Images in Hexo</a>
+    </h1>
+  
+
+      
+    <h2 class="archive-article-subtitle" itemprop="name">
+        Use static images randomly for posts via Hexo script
+    </h2>
+              
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/">
+        <img class="archive-article-photo" src="/photos/tablet/19-07 Schottland-0405.jpg" alt="Tiny Scots 7" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/" class="archive-article-date">
+  <time datetime="2019-09-23T22:00:00.000Z" itemprop="datePublished">24 Sep 2019</time>
+</a>
+      
+  <div class="archive-article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+      
+
+
+    <p class="archive-article-series" itemprop="name">
+        A New Blog, Part 1
+    </p>
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/">A New Blog: VS Code, Hexo and GitHub Pages</a>
+    </h1>
+  
+
+      
+    <h2 class="archive-article-subtitle" itemprop="name">
+        Part One of having fun with Hexo and GitHub Pages
+    </h2>
+              
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/" rel="tag">VS Code</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/categories/Tools/Spice-Up-Windows-Terminal/">
+        <img class="archive-article-photo" src="/photos/tablet/DSC_8860.jpg" alt="Illuminated Kurhaus I" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/categories/Tools/Spice-Up-Windows-Terminal/" class="archive-article-date">
+  <time datetime="2020-12-24T14:03:15.000Z" itemprop="datePublished">24 Dec 2020</time>
+</a>
+      
+  <div class="archive-article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+      
+
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/categories/Tools/Spice-Up-Windows-Terminal/">Spice Up Windows Terminal</a>
+    </h1>
+  
+
+      
+    <h2 class="archive-article-subtitle" itemprop="name">
+        How to make Powershell a little prettier
+    </h2>
+              
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PowerShell/" rel="tag">PowerShell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Theming/" rel="tag">Theming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+    </div>
+  </div>
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/categories/JavaScript/How-to-prevent-duplicate-events/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">How to prevent duplicate events</div>
+    </a>
+  
+</nav>
+
+  
+</article></main>
+          
+            <aside id="sidebar">
+  
+    <div class="widget-wrap">
+    <div class="widget about">
+        <div class="avatar">
+            <a href="/about"><img src="/images/kristof-zerbe.png" alt="Kristof Zerbe"></a>
+            <a href="https://github.com/kristofzerbe" target="blank" class="fab fa-github"></a>
+            <a href="https://www.xing.com/profile/Kristof_Zerbe" target="blank" class="fab fa-xing"></a>
+            <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" target="blank" class="fab fa-linkedin"></a>      
+            <a href="https://500px.com/kikon" target="blank" class="fab fa-500px"></a>
+            <a href="https://twitter.com/kristofz" target="blank" class="fab fa-twitter"></a>
+        </div>
+        <h3>Kristof Zerbe</h3>
+        <p>
+            Developer and Team Lead located in Wiesbaden, Germany
+        </p>
+    </div>
+</div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/categories/Tools/Use-and-manage-multiple-Node-js-versions-on-Windows-10/">Use and manage multiple Node.js versions on Windows 10</a>
+          </li>
+        
+          <li>
+            <a href="/categories/JavaScript/How-to-prevent-duplicate-events/">How to prevent duplicate events</a>
+          </li>
+        
+          <li>
+            <a href="/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/">Utilize a repository of reusable ES6 template literals</a>
+          </li>
+        
+          <li>
+            <a href="/categories/Tools/Spice-Up-Windows-Terminal/">Spice Up Windows Terminal</a>
+          </li>
+        
+          <li>
+            <a href="/categories/Discoveries/Discoveries-5/">Discoveries #5</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+
+  <div class="widget widget-wrap">
+    <p>
+      Want more? This way ... to the <a href="/archives">archives</a>
+    </p>
+  </div>  
+</aside>
+          
+        </div>
+        <footer id="footer">
+  
+  <div class="outer">
+    <div class="inner">
+        <div id="footer-info">
+          <div>
+            &copy; 2021 <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe">Kristof Zerbe</a><br>
+            Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/" target="_blank">GitHub</a>  
+          </div>
+          <div>
+            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" 
+                    data-name="bmc-button" data-slug="kikoio" 
+                    data-font="Arial" data-text="Buy me a coffee" data-emoji="" 
+                    data-color="#55555" data-outline-color="#fff" data-font-color="#fff" data-coffee-color="#fd0" ></script>
+          </div>
+        </div>
+        <ul id="footer-dots">
+          <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" target="_blank" title="SearchConsole"></a></li>
+          <li id="hitcounter"></li>
+        </ul>        
+    </div>
+  </div>
+</footer>
+      </div>
+      <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/dist/bundle.min.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+<script>
+  //BACK-TO-TOP
+  addBackToTop({
+    diameter: 30
+  })
+
+  // AUTOTYPING
+  setTimeout(function() {
+    $("#title-wrap").empty();
+    new AutoTyping({
+      id: 'title-wrap',
+      typeText: ['kiko.io'],
+      textColor: '#fff',
+      typeSpeed: 100,
+      typeDelay: 100,
+      showCursor: false,
+      delete: false,
+      typeInfinity: false
+    }).init();
+  }, 1000);
+
+  //FULLSIZABLE
+  $(function() {
+    $("a.fullsizable").fullsizable();
+  });
+
+</script>
+
+    </div>
+  </div>
+</body>
+</html>
