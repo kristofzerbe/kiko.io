@@ -240,13 +240,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>For a new project I needed to have Node 14 running on my Windows 10 machine, so installation was done quickly via downloading and running the setup file.</p>
-<p>A short time later I wanted to write a new blog post here on kiko.io, which depends on the Node.js based static site generator <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> … and ran into several problems. First of all my hero image processing script (see <a href="/categories/Tools/Automatic-Header-Images-in-Hexo/" title="Automatic Header Images in Hexo">Automatic Header Images in Hexo</a>) returned an exception. The script uses <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-fs">hexo-fs</a> and the problem is known quite some time, according to this <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues/4263">Github issue</a>. The guys recommend to downgrade to an older version of Node.js … :(</p>
+<p>A short time later I wanted to write a new blog post here on kiko.io, which depends on the Node.js based static site generator <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> … and ran into several problems.</p>
+<p>First of all my hero image processing script (see <a href="/categories/Tools/Automatic-Header-Images-in-Hexo/" title="Automatic Header Images in Hexo">Automatic Header Images in Hexo</a>) returned an exception. The script uses <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-fs">hexo-fs</a> and the problem is known quite some time, according to this <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues/4263">Github issue</a>. The guys recommend to downgrade to an older version of Node.js … :(</p>
 <p>Ok … I needed a solution to install multiple Node.js versions and switch between them, depending on which project I want to work on … and there is one: <strong><a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows">nvm-windows</a></strong> by Corey Butler!</p>
 <a id="more"></a>
 
-<p>This Node.js version manager for Windows 10 is working similar to the often mentioned <a target="_blank" rel="noopener" href="https://github.com/tj/n">n</a> and <a target="_blank" rel="noopener" href="https://github.com/nvm-sh/nvm">nvm</a>, which supports Linux and Mac only. The latest release of <strong>nvm-windows</strong> can be downloaded here: <a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows/releases">https://github.com/coreybutler/nvm-windows/releases</a>.</p>
+<p>This <strong>Node.js Version Manager for Windows</strong> is working similar to the often mentioned <a target="_blank" rel="noopener" href="https://github.com/tj/n">n</a> and <a target="_blank" rel="noopener" href="https://github.com/nvm-sh/nvm">nvm</a>, which support Linux and Mac only. The latest release of <strong>nvm-windows</strong> can be downloaded <a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows/releases">here</a>.</p>
 <p>The setup is pretty straight forward and asks you at the very end, if the currently installed Node.js version should be managed by it. Confirmed…</p>
-<p>There are just a few basic commands to know:</p>
+<p>There are just a few commands to know and to run in the command line:</p>
 <p><strong>List available Node.js versions</strong></p>
 <figure class="highlight ps"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm list available</span><br></pre></td></tr></table></figure>
 <p><img src="/categories/Tools/Use-and-manage-multiple-Node-js-versions-on-Windows-10/nvm-list-available.png" alt="nvm install"></p>
@@ -261,7 +262,7 @@
 <p><img src="/categories/Tools/Use-and-manage-multiple-Node-js-versions-on-Windows-10/nvm-ls.png" alt="nvm ls"></p>
 
     <div class="alertbox alertbox-exclamation">
-      <p>In case you have Node.js version dependend utilities installed globally, you need to run <code>npm install -g</code> after switching the version.</p>
+      <p>In case you have Node.js version dependend utilities installed globally, you need to run <code>npm install -g</code> after switch.</p>
 
     </div>
   
