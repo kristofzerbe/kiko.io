@@ -5,7 +5,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>kiko.io | Change CSS class when element scrolls into viewport</title>
+  <title>kiko.io | Safely remove multiple classes using a prefix</title>
   <meta name="title" content="kiko.io - Memorable Tech Stuff">
   <meta name="description" content="Blog about Development &amp; Photography">
   <!-- Schema.org for Google -->
@@ -71,7 +71,7 @@
 
   <script>
     var hitcountConfig = {
-      id: 'gI7Z7elVy',
+      id: 'FmQt3HVl7',
       webUrl: 'https://hitcount.io',
       apiUrl: 'https://hitcount.io/api/{id}',
       size: '12',
@@ -189,30 +189,30 @@
     background-size: cover;
   }
   @media screen and (max-width: 479px) {
-    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/D70_7695.jpg"); }
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/DSC_1690.jpg"); }
   }
   @media screen and (min-width: 480px) and (max-width: 767px) {
-    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/D70_7695.jpg"); }
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/DSC_1690.jpg"); }
   }
   @media screen and (min-width: 768px) {
-    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/D70_7695.jpg"); }    
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/DSC_1690.jpg"); }    
   }
 </style>
 <script>
   var body = document.getElementById("body");
   body.classList.add("article-view");
   var photoExpand = document.getElementById("header-photo-expand");
-  photoExpand.href = "/photos/normal/D70_7695.jpg";
+  photoExpand.href = "/photos/normal/DSC_1690.jpg";
   var photoLink = document.getElementById("header-photo-link");
-  photoLink.href = "https://500px.com/photo/260478167";
-  photoLink.innerHTML = "see <strong>Onion Broken</strong> at 500px";
+  photoLink.href = "https://500px.com/photo/83252609/Metal-Rose-by-Kristof-Zerbe/";
+  photoLink.innerHTML = "see <strong>Metal Rose</strong> at 500px";
 </script>
 
   
-<article id="post-Change-CSS-class-when-element-scrolls-into-viewport" class="article article-type-post" itemscope itemprop="blogPost">
+<article id="post-Safely-remove-multiple-classes-using-a-prefix" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/" class="article-date">
-  <time datetime="2020-07-13T16:24:39.000Z" itemprop="datePublished">13 Jul 2020</time>
+    <a href="/categories/JavaScript/Safely-remove-multiple-classes-using-a-prefix/" class="article-date">
+  <time datetime="2021-01-18T10:17:46.000Z" itemprop="datePublished">18 Jan 2021</time>
 </a>
     
   <div class="article-category category-javascript">
@@ -227,44 +227,48 @@
         
 
 
-    <p class="article-series" itemprop="name">
-        A New Blog, Part 8
-    </p>
-
         
   
     <h1 class="article-title" itemprop="name">
-      Change CSS class when element scrolls into viewport
+      Safely remove multiple classes using a prefix
     </h1>
   
 
         
+    <h2 class="article-subtitle" itemprop="name">
+        Avoiding pitfalls when iterating over classList
+    </h2>
+
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>I had a neat visual gimmick on the start page of this blog, that the gray-scaled header image of a post in the list scaled up to 100% and became colored, when the user hovered over it:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.article-inner</span> <span class="selector-class">.article-photo</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">object-fit</span>: cover;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="attribute">transform-style</span>: preserve-<span class="number">3</span>d;</span><br><span class="line">  <span class="attribute">transition</span>: all ease-out <span class="number">0.6s</span>;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.3</span>;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">1</span>) <span class="built_in">contrast</span>(<span class="number">0.5</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.article-inner</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.article-photo</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">0</span>) <span class="built_in">contrast</span>(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Nice, but a little bit useless on smartphones or tablets, where HOVER  doesn’t really work.</p>
+        <p>Writing a Web App with HTML and JavaScript means you deal with several classes on your DOM elements in order to visualize state changes. And there are some pitfalls to be aware of with regard to removal.</p>
+<p>Assuming you want to open some kind of sidebar above a container. In this sidebar you have several buttons to show different content via JavaScript and a close button, which closes the sidebar again. You HTML code maybe looks like this:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;container&quot;</span>&gt;</span>... Main Content ...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;open-sidebar&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">aside</span> <span class="attr">id</span>=<span class="string">&quot;sidebar&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span>... Sidebar Content ...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;close&quot;</span>&gt;</span>Close Sidebar<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;content-1&quot;</span>&gt;</span>Show Content 1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;content-2&quot;</span>&gt;</span>Show Content 2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;content-3&quot;</span>&gt;</span>Show Content 3<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>By clicking on the <code>open-sidebar</code> button, the sidebar is opened and the action, respectively the new state, is vizualized by adding an appropriate class to the parent sidebar element. In order to make it easy for the user, the default content (Content 1) will be loaded also and its state will be marked with another class.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;sidebar open open-content-1&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>A click on of the other content buttons (let’s say Content 2), will replace the current content and the <code>aside</code> classes will change into:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;sidebar open open-content-2&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Now we want to close the sidebar again, assuming that we don’t have stored the currently opened content in the JavaScript code…</p>
 <a id="more"></a>
 
-<p>A better idea was to transform the header image automatically, when it becomes visible to the user. So I changed the HOVER selector into a class…</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.article-photo</span><span class="selector-class">.in-view</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">0</span>) <span class="built_in">contrast</span>(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>… and wrote a little JS function to determine the point, where the images is fully visible in the viewport:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isVisibleInViewPort</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> viewTop = $(<span class="built_in">window</span>).scrollTop();</span><br><span class="line">  <span class="keyword">var</span> viewBottom = viewTop + $(<span class="built_in">window</span>).height();</span><br><span class="line">  <span class="keyword">var</span> eTop = $(e).offset().top;</span><br><span class="line">  <span class="keyword">var</span> eBottom = eTop + $(e).height();</span><br><span class="line">  <span class="keyword">return</span> ((eBottom &lt;= viewBottom) &amp;&amp; (eTop &gt;= viewTop));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>This function I had to bind to the windows scroll event to all header images only:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">window</span>).on(<span class="string">&#x27;scroll&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  $(<span class="string">&quot;.article-photo&quot;</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (isVisibleInViewPort($(<span class="built_in">this</span>))) &#123;</span><br><span class="line">      $(<span class="built_in">this</span>).addClass(<span class="string">&quot;in-view&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      $(<span class="built_in">this</span>).removeClass(<span class="string">&quot;in-view&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>What we have to do, is to iterate over all classes of <code>aside</code> and remove those which starts with <code>open</code>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sidebar = <span class="built_in">document</span>.getElementById(<span class="string">&quot;sidebar&quot;</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; sidebar.classList.length; i++) &#123;</span><br><span class="line">  <span class="keyword">let</span> value = sidebar.classList[i];</span><br><span class="line">  <span class="keyword">if</span> (value.startsWith(<span class="string">&quot;open&quot;</span>)) &#123;</span><br><span class="line">    sidebar.classList.remove(value);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//or</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> sidebar = <span class="built_in">document</span>.getElementById(<span class="string">&quot;sidebar&quot;</span>);</span><br><span class="line">sidebar.classList.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(value.includes(<span class="string">&quot;open&quot;</span>)) &#123;</span><br><span class="line">    sidebar.classList.remove(value);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;); </span><br></pre></td></tr></table></figure>
+<p>Both approaches have a pitfall: when the first class, starting with <code>open</code>, is removed from the list, the length of the <code>classList</code> array changes immediatly and we won’t reach the last class in the list … !</p>
+<p>The solution is to find and remove all appropriate classes at once, for example by using <code>RegEx</code> and a reusable helper function:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeClassByPrefix</span>(<span class="params">el, prefix</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> regEx = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&#x27;\\b&#x27;</span> + prefix + <span class="string">&#x27;.*?\\b&#x27;</span>, <span class="string">&#x27;g&#x27;</span>);;</span><br><span class="line">    el.className = el.className.replace(regEx, <span class="string">&#x27;&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> el;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//...</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> sidebar = <span class="built_in">document</span>.getElementById(<span class="string">&quot;sidebar&quot;</span>);</span><br><span class="line">removeClassByPrefix(sidebar, <span class="string">&quot;open&quot;</span>);</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li></ul>  
   </div>
 
       
         <div class="article-permalink"">
-    <input id="article-permalink" value="https://kiko.io/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/" data-id="ckjo9tht7000i48l93w0b89j8" />
+    <input id="article-permalink" value="https://kiko.io/categories/JavaScript/Safely-remove-multiple-classes-using-a-prefix/" data-id="ckk2hdlk10000f8l906ercqtx" />
     <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
     <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
 </div>
@@ -304,8 +308,8 @@
     
     function sharePermalink() {
         navigator.share({
-            title: "Change CSS class when element scrolls into viewport",
-            url: "https://kiko.io/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/",
+            title: "Safely remove multiple classes using a prefix",
+            url: "https://kiko.io/categories/JavaScript/Safely-remove-multiple-classes-using-a-prefix/",
         })
     }
 </script>
@@ -332,44 +336,36 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
       
-    <a href="/categories/Tools/Using-GitHub-as-Commenting-Platform/">
-        <img class="archive-article-photo" src="/photos/tablet/D70_7530.jpg" alt="Untitled" />
+    <a href="/categories/JavaScript/How-to-prevent-duplicate-events/">
+        <img class="archive-article-photo" src="/photos/tablet/DSC_7239.jpg" alt="Whirling Spark I" />
     </a>
 
     </header>
     <div class="archive-article-content">
-      <a href="/categories/Tools/Using-GitHub-as-Commenting-Platform/" class="archive-article-date">
-  <time datetime="2020-07-05T12:55:16.000Z" itemprop="datePublished">05 Jul 2020</time>
+      <a href="/categories/JavaScript/How-to-prevent-duplicate-events/" class="archive-article-date">
+  <time datetime="2021-01-07T16:22:25.000Z" itemprop="datePublished">07 Jan 2021</time>
 </a>
       
-  <div class="archive-article-category category-tools">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  <div class="archive-article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
   </div>
 
       
 
 
-    <p class="archive-article-series" itemprop="name">
-        A New Blog, Part 7
-    </p>
-
       
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/categories/Tools/Using-GitHub-as-Commenting-Platform/">Using GitHub as Commenting Platform</a>
+      <a class="archive-article-title" href="/categories/JavaScript/How-to-prevent-duplicate-events/">How to prevent duplicate events</a>
     </h1>
   
 
-      
-    <h2 class="archive-article-subtitle" itemprop="name">
-        Integrate Utterances&#39; GitHub Issue Commenting to Hexo
-    </h2>
-              
+                    
     </div>
     <div class="archive-article-footer">
       
   <div class="archive-article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Events/" rel="tag">Events</a></li></ul>  
   </div>
 
     </div>
@@ -382,44 +378,82 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
       
-    <a href="/categories/Tools/A-New-Blog-Customizing-Hexo/">
-        <img class="archive-article-photo" src="/photos/tablet/19-07 Schottland-0198.jpg" alt="Thistle Fence" />
+    <a href="/categories/JavaScript/Device-Class-Detection-in-JavaScript/">
+        <img class="archive-article-photo" src="/photos/tablet/19-05 Israel-0145.jpg" alt="Jaffa Pepsi" />
     </a>
 
     </header>
     <div class="archive-article-content">
-      <a href="/categories/Tools/A-New-Blog-Customizing-Hexo/" class="archive-article-date">
-  <time datetime="2019-09-24T22:00:00.000Z" itemprop="datePublished">25 Sep 2019</time>
+      <a href="/categories/JavaScript/Device-Class-Detection-in-JavaScript/" class="archive-article-date">
+  <time datetime="2020-09-28T13:27:17.000Z" itemprop="datePublished">28 Sep 2020</time>
 </a>
       
-  <div class="archive-article-category category-tools">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  <div class="archive-article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
   </div>
 
       
 
 
-    <p class="archive-article-series" itemprop="name">
-        A New Blog, Part 2
-    </p>
-
       
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/categories/Tools/A-New-Blog-Customizing-Hexo/">A New Blog: Customizing Hexo</a>
+      <a class="archive-article-title" href="/categories/JavaScript/Device-Class-Detection-in-JavaScript/">Device Class Detection in JavaScript</a>
     </h1>
   
 
       
     <h2 class="archive-article-subtitle" itemprop="name">
-        Part Two of having fun with Hexo and GitHub Pages
+        The unusual way by using CSS Media Queries
     </h2>
               
     </div>
     <div class="archive-article-footer">
       
   <div class="archive-article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/" rel="tag">VS Code</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Browser/" rel="tag">Browser</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MediaQuery/" rel="tag">MediaQuery</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/">
+        <img class="archive-article-photo" src="/photos/tablet/DSC_7897.jpg" alt="Rusted Bike" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/" class="archive-article-date">
+  <time datetime="2021-01-03T12:29:01.000Z" itemprop="datePublished">03 Jan 2021</time>
+</a>
+      
+  <div class="archive-article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+      
+
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/">Utilize a repository of reusable ES6 template literals</a>
+    </h1>
+  
+
+                    
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Templating/" rel="tag">Templating</a></li></ul>  
   </div>
 
     </div>
@@ -433,19 +467,10 @@
     
 <nav id="article-nav">
   
-    <a href="/categories/UI-Design/Horizontal-navigation-menu-above-an-image/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Horizontal navigation menu above an image
-        
-      </div>
-    </a>
   
-  
-    <a href="/categories/Discoveries/Discoveries-1/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/categories/Tools/Use-and-manage-multiple-Node-js-versions-on-Windows-10/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Discoveries #1</div>
+      <div class="article-nav-title">Use and manage multiple Node.js versions on Windows 10</div>
     </a>
   
 </nav>

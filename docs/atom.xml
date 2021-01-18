@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kiko.io/"/>
-  <updated>2021-01-08T14:54:41.011Z</updated>
+  <updated>2021-01-18T11:32:19.850Z</updated>
   <id>https://kiko.io/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Safely remove multiple classes using a prefix</title>
+    <link href="https://kiko.io/categories/JavaScript/Safely-remove-multiple-classes-using-a-prefix/"/>
+    <id>https://kiko.io/categories/JavaScript/Safely-remove-multiple-classes-using-a-prefix/</id>
+    <published>2021-01-18T10:17:46.000Z</published>
+    <updated>2021-01-18T11:32:19.850Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Writing a Web App with HTML and JavaScript means you deal with several classes on your DOM elements in order to visualize state changes. And there are some pitfalls to be aware of with regard to removal.&lt;/p&gt;
+&lt;p&gt;Assuming you want to open some kind of sidebar above a container. In this sidebar you have several buttons to show different content via JavaScript and a close button, which closes the sidebar again. You HTML code maybe looks like this:&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;container&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;... Main Content ...&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;nav&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;open-sidebar&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;nav&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;aside&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;sidebar&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;content&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;... Sidebar Content ...&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;close&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;Close Sidebar&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;content-1&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;Show Content 1&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;content-2&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;Show Content 2&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;content-3&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;Show Content 3&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;aside&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;By clicking on the &lt;code&gt;open-sidebar&lt;/code&gt; button, the sidebar is opened and the action, respectively the new state, is vizualized by adding an appropriate class to the parent sidebar element. In order to make it easy for the user, the default content (Content 1) will be loaded also and its state will be marked with another class.&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;aside&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;sidebar open open-content-1&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;A click on of the other content buttons (let’s say Content 2), will replace the current content and the &lt;code&gt;aside&lt;/code&gt; classes will change into:&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;aside&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;sidebar open open-content-2&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Now we want to close the sidebar again, assuming that we don’t have stored the currently opened content in the JavaScript code…&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://kiko.io/categories/JavaScript/"/>
+    
+    
+      <category term="DOM" scheme="https://kiko.io/tags/DOM/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Use and manage multiple Node.js versions on Windows 10</title>
     <link href="https://kiko.io/categories/Tools/Use-and-manage-multiple-Node-js-versions-on-Windows-10/"/>
     <id>https://kiko.io/categories/Tools/Use-and-manage-multiple-Node-js-versions-on-Windows-10/</id>
     <published>2021-01-08T12:47:22.000Z</published>
-    <updated>2021-01-08T14:54:41.011Z</updated>
+    <updated>2021-01-18T10:18:54.996Z</updated>
     
     <summary type="html">
     
@@ -534,36 +562,6 @@
       <category term="jQuery" scheme="https://kiko.io/tags/jQuery/"/>
     
       <category term="CSS" scheme="https://kiko.io/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Discoveries #1</title>
-    <link href="https://kiko.io/categories/Discoveries/Discoveries-1/"/>
-    <id>https://kiko.io/categories/Discoveries/Discoveries-1/</id>
-    <published>2020-07-12T07:55:10.000Z</published>
-    <updated>2021-01-04T11:25:24.904Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Due to my daily routine, I’m reading a lot of articles on the web regarding software development. &lt;/p&gt;
-&lt;p&gt;The most interesting stuff ends up on my Pocket list, which grows from day to day. Hard to find the pearls, when I need them. This recurring posts will throw a stroke of light on them.&lt;/p&gt;
-&lt;p&gt;They are maybe not the newest finds, not the fanciest ones, but remarkable for me and maybe for you also.&lt;/p&gt;
-
-        &lt;ul class=&quot;simplelist&quot;&gt;
-            &lt;li&gt;Pure CSS halftone portrait from .jpg source&lt;/li&gt;&lt;li&gt;ScrollTrigger - Highlight Text&lt;/li&gt;&lt;li&gt;Tiny long-press event handler&lt;/li&gt;&lt;li&gt;Show More/Less&lt;/li&gt;&lt;li&gt;3D banners with ScrollTrigger&lt;/li&gt;&lt;li&gt;Image Compare Viewer&lt;/li&gt;&lt;li&gt;Add Read or Scroll Progress Bar To A Website To Indicate Read Progress&lt;/li&gt;&lt;li&gt;How to Get a Progressive Web App into the Google Play Store&lt;/li&gt;
-        &lt;/ul&gt;
-        &lt;ul class=&quot;anchorlist&quot; style=&quot;display:none;&quot;&gt;
-            &lt;li&gt;&lt;a href=&quot;#pure-css-halftone&quot;&gt;Pure CSS halftone portrait from .jpg source&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#scrolltrigger-highlight-text&quot;&gt;ScrollTrigger - Highlight Text&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#long-press-event-handler&quot;&gt;Tiny long-press event handler&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#show-more&quot;&gt;Show More/Less&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#3d-banners-with-scrolltrigger&quot;&gt;3D banners with ScrollTrigger&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#image-compare-viewer&quot;&gt;Image Compare Viewer&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#read-progress-bar&quot;&gt;Add Read or Scroll Progress Bar To A Website To Indicate Read Progress&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#get-pwa-into-play-store&quot;&gt;How to Get a Progressive Web App into the Google Play Store&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="Discoveries" scheme="https://kiko.io/categories/Discoveries/"/>
-    
-    
-      <category term="Great Finds" scheme="https://kiko.io/tags/Great-Finds/"/>
     
   </entry>
   
