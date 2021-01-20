@@ -4,7 +4,7 @@ subtitle: An alternative for 'box-shadow' on images
 date: 2021-01-20 10:38:50
 hitcountId: XJtluj8lk
 photograph:
-  file: _D702440.jpg
+  file: D702440.jpg
   name: Oriental Lights
   link: 'https://500px.com/photo/116725473'
 categories:
