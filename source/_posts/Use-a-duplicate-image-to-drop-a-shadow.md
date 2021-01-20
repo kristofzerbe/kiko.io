@@ -32,7 +32,7 @@ img {
 
 But ... it looks like a paper print of the image, with a light bulb in the first third above it. The shade is grey, boring and has been used and seen many times before...
 
-An design related [Instagram post](https://www.instagram.com/p/CIXUIXkBHMk/?igshid=1fmtvzye2or5m) from Muhammad Abdull of [thewilsonthings](https://www.instagram.com/thewilsonwings), inspired me to **use the image itself as the shadow** in order to make the image look a bit translucent. Should be the same technique as that of a reflection. Here is the HTML/CSS code for it, as the people asking for it in the comments.
+An design related [Instagram post](https://www.instagram.com/p/CIXUIXkBHMk/) from Muhammad Abdull of [thewilsonthings](https://www.instagram.com/thewilsonwings), inspired me to **use the image itself as the shadow** in order to make the image look a bit translucent. Should be the same technique as that of a reflection. Here is the HTML/CSS code for it, as the people asking for it in the comments.
 
 <!-- more -->
 
