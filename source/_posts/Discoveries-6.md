@@ -19,9 +19,9 @@ related:
   - Discoveries-3-Tutorials
 ---
 
-2020 is over and history. Well, may 2021 be with us. With this post I would like to continue the **Discoveries**, with new momentum, because there was a lot to read over the holidays.
+2020 is over and history. Well, may 2021 be with us. With this post I would like to continue the **Discoveries**, with new momentum. There was a lot to read over the holidays.
 
-Alle Fundstücke in dieser Ausgabe haben im weitesten Sinne etwas zu tun mit visuellen Aspekten des Web-Designs.
+All the finds in this issue have something to do with visual aspects of web design in the broadest sense.
 
 {% anchorlist 
 "Drop-Shadow: The Underrated CSS Filter|drop-shadow-underrated-css-filter"
