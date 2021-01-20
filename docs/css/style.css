@@ -1151,19 +1151,32 @@ a.article-title:hover {
   line-height: 1.2em;
   margin: 1.2em 0;
 }
-.article-entry a:not(.button) {
+.article-entry a:not(.button):not(.img-link) {
+  -webkit-transition: all ease-out 0.2s;
+  -moz-transition: all ease-out 0.2s;
+  -ms-transition: all ease-out 0.2s;
+  transition: all ease-out 0.2s;
   color: #0069dc;
   text-decoration: none;
 }
-[data-theme="dark"] .article-entry a:not(.button) {
+[data-theme="dark"] .article-entry a:not(.button):not(.img-link) {
   color: #fff;
   border-bottom: #777 1px solid;
 }
-.article-entry a:not(.button):hover {
+.article-entry a:not(.button):not(.img-link):hover {
   border-bottom: #0069dc 1px solid;
 }
-[data-theme="dark"] .article-entry a:not(.button):hover {
+[data-theme="dark"] .article-entry a:not(.button):not(.img-link):hover {
   border-bottom: #fff 1px solid;
+}
+.article-entry a.img-link img {
+  -webkit-transition: all ease-out 0.3s;
+  -moz-transition: all ease-out 0.3s;
+  -ms-transition: all ease-out 0.3s;
+  transition: all ease-out 0.3s;
+}
+.article-entry a.img-link img:hover {
+  filter: brightness(90%);
 }
 .article-entry ul,
 .article-entry ol,

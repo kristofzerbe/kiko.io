@@ -145,7 +145,8 @@
   h1, h2, h3, h4, h5, h6
     line-height: line-height-title
     margin: line-height-title 0
-  a:not(.button)
+  a:not(.button):not(.img-link)
+    transition: all ease-out .2s 
     color: color-link
     text-decoration: none
     /[data-theme="dark"] &
@@ -155,6 +156,11 @@
       border-bottom: color-link 1px solid
       /[data-theme="dark"] &
         border-bottom: dark-color-link 1px solid
+  a.img-link
+    img
+      transition: all ease-out .3s 
+      &:hover
+        filter: brightness(90%);
   ul, ol, dl
     margin-top: line-height
     margin-bottom: line-height

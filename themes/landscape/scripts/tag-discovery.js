@@ -30,7 +30,7 @@ hexo.extend.tag.register("discovery", function(args, content){
     </h2>
     <small>by ${author}&nbsp;<br><a href="${url}" target="_blank" rel="noopener">${url}</a></small>
     ${content}
-    <a style="display:block; margin: 10px 0 30px;" href="${url}" target="_blank" rel="noopener">
+    <a style="display:block; margin: 10px 0 30px;" class="img-link" href="${url}" target="_blank" rel="noopener">
       <img src="${imgSrc}" alt="${title}" />
     </a>
   `;
