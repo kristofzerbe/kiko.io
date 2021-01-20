@@ -14,6 +14,7 @@ categories:
 tags:
   - Great Finds
 related:
+  - Discoveries-6
   - Discoveries-4
   - Discoveries-3-Tutorials
 ---
