@@ -32,9 +32,9 @@ Assuming you want to open some kind of sidebar above a container. In this sideba
     <aside id="sidebar">
       <div class="content">... Sidebar Content ...</div>
       <button id="close">Close Sidebar</button>
-      <button id="content-1">Show Content 1</button>
-      <button id="content-2">Show Content 2</button>
-      <button id="content-3">Show Content 3</button>
+      <button id="content1">Show Content 1</button>
+      <button id="content2">Show Content 2</button>
+      <button id="content3">Show Content 3</button>
     </aside>
 
   </body>
@@ -44,13 +44,13 @@ Assuming you want to open some kind of sidebar above a container. In this sideba
 By clicking on the ``open-sidebar`` button, the sidebar is opened and the action, respectively the new state, is vizualized by adding an appropriate class to the parent sidebar element. In order to make it easy for the user, the default content (Content 1) will be loaded also and its state will be marked with another class.
 
 ```html
-<aside class="sidebar open open-content-1">
+<aside class="sidebar open open-content1">
 ```
 
 A click on of the other content buttons (let's say Content 2), will replace the current content and the ``aside`` classes will change into:
 
 ```html
-<aside class="sidebar open open-content-2">
+<aside class="sidebar open open-content2">
 ```
 
 Now we want to close the sidebar again, assuming that we don't have stored the currently opened content in the JavaScript code...
@@ -84,9 +84,9 @@ The solution is to find and remove all appropriate classes at once, for example 
 
 ```js
 function removeClassByPrefix(el, prefix) {
-    var regEx = new RegExp('\\b' + prefix + '.*?\\b', 'g');;
-    el.className = el.className.replace(regEx, '');
-    return el;
+  let pattern = '(' + prefix + '(\\s|(-)?(\\w*)(\\s)?)).*?';
+  var regEx = new RegExp(pattern, 'g');
+  el.className = el.className.replace(regEx, '');
 }
 
 //...
@@ -94,3 +94,9 @@ function removeClassByPrefix(el, prefix) {
 let sidebar = document.getElementById("sidebar");
 removeClassByPrefix(sidebar, "open");
 ```
+
+### Update, 24 Jan 2021
+
+The first posted RegEx pattern didn't worked properly, because it has found the prefix only and not the whole word, so I have updated the pattern.
+
+You can try it out at [RegExr.com - Remove Class By Prefix](https://regexr.com/5ktn3).
