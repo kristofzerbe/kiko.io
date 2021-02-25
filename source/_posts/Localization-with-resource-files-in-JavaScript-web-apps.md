@@ -1,8 +1,7 @@
 ---
 title: Localization with resource files in JavaScript web apps
 subtitle: >-
-  How to work with Visual Studio resource files for localization in Single Page
-  Applications
+  How to work with Visual Studio resource files for localization in Single Page Applications
 date: 2020-06-13 15:49:10
 hitcountId: snTaPGHLs
 photograph:
@@ -21,7 +20,7 @@ related:
   - Better-Input-Change-Event
 ---
 
-There are plenty of editors out there to help you writing JavaScript web applications. As I'm working in my daily life with Visual Studio, it is a obvious choice for me. 
+There are plenty of editors out there to help you writing JavaScript web applications. As I'm working in my daily life with Visual Studio, it is a obvious choice for me.
 
 One of the most time saving tools in VS is the plugin [ResXManager](https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager), which is an awesome assistant on managing the translations for a Desktop- or ASP.NET-App, which uses XML-based RESX files.
 

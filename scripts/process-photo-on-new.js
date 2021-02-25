@@ -31,23 +31,53 @@ hexo.on('new', function(data){
     postStr = '---\n' + postStr;
 
     fs.writeFile(data.path, postStr, 'utf-8');
+    
+    function poolSrc(type) {
+        return poolDir + "\\" + photoName + "\\" + type + ".jpg"
+    }
+    function photoDest(type) {
+        return photosDir + "\\" + type + "\\" + photoName + ".jpg"
+    }
 
-    fs.copyFile(
-        poolDir + "\\" + photoName + "\\normal.jpg", 
-        photosDir + "\\normal\\" + photoName + ".jpg", 
-        function() {
-            fs.copyFile(
-                poolDir + "\\" + photoName + "\\tablet.jpg", 
-                photosDir + "\\tablet\\" + photoName + ".jpg", 
-                function() {
-                fs.copyFile(
-                    poolDir + "\\" + photoName + "\\mobile.jpg", 
-                    photosDir + "\\mobile\\" + photoName + ".jpg", 
-                    function() {
-                        fs.rmdirSync(poolDir + "\\" + photoName);
-                });
-            });
-    });
+    //INFO: Interim approach
+    function copyFile(src, dest) {
+        log.info("COPY " + src + " TO " + dest);
+        fs.copyFile(src, dest);
+    }
+    copyFile(poolSrc("normal"), photoDest("normal"));
+    copyFile(poolSrc("tablet"), photoDest("tablet"));
+    copyFile(poolSrc("mobile"), photoDest("mobile"));
+    setTimeout(function() {
+        log.info("REMOVE " + poolDir + "\\" + photoName);
+        fs.rmdirSync(poolDir + "\\" + photoName);
+    }, 4000)
 
-    log.info("Processing Photo... done");
+    //TODO: Doesn't work, because callback is not triggered on fs.copyFile
+    // function copyFileAsync(src, dest) {
+    //     return new Promise(function(resolve) {
+    //         log.info("COPY " + src + " TO " + dest);
+    //         try {
+    //             fs.copyFile(src, dest, function() {
+    //                 log.info("COPY DONE");
+    //                 resolve();
+    //             });
+    //         } catch (error) {
+    //             log.info(error);
+    //         }
+            
+    //     });
+    // };
+
+    // copyFileAsync(poolSrc("normal"), photoDest("normal"))
+    // .then(function() {
+    //     copyFileAsync(poolSrc("tablet"), photoDest("tablet"));
+    // })
+    // .then(function() {
+    //     copyFileAsync(poolSrc("mobile"), photoDest("mobile"));
+    // })
+    // .then(function() {
+    //     fs.rmdirSync(poolDir + "\\" + photoName);
+    //     log.info("Processing Photo... done");
+    // });
+
 });

@@ -23,13 +23,13 @@ Developing a website or web app means, you have installed an editor locally on y
 
 This article will show you firstly, how to test your local solution on a smartphone and secondly, how to debug it locally, when it runs on the smartphone after releasing.
 
+<!-- more -->
+
 I will use following setup:
 
 * Editor: **Visual Studio Code**
 * Smartphone: **Android**
 * Browser for Desktop & Mobile: **Microsoft Edge** (any other Chromium based browser will work also)
-
-<!-- more -->
 
 Before we start, we have to enable the Android smartphone to connect to other devices, by switching on **USB Debugging**:
 
