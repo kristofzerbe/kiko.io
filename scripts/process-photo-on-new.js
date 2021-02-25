@@ -10,7 +10,7 @@ hexo.on('new', function(data){
 
     var post = front.parse(data.content);
 
-    var poolDir = hexo.source_dir.replace("\source", hexo.config.static_dir) + "pool";
+    var poolDir = hexo.source_dir.replace("\source", hexo.config.pool_dir);
     var photosDir = hexo.source_dir.replace("\source", hexo.config.static_dir) + "photos";
     
     var files = fs.listDirSync(poolDir);
@@ -49,8 +49,8 @@ hexo.on('new', function(data){
     copyFile(poolSrc("mobile"), photoDest("mobile"));
     setTimeout(function() {
         log.info("REMOVE " + poolDir + "\\" + photoName);
-        fs.rmdirSync(poolDir + "\\" + photoName);
-    }, 4000)
+        //fs.rmdirSync(poolDir + "\\" + photoName);
+    }, 2000)
 
     //TODO: Doesn't work, because callback is not triggered on fs.copyFile
     // function copyFileAsync(src, dest) {
