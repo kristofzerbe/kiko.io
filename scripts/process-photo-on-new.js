@@ -49,7 +49,7 @@ hexo.on('new', function(data){
     copyFile(poolSrc("mobile"), photoDest("mobile"));
     setTimeout(function() {
         log.info("REMOVE " + poolDir + "\\" + photoName);
-        //fs.rmdirSync(poolDir + "\\" + photoName);
+        fs.rmdirSync(poolDir + "\\" + photoName);
     }, 2000)
 
     //TODO: Doesn't work, because callback is not triggered on fs.copyFile
