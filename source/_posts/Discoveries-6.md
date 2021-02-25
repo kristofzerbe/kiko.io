@@ -14,9 +14,9 @@ categories:
 tags:
   - Great Finds
 related:
+  - Discoveries-7
   - Discoveries-5
   - Discoveries-4
-  - Discoveries-3-Tutorials
 ---
 
 2020 is over and history. Well, may 2021 be with us. With this post I would like to continue the **Discoveries**, with new momentum. There was a lot to read over the holidays.

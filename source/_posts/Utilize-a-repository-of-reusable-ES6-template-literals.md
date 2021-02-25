@@ -13,8 +13,8 @@ tags:
   - ES6
   - Templating
 related:
+  - Native-JavaScript-Multilanguage-Templating
   - Implement-source-switch-for-SPA
-  - Device-Class-Detection-in-JavaScript
   - Localization-with-resource-files-in-JavaScript-web-apps
 ---
 

@@ -188,6 +188,70 @@
   
     
   
+<article id="post-Utilize-a-repository-of-reusable-ES6-template-literals" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/" class="article-date">
+  <time datetime="2021-01-03T12:29:01.000Z" itemprop="datePublished">03 Jan 2021</time>
+</a>
+    
+  <div class="article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+    <a href="/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/">
+        <img class="article-photo" src="/photos/tablet/DSC_7897.jpg" alt="Rusted Bike" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/">Utilize a repository of reusable ES6 template literals</a>
+    </h1>
+  
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>The <a target="_blank" rel="noopener" href="http://es6-features.org/#StringInterpolation"><strong>Template Literals</strong></a> introduced with ES6 are very useful to deal with multiline strings, because they support <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Expression_interpolation">embedded expressions</a>. Gone are the days of endless string concatination or replacing variables in a string by using RegEx.</p>
+<p>Instead of… </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> url = ...</span><br><span class="line"><span class="keyword">var</span> file = ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> template = </span><br><span class="line">  <span class="string">&#x27;&lt;div class=&quot;photo&quot;&gt;&#x27;</span> + </span><br><span class="line">     <span class="string">&#x27;&lt;a href=&quot;&#x27;</span> + url + <span class="string">&quot;&#x27; + </span></span><br><span class="line"><span class="string">        &#x27;style=&quot;</span>background-image: url(<span class="string">&#x27; + file + &#x27;</span>)<span class="string">&quot;&lt;/a&gt;&#x27; + </span></span><br><span class="line"><span class="string">  &#x27;&lt;/div&gt;&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>… you can write:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> url = ...</span><br><span class="line"><span class="keyword">var</span> file = ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> template = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;div class=&quot;photo&quot;&gt;</span></span><br><span class="line"><span class="string">    &lt;a href=&quot;<span class="subst">$&#123;url&#125;</span>/&quot;</span></span><br><span class="line"><span class="string">    style=&quot;background-image: url(<span class="subst">$&#123;file&#125;</span>);&quot;&gt;&lt;/a&gt;</span></span><br><span class="line"><span class="string">  &lt;/div&gt;</span></span><br><span class="line"><span class="string">`</span>,</span><br></pre></td></tr></table></figure>
+<p>It’s much cleaner and easier to handle, as you can copy your needed HTML right into your code and surround it by <strong>backtick</strong> (!) characters. Insert your variable placeholders (expressions), indicated by a dollar sign and curly braces, and you are done.</p>
+<p>But there is one “restriction”, you have to be aware of: the interpolation (substitution of the expressions) is done at declaration time and not at runtime. You can’t define your literals seperatly, take one and make your substitution as you need it, like you would do with <a target="_blank" rel="noopener" href="https://handlebarsjs.com/">Handlebars</a> or other templating engines. Therefore the name <em>template</em> literals is a bit misleading. But … there is a way to achieve this anyway…</p>
+        
+          <p class="article-more-link">
+            <a class="button" href="/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Templating/" rel="tag">Templating</a></li></ul>  
+  </div>
+
+      
+    </footer>
+  </div>
+  
+</article>
+  
+    
+  
 <article id="post-Spice-Up-Windows-Terminal" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/categories/Tools/Spice-Up-Windows-Terminal/" class="article-date">
@@ -641,69 +705,6 @@
   
 </article>
   
-    
-  
-<article id="post-Show-related-posts-in-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/categories/Tools/Show-related-posts-in-Hexo/" class="article-date">
-  <time datetime="2020-10-03T11:17:03.000Z" itemprop="datePublished">03 Oct 2020</time>
-</a>
-    
-  <div class="article-category category-tools">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-      
-    <a href="/categories/Tools/Show-related-posts-in-Hexo/">
-        <img class="article-photo" src="/photos/tablet/18-09 Kroatien-0323.jpg" alt="Untitled" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-    <p class="article-series" itemprop="name">
-        A New Blog, Part 12
-    </p>
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/categories/Tools/Show-related-posts-in-Hexo/">Show related posts in Hexo</a>
-    </h1>
-  
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>It is always nice to point the readers of your blog’s articles to related posts, they might be interested in. They stay a little longer to understand what you have to offer and increases the likelihood that they become loyal readers, followers or subscribers. Related posts has become a standard on delivering news and posts.</p>
-<p>In the default Hexo theme <strong>Landscape</strong>, on which this blog is based, there is no such function built in, but as the Hexo community is very busy, there are some plugins you can use.</p>
-        
-          <p class="article-more-link">
-            <a class="button" href="/categories/Tools/Show-related-posts-in-Hexo/">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
-  </div>
-
-      
-    </footer>
-  </div>
-  
-</article>
-  
 
 
 
@@ -741,6 +742,10 @@
       <ul>
         
           <li>
+            <a href="/categories/Discoveries/Discoveries-7/">Discoveries #7</a>
+          </li>
+        
+          <li>
             <a href="/categories/JavaScript/Native-JavaScript-Multilanguage-Templating/">Native JavaScript Multilanguage Templating</a>
           </li>
         
@@ -754,10 +759,6 @@
         
           <li>
             <a href="/categories/UI-Design/Use-a-duplicate-image-to-drop-a-shadow/">Use a duplicate image to drop a shadow</a>
-          </li>
-        
-          <li>
-            <a href="/categories/JavaScript/Safely-remove-multiple-classes-using-a-prefix/">Safely remove multiple classes using a prefix</a>
           </li>
         
       </ul>
