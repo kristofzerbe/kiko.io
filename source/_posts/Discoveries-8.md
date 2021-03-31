@@ -1,5 +1,5 @@
 ---
-title: Discoveries #8
+title: 'Discoveries #8'
 subtitle:
 date: 2021-03-31 13:41:26
 hitcountId:
