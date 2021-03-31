@@ -14,9 +14,9 @@ categories:
 tags:
   - Great Finds
 related:
+  - Discoveries-8
   - Discoveries-6
   - Discoveries-5
-  - Discoveries-4
 ---
 
 February and the first sunny days in 2021. What a delight! Have fun, sitting in the sun, discovering my newest finds on the web. This time, all regarding JavaScript...
