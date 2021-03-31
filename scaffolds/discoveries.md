@@ -7,6 +7,7 @@ photograph:
   file: ''
   name: ''
   link: ''
+series: Discoveries
 part: #PART
 categories:
   - Discoveries
@@ -33,32 +34,32 @@ related:
 
 <!-- more -->
 
-{% discovery "TITLE" "AUTHOR" URL Discoveries-{{ part }} IMGFILE.png %}
+{% discovery "TITLE" "AUTHOR" URL Discoveries-#PART IMGFILE.png %}
 {% enddiscovery %}
 
-{% discovery "TITLE" "AUTHOR" URL Discoveries-{{ part }} IMGFILE.png %}
+{% discovery "TITLE" "AUTHOR" URL Discoveries-#PART IMGFILE.png %}
 {% enddiscovery %}
 
-{% discovery "TITLE" "AUTHOR" URL Discoveries-{{ part }} IMGFILE.png %}
+{% discovery "TITLE" "AUTHOR" URL Discoveries-#PART IMGFILE.png %}
 {% enddiscovery %}
 
-{% discovery "TITLE" "AUTHOR" URL Discoveries-{{ part }} IMGFILE.png %}
+{% discovery "TITLE" "AUTHOR" URL Discoveries-#PART IMGFILE.png %}
 {% enddiscovery %}
 
-{% discovery "TITLE" "AUTHOR" URL Discoveries-{{ part }} IMGFILE.png %}
+{% discovery "TITLE" "AUTHOR" URL Discoveries-#PART IMGFILE.png %}
 {% enddiscovery %}
 
-{% discovery "TITLE" "AUTHOR" URL Discoveries-{{ part }} IMGFILE.png %}
+{% discovery "TITLE" "AUTHOR" URL Discoveries-#PART IMGFILE.png %}
 {% enddiscovery %}
 
-{% discovery "TITLE" "AUTHOR" URL Discoveries-{{ part }} IMGFILE.png %}
+{% discovery "TITLE" "AUTHOR" URL Discoveries-#PART IMGFILE.png %}
 {% enddiscovery %}
 
-{% discovery "TITLE" "AUTHOR" URL Discoveries-{{ part }} IMGFILE.png %}
+{% discovery "TITLE" "AUTHOR" URL Discoveries-#PART IMGFILE.png %}
 {% enddiscovery %}
 
-{% discovery "TITLE" "AUTHOR" URL Discoveries-{{ part }} IMGFILE.png %}
+{% discovery "TITLE" "AUTHOR" URL Discoveries-#PART IMGFILE.png %}
 {% enddiscovery %}
 
-{% discovery "TITLE" "AUTHOR" URL Discoveries-{{ part }} IMGFILE.png %}
+{% discovery "TITLE" "AUTHOR" URL Discoveries-#PART IMGFILE.png %}
 {% enddiscovery %}
