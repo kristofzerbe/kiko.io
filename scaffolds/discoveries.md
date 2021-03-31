@@ -2,20 +2,20 @@
 title: {{ title }}
 subtitle: 
 date: {{ date }}
-hitcountId: {{ hitcount.io }}
+hitcountId: #HITCOUNT.IO
 photograph: 
   file: ''
   name: ''
   link: ''
-part: {{ part }}
+part: #PART
 categories:
   - Discoveries
 tags:
   - Great Finds
 related:
-  - Discoveries-{{ part - 1 }}
-  - Discoveries-{{ part - 2 }}
-  - Discoveries-{{ part - 3 }}
+  - Discoveries-#PART-1
+  - Discoveries-#PART-2
+  - Discoveries-#PART-3
 ---
 
 {% anchorlist 
@@ -27,9 +27,17 @@ related:
   "TITLE|IMGFILE"
   "TITLE|IMGFILE"
   "TITLE|IMGFILE"
+  "TITLE|IMGFILE"
+  "TITLE|IMGFILE"
 %}
 
 <!-- more -->
+
+{% discovery "TITLE" "AUTHOR" URL Discoveries-{{ part }} IMGFILE.png %}
+{% enddiscovery %}
+
+{% discovery "TITLE" "AUTHOR" URL Discoveries-{{ part }} IMGFILE.png %}
+{% enddiscovery %}
 
 {% discovery "TITLE" "AUTHOR" URL Discoveries-{{ part }} IMGFILE.png %}
 {% enddiscovery %}
