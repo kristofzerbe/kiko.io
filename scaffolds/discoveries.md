@@ -1,5 +1,5 @@
 ---
-title: {{ title }}
+title: '{{ title }}'
 subtitle: 
 date: {{ date }}
 hitcountId: #HITCOUNT.IO
