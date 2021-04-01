@@ -46,12 +46,22 @@ module.exports = function(grunt){
         dest: 'themes/landscape/source/css/fonts/sourcecodepro'
       },
       imagecompare_js: {
-        src: 'themes/landscape/assets/image-compare-viewer.min.js',
-        dest: 'themes/landscape/source/js/dist/image-compare-viewer.min.js'
+        expand: true,
+        cwd: 'themes/landscape/assets/image-compare-viewer/',
+        src: [
+          'image-compare-viewer.min.js',
+          'image-compare-viewer.min.js.map'
+        ],
+        dest: 'themes/landscape/source/js/dist'
       },
       imagecompare_css: {
-        src: 'themes/landscape/assets/image-compare-viewer.min.css',
-        dest: 'themes/landscape/source/css/dist/image-compare-viewer.min.css'
+        expand: true,
+        cwd: 'themes/landscape/assets/image-compare-viewer',
+        src: [
+          'image-compare-viewer.min.css',
+          'image-compare-viewer.min.css.map'
+        ],
+        dest: 'themes/landscape/source/css/dist'
       }
     },
     _clean: {
@@ -62,19 +72,19 @@ module.exports = function(grunt){
       asset_scripts: {
         options: { separator: '\n' },
         src: [
-          'themes/landscape/assets/luminous.js',
+          'themes/landscape/assets/luminous/luminous.js',
           'themes/landscape/assets/AutoTyping.js',
           'themes/landscape/assets/utterances-comment.js',
           'themes/landscape/assets/vanilla-back-to-top.js',
-          'themes/landscape/assets/jquery-fullsizable.js'
+          'themes/landscape/assets/jquery-fullsizable/jquery-fullsizable.js'
         ],
         dest: 'themes/landscape/tmp/asset-bundle.js'
       },
       asset_styles: {
         src: [
-          'themes/landscape/assets/luminous-basic.css',
-          'themes/landscape/assets/jquery-fullsizable.css',
-          'themes/landscape/assets/jquery-fullsizable-fontawesome.css'
+          'themes/landscape/assets/luminous/luminous-basic.css',
+          'themes/landscape/assets/jquery-fullsizable/jquery-fullsizable.css',
+          'themes/landscape/assets/jquery-fullsizable/jquery-fullsizable-fontawesome.css'
         ],
         dest: 'themes/landscape/tmp/asset-bundle.css'
       }
@@ -118,7 +128,7 @@ module.exports = function(grunt){
 
   grunt.registerTask('fonts', ['gitclone', 'copy', '_clean:tmp']);  
   grunt.registerTask('clean', ['_clean']);
-  grunt.registerTask('bundle', ['concat', 'cssmin', 'uglify', '_clean:tmp']);
+  grunt.registerTask('bundle', ['copy', 'concat', 'cssmin', 'uglify', '_clean:tmp']);
   grunt.registerTask('build', ['hexo:clean', 'hexo:generate']);
   grunt.registerTask('default', ['concat', 'cssmin', 'uglify', '_clean:tmp', 'hexo:clean', 'hexo:generate']);
 };

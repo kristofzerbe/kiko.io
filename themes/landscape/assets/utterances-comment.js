@@ -16,8 +16,10 @@ function insertUtterancesCommentBlock() {
       commentScript.setAttribute("theme", commentTheme);
       commentScript.setAttribute("crossorigin", "anonymous");
       const placeholder = document.getElementById("comment-placeholder");
-      placeholder.innerHTML = "";
-      placeholder.appendChild(commentScript);
+      if (placeholder) {
+        placeholder.innerHTML = "";
+        placeholder.appendChild(commentScript);  
+      }
     }
 }
 
