@@ -7,6 +7,7 @@
   z-index: 999
   overflow: hidden;
   background-color: color-base
+  border-radius: 0 0 border-radius border-radius
   /[data-theme="dark"] &
     border-bottom-color: dark-color-border
     background-color: dark-color-base
@@ -49,7 +50,7 @@
   width: 16px
   height: 16px
   padding: 10px
-  font-family: FontAwesome5Solid
+  font-family: fa-icon-solid
   z-index: 100
   &:before
     content: "\f065"
@@ -114,12 +115,6 @@
     margin: 0 0 0 10px
     padding: 0
     .menu-item
-      // flex-basis: 80px 
-      // -ms-flex-negative: 0
-      // flex-shrink: 0
-      // flex-grow: 1
-      // max-width: 100px
-      // text-overflow: ellipsis;
       flex-basis: 40px
       flex-shrink: 0
       flex-grow: 0
@@ -175,7 +170,7 @@
 $logo-text
   text-decoration: none
   color: color-logo
-  font-weight: 300
+  font-weight: 400
 
 #title-wrap
   font-size: title-size
@@ -192,11 +187,11 @@ $logo-text
   font-size: subtitle-size
   line-height: subtitle-size
   margin-top: (subtitle-size / 3) * 2
-  letter-spacing: 1px
+  letter-spacing: 0.7px
 
 #logo
   @extend $logo-text
-  font-family: "Open Sans", sans-serif
+  font-family: font-sans
   font-variant: small-caps
   font-weight: 600
   letter-spacing: 0
@@ -281,6 +276,7 @@ $sub-nav-link
   background: #fff
   padding: 5px 15px
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)
+  border-radius: border-radius-small
 
 .search-form-input
   border: none
