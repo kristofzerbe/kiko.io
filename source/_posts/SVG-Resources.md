@@ -86,9 +86,8 @@ Dealing with SVG's is a little bit more difficult than placing a PNG in HTML, be
 
 The most useful way of using SVG's is as an image out of a file, either directly ...:
 
-<button>
-  <img src="{% asset_path options.svg %}" />
-</button><br><em>(use DevTools [F12] to inspect the element)</em>
+<button><img src="{% asset_path options.svg %}" /></button><br><em>(use DevTools [F12] to inspect the element)</em>
+
 ```html
 <img src="images/options.svg" />
 ```
@@ -122,6 +121,7 @@ The most useful way of using SVG's is as an image out of a file, either directly
 
 As files, no matter how small, has to be requested from the server, you can also define SVG's inline for better performance:
 
+<div>
 <button>
 <svg xmlns="http://www.w3.org/2000/svg"
       width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -131,6 +131,7 @@ As files, no matter how small, has to be requested from the server, you can also
         d="M17 20C15.1362 20 13.5701 18.7252 13.126 17H5V15H13.126C13.5701 13.2748 15.1362 12 17 12C19.2091 12 21 13.7909 21 16C21 18.2091 19.2091 20 17 20ZM17 18C18.1046 18 19 17.1046 19 16C19 14.8954 18.1046 14 17 14C15.8954 14 15 14.8954 15 16C15 17.1046 15.8954 18 17 18Z" />
 </svg>
 </button><br><em>(use DevTools [F12] to inspect the element)</em>
+</div><br>
 
 ```html
 <body>
@@ -150,6 +151,7 @@ As files, no matter how small, has to be requested from the server, you can also
 
 If you want to use a SVG multiple times, you can define it once by wrapping it up in a ``symbol`` tag with an ``id`` and use it wherever you want:
 
+<div>
 <svg xmlns="http://www.w3.org/2000/svg" hidden style="display:none">
   <symbol id="options" width="24" height="24" viewBox="0 0 24 24" fill="none">
     <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
@@ -160,6 +162,7 @@ If you want to use a SVG multiple times, you can define it once by wrapping it u
 </svg>
 <button><svg width="24" height="24"><use xlink:href="#options" /></svg></button>
 <button><svg width="24" height="24"><use xlink:href="#options" /></svg></button><br><em>(use DevTools [F12] to inspect the elements)</em>
+</div><br>
 
 ```html
 <body>
