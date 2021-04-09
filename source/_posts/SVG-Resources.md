@@ -217,7 +217,7 @@ Over 1.250 icons in several categories, downloadable as SVG or PNG.
 
 ---
 
-{% source "Google Fonts - Material Icons" https://fonts.google.com+icons SVG-Resources fonts_google_com+icons.png %}
+{% source "Google Fonts - Material Icons" https://fonts.google.com/icons SVG-Resources fonts_google_com+icons.png %}
   At least ... an own frontend of Googles Material Icons inside [Google Fonts](https://font.google.com) for downloading them individually as SVG, PNG or Android/iOS package.
 {% endsource %}
 
