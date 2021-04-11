@@ -27,10 +27,11 @@
     <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
     {% endif %}
     <summary type="html">
+    {% set postImage = url + '/photos/tablet/' + post.photograph.file | uriencode %}
     {% if post.description %}
       {{ post.description }}
     {% elif post.excerpt %}
-      {{ post.excerpt + '\n\n<br>Read more...' }}
+      {{ '<p><img src="' + postImage + '" /></p>' + post.excerpt + '<p>Read more ...</p>' }}
     {% elif post.content %}
       {% set short_content = post.content.substring(0, config.feed.content_limit) %}
       {% if config.feed.content_limit_delim %}
@@ -38,16 +39,13 @@
         {% if delim_pos > -1 %}
           {{ short_content.substring(0, delim_pos) }}
         {% else %}
-          {{ short_content + '\n\n<br>Read more...' }}
+          {{ '<p><img src="' + postImage + '" /></p>' + short_content + '<p>Read more ...</p>' }}
         {% endif %}
       {% else %}
-        {{ short_content + '\n\n<br>Read more...' }}
+        {{ '<p><img src="' + postImage + '" /></p>' + short_content + '<p>Read more ...</p>' }}
       {% endif %}
     {% endif %}
     </summary>
-    {% if post.photograph %}
-    <content src="{{ url + '/photos/tablet/' + post.photograph.file | uriencode }}" type="image" />
-    {% endif %}
     {% for category in post.categories.toArray() %}
       <category term="{{ category.name }}" scheme="{{ url + category.path | uriencode }}"/>
     {% endfor %}
