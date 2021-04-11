@@ -146,6 +146,13 @@
     new Luminous(el);
   });
 
+  // Init Anchor List Items  
+  $('body.article-view ul.anchorlist li').each(function(i, el) {
+    var anchor = $(this).data("anchor");
+    var text = $(this).text();
+    el.innerHTML = '<a href="' + anchor + '">' + text + '</a>';
+  });
+
   initScrollAnchorLink();
 
 })(jQuery);
