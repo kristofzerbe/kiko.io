@@ -37,75 +37,93 @@ Apps:
 
   * **Screenshot Touch**  
   [https://play.google.com/store/apps/details?id=com.mdiwebma.screenshot](https://play.google.com/store/apps/details?id=com.mdiwebma.screenshot)
-    
 
 ---
 
 ## Step 1
-Open up **Screenshot Touch** and set under ``Shaking and Delay`` the option ``Caption by shaking`` **[1]** and choose the option ``Shake sensitivity`` to ``Hard`` **[2]**. Set the ``Resize`` option to ``50%`` **[3]**. Start the capture monitoring service **[4]**.
+- Open up **Screenshot Touch** and set under ``Shaking and Delay`` the option ``Caption by shaking`` **[1]**.
+- Set the ``Shake sensitivity`` option to ``Hard`` **[2]**.
+- Set the ``Resize`` option to ``50%`` **[3]**.
+- Start the capture monitoring service **[4]**.  
+
 {% asset_img step-01.png %}
 
 ---
 
 ## Step 2
-Open up **Trello** and got to the card, where you want to add an screenshot for use as an cover.
-Click on the URL attachment to open it in your browser **[1]**
+- Open up **Trello** and got to the card, where you want to add an screenshot for use as an cover.
+- Click on the URL attachment to open it in your browser **[1]**.
+
 {% asset_img step-02.png %}
 
 ---
 
 ## Step 3
-Shake you smartphone to capture the current website.
+- Shake you smartphone to capture the current website.
+
+{% asset_img step-03.png %}
 
 ---
 
 ## Step 4
-Switch to **Screenshot Touch** and open the ``Photo Viewer`` **[1]**
+- Switch to **Screenshot Touch** and open the ``Photo Viewer`` **[1]**
+
 {% asset_img step-04.png %}
 
 ---
 
 ## Step 5
-Open the ``Crop Image`` dialog.
+- Open the ``Crop Image`` dialog.
+
 {% asset_img step-05.png %}
 
 ---
 
 ## Step 6
-Set the ``Crop Mode`` to ``1:1`` to get a squared image. It will be persisted in the apps settings for further use.
+- Set the ``Crop Mode`` to ``1:1`` to get a squared image. It will be persisted in the apps settings for further use.
+
 {% asset_img step-06.png %}
 
 ---
 
 ## Step 7
-Place the overlay to select you preferred part of the image **[1]** and save it **[2]**.
+- Place the overlay to select you preferred part of the image **[1]**.
+- Save the image **[2]**.
+
 {% asset_img step-07.png %}
 
 ---
 
 ## Step 8
-Switch back to **Trello** and click to add a new attachment **[1]**.
+- Switch back to **Trello** and click to add a new attachment **[1]**.
+
 {% asset_img step-08.png %}
 
 ---
 
 ## Step 9
-Choose to add from file **[1]**.
+- Choose to add from file **[1]**.
+
 {% asset_img step-09.png %}
 
 ---
 
 ## Step 10
-In Androids file dialog, head up to ``Recent Files`` **[1]** and select the new image **[2]**.
+- In Androids file dialog, head up to ``Recent Files`` **[1]**.
+- Select the new image **[2]**.
+
 {% asset_img step-10.png %}
 
 ---
 
 ## Step 11
-In the context menu of the added attachment, select ``Make Card Cover``, if Trello has not done it yet.
+- In the context menu of the added attachment, select ``Make Card Cover`` **[1]**, if Trello has not done it yet.
+
 {% asset_img step-11.png %}
 
 ---
 
 ## Result
+Once you have done this two or three times, the process takes less than 30 seconds.
+
 {% asset_img result.png %}
