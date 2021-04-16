@@ -2,6 +2,7 @@
 title: Spice Up Windows Terminal
 subtitle: How to make Powershell a little prettier
 date: 2020-12-24 15:03:15
+update: 2021-04-21 11:55:00
 hitcountId: ogYOZIiUq
 photograph:
   file: DSC_8860.jpg
@@ -78,6 +79,19 @@ Set-Theme Paradox
 
 *Paradox* is one of 27 themes available. You will find all themes in your DOCUMENTS folder under ``..\WindowsPowerShell\Modules\oh-my-posh\<version>\Themes`` and some visual representations at [https://github.com/JanDeDobbeleer/oh-my-posh?#themes](https://github.com/JanDeDobbeleer/oh-my-posh?#themes).
 
+## #Update, April 2021
+
+Scott has mentioned a new improvements recently: Show suitable icons on listing files:
+
+1. Download and install **CaskaydiaCove Nerd Font** at [https://www.nerdfonts.com/font-downloads](https://www.nerdfonts.com/font-downloads)
+2. Open Terminal Settings (like in Step 2)
+3. Replace the ``fontface`` with ``"CaskaydiaCove Nerd Font"``
+4. Run ``Install-Module -Name Terminal-Icons -Repository PSGallery`` in Terminal, opened as administrator
+5. Add ``Import-Module -Name Terminal-Icons`` in your profile (like in Step 4)
+
+You will get this on calling ``dir``, for example:
+
+![Windows Terminal Icons](Spice-Up-Windows-Terminal/terminal-icons.png)
 
 {% moreinfo '{ "list": [
   [
@@ -103,5 +117,10 @@ Set-Theme Paradox
   [
     "Scott Hanselman", "Taking your PowerShell prompt to the next level with Windows Terminal and Oh my Posh 3",
     "https://www.hanselman.com/blog/taking-your-powershell-prompt-to-the-next-level-with-windows-terminal-and-oh-my-posh-3"
+  ],
+  [
+    "Scott Hanselman", "Take your Windows Terminal and PowerShell to the next level with Terminal Icons",
+    "https://www.hanselman.com/blog/take-your-windows-terminal-and-powershell-to-the-next-level-with-terminal-icons"
   ]
 ]}' %}
+
