@@ -1,8 +1,8 @@
 <a href="<%- url_for(post.path) %>" class="<%= class_name %>">
-  <% if (post.originalDate) { %>
+  <% if (post.dateOriginal) { %>
     <time class="updated" datetime="<%= date_xml(post.date) %>" itemprop="dateUpdated"><%= date(post.date, date_format) %></time>
     <br>
-    <time class="published" datetime="<%= date_xml(post.originalDate) %>" itemprop="datePublished"><%= date(post.originalDate, date_format) %></time>
+    <time class="published" datetime="<%= date_xml(post.dateOriginal) %>" itemprop="datePublished"><%= date(post.dateOriginal, date_format) %></time>
   <% } else { %>
     <time class="published" datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, date_format) %></time>
   <% } %>

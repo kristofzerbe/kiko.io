@@ -157,20 +157,23 @@ jsonContent:
     categories: true
     tags: true
 
-# Feed
+# Feed : https://github.com/sergeyzwezdin/hexo-feed
 feed:
-  type: atom
-  path: atom.xml
-  limit: 20
-  content: 
-  content_limit: 140
-  content_limit_delim: ' '
-  order_by: -date
-  icon: images/favicon-32x32.png
-  logo: images/icon-72x72.png
-  template:
-    - ./templates/atom-feed.xml
-
+    limit: 20
+    order_by: "-date"
+    icon: images/favicon-32x32.png
+    logo: images/icon-72x72.png
+    tag_dir: false
+    category_dir: false
+    atom:
+        enable: true
+        template: "./templates/atom.ejs"
+        output: "atom.xml"
+    rss:
+        enable: false
+    jsonFeed:
+        enable: false
+        
 # Manifest: https://github.com/lavas-project/hexo-pwa
 pwa:
   manifest:

@@ -1,7 +1,7 @@
 ---
 title: Spice Up Windows Terminal
 subtitle: How to make Powershell a little prettier
-originalDate: 2020-12-24 15:03:15
+dateOriginal: 2020-12-24 15:03:15
 date: 2021-04-21 11:55:00
 hitcountId: ogYOZIiUq
 photograph:
@@ -81,7 +81,7 @@ Set-Theme Paradox
 
 ## #Update, April 2021
 
-Scott Hanselman has mentioned a new improvements recently: Show suitable icons on listing files:
+Scott Hanselman has mentioned a new improvement recently: Show suitable icons on listing files:
 
 1. Download and install **CaskaydiaCove Nerd Font** at [https://www.nerdfonts.com/font-downloads](https://www.nerdfonts.com/font-downloads)
 2. Open Terminal Settings (like in Step 2)
