@@ -5,7 +5,11 @@
       <ul>
         <% site.posts.sort('date', -1).limit(5).each(function(post){ %>
           <li>
-            <a href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a>
+            <% if (post.originalDate) { %>
+              <a href="<%- url_for(post.path) %>"><b>Update: </b><%= post.title %></a>
+            <% } else { %>
+              <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+            <% } %>
           </li>
         <% }) %>
       </ul>

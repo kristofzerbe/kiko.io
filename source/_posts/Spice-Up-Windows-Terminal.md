@@ -1,8 +1,8 @@
 ---
 title: Spice Up Windows Terminal
 subtitle: How to make Powershell a little prettier
-date: 2020-12-24 15:03:15
-update: 2021-04-21 11:55:00
+originalDate: 2020-12-24 15:03:15
+date: 2021-04-21 11:55:00
 hitcountId: ogYOZIiUq
 photograph:
   file: DSC_8860.jpg
@@ -79,9 +79,9 @@ Set-Theme Paradox
 
 *Paradox* is one of 27 themes available. You will find all themes in your DOCUMENTS folder under ``..\WindowsPowerShell\Modules\oh-my-posh\<version>\Themes`` and some visual representations at [https://github.com/JanDeDobbeleer/oh-my-posh?#themes](https://github.com/JanDeDobbeleer/oh-my-posh?#themes).
 
-## #Update, April 2021
+## ► Update, April 2021
 
-Scott has mentioned a new improvements recently: Show suitable icons on listing files:
+Scott Hanselman has mentioned a new improvements recently: Show suitable icons on listing files:
 
 1. Download and install **CaskaydiaCove Nerd Font** at [https://www.nerdfonts.com/font-downloads](https://www.nerdfonts.com/font-downloads)
 2. Open Terminal Settings (like in Step 2)

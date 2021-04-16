@@ -19,7 +19,7 @@ related:
   - Implement-source-switch-for-SPA
 ---
 <style>
-  button {
+  #post-SVG-Resources button {
     background-color: #f1f1f1;
     border: none;
     padding: 1rem;
@@ -27,15 +27,15 @@ related:
     margin-right: 1rem;
     cursor: pointer;
   }
-  em {
+  #post-SVG-Resources em {
     opacity: 0.33;
   }
-  #info {
+  #post-SVG-Resources #info {
     color: silver;
     display: block;
     height: 24px;
   }
-  #info.result {
+  #post-SVG-Resources #info.result {
     color: green;
     font-weight: bold;
   }
