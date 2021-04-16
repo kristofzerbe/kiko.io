@@ -1,0 +1,96 @@
+<%- css('css/dist/lc_select.min.css') %>
+<%- js('js/dist/lc_select.min.js') %>
+
+<% if (page.photograph){ %>
+    <style>
+      #banner {
+        background-size: cover;
+      }
+      @media screen and (max-width: 479px) {
+        #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/<%= page.photograph.file %>"); }
+      }
+      @media screen and (min-width: 480px) and (max-width: 767px) {
+        #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/<%= page.photograph.file %>"); }
+      }
+      @media screen and (min-width: 768px) {
+        #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/<%= page.photograph.file %>"); }    
+      }
+    </style>
+<% } %>
+
+<h1 class="page-title"><%= page.title %></h1>
+<h2 class="page-subtitle"><%= page.subtitle %></h2>
+
+<div class="page-content">
+    <%- page.content %>
+
+    <section>
+      <fieldset class="lcslt-wrapper">
+        <span class="result" data-total="<%- page.items.length %>"><%- page.items.length %> items total</span>
+        <label>Filter:</label>
+        <select name="multiple" data-placeholder="Select a category..." multiple>
+          <% for(var i=0; i < page.labels.length; i++) { %>
+          <option value="<%- page.labels[i] %>"><%- page.labels[i] %></option>
+          <% } %>
+        </select>
+      </fieldset>
+    </section>
+
+    <div class="grid">
+      <% for(var i=0; i < page.items.length; i++) { %>
+        <% var item = page.items[i]; %>
+        <div class="card" data-tags="<%= item.labels.join(";") %>">
+          <a class="card-img" href="<%- item.link %>" target="_blank">
+            <img src="<%- item.image.url %>" />
+          </a>
+          <h3><a href="<%- item.link %>"><%- item.name %></a></h3>
+          <div class="tags">
+            <% for(var j=0; j < item.labels.length; j++) { %>
+              <span><%- item.labels[j] %></span>
+            <% } %>
+          </div>
+          <p><%- item.desc %></p>
+        </div>
+      <% } %>
+    </div>
+</div>
+
+<script>
+  new lc_select('select[name="multiple"]', {
+      enable_search: false,
+      on_change: function(new_value, target_field) {
+        let i = 0;
+        document.querySelectorAll(".card").forEach(item => {
+          i += 1;
+          let tags = item.getAttribute("data-tags").split(";");
+          var found = new_value.every(r => tags.indexOf(r) >= 0);
+          if (!found) {
+            if (!item.classList.contains("hide")) {
+              item.classList.add("hide");
+              setTimeout(() => { item.style.display = "none"; }, 300);
+            }
+          } else {
+            if (item.classList.contains("hide")) {
+              item.style.display = "block";
+              setTimeout(() => { item.classList.remove("hide"); }, 100);
+            }
+          }
+        });
+        setTimeout(() => { 
+            initViewportImage();
+
+            var resultCount = document.querySelectorAll(".card:not(.hide)").length;
+            let resultElement = document.querySelector(".lcslt-wrapper .result");
+            var totalCount = parseInt(resultElement.dataset.total);
+
+            if (resultCount === totalCount) {
+              resultElement.textContent = totalCount + " items total";
+            } else if(resultCount === 0) {
+              resultElement.textContent = "no items found";
+            } else {
+              resultElement.textContent = resultCount + ((resultCount === 1) ? " item " : " items ") + "found"
+            }
+          }, 300);
+      }
+  });
+</script>

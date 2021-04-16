@@ -4,7 +4,7 @@ date: 2020-09-23 12:31:40
 permalink: /404.html
 hitcountId: pNXfeWPWS
 photograph: 
-  file: 404.jpg
+  file: _404.jpg
 ---
 I don't know how you ended up here, but you have jumped over the edge of this blog. Maybe it's the end of the internet and you can power off your machine now...
 

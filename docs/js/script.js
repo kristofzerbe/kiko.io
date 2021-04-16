@@ -1,4 +1,4 @@
-(function($){
+//(function($){ -> makes it impossible to call a function from below
 
   // var resources = window.performance.getEntriesByType("resource");
   // resources.forEach(function (resource) {
@@ -65,8 +65,8 @@
     return ((eBottom <= viewBottom) && (eTop >= viewTop));
   }
 
-  function initViewportArticleImage() {
-    $(".article-photo, .archive-article-photo").each(function() {
+  function initViewportImage() {
+    $(".article-photo, .archive-article-photo, .card-img").each(function() {
       if (isVisibleInViewPort($(this))) {
         $(this).addClass("in-view");
       } else {
@@ -77,16 +77,16 @@
   
   $(window).on('scroll', function() {
     scrollHeader();
-    initViewportArticleImage();
+    initViewportImage();
   });
 
   $(window).on('resize', function() {
     initHeader();
-    initViewportArticleImage();
+    initViewportImage();
   });
 
   initHeader();
-  initViewportArticleImage();
+  initViewportImage();
 
   // Search
   var $searchWrap = $('#search-form-wrap'),
@@ -155,7 +155,7 @@
 
   initScrollAnchorLink();
 
-})(jQuery);
+//})(jQuery);
 
 function initScrollAnchorLink() {
   /* Smooth scroll to anchor link

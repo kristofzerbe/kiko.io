@@ -36,8 +36,8 @@
 #header-photo-link  
   display: none
 
-.article-view #header-photo-expand,
-.article-view #header-photo-link  
+header.photograph #header-photo-expand,
+header.photograph #header-photo-link  
   position: absolute
   display: block
   color: rgba(255, 255, 255, 0.6)
@@ -45,7 +45,7 @@
   &:hover
     color: rgba(255, 255, 255, 1)
 
-#header-photo-expand
+header.photograph #header-photo-expand
   top: 0
   width: 16px
   height: 16px
@@ -55,7 +55,7 @@
   &:before
     content: "\f065"
 
-#header-photo-link
+header.photograph #header-photo-link
   top: 32px
   right: 100%
   padding: 7px
@@ -133,11 +133,11 @@
         text-overflow: ellipsis
         white-space: nowrap
         overflow: hidden
+      &:last-child
+        padding-right: 15px
 
 #nav-home-link,
 #nav-rss-link
-  // flex-basis: 50px !important
-  // max-width: 50px !important
   margin: 0 !important
   a
     &:before

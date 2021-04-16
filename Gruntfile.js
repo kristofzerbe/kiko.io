@@ -47,7 +47,7 @@ module.exports = function(grunt){
       },
       imagecompare_js: {
         expand: true,
-        cwd: 'themes/landscape/assets/image-compare-viewer/',
+        cwd: 'themes/landscape/assets/image-compare-viewer',
         src: [
           'image-compare-viewer.min.js',
           'image-compare-viewer.min.js.map'
@@ -60,6 +60,22 @@ module.exports = function(grunt){
         src: [
           'image-compare-viewer.min.css',
           'image-compare-viewer.min.css.map'
+        ],
+        dest: 'themes/landscape/source/css/dist'
+      },
+      lcselect_js: {
+        expand: true,
+        cwd: 'themes/landscape/assets/lc-select',
+        src: [
+          'lc_select.min.js'
+        ],
+        dest: 'themes/landscape/source/js/dist'
+      },
+      lcselect_css: {
+        expand: true,
+        cwd: 'themes/landscape/assets/lc-select',
+        src: [
+          'lc_select.min.css'
         ],
         dest: 'themes/landscape/source/css/dist'
       }
@@ -92,7 +108,8 @@ module.exports = function(grunt){
     cssmin: {
       dist: {
           files: {
-            'themes/landscape/source/css/dist/bundle.min.css': 'themes/landscape/tmp/asset-bundle.css'
+            'themes/landscape/source/css/dist/bundle.min.css': 'themes/landscape/tmp/asset-bundle.css',
+            'themes/landscape/assets/lc-select/lc_select.min.css': 'themes/landscape/assets/lc-select/lc_select.css'
           }
       }
     },  
@@ -128,7 +145,8 @@ module.exports = function(grunt){
 
   grunt.registerTask('fonts', ['gitclone', 'copy', '_clean:tmp']);  
   grunt.registerTask('clean', ['_clean']);
-  grunt.registerTask('bundle', ['copy', 'concat', 'cssmin', 'uglify', '_clean:tmp']);
+  grunt.registerTask('bundle', ['concat', 'cssmin', 'uglify', 'copy', '_clean:tmp']);
   grunt.registerTask('build', ['hexo:clean', 'hexo:generate']);
-  grunt.registerTask('default', ['concat', 'cssmin', 'uglify', '_clean:tmp', 'hexo:clean', 'hexo:generate']);
+  grunt.registerTask('default', ['concat', 'cssmin', 'uglify', 'copy', '_clean:tmp', 'hexo:generate']);
+  grunt.registerTask('all', ['concat', 'cssmin', 'uglify', 'copy', '_clean:tmp', 'hexo:clean', 'hexo:generate']);
 };
