@@ -32,7 +32,7 @@
         <%_ } _%>
         <link href="<%= post.permalink %>"/>
         <summary type="html">
-            <%_ let shortContent = post.excerpt + '<p>Read more ...</p>' _%>
+            <%_ let shortContent = post.excerpt + '<p><a href="' + post.permalink + '">Read more on kiko.io ...</a></p>' _%>
             <%_ if (post.photograph) { shortContent = '<p><img src="' + config.url + '/photos/mobile/' + post.photograph.file + '" /></p>' + shortContent } _%>
             <%= shortContent %>
         </summary>
