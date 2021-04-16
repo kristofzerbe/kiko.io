@@ -49,10 +49,11 @@
   /[data-theme="dark"] &
     color: dark-color-header
   float: left
-  margin-bottom: 8px
+  margin-bottom: 0.5em
   margin-right: 20px
   font-size: 14px
   letter-spacing: 1px
+  line-height: 1.5em
   &:hover
     color: color-link
     /[data-theme="dark"] &
@@ -60,8 +61,7 @@
   time.updated
     color: color-foreground
     &:before
-      content: "► Update, "
-      margin-left: 5px
+      content: "Update, "
 
 .article-comment-link
   @extend $block-caption
@@ -79,9 +79,10 @@
 
 .article-category
   position: absolute
-  top: -8px
   right: 0
-  line-height: 2em
+  bottom: 0;
+  margin-bottom: 0.5em;
+  line-height: 1.5em
   margin-left: 8px
   border: none
   &:hover
