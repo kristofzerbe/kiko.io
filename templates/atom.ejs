@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id><%= config.url %></id>
+    <id><%= config.url + "/" %></id>
     <title><%= config.title %><%= tag ? ` • Posts by "${tag}" tag` : '' %><%= category ? ` • Posts by "${category}" category` : '' %></title>
     <%_ if (config.subtitle) { _%><subtitle><%= config.subtitle %></subtitle><%_ } _%>
     <%_ if (config.feed.icon) { _%><icon><%= config.feed.icon %></icon><%_ } _%>

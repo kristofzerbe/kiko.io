@@ -2,7 +2,7 @@
 title: Spice Up Windows Terminal
 subtitle: How to make Powershell a little prettier
 dateOriginal: 2020-12-24 15:03:15
-date: 2021-04-21 11:55:00
+date: 2021-04-21 11:55:15
 hitcountId: ogYOZIiUq
 photograph:
   file: DSC_8860.jpg
