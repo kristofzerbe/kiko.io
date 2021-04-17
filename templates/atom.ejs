@@ -5,8 +5,8 @@
     <%_ if (config.subtitle) { _%><subtitle><%= config.subtitle %></subtitle><%_ } _%>
     <%_ if (config.feed.icon) { _%><icon><%= config.feed.icon %></icon><%_ } _%>
     <%_ if (config.feed.logo) { _%><logo><%= config.feed.logo %></logo><%_ } _%>
-    <link href="<%= config.url %>" />
-    <link href="<%= config.url %>/atom.xml" rel="self"/>
+    <link><%= config.url %></link>
+    <atom:link href="<%= config.url %>/atom.xml" rel="self" type="application/rss+xml"/>
     <updated><%= moment(lastBuildDate).toISOString() %></updated>
     <author>
         <name><%= config.author %></name>
@@ -29,6 +29,7 @@
         <%_ } else { _%>
             <title><%= post.title %></title>
             <published><%= moment(post.date).toISOString() %></published>
+            <updated><%= moment(post.date).toISOString() %></updated>
         <%_ } _%>
         <link href="<%= post.permalink %>"/>
         <summary type="html">
