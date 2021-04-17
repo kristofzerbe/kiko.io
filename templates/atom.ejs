@@ -32,7 +32,9 @@
         <%_ } _%>
         <link href="<%= post.permalink %>"/>
         <summary type="html">
-            <%_ let shortContent = post.excerpt + '<p><a href="' + post.permalink + '">Read more on kiko.io ...</a></p>' _%>
+            <%_ const regEx = /<(script|style)[^>]*>(?<content>[^<]*)<\/(script|style)>/gim; _%>
+            <%_ let shortContent = post.excerpt.replace(regEx, "") _%>
+            <%_ shortContent = shortContent + '<p><a href="' + post.permalink + '">Read more on kiko.io ...</a></p>' _%>
             <%_ if (post.photograph) { shortContent = '<p><img src="' + config.url + '/photos/mobile/' + post.photograph.file + '" /></p>' + shortContent } _%>
             <%= shortContent %>
         </summary>
