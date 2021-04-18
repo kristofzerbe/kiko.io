@@ -250,7 +250,7 @@
 <p>The blog is synced via Dropbox, but hosted on GitHub Pages, so on every device I need the  publishing functions of Git too.</p>
 <a id="more"></a>
 
-<h2 id="Sync-Hexo-Project"><a href="#Sync-Hexo-Project" class="headerlink" title="Sync Hexo Project"></a>Sync Hexo Project</h2><p>Best option for me to achieve this was  <a target="_blank" rel="noopener" href="https://dropbox.com">Dropbox</a>. Another benefit on that is: I can work on the structure of the blog wherever I am and commit when the new feature or improvement is done, because all Git related files are always in sync too.</p>
+<h2 id="Sync-Hexo-Project"><a href="#Sync-Hexo-Project" class="headerlink" title="Sync Hexo Project"></a>Sync Hexo Project</h2><p>Best option for me to achieve this was  <a target="_blank" rel="noopener" href="https://dropbox.com/">Dropbox</a>. Another benefit on that is: I can work on the structure of the blog wherever I am and commit when the new feature or improvement is done, because all Git related files are always in sync too.</p>
 <h2 id="Writing-Editing-and-Publishing-on-Windows"><a href="#Writing-Editing-and-Publishing-on-Windows" class="headerlink" title="Writing, Editing and Publishing on Windows"></a>Writing, Editing and Publishing on Windows</h2><p>My preferred editor is <a target="_blank" rel="noopener" href="https://code.visualstudio.com/">Visual Studio Code</a>. Good file handling, easy writing, full Git integration and tons of other plugins and helpers. Chapeau Microsoft, well done.</p>
 <p>Some of the following VS Code plugins makes working with Hexo on GitHub pages a breeze:</p>
 <hr>
@@ -276,7 +276,9 @@
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">postdraft</span>: <span class="string">A-New-Blog-Blogging-and-Synching-en-route</span></span><br><span class="line"><span class="attr">publish</span></span><br><span class="line"><span class="attr">newdraft</span>: <span class="string">&quot;A New Blog: Blogging and Synching en route&quot; @ 2019-09-30 21:15</span></span><br><span class="line"><span class="attr">regenerate</span> <span class="string">@ 2019-09-29 16:40:01</span></span><br><span class="line"><span class="attr">publish</span> <span class="string">@ 2019-09-29 16:40:10</span></span><br></pre></td></tr></table></figure>
 <p>These commands are predefined, because they bundle several real commands and I didn’t want to deal with real commands, due to security reasons.</p>
 <p>The unprocessed commands are standing at the top of the file (in execution order!) and parameters are separated from the command by a colon and delimited by commas.</p>
-<pre><code>&lt;command&gt;: [&lt;param1&gt;, ...] @ &lt;execution time&gt;</code></pre><p>Next step was to create a program to work as an executing demon, who monitors the Hexo Command File (synced by Dropbox) on my server and executes commands without execution dates.</p>
+<pre><code>&lt;command&gt;: [&lt;param1&gt;, ...] @ &lt;execution time&gt;
+</code></pre>
+<p>Next step was to create a program to work as an executing demon, who monitors the Hexo Command File (synced by Dropbox) on my server and executes commands without execution dates.</p>
 <p>I decided to create a simple Console Application in C# and use the built-in <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Windows_Task_Scheduler">Windows Task Scheduler</a> for running it every 2 minutes. The application is called <strong>HexoCommander</strong> and is <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe/HexoCommander">available at GitHub</a>.</p>
 <p>It expects the Hexo Command File to be named <code>hexo-commands.txt</code>, located in the same folder, and provides the following commands:</p>
 <p><strong>newdraft: “&lt;title&gt;”</strong> … runs</p>
@@ -318,7 +320,7 @@
 <li><strong>Action</strong><ul>
 <li>Program/Script: <strong>%systemroot%\Syswow64\cmd.exe</strong></li>
 <li>Add Arguments: <strong>/C “C:\MyPath\HexoCommander.exe /workdir=C:\MyPath”</strong></li>
-<li>Start In: <strong>%systemroot%\Syswow64\</strong></li>
+<li>Start In: **%systemroot%\Syswow64\**</li>
 </ul>
 </li>
 </ul>
@@ -336,7 +338,7 @@
 
       
         <div class="article-permalink"">
-    <input id="article-permalink" value="https://kiko.io/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/" data-id="cknkggkcx0005ugl9hbkm84jy" />
+    <input id="article-permalink" value="https://kiko.io/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/" data-id="cknn9wf570005a0l92lacgw1x" />
     <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
     <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
 </div>

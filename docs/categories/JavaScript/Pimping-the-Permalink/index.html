@@ -250,7 +250,7 @@
 <p>My goal was to show the permalink and, even more important, provide a simple way to copy and to share. JavaScript to the rescue…</p>
 <a id="more"></a>
 
-<h2 id="Display"><a href="#Display" class="headerlink" title="Display"></a>Display</h2><p>As I run my blog with <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>, I deal with <code>EJS</code> files. To show the permalink in my <code>article.ejs</code>, was quite simple. First step was to create a new partial file named <code>permalink.ejs</code>, to be called every time when the complete article has to be rendered:</p>
+<h2 id="Display"><a href="#Display" class="headerlink" title="Display"></a>Display</h2><p>As I run my blog with <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>, I deal with <code>EJS</code> files. To show the permalink in my <code>article.ejs</code>, was quite simple. First step was to create a new partial file named <code>permalink.ejs</code>, to be called every time when the complete article has to be rendered:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (!index)&#123; %&gt;</span><br><span class="line">  &lt;%- partial(<span class="string">&#x27;post/permalink&#x27;</span>, &#123; <span class="attr">class_name</span>: <span class="string">&#x27;article-permalink&#x27;</span> &#125;) %&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
 <p>The partial file looked like this in this step:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;&lt;%= class_name %&gt;&quot;</span>&quot;&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">&quot;article-permalink&quot;</span> <span class="attr">href</span>=<span class="string">&quot;&lt;%- post.permalink %&gt;&quot;</span>&gt;</span>&lt;%- post.permalink %&gt;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -294,7 +294,7 @@
 
       
         <div class="article-permalink"">
-    <input id="article-permalink" value="https://kiko.io/categories/JavaScript/Pimping-the-Permalink/" data-id="cknkggkex002sugl98f3v8xta" />
+    <input id="article-permalink" value="https://kiko.io/categories/JavaScript/Pimping-the-Permalink/" data-id="cknn9wf7t002sa0l9gomzaot7" />
     <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
     <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
 </div>

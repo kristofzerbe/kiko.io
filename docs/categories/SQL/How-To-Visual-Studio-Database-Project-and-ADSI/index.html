@@ -243,57 +243,59 @@
 <h2 id="Step-1-Linking-to-the-Active-Directory"><a href="#Step-1-Linking-to-the-Active-Directory" class="headerlink" title="Step 1 - Linking to the Active Directory"></a>Step 1 - Linking to the Active Directory</h2><p>First of all you have to connect your SQL Server to the AD permanently, by running  following SQL script once on your SQL Server:</p>
 <pre><code>USE [master]
 GO
-EXEC master.dbo.sp_addlinkedserver @server = N&apos;ADSI&apos;, 
-    @srvproduct=N&apos;Active Directory Service Interfaces&apos;, 
-    @provider=N&apos;ADSDSOObject&apos;, 
-    @datasrc=N&apos;adsdatasource&apos;
+EXEC master.dbo.sp_addlinkedserver @server = N&#39;ADSI&#39;, 
+    @srvproduct=N&#39;Active Directory Service Interfaces&#39;, 
+    @provider=N&#39;ADSDSOObject&#39;, 
+    @datasrc=N&#39;adsdatasource&#39;
 
-EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N&apos;ADSI&apos;,
-    @useself=N&apos;False&apos;,
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N&#39;ADSI&#39;,
+    @useself=N&#39;False&#39;,
     @locallogin=NULL,
-    @rmtuser=N&apos;mydomain\myadminuser&apos;,
-    @rmtpassword=&apos;mypassword&apos;
+    @rmtuser=N&#39;mydomain\myadminuser&#39;,
+    @rmtpassword=&#39;mypassword&#39;
 GO
 
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;collation compatible&apos;, @optvalue=N&apos;false&apos;
+EXEC master.dbo.sp_serveroption @server=N&#39;ADSI&#39;, 
+    @optname=N&#39;collation compatible&#39;, @optvalue=N&#39;false&#39;
 GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;data access&apos;, @optvalue=N&apos;true&apos;
+EXEC master.dbo.sp_serveroption @server=N&#39;ADSI&#39;, 
+    @optname=N&#39;data access&#39;, @optvalue=N&#39;true&#39;
 GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;dist&apos;, @optvalue=N&apos;false&apos;
+EXEC master.dbo.sp_serveroption @server=N&#39;ADSI&#39;, 
+    @optname=N&#39;dist&#39;, @optvalue=N&#39;false&#39;
 GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;pub&apos;, @optvalue=N&apos;false&apos;
+EXEC master.dbo.sp_serveroption @server=N&#39;ADSI&#39;, 
+    @optname=N&#39;pub&#39;, @optvalue=N&#39;false&#39;
 GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;rpc&apos;, @optvalue=N&apos;false&apos;
+EXEC master.dbo.sp_serveroption @server=N&#39;ADSI&#39;, 
+    @optname=N&#39;rpc&#39;, @optvalue=N&#39;false&#39;
 GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;rpc out&apos;, @optvalue=N&apos;false&apos;
+EXEC master.dbo.sp_serveroption @server=N&#39;ADSI&#39;, 
+    @optname=N&#39;rpc out&#39;, @optvalue=N&#39;false&#39;
 GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;sub&apos;, @optvalue=N&apos;false&apos;
+EXEC master.dbo.sp_serveroption @server=N&#39;ADSI&#39;, 
+    @optname=N&#39;sub&#39;, @optvalue=N&#39;false&#39;
 GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;connect timeout&apos;, @optvalue=N&apos;0&apos;
+EXEC master.dbo.sp_serveroption @server=N&#39;ADSI&#39;, 
+    @optname=N&#39;connect timeout&#39;, @optvalue=N&#39;0&#39;
 GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;collation name&apos;, @optvalue=null
+EXEC master.dbo.sp_serveroption @server=N&#39;ADSI&#39;, 
+    @optname=N&#39;collation name&#39;, @optvalue=null
 GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;lazy schema validation&apos;, @optvalue=N&apos;false&apos;
+EXEC master.dbo.sp_serveroption @server=N&#39;ADSI&#39;, 
+    @optname=N&#39;lazy schema validation&#39;, @optvalue=N&#39;false&#39;
 GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;query timeout&apos;, @optvalue=N&apos;0&apos;
+EXEC master.dbo.sp_serveroption @server=N&#39;ADSI&#39;, 
+    @optname=N&#39;query timeout&#39;, @optvalue=N&#39;0&#39;
 GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;use remote collation&apos;, @optvalue=N&apos;true&apos;
+EXEC master.dbo.sp_serveroption @server=N&#39;ADSI&#39;, 
+    @optname=N&#39;use remote collation&#39;, @optvalue=N&#39;true&#39;
 GO
-EXEC master.dbo.sp_serveroption @server=N&apos;ADSI&apos;, 
-    @optname=N&apos;remote proc transaction promotion&apos;, @optvalue=N&apos;true&apos;
-GO</code></pre><h2 id="Step-2-Fetching-ADSI-data"><a href="#Step-2-Fetching-ADSI-data" class="headerlink" title="Step 2 - Fetching ADSI data"></a>Step 2 - Fetching ADSI data</h2><p>To get data, use <code>OpenQuery</code> against the Linked Server. In order to get only persons and no system accounts, you should filter out all users, which has no firstname (<code>givenName</code>) or lastname (<code>sn</code>):</p>
+EXEC master.dbo.sp_serveroption @server=N&#39;ADSI&#39;, 
+    @optname=N&#39;remote proc transaction promotion&#39;, @optvalue=N&#39;true&#39;
+GO
+</code></pre>
+<h2 id="Step-2-Fetching-ADSI-data"><a href="#Step-2-Fetching-ADSI-data" class="headerlink" title="Step 2 - Fetching ADSI data"></a>Step 2 - Fetching ADSI data</h2><p>To get data, use <code>OpenQuery</code> against the Linked Server. In order to get only persons and no system accounts, you should filter out all users, which has no firstname (<code>givenName</code>) or lastname (<code>sn</code>):</p>
 <pre><code>SELECT 
     UserPrincipalName, 
     DisplayName, 
@@ -307,7 +309,7 @@ GO</code></pre><h2 id="Step-2-Fetching-ADSI-data"><a href="#Step-2-Fetching-ADSI
     postalCode AS [PostCode], 
     streetAddress AS [Street],
     st AS [State]
-FROM OpenQuery(ADSI, &apos;
+FROM OpenQuery(ADSI, &#39;
     SELECT 
         UserPrincipalName, 
         DisplayName, 
@@ -321,12 +323,14 @@ FROM OpenQuery(ADSI, &apos;
         postalCode, 
         streetAddress, 
         st
-    FROM &apos;&apos;LDAP://mydomain.de/DC=mydomain,DC=de&apos;&apos; 
-    WHERE objectClass =  &apos;&apos;User&apos;&apos; 
-    AND objectCategory = &apos;&apos;Person&apos;&apos; 
-    AND sn=&apos;&apos;*&apos;&apos; 
-    AND givenName = &apos;&apos;*&apos;&apos; 
-&apos;)    </code></pre><p>In most cases you’re done with that … except your organisation has more the 900 users! Then you have to split the fetch in several requests, because SQL Server quits with an error, when trying to read more than 900 records via ADSI.  </p>
+    FROM &#39;&#39;LDAP://mydomain.de/DC=mydomain,DC=de&#39;&#39; 
+    WHERE objectClass =  &#39;&#39;User&#39;&#39; 
+    AND objectCategory = &#39;&#39;Person&#39;&#39; 
+    AND sn=&#39;&#39;*&#39;&#39; 
+    AND givenName = &#39;&#39;*&#39;&#39; 
+&#39;)    
+</code></pre>
+<p>In most cases you’re done with that … except your organisation has more the 900 users! Then you have to split the fetch in several requests, because SQL Server quits with an error, when trying to read more than 900 records via ADSI.  </p>
 <p>Best option is, to filter the ADSI statement by something like <em>‘get all user starting with a to j’</em>, when you are sure, that in this case less than 900 records will be given back and repeat the statement several times and glue the data together via a <code>UNION</code> statement:</p>
 <pre>
 <code>SELECT  
@@ -524,7 +528,7 @@ FROM (
 
       
         <div class="article-permalink"">
-    <input id="article-permalink" value="https://kiko.io/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/" data-id="cknkggkea001zugl9271xcnh1" />
+    <input id="article-permalink" value="https://kiko.io/categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/" data-id="cknn9wf79001za0l9c3rdaxax" />
     <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
     <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
 </div>

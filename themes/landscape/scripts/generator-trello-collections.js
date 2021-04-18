@@ -46,6 +46,11 @@ hexo.extend.generator.register("trello-collections", async function(locals) {
             return c.idList === listId;
           });
 
+          // Sort cards by dateLastActivity
+          cards.sort(function(a, b) {
+            return new Date(b.dateLastActivity) - new Date(a.dateLastActivity);
+          });
+
           // Create new item objects out of cards, if it is not closed and has at least one label
           collection.items = cards.reduce((reducer, card) => {
             if (card.closed === false && card.labels.length > 0) {
