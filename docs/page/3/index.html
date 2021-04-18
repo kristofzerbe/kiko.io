@@ -87,7 +87,7 @@
 
   </script>
 
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body id="body">  
   <div id="container" class="container">
@@ -632,6 +632,7 @@
         <p>In some occasions it is necessary to know which device a user is using while writing JavaScript Web Apps. Should be nothing regarding layout, because for this we have <a target="_blank" rel="noopener" href="https://developer.mozilla.org/de/docs/Web/CSS/Media_Queries/Using_media_queries"><code>CSS Media Queries</code></a>. </p>
 <p>Somewhere around 2011 W3C introduced <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia"><code>matchMedia()</code></a>, which <em>returns a MediaQueryList object that can be used to detemnine if the document matches the media query string.</em> The using is pretty straightforward and feels a bit like RegEx matching in JS:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mediaQuery = <span class="built_in">window</span>.matchMedia(<span class="string">&#x27;(min-width: 1025px)&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> (mediaQuery.matches) &#123;</span><br><span class="line">  <span class="comment">// do something...  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>If you are interested in this API, you will find good introductions to the topic <a target="_blank" rel="noopener" href="https://css-tricks.com/working-with-javascript-media-queries/">here</a>, <a target="_blank" rel="noopener" href="https://hacks.mozilla.org/2012/06/using-window-matchmedia-to-do-media-queries-in-javascript/">here</a> and <a target="_blank" rel="noopener" href="https://www.mediaevent.de/javascript/window-matchMedia.html">here (German)</a>.</p>
 <p>One point of criticism on this pure JS approach can be, that you have to maintain the breakpoints in addition to CSS … <strong>but why not use these existing breakpoints in JS</strong>?</p>
         

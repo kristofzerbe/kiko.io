@@ -87,7 +87,7 @@
 
   </script>
 
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body id="body">  
   <div id="container" class="container">
@@ -244,14 +244,16 @@
 <p><img src="/categories/Photo-Editing/Folder-based-publishing-in-Lightroom/lr-re-publish.png" alt="Lightroom Publish"></p>
 <p>In the past years I tried a lot of Lightroom plugins for publishing on several platforms, but it doesn’t work out for long, because all these platforms change their API almost every year (or are stamped) and the sparely maintained 3rd party plugins break.</p>
 <p>My workflow for quite some time is to publish my photos on the hard drive, in a folder, which is synced via Dropbox with the cloud. From there I distribute them further.</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <p>Important on this approach is, to have a coherent output folder structure in order find a particular image afterwards.</p>
 <p>I store my RAW images on an external hard drive in a structure like this:</p>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;Drive:\&gt;</span><br><span class="line">  -&gt;  Fotos</span><br><span class="line">      -&gt;  &lt;Year&gt;</span><br><span class="line">          -&gt;  &lt;Year&gt;-&lt;Month&gt; &lt;Eventname&gt;</span><br></pre></td></tr></table></figure>
+
 <p>First step after shooting is to copy all RAW files from the SD Card into a new subfolder of the current year. From there I import them into my Lightroom catalog.</p>
 <p>After sorting, rejecting, editing and flagging in Lightroom, I have to “export” the 4- and 5-star rated images into the cloud. There I have a slightly different structure, with a different root folder name and without the year:</p>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Dropbox&gt;</span><br><span class="line">  -&gt;  Photos</span><br><span class="line">      -&gt;  &lt;Year&gt;-&lt;Month&gt; &lt;Eventname&gt;</span><br></pre></td></tr></table></figure>
+
 <p>With the built-in “Hard Drive” publish service of Lightroom, it is feasible to “export” the images, but not in my wanted folder structure, because it is not possible to use the sources’ folder name as output folder name by option. It has to be specified manually each time, which is not very comfortable.</p>
 <p><img src="/categories/Photo-Editing/Folder-based-publishing-in-Lightroom/publish-hard-disk.png" alt="Hard Disk Publish Service"></p>
 <h2 id="Plugin-to-the-rescue"><a href="#Plugin-to-the-rescue" class="headerlink" title="Plugin to the rescue"></a>Plugin to the rescue</h2><p>Jeffrey Friedl, who is in the Lightroom plugin business about a decade, offers two plugins, which can solve the problem easily:</p>
@@ -260,6 +262,7 @@
 </ol>
 <p>This one helps me not much, because my output folder would look like this:</p>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Dropbox&gt;</span><br><span class="line">  -&gt;  Photos</span><br><span class="line">      -&gt;  Fotos</span><br><span class="line">          -&gt; &lt;Year&gt;</span><br><span class="line">              -&gt;  &lt;Year&gt;-&lt;Month&gt; &lt;Eventname&gt;</span><br></pre></td></tr></table></figure>
+
 <ol start="2">
 <li><a target="_blank" rel="noopener" href="http://regex.info/blog/lightroom-goodies/collection-publisher">Jeffrey’s “<strong>Collection Publisher</strong>” Lightroom Plugin</a><br>Exports to local disk in a folder hierarchy that mimics the collection hierarchy you build within Lightroom</li>
 </ol>
@@ -281,7 +284,7 @@
 
       
         <div class="article-permalink"">
-    <input id="article-permalink" value="https://kiko.io/categories/Photo-Editing/Folder-based-publishing-in-Lightroom/" data-id="cknna81ia001mo4l92jas7ked" />
+    <input id="article-permalink" value="https://kiko.io/categories/Photo-Editing/Folder-based-publishing-in-Lightroom/" data-id="cknnawcg4001mskl98dq955wk" />
     <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
     <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
 </div>

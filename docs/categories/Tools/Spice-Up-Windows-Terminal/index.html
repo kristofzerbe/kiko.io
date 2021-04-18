@@ -87,7 +87,7 @@
 
   </script>
 
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body id="body">  
   <div id="container" class="container">
@@ -248,24 +248,30 @@
 <p><img src="/categories/Tools/Spice-Up-Windows-Terminal/terminal-original.png" alt="Original Terminal"></p>
 <p><img src="/categories/Tools/Spice-Up-Windows-Terminal/terminal-oh-my-posh.png" alt="Terminal with oh-my-posh"></p>
 <p>To get Oh-My-Posh properly run, there are several steps to do I want to show here in a nutshell…</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="Step-1-Install-a-suitable-font"><a href="#Step-1-Install-a-suitable-font" class="headerlink" title="Step 1 -  Install a suitable font"></a>Step 1 -  Install a suitable font</h2><p>As the theming engine uses Powerline glyphs, you need to install a font which support them, for example the new <a target="_blank" rel="noopener" href="https://github.com/microsoft/cascadia-code/releases"><strong>Cascadia Code PL</strong> from Microsoft</a>. Download, unzip and install the OTF and/or TTF font files via context menu in your Windows Explorer.</p>
 <h2 id="Step-2-Set-new-font-in-your-settings"><a href="#Step-2-Set-new-font-in-your-settings" class="headerlink" title="Step 2 - Set new font in your settings"></a>Step 2 - Set new font in your settings</h2><p>Open up you Terminal settings…</p>
 <p><img src="/categories/Tools/Spice-Up-Windows-Terminal/terminal-settings.png" alt="Windows Terminal Settings"></p>
 <p>… and add following new line to the PowerShell section:</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;fontFace&quot;: &quot;Cascadia Code PL&quot;,</span><br></pre></td></tr></table></figure>
+
 <p><img src="/categories/Tools/Spice-Up-Windows-Terminal/terminal-settings-font.png" alt="Font"></p>
 <h2 id="Step-3-Install-oh-my-posh"><a href="#Step-3-Install-oh-my-posh" class="headerlink" title="Step 3 - Install oh-my-posh"></a>Step 3 - Install oh-my-posh</h2><p>Following PowerShell command installs the theming engine itself:</p>
 <figure class="highlight ps"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Install-Module</span> <span class="built_in">oh</span><span class="literal">-my</span><span class="literal">-posh</span> <span class="literal">-Scope</span> CurrentUser</span><br></pre></td></tr></table></figure>
+
 <p>If you want to display <strong>Git status information</strong> also, run this command:</p>
 <figure class="highlight ps"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Install-Module</span> posh<span class="literal">-git</span> <span class="literal">-Scope</span> CurrentUser</span><br></pre></td></tr></table></figure>
+
 <p>To let the command-line editing environment to be customized install <strong>PSReadline</strong>:</p>
 <figure class="highlight ps"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Install-Module</span> <span class="literal">-Name</span> PSReadLine <span class="literal">-Scope</span> CurrentUser <span class="literal">-Force</span> <span class="literal">-SkipPublisherCheck</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="Step-4-Load-on-startup"><a href="#Step-4-Load-on-startup" class="headerlink" title="Step 4 - Load on startup"></a>Step 4 - Load on startup</h2><p>In order to load the theming engine in every new terminal window, edit your PowerShell profile by opening it up with the command …</p>
 <figure class="highlight ps"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">notepad <span class="variable">$PROFILE</span></span><br></pre></td></tr></table></figure>
+
 <p>and add following lines in the upcoming text file:</p>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Import-Module oh-my-posh</span><br><span class="line">Import-Module posh-git</span><br><span class="line">Set-Theme Paradox</span><br></pre></td></tr></table></figure>
+
 <p><em>Paradox</em> is one of 27 themes available. You will find all themes in your DOCUMENTS folder under <code>..\WindowsPowerShell\Modules\oh-my-posh\&lt;version&gt;\Themes</code> and some visual representations at <a target="_blank" rel="noopener" href="https://github.com/JanDeDobbeleer/oh-my-posh#themes">https://github.com/JanDeDobbeleer/oh-my-posh?#themes</a>.</p>
 <h2 id="Update-April-2021"><a href="#Update-April-2021" class="headerlink" title="#Update, April 2021"></a>#Update, April 2021</h2><p>Scott Hanselman has mentioned a new improvement recently: Show suitable icons on listing files:</p>
 <ol>
@@ -295,7 +301,7 @@
 
       
         <div class="article-permalink"">
-    <input id="article-permalink" value="https://kiko.io/categories/Tools/Spice-Up-Windows-Terminal/" data-id="cknna81ko0039o4l96h5q9pxy" />
+    <input id="article-permalink" value="https://kiko.io/categories/Tools/Spice-Up-Windows-Terminal/" data-id="cknnawchk0038skl9534ccmao" />
     <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
     <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
 </div>

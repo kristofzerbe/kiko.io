@@ -87,7 +87,7 @@
 
   </script>
 
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body id="body">  
   <div id="container" class="container">
@@ -245,18 +245,22 @@
         <p>In some occasions it is necessary to know which device a user is using while writing JavaScript Web Apps. Should be nothing regarding layout, because for this we have <a target="_blank" rel="noopener" href="https://developer.mozilla.org/de/docs/Web/CSS/Media_Queries/Using_media_queries"><code>CSS Media Queries</code></a>. </p>
 <p>Somewhere around 2011 W3C introduced <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia"><code>matchMedia()</code></a>, which <em>returns a MediaQueryList object that can be used to detemnine if the document matches the media query string.</em> The using is pretty straightforward and feels a bit like RegEx matching in JS:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mediaQuery = <span class="built_in">window</span>.matchMedia(<span class="string">&#x27;(min-width: 1025px)&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> (mediaQuery.matches) &#123;</span><br><span class="line">  <span class="comment">// do something...  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>If you are interested in this API, you will find good introductions to the topic <a target="_blank" rel="noopener" href="https://css-tricks.com/working-with-javascript-media-queries/">here</a>, <a target="_blank" rel="noopener" href="https://hacks.mozilla.org/2012/06/using-window-matchmedia-to-do-media-queries-in-javascript/">here</a> and <a target="_blank" rel="noopener" href="https://www.mediaevent.de/javascript/window-matchMedia.html">here (German)</a>.</p>
 <p>One point of criticism on this pure JS approach can be, that you have to maintain the breakpoints in addition to CSS … <strong>but why not use these existing breakpoints in JS</strong>?</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <p>If you implement a feature that is based on the different device classes, you don’t have to determine the current class with dozens of lines of JavaScript code, if you just can ask the DOM.</p>
 <h2 id="The-CSS-JS-Breakpoint-Hack"><a href="#The-CSS-JS-Breakpoint-Hack" class="headerlink" title="The CSS/JS Breakpoint Hack"></a>The CSS/JS Breakpoint Hack</h2><p>For this approach, we take advantage of the fact, that CSS can be used to define not only styles, but also content. We always use it, when showing an icon by using a symbol font like FontAwesome:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">my-fancy-icon</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: FontAwesome5Solid;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;\f186&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">my-fancy-<span class="attribute">icon</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: FontAwesome5Solid;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;\f186&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>Mixed with a <code>@media</code> rule, we can “inject” the needed device value into the DOM, for example into the <code>BODY</code> tag, but you can take whatever you want:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">min-width:</span> <span class="number">1025px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">body</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;DESKTOP&quot;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">min-width</span>: <span class="number">1025px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">body</span>:before &#123;</span><br><span class="line">    content: <span class="string">&quot;DESKTOP&quot;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>Just one line more in the masses of CSS code to make a Web App responsive, but with this one you can do without many lines of JS.</p>
 <p>Now you can read out this value via JavaScript by getting the styles of the tag and get the injected content:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> style = <span class="built_in">window</span>.getComputedStyle(<span class="built_in">document</span>.querySelector(<span class="string">&quot;body&quot;</span>), <span class="string">&quot;:before&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> breakpoint = style.getPropertyValue(<span class="string">&quot;content&quot;</span>).replace(<span class="regexp">/\&quot;/g</span>, <span class="string">&quot;&quot;</span>);</span><br></pre></td></tr></table></figure>
+
 <p>It is advisable to embed this request into an event listener of <code>DOMContentLoaded</code>, because the rule has to be set, before you can access it.</p>
 <p>See a simple working pen:</p>
 
@@ -284,7 +288,7 @@
 
       
         <div class="article-permalink"">
-    <input id="article-permalink" value="https://kiko.io/categories/JavaScript/Device-Class-Detection-in-JavaScript/" data-id="cknna81h5000ro4l94khtg0pb" />
+    <input id="article-permalink" value="https://kiko.io/categories/JavaScript/Device-Class-Detection-in-JavaScript/" data-id="cknnawcfm000rskl9hp1u8tng" />
     <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
     <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
 </div>
