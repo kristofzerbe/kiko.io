@@ -2,7 +2,7 @@
   Source Tag (stripped Discovery Tag)
 
   Syntax
-  {% source [title] [url] [imgFolder] [imgFile] %}
+  {% source [title] [url] [category] [assetFolder] [imgFile] %}
     content
   {% endsource %}
 
@@ -10,14 +10,15 @@
 
 hexo.extend.tag.register("source", function(args, content){
 
-  var title, url, imgFolder, imgFile, imgSrc;
+  var title, url, category, assetFolder, imgFile, imgSrc;
 
   title = args[0];
   url = args[1];
-  imgFolder = args[2];
-  imgFile = args[3];
+  category = args[2];
+  assetFolder = args[3];
+  imgFile = args[4];
 
-  imgSrc = imgFolder + "/" + imgFile;
+  imgSrc = hexo.config.root + hexo.config.category_dir + "/" + category + "/" + assetFolder + "/" + imgFile;
 
   content = hexo.render.renderSync({ text: content, engine: 'markdown' });
 

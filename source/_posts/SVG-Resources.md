@@ -190,37 +190,37 @@ If you want to use a SVG multiple times, you can define it once by wrapping it u
 
 Finding the right SVG for your project is time consuming, like it is for symbol fonts or PNG's. So here are a few tips getting SVG's for free:
 
-{% source "css.gg" https://css.gg SVG-Resources css_gg.png %}
+{% source "css.gg" https://css.gg UI-Design SVG-Resources css_gg.png %}
 700+ icons, downloadable as SVG, PNG, XD, Figma, Styled Component (Typescript) or even pure CSS.
 {% endsource %}
 
 ---
 
-{% source "Tabler Icons" https://tabler-icons.io SVG-Resources tabler-icons_io.png %}
+{% source "Tabler Icons" https://tabler-icons.io UI-Design SVG-Resources tabler-icons_io.png %}
 Over 1.250 icons in several categories, downloadable as SVG or PNG.
 {% endsource %}
 
 ---
 
-{% source "Boxicons" https://boxicons.com SVG-Resources boxicons_com.png %}
+{% source "Boxicons" https://boxicons.com UI-Design SVG-Resources boxicons_com.png %}
   1.500 regular or filled icons, downloadable as SVG or PNG. Supports animations, Web Components and is also available as font.
 {% endsource %}
 
 ---
 
-{% source "Feather" https://feathericons.com SVG-Resources feathericons_com.png %}
+{% source "Feather" https://feathericons.com UI-Design SVG-Resources feathericons_com.png %}
   268 icons as SVG, with customizable size, stroke with and color.
 {% endsource %}
 
 ---
 
-{% source "Majesticons" https://majesticons.com SVG-Resources majesticons_com.png %}
+{% source "Majesticons" https://majesticons.com UI-Design SVG-Resources majesticons_com.png %}
   210 line and solid icons, with Figma support and also available as Github repository.
 {% endsource %}
 
 ---
 
-{% source "Google Fonts - Material Icons" https://fonts.google.com/icons SVG-Resources fonts_google_com+icons.png %}
+{% source "Google Fonts - Material Icons" https://fonts.google.com/icons UI-Design SVG-Resources fonts_google_com+icons.png %}
   At least ... an own frontend of Googles Material Icons inside [Google Fonts](https://font.google.com) for downloading them individually as SVG, PNG or Android/iOS package.
 {% endsource %}
 
