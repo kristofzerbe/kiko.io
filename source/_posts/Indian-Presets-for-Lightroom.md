@@ -15,6 +15,7 @@ tags:
   - Lightroom
   - Presets
 related:
+  - Scotch-Presets-for-Lightroom
   - Israeli-Presets-for-Lightroom
   - Folder-based-publishing-in-Lightroom
 ---

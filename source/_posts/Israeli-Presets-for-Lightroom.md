@@ -15,6 +15,7 @@ tags:
   - Lightroom
   - Presets
 related:
+  - Scotch-Presets-for-Lightroom
   - Indian-Presets-for-Lightroom
   - Folder-based-publishing-in-Lightroom
 ---
@@ -29,7 +30,7 @@ Back in 2019, I was traveling around Israel, a fascinating country where almost 
 
 The mediaval walls of Jaffa glow in an inimitable way and brings other colors to shine the same way.
 
-{% image_compare "israeli-colors-compare" "19-05 Israel-0078_ORIGINAL.jpg" "19-05 Israel-0078_PRESET_Colors.jpg" %}
+{% image_compare "israeli-colors-compare" "19-05 Israel-0078_ORIGINAL.jpg" "19-05 Israel-0078_PRESET-Colors.jpg" %}
 
 {% download_link "Lightroom Preset" "Israeli Colors.xmp" %}
 
@@ -49,7 +50,7 @@ The light in the eastern Mediterranean is stunning. The warm tone of the sand an
 
 A visit of Yad Vashem moved me a lot and this preset is a expression of that.
 
-{% image_compare "israeli-drama-compare" "19-05 Israel-0733_ORIGINAL.jpg" "19-05 Israel-0733_PRESET_Drama.jpg" %}
+{% image_compare "israeli-drama-compare" "19-05 Israel-0733_ORIGINAL.jpg" "19-05 Israel-0733_PRESET-Drama.jpg" %}
 
 {% download_link "Lightroom Preset" "Israeli Drama.xmp" %}
 
@@ -59,6 +60,6 @@ A visit of Yad Vashem moved me a lot and this preset is a expression of that.
 
 If you think of the tourists away, Jerusalem takes you to another level because of its age and history and nothing fits more to that than the sepia look of old pictures.
 
-{% image_compare "israeli-near-black-compare" "19-05 Israel-0624_ORIGINAL.jpg" "19-05 Israel-0624_PRESET_Near Black.jpg" %}
+{% image_compare "israeli-near-black-compare" "19-05 Israel-0624_ORIGINAL.jpg" "19-05 Israel-0624_PRESET-Near Black.jpg" %}
 
 {% download_link "Lightroom Preset" "Israeli Near Black.xmp" %}
