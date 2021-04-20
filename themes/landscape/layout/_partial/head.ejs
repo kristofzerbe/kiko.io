@@ -8,7 +8,6 @@
     var pageTitle = page.title;
     var heroImage = config.heroimage_small;
     var description = config.description;
-    var hitcountId;
 
     if (page.index === "Series") { // IndexAnything
       type = page.index.toUpperCase();
@@ -29,14 +28,12 @@
     switch (type) {
       case "HOME":
         pageTitle = config.subtitle;
-        hitcountId = config.hitcount.index_id;
         break;
 
       case "POST":
       case "PAGE":
         heroImage = "https://" + config.title + "/photos/mobile/" + page.photograph.file;
         description = config.title + "'s " + (is_post() ? "Post " : "Page ") + "'" + page.title + "'";
-        hitcountId = page.hitcountId;
         break;
 
       case "ARCHIVE":
@@ -115,8 +112,6 @@
     <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml">
   <% } %>
 
-  <link rel="preconnect" href="https://hitcount.io">
-
   <link rel="preload" href="/css/fonts/cookie/cookie-v12-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>
@@ -135,24 +130,5 @@
 
   <%- js('js/tools.js') %>
   <%- js('js/dist/image-compare-viewer.min.js') %>
-
-  <script>
-    var hitcountConfig = {
-      id: '<%= hitcountId %>',
-      webUrl: '<%= config.hitcount.web_url %>',
-      apiUrl: '<%= config.hitcount.api_url %>',
-      size: '<%= config.hitcount.size %>',
-      background: {
-        light: '<%= config.hitcount.background.light %>',
-        dark: '<%= config.hitcount.background.dark %>'
-      },
-      color: {
-        light: '<%= config.hitcount.color.light %>',
-        dark: '<%= config.hitcount.color.dark %>'
-      },
-      digits: '<%= config.hitcount.digits %>'
-    }
-
-  </script>
 
 </head>

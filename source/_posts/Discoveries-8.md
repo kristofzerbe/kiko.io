@@ -14,9 +14,9 @@ categories:
 tags:
   - Great Finds
 related:
+  - 'Discoveries-9'
   - 'Discoveries-7'
   - 'Discoveries-6'
-  - 'Discoveries-5'
 ---
 
 This month my discoveries are all about CSS ... at least almost. See the stunning solutions developers around the world have created and take them to improve yours. Have fun exploring.

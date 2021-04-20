@@ -32,15 +32,12 @@
             <updated><%= moment(post.date).toISOString() %></updated>
         <%_ } _%>
         <link href="<%= post.permalink %>"/>
-        <summary type="html">
-            <%_ const regEx = /<(script|style)[^>]*>(?<content>[^<]*)<\/(script|style)>/gim; _%>
-            <%_ let shortContent = post.excerpt.replace(regEx, "") _%>
-            <%_ shortContent = shortContent + '<p><a href="' + post.permalink + '">Read more on kiko.io ...</a></p>' _%>
-            <%_ if (post.photograph) { shortContent = '<p><img src="' + config.url + '/photos/mobile/' + post.photograph.file + '" /></p>' + shortContent } _%>
-            <%= shortContent %>
-        </summary>
         <content type="html">
-            <%= post.content %>
+            <%_ const regEx = /<(script|style)[^>]*>(?<content>[^<]*)<\/(script|style)>/gim; _%>
+            <%_ let feedContent = post.excerpt.replace(regEx, "") _%>
+            <%_ feedContent = feedContent + '<p><a href="' + post.permalink + '">Continue reading <strong>`' + post.title + '`</strong> on kiko.io ...</a></p>' _%>
+            <%_ if (post.photograph) { feedContent = '<p><img src="' + config.url + '/photos/mobile/' + post.photograph.file + '" /></p>' + feedContent } _%>
+            <%= feedContent %>
         </content>
         <%_ for (const category of (post.categories ? post.categories.toArray() : [])) { _%>
         <category term="<%= category.name %>" scheme="<%= config.url + '/' + category.path %>" />
