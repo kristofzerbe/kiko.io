@@ -1,4 +1,4 @@
-const log = require('hexo-log')({ debug: true, silent: false });
+const log = require('hexo-log')({ debug: false, silent: false });
 const path = require('path');
 const fs = require('hexo-fs');
 const front = require('hexo-front-matter');
@@ -15,14 +15,14 @@ hexo.extend.generator.register("trello-collections", async function(locals) {
 
     // Collect Promises to resolve later
     promises.push(new Promise((resolve, reject) => {
-      log.info("Fetching JSON from Board '" + board.name + "'");
+      log.info("Trello-Collections: Fetching data from board '" + board.name.toUpperCase() + "'");
 
       axios.get(board.url).then(response => {
         let json = response.data;
   
         // Level 2: Process Pages (Lists)
         board.pages.forEach(page => {
-          log.info("Processing Page '" + page.name + "'");
+          log.info("Trello-Collections: Processing '" + page.name.toUpperCase() + "'");
     
           // Get MD data for list
           const mdSource = path.join(config.source_dir, "_collections", page.name + ".md");

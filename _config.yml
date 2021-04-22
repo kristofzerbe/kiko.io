@@ -109,13 +109,14 @@ browsersync:
     scroll: true
   instanceName: "kiko_io"
 
-#IndexAnything : https://github.com/leviwheatcroft/hexo-index-anything
-indexAnything:
-  templateIndex: anythingIndex
-  templateKey: anythingPosts
+# Anything : https://github.com/kristofzerbe/hexo-generator-anything
+anything:
+  layout_index: anything-index
+  layout_posts: anything-posts
   titleSeparator: ": "
-  variables:
-    series: series
+  index_mappings:
+    - variable: series
+      path: series
 
 # JSON Content : https://github.com/alexbruno/hexo-generator-json-content
 jsonContent:
