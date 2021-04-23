@@ -1,13 +1,13 @@
 <div class="card" data-tags="<%= item.labels.join(";") %>">
-    <a class="card-img" href="<%- item.link %>" target="_blank">
-      <img src="<%- item.image.url %>" />
-    </a>
-    <h3><a href="<%- item.link %>"><%- item.name %></a></h3>
-    <small><a href="<%- item.link %>" target="_blank"><%- item.link %></a></small>
-    <div class="tags">
-      <% for(var j=0; j < item.labels.length; j++) { %>
-        <span><%- item.labels[j] %></span>
-      <% } %>
-    </div>
-    <p><%- item.desc %></p>
+  <a class="card-img" href="<%- item.link %>" target="_blank">
+    <img src="<%- item.image.url %>" />
+  </a>
+  <h3><a href="<%- item.link %>"><%- item.name %></a></h3>
+  <small><a href="<%- item.link %>" target="_blank"><%- item.link %></a></small>
+  <div class="tags">
+    <% for(var j=0; j < item.labels.length; j++) { %>
+      <span><%- item.labels[j] %></span>
+    <% } %>
   </div>
+  <p><%- item.desc %></p>
+</div>

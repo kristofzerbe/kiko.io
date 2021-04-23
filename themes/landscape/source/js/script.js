@@ -226,14 +226,14 @@ function setThemeDark() {
   document.documentElement.setAttribute('data-theme', 'dark');    
   toggleTheme.checked = true;
   setCodepenTheme();
-  setHitCount(hitcountConfig);
+  //setHitCount(hitcountConfig);
 }
 function setThemeLight() {
   localStorage.setItem('theme', 'light');
   document.documentElement.setAttribute('data-theme', 'light');  
   toggleTheme.checked = false;
   setCodepenTheme();
-  setHitCount(hitcountConfig);
+  //setHitCount(hitcountConfig);
 }
 
 function setCodepenTheme() {

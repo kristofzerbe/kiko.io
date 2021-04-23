@@ -74,7 +74,7 @@
       <div id="wrap">
         <header id="header">
   <a href="#" id="header-photo-expand" class="fullsizable"></a>
-  <a href="#" id="header-photo-link"></a>
+  <a href="#" id="header-photo-link" target="_blank"></a>
   <div id="banner">
     <nav id="header-nav" role="navigation">
       <ul class="menu">
@@ -156,34 +156,39 @@
 </script>
         <div id="content" class="outer">
           <main>
-<style>
-  #banner {
+  <style>
+#banner {
     background-size: cover;
-  }
-  @media screen and (max-width: 479px) {
+}
+@media screen and (max-width: 479px) {
     #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/19-05 Israel-0516.jpg"); }
-  }
-  @media screen and (min-width: 480px) and (max-width: 767px) {
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
     #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/19-05 Israel-0516.jpg"); }
-  }
-  @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
     #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/19-05 Israel-0516.jpg"); }    
-  }
+}
 </style>
+
+
+<script>
+    var header = document.getElementById("header");
+    header.classList.add("photograph");
+    var photoExpand = document.getElementById("header-photo-expand");
+    photoExpand.href = "/photos/normal/19-05 Israel-0516.jpg";
+    var photoLink = document.getElementById("header-photo-link");
+    photoLink.href = "https://500px.com/photo/1005490988/Jaffa-Accessoirs-by-Kristof-Zerbe";
+    photoLink.innerHTML = "see <strong>Jaffa Accessoirs</strong> at 500px";
+</script>
+
+
+
+
 <script>
   var body = document.getElementById("body");
   body.classList.add("article-view");
 </script>
-<script>
-  var header = document.getElementById("header");
-  header.classList.add("photograph");
-  var photoExpand = document.getElementById("header-photo-expand");
-  photoExpand.href = "/photos/normal/19-05 Israel-0516.jpg";
-  var photoLink = document.getElementById("header-photo-link");
-  photoLink.href = "https://500px.com/photo/1005490988/Jaffa-Accessoirs-by-Kristof-Zerbe";
-  photoLink.innerHTML = "see <strong>Jaffa Accessoirs</strong> at 500px";
-</script>
-
   
 <article id="post-How-To-Visual-Studio-Database-Project-and-ADSI" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">

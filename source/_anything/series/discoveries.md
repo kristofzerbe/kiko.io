@@ -1,5 +1,9 @@
 ---
 title: Discoveries
+photograph: 
+  file: $discoveries.jpg
+  name: Ready For Takeoff
+  link: 'https://500px.com/photo/1023572526'
 ---
 
 Surfing around in the web is a daily routine every developer should have. Learning about new platforms, libraries or techniques is a must, due to the tremendous speed on our business. Stay current, all the time.
