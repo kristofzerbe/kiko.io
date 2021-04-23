@@ -8,7 +8,6 @@ photograph:
   name: 'Untitled'
   link: 'https://500px.com/photo/1018260519'
 series: 'A New Blog'
-part: 9
 tags:
   - CSS
   - Stylus

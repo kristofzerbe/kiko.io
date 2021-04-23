@@ -8,7 +8,6 @@ photograph:
   name: Light Bulbs
   link: 'https://500px.com/photo/82409147/Light-Bulbs-by-Kristof-Zerbe/'
 series: Discoveries
-part: 6
 categories:
   - Discoveries
 tags:

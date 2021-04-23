@@ -180,7 +180,17 @@
 
 .archive-article-category
   float: right
-  margin-top: 4px;
+  margin-top: 4px
+
+.archive-article-date
+  time
+    line-height: 1.5em
+  time.updated
+    color: color-foreground
+    /[data-theme="dark"] &
+      color: dark-color-foreground
+    &:before
+      content: "Update, "
 
 .archive-article-series
   line-height: line-height

@@ -5,4 +5,6 @@ date: 2021-04-14 09:11:40
 hitcountId: uvAXOdA0M
 photograph: 
   file: $tiny-tools.jpg
+  name: Chess
+  link: 'https://500px.com/photo/1031328007'
 ---

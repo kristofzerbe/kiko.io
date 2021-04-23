@@ -8,7 +8,6 @@ photograph:
   name: Jad Vashem Vista
   link: 'https://500px.com/photo/1001751523/Jad-Vashem-Vista-by-Kristof-Zerbe'
 series: Discoveries
-part: 8
 categories:
   - Discoveries
 tags:

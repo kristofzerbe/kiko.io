@@ -8,7 +8,6 @@ photograph:
   name: Onion Broken
   link: 'https://500px.com/photo/260478167'
 series: 'A New Blog'
-part: 8
 tags:
   - jQuery
   - CSS

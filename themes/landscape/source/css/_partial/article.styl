@@ -60,6 +60,8 @@
       color: dark-color-link
   time.updated
     color: color-foreground
+    /[data-theme="dark"] &
+      color: dark-color-foreground
     &:before
       content: "Update, "
 
@@ -103,11 +105,17 @@
 .article-series
   line-height: line-height
   text-transform: uppercase
+  text-decoration: none
+  display: inline-block
   font-size: 1em
   margin-bottom: 5px
   color: color-grey
   /[data-theme="dark"] &
     color: dark-color-grey
+  &:hover
+      color: color-link
+      /[data-theme="dark"] &
+        color: dark-color-link
 
 .article-title
   text-decoration: none

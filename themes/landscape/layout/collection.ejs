@@ -2,20 +2,29 @@
 <%- js('js/dist/lc_select.min.js') %>
 
 <% if (page.photograph){ %>
-    <style>
-      #banner {
-        background-size: cover;
-      }
-      @media screen and (max-width: 479px) {
-        #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/<%= page.photograph.file %>"); }
-      }
-      @media screen and (min-width: 480px) and (max-width: 767px) {
-        #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/<%= page.photograph.file %>"); }
-      }
-      @media screen and (min-width: 768px) {
-        #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/<%= page.photograph.file %>"); }    
-      }
-    </style>
+  <style>
+    #banner {
+      background-size: cover;
+    }
+    @media screen and (max-width: 479px) {
+      #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/<%= page.photograph.file %>"); }
+    }
+    @media screen and (min-width: 480px) and (max-width: 767px) {
+      #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/<%= page.photograph.file %>"); }
+    }
+    @media screen and (min-width: 768px) {
+      #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/<%= page.photograph.file %>"); }    
+    }
+  </style>
+  <script>
+    var header = document.getElementById("header");
+    header.classList.add("photograph");
+    var photoExpand = document.getElementById("header-photo-expand");
+    photoExpand.href = "/photos/normal/<%= page.photograph.file %>";
+    var photoLink = document.getElementById("header-photo-link");
+    photoLink.href = "<%= page.photograph.link%>";
+    photoLink.innerHTML = "see <strong><%= page.photograph.name%></strong> at 500px";
+  </script>
 <% } %>
 
 <h1 class="page-title"><%= page.title %></h1>
@@ -38,19 +47,7 @@
 
     <div class="grid">
       <% for(var i=0; i < page.items.length; i++) { %>
-        <% var item = page.items[i]; %>
-        <div class="card" data-tags="<%= item.labels.join(";") %>">
-          <a class="card-img" href="<%- item.link %>" target="_blank">
-            <img src="<%- item.image.url %>" />
-          </a>
-          <h3><a href="<%- item.link %>"><%- item.name %></a></h3>
-          <div class="tags">
-            <% for(var j=0; j < item.labels.length; j++) { %>
-              <span><%- item.labels[j] %></span>
-            <% } %>
-          </div>
-          <p><%- item.desc %></p>
-        </div>
+        <%- partial('_partial/collection-item', { item: page.items[i] }) %>
       <% } %>
     </div>
 </div>

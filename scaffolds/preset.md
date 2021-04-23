@@ -8,7 +8,6 @@ photograph:
   name: ''
   link: ''
 series: Lightroom Presets
-part: #PART
 categories:
   - Photo-Editing
 tags:

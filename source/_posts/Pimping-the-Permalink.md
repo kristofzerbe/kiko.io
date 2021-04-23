@@ -8,7 +8,6 @@ photograph:
   name: Untitled
   link: 'https://500px.com/photo/1005494226/Untitled-by-Kristof-Zerbe'
 series: 'A New Blog'
-part: 10
 tags:
   - CSS
   - Stylus

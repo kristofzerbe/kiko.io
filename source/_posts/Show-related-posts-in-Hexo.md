@@ -8,7 +8,6 @@ photograph:
   name: Untitled
   link: 'https://500px.com/photo/303713999'
 series: 'A New Blog'
-part: 12
 categories:
   - Tools
 tags:

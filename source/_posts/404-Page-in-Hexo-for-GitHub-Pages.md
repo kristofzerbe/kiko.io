@@ -8,7 +8,6 @@ photograph:
   name: Tattoo Tuba
   link: 'https://500px.com/photo/1009150713'
 series: 'A New Blog'
-part: 11
 categories:
   - Tools
 tags:

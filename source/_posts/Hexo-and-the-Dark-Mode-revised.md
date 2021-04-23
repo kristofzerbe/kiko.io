@@ -8,7 +8,6 @@ photograph:
     name: 'Glencoe River'
     link: 'https://500px.com/photo/1005490038/Glencoe-River-by-Kristof-Zerbe'
 series: 'A New Blog'
-part: 5
 tags:
   - Hexo
   - CSS

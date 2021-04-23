@@ -8,7 +8,6 @@ photograph:
   name: 'Glencoe Valley HDR'
   link: 'https://500px.com/photo/1005490349/Glencoe-Valley-HDR-by-Kristof-Zerbe'
 series: 'A New Blog'
-part: 4
 tags:
   - Hexo
   - CSS

@@ -8,7 +8,6 @@ photograph:
   name: ''
   link: ''
 series: Discoveries
-part: #PART
 categories:
   - Discoveries
 tags:

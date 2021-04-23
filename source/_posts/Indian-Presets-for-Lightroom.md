@@ -8,7 +8,6 @@ photograph:
   name: Iza Khans Tomb 1
   link: 'https://500px.com/photo/1023881285/iza-khans-tomb-1-2nd-edition-by-kristof-zerbe'
 series: Lightroom Presets
-part: 2
 categories:
   - Photo-Editing
 tags:

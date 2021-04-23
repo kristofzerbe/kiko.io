@@ -8,7 +8,6 @@ photograph:
   name: Lonely Call Box
   link: 'https://500px.com/photo/1008899204'
 series: Lightroom Presets
-part: 3
 categories:
   - Photo-Editing
 tags:

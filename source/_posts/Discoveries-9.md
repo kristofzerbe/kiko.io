@@ -8,7 +8,6 @@ photograph:
   name: Pipes & Wheels
   link: 'https://500px.com/photo/116725445'
 series: Discoveries
-part: 9
 categories:
   - Discoveries
 tags:

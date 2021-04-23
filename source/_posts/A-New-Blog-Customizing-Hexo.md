@@ -8,7 +8,6 @@ photograph:
     name: 'Thistle Fence'
     link: 'https://500px.com/photo/1005489951/Thistle-Fence-by-Kristof-Zerbe'
 series: 'A New Blog'
-part: 2
 tags:
   - VS Code
   - Hexo

@@ -8,7 +8,6 @@ photograph:
   name: Untitled
   link: 'https://500px.com/photo/1017604564'
 series: Discoveries
-part: 5
 categories:
   - Discoveries
 tags:

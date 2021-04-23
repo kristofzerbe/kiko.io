@@ -7,8 +7,7 @@ photograph:
   file: ''
   name: ''
   link: ''
-series: Step-By-Step
-part: #PART
+series: 'Step By Step'
 categories:
   - Misc
 tags:

@@ -8,7 +8,6 @@ photograph:
     name: 'Tiny Scots 7'
     link: 'https://500px.com/photo/1002666873/Tiny-Scots-7-by-Kristof-Zerbe'
 series: 'A New Blog'
-part: 1
 tags:
   - VS Code
   - Hexo

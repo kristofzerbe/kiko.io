@@ -8,7 +8,6 @@ photograph:
   name: Untitled
   link: 'https://500px.com/photo/1017605689'
 series: 'A New Blog'
-part: 7
 tags:
   - Blogging
   - Hexo

@@ -7,8 +7,7 @@ photograph:
   file: DSC_7006-HDR.jpg
   name: Break Dancer
   link: 'https://500px.com/photo/84012419/Break-Dancer-by-Kristof-Zerbe/'
-series: Step-By-Step
-part: 1
+series: 'Step By Step'
 categories:
   - Misc
 tags:

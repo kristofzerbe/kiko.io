@@ -8,7 +8,6 @@ photograph:
   name: On The Rocks
   link: 'https://500px.com/photo/84012179/On-The-Rocks-by-Kristof-Zerbe/'
 series: Discoveries
-part: 4
 categories:
   - Discoveries
 tags:

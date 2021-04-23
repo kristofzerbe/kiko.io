@@ -8,7 +8,6 @@ photograph:
   name: Jerusalem Marks
   link: 'https://500px.com/photo/1001751386/Jerusalem-Marks-by-Kristof-Zerbe'
 series: Discoveries
-part: 2
 categories:
   - Discoveries
 tags:

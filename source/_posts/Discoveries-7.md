@@ -8,7 +8,6 @@ photograph:
   name: Industrial Chrome
   link: 'https://500px.com/photo/86990893/Industrial-Chrome-by-Kristof-Zerbe/'
 series: Discoveries
-part: 6
 categories:
   - Discoveries
 tags:

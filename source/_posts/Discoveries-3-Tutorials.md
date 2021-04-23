@@ -8,7 +8,6 @@ photograph:
   name: Untitled
   link: 'https://500px.com/photo/1001114737/Untitled-by-Kristof-Zerbe'
 series: Discoveries
-part: 3
 categories:
   - Discoveries
 tags:

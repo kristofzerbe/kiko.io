@@ -91,6 +91,10 @@
           box-shadow: 1px 2px 40px 1px dark-color-border
           border-color: dark-color-border
           color: dark-color-default
+        a
+          text-decoration: none
+          word-break: break-all
+          display: inline-block
         a.card-img
           display: block
           position: relative
@@ -102,8 +106,11 @@
             width: 100%
             height: 100%
             object-fit: cover
+            aspect-ratio: 1
+            background-color: color-background
             border-bottom: 1px color-background solid
             /[data-theme="dark"] &
+              background-color: dark-color-background
               border-bottom: 1px dark-color-background solid
         &:hover
            transform: scale(1.01) translateY(-1px)
@@ -115,7 +122,7 @@
         .tags 
           display: flex
           flex-flow: row wrap
-          margin-bottom: 0.75rem
+          margin: 1rem 0 0.75rem
           span 
             display: block
             border-radius: 2px
@@ -137,18 +144,18 @@
                 color: dark-color-border
         h3
           line-height: line-height-title
-          margin: 0.75em 0
+          margin: 0.75rem 0 0.25rem
           font-weight: 600
-        a
-          text-decoration: none
-          color: color-default
-          /[data-theme="dark"] &
-            color: dark-color-default
-            border-bottom: dark-color-link-border 1px solid
-          &:hover
-            color: color-link
+          a
+            text-decoration: none
+            color: color-default
             /[data-theme="dark"] &
-              color: dark-color-link
+              color: dark-color-default
+              border-bottom: dark-color-link-border 1px solid
+            &:hover
+              color: color-link
+              /[data-theme="dark"] &
+                color: dark-color-link
       .card.hide
         transform: scale(0)
         opacity: 0
