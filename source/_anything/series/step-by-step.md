@@ -1,9 +1,5 @@
 ---
 title: Step By Step
-photograph: 
-  file: $step-by-step.jpg
-  name: Untitled
-  link: 'https://500px.com/photo/1017604391'
 ---
 
 Software development is the art of automation ... because Developers are lazy. Manual work steps quickly end in writing scripts. But sometimes the effort is not justified or it is simply impossible to automate something, because of OS barriers or other show stoppers. Then it is better to optimize und document the manual steps.
