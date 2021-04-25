@@ -1,4 +1,9 @@
-<div class="card" data-tags="<%= item.labels.join(";") %>">
+<div class="card" 
+     data-tags="<%= item.labels.join(";") %>"
+     data-string-title="<%- item.name %>" 
+     data-id="<%- item.id %>"
+     data-position="<%- item.position %>"
+     data-date-last-activity="<%- item.dateLastActivity %>">
   <a class="card-img" href="<%- item.link %>" target="_blank">
     <img src="<%- item.image.url %>" />
   </a>
@@ -9,5 +14,5 @@
       <span><%- item.labels[j] %></span>
     <% } %>
   </div>
-  <p><%- item.desc %></p>
+  <p><%- item.description %></p>
 </div>

@@ -58,8 +58,10 @@ hexo.extend.generator.register("trello-collections", async function(locals) {
               // Basics
               let item = {
                 "name": card.name,
-                "desc": card.desc,
-                "dateLastActivity": card.dateLastActivity
+                "description": card.desc,
+                "dateLastActivity": card.dateLastActivity,
+                "position": card.pos,
+                "id": card.idShort
               }
 
               // Labels

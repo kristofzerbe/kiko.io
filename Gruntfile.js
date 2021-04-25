@@ -119,7 +119,8 @@ module.exports = function(grunt){
       },
       dist: {
         files: {
-          'themes/landscape/source/js/dist/bundle.min.js': 'themes/landscape/tmp/asset-bundle.js'
+          'themes/landscape/source/js/dist/bundle.min.js': 'themes/landscape/tmp/asset-bundle.js',
+          'themes/landscape/assets/lc-select/lc_select.min.js': 'themes/landscape/assets/lc-select/lc_select.js'
         }
       }
     },          

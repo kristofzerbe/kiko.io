@@ -220,6 +220,18 @@ Over 1.250 icons in several categories, downloadable as SVG or PNG.
 
 ---
 
+{% source "Simple icons" https://simpleicons.org UI-Design SVG-Resources simpleicons_org.png %}
+  Over 1800 icons of popular brands, with hex color code.
+{% endsource %}
+
+---
+
+{% source "SVG Repo" https://www.svgrepo.com UI-Design SVG-Resources svg-repo_com.png %}
+  300.000+ vectors and icons in over 400 collections from different artists.
+{% endsource %}
+
+---
+
 {% source "Google Fonts - Material Icons" https://fonts.google.com/icons UI-Design SVG-Resources fonts_google_com+icons.png %}
   At least ... an own frontend of Googles Material Icons inside [Google Fonts](https://font.google.com) for downloading them individually as SVG, PNG or Android/iOS package.
 {% endsource %}

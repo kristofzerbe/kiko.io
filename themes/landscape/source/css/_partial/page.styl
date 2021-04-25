@@ -69,6 +69,26 @@
           right: 0
         span.result.error
           color: color-error
+    section.flex
+      display: flex
+      flex-wrap: wrap
+      fieldset
+        flex: 1 1 auto
+      fieldset.gap
+        margin-right: 2em
+        margin-bottom: auto;
+      fieldset.max
+        max-width: max-content
+      @media mq-mobile
+        fieldset.gap
+          width: 100%
+          margin-right: auto;
+          margin-bottom: 1em
+        fieldset.max
+          max-width: 25%
+        fieldset.max.expand
+          max-width: 75%
+
     .grid
       display: grid
       grid-gap: 2em
@@ -157,6 +177,7 @@
               /[data-theme="dark"] &
                 color: dark-color-link
       .card.hide
+      .card.trans
         transform: scale(0)
         opacity: 0
 

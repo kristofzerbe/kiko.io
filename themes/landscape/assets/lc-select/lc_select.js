@@ -823,7 +823,7 @@
 	flex-wrap: wrap;
     width: 100%;
     min-height: 15px;
-    padding: 5px 30px 5px 5px;
+    padding: 4px 30px 4px 8px;
     position: relative;
     overflow: hidden;  
     font-size: 1rem;
@@ -862,7 +862,7 @@
 	line-height: 0;
 }
 .lcslt span:not(.lcslt-placeholder):not(.lcslt-multi-callout) {
-	line-height: 1.1em;
+	line-height: inherit;
 	font-size: 0.95em;
 }
 .lcslt-opt {

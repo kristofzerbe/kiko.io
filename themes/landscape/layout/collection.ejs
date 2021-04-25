@@ -11,14 +11,30 @@
 <div class="page-content">
     <%- page.content %>
 
-    <section>
-      <fieldset class="lcslt-wrapper">
+    <section class="flex">
+      <fieldset class="lcslt-wrapper gap">
         <span class="result" data-total="<%- page.items.length %>"><%- page.items.length %> items total</span>
         <label>Filter:</label>
-        <select name="multiple" data-placeholder="Select a category..." multiple>
+        <select name="category" id="category" data-placeholder="Select a category..." multiple>
           <% for(var i=0; i < page.labels.length; i++) { %>
           <option value="<%- page.labels[i] %>"><%- page.labels[i] %></option>
           <% } %>
+        </select>
+      </fieldset>
+      <fieldset class="lcslt-wrapper max expand">
+        <label>Sort by:</label>
+        <select name="sorting-field" id="sorting-field" class="sorting">
+          <option value="date-last-activity" selected>Last Activity</option>
+          <option value="string-title">Title</option>
+          <option value="position">Position</option>
+          <option value="id">ID</option>
+        </select>
+      </fieldset>
+      <fieldset class="lcslt-wrapper max">
+        <label>&nbsp;</label>
+        <select name="sorting-direction" id="sorting-direction" class="sorting">
+          <option value="asc" data-image="/images/long-arrow-down.svg"></option>
+          <option value="desc" data-image="/images/long-arrow-up.svg" selected></option>
         </select>
       </fieldset>
     </section>
@@ -31,8 +47,8 @@
 </div>
 
 <script>
-  new lc_select('select[name="multiple"]', {
-      enable_search: false,
+  new lc_select('select[name="category"]', {
+      enable_search: true,
       on_change: function(new_value, target_field) {
         let i = 0;
         document.querySelectorAll(".card").forEach(item => {
@@ -68,4 +84,38 @@
           }, 300);
       }
   });
+  new lc_select('select.sorting', {
+    enable_search: false,
+    on_change: function(new_value, target_field) {
+      let field = document.querySelector("#sorting-field").value;
+      let dir = document.querySelector("#sorting-direction").value;
+      $('.grid').find('.card').addClass("trans");
+      setTimeout(() => { 
+          sortCards(field, dir);
+          $('.grid').find('.card').removeClass("trans");
+          initViewportImage();
+      }, 300);
+    }
+  });
+
+  function sortCards(field, dir) {
+    $('.grid').find('.card').sort(function (a, b) {
+      let minuend;
+      let subtrahend;
+      if (dir === "desc") {
+        minuend = $(b).attr('data-' + field);
+        subtrahend = $(a).attr('data-' + field);
+      } else {
+        minuend = $(a).attr('data-' + field);
+        subtrahend = $(b).attr('data-' + field);
+      }
+      if (field.includes("date")) {
+        return Date.parse(minuend) - Date.parse(subtrahend);
+      } else if (field.includes("string")) {
+        return ('' + minuend).localeCompare('' + subtrahend);
+      } else {
+        return minuend - subtrahend;
+      }
+    }).appendTo('.grid');
+  }
 </script>
