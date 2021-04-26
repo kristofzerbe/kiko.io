@@ -1,0 +1,21 @@
+---
+title: hexo-generator-anything
+---
+
+**hexo-generator-anything** is a plugin for [Hexo](https://hexo.io/) to generate index pages from custom front matter variables.   
+It's a fork from [*hexo-index-anything*](https://github.com/leviwheatcroft/hexo-index-anything) by Levi Wheatcroft, who is no longer maintaining the project.
+
+For more information visit:
+
+<div class="brand-links">
+<a href="https://github.com/kristofzerbe/hexo-generator-anything" class="github"><img src="/images/github.svg" alt="Github" /><span>Github</span></a>
+<a href="https://www.npmjs.com/package/hexo-generator-anything" class="npm"><img src="/images/npm.svg" alt="NPM" /><span>NPM</span></a>
+</div>
+
+<div class="shields-io">
+
+![GitHub package.json version](https://img.shields.io/github/package-json/v/kristofzerbe/hexo-generator-anything?label=version&style=flat-square)
+![issues](https://img.shields.io/github/issues/kristofzerbe/hexo-generator-anything?label=github%20issues&style=flat-square)
+![npm](https://img.shields.io/npm/dm/hexo-generator-anything?label=npm%20downloads&style=flat-square)
+
+</div>

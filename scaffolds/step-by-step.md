@@ -13,9 +13,7 @@ categories:
 tags:
   - xxx
 related:
-  - #PART-1
-  - #PART-2
-  - #PART-3
+  - xxx
 ---
 
 <!-- more -->

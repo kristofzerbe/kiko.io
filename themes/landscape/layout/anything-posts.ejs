@@ -3,6 +3,7 @@
 <% } %>
 
 <h1 class="archive-title">
-    <span><%= page.index.caption %><b>|</b></span><%= page.key.caption %>
+    <span><%= page.index.name %><b>|</b></span><%= page.key.caption %>
 </h1>
+<%- partial('_partial/anything-post-index-item', { item: page }) %>
 <%- partial('_partial/archive', { pagination: 2, index: true }) %>

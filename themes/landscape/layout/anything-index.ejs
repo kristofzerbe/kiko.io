@@ -1,6 +1,11 @@
 <h1 class="archive-title">
     <span style="font-weight: 600;"><%= page.title %></span>
 </h1>
+
+<% if (page.content){ %>
+    <%- page.content %>
+<% } %>
+
 <% page.posts.each(function(item){ %>
     <%- partial('_partial/anything-index-item', { item: item, index: page.index }) %>
 <% }) %>

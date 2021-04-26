@@ -3,3 +3,7 @@
 <% if (post.series){ %>
     <a class="<%= class_name %>" itemprop="name" href="<%- url_for('series/' + slugify(post.series)) %>"><%= post.series %></a>
 <% } %>
+
+<% if (post.project){ %>
+    <a class="<%= class_name %>" itemprop="name" href="<%- url_for('projects/' + slugify(post.project)) %>"><%= post.project %></a>
+<% } %>
