@@ -9,6 +9,8 @@
   
 <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %> h-entry" itemscope itemprop="blogPost">
   <div class="article-meta">
+    <a class="p-author h-card" href="/about" rel="author" style="display:none;">Kristof Zerbe</a>
+    <a class="u-url u-uid" href="<%- post.permalink %>" style="display:none;"><%- post.permalink %></a>
     <%- partial('post/date', { class_name: 'article-date', date_format: 'DD MMM YYYY' }) %>
     <%- partial('post/category', { class_name: 'article-category' }) %>
   </div>
