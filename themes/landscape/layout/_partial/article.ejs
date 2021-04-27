@@ -7,7 +7,7 @@
   body.classList.add("article-view");
 </script>
   
-<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
+<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %> h-entry" itemscope itemprop="blogPost">
   <div class="article-meta">
     <%- partial('post/date', { class_name: 'article-date', date_format: 'DD MMM YYYY' }) %>
     <%- partial('post/category', { class_name: 'article-category' }) %>
@@ -23,7 +23,7 @@
         <%- partial('post/subtitle', { class_name: 'article-subtitle' }) %>
       </header>
     <% } %>
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry e-content" itemprop="articleBody">
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
         <% if (theme.excerpt_link){ %>
