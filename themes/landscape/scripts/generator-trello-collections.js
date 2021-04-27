@@ -72,7 +72,7 @@ hexo.extend.generator.register("trello-collections", async function(locals) {
               // Attachments
               card.attachments.forEach(attachment => {
                 // ... Link
-                if (attachment.url === attachment.name && attachment.bytes === null) {
+                if (attachment.url.includes(attachment.name) && attachment.bytes === null) {
                   item.link = attachment.url;
                 } 
 
