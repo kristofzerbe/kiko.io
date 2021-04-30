@@ -25,7 +25,7 @@ related:
 
 ...
 
-{% image_compare "#NAME-compare" "XXX_ORIGINAL.jpg" "XXX_PRESET_Colors.jpg" %}
+{% image_compare "#NAME-compare" "XXX_ORIGINAL.jpg" "XXX_PRESET_Colors.jpg"  "Preset" %}
 
 {% download_link "Lightroom Preset" "XXX.xmp" %}
 

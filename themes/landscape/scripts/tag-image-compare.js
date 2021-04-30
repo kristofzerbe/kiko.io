@@ -2,7 +2,7 @@
   Image Compare Viewer: https://image-compare-viewer.netlify.app/
 
   Syntax
-  {% image_compare [id] [imgFileOriginal] [imgFileModified] [mode] %}
+  {% image_compare [id] [imgFileOriginal] [imgFileModified] [modDesc] [orientation] %}
 
 */
 hexo.extend.tag.register('image_compare', function (args) {
@@ -11,10 +11,11 @@ hexo.extend.tag.register('image_compare', function (args) {
     id, 
     original, 
     modified,
-    mode
+    modDesc,
+    orientation
   ] = args;
 
-  var verticalMode = (mode === "vertical").toString();
+  var verticalMode = (orientation === "vertical").toString();
 
   var element = `
     <div id="${id}">
@@ -34,7 +35,7 @@ hexo.extend.tag.register('image_compare', function (args) {
         showLabels: true,
         labelOptions: {
           before: 'Original',
-          after: 'Preset',
+          after: '${modDesc}',
           onHover: true,
         }
       }).mount();

@@ -2,7 +2,7 @@
 title: Hexo and the IndieWeb
 subtitle: Make your blog ready for social interaction via Webmentions
 hitcountId:
-date: 2021-04-28 16:06:27
+date: 2021-05-02 12:00:00
 photograph:
   file: DSC_5088.jpg
   name: Steel Flower
@@ -110,15 +110,15 @@ The most used classes for personal blogs as follows:
 
 |Class|Information|
 |---|---|
-|[h-card](http://microformats.org/wiki/h-card)|Wrapper for all personal information.<br> *All other classes below has to be used on child tags*|
-|p-name|Full name|
-|u-email|Email address|
-|u-photo|Photo|
-|p-role|Role|
-|u-url|URL representing the person|
-|p-locality|City or Town|
-|p-region|State or province|
-|p-country-name|Country name|
+|[**h-card**](http://microformats.org/wiki/h-card)|Wrapper for all personal information.<br> *All other classes below has to be used on child tags*|
+|**p-name**|Full name|
+|**u-email**|Email address|
+|**u-photo**|Photo|
+|**p-role**|Role|
+|**u-url**|URL representing the person|
+|**p-locality**|City or Town|
+|**p-region**|State or province|
+|**p-country-name**|Country name|
 
 {% alertbox exclamation %}
 Please keep in mind not to give too much information about you to the public. It could get unpleasant...
@@ -130,7 +130,7 @@ For providing links to other profiles, anchor (``A``) tags with the special attr
 
 With this extension of you blog HTML, you are able to sign in using your domain at sites which provide **Web Sign-In** over the concept of **RelMeAuth**, for example thos who use [**IndieAuth**](https://indieauth.com/). You only have to make sure, that the endpoints of your profile links have **backlinks to your blog** with a ``rel="me``". Unfortunately, not many services offer the definition of such a backlink. Github, for example, is an exception.
 
-### Example Markup
+### Example
 
 {% asset_img about-markup.png %}
 
@@ -142,14 +142,62 @@ Tagging posts with meta information for the IndieWeb is similarly simple, by add
 
 |Class|Information|
 |---|---|
-|[h-entry](http://microformats.org/wiki/h-entry)|Wrapper for all post related information|
-|p-name|Title|
-|p-summary|Short summary|
-|e-content|Content| 
-|dt-published|Publish date|
-|dt-updated|Update date|
-|u-url|Permalink|
+|[**h-entry**](http://microformats.org/wiki/h-entry)|Wrapper for all post related information|
+|**p-name**|Title|
+|**p-summary**|Short summary|
+|**e-content**|Content| 
+|**dt-published**|Publish date|
+|**dt-updated**|Update date|
+|**u-url**|Permalink|
 
+In case you work with the default Hexo theme 'landscape', I advise you to split your ``article.ejs`` in two files, because it is used for the article itself and for the excerpts on the start page and archive pages also. I have made an ``excerpt.ejs`` with all the information needed for listing the posts and cut back my ``article.ejs`` to the bare minimum, but with the IndieWeb related classes above (of course in the linked partials), because only the article page itself should have these informations, respectively an ``h-entry`` class, to indicate that there are IndieWeb data!
+
+```html article.ejs
+
+<article id="<%= post.layout %>-<%= post.slug %>" 
+         class="article article-type-<%= post.layout %> h-entry" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <%- partial('post/date', { class_name: 'article-date', date_format: 'DD MMM YYYY' }) %>
+    <%- partial('post/category', { class_name: 'article-category' }) %>
+  </div>
+  
+  <div class="article-inner">
+    <header class="article-header">
+      <%- partial('post/title', { class_name: 'article-title', show_link: false }) %>
+      <%- partial('post/subtitle', { class_name: 'article-subtitle' }) %>
+    </header>
+    
+    <div class="article-entry e-content" itemprop="articleBody">
+      <%- post.content %>
+    </div>
+    
+    <footer class="article-footer">      
+      <%- partial('post/tag', { class_name: 'article-tags' }) %>
+      <%- partial('post/permalink', { class_name: 'article-permalink' }) %>
+    </footer>
+  </div>
+
+  <%- partial('post/comments') %>
+  <%- partial('post/related') %>
+  <%- partial('post/nav') %>
+
+</article>
+```
+
+---
+
+## Step 3: Sending Webmentions
+
+After you have created your new Hexo post with ``hexo new post "My Post"`` and spend a couple of minutes/hours/days on writing meaningful text, you publish it by running ``hexo generate`` and copying the generated HTML to your server. Next step would be to inform all the blogs you linked to in your post that you have done just that. You want to send **Webmentions**.
+
+Doing this together with generating or uploading is suboptimal, because you only want to do this once and preferably for all links in your article ... and in an automated way.
+
+A good solution is to use [**webmention.app**](https://webmention.app/) from Remy Sharp for creating a separate [Hexo Console](https://hexo.io/api/console.html) Command, which calls Remy's service for the newly generated post URL.
+
+---
+
+## Step 4: Receiving Webmentions
 
 ---
 
@@ -157,6 +205,8 @@ Tagging posts with meta information for the IndieWeb is similarly simple, by add
   [ "Max Böck", "Using Webmentions in Eleventy",
   "https://mxb.dev/blog/using-webmentions-on-static-sites/" ],
   [ "Sia Karamalegos", "An In-Depth Tutorial of Webmentions + Eleventy","https://sia.codes/posts/webmentions-eleventy-in-depth/" ],
+  ["Paul Kinlan", "Using Web Mentions in a static site (Hugo)", "https://paul.kinlan.me/using-web-mentions-in-a-static-sitehugo/"],
+  ["Paul Kinlan", "Webmention.app", "https://paul.kinlan.me/webmention-app/"],
   [ "Remy Sharp", "Send Outgoing Webmentions", 
   "https://remysharp.com/2019/06/18/send-outgoing-webmentions" ],
   [ "Bryce Wray", "Webmentions in three SSGs: Part 1", 

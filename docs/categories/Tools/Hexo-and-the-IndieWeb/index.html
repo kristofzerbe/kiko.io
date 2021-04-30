@@ -205,7 +205,7 @@
     <a class="u-url u-uid" href="https://kiko.io/categories/Tools/Hexo-and-the-IndieWeb/" style="display:none;">https://kiko.io/categories/Tools/Hexo-and-the-IndieWeb/</a>
     <a href="/categories/Tools/Hexo-and-the-IndieWeb/" class="article-date">
   
-    <time class="published dt-published" datetime="2021-04-28T14:06:27.000Z" itemprop="datePublished">28 Apr 2021</time>
+    <time class="published dt-published" datetime="2021-05-02T10:00:00.000Z" itemprop="datePublished">02 May 2021</time>
   
 </a>
     
@@ -318,39 +318,39 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><a target="_blank" rel="noopener" href="http://microformats.org/wiki/h-card">h-card</a></td>
+<td><a target="_blank" rel="noopener" href="http://microformats.org/wiki/h-card"><strong>h-card</strong></a></td>
 <td>Wrapper for all personal information.<br> <em>All other classes below has to be used on child tags</em></td>
 </tr>
 <tr>
-<td>p-name</td>
+<td><strong>p-name</strong></td>
 <td>Full name</td>
 </tr>
 <tr>
-<td>u-email</td>
+<td><strong>u-email</strong></td>
 <td>Email address</td>
 </tr>
 <tr>
-<td>u-photo</td>
+<td><strong>u-photo</strong></td>
 <td>Photo</td>
 </tr>
 <tr>
-<td>p-role</td>
+<td><strong>p-role</strong></td>
 <td>Role</td>
 </tr>
 <tr>
-<td>u-url</td>
+<td><strong>u-url</strong></td>
 <td>URL representing the person</td>
 </tr>
 <tr>
-<td>p-locality</td>
+<td><strong>p-locality</strong></td>
 <td>City or Town</td>
 </tr>
 <tr>
-<td>p-region</td>
+<td><strong>p-region</strong></td>
 <td>State or province</td>
 </tr>
 <tr>
-<td>p-country-name</td>
+<td><strong>p-country-name</strong></td>
 <td>Country name</td>
 </tr>
 </tbody></table>
@@ -363,10 +363,10 @@
 
 <h3 id="Profile-Information"><a href="#Profile-Information" class="headerlink" title="Profile Information"></a>Profile Information</h3><p>For providing links to other profiles, anchor (<code>A</code>) tags with the special attribute <a target="_blank" rel="noopener" href="http://microformats.org/wiki/rel-me"><code>rel=&quot;me&quot;</code></a> will be used, which indicates profile equivalence and can be used for <a target="_blank" rel="noopener" href="http://microformats.org/wiki/identity-consolidation">identity-consolidation</a>.</p>
 <p>With this extension of you blog HTML, you are able to sign in using your domain at sites which provide <strong>Web Sign-In</strong> over the concept of <strong>RelMeAuth</strong>, for example thos who use <a target="_blank" rel="noopener" href="https://indieauth.com/"><strong>IndieAuth</strong></a>. You only have to make sure, that the endpoints of your profile links have <strong>backlinks to your blog</strong> with a <code>rel=&quot;me</code>“. Unfortunately, not many services offer the definition of such a backlink. Github, for example, is an exception.</p>
-<h3 id="Example-Markup"><a href="#Example-Markup" class="headerlink" title="Example Markup"></a>Example Markup</h3><img src="/categories/Tools/Hexo-and-the-IndieWeb/about-markup.png" class="">
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><img src="/categories/Tools/Hexo-and-the-IndieWeb/about-markup.png" class="">
 
 <hr>
-<h2 id="Step-2-The-Article-HTML"><a href="#Step-2-The-Article-HTML" class="headerlink" title="Step 2: The Article HTML"></a>Step 2: The Article HTML</h2><p>Tagging posts with meta information for the IndieWeb is much simpler, because you only have two classes to add in your article.ejs file:</p>
+<h2 id="Step-2-The-Article-HTML"><a href="#Step-2-The-Article-HTML" class="headerlink" title="Step 2: The Article HTML"></a>Step 2: The Article HTML</h2><p>Tagging posts with meta information for the IndieWeb is similarly simple, by adding following classes in your article.ejs file:</p>
 <table>
 <thead>
 <tr>
@@ -375,39 +375,47 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><a target="_blank" rel="noopener" href="http://microformats.org/wiki/h-entry">h-entry</a></td>
+<td><a target="_blank" rel="noopener" href="http://microformats.org/wiki/h-entry"><strong>h-entry</strong></a></td>
 <td>Wrapper for all post related information</td>
 </tr>
 <tr>
-<td>p-name</td>
+<td><strong>p-name</strong></td>
 <td>Title</td>
 </tr>
 <tr>
-<td>p-summary</td>
+<td><strong>p-summary</strong></td>
 <td>Short summary</td>
 </tr>
 <tr>
-<td>e-content</td>
+<td><strong>e-content</strong></td>
 <td>Content</td>
 </tr>
 <tr>
-<td>dt-published</td>
+<td><strong>dt-published</strong></td>
 <td>Publish date</td>
 </tr>
 <tr>
-<td>dt-updated</td>
+<td><strong>dt-updated</strong></td>
 <td>Update date</td>
 </tr>
 <tr>
-<td>u-url</td>
+<td><strong>u-url</strong></td>
 <td>Permalink</td>
 </tr>
 </tbody></table>
+<p>In case you work with the default Hexo theme ‘landscape’, I advise you to split your <code>article.ejs</code> in two files, because it is used for the article itself and for the excerpts on the start page and archive pages also. I have made an <code>excerpt.ejs</code> with all the information needed for listing the posts and cut back my <code>article.ejs</code> to the bare minimum, but with the IndieWeb related classes above (of course in the linked partials), because only the article page itself should have these informations, respectively an <code>h-entry</code> class, to indicate that there are IndieWeb data!</p>
+<figure class="highlight html"><figcaption><span>article.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">article</span> <span class="attr">id</span>=<span class="string">&quot;&lt;%= post.layout %&gt;-&lt;%= post.slug %&gt;&quot;</span> </span></span><br><span class="line"><span class="tag">         <span class="attr">class</span>=<span class="string">&quot;article article-type-&lt;%= post.layout %&gt; h-entry&quot;</span> <span class="attr">itemscope</span> <span class="attr">itemprop</span>=<span class="string">&quot;blogPost&quot;</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;article-meta&quot;</span>&gt;</span></span><br><span class="line">    &lt;%- partial(&#x27;post/date&#x27;, &#123; class_name: &#x27;article-date&#x27;, date_format: &#x27;DD MMM YYYY&#x27; &#125;) %&gt;</span><br><span class="line">    &lt;%- partial(&#x27;post/category&#x27;, &#123; class_name: &#x27;article-category&#x27; &#125;) %&gt;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;article-inner&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">header</span> <span class="attr">class</span>=<span class="string">&quot;article-header&quot;</span>&gt;</span></span><br><span class="line">      &lt;%- partial(&#x27;post/title&#x27;, &#123; class_name: &#x27;article-title&#x27;, show_link: false &#125;) %&gt;</span><br><span class="line">      &lt;%- partial(&#x27;post/subtitle&#x27;, &#123; class_name: &#x27;article-subtitle&#x27; &#125;) %&gt;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;article-entry e-content&quot;</span> <span class="attr">itemprop</span>=<span class="string">&quot;articleBody&quot;</span>&gt;</span></span><br><span class="line">      &lt;%- post.content %&gt;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">footer</span> <span class="attr">class</span>=<span class="string">&quot;article-footer&quot;</span>&gt;</span>      </span><br><span class="line">      &lt;%- partial(&#x27;post/tag&#x27;, &#123; class_name: &#x27;article-tags&#x27; &#125;) %&gt;</span><br><span class="line">      &lt;%- partial(&#x27;post/permalink&#x27;, &#123; class_name: &#x27;article-permalink&#x27; &#125;) %&gt;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  &lt;%- partial(&#x27;post/comments&#x27;) %&gt;</span><br><span class="line">  &lt;%- partial(&#x27;post/related&#x27;) %&gt;</span><br><span class="line">  &lt;%- partial(&#x27;post/nav&#x27;) %&gt;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <hr>
+<h2 id="Step-3-Sending-Webmentions"><a href="#Step-3-Sending-Webmentions" class="headerlink" title="Step 3: Sending Webmentions"></a>Step 3: Sending Webmentions</h2><p>After you have created your new Hexo post with <code>hexo new post &quot;My Post&quot;</code> and spend a couple of minutes/hours/days on writing meaningful text, you publish it by running <code>hexo generate</code> and copying the generated HTML to your server. Next step would be to inform all the blogs you linked to in your post that you have done just that. You want to send <strong>Webmentions</strong>.</p>
+<p>Doing this together with generating or uploading is suboptimal, because you only want to do this once and preferably for all links in your article … and in an automated way.</p>
+<p>A good solution is to use <a target="_blank" rel="noopener" href="https://webmention.app/"><strong>webmention.app</strong></a> from Remy Sharp for creating a separate <a target="_blank" rel="noopener" href="https://hexo.io/api/console.html">Hexo Console</a> Command, which calls Remy’s service for the newly generated post URL.</p>
+<hr>
+<h2 id="Step-4-Receiving-Webmentions"><a href="#Step-4-Receiving-Webmentions" class="headerlink" title="Step 4: Receiving Webmentions"></a>Step 4: Receiving Webmentions</h2><hr>
 
         <h2>More Info</h2>
         <ul class="moreinfo-list">
-            <li>Max Böck: <a target="_blank" rel="noopener" href="https://mxb.dev/blog/using-webmentions-on-static-sites/">Using Webmentions in Eleventy</a></li><li>Sia Karamalegos: <a target="_blank" rel="noopener" href="https://sia.codes/posts/webmentions-eleventy-in-depth/">An In-Depth Tutorial of Webmentions + Eleventy</a></li><li>Remy Sharp: <a target="_blank" rel="noopener" href="https://remysharp.com/2019/06/18/send-outgoing-webmentions">Send Outgoing Webmentions</a></li><li>Bryce Wray: <a target="_blank" rel="noopener" href="https://brycewray.com/posts/2020/04/webmentions-three-ssgs-1">Webmentions in three SSGs: Part 1</a></li><li>Several (Forum): <a target="_blank" rel="noopener" href="https://discourse.gohugo.io/t/anyone-for-webmention/10411">Anyone for Webmention?</a></li>
+            <li>Max Böck: <a target="_blank" rel="noopener" href="https://mxb.dev/blog/using-webmentions-on-static-sites/">Using Webmentions in Eleventy</a></li><li>Sia Karamalegos: <a target="_blank" rel="noopener" href="https://sia.codes/posts/webmentions-eleventy-in-depth/">An In-Depth Tutorial of Webmentions + Eleventy</a></li><li>Paul Kinlan: <a target="_blank" rel="noopener" href="https://paul.kinlan.me/using-web-mentions-in-a-static-sitehugo/">Using Web Mentions in a static site (Hugo)</a></li><li>Paul Kinlan: <a target="_blank" rel="noopener" href="https://paul.kinlan.me/webmention-app/">Webmention.app</a></li><li>Remy Sharp: <a target="_blank" rel="noopener" href="https://remysharp.com/2019/06/18/send-outgoing-webmentions">Send Outgoing Webmentions</a></li><li>Bryce Wray: <a target="_blank" rel="noopener" href="https://brycewray.com/posts/2020/04/webmentions-three-ssgs-1">Webmentions in three SSGs: Part 1</a></li><li>Several (Forum): <a target="_blank" rel="noopener" href="https://discourse.gohugo.io/t/anyone-for-webmention/10411">Anyone for Webmention?</a></li>
         </ul>
     <!-- flag of hidden posts -->
     </div>
@@ -418,8 +426,55 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Publishing/" rel="tag">Publishing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Share/" rel="tag">Share</a></li></ul>  
   </div>
 
-    </footer>
+      <div class="article-permalink">
+    <input id="article-permalink" value="https://kiko.io/categories/Tools/Hexo-and-the-IndieWeb/" data-id="cko2m0ee5002pnwl90j7j8edo" />
+    <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
+    <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
+</div>
+<script>
+    var copyText = document.querySelector("#article-permalink");
+    copyText.disabled = true;
+    function copyPermalink() {
+        copyText.disabled = false;
+        copyText.select();
+        document.execCommand("copy");
+        copyText.blur();
+        copyText.disabled = true;
+
+        var permalink = copyText.value;
+        copyText.classList.add("fade-out-500");
+        setTimeout(function(){
+            copyText.value = "copied to clipboard";
+            copyText.classList.remove("fade-out-500");
+            copyText.classList.add("fade-in-1000");
+            setTimeout(function() {
+                copyText.classList.add("fade-out-500");
+                setTimeout(function() {
+                    copyText.value = permalink;
+                    copyText.classList.remove("fade-out-500");
+                    setTimeout(function() {
+                        copyText.classList.remove("fade-in-1000");
+                    }, 500);
+                }, 500);
+            }, 2000);
+        }, 500);
+    }
+
+    if (navigator.share === undefined) {
+        var shareLink = document.querySelector("#action-share");
+        shareLink.style.display = "none";
+    } 
     
+    function sharePermalink() {
+        navigator.share({
+            title: "Hexo and the IndieWeb",
+            url: "https://kiko.io/categories/Tools/Hexo-and-the-IndieWeb/",
+        })
+    }
+</script>
+
+    </footer>
+
   </div>
 
   <div class="article-comments">
