@@ -138,7 +138,7 @@ With this extension of you blog HTML, you are able to sign in using your domain 
 
 ## Step 2: The Article HTML
 
-Tagging posts with meta information for the IndieWeb is much simpler, because you only have two classes to add in your article.ejs file:
+Tagging posts with meta information for the IndieWeb is similarly simple, by adding following classes in your article.ejs file:
 
 |Class|Information|
 |---|---|
@@ -149,6 +149,7 @@ Tagging posts with meta information for the IndieWeb is much simpler, because yo
 |dt-published|Publish date|
 |dt-updated|Update date|
 |u-url|Permalink|
+
 
 ---
 
