@@ -197,7 +197,9 @@
   body.classList.add("article-view");
 </script>
   
-<article id="post-A-New-Blog-Customizing-Hexo" class="article article-type-post h-entry" itemscope itemprop="blogPost">
+<article id="post-A-New-Blog-Customizing-Hexo" 
+         class="article article-type-post h-entry" itemscope itemprop="blogPost">
+  
   <div class="article-meta">
     <a class="p-author h-card" href="/about" rel="author" style="display:none;">Kristof Zerbe</a>
     <a class="u-url u-uid" href="https://kiko.io/categories/Tools/A-New-Blog-Customizing-Hexo/" style="display:none;">https://kiko.io/categories/Tools/A-New-Blog-Customizing-Hexo/</a>
@@ -212,6 +214,7 @@
   </div>
 
   </div>
+  
   <div class="article-inner">
     
     
@@ -237,9 +240,9 @@
 
       </header>
     
+    
     <div class="article-entry e-content" itemprop="articleBody">
-      
-        <p>Hexo is a great tool to get quick results (see <a href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/">Part One of this series</a>), when you decide to have a blog and its defaults are practical, but it’s power lies in the possiblities of customization via plugins. On the <a target="_blank" rel="noopener" href="https://hexo.io/plugins/index.html">official plugin page</a>, there are actually 302 plugins listed, but there are many more and no wish will be unsatisfied.</p>
+      <p>Hexo is a great tool to get quick results (see <a href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/">Part One of this series</a>), when you decide to have a blog and its defaults are practical, but it’s power lies in the possiblities of customization via plugins. On the <a target="_blank" rel="noopener" href="https://hexo.io/plugins/index.html">official plugin page</a>, there are actually 302 plugins listed, but there are many more and no wish will be unsatisfied.</p>
 <p>I will show you which of these I found worth to work with…</p>
 <span id="more"></span>
 
@@ -275,67 +278,19 @@
 <h2 id="Back-To-Top"><a href="#Back-To-Top" class="headerlink" title="Back To Top"></a>Back To Top</h2><p>Its nice to support the reader on scolling by providing a Scroll-To-Top button. The easiest way to get this, is the script <a target="_blank" rel="noopener" href="https://github.com/vfeskov/vanilla-back-to-top">Vanilla Back To Top</a>. Just add follwing to <strong>themes</strong> &gt;<strong>layout</strong> &gt; <strong>_partial</strong> &gt; <strong>after-footer.ejs</strong>:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span>addBackToTop(&#123;</span><br><span class="line">    diameter: 30,</span><br><span class="line"><span class="javascript">    backgroundColor: <span class="string">&#x27;rgb(0, 90, 180)&#x27;</span>,</span></span><br><span class="line"><span class="javascript">    textColor: <span class="string">&#x27;#fff&#x27;</span></span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">#back-to-top &#123;</span><br><span class="line"><span class="css">    <span class="attribute">border-radius</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">opacity</span>: <span class="number">0.6</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-id">#back-to-top</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-      
     </div>
+    
     <footer class="article-footer">      
       
   <div class="article-tags">
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/" rel="tag">VS Code</a></li></ul>  
   </div>
 
-      
-        <div class="article-permalink">
-    <input id="article-permalink" value="https://kiko.io/categories/Tools/A-New-Blog-Customizing-Hexo/" data-id="cknzr0v36000850l94awjdxdp" />
-    <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
-    <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
-</div>
-<script>
-    var copyText = document.querySelector("#article-permalink");
-    copyText.disabled = true;
-    function copyPermalink() {
-        copyText.disabled = false;
-        copyText.select();
-        document.execCommand("copy");
-        copyText.blur();
-        copyText.disabled = true;
-
-        var permalink = copyText.value;
-        copyText.classList.add("fade-out-500");
-        setTimeout(function(){
-            copyText.value = "copied to clipboard";
-            copyText.classList.remove("fade-out-500");
-            copyText.classList.add("fade-in-1000");
-            setTimeout(function() {
-                copyText.classList.add("fade-out-500");
-                setTimeout(function() {
-                    copyText.value = permalink;
-                    copyText.classList.remove("fade-out-500");
-                    setTimeout(function() {
-                        copyText.classList.remove("fade-in-1000");
-                    }, 500);
-                }, 500);
-            }, 2000);
-        }, 500);
-    }
-
-    if (navigator.share === undefined) {
-        var shareLink = document.querySelector("#action-share");
-        shareLink.style.display = "none";
-    } 
-    
-    function sharePermalink() {
-        navigator.share({
-            title: "A New Blog: Customizing Hexo",
-            url: "https://kiko.io/categories/Tools/A-New-Blog-Customizing-Hexo/",
-        })
-    }
-</script>
-
-      
     </footer>
+    
   </div>
-  
-    <div class="article-comments">
+
+  <div class="article-comments">
   <div id="comment-placeholder"></div>
   <script>
     window.addEventListener('load', function () {
@@ -343,7 +298,7 @@
     })    
   </script>
 </div>
-    
+  
   <div class="article-related">
     <h2>Related</h2>
     <div class="archives">
@@ -507,7 +462,7 @@
     </div>
   </div>
 
-    
+  
 <nav id="article-nav">
   
     <a href="/categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -527,7 +482,7 @@
   
 </nav>
 
-  
+
 </article></main>
           
             <aside id="sidebar">
@@ -558,6 +513,12 @@
         
           <li>
             
+              <a href="/categories/Photo-Editing/Triangulate-your-images-with-Triangula/">Triangulate your images with Triangula</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/categories/JavaScript/Forking-Hexo-plugin-hexo-index-anything/">Forking Hexo plugin &#39;hexo-index-anything&#39;</a>
             
           </li>
@@ -577,12 +538,6 @@
           <li>
             
               <a href="/categories/Tools/Spice-Up-Windows-Terminal/"><b>Update: </b>Spice Up Windows Terminal</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/categories/Misc/Adding-Screenshots-to-Trello-Cards-on-Android/">Adding Screenshots to Trello Cards on Android</a>
             
           </li>
         

@@ -201,13 +201,34 @@
     border-bottom: 1px solid color-border-article
     /[data-theme="dark"] &
       border-bottom: 3px solid dark-color-border-article
+  details
+    margin-top: 2px
+    &:hover
+      font-weight: bold
+    &[open]
+      margin-bottom: 20px
+      summary 
+        font-weight: bold
+        background-color: color-light
+        /[data-theme="dark"] &
+          background-color: dark-color-light
+    summary
+      cursor: pointer
+      padding: 5px 0 5px 10px
+    blockquote
+      margin: 10px 0 5px 2px
+    cite
+      margin: 5px 0 5px 16px
   blockquote
-    border-left: 4px silver solid 
+    border-left: 4px color-border solid 
+    /[data-theme="dark"] &
+      border-left-color: dark-color-border
     padding-left: 10px
     font-family: font-serif
     font-size: 110%
     margin: line-height 0
     text-align: left
+    line-height: 1.3em
     p
       line-height: 1.4em
     footer

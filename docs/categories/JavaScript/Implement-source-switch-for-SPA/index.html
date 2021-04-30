@@ -197,7 +197,9 @@
   body.classList.add("article-view");
 </script>
   
-<article id="post-Implement-source-switch-for-SPA" class="article article-type-post h-entry" itemscope itemprop="blogPost">
+<article id="post-Implement-source-switch-for-SPA" 
+         class="article article-type-post h-entry" itemscope itemprop="blogPost">
+  
   <div class="article-meta">
     <a class="p-author h-card" href="/about" rel="author" style="display:none;">Kristof Zerbe</a>
     <a class="u-url u-uid" href="https://kiko.io/categories/JavaScript/Implement-source-switch-for-SPA/" style="display:none;">https://kiko.io/categories/JavaScript/Implement-source-switch-for-SPA/</a>
@@ -212,6 +214,7 @@
   </div>
 
   </div>
+  
   <div class="article-inner">
     
     
@@ -235,9 +238,9 @@
 
       </header>
     
+    
     <div class="article-entry e-content" itemprop="articleBody">
-      
-        <p>A while ago I wrote a Single Page Application (SPA) with jQuery and and decided to use some useful plugins to avoid reinventing the wheel. To keep the delivered sources small, I used the bundler <a target="_blank" rel="noopener" href="https://gulpjs.com/">Gulp</a>, to pack all JS plugins in a single file and another one for my custom JS code. I used the same procedure with the CSS files.</p>
+      <p>A while ago I wrote a Single Page Application (SPA) with jQuery and and decided to use some useful plugins to avoid reinventing the wheel. To keep the delivered sources small, I used the bundler <a target="_blank" rel="noopener" href="https://gulpjs.com/">Gulp</a>, to pack all JS plugins in a single file and another one for my custom JS code. I used the same procedure with the CSS files.</p>
 <p>The SPA contained only a single HTML file in which all bundeled sources and needed HTML template blocks were included, in order to load most of the stuff while starting the app, when the users sees a GMail-like  loading screen.</p>
 <p>But the whole thing had one disadvantage: Debugging for example in Chrome Dev Tool is not a joy, if the code is packed with <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/gulp-concat">Gulp Concat</a> and <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/gulp-concat">Gulp Uglify</a>. It would be much more convenient, if the source loading can be done depending on the environment.</p>
 <span id="more"></span>
@@ -258,67 +261,19 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> _DEV = (<span class="built_in">window</span>.location.hostname.indexOf(<span class="string">&quot;localhost&quot;</span>) !== -<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">addStylesheet(<span class="string">&quot;Build/vendor.css&quot;</span>);</span><br><span class="line"><span class="keyword">if</span> (_DEV) &#123;</span><br><span class="line">  addStylesheet(<span class="string">&quot;Libraries/styles.css&quot;</span>);</span><br><span class="line">  addStylesheet(<span class="string">&quot;Libraries/helpers.css&quot;</span>);</span><br><span class="line">  ...</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  addStylesheet(<span class="string">&quot;Build/custom.css&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">addScriptAsync(<span class="string">&quot;Build/vendor.min.js&quot;</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (_DEV) &#123;</span><br><span class="line">    addScriptAsync(<span class="string">&quot;Libraries/prototypes.js&quot;</span>)</span><br><span class="line">      .then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> addScriptAsync(<span class="string">&quot;Libraries/tools.js&quot;</span>); &#125;)</span><br><span class="line">      .then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> addScriptAsync(<span class="string">&quot;Libraries/app.js&quot;</span>); &#125;)</span><br><span class="line">      ...</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> addScriptAsync(<span class="string">&quot;Build/custom.min.js&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
-      
     </div>
+    
     <footer class="article-footer">      
       
   <div class="article-tags">
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bundling/" rel="tag">Bundling</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SPA/" rel="tag">SPA</a></li></ul>  
   </div>
 
-      
-        <div class="article-permalink">
-    <input id="article-permalink" value="https://kiko.io/categories/JavaScript/Implement-source-switch-for-SPA/" data-id="cknzr0v4e002e50l932wz7aog" />
-    <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
-    <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
-</div>
-<script>
-    var copyText = document.querySelector("#article-permalink");
-    copyText.disabled = true;
-    function copyPermalink() {
-        copyText.disabled = false;
-        copyText.select();
-        document.execCommand("copy");
-        copyText.blur();
-        copyText.disabled = true;
-
-        var permalink = copyText.value;
-        copyText.classList.add("fade-out-500");
-        setTimeout(function(){
-            copyText.value = "copied to clipboard";
-            copyText.classList.remove("fade-out-500");
-            copyText.classList.add("fade-in-1000");
-            setTimeout(function() {
-                copyText.classList.add("fade-out-500");
-                setTimeout(function() {
-                    copyText.value = permalink;
-                    copyText.classList.remove("fade-out-500");
-                    setTimeout(function() {
-                        copyText.classList.remove("fade-in-1000");
-                    }, 500);
-                }, 500);
-            }, 2000);
-        }, 500);
-    }
-
-    if (navigator.share === undefined) {
-        var shareLink = document.querySelector("#action-share");
-        shareLink.style.display = "none";
-    } 
-    
-    function sharePermalink() {
-        navigator.share({
-            title: "Implement source switch for SPA",
-            url: "https://kiko.io/categories/JavaScript/Implement-source-switch-for-SPA/",
-        })
-    }
-</script>
-
-      
     </footer>
+    
   </div>
-  
-    <div class="article-comments">
+
+  <div class="article-comments">
   <div id="comment-placeholder"></div>
   <script>
     window.addEventListener('load', function () {
@@ -326,7 +281,7 @@
     })    
   </script>
 </div>
-    
+  
   <div class="article-related">
     <h2>Related</h2>
     <div class="archives">
@@ -430,7 +385,7 @@
     </div>
   </div>
 
-    
+  
 <nav id="article-nav">
   
     <a href="/categories/Discoveries/Discoveries-4/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -450,7 +405,7 @@
   
 </nav>
 
-  
+
 </article></main>
           
             <aside id="sidebar">
@@ -481,6 +436,12 @@
         
           <li>
             
+              <a href="/categories/Photo-Editing/Triangulate-your-images-with-Triangula/">Triangulate your images with Triangula</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/categories/JavaScript/Forking-Hexo-plugin-hexo-index-anything/">Forking Hexo plugin &#39;hexo-index-anything&#39;</a>
             
           </li>
@@ -500,12 +461,6 @@
           <li>
             
               <a href="/categories/Tools/Spice-Up-Windows-Terminal/"><b>Update: </b>Spice Up Windows Terminal</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/categories/Misc/Adding-Screenshots-to-Trello-Cards-on-Android/">Adding Screenshots to Trello Cards on Android</a>
             
           </li>
         

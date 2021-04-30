@@ -197,7 +197,9 @@
   body.classList.add("article-view");
 </script>
   
-<article id="post-Show-related-posts-in-Hexo" class="article article-type-post h-entry" itemscope itemprop="blogPost">
+<article id="post-Show-related-posts-in-Hexo" 
+         class="article article-type-post h-entry" itemscope itemprop="blogPost">
+  
   <div class="article-meta">
     <a class="p-author h-card" href="/about" rel="author" style="display:none;">Kristof Zerbe</a>
     <a class="u-url u-uid" href="https://kiko.io/categories/Tools/Show-related-posts-in-Hexo/" style="display:none;">https://kiko.io/categories/Tools/Show-related-posts-in-Hexo/</a>
@@ -212,6 +214,7 @@
   </div>
 
   </div>
+  
   <div class="article-inner">
     
     
@@ -233,9 +236,9 @@
         
       </header>
     
+    
     <div class="article-entry e-content" itemprop="articleBody">
-      
-        <p>It is always nice to point the readers of your blog’s articles to related posts, they might be interested in. They stay a little longer to understand what you have to offer and increases the likelihood that they become loyal readers, followers or subscribers. Related posts has become a standard on delivering news and posts.</p>
+      <p>It is always nice to point the readers of your blog’s articles to related posts, they might be interested in. They stay a little longer to understand what you have to offer and increases the likelihood that they become loyal readers, followers or subscribers. Related posts has become a standard on delivering news and posts.</p>
 <p>In the default Hexo theme <strong>Landscape</strong>, on which this blog is based, there is no such function built in, but as the Hexo community is very busy, there are some plugins you can use.</p>
 <span id="more"></span>
 
@@ -275,67 +278,19 @@
 <p>The list <code>site.posts</code> should always contain a slug just once, therefore getting an array of posts and looping is just a precuation.</p>
 <p>What you are getting you can see below…</p>
 
-      
     </div>
+    
     <footer class="article-footer">      
       
   <div class="article-tags">
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
   </div>
 
-      
-        <div class="article-permalink">
-    <input id="article-permalink" value="https://kiko.io/categories/Tools/Show-related-posts-in-Hexo/" data-id="cknzr0v4w003e50l970miacmp" />
-    <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
-    <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
-</div>
-<script>
-    var copyText = document.querySelector("#article-permalink");
-    copyText.disabled = true;
-    function copyPermalink() {
-        copyText.disabled = false;
-        copyText.select();
-        document.execCommand("copy");
-        copyText.blur();
-        copyText.disabled = true;
-
-        var permalink = copyText.value;
-        copyText.classList.add("fade-out-500");
-        setTimeout(function(){
-            copyText.value = "copied to clipboard";
-            copyText.classList.remove("fade-out-500");
-            copyText.classList.add("fade-in-1000");
-            setTimeout(function() {
-                copyText.classList.add("fade-out-500");
-                setTimeout(function() {
-                    copyText.value = permalink;
-                    copyText.classList.remove("fade-out-500");
-                    setTimeout(function() {
-                        copyText.classList.remove("fade-in-1000");
-                    }, 500);
-                }, 500);
-            }, 2000);
-        }, 500);
-    }
-
-    if (navigator.share === undefined) {
-        var shareLink = document.querySelector("#action-share");
-        shareLink.style.display = "none";
-    } 
-    
-    function sharePermalink() {
-        navigator.share({
-            title: "Show related posts in Hexo",
-            url: "https://kiko.io/categories/Tools/Show-related-posts-in-Hexo/",
-        })
-    }
-</script>
-
-      
     </footer>
+    
   </div>
-  
-    <div class="article-comments">
+
+  <div class="article-comments">
   <div id="comment-placeholder"></div>
   <script>
     window.addEventListener('load', function () {
@@ -343,7 +298,7 @@
     })    
   </script>
 </div>
-    
+  
   <div class="article-related">
     <h2>Related</h2>
     <div class="archives">
@@ -507,7 +462,7 @@
     </div>
   </div>
 
-    
+  
 <nav id="article-nav">
   
     <a href="/categories/JavaScript/Implement-source-switch-for-SPA/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -527,7 +482,7 @@
   
 </nav>
 
-  
+
 </article></main>
           
             <aside id="sidebar">
@@ -558,6 +513,12 @@
         
           <li>
             
+              <a href="/categories/Photo-Editing/Triangulate-your-images-with-Triangula/">Triangulate your images with Triangula</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/categories/JavaScript/Forking-Hexo-plugin-hexo-index-anything/">Forking Hexo plugin &#39;hexo-index-anything&#39;</a>
             
           </li>
@@ -577,12 +538,6 @@
           <li>
             
               <a href="/categories/Tools/Spice-Up-Windows-Terminal/"><b>Update: </b>Spice Up Windows Terminal</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/categories/Misc/Adding-Screenshots-to-Trello-Cards-on-Android/">Adding Screenshots to Trello Cards on Android</a>
             
           </li>
         

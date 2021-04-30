@@ -165,17 +165,133 @@
           <main>
   
   
-    
-
-<script>
+    <script>
   var body = document.getElementById("body");
   body.classList.add("article-view");
 </script>
   
-<article id="post-Discoveries-1" class="article article-type-post h-entry" itemscope itemprop="blogPost">
+<article id="post-Change-CSS-class-when-element-scrolls-into-viewport" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
   <div class="article-meta">
-    <a class="p-author h-card" href="/about" rel="author" style="display:none;">Kristof Zerbe</a>
-    <a class="u-url u-uid" href="https://kiko.io/categories/Discoveries/Discoveries-1/" style="display:none;">https://kiko.io/categories/Discoveries/Discoveries-1/</a>
+    <a href="/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/" class="article-date">
+  
+    <time class="published dt-published" datetime="2020-07-13T16:24:39.000Z" itemprop="datePublished">13 Jul 2020</time>
+  
+</a>
+    
+  <div class="article-category category-javascript p-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/">
+        <img class="article-photo" src="/photos/tablet/D70_7695.jpg" alt="Onion Broken" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+    <a class="article-anything" itemprop="name" href="/series/a-new-blog">A New Blog</a>
+
+
+
+        
+  
+    <h1 class="p-name" itemprop="name">
+      <a class="article-title" href="/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/">Change CSS class when element scrolls into viewport</a>
+    </h1>
+  
+
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>I had a neat visual gimmick on the start page of this blog, that the gray-scaled header image of a post in the list scaled up to 100% and became colored, when the user hovered over it:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.article-inner</span> <span class="selector-class">.article-photo</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">object-fit</span>: cover;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="attribute">transform-style</span>: preserve-<span class="number">3</span>d;</span><br><span class="line">  <span class="attribute">transition</span>: all ease-out <span class="number">0.6s</span>;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.3</span>;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">1</span>) <span class="built_in">contrast</span>(<span class="number">0.5</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.article-inner</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.article-photo</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">0</span>) <span class="built_in">contrast</span>(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Nice, but a little bit useless on smartphones or tablets, where HOVER  doesn’t really work.</p>
+      
+        <p class="article-more-link">
+          <a class="button" href="/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li></ul>  
+  </div>
+
+      <div class="article-permalink">
+    <input id="article-permalink" value="https://kiko.io/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/" data-id="cko2m0ecu001cnwl95w5leubu" />
+    <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
+    <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
+</div>
+<script>
+    var copyText = document.querySelector("#article-permalink");
+    copyText.disabled = true;
+    function copyPermalink() {
+        copyText.disabled = false;
+        copyText.select();
+        document.execCommand("copy");
+        copyText.blur();
+        copyText.disabled = true;
+
+        var permalink = copyText.value;
+        copyText.classList.add("fade-out-500");
+        setTimeout(function(){
+            copyText.value = "copied to clipboard";
+            copyText.classList.remove("fade-out-500");
+            copyText.classList.add("fade-in-1000");
+            setTimeout(function() {
+                copyText.classList.add("fade-out-500");
+                setTimeout(function() {
+                    copyText.value = permalink;
+                    copyText.classList.remove("fade-out-500");
+                    setTimeout(function() {
+                        copyText.classList.remove("fade-in-1000");
+                    }, 500);
+                }, 500);
+            }, 2000);
+        }, 500);
+    }
+
+    if (navigator.share === undefined) {
+        var shareLink = document.querySelector("#action-share");
+        shareLink.style.display = "none";
+    } 
+    
+    function sharePermalink() {
+        navigator.share({
+            title: "Change CSS class when element scrolls into viewport",
+            url: "https://kiko.io/categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/",
+        })
+    }
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+    <script>
+  var body = document.getElementById("body");
+  body.classList.add("article-view");
+</script>
+  
+<article id="post-Discoveries-1" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
     <a href="/categories/Discoveries/Discoveries-1/" class="article-date">
   
     <time class="published dt-published" datetime="2020-07-12T07:55:10.000Z" itemprop="datePublished">12 Jul 2020</time>
@@ -187,9 +303,9 @@
   </div>
 
   </div>
+  
   <div class="article-inner">
     
-      
     <a href="/categories/Discoveries/Discoveries-1/">
         <img class="article-photo" src="/photos/tablet/19-05 Israel-0221.jpg" alt="Ceasarea View" />
     </a>
@@ -214,45 +330,89 @@
         
       </header>
     
-    <div class="article-entry e-content" itemprop="articleBody">
-      
-        <p>Due to my daily routine, I’m reading a lot of articles on the web regarding software development. </p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>Due to my daily routine, I’m reading a lot of articles on the web regarding software development. </p>
 <p>The most interesting stuff ends up on my Pocket list, which grows from day to day. Hard to find the pearls, when I need them. This recurring posts will throw a stroke of light on them.</p>
 <p>They are maybe not the newest finds, not the fanciest ones, but remarkable for me and maybe for you also.</p>
 
         <ul class="anchorlist">
             <li data-anchor="#pure-css-halftone">Pure CSS halftone portrait from .jpg source</li><li data-anchor="#scrolltrigger-highlight-text">ScrollTrigger - Highlight Text</li><li data-anchor="#long-press-event-handler">Tiny long-press event handler</li><li data-anchor="#show-more">Show More/Less</li><li data-anchor="#3d-banners-with-scrolltrigger">3D banners with ScrollTrigger</li><li data-anchor="#image-compare-viewer">Image Compare Viewer</li><li data-anchor="#read-progress-bar">Add Read or Scroll Progress Bar To A Website To Indicate Read Progress</li><li data-anchor="#get-pwa-into-play-store">How to Get a Progressive Web App into the Google Play Store</li>
         </ul>
-        
-          <p class="article-more-link">
-            <a class="button" href="/categories/Discoveries/Discoveries-1/">Continue reading ...</a>
-          </p>
-        
+      
+        <p class="article-more-link">
+          <a class="button" href="/categories/Discoveries/Discoveries-1/">Continue reading ...</a>
+        </p>
       
     </div>
+    
     <footer class="article-footer">      
       
   <div class="article-tags">
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Great-Finds/" rel="tag">Great Finds</a></li></ul>  
   </div>
 
-      
+      <div class="article-permalink">
+    <input id="article-permalink" value="https://kiko.io/categories/Discoveries/Discoveries-1/" data-id="cko2m0ed4001inwl961jd48t3" />
+    <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
+    <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
+</div>
+<script>
+    var copyText = document.querySelector("#article-permalink");
+    copyText.disabled = true;
+    function copyPermalink() {
+        copyText.disabled = false;
+        copyText.select();
+        document.execCommand("copy");
+        copyText.blur();
+        copyText.disabled = true;
+
+        var permalink = copyText.value;
+        copyText.classList.add("fade-out-500");
+        setTimeout(function(){
+            copyText.value = "copied to clipboard";
+            copyText.classList.remove("fade-out-500");
+            copyText.classList.add("fade-in-1000");
+            setTimeout(function() {
+                copyText.classList.add("fade-out-500");
+                setTimeout(function() {
+                    copyText.value = permalink;
+                    copyText.classList.remove("fade-out-500");
+                    setTimeout(function() {
+                        copyText.classList.remove("fade-in-1000");
+                    }, 500);
+                }, 500);
+            }, 2000);
+        }, 500);
+    }
+
+    if (navigator.share === undefined) {
+        var shareLink = document.querySelector("#action-share");
+        shareLink.style.display = "none";
+    } 
+    
+    function sharePermalink() {
+        navigator.share({
+            title: "Discoveries #1",
+            url: "https://kiko.io/categories/Discoveries/Discoveries-1/",
+        })
+    }
+</script>
+
     </footer>
   </div>
-  
+
 </article>
   
-    
-
-<script>
+    <script>
   var body = document.getElementById("body");
   body.classList.add("article-view");
 </script>
   
-<article id="post-Dopamine-How-Software-should-be" class="article article-type-post h-entry" itemscope itemprop="blogPost">
+<article id="post-Dopamine-How-Software-should-be" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
   <div class="article-meta">
-    <a class="p-author h-card" href="/about" rel="author" style="display:none;">Kristof Zerbe</a>
-    <a class="u-url u-uid" href="https://kiko.io/categories/Tools/Dopamine-How-Software-should-be/" style="display:none;">https://kiko.io/categories/Tools/Dopamine-How-Software-should-be/</a>
     <a href="/categories/Tools/Dopamine-How-Software-should-be/" class="article-date">
   
     <time class="published dt-published" datetime="2020-07-10T11:49:09.000Z" itemprop="datePublished">10 Jul 2020</time>
@@ -264,9 +424,9 @@
   </div>
 
   </div>
+  
   <div class="article-inner">
     
-      
     <a href="/categories/Tools/Dopamine-How-Software-should-be/">
         <img class="article-photo" src="/photos/tablet/19-05 Israel-0143.jpg" alt="Jaffa Antiques" />
     </a>
@@ -293,43 +453,87 @@
 
       </header>
     
-    <div class="article-entry e-content" itemprop="articleBody">
-      
-        <p>Not very often, when I’m looking for a new tool to replace some annoying or outdated piece of software, I have to blog about it … but from time to time, I’m discovering pearls, worth to lose a word about.</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>Not very often, when I’m looking for a new tool to replace some annoying or outdated piece of software, I have to blog about it … but from time to time, I’m discovering pearls, worth to lose a word about.</p>
 <p>The Windows 10 built-in media player Groove is (to be kind) … nice, but it is more or less a leftover from Microsoft’s attempt to create a competitor to iTunes, years ago. The crippeled UI is not the most modern and I was more than once annoyed about its usability.</p>
 <p>Doing a research for a good alternative, you stumble always over the usual suspects: MediaMonkey, Foobar2000, Winamp, VLC or even Media Player Classic!? Not modern enough, not user friendly enough, not lean enough.</p>
 <p>I really don’t remember where, but there was a screenshot of a player, which seems to be the complete opposite of the others: <strong>Dopamine</strong> from <a target="_blank" rel="noopener" href="https://www.digimezzo.com/software/">Digimezzo</a>, a project by the Belgian developer <a target="_blank" rel="noopener" href="https://twitter.com/RaphaelGodart">Raphaël Godart</a>…</p>
 <p><img src="/categories/Tools/Dopamine-How-Software-should-be/screenshot_dopamine_202.png" alt="Screenshot Dopamine 2.0.2."></p>
-        
-          <p class="article-more-link">
-            <a class="button" href="/categories/Tools/Dopamine-How-Software-should-be/">Continue reading ...</a>
-          </p>
-        
+      
+        <p class="article-more-link">
+          <a class="button" href="/categories/Tools/Dopamine-How-Software-should-be/">Continue reading ...</a>
+        </p>
       
     </div>
+    
     <footer class="article-footer">      
       
   <div class="article-tags">
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Great-Finds/" rel="tag">Great Finds</a></li></ul>  
   </div>
 
-      
+      <div class="article-permalink">
+    <input id="article-permalink" value="https://kiko.io/categories/Tools/Dopamine-How-Software-should-be/" data-id="cko2m0eef0033nwl91wl1ftoc" />
+    <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
+    <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
+</div>
+<script>
+    var copyText = document.querySelector("#article-permalink");
+    copyText.disabled = true;
+    function copyPermalink() {
+        copyText.disabled = false;
+        copyText.select();
+        document.execCommand("copy");
+        copyText.blur();
+        copyText.disabled = true;
+
+        var permalink = copyText.value;
+        copyText.classList.add("fade-out-500");
+        setTimeout(function(){
+            copyText.value = "copied to clipboard";
+            copyText.classList.remove("fade-out-500");
+            copyText.classList.add("fade-in-1000");
+            setTimeout(function() {
+                copyText.classList.add("fade-out-500");
+                setTimeout(function() {
+                    copyText.value = permalink;
+                    copyText.classList.remove("fade-out-500");
+                    setTimeout(function() {
+                        copyText.classList.remove("fade-in-1000");
+                    }, 500);
+                }, 500);
+            }, 2000);
+        }, 500);
+    }
+
+    if (navigator.share === undefined) {
+        var shareLink = document.querySelector("#action-share");
+        shareLink.style.display = "none";
+    } 
+    
+    function sharePermalink() {
+        navigator.share({
+            title: "Dopamine: How Software should be...",
+            url: "https://kiko.io/categories/Tools/Dopamine-How-Software-should-be/",
+        })
+    }
+</script>
+
     </footer>
   </div>
-  
+
 </article>
   
-    
-
-<script>
+    <script>
   var body = document.getElementById("body");
   body.classList.add("article-view");
 </script>
   
-<article id="post-Using-GitHub-as-Commenting-Platform" class="article article-type-post h-entry" itemscope itemprop="blogPost">
+<article id="post-Using-GitHub-as-Commenting-Platform" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
   <div class="article-meta">
-    <a class="p-author h-card" href="/about" rel="author" style="display:none;">Kristof Zerbe</a>
-    <a class="u-url u-uid" href="https://kiko.io/categories/Tools/Using-GitHub-as-Commenting-Platform/" style="display:none;">https://kiko.io/categories/Tools/Using-GitHub-as-Commenting-Platform/</a>
     <a href="/categories/Tools/Using-GitHub-as-Commenting-Platform/" class="article-date">
   
     <time class="published dt-published" datetime="2020-07-05T12:55:16.000Z" itemprop="datePublished">05 Jul 2020</time>
@@ -341,9 +545,9 @@
   </div>
 
   </div>
+  
   <div class="article-inner">
     
-      
     <a href="/categories/Tools/Using-GitHub-as-Commenting-Platform/">
         <img class="article-photo" src="/photos/tablet/D70_7530.jpg" alt="Untitled" />
     </a>
@@ -372,41 +576,85 @@
 
       </header>
     
-    <div class="article-entry e-content" itemprop="articleBody">
-      
-        <p>If you run a blog, it is always advisable to integrate a commenting system, in order to get feedback on your posts from your readers.</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>If you run a blog, it is always advisable to integrate a commenting system, in order to get feedback on your posts from your readers.</p>
 <p>So did I, when I start this blog and I decided to use the <a target="_blank" rel="noopener" href="https://disqus.com/">Disqus platform</a>, as it was very easy to integrate … but I always had a bad feeling about a third-party platform collecting data from my readers. Disqus is probably not without reason under criticism by many people in the community.</p>
 <p>As I host this blog at GitHub (see <a href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/">A New Blog (Part One): VS Code, Hexo and GitHub Pages</a>) I was looking for a solution to host the comments also on my prefered platform. There were some solutions, which uses GitHub Issues for this and wanted to implement something like that someday.</p>
-        
-          <p class="article-more-link">
-            <a class="button" href="/categories/Tools/Using-GitHub-as-Commenting-Platform/">Continue reading ...</a>
-          </p>
-        
+      
+        <p class="article-more-link">
+          <a class="button" href="/categories/Tools/Using-GitHub-as-Commenting-Platform/">Continue reading ...</a>
+        </p>
       
     </div>
+    
     <footer class="article-footer">      
       
   <div class="article-tags">
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
   </div>
 
-      
+      <div class="article-permalink">
+    <input id="article-permalink" value="https://kiko.io/categories/Tools/Using-GitHub-as-Commenting-Platform/" data-id="cko2m0ehg007mnwl9gza63y69" />
+    <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
+    <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
+</div>
+<script>
+    var copyText = document.querySelector("#article-permalink");
+    copyText.disabled = true;
+    function copyPermalink() {
+        copyText.disabled = false;
+        copyText.select();
+        document.execCommand("copy");
+        copyText.blur();
+        copyText.disabled = true;
+
+        var permalink = copyText.value;
+        copyText.classList.add("fade-out-500");
+        setTimeout(function(){
+            copyText.value = "copied to clipboard";
+            copyText.classList.remove("fade-out-500");
+            copyText.classList.add("fade-in-1000");
+            setTimeout(function() {
+                copyText.classList.add("fade-out-500");
+                setTimeout(function() {
+                    copyText.value = permalink;
+                    copyText.classList.remove("fade-out-500");
+                    setTimeout(function() {
+                        copyText.classList.remove("fade-in-1000");
+                    }, 500);
+                }, 500);
+            }, 2000);
+        }, 500);
+    }
+
+    if (navigator.share === undefined) {
+        var shareLink = document.querySelector("#action-share");
+        shareLink.style.display = "none";
+    } 
+    
+    function sharePermalink() {
+        navigator.share({
+            title: "Using GitHub as Commenting Platform",
+            url: "https://kiko.io/categories/Tools/Using-GitHub-as-Commenting-Platform/",
+        })
+    }
+</script>
+
     </footer>
   </div>
-  
+
 </article>
   
-    
-
-<script>
+    <script>
   var body = document.getElementById("body");
   body.classList.add("article-view");
 </script>
   
-<article id="post-Meaningful-automatic-versioning-with-T4" class="article article-type-post h-entry" itemscope itemprop="blogPost">
+<article id="post-Meaningful-automatic-versioning-with-T4" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
   <div class="article-meta">
-    <a class="p-author h-card" href="/about" rel="author" style="display:none;">Kristof Zerbe</a>
-    <a class="u-url u-uid" href="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/" style="display:none;">https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/</a>
     <a href="/categories/C/Meaningful-automatic-versioning-with-T4/" class="article-date">
   
     <time class="published dt-published" datetime="2020-06-27T15:57:18.000Z" itemprop="datePublished">27 Jun 2020</time>
@@ -418,9 +666,9 @@
   </div>
 
   </div>
+  
   <div class="article-inner">
     
-      
     <a href="/categories/C/Meaningful-automatic-versioning-with-T4/">
         <img class="article-photo" src="/photos/tablet/D70_7184.jpg" alt="Specialita&#39; Toscane" />
     </a>
@@ -447,45 +695,89 @@
 
       </header>
     
-    <div class="article-entry e-content" itemprop="articleBody">
-      
-        <p>Every developer has to have an idea of versioning his products. If you work with Visual Studio you have the <code>Assembly Information</code> in the project properties dialog, to enter it manually everytime you want to release a new version:</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>Every developer has to have an idea of versioning his products. If you work with Visual Studio you have the <code>Assembly Information</code> in the project properties dialog, to enter it manually everytime you want to release a new version:</p>
 <p><img src="/categories/C/Meaningful-automatic-versioning-with-T4/AssemblyInformationDialog.png" alt="Assembly Information Dialog"></p>
 <p>The four fields are: MAJOR, MINOR, BUILD, REVISION.</p>
 <p>But seriously … who does that? I guess 99% of all C# developers are entering the <code>AssemblyInfo.cs</code> and enter the famous 2 asterisks into the version declaration of BUILD and REVISION, to let Visual Studio do the incrementation job:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">assembly: AssemblyVersion(<span class="meta-string">&quot;1.0.*.*&quot;</span>)</span>]</span><br><span class="line">[<span class="meta">assembly: AssemblyFileVersion(<span class="meta-string">&quot;1.0.*.*&quot;</span>)</span>]</span><br></pre></td></tr></table></figure>
 
 <p>But this is not the end of the possibilities … Let’s do it more meaningful, with some goodies and still automatic…</p>
-        
-          <p class="article-more-link">
-            <a class="button" href="/categories/C/Meaningful-automatic-versioning-with-T4/">Continue reading ...</a>
-          </p>
-        
+      
+        <p class="article-more-link">
+          <a class="button" href="/categories/C/Meaningful-automatic-versioning-with-T4/">Continue reading ...</a>
+        </p>
       
     </div>
+    
     <footer class="article-footer">      
       
   <div class="article-tags">
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/T4/" rel="tag">T4</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Versioning/" rel="tag">Versioning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/" rel="tag">Visual Studio</a></li></ul>  
   </div>
 
-      
+      <div class="article-permalink">
+    <input id="article-permalink" value="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/" data-id="cko2m0eet003mnwl962ymdt5v" />
+    <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
+    <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
+</div>
+<script>
+    var copyText = document.querySelector("#article-permalink");
+    copyText.disabled = true;
+    function copyPermalink() {
+        copyText.disabled = false;
+        copyText.select();
+        document.execCommand("copy");
+        copyText.blur();
+        copyText.disabled = true;
+
+        var permalink = copyText.value;
+        copyText.classList.add("fade-out-500");
+        setTimeout(function(){
+            copyText.value = "copied to clipboard";
+            copyText.classList.remove("fade-out-500");
+            copyText.classList.add("fade-in-1000");
+            setTimeout(function() {
+                copyText.classList.add("fade-out-500");
+                setTimeout(function() {
+                    copyText.value = permalink;
+                    copyText.classList.remove("fade-out-500");
+                    setTimeout(function() {
+                        copyText.classList.remove("fade-in-1000");
+                    }, 500);
+                }, 500);
+            }, 2000);
+        }, 500);
+    }
+
+    if (navigator.share === undefined) {
+        var shareLink = document.querySelector("#action-share");
+        shareLink.style.display = "none";
+    } 
+    
+    function sharePermalink() {
+        navigator.share({
+            title: "Meaningful automatic versioning with T4",
+            url: "https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/",
+        })
+    }
+</script>
+
     </footer>
   </div>
-  
+
 </article>
   
-    
-
-<script>
+    <script>
   var body = document.getElementById("body");
   body.classList.add("article-view");
 </script>
   
-<article id="post-Automatic-Header-Images-in-Hexo" class="article article-type-post h-entry" itemscope itemprop="blogPost">
+<article id="post-Automatic-Header-Images-in-Hexo" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
   <div class="article-meta">
-    <a class="p-author h-card" href="/about" rel="author" style="display:none;">Kristof Zerbe</a>
-    <a class="u-url u-uid" href="https://kiko.io/categories/Tools/Automatic-Header-Images-in-Hexo/" style="display:none;">https://kiko.io/categories/Tools/Automatic-Header-Images-in-Hexo/</a>
     <a href="/categories/Tools/Automatic-Header-Images-in-Hexo/" class="article-date">
   
     <time class="published dt-published" datetime="2020-06-22T15:49:16.000Z" itemprop="datePublished">22 Jun 2020</time>
@@ -497,9 +789,9 @@
   </div>
 
   </div>
+  
   <div class="article-inner">
     
-      
     <a href="/categories/Tools/Automatic-Header-Images-in-Hexo/">
         <img class="article-photo" src="/photos/tablet/D70_7344.jpg" alt="Non Toccare" />
     </a>
@@ -528,40 +820,84 @@
 
       </header>
     
-    <div class="article-entry e-content" itemprop="articleBody">
-      
-        <p>Every article in this blog has an individual header image, to bring a little bit color into it. In this post I will show you how I deal with the images in using and automatic provisioning.</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>Every article in this blog has an individual header image, to bring a little bit color into it. In this post I will show you how I deal with the images in using and automatic provisioning.</p>
 <p>For serving these pictures I use a static folder, as described in <a href="/categories/Tools/A-New-Blog-Customizing-Hexo/">A New Blog: Customizing Hexo</a>. The hard work is done by the plugin <a target="_blank" rel="noopener" href="https://github.com/niahoo/hexo-generator-copy">Hexo Generator Copy</a>, which copies the static files into the <code>public_dir</code> while generating.</p>
-        
-          <p class="article-more-link">
-            <a class="button" href="/categories/Tools/Automatic-Header-Images-in-Hexo/">Continue reading ...</a>
-          </p>
-        
+      
+        <p class="article-more-link">
+          <a class="button" href="/categories/Tools/Automatic-Header-Images-in-Hexo/">Continue reading ...</a>
+        </p>
       
     </div>
+    
     <footer class="article-footer">      
       
   <div class="article-tags">
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
   </div>
 
-      
+      <div class="article-permalink">
+    <input id="article-permalink" value="https://kiko.io/categories/Tools/Automatic-Header-Images-in-Hexo/" data-id="cko2m0eau000anwl9d2ur696t" />
+    <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
+    <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
+</div>
+<script>
+    var copyText = document.querySelector("#article-permalink");
+    copyText.disabled = true;
+    function copyPermalink() {
+        copyText.disabled = false;
+        copyText.select();
+        document.execCommand("copy");
+        copyText.blur();
+        copyText.disabled = true;
+
+        var permalink = copyText.value;
+        copyText.classList.add("fade-out-500");
+        setTimeout(function(){
+            copyText.value = "copied to clipboard";
+            copyText.classList.remove("fade-out-500");
+            copyText.classList.add("fade-in-1000");
+            setTimeout(function() {
+                copyText.classList.add("fade-out-500");
+                setTimeout(function() {
+                    copyText.value = permalink;
+                    copyText.classList.remove("fade-out-500");
+                    setTimeout(function() {
+                        copyText.classList.remove("fade-in-1000");
+                    }, 500);
+                }, 500);
+            }, 2000);
+        }, 500);
+    }
+
+    if (navigator.share === undefined) {
+        var shareLink = document.querySelector("#action-share");
+        shareLink.style.display = "none";
+    } 
+    
+    function sharePermalink() {
+        navigator.share({
+            title: "Automatic Header Images in Hexo",
+            url: "https://kiko.io/categories/Tools/Automatic-Header-Images-in-Hexo/",
+        })
+    }
+</script>
+
     </footer>
   </div>
-  
+
 </article>
   
-    
-
-<script>
+    <script>
   var body = document.getElementById("body");
   body.classList.add("article-view");
 </script>
   
-<article id="post-Localization-with-resource-files-in-JavaScript-web-apps" class="article article-type-post h-entry" itemscope itemprop="blogPost">
+<article id="post-Localization-with-resource-files-in-JavaScript-web-apps" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
   <div class="article-meta">
-    <a class="p-author h-card" href="/about" rel="author" style="display:none;">Kristof Zerbe</a>
-    <a class="u-url u-uid" href="https://kiko.io/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/" style="display:none;">https://kiko.io/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/</a>
     <a href="/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/" class="article-date">
   
     <time class="published dt-published" datetime="2020-06-13T13:49:10.000Z" itemprop="datePublished">13 Jun 2020</time>
@@ -573,9 +909,9 @@
   </div>
 
   </div>
+  
   <div class="article-inner">
     
-      
     <a href="/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/">
         <img class="article-photo" src="/photos/tablet/19-05 Israel-0161.jpg" alt="Zern" />
     </a>
@@ -602,40 +938,84 @@
 
       </header>
     
-    <div class="article-entry e-content" itemprop="articleBody">
-      
-        <p>There are plenty of editors out there to help you writing JavaScript web applications. As I’m working in my daily life with Visual Studio, it is a obvious choice for me.</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>There are plenty of editors out there to help you writing JavaScript web applications. As I’m working in my daily life with Visual Studio, it is a obvious choice for me.</p>
 <p>One of the most time saving tools in VS is the plugin <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager">ResXManager</a>, which is an awesome assistant on managing the translations for a Desktop- or ASP.NET-App, which uses XML-based RESX files.</p>
-        
-          <p class="article-more-link">
-            <a class="button" href="/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/">Continue reading ...</a>
-          </p>
-        
+      
+        <p class="article-more-link">
+          <a class="button" href="/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/">Continue reading ...</a>
+        </p>
       
     </div>
+    
     <footer class="article-footer">      
       
   <div class="article-tags">
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Localization/" rel="tag">Localization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Resource/" rel="tag">Resource</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/" rel="tag">Visual Studio</a></li></ul>  
   </div>
 
-      
+      <div class="article-permalink">
+    <input id="article-permalink" value="https://kiko.io/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/" data-id="cko2m0eel003enwl94kyv5hxe" />
+    <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
+    <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
+</div>
+<script>
+    var copyText = document.querySelector("#article-permalink");
+    copyText.disabled = true;
+    function copyPermalink() {
+        copyText.disabled = false;
+        copyText.select();
+        document.execCommand("copy");
+        copyText.blur();
+        copyText.disabled = true;
+
+        var permalink = copyText.value;
+        copyText.classList.add("fade-out-500");
+        setTimeout(function(){
+            copyText.value = "copied to clipboard";
+            copyText.classList.remove("fade-out-500");
+            copyText.classList.add("fade-in-1000");
+            setTimeout(function() {
+                copyText.classList.add("fade-out-500");
+                setTimeout(function() {
+                    copyText.value = permalink;
+                    copyText.classList.remove("fade-out-500");
+                    setTimeout(function() {
+                        copyText.classList.remove("fade-in-1000");
+                    }, 500);
+                }, 500);
+            }, 2000);
+        }, 500);
+    }
+
+    if (navigator.share === undefined) {
+        var shareLink = document.querySelector("#action-share");
+        shareLink.style.display = "none";
+    } 
+    
+    function sharePermalink() {
+        navigator.share({
+            title: "Localization with resource files in JavaScript web apps",
+            url: "https://kiko.io/categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/",
+        })
+    }
+</script>
+
     </footer>
   </div>
-  
+
 </article>
   
-    
-
-<script>
+    <script>
   var body = document.getElementById("body");
   body.classList.add("article-view");
 </script>
   
-<article id="post-TFS-DevOps-Delete-Remote-Workspace" class="article article-type-post h-entry" itemscope itemprop="blogPost">
+<article id="post-TFS-DevOps-Delete-Remote-Workspace" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
   <div class="article-meta">
-    <a class="p-author h-card" href="/about" rel="author" style="display:none;">Kristof Zerbe</a>
-    <a class="u-url u-uid" href="https://kiko.io/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/" style="display:none;">https://kiko.io/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/</a>
     <a href="/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/" class="article-date">
   
     <time class="published dt-published" datetime="2020-02-27T23:00:00.000Z" itemprop="datePublished">28 Feb 2020</time>
@@ -647,9 +1027,9 @@
   </div>
 
   </div>
+  
   <div class="article-inner">
     
-      
     <a href="/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/">
         <img class="article-photo" src="/photos/tablet/18-09 Kroatien-0061.jpg" alt="Untitled" />
     </a>
@@ -672,96 +1052,72 @@
         
       </header>
     
-    <div class="article-entry e-content" itemprop="articleBody">
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>If you are working with freelance developers and Azure DevOps/TFS with TFVC (Team Foundation Version Control) in your company, maybe this will look familiar to you: You hire a new freelancer and you want to reuse the hardware, including the complete software setup, to bring him/her to work as fast and straightforward as possible. You set up a new Azure Devops account with all necessary permissions and you think you’re done. No you are not…</p>
       
-        <p>If you are working with freelance developers and Azure DevOps/TFS with TFVC (Team Foundation Version Control) in your company, maybe this will look familiar to you: You hire a new freelancer and you want to reuse the hardware, including the complete software setup, to bring him/her to work as fast and straightforward as possible. You set up a new Azure Devops account with all necessary permissions and you think you’re done. No you are not…</p>
-        
-          <p class="article-more-link">
-            <a class="button" href="/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/">Continue reading ...</a>
-          </p>
-        
+        <p class="article-more-link">
+          <a class="button" href="/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/">Continue reading ...</a>
+        </p>
       
     </div>
+    
     <footer class="article-footer">      
       
   <div class="article-tags">
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TFS-DevOps/" rel="tag">TFS/DevOps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/" rel="tag">Visual Studio</a></li></ul>  
   </div>
 
-      
-    </footer>
-  </div>
-  
-</article>
-  
-    
-
+      <div class="article-permalink">
+    <input id="article-permalink" value="https://kiko.io/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/" data-id="cko2m0efy004qnwl9fayahaah" />
+    <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
+    <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
+</div>
 <script>
-  var body = document.getElementById("body");
-  body.classList.add("article-view");
+    var copyText = document.querySelector("#article-permalink");
+    copyText.disabled = true;
+    function copyPermalink() {
+        copyText.disabled = false;
+        copyText.select();
+        document.execCommand("copy");
+        copyText.blur();
+        copyText.disabled = true;
+
+        var permalink = copyText.value;
+        copyText.classList.add("fade-out-500");
+        setTimeout(function(){
+            copyText.value = "copied to clipboard";
+            copyText.classList.remove("fade-out-500");
+            copyText.classList.add("fade-in-1000");
+            setTimeout(function() {
+                copyText.classList.add("fade-out-500");
+                setTimeout(function() {
+                    copyText.value = permalink;
+                    copyText.classList.remove("fade-out-500");
+                    setTimeout(function() {
+                        copyText.classList.remove("fade-in-1000");
+                    }, 500);
+                }, 500);
+            }, 2000);
+        }, 500);
+    }
+
+    if (navigator.share === undefined) {
+        var shareLink = document.querySelector("#action-share");
+        shareLink.style.display = "none";
+    } 
+    
+    function sharePermalink() {
+        navigator.share({
+            title: "TFS/DevOps: Delete Remote Workspace",
+            url: "https://kiko.io/categories/Tools/TFS-DevOps-Delete-Remote-Workspace/",
+        })
+    }
 </script>
-  
-<article id="post-Better-Input-Change-Event" class="article article-type-post h-entry" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a class="p-author h-card" href="/about" rel="author" style="display:none;">Kristof Zerbe</a>
-    <a class="u-url u-uid" href="https://kiko.io/categories/JavaScript/Better-Input-Change-Event/" style="display:none;">https://kiko.io/categories/JavaScript/Better-Input-Change-Event/</a>
-    <a href="/categories/JavaScript/Better-Input-Change-Event/" class="article-date">
-  
-    <time class="published dt-published" datetime="2019-11-26T15:51:17.000Z" itemprop="datePublished">26 Nov 2019</time>
-  
-</a>
-    
-  <div class="article-category category-javascript p-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
-  </div>
 
-  </div>
-  <div class="article-inner">
-    
-      
-    <a href="/categories/JavaScript/Better-Input-Change-Event/">
-        <img class="article-photo" src="/photos/tablet/19-05 Israel-0624.jpg" alt="Jerusalem Seat" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-
-
-        
-  
-    <h1 class="p-name" itemprop="name">
-      <a class="article-title" href="/categories/JavaScript/Better-Input-Change-Event/">Better Input Change Event</a>
-    </h1>
-  
-
-        
-      </header>
-    
-    <div class="article-entry e-content" itemprop="articleBody">
-      
-        <p>Often it is important to trigger an event, after the user of your website/web app has filled out an text input. You have to do something with the given value in JavaScript.</p>
-<p>The intended event for this is <code>change</code>, which will be triggered, when the user has ended changing by leaving the input with his cursor, mostly by using the TAB key. This works at some degree, if there is a physical keyboard, but not really on mobile devices … and for me is leaving the field often too late to start the upcoming event.</p>
-        
-          <p class="article-more-link">
-            <a class="button" href="/categories/JavaScript/Better-Input-Change-Event/">Continue reading ...</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li></ul>  
-  </div>
-
-      
     </footer>
   </div>
-  
+
 </article>
   
 
@@ -803,6 +1159,12 @@
         
           <li>
             
+              <a href="/categories/Photo-Editing/Triangulate-your-images-with-Triangula/">Triangulate your images with Triangula</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/categories/JavaScript/Forking-Hexo-plugin-hexo-index-anything/">Forking Hexo plugin &#39;hexo-index-anything&#39;</a>
             
           </li>
@@ -822,12 +1184,6 @@
           <li>
             
               <a href="/categories/Tools/Spice-Up-Windows-Terminal/"><b>Update: </b>Spice Up Windows Terminal</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/categories/Misc/Adding-Screenshots-to-Trello-Cards-on-Android/">Adding Screenshots to Trello Cards on Android</a>
             
           </li>
         

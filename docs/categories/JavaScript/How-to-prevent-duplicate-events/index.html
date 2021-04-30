@@ -197,7 +197,9 @@
   body.classList.add("article-view");
 </script>
   
-<article id="post-How-to-prevent-duplicate-events" class="article article-type-post h-entry" itemscope itemprop="blogPost">
+<article id="post-How-to-prevent-duplicate-events" 
+         class="article article-type-post h-entry" itemscope itemprop="blogPost">
+  
   <div class="article-meta">
     <a class="p-author h-card" href="/about" rel="author" style="display:none;">Kristof Zerbe</a>
     <a class="u-url u-uid" href="https://kiko.io/categories/JavaScript/How-to-prevent-duplicate-events/" style="display:none;">https://kiko.io/categories/JavaScript/How-to-prevent-duplicate-events/</a>
@@ -212,6 +214,7 @@
   </div>
 
   </div>
+  
   <div class="article-inner">
     
     
@@ -231,9 +234,9 @@
         
       </header>
     
+    
     <div class="article-entry e-content" itemprop="articleBody">
-      
-        <p>I’m working on a new web app that contains a sliding out panel with some additional information on the selected element. This panel can be closed by the user via the ESC key. The implementation on initializing the panel seems very straight forward:</p>
+      <p>I’m working on a new web app that contains a sliding out panel with some additional information on the selected element. This panel can be closed by the user via the ESC key. The implementation on initializing the panel seems very straight forward:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Panel</span>() </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">init</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">&quot;keydown&quot;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(event.key === <span class="string">&quot;Escape&quot;</span>)&#123;</span><br><span class="line">        <span class="comment">//close the panel</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>Problem is: the panel, which is part of the basic HTML, will be initialized with its content and functionality in a ES6 class. So … on every init, another event listener is added.</p>
@@ -250,67 +253,19 @@
 <p>Works!</p>
 <p><img src="/categories/JavaScript/How-to-prevent-duplicate-events/chromedevtools-one-listener.png" alt="Chrome DevTools: One Event Listener"></p>
 
-      
     </div>
+    
     <footer class="article-footer">      
       
   <div class="article-tags">
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Events/" rel="tag">Events</a></li></ul>  
   </div>
 
-      
-        <div class="article-permalink">
-    <input id="article-permalink" value="https://kiko.io/categories/JavaScript/How-to-prevent-duplicate-events/" data-id="cknzr0v4a002650l9hhorg29h" />
-    <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
-    <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
-</div>
-<script>
-    var copyText = document.querySelector("#article-permalink");
-    copyText.disabled = true;
-    function copyPermalink() {
-        copyText.disabled = false;
-        copyText.select();
-        document.execCommand("copy");
-        copyText.blur();
-        copyText.disabled = true;
-
-        var permalink = copyText.value;
-        copyText.classList.add("fade-out-500");
-        setTimeout(function(){
-            copyText.value = "copied to clipboard";
-            copyText.classList.remove("fade-out-500");
-            copyText.classList.add("fade-in-1000");
-            setTimeout(function() {
-                copyText.classList.add("fade-out-500");
-                setTimeout(function() {
-                    copyText.value = permalink;
-                    copyText.classList.remove("fade-out-500");
-                    setTimeout(function() {
-                        copyText.classList.remove("fade-in-1000");
-                    }, 500);
-                }, 500);
-            }, 2000);
-        }, 500);
-    }
-
-    if (navigator.share === undefined) {
-        var shareLink = document.querySelector("#action-share");
-        shareLink.style.display = "none";
-    } 
-    
-    function sharePermalink() {
-        navigator.share({
-            title: "How to prevent duplicate events",
-            url: "https://kiko.io/categories/JavaScript/How-to-prevent-duplicate-events/",
-        })
-    }
-</script>
-
-      
     </footer>
+    
   </div>
-  
-    <div class="article-comments">
+
+  <div class="article-comments">
   <div id="comment-placeholder"></div>
   <script>
     window.addEventListener('load', function () {
@@ -318,7 +273,7 @@
     })    
   </script>
 </div>
-    
+  
   <div class="article-related">
     <h2>Related</h2>
     <div class="archives">
@@ -468,7 +423,7 @@
     </div>
   </div>
 
-    
+  
 <nav id="article-nav">
   
     <a href="/categories/Tools/Use-and-manage-multiple-Node-js-versions-on-Windows-10/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -488,7 +443,7 @@
   
 </nav>
 
-  
+
 </article></main>
           
             <aside id="sidebar">
@@ -519,6 +474,12 @@
         
           <li>
             
+              <a href="/categories/Photo-Editing/Triangulate-your-images-with-Triangula/">Triangulate your images with Triangula</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/categories/JavaScript/Forking-Hexo-plugin-hexo-index-anything/">Forking Hexo plugin &#39;hexo-index-anything&#39;</a>
             
           </li>
@@ -538,12 +499,6 @@
           <li>
             
               <a href="/categories/Tools/Spice-Up-Windows-Terminal/"><b>Update: </b>Spice Up Windows Terminal</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/categories/Misc/Adding-Screenshots-to-Trello-Cards-on-Android/">Adding Screenshots to Trello Cards on Android</a>
             
           </li>
         

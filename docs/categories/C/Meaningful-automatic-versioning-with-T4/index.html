@@ -197,7 +197,9 @@
   body.classList.add("article-view");
 </script>
   
-<article id="post-Meaningful-automatic-versioning-with-T4" class="article article-type-post h-entry" itemscope itemprop="blogPost">
+<article id="post-Meaningful-automatic-versioning-with-T4" 
+         class="article article-type-post h-entry" itemscope itemprop="blogPost">
+  
   <div class="article-meta">
     <a class="p-author h-card" href="/about" rel="author" style="display:none;">Kristof Zerbe</a>
     <a class="u-url u-uid" href="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/" style="display:none;">https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/</a>
@@ -212,6 +214,7 @@
   </div>
 
   </div>
+  
   <div class="article-inner">
     
     
@@ -235,9 +238,9 @@
 
       </header>
     
+    
     <div class="article-entry e-content" itemprop="articleBody">
-      
-        <p>Every developer has to have an idea of versioning his products. If you work with Visual Studio you have the <code>Assembly Information</code> in the project properties dialog, to enter it manually everytime you want to release a new version:</p>
+      <p>Every developer has to have an idea of versioning his products. If you work with Visual Studio you have the <code>Assembly Information</code> in the project properties dialog, to enter it manually everytime you want to release a new version:</p>
 <p><img src="/categories/C/Meaningful-automatic-versioning-with-T4/AssemblyInformationDialog.png" alt="Assembly Information Dialog"></p>
 <p>The four fields are: MAJOR, MINOR, BUILD, REVISION.</p>
 <p>But seriously … who does that? I guess 99% of all C# developers are entering the <code>AssemblyInfo.cs</code> and enter the famous 2 asterisks into the version declaration of BUILD and REVISION, to let Visual Studio do the incrementation job:</p>
@@ -333,67 +336,19 @@
 <p><img src="/categories/C/Meaningful-automatic-versioning-with-T4/screencast-build-hexocommander.gif" alt="Screencast Build HexoCommander"></p>
 <p>Enjoy versioning…</p>
 
-      
     </div>
+    
     <footer class="article-footer">      
       
   <div class="article-tags">
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/T4/" rel="tag">T4</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Versioning/" rel="tag">Versioning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/" rel="tag">Visual Studio</a></li></ul>  
   </div>
 
-      
-        <div class="article-permalink">
-    <input id="article-permalink" value="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/" data-id="cknzr0v4h002m50l93tptcmrh" />
-    <a id="action-copy" class="article-action" href="javascript:copyPermalink();"></a>
-    <a id="action-share" class="article-action" href="javascript:sharePermalink();"></a>
-</div>
-<script>
-    var copyText = document.querySelector("#article-permalink");
-    copyText.disabled = true;
-    function copyPermalink() {
-        copyText.disabled = false;
-        copyText.select();
-        document.execCommand("copy");
-        copyText.blur();
-        copyText.disabled = true;
-
-        var permalink = copyText.value;
-        copyText.classList.add("fade-out-500");
-        setTimeout(function(){
-            copyText.value = "copied to clipboard";
-            copyText.classList.remove("fade-out-500");
-            copyText.classList.add("fade-in-1000");
-            setTimeout(function() {
-                copyText.classList.add("fade-out-500");
-                setTimeout(function() {
-                    copyText.value = permalink;
-                    copyText.classList.remove("fade-out-500");
-                    setTimeout(function() {
-                        copyText.classList.remove("fade-in-1000");
-                    }, 500);
-                }, 500);
-            }, 2000);
-        }, 500);
-    }
-
-    if (navigator.share === undefined) {
-        var shareLink = document.querySelector("#action-share");
-        shareLink.style.display = "none";
-    } 
-    
-    function sharePermalink() {
-        navigator.share({
-            title: "Meaningful automatic versioning with T4",
-            url: "https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/",
-        })
-    }
-</script>
-
-      
     </footer>
+    
   </div>
-  
-    <div class="article-comments">
+
+  <div class="article-comments">
   <div id="comment-placeholder"></div>
   <script>
     window.addEventListener('load', function () {
@@ -401,8 +356,8 @@
     })    
   </script>
 </div>
-    
-    
+  
+  
 <nav id="article-nav">
   
     <a href="/categories/Tools/Using-GitHub-as-Commenting-Platform/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -422,7 +377,7 @@
   
 </nav>
 
-  
+
 </article></main>
           
             <aside id="sidebar">
@@ -453,6 +408,12 @@
         
           <li>
             
+              <a href="/categories/Photo-Editing/Triangulate-your-images-with-Triangula/">Triangulate your images with Triangula</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/categories/JavaScript/Forking-Hexo-plugin-hexo-index-anything/">Forking Hexo plugin &#39;hexo-index-anything&#39;</a>
             
           </li>
@@ -472,12 +433,6 @@
           <li>
             
               <a href="/categories/Tools/Spice-Up-Windows-Terminal/"><b>Update: </b>Spice Up Windows Terminal</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/categories/Misc/Adding-Screenshots-to-Trello-Cards-on-Android/">Adding Screenshots to Trello Cards on Android</a>
             
           </li>
         
