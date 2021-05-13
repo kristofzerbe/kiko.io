@@ -122,6 +122,12 @@ In case you work with the default Hexo theme 'landscape', I advise you to split 
          class="article article-type-<%= post.layout %> h-entry" itemscope itemprop="blogPost">
   
   <div class="article-meta">
+
+    <div class="h-card p-author" style="display:none">
+      <img class="u-photo" src="<%- config.photo %>" alt="<%- config.author %>" />
+      <a class="p-name u-url" href="<%- config.url %>" rel="author"><%- config.author %></a>
+    </div>
+
     <%- partial('post/date', { class_name: 'article-date dt-published', date_format: 'DD MMM YYYY' }) %>
     <%- partial('post/category', { class_name: 'article-category p-category' }) %>
   </div>
