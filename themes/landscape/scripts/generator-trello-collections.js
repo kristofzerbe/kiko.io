@@ -7,6 +7,8 @@ const axios = require('axios');
 hexo.extend.generator.register("trello-collections", async function(locals) {
   let config = this.config;
 
+  if (config.offline === true) { return null; }
+
   let promises = [];
   let result = [];
   

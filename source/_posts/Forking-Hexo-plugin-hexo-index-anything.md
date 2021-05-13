@@ -2,6 +2,7 @@
 title: "Forking Hexo plugin 'hexo-index-anything'"
 subtitle: Introducing its successor 'hexo-generator-anything'
 date: 2021-04-25 13:41:46
+hitcountId: 9CPeoK9BL
 photograph:
   file: 20-08 Mallorca-7200.jpg
   name: Red Golden Leafs

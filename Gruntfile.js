@@ -91,6 +91,7 @@ module.exports = function(grunt){
           'themes/landscape/assets/luminous/luminous.js',
           'themes/landscape/assets/AutoTyping.js',
           'themes/landscape/assets/utterances-comment.js',
+          'themes/landscape/assets/webmentions.js',
           'themes/landscape/assets/vanilla-back-to-top.js',
           'themes/landscape/assets/jquery-fullsizable/jquery-fullsizable.js'
         ],
@@ -148,6 +149,6 @@ module.exports = function(grunt){
   grunt.registerTask('clean', ['_clean']);
   grunt.registerTask('bundle', ['concat', 'cssmin', 'uglify', 'copy', '_clean:tmp']);
   grunt.registerTask('build', ['hexo:clean', 'hexo:generate']);
-  grunt.registerTask('default', ['concat', 'cssmin', 'uglify', 'copy', '_clean:tmp', 'hexo:generate']);
+  grunt.registerTask('default', ['concat', 'cssmin', 'uglify', 'copy', '_clean:tmp', 'hexo:clean', 'hexo:generate']);
   grunt.registerTask('all', ['gitclone', 'concat', 'cssmin', 'uglify', 'copy', '_clean:tmp', 'hexo:clean', 'hexo:generate']);
 };

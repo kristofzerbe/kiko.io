@@ -1,0 +1,157 @@
+{
+	// Place your kiko.io workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"hexo.kiko-io.blockquote": {
+		"scope": "markdown",
+		"prefix": "hexo.kiko-io.blockquote",
+		"body": [
+			"{% blockquote_alt \"${1:cite}\" \"${2:citeUrl}\" %}",
+  			"${3:content}",
+			"{% endblockquote_alt %}"
+		],
+		"description": "Insert kiko.io's blockquote"
+	},
+
+	"hexo.kiko-io.alertbox": {
+		"scope": "markdown",
+		"prefix": "hexo.kiko-io.alertbox",
+		"body": [
+			"{% alertbox ${1|exclamation,question,warning,info,success|} %}",
+  			"${2:content}",
+			"{% endalertbox %}"
+		],
+		"description": "Insert kiko.io's alertbox"
+	},
+	"hexo.kiko-io.anchorlist": {
+		"scope": "markdown",
+		"prefix": "hexo.kiko-io.anchorlist",
+		"body": [
+			"{% anchorlist ${1:[title|anchor-id]} %}"
+		],
+		"description": "Insert kiko.io's anchorlist"
+	},
+	"hexo.kiko-io.codepen": {
+		"scope": "markdown",
+		"prefix": "hexo.kiko-io.codepen",
+		"body": [
+			"{% codepen \"${1:slugHash}\" \"${2:title}\" \"${3:defaultTabs}\" ${4:height} ${5:width} %}"
+		],
+		"description": "Insert kiko.io's codepen"
+	},
+	"hexo.kiko-io.codesandbox": {
+		"scope": "markdown",
+		"prefix": "hexo.kiko-io.codesandbox",
+		"body": [
+			"{% codesandbox ${1:\"slugHash}\" \"${2:title}\" %}"
+		],
+		"description": "Insert kiko.io's codesandbox"
+	},
+	"hexo.kiko-io.details_blockquote": {
+		"scope": "markdown",
+		"prefix": "hexo.kiko-io.details_blockquote",
+		"body": [
+			"{% details_blockquote \"${1:summary}\" \"${2:cite}\" \"${3:citeUrl}\" %}",
+  			"${4:quote}",
+			"{% enddetails_blockquote %}"
+		],
+		"description": "Insert kiko.io's details_blockquote"
+	},
+	"hexo.kiko-io.discovery": {
+		"scope": "markdown",
+		"prefix": "hexo.kiko-io.discovery",
+		"body": [
+			"{% discovery \"${1:title}\" \"${2:author}\" \"${3:url}\" \"${4:assetFolder}\" \"${5:imgFile}\" %}",
+  			"${6:content}",
+			"{% enddiscovery %}"
+		],
+		"description": "Insert kiko.io's discovery"
+	},
+	"hexo.kiko-io.download_link": {
+		"scope": "markdown",
+		"prefix": "hexo.kiko-io.download_link",
+		"body": [
+			"{% download_link \"${1:addCaption}\" \"${2:file}\" %}"
+		],
+		"description": "Insert kiko.io's download_link"
+	},
+	"hexo.kiko-io.image_compare": {
+		"scope": "markdown",
+		"prefix": "hexo.kiko-io.image_compare",
+		"body": [
+			"{% image_compare \"${1:id}\" \"${2:imgFileOriginal}\" \"${3:imgFileModified}\" \"${4:modDesc}\" \"${5:orientation}\" %}"
+		],
+		"description": "Insert kiko.io's image_compare"
+	},
+	"hexo.kiko-io.image_link": {
+		"scope": "markdown",
+		"prefix": "hexo.kiko-io.image_link",
+		"body": [
+			"{% image_link \"${1:path}\" \"${2:url}\" \"${3:alt}\" %}"
+		],
+		"description": "Insert kiko.io's download_link"
+	},
+	"hexo.kiko-io.moreinfo": {
+		"scope": "markdown",
+		"prefix": "hexo.kiko-io.moreinfo",
+		"body": [
+			"{% moreinfo '{ \"list\": [",
+			"  [ ${1:\"PUBLISHER\"}, ${2:\"TITLE\"},",
+			"  ${3:\"URL\"} ]$0",
+			"]}' %}"
+		],
+		"description": "Insert kiko.io's moreinfo"
+	},
+	"hexo.kiko-io.moreinfo.item": {
+		"scope": "markdown",
+		"prefix": "hexo.kiko-io.moreinfo.item",
+		"body": [
+			"[ ${1:\"PUBLISHER\"}, ${2:\"TITLE\"},", 
+			"${3:\"URL\"} ]$0"
+		],
+		"description": "Insert kiko.io's moreinfo item"
+	},
+	"hexo.kiko-io.post_permalink": {
+		"scope": "markdown",
+		"prefix": "hexo.kiko-io.post_permalink",
+		"body": [
+			"{% post_permalink ${1:[slug]} %}"
+		],
+		"description": "Insert kiko.io's post_permalink"
+	},
+	"hexo.kiko-io.pre_highlight": {
+		"scope": "markdown",
+		"prefix": "hexo.kiko-io.pre_highlight",
+		"body": [
+			"{% pre_highlight %}",
+  			"${1:content}",
+			"{% endpre_highlight %}"
+		],
+		"description": "Insert kiko.io's PRE Highlight element"
+	},
+	"hexo.kiko-io.source": {
+		"scope": "markdown",
+		"prefix": "hexo.kiko-io.source",
+		"body": [
+			"{% source ${1:[title]} ${2:[url]} ${3:[category]} ${4:[assetFolder]} ${5:[imgFile]} %}",
+  			"${6:content}",
+			"{% endsource %}"
+		],
+		"description": "Insert kiko.io's source"
+	},
+
+}

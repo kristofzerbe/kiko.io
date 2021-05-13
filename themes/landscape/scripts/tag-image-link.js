@@ -5,7 +5,7 @@
   {% image_link [path] [url] [alt] %}
 
 */
-hexo.extend.tag.register('download_link', function (args) {
+hexo.extend.tag.register('image_link', function (args) {
     
   const [
     path,

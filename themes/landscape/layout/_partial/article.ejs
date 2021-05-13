@@ -14,7 +14,7 @@
     <a class="p-author h-card" href="/about" rel="author" style="display:none;">Kristof Zerbe</a>
     <a class="u-url u-uid" href="<%- post.permalink %>" style="display:none;"><%- post.permalink %></a>
     <%- partial('post/date', { class_name: 'article-date', date_format: 'DD MMM YYYY' }) %>
-    <%- partial('post/category', { class_name: 'article-category' }) %>
+    <%- partial('post/category', { class_name: 'article-category p-category' }) %>
   </div>
   
   <div class="article-inner">
@@ -22,8 +22,8 @@
     <% if (post.link || post.title){ %>
       <header class="article-header">
         <%- partial('post/anything', { class_name: 'article-anything' }) %>
-        <%- partial('post/title', { class_name: 'article-title', show_link: false }) %>
-        <%- partial('post/subtitle', { class_name: 'article-subtitle' }) %>
+        <%- partial('post/title', { class_name: 'article-title p-name', show_link: false }) %>
+        <%- partial('post/subtitle', { class_name: 'article-subtitle p-summary' }) %>
       </header>
     <% } %>
     
@@ -38,6 +38,7 @@
 
   </div>
 
+  <%- partial('post/webmentions') %>
   <%- partial('post/comments') %>
   <%- partial('post/related') %>
   <%- partial('post/nav') %>

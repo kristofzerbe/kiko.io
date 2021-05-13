@@ -1,12 +1,13 @@
 ---
 title: Hexo and the IndieWeb
 subtitle: Make your blog ready for social interaction via Webmentions
-hitcountId:
-date: 2021-05-02 12:00:00
+date: 2021-05-05 19:15:00
+hitcountId: cU8XoOPbV
 photograph:
   file: DSC_5088.jpg
   name: Steel Flower
   link: 'https://500px.com/photo/82409209'
+series: IndieWeb
 categories:
   - Tools
 tags:
@@ -15,10 +16,9 @@ tags:
   - Publishing
   - Share
 related:
-  - Using-GitHub-as-Commenting-Platform
-  - Show-related-posts-in-Hexo
-  - Pimping-the-Permalink
-hidden: true
+  - Hexo-and-the-IndieWeb-Sending-Webmentions
+  - Hexo-and-the-IndieWeb-Receiving-Webmentions
+# hidden: true
 ---
 
 It is cool to publish your thoughts on your own blog under your only domain and not only on big social media platforms, because that way you keep control over your content. But what makes Facebook, Twitter and others "social" is the interaction between the people. Likes, Retweets, Mentions, Replies are the fuel which drives them. But most of the blogging solutions offers only rudimentary interactions, in form of article comments. The comment hurdle is high because interacting on someone else's site is different from interacting on what is supposed to be your own, such as your Twitter or Facebook feed.
@@ -31,80 +31,44 @@ In this article I will only briefly go into the basics and then show an implemen
 
 ---
 
-## Terminology & Basic Concepts
+## Basic Concepts
 
-There are a lot of posts out there which explains the basic concepts of the IndieWeb and Webmentions in particular and you will stumble upon some terms, which has to be explained:
+Nothing describes the flow of Webmentions better than this:
 
-<details>
-  <summary>Personal Domain</summary>
-  <blockquote>... is a domain name that you personally own, control, and use to represent yourself on the internet. Getting a personal domain is the first step towards getting on the indieweb, and is therefore a requirement for IndieMark Level 1</blockquote>
-  <cite><a href="https://indieweb.org/personal-domain">indieweb.org (Personal Domain)</a></cite>
-</details>
+{% blockquote_alt "Drew McLellan" "https://allinthehead.com/retro/378/implementing-webmentions" %}
+1. Frankie posts a blog entry.
+2. Alex has thoughts in response, so also posts a blog entry linking to Frankie’s.
+3. Alex’s publishing software finds the link and fetches Frankie’s post, finding the URL of Frankie’s Webmention endpoint in the document.
+4. Alex’s software sends a notification to the endpoint.
+5. Frankie’s software then fetches Alex’s post to verify that it really does link back, and then chooses how to display the reaction alongside Frankie’s post.
+{% endblockquote_alt %}
 
-<details>
-  <summary>Microformats</summary>
-  <blockquote>... are small patterns of HTML to represent commonly published things like people, events, blog posts, reviews and tags in web pages. They are the quickest & simplest way to provide an API to the information on your website.</blockquote>
-  <cite><a href="http://microformats.org/">microformats.org (Wiki)</a></cite>
-</details>
+Basically Webmentions allow notifications between **web addresses**, therefore every post, which is part of the interaction, has to have a unique [permalink](https://en.wikipedia.org/wiki/Permalink).
 
-<details>
-  <summary>POSSE</summary>
-  <blockquote>... is an abbreviation for Publish (on your) Own Site, Syndicate Elsewhere, the practice of posting content on your own site first, then publishing copies or sharing links to third parties (like social media silos) with original post links to provide viewers a path to directly interacting with your content.</blockquote>
-  <cite><a href="https://indieweb.org/POSSE">indieweb.org (POSSE)</a></cite>
-</details>
-
-<details>
-  <summary>Backfeed</summary>
-  <blockquote>... is the process of syndicating interactions on your POSSE copies back (AKA reverse syndicating) to your original posts.</blockquote>
-  <cite><a href="https://indieweb.org/backfeed">indieweb.org (Backfeed)</a></cite>
-</details>
-
-<details>
-  <summary>Webmentions</summary>
-  <blockquote>... is a web standard for mentions and conversations across the web, a powerful building block that is used for a growing federated network of comments, likes, reposts, and other rich interactions across the decentralized social web.</blockquote>
-  <cite><a href="https://indieweb.org/Webmention">indieweb.org (Webmention)</a></cite>
-</details>
-
-<details>
-  <summary>Web sign-in</summary>
-  <blockquote>... is signing in to websites using your personal web address (without having to use your e-mail address). Web sign-in supersedes OpenID.</blockquote>
-  <cite><a href="https://indieweb.org/Web_sign-in">indieweb.org (Web sign-in)</a></cite>
-</details>
-
-<details>
-  <summary>RelMeAuth</summary>
-  <blockquote>...is an authentication method that uses personal URL for identity that rel-me link to established OAuth provider(s) to perform the actual authentication.</blockquote>
-  <cite><a href="https://indieweb.org/RelMeAuth">indieweb.org (RelMeAuth)</a></cite>
-  <blockquote>... is a proposed open standard for using rel="me" links to profiles on oauth supporting services to authenticate via either those profiles or your own site. RelMeAuth is the technology behind Web sign-in.</blockquote>
-  <cite><a href="http://microformats.org/wiki/RelMeAuth">microformats.org (RelMeAuth)</a></cite>
-</details>
-
-<details>
-  <summary>IndieAuth</summary>
-  <blockquote>... is a federated login protocol for Web sign-in, enabling users to use their own domain to sign in to other sites and services.</blockquote>
-  <cite><a href="https://indieweb.org/IndieAuth">indieweb.org (IndieAuth)</a></cite>
-</details>
-
-All these concepts describe aspects of the technical implementation in a blog software to become part of the automated social interaction.
-
-Four things has to be supported:
+A blog software that wants to support webmentions must cover 4 main points:
 
 1. The HTML has to tell others who you are
-2. The HTML has to give basic informations about your articles (posts)
+2. The HTML has to give dedicated informations about your posts
 3. Sending a message to another blog, in case you mentioned one of its posts
 4. Reveiving messages from other blogs, in case they mentioned one of your posts
 
-Point 3 is probably the most interesting for all of us, because it pats our own ego on the back, since we usually don't write for ourselves, but for others, and reactions to it show us that it wasn't pointless.
+Point 4 is probably the most interesting for all of us, because it pats our own ego on the back, since we usually don't write for ourselves, but for others, and reactions to it, show us that it wasn't pointless.
 
 ---
 
 ## Step 1: The Personal & Profile HTML
 
+As you want to interact with other blogs participating in the IndieWeb with your posts, they have to know something about you and your articles in a machine-readable form.
+
 ### Personal Information
 
-HTML is machine-readable per se, but you have to tell others what to look for to get specific information about you, like your name, your mail-address or links to other profiles f.e. Github, Twitter and so on.
+HTML is machine-readable per se, but you have to tell others what to look for by adding defined classes to the tags which holds the information, in order to enable them to get specific information about you, like your name, your mail-address or links to other profiles f.e. Github, Twitter and so on.
 
-It is necessary to have this information not only in an ABOUT page, but also on each post page. You can achieve this either by having an ABOUT block like here on kiko.io or providing the information in hidden HTML tags elsewhere in your HTML. It does not matter which tags you use, you only have to add a defined  class to the tag of a particular information in your Hexo EJS file. The information will be extracted out of the tag's inner text.
+It is necessary to have this information not only in an ABOUT page, but also on each post page. You can achieve this either by having an ABOUT block like here on kiko.io or providing the information in hidden HTML tags elsewhere in your HTML.
+
+It does not matter which tags you use, you only have to add the defined class to the tag of a particular information in your Hexo EJS file. The information will be extracted out of the tag's inner text.
+
+<!-- more -->
 
 The most used classes for personal blogs as follows:
 
@@ -128,9 +92,9 @@ Please keep in mind not to give too much information about you to the public. It
 
 For providing links to other profiles, anchor (``A``) tags with the special attribute [``rel="me"``](http://microformats.org/wiki/rel-me) will be used, which indicates profile equivalence and can be used for [identity-consolidation](http://microformats.org/wiki/identity-consolidation).
 
-With this extension of you blog HTML, you are able to sign in using your domain at sites which provide **Web Sign-In** over the concept of **RelMeAuth**, for example thos who use [**IndieAuth**](https://indieauth.com/). You only have to make sure, that the endpoints of your profile links have **backlinks to your blog** with a ``rel="me``". Unfortunately, not many services offer the definition of such a backlink. Github, for example, is an exception.
+With this extension of your blog HTML, you are able to sign in using your domain at sites which supports **Web Sign-In** over the concept of **RelMeAuth**, for example those who use [**IndieAuth.net - OAuth for the open web**](https://indieauth.net/). You only have to make sure, that the endpoints of your profile links have **backlinks to your blog** with a ``rel="me``". Unfortunately, not many services offer the definition of such a backlink. Github, for example, is an exception. You can give it a try at [IndieAuth.com](https://indieauth.com/).
 
-### Example
+#### Example
 
 {% asset_img about-markup.png %}
 
@@ -138,11 +102,11 @@ With this extension of you blog HTML, you are able to sign in using your domain 
 
 ## Step 2: The Article HTML
 
-Tagging posts with meta information for the IndieWeb is similarly simple, by adding following classes in your article.ejs file:
+Tagging articles with meta information for the IndieWeb is similarly simple, by adding following classes in your article.ejs file:
 
 |Class|Information|
 |---|---|
-|[**h-entry**](http://microformats.org/wiki/h-entry)|Wrapper for all post related information|
+|[**h-entry**](http://microformats.org/wiki/h-entry)|Wrapper for all article related information|
 |**p-name**|Title|
 |**p-summary**|Short summary|
 |**e-content**|Content| 
@@ -150,22 +114,22 @@ Tagging posts with meta information for the IndieWeb is similarly simple, by add
 |**dt-updated**|Update date|
 |**u-url**|Permalink|
 
-In case you work with the default Hexo theme 'landscape', I advise you to split your ``article.ejs`` in two files, because it is used for the article itself and for the excerpts on the start page and archive pages also. I have made an ``excerpt.ejs`` with all the information needed for listing the posts and cut back my ``article.ejs`` to the bare minimum, but with the IndieWeb related classes above (of course in the linked partials), because only the article page itself should have these informations, respectively an ``h-entry`` class, to indicate that there are IndieWeb data!
+In case you work with the default Hexo theme 'landscape', I advise you to split your ``article.ejs`` in two files, because it is used for the article itself and for the excerpts on the start page and archive pages also. I have made an ``excerpt.ejs`` with all the information needed for listing the posts and cut back my ``article.ejs`` to the bare minimum, but with the IndieWeb related classes above (or in the linked partials if necessary), because only the article page itself should have these informations, respectively an ``h-entry`` class, to indicate that there are IndieWeb data!
 
-```html article.ejs
+```html layout/_partial/article.ejs
 
 <article id="<%= post.layout %>-<%= post.slug %>" 
          class="article article-type-<%= post.layout %> h-entry" itemscope itemprop="blogPost">
   
   <div class="article-meta">
-    <%- partial('post/date', { class_name: 'article-date', date_format: 'DD MMM YYYY' }) %>
-    <%- partial('post/category', { class_name: 'article-category' }) %>
+    <%- partial('post/date', { class_name: 'article-date dt-published', date_format: 'DD MMM YYYY' }) %>
+    <%- partial('post/category', { class_name: 'article-category p-category' }) %>
   </div>
   
   <div class="article-inner">
     <header class="article-header">
-      <%- partial('post/title', { class_name: 'article-title', show_link: false }) %>
-      <%- partial('post/subtitle', { class_name: 'article-subtitle' }) %>
+      <%- partial('post/title', { class_name: 'article-title p-name', show_link: false }) %>
+      <%- partial('post/subtitle', { class_name: 'article-subtitle p-summary' }) %>
     </header>
     
     <div class="article-entry e-content" itemprop="articleBody">
@@ -174,7 +138,7 @@ In case you work with the default Hexo theme 'landscape', I advise you to split 
     
     <footer class="article-footer">      
       <%- partial('post/tag', { class_name: 'article-tags' }) %>
-      <%- partial('post/permalink', { class_name: 'article-permalink' }) %>
+      <%- partial('post/permalink', { class_name: 'article-permalink u-url' }) %>
     </footer>
   </div>
 
@@ -185,32 +149,161 @@ In case you work with the default Hexo theme 'landscape', I advise you to split 
 </article>
 ```
 
+### External Links
+
+The Interaction with other blogs takes place through linking to those external sources in the content of your article.
+
+Lets say you want to write about a specific topic and to mention the work of another developer, then you just place a link to his post in your Markdown, as you have been doing all along:
+
+```md /source/_posts/my-fancy-post.md
+# My Fancy Post
+...
+Jack has done a wonderful job with his [Awesome Work](https://jacks-blog.com/awesome-work)
+...
+```
+
+It will be transformed while generating into something like that:
+
+```html /output/.../my-fancy-post/index.html
+<body>
+  ...
+  <article class="h-entry">
+    ...
+    <div class="article-inner">
+      <header class="article-header">
+        <h1 class="p-name">My Fancy Post</h1>
+      </header>
+      <div class="article-entry e-content">
+        ...
+        <p>
+          Jack has done a wonderful job with his <a href="https://jacks-blog.com/awesome-work">Awesome Work</a>.
+        </p>
+        ...
+      </div>
+      ...
+    </div>
+    ...
+  </article>
+  ...
+</body>
+```
+
+In the terms of the IndieWeb concept, your post will a be an [article](https://indieweb.org/article), which mentions other posts, as the old-fashioned pingbacks do.
+
 ---
 
-## Step 3: Sending Webmentions
+## Special Post Formats
 
-After you have created your new Hexo post with ``hexo new post "My Post"`` and spend a couple of minutes/hours/days on writing meaningful text, you publish it by running ``hexo generate`` and copying the generated HTML to your server. Next step would be to inform all the blogs you linked to in your post that you have done just that. You want to send **Webmentions**.
+A true interaction takes place, when you are posting in a certain syndication context ... with a [note](https://indieweb.org/note) as a [response](https://indieweb.org/responses) to the work of others, mainly by adding additional classes to the external link:
 
-Doing this together with generating or uploading is suboptimal, because you only want to do this once and preferably for all links in your article ... and in an automated way.
+* [u-in-reply-to](https://indieweb.org/reply) ... to indicate that your post is a **reply** to a post as part of a conversation
+* [u-like-of](https://indieweb.org/like) ... to indicate that your post is a **like**
+* [u-repost-of](https://indieweb.org/repost) ... to indicate that your post is a **repost** (100% re-publication)
+* [u-bookmark-of](https://indieweb.org/bookmark) ... to indicate that your post is a **bookmark**
 
-A good solution is to use [**webmention.app**](https://webmention.app/) from Remy Sharp for creating a separate [Hexo Console](https://hexo.io/api/console.html) Command, which calls Remy's service for the newly generated post URL.
+Every response type can have additional information about your post and the syndication of it.
+
+### Example REPLY
+
+```html
+<body>
+  ...
+  <div class="h-entry">
+    <p>
+      In reply to: <a class="u-in-reply-to" href="https://jacks-blog.com/awesome-work">Jacks Blog: Awesome Work</a>
+    </p>
+    <p class="p-name e-content">
+      Jack, you have done a wonderful job!
+    </p>
+    ...
+  </div>
+  ...
+</body>
+```
+
+### Example LIKE
+
+```html
+<body>
+  ...
+  <div class="h-entry">
+    <p class="p-summary">
+      Kristof liked <a class="u-like-of" href="https://jacks-blog.com/awesome-work">Jacks Awesome Work at https://jacks-blog.com/awesome-work</a>
+    </p>
+    ...
+  </div>
+  ...
+</body>
+```
+
+{% alertbox exclamation %}
+Currently, I would not recommend writing responses as a normal post in Hexo, as it is based on structured text, that best describes the IndieWeb concept of an ARTICLE.<br>**As this post is part of a new series called [IndieWeb](/series/indieweb/), I will post a solution for responses is the near future.**
+{% endalertbox %}
 
 ---
 
-## Step 4: Receiving Webmentions
+## Verification
+
+To check all your changes, you can use [IndieWebify.Me (Level 1 & 2)](https://indiewebify.me/):
+
+{% asset_img indiewebify-me-level1+2.png %}
+
+---
+
+{% alertbox info %}
+This was supposed to be just one post, but it got longer and longer and so I split it into 3 parts. Don't miss Part 2: {% post_link Hexo-and-the-IndieWeb-Sending-Webmentions "Hexo and the IndieWeb (Sending Webmentions)" %} ...
+{% endalertbox %}
+
+---
+
+## Terminology
+There are a lot of posts out there which explains the basic concepts of the IndieWeb and Webmentions in particular and you will stumble upon some terms, which has to be explained:
+
+{% details_blockquote "Personal Domain" "indieweb.org (Personal Domain)" "https://indieweb.org/personal-domain" %}
+... is a domain name that you personally own, control, and use to represent yourself on the internet. Getting a personal domain is the first step towards getting on the indieweb, and is therefore a requirement for IndieMark Level 1
+{% enddetails_blockquote %}
+
+{% details_blockquote "Microformats" "microformats.org (Wiki)" "http://microformats.org/" %}
+... are small patterns of HTML to represent commonly published things like people, events, blog posts, reviews and tags in web pages. They are the quickest & simplest way to provide an API to the information on your website.
+{% enddetails_blockquote %}
+
+{% details_blockquote "POSSE" "indieweb.org (POSSE)" "https://indieweb.org/POSSE" %}
+... is an abbreviation for Publish (on your) Own Site, Syndicate Elsewhere, the practice of posting content on your own site first, then publishing copies or sharing links to third parties (like social media silos) with original post links to provide viewers a path to directly interacting with your content.
+{% enddetails_blockquote %}
+
+{% details_blockquote "Backfeed" "indieweb.org (Backfeed)" "https://indieweb.org/backfeed" %}
+... is the process of syndicating interactions on your POSSE copies back (AKA reverse syndicating) to your original posts.
+{% enddetails_blockquote %}
+
+{% details_blockquote "Web sign-in" "indieweb.org (Web sign-in)" "https://indieweb.org/Web_sign-in" %}
+... is signing in to websites using your personal web address (without having to use your e-mail address). Web sign-in supersedes OpenID.
+{% enddetails_blockquote %}
+
+{% details_blockquote "RelMeAuth" "microformats.org (RelMeAuth)" "http://microformats.org/wiki/RelMeAuth" %}
+... is a proposed open standard for using rel="me" links to profiles on oauth supporting services to authenticate via either those profiles or your own site. RelMeAuth is the technology behind Web sign-in.
+{% enddetails_blockquote %}
+
+{% details_blockquote "IndieAuth" "indieweb.org (IndieAuth)" "https://indieweb.org/IndieAuth" %}
+... is a federated login protocol for Web sign-in, enabling users to use their own domain to sign in to other sites and services.
+{% enddetails_blockquote %}
 
 ---
 
 {% moreinfo '{ "list": [
-  [ "Max Böck", "Using Webmentions in Eleventy",
-  "https://mxb.dev/blog/using-webmentions-on-static-sites/" ],
-  [ "Sia Karamalegos", "An In-Depth Tutorial of Webmentions + Eleventy","https://sia.codes/posts/webmentions-eleventy-in-depth/" ],
-  ["Paul Kinlan", "Using Web Mentions in a static site (Hugo)", "https://paul.kinlan.me/using-web-mentions-in-a-static-sitehugo/"],
-  ["Paul Kinlan", "Webmention.app", "https://paul.kinlan.me/webmention-app/"],
-  [ "Remy Sharp", "Send Outgoing Webmentions", 
-  "https://remysharp.com/2019/06/18/send-outgoing-webmentions" ],
-  [ "Bryce Wray", "Webmentions in three SSGs: Part 1", 
+  [ "A List Apart", "Webmentions: Enabling Better Communication on the Internet",
+  "https://alistapart.com/article/webmentions-enabling-better-communication-on-the-internet/"],
+  [ "indieweb.org", "Getting Started",
+  "https://indieweb.org/Getting_Started"],
+  [ "indieweb.org", "How to set up web sign-in on your own domain",
+  "https://indieweb.org/How_to_set_up_web_sign-in_on_your_own_domain"],
+  [ "indieweb.org", "IndieWeb Examples",
+  "https://indieweb.org/Webmention-developer#IndieWeb_Examples"],
+  [ "Bryce Wray", "Webmentions in three SSGs: Part 1",
   "https://brycewray.com/posts/2020/04/webmentions-three-ssgs-1" ],
-  [ "Several (Forum)", "Anyone for Webmention?", 
+  [ "Keith J. Grant", "Adding Webmention Support to a Static Site",
+  "https://keithjgrant.com/posts/2019/02/adding-webmention-support-to-a-static-site/"],
+  [ "Alessio Caiazza", "Articles tagged ´indieweb´",
+  "https://abisso.org/stream/tags/indieweb/" ],
+  [ "* (Forum)", "Anyone for Webmention?",
   "https://discourse.gohugo.io/t/anyone-for-webmention/10411" ]
 ]}' %}

@@ -2,7 +2,7 @@
 title: 'Discoveries #9'
 subtitle:
 date: 2021-04-20 11:02:14
-hitcountId:
+hitcountId: lj98pQkbb
 photograph:
   file: DSC_0190.jpg
   name: Pipes & Wheels

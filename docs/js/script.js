@@ -157,6 +157,53 @@
 
 //})(jQuery);
 
+function initPermalink(postId) {
+  let wrapper = document.querySelector("#article-permalink-" + postId);
+  let input = wrapper.querySelector("input.article-permalink-value");
+  let copy = wrapper.querySelector("a.action-copy");
+  let share = wrapper.querySelector("a.action-share");
+
+  input.disabled = true;
+
+  copy.addEventListener("click", event => {
+    input.disabled = false;
+    input.select();
+    document.execCommand("copy");
+    input.blur();
+    input.disabled = true;
+
+    var permalink = input.value;
+    input.classList.add("fade-out-500");
+    setTimeout(function(){
+        input.value = "copied to clipboard";
+        input.classList.remove("fade-out-500");
+        input.classList.add("fade-in-1000");
+        setTimeout(function() {
+            input.classList.add("fade-out-500");
+            setTimeout(function() {
+                input.value = permalink;
+                input.classList.remove("fade-out-500");
+                setTimeout(function() {
+                    input.classList.remove("fade-in-1000");
+                }, 500);
+            }, 500);
+        }, 2000);
+    }, 500);
+  });
+
+  if (navigator.share === undefined) {
+    share.style.display = "none";
+  } else {
+    share.addEventListener("click", event => {
+      navigator.share({
+        title: input.dataset.title,
+        url: input.value,
+      })
+    });
+  }
+
+}
+
 function initScrollAnchorLink() {
   /* Smooth scroll to anchor link
   * Automatically detects the hash and scroll smoothly to anchor link with URL hashchange
@@ -226,14 +273,14 @@ function setThemeDark() {
   document.documentElement.setAttribute('data-theme', 'dark');    
   toggleTheme.checked = true;
   setCodepenTheme();
-  //setHitCount(hitcountConfig);
+  setHitCount(hitcountConfig);
 }
 function setThemeLight() {
   localStorage.setItem('theme', 'light');
   document.documentElement.setAttribute('data-theme', 'light');  
   toggleTheme.checked = false;
   setCodepenTheme();
-  //setHitCount(hitcountConfig);
+  setHitCount(hitcountConfig);
 }
 
 function setCodepenTheme() {
@@ -266,15 +313,15 @@ function setHitCount(config) {
         "&size=" + config.size + 
         "&digits=" + config.digits;
     
-    const hitcounter = `
+    const hitcount = `
       <a href="${config.webUrl}" target="__blank">
         <img alt="Hitcount" src="${imgUrl}" />
       </a>
     `;
 
-    const wrapper = document.getElementById("hitcounter");
+    const wrapper = document.getElementById("hitcount");
     if (!wrapper.querySelector("a img")) {
-      wrapper.insertAdjacentHTML('afterbegin', hitcounter);
+      wrapper.insertAdjacentHTML('afterbegin', hitcount);
     } else {
       wrapper.querySelector("a img").src = imgUrl;
     }

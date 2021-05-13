@@ -6,7 +6,7 @@
     <div class="inner">
         <div id="footer-info" class="footer-block">
           &copy; <%= date(new Date(), 'YYYY') %> <a href="https://github.com/kristofzerbe"><%= config.author || config.title %></a><br>
-          <%= __('powered_by') %> <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/" target="_blank">GitHub</a>  
+          <%= __('powered_by') %> <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>  
         </div>
         <ul id="footer-menu" class="footer-block">
           <% for (var i in theme.footer_menu){ %>
@@ -16,16 +16,18 @@
                 </a>
             </li>
           <% } %>
-        </ul>  
+        </ul>
+        <% if (config.offline === false) { %>
         <div id="footer-bmc" class="footer-block">
           <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" 
                   data-name="bmc-button" data-slug="kikoio" 
                   data-font="Cookie" data-text="Buy me a coffee" data-emoji="" 
                   data-color="#55555" data-outline-color="#fff" data-font-color="#fff" data-coffee-color="#fd0" ></script>
         </div>
+        <% } %>
         <ul id="footer-dots">
-          <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" target="_blank" title="SearchConsole"></a></li>
-          <li id="hitcounter"></li>
+          <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+          <li id="hitcount"></li>
         </ul>      
     </div>
   </div>
