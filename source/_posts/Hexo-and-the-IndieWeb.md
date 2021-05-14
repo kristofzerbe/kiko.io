@@ -20,6 +20,7 @@ related:
   - Hexo-and-the-IndieWeb-Receiving-Webmentions
 # hidden: true
 ---
+{% indienews %}
 
 It is cool to publish your thoughts on your own blog under your only domain and not only on big social media platforms, because that way you keep control over your content. But what makes Facebook, Twitter and others "social" is the interaction between the people. Likes, Retweets, Mentions, Replies are the fuel which drives them. But most of the blogging solutions offers only rudimentary interactions, in form of article comments. The comment hurdle is high because interacting on someone else's site is different from interacting on what is supposed to be your own, such as your Twitter or Facebook feed.
 

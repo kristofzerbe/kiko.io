@@ -319,12 +319,13 @@ function setHitCount(config) {
       </a>
     `;
 
-    const wrapper = document.getElementById("hitcount");
-    if (!wrapper.querySelector("a img")) {
-      wrapper.insertAdjacentHTML('afterbegin', hitcount);
-    } else {
-      wrapper.querySelector("a img").src = imgUrl;
-    }
+    // TODO: temporarily shut down
+    // const wrapper = document.getElementById("hitcount");
+    // if (!wrapper.querySelector("a img")) {
+    //   wrapper.insertAdjacentHTML('afterbegin', hitcount);
+    // } else {
+    //   wrapper.querySelector("a img").src = imgUrl;
+    // }
   }
 }
 
