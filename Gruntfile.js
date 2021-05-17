@@ -137,7 +137,7 @@ module.exports = function(grunt){
           root: '/',
           cliCmd: 'generate'
         }
-      },
+      }
     }    
   });
 

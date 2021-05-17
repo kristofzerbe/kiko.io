@@ -10,10 +10,6 @@ function insertWebmentions(key) {
   const lsTimestamp = "wmts_" + key;
   const lsWebmentions = "wm_" + key;
 
-  const currentUrl = window.location.href;
-  //TEST: const currentUrl = "https://mxb.dev/blog/using-webmentions-on-static-sites/";
-  const wmUrl = `https://webmention.io/api/mentions.jf2?target=${currentUrl}&per-page=100&sort-dir=up`;
-
   let lastRequest;
   let webmentions;
 
@@ -37,8 +33,19 @@ function insertWebmentions(key) {
    * Load webmention.io's JSON data for the current page
    */
   async function load() {
-    const response = await fetch(wmUrl);
-    webmentions = await response.json();
+
+    const wmUrl = `https://webmention.io/api/mentions.jf2?target=${window.location.href}&per-page=100&sort-dir=up`;
+    const wmResponse = await fetch(wmUrl);
+    webmentions = await wmResponse.json();
+
+    //HACK: for changed permalinks in 05/2021
+    if (document.querySelector("input[name=alias]")) {
+      const aliasUrl = `https://webmention.io/api/mentions.jf2?target=${document.querySelector("input[name=alias]").value}&per-page=100&sort-dir=up`;
+      const aliasResponse = await fetch(aliasUrl);
+      aliasWebmentions = await aliasResponse.json();
+      webmentions.children = [...aliasWebmentions.children, ...webmentions.children];
+    }
+
     localStorage.setItem(lsWebmentions, JSON.stringify(webmentions));
     localStorage.setItem(lsTimestamp, Date.now());
   }

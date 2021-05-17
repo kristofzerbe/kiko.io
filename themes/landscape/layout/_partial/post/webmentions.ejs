@@ -16,7 +16,7 @@
     <label for="webmention-form-source">Your Article URL:</label><br>
     <input class="webmention-form-source" type="url" name="source" 
            placeholder="https://your-blog.com/your-article" required="">
-    <input type="hidden" name="target" value="<%- post.permalink %>>">
+    <input type="hidden" name="target" value="<%- post.permalink %>">
     <input type="submit" value="Send Webmention">
   </form>
   
@@ -25,5 +25,9 @@
       insertWebmentions('<%- post.slug.toLowerCase() %>');
     });
   </script>
+
+  <% if (post.alias){ %>
+    <input type="hidden" name="alias" value="<%- config.url + post.alias.replace('index.html', '') %>">
+  <% } %>
 
 </div>

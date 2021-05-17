@@ -8,6 +8,8 @@ const front = require('hexo-front-matter');
 const fs = require('hexo-fs');
 
 hexo.on('new', function(data) {
+    //return; 
+
     log.info("Processing Photo...");
 
     var post = front.parse(data.content);

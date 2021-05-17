@@ -22,8 +22,12 @@ timezone: Europe/Berlin
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://kiko.io
 root: /
-permalink: categories/:category/:title/
+#OLD: permalink: categories/:category/:title/
+permalink: :title.html
 permalink_defaults:
+# Plugin hexo-plugin-permalink-no-folder
+permalink_no_folder: true
+permalink_no_folder_replacement: post/
 
 # Directory
 source_dir: source
@@ -42,7 +46,7 @@ new_post_name: :title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link:
-  enable: true # Open external links in new tab
+  enable: false # Open external links in new tab
   field: site #Applies to the whole site or post only
 filename_case: 0
 render_drafts: false
@@ -51,7 +55,7 @@ marked:
   prependRoot: true
   postAsset: true
 relative_link: false
-future: true
+future: false
 highlight:
   enable: true
   line_number: true
@@ -88,6 +92,13 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: landscape
+
+# Include/Exclude files/folders in source folder
+#include:
+#exclude:
+
+# Ignore files/folders in all folders
+#ignore:
 
 # Stylus https://github.com/hexojs/hexo-renderer-stylus
 stylus:
