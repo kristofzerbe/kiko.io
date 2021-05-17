@@ -22,7 +22,7 @@ related:
 ---
 
 {% alertbox info %}
-This is part three of the splitted original post {% post_link Hexo-and-the-IndieWeb "Hexo and the IndieWeb" %}. Don't miss Part 2 {% post_link Hexo-and-the-IndieWeb-Sending-Webmentions "Hexo and the IndieWeb (Sending Webmentions)" %} either.
+This is part three of the splitted original post {% post_link 2021/Hexo-and-the-IndieWeb "Hexo and the IndieWeb" %}. Don't miss Part 2 {% post_link 2021/Hexo-and-the-IndieWeb-Sending-Webmentions "Hexo and the IndieWeb (Sending Webmentions)" %} either.
 {% endalertbox %}
 
 ---
@@ -137,7 +137,7 @@ Other occuring fields are optional, but no less interesting for displaying them 
 |``content.html``|Content as HTML of sending post|
 |``content.text``|Content as text of sending post|
 
-The fact that we get the complete HTML content of the sending post, means that we easily can parse it for IndieWeb microformats (see {% post_link Hexo-and-the-IndieWeb "Part 1" %}) to get even more information about it and the blog owner!
+The fact that we get the complete HTML content of the sending post, means that we easily can parse it for IndieWeb microformats (see {% post_link 2021/Hexo-and-the-IndieWeb "Part 1" %}) to get even more information about it and the blog owner!
 
 ---
 
@@ -310,7 +310,7 @@ You can download the complete JavaScript- and the Stylus file on Github:
 
 ### Form for sending Webmentions manually
 
-As you may noticed in {% post_link Hexo-and-the-IndieWeb-Sending-Webmentions "Part 2" %}, some manual work is necessary to have webmentions sent. Therefore, it is good to give the user a possibility to submit his blog post, where he mentions yours, directly. As webmentions.io supports posting a new source, the HTML form is quite simple an we can integrate it in the partial from above, below the script tag:
+As you may noticed in {% post_link 2021/Hexo-and-the-IndieWeb-Sending-Webmentions "Part 2" %}, some manual work is necessary to have webmentions sent. Therefore, it is good to give the user a possibility to submit his blog post, where he mentions yours, directly. As webmentions.io supports posting a new source, the HTML form is quite simple an we can integrate it in the partial from above, below the script tag:
 
 ```html layout/_partial/post/webmentions.ejs
 <div class="article-webmentions">
@@ -353,7 +353,7 @@ The only thing you have to do, is to allow Bridgy to access your social media da
 
 ## Summary
 
-Some people say, Webmentions makes commenting forms on blogs, like Disqus or others, obsolete, but I don't agree with that, because not every visitor owns a blog and not every blog owner want's to write a post only to comment the thoughts of another blogger. Both approaches work well side by side and complement each other. Webmentions are super to build a blog network and  increasing your blogs coverage. As I said in {% post_link Hexo-and-the-IndieWeb "Part 1" %} ... we write for readers.
+Some people say, Webmentions makes commenting forms on blogs, like Disqus or others, obsolete, but I don't agree with that, because not every visitor owns a blog and not every blog owner want's to write a post only to comment the thoughts of another blogger. Both approaches work well side by side and complement each other. Webmentions are super to build a blog network and  increasing your blogs coverage. As I said in {% post_link 2021/Hexo-and-the-IndieWeb "Part 1" %} ... we write for readers.
 
 ---
 

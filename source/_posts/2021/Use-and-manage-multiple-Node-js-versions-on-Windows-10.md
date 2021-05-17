@@ -24,7 +24,7 @@ For a new project I needed to have Node 14 running on my Windows 10 machine, so 
 
 A short time later I wanted to write a new blog post here on kiko.io, which depends on the Node.js based static site generator [Hexo](https://hexo.io) ... and ran into several problems.
 
-First of all my hero image processing script (see {% post_link Automatic-Header-Images-in-Hexo %}) returned an exception. The script uses [hexo-fs](https://github.com/hexojs/hexo-fs) and the problem is known quite some time, according to this [Github issue](https://github.com/hexojs/hexo/issues/4263). The guys recommend to downgrade to an older version of Node.js ... :(
+First of all my hero image processing script (see {% post_link 2020/Automatic-Header-Images-in-Hexo %}) returned an exception. The script uses [hexo-fs](https://github.com/hexojs/hexo-fs) and the problem is known quite some time, according to this [Github issue](https://github.com/hexojs/hexo/issues/4263). The guys recommend to downgrade to an older version of Node.js ... :(
 
 Ok ... I needed a solution to install multiple Node.js versions and switch between them, depending on which project I want to work on ... and there is one: **[nvm-windows](https://github.com/coreybutler/nvm-windows)** by Corey Butler!
 
