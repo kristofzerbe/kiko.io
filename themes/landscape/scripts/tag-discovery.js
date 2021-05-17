@@ -18,7 +18,7 @@ hexo.extend.tag.register("discovery", function(args, content){
   assetFolder = args[3];
   imgFile = args[4];
 
-  imgSrc = hexo.config.root + hexo.config.category_dir + "/Discoveries/" + assetFolder + "/" + imgFile;
+  imgSrc = imgFile;
   anchorId = imgFile.split('.')[0];
 
   content = hexo.render.renderSync({ text: content, engine: 'markdown' });
