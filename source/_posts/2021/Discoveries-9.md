@@ -14,9 +14,9 @@ categories:
 tags:
   - Great Finds
 related:
-  - 'Discoveries-8'
-  - 'Discoveries-7'
-  - 'Discoveries-6'
+  - Discoveries-10
+  - Discoveries-8
+  - Discoveries-7
 ---
 
 Todays issue is all about extending your Web Developers toolbox with some useful libraries to provide the best UX to your users or visitors. Tables, Dropdowns, Color Pickers, Footnotes and GDPR dialogs on steroids.

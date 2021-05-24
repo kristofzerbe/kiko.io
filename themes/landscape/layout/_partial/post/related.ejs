@@ -5,9 +5,11 @@
       <% post.related.forEach(function(item) { %>
         <% 
           var posts = site.posts.filter(function(post) {
-            return post.slug.toLowerCase() === item.toLowerCase();
+            let slugArray = post.slug.split("/"); //due to subfolders
+            let slug = slugArray[slugArray.length - 1];
+            return slug.toLowerCase() === item.toLowerCase();
           });
-          posts.each(function(post) { //console.log(p);
+          posts.each(function(post) {
         %>
         <%- partial('../archive-post', { post: post, show_link: true }) %>
         <%

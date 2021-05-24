@@ -12,9 +12,9 @@ categories:
 tags:
   - Great Finds
 related:
-  - Discoveries-#PART-1
-  - Discoveries-#PART-2
-  - Discoveries-#PART-3
+  - Discoveries-X
+  - Discoveries-Y
+  - Discoveries-Z
 ---
 
 {% anchorlist 

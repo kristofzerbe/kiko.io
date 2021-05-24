@@ -15,7 +15,6 @@ tags:
   - Windows
   - Theming
   - PowerShell
-related:
 ---
 
 Working with the PowerShell in 2020 means fun, because of the new [**Windows Terminal** (get it from Windows Store)](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701). It has more power as the old Powershell Console and it is visually adaptable to your personal taste, by installing the wonderful theming engine [**oh-my-posh** from Jan De Dobbeleer](https://github.com/JanDeDobbeleer/oh-my-posh).
