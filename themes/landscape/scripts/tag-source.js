@@ -10,15 +10,13 @@
 
 hexo.extend.tag.register("source", function(args, content){
 
-  var title, url, category, assetFolder, imgFile, imgSrc;
+  var title, url, imgFile, imgSrc;
 
   title = args[0];
   url = args[1];
-  category = args[2];
-  assetFolder = args[3];
-  imgFile = args[4];
+  imgFile = args[2];
 
-  imgSrc = hexo.config.root + hexo.config.category_dir + "/" + category + "/" + assetFolder + "/" + imgFile;
+  imgSrc = imgFile;
 
   content = hexo.render.renderSync({ text: content, engine: 'markdown' });
 
