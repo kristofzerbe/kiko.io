@@ -47,44 +47,13 @@
 </div>
 
 <script>
-  new lc_select('select[name="category"]', {
+  let lcCategory = new lc_select('select[name="category"]', {
       enable_search: true,
       on_change: function(new_value, target_field) {
-        let i = 0;
-        document.querySelectorAll(".card").forEach(item => {
-          i += 1;
-          let tags = item.getAttribute("data-tags").split(";");
-          var found = new_value.every(r => tags.indexOf(r) >= 0);
-          if (!found) {
-            if (!item.classList.contains("hide")) {
-              item.classList.add("hide");
-              setTimeout(() => { item.style.display = "none"; }, 300);
-            }
-          } else {
-            if (item.classList.contains("hide")) {
-              item.style.display = "block";
-              setTimeout(() => { item.classList.remove("hide"); }, 100);
-            }
-          }
-        });
-        setTimeout(() => { 
-            initViewportImage();
-
-            var resultCount = document.querySelectorAll(".card:not(.hide)").length;
-            let resultElement = document.querySelector(".lcslt-wrapper .result");
-            var totalCount = parseInt(resultElement.dataset.total);
-
-            if (resultCount === totalCount) {
-              resultElement.textContent = totalCount + " items total";
-            } else if(resultCount === 0) {
-              resultElement.textContent = "no items found";
-            } else {
-              resultElement.textContent = resultCount + ((resultCount === 1) ? " item " : " items ") + "found"
-            }
-          }, 300);
+        filterCards(new_value);
       }
   });
-  new lc_select('select.sorting', {
+  let lcSorting = new lc_select('select.sorting', {
     enable_search: false,
     on_change: function(new_value, target_field) {
       let field = document.querySelector("#sorting-field").value;
@@ -97,6 +66,42 @@
       }, 300);
     }
   });
+
+  function filterCards(new_value) {
+    //console.log("NV:" + new_value);
+    let i = 0;
+    document.querySelectorAll(".card").forEach(item => {
+      i += 1;
+      let tags = item.getAttribute("data-tags").split(";");
+      var found = new_value.every(r => tags.indexOf(r) >= 0);
+      if (!found) {
+        if (!item.classList.contains("hide")) {
+          item.classList.add("hide");
+          setTimeout(() => { item.style.display = "none"; }, 300);
+        }
+      } else {
+        if (item.classList.contains("hide")) {
+          item.style.display = "block";
+          setTimeout(() => { item.classList.remove("hide"); }, 100);
+        }
+      }
+    });
+    setTimeout(() => { 
+        initViewportImage();
+
+        var resultCount = document.querySelectorAll(".card:not(.hide)").length;
+        let resultElement = document.querySelector(".lcslt-wrapper .result");
+        var totalCount = parseInt(resultElement.dataset.total);
+
+        if (resultCount === totalCount) {
+          resultElement.textContent = totalCount + " items total";
+        } else if(resultCount === 0) {
+          resultElement.textContent = "no items found";
+        } else {
+          resultElement.textContent = resultCount + ((resultCount === 1) ? " item " : " items ") + "found"
+        }
+      }, 300);
+  }
 
   function sortCards(field, dir) {
     $('.grid').find('.card').sort(function (a, b) {
@@ -117,5 +122,27 @@
         return minuend - subtrahend;
       }
     }).appendTo('.grid');
+  }
+
+  function filterByTag(e) {
+    let select = document.getElementById("category");
+    // let current = [...select.selectedOptions].map(option => option.value)
+    // console.log(current);
+
+    let options = Array.from(select.querySelectorAll("option"));
+    let selOption = e.textContent;
+
+    //REPLACE option
+    options.forEach(o => {
+      o.selected = (o.value == selOption);
+    });
+    //ADD option: options.find(c => c.value == selOption).selected = true;
+
+    const resyncEvent = new Event('lc-select-refresh');
+    select.dispatchEvent(resyncEvent);
+
+    filterCards(Array(1).fill(selOption));
+
+    return false;
   }
 </script>

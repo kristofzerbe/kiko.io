@@ -1,9 +1,9 @@
 <div class="card" 
-     data-tags="<%= item.labels.join(";") %>"
-     data-string-title="<%- item.name %>" 
-     data-id="<%- item.id %>"
-     data-position="<%- item.position %>"
-     data-date-last-activity="<%- item.dateLastActivity %>">
+    data-tags="<%= item.labels.join(";") %>"
+    data-string-title="<%- item.name %>" 
+    data-id="<%- item.id %>"
+    data-position="<%- item.position %>"
+    data-date-last-activity="<%- item.dateLastActivity %>">
   <a class="card-img" href="<%- item.link %>">
     <img src="<%- item.image.url %>" />
   </a>
@@ -11,7 +11,7 @@
   <small><a href="<%- item.link %>"><%- item.link %></a></small>
   <div class="tags">
     <% for(var j=0; j < item.labels.length; j++) { %>
-      <span><%- item.labels[j] %></span>
+      <a class="tag" href="#" onclick="return filterByTag(this);"><%- item.labels[j] %></a>
     <% } %>
   </div>
   <p><%- item.description %></p>

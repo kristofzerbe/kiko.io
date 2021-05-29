@@ -148,7 +148,6 @@ module.exports = function(grunt){
   grunt.registerTask('fonts', ['gitclone', 'copy', '_clean:tmp']);  
   grunt.registerTask('default', ['_clean']);
   grunt.registerTask('bundle', ['concat', 'cssmin', 'uglify', 'copy', '_clean:tmp']);
-  grunt.registerTask('hexo', ['hexo:clean', 'hexo:generate']);
   grunt.registerTask('build', ['concat', 'cssmin', 'uglify', 'copy', '_clean:tmp', 'hexo:clean', 'hexo:generate']);
   grunt.registerTask('all', ['gitclone', 'concat', 'cssmin', 'uglify', 'copy', '_clean:tmp', 'hexo:clean', 'hexo:generate']);
 };
