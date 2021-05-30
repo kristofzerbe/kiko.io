@@ -127,8 +127,12 @@
       margin-bottom: 2em
       .card
         padding: .5em .5em 0 .5em
-        margin: 0.5em 0
+        margin: .5em 0
+        display: grid
+        grid-template-columns: 90px auto
+        grid-template-areas: "image title" "image tags"
         a.card-img
+          grid-area: image
           margin-right: 1em
           margin-top: -0.5em
           margin-left: -0.5em
@@ -139,8 +143,17 @@
         h3
           margin: .5em 0 1em 0
           font-size: 110%
+          grid-area: title
+          overflow: hidden
+          a
+            display: block
+            white-space: nowrap
+            overflow: hidden
+            text-overflow: ellipsis
         .tags
           margin: 0
+          grid-area: tags
+          margin-bottom: 0.5em
         small, p
           display: none
 
