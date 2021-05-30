@@ -1977,10 +1977,10 @@ Available in SVG Sprite, styled-components, NPM & API</p>
     on_change: function(new_value, target_field) {
       let field = document.querySelector("#sorting-field").value;
       let dir = document.querySelector("#sorting-direction").value;
-      $('.grid').find('.card').addClass("trans");
+      $('.view').find('.card').addClass("trans");
       setTimeout(() => { 
           sortCards(field, dir);
-          $('.grid').find('.card').removeClass("trans");
+          $('.view').find('.card').removeClass("trans");
           initViewportImage();
       }, 300);
     }
@@ -2041,7 +2041,7 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   }
 
   function sortCards(field, dir) {
-    $('.grid').find('.card').sort(function (a, b) {
+    $('.view').find('.card').sort(function (a, b) {
       let minuend;
       let subtrahend;
       if (dir === "desc") {
@@ -2058,7 +2058,7 @@ Available in SVG Sprite, styled-components, NPM & API</p>
       } else {
         return minuend - subtrahend;
       }
-    }).appendTo('.grid');
+    }).appendTo('.view');
   }
 
   function filterByTag(e) {
