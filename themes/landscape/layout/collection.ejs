@@ -39,7 +39,16 @@
       </fieldset>
     </section>
 
-    <div class="grid">
+    <div class="switch-view">
+      <input type="radio" name="view-switch" id="switch-grid" checked 
+          onchange="document.querySelector('.view').classList.replace('list', 'grid')">
+      <label for="switch-grid"></label>
+      <input type="radio" name="view-switch" id="switch-list" 
+          onchange="document.querySelector('.view').classList.replace('grid', 'list')">
+      <label for="switch-list"></label>
+    </div>
+
+    <div class="view grid">
       <% for(var i=0; i < page.items.length; i++) { %>
         <%- partial('_partial/collection-item', { item: page.items[i] }) %>
       <% } %>
