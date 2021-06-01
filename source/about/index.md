@@ -48,15 +48,17 @@ While learning a lot of stuff about business as an industrial clerk trainee at t
 <img src="index/logo-goetzfried.png" style="width: 150px; float: left;" />
 <img src="index/logo-seperator.png" style="width: 150px; float: left;" />
 <img src="index/logo-allgeier-experts.png" style="width: 150px; float: left;" />
+<img src="index/logo-seperator.png" style="width: 150px; float: left;" />
+<img src="index/logo-svg.png" style="width: 150px; float: left;" />
 </div>
 
 A little later I got in touch with a i386DX computer from Escom and started to fiddle around on how to achieve this or that under MS-DOS, installing Windows 3.x from a dozen of 3.5 discs, connecting via a 14.4k modem to the FidoNet (greets to all the guys from the 45er Infosystems) and talk shop with my fellow students at the [University of Applied Aciences, Wiesbaden](https://de.wikipedia.org/wiki/Hochschule_RheinMain), department of economics.
 
 One of our teachers gave me a copy of Microsoft Access 1.1 and I started to explore the possibilities of this new relational database system. A short time later, our professor for computer science wanted to switch teaching DBase towards Access and so I became his assistant and held some class hours, where one of my students, having a little company on selling hardware, was asking me someday, if I was interested building Access-based software for his clients. I said yes. My starting point into a career as a freelance software developer.
 
-Years later, after dozens of clients, authoring a [book about Access](https://www.amazon.de/Das-Access-VBA-Codebook-Carsten-Grie%C3%9Fhammer/dp/3827319536), coming and going technologies, building (and leaving) my own company [Division by Zero](https://www.division-by-zero.de/) with my good friend [Marcus Michaels](https://de.linkedin.com/in/marcus-michaels-2896258a), I'm now Head of Software Development at [Allgeier Experts SE](https://allgeier-experts.com) (formerly Goetzfried AG), developing internal software by using almost the complete Microsoft technology stack ... and my creativity is demanded day by day.
+Years later, after dozens of clients, authoring a [book about Access](https://www.amazon.de/Das-Access-VBA-Codebook-Carsten-Grie%C3%9Fhammer/dp/3827319536), coming and going technologies, building (and leaving) my own company [Division by Zero](https://www.division-by-zero.de/) with my good friend [Marcus Michaels](https://de.linkedin.com/in/marcus-michaels-2896258a), I'm now Head of Software Development at [SVG](https://svg.de) in Frankfurt, leading a bunch of cool software designers and engineers on developing good and relevant software ... and my creativity is demanded day by day.
 
-I'm still first and foremost fascinated by the technology on building software, in particular in creating pleasing, but functional UI's, a user wants to works with, even if I spend a large part of my daily working time on management stuff. So it is not surprising that I sit at my laptop in my spare time, working on my private projects or trying out new technologies. I made by hobby a profession...
+I'm still first and foremost fascinated by the technology on building software, in particular in creating pleasing, but functional UI's, a user wants to works with, even if I spend my daily working time on management stuff. So it is not surprising that I sit at my laptop in my spare time, working on my private projects or trying out new technologies. I made by hobby a profession...
 
 If you want to talk about the old, recent or new times in IT, you can find me at:  
 
