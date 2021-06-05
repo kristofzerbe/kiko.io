@@ -9,6 +9,7 @@ For more information visit:
 <div class="brand-links">
 <a href="https://github.com/kristofzerbe/hexo-console-webmention" class="github"><img src="/images/github.svg" alt="Github" /><span>Github</span></a>
 <a href="https://www.npmjs.com/package/hexo-console-webmention" class="npm"><img src="/images/npm.svg" alt="NPM" /><span>NPM</span></a>
+<a href="https://deps.dev/npm/hexo-console-webmention" class="insights"><img src="/images/insights.svg" alt="Open Source Insights" /><span>Insights</span></a>
 </div>
 
 <div class="shields-io">
