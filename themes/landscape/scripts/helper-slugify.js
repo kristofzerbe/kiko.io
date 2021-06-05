@@ -1,5 +1,5 @@
-const S = require('string');
+const utils   = require('hexo-util');
 
 hexo.extend.helper.register('slugify', function(value){
-    return S(value).slugify().s;
+    return utils.slugize(value);
 });
