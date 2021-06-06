@@ -124,26 +124,12 @@
   $('.article-entry').each(function(i){
     $(this).find('img:not(.image-compare)').each(function(){
       if ($(this).parent().is('a')) return;
-      if ($(this).parent().hasClass('luminous')) return;
+
+      $(this).addClass("zoom");
 
       var alt = this.alt;
-      var src = this.src;
-      var newSrc = src + "?w=768";
-      var newHref = src + "?w=1200";
-
       if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-
-      $(this).attr("src", newSrc);
-      $(this).wrap('<a href="' + newHref + '" title="' + alt + '" class="luminous"></a>');
     });
-
-    $(this).find('.luminous').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-
-  $('a.luminous').each(function(i, el) {
-    new Luminous(el);
   });
 
   // Init Anchor List Items  
@@ -293,6 +279,23 @@ function setCodepenTheme() {
     src = arr[0] + "?" + params.join("&") + "&theme-id=" + localStorage.getItem("theme");
     pens[i].src = src;
   }
+}
+
+function showFullScreen(element) {
+  if (element.requestFullscreen) {
+    element.requestFullscreen();
+  }
+  else if (element.msRequestFullscreen) {
+    element.msRequestFullscreen();
+  }
+  else if (element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  }
+  else if (element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen();
+  } else {
+    console.log("Fullscreen API is not supported");
+  } 
 }
 
 function setHitCount(config) {

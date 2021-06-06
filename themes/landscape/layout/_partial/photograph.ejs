@@ -14,13 +14,21 @@
 </style>
 
 <% if (page.photograph.link) { %>
-<script>
-    var header = document.getElementById("header");
-    header.classList.add("photograph");
-    var photoExpand = document.getElementById("header-photo-expand");
-    photoExpand.href = "/photos/normal/<%= page.photograph.file %>";
-    var photoLink = document.getElementById("header-photo-link");
-    photoLink.href = "<%= page.photograph.link%>";
-    photoLink.innerHTML = "see <strong><%= page.photograph.name%></strong> at 500px";
-</script>
+    <img id="header-photo" src="/photos/normal/<%= page.photograph.file %>" width="0" height="0"/>
+    <script>
+        var header = document.getElementById("header");
+        header.classList.add("photograph");
+        
+        var photoExpand = document.getElementById("header-photo-expand");
+        //photoExpand.href = "/photos/normal/<%= page.photograph.file %>";
+        photoExpand.addEventListener('click', (e) => { 
+            e.preventDefault();
+            let img = document.querySelector("#header-photo");
+            showFullScreen(img);
+        });
+
+        var photoLink = document.getElementById("header-photo-link");
+        photoLink.href = "<%= page.photograph.link%>";
+        photoLink.innerHTML = "see <strong><%= page.photograph.name%></strong> at 500px";
+    </script>
 <% } %>

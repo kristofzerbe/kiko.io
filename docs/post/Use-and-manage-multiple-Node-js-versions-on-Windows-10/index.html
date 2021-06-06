@@ -99,7 +99,7 @@
     <div class="inner-container">
       <div id="wrap">
         <header id="header">
-  <a href="#" id="header-photo-expand" class="fullsizable"></a>
+  <a href="#" id="header-photo-expand"></a>
   <a href="#" id="header-photo-link" target="_blank" rel="noopener" ></a>
   <div id="banner">
     <nav id="header-nav" role="navigation">
@@ -107,42 +107,42 @@
         
           <li class="menu-item" id="nav-home-link" >
             <a class="nav-icon sub-nav-link"
-               href="/">
+              href="/">
                 <span>Home</span>
               </a>
           </li>
         
           <li class="menu-item" id="nav-archives-link" >
             <a class="nav-icon sub-nav-link"
-               href="/archives">
+              href="/archives">
                 <span>Archives</span>
               </a>
           </li>
         
           <li class="menu-item" id="nav-series-link" >
             <a class="nav-icon sub-nav-link"
-               href="/series">
+              href="/series">
                 <span>series</span>
               </a>
           </li>
         
           <li class="menu-item" id="nav-projects-link" >
             <a class="nav-icon sub-nav-link"
-               href="/projects">
+              href="/projects">
                 <span>projects</span>
               </a>
           </li>
         
           <li class="menu-item" id="nav-tiny-tools-link" >
             <a class="nav-icon sub-nav-link"
-               href="/collections/tiny-tools">
+              href="/collections/tiny-tools">
                 <span>tiny-tools</span>
               </a>
           </li>
         
           <li class="menu-item" id="nav-rss-link" >
             <a class="nav-icon sub-nav-link"
-               href="/atom.xml">
+              href="/atom.xml">
                 <span>RSS Feed</span>
               </a>
           </li>
@@ -205,15 +205,23 @@
 </style>
 
 
-<script>
-    var header = document.getElementById("header");
-    header.classList.add("photograph");
-    var photoExpand = document.getElementById("header-photo-expand");
-    photoExpand.href = "/photos/normal/D70_8671.jpg";
-    var photoLink = document.getElementById("header-photo-link");
-    photoLink.href = "https://500px.com/photo/172323451/Sky-Rally-III-by-Kristof-Zerbe/";
-    photoLink.innerHTML = "see <strong>Sky Rally III</strong> at 500px";
-</script>
+    <img id="header-photo" src="/photos/normal/D70_8671.jpg" width="0" height="0"/>
+    <script>
+        var header = document.getElementById("header");
+        header.classList.add("photograph");
+        
+        var photoExpand = document.getElementById("header-photo-expand");
+        //photoExpand.href = "/photos/normal/D70_8671.jpg";
+        photoExpand.addEventListener('click', (e) => { 
+            e.preventDefault();
+            let img = document.querySelector("#header-photo");
+            showFullScreen(img);
+        });
+
+        var photoLink = document.getElementById("header-photo-link");
+        photoLink.href = "https://500px.com/photo/172323451/Sky-Rally-III-by-Kristof-Zerbe/";
+        photoLink.innerHTML = "see <strong>Sky Rally III</strong> at 500px";
+    </script>
 
 
 
@@ -307,15 +315,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckpl3kirl008vl8l9gvuma178">
+      <div class="article-permalink" id="article-permalink-ckplbth40008qbcl9cmrmhx8q">
     <input class="article-permalink-value" value="https://kiko.io/post/Use-and-manage-multiple-Node-js-versions-on-Windows-10/" 
-           data-id="ckpl3kirl008vl8l9gvuma178" data-title="Use and manage multiple Node.js versions on Windows 10" />
+           data-id="ckplbth40008qbcl9cmrmhx8q" data-title="Use and manage multiple Node.js versions on Windows 10" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckpl3kirl008vl8l9gvuma178");
+        initPermalink("ckplbth40008qbcl9cmrmhx8q");
     });
 </script>
 
@@ -696,9 +704,10 @@
     }).init();
   }, 1000);
 
-  //FULLSIZABLE
-  $(function() {
-    $("a.fullsizable").fullsizable();
+  //MEDIUM-ZOOM
+  mediumZoom(document.querySelectorAll('img.zoom'), {
+    background: 'rgba(55, 55, 55, 0.5)',
+    margin: 20
   });
 
 </script>

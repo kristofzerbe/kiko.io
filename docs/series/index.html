@@ -99,7 +99,7 @@
     <div class="inner-container">
       <div id="wrap">
         <header id="header">
-  <a href="#" id="header-photo-expand" class="fullsizable"></a>
+  <a href="#" id="header-photo-expand"></a>
   <a href="#" id="header-photo-link" target="_blank" rel="noopener" ></a>
   <div id="banner">
     <nav id="header-nav" role="navigation">
@@ -107,42 +107,42 @@
         
           <li class="menu-item" id="nav-home-link" >
             <a class="nav-icon sub-nav-link"
-               href="/">
+              href="/">
                 <span>Home</span>
               </a>
           </li>
         
           <li class="menu-item" id="nav-archives-link" >
             <a class="nav-icon sub-nav-link"
-               href="/archives">
+              href="/archives">
                 <span>Archives</span>
               </a>
           </li>
         
           <li class="menu-item" id="nav-series-link" >
             <a class="nav-icon sub-nav-link"
-               href="/series">
+              href="/series">
                 <span>series</span>
               </a>
           </li>
         
           <li class="menu-item" id="nav-projects-link" >
             <a class="nav-icon sub-nav-link"
-               href="/projects">
+              href="/projects">
                 <span>projects</span>
               </a>
           </li>
         
           <li class="menu-item" id="nav-tiny-tools-link" >
             <a class="nav-icon sub-nav-link"
-               href="/collections/tiny-tools">
+              href="/collections/tiny-tools">
                 <span>tiny-tools</span>
               </a>
           </li>
         
           <li class="menu-item" id="nav-rss-link" >
             <a class="nav-icon sub-nav-link"
-               href="/atom.xml">
+              href="/atom.xml">
                 <span>RSS Feed</span>
               </a>
           </li>
@@ -437,9 +437,10 @@
     }).init();
   }, 1000);
 
-  //FULLSIZABLE
-  $(function() {
-    $("a.fullsizable").fullsizable();
+  //MEDIUM-ZOOM
+  mediumZoom(document.querySelectorAll('img.zoom'), {
+    background: 'rgba(55, 55, 55, 0.5)',
+    margin: 20
   });
 
 </script>

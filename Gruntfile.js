@@ -88,20 +88,16 @@ module.exports = function(grunt){
       asset_scripts: {
         options: { separator: '\n' },
         src: [
-          'themes/landscape/assets/luminous/luminous.js',
           'themes/landscape/assets/AutoTyping.js',
           'themes/landscape/assets/utterances-comment.js',
           'themes/landscape/assets/webmentions.js',
           'themes/landscape/assets/vanilla-back-to-top.js',
-          'themes/landscape/assets/jquery-fullsizable/jquery-fullsizable.js'
+          'themes/landscape/assets/medium-zoom.js'
         ],
         dest: 'themes/landscape/tmp/asset-bundle.js'
       },
       asset_styles: {
         src: [
-          'themes/landscape/assets/luminous/luminous-basic.css',
-          'themes/landscape/assets/jquery-fullsizable/jquery-fullsizable.css',
-          'themes/landscape/assets/jquery-fullsizable/jquery-fullsizable-fontawesome.css'
         ],
         dest: 'themes/landscape/tmp/asset-bundle.css'
       }
@@ -146,8 +142,7 @@ module.exports = function(grunt){
   grunt.renameTask('clean', '_clean');
 
   grunt.registerTask('fonts', ['gitclone', 'copy', '_clean:tmp']);  
-  grunt.registerTask('default', ['_clean']);
-  grunt.registerTask('bundle', ['concat', 'cssmin', 'uglify', 'copy', '_clean:tmp']);
+  grunt.registerTask('default', ['concat', 'cssmin', 'uglify', 'copy', '_clean:tmp']);
   grunt.registerTask('build', ['concat', 'cssmin', 'uglify', 'copy', '_clean:tmp', 'hexo:clean', 'hexo:generate']);
   grunt.registerTask('all', ['gitclone', 'concat', 'cssmin', 'uglify', 'copy', '_clean:tmp', 'hexo:clean', 'hexo:generate']);
 };

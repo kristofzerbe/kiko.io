@@ -99,7 +99,7 @@
     <div class="inner-container">
       <div id="wrap">
         <header id="header">
-  <a href="#" id="header-photo-expand" class="fullsizable"></a>
+  <a href="#" id="header-photo-expand"></a>
   <a href="#" id="header-photo-link" target="_blank" rel="noopener" ></a>
   <div id="banner">
     <nav id="header-nav" role="navigation">
@@ -107,42 +107,42 @@
         
           <li class="menu-item" id="nav-home-link" >
             <a class="nav-icon sub-nav-link"
-               href="/">
+              href="/">
                 <span>Home</span>
               </a>
           </li>
         
           <li class="menu-item" id="nav-archives-link" >
             <a class="nav-icon sub-nav-link"
-               href="/archives">
+              href="/archives">
                 <span>Archives</span>
               </a>
           </li>
         
           <li class="menu-item" id="nav-series-link" >
             <a class="nav-icon sub-nav-link"
-               href="/series">
+              href="/series">
                 <span>series</span>
               </a>
           </li>
         
           <li class="menu-item" id="nav-projects-link" >
             <a class="nav-icon sub-nav-link"
-               href="/projects">
+              href="/projects">
                 <span>projects</span>
               </a>
           </li>
         
           <li class="menu-item" id="nav-tiny-tools-link" >
             <a class="nav-icon sub-nav-link"
-               href="/collections/tiny-tools">
+              href="/collections/tiny-tools">
                 <span>tiny-tools</span>
               </a>
           </li>
         
           <li class="menu-item" id="nav-rss-link" >
             <a class="nav-icon sub-nav-link"
-               href="/atom.xml">
+              href="/atom.xml">
                 <span>RSS Feed</span>
               </a>
           </li>
@@ -205,15 +205,23 @@
 </style>
 
 
-<script>
-    var header = document.getElementById("header");
-    header.classList.add("photograph");
-    var photoExpand = document.getElementById("header-photo-expand");
-    photoExpand.href = "/photos/normal/19-07 Schottland-0935.jpg";
-    var photoLink = document.getElementById("header-photo-link");
-    photoLink.href = "https://500px.com/photo/1009150713";
-    photoLink.innerHTML = "see <strong>Tattoo Tuba</strong> at 500px";
-</script>
+    <img id="header-photo" src="/photos/normal/19-07 Schottland-0935.jpg" width="0" height="0"/>
+    <script>
+        var header = document.getElementById("header");
+        header.classList.add("photograph");
+        
+        var photoExpand = document.getElementById("header-photo-expand");
+        //photoExpand.href = "/photos/normal/19-07 Schottland-0935.jpg";
+        photoExpand.addEventListener('click', (e) => { 
+            e.preventDefault();
+            let img = document.querySelector("#header-photo");
+            showFullScreen(img);
+        });
+
+        var photoLink = document.getElementById("header-photo-link");
+        photoLink.href = "https://500px.com/photo/1009150713";
+        photoLink.innerHTML = "see <strong>Tattoo Tuba</strong> at 500px";
+    </script>
 
 
 
@@ -294,15 +302,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Error/" rel="tag">Error</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckpl3kiob000il8l9fjzagitn">
+      <div class="article-permalink" id="article-permalink-ckplbtgwk000ibcl97d6lb8u1">
     <input class="article-permalink-value" value="https://kiko.io/post/404-Page-in-Hexo-for-GitHub-Pages/" 
-           data-id="ckpl3kiob000il8l9fjzagitn" data-title="404 Page in Hexo for GitHub Pages" />
+           data-id="ckplbtgwk000ibcl97d6lb8u1" data-title="404 Page in Hexo for GitHub Pages" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckpl3kiob000il8l9fjzagitn");
+        initPermalink("ckplbtgwk000ibcl97d6lb8u1");
     });
 </script>
 
@@ -683,9 +691,10 @@
     }).init();
   }, 1000);
 
-  //FULLSIZABLE
-  $(function() {
-    $("a.fullsizable").fullsizable();
+  //MEDIUM-ZOOM
+  mediumZoom(document.querySelectorAll('img.zoom'), {
+    background: 'rgba(55, 55, 55, 0.5)',
+    margin: 20
   });
 
 </script>
