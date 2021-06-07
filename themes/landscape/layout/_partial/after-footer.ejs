@@ -116,11 +116,11 @@
 
 </script>
 
-<% if (config.hitcount.enabled === false) { %>
+<% if (config.hitcount.enabled === true) { %>
 <script>
   function setHitCount(config) {
     let config = {
-      id: '<%= hitcountId %>',
+      id: hitCountId,
       webUrl: '<%= config.hitcount.web_url %>',
       apiUrl: '<%= config.hitcount.api_url %>',
       size: '<%= config.hitcount.size %>',
