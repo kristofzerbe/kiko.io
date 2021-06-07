@@ -727,8 +727,8 @@
 
 
 <script>
-  function setHitCount(config) {
-    let config = {
+  function setHitCount() {
+    let hcConfig = {
       id: hitCountId,
       webUrl: 'https://hitcount.io',
       apiUrl: 'https://hitcount.io/api/{id}',
@@ -744,25 +744,25 @@
       digits: '5'
     };
 
-    if (location.hostname !== "localhost" && config.id) {
+    if (location.hostname !== "localhost" && hcConfig.id) {
 
       if (localStorage.getItem("theme") === "light") {
-        background = config.background.light;
-        color = config.background.dark;
+        background = hcConfig.background.light;
+        color = hcConfig.background.dark;
       } else {
-        background = config.color.light;
-        color = config.color.dark;
+        background = hcConfig.color.light;
+        color = hcConfig.color.dark;
       }
 
       const imgUrl = 
-        config.apiUrl.replace("{id}", config.id)  + 
+        hcConfig.apiUrl.replace("{id}", hcConfig.id)  + 
           "?background=" + background + 
           "&color=" + color + 
-          "&size=" + config.size + 
-          "&digits=" + config.digits;
+          "&size=" + hcConfig.size + 
+          "&digits=" + hcConfig.digits;
       
       const hitcount = `
-        <a href="${config.webUrl}" target="__blank">
+        <a href="${hcConfig.webUrl}" target="__blank">
           <img alt="Hitcount" src="${imgUrl}" />
         </a>
       `;
