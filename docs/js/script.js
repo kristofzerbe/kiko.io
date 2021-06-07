@@ -6,88 +6,6 @@
   //     console.log(resource.name + " : " + (resource.domainLookupEnd - resource.domainLookupStart));
   // });
 
-  //Scroll Header
-  var header = {
-    height: 0,
-    top: 0,
-    offset: 55,
-    photoLinkOpacity: 0,
-    titleFontSize: 0
-  };
-
-  function initHeader() {
-    $("#header").css("height", ""); //reset inline css
-    $("#header-title").css("top", "");
-    $("#header-photo-link").css("opacity", "");
-    $("#title-wrap").css("font-size", "");
-    header.height = $("#header").height(); //set from given css
-    header.top = parseFloat($("#header-title").css("top"));
-    header.photoLinkOpacity = parseFloat($("#header-photo-link").css("opacity"));
-    header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
-    scrollHeader();
-  }
-
-  function scrollHeader() {
-    var h = header.height - header.offset,
-        st = $(document).scrollTop(),  
-        d = (h - st),
-        p = (d / h),
-        hfs = header.titleFontSize / 5 * 3,
-        jSide = $("aside");
-    if (d > 0) {
-      $("#header").css("height", d + header.offset + "px");
-      $("#header-photo-link, #header-photo-expand").css("opacity", header.photoLinkOpacity * p);
-      $("#banner").css("opacity", p);
-      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1 - p) );
-      $("#header-title").css("top", header.top - (hfs * (1 - p)) + "px");
-      $("#subtitle").css("opacity", p);
-      jSide.css("max-width", "").css("position", "").css("top", "");
-    } else {
-      $("#header").css("height", header.offset + "px");
-      $("#header-photo-link, #header-photo-expand").css("opacity", 0);
-      $("#banner").css("opacity", 0);
-      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );      
-      $("#header-title").css("top", header.top - (hfs * (1)) + "px");      
-      $("#subtitle").css("opacity", 0);
-      if (window.matchMedia("screen and (min-width: 768px)").matches & window.innerHeight > (jSide.height() + 60)) {
-        jSide.css("max-width", $("aside").width()).css("position", "fixed").css("top", "60px");
-      }
-    }    
-  }
-  // Scroll-In Header Image
-  function isVisibleInViewPort(e) {
-    var viewTop = $(window).scrollTop();
-    var viewBottom = viewTop + $(window).height();
-  
-    var eTop = $(e).offset().top;
-    var eBottom = eTop + $(e).height();
-  
-    return ((eBottom <= viewBottom) && (eTop >= viewTop));
-  }
-
-  function initViewportImage() {
-    $(".article-photo, .archive-article-photo, .card-img").each(function() {
-      if (isVisibleInViewPort($(this))) {
-        $(this).addClass("in-view");
-      } else {
-        $(this).removeClass("in-view");
-      }
-    });
-  }
-  
-  $(window).on('scroll', function() {
-    scrollHeader();
-    initViewportImage();
-  });
-
-  $(window).on('resize', function() {
-    initHeader();
-    initViewportImage();
-  });
-
-  initHeader();
-  initViewportImage();
-
   // Search
   var $searchWrap = $('#search-form-wrap'),
     isSearchAnim = false,
@@ -259,14 +177,14 @@ function setThemeDark() {
   document.documentElement.setAttribute('data-theme', 'dark');    
   toggleTheme.checked = true;
   setCodepenTheme();
-  setHitCount(hitcountConfig);
+  setHitCount();
 }
 function setThemeLight() {
   localStorage.setItem('theme', 'light');
   document.documentElement.setAttribute('data-theme', 'light');  
   toggleTheme.checked = false;
   setCodepenTheme();
-  setHitCount(hitcountConfig);
+  setHitCount();
 }
 
 function setCodepenTheme() {
@@ -296,40 +214,6 @@ function showFullScreen(element) {
   } else {
     console.log("Fullscreen API is not supported");
   } 
-}
-
-function setHitCount(config) {
-  if (location.hostname !== "localhost" && config.id) {
-
-    if (localStorage.getItem("theme") === "light") {
-      background = config.background.light;
-      color = config.background.dark;
-    } else {
-      background = config.color.light;
-      color = config.color.dark;
-    }
-
-    const imgUrl = 
-      config.apiUrl.replace("{id}", config.id)  + 
-        "?background=" + background + 
-        "&color=" + color + 
-        "&size=" + config.size + 
-        "&digits=" + config.digits;
-    
-    const hitcount = `
-      <a href="${config.webUrl}" target="__blank">
-        <img alt="Hitcount" src="${imgUrl}" />
-      </a>
-    `;
-
-    // TODO: temporarily shut down
-    // const wrapper = document.getElementById("hitcount");
-    // if (!wrapper.querySelector("a img")) {
-    //   wrapper.insertAdjacentHTML('afterbegin', hitcount);
-    // } else {
-    //   wrapper.querySelector("a img").src = imgUrl;
-    // }
-  }
 }
 
 // Listener for theme change by toggle

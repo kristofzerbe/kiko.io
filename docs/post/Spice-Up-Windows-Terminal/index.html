@@ -74,24 +74,6 @@
 <script src="/js/dist/image-compare-viewer.min.js"></script>
 
 
-  <script>
-    var hitcountConfig = {
-      id: 'ogYOZIiUq',
-      webUrl: 'https://hitcount.io',
-      apiUrl: 'https://hitcount.io/api/{id}',
-      size: '12',
-      background: {
-        light: '555',
-        dark: '777'
-      },
-      color: {
-        light: '000',
-        dark: '666'
-      },
-      digits: '5'
-    }
-  </script>
-
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 <body id="body">  
@@ -334,15 +316,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PowerShell/" rel="tag">PowerShell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Theming/" rel="tag">Theming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckpmdny9i0044c8hadogbesln">
+      <div class="article-permalink" id="article-permalink-ckpmhw3lz004100habjkx0bv7">
     <input class="article-permalink-value" value="https://kiko.io/post/Spice-Up-Windows-Terminal/" 
-           data-id="ckpmdny9i0044c8hadogbesln" data-title="Spice Up Windows Terminal" />
+           data-id="ckpmhw3lz004100habjkx0bv7" data-title="Spice Up Windows Terminal" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckpmdny9i0044c8hadogbesln");
+        initPermalink("ckpmhw3lz004100habjkx0bv7");
     });
 </script>
 
@@ -540,7 +522,88 @@
 
 
 <script>
-  //BACK-TO-TOP
+  // HEADER
+  var header = {
+    height: 0,
+    top: 0,
+    offset: 55,
+    photoLinkOpacity: 0,
+    titleFontSize: 0
+  };
+
+  function initHeader() {
+    $("#header").css("height", ""); //reset inline css
+    $("#header-title").css("top", "");
+    $("#header-photo-link").css("opacity", "");
+    $("#title-wrap").css("font-size", "");
+    header.height = $("#header").height(); //set from given css
+    header.top = parseFloat($("#header-title").css("top"));
+    header.photoLinkOpacity = parseFloat($("#header-photo-link").css("opacity"));
+    header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
+    scrollHeader();
+  }
+  function scrollHeader() {
+    var h = header.height - header.offset,
+        st = $(document).scrollTop(),  
+        d = (h - st),
+        p = (d / h),
+        hfs = header.titleFontSize / 5 * 3,
+        jSide = $("aside");
+    if (d > 0) {
+      $("#header").css("height", d + header.offset + "px");
+      $("#header-photo-link, #header-photo-expand").css("opacity", header.photoLinkOpacity * p);
+      $("#banner").css("opacity", p);
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1 - p) );
+      $("#header-title").css("top", header.top - (hfs * (1 - p)) + "px");
+      $("#subtitle").css("opacity", p);
+      jSide.css("max-width", "").css("position", "").css("top", "");
+    } else {
+      $("#header").css("height", header.offset + "px");
+      $("#header-photo-link, #header-photo-expand").css("opacity", 0);
+      $("#banner").css("opacity", 0);
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );      
+      $("#header-title").css("top", header.top - (hfs * (1)) + "px");      
+      $("#subtitle").css("opacity", 0);
+      if (window.matchMedia("screen and (min-width: 768px)").matches & window.innerHeight > (jSide.height() + 60)) {
+        jSide.css("max-width", $("aside").width()).css("position", "fixed").css("top", "60px");
+      }
+    }    
+  }
+
+  // IMAGE VIEWPORT
+  function isVisibleInViewPort(e) {
+    var viewTop = $(window).scrollTop();
+    var viewBottom = viewTop + $(window).height();
+  
+    var eTop = $(e).offset().top;
+    var eBottom = eTop + $(e).height();
+  
+    return ((eBottom <= viewBottom) && (eTop >= viewTop));
+  }
+  function initViewportImage() {
+    $(".article-photo, .archive-article-photo, .card-img").each(function() {
+      if (isVisibleInViewPort($(this))) {
+        $(this).addClass("in-view");
+      } else {
+        $(this).removeClass("in-view");
+      }
+    });
+  }
+  
+  $(window).on('scroll', function() {
+    scrollHeader();
+    initViewportImage();
+  });
+
+  $(window).on('resize', function() {
+    initHeader();
+    initViewportImage();
+  });
+
+  initHeader();
+  initViewportImage();
+
+  // BACK-TO-TOP
   addBackToTop({
     diameter: 30
   })
@@ -567,6 +630,7 @@
   });
 
 </script>
+
 
     </div>
   </div>
