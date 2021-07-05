@@ -17,8 +17,6 @@ related:
   - Discoveries-7
 ---
 
-Todays Discoveries it's all about my favourite programming language JavaScript. Some tiny tips and tricks alongside with a deep dive into 'console' and some helful UI libraries. Have fun...
-
 {% anchorlist 
   "Beyond Console.log()|beyond-console-log"
   "DOMGuard - Stop scammers from the manipulating DOM|dom-guard"
@@ -33,6 +31,8 @@ Todays Discoveries it's all about my favourite programming language JavaScript. 
 %}
 
 <!-- more -->
+
+Todays Discoveries it's all about my favourite programming langugae JavaScript. Some tiny tips and tricks alongside with a deep dive into 'console' and some helful UI libraries. Have fun...
 
 {% discovery "Beyond Console.log()" "Christian Heilmann" https://www.sitepoint.com/beyond-console-log-level-up-your-debugging-skills/ Discoveries-10 beyond-console-log.png %}
 The browser console is propably the most used tool for debugging JavaScript, but most of the time we all just scatch the surface. Christian show us the power of the console.
