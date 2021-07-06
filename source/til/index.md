@@ -4,7 +4,20 @@ date: 2021-07-05 12:01:00
 hitcountId: WfGCn1IVy
 photograph: 
   file: $til.jpg
+  name: 
+  link: ''
 ---
+
+<section>
+<time>06 Jul 2021</time>
+
+## Execute ES6 module with node.js
+
+When executing a script designed as an ES6 module (f.e. ``node my-module.js``), it will fail with the error ``Cannot use import statement outside a module``.
+
+Add ``"type": "module"`` to package.json and it will work.
+</section>
+
 <section>
 <time>06 Jul 2021</time>
 
