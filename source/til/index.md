@@ -19,7 +19,7 @@ Add ``"type": "module"`` to package.json and it will work.
 </section>
 
 <section>
-<time>06 Jul 2021</time>
+<time>05 Jul 2021</time>
 
 ## Async Delay using Timeout
 

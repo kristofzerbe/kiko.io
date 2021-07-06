@@ -214,7 +214,7 @@
 </section>
 
 <section>
-<time>06 Jul 2021</time>
+<time>05 Jul 2021</time>
 
 <h2 id="Async-Delay-using-Timeout"><a href="#Async-Delay-using-Timeout" class="headerlink" title="Async Delay using Timeout"></a>Async Delay using Timeout</h2><p>A little helper function to delay the execution of a script asynchonously</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> delay = <span class="function"><span class="params">ms</span> =&gt;</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">   <span class="built_in">setTimeout</span>(<span class="function"><span class="params">_</span> =&gt;</span> resolve(), ms)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">await</span> delay(<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
