@@ -209,6 +209,13 @@
     <section>
 <time>06 Jul 2021</time>
 
+<h2 id="Execute-ES6-module-with-node-js"><a href="#Execute-ES6-module-with-node-js" class="headerlink" title="Execute ES6 module with node.js"></a>Execute ES6 module with node.js</h2><p>When executing a script designed as an ES6 module (f.e. <code>node my-module.js</code>), it will fail with the error <code>Cannot use import statement outside a module</code>.</p>
+<p>Add <code>&quot;type&quot;: &quot;module&quot;</code> to package.json and it will work.</p>
+</section>
+
+<section>
+<time>06 Jul 2021</time>
+
 <h2 id="Async-Delay-using-Timeout"><a href="#Async-Delay-using-Timeout" class="headerlink" title="Async Delay using Timeout"></a>Async Delay using Timeout</h2><p>A little helper function to delay the execution of a script asynchonously</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> delay = <span class="function"><span class="params">ms</span> =&gt;</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">   <span class="built_in">setTimeout</span>(<span class="function"><span class="params">_</span> =&gt;</span> resolve(), ms)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">await</span> delay(<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
 </section>
