@@ -5,6 +5,21 @@ hitcountId: WfGCn1IVy
 photograph: 
   file: $til.jpg
 ---
+<section>
+<time>06 Jul 2021</time>
+
+## Async Delay using Timeout
+
+A little helper function to delay the execution of a script asynchonously
+
+```js
+const delay = ms => new Promise((resolve, reject) => {
+   setTimeout(_ => resolve(), ms)
+});
+
+await delay(1000);
+```
+</section>
 
 <section>
 <time>02 Jul 2021</time>
