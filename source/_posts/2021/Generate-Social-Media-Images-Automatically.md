@@ -22,7 +22,7 @@ related:
   - A-New-Blog-Customizing-Hexo
 ---
 
-From day one of this blog I wanted to combine two of my passions: tech stuff and photography. All these photos I have shot myself in recent years and now they are representing my thoughts & findings about digital technology. I wrote about my approach to provide these images in the post {% post_link 2020/Automatic-Header-Images-in-Hexo %}.
+From day one of this blog I wanted to combine two of my passions: tech stuff and photography. All these photos I have shot myself in recent years and now they are representing my thoughts & findings about digital technology. I wrote about my approach to provide these images in my post {% post_link 2020/Automatic-Header-Images-in-Hexo %}.
 
 When I share one of my posts on social media I provide the appropriate image as a visual anchor to my writing. The technique behind this are the ``meta`` tags in the HTML of my posts:
 
@@ -76,6 +76,29 @@ Therefore, the **Social Media Image Generator** script in my mind had to do foll
 5. Store the PNG to a central folder
 6. Optimize the PNG
 7. Change the meta tags in the posts to reference the new image
+
+---
+
+## The Frontmatter
+
+I pimped the Frontmatter of the original Hexo configuration a bit, in order to provide an individual photo for each post:
+
+```yaml
+---
+title: Generate Social Media Images Automatically
+subtitle:
+date: 2021-07-10 11:07:31
+photograph:
+  file: DSC_6776.jpg
+  name: Color Brushes
+  link: 'https://500px.com/photo/79965349'
+categories:
+  - JavaScript
+...
+---
+```
+
+Among other, there are the basic information, I wanted to have on my social media image: ``photograph.file`` (as the image itself) and ``title``, ``subtitle`` and ``categories`` (for the text on the image).
 
 ---
 
@@ -383,7 +406,7 @@ If you already have lots of post in MD files and appropriate photographs, you ca
 ... and run it as follows:
 
 ```js Example execution in the console...
-node "./lib/run-social-media-images.cjs" "../source/_posts" "../static/photos/normal" "../templates/social-media-image.handlebars" "../static/social-media"
+node "./lib/run-social-media-images.cjs" "../source/_posts" "../static/photos/normal" "../templates/social-media-image.handlebars" "../static/images/social-media"
 ```
 
 ---
@@ -407,7 +430,7 @@ hexo.on("ready", function() {
     const postFolder = "../source/_posts";
     const photoFolder = "../static/photos/normal";
     const templateFile = "../templates/social-media-image.handlebars";
-    const targetFolder = "../static/social-media";
+    const targetFolder = "../static/images/social-media";
 
     const generator = new Generator(postFolder, photoFolder, templateFile, targetFolder);
     generator.generate();
