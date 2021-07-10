@@ -185,6 +185,88 @@
   
   
      
+<article id="post-2021/Utilize-a-repository-of-reusable-ES6-template-literals" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <a href="/post/Utilize-a-repository-of-reusable-ES6-template-literals/" class="article-date">
+  
+    <time class="published dt-published" datetime="2021-01-03T12:29:01.000Z" itemprop="datePublished">03 Jan 2021</time>
+  
+</a>
+    
+  <div class="article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Utilize-a-repository-of-reusable-ES6-template-literals/">
+        <img class="article-photo" src="/photos/tablet/DSC_7897.jpg" alt="Rusted Bike" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/Utilize-a-repository-of-reusable-ES6-template-literals/">Utilize a repository of reusable ES6 template literals</a>
+    </h1>
+  
+
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>The <a href="http://es6-features.org/#StringInterpolation"><strong>Template Literals</strong></a> introduced with ES6 are very useful to deal with multiline strings, because they support <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Expression_interpolation">embedded expressions</a>. Gone are the days of endless string concatination or replacing variables in a string by using RegEx.</p>
+<p>Instead of… </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> url = ...</span><br><span class="line"><span class="keyword">var</span> file = ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> template = </span><br><span class="line">  <span class="string">&#x27;&lt;div class=&quot;photo&quot;&gt;&#x27;</span> + </span><br><span class="line">     <span class="string">&#x27;&lt;a href=&quot;&#x27;</span> + url + <span class="string">&quot;&#x27; + </span></span><br><span class="line"><span class="string">        &#x27;style=&quot;</span>background-image: url(<span class="string">&#x27; + file + &#x27;</span>)<span class="string">&quot;&lt;/a&gt;&#x27; + </span></span><br><span class="line"><span class="string">  &#x27;&lt;/div&gt;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>… you can write:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> url = ...</span><br><span class="line"><span class="keyword">var</span> file = ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> template = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;div class=&quot;photo&quot;&gt;</span></span><br><span class="line"><span class="string">    &lt;a href=&quot;<span class="subst">$&#123;url&#125;</span>/&quot;</span></span><br><span class="line"><span class="string">    style=&quot;background-image: url(<span class="subst">$&#123;file&#125;</span>);&quot;&gt;&lt;/a&gt;</span></span><br><span class="line"><span class="string">  &lt;/div&gt;</span></span><br><span class="line"><span class="string">`</span>,</span><br></pre></td></tr></table></figure>
+
+<p>It’s much cleaner and easier to handle, as you can copy your needed HTML right into your code and surround it by <strong>backtick</strong> (!) characters. Insert your variable placeholders (expressions), indicated by a dollar sign and curly braces, and you are done.</p>
+<p>But there is one “restriction”, you have to be aware of: the interpolation (substitution of the expressions) is done at declaration time and not at runtime. You can’t define your literals seperatly, take one and make your substitution as you need it, like you would do with <a href="https://handlebarsjs.com/">Handlebars</a> or other templating engines. Therefore the name <em>template</em> literals is a bit misleading. But … there is a way to achieve this anyway…</p>
+      
+        <p class="article-more-link">
+          <a class="button" href="/post/Utilize-a-repository-of-reusable-ES6-template-literals/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Templating/" rel="tag">Templating</a></li></ul>  
+  </div>
+
+      <div class="article-permalink" id="article-permalink-ckqw0bu7c002ir0ha1tqxa37m">
+    <input class="article-permalink-value" value="https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/" 
+           data-id="ckqw0bu7c002ir0ha1tqxa37m" data-title="Utilize a repository of reusable ES6 template literals" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("ckqw0bu7c002ir0ha1tqxa37m");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
 <article id="post-2020/Discoveries-5" 
          class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -247,15 +329,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Great-Finds/" rel="tag">Great Finds</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckqqtas44007bagha9g52003m">
+      <div class="article-permalink" id="article-permalink-ckqw0bu80003lr0hady2834xi">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-5/" 
-           data-id="ckqqtas44007bagha9g52003m" data-title="Discoveries #5" />
+           data-id="ckqw0bu80003lr0hady2834xi" data-title="Discoveries #5" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckqqtas44007bagha9g52003m");
+        initPermalink("ckqw0bu80003lr0hady2834xi");
     });
 </script>
 
@@ -323,15 +405,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lightroom/" rel="tag">Lightroom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Presets/" rel="tag">Presets</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckqqtas4e007qagha7l8zalu0">
+      <div class="article-permalink" id="article-permalink-ckqw0bu9i0080r0hadavlghdn">
     <input class="article-permalink-value" value="https://kiko.io/post/Indian-Presets-for-Lightroom/" 
-           data-id="ckqqtas4e007qagha7l8zalu0" data-title="Indian Presets for Lightroom" />
+           data-id="ckqw0bu9i0080r0hadavlghdn" data-title="Indian Presets for Lightroom" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckqqtas4e007qagha7l8zalu0");
+        initPermalink("ckqw0bu9i0080r0hadavlghdn");
     });
 </script>
 
@@ -400,15 +482,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lightroom/" rel="tag">Lightroom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Presets/" rel="tag">Presets</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckqqtas4h007tagha58f14eip">
+      <div class="article-permalink" id="article-permalink-ckqw0bu9l0083r0ha4vhw9ttj">
     <input class="article-permalink-value" value="https://kiko.io/post/Israeli-Presets-for-Lightroom/" 
-           data-id="ckqqtas4h007tagha58f14eip" data-title="Israeli Presets for Lightroom" />
+           data-id="ckqw0bu9l0083r0ha4vhw9ttj" data-title="Israeli Presets for Lightroom" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckqqtas4h007tagha58f14eip");
+        initPermalink("ckqw0bu9l0083r0ha4vhw9ttj");
     });
 </script>
 
@@ -479,15 +561,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lightroom/" rel="tag">Lightroom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Plugin/" rel="tag">Plugin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Publishing/" rel="tag">Publishing</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckqqtas46007eaghadylohfoo">
+      <div class="article-permalink" id="article-permalink-ckqw0bu84003sr0hacu7w8p2c">
     <input class="article-permalink-value" value="https://kiko.io/post/Folder-based-publishing-in-Lightroom/" 
-           data-id="ckqqtas46007eaghadylohfoo" data-title="Folder based publishing in Lightroom" />
+           data-id="ckqw0bu84003sr0hacu7w8p2c" data-title="Folder based publishing in Lightroom" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckqqtas46007eaghadylohfoo");
+        initPermalink("ckqw0bu84003sr0hacu7w8p2c");
     });
 </script>
 
@@ -559,15 +641,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Great-Finds/" rel="tag">Great Finds</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckqqtas2c003kagha17l841m7">
+      <div class="article-permalink" id="article-permalink-ckqw0bu7y003hr0ha2f8pgacl">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-4/" 
-           data-id="ckqqtas2c003kagha17l841m7" data-title="Discoveries #4" />
+           data-id="ckqw0bu7y003hr0ha2f8pgacl" data-title="Discoveries #4" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckqqtas2c003kagha17l841m7");
+        initPermalink("ckqw0bu7y003hr0ha2f8pgacl");
     });
 </script>
 
@@ -639,15 +721,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bundling/" rel="tag">Bundling</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SPA/" rel="tag">SPA</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckqqtas49007jagha2tw1ahag">
+      <div class="article-permalink" id="article-permalink-ckqw0bu9k0081r0hagetj5fmh">
     <input class="article-permalink-value" value="https://kiko.io/post/Implement-source-switch-for-SPA/" 
-           data-id="ckqqtas49007jagha2tw1ahag" data-title="Implement source switch for SPA" />
+           data-id="ckqw0bu9k0081r0hagetj5fmh" data-title="Implement source switch for SPA" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckqqtas49007jagha2tw1ahag");
+        initPermalink("ckqw0bu9k0081r0hagetj5fmh");
     });
 </script>
 
@@ -716,104 +798,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckqqtas4l0080aghabd26dhia">
+      <div class="article-permalink" id="article-permalink-ckqw0bu9s008gr0ha7ceddhuo">
     <input class="article-permalink-value" value="https://kiko.io/post/Show-related-posts-in-Hexo/" 
-           data-id="ckqqtas4l0080aghabd26dhia" data-title="Show related posts in Hexo" />
+           data-id="ckqw0bu9s008gr0ha7ceddhuo" data-title="Show related posts in Hexo" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckqqtas4l0080aghabd26dhia");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2020/Discoveries-3-Tutorials" 
-         class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-meta">
-    <a href="/post/Discoveries-3-Tutorials/" class="article-date">
-  
-    <time class="published dt-published" datetime="2020-09-29T10:02:10.000Z" itemprop="datePublished">29 Sep 2020</time>
-  
-</a>
-    
-  <div class="article-category category-discoveries">
-    <a class="article-category-link" href="/categories/Discoveries/">Discoveries</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/Discoveries-3-Tutorials/">
-        <img class="article-photo" src="/photos/tablet/18-09 Kroatien-0112.jpg" alt="Untitled" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-    <a class="article-anything" itemprop="name" href="/series/Discoveries">Discoveries</a>
-
-
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/Discoveries-3-Tutorials/">Discoveries #3 - Tutorials</a>
-    </h1>
-  
-
-        
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      <p>Some articles I stumble upon in my daily routine of reading news and blogs are diving very deep in a certain topic, especially if they are describing the basics of techniques I use every day. </p>
-<p>All of the following reading tips are of the type “ahh, that’s why this works like that” or “uuh, I just scatch on the surface on that”. Take your time and read the articles in detail. We all never stop learning and it’s a pleasure to do so…</p>
-<p><strong>CSS</strong></p>
-
-        <ul class="anchorlist">
-            <li data-anchor="#css-viewport-units">CSS Viewport Units</li><li data-anchor="#grid-for-layout-flexbox-for-components">Grid for layout, Flexbox for components</li><li data-anchor="#how-css-perspective-works">How CSS Perspective Works</li><li data-anchor="#linearly-scale-font-size-with-clamp">Linearly Scale font-size with CSS clamp() Based on the Viewport</li><li data-anchor="#centering-in-css">Learn CSS Centering</li>
-        </ul>
-    
-
-<p><strong>JavaScript</strong></p>
-
-        <ul class="anchorlist">
-            <li data-anchor="#the-flavors-of-object-oriented-programming">The Flavors of Object-Oriented Programming (in JavaScript)</li><li data-anchor="#understanding-the-event-loop">Understanding the Event Loop, Callbacks, Promises, and Async/Await in JavaScript</li>
-        </ul>
-      
-        <p class="article-more-link">
-          <a class="button" href="/post/Discoveries-3-Tutorials/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Great-Finds/" rel="tag">Great Finds</a></li></ul>  
-  </div>
-
-      <div class="article-permalink" id="article-permalink-ckqqtas2a003hagha7smscsnj">
-    <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-3-Tutorials/" 
-           data-id="ckqqtas2a003hagha7smscsnj" data-title="Discoveries #3 - Tutorials" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("ckqqtas2a003hagha7smscsnj");
+        initPermalink("ckqw0bu9s008gr0ha7ceddhuo");
     });
 </script>
 
@@ -861,6 +854,12 @@
         
           <li>
             
+              <a href="/post/Generate-Social-Media-Images-Automatically/">Generate Social Media Images Automatically</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Discoveries-11/">Discoveries #11</a>
             
           </li>
@@ -880,12 +879,6 @@
           <li>
             
               <a href="/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/">Hexo and the IndieWeb (Receiving Webmentions)</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Hexo-and-the-IndieWeb-Sending-Webmentions/">Hexo and the IndieWeb (Sending Webmentions)</a>
             
           </li>
         
