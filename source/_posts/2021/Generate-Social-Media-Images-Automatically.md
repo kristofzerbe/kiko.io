@@ -446,7 +446,7 @@ It is important not to store the ``social-media-image-generator.cjs`` in Hexo's 
 
 Here is the result from my approach in Hexo, as I run ``hexo generate`` for this blog post:
 
-<img src="/social-media/Generate-Social-Media-Images-Automatically.png" />
+<img src="/images/social-media/Generate-Social-Media-Images-Automatically.png" />
 
 The very last thing I had to do, was to change the source of the image meta tag mentioned at the top, to reference to newly created social media image.
 
