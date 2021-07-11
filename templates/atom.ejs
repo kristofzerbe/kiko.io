@@ -21,6 +21,8 @@
     <%_ } _%>
     <%_ for (const post of posts) { _%>
     <entry>
+        <%_ let slugArray = post.slug.split("/") _%>
+        <%_ let slug = slugArray[slugArray.length - 1] _%>
         <id><%= post.permalink %></id>
         <%_ if (post.dateOriginal) { _%>
             <title>Updated: <%= post.title %></title>
@@ -36,7 +38,7 @@
             <%_ const regEx = /<(script|style)[^>]*>(?<content>[^<]*)<\/(script|style)>/gim; _%>
             <%_ let feedContent = post.excerpt.replace(regEx, "") _%>
             <%_ feedContent = feedContent + '<p><a href="' + post.permalink + '">Continue reading <strong>`' + post.title + '`</strong> on kiko.io ...</a></p>' _%>
-            <%_ if (post.photograph) { feedContent = '<p><img src="' + config.url + '/photos/mobile/' + post.photograph.file + '" /></p>' + feedContent } _%>
+            <%_ if (post.photograph) { feedContent = '<p><img src="' + config.url + '/images/social-media/' + slug + '.png" /></p>' + feedContent } _%>
             <%= feedContent %>
         </content>
         <%_ for (const category of (post.categories ? post.categories.toArray() : [])) { _%>

@@ -31,7 +31,7 @@ When I share one of my posts on social media I provide the appropriate image as 
 <meta itemprop="image" content="https://kiko.io/photos/normal/DSC_6776.jpg">
 
 <!-- Open Graph -->
-<meta property="og:image" content="https://kiko.io/photos/normal/DSC_6776.jpg.jpg">
+<meta property="og:image" content="https://kiko.io/photos/normal/DSC_6776.jpg">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
@@ -145,8 +145,6 @@ I chose parameters, in order not to bind the script too tightly to my favourite 
 * ``_templateFile`` - Where is the template file for the temporary HTML stored?
 * ``_targetFolder`` - Where should the generated PNG files be stored?
 
----
-
 ### Get the posts
 
 First task was to get all MD files out of the ``_postFolder`` recursively:
@@ -183,8 +181,6 @@ class Generator {
 
 }
 ```
-
----
 
 ### Get the template and the temporary folder
 
@@ -249,8 +245,6 @@ class Generator {
 
 }
 ```
-
----
 
 ### Process the posts
 
@@ -332,8 +326,6 @@ class Generator {
     }
 }
 ```
-
----
 
 ### Get the image
 
