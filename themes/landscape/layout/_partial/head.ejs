@@ -36,12 +36,14 @@
         let slugArray = page.slug.split("/"); //due to subfolders
         let slug = slugArray[slugArray.length - 1];
         heroImage = config.url + "/images/social-media/" + slug + ".png";
+        //TODO: Excerpt, but without HTML tag and just first n words > jsdom.parse?
         description = config.title + "'s " + (is_post() ? "Post " : "Page ") + "'" + page.title + "'";
         hitcountId = page.hitcountId;
         break;
 
       case "PAGE":
         heroImage = config.url + "/photos/normal/" + page.photograph.file;
+        //TODO: Excerpt, but without HTML tag and just first n words > jsdom.parse?
         description = config.title + "'s " + (is_post() ? "Post " : "Page ") + "'" + page.title + "'";
         hitcountId = page.hitcountId;
         break;
