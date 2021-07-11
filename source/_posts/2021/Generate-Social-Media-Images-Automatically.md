@@ -450,6 +450,10 @@ Here is the result from my approach in Hexo, as I run ``hexo generate`` for this
 
 The very last thing I had to do, was to change the source of the image meta tag mentioned at the top, to reference to newly created social media image.
 
+Here's the new image in action at Twitter:
+
+{% asset_img twitter.png %}
+
 ---
 
 {% moreinfo '{ "list": [
@@ -472,9 +476,5 @@ The very last thing I had to do, was to change the source of the image meta tag 
   [
     "The GitHub Blog", "A framework for building Open Graph images",
     "https://github.blog/2021-06-22-framework-building-open-graph-images/"
-  ],
-  [
-    "DOMAIN", "TITLE",
-    "URL"
   ]
 ]}' %}
