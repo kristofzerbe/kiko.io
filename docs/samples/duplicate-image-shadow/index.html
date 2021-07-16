@@ -1,0 +1,117 @@
+<html lang="en">
+    <title>Duplicate Image Shadow</title>
+    <head>
+        <link rel="stylesheet" href="styles.css"></link>
+        <script>
+            function setShadow(shadowClass, button) {
+
+                document.querySelectorAll("button").forEach(e => e.classList.remove("selected"));
+                button.classList.add("selected");
+                document.querySelector("body").className = "";
+                document.querySelector("body").classList.add(shadowClass);
+
+                switch (shadowClass) {
+                    case "image-shadow":
+                        dropImageShadow();
+                        break;
+                    default:
+                        removeImageShadow();
+                }
+            }
+
+        </script>
+    </head>
+    <body class="no-shadow">
+        <h1>Duplicate Image Shadow</h1>
+
+        <p>Show with: </p>
+        <button class="selected" onclick="setShadow('no-shadow', this);">No Shadow</button>
+        <button onclick="setShadow('box-shadow', this);">Box Shadow</button>
+        <button onclick="setShadow('image-shadow', this);">Image Shadow</button>
+
+        <hr>
+
+        <div class="block">
+            <h2>Block Right</h2>
+            <img class="right drop-shadow" src="beach.jpg" width="150px" alt="Beach" />
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                incididunt ut labore et dolore magna aliqua. Dictumst quisque sagittis purus sit 
+                amet volutpat consequat mauris. Nisl nunc mi ipsum faucibus vitae aliquet nec. 
+                Aliquam sem et tortor consequat id porta nibh venenatis cras. Eget arcu dictum 
+                varius duis at consectetur lorem donec massa. Turpis tincidunt id aliquet risus 
+                feugiat in ante metus dictum. Massa eget egestas purus viverra. Neque egestas 
+                congue quisque egestas diam in arcu. Ipsum a arcu cursus vitae congue mauris 
+                rhoncus. Vehicula ipsum a arcu cursus.
+
+            </p>
+            <p>
+                Hac habitasse platea dictumst quisque sagittis purus sit amet. Fringilla urna 
+                porttitor rhoncus dolor purus non enim. Etiam non quam lacus suspendisse faucibus 
+                interdum posuere lorem. Neque vitae tempus quam pellentesque nec nam aliquam sem et. 
+                Platea dictumst quisque sagittis purus sit amet. Nec feugiat nisl pretium fusce id 
+                velit ut. Aliquam purus sit amet luctus venenatis lectus magna fringilla. Arcu vitae 
+                elementum curabitur vitae nunc sed velit. Pretium aenean pharetra magna ac placerat. 
+                Integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Est ante 
+                in nibh mauris cursus mattis.
+            </p>
+        </div>
+
+        <hr>
+
+        <div class="block">
+            <img class="left drop-shadow" src="beach.jpg" width="150px" alt="Beach" />
+            <h2>Block Left</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                incididunt ut labore et dolore magna aliqua. Dictumst quisque sagittis purus sit 
+                amet volutpat consequat mauris. Nisl nunc mi ipsum faucibus vitae aliquet nec. 
+                Aliquam sem et tortor consequat id porta nibh venenatis cras. Eget arcu dictum 
+                varius duis at consectetur lorem donec massa. Turpis tincidunt id aliquet risus 
+                feugiat in ante metus dictum. Massa eget egestas purus viverra. Neque egestas 
+                congue quisque egestas diam in arcu. Ipsum a arcu cursus vitae congue mauris 
+                rhoncus. Vehicula ipsum a arcu cursus.
+
+            </p>
+            <p>
+                Hac habitasse platea dictumst quisque sagittis purus sit amet. Fringilla urna 
+                porttitor rhoncus dolor purus non enim. Etiam non quam lacus suspendisse faucibus 
+                interdum posuere lorem. Neque vitae tempus quam pellentesque nec nam aliquam sem et. 
+                Platea dictumst quisque sagittis purus sit amet. Nec feugiat nisl pretium fusce id 
+                velit ut. Aliquam purus sit amet luctus venenatis lectus magna fringilla. Arcu vitae 
+                elementum curabitur vitae nunc sed velit. Pretium aenean pharetra magna ac placerat. 
+                Integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Est ante 
+                in nibh mauris cursus mattis.
+            </p>
+        </div>
+
+        <hr>
+
+        <div class="block">
+            <h2>Block Center</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                incididunt ut labore et dolore magna aliqua. Dictumst quisque sagittis purus sit 
+                amet volutpat consequat mauris. Nisl nunc mi ipsum faucibus vitae aliquet nec. 
+                Aliquam sem et tortor consequat id porta nibh venenatis cras. Eget arcu dictum 
+                varius duis at consectetur lorem donec massa. Turpis tincidunt id aliquet risus 
+                feugiat in ante metus dictum. Massa eget egestas purus viverra. Neque egestas 
+                congue quisque egestas diam in arcu. Ipsum a arcu cursus vitae congue mauris 
+                rhoncus. Vehicula ipsum a arcu cursus.
+            </p>
+            <img class="center drop-shadow" src="beach.jpg" width="150px" alt="Beach" />
+            <p>
+                Hac habitasse platea dictumst quisque sagittis purus sit amet. Fringilla urna 
+                porttitor rhoncus dolor purus non enim. Etiam non quam lacus suspendisse faucibus 
+                interdum posuere lorem. Neque vitae tempus quam pellentesque nec nam aliquam sem et. 
+                Platea dictumst quisque sagittis purus sit amet. Nec feugiat nisl pretium fusce id 
+                velit ut. Aliquam purus sit amet luctus venenatis lectus magna fringilla. Arcu vitae 
+                elementum curabitur vitae nunc sed velit. Pretium aenean pharetra magna ac placerat. 
+                Integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Est ante 
+                in nibh mauris cursus mattis.
+            </p>
+        </div>
+
+        <script src="main.js"></script>
+    </body>
+</html>
