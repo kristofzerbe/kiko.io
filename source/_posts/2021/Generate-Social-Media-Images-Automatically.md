@@ -15,7 +15,7 @@ tags:
   - Hexo
   - ES6
   - Blogging
-  - Github
+  - GitHub
 related:
   - Automatic-Header-Images-in-Hexo
   - Discoveries-11
