@@ -177,14 +177,14 @@ function setThemeDark() {
   document.documentElement.setAttribute('data-theme', 'dark');    
   toggleTheme.checked = true;
   setCodepenTheme();
-  setHitCount();
+  //setHitCount();
 }
 function setThemeLight() {
   localStorage.setItem('theme', 'light');
   document.documentElement.setAttribute('data-theme', 'light');  
   toggleTheme.checked = false;
   setCodepenTheme();
-  setHitCount();
+  //setHitCount();
 }
 
 function setCodepenTheme() {
