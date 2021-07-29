@@ -185,6 +185,83 @@
   
   
      
+<article id="post-2021/Use-and-manage-multiple-Node-js-versions-on-Windows-10" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <a href="/post/Use-and-manage-multiple-Node-js-versions-on-Windows-10/" class="article-date">
+  
+    <time class="published dt-published" datetime="2021-01-08T12:47:22.000Z" itemprop="datePublished">08 Jan 2021</time>
+  
+</a>
+    
+  <div class="article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Use-and-manage-multiple-Node-js-versions-on-Windows-10/">
+        <img class="article-photo" src="/photos/tablet/D70_8671.jpg" alt="Sky Rally III" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/Use-and-manage-multiple-Node-js-versions-on-Windows-10/">Use and manage multiple Node.js versions on Windows 10</a>
+    </h1>
+  
+
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>For a new project I needed to have Node 14 running on my Windows 10 machine, so installation was done quickly via downloading and running the setup file.</p>
+<p>A short time later I wanted to write a new blog post here on kiko.io, which depends on the Node.js based static site generator <a href="https://hexo.io/">Hexo</a> … and ran into several problems.</p>
+<p>First of all my hero image processing script (see <a href="/post/Automatic-Header-Images-in-Hexo/" title="Automatic Header Images in Hexo">Automatic Header Images in Hexo</a>) returned an exception. The script uses <a href="https://github.com/hexojs/hexo-fs">hexo-fs</a> and the problem is known quite some time, according to this <a href="https://github.com/hexojs/hexo/issues/4263">Github issue</a>. The guys recommend to downgrade to an older version of Node.js … :(</p>
+<p>Ok … I needed a solution to install multiple Node.js versions and switch between them, depending on which project I want to work on … and there is one: <strong><a href="https://github.com/coreybutler/nvm-windows">nvm-windows</a></strong> by Corey Butler!</p>
+      
+        <p class="article-more-link">
+          <a class="button" href="/post/Use-and-manage-multiple-Node-js-versions-on-Windows-10/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>  
+  </div>
+
+      <div class="article-permalink" id="article-permalink-ckr7lb7u6009hngo7h8rf82qc">
+    <input class="article-permalink-value" value="https://kiko.io/post/Use-and-manage-multiple-Node-js-versions-on-Windows-10/" 
+           data-id="ckr7lb7u6009hngo7h8rf82qc" data-title="Use and manage multiple Node.js versions on Windows 10" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("ckr7lb7u6009hngo7h8rf82qc");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
 <article id="post-2021/How-to-prevent-duplicate-events" 
          class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -1066,87 +1143,6 @@
 
 </article>
   
-     
-<article id="post-2020/404-Page-in-Hexo-for-GitHub-Pages" 
-         class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-meta">
-    <a href="/post/404-Page-in-Hexo-for-GitHub-Pages/" class="article-date">
-  
-    <time class="published dt-published" datetime="2020-09-23T12:28:50.000Z" itemprop="datePublished">23 Sep 2020</time>
-  
-</a>
-    
-  <div class="article-category category-tools">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/404-Page-in-Hexo-for-GitHub-Pages/">
-        <img class="article-photo" src="/photos/tablet/19-07 Schottland-0935.jpg" alt="Tattoo Tuba" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-    <a class="article-anything" itemprop="name" href="/series/A-New-Blog">A New Blog</a>
-
-
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/404-Page-in-Hexo-for-GitHub-Pages/">404 Page in Hexo for GitHub Pages</a>
-    </h1>
-  
-
-        
-    <h2 class="article-subtitle" itemprop="name">
-        Provide an error page automatically when resource not found
-    </h2>
-
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      <p>As this blog is a static one, generated by <a href="https://hexo.io/">Hexo</a> and hostet at <a href="https://pages.github.com/">GitHub</a>, the page which was shown, when a user enters an Url which points to nowhere, was the default GitHub 404 page.</p>
-<p><img src="/post/404-Page-in-Hexo-for-GitHub-Pages/github-404-page.png" alt="GitHub 404 Page"></p>
-      
-        <p class="article-more-link">
-          <a class="button" href="/post/404-Page-in-Hexo-for-GitHub-Pages/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Error/" rel="tag">Error</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
-  </div>
-
-      <div class="article-permalink" id="article-permalink-ckr7lb7p3000jngo7hbf48bfp">
-    <input class="article-permalink-value" value="https://kiko.io/post/404-Page-in-Hexo-for-GitHub-Pages/" 
-           data-id="ckr7lb7p3000jngo7hbf48bfp" data-title="404 Page in Hexo for GitHub Pages" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("ckr7lb7p3000jngo7hbf48bfp");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
 
 
 
@@ -1186,6 +1182,12 @@
         
           <li>
             
+              <a href="/post/Running-Rollup-with-Gulp/">Running Rollup with Gulp</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Automatic-Duplicate-Image-Shadow/">Automatic Duplicate Image Shadow</a>
             
           </li>
@@ -1205,12 +1207,6 @@
           <li>
             
               <a href="/post/Open-Source-Insights-Seeing-the-big-picture/">Open Source Insights - Seeing the big picture</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Discoveries-10/">Discoveries #10</a>
             
           </li>
         
