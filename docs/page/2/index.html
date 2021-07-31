@@ -185,6 +185,86 @@
   
   
      
+<article id="post-2021/Discoveries-9" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <a href="/post/Discoveries-9/" class="article-date">
+  
+    <time class="published dt-published" datetime="2021-04-20T09:02:14.000Z" itemprop="datePublished">20 Apr 2021</time>
+  
+</a>
+    
+  <div class="article-category category-discoveries">
+    <a class="article-category-link" href="/categories/Discoveries/">Discoveries</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Discoveries-9/">
+        <img class="article-photo" src="/photos/tablet/DSC_0190.jpg" alt="Pipes &amp; Wheels" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+    <a class="article-anything" itemprop="name" href="/series/Discoveries">Discoveries</a>
+
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/Discoveries-9/">Discoveries #9</a>
+    </h1>
+  
+
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>Todays issue is all about extending your Web Developers toolbox with some useful libraries to provide the best UX to your users or visitors. Tables, Dropdowns, Color Pickers, Footnotes and GDPR dialogs on steroids.</p>
+
+        <ul class="anchorlist">
+            <li data-anchor="#jstable">JSTable</li><li data-anchor="#luckysheet">Luckysheet</li><li data-anchor="#virtual-select">Virtual Select</li><li data-anchor="#lc-select">LC Select</li><li data-anchor="#vanilla-colorful">Vanilla Colorful</li><li data-anchor="#duet-date-picker">Duet Date Picker</li><li data-anchor="#cookie-though">Cookie Though</li><li data-anchor="#full-screen-touch-slider">Full-Screen-Touch-Slider</li><li data-anchor="#bigfoot">Bigfoot</li><li data-anchor="#number-rollup">Number Rollup</li>
+        </ul>
+      
+        <p class="article-more-link">
+          <a class="button" href="/post/Discoveries-9/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Great-Finds/" rel="tag">Great Finds</a></li></ul>  
+  </div>
+
+      <div class="article-permalink" id="article-permalink-ckr7lb7r7003engo7as2p3k0s">
+    <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-9/" 
+           data-id="ckr7lb7r7003engo7as2p3k0s" data-title="Discoveries #9" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("ckr7lb7r7003engo7as2p3k0s");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
 <article id="post-2021/Scotch-Presets-for-Lightroom" 
          class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -1105,94 +1185,6 @@
 
 </article>
   
-     
-<article id="post-2021/Safely-remove-multiple-classes-using-a-prefix" 
-         class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-meta">
-    <a href="/post/Safely-remove-multiple-classes-using-a-prefix/" class="article-date">
-  
-    <time class="published dt-published" datetime="2021-01-18T10:17:46.000Z" itemprop="datePublished">18 Jan 2021</time>
-  
-</a>
-    
-  <div class="article-category category-javascript">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/Safely-remove-multiple-classes-using-a-prefix/">
-        <img class="article-photo" src="/photos/tablet/DSC_1690.jpg" alt="Metal Rose" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/Safely-remove-multiple-classes-using-a-prefix/">Safely remove multiple classes using a prefix</a>
-    </h1>
-  
-
-        
-    <h2 class="article-subtitle" itemprop="name">
-        Avoiding pitfalls when iterating over classList
-    </h2>
-
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      <p>Writing a Web App with HTML and JavaScript means you deal with several classes on your DOM elements in order to visualize state changes. And there are some pitfalls to be aware of with regard to removal.</p>
-<p>Assuming you want to open some kind of sidebar above a container. In this sidebar you have several buttons to show different content via JavaScript and a close button, which closes the sidebar again. You HTML code maybe looks like this:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;container&quot;</span>&gt;</span>... Main Content ...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;open-sidebar&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">aside</span> <span class="attr">id</span>=<span class="string">&quot;sidebar&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span>... Sidebar Content ...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;close&quot;</span>&gt;</span>Close Sidebar<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;content1&quot;</span>&gt;</span>Show Content 1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;content2&quot;</span>&gt;</span>Show Content 2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;content3&quot;</span>&gt;</span>Show Content 3<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>By clicking on the <code>open-sidebar</code> button, the sidebar is opened and the action, respectively the new state, is vizualized by adding an appropriate class to the parent sidebar element. In order to make it easy for the user, the default content (Content 1) will be loaded also and its state will be marked with another class.</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;sidebar open open-content1&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>A click on of the other content buttons (let’s say Content 2), will replace the current content and the <code>aside</code> classes will change into:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;sidebar open open-content2&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>Now we want to close the sidebar again, assuming that we don’t have stored the currently opened content in the JavaScript code…</p>
-      
-        <p class="article-more-link">
-          <a class="button" href="/post/Safely-remove-multiple-classes-using-a-prefix/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li></ul>  
-  </div>
-
-      <div class="article-permalink" id="article-permalink-ckr7lb7rz004cngo7dy0l1p0c">
-    <input class="article-permalink-value" value="https://kiko.io/post/Safely-remove-multiple-classes-using-a-prefix/" 
-           data-id="ckr7lb7rz004cngo7dy0l1p0c" data-title="Safely remove multiple classes using a prefix" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("ckr7lb7rz004cngo7dy0l1p0c");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
 
 
 
@@ -1232,6 +1224,12 @@
         
           <li>
             
+              <a href="/post/Discoveries-12-Tutorials/">Discoveries #12 - Tutorials</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Running-Rollup-with-Gulp/">Running Rollup with Gulp</a>
             
           </li>
@@ -1251,12 +1249,6 @@
           <li>
             
               <a href="/post/Discoveries-11/">Discoveries #11</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Open-Source-Insights-Seeing-the-big-picture/">Open Source Insights - Seeing the big picture</a>
             
           </li>
         

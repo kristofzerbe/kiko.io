@@ -185,6 +185,94 @@
   
   
      
+<article id="post-2021/Safely-remove-multiple-classes-using-a-prefix" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <a href="/post/Safely-remove-multiple-classes-using-a-prefix/" class="article-date">
+  
+    <time class="published dt-published" datetime="2021-01-18T10:17:46.000Z" itemprop="datePublished">18 Jan 2021</time>
+  
+</a>
+    
+  <div class="article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Safely-remove-multiple-classes-using-a-prefix/">
+        <img class="article-photo" src="/photos/tablet/DSC_1690.jpg" alt="Metal Rose" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/Safely-remove-multiple-classes-using-a-prefix/">Safely remove multiple classes using a prefix</a>
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle" itemprop="name">
+        Avoiding pitfalls when iterating over classList
+    </h2>
+
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>Writing a Web App with HTML and JavaScript means you deal with several classes on your DOM elements in order to visualize state changes. And there are some pitfalls to be aware of with regard to removal.</p>
+<p>Assuming you want to open some kind of sidebar above a container. In this sidebar you have several buttons to show different content via JavaScript and a close button, which closes the sidebar again. You HTML code maybe looks like this:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;container&quot;</span>&gt;</span>... Main Content ...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;open-sidebar&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">aside</span> <span class="attr">id</span>=<span class="string">&quot;sidebar&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span>... Sidebar Content ...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;close&quot;</span>&gt;</span>Close Sidebar<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;content1&quot;</span>&gt;</span>Show Content 1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;content2&quot;</span>&gt;</span>Show Content 2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;content3&quot;</span>&gt;</span>Show Content 3<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>By clicking on the <code>open-sidebar</code> button, the sidebar is opened and the action, respectively the new state, is vizualized by adding an appropriate class to the parent sidebar element. In order to make it easy for the user, the default content (Content 1) will be loaded also and its state will be marked with another class.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;sidebar open open-content1&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>A click on of the other content buttons (let’s say Content 2), will replace the current content and the <code>aside</code> classes will change into:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;sidebar open open-content2&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Now we want to close the sidebar again, assuming that we don’t have stored the currently opened content in the JavaScript code…</p>
+      
+        <p class="article-more-link">
+          <a class="button" href="/post/Safely-remove-multiple-classes-using-a-prefix/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li></ul>  
+  </div>
+
+      <div class="article-permalink" id="article-permalink-ckr7lb7rz004cngo7dy0l1p0c">
+    <input class="article-permalink-value" value="https://kiko.io/post/Safely-remove-multiple-classes-using-a-prefix/" 
+           data-id="ckr7lb7rz004cngo7dy0l1p0c" data-title="Safely remove multiple classes using a prefix" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("ckr7lb7rz004cngo7dy0l1p0c");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
 <article id="post-2021/Use-and-manage-multiple-Node-js-versions-on-Windows-10" 
          class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -1016,7 +1104,7 @@
     
     
     <div class="article-entry" itemprop="articleBody">
-      <p>Some articles I stumble upon in my daily routine of reading news and blogs are diving very deep in a certain topic, especially if they are describing the basics of techniques I use every day. </p>
+      <p>Some articles I stumble upon in my daily routine of reading news and blogs are diving very deep in a certain topic, especially if they are describing the basics of techniques I use every day.</p>
 <p>All of the following reading tips are of the type “ahh, that’s why this works like that” or “uuh, I just scatch on the surface on that”. Take your time and read the articles in detail. We all never stop learning and it’s a pleasure to do so…</p>
 <p><strong>CSS</strong></p>
 
@@ -1052,89 +1140,6 @@
 <script>
     window.addEventListener("load", () => {
         initPermalink("ckr7lb7pl0017ngo7aiv60idr");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2020/Device-Class-Detection-in-JavaScript" 
-         class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-meta">
-    <a href="/post/Device-Class-Detection-in-JavaScript/" class="article-date">
-  
-    <time class="published dt-published" datetime="2020-09-28T13:27:17.000Z" itemprop="datePublished">28 Sep 2020</time>
-  
-</a>
-    
-  <div class="article-category category-javascript">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/Device-Class-Detection-in-JavaScript/">
-        <img class="article-photo" src="/photos/tablet/19-05 Israel-0145.jpg" alt="Jaffa Pepsi" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/Device-Class-Detection-in-JavaScript/">Device Class Detection in JavaScript</a>
-    </h1>
-  
-
-        
-    <h2 class="article-subtitle" itemprop="name">
-        The unusual way by using CSS Media Queries
-    </h2>
-
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      <p>In some occasions it is necessary to know which device a user is using while writing JavaScript Web Apps. Should be nothing regarding layout, because for this we have <a href="https://developer.mozilla.org/de/docs/Web/CSS/Media_Queries/Using_media_queries"><code>CSS Media Queries</code></a>. </p>
-<p>Somewhere around 2011 W3C introduced <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia"><code>matchMedia()</code></a>, which <em>returns a MediaQueryList object that can be used to detemnine if the document matches the media query string.</em> The using is pretty straightforward and feels a bit like RegEx matching in JS:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mediaQuery = <span class="built_in">window</span>.matchMedia(<span class="string">&#x27;(min-width: 1025px)&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> (mediaQuery.matches) &#123;</span><br><span class="line">  <span class="comment">// do something...  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>If you are interested in this API, you will find good introductions to the topic <a href="https://css-tricks.com/working-with-javascript-media-queries/">here</a>, <a href="https://hacks.mozilla.org/2012/06/using-window-matchmedia-to-do-media-queries-in-javascript/">here</a> and <a href="https://www.mediaevent.de/javascript/window-matchMedia.html">here (German)</a>.</p>
-<p>One point of criticism on this pure JS approach can be, that you have to maintain the breakpoints in addition to CSS … <strong>but why not use these existing breakpoints in JS</strong>?</p>
-      
-        <p class="article-more-link">
-          <a class="button" href="/post/Device-Class-Detection-in-JavaScript/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Browser/" rel="tag">Browser</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MediaQuery/" rel="tag">MediaQuery</a></li></ul>  
-  </div>
-
-      <div class="article-permalink" id="article-permalink-ckr7lb7pg000zngo769pq1bvc">
-    <input class="article-permalink-value" value="https://kiko.io/post/Device-Class-Detection-in-JavaScript/" 
-           data-id="ckr7lb7pg000zngo769pq1bvc" data-title="Device Class Detection in JavaScript" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("ckr7lb7pg000zngo769pq1bvc");
     });
 </script>
 
@@ -1182,6 +1187,12 @@
         
           <li>
             
+              <a href="/post/Discoveries-12-Tutorials/">Discoveries #12 - Tutorials</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Running-Rollup-with-Gulp/">Running Rollup with Gulp</a>
             
           </li>
@@ -1201,12 +1212,6 @@
           <li>
             
               <a href="/post/Discoveries-11/">Discoveries #11</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Open-Source-Insights-Seeing-the-big-picture/">Open Source Insights - Seeing the big picture</a>
             
           </li>
         

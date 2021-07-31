@@ -18,7 +18,7 @@ related:
   - Discoveries-1
   - Dopamine-How-Software-should-be
 ---
-Some articles I stumble upon in my daily routine of reading news and blogs are diving very deep in a certain topic, especially if they are describing the basics of techniques I use every day. 
+Some articles I stumble upon in my daily routine of reading news and blogs are diving very deep in a certain topic, especially if they are describing the basics of techniques I use every day.
 
 All of the following reading tips are of the type "ahh, that's why this works like that" or "uuh, I just scatch on the surface on that". Take your time and read the articles in detail. We all never stop learning and it's a pleasure to do so...
 
