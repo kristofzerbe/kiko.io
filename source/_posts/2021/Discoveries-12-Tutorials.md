@@ -58,7 +58,7 @@ Text on the web must be easy to read and one of the probably most underrated opt
 There are two shadow properties in CSS: ``box-shadow`` and ``drop-shadow``. Michelle show us how to use the one or the other properly.
 {% enddiscovery %}
 
-{% discovery "A Guide to the Responsive Images Syntax in HTML" "Chris Coyier" URL Discoveries-12-Tutorials guide-to-the-responsive-images.png %}
+{% discovery "A Guide to the Responsive Images Syntax in HTML" "Chris Coyier" https://css-tricks.com/a-guide-to-the-responsive-images-syntax-in-html/ Discoveries-12-Tutorials guide-to-the-responsive-images.png %}
 Chris must not be missing in a list of CSS tutorials. As CSS has a bunch of tags and properties to show images in responsive layouts, he shows us how to use them effectively.
 {% enddiscovery %}
 
