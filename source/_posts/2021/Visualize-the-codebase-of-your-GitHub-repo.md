@@ -14,9 +14,9 @@ tags:
   - GitHub
   - Windows
 related:
+  - GitHubs-Magic-Dot
   - Generate-Social-Media-Images-Automatically
   - Using-GitHub-as-Commenting-Platform
-  - SVG-Resources
 hidden: true
 ---
 
