@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>kiko.io | Visualize the codebase of your GitHub repo</title><meta name="robots" content="noindex">
+  <title>kiko.io | Visualize the codebase of your GitHub repo</title>
   <meta name="title" content="kiko.io | Visualize the codebase of your GitHub repo">
   <meta name="description" content="kiko.io&#39;s Post &#39;Visualize the codebase of your GitHub repo&#39;">
   <!-- Schema.org for Google -->
@@ -235,7 +235,7 @@
     <a class="u-url u-uid" href="https://kiko.io/post/Visualize-the-codebase-of-your-GitHub-repo/" style="display:none;">https://kiko.io/post/Visualize-the-codebase-of-your-GitHub-repo/</a>
     <a href="/post/Visualize-the-codebase-of-your-GitHub-repo/" class="article-date">
   
-    <time class="published dt-published" datetime="2021-08-19T13:22:19.000Z" itemprop="datePublished">19 Aug 2021</time>
+    <time class="published dt-published" datetime="2021-08-21T05:55:00.000Z" itemprop="datePublished">21 Aug 2021</time>
   
 </a>
     
@@ -274,7 +274,7 @@
 <p>On the project page <strong><a href="https://next.github.com/projects/repo-visualization">Visualizing a codebase</a></strong>, she talks about the advantages of code vizualization in terms of a better overview and comparability of code …  and I loved it at first sight, because I’m an absolute visual person.</p>
 <img src="/post/Visualize-the-codebase-of-your-GitHub-repo/screenshot-repo-visualization.png" class="" title="Screenshot from the project page">
 
-<p>But her attempt was not only to show us what’s possible (static SVG files and even interactive apps for code browsing, filtering and comparing), but give us the possibility to create our own codebase diagrams as SVG automatically, whenever we commit our code, by running a <a href="https://docs.github.com/en/actions">GitHub Action</a>, she and her team has developed … the <strong>[Repo Vizualizer]</strong>(<a href="https://github.com/githubocto/repo-visualizer">https://github.com/githubocto/repo-visualizer</a>)</p>
+<p>But her attempt was not only to show us what’s possible (static SVG files and even interactive apps for code browsing, filtering and comparing), but give us the possibility to create our own codebase diagrams as SVG automatically, whenever we commit our code, by running a <a href="https://docs.github.com/en/actions">GitHub Action</a>, she and her team has developed … the <a href="https://github.com/githubocto/repo-visualizer"><strong>Repo Vizualizer</strong></a></p>
 <span id="more"></span>
 
 <p>Actually, her instructions are quite simple to implement, but the devil is in the details and I would like to show you what you may need for this. The goal is to prepare every project hosted on GitHub with instructions to run the Repo Visualizer after every commit to create or update a SVG file in the project, we can use in the README or via hotlinking in every other web page.</p>
@@ -284,10 +284,44 @@
 <li>Visual Studio Code</li>
 <li>a bunch of tiny projects hosted on GitHub</li>
 </ul>
-<h2 id="Project-Integration"><a href="#Project-Integration" class="headerlink" title="Project Integration"></a>Project Integration</h2><p>GitHub actions are configured via YAML files in the folder <code>.github\workflows</code>. Therefore we took Amelias demo file <code>diagram.yaml</code> and copy it to the newly created</p>
-<figure class="highlight yaml"><figcaption><span>diagram.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Project-Integration"><a href="#Project-Integration" class="headerlink" title="Project Integration"></a>Project Integration</h2><p>GitHub actions are configured via YAML files in the folder <code>.github\workflows</code>. Therefore, just take Amelias demo file <code>diagram.yaml</code> and copy it to this folder.</p>
+<figure class="highlight yaml"><figcaption><span>.github\workflows\diagram.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Create</span> <span class="string">Vizualizing</span> <span class="string">Codebase</span> <span class="string">Diagram</span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">workflow_dispatch:</span> &#123;&#125;</span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">main</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">get_data:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">code</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@master</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Update</span> <span class="string">diagram</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">githubocto/repo-visualizer@main</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">excluded_paths:</span> <span class="string">&quot;ignore,.github&quot;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="Prepare-Windows"><a href="#Prepare-Windows" class="headerlink" title="Prepare Windows"></a>Prepare Windows</h2><h2 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h2><h2 id="The-README"><a href="#The-README" class="headerlink" title="The README"></a>The README</h2><!-- flag of hidden posts -->
+<p>You don’t have to change anything in this file, except the name if you want to. It is clear to run correctly.</p>
+<hr>
+<h2 id="Prepare-Windows"><a href="#Prepare-Windows" class="headerlink" title="Prepare Windows"></a>Prepare Windows</h2><p>In case you get the following error message on pushing the new file in your project to GitHub …</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">refusing to allow an OAuth App to create or update workflow .github/workflows/diagram.yml without workflow scope</span><br></pre></td></tr></table></figure>
+
+<p>… you have a problem with your OAuth Token the Git Credential Manager created for you, while installing Git for Windows. This token doesn’t include the permission to update GitHub action workflows.</p>
+<p>A workaround is, to create a <strong>Personal Access Token</strong> on Github WITH this permission …</p>
+<img src="/post/Visualize-the-codebase-of-your-GitHub-repo/create-personal-access-token.png" class="">
+
+<p>… and replace the existing token in the <strong>Windows Credential Manager</strong> (in German the wonderful word “Anmeldeinformationsverwaltung”):</p>
+<img src="/post/Visualize-the-codebase-of-your-GitHub-repo/windows-credential-manager.png" class="">
+
+<hr>
+<h2 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h2><p>There are a few interesting parameters to place within the <code>with</code> section, that allow you to customize the output of the graph to your needs:</p>
+<ul>
+<li><code>output_file</code> - The name and relative path to the SVG file to generate. Default is <em>./diagram.svg</em></li>
+<li><code>root_path</code> - The root path of the code to be vizualized</li>
+<li><code>excluded_paths</code> - Folders to exclude from visualizing (as in the demo YAML)</li>
+<li><code>excluded_globs</code> - Files to exclude from visualizing in micromatch syntax</li>
+<li><code>commit_message</code> - After the action has created the diagram, it will be commited with this custom message</li>
+</ul>
+<p>After pushing your changes, you can watch the action run in the ACTIONS tab in GitHub:</p>
+<img src="/post/Visualize-the-codebase-of-your-GitHub-repo/github-workflow.png" class="">
+
+<img src="/post/Visualize-the-codebase-of-your-GitHub-repo/github-workflow-details.png" class="">
+
+<hr>
+<h2 id="The-README"><a href="#The-README" class="headerlink" title="The README"></a>The README</h2><p>As the SVG is part of yor project, you can use it easily in your repos README:</p>
+<figure class="highlight md"><figcaption><span>README.md</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">## Codebase Vizualization</span></span><br><span class="line">For an inactive diagram, please visit [<span class="string">Repo Visualization App</span>](<span class="link">https://octo-repo-visualization.vercel.app/?repo=kristofzerbe%2Fhexo-generator-anything</span>)...</span><br><span class="line">![<span class="string">Visualization of the codebase</span>](<span class="link">./DIAGRAM.svg</span>)</span><br></pre></td></tr></table></figure>
+
+<img src="/post/Visualize-the-codebase-of-your-GitHub-repo/diagram-svg.png" class="">
+
+<p>This SVG is not interactive as Amelias Repo Visualization React app is, but it is a good overview of a repos codebase und it looks really good.</p>
+
     </div>
     
     <footer class="article-footer">      
@@ -356,6 +390,56 @@
   <div class="article-related">
     <h2>Related</h2>
     <div class="archives">
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/post/GitHubs-Magic-Dot/">
+        <img class="archive-article-photo" src="/photos/tablet/19-07 Schottland-0595.jpg" alt="Untitled" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/post/GitHubs-Magic-Dot/" class="archive-article-date">
+  
+    <time class="published dt-published" datetime="2021-08-20T11:43:04.000Z" itemprop="datePublished">20 Aug 2021</time>
+  
+</a>
+      
+  <div class="archive-article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+      
+
+
+
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/post/GitHubs-Magic-Dot/">GitHubs Magic Dot</a>
+    </h1>
+  
+
+      
+    <h2 class="archive-article-subtitle" itemprop="name">
+        New experience in code editing
+    </h2>
+              
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Browser/" rel="tag">Browser</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/" rel="tag">VS Code</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
       
         
         <article class="archive-article archive-type-post">
@@ -457,56 +541,20 @@
 </article>
         
       
-        
-        <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-    <a href="/post/SVG-Resources/">
-        <img class="archive-article-photo" src="/photos/tablet/DSC_4936.jpg" alt="Forgotten Motocycle" />
+    </div>
+  </div>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/post/GitHubs-Magic-Dot/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">GitHubs Magic Dot</div>
     </a>
-
-    </header>
-    <div class="archive-article-content">
-      <a href="/post/SVG-Resources/" class="archive-article-date">
   
-    <time class="published dt-published" datetime="2021-04-09T12:07:53.000Z" itemprop="datePublished">09 Apr 2021</time>
-  
-</a>
-      
-  <div class="archive-article-category category-ui-design">
-    <a class="article-category-link" href="/categories/UI-Design/">UI-Design</a> 
-  </div>
+</nav>
 
-      
-
-
-
-
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/post/SVG-Resources/">SVG Resources</a>
-    </h1>
-  
-
-                    
-    </div>
-    <div class="archive-article-footer">
-      
-  <div class="archive-article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Great-Finds/" rel="tag">Great Finds</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Imaging/" rel="tag">Imaging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SVG/" rel="tag">SVG</a></li></ul>  
-  </div>
-
-    </div>
-</div>
-</article>
-        
-      
-    </div>
-  </div>
-
-  
 
 </article></main>
           
@@ -538,6 +586,12 @@
         
           <li>
             
+              <a href="/post/Visualize-the-codebase-of-your-GitHub-repo/">Visualize the codebase of your GitHub repo</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/GitHubs-Magic-Dot/">GitHubs Magic Dot</a>
             
           </li>
@@ -557,12 +611,6 @@
           <li>
             
               <a href="/post/Automatic-Duplicate-Image-Shadow/">Automatic Duplicate Image Shadow</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Generate-Social-Media-Images-Automatically/">Generate Social Media Images Automatically</a>
             
           </li>
         
