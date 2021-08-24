@@ -19,6 +19,7 @@ hexo.extend.generator.register("dynamic-trello", async function(locals) {
     promises.push(new Promise((resolve, reject) => {
       log.info("Trello: Fetching data from board '" + board.name.toUpperCase() + "'");
 
+      // Get board data from Trello
       axios.get(board.url).then(response => {
         let json = response.data;
   
@@ -54,8 +55,7 @@ hexo.extend.generator.register("dynamic-trello", async function(locals) {
             return new Date(b.dateLastActivity) - new Date(a.dateLastActivity);
           });
 
-          // Create new item objects out of cards, 
-          // if not closed and with at least one label
+          // Create new item objects out of cards, if not closed and without labels
           page.items = cards.reduce((reducer, card) => {
             if (card.closed === false && card.labels.length > 0) {
 
