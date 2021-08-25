@@ -1,0 +1,17 @@
+<h1 class="page-title"><%= page.title %></h1>
+<h2 class="page-subtitle"><%= page.subtitle %></h2>
+
+<div class="page-content">
+  <%- page.content %>
+
+  <div class="view grid">
+    <% for(var i=0; i < page.items.length; i++) { %>
+      <%- partial('_partial/photo-item', { item: page.items[i] }) %>
+    <% } %>
+  </div>  
+
+</div>
+
+<script>
+  // Extend the page with JavaScript ...
+</script>

@@ -6,6 +6,7 @@ const log = require('hexo-log')({
 });
 const front = require('hexo-front-matter');
 const fs = require('hexo-fs');
+const path = require('path');
 
 hexo.on('new', function(data) {
     //return; 
@@ -14,9 +15,9 @@ hexo.on('new', function(data) {
 
     var post = front.parse(data.content);
 
-    var poolDir = hexo.source_dir.replace("\source", hexo.config.pool_dir);
-    var photosDir = hexo.source_dir.replace("\source", hexo.config.static_dir) + "photos";
-    
+    var poolDir = hexo.source_dir.replace("\source", hexo.config.static_dir + "\\" + hexo.config.pool_dir);
+    var photosDir = hexo.source_dir.replace("\source", hexo.config.static_dir) + "\\" + hexo.config.photo_dir;
+
     var files = fs.listDirSync(poolDir);
 
     var metafile;
@@ -70,7 +71,7 @@ hexo.on('new', function(data) {
     setTimeout(function() {
         log.info("REMOVE " + poolDir + "\\" + photoFolder);
         fs.rmdirSync(poolDir + "\\" + photoFolder);
-    }, 2000);
+    }, 3000);
 
 
     //TODO: Doesn't work, because callback is not triggered on fs.copyFile

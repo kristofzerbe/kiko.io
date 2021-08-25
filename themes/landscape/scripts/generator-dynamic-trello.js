@@ -17,7 +17,7 @@ hexo.extend.generator.register("dynamic-trello", async function(locals) {
 
     // Collect Promises to resolve later
     promises.push(new Promise((resolve, reject) => {
-      log.info("Trello: Fetching data from board '" + board.name.toUpperCase() + "'");
+      log.info("Fetching Trello data from board '" + board.name.toUpperCase() + "'");
 
       // Get board data from Trello
       axios.get(board.url).then(response => {
@@ -25,7 +25,7 @@ hexo.extend.generator.register("dynamic-trello", async function(locals) {
   
         // Level 2: Process pages (lists) configured in board
         board.pages.forEach(page => {
-          log.info("Trello: Processing '" + page.name.toUpperCase() + "'");
+          log.info("Processing Trello list '" + page.name.toUpperCase() + "' for dynamic page");
     
           // Get MD data for list
           const mdSource = path.join(config.source_dir, "_dynamic", page.name + ".md");
