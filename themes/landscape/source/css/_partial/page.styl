@@ -98,11 +98,15 @@
           max-width: 75%
 
     .switch-view
-      margin: 1em
+      margin: 1em 0.25em
       display: flex
       flex-direction: row
       justify-content: flex-end
       gap: 1em
+      .info
+        margin-right: auto
+        line-height: 2em
+        font-weight: bold
       input[type=radio] 
         display: none
         + label
@@ -171,6 +175,7 @@
         .card-img
           img
             max-width: 125px
+            border-radius: 0 0 0 4px
         a.icon-link
           bottom: -.5em
         span.pre-title
@@ -312,16 +317,24 @@
           white-space: nowrap
           overflow: hidden
           text-overflow: ellipsis
-          padding: 5px 8px
+          padding: 5px 8px 7px
+          opacity: 0.5
+          border-radius: 4px 4px 0 0
           color: white
           &.used.post
-            background-color: cornflowerblue
+            background-color: rgba(65,117,212,0.55)
+            &:hover
+              opacity: 1
           &.used.page
-            background-color: cadetblue
+            background-color: rgba(95,158,160,0.9)
+            &:hover
+              opacity: 1
           &.used.dynamic
-            background-color: steelblue
+            background-color: rgba(65,70,167,0.53)
+            &:hover
+              opacity: 1
           &.pool
-            background-color: lightgray
+            background-color: rgba(169,169,169,0.8)
       .card.hide
       .card.trans
         transform: scale(0)

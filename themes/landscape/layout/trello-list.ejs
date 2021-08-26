@@ -13,7 +13,6 @@
 
     <section class="flex">
       <fieldset class="lcslt-wrapper gap">
-        <span class="result" data-total="<%- page.items.length %>"><%- page.items.length %> items total</span>
         <label>Filter:</label>
         <select name="category" id="category" data-placeholder="Select a category..." multiple>
           <% for(var i=0; i < page.labels.length; i++) { %>
@@ -40,6 +39,7 @@
     </section>
 
     <div class="switch-view">
+      <div class="info"><span><%= page.items.length %></span> Entries</div>
       <input type="radio" name="view-switch" id="switch-grid" checked 
           onchange="setView('grid');">
       <label for="switch-grid"></label>
@@ -117,15 +117,15 @@
         initViewportImage();
 
         var resultCount = document.querySelectorAll(".card:not(.hide)").length;
-        let resultElement = document.querySelector(".lcslt-wrapper .result");
+        let resultElement = document.querySelector(".info span");
         var totalCount = parseInt(resultElement.dataset.total);
 
         if (resultCount === totalCount) {
           resultElement.textContent = totalCount + " items total";
         } else if(resultCount === 0) {
-          resultElement.textContent = "no items found";
+          resultElement.textContent = 0;
         } else {
-          resultElement.textContent = resultCount + ((resultCount === 1) ? " item " : " items ") + "found"
+          resultElement.textContent = resultCount; //+ ((resultCount === 1) ? " item " : " items ") + "found"
         }
       }, 300);
   }
