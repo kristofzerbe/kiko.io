@@ -21,42 +21,24 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
   page.content = hexo.render.renderSync({ text: page._content, engine: 'markdown' });  
 
   // Get pool photos
-  var poolDir = hexo.source_dir.replace("\source", hexo.config.static_dir + "\\" + hexo.config.pool_dir);
+  let p1 = getPoolPhotos(config);
+  log.info("Processed " + p1.length + " pool photos");
+  
+  // Get used photos in Posts & Pages
+  let p2 = getPostAndPagePhotos(config, locals);
+  log.info("Processed " + p2.length + " used photos in posts and pages");
 
-  let pool = fs
-    .readdirSync(poolDir)
-    .filter(entry => fs.statSync(path.join(poolDir, entry)).isDirectory())
-    .map(entry => ({ name: entry }));
+  // Get used photos in Dynmic pages
+  let p3 = getDynamicPagePhotos(config);
+  log.info("Processed " + p3.length + " used photos in dynamic pages");
 
-  log.info("Processing " + pool.length + " pool photos");
-
-  pool.forEach(entry => {
-    let meta = fs.readFileSync(path.join(poolDir, entry.name, "meta.txt")).split("\n");
-    entry.file = "mobile.jpg";
-    entry.path = path.join(config.pool_dir, entry.name, entry.name);
-    entry.title = meta[0];
-    entry.link = meta[1];
-  });
-//console.log(JSON.stringify(pool));
-
-  // Get used photos
-  var usedDir = hexo.source_dir.replace("\source", hexo.config.static_dir + "\\" + hexo.config.photo_dir) + "\mobile";
-
-  let used = fs
-    .readdirSync(usedDir)
-    .map(entry => ({ file: entry }))
-
-  used.forEach(entry => {
-    entry.name = entry.file.replace(".jpg", "");
-    entry.path = path.join(config.photo_dir, "mobile", entry.file);
-    entry.title = "";
-    entry.link = "";
-    entry.url = "";
-  })
-console.log(JSON.stringify(used));
+  //TODO: anything pages
 
   // Set items for page
-  page.items = [];
+  page.items = [...p1, ...p2, ...p3]
+    .filter(p => (p.name)) //filter out all without photo name
+    .sort((a, b) => a.key.localeCompare(b.key));
+//console.log(page.items);
 
   let result = {
       data: page,
@@ -65,4 +47,112 @@ console.log(JSON.stringify(used));
   }
 
   return result;
+
 });
+
+function getPoolPhotos(config) {
+  
+  var poolDir = hexo.source_dir.replace("\source", hexo.config.static_dir + "\\" + hexo.config.pool_dir);
+
+  let pool = fs
+    .readdirSync(poolDir)
+    .filter(entry => fs.statSync(path.join(poolDir, entry)).isDirectory())
+    .map(entry => ({ key: entry, status: "pool", file: null }));
+
+  pool.forEach(entry => {
+    let meta = fs.readFileSync(path.join(poolDir, entry.key, "meta.txt")).split("\n");
+    entry.file = "mobile.jpg";
+    entry.path = "/" + path.join(config.pool_dir, entry.key, entry.file);
+    entry.name = meta[0];
+    entry.link = meta[1];
+    entry.article = null;
+  });
+
+//console.log(JSON.stringify(pool));
+
+  return pool;
+}
+
+function getPostAndPagePhotos(config, locals) {
+
+  var usedDir = hexo.source_dir.replace("\source", hexo.config.static_dir + "\\" + hexo.config.photo_dir) + "\mobile";
+
+  let used = fs
+    .readdirSync(usedDir)
+    .map(entry => ({ key: null, status: "used", file: entry }))
+
+//console.log(locals.pages.data);
+
+  let postsAndPages = [...locals.posts.data, ...locals.pages.data].map(y => {
+    if (y.photograph) {
+      return {
+        title: y.title,
+        subTitle: y.subtitle,
+        date: y.date,
+        path: y.path,
+        layout: y.layout,
+        photographFile: y.photograph.file,
+        photographName: y.photograph.name,
+        photographLink: y.photograph.link
+      }  
+    }
+  });
+//console.log(JSON.stringify(postsAndPages));
+
+  used.forEach(entry => {
+    entry.key = entry.file.replace(".jpg", "");
+    entry.path = "/" + path.join(config.photo_dir, "mobile", entry.file);
+
+    let p = postsAndPages.find(p => (p && p.photographFile === entry.file));
+//console.log(entry.file + " -> " + JSON.stringify(p));
+
+    if (p) {
+      entry.name = p.photographName;
+      entry.link = p.photographLink;
+      entry.article = {
+        type: p.layout,
+        title: p.title,
+        subtitle: p.subTitle,
+        url: "/" + p.path
+      }
+    }
+//console.log(entry);
+  })
+//console.log(JSON.stringify(used));
+
+  return used;
+}
+
+function getDynamicPagePhotos(config) {
+
+  var dynamicDir = path.join(config.source_dir, "_dynamic");
+
+  let dynamic = fs.readdirSync(dynamicDir).reduce((acc, file) => {
+    const mdSource = path.join(dynamicDir, file);
+    const md = fs.readFileSync(mdSource);
+    let fm = front.parse(md);
+
+    if (fm.photograph) {
+      acc.push({
+        key: fm.photograph.file.replace(".jpg", ""),
+        status: "used",
+        file: fm.photograph.file,
+        path: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file),
+        name: fm.photograph.name,
+        link: fm.photograph.link,
+        article: {
+          type: "dynamic",
+          title: fm.title,
+          subtitle: fm.subTitle,
+          url: fm.permalink
+        }
+      });
+
+    }
+    return acc;
+
+  }, []);
+//console.log(dynamic);
+
+  return dynamic;
+}

@@ -98,7 +98,7 @@
           max-width: 75%
 
     .switch-view
-      margin: -1em 1em 1em 1em
+      margin: 1em
       display: flex
       flex-direction: row
       justify-content: flex-end
@@ -137,9 +137,7 @@
         padding: .5em .5em 0 .5em
         margin: .5em 0
         display: grid
-        grid-template-columns: 90px auto
-        grid-template-areas: "image title" "image tags"
-        a.card-img
+        .card-img
           grid-area: image
           margin-right: 1em
           margin-top: -0.5em
@@ -158,12 +156,29 @@
             white-space: nowrap
             overflow: hidden
             text-overflow: ellipsis
-        .tags
-          margin: 0
-          grid-area: tags
-          margin-bottom: 0.5em
         small, p
           display: none
+      .card.tiny-tools
+        grid-template-columns: 90px auto
+        grid-template-areas: "image title" "image tags"
+        .tags
+          grid-area: tags
+          margin: 0
+          margin-bottom: 0.5em
+      .card.photo
+        grid-template-columns: 132px auto
+        grid-template-areas: "image title" "image link" "status status"
+        .card-img
+          img
+            max-width: 125px
+        a.icon-link
+          top: 0
+        span.pre-title
+          grid-area: link
+          margin-bottom: 5px
+        .status
+          grid-area: status
+          margin: 0 -0.5em
 
     .grid
       display: grid
@@ -172,18 +187,29 @@
       margin-bottom: 3em
       .card
         padding: 1em
-        a.card-img
+        .card-img
           margin: -1em -1em 0 -1em
           height: auto
           img
             width: 100%
             height: 100%
             object-fit: cover
-            aspect-ratio: 1
         h3
-          margin: 0.75rem 0 0.25rem
-        .tags
+          margin: 1rem 0 0.25rem
+      .card.tiny-tools
+        div.tags
           margin: 1rem 0 0.75rem
+      .card.photo
+        grid-template-areas: "image" "text" "status"
+        .card-img
+          grid-area: image
+          img
+            height: 160px
+        a.icon-link
+          top: 155px
+        .status
+          grid-area: status
+          margin: 1.5em -1em -1em
 
     .view
       .card
@@ -195,7 +221,7 @@
         border-radius: border-radius
         background: color-block
         box-shadow: 1px 2px 20px 5px color-border
-        border: 1px solid color-border
+        border: none
         color: color-default
         /[data-theme="dark"] &
           background: dark-color-block
@@ -206,27 +232,36 @@
           text-decoration: none
           word-break: break-all
           display: inline-block
-        a.card-img
+        a.icon-link
+          position: absolute
+          right: 12px
+          opacity: 0.33
+          &:hover
+            opacity: 1
+          img
+            width: 42px;
+        .card-img
           display: block
           position: relative
           filter: grayscale(0.5) contrast(0.5)
           transition: all ease-out 0.6s
           img
             background-color: color-background
-            border-bottom: 1px color-background solid
             /[data-theme="dark"] &
               background-color: dark-color-background
-              border-bottom: 1px dark-color-background solid
         &:hover
-          transform: scale(1.01) translateY(-1px)
+          transform: scale(1) translateY(-1px)
           box-shadow: 1px 2px 20px 5px color-border-3d
           /[data-theme="dark"] &
             box-shadow: 1px 2px 20px 5px dark-color-border-3d
-        a.card-img.in-view
+        .card-img.in-view
           filter: grayscale(0) contrast(1)
         h3
           line-height: line-height-title
           font-weight: 600
+          white-space: nowrap
+          overflow: hidden
+          text-overflow: ellipsis
           a
             text-decoration: none
             color: color-default
@@ -237,7 +272,13 @@
               color: color-link
               /[data-theme="dark"] &
                 color: dark-color-link
-        .tags 
+      .card.tiny-tools
+        .card-img
+          img
+            border-bottom: 1px color-background solid
+            /[data-theme="dark"] &
+              border-bottom: 1px dark-color-background solid
+        div.tags 
           display: flex
           flex-flow: row wrap
           span, a.tag 
@@ -259,6 +300,25 @@
               color: color-border
               /[data-theme="dark"] &
                 color: dark-color-border
+      .card.photo
+        span.pre-title
+          font-size: .85em;
+          opacity: 0.5
+        .status
+          display: block
+          white-space: nowrap
+          overflow: hidden
+          text-overflow: ellipsis
+          padding: 5px 8px
+          color: white
+          &.used.post
+            background-color: cornflowerblue
+          &.used.page
+            background-color: cadetblue
+          &.used.dynamic
+            background-color: steelblue
+          &.pool
+            background-color: lightgray
       .card.hide
       .card.trans
         transform: scale(0)

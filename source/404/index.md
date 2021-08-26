@@ -5,6 +5,8 @@ permalink: /404.html
 hitcountId: pNXfeWPWS
 photograph: 
   file: $404.jpg
+  name: Instructions
+  link: 'https://500px.com/photo/80798073/instructions-by-kristof-zerbe'
 ---
 I don't know how you ended up here, but you have jumped over the edge of this blog. Maybe it's the end of the internet and you can power off your machine now...
 

@@ -2,6 +2,7 @@
 title: Tiny Tools
 subtitle: A collection of tiny web tools
 date: 2021-04-14 09:11:40
+permalink: /collections/tiny-tools
 hitcountId: uvAXOdA0M
 photograph: 
   file: $tiny-tools.jpg

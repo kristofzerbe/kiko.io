@@ -198,6 +198,24 @@
 </style>
 
 
+    <img id="header-photo" src="/photos/normal/$til.jpg" width="0" height="0"/>
+    <script>
+        var header = document.getElementById("header");
+        header.classList.add("photograph");
+        
+        var photoExpand = document.getElementById("header-photo-expand");
+        //photoExpand.href = "/photos/normal/$til.jpg";
+        photoExpand.addEventListener('click', (e) => { 
+            e.preventDefault();
+            let img = document.querySelector("#header-photo");
+            showFullScreen(img);
+        });
+
+        var photoLink = document.getElementById("header-photo-link");
+        photoLink.href = "https://500px.com/photo/82409189/riga-locks-by-kristof-zerbe";
+        photoLink.innerHTML = "see <strong>Riga Locks</strong> at 500px";
+    </script>
+
 
 
 
@@ -325,6 +343,12 @@
             <li class="menu-item" id="menu-rss-link">
               <a href="/atom.xml">
                   <span>RSS Feed</span>
+                </a>
+            </li>
+          
+            <li class="menu-item" id="menu-photos-link">
+              <a href="/photos">
+                  <span>photos</span>
                 </a>
             </li>
           

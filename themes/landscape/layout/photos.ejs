@@ -1,8 +1,21 @@
+<% if (page.photograph){ %>
+  <%- partial('_partial/photograph', { page: page }) %>
+<% } %>
+
 <h1 class="page-title"><%= page.title %></h1>
 <h2 class="page-subtitle"><%= page.subtitle %></h2>
 
 <div class="page-content">
   <%- page.content %>
+
+  <div class="switch-view">
+    <input type="radio" name="view-switch" id="switch-grid" checked 
+        onchange="setView('grid');">
+    <label for="switch-grid"></label>
+    <input type="radio" name="view-switch" id="switch-list" 
+        onchange="setView('list');">
+    <label for="switch-list"></label>
+  </div>
 
   <div class="view grid">
     <% for(var i=0; i < page.items.length; i++) { %>
@@ -13,5 +26,21 @@
 </div>
 
 <script>
-  // Extend the page with JavaScript ...
+    document.addEventListener('DOMContentLoaded', (event) => {
+    let currentView = getCookie("view");
+    if (currentView) {
+      document.querySelector("#switch-" + currentView).checked = true; 
+      setView(currentView);
+    }
+  })
+
+  function setView(newView) {
+    let view = document.querySelector('.view');
+    if (newView === 'list') {
+      view.classList.replace('grid', 'list')
+    } else {
+      view.classList.replace('list', 'grid')
+    }
+    setCookie("view", newView, 365);
+  }
 </script>

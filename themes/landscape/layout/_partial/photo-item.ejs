@@ -1,5 +1,15 @@
 <div class="card photo">
-    <img src="" alt="" />
-    <h3></h3>
-    <small></small>
+  <div class="card-img">
+    <img src="<%- item.path %>" alt="<%- item.name %>" />
+  </div>
+  <span class="pre-title"><%- item.key %>.jpg</span>
+  <h3><%- item.name %></h3>
+  <% if (item.article){ %>
+  <a class="status <%- item.status %> <%- item.article.type %>" href="<%- item.article.url %>"><%- item.article.title %></a>
+  <% } else { %>
+  <span class="status <%- item.status %>">unused</span>
+  <% } %>
+  <a class="icon-link" href="<%- item.link %>">
+    <img src="/images/500px.svg" alt="see on 500px" style="height" />
+  </a>
 </div>
