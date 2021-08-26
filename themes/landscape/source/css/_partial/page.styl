@@ -167,18 +167,18 @@
           margin-bottom: 0.5em
       .card.photo
         grid-template-columns: 132px auto
-        grid-template-areas: "image title" "image link" "status status"
+        grid-template-areas: "status status" "image title" "image link"
         .card-img
           img
             max-width: 125px
         a.icon-link
-          top: 0
+          bottom: -.5em
         span.pre-title
           grid-area: link
           margin-bottom: 5px
         .status
           grid-area: status
-          margin: 0 -0.5em
+          margin: -.5em -.5em .5em
 
     .grid
       display: grid
@@ -200,16 +200,19 @@
         div.tags
           margin: 1rem 0 0.75rem
       .card.photo
-        grid-template-areas: "image" "text" "status"
+        grid-template-areas: "status" "image" "text"
         .card-img
           grid-area: image
           img
             height: 160px
+        span.pre-title
+            display: block
+            margin-top: 5px
         a.icon-link
-          top: 155px
+          top: 185px
         .status
           grid-area: status
-          margin: 1.5em -1em -1em
+          margin: -1em -1em 1em -1em
 
     .view
       .card
@@ -259,9 +262,9 @@
         h3
           line-height: line-height-title
           font-weight: 600
-          white-space: nowrap
-          overflow: hidden
-          text-overflow: ellipsis
+          // white-space: nowrap
+          // overflow: hidden
+          // text-overflow: ellipsis
           a
             text-decoration: none
             color: color-default
