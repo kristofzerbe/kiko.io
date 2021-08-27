@@ -147,9 +147,6 @@
           margin-top: -0.5em
           margin-left: -0.5em
           float: left;
-          height: 82px
-          img
-            height: 100%
         h3
           margin: .5em 0 1em 0
           font-size: 110%
@@ -165,17 +162,24 @@
       .card.tiny-tools
         grid-template-columns: 90px auto
         grid-template-areas: "image title" "image tags"
+        .card-img
+          height: 82px
+          img
+            height: 100%
         .tags
           grid-area: tags
           margin: 0
           margin-bottom: 0.5em
       .card.photo
-        grid-template-columns: 132px auto
+        grid-template-columns: 160px auto
         grid-template-areas: "status status" "image title" "image link"
         .card-img
+          height: 90px
+          min-width: 150px
+          overflow: hidden
+          border-radius: 0 0 0 4px
           img
-            max-width: 125px
-            border-radius: 0 0 0 4px
+            width: 100%
         a.icon-link
           bottom: -.5em
         span.pre-title
@@ -257,13 +261,6 @@
             background-color: color-background
             /[data-theme="dark"] &
               background-color: dark-color-background
-        &:hover
-          transform: scale(1) translateY(-1px)
-          box-shadow: 1px 2px 20px 5px color-border-3d
-          /[data-theme="dark"] &
-            box-shadow: 1px 2px 20px 5px dark-color-border-3d
-        .card-img.in-view
-          filter: grayscale(0) contrast(1)
         h3
           line-height: line-height-title
           font-weight: 600
@@ -280,6 +277,13 @@
               color: color-link
               /[data-theme="dark"] &
                 color: dark-color-link
+        &:hover
+          transform: scale(1) translateY(-1px)
+          box-shadow: 1px 2px 20px 5px color-border-3d
+          /[data-theme="dark"] &
+            box-shadow: 1px 2px 20px 5px dark-color-border-3d
+        .card-img.in-view
+          filter: grayscale(0) contrast(1)        
       .card.tiny-tools
         .card-img
           img
@@ -318,23 +322,20 @@
           overflow: hidden
           text-overflow: ellipsis
           padding: 5px 8px 7px
-          opacity: 0.5
+          opacity: 0.75
           border-radius: 4px 4px 0 0
           color: white
           &.used.post
-            background-color: rgba(65,117,212,0.55)
-            &:hover
-              opacity: 1
+            background-color: rgba(65,117,212,0.6)
           &.used.page
             background-color: rgba(95,158,160,0.9)
-            &:hover
-              opacity: 1
           &.used.dynamic
-            background-color: rgba(65,70,167,0.53)
-            &:hover
-              opacity: 1
+            background-color: rgba(65,70,167,0.5)
           &.pool
-            background-color: rgba(169,169,169,0.8)
+            background-color: rgba(159,159,159,0.99)
+        &:hover
+          .status
+            opacity: 1
       .card.hide
       .card.trans
         transform: scale(0)
