@@ -10,3 +10,5 @@ photograph:
 ---
 
 All posts or pages in this blog have a unique photo referenced, which was shot by me in the past years. Here's a list of all photos used and available for future posts:
+
+---

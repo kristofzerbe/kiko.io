@@ -21,9 +21,9 @@
     color: dark-color-grey  
 
 .page-content
+  @extend $base-style
   section 
       @extend $block
-      @extend $base-style
       margin: 2em 0
       padding: 2em
       overflow: hidden
@@ -171,8 +171,9 @@
           margin: 0
           margin-bottom: 0.5em
       .card.photo
+        grid-template-rows: auto 25px auto
         grid-template-columns: 160px auto
-        grid-template-areas: "status status" "image title" "image link"
+        grid-template-areas: "status status" "image link" "image title"
         .card-img
           height: 90px
           min-width: 150px
@@ -180,11 +181,12 @@
           border-radius: 0 0 0 4px
           img
             width: 100%
+        h3
+          margin-top: 0
         a.icon-link
           bottom: -.5em
         span.pre-title
           grid-area: link
-          margin-bottom: 5px
         .status
           grid-area: status
           margin: -.5em -.5em .5em
