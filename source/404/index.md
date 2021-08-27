@@ -1,7 +1,7 @@
 ---
 title: 404
 date: 2020-09-23 12:31:40
-permalink: /404.html
+permalink: 404.html
 hitcountId: pNXfeWPWS
 photograph: 
   file: $404.jpg
@@ -11,7 +11,7 @@ photograph:
 I don't know how you ended up here, but you have jumped over the edge of this blog. Maybe it's the end of the internet and you can power off your machine now...
 
 <div style="text-align: center; margin: 60px 0;">
-<pre style="white-space:pre; letter-spacing:0; font-family:'Consolas','BitstreamVeraSansMono','CourierNew',Courier,monospace; font-size:10px;">
+<pre style="white-space:pre; letter-spacing:0; font-family:'Consolas','BitstreamVeraSansMono','CourierNew',Courier,monospace; font-size:16px;">
                              /@@                            
                           @@@@@@@@@                         
                           @@@@@@@@@                         
@@ -41,3 +41,7 @@ I don't know how you ended up here, but you have jumped over the edge of this bl
 </div>
 
 ... or you climb back and read one of my recent posts :)
+
+<br>
+<br>
+<br>

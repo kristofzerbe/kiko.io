@@ -113,10 +113,13 @@ function getPostAndPagePhotos(config, locals) {
         type: p.layout,
         title: p.title,
         subtitle: p.subTitle,
-        url: "/" + p.path
+        url: "/" + p.path.replace("/index.html", "")
       }
     }
-//console.log(entry);
+// if (entry.file.includes("til")) {
+//   console.log(entry);
+// }
+
   })
 //console.log(JSON.stringify(used));
 

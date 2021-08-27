@@ -187,4 +187,4 @@ hexo.extend.generator.register("my-special-generator", async function(locals) {
 
 The only thing missing now, is your implemention of filling ``page.items`` with a list of objects you want to show on the page. There are no limits to your imagination. Get data from external API's or process JSON data, stored in the ``data`` folder ... or whatever you prefer.
 
-A live example of this approach is the section [TINY TOOLS](/collections/tiny-tools/) of this blog, where I process data from the Trello API as items.
+A live example of this approach are the pages [TINY TOOLS](/collections/tiny-tools/) (processing data from the Trello API) and [PHOTOS](/photos) here on this blog.
