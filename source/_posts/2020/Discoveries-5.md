@@ -6,7 +6,7 @@ date: 2020-12-19 12:12:44
 hitcountId: Mo0SmHmgg
 photograph:
   file: D70_0789.jpg
-  name: Untitled
+  name: Scottish Copper
   link: 'https://500px.com/photo/1017604564'
 series: Discoveries
 categories:

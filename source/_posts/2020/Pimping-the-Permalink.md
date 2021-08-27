@@ -6,7 +6,7 @@ date: 2020-09-20 16:30:37
 hitcountId: 0HVlGZW77
 photograph:
   file: 18-09 Kroatien-0245.jpg
-  name: Untitled
+  name: Summer Reading
   link: 'https://500px.com/photo/1005494226/Untitled-by-Kristof-Zerbe'
 series: 'A New Blog'
 tags:

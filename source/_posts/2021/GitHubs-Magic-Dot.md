@@ -5,8 +5,8 @@ date: 2021-08-20 13:43:04
 hitcountId:
 photograph:
   file: 19-07 Schottland-0595.jpg
-  name: Untitled
-  link: 'https://500px.com/photo/1018260519'
+  name: RYB Brass & Wires
+  link: 'https://500px.com/photo/1018261421'
 categories:
   - Tools
 tags:

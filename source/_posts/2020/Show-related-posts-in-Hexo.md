@@ -6,7 +6,7 @@ date: 2020-10-03 13:17:03
 hitcountId: S1Jc6zesQ
 photograph:
   file: 18-09 Kroatien-0323.jpg
-  name: Untitled
+  name: Garden Eden
   link: 'https://500px.com/photo/303713999'
 series: 'A New Blog'
 categories:

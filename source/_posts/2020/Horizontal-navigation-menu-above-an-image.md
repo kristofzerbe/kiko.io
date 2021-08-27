@@ -6,7 +6,7 @@ date: 2020-07-20 15:55:47
 hitcountId: XrBxUNkcX
 photograph:
   file: '19-07 Schottland-0495.jpg'
-  name: 'Untitled'
+  name: 'Ancient Kitchen Stuff'
   link: 'https://500px.com/photo/1018260519'
 series: 'A New Blog'
 tags:

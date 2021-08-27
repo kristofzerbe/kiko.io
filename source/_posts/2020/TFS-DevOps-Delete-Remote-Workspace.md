@@ -6,7 +6,7 @@ date: 2020-02-28
 hitcountId: sJDU55wjd
 photograph:
   file: '18-09 Kroatien-0061.jpg'
-  name: 'Untitled'
+  name: 'Abandonded Fitting'
   link: 'https://500px.com/photo/303714001/-by-Kristof-Zerbe'
 tags:
   - TFS/DevOps
