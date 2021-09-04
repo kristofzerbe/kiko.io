@@ -5,7 +5,7 @@
 
 *Frontmatter*
 1. Rename **date** in **originalDate**
-2. **date** = Current Date 
+2. **date** = Current Date
 
 *Content*
 1. New section with Header   
