@@ -24,6 +24,9 @@
 1. hexo webmention (Preview)
 2. hexo webmention **--send**
 
+To catch more than the last take **--count @NUMBER**
+
+To take a specific post, take **--slug @SLUG**
 
 
 
