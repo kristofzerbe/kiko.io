@@ -90,7 +90,7 @@ In this post, I want to show you, what my workflow looks like today and how your
 
 ## The Workflow In General
 
-The aim of the workflow is to transfer the photos from the camera to other hardware on the one hand and to cloud-based storage on the other, from where they can then be easily moved to the actual storage medium at home. In the end, 3 different backups should exist on different media.
+The aim of the workflow is to transfer the photos from the camera to other hardware on the one hand and to cloud-based storage on the other, from where they can then be easily moved to the actual storage medium at home. In the end, always 2 different backups will exist on different media.
 
 When traveling, it is important to always have the tablet and the card reader with you, in addition to the camera and some spare SD cards.
 
