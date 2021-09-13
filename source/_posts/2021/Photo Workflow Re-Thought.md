@@ -98,7 +98,7 @@ When traveling, it is important to always have the tablet and the card reader wi
 
 ## Step 1
 
-Whenever it is necessary or advisable, take both cards out of the camera and put the **XQD card** into the card reader and connect the latter to the tablet. Just put the **SD card** away, as we will use a replacement card afterwards.
+Whenever it is necessary or advisable, take both cards out of the camera and put the **XQD card** into the card reader and connect the latter to the tablet. Just put the **SD card** away, as we will use a spare card afterwards.
 
 Open up **Solid Explorer** on the tablet...
 
@@ -200,4 +200,4 @@ Delete all photos marked as REJECTED:
 
 ## Step 10
 
-If you are sure that your local backup was done once, you can safely delete the original SD card, in order to use them for the next time.
+If you are sure that your local backup was done once, you can safely wipe the original SD cards, in order to use them for the next time.
