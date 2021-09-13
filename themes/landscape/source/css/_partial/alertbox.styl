@@ -23,6 +23,10 @@
   border-left: 4px rgb(0,187,28) solid
   background-color: rgba(0,187,28,0.2)
 
+.alertbox.alertbox-note
+  border-left: 4px rgb(205,205,205) solid
+  background-color: rgba(205,205,205,0.2)
+
 .alertbox::before 
   position: absolute
   width: 41px
@@ -64,6 +68,15 @@
   color: rgb(0,187,28)
   content: "\f058"
 
+.alertbox.alertbox-note::after
+  color: rgb(205,205,205)
+  content: "\f35a"
+
 .alertbox * 
   margin: 0 !important
 
+li > .alertbox
+  margin: 12px
+
+li > .alertbox::before
+  top: -17px

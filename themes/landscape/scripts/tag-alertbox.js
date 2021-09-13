@@ -2,7 +2,7 @@
   Alertbox Tag
 
   Syntax:
-  {% alertbox [exclamation|question|warning|info|success] %}
+  {% alertbox [exclamation|question|warning|info|success|note] %}
     content
   {% endalertbox %}
 
