@@ -14,13 +14,13 @@
     <div class="bar-info"><span><%= page.items.length %></span> Photos</div>
     
     <div class="bar-cmd">
-      <input type="radio" name="view-filter" id="filter-all" checked
+      <input type="radio" name="view-filter" id="filter-all" data-status="all" checked
              onclick="setFilter('pool');">
       <label for="filter-all"></label>
-      <input type="radio" name="view-filter" id="filter-pool"
+      <input type="radio" name="view-filter" id="filter-pool" data-status="pool" 
              onclick="setFilter('used');">
       <label for="filter-pool"></label>
-      <input type="radio" name="view-filter" id="filter-used"
+      <input type="radio" name="view-filter" id="filter-used" data-status="used" 
              onclick="setFilter('all');">
       <label for="filter-used"></label>
     </div>
@@ -62,8 +62,7 @@
     setCookie("view", newView, 365);
   }
 
-  var _currentFilter = null;
-  function setFilter(newFilter) {
+  function setFilter(newFilter) {    
     document.querySelector("#filter-" + newFilter).checked = true;
 
     document.querySelectorAll(".card").forEach(item => {
@@ -96,5 +95,9 @@
         }
       }, 300);
   }
+  //Fix for heading back to page
+  setTimeout(function() {
+    setFilter(document.querySelector('input[name=view-filter]:checked').getAttribute("data-status"));
+  }, 500)
 
 </script>
