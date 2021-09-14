@@ -97,41 +97,64 @@
         fieldset.max.expand
           max-width: 75%
 
-    .switch-view
+    .view-bar
       margin: 1em 0.25em
       display: flex
       flex-direction: row
       justify-content: flex-end
       gap: 1em
-      .info
+      .bar-info
         margin-right: auto
         line-height: 2em
         font-weight: bold
-      input[type=radio] 
-        display: none
-        + label
-          font-size: 1.5em
-          opacity: 0.25
-          cursor: pointer
-          &::before
-            display: inline-block
-            font-size: inherit
-            text-rendering: auto
-            -webkit-font-smoothing: antialiased
-            font-family: FontAwesome5Solid
-        &:checked
+      .bar-cmd
+        padding-left: 12px
+        input[type=radio] 
+          display: none
           + label
-            opacity: 1
-      input#switch-grid
-        + label
-          &::before
-            content: icon-grid
-      input#switch-list
-        + label
-          &::before
-            content: icon-list
-      
-
+            padding-left: 8px
+            font-size: 1.5em
+            opacity: 0.25
+            cursor: pointer
+            &::before
+              display: inline-block
+              font-size: inherit
+              text-rendering: auto
+              -webkit-font-smoothing: antialiased
+          &:checked
+            + label
+              opacity: 1
+        input#switch-grid
+          + label
+            &::before
+              font-family: FontAwesome5Solid
+              content: icon-grid
+        input#switch-list
+          + label
+            &::before
+              font-family: FontAwesome5Solid
+              content: icon-list
+        input#filter-all
+          + label
+            &::before
+              font-family: FontAwesome5Solid
+              content: icon-circle
+        input#filter-pool
+          + label
+            &::before
+              font-family: FontAwesome5Solid
+              content: icon-circle-notch
+        input#filter-used
+          + label
+            &::before
+              font-family: FontAwesome5Regular
+              content: icon-circle-dot
+        input[name="view-filter"]
+          + label
+            display: none
+          &:checked
+            + label
+              display: inline-block
     .list
       display: flex
       flex-direction: column
@@ -176,7 +199,7 @@
         grid-template-areas: "status status" "image link" "image title"
         .card-img
           height: 90px
-          min-width: 150px
+          width: 150px
           overflow: hidden
           border-radius: 0 0 0 4px
           img

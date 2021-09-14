@@ -56,6 +56,7 @@
   <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/fontawesome/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/fontawesome/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
 
   
 <link rel="stylesheet" href="/css/dist/bundle.min.css">
@@ -295,14 +296,16 @@
 
     <hr>
 
-    <div class="switch-view">
-      <div class="info"><span>83</span> Entries</div>
-      <input type="radio" name="view-switch" id="switch-grid" checked 
-          onchange="setView('grid');">
-      <label for="switch-grid"></label>
-      <input type="radio" name="view-switch" id="switch-list" 
-          onchange="setView('list');">
-      <label for="switch-list"></label>
+    <div class="view-bar">
+      <div class="bar-info"><span>83</span> Entries</div>
+      <div class="bar-cmd">
+        <input type="radio" name="view-switch" id="switch-grid" checked 
+        onchange="setView('grid');">
+        <label for="switch-grid"></label>
+        <input type="radio" name="view-switch" id="switch-list" 
+            onchange="setView('list');">
+        <label for="switch-list"></label>
+      </div>
     </div>
 
     <div class="view grid">
@@ -2240,7 +2243,7 @@ Available in SVG Sprite, styled-components, NPM & API</p>
         initViewportImage();
 
         var resultCount = document.querySelectorAll(".card:not(.hide)").length;
-        let resultElement = document.querySelector(".info span");
+        let resultElement = document.querySelector(".bar-info span");
         var totalCount = parseInt(resultElement.dataset.total);
 
         if (resultCount === totalCount) {

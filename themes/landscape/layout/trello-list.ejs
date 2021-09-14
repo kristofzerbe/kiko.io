@@ -40,14 +40,16 @@
 
     <hr>
 
-    <div class="switch-view">
-      <div class="info"><span><%= page.items.length %></span> Entries</div>
-      <input type="radio" name="view-switch" id="switch-grid" checked 
-          onchange="setView('grid');">
-      <label for="switch-grid"></label>
-      <input type="radio" name="view-switch" id="switch-list" 
-          onchange="setView('list');">
-      <label for="switch-list"></label>
+    <div class="view-bar">
+      <div class="bar-info"><span><%= page.items.length %></span> Entries</div>
+      <div class="bar-cmd">
+        <input type="radio" name="view-switch" id="switch-grid" checked 
+        onchange="setView('grid');">
+        <label for="switch-grid"></label>
+        <input type="radio" name="view-switch" id="switch-list" 
+            onchange="setView('list');">
+        <label for="switch-list"></label>
+      </div>
     </div>
 
     <div class="view grid">
@@ -119,7 +121,7 @@
         initViewportImage();
 
         var resultCount = document.querySelectorAll(".card:not(.hide)").length;
-        let resultElement = document.querySelector(".info span");
+        let resultElement = document.querySelector(".bar-info span");
         var totalCount = parseInt(resultElement.dataset.total);
 
         if (resultCount === totalCount) {
