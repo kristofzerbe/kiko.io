@@ -2,18 +2,18 @@
   Indiepen Tag
 
   Syntax:
-  {% indiepen [sampleSlug] [height] [defaultTab] %}
+  {% indiepen [subfolder] [height] [defaultTab] %}
 */
 
 hexo.extend.tag.register("indiepen", function(args, content){
 
   const [
-    sampleSlug,
+    subfolder,
     height = hexo.config.indiepen.height || 450,
     defaultTab = hexo.config.indiepen.default_tab || "result"
   ] = args;  
 
-  const url = encodeURIComponent(hexo.config.url + "/samples/" + sampleSlug);
+  const url = encodeURIComponent(hexo.config.url + "/" + this.path + subfolder);
 
   const element = `
     <iframe class="indiepen"

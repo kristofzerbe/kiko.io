@@ -297,13 +297,15 @@
     <hr>
 
     <div class="view-bar">
-      <div class="bar-info"><span>83</span> Entries</div>
+      <div class="bar-info">
+        <span class="info-count">83</span> Entries <span class="info-des"></span>
+      </div>
       <div class="bar-cmd">
         <input type="radio" name="view-switch" id="switch-grid" checked 
-        onchange="setView('grid');">
+               onchange="setView('grid');">
         <label for="switch-grid"></label>
         <input type="radio" name="view-switch" id="switch-list" 
-            onchange="setView('list');">
+               onchange="setView('list');">
         <label for="switch-list"></label>
       </div>
     </div>
@@ -2242,16 +2244,17 @@ Available in SVG Sprite, styled-components, NPM & API</p>
     setTimeout(() => { 
         initViewportImage();
 
-        var resultCount = document.querySelectorAll(".card:not(.hide)").length;
-        let resultElement = document.querySelector(".bar-info span");
-        var totalCount = parseInt(resultElement.dataset.total);
+        let resultCount = document.querySelectorAll(".card:not(.hide)").length;
+        let totalCount = document.querySelectorAll(".card").length;
+        let resultElement = document.querySelector(".bar-info span.info-count");
+        let desElement = document.querySelector(".bar-info span.info-des");
+
+        resultElement.textContent = resultCount;
 
         if (resultCount === totalCount) {
-          resultElement.textContent = totalCount + " items total";
-        } else if(resultCount === 0) {
-          resultElement.textContent = 0;
+          desElement.textContent = "";
         } else {
-          resultElement.textContent = resultCount; //+ ((resultCount === 1) ? " item " : " items ") + "found"
+          desElement.textContent = "found";
         }
       }, 300);
   }
@@ -2328,6 +2331,24 @@ Available in SVG Sprite, styled-components, NPM & API</p>
         
           <li>
             
+              <a href="/post/styles/"></a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/main/"></a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/index/"></a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Photo%20Workflow%20Re-Thought/">Photo Workflow Re-Thought</a>
             
           </li>
@@ -2335,24 +2356,6 @@ Available in SVG Sprite, styled-components, NPM & API</p>
           <li>
             
               <a href="/post/Application-Specific-Links-on-Windows-10/">Application-Specific Links on Windows 10</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Pattern-for-dynamic-Hexo-pages/">Pattern for dynamic Hexo pages</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Visualize-the-codebase-of-your-GitHub-repo/">Visualize the codebase of your GitHub repo</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/GitHubs-Magic-Dot/">GitHubs Magic Dot</a>
             
           </li>
         

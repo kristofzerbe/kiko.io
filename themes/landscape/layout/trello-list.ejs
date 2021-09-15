@@ -41,13 +41,15 @@
     <hr>
 
     <div class="view-bar">
-      <div class="bar-info"><span><%= page.items.length %></span> Entries</div>
+      <div class="bar-info">
+        <span class="info-count"><%= page.items.length %></span> Entries <span class="info-des"></span>
+      </div>
       <div class="bar-cmd">
         <input type="radio" name="view-switch" id="switch-grid" checked 
-        onchange="setView('grid');">
+               onchange="setView('grid');">
         <label for="switch-grid"></label>
         <input type="radio" name="view-switch" id="switch-list" 
-            onchange="setView('list');">
+               onchange="setView('list');">
         <label for="switch-list"></label>
       </div>
     </div>
@@ -120,16 +122,17 @@
     setTimeout(() => { 
         initViewportImage();
 
-        var resultCount = document.querySelectorAll(".card:not(.hide)").length;
-        let resultElement = document.querySelector(".bar-info span");
-        var totalCount = parseInt(resultElement.dataset.total);
+        let resultCount = document.querySelectorAll(".card:not(.hide)").length;
+        let totalCount = document.querySelectorAll(".card").length;
+        let resultElement = document.querySelector(".bar-info span.info-count");
+        let desElement = document.querySelector(".bar-info span.info-des");
+
+        resultElement.textContent = resultCount;
 
         if (resultCount === totalCount) {
-          resultElement.textContent = totalCount + " items total";
-        } else if(resultCount === 0) {
-          resultElement.textContent = 0;
+          desElement.textContent = "";
         } else {
-          resultElement.textContent = resultCount; //+ ((resultCount === 1) ? " item " : " items ") + "found"
+          desElement.textContent = "found";
         }
       }, 300);
   }

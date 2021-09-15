@@ -11,17 +11,25 @@
   <hr>
 
   <div class="view-bar">
-    <div class="bar-info"><span><%= page.items.length %></span> Photos</div>
+    <div class="bar-info">
+      <span class="info-count"><%= page.items.length %></span> Photos <span class="info-des"></span>
+    </div>
     
     <div class="bar-cmd">
-      <input type="radio" name="view-filter" id="filter-all" data-status="all" checked
-             onclick="setFilter('pool');">
+      <input type="radio" name="view-filter" id="filter-all" checked
+             data-status="all" 
+             data-next-status="pool"
+             data-designator="overall">
       <label for="filter-all"></label>
-      <input type="radio" name="view-filter" id="filter-pool" data-status="pool" 
-             onclick="setFilter('used');">
+      <input type="radio" name="view-filter" id="filter-pool" 
+             data-status="pool" 
+             data-next-status="used"
+             data-designator="unused">
       <label for="filter-pool"></label>
-      <input type="radio" name="view-filter" id="filter-used" data-status="used" 
-             onclick="setFilter('all');">
+      <input type="radio" name="view-filter" id="filter-used" 
+             data-status="used" 
+             data-next-status="all"
+             data-designator="used">
       <label for="filter-used"></label>
     </div>
 
@@ -44,12 +52,20 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
+  document.addEventListener('DOMContentLoaded', (event) => {
+
     let currentView = getCookie("view");
     if (currentView) {
       document.querySelector("#switch-" + currentView).checked = true; 
       setView(currentView);
     }
+
+    document.querySelectorAll("input[name=view-filter]").forEach(element => {
+      element.addEventListener("click", (event) => {
+        setFilter(element);
+      });
+    });
+
   })
 
   function setView(newView) {
@@ -62,42 +78,44 @@
     setCookie("view", newView, 365);
   }
 
-  function setFilter(newFilter) {    
-    document.querySelector("#filter-" + newFilter).checked = true;
+  function setFilter(currentFilterElement) {
+
+    let newFilter;
+    if (!currentFilterElement) { //for initialization
+      currentFilterElement = document.querySelector("input[name=view-filter]:checked")
+      newFilter = currentFilterElement.getAttribute("data-status");
+    } else {
+      newFilter = currentFilterElement.getAttribute("data-next-status");
+    }    
+
+    let newfilterElement = document.querySelector("#filter-" + newFilter);
+    let designator = newfilterElement.getAttribute("data-designator");
+
+    newfilterElement.checked = true;
 
     document.querySelectorAll(".card").forEach(item => {
-      if (newFilter === 'all') {
+      if (newFilter === 'all' || (newFilter === item.getAttribute("data-status"))) {
         item.style.display = "block";
         setTimeout(() => { item.classList.remove("hide"); }, 100);
       } else {
-        if (newFilter === item.getAttribute("data-status")) {
-          item.style.display = "block";
-          setTimeout(() => { item.classList.remove("hide"); }, 100);
-        } else {
-          item.classList.add("hide");
-          setTimeout(() => { item.style.display = "none"; }, 300);
-        }
+        item.classList.add("hide");
+        setTimeout(() => { item.style.display = "none"; }, 300);
       }
     });
     setTimeout(() => { 
         initViewportImage();
 
-        var resultCount = document.querySelectorAll(".card:not(.hide)").length;
-        let resultElement = document.querySelector(".bar-info span");
-        var totalCount = parseInt(resultElement.dataset.total);
+        let resultCount = document.querySelectorAll(".card:not(.hide)").length;
+        let resultElement = document.querySelector(".bar-info span.info-count");
+        let desElement = document.querySelector(".bar-info span.info-des");
 
-        if (resultCount === totalCount) {
-          resultElement.textContent = totalCount + " items total";
-        } else if(resultCount === 0) {
-          resultElement.textContent = 0;
-        } else {
-          resultElement.textContent = resultCount; //+ ((resultCount === 1) ? " item " : " items ") + "found"
-        }
+        resultElement.textContent = resultCount;
+        desElement.textContent = designator;
+
       }, 300);
   }
-  //Fix for heading back to page
-  setTimeout(function() {
-    setFilter(document.querySelector('input[name=view-filter]:checked').getAttribute("data-status"));
+  setTimeout(function() { //Hack for returning from external to page
+    setFilter();
   }, 500)
 
 </script>
