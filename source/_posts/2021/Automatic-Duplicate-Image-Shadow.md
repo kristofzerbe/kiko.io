@@ -111,6 +111,6 @@ document.querySelectorAll("img.drop-shadow").forEach(function(item) {
 
 The result in comparison with no shadow and the default ``box-shadow``:
 
-{% indiepen "_sample" "600" %}
+{% indiepen "sample" "600" %}
 
 Happy shadowing...
