@@ -4,7 +4,7 @@
     <title>kiko.io</title>
 <subtitle>Memorable Tech Stuff</subtitle><icon>images/favicon-32x32.png</icon><logo>images/icon-72x72.png</logo>    <link href="https://kiko.io" />
     <link href="https://kiko.io/atom.xml" rel="self" type="application/rss+xml" />
-    <updated>2021-09-12T16:16:48.000Z</updated>
+    <updated>2021-09-21T11:40:25.000Z</updated>
     <author>
         <name>Kristof Zerbe</name>
 <email>kristof.zerbe@gmail.com</email>    </author>
@@ -61,6 +61,38 @@
     <category term="Theming" scheme="https://kiko.io/tags/Theming/" />
     <category term="PowerShell" scheme="https://kiko.io/tags/PowerShell/" />
     <category term="Node.js" scheme="https://kiko.io/tags/Node-js/" />
+    <entry>
+        <id>https://kiko.io/post/Uups-empty-posts/</id>
+            <title>Uups ... empty posts</title>
+            <published>2021-09-21T11:40:25.000Z</published>
+            <updated>2021-09-21T11:40:25.000Z</updated>
+        <link href="https://kiko.io/post/Uups-empty-posts/"/>
+        <content type="html">
+            &lt;p&gt;&lt;img src=&#34;https://kiko.io/images/social-media/Uups-empty-posts.png&#34; /&gt;&lt;/p&gt;&lt;p&gt;A while ago I wrote about &lt;a href=&#34;/post/Automatic-Duplicate-Image-Shadow/&#34; title=&#34;Automatic Duplicate Image Shadow&#34;&gt;Automatic Duplicate Image Shadow&lt;/a&gt; and used &lt;a href=&#34;https://indiepen.tech/&#34;&gt;indiepen&lt;/a&gt; for showing the result of my efforts.&lt;/p&gt;
+
+    &lt;div class=&#34;alertbox alertbox-note&#34;&gt;
+      &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://indiepen.tech/&#34;&gt;indiepen&lt;/a&gt;&lt;/strong&gt; is a solution for showing code samples without the need of a code sharing platform, like &lt;a href=&#34;https://codepen.io/&#34;&gt;codepen&lt;/a&gt;. Just reference a &lt;code&gt;index.html&lt;/code&gt;, &lt;code&gt;main.js&lt;/code&gt; and &lt;code&gt;styles.css&lt;/code&gt; from wherever you want and indiepen is wrapping it with a neat viewer inside an IFrame.&lt;/p&gt;
+
+    &lt;/div&gt;
+  
+
+&lt;p&gt;I did it quick and dirty first (sample files in a static folder) and now it was the time to do it right: place the sample files in a subfolder of the post in my Hexo-driven blog solution, in order to reference it from there AND have the possibility to call it directly via &lt;code&gt;./post/my-post/sample&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The key to achive that in Hexo is the configuration option &lt;code&gt;post_asset_folder: true&lt;/code&gt;, which generates a subfolder for all assets with the same name as the post.&lt;/p&gt;
+&lt;figure class=&#34;highlight txt&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;|- _posts&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   |- my-blog-post&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      |- my-first-asset.jpg&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      |- my-second-asset.jpg&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   |- my-blog-post.md&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;My idea regarding the indiepen files was having a subfolder for each indiepen in the post asset folder:&lt;/p&gt;
+&lt;figure class=&#34;highlight txt&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;|- _posts&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   |- my-blog-post&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      |- my-first-asset.jpg&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      |- my-second-asset.jpg&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;NEW   |- sample&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;NEW      |- index.html&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;NEW      |- main.js&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;NEW      |- styles.css&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   |- my-blog-post.md&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;Run &lt;code&gt;hexo generate&lt;/code&gt;, check that the indiepen was showing up properly and I thought I was done. Wrong … after commiting my changes to Github, where my blog is living, and checking my RSS feed a while after, I saw this:&lt;/p&gt;
+&lt;img src=&#34;/post/Uups-empty-posts/feed-empty-posts.png&#34; class=&#34;&#34;&gt;
+
+&lt;p&gt;Three empty posts…!?&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://kiko.io/post/Uups-empty-posts/&#34;&gt;Continue reading &lt;strong&gt;`Uups ... empty posts`&lt;/strong&gt; on kiko.io ...&lt;/a&gt;&lt;/p&gt;
+        </content>
+        <category term="Tools" scheme="https://kiko.io/categories/Tools/" />
+        <category term="Hexo" scheme="https://kiko.io/tags/Hexo/" />
+        <category term="Blogging" scheme="https://kiko.io/tags/Blogging/" />
+            
+    </entry>
     <entry>
         <id>https://kiko.io/post/Photo%20Workflow%20Re-Thought/</id>
             <title>Photo Workflow Re-Thought</title>
@@ -409,24 +441,6 @@
         <category term="Photo-Editing" scheme="https://kiko.io/categories/Photo-Editing/" />
         <category term="Lightroom" scheme="https://kiko.io/tags/Lightroom/" />
         <category term="Presets" scheme="https://kiko.io/tags/Presets/" />
-            
-    </entry>
-    <entry>
-        <id>https://kiko.io/post/Spice-Up-Windows-Terminal/</id>
-            <title>Updated: Spice Up Windows Terminal</title>
-            <published>2020-12-24T14:03:15.000Z</published>
-            <updated>2021-04-16T09:55:15.000Z</updated>
-        <link href="https://kiko.io/post/Spice-Up-Windows-Terminal/"/>
-        <content type="html">
-            &lt;p&gt;&lt;img src=&#34;https://kiko.io/images/social-media/Spice-Up-Windows-Terminal.png&#34; /&gt;&lt;/p&gt;&lt;p&gt;Working with the PowerShell in 2020 means fun, because of the new &lt;a href=&#34;https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701&#34;&gt;&lt;strong&gt;Windows Terminal&lt;/strong&gt; (get it from Windows Store)&lt;/a&gt;. It has more power as the old Powershell Console and it is visually adaptable to your personal taste, by installing the wonderful theming engine &lt;a href=&#34;https://github.com/JanDeDobbeleer/oh-my-posh&#34;&gt;&lt;strong&gt;oh-my-posh&lt;/strong&gt; from Jan De Dobbeleer&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Spice-Up-Windows-Terminal/terminal-original.png&#34; alt=&#34;Original Terminal&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Spice-Up-Windows-Terminal/terminal-oh-my-posh.png&#34; alt=&#34;Terminal with oh-my-posh&#34;&gt;&lt;/p&gt;
-&lt;p&gt;To get Oh-My-Posh properly run, there are several steps to do I want to show here in a nutshell…&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://kiko.io/post/Spice-Up-Windows-Terminal/&#34;&gt;Continue reading &lt;strong&gt;`Spice Up Windows Terminal`&lt;/strong&gt; on kiko.io ...&lt;/a&gt;&lt;/p&gt;
-        </content>
-        <category term="Tools" scheme="https://kiko.io/categories/Tools/" />
-        <category term="Windows" scheme="https://kiko.io/tags/Windows/" />
-        <category term="Theming" scheme="https://kiko.io/tags/Theming/" />
-        <category term="PowerShell" scheme="https://kiko.io/tags/PowerShell/" />
             
     </entry>
 </feed>
