@@ -13,7 +13,7 @@ hexo.extend.tag.register("indiepen", function(args, content){
     defaultTab = hexo.config.indiepen.default_tab || "result"
   ] = args;  
 
-  const url = encodeURIComponent(hexo.config.url + "/" + this.path + subfolder);
+  const url = encodeURIComponent(this.permalink + subfolder);
 
   const element = `
     <iframe class="indiepen"
