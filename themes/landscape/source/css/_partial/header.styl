@@ -97,10 +97,14 @@ header.photograph #header-photo-link
 #header-nav-start,
 #header-nav-end
   position: absolute
+  z-index: 1
   bottom: 0    
   height: 42px
   width: 28px
-  transition: all 0.6s ease-in-out
+  opacity: 0
+  transition: opacity 0.2s ease-out
+  &.show
+    opacity: 1
 #header-nav-start
   left: 0
   box-shadow: inset 30px 0 15px -15px rgba(0,0,0,0.33)

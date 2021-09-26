@@ -89,7 +89,7 @@
   <a href="#" id="header-photo-expand"></a>
   <a href="#" id="header-photo-link" target="_blank" rel="noopener" ></a>
   <div id="banner">
-    <div id="header-nav-start" class="hide"></div>
+    <div id="header-nav-start"></div>
     <nav id="header-nav" role="navigation">
       <ul class="menu">
         
@@ -158,7 +158,7 @@
         
       </ul>
     </nav>
-    <div id="header-nav-end" class="hide"></div>
+    <div id="header-nav-end"></div>
   </div>
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
@@ -308,15 +308,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-cku1ar6jp000wtcha2db1g2cu">
+      <div class="article-permalink" id="article-permalink-cku1bkex1000lv4ha2k7i2810">
     <input class="article-permalink-value" value="https://kiko.io/post/Change-CSS-class-when-element-scrolls-into-viewport/" 
-           data-id="cku1ar6jp000wtcha2db1g2cu" data-title="Change CSS class when element scrolls into viewport" />
+           data-id="cku1bkex1000lv4ha2k7i2810" data-title="Change CSS class when element scrolls into viewport" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cku1ar6jp000wtcha2db1g2cu");
+        initPermalink("cku1bkex1000lv4ha2k7i2810");
     });
 </script>
 
@@ -692,7 +692,7 @@
       }
     });
   }
-  
+
   // HORIZONTAL MENU SCROLL
   function watchNavMenuScroll() {
     const nav = document.querySelector('#header-nav');
@@ -708,9 +708,9 @@
 
         let scimElement = document.querySelector("#header-nav-" + entry.target.getAttribute("data-scim"));
         if (entry.intersectionRatio != 1) { 
-          scimElement.classList.remove("hide");
+          scimElement.classList.add("show");
         } else {
-          scimElement.classList.add("hide");
+          scimElement.classList.remove("show");
         }
       });
     }, {threshold: 1});

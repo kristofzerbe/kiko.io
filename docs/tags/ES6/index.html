@@ -89,7 +89,7 @@
   <a href="#" id="header-photo-expand"></a>
   <a href="#" id="header-photo-link" target="_blank" rel="noopener" ></a>
   <div id="banner">
-    <div id="header-nav-start" class="hide"></div>
+    <div id="header-nav-start"></div>
     <nav id="header-nav" role="navigation">
       <ul class="menu">
         
@@ -158,7 +158,7 @@
         
       </ul>
     </nav>
-    <div id="header-nav-end" class="hide"></div>
+    <div id="header-nav-end"></div>
   </div>
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
@@ -568,7 +568,7 @@
       }
     });
   }
-  
+
   // HORIZONTAL MENU SCROLL
   function watchNavMenuScroll() {
     const nav = document.querySelector('#header-nav');
@@ -584,9 +584,9 @@
 
         let scimElement = document.querySelector("#header-nav-" + entry.target.getAttribute("data-scim"));
         if (entry.intersectionRatio != 1) { 
-          scimElement.classList.remove("hide");
+          scimElement.classList.add("show");
         } else {
-          scimElement.classList.add("hide");
+          scimElement.classList.remove("show");
         }
       });
     }, {threshold: 1});

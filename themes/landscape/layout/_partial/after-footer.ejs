@@ -74,7 +74,7 @@
       }
     });
   }
-  
+
   // HORIZONTAL MENU SCROLL
   function watchNavMenuScroll() {
     const nav = document.querySelector('#header-nav');
@@ -90,9 +90,9 @@
 
         let scimElement = document.querySelector("#header-nav-" + entry.target.getAttribute("data-scim"));
         if (entry.intersectionRatio != 1) { 
-          scimElement.classList.remove("hide");
+          scimElement.classList.add("show");
         } else {
-          scimElement.classList.add("hide");
+          scimElement.classList.remove("show");
         }
       });
     }, {threshold: 1});
