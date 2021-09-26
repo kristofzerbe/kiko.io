@@ -75,6 +75,32 @@
     });
   }
   
+  // HORIZONTAL MENU SCROLL
+  function watchNavMenuScroll() {
+    const nav = document.querySelector('#header-nav');
+    const menu = nav.querySelector('.menu');
+    const firstMenuItem = menu.querySelector('.menu-item:first-child');
+    const lastMenuItem = menu.querySelector('.menu-item:last-child');
+
+    firstMenuItem.setAttribute("data-scim", "start");
+    lastMenuItem.setAttribute("data-scim", "end");
+    
+    let observer = new IntersectionObserver((entries, observer) => { 
+      entries.forEach(entry => {
+
+        let scimElement = document.querySelector("#header-nav-" + entry.target.getAttribute("data-scim"));
+        if (entry.intersectionRatio != 1) { 
+          scimElement.classList.remove("hide");
+        } else {
+          scimElement.classList.add("hide");
+        }
+      });
+    }, {threshold: 1});
+    
+    observer.observe(firstMenuItem);
+    observer.observe(lastMenuItem);
+  }
+
   $(window).on('scroll', function() {
     scrollHeader();
     initViewportImage();
@@ -87,6 +113,7 @@
 
   initHeader();
   initViewportImage();
+  watchNavMenuScroll();
 
   // BACK-TO-TOP
   addBackToTop({

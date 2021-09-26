@@ -89,6 +89,7 @@
   <a href="#" id="header-photo-expand"></a>
   <a href="#" id="header-photo-link" target="_blank" rel="noopener" ></a>
   <div id="banner">
+    <div id="header-nav-start" class="hide"></div>
     <nav id="header-nav" role="navigation">
       <ul class="menu">
         
@@ -134,6 +135,20 @@
               </a>
           </li>
         
+          <li class="menu-item" id="nav-photos-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/photos">
+                <span>photos</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-about-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/about">
+                <span>About</span>
+              </a>
+          </li>
+        
           <li class="menu-item" id="nav-rss-link" >
             <a class="nav-icon sub-nav-link"
               href="/atom.xml">
@@ -143,6 +158,7 @@
         
       </ul>
     </nav>
+    <div id="header-nav-end" class="hide"></div>
   </div>
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
@@ -178,7 +194,7 @@
 </header>
 <script>
   if (location.pathname === "/") {
-    document.getElementById("nav-home-link").style.display = 'none';
+    document.getElementById("nav-home-link").remove();
   }
 </script>
         <div id="content" class="outer">
@@ -565,12 +581,6 @@
                 </a>
             </li>
           
-            <li class="menu-item" id="menu-photos-link">
-              <a href="/photos">
-                  <span>photos</span>
-                </a>
-            </li>
-          
             <li class="menu-item" id="menu-rss-link">
               <a href="/atom.xml">
                   <span>RSS Feed</span>
@@ -677,6 +687,32 @@
     });
   }
   
+  // HORIZONTAL MENU SCROLL
+  function watchNavMenuScroll() {
+    const nav = document.querySelector('#header-nav');
+    const menu = nav.querySelector('.menu');
+    const firstMenuItem = menu.querySelector('.menu-item:first-child');
+    const lastMenuItem = menu.querySelector('.menu-item:last-child');
+
+    firstMenuItem.setAttribute("data-scim", "start");
+    lastMenuItem.setAttribute("data-scim", "end");
+    
+    let observer = new IntersectionObserver((entries, observer) => { 
+      entries.forEach(entry => {
+
+        let scimElement = document.querySelector("#header-nav-" + entry.target.getAttribute("data-scim"));
+        if (entry.intersectionRatio != 1) { 
+          scimElement.classList.remove("hide");
+        } else {
+          scimElement.classList.add("hide");
+        }
+      });
+    }, {threshold: 1});
+    
+    observer.observe(firstMenuItem);
+    observer.observe(lastMenuItem);
+  }
+
   $(window).on('scroll', function() {
     scrollHeader();
     initViewportImage();
@@ -689,6 +725,7 @@
 
   initHeader();
   initViewportImage();
+  watchNavMenuScroll();
 
   // BACK-TO-TOP
   addBackToTop({

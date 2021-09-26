@@ -7,6 +7,28 @@ photograph:
   name: Riga Locks
   link: 'https://500px.com/photo/82409189/riga-locks-by-kristof-zerbe'
 ---
+<section>
+<time>26 Sep 2021</time>
+
+## Debugging Hexo with VSCode
+
+If you want to debug your own [Hexo generators](https://hexo.io/api/generator.html) within VSCode, you have to create an entry in your ``./.vscode/launch.json``, which points to Hexo CLI with the argument ``generate``:
+
+```json
+"version": "0.2.0",
+"configurations": [
+  {
+    "type": "node",
+    "request": "launch",
+    "name": "hexo generate",
+    "program": "${workspaceFolder}/node_modules/hexo-cli/bin/hexo",
+    "args": [
+      "generate"
+    ]
+  }
+]
+```
+</section>
 
 <section>
 <time>15 Sep 2021</time>
