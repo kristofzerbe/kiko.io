@@ -5,8 +5,8 @@ date: 2021-08-21 07:55:00
 hitcountId:
 photograph:
   file: D50_0086.jpg
-  name: Thomas' Ruby Prince I
-  link: 'https://500px.com/photo/1031618817'
+  name: Thomas' German Flag
+  link: 'https://500px.com/photo/1031618816'
 categories:
   - Tools
 tags:
