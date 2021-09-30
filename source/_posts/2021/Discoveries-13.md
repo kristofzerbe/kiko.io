@@ -17,6 +17,8 @@ related:
   - Discoveries-10
 ---
 
+This month, Discoveries is all about JavaScript-driven "components" that you can quickly and easily add to your own website to enhance it. Be it with a simple code viewer or an ingenious print function or simply to display or filter photos. Go on a journey of discovery...
+
 {% anchorlist 
   "indiepen|indiepen"
   "Panzoom|panzoom"
@@ -31,8 +33,6 @@ related:
   "Smooth-side-bar|smooth-side-bar"
   "Podtablejs|podtablejs"
 %}
-
-This month, Discoveries is all about JavaScript-driven "components" that you can quickly and easily add to your own website to enhance it. Be it with a simple code viewer or an ingenious print function or simply to display or filter photos. Go on a journey of discovery...
 
 <!-- more -->
 
