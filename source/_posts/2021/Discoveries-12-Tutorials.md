@@ -9,9 +9,10 @@ photograph:
   link: 'https://500px.com/photo/1022777513/Beer-Barrels-by-Kristof-Zerbe/'
 series: Discoveries
 categories:
-  - Discoveries
+  - UI/UX
 tags:
-  - Great Finds
+  - Collection
+  - Tutorial
 related:
   - Discoveries-11
   - Discoveries-10

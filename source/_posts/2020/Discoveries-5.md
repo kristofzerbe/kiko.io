@@ -10,9 +10,9 @@ photograph:
   link: 'https://500px.com/photo/1017604564'
 series: Discoveries
 categories:
-  - Discoveries
+  - Misc
 tags:
-  - Great Finds
+  - Collection
 related:
   - Discoveries-6
   - Discoveries-4

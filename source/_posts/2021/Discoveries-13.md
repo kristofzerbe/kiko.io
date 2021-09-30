@@ -8,9 +8,9 @@ photograph:
   link: 'https://500px.com/photo/84012403/Windowed-Wall-by-Kristof-Zerbe/'
 series: Discoveries
 categories:
-  - Discoveries
+  - JavaScript
 tags:
-  - Great Finds
+  - Collection
 related:
   - Discoveries-12-Tutorials
   - Discoveries-11

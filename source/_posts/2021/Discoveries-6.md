@@ -10,9 +10,9 @@ photograph:
   link: 'https://500px.com/photo/82409147/Light-Bulbs-by-Kristof-Zerbe/'
 series: Discoveries
 categories:
-  - Discoveries
+  - Misc
 tags:
-  - Great Finds
+  - Collection
 related:
   - Discoveries-7
   - Discoveries-5

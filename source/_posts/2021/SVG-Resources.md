@@ -8,10 +8,11 @@ photograph:
   file: DSC_4936.jpg
   name: Forgotten Motocycle
   link: 'https://500px.com/photo/82409157/Forgotten-Motocycle-by-Kristof-Zerbe/'
+series: Great Finds
 categories:
-  - UI-Design
+  - UI/UX
 tags:
-  - Great Finds
+  - Collection
   - SVG
   - Imaging
 related:

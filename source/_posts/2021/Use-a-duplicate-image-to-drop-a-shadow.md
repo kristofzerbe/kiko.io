@@ -9,7 +9,7 @@ photograph:
   name: Oriental Lights
   link: 'https://500px.com/photo/116725473'
 categories:
-  - UI-Design
+  - UI/UX
 tags:
   - CSS
 related:

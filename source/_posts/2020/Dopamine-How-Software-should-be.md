@@ -8,10 +8,12 @@ photograph:
   file: 19-05 Israel-0143.jpg
   name: Jaffa Antiques
   link: 'https://500px.com/photo/1001750511/Jaffa-Antiques-by-Kristof-Zerbe'
-tags:
-  - Great Finds
+series: Great Finds
 categories:
   - Tools
+tags:
+  - Windows
+  - Audio
 related:
   - Discoveries-2
   - Discoveries-1

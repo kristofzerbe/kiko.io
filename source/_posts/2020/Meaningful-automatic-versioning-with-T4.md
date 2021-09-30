@@ -13,7 +13,7 @@ tags:
   - T4
   - Visual Studio
 categories:
-  - C#
+  - .NET
 ---
 
 Every developer has to have an idea of versioning his products. If you work with Visual Studio you have the ``Assembly Information`` in the project properties dialog, to enter it manually everytime you want to release a new version:

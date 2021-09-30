@@ -9,7 +9,7 @@ photograph:
   name: Green Lightbeam
   link: 'https://500px.com/photo/84885859/Green-Lightbeam-by-Kristof-Zerbe/'
 categories:
-  - C#
+  - .NET
 tags:
   - WebAPI
   - Authentication

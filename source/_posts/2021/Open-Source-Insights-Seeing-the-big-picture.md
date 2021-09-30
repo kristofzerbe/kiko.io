@@ -7,10 +7,11 @@ photograph:
   file: DSC_0482.jpg
   name: Meek Window
   link: 'https://500px.com/photo/1022780903/Meek-Window-by-Kristof-Zerbe/'
+series: Great Finds
 categories:
   - Tools
 tags:
-  - Great Finds
+  - Node.js
 related:
   - Discoveries-10
   - Forking-Hexo-plugin-hexo-index-anything

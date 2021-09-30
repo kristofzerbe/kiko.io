@@ -10,9 +10,10 @@ photograph:
   link: 'https://500px.com/photo/1001114737/Untitled-by-Kristof-Zerbe'
 series: Discoveries
 categories:
-  - Discoveries
+  - Misc
 tags:
-  - Great Finds
+  - Collection
+  - Tutorial
 related:
   - Discoveries-2
   - Discoveries-1

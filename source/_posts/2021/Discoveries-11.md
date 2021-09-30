@@ -8,9 +8,9 @@ photograph:
   link: 'https://500px.com/photo/117444939'
 series: Discoveries
 categories:
-  - Discoveries
+  - Misc
 tags:
-  - Great Finds
+  - Collection
 related:
   - Discoveries-10
   - Discoveries-9

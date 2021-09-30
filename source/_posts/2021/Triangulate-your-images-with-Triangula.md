@@ -8,11 +8,11 @@ photograph:
   file: 20-08 Mallorca-7195.jpg
   name: Bottle Series
   link: 'https://500px.com/photo/1023572576'
+series: Great Finds
 categories:
   - Photo-Editing
 tags:
   - Imaging
-  - Great Finds
   - SVG
 related:
   - SVG-Resources

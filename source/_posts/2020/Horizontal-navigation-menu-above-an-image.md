@@ -13,7 +13,7 @@ tags:
   - CSS
   - Stylus
 categories:
-  - UI-Design
+  - UI/UX
 related:
   - Automatic-Header-Images-in-Hexo
   - A-New-Blog-Customizing-Hexo

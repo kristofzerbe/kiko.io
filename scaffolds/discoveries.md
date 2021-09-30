@@ -8,9 +8,9 @@ photograph:
   link: ''
 series: Discoveries
 categories:
-  - Discoveries
+  - Misc
 tags:
-  - Great Finds
+  - Collection
 related:
   - Discoveries-X
   - Discoveries-Y

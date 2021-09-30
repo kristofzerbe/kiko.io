@@ -10,9 +10,9 @@ photograph:
   link: 'https://500px.com/photo/1001751523/Jad-Vashem-Vista-by-Kristof-Zerbe'
 series: Discoveries
 categories:
-  - Discoveries
+  - UI/UX
 tags:
-  - Great Finds
+  - Collection
 related:
   - 'Discoveries-9'
   - 'Discoveries-7'

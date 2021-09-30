@@ -9,12 +9,14 @@ photograph:
   name: Ceasarea View
   link: 'https://500px.com/photo/1001750729/Ceasarea-View-by-Kristof-Zerbe'
 series: Discoveries
-tags:
-  - Great Finds
 categories:
-  - Discoveries
+  - Misc
+tags:
+  - Collection
 related:
   - Discoveries-2
+  - Discoveries-3
+  - Discoveries-4
 ---
 Due to my daily routine, I'm reading a lot of articles on the web regarding software development. 
 

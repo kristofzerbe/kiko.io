@@ -10,9 +10,9 @@ photograph:
   link: 'https://500px.com/photo/116725445'
 series: Discoveries
 categories:
-  - Discoveries
+  - JavaScript
 tags:
-  - Great Finds
+  - Collection
 related:
   - Discoveries-10
   - Discoveries-8

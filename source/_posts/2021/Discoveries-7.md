@@ -10,9 +10,9 @@ photograph:
   link: 'https://500px.com/photo/86990893/Industrial-Chrome-by-Kristof-Zerbe/'
 series: Discoveries
 categories:
-  - Discoveries
+  - Misc
 tags:
-  - Great Finds
+  - Collection
 related:
   - Discoveries-8
   - Discoveries-6

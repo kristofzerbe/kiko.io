@@ -8,9 +8,9 @@ photograph:
   link: 'https://500px.com/photo/1002617400/Tiny-Scots-6-by-Kristof-Zerbe'
 series: Discoveries
 categories:
-  - Discoveries
+  - JavaScript
 tags:
-  - Great Finds
+  - Collection
 related:
   - Discoveries-9
   - Discoveries-8

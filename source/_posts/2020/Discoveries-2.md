@@ -10,12 +10,13 @@ photograph:
   link: 'https://500px.com/photo/1001751386/Jerusalem-Marks-by-Kristof-Zerbe'
 series: Discoveries
 categories:
-  - Discoveries
+  - Misc
 tags:
-  - Great Finds
+  - Collection
 related:
   - Discoveries-3-Tutorials
   - Discoveries-1
+  - Discoveries-4
 ---
 New month, new discoveries. We will deal with key bindings, downloads on the fly, a lot of animations and contrasting images. Have fun, trying out these stunning solutions.
 
