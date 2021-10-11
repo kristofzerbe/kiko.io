@@ -1,3 +1,5 @@
+<%- js('js/dist/spotlight.bundle.js') %>
+
 <% if (page.photograph){ %>
   <%- partial('_partial/photograph', { page: page }) %>
 <% } %>
@@ -96,10 +98,16 @@
     document.querySelectorAll(".card").forEach(item => {
       if (newFilter === 'all' || (newFilter === item.getAttribute("data-status"))) {
         item.style.display = "block";
-        setTimeout(() => { item.classList.remove("hide"); }, 100);
+        setTimeout(() => { 
+          item.classList.remove("hide"); 
+          item.querySelector(".card-img").classList.add("spotlight");
+        }, 100);
       } else {
         item.classList.add("hide");
-        setTimeout(() => { item.style.display = "none"; }, 300);
+        item.querySelector(".card-img").classList.remove("spotlight");
+        setTimeout(() => { 
+          item.style.display = "none"; 
+        }, 300);
       }
     });
     setTimeout(() => { 
@@ -111,6 +119,8 @@
 
         resultElement.textContent = resultCount;
         desElement.textContent = designator;
+
+        Spotlight.init();
 
       }, 300);
   }

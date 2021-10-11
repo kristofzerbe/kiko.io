@@ -242,6 +242,16 @@
 
 <div class="page-content">
     <section>
+<time>10 Oct 2021</time>
+
+<h2 id="Convert-backslash-into-forward-slash"><a href="#Convert-backslash-into-forward-slash" class="headerlink" title="Convert backslash into forward slash"></a>Convert backslash into forward slash</h2><p>While developing Node.js on Windows and dealing with paths, like <code>path.join</code>, the folder separator will be a backslash always. But on the web a forward slash is recommended. Most browsers have no problem showing an image with a relative path like <code>/images\my-image.jpg</code>, but it is not ideal.</p>
+<p>Replacing backslashes with foreward slashed seems easy, but it has its pitfalls, because JS uses the backslash for escaping. A safe way to address backslashes on replacing is to use its octal representation <code>\134</code>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myPath = path.join(root, <span class="string">&quot;images&quot;</span>, <span class="string">&quot;my-image.jpg&quot;</span>).replace(<span class="regexp">/\134/g</span>,<span class="string">&quot;/&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>Another way to get correct paths, you can use Node’s path methods <code>normalize</code> or <code>resolve</code>.</p>
+</section>
+
+<section>
 <time>26 Sep 2021</time>
 
 <h2 id="Debugging-Hexo-with-VSCode"><a href="#Debugging-Hexo-with-VSCode" class="headerlink" title="Debugging Hexo with VSCode"></a>Debugging Hexo with VSCode</h2><p>If you want to debug your own <a href="https://hexo.io/api/generator.html">Hexo generators</a> within VSCode, you have to create an entry in your <code>./.vscode/launch.json</code>, which points to Hexo CLI with the argument <code>generate</code>:</p>

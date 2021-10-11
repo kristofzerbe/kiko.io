@@ -78,6 +78,14 @@ module.exports = function(grunt){
           'lc_select.min.css'
         ],
         dest: 'themes/landscape/source/css/dist'
+      },
+      spotlight: {
+        expand: true,
+        cwd: 'themes/landscape/assets/spotlight',
+        src: [
+          'spotlight.bundle.js'
+        ],
+        dest: 'themes/landscape/source/js/dist'
       }
     },
     _clean: {

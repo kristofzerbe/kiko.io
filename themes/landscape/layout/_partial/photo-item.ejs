@@ -4,10 +4,15 @@
   <% } else { %>
   <span class="status <%- item.status %>">unused</span>
   <% } %>
-  <div class="card-img">
+  <a class="spotlight card-img" 
+       data-title="<%- item.name %>"
+       data-description="<%- item.key %>&nbsp;&bull;&nbsp;<%- item.status %>"
+       data-src-480="<%- item.path %>"
+       data-src-768="<%- item.photoMedium %>"
+       data-src-1280="<%- item.photoLarge %>">
     <img src="<%- item.path %>" alt="<%- item.name %>" />
-  </div>
-  <span class="pre-title"><%- item.key %>.jpg</span>
+  </a>
+  <span class="pre-title"><%- item.key %></span>
   <h3><%- item.name %></h3>
   <a class="icon-link" href="<%- item.link %>">
     <img src="/images/500px.svg" alt="see on 500px" style="height" />
