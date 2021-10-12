@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  
   <%
     var type;
     var subtype;
@@ -152,8 +153,21 @@
   <%- js('js/tools.js') %>
   <%- js('js/dist/image-compare-viewer.min.js') %>
 
+<% if (config.hitcount.enabled === true) { %>
   <script>
     let hitCountId = '<%= hitcountId %>';
   </script>
+<% } %>
+
+<% if (config.pirsch.enabled === true) { %>
+  <script defer type="text/javascript" 
+    src="https://api.pirsch.io/pirsch.js"
+    id="pirschjs"
+    data-code="<%= config.pirsch.code %>"></script>
+  <script type="text/javascript" 
+    src="https://api.pirsch.io/pirsch-events.js"
+    id="pirscheventsjs"
+    data-code="<%= config.pirsch.code %>"></script>    
+<% } %>
 
 </head>

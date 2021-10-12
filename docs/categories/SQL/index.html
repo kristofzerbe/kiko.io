@@ -3,6 +3,7 @@
 <head><link rel=manifest href=/site.webmanifest>
   <meta charset="utf-8">
   
+  
   <!-- CATEGORY -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -75,9 +76,18 @@
 <script src="/js/dist/image-compare-viewer.min.js"></script>
 
 
-  <script>
-    let hitCountId = '';
-  </script>
+
+
+
+  <script defer type="text/javascript" 
+    src="https://api.pirsch.io/pirsch.js"
+    id="pirschjs"
+    data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>
+  <script type="text/javascript" 
+    src="https://api.pirsch.io/pirsch-events.js"
+    id="pirscheventsjs"
+    data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
+
 
 <meta name="generator" content="Hexo 5.4.0"></head>
 
@@ -540,60 +550,26 @@
     background: 'rgba(55, 55, 55, 0.5)',
     margin: 20
   });
-
+  
 </script>
 
 
-<script>
-  function setHitCount() {
-    let hcConfig = {
-      id: hitCountId,
-      webUrl: 'https://hitcount.io',
-      apiUrl: 'https://hitcount.io/api/{id}',
-      size: '12',
-      background: {
-        light: '555',
-        dark: '777'
-      },
-      color: {
-        light: '000',
-        dark: '666'
-      },
-      digits: '5'
-    };
+  <script>
+    //HOOK LINKS FOR PIRSCH EVENT...
 
-    if (location.hostname !== "localhost" && hcConfig.id) {
+    //BUY ME A COFFEE
+    let bmc = document.querySelector(".bmc-btn");
+    if (bmc) bmc.addEventListener("click", function() { pirsch('Buy Me A Coffee clicked') });
 
-      if (localStorage.getItem("theme") === "light") {
-        background = hcConfig.background.light;
-        color = hcConfig.background.dark;
-      } else {
-        background = hcConfig.color.light;
-        color = hcConfig.color.dark;
-      }
+    //FEED
+    let feed = document.querySelector("#nav-rss-link a.sub-nav-link");
+    if (feed) feed.addEventListener("click", function() { pirsch('Feed clicked') });
 
-      const imgUrl = 
-        hcConfig.apiUrl.replace("{id}", hcConfig.id)  + 
-          "?background=" + background + 
-          "&color=" + color + 
-          "&size=" + hcConfig.size + 
-          "&digits=" + hcConfig.digits;
-      
-      const hitcount = `
-        <a href="${hcConfig.webUrl}" target="__blank">
-          <img alt="Hitcount" src="${imgUrl}" />
-        </a>
-      `;
+    //VSCODE
+    let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));
+  </script>  
 
-      const wrapper = document.getElementById("hitcount");
-      if (!wrapper.querySelector("a img")) {
-        wrapper.insertAdjacentHTML('afterbegin', hitcount);
-      } else {
-        wrapper.querySelector("a img").src = imgUrl;
-      }
-    }
-  }
-</script>
+
 
     </div>
   </div>

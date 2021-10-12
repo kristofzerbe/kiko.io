@@ -3,6 +3,7 @@
 <head><link rel=manifest href=/site.webmanifest>
   <meta charset="utf-8">
   
+  
   <!-- POST -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -75,9 +76,18 @@
 <script src="/js/dist/image-compare-viewer.min.js"></script>
 
 
-  <script>
-    let hitCountId = 'ob6qGIgcp';
-  </script>
+
+
+
+  <script defer type="text/javascript" 
+    src="https://api.pirsch.io/pirsch.js"
+    id="pirschjs"
+    data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>
+  <script type="text/javascript" 
+    src="https://api.pirsch.io/pirsch-events.js"
+    id="pirscheventsjs"
+    data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
+
 
 <meta name="generator" content="Hexo 5.4.0"></head>
 
@@ -325,15 +335,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckumq6egy00atu0haas67g1ba">
+      <div class="article-permalink" id="article-permalink-ckuns0uxm00aa00haa11n98gr">
     <input class="article-permalink-value" value="https://kiko.io/post/Use-and-manage-multiple-Node-js-versions-on-Windows-10/" 
-           data-id="ckumq6egy00atu0haas67g1ba" data-title="Use and manage multiple Node.js versions on Windows 10" />
+           data-id="ckuns0uxm00aa00haa11n98gr" data-title="Use and manage multiple Node.js versions on Windows 10" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckumq6egy00atu0haas67g1ba");
+        initPermalink("ckuns0uxm00aa00haa11n98gr");
     });
 </script>
 
@@ -827,60 +837,26 @@
     background: 'rgba(55, 55, 55, 0.5)',
     margin: 20
   });
-
+  
 </script>
 
 
-<script>
-  function setHitCount() {
-    let hcConfig = {
-      id: hitCountId,
-      webUrl: 'https://hitcount.io',
-      apiUrl: 'https://hitcount.io/api/{id}',
-      size: '12',
-      background: {
-        light: '555',
-        dark: '777'
-      },
-      color: {
-        light: '000',
-        dark: '666'
-      },
-      digits: '5'
-    };
+  <script>
+    //HOOK LINKS FOR PIRSCH EVENT...
 
-    if (location.hostname !== "localhost" && hcConfig.id) {
+    //BUY ME A COFFEE
+    let bmc = document.querySelector(".bmc-btn");
+    if (bmc) bmc.addEventListener("click", function() { pirsch('Buy Me A Coffee clicked') });
 
-      if (localStorage.getItem("theme") === "light") {
-        background = hcConfig.background.light;
-        color = hcConfig.background.dark;
-      } else {
-        background = hcConfig.color.light;
-        color = hcConfig.color.dark;
-      }
+    //FEED
+    let feed = document.querySelector("#nav-rss-link a.sub-nav-link");
+    if (feed) feed.addEventListener("click", function() { pirsch('Feed clicked') });
 
-      const imgUrl = 
-        hcConfig.apiUrl.replace("{id}", hcConfig.id)  + 
-          "?background=" + background + 
-          "&color=" + color + 
-          "&size=" + hcConfig.size + 
-          "&digits=" + hcConfig.digits;
-      
-      const hitcount = `
-        <a href="${hcConfig.webUrl}" target="__blank">
-          <img alt="Hitcount" src="${imgUrl}" />
-        </a>
-      `;
+    //VSCODE
+    let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));
+  </script>  
 
-      const wrapper = document.getElementById("hitcount");
-      if (!wrapper.querySelector("a img")) {
-        wrapper.insertAdjacentHTML('afterbegin', hitcount);
-      } else {
-        wrapper.querySelector("a img").src = imgUrl;
-      }
-    }
-  }
-</script>
+
 
     </div>
   </div>
