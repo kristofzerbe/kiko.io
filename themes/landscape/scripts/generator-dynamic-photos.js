@@ -63,8 +63,7 @@ function getPoolPhotos(config) {
     let meta = fs.readFileSync(path.join(poolDir, entry.key, "meta.txt")).split("\n");
     entry.file = "mobile.jpg";
     entry.path = "/" + path.join(config.pool_dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
-    entry.photoMedium = "/" + path.join(config.pool_dir, entry.key, "tablet.jpg").replace(/\134/g,"/");
-    entry.photoLarge = "/" + path.join(config.pool_dir, entry.key, "normal.jpg").replace(/\134/g,"/");
+    entry.photo = "/" + path.join(config.pool_dir, entry.key, "normal.jpg").replace(/\134/g,"/");
     entry.name = meta[0];
     entry.link = meta[1];
     entry.article = null;
@@ -104,8 +103,7 @@ function getPostAndPagePhotos(config, locals) {
   used.forEach(entry => {
     entry.key = entry.file.replace(".jpg", "");
     entry.path = "/" + path.join(config.photo_dir, "mobile", entry.file).replace(/\134/g,"/");
-    entry.photoMedium = "/" + path.join(config.photo_dir, "tablet", entry.file).replace(/\134/g,"/");
-    entry.photoLarge = "/" + path.join(config.photo_dir, "normal", entry.file).replace(/\134/g,"/");
+    entry.photo = "/" + path.join(config.photo_dir, "normal", entry.file).replace(/\134/g,"/");
 
     let p = postsAndPages.find(p => (p && p.photographFile === entry.file));
 //console.log(entry.file + " -> " + JSON.stringify(p));
@@ -145,8 +143,7 @@ function getDynamicPagePhotos(config) {
         status: "used",
         file: fm.photograph.file,
         path: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
-        photoMedium: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
-        photoLarge: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
+        photo: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
         name: fm.photograph.name,
         link: fm.photograph.link,
         article: {
