@@ -212,6 +212,88 @@
   
   
      
+<article id="post-2021/Utilize-a-repository-of-reusable-ES6-template-literals" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <a href="/post/Utilize-a-repository-of-reusable-ES6-template-literals/" class="article-date">
+  
+    <time class="published dt-published" datetime="2021-01-03T12:29:01.000Z" itemprop="datePublished">03 Jan 2021</time>
+  
+</a>
+    
+  <div class="article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Utilize-a-repository-of-reusable-ES6-template-literals/">
+        <img class="article-photo" src="/photos/tablet/DSC_7897.jpg" alt="Rusted Bike" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/Utilize-a-repository-of-reusable-ES6-template-literals/">Utilize a repository of reusable ES6 template literals</a>
+    </h1>
+  
+
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>The <a href="http://es6-features.org/#StringInterpolation"><strong>Template Literals</strong></a> introduced with ES6 are very useful to deal with multiline strings, because they support <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Expression_interpolation">embedded expressions</a>. Gone are the days of endless string concatination or replacing variables in a string by using RegEx.</p>
+<p>Instead of… </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> url = ...</span><br><span class="line"><span class="keyword">var</span> file = ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> template = </span><br><span class="line">  <span class="string">&#x27;&lt;div class=&quot;photo&quot;&gt;&#x27;</span> + </span><br><span class="line">     <span class="string">&#x27;&lt;a href=&quot;&#x27;</span> + url + <span class="string">&quot;&#x27; + </span></span><br><span class="line"><span class="string">        &#x27;style=&quot;</span>background-image: url(<span class="string">&#x27; + file + &#x27;</span>)<span class="string">&quot;&lt;/a&gt;&#x27; + </span></span><br><span class="line"><span class="string">  &#x27;&lt;/div&gt;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>… you can write:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> url = ...</span><br><span class="line"><span class="keyword">var</span> file = ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> template = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;div class=&quot;photo&quot;&gt;</span></span><br><span class="line"><span class="string">    &lt;a href=&quot;<span class="subst">$&#123;url&#125;</span>/&quot;</span></span><br><span class="line"><span class="string">    style=&quot;background-image: url(<span class="subst">$&#123;file&#125;</span>);&quot;&gt;&lt;/a&gt;</span></span><br><span class="line"><span class="string">  &lt;/div&gt;</span></span><br><span class="line"><span class="string">`</span>,</span><br></pre></td></tr></table></figure>
+
+<p>It’s much cleaner and easier to handle, as you can copy your needed HTML right into your code and surround it by <strong>backtick</strong> (!) characters. Insert your variable placeholders (expressions), indicated by a dollar sign and curly braces, and you are done.</p>
+<p>But there is one “restriction”, you have to be aware of: the interpolation (substitution of the expressions) is done at declaration time and not at runtime. You can’t define your literals seperatly, take one and make your substitution as you need it, like you would do with <a href="https://handlebarsjs.com/">Handlebars</a> or other templating engines. Therefore the name <em>template</em> literals is a bit misleading. But … there is a way to achieve this anyway…</p>
+      
+        <p class="article-more-link">
+          <a class="button" href="/post/Utilize-a-repository-of-reusable-ES6-template-literals/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Templating/" rel="tag">Templating</a></li></ul>  
+  </div>
+
+      <div class="article-permalink" id="article-permalink-ckuns0uxn00ad00ha7kqdausg">
+    <input class="article-permalink-value" value="https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/" 
+           data-id="ckuns0uxn00ad00ha7kqdausg" data-title="Utilize a repository of reusable ES6 template literals" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("ckuns0uxn00ad00ha7kqdausg");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
 <article id="post-2020/Discoveries-5" 
          class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -1094,86 +1176,6 @@
 
 </article>
   
-     
-<article id="post-2020/Discoveries-2" 
-         class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-meta">
-    <a href="/post/Discoveries-2/" class="article-date">
-  
-    <time class="published dt-published" datetime="2020-09-07T15:54:50.000Z" itemprop="datePublished">07 Sep 2020</time>
-  
-</a>
-    
-  <div class="article-category category-misc">
-    <a class="article-category-link" href="/categories/Misc/">Misc</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/Discoveries-2/">
-        <img class="article-photo" src="/photos/tablet/19-05 Israel-0661.jpg" alt="Jerusalem Marks" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-    <a class="article-anything" itemprop="name" href="/series/Discoveries">Discoveries</a>
-
-
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/Discoveries-2/">Discoveries #2</a>
-    </h1>
-  
-
-        
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      <p>New month, new discoveries. We will deal with key bindings, downloads on the fly, a lot of animations and contrasting images. Have fun, trying out these stunning solutions.</p>
-
-        <ul class="anchorlist">
-            <li data-anchor="#tinykeys">tinykeys - Modern library for keybindings</li><li data-anchor="#creating-files-in-javascript">Creating files in JavaScript in your browser</li><li data-anchor="#css-animated-fonts">CSS Animated Google Fonts</li><li data-anchor="#skeleton-screen-css">Skeleton Screen CSS</li><li data-anchor="#more-control-over-css-borders">More Control Over CSS Borders With background-image</li><li data-anchor="#css-only-animated-wrapping-underline">A CSS-only, animated, wrapping underline</li><li data-anchor="#nailing-the-perfect-contrast">Nailing the Perfect Contrast Between Light Text and a Background Image</li><li data-anchor="#contrast-js">Contrast.js</li>
-        </ul>
-      
-        <p class="article-more-link">
-          <a class="button" href="/post/Discoveries-2/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Collection/" rel="tag">Collection</a></li></ul>  
-  </div>
-
-      <div class="article-permalink" id="article-permalink-ckuns0utc000j00ha2f7g1gch">
-    <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-2/" 
-           data-id="ckuns0utc000j00ha2f7g1gch" data-title="Discoveries #2" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("ckuns0utc000j00ha2f7g1gch");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
 
 
 
@@ -1213,6 +1215,12 @@
         
           <li>
             
+              <a href="/post/Croatian-Presets-for-Lightroom/">Croatian Presets for Lightroom</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/The-Last-Image-Gallery/">The Last Image Gallery...</a>
             
           </li>
@@ -1232,12 +1240,6 @@
           <li>
             
               <a href="/post/Photo%20Workflow%20Re-Thought/">Photo Workflow Re-Thought</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Application-Specific-Links-on-Windows-10/">Application-Specific Links on Windows 10</a>
             
           </li>
         
