@@ -3,7 +3,6 @@ alias: /categories/Tools/Dopamine-How-Software-should-be/index.html
 title: 'Dopamine: How Software should be...'
 subtitle: A great media player for Windows 10
 date: 2020-07-10 13:49:09
-hitcountId: uOIjbQ4SU
 photograph:
   file: 19-05 Israel-0143.jpg
   name: Jaffa Antiques

@@ -2,7 +2,6 @@
 title: GitHubs Magic Dot
 subtitle: New experience in code editing
 date: 2021-08-20 13:43:04
-hitcountId:
 photograph:
   file: 19-07 Schottland-0595.jpg
   name: RYB Brass & Wires

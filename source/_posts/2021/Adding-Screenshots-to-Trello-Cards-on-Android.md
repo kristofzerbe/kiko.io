@@ -3,7 +3,6 @@ alias: /categories/Misc/Adding-Screenshots-to-Trello-Cards-on-Android/index.html
 title: Adding Screenshots to Trello Cards on Android
 subtitle:
 date: 2021-04-11 16:11:10
-hitcountId: J7LaRPqkpz
 photograph:
   file: DSC_7006-HDR.jpg
   name: Break Dancer

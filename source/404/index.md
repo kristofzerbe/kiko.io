@@ -2,7 +2,6 @@
 title: 404
 date: 2020-09-23 12:31:40
 permalink: 404.html
-hitcountId: pNXfeWPWS
 photograph: 
   file: $404.jpg
   name: Instructions

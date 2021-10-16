@@ -2,7 +2,6 @@
 title: Automatic Duplicate Image Shadow
 subtitle: Drop an image shadow with the image itself via JavaScript
 date: 2021-07-16 17:45:30
-hitcountId:
 photograph:
   file: 18-09 Kroatien-0349.jpg
   name: Colorful Twig

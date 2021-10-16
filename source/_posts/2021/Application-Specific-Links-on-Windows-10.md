@@ -2,7 +2,6 @@
 title: Application-Specific Links on Windows 10
 subtitle: What works and what we still have to wait for
 date: 2021-09-03 09:31:08
-hitcountId:
 photograph:
   file: D70_0247.jpg
   name: Copenhagen Window

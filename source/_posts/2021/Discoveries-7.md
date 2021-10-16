@@ -3,7 +3,6 @@ alias: /categories/Discoveries/Discoveries-7/index.html
 title: 'Discoveries #7'
 subtitle:
 date: 2021-02-25 14:36:10
-hitcountId: OhZ6jyXeZ
 photograph:
   file: DSC_8892.jpg
   name: Industrial Chrome

@@ -3,7 +3,6 @@ alias: /categories/Tools/Using-GitHub-as-Commenting-Platform/index.html
 title: Using GitHub as Commenting Platform
 subtitle: Integrate Utterances' GitHub Issue Commenting to Hexo
 date: 2020-07-05 14:55:16
-hitcountId: 7bpnXwXAW
 photograph:
   file: D70_7530.jpg
   name: Shadow Hat

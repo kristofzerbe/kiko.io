@@ -1,7 +1,6 @@
 ---
 title: Photo Workflow Re-Thought
 subtitle: 
-hitcountId:
 photograph:
   file: D50_0955.jpg
   name: Rainbow Crane

@@ -3,7 +3,6 @@ alias: /categories/C/Meaningful-automatic-versioning-with-T4/index.html
 title: Meaningful automatic versioning with T4
 subtitle: How to implement versioning in C# projects the better way
 date: 2020-06-27 17:57:18
-hitcountId: QNUckq078
 photograph:
   file: D70_7184.jpg
   name: Specialita' Toscane

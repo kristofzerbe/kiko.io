@@ -3,7 +3,6 @@ alias: /categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-lite
 title: Utilize a repository of reusable ES6 template literals
 subtitle:
 date: 2021-01-03 13:29:01
-hitcountId: Xf5KYiovJ
 photograph:
   file: DSC_7897.jpg
   name: Rusted Bike

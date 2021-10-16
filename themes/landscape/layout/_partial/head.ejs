@@ -9,7 +9,6 @@
     var pageTitle = page.title;
     var heroImage = config.heroimage_small;
     var description = config.description;
-    var hitcountId;
 
     if (page.index === "Series") { // IndexAnything
       type = page.index.toUpperCase();
@@ -30,7 +29,6 @@
     switch (type) {
       case "HOME":
         pageTitle = config.subtitle;
-        hitcountId = config.hitcount.index_id;
         break;
 
       case "POST":
@@ -39,14 +37,12 @@
         heroImage = config.url + "/images/social-media/" + slug + ".png";
         //TODO: Excerpt, but without HTML tag and just first n words > jsdom.parse?
         description = config.title + "'s " + (is_post() ? "Post " : "Page ") + "'" + page.title + "'";
-        hitcountId = page.hitcountId;
         break;
 
       case "PAGE":
         heroImage = config.url + "/photos/normal/" + page.photograph.file;
         //TODO: Excerpt, but without HTML tag and just first n words > jsdom.parse?
         description = config.title + "'s " + (is_post() ? "Post " : "Page ") + "'" + page.title + "'";
-        hitcountId = page.hitcountId;
         break;
 
       case "ARCHIVE":
@@ -125,9 +121,6 @@
   <link rel="webmention" href="https://webmention.io/kiko.io/webmention" />
   <link rel="pingback" href="https://webmention.io/kiko.io/xmlrpc" />
 
-  <!-- hitcount.io -->
-  <link rel="preconnect" href="https://hitcount.io">
-
   <!-- Feed -->
   <% if (theme.rss){ %>
     <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml">
@@ -152,12 +145,6 @@
 
   <%- js('js/tools.js') %>
   <%- js('js/dist/image-compare-viewer.min.js') %>
-
-<% if (config.hitcount.enabled === true) { %>
-  <script>
-    let hitCountId = '<%= hitcountId %>';
-  </script>
-<% } %>
 
 <% if (config.pirsch.enabled === true) { %>
   <script defer type="text/javascript" 

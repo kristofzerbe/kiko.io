@@ -18,7 +18,6 @@ trelloCollections:
 ---
 title: Tiny Tools
 date: {{ date }}
-hitcountId: #HITCOUNT.IO
 photograph: 
   file: tiny-tools.jpg
 ---

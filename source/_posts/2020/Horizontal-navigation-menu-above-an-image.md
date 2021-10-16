@@ -3,7 +3,6 @@ alias: /categories/UI-Design/Horizontal-navigation-menu-above-an-image/index.htm
 title: Horizontal navigation menu above an image
 subtitle: How to deal with coverage, readability and scrollbars
 date: 2020-07-20 15:55:47
-hitcountId: XrBxUNkcX
 photograph:
   file: '19-07 Schottland-0495.jpg'
   name: 'Ancient Kitchen Stuff'

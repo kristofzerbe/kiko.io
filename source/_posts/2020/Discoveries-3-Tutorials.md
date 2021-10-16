@@ -3,7 +3,6 @@ alias: /categories/Discoveries/Discoveries-3-Tutorials/index.html
 title: 'Discoveries #3 - Tutorials'
 subtitle:
 date: 2020-09-29 12:02:10
-hitcountId: tGTmls7SI
 photograph:
   file: 18-09 Kroatien-0112.jpg
   name: Enlightenment

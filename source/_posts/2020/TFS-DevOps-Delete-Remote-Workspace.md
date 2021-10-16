@@ -3,7 +3,6 @@ alias: /categories/Tools/TFS-DevOps-Delete-Remote-Workspace/index.html
 title: 'TFS/DevOps: Delete Remote Workspace'
 subtitle: 
 date: 2020-02-28
-hitcountId: sJDU55wjd
 photograph:
   file: '18-09 Kroatien-0061.jpg'
   name: 'Abandonded Fitting'

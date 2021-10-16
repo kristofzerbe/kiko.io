@@ -3,7 +3,6 @@ alias: /categories/Tools/Automatic-Header-Images-in-Hexo/index.html
 title: Automatic Header Images in Hexo
 subtitle: Use static images randomly for posts via Hexo script
 date: 2020-06-22 17:49:16
-hitcountId: ntjArduV1
 photograph:
   file: D70_7344.jpg
   name: Non Toccare

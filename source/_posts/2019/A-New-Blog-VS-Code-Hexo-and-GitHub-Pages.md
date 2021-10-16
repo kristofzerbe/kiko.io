@@ -3,7 +3,6 @@ alias: /categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/index.html
 title: 'A New Blog: VS Code, Hexo and GitHub Pages'
 subtitle: 'Part One of having fun with Hexo and GitHub Pages'
 date: 2019-09-24
-hitcountId: poCIeqEo9
 photograph: 
     file: '19-07 Schottland-0405.jpg'
     name: 'Tiny Scots 7'

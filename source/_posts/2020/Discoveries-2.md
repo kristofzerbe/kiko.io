@@ -3,7 +3,6 @@ alias: /categories/Discoveries/Discoveries-2/index.html
 title: 'Discoveries #2'
 subtitle:
 date: 2020-09-07 17:54:50
-hitcountId: uueJGmzxQ
 photograph:
   file: 19-05 Israel-0661.jpg
   name: Jerusalem Marks

@@ -3,7 +3,6 @@ alias: /categories/Tools/Hexo-and-the-Dark-Mode/index.html
 title: Hexo and the Dark Mode
 subtitle: First approach to implement 'prefers-color-scheme'
 date: 2019-10-23 15:28:04
-hitcountId: hLnm3OCeB
 photograph: 
   file: '19-07 Schottland-0016_AUR.jpg'
   name: 'Glencoe Valley HDR'

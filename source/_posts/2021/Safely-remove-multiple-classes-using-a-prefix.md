@@ -3,7 +3,6 @@ alias: /categories/JavaScript/Safely-remove-multiple-classes-using-a-prefix/inde
 title: Safely remove multiple classes using a prefix
 subtitle: Avoiding pitfalls when iterating over classList
 date: 2021-01-18 11:17:46
-hitcountId: FmQt3HVl7
 photograph:
   file: DSC_1690.jpg
   name: Metal Rose

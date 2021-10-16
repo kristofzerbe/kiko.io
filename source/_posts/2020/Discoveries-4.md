@@ -3,7 +3,6 @@ alias: /categories/Discoveries/Discoveries-4/index.html
 title: 'Discoveries #4'
 subtitle:
 date: 2020-10-10 15:27:47
-hitcountId: VqGC3VBzZ
 photograph:
   file: DSC_6114.jpg
   name: On The Rocks

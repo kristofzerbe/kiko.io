@@ -3,7 +3,6 @@ alias: /categories/JavaScript/Native-JavaScript-Multilanguage-Templating/index.h
 title: Native JavaScript Multilanguage Templating
 subtitle:
 date: 2021-02-24 13:31:58
-hitcountId: ftdrY4jZE
 photograph:
   file: DSC_6682.jpg
   name: Blue Lock

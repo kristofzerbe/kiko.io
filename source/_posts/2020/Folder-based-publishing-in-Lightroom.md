@@ -3,7 +3,6 @@ alias: /categories/Photo-Editing/Folder-based-publishing-in-Lightroom/index.html
 title: Folder based publishing in Lightroom
 subtitle:
 date: 2020-10-26 13:28:59
-hitcountId: UALHfYPcB
 photograph:
   file: DSC_0181.jpg
   name: Color Seat

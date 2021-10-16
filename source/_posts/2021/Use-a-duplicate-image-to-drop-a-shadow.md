@@ -3,7 +3,6 @@ alias: /categories/UI-Design/Use-a-duplicate-image-to-drop-a-shadow/index.html
 title: Use a duplicate image to drop a shadow
 subtitle: An alternative for 'box-shadow' on images
 date: 2021-01-20 10:38:50
-hitcountId: XJtluj8lk
 photograph:
   file: D702440.jpg
   name: Oriental Lights

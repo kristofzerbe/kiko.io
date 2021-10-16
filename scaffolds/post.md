@@ -2,7 +2,6 @@
 title: {{ title }}
 subtitle: 
 date: {{ date }}
-hitcountId: 
 photograph: 
   file: ''
   name: ''

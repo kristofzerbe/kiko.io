@@ -2,7 +2,6 @@
 title: Uups ... empty posts
 subtitle: Problems with post asset files in Hexo and a solution approach
 date: 2021-09-21 13:40:25
-hitcountId:
 photograph:
   file: D70_1408.jpg
   name: Mooring Ropes

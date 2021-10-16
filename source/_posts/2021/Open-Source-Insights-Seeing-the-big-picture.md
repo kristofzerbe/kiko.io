@@ -2,7 +2,6 @@
 title: Open Source Insights - Seeing the big picture
 subtitle: Google's new experimental platform to get a grip on project dependencies
 date: 2021-06-06 09:36:49
-hitcountId: P13Bgsoxf
 photograph:
   file: DSC_0482.jpg
   name: Meek Window

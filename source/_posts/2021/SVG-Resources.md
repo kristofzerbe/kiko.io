@@ -3,7 +3,6 @@ alias: /categories/UI-Design/SVG-Resources/index.html
 title: SVG Resources
 subtitle:
 date: 2021-04-09 14:07:53
-hitcountId: kDhbCVvpR
 photograph:
   file: DSC_4936.jpg
   name: Forgotten Motocycle

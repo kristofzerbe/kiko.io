@@ -2,7 +2,6 @@
 title: The Last Image Gallery...
 subtitle: "... you have to deal with: Spotlight"
 date: 2021-10-10 12:28:09
-hitcountId:
 photograph:
   file: 18-09 Kroatien-0340.jpg
   name: Seating Group

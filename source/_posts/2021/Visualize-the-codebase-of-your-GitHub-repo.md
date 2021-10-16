@@ -2,7 +2,6 @@
 title: Visualize the codebase of your GitHub repo
 subtitle: Try GitHub Next's repo-vizualizer action for generating a diagram of your codebase
 date: 2021-08-21 07:55:00
-hitcountId:
 photograph:
   file: D50_0086.jpg
   name: Thomas' German Flag

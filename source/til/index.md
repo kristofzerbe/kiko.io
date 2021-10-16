@@ -1,7 +1,6 @@
 ---
 title: "#TIL - Today I Learned"
 date: 2021-07-05 12:01:00
-hitcountId: WfGCn1IVy
 photograph: 
   file: $til.jpg
   name: Riga Locks

@@ -3,7 +3,6 @@ alias: /categories/Photo-Editing/Scotch-Presets-for-Lightroom/index.html
 title: Scotch Presets for Lightroom
 subtitle:
 date: 2021-04-18 19:51:35
-hitcountId: sZb52kvDY
 photograph:
   file: 19-07 Schottland-0512.jpg
   name: Lonely Call Box

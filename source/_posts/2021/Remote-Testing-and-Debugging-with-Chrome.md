@@ -3,7 +3,6 @@ alias: /categories/Tools/Remote-Testing-and-Debugging-with-Chrome/index.html
 title: Remote Testing and Debugging with Chrome
 subtitle: How to test a local site on a mobile device and debug it locally
 date: 2021-01-24 14:47:10
-hitcountId: ToFv3VgiM
 photograph:
   file: DSC_9368.jpg
   name: Direction Airport

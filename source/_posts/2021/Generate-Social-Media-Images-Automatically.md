@@ -2,7 +2,6 @@
 title: Generate Social Media Images Automatically
 subtitle:
 date: 2021-07-10 11:07:31
-hitcountId: DtfGdu472
 photograph:
   file: DSC_6776.jpg
   name: Color Brushes

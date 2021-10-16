@@ -2,7 +2,6 @@
 title: '{{ title }}'
 subtitle: 
 date: {{ date }}
-hitcountId: #HITCOUNT.IO
 photograph: 
   file: ''
   name: ''

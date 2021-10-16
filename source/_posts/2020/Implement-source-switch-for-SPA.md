@@ -3,7 +3,6 @@ alias: /categories/JavaScript/Implement-source-switch-for-SPA/index.html
 title: Implement source switch for SPA
 subtitle: Asynchronous loading of JS and CSS depending on the environment
 date: 2020-10-04 17:01:02
-hitcountId: E3HLxxYeB
 photograph:
   file: DSC_6063.jpg
   name: Illuminated Chair

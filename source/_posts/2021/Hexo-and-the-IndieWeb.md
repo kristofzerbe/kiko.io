@@ -3,7 +3,6 @@ alias: /categories/Tools/Hexo-and-the-IndieWeb/index.html
 title: Hexo and the IndieWeb
 subtitle: Make your blog ready for social interaction via Webmentions
 date: 2021-05-05 19:15:00
-hitcountId: cU8XoOPbV
 photograph:
   file: DSC_5088.jpg
   name: Steel Flower

@@ -3,7 +3,6 @@ alias: /categories/Photo-Editing/Indian-Presets-for-Lightroom/index.html
 title: Indian Presets for Lightroom
 subtitle:
 date: 2020-10-28 14:07:20
-hitcountId: 8XNnJ6fv4
 photograph:
   file: IMG_20191009_164133_HDR.jpg
   name: Iza Khans Tomb 1

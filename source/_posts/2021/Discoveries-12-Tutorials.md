@@ -2,7 +2,6 @@
 title: 'Discoveries #12 - Tutorials'
 subtitle: Some great articles from CSS masters
 date: 2021-07-30 10:41:51
-hitcountId:
 photograph:
   file: 19-07 Schottland-0479.jpg
   name: Beer Barrels

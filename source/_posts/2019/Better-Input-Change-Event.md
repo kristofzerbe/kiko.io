@@ -3,7 +3,6 @@ alias: /categories/JavaScript/Better-Input-Change-Event/index.html
 title: Better Input Change Event
 subtitle:
 date: 2019-11-26 16:51:17
-hitcountId: RKcaB07GD
 photograph:
   file: '19-05 Israel-0624.jpg'
   name: 'Jerusalem Seat'

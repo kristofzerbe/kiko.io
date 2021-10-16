@@ -3,7 +3,6 @@ alias: /categories/Tools/A-New-Blog-Customizing-Hexo/index.html
 title: 'A New Blog: Customizing Hexo'
 subtitle: 'Part Two of having fun with Hexo and GitHub Pages'
 date: 2019-09-25 12:00:00
-hitcountId: 7RpTJjWHK
 photograph: 
     file: '19-07 Schottland-0198.jpg'
     name: 'Thistle Fence'

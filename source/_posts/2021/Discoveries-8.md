@@ -3,7 +3,6 @@ alias: /categories/Discoveries/Discoveries-8/index.html
 title: 'Discoveries #8'
 subtitle:
 date: 2021-03-31 13:41:26
-hitcountId: zI7amzr7T
 photograph:
   file: 19-05 Israel-0724.jpg
   name: Jad Vashem Vista

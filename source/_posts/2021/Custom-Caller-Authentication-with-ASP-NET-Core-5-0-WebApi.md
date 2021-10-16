@@ -3,7 +3,6 @@ alias: /categories/C/Custom-Caller-Authentication-with-ASP-NET-Core-5-0-WebApi/i
 title: Custom Caller Authentication with ASP.NET Core 5.0 Web API
 subtitle:
 date: 2021-02-28 17:05:00
-hitcountId: tAdvnV0Hy
 photograph:
   file: DSC_7207.jpg
   name: Green Lightbeam

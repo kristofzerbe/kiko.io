@@ -3,7 +3,6 @@ alias: /categories/JavaScript/Pimping-the-Permalink/index.html
 title: Pimping the Permalink
 subtitle: How to copy and share the permalink programatically
 date: 2020-09-20 16:30:37
-hitcountId: 0HVlGZW77
 photograph:
   file: 18-09 Kroatien-0245.jpg
   name: Summer Reading

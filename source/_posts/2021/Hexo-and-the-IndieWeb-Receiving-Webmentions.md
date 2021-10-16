@@ -3,7 +3,6 @@ alias: /categories/Tools/Hexo-and-the-IndieWeb-Receiving-Webmentions/index.html
 title: Hexo and the IndieWeb (Receiving Webmentions)
 subtitle: Use webmention.io the easy way
 date: 2021-05-13 14:16:00
-hitcountId: UJ4z8jVX2
 photograph:
   file: 19-12 Kroatien-0183.jpg
   name: Dubrovnik Fishnet

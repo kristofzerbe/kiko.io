@@ -3,7 +3,6 @@ alias: /categories/Discoveries/Discoveries-6/index.html
 title: 'Discoveries #6'
 subtitle:
 date: 2021-01-20 15:01:34
-hitcountId: SieT36yGH
 photograph:
   file: DSC_4935.jpg
   name: Light Bulbs

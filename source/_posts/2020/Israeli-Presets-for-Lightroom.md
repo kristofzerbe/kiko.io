@@ -3,7 +3,6 @@ alias: /categories/Photo-Editing/Israeli-Presets-for-Lightroom/index.html
 title: Israeli Presets for Lightroom
 subtitle:
 date: 2020-10-27 15:07:20
-hitcountId: zHxUEZeSw
 photograph:
   file: 19-05 Israel-0498.jpg
   name: Dead Sea Colors

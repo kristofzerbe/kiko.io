@@ -3,7 +3,6 @@ alias: /categories/Discoveries/Discoveries-5/index.html
 title: 'Discoveries #5'
 subtitle:
 date: 2020-12-19 12:12:44
-hitcountId: Mo0SmHmgg
 photograph:
   file: D70_0789.jpg
   name: Kitchen Copper

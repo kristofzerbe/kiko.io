@@ -3,7 +3,6 @@ alias: /categories/JavaScript/How-to-prevent-duplicate-events/index.html
 title: How to prevent duplicate events
 date: 2021-01-07 17:22:25
 subtitle: 
-hitcountId: krG1DVz69
 photograph:
   file: DSC_7239.jpg
   name: Whirling Spark I

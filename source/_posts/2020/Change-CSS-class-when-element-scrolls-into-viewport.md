@@ -3,7 +3,6 @@ alias: /categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewpor
 title: Change CSS class when element scrolls into viewport
 subtitle:
 date: 2020-07-13 18:24:39
-hitcountId: gI7Z7elVy
 photograph:
   file: D70_7695.jpg
   name: Onion Bokeh
