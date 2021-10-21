@@ -247,6 +247,18 @@
 
 <div class="page-content">
     <section>
+<time>21 Oct 2021</time>
+
+<h2 id="Optional-Chaining-on-Methods-and-Indexes"><a href="#Optional-Chaining-on-Methods-and-Indexes" class="headerlink" title="Optional Chaining on Methods and Indexes"></a>Optional Chaining on Methods and Indexes</h2><p>In ECMAScript 2020 the optional chaining operator was introduced into JavaScript. The question mark right behind the property name helps to prevent null reference exceptions:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = &#123; <span class="attr">bar</span>: <span class="literal">null</span> &#125;;</span><br><span class="line"></span><br><span class="line">foo.bar.prop <span class="comment">// TypeError: Cannot read properties of undefined = NullReferenceException</span></span><br><span class="line"></span><br><span class="line">foo?.bar?.prop <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>This works also on methods calls and index access:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">foo.doSomething.?()</span><br><span class="line">foo.aList.?[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+<p>Important: The parentheses for the parameter listing or the index expression must be preceded by a period!</p>
+</section>
+
+<section>
 <time>10 Oct 2021</time>
 
 <h2 id="Convert-backslash-into-forward-slash"><a href="#Convert-backslash-into-forward-slash" class="headerlink" title="Convert backslash into forward slash"></a>Convert backslash into forward slash</h2><p>While developing Node.js on Windows and dealing with paths, like <code>path.join</code>, the folder separator will be a backslash always. But on the web a forward slash is recommended. Most browsers have no problem showing an image with a relative path like <code>/images\my-image.jpg</code>, but it is not ideal.</p>
