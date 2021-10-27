@@ -15,7 +15,7 @@ hexo.extend.tag.register('image_link', function (args) {
   
   var element = `
     <a href="${url}">
-        <img src="${path}" alt="${alt}" />>
+        <img src="${path}" alt="${alt}" />
     </a>
     `;
     
