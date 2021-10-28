@@ -1,4 +1,5 @@
 ---
+alias: /post/VS-Code-on-the-Web//index.html
 title: VS Code on the Web
 subtitle: Multiple ways to work with Visual Studio Code online
 date: 2021-10-22 18:38:29
