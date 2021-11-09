@@ -41,9 +41,11 @@
 
   </div>
 
+  <% if (!post.hidden){ %>
   <%- partial('post/webmentions') %>
   <%- partial('post/comments') %>
   <%- partial('post/related') %>
   <%- partial('post/nav') %>
+  <% } %>
 
 </article>
