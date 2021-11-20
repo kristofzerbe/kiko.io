@@ -17,7 +17,7 @@ related:
   - Discoveries-Z
 ---
 
-{% anchorlist 
+{% anchorlist  
   "TITLE|IMGFILE"
   "TITLE|IMGFILE"
   "TITLE|IMGFILE"
@@ -32,32 +32,32 @@ related:
 
 <!-- more -->
 
-{% discovery "TITLE" "AUTHOR" URL Discoveries-#PART IMGFILE.png %}
+{% discovery "TITLE" "AUTHOR" "URL" Discoveries-#PART IMGFILE.png %}
 {% enddiscovery %}
 
-{% discovery "TITLE" "AUTHOR" URL Discoveries-#PART IMGFILE.png %}
+{% discovery "TITLE" "AUTHOR" "URL" Discoveries-#PART IMGFILE.png %}
 {% enddiscovery %}
 
-{% discovery "TITLE" "AUTHOR" URL Discoveries-#PART IMGFILE.png %}
+{% discovery "TITLE" "AUTHOR" "URL" Discoveries-#PART IMGFILE.png %}
 {% enddiscovery %}
 
-{% discovery "TITLE" "AUTHOR" URL Discoveries-#PART IMGFILE.png %}
+{% discovery "TITLE" "AUTHOR" "URL" Discoveries-#PART IMGFILE.png %}
 {% enddiscovery %}
 
-{% discovery "TITLE" "AUTHOR" URL Discoveries-#PART IMGFILE.png %}
+{% discovery "TITLE" "AUTHOR" "URL" Discoveries-#PART IMGFILE.png %}
 {% enddiscovery %}
 
-{% discovery "TITLE" "AUTHOR" URL Discoveries-#PART IMGFILE.png %}
+{% discovery "TITLE" "AUTHOR" "URL" Discoveries-#PART IMGFILE.png %}
 {% enddiscovery %}
 
-{% discovery "TITLE" "AUTHOR" URL Discoveries-#PART IMGFILE.png %}
+{% discovery "TITLE" "AUTHOR" "URL" Discoveries-#PART IMGFILE.png %}
 {% enddiscovery %}
 
-{% discovery "TITLE" "AUTHOR" URL Discoveries-#PART IMGFILE.png %}
+{% discovery "TITLE" "AUTHOR" "URL" Discoveries-#PART IMGFILE.png %}
 {% enddiscovery %}
 
-{% discovery "TITLE" "AUTHOR" URL Discoveries-#PART IMGFILE.png %}
+{% discovery "TITLE" "AUTHOR" "URL" Discoveries-#PART IMGFILE.png %}
 {% enddiscovery %}
 
-{% discovery "TITLE" "AUTHOR" URL Discoveries-#PART IMGFILE.png %}
+{% discovery "TITLE" "AUTHOR" "URL" Discoveries-#PART IMGFILE.png %}
 {% enddiscovery %}
