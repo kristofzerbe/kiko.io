@@ -19,14 +19,6 @@
         var header = document.getElementById("header");
         header.classList.add("photograph");
         
-        var photoExpand = document.getElementById("header-photo-expand");
-        //photoExpand.href = "/photos/normal/<%= page.photograph.file %>";
-        photoExpand.addEventListener('click', (e) => { 
-            e.preventDefault();
-            let img = document.querySelector("#header-photo");
-            showFullScreen(img);
-        });
-
         var photoLink = document.getElementById("header-photo-link");
         photoLink.href = "<%= page.photograph.link%>";
         photoLink.innerHTML = "see <strong><%= page.photograph.name%></strong> at 500px";

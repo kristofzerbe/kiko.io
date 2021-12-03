@@ -91,7 +91,6 @@
     <div class="inner-container">
       <div id="wrap">
         <header id="header">
-  <a href="#" id="header-photo-expand"></a>
   <a href="#" id="header-photo-link" target="_blank" rel="noopener" ></a>
   <div id="banner">
     <div id="header-nav-start"></div>
@@ -348,18 +347,19 @@
     
     <footer class="article-footer">      
       
-      <div class="article-permalink" id="article-permalink-ckvsbr9mx00000gl96huteuku">
+      <div class="article-permalink" id="article-permalink-ckwq9mivb00b8d8ha40me6ueg">
     <input class="article-permalink-value" value="https://kiko.io/post/happy-50-birthday-leni/" 
-           data-id="ckvsbr9mx00000gl96huteuku" data-title="Happy Birthday" />
+           data-id="ckwq9mivb00b8d8ha40me6ueg" data-title="Happy Birthday" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckvsbr9mx00000gl96huteuku");
+        initPermalink("ckwq9mivb00b8d8ha40me6ueg");
     });
 </script>
 
+      
     </footer>
 
   </div>
@@ -521,7 +521,7 @@
         jSide = $("aside");
     if (d > 0) {
       $("#header").css("height", d + header.offset + "px");
-      $("#header-photo-link, #header-photo-expand").css("opacity", header.photoLinkOpacity * p);
+      $("#header-photo-link").css("opacity", header.photoLinkOpacity * p);
       $("#banner").css("opacity", p);
       $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1 - p) );
       $("#header-title").css("top", header.top - (hfs * (1 - p)) + "px");
@@ -529,7 +529,7 @@
       jSide.css("max-width", "").css("position", "").css("top", "");
     } else {
       $("#header").css("height", header.offset + "px");
-      $("#header-photo-link, #header-photo-expand").css("opacity", 0);
+      $("#header-photo-link").css("opacity", 0);
       $("#banner").css("opacity", 0);
       $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );      
       $("#header-title").css("top", header.top - (hfs * (1)) + "px");      

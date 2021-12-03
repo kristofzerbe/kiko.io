@@ -33,39 +33,26 @@
   z-index: 99
 
 #header-photo,
-#header-photo-expand,
 #header-photo-link  
   display: none
-
-header.photograph #header-photo-expand,
-header.photograph #header-photo-link  
+ 
+header.photograph #header-photo-link
   position: absolute
   display: block
-  color: rgba(255, 255, 255, 0.6)
-  transition: all 0.2s ease-out
-  &:hover
-    color: rgba(255, 255, 255, 1)
-
-header.photograph #header-photo-expand
-  top: 0
-  width: 16px
-  height: 16px
-  padding: 10px
-  font-family: fa-icon-solid
-  z-index: 100
-  &:before
-    content: "\f065"
-
-header.photograph #header-photo-link
-  top: 32px
+  top: 12px
   right: 100%
   padding: 7px
   white-space: nowrap
   font-size: 90%
   text-decoration: none
   z-index: 99
+  transition: all 0.2s ease-out
   transform: rotate(270deg)
   transform-origin: right top
+  color: rgba(255, 255, 255, 0.6)
+  &:hover
+    color: rgba(255, 255, 255, 1)
+
   strong 
     font-weight: 600
 

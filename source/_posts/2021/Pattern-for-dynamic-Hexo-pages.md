@@ -1,7 +1,7 @@
 ---
 title: Pattern for dynamic Hexo pages
 subtitle: Set up pages with dynamic data easily
-date: 2021-08-25 09:43:44
+date: 2021-08-25T09:43:44.000Z
 photograph:
   file: D50_4451.jpg
   name: Garden Beauties I

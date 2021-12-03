@@ -9,7 +9,7 @@ photograph:
   link: 'https://500px.com/photo/1023572576'
 series: Great Finds
 categories:
-  - Photo-Editing
+  - Tools
 tags:
   - Imaging
   - SVG
@@ -28,7 +28,7 @@ Whoever [RH12503 (Ryan H??)](https://github.com/RH12503) is, he did an amazing j
 
 <!-- more -->
 
-{% asset_img triangula.gif "Triangula UI" %}
+![Triangula UI](triangula.gif)
 
 These images are absolute great for background images in websites, in order to make the details less recognisable.
 

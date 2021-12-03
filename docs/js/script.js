@@ -197,23 +197,6 @@ function setCodepenTheme() {
   }
 }
 
-function showFullScreen(element) {
-  if (element.requestFullscreen) {
-    element.requestFullscreen();
-  }
-  else if (element.msRequestFullscreen) {
-    element.msRequestFullscreen();
-  }
-  else if (element.mozRequestFullScreen) {
-    element.mozRequestFullScreen();
-  }
-  else if (element.webkitRequestFullscreen) {
-    element.webkitRequestFullscreen();
-  } else {
-    console.log("Fullscreen API is not supported");
-  } 
-}
-
 // Listener for theme change by toggle
 toggleTheme.addEventListener('change', function(e) {
   if (e.target.checked) {

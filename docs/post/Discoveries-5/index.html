@@ -91,7 +91,6 @@
     <div class="inner-container">
       <div id="wrap">
         <header id="header">
-  <a href="#" id="header-photo-expand"></a>
   <a href="#" id="header-photo-link" target="_blank" rel="noopener" ></a>
   <div id="banner">
     <div id="header-nav-start"></div>
@@ -225,14 +224,6 @@
         var header = document.getElementById("header");
         header.classList.add("photograph");
         
-        var photoExpand = document.getElementById("header-photo-expand");
-        //photoExpand.href = "/photos/normal/D70_0789.jpg";
-        photoExpand.addEventListener('click', (e) => { 
-            e.preventDefault();
-            let img = document.querySelector("#header-photo");
-            showFullScreen(img);
-        });
-
         var photoLink = document.getElementById("header-photo-link");
         photoLink.href = "https://500px.com/photo/1017604564";
         photoLink.innerHTML = "see <strong>Kitchen Copper</strong> at 500px";
@@ -410,18 +401,19 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Collection/" rel="tag">Collection</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckvsbgtv6001f6cl95hu54iu5">
+      <div class="article-permalink" id="article-permalink-ckwq9misa001fd8hae3641lo8">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-5/" 
-           data-id="ckvsbgtv6001f6cl95hu54iu5" data-title="Discoveries #5" />
+           data-id="ckwq9misa001fd8hae3641lo8" data-title="Discoveries #5" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckvsbgtv6001f6cl95hu54iu5");
+        initPermalink("ckwq9misa001fd8hae3641lo8");
     });
 </script>
 
+      
     </footer>
 
   </div>
@@ -798,7 +790,7 @@
         jSide = $("aside");
     if (d > 0) {
       $("#header").css("height", d + header.offset + "px");
-      $("#header-photo-link, #header-photo-expand").css("opacity", header.photoLinkOpacity * p);
+      $("#header-photo-link").css("opacity", header.photoLinkOpacity * p);
       $("#banner").css("opacity", p);
       $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1 - p) );
       $("#header-title").css("top", header.top - (hfs * (1 - p)) + "px");
@@ -806,7 +798,7 @@
       jSide.css("max-width", "").css("position", "").css("top", "");
     } else {
       $("#header").css("height", header.offset + "px");
-      $("#header-photo-link, #header-photo-expand").css("opacity", 0);
+      $("#header-photo-link").css("opacity", 0);
       $("#banner").css("opacity", 0);
       $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );      
       $("#header-title").css("top", header.top - (hfs * (1)) + "px");      

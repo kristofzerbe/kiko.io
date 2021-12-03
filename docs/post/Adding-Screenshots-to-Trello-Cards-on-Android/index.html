@@ -91,7 +91,6 @@
     <div class="inner-container">
       <div id="wrap">
         <header id="header">
-  <a href="#" id="header-photo-expand"></a>
   <a href="#" id="header-photo-link" target="_blank" rel="noopener" ></a>
   <div id="banner">
     <div id="header-nav-start"></div>
@@ -225,14 +224,6 @@
         var header = document.getElementById("header");
         header.classList.add("photograph");
         
-        var photoExpand = document.getElementById("header-photo-expand");
-        //photoExpand.href = "/photos/normal/DSC_7006-HDR.jpg";
-        photoExpand.addEventListener('click', (e) => { 
-            e.preventDefault();
-            let img = document.querySelector("#header-photo");
-            showFullScreen(img);
-        });
-
         var photoLink = document.getElementById("header-photo-link");
         photoLink.href = "https://500px.com/photo/84012419/Break-Dancer-by-Kristof-Zerbe/";
         photoLink.innerHTML = "see <strong>Break Dancer</strong> at 500px";
@@ -389,18 +380,19 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Imaging/" rel="tag">Imaging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Trello/" rel="tag">Trello</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckvsbgtw9002p6cl99dgt57aq">
+      <div class="article-permalink" id="article-permalink-ckwq9misv002rd8ha34wg0uwg">
     <input class="article-permalink-value" value="https://kiko.io/post/Adding-Screenshots-to-Trello-Cards-on-Android/" 
-           data-id="ckvsbgtw9002p6cl99dgt57aq" data-title="Adding Screenshots to Trello Cards on Android" />
+           data-id="ckwq9misv002rd8ha34wg0uwg" data-title="Adding Screenshots to Trello Cards on Android" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckvsbgtw9002p6cl99dgt57aq");
+        initPermalink("ckwq9misv002rd8ha34wg0uwg");
     });
 </script>
 
+      
     </footer>
 
   </div>
@@ -683,7 +675,7 @@
         jSide = $("aside");
     if (d > 0) {
       $("#header").css("height", d + header.offset + "px");
-      $("#header-photo-link, #header-photo-expand").css("opacity", header.photoLinkOpacity * p);
+      $("#header-photo-link").css("opacity", header.photoLinkOpacity * p);
       $("#banner").css("opacity", p);
       $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1 - p) );
       $("#header-title").css("top", header.top - (hfs * (1 - p)) + "px");
@@ -691,7 +683,7 @@
       jSide.css("max-width", "").css("position", "").css("top", "");
     } else {
       $("#header").css("height", header.offset + "px");
-      $("#header-photo-link, #header-photo-expand").css("opacity", 0);
+      $("#header-photo-link").css("opacity", 0);
       $("#banner").css("opacity", 0);
       $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );      
       $("#header-title").css("top", header.top - (hfs * (1)) + "px");      

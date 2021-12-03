@@ -91,7 +91,6 @@
     <div class="inner-container">
       <div id="wrap">
         <header id="header">
-  <a href="#" id="header-photo-expand"></a>
   <a href="#" id="header-photo-link" target="_blank" rel="noopener" ></a>
   <div id="banner">
     <div id="header-nav-start"></div>
@@ -225,14 +224,6 @@
         var header = document.getElementById("header");
         header.classList.add("photograph");
         
-        var photoExpand = document.getElementById("header-photo-expand");
-        //photoExpand.href = "/photos/normal/18-09 Kroatien-0340.jpg";
-        photoExpand.addEventListener('click', (e) => { 
-            e.preventDefault();
-            let img = document.querySelector("#header-photo");
-            showFullScreen(img);
-        });
-
         var photoLink = document.getElementById("header-photo-link");
         photoLink.href = "https://500px.com/photo/303713997/-by-Kristof-Zerbe";
         photoLink.innerHTML = "see <strong>Seating Group</strong> at 500px";
@@ -296,8 +287,7 @@
     <div class="article-entry e-content" itemprop="articleBody">
       <p>In the last decade(s) I have seen and tried many image galleries and lightboxes for showing images or groups of images. Depending on your needs, you can choose out of trillions of solutions, for every JS framework or vanilla JS, in every flavour, size and color. With many of them, however, you reach the limits quite quickly. Be it in terms of visual adaptability, extensibility or implementation. Customization cost time and nerves, especially if the respective library has structural weaknesses.</p>
 <p>However, from today on, I don’t need to look for a suitable solution for my next project, because I found one that leaves absolutely none of my wishes unfulfillede: <a href="https://nextapps-de.github.io/spotlight/"><strong>Spotlight</strong></a> by Nextapps from Berlin, Germany.</p>
-<img src="/post/The-Last-Image-Gallery/spotlight.jpg" class="" title="Spotlight">
-
+<p><img src="/post/The-Last-Image-Gallery/spotlight.jpg" alt="Spotlight"></p>
 <p>To make it clear: this is not a paid advertising text or something like that. That wouldn’t make sense either, because Spotlight is Open Source (<a href="https://en.wikipedia.org/wiki/Apache_License">Apache 2.0 License</a>) and its code is availabel at GitHub. I’m just thrilled with the work of the developers.</p>
 <span id="more"></span>
 
@@ -340,18 +330,19 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Imaging/" rel="tag">Imaging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Plugin/" rel="tag">Plugin</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckvsbgtyu005c6cl9hdvig8k1">
+      <div class="article-permalink" id="article-permalink-ckwq9miv300and8hacorw10vj">
     <input class="article-permalink-value" value="https://kiko.io/post/The-Last-Image-Gallery/" 
-           data-id="ckvsbgtyu005c6cl9hdvig8k1" data-title="The Last Image Gallery..." />
+           data-id="ckwq9miv300and8hacorw10vj" data-title="The Last Image Gallery..." />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckvsbgtyu005c6cl9hdvig8k1");
+        initPermalink("ckwq9miv300and8hacorw10vj");
     });
 </script>
 
+      
     </footer>
 
   </div>
@@ -730,7 +721,7 @@
         jSide = $("aside");
     if (d > 0) {
       $("#header").css("height", d + header.offset + "px");
-      $("#header-photo-link, #header-photo-expand").css("opacity", header.photoLinkOpacity * p);
+      $("#header-photo-link").css("opacity", header.photoLinkOpacity * p);
       $("#banner").css("opacity", p);
       $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1 - p) );
       $("#header-title").css("top", header.top - (hfs * (1 - p)) + "px");
@@ -738,7 +729,7 @@
       jSide.css("max-width", "").css("position", "").css("top", "");
     } else {
       $("#header").css("height", header.offset + "px");
-      $("#header-photo-link, #header-photo-expand").css("opacity", 0);
+      $("#header-photo-link").css("opacity", 0);
       $("#banner").css("opacity", 0);
       $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );      
       $("#header-title").css("top", header.top - (hfs * (1)) + "px");      

@@ -91,7 +91,6 @@
     <div class="inner-container">
       <div id="wrap">
         <header id="header">
-  <a href="#" id="header-photo-expand"></a>
   <a href="#" id="header-photo-link" target="_blank" rel="noopener" ></a>
   <div id="banner">
     <div id="header-nav-start"></div>
@@ -225,14 +224,6 @@
         var header = document.getElementById("header");
         header.classList.add("photograph");
         
-        var photoExpand = document.getElementById("header-photo-expand");
-        //photoExpand.href = "/photos/normal/18-09 Kroatien-0012.jpg";
-        photoExpand.addEventListener('click', (e) => { 
-            e.preventDefault();
-            let img = document.querySelector("#header-photo");
-            showFullScreen(img);
-        });
-
         var photoLink = document.getElementById("header-photo-link");
         photoLink.href = "https://500px.com/photo/303732721";
         photoLink.innerHTML = "see <strong>Cabbage &amp; Friends</strong> at 500px";
@@ -302,29 +293,26 @@
 <hr>
 <h3 id="github-dev-and-Github-Codespaces"><a href="#github-dev-and-Github-Codespaces" class="headerlink" title="github.dev and Github Codespaces"></a>github.dev and Github Codespaces</h3><p>In Juli 2021 GutHub announced the availability of <strong><a href="">github.dev</a></strong> and <strong><a href="https://github.com/features/codespaces">GitHub Codespaces</a></strong>. The main difference between these two solutions is that Codespaces runs the IDE within a container (VM) in the background, which enables you to run your project and … it is only available for paid plans.</p>
 <p>The main purpose of github.dev is to serve as a call target of the so-called <strong>Magic Dot</strong>, an easy way to open any repository in an editor. I blogged about this capabilty a while ago, see <a href="/post/GitHubs-Magic-Dot/" title="GitHubs Magic Dot">GitHubs Magic Dot</a>. Really amazing! Just press the <code>dot</code> key on every repository and you can browse the code files.</p>
-<img src="/post/VS-Code-on-the-Web/github-dev.jpg" class="" title="github.dev">
-
+<p><img src="/post/VS-Code-on-the-Web/github-dev.jpg" alt="github.dev"></p>
 <hr>
 <h2 id="vscode-dev"><a href="#vscode-dev" class="headerlink" title="vscode.dev"></a>vscode.dev</h2><p>Recently, in October 2021, Microsoft (who owns GitHub) announced another online VS Code called <strong><a href="https://vscode.dev/">vscode.dev</a></strong>. It is practically the same IDE as github.dev, with one main difference: It is not bound to a GitHub repository, but is able to open any local project or even remote repositories from GitHub.</p>
 <p>However, it also has the same limitation that you cannot run a project, because there is no VM running in the background. But it is a really neat online editor, which runs on mobile devices too and feels absolutely like a local installed VS Code.</p>
-<img src="/post/VS-Code-on-the-Web/vscode-dev.jpg" class="" title="vscode.dev">
-
+<p><img src="/post/VS-Code-on-the-Web/vscode-dev.jpg" alt="vscode.dev"></p>
 <hr>
 <h2 id="Gitpod"><a href="#Gitpod" class="headerlink" title="Gitpod"></a>Gitpod</h2><p>Back in 2017 some developers from Kiel, Germany started a web-based platform called <strong><a href="gitpod.io">Gitpod</a></strong> for providing fully functional orchestrated developer environments in the web. Since at that time VS Code was not yet running in the browser, they started the project <a href="https://theia-ide.org/">Eclipse Theia</a>, which powers several online IDE’s until today, but  switched to VS Code as the team around Erich Gamma <a href="code.visualstudio.com/docs/remote/remote-overview">announced remote development capabilities</a> in late 2020.</p>
 <p>Whats special about Gitpod is, that users are able to start a browser-based instance of the IDE just by adding the address of an GitHub repository as a parameter to the URL, like <code>https://gitpod.io#https://github.com/kristofzerbe/kiko.io</code>. Gitpot then starts a container with the source code and shows up the IDE at a random URL like <code>https://coffee-squirrel-htamfigy.ws-eu18.gitpod.io</code>.</p>
 <p>This so called <em>Workspaces</em> can be stopped, resumed, shared and downloaded, because it is a container with everything in it you need to run. Really amazing!</p>
-<img src="/post/VS-Code-on-the-Web/gitpod-io.jpg" class="" title="Gitpod">
-
+<p><img src="/post/VS-Code-on-the-Web/gitpod-io.jpg" alt="Gitpod"></p>
 <hr>
 <h2 id="Other-Monaco-driven-IDE’s"><a href="#Other-Monaco-driven-IDE’s" class="headerlink" title="Other Monaco-driven IDE’s"></a>Other Monaco-driven IDE’s</h2><p>VS Code actually consists of two parts: the platform itself, called <a href="https://github.com/Microsoft/vscode">Code-OSS</a>, and the code editor <strong><a href="https://microsoft.github.io/monaco-editor/">Monaco</a></strong> included in it, which is also available as a separate project and used by other web-based IDE’s, like the following…</p>
 <h3 id="Stackblitz"><a href="#Stackblitz" class="headerlink" title="Stackblitz"></a>Stackblitz</h3><p>The IDE on <strong><a href="https://stackblitz.com/">stackblitz.com</a></strong> is mainly useful for web frontend developers. You can easily create Angular, React, Vue, Next.js, Nuxt or even plain JavaScript or static HTML projects and connect them to an new repository on GitHub. But … you can’t load existing projects from GitHub into Stackblitz on the fly, you have to import them.</p>
 <p>What makes Stackblitz very comfortable is that it runs your frontend directly on their servers and gives it to you in a browser-like preview window via a random Url like <code>https://web-platform-ywqj4s.stackblitz.io</code>, you can open up in a separate browser also.</p>
-<img src="/post/VS-Code-on-the-Web/stackblitz-com.jpg" class="" title="Stackblitz">
-
+<p><img src="/post/VS-Code-on-the-Web/stackblitz-com.jpg" alt="Stackblitz"></p>
 <hr>
 <h3 id="CodeSandbox"><a href="#CodeSandbox" class="headerlink" title="CodeSandbox"></a>CodeSandbox</h3><p><strong><a href="https://codesandbox.io/">CodeSandbox</a></strong> works similar to Stackblitz, but offers some more features, like deployment to Vercel, Netlify or GitHub Pages and a test runner. </p>
 <p>Also, you have full control over the sandbox that runs the preview of your project and the ability to invite other developers or visitors to the project, which makes it perfect for online coding seminars e.g. classrooms.</p>
-<img src="/post/VS-Code-on-the-Web/codesandbox-io.jpg" class="" title="CodeSandbox">
+<p><img src="/post/VS-Code-on-the-Web/codesandbox-io.jpg" alt="CodeSandbox"></p>
+
     </div>
     
     <footer class="article-footer">      
@@ -333,18 +321,19 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/" rel="tag">VS Code</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckvsbgu2l00bm6cl954rvaxen">
+      <div class="article-permalink" id="article-permalink-ckwq9mivc00bbd8ha5vga4obp">
     <input class="article-permalink-value" value="https://kiko.io/post/VS-Code-on-the-Web/" 
-           data-id="ckvsbgu2l00bm6cl954rvaxen" data-title="VS Code on the Web" />
+           data-id="ckwq9mivc00bbd8ha5vga4obp" data-title="VS Code on the Web" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckvsbgu2l00bm6cl954rvaxen");
+        initPermalink("ckwq9mivc00bbd8ha5vga4obp");
     });
 </script>
 
+      
     </footer>
 
   </div>
@@ -725,7 +714,7 @@
         jSide = $("aside");
     if (d > 0) {
       $("#header").css("height", d + header.offset + "px");
-      $("#header-photo-link, #header-photo-expand").css("opacity", header.photoLinkOpacity * p);
+      $("#header-photo-link").css("opacity", header.photoLinkOpacity * p);
       $("#banner").css("opacity", p);
       $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1 - p) );
       $("#header-title").css("top", header.top - (hfs * (1 - p)) + "px");
@@ -733,7 +722,7 @@
       jSide.css("max-width", "").css("position", "").css("top", "");
     } else {
       $("#header").css("height", header.offset + "px");
-      $("#header-photo-link, #header-photo-expand").css("opacity", 0);
+      $("#header-photo-link").css("opacity", 0);
       $("#banner").css("opacity", 0);
       $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );      
       $("#header-title").css("top", header.top - (hfs * (1)) + "px");      

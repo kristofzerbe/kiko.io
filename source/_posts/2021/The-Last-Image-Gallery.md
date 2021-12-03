@@ -23,7 +23,7 @@ In the last decade(s) I have seen and tried many image galleries and lightboxes 
 
 However, from today on, I don't need to look for a suitable solution for my next project, because I found one that leaves absolutely none of my wishes unfulfillede: [**Spotlight**](https://nextapps-de.github.io/spotlight/) by Nextapps from Berlin, Germany.
 
-{% asset_img spotlight.jpg "Spotlight" %}
+![Spotlight](spotlight.jpg)
 
 To make it clear: this is not a paid advertising text or something like that. That wouldn't make sense either, because Spotlight is Open Source ([Apache 2.0 License](https://en.wikipedia.org/wiki/Apache_License)) and its code is availabel at GitHub. I'm just thrilled with the work of the developers.
 

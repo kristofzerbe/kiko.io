@@ -331,10 +331,11 @@
   font-size: 0.85em
   line-height: line-height
   padding-top: line-height
-  margin: 0 article-padding 20px
+  margin: 0 article-padding article-padding-vert
 
 .article-tags,
-.article-permalink
+.article-permalink,
+.article-golem
   display: block
   a
     text-decoration: none
@@ -385,6 +386,23 @@
   .action-share
     &:before
       content: icon-share
+
+.article-golem
+  padding-top: line-height
+  padding-bottom: article-padding-vert
+  padding-left: 140px
+  padding-right: article-padding
+  margin-top: line-height
+  margin-bottom: -(article-padding-vert)
+  margin-left: -(article-padding)
+  margin-right: -(article-padding)
+  background-repeat: no-repeat
+  background-position: article-padding-vert 24px
+  background-color: color-background
+  background-image: url("/images/golem-light-100.png")
+  /[data-theme="dark"] &
+    background-color: dark-color-background
+    background-image: url("/images/golem-dark-100.png")
 
 .article-tag-list
   overflow: auto
