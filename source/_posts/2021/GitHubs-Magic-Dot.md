@@ -32,8 +32,8 @@ Features like extensions, code completion, references, creating pull requests an
 
 The non-computing web editor is fully integrated in GitHub itself. There is no URL ``github.dev``, where you can load your repo. Instead, if the URL to your repo is f.e. ``https://github.com/myname/myrepo``, just replace ``.com`` with ``.dev`` and your code is available in the editor! For people who like it even more comfortable: go to your repo and just **press the DOT key**. Really smart.
 
-{% asset_img githubdev-demo-compressed.gif %}
+![Github.dev Demo](GitHubs-Magic-Dot/githubdev-demo-compressed.gif)
 
 This even works on mobile, which will definitely change my workflow...
 
-{% asset_img githubdev-mobile.jpg %}
+![Github.dev Demo on mobile](GitHubs-Magic-Dot/githubdev-mobile.jpg)

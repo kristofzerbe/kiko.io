@@ -1,7 +1,7 @@
 ---
 title: Tringula And The Beauty Of Mathematics
 subtitle: Triangula is a great tool for artfully breaking up images into polygons. Another tool also makes it possible to use them as website placeholders.
-date: 2021-12-06 12:54:24
+date: 2021-12-07 14:45:00
 photograph:
   file: D50_0075.jpg
   name: Thomas Wild Tulips
@@ -34,7 +34,7 @@ How wonderfully this field of mathematics can be applied to photos is shown by t
 
 <!-- more -->
 
-![UI of the tool Triangula written in Go](triangula.png)
+![UI of the tool Triangula written in Go](Tringula-And-The-Beauty-Of-Mathematics/triangula.png)
 
 The result is stylized images of the original, which can be used as a chic desktop background, for example. Due to the abstraction of the actual motif, such images are also very suitable as header images on websites, such as blogs, if the image should not distract from the actual content. Such an image has a great closeness to the original, but looks more like art.
 

@@ -94,7 +94,7 @@ The original ``titleSeparator`` setting is not longer available, because it is n
 
 One of my needs was, to provide more information on the INDEX page and the POSTS pages for each entry or, to stay with the example, for each author. As the ``_posts`` folder is used for storing the post data files, I introduced a **``_anything``** folder for dropping MD files, which are linked to the index and its values.
 
-{% asset_img "anything-folder.png" %}
+![Anything folder](Forking-Hexo-plugin-hexo-index-anything/anything-folder.png)
 
 The subfolders of **``_anything``** are representing the index and the files in it each possible value of the index.
 

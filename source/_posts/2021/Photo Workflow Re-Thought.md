@@ -101,11 +101,11 @@ Whenever it is necessary or advisable, take both cards out of the camera and put
 
 Open up **Solid Explorer** on the tablet...
 
-{% asset_img 1-connect-card-solid-explorer.png %}
+![Step 1 - Connected card Solid Explorer](Photo%20Workflow%20Re-Thought/1-connect-card-solid-explorer.png)
 
 Copy the complete folder ``DCIM/101ND500`` (where the photos are stored) to a separate folder called ``RAW`` on the ``disk`` (SD card extension) of the tablet.
 
-{% asset_img 2-copy-card--to-disc.png %}
+![Step 1 - Copy card to disk](Photo%20Workflow%20Re-Thought/2-copy-card--to-disc.png)
 
 ---
 
@@ -114,7 +114,7 @@ Copy the complete folder ``DCIM/101ND500`` (where the photos are stored) to a se
 Rename the new folder on the ``disk`` to something appropriate:  
 (Screenshot says *Rename a file*, but that's a bug in the app)
 
-{% asset_img 3-rename-disk-folder.png %}
+![Step 2 - Rename disk folder](Photo%20Workflow%20Re-Thought/3-rename-disk-folder.png)
 
 ---
 
@@ -130,14 +130,14 @@ Insert the **XQD card** and a **spare SD card** back into the camera and wipe th
 
 If you have time and leisure, you can use **Photo Mate R3** to review and rate your images.
 
-{% asset_img 4-open-folder-in-photomate.png %}
+![Step 4 - Open folder in Photo Mate](Photo%20Workflow%20Re-Thought/4-open-folder-in-photomate.png)
 
 {% alertbox warning %}
 **Don't delete any photos in this step!**  
 Just mark photos with RED, which can be removed afterwards, because the app is sometimes not fast enough to delete the right photo, when you has opened the next one!
 {% endalertbox %}
 
-{% asset_img 5-rate-photos.png %}
+![Step 4 - Rate photos](Photo%20Workflow%20Re-Thought/5-rate-photos.png)
 
 ---
 
@@ -145,15 +145,15 @@ Just mark photos with RED, which can be removed afterwards, because the app is s
 
 Open up **Dropsync** on the tablet and set up a new sync profile, if you haven't done so already:
 
-{% asset_img 6-setup-sync.png %}
+![Step 5 - Setup sync](Photo%20Workflow%20Re-Thought/6-setup-sync.png)
 
 The *``remote folder``* is a folder called ``RAW`` in your **Dropbox** and the *``local folder``* is the ``RAW`` folder on your disk. *``Sync method``* should be ``Upload then delete``, because you don't need the second backup on your tablet, after the photos are transfered to Dropbox.
 
 Run the synchronization:
 
-{% asset_img 7-run-sync.png %}
+![Step 5 - Run sync](Photo%20Workflow%20Re-Thought/7-run-sync.png)
 
-{% asset_img 8-running-sync.png %}
+![Step 5 - Running sync](Photo%20Workflow%20Re-Thought/8-running-sync.png)
 
 **Your backup is now on the original SD cards and Dropbox.**
 
@@ -163,7 +163,7 @@ Run the synchronization:
 
 After you have enjoyed your trip and be back home, move the photo folder from your **Dropbox** to your **local storage**, which of course should also have a backup of some kind:
 
-{% asset_img 9-move-folder-in-windows.png %}
+![Step 6 - Move folder in Windows](Photo%20Workflow%20Re-Thought/9-move-folder-in-windows.png)
 
 **Your backup is now on the original SD cards and your local storage.**
 
@@ -173,11 +173,11 @@ After you have enjoyed your trip and be back home, move the photo folder from yo
 
 If you've already rated your images along the way, **Photo Mate R3** has already stored that metadata in an XMP sidecar file, that is compatible with Lightroom:
 
-{% asset_img 10-files-in-windows.png %}
+![Step 7 - Files in Windows](Photo%20Workflow%20Re-Thought/10-files-in-windows.png)
 
 Open up **Lightroom** and import the folder from your **local storage**:
 
-{% asset_img 11-import-lightroom.png %}
+![Step 7 - Import Lightroom](Photo%20Workflow%20Re-Thought/11-import-lightroom.png)
 
 ---
 
@@ -185,7 +185,7 @@ Open up **Lightroom** and import the folder from your **local storage**:
 
 In the **Lightroom** library, filter all photos with the RED flag and set them as REJECTED:
 
-{% asset_img 12-set-red-as-rejected.png %}
+![Step 8 - Set red as rejected](Photo%20Workflow%20Re-Thought/12-set-red-as-rejected.png)
 
 ---
 
@@ -193,7 +193,7 @@ In the **Lightroom** library, filter all photos with the RED flag and set them a
 
 Delete all photos marked as REJECTED:
 
-{% asset_img 13-delete-rejected.png %}
+![Step 9 - Delete rejected](Photo%20Workflow%20Re-Thought/13-delete-rejected.png)
 
 ---
 

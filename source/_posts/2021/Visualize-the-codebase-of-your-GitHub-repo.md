@@ -77,11 +77,11 @@ refusing to allow an OAuth App to create or update workflow .github/workflows/di
 
 A workaround is, to create a **Personal Access Token** on Github WITH this permission ...
 
-{% asset_img create-personal-access-token.png %}
+![Create personal access token](Visualize-the-codebase-of-your-GitHub-repo/create-personal-access-token.png)
 
 ... and replace the existing token in the **Windows Credential Manager** (in German the wonderful word "Anmeldeinformationsverwaltung"):
 
-{% asset_img windows-credential-manager.png %}
+![Windows Credential Manager](Visualize-the-codebase-of-your-GitHub-repo/windows-credential-manager.png)
 
 ---
 
@@ -97,9 +97,9 @@ There are a few interesting parameters to place within the ``with`` section, tha
 
 After pushing your changes, you can watch the action run in the ACTIONS tab in GitHub:
 
-{% asset_img github-workflow.png %}
+![Github Workflow](Visualize-the-codebase-of-your-GitHub-repo/github-workflow.png)
 
-{% asset_img github-workflow-details.png %}
+![Github Workflow Details](Visualize-the-codebase-of-your-GitHub-repo/github-workflow-details.png)
 
 ---
 
@@ -113,6 +113,6 @@ For an inactive diagram, please visit [Repo Visualization App](https://octo-repo
 ![Visualization of the codebase](./DIAGRAM.svg)
 ```
 
-{% asset_img diagram-svg.png %}
+![Diagram SVG](Visualize-the-codebase-of-your-GitHub-repo/diagram-svg.png)
 
 This SVG is not interactive as Amelias Repo Visualization React app is, but it is a good overview of a repos codebase und it looks really good.

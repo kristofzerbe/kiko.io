@@ -41,7 +41,7 @@ Fair enough, but it's a tool for Mac. However, it was not particularly difficult
 
 Interestingly, Microsoft already has something similar built into Windows, but prevents users from messing with it:
 
-{% asset_img apps-for-websites.png "Apps for Websites" %}
+![Apps for Websites](Application-Specific-Links-on-Windows-10/apps-for-websites.png)
 
 The feature is targeted from [UWP](https://de.wikipedia.org/wiki/Universal_Windows_Platform) applications only, therefore the developer has to implement it by extending the app manifest: [Web-to-App Linking with AppUriHandlers](https://blogs.windows.com/windowsdeveloper/2016/10/14/web-to-app-linking-with-appurihandlers/).
 
@@ -221,7 +221,7 @@ Simple and straightforward. There is a [Chrome Platform Page](https://www.chrome
 
 To try it out, you can enable ``#enable-desktop-pwas-url-handling`` in Edge and Chrome:
 
-{% asset_img enable-desktop-pwas-url-handling.png %}
+![Chrome Flag: Desktop PWA URL handling](Application-Specific-Links-on-Windows-10/enable-desktop-pwas-url-handling.png)
 
 But ... it is also not even on the way to an official proposal :|
 

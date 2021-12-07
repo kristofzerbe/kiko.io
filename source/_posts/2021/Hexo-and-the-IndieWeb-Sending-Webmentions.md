@@ -107,7 +107,7 @@ hexo webmention --slug my-fancy-blogpost --send true
 
 ### Sample Output
 
-{% asset_img output-hexo-console-webmention.png %}
+![Sample console output](Hexo-and-the-IndieWeb-Sending-Webmentions/output-hexo-console-webmention.png)
 
 The source code is available at: [https://github.com/kristofzerbe/hexo-console-webmention](https://github.com/kristofzerbe/hexo-console-webmention).
 

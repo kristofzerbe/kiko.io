@@ -20,7 +20,7 @@ related:
 
 At the beginning of the year I wrote a {% post_link 2021/Use-a-duplicate-image-to-drop-a-shadow "post"  %} about showing a shadow on an image with the image itself instead of using ``box-shadow``, to make the image appear glass-like.
 
-{% asset_img image-shadow.jpg %}
+![Image Shadow](Automatic-Duplicate-Image-Shadow/image-shadow.jpg)
 
 Nice trick, but it would be much easier to have a little script, that does this automatically for all images on a page. In this post I will show you how to achieve this.
 

@@ -36,7 +36,7 @@ Man lernt von den Besten!
 
 Viel Spass dabei, mein Herz!
 
-{% asset_img HBD_480x480.png %}
+![HBD](happy-50-birthday-leni/HBD_480x480.png)
 
 ---
 
@@ -92,4 +92,4 @@ Schau mal hinter der Couch... &hearts;
 <div class="dot">.</div>
 <div class="dot">.</div>
 
-{% asset_img ukulele.png %}
+![Ukulele](happy-50-birthday-leni/ukulele.png)

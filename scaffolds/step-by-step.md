@@ -29,7 +29,7 @@ Apps:
 
 ## Step 1
 ...
-{% asset_img step-01.png %}
+![Step 1](folder/file)
 
 ---
 

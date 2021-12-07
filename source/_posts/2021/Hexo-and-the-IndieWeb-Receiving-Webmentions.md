@@ -38,7 +38,7 @@ As Hexo is a SSG it generates static HTML pages. This has the advantage that the
 
 webmention.io needs a registration and Aaron uses his own authentication method **Web Sign-In** over [IndieLogin](https://indielogin.com/) to achieve that.
 
-{% asset_img indielogin.png %}
+![IndieLogin.com](Hexo-and-the-IndieWeb-Receiving-Webmentions/indielogin.png)
 
 After you have signed in, you see your settings with two important links, you have to integrate in the head of your HTML:
 
@@ -65,7 +65,7 @@ Aaron has defined three ways to get the incoming mentions of a particular articl
 https://webmention.io/api/<b>mentions.html</b>?target=<i>https://mxb.dev/blog/using-webmentions-on-static-sites/</i>
 {% endpre_highlight %}
 
-{% asset_img view-html.png %}
+![View HTML](Hexo-and-the-IndieWeb-Receiving-Webmentions/view-html.png)
 
 Using it this way, webmention.io integrates the content with some styles and other information of the sending post for easy reading.
 <br>
@@ -76,7 +76,7 @@ Using it this way, webmention.io integrates the content with some styles and oth
 https://webmention.io/api/<b>mentions.atom</b>?target=<i>https://mxb.dev/blog/using-webmentions-on-static-sites/</i>
 {% endpre_highlight %}
 
-{% asset_img view-atom.png %}
+![View ATOM](Hexo-and-the-IndieWeb-Receiving-Webmentions/view-atom.png)
 <br>
 
 ### 3. Get as JSON
@@ -85,7 +85,7 @@ https://webmention.io/api/<b>mentions.atom</b>?target=<i>https://mxb.dev/blog/us
 https://webmention.io/api/<b>mentions.jf2</b>?target=<i>https://mxb.dev/blog/using-webmentions-on-static-sites/</i>
 {% endpre_highlight %}
 
-{% asset_img view-json.png %}
+![View JSON](Hexo-and-the-IndieWeb-Receiving-Webmentions/view-json.png)
 <br>
 
 Especially the last one is interesting for us, because we can use it to automate getting the data and integrate it in our blog post.
@@ -300,7 +300,7 @@ The HTML of the five implemented types:
 
 The result will look like this, after adding some styles:
 
-{% asset_img wm-example.png %}
+![Webmention example](Hexo-and-the-IndieWeb-Receiving-Webmentions/wm-example.png)
 
 You can download the complete JavaScript- and the Stylus file on Github:  
 [**https://github.com/kristofzerbe/Hexo-and-the-IndieWeb-Files**](https://github.com/kristofzerbe/Hexo-and-the-IndieWeb-Files)
@@ -344,7 +344,7 @@ Yes, the IndieWeb and Webmentions are an alternative concept of social networkin
 
 [**Bridgy**](https://brid.gy/) is such a bridge builder. It connects your blog with the big social media players:
 
-{% asset_img bridgy.png %}
+![Bridgy](Hexo-and-the-IndieWeb-Receiving-Webmentions/bridgy.png)
 
 The only thing you have to do, is to allow Bridgy to access your social media data, like your Tweets on Twitter. If somebody mentions you and one of your articles as a Tweet, Reply or Like, it sends a mention to the endpoint defined in your HTML, in our case webmention.io. Thats it ... kinda magic.
 

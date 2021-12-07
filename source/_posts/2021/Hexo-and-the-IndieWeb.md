@@ -97,7 +97,7 @@ With this extension of your blog HTML, you are able to sign in using your domain
 
 #### Example
 
-{% asset_img about-markup.png %}
+![About markup](Hexo-and-the-IndieWeb/about-markup.png)
 
 ---
 
@@ -253,7 +253,7 @@ Currently, I would not recommend writing responses as a normal post in Hexo, as 
 
 To check all your changes, you can use [IndieWebify.Me (Level 1 & 2)](https://indiewebify.me/):
 
-{% asset_img indiewebify-me-level1+2.png %}
+![IndieWebify.Me (Level 1 & 2)](Hexo-and-the-IndieWeb/indiewebify-me-level1+2.png)
 
 ---
 

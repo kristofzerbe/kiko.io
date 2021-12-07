@@ -51,7 +51,7 @@ NEW      |- styles.css
 
 Run ``hexo generate``, check that the indiepen was showing up properly and I thought I was done. Wrong ... after commiting my changes to Github, where my blog is living, and checking my RSS feed a while after, I saw this:
 
-{% asset_img feed-empty-posts.png %}
+![Empty posts in feedly](Uups-empty-posts/feed-empty-posts.png)
 
 Three empty posts...!?
 
