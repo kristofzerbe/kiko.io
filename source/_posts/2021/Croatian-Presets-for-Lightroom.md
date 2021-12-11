@@ -30,7 +30,11 @@ Over the past years a have created some presets to bring my images, shot in Croa
 
 The sea in Croatia is amazing clear because almost the entire coast is made of stone instead of sand. There is hardly any algae or other things that cloud the wonderful green-blue water.
 
-{% image_compare "croatian-warm-sea-compare" "18-09 Kroatien-0508_ORIGINAL.jpg" "18-09 Kroatien-0508_PRESET.jpg" "Preset" %}
+{% image_compare
+  "18-09 Kroatien-0508_ORIGINAL.jpg"
+  "18-09 Kroatien-0508_PRESET.jpg"
+  "Preset"
+%}
 
 {% download_link "Lightroom Preset" "Croatian Warm Sea.xmp" %}
 
@@ -40,7 +44,11 @@ The sea in Croatia is amazing clear because almost the entire coast is made of s
 
 Yes, I'm guilty: I love colors and contrast! If you do also, his preset is for you. It brings out any image that is too flat or dull by helping to control the brightness and contrast.
 
-{% image_compare "croatian-brightness-compare" "21-08-05 Kroatien-3201_ORIGINAL.jpg" "21-08-05 Kroatien-3201_PRESET.jpg" "Preset" %}
+{% image_compare
+  "21-08-05 Kroatien-3201_ORIGINAL.jpg"
+  "21-08-05 Kroatien-3201_PRESET.jpg"
+  "Preset"
+%}
 
 {% download_link "Lightroom Preset" "Croatian Brightness.xmp" %}
 
@@ -50,7 +58,11 @@ Yes, I'm guilty: I love colors and contrast! If you do also, his preset is for y
 
 A drive along the coast in the morning or evening hours makes you want to stop all the time because one panorama is more beautiful than the next.
 
-{% image_compare "croatian-winter-drama-compare" "19-12 Kroatien-0137_ORIGINAL.jpg" "19-12 Kroatien-0137_PRESET.jpg" "Preset" %}
+{% image_compare
+  "19-12 Kroatien-0137_ORIGINAL.jpg"
+  "19-12 Kroatien-0137_PRESET.jpg"
+  "Preset" 
+%}
 
 {% download_link "Lightroom Preset" "Croatian Winter Drama.xmp" %}
 
@@ -60,7 +72,11 @@ A drive along the coast in the morning or evening hours makes you want to stop a
 
 The walls of Split have this wonderful warm tone of the winter sun and this preset brings this out particularly well.
 
-{% image_compare "croatian-winter-city-compare" "19-12 Kroatien-0172_ORIGINAL.jpg" "19-12 Kroatien-0172_PRESET.jpg" "Preset" %}
+{% image_compare
+  "19-12 Kroatien-0172_ORIGINAL.jpg"
+  "19-12 Kroatien-0172_PRESET.jpg"
+  "Preset"
+%}
 
 {% download_link "Lightroom Preset" "Croatian Winter City.xmp" %}
 
@@ -72,6 +88,10 @@ The sunset in Croatia is special for me, because I feel these wonderful colors a
 
 The walls of Split have this wonderful warm tone of the winter sun and this preset brings this out particularly well.
 
-{% image_compare "croatian-winter-sunset-compare" "19-12 Kroatien-0215_ORIGINAL.jpg" "19-12 Kroatien-0215_PRESET.jpg" "Preset" %}
+{% image_compare
+  "19-12 Kroatien-0215_ORIGINAL.jpg"
+  "19-12 Kroatien-0215_PRESET.jpg"
+  "Preset"
+%}
 
 {% download_link "Lightroom Preset" "Croatian Winter Sunset.xmp" %}

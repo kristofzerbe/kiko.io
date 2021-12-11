@@ -34,7 +34,12 @@ How wonderfully this field of mathematics can be applied to photos is shown by t
 
 <!-- more -->
 
-![UI of the tool Triangula written in Go](Tringula-And-The-Beauty-Of-Mathematics/triangula.png)
+{% image_slide
+  "triangula.png|UI of the tool Triangula written in Go"
+  "sample-40-generations.png|Sample 40 generations"
+  "sample-400-generations.png|Sample 400 generations"
+  "sample-4000-generations.png|Sample 4000 generations"
+ %}
 
 The result is stylized images of the original, which can be used as a chic desktop background, for example. Due to the abstraction of the actual motif, such images are also very suitable as header images on websites, such as blogs, if the image should not distract from the actual content. Such an image has a great closeness to the original, but looks more like art.
 
@@ -60,7 +65,7 @@ Ryan has found an amazingly effective solution for this as well: [tip - Triagula
 
 The basis is a frontend, also written in Go, which uses the same algorithms as Triangula and with which the user can process several original images or an entire folder of photos at once via the interface.
 
-![Very simple but functional interface of the tool tip, also written in Go, for generating binary placeholders for web pages](tip.png)
+![Very simple but functional interface of the tool tip, also written in Go, for generating binary placeholders for web pages](Tringula-And-The-Beauty-Of-Mathematics/tip.png)
 
 The output format from **tip** is not PNG or SVG, but a binary file, which consumes the least amount of memory of all technical possibilities.
 

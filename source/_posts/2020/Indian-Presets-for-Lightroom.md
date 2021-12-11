@@ -25,10 +25,19 @@ In 2019 I was on a short, stressful business trip to Dehli, India and one night 
 
 ## Indian Sunset
 
-{% image_compare "indian-sunset-compare-1" "IMG_20191009_165823_HDR_ORIGINAL.jpg" "IMG_20191009_165823_HDR_PRESET_Sunset.jpg" "Preset" %}
+{% image_compare
+  "IMG_20191009_165823_HDR_ORIGINAL.jpg"
+  "IMG_20191009_165823_HDR_PRESET_Sunset.jpg"
+  "Preset"
+%}
 
 ---
 
-{% image_compare "indian-sunset-compare-2" "IMG_20191009_164343_HDR_ORIGINAL.jpg" "IMG_20191009_164343_HDR_PRESET_Sunset.jpg" "Preset" "vertical" %}
+{% image_compare
+  "IMG_20191009_164343_HDR_ORIGINAL.jpg"
+  "IMG_20191009_164343_HDR_PRESET_Sunset.jpg"
+  "Preset"
+  "vertical"
+%}
 
 {% download_link "Lightroom Preset" "Indian Sunset.xmp" %}

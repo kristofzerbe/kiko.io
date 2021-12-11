@@ -45,7 +45,7 @@ module.exports = function(grunt){
         ],
         dest: 'themes/landscape/source/css/fonts/sourcecodepro'
       },
-      imagecompare_js: {
+      imagecompare: {
         expand: true,
         cwd: 'themes/landscape/assets/image-compare-viewer',
         src: [
@@ -54,16 +54,7 @@ module.exports = function(grunt){
         ],
         dest: 'themes/landscape/source/js/dist'
       },
-      imagecompare_css: {
-        expand: true,
-        cwd: 'themes/landscape/assets/image-compare-viewer',
-        src: [
-          'image-compare-viewer.min.css',
-          'image-compare-viewer.min.css.map'
-        ],
-        dest: 'themes/landscape/source/css/dist'
-      },
-      lcselect_js: {
+      lcselect: {
         expand: true,
         cwd: 'themes/landscape/assets/lc-select',
         src: [
@@ -71,19 +62,20 @@ module.exports = function(grunt){
         ],
         dest: 'themes/landscape/source/js/dist'
       },
-      lcselect_css: {
-        expand: true,
-        cwd: 'themes/landscape/assets/lc-select',
-        src: [
-          'lc_select.min.css'
-        ],
-        dest: 'themes/landscape/source/css/dist'
-      },
       spotlight: {
         expand: true,
         cwd: 'themes/landscape/assets/spotlight',
         src: [
           'spotlight.bundle.js'
+        ],
+        dest: 'themes/landscape/source/js/dist'
+      },
+      tinyslider: {
+        expand: true,
+        cwd: 'themes/landscape/assets/tiny-slider',
+        src: [
+          'tiny-slider.min.js',
+          'tiny-slider.min.js.map'
         ],
         dest: 'themes/landscape/source/js/dist'
       }
@@ -106,18 +98,13 @@ module.exports = function(grunt){
       },
       asset_styles: {
         src: [
+          'themes/landscape/assets/lc-select/lc_select.css',
+          'themes/landscape/assets/image-compare-viewer/image-compare-viewer.css',
+          'themes/landscape/assets/tiny-slider/tiny-slider.css'
         ],
         dest: 'themes/landscape/tmp/asset-bundle.css'
       }
     },
-    cssmin: {
-      dist: {
-          files: {
-            'themes/landscape/source/css/dist/bundle.min.css': 'themes/landscape/tmp/asset-bundle.css',
-            'themes/landscape/assets/lc-select/lc_select.min.css': 'themes/landscape/assets/lc-select/lc_select.css'
-          }
-      }
-    },  
     uglify: {
       options: {
         sourceMap: false
@@ -128,7 +115,14 @@ module.exports = function(grunt){
           'themes/landscape/assets/lc-select/lc_select.min.js': 'themes/landscape/assets/lc-select/lc_select.js'
         }
       }
-    },          
+    },
+    cssmin: {
+      dist: {
+          files: {
+            'themes/landscape/source/css/dist/bundle.min.css': 'themes/landscape/tmp/asset-bundle.css'
+          }
+      }
+    },  
     hexo: {
       clean: {
         options: {

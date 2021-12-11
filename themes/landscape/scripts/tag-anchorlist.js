@@ -2,7 +2,7 @@
     Anchorlist Tag
 
     Syntax
-    {% anchorlist [title|anchor-id] %}
+    {% anchorlist ...[title|anchor-id] %}
 */
 
 hexo.extend.tag.register("anchorlist", function(args){
