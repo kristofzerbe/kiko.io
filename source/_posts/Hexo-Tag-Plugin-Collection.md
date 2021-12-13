@@ -30,7 +30,7 @@ On the Github page you can find all the info on how to use the plugins. In this 
 {% anchorlist
   "Anchor|anchor"
   "Anchorlist|anchorlist"
-  "Alterbox|alertbox"
+  "Alertbox|alertbox"
   "Alternative Blockqoute|blockquote_alt"
   "Blockquote Details|blockquote_details"
   "Codepen|codepen"
