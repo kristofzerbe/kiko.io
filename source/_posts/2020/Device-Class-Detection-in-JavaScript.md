@@ -69,4 +69,4 @@ It is advisable to embed this request into an event listener of ``DOMContentLoad
 
 See a simple working pen:
 
-{% codepen WNwWjBR 'CSS/JS Breakpoint Hack' css %}
+{% codepen "WNwWjBR" "CSS/JS Breakpoint Hack" css %}

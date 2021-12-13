@@ -95,4 +95,4 @@ div.image-wrapper img.shadow {
 
 Thats it. Here's a pen to play around with the solution:
 
-{% codepen XWjGBGy 'Image Shadows' css %}
+{% codepen "XWjGBGy" "Image Shadows" css %}

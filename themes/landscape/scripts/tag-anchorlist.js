@@ -2,7 +2,7 @@
     Anchorlist Tag
 
     Syntax
-    {% anchorlist ...[title|anchor-id] %}
+    {% anchorlist ..."title|anchorId" %}
 */
 
 hexo.extend.tag.register("anchorlist", function(args){
@@ -11,8 +11,8 @@ hexo.extend.tag.register("anchorlist", function(args){
     args.forEach(function(e) {
         var item = e.split("|"); 
         var title = item[0];
-        var anchor = item[1];
-        listAnchors += `<li data-anchor="#${anchor}">${title}</li>`;
+        var anchorId = item[1];
+        listAnchors += `<li data-anchor="#${anchorId}">${title}</li>`;
     });
 
     var elements = `

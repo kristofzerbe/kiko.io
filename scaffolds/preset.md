@@ -30,6 +30,6 @@ related:
   "Preset"
 %}
 
-{% download_link "Lightroom Preset" "XXX.xmp" %}
+{% download_link "XXX.xmp" "Lightroom Preset" %}
 
 ---

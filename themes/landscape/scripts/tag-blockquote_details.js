@@ -2,13 +2,13 @@
   Details Blockquote Tag
 
   Syntax
-  {% details_blockquote [summary] [cite] [citeUrl] %}
+  {% blockquote_details [summary] [cite] [citeUrl] %}
     quote
-  {% enddetails_blockquote %}
+  {% endblockquote_details %}
 
 */
 
-hexo.extend.tag.register("details_blockquote", function(args, content){
+hexo.extend.tag.register("blockquote_details", function(args, content){
 
   var summary, cite, citeUrl;
 

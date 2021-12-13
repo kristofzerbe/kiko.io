@@ -33,7 +33,7 @@ So far in the north the light is totally different. When it shines through the c
   "Preset"
 %}
 
-{% download_link "Lightroom Preset" "Scotch Lights.xmp" %}
+{% download_link "Scotch Lights.xmp" "Lightroom Preset" %}
 
 ---
 
@@ -47,7 +47,7 @@ You must be made of different stuff if you are Scottish. There is hardly anythin
   "Preset" 
 %}
 
-{% download_link "Lightroom Preset" "Scotch Strength.xmp" %}
+{% download_link "Scotch Strength.xmp" "Lightroom Preset" %}
 
 ---
 
@@ -61,7 +61,7 @@ The view over the North Sea at the edge of the continent is really unique, espec
   "Preset" 
 %}
 
-{% download_link "Lightroom Preset" "Scotch Sunset.xmp" %}
+{% download_link "Scotch Sunset.xmp" "Lightroom Preset" %}
 
 ---
 
@@ -75,7 +75,7 @@ Scotland is bold and so full with energy, even in the details.
   "Preset"
 %}
 
-{% download_link "Lightroom Preset" "Scotch Energy.xmp" %}
+{% download_link "Scotch Energy.xmp" "Lightroom Preset" %}
 
 ---
 
@@ -89,4 +89,4 @@ The Edinburgh Military Tattoo, which takes place twice a year, is a feast for th
   "Preset"
 %}
 
-{% download_link "Lightroom Preset" "Scotch Tattoo.xmp" %}
+{% download_link "Scotch Tattoo.xmp" "Lightroom Preset" %}

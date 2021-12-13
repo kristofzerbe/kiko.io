@@ -16,17 +16,22 @@
 	// 	"description": "Log output to console"
 	// }
 
-	"hexo.kiko-io.blockquote": {
+	"hexo.kiko-io.anchor": {
 		"scope": "markdown",
-		"prefix": "hexo.kiko-io.blockquote",
+		"prefix": "hexo.kiko-io.anchor",
 		"body": [
-			"{% blockquote_alt \"${1:cite}\" \"${2:citeUrl}\" %}",
-			"${3:content}",
-			"{% endblockquote_alt %}"
+			"{% anchor \"${1:anchorId}\" ${2|A,HR|}  %}"
 		],
-		"description": "Insert kiko.io's blockquote"
+		"description": "Insert kiko.io's anchor"
 	},
-
+	"hexo.kiko-io.anchorlist": {
+		"scope": "markdown",
+		"prefix": "hexo.kiko-io.anchorlist",
+		"body": [
+			"{% anchorlist ${1:...\"title|anchorId\"} %}"
+		],
+		"description": "Insert kiko.io's anchorlist"
+	},
 	"hexo.kiko-io.alertbox": {
 		"scope": "markdown",
 		"prefix": "hexo.kiko-io.alertbox",
@@ -37,19 +42,31 @@
 		],
 		"description": "Insert kiko.io's alertbox"
 	},
-	"hexo.kiko-io.anchorlist": {
+	"hexo.kiko-io.blockquote": {
 		"scope": "markdown",
-		"prefix": "hexo.kiko-io.anchorlist",
+		"prefix": "hexo.kiko-io.blockquote",
 		"body": [
-			"{% anchorlist ${1:[title|anchor-id]} %}"
+			"{% blockquote_alt \"${1:cite}\" \"${2:citeUrl}\" %}",
+			"${3:content}",
+			"{% endblockquote_alt %}"
 		],
-		"description": "Insert kiko.io's anchorlist"
+		"description": "Insert kiko.io's blockquote"
+	},
+	"hexo.kiko-io.blockquote_details": {
+		"scope": "markdown",
+		"prefix": "hexo.kiko-io.blockquote_details",
+		"body": [
+			"{% blockquote_details \"${1:summary}\" \"${2:cite}\" \"${3:citeUrl}\" %}",
+			"${4:quote}",
+			"{% endblockquote_details %}"
+		],
+		"description": "Insert kiko.io's blockquote_details"
 	},
 	"hexo.kiko-io.codepen": {
 		"scope": "markdown",
 		"prefix": "hexo.kiko-io.codepen",
 		"body": [
-			"{% codepen \"${1:slugHash}\" \"${2:title}\" \"${3:defaultTabs}\" ${4:height} ${5:width} %}"
+			"{% codepen \"${1:slugHash}\" \"${2:title}\" ${3|html,js,css|} ${4:height} ${5:width} %}"
 		],
 		"description": "Insert kiko.io's codepen"
 	},
@@ -57,19 +74,9 @@
 		"scope": "markdown",
 		"prefix": "hexo.kiko-io.codesandbox",
 		"body": [
-			"{% codesandbox ${1:\"slugHash}\" \"${2:title}\" %}"
+			"{% codesandbox ${1:\"slugHash}\" \"${2:title}\" ${3:height} ${4:width} %}"
 		],
 		"description": "Insert kiko.io's codesandbox"
-	},
-	"hexo.kiko-io.details_blockquote": {
-		"scope": "markdown",
-		"prefix": "hexo.kiko-io.details_blockquote",
-		"body": [
-			"{% details_blockquote \"${1:summary}\" \"${2:cite}\" \"${3:citeUrl}\" %}",
-			"${4:quote}",
-			"{% enddetails_blockquote %}"
-		],
-		"description": "Insert kiko.io's details_blockquote"
 	},
 	"hexo.kiko-io.discovery": {
 		"scope": "markdown",
@@ -85,7 +92,7 @@
 		"scope": "markdown",
 		"prefix": "hexo.kiko-io.download_link",
 		"body": [
-			"{% download_link \"${1:addCaption}\" \"${2:file}\" %}"
+			"{% download_link \"${1:assetFile}\" \"${2:additionalCaption}\" %}"
 		],
 		"description": "Insert kiko.io's download_link"
 	},
@@ -93,7 +100,7 @@
 		"scope": "markdown",
 		"prefix": "hexo.kiko-io.image_compare",
 		"body": [
-			"{% image_compare \"${1:id}\" \"${2:imgFileOriginal}\" \"${3:imgFileModified}\" \"${4:modDesc}\" \"${5:orientation}\" %}"
+			"{% image_compare \"${1:imgFileOriginal}\" \"${2:imgFileModified}\" \"${3:modDesc}\" \"${4:orientation}\" %}"
 		],
 		"description": "Insert kiko.io's image_compare"
 	},
@@ -101,23 +108,23 @@
 		"scope": "markdown",
 		"prefix": "hexo.kiko-io.image_link",
 		"body": [
-			"{% image_link \"${1:path}\" \"${2:url}\" \"${3:alt}\" %}"
+			"{% image_link \"${1:assetImg}\" \"${2:url}\" \"${3:alt}\" %}"
 		],
-		"description": "Insert kiko.io's download_link"
+		"description": "Insert kiko.io's image_link"
 	},
 	"hexo.kiko-io.image_slide": {
 		"scope": "markdown",
 		"prefix": "hexo.kiko-io.image_slide",
 		"body": [
-			"{% image_slide ${1:[url|title]} %}"
+			"{% image_slide ${1:...\"assetImg|title\"} %}"
 		],
-		"description": "Insert kiko.io's imageslide"
+		"description": "Insert kiko.io's image_slide"
 	},
 	"hexo.kiko-io.indiepen": {
 		"scope": "markdown",
 		"prefix": "hexo.kiko-io.indiepen",
 		"body": [
-			"{% indiepen \"${1:subfolder}\" \"${2:(height [450])}\" \"${3:(defaultTab [result|html|css|js])}\" %}"
+			"{% indiepen \"${1:subfolder}\" ${2:height} ${3|result,html,css,js|} %}"
 		],
 		"description": "Insert kiko.io's indiepen"
 	},

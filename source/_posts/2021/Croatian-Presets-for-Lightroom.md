@@ -36,7 +36,7 @@ The sea in Croatia is amazing clear because almost the entire coast is made of s
   "Preset"
 %}
 
-{% download_link "Lightroom Preset" "Croatian Warm Sea.xmp" %}
+{% download_link "Croatian Warm Sea.xmp" "Lightroom Preset" %}
 
 ---
 
@@ -50,7 +50,7 @@ Yes, I'm guilty: I love colors and contrast! If you do also, his preset is for y
   "Preset"
 %}
 
-{% download_link "Lightroom Preset" "Croatian Brightness.xmp" %}
+{% download_link "Croatian Brightness.xmp" "Lightroom Preset" %}
 
 ---
 
@@ -64,7 +64,7 @@ A drive along the coast in the morning or evening hours makes you want to stop a
   "Preset" 
 %}
 
-{% download_link "Lightroom Preset" "Croatian Winter Drama.xmp" %}
+{% download_link "Croatian Winter Drama.xmp" "Lightroom Preset" %}
 
 ---
 
@@ -78,7 +78,7 @@ The walls of Split have this wonderful warm tone of the winter sun and this pres
   "Preset"
 %}
 
-{% download_link "Lightroom Preset" "Croatian Winter City.xmp" %}
+{% download_link "Croatian Winter City.xmp" "Lightroom Preset" %}
 
 ---
 
@@ -94,4 +94,4 @@ The walls of Split have this wonderful warm tone of the winter sun and this pres
   "Preset"
 %}
 
-{% download_link "Lightroom Preset" "Croatian Winter Sunset.xmp" %}
+{% download_link "Croatian Winter Sunset.xmp" "Lightroom Preset" %}

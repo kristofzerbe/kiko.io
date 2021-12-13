@@ -266,33 +266,33 @@ This was supposed to be just one post, but it got longer and longer and so I spl
 ## Terminology
 There are a lot of posts out there which explains the basic concepts of the IndieWeb and Webmentions in particular and you will stumble upon some terms, which has to be explained:
 
-{% details_blockquote "Personal Domain" "indieweb.org (Personal Domain)" "https://indieweb.org/personal-domain" %}
+{% blockquote_details "Personal Domain" "indieweb.org (Personal Domain)" "https://indieweb.org/personal-domain" %}
 ... is a domain name that you personally own, control, and use to represent yourself on the internet. Getting a personal domain is the first step towards getting on the indieweb, and is therefore a requirement for IndieMark Level 1
-{% enddetails_blockquote %}
+{% endblockquote_details %}
 
-{% details_blockquote "Microformats" "microformats.org (Wiki)" "http://microformats.org/" %}
+{% blockquote_details "Microformats" "microformats.org (Wiki)" "http://microformats.org/" %}
 ... are small patterns of HTML to represent commonly published things like people, events, blog posts, reviews and tags in web pages. They are the quickest & simplest way to provide an API to the information on your website.
-{% enddetails_blockquote %}
+{% endblockquote_details %}
 
-{% details_blockquote "POSSE" "indieweb.org (POSSE)" "https://indieweb.org/POSSE" %}
+{% blockquote_details "POSSE" "indieweb.org (POSSE)" "https://indieweb.org/POSSE" %}
 ... is an abbreviation for Publish (on your) Own Site, Syndicate Elsewhere, the practice of posting content on your own site first, then publishing copies or sharing links to third parties (like social media silos) with original post links to provide viewers a path to directly interacting with your content.
-{% enddetails_blockquote %}
+{% endblockquote_details %}
 
-{% details_blockquote "Backfeed" "indieweb.org (Backfeed)" "https://indieweb.org/backfeed" %}
+{% blockquote_details "Backfeed" "indieweb.org (Backfeed)" "https://indieweb.org/backfeed" %}
 ... is the process of syndicating interactions on your POSSE copies back (AKA reverse syndicating) to your original posts.
-{% enddetails_blockquote %}
+{% endblockquote_details %}
 
-{% details_blockquote "Web sign-in" "indieweb.org (Web sign-in)" "https://indieweb.org/Web_sign-in" %}
+{% blockquote_details "Web sign-in" "indieweb.org (Web sign-in)" "https://indieweb.org/Web_sign-in" %}
 ... is signing in to websites using your personal web address (without having to use your e-mail address). Web sign-in supersedes OpenID.
-{% enddetails_blockquote %}
+{% endblockquote_details %}
 
-{% details_blockquote "RelMeAuth" "microformats.org (RelMeAuth)" "http://microformats.org/wiki/RelMeAuth" %}
+{% blockquote_details "RelMeAuth" "microformats.org (RelMeAuth)" "http://microformats.org/wiki/RelMeAuth" %}
 ... is a proposed open standard for using rel="me" links to profiles on oauth supporting services to authenticate via either those profiles or your own site. RelMeAuth is the technology behind Web sign-in.
-{% enddetails_blockquote %}
+{% endblockquote_details %}
 
-{% details_blockquote "IndieAuth" "indieweb.org (IndieAuth)" "https://indieweb.org/IndieAuth" %}
+{% blockquote_details "IndieAuth" "indieweb.org (IndieAuth)" "https://indieweb.org/IndieAuth" %}
 ... is a federated login protocol for Web sign-in, enabling users to use their own domain to sign in to other sites and services.
-{% enddetails_blockquote %}
+{% endblockquote_details %}
 
 ---
 

@@ -35,7 +35,7 @@ The mediaval walls of Jaffa glow in an inimitable way and brings other colors to
   "Preset"
 %}
 
-{% download_link "Lightroom Preset" "Israeli Colors.xmp" %}
+{% download_link "Israeli Colors.xmp" "Lightroom Preset" %}
 
 ---
 
@@ -49,7 +49,7 @@ The light in the eastern Mediterranean is stunning. The warm tone of the sand an
   "Preset"
 %}
 
-{% download_link "Lightroom Preset" "Israeli Lights.xmp" %}
+{% download_link "Israeli Lights.xmp" "Lightroom Preset" %}
 
 ---
 
@@ -63,7 +63,7 @@ A visit of Yad Vashem moved me a lot and this preset is a expression of that.
   "Preset"
 %}
 
-{% download_link "Lightroom Preset" "Israeli Drama.xmp" %}
+{% download_link "Israeli Drama.xmp" "Lightroom Preset" %}
 
 ---
 
@@ -77,4 +77,4 @@ If you think of the tourists away, Jerusalem takes you to another level because 
   "Preset" 
 %}
 
-{% download_link "Lightroom Preset" "Israeli Near Black.xmp" %}
+{% download_link "Israeli Near Black.xmp" "Lightroom Preset" %}

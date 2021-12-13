@@ -1,13 +1,9 @@
 /*
     Image Slide Tag: https://github.com/ganlanyuan/tiny-slider
 
-    Syntax
-    {% image_slide ...[imgFile|title] %}
-
-    Prerequisites
-    - tiny-slider.js loaded in head of page
-    - tiny-slider.css customized (.tns-nav + controls) & loaded in head of page
-
+    Syntax:
+    {% image_slide ..."assetImg|title" %}
+    
 */
 
 hexo.extend.tag.register("image_slide", function(args){
@@ -16,10 +12,10 @@ hexo.extend.tag.register("image_slide", function(args){
     var list = "";
     args.forEach(function(e) {
       var item = e.split("|"); 
-      var imgFile = item[0];
+      var assetImg = item[0];
       var title = item[1];
 
-      list += `<div><img src="/${assetPath + imgFile}" alt="${title}" /></div>`
+      list += `<div><img src="/${assetPath + assetImg}" alt="${title}" /></div>`
     });
 
     var id = "image-slide-" + Math.random().toString(36).substring(2,8);

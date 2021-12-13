@@ -1,12 +1,8 @@
 /*
   Image Compare Viewer: https://image-compare-viewer.netlify.app/
 
-  Syntax
-  {% image_compare [imgFileOriginal] [imgFileModified] [modDesc] [orientation] %}
-
-  Prerequisites
-  - image-compare-viewer.js loaded in head of page
-  - image-compare-viewer.css loaded in head of page
+  Syntax:
+  {% image_compare "imgFileOriginal" "imgFileModified" "descriptionModified" [orientation=vertical] %}
 
 */
 hexo.extend.tag.register('image_compare', function (args) {
@@ -14,7 +10,7 @@ hexo.extend.tag.register('image_compare', function (args) {
   const [
     original, 
     modified,
-    modDesc,
+    descriptionModified,
     orientation
   ] = args;
 
@@ -42,7 +38,7 @@ hexo.extend.tag.register('image_compare', function (args) {
         showLabels: true,
         labelOptions: {
           before: 'Original',
-          after: '${modDesc}',
+          after: '${descriptionModified}',
           onHover: true,
         }
       }).mount();

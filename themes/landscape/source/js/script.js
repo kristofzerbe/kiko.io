@@ -116,7 +116,7 @@ function initScrollAnchorLink() {
   // If you need more autonomy, 
   // You can replace hash detection with a data-attribute
   // e.g. $("[data-scroll='smooth']")
-  $("a[href*='#']:not([href='#'])").click(function(e) {
+  $("a[href^='#']:not([href='#'])").click(function(e) {
     e.preventDefault();
     var hash = this.hash;
     var section = $(hash);

@@ -40,4 +40,4 @@ In 2019 I was on a short, stressful business trip to Dehli, India and one night 
   "vertical"
 %}
 
-{% download_link "Lightroom Preset" "Indian Sunset.xmp" %}
+{% download_link "Indian Sunset.xmp" "Lightroom Preset" %}

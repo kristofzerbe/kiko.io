@@ -2,20 +2,20 @@
   Image Link
 
   Syntax
-  {% image_link [path] [url] [alt] %}
+  {% image_link "assetImg" "url" "alt" %}
 
 */
 hexo.extend.tag.register('image_link', function (args) {
     
   const [
-    path,
+    assetImg,
     url,
     alt 
   ] = args;
   
   var element = `
     <a href="${url}">
-        <img src="${path}" alt="${alt}" />
+        <img src="${assetImg}" alt="${alt}" />
     </a>
     `;
     
