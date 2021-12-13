@@ -40,6 +40,7 @@ On the Github page you can find all the info on how to use the plugins. In this 
   "Image Compare|image-compare"
   "Image Link|image-link"
   "Image Slide|image-slide"
+  "Indiepen|indiepen"
 %}
 
 <!-- more -->
@@ -314,4 +315,4 @@ xxx
 
 {% indiepen "indiepen-sample" 300 html %}
 
-See [https://github.com/kristofzerbe/hexo-tag-plugins#XXX](https://github.com/kristofzerbe/hexo-tag-plugins#XXX) for more details.
+See [https://github.com/kristofzerbe/hexo-tag-plugins#indiepen](https://github.com/kristofzerbe/hexo-tag-plugins#indiepen) for more details.
