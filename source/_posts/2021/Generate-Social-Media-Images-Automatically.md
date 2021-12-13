@@ -447,6 +447,8 @@ Here's the new image in action at Twitter:
 
 ---
 
+## More Info
+
 {% moreinfo '{ "list": [
   [
     "CSS Tricks", "The Essential Meta Tags for Social Media",

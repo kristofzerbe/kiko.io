@@ -356,6 +356,8 @@ Some people say, Webmentions makes commenting forms on blogs, like Disqus or oth
 
 ---
 
+## More Info
+
 {% moreinfo '{ "list": [
   [ "indieweb.org", "webmention.io",
   "https://indieweb.org/webmention.io"],

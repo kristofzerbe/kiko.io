@@ -119,6 +119,8 @@ Do not linger ... this way to Part 3: {% post_link 2021/Hexo-and-the-IndieWeb-Re
 
 ---
 
+## More Info
+
 {% moreinfo '{ "list": [
   ["Paul Kinlan", "Webmention.app",
   "https://paul.kinlan.me/webmention-app/"],

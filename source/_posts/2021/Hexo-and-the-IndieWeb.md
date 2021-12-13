@@ -296,6 +296,8 @@ There are a lot of posts out there which explains the basic concepts of the Indi
 
 ---
 
+## More Info
+
 {% moreinfo '{ "list": [
   [ "A List Apart", "Webmentions: Enabling Better Communication on the Internet",
   "https://alistapart.com/article/webmentions-enabling-better-communication-on-the-internet/"],

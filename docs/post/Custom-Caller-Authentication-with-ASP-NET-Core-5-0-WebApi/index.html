@@ -302,8 +302,7 @@
 <figure class="highlight c#"><figcaption><span>AuthenticateApiRequestAttribute.cs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> Microsoft.AspNetCore.Mvc;</span><br><span class="line"><span class="keyword">using</span> Microsoft.AspNetCore.Mvc.Filters;</span><br><span class="line"><span class="keyword">using</span> Microsoft.Extensions.Configuration;</span><br><span class="line"><span class="keyword">using</span> Microsoft.Extensions.DependencyInjection;</span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">MyAPIProject</span></span><br><span class="line">&#123;</span><br><span class="line">  [<span class="meta">AttributeUsage(AttributeTargets.Class)</span>]</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">AuthenticateApiRequestAttribute</span> : <span class="title">Attribute</span>, <span class="title">IAsyncActionFilter</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">async</span> Task OnActionExecutionAsync</span><br><span class="line">    (</span><br><span class="line">      ActionExecutingContext context, </span><br><span class="line">      ActionExecutionDelegate next</span><br><span class="line">    )</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="comment">// Get an Api Key from Request Header</span></span><br><span class="line">      context.HttpContext.Request.Headers.TryGetValue(</span><br><span class="line">        <span class="string">&quot;ApiKey&quot;</span>, <span class="keyword">out</span> <span class="keyword">var</span> requestApiKey</span><br><span class="line">      );</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Get the remote IP Address</span></span><br><span class="line">      <span class="keyword">var</span> requestIpAddress = </span><br><span class="line">        context.HttpContext.Connection.RemoteIpAddress.ToString();</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Get access to &#x27;appsettings.json&#x27;</span></span><br><span class="line">      <span class="keyword">var</span> appSettings = </span><br><span class="line">        context.HttpContext.RequestServices.GetRequiredService&lt;IConfiguration&gt;();</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Get &#x27;Callers&#x27; list from settings</span></span><br><span class="line">      <span class="keyword">var</span> callers = appSettings.GetSection(<span class="string">&quot;Callers&quot;</span>)</span><br><span class="line">        .Get&lt;List&lt;CallerSetting&gt;&gt;();</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Get all Callers with matching IP Adress and/or API Key via LINQ</span></span><br><span class="line">      <span class="keyword">var</span> current = callers.Where(c =&gt; </span><br><span class="line">        (c.IPAddress == requestIpAddress) || </span><br><span class="line">        (c.IPAddress == <span class="string">&quot;*&quot;</span> &amp;&amp; c.ApiKey == requestApiKey) ||</span><br><span class="line">        (c.IPAddress == requestIpAddress &amp;&amp; c.ApiKey == requestApiKey));</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// Do we have a match?</span></span><br><span class="line">      <span class="keyword">if</span> (current.Count() == <span class="number">0</span>)</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">// No, then return with an error </span></span><br><span class="line">        context.Result = <span class="keyword">new</span> ContentResult()</span><br><span class="line">        &#123;</span><br><span class="line">          StatusCode = <span class="number">401</span>,</span><br><span class="line">          Content = <span class="string">&quot;Unauthorized Access&quot;</span></span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125; </span><br><span class="line"></span><br><span class="line">      <span class="keyword">await</span> next(); </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="The-Result"><a href="#The-Result" class="headerlink" title="The Result"></a>The Result</h2><p><img src="/post/Custom-Caller-Authentication-with-ASP-NET-Core-5-0-WebApi/api-request-nightingale.png" alt="Test Request with Nightingale"></p>
-
-        <h2>More Info</h2>
+<h2 id="More-Info"><a href="#More-Info" class="headerlink" title="More Info"></a>More Info</h2>
         <ul class="moreinfo-list">
             <li>Microsoft Docs: <a href="https://docs.microsoft.com/de-de/aspnet/core/mvc/controllers/filters?view=aspnetcore-5.0">Filters in ASP.NET Core</a></li><li>Microsoft Docs: <a href="https://docs.microsoft.com/de-de/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0">Configuration in ASP.NET Core</a></li>
         </ul>
@@ -316,15 +315,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Authentication/" rel="tag">Authentication</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/" rel="tag">Visual Studio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebAPI/" rel="tag">WebAPI</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckx4vblrz003ftchacwflbigb">
+      <div class="article-permalink" id="article-permalink-ckx4zsf6u002z7gha7n894r9p">
     <input class="article-permalink-value" value="https://kiko.io/post/Custom-Caller-Authentication-with-ASP-NET-Core-5-0-WebApi/" 
-           data-id="ckx4vblrz003ftchacwflbigb" data-title="Custom Caller Authentication with ASP.NET Core 5.0 Web API" />
+           data-id="ckx4zsf6u002z7gha7n894r9p" data-title="Custom Caller Authentication with ASP.NET Core 5.0 Web API" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckx4vblrz003ftchacwflbigb");
+        initPermalink("ckx4zsf6u002z7gha7n894r9p");
     });
 </script>
 
@@ -536,6 +535,12 @@
         
           <li>
             
+              <a href="/post/Hexo-Tag-Plugin-Collection/">Hexo Tag Plugin Collection</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Tringula-And-The-Beauty-Of-Mathematics/">Tringula And The Beauty Of Mathematics</a>
             
           </li>
@@ -555,12 +560,6 @@
           <li>
             
               <a href="/post/Croatian-Presets-for-Lightroom/">Croatian Presets for Lightroom</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/The-Last-Image-Gallery/">The Last Image Gallery...</a>
             
           </li>
         

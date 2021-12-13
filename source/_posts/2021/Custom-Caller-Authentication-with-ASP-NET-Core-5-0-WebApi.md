@@ -176,6 +176,8 @@ namespace MyAPIProject
 
 ![Test Request with Nightingale](Custom-Caller-Authentication-with-ASP-NET-Core-5-0-WebApi/api-request-nightingale.png)
 
+## More Info
+
 {% moreinfo '{ "list": [
   [
     "Microsoft Docs", "Filters in ASP.NET Core",

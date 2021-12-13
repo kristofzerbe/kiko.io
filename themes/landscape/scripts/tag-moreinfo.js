@@ -3,8 +3,7 @@
 
     Syntax
     {% moreinfo '{ "list": [
-        [ "PUBLISHER", "TITLE",
-        "URL" ]
+        [ "publisher", "title", "url" ]
     ]}' %}
 */
 
@@ -21,7 +20,6 @@ hexo.extend.tag.register("moreinfo", function(args){
     });
 
     var elements = `
-        <h2>More Info</h2>
         <ul class="moreinfo-list">
             ${list}
         </ul>

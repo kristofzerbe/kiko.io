@@ -63,6 +63,10 @@ There are just a few commands to know and to run in the command line:
   In case you have Node.js version dependend utilities installed globally, you need to run ``npm install -g`` after switch.
 {% endalertbox %}
 
+---
+
+## More Info
+
 {% moreinfo '{ "list": [
   [
     "Github", "coreybutler/nvm-windows",

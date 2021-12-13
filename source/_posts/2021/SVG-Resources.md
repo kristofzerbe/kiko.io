@@ -241,6 +241,9 @@ Over 1.250 icons in several categories, downloadable as SVG or PNG.
 
 Last but not least, SVG is more powerful then drawing stuff. It's possible to add raster images, text with a particular font and use many CSS-like techniques like gradients and animations. See links below...
 
+---
+## More Info
+
 {% moreinfo '{ "list": [
   [
     "CSS Tricks", "Using SVG",

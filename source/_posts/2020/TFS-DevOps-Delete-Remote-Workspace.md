@@ -67,6 +67,7 @@ In case you want to switch your own DevOps account to another and use the same f
 5. Remove all your Remote Workspaces as described above
 6. Start Visual Studio, connect in TeamExplorer to your TFS server and map the code to your folder
 
+## More Info
 
 {% moreinfo '{ "list": [
   [

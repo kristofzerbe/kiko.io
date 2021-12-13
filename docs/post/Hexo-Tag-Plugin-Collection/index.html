@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>kiko.io | Hexo Tag Plugin Collection</title><meta name="robots" content="noindex">
+  <title>kiko.io | Hexo Tag Plugin Collection</title>
   <meta name="title" content="kiko.io | Hexo Tag Plugin Collection">
   <meta name="description" content="kiko.io&#39;s Post &#39;Hexo Tag Plugin Collection&#39;">
   <!-- Schema.org for Google -->
@@ -290,7 +290,7 @@
 <p>On the Github page you can find all the info on how to use the plugins. In this article I will only briefly introduce them:</p>
 
         <ul class="anchorlist">
-            <li data-anchor="#anchor">Anchor</li><li data-anchor="#anchorlist">Anchorlist</li><li data-anchor="#alertbox">Alterbox</li><li data-anchor="#blockquote_alt">Alternative Blockqoute</li><li data-anchor="#blockquote_details">Blockquote Details</li><li data-anchor="#codepen">Codepen</li><li data-anchor="#codesandbox">CodeSandbox</li><li data-anchor="#download-link">Download Link</li><li data-anchor="#image-compare">Image Compare</li><li data-anchor="#image-link">Image Link</li><li data-anchor="#image-slide">Image Slide</li><li data-anchor="#indiepen">Indiepen</li>
+            <li data-anchor="#anchor">Anchor</li><li data-anchor="#anchorlist">Anchorlist</li><li data-anchor="#alertbox">Alterbox</li><li data-anchor="#blockquote_alt">Alternative Blockqoute</li><li data-anchor="#blockquote_details">Blockquote Details</li><li data-anchor="#codepen">Codepen</li><li data-anchor="#codesandbox">CodeSandbox</li><li data-anchor="#download-link">Download Link</li><li data-anchor="#image-compare">Image Compare</li><li data-anchor="#image-link">Image Link</li><li data-anchor="#image-slide">Image Slide</li><li data-anchor="#indiepen">Indiepen</li><li data-anchor="#more-info">More Info</li>
         </ul>
     
 
@@ -486,7 +486,7 @@
 
 <p><strong>Live Output:</strong></p>
 
-    <div id="image-compare-amkfmn">
+    <div id="image-compare-xysjgp">
       <img class="image-compare image-original" src="/post/Hexo-Tag-Plugin-Collection/example-image_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Hexo-Tag-Plugin-Collection/example-image_PRESET.jpg" alt="" />
     </div>
@@ -495,7 +495,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-amkfmn"),
+      new ImageCompare(document.getElementById("image-compare-xysjgp"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -537,12 +537,12 @@
 
 <p><strong>Live Output:</strong></p>
 
-      <div class="image-slider" id="image-slide-4n87oi">
+      <div class="image-slider" id="image-slide-r70wpw">
         <div><img src="/post/Hexo-Tag-Plugin-Collection/example-image_ORIGINAL.jpg" alt="Original" /></div><div><img src="/post/Hexo-Tag-Plugin-Collection/example-image_PRESET.jpg" alt="Lightroom Preset" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-4n87oi",
+          container: "#image-slide-r70wpw",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -553,17 +553,17 @@
 
 <p>See <a href="https://github.com/kristofzerbe/hexo-tag-plugins#image-slide">https://github.com/kristofzerbe/hexo-tag-plugins#image-slide</a> for more details.</p>
 
-                <hr id="XXX" />
+                <hr id="indiepen" />
             
 
 <h2 id="Indiepen"><a href="#Indiepen" class="headerlink" title="Indiepen"></a>Indiepen</h2><p>Embedding a “local” pen (<code>index.html</code>, <code>main.js</code> and <code>styles.css</code> stored in an asset subfolder) via <a href="https://indiepen.tech/">Indiepen</a>.</p>
 <p><strong>Example:</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xxx</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% indiepen <span class="string">&quot;indiepen-example&quot;</span> <span class="number">300</span> html %&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>Live Output:</strong></p>
 
     <iframe class="indiepen"
-        src="https://indiepen.tech/embed/?url=https%3A%2F%2Fkiko.io%2Fpost%2FHexo-Tag-Plugin-Collection%2Findiepen-sample&tab=html"
+        src="https://indiepen.tech/embed/?url=https%3A%2F%2Fkiko.io%2Fpost%2FHexo-Tag-Plugin-Collection%2Findiepen-example&tab=html"
         style="width: 100%; overflow: hidden; display: block; border: 0;"
         title="Indiepen Embed"
         loading="lazy" 
@@ -573,7 +573,23 @@
   
 
 <p>See <a href="https://github.com/kristofzerbe/hexo-tag-plugins#indiepen">https://github.com/kristofzerbe/hexo-tag-plugins#indiepen</a> for more details.</p>
-<!-- flag of hidden posts -->
+
+                <hr id="more-info" />
+            
+
+<h2 id="More-Info"><a href="#More-Info" class="headerlink" title="More Info"></a>More Info</h2><p>Renders a list of related, informative links regarding a post.</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;% moreinfo <span class="string">&#x27;&#123; &quot;list&quot;: [</span></span><br><span class="line"><span class="string">  [ &quot;Wikipedia&quot;, &quot;Markdown&quot;,</span></span><br><span class="line"><span class="string">  &quot;https://en.wikipedia.org/wiki/Markdown&quot; ],</span></span><br><span class="line"><span class="string">  [ &quot;Markdown Guide&quot;, &quot;Basic Syntax&quot;,</span></span><br><span class="line"><span class="string">  &quot;https://www.markdownguide.org/basic-syntax/&quot; ],</span></span><br><span class="line"><span class="string">  [ &quot;Daring Fireball&quot;, &quot;Markdown: Syntax&quot;,</span></span><br><span class="line"><span class="string">  &quot;https://daringfireball.net/projects/markdown/syntax&quot; ]</span></span><br><span class="line"><span class="string">]&#125;&#x27;</span> %&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Live Output:</strong></p>
+
+        <ul class="moreinfo-list">
+            <li>Wikipedia: <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a></li><li>Markdown Guide: <a href="https://www.markdownguide.org/basic-syntax/">Basic Syntax</a></li><li>Daring Fireball: <a href="https://daringfireball.net/projects/markdown/syntax">Markdown: Syntax</a></li>
+        </ul>
+    
+
+<p>See <a href="https://github.com/kristofzerbe/hexo-tag-plugins#more-info">https://github.com/kristofzerbe/hexo-tag-plugins#more-info</a> for more details.</p>
+
     </div>
     
     <footer class="article-footer">      
@@ -582,15 +598,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Collection/" rel="tag">Collection</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Plugin/" rel="tag">Plugin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/" rel="tag">VS Code</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckx4vblpv0001tchadbxi6vbo">
+      <div class="article-permalink" id="article-permalink-ckx4zsf4r00037ghadolce3fu">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-Tag-Plugin-Collection/" 
-           data-id="ckx4vblpv0001tchadbxi6vbo" data-title="Hexo Tag Plugin Collection" />
+           data-id="ckx4zsf4r00037ghadolce3fu" data-title="Hexo Tag Plugin Collection" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckx4vblpv0001tchadbxi6vbo");
+        initPermalink("ckx4zsf4r00037ghadolce3fu");
     });
 </script>
 
@@ -598,6 +614,218 @@
     </footer>
 
   </div>
+
+  
+  <div class="article-webmentions">
+
+  <h2>Webmentions</h2>
+
+  <div class="webmentions-placeholder">
+    <p class="wm-placeholder">No Webmentions yet...</p>
+  </div>
+  
+  <p class="webmention-form-info">
+    In case your blog software can't send Webmentions, 
+    you can use this form to submit me a mention of this article...
+  </p>
+  
+  <form class="webmention-form" action="https://webmention.io/kiko.io>/webmention" 
+        name="webmention-form" method="post">
+    <label for="webmention-form-source">Your Article URL:</label><br>
+    <input class="webmention-form-source" type="url" name="source" 
+           placeholder="https://your-blog.com/your-article" required="">
+    <input type="hidden" name="target" value="https://kiko.io/post/Hexo-Tag-Plugin-Collection/">
+    <input type="submit" value="Send Webmention">
+  </form>
+  
+  <script>
+    window.addEventListener('load', function () {
+      insertWebmentions('hexo-tag-plugin-collection');
+    });
+  </script>
+
+  
+
+</div>
+  <div class="article-comments">
+  <h2>Comments</h2>
+  <div id="comment-placeholder"></div>
+  <script>
+    window.addEventListener('load', function () {
+      insertUtterancesCommentBlock();
+    });
+  </script>
+</div>
+  
+  <div class="article-related">
+    <h2>Related</h2>
+    <div class="archives">
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/post/Show-related-posts-in-Hexo/">
+        <img class="archive-article-photo" src="/photos/tablet/18-09 Kroatien-0323.jpg" alt="Garden Eden" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/post/Show-related-posts-in-Hexo/" class="archive-article-date">
+  
+    <time class="published dt-published" datetime="2020-10-03T11:17:03.000Z" itemprop="datePublished">03 Oct 2020</time>
+  
+</a>
+      
+  <div class="archive-article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+      
+
+
+    <a class="archive-article-anything" itemprop="name" href="/series/a-new-blog">A New Blog</a>
+
+
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/post/Show-related-posts-in-Hexo/">Show related posts in Hexo</a>
+    </h1>
+  
+
+                    
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/post/A-New-Blog-Customizing-Hexo/">
+        <img class="archive-article-photo" src="/photos/tablet/19-07 Schottland-0198.jpg" alt="Thistle Fence" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/post/A-New-Blog-Customizing-Hexo/" class="archive-article-date">
+  
+    <time class="published dt-published" datetime="2019-09-25T10:00:00.000Z" itemprop="datePublished">25 Sep 2019</time>
+  
+</a>
+      
+  <div class="archive-article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+      
+
+
+    <a class="archive-article-anything" itemprop="name" href="/series/a-new-blog">A New Blog</a>
+
+
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/post/A-New-Blog-Customizing-Hexo/">A New Blog: Customizing Hexo</a>
+    </h1>
+  
+
+      
+    <h2 class="archive-article-subtitle" itemprop="name">
+        Part Two of having fun with Hexo and GitHub Pages
+    </h2>
+              
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/" rel="tag">VS Code</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/post/Forking-Hexo-plugin-hexo-index-anything/">
+        <img class="archive-article-photo" src="/photos/tablet/20-08 Mallorca-7200.jpg" alt="Red Golden Leafs" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/post/Forking-Hexo-plugin-hexo-index-anything/" class="archive-article-date">
+  
+    <time class="published dt-published" datetime="2021-04-25T11:41:46.000Z" itemprop="datePublished">25 Apr 2021</time>
+  
+</a>
+      
+  <div class="archive-article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+      
+
+
+
+
+    <a class="archive-article-anything" itemprop="name" href="/projects/hexo-generator-anything">hexo-generator-anything</a>
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/post/Forking-Hexo-plugin-hexo-index-anything/">Forking Hexo plugin &#39;hexo-index-anything&#39;</a>
+    </h1>
+  
+
+      
+    <h2 class="archive-article-subtitle" itemprop="name">
+        Introducing its successor &#39;hexo-generator-anything&#39;
+    </h2>
+              
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Plugin/" rel="tag">Plugin</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+    </div>
+  </div>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/post/Tringula-And-The-Beauty-Of-Mathematics/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Tringula And The Beauty Of Mathematics</div>
+    </a>
+  
+</nav>
 
   
 
@@ -631,6 +859,12 @@
         
           <li>
             
+              <a href="/post/Hexo-Tag-Plugin-Collection/">Hexo Tag Plugin Collection</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Tringula-And-The-Beauty-Of-Mathematics/">Tringula And The Beauty Of Mathematics</a>
             
           </li>
@@ -650,12 +884,6 @@
           <li>
             
               <a href="/post/Croatian-Presets-for-Lightroom/">Croatian Presets for Lightroom</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/The-Last-Image-Gallery/">The Last Image Gallery...</a>
             
           </li>
         

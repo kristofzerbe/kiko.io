@@ -195,6 +195,10 @@ export { App };
 
 See it live at [codesandbox.io](https://codesandbox.io/s/reusable-es6-template-literals-4iyor?file=/src/templates.js).
 
+---
+
+## More Info
+
 {% moreinfo '{ "list": [
   [
     "Stackoverflow", "Can ES6 template literals be substituted at runtime (or reused)?",

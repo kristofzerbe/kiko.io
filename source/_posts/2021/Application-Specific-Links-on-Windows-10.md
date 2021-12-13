@@ -235,6 +235,8 @@ Maybe Microsoft should think about their approach of **Apps for Websites**, in o
 
 ---
 
+## More Info
+
 {% moreinfo '{ "list": [
   [ "whatwg.org", "HTML - Living Standard",
   "https://html.spec.whatwg.org/multipage/system-state.html#custom-handlers" ],

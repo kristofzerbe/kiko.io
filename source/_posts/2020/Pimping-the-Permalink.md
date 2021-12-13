@@ -230,6 +230,8 @@ I refrain to implement a fallback, rather I would like to show the appropriate b
 </script>
 ```
 
+## More Info
+
 {% moreinfo '{ "list": [
   [
   "w3c.github.io", "W3C Web Share Test",

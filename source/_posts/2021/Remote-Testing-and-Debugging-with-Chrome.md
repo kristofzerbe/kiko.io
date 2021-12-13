@@ -93,6 +93,10 @@ The window, which will be opened on ``inspect``, are the Chrome Developer Tools 
 
 ![Remote View Debugging](Remote-Testing-and-Debugging-with-Chrome/remote-view-debugging.png)
 
+---
+
+## More Info
+
 {% moreinfo '{ "list": [
   [
     "Chrome DevTools", "Access Local Servers",

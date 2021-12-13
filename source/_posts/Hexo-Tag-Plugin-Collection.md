@@ -19,7 +19,6 @@ related:
   - Show-related-posts-in-Hexo
   - A-New-Blog-Customizing-Hexo
   - Forking-Hexo-plugin-hexo-index-anything
-hidden: true
 ---
 
 Since day one of this blog I use **Tag Plugins**, sometimes as NPM packages from other developers, sometimes developed by myself.
@@ -41,6 +40,7 @@ On the Github page you can find all the info on how to use the plugins. In this 
   "Image Link|image-link"
   "Image Slide|image-slide"
   "Indiepen|indiepen"
+  "More Info|more-info"
 %}
 
 <!-- more -->
@@ -299,7 +299,7 @@ Shows multiple images within a slider with the aid of the JS library [Tiny Slide
 
 See [https://github.com/kristofzerbe/hexo-tag-plugins#image-slide](https://github.com/kristofzerbe/hexo-tag-plugins#image-slide) for more details.
 
-{% anchor "XXX" HR %}
+{% anchor "indiepen" HR %}
 
 ## Indiepen
 
@@ -308,11 +308,43 @@ Embedding a "local" pen (`index.html`, `main.js` and `styles.css` stored in an a
 **Example:**
 
 ```js
-xxx
+{% indiepen "indiepen-example" 300 html %}
 ```
 
 **Live Output:**
 
-{% indiepen "indiepen-sample" 300 html %}
+{% indiepen "indiepen-example" 300 html %}
 
 See [https://github.com/kristofzerbe/hexo-tag-plugins#indiepen](https://github.com/kristofzerbe/hexo-tag-plugins#indiepen) for more details.
+
+{% anchor "more-info" HR %}
+
+## More Info
+
+Renders a list of related, informative links regarding a post.
+
+**Example:**
+
+```js
+{% moreinfo '{ "list": [
+  [ "Wikipedia", "Markdown",
+  "https://en.wikipedia.org/wiki/Markdown" ],
+  [ "Markdown Guide", "Basic Syntax",
+  "https://www.markdownguide.org/basic-syntax/" ],
+  [ "Daring Fireball", "Markdown: Syntax",
+  "https://daringfireball.net/projects/markdown/syntax" ]
+]}' %}
+```
+
+**Live Output:**
+
+{% moreinfo '{ "list": [
+  [ "Wikipedia", "Markdown",
+  "https://en.wikipedia.org/wiki/Markdown" ],
+  [ "Markdown Guide", "Basic Syntax",
+  "https://www.markdownguide.org/basic-syntax/" ],
+  [ "Daring Fireball", "Markdown: Syntax",
+  "https://daringfireball.net/projects/markdown/syntax" ]
+]}' %}
+
+See [https://github.com/kristofzerbe/hexo-tag-plugins#more-info](https://github.com/kristofzerbe/hexo-tag-plugins#more-info) for more details.

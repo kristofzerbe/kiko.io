@@ -92,6 +92,10 @@ You will get this on calling ``dir``, for example:
 
 ![Windows Terminal Icons](Spice-Up-Windows-Terminal/terminal-icons.png)
 
+---
+
+## More Info
+
 {% moreinfo '{ "list": [
   [
     "Windows Store", "Windows Terminal",
