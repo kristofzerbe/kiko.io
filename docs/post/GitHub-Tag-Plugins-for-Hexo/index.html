@@ -347,6 +347,8 @@
 <li><a href="#codepen">Codepen</a></li>
 <li><a href="#codesandbox">CodeSandbox</a></li>
 <li><a href="#download-link">Download Link</a></li>
+<li><a href="#github-readme">Github Readme</a></li>
+<li><a href="#github-user-repo-card">GitHub User &amp; Repo Card</a></li>
 <li><a href="#image-compare">Image Compare</a></li>
 <li><a href="#image-link">Image Link</a></li>
 <li><a href="#image-slide">Image Slide</a></li>
@@ -362,7 +364,30 @@
 <p><strong>Syntax:</strong>  </p>
 <pre><code class="txt">{% anchor &quot;anchorId&quot; elementType:(A,HR) %}``
 </code></pre>
-<p><strong>Example:</strong></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Parameter</th>
+<th>optional/default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>anchorId</code></td>
+<td>-</td>
+<td>String to define the anchor id</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>elementType</code></td>
+<td>-</td>
+<td>Type of tag to render; select out of <code>A</code> or  <code>HR</code></td>
+</tr>
+</tbody></table>
+<p><strong>Usage Example:</strong></p>
 <pre><code class="js">{% anchor &quot;my-anchor&quot; HR  %}
 </code></pre>
 <p><strong>Output:</strong></p>
@@ -385,9 +410,26 @@
 <li><a href="https://github.com/kristofzerbe/hexo-tag-plugins/blob/main/tag-anchorlist.js">tag-anchorlist.js</a></li>
 </ul>
 <p><strong>Syntax:</strong>  </p>
-<pre><code class="txt">{% anchorlist ...&quot;title|anchorId&quot; %}``
+<pre><code class="txt">{% anchorlist ...&quot;title|anchorId&quot; %}
 </code></pre>
-<p><strong>Example:</strong></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Parameter</th>
+<th>optional/default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>...&quot;title|anchorId&quot;</code></td>
+<td>-</td>
+<td>List of pipe separated items with referencing title and anchor id</td>
+</tr>
+</tbody></table>
+<p><strong>Usage Example:</strong></p>
 <pre><code class="js">{% anchorlist
   &quot;My First Anchor|a1&quot;
   &quot;My Second Anchor|a2&quot;
@@ -428,7 +470,25 @@
 content
 {% endalertbox %}``
 </code></pre>
-<p><strong>Example:</strong></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Parameter</th>
+<th>optional/default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>alertType</code></td>
+<td>-</td>
+<td>Type of the alert (icon and color); select out of <code>exclamation</code>, <code>question</code>, <code>warning</code>, <code>info</code>, <code>success</code> or <code>note</code></td>
+</tr>
+</tbody></table>
+<p><code>content</code> is not a parameter, but Markdown to render.</p>
+<p><strong>Usage Example:</strong></p>
 <pre><code class="js">{% alertbox warning %}
 Something has failed!
 {% endalertbox %}
@@ -459,11 +519,34 @@ Something has failed!
 <li><a href="https://github.com/kristofzerbe/hexo-tag-plugins/blob/main/tag-blockquote_alt.js">tag-blockquote_alt.js</a></li>
 </ul>
 <p><strong>Syntax:</strong>  </p>
-<pre><code class="txt">{% blockquote_alt cite [citeUrl] %}
+<pre><code class="txt">{% blockquote_alt &quot;cite&quot; [&quot;citeUrl&quot;] %}
 quote
 {% endblockquote_alt %}
 </code></pre>
-<p><strong>Example:</strong></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Parameter</th>
+<th>optional/default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>cite</code></td>
+<td></td>
+<td>Author of the quote</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>citeUrl</code></td>
+<td>yes</td>
+<td>Url to the quote</td>
+</tr>
+</tbody></table>
+<p><strong>Usage Example:</strong></p>
 <pre><code class="js">{% blockquote_alt &quot;Anonymous&quot; &quot;https://en.wikipedia.org/wiki/Lorem_ipsum&quot; %}
 Lorem ipsum dolor sit amet...
 {% endblockquote_alt %}
@@ -485,7 +568,7 @@ Lorem ipsum dolor sit amet...
   &quot;scope&quot;: &quot;markdown&quot;,
   &quot;prefix&quot;: &quot;hexo.kiko-io.blockquote&quot;,
   &quot;body&quot;: [
-    &quot;{% blockquote_alt \&quot;${1:cite}\&quot; \&quot;${2:citeUrl}\&quot; %}&quot;,
+    &quot;{% blockquote_alt \&quot;${1:cite}\&quot; [\&quot;${2:citeUrl}\&quot;] %}&quot;,
     &quot;${3:content}&quot;,
     &quot;{% endblockquote_alt %}&quot;
   ],
@@ -499,11 +582,41 @@ Lorem ipsum dolor sit amet...
 <li><a href="https://github.com/kristofzerbe/hexo-tag-plugins/blob/main/tag-blockquote_details.js">tag-blockquote_details.js</a></li>
 </ul>
 <p><strong>Syntax:</strong>  </p>
-<pre><code class="txt">{% blockquote_details [summary] [cite] [citeUrl] %}
+<pre><code class="txt">{% blockquote_details &quot;summary&quot; &quot;cite&quot; [&quot;citeUrl&quot;] %}
 quote
 {% endblockquote_details %}
 </code></pre>
-<p><strong>Example:</strong></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Parameter</th>
+<th>optional/default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>summary</code></td>
+<td>-</td>
+<td>Summary of the quote</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>cite</code></td>
+<td>-</td>
+<td>Author of the quote</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>citeUrl</code></td>
+<td>yes</td>
+<td>Url to the quote</td>
+</tr>
+</tbody></table>
+<p><code>quote</code> is not a parameter, but Markdown to render.</p>
+<p><strong>Usage Example:</strong></p>
 <pre><code class="js">{% blockquote_details &quot;Lorem ipsum&quot; &quot;Anonymous&quot; &quot;https://en.wikipedia.org/wiki/Lorem_ipsum&quot; %}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 {% endblockquote_details %}
@@ -528,7 +641,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
   &quot;scope&quot;: &quot;markdown&quot;,
   &quot;prefix&quot;: &quot;hexo.kiko-io.blockquote_details&quot;,
   &quot;body&quot;: [
-    &quot;{% blockquote_details \&quot;${1:summary}\&quot; \&quot;${2:cite}\&quot; \&quot;${3:citeUrl}\&quot; %}&quot;,
+    &quot;{% blockquote_details \&quot;${1:summary}\&quot; \&quot;${2:cite}\&quot; [\&quot;${3:citeUrl}\&quot;] %}&quot;,
     &quot;${4:quote}&quot;,
     &quot;{% endblockquote_details %}&quot;
   ],
@@ -551,9 +664,50 @@ codepen:
   width: &quot;100%&quot;
 </code></pre>
 <p><strong>Syntax:</strong>  </p>
-<pre><code class="txt">{% codepen &quot;slugHash&quot; &quot;title&quot; defaultTab:(html,js,css) [height] [width] %}
+<pre><code class="txt">{% codepen &quot;slugHash&quot; &quot;title&quot; [defaultTab:(html,js,css)] [height] [&quot;width&quot;] %}
 </code></pre>
-<p><strong>Example:</strong></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Parameter</th>
+<th>optional/default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>slugHash</code></td>
+<td>-</td>
+<td>Codepens SlugHash</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>title</code></td>
+<td>-</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>defaultTab</code></td>
+<td>js</td>
+<td>Default tab to show ; select out of <code>html</code>, <code>js</code> or <code>css</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>height</code></td>
+<td>300</td>
+<td>Height as number</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>width</code></td>
+<td>“100%”</td>
+<td>Width as CSS value</td>
+</tr>
+</tbody></table>
+<p><strong>Usage Example:</strong></p>
 <pre><code class="js">{% codepen &quot;MWEbERg&quot; &quot;Lorem Ipsum&quot; html %}
 </code></pre>
 <p><strong>Output:</strong></p>
@@ -578,7 +732,7 @@ codepen:
   &quot;scope&quot;: &quot;markdown&quot;,
   &quot;prefix&quot;: &quot;hexo.kiko-io.codepen&quot;,
   &quot;body&quot;: [
-    &quot;{% codepen \&quot;${1:slugHash}\&quot; \&quot;${2:title}\&quot; ${3|html,js,css|} ${4:height} ${5:width} %}&quot;
+    &quot;{% codepen \&quot;${1:slugHash}\&quot; \&quot;${2:title}\&quot; [${3|html,js,css|}] [${4:height}] [\&quot;${5:width}\&quot;] %}&quot;
   ],
   &quot;description&quot;: &quot;Insert kiko.io&#39;s codepen&quot;
 }
@@ -590,9 +744,44 @@ codepen:
 <li><a href="https://github.com/kristofzerbe/hexo-tag-plugins/blob/main/tag-codesandbox.js">tag-codesandbox.js</a></li>
 </ul>
 <p><strong>Syntax:</strong>  </p>
-<pre><code class="txt">{% codesandbox &quot;slugHash&quot; &quot;title&quot; [height] [width] %}
+<pre><code class="txt">{% codesandbox &quot;slugHash&quot; &quot;title&quot; [height] [&quot;width&quot;] %}
 </code></pre>
-<p><strong>Example:</strong></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Parameter</th>
+<th>optional/default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>slugHash</code></td>
+<td>-</td>
+<td>Sandbox’ SlugHash</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>title</code></td>
+<td>-</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>height</code></td>
+<td>500</td>
+<td>Height as number</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>width</code></td>
+<td>“100%”</td>
+<td>Width as CSS value</td>
+</tr>
+</tbody></table>
+<p><strong>Usage Example:</strong></p>
 <pre><code class="js">{% codesandbox &quot;cool-shamir-de613&quot; &quot;Lorem Ipsum&quot; 300 %}
 </code></pre>
 <p><strong>Output:</strong></p>
@@ -610,7 +799,7 @@ codepen:
   &quot;scope&quot;: &quot;markdown&quot;,
   &quot;prefix&quot;: &quot;hexo.kiko-io.codesandbox&quot;,
   &quot;body&quot;: [
-    &quot;{% codesandbox ${1:\&quot;slugHash}\&quot; \&quot;${2:title}\&quot; ${3:height} ${4:width} %}&quot;
+    &quot;{% codesandbox ${1:\&quot;slugHash}\&quot; \&quot;${2:title}\&quot; [${3:height}] [\&quot;${4:width}\&quot;] %}&quot;
   ],
   &quot;description&quot;: &quot;Insert kiko.io&#39;s codesandbox&quot;
 }
@@ -624,7 +813,30 @@ codepen:
 <p><strong>Syntax:</strong>  </p>
 <pre><code class="txt">{% download_link &quot;assetFile&quot; [&quot;additionalCaption&quot;] %}
 </code></pre>
-<p><strong>Example:</strong></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Parameter</th>
+<th>optional/default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>assetFile</code></td>
+<td></td>
+<td>Asset file name to download</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>additionalCaption</code></td>
+<td>yes</td>
+<td>Additional caption between <em>“Download “</em> and file name</td>
+</tr>
+</tbody></table>
+<p><strong>Usage Example:</strong></p>
 <pre><code class="js">{% download_link &quot;example-image_ORIGINAL.jpg&quot; &quot;Photo&quot; %}
 </code></pre>
 <p><strong>Output:</strong></p>
@@ -647,6 +859,141 @@ codepen:
 }
 </code></pre>
 <p><img src="https://raw.githubusercontent.com/kristofzerbe/hexo-tag-plugins/main/assets/divider.png" alt="-"></p>
+<h2 id="Github-Readme"><a href="#Github-Readme" class="headerlink" title="Github Readme"></a>Github Readme</h2><p>Gets the README file of a Github repo and renders its Markdown as HTML in a <code>detail</code> tag.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li><a href="https://github.com/kristofzerbe/hexo-tag-plugins/blob/main/tag-github-readme.js">tag-github-readme.js</a></li>
+</ul>
+<p><strong>Prequisites:</strong></p>
+<p>You need to have installed the <a href="https://www.npmjs.com/package/axios"><strong>Axios</strong> package</a> in your project.</p>
+<p>The HTML output has no styles, therefore you need some in your CSS for <code>.github-readme</code>.</p>
+<p><strong>Syntax:</strong>  </p>
+<pre><code class="txt">{% github_readme &quot;user&quot; &quot;repo&quot; [&quot;summary&quot;] %}
+</code></pre>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Parameter</th>
+<th>optional/default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>user</code></td>
+<td></td>
+<td>Name of the GitHub user</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>repo</code></td>
+<td></td>
+<td>Name of the GitHub repo</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>summary</code></td>
+<td>“Project README on Github”</td>
+<td>Caption of the DETAILS element</td>
+</tr>
+</tbody></table>
+<p><strong>Usage Example:</strong></p>
+<pre><code class="js">{% github_readme &quot;kristofzerbe&quot; &quot;hexo-tag-plugins&quot; %}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code class="html">&lt;details class=&quot;github-readme&quot;&gt;
+  &lt;summary&gt;Project README on Github&lt;/summary&gt;
+  &lt;div&gt;
+    &lt;!-- Content of the README file converted to HTML --&gt;
+  &lt;/div&gt;
+&lt;/details&gt;
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/kristofzerbe/hexo-tag-plugins/main/assets/tag-github-readme-example.png" alt="Github Readme Example"></p>
+<p><strong>VS Code Snippet:</strong></p>
+<pre><code class="json">&quot;hexo.kiko-io.github_readme&quot;: {
+  &quot;scope&quot;: &quot;markdown&quot;,
+  &quot;prefix&quot;: &quot;hexo.kiko-io.github_readme&quot;,
+  &quot;body&quot;: [
+    &quot;{% github_readme \&quot;${1:user}\&quot; \&quot;${2:repo}\&quot; \&quot;${3:[summary]}\&quot; %}&quot;
+  ],
+  &quot;description&quot;: &quot;Insert kiko.io&#39;s github_readme&quot;
+}
+</code></pre>
+<p>See a live example at <a href="https://kiko.io/post/GitHub-Tag-Plugins-for-Hexo/#readme">https://kiko.io/post/GitHub-Tag-Plugins-for-Hexo/#readme</a></p>
+<p><img src="https://raw.githubusercontent.com/kristofzerbe/hexo-tag-plugins/main/assets/divider.png" alt="-"></p>
+<h2 id="GitHub-User-amp-Repo-Card"><a href="#GitHub-User-amp-Repo-Card" class="headerlink" title="GitHub User &amp; Repo Card"></a>GitHub User &amp; Repo Card</h2><p>Renders a card-like info panel, with full information about a GitHub repo and its creator, the GitHub user.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li><a href="https://github.com/kristofzerbe/hexo-tag-plugins/blob/main/tag-github-user-and-repo-card.js">tag-github-user-and-repo-card.js</a></li>
+<li><a href="https://github.com/kristofzerbe/hexo-tag-plugins/blob/main/tag-github-user-and-repo-card.css">tag-github-user-and-repo-card.css</a></li>
+</ul>
+<p><strong>Prequisites:</strong></p>
+<p>You need to have installed the <a href="https://www.npmjs.com/package/axios"><strong>Axios</strong> package</a> in your project.</p>
+<p><strong>Syntax:</strong>  </p>
+<pre><code class="txt">{% github_user_and_repo_card &quot;user&quot; &quot;repo&quot; [&quot;cardWidth&quot;] [&quot;userheight&quot;] [&quot;avatarSize&quot;] %}
+</code></pre>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Parameter</th>
+<th>optional/default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>user</code></td>
+<td></td>
+<td>Name of the GitHub user</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>repo</code></td>
+<td></td>
+<td>Name of the GitHub repo</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>cardWidth</code></td>
+<td>“400px”</td>
+<td>Width of the card; minimum 300px</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>userheight</code></td>
+<td>“120px”</td>
+<td>Height of the upper user panel</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>avatarSize</code></td>
+<td>“90px”</td>
+<td>Size of the avatar image as CSS value</td>
+</tr>
+</tbody></table>
+<p><strong>Usage Example:</strong></p>
+<pre><code class="js">{% github_user_and_repo_card &quot;kristofzerbe&quot; &quot;hexo-tag-plugins&quot; &quot;500px&quot; %}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code class="html">&lt;!-- see tag-github-user-and-repo-card.html --&gt;
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/kristofzerbe/hexo-tag-plugins/main/assets/tag-github-user-and-repo-card-example.png" alt="GitHub User &amp; Repo Card Example"></p>
+<p><strong>VS Code Snippet:</strong></p>
+<pre><code class="json">&quot;hexo.kiko-io.github_user_and_repo_card&quot;: {
+  &quot;scope&quot;: &quot;markdown&quot;,
+  &quot;prefix&quot;: &quot;hexo.kiko-io.github_user_and_repo_card&quot;,
+  &quot;body&quot;: [
+    &quot;{% github_user_and_repo_card \&quot;${1:user}\&quot; \&quot;${2:repo}\&quot; \&quot;${3:[cardWidth]}\&quot; \&quot;${4:[userhight]}\&quot; \&quot;${5:[avatarSize]}\&quot; %}&quot;
+  ],
+  &quot;description&quot;: &quot;Insert kiko.io&#39;s github_user_and_repo_card&quot;
+}
+</code></pre>
+<p>See a live example at <a href="https://kiko.io/post/GitHub-Tag-Plugins-for-Hexo/#user-and-repo-card">https://kiko.io/post/GitHub-Tag-Plugins-for-Hexo/#user-and-repo-card</a></p>
+<p><img src="https://raw.githubusercontent.com/kristofzerbe/hexo-tag-plugins/main/assets/divider.png" alt="-"></p>
 <h2 id="Image-Compare"><a href="#Image-Compare" class="headerlink" title="Image Compare"></a>Image Compare</h2><p>Comparing two asset images side-by-side with the aid of the JS library <a href="https://image-compare-viewer.netlify.app/">Image Compare Viewer</a>.</p>
 <p><strong>Files:</strong></p>
 <ul>
@@ -662,7 +1009,42 @@ codepen:
   [orientation=vertical] 
 %}
 </code></pre>
-<p><strong>Example:</strong></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Parameter</th>
+<th>optional/default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>imgFileOriginal</code></td>
+<td>-</td>
+<td>Original asset image file name</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>imgFileModified</code></td>
+<td>-</td>
+<td>Modified asset image file name</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>descriptionModified</code></td>
+<td>-</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>orientation</code></td>
+<td>null</td>
+<td>Vertical orientation Mode; set <code>vertical</code> to select</td>
+</tr>
+</tbody></table>
+<p><strong>Usage Example:</strong></p>
 <pre><code class="js">{% image_compare 
   &quot;example-image_ORIGINAL.jpg&quot;
   &quot;example-image_PRESET.jpg&quot;
@@ -702,7 +1084,7 @@ codepen:
   &quot;scope&quot;: &quot;markdown&quot;,
   &quot;prefix&quot;: &quot;hexo.kiko-io.image_compare&quot;,
   &quot;body&quot;: [
-    &quot;{% image_compare \&quot;${1:imgFileOriginal}\&quot; \&quot;${2:imgFileModified}\&quot; \&quot;${3:modDesc}\&quot; \&quot;${4:orientation}\&quot; %}&quot;
+    &quot;{% image_compare \&quot;${1:imgFileOriginal}\&quot; \&quot;${2:imgFileModified}\&quot; \&quot;${3:modDesc}\&quot; [\&quot;${4|vertical|}\&quot;] %}&quot;
   ],
   &quot;description&quot;: &quot;Insert kiko.io&#39;s image_compare&quot;
 }
@@ -716,7 +1098,36 @@ codepen:
 <p><strong>Syntax:</strong>  </p>
 <pre><code class="txt">{% image_link &quot;assetImg&quot; &quot;url&quot; &quot;alt&quot; %}
 </code></pre>
-<p><strong>Example:</strong></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Parameter</th>
+<th>optional/default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>assetImg</code></td>
+<td>-</td>
+<td>Asset image file name</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>url</code></td>
+<td>-</td>
+<td>Url to link to</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>alt</code></td>
+<td>-</td>
+<td>Alternate text</td>
+</tr>
+</tbody></table>
+<p><strong>Usage Example:</strong></p>
 <pre><code class="js">{% image_link &quot;kiko-io-screenshot.png&quot; &quot;http://kiko.io&quot; &quot;Blog kiko.io&quot; %}
 </code></pre>
 <p><strong>Output:</strong></p>
@@ -738,7 +1149,7 @@ codepen:
 <h2 id="Image-Slide"><a href="#Image-Slide" class="headerlink" title="Image Slide"></a>Image Slide</h2><p>Shows multiple images within a slider with the aid of the JS library <a href="https://github.com/ganlanyuan/tiny-slider">Tiny Slider</a>.</p>
 <p><strong>Files:</strong></p>
 <ul>
-<li><a href="https://github.com/kristofzerbe/hexo-tag-plugins/blob/main/tag-XXX.js">tag-XXX.js</a></li>
+<li><a href="https://github.com/kristofzerbe/hexo-tag-plugins/blob/main/tag-image-slide.js">tag-image-slide.js</a></li>
 </ul>
 <p><strong>Prequisites:</strong></p>
 <p>As this tag plugin relies on an external JS library, the files <code>tiny-slider.js</code> and <code>tiny-slider.css</code> (or its minified versions) must be loaded in the header of the web page.</p>
@@ -763,7 +1174,24 @@ codepen:
 <p><strong>Syntax:</strong>  </p>
 <pre><code class="txt">{% image_slide ...&quot;assetImg|title&quot; %}
 </code></pre>
-<p><strong>Example:</strong></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Parameter</th>
+<th>optional/default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>...&quot;assetImg|title&quot;</code></td>
+<td></td>
+<td>List of pipe separated items with asset image file and title</td>
+</tr>
+</tbody></table>
+<p><strong>Usage Example:</strong></p>
 <pre><code class="js">{% image_slide
   &quot;example-image_ORIGINAL.jpg|Original&quot;
   &quot;example-image_PRESET.jpg|Lightroom Preset&quot;
@@ -814,9 +1242,38 @@ indiepen:
   height: 450
 </code></pre>
 <p><strong>Syntax:</strong>  </p>
-<pre><code class="txt">{% indiepen &quot;subfolder&quot; [height=450] defaultTab:(result,html,css,js) %}
+<pre><code class="txt">{% indiepen &quot;subfolder&quot; [height] [defaultTab:(result,html,css,js)] %}
 </code></pre>
-<p><strong>Example:</strong></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Parameter</th>
+<th>optional/default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>subfolder</code></td>
+<td></td>
+<td>Asset subfolder with indiepen files</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>defaultTab</code></td>
+<td>result</td>
+<td>Default tab to show ; select out of <code>result</code>, <code>html</code>, <code>js</code> or <code>css</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>height</code></td>
+<td>450</td>
+<td>Height as number</td>
+</tr>
+</tbody></table>
+<p><strong>Usage Example:</strong></p>
 <pre><code class="js">{% indiepen &quot;my-pen&quot; 300 html %}
 </code></pre>
 <p><strong>Output:</strong></p>
@@ -852,7 +1309,7 @@ indiepen:
   [ &quot;publisher&quot;, &quot;title&quot;, &quot;url&quot; ]
 ]}&#39; %}
 </code></pre>
-<p><strong>Example:</strong></p>
+<p><strong>Usage Example:</strong></p>
 <pre><code class="js">{% moreinfo &#39;{ &quot;list&quot;: [
   [ &quot;Wikipedia&quot;, &quot;Markdown&quot;,
   &quot;https://en.wikipedia.org/wiki/Markdown&quot; ],
@@ -896,7 +1353,13 @@ indiepen:
 }
 </code></pre>
 <p><img src="https://raw.githubusercontent.com/kristofzerbe/hexo-tag-plugins/main/assets/divider.png" alt="-"></p>
-<h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><p><strong>2021-12-12</strong> </p>
+<h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><p><strong>2021-12-29</strong></p>
+<ul>
+<li>Description of parameters added</li>
+<li><strong>Github Readme</strong> added</li>
+<li><strong>GitHub User &amp; Repo Card</strong> added</li>
+</ul>
+<p><strong>2021-12-12</strong> </p>
 <ul>
 <li>Initial Commit</li>
 </ul>
@@ -975,21 +1438,28 @@ indiepen:
           <p>Hexo Tag Plugin Collection from kiko.io</p>
           <div class="gh-language-bar">
             
-      <span style="background-color: #f1e05a; width: 77.9%;"></span>
+      <span style="background-color: #f1e05a; width: 64.2%;"></span>
     
-      <span style="background-color: #563d7c; width: 22.1%;"></span>
+      <span style="background-color: #e34c26; width: 18.7%;"></span>
+    
+      <span style="background-color: #563d7c; width: 17.1%;"></span>
     
           </div>
           <ul class="gh-language-list">
             
       <li>
         <svg xmlns="http://www.w3.org/2000/svg" style="color:#f1e05a !important;" aria-hidden="true" viewBox="0 0 16 16" data-view-component="true"><path fill-rule="evenodd" d="M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
-        <strong>JavaScript</strong><span>77.9%</span>
+        <strong>JavaScript</strong><span>64.2%</span>
+      </li>
+    
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" style="color:#e34c26 !important;" aria-hidden="true" viewBox="0 0 16 16" data-view-component="true"><path fill-rule="evenodd" d="M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
+        <strong>HTML</strong><span>18.7%</span>
       </li>
     
       <li>
         <svg xmlns="http://www.w3.org/2000/svg" style="color:#563d7c !important;" aria-hidden="true" viewBox="0 0 16 16" data-view-component="true"><path fill-rule="evenodd" d="M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
-        <strong>CSS</strong><span>22.1%</span>
+        <strong>CSS</strong><span>17.1%</span>
       </li>
     
           </ul>
@@ -1002,7 +1472,7 @@ indiepen:
     </div>
   
 
-<p>See <a href="https://github.com/kristofzerbe/hexo-tag-plugins#github-user-and-repo-card">https://github.com/kristofzerbe/hexo-tag-plugins#github-user-and-repo-card</a> for more details.</p>
+<p>See <a href="https://github.com/kristofzerbe/hexo-tag-plugins#github-user-repo-card">https://github.com/kristofzerbe/hexo-tag-plugins#github-user-repo-card</a> for more details.</p>
 
     </div>
     
