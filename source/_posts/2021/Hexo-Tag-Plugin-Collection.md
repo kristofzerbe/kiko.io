@@ -51,7 +51,7 @@ On the Github page you can find all the info on how to use the plugins. In this 
 
 Anchor element as ``A``- or ``HR``-Tag as jump target for example from a ``Anchorlist``.
 
-**Example:**
+**Usage Example:**
 
 ```js
 {% anchor "my-anchor" HR  %}
@@ -71,7 +71,7 @@ See [https://github.com/kristofzerbe/hexo-tag-plugins#anchor](https://github.com
 
 Creates an overview of all anchors in the content with jump links.
 
-**Example:**
+**Usage Example:**
 
 ```js
 {% anchorlist
@@ -97,7 +97,7 @@ Renders a iconized colored box with text for warnings or with some special infor
 
 This plugin uses a FontAwesome font for the icons and some styles that also need to be included in your Hexo project.
 
-**Example:**
+**Usage Example:**
 
 ```js
 {% alertbox warning %}
@@ -139,7 +139,7 @@ See [https://github.com/kristofzerbe/hexo-tag-plugins#alertbox](https://github.c
 
 An alternative blockquote tag plugin for quotes with citator and reference url.
 
-**Example:**
+**Usage Example:**
 
 ```js
 {% blockquote_alt "Anonymous" "https://en.wikipedia.org/wiki/Lorem_ipsum" %}
@@ -161,7 +161,7 @@ See [https://github.com/kristofzerbe/hexo-tag-plugins#alternative-blockquote](ht
 
 Blockquote including summary, citator and reference url, wrapped in a ``details`` tag.
 
-**Example:**
+**Usage Example:**
 
 ```js
 {% blockquote_details "Lorem ipsum" "Anonymous" "https://en.wikipedia.org/wiki/Lorem_ipsum" %}
@@ -183,7 +183,7 @@ See [https://github.com/kristofzerbe/hexo-tag-plugins#blockquote-details](https:
 
 Embedding a pen from [Codepen](https://codepen.io).
 
-**Example:**
+**Usage Example:**
 
 ```js
 {% codepen "MWEbERg" "Lorem Ipsum" html 250 %}
@@ -201,7 +201,7 @@ See [https://github.com/kristofzerbe/hexo-tag-plugins#codepen](https://github.co
 
 Tag Plugin for embedding a sandbox from [CodeSandbox](https://codesandbox.io/).
 
-**Example:**
+**Usage Example:**
 
 ```js
 {% codesandbox "cool-shamir-de613" "Lorem Ipsum" 300 %}
@@ -219,7 +219,7 @@ See [https://github.com/kristofzerbe/hexo-tag-plugins#codesandbox](https://githu
 
 Button link for downloading an asset file, with additional caption ("Download &lt;additionalCaption&gt; &lt;assetFile&gt;").
 
-**Example:**
+**Usage Example:**
 
 ```js
 {% download_link "example-image_ORIGINAL.jpg" "Photo" %}
@@ -237,7 +237,7 @@ See [https://github.com/kristofzerbe/hexo-tag-plugins#download-link](https://git
 
 Comparing two images side-by-side with the aid of the JS library [Image Compare Viewer](https://image-compare-viewer.netlify.app/).
 
-**Example:**
+**Usage Example:**
 
 ```js
 {% image_compare 
@@ -263,7 +263,7 @@ See [https://github.com/kristofzerbe/hexo-tag-plugins#image-compare](https://git
 
 Renders an image including ALT attribute within a link.
 
-**Example:**
+**Usage Example:**
 
 ```js
 {% image_link "kiko-io-screenshot.png" "http://kiko.io" "Blog kiko.io" %}
@@ -281,7 +281,7 @@ See [https://github.com/kristofzerbe/hexo-tag-plugins#image-link](https://github
 
 Shows multiple images within a slider with the aid of the JS library [Tiny Slider](https://github.com/ganlanyuan/tiny-slider).
 
-**Example:**
+**Usage Example:**
 
 ```js
 {% image_slide
@@ -305,7 +305,7 @@ See [https://github.com/kristofzerbe/hexo-tag-plugins#image-slide](https://githu
 
 Embedding a "local" pen (`index.html`, `main.js` and `styles.css` stored in an asset subfolder) via [Indiepen](https://indiepen.tech).
 
-**Example:**
+**Usage Example:**
 
 ```js
 {% indiepen "indiepen-example" 300 html %}
@@ -323,7 +323,7 @@ See [https://github.com/kristofzerbe/hexo-tag-plugins#indiepen](https://github.c
 
 Renders a list of related, informative links regarding a post.
 
-**Example:**
+**Usage Example:**
 
 ```js
 {% moreinfo '{ "list": [

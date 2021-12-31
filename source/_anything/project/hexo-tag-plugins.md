@@ -17,3 +17,5 @@ For more information visit:
 <span style="margin-top:25px">or</span>
 <a href="https://open.vscode.dev/kristofzerbe/hexo-tag-plugins" class="vscode"><img src="/images/vscode.svg" alt="VSCode" /><span>Open in VSCode</span></a>
 </div>
+
+<!-- {% github_readme "kristofzerbe" "hexo-tag-plugins" %} -->

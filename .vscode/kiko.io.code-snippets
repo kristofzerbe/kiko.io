@@ -46,7 +46,7 @@
 		"scope": "markdown",
 		"prefix": "hexo.kiko-io.blockquote",
 		"body": [
-			"{% blockquote_alt \"${1:cite}\" \"${2:citeUrl}\" %}",
+			"{% blockquote_alt \"${1:cite}\" [\"${2:citeUrl}\"] %}",
 			"${3:content}",
 			"{% endblockquote_alt %}"
 		],
@@ -56,7 +56,7 @@
 		"scope": "markdown",
 		"prefix": "hexo.kiko-io.blockquote_details",
 		"body": [
-			"{% blockquote_details \"${1:summary}\" \"${2:cite}\" \"${3:citeUrl}\" %}",
+			"{% blockquote_details \"${1:summary}\" \"${2:cite}\" [\"${3:citeUrl}\"] %}",
 			"${4:quote}",
 			"{% endblockquote_details %}"
 		],
@@ -66,7 +66,7 @@
 		"scope": "markdown",
 		"prefix": "hexo.kiko-io.codepen",
 		"body": [
-			"{% codepen \"${1:slugHash}\" \"${2:title}\" ${3|html,js,css|} ${4:height} ${5:width} %}"
+			"{% codepen \"${1:slugHash}\" \"${2:title}\" [${3|html,js,css|}] [${4:height}] [\"${5:width}\"] %}"
 		],
 		"description": "Insert kiko.io's codepen"
 	},
@@ -74,7 +74,7 @@
 		"scope": "markdown",
 		"prefix": "hexo.kiko-io.codesandbox",
 		"body": [
-			"{% codesandbox ${1:\"slugHash}\" \"${2:title}\" ${3:height} ${4:width} %}"
+			"{% codesandbox ${1:\"slugHash}\" \"${2:title}\" [${3:height}] [\"${4:width}\"] %}"
 		],
 		"description": "Insert kiko.io's codesandbox"
 	},
@@ -96,11 +96,27 @@
 		],
 		"description": "Insert kiko.io's download_link"
 	},
+	"hexo.kiko-io.github_readme": {
+		"scope": "markdown",
+		"prefix": "hexo.kiko-io.github_readme",
+		"body": [
+			"{% github_readme \"${1:user}\" \"${2:repo}\" \"${3:[summary]}\" %}"
+		],
+		"description": "Insert kiko.io's github_readme"
+	},
+	"hexo.kiko-io.github_user_and_repo_card": {
+		"scope": "markdown",
+		"prefix": "hexo.kiko-io.github_user_and_repo_card",
+		"body": [
+			"{% github_user_and_repo_card \"${1:user}\" \"${2:repo}\" \"${3:[cardWidth]}\" \"${4:[userhight]}\" \"${5:[avatarSize]}\" %}"
+		],
+		"description": "Insert kiko.io's github_user_and_repo_card"
+	},
 	"hexo.kiko-io.image_compare": {
 		"scope": "markdown",
 		"prefix": "hexo.kiko-io.image_compare",
 		"body": [
-			"{% image_compare \"${1:imgFileOriginal}\" \"${2:imgFileModified}\" \"${3:modDesc}\" \"${4:orientation}\" %}"
+			"{% image_compare \"${1:imgFileOriginal}\" \"${2:imgFileModified}\" \"${3:modDesc}\" [\"${4|vertical|}\"] %}"
 		],
 		"description": "Insert kiko.io's image_compare"
 	},

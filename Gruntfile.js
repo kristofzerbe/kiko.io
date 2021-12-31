@@ -100,7 +100,8 @@ module.exports = function(grunt){
         src: [
           'themes/landscape/assets/lc-select/lc_select.css',
           'themes/landscape/assets/image-compare-viewer/image-compare-viewer.css',
-          'themes/landscape/assets/tiny-slider/tiny-slider.css'
+          'themes/landscape/assets/tiny-slider/tiny-slider.css',
+          'themes/landscape/assets/github-cards.css'
         ],
         dest: 'themes/landscape/tmp/asset-bundle.css'
       }

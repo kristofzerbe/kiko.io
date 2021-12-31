@@ -2,7 +2,7 @@
   Codepen Tag - Customized from https://github.com/bibixx/hexo-tag-codepen
 
   Syntax:
-  {% codepen "slugHash" "title" defaultTab:(html,js,css) [height] [width] %}
+  {% codepen "slugHash" "title" [defaultTab:(html,js,css)] [height] ["width"] %}
 */
 
 hexo.extend.tag.register("codepen", function(args, content){
