@@ -62,4 +62,4 @@ Renders a card-like info panel, with full information about a GitHub repo and it
 
 {% github_user_and_repo_card "kristofzerbe" "hexo-tag-plugins" "500px" %}
 
-See [https://github.com/kristofzerbe/hexo-tag-plugins#github-user-repo-card](https://github.com/kristofzerbe/hexo-tag-plugins#github-user-repo-card) for more details.
+See [https://github.com/kristofzerbe/hexo-tag-plugins#github-user--repo-card](https://github.com/kristofzerbe/hexo-tag-plugins#github-user--repo-card) for more details.
