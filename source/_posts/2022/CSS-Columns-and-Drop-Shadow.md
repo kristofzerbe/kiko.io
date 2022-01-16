@@ -44,6 +44,8 @@ By applying ``column-count`` and ``column-gap`` to the wrapper and a ``margin-bo
 
 The order of the boxes is from top to bottom and then from left to right ... Fake Masonry, but is works as expected. Here is the most important CSS:
 
+<!-- more -->
+
 ```CSS
 :root {
   --gap: 20px;
@@ -74,8 +76,6 @@ The order of the boxes is from top to bottom and then from left to right ... Fak
 }
 ```
 
-<!-- more -->
-
 See the pen for the complete HTML and CSS:
 
 {% indiepen "sample-columns" 410 result %}
@@ -84,7 +84,7 @@ See the pen for the complete HTML and CSS:
 
 ## Drop Shadow and the Chromium Bug
 
-To make the list visually a little bit more interesting, we now add a shadow, which is half as thick as the gap, to the boxes, like this:
+To make the list visually a little bit more interesting, we now add a shadow, which is half as thick as the gap, to the boxes:
 
 ```CSS
 :root {
@@ -98,11 +98,13 @@ To make the list visually a little bit more interesting, we now add a shadow, wh
 }
 ```
 
-In case you work with a Chromium based browser (Version 97.x as of today), you will be confronted with a bug. The "break" from one column to the next doesn't respect the full 10px high shadow of the next item. It breaks too early. You will get this:
+In case you work with a Chromium based browser (Version 97.x as of today), you will be confronted with a bug. The "break" from one column to the next doesn't respect the full 10px high shadow of the next item. **It breaks too early**. You will get something like this:
 
 ![Column layout with DropShadow in Chromium](CSS-Columns-and-Drop-Shadow/sample-columns-shadows.png)
 
+{% alertbox info %}
 I added a red shadow on hover to make the bug more obvious. See following pen to inspect the CSS. In case you use Firefox (Version 96.x as of today), you won't see the bug, because Mozilla did it right.
+{% endalertbox %}
 
 {% indiepen "sample-columns-shadows" 410 result %}
 
@@ -112,7 +114,7 @@ I added a red shadow on hover to make the bug more obvious. See following pen to
 
 ### Step 1
 
-In order to achieve a proper result, we have to hack the HTML and the CSS a bit. First of all we have to wrap the content of an item with a new element called `ìtem-inner``:
+In order to achieve a proper result, we have to hack the HTML and the CSS a bit. First of all we have to wrap the content of an item with a new element called ``ìtem-inner``:
 
 ```html
 <div class="item">
@@ -125,7 +127,7 @@ In order to achieve a proper result, we have to hack the HTML and the CSS a bit.
 
 ### Step 2
 
-Next, we move the width, the border and the shadow from the item itself to the new inner element. Important here is to set the background of the ``item`` element to transparent in order to prevent interfering with the shadow.
+Next, we move the ``width``, the ``border`` and the ``box-shadow`` from the item itself to the new inner element. Important here is to set the background of the ``item`` element to ``transparent`` in order to prevent interfering with the shadow.
 
 ```CSS
 :root {
