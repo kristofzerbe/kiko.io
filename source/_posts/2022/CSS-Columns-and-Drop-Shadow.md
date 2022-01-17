@@ -88,7 +88,8 @@ To make the list visually a little bit more interesting, we now add a shadow, wh
 
 ```CSS
 :root {
-  /* ... more variables */
+  --gap: 20px;
+  --gap-half: calc(var(--gap) / 2);
   --color-border: hsl(0 0% 90%);
 }
 .item {
@@ -98,12 +99,12 @@ To make the list visually a little bit more interesting, we now add a shadow, wh
 }
 ```
 
-In case you work with a Chromium based browser (Version 97.x as of today), you will be confronted with a bug. The "break" from one column to the next doesn't respect the full 10px high shadow of the next item. **It breaks too early**. You will get something like this:
+In case you work with a Chromium based browser (Version 97.x as of today), you will be confronted with a bug. The "break" from one column to the next doesn't respect the full 10px high shadow of the next item. **It breaks too late**. You will get something like this:
 
 ![Column layout with DropShadow in Chromium](CSS-Columns-and-Drop-Shadow/sample-columns-shadows.png)
 
 {% alertbox info %}
-I added a red shadow on hover to make the bug more obvious. See following pen to inspect the CSS. In case you use Firefox (Version 96.x as of today), you won't see the bug, because Mozilla did it right.
+I added a red shadow on hover, to make the bug more obvious. See following pen to inspect the CSS. In case you use Firefox (Version 96.x as of today), you won't see the bug, because Mozilla did it right.
 {% endalertbox %}
 
 {% indiepen "sample-columns-shadows" 410 result %}
@@ -127,7 +128,7 @@ In order to achieve a proper result, we have to hack the HTML and the CSS a bit.
 
 ### Step 2
 
-Next, we move the ``width``, the ``border`` and the ``box-shadow`` from the item itself to the new inner element. Important here is to set the background of the ``item`` element to ``transparent`` in order to prevent interfering with the shadow.
+Next, we move the ``width``, the ``border`` and the ``box-shadow`` from the item itself to the new inner element. Important here is, to set the background of the ``item`` element to ``transparent`` in order to prevent interfering with the shadow.
 
 ```CSS
 :root {
@@ -155,13 +156,13 @@ Next, we move the ``width``, the ``border`` and the ``box-shadow`` from the item
 
 ### Step 3
 
-Now we have to set the ``wrapper``'s gap to 0, because we will implement the spacing if the items by applying different paddings to the ``item`` element: **half of the gap** to be reached to the ``left``, the ``right`` and the ``bottom`` padding and the **full gap** to the ``top``. The latter, to achieve pushing the previous element far enough away so as not to see anything of the shadow.
+Now we have to set the ``wrapper``'s gap to 0, because we will implement the spacing of the items by applying different paddings to the ``item`` element: **half of the gap** to be reached, to the ``left``, the ``right`` and the ``bottom`` padding and the **full gap** to the ``top``. The latter, to achieve pushing the previous element far enough away so as not to see anything of the shadow.
 
 But because this would mean that the horizontal gap would be too large by half, we have to use a negative margin to pull the element up by that amount.  
 
 ![Chromium Columns Shadows Fix Step 3.1](CSS-Columns-and-Drop-Shadow/sample-columns-shadows-fix-step1.png)
 
-This in turn would mean that the first ``item`` element in the list would be too high by the now defined negative top margin, which we correct again by using ``item:first-child``.
+This in turn would mean, that the first ``item`` element in the list would be too high by the now defined negative top margin, which we correct again by using ``item:first-child``.
 
 ![Chromium Columns Shadows Fix Step 3.2](CSS-Columns-and-Drop-Shadow/sample-columns-shadows-fix-step2.png)
 
@@ -199,7 +200,7 @@ Here is the complete solution as a pen:
 
 ## Conclusion
 
-Maybe the Chromium team will fix the bug as soon as possible, to no longer have to rely on this hack, but the really best solution would be, to finish the work already started on the [**true grid masonry solution**](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout), which currently only Firefox offers behind a flag.
+Maybe the Chromium team will fix the bug as soon as possible, to no longer have to rely on this hack, but the really best solution would be, to finish the work already started on the [**true grid masonry**](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout), which currently only Firefox offers behind a flag.
 
 ---
 
