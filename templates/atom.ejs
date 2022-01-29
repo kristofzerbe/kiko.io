@@ -42,6 +42,9 @@
         <updated><%= moment(post.date).toISOString() %></updated>
         <%_ } _%>
         <link href="<%= post.permalink %>"/>
+        <%_ if (post.photograph) { _%>
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="<%= config.url + '/images/social-media/' + slug + '.png' %>" height="1200" width="630" />
+        <%_ } _%>
         <content type="html">
             <%_ const regEx = /<(script|style)[^>]*>(?<content>[^<]*)<\/(script|style)>/gim; _%>
             <%_ let feedContent = post.excerpt.replace(regEx, "") _%>
