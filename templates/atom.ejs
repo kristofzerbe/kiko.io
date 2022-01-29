@@ -34,6 +34,9 @@
             <updated><%= moment(post.date).toISOString() %></updated>
         <%_ } _%>
         <link href="<%= post.permalink %>"/>
+        <%_ if (post.photograph) { _%>
+            <my:image><%= config.url + '/images/social-media/' + slug + '.png' %></my:image>
+        <%_ } _%>
         <content type="html">
             <%_ const regEx = /<(script|style)[^>]*>(?<content>[^<]*)<\/(script|style)>/gim; _%>
             <%_ let feedContent = post.excerpt.replace(regEx, "") _%>
