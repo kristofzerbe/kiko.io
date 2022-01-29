@@ -17,6 +17,8 @@ related:
   - Discoveries-13
 ---
 
+In the first discoveries of 2022 I would like to offer you some interesting links to JavaScript articles that have general language features as their topic or extend them in a clever way. The language (respectively the [ECMA standard](https://en.wikipedia.org/wiki/ECMAScript) behind it) is growing from year to year and it is exiting to see how it is expanding.
+
 {% anchorlist  
   "Modern Javascript: Everything you missed over the last 10 years|modern-javascript"
   "How can I define an enum in JavaScript?|define-enum"
@@ -29,8 +31,6 @@ related:
   "Toolkit for managing multiple promises|antfu-p"
   "Promisify an entire object or class instance|promisify"
 %}
-
-In the first discoveries of 2022 I would like to offer you some interesting links to JavaScript articles that have general language features as their topic or extend them in a clever way. The language (respectively the [ECMA standard](https://en.wikipedia.org/wiki/ECMAScript) behind it) is growing from year to year and it is exiting to see how it is expanding.
 
 <!-- more -->
 
