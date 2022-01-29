@@ -30,7 +30,7 @@ The [``:where()``](https://developer.mozilla.org/en-US/docs/Web/CSS/:where) pseu
 }
 ```
 
-On the other hand, it is a so called **forgiving selector**, which rougly means, if one of the selectors in a selector list isn't exist valid, it works nevertheless.
+On the other hand, it is a so called **forgiving selector**, which rougly means, if one of the selectors in a selector list isn't valid, it works nevertheless.
 
 </section>
 
