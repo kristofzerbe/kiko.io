@@ -238,6 +238,18 @@
 
 <div class="page-content">
     <section>
+<time>29 Jan 2022</time>
+
+<h2 id="CSS’s-where"><a href="#CSS’s-where" class="headerlink" title="CSS’s :where()"></a>CSS’s :where()</h2><p>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:where"><code>:where()</code></a> pseudo selector helps you writing cleaner code on the one hand. Instead of writing:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span> <span class="selector-tag">h1</span>,</span><br><span class="line"><span class="selector-class">.wrapper</span> <span class="selector-tag">h2</span>,</span><br><span class="line"><span class="selector-class">.wrapper</span> <span class="selector-tag">h3</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>… you can do:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span> <span class="selector-pseudo">:where</span>(<span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>) &#123;</span><br><span class="line">  <span class="attribute">color</span> red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>On the other hand, it is a so called <strong>forgiving selector</strong>, which rougly means, if one of the selectors in a selector list isn’t exist valid, it works nevertheless.</p>
+</section>
+
+<section>
 <time>07 Jan 2022</time>
 
 <h2 id="IIS-Allow-Plus-sign-in-Url’s"><a href="#IIS-Allow-Plus-sign-in-Url’s" class="headerlink" title="IIS: Allow Plus sign in Url’s"></a>IIS: Allow Plus sign in Url’s</h2><p>Due to <a href="https://blogs.iis.net/thomad/iis7-rejecting-urls-containing">security reasons</a> IIS only allows the <code>+</code> sign in query strings. But sometimes you may have an image file like <code>landscape + night.jpg</code>, which won’t be shown on your website.</p>

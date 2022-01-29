@@ -8,6 +8,33 @@ photograph:
 ---
 
 <section>
+<time>29 Jan 2022</time>
+
+## CSS's :where()
+
+The [``:where()``](https://developer.mozilla.org/en-US/docs/Web/CSS/:where) pseudo selector helps you writing cleaner code on the one hand. Instead of writing:
+
+```CSS
+.wrapper h1,
+.wrapper h2,
+.wrapper h3 {
+  color: red;
+}
+```
+
+... you can do:
+
+```CSS
+.wrapper :where(h1, h2, h3) {
+  color red;
+}
+```
+
+On the other hand, it is a so called **forgiving selector**, which rougly means, if one of the selectors in a selector list isn't exist valid, it works nevertheless.
+
+</section>
+
+<section>
 <time>07 Jan 2022</time>
 
 ## IIS: Allow Plus sign in Url's
