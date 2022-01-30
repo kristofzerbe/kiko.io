@@ -1,6 +1,6 @@
 # kiko.io
 
-GitHub page for memorable tech stuff, published under http://kiko.io
+GitHub page for memorable tech stuff, published under https://kiko.io
 
 ## Latest Posts
 <!-- BLOG-POST-LIST:START -->
