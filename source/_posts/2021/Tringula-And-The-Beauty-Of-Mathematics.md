@@ -10,7 +10,7 @@ series: Golem
 golem:
   title: Tringula und die Schönheit der Mathematik
   url: https://www.golem.de/news/bildbearbeitungstool-bei-github-triangula-und-die-schoenheit-der-mathematik-2111-161275.html
-  published: 2011-11-29
+  published: 2021-11-29
 categories:
   - Tools
 tags:
