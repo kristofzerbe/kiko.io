@@ -52,8 +52,8 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
 
 function getPoolPhotos(config) {
   
-  var poolDir = hexo.source_dir.replace("\source", hexo.config.static_dir + "\\" + hexo.config.pool_dir);
-
+  var poolDir = hexo.source_dir.replace("\source", hexo.config.static_dir + "\/" + hexo.config.pool_dir);
+console.log('>>> ' + hexo.source_dir + ' -> ' + poolDir);
   let pool = fs
     .readdirSync(poolDir)
     .filter(entry => fs.statSync(path.join(poolDir, entry)).isDirectory())

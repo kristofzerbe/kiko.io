@@ -33,7 +33,7 @@ What was exciting for me was the question of how long it would take for someone 
 
 ### github.dev and Github Codespaces
 
-In Juli 2021 GutHub announced the availability of **[github.dev]()** and **[GitHub Codespaces](https://github.com/features/codespaces)**. The main difference between these two solutions is that Codespaces runs the IDE within a container (VM) in the background, which enables you to run your project and ... it is only available for paid plans.
+In Juli 2021 GitHub announced the availability of **[github.dev]()** and **[GitHub Codespaces](https://github.com/features/codespaces)**. The main difference between these two solutions is that Codespaces runs the IDE within a container (VM) in the background, which enables you to run your project and ... it is only available for paid plans.
 
 The main purpose of github.dev is to serve as a call target of the so-called **Magic Dot**, an easy way to open any repository in an editor. I blogged about this capabilty a while ago, see {% post_link 2021/GitHubs-Magic-Dot %}. Really amazing! Just press the ``dot`` key on every repository and you can browse the code files.
 
