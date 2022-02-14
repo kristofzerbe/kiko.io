@@ -38,7 +38,7 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
   page.items = [...p1, ...p2, ...p3]
     .filter(p => (p.name)) //filter out all without photo name
     .sort((a, b) => a.key.localeCompare(b.key));
-//console.log(page.items);
+  //log.debug(page.items);
 
   let result = {
       data: page,
@@ -52,8 +52,10 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
 
 function getPoolPhotos(config) {
   
-  var poolDir = hexo.source_dir.replace("\source", hexo.config.static_dir + "\/" + hexo.config.pool_dir);
-console.log('>>> ' + hexo.source_dir + ' -> ' + poolDir);
+  //var poolDir = hexo.source_dir.replace("\source", hexo.config.static_dir + "\/" + hexo.config.pool_dir);
+  var poolDir = path.join(hexo.source_dir.replace("source", ""), hexo.config.static_dir, hexo.config.pool_dir);
+  log.debug('poolDir = ' + hexo.source_dir + ' -> ' + poolDir);
+
   let pool = fs
     .readdirSync(poolDir)
     .filter(entry => fs.statSync(path.join(poolDir, entry)).isDirectory())
@@ -76,7 +78,9 @@ console.log('>>> ' + hexo.source_dir + ' -> ' + poolDir);
 
 function getPostAndPagePhotos(config, locals) {
 
-  var usedDir = hexo.source_dir.replace("\source", hexo.config.static_dir + "\\" + hexo.config.photo_dir) + "\mobile";
+  //var usedDir = hexo.source_dir.replace("\source", hexo.config.static_dir + "\/" + hexo.config.photo_dir) + "/mobile";
+  var usedDir = path.join(hexo.source_dir.replace("\source", ""), hexo.config.static_dir, hexo.config.photo_dir, "mobile");
+  log.debug('usedDir = ' + hexo.source_dir + ' -> ' + usedDir);
 
   let used = fs
     .readdirSync(usedDir)
