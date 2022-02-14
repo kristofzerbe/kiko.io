@@ -4,6 +4,9 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
 ## Latest Posts
 <!-- BLOG-POST-LIST:START -->
+ - [Checker Plus - Gmail in better](https://kiko.io/post/Checker-Plus-Gmail-in-better/)   
+ 13 Feb 2022   
+
  - [Discoveries #16 - JavaScript](https://kiko.io/post/Discoveries-16-JavaScript/)   
  29 Jan 2022   
 
@@ -18,7 +21,4 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
  - [Hexo Tag Plugin Collection](https://kiko.io/post/Hexo-Tag-Plugin-Collection/)   
  12 Dec 2021   
-
- - [Tringula And The Beauty Of Mathematics](https://kiko.io/post/Tringula-And-The-Beauty-Of-Mathematics/)   
- 07 Dec 2021   
 <!-- BLOG-POST-LIST:END -->
