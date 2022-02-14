@@ -84,7 +84,7 @@
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 <body id="body">  
   <div id="container" class="container">
@@ -311,7 +311,7 @@
 <p>Then we change the placement in the EJS file, by defining a placeholder  and ensuring that the script above is loaded, before we call it:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;comment-placeholder&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  window.addEventListener(&#39;load&#39;, function () &#123;</span><br><span class="line">    insertUtterancesCommentBlock();</span><br><span class="line">  &#125;)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 
-<p>On my blog, everytime the user switches between light/dark mode the <code>body</code> tag will be decorated with the data tag <code>data-theme</code> and the value of the mode. To keep the loading of the utterances script independent from this functionality, we just have to listen to this change via <code>MutationObserver</code>:</p>
+<p>On my blog, everytime the user switches between light&#x2F;dark mode the <code>body</code> tag will be decorated with the data tag <code>data-theme</code> and the value of the mode. To keep the loading of the utterances script independent from this functionality, we just have to listen to this change via <code>MutationObserver</code>:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//observe theme change, to adjust comment block theme</span></span><br><span class="line"><span class="keyword">var</span> target = <span class="built_in">document</span>.documentElement,</span><br><span class="line">    observer = <span class="keyword">new</span> MutationObserver(<span class="function"><span class="keyword">function</span>(<span class="params">mutations</span>) </span>&#123;</span><br><span class="line">        mutations.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">mutation</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (mutation.attributionName === <span class="string">&quot;data-theme&quot;</span> );</span><br><span class="line">                insertUtterancesCommentBlock();</span><br><span class="line">            &#125;);        </span><br><span class="line">    &#125;),</span><br><span class="line">    config = &#123; <span class="attr">attributes</span>: <span class="literal">true</span> &#125;;</span><br><span class="line">observer.observe(target, config);</span><br></pre></td></tr></table></figure>
     </div>
     
@@ -321,15 +321,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckz08441k002mxchablra10px">
+      <div class="article-permalink" id="article-permalink-ckzmv3hkm002hl4ha5ccn3xd1">
     <input class="article-permalink-value" value="https://kiko.io/post/Using-GitHub-as-Commenting-Platform/" 
-           data-id="ckz08441k002mxchablra10px" data-title="Using GitHub as Commenting Platform" />
+           data-id="ckzmv3hkm002hl4ha5ccn3xd1" data-title="Using GitHub as Commenting Platform" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckz08441k002mxchablra10px");
+        initPermalink("ckzmv3hkm002hl4ha5ccn3xd1");
     });
 </script>
 

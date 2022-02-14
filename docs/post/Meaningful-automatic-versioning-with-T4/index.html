@@ -84,7 +84,7 @@
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 <body id="body">  
   <div id="container" class="container">
@@ -324,7 +324,7 @@
 <p>This new JSON file has two main items:</p>
 <ul>
 <li><code>initialDate</code> - the date the project has started, to calculate the REVISION later on</li>
-<li><code>versions</code> - a list with all different MAJOR/MINOR versions we have done so far, with at least one without a release date … the one with the highest <code>major</code> and <code>minor</code>.</li>
+<li><code>versions</code> - a list with all different MAJOR&#x2F;MINOR versions we have done so far, with at least one without a release date … the one with the highest <code>major</code> and <code>minor</code>.</li>
 </ul>
 <p>The <code>remarks</code> attribute of a list item holds some information about the changes in a new version. Together with <code>releaseDate</code>, useful for a possible release history, shown in the product itself.</p>
 <h3 id="Library-references-in-T4"><a href="#Library-references-in-T4" class="headerlink" title="Library references in T4"></a>Library references in T4</h3><p>T4 runs in its own app domain, therefore it can use built-in libraries as <code>System.IO</code>, but not third-party libraries like <code>Newtonsoft.JSON</code>. </p>
@@ -337,8 +337,8 @@
 <p>Now we can read and convert the JSON into an anonymous object and get the highest values of MAJOR and MINOR:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="meta">#</span></span><br><span class="line">    <span class="built_in">string</span> avPath = <span class="keyword">this</span>.Host.ResolvePath(<span class="string">&quot;AssemblyVersion.json&quot;</span>);</span><br><span class="line">    <span class="built_in">string</span> avJson = File.ReadAllText(avPath);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> avDefinition = <span class="keyword">new</span> &#123;</span><br><span class="line">        initialDate = <span class="string">&quot;&quot;</span>,</span><br><span class="line">        versions = <span class="keyword">new</span> [] &#123;</span><br><span class="line">            <span class="keyword">new</span> &#123;</span><br><span class="line">                major = <span class="number">0</span>,</span><br><span class="line">                minor = <span class="number">0</span>,</span><br><span class="line">                releaseDate = <span class="string">&quot;&quot;</span>,</span><br><span class="line">                remarks = <span class="string">&quot;&quot;</span> &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">var</span> avObject = JsonConvert.DeserializeAnonymousType(avJson, avDefinition);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Get highest Major/Minor from versions list</span></span><br><span class="line">    <span class="keyword">var</span> maxVersion = avObject.versions</span><br><span class="line">      .OrderByDescending(i =&gt; i.major)</span><br><span class="line">      .ThenByDescending(j =&gt; j.minor)</span><br><span class="line">      .First();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Set MAJOR</span></span><br><span class="line">    <span class="built_in">int</span> major = maxVersion.major;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Set MINOR</span></span><br><span class="line">    <span class="built_in">int</span> minor = maxVersion.minor;</span><br><span class="line"><span class="meta">#&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="The-BuildLog"><a href="#The-BuildLog" class="headerlink" title="The BuildLog"></a>The BuildLog</h2><p>In order to get the version number for BUILD, we need a method to count and store every build that has been run, separated by the MAJOR/MINOR versions. This is a job for a <strong>Post-build event</strong>, which can be configured in the project properties dialog. The event uses shell commands as they are used on the command line.</p>
-<p>What the commands should do:&nbsp;&nbsp;&nbsp;Write a new line with the current date and time in a log file, named after the MAJOR/MINOR version and stored in the folder <strong>AssemblyVersion\BuildLogs</strong>.</p>
+<h2 id="The-BuildLog"><a href="#The-BuildLog" class="headerlink" title="The BuildLog"></a>The BuildLog</h2><p>In order to get the version number for BUILD, we need a method to count and store every build that has been run, separated by the MAJOR&#x2F;MINOR versions. This is a job for a <strong>Post-build event</strong>, which can be configured in the project properties dialog. The event uses shell commands as they are used on the command line.</p>
+<p>What the commands should do:&amp;nbsp;&amp;nbsp;&amp;nbsp;Write a new line with the current date and time in a log file, named after the MAJOR&#x2F;MINOR version and stored in the folder <strong>AssemblyVersion\BuildLogs</strong>.</p>
 <p><img src="/post/Meaningful-automatic-versioning-with-T4/BuildLog.png" alt="Build Log"></p>
 <h3 id="Extending-build-event-macros"><a href="#Extending-build-event-macros" class="headerlink" title="Extending build event macros"></a>Extending build event macros</h3><p>Shell commands for build events are supporting built-in variables, so called ‘macros’, like <code>$(ProjectDir)</code> (which returns the project directory path), but there is no such macro for the current version number. We have to introduce it via extending the project with a new build target.</p>
 <p>Unload the project in Visual Studio for editing the CSPROJ (or VBPROJ) file of your product manually and write the following definition just before the end-tag:</p>
@@ -387,15 +387,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/T4/" rel="tag">T4</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Versioning/" rel="tag">Versioning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/" rel="tag">Visual Studio</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckz08441e0026xchacflvfg83">
+      <div class="article-permalink" id="article-permalink-ckzmv3hkl0029l4hae0hqegmc">
     <input class="article-permalink-value" value="https://kiko.io/post/Meaningful-automatic-versioning-with-T4/" 
-           data-id="ckz08441e0026xchacflvfg83" data-title="Meaningful automatic versioning with T4" />
+           data-id="ckzmv3hkl0029l4hae0hqegmc" data-title="Meaningful automatic versioning with T4" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckz08441e0026xchacflvfg83");
+        initPermalink("ckzmv3hkl0029l4hae0hqegmc");
     });
 </script>
 
