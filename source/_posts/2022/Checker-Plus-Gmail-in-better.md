@@ -1,16 +1,17 @@
 ---
-title: Checker Plus - Gmail in better
-subtitle: Few Chrome browser extensions are as close to user needs as Checker Plus for Google's Gmail, Calendar and Drive services.
-date: 2022-02-13 14:40:06
+title: Checker Plus - Gmail in better...
+subtitle: 'Few Chrome browser extensions are as close to user needs as Checker Plus for Google''s Gmail, Calendar and Drive services.'
+date: 2022-02-13T00:00:00.000Z
 photograph:
   file: DSC_2819.jpg
   name: Dicker Anton
   link: 'https://500px.com/photo/172323659'
+  socialmedia: /static/images/social-media/Checker-Plus-Gmail-in-better.thumb.png
 series: Golem
 golem:
   title: Checker Plus - Gmail in besser
-  url: https://www.golem.de/news/checker-plus-gmail-in-besser-2112-161804.html
-  published: 2021-12-20
+  url: 'https://www.golem.de/news/checker-plus-gmail-in-besser-2112-161804.html'
+  published: 2021-12-20T00:00:00.000Z
 categories:
   - Tools
 tags:
@@ -21,6 +22,7 @@ related:
   - Tringula-And-The-Beauty-Of-Mathematics
   - Application-Specific-Links-on-Windows-10
   - Hexo-Tag-Plugin-Collection
+hidden: false
 ---
 
 Those who have a Google account usually also use the web-based mailer [Gmail](https://gmail.com), often [Google Calendar](https://calendar.google.com) for appointments and perhaps [Google Drive](https://drive.google.com) for storing files in the cloud. The US internet company makes it very easy for users to use its web-based services. The entry barriers are low and the interfaces are tidy and intuitive.

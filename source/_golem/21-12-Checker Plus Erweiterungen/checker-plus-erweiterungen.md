@@ -3,8 +3,8 @@ key: checker-plus
 title: Google Dienste in ständiger Reichweite 
 author: Kristof Zerbe
 created: 2021-12-04
-published: 
-url:
+published: 2021-12-20
+url: https://www.golem.de/news/checker-plus-gmail-in-besser-2112-161804.html
 ---
 
 **Drei Chrome-Browser-Erweiterung aus Kanada für den schnellen Zugang zu den Google-Diensten Gmail, Calendar und Drive**

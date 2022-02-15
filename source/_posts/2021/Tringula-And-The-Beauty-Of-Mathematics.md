@@ -1,16 +1,17 @@
 ---
 title: Tringula And The Beauty Of Mathematics
 subtitle: Triangula is a great tool for artfully breaking up images into polygons. Another tool also makes it possible to use them as website placeholders.
-date: 2021-12-07 14:45:00
+date: 2021-12-07T14:45:00.000Z
 photograph:
   file: D50_0075.jpg
   name: Thomas Wild Tulips
   link: 'https://500px.com/photo/1031618832/thomas-wild-tulips-by-kristof-zerbe'
+  socialmedia: /static/images/social-media/Tringula-And-The-Beauty-Of-Mathematics.png
 series: Golem
 golem:
   title: Tringula und die Schönheit der Mathematik
-  url: https://www.golem.de/news/bildbearbeitungstool-bei-github-triangula-und-die-schoenheit-der-mathematik-2111-161275.html
-  published: 2021-11-29
+  url: 'https://www.golem.de/news/bildbearbeitungstool-bei-github-triangula-und-die-schoenheit-der-mathematik-2111-161275.html'
+  published: 2021-11-29T00:00:00.000Z
 categories:
   - Tools
 tags:
