@@ -1,11 +1,13 @@
 ---
+slug: Discoveries-12-Tutorials
 title: 'Discoveries #12 - Tutorials'
 subtitle: Some great articles from CSS masters
-date: 2021-07-30 10:41:51
+date: 2021-07-30T10:41:51.000Z
 photograph:
   file: 19-07 Schottland-0479.jpg
   name: Beer Barrels
   link: 'https://500px.com/photo/1022777513/Beer-Barrels-by-Kristof-Zerbe/'
+  socialmedia: /static/images/social-media/Discoveries-12-Tutorials.png
 series: Discoveries
 categories:
   - UI/UX

@@ -1,4 +1,5 @@
 ---
+slug: Checker-Plus-Gmail-in-better
 title: Checker Plus - Gmail in better...
 subtitle: 'Few Chrome browser extensions are as close to user needs as Checker Plus for Google''s Gmail, Calendar and Drive services.'
 date: 2022-02-13T00:00:00.000Z
@@ -6,7 +7,7 @@ photograph:
   file: DSC_2819.jpg
   name: Dicker Anton
   link: 'https://500px.com/photo/172323659'
-  socialmedia: /static/images/social-media/Checker-Plus-Gmail-in-better.thumb.png
+  socialmedia: /static/images/social-media/Checker-Plus-Gmail-in-better.png
 series: Golem
 golem:
   title: Checker Plus - Gmail in besser

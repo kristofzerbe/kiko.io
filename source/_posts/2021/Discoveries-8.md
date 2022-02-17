@@ -1,21 +1,23 @@
 ---
 alias: /categories/Discoveries/Discoveries-8/index.html
+slug: Discoveries-8
 title: 'Discoveries #8'
-subtitle:
-date: 2021-03-31 13:41:26
+subtitle: null
+date: 2021-03-31T13:41:26.000Z
 photograph:
   file: 19-05 Israel-0724.jpg
   name: Jad Vashem Vista
   link: 'https://500px.com/photo/1001751523/Jad-Vashem-Vista-by-Kristof-Zerbe'
+  socialmedia: /static/images/social-media/Discoveries-8.png
 series: Discoveries
 categories:
   - UI/UX
 tags:
   - Collection
 related:
-  - 'Discoveries-9'
-  - 'Discoveries-7'
-  - 'Discoveries-6'
+  - Discoveries-9
+  - Discoveries-7
+  - Discoveries-6
 ---
 
 This month my discoveries are all about CSS ... at least almost. See the stunning solutions developers around the world have created and take them to improve yours. Have fun exploring.

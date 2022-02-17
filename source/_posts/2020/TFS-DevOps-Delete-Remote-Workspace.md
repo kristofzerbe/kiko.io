@@ -1,12 +1,14 @@
 ---
 alias: /categories/Tools/TFS-DevOps-Delete-Remote-Workspace/index.html
+slug: TFS-DevOps-Delete-Remote-Workspace
 title: 'TFS/DevOps: Delete Remote Workspace'
-subtitle: 
-date: 2020-02-28
+subtitle: null
+date: 2020-02-28T00:00:00.000Z
 photograph:
-  file: '18-09 Kroatien-0061.jpg'
-  name: 'Abandonded Fitting'
+  file: 18-09 Kroatien-0061.jpg
+  name: Abandonded Fitting
   link: 'https://500px.com/photo/303714001/-by-Kristof-Zerbe'
+  socialmedia: /static/images/social-media/TFS-DevOps-Delete-Remote-Workspace.png
 tags:
   - TFS/DevOps
   - Visual Studio

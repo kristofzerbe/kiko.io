@@ -1,12 +1,14 @@
 ---
 alias: /categories/Discoveries/Discoveries-1/index.html
+slug: Discoveries-1
 title: 'Discoveries #1'
-subtitle:
-date: 2020-07-12 09:55:10
+subtitle: null
+date: 2020-07-12T09:55:10.000Z
 photograph:
   file: 19-05 Israel-0221.jpg
   name: Ceasarea View
   link: 'https://500px.com/photo/1001750729/Ceasarea-View-by-Kristof-Zerbe'
+  socialmedia: /static/images/social-media/Discoveries-1.png
 series: Discoveries
 categories:
   - Misc

@@ -1,11 +1,13 @@
 ---
+slug: Running-Rollup-with-Gulp
 title: Running Rollup with Gulp
 subtitle: Use Rollup.js as JavaScript bundler in your Gulp pipeline
-date: 2021-07-29 15:34:03
+date: 2021-07-29T15:34:03.000Z
 photograph:
   file: 20-08 Mallorca-6871.jpg
   name: Coal Flame
   link: 'https://500px.com/photo/1023572877'
+  socialmedia: /static/images/social-media/Running-Rollup-with-Gulp.png
 categories:
   - JavaScript
 tags:

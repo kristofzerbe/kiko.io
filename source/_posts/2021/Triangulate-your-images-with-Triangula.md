@@ -1,12 +1,14 @@
 ---
 alias: /categories/Photo-Editing/Triangulate-your-images-with-Triangula/index.html
+slug: Triangulate-your-images-with-Triangula
 title: Triangulate your images with Triangula
-subtitle:
-date: 2021-04-30 14:56:13
+subtitle: null
+date: 2021-04-30T14:56:13.000Z
 photograph:
   file: 20-08 Mallorca-7195.jpg
   name: Bottle Series
   link: 'https://500px.com/photo/1023572576'
+  socialmedia: /static/images/social-media/Triangulate-your-images-with-Triangula.png
 series: Great Finds
 categories:
   - Tools

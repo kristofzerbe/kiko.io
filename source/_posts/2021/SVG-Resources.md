@@ -1,12 +1,14 @@
 ---
 alias: /categories/UI-Design/SVG-Resources/index.html
+slug: SVG-Resources
 title: SVG Resources
-subtitle:
-date: 2021-04-09 14:07:53
+subtitle: null
+date: 2021-04-09T14:07:53.000Z
 photograph:
   file: DSC_4936.jpg
   name: Forgotten Motocycle
   link: 'https://500px.com/photo/82409157/Forgotten-Motocycle-by-Kristof-Zerbe/'
+  socialmedia: /static/images/social-media/SVG-Resources.png
 series: Great Finds
 categories:
   - UI/UX

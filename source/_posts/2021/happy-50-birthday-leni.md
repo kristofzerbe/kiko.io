@@ -1,7 +1,8 @@
 ---
+slug: happy-50-birthday-leni
 title: Happy Birthday
 subtitle: ... schönste Frau von Welt
-date: 2021-11-09 00:00:01
+date: 2021-11-09T00:00:01.000Z
 photograph:
   file: XTERN-211109.jpg
 hidden: true

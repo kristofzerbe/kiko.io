@@ -1,12 +1,14 @@
 ---
 alias: /categories/Tools/Hexo-and-the-IndieWeb/index.html
+slug: Hexo-and-the-IndieWeb
 title: Hexo and the IndieWeb
 subtitle: Make your blog ready for social interaction via Webmentions
-date: 2021-05-05 19:15:00
+date: 2021-05-05T19:15:00.000Z
 photograph:
   file: DSC_5088.jpg
   name: Steel Flower
   link: 'https://500px.com/photo/82409209'
+  socialmedia: /static/images/social-media/Hexo-and-the-IndieWeb.png
 series: IndieWeb
 categories:
   - Tools
@@ -18,7 +20,6 @@ tags:
 related:
   - Hexo-and-the-IndieWeb-Sending-Webmentions
   - Hexo-and-the-IndieWeb-Receiving-Webmentions
-# hidden: true
 ---
 {% indienews %}
 

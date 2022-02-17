@@ -1,12 +1,14 @@
 ---
 alias: /categories/Discoveries/Discoveries-7/index.html
+slug: Discoveries-7
 title: 'Discoveries #7'
-subtitle:
-date: 2021-02-25 14:36:10
+subtitle: null
+date: 2021-02-25T14:36:10.000Z
 photograph:
   file: DSC_8892.jpg
   name: Industrial Chrome
   link: 'https://500px.com/photo/86990893/Industrial-Chrome-by-Kristof-Zerbe/'
+  socialmedia: /static/images/social-media/Discoveries-7.png
 series: Discoveries
 categories:
   - Misc

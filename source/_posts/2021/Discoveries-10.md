@@ -1,11 +1,13 @@
 ---
+slug: Discoveries-10
 title: 'Discoveries #10'
-subtitle:
-date: 2021-05-24 17:04:26
+subtitle: null
+date: 2021-05-24T17:04:26.000Z
 photograph:
   file: 19-07 Schottland-0372.jpg
   name: Tiny Scots 6
   link: 'https://500px.com/photo/1002617400/Tiny-Scots-6-by-Kristof-Zerbe'
+  socialmedia: /static/images/social-media/Discoveries-10.png
 series: Discoveries
 categories:
   - JavaScript

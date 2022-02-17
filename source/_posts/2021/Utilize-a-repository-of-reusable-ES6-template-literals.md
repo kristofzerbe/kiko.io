@@ -1,12 +1,14 @@
 ---
 alias: /categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/index.html
+slug: Utilize-a-repository-of-reusable-ES6-template-literals
 title: Utilize a repository of reusable ES6 template literals
-subtitle:
-date: 2021-01-03 13:29:01
+subtitle: null
+date: 2021-01-03T13:29:01.000Z
 photograph:
   file: DSC_7897.jpg
   name: Rusted Bike
   link: 'https://500px.com/photo/86258961/Rusted-Bike-by-Kristof-Zerbe/'
+  socialmedia: /static/images/social-media/Utilize-a-repository-of-reusable-ES6-template-literals.png
 categories:
   - JavaScript
 tags:

@@ -6,12 +6,13 @@ const log = require('hexo-log')({
 });
 const front = require('hexo-front-matter');
 const fs = require('hexo-fs');
-const path = require('path');
+// const path = require('path');
 
 hexo.on('new', function(data) {
-    //return; 
 
     log.info("Processing Photo...");
+
+    return; 
 
     var post = front.parse(data.content);
 

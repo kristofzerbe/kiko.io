@@ -1,12 +1,14 @@
 ---
 alias: /categories/Tools/Use-and-manage-multiple-Node-js-versions-on-Windows-10/index.html
+slug: Use-and-manage-multiple-Node-js-versions-on-Windows-10
 title: Use and manage multiple Node.js versions on Windows 10
-subtitle:
-date: 2021-01-08 13:47:22
+subtitle: null
+date: 2021-01-08T13:47:22.000Z
 photograph:
   file: D70_8671.jpg
   name: Sky Rally III
   link: 'https://500px.com/photo/172323451/Sky-Rally-III-by-Kristof-Zerbe/'
+  socialmedia: /static/images/social-media/Use-and-manage-multiple-Node-js-versions-on-Windows-10.png
 categories:
   - Tools
 tags:

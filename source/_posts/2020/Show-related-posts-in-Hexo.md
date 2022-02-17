@@ -1,13 +1,15 @@
 ---
 alias: /categories/Tools/Show-related-posts-in-Hexo/index.html
+slug: Show-related-posts-in-Hexo
 title: Show related posts in Hexo
-subtitle: 
-date: 2020-10-03 13:17:03
+subtitle: null
+date: 2020-10-03T13:17:03.000Z
 photograph:
   file: 18-09 Kroatien-0323.jpg
   name: Garden Eden
   link: 'https://500px.com/photo/303713999'
-series: 'A New Blog'
+  socialmedia: /static/images/social-media/Show-related-posts-in-Hexo.png
+series: A New Blog
 categories:
   - Tools
 tags:

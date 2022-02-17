@@ -1,11 +1,13 @@
 ---
+slug: Hexo-Tag-Plugin-Collection
 title: Hexo Tag Plugin Collection
 subtitle: All tag plugins used for kiko.io available on Github
-date: 2021-12-12 14:07:36
+date: 2021-12-12T14:07:36.000Z
 photograph:
   file: D50_4919.jpg
   name: Ready To Fly
   link: 'https://500px.com/photo/1038382606'
+  socialmedia: /static/images/social-media/Hexo-Tag-Plugin-Collection.png
 project: hexo-tag-plugins
 categories:
   - Tools

@@ -1,13 +1,15 @@
 ---
 alias: /categories/JavaScript/Pimping-the-Permalink/index.html
+slug: Pimping-the-Permalink
 title: Pimping the Permalink
 subtitle: How to copy and share the permalink programatically
-date: 2020-09-20 16:30:37
+date: 2020-09-20T16:30:37.000Z
 photograph:
   file: 18-09 Kroatien-0245.jpg
   name: Summer Reading
   link: 'https://500px.com/photo/1005494226/Untitled-by-Kristof-Zerbe'
-series: 'A New Blog'
+  socialmedia: /static/images/social-media/Pimping-the-Permalink.png
+series: A New Blog
 tags:
   - CSS
   - Stylus

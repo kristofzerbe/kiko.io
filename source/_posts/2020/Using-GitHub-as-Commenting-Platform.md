@@ -1,13 +1,15 @@
 ---
 alias: /categories/Tools/Using-GitHub-as-Commenting-Platform/index.html
+slug: Using-GitHub-as-Commenting-Platform
 title: Using GitHub as Commenting Platform
 subtitle: Integrate Utterances' GitHub Issue Commenting to Hexo
-date: 2020-07-05 14:55:16
+date: 2020-07-05T14:55:16.000Z
 photograph:
   file: D70_7530.jpg
   name: Shadow Hat
   link: 'https://500px.com/photo/1017605689'
-series: 'A New Blog'
+  socialmedia: /static/images/social-media/Using-GitHub-as-Commenting-Platform.png
+series: A New Blog
 tags:
   - Blogging
   - Hexo

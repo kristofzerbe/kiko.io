@@ -1,13 +1,14 @@
 ---
 alias: /categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/index.html
+slug: Localization-with-resource-files-in-JavaScript-web-apps
 title: Localization with resource files in JavaScript web apps
-subtitle: >-
-  How to work with Visual Studio resource files for localization in Single Page Applications
-date: 2020-06-13 15:49:10
+subtitle: How to work with Visual Studio resource files for localization in Single Page Applications
+date: 2020-06-13T15:49:10.000Z
 photograph:
-  file: '19-05 Israel-0161.jpg'
-  name: 'Zern'
+  file: 19-05 Israel-0161.jpg
+  name: Zern
   link: 'https://500px.com/photo/1005493426/Zern-by-Kristof-Zerbe'
+  socialmedia: /static/images/social-media/Localization-with-resource-files-in-JavaScript-web-apps.png
 tags:
   - Visual Studio
   - Resource

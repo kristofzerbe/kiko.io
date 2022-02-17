@@ -1,13 +1,15 @@
 ---
 alias: /categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/index.html
+slug: A-New-Blog-Blogging-and-Synching-en-route
 title: 'A New Blog: Blogging and Synching en route'
-subtitle: 'Part Three of having fun with Hexo and GitHub Pages'
-date: 2019-10-01
-photograph: 
-  file: '19-07 Schottland-0364.jpg'
-  name: 'Tiny Scots 5'
+subtitle: Part Three of having fun with Hexo and GitHub Pages
+date: 2019-10-01T00:00:00.000Z
+photograph:
+  file: 19-07 Schottland-0364.jpg
+  name: Tiny Scots 5
   link: 'https://500px.com/photo/1002617359/Tiny-Scots-5-by-Kristof-Zerbe'
-series: 'A New Blog'
+  socialmedia: /static/images/social-media/A-New-Blog-Blogging-and-Synching-en-route.png
+series: A New Blog
 tags:
   - VS Code
   - Hexo

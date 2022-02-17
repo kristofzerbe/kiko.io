@@ -1,12 +1,14 @@
 ---
 alias: /categories/Photo-Editing/Folder-based-publishing-in-Lightroom/index.html
+slug: Folder-based-publishing-in-Lightroom
 title: Folder based publishing in Lightroom
-subtitle:
-date: 2020-10-26 13:28:59
+subtitle: null
+date: 2020-10-26T13:28:59.000Z
 photograph:
   file: DSC_0181.jpg
   name: Color Seat
   link: 'https://500px.com/photo/116725417'
+  socialmedia: /static/images/social-media/Folder-based-publishing-in-Lightroom.png
 categories:
   - Photo-Editing
 tags:

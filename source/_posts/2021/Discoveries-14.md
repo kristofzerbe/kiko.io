@@ -1,11 +1,13 @@
 ---
+slug: Discoveries-14
 title: 'Discoveries #14'
-subtitle:
-date: 2021-11-20 11:14:29
+subtitle: null
+date: 2021-11-20T11:14:29.000Z
 photograph:
   file: DSC_0447.jpg
   name: Salzburg Cathedral III
   link: 'https://500px.com/photo/1022780870/Salzburg-Cathedral-III-by-Kristof-Zerbe/'
+  socialmedia: /static/images/social-media/Discoveries-14.png
 series: Discoveries
 categories:
   - Misc

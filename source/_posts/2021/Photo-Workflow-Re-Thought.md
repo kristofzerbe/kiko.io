@@ -1,11 +1,13 @@
 ---
+slug: Photo-Workflow-Re-Thought
 title: Photo Workflow Re-Thought
-subtitle: 
+subtitle: null
 photograph:
   file: D50_0955.jpg
   name: Rainbow Crane
   link: 'https://500px.com/photo/1032232098'
-series: 'Step By Step'
+  socialmedia: /static/images/social-media/Photo-Workflow-Re-Thought.png
+series: Step By Step
 categories:
   - Photo-Editing
 tags:
@@ -16,7 +18,7 @@ related:
   - Folder-based-publishing-in-Lightroom
   - Generate-Social-Media-Images-Automatically
   - Triangulate-your-images-with-Triangula
-date: 2021-09-12 18:16:48
+date: 2021-09-12T18:16:48.000Z
 ---
 
 To be honest: many of my posts here on kiko.io are written just for me. To internalize things by writing them down and to give my future me the chance to look up something I did in the past. So is this post. Future me: Don't forget the following!

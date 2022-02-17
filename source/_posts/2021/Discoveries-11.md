@@ -1,11 +1,13 @@
 ---
+slug: Discoveries-11
 title: 'Discoveries #11'
-subtitle:
-date: 2021-06-28 15:03:29
+subtitle: null
+date: 2021-06-28T15:03:29.000Z
 photograph:
   file: DSC_9480-HDR.jpg
   name: Melting Hills
   link: 'https://500px.com/photo/117444939'
+  socialmedia: /static/images/social-media/Discoveries-11.png
 series: Discoveries
 categories:
   - Misc

@@ -1,12 +1,14 @@
 ---
 alias: /categories/Photo-Editing/Israeli-Presets-for-Lightroom/index.html
+slug: Israeli-Presets-for-Lightroom
 title: Israeli Presets for Lightroom
-subtitle:
-date: 2020-10-27 15:07:20
+subtitle: null
+date: 2020-10-27T15:07:20.000Z
 photograph:
   file: 19-05 Israel-0498.jpg
   name: Dead Sea Colors
   link: 'https://500px.com/photo/1001751158/Dead-Sea-Colors-by-Kristof-Zerbe'
+  socialmedia: /static/images/social-media/Israeli-Presets-for-Lightroom.png
 series: Lightroom Presets
 categories:
   - Photo-Editing

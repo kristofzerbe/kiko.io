@@ -1,11 +1,13 @@
 ---
+slug: VS-Code-on-the-Web
 title: VS Code on the Web
 subtitle: Multiple ways to work with Visual Studio Code online
-date: 2021-10-22 18:38:29
+date: 2021-10-22T18:38:29.000Z
 photograph:
   file: 18-09 Kroatien-0012.jpg
   name: Cabbage & Friends
   link: 'https://500px.com/photo/303732721'
+  socialmedia: /static/images/social-media/VS-Code-on-the-Web.png
 categories:
   - Tools
 tags:
@@ -14,7 +16,6 @@ related:
   - GitHubs-Magic-Dot
   - Remote-Testing-and-Debugging-with-Chrome
   - Visualize-the-codebase-of-your-GitHub-repo
-
 ---
 
 For most of the years I have been in the IT industry, I have worked with the "fat" Visual Studio from Microsoft. Fat in terms of features, for sure, but also in size and load times. It made no sense to use an other IDE, while developing software with VB.NET/C#. But with the advent of Node.JS JavaScript, so far only known as a scripting language for web pages, outgrew itself and became a serious competitor to established languages.

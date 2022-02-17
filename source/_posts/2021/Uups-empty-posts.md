@@ -1,11 +1,13 @@
 ---
+slug: Uups-empty-posts
 title: Uups ... empty posts
 subtitle: Problems with post asset files in Hexo and a solution approach
-date: 2021-09-21 13:40:25
+date: 2021-09-21T13:40:25.000Z
 photograph:
   file: D70_1408.jpg
   name: Mooring Ropes
   link: 'https://500px.com/photo/1017604391'
+  socialmedia: /static/images/social-media/Uups-empty-posts.png
 categories:
   - Tools
 tags:

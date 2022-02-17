@@ -1,12 +1,14 @@
 ---
 alias: /categories/JavaScript/Native-JavaScript-Multilanguage-Templating/index.html
+slug: Native-JavaScript-Multilanguage-Templating
 title: Native JavaScript Multilanguage Templating
-subtitle:
-date: 2021-02-24 13:31:58
+subtitle: null
+date: 2021-02-24T13:31:58.000Z
 photograph:
   file: DSC_6682.jpg
   name: Blue Lock
   link: 'https://500px.com/photo/84012241/Blue-Lock-by-Kristof-Zerbe/'
+  socialmedia: /static/images/social-media/Native-JavaScript-Multilanguage-Templating.png
 categories:
   - JavaScript
 tags:

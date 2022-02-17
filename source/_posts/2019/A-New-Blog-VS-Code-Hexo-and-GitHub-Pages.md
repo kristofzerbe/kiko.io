@@ -1,24 +1,26 @@
 ---
 alias: /categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/index.html
+slug: A-New-Blog-VS-Code-Hexo-and-GitHub-Pages
 title: 'A New Blog: VS Code, Hexo and GitHub Pages'
-subtitle: 'Part One of having fun with Hexo and GitHub Pages'
-date: 2019-09-24
-photograph: 
-    file: '19-07 Schottland-0405.jpg'
-    name: 'Tiny Scots 7'
+subtitle: Part One of having fun with Hexo and GitHub Pages
+date: 2019-09-24T00:00:00.000Z
+photograph:
+    file: 19-07 Schottland-0405.jpg
+    name: Tiny Scots 7
     link: 'https://500px.com/photo/1002666873/Tiny-Scots-7-by-Kristof-Zerbe'
-series: 'A New Blog'
+    socialmedia: /static/images/social-media/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages.png
+series: A New Blog
 tags:
-  - VS Code
-  - Hexo
-  - GitHub
-  - Blogging
+    - VS Code
+    - Hexo
+    - GitHub
+    - Blogging
 categories:
-  - Tools
+    - Tools
 related:
-  - Automatic-Header-Images-in-Hexo
-  - A-New-Blog-Blogging-and-Synching-en-route
-  - A-New-Blog-Customizing-Hexo
+    - Automatic-Header-Images-in-Hexo
+    - A-New-Blog-Blogging-and-Synching-en-route
+    - A-New-Blog-Customizing-Hexo
 ---
 
 A few days ago I puzzled over a technical problem regarding SQL Server, Active Directory and Visual Studio Database Projects. With tips, hints and snippets from several websites I got it running and the solution was absolutely memorable. For myself and for others. Nothing is harder than to know 'you did this before...', but not to remember how.

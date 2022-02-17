@@ -1,12 +1,14 @@
 ---
 alias: /categories/JavaScript/How-to-prevent-duplicate-events/index.html
+slug: How-to-prevent-duplicate-events
 title: How to prevent duplicate events
-date: 2021-01-07 17:22:25
-subtitle: 
+date: 2021-01-07T17:22:25.000Z
+subtitle: null
 photograph:
   file: DSC_7239.jpg
   name: Whirling Spark I
   link: 'https://500px.com/photo/84885887/Whirling-Spark-I-by-Kristof-Zerbe/'
+  socialmedia: /static/images/social-media/How-to-prevent-duplicate-events.png
 categories:
   - JavaScript
 tags:

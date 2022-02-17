@@ -1,13 +1,15 @@
 ---
 alias: /categories/UI-Design/Horizontal-navigation-menu-above-an-image/index.html
+slug: Horizontal-navigation-menu-above-an-image
 title: Horizontal navigation menu above an image
-subtitle: How to deal with coverage, readability and scrollbars
-date: 2020-07-20 15:55:47
+subtitle: 'How to deal with coverage, readability and scrollbars'
+date: 2020-07-20T15:55:47.000Z
 photograph:
-  file: '19-07 Schottland-0495.jpg'
-  name: 'Ancient Kitchen Stuff'
+  file: 19-07 Schottland-0495.jpg
+  name: Ancient Kitchen Stuff
   link: 'https://500px.com/photo/1018260519'
-series: 'A New Blog'
+  socialmedia: /static/images/social-media/Horizontal-navigation-menu-above-an-image.png
+series: A New Blog
 tags:
   - CSS
   - Stylus

@@ -1,13 +1,15 @@
 ---
 alias: /categories/Tools/404-Page-in-Hexo-for-GitHub-Pages/index.html
+slug: 404-Page-in-Hexo-for-GitHub-Pages
 title: 404 Page in Hexo for GitHub Pages
 subtitle: Provide an error page automatically when resource not found
-date: 2020-09-23 14:28:50
+date: 2020-09-23T14:28:50.000Z
 photograph:
   file: 19-07 Schottland-0935.jpg
   name: Tattoo Tuba
   link: 'https://500px.com/photo/1009150713'
-series: 'A New Blog'
+  socialmedia: /static/images/social-media/404-Page-in-Hexo-for-GitHub-Pages.png
+series: A New Blog
 categories:
   - Tools
 tags:

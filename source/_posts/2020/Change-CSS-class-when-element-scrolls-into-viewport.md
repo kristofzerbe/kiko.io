@@ -1,13 +1,15 @@
 ---
 alias: /categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/index.html
+slug: Change-CSS-class-when-element-scrolls-into-viewport
 title: Change CSS class when element scrolls into viewport
-subtitle:
-date: 2020-07-13 18:24:39
+subtitle: null
+date: 2020-07-13T18:24:39.000Z
 photograph:
   file: D70_7695.jpg
   name: Onion Bokeh
   link: 'https://500px.com/photo/260478167'
-series: 'A New Blog'
+  socialmedia: /static/images/social-media/Change-CSS-class-when-element-scrolls-into-viewport.png
+series: A New Blog
 tags:
   - jQuery
   - CSS

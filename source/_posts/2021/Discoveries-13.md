@@ -1,11 +1,13 @@
 ---
+slug: Discoveries-13
 title: 'Discoveries #13'
-subtitle:
-date: 2021-09-29 12:57:51
+subtitle: null
+date: 2021-09-29T12:57:51.000Z
 photograph:
   file: DSC_6875-HDR.jpg
   name: Windowed Wall
   link: 'https://500px.com/photo/84012403/Windowed-Wall-by-Kristof-Zerbe/'
+  socialmedia: /static/images/social-media/Discoveries-13.png
 series: Discoveries
 categories:
   - JavaScript

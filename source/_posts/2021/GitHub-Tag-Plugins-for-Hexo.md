@@ -1,11 +1,13 @@
 ---
+slug: GitHub-Tag-Plugins-for-Hexo
 title: GitHub Tag Plugins for Hexo
-subtitle:
-date: 2021-12-29 12:20:34
+subtitle: null
+date: 2021-12-29T12:20:34.000Z
 photograph:
   file: DSC_2443.jpg
   name: Winch
   link: 'https://500px.com/photo/80797993'
+  socialmedia: /static/images/social-media/GitHub-Tag-Plugins-for-Hexo.png
 project: hexo-tag-plugins
 categories:
   - Tools

@@ -1,11 +1,13 @@
 ---
+slug: Application-Specific-Links-on-Windows-10
 title: Application-Specific Links on Windows 10
 subtitle: What works and what we still have to wait for
-date: 2021-09-03 09:31:08
+date: 2021-09-03T09:31:08.000Z
 photograph:
   file: D70_0247.jpg
   name: Copenhagen Window
   link: 'https://500px.com/photo/260359631/Copenhagen-Window-by-Kristof-Zerbe/'
+  socialmedia: /static/images/social-media/Application-Specific-Links-on-Windows-10.png
 categories:
   - Misc
 tags:

@@ -1,13 +1,15 @@
 ---
 alias: /categories/Misc/Adding-Screenshots-to-Trello-Cards-on-Android/index.html
+slug: Adding-Screenshots-to-Trello-Cards-on-Android
 title: Adding Screenshots to Trello Cards on Android
-subtitle:
-date: 2021-04-11 16:11:10
+subtitle: null
+date: 2021-04-11T16:11:10.000Z
 photograph:
   file: DSC_7006-HDR.jpg
   name: Break Dancer
   link: 'https://500px.com/photo/84012419/Break-Dancer-by-Kristof-Zerbe/'
-series: 'Step By Step'
+  socialmedia: /static/images/social-media/Adding-Screenshots-to-Trello-Cards-on-Android.png
+series: Step By Step
 categories:
   - Misc
 tags:

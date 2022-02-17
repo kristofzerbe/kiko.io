@@ -1,11 +1,13 @@
 ---
+slug: Croatian-Presets-for-Lightroom
 title: Croatian Presets for Lightroom
-subtitle:
-date: 2021-10-16 15:41:42
+subtitle: null
+date: 2021-10-16T15:41:42.000Z
 photograph:
   file: 19-12 Kroatien-0077.jpg
   name: Split Rotunda
   link: 'https://500px.com/photo/1022776846/Split-Rotunda-by-Kristof-Zerbe/'
+  socialmedia: /static/images/social-media/Croatian-Presets-for-Lightroom.png
 series: Lightroom Presets
 categories:
   - Photo-Editing
