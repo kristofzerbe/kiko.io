@@ -12,8 +12,6 @@ hexo.on('new', function(data) {
 
     log.info("Processing Photo...");
 
-    return; 
-
     var post = front.parse(data.content);
 
     var poolDir = hexo.source_dir.replace("\source", hexo.config.static_dir + "\\" + hexo.config.pool_dir);
