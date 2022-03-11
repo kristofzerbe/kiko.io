@@ -1,6 +1,12 @@
 {
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.framework.id": "other",
+  "frontMatter.framework.startCommand": "hexo server",
+  "frontMatter.preview.host": "http://localhost:4000/",
   "frontMatter.templates.folder": "scaffolds",
+  "frontMatter.content.publicFolder": "",
+  "frontMatter.content.fmHighlight": true,
+  "frontMatter.content.wysiwyg": false,
   "frontMatter.content.pageFolders": [
     {
       "title": "_posts",
@@ -31,6 +37,7 @@
       "value": "/static/images/social-media/{{slug}}.png"
     }
   ],
+  "frontMatter.taxonomy.dateFormat": "yyyy-MM-DD",
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",
@@ -56,7 +63,9 @@
         {
           "title": "Publishing date",
           "name": "date",
-          "type": "datetime"
+          "type": "datetime",
+          "isPublishDate": true,
+          "isModifiedDate": true
         },
         {
           "title": "Photograph",
@@ -81,23 +90,26 @@
               "type": "string"
             },
             {
-              "title": "Preview",
-              "type": "image",
-              "default": "/static/photos/mobile/{{file}}"
-            },
-            {
               "title": "Social Media",
               "name": "socialmedia",
               "type": "image",
               "isPreviewImage": true
             }
-          ]    
+          ]
         },
         {
           "title": "Series",
           "name": "series",
           "type": "choice",
-          "choices": ["Golem", "Lightroom Presets", "Discoveries", "Great Finds", "Step By Step", "IndieWeb", "A New Blog"]
+          "choices": [
+            "Golem",
+            "Lightroom Presets",
+            "Discoveries",
+            "Great Finds",
+            "Step By Step",
+            "IndieWeb",
+            "A New Blog"
+          ]
         },
         {
           "title": "Categories",
@@ -114,42 +126,41 @@
           "name": "hidden",
           "type": "draft"
         }
-        
       ]
     }
   ],
   "frontMatter.taxonomy.tags": [
     "Browser",
+    "CSS",
+    "Collection",
     "Imaging",
     "Lightroom",
     "Mail",
-    "Plugin",
-    "SVG",
-    "VS Code",
-    "Workflow",
-    "jQuery",
-    "Workflow",
-    "Windows",
-    "WebAPI",
-    "Visual Studio",
-    "Versioning",
-    "Tutorial",
-    "Trello",
-    "Theming",
-    "Templating",
-    "TFS/DevOps",
-    "T4",
-    "Stylus",
-    "Share",
-    "SPA",
-    "Resource",
-    "Publishing",
-    "Presets",
-    "PowerShell",
-    "PWA",
-    "Node.js",
     "MediaQuery",
-    "Mail"
+    "Node.js",
+    "PWA",
+    "Plugin",
+    "PowerShell",
+    "Presets",
+    "Publishing",
+    "Resource",
+    "SPA",
+    "SVG",
+    "Share",
+    "Stylus",
+    "T4",
+    "TFS/DevOps",
+    "Templating",
+    "Theming",
+    "Trello",
+    "Tutorial",
+    "VS Code",
+    "Versioning",
+    "Visual Studio",
+    "WebAPI",
+    "Windows",
+    "Workflow",
+    "jQuery"
   ],
   "frontMatter.taxonomy.categories": [
     "Photo-Editing",

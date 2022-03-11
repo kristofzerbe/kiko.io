@@ -2,6 +2,7 @@
 slug: Photo-Workflow-Re-Thought
 title: Photo Workflow Re-Thought
 subtitle: null
+date: 2021-09-12T18:16:48.000Z
 photograph:
   file: D50_0955.jpg
   name: Rainbow Crane
@@ -18,7 +19,6 @@ related:
   - Folder-based-publishing-in-Lightroom
   - Generate-Social-Media-Images-Automatically
   - Triangulate-your-images-with-Triangula
-date: 2021-09-12T18:16:48.000Z
 ---
 
 To be honest: many of my posts here on kiko.io are written just for me. To internalize things by writing them down and to give my future me the chance to look up something I did in the past. So is this post. Future me: Don't forget the following!

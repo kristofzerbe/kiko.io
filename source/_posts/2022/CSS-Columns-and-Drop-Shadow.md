@@ -2,7 +2,7 @@
 slug: CSS-Columns-and-Drop-Shadow
 title: CSS Columns and Drop Shadow
 subtitle: How to fix Chromes bug on showing shadows in a column (masonry) layout
-date: 2022-01-16T13:50:00.000Z
+date: 2022-01-16
 photograph:
   file: DSC_2909.jpg
   name: Guinness Industry
