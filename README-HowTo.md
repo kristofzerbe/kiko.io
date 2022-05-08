@@ -1,6 +1,13 @@
 # HOW TO
 
 ---
+## Common Commands
+
+- hexo generate - Builds to 'docs'
+- hexo clean - Cleans 'docs'
+- hexo server - Runs in Browser
+
+---
 ## Update Post
 
 *Frontmatter*
