@@ -67,6 +67,9 @@
 <script src="/js/tools.js"></script>
 
   
+<script src="/js/dist/scroll-timeline.js"></script>
+
+  
 <script src="/js/dist/image-compare-viewer.min.js"></script>
 
   
@@ -164,6 +167,7 @@
     </nav>
     <div id="header-nav-end"></div>
   </div>
+  <div id="progress"></div>
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
         <a href="/" id="logo">
@@ -178,9 +182,6 @@
       
     </div>
     <div id="header-inner" class="inner">
-      
-      
-
       <nav id="sub-nav">
         
         <a id="sub-nav-search" class="sub-nav-icon" title="Search"></a>
@@ -370,15 +371,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Imaging/" rel="tag">Imaging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Trello/" rel="tag">Trello</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckzrchrdj002o4cha8bkf8ucd">
+      <div class="article-permalink" id="article-permalink-cl2zu19st002npkha9u9k3ayx">
     <input class="article-permalink-value" value="https://kiko.io/post/Adding-Screenshots-to-Trello-Cards-on-Android/" 
-           data-id="ckzrchrdj002o4cha8bkf8ucd" data-title="Adding Screenshots to Trello Cards on Android" />
+           data-id="cl2zu19st002npkha9u9k3ayx" data-title="Adding Screenshots to Trello Cards on Android" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckzrchrdj002o4cha8bkf8ucd");
+        initPermalink("cl2zu19st002npkha9u9k3ayx");
     });
 </script>
 
@@ -769,6 +770,30 @@
     background: 'rgba(55, 55, 55, 0.5)',
     margin: 20
   });
+
+  //SCROLL-TIMELINE
+  // Create ScrollTimeline
+  const myScrollTimeline = new ScrollTimeline({
+    source: document.scrollingElement,
+    scrollSource: document.scrollingElement, // For legacy implementations
+    orientation: 'block',
+      scrollOffsets: [
+          new CSSUnitValue(0, 'percent'),
+          new CSSUnitValue(100, 'percent'),
+      ],
+  });
+
+  // Animate Progress Bar on Scroll
+  document.querySelector("#progress").animate(
+    {
+      transform: ["scaleX(0)", "scaleX(1)"]
+    },
+    { 
+      duration: 1, 
+      fill: "forwards", 
+      timeline: myScrollTimeline 
+    }
+  );
   
 </script>
 

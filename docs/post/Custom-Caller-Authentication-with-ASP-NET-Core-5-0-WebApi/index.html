@@ -67,6 +67,9 @@
 <script src="/js/tools.js"></script>
 
   
+<script src="/js/dist/scroll-timeline.js"></script>
+
+  
 <script src="/js/dist/image-compare-viewer.min.js"></script>
 
   
@@ -164,6 +167,7 @@
     </nav>
     <div id="header-nav-end"></div>
   </div>
+  <div id="progress"></div>
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
         <a href="/" id="logo">
@@ -178,9 +182,6 @@
       
     </div>
     <div id="header-inner" class="inner">
-      
-      
-
       <nav id="sub-nav">
         
         <a id="sub-nav-search" class="sub-nav-icon" title="Search"></a>
@@ -315,15 +316,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Authentication/" rel="tag">Authentication</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/" rel="tag">Visual Studio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebAPI/" rel="tag">WebAPI</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckzrchrdn002y4chaal4012n9">
+      <div class="article-permalink" id="article-permalink-cl2zu19t0002xpkha87t8a3gv">
     <input class="article-permalink-value" value="https://kiko.io/post/Custom-Caller-Authentication-with-ASP-NET-Core-5-0-WebApi/" 
-           data-id="ckzrchrdn002y4chaal4012n9" data-title="Custom Caller Authentication with ASP.NET Core 5.0 Web API" />
+           data-id="cl2zu19t0002xpkha87t8a3gv" data-title="Custom Caller Authentication with ASP.NET Core 5.0 Web API" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckzrchrdn002y4chaal4012n9");
+        initPermalink("cl2zu19t0002xpkha87t8a3gv");
     });
 </script>
 
@@ -764,6 +765,30 @@
     background: 'rgba(55, 55, 55, 0.5)',
     margin: 20
   });
+
+  //SCROLL-TIMELINE
+  // Create ScrollTimeline
+  const myScrollTimeline = new ScrollTimeline({
+    source: document.scrollingElement,
+    scrollSource: document.scrollingElement, // For legacy implementations
+    orientation: 'block',
+      scrollOffsets: [
+          new CSSUnitValue(0, 'percent'),
+          new CSSUnitValue(100, 'percent'),
+      ],
+  });
+
+  // Animate Progress Bar on Scroll
+  document.querySelector("#progress").animate(
+    {
+      transform: ["scaleX(0)", "scaleX(1)"]
+    },
+    { 
+      duration: 1, 
+      fill: "forwards", 
+      timeline: myScrollTimeline 
+    }
+  );
   
 </script>
 

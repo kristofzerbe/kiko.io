@@ -67,6 +67,9 @@
 <script src="/js/tools.js"></script>
 
   
+<script src="/js/dist/scroll-timeline.js"></script>
+
+  
 <script src="/js/dist/image-compare-viewer.min.js"></script>
 
   
@@ -164,6 +167,7 @@
     </nav>
     <div id="header-nav-end"></div>
   </div>
+  <div id="progress"></div>
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
         <a href="/" id="logo">
@@ -178,9 +182,6 @@
       
     </div>
     <div id="header-inner" class="inner">
-      
-      
-
       <nav id="sub-nav">
         
         <a id="sub-nav-search" class="sub-nav-icon" title="Search"></a>
@@ -283,15 +284,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lightroom/" rel="tag">Lightroom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Presets/" rel="tag">Presets</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckzrchrdo00314chag4bqes3s">
+      <div class="article-permalink" id="article-permalink-cl2zu19t30031pkha7p028aor">
     <input class="article-permalink-value" value="https://kiko.io/post/Croatian-Presets-for-Lightroom/" 
-           data-id="ckzrchrdo00314chag4bqes3s" data-title="Croatian Presets for Lightroom" />
+           data-id="cl2zu19t30031pkha7p028aor" data-title="Croatian Presets for Lightroom" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckzrchrdo00314chag4bqes3s");
+        initPermalink("cl2zu19t30031pkha7p028aor");
     });
 </script>
 
@@ -359,15 +360,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lightroom/" rel="tag">Lightroom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Presets/" rel="tag">Presets</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckzrchrew005p4cha3cgwd1uz">
+      <div class="article-permalink" id="article-permalink-cl2zu19uv005lpkha3tfw5yin">
     <input class="article-permalink-value" value="https://kiko.io/post/Scotch-Presets-for-Lightroom/" 
-           data-id="ckzrchrew005p4cha3cgwd1uz" data-title="Scotch Presets for Lightroom" />
+           data-id="cl2zu19uv005lpkha3tfw5yin" data-title="Scotch Presets for Lightroom" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckzrchrew005p4cha3cgwd1uz");
+        initPermalink("cl2zu19uv005lpkha3tfw5yin");
     });
 </script>
 
@@ -435,15 +436,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lightroom/" rel="tag">Lightroom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Presets/" rel="tag">Presets</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckzrchrd3001x4cha0h02db1f">
+      <div class="article-permalink" id="article-permalink-cl2zu19sa001xpkha7r9waax9">
     <input class="article-permalink-value" value="https://kiko.io/post/Indian-Presets-for-Lightroom/" 
-           data-id="ckzrchrd3001x4cha0h02db1f" data-title="Indian Presets for Lightroom" />
+           data-id="cl2zu19sa001xpkha7r9waax9" data-title="Indian Presets for Lightroom" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckzrchrd3001x4cha0h02db1f");
+        initPermalink("cl2zu19sa001xpkha7r9waax9");
     });
 </script>
 
@@ -512,15 +513,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lightroom/" rel="tag">Lightroom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Presets/" rel="tag">Presets</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckzrchrd500204cha9fgsa2yp">
+      <div class="article-permalink" id="article-permalink-cl2zu19sb0020pkha9urd79ch">
     <input class="article-permalink-value" value="https://kiko.io/post/Israeli-Presets-for-Lightroom/" 
-           data-id="ckzrchrd500204cha9fgsa2yp" data-title="Israeli Presets for Lightroom" />
+           data-id="cl2zu19sb0020pkha9urd79ch" data-title="Israeli Presets for Lightroom" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckzrchrd500204cha9fgsa2yp");
+        initPermalink("cl2zu19sb0020pkha9urd79ch");
     });
 </script>
 
@@ -792,6 +793,30 @@
     background: 'rgba(55, 55, 55, 0.5)',
     margin: 20
   });
+
+  //SCROLL-TIMELINE
+  // Create ScrollTimeline
+  const myScrollTimeline = new ScrollTimeline({
+    source: document.scrollingElement,
+    scrollSource: document.scrollingElement, // For legacy implementations
+    orientation: 'block',
+      scrollOffsets: [
+          new CSSUnitValue(0, 'percent'),
+          new CSSUnitValue(100, 'percent'),
+      ],
+  });
+
+  // Animate Progress Bar on Scroll
+  document.querySelector("#progress").animate(
+    {
+      transform: ["scaleX(0)", "scaleX(1)"]
+    },
+    { 
+      duration: 1, 
+      fill: "forwards", 
+      timeline: myScrollTimeline 
+    }
+  );
   
 </script>
 

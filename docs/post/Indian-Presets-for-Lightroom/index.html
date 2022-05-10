@@ -67,6 +67,9 @@
 <script src="/js/tools.js"></script>
 
   
+<script src="/js/dist/scroll-timeline.js"></script>
+
+  
 <script src="/js/dist/image-compare-viewer.min.js"></script>
 
   
@@ -164,6 +167,7 @@
     </nav>
     <div id="header-nav-end"></div>
   </div>
+  <div id="progress"></div>
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
         <a href="/" id="logo">
@@ -178,9 +182,6 @@
       
     </div>
     <div id="header-inner" class="inner">
-      
-      
-
       <nav id="sub-nav">
         
         <a id="sub-nav-search" class="sub-nav-icon" title="Search"></a>
@@ -285,7 +286,7 @@
 <span id="more"></span>
 
 <h2 id="Indian-Sunset"><a href="#Indian-Sunset" class="headerlink" title="Indian Sunset"></a>Indian Sunset</h2>
-    <div id="image-compare-awwte2">
+    <div id="image-compare-zeu6kb">
       <img class="image-compare image-original" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_165823_HDR_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_165823_HDR_PRESET_Sunset.jpg" alt="" />
     </div>
@@ -294,7 +295,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-awwte2"),
+      new ImageCompare(document.getElementById("image-compare-zeu6kb"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -311,7 +312,7 @@
 
 <hr>
 
-    <div id="image-compare-u5buco">
+    <div id="image-compare-tduk8k">
       <img class="image-compare image-original" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_164343_HDR_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_164343_HDR_PRESET_Sunset.jpg" alt="" />
     </div>
@@ -320,7 +321,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-u5buco"),
+      new ImageCompare(document.getElementById("image-compare-tduk8k"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -351,15 +352,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lightroom/" rel="tag">Lightroom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Presets/" rel="tag">Presets</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-ckzrchrd3001x4cha0h02db1f">
+      <div class="article-permalink" id="article-permalink-cl2zu19sa001xpkha7r9waax9">
     <input class="article-permalink-value" value="https://kiko.io/post/Indian-Presets-for-Lightroom/" 
-           data-id="ckzrchrd3001x4cha0h02db1f" data-title="Indian Presets for Lightroom" />
+           data-id="cl2zu19sa001xpkha7r9waax9" data-title="Indian Presets for Lightroom" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("ckzrchrd3001x4cha0h02db1f");
+        initPermalink("cl2zu19sa001xpkha7r9waax9");
     });
 </script>
 
@@ -842,6 +843,30 @@
     background: 'rgba(55, 55, 55, 0.5)',
     margin: 20
   });
+
+  //SCROLL-TIMELINE
+  // Create ScrollTimeline
+  const myScrollTimeline = new ScrollTimeline({
+    source: document.scrollingElement,
+    scrollSource: document.scrollingElement, // For legacy implementations
+    orientation: 'block',
+      scrollOffsets: [
+          new CSSUnitValue(0, 'percent'),
+          new CSSUnitValue(100, 'percent'),
+      ],
+  });
+
+  // Animate Progress Bar on Scroll
+  document.querySelector("#progress").animate(
+    {
+      transform: ["scaleX(0)", "scaleX(1)"]
+    },
+    { 
+      duration: 1, 
+      fill: "forwards", 
+      timeline: myScrollTimeline 
+    }
+  );
   
 </script>
 

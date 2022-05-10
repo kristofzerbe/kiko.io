@@ -67,6 +67,9 @@
 <script src="/js/tools.js"></script>
 
   
+<script src="/js/dist/scroll-timeline.js"></script>
+
+  
 <script src="/js/dist/image-compare-viewer.min.js"></script>
 
   
@@ -164,6 +167,7 @@
     </nav>
     <div id="header-nav-end"></div>
   </div>
+  <div id="progress"></div>
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
         <a href="/" id="logo">
@@ -178,9 +182,6 @@
       
     </div>
     <div id="header-inner" class="inner">
-      
-      
-
       <nav id="sub-nav">
         
         <a id="sub-nav-search" class="sub-nav-icon" title="Search"></a>
@@ -601,6 +602,30 @@
     background: 'rgba(55, 55, 55, 0.5)',
     margin: 20
   });
+
+  //SCROLL-TIMELINE
+  // Create ScrollTimeline
+  const myScrollTimeline = new ScrollTimeline({
+    source: document.scrollingElement,
+    scrollSource: document.scrollingElement, // For legacy implementations
+    orientation: 'block',
+      scrollOffsets: [
+          new CSSUnitValue(0, 'percent'),
+          new CSSUnitValue(100, 'percent'),
+      ],
+  });
+
+  // Animate Progress Bar on Scroll
+  document.querySelector("#progress").animate(
+    {
+      transform: ["scaleX(0)", "scaleX(1)"]
+    },
+    { 
+      duration: 1, 
+      fill: "forwards", 
+      timeline: myScrollTimeline 
+    }
+  );
   
 </script>
 
