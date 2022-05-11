@@ -4,6 +4,9 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
 ## Latest Posts
 <!-- BLOG-POST-LIST:START -->
+ - [Discoveries #18 - JS UI](https://kiko.io/post/Discoveries-18-JS-UI/)   
+ 10 May 2022   
+
  - [Discoveries #17 - CSS](https://kiko.io/post/Discoveries-17-CSS/)   
  11 Mar 2022   
 
@@ -18,7 +21,4 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
  - [GitHub Tag Plugins for Hexo](https://kiko.io/post/GitHub-Tag-Plugins-for-Hexo/)   
  29 Dec 2021   
-
- - [Discoveries #15 - Self Hosted](https://kiko.io/post/Discoveries-15-Self-Hosted/)   
- 25 Dec 2021   
 <!-- BLOG-POST-LIST:END -->
