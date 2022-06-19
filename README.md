@@ -4,6 +4,9 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
 ## Latest Posts
 <!-- BLOG-POST-LIST:START -->
+ - [Thanks Dropbox, but I&#39;m off](https://kiko.io/post/Thanks-Dropbox-but-I-m-off/)   
+ 13 May 2022   
+
  - [Discoveries #18 - JS UI](https://kiko.io/post/Discoveries-18-JS-UI/)   
  10 May 2022   
 
@@ -18,7 +21,4 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
  - [CSS Columns and Drop Shadow](https://kiko.io/post/CSS-Columns-and-Drop-Shadow/)   
  15 Jan 2022   
-
- - [GitHub Tag Plugins for Hexo](https://kiko.io/post/GitHub-Tag-Plugins-for-Hexo/)   
- 29 Dec 2021   
 <!-- BLOG-POST-LIST:END -->
