@@ -2,15 +2,16 @@
 slug: Gitpod-Visual-Studio-Code-on-the-Web
 title: Gitpod - Visual Studio Code on the Web
 subtitle: The popular code editor is conquering the browser and remote work and the Kiel-based company Gitpod is at the forefront with their solution
-date: 2022-06-03 11:39:27
+date: 2022-07-12 12:00:00
 photograph:
   file: D50_7090.jpg
   name: Manometer
   link: https://500px.com/photo/1045390652
 series: Golem
 golem:
-  published: null
-  url: null
+  title: Visual Studio Code im Web mit Gitpod - Ein Gewinn für jede Tool-Sammlung
+  url: https://www.golem.de/news/visual-studio-code-im-web-mit-gitpod-ein-gewinn-fuer-jede-tool-sammlung-2207-166061.html
+  published: 2022-07-05T00:00:00.000Z
 categories:
   - Too
 tags:

@@ -9,8 +9,9 @@ photograph:
   link: ''
 series: Golem
 golem:
-  published: 
+  title: 
   url: 
+  published: 
 categories:
   - xxx
 tags:

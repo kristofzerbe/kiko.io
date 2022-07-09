@@ -9,8 +9,9 @@ photograph:
   link: https://500px.com/photo/1034995328/thomas-garden-vi-by-kristof-zerbe
 series: Golem
 golem:
-  published: null
+  title: null
   url: null
+  published: null
 categories:
   - Tools
 tags:
