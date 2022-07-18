@@ -4,6 +4,9 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
 ## Latest Posts
 <!-- BLOG-POST-LIST:START -->
+ - [Gitpod - Visual Studio Code on the Web](https://kiko.io/post/Gitpod-Visual-Studio-Code-on-the-Web/)   
+ 17 Jul 2022   
+
  - [Discoveries #19 - Visual Helpers](https://kiko.io/post/Discoveries-19-Visual-Helpers/)   
  09 Jul 2022   
 
@@ -18,7 +21,4 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
  - [Discoveries #18 - JS UI](https://kiko.io/post/Discoveries-18-JS-UI/)   
  10 May 2022   
-
- - [Discoveries #17 - CSS](https://kiko.io/post/Discoveries-17-CSS/)   
- 11 Mar 2022   
 <!-- BLOG-POST-LIST:END -->
