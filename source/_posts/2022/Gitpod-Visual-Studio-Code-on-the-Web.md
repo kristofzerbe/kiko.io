@@ -2,7 +2,7 @@
 slug: Gitpod-Visual-Studio-Code-on-the-Web
 title: Gitpod - Visual Studio Code on the Web
 subtitle: The popular code editor is conquering the browser and remote work and the Kiel-based company Gitpod is at the forefront with their solution
-date: 2022-07-12 12:00:00
+date: 2022-07-17 15:00:00
 photograph:
   file: D50_7090.jpg
   name: Manometer
@@ -22,7 +22,6 @@ related:
   - VS-Code-on-the-Web
   - GitHubs-Magic-Dot
   - Visualize-the-codebase-of-your-GitHub-repo
-hidden: true
 ---
 
 It's amazing how quickly the editor **[Visual Studio Code](https://code.visualstudio.com/)** (VS Code) has conquered the developer community (#1 in the Stack Overflow Developer Survey Ranking 2021) and even those from the Linux faction, who are historically rather critical of Microsoft, but for good reason. The company from Redmond has done quite a lot right with the tool and has gathered a large group of open source developers around it (currently 1,640 contributors), who contribute to the fact that the Swiss Microsoft team around Erich Gamma can bring out a new release for Windows, Linux and macOS every few weeks.
