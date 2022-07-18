@@ -13,7 +13,7 @@ golem:
   url: https://www.golem.de/news/visual-studio-code-im-web-mit-gitpod-ein-gewinn-fuer-jede-tool-sammlung-2207-166061.html
   published: 2022-07-05T00:00:00.000Z
 categories:
-  - Too
+  - Tools
 tags:
   - GitHub
   - Remote
