@@ -7,7 +7,7 @@ photograph:
   file: ''
   name: ''
   link: ''
-  socialmedia: '/static/images/social-media/{{ slug }}.png'
+  socialmedia: /static/images/social-media/{{ slug }}.png
 project: xxx
 categories:
   - xxx

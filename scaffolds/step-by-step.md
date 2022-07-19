@@ -7,7 +7,7 @@ photograph:
   file: ''
   name: ''
   link: ''
-  socialmedia: '/static/images/social-media/{{ slug }}.png'
+  socialmedia: /static/images/social-media/{{ slug }}.png
 series: 'Step By Step'
 categories:
   - Misc

@@ -7,7 +7,7 @@ photograph:
   file: D50_0053.jpg
   name: Thomas' Ruby Prince I
   link: https://500px.com/photo/1031618817
-  socialmedia: /static/images/social-media/Discoveries-19-JS-Libraries.png
+  socialmedia: /static/images/social-media/Discoveries-19-Visual-Helpers.png
 series: Discoveries
 categories:
   - Misc
