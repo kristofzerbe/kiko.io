@@ -4,6 +4,9 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
 ## Latest Posts
 <!-- BLOG-POST-LIST:START -->
+ - [Dopamine, a music player for Windows 10 as it should be](https://kiko.io/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/)   
+ 21 Aug 2022   
+
  - [Scandinavian Presets for Lightroom](https://kiko.io/post/Scandinavian-Presets-for-Lightroom/)   
  19 Jul 2022   
 
@@ -18,7 +21,4 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
  - [Simplest Console File Logger](https://kiko.io/post/Simplest-Console-File-Logger/)   
  19 Jun 2022   
-
- - [Thanks Dropbox, but I&#39;m off](https://kiko.io/post/Thanks-Dropbox-but-I-m-off/)   
- 13 May 2022   
 <!-- BLOG-POST-LIST:END -->
