@@ -3,8 +3,8 @@ key: dopamine
 title: Dopamine, ein Musik-Player für Windows 10 wie er sein soll
 author: Kristof Zerbe
 created: 2022-06-01
-published: 
-url:
+published: 2022-08-11 
+url: https://www.golem.de/news/dopamine-fuer-windows-10-ein-musikplayer-wie-er-sein-sollte-2208-166005.html
 ---
 
 **Ein minimalistischer MP3-Player unter Windows, vertrieben als Open-Source, der auch vor großen Sammlungen nicht zurückschreckt**

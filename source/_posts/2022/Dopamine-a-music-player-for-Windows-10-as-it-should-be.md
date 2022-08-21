@@ -2,7 +2,7 @@
 slug: Dopamine-a-music-player-for-Windows-10-as-it-should-be
 title: Dopamine, a music player for Windows 10 as it should be
 subtitle: A minimalist MP3 player under Windows, distributed as open source, which does not shy away from large collections
-date: 2022-08-1821 12::00
+date: 2022-08-21 12::00
 photograph:
   file: D50_1860.jpg
   name: Thomas' Garden VI

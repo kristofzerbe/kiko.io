@@ -6,7 +6,6 @@ const log = require('hexo-log')({
 });
 const front = require('hexo-front-matter');
 const fs = require('hexo-fs');
-// const path = require('path');
 
 hexo.on('new', function(data) {
 
