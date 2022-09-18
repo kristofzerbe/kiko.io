@@ -232,16 +232,15 @@
       margin-bottom: 20px
       summary 
         font-weight: bold
-        background-color: color-light
-        /[data-theme="dark"] &
-          background-color: dark-color-light
     summary
       cursor: pointer
-      padding: 5px 0 5px 10px
+      padding: 5px 0
     blockquote
-      margin: 10px 0 10px 2px
-    cite
-      margin: 0 0 5px 2px
+      margin-top: 10px
+      margin-left: 25px
+      & +
+        cite
+          margin-left: 60px
   details.github-readme
     margin: 0 -30px
     padding: 10px 25px
@@ -262,16 +261,48 @@
       background-color: color-block
       /[data-theme="dark"] &
         background-color: dark-color-block
-  blockquote
-    border-left: 4px color-border solid 
-    /[data-theme="dark"] &
-      border-left-color: dark-color-border
-    padding-left: 10px
-    font-family: font-serif
-    font-size: 110%
-    margin: 10px 0
+  blockquote //like alertbox
+    position: relative
+    padding: 20px 20px 40px 32px
+    margin: 20px 0 0
     text-align: left
     line-height: 1.3em
+    font-size: 110%
+    font-style: italic
+    background-color: rgba(205,205,205,0.2)
+    border-left: 4px rgba(205,205,205,0.75) dotted 
+    &:before
+      position: absolute
+      width: 41px
+      height: 41px
+      top: -13px
+      left: -22px
+      display: block
+      border-radius: 50%
+      content: ""
+      background: color-block
+      /[data-theme="dark"] &
+        background: dark-color-block  
+    &:after
+      content: icon-quote
+      color: rgba(205,205,205,0.75)
+      position: absolute
+      display: block
+      top: -2px
+      left: -12px
+      font-family: fa-icon-solid
+      font-size: 22px
+      font-style: normal
+    & +
+      cite
+        position: absolute
+        margin: -30px 0 0 35px
+        a
+          color: rgb(200,200,200) !important
+          border: none !important
+          &:hover
+            border: none !important
+            color: color-highlight !important
     ol, ul
       margin-top: 0
       margin-bottom: 0
