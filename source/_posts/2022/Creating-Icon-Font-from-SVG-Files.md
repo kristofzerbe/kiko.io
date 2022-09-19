@@ -234,7 +234,7 @@ In the example above, this can be easily understood if we insert a file named **
 
 I don't know when this happened, because I don't keep a constant eye on my little PWA and thus the further development of the related tools, but after having manually adjusted the moved codes two or three times now and once again wanting to change a few things on the PWA's icons, I had enough and came across the following sentence on the gulp-iconfont-css page on GitHub:
 
-{% blockquote_alt "backflip (Thomas Jaggi)" ["https://github.com/backflip/gulp-iconfont-css"] %}
+{% blockquote_alt "backflip (Thomas Jaggi)" "https://github.com/backflip/gulp-iconfont-css" %}
 Recent versions of gulp-iconfont emit a glyphs (or codepoints < 4.0.0) event (see docs) which should likely be used instead of the workflow described below. However, it will continue to work as expected.
 {% endblockquote_alt %}
 
@@ -317,7 +317,7 @@ Now the order of the SVG files doesn't matter anymore. I just copy a new SVG fil
 
 Interestingly, the inventor of **gulp-iconfont** page writes on the GiHub page:
 
-{% blockquote_alt "Nicolas Froidure (nfroidure)" ["https://github.com/nfroidure/gulp-iconfont"] %}
+{% blockquote_alt "Nicolas Froidure (nfroidure)" "https://github.com/nfroidure/gulp-iconfont" %}
 Warning: While this plugin may still be useful for fonts generation or old browser support, you should consider using SVG icons directly. Indeed, when i created gulp-iconfont and all its related modules, using SVG icons was just not realistic for a wide browser suppport but i was already conviced that SVG was the future, that's why i wanted my SVG source files to sit separated in a folder. So, now, just enjoy switching to SVG with almost no effort :). Was a great open source journey with you all!
 {% endblockquote_alt %}
 
