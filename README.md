@@ -4,6 +4,9 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
 ## Latest Posts
 <!-- BLOG-POST-LIST:START -->
+ - [Creating Icon Font from SVG Files](https://kiko.io/post/Creating-Icon-Font-from-SVG-Files/)   
+ 17 Sep 2022   
+
  - [Dopamine, a music player for Windows 10 as it should be](https://kiko.io/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/)   
  21 Aug 2022   
 
@@ -18,7 +21,4 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
  - [Old Sweetheart Rediscovered](https://kiko.io/post/Old-Sweetheart-Rediscovered/)   
  21 Jun 2022   
-
- - [Simplest Console File Logger](https://kiko.io/post/Simplest-Console-File-Logger/)   
- 19 Jun 2022   
 <!-- BLOG-POST-LIST:END -->
