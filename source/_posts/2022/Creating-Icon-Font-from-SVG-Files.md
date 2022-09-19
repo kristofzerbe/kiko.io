@@ -57,7 +57,7 @@ npm install --save-dev gulp-iconfont
 npm install --save-dev gulp-iconfont-css
 ```
 
-For generating the CSS file a template called ``_icons.css`` is shipped with the NPM package of ``gulp-iconfont-css``, which can be customized as needed. In my case I just made a copy into a folder called ``Templates``, where I store all other template files I need for my PWA.
+For generating the CSS file a template called ``_icons.css`` is shipped with the NPM package of **gulp-iconfont-css**, which can be customized as needed. In my case I just made a copy into a folder called ``Templates``, where I store all other template files I need for my PWA.
 
 ```CSS Templates/icons-template.css
 @font-face {
@@ -124,7 +124,7 @@ gulp.task('build',
 );
 ```
 
-I little explanation on that ... First of all ``gulp-iconfontCss`` has to be inserted before piping the files through ``gulp-iconfont``, in order to create the CSS file properly. Following options were used:
+I little explanation on that ... First of all the task for **gulp-iconfont-css** has to be inserted before piping the files through **gulp-iconfont**, in order to create the CSS file properly. Following options were used:
 
 #### gulp-iconfont-css
 
@@ -137,7 +137,7 @@ I little explanation on that ... First of all ``gulp-iconfontCss`` has to be ins
 
 #### gulp-iconfont
 
-The library combines some other projects such as [svgicons2svgfont](https://github.com/nfroidure/svgicons2svgfont), [gulp-svgicons2svgfont](https://github.com/nfroidure/svgicons2svgfont#svgicons2svgfontoptions) and [gulp-svg2ttf](https://github.com/nfroidure/gulp-svg2ttf) to create the different font formats.
+The library combines some other projects such as [svgicons2svgfont](https://github.com/nfroidure/svgicons2svgfont), [gulp-svgicons2svgfont](https://github.com/nfroidure/svgicons2svgfont#svgicons2svgfontoptions) and [gulp-svg2ttf](https://github.com/nfroidure/gulp-svg2ttf) to create the different font formats, because its just a wrapper around them.
 
 |Option|Description|
 |---|---|
@@ -209,24 +209,24 @@ After running ``gulp build`` all files needed were generated:
 }
 ```
 
-All I had to do now, was to reference the new CSS file in my HTML and decorating my HTML tags with one of the new ``icon-``-classes. Yes! My had my own icon font, just by copying some SVG files in a folder...
+All I had to do now, was to reference the new CSS file in my HTML and decorating my HTML tags with one of the new ``icon``-classes. Yes! My had my own icon font, just by copying some SVG files in a folder...
 
 ### The Problem
 
-A while later, as my app grew, I needed some new icons, but in the meantime had used the content codes elsewhere in static CSS files for example with other pseudo-selectors like AFTER.
+A while later, as my app grew, I needed some new icons, but in the meantime I had used the content codes elsewhere in static CSS files, for example with other pseudo-selectors like AFTER.
 
 ```CSS style.css
 .my-special-link::after {
   font-family: "MyAppIcons";
-  content: "\E007";
+  content: "\E006";
 }
 ```
 
-After copying a few new icon files to the SVG folder and running the build, I found that most of the icons didn't fit anymore!? 
+After copying a few new icon files to the SVG folder and running the build, I found that most of the icons didn't fit anymore!?
 
 After a short research it was clear to me what had happened. With the insertion of the new SVG files, the order of the files in the folder was changed. But since the libraries processed this folder in alphabetical order, file by file, and simply incremented the codes to be assigned, the codes had simply shifted.
 
-In the example above, this can be easily understood if we insert a file named **cloud.svg** here. The code for *cancel.svg* (``E002``) remains untouched, but *cloud.svg* now gets ``E003`` and *delete.svg* ``E004`` and so on. The hardwired icon for ``.my-special-link`` (``E007``) now showed instead of the link icon a flag icon.
+In the example above, this can be easily understood if we insert a file named **cloud.svg** here. The code for *cancel.svg* (``E002``) remains untouched, but *cloud.svg* now gets ``E003`` and *delete.svg* ``E004`` and so on. The hardwired icon for ``.my-special-link`` (``E006``) now showed instead of the link icon a flag icon.
 
 ---
 
@@ -238,7 +238,7 @@ I don't know when this happened, because I don't keep a constant eye on my littl
 Recent versions of gulp-iconfont emit a glyphs (or codepoints < 4.0.0) event (see docs) which should likely be used instead of the workflow described below. However, it will continue to work as expected.
 {% endblockquote_alt %}
 
-Ah, ok. I don't need the **gulp-iconfont-css** anymore. Lets see how the **gulp-iconfont** task looks, after rewriting:
+Ahh, ok. I don't need the **gulp-iconfont-css** anymore. I can create the CSS file by myself. Lets see how the **gulp-iconfont** task looks, after rewriting:
 
 ```JS /gulpfile.js
 var iconfont = require('gulp-iconfont');
@@ -264,6 +264,7 @@ gulp.task("create-iconfont", function () {
       })
     )
     .on("glyphs", function (glyphs, options) {
+
       fontObj.glyphs = glyphs.map(mapGlyphs);
 
       console.log(fontObj, options);
@@ -292,7 +293,7 @@ gulp.task('build',
 );
 ```
 
-First I have introduced a new ``fontObj`` variable to hold all informations for the untouched CSS template. The major difference is now that ``iconfont`` is the only main task, with a subtask where the glyphs are processed directly via [``consolidate``](https://www.npmjs.com/package/consolidate). The ``mapGlyphs()`` function ensures that the file names with the CodePoints are transferred into an easily usable structure.
+First I have introduced a new ``fontObj`` variable to hold all informations for the untouched CSS template. The major difference is now, that ``iconfont`` is the only main task, with a subtask where the glyphs are processed directly via [``consolidate``](https://www.npmjs.com/package/consolidate). The ``mapGlyphs()`` function ensures that the file names with the CodePoints are transferred into an easily usable structure.
 
 Works fine, but doesn't solve my problem with the shifted CodePoints, when inserting new SVG icons ... but someone remarked in a StackOverflow article to have a look at the test files of *gulp-iconfont*. **There, the SVG files carry as prefix the name of the CodePoints to be used for this file!**. Unfortunately, this feature is not documented, but it works...
 
@@ -308,7 +309,7 @@ Works fine, but doesn't solve my problem with the shifted CodePoints, when inser
         |-- uE007-cloud.svg
 ```
 
-Now the order of the SVG files doesn't matter anymore. Just copy a new SVG file into the folder and rename it with a currently unused Unicode.
+Now the order of the SVG files doesn't matter anymore. I just copy a new SVG file into the folder and rename it with a currently unused Unicode.
 
 ---
 
