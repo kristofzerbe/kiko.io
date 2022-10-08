@@ -4,6 +4,12 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
 ## Latest Posts
 <!-- BLOG-POST-LIST:START -->
+ - [Discoveries #20 - CSS &amp; UI](https://kiko.io/post/Discoveries-20-CSS-UI/)   
+ 08 Oct 2022   
+
+ - [One mouse to rule them all](https://kiko.io/post/One-mouse-to-rule-them-all/)   
+ 08 Oct 2022   
+
  - [Creating Icon Font from SVG Files](https://kiko.io/post/Creating-Icon-Font-from-SVG-Files/)   
  17 Sep 2022   
 
@@ -15,10 +21,4 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
  - [Gitpod - Visual Studio Code on the Web](https://kiko.io/post/Gitpod-Visual-Studio-Code-on-the-Web/)   
  17 Jul 2022   
-
- - [Discoveries #19 - Visual Helpers](https://kiko.io/post/Discoveries-19-Visual-Helpers/)   
- 09 Jul 2022   
-
- - [Old Sweetheart Rediscovered](https://kiko.io/post/Old-Sweetheart-Rediscovered/)   
- 21 Jun 2022   
 <!-- BLOG-POST-LIST:END -->
