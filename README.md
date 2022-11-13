@@ -4,6 +4,9 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
 ## Latest Posts
 <!-- BLOG-POST-LIST:START -->
+ - [Anatomy of Service Worker Communication](https://kiko.io/post/Anatomy-of-Service-Worker-Communication/)   
+ 12 Nov 2022   
+
  - [Discoveries #20 - CSS &amp; UI](https://kiko.io/post/Discoveries-20-CSS-UI/)   
  08 Oct 2022   
 
@@ -18,7 +21,4 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
  - [Scandinavian Presets for Lightroom](https://kiko.io/post/Scandinavian-Presets-for-Lightroom/)   
  19 Jul 2022   
-
- - [Gitpod - Visual Studio Code on the Web](https://kiko.io/post/Gitpod-Visual-Studio-Code-on-the-Web/)   
- 17 Jul 2022   
 <!-- BLOG-POST-LIST:END -->
