@@ -19,13 +19,13 @@ related:
   - Hexo-and-the-IndieWeb
 ---
 
-This weekend I had a revival experience. I got myself a [**Mastadon**](https://joinmastodon.org/) account, after many years of staying away from social media as far as I could and at most tweeting a new blog post. Since my active Twitter days, things have taken such a turn for the worse, that I've preferred to stay away completely.
+This weekend I had a revival experience. I got myself a [**Mastodon**](https://joinmastodon.org/) account, after many years of staying away from social media as far as I could and at most tweeting a new blog post. Since my active Twitter days, things have taken such a turn for the worse, that I've preferred to stay away completely.
 
-I don't know what made me join Mastadon on Sunday, but it sparked something in me: The love for the good old internet of the late 90s, early 2000s. These guys gave me a warm welcome and made me feel that Internet communities, away from sleazy influencers and banner ads, could actually still work. I got a taste of it, when I let this blog become part of IndieWeb over a year ago, but didn't quite believe in it because of the low traffic and mentions.
+I don't know what made me join Mastodon on Sunday, but it sparked something in me: The love for the good old internet of the late 90s, early 2000s. These guys gave me a warm welcome and made me feel that Internet communities, away from sleazy influencers and banner ads, could actually still work. I got a taste of it, when I let this blog become part of IndieWeb over a year ago, but didn't quite believe in it because of the low traffic and mentions.
 
 Now the richest man on the planet has to come along and buy the bird site, and a niche product called Mastodon, well known but underestimated in tech circles, almost explodes under the onslaught of disappointed commercial users. And that's what we are on Twitter, Facebook and Co ... a commercial object.
 
-The problem now will be how the community can integrate these many users for whom it was not mentally prepared. What now adapts to whom? The most important thing, however, will be to teach the newcomers (and I count myself among them) that Mastadon is not Twitter in new clothes!
+The problem now will be how the community can integrate these many users for whom it was not mentally prepared. What now adapts to whom? The most important thing, however, will be to teach the newcomers (and I count myself among them) that Mastodon is not Twitter in new clothes!
 
 I was going to write a few things about this, but this morning I read a Twitter thread from [**Peter Jakobs**](https://mastodon.green/@pjakobs), a self-proclaimed digital Aboriginal from Germany, that just sums it all up and explains it so well I could hardly do it:
 
