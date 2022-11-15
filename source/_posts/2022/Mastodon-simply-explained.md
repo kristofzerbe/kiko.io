@@ -61,7 +61,7 @@ I can understand that, it can be confusing. But what if I told you that **there 
 
 **Mastodon has many such islands and they are connected with bridges.**
 
-You choose an island, pitch your tents there and - you are not tied to this island. On the one hand, you can communicate freely with all the inhabitants of all the other islands, and on the other hand, if you want, you can take down your tents and move to another island (you'll lose a little bit, but not as much as if you wanted to leave). These islands (instances) are of different sizes. The biggest ones in Germany are [mastodon.social](https://mastodon.social), [troet.cafe](https://troet.cafe), [mastodon.green](https://mastodon.green) and a few others. But there are also tiny islands, I know more than one with a single inhabitant. Is he isolated on his island? No, because he is connected with all the others via said bridges.
+You choose an island, pitch your tents there and - you are not tied to this island. On the one hand you can communicate completely freely with all inhabitants of all other islands, on the other hand you can, if you want to, **take down your tents again and move to another island** (you will lose a little bit, but not as much as if you want to leave here [at Twitter]). These islands (instances) are of different sizes. The biggest ones in Germany are [mastodon.social](https://mastodon.social), [troet.cafe](https://troet.cafe), [mastodon.green](https://mastodon.green) and a few others. But there are also tiny islands, I know more than one with a single inhabitant. Is he isolated on his island? No, because he is connected with all the others via said bridges.
 
 **Every island has one (or more) chiefs who keep order** (Twitter does too, but we've complained about that a lot). These chiefs are often private individuals who run an instance as a hobby, but with the large instances there is usually a team behind it, and some also a small company ([mastodon.social](https://mastodon.social), for example, is run by a limited liability company that was founded by the chief developer of the Mastodon software, [mastodon.green](https://mastodon.green) is, as far as I know, a one-man limited liability company).
 
@@ -70,10 +70,10 @@ These islands are one of the standout features of Mastodon: **a Musk, a Trump, o
 
 **If individual islands do not want to comply with the rules at all, then they are "defederated"**, or figuratively: the bridges there are demolished. However, this is the decision of each individual island chief, so it may not be grassroots democracy, but it is distributed.  
 
-Ok pjakobs, enough of the chatter, how am I supposed to find out which island is suitable for me?
+Ok pjakobs, enough of the chatter, how am I supposed to find out which island is suitable for me?  
 Here is a searchable list of Mastodon instances: [instances.social/list](https://instances.social/list#lang=de&allowed=&prohibited=&min-users=&max-users=)
 
-It is possible that another aspect of the "island" image will apply to you: there is a local timeline on the islands, which is also called that. So if you choose an island that is particularly suited to a geographical region, a topic or a language, then you will see the contributions of the other "inhabitants of this island" in their local timeline - which hopefully have a certain thematic cohesion. However, as already mentioned, you can follow all people on all instances and you will also see them in your own timeline.
+It is possible that another aspect of the "island" image will apply to you: there is a local timeline on the islands, which is also called that. So, if you choose an island that is particularly suited to a geographical region, a topic or a language, then you will see the contributions of the other "inhabitants of this island" in their local timeline - which hopefully have a certain thematic cohesion. However, as already mentioned, you can follow all people on all instances and you will also see them in your own timeline.
 
 Speaking of timelines: they are chronological and you only see the posts (toots) of those you follow. **No algorithm, no "others like this too", no good morning tweets in the late evening. Just the way Twitter used to be 10 years ago.**
 
@@ -87,7 +87,16 @@ Another thing that is very very different is DMs. Here on Twitter, we're used to
 It's confusing and doesn't feel as nicely protected as it does here, and as I walked around town a bit yesterday I realized: this is intentional. Twitter creates an apparent privacy through display that DMs don't offer.  
 **DMs are deliberately not PM, not private messages.** Mastodon also makes that clear through its presentation. I have therefore added my Threema and Telegram link to my profile, these tools actually offer private conversations. Is not comfortable but honest.
 
-You have created an account, but do not want to move 100% yet or, as in my case, still have many friends on this site? There is also a kind of "bridge" from Mastodon Archipelago to Twitter. You can mirror your tweets to Mastodon or vice versa. This is only valid for tweets, not for replies. That means you have to be a bit careful that you don't just spam your followers in the other network, but also interact with them. After a few days of mirroring from Twitter to Mastodon I turned the bridge around, today probably 80% of the tweets you see from me and the non-replies are on Mastodon. I use [crossposter.masto.donte.com.br](https://crossposter.masto.donte.com.br) for this.
+You have created an account, but do not want to move 100% yet or, as in my case, still have many friends on this site? There is also a kind of "bridge" from Mastodon archipelago to Twitter. You can mirror your tweets to Mastodon or vice versa. This is only valid for tweets, not for replies. That means you have to be a bit careful that you don't just spam your followers in the other network, but also interact with them. After a few days of mirroring from Twitter to Mastodon I turned the bridge around, today probably 80% of the tweets you see from me and the non-replies are on Mastodon. I use [crossposter.masto.donte.com.br](https://crossposter.masto.donte.com.br) for this.
+
+The lovely people from [@digitalcourage](https://twitter.com/digitalcourage) not only run a Mastodon instance themselves, but also put together a [great overview](https://digitalcourage.de/digitale-selbstverteidigung/fediverse) of the Fediverse (the federated social media universe, which is much more than just Mastodon).
+
+In summary, if Musk is really fucking this up, you don't have to be a helpless victim of his actions. Even if Mastodon might not be an alternative for you at the moment, create an account, try to find your followers over there. 
+
+A life raft is not as comfortable as a floating boat, but it's better than a sinking boat!
+
+Ah, here's another more complete overview of Mastodon: 
+[the-federation.info/mastodon](https://the-federation.info/mastodon) (takes a little while to load)
 
 {% endblockquote_alt %}
 
