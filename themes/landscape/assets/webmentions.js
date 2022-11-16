@@ -6,7 +6,10 @@
 function insertWebmentions(key) {
   if (isOffline) return;
 
-  const dtf = new Intl.DateTimeFormat('en-GB', { year: 'numeric', month: 'long', day: '2-digit' });
+  const dtf = new Intl.DateTimeFormat('en-GB', { 
+    year: 'numeric', month: 'short', day: '2-digit', 
+    hour: 'numeric', minute: 'numeric' });
+
   const lsTimestamp = "wmts_" + key;
   const lsWebmentions = "wm_" + key;
 
