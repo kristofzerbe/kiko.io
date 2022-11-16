@@ -4,6 +4,9 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
 ## Latest Posts
 <!-- BLOG-POST-LIST:START -->
+ - [Mastodon simply explained](https://kiko.io/post/Mastodon-simply-explained/)   
+ 15 Nov 2022   
+
  - [Syndicate Mastodon Hashtags in your favorite Feed Reader](https://kiko.io/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/)   
  13 Nov 2022   
 
@@ -18,7 +21,4 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
  - [Creating Icon Font from SVG Files](https://kiko.io/post/Creating-Icon-Font-from-SVG-Files/)   
  17 Sep 2022   
-
- - [Dopamine, a music player for Windows 10 as it should be](https://kiko.io/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/)   
- 21 Aug 2022   
 <!-- BLOG-POST-LIST:END -->
