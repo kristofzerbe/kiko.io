@@ -2,8 +2,10 @@
  * Method to retreive Webmentions from webmention.io and insert them into a article page
  * see: https://kiko.io/categories/Tools/Hexo-and-the-IndieWeb-Receiving-Webmentions/
  * @param {string} key - slug of the article 
+ * @param {string} originalHost - name of the original host of the webmention
+ * @param {string} owner - name of the website owner
  */
-function insertWebmentions(key) {
+function insertWebmentions(key, originalHost, owner) {
   if (isOffline) return;
 
   const dtf = new Intl.DateTimeFormat('en-GB', { 
@@ -37,7 +39,10 @@ function insertWebmentions(key) {
    */
   async function load() {
 
-    const wmUrl = `https://webmention.io/api/mentions.jf2?target=${window.location.href}&per-page=100&sort-dir=up`;
+    let currentUrl = new URL(window.location.href);
+    let targetUrl = originalHost + currentUrl.pathname;
+
+    const wmUrl = `https://webmention.io/api/mentions.jf2?target=${targetUrl}&per-page=100&sort-dir=up`;
     const wmResponse = await fetch(wmUrl);
     webmentions = await wmResponse.json();
 
@@ -89,6 +94,8 @@ function insertWebmentions(key) {
    */
   function extendAuthor(wm) {
 
+    wm.own = (wm.author.name === owner);
+
     wm.author.card_class = "h_card";
     wm.author.name_class = "p-name";
     wm.author.photo_class = "u-photo";
@@ -116,6 +123,37 @@ function insertWebmentions(key) {
   }
 
   /**
+   * Extend source for element
+   * @param {Webmention} wm 
+   */
+  function extendSource(wm) {
+    wm.source_type = "web";
+
+    // all services brid.gy supports:
+    if (wm['wm-source'].toLowerCase().includes("/twitter")) {
+      wm.source_type = "twitter";
+    }
+    if (wm['wm-source'].toLowerCase().includes("/mastodon")) {
+      wm.source_type = "mastodon";
+    }
+    if (wm['wm-source'].toLowerCase().includes("/github")) {
+      wm.source_type = "github";
+    }
+    if (wm['wm-source'].toLowerCase().includes("/facebook")) {
+      wm.source_type = "facebook";
+    }
+    if (wm['wm-source'].toLowerCase().includes("/instagram")) {
+      wm.source_type = "instagram";
+    }
+    if (wm['wm-source'].toLowerCase().includes("/flickr")) {
+      wm.source_type = "flickr";
+    }
+    if (wm['wm-source'].toLowerCase().includes("/reddit")) {
+      wm.source_type = "reddit";
+    }
+  }
+
+  /**
    * Get Wrapper from template
    * @param {Webmention} wm 
    * @param {string} verb 
@@ -139,6 +177,7 @@ function insertWebmentions(key) {
    */
   function getHeader(wm, verb) {
     extendAuthor(wm);
+    extendSource(wm);
 
     let e = createElementFromHtml(`
       <div class="wm-card ${wm.author.card_class}">
@@ -146,8 +185,10 @@ function insertWebmentions(key) {
           <img class="wm-photo ${wm.author.photo_class}" width="44" height="44"
                src="${wm.author.photo}" alt="${wm.author.name}" />
         </a>
-        <div class="wm-meta">
-          <a class="wm-name ${wm.author.name_class}" href="${wm.author.url}">${wm.author.name}</a>
+        <div class="wm-meta ${((wm.own) ? "wm-own" : "")}">
+          <a class="wm-name ${wm.author.name_class} wm-source-${wm.source_type}" href="${wm.author.url}">
+            <span>${wm.author.name}</span>
+          </a>
           <span class="wm-verb">${verb} on</span>
           <time class="wm-date dt-published" datetime="${wm['wm-received']}">${dtf.format(Date.parse(wm['wm-received']))}</time>
           <small>${wm.no}</small>
