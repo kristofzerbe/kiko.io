@@ -15,7 +15,7 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
   const mdSource = path.join(config.source_dir, "_dynamic", page.name + ".md");
   const md = fs.readFileSync(mdSource);
   let fm = front.parse(md);
-  page = {...page, ...fm};    
+  page = {...page, ...fm};
 
   // Convert Markdown content into HTML
   page.content = hexo.render.renderSync({ text: page._content, engine: 'markdown' });  

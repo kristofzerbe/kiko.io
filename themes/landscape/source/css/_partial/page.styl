@@ -20,23 +20,60 @@
   /[data-theme="dark"] &
     color: dark-color-grey  
 
+.page-index-list
+  list-style-type: none
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  padding: 0 0 20px
+  a
+    flex: 0 0 auto
+    display: block
+    margin: 0 10px 10px 0
+    padding: 6px 10px
+    text-decoration: none
+    border-radius: border-radius-small
+    border-width: 1px
+    border-style: solid
+    border-color: color-border
+    background-color: color-border
+    color: color-button-link
+    /[data-theme="dark"] &
+      border-color: dark-border-color
+      background-color: dark-color-border
+      color: dark-color-button-link
+    &.current
+      font-size: 1.05em
+      font-weight: bold
+      border-color: color-border
+      background-color: transparent
+      /[data-theme="dark"] &
+        color: dark-color-highlight
+    &:not(.current):hover
+      border-color: color-link    
+      background-color: color-link
+      color: dark-color-link
+
 .page-content
   @extend $base-style
   section 
       @extend $block
+      position: relative
       margin: 2em 0
       padding: 2em
-      overflow: hidden
-      background: color-block
-      box-shadow: 1px 2px 3px color-border
       border: 1px solid color-border
       border-radius: border-radius
+      background: color-block
+      box-shadow: box-shadow color-border
       color: color-default
       /[data-theme="dark"] &
         background: dark-color-block
-        box-shadow: 1px 2px 3px dark-color-border
+        box-shadow: dark-box-shadow dark-color-border
         border-color: dark-color-border
         color: dark-color-default
+      figure
+        margin-left: -28px !important /* HACK */
+        margin-right: -28px !important /* HACK */
       p, table
         line-height: line-height
         margin: line-height 0
@@ -53,6 +90,7 @@
         margin: 1em 0 0.75em
       a
         text-decoration: none
+        word-wrap: break-word
         color: color-link
         /[data-theme="dark"] &
           color: dark-color-link
@@ -77,6 +115,11 @@
         color: color-header
         /[data-theme="dark"] &
           color: dark-color-header
+        &.raised
+          display: block
+          position: absolute
+          top: 0
+          left: 0
     section.flex
       display: flex
       flex-wrap: wrap
@@ -96,6 +139,41 @@
           max-width: 25%
         fieldset.max.expand
           max-width: 75%
+    section.note
+      margin-left: 3em
+      margin-bottom: 4em
+      @media mq-mobile
+        margin-left: 2em
+        margin-bottom: 3em
+      &:not(:last-child)::before
+        content: ""
+        display: block
+        position: absolute
+        height: calc(100% + 4em)
+        left: -2em
+        @media mq-mobile
+          height: calc(100% + 3em)
+          left: calc(-2em + 6px)
+        top: 0
+        border-color: color-highlight
+        border-width: 1px;
+        border-style: solid;
+        /* border-image: linear-gradient( to bottom, darkorange, #d7d7d7, darkorange ) 1 100%; */
+        /[data-theme="dark"] &
+          border-color: color-highlight
+      time
+        padding: 6px 12px
+        font-weight: bold
+        border-radius: 3px
+        font-size: 1em
+        top: -1em
+        left: -3em
+        @media mq-mobile
+          left: -2em
+        color: color-logo
+        background-color: color-highlight
+        /[data-theme="dark"] &
+          background-color: dark-color-highlight
 
     .view-bar
       margin: 1em 0.25em

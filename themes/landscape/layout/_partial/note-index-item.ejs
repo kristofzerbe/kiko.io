@@ -1,0 +1,13 @@
+<%
+    let dateX = item.date.toLocaleString('en-us', { 
+        year:"numeric", 
+        month:"short",
+        day:"numeric"
+    }).replace(",", "").split(" ");
+    let dateString = dateX[1] + " " + dateX[0] + " " + dateX[2];  
+ %> 
+<section class="note">
+    <time><%- dateString %></time>
+    <h2><%- item.title %></h2>
+    <%- item.excerpt %>
+</section>

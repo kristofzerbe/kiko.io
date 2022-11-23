@@ -4,9 +4,9 @@ title: 'Discoveries #15 - Self Hosted'
 subtitle: null
 date: 2021-12-25T12:18:51.000Z
 photograph:
-  file: 21-08-05 Kroatien-3015.jpg
-  name: Combination Lock
-  link: 'https://500px.com/photo/1037371999'
+  file: IMGP1149.jpg
+  name: Büyükada Landing
+  link: 'https://500px.com/photo/81585221/'
   socialmedia: /static/images/social-media/Discoveries-15-Self-Hosted.png
 series: Discoveries
 categories:
