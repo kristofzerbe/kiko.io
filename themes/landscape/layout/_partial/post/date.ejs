@@ -1,9 +1,0 @@
-<a href="<%- url_for(post.path) %>" class="<%= class_name %>">
-  <% if (post.dateOriginal) { %>
-    <time class="updated dt-updated" datetime="<%= date_xml(post.date) %>" itemprop="dateUpdated"><%= date(post.date, date_format) %></time>
-    <br>
-    <time class="published dt-published" datetime="<%= date_xml(post.dateOriginal) %>" itemprop="datePublished"><%= date(post.dateOriginal, date_format) %></time>
-  <% } else { %>
-    <time class="published dt-published" datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, date_format) %></time>
-  <% } %>
-</a>
