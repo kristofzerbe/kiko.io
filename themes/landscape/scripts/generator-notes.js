@@ -157,6 +157,8 @@ function getMDInfo(filePath, obj, parseContent) {
 function processImages(sourceDir, year) {
 
     let imageDir = path.join(sourceDir, "images");
+
+    if (!fs.existsSync(imageDir)) { return; }
     
     // get images of notes
     let images = fs
