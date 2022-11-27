@@ -1,7 +1,9 @@
 ---
 title: "TITLE"
-date: YYYY-MM-DD HH:MM:SS
+date: YYYY-MM-DD HH:MM:00
 hide: true
+syndication:
+  mastodon: 
 ---
 
 TEXT
