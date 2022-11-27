@@ -1,0 +1,21 @@
+<% if (post.related && post.related.length){ %>
+  <div class="article-related">
+    <h2>Related</h2>
+    <div class="archives">
+      <% post.related.forEach(function(item) { %>
+        <% 
+          var posts = site.posts.filter(function(post) {
+            let slugArray = post.slug.split("/"); //due to subfolders
+            let slug = slugArray[slugArray.length - 1];
+            return slug.toLowerCase() === item.toLowerCase();
+          });
+          posts.each(function(post) {
+        %>
+        <%- partial('../archive-post', { post: post, show_link: true }) %>
+        <%
+          }); 
+        %>
+      <% }) %>
+    </div>
+  </div>
+<% } %>

@@ -1,0 +1,30 @@
+
+<!-- <article class="note" data-key="<%= note.key %>"> -->
+<article id="note-<%= note.key %>" class="article note h-entry" itemscope itemprop="blogPost">
+
+  <div class="article-meta">
+    <time datetime="<%= date_xml(note.date) %>" itemprop="datePublished"><%= date(note.date, 'DD MMM YYYY') %></time>
+  </div>
+
+  <div class="article-inner">
+
+    <header class="article-header">
+      <%- partial('post/title', { post: note, class_name: 'article-title p-name', show_link: true, index: false }) %>    
+    </header>
+  
+    <div class="article-entry" itemprop="articleBody">
+      <%- note.excerpt %>
+      <% if (note.more && theme.excerpt_link){ %>
+        <p class="article-more-link">
+          <a href="<%- url_for(note.link) %>"><%= theme.excerpt_link %></a>
+        </p>
+      <% } %>
+    </div>
+
+    <footer class="article-footer">      
+      <%- partial('post/permalink', { post: note, class_name: 'article-permalink' }) %>
+    </footer>
+    
+  </div>
+
+</article>

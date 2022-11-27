@@ -1,0 +1,18 @@
+<div class="card tiny-tools" 
+    data-tags="<%= item.labels.join(";") %>"
+    data-string-title="<%- item.name %>" 
+    data-id="<%- item.id %>"
+    data-position="<%- item.position %>"
+    data-date-last-activity="<%- item.dateLastActivity %>">
+  <a class="card-img" href="<%- item.link %>">
+    <img src="<%- item.image.url %>" />
+  </a>
+  <h3><a href="<%- item.link %>"><%- item.name %></a></h3>
+  <small><a href="<%- item.link %>"><%- item.link %></a></small>
+  <div class="tags">
+    <% for(var j=0; j < item.labels.length; j++) { %>
+      <a class="tag" href="#" onclick="return filterByTag(this);"><%- item.labels[j] %></a>
+    <% } %>
+  </div>
+  <p><%- item.description %></p>
+</div>

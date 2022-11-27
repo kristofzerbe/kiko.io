@@ -1,0 +1,131 @@
+<%- js('js/dist/spotlight.bundle.js') %>
+
+<% if (page.photograph){ %>
+  <%- partial('_partial/photograph') %>
+<% } %>
+
+<h1 class="page-title"><%= page.title %></h1>
+<h2 class="page-subtitle"><%= page.subtitle %></h2>
+
+<div class="page-content">
+  <%- page.content %>
+
+  <hr>
+
+  <div class="view-bar">
+    <div class="bar-info">
+      <span class="info-count"><%= page.items.length %></span> Photos <span class="info-des"></span>
+    </div>
+    
+    <div class="bar-cmd">
+      <input type="radio" name="view-filter" id="filter-all" checked
+             data-status="all" 
+             data-next-status="pool"
+             data-designator="overall">
+      <label for="filter-all"></label>
+      <input type="radio" name="view-filter" id="filter-pool" 
+             data-status="pool" 
+             data-next-status="used"
+             data-designator="unused">
+      <label for="filter-pool"></label>
+      <input type="radio" name="view-filter" id="filter-used" 
+             data-status="used" 
+             data-next-status="all"
+             data-designator="used">
+      <label for="filter-used"></label>
+    </div>
+
+    <div class="bar-cmd">
+      <input type="radio" name="view-switch" id="switch-grid" checked 
+             onchange="setView('grid');">
+      <label for="switch-grid"></label>
+      <input type="radio" name="view-switch" id="switch-list" 
+             onchange="setView('list');">
+      <label for="switch-list"></label>
+    </div>
+  </div>
+
+  <div class="view grid">
+    <% for(var i=0; i < page.items.length; i++) { %>
+      <%- partial('_partial/photo-item', { item: page.items[i] }) %>
+    <% } %>
+  </div>  
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+
+    let currentView = getCookie("view");
+    if (currentView) {
+      document.querySelector("#switch-" + currentView).checked = true; 
+      setView(currentView);
+    }
+
+    document.querySelectorAll("input[name=view-filter]").forEach(element => {
+      element.addEventListener("click", (event) => {
+        setFilter(element);
+      });
+    });
+
+  })
+
+  function setView(newView) {
+    let view = document.querySelector('.view');
+    if (newView === 'list') {
+      view.classList.replace('grid', 'list')
+    } else {
+      view.classList.replace('list', 'grid')
+    }
+    setCookie("view", newView, 365);
+  }
+
+  function setFilter(currentFilterElement) {
+
+    let newFilter;
+    if (!currentFilterElement) { //for initialization
+      currentFilterElement = document.querySelector("input[name=view-filter]:checked")
+      newFilter = currentFilterElement.getAttribute("data-status");
+    } else {
+      newFilter = currentFilterElement.getAttribute("data-next-status");
+    }    
+
+    let newfilterElement = document.querySelector("#filter-" + newFilter);
+    let designator = newfilterElement.getAttribute("data-designator");
+
+    newfilterElement.checked = true;
+
+    document.querySelectorAll(".card").forEach(item => {
+      if (newFilter === 'all' || (newFilter === item.getAttribute("data-status"))) {
+        item.style.display = "block";
+        setTimeout(() => { 
+          item.classList.remove("hide"); 
+          item.querySelector(".card-img").classList.add("spotlight");
+        }, 100);
+      } else {
+        item.classList.add("hide");
+        item.querySelector(".card-img").classList.remove("spotlight");
+        setTimeout(() => { 
+          item.style.display = "none"; 
+        }, 300);
+      }
+    });
+    setTimeout(() => { 
+        initViewportImage();
+
+        let resultCount = document.querySelectorAll(".card:not(.hide)").length;
+        let resultElement = document.querySelector(".bar-info span.info-count");
+        let desElement = document.querySelector(".bar-info span.info-des");
+
+        resultElement.textContent = resultCount;
+        desElement.textContent = designator;
+
+        Spotlight.init();
+
+      }, 300);
+  }
+  setTimeout(function() { //Hack for returning from external to page
+    setFilter();
+  }, 500)
+
+</script>

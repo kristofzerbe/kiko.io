@@ -1,0 +1,16 @@
+<% if (page.photograph){ %>
+  <%- partial('_partial/photograph', { page: page }) %>
+<% } %>
+
+<% if (page.title === '404') { %>
+    <script>
+    var root = document.documentElement;
+    root.classList.add("gray");
+    </script> 
+<% } %>
+
+<h1 class="page-title"><%= page.title %></h1>
+
+<div class="page-content">
+    <%- page.content %>
+</div>

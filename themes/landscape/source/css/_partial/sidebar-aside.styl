@@ -1,0 +1,63 @@
+#sidebar
+  @media mq-normal
+    column(sidebar-column)
+
+.widget-wrap
+  margin: widget-margin 1em
+
+.widget-title
+  @extend $block-caption  
+  color: color-header
+  /[data-theme="dark"] &
+    color: dark-color-header
+
+.widget
+  color: color-sidebar-text
+  background: color-widget-background
+  border: 1px solid color-widget-border
+  /[data-theme="dark"] &
+    color: dark-color-sidebar-text
+    background: dark-color-widget-background
+    border: 1px solid dark-color-widget-border
+  padding: 0 15px
+  a
+    color: color-widget-link
+    /[data-theme="dark"] &
+      color: dark-color-widget-link
+    text-decoration: none
+    &:hover
+      text-decoration: none
+  p
+    a
+      color: color-link
+      text-decoration: none
+      /[data-theme="dark"] &
+        color: dark-color-link
+        border-bottom: dark-color-link-border 1px solid
+      &:hover
+        border-bottom: color-link 1px solid
+        /[data-theme="dark"] &
+          border-bottom: dark-color-link 1px solid
+
+  ul, ol, dl
+    ul, ol, dl
+      margin-left: 15px
+      list-style: disc
+    li
+      transition: all .2s ease
+      line-height: 1.4em            
+      border-left: 2px color-border solid
+      /[data-theme="dark"] &
+        border-color: dark-color-border
+      margin: 10px 0 0 -12px
+      padding: 0 10px      
+      &:hover
+        border-left: 4px color-link solid
+        /[data-theme="dark"] &
+          border-color: dark-color-border-hover
+        margin-left: -13px;
+        padding-left: 9px
+        a 
+          color: color-link
+          /[data-theme="dark"] &
+            color: dark-color-link

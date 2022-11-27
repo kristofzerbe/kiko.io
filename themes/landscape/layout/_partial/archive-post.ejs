@@ -1,0 +1,17 @@
+<article class="archive-article archive-type-<%= post.layout %>">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <%- partial('post/photograph', { class_name: 'archive-article-photo' }) %>
+    </header>
+    <div class="archive-article-content">
+      <%- partial('post/date', { class_name: 'archive-article-date', date_format: 'DD MMM YYYY' }) %>
+      <%- partial('post/category', { class_name: 'archive-article-category' }) %>
+      <%- partial('post/anything', { class_name: 'archive-article-anything' }) %>
+      <%- partial('post/title', { class_name: 'archive-article-title', show_link: show_link }) %>
+      <%- partial('post/subtitle', { class_name: 'archive-article-subtitle' }) %>              
+    </div>
+    <div class="archive-article-footer">
+      <%- partial('post/tag', { class_name: 'archive-article-tags' }) %>
+    </div>
+</div>
+</article>

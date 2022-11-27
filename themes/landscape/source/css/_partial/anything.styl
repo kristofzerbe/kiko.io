@@ -1,0 +1,130 @@
+.anything-wrap
+  margin: block-margin 0
+
+.anything-inner
+  @extend $block-inner
+  overflow: hidden
+
+.anything-header
+  padding: article-padding article-padding 0
+
+.anything-entry
+  font-size: 2em
+  font-weight: 600
+  line-height: line-height-title
+  transition: color 0.4s
+  a
+    position relative
+    z-index: 0
+    display: flex
+    justify-content: space-between
+    gap: 10px
+    text-decoration: none
+    width: 100%
+    color: color-default
+    /[data-theme="dark"] &
+      color: dark-color-default
+    &:hover
+      color: color-link
+      /[data-theme="dark"] &
+        color: dark-color-link
+      em
+        background-color: color-link
+        color: color-block
+        /[data-theme="dark"] &
+          background-color: dark-color-link
+          color: dark-color-block
+      // https://css-tricks.com/adam-argyles-sick-mouse-out-css-hover-effect/
+      &:before
+        transform: scaleX(1)
+        transform-origin: left
+    &:before
+      position: absolute
+      z-index: -1
+      margin: -3px -3px -3px -9px
+      background: color-hover-background
+      /[data-theme="dark"] &
+        background: dark-color-hover-background
+      content: ""
+      border-radius: 4px
+      inset: 0
+      transform: scaleX(0)
+      transform-origin: right
+      transition: transform 0.4s ease-in-out
+    em
+      font-size: 0.6em
+      line-height: 1.6em
+      padding: 5px
+      min-width: 80px
+      max-height: 26px
+      text-align: center
+      transition: all .5s ease-in
+      background-color: color-button
+      color: color-button-link
+      border-radius: border-radius-small
+      /[data-theme="dark"] &
+        background-color: dark-color-button
+        color: dark-color-button-link        
+
+.anything-content
+  @extend $base-style
+  clearfix()
+  color: color-default
+  /[data-theme="dark"] &
+    color: dark-color-default
+  padding: 0 article-padding
+  a
+    text-decoration: none
+    color: color-link
+    /[data-theme="dark"] &
+      color: dark-color-link
+      border-bottom: dark-color-link-border 1px solid
+    &:hover
+      border-bottom: color-link 1px solid
+      /[data-theme="dark"] &
+        border-bottom: dark-color-link 1px solid
+  p
+    line-height: line-height
+    margin: line-height 0
+  div.shields-io p
+    clear: both
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    img
+      margin: 0 10px 10px 0
+  .brand-links
+    display: flex
+    flex-direction: row
+    margin: 10px 0 30px
+    gap: 30px
+    @media mq-mobile
+      gap: 20px
+    a
+      display: flex
+      flex-direction: column
+      align-items: center
+      row-gap: 6px
+      border-bottom: 1px white solid
+      img
+        width: 42px
+      span
+        display: block
+        font-weight: 1rem
+        text-align: center
+    a.github
+      color: #181717
+      &:hover
+        border-color: #181717
+    a.npm
+      color: #CB3837
+      &:hover
+        border-color: #CB3837
+    a.insights
+      color: #32E0C4
+      &:hover
+        border-color: #32E0C4
+    a.vscode
+      color: #007acc
+      &:hover
+        border-color: #007acc

@@ -1,0 +1,419 @@
+.page-title
+  font-size: 1.6em
+  font-weight: 600
+  line-height: line-height-title
+  text-transform: uppercase
+  margin-top: line-height-title
+  margin-bottom: 1em
+  color: color-default
+  /[data-theme="dark"] &
+    color: dark-color-default
+
+.page-subtitle, .page-backlink
+  font-size: 1.2em
+  line-height: line-height-title
+  text-transform: uppercase
+  color: color-grey
+  /[data-theme="dark"] &
+    color: dark-color-grey
+
+.page-subtitle
+  font-weight: 400
+  margin-top: -0.5em
+  margin-bottom: 2em
+
+.page-backlink
+  display: inline-block
+  margin-top: 2em
+  text-decoration: none
+  font-weight: 600
+  opacity: 0.75
+  &:hover
+    color: color-link
+    /[data-theme="dark"] &
+      color: dark-color-link
+  &:before
+    font-family: fa-icon-solid
+    font-size: icon-home-size
+    margin-right: 10px
+    width: icon-home-size
+    height: icon-home-size
+    content: icon-arrow-left
+
+.page-index-list
+  list-style-type: none
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  // padding: 0 0 20px
+  a
+    flex: 0 0 auto
+    display: block
+    margin: 0 10px 10px 0
+    padding: 6px 10px
+    font-size: 1.2em
+    text-decoration: none
+    border-radius: border-radius-small
+    border-width: 1px
+    border-style: solid
+    border-color: color-border
+    background-color: color-border
+    color: color-button-link
+    /[data-theme="dark"] &
+      border-color: dark-color-border
+      background-color: dark-color-border
+      color: dark-color-button-link
+    &.current
+      font-size: 1.3em
+      font-weight: bold
+      background-color: transparent
+      border-color: color-border
+      /[data-theme="dark"] &
+        border-color: dark-color-border
+    &:not(.current):hover
+      border-color: color-link
+      background-color: color-link
+      color: color-logo
+      /[data-theme="dark"] &
+        border-color: dark-color-base
+        background-color: dark-color-base
+        color: dark-color-logo
+
+.page-content
+  @extend $base-style
+  section
+      @extend $block-inner
+      position: relative
+      margin: 2em 0
+      padding: 2em
+      // border: 1px solid color-border
+      color: color-default
+      /[data-theme="dark"] &
+        // border-color: dark-color-border
+        color: dark-color-default
+      figure, pre
+        margin-left: -28px !important /* HACK */
+        margin-right: -28px !important /* HACK */
+      p, table
+        line-height: line-height
+        margin: line-height 0
+      p:last-child
+        margin-bottom: 0
+      h1:first-child
+        margin-top: 0
+      h1, h2, h3, h5
+        font-weight: 600
+      h4, h6
+        font-weight: 400
+      h1, h2, h3, h4, h5, h6
+        line-height: line-height-title
+        margin: 1em 0 0.75em
+      ul, ol, dl
+        margin-top: line-height
+        margin-bottom: line-height
+      fieldset
+        span.result
+          position: absolute
+          right: 0
+        span.result.error
+          color: color-error
+      time
+        font-size: .85em
+        margin-bottom: -20px
+        position: absolute
+        color: color-header
+        /[data-theme="dark"] &
+          color: dark-color-header
+        &.raised
+          display: block
+          position: absolute
+          top: 0
+          left: 0
+    section.flex
+      display: flex
+      flex-wrap: wrap
+      fieldset
+        flex: 1 1 auto
+      fieldset.gap
+        margin-right: 2em
+        margin-bottom: auto;
+      fieldset.max
+        max-width: max-content
+      @media mq-mobile
+        fieldset.gap
+          width: 100%
+          margin-right: auto;
+          margin-bottom: 1em
+        fieldset.max
+          max-width: 25%
+        fieldset.max.expand
+          max-width: 75%
+    .view-bar
+      margin: 1em 0.25em
+      display: flex
+      flex-direction: row
+      justify-content: flex-end
+      gap: 1em
+      .bar-info
+        margin-right: auto
+        line-height: 2em
+        font-weight: bold
+        .info-des
+          font-weight: normal
+      .bar-cmd
+        padding-left: 12px
+        input[type=radio]
+          display: none
+          + label
+            padding-left: 8px
+            font-size: 1.5em
+            opacity: 0.25
+            cursor: pointer
+            &::before
+              display: inline-block
+              font-size: inherit
+              text-rendering: auto
+              -webkit-font-smoothing: antialiased
+          &:checked
+            + label
+              opacity: 1
+        input#switch-grid
+          + label
+            &::before
+              font-family: FontAwesome5Solid
+              content: icon-grid
+        input#switch-list
+          + label
+            &::before
+              font-family: FontAwesome5Solid
+              content: icon-list
+        input#filter-all
+          + label
+            &::before
+              font-family: FontAwesome5Solid
+              content: icon-circle
+        input#filter-pool
+          + label
+            &::before
+              font-family: FontAwesome5Solid
+              content: icon-circle-notch
+        input#filter-used
+          + label
+            &::before
+              font-family: FontAwesome5Regular
+              content: icon-circle-dot
+        input[name="view-filter"]
+          + label
+            display: none
+          &:checked
+            + label
+              display: inline-block
+    .list
+      display: flex
+      flex-direction: column
+      flex-wrap: nowrap
+      margin-bottom: 2em
+      .card
+        padding: .5em .5em 0 .5em
+        margin: .5em 0
+        display: grid
+        .card-img
+          grid-area: image
+          margin-right: 1em
+          margin-top: -0.5em
+          margin-left: -0.5em
+          float: left;
+        h3
+          margin: .5em 0 1em 0
+          font-size: 110%
+          grid-area: title
+          overflow: hidden
+          a
+            display: block
+            white-space: nowrap
+            overflow: hidden
+            text-overflow: ellipsis
+        small, p
+          display: none
+      .card.tiny-tools
+        grid-template-columns: 90px auto
+        grid-template-areas: "image title" "image tags"
+        .card-img
+          height: 82px
+          img
+            height: 100%
+        .tags
+          grid-area: tags
+          margin: 0
+          margin-bottom: 0.5em
+      .card.photo
+        grid-template-rows: auto 25px auto
+        grid-template-columns: 160px auto
+        grid-template-areas: "status status" "image link" "image title"
+        .card-img
+          height: 90px
+          width: 150px
+          overflow: hidden
+          border-radius: 0 0 0 4px
+          img
+            width: 100%
+        h3
+          margin-top: 0
+        a.icon-link
+          bottom: -.5em
+        span.pre-title
+          grid-area: link
+        .status
+          grid-area: status
+          margin: -.5em -.5em .5em
+
+    .grid
+      display: grid
+      grid-gap: 2em
+      grid-template-columns: repeat(auto-fill, minmax(220px,1fr))
+      margin-bottom: 3em
+      .card
+        padding: 1em
+        .card-img
+          margin: -1em -1em 0 -1em
+          height: auto
+          img
+            width: 100%
+            height: 100%
+            object-fit: cover
+        h3
+          margin: 1rem 0 0.25rem
+      .card.tiny-tools
+        div.tags
+          margin: 1rem 0 0.75rem
+      .card.photo
+        grid-template-areas: "status" "image" "text"
+        .card-img
+          grid-area: image
+          img
+            height: 160px
+        span.pre-title
+            display: block
+            margin-top: 5px
+        a.icon-link
+          top: 187px
+        .status
+          grid-area: status
+          margin: -1em -1em 1em -1em
+
+    .view
+      .card
+        @extend $block-inner
+        @extend $base-style
+        transition: all ease-out 0.3s
+        transform: scale(1)
+        opacity: 1
+        color: color-default
+        border: none
+        /[data-theme="dark"] &
+          color: dark-color-default
+        a
+          text-decoration: none
+          word-break: break-all
+          display: inline-block
+        a.icon-link
+          position: absolute
+          right: 12px
+          opacity: 0.33
+          &:hover
+            opacity: 1
+          img
+            width: 42px;
+        .card-img
+          display: block
+          position: relative
+          filter: grayscale(0.5) contrast(0.5)
+          transition: all ease-out 0.6s
+          img
+            background-color: color-background
+            /[data-theme="dark"] &
+              background-color: dark-color-background
+        h3
+          line-height: line-height-title
+          font-weight: 600
+          // white-space: nowrap
+          // overflow: hidden
+          // text-overflow: ellipsis
+          a
+            text-decoration: none
+            color: color-default
+            /[data-theme="dark"] &
+              color: dark-color-default
+              border-bottom: dark-color-link-border 1px solid
+            &:hover
+              color: color-link
+              /[data-theme="dark"] &
+                color: dark-color-link
+        &:hover
+          transform: scale(1) translateY(-1px)
+          box-shadow: box-shadow color-border-3d
+          /[data-theme="dark"] &
+            box-shadow: dark-box-shadow dark-color-base
+        .card-img.in-view
+          filter: grayscale(0) contrast(1)
+      .card.tiny-tools
+        .card-img
+          img
+            border-bottom: 1px color-background solid
+            /[data-theme="dark"] &
+              border-bottom: 1px dark-color-background solid
+        div.tags
+          display: flex
+          flex-flow: row wrap
+          span, a.tag
+            display: block
+            border-radius: 2px
+            padding: 3px 6px
+            margin: 0 5px 5px 0
+            text-transform: uppercase
+            font-size: 0.75rem
+            background-color: color-light
+            color: color-grey
+            /[data-theme="dark"] &
+              background-color: dark-color-light
+              color: dark-color-grey
+            &:before
+              font-family: fa-icon-solid
+              content: icon-cat
+              margin-right: 5px
+              color: color-border
+              /[data-theme="dark"] &
+                color: dark-color-border
+      .card.photo
+        .card-img
+          cursor: zoom-in
+        span.pre-title
+          font-size: .85em;
+          opacity: 0.5
+        .status
+          display: block
+          white-space: nowrap
+          overflow: hidden
+          text-overflow: ellipsis
+          padding: 5px 8px 7px
+          opacity: 0.75
+          border-radius: 4px 4px 0 0
+          color: white
+          &.used.post
+            background-color: rgba(65,117,212,0.6)
+          &.used.page
+            background-color: rgba(95,158,160,0.9)
+          &.used.dynamic
+            background-color: rgba(65,70,167,0.5)
+          &.pool
+            background-color: rgba(159,159,159,0.99)
+        &:hover
+          .status
+            opacity: 1
+      .card.hide
+      .card.trans
+        transform: scale(0)
+        opacity: 0
+
+
+

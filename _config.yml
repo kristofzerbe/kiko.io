@@ -1,0 +1,288 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Development
+offline: false
+
+# Site
+title: kiko.io
+subtitle: Memorable Tech Stuff
+description: Blog about Development & Photography
+heroimage: https://kiko.io/images/hero.jpg
+heroimage_small: https://kiko.io/images/hero-mobile.jpg
+keywords: 
+author: Kristof Zerbe
+email: kristof.zerbe@gmail.com
+photo: https://kiko.io/images/kristof-zerbe.png
+language: en
+timezone: Europe/Berlin
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://kiko.io
+root: /
+#OLD: permalink: categories/:category/:title/
+permalink: post/:name/ # take name only; title includes source-subfolders
+permalink_defaults:
+
+# Directory
+source_dir: source
+static_dir: static
+photo_dir: photos
+pool_dir: pool
+public_dir: docs
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+notes_dir: notes
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link:
+  enable: false # Open external links in new tab
+  field: site #Applies to the whole site or post only
+filename_case: 0
+render_drafts: false
+post_asset_folder: true
+marked:
+  prependRoot: true
+  postAsset: true
+relative_link: false
+future: false
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: true
+  tab_replace:
+  
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 12
+  order_by: -date
+  
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 24
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: landscape
+
+# Include/Exclude files/folders in source folder
+#include:
+#exclude:
+
+# Ignore files/folders in all folders
+#ignore:
+
+# Stylus https://github.com/hexojs/hexo-renderer-stylus
+stylus:
+  compress: true
+  # sourcemaps:
+  #   comment: true
+  #   inline: true
+  #   sourceRoot: ''
+  #   basePath: .
+  #plugins: 'nib'
+
+# Deployment - NOT NECESSARY AND USEFUL
+# deploy:
+#   type: git
+#   repo: https://github.com/kristofzerbe/kiko.io.git
+#   branch: master
+
+# BrowserSync : https://github.com/hexojs/hexo-browsersync
+browsersync:
+  logLevel: "warn"
+  ghostMode:
+    scroll: true
+  instanceName: "kiko_io"
+
+# Anything : https://github.com/kristofzerbe/hexo-generator-anything
+anything:
+  layout_index: anything-index
+  layout_posts: anything-posts
+  index_mappings:
+    - variable: series
+      path: series
+    - variable: project
+      path: projects
+
+# JSON Content : https://github.com/alexbruno/hexo-generator-json-content
+jsonContent:
+  meta: true
+  drafts: false
+  file: content.json
+  keywords: english
+  dateFormat: YYYY-MM-DD
+  pages:
+    title: true
+    slug: false
+    date: true
+    updated: true
+    comments: false
+    path: true
+    link: false
+    permalink: true
+    excerpt: true
+    keywords: false
+    text: true
+    raw: false
+    content: false
+    author: true
+  posts:
+    title: true
+    subtitle: true
+    series: true
+    part: true
+    slug: false
+    date: true
+    updated: true
+    comments: false
+    path: true
+    link: false
+    permalink: true
+    excerpt: true
+    keywords: true
+    text: true
+    raw: false
+    content: false
+    author: true
+    categories: true
+    tags: true
+
+# Feed : https://github.com/sergeyzwezdin/hexo-feed
+feed:
+  limit: 20
+  order_by: "-date"
+  icon: images/favicon-32x32.png
+  logo: images/icon-72x72.png
+  tag_dir: false
+  category_dir: false
+  atom:
+      enable: true
+      template: "./templates/atom.ejs"
+      output: "atom.xml"
+  rss:
+      enable: false
+  jsonFeed:
+      enable: false
+        
+# Manifest: https://github.com/lavas-project/hexo-pwa
+pwa:
+  manifest:
+    path: /site.webmanifest
+    body:
+      name: kiko.io Blog
+      short_name: kiko.io
+      description: 'Blog from Kristof Zerbe, Germany'
+      lang: en
+      dir: ltr
+      start_url: /
+      theme_color: '#454545'
+      background_color: '#f1f1f1'
+      display: standalone
+      orientation: portrait-primary
+      related_applications: []
+      prefer_related_applications: false
+      icons:
+        - src: /images/favicon-16x16.png
+          sizes: 16x16
+          type: image/png
+        - src: /images/favicon-32x32.png
+          sizes: 32x32
+          type: image/png
+        - src: /images/icon-64x64.png
+          sizes: 64x64
+          type: image/png
+        - src: /images/icon-72x72.png
+          sizes: 72x72
+          type: image/png
+        - src: /images/icon-96x96.png
+          sizes: 96x96
+          type: image/png
+        - src: /images/icon-128x128.png
+          sizes: 128x128
+          type: image/png
+        - src: /images/icon-144x144.png
+          sizes: 144x144
+          type: image/png
+        - src: /images/icon-152x152.png
+          sizes: 152x152
+          type: image/png
+        - src: /images/icon-192x192.png
+          sizes: 192x192
+          type: image/png
+        - src: /images/icon-384x384.png
+          sizes: 384x384
+          type: image/png
+        - src: /images/icon-512x512.png
+          sizes: 512x512
+          type: image/png
+
+# Search File: https://github.com/wzpan/hexo-generator-search
+search:
+  path: search.json
+  field: all
+  content: true
+  template: ./templates/search.xml
+
+# Sitemap File: https://github.com/hexojs/hexo-generator-sitemap
+sitemap:
+  path: sitemap.xml
+  template: ./templates/sitemap.xml
+
+# Codepen Defaults
+codepen:
+  user_id: "kristofzerbe"
+  default_tab: "js"
+  height: 400
+  width: "100%"
+
+# Indiepen Defaults
+indiepen:
+  default_tab: "result"
+  height: 450
+
+# pirsch.io
+pirsch:
+  enabled: true
+  code: aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ
+
+# webmention.io
+webmention:
+  api_key: K0b-wdw81R-vDTfvXjdW0g #not necessary to secure, because mentions on webmention.io are public
+
+# Trello (./themes/landscape/scripts/generator-dynamic-trello)
+# > Url-Parameter: https://webapps.stackexchange.com/questions/47272/how-to-construct-url-of-trello-json-download-from-board-url-without-using-the-a
+trello:
+  boards: 
+  - name: Collections
+    url: https://trello.com/b/D6zIhLus/collections.json?fields=all&cards=all&card_fields=all&card_attachments=true&lists=all&list_fields=all
+    pages: 
+    - name: tiny-tools
+      list: TinyTools

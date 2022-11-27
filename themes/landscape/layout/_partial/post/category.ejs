@@ -1,0 +1,10 @@
+<% if (post.categories && post.categories.length){ %>
+  <div class="<%= class_name %> category-<%= post.categories.data[0].name.toLowerCase() %>">
+    <%- list_categories(post.categories, {
+      show_count: false,
+      class: 'article-category',
+      style: 'none',
+      separator: '►'
+    }) %> 
+  </div>
+<% } %>

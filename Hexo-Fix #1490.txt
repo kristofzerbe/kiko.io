@@ -1,0 +1,19 @@
+https://github.com/hexojs/hexo/pull/4781/files
+https://github.com/hexojs/hexo/issues/1490
+
+lib/plugins/processor/post.js
+--------------------------
+
+v6.0.0: Line 44
+
+  // checks only if there is a renderer for the file type or if is included in skip_render
+  result.renderable = ctx.render.isRenderable(path) && !isMatch(path, ctx.config.skip_render);
+
+  // if post_asset_folder is set, restrict renderable files to default file extension
+  if (result.renderable && ctx.config.post_asset_folder) {
+    result.renderable = (extname(ctx.config.new_post_name) === extname(path));
+  }
+
+
+Fixed in v6.1.0 -> https://hexo.io/news/2022/03/12/hexo-6-1-0-released/
+... but with a new issue -> https://github.com/hexojs/hexo/issues/4917

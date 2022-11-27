@@ -1,0 +1,20 @@
+<div class="anything-wrap" data-index="<%= index.name %>" data-key="<%= item.key %>">
+  <div class="anything-inner">
+    
+    <%- partial('post/photograph', { class_name: 'article-photo', post: item }) %>
+    
+    <header class="anything-header">
+      <h1 class="anything-entry" itemprop="name">
+        <a class="button" href="<%- url_for(item.path).replace("/index.html", "") %>">
+          <span><%= item.title %></span>
+          <em><%= item.count %> <%= (item.count === 1) ? "Post" : "Posts" %></em>
+        </a>
+      </h1>
+    </header>
+    
+    <div class="anything-content">
+      <%- item.content %>
+    </div>
+    
+  </div>
+</div>
