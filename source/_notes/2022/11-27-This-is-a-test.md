@@ -1,6 +1,7 @@
 ---
 title: This is a test...
 date: 2022-11-27 17:30:00
+hide: true
 ---
 
 Bla **blubb** test text
