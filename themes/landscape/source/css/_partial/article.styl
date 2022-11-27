@@ -1,40 +1,29 @@
 .article
   margin: block-margin 0
+  position: relative
 
-.article-inner
-  @extend $block
-  overflow: hidden
-  border-radius: border-radius
-  background: color-block
-  box-shadow: box-shadow color-border
-  /[data-theme="dark"] &
-    background: dark-color-block
-    box-shadow: dark-box-shadow dark-color-border
-
-.article-photo
-  height: 150px
-  @media mq-tablet
-    height: 175px
-  @media mq-normal
-    height: 200px
-  width: 100%
-  object-fit: cover
-  transform: scale(1)
-  transform-style: preserve-3d
-  transition: all ease-out .6s  
-  opacity: 0.3
-  filter: grayscale(1) contrast(0.5)
-  /[data-theme="dark"] &
-    opacity: 0.75
-    filter: grayscale(1) contrast(0.5) brightness(0.6)
-
-.article-photo.in-view
-    transform: scale(1.1)
-    opacity: 1
-    filter: grayscale(0) contrast(1)
-    /[data-theme="dark"] &
-      opacity: 1
-      filter: grayscale(0) contrast(1) brightness(0.75)
+.note-list
+  .article.note
+    margin-left: 3em
+    margin-bottom: 4em
+    @media mq-mobile
+      margin-left: 1em
+      margin-bottom: 3em
+    &:not(:last-child)::before
+      content: ""
+      display: block
+      position: absolute
+      height: calc(100% + 4em)
+      left: -1.75em
+      @media mq-mobile
+        height: calc(100% + 3em)
+        left: calc(-1.75em + 6px)
+      top: 0
+      border-color: color-highlight
+      border-width: 1px;
+      border-style: solid;
+      /[data-theme="dark"] &
+        border-color: dark-color-highlight
 
 .article-meta
   clearfix()
@@ -62,6 +51,66 @@
       color: dark-color-foreground
     &:before
       content: "Update, "
+
+.note-list
+  .article.note
+    .article-meta
+      time
+        top: -1em
+        left: -3em
+        @media mq-mobile
+          left: -2em
+
+.article.note
+  &:not(:first-child)
+    margin-top: 3.5em
+  .article-meta
+    time
+      top: -1em
+      left: 1em
+      position: absolute
+      padding: 5px 10px
+      font-weight: bold
+      border-radius: 3px
+      font-size: 0.9em
+      color: color-logo
+      background-color: color-highlight
+      /[data-theme="dark"] &
+        background-color: dark-color-highlight
+
+.article-inner
+  @extend $block-inner
+  overflow: hidden
+
+.article.note
+  .article-inner
+    .article-header
+      padding-top: 36px
+
+.article-photo
+  height: 150px
+  @media mq-tablet
+    height: 175px
+  @media mq-normal
+    height: 200px
+  width: 100%
+  object-fit: cover
+  transform: scale(1)
+  transform-style: preserve-3d
+  transition: all ease-out .6s  
+  opacity: 0.3
+  filter: grayscale(1) contrast(0.5)
+  /[data-theme="dark"] &
+    opacity: 0.75
+    filter: grayscale(1) contrast(0.5) brightness(0.6)
+
+.article-photo.in-view
+    transform: scale(1.1)
+    opacity: 1
+    filter: grayscale(0) contrast(1)
+    /[data-theme="dark"] &
+      opacity: 1
+      filter: grayscale(0) contrast(1) brightness(0.75)
 
 .article-comment-link
   @extend $block-caption
@@ -407,6 +456,10 @@
   line-height: line-height
   padding-top: line-height
   margin: 0 article-padding article-padding-vert
+  transition: all ease-out .4s
+  opacity: 0.5
+  &:hover
+    opacity: 1
 
 .article-tags,
 .article-permalink,

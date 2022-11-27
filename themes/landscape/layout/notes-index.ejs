@@ -1,19 +1,17 @@
 <% if (page.photograph){ %>
-  <%- partial('_partial/photograph', { page: page }) %>
+  <%- partial('_partial/photograph') %>
 <% } %>
 
 <h1 class="page-title"><%= page.title %></h1>
 
 <div class="page-index-list">
     <% for(var i=0; i < page.years.length; i++) { %>
-        <a class="<%= (page.years[i].year == page.year) ? "current" : "" %>" href="<%= page.years[i].path %>"><%= page.years[i].year %></a>
+        <a class="<%= (page.years[i].year == page.year) ? "current" : "" %>" href="<%= "/" + page.years[i].path %>"><%= page.years[i].year %></a>
     <% } %>
 </div>
 
-<div class="page-content">
-
+<div class="note-list">
     <% page.notes.forEach(function(note){ %>
-        <%- partial('_partial/note-index-item', { item: note }) %>
-    <% }) %>
-
+        <%- partial('_partial/note-index-item', { note: note }) %>
+    <% }) %>    
 </div>

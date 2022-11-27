@@ -1,4 +1,5 @@
 const log = require('hexo-log')({ debug: false, silent: false });
+const { magenta } = require('chalk');
 const path = require('path');
 const fs = require('hexo-fs');
 const front = require('hexo-front-matter');
@@ -6,7 +7,7 @@ const front = require('hexo-front-matter');
 hexo.extend.generator.register("dynamic-photos", async function(locals) {
   let config = this.config;
 
-  log.info("Processing photos for dynamic page");
+  log.info("Processing photos for dynamic page...");
 
   let page = {};
   page.name = "photos";
@@ -22,15 +23,15 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
 
   // Get pool photos
   let p1 = getPoolPhotos(config);
-  log.info("Processed " + p1.length + " pool photos");
+  log.info(magenta(p1.length) + " pool photos");
   
   // Get used photos in Posts & Pages
   let p2 = getPostAndPagePhotos(config, locals);
-  log.info("Processed " + p2.length + " used photos in posts and pages");
+  log.info(magenta(p2.length) + " used photos in posts and pages");
 
   // Get used photos in Dynmic pages
   let p3 = getDynamicPagePhotos(config);
-  log.info("Processed " + p3.length + " used photos in dynamic pages");
+  log.info(magenta(p3.length) + " used photos in dynamic pages");
 
   //TODO: anything pages
 

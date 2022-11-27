@@ -1,6 +1,16 @@
 $block
   border-radius: 2px
 
+$block-inner
+  @extend $block
+  border-radius: border-radius
+  background: color-block
+  box-shadow: box-shadow color-border
+  /[data-theme="dark"] &
+    background: dark-color-block
+    box-shadow: dark-box-shadow dark-color-border
+
+
 $block-caption
   text-decoration: none
   text-transform: uppercase

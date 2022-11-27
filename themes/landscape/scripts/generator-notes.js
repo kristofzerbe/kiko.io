@@ -1,159 +1,221 @@
-// const log = require('hexo-log')({ debug: false, silent: false });
-// const path = require('path');
-// const fs = require('hexo-fs');
-// const front = require('hexo-front-matter');
+const log = require('hexo-log')({ debug: false, silent: false });
+const { magenta } = require('chalk');
+const path = require('path');
+const fs = require('hexo-fs');
+const front = require('hexo-front-matter');
+const sharp = require('sharp');
+const imagemin = require('imagemin');
+const imageminMozJpeg = require('imagemin-mozjpeg');
+const imageminPngquant = require('imagemin-pngquant');
+const { highlight } = require('hexo-util');
+const { config } = require('process');
 
-// hexo.extend.generator.register('notes', function(locals) {
+hexo.extend.generator.register('notes', function(locals) {
 
-//     let config = this.config;
-//     let sourceDir = path.join(config.source_dir, "_" + config.notes_dir);
-//     let currentYear = new Date().getFullYear();
+    let config = this.config;
+    let notesDir = path.join(config.source_dir, "_" + config.notes_dir);
+    let currentYear = new Date().getFullYear();
 
-//     // collection of pages to render
-//     let result = [];
+    // collection of pages to render
+    let result = [];
 
-//     log.info("Processing Notes...");
+    log.info("Processing Notes...");
 
-//     // init index page
-//     let index = {};
-//     index.name = "notes";
+    let years = fs
+        .readdirSync(notesDir)
+        .filter(entry => fs.statSync(path.join(notesDir, entry)).isDirectory())
+        .map(entry => ({
+            year: entry,
+            path: path.join("notes", entry, "index.html")
+        }));
 
-//     // process index file
-//     index = {...index, ...getMDInfo(path.join(sourceDir, "index.md"), index. false)};
-//     // console.log(index);
+    let indexes = [];
+    years.forEach(year => {
+        //console.log(year);
 
-//     // get processed notes
-//     let notes = getNotes(sourceDir);
-//     //console.log(notes);
+        let yearDir = path.join(notesDir, year.year);
 
-//     // sort notes by date DESC
-//     notes.sort(function(a, b) {
-//         return new Date(b.date) - new Date(a.date);
-//     });
+        // get index
+        let index = year;
+        index.name = "notes" + index.year;
+        index = {...index, ...getMDInfo(path.join(yearDir, "index.md"), index. false)};
+        index.notes = [];
 
-//     // group notes by year
-//     const yearNotes = notes.reduce((group, note) => {
-//         const { year } = note;
-//         group[year] = group[year] ?? [];
-//         group[year].push(note);
-//         return group;
-//     }, {});
-//     //console.log(yearNotes);
+        // get notes
+        let notes = fs
+            .readdirSync(yearDir)
+            .filter(entry => fs.statSync(path.join(yearDir, entry)).isFile())
+            .filter(file => file.match(/\d{2}-\d{2}-.*.md/g))
+            .map(entry => ({
+                file: entry,
+                key: index.year + "-" + entry.replace(".md", "").replace(/\d{2}-\d{2}-/g, ""),
+                slug: entry.replace(".md", "").replace(/\d{2}-\d{2}-/g, ""),
+                year: index.year,
+                indexlink: "/" + index.path.replace(/\\/g, "/")
+            }));
+        // console.log(notes);
 
-//     // get list of years, sort descending and create object list
-//     index.years = Object.keys(yearNotes)
-//         .map(year => year)
-//         .sort((a, b) => b - a)
-//         .map(year => ({
-//             year: year,
-//             path: "/notes/" + ((year == currentYear) ? "index.html" : year + ".html")
-//         }));
+        notes.forEach(note => {
+            note = {...note, ...getMDInfo(path.join(yearDir, note.file), note, true) };
+            note.photograph = index.photograph;
+            note.path = path.join("notes", index.year, note.slug + ".html");
+            note.link = note.path.replace(/\\/g, "/");
+            note.permalink = config.url + "/" + note.link;
 
-//     // create index pages for all years
-//     Object.keys(yearNotes).forEach(function(year, i) {
-//         // console.log(year);
-//         // console.log(yearNotes[year]);
+            note.excerpt = note.excerpt.replace("/images/", "/notes/" + index.year + "/images/"); /** HACK */
+            note.content = note.content.replace("/images/", "/notes/" + index.year + "/images/"); /** HACK */
 
-//         // create new index object for year
-//         let indexYear = Object.assign({}, index); //clone
-//         indexYear.year = year;
-//         //console.log(indexYear);
+            //console.log(note);
 
-//         // set items of year
-//         indexYear.notes = yearNotes[year].map(note => ({
-//             key: note.key,
-//             title: note.title,
-//             date: note.date,
-//             excerpt: note.excerpt,
-//             more: note.more
-//         }));
+            if (!note.hide) {
 
-//         console.log("\n====================================================\n");
-//         console.log(indexYear);
+                // add note to result
+                result.push({
+                    data: note,
+                    path: note.path,
+                    layout: "note"
+                });
 
-//         //Add year to result
-//         result.push({
-//             data: indexYear,
-//             path: path.join(config.notes_dir, ((year == currentYear) ? "index.html" : year + ".html")),
-//             layout: "notes-index"
-//         });
-//     });
+                //... and to index notes list
+                index.notes.push(note);
+            }
+        });
 
-//     //TODO: Add all remaining notes to result
-
-//     // get images of notes
-//     let images = getImages(path.join(sourceDir, "images"))
-//     // ... and extend path info
-//     images.forEach(image => {
-//         image.source = path.join(sourceDir, image.file);
-//         image.target = path.join(config.public_dir, "notes", "images", image.file);
-//     });
-//     //console.log(images);
-
-//     return result;
-// });
-
-// function getNotes(sourceDir) {
-
-//     let notes = [];
-
-//     let files = fs
-//         .readdirSync(sourceDir)
-//         .filter(entry => fs.statSync(path.join(sourceDir, entry)).isFile())
-//         .filter(file => file.match(/\d{2}-\d{2}-\d{2}-.*.md/g))
-//         .map(entry => ({ 
-//             file: entry,
-//             key: entry.replace(".md", "").replace(/\d{2}-\d{2}-\d{2}-/g, ""),
-//             year: parseInt("20" + entry.substring(0,2))
-//         }));
-
-//     files.forEach(note => {
-//         note = {...note, ...getMDInfo(path.join(sourceDir, note.file), note, true) }
-//         // console.log(note);
-
-//         //TODO: remove all notes which exists in output folder
-
-//         notes.push(note);
-//     });
-
-//     return notes;
-// }
-
-// function getMDInfo(filePath, obj, parseContent) {
-
-//     let md = fs.readFileSync(filePath);
-//     let fm = front.parse(md);
-//     obj = {...obj, ...fm};
-
-//     if (parseContent) {
-//         let content = obj._content.split("\n<!-- more -->\n");
-//         obj.content = hexo.render.renderSync({ text: content[0], engine: 'markdown' });
+        index.notes.sort(function(a, b) {
+            return new Date(b.date) - new Date(a.date);
+        });
     
-//         if (content.length === 2) {
-//             obj.excerpt = hexo.render.renderSync({ text: content[1], engine: 'markdown' });
-//             obj.more = true;
-//         } else {
-//             obj.excerpt = obj.content;
-//             obj.more = false;
-//         }    
-//     }
-//     return obj;
-// }
+        if (index.notes.length > 0) {
+            indexes.push(index);
+            log.info(magenta(index.notes.length) + " Notes for " + magenta(index.year));
+            processImages(yearDir, index.year);
+    }
 
+        // console.log("\n====================================================\n");
+        // console.log(index);
 
-// function getImages(sourceDir) {
+    });
+    //console.log(indexes);
 
-//     let files = fs
-//         .readdirSync(sourceDir)
-//         .filter(entry => fs.statSync(path.join(sourceDir, entry)).isFile())
-//         .filter(file => file.match(/.*.(jpg|jpeg|png)/g))
-//         .map(entry => ({ 
-//             file: entry,
-//         }));
-        
-//     return files;
-// }
+    let yearsAvailable = indexes.map(index => index.year);
+    let yearList = years
+        .filter(item => (yearsAvailable.includes(item.year)))
+        .sort((a, b) => b.year - a.year);
+    // console.log(yearList);
 
-// function copyImages() {
+    indexes.forEach(index => {
+        index.years = yearList;
+        // console.log(index);
+
+        // add year index to result
+        result.push({
+            data: index,
+            path: path.join(index.path),
+            layout: "notes-index"
+        });
+
+        // add root index for current year
+        if (index.year == currentYear) {
+            result.push({
+                data: index,
+                path: path.join("notes", "index.html"),
+                layout: "notes-index"
+            });
+        }
+
+    });
+
+    return result;
+});
+
+function getMDInfo(filePath, obj, parseContent) {
+
+    let md = fs.readFileSync(filePath);
+    let fm = front.parse(md);
+    obj = {...obj, ...fm};
+
+    if (parseContent) {
+        let content = obj._content.split("\n<!-- more -->\n");
+
+        if (content.length === 2) {
+            obj.content = hexo.render.renderSync({ text: content.join("\n"), engine: 'markdown' });
+            obj.excerpt = hexo.render.renderSync({ text: content[0], engine: 'markdown' });
+            obj.more = true;
+        } else {
+            obj.content = hexo.render.renderSync({ text: obj._content, engine: 'markdown' });
+            obj.excerpt = obj.content 
+            obj.more = false;
+        }
+
+        // console.log(obj);
+
+        //obj.content = highlight(obj.content, config.highlight);
+    }
+    return obj;
+}
+
+function processImages(sourceDir, year) {
+
+    let imageDir = path.join(sourceDir, "images");
     
-// }
+    // get images of notes
+    let images = fs
+        .readdirSync(imageDir)
+        .filter(entry => fs.statSync(path.join(imageDir, entry)).isFile())
+        .filter(file => file.match(/.*.(jpg|jpeg|png)/g))
+        .map(entry => ({
+            file: entry,
+        }));
+    // console.log(images);
+
+    if (images.length > 0) {
+        // set absolute paths
+        let sourcePath = path.join(hexo.source_dir, "_" + "notes", year, "images");
+        let targetPath = path.join(hexo.public_dir, "notes", year, "images");
+        // console.log(sourcePath);
+        // console.log(targetPath);
+
+        if (!fs.existsSync(targetPath)) { 
+            fs.mkdirSync(targetPath, { recursive: true }); 
+        }
+
+        // extend image path info
+        images.forEach(image => {
+            // console.log(image);
+            image.source = path.join(sourcePath, image.file);
+            image.target = path.join(targetPath, image.file);
+
+            if (!fs.existsSync(image.target)) {
+                //fs.copyFile(image.source, image.target);
+                sharp(image.source)
+                    .resize({ width: 600 })
+                    .toFile(image.target)
+                    .then(function(newFileInfo) {
+
+                        let imageMinPlugins = [];
+
+                        if (newFileInfo.format === 'jpg' || type === 'jpeg') {
+                            imageMinPlugins.push(imageminMozJpeg());
+                        }
+                        if (newFileInfo.format === 'png') {
+                            imageMinPlugins.push(imageminPngquant());
+                        }
+
+                        if (imageMinPlugins.length > 0) {
+                            imagemin([image.target], { plugins: imageMinPlugins })
+                                .then(files => {
+                                    log.info("Note image '" + magenta(image.file) + "' resized and compressed");
+                                });
+                        } else {
+                            log.info("Note image '" + magenta(image.file) + "' resized");
+                        }
+                    })
+                    .catch(function(err) {
+                        log.warn("Error on resizing note image '" + image.file + "': " + err);
+                    });
+
+            }
+        });
+        //console.log(images);
+    }
+}
