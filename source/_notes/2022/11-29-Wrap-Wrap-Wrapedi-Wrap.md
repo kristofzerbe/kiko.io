@@ -2,9 +2,11 @@
 title: "Wrap Wrap Wrapedi-Wrap"
 date: 2022-11-29 07:45:00
 syndication: 
+- host: Mastodon
+  url: https://indieweb.social/@kiko/109426757955654512
 ---
 
-I'm working on a new [generator](https://hexo.io/api/generator.html) for my [#Hexo](https://hexo.io/) driven blog and there are plenty of images involved in the future, which I want to resize via [Sharp](https://github.com/lovell/sharp) and minify via [Imgmin](https://github.com/imagemin/imagemin). At all, there will be about 10 to 15 lines of formatted code which will do the job. But ... I did a very similar thing a while ago and now I have two daemons sitting on my shoulder, debating wether or not to wrap the code in a single function:
+I'm working on a new [generator](https://hexo.io/api/generator.html) for my [#Hexo](https://hexo.io/) driven blog and there are plenty of images involved in the future, which I want to resize via [Sharp](https://github.com/lovell/sharp) and minify via [Imgmin](https://github.com/imagemin/imagemin). At all, there will be about 10 to 15 lines of formatted code which will do the job. But ... I did a very similar thing a while ago and now I have two demons sitting on my shoulder, debating wether or not to wrap the code in a single function:
 
 <!-- more -->
 
