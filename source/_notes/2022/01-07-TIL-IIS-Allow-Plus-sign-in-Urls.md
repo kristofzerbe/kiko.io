@@ -1,6 +1,7 @@
 ---
 title: "#TIL | IIS: Allow Plus sign in Url's"
 date: 2022-01-07 12:00:00
+syndication: 
 ---
 
 Due to [security reasons](https://blogs.iis.net/thomad/iis7-rejecting-urls-containing) IIS only allows the ``+`` sign in query strings. But sometimes you may have an image file like ``landscape + night.jpg``, which won't be shown on your website.

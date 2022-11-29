@@ -1,6 +1,7 @@
 ---
 title: "#TIL | display: contents"
 date: 2021-09-15 12:00:00
+syndication: 
 ---
 
 Some HTML elements does not have a visual styling, because their purpose is to 'group' others. But those wrappers have sometimes a negative effect on styling with techniques like ``grid`` or ``flex``. 

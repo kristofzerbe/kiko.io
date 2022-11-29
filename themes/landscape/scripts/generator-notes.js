@@ -65,7 +65,7 @@ hexo.extend.generator.register('notes', function(locals) {
             note.excerpt = note.excerpt.replace("/images/", "/notes/" + index.year + "/images/"); /** HACK */
             note.content = note.content.replace("/images/", "/notes/" + index.year + "/images/"); /** HACK */
 
-            //console.log(note);
+            // console.log(note);
 
             if (!note.hide) {
 

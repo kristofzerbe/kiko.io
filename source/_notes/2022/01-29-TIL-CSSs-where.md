@@ -1,6 +1,7 @@
 ---
 title: "#TIL | CSS's :where()"
 date: 2022-01-29 12:00:00
+syndication: 
 ---
 
 The [``:where()``](https://developer.mozilla.org/en-US/docs/Web/CSS/:where) pseudo selector helps you writing cleaner code on the one hand. Instead of writing:

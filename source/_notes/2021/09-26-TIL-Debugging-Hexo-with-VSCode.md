@@ -1,6 +1,7 @@
 ---
 title: "#TIL | Debugging Hexo with VSCode"
 date: 2021-09-26 12:00:00
+syndication: 
 ---
 
 If you want to debug your own [Hexo generators](https://hexo.io/api/generator.html) within VSCode, you have to create an entry in your ``./.vscode/launch.json``, which points to Hexo CLI with the argument ``generate``:

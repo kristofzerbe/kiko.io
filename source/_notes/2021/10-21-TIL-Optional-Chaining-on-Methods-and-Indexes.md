@@ -1,6 +1,7 @@
 ---
 title: "#TIL | Optional Chaining on Methods and Indexes"
 date: 2021-10-21 12:00:00
+syndication: 
 ---
 
 In ECMAScript 2020 the optional chaining operator was introduced into JavaScript. The question mark right behind the property name helps to prevent null reference exceptions:

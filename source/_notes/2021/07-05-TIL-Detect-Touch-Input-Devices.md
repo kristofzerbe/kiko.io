@@ -1,6 +1,7 @@
 ---
 title: "#TIL | Detect Touch Input Devices"
 date: 2021-07-02 12:00:00
+syndication: 
 ---
 
 As of the W3C draft of Media Queries Level 5, touch devices can be detected by using the ``hover`` and the ``pointer`` media feature:
