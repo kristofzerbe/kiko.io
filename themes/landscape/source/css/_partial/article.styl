@@ -407,6 +407,21 @@
 .article-more-link,
 .download-link
   margin: 0 !important
+
+.article-more-link
+  font-size: 0.75em
+  text-transform: uppercase
+  &:before
+    font-family: fa-icon-solid
+    margin-right: 4px
+    content: icon-arrow-right 
+    color: color-link
+    /[data-theme="dark"] &
+      color: dark-color-link
+
+.download-link
+  margin: 20px 0 !important
+  text-align: center
   a.button
     display: inline-block
     text-align: center
@@ -423,10 +438,6 @@
     &:hover    
       background-color: color-link
       color: dark-color-link
-
-.download-link
-  margin: 20px 0 !important
-  text-align: center
   @media mq-mobile
     a
       strong 
@@ -459,18 +470,21 @@
   line-height: line-height
   padding-top: line-height
   margin: 0 article-padding article-padding-vert
+  display: grid
+  grid-template-columns: auto 1fr
+  grid-template-rows: auto 1fr auto
+  gap: 0px 0px
+  grid-template-areas: "tags tags" "syndication permalink" "golem golem"
+
+.article-tags { grid-area: tags }
+.article-permalink { grid-area: permalink }
+.article-syndication { grid-area: syndication }
+.article-golem { grid-area: golem }
 
 .article-tags,
-.article-permalink
-  opacity: 0.5
-  transition: all ease-out .4s
-  &:hover
-    opacity: 1
-
-.article-tags,
+.article-syndication,
 .article-permalink,
 .article-golem
-  display: block
   a
     text-decoration: none
     color: color-grey
@@ -481,12 +495,40 @@
       /[data-theme="dark"] &
         color: dark-color-link
 
+.article-tags,
+.article-syndication,
 .article-permalink
+  opacity: 0.5
+  transition: all ease-out .4s
+.article-footer:hover
+  .article-tags,
+  .article-syndication,
+  .article-permalink
+    opacity: 1
+
+.article-syndication
+  display: flex
+  span
+    display: inline-block
+    margin-right: 4px
+  .syndication-link
+    padding: 0 5px;
+    &:before
+      font-family: fa-icon-brands
+      font-size: 20px;
+  & .fa-mastodon:before
+    content: icon-mastodon
+    color: color-mastodon
+
+.article-permalink,
+.article-syndication 
   padding-top: line-height
   margin-top: line-height
   border-top: 1px color-border solid
   /[data-theme="dark"] &
     border-top: 1px dark-color-border solid
+
+.article-permalink
   display: flex
   flex-direction: row
   a
