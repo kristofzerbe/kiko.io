@@ -409,7 +409,7 @@
   margin: 0 !important
 
 .article-more-link
-  font-size: 0.75em
+  font-size: 0.8em
   text-transform: uppercase
   &:before
     font-family: fa-icon-solid
@@ -471,10 +471,14 @@
   padding-top: line-height
   margin: 0 article-padding article-padding-vert
   display: grid
+  gap: 0px 0px
   grid-template-columns: auto 1fr
   grid-template-rows: auto 1fr auto
-  gap: 0px 0px
   grid-template-areas: "tags tags" "syndication permalink" "golem golem"
+  @media mq-mobile
+    grid-template-columns: 1fr
+    grid-template-rows: auto auto auto auto
+    grid-template-areas: "tags" "permalink" "syndication" "golem"
 
 .article-tags { grid-area: tags }
 .article-permalink { grid-area: permalink }
@@ -485,7 +489,7 @@
 .article-syndication,
 .article-permalink,
 .article-golem
-  a
+  a, span
     text-decoration: none
     color: color-grey
     /[data-theme="dark"] &
@@ -527,6 +531,9 @@
   border-top: 1px color-border solid
   /[data-theme="dark"] &
     border-top: 1px dark-color-border solid
+  @media mq-mobile
+    padding-top: line-height * 0.6
+    margin-top: line-height * 0.6
 
 .article-permalink
   display: flex
