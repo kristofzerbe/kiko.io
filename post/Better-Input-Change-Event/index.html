@@ -91,7 +91,7 @@
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body id="body">  
   <div id="container" class="container">
@@ -290,7 +290,7 @@
 <p>A better way to show the user the result of his entered value, could be the event <code>input</code> which fires on every key stroke, but could be way to often, if the triggered event is for example an AJAX call.</p>
 <p>Best solution is, to observe the users key strokes and trigger the event, when he stops typing. Then there is no extra action needed by the user and the event isn’t triggered multiple times. </p>
 <p>Here’s an implementation with jQuery:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#my-text-input&quot;</span>).keyup(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $this = $(<span class="built_in">this</span>);</span><br><span class="line">    <span class="built_in">clearTimeout</span>($.data(<span class="built_in">this</span>, <span class="string">&#x27;timer&#x27;</span>));</span><br><span class="line">    <span class="keyword">var</span> wait = <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//do something with the value...</span></span><br><span class="line"></span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">    $(<span class="built_in">this</span>).data(<span class="string">&#x27;timer&#x27;</span>, wait);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#my-text-input&quot;</span>).<span class="title function_">keyup</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> $this = $(<span class="variable language_">this</span>);</span><br><span class="line">    <span class="built_in">clearTimeout</span>($.<span class="title function_">data</span>(<span class="variable language_">this</span>, <span class="string">&#x27;timer&#x27;</span>));</span><br><span class="line">    <span class="keyword">var</span> wait = <span class="built_in">setTimeout</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//do something with the value...</span></span><br><span class="line"></span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">    $(<span class="variable language_">this</span>).<span class="title function_">data</span>(<span class="string">&#x27;timer&#x27;</span>, wait);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <p>Important is to wipe and set the timer on every key up, to achive that the event will be executed after 1 second after the last key stroke only.</p>
 
@@ -302,15 +302,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-clazzub60000ajcn5hgpseqna">
+      <div class="article-permalink" id="article-permalink-clb806qc70008laov35cn0mx2">
     <input class="article-permalink-value" value="https://kiko.io/post/Better-Input-Change-Event/" 
-           data-id="clazzub60000ajcn5hgpseqna" data-title="Better Input Change Event" />
+           data-id="clb806qc70008laov35cn0mx2" data-title="Better Input Change Event" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clazzub60000ajcn5hgpseqna");
+        initPermalink("clb806qc70008laov35cn0mx2");
     });
 </script>
 
@@ -521,31 +521,31 @@
         
           <li>
             
-              <a href="/post/index/"></a>
+              <a href="/post/Mastodon-simply-explained/">Mastodon simply explained</a>
             
           </li>
         
           <li>
             
-              <a href="/post/main/"></a>
+              <a href="/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/">Syndicate Mastodon Hashtags in your favorite Feed Reader</a>
             
           </li>
         
           <li>
             
-              <a href="/post/styles/"></a>
+              <a href="/post/Anatomy-of-Service-Worker-Communication/">Anatomy of Service Worker Communication</a>
             
           </li>
         
           <li>
             
-              <a href="/post/index/"></a>
+              <a href="/post/Discoveries-20-CSS-UI/">Discoveries #20 - CSS &amp; UI</a>
             
           </li>
         
           <li>
             
-              <a href="/post/main/"></a>
+              <a href="/post/One-mouse-to-rule-them-all/">One mouse to rule them all</a>
             
           </li>
         

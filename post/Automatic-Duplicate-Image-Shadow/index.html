@@ -91,7 +91,7 @@
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body id="body">  
   <div id="container" class="container">
@@ -287,7 +287,7 @@
     
     
     <div class="article-entry e-content" itemprop="articleBody">
-      <p>At the beginning of the year I wrote a <a href="/post/Use-a-duplicate-image-to-drop-a-shadow/" title="post">post</a> about showing a shadow on an image with the image itself instead of using <code>box-shadow</code>, to make the image appear glass-like.</p>
+      <p>At the beginning of the year I wrote a <a href="/post/Use-a-duplicate-image-to-drop-a-shadow/" title="Use a duplicate image to drop a shadow">post</a> about showing a shadow on an image with the image itself instead of using <code>box-shadow</code>, to make the image appear glass-like.</p>
 <p><img src="/post/Automatic-Duplicate-Image-Shadow/image-shadow.jpg" alt="Image Shadow"></p>
 <p>Nice trick, but it would be much easier to have a little script, that does this automatically for all images on a page. In this post I will show you how to achieve this.</p>
 <span id="more"></span>
@@ -312,7 +312,7 @@
 <li>Clone the image tag and append it to the wrapper also</li>
 <li>Replace the image tag with the new wrapper HTML</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelectorAll(<span class="string">&quot;img.drop-shadow&quot;</span>).forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> wrapper = <span class="built_in">document</span>.createElement(<span class="string">&quot;div&quot;</span>);</span><br><span class="line">  wrapper.classList.add(<span class="string">&quot;shadow-wrapper&quot;</span>);</span><br><span class="line"></span><br><span class="line">  item.classList.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">c</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (c != <span class="string">&quot;drop-shadow&quot;</span>) wrapper.classList.add(c);</span><br><span class="line">  &#125;);</span><br><span class="line">  wrapper.style.width = item.clientWidth + <span class="string">&quot;px&quot;</span>;</span><br><span class="line">  wrapper.style.height = item.clientHeight + <span class="string">&quot;px&quot;</span>;</span><br><span class="line"></span><br><span class="line">  wrapper.insertAdjacentHTML(<span class="string">&quot;beforeend&quot;</span>, item.outerHTML);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> shadow = item.cloneNode();</span><br><span class="line">  shadow.classList.remove(<span class="string">&quot;drop-shadow&quot;</span>);</span><br><span class="line">  shadow.classList.add(<span class="string">&quot;shadow&quot;</span>);</span><br><span class="line">  wrapper.insertAdjacentHTML(<span class="string">&quot;beforeend&quot;</span>, shadow.outerHTML);</span><br><span class="line"></span><br><span class="line">  item.outerHTML = wrapper.outerHTML;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&quot;img.drop-shadow&quot;</span>).<span class="title function_">forEach</span>(<span class="keyword">function</span>(<span class="params">item</span>) &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> wrapper = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;div&quot;</span>);</span><br><span class="line">  wrapper.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&quot;shadow-wrapper&quot;</span>);</span><br><span class="line"></span><br><span class="line">  item.<span class="property">classList</span>.<span class="title function_">forEach</span>(<span class="keyword">function</span>(<span class="params">c</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (c != <span class="string">&quot;drop-shadow&quot;</span>) wrapper.<span class="property">classList</span>.<span class="title function_">add</span>(c);</span><br><span class="line">  &#125;);</span><br><span class="line">  wrapper.<span class="property">style</span>.<span class="property">width</span> = item.<span class="property">clientWidth</span> + <span class="string">&quot;px&quot;</span>;</span><br><span class="line">  wrapper.<span class="property">style</span>.<span class="property">height</span> = item.<span class="property">clientHeight</span> + <span class="string">&quot;px&quot;</span>;</span><br><span class="line"></span><br><span class="line">  wrapper.<span class="title function_">insertAdjacentHTML</span>(<span class="string">&quot;beforeend&quot;</span>, item.<span class="property">outerHTML</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> shadow = item.<span class="title function_">cloneNode</span>();</span><br><span class="line">  shadow.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&quot;drop-shadow&quot;</span>);</span><br><span class="line">  shadow.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&quot;shadow&quot;</span>);</span><br><span class="line">  wrapper.<span class="title function_">insertAdjacentHTML</span>(<span class="string">&quot;beforeend&quot;</span>, shadow.<span class="property">outerHTML</span>);</span><br><span class="line"></span><br><span class="line">  item.<span class="property">outerHTML</span> = wrapper.<span class="property">outerHTML</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>The result in comparison with no shadow and the default <code>box-shadow</code>:</p>
 
@@ -336,15 +336,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Imaging/" rel="tag">Imaging</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-clazzub70002qjcn5eh3i57sp">
+      <div class="article-permalink" id="article-permalink-clb806qcm0010laovatyh9ocd">
     <input class="article-permalink-value" value="https://kiko.io/post/Automatic-Duplicate-Image-Shadow/" 
-           data-id="clazzub70002qjcn5eh3i57sp" data-title="Automatic Duplicate Image Shadow" />
+           data-id="clb806qcm0010laovatyh9ocd" data-title="Automatic Duplicate Image Shadow" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clazzub70002qjcn5eh3i57sp");
+        initPermalink("clb806qcm0010laovatyh9ocd");
     });
 </script>
 
@@ -601,31 +601,31 @@
         
           <li>
             
-              <a href="/post/index/"></a>
+              <a href="/post/Mastodon-simply-explained/">Mastodon simply explained</a>
             
           </li>
         
           <li>
             
-              <a href="/post/main/"></a>
+              <a href="/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/">Syndicate Mastodon Hashtags in your favorite Feed Reader</a>
             
           </li>
         
           <li>
             
-              <a href="/post/styles/"></a>
+              <a href="/post/Anatomy-of-Service-Worker-Communication/">Anatomy of Service Worker Communication</a>
             
           </li>
         
           <li>
             
-              <a href="/post/index/"></a>
+              <a href="/post/Discoveries-20-CSS-UI/">Discoveries #20 - CSS &amp; UI</a>
             
           </li>
         
           <li>
             
-              <a href="/post/main/"></a>
+              <a href="/post/One-mouse-to-rule-them-all/">One mouse to rule them all</a>
             
           </li>
         

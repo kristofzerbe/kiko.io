@@ -91,7 +91,7 @@
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body id="body">  
   <div id="container" class="container">
@@ -295,10 +295,10 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.article-photo</span><span class="selector-class">.in-view</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">0</span>) <span class="built_in">contrast</span>(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>… and wrote a little JS function to determine the point, where the images is fully visible in the viewport:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isVisibleInViewPort</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> viewTop = $(<span class="built_in">window</span>).scrollTop();</span><br><span class="line">  <span class="keyword">var</span> viewBottom = viewTop + $(<span class="built_in">window</span>).height();</span><br><span class="line">  <span class="keyword">var</span> eTop = $(e).offset().top;</span><br><span class="line">  <span class="keyword">var</span> eBottom = eTop + $(e).height();</span><br><span class="line">  <span class="keyword">return</span> ((eBottom &lt;= viewBottom) &amp;&amp; (eTop &gt;= viewTop));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">isVisibleInViewPort</span>(<span class="params">e</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> viewTop = $(<span class="variable language_">window</span>).<span class="title function_">scrollTop</span>();</span><br><span class="line">  <span class="keyword">var</span> viewBottom = viewTop + $(<span class="variable language_">window</span>).<span class="title function_">height</span>();</span><br><span class="line">  <span class="keyword">var</span> eTop = $(e).<span class="title function_">offset</span>().<span class="property">top</span>;</span><br><span class="line">  <span class="keyword">var</span> eBottom = eTop + $(e).<span class="title function_">height</span>();</span><br><span class="line">  <span class="keyword">return</span> ((eBottom &lt;= viewBottom) &amp;&amp; (eTop &gt;= viewTop));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>This function I had to bind to the windows scroll event to all header images only:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">window</span>).on(<span class="string">&#x27;scroll&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  $(<span class="string">&quot;.article-photo&quot;</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (isVisibleInViewPort($(<span class="built_in">this</span>))) &#123;</span><br><span class="line">      $(<span class="built_in">this</span>).addClass(<span class="string">&quot;in-view&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      $(<span class="built_in">this</span>).removeClass(<span class="string">&quot;in-view&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="variable language_">window</span>).<span class="title function_">on</span>(<span class="string">&#x27;scroll&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  $(<span class="string">&quot;.article-photo&quot;</span>).<span class="title function_">each</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="title function_">isVisibleInViewPort</span>($(<span class="variable language_">this</span>))) &#123;</span><br><span class="line">      $(<span class="variable language_">this</span>).<span class="title function_">addClass</span>(<span class="string">&quot;in-view&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      $(<span class="variable language_">this</span>).<span class="title function_">removeClass</span>(<span class="string">&quot;in-view&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
     </div>
     
@@ -308,15 +308,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-clazzub6b000ujcn52vhbefyw">
+      <div class="article-permalink" id="article-permalink-clb806qcc000flaov566mb3rs">
     <input class="article-permalink-value" value="https://kiko.io/post/Change-CSS-class-when-element-scrolls-into-viewport/" 
-           data-id="clazzub6b000ujcn52vhbefyw" data-title="Change CSS class when element scrolls into viewport" />
+           data-id="clb806qcc000flaov566mb3rs" data-title="Change CSS class when element scrolls into viewport" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clazzub6b000ujcn52vhbefyw");
+        initPermalink("clb806qcc000flaov566mb3rs");
     });
 </script>
 
@@ -533,31 +533,31 @@
         
           <li>
             
-              <a href="/post/index/"></a>
+              <a href="/post/Mastodon-simply-explained/">Mastodon simply explained</a>
             
           </li>
         
           <li>
             
-              <a href="/post/main/"></a>
+              <a href="/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/">Syndicate Mastodon Hashtags in your favorite Feed Reader</a>
             
           </li>
         
           <li>
             
-              <a href="/post/styles/"></a>
+              <a href="/post/Anatomy-of-Service-Worker-Communication/">Anatomy of Service Worker Communication</a>
             
           </li>
         
           <li>
             
-              <a href="/post/index/"></a>
+              <a href="/post/Discoveries-20-CSS-UI/">Discoveries #20 - CSS &amp; UI</a>
             
           </li>
         
           <li>
             
-              <a href="/post/main/"></a>
+              <a href="/post/One-mouse-to-rule-them-all/">One mouse to rule them all</a>
             
           </li>
         

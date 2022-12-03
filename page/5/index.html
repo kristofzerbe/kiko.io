@@ -91,7 +91,7 @@
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body id="body">  
   <div id="container" class="container">
@@ -210,121 +210,26 @@
   
   
      
-<article id="post-2021/Uups-empty-posts" 
+<article id="post-2021/Adding-Screenshots-to-Trello-Cards-on-Android" 
          class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-meta">
-    <a href="/post/Uups-empty-posts/" class="article-date">
+    <a href="/post/Adding-Screenshots-to-Trello-Cards-on-Android/" class="article-date">
   
-    <time class="published dt-published" datetime="2021-09-21T11:40:25.000Z" itemprop="datePublished">21 Sep 2021</time>
+    <time class="published dt-published" datetime="2021-04-11T14:11:10.000Z" itemprop="datePublished">11 Apr 2021</time>
   
 </a>
     
-  <div class="article-category category-tools">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  <div class="article-category category-misc">
+    <a class="article-category-link" href="/categories/Misc/">Misc</a> 
   </div>
 
   </div>
   
   <div class="article-inner">
     
-    <a href="/post/Uups-empty-posts/">
-        <img class="article-photo" src="/photos/tablet/D70_1408.jpg" alt="Mooring Ropes" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/Uups-empty-posts/">Uups ... empty posts</a>
-    </h1>
-  
-
-        
-    <h2 class="article-subtitle" itemprop="name">
-        Problems with post asset files in Hexo and a solution approach
-    </h2>
-
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      <p>A while ago I wrote about <a href="/post/Automatic-Duplicate-Image-Shadow/" title="Automatic Duplicate Image Shadow">Automatic Duplicate Image Shadow</a> and used <a href="https://indiepen.tech/">indiepen</a> for showing the result of my efforts.</p>
-
-    <div class="alertbox alertbox-note">
-      <p><strong><a href="https://indiepen.tech/">indiepen</a></strong> is a solution for showing code samples without the need of a code sharing platform, like <a href="https://codepen.io/">codepen</a>. Just reference a <code>index.html</code>, <code>main.js</code> and <code>styles.css</code> from wherever you want and indiepen is wrapping it with a neat viewer inside an IFrame.</p>
-
-    </div>
-  
-
-<p>I did it quick and dirty first (sample files in a static folder) and now it was the time to do it right: place the sample files in a subfolder of the post in my Hexo-driven blog solution, in order to reference it from there AND have the possibility to call it directly via <code>./post/my-post/sample</code>.</p>
-<p>The key to achive that in Hexo is the configuration option <code>post_asset_folder: true</code>, which generates a subfolder for all assets with the same name as the post.</p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|- _posts</span><br><span class="line">   |- my-blog-post</span><br><span class="line">      |- my-first-asset.jpg</span><br><span class="line">      |- my-second-asset.jpg</span><br><span class="line">   |- my-blog-post.md</span><br></pre></td></tr></table></figure>
-
-<p>My idea regarding the indiepen files was having a subfolder for each indiepen in the post asset folder:</p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">|- _posts</span><br><span class="line">   |- my-blog-post</span><br><span class="line">      |- my-first-asset.jpg</span><br><span class="line">      |- my-second-asset.jpg</span><br><span class="line">NEW   |- sample</span><br><span class="line">NEW      |- index.html</span><br><span class="line">NEW      |- main.js</span><br><span class="line">NEW      |- styles.css</span><br><span class="line">   |- my-blog-post.md</span><br></pre></td></tr></table></figure>
-
-<p>Run <code>hexo generate</code>, check that the indiepen was showing up properly and I thought I was done. Wrong … after commiting my changes to Github, where my blog is living, and checking my RSS feed a while after, I saw this:</p>
-<p><img src="/post/Uups-empty-posts/feed-empty-posts.png" alt="Empty posts in feedly"></p>
-<p>Three empty posts…!?</p>
-      
-        <p class="article-more-link">
-          <a href="/post/Uups-empty-posts/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
-  </div>
-
-      <div class="article-permalink" id="article-permalink-clazzub8c0067jcn50g6h0679">
-    <input class="article-permalink-value" value="https://kiko.io/post/Uups-empty-posts/" 
-           data-id="clazzub8c0067jcn50g6h0679" data-title="Uups ... empty posts" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("clazzub8c0067jcn50g6h0679");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2021/Photo-Workflow-Re-Thought" 
-         class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-meta">
-    <a href="/post/Photo-Workflow-Re-Thought/" class="article-date">
-  
-    <time class="published dt-published" datetime="2021-09-12T16:16:48.000Z" itemprop="datePublished">12 Sep 2021</time>
-  
-</a>
-    
-  <div class="article-category category-photo-editing">
-    <a class="article-category-link" href="/categories/Photo-Editing/">Photo-Editing</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/Photo-Workflow-Re-Thought/">
-        <img class="article-photo" src="/photos/tablet/D50_0955.jpg" alt="Rainbow Crane" />
+    <a href="/post/Adding-Screenshots-to-Trello-Cards-on-Android/">
+        <img class="article-photo" src="/photos/tablet/DSC_7006-HDR.jpg" alt="Break Dancer" />
     </a>
 
     
@@ -340,7 +245,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/post/Photo-Workflow-Re-Thought/">Photo Workflow Re-Thought</a>
+      <a class="article-title" href="/post/Adding-Screenshots-to-Trello-Cards-on-Android/">Adding Screenshots to Trello Cards on Android</a>
     </h1>
   
 
@@ -349,13 +254,12 @@
     
     
     <div class="article-entry" itemprop="articleBody">
-      <p>To be honest: many of my posts here on kiko.io are written just for me. To internalize things by writing them down and to give my future me the chance to look up something I did in the past. So is this post. Future me: Don’t forget the following!</p>
-<p>I while ago I was on a trip, shooting a lot of photographs and on my way back home I had three 32GB SD cards full with great photos. I was working with my old Nikon D7000, which has 2 card slots and I just took them out, when one of the cards was full. Worked fine for several years … but after this trip, one of the cards, full with RAW files and wonderful photos, <strong>w-a-s&amp;nbsp;&amp;nbsp;&amp;nbsp;N-O-T&amp;nbsp;&amp;nbsp;&amp;nbsp;r-e-a-d-a-b-l-e&amp;nbsp;&amp;nbsp;&amp;nbsp;a-n-y-m-o-r-e</strong> … f***! I saved myself the backup and now had to suffer over my carelessness.</p>
-<p>I thought about some fancy and expensive backup solutions for professional photographers, but realized after a while, that I already had the equipment to achieve everything I needed and I could even use it to improve my general workflow.</p>
-<p>In this post, I want to show you, what my workflow looks like today and how yours might benefit from my mistake.</p>
+      <p>I’m collecting interesting One-Page-Tools on the web on a Trello board. To add a new card, I use a simple little script on my Android smartphone, I wrote about here: <a href="/post/Add-website-to-Trello-card-the-better-way/" title="Add website to Trello card the better way">Add website to Trello card the better way</a>.</p>
+<p>On processing the page to store on a card, Trello scrapes the page and takes the <code>&lt;meta&gt;</code> tag <code>og:image</code> out of the HTML to generate an image attachment and take it as cover for the card. This sometimes works, but most of the time it doesn’t, because website owners often don’t pay attention to reasonable <code>&lt;meta&gt;</code> tags.</p>
+<p>Because it is easier to find a card with visual support, I create my own screenshots for the cards in a manual, but streamlined, process, I want to show you here.</p>
       
         <p class="article-more-link">
-          <a href="/post/Photo-Workflow-Re-Thought/">Continue reading ...</a>
+          <a href="/post/Adding-Screenshots-to-Trello-Cards-on-Android/">Continue reading ...</a>
         </p>
       
     </div>
@@ -363,18 +267,18 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Imaging/" rel="tag">Imaging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lightroom/" rel="tag">Lightroom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Workflow/" rel="tag">Workflow</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Imaging/" rel="tag">Imaging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Trello/" rel="tag">Trello</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-clazzub7v004yjcn57no47bz7">
-    <input class="article-permalink-value" value="https://kiko.io/post/Photo-Workflow-Re-Thought/" 
-           data-id="clazzub7v004yjcn57no47bz7" data-title="Photo Workflow Re-Thought" />
+      <div class="article-permalink" id="article-permalink-clb806qcl000ylaov1dl92hnu">
+    <input class="article-permalink-value" value="https://kiko.io/post/Adding-Screenshots-to-Trello-Cards-on-Android/" 
+           data-id="clb806qcl000ylaov1dl92hnu" data-title="Adding Screenshots to Trello Cards on Android" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clazzub7v004yjcn57no47bz7");
+        initPermalink("clb806qcl000ylaov1dl92hnu");
     });
 </script>
 
@@ -384,334 +288,13 @@
 </article>
   
      
-<article id="post-2021/Application-Specific-Links-on-Windows-10" 
+<article id="post-2021/SVG-Resources" 
          class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-meta">
-    <a href="/post/Application-Specific-Links-on-Windows-10/" class="article-date">
+    <a href="/post/SVG-Resources/" class="article-date">
   
-    <time class="published dt-published" datetime="2021-09-03T07:31:08.000Z" itemprop="datePublished">03 Sep 2021</time>
-  
-</a>
-    
-  <div class="article-category category-misc">
-    <a class="article-category-link" href="/categories/Misc/">Misc</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/Application-Specific-Links-on-Windows-10/">
-        <img class="article-photo" src="/photos/tablet/D70_0247.jpg" alt="Copenhagen Window" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/Application-Specific-Links-on-Windows-10/">Application-Specific Links on Windows 10</a>
-    </h1>
-  
-
-        
-    <h2 class="article-subtitle" itemprop="name">
-        What works and what we still have to wait for
-    </h2>
-
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      <p>While reading the Chris Coyier’s post <a href="https://css-tricks.com/application-specific-links/">Application-Specific Links</a> the other day, I realized what has been bugging me for a long time now: a proper solution for openening a certain URL in a modern Web App.</p>
-<p>Since the beginning of the digital age (feels like that), we have files associated to a certain application, installed on our machine, regardless if its running Windows, iOS, OS&#x2F;2 or whatever. We have learned that well and no one questions it … but … the IT world keeps on turning and today we are not only talking about files, but about links.</p>
-<p>Many modern applications are written with Web technologies, thanks to cross platform frameworks like <a href="https://www.electronjs.org/">Electron</a>. Some of them are real apps for working on things, like the famous editor <a href="https://code.visualstudio.com/">Visual Studio Code</a>, and some are mirroring their online services in a desktop app only, like <a href="https://slack.com/intl/en-de/downloads/windows">Slack</a> or <a href="https://www.notion.so/desktop">Notion</a>. However, the latter have the problem how to deal with links to their online services. When a user is sent a link and has become accustomed to using the desktop app, it won’t open in the app as he clicks on it, but in his default browser. The question is, how to associate not only files, but links with certain desktop apps?</p>
-      
-        <p class="article-more-link">
-          <a href="/post/Application-Specific-Links-on-Windows-10/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Browser/" rel="tag">Browser</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PWA/" rel="tag">PWA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>  
-  </div>
-
-      <div class="article-permalink" id="article-permalink-clazzub6z002mjcn523e09fr9">
-    <input class="article-permalink-value" value="https://kiko.io/post/Application-Specific-Links-on-Windows-10/" 
-           data-id="clazzub6z002mjcn523e09fr9" data-title="Application-Specific Links on Windows 10" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("clazzub6z002mjcn523e09fr9");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2021/Pattern-for-dynamic-Hexo-pages" 
-         class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-meta">
-    <a href="/post/Pattern-for-dynamic-Hexo-pages/" class="article-date">
-  
-    <time class="published dt-published" datetime="2021-08-25T07:43:44.000Z" itemprop="datePublished">25 Aug 2021</time>
-  
-</a>
-    
-  <div class="article-category category-tools">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/Pattern-for-dynamic-Hexo-pages/">
-        <img class="article-photo" src="/photos/tablet/D50_4451.jpg" alt="Garden Beauties I" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/Pattern-for-dynamic-Hexo-pages/">Pattern for dynamic Hexo pages</a>
-    </h1>
-  
-
-        
-    <h2 class="article-subtitle" itemprop="name">
-        Set up pages with dynamic data easily
-    </h2>
-
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      <p><a href="https://hexo.io/">Hexo</a> is a great SSG platform for blogging. Just write your Markdown beneath some Frontmatter meta data, run <code>hexo generate</code> and publish the results to a web server.</p>
-<p>But at some point you may want to process different data from internal or external sources and integrate it into your blog. Hexo doesn’t support this out of the box, but has a powerful feature called <a href="https://hexo.io/api/generator.html">Generator</a>, which helps you to achieve your goal. The following is a sample and pattern of how to implement this.</p>
-<p>The starting point of my example is the requirement to display several elements of the same type on a dynamic page, but you can of course adapt the example according to your needs.</p>
-      
-        <p class="article-more-link">
-          <a href="/post/Pattern-for-dynamic-Hexo-pages/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
-  </div>
-
-      <div class="article-permalink" id="article-permalink-clazzub7t004wjcn56w0zgc3o">
-    <input class="article-permalink-value" value="https://kiko.io/post/Pattern-for-dynamic-Hexo-pages/" 
-           data-id="clazzub7t004wjcn56w0zgc3o" data-title="Pattern for dynamic Hexo pages" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("clazzub7t004wjcn56w0zgc3o");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2021/Visualize-the-codebase-of-your-GitHub-repo" 
-         class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-meta">
-    <a href="/post/Visualize-the-codebase-of-your-GitHub-repo/" class="article-date">
-  
-    <time class="published dt-published" datetime="2021-08-21T05:55:00.000Z" itemprop="datePublished">21 Aug 2021</time>
-  
-</a>
-    
-  <div class="article-category category-tools">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/Visualize-the-codebase-of-your-GitHub-repo/">
-        <img class="article-photo" src="/photos/tablet/D50_0086.jpg" alt="Thomas&#39; German Flag" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/Visualize-the-codebase-of-your-GitHub-repo/">Visualize the codebase of your GitHub repo</a>
-    </h1>
-  
-
-        
-    <h2 class="article-subtitle" itemprop="name">
-        Try GitHub Next&#39;s repo-vizualizer action for generating a diagram of your codebase
-    </h2>
-
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      <p>Beginning of the month, <a href="https://twitter.com/Wattenberger">Amelia Wattenberger</a> of <a href="https://next.github.com/">GitHub Next</a> has published a project to create a SVG visualization of a GitHub repository’s codebase.</p>
-<p>On the project page <strong><a href="https://next.github.com/projects/repo-visualization">Visualizing a codebase</a></strong>, she talks about the advantages of code vizualization in terms of a better overview and comparability of code …  and I loved it at first sight, because I’m an absolute visual person.</p>
-<p><img src="/post/Visualize-the-codebase-of-your-GitHub-repo/screenshot-repo-visualization.png" alt="Screenshot from the project page"></p>
-<p>But her attempt was not only to show us what’s possible (static SVG files and even interactive apps for code browsing, filtering and comparing), but give us the possibility to create our own codebase diagrams as SVG automatically, whenever we commit our code, by running a <a href="https://docs.github.com/en/actions">GitHub Action</a>, she and her team has developed … the <a href="https://github.com/githubocto/repo-visualizer"><strong>Repo Vizualizer</strong></a></p>
-      
-        <p class="article-more-link">
-          <a href="/post/Visualize-the-codebase-of-your-GitHub-repo/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Imaging/" rel="tag">Imaging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>  
-  </div>
-
-      <div class="article-permalink" id="article-permalink-clazzub8e006ejcn52p69cvmx">
-    <input class="article-permalink-value" value="https://kiko.io/post/Visualize-the-codebase-of-your-GitHub-repo/" 
-           data-id="clazzub8e006ejcn52p69cvmx" data-title="Visualize the codebase of your GitHub repo" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("clazzub8e006ejcn52p69cvmx");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2021/GitHubs-Magic-Dot" 
-         class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-meta">
-    <a href="/post/GitHubs-Magic-Dot/" class="article-date">
-  
-    <time class="published dt-published" datetime="2021-08-20T11:43:04.000Z" itemprop="datePublished">20 Aug 2021</time>
-  
-</a>
-    
-  <div class="article-category category-tools">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/GitHubs-Magic-Dot/">
-        <img class="article-photo" src="/photos/tablet/19-07 Schottland-0595.jpg" alt="RYB Brass &amp; Wires" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/GitHubs-Magic-Dot/">GitHubs Magic Dot</a>
-    </h1>
-  
-
-        
-    <h2 class="article-subtitle" itemprop="name">
-        New experience in code editing
-    </h2>
-
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      <p>GitHub has released the long awaited solution für code editing in the web today, or more precisely, the two new solutions: <a href="https://github.com/features/codespaces"><strong>CodeSpaces</strong> and <strong>github.dev</strong></a>.</p>
-<p>As Brigit Murtaugh and Allison Weins pointed out in their presentation at the live stream on Youtube (<a href="https://www.youtube.com/watch?v=c3hHhRME_XI">VS Code anywhere: GitHub Codespaces and github.dev</a>), both solutions are based on the codebase of Visual Studio Code, but have different approaches and target groups.</p>
-<p>Where <strong>Codespaces</strong> is an online editor with computing capabilities (realized by running a VM in the backend) and is only available für paid plans, <strong>github.dev</strong> is a free online editor to change files in your GitHub repo as you do it in your local VSCode, but without running and debugging capabilities.</p>
-      
-        <p class="article-more-link">
-          <a href="/post/GitHubs-Magic-Dot/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Browser/" rel="tag">Browser</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/" rel="tag">VS Code</a></li></ul>  
-  </div>
-
-      <div class="article-permalink" id="article-permalink-clazzub7k0044jcn563m95xfx">
-    <input class="article-permalink-value" value="https://kiko.io/post/GitHubs-Magic-Dot/" 
-           data-id="clazzub7k0044jcn563m95xfx" data-title="GitHubs Magic Dot" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("clazzub7k0044jcn563m95xfx");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2021/Discoveries-12-Tutorials" 
-         class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-meta">
-    <a href="/post/Discoveries-12-Tutorials/" class="article-date">
-  
-    <time class="published dt-published" datetime="2021-07-30T08:41:51.000Z" itemprop="datePublished">30 Jul 2021</time>
+    <time class="published dt-published" datetime="2021-04-09T12:07:53.000Z" itemprop="datePublished">09 Apr 2021</time>
   
 </a>
     
@@ -723,415 +306,8 @@
   
   <div class="article-inner">
     
-    <a href="/post/Discoveries-12-Tutorials/">
-        <img class="article-photo" src="/photos/tablet/19-07 Schottland-0479.jpg" alt="Beer Barrels" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-    <a class="article-anything" itemprop="name" href="/series/discoveries">Discoveries</a>
-
-
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/Discoveries-12-Tutorials/">Discoveries #12 - Tutorials</a>
-    </h1>
-  
-
-        
-    <h2 class="article-subtitle" itemprop="name">
-        Some great articles from CSS masters
-    </h2>
-
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      <p>This months discoveries it’s all about CSS tutorials. You will find some of the best articles of profound CSS masters like <a href="https://ishadeed.com/">Ahmad Shadeed</a> or <a href="https://www.joshwcomeau.com/">Josh Comeau</a>. All tips are vital to bring your CSS to the next level. Happy learning…</p>
-
-        <ul class="anchorlist">
-            <li data-anchor="#css-variables-101">CSS Variables 101</li><li data-anchor="#full-bleed-layout-grid">Full-Bleed Layout Using CSS Grid</li><li data-anchor="#deep-dive-cssgrid-minmax">A Deep Dive Into CSS Grid minmax()</li><li data-anchor="#pure-css-diagonal-layouts">Create Diagonal Layouts Like It's 2020</li><li data-anchor="#using-calc-to-figure-out-optimal-line-height">Using calc to figure out optimal line-height</li><li data-anchor="#drop-shadow-the-underrated-css-filter">Drop-Shadow: The Underrated CSS Filter</li><li data-anchor="#guide-to-the-responsive-images">A Guide to the Responsive Images Syntax in HTML</li><li data-anchor="#centering-in-css">Centering in CSS</li><li data-anchor="#trigger-a-css-animation-on-scroll">How to trigger a CSS animation on scroll</li><li data-anchor="#css-scroll-snap">CSS Scroll Snap</li>
-        </ul>
-      
-        <p class="article-more-link">
-          <a href="/post/Discoveries-12-Tutorials/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Collection/" rel="tag">Collection</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tutorial/" rel="tag">Tutorial</a></li></ul>  
-  </div>
-
-      <div class="article-permalink" id="article-permalink-clazzub750037jcn5321mcufa">
-    <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-12-Tutorials/" 
-           data-id="clazzub750037jcn5321mcufa" data-title="Discoveries #12 - Tutorials" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("clazzub750037jcn5321mcufa");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2021/Running-Rollup-with-Gulp" 
-         class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-meta">
-    <a href="/post/Running-Rollup-with-Gulp/" class="article-date">
-  
-    <time class="published dt-published" datetime="2021-07-29T13:34:03.000Z" itemprop="datePublished">29 Jul 2021</time>
-  
-</a>
-    
-  <div class="article-category category-javascript">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/Running-Rollup-with-Gulp/">
-        <img class="article-photo" src="/photos/tablet/20-08 Mallorca-6871.jpg" alt="Coal Flame" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/Running-Rollup-with-Gulp/">Running Rollup with Gulp</a>
-    </h1>
-  
-
-        
-    <h2 class="article-subtitle" itemprop="name">
-        Use Rollup.js as JavaScript bundler in your Gulp pipeline
-    </h2>
-
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      <p>Writing an SPA (Single Page Application) in JavaScript&#x2F;CSS always means to keep an eye on small files to deliver. Especially when utilizing a bunch of libraries and frameworks, bundling is some sort of a must. The offer on bundlers and task runners is large on the web: <a href="https://webpack.js.org/">WebPack</a>, <a href="https://www.snowpack.dev/">Snowpack</a>, <a href="https://browserify.org/">Browserify</a>, <a href="https://parceljs.org/">Parcel</a>, <a href="https://gruntjs.com/">Grunt</a>, <a href="https://gulpjs.com/">Gulp</a> and “DingDong” (just replace with the hotest new shit available).</p>
-<p>But, it is not always necessary to replace your complete building pipeline, when the new “DingDong” is hyped in the media. Brave old tools like <a href="https://gulpjs.com/">Gulp</a> are doing their job pretty well … and you are able to integrate some more modern approaches on bundling JS, for example.</p>
-<p>I couple of months ago, while working on a private project, I became attentive to <a href="https://www.rollupjs.org/">Rollup.js</a>, a next-generation JavaScript module bundler from Rich Harris, the author of Svelte. Rollup uses the new standardized format for code modules included in the ES6 revision of JavaScript and supports Tree-Shaking, which means that it analyzes all your ES6 <code>imports</code> statements and bundles only the code which is used. Pretty cool … but … it is a JavaScript bundler only and there are no plugins for Gulp, my favourite task runner.</p>
-<p>In this article I will show you, how to integrate Rollup in your Gulp bundling pipeline.</p>
-      
-        <p class="article-more-link">
-          <a href="/post/Running-Rollup-with-Gulp/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bundling/" rel="tag">Bundling</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SPA/" rel="tag">SPA</a></li></ul>  
-  </div>
-
-      <div class="article-permalink" id="article-permalink-clazzub7y0055jcn55qnhfmll">
-    <input class="article-permalink-value" value="https://kiko.io/post/Running-Rollup-with-Gulp/" 
-           data-id="clazzub7y0055jcn55qnhfmll" data-title="Running Rollup with Gulp" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("clazzub7y0055jcn55qnhfmll");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2021/Automatic-Duplicate-Image-Shadow" 
-         class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-meta">
-    <a href="/post/Automatic-Duplicate-Image-Shadow/" class="article-date">
-  
-    <time class="published dt-published" datetime="2021-07-16T15:45:30.000Z" itemprop="datePublished">16 Jul 2021</time>
-  
-</a>
-    
-  <div class="article-category category-javascript">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/Automatic-Duplicate-Image-Shadow/">
-        <img class="article-photo" src="/photos/tablet/18-09 Kroatien-0349.jpg" alt="Colorful Twig" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/Automatic-Duplicate-Image-Shadow/">Automatic Duplicate Image Shadow</a>
-    </h1>
-  
-
-        
-    <h2 class="article-subtitle" itemprop="name">
-        Drop an image shadow with the image itself via JavaScript
-    </h2>
-
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      <p>At the beginning of the year I wrote a <a href="/post/Use-a-duplicate-image-to-drop-a-shadow/" title="post">post</a> about showing a shadow on an image with the image itself instead of using <code>box-shadow</code>, to make the image appear glass-like.</p>
-<p><img src="/post/Automatic-Duplicate-Image-Shadow/image-shadow.jpg" alt="Image Shadow"></p>
-<p>Nice trick, but it would be much easier to have a little script, that does this automatically for all images on a page. In this post I will show you how to achieve this.</p>
-      
-        <p class="article-more-link">
-          <a href="/post/Automatic-Duplicate-Image-Shadow/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Imaging/" rel="tag">Imaging</a></li></ul>  
-  </div>
-
-      <div class="article-permalink" id="article-permalink-clazzub70002qjcn5eh3i57sp">
-    <input class="article-permalink-value" value="https://kiko.io/post/Automatic-Duplicate-Image-Shadow/" 
-           data-id="clazzub70002qjcn5eh3i57sp" data-title="Automatic Duplicate Image Shadow" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("clazzub70002qjcn5eh3i57sp");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2021/Generate-Social-Media-Images-Automatically" 
-         class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-meta">
-    <a href="/post/Generate-Social-Media-Images-Automatically/" class="article-date">
-  
-    <time class="published dt-published" datetime="2021-07-10T09:07:31.000Z" itemprop="datePublished">10 Jul 2021</time>
-  
-</a>
-    
-  <div class="article-category category-javascript">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/Generate-Social-Media-Images-Automatically/">
-        <img class="article-photo" src="/photos/tablet/DSC_6776.jpg" alt="Color Brushes" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-
-
-    <a class="article-anything" itemprop="name" href="/projects/social-media-image-generator">social-media-image-generator</a>
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/Generate-Social-Media-Images-Automatically/">Generate Social Media Images Automatically</a>
-    </h1>
-  
-
-        
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      <p>From day one of this blog I wanted to combine two of my passions: tech stuff and photography. All these photos I have shot myself in recent years and now they are representing my thoughts &amp; findings about digital technology. I wrote about my approach to provide these images in my post <a href="/post/Automatic-Header-Images-in-Hexo/" title="Automatic Header Images in Hexo">Automatic Header Images in Hexo</a>.</p>
-<p>When I share one of my posts on social media I provide the appropriate image as a visual anchor to my writing. The technique behind this are the <code>meta</code> tags in the HTML of my posts:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Schema.org for Google --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">itemprop</span>=<span class="string">&quot;image&quot;</span> <span class="attr">content</span>=<span class="string">&quot;https://kiko.io/photos/normal/DSC_6776.jpg&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Open Graph --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">property</span>=<span class="string">&quot;og:image&quot;</span> <span class="attr">content</span>=<span class="string">&quot;https://kiko.io/photos/normal/DSC_6776.jpg&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Twitter --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">property</span>=<span class="string">&quot;twitter:card&quot;</span> <span class="attr">content</span>=<span class="string">&quot;summary_large_image&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">property</span>=<span class="string">&quot;twitter:image&quot;</span> <span class="attr">content</span>=<span class="string">&quot;https://kiko.io/photos/normal/DSC_6776.jpg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>There are several meta tags for different purposes regarding images. For more information see the links at the end of this post. To make a long story short: The sum of these approaches ensures that when an article is posted, the corresponding image is also displayed in the social media post.</p>
-<p>But … it’s only the image, without a visual reference to the post itself. In this article I want to show you how to combine the photo with some meta information of the post automatically, to get a <strong>Social Media Image</strong>.</p>
-<p><img src="/post/Generate-Social-Media-Images-Automatically/generation-flow.png" alt="Generation Flow"></p>
-      
-        <p class="article-more-link">
-          <a href="/post/Generate-Social-Media-Images-Automatically/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Imaging/" rel="tag">Imaging</a></li></ul>  
-  </div>
-
-      <div class="article-permalink" id="article-permalink-clazzub7g003xjcn5gyi23j1e">
-    <input class="article-permalink-value" value="https://kiko.io/post/Generate-Social-Media-Images-Automatically/" 
-           data-id="clazzub7g003xjcn5gyi23j1e" data-title="Generate Social Media Images Automatically" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("clazzub7g003xjcn5gyi23j1e");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2021/Discoveries-11" 
-         class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-meta">
-    <a href="/post/Discoveries-11/" class="article-date">
-  
-    <time class="published dt-published" datetime="2021-06-28T13:03:29.000Z" itemprop="datePublished">28 Jun 2021</time>
-  
-</a>
-    
-  <div class="article-category category-misc">
-    <a class="article-category-link" href="/categories/Misc/">Misc</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/Discoveries-11/">
-        <img class="article-photo" src="/photos/tablet/DSC_9480-HDR.jpg" alt="Melting Hills" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-    <a class="article-anything" itemprop="name" href="/series/discoveries">Discoveries</a>
-
-
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/Discoveries-11/">Discoveries #11</a>
-    </h1>
-  
-
-        
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      <p>Todays issue of <strong>Discoveries</strong> is all about images. Show them, manipulate them, get information about them, protect them, use them and create them with JavaScript. Have fun trying out one of these cool solutions.</p>
-
-        <ul class="anchorlist">
-            <li data-anchor="#photo-swipe">PhotoSwipe</li><li data-anchor="#light-gallery">lightGallery</li><li data-anchor="#pica">Pica</li><li data-anchor="#resemble-js">Resemble.js</li><li data-anchor="#medium-zoom">medium-zoom</li><li data-anchor="#lc-mouse-drag">LC-Mouse-Drag</li><li data-anchor="#protect-image-js">ProtectImage.js</li><li data-anchor="#tinygraphs">Tinygraphs</li><li data-anchor="#dynamic-social-sharing-images">Dynamic Social Sharing Images</li><li data-anchor="#automatic-social-share-images">Automatic Social Share Images</li>
-        </ul>
-      
-        <p class="article-more-link">
-          <a href="/post/Discoveries-11/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Collection/" rel="tag">Collection</a></li></ul>  
-  </div>
-
-      <div class="article-permalink" id="article-permalink-clazzub740034jcn5flozgu5k">
-    <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-11/" 
-           data-id="clazzub740034jcn5flozgu5k" data-title="Discoveries #11" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("clazzub740034jcn5flozgu5k");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2021/Open-Source-Insights-Seeing-the-big-picture" 
-         class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-meta">
-    <a href="/post/Open-Source-Insights-Seeing-the-big-picture/" class="article-date">
-  
-    <time class="published dt-published" datetime="2021-06-06T07:36:49.000Z" itemprop="datePublished">06 Jun 2021</time>
-  
-</a>
-    
-  <div class="article-category category-tools">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/Open-Source-Insights-Seeing-the-big-picture/">
-        <img class="article-photo" src="/photos/tablet/DSC_0482.jpg" alt="Meek Window" />
+    <a href="/post/SVG-Resources/">
+        <img class="article-photo" src="/photos/tablet/DSC_4936.jpg" alt="Forgotten Motocycle" />
     </a>
 
     
@@ -1147,25 +323,76 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/post/Open-Source-Insights-Seeing-the-big-picture/">Open Source Insights - Seeing the big picture</a>
+      <a class="article-title" href="/post/SVG-Resources/">SVG Resources</a>
     </h1>
   
 
         
-    <h2 class="article-subtitle" itemprop="name">
-        Google&#39;s new experimental platform to get a grip on project dependencies
-    </h2>
-
       </header>
     
     
     <div class="article-entry" itemprop="articleBody">
-      <p>A while ago I needed some functionality regarding database access in one of my spare time projects and I decided to use a library from NPM. Typed <code>npm install</code> and the hell was breaking loose … 186 direct dependencies and nearly 200K of files were flooding my harddrive!</p>
-<p>The mental basis of IT is lazyness, which means that we produce software to make our and others life easier. This also applies to the building process. Don’t reinvent the wheel, but reuse the work of other developers. But … we have to recognize the limits and prevent to fall into the dependency hell.</p>
-<p>To get a better overview over dependencies, regarding NPM and other repositories, some Google engineers have published a project called <strong><a href="https://deps.dev/">Open Source Insights</a></strong> a couple of days ago.</p>
+      <style>
+  #post-SVG-Resources button {
+    background-color: #f1f1f1;
+    border: none;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+  #post-SVG-Resources em {
+    opacity: 0.33;
+  }
+  #post-SVG-Resources #info {
+    color: silver;
+    display: block;
+    height: 24px;
+  }
+  #post-SVG-Resources #info.result {
+    color: green;
+    font-weight: bold;
+  }
+</style>
+<script>
+  var timeoutID;
+  function setInfo(e,m) {
+    let info = document.getElementById(e);
+    info.textContent = m;
+    info.classList.add("result");
+    window.clearTimeout(timeoutID);
+    timeoutID = setTimeout(function() {
+      info.textContent = "Guess and click...";
+      info.classList.remove("result");
+      window.clearTimeout(timeoutID);
+    }, 2000);
+  }
+</script>
+
+<p>Since beginning beginning of time, people are using symbols to make things clear quickly and easily. So do we when developing websites and web apps by using icons. Everybody knows what’s behind a loupe symbol or a hamburger icon.</p>
+<button onClick="setInfo('info', 'Yes, it\'s a SEARCH button ;)');">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
+    d="M18.319 14.4326C20.7628 11.2941 20.542 6.75347 17.6569 3.86829C14.5327 0.744098 9.46734 0.744098 6.34315 3.86829C3.21895 6.99249 3.21895 12.0578 6.34315 15.182C9.22833 18.0672 13.769 18.2879 16.9075 15.8442C16.921 15.8595 16.9351 15.8745 16.9497 15.8891L21.1924 20.1317C21.5829 20.5223 22.2161 20.5223 22.6066 20.1317C22.9971 19.7412 22.9971 19.1081 22.6066 18.7175L18.364 14.4749C18.3493 14.4603 18.3343 14.4462 18.319 14.4326ZM16.2426 5.28251C18.5858 7.62565 18.5858 11.4246 16.2426 13.7678C13.8995 16.1109 10.1005 16.1109 7.75736 13.7678C5.41421 11.4246 5.41421 7.62565 7.75736 5.28251C10.1005 2.93936 13.8995 2.93936 16.2426 5.28251Z" />
+</svg>
+</button>
+<button onClick="setInfo('info', 'Yeah ... an OPEN MENU button ;)');">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill="currentColor"
+    d="M2 6C2 5.44772 2.44772 5 3 5H21C21.5523 5 22 5.44772 22 6C22 6.55228 21.5523 7 21 7H3C2.44772 7 2 6.55228 2 6Z" />
+  <path fill="currentColor"
+    d="M2 12.0322C2 11.4799 2.44772 11.0322 3 11.0322H21C21.5523 11.0322 22 11.4799 22 12.0322C22 12.5845 21.5523 13.0322 21 13.0322H3C2.44772 13.0322 2 12.5845 2 12.0322Z" />
+  <path fill="currentColor"
+    d="M3 17.0645C2.44772 17.0645 2 17.5122 2 18.0645C2 18.6167 2.44772 19.0645 3 19.0645H21C21.5523 19.0645 22 18.6167 22 18.0645C22 17.5122 21.5523 17.0645 21 17.0645H3Z" />
+</svg>
+</button><br><span id="info">Guess and click...</span>
+
+<p>The way we implement icons have changed in the past. From BMP files to GIF and JPG files, PNG files, to complete or customizable symbol fonts like <a href="https://fontello.com/">fontello.com</a>, to Scalable Vector Graphics (SVG).</p>
+<p>SVG’s in particular are becoming increasingly popular, because they are nothing more than XML-like code, that can be manipulated via CSS or JS, their digital footprint is unbeatable small and they scale seemlessly.</p>
+<p>Dealing with SVG’s is a little bit more difficult than placing a PNG in HTML, because of its complexity, but it is worth learning as much as possible about it. So did I in the last couple of month and I want to share my finds on the web with you in this post.</p>
       
         <p class="article-more-link">
-          <a href="/post/Open-Source-Insights-Seeing-the-big-picture/">Continue reading ...</a>
+          <a href="/post/SVG-Resources/">Continue reading ...</a>
         </p>
       
     </div>
@@ -1173,18 +400,815 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Collection/" rel="tag">Collection</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Imaging/" rel="tag">Imaging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SVG/" rel="tag">SVG</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-clazzub7s004tjcn5htv6h9it">
-    <input class="article-permalink-value" value="https://kiko.io/post/Open-Source-Insights-Seeing-the-big-picture/" 
-           data-id="clazzub7s004tjcn5htv6h9it" data-title="Open Source Insights - Seeing the big picture" />
+      <div class="article-permalink" id="article-permalink-clb806qd2001slaovh7pu4uj6">
+    <input class="article-permalink-value" value="https://kiko.io/post/SVG-Resources/" 
+           data-id="clb806qd2001slaovh7pu4uj6" data-title="SVG Resources" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clazzub7s004tjcn5htv6h9it");
+        initPermalink("clb806qd2001slaovh7pu4uj6");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
+<article id="post-2021/Discoveries-8" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <a href="/post/Discoveries-8/" class="article-date">
+  
+    <time class="published dt-published" datetime="2021-03-31T11:41:26.000Z" itemprop="datePublished">31 Mar 2021</time>
+  
+</a>
+    
+  <div class="article-category category-ui/ux">
+    <a class="article-category-link" href="/categories/UI-UX/">UI/UX</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Discoveries-8/">
+        <img class="article-photo" src="/photos/tablet/19-05 Israel-0724.jpg" alt="Jad Vashem Vista" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+    <a class="article-anything" itemprop="name" href="/series/discoveries">Discoveries</a>
+
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/Discoveries-8/">Discoveries #8</a>
+    </h1>
+  
+
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>This month my discoveries are all about CSS … at least almost. See the stunning solutions developers around the world have created and take them to improve yours. Have fun exploring.</p>
+
+        <ul class="anchorlist">
+            <li data-anchor="#charts-css">Charts.css</li><li data-anchor="#anim-xyz">AnimXYZ</li><li data-anchor="#magic-animations">Magic Animations</li><li data-anchor="#transition-css">transition.css</li><li data-anchor="#animated-content-placeholders">Make Animated Content Placeholders with HTML and CSS</li><li data-anchor="#animating-underlines">Animating Underlines</li><li data-anchor="#new-aspect-ratio">New aspect-ratio CSS property</li><li data-anchor="#language-specific-quotes">How to display language-specific quotes in CSS</li><li data-anchor="#details-modal">Making the DETAILS element look and behave like a modal</li><li data-anchor="#better-line-breaks">Better Line Breaks for Long URLs</li>
+        </ul>
+      
+        <p class="article-more-link">
+          <a href="/post/Discoveries-8/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Collection/" rel="tag">Collection</a></li></ul>  
+  </div>
+
+      <div class="article-permalink" id="article-permalink-clb806qcu001blaov1i7q7ueg">
+    <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-8/" 
+           data-id="clb806qcu001blaov1i7q7ueg" data-title="Discoveries #8" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clb806qcu001blaov1i7q7ueg");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
+<article id="post-2021/Custom-Caller-Authentication-with-ASP-NET-Core-5-0-WebApi" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <a href="/post/Custom-Caller-Authentication-with-ASP-NET-Core-5-0-WebApi/" class="article-date">
+  
+    <time class="published dt-published" datetime="2021-02-28T16:05:00.000Z" itemprop="datePublished">28 Feb 2021</time>
+  
+</a>
+    
+  <div class="article-category category-.net">
+    <a class="article-category-link" href="/categories/NET/">.NET</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Custom-Caller-Authentication-with-ASP-NET-Core-5-0-WebApi/">
+        <img class="article-photo" src="/photos/tablet/DSC_7207.jpg" alt="Green Lightbeam" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/Custom-Caller-Authentication-with-ASP-NET-Core-5-0-WebApi/">Custom Caller Authentication with ASP.NET Core 5.0 Web API</a>
+    </h1>
+  
+
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>Developing micro services with Microsoft ASP.NET Core 5.0 Web API is powerful and fun, but the fun stops, if your data are accesses unauthorized. It is absolutely fundamental to have a protection layer, which filters out unwanted data requests.  </p>
+<p>A common way is to limit the service access by providing API Keys to well known clients. In this post I will show you how to implement such a filter in terms of API keys and IP addresses. </p>
+      
+        <p class="article-more-link">
+          <a href="/post/Custom-Caller-Authentication-with-ASP-NET-Core-5-0-WebApi/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Authentication/" rel="tag">Authentication</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/" rel="tag">Visual Studio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebAPI/" rel="tag">WebAPI</a></li></ul>  
+  </div>
+
+      <div class="article-permalink" id="article-permalink-clb806qcp0012laov6uqz9cqx">
+    <input class="article-permalink-value" value="https://kiko.io/post/Custom-Caller-Authentication-with-ASP-NET-Core-5-0-WebApi/" 
+           data-id="clb806qcp0012laov6uqz9cqx" data-title="Custom Caller Authentication with ASP.NET Core 5.0 Web API" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clb806qcp0012laov6uqz9cqx");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
+<article id="post-2021/Discoveries-7" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <a href="/post/Discoveries-7/" class="article-date">
+  
+    <time class="published dt-published" datetime="2021-02-25T13:36:10.000Z" itemprop="datePublished">25 Feb 2021</time>
+  
+</a>
+    
+  <div class="article-category category-misc">
+    <a class="article-category-link" href="/categories/Misc/">Misc</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Discoveries-7/">
+        <img class="article-photo" src="/photos/tablet/DSC_8892.jpg" alt="Industrial Chrome" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+    <a class="article-anything" itemprop="name" href="/series/discoveries">Discoveries</a>
+
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/Discoveries-7/">Discoveries #7</a>
+    </h1>
+  
+
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>February and the first sunny days in 2021. What a delight! Have fun, sitting in the sun, discovering my newest finds on the web. This time, all regarding JavaScript…</p>
+
+        <ul class="anchorlist">
+            <li data-anchor="#github1s">github1s: One second to read GitHub code with VS Code</li><li data-anchor="#enhance-fetch-decorator-pattern">How to enhance fetch() with the Decorator Pattern</li><li data-anchor="#ky">Ky - Delightful HTTP Requests</li><li data-anchor="#vscode-rest-client">VS Code’s REST Client Plugin is All You Need to Make API Calls</li><li data-anchor="#jsonview">json-view</li><li data-anchor="#you-might-not-need-jquery">You might not need jQuery</li><li data-anchor="#js-algorithms-data-structures">JavaScript Algorithms and Data Structures</li><li data-anchor="#date-fns">date-fns - Modern JavaScript date utility library</li><li data-anchor="#parsing-markdown-into-toc">Parsing Markdown into an Automated Table of Contents</li><li data-anchor="#fake-scroll">FakeScroll - lightweight custom-looking scrollbars</li>
+        </ul>
+      
+        <p class="article-more-link">
+          <a href="/post/Discoveries-7/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Collection/" rel="tag">Collection</a></li></ul>  
+  </div>
+
+      <div class="article-permalink" id="article-permalink-clb806qcu001alaov0lfuac18">
+    <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-7/" 
+           data-id="clb806qcu001alaov0lfuac18" data-title="Discoveries #7" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clb806qcu001alaov0lfuac18");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
+<article id="post-2021/Native-JavaScript-Multilanguage-Templating" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <a href="/post/Native-JavaScript-Multilanguage-Templating/" class="article-date">
+  
+    <time class="published dt-published" datetime="2021-02-24T12:31:58.000Z" itemprop="datePublished">24 Feb 2021</time>
+  
+</a>
+    
+  <div class="article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Native-JavaScript-Multilanguage-Templating/">
+        <img class="article-photo" src="/photos/tablet/DSC_6682.jpg" alt="Blue Lock" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/Native-JavaScript-Multilanguage-Templating/">Native JavaScript Multilanguage Templating</a>
+    </h1>
+  
+
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>In the project I’m currently working on, I faced the “problem” to integrate multilanguage support, but due to the fact that the new app should be written in vanilla JS, without any plugins, libraries or other dependencies, I had to develop my own localization layer. In this article I want to show you my approach on this…</p>
+      
+        <p class="article-more-link">
+          <a href="/post/Native-JavaScript-Multilanguage-Templating/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Localization/" rel="tag">Localization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Templating/" rel="tag">Templating</a></li></ul>  
+  </div>
+
+      <div class="article-permalink" id="article-permalink-clb806qcz001mlaov4hfk8bt3">
+    <input class="article-permalink-value" value="https://kiko.io/post/Native-JavaScript-Multilanguage-Templating/" 
+           data-id="clb806qcz001mlaov4hfk8bt3" data-title="Native JavaScript Multilanguage Templating" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clb806qcz001mlaov4hfk8bt3");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
+<article id="post-2021/Remote-Testing-and-Debugging-with-Chrome" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <a href="/post/Remote-Testing-and-Debugging-with-Chrome/" class="article-date">
+  
+    <time class="published dt-published" datetime="2021-01-24T13:47:10.000Z" itemprop="datePublished">24 Jan 2021</time>
+  
+</a>
+    
+  <div class="article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Remote-Testing-and-Debugging-with-Chrome/">
+        <img class="article-photo" src="/photos/tablet/DSC_9368.jpg" alt="Direction Airport" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/Remote-Testing-and-Debugging-with-Chrome/">Remote Testing and Debugging with Chrome</a>
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle" itemprop="name">
+        How to test a local site on a mobile device and debug it locally
+    </h2>
+
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>Developing a website or web app means, you have installed an editor locally on your computer, writing your code locally and start a tiny, built-in web server for debugging locally in your preferred browser. In most browsers, there are some features to mimic a smartphone, to see if your solution is working on such a device too, but you only get a hint if it’s running properly. Some mobile features like <code>navigator.canShare</code> do not work at all. Better is to see it live on your device.</p>
+<p>This article will show you firstly, how to test your local solution on a smartphone and secondly, how to debug it locally, when it runs on the smartphone after releasing.</p>
+      
+        <p class="article-more-link">
+          <a href="/post/Remote-Testing-and-Debugging-with-Chrome/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Browser/" rel="tag">Browser</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Debugging/" rel="tag">Debugging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/" rel="tag">VS Code</a></li></ul>  
+  </div>
+
+      <div class="article-permalink" id="article-permalink-clb806qd1001qlaovc6gta2p7">
+    <input class="article-permalink-value" value="https://kiko.io/post/Remote-Testing-and-Debugging-with-Chrome/" 
+           data-id="clb806qd1001qlaovc6gta2p7" data-title="Remote Testing and Debugging with Chrome" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clb806qd1001qlaovc6gta2p7");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
+<article id="post-2021/Discoveries-6" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <a href="/post/Discoveries-6/" class="article-date">
+  
+    <time class="published dt-published" datetime="2021-01-20T14:01:34.000Z" itemprop="datePublished">20 Jan 2021</time>
+  
+</a>
+    
+  <div class="article-category category-misc">
+    <a class="article-category-link" href="/categories/Misc/">Misc</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Discoveries-6/">
+        <img class="article-photo" src="/photos/tablet/DSC_4935.jpg" alt="Light Bulbs" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+    <a class="article-anything" itemprop="name" href="/series/discoveries">Discoveries</a>
+
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/Discoveries-6/">Discoveries #6</a>
+    </h1>
+  
+
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>2020 is over and history. Well, may 2021 be with us. With this post I would like to continue the <strong>Discoveries</strong>, with new momentum. There was a lot to read over the holidays.</p>
+<p>All the finds in this issue have something to do with visual aspects of web design in the broadest sense.</p>
+
+        <ul class="anchorlist">
+            <li data-anchor="#drop-shadow-underrated-css-filter">Drop-Shadow: The Underrated CSS Filter</li><li data-anchor="#css-gg">css.gg - 700+ CSS Icons</li><li data-anchor="#svgbox">SVGBox - API for Web Icons</li><li data-anchor="#change-color-svg-on-hover">Change Color of SVG on Hover</li><li data-anchor="#css-filter-generator">CSS filter generator to convert from black to target hex color</li><li data-anchor="#responsive-configurable-svg-waves">Responsive && Configurable SVG Waves</li><li data-anchor="#balloon">Balloon.css</li><li data-anchor="#build-css-only-org-chart">How to Build a CSS-only Organizational Chart</li><li data-anchor="#shifty">Shifty</li><li data-anchor="#50-projects-50-days">Brad Traversy's 50 Projects 50 Days</li>
+        </ul>
+      
+        <p class="article-more-link">
+          <a href="/post/Discoveries-6/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Collection/" rel="tag">Collection</a></li></ul>  
+  </div>
+
+      <div class="article-permalink" id="article-permalink-clb806qct0019laovc5jxgp91">
+    <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-6/" 
+           data-id="clb806qct0019laovc5jxgp91" data-title="Discoveries #6" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clb806qct0019laovc5jxgp91");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
+<article id="post-2021/Use-a-duplicate-image-to-drop-a-shadow" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <a href="/post/Use-a-duplicate-image-to-drop-a-shadow/" class="article-date">
+  
+    <time class="published dt-published" datetime="2021-01-20T09:38:50.000Z" itemprop="datePublished">20 Jan 2021</time>
+  
+</a>
+    
+  <div class="article-category category-ui/ux">
+    <a class="article-category-link" href="/categories/UI-UX/">UI/UX</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Use-a-duplicate-image-to-drop-a-shadow/">
+        <img class="article-photo" src="/photos/tablet/D702440.jpg" alt="Oriental Lights" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/Use-a-duplicate-image-to-drop-a-shadow/">Use a duplicate image to drop a shadow</a>
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle" itemprop="name">
+        An alternative for &#39;box-shadow&#39; on images
+    </h2>
+
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>Depending on your design, sometimes it is nice to drop a shadow on an image to highlight it:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;my-image.jpg&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">25px</span> <span class="number">25px</span> -<span class="number">10px</span> <span class="number">#666</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/post/Use-a-duplicate-image-to-drop-a-shadow/normal-shadow.jpg" alt="Normal Box Shadow"></p>
+<p>But … it looks like a paper print of the image, with a light bulb in the first third above it. The shade is grey, boring and has been used and seen many times before…</p>
+<p>An design related <a href="https://www.instagram.com/p/CIXUIXkBHMk/">Instagram post</a> from Muhammad Abdull of <a href="https://www.instagram.com/thewilsonwings">thewilsonthings</a>, inspired me to <strong>use the image itself as the shadow</strong> in order to make the image look a bit translucent. Should be the same technique as that of a reflection. Here is the HTML&#x2F;CSS code for it, as the people asking for it in the comments.</p>
+      
+        <p class="article-more-link">
+          <a href="/post/Use-a-duplicate-image-to-drop-a-shadow/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li></ul>  
+  </div>
+
+      <div class="article-permalink" id="article-permalink-clb806qd5001zlaov5vuq5yr8">
+    <input class="article-permalink-value" value="https://kiko.io/post/Use-a-duplicate-image-to-drop-a-shadow/" 
+           data-id="clb806qd5001zlaov5vuq5yr8" data-title="Use a duplicate image to drop a shadow" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clb806qd5001zlaov5vuq5yr8");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
+<article id="post-2021/Safely-remove-multiple-classes-using-a-prefix" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <a href="/post/Safely-remove-multiple-classes-using-a-prefix/" class="article-date">
+  
+    <time class="published dt-published" datetime="2021-01-18T10:17:46.000Z" itemprop="datePublished">18 Jan 2021</time>
+  
+</a>
+    
+  <div class="article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Safely-remove-multiple-classes-using-a-prefix/">
+        <img class="article-photo" src="/photos/tablet/DSC_1690.jpg" alt="Metal Rose" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/Safely-remove-multiple-classes-using-a-prefix/">Safely remove multiple classes using a prefix</a>
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle" itemprop="name">
+        Avoiding pitfalls when iterating over classList
+    </h2>
+
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>Writing a Web App with HTML and JavaScript means you deal with several classes on your DOM elements in order to visualize state changes. And there are some pitfalls to be aware of with regard to removal.</p>
+<p>Assuming you want to open some kind of sidebar above a container. In this sidebar you have several buttons to show different content via JavaScript and a close button, which closes the sidebar again. You HTML code maybe looks like this:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;container&quot;</span>&gt;</span>... Main Content ...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;open-sidebar&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">aside</span> <span class="attr">id</span>=<span class="string">&quot;sidebar&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span>... Sidebar Content ...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;close&quot;</span>&gt;</span>Close Sidebar<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;content1&quot;</span>&gt;</span>Show Content 1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;content2&quot;</span>&gt;</span>Show Content 2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;content3&quot;</span>&gt;</span>Show Content 3<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>By clicking on the <code>open-sidebar</code> button, the sidebar is opened and the action, respectively the new state, is vizualized by adding an appropriate class to the parent sidebar element. In order to make it easy for the user, the default content (Content 1) will be loaded also and its state will be marked with another class.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;sidebar open open-content1&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>A click on of the other content buttons (let’s say Content 2), will replace the current content and the <code>aside</code> classes will change into:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;sidebar open open-content2&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Now we want to close the sidebar again, assuming that we don’t have stored the currently opened content in the JavaScript code…</p>
+      
+        <p class="article-more-link">
+          <a href="/post/Safely-remove-multiple-classes-using-a-prefix/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li></ul>  
+  </div>
+
+      <div class="article-permalink" id="article-permalink-clb806qd2001tlaov2pm007br">
+    <input class="article-permalink-value" value="https://kiko.io/post/Safely-remove-multiple-classes-using-a-prefix/" 
+           data-id="clb806qd2001tlaov2pm007br" data-title="Safely remove multiple classes using a prefix" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clb806qd2001tlaov2pm007br");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
+<article id="post-2021/Use-and-manage-multiple-Node-js-versions-on-Windows-10" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <a href="/post/Use-and-manage-multiple-Node-js-versions-on-Windows-10/" class="article-date">
+  
+    <time class="published dt-published" datetime="2021-01-08T12:47:22.000Z" itemprop="datePublished">08 Jan 2021</time>
+  
+</a>
+    
+  <div class="article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Use-and-manage-multiple-Node-js-versions-on-Windows-10/">
+        <img class="article-photo" src="/photos/tablet/D70_8671.jpg" alt="Sky Rally III" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/Use-and-manage-multiple-Node-js-versions-on-Windows-10/">Use and manage multiple Node.js versions on Windows 10</a>
+    </h1>
+  
+
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>For a new project I needed to have Node 14 running on my Windows 10 machine, so installation was done quickly via downloading and running the setup file.</p>
+<p>A short time later I wanted to write a new blog post here on kiko.io, which depends on the Node.js based static site generator <a href="https://hexo.io/">Hexo</a> … and ran into several problems.</p>
+<p>First of all my hero image processing script (see <a href="/post/Automatic-Header-Images-in-Hexo/" title="Automatic Header Images in Hexo">Automatic Header Images in Hexo</a>) returned an exception. The script uses <a href="https://github.com/hexojs/hexo-fs">hexo-fs</a> and the problem is known quite some time, according to this <a href="https://github.com/hexojs/hexo/issues/4263">Github issue</a>. The guys recommend to downgrade to an older version of Node.js … :(</p>
+<p>Ok … I needed a solution to install multiple Node.js versions and switch between them, depending on which project I want to work on … and there is one: <strong><a href="https://github.com/coreybutler/nvm-windows">nvm-windows</a></strong> by Corey Butler!</p>
+      
+        <p class="article-more-link">
+          <a href="/post/Use-and-manage-multiple-Node-js-versions-on-Windows-10/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>  
+  </div>
+
+      <div class="article-permalink" id="article-permalink-clb806qd60020laov35k7c1wf">
+    <input class="article-permalink-value" value="https://kiko.io/post/Use-and-manage-multiple-Node-js-versions-on-Windows-10/" 
+           data-id="clb806qd60020laov35k7c1wf" data-title="Use and manage multiple Node.js versions on Windows 10" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clb806qd60020laov35k7c1wf");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
+<article id="post-2021/How-to-prevent-duplicate-events" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <a href="/post/How-to-prevent-duplicate-events/" class="article-date">
+  
+    <time class="published dt-published" datetime="2021-01-07T16:22:25.000Z" itemprop="datePublished">07 Jan 2021</time>
+  
+</a>
+    
+  <div class="article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/How-to-prevent-duplicate-events/">
+        <img class="article-photo" src="/photos/tablet/DSC_7239.jpg" alt="Whirling Spark I" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/How-to-prevent-duplicate-events/">How to prevent duplicate events</a>
+    </h1>
+  
+
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>I’m working on a new web app that contains a sliding out panel with some additional information on the selected element. This panel can be closed by the user via the ESC key. The implementation on initializing the panel seems very straight forward:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Panel</span>() &#123;</span><br><span class="line">  <span class="title function_">init</span>(<span class="params"></span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;keydown&quot;</span>, <span class="keyword">function</span>(<span class="params">event</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span>(event.<span class="property">key</span> === <span class="string">&quot;Escape&quot;</span>)&#123;</span><br><span class="line">        <span class="comment">//close the panel</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Problem is: the panel, which is part of the basic HTML, will be initialized with its content and functionality in a ES6 class. So … on every init, another event listener is added.</p>
+<p>You can easily figure that out, by calling <code>getEventListeners(document)</code> in the Chrome DevTools:</p>
+<p><img src="/post/How-to-prevent-duplicate-events/chromedevtools-multiple-listeners.png" alt="Chrome DevTools: Multiple Event Listeners"></p>
+      
+        <p class="article-more-link">
+          <a href="/post/How-to-prevent-duplicate-events/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Events/" rel="tag">Events</a></li></ul>  
+  </div>
+
+      <div class="article-permalink" id="article-permalink-clb806qcz001llaovd3zc8paq">
+    <input class="article-permalink-value" value="https://kiko.io/post/How-to-prevent-duplicate-events/" 
+           data-id="clb806qcz001llaovd3zc8paq" data-title="How to prevent duplicate events" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clb806qcz001llaovd3zc8paq");
     });
 </script>
 
@@ -1199,7 +1223,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/4/">&lt; Previous</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/">Next &gt;</a>
+    <a class="extend prev" rel="prev" href="/page/4/">&lt; Previous</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/">Next &gt;</a>
   </nav>
 
 </main>
@@ -1233,31 +1257,31 @@
         
           <li>
             
-              <a href="/post/index/"></a>
+              <a href="/post/Mastodon-simply-explained/">Mastodon simply explained</a>
             
           </li>
         
           <li>
             
-              <a href="/post/main/"></a>
+              <a href="/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/">Syndicate Mastodon Hashtags in your favorite Feed Reader</a>
             
           </li>
         
           <li>
             
-              <a href="/post/styles/"></a>
+              <a href="/post/Anatomy-of-Service-Worker-Communication/">Anatomy of Service Worker Communication</a>
             
           </li>
         
           <li>
             
-              <a href="/post/index/"></a>
+              <a href="/post/Discoveries-20-CSS-UI/">Discoveries #20 - CSS &amp; UI</a>
             
           </li>
         
           <li>
             
-              <a href="/post/main/"></a>
+              <a href="/post/One-mouse-to-rule-them-all/">One mouse to rule them all</a>
             
           </li>
         

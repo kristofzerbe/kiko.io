@@ -91,7 +91,7 @@
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body id="body">  
   <div id="container" class="container">
@@ -289,7 +289,7 @@
     <div class="article-entry e-content" itemprop="articleBody">
       <p>In some occasions it is necessary to know which device a user is using while writing JavaScript Web Apps. Should be nothing regarding layout, because for this we have <a href="https://developer.mozilla.org/de/docs/Web/CSS/Media_Queries/Using_media_queries"><code>CSS Media Queries</code></a>. </p>
 <p>Somewhere around 2011 W3C introduced <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia"><code>matchMedia()</code></a>, which <em>returns a MediaQueryList object that can be used to detemnine if the document matches the media query string.</em> The using is pretty straightforward and feels a bit like RegEx matching in JS:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mediaQuery = <span class="built_in">window</span>.matchMedia(<span class="string">&#x27;(min-width: 1025px)&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> (mediaQuery.matches) &#123;</span><br><span class="line">  <span class="comment">// do something...  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mediaQuery = <span class="variable language_">window</span>.<span class="title function_">matchMedia</span>(<span class="string">&#x27;(min-width: 1025px)&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> (mediaQuery.<span class="property">matches</span>) &#123;</span><br><span class="line">  <span class="comment">// do something...  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>If you are interested in this API, you will find good introductions to the topic <a href="https://css-tricks.com/working-with-javascript-media-queries/">here</a>, <a href="https://hacks.mozilla.org/2012/06/using-window-matchmedia-to-do-media-queries-in-javascript/">here</a> and <a href="https://www.mediaevent.de/javascript/window-matchMedia.html">here (German)</a>.</p>
 <p>One point of criticism on this pure JS approach can be, that you have to maintain the breakpoints in addition to CSS … <strong>but why not use these existing breakpoints in JS</strong>?</p>
@@ -300,11 +300,11 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">my-fancy-<span class="attribute">icon</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: FontAwesome5Solid;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;\f186&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>Mixed with a <code>@media</code> rule, we can “inject” the needed device value into the DOM, for example into the <code>BODY</code> tag, but you can take whatever you want:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">min-width</span>: <span class="number">1025px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">body</span>:before &#123;</span><br><span class="line">    content: <span class="string">&quot;DESKTOP&quot;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">min-width</span>: <span class="number">1025px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">body</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;DESKTOP&quot;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>Just one line more in the masses of CSS code to make a Web App responsive, but with this one you can do without many lines of JS.</p>
 <p>Now you can read out this value via JavaScript by getting the styles of the tag and get the injected content:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> style = <span class="built_in">window</span>.getComputedStyle(<span class="built_in">document</span>.querySelector(<span class="string">&quot;body&quot;</span>), <span class="string">&quot;:before&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> breakpoint = style.getPropertyValue(<span class="string">&quot;content&quot;</span>).replace(<span class="regexp">/\&quot;/g</span>, <span class="string">&quot;&quot;</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> style = <span class="variable language_">window</span>.<span class="title function_">getComputedStyle</span>(<span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;body&quot;</span>), <span class="string">&quot;:before&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> breakpoint = style.<span class="title function_">getPropertyValue</span>(<span class="string">&quot;content&quot;</span>).<span class="title function_">replace</span>(<span class="regexp">/\&quot;/g</span>, <span class="string">&quot;&quot;</span>);</span><br></pre></td></tr></table></figure>
 
 <p>It is advisable to embed this request into an event listener of <code>DOMContentLoaded</code>, because the rule has to be set, before you can access it.</p>
 <p>See a simple working pen:</p>
@@ -331,15 +331,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Browser/" rel="tag">Browser</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MediaQuery/" rel="tag">MediaQuery</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-clazzub6b000wjcn5hzjo01m4">
+      <div class="article-permalink" id="article-permalink-clb806qcc000glaov7ro082el">
     <input class="article-permalink-value" value="https://kiko.io/post/Device-Class-Detection-in-JavaScript/" 
-           data-id="clazzub6b000wjcn5hzjo01m4" data-title="Device Class Detection in JavaScript" />
+           data-id="clb806qcc000glaov7ro082el" data-title="Device Class Detection in JavaScript" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clazzub6b000wjcn5hzjo01m4");
+        initPermalink("clb806qcc000glaov7ro082el");
     });
 </script>
 
@@ -500,31 +500,31 @@
         
           <li>
             
-              <a href="/post/index/"></a>
+              <a href="/post/Mastodon-simply-explained/">Mastodon simply explained</a>
             
           </li>
         
           <li>
             
-              <a href="/post/main/"></a>
+              <a href="/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/">Syndicate Mastodon Hashtags in your favorite Feed Reader</a>
             
           </li>
         
           <li>
             
-              <a href="/post/styles/"></a>
+              <a href="/post/Anatomy-of-Service-Worker-Communication/">Anatomy of Service Worker Communication</a>
             
           </li>
         
           <li>
             
-              <a href="/post/index/"></a>
+              <a href="/post/Discoveries-20-CSS-UI/">Discoveries #20 - CSS &amp; UI</a>
             
           </li>
         
           <li>
             
-              <a href="/post/main/"></a>
+              <a href="/post/One-mouse-to-rule-them-all/">One mouse to rule them all</a>
             
           </li>
         

@@ -91,7 +91,7 @@
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body id="body">  
   <div id="container" class="container">
@@ -315,7 +315,7 @@
 <li>Try to find the problem in Hexo’s source code, to avoid these files to be treated as posts a priori</li>
 </ol>
 <p>After a little searching around in Hexo’s source code, I was able to identify the location where the problem was. In the post processor:</p>
-<figure class="highlight js"><figcaption><span>./node_modules/hexo/lib/plugins/processor/post.js (shortened)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="params">ctx</span> =&gt;</span> &#123;</span><br><span class="line">  ...</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    pattern: <span class="keyword">new</span> Pattern(<span class="function"><span class="params">path</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (isTmpFile(path)) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">let</span> result;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (path.startsWith(postDir)) &#123;</span><br><span class="line">        result = &#123;</span><br><span class="line">          published: <span class="literal">true</span>,</span><br><span class="line">          path: path.substring(postDir.length)</span><br><span class="line">        &#125;;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (path.startsWith(draftDir)) &#123;</span><br><span class="line">        result = &#123;</span><br><span class="line">          published: <span class="literal">false</span>,</span><br><span class="line">          path: path.substring(draftDir.length)</span><br><span class="line">        &#125;;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (!result || isHiddenFile(result.path)) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">      result.renderable = ctx.render.isRenderable(path) &amp;&amp; !isMatch(path, ctx.config.skip_render);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> result;</span><br><span class="line">    &#125;),</span><br><span class="line">    process: <span class="function"><span class="keyword">function</span> <span class="title">postProcessor</span>(<span class="params">file</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (file.params.renderable) &#123;</span><br><span class="line">        <span class="keyword">return</span> processPost(file);</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ctx.config.post_asset_folder) &#123;</span><br><span class="line">        <span class="keyword">return</span> processAsset(file);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>./node_modules/hexo/lib/plugins/processor/post.js (shortened)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="function"><span class="params">ctx</span> =&gt;</span> &#123;</span><br><span class="line">  ...</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">pattern</span>: <span class="keyword">new</span> <span class="title class_">Pattern</span>(<span class="function"><span class="params">path</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="title function_">isTmpFile</span>(path)) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">let</span> result;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (path.<span class="title function_">startsWith</span>(postDir)) &#123;</span><br><span class="line">        result = &#123;</span><br><span class="line">          <span class="attr">published</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="attr">path</span>: path.<span class="title function_">substring</span>(postDir.<span class="property">length</span>)</span><br><span class="line">        &#125;;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (path.<span class="title function_">startsWith</span>(draftDir)) &#123;</span><br><span class="line">        result = &#123;</span><br><span class="line">          <span class="attr">published</span>: <span class="literal">false</span>,</span><br><span class="line">          <span class="attr">path</span>: path.<span class="title function_">substring</span>(draftDir.<span class="property">length</span>)</span><br><span class="line">        &#125;;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (!result || <span class="title function_">isHiddenFile</span>(result.<span class="property">path</span>)) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">      result.<span class="property">renderable</span> = ctx.<span class="property">render</span>.<span class="title function_">isRenderable</span>(path) &amp;&amp; !<span class="title function_">isMatch</span>(path, ctx.<span class="property">config</span>.<span class="property">skip_render</span>);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> result;</span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="attr">process</span>: <span class="keyword">function</span> <span class="title function_">postProcessor</span>(<span class="params">file</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (file.<span class="property">params</span>.<span class="property">renderable</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="title function_">processPost</span>(file);</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ctx.<span class="property">config</span>.<span class="property">post_asset_folder</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="title function_">processAsset</span>(file);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
 <p>In the very beginning of processing posts, the code iterates over all files and folders in the <code>_posts</code> folder and creates a <code>param</code> object for each by using the <code>pattern</code>. This object has an attribute named <code>renderable</code>, which is used by the <code>process</code> method later on, to decide if it has to be rendered or not.</p>
 <p>But … the determination of <code>renderable</code> is based solely on wether a file has a renderer (<em>isRenderable</em>) or if it is listed in the <code>skip_render</code> configuration. See line 24 in the sample code. As HTML, JS and CSS files naturally have a renderer in Hexo, they will treated as posts!</p>
@@ -328,7 +328,7 @@
 </ol>
 <p>Important here is, that it is not an option to hide the files in some way, because then they won’t appear in the website. They have to be marked as <em>process it, but don’t render it</em>, by bending the <code>renderable</code> attribute.</p>
 <p>These considerations led to a small extension of the above code below line 24:</p>
-<figure class="highlight js"><figcaption><span>./node_modules/hexo/lib/plugins/processor/post.js (shortened)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"></span><br><span class="line">result.renderable = ctx.render.isRenderable(path) &amp;&amp; !isMatch(path, ctx.config.skip_render);</span><br><span class="line"></span><br><span class="line"><span class="comment">//if post_asset_folder is set, restrict renderable files to default file extension </span></span><br><span class="line"><span class="keyword">if</span> (result.renderable &amp;&amp; ctx.config.post_asset_folder) &#123;</span><br><span class="line">  result.renderable = (extname(ctx.config.new_post_name) === extname(path));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>./node_modules/hexo/lib/plugins/processor/post.js (shortened)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"></span><br><span class="line">result.<span class="property">renderable</span> = ctx.<span class="property">render</span>.<span class="title function_">isRenderable</span>(path) &amp;&amp; !<span class="title function_">isMatch</span>(path, ctx.<span class="property">config</span>.<span class="property">skip_render</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//if post_asset_folder is set, restrict renderable files to default file extension </span></span><br><span class="line"><span class="keyword">if</span> (result.<span class="property">renderable</span> &amp;&amp; ctx.<span class="property">config</span>.<span class="property">post_asset_folder</span>) &#123;</span><br><span class="line">  result.<span class="property">renderable</span> = (<span class="title function_">extname</span>(ctx.<span class="property">config</span>.<span class="property">new_post_name</span>) === <span class="title function_">extname</span>(path));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
 <p>This is what I pushed as a <a href="https://github.com/hexojs/hexo/pull/4781">Pull Request</a> to the Hexo team today. I know, it not ideal, but maybe they accept my approach and ship the fix with the next version.</p>
 
@@ -340,15 +340,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-clazzub8c0067jcn50g6h0679">
+      <div class="article-permalink" id="article-permalink-clb806qd70022laovcvku54g8">
     <input class="article-permalink-value" value="https://kiko.io/post/Uups-empty-posts/" 
-           data-id="clazzub8c0067jcn50g6h0679" data-title="Uups ... empty posts" />
+           data-id="clb806qd70022laovcvku54g8" data-title="Uups ... empty posts" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clazzub8c0067jcn50g6h0679");
+        initPermalink("clb806qd70022laovcvku54g8");
     });
 </script>
 
@@ -613,31 +613,31 @@
         
           <li>
             
-              <a href="/post/index/"></a>
+              <a href="/post/Mastodon-simply-explained/">Mastodon simply explained</a>
             
           </li>
         
           <li>
             
-              <a href="/post/main/"></a>
+              <a href="/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/">Syndicate Mastodon Hashtags in your favorite Feed Reader</a>
             
           </li>
         
           <li>
             
-              <a href="/post/styles/"></a>
+              <a href="/post/Anatomy-of-Service-Worker-Communication/">Anatomy of Service Worker Communication</a>
             
           </li>
         
           <li>
             
-              <a href="/post/index/"></a>
+              <a href="/post/Discoveries-20-CSS-UI/">Discoveries #20 - CSS &amp; UI</a>
             
           </li>
         
           <li>
             
-              <a href="/post/main/"></a>
+              <a href="/post/One-mouse-to-rule-them-all/">One mouse to rule them all</a>
             
           </li>
         
