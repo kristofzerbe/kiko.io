@@ -17,6 +17,9 @@ related:
   - Application-Specific-Links-on-Windows-10
   - Implement-source-switch-for-SPA
   - Native-JavaScript-Multilanguage-Templating
+syndication: 
+- host: Mastodon
+  url: https://indieweb.social/@kiko/109337328502493774
 ---
 
 I have a SPA that works as a PWA, which means that in the background a service worker makes sure that the required files for the offline mode end up in the cache.

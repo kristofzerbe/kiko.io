@@ -19,6 +19,9 @@ related:
   - Anatomy-of-Service-Worker-Communication
   - Thanks-Dropbox-but-I-m-off
   - Discoveries-15-Self-Hosted
+syndication: 
+- host: Mastodon
+  url: https://indieweb.social/@kiko/109337764307139701
 ---
 
 Ok, I admit it: I read RSS feeds. Quite old school you might think, but I'm mostly off Social Media and the most news sites quite a while ago, with a few exceptions. I just want to read selective stuff, especially in the direction of technology, and not interrupted by items, the news provider think I have to read. My favorite tool for my feed collection is [Feedly](https://feedly.com), which I open up almost every morning.
