@@ -24,10 +24,10 @@
   grid-gap: 5px 50px
   grid-template-areas: "menu info bmc ." "dots webring . ."
   @media mq-mobile
-    grid-template-columns: 1fr max-content 
+    grid-template-columns: 1fr max-content max-content 
     grid-template-rows: max-content max-content
     grid-gap: 15px 5px
-    grid-template-areas: "menu info" "dots bmc"
+    grid-template-areas: "menu info" ". webring" "dots bmc"
 
   #footer-info
     grid-area: info
@@ -64,6 +64,8 @@
       .bmc-btn-text
         font-family: Cookie
         font-size: 24px !important
+      svg 
+        height: 24px !important
             
   #footer-dots
     grid-area: dots
