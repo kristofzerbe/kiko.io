@@ -2,7 +2,7 @@
 title: "TITLE"
 date: YYYY-MM-DD HH:MM:00
 syndication: 
-- host: 
+- host: Mastodon
   url:  
 hide: true
 ---
