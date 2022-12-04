@@ -18,6 +18,9 @@ related:
   - GitHubs-Magic-Dot
   - Generate-Social-Media-Images-Automatically
   - Using-GitHub-as-Commenting-Platform
+syndication: 
+- host: Twitter
+  url:  https://twitter.com/kristofz/status/1428965811075653636
 ---
 
 Beginning of the month, [Amelia Wattenberger](https://twitter.com/Wattenberger) of [GitHub Next](https://next.github.com/) has published a project to create a SVG visualization of a GitHub repository's codebase.

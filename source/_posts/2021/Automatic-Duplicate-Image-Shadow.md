@@ -18,6 +18,9 @@ related:
   - Use-a-duplicate-image-to-drop-a-shadow
   - Generate-Social-Media-Images-Automatically
   - Triangulate-your-images-with-Triangula
+syndication: 
+- host: Twitter
+  url:  https://twitter.com/kristofz/status/1416095794927751175
 ---
 
 At the beginning of the year I wrote a {% post_link 2021/Use-a-duplicate-image-to-drop-a-shadow "post"  %} about showing a shadow on an image with the image itself instead of using ``box-shadow``, to make the image appear glass-like.

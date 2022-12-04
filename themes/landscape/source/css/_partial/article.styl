@@ -494,10 +494,10 @@
     color: color-grey
     /[data-theme="dark"] &
       color: dark-color-grey
-    &:hover
-      color: color-link
-      /[data-theme="dark"] &
-        color: dark-color-link
+  a:hover
+    color: color-link
+    /[data-theme="dark"] &
+      color: dark-color-link
 
 .article-tags,
 .article-syndication,
@@ -512,6 +512,7 @@
 
 .article-syndication
   display: flex
+  align-items: flex-start
   span
     display: inline-block
     margin-right: 4px
@@ -523,6 +524,9 @@
   & .fa-mastodon:before
     content: icon-mastodon
     color: color-mastodon
+  & .fa-twitter:before
+    content: icon-twitter
+    color: color-twitter
 
 .article-permalink,
 .article-syndication 
@@ -543,11 +547,11 @@
   input
     background: transparent
     text-align: right
-    margin-right: 10px
+    margin-right: 4px
     white-space: nowrap
     overflow: hidden
     text-overflow: ellipsis
-    width: calc(100% - 80px)
+    // width: calc(100% - 80px)
     flex: 1 1 auto
     border: 0
     outline: 0
