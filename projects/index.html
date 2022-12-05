@@ -14,13 +14,13 @@
   <!-- Schema.org for Google -->
   <meta itemprop="name" content="kiko.io | Projects">
   <meta itemprop="description" content="kiko.io&#39;s PROJECTS">
-  <meta itemprop="image" content="https://kiko.io/images/hero-mobile.jpg">
+  <meta itemprop="image" content="https://kiko.io/photos/normal/$projects.jpg">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kiko.io/projects/index.html">
   <meta property="og:title" content="kiko.io | Projects">
   <meta property="og:description" content="kiko.io&#39;s PROJECTS">
-  <meta property="og:image" content="https://kiko.io/images/hero-mobile.jpg">
+  <meta property="og:image" content="https://kiko.io/photos/normal/$projects.jpg">
   <meta property="og:locale" content="en_GB">
 
   <link rel="canonical" href="https://kiko.io/projects/index.html">
@@ -199,7 +199,37 @@
   }
 </script>
         <div id="content" class="outer">
-          <main><h1 class="archive-title">
+          <main>
+    <style>
+#banner {
+    background-size: cover;
+}
+@media screen and (max-width: 479px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/$projects.jpg"); }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/$projects.jpg"); }
+}
+@media screen and (min-width: 768px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/$projects.jpg"); }    
+}
+</style>
+
+
+    <img id="header-photo" src="/photos/normal/$projects.jpg" width="0" height="0"/>
+    <script>
+        var header = document.getElementById("header");
+        header.classList.add("photograph");
+        
+        var photoLink = document.getElementById("header-photo-link");
+        photoLink.href = "https://500px.com/photo/1057290585";
+        photoLink.innerHTML = "see <strong>Ancient Mosaic</strong> at 500px";
+    </script>
+
+
+  
+  
+<h1 class="archive-title">
     <span style="font-weight: 600;">Projects</span>
 </h1>
 
@@ -347,7 +377,6 @@
             <a href="https://www.xing.com/profile/Kristof_Zerbe" target="_blank" class="fab fa-xing" rel="me"></a>
             <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" target="_blank" class="fab fa-linkedin" rel="me"></a>      
             <a href="https://500px.com/kikon" target="_blank" class="fab fa-500px" rel="me"></a>
-            <a href="https://twitter.com/kristofz" target="_blank" class="fab fa-twitter" rel="me"></a>
             <a href="https://indieweb.social/@kiko" target="_blank" class="fab fa-mastodon" rel="me"></a>
         </div>
         <h3 class="p-name">Kristof Zerbe</h3>
