@@ -86,6 +86,9 @@
 
       case "ANYTHING":
         description = config.title + "'s " + subtype;
+        if (subtype === "PROJECTS") {
+          heroImage = config.url + "/photos/normal/" + page.photograph.file;
+        }
         break;
 
       case "NOTE":
