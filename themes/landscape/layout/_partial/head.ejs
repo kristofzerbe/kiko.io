@@ -10,13 +10,7 @@
     var heroImage = config.heroimage_small;
     var description = config.description;
 
-    if (page.index === "Series") { // IndexAnything
-      type = page.index.toUpperCase();
-      if (page.key !== "Index") {
-        subtype = page.key.toUpperCase();
-      }
-    }
-    else if (is_home())     { type = "HOME"; }
+    if (is_home())     { type = "HOME"; }
     else if (is_post())     { type = "POST"; }
     else if (is_page())     { type = "PAGE"; }
     else if (is_archive())  { type = "ARCHIVE";
@@ -25,6 +19,24 @@
     }
     else if (is_category()) { type = "CATEGORY"; }
     else if (is_tag())      { type = "TAG"; }
+    else {
+      let rootPath = page.path.split(/[\\\/]/)[0].toLowerCase();
+      switch (rootPath) {
+        case "series":
+        case "projects":
+          type = "ANYTHING"; 
+          subtype = rootPath.toUpperCase();
+          break;
+        case "notes":
+          type = "NOTE"; 
+          break;
+        default:
+          type = rootPath.toUpperCase();
+          break;
+      }
+    }
+
+    // console.log("HEAD: " + type + " = " + subtype + " ... " + page.title);
 
     switch (type) {
       case "HOME":
@@ -36,13 +48,13 @@
         let slug = slugArray[slugArray.length - 1];
         heroImage = config.url + "/images/social-media/" + slug + ".png";
         //TODO: Excerpt, but without HTML tag and just first n words > jsdom.parse?
-        description = config.title + "'s " + (is_post() ? "Post " : "Page ") + "'" + page.title + "'";
+        description = config.title + "'s Post '" + page.title + "'";
         break;
 
       case "PAGE":
         heroImage = config.url + "/photos/normal/" + page.photograph.file;
         //TODO: Excerpt, but without HTML tag and just first n words > jsdom.parse?
-        description = config.title + "'s " + (is_post() ? "Post " : "Page ") + "'" + page.title + "'";
+        description = config.title + "'s Page '" + page.title + "'";
         break;
 
       case "ARCHIVE":
@@ -72,12 +84,22 @@
         description = config.title + "'s " + __("tag") + " '" + page.tag + "'";
         break;
 
-      case "SERIES":
-        description = config.title + "'s " + page.index;
-        if (subtype) {
-          description += " '" + page.key + "'";
-        }
+      case "ANYTHING":
+        description = config.title + "'s " + subtype;
         break;
+
+      case "NOTE":
+        heroImage = config.url + "/photos/normal/" + page.photograph.file;
+        if (page.title === "Notes") {
+          description = config.title + "'s NOTES";
+        } else {
+          description = config.title + "'s Note '" + page.title + "'";
+        }
+
+      case "COLLECTIONS":
+      case "PHOTOS":
+        heroImage = config.url + "/photos/normal/" + page.photograph.file;
+        description = config.title + "'s " + type;
 
       default: break;
     }
