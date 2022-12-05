@@ -1,9 +1,9 @@
 ---
-title: "TIL | Link NPM Module"
+title: "#TIL | Link NPM Module"
 date: 2022-12-05 16:55:00
 syndication: 
 - host: Mastodon
-  url:  
+  url: https://indieweb.social/@kiko/109462482394505029
 ---
 
 Sometimes it is advisable to outsource functionality into seperate NPM modules. But to avoid having to run ``npm publish`` (module) and ``npm install`` (main project) every time a change in the module takes place, it's relatively easy to include the module's source code directly in the main project:
