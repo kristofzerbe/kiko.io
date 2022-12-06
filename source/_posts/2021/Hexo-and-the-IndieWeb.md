@@ -125,7 +125,7 @@ In case you work with the default Hexo theme 'landscape', I advise you to split 
   
   <div class="article-meta">
 
-    <div class="p-author" style="display:none">
+    <div class="h-card p-author" style="display:none">
       <img class="u-photo" src="<%- config.photo %>" alt="<%- config.author %>" />
       <a class="p-name u-url" href="<%- config.url %>" rel="author"><%- config.author %></a>
     </div>
