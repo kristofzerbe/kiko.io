@@ -7,8 +7,8 @@ const sharp = require("sharp");
 const imagemin = require("imagemin");
 const imageminMozJpeg = require("imagemin-mozjpeg");
 const imageminPngquant = require("imagemin-pngquant");
-const { highlight } = require("hexo-util");
-const { config } = require("process");
+// const { highlight } = require("hexo-util");
+// const { config } = require("process");
 
 hexo.extend.generator.register("notes", function (locals) {
   let config = this.config;
@@ -26,6 +26,7 @@ hexo.extend.generator.register("notes", function (locals) {
     .map((entry) => ({
       year: entry,
       path: path.join("notes", entry, "index.html"),
+      link: path.join("notes", entry).replace(/\\/g, "/")
     }));
 
   let indexes = [];
@@ -50,13 +51,10 @@ hexo.extend.generator.register("notes", function (locals) {
       .filter((file) => file.match(/\d{2}-\d{2}-.*.md/g))
       .map((entry) => ({
         file: entry,
-        key:
-          index.year +
-          "-" +
-          entry.replace(".md", "").replace(/\d{2}-\d{2}-/g, ""),
-        slug: entry.replace(".md", "").replace(/\d{2}-\d{2}-/g, ""),
+        key: index.year + "/" + entry.replace(".md", ""),
+        slug: index.year + "/" + entry.replace(".md", "").replace(/\d{2}-\d{2}-/g, ""), // same as post
         year: index.year,
-        indexlink: "/" + index.path.replace(/\\/g, "/"),
+        indexlink: "/" + index.link,
       }));
     // console.log(notes);
 
@@ -66,8 +64,8 @@ hexo.extend.generator.register("notes", function (locals) {
         ...getMDInfo(path.join(yearDir, note.file), note, true),
       };
       note.photograph = index.photograph;
-      note.path = path.join("notes", index.year, note.slug + ".html");
-      note.link = note.path.replace(/\\/g, "/");
+      note.path = path.join("notes", note.slug, "index.html");
+      note.link = path.join("notes", note.slug).replace(/\\/g, "/") + "/";
       note.permalink = config.url + "/" + note.link;
 
       note.excerpt = note.excerpt.replace(
@@ -126,7 +124,7 @@ hexo.extend.generator.register("notes", function (locals) {
     result.push({
       data: index,
       path: path.join(index.path),
-      layout: "notes",
+      layout: "notes"
     });
 
     // add root index for current year
@@ -134,7 +132,7 @@ hexo.extend.generator.register("notes", function (locals) {
       result.push({
         data: index,
         path: path.join("notes", "index.html"),
-        layout: "notes",
+        layout: "notes"
       });
     }
   });
