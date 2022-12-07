@@ -149,4 +149,5 @@ module.exports = function(grunt){
   grunt.registerTask('all', ['concat', 'cssmin', 'uglify', 'copy', '_clean:tmp', 'hexo:clean', 'hexo:generate']);
   grunt.registerTask('complete', ['gitclone', 'concat', 'cssmin', 'uglify', 'copy', '_clean:tmp', 'hexo:clean', 'hexo:generate']);
   grunt.registerTask('build', ['hexo:clean', 'hexo:generate']);
+  grunt.registerTask('generate', ['hexo:generate']);
 };
