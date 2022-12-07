@@ -3,7 +3,7 @@ title: "Morning Routine and IndieWeb"
 date: 2022-12-07 09:40:00
 syndication: 
 - host: Mastodon
-  url:  
+  url: https://indieweb.social/@kiko/109471776510837100 
 
 ---
 
