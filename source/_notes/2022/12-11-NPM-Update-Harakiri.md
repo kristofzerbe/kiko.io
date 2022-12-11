@@ -3,10 +3,10 @@ title: "NPM Update Harakiri"
 date: 2022-12-11 14:55:00
 syndication: 
 - host: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/109495505530111802
 ---
 
-Software developers are a lazy people per se. The engine of an entire industry is laziness.
+Software developers are lazy people per se. The engine of an entire industry is laziness.
 
 "_Naah, I don't feel like writing my own code. I'll take some random NPM package, even if it's trivial functionality and only three lines of code._"
 
