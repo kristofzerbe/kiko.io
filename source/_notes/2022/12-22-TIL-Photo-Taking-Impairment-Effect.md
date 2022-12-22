@@ -3,7 +3,7 @@ title: "#TIL | Photo Taking Impairment Effect"
 date: 2022-12-22 09:50:00
 syndication: 
 - host: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/109556793846771865
 ---
 
 The memories of beautiful moments in life are one of the most valuable things a person can have. A wedding, a breathtaking landscape or whatever moments it may be that make you happy. In many such moments in my life I had a camera with me and often I had the feeling to "miss" something while taking pictures.
