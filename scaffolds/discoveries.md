@@ -17,6 +17,9 @@ related:
   - Discoveries-X
   - Discoveries-Y
   - Discoveries-Z
+syndication:
+  - host: Mastodon
+    url: 
 ---
 
 {% anchorlist  
