@@ -3,6 +3,38 @@
   padding: 20px 20px 20px 32px
   margin: 20px 0
 
+.alertbox.thinkbox
+  padding: 20px 40px 20px 45px
+  margin: 40px 0 20px 10px
+  background-color: rgba(255,203,76,0.1)
+  background: linear-gradient(125deg, rgba(241,144,32,0.4) 0%, rgba(241,144,32,0.1) 8%, rgba(255,203,76,0.1) 100%)
+
+
+.alertbox.thinkbox svg
+  width: 32px
+  position absolute
+  top: -2px
+  left: -12px
+
+.alertbox::before 
+  position: absolute
+  width: 41px
+  height: 41px
+  top: -12px
+  left: -22px
+  display: block
+  border-radius: 50%
+  content: ""
+  background: color-block
+  /[data-theme="dark"] &
+    background: dark-color-block  
+
+.alertbox.thinkbox::before
+  width: 50px
+  height: 50px
+  top: -12px
+  left: -22px
+
 .alertbox.alertbox-exclamation
   border-left: 4px rgb(255,204,0) solid
   background-color: rgba(255,204,0,0.2)
@@ -27,18 +59,14 @@
   border-left: 4px rgb(205,205,205) solid
   background-color: rgba(205,205,205,0.2)
 
-.alertbox::before 
+.alertbox.thinkbox h4
   position: absolute
-  width: 41px
-  height: 41px
-  top: -13px
-  left: -22px
-  display: block
-  border-radius: 50%
-  content: ""
-  background: color-block
-  /[data-theme="dark"] &
-    background: dark-color-block  
+  top: -16px
+  left: 24px
+  text-transform: uppercase
+  color: #f19020
+  font-size: 16px
+  font-weight: bold
 
 .alertbox::after 
   position: absolute
@@ -74,6 +102,11 @@
 
 .alertbox * 
   margin: 0 !important
+
+.alertbox 
+  p
+    + p
+      margin-top: 1em !important
 
 li > .alertbox
   margin: 12px
