@@ -18,6 +18,9 @@ related:
   - Automatic-Header-Images-in-Hexo
   - Hexo-Tag-Plugin-Collection
   - Forking-Hexo-plugin-hexo-index-anything
+syndication:
+  - host: Mastodon
+    url: https://indieweb.social/@kiko/109565325472177128
 ---
 
 I've started this blog in 2019 with {% post_link 2019/How-To-Visual-Studio-Database-Project-and-ADSI "this article" %} primarily because I needed an area to record things learned for myself, with the side effect that others can benefit from it if they want.
