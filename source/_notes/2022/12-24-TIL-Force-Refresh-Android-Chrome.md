@@ -3,7 +3,7 @@ title: "#TIL | Force Refresh Android Chrome"
 date: 2022-12-24 10:05:00
 syndication: 
 - host: Mastodon
-  url:  
+  url: https://indieweb.social/@kiko/109568040848262163
 ---
 
 Reloading a web page in Chrome on Android without letting the browser use it's cache (hard reload, CTRL + F5 on desktop) isn't that simple, if you want to avoid clearing your whole cache. But there is a workaround if the website is installable as PWA: 
