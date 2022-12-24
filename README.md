@@ -6,6 +6,9 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
 ## Latest Posts
 <!-- BLOG-POST-LIST:START -->
+ - [The State of the Blog](https://kiko.io/post/The-State-of-the-Blog/)   
+ 23 Dec 2022   
+
  - [Mastodon simply explained](https://kiko.io/post/Mastodon-simply-explained/)   
  15 Nov 2022   
 
@@ -20,7 +23,4 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
  - [One mouse to rule them all](https://kiko.io/post/One-mouse-to-rule-them-all/)   
  08 Oct 2022   
-
- - [Creating Icon Font from SVG Files](https://kiko.io/post/Creating-Icon-Font-from-SVG-Files/)   
- 17 Sep 2022   
 <!-- BLOG-POST-LIST:END -->
