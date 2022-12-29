@@ -19,9 +19,6 @@ related:
   - Generate-Content-from-Trello
   - Discoveries-20-CSS-UI
   - Discoveries-19-Visual-Helpers
-syndication:
-  - host: Mastodon
-    url: 
 ---
 
 Websites always have a certain purpose and depending on what you want to do with it, there are pre-designed tools, that make it very easy to get started. In this issue of Discoveries I have collected a few such enablers.
