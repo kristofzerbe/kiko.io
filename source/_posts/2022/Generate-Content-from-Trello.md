@@ -20,7 +20,7 @@ related:
   - Discoveries-21-Sites-Pages
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/109596982760280962
 ---
 
 I'm collecting/bookmarking links to interesting website post on a public Trello board and aggregating them from time to time in a special post series called *Discoveries*, where I present 10 of them in one post on a specific topic.
@@ -296,11 +296,11 @@ class Generator {
 }
 ```
 
-**At this point I will refrain from reproducing the complete code here. Just follow this [link]() ...**
+**At this point I will refrain from reproducing the complete code here. Just follow this [link](https://github.com/kristofzerbe/kiko.io/blob/cb9ba3f9157771231258834b156bb6aead2cd229/lib/discoveries-generator.cjs) ...**
 
 However, a few points in the implementation are important to consider:
 
-1. The downloads are performed by means of the promis based HTTP client [axios](https://axios-http.com/). I can only recommend this thing...
+1. The downloads are performed by means of the promise based HTTP client [axios](https://axios-http.com/). I can only recommend this thing...
 
 2. The image downloads are initially collected in a Promise list for subsequent execution, while iterating through the cards of the selected Trello list
 
