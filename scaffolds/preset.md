@@ -18,6 +18,9 @@ related:
   - #PART-1
   - #PART-2
   - #PART-3
+syndication:
+  - host: Mastodon
+    url: 
 ---
 
 <!-- more -->

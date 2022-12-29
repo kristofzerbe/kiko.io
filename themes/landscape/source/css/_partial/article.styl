@@ -236,10 +236,22 @@
       /[data-theme="dark"] &
         border-bottom: dark-color-link 1px solid
   a.img-link
-    img
-      transition: all ease-out .3s 
-      &:hover
-        filter: brightness(90%);
+    transition: all ease-out .6s 
+    transform: scale(1)
+    opacity: 0.75
+    filter: grayscale(1) contrast(0.75)
+    /[data-theme="dark"] &
+      opacity: 0.75
+      filter: grayscale(1) contrast(0.5) brightness(0.6)
+  a.img-link.in-view
+    transform: scale(1.0125)
+    opacity: 1
+    filter: grayscale(0) contrast(1)
+    /[data-theme="dark"] &
+      opacity: 1
+      filter: grayscale(0) contrast(1) brightness(0.75)
+    &:hover
+      transform: scale(1.025)
   ul, ol, dl
     margin-top: line-height
     margin-bottom: line-height
@@ -253,6 +265,11 @@
     margin: auto
     /[data-theme="dark"] &:not(.image-compare)
       filter: brightness(85%)
+  img.limit 
+    @media mq-normal
+      max-width: 480px
+    @media mq-tablet
+      max-width: 360px
   .image-compare.image-modified
     max-width: none
     height: 100%

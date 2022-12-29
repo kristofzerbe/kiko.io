@@ -31,7 +31,7 @@ hexo.extend.tag.register("discovery", function(args, content){
     <small>by ${author}&nbsp;<br><a href="${url}">${url}</a></small>
     ${content}
     <a style="display:block; margin: 10px 0 30px;" class="img-link" href="${url}">
-      <img src="${imgSrc}" alt="${title}" />
+      <img class="limit" src="${imgSrc}" alt="${title}" />
     </a>
   `;
 

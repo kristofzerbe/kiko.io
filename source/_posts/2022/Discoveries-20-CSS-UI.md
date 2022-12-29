@@ -14,6 +14,7 @@ categories:
 tags:
   - Collection
   - CSS
+  - UI
 related:
   - Discoveries-19-Visual-Helpers
   - Discoveries-18-JS-UI
@@ -22,7 +23,7 @@ related:
 
 Web interfaces are unthinkable without CSS. It has its pitfalls, but when used correctly it's damn powerful. It's always incredible what developers do with it. This month's Discoveries is about the basics and the amazing.
 
-{% anchorlist  
+{% anchorlist 
   "My Custom CSS Reset|my-custom-reset"
   "Defensive CSS|defensive-css"
   "10 Useful CSS Tricks for Front-end Developers|10-useful-css-tricks"

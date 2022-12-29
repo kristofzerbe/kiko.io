@@ -37,6 +37,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 notes_dir: notes
+template_dir: templates
 i18n_dir: :lang
 skip_render:
 
@@ -286,3 +287,29 @@ trello:
     pages: 
     - name: tiny-tools
       list: TinyTools
+
+# Trello Discoveries Generator Script
+discoveries:
+  board:
+    url: https://trello.com/b/D6zIhLus/collections.json
+    parameters:
+    - key: fields
+      value: name
+    - key: lists
+      value: all
+    - key: list_fields
+      value: name
+    - key: cards
+      value: all
+    - key: card_fields
+      value: closed,desc,idList,name
+    - key: card_attachments
+      value: true
+    - key: card_attachment_fields
+      value: bytes,mimeType,name,previews
+    - key: customFields
+      value: true
+    - key: card_customFieldItems
+      value: true
+  template: discoveries.handlebars
+      

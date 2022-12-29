@@ -1,0 +1,40 @@
+---
+slug: {{{key}}}
+title: '{{{title}}}'
+subtitle:
+date: {{{date}}}
+photograph:
+  file: {{{photograph.file}}}
+  name: {{{photograph.name}}}
+  link: {{{photograph.link}}}
+  socialmedia: /static/images/social-media/{{{key}}}.png
+series: Discoveries
+categories:
+  - Misc
+tags:
+  - Collection
+related:
+  - Discoveries-xx
+  - Discoveries-yy
+  - Discoveries-zz
+syndication:
+  - host: Mastodon
+    url: 
+---
+
+INTRODUCTION...
+
+{% anchorlist 
+{{#each items}}
+  "{{{title}}}|{{{key}}}"
+{{/each}}
+%}
+
+<!-- more -->
+
+{{#each items}}
+{% discovery "{{{title}}}" "{{{author}}}" "{{{url}}}" {{{../key}}} {{{imageName}}} %}
+{{{description}}}
+{% enddiscovery %}
+
+{{/each}}

@@ -19,6 +19,9 @@ tags:
   - xxx
 related:
   - xxx
+syndication:
+  - host: Mastodon
+    url: 
 ---
 
 <!-- more -->
