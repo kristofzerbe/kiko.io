@@ -221,6 +221,28 @@
 
 
 
+    <div class="anything-wrap" data-index="series" data-key="Discoveries">
+  <div class="anything-inner">
+    
+    <header class="anything-header">
+      <h1 class="anything-entry" itemprop="name">
+        <a class="button" href="/series/discoveries">
+          <span>Discoveries</span>
+          <em>21 Posts</em>
+        </a>
+      </h1>
+    </header>
+    
+    <div class="anything-content">
+      <p>Surfing around in the web is a daily routine every developer should have. Learning about new platforms, libraries or techniques is a must, due to the tremendous speed on our business. Stay current, all the time.</p>
+<p>I’m a fan of RSS and I’m using <a href="https://feedly.com/">Feedly</a> to read my favourite blogs. Unfortunately RSS feeds is not so common anymore, due to Facebook and other social media giants, but I stay informed.  </p>
+<p>In this series I present some of the absolute pearls I found while reading. Stunning solutions or incredible tools, which I must first and foremost remember for myself, to try them out one day. </p>
+
+    </div>
+    
+  </div>
+</div>
+
     <div class="anything-wrap" data-index="series" data-key="A-New-Blog">
   <div class="anything-inner">
     
@@ -236,28 +258,6 @@
     <div class="anything-content">
       <p>Starting a new project is always exciting, especially when the building platform is totally new for oneself. As I started this blog with <a href="https://hexo.io/">Hexo</a>, I had a good experience with JavaScript and some with Node, but no with EJS, Lodash and some of the other libraries Hexo is using.</p>
 <p>This series is a little technical diary, how I started the blog and implemented my needs one by one. Learning by doing. Maybe some of my solutions are valuable to somebody else,<br>who faces the same issues I had.</p>
-
-    </div>
-    
-  </div>
-</div>
-
-    <div class="anything-wrap" data-index="series" data-key="Discoveries">
-  <div class="anything-inner">
-    
-    <header class="anything-header">
-      <h1 class="anything-entry" itemprop="name">
-        <a class="button" href="/series/discoveries">
-          <span>Discoveries</span>
-          <em>20 Posts</em>
-        </a>
-      </h1>
-    </header>
-    
-    <div class="anything-content">
-      <p>Surfing around in the web is a daily routine every developer should have. Learning about new platforms, libraries or techniques is a must, due to the tremendous speed on our business. Stay current, all the time.</p>
-<p>I’m a fan of RSS and I’m using <a href="https://feedly.com/">Feedly</a> to read my favourite blogs. Unfortunately RSS feeds is not so common anymore, due to Facebook and other social media giants, but I stay informed.  </p>
-<p>In this series I present some of the absolute pearls I found while reading. Stunning solutions or incredible tools, which I must first and foremost remember for myself, to try them out one day. </p>
 
     </div>
     
@@ -398,6 +398,18 @@
         
           <li>
             
+              <a href="/post/Generate-Content-from-Trello/">Generate Content from Trello</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/Discoveries-21-Sites-Pages/">Discoveries #21 -  Sites &amp; Pages</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/The-State-of-the-Blog/">The State of the Blog</a>
             
           </li>
@@ -411,18 +423,6 @@
           <li>
             
               <a href="/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/">Syndicate Mastodon Hashtags in your favorite Feed Reader</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Anatomy-of-Service-Worker-Communication/">Anatomy of Service Worker Communication</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Discoveries-20-CSS-UI/">Discoveries #20 - CSS &amp; UI</a>
             
           </li>
         
@@ -559,7 +559,7 @@
     return ((eBottom <= viewBottom) && (eTop >= viewTop));
   }
   function initViewportImage() {
-    $(".article-photo, .archive-article-photo, .card-img").each(function() {
+    $(".article-photo, .archive-article-photo, .card-img, .img-link").each(function() {
       if (isVisibleInViewPort($(this))) {
         $(this).addClass("in-view");
       } else {

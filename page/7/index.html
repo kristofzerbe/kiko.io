@@ -216,6 +216,172 @@
   
   
      
+<article id="post-2020/Device-Class-Detection-in-JavaScript" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <a href="/post/Device-Class-Detection-in-JavaScript/" class="article-date">
+  
+    <time class="published dt-published" datetime="2020-09-28T13:27:17.000Z" itemprop="datePublished">28 Sep 2020</time>
+  
+</a>
+    
+  <div class="article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Device-Class-Detection-in-JavaScript/">
+        <img class="article-photo" src="/photos/tablet/19-05 Israel-0145.jpg" alt="Jaffa Pepsi" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/Device-Class-Detection-in-JavaScript/">Device Class Detection in JavaScript</a>
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle" itemprop="name">
+        The unusual way by using CSS Media Queries
+    </h2>
+
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>In some occasions it is necessary to know which device a user is using while writing JavaScript Web Apps. Should be nothing regarding layout, because for this we have <a href="https://developer.mozilla.org/de/docs/Web/CSS/Media_Queries/Using_media_queries"><code>CSS Media Queries</code></a>. </p>
+<p>Somewhere around 2011 W3C introduced <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia"><code>matchMedia()</code></a>, which <em>returns a MediaQueryList object that can be used to detemnine if the document matches the media query string.</em> The using is pretty straightforward and feels a bit like RegEx matching in JS:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mediaQuery = <span class="variable language_">window</span>.<span class="title function_">matchMedia</span>(<span class="string">&#x27;(min-width: 1025px)&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> (mediaQuery.<span class="property">matches</span>) &#123;</span><br><span class="line">  <span class="comment">// do something...  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>If you are interested in this API, you will find good introductions to the topic <a href="https://css-tricks.com/working-with-javascript-media-queries/">here</a>, <a href="https://hacks.mozilla.org/2012/06/using-window-matchmedia-to-do-media-queries-in-javascript/">here</a> and <a href="https://www.mediaevent.de/javascript/window-matchMedia.html">here (German)</a>.</p>
+<p>One point of criticism on this pure JS approach can be, that you have to maintain the breakpoints in addition to CSS … <strong>but why not use these existing breakpoints in JS</strong>?</p>
+      
+        <p class="article-more-link">
+          <a href="/post/Device-Class-Detection-in-JavaScript/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Browser/" rel="tag">Browser</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MediaQuery/" rel="tag">MediaQuery</a></li></ul>  
+  </div>
+
+      
+      <div class="article-permalink" id="article-permalink-clc929vlv000gi5oq2p7r4rei">
+    <input class="article-permalink-value" value="https://kiko.io/post/Device-Class-Detection-in-JavaScript/" 
+           data-id="clc929vlv000gi5oq2p7r4rei" data-title="Device Class Detection in JavaScript" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clc929vlv000gi5oq2p7r4rei");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
+<article id="post-2020/404-Page-in-Hexo-for-GitHub-Pages" 
+         class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <a href="/post/404-Page-in-Hexo-for-GitHub-Pages/" class="article-date">
+  
+    <time class="published dt-published" datetime="2020-09-23T12:28:50.000Z" itemprop="datePublished">23 Sep 2020</time>
+  
+</a>
+    
+  <div class="article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/404-Page-in-Hexo-for-GitHub-Pages/">
+        <img class="article-photo" src="/photos/tablet/19-07 Schottland-0935.jpg" alt="Tattoo Tuba" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+    <a class="article-anything" itemprop="name" href="/series/a-new-blog">A New Blog</a>
+
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/404-Page-in-Hexo-for-GitHub-Pages/">404 Page in Hexo for GitHub Pages</a>
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle" itemprop="name">
+        Provide an error page automatically when resource not found
+    </h2>
+
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>As this blog is a static one, generated by <a href="https://hexo.io/">Hexo</a> and hostet at <a href="https://pages.github.com/">GitHub</a>, the page which was shown, when a user enters an Url which points to nowhere, was the default GitHub 404 page.</p>
+<p><img src="/post/404-Page-in-Hexo-for-GitHub-Pages/github-404-page.png" alt="GitHub 404 Page"></p>
+      
+        <p class="article-more-link">
+          <a href="/post/404-Page-in-Hexo-for-GitHub-Pages/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Error/" rel="tag">Error</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
+  </div>
+
+      
+      <div class="article-permalink" id="article-permalink-clc929vls000ci5oq7wnbco0g">
+    <input class="article-permalink-value" value="https://kiko.io/post/404-Page-in-Hexo-for-GitHub-Pages/" 
+           data-id="clc929vls000ci5oq7wnbco0g" data-title="404 Page in Hexo for GitHub Pages" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clc929vls000ci5oq7wnbco0g");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
 <article id="post-2020/Pimping-the-Permalink" 
          class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -280,15 +446,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clc1rware000uhvof5vdu1su0">
+      <div class="article-permalink" id="article-permalink-clc929vm5000ui5oqgdu1dtxu">
     <input class="article-permalink-value" value="https://kiko.io/post/Pimping-the-Permalink/" 
-           data-id="clc1rware000uhvof5vdu1su0" data-title="Pimping the Permalink" />
+           data-id="clc929vm5000ui5oqgdu1dtxu" data-title="Pimping the Permalink" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clc1rware000uhvof5vdu1su0");
+        initPermalink("clc929vm5000ui5oqgdu1dtxu");
     });
 </script>
 
@@ -361,15 +527,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clc1rwar8000ihvofemzvanqe">
+      <div class="article-permalink" id="article-permalink-clc929vlw000ii5oq9e39boqn">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-2/" 
-           data-id="clc1rwar8000ihvofemzvanqe" data-title="Discoveries #2" />
+           data-id="clc929vlw000ii5oq9e39boqn" data-title="Discoveries #2" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clc1rwar8000ihvofemzvanqe");
+        initPermalink("clc929vlw000ii5oq9e39boqn");
     });
 </script>
 
@@ -446,15 +612,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clc1rwar6000dhvofgd5hfo8n">
+      <div class="article-permalink" id="article-permalink-clc929vlt000di5oq45cc2w29">
     <input class="article-permalink-value" value="https://kiko.io/post/Add-website-to-Trello-card-the-better-way/" 
-           data-id="clc1rwar6000dhvofgd5hfo8n" data-title="Add website to Trello card the better way" />
+           data-id="clc929vlt000di5oq45cc2w29" data-title="Add website to Trello card the better way" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clc1rwar6000dhvofgd5hfo8n");
+        initPermalink("clc929vlt000di5oq45cc2w29");
     });
 </script>
 
@@ -528,15 +694,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clc1rwarb000ohvoffd7h02y8">
+      <div class="article-permalink" id="article-permalink-clc929vm0000oi5oq9nbgchq4">
     <input class="article-permalink-value" value="https://kiko.io/post/Horizontal-navigation-menu-above-an-image/" 
-           data-id="clc1rwarb000ohvoffd7h02y8" data-title="Horizontal navigation menu above an image" />
+           data-id="clc929vm0000oi5oq9nbgchq4" data-title="Horizontal navigation menu above an image" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clc1rwarb000ohvoffd7h02y8");
+        initPermalink("clc929vm0000oi5oq9nbgchq4");
     });
 </script>
 
@@ -608,15 +774,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clc1rwar7000fhvof8ljj6kir">
+      <div class="article-permalink" id="article-permalink-clc929vlu000fi5oq9pup7x46">
     <input class="article-permalink-value" value="https://kiko.io/post/Change-CSS-class-when-element-scrolls-into-viewport/" 
-           data-id="clc1rwar7000fhvof8ljj6kir" data-title="Change CSS class when element scrolls into viewport" />
+           data-id="clc929vlu000fi5oq9pup7x46" data-title="Change CSS class when element scrolls into viewport" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clc1rwar7000fhvof8ljj6kir");
+        initPermalink("clc929vlu000fi5oq9pup7x46");
     });
 </script>
 
@@ -691,15 +857,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clc1rwar8000hhvofb84a7jwm">
+      <div class="article-permalink" id="article-permalink-clc929vlw000hi5oq47pvevv2">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-1/" 
-           data-id="clc1rwar8000hhvofb84a7jwm" data-title="Discoveries #1" />
+           data-id="clc929vlw000hi5oq47pvevv2" data-title="Discoveries #1" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clc1rwar8000hhvofb84a7jwm");
+        initPermalink("clc929vlw000hi5oq47pvevv2");
     });
 </script>
 
@@ -776,15 +942,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clc1rwara000mhvof2jlud78e">
+      <div class="article-permalink" id="article-permalink-clc929vlz000mi5oq1u4q0fua">
     <input class="article-permalink-value" value="https://kiko.io/post/Dopamine-How-Software-should-be/" 
-           data-id="clc1rwara000mhvof2jlud78e" data-title="Dopamine: How Software should be..." />
+           data-id="clc929vlz000mi5oq1u4q0fua" data-title="Dopamine: How Software should be..." />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clc1rwara000mhvof2jlud78e");
+        initPermalink("clc929vlz000mi5oq1u4q0fua");
     });
 </script>
 
@@ -859,15 +1025,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clc1rwarf000xhvofdpryaev2">
+      <div class="article-permalink" id="article-permalink-clc929vm7000xi5oqamts2zkt">
     <input class="article-permalink-value" value="https://kiko.io/post/Using-GitHub-as-Commenting-Platform/" 
-           data-id="clc1rwarf000xhvofdpryaev2" data-title="Using GitHub as Commenting Platform" />
+           data-id="clc929vm7000xi5oqamts2zkt" data-title="Using GitHub as Commenting Platform" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clc1rwarf000xhvofdpryaev2");
+        initPermalink("clc929vm7000xi5oqamts2zkt");
     });
 </script>
 
@@ -944,15 +1110,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clc1rward000thvofe7gp8u0b">
+      <div class="article-permalink" id="article-permalink-clc929vm4000ti5oq53102ist">
     <input class="article-permalink-value" value="https://kiko.io/post/Meaningful-automatic-versioning-with-T4/" 
-           data-id="clc1rward000thvofe7gp8u0b" data-title="Meaningful automatic versioning with T4" />
+           data-id="clc929vm4000ti5oq53102ist" data-title="Meaningful automatic versioning with T4" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clc1rward000thvofe7gp8u0b");
+        initPermalink("clc929vm4000ti5oq53102ist");
     });
 </script>
 
@@ -1026,170 +1192,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clc1rwar6000ehvof7nhy1w4n">
+      <div class="article-permalink" id="article-permalink-clc929vlt000ei5oq5b9fdl1m">
     <input class="article-permalink-value" value="https://kiko.io/post/Automatic-Header-Images-in-Hexo/" 
-           data-id="clc1rwar6000ehvof7nhy1w4n" data-title="Automatic Header Images in Hexo" />
+           data-id="clc929vlt000ei5oq5b9fdl1m" data-title="Automatic Header Images in Hexo" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clc1rwar6000ehvof7nhy1w4n");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2020/Localization-with-resource-files-in-JavaScript-web-apps" 
-         class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-meta">
-    <a href="/post/Localization-with-resource-files-in-JavaScript-web-apps/" class="article-date">
-  
-    <time class="published dt-published" datetime="2020-06-13T13:49:10.000Z" itemprop="datePublished">13 Jun 2020</time>
-  
-</a>
-    
-  <div class="article-category category-javascript">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/Localization-with-resource-files-in-JavaScript-web-apps/">
-        <img class="article-photo" src="/photos/tablet/19-05 Israel-0161.jpg" alt="Zern" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/Localization-with-resource-files-in-JavaScript-web-apps/">Localization with resource files in JavaScript web apps</a>
-    </h1>
-  
-
-        
-    <h2 class="article-subtitle" itemprop="name">
-        How to work with Visual Studio resource files for localization in Single Page Applications
-    </h2>
-
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      <p>There are plenty of editors out there to help you writing JavaScript web applications. As I’m working in my daily life with Visual Studio, it is a obvious choice for me.</p>
-<p>One of the most time saving tools in VS is the plugin <a href="https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager">ResXManager</a>, which is an awesome assistant on managing the translations for a Desktop- or ASP.NET-App, which uses XML-based RESX files.</p>
-      
-        <p class="article-more-link">
-          <a href="/post/Localization-with-resource-files-in-JavaScript-web-apps/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Localization/" rel="tag">Localization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Resource/" rel="tag">Resource</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/" rel="tag">Visual Studio</a></li></ul>  
-  </div>
-
-      
-      <div class="article-permalink" id="article-permalink-clc1rward000shvofc4mh47l1">
-    <input class="article-permalink-value" value="https://kiko.io/post/Localization-with-resource-files-in-JavaScript-web-apps/" 
-           data-id="clc1rward000shvofc4mh47l1" data-title="Localization with resource files in JavaScript web apps" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("clc1rward000shvofc4mh47l1");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2020/TFS-DevOps-Delete-Remote-Workspace" 
-         class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-meta">
-    <a href="/post/TFS-DevOps-Delete-Remote-Workspace/" class="article-date">
-  
-    <time class="published dt-published" datetime="2020-02-27T23:00:00.000Z" itemprop="datePublished">28 Feb 2020</time>
-  
-</a>
-    
-  <div class="article-category category-tools">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/TFS-DevOps-Delete-Remote-Workspace/">
-        <img class="article-photo" src="/photos/tablet/18-09 Kroatien-0061.jpg" alt="Abandonded Fitting" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/TFS-DevOps-Delete-Remote-Workspace/">TFS/DevOps: Delete Remote Workspace</a>
-    </h1>
-  
-
-        
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      <p>If you are working with freelance developers and Azure DevOps&#x2F;TFS with TFVC (Team Foundation Version Control) in your company, maybe this will look familiar to you: You hire a new freelancer and you want to reuse the hardware, including the complete software setup, to bring him&#x2F;her to work as fast and straightforward as possible. You set up a new Azure Devops account with all necessary permissions and you think you’re done. No you are not…</p>
-      
-        <p class="article-more-link">
-          <a href="/post/TFS-DevOps-Delete-Remote-Workspace/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TFS-DevOps/" rel="tag">TFS&#x2F;DevOps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/" rel="tag">Visual Studio</a></li></ul>  
-  </div>
-
-      
-      <div class="article-permalink" id="article-permalink-clc1rware000whvoffh915i9h">
-    <input class="article-permalink-value" value="https://kiko.io/post/TFS-DevOps-Delete-Remote-Workspace/" 
-           data-id="clc1rware000whvoffh915i9h" data-title="TFS/DevOps: Delete Remote Workspace" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("clc1rware000whvoffh915i9h");
+        initPermalink("clc929vlt000ei5oq5b9fdl1m");
     });
 </script>
 
@@ -1237,6 +1248,18 @@
         
           <li>
             
+              <a href="/post/Generate-Content-from-Trello/">Generate Content from Trello</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/Discoveries-21-Sites-Pages/">Discoveries #21 -  Sites &amp; Pages</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/The-State-of-the-Blog/">The State of the Blog</a>
             
           </li>
@@ -1250,18 +1273,6 @@
           <li>
             
               <a href="/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/">Syndicate Mastodon Hashtags in your favorite Feed Reader</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Anatomy-of-Service-Worker-Communication/">Anatomy of Service Worker Communication</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Discoveries-20-CSS-UI/">Discoveries #20 - CSS &amp; UI</a>
             
           </li>
         
@@ -1398,7 +1409,7 @@
     return ((eBottom <= viewBottom) && (eTop >= viewTop));
   }
   function initViewportImage() {
-    $(".article-photo, .archive-article-photo, .card-img").each(function() {
+    $(".article-photo, .archive-article-photo, .card-img, .img-link").each(function() {
       if (isVisibleInViewPort($(this))) {
         $(this).addClass("in-view");
       } else {
