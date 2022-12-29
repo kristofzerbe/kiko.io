@@ -382,10 +382,10 @@
 <p>Next, the generator itself, which lives in <code>/lib/scripts/</code>. It is implemented as a class with CommonJS and takes two parameters in the constructor for defining the number of the Discoveries post to create and the name of the Trello list, where the data for this should come from. It’s main function is <code>generate</code>, which starts the generation. Here’s the skeleton:</p>
 <figure class="highlight js"><figcaption><span>discoveries-generator.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> yaml = <span class="built_in">require</span>(<span class="string">&#x27;js-yaml&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> axios = <span class="built_in">require</span>(<span class="string">&quot;axios&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> handlebars = <span class="built_in">require</span>(<span class="string">&quot;handlebars&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> &#123; marked &#125; = <span class="built_in">require</span>(<span class="string">&#x27;marked&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Generator</span> &#123; </span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> _config;</span><br><span class="line">  <span class="keyword">let</span> _trelloUrl;</span><br><span class="line">  <span class="keyword">let</span> _templateFile;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Init new post object</span></span><br><span class="line">  <span class="keyword">let</span> _post = &#123;</span><br><span class="line">    <span class="attr">board</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">list</span>: <span class="literal">null</span></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">discoveryNo, listName</span>) &#123;</span><br><span class="line">    <span class="comment">// Init the generator and gather all necessary data for running it</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">generate</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="comment">// Run the generator</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> <span class="title function_">downloadImage</span>(<span class="params">url, item</span>) &#123;</span><br><span class="line">    <span class="comment">// Helper for downloading the images asynchronously  </span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">createPostFromTemplate</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// Helper for creating the post&#x27;s MD file out of the template</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong>At this point I will refrain from reproducing the complete code here. Just follow this <a href="">link</a> …</strong></p>
+<p><strong>At this point I will refrain from reproducing the complete code here. Just follow this <a href="https://github.com/kristofzerbe/kiko.io/blob/cb9ba3f9157771231258834b156bb6aead2cd229/lib/discoveries-generator.cjs">link</a> …</strong></p>
 <p>However, a few points in the implementation are important to consider:</p>
 <ol>
-<li><p>The downloads are performed by means of the promis based HTTP client <a href="https://axios-http.com/">axios</a>. I can only recommend this thing…</p>
+<li><p>The downloads are performed by means of the promise based HTTP client <a href="https://axios-http.com/">axios</a>. I can only recommend this thing…</p>
 </li>
 <li><p>The image downloads are initially collected in a Promise list for subsequent execution, while iterating through the cards of the selected Trello list</p>
 </li>
@@ -410,19 +410,19 @@
     <span>Syndicated at</span> 
     
         <a class="syndication-link u-syndication fab fa-mastodon" 
-           href="" rel="syndication" target="_blank"></a>
+           href="https://indieweb.social/@kiko/109596982760280962" rel="syndication" target="_blank"></a>
     
   </div>
 
-      <div class="article-permalink" id="article-permalink-clc929vna002hi5oqct7taxw7">
+      <div class="article-permalink" id="article-permalink-clc92kf4v002hi3ox5hz92djt">
     <input class="article-permalink-value" value="https://kiko.io/post/Generate-Content-from-Trello/" 
-           data-id="clc929vna002hi5oqct7taxw7" data-title="Generate Content from Trello" />
+           data-id="clc92kf4v002hi3ox5hz92djt" data-title="Generate Content from Trello" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clc929vna002hi5oqct7taxw7");
+        initPermalink("clc92kf4v002hi3ox5hz92djt");
     });
 </script>
 
