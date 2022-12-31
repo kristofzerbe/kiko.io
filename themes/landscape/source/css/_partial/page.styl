@@ -81,54 +81,65 @@
 
 .page-content
   @extend $base-style
-  section
-      @extend $block-inner
-      position: relative
-      margin: 2em 0
-      padding: 2em
-      // border: 1px solid color-border
-      color: color-default
+  section, p
+    a 
+      color: color-link
+      text-decoration: none
       /[data-theme="dark"] &
-        // border-color: dark-color-border
-        color: dark-color-default
-      figure, pre
-        margin-left: -28px !important /* HACK */
-        margin-right: -28px !important /* HACK */
-      p, table
-        line-height: line-height
-        margin: line-height 0
-      p:last-child
-        margin-bottom: 0
-      h1:first-child
-        margin-top: 0
-      h1, h2, h3, h5
-        font-weight: 600
-      h4, h6
-        font-weight: 400
-      h1, h2, h3, h4, h5, h6
-        line-height: line-height-title
-        margin: 1em 0 0.75em
-      ul, ol, dl
-        margin-top: line-height
-        margin-bottom: line-height
-      fieldset
-        span.result
-          position: absolute
-          right: 0
-        span.result.error
-          color: color-error
-      time
-        font-size: .85em
-        margin-bottom: -20px
-        position: absolute
-        color: color-header
+        color: dark-color-link
+        border-bottom: dark-color-link-border 1px solid
+      &:hover
+        border-bottom: color-link 1px solid
         /[data-theme="dark"] &
-          color: dark-color-header
-        &.raised
-          display: block
-          position: absolute
-          top: 0
-          left: 0
+          border-bottom: dark-color-link 1px solid
+  section
+    @extend $block-inner
+    position: relative
+    margin: 2em 0
+    padding: 2em
+    // border: 1px solid color-border
+    color: color-default
+    /[data-theme="dark"] &
+      // border-color: dark-color-border
+      color: dark-color-default
+    figure, pre
+      margin-left: -28px !important /* HACK */
+      margin-right: -28px !important /* HACK */
+    p, table
+      line-height: line-height
+      margin: line-height 0
+    p:last-child
+      margin-bottom: 0
+    h1:first-child
+      margin-top: 0
+    h1, h2, h3, h5
+      font-weight: 600
+    h4, h6
+      font-weight: 400
+    h1, h2, h3, h4, h5, h6
+      line-height: line-height-title
+      margin: 1em 0 0.75em
+    ul, ol, dl
+      margin-top: line-height
+      margin-bottom: line-height
+    fieldset
+      span.result
+        position: absolute
+        right: 0
+      span.result.error
+        color: color-error
+    time
+      font-size: .85em
+      margin-bottom: -20px
+      position: absolute
+      color: color-header
+      /[data-theme="dark"] &
+        color: dark-color-header
+      &.raised
+        display: block
+        position: absolute
+        top: 0
+        left: 0
     section.flex
       display: flex
       flex-wrap: wrap
