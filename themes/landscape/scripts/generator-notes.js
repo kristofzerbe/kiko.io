@@ -28,6 +28,12 @@ hexo.extend.generator.register("notes", function (locals) {
       path: path.join("notes", entry, "index.html"),
       link: path.join("notes", entry).replace(/\\/g, "/")
     }));
+  //console.log(years);
+
+  if (years.filter(y => y.year === currentYear.toString()).length === 0) {
+    log.error("Notes folder for current year doesn't exist!");
+    throw new Error("... see console and create folder for " + currentYear);
+  }
 
   let indexes = [];
   years.forEach((year) => {
@@ -43,6 +49,7 @@ hexo.extend.generator.register("notes", function (locals) {
       ...getMDInfo(path.join(yearDir, "index.md"), index.false),
     };
     index.notes = [];
+    //console.log(index);
 
     // get notes
     let notes = fs
@@ -56,7 +63,7 @@ hexo.extend.generator.register("notes", function (locals) {
         year: index.year,
         indexlink: "/" + index.link,
       }));
-    // console.log(notes);
+    //console.log(notes);
 
     notes.forEach((note) => {
       note = {
@@ -96,7 +103,8 @@ hexo.extend.generator.register("notes", function (locals) {
       return new Date(b.date) - new Date(a.date);
     });
 
-    if (index.notes.length > 0) {
+    if (index.notes.length > 0 || index.year === currentYear.toString()) {
+      //console.log("index push: " + index.year);
       indexes.push(index);
       log.info(
         magenta(index.notes.length) + " Notes for " + magenta(index.year)
@@ -111,14 +119,16 @@ hexo.extend.generator.register("notes", function (locals) {
   //console.log(indexes);
 
   let yearsAvailable = indexes.map((index) => index.year);
+  //console.log(yearsAvailable);
+
   let yearList = years
     .filter((item) => yearsAvailable.includes(item.year))
     .sort((a, b) => b.year - a.year);
-  // console.log(yearList);
+  //console.log(yearList);
 
   indexes.forEach((index) => {
     index.years = yearList;
-    // console.log(index);
+    //console.log(index);
 
     // add year index to result
     result.push({

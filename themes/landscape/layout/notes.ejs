@@ -12,8 +12,12 @@
     <% } %>
 </div>
 
+<% if (page.notes.length > 0) { %>
 <div class="note-list">
     <% page.notes.forEach(function(note){ %>
         <%- partial('_partial/note-item', { note: note }) %>
     <% }) %>    
 </div>
+<% } else { %>
+    <p style="padding: 20px 10px;">NO NOTES YET THIS YEAR ...</p>
+<% } %>

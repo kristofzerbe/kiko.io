@@ -32,7 +32,10 @@ input, button
     padding: 0
 
 a
-  transition: all ease-out .2s
+  transition: all ease-out 0.2s
+  color: color-link
+  /[data-theme="dark"] &
+    color: dark-color-link
 
 html, body, #container
   height: 100%
@@ -117,6 +120,26 @@ if sidebar is left
 
 .medium-zoom-image--opened
   z-index: 1000
+
+#introduction
+  .page-title
+    text-align: center
+    font-size: 2.4em
+    @media mq-mobile
+      font-size: 2em
+    margin: 1em auto 0.5em
+    font-weight: 300
+    strong
+      font-weight: 900
+      background: url(/images/banner.jpg) no-repeat 56% 68%
+      -webkit-background-clip: text
+      color: transparent
+  .page-content
+    text-align: justify
+    max-width: 400px
+    margin: 0 auto
+    @media mq-mobile
+      padding: 0 1.75em
 
 @import "_extend"
 @import "_partial/header"
