@@ -81,8 +81,9 @@
 
 .page-content
   @extend $base-style
-  a:not(.button):not(.img-link) 
+  a:not([class])
     text-decoration: none
+    border-bottom: transparent 1px solid
     /[data-theme="dark"] &
       border-bottom: dark-color-link-border 1px solid
     &:hover
