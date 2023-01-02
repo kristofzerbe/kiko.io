@@ -81,15 +81,21 @@
 
 .page-content
   @extend $base-style
+  a:not(.button):not(.img-link) 
+    text-decoration: none
+    /[data-theme="dark"] &
+      border-bottom: dark-color-link-border 1px solid
+    &:hover
+      border-bottom: color-link 1px solid
+      /[data-theme="dark"] &
+        border-bottom: dark-color-link 1px solid
   section
     @extend $block-inner
     position: relative
     margin: 2em 0
     padding: 2em
-    // border: 1px solid color-border
     color: color-default
     /[data-theme="dark"] &
-      // border-color: dark-color-border
       color: dark-color-default
     figure, pre
       margin-left: -28px !important /* HACK */
@@ -108,14 +114,6 @@
     h1, h2, h3, h4, h5, h6
       line-height: line-height-title
       margin: 1em 0 0.75em
-    a:not(.button):not(.img-link) 
-      text-decoration: none
-      /[data-theme="dark"] &
-        border-bottom: dark-color-link-border 1px solid
-      &:hover
-        border-bottom: color-link 1px solid
-        /[data-theme="dark"] &
-          border-bottom: dark-color-link 1px solid
     ul, ol, dl
       margin-top: line-height
       margin-bottom: line-height
