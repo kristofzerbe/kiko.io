@@ -3,7 +3,7 @@ title: "#TIL | CSS's :not([class]) selector"
 date: 2023-01-02 17:35:00
 syndication: 
 - host: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/109620622105567591
 ---
 
 Some links need to look different from standard links, be it with a background image or other special formatting. Mostly you simply create a new class like ``a.img-link`` or something like that.
