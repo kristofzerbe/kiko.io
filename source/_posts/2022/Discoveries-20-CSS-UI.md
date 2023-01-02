@@ -47,7 +47,7 @@ Ahmad is a master of CSS and one of his concerns, which he also points out repea
 {% enddiscovery %}
 
 {% discovery "10 Useful CSS Tricks for Front-end Developers" "Alex Ivanovs" "https://stackdiary.com/useful-css-tricks/" Discoveries-20 10-useful-css-tricks.png %}
-Alex has some useful tips on writing better and smart CSS code. I ave to try Shadow for transparent images as soon as possible ...
+Alex has some useful tips on writing better and smart CSS code. I have to try Shadow for transparent images as soon as possible ...
 {% enddiscovery %}
 
 {% discovery "Animated Star Rating|IMGFILE" "Jon Kantner" "https://codepen.io/jkantner/pen/BarvVNa" Discoveries-20 animated-star-rating.png %}
