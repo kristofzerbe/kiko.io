@@ -1,5 +1,5 @@
 <!-- TODO: Extract to root INDEX.MD -->
-<div id="introduction" class="d<%= new Date().getDay()%>">
+<div id="introduction">
   <h1 class="page-title">
     <strong>Welcome</strong> ... I'm Kristof
   </h1>
@@ -22,5 +22,8 @@
     <hr>
   </div>
 </div>
+<script>
+  document.querySelector("#introduction").classList.add("d" + new Date().getDay().toString());
+</script>
 
 <%- partial('_partial/archive', {pagination: 2, index: true}) %>
