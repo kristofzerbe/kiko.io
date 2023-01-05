@@ -6,11 +6,24 @@
 
 <div class="page-index-list">
     <% for(var i=0; i < page.years.length; i++) { %>
-        <a class="<%= (page.years[i].year == page.year) ? "current" : "" %>" href="<%= "/" + page.years[i].link %>">
-            <%= (page.years[i].year == page.year) ? "..." : page.years[i].year %>
-        </a>
+        <% if (page.years[i].year == page.year) { %>
+            <a class="current" href="#" onclick="switchCondensed(this); return false;"></a>
+        <% } else { %>
+            <a href="<%= "/" + page.years[i].link %>"><%= page.years[i].year %></a>
+        <% } %>
     <% } %>
 </div>
+<script>
+    function switchCondensed(e) {
+        if (e.classList.contains("condensed")) {
+            e.classList.remove("condensed");
+            document.querySelector(".note-list").classList.remove("condensed");
+        } else {
+            e.classList.add("condensed");
+            document.querySelector(".note-list").classList.add("condensed");
+        }
+    }
+</script>
 
 <% if (page.notes.length > 0) { %>
 <div class="note-list">

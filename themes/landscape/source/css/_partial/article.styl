@@ -5,7 +5,6 @@
 .note-list
   .article.note
     margin-left: 2.5em
-    // margin-bottom: 4em
     @media mq-mobile
       margin-left: 1.5em
       margin-bottom: 3em
@@ -24,6 +23,27 @@
       border-style: solid;
       /[data-theme="dark"] &
         border-color: dark-color-highlight
+    .article-header a, .article-footer, .article-entry
+      transition: all ease-out .5s
+    .article-footer, .article-entry
+      animation: slideUp ease 0.5s
+
+.note-list.condensed
+  .article.note
+    &:not(:first-child)
+      margin-top: 2.5em
+    &:not(:last-child)::before
+      height: calc(100% + 3em)
+    .article-header
+      padding: 24px 24px 12px 16px
+      a
+        font-size: 1.3em
+        font-weight: 500
+    .article-entry, .article-footer
+      max-height: 0
+      padding: 0
+      margin: 0
+      opacity: 0
 
 .article-meta
   clearfix()
@@ -83,9 +103,8 @@
   overflow: hidden
 
 .article.note
-  .article-inner
-    .article-header
-      padding-top: 36px
+  .article-header
+    padding-top: 36px
 
 .article-photo
   height: 150px
