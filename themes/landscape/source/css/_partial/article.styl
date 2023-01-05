@@ -24,9 +24,9 @@
       /[data-theme="dark"] &
         border-color: dark-color-highlight
     .article-header a, .article-footer, .article-entry
-      transition: all ease-out .5s
+      transition: all ease-out .3s
     .article-footer, .article-entry
-      animation: slideUp ease 0.5s
+      animation: slideUp ease 0.6s
 
 .note-list.condensed
   .article.note
@@ -37,13 +37,14 @@
     .article-header
       padding: 24px 24px 12px 16px
       a
-        font-size: 1.3em
+        font-size: 1.2em
         font-weight: 500
     .article-entry, .article-footer
-      max-height: 0
+      height: 0
       padding: 0
       margin: 0
-      opacity: 0
+      overflow: hidden
+      animation: slideDown ease 0.3s
 
 .article-meta
   clearfix()
