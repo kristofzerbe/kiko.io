@@ -246,19 +246,30 @@
 
 <div class="page-index-list">
     
-        <a class="current" href="/notes/2023">
-            ...
-        </a>
+        
+            <a class="current" href="#" onclick="switchCondensed(this); return false;"></a>
+        
     
-        <a class="" href="/notes/2022">
-            2022
-        </a>
+        
+            <a href="/notes/2022">2022</a>
+        
     
-        <a class="" href="/notes/2021">
-            2021
-        </a>
+        
+            <a href="/notes/2021">2021</a>
+        
     
 </div>
+<script>
+    function switchCondensed(e) {
+        if (e.classList.contains("condensed")) {
+            e.classList.remove("condensed");
+            document.querySelector(".note-list").classList.remove("condensed");
+        } else {
+            e.classList.add("condensed");
+            document.querySelector(".note-list").classList.add("condensed");
+        }
+    }
+</script>
 
 
 <div class="note-list">
