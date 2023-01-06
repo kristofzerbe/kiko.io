@@ -8,6 +8,7 @@ photograph:
   name: Orange Shades
   link: https://500px.com/photo/117444961
   socialmedia: /static/images/social-media/Generate-Content-from-Trello.png
+series: A New Blog
 categories:
   - JavaScript
 tags:
@@ -182,6 +183,8 @@ What should he do:
 
 The goal is that I only need to write an introduction and adjust a few frontmatter variables before generating and publishing the post.
 
+### Settings
+
 First task is to save the possible settings in Hexo's default configuration file:
 
 ```yaml
@@ -210,6 +213,8 @@ discoveries:
       value: true
   template: discoveries.handlebars
 ```
+
+### Template
 
 Next step is creating a [Handlebars](https://handlebarsjs.com/) template out of my scaffold file I used so far:
 
@@ -254,6 +259,8 @@ INTRODUCTION...
 {% enddiscovery %}
 {{/each}}
 ```
+
+### Generator Script
 
 Next, the generator itself, which lives in ``/lib/scripts/``. It is implemented as a class with CommonJS and takes two parameters in the constructor for defining the number of the Discoveries post to create and the name of the Trello list, where the data for this should come from. It's main function is ``generate``, which starts the generation. Here's the skeleton:
 
@@ -311,6 +318,24 @@ A. If an image is missing, create a proper screenshot via Puppeteer
 B. Introduce a top most card(s) for the INTRODUCTION, a SUBTITLE and some additional TAGS, to avoid having to rework the new post before publishing
 
 C. Automated insertion of the RELATED posts, based on the last three Discoveries issues
+
+### Run it ...
+
+The easiest way to get the generator running, is to create a simple runner script:
+
+```js _run_discoveries-generator.cjs
+const Generator = require("./discoveries-generator.cjs").Generator;
+
+const discoveryNo = process.argv[2].toString();
+const listName = process.argv[3].toString();
+
+const generator = new Generator(discoveryNo, listName);
+generator.generate();
+```
+
+The execution in the console then is just a one-liner:
+
+``node "./lib/_run_discoveries-generator.cjs" "<NUMBER>" "<TRELLO-LISTNAME>"``
 
 ---
 
