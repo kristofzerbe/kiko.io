@@ -19,7 +19,7 @@ related:
   - Discoveries-20-CSS-UI
 syndication:
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/109642996890253172
 ---
 
 As someone said the other day? "January is the Monday of the year". How true. After programming myself a new workflow for creating my discoveries (see [Generate Content from Trello](/post/Generate-Content-from-Trello/)) at the end of last year, I wanted to try it out again right away and give you a list of tips and tricks for starting 2023.
