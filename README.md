@@ -6,6 +6,9 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
 ## Latest Posts
 <!-- BLOG-POST-LIST:START -->
+ - [Discoveries #22 -  Tips/Tricks](https://kiko.io/post/Discoveries-22-Tips-Tricks/)   
+ 06 Jan 2023   
+
  - [Generate Content from Trello](https://kiko.io/post/Generate-Content-from-Trello/)   
  29 Dec 2022   
 
@@ -20,7 +23,4 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
  - [Syndicate Mastodon Hashtags in your favorite Feed Reader](https://kiko.io/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/)   
  13 Nov 2022   
-
- - [Anatomy of Service Worker Communication](https://kiko.io/post/Anatomy-of-Service-Worker-Communication/)   
- 12 Nov 2022   
 <!-- BLOG-POST-LIST:END -->
