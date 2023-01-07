@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   
   <%
-    var type;
-    var subtype;
-    var pageTitle = page.title;
-    var heroImage = config.heroimage_small;
-    var description = config.description;
+    let title;
+    let description;
+    let image;
+    let type;
+    let subtype;
 
-    if (is_home())     { type = "HOME"; }
+    if (is_home())          { type = "HOME"; }
     else if (is_post())     { type = "POST"; }
     else if (is_page())     { type = "PAGE"; }
     else if (is_archive())  { type = "ARCHIVE";
-      if (is_month())     { subtype = "MONTH"; }
-      else if (is_year()) { subtype = "YEAR"; }
+      if (is_month())         { subtype = "MONTH"; }
+      else if (is_year())     { subtype = "YEAR"; }
     }
     else if (is_category()) { type = "CATEGORY"; }
     else if (is_tag())      { type = "TAG"; }
@@ -28,7 +28,8 @@
           subtype = rootPath.toUpperCase();
           break;
         case "notes":
-          type = "NOTE"; 
+          type = "NOTE";
+          subtype = page.path.split(/[\\\/]/)[1]; //year
           break;
         default:
           type = rootPath.toUpperCase();
@@ -36,114 +37,165 @@
       }
     }
 
-    // console.log("HEAD: " + type + " = " + subtype + " ... " + page.title);
+    //console.log("HEAD: " + type + " = " + subtype + " ... " + page.title);
 
     switch (type) {
       case "HOME":
-        pageTitle = config.subtitle;
-        break;
-
-      case "POST":
-        let slugArray = page.slug.split("/"); //due to subfolders
-        let slug = slugArray[slugArray.length - 1];
-        heroImage = config.url + "/images/social-media/" + slug + ".png";
-        //TODO: Excerpt, but without HTML tag and just first n words > jsdom.parse?
-        description = config.title + "'s Post '" + page.title + "'";
-        break;
-
-      case "PAGE":
-        heroImage = config.url + "/photos/normal/" + page.photograph.file;
-        //TODO: Excerpt, but without HTML tag and just first n words > jsdom.parse?
-        description = config.title + "'s Page '" + page.title + "'";
+        title = config.title + " - " + config.subtitle;
+        description = config.description;
+        image = config.heroimage_small;
         break;
 
       case "ARCHIVE":
-        pageTitle = __("archive_a");
-        description = config.title + "'s " + __("archive_a");
-
         switch (subtype) {
-          case "MONTH":
-            pageTitle += ": " + page.year + "/" + page.month;
+          case "MONTH": 
+            title = __("archive_a") + " " + page.year + "/" + page.month + " - " + config.title; 
             break;
-          
-          case "YEAR":
-            pageTitle += ": " + page.year;
+          case "YEAR": 
+            title = __("archive_a") + " " + page.year + " - " + config.title; 
             break;
-
-          default: break;
+          default: 
+            title = __("archive_a") + " - " + config.title;
+          break;
         }
+        //--
+        description = config.description.replace("Blog", "Archive");
+        //--
+        image = config.heroimage_small;
         break;
 
       case "CATEGORY":
-        pageTitle = __("category") + ": " + page.category;
-        description = config.title + "'s " + __("category") + " '" + page.category + "'";
+        title = __("category") + " " + page.category + " - " + config.title;
+        description = config.description.replace("Blog", "Archive");
+        image = config.heroimage_small;
         break;
 
       case "TAG":
-        pageTitle = __("tag") + ": " + page.tag;
-        description = config.title + "'s " + __("tag") + " '" + page.tag + "'";
+        title = __("tag") + " " + page.tag + " - " + config.title;
+        description = config.description.replace("Blog", "Archive");
+        image = config.heroimage_small;
+        break;
+
+      case "PAGE":
+        title = page.title + " - " + config.title;
+        description = page.title + " " + config.description_short;
+        image = config.url + "/photos/normal/" + page.photograph.file;
         break;
 
       case "ANYTHING":
-        description = config.title + "'s " + subtype;
-        if (subtype === "PROJECTS") {
-          heroImage = config.url + "/photos/normal/" + page.photograph.file;
+        title = page.title + " - " + config.title;
+        //--
+        if (page.title === "Projects") {
+          description = page.title + " " + config.description_short;
+        } else {
+          description = "Project '" + page.title + "' " + config.description_short;
         }
+        if (page.title === "Series") {
+          description = page.title + " " + config.description_short;
+        } else {
+          description = "Series '" + page.title + "' " + config.description_short;
+        }
+        //--
+        if (subtype === "PROJECTS") {
+          image = config.url + "/photos/normal/" + page.photograph.file;
+        } else {
+          image = config.heroimage_small;
+        }
+        break;
+ 
+      case "COLLECTIONS":
+      case "PHOTOS":
+        title = page.title + " - " + config.title;
+        description = page.title + " " + config.description_short;
+        image = config.url + "/photos/normal/" + page.photograph.file;
+        break;
+
+      case "POST":
+        title = page.title + " - " + config.title;
+        //--
+        if (page.description) {
+          description = page.description;
+        } else {
+          if (page.subtitle) {
+            description = page.subtitle;
+          } else {
+            //get excerpt from content and replace special chars & links
+            let exc = page._content.split("\n")[1].substring(0, 150).replace(/([\[\]*`]*)/g, "").replace(/(\(.*\))/g, "") + "...";
+            console.log(exc);
+            description = exc;
+          }
+        }
+        //--
+        let slugArray = page.slug.split("/"); //due to subfolders
+        let slug = slugArray[slugArray.length - 1];
+        image = config.url + "/images/social-media/" + slug + ".png";
         break;
 
       case "NOTE":
-        heroImage = config.url + "/photos/normal/" + page.photograph.file;
+        title = page.title + " " + subtype + " - " + config.title;
+        //--
         if (page.title === "Notes") {
-          description = config.title + "'s NOTES";
+          description = page.title + " of " + subtype + " " + config.description_short;
         } else {
-          description = config.title + "'s Note '" + page.title + "'";
+          if (page.description) {
+            description = page.description;
+          } else {
+            //get excerpt from content and replace special chars & links
+            let exc = page._content.split("\n")[1].substring(0, 150).replace(/([\[\]*`]*)/g, "").replace(/(\(.*\))/g, "") + "...";
+            console.log(exc);
+            description = exc;
+          }
         }
+        //--
+        image = config.url + "/photos/normal/" + page.photograph.file;
 
-      case "COLLECTIONS":
-      case "PHOTOS":
-        heroImage = config.url + "/photos/normal/" + page.photograph.file;
-        description = config.title + "'s " + type;
-
-      default: break;
+      default: 
+        break;
     }
-
-    var title = config.title + " | " + pageTitle ;
-
   %>
   <!-- <%= type + ((subtype) ? ":" + subtype : "") %> -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title><%= title %></title>
+  <meta name="author" content="<%= config.author %>">
   <meta name="title" content="<%= title %>">
+  <% if (description) { %>
   <meta name="description" content="<%= description %>">
-  <!-- Schema.org for Google -->
+  <% }%>
+
+  <%#!-- Schema.org for Google --%>
   <meta itemprop="name" content="<%= title %>">
+  <% if (description) { %>
   <meta itemprop="description" content="<%= description %>">
-  <meta itemprop="image" content="<%= heroImage %>">
-  <!-- Open Graph -->
+  <% } %>
+  <meta itemprop="image" content="<%= image %>">
+
+  <%#!-- Open Graph --%>
   <meta property="og:type" content="website">
   <meta property="og:url" content="<%= url %>">
   <meta property="og:title" content="<%= title %>">
+  <% if (description) { %>
   <meta property="og:description" content="<%= description %>">
-  <meta property="og:image" content="<%= heroImage %>">
+  <% } %>
+  <meta property="og:image" content="<%= image %>">
   <meta property="og:locale" content="en_GB">
 
-  <link rel="canonical" href="<%= url %>">
+  <link rel="canonical" href="<%= url.replace("index.html", "") %>">
 
   <link rel="icon" href="<%- theme.favicon %>">
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
   <meta name="theme-color" content="#444">
 
-  <!-- webmention.io -->
+  <%#!-- webmention.io --%>
   <link rel="webmention" href="https://webmention.io/kiko.io/webmention" />
   <link rel="pingback" href="https://webmention.io/kiko.io/xmlrpc" />
 
-  <!-- IndieAuth -->
+  <%#!-- IndieAuth --%>
   <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
   <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
   
-  <!-- Feed -->
+  <%#!-- Feed --%>
   <% if (theme.rss){ %>
     <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml">
   <% } %>
@@ -168,7 +220,7 @@
   <link rel="preload" as="image" href="/photos/normal/$projects.jpg" imagesrcset="/photos/mobile/$projects.jpg 480w, /photos/tablet/$projects.jpg 768w">
   <link rel="preload" as="image" href="/photos/normal/$tiny-tools.jpg" imagesrcset="/photos/mobile/$tiny-tools.jpg 480w, /photos/tablet/$tiny-tools.jpg 768w">
 
-  <!-- TODO: dynamic from 2021 to year of today -->
+  <%#!-- TODO: dynamic from 2021 to year of today --%>
   <link rel="preload" as="image" href="/photos/normal/$notes-2021.jpg" imagesrcset="/photos/mobile/$notes-2021.jpg 480w, /photos/tablet/$notes-2021.jpg 768w">
   <link rel="preload" as="image" href="/photos/normal/$notes-2022.jpg" imagesrcset="/photos/mobile/$notes-2022.jpg 480w, /photos/tablet/$notes-2022.jpg 768w">
   <link rel="preload" as="image" href="/photos/normal/$notes-2023.jpg" imagesrcset="/photos/mobile/$notes-2023.jpg 480w, /photos/tablet/$notes-2023.jpg 768w">
