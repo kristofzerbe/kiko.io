@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel=manifest href=/site.webmanifest>
+  <meta charset="utf-8">
+  
+  
+  <!-- POST -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Generate Content from Trello - kiko.io</title>
+  <meta name="author" content="Kristof Zerbe">
+  <meta name="title" content="Generate Content from Trello - kiko.io">
+  
+  <meta name="description" content="Use Trello board as bookmark data source for generating Hexo content">
+  
+
+    <meta itemprop="name" content="Generate Content from Trello - kiko.io">
+  
+  <meta itemprop="description" content="Use Trello board as bookmark data source for generating Hexo content">
+  
+  <meta itemprop="image" content="https://kiko.io/images/social-media/Generate-Content-from-Trello.png">
+
+    <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kiko.io/post/Generate-Content-from-Trello/index.html">
+  <meta property="og:title" content="Generate Content from Trello - kiko.io">
+  
+  <meta property="og:description" content="Use Trello board as bookmark data source for generating Hexo content">
+  
+  <meta property="og:image" content="https://kiko.io/images/social-media/Generate-Content-from-Trello.png">
+  <meta property="og:locale" content="en_GB">
+
+  <link rel="canonical" href="https://kiko.io/post/Generate-Content-from-Trello/">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <meta name="theme-color" content="#444">
+
+    <link rel="webmention" href="https://webmention.io/kiko.io/webmention" />
+  <link rel="pingback" href="https://webmention.io/kiko.io/xmlrpc" />
+
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
+  <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
+  
+    
+
+  <link rel="preload" href="/css/fonts/cookie/cookie-v12-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-semibold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-semibolditalic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Regular.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-It.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Bold.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="preload" as="image" href="/images/hero.jpg" imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$404.jpg" imagesrcset="/photos/mobile/$404.jpg 480w, /photos/tablet/$404.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$about.jpg" imagesrcset="/photos/mobile/$about.jpg 480w, /photos/tablet/$about.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$photos.jpg" imagesrcset="/photos/mobile/$photos.jpg 480w, /photos/tablet/$photos.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$projects.jpg" imagesrcset="/photos/mobile/$projects.jpg 480w, /photos/tablet/$projects.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$tiny-tools.jpg" imagesrcset="/photos/mobile/$tiny-tools.jpg 480w, /photos/tablet/$tiny-tools.jpg 768w">
+
+    <link rel="preload" as="image" href="/photos/normal/$notes-2021.jpg" imagesrcset="/photos/mobile/$notes-2021.jpg 480w, /photos/tablet/$notes-2021.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$notes-2022.jpg" imagesrcset="/photos/mobile/$notes-2022.jpg 480w, /photos/tablet/$notes-2022.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$notes-2023.jpg" imagesrcset="/photos/mobile/$notes-2023.jpg 480w, /photos/tablet/$notes-2023.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$notes-2024.jpg" imagesrcset="/photos/mobile/$notes-2024.jpg 480w, /photos/tablet/$notes-2024.jpg 768w">
+
+  
+<link rel="stylesheet" href="/css/dist/bundle.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/tools.js"></script>
+
+  
+<script src="/js/dist/scroll-timeline.js"></script>
+
+  
+<script src="/js/dist/image-compare-viewer.min.js"></script>
+
+  
+<script src="/js/dist/tiny-slider.min.js"></script>
+
+
+
+  <script defer type="text/javascript" 
+    src="https://api.pirsch.io/pirsch.js"
+    id="pirschjs"
+    data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>
+  <script type="text/javascript" 
+    src="https://api.pirsch.io/pirsch-events.js"
+    id="pirscheventsjs"
+    data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body id="body">  
+  <div id="container" class="container">
+    <div class="inner-container">
+      <div id="wrap">
+        <header id="header">
+  <a href="#" id="header-photo-link" target="_blank" rel="noopener" ></a>
+  <div id="banner">
+    <div id="header-nav-start"></div>
+    <nav id="header-nav" role="navigation">
+      <ul class="menu">
+        
+          <li class="menu-item" id="nav-home-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/">
+                <span>Home</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-archives-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/archives">
+                <span>Archives</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-series-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/series">
+                <span>series</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-notes-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/notes">
+                <span>notes</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-projects-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/projects">
+                <span>projects</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-tiny-tools-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/collections/tiny-tools">
+                <span>tiny-tools</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-photos-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/photos">
+                <span>photos</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-about-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/about">
+                <span>About</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-rss-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/atom.xml">
+                <span>RSS Feed</span>
+              </a>
+          </li>
+        
+      </ul>
+    </nav>
+    <div id="header-nav-end"></div>
+  </div>
+  <div id="progress"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+        <a href="/" id="logo">
+          <h1 id="title-wrap">
+            <span style="opacity:0.2;">kiko.io</span>
+          </h1>
+        </a>
+      
+        <h2 id="subtitle">
+          Memorable Tech Stuff
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        <a id="sub-nav-search" class="sub-nav-icon" title="Search"></a>
+        <div id="sub-nav-theme">          
+          <input type="checkbox" id="theme-switch">
+          <label for="theme-switch"></label>
+        </div>
+      </nav>
+
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kiko.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+<script>
+  if (location.pathname === "/") {
+    document.getElementById("nav-home-link").remove();
+  }
+</script>
+        <div id="content" class="outer">
+          <main>
+  <style>
+#banner {
+    background-size: cover;
+}
+@media screen and (max-width: 479px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/DSC_9482-HDR.jpg"); }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/DSC_9482-HDR.jpg"); }
+}
+@media screen and (min-width: 768px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/DSC_9482-HDR.jpg"); }    
+}
+</style>
+
+
+    <img id="header-photo" src="/photos/normal/DSC_9482-HDR.jpg" width="0" height="0"/>
+    <script>
+        var header = document.getElementById("header");
+        header.classList.add("photograph");
+        
+        var photoLink = document.getElementById("header-photo-link");
+        photoLink.href = "https://500px.com/photo/117444961";
+        photoLink.innerHTML = "see <strong>Orange Shades</strong> at 500px";
+    </script>
+
+
+
+
+<script>
+  var body = document.getElementById("body");
+  body.classList.add("article-view");
+</script>
+  
+<article id="post-2022/Generate-Content-from-Trello" 
+         class="article article-type-post h-entry" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <div class="h-card p-author" style="display:none">
+      <img class="u-photo" src="https://kiko.io/images/kristof-zerbe.png" alt="Kristof Zerbe" />
+      <a class="p-name u-url" href="https://kiko.io" rel="author">Kristof Zerbe</a>
+    </div>
+    <a class="u-url u-uid" href="https://kiko.io/post/Generate-Content-from-Trello/" style="display:none;">https://kiko.io/post/Generate-Content-from-Trello/</a>
+    <a href="/post/Generate-Content-from-Trello/" class="article-date">
+  
+    <time class="published dt-published" datetime="2022-12-29T11:08:00.000Z" itemprop="datePublished">29 Dec 2022</time>
+  
+</a>
+    
+  <div class="article-category p-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+
+
+    <a class="article-anything" itemprop="name" href="/series/a-new-blog">A New Blog</a>
+
+
+
+        
+  
+    <h1 class="article-title p-name" itemprop="name">
+      Generate Content from Trello
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle p-summary" itemprop="name">
+        Use Trello board as bookmark data source for generating Hexo content
+    </h2>
+
+      </header>
+    
+    
+    <div class="article-entry e-content" itemprop="articleBody">
+      <p>I’m collecting&#x2F;bookmarking links to interesting website post on a public Trello board and aggregating them from time to time in a special post series called <em>Discoveries</em>, where I present 10 of them in one post on a specific topic.</p>
+<p>Writing these summaries is currently still a bit time-consuming, because in addition to the link, the name of the author and a small description, I would also like to display a screenshot of the page in each case … and it is still a completely manual process.</p>
+<p>After selecting the 10 links I want to talk about, I first create a new post for my Hexo blog and then process the links as follows:</p>
+<ol>
+<li>Creating, resizing and saving the screenshot</li>
+<li>Creating a new section in the post</li>
+<li>Setting a key for the post based on the title</li>
+<li>Setting the title</li>
+<li>Setting the author</li>
+<li>Setting the screenshot file</li>
+</ol>
+<p>I do use two tag plugins (<a href="https://github.com/kristofzerbe/kiko.io/blob/2c80a548e188c05879039a15e67419b548bfbfcd/themes/landscape/scripts/tag-anchorlist.js">tag-anchorlist</a> and <a href="https://github.com/kristofzerbe/kiko.io/blob/2c80a548e188c05879039a15e67419b548bfbfcd/themes/landscape/scripts/tag-discovery.js">tag-discovery</a>) for this in the post draft, but despite that, it’s quite time-consuming and always the same procedure that can be wonderfully automated… and here I’d like to write about how I approached this task, while I’m working on it.</p>
+<span id="more"></span>
+
+<hr>
+<h2 id="The-Trello-List"><a href="#The-Trello-List" class="headerlink" title="The Trello List"></a>The Trello List</h2><p>How easy it is to save a link as a card in a Trello board via Chrome, I described recently in my post <a href="/post/Add-website-to-Trello-card-the-better-way/" title="Add website to Trello card the better way">Add website to Trello card the better way</a>. As this works also in Chrome on Android, I store interesting links on the go mostly. In order to get all information I need later on, I have extended my collections board with a custom field called ‘Author’. For adding the screenshot to the card as an attachment, I use actually the build-in feature of Android 6.</p>
+<p>As I have a long, long list if incoming links, I sort them by topic into an appropriate list, for example, “Discoveries: JS Libraries” and this lists should then be automatically turned into new blog posts as I want to publish one.</p>
+<p><img src="/post/Generate-Content-from-Trello/trello-test-board.png" alt="Trello Test Board"></p>
+<hr>
+<h2 id="The-Data"><a href="#The-Data" class="headerlink" title="The Data"></a>The Data</h2><p>Now, to get the raw data of a Trello list, I could use to the Atlassian API, but that’s not even necessary, because each board can be accessed machine-readable per se via adding <code>.JSON</code> to the board url. <strong>Prerequisite is that the board is set to PUBLIC</strong>. The URL is structured according to the following scheme:</p>
+<p><code>https://trello.com/b/&lt;WORKPLACE-ID&gt;/&lt;BOARD-NAME&gt;.json</code></p>
+<p>The URL accepts following parameters (as far as I found out), to filter out some not needed content:</p>
+<ul>
+<li><strong>fields</strong> (string)</li>
+<li><strong>lists</strong> (string)</li>
+<li><strong>list_fields</strong> (string)</li>
+<li><strong>cards</strong> (string)</li>
+<li><strong>card_fields</strong> (string)</li>
+<li><strong>card_attachments</strong> (bool)</li>
+<li><strong>card_attachment_fields</strong> (string)</li>
+<li><strong>customFields</strong> (bool)</li>
+<li><strong>card_customFieldItems</strong> (bool)</li>
+<li>members (bool)</li>
+<li>member_fields (string)</li>
+<li>organization (bool)</li>
+<li>checklists (string)</li>
+<li>checklist_fields (string)</li>
+<li>labels (string)</li>
+<li>actions (string)</li>
+<li>action_fields (string)</li>
+<li>actions_limit (number)</li>
+</ul>
+<p>All boolean parameters can assume <code>true</code> or <code>false</code> and the string parameters either <code>all</code>, <code>none</code> or (some) a comma-separated value list of fields to show. For example:</p>
+<p><code>https://trello.com/b/o2tmzJAw/test.json?fields=none&amp;lists=all&amp;list_fields=name&amp;cards=all&amp;card_fields=desc,idList,name</code></p>
+<p>… shows up like this:</p>
+<figure class="highlight json"><figcaption><span>Trello JSON (shortened)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;63a871b59e3b200022455381&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;cards&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span> ... <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;63a8586e7de45d0fc54d0d39&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;desc&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Kate shows us how to create a tree view as collapsible list, created using only html and css, without the need for JavaScript&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;idList&quot;</span><span class="punctuation">:</span> <span class="string">&quot;63a8585dc0c10c020ca9ea03&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Tree views in CSS&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span> ... <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;lists&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;63a997ab23684f02303a0525&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Discoveries INBOX&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;63a8585dc0c10c020ca9ea03&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Discoveries: CSS&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>Important to now here is, that most of the data are NOT hierarchially structured, like Board &gt; List &gt; Cards, but in parallel. You have to pick the id of a list to filter the cards array by it. The same with custom fields inside a card: it holds a reference to the custom field list only.</p>
+<p>For the attachments of a card, Trello distinguishes between URL’s and files. The attribute <code>bytes</code> is null for URLs and the URL itself is in name. Files, on the other hand, have <code>bytes</code> greater than 0 and a specific <code>mimeType</code>, while images additionally have up to seven different <code>previews</code> in the widths 70, 150, 250, 300, 600 and original. Very handy for my case, since I always scale down my screenshots to 600 pixels.</p>
+<p><code>https://trello.com/b/o2tmzJAw/test.json?fields=none&amp;lists=all&amp;list_fields=name&amp;cards=all&amp;card_fields=desc,idList,name&amp;card_attachments=true&amp;card_attachment_fields=bytes,mimeType,name,previews&amp;customFields=true&amp;card_customFieldItems=true</code></p>
+<figure class="highlight json"><figcaption><span>... card item in Trello JSON (shortened)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;63a8586e7de45d0fc54d0d39&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;desc&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Kate shows us how to create a tree view as collapsible list, created using only html and css, without the need for JavaScript&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;idList&quot;</span><span class="punctuation">:</span> <span class="string">&quot;63a8585dc0c10c020ca9ea03&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Tree views in CSS&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;attachments&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">  <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;bytes&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;mimeType&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://iamkate.com/code/tree-views/&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;previews&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;63a8586e7de45d0fc54d0d5b&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;bytes&quot;</span><span class="punctuation">:</span> <span class="number">225271</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;mimeType&quot;</span><span class="punctuation">:</span> <span class="string">&quot;image/png&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Screenshot_20221225-121537.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;previews&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span> ... <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;_id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;63a8586e7de45d0fc54d0d58&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;63a8586e7de45d0fc54d0d58&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;scaled&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://trello.com/1/cards/63a8586e7de45d0fc54d0d39/attachments/63a8586e7de45d0fc54d0d52/previews/63a8586e7de45d0fc54d0d58/download/Screenshot_20221225-121537.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;bytes&quot;</span><span class="punctuation">:</span> <span class="number">111574</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;height&quot;</span><span class="punctuation">:</span> <span class="number">499</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;width&quot;</span><span class="punctuation">:</span> <span class="number">600</span></span><br><span class="line">      <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="punctuation">&#123;</span> ... <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;63a8586e7de45d0fc54d0d52&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="The-Generator"><a href="#The-Generator" class="headerlink" title="The Generator"></a>The Generator</h2><p>First of all: This generator has NOTHING to do with Hexo’s build-in <a href="https://hexo.io/api/generator.html">generators</a>. It’s just a Node script, which produces MD files that later on will be processed by Hexo into posts!</p>
+<p>What should he do:</p>
+<ol>
+<li>Download Board JSON from Trello</li>
+<li>Iterate through <code>lists</code> to find the one to process</li>
+<li>Iterate through <code>cards</code> to find all referencing the chosen list</li>
+<li>Create new POST object to store all needed information</li>
+<li>Process all found cards…<ol>
+<li>Create new ITEM object to store all needed information</li>
+<li>Store TITLE, generated KEY out of TITLE, DESCRIPTION in ITEM</li>
+<li>Resolve AUTHOR from <code>customfields</code> for ITEM</li>
+<li>Iterate through card <code>attachments</code></li>
+<li>Store URL in ITEM, when its a link</li>
+<li>Generate IMAGENAME out of KEY and store in ITEM, when its an image</li>
+<li>Create new POST.FOLDER for the images</li>
+<li>Download image from attachment URL into POST.FOLDER as IMAGENAME</li>
+<li>Add ITEM to POST.ITEMS</li>
+</ol>
+</li>
+<li>Get photograph for new post (kiko.io special, see <a href="/post/Automatic-Header-Images-in-Hexo/" title="Automatic Header Images in Hexo">Automatic Header Images in Hexo</a>)<ol>
+<li>Store PHOTOGRAPH information in POST</li>
+</ol>
+</li>
+<li>Generate new post via Handlebars template</li>
+<li>Store new post</li>
+</ol>
+<p>The goal is that I only need to write an introduction and adjust a few frontmatter variables before generating and publishing the post.</p>
+<h3 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h3><p>First task is to save the possible settings in Hexo’s default configuration file:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Trello Discoveries Generator Script</span></span><br><span class="line"><span class="attr">discoveries:</span></span><br><span class="line">  <span class="attr">board:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://trello.com/b/D6zIhLus/collections.json</span></span><br><span class="line">    <span class="attr">parameters:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">key:</span> <span class="string">fields</span></span><br><span class="line">      <span class="attr">value:</span> <span class="string">name</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">key:</span> <span class="string">lists</span></span><br><span class="line">      <span class="attr">value:</span> <span class="string">all</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">key:</span> <span class="string">list_fields</span></span><br><span class="line">      <span class="attr">value:</span> <span class="string">name</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">key:</span> <span class="string">cards</span></span><br><span class="line">      <span class="attr">value:</span> <span class="string">all</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">key:</span> <span class="string">card_fields</span></span><br><span class="line">      <span class="attr">value:</span> <span class="string">closed,desc,idList,name</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">key:</span> <span class="string">card_attachments</span></span><br><span class="line">      <span class="attr">value:</span> <span class="literal">true</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">key:</span> <span class="string">card_attachment_fields</span></span><br><span class="line">      <span class="attr">value:</span> <span class="string">bytes,mimeType,name,previews</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">key:</span> <span class="string">customFields</span></span><br><span class="line">      <span class="attr">value:</span> <span class="literal">true</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">key:</span> <span class="string">card_customFieldItems</span></span><br><span class="line">      <span class="attr">value:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">template:</span> <span class="string">discoveries.handlebars</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Template"><a href="#Template" class="headerlink" title="Template"></a>Template</h3><p>Next step is creating a <a href="https://handlebarsjs.com/">Handlebars</a> template out of my scaffold file I used so far:</p>
+<figure class="highlight hbs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">---</span></span><br><span class="line"><span class="language-xml">slug: </span><span class="template-variable">&#123;&#123;&#123;<span class="name">key</span>&#125;&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">title: &#x27;</span><span class="template-variable">&#123;&#123;&#123;<span class="name">title</span>&#125;&#125;&#125;</span><span class="language-xml">&#x27;</span></span><br><span class="line"><span class="language-xml">subtitle:</span></span><br><span class="line"><span class="language-xml">date: </span><span class="template-variable">&#123;&#123;&#123;<span class="name">date</span>&#125;&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">photograph:</span></span><br><span class="line"><span class="language-xml">  file: </span><span class="template-variable">&#123;&#123;&#123;<span class="name">photograph.file</span>&#125;&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  name: </span><span class="template-variable">&#123;&#123;&#123;<span class="name">photograph.name</span>&#125;&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  link: </span><span class="template-variable">&#123;&#123;&#123;<span class="name">photograph.link</span>&#125;&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  socialmedia: /static/images/social-media/</span><span class="template-variable">&#123;&#123;&#123;<span class="name">key</span>&#125;&#125;&#125;</span><span class="language-xml">.png</span></span><br><span class="line"><span class="language-xml">series: Discoveries</span></span><br><span class="line"><span class="language-xml">categories:</span></span><br><span class="line"><span class="language-xml">  - Misc</span></span><br><span class="line"><span class="language-xml">tags:</span></span><br><span class="line"><span class="language-xml">  - Collection</span></span><br><span class="line"><span class="language-xml">related:</span></span><br><span class="line"><span class="language-xml">  - Discoveries-xx</span></span><br><span class="line"><span class="language-xml">  - Discoveries-yy</span></span><br><span class="line"><span class="language-xml">  - Discoveries-zz</span></span><br><span class="line"><span class="language-xml">syndication:</span></span><br><span class="line"><span class="language-xml">  - host: Mastodon</span></span><br><span class="line"><span class="language-xml">    url: </span></span><br><span class="line"><span class="language-xml">---</span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">INTRODUCTION...</span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">&#123;% anchorlist </span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;#<span class="name"><span class="built_in">each</span></span> items&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  &quot;</span><span class="template-variable">&#123;&#123;&#123;<span class="name">title</span>&#125;&#125;&#125;</span><span class="language-xml">|</span><span class="template-variable">&#123;&#123;&#123;<span class="name">key</span>&#125;&#125;&#125;</span><span class="language-xml">&quot;</span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;/<span class="name"><span class="built_in">each</span></span>&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">%&#125;</span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml"><span class="comment">&lt;!-- more --&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;#<span class="name"><span class="built_in">each</span></span> items&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">&#123;% discovery &quot;</span><span class="template-variable">&#123;&#123;&#123;<span class="name">title</span>&#125;&#125;&#125;</span><span class="language-xml">&quot; &quot;</span><span class="template-variable">&#123;&#123;&#123;<span class="name">author</span>&#125;&#125;&#125;</span><span class="language-xml">&quot; &quot;</span><span class="template-variable">&#123;&#123;&#123;<span class="name">url</span>&#125;&#125;&#125;</span><span class="language-xml">&quot; </span><span class="template-variable">&#123;&#123;&#123;.<span class="name">./key</span>&#125;&#125;&#125;</span><span class="language-xml"> </span><span class="template-variable">&#123;&#123;&#123;<span class="name">imageName</span>&#125;&#125;&#125;</span><span class="language-xml"> %&#125;</span></span><br><span class="line"><span class="language-xml"></span><span class="template-variable">&#123;&#123;&#123;<span class="name">description</span>&#125;&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">&#123;% enddiscovery %&#125;</span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;/<span class="name"><span class="built_in">each</span></span>&#125;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Generator-Script"><a href="#Generator-Script" class="headerlink" title="Generator Script"></a>Generator Script</h3><p>Next, the generator itself, which lives in <code>/lib/scripts/</code>. It is implemented as a class with CommonJS and takes two parameters in the constructor for defining the number of the Discoveries post to create and the name of the Trello list, where the data for this should come from. It’s main function is <code>generate</code>, which starts the generation. Here’s the skeleton:</p>
+<figure class="highlight js"><figcaption><span>discoveries-generator.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> yaml = <span class="built_in">require</span>(<span class="string">&#x27;js-yaml&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> axios = <span class="built_in">require</span>(<span class="string">&quot;axios&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> handlebars = <span class="built_in">require</span>(<span class="string">&quot;handlebars&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> &#123; marked &#125; = <span class="built_in">require</span>(<span class="string">&#x27;marked&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Generator</span> &#123; </span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> _config;</span><br><span class="line">  <span class="keyword">let</span> _trelloUrl;</span><br><span class="line">  <span class="keyword">let</span> _templateFile;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Init new post object</span></span><br><span class="line">  <span class="keyword">let</span> _post = &#123;</span><br><span class="line">    <span class="attr">board</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">list</span>: <span class="literal">null</span></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">discoveryNo, listName</span>) &#123;</span><br><span class="line">    <span class="comment">// Init the generator and gather all necessary data for running it</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">generate</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="comment">// Run the generator</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> <span class="title function_">downloadImage</span>(<span class="params">url, item</span>) &#123;</span><br><span class="line">    <span class="comment">// Helper for downloading the images asynchronously  </span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">createPostFromTemplate</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// Helper for creating the post&#x27;s MD file out of the template</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>At this point I will refrain from reproducing the complete code here. Just follow this <a href="https://github.com/kristofzerbe/kiko.io/blob/cb9ba3f9157771231258834b156bb6aead2cd229/lib/discoveries-generator.cjs">link</a> …</strong></p>
+<p>However, a few points in the implementation are important to consider:</p>
+<ol>
+<li><p>The downloads are performed by means of the promise based HTTP client <a href="https://axios-http.com/">axios</a>. I can only recommend this thing…</p>
+</li>
+<li><p>The image downloads are initially collected in a Promise list for subsequent execution, while iterating through the cards of the selected Trello list</p>
+</li>
+</ol>
+<p>The script is actually really straight forward, but I have some improvements in mind, which will find their way into the code later on:</p>
+<p>A. If an image is missing, create a proper screenshot via Puppeteer</p>
+<p>B. Introduce a top most card(s) for the INTRODUCTION, a SUBTITLE and some additional TAGS, to avoid having to rework the new post before publishing</p>
+<p>C. Automated insertion of the RELATED posts, based on the last three Discoveries issues</p>
+<h3 id="Run-it-…"><a href="#Run-it-…" class="headerlink" title="Run it …"></a>Run it …</h3><p>The easiest way to get the generator running, is to create a simple runner script:</p>
+<figure class="highlight js"><figcaption><span>_run_discoveries-generator.cjs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Generator</span> = <span class="built_in">require</span>(<span class="string">&quot;./discoveries-generator.cjs&quot;</span>).<span class="property">Generator</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> discoveryNo = process.<span class="property">argv</span>[<span class="number">2</span>].<span class="title function_">toString</span>();</span><br><span class="line"><span class="keyword">const</span> listName = process.<span class="property">argv</span>[<span class="number">3</span>].<span class="title function_">toString</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> generator = <span class="keyword">new</span> <span class="title class_">Generator</span>(discoveryNo, listName);</span><br><span class="line">generator.<span class="title function_">generate</span>();</span><br></pre></td></tr></table></figure>
+
+<p>The execution in the console then is just a one-liner:</p>
+<p><code>node &quot;./lib/_run_discoveries-generator.cjs&quot; &quot;&lt;NUMBER&gt;&quot; &quot;&lt;TRELLO-LISTNAME&gt;&quot;</code></p>
+<hr>
+<p>It was fun to write this automation during Christmas. Also kept me from stuffing too many cookies inside me ;)</p>
+
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Publishing/" rel="tag">Publishing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Trello/" rel="tag">Trello</a></li></ul>  
+  </div>
+
+      
+  <div class="article-syndication">
+    <span>Syndicated at</span> 
+    
+        <a class="syndication-link u-syndication fab fa-mastodon" 
+           href="https://indieweb.social/@kiko/109596982760280962" rel="syndication" target="_blank"></a>
+    
+  </div>
+
+      <div class="article-permalink" id="article-permalink-clcpaowbq002jjfou2xxd7eb1">
+    <input class="article-permalink-value" value="https://kiko.io/post/Generate-Content-from-Trello/" 
+           data-id="clcpaowbq002jjfou2xxd7eb1" data-title="Generate Content from Trello" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clcpaowbq002jjfou2xxd7eb1");
+    });
+</script>
+
+      
+    </footer>
+
+  </div>
+
+  
+  <div class="article-webmentions">
+
+  <h2>Webmentions</h2>
+
+  <div class="webmentions-placeholder">
+    <p class="wm-placeholder">No Webmentions yet...</p>
+  </div>
+  
+  <p class="webmention-form-info">
+    In case your blog software can't send Webmentions, 
+    you can use this form to submit me a mention of this article...
+  </p>
+  
+  <form class="webmention-form" action="https://webmention.io/kiko.io>/webmention" 
+        name="webmention-form" method="post">
+    <label for="webmention-form-source">Your Article URL:</label><br>
+    <input class="webmention-form-source" type="url" name="source" 
+           placeholder="https://your-blog.com/your-article" required="">
+    <input type="hidden" name="target" value="https://kiko.io/post/Generate-Content-from-Trello/">
+    <input type="submit" value="Send Webmention">
+  </form>
+
+  <script>
+    window.addEventListener('load', function () {
+      insertWebmentions('2022/generate-content-from-trello', 'https://kiko.io', 'Kristof Zerbe');
+    });
+  </script>
+
+  
+
+</div>
+  <div class="article-comments">
+  <h2>Comments</h2>
+  <div id="comment-placeholder"></div>
+  <script>
+    window.addEventListener('load', function () {
+      insertUtterancesCommentBlock();
+    });
+  </script>
+</div>
+  
+  <div class="article-related">
+    <h2>Related</h2>
+    <div class="archives">
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/post/The-State-of-the-Blog/">
+        <img class="archive-article-photo" src="/photos/tablet/DSC_0654.jpg" alt="Green Rag" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/post/The-State-of-the-Blog/" class="archive-article-date">
+  
+    <time class="published dt-published" datetime="2022-12-23T21:40:00.000Z" itemprop="datePublished">23 Dec 2022</time>
+  
+</a>
+      
+  <div class="archive-article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+      
+
+
+    <a class="archive-article-anything" itemprop="name" href="/series/a-new-blog">A New Blog</a>
+
+
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/post/The-State-of-the-Blog/">The State of the Blog</a>
+    </h1>
+  
+
+      
+    <h2 class="archive-article-subtitle" itemprop="name">
+        Recap &amp; Workflow after 3 years with Hexo
+    </h2>
+              
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/post/Add-website-to-Trello-card-the-better-way/">
+        <img class="archive-article-photo" src="/photos/tablet/19-05 Israel-0321.jpg" alt="Haifa Roses" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/post/Add-website-to-Trello-card-the-better-way/" class="archive-article-date">
+  
+    <time class="published dt-published" datetime="2020-09-07T13:17:21.000Z" itemprop="datePublished">07 Sep 2020</time>
+  
+</a>
+      
+  <div class="archive-article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+      
+
+
+
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/post/Add-website-to-Trello-card-the-better-way/">Add website to Trello card the better way</a>
+    </h1>
+  
+
+      
+    <h2 class="archive-article-subtitle" itemprop="name">
+        Avoid default share, use the Trello bookmarklet
+    </h2>
+              
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Browser/" rel="tag">Browser</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Trello/" rel="tag">Trello</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/post/Discoveries-21-Sites-Pages/">
+        <img class="archive-article-photo" src="/photos/tablet/22-08 Bretagne-Jersey-0818.jpg" alt="Bird House" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/post/Discoveries-21-Sites-Pages/" class="archive-article-date">
+  
+    <time class="published dt-published" datetime="2022-12-28T17:38:22.000Z" itemprop="datePublished">28 Dec 2022</time>
+  
+</a>
+      
+  <div class="archive-article-category category-misc">
+    <a class="article-category-link" href="/categories/Misc/">Misc</a> 
+  </div>
+
+      
+
+
+    <a class="archive-article-anything" itemprop="name" href="/series/discoveries">Discoveries</a>
+
+
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/post/Discoveries-21-Sites-Pages/">Discoveries #21 -  Sites &amp; Pages</a>
+    </h1>
+  
+
+                    
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Collection/" rel="tag">Collection</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hosting/" rel="tag">Hosting</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Publishing/" rel="tag">Publishing</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+    </div>
+  </div>
+
+  
+<nav id="article-nav">
+  
+    <a href="/post/Discoveries-22-Tips-Tricks/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Discoveries #22 -  Tips/Tricks
+        
+      </div>
+    </a>
+  
+  
+    <a href="/post/Discoveries-21-Sites-Pages/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Discoveries #21 -  Sites &amp; Pages</div>
+    </a>
+  
+</nav>
+
+  
+
+</article></main>
+          
+            <aside id="sidebar">
+  
+    <div class="widget-wrap">
+    <div class="widget about h-card"><!--http://microformats.org/wiki/h-card-->
+        <div class="avatar">
+            <a href="/about"><img class="u-photo" src="https://kiko.io/images/kristof-zerbe.png" alt="Kristof Zerbe"></a>
+            <a href="https://github.com/kristofzerbe" target="_blank" class="fab fa-github" rel="me"></a>
+            <a href="https://www.xing.com/profile/Kristof_Zerbe" target="_blank" class="fab fa-xing" rel="me"></a>
+            <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" target="_blank" class="fab fa-linkedin" rel="me"></a>      
+            <a href="https://500px.com/kikon" target="_blank" class="fab fa-500px" rel="me"></a>
+            <a href="https://indieweb.social/@kiko" target="_blank" class="fab fa-mastodon" rel="me"></a>
+        </div>
+        <h3 class="p-name">Kristof Zerbe</h3>
+        <p class="p-note">
+            <i class="p-role">Developer and Team Lead</i> located in <i class="p-locality">Wiesbaden</i>, <i class="p-country-name">Germany</i>
+        </p>
+        <a class="u-url u-uid" href="https://kiko.io" style="display:none;"></a>
+    </div>
+</div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            
+              <a href="/post/Discoveries-22-Tips-Tricks/">Discoveries #22 -  Tips/Tricks</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/Generate-Content-from-Trello/">Generate Content from Trello</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/Discoveries-21-Sites-Pages/">Discoveries #21 -  Sites &amp; Pages</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/The-State-of-the-Blog/">The State of the Blog</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+
+  <div class="widget widget-wrap">
+    <p>
+      Want more? This way ... to the <a href="/archives">archives</a>
+    </p>
+  </div>  
+</aside>
+          
+        </div>
+        <footer id="footer">
+  
+  <div class="outer">
+    <div class="inner">
+
+      <ul id="footer-dots">
+        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+      </ul>
+
+      <div id="footer-info" class="footer-block">
+        &copy; 2019-2023 <a href="https://bio.link/kristof">Kristof Zerbe</a>
+        <span>&#x2022;</span>
+        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>  
+        <div id="footer-links">
+          
+            <a href="/about">About</a>
+          
+            <a href="/impressum">Impressum</a>
+          
+            <a href="/atom.xml">RSS Feed</a>
+          
+        </div>
+      </div>
+
+      
+      <div id="footer-bmc" class="footer-block">
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" 
+                data-name="bmc-button" data-slug="kikoio" 
+                data-font="Cookie" data-text="Buy me a coffee" data-emoji="" 
+                data-color="#55555" data-outline-color="#fff" data-font-color="#fff" data-coffee-color="#fd0" ></script>
+      </div>
+      
+        
+      <div id="webring">
+        <a id="webring-prev" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">←</a>
+        <a href="https://xn--sr8hvo.ws">IndieWeb Webring</a> 🕸💍
+        <a id="webring-next" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">→</a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+      </div>
+      <script>
+  let isOffline = 'false' === 'true';
+</script>
+
+
+<script src="/js/jquery-3.6.0.min.js"></script>
+
+
+<script src="/js/dist/bundle.min.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+<script>
+  // HEADER
+  var header = {
+    height: 0,
+    top: 0,
+    offset: 55,
+    photoLinkOpacity: 0,
+    titleFontSize: 0
+  };
+
+  function initHeader() {
+    $("#header").css("height", ""); //reset inline css
+    $("#header-title").css("top", "");
+    $("#header-photo-link").css("opacity", "");
+    $("#title-wrap").css("font-size", "");
+    header.height = $("#header").height(); //set from given css
+    header.top = parseFloat($("#header-title").css("top"));
+    header.photoLinkOpacity = parseFloat($("#header-photo-link").css("opacity"));
+    header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
+    scrollHeader();
+  }
+  function scrollHeader() {
+    var h = header.height - header.offset,
+        st = $(document).scrollTop(),  
+        d = (h - st),
+        p = (d / h),
+        hfs = header.titleFontSize / 5 * 3,
+        jSide = $("aside");
+    if (d > 0) {
+      $("#header").css("height", d + header.offset + "px");
+      $("#header-photo-link").css("opacity", header.photoLinkOpacity * p);
+      $("#banner").css("opacity", p);
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1 - p) );
+      $("#header-title").css("top", header.top - (hfs * (1 - p)) + "px");
+      $("#subtitle").css("opacity", p);
+      jSide.css("max-width", "").css("position", "").css("top", "");
+    } else {
+      $("#header").css("height", header.offset + "px");
+      $("#header-photo-link").css("opacity", 0);
+      $("#banner").css("opacity", 0);
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );      
+      $("#header-title").css("top", header.top - (hfs * (1)) + "px");      
+      $("#subtitle").css("opacity", 0);
+      if (window.matchMedia("screen and (min-width: 768px)").matches & window.innerHeight > (jSide.height() + 50)) {
+        jSide.css("max-width", $("aside").width()).css("position", "fixed").css("top", "50px");
+      }
+    }    
+  }
+
+  // IMAGE VIEWPORT
+  function isVisibleInViewPort(e) {
+    var viewTop = $(window).scrollTop();
+    var viewBottom = viewTop + $(window).height();
+  
+    var eTop = $(e).offset().top;
+    var eBottom = eTop + $(e).height();
+  
+    return ((eBottom <= viewBottom) && (eTop >= viewTop));
+  }
+  function initViewportImage() {
+    $(".article-photo, .archive-article-photo, .card-img, .img-link").each(function() {
+      if (isVisibleInViewPort($(this))) {
+        $(this).addClass("in-view");
+      } else {
+        $(this).removeClass("in-view");
+      }
+    });
+  }
+
+  // HORIZONTAL MENU SCROLL
+  function watchNavMenuScroll() {
+    const nav = document.querySelector('#header-nav');
+    const menu = nav.querySelector('.menu');
+    const firstMenuItem = menu.querySelector('.menu-item:first-child');
+    const lastMenuItem = menu.querySelector('.menu-item:last-child');
+
+    firstMenuItem.setAttribute("data-scim", "start");
+    lastMenuItem.setAttribute("data-scim", "end");
+    
+    let observer = new IntersectionObserver((entries, observer) => { 
+      entries.forEach(entry => {
+
+        let scimElement = document.querySelector("#header-nav-" + entry.target.getAttribute("data-scim"));
+        if (entry.intersectionRatio != 1) { 
+          scimElement.classList.add("show");
+        } else {
+          scimElement.classList.remove("show");
+        }
+      });
+    }, {threshold: 1});
+    
+    observer.observe(firstMenuItem);
+    observer.observe(lastMenuItem);
+  }
+
+  $(window).on('scroll', function() {
+    scrollHeader();
+    initViewportImage();
+  });
+
+  $(window).on('resize', function() {
+    initHeader();
+    initViewportImage();
+  });
+
+  initHeader();
+  initViewportImage();
+  watchNavMenuScroll();
+
+  // BACK-TO-TOP
+  addBackToTop({
+    diameter: 30
+  })
+
+  // AUTOTYPING
+  setTimeout(function() {
+    $("#title-wrap").empty();
+    new AutoTyping({
+      id: 'title-wrap',
+      typeText: ['kiko.io'],
+      textColor: '#fff',
+      typeSpeed: 100,
+      typeDelay: 100,
+      showCursor: false,
+      delete: false,
+      typeInfinity: false
+    }).init();
+  }, 1000);
+
+  //MEDIUM-ZOOM
+  mediumZoom(document.querySelectorAll('img.zoom'), {
+    background: 'rgba(55, 55, 55, 0.5)',
+    margin: 20
+  });
+
+  //SCROLL-TIMELINE
+  // Create ScrollTimeline
+  const myScrollTimeline = new ScrollTimeline({
+    source: document.scrollingElement,
+    scrollSource: document.scrollingElement, // For legacy implementations
+    orientation: 'block',
+      scrollOffsets: [
+          new CSSUnitValue(0, 'percent'),
+          new CSSUnitValue(100, 'percent'),
+      ],
+  });
+
+  // Animate Progress Bar on Scroll
+  document.querySelector("#progress").animate(
+    {
+      transform: ["scaleX(0)", "scaleX(1)"]
+    },
+    { 
+      duration: 1, 
+      fill: "forwards", 
+      timeline: myScrollTimeline 
+    }
+  );
+</script>
+
+
+  <script>
+    //HOOK LINKS FOR PIRSCH EVENT...
+
+    //BUY ME A COFFEE
+    let bmc = document.querySelector(".bmc-btn");
+    if (bmc) bmc.addEventListener("click", function() { pirsch('Buy Me A Coffee clicked') });
+
+    //FEED
+    let feed = document.querySelector("#nav-rss-link a.sub-nav-link");
+    if (feed) feed.addEventListener("click", function() { pirsch('Feed clicked') });
+
+    //VSCODE
+    let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));
+  </script>  
+
+    </div>
+  </div>
+</body>
+</html>
