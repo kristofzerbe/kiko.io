@@ -2,7 +2,7 @@
   background: color-base
   /[data-theme="dark"] &
     background: dark-color-base
-  padding: 15px 0 20px
+  padding: 15px 0 15px
   color: color-footer-text
   border-radius: 0;
   a
@@ -10,6 +10,8 @@
     text-decoration: none
     &:hover
       text-decoration: underline
+      &:before
+        text-decoration: none
 
 #footer .outer
   padding-right: 50px
@@ -19,38 +21,53 @@
   line-height: line-height
   font-size: 0.85em
   display: grid
-  grid-template-columns: max-content max-content max-content auto
+  grid-template-columns: max-content auto max-content
   grid-template-rows: max-content max-content
-  grid-gap: 5px 50px
-  grid-template-areas: "menu info bmc ." "dots webring . ."
+  grid-gap: 0px 80px
+  grid-template-areas: "info webring ." "dots bmc ."
   @media mq-mobile
     grid-template-columns: 1fr max-content max-content 
     grid-template-rows: max-content max-content
     grid-gap: 15px 5px
-    grid-template-areas: "menu info" ". webring" "dots bmc"
+    grid-template-areas: "dots info" "dots webring" "dots bmc"
 
   #footer-info
     grid-area: info
 
-  #footer-menu
-    grid-area: menu
-    .menu-item
-      position: relative
-      padding-left: 1rem
-      &:before
-        font-family: fa-icon-solid
-        content: icon-square
-        font-size: 0.5rem
-        position: absolute
-        top: 0
-        left: 0
-        color: color-highlight
-        /[data-theme="dark"] &
-          color: dark-color-highlight
+    #footer-links
+      a:not(:first-child)
+        &:before
+          content: "•"
+          margin: 0 6px 0 4px
+          &:hover
+            text-decoration: none
+
+  #footer-dots
+    grid-area: dots
+    @media mq-mobile
+      margin-left: -15px 
+    li
+      display: block
+      height: 30px
+      margin-right: 10px
+      @media mq-mobile
+        height: auto
+        margin-right: 5px
+      float: left
+    li.dot
       a
-        font-weight: bold
-        text-transform: uppercase
-        font-size: 1em
+        display: block
+        margin: 10px 0
+        @media mq-mobile
+          margin: 0 10px 
+        height: 9px
+        width: 9px
+        background-color: color-grey
+        /[data-theme="dark"] &
+          background: dark-color-grey 
+        opacity: 0.5 
+        border-radius: 50%
+        display: inline-block
 
   #footer-bmc
     grid-area: bmc
@@ -63,33 +80,13 @@
       border-radius: 0 !important
       .bmc-btn-text
         font-family: Cookie
-        font-size: 24px !important
+        font-size: 22px !important
       svg 
-        height: 24px !important
+        height: 21px !important
             
-  #footer-dots
-    grid-area: dots
-    li
-      display: block
-      height: 30px
-      margin-right: 10px
-      float: left
-    li.dot
-      a
-        display: block
-        margin: 10px 0    
-        height: 9px
-        width: 9px
-        background-color: color-grey
-        /[data-theme="dark"] &
-          background: dark-color-grey 
-        opacity: 0.5 
-        border-radius: 50%
-        display: inline-block
-
-#webring
-  grid-area: webring
-  align-self: center
+  #webring
+    grid-area: webring
+    align-self: start
 
 #back-to-top 
   color: color-logo
