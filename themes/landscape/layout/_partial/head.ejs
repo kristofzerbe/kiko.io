@@ -10,6 +10,19 @@
     let type;
     let subtype;
 
+    let excerpt;
+    if (page._content) { 
+      excerpt = page._content
+        .replace(/^(\n)/, "") // Remove Leading break
+        .split("\n")[0] // Get first paragraph //TODO: if not, tag plugins has to be removed first out of the complete text
+        .replace(/(```.+?```)/gim, "[code]") // 1. Replace MD code blocks with placeholder
+        .replace(/\!\[(?<imagetext>.*)\]\(.*\)/g, "($<imagetext>)") // 2: Replace MD images with alt text
+        .replace(/\[(?<linktext>.*)\]\(.*\)/g, "$<linktext>") // 2: Replace MD links with link title
+        .replace(/[`]{1,2}|\*{1,3}|_{1,3}|~{2}|#{1,3}\s|[-=]{2,}|>\s?/g, "") // 3. Remove MD formatting (code, italic/bold, strikethrough, header, lines, quotes)
+        .replace(/(\n){2,}/g, " ") // 4. Multiple breaks
+        .substring(0, 150) + "...";
+    }
+
     if (is_home())          { type = "HOME"; }
     else if (is_post())     { type = "POST"; }
     else if (is_page())     { type = "PAGE"; }
@@ -119,10 +132,7 @@
           if (page.subtitle) {
             description = page.subtitle;
           } else {
-            //get excerpt from content and replace special chars & links
-            let exc = page._content.split("\n")[1].substring(0, 150).replace(/([\[\]*`]*)/g, "").replace(/(\(.*\))/g, "") + "...";
-            console.log(exc);
-            description = exc;
+            description = excerpt;
           }
         }
         //--
@@ -140,10 +150,7 @@
           if (page.description) {
             description = page.description;
           } else {
-            //get excerpt from content and replace special chars & links
-            let exc = page._content.split("\n")[1].substring(0, 150).replace(/([\[\]*`]*)/g, "").replace(/(\(.*\))/g, "") + "...";
-            console.log(exc);
-            description = exc;
+            description = excerpt;
           }
         }
         //--
