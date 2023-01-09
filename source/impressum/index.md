@@ -17,7 +17,7 @@ Kristof Zerbe
 Kaiser-Friedrich-Str. 8
 65193 Wiesbaden
 
-Mobile: +49 171 6998867
+Mobil: +49 171 6998867
 
 kristof.zerbe@gmail.com
 </section>

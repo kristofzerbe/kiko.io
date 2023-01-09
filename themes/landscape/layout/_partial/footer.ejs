@@ -4,38 +4,38 @@
   <% } %>
   <div class="outer">
     <div class="inner">
-      
-        <div id="footer-info" class="footer-block">
-          &copy; 2019-<%= date(new Date(), 'YYYY') %> <a href="https://bio.link/kristof"><%= config.author || config.title %></a>
-          <span>&#x2022;</span>
-          <%= __('powered_by') %> <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>  
-          <div id="footer-links">
-            <% for (var i in theme.footer_menu){ %>
-              <a href="<%- url_for(theme.footer_menu[i]) %>"><%= __(i) %></a>
-            <% } %>
-          </div>
-        </div>
 
-        <ul id="footer-dots">
-          <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-          <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-          <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
-        </ul>
+      <ul id="footer-dots">
+        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+      </ul>
 
-        <% if (config.offline === false) { %>
-        <div id="footer-bmc" class="footer-block">
-          <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" 
-                  data-name="bmc-button" data-slug="kikoio" 
-                  data-font="Cookie" data-text="Buy me a coffee" data-emoji="" 
-                  data-color="#55555" data-outline-color="#fff" data-font-color="#fff" data-coffee-color="#fd0" ></script>
+      <div id="footer-info" class="footer-block">
+        &copy; 2019-<%= date(new Date(), 'YYYY') %> <a href="https://bio.link/kristof"><%= config.author || config.title %></a>
+        <span>&#x2022;</span>
+        <%= __('powered_by') %> <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>  
+        <div id="footer-links">
+          <% for (var i in theme.footer_menu){ %>
+            <a href="<%- url_for(theme.footer_menu[i]) %>"><%= __(i) %></a>
+          <% } %>
         </div>
-        <% } %>
+      </div>
+
+      <% if (config.offline === false) { %>
+      <div id="footer-bmc" class="footer-block">
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" 
+                data-name="bmc-button" data-slug="kikoio" 
+                data-font="Cookie" data-text="Buy me a coffee" data-emoji="" 
+                data-color="#55555" data-outline-color="#fff" data-font-color="#fff" data-coffee-color="#fd0" ></script>
+      </div>
+      <% } %>
         
-        <div id="webring">
-          <a id="webring-prev" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">←</a>
-          <a href="https://xn--sr8hvo.ws">IndieWeb Webring</a> 🕸💍
-          <a id="webring-next" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">→</a>
-        </div>
+      <div id="webring">
+        <a id="webring-prev" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">←</a>
+        <a href="https://xn--sr8hvo.ws">IndieWeb Webring</a> 🕸💍
+        <a id="webring-next" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">→</a>
+      </div>
 
     </div>
   </div>
