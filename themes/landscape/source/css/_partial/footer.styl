@@ -34,13 +34,16 @@
   #footer-info
     grid-area: info
 
+    .dot-space
+      display: inline-block
+      margin: 0 3px
+      color: color-highlight
+      /[data-theme="dark"] &
+        color: dark-color-highlight
+
     #footer-links
-      a:not(:first-child)
-        &:before
-          content: "•"
-          margin: 0 6px 0 4px
-          &:hover
-            text-decoration: none
+      .dot-space:last-child
+        display: none
 
   #footer-dots
     grid-area: dots
@@ -71,18 +74,19 @@
 
   #footer-bmc
     grid-area: bmc
-    .bmc-btn
-      min-width: auto
-      height: auto;
-      padding: 0
-      box-shadow: none !important
-      border: none !important
-      border-radius: 0 !important
-      .bmc-btn-text
-        font-family: Cookie
-        font-size: 22px !important
-      svg 
-        height: 21px !important
+    // ersetzt durch PNG
+    // .bmc-btn
+    //   min-width: auto
+    //   height: auto;
+    //   padding: 0
+    //   box-shadow: none !important
+    //   border: none !important
+    //   border-radius: 0 !important
+    //   .bmc-btn-text
+    //     font-family: Cookie
+    //     font-size: 22px !important
+    //   svg 
+    //     height: 21px !important
             
   #webring
     grid-area: webring

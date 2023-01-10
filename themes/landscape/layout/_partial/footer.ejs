@@ -12,22 +12,27 @@
       </ul>
 
       <div id="footer-info" class="footer-block">
-        &copy; 2019-<%= date(new Date(), 'YYYY') %> <a href="https://bio.link/kristof"><%= config.author || config.title %></a>
-        <span>&#x2022;</span>
+        &copy; 2019-<%= date(new Date(), 'YYYY') %>&nbsp;&nbsp;<a href="https://bio.link/kristof"><%= config.author || config.title %></a>
+        <span class="dot-space">&#x2022;</span>
         <%= __('powered_by') %> <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>  
         <div id="footer-links">
           <% for (var i in theme.footer_menu){ %>
             <a href="<%- url_for(theme.footer_menu[i]) %>"><%= __(i) %></a>
+            <span class="dot-space">&#x2022;</span>
           <% } %>
         </div>
       </div>
 
       <% if (config.offline === false) { %>
       <div id="footer-bmc" class="footer-block">
-        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" 
+        <a href="https://www.buymeacoffee.com/kikoio">
+          <img src="/images/bmc.png">
+        </a>
+        <!-- <script type="text/javascript" 
+                src="...//cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" 
                 data-name="bmc-button" data-slug="kikoio" 
                 data-font="Cookie" data-text="Buy me a coffee" data-emoji="" 
-                data-color="#55555" data-outline-color="#fff" data-font-color="#fff" data-coffee-color="#fd0" ></script>
+                data-color="#55555" data-outline-color="#fff" data-font-color="#fff" data-coffee-color="#fd0" ></script> -->
       </div>
       <% } %>
         

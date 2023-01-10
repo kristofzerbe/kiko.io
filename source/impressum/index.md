@@ -7,7 +7,7 @@ photograph:
   link: 'https://500px.com/photo/80798073/instructions-by-kristof-zerbe'  
 ---
 
-The following information (Impressum) is required under German law.
+The following information is required under German law.
 
 <section>
 
@@ -32,16 +32,34 @@ Alle auf diesem Blog veröffentlichten Werke bzw. Werkteile wie z.B. Texte, Date
 
 Die Inhalte der Seiten wurden sorgfältig geprüft und nach bestem Wissen erstellt. Dennoch wird für die hier bereitgestellten Informationen kein Anspruch auf Vollständigkeit, Aktualität, Qualität und Richtigkeit erhoben. Für Schäden, die durch das Vertrauen auf die Inhalte dieser Website oder deren Gebrauch entstehen, wird keine Haftung übernommen. Dies gilt insbesondere für Inhalte verlinkter Webseiten, für deren Inhalte ausschließlich deren Betreiber verantwortlich sind.
 
+</section>
+
+<section>
+
 # Datenschutz
 
 Die anwendbaren datenschutzrechtlichen Bestimmungen werden bei der Erhebung, bei der Nutzung und bei der Verarbeitung personenbezogener Daten beachtet. Sofern innerhalb des Internet-Angebotes die Möglichkeit der Eingabe von persönlichen Daten (E-Mail-Adresse oder Namen) besteht, erfolgt diese freiwillig. Die von Ihnen zur Verfügung gestellten personenbezogenen Daten werden nur intern zur Kommunikation mit Ihnen verwendet.
 
-# Analyse-Tool Pirsch
+## Hosting
+
+Diese Website wird auf GitHub Pages gehostet. Wenn eine GitHub Pages-Website besucht wird, wird die IP-Adresse des Besuchers zu Sicherheitszwecken protokolliert und gespeichert, unabhängig davon, ob sich der Besucher bei GitHub angemeldet hat oder nicht. Weitere Informationen zu den Sicherheitspraktiken von GitHub sind in den  [GitHub-Datenschutzbestimmungen](https://docs.github.com/de/site-policy/privacy-policies/github-privacy-statement) zu finden.
+
+## Kommentare
+
+Die Kommentare auf dieser Website werden von der Open-Source-Bibliothek [Utterances](https://utteranc.es/) ermöglicht, das ebenfalls auf GitHub gehostet wird. Von dort wird der Kommentar-Client nachgeladen und auf der entsprechenden Artikelseite angezeigt. Um zu kommentieren ist eine Anmeldung mittels Ihres eigenen GitHub-Kontos notwendig. Die Kommentare werden im GitHub-Repository als sogenanntes 'Issue' an der Artikeldatei dieser Webseite mit einer Verknüpfung zu Ihren GitHub-Profilinformationen gespeichert. Weitere Informationen ergeben sich aus dem obigen Abschnitt 'Hosting'.
+
+## Webmentions
+
+Webmentions sind ein Mechanismus, mit dem andere Websites benachrichtigt werden, wenn Sie auf Ihrer eigenen Website auf sie verweisen. Indem Sie Webmentions auf Ihrer Website unterstützen, signalisieren Sie ausdrücklich, dass Sie möchten, dass die verlinkten Websites Ihre öffentlichen Antworten auf deren Inhalte verarbeiten und veröffentlichen. Sie können jederzeit die Entfernung einer oder aller Webmentions, die von Ihrer Website stammen, beantragen.
+
+In der Regel werden empfangene Webmentions als Kommentare auf einer Webseite angezeigt. Dies bedeutet, dass eine Kopie Ihres Inhalts auf der Website angezeigt wird, auf die Sie in Ihrem eigenen Beitrag verlinken. Eine eingehende Webmention-Anfrage wird als Aufforderung zur Verarbeitung personenbezogener Daten behandelt und ist somit von vornherein eine Anfrage zur Veröffentlichung eines Kommentars von einer anderen Stelle im Web. Dafür wurde das Protokoll entwickelt und deshalb ist es auf Ihrer Website aktiv. Zu den veröffentlichten persönlichen Daten gehören Ihr Name, Ihr Profilbild von Ihrer Website oder einem gleichartigen Dienst, die URL Ihrer Website und persönliche Informationen, die Sie möglicherweise in Ihrem Beitrag angegeben haben. Die Veröffentlichung eingehender Webmentions basiert auf dem berechtigten Interesse, die Interaktion mit den Lesern dieser Website zu ermöglichen (Art. 6 (1) DSGVO), und folgt der Designabsicht des Webmention-Protokolls.
+
+## Analyse-Tool Pirsch
 
 Auf dieser Website kommt das Open-Source-Webanalysedienst Pirsch.io der Emvi Software GmbH, Nickelstraße 1b, 33378 Rheda-Wiedenbrück mit Sitz in Deutschland zum Einsatz, um die Nutzung der Website analysieren und regelmäßig verbessern zu können.
 
 Die Technologie von Pirsch ist eine Cookie-freie und datenschutzfreundliche Web-Analytik, um unsere Traffic genau messen zu können. Pirsch wird in Deutschland entwickelt und gehostet und arbeitet somit nach den strengen europäischen Datenschutzgesetzen der DSGVO. Die Analysedaten, welche erhoben werden, werden zu keiner Zeit an Dritte weitergegeben. Es werden mit der Technologie von Pirsch ausschließlich anonymisierte Daten (z.B. Datum und Uhrzeit des Seitenaufrufs, Verweildauer oder die Seite, von der sie unsere Website angesteuert haben) gespeichert und verwendet. Sie erlauben keine Identifikation der Besucher dieser Website. Rechtsgrundlage für die Nutzung von Pirsch ist Art. 6 Abs. 1 f) DSGVO.
 
-Sie haben die Möglichkeit, der Analyse zu widersprechen. Informationen zum Datenschutz von Pirsch erhalten sie unter: https://pirsch.io/privacy.
+Sie haben die Möglichkeit, der Analyse zu widersprechen. Informationen zum Datenschutz von Pirsch erhalten sie unter: [https://pirsch.io/privacy](https://pirsch.io/privacy).
 
 </section>
