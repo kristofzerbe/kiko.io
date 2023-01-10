@@ -23,13 +23,13 @@
   display: grid
   grid-template-columns: max-content auto max-content
   grid-template-rows: max-content max-content
-  grid-gap: 0px 80px
-  grid-template-areas: "info webring ." "dots bmc ."
+  grid-gap: 0px 64px
+  grid-template-areas: "info webring ." "dots . ."
   @media mq-mobile
     grid-template-columns: 1fr max-content max-content 
     grid-template-rows: max-content max-content
     grid-gap: 15px 5px
-    grid-template-areas: "dots info" "dots webring" "dots bmc"
+    grid-template-areas: "dots info" "dots webring" "dots ."
 
   #footer-info
     grid-area: info
@@ -72,25 +72,19 @@
         border-radius: 50%
         display: inline-block
 
-  #footer-bmc
-    grid-area: bmc
-    // ersetzt durch PNG
-    // .bmc-btn
-    //   min-width: auto
-    //   height: auto;
-    //   padding: 0
-    //   box-shadow: none !important
-    //   border: none !important
-    //   border-radius: 0 !important
-    //   .bmc-btn-text
-    //     font-family: Cookie
-    //     font-size: 22px !important
-    //   svg 
-    //     height: 21px !important
-            
   #webring
     grid-area: webring
     align-self: start
+    display: flex
+    a.webring-link
+      font-weight: bold
+      font-size: 120%
+      padding: 0 6px    
+      &:hover
+        text-decoration: none
+        color: color-highlight
+        /[data-theme="dark"] &
+          color: dark-color-highlight
 
 #back-to-top 
   color: color-logo
