@@ -188,12 +188,12 @@ Embedding a pen from [Codepen](https://codepen.io).
 **Usage Example:**
 
 ```js
-{% codepen "MWEbERg" "Lorem Ipsum" html 250 %}
+{% codepen "abjJNYE" "Lorem Ipsum" html 250 %}
 ```
 
 **Live Output:**
 
-{% codepen "MWEbERg" "Lorem Ipsum" html 250 %}
+{% codepen "abjJNYE" "Lorem Ipsum" html 250 %}
 
 See [https://github.com/kristofzerbe/hexo-tag-plugins#codepen](https://github.com/kristofzerbe/hexo-tag-plugins#codepen) for more details.
 
