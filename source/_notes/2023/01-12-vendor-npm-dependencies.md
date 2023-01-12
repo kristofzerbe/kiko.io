@@ -3,7 +3,7 @@ title: "#Link | Vendor npm dependencies"
 date: 2023-01-12 08:20:00
 syndication: 
 - host: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/109676149040771356
 ---
 
 Ever wanted to change something in a NPM library, but won't wait for bug fix release or break your build?
