@@ -19,8 +19,8 @@
     display: flex
     justify-content: space-between
     gap: 10px
-    text-decoration: none
     width: 100%
+    text-decoration: none
     color: color-default
     /[data-theme="dark"] &
       color: dark-color-default
@@ -75,10 +75,7 @@
   padding: 0 article-padding
   a
     text-decoration: none
-    color: color-link
-    /[data-theme="dark"] &
-      color: dark-color-link
-      border-bottom: dark-color-link-border 1px solid
+    border-bottom: transparent 1px solid
     &:hover
       border-bottom: color-link 1px solid
       /[data-theme="dark"] &
@@ -105,7 +102,7 @@
       flex-direction: column
       align-items: center
       row-gap: 6px
-      border-bottom: 1px white solid
+      // border-bottom: 1px white solid
       img
         width: 42px
       span
@@ -116,15 +113,22 @@
       color: #181717
       &:hover
         border-color: #181717
+      /[data-theme="dark"] &
+        filter: invert(1);
     a.npm
       color: #CB3837
       &:hover
         border-color: #CB3837
+      /[data-theme="dark"] &
+        filter: brightness(1.25);
     a.insights
       color: #32E0C4
+      filter: brightness(0.8);
       &:hover
         border-color: #32E0C4
     a.vscode
       color: #007acc
       &:hover
         border-color: #007acc
+      /[data-theme="dark"] &
+        filter: brightness(1.25);

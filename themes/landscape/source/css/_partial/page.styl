@@ -93,8 +93,6 @@
   a:not([class])
     text-decoration: none
     border-bottom: transparent 1px solid
-    /[data-theme="dark"] &
-      border-bottom: dark-color-link-border 1px solid
     &:hover
       border-bottom: color-link 1px solid
       /[data-theme="dark"] &
@@ -340,6 +338,8 @@
           opacity: 1
         img
           width: 42px;
+          /[data-theme="dark"] &
+            filter: invert(1);
       .card-img
         display: block
         position: relative
@@ -360,7 +360,6 @@
           color: color-default
           /[data-theme="dark"] &
             color: dark-color-default
-            border-bottom: dark-color-link-border 1px solid
           &:hover
             color: color-link
             /[data-theme="dark"] &

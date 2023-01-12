@@ -99,6 +99,15 @@
       background-color: color-highlight
       /[data-theme="dark"] &
         background-color: dark-color-highlight
+  img
+    max-width: 240px
+    @media mq-normal
+      max-width: 360px
+    @media mq-tablet
+      max-width: 320px
+  span.caption
+    display: none
+
 
 .article-inner
   @extend $block-inner
@@ -247,12 +256,19 @@
     margin: line-height-title 0
   a:not([class])
     text-decoration: none
-    /[data-theme="dark"] &
-      border-bottom: dark-color-link-border 1px solid
+    border-bottom: transparent 1px solid
     &:hover
       border-bottom: color-link 1px solid
       /[data-theme="dark"] &
         border-bottom: dark-color-link 1px solid
+  // a:not([class])
+  //   text-decoration: none
+  //   /[data-theme="dark"] &
+  //     // border-bottom: dark-color-link-border 1px solid
+  //   &:hover
+  //     border-bottom: color-link 1px solid
+  //     /[data-theme="dark"] &
+  //       border-bottom: dark-color-link 1px solid
   a.img-link
     transition: all ease-out .6s 
     transform: scale(1)
@@ -284,10 +300,11 @@
     /[data-theme="dark"] &:not(.image-compare)
       filter: brightness(85%)
   img.limit 
+    max-width: 240px
     @media mq-normal
-      max-width: 480px
-    @media mq-tablet
       max-width: 360px
+    @media mq-tablet
+      max-width: 320px
   .image-compare.image-modified
     max-width: none
     height: 100%
