@@ -136,6 +136,12 @@ module.exports = function(grunt){
           root: '/',
           cliCmd: 'generate'
         }
+      },
+      server: {
+        options: {
+          root: '/',
+          cliCmd: 'server'
+        }
       }
     }    
   });
@@ -149,5 +155,6 @@ module.exports = function(grunt){
   grunt.registerTask('all', ['concat', 'cssmin', 'uglify', 'copy', '_clean:tmp', 'hexo:clean', 'hexo:generate']);
   grunt.registerTask('complete', ['gitclone', 'concat', 'cssmin', 'uglify', 'copy', '_clean:tmp', 'hexo:clean', 'hexo:generate']);
   grunt.registerTask('build', ['hexo:clean', 'hexo:generate']);
+  grunt.registerTask('serve', ['hexo:clean', 'hexo:generate', 'hexo:server']);
   grunt.registerTask('generate', ['hexo:generate']);
 };

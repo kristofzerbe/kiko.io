@@ -2,7 +2,7 @@
   Codepen Tag - Customized from https://github.com/bibixx/hexo-tag-codepen
 
   Syntax:
-  {% codepen "slugHash" "title" [defaultTab:(html,js,css)] [height] ["width"] %}
+  {% codepen "slugHash" "title" [defaultTab:(html,js,css,result)] [height] ["width"] %}
 */
 
 hexo.extend.tag.register("codepen", function(args, content){
@@ -17,11 +17,13 @@ hexo.extend.tag.register("codepen", function(args, content){
     width = hexo.config.codepen.width || "100%"
   ] = args;  
 
+  //TODO: ../preview in Url to show "RUN PEN"
+
   const element = `
     <iframe height="${height}" 
         id="codepen-${slugHash}"
         class="codepen"
-        src="https://codepen.io/${userId}/embed/${slugHash}?height=${height}&default-tab=${defaultTab},result&theme-id=dark"
+        src="https://codepen.io/${userId}/embed/${slugHash}?height=${height}&default-tab=${defaultTab}&theme-id=dark"
         style="width: ${width};" 
         scrolling="no" 
         title="Codepen: ${title}" 
