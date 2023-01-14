@@ -19,7 +19,7 @@ related:
   - Automatic-Duplicate-Image-Shadow
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/109688223234996799
 ---
 
 Every year CodePen publishes a list of the 100 most "liked" pens on their site: [The Most Hearted of 2022](https://codepen.io/2022/popular/). It's always exciting to scroll through the list and marvel at the incredibly good work of CSS artists. 
