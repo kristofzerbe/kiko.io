@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel=manifest href=/site.webmanifest>
+  <meta charset="utf-8">
+  
+  
+  <!-- POST -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Meaningful automatic versioning with T4 - kiko.io</title>
+  <meta name="author" content="Kristof Zerbe">
+  <meta name="title" content="Meaningful automatic versioning with T4 - kiko.io">
+  
+  <meta name="description" content="How to implement versioning in C# projects the better way">
+  
+
+    <meta itemprop="name" content="Meaningful automatic versioning with T4 - kiko.io">
+  
+  <meta itemprop="description" content="How to implement versioning in C# projects the better way">
+  
+  <meta itemprop="image" content="https://kiko.io/images/social-media/Meaningful-automatic-versioning-with-T4.png">
+
+    <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kiko.io/post/Meaningful-automatic-versioning-with-T4/index.html">
+  <meta property="og:title" content="Meaningful automatic versioning with T4 - kiko.io">
+  
+  <meta property="og:description" content="How to implement versioning in C# projects the better way">
+  
+  <meta property="og:image" content="https://kiko.io/images/social-media/Meaningful-automatic-versioning-with-T4.png">
+  <meta property="og:locale" content="en_GB">
+
+  <link rel="canonical" href="https://kiko.io/post/Meaningful-automatic-versioning-with-T4/">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <meta name="theme-color" content="#444">
+
+    <link rel="webmention" href="https://webmention.io/kiko.io/webmention" />
+  <link rel="pingback" href="https://webmention.io/kiko.io/xmlrpc" />
+
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
+  <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
+  
+    
+
+  <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-semibold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-semibolditalic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Regular.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-It.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Bold.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="preload" as="image" href="/images/hero.jpg" imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$404.jpg" imagesrcset="/photos/mobile/$404.jpg 480w, /photos/tablet/$404.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$about.jpg" imagesrcset="/photos/mobile/$about.jpg 480w, /photos/tablet/$about.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$photos.jpg" imagesrcset="/photos/mobile/$photos.jpg 480w, /photos/tablet/$photos.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$projects.jpg" imagesrcset="/photos/mobile/$projects.jpg 480w, /photos/tablet/$projects.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$tiny-tools.jpg" imagesrcset="/photos/mobile/$tiny-tools.jpg 480w, /photos/tablet/$tiny-tools.jpg 768w">
+
+    <link rel="preload" as="image" href="/photos/normal/$notes-2021.jpg" imagesrcset="/photos/mobile/$notes-2021.jpg 480w, /photos/tablet/$notes-2021.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$notes-2022.jpg" imagesrcset="/photos/mobile/$notes-2022.jpg 480w, /photos/tablet/$notes-2022.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$notes-2023.jpg" imagesrcset="/photos/mobile/$notes-2023.jpg 480w, /photos/tablet/$notes-2023.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$notes-2024.jpg" imagesrcset="/photos/mobile/$notes-2024.jpg 480w, /photos/tablet/$notes-2024.jpg 768w">
+
+  
+<link rel="stylesheet" href="/css/dist/bundle.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/tools.js"></script>
+
+  
+<script src="/js/dist/scroll-timeline.js"></script>
+
+  
+<script src="/js/dist/image-compare-viewer.min.js"></script>
+
+  
+<script src="/js/dist/tiny-slider.min.js"></script>
+
+
+
+  <script defer type="text/javascript" 
+    src="https://api.pirsch.io/pirsch.js"
+    id="pirschjs"
+    data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>
+  <script type="text/javascript" 
+    src="https://api.pirsch.io/pirsch-events.js"
+    id="pirscheventsjs"
+    data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body id="body">  
+  <div id="container" class="container">
+    <div class="inner-container">
+      <div id="wrap">
+        <header id="header">
+  <a href="#" id="header-photo-link" target="_blank" rel="noopener" ></a>
+  <div id="banner">
+    <div id="header-nav-start"></div>
+    <nav id="header-nav" role="navigation">
+      <ul class="menu">
+        
+          <li class="menu-item" id="nav-home-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/">
+                <span>Home</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-archives-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/archives">
+                <span>Archives</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-series-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/series">
+                <span>series</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-notes-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/notes">
+                <span>notes</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-projects-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/projects">
+                <span>projects</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-tiny-tools-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/collections/tiny-tools">
+                <span>tiny-tools</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-photos-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/photos">
+                <span>photos</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-about-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/about">
+                <span>About</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-rss-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/atom.xml">
+                <span>RSS Feed</span>
+              </a>
+          </li>
+        
+      </ul>
+    </nav>
+    <div id="header-nav-end"></div>
+  </div>
+  <div id="progress"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+        <a href="/" id="logo">
+          <h1 id="title-wrap">
+            <span style="opacity:0.2;">kiko.io</span>
+          </h1>
+        </a>
+      
+        <h2 id="subtitle">
+          Memorable Tech Stuff
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        <a id="sub-nav-search" class="sub-nav-icon" title="Search"></a>
+        <div id="sub-nav-theme">          
+          <input type="checkbox" id="theme-switch">
+          <label for="theme-switch"></label>
+        </div>
+      </nav>
+
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kiko.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+<script>
+  if (location.pathname === "/") {
+    document.getElementById("nav-home-link").remove();
+  }
+</script>
+        <div id="content" class="outer">
+          <main>
+  <style>
+#banner {
+    background-size: cover;
+}
+@media screen and (max-width: 479px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/D70_7184.jpg"); }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/D70_7184.jpg"); }
+}
+@media screen and (min-width: 768px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/D70_7184.jpg"); }    
+}
+</style>
+
+
+    <img id="header-photo" src="/photos/normal/D70_7184.jpg" width="0" height="0"/>
+    <script>
+        var header = document.getElementById("header");
+        header.classList.add("photograph");
+        
+        var photoLink = document.getElementById("header-photo-link");
+        photoLink.href = "https://500px.com/photo/260478557";
+        photoLink.innerHTML = "see <strong>Specialita&#39; Toscane</strong> at 500px";
+    </script>
+
+
+
+
+<script>
+  var body = document.getElementById("body");
+  body.classList.add("article-view");
+</script>
+  
+<article id="post-2020/Meaningful-automatic-versioning-with-T4" 
+         class="article article-type-post h-entry" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <div class="h-card p-author" style="display:none">
+      <img class="u-photo" src="https://kiko.io/images/kristof-zerbe.png" alt="Kristof Zerbe" />
+      <a class="p-name u-url" href="https://kiko.io" rel="author">Kristof Zerbe</a>
+    </div>
+    <a class="u-url u-uid" href="https://kiko.io/post/Meaningful-automatic-versioning-with-T4/" style="display:none;">https://kiko.io/post/Meaningful-automatic-versioning-with-T4/</a>
+    <a href="/post/Meaningful-automatic-versioning-with-T4/" class="article-date">
+  
+    <time class="published dt-published" datetime="2020-06-27T15:57:18.000Z" itemprop="datePublished">27 Jun 2020</time>
+  
+</a>
+    
+  <div class="article-category p-category category-.net">
+    <a class="article-category-link" href="/categories/NET/">.NET</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+  
+    <h1 class="article-title p-name" itemprop="name">
+      Meaningful automatic versioning with T4
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle p-summary" itemprop="name">
+        How to implement versioning in C# projects the better way
+    </h2>
+
+      </header>
+    
+    
+    <div class="article-entry e-content" itemprop="articleBody">
+      <p>Every developer has to have an idea of versioning his products. If you work with Visual Studio you have the <code>Assembly Information</code> in the project properties dialog, to enter it manually everytime you want to release a new version:</p>
+<p><img src="/post/Meaningful-automatic-versioning-with-T4/AssemblyInformationDialog.png" alt="Assembly Information Dialog"></p>
+<p>The four fields are: MAJOR, MINOR, BUILD, REVISION.</p>
+<p>But seriously … who does that? I guess 99% of all C# developers are entering the <code>AssemblyInfo.cs</code> and enter the famous 2 asterisks into the version declaration of BUILD and REVISION, to let Visual Studio do the incrementation job:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">assembly: AssemblyVersion(<span class="string">&quot;1.0.*.*&quot;</span>)</span>]</span><br><span class="line">[<span class="meta">assembly: AssemblyFileVersion(<span class="string">&quot;1.0.*.*&quot;</span>)</span>]</span><br></pre></td></tr></table></figure>
+
+<p>But this is not the end of the possibilities … Let’s do it more meaningful, with some goodies and still automatic…</p>
+<span id="more"></span>
+
+<h2 id="More-informative-versioning"><a href="#More-informative-versioning" class="headerlink" title="More informative versioning"></a>More informative versioning</h2><p>A build with an increased MAJOR version number means, that there are significant changes in the product, even breaking changes. This always should be set manually.</p>
+<p>Also the MINOR. It stands for significant functional extensions of the product.</p>
+<p>How does Visual Studio calculate BUILD and REVISION?</p>
+<blockquote><p>When specifying a version, you have to at least specify major. If you specify major and minor, you can specify an asterisk for build. This will cause <strong>build</strong> to be equal to the <strong>number of days since January 1, 2000 local time</strong>, and for <strong>revision</strong> to be equal to the <strong>number of seconds since midnight local time, divided by 2</strong>.</p>
+</blockquote>
+
+<p>But, the BUILD number should explain, how often a software with a particular MAJOR.MINOR has been build, due to minor changes and bug fixes.</p>
+<p>The “Asterisk” REVISION number is a little weird, but at least with the BUILD number unique. But it says nothing. Better to pick up the idea of a date calculated, unique number, but not an arbitrary date … let’s take the date the project has started.</p>
+<p>For example: <strong>1.2.16.158</strong> … reads version 1.2 with 16 builds on the 158’th day after the project has started.</p>
+<h2 id="Start-with-T4"><a href="#Start-with-T4" class="headerlink" title="Start with T4"></a>Start with T4</h2><p>T4 (Text Template Transformation Toolkit) is a templating system in Visual Studio for generating text files during design time. It is very suitable to even generate code. Read about it <a href="https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates">here</a> and <a href="https://docs.microsoft.com/en-us/visualstudio/modeling/writing-a-t4-text-template">here</a>.</p>
+<p>A Text Template (.tt) has <strong>Directives</strong> (how the template is processed), <strong>Text blocks</strong> (text copied to the output) and <strong>Control blocks</strong> (program code).</p>
+<p>For our versioning template, we start with this in a new file named <strong><code>AssemblyVersion.tt</code></strong>:</p>
+<p><em>Directives</em>:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;#@ template hostspecific=&quot;true&quot; language=&quot;C#&quot; #&gt;</span><br><span class="line">&lt;#@ output extension=&quot;.cs&quot; #&gt;</span><br></pre></td></tr></table></figure>
+
+<p><em>Control block</em>:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="meta">#</span></span><br><span class="line">  <span class="built_in">int</span> major = <span class="number">1</span>;</span><br><span class="line">  <span class="built_in">int</span> minor = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">int</span> build = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">int</span> revision = <span class="number">0</span>;</span><br><span class="line"><span class="meta">#&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><em>Text block</em>:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// This code was generated by a tool. Any changes made manually will be lost</span></span><br><span class="line"><span class="comment">// the next time this code is regenerated.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> System.Reflection;</span><br><span class="line"></span><br><span class="line">[<span class="meta">assembly: AssemblyVersion(<span class="string">&quot;&lt;#= $&quot;</span>&#123;major&#125;.&#123;minor&#125;.&#123;build&#125;.&#123;revision&#125;<span class="string">&quot; #&gt;&quot;</span>)</span>]</span><br><span class="line">[<span class="meta">assembly: AssemblyFileVersion(<span class="string">&quot;&lt;#= $&quot;</span>&#123;major&#125;.&#123;minor&#125;.&#123;build&#125;.&#123;revision&#125;<span class="string">&quot; #&gt;&quot;</span>)</span>]</span><br></pre></td></tr></table></figure>
+
+<p>On saving the TT file, a new CS file with the same name will be created automatically and you got an error like this:</p>
+<p><img src="/post/Meaningful-automatic-versioning-with-T4/DuplicateAttributes.png" alt="Duplicate Attributes Error"></p>
+<h3 id="A-new-place-for-version-info"><a href="#A-new-place-for-version-info" class="headerlink" title="A new place for version info"></a>A new place for version info</h3><p>Th error occurs, because we have now <strong>two</strong> <code>AssemblyVersion</code> and <code>AssemblyFileVersion</code> attributes in our project. We need to comment out the original in <code>Properties\AssemblyInfo.cs</code>:</p>
+<p><img src="/post/Meaningful-automatic-versioning-with-T4/ChangeAssemblyInfo.png" alt="Change AssemblyInfo.cs"></p>
+<h3 id="Structural-Considerations"><a href="#Structural-Considerations" class="headerlink" title="Structural Considerations"></a>Structural Considerations</h3><p>It makes sense to store all needed files for the new versioning system in a new root folder of the project, named <strong>AssemblyVersion</strong>, starting with the <code>AssemblyVersion.tt</code>, because there will be more files later on.</p>
+<h2 id="New-app-information-file"><a href="#New-app-information-file" class="headerlink" title="New app information file"></a>New app information file</h2><p>As we replaced the original version attributes in the project with those from our generated  <code>AssemblyVersion.cs</code>, we cannot control the MAJOR and MINOR version number via the project property dialog any longer. We need a new approach on that, which can be edited easily and processed automatically.</p>
+<h3 id="AssemblyVersion-json"><a href="#AssemblyVersion-json" class="headerlink" title="AssemblyVersion.json"></a>AssemblyVersion.json</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;initialDate&quot;</span>: <span class="string">&quot;2019-09-29&quot;</span>,</span><br><span class="line">  <span class="string">&quot;versions&quot;</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">&quot;major&quot;</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="string">&quot;minor&quot;</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="string">&quot;releaseDate&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">      <span class="string">&quot;remarks&quot;</span>: <span class="string">&quot;Some cool new features; New versioning system&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">&quot;major&quot;</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="string">&quot;minor&quot;</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="string">&quot;releaseDate&quot;</span>: <span class="string">&quot;2019-10-01&quot;</span>,</span><br><span class="line">      <span class="string">&quot;remarks&quot;</span>: <span class="string">&quot;Initial Release&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>This new JSON file has two main items:</p>
+<ul>
+<li><code>initialDate</code> - the date the project has started, to calculate the REVISION later on</li>
+<li><code>versions</code> - a list with all different MAJOR&#x2F;MINOR versions we have done so far, with at least one without a release date … the one with the highest <code>major</code> and <code>minor</code>.</li>
+</ul>
+<p>The <code>remarks</code> attribute of a list item holds some information about the changes in a new version. Together with <code>releaseDate</code>, useful for a possible release history, shown in the product itself.</p>
+<h3 id="Library-references-in-T4"><a href="#Library-references-in-T4" class="headerlink" title="Library references in T4"></a>Library references in T4</h3><p>T4 runs in its own app domain, therefore it can use built-in libraries as <code>System.IO</code>, but not third-party libraries like <code>Newtonsoft.JSON</code>. </p>
+<p>We could reference those libraries from the projects package folder via the absolute path (if we use it in our product), but when we are running a NuGet update, the reference will break. </p>
+<p>It is advisable to store such libraries directly in a fixed folder, like <strong>AssemblyVersion\Libraries</strong>. They won’t have any impact to our product, because the are only used while design time.</p>
+<h2 id="The-MAJOR-and-MINOR"><a href="#The-MAJOR-and-MINOR" class="headerlink" title="The MAJOR and MINOR"></a>The MAJOR and MINOR</h2><p>To process the new <code>AssemblyVersion.json</code> in the template, we need some new directives for referencing the needed libraries and the import of the appropriate namepaces:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;#@ assembly name=&quot;System.Core&quot; #&gt;</span><br><span class="line">&lt;#@ assembly name=&quot;$(SolutionDir)\AssemblyVersion\Libraries\Newtonsoft.Json.dll&quot; #&gt;</span><br><span class="line"></span><br><span class="line">&lt;#@ import namespace=&quot;System.IO&quot; #&gt;</span><br><span class="line">&lt;#@ import namespace=&quot;System.Linq&quot; #&gt;</span><br><span class="line">&lt;#@ import namespace=&quot;Newtonsoft.Json&quot; #&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Via the use of the T4 variable <code>$(SolutionDir)</code>, we can point to our copy of Newtonsoft JSON.</p>
+<p>Now we can read and convert the JSON into an anonymous object and get the highest values of MAJOR and MINOR:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="meta">#</span></span><br><span class="line">    <span class="built_in">string</span> avPath = <span class="keyword">this</span>.Host.ResolvePath(<span class="string">&quot;AssemblyVersion.json&quot;</span>);</span><br><span class="line">    <span class="built_in">string</span> avJson = File.ReadAllText(avPath);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> avDefinition = <span class="keyword">new</span> &#123;</span><br><span class="line">        initialDate = <span class="string">&quot;&quot;</span>,</span><br><span class="line">        versions = <span class="keyword">new</span> [] &#123;</span><br><span class="line">            <span class="keyword">new</span> &#123;</span><br><span class="line">                major = <span class="number">0</span>,</span><br><span class="line">                minor = <span class="number">0</span>,</span><br><span class="line">                releaseDate = <span class="string">&quot;&quot;</span>,</span><br><span class="line">                remarks = <span class="string">&quot;&quot;</span> &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">var</span> avObject = JsonConvert.DeserializeAnonymousType(avJson, avDefinition);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Get highest Major/Minor from versions list</span></span><br><span class="line">    <span class="keyword">var</span> maxVersion = avObject.versions</span><br><span class="line">      .OrderByDescending(i =&gt; i.major)</span><br><span class="line">      .ThenByDescending(j =&gt; j.minor)</span><br><span class="line">      .First();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Set MAJOR</span></span><br><span class="line">    <span class="built_in">int</span> major = maxVersion.major;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Set MINOR</span></span><br><span class="line">    <span class="built_in">int</span> minor = maxVersion.minor;</span><br><span class="line"><span class="meta">#&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="The-BuildLog"><a href="#The-BuildLog" class="headerlink" title="The BuildLog"></a>The BuildLog</h2><p>In order to get the version number for BUILD, we need a method to count and store every build that has been run, separated by the MAJOR&#x2F;MINOR versions. This is a job for a <strong>Post-build event</strong>, which can be configured in the project properties dialog. The event uses shell commands as they are used on the command line.</p>
+<p>What the commands should do:&amp;nbsp;&amp;nbsp;&amp;nbsp;Write a new line with the current date and time in a log file, named after the MAJOR&#x2F;MINOR version and stored in the folder <strong>AssemblyVersion\BuildLogs</strong>.</p>
+<p><img src="/post/Meaningful-automatic-versioning-with-T4/BuildLog.png" alt="Build Log"></p>
+<h3 id="Extending-build-event-macros"><a href="#Extending-build-event-macros" class="headerlink" title="Extending build event macros"></a>Extending build event macros</h3><p>Shell commands for build events are supporting built-in variables, so called ‘macros’, like <code>$(ProjectDir)</code> (which returns the project directory path), but there is no such macro for the current version number. We have to introduce it via extending the project with a new build target.</p>
+<p>Unload the project in Visual Studio for editing the CSPROJ (or VBPROJ) file of your product manually and write the following definition just before the end-tag:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">PropertyGroup</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">PostBuildEventDependsOn</span>&gt;</span></span><br><span class="line">    $(PostBuildEventDependsOn);</span><br><span class="line">    PostBuildMacros;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">PostBuildEventDependsOn</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">PropertyGroup</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">Target</span> <span class="attr">Name</span>=<span class="string">&quot;PostBuildMacros&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">GetAssemblyIdentity</span> <span class="attr">AssemblyFiles</span>=<span class="string">&quot;$(TargetPath)&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Output</span> <span class="attr">TaskParameter</span>=<span class="string">&quot;Assemblies&quot;</span> <span class="attr">ItemName</span>=<span class="string">&quot;Targets&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">GetAssemblyIdentity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ItemGroup</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">VersionNumber</span> <span class="attr">Include</span>=<span class="string">&quot;@(Targets-&gt;&#x27;%(Version)&#x27;)&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ItemGroup</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Target</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>After reloading the project in Visual Studio, we can use <code>@(VersionNumber)</code> in our commands.</p>
+<h3 id="CreateBuildLog-bat"><a href="#CreateBuildLog-bat" class="headerlink" title="CreateBuildLog.bat"></a>CreateBuildLog.bat</h3><p>The event build editor is not very comfortable, so we create the batch file <code>CreateBuildLog.bat</code> in our <strong>AssemblyVersion</strong> folder and use this as the post build event command.</p>
+
+    <div class="alertbox alertbox-exclamation">
+      <p>The BuildLog folder must exist, before running the following command the first time!</p>
+
+    </div>
+  
+
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">REM --Get parameters</span></span><br><span class="line"><span class="built_in">set</span> PROJECT_DIR=%<span class="number">1</span></span><br><span class="line"><span class="built_in">set</span> VERSION_NUMBER=%<span class="number">2</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">REM --Set what to log</span></span><br><span class="line"><span class="built_in">set</span> LOG_LINE=<span class="variable">%DATE%</span> <span class="variable">%TIME%</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">REM --Inform the user</span></span><br><span class="line"><span class="built_in">set</span> MSG=CreateBuildLog &#x27;<span class="variable">%LOG_LINE%</span>&#x27; <span class="keyword">for</span> version <span class="variable">%VERSION_NUMBER%</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">%MSG%</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">REM --Get version parts</span></span><br><span class="line"><span class="keyword">FOR</span> /f &quot;tokens=<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span> delims=.&quot; <span class="variable">%%a</span> <span class="keyword">IN</span> (&quot;<span class="variable">%VERSION_NUMBER%</span>&quot;) <span class="keyword">do</span> (</span><br><span class="line">	<span class="built_in">set</span> MAJOR=<span class="variable">%%a</span></span><br><span class="line">	<span class="built_in">set</span> MINOR=<span class="variable">%%b</span></span><br><span class="line">	<span class="built_in">set</span> BUILD=<span class="variable">%%c</span></span><br><span class="line">	<span class="built_in">set</span> REVISION=<span class="variable">%%d</span></span><br><span class="line">)</span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">REM --Define BuildLog file and folder </span></span><br><span class="line"><span class="built_in">set</span> BUILDLOG_FILE=<span class="variable">%MAJOR%</span>.<span class="variable">%MINOR%</span>.log</span><br><span class="line"><span class="built_in">set</span> BUILDLOG_FOLDER=<span class="variable">%PROJECT_DIR%</span>\AssemblyVersion\BuildLogs</span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">REM --Write current date and time as new line in the file</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">%LOG_LINE%</span> &gt;&gt; <span class="variable">%BUILDLOG_FOLDER%</span>\<span class="variable">%BUILDLOG_FILE%</span>&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/post/Meaningful-automatic-versioning-with-T4/PostBuildEvent.png" alt="Post Build Event"></p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;$(ProjectDir)\AssemblyVersion\CreateBuildLog.bat&quot; &quot;$(ProjectDir)&quot; @(VersionNumber)</span><br></pre></td></tr></table></figure>
+
+<h2 id="The-BUILD"><a href="#The-BUILD" class="headerlink" title="The BUILD"></a>The BUILD</h2><p>As we have now the BuildLogs, we can use them in the template:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="meta">#</span></span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Get BuildLog of max version</span></span><br><span class="line">    <span class="built_in">string</span> buildlogFolder = <span class="keyword">this</span>.Host.ResolvePath(<span class="string">&quot;BuildLogs&quot;</span>);</span><br><span class="line">    <span class="built_in">string</span> buildLog = </span><br><span class="line">      buildlogFolder + <span class="string">&quot;\\&quot;</span> +</span><br><span class="line">      maxVersion.major + <span class="string">&quot;.&quot;</span> +</span><br><span class="line">      maxVersion.minor + <span class="string">&quot;.log&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Get number of lines from BuildLog or create a new log (!)</span></span><br><span class="line">    <span class="keyword">var</span> buildCount = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (File.Exists(buildLog)) &#123;</span><br><span class="line">        buildCount = File.ReadLines(buildLog).Count() + <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        File.Create(buildLog).Dispose();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Set BUILD</span></span><br><span class="line">    <span class="built_in">int</span> build = buildCount;</span><br><span class="line"><span class="meta">#&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Very important is to create the log file, if it doesn’t exists! Otherwise the build will always fail, because the version attributes can’t be created.</p>
+<h2 id="The-REVISION"><a href="#The-REVISION" class="headerlink" title="The REVISION"></a>The REVISION</h2><p>At least we have to set the REVISION number, by calculating the difference between the current date and the <code>initialDate</code>, which we have previously read from the <code>AssemblyVersion.json</code>:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="meta">#</span></span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Set REVISION</span></span><br><span class="line">    <span class="keyword">var</span> dateCreated = DateTime.Parse(avObject.initialDate);</span><br><span class="line">    <span class="built_in">int</span> revision = (DateTime.Now.Date - dateCreated.Date).Days;</span><br><span class="line"><span class="meta">#&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Transforming-T4-template-on-build"><a href="#Transforming-T4-template-on-build" class="headerlink" title="Transforming T4 template on build"></a>Transforming T4 template on build</h2><p>The last hurdle is to run the text transformation every time you build your product. Until now it runs only on saving the <code>AssemblyVersion.tt</code>.</p>
+<p>A great helper on that was Thomas Levesque’s post <a href="https://thomaslevesque.com/2017/11/13/transform-t4-templates-as-part-of-the-build-and-pass-variables-from-the-project/">“Transform T4 templates as part of the build, and pass variables from the project”</a>, where he describes every difficulty to reach this goal.</p>
+<p>To make it short: We have to edit the CSPROJ file again, to introduce TextTemplating to MSBuild.</p>
+<p>First we need following near the beginning of the projects XML:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">PropertyGroup</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">VisualStudioVersion</span> <span class="attr">Condition</span>=<span class="string">&quot;&#x27;$(VisualStudioVersion)&#x27; == &#x27;&#x27;&quot;</span>&gt;</span></span><br><span class="line">      16.0</span><br><span class="line">    <span class="tag">&lt;/<span class="name">VisualStudioVersion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">VSToolsPath</span> <span class="attr">Condition</span>=<span class="string">&quot;&#x27;$(VSToolsPath)&#x27; == &#x27;&#x27;&quot;</span>&gt;</span></span><br><span class="line">      $(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</span><br><span class="line">    <span class="tag">&lt;/<span class="name">VSToolsPath</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">TransformOnBuild</span>&gt;</span>true<span class="tag">&lt;/<span class="name">TransformOnBuild</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">OverwriteReadOnlyOutputFiles</span>&gt;</span>true<span class="tag">&lt;/<span class="name">OverwriteReadOnlyOutputFiles</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">TransformOutOfDateOnly</span>&gt;</span>false<span class="tag">&lt;/<span class="name">TransformOutOfDateOnly</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">PropertyGroup</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Secondly add the IMPORT of the TextTemplating target AFTER the CSharp target:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Import</span> <span class="attr">Project</span>=<span class="string">&quot;$(MSBuildToolsPath)\Microsoft.CSharp.targets&quot;</span> /&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;<span class="name">Import</span> <span class="attr">Project</span>=<span class="string">&quot;$(VSToolsPath)\TextTemplating\Microsoft.TextTemplating.targets&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>If you build your product now, a new build log is created and the version numbers BUILD and REVISION are automatically increased.</p>
+<h2 id="See-it-in-action"><a href="#See-it-in-action" class="headerlink" title="See it in action"></a>See it in action</h2><p>The project where I implemented this versioning first is <a href="https://github.com/kristofzerbe/HexoCommander">HexoCommander</a>. Feel free to download the code and see how the new versioning mechanism works.</p>
+<p><img src="/post/Meaningful-automatic-versioning-with-T4/screencast-build-hexocommander.gif" alt="Screencast Build HexoCommander"></p>
+<p>Enjoy versioning…</p>
+
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/T4/" rel="tag">T4</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Versioning/" rel="tag">Versioning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/" rel="tag">Visual Studio</a></li></ul>  
+  </div>
+
+      
+      <div class="article-permalink" id="article-permalink-clcw4c8yi000vk6lp90dkbdvk">
+    <input class="article-permalink-value" value="https://kiko.io/post/Meaningful-automatic-versioning-with-T4/" 
+           data-id="clcw4c8yi000vk6lp90dkbdvk" data-title="Meaningful automatic versioning with T4" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clcw4c8yi000vk6lp90dkbdvk");
+    });
+</script>
+
+      
+    </footer>
+
+  </div>
+
+  
+  <div class="article-webmentions">
+
+  <h2>Webmentions</h2>
+
+  <div class="webmentions-placeholder">
+    <p class="wm-placeholder">No Webmentions yet...</p>
+  </div>
+  
+  <p class="webmention-form-info">
+    In case your blog software can't send Webmentions, 
+    you can use this form to submit me a mention of this article...
+  </p>
+  
+  <form class="webmention-form" action="https://webmention.io/kiko.io>/webmention" 
+        name="webmention-form" method="post">
+    <label for="webmention-form-source">Your Article URL:</label><br>
+    <input class="webmention-form-source" type="url" name="source" 
+           placeholder="https://your-blog.com/your-article" required="">
+    <input type="hidden" name="target" value="https://kiko.io/post/Meaningful-automatic-versioning-with-T4/">
+    <input type="submit" value="Send Webmention">
+  </form>
+
+  <script>
+    window.addEventListener('load', function () {
+      insertWebmentions('2020/meaningful-automatic-versioning-with-t4', 'https://kiko.io', 'Kristof Zerbe');
+    });
+  </script>
+
+  
+    <input type="hidden" name="alias" value="https://kiko.io/categories/C/Meaningful-automatic-versioning-with-T4/">
+  
+
+</div>
+  <div class="article-comments">
+  <h2>Comments</h2>
+  <div id="comment-placeholder"></div>
+  <script>
+    window.addEventListener('load', function () {
+      insertUtterancesCommentBlock();
+    });
+  </script>
+</div>
+  
+  
+<nav id="article-nav">
+  
+    <a href="/post/Using-GitHub-as-Commenting-Platform/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Using GitHub as Commenting Platform
+        
+      </div>
+    </a>
+  
+  
+    <a href="/post/Automatic-Header-Images-in-Hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Automatic Header Images in Hexo</div>
+    </a>
+  
+</nav>
+
+  
+
+</article></main>
+          
+            <aside id="sidebar">
+  
+    <div class="widget-wrap">
+    <div class="widget about h-card"><!--http://microformats.org/wiki/h-card-->
+        <div class="avatar">
+            <a href="/about"><img class="u-photo" src="https://kiko.io/images/kristof-zerbe.png" alt="Kristof Zerbe"></a>
+            <a href="https://github.com/kristofzerbe" target="_blank" class="fab fa-github" rel="me"></a>
+            <a href="https://www.xing.com/profile/Kristof_Zerbe" target="_blank" class="fab fa-xing" rel="me"></a>
+            <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" target="_blank" class="fab fa-linkedin" rel="me"></a>      
+            <a href="https://500px.com/kikon" target="_blank" class="fab fa-500px" rel="me"></a>
+            <a href="https://indieweb.social/@kiko" target="_blank" class="fab fa-mastodon" rel="me"></a>
+        </div>
+        <h3 class="p-name">Kristof Zerbe</h3>
+        <p class="p-note">
+            <i class="p-role">Developer and Team Lead</i> located in <i class="p-locality">Wiesbaden</i>, <i class="p-country-name">Germany</i>
+        </p>
+        <a class="u-url u-uid" href="https://kiko.io" style="display:none;"></a>
+    </div>
+</div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            
+              <a href="/post/Favourite-Pens-of-2022/">Favourite Pens of 2022</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/Discoveries-22-Tips-Tricks/">Discoveries #22 -  Tips/Tricks</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/Generate-Content-from-Trello/">Generate Content from Trello</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/Discoveries-21-Sites-Pages/">Discoveries #21 -  Sites &amp; Pages</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/The-State-of-the-Blog/">The State of the Blog</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+
+  <div class="widget widget-wrap">
+    <p>
+      Want more? This way ... to the <a href="/archives">archives</a>
+    </p>
+  </div>  
+</aside>
+          
+        </div>
+        <footer id="footer">
+  
+  <div class="outer">
+    <div class="inner">
+
+      <ul id="footer-dots">
+        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+      </ul>
+
+      <div id="footer-info" class="footer-block">
+        &copy; 2019-2023&nbsp;&nbsp;<a href="https://bio.link/kristof">Kristof Zerbe</a>
+        <span class="dot-space">&#9679;</span>
+        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>  
+        <div id="footer-links">
+          
+            <a href="/about">About</a>
+            <span class="dot-space">&#9679;</span>
+          
+            <a href="/impressum">Impressum</a>
+            <span class="dot-space">&#9679;</span>
+          
+            <a href="/atom.xml">RSS Feed</a>
+            <span class="dot-space">&#9679;</span>
+          
+        </div>
+      </div>
+
+      <div id="webring">
+        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+      </div>
+      <script>
+  let isOffline = 'false' === 'true';
+</script>
+
+
+<script src="/js/jquery-3.6.0.min.js"></script>
+
+
+<script src="/js/dist/bundle.min.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+<script>
+  // HEADER
+  var header = {
+    height: 0,
+    top: 0,
+    offset: 55,
+    photoLinkOpacity: 0,
+    titleFontSize: 0
+  };
+
+  function initHeader() {
+    $("#header").css("height", ""); //reset inline css
+    $("#header-title").css("top", "");
+    $("#header-photo-link").css("opacity", "");
+    $("#title-wrap").css("font-size", "");
+    header.height = $("#header").height(); //set from given css
+    header.top = parseFloat($("#header-title").css("top"));
+    header.photoLinkOpacity = parseFloat($("#header-photo-link").css("opacity"));
+    header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
+    scrollHeader();
+  }
+  function scrollHeader() {
+    var h = header.height - header.offset,
+        st = $(document).scrollTop(),  
+        d = (h - st),
+        p = (d / h),
+        hfs = header.titleFontSize / 5 * 3,
+        jSide = $("aside");
+    if (d > 0) {
+      $("#header").css("height", d + header.offset + "px");
+      $("#header-photo-link").css("opacity", header.photoLinkOpacity * p);
+      $("#banner").css("opacity", p);
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1 - p) );
+      $("#header-title").css("top", header.top - (hfs * (1 - p)) + "px");
+      $("#subtitle").css("opacity", p);
+      jSide.css("max-width", "").css("position", "").css("top", "");
+    } else {
+      $("#header").css("height", header.offset + "px");
+      $("#header-photo-link").css("opacity", 0);
+      $("#banner").css("opacity", 0);
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );      
+      $("#header-title").css("top", header.top - (hfs * (1)) + "px");      
+      $("#subtitle").css("opacity", 0);
+      if (window.matchMedia("screen and (min-width: 768px)").matches & window.innerHeight > (jSide.height() + 50)) {
+        jSide.css("max-width", $("aside").width()).css("position", "fixed").css("top", "50px");
+      }
+    }    
+  }
+
+  // IMAGE VIEWPORT
+  function isVisibleInViewPort(e) {
+    var viewTop = $(window).scrollTop();
+    var viewBottom = viewTop + $(window).height();
+  
+    var eTop = $(e).offset().top;
+    var eBottom = eTop + $(e).height();
+  
+    return ((eBottom <= viewBottom) && (eTop >= viewTop));
+  }
+  function initViewportImage() {
+    $(".article-photo, .archive-article-photo, .card-img, .img-link").each(function() {
+      if (isVisibleInViewPort($(this))) {
+        $(this).addClass("in-view");
+      } else {
+        $(this).removeClass("in-view");
+      }
+    });
+  }
+
+  // HORIZONTAL MENU SCROLL
+  function watchNavMenuScroll() {
+    const nav = document.querySelector('#header-nav');
+    const menu = nav.querySelector('.menu');
+    const firstMenuItem = menu.querySelector('.menu-item:first-child');
+    const lastMenuItem = menu.querySelector('.menu-item:last-child');
+
+    firstMenuItem.setAttribute("data-scim", "start");
+    lastMenuItem.setAttribute("data-scim", "end");
+    
+    let observer = new IntersectionObserver((entries, observer) => { 
+      entries.forEach(entry => {
+
+        let scimElement = document.querySelector("#header-nav-" + entry.target.getAttribute("data-scim"));
+        if (entry.intersectionRatio != 1) { 
+          scimElement.classList.add("show");
+        } else {
+          scimElement.classList.remove("show");
+        }
+      });
+    }, {threshold: 1});
+    
+    observer.observe(firstMenuItem);
+    observer.observe(lastMenuItem);
+  }
+
+  $(window).on('scroll', function() {
+    scrollHeader();
+    initViewportImage();
+  });
+
+  $(window).on('resize', function() {
+    initHeader();
+    initViewportImage();
+  });
+
+  initHeader();
+  initViewportImage();
+  watchNavMenuScroll();
+
+  // BACK-TO-TOP
+  addBackToTop({
+    diameter: 30
+  })
+
+  // AUTOTYPING
+  setTimeout(function() {
+    $("#title-wrap").empty();
+    new AutoTyping({
+      id: 'title-wrap',
+      typeText: ['kiko.io'],
+      textColor: '#fff',
+      typeSpeed: 100,
+      typeDelay: 100,
+      showCursor: false,
+      delete: false,
+      typeInfinity: false
+    }).init();
+  }, 1000);
+
+  //MEDIUM-ZOOM
+  mediumZoom(document.querySelectorAll('img.zoom'), {
+    background: 'rgba(55, 55, 55, 0.5)',
+    margin: 20
+  });
+
+  //SCROLL-TIMELINE
+  // Create ScrollTimeline
+  const myScrollTimeline = new ScrollTimeline({
+    source: document.scrollingElement,
+    scrollSource: document.scrollingElement, // For legacy implementations
+    orientation: 'block',
+      scrollOffsets: [
+          new CSSUnitValue(0, 'percent'),
+          new CSSUnitValue(100, 'percent'),
+      ],
+  });
+
+  // Animate Progress Bar on Scroll
+  document.querySelector("#progress").animate(
+    {
+      transform: ["scaleX(0)", "scaleX(1)"]
+    },
+    { 
+      duration: 1, 
+      fill: "forwards", 
+      timeline: myScrollTimeline 
+    }
+  );
+</script>
+
+
+  <script>
+    //HOOK LINKS FOR PIRSCH EVENT...
+
+    //FEED
+    let feed = document.querySelector("#nav-rss-link a.sub-nav-link");
+    if (feed) feed.addEventListener("click", function() { pirsch('Feed clicked') });
+
+    //VSCODE
+    let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));
+    
+  </script>  
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel=manifest href=/site.webmanifest>
+  <meta charset="utf-8">
+  
+  
+  <!-- POST -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Mastodon simply explained - kiko.io</title>
+  <meta name="author" content="Kristof Zerbe">
+  <meta name="title" content="Mastodon simply explained - kiko.io">
+  
+  <meta name="description" content="Why it is not Twitter and never will be">
+  
+
+    <meta itemprop="name" content="Mastodon simply explained - kiko.io">
+  
+  <meta itemprop="description" content="Why it is not Twitter and never will be">
+  
+  <meta itemprop="image" content="https://kiko.io/images/social-media/Mastodon-simply-explained.png">
+
+    <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kiko.io/post/Mastodon-simply-explained/index.html">
+  <meta property="og:title" content="Mastodon simply explained - kiko.io">
+  
+  <meta property="og:description" content="Why it is not Twitter and never will be">
+  
+  <meta property="og:image" content="https://kiko.io/images/social-media/Mastodon-simply-explained.png">
+  <meta property="og:locale" content="en_GB">
+
+  <link rel="canonical" href="https://kiko.io/post/Mastodon-simply-explained/">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <meta name="theme-color" content="#444">
+
+    <link rel="webmention" href="https://webmention.io/kiko.io/webmention" />
+  <link rel="pingback" href="https://webmention.io/kiko.io/xmlrpc" />
+
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
+  <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
+  
+    
+
+  <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-semibold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-semibolditalic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Regular.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-It.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Bold.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="preload" as="image" href="/images/hero.jpg" imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$404.jpg" imagesrcset="/photos/mobile/$404.jpg 480w, /photos/tablet/$404.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$about.jpg" imagesrcset="/photos/mobile/$about.jpg 480w, /photos/tablet/$about.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$photos.jpg" imagesrcset="/photos/mobile/$photos.jpg 480w, /photos/tablet/$photos.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$projects.jpg" imagesrcset="/photos/mobile/$projects.jpg 480w, /photos/tablet/$projects.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$tiny-tools.jpg" imagesrcset="/photos/mobile/$tiny-tools.jpg 480w, /photos/tablet/$tiny-tools.jpg 768w">
+
+    <link rel="preload" as="image" href="/photos/normal/$notes-2021.jpg" imagesrcset="/photos/mobile/$notes-2021.jpg 480w, /photos/tablet/$notes-2021.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$notes-2022.jpg" imagesrcset="/photos/mobile/$notes-2022.jpg 480w, /photos/tablet/$notes-2022.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$notes-2023.jpg" imagesrcset="/photos/mobile/$notes-2023.jpg 480w, /photos/tablet/$notes-2023.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$notes-2024.jpg" imagesrcset="/photos/mobile/$notes-2024.jpg 480w, /photos/tablet/$notes-2024.jpg 768w">
+
+  
+<link rel="stylesheet" href="/css/dist/bundle.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/tools.js"></script>
+
+  
+<script src="/js/dist/scroll-timeline.js"></script>
+
+  
+<script src="/js/dist/image-compare-viewer.min.js"></script>
+
+  
+<script src="/js/dist/tiny-slider.min.js"></script>
+
+
+
+  <script defer type="text/javascript" 
+    src="https://api.pirsch.io/pirsch.js"
+    id="pirschjs"
+    data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>
+  <script type="text/javascript" 
+    src="https://api.pirsch.io/pirsch-events.js"
+    id="pirscheventsjs"
+    data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body id="body">  
+  <div id="container" class="container">
+    <div class="inner-container">
+      <div id="wrap">
+        <header id="header">
+  <a href="#" id="header-photo-link" target="_blank" rel="noopener" ></a>
+  <div id="banner">
+    <div id="header-nav-start"></div>
+    <nav id="header-nav" role="navigation">
+      <ul class="menu">
+        
+          <li class="menu-item" id="nav-home-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/">
+                <span>Home</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-archives-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/archives">
+                <span>Archives</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-series-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/series">
+                <span>series</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-notes-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/notes">
+                <span>notes</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-projects-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/projects">
+                <span>projects</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-tiny-tools-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/collections/tiny-tools">
+                <span>tiny-tools</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-photos-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/photos">
+                <span>photos</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-about-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/about">
+                <span>About</span>
+              </a>
+          </li>
+        
+          <li class="menu-item" id="nav-rss-link" >
+            <a class="nav-icon sub-nav-link"
+              href="/atom.xml">
+                <span>RSS Feed</span>
+              </a>
+          </li>
+        
+      </ul>
+    </nav>
+    <div id="header-nav-end"></div>
+  </div>
+  <div id="progress"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+        <a href="/" id="logo">
+          <h1 id="title-wrap">
+            <span style="opacity:0.2;">kiko.io</span>
+          </h1>
+        </a>
+      
+        <h2 id="subtitle">
+          Memorable Tech Stuff
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        <a id="sub-nav-search" class="sub-nav-icon" title="Search"></a>
+        <div id="sub-nav-theme">          
+          <input type="checkbox" id="theme-switch">
+          <label for="theme-switch"></label>
+        </div>
+      </nav>
+
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kiko.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+<script>
+  if (location.pathname === "/") {
+    document.getElementById("nav-home-link").remove();
+  }
+</script>
+        <div id="content" class="outer">
+          <main>
+  <style>
+#banner {
+    background-size: cover;
+}
+@media screen and (max-width: 479px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/20-08 Mallorca-8177.jpg"); }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/20-08 Mallorca-8177.jpg"); }
+}
+@media screen and (min-width: 768px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/20-08 Mallorca-8177.jpg"); }    
+}
+</style>
+
+
+    <img id="header-photo" src="/photos/normal/20-08 Mallorca-8177.jpg" width="0" height="0"/>
+    <script>
+        var header = document.getElementById("header");
+        header.classList.add("photograph");
+        
+        var photoLink = document.getElementById("header-photo-link");
+        photoLink.href = "https://500px.com/photo/1023572526";
+        photoLink.innerHTML = "see <strong>Ready For Takeoff</strong> at 500px";
+    </script>
+
+
+
+
+<script>
+  var body = document.getElementById("body");
+  body.classList.add("article-view");
+</script>
+  
+<article id="post-2022/Mastodon-simply-explained" 
+         class="article article-type-post h-entry" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <div class="h-card p-author" style="display:none">
+      <img class="u-photo" src="https://kiko.io/images/kristof-zerbe.png" alt="Kristof Zerbe" />
+      <a class="p-name u-url" href="https://kiko.io" rel="author">Kristof Zerbe</a>
+    </div>
+    <a class="u-url u-uid" href="https://kiko.io/post/Mastodon-simply-explained/" style="display:none;">https://kiko.io/post/Mastodon-simply-explained/</a>
+    <a href="/post/Mastodon-simply-explained/" class="article-date">
+  
+    <time class="published dt-published" datetime="2022-11-15T15:32:07.000Z" itemprop="datePublished">15 Nov 2022</time>
+  
+</a>
+    
+  <div class="article-category p-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+  
+    <h1 class="article-title p-name" itemprop="name">
+      Mastodon simply explained
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle p-summary" itemprop="name">
+        Why it is not Twitter and never will be
+    </h2>
+
+      </header>
+    
+    
+    <div class="article-entry e-content" itemprop="articleBody">
+      <p>This weekend I had a revival experience. I got myself a <a href="https://joinmastodon.org/"><strong>Mastodon</strong></a> account, after many years of staying away from social media as far as I could and at most tweeting a new blog post. Since my active Twitter days, things have taken such a turn for the worse, that I’ve preferred to stay away completely.</p>
+<p>I don’t know what made me join Mastodon on Sunday, but it sparked something in me: The love for the good old internet of the late 90s, early 2000s. These guys gave me a warm welcome and made me feel that Internet communities, away from sleazy influencers and banner ads, could actually still work. I got a taste of it, when I let this blog become part of IndieWeb over a year ago, but didn’t quite believe in it because of the low traffic and mentions.</p>
+<p>Now the richest man on the planet has to come along and buy the bird site, and a niche product called Mastodon, well known but underestimated in tech circles, almost explodes under the onslaught of disappointed commercial users. And that’s what we are on Twitter, Facebook and Co … a commercial object.</p>
+<p>The problem now will be how the community can integrate these many users for whom it was not mentally prepared. What now adapts to whom? The most important thing, however, will be to teach the newcomers (and I count myself among them) that Mastodon is not Twitter in new clothes!</p>
+<p>I was going to write a few things about this, but this morning I read a Twitter thread from <a href="https://mastodon.green/@pjakobs"><strong>Peter Jakobs</strong></a>, a self-proclaimed digital Aboriginal from Germany, that just sums it all up and explains it so well I could hardly do it:</p>
+<p><a href="https://twitter.com/pjakobs/status/1590276045521195008"><img src="/post/Mastodon-simply-explained/tweet-peter-jakobs-22-11-09.png" alt="Tweet from Peter Jakobs, November 29, 2022"></a></p>
+<p>That’s why I’m now doing something I’ve never done before: I quote Peter here completely, translated from German into English … Curtain up (and thank you <a href="https://www.deepl.com/en/translator">DeepL</a> :D):</p>
+<span id="more"></span>
+
+
+    <div>
+        <blockquote><p>Keyword “Mastodon for Twitterer” 🧵</p>
+<p>I’ve now read from a few of you that Mastodon is too complicated, you’ve had problems, or you somehow don’t like it.<br>As a stone age Twitterer (I created this account on Feb 13, 2007), I have by now half of my activities to Mastodon. Many of my posts you see here now come from there and I mostly come here to respond to your replies.</p>
+<p>So it is possible for an old white guy like me to move, and maybe I can ease some of your fears and help with the move.</p>
+<p>You ask why you should and that almost nothing has changed here (yet)?</p>
+<p>Maybe, but the signs on the wall don’t bode well. Elon Musk is, if you look at it neutrally, someone who destroys things in order to rebuild them - better, in his sense.<br>But that means change is coming. It will disturb you here, but it will come here maybe not in one fell swoop like a move to Mastodon.</p>
+<p>I’m always a friend of bringing about change myself, because then I can shape it in my own way and am not dependent on others. </p>
+<p>But it could be that you will still like Twitter in 12 or 18 months. I know this myself, my Twitter experience is by no means as negative as many others say.<br>But many others, like me, go a different way, and are thus no longer accessible here.</p>
+<p>But that is exactly one of the biggest disadvantages of Twitter and one of the advantages of Mastodon.<br>Let me explain.</p>
+<p>Many write that they are confused by these “instances” (some say “groups” which is not quite true) on Mastodon.<br>I can understand that, it can be confusing. But what if I told you that <strong>there is also an instance on Twitter, but just exactly one</strong>. Twitter.com namely. This one can’t communicate with anything or anyone else, an island in the middle of a vast social media ocean. And now this island has been stupidly bought by someone whose idea of what such an island should look like is rather special.</p>
+<p><strong>Mastodon has many such islands and they are connected with bridges.</strong></p>
+<p>You choose an island, pitch your tents there and - you are not tied to this island. On the one hand you can communicate completely freely with all inhabitants of all other islands, on the other hand you can, if you want to, <strong>take down your tents again and move to another island</strong> (you will lose a little bit, but not as much as if you want to leave here [at Twitter]). These islands (instances) are of different sizes. The biggest ones in Germany are <a href="https://mastodon.social/">mastodon.social</a>, <a href="https://troet.cafe/">troet.cafe</a>, <a href="https://mastodon.green/">mastodon.green</a> and a few others. But there are also tiny islands, I know more than one with a single inhabitant. Is he isolated on his island? No, because he is connected with all the others via said bridges.</p>
+<p><strong>Every island has one (or more) chiefs who keep order</strong> (Twitter does too, but we’ve complained about that a lot). These chiefs are often private individuals who run an instance as a hobby, but with the large instances there is usually a team behind it, and some also a small company (<a href="https://mastodon.social/">mastodon.social</a>, for example, is run by a limited liability company that was founded by the chief developer of the Mastodon software, <a href="https://mastodon.green/">mastodon.green</a> is, as far as I know, a one-man limited liability company).</p>
+<p>So now we know that there are many islands, that we are not trapped on these islands and that we can move.<br>These islands are one of the standout features of Mastodon: <strong>a Musk, a Trump, or even a certain four-letter newspaper can buy an island or even build an island themselves, but they can’t possibly buy all the islands, simply because it’s so cheap to build new islands.</strong> (I read somewhere once, to run an instance costs about 1€ per user per month). But because the interesting thing about Twitter, like Mastodon, is not the medium itself, but the networks we build on it, it doesn’t matter what happens to individual islands as long as we can move freely.</p>
+<p><strong>If individual islands do not want to comply with the rules at all, then they are “defederated”</strong>, or figuratively: the bridges there are demolished. However, this is the decision of each individual island chief, so it may not be grassroots democracy, but it is distributed.  </p>
+<p>Ok pjakobs, enough of the chatter, how am I supposed to find out which island is suitable for me?<br>Here is a searchable list of Mastodon instances: <a href="https://instances.social/list#lang=de&allowed=&prohibited=&min-users=&max-users=">instances.social&#x2F;list</a></p>
+<p>It is possible that another aspect of the “island” image will apply to you: there is a local timeline on the islands, which is also called that. So, if you choose an island that is particularly suited to a geographical region, a topic or a language, then you will see the contributions of the other “inhabitants of this island” in their local timeline - which hopefully have a certain thematic cohesion. However, as already mentioned, you can follow all people on all instances and you will also see them in your own timeline.</p>
+<p>Speaking of timelines: they are chronological and you only see the posts (toots) of those you follow. <strong>No algorithm, no “others like this too”, no good morning tweets in the late evening. Just the way Twitter used to be 10 years ago.</strong></p>
+<p>Follow: here is one of the points that bothers me the most, even if it is a small thing. Currently there are two software versions of Mastodon in use: 3.5.3 and four, which seem to handle following a bit differently.</p>
+<p>In one (I assume the older version), if you want to follow an account on another instance, you have to specify your own handle again (in my case “@<a href="mailto:&#112;&#106;&#97;&#x6b;&#111;&#x62;&#x73;&#x40;&#x6d;&#97;&#115;&#116;&#x6f;&#100;&#x6f;&#x6e;&#46;&#103;&#x72;&#101;&#x65;&#x6e;">&#112;&#106;&#97;&#x6b;&#111;&#x62;&#x73;&#x40;&#x6d;&#97;&#115;&#116;&#x6f;&#100;&#x6f;&#x6e;&#46;&#103;&#x72;&#101;&#x65;&#x6e;</a>“ - but that’s no longer the case in the new version, there you <strong>click a follow button and you follow the account</strong>.</p>
+<p>Another thing that is very very different is DMs. Here on Twitter, we’re used to DMs essentially working like little emails or a messenger: we have our own inbox and that’s where the dialogue with the other person shows up. Feels good, not visible to others, because yes, in a completely different realm.<br><strong>In Mastodon, direct messages are simply toots that are displayed only to the recipient(s)</strong> - and normally among all the other interactions.</p>
+<p>It’s confusing and doesn’t feel as nicely protected as it does here, and as I walked around town a bit yesterday I realized: this is intentional. Twitter creates an apparent privacy through display that DMs don’t offer.<br><strong>DMs are deliberately not PM, not private messages.</strong> Mastodon also makes that clear through its presentation. I have therefore added my Threema and Telegram link to my profile, these tools actually offer private conversations. Is not comfortable but honest.</p>
+<p>You have created an account, but do not want to move 100% yet or, as in my case, still have many friends on this site? There is also a kind of “bridge” from Mastodon archipelago to Twitter. You can mirror your tweets to Mastodon or vice versa. This is only valid for tweets, not for replies. That means you have to be a bit careful that you don’t just spam your followers in the other network, but also interact with them. After a few days of mirroring from Twitter to Mastodon I turned the bridge around, today probably 80% of the tweets you see from me and the non-replies are on Mastodon. I use <a href="https://crossposter.masto.donte.com.br/">crossposter.masto.donte.com.br</a> for this.</p>
+<p>The lovely people from <a href="https://twitter.com/digitalcourage">@digitalcourage</a> not only run a Mastodon instance themselves, but also put together a <a href="https://digitalcourage.de/digitale-selbstverteidigung/fediverse">great overview</a> of the Fediverse (the federated social media universe, which is much more than just Mastodon).</p>
+<p>In summary, if Musk is really fucking this up, you don’t have to be a helpless victim of his actions. Even if Mastodon might not be an alternative for you at the moment, create an account, try to find your followers over there. </p>
+<p>A life raft is not as comfortable as a floating boat, but it’s better than a sinking boat!</p>
+<p>Ah, here’s another more complete overview of Mastodon:<br><a href="https://the-federation.info/mastodon">the-federation.info&#x2F;mastodon</a> (takes a little while to load)</p>
+</blockquote>
+        <cite><a href="https://twitter.com/pjakobs/status/1590276045521195008">--- Peter Jakobs</a></cite>
+    </div>
+  
+
+<p>You will find Peter Jakobs on this island: <a href="https://mastodon.green/@pjakobs">@pjakobs@mastodon.green</a>.</p>
+<p>My new social media residencies are: <a href="https://indieweb.social/@kiko">@kiko@indieweb.social</a> for Tech Stuff in English and <a href="https://hessen.social/@kiko">@kiko@hessen.social</a> for politics and society in German.</p>
+<p><strong>Happy Tooting !</strong></p>
+
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Publishing/" rel="tag">Publishing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Social-Media/" rel="tag">Social Media</a></li></ul>  
+  </div>
+
+      
+  <div class="article-syndication">
+    <span>Syndicated at</span> 
+    
+        <a class="syndication-link u-syndication fab fa-mastodon" 
+           href="https://indieweb.social/@kiko/109348995418574427" rel="syndication" target="_blank"></a>
+    
+        <a class="syndication-link u-syndication fab fa-twitter" 
+           href="https://twitter.com/kristofz/status/1592571148218564608" rel="syndication" target="_blank"></a>
+    
+  </div>
+
+      <div class="article-permalink" id="article-permalink-clcw4c8zj002lk6lpf3kx14qc">
+    <input class="article-permalink-value" value="https://kiko.io/post/Mastodon-simply-explained/" 
+           data-id="clcw4c8zj002lk6lpf3kx14qc" data-title="Mastodon simply explained" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clcw4c8zj002lk6lpf3kx14qc");
+    });
+</script>
+
+      
+    </footer>
+
+  </div>
+
+  
+  <div class="article-webmentions">
+
+  <h2>Webmentions</h2>
+
+  <div class="webmentions-placeholder">
+    <p class="wm-placeholder">No Webmentions yet...</p>
+  </div>
+  
+  <p class="webmention-form-info">
+    In case your blog software can't send Webmentions, 
+    you can use this form to submit me a mention of this article...
+  </p>
+  
+  <form class="webmention-form" action="https://webmention.io/kiko.io>/webmention" 
+        name="webmention-form" method="post">
+    <label for="webmention-form-source">Your Article URL:</label><br>
+    <input class="webmention-form-source" type="url" name="source" 
+           placeholder="https://your-blog.com/your-article" required="">
+    <input type="hidden" name="target" value="https://kiko.io/post/Mastodon-simply-explained/">
+    <input type="submit" value="Send Webmention">
+  </form>
+
+  <script>
+    window.addEventListener('load', function () {
+      insertWebmentions('2022/mastodon-simply-explained', 'https://kiko.io', 'Kristof Zerbe');
+    });
+  </script>
+
+  
+
+</div>
+  <div class="article-comments">
+  <h2>Comments</h2>
+  <div id="comment-placeholder"></div>
+  <script>
+    window.addEventListener('load', function () {
+      insertUtterancesCommentBlock();
+    });
+  </script>
+</div>
+  
+  <div class="article-related">
+    <h2>Related</h2>
+    <div class="archives">
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/">
+        <img class="archive-article-photo" src="/photos/tablet/DSC_1936.jpg" alt="Botanical Coexistence" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/" class="archive-article-date">
+  
+    <time class="published dt-published" datetime="2022-11-13T16:48:40.000Z" itemprop="datePublished">13 Nov 2022</time>
+  
+</a>
+      
+  <div class="archive-article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+      
+
+
+
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/">Syndicate Mastodon Hashtags in your favorite Feed Reader</a>
+    </h1>
+  
+
+                    
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Collection/" rel="tag">Collection</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mastodon/" rel="tag">Mastodon</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Publishing/" rel="tag">Publishing</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/">
+        <img class="archive-article-photo" src="/photos/tablet/19-12 Kroatien-0183.jpg" alt="Dubrovnik Fishnet" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/" class="archive-article-date">
+  
+    <time class="published dt-published" datetime="2021-05-13T12:16:00.000Z" itemprop="datePublished">13 May 2021</time>
+  
+</a>
+      
+  <div class="archive-article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+      
+
+
+    <a class="archive-article-anything" itemprop="name" href="/series/indieweb">IndieWeb</a>
+
+
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/">Hexo and the IndieWeb (Receiving Webmentions)</a>
+    </h1>
+  
+
+      
+    <h2 class="archive-article-subtitle" itemprop="name">
+        Use webmention.io the easy way
+    </h2>
+              
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Publishing/" rel="tag">Publishing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Share/" rel="tag">Share</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/post/Hexo-and-the-IndieWeb/">
+        <img class="archive-article-photo" src="/photos/tablet/DSC_5088.jpg" alt="Steel Flower" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/post/Hexo-and-the-IndieWeb/" class="archive-article-date">
+  
+    <time class="published dt-published" datetime="2021-05-05T17:15:00.000Z" itemprop="datePublished">05 May 2021</time>
+  
+</a>
+      
+  <div class="archive-article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+      
+
+
+    <a class="archive-article-anything" itemprop="name" href="/series/indieweb">IndieWeb</a>
+
+
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/post/Hexo-and-the-IndieWeb/">Hexo and the IndieWeb</a>
+    </h1>
+  
+
+      
+    <h2 class="archive-article-subtitle" itemprop="name">
+        Make your blog ready for social interaction via Webmentions
+    </h2>
+              
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Publishing/" rel="tag">Publishing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Share/" rel="tag">Share</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+    </div>
+  </div>
+
+  
+<nav id="article-nav">
+  
+    <a href="/post/The-State-of-the-Blog/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          The State of the Blog
+        
+      </div>
+    </a>
+  
+  
+    <a href="/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Syndicate Mastodon Hashtags in your favorite Feed Reader</div>
+    </a>
+  
+</nav>
+
+  
+
+</article></main>
+          
+            <aside id="sidebar">
+  
+    <div class="widget-wrap">
+    <div class="widget about h-card"><!--http://microformats.org/wiki/h-card-->
+        <div class="avatar">
+            <a href="/about"><img class="u-photo" src="https://kiko.io/images/kristof-zerbe.png" alt="Kristof Zerbe"></a>
+            <a href="https://github.com/kristofzerbe" target="_blank" class="fab fa-github" rel="me"></a>
+            <a href="https://www.xing.com/profile/Kristof_Zerbe" target="_blank" class="fab fa-xing" rel="me"></a>
+            <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" target="_blank" class="fab fa-linkedin" rel="me"></a>      
+            <a href="https://500px.com/kikon" target="_blank" class="fab fa-500px" rel="me"></a>
+            <a href="https://indieweb.social/@kiko" target="_blank" class="fab fa-mastodon" rel="me"></a>
+        </div>
+        <h3 class="p-name">Kristof Zerbe</h3>
+        <p class="p-note">
+            <i class="p-role">Developer and Team Lead</i> located in <i class="p-locality">Wiesbaden</i>, <i class="p-country-name">Germany</i>
+        </p>
+        <a class="u-url u-uid" href="https://kiko.io" style="display:none;"></a>
+    </div>
+</div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            
+              <a href="/post/Favourite-Pens-of-2022/">Favourite Pens of 2022</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/Discoveries-22-Tips-Tricks/">Discoveries #22 -  Tips/Tricks</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/Generate-Content-from-Trello/">Generate Content from Trello</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/Discoveries-21-Sites-Pages/">Discoveries #21 -  Sites &amp; Pages</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/The-State-of-the-Blog/">The State of the Blog</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+
+  <div class="widget widget-wrap">
+    <p>
+      Want more? This way ... to the <a href="/archives">archives</a>
+    </p>
+  </div>  
+</aside>
+          
+        </div>
+        <footer id="footer">
+  
+  <div class="outer">
+    <div class="inner">
+
+      <ul id="footer-dots">
+        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+      </ul>
+
+      <div id="footer-info" class="footer-block">
+        &copy; 2019-2023&nbsp;&nbsp;<a href="https://bio.link/kristof">Kristof Zerbe</a>
+        <span class="dot-space">&#9679;</span>
+        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>  
+        <div id="footer-links">
+          
+            <a href="/about">About</a>
+            <span class="dot-space">&#9679;</span>
+          
+            <a href="/impressum">Impressum</a>
+            <span class="dot-space">&#9679;</span>
+          
+            <a href="/atom.xml">RSS Feed</a>
+            <span class="dot-space">&#9679;</span>
+          
+        </div>
+      </div>
+
+      <div id="webring">
+        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+      </div>
+      <script>
+  let isOffline = 'false' === 'true';
+</script>
+
+
+<script src="/js/jquery-3.6.0.min.js"></script>
+
+
+<script src="/js/dist/bundle.min.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+<script>
+  // HEADER
+  var header = {
+    height: 0,
+    top: 0,
+    offset: 55,
+    photoLinkOpacity: 0,
+    titleFontSize: 0
+  };
+
+  function initHeader() {
+    $("#header").css("height", ""); //reset inline css
+    $("#header-title").css("top", "");
+    $("#header-photo-link").css("opacity", "");
+    $("#title-wrap").css("font-size", "");
+    header.height = $("#header").height(); //set from given css
+    header.top = parseFloat($("#header-title").css("top"));
+    header.photoLinkOpacity = parseFloat($("#header-photo-link").css("opacity"));
+    header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
+    scrollHeader();
+  }
+  function scrollHeader() {
+    var h = header.height - header.offset,
+        st = $(document).scrollTop(),  
+        d = (h - st),
+        p = (d / h),
+        hfs = header.titleFontSize / 5 * 3,
+        jSide = $("aside");
+    if (d > 0) {
+      $("#header").css("height", d + header.offset + "px");
+      $("#header-photo-link").css("opacity", header.photoLinkOpacity * p);
+      $("#banner").css("opacity", p);
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1 - p) );
+      $("#header-title").css("top", header.top - (hfs * (1 - p)) + "px");
+      $("#subtitle").css("opacity", p);
+      jSide.css("max-width", "").css("position", "").css("top", "");
+    } else {
+      $("#header").css("height", header.offset + "px");
+      $("#header-photo-link").css("opacity", 0);
+      $("#banner").css("opacity", 0);
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );      
+      $("#header-title").css("top", header.top - (hfs * (1)) + "px");      
+      $("#subtitle").css("opacity", 0);
+      if (window.matchMedia("screen and (min-width: 768px)").matches & window.innerHeight > (jSide.height() + 50)) {
+        jSide.css("max-width", $("aside").width()).css("position", "fixed").css("top", "50px");
+      }
+    }    
+  }
+
+  // IMAGE VIEWPORT
+  function isVisibleInViewPort(e) {
+    var viewTop = $(window).scrollTop();
+    var viewBottom = viewTop + $(window).height();
+  
+    var eTop = $(e).offset().top;
+    var eBottom = eTop + $(e).height();
+  
+    return ((eBottom <= viewBottom) && (eTop >= viewTop));
+  }
+  function initViewportImage() {
+    $(".article-photo, .archive-article-photo, .card-img, .img-link").each(function() {
+      if (isVisibleInViewPort($(this))) {
+        $(this).addClass("in-view");
+      } else {
+        $(this).removeClass("in-view");
+      }
+    });
+  }
+
+  // HORIZONTAL MENU SCROLL
+  function watchNavMenuScroll() {
+    const nav = document.querySelector('#header-nav');
+    const menu = nav.querySelector('.menu');
+    const firstMenuItem = menu.querySelector('.menu-item:first-child');
+    const lastMenuItem = menu.querySelector('.menu-item:last-child');
+
+    firstMenuItem.setAttribute("data-scim", "start");
+    lastMenuItem.setAttribute("data-scim", "end");
+    
+    let observer = new IntersectionObserver((entries, observer) => { 
+      entries.forEach(entry => {
+
+        let scimElement = document.querySelector("#header-nav-" + entry.target.getAttribute("data-scim"));
+        if (entry.intersectionRatio != 1) { 
+          scimElement.classList.add("show");
+        } else {
+          scimElement.classList.remove("show");
+        }
+      });
+    }, {threshold: 1});
+    
+    observer.observe(firstMenuItem);
+    observer.observe(lastMenuItem);
+  }
+
+  $(window).on('scroll', function() {
+    scrollHeader();
+    initViewportImage();
+  });
+
+  $(window).on('resize', function() {
+    initHeader();
+    initViewportImage();
+  });
+
+  initHeader();
+  initViewportImage();
+  watchNavMenuScroll();
+
+  // BACK-TO-TOP
+  addBackToTop({
+    diameter: 30
+  })
+
+  // AUTOTYPING
+  setTimeout(function() {
+    $("#title-wrap").empty();
+    new AutoTyping({
+      id: 'title-wrap',
+      typeText: ['kiko.io'],
+      textColor: '#fff',
+      typeSpeed: 100,
+      typeDelay: 100,
+      showCursor: false,
+      delete: false,
+      typeInfinity: false
+    }).init();
+  }, 1000);
+
+  //MEDIUM-ZOOM
+  mediumZoom(document.querySelectorAll('img.zoom'), {
+    background: 'rgba(55, 55, 55, 0.5)',
+    margin: 20
+  });
+
+  //SCROLL-TIMELINE
+  // Create ScrollTimeline
+  const myScrollTimeline = new ScrollTimeline({
+    source: document.scrollingElement,
+    scrollSource: document.scrollingElement, // For legacy implementations
+    orientation: 'block',
+      scrollOffsets: [
+          new CSSUnitValue(0, 'percent'),
+          new CSSUnitValue(100, 'percent'),
+      ],
+  });
+
+  // Animate Progress Bar on Scroll
+  document.querySelector("#progress").animate(
+    {
+      transform: ["scaleX(0)", "scaleX(1)"]
+    },
+    { 
+      duration: 1, 
+      fill: "forwards", 
+      timeline: myScrollTimeline 
+    }
+  );
+</script>
+
+
+  <script>
+    //HOOK LINKS FOR PIRSCH EVENT...
+
+    //FEED
+    let feed = document.querySelector("#nav-rss-link a.sub-nav-link");
+    if (feed) feed.addEventListener("click", function() { pirsch('Feed clicked') });
+
+    //VSCODE
+    let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));
+    
+  </script>  
+
+    </div>
+  </div>
+</body>
+</html>
