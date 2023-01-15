@@ -6,6 +6,9 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
 ## Latest Posts
 <!-- BLOG-POST-LIST:START -->
+ - [Favourite Pens of 2022](https://kiko.io/post/Favourite-Pens-of-2022/)   
+ 14 Jan 2023   
+
  - [Discoveries #22 -  Tips/Tricks](https://kiko.io/post/Discoveries-22-Tips-Tricks/)   
  06 Jan 2023   
 
@@ -20,7 +23,4 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
  - [Mastodon simply explained](https://kiko.io/post/Mastodon-simply-explained/)   
  15 Nov 2022   
-
- - [Syndicate Mastodon Hashtags in your favorite Feed Reader](https://kiko.io/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/)   
- 13 Nov 2022   
 <!-- BLOG-POST-LIST:END -->
