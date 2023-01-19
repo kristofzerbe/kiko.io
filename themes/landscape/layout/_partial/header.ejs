@@ -5,9 +5,15 @@
     <nav id="header-nav" role="navigation">
       <ul class="menu">
         <% for (var i in theme.nav_menu){ %>
-          <li class="menu-item" id="nav-<%= i%>-link" >
-            <a class="nav-icon sub-nav-link"
-              href="<%- url_for(theme.nav_menu[i]) %>">
+          <%
+            let cl;
+            if (['home', 'search', 'rss'].some(v => i.includes(v))) {
+              cl = " menu-item-icon";
+            }
+          %>
+          <li class="menu-item<%= cl %>" id="nav-<%= i%>-link">
+            <a class="sub-nav-link"
+               href="<%- url_for(theme.nav_menu[i]) %>">
                 <span><%= __(i) %></span>
               </a>
           </li>
@@ -32,16 +38,11 @@
     </div>
     <div id="header-inner" class="inner">
       <nav id="sub-nav">
-        <a id="sub-nav-search" class="sub-nav-icon" title="<%= __('search') %>"></a>
         <div id="sub-nav-theme">          
           <input type="checkbox" id="theme-switch">
           <label for="theme-switch"></label>
         </div>
       </nav>
-
-      <div id="search-form-wrap">
-        <%- search_form({button: '&#xF002;'}) %>
-      </div>
     </div>
   </div>
 </header>

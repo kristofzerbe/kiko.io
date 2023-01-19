@@ -148,9 +148,8 @@ header.photograph #header-photo-link
       // &:last-child
       //   padding-right: 5px
 
-#nav-home-link,
-#nav-rss-link
-  margin: 0 !important
+.menu-item-icon
+  margin: auto 0 !important
   a
     &:before
       font-family: fa-icon-solid
@@ -159,22 +158,23 @@ header.photograph #header-photo-link
       height: icon-home-size
     span 
       display: none
+  &:first-child
+    margin-left: 5px !important
 
-#nav-home-link
+.menu-item-icon#nav-home-link
   a
     &:before
       content: icon-home
 
-#nav-rss-link
+.menu-item-icon#nav-search-link
+  a
+    &:before
+      content: icon-search
+
+.menu-item-icon#nav-rss-link
   a
     &:before
       content: icon-rss
-
-#nav-til-link 
-  .sub-nav-link
-    span
-      &:before
-        content: "#"
 
 #header-title
   text-align: center
@@ -278,56 +278,3 @@ $sub-nav-link
     input#theme-switch[type=checkbox]:checked + label
       &:before
         content: icon-sun
-
-#sub-nav-search
-  &:before
-    content: icon-search
-
-#search-form-wrap
-  position: absolute
-  top: 12px
-  width: 150px
-  height: 30px
-  right: -150px
-  opacity: 0
-  transition: 0.2s ease-out
-  &.on
-    opacity: 1
-    right: -8px
-  @media mq-mobile
-    width: 100px
-    right: -1000%
-
-.search-form
-  position: absolute
-  top: 0
-  left: 0
-  right: 0
-  background: #fff
-  padding: 5px 15px
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)
-  border-radius: border-radius-small
-
-.search-form-input
-  border: none
-  background: none
-  color: color-default
-  width: 100%
-  font: 13px font-sans
-  outline: none
-  &::-webkit-search-results-decoration
-  &::-webkit-search-cancel-button
-    -webkit-appearance: none
-
-.search-form-submit
-  position: absolute
-  top: 50%
-  right: 10px
-  margin-top: -7px
-  font: 13px fa-icon-solid
-  border: none
-  background: none
-  color: #bbb
-  cursor: pointer
-  &:hover, &:focus
-    color: #777

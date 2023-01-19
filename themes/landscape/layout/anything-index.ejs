@@ -10,6 +10,8 @@
     <%- page.content %>
 <% } %>
 
-<% page.posts.each(function(item){ %>
-    <%- partial('_partial/anything-index-item', { item: item, index: page.index }) %>
-<% }) %>
+<div class="anything-list">
+    <% page.posts.each(function(item){ %>
+        <%- partial('_partial/anything-index-item', { item: item, index: page.index }) %>
+    <% }) %>    
+</div>

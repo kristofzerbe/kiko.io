@@ -4,7 +4,8 @@
 
 <a class="page-backlink" href="<%= page.indexlink %>">Notes <%= page.year %></a>
 
-<article id="note-<%= page.slug %>" class="article note h-entry" itemscope itemprop="blogPost">
+<article id="note-<%= page.slug %>" data-pagefind-body data-pagefind-meta="type:Note"
+         class="article note h-entry" itemscope itemprop="blogPost">
 
   <div class="article-meta">
     <div class="h-card p-author" style="display:none">
@@ -12,7 +13,8 @@
       <a class="p-name u-url" href="<%- config.url %>" rel="author"><%- config.author %></a>
     </div>
     <a class="u-url u-uid" href="<%- page.permalink %>" style="display:none;"><%- page.permalink %></a>
-    <time class="published dt-published" datetime="<%= date_xml(page.date) %>" itemprop="datePublished"><%= date(page.date, 'DD MMM YYYY') %></time>
+    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+          datetime="<%= date_xml(page.date) %>"><%= date(page.date, 'DD MMM YYYY') %></time>
     <div class="article-category p-category category-note" style="display:none">
       <a class="article-category-link" href="/notes/">Notes</a> 
     </div>

@@ -15,6 +15,7 @@ function insertUtterancesCommentBlock() {
     commentScript.src = "https://utteranc.es/client.js";
     commentScript.setAttribute("repo", "kristofzerbe/kiko.io");
     commentScript.setAttribute("issue-term", "pathname");
+    commentScript.setAttribute("label", "comment");
     commentScript.setAttribute("theme", commentTheme);
     commentScript.setAttribute("crossorigin", "anonymous");
     const placeholder = document.getElementById("comment-placeholder");

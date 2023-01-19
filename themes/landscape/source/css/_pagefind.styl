@@ -1,0 +1,72 @@
+
+:root
+  --pagefind-ui-scale: 0.8 !important
+  --pagefind-ui-border-width: 1px !important
+  --pagefind-ui-border-radius: 0 !important
+  --pagefind-ui-image-border-radius: 0 !important
+  --pagefind-ui-font: font-sans !important
+  // --pagefind-ui-image-box-ratio: 3 / 2
+
+html[data-theme="light"]
+  --pagefind-ui-primary: color-highlight
+  --pagefind-ui-text: color-foreground 
+  --pagefind-ui-background: #fff 
+  --pagefind-ui-border: color-border-article
+  --pagefind-ui-tag: color-light
+
+html[data-theme="dark"]
+  --pagefind-ui-primary: dark-color-highlight
+  --pagefind-ui-text: dark-color-foreground
+  --pagefind-ui-background: #000
+  --pagefind-ui-border: dark-color-border-article
+  --pagefind-ui-tag: dark-color-light
+
+/* OVERRIDES */
+.pagefind-ui__search-input
+
+.pagefind-ui__search-input,
+.pagefind-ui__message
+  font-weight: normal !important
+
+.pagefind-ui__message
+  padding: 0 !important
+
+.pagefind-ui__message,
+.pagefind-ui__results
+  margin: 0 10px !important
+
+.pagefind-ui__result
+  padding-bottom: 0 !important
+  &:first-child
+    border-top: none !important
+  &:last-child
+    border-bottom: none !important
+
+.pagefind-ui__result-link
+  &:hover
+    color: color-link !important
+    /[data-theme="dark"] &
+      color: dark-color-link !important
+
+.pagefind-ui__result-excerpt
+  mark
+    background-color: var(--pagefind-ui-background) !important
+    color: var(--pagefind-ui-primary) !important
+
+.pagefind-ui__result-tags
+  margin-left: 0 !important
+
+.pagefind-ui__button
+  background-color: color-button !important
+  color: color-button-link !important
+  border-radius: border-radius-small !important
+  border: none !important
+  /[data-theme="dark"] &
+    background-color: dark-color-button !important
+    color: dark-color-button-link !important
+  &:hover
+    background-color: color-link !important
+    color: color-block !important
+    /[data-theme="dark"] &
+      background-color: dark-color-link !important
+      color: dark-color-block !important
