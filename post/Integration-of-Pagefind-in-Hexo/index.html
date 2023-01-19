@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel=manifest href=/site.webmanifest>
+  <meta charset="utf-8">
+  
+  
+  <!-- POST -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Integration of Pagefind in Hexo - kiko.io</title><meta name="robots" content="noindex">
+  <meta name="author" content="Kristof Zerbe">
+  <meta name="title" content="Integration of Pagefind in Hexo - kiko.io">
+  
+  <meta name="description" content="Adding a low-bandwidth local search to a static Hexo-powered website">
+  
+
+    <meta itemprop="name" content="Integration of Pagefind in Hexo - kiko.io">
+  
+  <meta itemprop="description" content="Adding a low-bandwidth local search to a static Hexo-powered website">
+  
+  <meta itemprop="image" content="https://kiko.io/images/social-media/Integration-of-Pagefind-in-Hexo.png">
+
+    <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kiko.io/post/Integration-of-Pagefind-in-Hexo/index.html">
+  <meta property="og:title" content="Integration of Pagefind in Hexo - kiko.io">
+  
+  <meta property="og:description" content="Adding a low-bandwidth local search to a static Hexo-powered website">
+  
+  <meta property="og:image" content="https://kiko.io/images/social-media/Integration-of-Pagefind-in-Hexo.png">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Twitter/Mastodon -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://kiko.io/post/Integration-of-Pagefind-in-Hexo/index.html">
+  <meta property="twitter:title" content="Integration of Pagefind in Hexo - kiko.io">
+  
+  <meta property="twitter:description" content="Adding a low-bandwidth local search to a static Hexo-powered website">
+  
+  <meta property="twitter:image" content="https://kiko.io/images/social-media/Integration-of-Pagefind-in-Hexo.png">
+  
+  <link rel="canonical" href="https://kiko.io/post/Integration-of-Pagefind-in-Hexo/">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <meta name="theme-color" content="#444">
+
+    <link rel="webmention" href="https://webmention.io/kiko.io/webmention" />
+  <link rel="pingback" href="https://webmention.io/kiko.io/xmlrpc" />
+
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
+  <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
+  
+    
+
+  <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-semibold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-semibolditalic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Regular.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-It.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Bold.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="preload" as="image" href="/images/hero.jpg" imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$404.jpg" imagesrcset="/photos/mobile/$404.jpg 480w, /photos/tablet/$404.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$about.jpg" imagesrcset="/photos/mobile/$about.jpg 480w, /photos/tablet/$about.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$photos.jpg" imagesrcset="/photos/mobile/$photos.jpg 480w, /photos/tablet/$photos.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$projects.jpg" imagesrcset="/photos/mobile/$projects.jpg 480w, /photos/tablet/$projects.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$tiny-tools.jpg" imagesrcset="/photos/mobile/$tiny-tools.jpg 480w, /photos/tablet/$tiny-tools.jpg 768w">
+
+    <link rel="preload" as="image" href="/photos/normal/$notes-2021.jpg" imagesrcset="/photos/mobile/$notes-2021.jpg 480w, /photos/tablet/$notes-2021.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$notes-2022.jpg" imagesrcset="/photos/mobile/$notes-2022.jpg 480w, /photos/tablet/$notes-2022.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$notes-2023.jpg" imagesrcset="/photos/mobile/$notes-2023.jpg 480w, /photos/tablet/$notes-2023.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$notes-2024.jpg" imagesrcset="/photos/mobile/$notes-2024.jpg 480w, /photos/tablet/$notes-2024.jpg 768w">
+
+  
+<link rel="stylesheet" href="/css/dist/bundle.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/tools.js"></script>
+
+  
+<script src="/js/dist/scroll-timeline.js"></script>
+
+  
+<script src="/js/dist/image-compare-viewer.min.js"></script>
+
+  
+<script src="/js/dist/tiny-slider.min.js"></script>
+
+
+
+  <script defer type="text/javascript" 
+    src="https://api.pirsch.io/pirsch.js"
+    id="pirschjs"
+    data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>
+  <script type="text/javascript" 
+    src="https://api.pirsch.io/pirsch-events.js"
+    id="pirscheventsjs"
+    data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body id="body">  
+  <div id="container" class="container">
+    <div class="inner-container">
+      <div id="wrap">
+        <header id="header">
+  <a href="#" id="header-photo-link" target="_blank" rel="noopener" ></a>
+  <div id="banner">
+    <div id="header-nav-start"></div>
+    <nav id="header-nav" role="navigation">
+      <ul class="menu">
+        
+          
+          <li class="menu-item menu-item-icon" id="nav-home-link">
+            <a class="sub-nav-link"
+               href="/">
+                <span>Home</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item menu-item-icon" id="nav-search-link">
+            <a class="sub-nav-link"
+               href="/search">
+                <span>Search</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-archives-link">
+            <a class="sub-nav-link"
+               href="/archives">
+                <span>Archives</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-series-link">
+            <a class="sub-nav-link"
+               href="/series">
+                <span>series</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-notes-link">
+            <a class="sub-nav-link"
+               href="/notes">
+                <span>notes</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-projects-link">
+            <a class="sub-nav-link"
+               href="/projects">
+                <span>projects</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-tiny-tools-link">
+            <a class="sub-nav-link"
+               href="/collections/tiny-tools">
+                <span>tiny-tools</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-photos-link">
+            <a class="sub-nav-link"
+               href="/photos">
+                <span>photos</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-about-link">
+            <a class="sub-nav-link"
+               href="/about">
+                <span>About</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item menu-item-icon" id="nav-rss-link">
+            <a class="sub-nav-link"
+               href="/atom.xml">
+                <span>RSS Feed</span>
+              </a>
+          </li>
+        
+      </ul>
+    </nav>
+    <div id="header-nav-end"></div>
+  </div>
+  <div id="progress"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+        <a href="/" id="logo">
+          <h1 id="title-wrap">
+            <span style="opacity:0.2;">kiko.io</span>
+          </h1>
+        </a>
+      
+        <h2 id="subtitle">
+          Memorable Tech Stuff
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        <div id="sub-nav-theme">          
+          <input type="checkbox" id="theme-switch">
+          <label for="theme-switch"></label>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+<script>
+  if (location.pathname === "/") {
+    document.getElementById("nav-home-link").remove();
+  }
+</script>
+        <div id="content" class="outer">
+          <main>
+  <style>
+#banner {
+    background-size: cover;
+}
+@media screen and (max-width: 479px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/22-08 Bretagne-Jersey-0201.jpg"); }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/22-08 Bretagne-Jersey-0201.jpg"); }
+}
+@media screen and (min-width: 768px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/22-08 Bretagne-Jersey-0201.jpg"); }    
+}
+</style>
+
+<img id="header-photo" data-pagefind-meta="image[src], image_alt[alt]"
+     src="/photos/normal/22-08 Bretagne-Jersey-0201.jpg" 
+     alt="Proud Vespa"
+     width="0" height="0"/>
+
+
+    <script>
+        var header = document.getElementById("header");
+        header.classList.add("photograph");
+        
+        var photoLink = document.getElementById("header-photo-link");
+        photoLink.href = "https://500px.com/photo/1056125429/proud-vespa-by-kristof-zerbe";
+        photoLink.innerHTML = "see <strong>Proud Vespa</strong> at 500px";
+    </script>
+
+
+
+
+<script>
+  var body = document.getElementById("body");
+  body.classList.add("article-view");
+</script>
+  
+<article id="post-2023/Integration-of-Pagefind-in-Hexo" data-pagefind-body data-pagefind-meta="type:Post"
+         class="article article-type-post h-entry" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <div class="h-card p-author" style="display:none">
+      <img class="u-photo" src="https://kiko.io/images/kristof-zerbe.png" alt="Kristof Zerbe" />
+      <a class="p-name u-url" href="https://kiko.io" rel="author">Kristof Zerbe</a>
+    </div>
+    <a class="u-url u-uid" href="https://kiko.io/post/Integration-of-Pagefind-in-Hexo/" style="display:none;">https://kiko.io/post/Integration-of-Pagefind-in-Hexo/</a>
+    <a href="/post/Integration-of-Pagefind-in-Hexo/" class="article-date">
+  
+    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+          datetime="2023-01-16T13:47:07.000Z">16 Jan 2023</time>
+  
+</a>
+    
+  <div class="article-category p-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+
+
+    <a class="article-anything" itemprop="name" href="/series/a-new-blog">A New Blog</a>
+
+
+
+        
+  
+    <h1 class="article-title p-name" itemprop="name" data-pagefind-meta="title">
+      Integration of Pagefind in Hexo
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle p-summary" itemprop="name">
+        Adding a low-bandwidth local search to a static Hexo-powered website
+    </h2>
+
+      </header>
+    
+    
+    <div class="article-entry e-content" itemprop="articleBody">
+      <p>From the beginning of this blog I wanted to provide some kind of full text search in order to give my users the ability to find stuff by keyword.</p>
+<p>There are a few Hexo plugins that have approached the subject, but it was not really satisfactory and performant. So I relied on the worlds biggest search engine: Google. A search button, which drives out a small input field and with the pressing of the ENTER key the form was sent via GET to <code>//google.com/search</code>.</p>
+<p><img src="/post/Integration-of-Pagefind-in-Hexo/google-site-search.png" alt="Google Site Search on kiko.io"></p>
+<p>The procedure was simple, but also burdened with the fact that I always expose my users to Google. At least until now … :)</p>
+<p><a href="https://mstdn.social/@BryceWrayTX">Bryce Wray</a> set me on a new path with his post <a href="https://www.brycewray.com/posts/2022/12/sweeter-searches-pagefind/">Sweeter searches with Pagefind</a>, in which he talks about his experience with the still fairly fresh tool <a href="https://pagefind.app/"><strong>Pagefind</strong></a>…</p>
+
+    <div>
+        <blockquote><p>Pagefind is a fully static search library that aims to perform well on large sites, while using as little of your users’ bandwidth as possible, and without hosting any infrastructure …</p>
+</blockquote>
+        <cite><a href="https://pagefind.app/">--- Liam Bigelow @ pagefind.app</a></cite>
+    </div>
+  
+
+<p>Pardon me? A full text search for SSG’s running completely in the browser? It sounded so great that I had to try it right away. And what can I say … it not only works fantastically well, but is also extremely easy to implement. Of course, you have to consider a few things, especially with regard to the SSG Hexo I use, but I didn’t find any big hurdles, also because the tool is so <a href="https://pageind.app/">well documented</a>. Let’s see what my implementation looks like…</p>
+<span id="more"></span>
+
+<hr>
+<h2 id="The-Tool-in-Brief"><a href="#The-Tool-in-Brief" class="headerlink" title="The Tool in Brief"></a>The Tool in Brief</h2><p>Pagefind it is a Node.js tool and is started via the Node Package Runner (npx) and <strong>runs against the static files already created during the build</strong>. It indexes all the desired pages or even parts of the pages and creates meta and index files for them in a special build folder, which can be retrieved later via JavaScript. To make things a bit more user-friendly, Pagefind also directly generates the necessary JavaScript and CSS files for a UI.</p>
+<p>… but Liam can explain better how it works: </p>
+<div class="video-container"><iframe src=https://www.youtube.com/embed/74lsEXqRQys frameborder=0 allow=autoplay; encrypted-media allowfullscreen></iframe></div>
+
+<hr>
+<h2 id="Implementation-in-Hexo"><a href="#Implementation-in-Hexo" class="headerlink" title="Implementation in Hexo"></a>Implementation in Hexo</h2><p>First of all I decided to store all necessary parameters in a supported <a href="https://pagefind.app/docs/config-sources/">config file</a> in the root of my blog project.</p>
+<figure class="highlight yaml"><figcaption><span>pagefind.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">source:</span> <span class="string">docs</span></span><br><span class="line"><span class="attr">bundle_dir:</span> <span class="string">pagefind</span></span><br><span class="line"><span class="attr">exclude_selectors:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;.note-list&quot;</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;.anything-list&quot;</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;.article-related&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>source</code> defines the relative folder where all static files are created during the build and which should now be indexed.</p>
+<p><code>bundle_dir</code> overrides the default storage folder called <code>_pagefind</code>, which is created in the build folder for the search files. This is necessary because my blog is built and hosted on <strong>Github Pages</strong> and the responsible GitHub Action goes over folders with a starting underscore on deployment. More info on that <a href="https://github.com/orgs/community/discussions/23640">here</a> and <a href="https://github.com/CloudCannon/pagefind/discussions/126">here</a>.</p>
+<p><code>exclude_selectors</code> is a list of all those page elements whose content should NOT be indexed, but more about that later.</p>
+<p>With another setting called <code>glob</code> it is possible to tell Pagefind which files to index, but this currently has its pitfalls when trying to exclude some. Liam already <a href="https://github.com/CloudCannon/pagefind/discussions/127">has this on the screen</a> for one of the next versions.</p>
+<hr>
+<h3 id="Limiting-Indexing-Content"><a href="#Limiting-Indexing-Content" class="headerlink" title="Limiting Indexing Content"></a>Limiting Indexing Content</h3><p>A post on a web page never stands alone, but is surrounded by other elements such as navigation, further links, etc. However, these addional elements should not end up in the index. Pagefind skips some of them like <code>nav</code>, <code>form</code> or <code>script</code> automatically, but there always remain some that should be excluded by hand.</p>
+<p>Best option to narrow down the indexable content is the use of the attribute <code>data-pagefind-body</code>. Instead of excluding something, tell Pagefind what to include. However, this approach makes it easier, but also has consequences:</p>
+
+    <div>
+        <blockquote><p>If <em>data-pagefind-body</em> is found <strong>anywhere</strong> on your site, any pages without this attribute will be removed from your index.</p>
+</blockquote>
+        <cite><a href="https://pagefind.app/docs/indexing/">--- pagefind.app</a></cite>
+    </div>
+  
+
+<p>In my case, I had a few places in my templates that I needed to add the attribute to:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>File</th>
+<th>Element</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Post</td>
+<td>_partial&#x2F;article.ejs</td>
+<td>article</td>
+</tr>
+<tr>
+<td>Notes</td>
+<td>note.ejs</td>
+<td>article</td>
+</tr>
+<tr>
+<td>Page</td>
+<td>page.ejs</td>
+<td>.page-content</td>
+</tr>
+<tr>
+<td>Dynamic Page</td>
+<td>[name].ejs</td>
+<td>.page-content</td>
+</tr>
+<tr>
+<td>Anything Page</td>
+<td>_partial&#x2F;anything-page-item.ejs</td>
+<td>.anything-content</td>
+</tr>
+</tbody></table>
+<p>All elements inside of the elements attributed like that, I had to exclude via the setting <code>exclude_selectors</code> in the config (see above).</p>
+<hr>
+<h3 id="Specifying-Meta-Information"><a href="#Specifying-Meta-Information" class="headerlink" title="Specifying Meta Information"></a>Specifying Meta Information</h3><p>It was important to me to show the date of a post in the search result, because nothing is as inaccurate as a post that is many years old. With Pagefind you select the HTML element in the templates in which the meta value is located and attribute it with <code>data-pagefind-meta</code>, for example:</p>
+<figure class="highlight html"><figcaption><span>date.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">time</span> <span class="attr">class</span>=<span class="string">&quot;published dt-published&quot;</span> <span class="attr">itemprop</span>=<span class="string">&quot;datePublished&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">data-pagefind-meta</span>=<span class="string">&quot;date&quot;</span>&gt;</span></span><br><span class="line">  &lt;%= date(page.date, &#x27;DD MMM YYYY&#x27;) %&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">time</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>As title for the search hit Pagefind searches for H1 tags and takes the value of the last tag it finds. If you are not sure that there is always only one H1 tag on the page (and for me it is), then you better specify which tag it should take:</p>
+<figure class="highlight html"><figcaption><span>title.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;&lt;%= class_name %&gt;&quot;</span> <span class="attr">itemprop</span>=<span class="string">&quot;name&quot;</span> <span class="attr">data-pagefind-meta</span>=<span class="string">&quot;title&quot;</span>&gt;</span></span><br><span class="line">  &lt;%= post.title %&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Thus, on specifying meta data you can refer not only to the content of a tag, but also to other attributes. Here’s the example for my special Hexo implementation for header images:</p>
+<figure class="highlight html"><figcaption><span>photograph.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;header-photo&quot;</span> <span class="attr">data-pagefind-meta</span>=<span class="string">&quot;image[src], image_alt[alt]&quot;</span></span></span><br><span class="line"><span class="tag">     <span class="attr">src</span>=<span class="string">&quot;/photos/normal/&lt;%= page.photograph.file %&gt;&quot;</span> </span></span><br><span class="line"><span class="tag">     <span class="attr">alt</span>=<span class="string">&quot;&lt;%= page.photograph.name%&gt;&quot;</span></span></span><br><span class="line"><span class="tag">     <span class="attr">width</span>=<span class="string">&quot;0&quot;</span> <span class="attr">height</span>=<span class="string">&quot;0&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>In case there is simply no element that contains the meta value, you can also specify it within the attribute:</p>
+<figure class="highlight html"><figcaption><span>article.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span> <span class="attr">id</span>=<span class="string">&quot;note-&lt;%= page.slug %&gt;&quot;</span> <span class="attr">itemprop</span>=<span class="string">&quot;blogPost&quot;</span>   </span></span><br><span class="line"><span class="tag">       <span class="attr">data-pagefind-body</span> </span></span><br><span class="line"><span class="tag">       <span class="attr">data-pagefind-meta</span>=<span class="string">&quot;type:Note&quot;</span>&gt;</span></span><br><span class="line"> ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Adding-a-Search-Page"><a href="#Adding-a-Search-Page" class="headerlink" title="Adding a Search Page"></a>Adding a Search Page</h3><p>Pagefind includes not only everything to get search results from the created index by JavaScript, but also the complete <a href="https://pagefind.app/docs/ui/">UI for a search page</a>, which means that you can build the complete search into your site yourself, or simply take a pre-built UI and visually customize it if necessary. I did the latter.</p>
+<p>The following code is the basic structure of the search page as suggested by Pagefind:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;/pagefind/pagefind-ui.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;/pagefind/pagefind-ui.js&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;search&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;DOMContentLoaded&#x27;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">new</span> <span class="title class_">PagefindUI</span>(&#123; <span class="attr">element</span>: <span class="string">&quot;#search&quot;</span> &#125;);</span></span><br><span class="line"><span class="language-javascript">  &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>To accommodate this in Hexo, it is advisable to use your own template and generate the page with an appropriate generator. A standard PAGE in Markdown format is only conditionally suitable for this, because links and scripts are needed. I described how to implement such a generator that renders descriptive Markdown in addition to the EJS template in my post <a href="/post/Pattern-for-dynamic-Hexo-pages/" title="Pattern for dynamic Hexo pages">Pattern for dynamic Hexo pages</a>, and I’ve taken that approach here as well.</p>
+<p>For simplicity, I won’t list the full code here, but link to my blog’s GitHub repo:</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/kristofzerbe/kiko.io/blob/master/source/_dynamic/search.md"><em>&#x2F;source&#x2F;_dynamic&#x2F;</em><br><strong>search.md</strong></a></td>
+<td>Markdown file with Frontmatter data and introduction text</td>
+</tr>
+<tr>
+<td><a href="https://github.com/kristofzerbe/kiko.io/blob/master/themes/landscape/layout/search.ejs"><em>&#x2F;themes&#x2F;landscape&#x2F;layout&#x2F;</em><br><strong>search.ejs</strong></a></td>
+<td>Layout template for search page</td>
+</tr>
+<tr>
+<td><a href="https://github.com/kristofzerbe/kiko.io/blob/master/themes/landscape/script/generator-dynamic-search.js"><em>&#x2F;themes&#x2F;landscape&#x2F;script&#x2F;</em><br><strong>generator-dynamic-search.js</strong></a></td>
+<td>Hexo Generator for creating the page during build</td>
+</tr>
+<tr>
+<td><a href="https://github.com/kristofzerbe/kiko.io/blob/master/themes/landscape/script/source/css/_pagefind.styl"><em>&#x2F;themes&#x2F;landscape&#x2F;script&#x2F;source&#x2F;css&#x2F;</em><br><strong>_pagefind.styl</strong></a></td>
+<td>Customized CSS Variables and style overrides</td>
+</tr>
+</tbody></table>
+<p>For the visual customization of the user interface Pagefind provides some CSS variables in the automatically generated CSS file. These help a bit to customize the UI to your own ideas, but I decided to override some of the styles in a seperate file called <code>_pagefind.styl</code>, which will be bundled via <code>@import &quot;_pagefind&quot;</code> in the main <code>styles.styl</code>.</p>
+<p>Since the main bundled CSS file is loaded in the HEAD before the <code>_pagefind.css</code> somewhere in the page, for simplicity I first made sure to pull the overrides with <code>!important</code>. This is not yet pretty and I will have to revise this later on.</p>
+<hr>
+<h3 id="Running-Build-and-Pagefind"><a href="#Running-Build-and-Pagefind" class="headerlink" title="Running Build and Pagefind"></a>Running Build and Pagefind</h3><p>Thus prepared, the rest is a piece of cake. Pagefind does not need to be installed, because if you call the npm package via npx, the latest version will be downloaded and executed automatically. You just have to make sure that the hexo build has run before. The best way is to run the following command:</p>
+<p><code>hexo clean &amp;&amp; hexo generate &amp;&amp;</code><strong><code>npx pagefind</code></strong></p>
+<p>This my result in the console:</p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Running Pagefind v0.<span class="number">10</span>.<span class="number">7</span> (Extended)</span><br><span class="line">Running from: <span class="string">&quot;...\\kiko.io&quot;</span></span><br><span class="line">Source:       <span class="string">&quot;docs&quot;</span></span><br><span class="line">Bundle Directory:  <span class="string">&quot;pagefind&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">[Walking source directory]</span></span><br><span class="line">Found <span class="number">319</span> files matching **/*.&#123;html&#125;</span><br><span class="line"></span><br><span class="line"><span class="string">[Parsing files]</span></span><br><span class="line">Found a data-pagefind-body element on the site.</span><br><span class="line">↳ Ignoring pages without this tag.</span><br><span class="line"></span><br><span class="line"><span class="string">[Reading languages]</span></span><br><span class="line">Discovered <span class="number">1</span> language: en</span><br><span class="line"></span><br><span class="line"><span class="string">[Building search indexes]</span></span><br><span class="line">Total: </span><br><span class="line">  Indexed <span class="number">1</span> language</span><br><span class="line">  Indexed <span class="number">124</span> pages</span><br><span class="line">  Indexed <span class="number">7220</span> words</span><br><span class="line">  Indexed <span class="number">0</span> filters</span><br><span class="line">  Indexed <span class="number">0</span> sorts</span><br><span class="line"></span><br><span class="line">Finished in <span class="number">5</span>.<span class="number">924</span> seconds</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Mount-in-GitHub-Action"><a href="#Mount-in-GitHub-Action" class="headerlink" title="Mount in GitHub Action"></a>Mount in GitHub Action</h3><p>Since I am hosting this blog on GitHub Pages and the complete build and deployment is done by a GitHub Action, I added a step to the <code>hexo-build</code> job in the workflow file so that after the build Pagefind indexes the result:</p>
+<figure class="highlight yml"><figcaption><span>hexo-build.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">hexo-build:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="string">...</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Build</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">generate</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Run</span> <span class="string">Pagefind</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npm_config_yes=true</span> <span class="string">npx</span> <span class="string">pagefind</span></span><br><span class="line">      <span class="string">...</span></span><br></pre></td></tr></table></figure>
+
+<p>Thankfully, in his article on Pagefind, Bryce also put me on the track of how to prevent a possible security prompt caused by npx from blocking Pagefind to run … <a href="/notes/2023/avoid-npx-install-prompt/">npm_config_yes&#x3D;true</a>.</p>
+<hr>
+<h3 id="The-Result"><a href="#The-Result" class="headerlink" title="The Result"></a>The Result</h3><p>The finished solution is really amazing. As soon as you start typing, the included Pagefind JavaScript updates the results list … and it’s sooo fast. Really an exciting tool. Thanks to Liam and CloudCannon.</p>
+
+    <a href="/search">
+        <img src="kiko-io-search.png" alt="Pagefind Search on kiko.io" />
+    </a>
+    
+
+<p>I hope that my explanation has inspired you to try it out for yourself on your Hexo driven blog or website. If you need some help or advice, drop me a line…</p>
+<hr>
+<h2 id="More-Info"><a href="#More-Info" class="headerlink" title="More Info"></a>More Info</h2>
+        <ul class="moreinfo-list">
+            <li>CloudCannon: <a href="https://pagefind.app/">Pagefind</a></li><li>Liam Bigelow: <a href="https://cloudcannon.com/blog/introducing-pagefind/">Introducing Pagefind: Static Low-bandwidth Search at Scale</a></li><li>Bryce Wray: <a href="https://www.brycewray.com/posts/2022/07/pagefind-quite-find-site-search/">Pagefind is quite a find for site search</a></li><li>Bryce Wray: <a href="https://www.brycewray.com/posts/2022/12/sweeter-searches-pagefind/">Sweeter searches with Pagefind</a></li><li>Nicolas Deville: <a href="https://notes.nicolasdeville.com/helpers/pagefind/">Pagefind</a></li>
+        </ul>
+    
+<!-- flag of hidden posts -->
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
+  </div>
+
+      
+  <div class="article-syndication">
+    <span>Syndicated at</span> 
+    
+        <a class="syndication-link u-syndication fab fa-mastodon" 
+           href="" rel="syndication" target="_blank"></a>
+    
+  </div>
+
+      <div class="article-permalink" id="article-permalink-cld3268ml002vidopb3bsh3dx">
+    <input class="article-permalink-value" value="https://kiko.io/post/Integration-of-Pagefind-in-Hexo/" 
+           data-id="cld3268ml002vidopb3bsh3dx" data-title="Integration of Pagefind in Hexo" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("cld3268ml002vidopb3bsh3dx");
+    });
+</script>
+
+      
+    </footer>
+
+  </div>
+
+  
+
+</article></main>
+          
+            <aside id="sidebar">
+  
+    <div class="widget-wrap">
+    <div class="widget about h-card"><!--http://microformats.org/wiki/h-card-->
+        <div class="avatar">
+            <a href="/about"><img class="u-photo" src="https://kiko.io/images/kristof-zerbe.png" alt="Kristof Zerbe"></a>
+            <a href="https://github.com/kristofzerbe" target="_blank" class="fab fa-github" rel="me"></a>
+            <a href="https://www.xing.com/profile/Kristof_Zerbe" target="_blank" class="fab fa-xing" rel="me"></a>
+            <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" target="_blank" class="fab fa-linkedin" rel="me"></a>      
+            <a href="https://500px.com/kikon" target="_blank" class="fab fa-500px" rel="me"></a>
+            <a href="https://indieweb.social/@kiko" target="_blank" class="fab fa-mastodon" rel="me"></a>
+        </div>
+        <h3 class="p-name">Kristof Zerbe</h3>
+        <p class="p-note">
+            <i class="p-role">Developer and Team Lead</i> located in <i class="p-locality">Wiesbaden</i>, <i class="p-country-name">Germany</i>
+        </p>
+        <a class="u-url u-uid" href="https://kiko.io" style="display:none;"></a>
+    </div>
+</div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            
+              <a href="/post/Favourite-Pens-of-2022/">Favourite Pens of 2022</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/Discoveries-22-Tips-Tricks/">Discoveries #22 -  Tips/Tricks</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/Generate-Content-from-Trello/">Generate Content from Trello</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/Discoveries-21-Sites-Pages/">Discoveries #21 -  Sites &amp; Pages</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/The-State-of-the-Blog/">The State of the Blog</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+
+  <div class="widget widget-wrap">
+    <p>
+      Want more? This way ... to the <a href="/archives">archives</a>
+    </p>
+  </div>  
+</aside>
+          
+        </div>
+        <footer id="footer">
+  
+  <div class="outer">
+    <div class="inner">
+
+      <ul id="footer-dots">
+        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+      </ul>
+
+      <div id="footer-info" class="footer-block">
+        &copy; 2019-2023&nbsp;&nbsp;<a href="https://bio.link/kristof">Kristof Zerbe</a>
+        <span class="dot-space">&#9679;</span>
+        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>  
+        <div id="footer-links">
+          
+            <a href="/about">About</a>
+            <span class="dot-space">&#9679;</span>
+          
+            <a href="/impressum">Impressum</a>
+            <span class="dot-space">&#9679;</span>
+          
+            <a href="/atom.xml">RSS Feed</a>
+            <span class="dot-space">&#9679;</span>
+          
+        </div>
+      </div>
+
+      <div id="webring">
+        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+      </div>
+      <script>
+  let isOffline = 'false' === 'true';
+</script>
+
+
+<script src="/js/jquery-3.6.0.min.js"></script>
+
+
+<script src="/js/dist/bundle.min.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+<script>
+  // HEADER
+  var header = {
+    height: 0,
+    top: 0,
+    offset: 55,
+    photoLinkOpacity: 0,
+    titleFontSize: 0
+  };
+
+  function initHeader() {
+    $("#header").css("height", ""); //reset inline css
+    $("#header-title").css("top", "");
+    $("#header-photo-link").css("opacity", "");
+    $("#title-wrap").css("font-size", "");
+    header.height = $("#header").height(); //set from given css
+    header.top = parseFloat($("#header-title").css("top"));
+    header.photoLinkOpacity = parseFloat($("#header-photo-link").css("opacity"));
+    header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
+    scrollHeader();
+  }
+  function scrollHeader() {
+    var h = header.height - header.offset,
+        st = $(document).scrollTop(),  
+        d = (h - st),
+        p = (d / h),
+        hfs = header.titleFontSize / 5 * 3,
+        jSide = $("aside");
+    if (d > 0) {
+      $("#header").css("height", d + header.offset + "px");
+      $("#header-photo-link").css("opacity", header.photoLinkOpacity * p);
+      $("#banner").css("opacity", p);
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1 - p) );
+      $("#header-title").css("top", header.top - (hfs * (1 - p)) + "px");
+      $("#subtitle").css("opacity", p);
+      jSide.css("max-width", "").css("position", "").css("top", "");
+    } else {
+      $("#header").css("height", header.offset + "px");
+      $("#header-photo-link").css("opacity", 0);
+      $("#banner").css("opacity", 0);
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );      
+      $("#header-title").css("top", header.top - (hfs * (1)) + "px");      
+      $("#subtitle").css("opacity", 0);
+      if (window.matchMedia("screen and (min-width: 768px)").matches & window.innerHeight > (jSide.height() + 50)) {
+        jSide.css("max-width", $("aside").width()).css("position", "fixed").css("top", "50px");
+      }
+    }    
+  }
+
+  // IMAGE VIEWPORT
+  function isVisibleInViewPort(e) {
+    var viewTop = $(window).scrollTop();
+    var viewBottom = viewTop + $(window).height();
+  
+    var eTop = $(e).offset().top;
+    var eBottom = eTop + $(e).height();
+  
+    return ((eBottom <= viewBottom) && (eTop >= viewTop));
+  }
+  function initViewportImage() {
+    $(".article-photo, .archive-article-photo, .card-img, .img-link").each(function() {
+      if (isVisibleInViewPort($(this))) {
+        $(this).addClass("in-view");
+      } else {
+        $(this).removeClass("in-view");
+      }
+    });
+  }
+
+  // HORIZONTAL MENU SCROLL
+  function watchNavMenuScroll() {
+    const nav = document.querySelector('#header-nav');
+    const menu = nav.querySelector('.menu');
+    const firstMenuItem = menu.querySelector('.menu-item:first-child');
+    const lastMenuItem = menu.querySelector('.menu-item:last-child');
+
+    firstMenuItem.setAttribute("data-scim", "start");
+    lastMenuItem.setAttribute("data-scim", "end");
+    
+    let observer = new IntersectionObserver((entries, observer) => { 
+      entries.forEach(entry => {
+
+        let scimElement = document.querySelector("#header-nav-" + entry.target.getAttribute("data-scim"));
+        if (entry.intersectionRatio != 1) { 
+          scimElement.classList.add("show");
+        } else {
+          scimElement.classList.remove("show");
+        }
+      });
+    }, {threshold: 1});
+    
+    observer.observe(firstMenuItem);
+    observer.observe(lastMenuItem);
+  }
+
+  $(window).on('scroll', function() {
+    scrollHeader();
+    initViewportImage();
+  });
+
+  $(window).on('resize', function() {
+    initHeader();
+    initViewportImage();
+  });
+
+  initHeader();
+  initViewportImage();
+  watchNavMenuScroll();
+
+  // BACK-TO-TOP
+  addBackToTop({
+    diameter: 30
+  })
+
+  // AUTOTYPING
+  setTimeout(function() {
+    $("#title-wrap").empty();
+    new AutoTyping({
+      id: 'title-wrap',
+      typeText: ['kiko.io'],
+      textColor: '#fff',
+      typeSpeed: 100,
+      typeDelay: 100,
+      showCursor: false,
+      delete: false,
+      typeInfinity: false
+    }).init();
+  }, 1000);
+
+  //MEDIUM-ZOOM
+  mediumZoom(document.querySelectorAll('img.zoom'), {
+    background: 'rgba(55, 55, 55, 0.5)',
+    margin: 20
+  });
+
+  //SCROLL-TIMELINE
+  // Create ScrollTimeline
+  const myScrollTimeline = new ScrollTimeline({
+    source: document.scrollingElement,
+    scrollSource: document.scrollingElement, // For legacy implementations
+    orientation: 'block',
+      scrollOffsets: [
+          new CSSUnitValue(0, 'percent'),
+          new CSSUnitValue(100, 'percent'),
+      ],
+  });
+
+  // Animate Progress Bar on Scroll
+  document.querySelector("#progress").animate(
+    {
+      transform: ["scaleX(0)", "scaleX(1)"]
+    },
+    { 
+      duration: 1, 
+      fill: "forwards", 
+      timeline: myScrollTimeline 
+    }
+  );
+</script>
+
+
+  <script>
+    //HOOK LINKS FOR PIRSCH EVENT...
+
+    //FEED
+    let feed = document.querySelector("#nav-rss-link a.sub-nav-link");
+    if (feed) feed.addEventListener("click", function() { pirsch('Feed clicked') });
+
+    //VSCODE
+    let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));
+    
+  </script>  
+
+    </div>
+  </div>
+</body>
+</html>

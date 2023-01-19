@@ -121,65 +121,82 @@
     <nav id="header-nav" role="navigation">
       <ul class="menu">
         
-          <li class="menu-item" id="nav-home-link" >
-            <a class="nav-icon sub-nav-link"
-              href="/">
+          
+          <li class="menu-item menu-item-icon" id="nav-home-link">
+            <a class="sub-nav-link"
+               href="/">
                 <span>Home</span>
               </a>
           </li>
         
-          <li class="menu-item" id="nav-archives-link" >
-            <a class="nav-icon sub-nav-link"
-              href="/archives">
+          
+          <li class="menu-item menu-item-icon" id="nav-search-link">
+            <a class="sub-nav-link"
+               href="/search">
+                <span>Search</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-archives-link">
+            <a class="sub-nav-link"
+               href="/archives">
                 <span>Archives</span>
               </a>
           </li>
         
-          <li class="menu-item" id="nav-series-link" >
-            <a class="nav-icon sub-nav-link"
-              href="/series">
+          
+          <li class="menu-item" id="nav-series-link">
+            <a class="sub-nav-link"
+               href="/series">
                 <span>series</span>
               </a>
           </li>
         
-          <li class="menu-item" id="nav-notes-link" >
-            <a class="nav-icon sub-nav-link"
-              href="/notes">
+          
+          <li class="menu-item" id="nav-notes-link">
+            <a class="sub-nav-link"
+               href="/notes">
                 <span>notes</span>
               </a>
           </li>
         
-          <li class="menu-item" id="nav-projects-link" >
-            <a class="nav-icon sub-nav-link"
-              href="/projects">
+          
+          <li class="menu-item" id="nav-projects-link">
+            <a class="sub-nav-link"
+               href="/projects">
                 <span>projects</span>
               </a>
           </li>
         
-          <li class="menu-item" id="nav-tiny-tools-link" >
-            <a class="nav-icon sub-nav-link"
-              href="/collections/tiny-tools">
+          
+          <li class="menu-item" id="nav-tiny-tools-link">
+            <a class="sub-nav-link"
+               href="/collections/tiny-tools">
                 <span>tiny-tools</span>
               </a>
           </li>
         
-          <li class="menu-item" id="nav-photos-link" >
-            <a class="nav-icon sub-nav-link"
-              href="/photos">
+          
+          <li class="menu-item" id="nav-photos-link">
+            <a class="sub-nav-link"
+               href="/photos">
                 <span>photos</span>
               </a>
           </li>
         
-          <li class="menu-item" id="nav-about-link" >
-            <a class="nav-icon sub-nav-link"
-              href="/about">
+          
+          <li class="menu-item" id="nav-about-link">
+            <a class="sub-nav-link"
+               href="/about">
                 <span>About</span>
               </a>
           </li>
         
-          <li class="menu-item" id="nav-rss-link" >
-            <a class="nav-icon sub-nav-link"
-              href="/atom.xml">
+          
+          <li class="menu-item menu-item-icon" id="nav-rss-link">
+            <a class="sub-nav-link"
+               href="/atom.xml">
                 <span>RSS Feed</span>
               </a>
           </li>
@@ -204,16 +221,11 @@
     </div>
     <div id="header-inner" class="inner">
       <nav id="sub-nav">
-        <a id="sub-nav-search" class="sub-nav-icon" title="Search"></a>
         <div id="sub-nav-theme">          
           <input type="checkbox" id="theme-switch">
           <label for="theme-switch"></label>
         </div>
       </nav>
-
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kiko.io"></form>
-      </div>
     </div>
   </div>
 </header>
@@ -239,8 +251,12 @@
 }
 </style>
 
+<img id="header-photo" data-pagefind-meta="image[src], image_alt[alt]"
+     src="/photos/normal/$projects.jpg" 
+     alt="Ancient Mosaic"
+     width="0" height="0"/>
 
-    <img id="header-photo" src="/photos/normal/$projects.jpg" width="0" height="0"/>
+
     <script>
         var header = document.getElementById("header");
         header.classList.add("photograph");
@@ -253,12 +269,12 @@
 
 
 
-<h1 class="archive-title">
+<h1 class="archive-title" data-pagefind-meta="title" data-pagefind-meta="type:Anything">
     <span>project<b>|</b></span>hexo-tag-plugins
 </h1>
 <div class="anything-wrap">
   <div class="anything-inner">
-    <div class="anything-content">
+    <div class="anything-content" data-pagefind-bodyy>
       <p><strong>hexo-tag-plugins</strong> is a collection of <a href="https://hexo.io/docs/tag-plugins.html">Hexo Tag Plugins</a> I have created for this blog. Some of them are quite simple, others are more complex, but overall maybe helpful for you.</p>
 <div class="shields-io">
 
@@ -290,7 +306,8 @@
   <div class="article-meta">
     <a href="/post/GitHub-Tag-Plugins-for-Hexo/" class="article-date">
   
-    <time class="published dt-published" datetime="2021-12-29T11:20:34.000Z" itemprop="datePublished">29 Dec 2021</time>
+    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+          datetime="2021-12-29T11:20:34.000Z">29 Dec 2021</time>
   
 </a>
     
@@ -319,7 +336,8 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/post/GitHub-Tag-Plugins-for-Hexo/">GitHub Tag Plugins for Hexo</a>
+      <a class="article-title"
+         href="/post/GitHub-Tag-Plugins-for-Hexo/">GitHub Tag Plugins for Hexo</a>
     </h1>
   
 
@@ -347,15 +365,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clcyotyac001hiooq40ir9knd">
+      <div class="article-permalink" id="article-permalink-cld3268ln001hidop779y08ql">
     <input class="article-permalink-value" value="https://kiko.io/post/GitHub-Tag-Plugins-for-Hexo/" 
-           data-id="clcyotyac001hiooq40ir9knd" data-title="GitHub Tag Plugins for Hexo" />
+           data-id="cld3268ln001hidop779y08ql" data-title="GitHub Tag Plugins for Hexo" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clcyotyac001hiooq40ir9knd");
+        initPermalink("cld3268ln001hidop779y08ql");
     });
 </script>
 
@@ -371,7 +389,8 @@
   <div class="article-meta">
     <a href="/post/Hexo-Tag-Plugin-Collection/" class="article-date">
   
-    <time class="published dt-published" datetime="2021-12-12T13:07:36.000Z" itemprop="datePublished">12 Dec 2021</time>
+    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+          datetime="2021-12-12T13:07:36.000Z">12 Dec 2021</time>
   
 </a>
     
@@ -400,7 +419,8 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/post/Hexo-Tag-Plugin-Collection/">Hexo Tag Plugin Collection</a>
+      <a class="article-title"
+         href="/post/Hexo-Tag-Plugin-Collection/">Hexo Tag Plugin Collection</a>
     </h1>
   
 
@@ -434,15 +454,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clcyotyad001jiooqab75h4vm">
+      <div class="article-permalink" id="article-permalink-cld3268lo001jidop0lu06gfx">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-Tag-Plugin-Collection/" 
-           data-id="clcyotyad001jiooqab75h4vm" data-title="Hexo Tag Plugin Collection" />
+           data-id="cld3268lo001jidop0lu06gfx" data-title="Hexo Tag Plugin Collection" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clcyotyad001jiooqab75h4vm");
+        initPermalink("cld3268lo001jidop0lu06gfx");
     });
 </script>
 
