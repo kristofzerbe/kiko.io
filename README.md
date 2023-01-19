@@ -6,6 +6,9 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
 ## Latest Posts
 <!-- BLOG-POST-LIST:START -->
+ - [Integration of Pagefind in Hexo](https://kiko.io/post/Integration-of-Pagefind-in-Hexo/)   
+ 19 Jan 2023   
+
  - [Favourite Pens of 2022](https://kiko.io/post/Favourite-Pens-of-2022/)   
  14 Jan 2023   
 
@@ -20,7 +23,4 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
  - [The State of the Blog](https://kiko.io/post/The-State-of-the-Blog/)   
  23 Dec 2022   
-
- - [Mastodon simply explained](https://kiko.io/post/Mastodon-simply-explained/)   
- 15 Nov 2022   
 <!-- BLOG-POST-LIST:END -->
