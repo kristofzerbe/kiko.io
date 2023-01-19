@@ -20,7 +20,7 @@ related:
   - Show-related-posts-in-Hexo
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/109715917785769598
 ---
 
 From the beginning of this blog I wanted to provide some kind of full text search in order to give my users the ability to find stuff by keyword.
