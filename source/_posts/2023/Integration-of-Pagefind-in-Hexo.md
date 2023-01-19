@@ -2,7 +2,7 @@
 slug: Integration-of-Pagefind-in-Hexo
 title: Integration of Pagefind in Hexo
 subtitle: Adding a low-bandwidth local search to a static Hexo-powered website
-date: 2023-01-16 14:47:07
+date: 2023-01-19 13:24:00
 photograph:
   file: 22-08 Bretagne-Jersey-0201.jpg
   name: Proud Vespa
@@ -21,7 +21,6 @@ related:
 syndication:
   - host: Mastodon
     url: null
-hidden: true
 ---
 
 From the beginning of this blog I wanted to provide some kind of full text search in order to give my users the ability to find stuff by keyword.
