@@ -1,17 +1,39 @@
-<% if (post.link && show_link){ %>
+<%
+  let title = post.title;
+  let pretitle = null;
+
+  let rx = new RegExp("^(#[a-zA-Z]* \| )"); // looking for "#TIL | ..." et al
+  if (rx.test(post.title)) {
+    let titleArray = post.title.split(" | ");
+    pretitle = titleArray[0];
+    title = titleArray[1].trim();
+  }
+%>
+
+<% if (post.link && show_link){ // index page %>
   <h1 itemprop="name">
     <a class="<%= class_name %>" itemprop="url"
-       href="<%- url_for(post.link) %>"><%= post.title %></a>
+       href="<%- url_for(post.link) %>">
+      <% if (pretitle) { %>
+        <em><%= pretitle%></em><strong>&nbsp;|&nbsp;</strong>
+      <% } %>
+      <span><%= title %></span>
+  </a>
   </h1>
 <% } else if (post.title){ %>
-  <% if (index || show_link){ %>
+  <% if (index || show_link){ // archive cards %>
     <h1 itemprop="name">
       <a class="<%= class_name %>"
          href="<%- url_for(post.path) %>"><%= post.title %></a>
     </h1>
-  <% } else { %>
-    <h1 class="<%= class_name %>" itemprop="name" data-pagefind-meta="title">
-      <%= post.title %>
+  <% } else { // content page  %>
+    <h1 class="<%= class_name %>" itemprop="name" 
+        data-title="<%= post.title %>" 
+        data-pagefind-meta="title[data-title]">
+        <% if (pretitle) { %>
+          <em><%= pretitle%></em><strong>&nbsp;|&nbsp;</strong>
+        <% } %>
+        <span><%= title %></span>
     </h1>
   <% } %>
 <% } %>

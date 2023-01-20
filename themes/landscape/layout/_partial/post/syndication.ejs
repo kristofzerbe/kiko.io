@@ -1,9 +1,14 @@
 <% if (post.syndication && post.syndication.length){ %>
-  <div class="<%= class_name %>">
-    <span>Syndicated at</span> 
-    <% post.syndication.forEach(function(syn){ %>
-        <a class="syndication-link u-syndication fab fa-<%- syn.host.toLowerCase() %>" 
-           href="<%- syn.url %>" rel="syndication" target="_blank"></a>
-    <% }); %>
-  </div>
+  <%
+    let syn = Object.values(post.syndication).some(s => s !== null && s.url !== null);
+  %>
+  <% if (syn === true) { %>
+    <div class="<%= class_name %>">
+      <span>Syndicated at</span> 
+      <% post.syndication.forEach(function(syn){ %>
+          <a class="syndication-link u-syndication fab fa-<%- syn.host.toLowerCase() %>" 
+            href="<%- syn.url %>" rel="syndication" target="_blank"></a>
+      <% }); %>
+    </div>
+  <% } %>
 <% } %>
