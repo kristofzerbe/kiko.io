@@ -2,7 +2,7 @@
 title: Impressum
 date: 2023-01-09 19:48:35
 photograph: 
-  file: $404.jpg
+  file: $impressum.jpg
   name: Instructions
   link: 'https://500px.com/photo/80798073/instructions-by-kristof-zerbe'  
 ---
