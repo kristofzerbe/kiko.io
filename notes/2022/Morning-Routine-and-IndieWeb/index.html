@@ -305,7 +305,7 @@
     </header>
 
     <div class="article-entry e-content" itemprop="articleBody">
-      <p>Get up. Make coffee. Grab Smartphone. Read news. Read RSS feeds. It goes like this or something similar every morning and I ALWAYS get stuck on the topic of IndieWeb. Surfing around for an hour or so. The topic simply hooked me. Today it was the wonderful work from Ryan Barrett (@<a href="mailto:&#115;&#110;&#x61;&#114;&#x66;&#x65;&#x64;&#46;&#111;&#x72;&#103;&#64;&#115;&#110;&#97;&#114;&#102;&#101;&#x64;&#46;&#x6f;&#114;&#103;">&#115;&#110;&#x61;&#114;&#x66;&#x65;&#x64;&#46;&#111;&#x72;&#103;&#64;&#115;&#110;&#97;&#114;&#102;&#101;&#x64;&#46;&#x6f;&#114;&#103;</a>). Ended up thinking what I can do with …</p>
+      <p>Get up. Make coffee. Grab Smartphone. Read news. Read RSS feeds. It goes like this or something similar every morning and I ALWAYS get stuck on the topic of IndieWeb. Surfing around for an hour or so. The topic simply hooked me. Today it was the wonderful work from Ryan Barrett (@<a href="mailto:&#115;&#110;&#97;&#x72;&#102;&#x65;&#100;&#x2e;&#x6f;&#114;&#103;&#x40;&#x73;&#x6e;&#x61;&#114;&#x66;&#101;&#100;&#46;&#111;&#x72;&#103;">&#115;&#110;&#97;&#x72;&#102;&#x65;&#100;&#x2e;&#x6f;&#114;&#103;&#x40;&#x73;&#x6e;&#x61;&#114;&#x66;&#101;&#100;&#46;&#111;&#x72;&#103;</a>). Ended up thinking what I can do with …</p>
 <p><a href="https://granary.io/">https://granary.io/</a></p>
 
     </div>
@@ -315,7 +315,6 @@
   
   
     <div class="article-syndication">
-      <span>Syndicated at</span> 
       
           <a class="syndication-link u-syndication fab fa-mastodon" 
             href="https://indieweb.social/@kiko/109471776510837100" rel="syndication" target="_blank"></a>
@@ -339,24 +338,37 @@
   
   </div>
 
-  <div class="article-webmentions">
+  
 
+<div class="article-interaction">
+
+  <p>
+    You can interact with this note (applause, criticism, whatever) 
+    by mention it in one of your posts or by replying to its syndication on 
+    <a class="mastodon" href="https://indieweb.social/@kiko/109471776510837100">Mastodon</a>, which will also be shown here as a  
+    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... 
+    or you leave a good old <strong>comment</strong> with your GitHub account.
+  </p>
+
+</div>
+
+<div class="article-webmentions">
   <h2>Webmentions</h2>
 
   <div class="webmentions-placeholder">
     <p class="wm-placeholder">No Webmentions yet...</p>
   </div>
-  
+
   <p class="webmention-form-info">
     In case your blog software can't send Webmentions, 
     you can use this form to submit me a mention of this article...
   </p>
-  
-  <form class="webmention-form" action="https://webmention.io/kiko.io>/webmention" 
-        name="webmention-form" method="post">
+
+  <form class="webmention-form" action="https://webmention.io/kiko.io>/webmention" name="webmention-form"
+    method="post">
     <label for="webmention-form-source">Your Article URL:</label><br>
-    <input class="webmention-form-source" type="url" name="source" 
-           placeholder="https://your-blog.com/your-article" required="">
+    <input class="webmention-form-source" type="url" name="source" placeholder="https://your-blog.com/your-article"
+      required="">
     <input type="hidden" name="target" value="https://kiko.io/notes/2022/Morning-Routine-and-IndieWeb/">
     <input type="submit" value="Send Webmention">
   </form>
@@ -369,6 +381,16 @@
 
   
 
+</div>
+
+<div class="article-comments">
+  <h2>Comments</h2>
+  <div id="comment-placeholder"></div>
+  <script>
+    window.addEventListener('load', function () {
+      insertUtterancesCommentBlock();
+    });
+  </script>
 </div>
 
 </article>
