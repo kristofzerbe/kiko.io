@@ -4,7 +4,6 @@
   %>
   <% if (syn === true) { %>
     <div class="<%= class_name %>">
-      <span>Syndicated at</span> 
       <% post.syndication.forEach(function(syn){ %>
           <a class="syndication-link u-syndication fab fa-<%- syn.host.toLowerCase() %>" 
             href="<%- syn.url %>" rel="syndication" target="_blank"></a>

@@ -109,7 +109,6 @@
   span.caption
     display: none
 
-
 .article-inner
   @extend $block-inner
   overflow: hidden
@@ -217,6 +216,8 @@
     color: color-link
     /[data-theme="dark"] &
       color: dark-color-link
+    em, strong
+      opacity: 1
   // https://css-tricks.com/adam-argyles-sick-mouse-out-css-hover-effect/
   a&:before
     position: absolute
@@ -266,14 +267,6 @@
       border-bottom: color-link 1px solid
       /[data-theme="dark"] &
         border-bottom: dark-color-link 1px solid
-  // a:not([class])
-  //   text-decoration: none
-  //   /[data-theme="dark"] &
-  //     // border-bottom: dark-color-link-border 1px solid
-  //   &:hover
-  //     border-bottom: color-link 1px solid
-  //     /[data-theme="dark"] &
-  //       border-bottom: dark-color-link 1px solid
   a.img-link
     transition: all ease-out .6s 
     transform: scale(1)
@@ -501,6 +494,7 @@
         display: inline-block
 
 .article-related,
+.article-interaction,
 .article-comments,
 .article-webmentions
   // min-height: 286px
@@ -510,7 +504,7 @@
   border-top-width: 1px
   border-top-color: color-block
   /[data-theme="dark"] &
-    border-top-color: dark-color-block
+    border-top-color: dark-color-border
   > h2
     @extend $block-caption  
     color: color-header
@@ -519,9 +513,43 @@
     font-size: 1.2em
     line-height: line-height-title
     margin: line-height-title 0
+
+.article-interaction
+  @extend $base-style
+  min-height: auto
+  border-top: none
+  margin-top: (3 * line-height)
+  position: relative
+  padding-left: 2rem
+  &:before
+    display: block
+    position: absolute 
+    left: -14px
+    top: -14px     
+    content: icon-feather
+    font-family: fa-icon-solid      
+    font-size: 6em
+    text-rendering: auto
+    -webkit-font-smoothing: antialiased      
+    z-index: -1
+    transform: rotate(344deg)
+    color: color-block
+    /[data-theme="dark"] &
+      color: dark-color-border
+  p
+    line-height: line-height
+    opacity: .75
+    a
+      text-decoration: none
+      border-bottom: transparent 1px solid
+      &:hover
+        border-bottom: color-link 1px solid
+        /[data-theme="dark"] &
+          border-bottom: dark-color-link 1px solid
+    
 .article-webmentions
-    // border-top-color: transparent
-    margin-top: 1.5 * line-height
+  // border-top-color: transparent
+  margin-top: 1.5 * line-height
 
 .article-footer
   font-size: 0.85em
@@ -534,9 +562,10 @@
   grid-template-rows: auto 1fr auto
   grid-template-areas: "tags tags" "syndication permalink" "golem golem"
   @media mq-mobile
-    grid-template-columns: 1fr
-    grid-template-rows: auto auto auto auto
-    grid-template-areas: "tags" "permalink" "syndication" "golem"
+    margin: 0 (article-padding / 2) article-padding-vert
+    grid-template-columns: auto 1fr
+    grid-template-rows: auto auto auto
+    grid-template-areas: "tags" "syndication permalink" "golem"
 
 .article-tags { grid-area: tags }
 .article-permalink { grid-area: permalink }
@@ -570,12 +599,12 @@
 
 .article-syndication
   display: flex
-  align-items: flex-start
+  align-items: flex-end
   span
     display: inline-block
     margin-right: 4px
   .syndication-link
-    padding: 0 5px;
+    padding: 0 10px 0 0;
     &:before
       font-family: fa-icon-brands
       font-size: 20px;
@@ -602,18 +631,16 @@
   flex-direction: row
   padding-left: 50px
   @media mq-mobile
-    padding-left: 0
+    padding-left: 30px
   a
     cursor: pointer
   input
     font-size: 1em
     background: transparent
     text-align: right
-    margin-right: 4px
     white-space: nowrap
     overflow: hidden
     text-overflow: ellipsis
-    // width: calc(100% - 80px)
     flex: 1 1 auto
     border: 0
     outline: 0
