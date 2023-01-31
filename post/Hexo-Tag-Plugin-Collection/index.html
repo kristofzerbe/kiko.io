@@ -218,6 +218,13 @@
         <h2 id="subtitle">
           Memorable Tech Stuff
         </h2>
+        <div id="sub-socialmediaimage-link" onclick="copysocialmediaimageLink();"></div>
+        <script>
+          function copysocialmediaimageLink() {
+            let smil = document.querySelector('meta[property="og:image"]').content;
+            copyTextToClipboard(smil);
+          }
+        </script>
       
     </div>
     <div id="header-inner" class="inner">
@@ -530,7 +537,7 @@
 
 <p><strong>Live Output:</strong></p>
 
-    <div id="image-compare-xhcwxw">
+    <div id="image-compare-w3pjen">
       <img class="image-compare image-original" src="/post/Hexo-Tag-Plugin-Collection/example-image_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Hexo-Tag-Plugin-Collection/example-image_PRESET.jpg" alt="" />
     </div>
@@ -539,7 +546,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-xhcwxw"),
+      new ImageCompare(document.getElementById("image-compare-w3pjen"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -581,12 +588,12 @@
 
 <p><strong>Live Output:</strong></p>
 
-      <div class="image-slider" id="image-slide-k0yo7p">
+      <div class="image-slider" id="image-slide-hgvhjr">
         <div><img src="/post/Hexo-Tag-Plugin-Collection/example-image_ORIGINAL.jpg" alt="Original" /></div><div><img src="/post/Hexo-Tag-Plugin-Collection/example-image_PRESET.jpg" alt="Lightroom Preset" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-k0yo7p",
+          container: "#image-slide-hgvhjr",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -643,15 +650,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cldkeoz1z001ln2ope0syhwgu">
+      <div class="article-permalink" id="article-permalink-cldkh5c0y001lj2oz8534aw7w">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-Tag-Plugin-Collection/" 
-           data-id="cldkeoz1z001ln2ope0syhwgu" data-title="Hexo Tag Plugin Collection" />
+           data-id="cldkh5c0y001lj2oz8534aw7w" data-title="Hexo Tag Plugin Collection" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldkeoz1z001ln2ope0syhwgu");
+        initPermalink("cldkh5c0y001lj2oz8534aw7w");
     });
 </script>
 
