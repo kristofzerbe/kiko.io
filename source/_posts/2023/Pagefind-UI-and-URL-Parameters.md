@@ -20,7 +20,7 @@ related:
   - Pattern-for-dynamic-Hexo-pages
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/109784950464754190
 ---
 
 A couple of days ago I wrote about my attempt to {% post_link 2023/Integration-of-Pagefind-in-Hexo "integrate Pagefind in my blog" %}. In the meantime, I further refined the indexing by excluding more content areas and adding more for the metadata to make the search results even better.
