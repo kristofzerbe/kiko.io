@@ -23,7 +23,6 @@ related:
 syndication:
   - host: Mastodon
     url: null
-hidden: true
 ---
 
 In the age of streaming services, radio may seem out of date, but it still surrounds us constantly, even if we often hardly notice it - in the car, on the public transport, at work or simply at home in the kitchen. One strength of the old medium is that it presents us with music we haven't heard before, away from our playlists on Spotify or iTunes.
