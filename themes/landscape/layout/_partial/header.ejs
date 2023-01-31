@@ -34,6 +34,13 @@
         <h2 id="subtitle">
           <%= config.subtitle %>
         </h2>
+        <div id="sub-socialmediaimage-link" onclick="copysocialmediaimageLink();"></div>
+        <script>
+          function copysocialmediaimageLink() {
+            let smil = document.querySelector('meta[property="og:image"]').content;
+            copyTextToClipboard(smil);
+          }
+        </script>
       <% } %>
     </div>
     <div id="header-inner" class="inner">
