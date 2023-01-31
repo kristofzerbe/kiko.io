@@ -23,11 +23,11 @@
         .substring(0, 150) + "...";
     }
 
-    if (is_home())          { type = "HOME"; }
+    if      (is_home())     { type = "HOME"; }
     else if (is_post())     { type = "POST"; }
     else if (is_page())     { type = "PAGE"; }
     else if (is_archive())  { type = "ARCHIVE";
-      if (is_month())         { subtype = "MONTH"; }
+      if      (is_month())    { subtype = "MONTH"; }
       else if (is_year())     { subtype = "YEAR"; }
     }
     else if (is_category()) { type = "CATEGORY"; }
@@ -179,7 +179,8 @@
   <meta itemprop="image" content="<%= image %>">
 
   <%#!-- Open Graph --%>
-  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="<%= config.title %>">
+  <meta property="og:type" content="article">
   <meta property="og:url" content="<%= url %>">
   <meta property="og:title" content="<%= title %>">
   <% if (description) { %>
@@ -188,7 +189,7 @@
   <meta property="og:image" content="<%= image %>">
   <meta property="og:locale" content="en_GB">
 
-  <!-- Twitter/Mastodon -->
+  <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="<%= url %>">
   <meta property="twitter:title" content="<%= title %>">

@@ -16,6 +16,10 @@
 </div>
 
 <script>
+
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const searchString = urlParams.get("q");
   
   window.addEventListener('DOMContentLoaded', (event) => {
     new PagefindUI({ 
@@ -26,6 +30,10 @@
   });
   waitForElm(".pagefind-ui__search-input").then((elm) => {
     elm.focus();
+    if (searchString) { 
+      elm.value = searchString;
+      elm.dispatchEvent(new Event('input'));
+    }
   });
 
 </script>
