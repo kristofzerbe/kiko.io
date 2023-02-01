@@ -23,7 +23,7 @@ syndication:
     url: null
 ---
 
-Chris Coyier's post "Open Graph Blues" got me thinking that my blog's metadata, which are used by Google among others to index my pages, aren't really at the cutting edge anymore. I took the markup of the individual elements of the pages via [schema.org](https://schema.org) Microdata attributes from the standard Hexo template years ago and always adjusted it by value, but never questioned that there are more modern variants to provide the metadata.
+Chris Coyier's post "[Open Graph Blues](https://chriscoyier.net/2023/01/28/open-graph-blues/)" got me thinking that my blog's metadata, which are used by Google among others to index my pages, aren't really at the cutting edge anymore. I took the markup of the individual elements of the pages via [schema.org](https://schema.org) Microdata attributes from the standard Hexo template years ago and always adjusted it by value, but never questioned that there are more modern variants to provide the metadata.
 
 It's Ok for Google to use Microdata attributes, but the HTML code of my templates is getting more and more opaque, because next to these stick to the tags also those for the Indieweb, classes for CSS and last but not least those for the own indexing via Pagefind. There becomes from a simple
 
@@ -96,8 +96,18 @@ When you have everything together, it is advisable to test the resulting code. S
 ## More Information
 
 {% moreinfo '{ "list": [
+  [ "Google Search Central", "Introduction to structured data markup in Google Search",
+  "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" ],
+  [ "Patrick Coombe and Craig Mount", "Steal Our JSON-LD",
+  "https://jsonld.com/" ],
   [ "Andrew Welch", "Annotated JSON-LD Structured Data Examples",
   "https://nystudio107.com/blog/annotated-json-ld-structured-data-examples" ],
-  [ "publisher", "title",
-  "url" ]
+  [ "Alberto Carniel", "Schema markup and structured data ultimate guide (JSON-LD)",
+  "https://www.albertocarniel.com/post/schema-markup" ],
+  [ "Brian Gorman", "An SEO’s Guide to Writing Structured Data (JSON-LD)",
+  "https://moz.com/blog/writing-structured-data-guide" ],
+  [ "Merkle", "Schema Markup Generator (JSON-LD)",
+  "https://technicalseo.com/tools/schema-markup-generator/" ],
+  [ "webcode.tools", "Generators > Structured Data",
+  "https://webcode.tools/generators/structured-data" ]
 ]}' %}
