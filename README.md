@@ -6,6 +6,9 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
 ## Latest Posts
 <!-- BLOG-POST-LIST:START -->
+ - [Pagefind UI and URL Parameters](https://kiko.io/post/Pagefind-UI-and-URL-Parameters/)   
+ 31 Jan 2023   
+
  - [Integration of Pagefind in Hexo](https://kiko.io/post/Integration-of-Pagefind-in-Hexo/)   
  19 Jan 2023   
 
@@ -20,7 +23,4 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
  - [Discoveries #21 -  Sites &amp; Pages](https://kiko.io/post/Discoveries-21-Sites-Pages/)   
  28 Dec 2022   
-
- - [The State of the Blog](https://kiko.io/post/The-State-of-the-Blog/)   
- 23 Dec 2022   
 <!-- BLOG-POST-LIST:END -->
