@@ -6,6 +6,9 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
 ## Latest Posts
 <!-- BLOG-POST-LIST:START -->
+ - [Radio Garden](https://kiko.io/post/Radio-Garden/)   
+ 01 Feb 2023   
+
  - [Pagefind UI and URL Parameters](https://kiko.io/post/Pagefind-UI-and-URL-Parameters/)   
  31 Jan 2023   
 
@@ -20,7 +23,4 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
  - [Generate Content from Trello](https://kiko.io/post/Generate-Content-from-Trello/)   
  29 Dec 2022   
-
- - [Discoveries #21 -  Sites &amp; Pages](https://kiko.io/post/Discoveries-21-Sites-Pages/)   
- 28 Dec 2022   
 <!-- BLOG-POST-LIST:END -->
