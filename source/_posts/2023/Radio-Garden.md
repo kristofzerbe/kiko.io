@@ -33,7 +33,7 @@ As is so often the case in the modern world, it's the oversupply that leaves som
 
 <!-- more -->
 
-## Indische Esoterik, estnischer Metal
+## Indian esotericism, Estonian metal
 
 The tool, which works very well in any modern browser, but is also available as an Android or iOS app, initially shows nothing more than an interactive globe on which tens of thousands of green dots whiz by under a round target cursor when you move the map back and forth or zoom into the world. If you set your sights on one of the green dots, the station for that city is loaded and played. If there are several stations in one place, the dot appears larger and you are also offered a station list.
 
