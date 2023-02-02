@@ -83,7 +83,46 @@ It is advisable to include so called **Node Identifiers** in order to reuse cert
 
 ### Author
 
+This is about me myself and I...
+
+```json
+{
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "@id": "kiko.io/#person",
+  "name": "Kristof Zerbe",
+  "url": "https://kiko.io/about",
+  "image": "https://kiko.io/images/kristof-zerbe.png",
+  "sameAs": [
+    "https://indieweb.social/@kiko",
+    "https://github.com/kristofzerbe",
+    "https://500px.com/p/kikon"
+  ]  
+}
+```
+
 ### Organization
+
+Most blogs are run by individuals and not necessarily by organizations, so you might think this area would not be interesting, but it is for a reason: only here you can deposit the link to a logo of your blog, which can then be displayed in the search.
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "kiko.io/#organization",
+  "name": "kiko.io",
+  "url": "https://kiko.io",
+  "logo": "https://kiko.io/images/apple-touch-icon.png"
+}
+```
+
+### Article
+
+The last three
+
+## Gluing all together
+
+...
 
 ## Test your JSON-LD
 
