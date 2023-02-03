@@ -9,7 +9,7 @@ GitHub page for memorable tech stuff, published under https://kiko.io
  - [Radio Garden](https://kiko.io/post/Radio-Garden/)   
  01 Feb 2023   
 
- - [Pagefind UI and URL Parameters](https://kiko.io/post/Pagefind-UI-and-URL-Parameters/)   
+ - [Updated: Pagefind UI and URL Parameters](https://kiko.io/post/Pagefind-UI-and-URL-Parameters/)   
  31 Jan 2023   
 
  - [Integration of Pagefind in Hexo](https://kiko.io/post/Integration-of-Pagefind-in-Hexo/)   
