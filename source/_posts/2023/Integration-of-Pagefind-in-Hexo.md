@@ -15,9 +15,9 @@ tags:
   - Search
   - Blogging
 related:
+  - Pagefind-UI-and-URL-Parameters
   - Pattern-for-dynamic-Hexo-pages
   - The-State-of-the-Blog
-  - Show-related-posts-in-Hexo
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/109715917785769598
