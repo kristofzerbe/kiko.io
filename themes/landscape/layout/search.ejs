@@ -22,18 +22,17 @@
   const searchString = urlParams.get("q");
   
   window.addEventListener('DOMContentLoaded', (event) => {
-    new PagefindUI({ 
+    let pagefind = new PagefindUI({ 
       element: "#search",
       bundlePath: "/pagefind/",
       resetStyles: true
     });
+    if (searchString) { 
+      pagefind.triggerSearch(searchString);
+    }
   });
   waitForElm(".pagefind-ui__search-input").then((elm) => {
     elm.focus();
-    if (searchString) { 
-      elm.value = searchString;
-      elm.dispatchEvent(new Event('input'));
-    }
   });
 
 </script>

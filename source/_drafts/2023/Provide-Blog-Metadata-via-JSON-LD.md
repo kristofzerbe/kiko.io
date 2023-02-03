@@ -61,33 +61,12 @@ Google's solution is based on schema.org, but they have picked only what is nece
 
 Since it is somewhat cumbersome to write correct JSON-LD from AHnd, there are of course online editors for it, e.g. within the [web code tools](https://webcode.tools/generators/structured-data) or [Merkle](https://technicalseo.com/tools/schema-markup-generator/).
 
-### Website
-
-The part of the JSON related to my website looks like this:
-
-```json
-{
-  "@context": "http://schema.org/",
-  "@type": "WebSite",
-  "@id": "kiko.io/#website",
-  "url": "https://kiko.io",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://kiko.io/search/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}
-```
-
-It is advisable to include so called **Node Identifiers** in order to reuse certain information later on as a refernece and prevent repeating data.
-
 ### Author
 
-This is about me myself and I...
+First of all, this code is about me myself and I...
 
 ```json
 {
-  "@context": "https://schema.org/",
   "@type": "Person",
   "@id": "kiko.io/#person",
   "name": "Kristof Zerbe",
@@ -101,13 +80,16 @@ This is about me myself and I...
 }
 ```
 
+{% alertbox info %}
+It is advisable to include so called **Node Identifiers** (``@id``) in order to reuse certain information later on as a reference and prevent repeating data.
+{% endalertbox %}
+
 ### Organization
 
 Most blogs are run by individuals and not necessarily by organizations, so you might think this area would not be interesting, but it is for a reason: only here you can deposit the link to a logo of your blog, which can then be displayed in the search.
 
 ```json
 {
-  "@context": "https://schema.org",
   "@type": "Organization",
   "@id": "kiko.io/#organization",
   "name": "kiko.io",
@@ -116,9 +98,51 @@ Most blogs are run by individuals and not necessarily by organizations, so you m
 }
 ```
 
+### Website
+
+The JSON block related to this website itself looks like this:
+
+```json
+{
+  "@type": "WebSite",
+  "@id": "kiko.io/#website",
+  "url": "https://kiko.io",
+  "name": "kiko.io",
+  "description": "Blog about memorable tech stuff by Kristof Zerbe",
+  "inLanguage": "en-US",
+  "publisher": {
+      "@id": "kiko.io/#organization"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://kiko.io/search/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }  
+}
+```
+
 ### Article
 
-The last three
+The last three can be output on any page, as they describe the blog in general, but the following is article-specific and differs depending on the page, of course.
+
+```json
+{
+  "@type": "Article",
+  "@id": "https://kiko.io/post/Provide-Blog-Metadata-via-JSON-LD/",
+  "headline": "Provide Blog Metadata via JSON-LD",
+  "image": [
+    "https://kiko.io/images/social-media/Provide-Blog-Metadata-via-JSON-LD.png"
+  ],
+  "datePublished": "2023-02-02T12:00:00+00:00",
+  "dateModified": "2023-02-02T12:00:00+00:00",
+  "author": [{
+    "@id": "kiko.io/#person"
+  }],
+  "publisher": [{
+      "@id": "kiko.io/#organization"
+  }]
+}
+```
 
 ## Gluing all together
 
