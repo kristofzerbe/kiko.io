@@ -295,18 +295,17 @@
   const searchString = urlParams.get("q");
   
   window.addEventListener('DOMContentLoaded', (event) => {
-    new PagefindUI({ 
+    let pagefind = new PagefindUI({ 
       element: "#search",
       bundlePath: "/pagefind/",
       resetStyles: true
     });
+    if (searchString) { 
+      pagefind.triggerSearch(searchString);
+    }
   });
   waitForElm(".pagefind-ui__search-input").then((elm) => {
     elm.focus();
-    if (searchString) { 
-      elm.value = searchString;
-      elm.dispatchEvent(new Event('input'));
-    }
   });
 
 </script></main>
@@ -339,13 +338,13 @@
         
           <li>
             
-              <a href="/post/Radio-Garden/">Radio Garden</a>
+              <a href="/post/Pagefind-UI-and-URL-Parameters/"><b>Update: </b>Pagefind UI and URL Parameters</a>
             
           </li>
         
           <li>
             
-              <a href="/post/Pagefind-UI-and-URL-Parameters/">Pagefind UI and URL Parameters</a>
+              <a href="/post/Radio-Garden/">Radio Garden</a>
             
           </li>
         
