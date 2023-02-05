@@ -8,4 +8,9 @@ photograph:
   link: 'https://500px.com/photo/1023750696/Photographers-Mosaic-by-Kristof-Zerbe/'
 ---
 
-Mostly all posts or pages in this blog have a unique photo as hero image, to represent the page. I have shot and edited all these photographs over the last few years. Here's a list of all photos used or stored for future comings:
+<img src="/images/cc-free-culture.png" 
+     style="float:right; width:4rem; padding-left:2rem;">
+
+Mostly all posts or pages in this blog have a unique photo as hero image, to represent the page. I have shot and edited all these photographs over the last few years. All these images can be used under the Attribution-ShareAlike 4.0 International ([CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)) license.
+
+Here's a list of all photos used or stored for future comings:

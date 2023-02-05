@@ -1,8 +1,8 @@
 ---
 slug: Provide-Blog-Metadata-via-JSON-LD
 title: Provide Blog Metadata via JSON-LD
-subtitle:
-date: 2023-01-31 15:36:21
+subtitle: Centralization of a website's schema.org data in the HEAD instead of everywhere in the HTML
+date: 2023-02-05
 photograph:
   file: D70_9216.jpg
   name: Broken Onion
@@ -21,6 +21,7 @@ related:
 syndication:
   - host: Mastodon
     url: null
+hidden: true
 ---
 
 Chris Coyier's post "[Open Graph Blues](https://chriscoyier.net/2023/01/28/open-graph-blues/)" got me thinking that my blog's metadata, which are used by Google among others to index my pages, aren't really at the cutting edge anymore. I took the markup of the individual elements of the pages via [schema.org](https://schema.org) Microdata attributes from the standard Hexo template years ago and always adjusted it by value, but never questioned that there are more modern variants to provide the metadata.
@@ -49,24 +50,29 @@ Lots of textual overhead and the hardest part is maintaining it over the long te
 
 <!-- more -->
 
-## Structured Meta Data
+---
+
+## Structured Meta Data ...
 
 Google has published tons of information in its [Search Central](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data) on how to place metadata on your page to be found more easily in the index. You can also see that they are maintained by the update date of individual pages, for example "*Last updated 2023-01-26 UTC*". End of last week. That's up to date, fine.
 
 Of course, they also show how to use Microdata, but recommended is the use of [JSON-LD](https://json-ld.org/), a structured and centralized inclusion of the required information via a SCRIPT tag in the header of the page. Thereby information about the **website** in general, the **author**, the **organization** behind it and the actual **article** page can be combined separately in one piece of JSON code.
 
-{% alertbox warning %}
+{% alertbox exclamation %}
 Google's solution is based on schema.org, but they have picked only what is necessary for them, which means: they deal only with a subset of the schema.org types.
 {% endalertbox %}
 
-Since it is somewhat cumbersome to write correct JSON-LD from AHnd, there are of course online editors for it, e.g. within the [web code tools](https://webcode.tools/generators/structured-data) or [Merkle](https://technicalseo.com/tools/schema-markup-generator/).
+Since it is somewhat cumbersome to write correct JSON-LD by hand, there are of course online editors for it, e.g. within the [web code tools](https://webcode.tools/generators/structured-data) or [Merkle](https://technicalseo.com/tools/schema-markup-generator/).
 
-### Author
+---
+
+## ... Author
 
 First of all, this code is about me myself and I...
 
 ```json
 {
+  "@context": "http://schema.org/",
   "@type": "Person",
   "@id": "kiko.io/#person",
   "name": "Kristof Zerbe",
@@ -84,12 +90,15 @@ First of all, this code is about me myself and I...
 It is advisable to include so called **Node Identifiers** (``@id``) in order to reuse certain information later on as a reference and prevent repeating data.
 {% endalertbox %}
 
-### Organization
+---
+
+## ... Organization
 
 Most blogs are run by individuals and not necessarily by organizations, so you might think this area would not be interesting, but it is for a reason: only here you can deposit the link to a logo of your blog, which can then be displayed in the search.
 
 ```json
 {
+  "@context": "http://schema.org/",
   "@type": "Organization",
   "@id": "kiko.io/#organization",
   "name": "kiko.io",
@@ -98,12 +107,15 @@ Most blogs are run by individuals and not necessarily by organizations, so you m
 }
 ```
 
-### Website
+---
+
+## ... Website
 
 The JSON block related to this website itself looks like this:
 
 ```json
 {
+  "@context": "http://schema.org/",
   "@type": "WebSite",
   "@id": "kiko.io/#website",
   "url": "https://kiko.io",
@@ -115,20 +127,70 @@ The JSON block related to this website itself looks like this:
   },
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://kiko.io/search/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }  
+    "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://kiko.io/search/?q={searchTerm}"
+    },
+    "query-input": "required name=searchTerm"
+  }
 }
 ```
 
-### Article
+Remarkable in this block is the ``potentialAction``, which specifies the possibility to let the search engine (Google, whatelse) integrate a Sitelinks Search Box, a search box inside the result list, as described [here](https://developers.google.com/search/docs/appearance/structured-data/sitelinks-searchbox). There is a shorthand format for this and some generators like Merkle are using it, but it is not recommended, because it's non-standard.
 
-The last three can be output on any page, as they describe the blog in general, but the following is article-specific and differs depending on the page, of course.
+---
+
+## ... Page Specific Data
+
+The last blocks can be output on any page, as they describe the blog and the person behind in general, but the following are page-specific and differs depending on the page, of course.
+
+### Images
+
+I use my own photographs on every page as header images and to provide some additional information on these, there is a JSON block for those images.
 
 ```json
 {
+  "@context": "http://schema.org/",
+  "@type": "ImageObject",
+  "@id": "kiko.io#photo",
+  "contentUrl": "https://kiko.io/photos/normal/D70_9216.jpg",
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "acquireLicensePage": "https://kiko.io/photos",
+  "creditText": "Kristof Zerbe",
+  "copyrightNotice": "Kristof Zerbe (CC BY-SA 4.0)",
+  "creator": {
+    "@id": "kiko.io/#person"
+  }
+}
+```
+
+For better recognition of my posts, I generate a special image for each blog post for the social media platforms. It is based on the  photo associated with the post and includes the it's title and subtitle in addition to the logo. How I generate these things can be read in my post {% post_link 2021/Generate-Social-Media-Images-Automatically %}. For this image there is a second JSON block, with which I can reference it in the further:
+
+```json
+{
+  "@context": "http://schema.org/",
+  "@type": "ImageObject",
+  "@id": "kiko.io#socialMediaImage",
+  "contentUrl": "https://kiko.io/images/social-media/Provide-Blog-Metadata-via-JSON-LD.png",
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "acquireLicensePage": "https://kiko.io/photos",
+  "creditText": "Kristof Zerbe",
+  "copyrightNotice": "Kristof Zerbe (CC BY-SA 4.0)",
+  "creator": {
+    "@id": "kiko.io/#person"
+  }
+}
+```
+
+![Social Media image of this post](/images/social-media/Provide-Blog-Metadata-via-JSON-LD.thumb.png)
+
+### Article
+
+```json
+{
+  "@context": "http://schema.org/",
   "@type": "Article",
-  "@id": "https://kiko.io/post/Provide-Blog-Metadata-via-JSON-LD/",
+  "@id": "kiko.io#socialMediaImage",
   "headline": "Provide Blog Metadata via JSON-LD",
   "image": [
     "https://kiko.io/images/social-media/Provide-Blog-Metadata-via-JSON-LD.png"
@@ -144,13 +206,19 @@ The last three can be output on any page, as they describe the blog in general, 
 }
 ```
 
+Here the identifiers defined in the other blocks are used for referencing the ``author`` and the ``publisher``, as in the block ``website``.
+
+---
+
 ## Gluing all together
 
 ...
 
+---
+
 ## Test your JSON-LD
 
-When you have everything together, it is advisable to test the resulting code. Schema.org offers such a tool at **[https://validator.schema.org/](https://validator.schema.org/)**.
+When you have everything together, it is advisable to test the resulting code. Schema.org offers such a tool at **[https://validator.schema.org/](https://validator.schema.org/)**. In addition, there is the [Google Rich Results Test](https://search.google.com/test/rich-results), which validates your code against the partially specific implementation for their own search engine.
 
 ![]()
 
