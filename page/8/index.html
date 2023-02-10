@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   
   
-  <!-- HOME -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,21 +14,18 @@
   <meta name="description" content="Blog about memorable tech stuff by Kristof Zerbe">
   
 
-    <meta itemprop="name" content="kiko.io - Memorable Tech Stuff">
-  
-  <meta itemprop="description" content="Blog about memorable tech stuff by Kristof Zerbe">
-  
-  <meta itemprop="image" content="https://kiko.io/images/hero-mobile.jpg">
+    
+  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"WebPage","@id":"https://kiko.io/page/8/","url":"https://kiko.io/page/8/","name":"kiko.io - Memorable Tech Stuff","isPartOf":{"@id":"https://kiko.io/#website"},"description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#photo/$main.jpg"},"image":{"@id":"https://kiko.io#photo/$main.jpg"}},{"@type":"ImageObject","@id":"https://kiko.io#photo/$main.jpg","caption":"Sea Wall","url":"https://kiko.io/images/hero.jpg","contentUrl":"https://kiko.io/images/hero.jpg","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/apple-touch-icon.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"https://kiko.io/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]}]}</script>
 
     <meta property="og:site_name" content="kiko.io">
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="blog">
   <meta property="og:url" content="https://kiko.io/page/8/index.html">
   <meta property="og:title" content="kiko.io - Memorable Tech Stuff">
   
   <meta property="og:description" content="Blog about memorable tech stuff by Kristof Zerbe">
   
-  <meta property="og:image" content="https://kiko.io/images/hero-mobile.jpg">
-  <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="https://kiko.io/images/hero.jpg">
+  <meta property="og:locale" content="en_US">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
@@ -38,7 +34,7 @@
   
   <meta property="twitter:description" content="Blog about memorable tech stuff by Kristof Zerbe">
   
-  <meta property="twitter:image" content="https://kiko.io/images/hero-mobile.jpg">
+  <meta property="twitter:image" content="https://kiko.io/images/hero.jpg">
   
   <link rel="canonical" href="https://kiko.io/page/8/">
 
@@ -273,13 +269,97 @@
   
   
      
+<article id="post-2020/Change-CSS-class-when-element-scrolls-into-viewport" 
+         class="article article-type-post">
+  
+  <div class="article-meta">
+    <a href="/post/Change-CSS-class-when-element-scrolls-into-viewport/" class="article-date">
+  
+    <time class="published dt-published" data-pagefind-meta="date" 
+          datetime="2020-07-13T16:24:39.000Z">13 Jul 2020</time>
+  
+</a>
+    
+  <div class="article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Change-CSS-class-when-element-scrolls-into-viewport/">
+        <img class="article-photo" src="/photos/tablet/D70_7695.jpg" alt="Onion Bokeh" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+    <a class="article-anything" href="/series/a-new-blog">A New Blog</a>
+
+
+
+        
+
+
+  
+    <h1>
+      <a class="article-title"
+         href="/post/Change-CSS-class-when-element-scrolls-into-viewport/">Change CSS class when element scrolls into viewport</a>
+    </h1>
+  
+
+        
+      </header>
+    
+    
+    <div class="article-entry">
+      <p>I had a neat visual gimmick on the start page of this blog, that the gray-scaled header image of a post in the list scaled up to 100% and became colored, when the user hovered over it:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.article-inner</span> <span class="selector-class">.article-photo</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">object-fit</span>: cover;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="attribute">transform-style</span>: preserve-<span class="number">3</span>d;</span><br><span class="line">  <span class="attribute">transition</span>: all ease-out <span class="number">0.6s</span>;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.3</span>;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">1</span>) <span class="built_in">contrast</span>(<span class="number">0.5</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.article-inner</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.article-photo</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">0</span>) <span class="built_in">contrast</span>(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Nice, but a little bit useless on smartphones or tablets, where HOVER  doesn’t really work.</p>
+      
+        <p class="article-more-link">
+          <a href="/post/Change-CSS-class-when-element-scrolls-into-viewport/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li></ul>  
+  </div>
+
+      
+      <div class="article-permalink" id="article-permalink-cldyn6o2m000hkgoi64fbhdda">
+    <input class="article-permalink-value" value="https://kiko.io/post/Change-CSS-class-when-element-scrolls-into-viewport/" 
+           data-id="cldyn6o2m000hkgoi64fbhdda" data-title="Change CSS class when element scrolls into viewport" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("cldyn6o2m000hkgoi64fbhdda");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
 <article id="post-2020/Discoveries-1" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/Discoveries-1/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2020-07-12T07:55:10.000Z">12 Jul 2020</time>
   
 </a>
@@ -302,7 +382,7 @@
         
 
 
-    <a class="article-anything" itemprop="name" href="/series/discoveries">Discoveries</a>
+    <a class="article-anything" href="/series/discoveries">Discoveries</a>
 
 
 
@@ -310,7 +390,7 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/Discoveries-1/">Discoveries #1</a>
     </h1>
@@ -320,7 +400,7 @@
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <p>Due to my daily routine, I’m reading a lot of articles on the web regarding software development. </p>
 <p>The most interesting stuff ends up on my Pocket list, which grows from day to day. Hard to find the pearls, when I need them. This recurring posts will throw a stroke of light on them.</p>
 <p>They are maybe not the newest finds, not the fanciest ones, but remarkable for me and maybe for you also.</p>
@@ -342,15 +422,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cldvpdfbk000jihlsh6n48q6m">
+      <div class="article-permalink" id="article-permalink-cldyn6o2o000jkgoi2qy6dnwx">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-1/" 
-           data-id="cldvpdfbk000jihlsh6n48q6m" data-title="Discoveries #1" />
+           data-id="cldyn6o2o000jkgoi2qy6dnwx" data-title="Discoveries #1" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfbk000jihlsh6n48q6m");
+        initPermalink("cldyn6o2o000jkgoi2qy6dnwx");
     });
 </script>
 
@@ -361,12 +441,12 @@
   
      
 <article id="post-2020/Dopamine-How-Software-should-be" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/Dopamine-How-Software-should-be/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2020-07-10T11:49:09.000Z">10 Jul 2020</time>
   
 </a>
@@ -389,7 +469,7 @@
         
 
 
-    <a class="article-anything" itemprop="name" href="/series/great-finds">Great Finds</a>
+    <a class="article-anything" href="/series/great-finds">Great Finds</a>
 
 
 
@@ -397,21 +477,21 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/Dopamine-How-Software-should-be/">Dopamine: How Software should be...</a>
     </h1>
   
 
         
-    <h2 class="article-subtitle" itemprop="name">
+    <h2 class="article-subtitle">
         A great media player for Windows 10
     </h2>
 
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <p>Not very often, when I’m looking for a new tool to replace some annoying or outdated piece of software, I have to blog about it … but from time to time, I’m discovering pearls, worth to lose a word about.</p>
 <p>The Windows 10 built-in media player Groove is (to be kind) … nice, but it is more or less a leftover from Microsoft’s attempt to create a competitor to iTunes, years ago. The crippeled UI is not the most modern and I was more than once annoyed about its usability.</p>
 <p>Doing a research for a good alternative, you stumble always over the usual suspects: MediaMonkey, Foobar2000, Winamp, VLC or even Media Player Classic!? Not modern enough, not user friendly enough, not lean enough.</p>
@@ -431,15 +511,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cldvpdfbn000oihlsfx200rxl">
+      <div class="article-permalink" id="article-permalink-cldyn6o2q000okgoiexp1b5bh">
     <input class="article-permalink-value" value="https://kiko.io/post/Dopamine-How-Software-should-be/" 
-           data-id="cldvpdfbn000oihlsfx200rxl" data-title="Dopamine: How Software should be..." />
+           data-id="cldyn6o2q000okgoiexp1b5bh" data-title="Dopamine: How Software should be..." />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfbn000oihlsfx200rxl");
+        initPermalink("cldyn6o2q000okgoiexp1b5bh");
     });
 </script>
 
@@ -450,12 +530,12 @@
   
      
 <article id="post-2020/Using-GitHub-as-Commenting-Platform" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/Using-GitHub-as-Commenting-Platform/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2020-07-05T12:55:16.000Z">05 Jul 2020</time>
   
 </a>
@@ -478,7 +558,7 @@
         
 
 
-    <a class="article-anything" itemprop="name" href="/series/a-new-blog">A New Blog</a>
+    <a class="article-anything" href="/series/a-new-blog">A New Blog</a>
 
 
 
@@ -486,21 +566,21 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/Using-GitHub-as-Commenting-Platform/">Using GitHub as Commenting Platform</a>
     </h1>
   
 
         
-    <h2 class="article-subtitle" itemprop="name">
+    <h2 class="article-subtitle">
         Integrate Utterances&#39; GitHub Issue Commenting to Hexo
     </h2>
 
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <p>If you run a blog, it is always advisable to integrate a commenting system, in order to get feedback on your posts from your readers.</p>
 <p>So did I, when I start this blog and I decided to use the <a href="https://disqus.com/">Disqus platform</a>, as it was very easy to integrate … but I always had a bad feeling about a third-party platform collecting data from my readers. Disqus is probably not without reason under criticism by many people in the community.</p>
 <p>As I host this blog at GitHub (see <a href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/">A New Blog (Part One): VS Code, Hexo and GitHub Pages</a>) I was looking for a solution to host the comments also on my prefered platform. There were some solutions, which uses GitHub Issues for this and wanted to implement something like that someday.</p>
@@ -518,15 +598,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cldvpdfbu000zihlsd7hx1d7g">
+      <div class="article-permalink" id="article-permalink-cldyn6o2x000zkgoi9z56695i">
     <input class="article-permalink-value" value="https://kiko.io/post/Using-GitHub-as-Commenting-Platform/" 
-           data-id="cldvpdfbu000zihlsd7hx1d7g" data-title="Using GitHub as Commenting Platform" />
+           data-id="cldyn6o2x000zkgoi9z56695i" data-title="Using GitHub as Commenting Platform" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfbu000zihlsd7hx1d7g");
+        initPermalink("cldyn6o2x000zkgoi9z56695i");
     });
 </script>
 
@@ -537,12 +617,12 @@
   
      
 <article id="post-2020/Meaningful-automatic-versioning-with-T4" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/Meaningful-automatic-versioning-with-T4/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2020-06-27T15:57:18.000Z">27 Jun 2020</time>
   
 </a>
@@ -571,21 +651,21 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/Meaningful-automatic-versioning-with-T4/">Meaningful automatic versioning with T4</a>
     </h1>
   
 
         
-    <h2 class="article-subtitle" itemprop="name">
+    <h2 class="article-subtitle">
         How to implement versioning in C# projects the better way
     </h2>
 
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <p>Every developer has to have an idea of versioning his products. If you work with Visual Studio you have the <code>Assembly Information</code> in the project properties dialog, to enter it manually everytime you want to release a new version:</p>
 <p><img src="/post/Meaningful-automatic-versioning-with-T4/AssemblyInformationDialog.png" alt="Assembly Information Dialog"></p>
 <p>The four fields are: MAJOR, MINOR, BUILD, REVISION.</p>
@@ -607,15 +687,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cldvpdfbs000vihlsga6o95md">
+      <div class="article-permalink" id="article-permalink-cldyn6o2v000vkgoi9x70ae32">
     <input class="article-permalink-value" value="https://kiko.io/post/Meaningful-automatic-versioning-with-T4/" 
-           data-id="cldvpdfbs000vihlsga6o95md" data-title="Meaningful automatic versioning with T4" />
+           data-id="cldyn6o2v000vkgoi9x70ae32" data-title="Meaningful automatic versioning with T4" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfbs000vihlsga6o95md");
+        initPermalink("cldyn6o2v000vkgoi9x70ae32");
     });
 </script>
 
@@ -626,12 +706,12 @@
   
      
 <article id="post-2020/Automatic-Header-Images-in-Hexo" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/Automatic-Header-Images-in-Hexo/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2020-06-22T15:49:16.000Z">22 Jun 2020</time>
   
 </a>
@@ -654,7 +734,7 @@
         
 
 
-    <a class="article-anything" itemprop="name" href="/series/a-new-blog">A New Blog</a>
+    <a class="article-anything" href="/series/a-new-blog">A New Blog</a>
 
 
 
@@ -662,21 +742,21 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/Automatic-Header-Images-in-Hexo/">Automatic Header Images in Hexo</a>
     </h1>
   
 
         
-    <h2 class="article-subtitle" itemprop="name">
+    <h2 class="article-subtitle">
         Use static images randomly for posts via Hexo script
     </h2>
 
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <p>Every article in this blog has an individual header image, to bring a little bit color into it. In this post I will show you how I deal with the images in using and automatic provisioning.</p>
 <p>For serving these pictures I use a static folder, as described in <a href="/categories/Tools/A-New-Blog-Customizing-Hexo/">A New Blog: Customizing Hexo</a>. The hard work is done by the plugin <a href="https://github.com/niahoo/hexo-generator-copy">Hexo Generator Copy</a>, which copies the static files into the <code>public_dir</code> while generating.</p>
       
@@ -693,15 +773,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cldvpdfbf000gihls2458en58">
+      <div class="article-permalink" id="article-permalink-cldyn6o2l000gkgoi0myn94ti">
     <input class="article-permalink-value" value="https://kiko.io/post/Automatic-Header-Images-in-Hexo/" 
-           data-id="cldvpdfbf000gihls2458en58" data-title="Automatic Header Images in Hexo" />
+           data-id="cldyn6o2l000gkgoi0myn94ti" data-title="Automatic Header Images in Hexo" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfbf000gihls2458en58");
+        initPermalink("cldyn6o2l000gkgoi0myn94ti");
     });
 </script>
 
@@ -712,12 +792,12 @@
   
      
 <article id="post-2020/Localization-with-resource-files-in-JavaScript-web-apps" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/Localization-with-resource-files-in-JavaScript-web-apps/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2020-06-13T13:49:10.000Z">13 Jun 2020</time>
   
 </a>
@@ -746,21 +826,21 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/Localization-with-resource-files-in-JavaScript-web-apps/">Localization with resource files in JavaScript web apps</a>
     </h1>
   
 
         
-    <h2 class="article-subtitle" itemprop="name">
+    <h2 class="article-subtitle">
         How to work with Visual Studio resource files for localization in Single Page Applications
     </h2>
 
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <p>There are plenty of editors out there to help you writing JavaScript web applications. As I’m working in my daily life with Visual Studio, it is a obvious choice for me.</p>
 <p>One of the most time saving tools in VS is the plugin <a href="https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager">ResXManager</a>, which is an awesome assistant on managing the translations for a Desktop- or ASP.NET-App, which uses XML-based RESX files.</p>
       
@@ -777,15 +857,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cldvpdfbr000uihls0tnm9tcv">
+      <div class="article-permalink" id="article-permalink-cldyn6o2u000ukgoigpw39eq9">
     <input class="article-permalink-value" value="https://kiko.io/post/Localization-with-resource-files-in-JavaScript-web-apps/" 
-           data-id="cldvpdfbr000uihls0tnm9tcv" data-title="Localization with resource files in JavaScript web apps" />
+           data-id="cldyn6o2u000ukgoigpw39eq9" data-title="Localization with resource files in JavaScript web apps" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfbr000uihls0tnm9tcv");
+        initPermalink("cldyn6o2u000ukgoigpw39eq9");
     });
 </script>
 
@@ -796,12 +876,12 @@
   
      
 <article id="post-2020/TFS-DevOps-Delete-Remote-Workspace" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/TFS-DevOps-Delete-Remote-Workspace/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2020-02-27T23:00:00.000Z">28 Feb 2020</time>
   
 </a>
@@ -830,7 +910,7 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/TFS-DevOps-Delete-Remote-Workspace/">TFS/DevOps: Delete Remote Workspace</a>
     </h1>
@@ -840,7 +920,7 @@
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <p>If you are working with freelance developers and Azure DevOps&#x2F;TFS with TFVC (Team Foundation Version Control) in your company, maybe this will look familiar to you: You hire a new freelancer and you want to reuse the hardware, including the complete software setup, to bring him&#x2F;her to work as fast and straightforward as possible. You set up a new Azure Devops account with all necessary permissions and you think you’re done. No you are not…</p>
       
         <p class="article-more-link">
@@ -856,15 +936,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cldvpdfbt000yihlsamaig1lu">
+      <div class="article-permalink" id="article-permalink-cldyn6o2x000ykgoi7geg1u65">
     <input class="article-permalink-value" value="https://kiko.io/post/TFS-DevOps-Delete-Remote-Workspace/" 
-           data-id="cldvpdfbt000yihlsamaig1lu" data-title="TFS/DevOps: Delete Remote Workspace" />
+           data-id="cldyn6o2x000ykgoi7geg1u65" data-title="TFS/DevOps: Delete Remote Workspace" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfbt000yihlsamaig1lu");
+        initPermalink("cldyn6o2x000ykgoi7geg1u65");
     });
 </script>
 
@@ -875,12 +955,12 @@
   
      
 <article id="post-2019/Better-Input-Change-Event" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/Better-Input-Change-Event/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2019-11-26T15:51:17.000Z">26 Nov 2019</time>
   
 </a>
@@ -909,7 +989,7 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/Better-Input-Change-Event/">Better Input Change Event</a>
     </h1>
@@ -919,7 +999,7 @@
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <p>Often it is important to trigger an event, after the user of your website&#x2F;web app has filled out an text input. You have to do something with the given value in JavaScript.</p>
 <p>The intended event for this is <code>change</code>, which will be triggered, when the user has ended changing by leaving the input with his cursor, mostly by using the TAB key. This works at some degree, if there is a physical keyboard, but not really on mobile devices … and for me is leaving the field often too late to start the upcoming event.</p>
       
@@ -936,15 +1016,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cldvpdfbb000aihlsa86x0h9c">
+      <div class="article-permalink" id="article-permalink-cldyn6o2i000akgoi09va8q5k">
     <input class="article-permalink-value" value="https://kiko.io/post/Better-Input-Change-Event/" 
-           data-id="cldvpdfbb000aihlsa86x0h9c" data-title="Better Input Change Event" />
+           data-id="cldyn6o2i000akgoi09va8q5k" data-title="Better Input Change Event" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfbb000aihlsa86x0h9c");
+        initPermalink("cldyn6o2i000akgoi09va8q5k");
     });
 </script>
 
@@ -955,12 +1035,12 @@
   
      
 <article id="post-2019/Hexo-and-the-Dark-Mode-revised" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/Hexo-and-the-Dark-Mode-revised/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2019-10-26T12:08:05.000Z">26 Oct 2019</time>
   
 </a>
@@ -983,7 +1063,7 @@
         
 
 
-    <a class="article-anything" itemprop="name" href="/series/a-new-blog">A New Blog</a>
+    <a class="article-anything" href="/series/a-new-blog">A New Blog</a>
 
 
 
@@ -991,21 +1071,21 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/Hexo-and-the-Dark-Mode-revised/">Hexo and the Dark Mode ... revised</a>
     </h1>
   
 
         
-    <h2 class="article-subtitle" itemprop="name">
+    <h2 class="article-subtitle">
         Second approach to implement &#39;prefers-color-scheme&#39;
     </h2>
 
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <p>While writing my post <a href="/categories/Tools/Hexo-and-the-Dark-Mode">Hexo and the Dark Mode</a> a few days ago, I thought it would be nice, if I could switch between the normal (light) and the dark theme, I’ve created for the support of the OS-related Dark Mode, even manually. The only thing I needed was a toggle element and a little bit of JavaScript.</p>
 <p>Of course, I couldn’t manipulate the <a href="https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-color-scheme">media query <code>prefers-color-scheme</code></a> itself, but introduce a different way by blog uses it. Instead of implementing the media query directly into my CSS (or Stylus) code, I used a root selector, which can be manipulated by JavaScript … something like this:</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: white;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: black;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1023,15 +1103,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cldvpdfbb000bihlseqxo0v8r">
+      <div class="article-permalink" id="article-permalink-cldyn6o2i000bkgoi6xew4q9o">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-Dark-Mode-revised/" 
-           data-id="cldvpdfbb000bihlseqxo0v8r" data-title="Hexo and the Dark Mode ... revised" />
+           data-id="cldyn6o2i000bkgoi6xew4q9o" data-title="Hexo and the Dark Mode ... revised" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfbb000bihlseqxo0v8r");
+        initPermalink("cldyn6o2i000bkgoi6xew4q9o");
     });
 </script>
 
@@ -1042,12 +1122,12 @@
   
      
 <article id="post-2019/Hexo-and-the-Dark-Mode" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/Hexo-and-the-Dark-Mode/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2019-10-23T13:28:04.000Z">23 Oct 2019</time>
   
 </a>
@@ -1070,7 +1150,7 @@
         
 
 
-    <a class="article-anything" itemprop="name" href="/series/a-new-blog">A New Blog</a>
+    <a class="article-anything" href="/series/a-new-blog">A New Blog</a>
 
 
 
@@ -1078,21 +1158,21 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/Hexo-and-the-Dark-Mode/">Hexo and the Dark Mode</a>
     </h1>
   
 
         
-    <h2 class="article-subtitle" itemprop="name">
+    <h2 class="article-subtitle">
         First approach to implement &#39;prefers-color-scheme&#39;
     </h2>
 
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <p>Due to the fact, that nowadays everybody is talking about Dark Modes for Browsers and Operating Systems, in order to save battery or for easier reading (uhh, really?), I decided my blog should support that.</p>
 <p><img src="/post/Hexo-and-the-Dark-Mode/screen-recording-1.gif" alt="Switching Dark Mode in Windows 10"></p>
       
@@ -1109,15 +1189,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cldvpdfbc000cihlse4n29b40">
+      <div class="article-permalink" id="article-permalink-cldyn6o2j000ckgoi3yi45z6b">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-Dark-Mode/" 
-           data-id="cldvpdfbc000cihlse4n29b40" data-title="Hexo and the Dark Mode" />
+           data-id="cldyn6o2j000ckgoi3yi45z6b" data-title="Hexo and the Dark Mode" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfbc000cihlse4n29b40");
+        initPermalink("cldyn6o2j000ckgoi3yi45z6b");
     });
 </script>
 
@@ -1128,12 +1208,12 @@
   
      
 <article id="post-2019/A-New-Blog-Blogging-and-Synching-en-route" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/A-New-Blog-Blogging-and-Synching-en-route/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2019-09-30T22:00:00.000Z">01 Oct 2019</time>
   
 </a>
@@ -1156,7 +1236,7 @@
         
 
 
-    <a class="article-anything" itemprop="name" href="/series/a-new-blog">A New Blog</a>
+    <a class="article-anything" href="/series/a-new-blog">A New Blog</a>
 
 
 
@@ -1164,21 +1244,21 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/A-New-Blog-Blogging-and-Synching-en-route/">A New Blog: Blogging and Synching en route</a>
     </h1>
   
 
         
-    <h2 class="article-subtitle" itemprop="name">
+    <h2 class="article-subtitle">
         Part Three of having fun with Hexo and GitHub Pages
     </h2>
 
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <p>I work with several devices, some Windows, some Android, and sometimes I have time to write on my articles at home (Notebook, Tablet), in my spare time in the office (Desktop, Laptop) or on my way to somewhere (Smartphone). Right now I’m am in a barber shop, waiting for my haircut and write these lines. So, wherever I am, I need the Hexo project locally, but in sync on a digital device.</p>
 <p>The blog is synced via Dropbox, but hosted on GitHub Pages, so on every device I need the  publishing functions of Git too.</p>
       
@@ -1195,101 +1275,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cldvpdfb30005ihlsenuh1dp5">
+      <div class="article-permalink" id="article-permalink-cldyn6o2e0005kgoidh4bdqms">
     <input class="article-permalink-value" value="https://kiko.io/post/A-New-Blog-Blogging-and-Synching-en-route/" 
-           data-id="cldvpdfb30005ihlsenuh1dp5" data-title="A New Blog: Blogging and Synching en route" />
+           data-id="cldyn6o2e0005kgoidh4bdqms" data-title="A New Blog: Blogging and Synching en route" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfb30005ihlsenuh1dp5");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2019/A-New-Blog-Customizing-Hexo" 
-         class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-meta">
-    <a href="/post/A-New-Blog-Customizing-Hexo/" class="article-date">
-  
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
-          datetime="2019-09-25T10:00:00.000Z">25 Sep 2019</time>
-  
-</a>
-    
-  <div class="article-category category-tools">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/A-New-Blog-Customizing-Hexo/">
-        <img class="article-photo" src="/photos/tablet/19-07 Schottland-0198.jpg" alt="Thistle Fence" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-    <a class="article-anything" itemprop="name" href="/series/a-new-blog">A New Blog</a>
-
-
-
-        
-
-
-  
-    <h1 itemprop="name">
-      <a class="article-title"
-         href="/post/A-New-Blog-Customizing-Hexo/">A New Blog: Customizing Hexo</a>
-    </h1>
-  
-
-        
-    <h2 class="article-subtitle" itemprop="name">
-        Part Two of having fun with Hexo and GitHub Pages
-    </h2>
-
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      <p>Hexo is a great tool to get quick results (see <a href="/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/">Part One of this series</a>), when you decide to have a blog and its defaults are practical, but it’s power lies in the possiblities of customization via plugins. On the <a href="https://hexo.io/plugins/index.html">official plugin page</a>, there are actually 302 plugins listed, but there are many more and no wish will be unsatisfied.</p>
-<p>I will show you which of these I found worth to work with…</p>
-      
-        <p class="article-more-link">
-          <a href="/post/A-New-Blog-Customizing-Hexo/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/" rel="tag">VS Code</a></li></ul>  
-  </div>
-
-      
-      <div class="article-permalink" id="article-permalink-cldvpdfb40007ihlsb3f490wq">
-    <input class="article-permalink-value" value="https://kiko.io/post/A-New-Blog-Customizing-Hexo/" 
-           data-id="cldvpdfb40007ihlsb3f490wq" data-title="A New Blog: Customizing Hexo" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("cldvpdfb40007ihlsb3f490wq");
+        initPermalink("cldyn6o2e0005kgoidh4bdqms");
     });
 </script>
 
@@ -1338,6 +1332,12 @@
         
           <li>
             
+              <a href="/post/Provide-Blog-Metadata-via-JSON-LD/">Provide Blog Metadata via JSON-LD</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Pagefind-UI-and-URL-Parameters/"><b>Update: </b>Pagefind UI and URL Parameters</a>
             
           </li>
@@ -1357,12 +1357,6 @@
           <li>
             
               <a href="/post/Favourite-Pens-of-2022/">Favourite Pens of 2022</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Discoveries-22-Tips-Tricks/">Discoveries #22 -  Tips/Tricks</a>
             
           </li>
         

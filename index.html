@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   
   
-  <!-- HOME -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,21 +14,18 @@
   <meta name="description" content="Blog about memorable tech stuff by Kristof Zerbe">
   
 
-    <meta itemprop="name" content="kiko.io - Memorable Tech Stuff">
-  
-  <meta itemprop="description" content="Blog about memorable tech stuff by Kristof Zerbe">
-  
-  <meta itemprop="image" content="https://kiko.io/images/hero-mobile.jpg">
+    
+  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"WebPage","@id":"https://kiko.io/","url":"https://kiko.io/","name":"kiko.io - Memorable Tech Stuff","isPartOf":{"@id":"https://kiko.io/#website"},"description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#photo/$main.jpg"},"image":{"@id":"https://kiko.io#photo/$main.jpg"}},{"@type":"ImageObject","@id":"https://kiko.io#photo/$main.jpg","caption":"Sea Wall","url":"https://kiko.io/images/hero.jpg","contentUrl":"https://kiko.io/images/hero.jpg","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/apple-touch-icon.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"https://kiko.io/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]}]}</script>
 
     <meta property="og:site_name" content="kiko.io">
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="blog">
   <meta property="og:url" content="https://kiko.io/index.html">
   <meta property="og:title" content="kiko.io - Memorable Tech Stuff">
   
   <meta property="og:description" content="Blog about memorable tech stuff by Kristof Zerbe">
   
-  <meta property="og:image" content="https://kiko.io/images/hero-mobile.jpg">
-  <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="https://kiko.io/images/hero.jpg">
+  <meta property="og:locale" content="en_US">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
@@ -38,7 +34,7 @@
   
   <meta property="twitter:description" content="Blog about memorable tech stuff by Kristof Zerbe">
   
-  <meta property="twitter:image" content="https://kiko.io/images/hero-mobile.jpg">
+  <meta property="twitter:image" content="https://kiko.io/images/hero.jpg">
   
   <link rel="canonical" href="https://kiko.io/">
 
@@ -273,16 +269,111 @@
   
   
      
+<article id="post-2023/Provide-Blog-Metadata-via-JSON-LD" 
+         class="article article-type-post">
+  
+  <div class="article-meta">
+    <a href="/post/Provide-Blog-Metadata-via-JSON-LD/" class="article-date">
+  
+    <time class="published dt-published" data-pagefind-meta="date" 
+          datetime="2023-02-09T23:00:00.000Z">10 Feb 2023</time>
+  
+</a>
+    
+  <div class="article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Provide-Blog-Metadata-via-JSON-LD/">
+        <img class="article-photo" src="/photos/tablet/D70_9216.jpg" alt="Broken Onion" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+    <a class="article-anything" href="/series/a-new-blog">A New Blog</a>
+
+
+
+        
+
+
+  
+    <h1>
+      <a class="article-title"
+         href="/post/Provide-Blog-Metadata-via-JSON-LD/">Provide Blog Metadata via JSON-LD</a>
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle">
+        Centralization of a website&#39;s schema.org data in the HEAD instead of everywhere in the HTML
+    </h2>
+
+      </header>
+    
+    
+    <div class="article-entry">
+      <p>Chris Coyier’s post “<a href="https://chriscoyier.net/2023/01/28/open-graph-blues/">Open Graph Blues</a>“ got me thinking that my blog’s metadata, which are used by Google among others to index my pages, aren’t really at the cutting edge anymore. I took the markup of the individual elements of the pages via <a href="https://schema.org/">schema.org</a> Microdata attributes from the standard Hexo template years ago and always adjusted it by value, but never questioned that there are more modern variants to provide the metadata.</p>
+<p>It’s Ok for Google to use Microdata attributes, but the HTML code of my templates is getting more and more opaque, because next to these stick to the tags also those for the Indieweb, classes for CSS and last but not least those for the own indexing via Pagefind. There becomes from a simple</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Title of my latest blog post<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>quickly becomes a …</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span> <span class="attr">class</span>=<span class="string">&quot;article-type-post h-entry&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">data-pagefind-body</span>=<span class="string">&quot;&quot;</span> <span class="attr">data-pagefind-meta</span>=<span class="string">&quot;type:Article&quot;</span> <span class="attr">itemscope</span> <span class="attr">itemprop</span>=<span class="string">&quot;blogPost&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;article-title p-name&quot;</span> </span></span><br><span class="line"><span class="tag">      <span class="attr">itemprop</span>=<span class="string">&quot;name&quot;</span>&gt;</span>Title of my latest blog post<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Lots of textual overhead and the hardest part is maintaining it over the long term. Better would be a complete search engine description in the header of a page, where also the other meta information is available. In one place and not spread all over the HTML code. <strong>JSON-LD to the rescue</strong>…</p>
+      
+        <p class="article-more-link">
+          <a href="/post/Provide-Blog-Metadata-via-JSON-LD/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Search/" rel="tag">Search</a></li></ul>  
+  </div>
+
+      
+  
+  
+
+      <div class="article-permalink" id="article-permalink-cldyn6o3z002xkgoi1mzx50ja">
+    <input class="article-permalink-value" value="https://kiko.io/post/Provide-Blog-Metadata-via-JSON-LD/" 
+           data-id="cldyn6o3z002xkgoi1mzx50ja" data-title="Provide Blog Metadata via JSON-LD" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("cldyn6o3z002xkgoi1mzx50ja");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
 <article id="post-2023/Pagefind-UI-and-URL-Parameters" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/Pagefind-UI-and-URL-Parameters/" class="article-date">
   
-    <time class="updated dt-updated" data-pagefind-meta="date" itemprop="dateUpdated"
+    <time class="updated dt-updated" data-pagefind-meta="date" 
           datetime="2023-02-03T10:51:00.000Z">03 Feb 2023</time>
     <br>
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2023-01-31T11:04:00.000Z">31 Jan 2023</time>
   
 </a>
@@ -305,7 +396,7 @@
         
 
 
-    <a class="article-anything" itemprop="name" href="/series/a-new-blog">A New Blog</a>
+    <a class="article-anything" href="/series/a-new-blog">A New Blog</a>
 
 
 
@@ -313,7 +404,7 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/Pagefind-UI-and-URL-Parameters/">Pagefind UI and URL Parameters</a>
     </h1>
@@ -323,7 +414,7 @@
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <div class="alertbox alertbox-exclamation">
       <p><strong>UPDATE</strong>: Parts of the original post are outdated, as Pagefind <strong>DOES</strong> offer a way to preset a search string, which just hasn’t been documented yet … \o&#x2F; … see below.</p>
 
@@ -358,15 +449,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cldvpdfde002wihlsg20f0x4o">
+      <div class="article-permalink" id="article-permalink-cldyn6o3z002wkgoi6vvlazi0">
     <input class="article-permalink-value" value="https://kiko.io/post/Pagefind-UI-and-URL-Parameters/" 
-           data-id="cldvpdfde002wihlsg20f0x4o" data-title="Pagefind UI and URL Parameters" />
+           data-id="cldyn6o3z002wkgoi6vvlazi0" data-title="Pagefind UI and URL Parameters" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfde002wihlsg20f0x4o");
+        initPermalink("cldyn6o3z002wkgoi6vvlazi0");
     });
 </script>
 
@@ -377,12 +468,12 @@
   
      
 <article id="post-2023/Radio-Garden" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/Radio-Garden/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2023-02-01T23:00:00.000Z">02 Feb 2023</time>
   
 </a>
@@ -405,7 +496,7 @@
         
 
 
-    <a class="article-anything" itemprop="name" href="/series/golem">Golem</a>
+    <a class="article-anything" href="/series/golem">Golem</a>
 
 
 
@@ -413,21 +504,21 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/Radio-Garden/">Radio Garden</a>
     </h1>
   
 
         
-    <h2 class="article-subtitle" itemprop="name">
+    <h2 class="article-subtitle">
         Free, registration-free and simply cool - Travel through the radio stations of the world with Radio Garden
     </h2>
 
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <p>In the age of streaming services, radio may seem out of date, but it still surrounds us constantly, even if we often hardly notice it - in the car, on the public transport, at work or simply at home in the kitchen. One strength of the old medium is that it presents us with music we haven’t heard before, away from our playlists on Spotify or iTunes.</p>
 <p>The easiest way to rediscover new artists or entire genres of music is to pick a radio station at random. It’s precisely this lack of control, the being at the mercy, the sometimes unpredictable that makes the medium so appealing to many - and with digital streaming, many of the world’s stations are just a tap away.</p>
 <p>As is so often the case in the modern world, it’s the oversupply that leaves some confused and frustrated. You first have to be able to pick out what you might like from the gigantic haystack of options. For this purpose, there are little helpers that more or less independently suggest what you might listen to. One of them stands out from the crowd because, on the one hand, it does not pursue commercial interests and, on the other hand, it approaches the station search very intuitively: <strong><a href="https://radio.garden/">Radio Garden (https://radio.garden)</a></strong>.</p>
@@ -455,15 +546,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cldvpdfe0002yihls4nua57vc">
+      <div class="article-permalink" id="article-permalink-cldyn6o40002ykgoi0m6y8qus">
     <input class="article-permalink-value" value="https://kiko.io/post/Radio-Garden/" 
-           data-id="cldvpdfe0002yihls4nua57vc" data-title="Radio Garden" />
+           data-id="cldyn6o40002ykgoi0m6y8qus" data-title="Radio Garden" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfe0002yihls4nua57vc");
+        initPermalink("cldyn6o40002ykgoi0m6y8qus");
     });
 </script>
 
@@ -474,12 +565,12 @@
   
      
 <article id="post-2023/Integration-of-Pagefind-in-Hexo" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/Integration-of-Pagefind-in-Hexo/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2023-01-19T12:24:00.000Z">19 Jan 2023</time>
   
 </a>
@@ -502,7 +593,7 @@
         
 
 
-    <a class="article-anything" itemprop="name" href="/series/a-new-blog">A New Blog</a>
+    <a class="article-anything" href="/series/a-new-blog">A New Blog</a>
 
 
 
@@ -510,21 +601,21 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/Integration-of-Pagefind-in-Hexo/">Integration of Pagefind in Hexo</a>
     </h1>
   
 
         
-    <h2 class="article-subtitle" itemprop="name">
+    <h2 class="article-subtitle">
         Adding a low-bandwidth local search to a static Hexo-powered website
     </h2>
 
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <p>From the beginning of this blog I wanted to provide some kind of full text search in order to give my users the ability to find stuff by keyword.</p>
 <p>There are a few Hexo plugins that have approached the subject, but it was not really satisfactory and performant. So I relied on the worlds biggest search engine: Google. A search button, which drives out a small input field and with the pressing of the ENTER key the form was sent via GET to <code>//google.com/search</code>.</p>
 <p><img src="/post/Integration-of-Pagefind-in-Hexo/google-site-search.png" alt="Google Site Search on kiko.io"></p>
@@ -563,15 +654,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cldvpdfde002vihls3xat6yo4">
+      <div class="article-permalink" id="article-permalink-cldyn6o3y002vkgoi27skcbtg">
     <input class="article-permalink-value" value="https://kiko.io/post/Integration-of-Pagefind-in-Hexo/" 
-           data-id="cldvpdfde002vihls3xat6yo4" data-title="Integration of Pagefind in Hexo" />
+           data-id="cldyn6o3y002vkgoi27skcbtg" data-title="Integration of Pagefind in Hexo" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfde002vihls3xat6yo4");
+        initPermalink("cldyn6o3y002vkgoi27skcbtg");
     });
 </script>
 
@@ -582,12 +673,12 @@
   
      
 <article id="post-2023/Favourite-Pens-of-2022" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/Favourite-Pens-of-2022/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2023-01-14T12:10:48.000Z">14 Jan 2023</time>
   
 </a>
@@ -616,7 +707,7 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/Favourite-Pens-of-2022/">Favourite Pens of 2022</a>
     </h1>
@@ -626,7 +717,7 @@
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <p>Every year CodePen publishes a list of the 100 most “liked” pens on their site: <a href="https://codepen.io/2022/popular/">The Most Hearted of 2022</a>. It’s always exciting to scroll through the list and marvel at the incredibly good work of CSS artists. </p>
 <p>My favorite in terms of CSS coding art this year is the work <a href="https://codepen.io/ivorjetski/pen/yLjeqgb">A moment of pure CSS</a> by Ben Evans. Absolutely amazing what he does with pure CSS:</p>
 <p><img src="/post/Favourite-Pens-of-2022/a-moment-of-pure-css.png" alt="Really ... no image involved!"></p>
@@ -655,15 +746,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cldvpdfdd002uihlsayak41pg">
+      <div class="article-permalink" id="article-permalink-cldyn6o3y002ukgoicgz259q0">
     <input class="article-permalink-value" value="https://kiko.io/post/Favourite-Pens-of-2022/" 
-           data-id="cldvpdfdd002uihlsayak41pg" data-title="Favourite Pens of 2022" />
+           data-id="cldyn6o3y002ukgoicgz259q0" data-title="Favourite Pens of 2022" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfdd002uihlsayak41pg");
+        initPermalink("cldyn6o3y002ukgoicgz259q0");
     });
 </script>
 
@@ -674,12 +765,12 @@
   
      
 <article id="post-2023/Discoveries-22-Tips-Tricks" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/Discoveries-22-Tips-Tricks/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2023-01-06T14:05:55.000Z">06 Jan 2023</time>
   
 </a>
@@ -702,7 +793,7 @@
         
 
 
-    <a class="article-anything" itemprop="name" href="/series/discoveries">Discoveries</a>
+    <a class="article-anything" href="/series/discoveries">Discoveries</a>
 
 
 
@@ -710,7 +801,7 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/Discoveries-22-Tips-Tricks/">Discoveries #22 -  Tips/Tricks</a>
     </h1>
@@ -720,7 +811,7 @@
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <p>As someone said the other day? “January is the Monday of the year”. How true. After programming myself a new workflow for creating my discoveries (see <a href="/post/Generate-Content-from-Trello/">Generate Content from Trello</a>) at the end of last year, I wanted to try it out again right away and give you a list of tips and tricks for starting 2023.</p>
 
         <ul class="anchorlist">
@@ -750,15 +841,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cldvpdfdd002tihlsg59617gh">
+      <div class="article-permalink" id="article-permalink-cldyn6o3x002tkgoi2dsvabaz">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-22-Tips-Tricks/" 
-           data-id="cldvpdfdd002tihlsg59617gh" data-title="Discoveries #22 -  Tips/Tricks" />
+           data-id="cldyn6o3x002tkgoi2dsvabaz" data-title="Discoveries #22 -  Tips/Tricks" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfdd002tihlsg59617gh");
+        initPermalink("cldyn6o3x002tkgoi2dsvabaz");
     });
 </script>
 
@@ -769,12 +860,12 @@
   
      
 <article id="post-2022/Generate-Content-from-Trello" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/Generate-Content-from-Trello/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2022-12-29T11:08:00.000Z">29 Dec 2022</time>
   
 </a>
@@ -797,7 +888,7 @@
         
 
 
-    <a class="article-anything" itemprop="name" href="/series/a-new-blog">A New Blog</a>
+    <a class="article-anything" href="/series/a-new-blog">A New Blog</a>
 
 
 
@@ -805,21 +896,21 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/Generate-Content-from-Trello/">Generate Content from Trello</a>
     </h1>
   
 
         
-    <h2 class="article-subtitle" itemprop="name">
+    <h2 class="article-subtitle">
         Use Trello board as bookmark data source for generating Hexo content
     </h2>
 
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <p>I’m collecting&#x2F;bookmarking links to interesting website post on a public Trello board and aggregating them from time to time in a special post series called <em>Discoveries</em>, where I present 10 of them in one post on a specific topic.</p>
 <p>Writing these summaries is currently still a bit time-consuming, because in addition to the link, the name of the author and a small description, I would also like to display a screenshot of the page in each case … and it is still a completely manual process.</p>
 <p>After selecting the 10 links I want to talk about, I first create a new post for my Hexo blog and then process the links as follows:</p>
@@ -856,15 +947,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cldvpdfd6002jihls0tvy2epx">
+      <div class="article-permalink" id="article-permalink-cldyn6o3t002jkgoi9ibcbn26">
     <input class="article-permalink-value" value="https://kiko.io/post/Generate-Content-from-Trello/" 
-           data-id="cldvpdfd6002jihls0tvy2epx" data-title="Generate Content from Trello" />
+           data-id="cldyn6o3t002jkgoi9ibcbn26" data-title="Generate Content from Trello" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfd6002jihls0tvy2epx");
+        initPermalink("cldyn6o3t002jkgoi9ibcbn26");
     });
 </script>
 
@@ -875,12 +966,12 @@
   
      
 <article id="post-2022/Discoveries-21-Sites-Pages" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/Discoveries-21-Sites-Pages/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2022-12-28T17:38:22.000Z">28 Dec 2022</time>
   
 </a>
@@ -903,7 +994,7 @@
         
 
 
-    <a class="article-anything" itemprop="name" href="/series/discoveries">Discoveries</a>
+    <a class="article-anything" href="/series/discoveries">Discoveries</a>
 
 
 
@@ -911,7 +1002,7 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/Discoveries-21-Sites-Pages/">Discoveries #21 -  Sites &amp; Pages</a>
     </h1>
@@ -921,7 +1012,7 @@
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <p>Websites always have a certain purpose and depending on what you want to do with it, there are pre-designed tools, that make it very easy to get started. In this issue of Discoveries I have collected a few such enablers.</p>
 <p>Also included are two hosting offers that address the hot topics of #Fediverse and #IndieWeb in times of #TwitterMigration.</p>
 
@@ -942,15 +1033,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cldvpdfd5002hihlshfsg19kv">
+      <div class="article-permalink" id="article-permalink-cldyn6o3s002hkgoi9pb80gud">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-21-Sites-Pages/" 
-           data-id="cldvpdfd5002hihlshfsg19kv" data-title="Discoveries #21 -  Sites &amp; Pages" />
+           data-id="cldyn6o3s002hkgoi9pb80gud" data-title="Discoveries #21 -  Sites &amp; Pages" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfd5002hihlshfsg19kv");
+        initPermalink("cldyn6o3s002hkgoi9pb80gud");
     });
 </script>
 
@@ -961,12 +1052,12 @@
   
      
 <article id="post-2022/The-State-of-the-Blog" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/The-State-of-the-Blog/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2022-12-23T21:40:00.000Z">23 Dec 2022</time>
   
 </a>
@@ -989,7 +1080,7 @@
         
 
 
-    <a class="article-anything" itemprop="name" href="/series/a-new-blog">A New Blog</a>
+    <a class="article-anything" href="/series/a-new-blog">A New Blog</a>
 
 
 
@@ -997,21 +1088,21 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/The-State-of-the-Blog/">The State of the Blog</a>
     </h1>
   
 
         
-    <h2 class="article-subtitle" itemprop="name">
+    <h2 class="article-subtitle">
         Recap &amp; Workflow after 3 years with Hexo
     </h2>
 
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <p>I’ve started this blog in 2019 with <a href="/post/How-To-Visual-Studio-Database-Project-and-ADSI/" title="How-To: Visual Studio Database Project and ADSI">this article</a> primarily because I needed an area to record things learned for myself, with the side effect that others can benefit from it if they want.</p>
 <p>Why my choice fell on the static site generator <a href="https://hexo.io/">Hexo</a>, I no longer know, but I have now become accustomed (even to the shortcomings) and so far I have been able to implement all my ideas in it … and I had a few of them.</p>
 <p>In this post I would like to share a few experiences I have had with Hexo, regarding the main functionality and the things I’ve customized and describe my workflow behind the individual features of my blog. The latter is not as straightforward as I would like it to be, especially because I have different devices in use that require different approaches. The main purpose of this post is to simply write down for me, how things currently work on kiko.io and to have one or the other idea how to do it better while writing. Doing this publicly is in the hope that you might read this and have a terrific idea that I haven’t come up with yet and leave a comment or webmention … :)</p>
@@ -1039,15 +1130,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cldvpdfdc002sihls2p2o9tg1">
+      <div class="article-permalink" id="article-permalink-cldyn6o3x002skgoifr5x5w4y">
     <input class="article-permalink-value" value="https://kiko.io/post/The-State-of-the-Blog/" 
-           data-id="cldvpdfdc002sihls2p2o9tg1" data-title="The State of the Blog" />
+           data-id="cldyn6o3x002skgoifr5x5w4y" data-title="The State of the Blog" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfdc002sihls2p2o9tg1");
+        initPermalink("cldyn6o3x002skgoifr5x5w4y");
     });
 </script>
 
@@ -1058,12 +1149,12 @@
   
      
 <article id="post-2022/Mastodon-simply-explained" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/Mastodon-simply-explained/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2022-11-15T15:32:07.000Z">15 Nov 2022</time>
   
 </a>
@@ -1092,21 +1183,21 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/Mastodon-simply-explained/">Mastodon simply explained</a>
     </h1>
   
 
         
-    <h2 class="article-subtitle" itemprop="name">
+    <h2 class="article-subtitle">
         Why it is not Twitter and never will be
     </h2>
 
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <p>This weekend I had a revival experience. I got myself a <a href="https://joinmastodon.org/"><strong>Mastodon</strong></a> account, after many years of staying away from social media as far as I could and at most tweeting a new blog post. Since my active Twitter days, things have taken such a turn for the worse, that I’ve preferred to stay away completely.</p>
 <p>I don’t know what made me join Mastodon on Sunday, but it sparked something in me: The love for the good old internet of the late 90s, early 2000s. These guys gave me a warm welcome and made me feel that Internet communities, away from sleazy influencers and banner ads, could actually still work. I got a taste of it, when I let this blog become part of IndieWeb over a year ago, but didn’t quite believe in it because of the low traffic and mentions.</p>
 <p>Now the richest man on the planet has to come along and buy the bird site, and a niche product called Mastodon, well known but underestimated in tech circles, almost explodes under the onslaught of disappointed commercial users. And that’s what we are on Twitter, Facebook and Co … a commercial object.</p>
@@ -1141,15 +1232,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cldvpdfd7002lihlsdl43bmo8">
+      <div class="article-permalink" id="article-permalink-cldyn6o3u002lkgoiar3w7q79">
     <input class="article-permalink-value" value="https://kiko.io/post/Mastodon-simply-explained/" 
-           data-id="cldvpdfd7002lihlsdl43bmo8" data-title="Mastodon simply explained" />
+           data-id="cldyn6o3u002lkgoiar3w7q79" data-title="Mastodon simply explained" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfd7002lihlsdl43bmo8");
+        initPermalink("cldyn6o3u002lkgoiar3w7q79");
     });
 </script>
 
@@ -1160,12 +1251,12 @@
   
      
 <article id="post-2022/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2022-11-13T16:48:40.000Z">13 Nov 2022</time>
   
 </a>
@@ -1194,7 +1285,7 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/">Syndicate Mastodon Hashtags in your favorite Feed Reader</a>
     </h1>
@@ -1204,7 +1295,7 @@
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <p>Ok, I admit it: I read RSS feeds. Quite old school you might think, but I’m mostly off Social Media and the most news sites quite a while ago, with a few exceptions. I just want to read selective stuff, especially in the direction of technology, and not interrupted by items, the news provider think I have to read. My favorite tool for my feed collection is <a href="https://feedly.com/">Feedly</a>, which I open up almost every morning.</p>
 <p>Today, Max Böck gave me the momentum with his article <a href="https://mxb.dev/blog/the-indieweb-for-everyone/">The IndieWeb for Everyone</a> to try another type of social media I know for quite a long time, but never give it a chance: <a href="https://de.wikipedia.org/wiki/Mastodon_(Software)">Mastodon</a>. I’m now part of it on <a href="https://indieweb.social/web/@kiko">indieweb.social</a>.</p>
       
@@ -1231,15 +1322,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cldvpdfdb002qihlshd74fv0r">
+      <div class="article-permalink" id="article-permalink-cldyn6o3w002qkgoift0h7s4y">
     <input class="article-permalink-value" value="https://kiko.io/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/" 
-           data-id="cldvpdfdb002qihlshd74fv0r" data-title="Syndicate Mastodon Hashtags in your favorite Feed Reader" />
+           data-id="cldyn6o3w002qkgoift0h7s4y" data-title="Syndicate Mastodon Hashtags in your favorite Feed Reader" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfdb002qihlshd74fv0r");
+        initPermalink("cldyn6o3w002qkgoift0h7s4y");
     });
 </script>
 
@@ -1250,12 +1341,12 @@
   
      
 <article id="post-2022/Anatomy-of-Service-Worker-Communication" 
-         class="article article-type-post" itemscope itemprop="blogPost">
+         class="article article-type-post">
   
   <div class="article-meta">
     <a href="/post/Anatomy-of-Service-Worker-Communication/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
+    <time class="published dt-published" data-pagefind-meta="date" 
           datetime="2022-11-12T11:26:34.000Z">12 Nov 2022</time>
   
 </a>
@@ -1284,21 +1375,21 @@
 
 
   
-    <h1 itemprop="name">
+    <h1>
       <a class="article-title"
          href="/post/Anatomy-of-Service-Worker-Communication/">Anatomy of Service Worker Communication</a>
     </h1>
   
 
         
-    <h2 class="article-subtitle" itemprop="name">
+    <h2 class="article-subtitle">
         Let your App communicate with its Service Worker
     </h2>
 
       </header>
     
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <p>I have a SPA that works as a PWA, which means that in the background a service worker makes sure that the required files for the offline mode end up in the cache.</p>
 <p>From time to time I also update the Service Worker, which defines which files it should keep offline and which not. Unfortunately, the app itself didn’t get any of this because there was no communication channel for them to talk.</p>
 <p>If you research this topic on the web, you have to dig through many architecture pages and documentations that have one thing in common: sometimes they just don’t get to the point. So here are my 50 cents on the subject and my sample implementation.</p>
@@ -1329,100 +1420,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cldvpdfcz0028ihls922cae3y">
+      <div class="article-permalink" id="article-permalink-cldyn6o3n0028kgoi3vbmfrlh">
     <input class="article-permalink-value" value="https://kiko.io/post/Anatomy-of-Service-Worker-Communication/" 
-           data-id="cldvpdfcz0028ihls922cae3y" data-title="Anatomy of Service Worker Communication" />
+           data-id="cldyn6o3n0028kgoi3vbmfrlh" data-title="Anatomy of Service Worker Communication" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cldvpdfcz0028ihls922cae3y");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2022/Discoveries-20-CSS-UI" 
-         class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-meta">
-    <a href="/post/Discoveries-20-CSS-UI/" class="article-date">
-  
-    <time class="published dt-published" data-pagefind-meta="date" itemprop="datePublished"
-          datetime="2022-10-08T11:23:33.000Z">08 Oct 2022</time>
-  
-</a>
-    
-  <div class="article-category category-misc">
-    <a class="article-category-link" href="/categories/Misc/">Misc</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/Discoveries-20-CSS-UI/">
-        <img class="article-photo" src="/photos/tablet/D50_7474.jpg" alt="Garden Beauties XIV" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-    <a class="article-anything" itemprop="name" href="/series/discoveries">Discoveries</a>
-
-
-
-        
-
-
-  
-    <h1 itemprop="name">
-      <a class="article-title"
-         href="/post/Discoveries-20-CSS-UI/">Discoveries #20 - CSS &amp; UI</a>
-    </h1>
-  
-
-        
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      <p>Web interfaces are unthinkable without CSS. It has its pitfalls, but when used correctly it’s damn powerful. It’s always incredible what developers do with it. This month’s Discoveries is about the basics and the amazing.</p>
-
-        <ul class="anchorlist">
-            <li data-anchor="#my-custom-reset">My Custom CSS Reset</li><li data-anchor="#defensive-css">Defensive CSS</li><li data-anchor="#10-useful-css-tricks">10 Useful CSS Tricks for Front-end Developers</li><li data-anchor="#animated-star-rating">Animated Star Rating</li><li data-anchor="#css-marquee-examples">CSS Marquee Examples</li><li data-anchor="#css-rolling-text">CSS Rolling Text</li><li data-anchor="#cool-hover-effects">Cool Hover Effects That Use CSS Text Shadow</li><li data-anchor="#solving-the-dangler">Solving 'The Dangler' Conundrum with Container Queries and :has()</li><li data-anchor="#conditionally-styling-selected-elements">Conditionally Styling Selected Elements in a Grid Container</li><li data-anchor="#intersection-observer-scrolling-effects">Intersection Observer Scrolling Effects</li>
-        </ul>
-      
-        <p class="article-more-link">
-          <a href="/post/Discoveries-20-CSS-UI/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Collection/" rel="tag">Collection</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UI/" rel="tag">UI</a></li></ul>  
-  </div>
-
-      
-      <div class="article-permalink" id="article-permalink-cldvpdfd5002gihlshzjq6cqc">
-    <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-20-CSS-UI/" 
-           data-id="cldvpdfd5002gihlshzjq6cqc" data-title="Discoveries #20 - CSS &amp; UI" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("cldvpdfd5002gihlshzjq6cqc");
+        initPermalink("cldyn6o3n0028kgoi3vbmfrlh");
     });
 </script>
 
@@ -1471,6 +1477,12 @@
         
           <li>
             
+              <a href="/post/Provide-Blog-Metadata-via-JSON-LD/">Provide Blog Metadata via JSON-LD</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Pagefind-UI-and-URL-Parameters/"><b>Update: </b>Pagefind UI and URL Parameters</a>
             
           </li>
@@ -1490,12 +1502,6 @@
           <li>
             
               <a href="/post/Favourite-Pens-of-2022/">Favourite Pens of 2022</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Discoveries-22-Tips-Tricks/">Discoveries #22 -  Tips/Tricks</a>
             
           </li>
         
