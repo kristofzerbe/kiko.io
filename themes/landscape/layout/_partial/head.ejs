@@ -4,199 +4,217 @@
   <meta charset="utf-8">
   
   <%
-    let title;
-    let description;
-    let image;
-    let type;
-    let subtype;
+    let meta = {
+      type: "page",
+      area: null,
+      subarea: null,
+      slug: null,
+      title: null,
+      description: null,
+      photograph: config.hero,
+      imageUrl: config.hero.url
+    }
+
+    if (page.photograph) {
+      page.photograph.url = config.url + "/photos/normal/" + page.photograph.file
+    }
 
     let excerpt;
     if (page._content) { 
       excerpt = page._content
         .replace(/^(\n)/, "") // Remove Leading break
-        .split("\n")[0] // Get first paragraph //TODO: if not, tag plugins has to be removed first out of the complete text
-        .replace(/(```.+?```)/gim, "[code]") // 1. Replace MD code blocks with placeholder
-        .replace(/\!\[(?<imagetext>.*)\]\(.*\)/g, "($<imagetext>)") // 2: Replace MD images with alt text
-        .replace(/\[(?<linktext>.*)\]\(.*\)/g, "$<linktext>") // 2: Replace MD links with link title
-        .replace(/[`]{1,2}|\*{1,3}|_{1,3}|~{2}|#{1,3}\s|[-=]{2,}|>\s?/g, "") // 3. Remove MD formatting (code, italic/bold, strikethrough, header, lines, quotes)
-        .replace(/(\n){2,}/g, " ") // 4. Multiple breaks
+        .replace(/\{%\s.*%\}\n/g, "") // Remove multi line Nunjucks Vars
+        .replace(/\{%\s(post_link) (?<content>.+?)%\}/g, "($<content>)") // Replace single line Nunjucks vars with its content
+        .replace(/(\n-{3})/g, "") // Remove MD horizontal lines
+        .replace(/(```.+?```)/gim, "[code]") // Replace MD code blocks with placeholder
+        .replace(/__|\*|!|\#|(?:\[([^\]]*)\]\([^)]*\))/g, "$1") // Replace other MD elements
+        .split("\n")[0] // Get first paragraph
+        .replace(/(\n){2,}/g, " ") // Remove Multiple breaks
         .substring(0, 150) + "...";
     }
 
-    if      (is_home())     { type = "HOME"; }
-    else if (is_post())     { type = "POST"; }
-    else if (is_page())     { type = "PAGE"; }
-    else if (is_archive())  { type = "ARCHIVE";
-      if      (is_month())    { subtype = "MONTH"; }
-      else if (is_year())     { subtype = "YEAR"; }
+    if      (is_home())     { meta.area = "HOME"; }
+    else if (is_post())     { meta.area = "POST"; }
+    else if (is_page())     { meta.area = "PAGE"; }
+    else if (is_archive())  { meta.area = "ARCHIVE";
+      if      (is_month())    { meta.subarea = "MONTH"; }
+      else if (is_year())     { meta.subarea = "YEAR"; }
     }
-    else if (is_category()) { type = "CATEGORY"; }
-    else if (is_tag())      { type = "TAG"; }
+    else if (is_category()) { meta.area = "CATEGORY"; }
+    else if (is_tag())      { meta.area = "TAG"; }
     else {
       let rootPath = page.path.split(/[\\\/]/)[0].toLowerCase();
       switch (rootPath) {
         case "series":
         case "projects":
-          type = "ANYTHING"; 
-          subtype = rootPath.toUpperCase();
+          meta.area = "ANYTHING"; 
+          meta.subarea = rootPath.toUpperCase();
           break;
         case "notes":
-          type = "NOTE";
-          subtype = page.path.split(/[\\\/]/)[1]; //year
+          meta.area = "NOTE";
+          meta.subarea = page.path.split(/[\\\/]/)[1]; //year
           break;
         default:
-          type = rootPath.toUpperCase();
+          meta.area = rootPath.toUpperCase();
           break;
       }
     }
 
-    //console.log("HEAD: " + type + " = " + subtype + " ... " + page.title);
-
-    switch (type) {
+    switch (meta.area) {
       case "HOME":
-        title = config.title + " - " + config.subtitle;
-        description = config.description;
-        image = config.heroimage_small;
+        meta.title = config.title + " - " + config.subtitle;
+        meta.description = config.description;
         break;
 
       case "ARCHIVE":
-        switch (subtype) {
+        switch (meta.subarea) {
           case "MONTH": 
-            title = __("archive_a") + " " + page.year + "/" + page.month + " - " + config.title; 
+            meta.title = __("archive_a") + " " + page.year + "/" + page.month + " - " + config.title; 
             break;
           case "YEAR": 
-            title = __("archive_a") + " " + page.year + " - " + config.title; 
+            meta.title = __("archive_a") + " " + page.year + " - " + config.title; 
             break;
           default: 
-            title = __("archive_a") + " - " + config.title;
+            meta.title = __("archive_a") + " - " + config.title;
           break;
         }
         //--
-        description = config.description.replace("Blog", "Archive");
-        //--
-        image = config.heroimage_small;
+        meta.description = config.description.replace("Blog", "Archive");
         break;
 
       case "CATEGORY":
-        title = __("category") + " " + page.category + " - " + config.title;
-        description = config.description.replace("Blog", "Archive");
-        image = config.heroimage_small;
+        meta.title = __("category") + " " + page.category + " - " + config.title;
+        meta.description = config.description.replace("Blog", "Archive");
         break;
 
       case "TAG":
-        title = __("tag") + " " + page.tag + " - " + config.title;
-        description = config.description.replace("Blog", "Archive");
-        image = config.heroimage_small;
+        meta.title = __("tag") + " " + page.tag + " - " + config.title;
+        meta.description = config.description.replace("Blog", "Archive");
         break;
 
       case "PAGE":
-        title = page.title + " - " + config.title;
-        description = page.title + " " + config.description_short;
-        image = config.url + "/photos/normal/" + page.photograph.file;
+        meta.title = page.title + " - " + config.title;
+        if (page.description) { 
+          meta.description = page.description;
+        } else { 
+          meta.description = page.title + " " + config.description_short;
+        }
+        meta.photograph = page.photograph;
+        meta.imageUrl = page.photograph.url;
         break;
 
       case "ANYTHING":
-        title = page.title + " - " + config.title;
+        meta.title = page.title + " - " + config.title;
         //--
         if (page.title === "Projects") {
-          description = page.title + " " + config.description_short;
+          meta.description = page.title + " " + config.description_short;
         } else {
-          description = "Project '" + page.title + "' " + config.description_short;
+          meta.description = "Project '" + page.title + "' " + config.description_short;
         }
         if (page.title === "Series") {
-          description = page.title + " " + config.description_short;
+          meta.description = page.title + " " + config.description_short;
         } else {
-          description = "Series '" + page.title + "' " + config.description_short;
+          meta.description = "Series '" + page.title + "' " + config.description_short;
         }
         //--
-        if (subtype === "PROJECTS") {
-          image = config.url + "/photos/normal/" + page.photograph.file;
-        } else {
-          image = config.heroimage_small;
+        if (meta.subarea === "PROJECTS") {
+          meta.photograph = page.photograph;
+          meta.imageUrl = page.photograph.url;
         }
         break;
  
       case "COLLECTIONS":
       case "PHOTOS":
-        title = page.title + " - " + config.title;
-        description = page.title + " " + config.description_short;
-        image = config.url + "/photos/normal/" + page.photograph.file;
+        meta.title = page.title + " - " + config.title;
+        meta.description = page.title + " " + config.description_short;
+        meta.photograph = page.photograph;
+        meta.imageUrl = page.photograph.url;
         break;
 
       case "POST":
-        title = page.title + " - " + config.title;
+        meta.title = page.title + " - " + config.title;
         //--
         if (page.description) {
-          description = page.description;
+          meta.description = page.description;
         } else {
           if (page.subtitle) {
-            description = page.subtitle;
+            meta.description = page.subtitle;
           } else {
-            description = excerpt;
+            meta.description = excerpt;
           }
         }
         //--
         let slugArray = page.slug.split("/"); //due to subfolders
-        let slug = slugArray[slugArray.length - 1];
-        image = config.url + "/images/social-media/" + slug + ".png";
+        meta.slug = slugArray[slugArray.length - 1];
+        meta.photograph = page.photograph;
+        meta.imageUrl = config.url + "/images/social-media/" + meta.slug + ".png";
+        meta.type = "article";
         break;
 
       case "NOTE":
-        title = page.title + " " + subtype + " - " + config.title;
+        meta.title = page.title + " " + meta.subarea + " - " + config.title;
         //--
         if (page.title === "Notes") {
-          description = page.title + " of " + subtype + " " + config.description_short;
+          meta.description = page.title + " of " + meta.subarea + " " + config.description_short;
         } else {
           if (page.description) {
-            description = page.description;
+            meta.description = page.description;
           } else {
-            description = excerpt;
+            meta.description = excerpt;
           }
+          meta.type = "blogposting";
         }
         //--
-        image = config.url + "/photos/normal/" + page.photograph.file;
+        meta.photograph = page.photograph;
+        meta.imageUrl = meta.photoUrl;        
 
       default: 
         break;
     }
   %>
-  <!-- <%= type + ((subtype) ? ":" + subtype : "") %> -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title><%= title %></title>
+  <title><%= meta.title %></title>
   <meta name="author" content="<%= config.author %>">
-  <meta name="title" content="<%= title %>">
-  <% if (description) { %>
-  <meta name="description" content="<%= description %>">
+  <meta name="title" content="<%= meta.title %>">
+  <% if (meta.description) { %>
+  <meta name="description" content="<%= meta.description %>">
   <% }%>
 
-  <%#!-- Schema.org for Google --%>
-  <meta itemprop="name" content="<%= title %>">
-  <% if (description) { %>
-  <meta itemprop="description" content="<%= description %>">
-  <% } %>
-  <meta itemprop="image" content="<%= image %>">
+  <%#!-- JSON-LD (schema.org) for Google --%>
+  <%
+    let jsonPartial = "json-ld-" + meta.type;
+    let jsonLD = partial('_partial/meta/' + jsonPartial, { meta: meta });
+    try {
+      jsonLD = jsonLD.replace(/\\/g, '\\\\');
+      jsonLD = JSON.stringify(JSON.parse(jsonLD));
+    } catch (error) {
+      console.error(error);
+      console.log(jsonLD)
+    }
+  %>
+  <script type="application/ld+json"><%- jsonLD %></script>
 
   <%#!-- Open Graph --%>
   <meta property="og:site_name" content="<%= config.title %>">
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="blog">
   <meta property="og:url" content="<%= url %>">
-  <meta property="og:title" content="<%= title %>">
-  <% if (description) { %>
-  <meta property="og:description" content="<%= description %>">
+  <meta property="og:title" content="<%= meta.title %>">
+  <% if (meta.description) { %>
+  <meta property="og:description" content="<%= meta.description %>">
   <% } %>
-  <meta property="og:image" content="<%= image %>">
-  <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="<%= meta.imageUrl %>">
+  <meta property="og:locale" content="en_US">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="<%= url %>">
-  <meta property="twitter:title" content="<%= title %>">
-  <% if (description) { %>
-  <meta property="twitter:description" content="<%= description %>">
+  <meta property="twitter:title" content="<%= meta.title %>">
+  <% if (meta.description) { %>
+  <meta property="twitter:description" content="<%= meta.description %>">
   <% } %>
-  <meta property="twitter:image" content="<%= image %>">
+  <meta property="twitter:image" content="<%= meta.imageUrl %>">
   
   <link rel="canonical" href="<%= url.replace("index.html", "") %>">
 
@@ -214,7 +232,7 @@
   
   <%#!-- Feed --%>
   <% if (theme.rss){ %>
-    <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml">
+    <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= meta.title %>" type="application/atom+xml">
   <% } %>
 
   <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>

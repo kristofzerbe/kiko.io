@@ -7,7 +7,7 @@
   body.classList.add("article-view");
 </script>
   
-<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %> h-entry" itemscope itemprop="blogPost">
+<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %> h-entry">
   <div class="article-meta">
     <a class="p-author h-card" href="/about" rel="author" style="display:none;">Kristof Zerbe</a>
     <a class="u-url u-uid" href="<%- post.permalink %>" style="display:none;"><%- post.permalink %></a>
@@ -27,7 +27,7 @@
       </header>
     <% } %>
     
-    <div class="article-entry e-content" itemprop="articleBody">
+    <div class="article-entry e-content">
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
         <% if (theme.excerpt_link){ %>

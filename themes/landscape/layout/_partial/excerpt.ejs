@@ -1,6 +1,6 @@
  
 <article id="<%= post.layout %>-<%= post.slug %>" 
-         class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
+         class="article article-type-<%= post.layout %>">
   
   <div class="article-meta">
     <%- partial('post/date', { class_name: 'article-date', date_format: 'DD MMM YYYY' }) %>
@@ -18,7 +18,7 @@
       </header>
     <% } %>
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <%- post.excerpt %>
       <% if (theme.excerpt_link){ %>
         <p class="article-more-link">

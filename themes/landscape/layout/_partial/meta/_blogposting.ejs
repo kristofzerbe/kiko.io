@@ -1,0 +1,24 @@
+{
+  "@type": "BlogPosting",
+  "@id": "<%= url.replace("index.html", "") %>#article",
+  "mainEntityOfPage": {
+    "@id": "<%= url.replace("index.html", "") %>"
+  },
+  "headline": "<%= meta.title %>",
+  <% if (page.dateOriginal) { %> 
+    "datePublished": "<%= moment(page.dateOriginal).utc().format() %>",
+    "dateModified": "<%= moment(page.date).utc().format() %>",
+  <% } else { %>
+    "datePublished": "<%= moment(page.date).utc().format() %>",
+    "dateModified": "<%= moment(page.date).utc().format() %>",  
+  <% } %>
+  "image": {
+    "@id": "<%= config.url %>#photo/<%= meta.photograph.file %>"
+  },
+  "author": {
+    "@id": "<%= config.url %>/#person"
+  },
+  "publisher": {
+    "@id": "<%= config.url %>/#organization"
+  }
+}

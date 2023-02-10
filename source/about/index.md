@@ -1,6 +1,7 @@
 ---
 title: About
 date: 2020-09-05 15:25:23
+description: About Kristof Zerbe
 photograph: 
   file: $about.jpg
 ---

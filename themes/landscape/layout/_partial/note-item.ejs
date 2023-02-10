@@ -1,8 +1,8 @@
 
-<article id="note-<%= note.slug %>" data-key="<%= note.key %>" class="article note h-entry" itemscope itemprop="blogPost">
+<article id="note-<%= note.slug %>" data-key="<%= note.key %>" class="article note h-entry">
 
   <div class="article-meta">
-    <time datetime="<%= date_xml(note.date) %>" itemprop="datePublished"><%= date(note.date, 'DD MMM YYYY') %></time>
+    <time datetime="<%= date_xml(note.date) %>"><%= date(note.date, 'DD MMM YYYY') %></time>
   </div>
 
   <div class="article-inner">
@@ -11,7 +11,7 @@
       <%- partial('post/title', { post: note, class_name: 'article-title p-name', show_link: true, index: true }) %>    
     </header>
   
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry">
       <%- note.excerpt %>
       <% if (note.more && theme.excerpt_link){ %>
         <p class="article-more-link">

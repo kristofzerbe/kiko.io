@@ -1,0 +1,19 @@
+{
+  "@type": "WebSite",
+  "@id": "<%= config.url %>/#website",
+  "url": "<%= config.url %>",
+  "name": "<%= config.title %>",
+  "description": "<%= config.description %>",
+  "inLanguage": "en-US",
+  "publisher": {
+      "@id": "<%= config.url %>/#organization"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "<%= config.url %>/search/?q={searchTerm}"
+    },
+    "query-input": "required name=searchTerm"
+  }
+}

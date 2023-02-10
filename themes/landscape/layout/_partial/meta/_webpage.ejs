@@ -1,0 +1,21 @@
+{
+  "@type": "WebPage",
+  "@id": "<%= url.replace("index.html", "") %>",
+  "url": "<%= url.replace("index.html", "") %>",
+  "name": "<%= meta.title %>",
+  "isPartOf": {
+    "@id": "<%= config.url %>/#website"
+  },
+  "description": "<%= meta.description %>",
+  "inLanguage": "en-US",
+  "primaryImageOfPage": {
+  <% if (meta.slug) { %>
+    "@id": "<%= config.url %>#image/<%= meta.slug %>"
+  <% } else { %>
+    "@id": "<%= config.url %>#photo/<%= meta.photograph.file %>"
+  <% }%>
+  },
+  "image": {
+    "@id": "<%= config.url %>#photo/<%= meta.photograph.file %>"
+  }
+}
