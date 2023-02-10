@@ -20,7 +20,7 @@ related:
   - The-State-of-the-Blog
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/109841057119450891
 ---
 
 Chris Coyier's post "[Open Graph Blues](https://chriscoyier.net/2023/01/28/open-graph-blues/)" got me thinking that my blog's metadata, which are used by Google among others to index my pages, aren't really at the cutting edge anymore. I took the markup of the individual elements of the pages via [schema.org](https://schema.org) Microdata attributes from the standard Hexo template years ago and always adjusted it by value, but never questioned that there are more modern variants to provide the metadata.
