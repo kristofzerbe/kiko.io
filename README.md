@@ -6,6 +6,9 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
 ## Latest Posts
 <!-- BLOG-POST-LIST:START -->
+ - [Provide Blog Metadata via JSON-LD](https://kiko.io/post/Provide-Blog-Metadata-via-JSON-LD/)   
+ 09 Feb 2023   
+
  - [Radio Garden](https://kiko.io/post/Radio-Garden/)   
  01 Feb 2023   
 
@@ -20,7 +23,4 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
  - [Discoveries #22 -  Tips/Tricks](https://kiko.io/post/Discoveries-22-Tips-Tricks/)   
  06 Jan 2023   
-
- - [Generate Content from Trello](https://kiko.io/post/Generate-Content-from-Trello/)   
- 29 Dec 2022   
 <!-- BLOG-POST-LIST:END -->
