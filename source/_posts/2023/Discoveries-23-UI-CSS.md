@@ -19,7 +19,7 @@ related:
   - Discoveries-20-CSS-UI
 syndication:
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/109851832262047794
 ---
 
 As a visual person, I'm always thrilled when I come across small but subtle tips, tricks or even entire solutions that lift my understanding of what can be done with CSS to new heights. Of course, this month ``:has()`` is once again one of them, but also once again contributions from [Bramus van Damme](https://www.bram.us) and [Ahmad Shadeed](https://ishadeed.com), whose posts I read without exception because they are both so good at what they do.
