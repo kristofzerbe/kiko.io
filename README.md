@@ -6,6 +6,9 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
 ## Latest Posts
 <!-- BLOG-POST-LIST:START -->
+ - [Discoveries #23 -  UI/CSS](https://kiko.io/post/Discoveries-23-UI-CSS/)   
+ 12 Feb 2023   
+
  - [Provide Blog Metadata via JSON-LD](https://kiko.io/post/Provide-Blog-Metadata-via-JSON-LD/)   
  09 Feb 2023   
 
@@ -20,7 +23,4 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
  - [Favourite Pens of 2022](https://kiko.io/post/Favourite-Pens-of-2022/)   
  14 Jan 2023   
-
- - [Discoveries #22 -  Tips/Tricks](https://kiko.io/post/Discoveries-22-Tips-Tricks/)   
- 06 Jan 2023   
 <!-- BLOG-POST-LIST:END -->
