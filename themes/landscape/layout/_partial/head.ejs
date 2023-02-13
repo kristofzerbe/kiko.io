@@ -182,6 +182,12 @@
   <meta name="description" content="<%= meta.description %>">
   <% }%>
 
+  <link rel="canonical" href="<%= url.replace("index.html", "") %>">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="<%- theme.favicon %>">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <meta name="theme-color" content="#444">
+
   <%#!-- JSON-LD (schema.org) for Google --%>
   <%
     let jsonPartial = "json-ld-" + meta.type;
@@ -216,12 +222,6 @@
   <% } %>
   <meta property="twitter:image" content="<%= meta.imageUrl %>">
   
-  <link rel="canonical" href="<%= url.replace("index.html", "") %>">
-
-  <link rel="icon" href="<%- theme.favicon %>">
-  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-  <meta name="theme-color" content="#444">
-
   <%#!-- webmention.io --%>
   <link rel="webmention" href="https://webmention.io/kiko.io/webmention" />
   <link rel="pingback" href="https://webmention.io/kiko.io/xmlrpc" />
@@ -248,17 +248,16 @@
   <link rel="preload" href="/css/fonts/fontawesome/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="preload" as="image" href="/images/hero.jpg" imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
-  <link rel="preload" as="image" href="/photos/normal/$404.jpg" imagesrcset="/photos/mobile/$404.jpg 480w, /photos/tablet/$404.jpg 768w">
-  <link rel="preload" as="image" href="/photos/normal/$about.jpg" imagesrcset="/photos/mobile/$about.jpg 480w, /photos/tablet/$about.jpg 768w">
-  <link rel="preload" as="image" href="/photos/normal/$photos.jpg" imagesrcset="/photos/mobile/$photos.jpg 480w, /photos/tablet/$photos.jpg 768w">
-  <link rel="preload" as="image" href="/photos/normal/$projects.jpg" imagesrcset="/photos/mobile/$projects.jpg 480w, /photos/tablet/$projects.jpg 768w">
-  <link rel="preload" as="image" href="/photos/normal/$tiny-tools.jpg" imagesrcset="/photos/mobile/$tiny-tools.jpg 480w, /photos/tablet/$tiny-tools.jpg 768w">
-
-  <%#!-- TODO: dynamic from 2021 to year of today --%>
+  <link rel="preload" as="image" href="/photos/normal/$search.jpg" imagesrcset="/photos/mobile/$search.jpg 480w, /photos/tablet/$search.jpg 768w">
   <link rel="preload" as="image" href="/photos/normal/$notes-2021.jpg" imagesrcset="/photos/mobile/$notes-2021.jpg 480w, /photos/tablet/$notes-2021.jpg 768w">
   <link rel="preload" as="image" href="/photos/normal/$notes-2022.jpg" imagesrcset="/photos/mobile/$notes-2022.jpg 480w, /photos/tablet/$notes-2022.jpg 768w">
   <link rel="preload" as="image" href="/photos/normal/$notes-2023.jpg" imagesrcset="/photos/mobile/$notes-2023.jpg 480w, /photos/tablet/$notes-2023.jpg 768w">
   <link rel="preload" as="image" href="/photos/normal/$notes-2024.jpg" imagesrcset="/photos/mobile/$notes-2024.jpg 480w, /photos/tablet/$notes-2024.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$projects.jpg" imagesrcset="/photos/mobile/$projects.jpg 480w, /photos/tablet/$projects.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$tiny-tools.jpg" imagesrcset="/photos/mobile/$tiny-tools.jpg 480w, /photos/tablet/$tiny-tools.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$photos.jpg" imagesrcset="/photos/mobile/$photos.jpg 480w, /photos/tablet/$photos.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$about.jpg" imagesrcset="/photos/mobile/$about.jpg 480w, /photos/tablet/$about.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$404.jpg" imagesrcset="/photos/mobile/$404.jpg 480w, /photos/tablet/$404.jpg 768w">
 
   <%- css('css/dist/bundle.min.css') %>
   <%- css('css/style.css') %>
