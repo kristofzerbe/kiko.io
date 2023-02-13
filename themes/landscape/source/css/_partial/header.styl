@@ -267,20 +267,26 @@ $sub-nav-link
       display:none
     input#theme-switch[type=checkbox] + label
       color: #fff
-      opacity: 0.6
-      height: 16px
-      width: 16px
+      opacity: 0.4
+      height: 32px
+      width: 32px
       display: inline-block
-      padding: 14px 16px 12px 8px
-      font-size: 18px
+      margin: 12px
+      font-size: 22px
       cursor: pointer
+      transition: opacity 0.3s ease-out
+      &:hover
+        opacity: 1
       &:before    
         display: inline-block
+        margin: 6px 6px 6px 8px
         font-size: inherit
         text-rendering: auto
         -webkit-font-smoothing: antialiased
         font-family: fa-icon-solid
         content: icon-moon
     input#theme-switch[type=checkbox]:checked + label
+      font-size: 20px
       &:before
         content: icon-sun
+        margin-left: 6px
