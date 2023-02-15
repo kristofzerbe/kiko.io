@@ -3,7 +3,7 @@ title: "#Link | Adaptive icon support in PWAs with maskable icons"
 date: 2023-02-15
 syndication: 
 - host: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/109870185482933213
 ---
 
 On Android smartphones, the icons of the apps can be adapted to one's own taste in terms of shape. Rectangle, circle, drop ... you name it.
