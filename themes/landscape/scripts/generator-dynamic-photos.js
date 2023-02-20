@@ -33,10 +33,14 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
   let p3 = getDynamicPagePhotos(config);
   log.info(magenta(p3.length) + " used photos in dynamic pages");
 
+  // Get used photos in Dynmic pages
+  let p4 = getNotesPhotos(config);
+  log.info(magenta(p4.length) + " used photos in notes");
+
   //TODO: anything pages
 
   // Set items for page
-  page.items = [...p1, ...p2, ...p3]
+  page.items = [...p1, ...p2, ...p3, ...p4]
     .filter(p => (p.name)) //filter out all without photo name
     .sort((a, b) => a.key.localeCompare(b.key));
   //log.debug(page.items);
@@ -53,7 +57,6 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
 
 function getPoolPhotos(config) {
   
-  //var poolDir = hexo.source_dir.replace("\source", hexo.config.static_dir + "\/" + hexo.config.pool_dir);
   var poolDir = path.join(hexo.source_dir.replace("source", ""), hexo.config.static_dir, hexo.config.pool_dir);
   log.debug('poolDir = ' + hexo.source_dir + ' -> ' + poolDir);
 
@@ -72,14 +75,13 @@ function getPoolPhotos(config) {
     entry.article = null;
   });
 
-//console.log(JSON.stringify(pool));
+  //console.log(JSON.stringify(pool));
 
   return pool;
 }
 
 function getPostAndPagePhotos(config, locals) {
 
-  //var usedDir = hexo.source_dir.replace("\source", hexo.config.static_dir + "\/" + hexo.config.photo_dir) + "/mobile";
   var usedDir = path.join(hexo.source_dir.replace("\source", ""), hexo.config.static_dir, hexo.config.photo_dir, "mobile");
   log.debug('usedDir = ' + hexo.source_dir + ' -> ' + usedDir);
 
@@ -87,7 +89,7 @@ function getPostAndPagePhotos(config, locals) {
     .readdirSync(usedDir)
     .map(entry => ({ key: null, status: "used", file: entry }))
 
-//console.log(locals.pages.data);
+  //console.log(locals.pages.data);
 
   let postsAndPages = [...locals.posts.data, ...locals.pages.data].map(y => {
     if (y.photograph) {
@@ -103,7 +105,7 @@ function getPostAndPagePhotos(config, locals) {
       }  
     }
   });
-//console.log(JSON.stringify(postsAndPages));
+  //console.log(JSON.stringify(postsAndPages));
 
   used.forEach(entry => {
     entry.key = entry.file.replace(".jpg", "");
@@ -111,7 +113,6 @@ function getPostAndPagePhotos(config, locals) {
     entry.photo = "/" + path.join(config.photo_dir, "normal", entry.file).replace(/\134/g,"/");
 
     let p = postsAndPages.find(p => (p && p.photographFile === entry.file));
-//console.log(entry.file + " -> " + JSON.stringify(p));
 
     if (p) {
       entry.name = p.photographName;
@@ -123,13 +124,9 @@ function getPostAndPagePhotos(config, locals) {
         url: "/" + p.path.replace("/index.html", "")
       }
     }
-// if (entry.file.includes("til")) {
-//   console.log(entry);
-// }
 
   })
-//console.log(JSON.stringify(used));
-
+  //console.log(JSON.stringify(used));
   return used;
 }
 
@@ -137,33 +134,72 @@ function getDynamicPagePhotos(config) {
 
   var dynamicDir = path.join(config.source_dir, "_dynamic");
 
-  let dynamic = fs.readdirSync(dynamicDir).reduce((acc, file) => {
-    const mdSource = path.join(dynamicDir, file);
-    const md = fs.readFileSync(mdSource);
-    let fm = front.parse(md);
+  let dynamic = fs.readdirSync(dynamicDir)
+    .reduce((used, file) => {
+      const mdSource = path.join(dynamicDir, file);
+      const md = fs.readFileSync(mdSource);
+      let fm = front.parse(md);
 
-    if (fm.photograph) {
-      acc.push({
-        key: fm.photograph.file.replace(".jpg", ""),
-        status: "used",
-        file: fm.photograph.file,
-        path: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
-        photo: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
-        name: fm.photograph.name,
-        link: fm.photograph.link,
-        article: {
-          type: "dynamic",
-          title: fm.title,
-          subtitle: fm.subTitle,
-          url: fm.permalink
-        }
-      });
-
-    }
-    return acc;
-
-  }, []);
-//console.log(dynamic);
+      if (fm.photograph) {
+        used.push({
+          key: fm.photograph.file.replace(".jpg", ""),
+          status: "used",
+          file: fm.photograph.file,
+          path: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
+          photo: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
+          name: fm.photograph.name,
+          link: fm.photograph.link,
+          article: {
+            type: "dynamic",
+            title: fm.title,
+            subtitle: fm.subTitle,
+            url: fm.permalink
+          }
+        });
+      }
+      return used;
+    }, []);
 
   return dynamic;
+}
+
+function getNotesPhotos(config) {
+
+  var notesDir = path.join(config.source_dir, "_notes");
+
+  let notes = fs.readdirSync(notesDir)
+    .filter(entry => fs.statSync(path.join(notesDir, entry)).isDirectory())
+    .reduce((used, dir) => { 
+
+      let currentYear = new Date().getFullYear();
+      if (dir <= currentYear) { // only this year and earlier are generated
+
+        const mdSource = path.join(notesDir, dir, "index.md");
+        const md = fs.readFileSync(mdSource);
+        let fm = front.parse(md);
+  
+        if (fm.photograph) {
+          used.push({
+            key: fm.photograph.file.replace(".jpg", ""),
+            status: "used",
+            file: fm.photograph.file,
+            path: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
+            photo: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
+            name: fm.photograph.name,
+            link: fm.photograph.link,
+            article: {
+              type: "notes",
+              title: fm.title + " " + dir,
+              url: "/notes/" + dir
+            }
+          });
+        }
+          
+      }
+      return used;
+
+    }, []);
+
+  // console.log(JSON.stringify(notes));
+  return notes;
 }
