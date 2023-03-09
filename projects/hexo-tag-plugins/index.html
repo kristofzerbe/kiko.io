@@ -370,15 +370,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clelewfnh001hgbos6aaz5r8i">
+      <div class="article-permalink" id="article-permalink-clf0swo9r001hpuoyfvijdn8x">
     <input class="article-permalink-value" value="https://kiko.io/post/GitHub-Tag-Plugins-for-Hexo/" 
-           data-id="clelewfnh001hgbos6aaz5r8i" data-title="GitHub Tag Plugins for Hexo" />
+           data-id="clf0swo9r001hpuoyfvijdn8x" data-title="GitHub Tag Plugins for Hexo" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfnh001hgbos6aaz5r8i");
+        initPermalink("clf0swo9r001hpuoyfvijdn8x");
     });
 </script>
 
@@ -461,15 +461,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clelewfni001jgbos9r369xdy">
+      <div class="article-permalink" id="article-permalink-clf0swo9s001jpuoyddjn7tvf">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-Tag-Plugin-Collection/" 
-           data-id="clelewfni001jgbos9r369xdy" data-title="Hexo Tag Plugin Collection" />
+           data-id="clf0swo9s001jpuoyddjn7tvf" data-title="Hexo Tag Plugin Collection" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfni001jgbos9r369xdy");
+        initPermalink("clf0swo9s001jpuoyddjn7tvf");
     });
 </script>
 
@@ -702,12 +702,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

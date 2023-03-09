@@ -439,15 +439,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clelewfn80011gbos9l7a1olt">
+      <div class="article-permalink" id="article-permalink-clf0swo9e0011puoy8lvshbrv">
     <input class="article-permalink-value" value="https://kiko.io/post/Application-Specific-Links-on-Windows-10/" 
-           data-id="clelewfn80011gbos9l7a1olt" data-title="Application-Specific Links on Windows 10" />
+           data-id="clf0swo9e0011puoy8lvshbrv" data-title="Application-Specific Links on Windows 10" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfn80011gbos9l7a1olt");
+        initPermalink("clf0swo9e0011puoy8lvshbrv");
     });
 </script>
 
@@ -922,12 +922,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

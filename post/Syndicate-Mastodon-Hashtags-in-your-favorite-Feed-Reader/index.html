@@ -361,15 +361,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clelewfo4002qgbos2r48cmbr">
+      <div class="article-permalink" id="article-permalink-clf0swoai002qpuoy6ri4g4hi">
     <input class="article-permalink-value" value="https://kiko.io/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/" 
-           data-id="clelewfo4002qgbos2r48cmbr" data-title="Syndicate Mastodon Hashtags in your favorite Feed Reader" />
+           data-id="clf0swoai002qpuoy6ri4g4hi" data-title="Syndicate Mastodon Hashtags in your favorite Feed Reader" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfo4002qgbos2r48cmbr");
+        initPermalink("clf0swoai002qpuoy6ri4g4hi");
     });
 </script>
 
@@ -843,12 +843,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

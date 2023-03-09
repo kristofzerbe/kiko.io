@@ -388,15 +388,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clelewfnp001xgbosazfsad9q">
+      <div class="article-permalink" id="article-permalink-clf0swoa0001xpuoyeoi08rt6">
     <input class="article-permalink-value" value="https://kiko.io/post/Spice-Up-Windows-Terminal/" 
-           data-id="clelewfnp001xgbosazfsad9q" data-title="Spice Up Windows Terminal" />
+           data-id="clf0swoa0001xpuoyeoi08rt6" data-title="Spice Up Windows Terminal" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfnp001xgbosazfsad9q");
+        initPermalink("clf0swoa0001xpuoyeoi08rt6");
     });
 </script>
 
@@ -704,12 +704,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

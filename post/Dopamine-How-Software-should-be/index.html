@@ -352,15 +352,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clelewfmz000ogbos5zb7ac7q">
+      <div class="article-permalink" id="article-permalink-clf0swo97000opuoychy36jej">
     <input class="article-permalink-value" value="https://kiko.io/post/Dopamine-How-Software-should-be/" 
-           data-id="clelewfmz000ogbos5zb7ac7q" data-title="Dopamine: How Software should be..." />
+           data-id="clf0swo97000opuoychy36jej" data-title="Dopamine: How Software should be..." />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfmz000ogbos5zb7ac7q");
+        initPermalink("clf0swo97000opuoychy36jej");
     });
 </script>
 
@@ -779,12 +779,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

@@ -470,15 +470,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clelewfnx002bgbos6h0b6963">
+      <div class="article-permalink" id="article-permalink-clf0swoab002bpuoyhxj88mlz">
     <input class="article-permalink-value" value="https://kiko.io/post/Creating-Icon-Font-from-SVG-Files/" 
-           data-id="clelewfnx002bgbos6h0b6963" data-title="Creating Icon Font from SVG Files" />
+           data-id="clf0swoab002bpuoyhxj88mlz" data-title="Creating Icon Font from SVG Files" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfnx002bgbos6h0b6963");
+        initPermalink("clf0swoab002bpuoyhxj88mlz");
     });
 </script>
 
@@ -898,12 +898,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

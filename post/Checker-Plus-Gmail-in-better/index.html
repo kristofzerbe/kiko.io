@@ -383,20 +383,20 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clelewfnw002agbos561w7h7h">
+      <div class="article-permalink" id="article-permalink-clf0swoaa002apuoyc9lod62q">
     <input class="article-permalink-value" value="https://kiko.io/post/Checker-Plus-Gmail-in-better/" 
-           data-id="clelewfnw002agbos561w7h7h" data-title="Checker Plus - Gmail in better..." />
+           data-id="clf0swoaa002apuoyc9lod62q" data-title="Checker Plus - Gmail in better..." />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfnw002agbos561w7h7h");
+        initPermalink("clf0swoaa002apuoyc9lod62q");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-clelewfnw002agbos561w7h7h">
+        <div class="article-golem" id="article-golem-clf0swoaa002apuoyc9lod62q">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 20 Dec 2021 
     in German under the title <span style="font-weight:bold;">&laquo;Checker Plus - Gmail in besser&raquo;</span>&nbsp;&nbsp;  
@@ -877,12 +877,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

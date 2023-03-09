@@ -384,15 +384,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clelewfn3000wgbos6502df3p">
+      <div class="article-permalink" id="article-permalink-clf0swo9a000wpuoy3a8maz3c">
     <input class="article-permalink-value" value="https://kiko.io/post/Pimping-the-Permalink/" 
-           data-id="clelewfn3000wgbos6502df3p" data-title="Pimping the Permalink" />
+           data-id="clf0swo9a000wpuoy3a8maz3c" data-title="Pimping the Permalink" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfn3000wgbos6502df3p");
+        initPermalink("clf0swo9a000wpuoy3a8maz3c");
     });
 </script>
 
@@ -875,12 +875,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

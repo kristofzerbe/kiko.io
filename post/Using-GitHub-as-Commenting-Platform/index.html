@@ -368,15 +368,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clelewfn5000zgboshpqjeju1">
+      <div class="article-permalink" id="article-permalink-clf0swo9c000zpuoy61cv6hrz">
     <input class="article-permalink-value" value="https://kiko.io/post/Using-GitHub-as-Commenting-Platform/" 
-           data-id="clelewfn5000zgboshpqjeju1" data-title="Using GitHub as Commenting Platform" />
+           data-id="clf0swo9c000zpuoy61cv6hrz" data-title="Using GitHub as Commenting Platform" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfn5000zgboshpqjeju1");
+        initPermalink("clf0swo9c000zpuoy61cv6hrz");
     });
 </script>
 
@@ -859,12 +859,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

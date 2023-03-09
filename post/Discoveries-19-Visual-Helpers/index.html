@@ -476,15 +476,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clelewfnz002fgbosdolu97eo">
+      <div class="article-permalink" id="article-permalink-clf0swoac002fpuoy24ay0lcj">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-19-Visual-Helpers/" 
-           data-id="clelewfnz002fgbosdolu97eo" data-title="Discoveries #19 - Visual Helpers" />
+           data-id="clf0swoac002fpuoy24ay0lcj" data-title="Discoveries #19 - Visual Helpers" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfnz002fgbosdolu97eo");
+        initPermalink("clf0swoac002fpuoy24ay0lcj");
     });
 </script>
 
@@ -953,12 +953,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

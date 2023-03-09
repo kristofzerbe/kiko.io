@@ -369,15 +369,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clelewfmr000bgbos40qkgzso">
+      <div class="article-permalink" id="article-permalink-clf0swo91000bpuoyemnlb9zn">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-Dark-Mode-revised/" 
-           data-id="clelewfmr000bgbos40qkgzso" data-title="Hexo and the Dark Mode ... revised" />
+           data-id="clf0swo91000bpuoyemnlb9zn" data-title="Hexo and the Dark Mode ... revised" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfmr000bgbos40qkgzso");
+        initPermalink("clf0swo91000bpuoyemnlb9zn");
     });
 </script>
 
@@ -860,12 +860,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

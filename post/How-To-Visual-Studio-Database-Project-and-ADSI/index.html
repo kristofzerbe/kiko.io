@@ -614,15 +614,15 @@ FROM (
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clelewfmt000dgbos9yx203ik">
+      <div class="article-permalink" id="article-permalink-clf0swo92000dpuoyh9yfchk0">
     <input class="article-permalink-value" value="https://kiko.io/post/How-To-Visual-Studio-Database-Project-and-ADSI/" 
-           data-id="clelewfmt000dgbos9yx203ik" data-title="How-To: Visual Studio Database Project and ADSI" />
+           data-id="clf0swo92000dpuoyh9yfchk0" data-title="How-To: Visual Studio Database Project and ADSI" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfmt000dgbos9yx203ik");
+        initPermalink("clf0swo92000dpuoyh9yfchk0");
     });
 </script>
 
@@ -925,12 +925,14 @@ FROM (
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

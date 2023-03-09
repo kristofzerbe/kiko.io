@@ -345,15 +345,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clelewfmr000agbosfz7b640c">
+      <div class="article-permalink" id="article-permalink-clf0swo90000apuoybt7ieg86">
     <input class="article-permalink-value" value="https://kiko.io/post/Better-Input-Change-Event/" 
-           data-id="clelewfmr000agbosfz7b640c" data-title="Better Input Change Event" />
+           data-id="clf0swo90000apuoybt7ieg86" data-title="Better Input Change Event" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfmr000agbosfz7b640c");
+        initPermalink("clf0swo90000apuoybt7ieg86");
     });
 </script>
 
@@ -774,12 +774,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

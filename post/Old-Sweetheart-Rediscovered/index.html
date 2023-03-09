@@ -362,15 +362,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clelewfo2002mgbosg47be1fg">
+      <div class="article-permalink" id="article-permalink-clf0swoah002mpuoycwdg87i5">
     <input class="article-permalink-value" value="https://kiko.io/post/Old-Sweetheart-Rediscovered/" 
-           data-id="clelewfo2002mgbosg47be1fg" data-title="Old Sweetheart Rediscovered" />
+           data-id="clf0swoah002mpuoycwdg87i5" data-title="Old Sweetheart Rediscovered" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfo2002mgbosg47be1fg");
+        initPermalink("clf0swoah002mpuoycwdg87i5");
     });
 </script>
 
@@ -850,12 +850,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

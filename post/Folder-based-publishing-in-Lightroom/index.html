@@ -370,15 +370,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clelewfmz000pgbos9i1l6nxi">
+      <div class="article-permalink" id="article-permalink-clf0swo97000ppuoy7ahsaz3r">
     <input class="article-permalink-value" value="https://kiko.io/post/Folder-based-publishing-in-Lightroom/" 
-           data-id="clelewfmz000pgbos9i1l6nxi" data-title="Folder based publishing in Lightroom" />
+           data-id="clf0swo97000ppuoy7ahsaz3r" data-title="Folder based publishing in Lightroom" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfmz000pgbos9i1l6nxi");
+        initPermalink("clf0swo97000ppuoy7ahsaz3r");
     });
 </script>
 
@@ -801,12 +801,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

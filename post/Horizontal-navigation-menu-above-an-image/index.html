@@ -356,15 +356,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clelewfn0000qgbos5jdkfl4y">
+      <div class="article-permalink" id="article-permalink-clf0swo98000qpuoy2z292v01">
     <input class="article-permalink-value" value="https://kiko.io/post/Horizontal-navigation-menu-above-an-image/" 
-           data-id="clelewfn0000qgbos5jdkfl4y" data-title="Horizontal navigation menu above an image" />
+           data-id="clf0swo98000qpuoy2z292v01" data-title="Horizontal navigation menu above an image" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfn0000qgbos5jdkfl4y");
+        initPermalink("clf0swo98000qpuoy2z292v01");
     });
 </script>
 
@@ -847,12 +847,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

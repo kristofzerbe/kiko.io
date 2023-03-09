@@ -511,15 +511,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clelewfo6002vgbos4eu56qmr">
+      <div class="article-permalink" id="article-permalink-clf0swoal002vpuoy542x5wr2">
     <input class="article-permalink-value" value="https://kiko.io/post/Favourite-Pens-of-2022/" 
-           data-id="clelewfo6002vgbos4eu56qmr" data-title="Favourite Pens of 2022" />
+           data-id="clf0swoal002vpuoy542x5wr2" data-title="Favourite Pens of 2022" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfo6002vgbos4eu56qmr");
+        initPermalink("clf0swoal002vpuoy542x5wr2");
     });
 </script>
 
@@ -993,12 +993,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

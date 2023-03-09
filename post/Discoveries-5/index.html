@@ -448,15 +448,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clelewfmy000ngbosg5xd3zqp">
+      <div class="article-permalink" id="article-permalink-clf0swo96000npuoyh0a4hwzx">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-5/" 
-           data-id="clelewfmy000ngbosg5xd3zqp" data-title="Discoveries #5" />
+           data-id="clf0swo96000npuoyh0a4hwzx" data-title="Discoveries #5" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfmy000ngbosg5xd3zqp");
+        initPermalink("clf0swo96000npuoyh0a4hwzx");
     });
 </script>
 
@@ -927,12 +927,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

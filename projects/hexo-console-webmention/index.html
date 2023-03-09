@@ -382,15 +382,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clelewfnj001lgbos7uly9xg7">
+      <div class="article-permalink" id="article-permalink-clf0swo9t001lpuoy8w8gfifl">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb-Sending-Webmentions/" 
-           data-id="clelewfnj001lgbos7uly9xg7" data-title="Hexo and the IndieWeb (Sending Webmentions)" />
+           data-id="clf0swo9t001lpuoy8w8gfifl" data-title="Hexo and the IndieWeb (Sending Webmentions)" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfnj001lgbos7uly9xg7");
+        initPermalink("clf0swo9t001lpuoy8w8gfifl");
     });
 </script>
 
@@ -623,12 +623,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

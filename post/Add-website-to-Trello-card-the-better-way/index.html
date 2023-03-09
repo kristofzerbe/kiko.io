@@ -361,15 +361,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clelewfmu000fgbosgj3q0bsn">
+      <div class="article-permalink" id="article-permalink-clf0swo93000fpuoyel2699e2">
     <input class="article-permalink-value" value="https://kiko.io/post/Add-website-to-Trello-card-the-better-way/" 
-           data-id="clelewfmu000fgbosgj3q0bsn" data-title="Add website to Trello card the better way" />
+           data-id="clf0swo93000fpuoyel2699e2" data-title="Add website to Trello card the better way" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfmu000fgbosgj3q0bsn");
+        initPermalink("clf0swo93000fpuoyel2699e2");
     });
 </script>
 
@@ -677,12 +677,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

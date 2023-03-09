@@ -376,15 +376,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clelewfn4000xgbos6bl833ix">
+      <div class="article-permalink" id="article-permalink-clf0swo9b000xpuoy3z0u51ad">
     <input class="article-permalink-value" value="https://kiko.io/post/Show-related-posts-in-Hexo/" 
-           data-id="clelewfn4000xgbos6bl833ix" data-title="Show related posts in Hexo" />
+           data-id="clf0swo9b000xpuoy3z0u51ad" data-title="Show related posts in Hexo" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfn4000xgbos6bl833ix");
+        initPermalink("clf0swo9b000xpuoy3z0u51ad");
     });
 </script>
 
@@ -867,12 +867,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

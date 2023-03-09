@@ -442,15 +442,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clelewfo8002ygbosfn582j8u">
+      <div class="article-permalink" id="article-permalink-clf0swoan002ypuoy8646a199">
     <input class="article-permalink-value" value="https://kiko.io/post/Provide-Blog-Metadata-via-JSON-LD/" 
-           data-id="clelewfo8002ygbosfn582j8u" data-title="Provide Blog Metadata via JSON-LD" />
+           data-id="clf0swoan002ypuoy8646a199" data-title="Provide Blog Metadata via JSON-LD" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfo8002ygbosfn582j8u");
+        initPermalink("clf0swoan002ypuoy8646a199");
     });
 </script>
 
@@ -931,12 +931,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

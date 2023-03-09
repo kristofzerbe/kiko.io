@@ -392,15 +392,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clelewfnl001qgbos0ulp83vp">
+      <div class="article-permalink" id="article-permalink-clf0swo9v001qpuoy91bw3bdo">
     <input class="article-permalink-value" value="https://kiko.io/post/Pattern-for-dynamic-Hexo-pages/" 
-           data-id="clelewfnl001qgbos0ulp83vp" data-title="Pattern for dynamic Hexo pages" />
+           data-id="clf0swo9v001qpuoy91bw3bdo" data-title="Pattern for dynamic Hexo pages" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfnl001qgbos0ulp83vp");
+        initPermalink("clf0swo9v001qpuoy91bw3bdo");
     });
 </script>
 
@@ -873,12 +873,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

@@ -419,15 +419,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clelewfnw0029gbos46pca557">
+      <div class="article-permalink" id="article-permalink-clf0swoaa0029puoyhu4i072c">
     <input class="article-permalink-value" value="https://kiko.io/post/CSS-Columns-and-Drop-Shadow/" 
-           data-id="clelewfnw0029gbos46pca557" data-title="CSS Columns and Drop Shadow" />
+           data-id="clf0swoaa0029puoyhu4i072c" data-title="CSS Columns and Drop Shadow" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfnw0029gbos46pca557");
+        initPermalink("clf0swoaa0029puoyhu4i072c");
     });
 </script>
 
@@ -848,12 +848,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

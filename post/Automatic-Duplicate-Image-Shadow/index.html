@@ -389,15 +389,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clelewfn80012gbosayb5fa84">
+      <div class="article-permalink" id="article-permalink-clf0swo9f0012puoy9hhs55bq">
     <input class="article-permalink-value" value="https://kiko.io/post/Automatic-Duplicate-Image-Shadow/" 
-           data-id="clelewfn80012gbosayb5fa84" data-title="Automatic Duplicate Image Shadow" />
+           data-id="clf0swo9f0012puoy9hhs55bq" data-title="Automatic Duplicate Image Shadow" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfn80012gbosayb5fa84");
+        initPermalink("clf0swo9f0012puoy9hhs55bq");
     });
 </script>
 
@@ -869,12 +869,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

@@ -359,15 +359,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clelewfn1000rgbos5cz3hkc9">
+      <div class="article-permalink" id="article-permalink-clf0swo98000rpuoy341c9n4u">
     <input class="article-permalink-value" value="https://kiko.io/post/Implement-source-switch-for-SPA/" 
-           data-id="clelewfn1000rgbos5cz3hkc9" data-title="Implement source switch for SPA" />
+           data-id="clf0swo98000rpuoy341c9n4u" data-title="Implement source switch for SPA" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfn1000rgbos5cz3hkc9");
+        initPermalink("clf0swo98000rpuoy341c9n4u");
     });
 </script>
 
@@ -786,12 +786,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });

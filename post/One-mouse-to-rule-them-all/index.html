@@ -357,20 +357,20 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clelewfo3002ngbos42yq2kj5">
+      <div class="article-permalink" id="article-permalink-clf0swoah002npuoy9u00273x">
     <input class="article-permalink-value" value="https://kiko.io/post/One-mouse-to-rule-them-all/" 
-           data-id="clelewfo3002ngbos42yq2kj5" data-title="One mouse to rule them all" />
+           data-id="clf0swoah002npuoy9u00273x" data-title="One mouse to rule them all" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clelewfo3002ngbos42yq2kj5");
+        initPermalink("clf0swoah002npuoy9u00273x");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-clelewfo3002ngbos42yq2kj5">
+        <div class="article-golem" id="article-golem-clf0swoah002npuoy9u00273x">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 30 Sep 2022 
     in German under the title <span style="font-weight:bold;">&laquo;Eine Maus für alles&raquo;</span>&nbsp;&nbsp;  
@@ -853,12 +853,14 @@
     observer.observe(lastMenuItem);
   }
 
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
-  });
+  }, { passive: true });
 
-  $(window).on('resize', function() {
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });
