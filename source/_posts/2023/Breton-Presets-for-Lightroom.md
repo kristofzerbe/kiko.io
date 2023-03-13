@@ -19,7 +19,7 @@ related:
   - Israeli-Presets-for-Lightroom
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/110016996004245160
 ---
 
 'Le Bretagne' (Brittany) is one of the most beautiful and historic parts of Europe and always worth a visit. It combines the sometimes rugged English flair with the art of living of France, both scenically and in the architecture and the way people live there. My wife likes all things English and I am a friend of the french 'Savoir Vivre', and we were able to combine the two beautifully on a trip to Saint-Malo and Jersey. It was a photographers dream...
