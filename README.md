@@ -6,6 +6,9 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
 ## Latest Posts
 <!-- BLOG-POST-LIST:START -->
+ - [Breton Presets for Lightroom](https://kiko.io/post/Breton-Presets-for-Lightroom/)   
+ 10 Mar 2023   
+
  - [Discoveries #23 -  UI/CSS](https://kiko.io/post/Discoveries-23-UI-CSS/)   
  12 Feb 2023   
 
@@ -20,7 +23,4 @@ GitHub page for memorable tech stuff, published under https://kiko.io
 
  - [Integration of Pagefind in Hexo](https://kiko.io/post/Integration-of-Pagefind-in-Hexo/)   
  19 Jan 2023   
-
- - [Favourite Pens of 2022](https://kiko.io/post/Favourite-Pens-of-2022/)   
- 14 Jan 2023   
 <!-- BLOG-POST-LIST:END -->
