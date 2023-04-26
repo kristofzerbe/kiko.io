@@ -88,12 +88,30 @@ hexo.extend.generator.register("dynamic-trello", async function(locals) {
                   var preview = attachment.previews.filter(p => {
                     return p.width === 300;
                   });
-                  if (preview.length > 0) {
-                    item.image = {
-                      "fileName": attachment.fileName,
-                      "url": preview[0].url,
-                      "width": preview[0].width,
-                      "height": preview[0].height
+                  if (preview.length > 0) {                    
+                    const localFilename = card.name.toLowerCase()
+                      .replace(/ /g, '-') //replace space with hyphen
+                      .replace(/[^\w-]+/g, '') //remove special chars
+                      .replace(/-{2,}/g, '-') + //replace multiple hyhens
+                      "." + attachment.fileName.split('.').pop(); //add extension
+                    const localImagePath = path.join(config.static_dir, "images", "trello", localFilename);
+                    
+                    if (fs.existsSync(localImagePath)) {
+                      item.image = {
+                        "fileName": localFilename,
+                        "url": config.root + "images/trello/" + localFilename
+                      }
+                    } else {                      
+                      axios({ method: "GET", url: preview[0].url, responseType: "stream" }).then(res => {
+                        res.data.pipe(fs.createWriteStream(localImagePath));
+                        log.info("Trello Image Download: " + magenta(localImagePath));
+                      });
+                      // WORKAROUND: take Trello data on first use -> image will be available only on next generation run
+                      item.image = {
+                        "fileName": attachment.fileName,
+                        "url": preview[0].url,
+                      }
+  
                     }
                   }
                 }
