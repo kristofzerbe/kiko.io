@@ -19,7 +19,7 @@ related:
   - Discoveries-21-Sites-Pages
 syndication:
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/110277494782061842
 ---
 
 I'm such a UI person. It's a blast for me to discover and try out new interface components on the web and for the web. Simplicity and a tidy text desert is not my thing. Here are a few JavaScript UI gems I found the other day for you...
