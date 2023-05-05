@@ -232,7 +232,7 @@ function processImages(sourceDir, year) {
                   .png({ compressionLevel: 9, force: true })
                   .toFile(image.target)
                   .then(function (newFileInfo) {
-                    log.info("Note image '" + magenta(image.sourcePathRel) + "' processed");
+                    log.info("Processed: '" + magenta(image.sourcePathRel));
                   })
                   .catch(function (err) {
                     log.warn("Error on processing note image '" + image.sourcePathRel + "': " + err);
@@ -245,7 +245,7 @@ function processImages(sourceDir, year) {
                   .jpeg({ mozjpeg: true })
                   .toFile(image.target)
                   .then(function (newFileInfo) {
-                    log.info("Note image '" + magenta(image.sourcePathRel) + "' processed");
+                    log.info("Processed: '" + magenta(image.sourcePathRel));
                   })
                   .catch(function (err) {
                     log.warn("Error on processing note image '" + image.sourcePathRel + "': " + err);
@@ -257,8 +257,38 @@ function processImages(sourceDir, year) {
             }
 
           } else {
-            fs.copyFile(image.source, image.target);
-            log.info("Note image '" + magenta(image.sourcePathRel) + "' copied");
+            //fs.copyFile(image.source, image.target);
+            //log.info("Note image '" + magenta(image.sourcePathRel) + "' copied");
+
+            switch (metadata.format) {
+              case 'png':
+                sharp(image.source)
+                  .png({ compressionLevel: 9, force: true })
+                  .toFile(image.target)
+                  .then(function (newFileInfo) {
+                    log.info("Processed: '" + magenta(image.sourcePathRel));
+                  })
+                  .catch(function (err) {
+                    log.warn("Error on processing note image '" + image.sourcePathRel + "': " + err);
+                  });
+                break;
+            
+              case 'jpg':
+                sharp(image.source)
+                  .jpeg({ mozjpeg: true })
+                  .toFile(image.target)
+                  .then(function (newFileInfo) {
+                    log.info("Processed: '" + magenta(image.sourcePathRel));
+                  })
+                  .catch(function (err) {
+                    log.warn("Error on processing note image '" + image.sourcePathRel + "': " + err);
+                  });
+                break;
+
+              default:
+                break;
+            }
+
           }
 
         })
