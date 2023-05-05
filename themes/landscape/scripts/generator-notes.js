@@ -4,9 +4,6 @@ const path = require("path");
 const fs = require("hexo-fs");
 const front = require("hexo-front-matter");
 const sharp = require("sharp");
-const imagemin = require("imagemin");
-const imageminMozJpeg = require("imagemin-mozjpeg");
-const imageminPngquant = require("imagemin-pngquant");
 // const { highlight } = require("hexo-util");
 // const { config } = require("process");
 
@@ -202,11 +199,13 @@ function processImages(sourceDir, year) {
   // console.log(images);
 
   if (images.length > 0) {
+    // set relative paths
+    let sourcePathRel = path.join("_" + "notes", year, "images");
+    let targetPathRel = path.join("notes", year, "images");
+
     // set absolute paths
-    let sourcePath = path.join(hexo.source_dir, "_" + "notes", year, "images");
-    let targetPath = path.join(hexo.public_dir, "notes", year, "images");
-    // console.log(sourcePath);
-    // console.log(targetPath);
+    let sourcePath = path.join(hexo.source_dir, sourcePathRel);
+    let targetPath = path.join(hexo.public_dir, targetPathRel);
 
     if (!fs.existsSync(targetPath)) {
       fs.mkdirSync(targetPath, { recursive: true });
@@ -215,37 +214,55 @@ function processImages(sourceDir, year) {
     // extend image path info
     images.forEach((image) => {
       // console.log(image);
+      image.sourcePathRel = path.join(sourcePathRel, image.file);
       image.source = path.join(sourcePath, image.file);
       image.target = path.join(targetPath, image.file);
 
       if (!fs.existsSync(image.target)) {
-        //fs.copyFile(image.source, image.target);
-        sharp(image.source)
-          .resize({ width: 600 })
-          .toFile(image.target)
-          .then(function (newFileInfo) {
-            let imageMinPlugins = [];
 
-            if (newFileInfo.format === "jpg" || type === "jpeg") {
-              imageMinPlugins.push(imageminMozJpeg());
-            }
-            if (newFileInfo.format === "png") {
-              imageMinPlugins.push(imageminPngquant());
+        sharp(image.source).metadata(function(err, metadata) {
+          // console.log(metadata);
+
+          if (metadata.width > 600) {
+
+            switch (metadata.format) {
+              case 'png':
+                sharp(image.source)
+                  .resize({ width: 600, kernel: sharp.kernel.cubic })
+                  .png({ compressionLevel: 9, force: true })
+                  .toFile(image.target)
+                  .then(function (newFileInfo) {
+                    log.info("Note image '" + magenta(image.sourcePathRel) + "' processed");
+                  })
+                  .catch(function (err) {
+                    log.warn("Error on processing note image '" + image.sourcePathRel + "': " + err);
+                  });
+                break;
+            
+              case 'jpg':
+                sharp(image.source)
+                  .resize({ width: 600 })
+                  .jpeg({ mozjpeg: true })
+                  .toFile(image.target)
+                  .then(function (newFileInfo) {
+                    log.info("Note image '" + magenta(image.sourcePathRel) + "' processed");
+                  })
+                  .catch(function (err) {
+                    log.warn("Error on processing note image '" + image.sourcePathRel + "': " + err);
+                  });
+                break;
+
+              default:
+                break;
             }
 
-            if (imageMinPlugins.length > 0) {
-              imagemin([image.target], { plugins: imageMinPlugins }).then(
-                (files) => {
-                  log.info("Note image '" + magenta(image.file) + "' resized and compressed");
-                }
-              );
-            } else {
-              log.info("Note image '" + magenta(image.file) + "' resized");
-            }
-          })
-          .catch(function (err) {
-            log.warn("Error on resizing note image '" + image.file + "': " + err);
-          });
+          } else {
+            fs.copyFile(image.source, image.target);
+            log.info("Note image '" + magenta(image.sourcePathRel) + "' copied");
+          }
+
+        })
+
       }
     });
     //console.log(images);
