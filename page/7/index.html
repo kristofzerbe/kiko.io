@@ -268,6 +268,90 @@
   
   
      
+<article id="post-2021/How-to-prevent-duplicate-events" 
+         class="article article-type-post">
+  
+  <div class="article-meta">
+    <a href="/post/How-to-prevent-duplicate-events/" class="article-date">
+  
+    <time class="published dt-published" data-pagefind-meta="date" 
+          datetime="2021-01-07T16:22:25.000Z">07 Jan 2021</time>
+  
+</a>
+    
+  <div class="article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/How-to-prevent-duplicate-events/">
+        <img class="article-photo" src="/photos/tablet/DSC_7239.jpg" alt="Whirling Spark I" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+
+
+  
+    <h1>
+      <a class="article-title"
+         href="/post/How-to-prevent-duplicate-events/">How to prevent duplicate events</a>
+    </h1>
+  
+
+        
+      </header>
+    
+    
+    <div class="article-entry">
+      <p>I’m working on a new web app that contains a sliding out panel with some additional information on the selected element. This panel can be closed by the user via the ESC key. The implementation on initializing the panel seems very straight forward:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Panel</span>() &#123;</span><br><span class="line">  <span class="title function_">init</span>(<span class="params"></span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;keydown&quot;</span>, <span class="keyword">function</span>(<span class="params">event</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span>(event.<span class="property">key</span> === <span class="string">&quot;Escape&quot;</span>)&#123;</span><br><span class="line">        <span class="comment">//close the panel</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Problem is: the panel, which is part of the basic HTML, will be initialized with its content and functionality in a ES6 class. So … on every init, another event listener is added.</p>
+<p>You can easily figure that out, by calling <code>getEventListeners(document)</code> in the Chrome DevTools:</p>
+<p><img src="/post/How-to-prevent-duplicate-events/chromedevtools-multiple-listeners.png" alt="Chrome DevTools: Multiple Event Listeners"></p>
+      
+        <p class="article-more-link">
+          <a href="/post/How-to-prevent-duplicate-events/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Events/" rel="tag">Events</a></li></ul>  
+  </div>
+
+      
+      <div class="article-permalink" id="article-permalink-clhey5t4v001nh9n2h68gea44">
+    <input class="article-permalink-value" value="https://kiko.io/post/How-to-prevent-duplicate-events/" 
+           data-id="clhey5t4v001nh9n2h68gea44" data-title="How to prevent duplicate events" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clhey5t4v001nh9n2h68gea44");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
 <article id="post-2021/Utilize-a-repository-of-reusable-ES6-template-literals" 
          class="article article-type-post">
   
@@ -337,15 +421,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clheonwjc0023h1q7f3kv8uhk">
+      <div class="article-permalink" id="article-permalink-clhey5t540023h9n24ploep80">
     <input class="article-permalink-value" value="https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/" 
-           data-id="clheonwjc0023h1q7f3kv8uhk" data-title="Utilize a repository of reusable ES6 template literals" />
+           data-id="clhey5t540023h9n24ploep80" data-title="Utilize a repository of reusable ES6 template literals" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clheonwjc0023h1q7f3kv8uhk");
+        initPermalink("clhey5t540023h9n24ploep80");
     });
 </script>
 
@@ -422,15 +506,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clheonwig000nh1q7d1zy8d4w">
+      <div class="article-permalink" id="article-permalink-clhey5t49000nh9n2eocz4ktq">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-5/" 
-           data-id="clheonwig000nh1q7d1zy8d4w" data-title="Discoveries #5" />
+           data-id="clhey5t49000nh9n2eocz4ktq" data-title="Discoveries #5" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clheonwig000nh1q7d1zy8d4w");
+        initPermalink("clhey5t49000nh9n2eocz4ktq");
     });
 </script>
 
@@ -503,15 +587,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clheonwij000sh1q75az79sbu">
+      <div class="article-permalink" id="article-permalink-clhey5t4c000sh9n2hdul19b3">
     <input class="article-permalink-value" value="https://kiko.io/post/Indian-Presets-for-Lightroom/" 
-           data-id="clheonwij000sh1q75az79sbu" data-title="Indian Presets for Lightroom" />
+           data-id="clhey5t4c000sh9n2hdul19b3" data-title="Indian Presets for Lightroom" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clheonwij000sh1q75az79sbu");
+        initPermalink("clhey5t4c000sh9n2hdul19b3");
     });
 </script>
 
@@ -585,15 +669,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clheonwik000th1q7f2a11zki">
+      <div class="article-permalink" id="article-permalink-clhey5t4c000th9n2c0e769g9">
     <input class="article-permalink-value" value="https://kiko.io/post/Israeli-Presets-for-Lightroom/" 
-           data-id="clheonwik000th1q7f2a11zki" data-title="Israeli Presets for Lightroom" />
+           data-id="clhey5t4c000th9n2c0e769g9" data-title="Israeli Presets for Lightroom" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clheonwik000th1q7f2a11zki");
+        initPermalink("clhey5t4c000th9n2c0e769g9");
     });
 </script>
 
@@ -669,15 +753,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clheonwih000ph1q712qd1ghe">
+      <div class="article-permalink" id="article-permalink-clhey5t4a000ph9n2h8it1zxq">
     <input class="article-permalink-value" value="https://kiko.io/post/Folder-based-publishing-in-Lightroom/" 
-           data-id="clheonwih000ph1q712qd1ghe" data-title="Folder based publishing in Lightroom" />
+           data-id="clhey5t4a000ph9n2h8it1zxq" data-title="Folder based publishing in Lightroom" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clheonwih000ph1q712qd1ghe");
+        initPermalink("clhey5t4a000ph9n2h8it1zxq");
     });
 </script>
 
@@ -754,15 +838,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clheonwig000mh1q77s1t42ge">
+      <div class="article-permalink" id="article-permalink-clhey5t48000mh9n25vky5nt5">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-4/" 
-           data-id="clheonwig000mh1q77s1t42ge" data-title="Discoveries #4" />
+           data-id="clhey5t48000mh9n25vky5nt5" data-title="Discoveries #4" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clheonwig000mh1q77s1t42ge");
+        initPermalink("clhey5t48000mh9n25vky5nt5");
     });
 </script>
 
@@ -839,15 +923,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clheonwij000rh1q79alq73x6">
+      <div class="article-permalink" id="article-permalink-clhey5t4b000rh9n232xw3yxz">
     <input class="article-permalink-value" value="https://kiko.io/post/Implement-source-switch-for-SPA/" 
-           data-id="clheonwij000rh1q79alq73x6" data-title="Implement source switch for SPA" />
+           data-id="clhey5t4b000rh9n232xw3yxz" data-title="Implement source switch for SPA" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clheonwij000rh1q79alq73x6");
+        initPermalink("clhey5t4b000rh9n232xw3yxz");
     });
 </script>
 
@@ -921,15 +1005,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clheonwim000xh1q79ef6f18n">
+      <div class="article-permalink" id="article-permalink-clhey5t4e000xh9n234c68lag">
     <input class="article-permalink-value" value="https://kiko.io/post/Show-related-posts-in-Hexo/" 
-           data-id="clheonwim000xh1q79ef6f18n" data-title="Show related posts in Hexo" />
+           data-id="clhey5t4e000xh9n234c68lag" data-title="Show related posts in Hexo" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clheonwim000xh1q79ef6f18n");
+        initPermalink("clhey5t4e000xh9n234c68lag");
     });
 </script>
 
@@ -1015,15 +1099,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clheonwif000lh1q74zbzbmk8">
+      <div class="article-permalink" id="article-permalink-clhey5t48000lh9n2bl0o2gla">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-3-Tutorials/" 
-           data-id="clheonwif000lh1q74zbzbmk8" data-title="Discoveries #3 - Tutorials" />
+           data-id="clhey5t48000lh9n2bl0o2gla" data-title="Discoveries #3 - Tutorials" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clheonwif000lh1q74zbzbmk8");
+        initPermalink("clhey5t48000lh9n2bl0o2gla");
     });
 </script>
 
@@ -1103,15 +1187,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clheonwie000ih1q70df29nqc">
+      <div class="article-permalink" id="article-permalink-clhey5t46000ih9n20tgd7c8p">
     <input class="article-permalink-value" value="https://kiko.io/post/Device-Class-Detection-in-JavaScript/" 
-           data-id="clheonwie000ih1q70df29nqc" data-title="Device Class Detection in JavaScript" />
+           data-id="clhey5t46000ih9n20tgd7c8p" data-title="Device Class Detection in JavaScript" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clheonwie000ih1q70df29nqc");
+        initPermalink("clhey5t46000ih9n20tgd7c8p");
     });
 </script>
 
@@ -1189,101 +1273,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clheonwib000eh1q7dw9l5utb">
+      <div class="article-permalink" id="article-permalink-clhey5t43000eh9n2a80lg121">
     <input class="article-permalink-value" value="https://kiko.io/post/404-Page-in-Hexo-for-GitHub-Pages/" 
-           data-id="clheonwib000eh1q7dw9l5utb" data-title="404 Page in Hexo for GitHub Pages" />
+           data-id="clhey5t43000eh9n2a80lg121" data-title="404 Page in Hexo for GitHub Pages" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clheonwib000eh1q7dw9l5utb");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2020/Pimping-the-Permalink" 
-         class="article article-type-post">
-  
-  <div class="article-meta">
-    <a href="/post/Pimping-the-Permalink/" class="article-date">
-  
-    <time class="published dt-published" data-pagefind-meta="date" 
-          datetime="2020-09-20T14:30:37.000Z">20 Sep 2020</time>
-  
-</a>
-    
-  <div class="article-category category-javascript">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/Pimping-the-Permalink/">
-        <img class="article-photo" src="/photos/tablet/18-09 Kroatien-0245.jpg" alt="Summer Reading" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-    <a class="article-anything" href="/series/a-new-blog">A New Blog</a>
-
-
-
-        
-
-
-  
-    <h1>
-      <a class="article-title"
-         href="/post/Pimping-the-Permalink/">Pimping the Permalink</a>
-    </h1>
-  
-
-        
-    <h2 class="article-subtitle">
-        How to copy and share the permalink programatically
-    </h2>
-
-      </header>
-    
-    
-    <div class="article-entry">
-      <p>Until now I did not show the permalink under my posts in this blog, but in the past I had sometimes the need to pass one of the links and it was not very user-friendly, on desktop as well as on mobile. Not the One-Click experience I prefer.</p>
-<p>My goal was to show the permalink and, even more important, provide a simple way to copy and to share. JavaScript to the rescue…</p>
-      
-        <p class="article-more-link">
-          <a href="/post/Pimping-the-Permalink/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Share/" rel="tag">Share</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stylus/" rel="tag">Stylus</a></li></ul>  
-  </div>
-
-      
-      <div class="article-permalink" id="article-permalink-clheonwil000wh1q7b0z3cdt2">
-    <input class="article-permalink-value" value="https://kiko.io/post/Pimping-the-Permalink/" 
-           data-id="clheonwil000wh1q7b0z3cdt2" data-title="Pimping the Permalink" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("clheonwil000wh1q7b0z3cdt2");
+        initPermalink("clhey5t43000eh9n2a80lg121");
     });
 </script>
 
@@ -1332,6 +1330,12 @@
         
           <li>
             
+              <a href="/post/Top-10-Pens-of-Jon-Kantner/">Top 10 Pens of Jon Kantner</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Discoveries-24-JavaScript-UI/">Discoveries #24 - JavaScript &amp; UI</a>
             
           </li>
@@ -1351,12 +1355,6 @@
           <li>
             
               <a href="/post/Provide-Blog-Metadata-via-JSON-LD/">Provide Blog Metadata via JSON-LD</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Pagefind-UI-and-URL-Parameters/"><b>Update: </b>Pagefind UI and URL Parameters</a>
             
           </li>
         
