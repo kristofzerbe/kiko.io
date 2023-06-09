@@ -19,7 +19,7 @@ related:
   - Discoveries-20-CSS-UI
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/110337342444506775
 ---
 
 A while ago I posted my {% post_link 2023/Favourite-Pens-of-2022 "favourite pens of 2022" %}. Many of them came from the pen of **[John Kantner](https://jonkantner.com/)** and that was reason enough for me to highlight his most beautiful works in a post.

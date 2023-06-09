@@ -67,7 +67,7 @@ body
   font: font-size font-sans
   -webkit-text-size-adjust: 100%
   @media mq-normal
-    overflow: scroll !important
+    // overflow: scroll !important --- why that, interfers with downupPopup
 
 .outer
   clearfix()
@@ -89,6 +89,20 @@ body
 
 .hide
   display: none
+
+pre.json
+  font-family: 'Roboto Mono',monospace
+  font-size: 13px
+  .string 
+    color: #4271ae
+  .number 
+    color: #4271ae
+  .boolean 
+    color: #4271ae
+  .null
+    color: #ababab
+  .key
+    color: #c15353
 
 #container, #inner-container
   position: relative

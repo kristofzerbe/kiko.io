@@ -92,7 +92,8 @@ module.exports = function(grunt){
           'themes/landscape/assets/utterances-comment.js',
           'themes/landscape/assets/webmentions.js',
           'themes/landscape/assets/vanilla-back-to-top.js',
-          'themes/landscape/assets/medium-zoom.js'
+          'themes/landscape/assets/medium-zoom.js',
+          'themes/landscape/assets/downupPopup/downupPopup.js'
         ],
         dest: 'themes/landscape/tmp/asset-bundle.js'
       },
@@ -101,7 +102,8 @@ module.exports = function(grunt){
           'themes/landscape/assets/lc-select/lc_select.css',
           'themes/landscape/assets/image-compare-viewer/image-compare-viewer.css',
           'themes/landscape/assets/tiny-slider/tiny-slider.css',
-          'themes/landscape/assets/github-cards.css'
+          'themes/landscape/assets/github-cards.css',
+          'themes/landscape/assets/downupPopup/downupPopup.css'
         ],
         dest: 'themes/landscape/tmp/asset-bundle.css'
       }
@@ -151,6 +153,7 @@ module.exports = function(grunt){
   grunt.renameTask('clean', '_clean');
 
   grunt.registerTask('fonts', ['gitclone', 'copy', '_clean:tmp']);  
+  grunt.registerTask('styles', ['concat:asset_styles', 'cssmin']);
   grunt.registerTask('default', ['concat', 'cssmin', 'uglify', 'copy', '_clean:tmp']);
   grunt.registerTask('all', ['concat', 'cssmin', 'uglify', 'copy', '_clean:tmp', 'hexo:clean', 'hexo:generate']);
   grunt.registerTask('complete', ['gitclone', 'concat', 'cssmin', 'uglify', 'copy', '_clean:tmp', 'hexo:clean', 'hexo:generate']);
