@@ -114,9 +114,9 @@ function syntaxHighlight(json) {
 
 /* downupPopup Dialog */
 var dpDialog = {
-  'element': null,
-  'content': null,
-  'default': {
+  'base': {
+    'element': null,
+    'content': null,
     'options': {
       animation: "ease",
       duration: 400,
@@ -125,38 +125,40 @@ var dpDialog = {
       width: "100%",
     },
     'init': function(options) {
-      let opt = {...dpDialog.default.options, ...options};
+      let opt = {...dpDialog.base.options, ...options};
 
       if ($("#dpElement").length === 0) { 
         // create new
-        dpDialog.element = $(`
+        dpDialog.base.element = $(`
           <div id="dpElement">
             <div class="downupPopup-content"></div>
           </div>`);
-          dpDialog.element.appendTo("body");
-          dpDialog.content = dpDialog.element.find(".downupPopup-content");
+          dpDialog.base.element.appendTo("body");
+          dpDialog.base.content = dpDialog.base.element.find(".downupPopup-content");
       } else { // reset existing
-        dpDialog.element.downupPopup("close");
-        dpDialog.content.empty();
+        dpDialog.base.element.downupPopup("close");
+        dpDialog.base.content.empty();
       }
 
-      dpDialog.element.downupPopup(opt);
+      dpDialog.base.element.downupPopup(opt);
     },
     'show': function() {
       setTimeout(() => {
-        dpDialog.element.downupPopup("open");
+        dpDialog.base.element.downupPopup("open");
       }, 100);  
     }
   },
   'pageMeta': function() {
-    dpDialog.default.init({
+    dpDialog.base.init({
       headerText: "Page Meta",
       contentScroll: true,
       distance: 6
     });
 
     // CONTENT
-    let sec1 = $('<section></section>').appendTo(dpDialog.content);
+    let json = JSON.parse($('script[type="application/ld+json"]').text());
+
+    let secVisual = $('<section></section>').appendTo(dpDialog.base.content);
     let tIntroduction = `
       <p style="margin-bottom: 20px; font-style: italic;">
         This is a visual representation of the metadata for this page, included as JSON-LD. 
@@ -164,9 +166,8 @@ var dpDialog = {
         <a href="https://kiko.io/post/Provide-Blog-Metadata-via-JSON-LD/">Provide Blog Metadata via JSON-LD</a> and the raw metadata below.
       </p>
     `;
-    sec1.append(tIntroduction);
-
-    let json = JSON.parse($('script[type="application/ld+json"]').text());
+    secVisual.append(tIntroduction);
+    
     let state = "open";
     //---
     let jArticle = json["@graph"].filter(x => x["@type"] === "Article");
@@ -176,7 +177,7 @@ var dpDialog = {
       let jPublisher = json["@graph"].filter(x => x["@id"] === jArticle[0].publisher["@id"]);
       let tArticle = getArticle(state, jArticle[0], jAuthor[0], jPublisher[0], jImage[0]);
       state = "";
-      sec1.append($(tArticle));
+      secVisual.append($(tArticle));
     }
     //--
     let jBlogPosting = json["@graph"].filter(x => x["@type"] === "BlogPosting");
@@ -185,32 +186,32 @@ var dpDialog = {
       let jPublisher = json["@graph"].filter(x => x["@id"] === jBlogPosting[0].publisher["@id"]);
       let tBlogPosting = getBlogPosting(state, jBlogPosting[0], jAuthor[0], jPublisher[0]);
       state = "";
-      sec1.append($(tBlogPosting));
+      secVisual.append($(tBlogPosting));
     }
     //--
     let jWebPage = json["@graph"].filter(x => x["@type"] === "WebPage");
     let jPhoto = json["@graph"].filter(x => x["@id"] === jWebPage[0].image["@id"]);
     let tWebPage = getWebPage(state, jWebPage[0], jPhoto[0]);
-    sec1.append($(tWebPage));
+    secVisual.append($(tWebPage));
     //--
     let jWebSite = json["@graph"].filter(x => x["@type"] === "WebSite");
     let jPublisher = json["@graph"].filter(x => x["@id"] === jWebSite[0].publisher["@id"]);
     let tWebSite = getWebSite(jWebSite[0], jPublisher[0]);
-    sec1.append($(tWebSite));
+    secVisual.append($(tWebSite));
     //--
     let jOrganization = json["@graph"].filter(x => x["@type"] === "Organization");
     let tOrganization = getOrganization(jOrganization[0]);
-    sec1.append($(tOrganization));
+    secVisual.append($(tOrganization));
     //--
     let jPerson = json["@graph"].filter(x => x["@type"] === "Person");
     let tPerson = getPerson(jPerson[0]);
-    sec1.append($(tPerson));
+    secVisual.append($(tPerson));
 
-    let sec2 = $('<section></section>').appendTo(dpDialog.content);
-    sec2.append('<h1>JSON-LD</h1>');
-    sec2.append('<pre class="json">' + syntaxHighlight(JSON.stringify(json, undefined, 2))) + '</pre>';
+    let secCode = $('<section></section>').appendTo(dpDialog.base.content);
+    secCode.append('<h1>JSON-LD</h1>');
+    secCode.append('<pre class="json">' + syntaxHighlight(JSON.stringify(json, undefined, 2))) + '</pre>';
 
-    dpDialog.default.show();
+    dpDialog.base.show();
 
     // HELPER
     function getArticle(state, article, person, organization, image) {
@@ -350,8 +351,8 @@ var dpDialog = {
     }
 
   },
-  'Test': function() {
-    dpDialog.default.init({
+  'myFirstTest': function() {
+    dpDialog.base.init({
       headerText: "Test",
       distance: 75
     });
@@ -362,10 +363,9 @@ var dpDialog = {
         <p>Lorem ipsum dolor sit amet...</p>
       </section>
     `;
+    $(content).appendTo(dpDialog.base.content);
 
-    $(content).appendTo(dpDialog.content);
-
-    dpDialog.default.show();
+    dpDialog.base.show();
   }
 };
 window.dialog = dpDialog; // make it globally available

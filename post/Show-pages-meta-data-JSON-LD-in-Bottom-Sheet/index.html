@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Show pages meta data (JSON-LD) in Bottom Sheet - kiko.io</title>
+  <meta name="author" content="Kristof Zerbe">
+  <meta name="title" content="Show pages meta data (JSON-LD) in Bottom Sheet - kiko.io">
+  
+  <meta name="description" content="Visualize the generated meta code on your page in a sliding panel for review and information purposes">
+  
+
+  <link rel="canonical" href="https://kiko.io/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <meta name="theme-color" content="#444">
+
+    
+  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"Article","@id":"https://kiko.io/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/#article","mainEntityOfPage":{"@id":"https://kiko.io/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/"},"headline":"Show pages meta data (JSON-LD) in Bottom Sheet - kiko.io","description":"Visualize the generated meta code on your page in a sliding panel for review and information purposes","datePublished":"2023-06-11T12:11:45Z","dateModified":"2023-06-11T12:11:45Z","image":{"@id":"https://kiko.io#image/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/","url":"https://kiko.io/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/","name":"Show pages meta data (JSON-LD) in Bottom Sheet - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"Visualize the generated meta code on your page in a sliding panel for review and information purposes","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#image/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet"},"image":{"@id":"https://kiko.io#photo/22-08 Bretagne-Jersey-0683.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"https://kiko.io/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/22-08 Bretagne-Jersey-0683.jpg","caption":"Water Numbers","url":"https://kiko.io/photos/normal/22-08 Bretagne-Jersey-0683.jpg","contentUrl":"https://kiko.io/photos/normal/22-08 Bretagne-Jersey-0683.jpg","discussionUrl":"https://500px.com/photo/1056125514/water-numbers-by-kristof-zerbe","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}},{"@type":"ImageObject","@id":"https://kiko.io#image/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet","url":"https://kiko.io/images/social-media/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet.png","contentUrl":"https://kiko.io/images/social-media/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet.png","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
+
+    <meta property="og:site_name" content="kiko.io">
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="https://kiko.io/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/index.html">
+  <meta property="og:title" content="Show pages meta data (JSON-LD) in Bottom Sheet - kiko.io">
+  
+  <meta property="og:description" content="Visualize the generated meta code on your page in a sliding panel for review and information purposes">
+  
+  <meta property="og:image" content="https://kiko.io/images/social-media/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet.png">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://kiko.io/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/index.html">
+  <meta property="twitter:title" content="Show pages meta data (JSON-LD) in Bottom Sheet - kiko.io">
+  
+  <meta property="twitter:description" content="Visualize the generated meta code on your page in a sliding panel for review and information purposes">
+  
+  <meta property="twitter:image" content="https://kiko.io/images/social-media/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet.png">
+
+    <link rel="webmention" href="https://webmention.io/kiko.io/webmention" />
+  <link rel="pingback" href="https://webmention.io/kiko.io/xmlrpc" />
+
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
+  <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
+  <link href="https://github.com/kristofzerbe" rel="me authn">
+  <link href="mailto:kristof.zerbe@gmail.com" rel="me authn">
+  
+    
+
+  <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-semibold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-semibolditalic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Regular.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-It.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Bold.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="preload" as="image" href="/images/hero.jpg" imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$search.jpg" imagesrcset="/photos/mobile/$search.jpg 480w, /photos/tablet/$search.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$notes-2023.jpg" imagesrcset="/photos/mobile/$notes-2023.jpg 480w, /photos/tablet/$notes-2023.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$projects.jpg" imagesrcset="/photos/mobile/$projects.jpg 480w, /photos/tablet/$projects.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$tiny-tools.jpg" imagesrcset="/photos/mobile/$tiny-tools.jpg 480w, /photos/tablet/$tiny-tools.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$photos.jpg" imagesrcset="/photos/mobile/$photos.jpg 480w, /photos/tablet/$photos.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$about.jpg" imagesrcset="/photos/mobile/$about.jpg 480w, /photos/tablet/$about.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$404.jpg" imagesrcset="/photos/mobile/$404.jpg 480w, /photos/tablet/$404.jpg 768w">
+
+  
+<link rel="stylesheet" href="/css/dist/bundle.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/tools.js"></script>
+
+  
+<script src="/js/dist/scroll-timeline.js"></script>
+
+  
+<script src="/js/dist/image-compare-viewer.min.js"></script>
+
+  
+<script src="/js/dist/tiny-slider.min.js"></script>
+
+
+
+  <script defer type="text/javascript" 
+    src="https://api.pirsch.io/pirsch.js"
+    id="pirschjs"
+    data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>
+  <script type="text/javascript" 
+    src="https://api.pirsch.io/pirsch-events.js"
+    id="pirscheventsjs"
+    data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body id="body">  
+  <div id="container" class="container">
+    <div class="inner-container">
+      <div id="wrap">
+        <header id="header">
+  <a href="#" id="header-photo-link" target="_blank" rel="noopener" ></a>
+  <div id="banner">
+    <div id="header-nav-start"></div>
+    <nav id="header-nav" role="navigation">
+      <ul class="menu">
+        
+          
+          <li class="menu-item menu-item-icon" id="nav-home-link">
+            <a class="sub-nav-link"
+               href="/">
+                <span>Home</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item menu-item-icon" id="nav-search-link">
+            <a class="sub-nav-link"
+               href="/search">
+                <span>Search</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-archives-link">
+            <a class="sub-nav-link"
+               href="/archives">
+                <span>Archives</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-series-link">
+            <a class="sub-nav-link"
+               href="/series">
+                <span>series</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-notes-link">
+            <a class="sub-nav-link"
+               href="/notes">
+                <span>notes</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-projects-link">
+            <a class="sub-nav-link"
+               href="/projects">
+                <span>projects</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-tiny-tools-link">
+            <a class="sub-nav-link"
+               href="/collections/tiny-tools">
+                <span>tiny-tools</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-photos-link">
+            <a class="sub-nav-link"
+               href="/photos">
+                <span>photos</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-about-link">
+            <a class="sub-nav-link"
+               href="/about">
+                <span>About</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item menu-item-icon" id="nav-rss-link">
+            <a class="sub-nav-link"
+               href="/atom.xml">
+                <span>RSS Feed</span>
+              </a>
+          </li>
+        
+      </ul>
+    </nav>
+    <div id="header-nav-end"></div>
+  </div>
+  <div id="progress"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+        <a href="/" id="logo">
+          <h1 id="title-wrap">
+            <span style="opacity:0.2;">kiko.io</span>
+          </h1>
+        </a>
+      
+        <h2 id="subtitle">
+          Memorable Tech Stuff
+        </h2>
+        <div id="sub-socialmediaimage-link" onclick="copysocialmediaimageLink();"></div>
+        <script>
+          function copysocialmediaimageLink() {
+            let smil = document.querySelector('meta[property="og:image"]').content;
+            copyTextToClipboard(smil);
+          }
+        </script>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        <div id="sub-nav-theme">          
+          <input type="checkbox" id="theme-switch">
+          <label for="theme-switch"></label>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+<script>
+  if (location.pathname === "/") {
+    document.getElementById("nav-home-link").remove();
+  }
+</script>
+        <div id="content" class="outer">
+          <main>
+  <style>
+#banner {
+    background-size: cover;
+}
+@media screen and (max-width: 479px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/22-08 Bretagne-Jersey-0683.jpg"); }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/22-08 Bretagne-Jersey-0683.jpg"); }
+}
+@media screen and (min-width: 768px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/22-08 Bretagne-Jersey-0683.jpg"); }    
+}
+</style>
+
+<img id="header-photo" data-pagefind-meta="image[src], image_alt[alt]"
+     src="/photos/normal/22-08 Bretagne-Jersey-0683.jpg" 
+     alt="Water Numbers"
+     width="0" height="0"/>
+
+
+    <script>
+        var header = document.getElementById("header");
+        header.classList.add("photograph");
+        
+        var photoLink = document.getElementById("header-photo-link");
+        photoLink.href = "https://500px.com/photo/1056125514/water-numbers-by-kristof-zerbe";
+        photoLink.innerHTML = "see <strong>Water Numbers</strong> at 500px";
+    </script>
+
+
+
+
+<script>
+  var body = document.getElementById("body");
+  body.classList.add("article-view");
+</script>
+  
+<article id="post-2023/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet" data-pagefind-body data-pagefind-meta="type:Article"
+         class="article article-type-post h-entry">
+  
+  <div class="article-meta" data-pagefind-ignore>
+    <div class="h-card p-author" style="display:none">
+      <img class="u-photo" src="https://kiko.io/images/kristof-zerbe.png" alt="Kristof Zerbe" />
+      <a class="p-name u-url" href="https://kiko.io" rel="author">Kristof Zerbe</a>
+    </div>
+    <a class="u-url u-uid" href="https://kiko.io/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/" style="display:none;">https://kiko.io/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/</a>
+    <a href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/" class="article-date">
+  
+    <time class="published dt-published" data-pagefind-meta="date" 
+          datetime="2023-06-11T12:11:45.000Z">11 Jun 2023</time>
+  
+</a>
+    
+  <div class="article-category p-category category-ui/ux">
+    <a class="article-category-link" href="/categories/UI-UX/">UI/UX</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+
+
+  
+    <h1 class="article-title p-name" data-pagefind-ignore
+        data-title="Show pages meta data (JSON-LD) in Bottom Sheet" 
+        data-pagefind-meta="title[data-title]">
+        
+        <span>Show pages meta data (JSON-LD) in Bottom Sheet</span>
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle p-summary">
+        Visualize the generated meta code on your page in a sliding panel for review and information purposes
+    </h2>
+
+      </header>
+    
+    
+    <div class="article-entry e-content">
+      <p>A few months ago I introduced new meta data (JSON-LD) for the pages of this blog and also <a href="/post/Provide-Blog-Metadata-via-JSON-LD/" title="Provide Blog Metadata via JSON-LD">wrote about my implementation</a>. Works also everything quite well … only the verification of the generated data was a bit cumbersome:</p>
+<ol>
+<li>Open DevTools for a page in Chrome.</li>
+<li>Search in the HEAD of the source code for the included script (“application&#x2F;ld+json”)</li>
+<li>Copy out JSON-LD code</li>
+<li>Format JSON into VS code … and check</li>
+</ol>
+<p>Nothing for now and simply impossible on the smartphone, even if there would be a reasonable Chrome extension for displaying JSON-LD data, but it does not exist (yet). Another problem was that I use automatically generated Socal Media images for my articles, which are included in the JSON-LD, but do not appear anywhere in the page and thus were beyond my control. I simply wanted to display all the generated stuff.</p>
+<p>Since I’ve been a fan of the so-called bottom sheets since the first version of Google’s Material Design, I imagined a script that grabs the code embedded in the page and pushes a panel with all the data visualized there into the page from the bottom … and the whole act was easier than I thought.</p>
+<span id="more"></span>
+
+<hr>
+<h2 id="The-Bottom-Sheet-Component"><a href="#The-Bottom-Sheet-Component" class="headerlink" title="The Bottom Sheet Component"></a>The Bottom Sheet Component</h2><p>Recently I stumbled across a small but nice bottom sheet script that is based on jQuery but that I still use on this blog itself: <a href="https://downuppopupjs.dincerali.com/"><strong>downupPopup.js</strong></a> by <a href="https://dincerali.com/">Ali Dinçer</a>. It has several settings and is just about 5 KB in size, if you add the CSS code. What’s nice about it is, that all the animations that make such a component stand out, are based on said CSS and are not jQuery-driven.</p>
+<p>The bottom sheet is based on a base HTML element with a required child element:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;myElement1&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;downupPopup-content&quot;</span>&gt;</span></span><br><span class="line">    Lorem ipsum dolor sit amet...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>This is first initialized with the desired settings, with the script adding the necessary inline styles, and then you can open and close it:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#myElement1&quot;</span>).<span class="title function_">downupPopup</span>();</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;#myElement1&quot;</span>).<span class="title function_">downupPopup</span>(<span class="string">&#x27;open&#x27;</span>);</span><br><span class="line">$(<span class="string">&quot;#myElement1&quot;</span>).<span class="title function_">downupPopup</span>(<span class="string">&#x27;close&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>Now my solution should work on-the-fly and without a previously defined element in the HTML … and it should be reusable, because if I already include a bottom sheet component, then I wanted to use it for future occasions. For this I wrote myself a small manager that makes different uses possible with a single call.</p>
+<p>It has one function each for a specific bottom sheet dialog and beside it base variables and functions (<code>base</code>) to keep the infrastructure code of the former as small as possible:</p>
+<figure class="highlight js"><figcaption><span>tools.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dpDialog = &#123;</span><br><span class="line">  <span class="string">&#x27;base&#x27;</span>: &#123;</span><br><span class="line">    <span class="string">&#x27;element&#x27;</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="string">&#x27;content&#x27;</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="string">&#x27;options&#x27;</span>: &#123;</span><br><span class="line">      <span class="attr">animation</span>: <span class="string">&quot;ease&quot;</span>,</span><br><span class="line">      <span class="attr">duration</span>: <span class="number">400</span>,</span><br><span class="line">      <span class="attr">radiusLeft</span>: <span class="string">&quot;6px&quot;</span>,</span><br><span class="line">      <span class="attr">radiusRight</span>: <span class="string">&quot;6px&quot;</span>,</span><br><span class="line">      <span class="attr">width</span>: <span class="string">&quot;100%&quot;</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&#x27;init&#x27;</span>: <span class="keyword">function</span>(<span class="params">options</span>) &#123;</span><br><span class="line">      <span class="keyword">let</span> opt = &#123;...dpDialog.<span class="property">base</span>.<span class="property">options</span>, ...options&#125;;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> ($(<span class="string">&quot;#dpElement&quot;</span>).<span class="property">length</span> === <span class="number">0</span>) &#123; </span><br><span class="line">        <span class="comment">// create new</span></span><br><span class="line">        dpDialog.<span class="property">base</span>.<span class="property">element</span> = $(<span class="string">`</span></span><br><span class="line"><span class="string">          &lt;div id=&quot;dpElement&quot;&gt;</span></span><br><span class="line"><span class="string">            &lt;div class=&quot;downupPopup-content&quot;&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="string">          &lt;/div&gt;`</span>);</span><br><span class="line">          dpDialog.<span class="property">base</span>.<span class="property">element</span>.<span class="title function_">appendTo</span>(<span class="string">&quot;body&quot;</span>);</span><br><span class="line">          dpDialog.<span class="property">base</span>.<span class="property">content</span> = dpDialog.<span class="property">base</span>.<span class="property">element</span>.<span class="title function_">find</span>(<span class="string">&quot;.downupPopup-content&quot;</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123; <span class="comment">// reset existing</span></span><br><span class="line">        dpDialog.<span class="property">base</span>.<span class="property">element</span>.<span class="title function_">downupPopup</span>(<span class="string">&quot;close&quot;</span>);</span><br><span class="line">        dpDialog.<span class="property">base</span>.<span class="property">content</span>.<span class="title function_">empty</span>();</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      dpDialog.<span class="property">base</span>.<span class="property">element</span>.<span class="title function_">downupPopup</span>(opt);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&#x27;show&#x27;</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        dpDialog.<span class="property">base</span>.<span class="property">element</span>.<span class="title function_">downupPopup</span>(<span class="string">&quot;open&quot;</span>);</span><br><span class="line">      &#125;, <span class="number">100</span>);  </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&#x27;myFirstTest&#x27;</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// INIT DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">init</span>(&#123;</span><br><span class="line">      <span class="attr">headerText</span>: <span class="string">&quot;Test&quot;</span>,</span><br><span class="line">      <span class="attr">distance</span>: <span class="number">75</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ADD CONTENT</span></span><br><span class="line">    <span class="keyword">let</span> content = <span class="string">`</span></span><br><span class="line"><span class="string">      &lt;section&gt;</span></span><br><span class="line"><span class="string">        &lt;p&gt;Lorem ipsum dolor sit amet...&lt;/p&gt;</span></span><br><span class="line"><span class="string">      &lt;/section&gt;</span></span><br><span class="line"><span class="string">    `</span>;</span><br><span class="line">    $(content).<span class="title function_">appendTo</span>(dpDialog.<span class="property">base</span>.<span class="property">content</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// OPEN DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">show</span>();</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&#x27;pageMeta&#x27;</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// INIT DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">init</span>(&#123;</span><br><span class="line">      <span class="attr">headerText</span>: <span class="string">&quot;Page Meta&quot;</span>,</span><br><span class="line">      <span class="attr">contentScroll</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">distance</span>: <span class="number">6</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ADD CONTENT</span></span><br><span class="line">    <span class="comment">// ... appending stuff to dpDialog.base.content</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// OPEN DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">show</span>();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable language_">window</span>.<span class="property">dialog</span> = dpDialog; <span class="comment">// make it globally available</span></span><br></pre></td></tr></table></figure>
+
+<p>The base <code>init</code> function takes care of initializing the downupPopup component, including dynamically inserting the necessary HTML element and attaching the desired settings. <code>show</code> opens up the dialog, with a small time delay, to ensure that the content has already been inserted.<br>Dialog functions in the example above are: <code>myFirstTest</code> and <code>pageMeta</code>.</p>
+<p>Calling one of the dialog functions is simple:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:dpDialog.myFirstTest()&quot;</span>&gt;</span>Open Test Dialog<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Try here: <a href="javascript:dpDialog.myFirstTest()">Open Test Dialog</a></p>
+<h3 id="Problem-with-the-original-implementation-solved"><a href="#Problem-with-the-original-implementation-solved" class="headerlink" title="Problem with the original implementation solved"></a>Problem with the original implementation solved</h3><p>Ali decided in his original implementation to apply the given settings only once to a popup element. Once initialized, it could not be reused with different settings. To avoid having to destroy an existing element before initializing a new one, which would have caused a massive timing problem due to the animation, I decided to fork his code and give him a <a href="https://github.com/ali-dincer/downupPopup.js/pull/2">pull request</a>.</p>
+<p>Du findest mein Script hier, solange Ali den PR nicht in seinen Code übernommen hat: <a href="https://github.com/kristofzerbe/downupPopup.js">kristofzerbe&#x2F;downupPopup.js</a></p>
+<hr>
+<h2 id="The-PageMeta-Dialog"><a href="#The-PageMeta-Dialog" class="headerlink" title="The PageMeta Dialog"></a>The PageMeta Dialog</h2><p>Now that I had my desired display option, it was time to bring the <code>pageMeta</code> dialog function to life.</p>
+<p>My first thought was to use a JSON-LD parser in JavaScript provided by <a href="https://json-ld.org/"><strong>json-ld.org</strong></a>, but this is not even quickly usable, since it validates the code to be parsed at runtime against schema.org and every of my calls failed with CORS warnings. Now I didn’t want to turn this into a PhD thesis, I just wanted to display my highly customized JSON-LD, so I worked out the function quite individually.</p>
+<h3 id="The-Code-Itself"><a href="#The-Code-Itself" class="headerlink" title="The Code Itself"></a>The Code Itself</h3><p>I wanted to show two things in the dialog: the code itself and a visual representation of it for a better overview.</p>
+<p>Getting the content for the code was really straight forward:</p>
+<figure class="highlight js"><figcaption><span>tools.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">  <span class="string">&#x27;pageMeta&#x27;</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// INIT DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">init</span>(&#123;</span><br><span class="line">      <span class="attr">headerText</span>: <span class="string">&quot;Page Meta&quot;</span>,</span><br><span class="line">      <span class="attr">contentScroll</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">distance</span>: <span class="number">6</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ADD CONTENT</span></span><br><span class="line">    <span class="comment">// Grab the JSON-LD code from the page</span></span><br><span class="line">    <span class="keyword">let</span> json = <span class="title class_">JSON</span>.<span class="title function_">parse</span>($(<span class="string">&#x27;script[type=&quot;application/ld+json&quot;]&#x27;</span>).<span class="title function_">text</span>());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Create new dialog section for the code</span></span><br><span class="line">    <span class="keyword">let</span> secCode = $(<span class="string">&#x27;&lt;section&gt;&lt;/section&gt;&#x27;</span>).<span class="title function_">appendTo</span>(dpDialog.<span class="property">base</span>.<span class="property">content</span>);</span><br><span class="line">    <span class="comment">// Append header</span></span><br><span class="line">    secCode.<span class="title function_">append</span>(<span class="string">&#x27;&lt;h1&gt;JSON-LD&lt;/h1&gt;&#x27;</span>);</span><br><span class="line">    <span class="comment">// Append formatted code als PRE element</span></span><br><span class="line">    secCode.<span class="title function_">append</span>(<span class="string">&#x27;&lt;pre class=&quot;json&quot;&gt;&#x27;</span> + <span class="title function_">syntaxHighlight</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(json, <span class="literal">undefined</span>, <span class="number">2</span>))) + <span class="string">&#x27;&lt;/pre&gt;&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// OPEN DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">show</span>();</span><br><span class="line">  &#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>Since I had taken care to compress my JSON-LD code to save space, I now needed to get it back into a readable format. Time saver was the following script, which I found on <a href="https://stackoverflow.com/questions/4810841/pretty-print-json-using-javascript">StackOverflow (pretty-print JSON using JavaScript)</a>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">syntaxHighlight</span>(<span class="params">json</span>) &#123;</span><br><span class="line">  json = json.<span class="title function_">replace</span>(<span class="regexp">/&amp;/g</span>, <span class="string">&#x27;&amp;amp;&#x27;</span>).<span class="title function_">replace</span>(<span class="regexp">/&lt;/g</span>, <span class="string">&#x27;&amp;lt;&#x27;</span>).<span class="title function_">replace</span>(<span class="regexp">/&gt;/g</span>, <span class="string">&#x27;&amp;gt;&#x27;</span>);</span><br><span class="line">  <span class="keyword">return</span> json.<span class="title function_">replace</span>(<span class="regexp">/(&quot;(\\u[a-zA-Z0-9]&#123;4&#125;|\\[^u]|[^\\&quot;])*&quot;(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g</span>, <span class="keyword">function</span> (<span class="params">match</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> cls = <span class="string">&#x27;number&#x27;</span>;</span><br><span class="line">      <span class="keyword">if</span> (<span class="regexp">/^&quot;/</span>.<span class="title function_">test</span>(match)) &#123;</span><br><span class="line">          <span class="keyword">if</span> (<span class="regexp">/:$/</span>.<span class="title function_">test</span>(match)) &#123;</span><br><span class="line">              cls = <span class="string">&#x27;key&#x27;</span>;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              cls = <span class="string">&#x27;string&#x27;</span>;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/true|false/</span>.<span class="title function_">test</span>(match)) &#123;</span><br><span class="line">          cls = <span class="string">&#x27;boolean&#x27;</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/null/</span>.<span class="title function_">test</span>(match)) &#123;</span><br><span class="line">          cls = <span class="string">&#x27;null&#x27;</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&#x27;&lt;span class=&quot;&#x27;</span> + cls + <span class="string">&#x27;&quot;&gt;&#x27;</span> + match + <span class="string">&#x27;&lt;/span&gt;&#x27;</span>;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><figcaption><span>(Stylus format)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">pre<span class="selector-class">.json</span></span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">&#x27;Roboto Mono&#x27;</span>,monospace</span><br><span class="line">  font-size: <span class="number">13px</span></span><br><span class="line">  .string </span><br><span class="line">    color: <span class="number">#4271ae</span></span><br><span class="line">  .number </span><br><span class="line">    color: <span class="number">#4271ae</span></span><br><span class="line">  .boolean </span><br><span class="line">    color: <span class="number">#4271ae</span></span><br><span class="line">  .null</span><br><span class="line">    color: <span class="number">#ababab</span></span><br><span class="line">  .key</span><br><span class="line">    color: <span class="number">#c15353</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="The-Visual-Representation"><a href="#The-Visual-Representation" class="headerlink" title="The Visual Representation"></a>The Visual Representation</h3><p>My JSON-LD is hierarchically structured. Each page always has a <code>PERSON</code> block for information about me as a person, then an <code>ORGANIZATION</code> block about the “people” behind the blog (just me), then a <code>WEBSITE</code> block for the description of the website itself and a <code>WEBPAGE</code> block for a single page. Article pages like this, also have an <code>ARTICLE</code> block and the note pages have a <code>BLOGPOSTING</code> block.</p>
+<p>Therefore, it seemed logical to me to display the blocks as an accordion using the DETAILS element, with only the first one open at startup.</p>
+<p>To process the required HTML, I wrote a helper function for each block that returns a string literal template to which the calling code passes the necessary data.</p>
+<p>To save space, only one block is included in the example below. The others work similarly. </p>
+
+    <div class="alertbox alertbox-info">
+      <p>You can see the complete code here and modify it for your purposes: <a href="https://github.com/kristofzerbe/kiko.io/blob/master/themes/landscape/source/js/tools.js"><strong>tools.js</strong> of the blog kiko.io</a>. There are a few other scripts in this file that my site uses, but are not necessary for this feature.</p>
+
+    </div>
+  
+
+<figure class="highlight js"><figcaption><span>tools.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">  <span class="string">&#x27;pageMeta&#x27;</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// INIT DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">init</span>(&#123;</span><br><span class="line">      <span class="attr">headerText</span>: <span class="string">&quot;Page Meta&quot;</span>,</span><br><span class="line">      <span class="attr">contentScroll</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">distance</span>: <span class="number">6</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ADD CONTENT</span></span><br><span class="line">    <span class="comment">// Grab the JSON-LD code from the page</span></span><br><span class="line">    <span class="keyword">let</span> json = <span class="title class_">JSON</span>.<span class="title function_">parse</span>($(<span class="string">&#x27;script[type=&quot;application/ld+json&quot;]&#x27;</span>).<span class="title function_">text</span>());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Create new dialog section for the visual representation</span></span><br><span class="line">    <span class="keyword">let</span> secVisual = $(<span class="string">&#x27;&lt;section&gt;&lt;/section&gt;&#x27;</span>).<span class="title function_">appendTo</span>(dpDialog.<span class="property">base</span>.<span class="property">content</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ... other blocks for the visual representation </span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Block WEBSITE</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">getWebSite</span>(<span class="params">website, organization</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;details&gt;</span></span><br><span class="line"><span class="string">          &lt;summary&gt;WebSite&lt;/summary&gt;</span></span><br><span class="line"><span class="string">          &lt;div&gt;</span></span><br><span class="line"><span class="string">            &lt;label&gt;Name&lt;/label&gt;</span></span><br><span class="line"><span class="string">            &lt;p&gt;<span class="subst">$&#123;website.name&#125;</span>&lt;/p&gt;</span></span><br><span class="line"><span class="string">            &lt;label&gt;Description&lt;/label&gt;</span></span><br><span class="line"><span class="string">            &lt;p&gt;<span class="subst">$&#123;website.description&#125;</span>&lt;/p&gt;</span></span><br><span class="line"><span class="string">            &lt;label&gt;Language&lt;/label&gt;</span></span><br><span class="line"><span class="string">            &lt;p&gt;<span class="subst">$&#123;website.inLanguage&#125;</span>&lt;/p&gt;</span></span><br><span class="line"><span class="string">            &lt;label&gt;Publisher&lt;/label&gt;</span></span><br><span class="line"><span class="string">            &lt;p&gt;<span class="subst">$&#123;organization.name&#125;</span>&lt;/p&gt;</span></span><br><span class="line"><span class="string">          &lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;/details&gt;</span></span><br><span class="line"><span class="string">      `</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Get WebSite block from JSON</span></span><br><span class="line">    <span class="keyword">let</span> jWebSite = json[<span class="string">&quot;@graph&quot;</span>].<span class="title function_">filter</span>(<span class="function"><span class="params">x</span> =&gt;</span> x[<span class="string">&quot;@type&quot;</span>] === <span class="string">&quot;WebSite&quot;</span>);</span><br><span class="line">    <span class="comment">// Get referenced Publisher information (Organization)</span></span><br><span class="line">    <span class="keyword">let</span> jPublisher = json[<span class="string">&quot;@graph&quot;</span>].<span class="title function_">filter</span>(<span class="function"><span class="params">x</span> =&gt;</span> x[<span class="string">&quot;@id&quot;</span>] === jWebSite[<span class="number">0</span>].<span class="property">publisher</span>[<span class="string">&quot;@id&quot;</span>]);</span><br><span class="line">    <span class="comment">// Get filled HTML from template helper function above</span></span><br><span class="line">    <span class="keyword">let</span> tWebSite = <span class="title function_">getWebSite</span>(jWebSite[<span class="number">0</span>], jPublisher[<span class="number">0</span>]);</span><br><span class="line">    <span class="comment">// Append HTML to content</span></span><br><span class="line">    secVisual.<span class="title function_">append</span>($(tWebSite));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ... other blocks for the visual representation </span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// ... (Code stuff from above)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// OPEN DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">show</span>();</span><br><span class="line">  &#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>It was fun to add a new feature to the site, even more so because it helps me keep track of the meta data of each page myself.</p>
+<p>Here (or in the footer of each page) you can see the result:</p>
+<p><a href="javascript:dpDialog.pageMeta();"><strong>Open Page Meta for this article…</strong></a></p>
+<hr>
+<h2 id="More-Information"><a href="#More-Information" class="headerlink" title="More Information"></a>More Information</h2>
+        <ul class="moreinfo-list">
+            <li>Ali Dinçer: <a href="https://downuppopupjs.dincerali.com/">downupPopup.js</a></li><li>Kristof Zerbe: <a href="https://github.com/kristofzerbe/downupPopup.js">Fork from downupPopup.js (Make Popup Reusable, with PR)</a></li><li>Google: <a href="https://m3.material.io/components/bottom-sheets/overview">Material Design 3 - Compontents, Bottom Sheets</a></li>
+        </ul>
+    
+    </div>
+    
+    <footer class="article-footer" data-pagefind-ignore>      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON-LD/" rel="tag">JSON-LD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Meta/" rel="tag">Meta</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Publishing/" rel="tag">Publishing</a></li></ul>  
+  </div>
+
+      
+  
+  
+
+      <div class="article-permalink" id="article-permalink-clirlmfah0032i5nif3fr99xw">
+    <input class="article-permalink-value" value="https://kiko.io/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/" 
+           data-id="clirlmfah0032i5nif3fr99xw" data-title="Show pages meta data (JSON-LD) in Bottom Sheet" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clirlmfah0032i5nif3fr99xw");
+    });
+</script>
+
+      
+    </footer>
+
+  </div>
+
+  
+  
+
+<div class="article-interaction" data-pagefind-ignore>
+
+  <p>
+    You can interact with this article (applause, criticism, whatever) 
+    by mention it in one of your posts, which will be shown here as a  
+    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a>, or 
+    by leaving a good old <strong>comment</strong> with your GitHub account.
+  </p>
+
+</div>
+
+<div class="article-webmentions" data-pagefind-ignore>
+  <h2>Webmentions</h2>
+
+  <div class="webmentions-placeholder">
+    <p class="wm-placeholder">No Webmentions yet...</p>
+  </div>
+
+  <p class="webmention-form-info">
+    In case your blog software can't send Webmentions, 
+    you can use this form to submit me a mention of this article...
+  </p>
+
+  <form class="webmention-form" action="https://webmention.io/kiko.io>/webmention" name="webmention-form"
+    method="post">
+    <label for="webmention-form-source">Your Article URL:</label><br>
+    <input class="webmention-form-source" type="url" name="source" placeholder="https://your-blog.com/your-article"
+      required="">
+    <input type="hidden" name="target" value="https://kiko.io/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/">
+    <input type="submit" value="Send Webmention">
+  </form>
+
+  <script>
+    window.addEventListener('load', function () {
+      insertWebmentions('2023/show-pages-meta-data-json-ld-in-bottom-sheet', 'https://kiko.io', 'Kristof Zerbe');
+    });
+  </script>
+
+  
+
+</div>
+
+<div class="article-comments" data-pagefind-ignore>
+  <h2>Comments</h2>
+  <div id="comment-placeholder"></div>
+  <script>
+    window.addEventListener('load', function () {
+      insertUtterancesCommentBlock();
+    });
+  </script>
+</div>
+  
+  <div class="article-related">
+    <h2>Related</h2>
+    <div class="archives">
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/post/Provide-Blog-Metadata-via-JSON-LD/">
+        <img class="archive-article-photo" src="/photos/tablet/D70_9216.jpg" alt="Broken Onion" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/post/Provide-Blog-Metadata-via-JSON-LD/" class="archive-article-date">
+  
+    <time class="published dt-published" data-pagefind-meta="date" 
+          datetime="2023-02-09T23:00:00.000Z">10 Feb 2023</time>
+  
+</a>
+      
+  <div class="archive-article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+      
+
+
+    <a class="archive-article-anything" href="/series/a-new-blog">A New Blog</a>
+
+
+
+      
+
+
+  
+    <h1>
+      <a class="archive-article-title"
+         href="/post/Provide-Blog-Metadata-via-JSON-LD/">Provide Blog Metadata via JSON-LD</a>
+    </h1>
+  
+
+      
+    <h2 class="archive-article-subtitle">
+        Centralization of a website&#39;s schema.org data in the HEAD instead of everywhere in the HTML
+    </h2>
+              
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON-LD/" rel="tag">JSON-LD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Search/" rel="tag">Search</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/post/Discoveries-24-JavaScript-UI/">
+        <img class="archive-article-photo" src="/photos/tablet/DSC_2186.jpg" alt="Sweat Lodge" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/post/Discoveries-24-JavaScript-UI/" class="archive-article-date">
+  
+    <time class="published dt-published" data-pagefind-meta="date" 
+          datetime="2023-04-28T14:39:01.000Z">28 Apr 2023</time>
+  
+</a>
+      
+  <div class="archive-article-category category-misc">
+    <a class="article-category-link" href="/categories/Misc/">Misc</a> 
+  </div>
+
+      
+
+
+    <a class="archive-article-anything" href="/series/discoveries">Discoveries</a>
+
+
+
+      
+
+
+  
+    <h1>
+      <a class="archive-article-title"
+         href="/post/Discoveries-24-JavaScript-UI/">Discoveries #24 - JavaScript &amp; UI</a>
+    </h1>
+  
+
+                    
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Collection/" rel="tag">Collection</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/post/Generate-Social-Media-Images-Automatically/">
+        <img class="archive-article-photo" src="/photos/tablet/DSC_6776.jpg" alt="Color Brushes" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/post/Generate-Social-Media-Images-Automatically/" class="archive-article-date">
+  
+    <time class="published dt-published" data-pagefind-meta="date" 
+          datetime="2021-07-10T09:07:31.000Z">10 Jul 2021</time>
+  
+</a>
+      
+  <div class="archive-article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+      
+
+
+
+
+    <a class="archive-article-anything" href="/projects/social-media-image-generator">social-media-image-generator</a>
+
+      
+
+
+  
+    <h1>
+      <a class="archive-article-title"
+         href="/post/Generate-Social-Media-Images-Automatically/">Generate Social Media Images Automatically</a>
+    </h1>
+  
+
+                    
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Imaging/" rel="tag">Imaging</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+    </div>
+  </div>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/post/Top-10-Pens-of-Jon-Kantner/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Top 10 Pens of Jon Kantner</div>
+    </a>
+  
+</nav>
+
+  
+
+</article></main>
+          
+            <aside id="sidebar">
+  
+    <div class="widget-wrap">
+    <div class="widget about h-card"><!--http://microformats.org/wiki/h-card-->
+        <div class="avatar">
+            <a href="/about"><img class="u-photo" src="https://kiko.io/images/kristof-zerbe.png" alt="Kristof Zerbe"></a>
+            <a href="https://github.com/kristofzerbe" target="_blank" class="fab fa-github" rel="me"></a>
+            <a href="https://www.xing.com/profile/Kristof_Zerbe" target="_blank" class="fab fa-xing" rel="me"></a>
+            <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" target="_blank" class="fab fa-linkedin" rel="me"></a>      
+            <a href="https://500px.com/kikon" target="_blank" class="fab fa-500px" rel="me"></a>
+            <a href="https://indieweb.social/@kiko" target="_blank" class="fab fa-mastodon" rel="me"></a>
+        </div>
+        <h3 class="p-name">Kristof Zerbe</h3>
+        <p class="p-note">
+            <i class="p-role">Developer and Team Lead</i> located in <i class="p-locality">Wiesbaden</i>, <i class="p-country-name">Germany</i>
+        </p>
+        <a class="u-url u-uid" href="https://kiko.io" style="display:none;"></a>
+    </div>
+</div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            
+              <a href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/">Show pages meta data (JSON-LD) in Bottom Sheet</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/Top-10-Pens-of-Jon-Kantner/">Top 10 Pens of Jon Kantner</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/Discoveries-24-JavaScript-UI/">Discoveries #24 - JavaScript &amp; UI</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/Breton-Presets-for-Lightroom/">Breton Presets for Lightroom</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+
+  <div class="widget widget-wrap">
+    <p>
+      Want more? This way ... to the <a href="/archives">archives</a>
+    </p>
+  </div>  
+</aside>
+          
+        </div>
+        <footer id="footer">
+  
+  <div class="outer">
+    <div class="inner">
+
+      <ul id="footer-dots">
+        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+      </ul>
+
+      <div id="footer-info" class="footer-block">
+        &copy; 2019-2023&nbsp;&nbsp;<a href="https://bio.link/kristof">Kristof Zerbe</a>
+        <span class="dot-space">&#9679;</span>
+        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+      </div>
+
+      <div id="footer-links">
+        
+        <a href="/about">About</a>
+        <span class="dot-space">&#9679;</span>
+        
+        <a href="/impressum">Impressum</a>
+        <span class="dot-space">&#9679;</span>
+        
+        <a href="/atom.xml">RSS Feed</a>
+        <span class="dot-space">&#9679;</span>
+        
+        <a href="javascript:dialog.pageMeta();">Page Meta</a>
+      </div>
+
+      <div id="footer-perf">
+        Page loaded in <span>0</span>
+        <script>
+          window.addEventListener("load", function () {
+            const pageEnd = performance.mark("pageEnd")
+            const loadTime = pageEnd.startTime / 1000;
+            document.querySelector("#footer-perf span").innerHTML = loadTime.toFixed(2);
+          });
+        </script>
+      </div>
+
+      <div id="webring">
+        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+      </div>
+      <script>
+  let isOffline = 'false' === 'true';
+</script>
+
+
+<script src="/js/jquery-3.6.0.min.js"></script>
+
+
+<script src="/js/dist/bundle.min.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+<script>
+  // HEADER
+  var header = {
+    height: 0,
+    top: 0,
+    offset: 55,
+    photoLinkOpacity: 0,
+    titleFontSize: 0
+  };
+
+  function initHeader() {
+    $("#header").css("height", ""); //reset inline css
+    $("#header-title").css("top", "");
+    $("#header-photo-link").css("opacity", "");
+    $("#title-wrap").css("font-size", "");
+    header.height = $("#header").height(); //set from given css
+    header.top = parseFloat($("#header-title").css("top"));
+    header.photoLinkOpacity = parseFloat($("#header-photo-link").css("opacity"));
+    header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
+    scrollHeader();
+  }
+  function scrollHeader() {
+    var h = header.height - header.offset,
+        st = $(document).scrollTop(),  
+        d = (h - st),
+        p = (d / h),
+        hfs = header.titleFontSize / 5 * 3,
+        jSide = $("aside");
+    if (d > 0) {
+      $("#header").css("height", d + header.offset + "px");
+      $("#header-photo-link").css("opacity", header.photoLinkOpacity * p);
+      $("#banner").css("opacity", p);
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1 - p) );
+      $("#header-title").css("top", header.top - (hfs * (1 - p)) + "px");
+      $("#subtitle").css("opacity", p);
+      jSide.css("max-width", "").css("position", "").css("top", "");
+    } else {
+      $("#header").css("height", header.offset + "px");
+      $("#header-photo-link").css("opacity", 0);
+      $("#banner").css("opacity", 0);
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );      
+      $("#header-title").css("top", header.top - (hfs * (1)) + "px");      
+      $("#subtitle").css("opacity", 0);
+      if (window.matchMedia("screen and (min-width: 768px)").matches & window.innerHeight > (jSide.height() + 50)) {
+        jSide.css("max-width", $("aside").width()).css("position", "fixed").css("top", "50px");
+      }
+    }    
+  }
+
+  // IMAGE VIEWPORT
+  function isVisibleInViewPort(e) {
+    var viewTop = $(window).scrollTop();
+    var viewBottom = viewTop + $(window).height();
+  
+    var eTop = $(e).offset().top;
+    var eBottom = eTop + $(e).height();
+  
+    return ((eBottom <= viewBottom) && (eTop >= viewTop));
+  }
+  function initViewportImage() {
+    $(".article-photo, .archive-article-photo, .card-img, .img-link").each(function() {
+      if (isVisibleInViewPort($(this))) {
+        $(this).addClass("in-view");
+      } else {
+        $(this).removeClass("in-view");
+      }
+    });
+  }
+
+  // HORIZONTAL MENU SCROLL
+  function watchNavMenuScroll() {
+    const nav = document.querySelector('#header-nav');
+    const menu = nav.querySelector('.menu');
+    const firstMenuItem = menu.querySelector('.menu-item:first-child');
+    const lastMenuItem = menu.querySelector('.menu-item:last-child');
+
+    firstMenuItem.setAttribute("data-scim", "start");
+    lastMenuItem.setAttribute("data-scim", "end");
+    
+    let observer = new IntersectionObserver((entries, observer) => { 
+      entries.forEach(entry => {
+
+        let scimElement = document.querySelector("#header-nav-" + entry.target.getAttribute("data-scim"));
+        if (entry.intersectionRatio != 1) { 
+          scimElement.classList.add("show");
+        } else {
+          scimElement.classList.remove("show");
+        }
+      });
+    }, {threshold: 1});
+    
+    observer.observe(firstMenuItem);
+    observer.observe(lastMenuItem);
+  }
+
+  // $(window).on('scroll', function() {
+  window.addEventListener('scroll', function() {
+    scrollHeader();
+    initViewportImage();
+  }, { passive: true });
+
+  //$(window).on('resize', function() {
+  window.addEventListener('resize', function() {
+    initHeader();
+    initViewportImage();
+  });
+
+  initHeader();
+  initViewportImage();
+  watchNavMenuScroll();
+
+  // BACK-TO-TOP
+  addBackToTop({
+    diameter: 30
+  })
+
+  // AUTOTYPING
+  setTimeout(function() {
+    $("#title-wrap").empty();
+    new AutoTyping({
+      id: 'title-wrap',
+      typeText: ['kiko.io'],
+      textColor: '#fff',
+      typeSpeed: 100,
+      typeDelay: 100,
+      showCursor: false,
+      delete: false,
+      typeInfinity: false
+    }).init();
+  }, 1000);
+
+  //MEDIUM-ZOOM
+  mediumZoom(document.querySelectorAll('img.zoom'), {
+    background: 'rgba(55, 55, 55, 0.5)',
+    margin: 20
+  });
+
+  //SCROLL-TIMELINE
+  // Create ScrollTimeline
+  const myScrollTimeline = new ScrollTimeline({
+    source: document.scrollingElement,
+    scrollSource: document.scrollingElement, // For legacy implementations
+    orientation: 'block',
+      scrollOffsets: [
+          new CSSUnitValue(0, 'percent'),
+          new CSSUnitValue(100, 'percent'),
+      ],
+  });
+
+  // Animate Progress Bar on Scroll
+  document.querySelector("#progress").animate(
+    {
+      transform: ["scaleX(0)", "scaleX(1)"]
+    },
+    { 
+      duration: 1, 
+      fill: "forwards", 
+      timeline: myScrollTimeline 
+    }
+  );
+</script>
+
+
+  <script>
+    //HOOK LINKS FOR PIRSCH EVENT...
+
+    //FEED
+    let feed = document.querySelector("#nav-rss-link a.sub-nav-link");
+    if (feed) feed.addEventListener("click", function() { pirsch('Feed clicked') });
+
+    //VSCODE
+    let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));
+    
+  </script>  
+
+    </div>
+  </div>
+</body>
+</html>
