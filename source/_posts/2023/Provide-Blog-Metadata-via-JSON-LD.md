@@ -13,7 +13,7 @@ categories:
 tags:
   - Hexo
   - Search
-  - Blogging
+  - JSON-LD
 related:
   - Pagefind-UI-and-URL-Parameters
   - Integration-of-Pagefind-in-Hexo
