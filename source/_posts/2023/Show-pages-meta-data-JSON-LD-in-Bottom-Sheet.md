@@ -19,7 +19,7 @@ related:
   - Generate-Social-Media-Images-Automatically
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/110526411227460649
 ---
 
 A few months ago I introduced new meta data (JSON-LD) for the pages of this blog and also {% post_link 2023/Provide-Blog-Metadata-via-JSON-LD "wrote about my implementation" %}. Works also everything quite well ... only the verification of the generated data was a bit cumbersome:
