@@ -22,28 +22,34 @@
   font-size: 0.85em
   display: grid
   grid-template-columns: max-content auto max-content
-  grid-template-rows: max-content max-content
-  grid-gap: 0px 64px
-  grid-template-areas: "info webring ." "dots . ."
+  grid-template-rows: max-content max-content max-content 12px max-content
+  grid-gap: 2px 64px
+  grid-template-areas: "info webring ." "links . ." "perf . ." ". . ." "dots . ."
   @media mq-mobile
-    grid-template-columns: 1fr max-content max-content 
-    grid-template-rows: max-content max-content
-    grid-gap: 15px 5px
-    grid-template-areas: "dots info" "dots webring" "dots ."
+    grid-template-columns: 1fr max-content  
+    grid-template-rows: max-content max-content max-content 12px max-content
+    grid-gap: 2px 5px
+    grid-template-areas: "dots info" "dots links" "dots perf" "dots ." "dots webring"
+
+  .dot-space
+    display: inline-block
+    margin: 0 3px
+    color: color-highlight
+    /[data-theme="dark"] &
+      color: dark-color-highlight
+
+  .dot-space:last-child
+    display: none
 
   #footer-info
     grid-area: info
 
-    .dot-space
-      display: inline-block
-      margin: 0 3px
-      color: color-highlight
-      /[data-theme="dark"] &
-        color: dark-color-highlight
+  #footer-links
+    grid-area: links
 
-    #footer-links
-      .dot-space:last-child
-        display: none
+  #footer-perf
+    grid-area: perf
+    opacity: 0.5
 
   #footer-dots
     grid-area: dots

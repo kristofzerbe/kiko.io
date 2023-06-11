@@ -15,13 +15,25 @@
         &copy; 2019-<%= date(new Date(), 'YYYY') %>&nbsp;&nbsp;<a href="https://bio.link/kristof"><%= config.author || config.title %></a>
         <span class="dot-space">&#9679;</span>
         <%= __('powered_by') %> <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
-        <div id="footer-links">
-          <% for (var i in theme.footer_menu){ %>
-          <a href="<%- url_for(theme.footer_menu[i]) %>"><%= __(i) %></a>
-          <span class="dot-space">&#9679;</span>
-          <% } %>
-          <a href="javascript:dialog.pageMeta();">Page Meta</a>
-        </div>
+      </div>
+
+      <div id="footer-links">
+        <% for (var i in theme.footer_menu){ %>
+        <a href="<%- url_for(theme.footer_menu[i]) %>"><%= __(i) %></a>
+        <span class="dot-space">&#9679;</span>
+        <% } %>
+        <a href="javascript:dialog.pageMeta();">Page Meta</a>
+      </div>
+
+      <div id="footer-perf">
+        Page loaded in <span>0</span>
+        <script>
+          window.addEventListener("load", function () {
+            const pageEnd = performance.mark("pageEnd")
+            const loadTime = pageEnd.startTime / 1000;
+            document.querySelector("#footer-perf span").innerHTML = loadTime.toFixed(2);
+          });
+        </script>
       </div>
 
       <div id="webring">
