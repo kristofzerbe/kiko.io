@@ -308,7 +308,7 @@
     </header>
 
     <div class="article-entry e-content">
-      <p>Get up. Make coffee. Grab Smartphone. Read news. Read RSS feeds. It goes like this or something similar every morning and I ALWAYS get stuck on the topic of IndieWeb. Surfing around for an hour or so. The topic simply hooked me. Today it was the wonderful work from Ryan Barrett (@<a href="mailto:&#x73;&#110;&#x61;&#114;&#x66;&#101;&#100;&#x2e;&#x6f;&#x72;&#x67;&#x40;&#115;&#x6e;&#x61;&#x72;&#102;&#x65;&#100;&#x2e;&#x6f;&#114;&#103;">&#x73;&#110;&#x61;&#114;&#x66;&#101;&#100;&#x2e;&#x6f;&#x72;&#x67;&#x40;&#115;&#x6e;&#x61;&#x72;&#102;&#x65;&#100;&#x2e;&#x6f;&#114;&#103;</a>). Ended up thinking what I can do with …</p>
+      <p>Get up. Make coffee. Grab Smartphone. Read news. Read RSS feeds. It goes like this or something similar every morning and I ALWAYS get stuck on the topic of IndieWeb. Surfing around for an hour or so. The topic simply hooked me. Today it was the wonderful work from Ryan Barrett (@<a href="mailto:&#x73;&#x6e;&#97;&#x72;&#x66;&#101;&#x64;&#46;&#111;&#x72;&#x67;&#x40;&#x73;&#x6e;&#x61;&#114;&#x66;&#x65;&#100;&#x2e;&#x6f;&#x72;&#103;">&#x73;&#x6e;&#97;&#x72;&#x66;&#101;&#x64;&#46;&#111;&#x72;&#x67;&#x40;&#x73;&#x6e;&#x61;&#114;&#x66;&#x65;&#100;&#x2e;&#x6f;&#x72;&#103;</a>). Ended up thinking what I can do with …</p>
 <p><a href="https://granary.io/">https://granary.io/</a></p>
 
     </div>
@@ -449,12 +449,6 @@
             
           </li>
         
-          <li>
-            
-              <a href="/post/Provide-Blog-Metadata-via-JSON-LD/">Provide Blog Metadata via JSON-LD</a>
-            
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -484,19 +478,31 @@
         &copy; 2019-2023&nbsp;&nbsp;<a href="https://bio.link/kristof">Kristof Zerbe</a>
         <span class="dot-space">&#9679;</span>
         Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
-        <div id="footer-links">
-          
-          <a href="/about">About</a>
-          <span class="dot-space">&#9679;</span>
-          
-          <a href="/impressum">Impressum</a>
-          <span class="dot-space">&#9679;</span>
-          
-          <a href="/atom.xml">RSS Feed</a>
-          <span class="dot-space">&#9679;</span>
-          
-          <a href="javascript:dialog.pageMeta();">Page Meta</a>
-        </div>
+      </div>
+
+      <div id="footer-links">
+        
+        <a href="/about">About</a>
+        <span class="dot-space">&#9679;</span>
+        
+        <a href="/impressum">Impressum</a>
+        <span class="dot-space">&#9679;</span>
+        
+        <a href="/atom.xml">RSS Feed</a>
+        <span class="dot-space">&#9679;</span>
+        
+        <a href="javascript:dialog.pageMeta();">Page Meta</a>
+      </div>
+
+      <div id="footer-perf">
+        Page loaded in <span>0</span>
+        <script>
+          window.addEventListener("load", function () {
+            const pageEnd = performance.mark("pageEnd")
+            const loadTime = pageEnd.startTime / 1000;
+            document.querySelector("#footer-perf span").innerHTML = loadTime.toFixed(2);
+          });
+        </script>
       </div>
 
       <div id="webring">

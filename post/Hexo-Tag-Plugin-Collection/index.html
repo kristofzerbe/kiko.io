@@ -532,7 +532,7 @@
 
 <p><strong>Live Output:</strong></p>
 
-    <div id="image-compare-4tv2e2">
+    <div id="image-compare-1yez6t">
       <img class="image-compare image-original" src="/post/Hexo-Tag-Plugin-Collection/example-image_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Hexo-Tag-Plugin-Collection/example-image_PRESET.jpg" alt="" />
     </div>
@@ -541,7 +541,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-4tv2e2"),
+      new ImageCompare(document.getElementById("image-compare-1yez6t"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -583,12 +583,12 @@
 
 <p><strong>Live Output:</strong></p>
 
-      <div class="image-slider" id="image-slide-y8g9dt">
+      <div class="image-slider" id="image-slide-d5w89x">
         <div><img src="/post/Hexo-Tag-Plugin-Collection/example-image_ORIGINAL.jpg" alt="Original" /></div><div><img src="/post/Hexo-Tag-Plugin-Collection/example-image_PRESET.jpg" alt="Lightroom Preset" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-y8g9dt",
+          container: "#image-slide-d5w89x",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -645,15 +645,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clird715q001jj3ooh6a0f26n">
+      <div class="article-permalink" id="article-permalink-clirde96f001iibop330c1yn1">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-Tag-Plugin-Collection/" 
-           data-id="clird715q001jj3ooh6a0f26n" data-title="Hexo Tag Plugin Collection" />
+           data-id="clirde96f001iibop330c1yn1" data-title="Hexo Tag Plugin Collection" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clird715q001jj3ooh6a0f26n");
+        initPermalink("clirde96f001iibop330c1yn1");
     });
 </script>
 
@@ -962,12 +962,6 @@
             
           </li>
         
-          <li>
-            
-              <a href="/post/Provide-Blog-Metadata-via-JSON-LD/">Provide Blog Metadata via JSON-LD</a>
-            
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -997,19 +991,31 @@
         &copy; 2019-2023&nbsp;&nbsp;<a href="https://bio.link/kristof">Kristof Zerbe</a>
         <span class="dot-space">&#9679;</span>
         Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
-        <div id="footer-links">
-          
-          <a href="/about">About</a>
-          <span class="dot-space">&#9679;</span>
-          
-          <a href="/impressum">Impressum</a>
-          <span class="dot-space">&#9679;</span>
-          
-          <a href="/atom.xml">RSS Feed</a>
-          <span class="dot-space">&#9679;</span>
-          
-          <a href="javascript:dialog.pageMeta();">Page Meta</a>
-        </div>
+      </div>
+
+      <div id="footer-links">
+        
+        <a href="/about">About</a>
+        <span class="dot-space">&#9679;</span>
+        
+        <a href="/impressum">Impressum</a>
+        <span class="dot-space">&#9679;</span>
+        
+        <a href="/atom.xml">RSS Feed</a>
+        <span class="dot-space">&#9679;</span>
+        
+        <a href="javascript:dialog.pageMeta();">Page Meta</a>
+      </div>
+
+      <div id="footer-perf">
+        Page loaded in <span>0</span>
+        <script>
+          window.addEventListener("load", function () {
+            const pageEnd = performance.mark("pageEnd")
+            const loadTime = pageEnd.startTime / 1000;
+            document.querySelector("#footer-perf span").innerHTML = loadTime.toFixed(2);
+          });
+        </script>
       </div>
 
       <div id="webring">
