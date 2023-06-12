@@ -1,6 +1,6 @@
 ---
 title: "#TIL | CSS Logical Properties"
-date: 2023-05-12
+date: 2023-06-12
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/110530535162866891
