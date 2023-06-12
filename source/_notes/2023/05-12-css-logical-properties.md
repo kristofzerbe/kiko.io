@@ -1,13 +1,12 @@
 ---
 title: "#TIL | CSS Logical Properties"
 date: 2023-05-12
-
 syndication: 
 - host: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/110530535162866891
 ---
 
-I really wasn't aware of the new CSS Logical Properties[CSS Logical Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values), but as I read [Chris thoughts on that](https://chriscoyier.net/2023/06/06/modern-css-in-real-life/), it makes absolutely sense to switch completely.
+I really wasn't aware of the new [CSS Logical Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values), but as I read [Chris thoughts on that](https://chriscoyier.net/2023/06/06/modern-css-in-real-life/), it makes absolutely sense to switch completely.
 
 #CSS
 
