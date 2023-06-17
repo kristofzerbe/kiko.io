@@ -1,9 +1,10 @@
 ---
 title: "#Link | Understanding OPFS"
-date: 2023-06-17
+date: 2023-06-17
+
 syndication: 
 - host: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/110558853253873951
 ---
 
 Storage in web apps can be a real pain, but nearly every year the possibilities expand. [Thomas Steiner](https://toot.cafe/@tomayac), from the Chrome Dev Team, highlights the latest expansion in detail: the **Origin Private File System**, which allows to handle complete file structures on the web.
