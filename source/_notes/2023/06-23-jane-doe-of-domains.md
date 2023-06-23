@@ -1,9 +1,10 @@
 ---
 title: "#TIL | Jane Doe of Domains"
-date: 2023-06-23
+date: 2023-06-23
+
 syndication: 
 - host: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/110592277910762328
 ---
 
 In concepts, manuals, prototypes and the like, it happens again and again that one uses for illustration web domains like **domain.com** or similar. However, this can only be done safely with the following 4 domains registered and blocked by IANA since 1992:
