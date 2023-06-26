@@ -47,14 +47,21 @@
     else {
       let rootPath = page.path.split(/[\\\/]/)[0].toLowerCase();
       switch (rootPath) {
+        case "notes":
+          meta.area = "NOTE";
+          meta.subarea = page.path.split(/[\\\/]/)[1]; //year
+          break;
         case "series":
         case "projects":
           meta.area = "ANYTHING"; 
           meta.subarea = rootPath.toUpperCase();
           break;
-        case "notes":
-          meta.area = "NOTE";
-          meta.subarea = page.path.split(/[\\\/]/)[1]; //year
+        case "collections":
+        case "about":
+        case "photos":
+        case "search":
+        case "console":
+          meta.area = "DYNAMIC";
           break;
         default:
           meta.area = rootPath.toUpperCase();
@@ -125,8 +132,7 @@
         }
         break;
  
-      case "COLLECTIONS":
-      case "PHOTOS":
+      case "DYNAMIC":
         meta.title = page.title + " - " + config.title;
         meta.description = page.title + " " + config.description_short;
         meta.photograph = page.photograph;

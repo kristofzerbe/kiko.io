@@ -120,9 +120,11 @@ var dpDialog = {
     'options': {
       animation: "ease",
       duration: 400,
-      radiusLeft: "6px",
-      radiusRight: "6px",
+      radiusLeft: "4px",
+      radiusRight: "4px",
       width: "100%",
+      contentScroll: false,
+      contentTransparency: 1
     },
     'init': function(options) {
       let opt = {...dpDialog.base.options, ...options};
@@ -134,11 +136,27 @@ var dpDialog = {
             <div class="downupPopup-content"></div>
           </div>`);
           dpDialog.base.element.appendTo("body");
-          dpDialog.base.content = dpDialog.base.element.find(".downupPopup-content");
+          dpDialog.base.content = dpDialog.base.element.find(".downupPopup-content");      
       } else { // reset existing
         dpDialog.base.element.downupPopup("close");
         dpDialog.base.content.empty();
+        dpDialog.base.content.attr("style", "");
       }
+
+      dpDialog.base.content.css("background-color", function (index, current) {
+        let rgb = current.replace(/[^\d.,%]/g, '').split(',');
+        let data = { 
+          red: parseInt(rgb[0]), 
+          green: parseInt(rgb[1]), 
+          blue: parseInt(rgb[2]), 
+          alpha: (rgb[3]) ? parseFloat(rgb[3]) : dpDialog.base.options.contentTransparency 
+        };
+        if (options.contentTransparency) {
+          data.alpha = options.contentTransparency;
+        }
+        let color = `rgba(${data.red}, ${data.green}, ${data.blue}, ${data.alpha})`;
+        dpDialog.base.content.css("background-color", color);
+      });
 
       dpDialog.base.element.downupPopup(opt);
     },
@@ -221,7 +239,7 @@ var dpDialog = {
 
       return `
         <details ${state}>
-          <summary>Article</summary>
+          <summary>&nbsp;Article</summary>
           <div>
             <label>Headline</label>
             <h3>${article.headline}</h3>
@@ -251,7 +269,7 @@ var dpDialog = {
 
       return `
         <details ${state}>
-          <summary>Blog Posting (Note)</summary>
+          <summary>&nbsp;Blog Posting (Note)</summary>
           <div>
             <label>Headline</label>
             <h3>${post.headline}</h3>
@@ -270,7 +288,7 @@ var dpDialog = {
     function getWebPage(state, webpage, photo) {
       return `
         <details ${state}>
-          <summary>WebPage</summary>
+          <summary>&nbsp;WebPage</summary>
           <div>
             <label>Name</label>
             <h3>${webpage.name}</h3>
@@ -301,7 +319,7 @@ var dpDialog = {
     function getWebSite(website, organization) {
       return `
         <details>
-          <summary>WebSite</summary>
+          <summary>&nbsp;WebSite</summary>
           <div>
             <label>Name</label>
             <p>${website.name}</p>
@@ -318,7 +336,7 @@ var dpDialog = {
     function getOrganization(organization) {
       return `
         <details>
-          <summary>Organization</summary>
+          <summary>&nbsp;Organization</summary>
           <div>
             <label>Name</label>
             <p>${organization.name}</p>
@@ -335,7 +353,7 @@ var dpDialog = {
       }
       return `
         <details>
-          <summary>Person</summary>
+          <summary>&nbsp;Person</summary>
           <div>
             <label>Name</label>
             <p>${person.name}</p>

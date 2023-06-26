@@ -90,6 +90,49 @@ body
 .hide
   display: none
 
+hr.divider
+  display: block
+  border: 0px
+  height: 24px
+  background-image: url('/images/divider.png')
+  background-repeat: no-repeat
+  background-position: center
+  margin: 24px 0
+  opacity: 0.1
+  clear: both
+  /[data-theme="dark"] &
+    opacity: 0.5
+
+.fa-icon-mail:before
+  font-family: fa-icon-solid
+  content: icon-mail
+.fa-icon-phone:before
+  font-family: fa-icon-solid
+  content: icon-phone
+.fa-icon-linkedin:before 
+  font-family: fa-icon-brands
+  content: icon-linkedin
+  color: color-linkedin
+.fa-icon-xing:before 
+  font-family: fa-icon-brands
+  content: icon-xing
+  color: color-xing
+.fa-icon-mastodon:before 
+  font-family: fa-icon-brands
+  content: icon-mastodon
+  color: color-mastodon
+.fa-icon-github:before 
+  font-family: fa-icon-brands
+  content: icon-github
+  color: color-github
+.fa-icon-500px:before 
+  font-family: fa-icon-brands
+  content: icon-500px
+  color: color-500px
+.fa-icon-download:before
+  font-family: fa-icon-solid 
+  content: icon-download
+
 pre.json
   font-family: 'Roboto Mono',monospace
   font-size: 13px
@@ -120,7 +163,7 @@ pre.json
     background: dark-color-background
 
 if sidebar and sidebar isnt bottom
-  main
+  main:not(.hide-sidebar)
     @media mq-normal
       column(main-column)
 

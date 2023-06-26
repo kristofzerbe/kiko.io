@@ -5,11 +5,12 @@
 <% } %>
 
 <h1 class="page-title" data-pagefind-meta="title" data-pagefind-meta="type:Page"><%= page.title %></h1>
-
+<% if (page.subtitle) { %>
+<h2 class="page-subtitle"><%= page.subtitle %></h2>
+<% } %>
+  
 <div class="page-content" data-pagefind-body>
   <%- page.content %>
-
-  <hr>
 
   <div class="view-bar">
     <div class="bar-info">

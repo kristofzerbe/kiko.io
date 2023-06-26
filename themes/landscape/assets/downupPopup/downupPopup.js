@@ -63,9 +63,9 @@
                 $this.css('transition', 'transform ' + settings.duration + 'ms ' + settings.animation + '');
                 $this.css('border-radius', '' + settings.radiusLeft + ' ' + settings.radiusRight + ' 0px 0px');
                 $this.css('width', '' + settings.width + '');
-                const hgt = (((100 - settings.distance) - 10) + 3);
+                const hgt = (((100 - settings.distance) - 10) + 3.5);
+                $this.find(".downupPopup-content").css('height', '' + hgt + 'vh');
                 if (settings.contentScroll) {
-                    $this.find(".downupPopup-content").css('height', '' + hgt + 'vh');
                     $this.find(".downupPopup-content").css('overflow-y', 'scroll');
                 }
             }, 100);

@@ -1,4 +1,5 @@
 module.exports = function(grunt){
+  grunt.loadNpmTasks('grunt-exec');
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     gitclone: {
@@ -78,6 +79,15 @@ module.exports = function(grunt){
           'tiny-slider.min.js.map'
         ],
         dest: 'themes/landscape/source/js/dist'
+      },
+      qrcodestyling: {
+        expand: true,
+        cwd: 'themes/landscape/assets/qr-code-styling',
+        src: [
+          'qr-code-styling.js',
+          'qr-code-styling-options-*.json'
+        ],
+        dest: 'themes/landscape/source/js/dist'
       }
     },
     _clean: {
@@ -145,6 +155,12 @@ module.exports = function(grunt){
           cliCmd: 'server'
         }
       }
+    },
+    exec: {
+      pagefind: {
+        command: 'npx pagefind',
+        stdout: true
+      }
     }    
   });
 
@@ -155,9 +171,9 @@ module.exports = function(grunt){
   grunt.registerTask('fonts', ['gitclone', 'copy', '_clean:tmp']);  
   grunt.registerTask('styles', ['concat:asset_styles', 'cssmin']);
   grunt.registerTask('default', ['concat', 'cssmin', 'uglify', 'copy', '_clean:tmp']);
-  grunt.registerTask('all', ['concat', 'cssmin', 'uglify', 'copy', '_clean:tmp', 'hexo:clean', 'hexo:generate']);
-  grunt.registerTask('complete', ['gitclone', 'concat', 'cssmin', 'uglify', 'copy', '_clean:tmp', 'hexo:clean', 'hexo:generate']);
-  grunt.registerTask('build', ['hexo:clean', 'hexo:generate']);
-  grunt.registerTask('serve', ['hexo:clean', 'hexo:generate', 'hexo:server']);
-  grunt.registerTask('generate', ['hexo:generate']);
+  grunt.registerTask('all', ['concat', 'cssmin', 'uglify', 'copy', '_clean:tmp', 'hexo:clean', 'hexo:generate', 'exec:pagefind']);
+  grunt.registerTask('complete', ['gitclone', 'concat', 'cssmin', 'uglify', 'copy', '_clean:tmp', 'hexo:clean', 'hexo:generate', 'exec:pagefind']);
+  grunt.registerTask('build', ['hexo:clean', 'hexo:generate', 'exec:pagefind']);
+  grunt.registerTask('serve', ['hexo:clean', 'hexo:generate', 'exec:pagefind', 'hexo:server']);
+  grunt.registerTask('generate', ['hexo:generate', 'exec:pagefind']);
 };

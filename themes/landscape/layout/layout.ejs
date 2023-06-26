@@ -5,8 +5,8 @@
       <div id="wrap">
         <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
         <div id="content" class="outer">
-          <main><%- body %></main>
-          <% if (theme.sidebar && theme.sidebar !== 'bottom'){ %>
+          <main class="<%= (page?.layoutParam?.hideSidebar) ? "hide-sidebar" : "" %>"><%- body %></main>
+          <% if (theme.sidebar && theme.sidebar !== 'bottom' && !page?.layoutParam?.hideSidebar){ %>
             <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
           <% } %>
         </div>

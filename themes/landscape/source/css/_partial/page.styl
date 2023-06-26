@@ -9,6 +9,19 @@
   /[data-theme="dark"] &
     color: dark-color-default
 
+.page-title-svg-link
+  display: block
+  position: absolute
+  right: 0
+  top: -4px
+  background-repeat: no-repeat
+  background-size: cover
+  width: 36px
+  height: 36px
+  opacity: 0.8t
+  /[data-theme="dark"] &
+    filter:invert(1)
+
 .page-subtitle, .page-backlink
   font-size: 1.2em
   line-height: line-height-title
@@ -97,6 +110,10 @@
       border-bottom: color-link 1px solid
       /[data-theme="dark"] &
         border-bottom: dark-color-link 1px solid
+  .float-element 
+    display: block
+    float: right
+    padding-left: 2rem 
   p
     margin: 1em 0 0.75em
   section
@@ -113,6 +130,8 @@
     p, table
       line-height: line-height
       margin: line-height 0
+    p:first-child
+      margin-top: 0
     p:last-child
       margin-bottom: 0
     h1:first-child
