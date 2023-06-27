@@ -1,7 +1,6 @@
 ---
 title: "#Link | Understanding OPFS"
 date: 2023-06-17
-
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/110558853253873951
