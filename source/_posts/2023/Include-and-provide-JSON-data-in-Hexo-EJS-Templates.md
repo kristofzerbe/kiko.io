@@ -133,7 +133,7 @@ However, the helper only allowed me to load the file as such. What was still mis
 ```html EJS File
 <%- js('js/dist/myFancyObjectLibrary.js') %>
 <%- json({
-  src: 'js/dist/js/dist/myOptions.json', 
+  src: 'js/dist/myOptions.json', 
   id: 'my-options'
 }) %>
 
