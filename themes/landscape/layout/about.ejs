@@ -18,13 +18,7 @@
 </div>
 
 <script>
-  // Get options and generate qrcode
-  let qrcode;
-  fetch(document.getElementById('qr-code-styling-options').src)
-    .then(response => response.json())
-    .then(json => {
-      qrCode = new QRCodeStyling(json);
-    });
+  console.log("go...");
 
   //--- eval url hash on load
   var hash = window.location.hash.substr(1);
@@ -60,8 +54,14 @@
     
     dialog.base.content.append(jContent);
     
-    qrCode.append(document.getElementById("contact-qrcode"));
-
+    // Get options and generate qrcode
+    (async () => {
+      const response = await fetch(document.getElementById('qr-code-styling-options').src);
+      const json = await response.json();    
+      let qrCode = new QRCodeStyling(json);
+      qrCode.append(document.getElementById("contact-qrcode"));      
+    })(); //immediately invoked async function
+    
     dpDialog.base.show();
   }
 </script>
