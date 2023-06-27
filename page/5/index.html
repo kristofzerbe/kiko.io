@@ -268,6 +268,95 @@
   
   
      
+<article id="post-2022/CSS-Columns-and-Drop-Shadow" 
+         class="article article-type-post">
+  
+  <div class="article-meta">
+    <a href="/post/CSS-Columns-and-Drop-Shadow/" class="article-date">
+  
+    <time class="published dt-published" data-pagefind-meta="date" 
+          datetime="2022-01-15T23:00:00.000Z">16 Jan 2022</time>
+  
+</a>
+    
+  <div class="article-category category-ui/ux">
+    <a class="article-category-link" href="/categories/UI-UX/">UI/UX</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/CSS-Columns-and-Drop-Shadow/">
+        <img class="article-photo" src="/photos/tablet/DSC_2909.jpg" alt="Guinness Industry" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+
+
+  
+    <h1>
+      <a class="article-title"
+         href="/post/CSS-Columns-and-Drop-Shadow/">CSS Columns and Drop Shadow</a>
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle">
+        How to fix Chromes bug on showing shadows in a column (masonry) layout
+    </h2>
+
+      </header>
+    
+    
+    <div class="article-entry">
+      <p>As of today, there is no true <strong>Masonry Layout</strong> technique in web development that can be implemented exclusively with CSS and is not based on JavaScript. True in the meaning, that the reading direction should be from left to right and not in the form of columns from top to bottom. For the latter, also called <em>Fake Masonry</em>, there are even two implementation options in CSS: Columns or Flex, whereas the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/columns">Columns</a> variant is the much simpler one.</p>
+<p>Lets say you have a list of boxes you want to show in a grid-like list, but the height of every box is defined by its content, which results in different heights. Here is an example with a base64 encoded 1px image with an individually defined height:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;wrapper&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span></span><br><span class="line">    Box 1</span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">style</span>=<span class="string">&quot;height:53px&quot;</span> <span class="attr">src</span>=<span class="string">&quot;data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span></span><br><span class="line">    Box 2</span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">style</span>=<span class="string">&quot;height:50px&quot;</span> <span class="attr">src</span>=<span class="string">&quot;data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span></span><br><span class="line">    Box 3</span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">style</span>=<span class="string">&quot;height:33px&quot;</span> <span class="attr">src</span>=<span class="string">&quot;data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- ... 6 more items with different heights --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>By applying <code>column-count</code> and <code>column-gap</code> to the wrapper and a <code>margin-bottom</code> with the same value as the gap to each item, you will achieve this:</p>
+<p><img src="/post/CSS-Columns-and-Drop-Shadow/sample-columns.png" alt="Simple Columns Layout"></p>
+<p>The order of the boxes is from top to bottom and then from left to right … Fake Masonry, but is works as expected. Here is the most important CSS:</p>
+      
+        <p class="article-more-link">
+          <a href="/post/CSS-Columns-and-Drop-Shadow/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Browser/" rel="tag">Browser</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li></ul>  
+  </div>
+
+      
+      <div class="article-permalink" id="article-permalink-cljekqgux002wmoou5m4x3dvj">
+    <input class="article-permalink-value" value="https://kiko.io/post/CSS-Columns-and-Drop-Shadow/" 
+           data-id="cljekqgux002wmoou5m4x3dvj" data-title="CSS Columns and Drop Shadow" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("cljekqgux002wmoou5m4x3dvj");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
 <article id="post-2021/GitHub-Tag-Plugins-for-Hexo" 
          class="article article-type-post">
   
@@ -335,15 +424,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cljdzt2ul001gixq5ccxq55t9">
+      <div class="article-permalink" id="article-permalink-cljekqgsz001gmoou7x4yg7uq">
     <input class="article-permalink-value" value="https://kiko.io/post/GitHub-Tag-Plugins-for-Hexo/" 
-           data-id="cljdzt2ul001gixq5ccxq55t9" data-title="GitHub Tag Plugins for Hexo" />
+           data-id="cljekqgsz001gmoou7x4yg7uq" data-title="GitHub Tag Plugins for Hexo" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdzt2ul001gixq5ccxq55t9");
+        initPermalink("cljekqgsz001gmoou7x4yg7uq");
     });
 </script>
 
@@ -420,15 +509,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cljdzt2ui0019ixq55sofhg5r">
+      <div class="article-permalink" id="article-permalink-cljekqgst0019moouezefctcr">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-15-Self-Hosted/" 
-           data-id="cljdzt2ui0019ixq55sofhg5r" data-title="Discoveries #15 - Self Hosted" />
+           data-id="cljekqgst0019moouezefctcr" data-title="Discoveries #15 - Self Hosted" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdzt2ui0019ixq55sofhg5r");
+        initPermalink("cljekqgst0019moouezefctcr");
     });
 </script>
 
@@ -511,15 +600,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cljdzt2un001iixq52jxyhllf">
+      <div class="article-permalink" id="article-permalink-cljekqgt0001imoouaev9090x">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-Tag-Plugin-Collection/" 
-           data-id="cljdzt2un001iixq52jxyhllf" data-title="Hexo Tag Plugin Collection" />
+           data-id="cljekqgt0001imoouaev9090x" data-title="Hexo Tag Plugin Collection" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdzt2un001iixq52jxyhllf");
+        initPermalink("cljekqgt0001imoouaev9090x");
     });
 </script>
 
@@ -604,15 +693,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cljdzt2ux001zixq5hm9bgmpu">
+      <div class="article-permalink" id="article-permalink-cljekqguj002fmoou07yr7iqs">
     <input class="article-permalink-value" value="https://kiko.io/post/Tringula-And-The-Beauty-Of-Mathematics/" 
-           data-id="cljdzt2ux001zixq5hm9bgmpu" data-title="Tringula And The Beauty Of Mathematics" />
+           data-id="cljekqguj002fmoou07yr7iqs" data-title="Tringula And The Beauty Of Mathematics" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdzt2ux001zixq5hm9bgmpu");
+        initPermalink("cljekqguj002fmoou07yr7iqs");
     });
 </script>
 
@@ -689,15 +778,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cljdzt2uh0018ixq57ob54n9f">
+      <div class="article-permalink" id="article-permalink-cljekqgst0018moouc834h6ff">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-14/" 
-           data-id="cljdzt2uh0018ixq57ob54n9f" data-title="Discoveries #14" />
+           data-id="cljekqgst0018moouc834h6ff" data-title="Discoveries #14" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdzt2uh0018ixq57ob54n9f");
+        initPermalink("cljekqgst0018moouc834h6ff");
     });
 </script>
 
@@ -776,15 +865,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cljdzt2v10024ixq58zke9yzn">
+      <div class="article-permalink" id="article-permalink-cljekqguo002omoouek5n8ffj">
     <input class="article-permalink-value" value="https://kiko.io/post/VS-Code-on-the-Web/" 
-           data-id="cljdzt2v10024ixq58zke9yzn" data-title="VS Code on the Web" />
+           data-id="cljekqguo002omoouek5n8ffj" data-title="VS Code on the Web" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdzt2v10024ixq58zke9yzn");
+        initPermalink("cljekqguo002omoouek5n8ffj");
     });
 </script>
 
@@ -858,103 +947,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cljdzt2ua0012ixq5825ga9kv">
+      <div class="article-permalink" id="article-permalink-cljekqgsk0012moou6yd8baqv">
     <input class="article-permalink-value" value="https://kiko.io/post/Croatian-Presets-for-Lightroom/" 
-           data-id="cljdzt2ua0012ixq5825ga9kv" data-title="Croatian Presets for Lightroom" />
+           data-id="cljekqgsk0012moou6yd8baqv" data-title="Croatian Presets for Lightroom" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdzt2ua0012ixq5825ga9kv");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2021/The-Last-Image-Gallery" 
-         class="article article-type-post">
-  
-  <div class="article-meta">
-    <a href="/post/The-Last-Image-Gallery/" class="article-date">
-  
-    <time class="published dt-published" data-pagefind-meta="date" 
-          datetime="2021-10-10T10:28:09.000Z">10 Oct 2021</time>
-  
-</a>
-    
-  <div class="article-category category-javascript">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/The-Last-Image-Gallery/">
-        <img class="article-photo" src="/photos/tablet/18-09 Kroatien-0340.jpg" alt="Seating Group" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-    <a class="article-anything" href="/series/great-finds">Great Finds</a>
-
-
-
-        
-
-
-  
-    <h1>
-      <a class="article-title"
-         href="/post/The-Last-Image-Gallery/">The Last Image Gallery...</a>
-    </h1>
-  
-
-        
-    <h2 class="article-subtitle">
-        ... you have to deal with: Spotlight
-    </h2>
-
-      </header>
-    
-    
-    <div class="article-entry">
-      <p>In the last decade(s) I have seen and tried many image galleries and lightboxes for showing images or groups of images. Depending on your needs, you can choose out of trillions of solutions, for every JS framework or vanilla JS, in every flavour, size and color. With many of them, however, you reach the limits quite quickly. Be it in terms of visual adaptability, extensibility or implementation. Customization cost time and nerves, especially if the respective library has structural weaknesses.</p>
-<p>However, from today on, I don’t need to look for a suitable solution for my next project, because I found one that leaves absolutely none of my wishes unfulfillede: <a href="https://nextapps-de.github.io/spotlight/"><strong>Spotlight</strong></a> by Nextapps from Berlin, Germany.</p>
-<p><img src="/post/The-Last-Image-Gallery/spotlight.jpg" alt="Spotlight"></p>
-<p>To make it clear: this is not a paid advertising text or something like that. That wouldn’t make sense either, because Spotlight is Open Source (<a href="https://en.wikipedia.org/wiki/Apache_License">Apache 2.0 License</a>) and its code is availabel at GitHub. I’m just thrilled with the work of the developers.</p>
-      
-        <p class="article-more-link">
-          <a href="/post/The-Last-Image-Gallery/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Imaging/" rel="tag">Imaging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Plugin/" rel="tag">Plugin</a></li></ul>  
-  </div>
-
-      
-      <div class="article-permalink" id="article-permalink-cljdzt2uw001xixq50b0j9x00">
-    <input class="article-permalink-value" value="https://kiko.io/post/The-Last-Image-Gallery/" 
-           data-id="cljdzt2uw001xixq50b0j9x00" data-title="The Last Image Gallery..." />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("cljdzt2uw001xixq50b0j9x00");
+        initPermalink("cljekqgsk0012moou6yd8baqv");
     });
 </script>
 
@@ -969,7 +970,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/4/">&lt; Previous</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/6/">Next &gt;</a>
+    <a class="extend prev" rel="prev" href="/page/4/">&lt; Previous</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/6/">Next &gt;</a>
   </nav>
 
 
@@ -1003,6 +1004,12 @@
         
           <li>
             
+              <a href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/">Include and provide JSON data in Hexo EJS Templates</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/">Show pages meta data (JSON-LD) in Bottom Sheet</a>
             
           </li>
@@ -1016,12 +1023,6 @@
           <li>
             
               <a href="/post/Discoveries-24-JavaScript-UI/">Discoveries #24 - JavaScript &amp; UI</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Breton-Presets-for-Lightroom/">Breton Presets for Lightroom</a>
             
           </li>
         

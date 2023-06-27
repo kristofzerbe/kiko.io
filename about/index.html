@@ -319,13 +319,7 @@
 </div>
 
 <script>
-  // Get options and generate qrcode
-  let qrcode;
-  fetch(document.getElementById('qr-code-styling-options').src)
-    .then(response => response.json())
-    .then(json => {
-      qrCode = new QRCodeStyling(json);
-    });
+  console.log("go...");
 
   //--- eval url hash on load
   var hash = window.location.hash.substr(1);
@@ -361,8 +355,14 @@
     
     dialog.base.content.append(jContent);
     
-    qrCode.append(document.getElementById("contact-qrcode"));
-
+    // Get options and generate qrcode
+    (async () => {
+      const response = await fetch(document.getElementById('qr-code-styling-options').src);
+      const json = await response.json();    
+      let qrCode = new QRCodeStyling(json);
+      qrCode.append(document.getElementById("contact-qrcode"));      
+    })(); //immediately invoked async function
+    
     dpDialog.base.show();
   }
 </script>
@@ -629,6 +629,12 @@
         
           <li>
             
+              <a href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/">Include and provide JSON data in Hexo EJS Templates</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/">Show pages meta data (JSON-LD) in Bottom Sheet</a>
             
           </li>
@@ -642,12 +648,6 @@
           <li>
             
               <a href="/post/Discoveries-24-JavaScript-UI/">Discoveries #24 - JavaScript &amp; UI</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Breton-Presets-for-Lightroom/">Breton Presets for Lightroom</a>
             
           </li>
         

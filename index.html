@@ -268,6 +268,110 @@
   
   
      
+<article id="post-2023/Include-and-provide-JSON-data-in-Hexo-EJS-Templates" 
+         class="article article-type-post">
+  
+  <div class="article-meta">
+    <a href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/" class="article-date">
+  
+    <time class="published dt-published" data-pagefind-meta="date" 
+          datetime="2023-06-27T05:26:21.000Z">27 Jun 2023</time>
+  
+</a>
+    
+  <div class="article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/">
+        <img class="article-photo" src="/photos/tablet/D70_1538.jpg" alt="Smiling Guard" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+
+
+  
+    <h1>
+      <a class="article-title"
+         href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/">Include and provide JSON data in Hexo EJS Templates</a>
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle">
+        ... with a new Helper and an async function
+    </h2>
+
+      </header>
+    
+    
+    <div class="article-entry">
+      <p>The three main components of a standard installation of the Static Site Generator <a href="https://hexo.io/">Hexo</a> are the template system <a href="https://ejs.co/">EJS (Embedded JavaScript Templating)</a>, <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> for the content and <a href="https://stylus-lang.com/">Stylus</a> for the styles.</p>
+<p>In the template files are the three main tags for driving content:</p>
+<p><strong>Scriptlet tag for control flow (no output)</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">  ... my JavaScript code to process data into the template</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Output a value as escaped HTML</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%= myVariable %&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Output of a raw value, usually in the form of a JavaScript function</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%- myFunction() %&gt;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://hexo.io/docs/helpers">Hexo’s helper system</a> is based on the latter. So you can include a JavaScript file in your template that makes use of the <a href="https://hexo.io/docs/helpers#js"><strong>JS Helper</strong></a> in <code>node_modules\hexo\lib\plugins\helper\js.js</code> as follows …</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%- <span class="title function_">js</span>(<span class="string">&#x27;/js/dist/myFancyFunctions.js&#x27;</span>) %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>… which will be rendered to:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;/js/dist//js/dist/qr-code-styling.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="The-Problem"><a href="#The-Problem" class="headerlink" title="The Problem"></a>The Problem</h2><p>So far and short, so good … but I recently tried to use this way to include a JSON file whose data one of my scripts needed as startup options and I noticed that the above mentioned JS helper unfortunately takes care of the possibly missing file extension <code>js</code>. It doesn’t matter if you only pass the path to the file as a string or if all necessary attributes as an object.</p>
+      
+        <p class="article-more-link">
+          <a href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Templating/" rel="tag">Templating</a></li></ul>  
+  </div>
+
+      
+  
+  
+
+      <div class="article-permalink" id="article-permalink-cljekqgvm004amooufv5w9sja">
+    <input class="article-permalink-value" value="https://kiko.io/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/" 
+           data-id="cljekqgvm004amooufv5w9sja" data-title="Include and provide JSON data in Hexo EJS Templates" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("cljekqgvm004amooufv5w9sja");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
 <article id="post-2023/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet" 
          class="article article-type-post">
   
@@ -351,15 +455,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cljdzt2w10031ixq5fuveevtc">
+      <div class="article-permalink" id="article-permalink-cljekqgvr004jmoou8i732y54">
     <input class="article-permalink-value" value="https://kiko.io/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/" 
-           data-id="cljdzt2w10031ixq5fuveevtc" data-title="Show pages meta data (JSON-LD) in Bottom Sheet" />
+           data-id="cljekqgvr004jmoou8i732y54" data-title="Show pages meta data (JSON-LD) in Bottom Sheet" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdzt2w10031ixq5fuveevtc");
+        initPermalink("cljekqgvr004jmoou8i732y54");
     });
 </script>
 
@@ -441,15 +545,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cljdzt2wm0034ixq51u522ctq">
+      <div class="article-permalink" id="article-permalink-cljekqgvs004mmoou1hpjdr5j">
     <input class="article-permalink-value" value="https://kiko.io/post/Top-10-Pens-of-Jon-Kantner/" 
-           data-id="cljdzt2wm0034ixq51u522ctq" data-title="Top 10 Pens of Jon Kantner" />
+           data-id="cljekqgvs004mmoou1hpjdr5j" data-title="Top 10 Pens of Jon Kantner" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdzt2wm0034ixq51u522ctq");
+        initPermalink("cljekqgvs004mmoou1hpjdr5j");
     });
 </script>
 
@@ -536,15 +640,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cljdzt2ve002vixq57m9t8t80">
+      <div class="article-permalink" id="article-permalink-cljekqgvk0046moou6pp382mz">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-24-JavaScript-UI/" 
-           data-id="cljdzt2ve002vixq57m9t8t80" data-title="Discoveries #24 - JavaScript &amp; UI" />
+           data-id="cljekqgvk0046moou6pp382mz" data-title="Discoveries #24 - JavaScript &amp; UI" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdzt2ve002vixq57m9t8t80");
+        initPermalink("cljekqgvk0046moou6pp382mz");
     });
 </script>
 
@@ -627,15 +731,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cljdzt2vc002sixq5a0z60xqd">
+      <div class="article-permalink" id="article-permalink-cljekqgvh0040moou505wexe1">
     <input class="article-permalink-value" value="https://kiko.io/post/Breton-Presets-for-Lightroom/" 
-           data-id="cljdzt2vc002sixq5a0z60xqd" data-title="Breton Presets for Lightroom" />
+           data-id="cljekqgvh0040moou505wexe1" data-title="Breton Presets for Lightroom" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdzt2vc002sixq5a0z60xqd");
+        initPermalink("cljekqgvh0040moou505wexe1");
     });
 </script>
 
@@ -722,15 +826,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cljdzt2vd002uixq54c507a7o">
+      <div class="article-permalink" id="article-permalink-cljekqgvj0044moouay2ma961">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-23-UI-CSS/" 
-           data-id="cljdzt2vd002uixq54c507a7o" data-title="Discoveries #23 -  UI/CSS" />
+           data-id="cljekqgvj0044moouay2ma961" data-title="Discoveries #23 -  UI/CSS" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdzt2vd002uixq54c507a7o");
+        initPermalink("cljekqgvj0044moouay2ma961");
     });
 </script>
 
@@ -824,15 +928,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cljdzt2vg002zixq50ek6505q">
+      <div class="article-permalink" id="article-permalink-cljekqgvp004fmoou62da4u8r">
     <input class="article-permalink-value" value="https://kiko.io/post/Provide-Blog-Metadata-via-JSON-LD/" 
-           data-id="cljdzt2vg002zixq50ek6505q" data-title="Provide Blog Metadata via JSON-LD" />
+           data-id="cljekqgvp004fmoou62da4u8r" data-title="Provide Blog Metadata via JSON-LD" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdzt2vg002zixq50ek6505q");
+        initPermalink("cljekqgvp004fmoou62da4u8r");
     });
 </script>
 
@@ -927,112 +1031,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cljdzt2vf002yixq5fiv980ir">
+      <div class="article-permalink" id="article-permalink-cljekqgvo004emoou52tl4xe7">
     <input class="article-permalink-value" value="https://kiko.io/post/Pagefind-UI-and-URL-Parameters/" 
-           data-id="cljdzt2vf002yixq5fiv980ir" data-title="Pagefind UI and URL Parameters" />
+           data-id="cljekqgvo004emoou52tl4xe7" data-title="Pagefind UI and URL Parameters" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdzt2vf002yixq5fiv980ir");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2023/Radio-Garden" 
-         class="article article-type-post">
-  
-  <div class="article-meta">
-    <a href="/post/Radio-Garden/" class="article-date">
-  
-    <time class="published dt-published" data-pagefind-meta="date" 
-          datetime="2023-02-01T23:00:00.000Z">02 Feb 2023</time>
-  
-</a>
-    
-  <div class="article-category category-tools">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/Radio-Garden/">
-        <img class="article-photo" src="/photos/tablet/D50_1147.jpg" alt="Poppy Green" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-    <a class="article-anything" href="/series/golem">Golem</a>
-
-
-
-        
-
-
-  
-    <h1>
-      <a class="article-title"
-         href="/post/Radio-Garden/">Radio Garden</a>
-    </h1>
-  
-
-        
-    <h2 class="article-subtitle">
-        Free, registration-free and simply cool - Travel through the radio stations of the world with Radio Garden
-    </h2>
-
-      </header>
-    
-    
-    <div class="article-entry">
-      <p>In the age of streaming services, radio may seem out of date, but it still surrounds us constantly, even if we often hardly notice it - in the car, on the public transport, at work or simply at home in the kitchen. One strength of the old medium is that it presents us with music we haven’t heard before, away from our playlists on Spotify or iTunes.</p>
-<p>The easiest way to rediscover new artists or entire genres of music is to pick a radio station at random. It’s precisely this lack of control, the being at the mercy, the sometimes unpredictable that makes the medium so appealing to many - and with digital streaming, many of the world’s stations are just a tap away.</p>
-<p>As is so often the case in the modern world, it’s the oversupply that leaves some confused and frustrated. You first have to be able to pick out what you might like from the gigantic haystack of options. For this purpose, there are little helpers that more or less independently suggest what you might listen to. One of them stands out from the crowd because, on the one hand, it does not pursue commercial interests and, on the other hand, it approaches the station search very intuitively: <strong><a href="https://radio.garden/">Radio Garden (https://radio.garden)</a></strong>.</p>
-      
-        <p class="article-more-link">
-          <a href="/post/Radio-Garden/">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Audio/" rel="tag">Audio</a></li></ul>  
-  </div>
-
-      
-  
-  
-    <div class="article-syndication">
-      
-          <a class="syndication-link u-syndication fab fa-mastodon" 
-            href="https://indieweb.social/@kiko/109793797227935594" rel="syndication" target="_blank"></a>
-      
-    </div>
-  
-
-      <div class="article-permalink" id="article-permalink-cljdzt2vg0030ixq52s0a7gzj">
-    <input class="article-permalink-value" value="https://kiko.io/post/Radio-Garden/" 
-           data-id="cljdzt2vg0030ixq52s0a7gzj" data-title="Radio Garden" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("cljdzt2vg0030ixq52s0a7gzj");
+        initPermalink("cljekqgvo004emoou52tl4xe7");
     });
 </script>
 
@@ -1047,7 +1054,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/2/">Next &gt;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/2/">Next &gt;</a>
   </nav>
 
 
@@ -1081,6 +1088,12 @@
         
           <li>
             
+              <a href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/">Include and provide JSON data in Hexo EJS Templates</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/">Show pages meta data (JSON-LD) in Bottom Sheet</a>
             
           </li>
@@ -1094,12 +1107,6 @@
           <li>
             
               <a href="/post/Discoveries-24-JavaScript-UI/">Discoveries #24 - JavaScript &amp; UI</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Breton-Presets-for-Lightroom/">Breton Presets for Lightroom</a>
             
           </li>
         
