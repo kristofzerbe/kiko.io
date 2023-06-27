@@ -392,20 +392,20 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cljdwnxuz002jikovepqec2wt">
+      <div class="article-permalink" id="article-permalink-cljdzt2v8002jixq53w4d99ft">
     <input class="article-permalink-value" value="https://kiko.io/post/Gitpod-Visual-Studio-Code-on-the-Web/" 
-           data-id="cljdwnxuz002jikovepqec2wt" data-title="Gitpod - Visual Studio Code on the Web" />
+           data-id="cljdzt2v8002jixq53w4d99ft" data-title="Gitpod - Visual Studio Code on the Web" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdwnxuz002jikovepqec2wt");
+        initPermalink("cljdzt2v8002jixq53w4d99ft");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-cljdwnxuz002jikovepqec2wt">
+        <div class="article-golem" id="article-golem-cljdzt2v8002jixq53w4d99ft">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 05 Jul 2022 
     in German under the title <span style="font-weight:bold;">&laquo;Visual Studio Code im Web mit Gitpod - Ein Gewinn für jede Tool-Sammlung&raquo;</span>&nbsp;&nbsp;  
@@ -760,12 +760,18 @@
       </div>
 
       <div id="footer-perf">
-        Page loaded in <span>0</span>
+        Page loaded in <span class="perf-loadtime">0</span> at <span class="perf-viewport"></span>
         <script>
+          window.addEventListener("resize", function () {
+            const height = document.documentElement.clientHeight;
+            const width = document.documentElement.clientWidth;
+            document.querySelector("#footer-perf span.perf-viewport").innerHTML = `${width} x ${height}`;
+          });
           window.addEventListener("load", function () {
             const pageEnd = performance.mark("pageEnd")
             const loadTime = pageEnd.startTime / 1000;
-            document.querySelector("#footer-perf span").innerHTML = loadTime.toFixed(2);
+            document.querySelector("#footer-perf span.perf-loadtime").innerHTML = loadTime.toFixed(2);
+            window.dispatchEvent(new Event('resize'));
           });
         </script>
       </div>

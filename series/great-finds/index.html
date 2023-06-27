@@ -330,15 +330,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cljdwnxuo001xikov2fnc070n">
+      <div class="article-permalink" id="article-permalink-cljdzt2uw001xixq50b0j9x00">
     <input class="article-permalink-value" value="https://kiko.io/post/The-Last-Image-Gallery/" 
-           data-id="cljdwnxuo001xikov2fnc070n" data-title="The Last Image Gallery..." />
+           data-id="cljdzt2uw001xixq50b0j9x00" data-title="The Last Image Gallery..." />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdwnxuo001xikov2fnc070n");
+        initPermalink("cljdzt2uw001xixq50b0j9x00");
     });
 </script>
 
@@ -417,15 +417,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cljdwnxuj001oikov2kp87yyl">
+      <div class="article-permalink" id="article-permalink-cljdzt2ur001oixq58b3cb2ci">
     <input class="article-permalink-value" value="https://kiko.io/post/Open-Source-Insights-Seeing-the-big-picture/" 
-           data-id="cljdwnxuj001oikov2kp87yyl" data-title="Open Source Insights - Seeing the big picture" />
+           data-id="cljdzt2ur001oixq58b3cb2ci" data-title="Open Source Insights - Seeing the big picture" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdwnxuj001oikov2kp87yyl");
+        initPermalink("cljdzt2ur001oixq58b3cb2ci");
     });
 </script>
 
@@ -502,15 +502,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cljdwnxuo001yikov7wea6jfm">
+      <div class="article-permalink" id="article-permalink-cljdzt2ux001yixq58t69etjc">
     <input class="article-permalink-value" value="https://kiko.io/post/Triangulate-your-images-with-Triangula/" 
-           data-id="cljdwnxuo001yikov7wea6jfm" data-title="Triangulate your images with Triangula" />
+           data-id="cljdzt2ux001yixq58t69etjc" data-title="Triangulate your images with Triangula" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdwnxuo001yikov7wea6jfm");
+        initPermalink("cljdzt2ux001yixq58t69etjc");
     });
 </script>
 
@@ -640,15 +640,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cljdwnxul001tikov8dvh1iy0">
+      <div class="article-permalink" id="article-permalink-cljdzt2uu001tixq5cmgqdbmz">
     <input class="article-permalink-value" value="https://kiko.io/post/SVG-Resources/" 
-           data-id="cljdwnxul001tikov8dvh1iy0" data-title="SVG Resources" />
+           data-id="cljdzt2uu001tixq5cmgqdbmz" data-title="SVG Resources" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdwnxul001tikov8dvh1iy0");
+        initPermalink("cljdzt2uu001tixq5cmgqdbmz");
     });
 </script>
 
@@ -729,15 +729,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cljdwnxu0000nikovdbja51ge">
+      <div class="article-permalink" id="article-permalink-cljdzt2to000nixq5cfwq11jr">
     <input class="article-permalink-value" value="https://kiko.io/post/Dopamine-How-Software-should-be/" 
-           data-id="cljdwnxu0000nikovdbja51ge" data-title="Dopamine: How Software should be..." />
+           data-id="cljdzt2to000nixq5cfwq11jr" data-title="Dopamine: How Software should be..." />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdwnxu0000nikovdbja51ge");
+        initPermalink("cljdzt2to000nixq5cfwq11jr");
     });
 </script>
 
@@ -848,12 +848,18 @@
       </div>
 
       <div id="footer-perf">
-        Page loaded in <span>0</span>
+        Page loaded in <span class="perf-loadtime">0</span> at <span class="perf-viewport"></span>
         <script>
+          window.addEventListener("resize", function () {
+            const height = document.documentElement.clientHeight;
+            const width = document.documentElement.clientWidth;
+            document.querySelector("#footer-perf span.perf-viewport").innerHTML = `${width} x ${height}`;
+          });
           window.addEventListener("load", function () {
             const pageEnd = performance.mark("pageEnd")
             const loadTime = pageEnd.startTime / 1000;
-            document.querySelector("#footer-perf span").innerHTML = loadTime.toFixed(2);
+            document.querySelector("#footer-perf span.perf-loadtime").innerHTML = loadTime.toFixed(2);
+            window.dispatchEvent(new Event('resize'));
           });
         </script>
       </div>

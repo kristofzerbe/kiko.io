@@ -383,20 +383,20 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cljdwnxuv0029ikov3078h8l7">
+      <div class="article-permalink" id="article-permalink-cljdzt2v40029ixq516owc9r8">
     <input class="article-permalink-value" value="https://kiko.io/post/Checker-Plus-Gmail-in-better/" 
-           data-id="cljdwnxuv0029ikov3078h8l7" data-title="Checker Plus - Gmail in better..." />
+           data-id="cljdzt2v40029ixq516owc9r8" data-title="Checker Plus - Gmail in better..." />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdwnxuv0029ikov3078h8l7");
+        initPermalink("cljdzt2v40029ixq516owc9r8");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-cljdwnxuv0029ikov3078h8l7">
+        <div class="article-golem" id="article-golem-cljdzt2v40029ixq516owc9r8">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 20 Dec 2021 
     in German under the title <span style="font-weight:bold;">&laquo;Checker Plus - Gmail in besser&raquo;</span>&nbsp;&nbsp;  
@@ -755,12 +755,18 @@
       </div>
 
       <div id="footer-perf">
-        Page loaded in <span>0</span>
+        Page loaded in <span class="perf-loadtime">0</span> at <span class="perf-viewport"></span>
         <script>
+          window.addEventListener("resize", function () {
+            const height = document.documentElement.clientHeight;
+            const width = document.documentElement.clientWidth;
+            document.querySelector("#footer-perf span.perf-viewport").innerHTML = `${width} x ${height}`;
+          });
           window.addEventListener("load", function () {
             const pageEnd = performance.mark("pageEnd")
             const loadTime = pageEnd.startTime / 1000;
-            document.querySelector("#footer-perf span").innerHTML = loadTime.toFixed(2);
+            document.querySelector("#footer-perf span.perf-loadtime").innerHTML = loadTime.toFixed(2);
+            window.dispatchEvent(new Event('resize'));
           });
         </script>
       </div>

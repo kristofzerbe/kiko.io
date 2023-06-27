@@ -344,12 +344,12 @@
 <span id="more"></span>
 
 
-      <div class="image-slider" id="image-slide-guvs6g">
+      <div class="image-slider" id="image-slide-1rzfk6">
         <div><img src="/post/Tringula-And-The-Beauty-Of-Mathematics/triangula.png" alt="UI of the tool Triangula written in Go" /></div><div><img src="/post/Tringula-And-The-Beauty-Of-Mathematics/sample-40-generations.png" alt="Sample 40 generations" /></div><div><img src="/post/Tringula-And-The-Beauty-Of-Mathematics/sample-400-generations.png" alt="Sample 400 generations" /></div><div><img src="/post/Tringula-And-The-Beauty-Of-Mathematics/sample-4000-generations.png" alt="Sample 4000 generations" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-guvs6g",
+          container: "#image-slide-1rzfk6",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -406,20 +406,20 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cljdwnxup001zikovc8v940ul">
+      <div class="article-permalink" id="article-permalink-cljdzt2ux001zixq5hm9bgmpu">
     <input class="article-permalink-value" value="https://kiko.io/post/Tringula-And-The-Beauty-Of-Mathematics/" 
-           data-id="cljdwnxup001zikovc8v940ul" data-title="Tringula And The Beauty Of Mathematics" />
+           data-id="cljdzt2ux001zixq5hm9bgmpu" data-title="Tringula And The Beauty Of Mathematics" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdwnxup001zikovc8v940ul");
+        initPermalink("cljdzt2ux001zixq5hm9bgmpu");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-cljdwnxup001zikovc8v940ul">
+        <div class="article-golem" id="article-golem-cljdzt2ux001zixq5hm9bgmpu">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 29 Nov 2021 
     in German under the title <span style="font-weight:bold;">&laquo;Tringula und die Schönheit der Mathematik&raquo;</span>&nbsp;&nbsp;  
@@ -772,12 +772,18 @@
       </div>
 
       <div id="footer-perf">
-        Page loaded in <span>0</span>
+        Page loaded in <span class="perf-loadtime">0</span> at <span class="perf-viewport"></span>
         <script>
+          window.addEventListener("resize", function () {
+            const height = document.documentElement.clientHeight;
+            const width = document.documentElement.clientWidth;
+            document.querySelector("#footer-perf span.perf-viewport").innerHTML = `${width} x ${height}`;
+          });
           window.addEventListener("load", function () {
             const pageEnd = performance.mark("pageEnd")
             const loadTime = pageEnd.startTime / 1000;
-            document.querySelector("#footer-perf span").innerHTML = loadTime.toFixed(2);
+            document.querySelector("#footer-perf span.perf-loadtime").innerHTML = loadTime.toFixed(2);
+            window.dispatchEvent(new Event('resize'));
           });
         </script>
       </div>

@@ -474,15 +474,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cljdwnxud001bikovfx8g9cn1">
+      <div class="article-permalink" id="article-permalink-cljdzt2uj001bixq59r4id5d7">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-7/" 
-           data-id="cljdwnxud001bikovfx8g9cn1" data-title="Discoveries #7" />
+           data-id="cljdzt2uj001bixq59r4id5d7" data-title="Discoveries #7" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdwnxud001bikovfx8g9cn1");
+        initPermalink("cljdzt2uj001bixq59r4id5d7");
     });
 </script>
 
@@ -831,12 +831,18 @@
       </div>
 
       <div id="footer-perf">
-        Page loaded in <span>0</span>
+        Page loaded in <span class="perf-loadtime">0</span> at <span class="perf-viewport"></span>
         <script>
+          window.addEventListener("resize", function () {
+            const height = document.documentElement.clientHeight;
+            const width = document.documentElement.clientWidth;
+            document.querySelector("#footer-perf span.perf-viewport").innerHTML = `${width} x ${height}`;
+          });
           window.addEventListener("load", function () {
             const pageEnd = performance.mark("pageEnd")
             const loadTime = pageEnd.startTime / 1000;
-            document.querySelector("#footer-perf span").innerHTML = loadTime.toFixed(2);
+            document.querySelector("#footer-perf span.perf-loadtime").innerHTML = loadTime.toFixed(2);
+            window.dispatchEvent(new Event('resize'));
           });
         </script>
       </div>

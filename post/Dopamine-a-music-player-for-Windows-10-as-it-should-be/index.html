@@ -345,12 +345,12 @@
 <li>Automatic updates</li>
 </ul>
 
-      <div class="image-slider" id="image-slide-3twl7g">
+      <div class="image-slider" id="image-slide-1gkrsy">
         <div><img src="/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/dopamine2.png" alt="Dopamine 2.0.9 on Windows 10" /></div><div><img src="/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/dopamine2-playlist.png" alt="Dopamine 2.0.9 Playlist" /></div><div><img src="/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/dopamine2-settings.png" alt="Dopamine 2.0.9 Settings Page" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-3twl7g",
+          container: "#image-slide-1gkrsy",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -389,20 +389,20 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cljdwnxuy002hikov5wpzenhl">
+      <div class="article-permalink" id="article-permalink-cljdzt2v8002hixq555440u2q">
     <input class="article-permalink-value" value="https://kiko.io/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/" 
-           data-id="cljdwnxuy002hikov5wpzenhl" data-title="Dopamine, a music player for Windows 10 as it should be" />
+           data-id="cljdzt2v8002hixq555440u2q" data-title="Dopamine, a music player for Windows 10 as it should be" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljdwnxuy002hikov5wpzenhl");
+        initPermalink("cljdzt2v8002hixq555440u2q");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-cljdwnxuy002hikov5wpzenhl">
+        <div class="article-golem" id="article-golem-cljdzt2v8002hixq555440u2q">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 11 Aug 2022 
     in German under the title <span style="font-weight:bold;">&laquo;Ein Musikplayer, wie er sein sollte&raquo;</span>&nbsp;&nbsp;  
@@ -764,12 +764,18 @@
       </div>
 
       <div id="footer-perf">
-        Page loaded in <span>0</span>
+        Page loaded in <span class="perf-loadtime">0</span> at <span class="perf-viewport"></span>
         <script>
+          window.addEventListener("resize", function () {
+            const height = document.documentElement.clientHeight;
+            const width = document.documentElement.clientWidth;
+            document.querySelector("#footer-perf span.perf-viewport").innerHTML = `${width} x ${height}`;
+          });
           window.addEventListener("load", function () {
             const pageEnd = performance.mark("pageEnd")
             const loadTime = pageEnd.startTime / 1000;
-            document.querySelector("#footer-perf span").innerHTML = loadTime.toFixed(2);
+            document.querySelector("#footer-perf span.perf-loadtime").innerHTML = loadTime.toFixed(2);
+            window.dispatchEvent(new Event('resize'));
           });
         </script>
       </div>
