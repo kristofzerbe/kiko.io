@@ -18,7 +18,7 @@ related:
   - The-State-of-the-Blog
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/110617439442558814
 ---
 
 The three main components of a standard installation of the Static Site Generator [Hexo](https:\\hexo.io) are the template system [EJS (Embedded JavaScript Templating)](https://ejs.co/), [Markdown](https://en.wikipedia.org/wiki/Markdown) for the content and [Stylus](https://stylus-lang.com/) for the styles.
