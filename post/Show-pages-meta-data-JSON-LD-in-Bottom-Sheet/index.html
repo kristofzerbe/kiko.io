@@ -84,6 +84,9 @@
 <script src="/js/tools.js"></script>
 
   
+<script src="/js/dialog.js"></script>
+
+  
 <script src="/js/dist/scroll-timeline.js"></script>
 
   
@@ -350,7 +353,7 @@
 
 <p>Now my solution should work on-the-fly and without a previously defined element in the HTML … and it should be reusable, because if I already include a bottom sheet component, then I wanted to use it for future occasions. For this I wrote myself a small manager that makes different uses possible with a single call.</p>
 <p>It has one function each for a specific bottom sheet dialog and beside it base variables and functions (<code>base</code>) to keep the infrastructure code of the former as small as possible:</p>
-<figure class="highlight js"><figcaption><span>tools.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dpDialog = &#123;</span><br><span class="line">  <span class="string">&#x27;base&#x27;</span>: &#123;</span><br><span class="line">    <span class="string">&#x27;element&#x27;</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="string">&#x27;content&#x27;</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="string">&#x27;options&#x27;</span>: &#123;</span><br><span class="line">      <span class="attr">animation</span>: <span class="string">&quot;ease&quot;</span>,</span><br><span class="line">      <span class="attr">duration</span>: <span class="number">400</span>,</span><br><span class="line">      <span class="attr">radiusLeft</span>: <span class="string">&quot;6px&quot;</span>,</span><br><span class="line">      <span class="attr">radiusRight</span>: <span class="string">&quot;6px&quot;</span>,</span><br><span class="line">      <span class="attr">width</span>: <span class="string">&quot;100%&quot;</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&#x27;init&#x27;</span>: <span class="keyword">function</span>(<span class="params">options</span>) &#123;</span><br><span class="line">      <span class="keyword">let</span> opt = &#123;...dpDialog.<span class="property">base</span>.<span class="property">options</span>, ...options&#125;;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> ($(<span class="string">&quot;#dpElement&quot;</span>).<span class="property">length</span> === <span class="number">0</span>) &#123; </span><br><span class="line">        <span class="comment">// create new</span></span><br><span class="line">        dpDialog.<span class="property">base</span>.<span class="property">element</span> = $(<span class="string">`</span></span><br><span class="line"><span class="string">          &lt;div id=&quot;dpElement&quot;&gt;</span></span><br><span class="line"><span class="string">            &lt;div class=&quot;downupPopup-content&quot;&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="string">          &lt;/div&gt;`</span>);</span><br><span class="line">          dpDialog.<span class="property">base</span>.<span class="property">element</span>.<span class="title function_">appendTo</span>(<span class="string">&quot;body&quot;</span>);</span><br><span class="line">          dpDialog.<span class="property">base</span>.<span class="property">content</span> = dpDialog.<span class="property">base</span>.<span class="property">element</span>.<span class="title function_">find</span>(<span class="string">&quot;.downupPopup-content&quot;</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123; <span class="comment">// reset existing</span></span><br><span class="line">        dpDialog.<span class="property">base</span>.<span class="property">element</span>.<span class="title function_">downupPopup</span>(<span class="string">&quot;close&quot;</span>);</span><br><span class="line">        dpDialog.<span class="property">base</span>.<span class="property">content</span>.<span class="title function_">empty</span>();</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      dpDialog.<span class="property">base</span>.<span class="property">element</span>.<span class="title function_">downupPopup</span>(opt);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&#x27;show&#x27;</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        dpDialog.<span class="property">base</span>.<span class="property">element</span>.<span class="title function_">downupPopup</span>(<span class="string">&quot;open&quot;</span>);</span><br><span class="line">      &#125;, <span class="number">100</span>);  </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&#x27;myFirstTest&#x27;</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// INIT DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">init</span>(&#123;</span><br><span class="line">      <span class="attr">headerText</span>: <span class="string">&quot;Test&quot;</span>,</span><br><span class="line">      <span class="attr">distance</span>: <span class="number">75</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ADD CONTENT</span></span><br><span class="line">    <span class="keyword">let</span> content = <span class="string">`</span></span><br><span class="line"><span class="string">      &lt;section&gt;</span></span><br><span class="line"><span class="string">        &lt;p&gt;Lorem ipsum dolor sit amet...&lt;/p&gt;</span></span><br><span class="line"><span class="string">      &lt;/section&gt;</span></span><br><span class="line"><span class="string">    `</span>;</span><br><span class="line">    $(content).<span class="title function_">appendTo</span>(dpDialog.<span class="property">base</span>.<span class="property">content</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// OPEN DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">show</span>();</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&#x27;pageMeta&#x27;</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// INIT DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">init</span>(&#123;</span><br><span class="line">      <span class="attr">headerText</span>: <span class="string">&quot;Page Meta&quot;</span>,</span><br><span class="line">      <span class="attr">contentScroll</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">distance</span>: <span class="number">6</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ADD CONTENT</span></span><br><span class="line">    <span class="comment">// ... appending stuff to dpDialog.base.content</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// OPEN DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">show</span>();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable language_">window</span>.<span class="property">dialog</span> = dpDialog; <span class="comment">// make it globally available</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>dialog.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dpDialog = &#123;</span><br><span class="line">  <span class="string">&#x27;base&#x27;</span>: &#123;</span><br><span class="line">    <span class="string">&#x27;element&#x27;</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="string">&#x27;content&#x27;</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="string">&#x27;options&#x27;</span>: &#123;</span><br><span class="line">      <span class="attr">animation</span>: <span class="string">&quot;ease&quot;</span>,</span><br><span class="line">      <span class="attr">duration</span>: <span class="number">400</span>,</span><br><span class="line">      <span class="attr">radiusLeft</span>: <span class="string">&quot;6px&quot;</span>,</span><br><span class="line">      <span class="attr">radiusRight</span>: <span class="string">&quot;6px&quot;</span>,</span><br><span class="line">      <span class="attr">width</span>: <span class="string">&quot;100%&quot;</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&#x27;init&#x27;</span>: <span class="keyword">function</span>(<span class="params">options</span>) &#123;</span><br><span class="line">      <span class="keyword">let</span> opt = &#123;...dpDialog.<span class="property">base</span>.<span class="property">options</span>, ...options&#125;;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> ($(<span class="string">&quot;#dpElement&quot;</span>).<span class="property">length</span> === <span class="number">0</span>) &#123; </span><br><span class="line">        <span class="comment">// create new</span></span><br><span class="line">        dpDialog.<span class="property">base</span>.<span class="property">element</span> = $(<span class="string">`</span></span><br><span class="line"><span class="string">          &lt;div id=&quot;dpElement&quot;&gt;</span></span><br><span class="line"><span class="string">            &lt;div class=&quot;downupPopup-content&quot;&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="string">          &lt;/div&gt;`</span>);</span><br><span class="line">          dpDialog.<span class="property">base</span>.<span class="property">element</span>.<span class="title function_">appendTo</span>(<span class="string">&quot;body&quot;</span>);</span><br><span class="line">          dpDialog.<span class="property">base</span>.<span class="property">content</span> = dpDialog.<span class="property">base</span>.<span class="property">element</span>.<span class="title function_">find</span>(<span class="string">&quot;.downupPopup-content&quot;</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123; <span class="comment">// reset existing</span></span><br><span class="line">        dpDialog.<span class="property">base</span>.<span class="property">element</span>.<span class="title function_">downupPopup</span>(<span class="string">&quot;close&quot;</span>);</span><br><span class="line">        dpDialog.<span class="property">base</span>.<span class="property">content</span>.<span class="title function_">empty</span>();</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      dpDialog.<span class="property">base</span>.<span class="property">element</span>.<span class="title function_">downupPopup</span>(opt);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&#x27;show&#x27;</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        dpDialog.<span class="property">base</span>.<span class="property">element</span>.<span class="title function_">downupPopup</span>(<span class="string">&quot;open&quot;</span>);</span><br><span class="line">      &#125;, <span class="number">100</span>);  </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&#x27;myFirstTest&#x27;</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// INIT DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">init</span>(&#123;</span><br><span class="line">      <span class="attr">headerText</span>: <span class="string">&quot;Test&quot;</span>,</span><br><span class="line">      <span class="attr">distance</span>: <span class="number">75</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ADD CONTENT</span></span><br><span class="line">    <span class="keyword">let</span> content = <span class="string">`</span></span><br><span class="line"><span class="string">      &lt;section&gt;</span></span><br><span class="line"><span class="string">        &lt;p&gt;Lorem ipsum dolor sit amet...&lt;/p&gt;</span></span><br><span class="line"><span class="string">      &lt;/section&gt;</span></span><br><span class="line"><span class="string">    `</span>;</span><br><span class="line">    $(content).<span class="title function_">appendTo</span>(dpDialog.<span class="property">base</span>.<span class="property">content</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// OPEN DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">show</span>();</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&#x27;pageMeta&#x27;</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// INIT DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">init</span>(&#123;</span><br><span class="line">      <span class="attr">headerText</span>: <span class="string">&quot;Page Meta&quot;</span>,</span><br><span class="line">      <span class="attr">contentScroll</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">distance</span>: <span class="number">6</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ADD CONTENT</span></span><br><span class="line">    <span class="comment">// ... appending stuff to dpDialog.base.content</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// OPEN DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">show</span>();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable language_">window</span>.<span class="property">dialog</span> = dpDialog; <span class="comment">// make it globally available</span></span><br></pre></td></tr></table></figure>
 
 <p>The base <code>init</code> function takes care of initializing the downupPopup component, including dynamically inserting the necessary HTML element and attaching the desired settings. <code>show</code> opens up the dialog, with a small time delay, to ensure that the content has already been inserted.<br>Dialog functions in the example above are: <code>myFirstTest</code> and <code>pageMeta</code>.</p>
 <p>Calling one of the dialog functions is simple:</p>
@@ -364,7 +367,7 @@
 <p>My first thought was to use a JSON-LD parser in JavaScript provided by <a href="https://json-ld.org/"><strong>json-ld.org</strong></a>, but this is not even quickly usable, since it validates the code to be parsed at runtime against schema.org and every of my calls failed with CORS warnings. Now I didn’t want to turn this into a PhD thesis, I just wanted to display my highly customized JSON-LD, so I worked out the function quite individually.</p>
 <h3 id="The-Code-Itself"><a href="#The-Code-Itself" class="headerlink" title="The Code Itself"></a>The Code Itself</h3><p>I wanted to show two things in the dialog: the code itself and a visual representation of it for a better overview.</p>
 <p>Getting the content for the code was really straight forward:</p>
-<figure class="highlight js"><figcaption><span>tools.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">  <span class="string">&#x27;pageMeta&#x27;</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// INIT DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">init</span>(&#123;</span><br><span class="line">      <span class="attr">headerText</span>: <span class="string">&quot;Page Meta&quot;</span>,</span><br><span class="line">      <span class="attr">contentScroll</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">distance</span>: <span class="number">6</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ADD CONTENT</span></span><br><span class="line">    <span class="comment">// Grab the JSON-LD code from the page</span></span><br><span class="line">    <span class="keyword">let</span> json = <span class="title class_">JSON</span>.<span class="title function_">parse</span>($(<span class="string">&#x27;script[type=&quot;application/ld+json&quot;]&#x27;</span>).<span class="title function_">text</span>());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Create new dialog section for the code</span></span><br><span class="line">    <span class="keyword">let</span> secCode = $(<span class="string">&#x27;&lt;section&gt;&lt;/section&gt;&#x27;</span>).<span class="title function_">appendTo</span>(dpDialog.<span class="property">base</span>.<span class="property">content</span>);</span><br><span class="line">    <span class="comment">// Append header</span></span><br><span class="line">    secCode.<span class="title function_">append</span>(<span class="string">&#x27;&lt;h1&gt;JSON-LD&lt;/h1&gt;&#x27;</span>);</span><br><span class="line">    <span class="comment">// Append formatted code als PRE element</span></span><br><span class="line">    secCode.<span class="title function_">append</span>(<span class="string">&#x27;&lt;pre class=&quot;json&quot;&gt;&#x27;</span> + <span class="title function_">syntaxHighlight</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(json, <span class="literal">undefined</span>, <span class="number">2</span>))) + <span class="string">&#x27;&lt;/pre&gt;&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// OPEN DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">show</span>();</span><br><span class="line">  &#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>dialog.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">  <span class="string">&#x27;pageMeta&#x27;</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// INIT DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">init</span>(&#123;</span><br><span class="line">      <span class="attr">headerText</span>: <span class="string">&quot;Page Meta&quot;</span>,</span><br><span class="line">      <span class="attr">contentScroll</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">distance</span>: <span class="number">6</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ADD CONTENT</span></span><br><span class="line">    <span class="comment">// Grab the JSON-LD code from the page</span></span><br><span class="line">    <span class="keyword">let</span> json = <span class="title class_">JSON</span>.<span class="title function_">parse</span>($(<span class="string">&#x27;script[type=&quot;application/ld+json&quot;]&#x27;</span>).<span class="title function_">text</span>());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Create new dialog section for the code</span></span><br><span class="line">    <span class="keyword">let</span> secCode = $(<span class="string">&#x27;&lt;section&gt;&lt;/section&gt;&#x27;</span>).<span class="title function_">appendTo</span>(dpDialog.<span class="property">base</span>.<span class="property">content</span>);</span><br><span class="line">    <span class="comment">// Append header</span></span><br><span class="line">    secCode.<span class="title function_">append</span>(<span class="string">&#x27;&lt;h1&gt;JSON-LD&lt;/h1&gt;&#x27;</span>);</span><br><span class="line">    <span class="comment">// Append formatted code als PRE element</span></span><br><span class="line">    secCode.<span class="title function_">append</span>(<span class="string">&#x27;&lt;pre class=&quot;json&quot;&gt;&#x27;</span> + <span class="title function_">syntaxHighlight</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(json, <span class="literal">undefined</span>, <span class="number">2</span>))) + <span class="string">&#x27;&lt;/pre&gt;&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// OPEN DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">show</span>();</span><br><span class="line">  &#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
 <p>Since I had taken care to compress my JSON-LD code to save space, I now needed to get it back into a readable format. Time saver was the following script, which I found on <a href="https://stackoverflow.com/questions/4810841/pretty-print-json-using-javascript">StackOverflow (pretty-print JSON using JavaScript)</a>:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">syntaxHighlight</span>(<span class="params">json</span>) &#123;</span><br><span class="line">  json = json.<span class="title function_">replace</span>(<span class="regexp">/&amp;/g</span>, <span class="string">&#x27;&amp;amp;&#x27;</span>).<span class="title function_">replace</span>(<span class="regexp">/&lt;/g</span>, <span class="string">&#x27;&amp;lt;&#x27;</span>).<span class="title function_">replace</span>(<span class="regexp">/&gt;/g</span>, <span class="string">&#x27;&amp;gt;&#x27;</span>);</span><br><span class="line">  <span class="keyword">return</span> json.<span class="title function_">replace</span>(<span class="regexp">/(&quot;(\\u[a-zA-Z0-9]&#123;4&#125;|\\[^u]|[^\\&quot;])*&quot;(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g</span>, <span class="keyword">function</span> (<span class="params">match</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> cls = <span class="string">&#x27;number&#x27;</span>;</span><br><span class="line">      <span class="keyword">if</span> (<span class="regexp">/^&quot;/</span>.<span class="title function_">test</span>(match)) &#123;</span><br><span class="line">          <span class="keyword">if</span> (<span class="regexp">/:$/</span>.<span class="title function_">test</span>(match)) &#123;</span><br><span class="line">              cls = <span class="string">&#x27;key&#x27;</span>;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              cls = <span class="string">&#x27;string&#x27;</span>;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/true|false/</span>.<span class="title function_">test</span>(match)) &#123;</span><br><span class="line">          cls = <span class="string">&#x27;boolean&#x27;</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/null/</span>.<span class="title function_">test</span>(match)) &#123;</span><br><span class="line">          cls = <span class="string">&#x27;null&#x27;</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&#x27;&lt;span class=&quot;&#x27;</span> + cls + <span class="string">&#x27;&quot;&gt;&#x27;</span> + match + <span class="string">&#x27;&lt;/span&gt;&#x27;</span>;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -378,12 +381,12 @@
 <p>To save space, only one block is included in the example below. The others work similarly. </p>
 
     <div class="alertbox alertbox-info">
-      <p>You can see the complete code here and modify it for your purposes: <a href="https://github.com/kristofzerbe/kiko.io/blob/master/themes/landscape/source/js/tools.js"><strong>tools.js</strong> of the blog kiko.io</a>. There are a few other scripts in this file that my site uses, but are not necessary for this feature.</p>
+      <p>You can see the complete code here and modify it for your purposes: <a href="https://github.com/kristofzerbe/kiko.io/blob/master/themes/landscape/source/js/dialog.js"><strong>dialog.js</strong> of the blog kiko.io</a>.</p>
 
     </div>
   
 
-<figure class="highlight js"><figcaption><span>tools.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">  <span class="string">&#x27;pageMeta&#x27;</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// INIT DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">init</span>(&#123;</span><br><span class="line">      <span class="attr">headerText</span>: <span class="string">&quot;Page Meta&quot;</span>,</span><br><span class="line">      <span class="attr">contentScroll</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">distance</span>: <span class="number">6</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ADD CONTENT</span></span><br><span class="line">    <span class="comment">// Grab the JSON-LD code from the page</span></span><br><span class="line">    <span class="keyword">let</span> json = <span class="title class_">JSON</span>.<span class="title function_">parse</span>($(<span class="string">&#x27;script[type=&quot;application/ld+json&quot;]&#x27;</span>).<span class="title function_">text</span>());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Create new dialog section for the visual representation</span></span><br><span class="line">    <span class="keyword">let</span> secVisual = $(<span class="string">&#x27;&lt;section&gt;&lt;/section&gt;&#x27;</span>).<span class="title function_">appendTo</span>(dpDialog.<span class="property">base</span>.<span class="property">content</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ... other blocks for the visual representation </span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Block WEBSITE</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">getWebSite</span>(<span class="params">website, organization</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;details&gt;</span></span><br><span class="line"><span class="string">          &lt;summary&gt;WebSite&lt;/summary&gt;</span></span><br><span class="line"><span class="string">          &lt;div&gt;</span></span><br><span class="line"><span class="string">            &lt;label&gt;Name&lt;/label&gt;</span></span><br><span class="line"><span class="string">            &lt;p&gt;<span class="subst">$&#123;website.name&#125;</span>&lt;/p&gt;</span></span><br><span class="line"><span class="string">            &lt;label&gt;Description&lt;/label&gt;</span></span><br><span class="line"><span class="string">            &lt;p&gt;<span class="subst">$&#123;website.description&#125;</span>&lt;/p&gt;</span></span><br><span class="line"><span class="string">            &lt;label&gt;Language&lt;/label&gt;</span></span><br><span class="line"><span class="string">            &lt;p&gt;<span class="subst">$&#123;website.inLanguage&#125;</span>&lt;/p&gt;</span></span><br><span class="line"><span class="string">            &lt;label&gt;Publisher&lt;/label&gt;</span></span><br><span class="line"><span class="string">            &lt;p&gt;<span class="subst">$&#123;organization.name&#125;</span>&lt;/p&gt;</span></span><br><span class="line"><span class="string">          &lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;/details&gt;</span></span><br><span class="line"><span class="string">      `</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Get WebSite block from JSON</span></span><br><span class="line">    <span class="keyword">let</span> jWebSite = json[<span class="string">&quot;@graph&quot;</span>].<span class="title function_">filter</span>(<span class="function"><span class="params">x</span> =&gt;</span> x[<span class="string">&quot;@type&quot;</span>] === <span class="string">&quot;WebSite&quot;</span>);</span><br><span class="line">    <span class="comment">// Get referenced Publisher information (Organization)</span></span><br><span class="line">    <span class="keyword">let</span> jPublisher = json[<span class="string">&quot;@graph&quot;</span>].<span class="title function_">filter</span>(<span class="function"><span class="params">x</span> =&gt;</span> x[<span class="string">&quot;@id&quot;</span>] === jWebSite[<span class="number">0</span>].<span class="property">publisher</span>[<span class="string">&quot;@id&quot;</span>]);</span><br><span class="line">    <span class="comment">// Get filled HTML from template helper function above</span></span><br><span class="line">    <span class="keyword">let</span> tWebSite = <span class="title function_">getWebSite</span>(jWebSite[<span class="number">0</span>], jPublisher[<span class="number">0</span>]);</span><br><span class="line">    <span class="comment">// Append HTML to content</span></span><br><span class="line">    secVisual.<span class="title function_">append</span>($(tWebSite));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ... other blocks for the visual representation </span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// ... (Code stuff from above)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// OPEN DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">show</span>();</span><br><span class="line">  &#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>dialog.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">  <span class="string">&#x27;pageMeta&#x27;</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// INIT DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">init</span>(&#123;</span><br><span class="line">      <span class="attr">headerText</span>: <span class="string">&quot;Page Meta&quot;</span>,</span><br><span class="line">      <span class="attr">contentScroll</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">distance</span>: <span class="number">6</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ADD CONTENT</span></span><br><span class="line">    <span class="comment">// Grab the JSON-LD code from the page</span></span><br><span class="line">    <span class="keyword">let</span> json = <span class="title class_">JSON</span>.<span class="title function_">parse</span>($(<span class="string">&#x27;script[type=&quot;application/ld+json&quot;]&#x27;</span>).<span class="title function_">text</span>());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Create new dialog section for the visual representation</span></span><br><span class="line">    <span class="keyword">let</span> secVisual = $(<span class="string">&#x27;&lt;section&gt;&lt;/section&gt;&#x27;</span>).<span class="title function_">appendTo</span>(dpDialog.<span class="property">base</span>.<span class="property">content</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ... other blocks for the visual representation </span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Block WEBSITE</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">getWebSite</span>(<span class="params">website, organization</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;details&gt;</span></span><br><span class="line"><span class="string">          &lt;summary&gt;WebSite&lt;/summary&gt;</span></span><br><span class="line"><span class="string">          &lt;div&gt;</span></span><br><span class="line"><span class="string">            &lt;label&gt;Name&lt;/label&gt;</span></span><br><span class="line"><span class="string">            &lt;p&gt;<span class="subst">$&#123;website.name&#125;</span>&lt;/p&gt;</span></span><br><span class="line"><span class="string">            &lt;label&gt;Description&lt;/label&gt;</span></span><br><span class="line"><span class="string">            &lt;p&gt;<span class="subst">$&#123;website.description&#125;</span>&lt;/p&gt;</span></span><br><span class="line"><span class="string">            &lt;label&gt;Language&lt;/label&gt;</span></span><br><span class="line"><span class="string">            &lt;p&gt;<span class="subst">$&#123;website.inLanguage&#125;</span>&lt;/p&gt;</span></span><br><span class="line"><span class="string">            &lt;label&gt;Publisher&lt;/label&gt;</span></span><br><span class="line"><span class="string">            &lt;p&gt;<span class="subst">$&#123;organization.name&#125;</span>&lt;/p&gt;</span></span><br><span class="line"><span class="string">          &lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;/details&gt;</span></span><br><span class="line"><span class="string">      `</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Get WebSite block from JSON</span></span><br><span class="line">    <span class="keyword">let</span> jWebSite = json[<span class="string">&quot;@graph&quot;</span>].<span class="title function_">filter</span>(<span class="function"><span class="params">x</span> =&gt;</span> x[<span class="string">&quot;@type&quot;</span>] === <span class="string">&quot;WebSite&quot;</span>);</span><br><span class="line">    <span class="comment">// Get referenced Publisher information (Organization)</span></span><br><span class="line">    <span class="keyword">let</span> jPublisher = json[<span class="string">&quot;@graph&quot;</span>].<span class="title function_">filter</span>(<span class="function"><span class="params">x</span> =&gt;</span> x[<span class="string">&quot;@id&quot;</span>] === jWebSite[<span class="number">0</span>].<span class="property">publisher</span>[<span class="string">&quot;@id&quot;</span>]);</span><br><span class="line">    <span class="comment">// Get filled HTML from template helper function above</span></span><br><span class="line">    <span class="keyword">let</span> tWebSite = <span class="title function_">getWebSite</span>(jWebSite[<span class="number">0</span>], jPublisher[<span class="number">0</span>]);</span><br><span class="line">    <span class="comment">// Append HTML to content</span></span><br><span class="line">    secVisual.<span class="title function_">append</span>($(tWebSite));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ... other blocks for the visual representation </span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// ... (Code stuff from above)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// OPEN DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">show</span>();</span><br><span class="line">  &#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
 <h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>It was fun to add a new feature to the site, even more so because it helps me keep track of the meta data of each page myself.</p>
 <p>Here (or in the footer of each page) you can see the result:</p>
@@ -413,15 +416,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cljhj1uul0032hwos8h6mdkgx">
+      <div class="article-permalink" id="article-permalink-cljhjjbrp0032j2n0f1zka52v">
     <input class="article-permalink-value" value="https://kiko.io/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/" 
-           data-id="cljhj1uul0032hwos8h6mdkgx" data-title="Show pages meta data (JSON-LD) in Bottom Sheet" />
+           data-id="cljhjjbrp0032j2n0f1zka52v" data-title="Show pages meta data (JSON-LD) in Bottom Sheet" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cljhj1uul0032hwos8h6mdkgx");
+        initPermalink("cljhjjbrp0032j2n0f1zka52v");
     });
 </script>
 
@@ -813,8 +816,29 @@
 <script src="/js/script.js"></script>
 
 
+<script src="/js/dist/qr-code-styling.js"></script>
+
+
+<script src="/js/dist/qr-code-styling-options-contact.json" id="qr-code-styling-options" type="application&#x2F;json"></script>
+
+
 <script>
-  // HEADER
+  //--- eval url hash on load
+  var hash = window.location.hash.substr(1);
+  switch (hash.toLowerCase()) {
+    case "contact":
+      window.addEventListener('load', function () {
+        dialog.contact();
+      });
+      break;
+    default: break;
+  }
+</script>
+
+<script>
+  /*** DEFINITIONS */
+
+  //HEADER
   var header = {
     height: 0,
     top: 0,
@@ -822,7 +846,6 @@
     photoLinkOpacity: 0,
     titleFontSize: 0
   };
-
   function initHeader() {
     $("#header").css("height", ""); //reset inline css
     $("#header-title").css("top", "");
@@ -882,8 +905,35 @@
     });
   }
 
-  // HORIZONTAL MENU SCROLL
-  function watchNavMenuScroll() {
+  //SCROLL PROGRESS
+  function initScrollProgress() {
+
+    // Create ScrollTimeline
+    const myScrollTimeline = new ScrollTimeline({
+      source: document.scrollingElement,
+      scrollSource: document.scrollingElement, // For legacy implementations
+      orientation: 'block',
+        scrollOffsets: [
+            new CSSUnitValue(0, 'percent'),
+            new CSSUnitValue(100, 'percent'),
+        ],
+    });
+
+    // Animate Progress Bar on Scroll
+    document.querySelector("#progress").animate(
+      {
+        transform: ["scaleX(0)", "scaleX(1)"]
+      },
+      { 
+        duration: 1, 
+        fill: "forwards", 
+        timeline: myScrollTimeline 
+      }
+    );
+  }
+
+  // HORIZONTAL NAV MENU SCROLL
+  function initNavMenuScroll() {
     const nav = document.querySelector('#header-nav');
     const menu = nav.querySelector('.menu');
     const firstMenuItem = menu.querySelector('.menu-item:first-child');
@@ -908,26 +958,96 @@
     observer.observe(lastMenuItem);
   }
 
-  // $(window).on('scroll', function() {
+  //THEME
+  function initColorScheme() {
+    /* https://stackoverflow.com/questions/56300132/how-to-over-ride-css-prefers-color-scheme-setting */
+
+    var theme = "light"; //default
+
+    // get last used theme from local cache
+    if (localStorage.getItem("theme")) {
+      if (localStorage.getItem("theme") === "dark") {
+        theme = "dark";
+      }
+    } else if (!window.matchMedia) {
+      return false;
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      theme = "dark";
+    }
+
+    if (theme === "dark") {
+      setThemeDark();
+    } else {
+      setThemeLight();
+    }
+  }
+  function setThemeDark() {
+    localStorage.setItem("theme", "dark");
+    document.documentElement.setAttribute("data-theme", "dark");
+    toggleTheme.checked = true;
+    setCodepenTheme();
+  }
+  function setThemeLight() {
+    localStorage.setItem("theme", "light");
+    document.documentElement.setAttribute("data-theme", "light");
+    toggleTheme.checked = false;
+    setCodepenTheme();
+  }
+  function setCodepenTheme() {
+    //https://codepen.io/kristofzerbe/embed/xxxxx?height=400&default-tab=js,result&theme-id=dark
+    var pens = document.getElementsByClassName("codepen");
+    for (var i = 0; i < pens.length; i++) {
+      var src = pens[i].src;
+      const arr = src.split("?");
+      const params = arr[1].split("&").slice(0, -1);
+      src =
+        arr[0] +
+        "?" +
+        params.join("&") +
+        "&theme-id=" +
+        localStorage.getItem("theme");
+      pens[i].src = src;
+    }
+  }
+</script>
+
+<script>
+  /*** EVENTS */
+
   window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
   }, { passive: true });
 
-  //$(window).on('resize', function() {
   window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });
 
+  // TOGGLE THEME
+  const toggleTheme = document.querySelector('input#theme-switch[type="checkbox"]');
+  toggleTheme.addEventListener("change", function (e) {
+    if (e.target.checked) { setThemeDark(); } 
+    else { setThemeLight(); }
+  }, false);
+
+  // TOGGLE THEME BY OS
+  var toggleOS = window.matchMedia("(prefers-color-scheme: dark)");
+  toggleOS.addEventListener("change", function (e) {
+    if (e.matches) { setThemeDark(); } 
+    else { setThemeLight(); }
+  });
+
+  /*** INITS */
+
   initHeader();
+  initColorScheme();
   initViewportImage();
-  watchNavMenuScroll();
+  initNavMenuScroll();
+  initScrollProgress();
 
   // BACK-TO-TOP
-  addBackToTop({
-    diameter: 30
-  })
+  addBackToTop({ diameter: 30 });
 
   // AUTOTYPING
   setTimeout(function() {
@@ -950,29 +1070,6 @@
     margin: 20
   });
 
-  //SCROLL-TIMELINE
-  // Create ScrollTimeline
-  const myScrollTimeline = new ScrollTimeline({
-    source: document.scrollingElement,
-    scrollSource: document.scrollingElement, // For legacy implementations
-    orientation: 'block',
-      scrollOffsets: [
-          new CSSUnitValue(0, 'percent'),
-          new CSSUnitValue(100, 'percent'),
-      ],
-  });
-
-  // Animate Progress Bar on Scroll
-  document.querySelector("#progress").animate(
-    {
-      transform: ["scaleX(0)", "scaleX(1)"]
-    },
-    { 
-      duration: 1, 
-      fill: "forwards", 
-      timeline: myScrollTimeline 
-    }
-  );
 </script>
 
 
@@ -991,4 +1088,67 @@
     </div>
   </div>
 </body>
+<template id="contact-dialog">
+  <div class="contact-content">
+    <div class="contact-card">
+      <div class="contact-face face-front">
+        <div class="contact-face-wrapper">
+          <img class="photo" src="https://kiko.io/images/kristof-zerbe.png" alt="Kristof Zerbe">
+          <div class="header">
+            <h3>Kristof Zerbe</h3>
+            <h4>Developer & Team Lead</h4>
+            <p>Wiesbaden, Germany</p>
+            <p class="download">
+              <label>Save my contact by<br>downloading my</label>
+              <a href="/kristof-zerbe.vcf" download="kristof-zerbe.vcf" class="fa-icon-download">vCard</a>  
+            </p>
+          </div>
+          <hr class="divider">
+          <div class="info">
+            <p>
+              <label>Mail me at</label>
+              <a href="mailto:kristof.zerbe@gmail.com" class="fa-icon-mail">kristof.zerbe@gmail.com</a>    
+            </p>
+            <p>
+              <label>Call me at</label>
+              <a href="tel:+491716998867" class="fa-icon-phone">+49 171 6998867</a>  
+            </p>
+            <p>
+              <label>Connect with me via</label>
+              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+            </p>
+            <p>
+              <label>Connect with me via</label>
+              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+            </p>
+            <p>
+              <label>Follow me on</label>
+              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+            </p>
+            <p>
+              <label>Review my projects on</label>
+              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+            </p>
+            <p>
+              <label>Review my photos on</label>
+              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+            </p>
+          </div>
+        </div>
+        <div class="contact-face-flip">flip for qrcode</div>
+      </div>
+      <div class="contact-face face-back">
+        <div class="contact-face-wrapper">
+          <div class="header">
+            <h3>Kristof Zerbe</h3>
+            <h4>kiko.io/#contact</h4>
+          </div>
+          <hr class="divider">
+          <div id="contact-qrcode" class="qrcode"></div>
+        </div>
+        <div class="contact-face-flip">flip for card</div>
+      </div>
+    </div>
+  </div>
+</template>
 </html>
