@@ -3,7 +3,7 @@ title: "Feed: Full Length Article"
 date: 2023-06-29
 syndication: 
 - host: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/110627017988458573
 ---
 
 Since this blog has been around, I only display the excerpt of an article on the front page, and that's how I've done it with my Atom feed.
