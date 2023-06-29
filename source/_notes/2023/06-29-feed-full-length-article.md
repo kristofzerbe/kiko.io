@@ -1,6 +1,6 @@
 ---
 title: "Feed: Full Length Article"
-date: 2023-06-29
+date: 2023-06-29 07:30
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/110627017988458573

@@ -57,16 +57,22 @@
         // Initialization
         if (typeof options === "object" || !options) {
             setTimeout(() => {
-                $this.attr("distance", settings.distance)
-                    .find(".downupPopup-header span").text(settings.headerText);
-                    
+                $this.attr('distance', settings.distance);
                 $this.css('transition', 'transform ' + settings.duration + 'ms ' + settings.animation + '');
                 $this.css('border-radius', '' + settings.radiusLeft + ' ' + settings.radiusRight + ' 0px 0px');
                 $this.css('width', '' + settings.width + '');
-                const hgt = (((100 - settings.distance) - 10) + 3.5);
-                $this.find(".downupPopup-content").css('height', '' + hgt + 'vh');
+                
+                const $head = $this.find(".downupPopup-header");
+                $head.find("span").text(settings.headerText);
+                const headH = 6;
+                $head.css('height', '' + headH + 'vh');
+
+                const $cont = $this.find(".downupPopup-content");
+                const contH = 100 - settings.distance - headH;
+                $cont.css('height', '' + contH + 'vh');
+
                 if (settings.contentScroll) {
-                    $this.find(".downupPopup-content").css('overflow-y', 'scroll');
+                    $cont.css('overflow-y', 'scroll');
                 }
             }, 100);
         }

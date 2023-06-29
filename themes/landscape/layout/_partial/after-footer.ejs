@@ -5,9 +5,29 @@
 <%- js('js/jquery-3.6.0.min.js') %>
 <%- js('js/dist/bundle.min.js') %>
 <%- js('js/script.js') %>
+<%- js('js/dist/qr-code-styling.js') %>
+<%- json({
+  src: 'js/dist/qr-code-styling-options-contact.json', 
+  id: 'qr-code-styling-options'
+}) %>
 
 <script>
-  // HEADER
+  //--- eval url hash on load
+  var hash = window.location.hash.substr(1);
+  switch (hash.toLowerCase()) {
+    case "contact":
+      window.addEventListener('load', function () {
+        dialog.contact();
+      });
+      break;
+    default: break;
+  }
+</script>
+
+<script>
+  /*** DEFINITIONS */
+
+  //HEADER
   var header = {
     height: 0,
     top: 0,
@@ -15,7 +35,6 @@
     photoLinkOpacity: 0,
     titleFontSize: 0
   };
-
   function initHeader() {
     $("#header").css("height", ""); //reset inline css
     $("#header-title").css("top", "");
@@ -75,8 +94,35 @@
     });
   }
 
-  // HORIZONTAL MENU SCROLL
-  function watchNavMenuScroll() {
+  //SCROLL PROGRESS
+  function initScrollProgress() {
+
+    // Create ScrollTimeline
+    const myScrollTimeline = new ScrollTimeline({
+      source: document.scrollingElement,
+      scrollSource: document.scrollingElement, // For legacy implementations
+      orientation: 'block',
+        scrollOffsets: [
+            new CSSUnitValue(0, 'percent'),
+            new CSSUnitValue(100, 'percent'),
+        ],
+    });
+
+    // Animate Progress Bar on Scroll
+    document.querySelector("#progress").animate(
+      {
+        transform: ["scaleX(0)", "scaleX(1)"]
+      },
+      { 
+        duration: 1, 
+        fill: "forwards", 
+        timeline: myScrollTimeline 
+      }
+    );
+  }
+
+  // HORIZONTAL NAV MENU SCROLL
+  function initNavMenuScroll() {
     const nav = document.querySelector('#header-nav');
     const menu = nav.querySelector('.menu');
     const firstMenuItem = menu.querySelector('.menu-item:first-child');
@@ -101,26 +147,96 @@
     observer.observe(lastMenuItem);
   }
 
-  // $(window).on('scroll', function() {
+  //THEME
+  function initColorScheme() {
+    /* https://stackoverflow.com/questions/56300132/how-to-over-ride-css-prefers-color-scheme-setting */
+
+    var theme = "light"; //default
+
+    // get last used theme from local cache
+    if (localStorage.getItem("theme")) {
+      if (localStorage.getItem("theme") === "dark") {
+        theme = "dark";
+      }
+    } else if (!window.matchMedia) {
+      return false;
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      theme = "dark";
+    }
+
+    if (theme === "dark") {
+      setThemeDark();
+    } else {
+      setThemeLight();
+    }
+  }
+  function setThemeDark() {
+    localStorage.setItem("theme", "dark");
+    document.documentElement.setAttribute("data-theme", "dark");
+    toggleTheme.checked = true;
+    setCodepenTheme();
+  }
+  function setThemeLight() {
+    localStorage.setItem("theme", "light");
+    document.documentElement.setAttribute("data-theme", "light");
+    toggleTheme.checked = false;
+    setCodepenTheme();
+  }
+  function setCodepenTheme() {
+    //https://codepen.io/kristofzerbe/embed/xxxxx?height=400&default-tab=js,result&theme-id=dark
+    var pens = document.getElementsByClassName("codepen");
+    for (var i = 0; i < pens.length; i++) {
+      var src = pens[i].src;
+      const arr = src.split("?");
+      const params = arr[1].split("&").slice(0, -1);
+      src =
+        arr[0] +
+        "?" +
+        params.join("&") +
+        "&theme-id=" +
+        localStorage.getItem("theme");
+      pens[i].src = src;
+    }
+  }
+</script>
+
+<script>
+  /*** EVENTS */
+
   window.addEventListener('scroll', function() {
     scrollHeader();
     initViewportImage();
   }, { passive: true });
 
-  //$(window).on('resize', function() {
   window.addEventListener('resize', function() {
     initHeader();
     initViewportImage();
   });
 
+  // TOGGLE THEME
+  const toggleTheme = document.querySelector('input#theme-switch[type="checkbox"]');
+  toggleTheme.addEventListener("change", function (e) {
+    if (e.target.checked) { setThemeDark(); } 
+    else { setThemeLight(); }
+  }, false);
+
+  // TOGGLE THEME BY OS
+  var toggleOS = window.matchMedia("(prefers-color-scheme: dark)");
+  toggleOS.addEventListener("change", function (e) {
+    if (e.matches) { setThemeDark(); } 
+    else { setThemeLight(); }
+  });
+
+  /*** INITS */
+
   initHeader();
+  initColorScheme();
   initViewportImage();
-  watchNavMenuScroll();
+  initNavMenuScroll();
+  initScrollProgress();
 
   // BACK-TO-TOP
-  addBackToTop({
-    diameter: 30
-  })
+  addBackToTop({ diameter: 30 });
 
   // AUTOTYPING
   setTimeout(function() {
@@ -143,29 +259,6 @@
     margin: 20
   });
 
-  //SCROLL-TIMELINE
-  // Create ScrollTimeline
-  const myScrollTimeline = new ScrollTimeline({
-    source: document.scrollingElement,
-    scrollSource: document.scrollingElement, // For legacy implementations
-    orientation: 'block',
-      scrollOffsets: [
-          new CSSUnitValue(0, 'percent'),
-          new CSSUnitValue(100, 'percent'),
-      ],
-  });
-
-  // Animate Progress Bar on Scroll
-  document.querySelector("#progress").animate(
-    {
-      transform: ["scaleX(0)", "scaleX(1)"]
-    },
-    { 
-      duration: 1, 
-      fill: "forwards", 
-      timeline: myScrollTimeline 
-    }
-  );
 </script>
 
 <% if (config.pirsch.enabled === true) { %>

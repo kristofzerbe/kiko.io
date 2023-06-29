@@ -1,0 +1,63 @@
+<template id="contact-dialog">
+  <div class="contact-content">
+    <div class="contact-card">
+      <div class="contact-face face-front">
+        <div class="contact-face-wrapper">
+          <img class="photo" src="<%- config.photo %>" alt="<%- config.author %>">
+          <div class="header">
+            <h3><%- config.author %></h3>
+            <h4>Developer & Team Lead</h4>
+            <p>Wiesbaden, Germany</p>
+            <p class="download">
+              <label>Save my contact by<br>downloading my</label>
+              <a href="/kristof-zerbe.vcf" download="kristof-zerbe.vcf" class="fa-icon-download">vCard</a>  
+            </p>
+          </div>
+          <hr class="divider">
+          <div class="info">
+            <p>
+              <label>Mail me at</label>
+              <a href="mailto:kristof.zerbe@gmail.com" class="fa-icon-mail">kristof.zerbe@gmail.com</a>    
+            </p>
+            <p>
+              <label>Call me at</label>
+              <a href="tel:+491716998867" class="fa-icon-phone">+49 171 6998867</a>  
+            </p>
+            <p>
+              <label>Connect with me via</label>
+              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+            </p>
+            <p>
+              <label>Connect with me via</label>
+              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+            </p>
+            <p>
+              <label>Follow me on</label>
+              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+            </p>
+            <p>
+              <label>Review my projects on</label>
+              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+            </p>
+            <p>
+              <label>Review my photos on</label>
+              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+            </p>
+          </div>
+        </div>
+        <div class="contact-face-flip">flip for qrcode</div>
+      </div>
+      <div class="contact-face face-back">
+        <div class="contact-face-wrapper">
+          <div class="header">
+            <h3><%- config.author %></h3>
+            <h4>kiko.io/#contact</h4>
+          </div>
+          <hr class="divider">
+          <div id="contact-qrcode" class="qrcode"></div>
+        </div>
+        <div class="contact-face-flip">flip for card</div>
+      </div>
+    </div>
+  </div>
+</template>

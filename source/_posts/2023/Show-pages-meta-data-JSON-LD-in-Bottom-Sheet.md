@@ -64,7 +64,7 @@ Now my solution should work on-the-fly and without a previously defined element 
 
 It has one function each for a specific bottom sheet dialog and beside it base variables and functions (``base``) to keep the infrastructure code of the former as small as possible:
 
-```js tools.js
+```js dialog.js
 var dpDialog = {
   'base': {
     'element': null,
@@ -167,7 +167,7 @@ I wanted to show two things in the dialog: the code itself and a visual represen
 
 Getting the content for the code was really straight forward:
 
-```js tools.js
+```js dialog.js
 ...
   'pageMeta': function() {
     // INIT DIALOG
@@ -245,10 +245,10 @@ To process the required HTML, I wrote a helper function for each block that retu
 To save space, only one block is included in the example below. The others work similarly. 
 
 {% alertbox info %}
-You can see the complete code here and modify it for your purposes: [**tools.js** of the blog kiko.io](https://github.com/kristofzerbe/kiko.io/blob/master/themes/landscape/source/js/tools.js). There are a few other scripts in this file that my site uses, but are not necessary for this feature.
+You can see the complete code here and modify it for your purposes: [**dialog.js** of the blog kiko.io](https://github.com/kristofzerbe/kiko.io/blob/master/themes/landscape/source/js/dialog.js).
 {% endalertbox %}
 
-```js tools.js
+```js dialog.js
 ...
   'pageMeta': function() {
     // INIT DIALOG
