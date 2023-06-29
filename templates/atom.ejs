@@ -49,7 +49,7 @@
             <%_ const regEx = /<(script|style)[^>]*>(?<content>[^<]*)<\/(script|style)>/gim; _%>
             <%_ let feedContent = post.content.replace(regEx, "") _%>
             <%# let feedContent = post.excerpt.replace(regEx, "") %>
-            <%# feedContent = feedContent + '<p><a href="' + post.permalink + '">Continue reading <strong>`' + post.title + '`</strong> on kiko.io ...</a></p>' _%>  */%>
+            <%# feedContent = feedContent + '<p><a href="' + post.permalink + '">Continue reading <strong>`' + post.title + '`</strong> on kiko.io ...</a></p>' %>
             <%_ if (post.photograph) { feedContent = '<p><img src="' + config.url + '/images/social-media/' + slug + '.png" /></p>' + feedContent } _%>
             <%= feedContent %>
         </content>
