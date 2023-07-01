@@ -19,7 +19,7 @@ related:
   - Discoveries-22-Tips-Tricks
 syndication:
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/110639105939400667
 ---
 
 This Discoveries issue is generally about tutorials from different areas: CORS, Azure, Elektron, GitHub Action, SVG. Outstanding articles by outstanding authors, who explain things in an easy and understandable way.
