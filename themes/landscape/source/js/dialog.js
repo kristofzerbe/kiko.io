@@ -10,7 +10,8 @@ var dpDialog = {
       radiusRight: "4px",
       width: "100%",
       contentScroll: false,
-      contentTransparency: 1
+      contentTransparency: 1,
+      minHeightInPixel: null
     },
     'init': function(options) {
       let opt = {...dpDialog.base.options, ...options};
@@ -23,12 +24,23 @@ var dpDialog = {
           </div>`);
           dpDialog.base.element.appendTo("body");
           dpDialog.base.content = dpDialog.base.element.find(".downupPopup-content");      
-      } else { // reset existing
+      } else { 
+        // reset existing
         dpDialog.base.element.downupPopup("close");
         dpDialog.base.content.empty();
         dpDialog.base.content.attr("style", "");
       }
 
+      // // set distance by evaluating current viewport height and minimum contant height
+      // if (opt.minContentHeight) {
+      //   const headH = 6; // (see downpopup.js)
+      //   let calcDistance = Math.round(100 - (((opt.minContentHeight * 100) / window.innerHeight) + headH));
+      //   console.log("calcDistance: " + calcDistance);
+      //   //if (calcDistance < 0) opt.contentScroll = true;
+      //   opt.distance = Math.max(0, calcDistance);
+      // }
+
+      // set background color from options
       dpDialog.base.content.css("background-color", function (index, current) {
         let rgb = current.replace(/[^\d.,%]/g, '').split(',');
         let data = { 
@@ -256,12 +268,12 @@ var dpDialog = {
 
   },
   'contact': function() {
-    //TODO: calculate DISTANCE on Viewport Height
     dpDialog.base.init({
       headerText: "Contact",
       distance: 20,
       width: "min(600px, 100%)",
-      contentTransparency: 0.33
+      contentTransparency: 0.33,
+      minContentHeight: 620
     });
 
     // get content from global template
