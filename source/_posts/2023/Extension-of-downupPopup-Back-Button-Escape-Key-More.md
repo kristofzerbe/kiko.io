@@ -20,7 +20,7 @@ related:
   - Discoveries-24-JavaScript-UI
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/110657193763601130
 ---
 
 I recently introduced a Bottom Sheet dialog on this blog to display a page's metadata (<a href="javascript:dialog.pageMeta()">like this</a>), using Ali Dincer's work: [**downupPopup**](https://downuppopupjs.dincerali.com/). I described the way to do this in [a post](/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/) a couple three weeks ago.
