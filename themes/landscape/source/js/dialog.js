@@ -31,15 +31,6 @@ var dpDialog = {
         dpDialog.base.content.attr("style", "");
       }
 
-      // // set distance by evaluating current viewport height and minimum contant height
-      // if (opt.minContentHeight) {
-      //   const headH = 6; // (see downpopup.js)
-      //   let calcDistance = Math.round(100 - (((opt.minContentHeight * 100) / window.innerHeight) + headH));
-      //   console.log("calcDistance: " + calcDistance);
-      //   //if (calcDistance < 0) opt.contentScroll = true;
-      //   opt.distance = Math.max(0, calcDistance);
-      // }
-
       // set background color from options
       dpDialog.base.content.css("background-color", function (index, current) {
         let rgb = current.replace(/[^\d.,%]/g, '').split(',');
@@ -67,6 +58,7 @@ var dpDialog = {
   'pageMeta': function() {
     dpDialog.base.init({
       headerText: "Page Meta",
+      urlHash: "meta",
       contentScroll: true,
       distance: 6
     });
@@ -270,10 +262,11 @@ var dpDialog = {
   'contact': function() {
     dpDialog.base.init({
       headerText: "Contact",
+      urlHash: "contact",
       distance: 20,
+      minContentHeight: 620,
       width: "min(600px, 100%)",
-      contentTransparency: 0.33,
-      minContentHeight: 620
+      contentTransparency: 0.33
     });
 
     // get content from global template
