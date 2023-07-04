@@ -23,7 +23,7 @@ function initAnchorListItems() {
 }
 initAnchorListItems();
 
-function setPermalink(postId) {
+function initPermalink(postId) {
   let wrapper = document.querySelector("#article-permalink-" + postId);
   let input = wrapper.querySelector("input.article-permalink-value");
   let copy = wrapper.querySelector("a.action-copy");
