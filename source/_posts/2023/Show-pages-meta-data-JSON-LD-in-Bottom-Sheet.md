@@ -151,7 +151,7 @@ Try here: <a href="javascript:dpDialog.myFirstTest()">Open Test Dialog</a>
 
 Ali decided in his original implementation to apply the given settings only once to a popup element. Once initialized, it could not be reused with different settings. To avoid having to destroy an existing element before initializing a new one, which would have caused a massive timing problem due to the animation, I decided to fork his code and give him a [pull request](https://github.com/ali-dincer/downupPopup.js/pull/2).
 
-Du findest mein Script hier, solange Ali den PR nicht in seinen Code übernommen hat: [kristofzerbe/downupPopup.js](https://github.com/kristofzerbe/downupPopup.js)
+You can find my script here, as long as Ali didn't include the PR in his code: [kristofzerbe/downupPopup.js](https://github.com/kristofzerbe/downupPopup.js)
 
 ---
 
