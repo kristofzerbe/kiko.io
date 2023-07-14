@@ -4,11 +4,19 @@ const path = require('path');
 const fs = require('hexo-fs');
 const front = require('hexo-front-matter');
 const axios = require('axios');
+const { isInternetAvailable, InternetAvailabilityService } = require('is-internet-available');
 
 hexo.extend.generator.register("dynamic-trello", async function(locals) {
   let config = this.config;
 
   log.info("Processing Trello board for dynamic page...");
+
+  isInternetAvailable({ authority: 'https://trello.com' }).then(function(status) {
+    if(status === false) { 
+      log.error("NO NETWORK CONNECTION TO TRELLO");
+      return null; 
+    };
+  });
 
   if (config.offline === true) { return null; }
 
