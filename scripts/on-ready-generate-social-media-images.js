@@ -1,4 +1,4 @@
-const Generator = require("../lib/social-media-image-generator.cjs").Generator;
+const SocialMediaImageGenerator = require("../lib/social-media-image-generator.cjs").SocialMediaImageGenerator;
 
 hexo.on("ready", function() {
     
@@ -7,7 +7,7 @@ hexo.on("ready", function() {
     const templateFile = "../templates/social-media-image.handlebars";
     const targetFolder = "../static/images/social-media";
 
-    const generator = new Generator(postFolder, photoFolder, templateFile, targetFolder);
+    const generator = new SocialMediaImageGenerator(postFolder, photoFolder, templateFile, targetFolder);
     generator.generate();
 
 });
