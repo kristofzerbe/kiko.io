@@ -8,6 +8,7 @@ photograph:
   file: D50_7076.jpg
   name: German Roofage
   link: https://500px.com/photo/1045391866
+  socialmedia: /static/images/social-media/Pagefind-UI-and-URL-Parameters.png
 series: A New Blog
 categories:
   - Tools

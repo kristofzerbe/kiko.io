@@ -122,9 +122,45 @@
           "type": "tags"
         },
         {
+          "title": "Related",
+          "name": "related",
+          "type": "list"
+        },
+        {
+          "title": "Syndication",
+          "name": "syndication",
+          "type": "block",
+          "fieldGroup": [
+            "post_syndication"
+          ]
+        },
+        {
           "title": "Hidden",
           "name": "hidden",
           "type": "draft"
+        }
+      ]
+    }
+  ],
+  "frontMatter.taxonomy.fieldGroups": [
+    {
+      "id": "post_syndication",
+      "labelField": "host",
+      "fields": [
+        {
+          "title": "Host",
+          "name": "host",
+          "type": "choice",
+          "choices": [
+            "Mastodon"
+          ],
+          "single": true
+        },
+        {
+          "title": "URL",
+          "name": "url",
+          "type": "string",
+          "single": true
         }
       ]
     }

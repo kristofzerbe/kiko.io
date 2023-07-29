@@ -7,6 +7,7 @@ photograph:
   file: D70_1538.jpg
   name: Smiling Guard
   link: https://500px.com/photo/260366947
+  socialmedia: /static/images/social-media/Include-and-provide-JSON-data-in-Hexo-EJS-Templates.png
 categories:
   - JavaScript
 tags:

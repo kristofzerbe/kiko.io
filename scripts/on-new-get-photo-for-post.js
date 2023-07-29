@@ -16,7 +16,13 @@ hexo.on('new', function(data) {
     let post = front.parse(data.content);
 
     const selector = new photoSelector();
-    post.photograph = selector.pick();
+    let photo = selector.pick();
+    
+    //set individually to avoid overwriting existing ones like 'socialmedia'
+    post.photograph.file = photo.file;
+    post.photograph.name = photo.name;
+    post.photograph.link = photo.link;
+
 
     let postStr = front.stringify(post);
     postStr = '---\n' + postStr;

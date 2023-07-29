@@ -1,12 +1,13 @@
 ---
 slug: Extension-of-downupPopup-Back-Button-Escape-Key-More
-title: 'Extension of downupPopup: Back Button, Escape Key & More'
+title: "Extension of downupPopup: Back Button, Escape Key & More"
 subtitle: Contributing to Ali Dinçer's Bottom Sheet project
 date: 2023-07-04 13:07:38
 photograph:
   file: D50_7484.jpg
   name: Garden Beauties XV
   link: https://500px.com/photo/1049601877/Garden-Beauties-XV-by-Kristof-Zerbe/
+  socialmedia: /static/images/social-media/Extension-of-downupPopup-Back-Button-Escape-Key-More.png
 categories:
   - UI/UX
 tags:

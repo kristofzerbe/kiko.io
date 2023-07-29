@@ -7,6 +7,7 @@ photograph:
   file: 22-08 Bretagne-Jersey-0683.jpg
   name: Water Numbers
   link: https://500px.com/photo/1056125514/water-numbers-by-kristof-zerbe
+  socialmedia: /static/images/social-media/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet.png
 categories:
   - UI/UX
 tags:

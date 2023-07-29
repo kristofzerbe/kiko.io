@@ -7,6 +7,7 @@ photograph:
   file: D50_7117.jpg
   name: Into A Huddle
   link: https://500px.com/photo/1045390520
+  socialmedia: /static/images/social-media/Creating-a-flipping-Contact-Card-with-QR-Code.png
 categories:
   - UI/UX
 tags:

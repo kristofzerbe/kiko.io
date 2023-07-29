@@ -7,6 +7,7 @@ photograph:
   file: 22-08 Bretagne-Jersey-0201.jpg
   name: Proud Vespa
   link: https://500px.com/photo/1056125429/proud-vespa-by-kristof-zerbe
+  socialmedia: /static/images/social-media/Integration-of-Pagefind-in-Hexo.png
 series: A New Blog
 categories:
   - Tools
