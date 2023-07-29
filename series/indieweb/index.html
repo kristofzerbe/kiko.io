@@ -327,7 +327,7 @@
 <p><a href="https://aaronparecki.com/">Aaron Parecki</a>, co-founder of the IndieWeb, has made a service called <a href="https://webmention.io/"><strong>webmention.io</strong></a> we can use for free. It is able to convert old-fashioned Pingbacks to Webmentions, supports deleting of unwanted mentions, has a Blocklist for blocking domains, Webhooks for real-time processing and last but not least an API to get all your Webmentions per page or per site.</p>
       
         <p class="article-more-link">
-          <a href="/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/">Continue reading ...</a>
+          <a href="/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/#continue">Continue reading ...</a>
         </p>
       
     </div>
@@ -339,15 +339,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clkdyvjqa001kigov5ixpa5dq">
+      <div class="article-permalink" id="article-permalink-clko6hms9001kpgn79apv9tte">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/" 
-           data-id="clkdyvjqa001kigov5ixpa5dq" data-title="Hexo and the IndieWeb (Receiving Webmentions)" />
+           data-id="clko6hms9001kpgn79apv9tte" data-title="Hexo and the IndieWeb (Receiving Webmentions)" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clkdyvjqa001kigov5ixpa5dq");
+        initPermalink("clko6hms9001kpgn79apv9tte");
     });
 </script>
 
@@ -423,7 +423,7 @@
 <p>Good news: you don’t have to write your own solution to scan your article for external URL’s and sending Webmentions to their creators: <a href="https://remysharp.com/2019/06/18/send-outgoing-webmentions">Remy Sharp has done that</a> already with his service <a href="https://webmention.app/"><strong>webmention.app</strong></a>. It supports the long existing <a href="http://www.hixie.ch/specs/pingback/pingback">Pingbacks</a> too and offers several ways to achieve your goal:</p>
       
         <p class="article-more-link">
-          <a href="/post/Hexo-and-the-IndieWeb-Sending-Webmentions/">Continue reading ...</a>
+          <a href="/post/Hexo-and-the-IndieWeb-Sending-Webmentions/#continue">Continue reading ...</a>
         </p>
       
     </div>
@@ -435,15 +435,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clkdyvjqa001ligov8u95bmak">
+      <div class="article-permalink" id="article-permalink-clko6hmsa001lpgn75tbg2xut">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb-Sending-Webmentions/" 
-           data-id="clkdyvjqa001ligov8u95bmak" data-title="Hexo and the IndieWeb (Sending Webmentions)" />
+           data-id="clko6hmsa001lpgn75tbg2xut" data-title="Hexo and the IndieWeb (Sending Webmentions)" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clkdyvjqa001ligov8u95bmak");
+        initPermalink("clko6hmsa001lpgn75tbg2xut");
     });
 </script>
 
@@ -513,7 +513,7 @@
 <p>In this article I will only briefly go into the basics and then show an implementation solution for the SSG <a href="https://hexo.io/"><strong>Hexo</strong></a>.</p>
       
         <p class="article-more-link">
-          <a href="/post/Hexo-and-the-IndieWeb/">Continue reading ...</a>
+          <a href="/post/Hexo-and-the-IndieWeb/#continue">Continue reading ...</a>
         </p>
       
     </div>
@@ -525,15 +525,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clkdyvjqb001migovhtgufrus">
+      <div class="article-permalink" id="article-permalink-clko6hmsb001mpgn7bjez6u3w">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb/" 
-           data-id="clkdyvjqb001migovhtgufrus" data-title="Hexo and the IndieWeb" />
+           data-id="clko6hmsb001mpgn7bjez6u3w" data-title="Hexo and the IndieWeb" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clkdyvjqb001migovhtgufrus");
+        initPermalink("clko6hmsb001mpgn7bjez6u3w");
     });
 </script>
 
@@ -576,6 +576,12 @@
         
           <li>
             
+              <a href="/post/CONTINUE-READING-Link-Auto-Scrolling-on-the-called-page/">CONTINUE READING Link &amp; Auto Scrolling on the called page</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">Extension of downupPopup: Back Button, Escape Key &amp; More</a>
             
           </li>
@@ -589,12 +595,6 @@
           <li>
             
               <a href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/">Include and provide JSON data in Hexo EJS Templates</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/">Show pages meta data (JSON-LD) in Bottom Sheet</a>
             
           </li>
         
@@ -699,6 +699,17 @@
         dialog.contact();
       });
       break;
+    case "continue":
+      //has no offset due to fixed header
+      //...document.getElementById("more").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest"});
+      window.scrollTo({
+        behavior: 'smooth',
+        top:
+          document.querySelector("#more").getBoundingClientRect().top -
+          document.body.getBoundingClientRect().top -
+          200,
+      });
+      history.replaceState(null, null, ' '); // remove hash
     default: break;
   }
 </script>

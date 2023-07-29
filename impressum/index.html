@@ -287,7 +287,7 @@
 
 <h1 id="Verantwortlich-fur-den-Inhalt-gemas-§-55-Abs-2-RStV"><a href="#Verantwortlich-fur-den-Inhalt-gemas-§-55-Abs-2-RStV" class="headerlink" title="Verantwortlich für den Inhalt gemäß § 55 Abs.2 RStV"></a>Verantwortlich für den Inhalt gemäß § 55 Abs.2 RStV</h1><p>Kristof Zerbe<br>Kaiser-Friedrich-Str. 8<br>65193 Wiesbaden</p>
 <p>Mobil: +49 171 6998867</p>
-<p><a href="mailto:&#107;&#114;&#105;&#x73;&#116;&#x6f;&#x66;&#x2e;&#x7a;&#x65;&#114;&#98;&#101;&#64;&#103;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#111;&#109;">&#107;&#114;&#105;&#x73;&#116;&#x6f;&#x66;&#x2e;&#x7a;&#x65;&#114;&#98;&#101;&#64;&#103;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#111;&#109;</a></p>
+<p><a href="mailto:&#107;&#x72;&#x69;&#115;&#x74;&#111;&#x66;&#46;&#122;&#101;&#x72;&#98;&#x65;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#107;&#x72;&#x69;&#115;&#x74;&#111;&#x66;&#46;&#122;&#101;&#x72;&#98;&#x65;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a></p>
 </section>
 
 <section>
@@ -339,6 +339,12 @@
         
           <li>
             
+              <a href="/post/CONTINUE-READING-Link-Auto-Scrolling-on-the-called-page/">CONTINUE READING Link &amp; Auto Scrolling on the called page</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">Extension of downupPopup: Back Button, Escape Key &amp; More</a>
             
           </li>
@@ -352,12 +358,6 @@
           <li>
             
               <a href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/">Include and provide JSON data in Hexo EJS Templates</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/">Show pages meta data (JSON-LD) in Bottom Sheet</a>
             
           </li>
         
@@ -462,6 +462,17 @@
         dialog.contact();
       });
       break;
+    case "continue":
+      //has no offset due to fixed header
+      //...document.getElementById("more").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest"});
+      window.scrollTo({
+        behavior: 'smooth',
+        top:
+          document.querySelector("#more").getBoundingClientRect().top -
+          document.body.getBoundingClientRect().top -
+          200,
+      });
+      history.replaceState(null, null, ' '); // remove hash
     default: break;
   }
 </script>

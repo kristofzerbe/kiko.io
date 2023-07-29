@@ -380,15 +380,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clkdyvjrq0024igovduvi6lig">
+      <div class="article-permalink" id="article-permalink-clko6hmsi001ypgn7dhy72i9w">
     <input class="article-permalink-value" value="https://kiko.io/post/The-Last-Image-Gallery/" 
-           data-id="clkdyvjrq0024igovduvi6lig" data-title="The Last Image Gallery..." />
+           data-id="clko6hmsi001ypgn7dhy72i9w" data-title="The Last Image Gallery..." />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clkdyvjrq0024igovduvi6lig");
+        initPermalink("clko6hmsi001ypgn7dhy72i9w");
     });
 </script>
 
@@ -671,6 +671,12 @@
         
           <li>
             
+              <a href="/post/CONTINUE-READING-Link-Auto-Scrolling-on-the-called-page/">CONTINUE READING Link &amp; Auto Scrolling on the called page</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">Extension of downupPopup: Back Button, Escape Key &amp; More</a>
             
           </li>
@@ -684,12 +690,6 @@
           <li>
             
               <a href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/">Include and provide JSON data in Hexo EJS Templates</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/">Show pages meta data (JSON-LD) in Bottom Sheet</a>
             
           </li>
         
@@ -794,6 +794,17 @@
         dialog.contact();
       });
       break;
+    case "continue":
+      //has no offset due to fixed header
+      //...document.getElementById("more").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest"});
+      window.scrollTo({
+        behavior: 'smooth',
+        top:
+          document.querySelector("#more").getBoundingClientRect().top -
+          document.body.getBoundingClientRect().top -
+          200,
+      });
+      history.replaceState(null, null, ' '); // remove hash
     default: break;
   }
 </script>

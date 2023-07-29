@@ -317,7 +317,7 @@
 <p>In this post, I want to show you, what my workflow looks like today and how yours might benefit from my mistake.</p>
       
         <p class="article-more-link">
-          <a href="/post/Photo-Workflow-Re-Thought/">Continue reading ...</a>
+          <a href="/post/Photo-Workflow-Re-Thought/#continue">Continue reading ...</a>
         </p>
       
     </div>
@@ -329,15 +329,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clkdyvjqd001rigov18knc02k">
+      <div class="article-permalink" id="article-permalink-clko6hmse001rpgn77a5yd97t">
     <input class="article-permalink-value" value="https://kiko.io/post/Photo-Workflow-Re-Thought/" 
-           data-id="clkdyvjqd001rigov18knc02k" data-title="Photo Workflow Re-Thought" />
+           data-id="clko6hmse001rpgn77a5yd97t" data-title="Photo Workflow Re-Thought" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clkdyvjqd001rigov18knc02k");
+        initPermalink("clko6hmse001rpgn77a5yd97t");
     });
 </script>
 
@@ -400,7 +400,7 @@
 <p>Because it is easier to find a card with visual support, I create my own screenshots for the cards in a manual, but streamlined, process, I want to show you here.</p>
       
         <p class="article-more-link">
-          <a href="/post/Adding-Screenshots-to-Trello-Cards-on-Android/">Continue reading ...</a>
+          <a href="/post/Adding-Screenshots-to-Trello-Cards-on-Android/#continue">Continue reading ...</a>
         </p>
       
     </div>
@@ -412,15 +412,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clkdyvjpw0010igovgjti27bt">
+      <div class="article-permalink" id="article-permalink-clko6hmru0010pgn765mlet0m">
     <input class="article-permalink-value" value="https://kiko.io/post/Adding-Screenshots-to-Trello-Cards-on-Android/" 
-           data-id="clkdyvjpw0010igovgjti27bt" data-title="Adding Screenshots to Trello Cards on Android" />
+           data-id="clko6hmru0010pgn765mlet0m" data-title="Adding Screenshots to Trello Cards on Android" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clkdyvjpw0010igovgjti27bt");
+        initPermalink("clko6hmru0010pgn765mlet0m");
     });
 </script>
 
@@ -463,6 +463,12 @@
         
           <li>
             
+              <a href="/post/CONTINUE-READING-Link-Auto-Scrolling-on-the-called-page/">CONTINUE READING Link &amp; Auto Scrolling on the called page</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">Extension of downupPopup: Back Button, Escape Key &amp; More</a>
             
           </li>
@@ -476,12 +482,6 @@
           <li>
             
               <a href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/">Include and provide JSON data in Hexo EJS Templates</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/">Show pages meta data (JSON-LD) in Bottom Sheet</a>
             
           </li>
         
@@ -586,6 +586,17 @@
         dialog.contact();
       });
       break;
+    case "continue":
+      //has no offset due to fixed header
+      //...document.getElementById("more").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest"});
+      window.scrollTo({
+        behavior: 'smooth',
+        top:
+          document.querySelector("#more").getBoundingClientRect().top -
+          document.body.getBoundingClientRect().top -
+          200,
+      });
+      history.replaceState(null, null, ' '); // remove hash
     default: break;
   }
 </script>

@@ -386,20 +386,20 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clkdyvjs3002sigov4sq488zt">
+      <div class="article-permalink" id="article-permalink-clko6hmsr002apgn71jjsbbpv">
     <input class="article-permalink-value" value="https://kiko.io/post/Checker-Plus-Gmail-in-better/" 
-           data-id="clkdyvjs3002sigov4sq488zt" data-title="Checker Plus - Gmail in better..." />
+           data-id="clko6hmsr002apgn71jjsbbpv" data-title="Checker Plus - Gmail in better..." />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clkdyvjs3002sigov4sq488zt");
+        initPermalink("clko6hmsr002apgn71jjsbbpv");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-clkdyvjs3002sigov4sq488zt">
+        <div class="article-golem" id="article-golem-clko6hmsr002apgn71jjsbbpv">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 20 Dec 2021 
     in German under the title <span style="font-weight:bold;">&laquo;Checker Plus - Gmail in besser&raquo;</span>&nbsp;&nbsp;  
@@ -690,6 +690,12 @@
         
           <li>
             
+              <a href="/post/CONTINUE-READING-Link-Auto-Scrolling-on-the-called-page/">CONTINUE READING Link &amp; Auto Scrolling on the called page</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">Extension of downupPopup: Back Button, Escape Key &amp; More</a>
             
           </li>
@@ -703,12 +709,6 @@
           <li>
             
               <a href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/">Include and provide JSON data in Hexo EJS Templates</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/">Show pages meta data (JSON-LD) in Bottom Sheet</a>
             
           </li>
         
@@ -813,6 +813,17 @@
         dialog.contact();
       });
       break;
+    case "continue":
+      //has no offset due to fixed header
+      //...document.getElementById("more").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest"});
+      window.scrollTo({
+        behavior: 'smooth',
+        top:
+          document.querySelector("#more").getBoundingClientRect().top -
+          document.body.getBoundingClientRect().top -
+          200,
+      });
+      history.replaceState(null, null, ' '); // remove hash
     default: break;
   }
 </script>

@@ -391,15 +391,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clkdyvjsu0049igov6umm0ylw">
+      <div class="article-permalink" id="article-permalink-clko6hmt80032pgn7a3iv8w60">
     <input class="article-permalink-value" value="https://kiko.io/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/" 
-           data-id="clkdyvjsu0049igov6umm0ylw" data-title="Include and provide JSON data in Hexo EJS Templates" />
+           data-id="clko6hmt80032pgn7a3iv8w60" data-title="Include and provide JSON data in Hexo EJS Templates" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clkdyvjsu0049igov6umm0ylw");
+        initPermalink("clko6hmt80032pgn7a3iv8w60");
     });
 </script>
 
@@ -689,6 +689,12 @@
         
           <li>
             
+              <a href="/post/CONTINUE-READING-Link-Auto-Scrolling-on-the-called-page/">CONTINUE READING Link &amp; Auto Scrolling on the called page</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">Extension of downupPopup: Back Button, Escape Key &amp; More</a>
             
           </li>
@@ -702,12 +708,6 @@
           <li>
             
               <a href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/">Include and provide JSON data in Hexo EJS Templates</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/">Show pages meta data (JSON-LD) in Bottom Sheet</a>
             
           </li>
         
@@ -812,6 +812,17 @@
         dialog.contact();
       });
       break;
+    case "continue":
+      //has no offset due to fixed header
+      //...document.getElementById("more").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest"});
+      window.scrollTo({
+        behavior: 'smooth',
+        top:
+          document.querySelector("#more").getBoundingClientRect().top -
+          document.body.getBoundingClientRect().top -
+          200,
+      });
+      history.replaceState(null, null, ' '); // remove hash
     default: break;
   }
 </script>

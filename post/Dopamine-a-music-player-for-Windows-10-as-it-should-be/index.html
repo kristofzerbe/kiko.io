@@ -348,12 +348,12 @@
 <li>Automatic updates</li>
 </ul>
 
-      <div class="image-slider" id="image-slide-bewbyq">
+      <div class="image-slider" id="image-slide-xc2kyz">
         <div><img src="/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/dopamine2.png" alt="Dopamine 2.0.9 on Windows 10" /></div><div><img src="/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/dopamine2-playlist.png" alt="Dopamine 2.0.9 Playlist" /></div><div><img src="/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/dopamine2-settings.png" alt="Dopamine 2.0.9 Settings Page" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-bewbyq",
+          container: "#image-slide-xc2kyz",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -392,20 +392,20 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clkdyvjsa0038igovd6c6493e">
+      <div class="article-permalink" id="article-permalink-clko6hmsw002ipgn7glep1xwp">
     <input class="article-permalink-value" value="https://kiko.io/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/" 
-           data-id="clkdyvjsa0038igovd6c6493e" data-title="Dopamine, a music player for Windows 10 as it should be" />
+           data-id="clko6hmsw002ipgn7glep1xwp" data-title="Dopamine, a music player for Windows 10 as it should be" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clkdyvjsa0038igovd6c6493e");
+        initPermalink("clko6hmsw002ipgn7glep1xwp");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-clkdyvjsa0038igovd6c6493e">
+        <div class="article-golem" id="article-golem-clko6hmsw002ipgn7glep1xwp">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 11 Aug 2022 
     in German under the title <span style="font-weight:bold;">&laquo;Ein Musikplayer, wie er sein sollte&raquo;</span>&nbsp;&nbsp;  
@@ -699,6 +699,12 @@
         
           <li>
             
+              <a href="/post/CONTINUE-READING-Link-Auto-Scrolling-on-the-called-page/">CONTINUE READING Link &amp; Auto Scrolling on the called page</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">Extension of downupPopup: Back Button, Escape Key &amp; More</a>
             
           </li>
@@ -712,12 +718,6 @@
           <li>
             
               <a href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/">Include and provide JSON data in Hexo EJS Templates</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/">Show pages meta data (JSON-LD) in Bottom Sheet</a>
             
           </li>
         
@@ -822,6 +822,17 @@
         dialog.contact();
       });
       break;
+    case "continue":
+      //has no offset due to fixed header
+      //...document.getElementById("more").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest"});
+      window.scrollTo({
+        behavior: 'smooth',
+        top:
+          document.querySelector("#more").getBoundingClientRect().top -
+          document.body.getBoundingClientRect().top -
+          200,
+      });
+      history.replaceState(null, null, ' '); // remove hash
     default: break;
   }
 </script>

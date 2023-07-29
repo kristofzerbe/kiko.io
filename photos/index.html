@@ -2654,15 +2654,15 @@
   </a>
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="used">
   
-  <span class="status pool">unused</span>
+  <a class="status used post" href="/post/CONTINUE-READING-Link-Auto-Scrolling-on-the-called-page/">CONTINUE READING Link & Auto Scrolling on the called page</a>
   
   <a class="spotlight card-img" 
        data-title="Ground Light"
-       data-description="D50_5099&nbsp;&bull;&nbsp;pool"
-       data-src="/pool/D50_5099/normal.jpg">
-    <img src="/pool/D50_5099/mobile.jpg" alt="Ground Light" />
+       data-description="D50_5099&nbsp;&bull;&nbsp;used"
+       data-src="/photos/normal/D50_5099.jpg">
+    <img src="/photos/mobile/D50_5099.jpg" alt="Ground Light" />
   </a>
   <span class="pre-title">D50_5099</span>
   <h3>Ground Light</h3>
@@ -4174,6 +4174,12 @@
         
           <li>
             
+              <a href="/post/CONTINUE-READING-Link-Auto-Scrolling-on-the-called-page/">CONTINUE READING Link &amp; Auto Scrolling on the called page</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">Extension of downupPopup: Back Button, Escape Key &amp; More</a>
             
           </li>
@@ -4187,12 +4193,6 @@
           <li>
             
               <a href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/">Include and provide JSON data in Hexo EJS Templates</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/">Show pages meta data (JSON-LD) in Bottom Sheet</a>
             
           </li>
         
@@ -4297,6 +4297,17 @@
         dialog.contact();
       });
       break;
+    case "continue":
+      //has no offset due to fixed header
+      //...document.getElementById("more").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest"});
+      window.scrollTo({
+        behavior: 'smooth',
+        top:
+          document.querySelector("#more").getBoundingClientRect().top -
+          document.body.getBoundingClientRect().top -
+          200,
+      });
+      history.replaceState(null, null, ' '); // remove hash
     default: break;
   }
 </script>

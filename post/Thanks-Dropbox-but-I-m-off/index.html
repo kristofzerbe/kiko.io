@@ -362,15 +362,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clkdyvjsl003pigovhafo499m">
+      <div class="article-permalink" id="article-permalink-clko6hmt2002rpgn79xc77nwq">
     <input class="article-permalink-value" value="https://kiko.io/post/Thanks-Dropbox-but-I-m-off/" 
-           data-id="clkdyvjsl003pigovhafo499m" data-title="Thanks Dropbox, but I&#39;m off" />
+           data-id="clko6hmt2002rpgn79xc77nwq" data-title="Thanks Dropbox, but I&#39;m off" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clkdyvjsl003pigovhafo499m");
+        initPermalink("clko6hmt2002rpgn79xc77nwq");
     });
 </script>
 
@@ -486,6 +486,12 @@
         
           <li>
             
+              <a href="/post/CONTINUE-READING-Link-Auto-Scrolling-on-the-called-page/">CONTINUE READING Link &amp; Auto Scrolling on the called page</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">Extension of downupPopup: Back Button, Escape Key &amp; More</a>
             
           </li>
@@ -499,12 +505,6 @@
           <li>
             
               <a href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/">Include and provide JSON data in Hexo EJS Templates</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/">Show pages meta data (JSON-LD) in Bottom Sheet</a>
             
           </li>
         
@@ -609,6 +609,17 @@
         dialog.contact();
       });
       break;
+    case "continue":
+      //has no offset due to fixed header
+      //...document.getElementById("more").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest"});
+      window.scrollTo({
+        behavior: 'smooth',
+        top:
+          document.querySelector("#more").getBoundingClientRect().top -
+          document.body.getBoundingClientRect().top -
+          200,
+      });
+      history.replaceState(null, null, ' '); // remove hash
     default: break;
   }
 </script>

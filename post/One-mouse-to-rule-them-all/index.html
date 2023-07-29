@@ -360,20 +360,20 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clkdyvjse003higovg2s28us2">
+      <div class="article-permalink" id="article-permalink-clko6hmt0002npgn722aic5m5">
     <input class="article-permalink-value" value="https://kiko.io/post/One-mouse-to-rule-them-all/" 
-           data-id="clkdyvjse003higovg2s28us2" data-title="One mouse to rule them all" />
+           data-id="clko6hmt0002npgn722aic5m5" data-title="One mouse to rule them all" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clkdyvjse003higovg2s28us2");
+        initPermalink("clko6hmt0002npgn722aic5m5");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-clkdyvjse003higovg2s28us2">
+        <div class="article-golem" id="article-golem-clko6hmt0002npgn722aic5m5">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 30 Sep 2022 
     in German under the title <span style="font-weight:bold;">&laquo;Eine Maus für alles&raquo;</span>&nbsp;&nbsp;  
@@ -666,6 +666,12 @@
         
           <li>
             
+              <a href="/post/CONTINUE-READING-Link-Auto-Scrolling-on-the-called-page/">CONTINUE READING Link &amp; Auto Scrolling on the called page</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">Extension of downupPopup: Back Button, Escape Key &amp; More</a>
             
           </li>
@@ -679,12 +685,6 @@
           <li>
             
               <a href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/">Include and provide JSON data in Hexo EJS Templates</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/">Show pages meta data (JSON-LD) in Bottom Sheet</a>
             
           </li>
         
@@ -789,6 +789,17 @@
         dialog.contact();
       });
       break;
+    case "continue":
+      //has no offset due to fixed header
+      //...document.getElementById("more").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest"});
+      window.scrollTo({
+        behavior: 'smooth',
+        top:
+          document.querySelector("#more").getBoundingClientRect().top -
+          document.body.getBoundingClientRect().top -
+          200,
+      });
+      history.replaceState(null, null, ' '); // remove hash
     default: break;
   }
 </script>
