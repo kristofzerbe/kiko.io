@@ -19,7 +19,7 @@ related:
   - Generate-Social-Media-Images-Automatically
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/110798153748266303
 ---
 
 On the home page of a blog or other text-heavy site with regular new articles, it is often advisable not to display the entire text of the article, but a more or less large excerpt and a READ MORE or CONTINUE READING link that leads to the rest of the article, usually a stand-alone article page. This allows the user to quickly get a picture of, say, the last dozen posts when he comes here to browse your texts.
