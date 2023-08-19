@@ -14,7 +14,7 @@ tags:
   - SVWW
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/110917059328457153
 ---
 
 <img src="/images/SV-Wehen-Wiesbaden.svg" class="float-element" style="width:8rem;" />
