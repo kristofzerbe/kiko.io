@@ -9,6 +9,7 @@ photograph:
   name: Direction Airport
   link: 'https://500px.com/photo/86991283/Direction-Airport-by-Kristof-Zerbe/'
   socialmedia: /static/images/social-media/Remote-Testing-and-Debugging-with-Chrome.png
+series: Step By Step
 categories:
   - Tools
 tags:
@@ -47,7 +48,9 @@ Before we start, we have to enable the Android smartphone to connect to other de
 4. &nbsp;&gt; ``Developer Options``
 5. Switch ``USB debugging`` to ``ON``
 
-# Test your local site on a mobile device
+---
+
+## 1. Test your local site on a mobile device
 
 When you start your local web server from VS Code, your solution can be accessed by a ``localhost`` address at a specific port:
 
@@ -81,7 +84,9 @@ Your local solution will now be loaded on your mobile device and you will see th
 
 ![Remotely Loaded](Remote-Testing-and-Debugging-with-Chrome/remotely-loaded.png)
 
-# Debug a site running on your mobile device locally
+---
+
+## 2. Debug a site running on your mobile device locally
 
 This step is now very easy, because we are connected to the mobile device and a remote site is loaded. Just click ``inspect`` at the appropriate item:
 
