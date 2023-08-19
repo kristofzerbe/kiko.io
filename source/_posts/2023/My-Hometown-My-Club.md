@@ -21,7 +21,7 @@ syndication:
 
 I was born in Wiesbaden (Hesse, Germany) and I consider this city my home, even though my father built a house in a small suburb called Taunusstein-Wehen in the 70s and I practically grew up there. In this small town, where practically everybody knows everybody, there is a small football club called SV Wehen since 1926 and some of my schoolmates played there in their youth.
 
-This small club played only a regional role at all until 1979, when a local entrepreneur put money into the club and it worked its way up one league after the other over the years:
+This small club played only a regional role at all until 1979, when a local business man put money into the club and it worked its way up one league after the other over the years:
 
 <!-- more -->
 
