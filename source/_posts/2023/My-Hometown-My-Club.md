@@ -17,7 +17,7 @@ syndication:
     url: null
 ---
 
-<img src="/images/SV-Wehen-Wiesbaden.svg" style="width:150px;float:right;padding: 0 0 20px 50px" />
+<img src="/images/SV-Wehen-Wiesbaden.svg" class="float-element" style="width:8rem;" />
 
 I was born in Wiesbaden (Hesse, Germany) and I consider this city my home, even though my father built a house in a small suburb called Taunusstein-Wehen in the 70s and I practically grew up there. In this small town, where practically everybody knows everybody, there is a small football club called SV Wehen since 1926 and some of my schoolmates played there in their youth.
 
