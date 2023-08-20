@@ -12,6 +12,8 @@ categories:
   - Football
 tags:
   - SVWW
+related:
+  - SVWW-vs-Karlsruhe-2023-08-18
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/110917059328457153
