@@ -357,15 +357,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clli72seq0034jynpb05xgg0r">
+      <div class="article-permalink" id="article-permalink-clljfxgf6003ekone9tyvbs2i">
     <input class="article-permalink-value" value="https://kiko.io/post/My-Hometown-My-Club/" 
-           data-id="clli72seq0034jynpb05xgg0r" data-title="My Hometown, My Club" />
+           data-id="clljfxgf6003ekone9tyvbs2i" data-title="My Hometown, My Club" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clli72seq0034jynpb05xgg0r");
+        initPermalink("clljfxgf6003ekone9tyvbs2i");
     });
 </script>
 
@@ -430,8 +430,80 @@
   </script>
 </div>
   
+  <div class="article-related">
+    <h2>Related</h2>
+    <div class="archives">
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/post/SVWW-vs-Karlsruhe-2023-08-18/">
+        <img class="archive-article-photo" src="/photos/tablet/PXL_20230818_162748966.jpg" alt="SVWW vs Karlsruhe 2023" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/post/SVWW-vs-Karlsruhe-2023-08-18/" class="archive-article-date">
+  
+    <time class="published dt-published" data-pagefind-meta="date" 
+          datetime="2023-08-19T16:33:00.000Z">19 Aug 2023</time>
+  
+</a>
+      
+  <div class="archive-article-category category-football">
+    <a class="article-category-link" href="/categories/Football/">Football</a> 
+  </div>
+
+      
+
+
+    <a class="archive-article-anything" href="/series/sv-wehen-wiesbaden">SV Wehen Wiesbaden</a>
+
+
+
+      
+
+
+  
+    <h1>
+      <a class="archive-article-title"
+         href="/post/SVWW-vs-Karlsruhe-2023-08-18/">SVWW vs. Karlsruhe @ 2023-08-18</a>
+    </h1>
+  
+
+      
+    <h2 class="archive-article-subtitle">
+        My first home game in this season
+    </h2>
+              
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/2-Bundesliga/" rel="tag">2. Bundesliga</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Karlsruher-FC/" rel="tag">Karlsruher FC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SVWW/" rel="tag">SVWW</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+    </div>
+  </div>
+
   
 <nav id="article-nav">
+  
+    <a href="/post/SVWW-vs-Karlsruhe-2023-08-18/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          SVWW vs. Karlsruhe @ 2023-08-18
+        
+      </div>
+    </a>
   
   
     <a href="/post/CONTINUE-READING-Link-Auto-Scrolling-on-the-called-page/" id="article-nav-older" class="article-nav-link-wrap">
@@ -473,6 +545,12 @@
         
           <li>
             
+              <a href="/post/SVWW-vs-Karlsruhe-2023-08-18/">SVWW vs. Karlsruhe @ 2023-08-18</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/My-Hometown-My-Club/">My Hometown, My Club</a>
             
           </li>
@@ -486,12 +564,6 @@
           <li>
             
               <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">Extension of downupPopup: Back Button, Escape Key &amp; More</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Discoveries-25-Tutorials-HowTo-s/">Discoveries #25 - Tutorials &amp; HowTo&#39;s</a>
             
           </li>
         
@@ -631,6 +703,14 @@
     header.top = parseFloat($("#header-title").css("top"));
     header.photoLinkOpacity = parseFloat($("#header-photo-link").css("opacity"));
     header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
+
+    //change subtitle a bit
+    let sub = $("#header").find("#subtitle");
+    let col = sub.css("color");
+    let rpl = `<span style="text-decoration:line-through;color:rgb(120 120 120)" title="not only anymore"><span style="color:${col};opacity:0.75">Tech</span></span>`;
+    let txt = sub.text().trim().replace('Tech', rpl);
+    sub.html(txt);
+
     scrollHeader();
   }
   function scrollHeader() {
@@ -785,6 +865,7 @@
       pens[i].src = src;
     }
   }
+
 </script>
 
 <script>

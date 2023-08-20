@@ -334,7 +334,7 @@
 <span id="more"></span>
 
 <h2 id="Indian-Sunset"><a href="#Indian-Sunset" class="headerlink" title="Indian Sunset"></a>Indian Sunset</h2>
-    <div id="image-compare-u22n49">
+    <div id="image-compare-5w0xmd">
       <img class="image-compare image-original" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_165823_HDR_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_165823_HDR_PRESET_Sunset.jpg" alt="" />
     </div>
@@ -343,7 +343,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-u22n49"),
+      new ImageCompare(document.getElementById("image-compare-5w0xmd"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -360,7 +360,7 @@
 
 <hr>
 
-    <div id="image-compare-653r4y">
+    <div id="image-compare-zlgt2w">
       <img class="image-compare image-original" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_164343_HDR_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_164343_HDR_PRESET_Sunset.jpg" alt="" />
     </div>
@@ -369,7 +369,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-653r4y"),
+      new ImageCompare(document.getElementById("image-compare-zlgt2w"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -401,15 +401,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clli72sdm000sjynp1lp6ethy">
+      <div class="article-permalink" id="article-permalink-clljfxgbc000skone8t3x6dv0">
     <input class="article-permalink-value" value="https://kiko.io/post/Indian-Presets-for-Lightroom/" 
-           data-id="clli72sdm000sjynp1lp6ethy" data-title="Indian Presets for Lightroom" />
+           data-id="clljfxgbc000skone8t3x6dv0" data-title="Indian Presets for Lightroom" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clli72sdm000sjynp1lp6ethy");
+        initPermalink("clljfxgbc000skone8t3x6dv0");
     });
 </script>
 
@@ -688,6 +688,12 @@
         
           <li>
             
+              <a href="/post/SVWW-vs-Karlsruhe-2023-08-18/">SVWW vs. Karlsruhe @ 2023-08-18</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/My-Hometown-My-Club/">My Hometown, My Club</a>
             
           </li>
@@ -701,12 +707,6 @@
           <li>
             
               <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">Extension of downupPopup: Back Button, Escape Key &amp; More</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Discoveries-25-Tutorials-HowTo-s/">Discoveries #25 - Tutorials &amp; HowTo&#39;s</a>
             
           </li>
         
@@ -846,6 +846,14 @@
     header.top = parseFloat($("#header-title").css("top"));
     header.photoLinkOpacity = parseFloat($("#header-photo-link").css("opacity"));
     header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
+
+    //change subtitle a bit
+    let sub = $("#header").find("#subtitle");
+    let col = sub.css("color");
+    let rpl = `<span style="text-decoration:line-through;color:rgb(120 120 120)" title="not only anymore"><span style="color:${col};opacity:0.75">Tech</span></span>`;
+    let txt = sub.text().trim().replace('Tech', rpl);
+    sub.html(txt);
+
     scrollHeader();
   }
   function scrollHeader() {
@@ -1000,6 +1008,7 @@
       pens[i].src = src;
     }
   }
+
 </script>
 
 <script>

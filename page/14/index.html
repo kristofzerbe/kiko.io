@@ -271,6 +271,93 @@
   
   
      
+<article id="post-2019/Hexo-and-the-Dark-Mode-revised" 
+         class="article article-type-post">
+  
+  <div class="article-meta">
+    <a href="/post/Hexo-and-the-Dark-Mode-revised/" class="article-date">
+  
+    <time class="published dt-published" data-pagefind-meta="date" 
+          datetime="2019-10-26T12:08:05.000Z">26 Oct 2019</time>
+  
+</a>
+    
+  <div class="article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Hexo-and-the-Dark-Mode-revised/">
+        <img class="article-photo" src="/photos/tablet/19-07 Schottland-0025.jpg" alt="Glencoe River" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+    <a class="article-anything" href="/series/a-new-blog">A New Blog</a>
+
+
+
+        
+
+
+  
+    <h1>
+      <a class="article-title"
+         href="/post/Hexo-and-the-Dark-Mode-revised/">Hexo and the Dark Mode ... revised</a>
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle">
+        Second approach to implement &#39;prefers-color-scheme&#39;
+    </h2>
+
+      </header>
+    
+    
+    <div class="article-entry">
+      <p>While writing my post <a href="/categories/Tools/Hexo-and-the-Dark-Mode">Hexo and the Dark Mode</a> a few days ago, I thought it would be nice, if I could switch between the normal (light) and the dark theme, I’ve created for the support of the OS-related Dark Mode, even manually. The only thing I needed was a toggle element and a little bit of JavaScript.</p>
+<p>Of course, I couldn’t manipulate the <a href="https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-color-scheme">media query <code>prefers-color-scheme</code></a> itself, but introduce a different way by blog uses it. Instead of implementing the media query directly into my CSS (or Stylus) code, I used a root selector, which can be manipulated by JavaScript … something like this:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: white;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: black;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+        <p class="article-more-link">
+          <a href="/post/Hexo-and-the-Dark-Mode-revised/#continue">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dark-Mode/" rel="tag">Dark Mode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stylus/" rel="tag">Stylus</a></li></ul>  
+  </div>
+
+      
+      <div class="article-permalink" id="article-permalink-clljfxgaz000bkone8ool5u1f">
+    <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-Dark-Mode-revised/" 
+           data-id="clljfxgaz000bkone8ool5u1f" data-title="Hexo and the Dark Mode ... revised" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clljfxgaz000bkone8ool5u1f");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
 <article id="post-2019/Hexo-and-the-Dark-Mode" 
          class="article article-type-post">
   
@@ -339,15 +426,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clli72sdd000cjynpfml47zn0">
+      <div class="article-permalink" id="article-permalink-clljfxgb0000ckonec8jnb3rb">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-Dark-Mode/" 
-           data-id="clli72sdd000cjynpfml47zn0" data-title="Hexo and the Dark Mode" />
+           data-id="clljfxgb0000ckonec8jnb3rb" data-title="Hexo and the Dark Mode" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clli72sdd000cjynpfml47zn0");
+        initPermalink("clljfxgb0000ckonec8jnb3rb");
     });
 </script>
 
@@ -425,15 +512,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clli72sd90005jynp4lbd4rs4">
+      <div class="article-permalink" id="article-permalink-clljfxgar0005kone8vtqflux">
     <input class="article-permalink-value" value="https://kiko.io/post/A-New-Blog-Blogging-and-Synching-en-route/" 
-           data-id="clli72sd90005jynp4lbd4rs4" data-title="A New Blog: Blogging and Synching en route" />
+           data-id="clljfxgar0005kone8vtqflux" data-title="A New Blog: Blogging and Synching en route" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clli72sd90005jynp4lbd4rs4");
+        initPermalink("clljfxgar0005kone8vtqflux");
     });
 </script>
 
@@ -511,15 +598,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clli72sda0007jynpe0eo1fm7">
+      <div class="article-permalink" id="article-permalink-clljfxgas0007kone0jr23b6s">
     <input class="article-permalink-value" value="https://kiko.io/post/A-New-Blog-Customizing-Hexo/" 
-           data-id="clli72sda0007jynpe0eo1fm7" data-title="A New Blog: Customizing Hexo" />
+           data-id="clljfxgas0007kone0jr23b6s" data-title="A New Blog: Customizing Hexo" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clli72sda0007jynpe0eo1fm7");
+        initPermalink("clljfxgas0007kone0jr23b6s");
     });
 </script>
 
@@ -599,15 +686,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clli72sdb0009jynpeuj9g9dc">
+      <div class="article-permalink" id="article-permalink-clljfxgau0009kone64qe7v4o">
     <input class="article-permalink-value" value="https://kiko.io/post/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/" 
-           data-id="clli72sdb0009jynpeuj9g9dc" data-title="A New Blog: VS Code, Hexo and GitHub Pages" />
+           data-id="clljfxgau0009kone64qe7v4o" data-title="A New Blog: VS Code, Hexo and GitHub Pages" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clli72sdb0009jynpeuj9g9dc");
+        initPermalink("clljfxgau0009kone64qe7v4o");
     });
 </script>
 
@@ -678,15 +765,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clli72sde000djynp6ltocvwp">
+      <div class="article-permalink" id="article-permalink-clljfxgb1000dkone7ceug9q8">
     <input class="article-permalink-value" value="https://kiko.io/post/How-To-Visual-Studio-Database-Project-and-ADSI/" 
-           data-id="clli72sde000djynp6ltocvwp" data-title="How-To: Visual Studio Database Project and ADSI" />
+           data-id="clljfxgb1000dkone7ceug9q8" data-title="How-To: Visual Studio Database Project and ADSI" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clli72sde000djynp6ltocvwp");
+        initPermalink("clljfxgb1000dkone7ceug9q8");
     });
 </script>
 
@@ -735,6 +822,12 @@
         
           <li>
             
+              <a href="/post/SVWW-vs-Karlsruhe-2023-08-18/">SVWW vs. Karlsruhe @ 2023-08-18</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/My-Hometown-My-Club/">My Hometown, My Club</a>
             
           </li>
@@ -748,12 +841,6 @@
           <li>
             
               <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">Extension of downupPopup: Back Button, Escape Key &amp; More</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Discoveries-25-Tutorials-HowTo-s/">Discoveries #25 - Tutorials &amp; HowTo&#39;s</a>
             
           </li>
         
@@ -893,6 +980,14 @@
     header.top = parseFloat($("#header-title").css("top"));
     header.photoLinkOpacity = parseFloat($("#header-photo-link").css("opacity"));
     header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
+
+    //change subtitle a bit
+    let sub = $("#header").find("#subtitle");
+    let col = sub.css("color");
+    let rpl = `<span style="text-decoration:line-through;color:rgb(120 120 120)" title="not only anymore"><span style="color:${col};opacity:0.75">Tech</span></span>`;
+    let txt = sub.text().trim().replace('Tech', rpl);
+    sub.html(txt);
+
     scrollHeader();
   }
   function scrollHeader() {
@@ -1047,6 +1142,7 @@
       pens[i].src = src;
     }
   }
+
 </script>
 
 <script>

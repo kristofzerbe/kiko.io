@@ -333,15 +333,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clli72se8001yjynpfhcg48jv">
+      <div class="article-permalink" id="article-permalink-clljfxgcf001ykone0fvl0t29">
     <input class="article-permalink-value" value="https://kiko.io/post/The-Last-Image-Gallery/" 
-           data-id="clli72se8001yjynpfhcg48jv" data-title="The Last Image Gallery..." />
+           data-id="clljfxgcf001ykone0fvl0t29" data-title="The Last Image Gallery..." />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clli72se8001yjynpfhcg48jv");
+        initPermalink("clljfxgcf001ykone0fvl0t29");
     });
 </script>
 
@@ -420,15 +420,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clli72se3001pjynp9f3iaccl">
+      <div class="article-permalink" id="article-permalink-clljfxgc9001pkonect9y3jae">
     <input class="article-permalink-value" value="https://kiko.io/post/Open-Source-Insights-Seeing-the-big-picture/" 
-           data-id="clli72se3001pjynp9f3iaccl" data-title="Open Source Insights - Seeing the big picture" />
+           data-id="clljfxgc9001pkonect9y3jae" data-title="Open Source Insights - Seeing the big picture" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clli72se3001pjynp9f3iaccl");
+        initPermalink("clljfxgc9001pkonect9y3jae");
     });
 </script>
 
@@ -505,15 +505,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clli72se9001zjynpexyic05h">
+      <div class="article-permalink" id="article-permalink-clljfxgcg001zkoneb4ig1vpg">
     <input class="article-permalink-value" value="https://kiko.io/post/Triangulate-your-images-with-Triangula/" 
-           data-id="clli72se9001zjynpexyic05h" data-title="Triangulate your images with Triangula" />
+           data-id="clljfxgcg001zkoneb4ig1vpg" data-title="Triangulate your images with Triangula" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clli72se9001zjynpexyic05h");
+        initPermalink("clljfxgcg001zkoneb4ig1vpg");
     });
 </script>
 
@@ -643,15 +643,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clli72se6001ujynp5hqnaxfh">
+      <div class="article-permalink" id="article-permalink-clljfxgcc001ukonebtq65u3w">
     <input class="article-permalink-value" value="https://kiko.io/post/SVG-Resources/" 
-           data-id="clli72se6001ujynp5hqnaxfh" data-title="SVG Resources" />
+           data-id="clljfxgcc001ukonebtq65u3w" data-title="SVG Resources" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clli72se6001ujynp5hqnaxfh");
+        initPermalink("clljfxgcc001ukonebtq65u3w");
     });
 </script>
 
@@ -732,15 +732,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clli72sdk000ojynp6hlz9zf1">
+      <div class="article-permalink" id="article-permalink-clljfxgb9000okonefonz9edi">
     <input class="article-permalink-value" value="https://kiko.io/post/Dopamine-How-Software-should-be/" 
-           data-id="clli72sdk000ojynp6hlz9zf1" data-title="Dopamine: How Software should be..." />
+           data-id="clljfxgb9000okonefonz9edi" data-title="Dopamine: How Software should be..." />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clli72sdk000ojynp6hlz9zf1");
+        initPermalink("clljfxgb9000okonefonz9edi");
     });
 </script>
 
@@ -783,6 +783,12 @@
         
           <li>
             
+              <a href="/post/SVWW-vs-Karlsruhe-2023-08-18/">SVWW vs. Karlsruhe @ 2023-08-18</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/My-Hometown-My-Club/">My Hometown, My Club</a>
             
           </li>
@@ -796,12 +802,6 @@
           <li>
             
               <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">Extension of downupPopup: Back Button, Escape Key &amp; More</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Discoveries-25-Tutorials-HowTo-s/">Discoveries #25 - Tutorials &amp; HowTo&#39;s</a>
             
           </li>
         
@@ -941,6 +941,14 @@
     header.top = parseFloat($("#header-title").css("top"));
     header.photoLinkOpacity = parseFloat($("#header-photo-link").css("opacity"));
     header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
+
+    //change subtitle a bit
+    let sub = $("#header").find("#subtitle");
+    let col = sub.css("color");
+    let rpl = `<span style="text-decoration:line-through;color:rgb(120 120 120)" title="not only anymore"><span style="color:${col};opacity:0.75">Tech</span></span>`;
+    let txt = sub.text().trim().replace('Tech', rpl);
+    sub.html(txt);
+
     scrollHeader();
   }
   function scrollHeader() {
@@ -1095,6 +1103,7 @@
       pens[i].src = src;
     }
   }
+
 </script>
 
 <script>

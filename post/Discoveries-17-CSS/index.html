@@ -477,15 +477,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clli72seg002djynp5eue37ig">
+      <div class="article-permalink" id="article-permalink-clljfxgct002dkone9164a60k">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-17-CSS/" 
-           data-id="clli72seg002djynp5eue37ig" data-title="Discoveries #17 - CSS" />
+           data-id="clljfxgct002dkone9164a60k" data-title="Discoveries #17 - CSS" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clli72seg002djynp5eue37ig");
+        initPermalink("clljfxgct002dkone9164a60k");
     });
 </script>
 
@@ -764,6 +764,12 @@
         
           <li>
             
+              <a href="/post/SVWW-vs-Karlsruhe-2023-08-18/">SVWW vs. Karlsruhe @ 2023-08-18</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/My-Hometown-My-Club/">My Hometown, My Club</a>
             
           </li>
@@ -777,12 +783,6 @@
           <li>
             
               <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">Extension of downupPopup: Back Button, Escape Key &amp; More</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Discoveries-25-Tutorials-HowTo-s/">Discoveries #25 - Tutorials &amp; HowTo&#39;s</a>
             
           </li>
         
@@ -922,6 +922,14 @@
     header.top = parseFloat($("#header-title").css("top"));
     header.photoLinkOpacity = parseFloat($("#header-photo-link").css("opacity"));
     header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
+
+    //change subtitle a bit
+    let sub = $("#header").find("#subtitle");
+    let col = sub.css("color");
+    let rpl = `<span style="text-decoration:line-through;color:rgb(120 120 120)" title="not only anymore"><span style="color:${col};opacity:0.75">Tech</span></span>`;
+    let txt = sub.text().trim().replace('Tech', rpl);
+    sub.html(txt);
+
     scrollHeader();
   }
   function scrollHeader() {
@@ -1076,6 +1084,7 @@
       pens[i].src = src;
     }
   }
+
 </script>
 
 <script>

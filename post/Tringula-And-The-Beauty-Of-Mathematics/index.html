@@ -347,12 +347,12 @@
 <span id="more"></span>
 
 
-      <div class="image-slider" id="image-slide-wswdyt">
+      <div class="image-slider" id="image-slide-5d2ylh">
         <div><img src="/post/Tringula-And-The-Beauty-Of-Mathematics/triangula.png" alt="UI of the tool Triangula written in Go" /></div><div><img src="/post/Tringula-And-The-Beauty-Of-Mathematics/sample-40-generations.png" alt="Sample 40 generations" /></div><div><img src="/post/Tringula-And-The-Beauty-Of-Mathematics/sample-400-generations.png" alt="Sample 400 generations" /></div><div><img src="/post/Tringula-And-The-Beauty-Of-Mathematics/sample-4000-generations.png" alt="Sample 4000 generations" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-wswdyt",
+          container: "#image-slide-5d2ylh",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -409,20 +409,20 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clli72se90020jynpbtb72p0e">
+      <div class="article-permalink" id="article-permalink-clljfxgcg0020koneej311fpd">
     <input class="article-permalink-value" value="https://kiko.io/post/Tringula-And-The-Beauty-Of-Mathematics/" 
-           data-id="clli72se90020jynpbtb72p0e" data-title="Tringula And The Beauty Of Mathematics" />
+           data-id="clljfxgcg0020koneej311fpd" data-title="Tringula And The Beauty Of Mathematics" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clli72se90020jynpbtb72p0e");
+        initPermalink("clljfxgcg0020koneej311fpd");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-clli72se90020jynpbtb72p0e">
+        <div class="article-golem" id="article-golem-clljfxgcg0020koneej311fpd">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 29 Nov 2021 
     in German under the title <span style="font-weight:bold;">&laquo;Tringula und die Schönheit der Mathematik&raquo;</span>&nbsp;&nbsp;  
@@ -707,6 +707,12 @@
         
           <li>
             
+              <a href="/post/SVWW-vs-Karlsruhe-2023-08-18/">SVWW vs. Karlsruhe @ 2023-08-18</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/My-Hometown-My-Club/">My Hometown, My Club</a>
             
           </li>
@@ -720,12 +726,6 @@
           <li>
             
               <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">Extension of downupPopup: Back Button, Escape Key &amp; More</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Discoveries-25-Tutorials-HowTo-s/">Discoveries #25 - Tutorials &amp; HowTo&#39;s</a>
             
           </li>
         
@@ -865,6 +865,14 @@
     header.top = parseFloat($("#header-title").css("top"));
     header.photoLinkOpacity = parseFloat($("#header-photo-link").css("opacity"));
     header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
+
+    //change subtitle a bit
+    let sub = $("#header").find("#subtitle");
+    let col = sub.css("color");
+    let rpl = `<span style="text-decoration:line-through;color:rgb(120 120 120)" title="not only anymore"><span style="color:${col};opacity:0.75">Tech</span></span>`;
+    let txt = sub.text().trim().replace('Tech', rpl);
+    sub.html(txt);
+
     scrollHeader();
   }
   function scrollHeader() {
@@ -1019,6 +1027,7 @@
       pens[i].src = src;
     }
   }
+
 </script>
 
 <script>

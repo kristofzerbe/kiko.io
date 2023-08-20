@@ -339,15 +339,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clli72se1001kjynp2yyo8ewf">
+      <div class="article-permalink" id="article-permalink-clljfxgc5001kkonedk272cr2">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/" 
-           data-id="clli72se1001kjynp2yyo8ewf" data-title="Hexo and the IndieWeb (Receiving Webmentions)" />
+           data-id="clljfxgc5001kkonedk272cr2" data-title="Hexo and the IndieWeb (Receiving Webmentions)" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clli72se1001kjynp2yyo8ewf");
+        initPermalink("clljfxgc5001kkonedk272cr2");
     });
 </script>
 
@@ -435,15 +435,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clli72se2001ljynp0d2ldzg6">
+      <div class="article-permalink" id="article-permalink-clljfxgc6001lkone312l24u3">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb-Sending-Webmentions/" 
-           data-id="clli72se2001ljynp0d2ldzg6" data-title="Hexo and the IndieWeb (Sending Webmentions)" />
+           data-id="clljfxgc6001lkone312l24u3" data-title="Hexo and the IndieWeb (Sending Webmentions)" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clli72se2001ljynp0d2ldzg6");
+        initPermalink("clljfxgc6001lkone312l24u3");
     });
 </script>
 
@@ -525,15 +525,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clli72se2001mjynp8ajj4qrw">
+      <div class="article-permalink" id="article-permalink-clljfxgc7001mkone2dvv1mjo">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb/" 
-           data-id="clli72se2001mjynp8ajj4qrw" data-title="Hexo and the IndieWeb" />
+           data-id="clljfxgc7001mkone2dvv1mjo" data-title="Hexo and the IndieWeb" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clli72se2001mjynp8ajj4qrw");
+        initPermalink("clljfxgc7001mkone2dvv1mjo");
     });
 </script>
 
@@ -576,6 +576,12 @@
         
           <li>
             
+              <a href="/post/SVWW-vs-Karlsruhe-2023-08-18/">SVWW vs. Karlsruhe @ 2023-08-18</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/My-Hometown-My-Club/">My Hometown, My Club</a>
             
           </li>
@@ -589,12 +595,6 @@
           <li>
             
               <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">Extension of downupPopup: Back Button, Escape Key &amp; More</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Discoveries-25-Tutorials-HowTo-s/">Discoveries #25 - Tutorials &amp; HowTo&#39;s</a>
             
           </li>
         
@@ -734,6 +734,14 @@
     header.top = parseFloat($("#header-title").css("top"));
     header.photoLinkOpacity = parseFloat($("#header-photo-link").css("opacity"));
     header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
+
+    //change subtitle a bit
+    let sub = $("#header").find("#subtitle");
+    let col = sub.css("color");
+    let rpl = `<span style="text-decoration:line-through;color:rgb(120 120 120)" title="not only anymore"><span style="color:${col};opacity:0.75">Tech</span></span>`;
+    let txt = sub.text().trim().replace('Tech', rpl);
+    sub.html(txt);
+
     scrollHeader();
   }
   function scrollHeader() {
@@ -888,6 +896,7 @@
       pens[i].src = src;
     }
   }
+
 </script>
 
 <script>

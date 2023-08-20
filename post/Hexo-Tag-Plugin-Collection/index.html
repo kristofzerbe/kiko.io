@@ -535,7 +535,7 @@
 
 <p><strong>Live Output:</strong></p>
 
-    <div id="image-compare-43q727">
+    <div id="image-compare-d8ak4e">
       <img class="image-compare image-original" src="/post/Hexo-Tag-Plugin-Collection/example-image_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Hexo-Tag-Plugin-Collection/example-image_PRESET.jpg" alt="" />
     </div>
@@ -544,7 +544,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-43q727"),
+      new ImageCompare(document.getElementById("image-compare-d8ak4e"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -586,12 +586,12 @@
 
 <p><strong>Live Output:</strong></p>
 
-      <div class="image-slider" id="image-slide-l8h80a">
+      <div class="image-slider" id="image-slide-fmg4zl">
         <div><img src="/post/Hexo-Tag-Plugin-Collection/example-image_ORIGINAL.jpg" alt="Original" /></div><div><img src="/post/Hexo-Tag-Plugin-Collection/example-image_PRESET.jpg" alt="Lightroom Preset" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-l8h80a",
+          container: "#image-slide-fmg4zl",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -648,15 +648,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clli72se1001jjynpaew70vi0">
+      <div class="article-permalink" id="article-permalink-clljfxgc5001jkone9dqh6y8k">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-Tag-Plugin-Collection/" 
-           data-id="clli72se1001jjynpaew70vi0" data-title="Hexo Tag Plugin Collection" />
+           data-id="clljfxgc5001jkone9dqh6y8k" data-title="Hexo Tag Plugin Collection" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clli72se1001jjynpaew70vi0");
+        initPermalink("clljfxgc5001jkone9dqh6y8k");
     });
 </script>
 
@@ -943,6 +943,12 @@
         
           <li>
             
+              <a href="/post/SVWW-vs-Karlsruhe-2023-08-18/">SVWW vs. Karlsruhe @ 2023-08-18</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/My-Hometown-My-Club/">My Hometown, My Club</a>
             
           </li>
@@ -956,12 +962,6 @@
           <li>
             
               <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">Extension of downupPopup: Back Button, Escape Key &amp; More</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Discoveries-25-Tutorials-HowTo-s/">Discoveries #25 - Tutorials &amp; HowTo&#39;s</a>
             
           </li>
         
@@ -1101,6 +1101,14 @@
     header.top = parseFloat($("#header-title").css("top"));
     header.photoLinkOpacity = parseFloat($("#header-photo-link").css("opacity"));
     header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
+
+    //change subtitle a bit
+    let sub = $("#header").find("#subtitle");
+    let col = sub.css("color");
+    let rpl = `<span style="text-decoration:line-through;color:rgb(120 120 120)" title="not only anymore"><span style="color:${col};opacity:0.75">Tech</span></span>`;
+    let txt = sub.text().trim().replace('Tech', rpl);
+    sub.html(txt);
+
     scrollHeader();
   }
   function scrollHeader() {
@@ -1255,6 +1263,7 @@
       pens[i].src = src;
     }
   }
+
 </script>
 
 <script>
