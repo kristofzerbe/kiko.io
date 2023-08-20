@@ -1,10 +1,23 @@
 ---
+slug: {{ slug }}
 title: {{ title }}
-subtitle:
+subtitle: 
+date: {{ date }}
 photograph: 
-  file: ''
-  name: ''
-  link: ''
+  file: 
+  name: 
+  link: 
+  socialmedia: /static/images/social-media/{{ slug }}.png
+categories:
+  - xxx
+tags:
+  - xxx
+related:
+  - xxx
+syndication:
+  - host: Mastodon
+    url: 
+hidden: true
 ---
 
 
