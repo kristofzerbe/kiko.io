@@ -1,7 +1,7 @@
 ---
 slug: Pool-Photo-Generator
 title: Pool Photo Generator
-subtitle: How to create multiple device dependend header photos with Node
+subtitle: How to create multiple device dependent header photos with Node
 date: 2023-08-21
 photograph:
   file: 23-05 Holland-0174.jpg
@@ -19,7 +19,7 @@ related:
   - A-New-Blog-Customizing-Hexo
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/110928964865915942
 ---
 
 Since the existence of this blog, the posts all have a custom header image that I generate from my own photos. Already three years ago (omg ... really?) I described in an article how to do this with Hexo: {% post_link "2020/Automatic-Header-Images-in-Hexo" %}.
@@ -225,4 +225,4 @@ generator.generate();
 
 ## Conclusion
 
-Last but not least, in my existing Lightroom workflow, I configured the wonderful [plugin Jeffrey's "Collection Publisher"](http://regex.info/blog/lightroom-goodies/collection-publisher) to create the new pool photos directly through it into the Inbound folder. Once the changes are committed to Github, where the blog is hosted and the deployment action happens, the new header images are created and displayed at [https:\\kiko.io\photos}(https:\\\kiko.io\photos) and are available for a new post.
+Last but not least, in my existing Lightroom workflow, I configured the wonderful [plugin Jeffrey's "Collection Publisher"](http://regex.info/blog/lightroom-goodies/collection-publisher) to create the new pool photos directly through it into the Inbound folder. Once the changes are committed to Github, where the blog is hosted and the deployment action happens, the new header images are created and displayed at [https:\\kiko.io\photos](https:\\\kiko.io\photos) and are available for a new post.
