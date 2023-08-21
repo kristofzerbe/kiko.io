@@ -271,6 +271,106 @@
   
   
      
+<article id="post-2021/Uups-empty-posts" 
+         class="article article-type-post">
+  
+  <div class="article-meta">
+    <a href="/post/Uups-empty-posts/" class="article-date">
+  
+    <time class="published dt-published" data-pagefind-meta="date" 
+          datetime="2021-09-21T11:40:25.000Z">21 Sep 2021</time>
+  
+</a>
+    
+  <div class="article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Uups-empty-posts/">
+        <img class="article-photo" src="/photos/tablet/D70_1408.jpg" alt="Mooring Ropes" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+
+
+  
+    <h1>
+      <a class="article-title"
+         href="/post/Uups-empty-posts/">Uups ... empty posts</a>
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle">
+        Problems with post asset files in Hexo and a solution approach
+    </h2>
+
+      </header>
+    
+    
+    <div class="article-entry">
+      <p>A while ago I wrote about <a href="/post/Automatic-Duplicate-Image-Shadow/" title="Automatic Duplicate Image Shadow">Automatic Duplicate Image Shadow</a> and used <a href="https://indiepen.tech/">indiepen</a> for showing the result of my efforts.</p>
+
+    <div class="alertbox alertbox-note">
+      <p><strong><a href="https://indiepen.tech/">indiepen</a></strong> is a solution for showing code samples without the need of a code sharing platform, like <a href="https://codepen.io/">codepen</a>. Just reference a <code>index.html</code>, <code>main.js</code> and <code>styles.css</code> from wherever you want and indiepen is wrapping it with a neat viewer inside an IFrame.</p>
+
+    </div>
+  
+
+<p>I did it quick and dirty first (sample files in a static folder) and now it was the time to do it right: place the sample files in a subfolder of the post in my Hexo-driven blog solution, in order to reference it from there AND have the possibility to call it directly via <code>./post/my-post/sample</code>.</p>
+<p>The key to achive that in Hexo is the configuration option <code>post_asset_folder: true</code>, which generates a subfolder for all assets with the same name as the post.</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|- _posts</span><br><span class="line">   |- my-blog-post</span><br><span class="line">      |- my-first-asset.jpg</span><br><span class="line">      |- my-second-asset.jpg</span><br><span class="line">   |- my-blog-post.md</span><br></pre></td></tr></table></figure>
+
+<p>My idea regarding the indiepen files was having a subfolder for each indiepen in the post asset folder:</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">|- _posts</span><br><span class="line">   |- my-blog-post</span><br><span class="line">      |- my-first-asset.jpg</span><br><span class="line">      |- my-second-asset.jpg</span><br><span class="line">NEW   |- sample</span><br><span class="line">NEW      |- index.html</span><br><span class="line">NEW      |- main.js</span><br><span class="line">NEW      |- styles.css</span><br><span class="line">   |- my-blog-post.md</span><br></pre></td></tr></table></figure>
+
+<p>Run <code>hexo generate</code>, check that the indiepen was showing up properly and I thought I was done. Wrong … after commiting my changes to Github, where my blog is living, and checking my RSS feed a while after, I saw this:</p>
+<p><img src="/post/Uups-empty-posts/feed-empty-posts.png" alt="Empty posts in feedly"></p>
+<p>Three empty posts…!?</p>
+      
+        <p class="article-more-link">
+          <a href="/post/Uups-empty-posts/#continue">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
+  </div>
+
+      
+      <div class="article-permalink" id="article-permalink-clll6omn60026k2oago57dxbl">
+    <input class="article-permalink-value" value="https://kiko.io/post/Uups-empty-posts/" 
+           data-id="clll6omn60026k2oago57dxbl" data-title="Uups ... empty posts" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clll6omn60026k2oago57dxbl");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
 <article id="post-2021/Photo-Workflow-Re-Thought" 
          class="article article-type-post">
   
@@ -337,15 +437,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllky6mo1001ujqonfhfeaoc2">
+      <div class="article-permalink" id="article-permalink-clll6ommx001tk2oahll13vo2">
     <input class="article-permalink-value" value="https://kiko.io/post/Photo-Workflow-Re-Thought/" 
-           data-id="cllky6mo1001ujqonfhfeaoc2" data-title="Photo Workflow Re-Thought" />
+           data-id="clll6ommx001tk2oahll13vo2" data-title="Photo Workflow Re-Thought" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllky6mo1001ujqonfhfeaoc2");
+        initPermalink("clll6ommx001tk2oahll13vo2");
     });
 </script>
 
@@ -432,15 +532,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cllky6mnl0014jqonbcg8ek9n">
+      <div class="article-permalink" id="article-permalink-clll6omme0013k2oa40b19xsw">
     <input class="article-permalink-value" value="https://kiko.io/post/Application-Specific-Links-on-Windows-10/" 
-           data-id="cllky6mnl0014jqonbcg8ek9n" data-title="Application-Specific Links on Windows 10" />
+           data-id="clll6omme0013k2oa40b19xsw" data-title="Application-Specific Links on Windows 10" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllky6mnl0014jqonbcg8ek9n");
+        initPermalink("clll6omme0013k2oa40b19xsw");
     });
 </script>
 
@@ -517,15 +617,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllky6mo1001tjqon121pboo8">
+      <div class="article-permalink" id="article-permalink-clll6ommw001sk2oa1oej29xd">
     <input class="article-permalink-value" value="https://kiko.io/post/Pattern-for-dynamic-Hexo-pages/" 
-           data-id="cllky6mo1001tjqon121pboo8" data-title="Pattern for dynamic Hexo pages" />
+           data-id="clll6ommw001sk2oa1oej29xd" data-title="Pattern for dynamic Hexo pages" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllky6mo1001tjqon121pboo8");
+        initPermalink("clll6ommw001sk2oa1oej29xd");
     });
 </script>
 
@@ -613,15 +713,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cllky6moa0029jqondqxq8w1n">
+      <div class="article-permalink" id="article-permalink-clll6omnb0028k2oacgiq1wuy">
     <input class="article-permalink-value" value="https://kiko.io/post/Visualize-the-codebase-of-your-GitHub-repo/" 
-           data-id="cllky6moa0029jqondqxq8w1n" data-title="Visualize the codebase of your GitHub repo" />
+           data-id="clll6omnb0028k2oacgiq1wuy" data-title="Visualize the codebase of your GitHub repo" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllky6moa0029jqondqxq8w1n");
+        initPermalink("clll6omnb0028k2oacgiq1wuy");
     });
 </script>
 
@@ -708,15 +808,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cllky6mnu001ljqonai95dn3p">
+      <div class="article-permalink" id="article-permalink-clll6ommq001kk2oa9ttx7u0x">
     <input class="article-permalink-value" value="https://kiko.io/post/GitHubs-Magic-Dot/" 
-           data-id="cllky6mnu001ljqonai95dn3p" data-title="GitHubs Magic Dot" />
+           data-id="clll6ommq001kk2oa9ttx7u0x" data-title="GitHubs Magic Dot" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllky6mnu001ljqonai95dn3p");
+        initPermalink("clll6ommq001kk2oa9ttx7u0x");
     });
 </script>
 
@@ -797,15 +897,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllky6mnp001ajqon5j7e5bnf">
+      <div class="article-permalink" id="article-permalink-clll6ommj0019k2oa7kfifi9t">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-12-Tutorials/" 
-           data-id="cllky6mnp001ajqon5j7e5bnf" data-title="Discoveries #12 - Tutorials" />
+           data-id="clll6ommj0019k2oa7kfifi9t" data-title="Discoveries #12 - Tutorials" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllky6mnp001ajqon5j7e5bnf");
+        initPermalink("clll6ommj0019k2oa7kfifi9t");
     });
 </script>
 
@@ -893,110 +993,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cllky6mo2001wjqonci2z0d3v">
+      <div class="article-permalink" id="article-permalink-clll6ommy001vk2oa16u531il">
     <input class="article-permalink-value" value="https://kiko.io/post/Running-Rollup-with-Gulp/" 
-           data-id="cllky6mo2001wjqonci2z0d3v" data-title="Running Rollup with Gulp" />
+           data-id="clll6ommy001vk2oa16u531il" data-title="Running Rollup with Gulp" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllky6mo2001wjqonci2z0d3v");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2021/Automatic-Duplicate-Image-Shadow" 
-         class="article article-type-post">
-  
-  <div class="article-meta">
-    <a href="/post/Automatic-Duplicate-Image-Shadow/" class="article-date">
-  
-    <time class="published dt-published" data-pagefind-meta="date" 
-          datetime="2021-07-16T15:45:30.000Z">16 Jul 2021</time>
-  
-</a>
-    
-  <div class="article-category category-javascript">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/Automatic-Duplicate-Image-Shadow/">
-        <img class="article-photo" src="/photos/tablet/18-09 Kroatien-0349.jpg" alt="Colorful Twig" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-
-
-        
-
-
-  
-    <h1>
-      <a class="article-title"
-         href="/post/Automatic-Duplicate-Image-Shadow/">Automatic Duplicate Image Shadow</a>
-    </h1>
-  
-
-        
-    <h2 class="article-subtitle">
-        Drop an image shadow with the image itself via JavaScript
-    </h2>
-
-      </header>
-    
-    
-    <div class="article-entry">
-      <p>At the beginning of the year I wrote a <a href="/post/Use-a-duplicate-image-to-drop-a-shadow/" title="Use a duplicate image to drop a shadow">post</a> about showing a shadow on an image with the image itself instead of using <code>box-shadow</code>, to make the image appear glass-like.</p>
-<p><img src="/post/Automatic-Duplicate-Image-Shadow/image-shadow.jpg" alt="Image Shadow"></p>
-<p>Nice trick, but it would be much easier to have a little script, that does this automatically for all images on a page. In this post I will show you how to achieve this.</p>
-      
-        <p class="article-more-link">
-          <a href="/post/Automatic-Duplicate-Image-Shadow/#continue">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Imaging/" rel="tag">Imaging</a></li></ul>  
-  </div>
-
-      
-  
-  
-    <div class="article-syndication">
-      
-          <a class="syndication-link u-syndication fab fa-twitter" 
-            href="https://twitter.com/kristofz/status/1416095794927751175" rel="syndication" target="_blank"></a>
-      
-    </div>
-  
-
-      <div class="article-permalink" id="article-permalink-cllky6mnm0015jqoneyawgckj">
-    <input class="article-permalink-value" value="https://kiko.io/post/Automatic-Duplicate-Image-Shadow/" 
-           data-id="cllky6mnm0015jqoneyawgckj" data-title="Automatic Duplicate Image Shadow" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("cllky6mnm0015jqoneyawgckj");
+        initPermalink("clll6ommy001vk2oa16u531il");
     });
 </script>
 
@@ -1045,6 +1050,12 @@
         
           <li>
             
+              <a href="/post/Pool-Photo-Generator/">Pool Photo Generator</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/SVWW-vs-Karlsruhe-2023-08-18/">SVWW vs. Karlsruhe @ 2023-08-18</a>
             
           </li>
@@ -1058,12 +1069,6 @@
           <li>
             
               <a href="/post/CONTINUE-READING-Link-Auto-Scrolling-on-the-called-page/">CONTINUE READING Link &amp; Auto Scrolling on the called page</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">Extension of downupPopup: Back Button, Escape Key &amp; More</a>
             
           </li>
         
