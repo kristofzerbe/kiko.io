@@ -3,7 +3,7 @@ title: "#Link | EXIFR: Incredible Image Metadata Library for JavaScript"
 date: 2023-08-21
 syndication: 
 - host: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/110927684459168884
 ---
 
 Two hearts live in my chest: web development and photography. When it comes to a combination of the two topics, I get very excited. For a small automation function of my blog, I needed a way to read the EXIF or IPTC data via Node/JavaScript from a JPG image and found EXIFR by [Mike Kovarik](https://github.com/MikeKovarik).
