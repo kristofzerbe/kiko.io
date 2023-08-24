@@ -269,29 +269,31 @@
 
 
   
-  
      
-<article id="post-2021/How-to-prevent-duplicate-events" 
+<article id="post-2021/Spice-Up-Windows-Terminal" 
          class="article article-type-post">
   
   <div class="article-meta">
-    <a href="/post/How-to-prevent-duplicate-events/" class="article-date">
+    <a href="/post/Spice-Up-Windows-Terminal/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" 
-          datetime="2021-01-07T16:22:25.000Z">07 Jan 2021</time>
+    <time class="updated dt-updated" data-pagefind-meta="date" 
+          datetime="2021-04-16T09:55:15.000Z">16 Apr 2021</time>
+    <br>
   
+  <time class="published dt-published" data-pagefind-meta="date" 
+        datetime="2020-12-24T14:03:15.000Z">24 Dec 2020</time>
 </a>
     
-  <div class="article-category category-javascript">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  <div class="article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
   </div>
 
   </div>
   
   <div class="article-inner">
     
-    <a href="/post/How-to-prevent-duplicate-events/">
-        <img class="article-photo" src="/photos/tablet/DSC_7239.jpg" alt="Whirling Spark I" />
+    <a href="/post/Spice-Up-Windows-Terminal/">
+        <img class="article-photo" src="/photos/tablet/DSC_8860.jpg" alt="Illuminated Kurhaus I" />
     </a>
 
     
@@ -308,24 +310,26 @@
   
     <h1>
       <a class="article-title"
-         href="/post/How-to-prevent-duplicate-events/">How to prevent duplicate events</a>
+         href="/post/Spice-Up-Windows-Terminal/">Spice Up Windows Terminal</a>
     </h1>
   
 
         
+    <h2 class="article-subtitle">
+        How to make Powershell a little prettier
+    </h2>
+
       </header>
     
     
     <div class="article-entry">
-      <p>I’m working on a new web app that contains a sliding out panel with some additional information on the selected element. This panel can be closed by the user via the ESC key. The implementation on initializing the panel seems very straight forward:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Panel</span>() &#123;</span><br><span class="line">  <span class="title function_">init</span>(<span class="params"></span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;keydown&quot;</span>, <span class="keyword">function</span>(<span class="params">event</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span>(event.<span class="property">key</span> === <span class="string">&quot;Escape&quot;</span>)&#123;</span><br><span class="line">        <span class="comment">//close the panel</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Problem is: the panel, which is part of the basic HTML, will be initialized with its content and functionality in a ES6 class. So … on every init, another event listener is added.</p>
-<p>You can easily figure that out, by calling <code>getEventListeners(document)</code> in the Chrome DevTools:</p>
-<p><img src="/post/How-to-prevent-duplicate-events/chromedevtools-multiple-listeners.png" alt="Chrome DevTools: Multiple Event Listeners"></p>
+      <p>Working with the PowerShell in 2020 means fun, because of the new <a href="https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701"><strong>Windows Terminal</strong> (get it from Windows Store)</a>. It has more power as the old Powershell Console and it is visually adaptable to your personal taste, by installing the wonderful theming engine <a href="https://github.com/JanDeDobbeleer/oh-my-posh"><strong>oh-my-posh</strong> from Jan De Dobbeleer</a>.</p>
+<p><img src="/post/Spice-Up-Windows-Terminal/terminal-original.png" alt="Original Terminal"></p>
+<p><img src="/post/Spice-Up-Windows-Terminal/terminal-oh-my-posh.png" alt="Terminal with oh-my-posh"></p>
+<p>To get Oh-My-Posh properly run, there are several steps to do I want to show here in a nutshell…</p>
       
         <p class="article-more-link">
-          <a href="/post/How-to-prevent-duplicate-events/#continue">Continue reading ...</a>
+          <a href="/post/Spice-Up-Windows-Terminal/#continue">Continue reading ...</a>
         </p>
       
     </div>
@@ -333,19 +337,19 @@
     <footer class="article-footer">      
       
   <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Events/" rel="tag">Events</a></li></ul>  
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PowerShell/" rel="tag">PowerShell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Theming/" rel="tag">Theming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>  
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clll7711g001plhol0a2q4kwj">
-    <input class="article-permalink-value" value="https://kiko.io/post/How-to-prevent-duplicate-events/" 
-           data-id="clll7711g001plhol0a2q4kwj" data-title="How to prevent duplicate events" />
+      <div class="article-permalink" id="article-permalink-cllovky7s001zk0oy143ibmft">
+    <input class="article-permalink-value" value="https://kiko.io/post/Spice-Up-Windows-Terminal/" 
+           data-id="cllovky7s001zk0oy143ibmft" data-title="Spice Up Windows Terminal" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clll7711g001plhol0a2q4kwj");
+        initPermalink("cllovky7s001zk0oy143ibmft");
     });
 </script>
 
@@ -361,9 +365,8 @@
   <div class="article-meta">
     <a href="/post/Utilize-a-repository-of-reusable-ES6-template-literals/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" 
-          datetime="2021-01-03T12:29:01.000Z">03 Jan 2021</time>
-  
+  <time class="published dt-published" data-pagefind-meta="date" 
+        datetime="2021-01-03T12:29:01.000Z">03 Jan 2021</time>
 </a>
     
   <div class="article-category category-javascript">
@@ -424,15 +427,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clll7711q0025lhol3j93cmoc">
+      <div class="article-permalink" id="article-permalink-cllovky7u0025k0oy3a9cen89">
     <input class="article-permalink-value" value="https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/" 
-           data-id="clll7711q0025lhol3j93cmoc" data-title="Utilize a repository of reusable ES6 template literals" />
+           data-id="cllovky7u0025k0oy3a9cen89" data-title="Utilize a repository of reusable ES6 template literals" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clll7711q0025lhol3j93cmoc");
+        initPermalink("cllovky7u0025k0oy3a9cen89");
     });
 </script>
 
@@ -448,9 +451,8 @@
   <div class="article-meta">
     <a href="/post/Discoveries-5/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" 
-          datetime="2020-12-19T11:12:44.000Z">19 Dec 2020</time>
-  
+  <time class="published dt-published" data-pagefind-meta="date" 
+        datetime="2020-12-19T11:12:44.000Z">19 Dec 2020</time>
 </a>
     
   <div class="article-category category-misc">
@@ -509,15 +511,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clll7710k000plholf7r10map">
+      <div class="article-permalink" id="article-permalink-cllovky6v000pk0oy36qi4gwr">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-5/" 
-           data-id="clll7710k000plholf7r10map" data-title="Discoveries #5" />
+           data-id="cllovky6v000pk0oy36qi4gwr" data-title="Discoveries #5" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clll7710k000plholf7r10map");
+        initPermalink("cllovky6v000pk0oy36qi4gwr");
     });
 </script>
 
@@ -533,9 +535,8 @@
   <div class="article-meta">
     <a href="/post/Indian-Presets-for-Lightroom/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" 
-          datetime="2020-10-28T13:07:20.000Z">28 Oct 2020</time>
-  
+  <time class="published dt-published" data-pagefind-meta="date" 
+        datetime="2020-10-28T13:07:20.000Z">28 Oct 2020</time>
 </a>
     
   <div class="article-category category-photo-editing">
@@ -590,15 +591,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clll7710o000ulholf8b59brw">
+      <div class="article-permalink" id="article-permalink-cllovky6y000uk0oyhda07etx">
     <input class="article-permalink-value" value="https://kiko.io/post/Indian-Presets-for-Lightroom/" 
-           data-id="clll7710o000ulholf8b59brw" data-title="Indian Presets for Lightroom" />
+           data-id="cllovky6y000uk0oyhda07etx" data-title="Indian Presets for Lightroom" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clll7710o000ulholf8b59brw");
+        initPermalink("cllovky6y000uk0oyhda07etx");
     });
 </script>
 
@@ -614,9 +615,8 @@
   <div class="article-meta">
     <a href="/post/Israeli-Presets-for-Lightroom/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" 
-          datetime="2020-10-27T14:07:20.000Z">27 Oct 2020</time>
-  
+  <time class="published dt-published" data-pagefind-meta="date" 
+        datetime="2020-10-27T14:07:20.000Z">27 Oct 2020</time>
 </a>
     
   <div class="article-category category-photo-editing">
@@ -672,15 +672,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clll7710o000vlholeiww3jeg">
+      <div class="article-permalink" id="article-permalink-cllovky6y000vk0oyele83m3h">
     <input class="article-permalink-value" value="https://kiko.io/post/Israeli-Presets-for-Lightroom/" 
-           data-id="clll7710o000vlholeiww3jeg" data-title="Israeli Presets for Lightroom" />
+           data-id="cllovky6y000vk0oyele83m3h" data-title="Israeli Presets for Lightroom" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clll7710o000vlholeiww3jeg");
+        initPermalink("cllovky6y000vk0oyele83m3h");
     });
 </script>
 
@@ -696,9 +696,8 @@
   <div class="article-meta">
     <a href="/post/Folder-based-publishing-in-Lightroom/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" 
-          datetime="2020-10-26T12:28:59.000Z">26 Oct 2020</time>
-  
+  <time class="published dt-published" data-pagefind-meta="date" 
+        datetime="2020-10-26T12:28:59.000Z">26 Oct 2020</time>
 </a>
     
   <div class="article-category category-photo-editing">
@@ -756,15 +755,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clll7710m000rlholdx8i4bz1">
+      <div class="article-permalink" id="article-permalink-cllovky6w000rk0oy1mq16787">
     <input class="article-permalink-value" value="https://kiko.io/post/Folder-based-publishing-in-Lightroom/" 
-           data-id="clll7710m000rlholdx8i4bz1" data-title="Folder based publishing in Lightroom" />
+           data-id="cllovky6w000rk0oy1mq16787" data-title="Folder based publishing in Lightroom" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clll7710m000rlholdx8i4bz1");
+        initPermalink("cllovky6w000rk0oy1mq16787");
     });
 </script>
 
@@ -780,9 +779,8 @@
   <div class="article-meta">
     <a href="/post/Discoveries-4/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" 
-          datetime="2020-10-10T13:27:47.000Z">10 Oct 2020</time>
-  
+  <time class="published dt-published" data-pagefind-meta="date" 
+        datetime="2020-10-10T13:27:47.000Z">10 Oct 2020</time>
 </a>
     
   <div class="article-category category-misc">
@@ -841,15 +839,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clll7710k000olholbujn83vc">
+      <div class="article-permalink" id="article-permalink-cllovky6v000ok0oy6skg7fgy">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-4/" 
-           data-id="clll7710k000olholbujn83vc" data-title="Discoveries #4" />
+           data-id="cllovky6v000ok0oy6skg7fgy" data-title="Discoveries #4" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clll7710k000olholbujn83vc");
+        initPermalink("cllovky6v000ok0oy6skg7fgy");
     });
 </script>
 
@@ -865,9 +863,8 @@
   <div class="article-meta">
     <a href="/post/Implement-source-switch-for-SPA/" class="article-date">
   
-    <time class="published dt-published" data-pagefind-meta="date" 
-          datetime="2020-10-04T15:01:02.000Z">04 Oct 2020</time>
-  
+  <time class="published dt-published" data-pagefind-meta="date" 
+        datetime="2020-10-04T15:01:02.000Z">04 Oct 2020</time>
 </a>
     
   <div class="article-category category-javascript">
@@ -926,15 +923,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clll7710n000tlhol88fcds1q">
+      <div class="article-permalink" id="article-permalink-cllovky6x000tk0oycszq9gpv">
     <input class="article-permalink-value" value="https://kiko.io/post/Implement-source-switch-for-SPA/" 
-           data-id="clll7710n000tlhol88fcds1q" data-title="Implement source switch for SPA" />
+           data-id="cllovky6x000tk0oycszq9gpv" data-title="Implement source switch for SPA" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clll7710n000tlhol88fcds1q");
+        initPermalink("cllovky6x000tk0oycszq9gpv");
     });
 </script>
 
