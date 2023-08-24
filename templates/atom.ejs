@@ -32,14 +32,14 @@
         <%_ let slugArray = post.slug.split("/") _%>
         <%_ let slug = slugArray[slugArray.length - 1] _%>
         <id><%= post.permalink %></id>
-        <%_ if (post.dateOriginal) { _%>
+        <%_ if (post.updated > post.date) { _%>
         <title>Updated: <%= post.title %></title>
-        <published><%= moment(post.dateOriginal).toISOString() %></published>
+        <published><%= moment(post.date).toISOString() %></published>
         <updated><%= moment(post.date).toISOString() %></updated>
         <%_ } else { _%>
         <title><%= post.title %></title>
         <published><%= moment(post.date).toISOString() %></published>
-        <updated><%= moment(post.date).toISOString() %></updated>
+        <updated><%= moment(post.updated).toISOString() %></updated>
         <%_ } _%>
         <link href="<%= post.permalink %>"/>
         <%_ if (post.photograph) { _%>

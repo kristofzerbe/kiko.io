@@ -2,8 +2,8 @@
 slug: Pagefind-UI-and-URL-Parameters
 title: Pagefind UI and URL Parameters
 subtitle: 
-dateOriginal: 2023-01-31 11:04:00
-date: 2023-02-03 11:51:00
+date: 2023-01-31 11:04:00
+updated: 2023-02-03 11:51:00
 photograph:
   file: D50_7076.jpg
   name: German Roofage

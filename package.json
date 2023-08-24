@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "generate": "grunt generate",
-    "build": "grunt build",
-    "all": "grunt all && npx pagefind",
-    "start": "hexo generate && npx pagefind && hexo server"
+    "build": "grunt && hexo generate && npx pagefind",
+    "generate": "hexo generate && npx pagefind",        
+    "start": "hexo generate && npx pagefind && hexo server",
+    "all": "hexo clean && hexo generate && npx pagefind && hexo server"
   },
   "hexo": {
     "version": "6.3.0"

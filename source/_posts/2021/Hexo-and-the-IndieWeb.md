@@ -9,7 +9,7 @@ photograph:
   name: Steel Flower
   link: 'https://500px.com/photo/82409209'
   socialmedia: /static/images/social-media/Hexo-and-the-IndieWeb.png
-series: IndieWeb
+series: 'IndieWeb'
 categories:
   - Tools
 tags:

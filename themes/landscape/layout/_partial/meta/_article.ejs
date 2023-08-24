@@ -6,11 +6,10 @@
   },
   "headline": "<%= meta.title %>",
   "description": "<%= meta.description %>",
-  <% if (page.dateOriginal) { %> 
-    "datePublished": "<%= moment(page.dateOriginal).utc().format() %>",
-    "dateModified": "<%= moment(page.date).utc().format() %>",
+  "datePublished": "<%= moment(page.date).utc().format() %>",
+  <% if (page.updated > page.date) { %> 
+    "dateModified": "<%= moment(page.updated).utc().format() %>",
   <% } else { %>
-    "datePublished": "<%= moment(page.date).utc().format() %>",
     "dateModified": "<%= moment(page.date).utc().format() %>",  
   <% } %>
   "image": {

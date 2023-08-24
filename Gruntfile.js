@@ -172,9 +172,5 @@ module.exports = function(grunt){
   grunt.registerTask('styles', ['concat:asset_styles', 'cssmin']);
   grunt.registerTask('scripts', ['concat:asset_scripts', 'uglify']);
   grunt.registerTask('default', ['concat', 'cssmin', 'uglify', 'copy', '_clean:tmp']);
-  grunt.registerTask('all', ['concat', 'cssmin', 'uglify', 'copy', '_clean:tmp', 'hexo:clean', 'hexo:generate', 'exec:pagefind']);
-  grunt.registerTask('complete', ['gitclone', 'concat', 'cssmin', 'uglify', 'copy', '_clean:tmp', 'hexo:clean', 'hexo:generate', 'exec:pagefind']);
-  grunt.registerTask('build', ['hexo:clean', 'hexo:generate', 'exec:pagefind']);
-  grunt.registerTask('serve', ['hexo:clean', 'hexo:generate', 'exec:pagefind', 'hexo:server']);
-  grunt.registerTask('generate', ['hexo:generate', 'exec:pagefind']);
+  grunt.registerTask('complete', ['gitclone', 'concat', 'cssmin', 'uglify', 'copy', '_clean:tmp']);
 };

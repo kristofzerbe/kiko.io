@@ -3,8 +3,8 @@ alias: /categories/Tools/Spice-Up-Windows-Terminal/index.html
 slug: Spice-Up-Windows-Terminal
 title: Spice Up Windows Terminal
 subtitle: How to make Powershell a little prettier
-dateOriginal: 2020-12-24T15:03:15.000Z
-date: 2021-04-16T11:55:15.000Z
+date: 2020-12-24T15:03:15.000Z
+updated: 2021-04-16T11:55:15.000Z
 photograph:
   file: DSC_8860.jpg
   name: Illuminated Kurhaus I

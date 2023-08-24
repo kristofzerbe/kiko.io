@@ -1,12 +1,9 @@
 <a href="<%- url_for(post.path) %>" class="<%= class_name %>">
-  <% if (post.dateOriginal) { %>
+  <% if (post.updated > post.date) { %>
     <time class="updated dt-updated" data-pagefind-meta="date" 
-          datetime="<%= date_xml(post.date) %>"><%= date(post.date, date_format) %></time>
+          datetime="<%= date_xml(post.updated) %>"><%= date(post.updated, date_format) %></time>
     <br>
-    <time class="published dt-published" data-pagefind-meta="date" 
-          datetime="<%= date_xml(post.dateOriginal) %>"><%= date(post.dateOriginal, date_format) %></time>
-  <% } else { %>
-    <time class="published dt-published" data-pagefind-meta="date" 
-          datetime="<%= date_xml(post.date) %>"><%= date(post.date, date_format) %></time>
   <% } %>
+  <time class="published dt-published" data-pagefind-meta="date" 
+        datetime="<%= date_xml(post.date) %>"><%= date(post.date, date_format) %></time>
 </a>

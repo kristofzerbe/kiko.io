@@ -3,9 +3,9 @@
     <h3 class="widget-title"><%= __('recent_posts') %></h3>
     <div class="widget">
       <ul>
-        <% site.posts.sort('date', -1).limit(theme.recent_posts_count).each(function(post){ %>
+        <% site.posts.sort('updated', -1).limit(theme.recent_posts_count).each(function(post){ %>
           <li>
-            <% if (post.dateOriginal) { %>
+            <% if (post.updated > post.date) { %>
               <a href="<%- url_for(post.path) %>"><b>Update: </b><%= post.title %></a>
             <% } else { %>
               <a href="<%- url_for(post.path) %>"><%= post.title %></a>

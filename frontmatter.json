@@ -1,13 +1,16 @@
 {
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
-  "frontMatter.framework.id": "other",
+  "frontMatter.framework.id": "hexo",
   "frontMatter.framework.startCommand": "hexo server",
   "frontMatter.preview.host": "http://localhost:4000/",
   "frontMatter.preview.pathName": "post",
   "frontMatter.templates.folder": "scaffolds",
-  "frontMatter.content.publicFolder": "",
+  "frontMatter.content.publicFolder": {
+    "path": "static",
+    "relative": true
+  },
   "frontMatter.content.fmHighlight": true,
-  "frontMatter.content.wysiwyg": false,
+  "frontMatter.content.wysiwyg": true,
   "frontMatter.content.pageFolders": [
     {
       "title": "Posts",
@@ -21,14 +24,14 @@
   ],
   "frontMatter.content.sorting": [
     {
-      "title": "PublishDate (asc)",
-      "name": "date",
+      "title": "Updated (asc)",
+      "name": "updated",
       "order": "asc",
       "type": "date"
     },
     {
-      "title": "PublishDate (desc)",
-      "name": "date",
+      "title": "Updated (desc)",
+      "name": "updated",
       "order": "desc",
       "type": "date"
     }
@@ -56,21 +59,32 @@
           "single": true
         },
         {
+          "title": "Alias",
+          "name": "alias",
+          "type": "string",
+          "single": true
+        },
+        {
           "title": "Title",
           "name": "title",
           "type": "string",
           "single": true
         },
         {
-          "title": "Subitle",
+          "title": "Subtitle",
           "name": "subtitle",
           "type": "string"
         },
         {
-          "title": "Publishing date",
+          "title": "Date",
           "name": "date",
           "type": "datetime",
-          "isPublishDate": true,
+          "isPublishDate": true
+        },
+        {
+          "title": "Updated",
+          "name": "updated",
+          "type": "datetime",
           "isModifiedDate": true
         },
         {
@@ -106,16 +120,8 @@
         {
           "title": "Series",
           "name": "series",
-          "type": "choice",
-          "choices": [
-            "Golem",
-            "Lightroom Presets",
-            "Discoveries",
-            "Great Finds",
-            "Step By Step",
-            "IndieWeb",
-            "A New Blog"
-          ]
+          "type": "taxonomy",
+          "taxonomyId": "series"
         },
         {
           "title": "Categories",
@@ -202,7 +208,8 @@
     "WebAPI",
     "Windows",
     "Workflow",
-    "jQuery"
+    "jQuery",
+    "SVWW"
   ],
   "frontMatter.taxonomy.categories": [
     "Photo-Editing",
@@ -211,6 +218,22 @@
     "SQL",
     "Misc",
     "JavaScript",
-    ".NET"
+    ".NET",
+    "Football"
+  ],
+  "frontMatter.taxonomy.customTaxonomy": [
+    {
+      "id": "series",
+      "options": [
+        "A New Blog",
+        "Discoveries",
+        "Great Finds",
+        "Golem",
+        "IndieWeb",
+        "Lightroom Presets",
+        "Step By Step",
+        "SV Wehen Wiesbaden"
+      ]
+    }
   ]
 }

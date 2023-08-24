@@ -8,7 +8,7 @@ photograph:
   name: Dicker Anton
   link: 'https://500px.com/photo/172323659'
   socialmedia: /static/images/social-media/Checker-Plus-Gmail-in-better.png
-series: Golem
+series: 'Golem'
 golem:
   title: 'Checker Plus - Gmail in besser'
   url: 'https://www.golem.de/news/checker-plus-gmail-in-besser-2112-161804.html'
