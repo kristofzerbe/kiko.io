@@ -9,12 +9,12 @@ photograph:
   link: https://500px.com/photo/1073875596
   socialmedia: /static/images/social-media/Discoveries-Workflow.png
 series: Step By Step
-categories:
-  - xxx
-tags:
-  - xxx
+categories: 
+  -
+tags: 
+  -
 related:
-  - xxx
+  - 
 syndication:
   - host: Mastodon
     url: null

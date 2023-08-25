@@ -1,10 +1,13 @@
 {
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.dashboard.openOnStart": true,
+  "frontMatter.site.baseURL": "https//kiko.io",
   "frontMatter.framework.id": "hexo",
   "frontMatter.framework.startCommand": "hexo server",
   "frontMatter.preview.host": "http://localhost:4000/",
   "frontMatter.preview.pathName": "post",
-  "frontMatter.templates.folder": "scaffolds",
+  "frontMatter.templates.enabled": true,
+  "frontMatter.templates.folder": "./scaffolds",
   "frontMatter.content.publicFolder": {
     "path": "static",
     "relative": true
@@ -47,6 +50,10 @@
     }
   ],
   "frontMatter.taxonomy.dateFormat": "yyyy-MM-DD",
+  "frontMatter.taxonomy.indentArrays": true,
+  "frontMatter.taxonomy.noPropertyValueQuotes": [
+    "series"
+  ],
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",
@@ -143,7 +150,7 @@
           "name": "syndication",
           "type": "block",
           "fieldGroup": [
-            "post_syndication"
+            "syndication"
           ]
         },
         {
@@ -156,7 +163,7 @@
   ],
   "frontMatter.taxonomy.fieldGroups": [
     {
-      "id": "post_syndication",
+      "id": "syndication",
       "labelField": "host",
       "fields": [
         {

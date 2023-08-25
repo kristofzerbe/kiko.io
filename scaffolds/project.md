@@ -8,13 +8,13 @@ photograph:
   name: 
   link: 
   socialmedia: /static/images/social-media/{{ slug }}.png
-project: xxx
+project: 
 categories:
-  - xxx
+  - 
 tags:
-  - xxx
+  - 
 related:
-  - xxx
+  - 
 ---
 
 

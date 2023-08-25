@@ -14,11 +14,11 @@ golem:
   url: 
   published: 
 categories:
-  - xxx
+  - 
 tags:
-  - xxx
+  - 
 related:
-  - xxx
+  - 
 syndication:
   - host: Mastodon
     url: 
