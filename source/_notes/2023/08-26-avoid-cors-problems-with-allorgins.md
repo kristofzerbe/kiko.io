@@ -1,9 +1,9 @@
 ---
-title: "#Link | Avoid CORS problems with allOrgins"
+title: "#Link | Avoid CORS problems with allOrigins"
 date: 2023-08-26
 syndication: 
 - host: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/110955054803816724
 ---
 
 Ever got crazy on CORS problems when using an API? While examine the code of Christian Heilmann's WebComponent [**github-include**](https://github.com/codepo8/github-include/tree/main), I stumbled over his fetching URL towards GitHub: 
