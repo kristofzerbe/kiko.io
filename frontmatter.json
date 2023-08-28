@@ -1,14 +1,17 @@
 {
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
   "frontMatter.dashboard.openOnStart": true,
+  "frontMatter.dashboard.content.card.fields.title": "title",
+  "frontMatter.dashboard.content.card.fields.description": "subtitle",
+  "frontMatter.dashboard.content.pagination": 24,
   "frontMatter.site.baseURL": "https//kiko.io",
   "frontMatter.framework.id": "hexo",
   "frontMatter.framework.startCommand": "hexo server",
   "frontMatter.preview.host": "http://localhost:4000/",
   "frontMatter.preview.pathName": "post",
   "frontMatter.content.publicFolder": {
-    "path": "static",
-    "relative": true
+    "path": "./static/photos/tablet",
+    "relative": false
   },
   "frontMatter.content.fmHighlight": true,
   "frontMatter.content.wysiwyg": true,
@@ -100,8 +103,9 @@
             {
               "title": "File",
               "name": "file",
-              "type": "string",
-              "single": true
+              "single": true,
+              "type": "image",
+              "isPreviewImage": true
             },
             {
               "title": "Name",
@@ -118,8 +122,7 @@
               "title": "Social Media",
               "name": "socialmedia",
               "type": "image",
-              "default": "{{sm}}",
-              "isPreviewImage": true
+              "default": "{{sm}}"
             }
           ]
         },
