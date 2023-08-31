@@ -359,20 +359,20 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz4h44y002pjyoidido6hck">
+      <div class="article-permalink" id="article-permalink-cllz4jwvh002plln51yjrc18b">
     <input class="article-permalink-value" value="https://kiko.io/post/One-mouse-to-rule-them-all/" 
-           data-id="cllz4h44y002pjyoidido6hck" data-title="One mouse to rule them all" />
+           data-id="cllz4jwvh002plln51yjrc18b" data-title="One mouse to rule them all" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h44y002pjyoidido6hck");
+        initPermalink("cllz4jwvh002plln51yjrc18b");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-cllz4h44y002pjyoidido6hck">
+        <div class="article-golem" id="article-golem-cllz4jwvh002plln51yjrc18b">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 30 Sep 2022 
     in German under the title <span style="font-weight:bold;">&laquo;Eine Maus für alles&raquo;</span>&nbsp;&nbsp;  
@@ -1026,8 +1026,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

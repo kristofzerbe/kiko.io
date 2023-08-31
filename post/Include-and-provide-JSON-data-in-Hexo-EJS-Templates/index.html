@@ -390,15 +390,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cllz4h4560033jyoib5ws6218">
+      <div class="article-permalink" id="article-permalink-cllz4jwvo0033lln52kfpeo33">
     <input class="article-permalink-value" value="https://kiko.io/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/" 
-           data-id="cllz4h4560033jyoib5ws6218" data-title="Include and provide JSON data in Hexo EJS Templates" />
+           data-id="cllz4jwvo0033lln52kfpeo33" data-title="Include and provide JSON data in Hexo EJS Templates" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h4560033jyoib5ws6218");
+        initPermalink("cllz4jwvo0033lln52kfpeo33");
     });
 </script>
 
@@ -1049,8 +1049,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

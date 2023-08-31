@@ -394,15 +394,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz4h44d001sjyoihlkshxpz">
+      <div class="article-permalink" id="article-permalink-cllz4jwv0001slln56luq7oz0">
     <input class="article-permalink-value" value="https://kiko.io/post/Pattern-for-dynamic-Hexo-pages/" 
-           data-id="cllz4h44d001sjyoihlkshxpz" data-title="Pattern for dynamic Hexo pages" />
+           data-id="cllz4jwv0001slln56luq7oz0" data-title="Pattern for dynamic Hexo pages" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h44d001sjyoihlkshxpz");
+        initPermalink("cllz4jwv0001slln56luq7oz0");
     });
 </script>
 
@@ -1046,8 +1046,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

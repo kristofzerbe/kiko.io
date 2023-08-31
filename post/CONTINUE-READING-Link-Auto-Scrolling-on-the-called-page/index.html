@@ -374,15 +374,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cllz4h451002wjyoi9ajb3lst">
+      <div class="article-permalink" id="article-permalink-cllz4jwvl002wlln5ge9n5h6p">
     <input class="article-permalink-value" value="https://kiko.io/post/CONTINUE-READING-Link-Auto-Scrolling-on-the-called-page/" 
-           data-id="cllz4h451002wjyoi9ajb3lst" data-title="CONTINUE READING Link &amp; Auto Scrolling on the called page" />
+           data-id="cllz4jwvl002wlln5ge9n5h6p" data-title="CONTINUE READING Link &amp; Auto Scrolling on the called page" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h451002wjyoi9ajb3lst");
+        initPermalink("cllz4jwvl002wlln5ge9n5h6p");
     });
 </script>
 
@@ -1029,8 +1029,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

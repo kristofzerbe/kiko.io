@@ -370,15 +370,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz4h44l0024jyoi09x23j0a">
+      <div class="article-permalink" id="article-permalink-cllz4jwv60024lln5ev976o2e">
     <input class="article-permalink-value" value="https://kiko.io/post/Use-and-manage-multiple-Node-js-versions-on-Windows-10/" 
-           data-id="cllz4h44l0024jyoi09x23j0a" data-title="Use and manage multiple Node.js versions on Windows 10" />
+           data-id="cllz4jwv60024lln5ev976o2e" data-title="Use and manage multiple Node.js versions on Windows 10" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h44l0024jyoi09x23j0a");
+        initPermalink("cllz4jwv60024lln5ev976o2e");
     });
 </script>
 
@@ -1034,8 +1034,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

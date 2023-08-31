@@ -361,15 +361,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cllz4h448001kjyoigzyc61gg">
+      <div class="article-permalink" id="article-permalink-cllz4jwuv001klln5frjc0845">
     <input class="article-permalink-value" value="https://kiko.io/post/GitHubs-Magic-Dot/" 
-           data-id="cllz4h448001kjyoigzyc61gg" data-title="GitHubs Magic Dot" />
+           data-id="cllz4jwuv001klln5frjc0845" data-title="GitHubs Magic Dot" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h448001kjyoigzyc61gg");
+        initPermalink("cllz4jwuv001klln5frjc0845");
     });
 </script>
 
@@ -1022,8 +1022,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

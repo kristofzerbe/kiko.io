@@ -444,15 +444,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cllz4h4590038jyoi0twaa48e">
+      <div class="article-permalink" id="article-permalink-cllz4jwvr0038lln5737i6ioo">
     <input class="article-permalink-value" value="https://kiko.io/post/Provide-Blog-Metadata-via-JSON-LD/" 
-           data-id="cllz4h4590038jyoi0twaa48e" data-title="Provide Blog Metadata via JSON-LD" />
+           data-id="cllz4jwvr0038lln5737i6ioo" data-title="Provide Blog Metadata via JSON-LD" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h4590038jyoi0twaa48e");
+        initPermalink("cllz4jwvr0038lln5737i6ioo");
     });
 </script>
 
@@ -1105,8 +1105,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

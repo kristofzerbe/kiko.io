@@ -340,7 +340,7 @@
 <p>These images are absolute great for background images in websites, in order to make the details less recognisable.</p>
 <p>There is a <a href="https://rh12503.github.io/triangula/">web version of Triangula</a>, but the desktop version (including a console version) is much faster. Best feature is the ability not only to save the generated images as PNG, but also as SVG!</p>
 <h3 id="Example-with-1-000-Generations"><a href="#Example-with-1-000-Generations" class="headerlink" title="Example with 1.000 Generations"></a>Example with 1.000 Generations</h3>
-    <div id="image-compare-52q8lh">
+    <div id="image-compare-ghzntc">
       <img class="image-compare image-original" src="/post/Triangulate-your-images-with-Triangula/DSC_7006-HDR_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Triangulate-your-images-with-Triangula/DSC_7006-HDR_TRIANGULATED.png" alt="" />
     </div>
@@ -349,7 +349,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-52q8lh"),
+      new ImageCompare(document.getElementById("image-compare-ghzntc"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -365,7 +365,7 @@
   
 
 <h3 id="Example-with-10-000-Generations"><a href="#Example-with-10-000-Generations" class="headerlink" title="Example with 10.000 Generations"></a>Example with 10.000 Generations</h3>
-    <div id="image-compare-joyf48">
+    <div id="image-compare-q7ybu8">
       <img class="image-compare image-original" src="/post/Triangulate-your-images-with-Triangula/19-07 Schottland-0512_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Triangulate-your-images-with-Triangula/19-07 Schottland-0512_TRIANGULATED.png" alt="" />
     </div>
@@ -374,7 +374,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-joyf48"),
+      new ImageCompare(document.getElementById("image-compare-q7ybu8"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -390,7 +390,7 @@
   
 
 <h3 id="Example-with-20-000-Generations"><a href="#Example-with-20-000-Generations" class="headerlink" title="Example with 20.000 Generations"></a>Example with 20.000 Generations</h3>
-    <div id="image-compare-4ifvjt">
+    <div id="image-compare-zzaeec">
       <img class="image-compare image-original" src="/post/Triangulate-your-images-with-Triangula/DSC_8860_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Triangulate-your-images-with-Triangula/DSC_8860_TRIANGULATED.png" alt="" />
     </div>
@@ -399,7 +399,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-4ifvjt"),
+      new ImageCompare(document.getElementById("image-compare-zzaeec"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -423,15 +423,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz4h44j0021jyoidm6o2kc0">
+      <div class="article-permalink" id="article-permalink-cllz4jwv50021lln5ckzaf41u">
     <input class="article-permalink-value" value="https://kiko.io/post/Triangulate-your-images-with-Triangula/" 
-           data-id="cllz4h44j0021jyoidm6o2kc0" data-title="Triangulate your images with Triangula" />
+           data-id="cllz4jwv50021lln5ckzaf41u" data-title="Triangulate your images with Triangula" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h44j0021jyoidm6o2kc0");
+        initPermalink("cllz4jwv50021lln5ckzaf41u");
     });
 </script>
 
@@ -1077,8 +1077,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

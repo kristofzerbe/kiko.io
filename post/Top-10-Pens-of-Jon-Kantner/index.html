@@ -514,15 +514,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cllz4h45y003cjyoic04bhwe7">
+      <div class="article-permalink" id="article-permalink-cllz4jwvt003clln53gyi92vr">
     <input class="article-permalink-value" value="https://kiko.io/post/Top-10-Pens-of-Jon-Kantner/" 
-           data-id="cllz4h45y003cjyoic04bhwe7" data-title="Top 10 Pens of Jon Kantner" />
+           data-id="cllz4jwvt003clln53gyi92vr" data-title="Top 10 Pens of Jon Kantner" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h45y003cjyoic04bhwe7");
+        initPermalink("cllz4jwvt003clln53gyi92vr");
     });
 </script>
 
@@ -1161,8 +1161,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

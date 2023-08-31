@@ -394,20 +394,20 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz4h44v002mjyoi0zro1z7p">
+      <div class="article-permalink" id="article-permalink-cllz4jwvg002mlln57fdcgxmr">
     <input class="article-permalink-value" value="https://kiko.io/post/Gitpod-Visual-Studio-Code-on-the-Web/" 
-           data-id="cllz4h44v002mjyoi0zro1z7p" data-title="Gitpod - Visual Studio Code on the Web" />
+           data-id="cllz4jwvg002mlln57fdcgxmr" data-title="Gitpod - Visual Studio Code on the Web" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h44v002mjyoi0zro1z7p");
+        initPermalink("cllz4jwvg002mlln57fdcgxmr");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-cllz4h44v002mjyoi0zro1z7p">
+        <div class="article-golem" id="article-golem-cllz4jwvg002mlln57fdcgxmr">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 05 Jul 2022 
     in German under the title <span style="font-weight:bold;">&laquo;Visual Studio Code im Web mit Gitpod - Ein Gewinn für jede Tool-Sammlung&raquo;</span>&nbsp;&nbsp;  
@@ -1055,8 +1055,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

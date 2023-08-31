@@ -534,7 +534,7 @@
 
 <p><strong>Live Output:</strong></p>
 
-    <div id="image-compare-r83wef">
+    <div id="image-compare-64d0v2">
       <img class="image-compare image-original" src="/post/Hexo-Tag-Plugin-Collection/example-image_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Hexo-Tag-Plugin-Collection/example-image_PRESET.jpg" alt="" />
     </div>
@@ -543,7 +543,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-r83wef"),
+      new ImageCompare(document.getElementById("image-compare-64d0v2"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -585,12 +585,12 @@
 
 <p><strong>Live Output:</strong></p>
 
-      <div class="image-slider" id="image-slide-cl91p3">
+      <div class="image-slider" id="image-slide-51hril">
         <div><img src="/post/Hexo-Tag-Plugin-Collection/example-image_ORIGINAL.jpg" alt="Original" /></div><div><img src="/post/Hexo-Tag-Plugin-Collection/example-image_PRESET.jpg" alt="Lightroom Preset" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-cl91p3",
+          container: "#image-slide-51hril",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -647,15 +647,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz4h449001ljyoi45lo2ok2">
+      <div class="article-permalink" id="article-permalink-cllz4jwuw001llln51yrv0d5z">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-Tag-Plugin-Collection/" 
-           data-id="cllz4h449001ljyoi45lo2ok2" data-title="Hexo Tag Plugin Collection" />
+           data-id="cllz4jwuw001llln51yrv0d5z" data-title="Hexo Tag Plugin Collection" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h449001ljyoi45lo2ok2");
+        initPermalink("cllz4jwuw001llln51yrv0d5z");
     });
 </script>
 
@@ -1303,8 +1303,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

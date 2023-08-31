@@ -391,15 +391,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz4h44i001zjyoie4m0cceu">
+      <div class="article-permalink" id="article-permalink-cllz4jwv4001zlln575gh54x6">
     <input class="article-permalink-value" value="https://kiko.io/post/Spice-Up-Windows-Terminal/" 
-           data-id="cllz4h44i001zjyoie4m0cceu" data-title="Spice Up Windows Terminal" />
+           data-id="cllz4jwv4001zlln575gh54x6" data-title="Spice Up Windows Terminal" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h44i001zjyoie4m0cceu");
+        initPermalink("cllz4jwv4001zlln575gh54x6");
     });
 </script>
 
@@ -881,8 +881,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

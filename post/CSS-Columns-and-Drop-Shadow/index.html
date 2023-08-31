@@ -421,15 +421,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz4h44q002bjyoia8fe3ijv">
+      <div class="article-permalink" id="article-permalink-cllz4jwva002blln52kaa24lb">
     <input class="article-permalink-value" value="https://kiko.io/post/CSS-Columns-and-Drop-Shadow/" 
-           data-id="cllz4h44q002bjyoia8fe3ijv" data-title="CSS Columns and Drop Shadow" />
+           data-id="cllz4jwva002blln52kaa24lb" data-title="CSS Columns and Drop Shadow" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h44q002bjyoia8fe3ijv");
+        initPermalink("cllz4jwva002blln52kaa24lb");
     });
 </script>
 
@@ -1022,8 +1022,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

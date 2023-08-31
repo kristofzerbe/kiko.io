@@ -376,15 +376,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz4h43h000kjyoi5le4dl8m">
+      <div class="article-permalink" id="article-permalink-cllz4jwu2000klln5fecggyyj">
     <input class="article-permalink-value" value="https://kiko.io/post/Device-Class-Detection-in-JavaScript/" 
-           data-id="cllz4h43h000kjyoi5le4dl8m" data-title="Device Class Detection in JavaScript" />
+           data-id="cllz4jwu2000klln5fecggyyj" data-title="Device Class Detection in JavaScript" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h43h000kjyoi5le4dl8m");
+        initPermalink("cllz4jwu2000klln5fecggyyj");
     });
 </script>
 
@@ -924,8 +924,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

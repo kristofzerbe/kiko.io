@@ -363,15 +363,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cllz4h44z002sjyoi0v773dip">
+      <div class="article-permalink" id="article-permalink-cllz4jwvj002slln57w1mdct8">
     <input class="article-permalink-value" value="https://kiko.io/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/" 
-           data-id="cllz4h44z002sjyoi0v773dip" data-title="Syndicate Mastodon Hashtags in your favorite Feed Reader" />
+           data-id="cllz4jwvj002slln57w1mdct8" data-title="Syndicate Mastodon Hashtags in your favorite Feed Reader" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h44z002sjyoi0v773dip");
+        initPermalink("cllz4jwvj002slln57w1mdct8");
     });
 </script>
 
@@ -1016,8 +1016,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

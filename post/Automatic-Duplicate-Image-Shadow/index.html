@@ -391,15 +391,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cllz4h43x0014jyoi765ndn10">
+      <div class="article-permalink" id="article-permalink-cllz4jwuh0014lln52v9kfxty">
     <input class="article-permalink-value" value="https://kiko.io/post/Automatic-Duplicate-Image-Shadow/" 
-           data-id="cllz4h43x0014jyoi765ndn10" data-title="Automatic Duplicate Image Shadow" />
+           data-id="cllz4jwuh0014lln52v9kfxty" data-title="Automatic Duplicate Image Shadow" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h43x0014jyoi765ndn10");
+        initPermalink("cllz4jwuh0014lln52v9kfxty");
     });
 </script>
 
@@ -1042,8 +1042,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

@@ -513,15 +513,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cllz4h4550032jyoi0nzvhti7">
+      <div class="article-permalink" id="article-permalink-cllz4jwvo0032lln51lis19fy">
     <input class="article-permalink-value" value="https://kiko.io/post/Favourite-Pens-of-2022/" 
-           data-id="cllz4h4550032jyoi0nzvhti7" data-title="Favourite Pens of 2022" />
+           data-id="cllz4jwvo0032lln51lis19fy" data-title="Favourite Pens of 2022" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h4550032jyoi0nzvhti7");
+        initPermalink("cllz4jwvo0032lln51lis19fy");
     });
 </script>
 
@@ -1166,8 +1166,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

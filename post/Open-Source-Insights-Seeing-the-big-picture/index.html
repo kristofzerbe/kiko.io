@@ -361,15 +361,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz4h44c001rjyoiago1febi">
+      <div class="article-permalink" id="article-permalink-cllz4jwv0001rlln56cvne7ov">
     <input class="article-permalink-value" value="https://kiko.io/post/Open-Source-Insights-Seeing-the-big-picture/" 
-           data-id="cllz4h44c001rjyoiago1febi" data-title="Open Source Insights - Seeing the big picture" />
+           data-id="cllz4jwv0001rlln56cvne7ov" data-title="Open Source Insights - Seeing the big picture" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h44c001rjyoiago1febi");
+        initPermalink("cllz4jwv0001rlln56cvne7ov");
     });
 </script>
 
@@ -1019,8 +1019,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

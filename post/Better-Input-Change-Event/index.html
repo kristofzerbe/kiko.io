@@ -347,15 +347,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz4h43b000cjyoi94s20839">
+      <div class="article-permalink" id="article-permalink-cllz4jwtx000clln589bq45ro">
     <input class="article-permalink-value" value="https://kiko.io/post/Better-Input-Change-Event/" 
-           data-id="cllz4h43b000cjyoi94s20839" data-title="Better Input Change Event" />
+           data-id="cllz4jwtx000clln589bq45ro" data-title="Better Input Change Event" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h43b000cjyoi94s20839");
+        initPermalink("cllz4jwtx000clln589bq45ro");
     });
 </script>
 
@@ -948,8 +948,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

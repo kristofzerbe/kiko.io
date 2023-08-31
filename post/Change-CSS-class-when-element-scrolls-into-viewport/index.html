@@ -353,15 +353,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz4h43h000jjyoigq121z0o">
+      <div class="article-permalink" id="article-permalink-cllz4jwu2000jlln5ai8fgxd2">
     <input class="article-permalink-value" value="https://kiko.io/post/Change-CSS-class-when-element-scrolls-into-viewport/" 
-           data-id="cllz4h43h000jjyoigq121z0o" data-title="Change CSS class when element scrolls into viewport" />
+           data-id="cllz4jwu2000jlln5ai8fgxd2" data-title="Change CSS class when element scrolls into viewport" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h43h000jjyoigq121z0o");
+        initPermalink("cllz4jwu2000jlln5ai8fgxd2");
     });
 </script>
 
@@ -960,8 +960,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

@@ -333,7 +333,7 @@
 <span id="more"></span>
 
 <h2 id="Indian-Sunset"><a href="#Indian-Sunset" class="headerlink" title="Indian Sunset"></a>Indian Sunset</h2>
-    <div id="image-compare-38uewu">
+    <div id="image-compare-gl2wn0">
       <img class="image-compare image-original" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_165823_HDR_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_165823_HDR_PRESET_Sunset.jpg" alt="" />
     </div>
@@ -342,7 +342,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-38uewu"),
+      new ImageCompare(document.getElementById("image-compare-gl2wn0"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -359,7 +359,7 @@
 
 <hr>
 
-    <div id="image-compare-jt9l7c">
+    <div id="image-compare-d29q2t">
       <img class="image-compare image-original" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_164343_HDR_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_164343_HDR_PRESET_Sunset.jpg" alt="" />
     </div>
@@ -368,7 +368,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-jt9l7c"),
+      new ImageCompare(document.getElementById("image-compare-d29q2t"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -400,15 +400,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz4h43o000ujyoi2olfc73e">
+      <div class="article-permalink" id="article-permalink-cllz4jwu9000ulln55ucjh9cy">
     <input class="article-permalink-value" value="https://kiko.io/post/Indian-Presets-for-Lightroom/" 
-           data-id="cllz4h43o000ujyoi2olfc73e" data-title="Indian Presets for Lightroom" />
+           data-id="cllz4jwu9000ulln55ucjh9cy" data-title="Indian Presets for Lightroom" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h43o000ujyoi2olfc73e");
+        initPermalink("cllz4jwu9000ulln55ucjh9cy");
     });
 </script>
 
@@ -1048,8 +1048,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

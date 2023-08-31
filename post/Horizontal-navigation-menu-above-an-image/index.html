@@ -358,15 +358,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz4h43n000sjyoi3muo8xts">
+      <div class="article-permalink" id="article-permalink-cllz4jwu7000slln5ayy5fg06">
     <input class="article-permalink-value" value="https://kiko.io/post/Horizontal-navigation-menu-above-an-image/" 
-           data-id="cllz4h43n000sjyoi3muo8xts" data-title="Horizontal navigation menu above an image" />
+           data-id="cllz4jwu7000slln5ayy5fg06" data-title="Horizontal navigation menu above an image" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h43n000sjyoi3muo8xts");
+        initPermalink("cllz4jwu7000slln5ayy5fg06");
     });
 </script>
 
@@ -1020,8 +1020,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

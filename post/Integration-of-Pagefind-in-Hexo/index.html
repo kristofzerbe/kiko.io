@@ -501,15 +501,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cllz4h4560034jyoi1ew486l0">
+      <div class="article-permalink" id="article-permalink-cllz4jwvp0034lln57a0yhmow">
     <input class="article-permalink-value" value="https://kiko.io/post/Integration-of-Pagefind-in-Hexo/" 
-           data-id="cllz4h4560034jyoi1ew486l0" data-title="Integration of Pagefind in Hexo" />
+           data-id="cllz4jwvp0034lln57a0yhmow" data-title="Integration of Pagefind in Hexo" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h4560034jyoi1ew486l0");
+        initPermalink("cllz4jwvp0034lln57a0yhmow");
     });
 </script>
 
@@ -1160,8 +1160,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

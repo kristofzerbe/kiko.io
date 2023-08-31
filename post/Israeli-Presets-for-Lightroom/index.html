@@ -335,7 +335,7 @@
 
 <h2 id="Israeli-Colors"><a href="#Israeli-Colors" class="headerlink" title="Israeli Colors"></a>Israeli Colors</h2><p>The mediaval walls of Jaffa glow in an inimitable way and brings other colors to shine the same way.</p>
 
-    <div id="image-compare-ufuypa">
+    <div id="image-compare-vez9dl">
       <img class="image-compare image-original" src="/post/Israeli-Presets-for-Lightroom/19-05 Israel-0078_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Israeli-Presets-for-Lightroom/19-05 Israel-0078_PRESET-Colors.jpg" alt="" />
     </div>
@@ -344,7 +344,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-ufuypa"),
+      new ImageCompare(document.getElementById("image-compare-vez9dl"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -370,7 +370,7 @@
 <hr>
 <h2 id="Israeli-Lights"><a href="#Israeli-Lights" class="headerlink" title="Israeli Lights"></a>Israeli Lights</h2><p>The light in the eastern Mediterranean is stunning. The warm tone of the sand and the turquoise color of the water had to pop out.</p>
 
-    <div id="image-compare-m8h08b">
+    <div id="image-compare-61f9ch">
       <img class="image-compare image-original" src="/post/Israeli-Presets-for-Lightroom/19-05 Israel-0196_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Israeli-Presets-for-Lightroom/19-05 Israel-0196_PRESET-Lights.jpg" alt="" />
     </div>
@@ -379,7 +379,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-m8h08b"),
+      new ImageCompare(document.getElementById("image-compare-61f9ch"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -405,7 +405,7 @@
 <hr>
 <h2 id="Israeli-Drama"><a href="#Israeli-Drama" class="headerlink" title="Israeli Drama"></a>Israeli Drama</h2><p>A visit of Yad Vashem moved me a lot and this preset is a expression of that.</p>
 
-    <div id="image-compare-pbl42x">
+    <div id="image-compare-ygem4x">
       <img class="image-compare image-original" src="/post/Israeli-Presets-for-Lightroom/19-05 Israel-0733_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Israeli-Presets-for-Lightroom/19-05 Israel-0733_PRESET-Drama.jpg" alt="" />
     </div>
@@ -414,7 +414,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-pbl42x"),
+      new ImageCompare(document.getElementById("image-compare-ygem4x"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -440,7 +440,7 @@
 <hr>
 <h2 id="Israeli-Near-Black"><a href="#Israeli-Near-Black" class="headerlink" title="Israeli Near Black"></a>Israeli Near Black</h2><p>If you think of the tourists away, Jerusalem takes you to another level because of its age and history and nothing fits more to that than the sepia look of old pictures.</p>
 
-    <div id="image-compare-kc9a3v">
+    <div id="image-compare-9cad31">
       <img class="image-compare image-original" src="/post/Israeli-Presets-for-Lightroom/19-05 Israel-0624_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Israeli-Presets-for-Lightroom/19-05 Israel-0624_PRESET-Near Black.jpg" alt="" />
     </div>
@@ -449,7 +449,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-kc9a3v"),
+      new ImageCompare(document.getElementById("image-compare-9cad31"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -481,15 +481,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz4h43p000vjyoigiy24vi1">
+      <div class="article-permalink" id="article-permalink-cllz4jwu9000vlln520qjb5mi">
     <input class="article-permalink-value" value="https://kiko.io/post/Israeli-Presets-for-Lightroom/" 
-           data-id="cllz4h43p000vjyoigiy24vi1" data-title="Israeli Presets for Lightroom" />
+           data-id="cllz4jwu9000vlln520qjb5mi" data-title="Israeli Presets for Lightroom" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h43p000vjyoigiy24vi1");
+        initPermalink("cllz4jwu9000vlln520qjb5mi");
     });
 </script>
 
@@ -1129,8 +1129,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

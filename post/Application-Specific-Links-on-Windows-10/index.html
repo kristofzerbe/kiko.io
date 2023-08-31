@@ -441,15 +441,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cllz4h43w0013jyoi6rjn1u6g">
+      <div class="article-permalink" id="article-permalink-cllz4jwug0013lln5arg27f2d">
     <input class="article-permalink-value" value="https://kiko.io/post/Application-Specific-Links-on-Windows-10/" 
-           data-id="cllz4h43w0013jyoi6rjn1u6g" data-title="Application-Specific Links on Windows 10" />
+           data-id="cllz4jwug0013lln5arg27f2d" data-title="Application-Specific Links on Windows 10" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h43w0013jyoi6rjn1u6g");
+        initPermalink("cllz4jwug0013lln5arg27f2d");
     });
 </script>
 
@@ -1098,8 +1098,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

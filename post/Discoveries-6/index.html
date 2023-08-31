@@ -478,15 +478,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz4h443001djyoidxd06g76">
+      <div class="article-permalink" id="article-permalink-cllz4jwur001dlln5am6w23eh">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-6/" 
-           data-id="cllz4h443001djyoidxd06g76" data-title="Discoveries #6" />
+           data-id="cllz4jwur001dlln5am6w23eh" data-title="Discoveries #6" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h443001djyoidxd06g76");
+        initPermalink("cllz4jwur001dlln5am6w23eh");
     });
 </script>
 
@@ -1128,8 +1128,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {

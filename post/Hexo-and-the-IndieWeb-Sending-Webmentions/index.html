@@ -427,15 +427,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz4h44a001njyoidp4meekw">
+      <div class="article-permalink" id="article-permalink-cllz4jwux001nlln5448r5ctp">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb-Sending-Webmentions/" 
-           data-id="cllz4h44a001njyoidp4meekw" data-title="Hexo and the IndieWeb (Sending Webmentions)" />
+           data-id="cllz4jwux001nlln5448r5ctp" data-title="Hexo and the IndieWeb (Sending Webmentions)" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz4h44a001njyoidp4meekw");
+        initPermalink("cllz4jwux001nlln5448r5ctp");
     });
 </script>
 
@@ -1034,8 +1034,9 @@
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
-  console.log(pathItem);
-  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+  setTimeout(() => {
+    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
 
   // AUTOTYPING
   setTimeout(function() {
