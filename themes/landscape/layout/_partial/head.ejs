@@ -22,18 +22,32 @@
     }
 
     let excerpt;
-    if (page._content) { 
-      excerpt = page._content
-        .replace(/^(\n)/, "") // Remove Leading break
-        .replace(/\{%\s.*%\}\n/g, "") // Remove multi line Nunjucks Vars
-        .replace(/\{%\s(post_link) (?<content>.+?)%\}/g, "($<content>)") // Replace single line Nunjucks vars with its content
-        .replace(/(\n-{3})/g, "") // Remove MD horizontal lines
-        .replace(/(```.+?```)/gim, "[code]") // Replace MD code blocks with placeholder
-        .replace(/__|\*|!|\#|(?:\[([^\]]*)\]\([^)]*\))/g, "$1") // Replace other MD elements
-        .split("\n")[0] // Get first paragraph
-        .replace(/(\n){2,}/g, " ") // Remove Multiple breaks
-        .substring(0, 150) + "...";
+    let excerptDesc;
+    if (page.excerpt) {
+      excerpt = excerpt_plain(page.excerpt)
+        .replace(/^(\r\n|\n|\r)/, "") // Remove Leading break
+        .replace(/(\r\n|\n|\r){2,}/g, " ") // Remove Multiple breaks
+        .trim();
     }
+    if (excerpt) {
+      excerptDesc = excerpt.substring(0, 150)
+        .replace(/(\r\n|\n|\r)/g, "") // Remove line breaks
+        .replace(/"/g, '\\"') + "...";
+    }
+
+    // let excerpt;
+    // if (page._content) { 
+    //   excerpt = page._content
+    //     .replace(/^(\n)/, "") // Remove Leading break
+    //     .replace(/\{%\s.*%\}\n/g, "") // Remove multi line Nunjucks Vars
+    //     .replace(/\{%\s(post_link) (?<content>.+?)%\}/g, "($<content>)") // Replace single line Nunjucks vars with its content
+    //     .replace(/(\n-{3})/g, "") // Remove MD horizontal lines
+    //     .replace(/(```.+?```)/gim, "[code]") // Replace MD code blocks with placeholder
+    //     .replace(/__|\*|!|\#|(?:\[([^\]]*)\]\([^)]*\))/g, "$1") // Replace other MD elements
+    //     .split("\n")[0] // Get first paragraph
+    //     .replace(/(\n){2,}/g, " ") // Remove Multiple breaks
+    //     .substring(0, 150) + "...";
+    // }
 
     if      (is_home())     { meta.area = "HOME"; }
     else if (is_post())     { meta.area = "POST"; }
@@ -148,7 +162,7 @@
           if (page.subtitle) {
             meta.description = page.subtitle;
           } else {
-            meta.description = excerpt;
+            meta.description = excerptDesc;
           }
         }
         //--
@@ -168,7 +182,7 @@
           if (page.description) {
             meta.description = page.description;
           } else {
-            meta.description = excerpt;
+            meta.description = excerptDesc;
           }
           meta.type = "blogposting";
         }
@@ -189,7 +203,10 @@
   <% if (meta.description) { %>
   <meta name="description" content="<%= meta.description %>">
   <% }%>
-
+  <% if (excerpt) { %> 
+  <meta name="excerpt" content="<%= excerpt %>">
+  <% }%>
+  
   <link rel="canonical" href="<%= url.replace("index.html", "") %>">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="<%- theme.favicon %>">
@@ -205,7 +222,8 @@
       jsonLD = JSON.stringify(JSON.parse(jsonLD));
     } catch (error) {
       console.error(error);
-      console.log(jsonLD)
+      console.log(jsonLD);
+      console.log(excerptDesc);
     }
   %>
   <script type="application/ld+json"><%- jsonLD %></script>
