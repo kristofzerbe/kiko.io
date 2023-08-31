@@ -13,7 +13,12 @@
   
   <meta name="description" content="How to fix Chromes bug on showing shadows in a column (masonry) layout">
   
-
+   
+  <meta name="excerpt" content="As of today, there is no true Masonry Layout technique in web development that can be implemented exclusively with CSS and is not based on JavaScript. True in the meaning, that the reading direction should be from left to right and not in the form of columns from top to bottom. For the latter, also called Fake Masonry, there are even two implementation options in CSS: Columns or Flex, whereas the Columns variant is the much simpler one.
+Lets say you have a list of boxes you want to show in a grid-like list, but the height of every box is defined by its content, which results in different heights. Here is an example with a base64 encoded 1px image with an individually defined height:
+123456789101112131415&lt;div class=&#34;wrapper&#34;&gt;  &lt;div class=&#34;item&#34;&gt;    Box 1    &lt;img style=&#34;height:53px&#34; src=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==&#34; /&gt;  &lt;/div&gt;  &lt;div class=&#34;item&#34;&gt;    Box 2    &lt;img style=&#34;height:50px&#34; src=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==&#34; /&gt;  &lt;/div&gt;  &lt;div class=&#34;item&#34;&gt;    Box 3    &lt;img style=&#34;height:33px&#34; src=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==&#34; /&gt;  &lt;/div&gt;  &lt;!-- ... 6 more items with different heights --&gt;&lt;/div&gt; By applying column-count and column-gap to the wrapper and a margin-bottom with the same value as the gap to each item, you will achieve this: The order of the boxes is from top to bottom and then from left to right … Fake Masonry, but is works as expected. Here is the most important CSS:">
+  
+  
   <link rel="canonical" href="https://kiko.io/post/CSS-Columns-and-Drop-Shadow/">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="/favicon.ico">
@@ -421,15 +426,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz9vot4002bmnoyaxcb0iuc">
+      <div class="article-permalink" id="article-permalink-cllzijt2h002bk7otbzy9bcn2">
     <input class="article-permalink-value" value="https://kiko.io/post/CSS-Columns-and-Drop-Shadow/" 
-           data-id="cllz9vot4002bmnoyaxcb0iuc" data-title="CSS Columns and Drop Shadow" />
+           data-id="cllzijt2h002bk7otbzy9bcn2" data-title="CSS Columns and Drop Shadow" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz9vot4002bmnoyaxcb0iuc");
+        initPermalink("cllzijt2h002bk7otbzy9bcn2");
     });
 </script>
 

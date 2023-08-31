@@ -11,9 +11,12 @@
   <meta name="author" content="Kristof Zerbe">
   <meta name="title" content="Native JavaScript Multilanguage Templating - kiko.io">
   
-  <meta name="description" content="In the project I&#39;m currently working on, I faced the &#34;problem&#34; to integrate multilanguage support, but due to the fact that the new app should be writ...">
+  <meta name="description" content="In the project I’m currently working on, I faced the “problem” to integrate multilanguage support, but due to the fact that the new app should be writ...">
   
-
+   
+  <meta name="excerpt" content="In the project I’m currently working on, I faced the “problem” to integrate multilanguage support, but due to the fact that the new app should be written in vanilla JS, without any plugins, libraries or other dependencies, I had to develop my own localization layer. In this article I want to show you my approach on this…">
+  
+  
   <link rel="canonical" href="https://kiko.io/post/Native-JavaScript-Multilanguage-Templating/">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="/favicon.ico">
@@ -21,14 +24,14 @@
   <meta name="theme-color" content="#444">
 
     
-  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"Article","@id":"https://kiko.io/post/Native-JavaScript-Multilanguage-Templating/#article","mainEntityOfPage":{"@id":"https://kiko.io/post/Native-JavaScript-Multilanguage-Templating/"},"headline":"Native JavaScript Multilanguage Templating - kiko.io","description":"In the project I&#39;m currently working on, I faced the &#34;problem&#34; to integrate multilanguage support, but due to the fact that the new app should be writ...","datePublished":"2021-02-24T12:31:58Z","dateModified":"2021-02-24T12:31:58Z","image":{"@id":"https://kiko.io#image/Native-JavaScript-Multilanguage-Templating"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/post/Native-JavaScript-Multilanguage-Templating/","url":"https://kiko.io/post/Native-JavaScript-Multilanguage-Templating/","name":"Native JavaScript Multilanguage Templating - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"In the project I&#39;m currently working on, I faced the &#34;problem&#34; to integrate multilanguage support, but due to the fact that the new app should be writ...","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#image/Native-JavaScript-Multilanguage-Templating"},"image":{"@id":"https://kiko.io#photo/DSC_6682.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/DSC_6682.jpg","caption":"Blue Lock","url":"https://kiko.io/photos/normal/DSC_6682.jpg","contentUrl":"https://kiko.io/photos/normal/DSC_6682.jpg","discussionUrl":"https://500px.com/photo/84012241/Blue-Lock-by-Kristof-Zerbe/","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}},{"@type":"ImageObject","@id":"https://kiko.io#image/Native-JavaScript-Multilanguage-Templating","url":"https://kiko.io/images/social-media/Native-JavaScript-Multilanguage-Templating.png","contentUrl":"https://kiko.io/images/social-media/Native-JavaScript-Multilanguage-Templating.png","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"Article","@id":"https://kiko.io/post/Native-JavaScript-Multilanguage-Templating/#article","mainEntityOfPage":{"@id":"https://kiko.io/post/Native-JavaScript-Multilanguage-Templating/"},"headline":"Native JavaScript Multilanguage Templating - kiko.io","description":"In the project I’m currently working on, I faced the “problem” to integrate multilanguage support, but due to the fact that the new app should be writ...","datePublished":"2021-02-24T12:31:58Z","dateModified":"2021-02-24T12:31:58Z","image":{"@id":"https://kiko.io#image/Native-JavaScript-Multilanguage-Templating"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/post/Native-JavaScript-Multilanguage-Templating/","url":"https://kiko.io/post/Native-JavaScript-Multilanguage-Templating/","name":"Native JavaScript Multilanguage Templating - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"In the project I’m currently working on, I faced the “problem” to integrate multilanguage support, but due to the fact that the new app should be writ...","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#image/Native-JavaScript-Multilanguage-Templating"},"image":{"@id":"https://kiko.io#photo/DSC_6682.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/DSC_6682.jpg","caption":"Blue Lock","url":"https://kiko.io/photos/normal/DSC_6682.jpg","contentUrl":"https://kiko.io/photos/normal/DSC_6682.jpg","discussionUrl":"https://500px.com/photo/84012241/Blue-Lock-by-Kristof-Zerbe/","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}},{"@type":"ImageObject","@id":"https://kiko.io#image/Native-JavaScript-Multilanguage-Templating","url":"https://kiko.io/images/social-media/Native-JavaScript-Multilanguage-Templating.png","contentUrl":"https://kiko.io/images/social-media/Native-JavaScript-Multilanguage-Templating.png","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
   <meta property="og:url" content="https://kiko.io/post/Native-JavaScript-Multilanguage-Templating/index.html">
   <meta property="og:title" content="Native JavaScript Multilanguage Templating - kiko.io">
   
-  <meta property="og:description" content="In the project I&#39;m currently working on, I faced the &#34;problem&#34; to integrate multilanguage support, but due to the fact that the new app should be writ...">
+  <meta property="og:description" content="In the project I’m currently working on, I faced the “problem” to integrate multilanguage support, but due to the fact that the new app should be writ...">
   
   <meta property="og:image" content="https://kiko.io/images/social-media/Native-JavaScript-Multilanguage-Templating.png">
   <meta property="og:locale" content="en_US">
@@ -38,7 +41,7 @@
   <meta property="twitter:url" content="https://kiko.io/post/Native-JavaScript-Multilanguage-Templating/index.html">
   <meta property="twitter:title" content="Native JavaScript Multilanguage Templating - kiko.io">
   
-  <meta property="twitter:description" content="In the project I&#39;m currently working on, I faced the &#34;problem&#34; to integrate multilanguage support, but due to the fact that the new app should be writ...">
+  <meta property="twitter:description" content="In the project I’m currently working on, I faced the “problem” to integrate multilanguage support, but due to the fact that the new app should be writ...">
   
   <meta property="twitter:image" content="https://kiko.io/images/social-media/Native-JavaScript-Multilanguage-Templating.png">
 
@@ -366,15 +369,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz9vost001qmnoycvyxb74t">
+      <div class="article-permalink" id="article-permalink-cllzijt28001qk7otcgtudmub">
     <input class="article-permalink-value" value="https://kiko.io/post/Native-JavaScript-Multilanguage-Templating/" 
-           data-id="cllz9vost001qmnoycvyxb74t" data-title="Native JavaScript Multilanguage Templating" />
+           data-id="cllzijt28001qk7otcgtudmub" data-title="Native JavaScript Multilanguage Templating" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz9vost001qmnoycvyxb74t");
+        initPermalink("cllzijt28001qk7otcgtudmub");
     });
 </script>
 

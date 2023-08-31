@@ -13,7 +13,13 @@
   
   <meta name="description" content="Centralization of a website&#39;s schema.org data in the HEAD instead of everywhere in the HTML">
   
-
+   
+  <meta name="excerpt" content="Chris Coyier’s post “Open Graph Blues“ got me thinking that my blog’s metadata, which are used by Google among others to index my pages, aren’t really at the cutting edge anymore. I took the markup of the individual elements of the pages via schema.org Microdata attributes from the standard Hexo template years ago and always adjusted it by value, but never questioned that there are more modern variants to provide the metadata.
+It’s Ok for Google to use Microdata attributes, but the HTML code of my templates is getting more and more opaque, because next to these stick to the tags also those for the Indieweb, classes for CSS and last but not least those for the own indexing via Pagefind. There becomes from a simple
+1234&lt;article&gt;  &lt;h1&gt;Title of my latest blog post&lt;/h1&gt;  &lt;p&gt; ... &lt;/p&gt;&lt;/article&gt; quickly becomes a …
+123456&lt;article class=&#34;article-type-post h-entry&#34;         data-pagefind-body=&#34;&#34; data-pagefind-meta=&#34;type:Article&#34; itemscope itemprop=&#34;blogPost&#34;&gt;  &lt;h1 class=&#34;article-title p-name&#34;       itemprop=&#34;name&#34;&gt;Title of my latest blog post&lt;/h1&gt;  &lt;p&gt; ... &lt;/p&gt;&lt;/article&gt; Lots of textual overhead and the hardest part is maintaining it over the long term. Better would be a complete search engine description in the header of a page, where also the other meta information is available. In one place and not spread all over the HTML code. JSON-LD to the rescue…">
+  
+  
   <link rel="canonical" href="https://kiko.io/post/Provide-Blog-Metadata-via-JSON-LD/">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="/favicon.ico">
@@ -444,15 +450,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cllz9votj0038mnoy5oochvqt">
+      <div class="article-permalink" id="article-permalink-cllzijt2u0038k7ot1s0b7uu3">
     <input class="article-permalink-value" value="https://kiko.io/post/Provide-Blog-Metadata-via-JSON-LD/" 
-           data-id="cllz9votj0038mnoy5oochvqt" data-title="Provide Blog Metadata via JSON-LD" />
+           data-id="cllzijt2u0038k7ot1s0b7uu3" data-title="Provide Blog Metadata via JSON-LD" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz9votj0038mnoy5oochvqt");
+        initPermalink("cllzijt2u0038k7ot1s0b7uu3");
     });
 </script>
 

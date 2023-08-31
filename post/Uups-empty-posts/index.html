@@ -13,7 +13,15 @@
   
   <meta name="description" content="Problems with post asset files in Hexo and a solution approach">
   
-
+   
+  <meta name="excerpt" content="A while ago I wrote about Automatic Duplicate Image Shadow and used indiepen for showing the result of my efforts.     
+      indiepen is a solution for showing code samples without the need of a code sharing platform, like codepen. Just reference a index.html, main.js and styles.css from wherever you want and indiepen is wrapping it with a neat viewer inside an IFrame.     
+   I did it quick and dirty first (sample files in a static folder) and now it was the time to do it right: place the sample files in a subfolder of the post in my Hexo-driven blog solution, in order to reference it from there AND have the possibility to call it directly via ./post/my-post/sample.
+The key to achive that in Hexo is the configuration option post_asset_folder: true, which generates a subfolder for all assets with the same name as the post.
+12345|- _posts   |- my-blog-post      |- my-first-asset.jpg      |- my-second-asset.jpg   |- my-blog-post.md My idea regarding the indiepen files was having a subfolder for each indiepen in the post asset folder:
+123456789|- _posts   |- my-blog-post      |- my-first-asset.jpg      |- my-second-asset.jpgNEW   |- sampleNEW      |- index.htmlNEW      |- main.jsNEW      |- styles.css   |- my-blog-post.md Run hexo generate, check that the indiepen was showing up properly and I thought I was done. Wrong … after commiting my changes to Github, where my blog is living, and checking my RSS feed a while after, I saw this: Three empty posts…!?">
+  
+  
   <link rel="canonical" href="https://kiko.io/post/Uups-empty-posts/">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="/favicon.ico">
@@ -385,15 +393,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz9vot20026mnoygsj6ejx5">
+      <div class="article-permalink" id="article-permalink-cllzijt2f0026k7ot4gbidqbj">
     <input class="article-permalink-value" value="https://kiko.io/post/Uups-empty-posts/" 
-           data-id="cllz9vot20026mnoygsj6ejx5" data-title="Uups ... empty posts" />
+           data-id="cllzijt2f0026k7ot4gbidqbj" data-title="Uups ... empty posts" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz9vot20026mnoygsj6ejx5");
+        initPermalink("cllzijt2f0026k7ot4gbidqbj");
     });
 </script>
 

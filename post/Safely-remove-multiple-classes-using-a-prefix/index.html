@@ -13,7 +13,14 @@
   
   <meta name="description" content="Avoiding pitfalls when iterating over classList">
   
-
+   
+  <meta name="excerpt" content="Writing a Web App with HTML and JavaScript means you deal with several classes on your DOM elements in order to visualize state changes. And there are some pitfalls to be aware of with regard to removal.
+Assuming you want to open some kind of sidebar above a container. In this sidebar you have several buttons to show different content via JavaScript and a close button, which closes the sidebar again. You HTML code maybe looks like this:
+123456789101112131415161718&lt;html&gt;  &lt;body&gt;    &lt;div id=&#34;container&#34;&gt;... Main Content ...&lt;/div&gt;    &lt;nav&gt;      &lt;button id=&#34;open-sidebar&#34;&gt;    &lt;/nav&gt;    &lt;aside id=&#34;sidebar&#34;&gt;      &lt;div class=&#34;content&#34;&gt;... Sidebar Content ...&lt;/div&gt;      &lt;button id=&#34;close&#34;&gt;Close Sidebar&lt;/button&gt;      &lt;button id=&#34;content1&#34;&gt;Show Content 1&lt;/button&gt;      &lt;button id=&#34;content2&#34;&gt;Show Content 2&lt;/button&gt;      &lt;button id=&#34;content3&#34;&gt;Show Content 3&lt;/button&gt;    &lt;/aside&gt;  &lt;/body&gt;&lt;/html&gt; By clicking on the open-sidebar button, the sidebar is opened and the action, respectively the new state, is vizualized by adding an appropriate class to the parent sidebar element. In order to make it easy for the user, the default content (Content 1) will be loaded also and its state will be marked with another class.
+1&lt;aside class=&#34;sidebar open open-content1&#34;&gt; A click on of the other content buttons (let’s say Content 2), will replace the current content and the aside classes will change into:
+1&lt;aside class=&#34;sidebar open open-content2&#34;&gt; Now we want to close the sidebar again, assuming that we don’t have stored the currently opened content in the JavaScript code…">
+  
+  
   <link rel="canonical" href="https://kiko.io/post/Safely-remove-multiple-classes-using-a-prefix/">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="/favicon.ico">
@@ -363,15 +370,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz9vosx001xmnoy8zw9hb9j">
+      <div class="article-permalink" id="article-permalink-cllzijt2b001xk7ot5yrh7gzd">
     <input class="article-permalink-value" value="https://kiko.io/post/Safely-remove-multiple-classes-using-a-prefix/" 
-           data-id="cllz9vosx001xmnoy8zw9hb9j" data-title="Safely remove multiple classes using a prefix" />
+           data-id="cllzijt2b001xk7ot5yrh7gzd" data-title="Safely remove multiple classes using a prefix" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz9vosx001xmnoy8zw9hb9j");
+        initPermalink("cllzijt2b001xk7ot5yrh7gzd");
     });
 </script>
 

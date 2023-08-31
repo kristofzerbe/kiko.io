@@ -11,9 +11,32 @@
   <meta name="author" content="Kristof Zerbe">
   <meta name="title" content="#TIL | IIS: Allow Plus sign in Url&#39;s 2022 - kiko.io">
   
-  <meta name="description" content="Due to security reasons IIS only allows the ``+`` sign in query strings. But sometimes you may have an image file like ``landscape + night.jpg``, whic...">
+  <meta name="description" content="Due to security reasons IIS only allows the + sign in query strings. But sometimes you may have an image file like landscape + night.jpg, which won’t ...">
   
-
+   
+  <meta name="excerpt" content="Due to security reasons IIS only allows the + sign in query strings. But sometimes you may have an image file like landscape + night.jpg, which won’t be shown on your website.
+The solution is, to allow unescaped plus signs in web.config and also do a rewrite to UrlDecode the requested Uri:
+&lt;configuration&gt;
+  &lt;system.webServer&gt;
+    &lt;security&gt;
+      &lt;requestFiltering allowDoubleEscaping=&#34;True&#34; /&gt;
+    &lt;/security&gt;
+    &lt;rewrite&gt;
+      &lt;rules&gt;
+        &lt;rule name=&#34;RewriteUserFriendlyURL1&#34; stopProcessing=&#34;false&#34;&gt;
+          &lt;match url=&#34;\+&#34; /&gt;
+          &lt;conditions&gt;
+            &lt;add input=&#34;{REQUEST_FILENAME}&#34; matchType=&#34;IsFile&#34; negate=&#34;true&#34; /&gt;
+            &lt;add input=&#34;{REQUEST_FILENAME}&#34; matchType=&#34;IsDirectory&#34; negate=&#34;true&#34; /&gt;
+          &lt;/conditions&gt;
+          &lt;action type=&#34;Rewrite&#34; url=&#34;{UrlDecode:{REQUEST_URI}}&#34; /&gt;
+        &lt;/rule&gt;
+      &lt;/rules&gt;
+    &lt;/rewrite&gt;
+  &lt;/system.webServer&gt;
+&lt;/configuration&gt; Source">
+  
+  
   <link rel="canonical" href="https://kiko.io/notes/2022/TIL-IIS-Allow-Plus-sign-in-Urls/">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="/favicon.ico">
@@ -21,14 +44,14 @@
   <meta name="theme-color" content="#444">
 
     
-  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"BlogPosting","@id":"https://kiko.io/notes/2022/TIL-IIS-Allow-Plus-sign-in-Urls/#article","mainEntityOfPage":{"@id":"https://kiko.io/notes/2022/TIL-IIS-Allow-Plus-sign-in-Urls/"},"headline":"#TIL | IIS: Allow Plus sign in Url&#39;s 2022 - kiko.io","datePublished":"2022-01-07T12:00:00Z","dateModified":"2022-01-07T12:00:00Z","image":{"@id":"https://kiko.io#photo/$notes-2022.jpg"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/notes/2022/TIL-IIS-Allow-Plus-sign-in-Urls/","url":"https://kiko.io/notes/2022/TIL-IIS-Allow-Plus-sign-in-Urls/","name":"#TIL | IIS: Allow Plus sign in Url&#39;s 2022 - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"Due to security reasons IIS only allows the ``+`` sign in query strings. But sometimes you may have an image file like ``landscape + night.jpg``, whic...","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#photo/$notes-2022.jpg"},"image":{"@id":"https://kiko.io#photo/$notes-2022.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/$notes-2022.jpg","caption":"Lilla &amp; Zoli Lock","url":"https://kiko.io/photos/normal/$notes-2022.jpg","contentUrl":"https://kiko.io/photos/normal/$notes-2022.jpg","discussionUrl":"https://500px.com/photo/1037371998","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"BlogPosting","@id":"https://kiko.io/notes/2022/TIL-IIS-Allow-Plus-sign-in-Urls/#article","mainEntityOfPage":{"@id":"https://kiko.io/notes/2022/TIL-IIS-Allow-Plus-sign-in-Urls/"},"headline":"#TIL | IIS: Allow Plus sign in Url&#39;s 2022 - kiko.io","datePublished":"2022-01-07T12:00:00Z","dateModified":"2022-01-07T12:00:00Z","image":{"@id":"https://kiko.io#photo/$notes-2022.jpg"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/notes/2022/TIL-IIS-Allow-Plus-sign-in-Urls/","url":"https://kiko.io/notes/2022/TIL-IIS-Allow-Plus-sign-in-Urls/","name":"#TIL | IIS: Allow Plus sign in Url&#39;s 2022 - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"Due to security reasons IIS only allows the + sign in query strings. But sometimes you may have an image file like landscape + night.jpg, which won’t ...","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#photo/$notes-2022.jpg"},"image":{"@id":"https://kiko.io#photo/$notes-2022.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/$notes-2022.jpg","caption":"Lilla &amp; Zoli Lock","url":"https://kiko.io/photos/normal/$notes-2022.jpg","contentUrl":"https://kiko.io/photos/normal/$notes-2022.jpg","discussionUrl":"https://500px.com/photo/1037371998","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
   <meta property="og:url" content="https://kiko.io/notes/2022/TIL-IIS-Allow-Plus-sign-in-Urls/index.html">
   <meta property="og:title" content="#TIL | IIS: Allow Plus sign in Url&#39;s 2022 - kiko.io">
   
-  <meta property="og:description" content="Due to security reasons IIS only allows the ``+`` sign in query strings. But sometimes you may have an image file like ``landscape + night.jpg``, whic...">
+  <meta property="og:description" content="Due to security reasons IIS only allows the + sign in query strings. But sometimes you may have an image file like landscape + night.jpg, which won’t ...">
   
   <meta property="og:image" content="">
   <meta property="og:locale" content="en_US">
@@ -38,7 +61,7 @@
   <meta property="twitter:url" content="https://kiko.io/notes/2022/TIL-IIS-Allow-Plus-sign-in-Urls/index.html">
   <meta property="twitter:title" content="#TIL | IIS: Allow Plus sign in Url&#39;s 2022 - kiko.io">
   
-  <meta property="twitter:description" content="Due to security reasons IIS only allows the ``+`` sign in query strings. But sometimes you may have an image file like ``landscape + night.jpg``, whic...">
+  <meta property="twitter:description" content="Due to security reasons IIS only allows the + sign in query strings. But sometimes you may have an image file like landscape + night.jpg, which won’t ...">
   
   <meta property="twitter:image" content="">
 

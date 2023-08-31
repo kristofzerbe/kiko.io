@@ -11,9 +11,16 @@
   <meta name="author" content="Kristof Zerbe">
   <meta name="title" content="#TIL | Force Refresh Android Chrome 2022 - kiko.io">
   
-  <meta name="description" content="Reloading a web page in Chrome on Android without letting the browser use it&#39;s cache (hard reload, CTRL + F5 on desktop) isn&#39;t that simple, if you wan...">
+  <meta name="description" content="Reloading a web page in Chrome on Android without letting the browser use it’s cache (hard reload, CTRL + F5 on desktop) isn’t that simple, if you wan...">
   
-
+   
+  <meta name="excerpt" content="Reloading a web page in Chrome on Android without letting the browser use it’s cache (hard reload, CTRL + F5 on desktop) isn’t that simple, if you want to avoid clearing your whole cache. But there is a workaround if the website is installable as PWA:  Install it via the three dot menu in Chrome
+Long press on the icon in launcher
+Select “Website Settings”
+Tap on “Delete and Reset”
+Confirm the dialog “Do you really want to reset all local data…” Last thing is the point: It doesn’t delete the PWA itself, but all data stored in the cache for it.">
+  
+  
   <link rel="canonical" href="https://kiko.io/notes/2022/TIL-Force-Refresh-Android-Chrome/">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="/favicon.ico">
@@ -21,14 +28,14 @@
   <meta name="theme-color" content="#444">
 
     
-  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"BlogPosting","@id":"https://kiko.io/notes/2022/TIL-Force-Refresh-Android-Chrome/#article","mainEntityOfPage":{"@id":"https://kiko.io/notes/2022/TIL-Force-Refresh-Android-Chrome/"},"headline":"#TIL | Force Refresh Android Chrome 2022 - kiko.io","datePublished":"2022-12-24T10:05:00Z","dateModified":"2022-12-24T10:05:00Z","image":{"@id":"https://kiko.io#photo/$notes-2022.jpg"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/notes/2022/TIL-Force-Refresh-Android-Chrome/","url":"https://kiko.io/notes/2022/TIL-Force-Refresh-Android-Chrome/","name":"#TIL | Force Refresh Android Chrome 2022 - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"Reloading a web page in Chrome on Android without letting the browser use it&#39;s cache (hard reload, CTRL + F5 on desktop) isn&#39;t that simple, if you wan...","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#photo/$notes-2022.jpg"},"image":{"@id":"https://kiko.io#photo/$notes-2022.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/$notes-2022.jpg","caption":"Lilla &amp; Zoli Lock","url":"https://kiko.io/photos/normal/$notes-2022.jpg","contentUrl":"https://kiko.io/photos/normal/$notes-2022.jpg","discussionUrl":"https://500px.com/photo/1037371998","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"BlogPosting","@id":"https://kiko.io/notes/2022/TIL-Force-Refresh-Android-Chrome/#article","mainEntityOfPage":{"@id":"https://kiko.io/notes/2022/TIL-Force-Refresh-Android-Chrome/"},"headline":"#TIL | Force Refresh Android Chrome 2022 - kiko.io","datePublished":"2022-12-24T10:05:00Z","dateModified":"2022-12-24T10:05:00Z","image":{"@id":"https://kiko.io#photo/$notes-2022.jpg"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/notes/2022/TIL-Force-Refresh-Android-Chrome/","url":"https://kiko.io/notes/2022/TIL-Force-Refresh-Android-Chrome/","name":"#TIL | Force Refresh Android Chrome 2022 - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"Reloading a web page in Chrome on Android without letting the browser use it’s cache (hard reload, CTRL + F5 on desktop) isn’t that simple, if you wan...","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#photo/$notes-2022.jpg"},"image":{"@id":"https://kiko.io#photo/$notes-2022.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/$notes-2022.jpg","caption":"Lilla &amp; Zoli Lock","url":"https://kiko.io/photos/normal/$notes-2022.jpg","contentUrl":"https://kiko.io/photos/normal/$notes-2022.jpg","discussionUrl":"https://500px.com/photo/1037371998","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
   <meta property="og:url" content="https://kiko.io/notes/2022/TIL-Force-Refresh-Android-Chrome/index.html">
   <meta property="og:title" content="#TIL | Force Refresh Android Chrome 2022 - kiko.io">
   
-  <meta property="og:description" content="Reloading a web page in Chrome on Android without letting the browser use it&#39;s cache (hard reload, CTRL + F5 on desktop) isn&#39;t that simple, if you wan...">
+  <meta property="og:description" content="Reloading a web page in Chrome on Android without letting the browser use it’s cache (hard reload, CTRL + F5 on desktop) isn’t that simple, if you wan...">
   
   <meta property="og:image" content="">
   <meta property="og:locale" content="en_US">
@@ -38,7 +45,7 @@
   <meta property="twitter:url" content="https://kiko.io/notes/2022/TIL-Force-Refresh-Android-Chrome/index.html">
   <meta property="twitter:title" content="#TIL | Force Refresh Android Chrome 2022 - kiko.io">
   
-  <meta property="twitter:description" content="Reloading a web page in Chrome on Android without letting the browser use it&#39;s cache (hard reload, CTRL + F5 on desktop) isn&#39;t that simple, if you wan...">
+  <meta property="twitter:description" content="Reloading a web page in Chrome on Android without letting the browser use it’s cache (hard reload, CTRL + F5 on desktop) isn’t that simple, if you wan...">
   
   <meta property="twitter:image" content="">
 

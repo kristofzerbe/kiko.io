@@ -11,9 +11,19 @@
   <meta name="author" content="Kristof Zerbe">
   <meta name="title" content="#TIL | Detect Touch Input Devices 2021 - kiko.io">
   
-  <meta name="description" content="As of the W3C draft of Media Queries Level 5, touch devices can be detected by using the ``hover`` and the ``pointer`` media feature:...">
+  <meta name="description" content="As of the W3C draft of Media Queries Level 5, touch devices can be detected by using the hover and the pointer media feature:/* smartphones, touchscr...">
   
-
+   
+  <meta name="excerpt" content="As of the W3C draft of Media Queries Level 5, touch devices can be detected by using the hover and the pointer media feature:
+/* smartphones, touchscreens */
+@media (hover: none) and (pointer: coarse) {
+    /* ... */
+} /* mouse, touch pad */
+@media (hover: hover) and (pointer: fine) {
+    /* ... */
+}">
+  
+  
   <link rel="canonical" href="https://kiko.io/notes/2021/TIL-Detect-Touch-Input-Devices/">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="/favicon.ico">
@@ -21,14 +31,14 @@
   <meta name="theme-color" content="#444">
 
     
-  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"BlogPosting","@id":"https://kiko.io/notes/2021/TIL-Detect-Touch-Input-Devices/#article","mainEntityOfPage":{"@id":"https://kiko.io/notes/2021/TIL-Detect-Touch-Input-Devices/"},"headline":"#TIL | Detect Touch Input Devices 2021 - kiko.io","datePublished":"2021-07-02T12:00:00Z","dateModified":"2021-07-02T12:00:00Z","image":{"@id":"https://kiko.io#photo/$notes-2021.jpg"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/notes/2021/TIL-Detect-Touch-Input-Devices/","url":"https://kiko.io/notes/2021/TIL-Detect-Touch-Input-Devices/","name":"#TIL | Detect Touch Input Devices 2021 - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"As of the W3C draft of Media Queries Level 5, touch devices can be detected by using the ``hover`` and the ``pointer`` media feature:...","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#photo/$notes-2021.jpg"},"image":{"@id":"https://kiko.io#photo/$notes-2021.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/$notes-2021.jpg","caption":"Riga Locks","url":"https://kiko.io/photos/normal/$notes-2021.jpg","contentUrl":"https://kiko.io/photos/normal/$notes-2021.jpg","discussionUrl":"https://500px.com/photo/82409189/riga-locks-by-kristof-zerbe","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"BlogPosting","@id":"https://kiko.io/notes/2021/TIL-Detect-Touch-Input-Devices/#article","mainEntityOfPage":{"@id":"https://kiko.io/notes/2021/TIL-Detect-Touch-Input-Devices/"},"headline":"#TIL | Detect Touch Input Devices 2021 - kiko.io","datePublished":"2021-07-02T12:00:00Z","dateModified":"2021-07-02T12:00:00Z","image":{"@id":"https://kiko.io#photo/$notes-2021.jpg"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/notes/2021/TIL-Detect-Touch-Input-Devices/","url":"https://kiko.io/notes/2021/TIL-Detect-Touch-Input-Devices/","name":"#TIL | Detect Touch Input Devices 2021 - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"As of the W3C draft of Media Queries Level 5, touch devices can be detected by using the hover and the pointer media feature:/* smartphones, touchscr...","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#photo/$notes-2021.jpg"},"image":{"@id":"https://kiko.io#photo/$notes-2021.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/$notes-2021.jpg","caption":"Riga Locks","url":"https://kiko.io/photos/normal/$notes-2021.jpg","contentUrl":"https://kiko.io/photos/normal/$notes-2021.jpg","discussionUrl":"https://500px.com/photo/82409189/riga-locks-by-kristof-zerbe","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
   <meta property="og:url" content="https://kiko.io/notes/2021/TIL-Detect-Touch-Input-Devices/index.html">
   <meta property="og:title" content="#TIL | Detect Touch Input Devices 2021 - kiko.io">
   
-  <meta property="og:description" content="As of the W3C draft of Media Queries Level 5, touch devices can be detected by using the ``hover`` and the ``pointer`` media feature:...">
+  <meta property="og:description" content="As of the W3C draft of Media Queries Level 5, touch devices can be detected by using the hover and the pointer media feature:/* smartphones, touchscr...">
   
   <meta property="og:image" content="">
   <meta property="og:locale" content="en_US">
@@ -38,7 +48,7 @@
   <meta property="twitter:url" content="https://kiko.io/notes/2021/TIL-Detect-Touch-Input-Devices/index.html">
   <meta property="twitter:title" content="#TIL | Detect Touch Input Devices 2021 - kiko.io">
   
-  <meta property="twitter:description" content="As of the W3C draft of Media Queries Level 5, touch devices can be detected by using the ``hover`` and the ``pointer`` media feature:...">
+  <meta property="twitter:description" content="As of the W3C draft of Media Queries Level 5, touch devices can be detected by using the hover and the pointer media feature:/* smartphones, touchscr...">
   
   <meta property="twitter:image" content="">
 

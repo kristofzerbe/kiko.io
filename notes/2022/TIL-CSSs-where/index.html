@@ -11,9 +11,20 @@
   <meta name="author" content="Kristof Zerbe">
   <meta name="title" content="#TIL | CSS&#39;s :where() 2022 - kiko.io">
   
-  <meta name="description" content="The ``:where()`` pseudo selector helps you writing cleaner code on the one hand. Instead of writing:...">
+  <meta name="description" content="The :where() pseudo selector helps you writing cleaner code on the one hand. Instead of writing:.wrapper h1,.wrapper h2,.wrapper h3 {  color: red;...">
   
-
+   
+  <meta name="excerpt" content="The :where() pseudo selector helps you writing cleaner code on the one hand. Instead of writing:
+.wrapper h1,
+.wrapper h2,
+.wrapper h3 {
+  color: red;
+} … you can do:
+.wrapper :where(h1, h2, h3) {
+  color red;
+} On the other hand, it is a so called forgiving selector, which rougly means, if one of the selectors in a selector list isn’t valid, it works nevertheless.">
+  
+  
   <link rel="canonical" href="https://kiko.io/notes/2022/TIL-CSSs-where/">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="/favicon.ico">
@@ -21,14 +32,14 @@
   <meta name="theme-color" content="#444">
 
     
-  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"BlogPosting","@id":"https://kiko.io/notes/2022/TIL-CSSs-where/#article","mainEntityOfPage":{"@id":"https://kiko.io/notes/2022/TIL-CSSs-where/"},"headline":"#TIL | CSS&#39;s :where() 2022 - kiko.io","datePublished":"2022-01-29T12:00:00Z","dateModified":"2022-01-29T12:00:00Z","image":{"@id":"https://kiko.io#photo/$notes-2022.jpg"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/notes/2022/TIL-CSSs-where/","url":"https://kiko.io/notes/2022/TIL-CSSs-where/","name":"#TIL | CSS&#39;s :where() 2022 - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"The ``:where()`` pseudo selector helps you writing cleaner code on the one hand. Instead of writing:...","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#photo/$notes-2022.jpg"},"image":{"@id":"https://kiko.io#photo/$notes-2022.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/$notes-2022.jpg","caption":"Lilla &amp; Zoli Lock","url":"https://kiko.io/photos/normal/$notes-2022.jpg","contentUrl":"https://kiko.io/photos/normal/$notes-2022.jpg","discussionUrl":"https://500px.com/photo/1037371998","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"BlogPosting","@id":"https://kiko.io/notes/2022/TIL-CSSs-where/#article","mainEntityOfPage":{"@id":"https://kiko.io/notes/2022/TIL-CSSs-where/"},"headline":"#TIL | CSS&#39;s :where() 2022 - kiko.io","datePublished":"2022-01-29T12:00:00Z","dateModified":"2022-01-29T12:00:00Z","image":{"@id":"https://kiko.io#photo/$notes-2022.jpg"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/notes/2022/TIL-CSSs-where/","url":"https://kiko.io/notes/2022/TIL-CSSs-where/","name":"#TIL | CSS&#39;s :where() 2022 - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"The :where() pseudo selector helps you writing cleaner code on the one hand. Instead of writing:.wrapper h1,.wrapper h2,.wrapper h3 {  color: red;...","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#photo/$notes-2022.jpg"},"image":{"@id":"https://kiko.io#photo/$notes-2022.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/$notes-2022.jpg","caption":"Lilla &amp; Zoli Lock","url":"https://kiko.io/photos/normal/$notes-2022.jpg","contentUrl":"https://kiko.io/photos/normal/$notes-2022.jpg","discussionUrl":"https://500px.com/photo/1037371998","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
   <meta property="og:url" content="https://kiko.io/notes/2022/TIL-CSSs-where/index.html">
   <meta property="og:title" content="#TIL | CSS&#39;s :where() 2022 - kiko.io">
   
-  <meta property="og:description" content="The ``:where()`` pseudo selector helps you writing cleaner code on the one hand. Instead of writing:...">
+  <meta property="og:description" content="The :where() pseudo selector helps you writing cleaner code on the one hand. Instead of writing:.wrapper h1,.wrapper h2,.wrapper h3 {  color: red;...">
   
   <meta property="og:image" content="">
   <meta property="og:locale" content="en_US">
@@ -38,7 +49,7 @@
   <meta property="twitter:url" content="https://kiko.io/notes/2022/TIL-CSSs-where/index.html">
   <meta property="twitter:title" content="#TIL | CSS&#39;s :where() 2022 - kiko.io">
   
-  <meta property="twitter:description" content="The ``:where()`` pseudo selector helps you writing cleaner code on the one hand. Instead of writing:...">
+  <meta property="twitter:description" content="The :where() pseudo selector helps you writing cleaner code on the one hand. Instead of writing:.wrapper h1,.wrapper h2,.wrapper h3 {  color: red;...">
   
   <meta property="twitter:image" content="">
 

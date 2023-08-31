@@ -13,7 +13,17 @@
   
   <meta name="description" content="... with a new Helper and an async function">
   
-
+   
+  <meta name="excerpt" content="The three main components of a standard installation of the Static Site Generator Hexo are the template system EJS (Embedded JavaScript Templating), Markdown for the content and Stylus for the styles.
+In the template files are the three main tags for driving content:
+Scriptlet tag for control flow (no output)
+123&lt;%  ... my JavaScript code to process data into the template%&gt; Output a value as escaped HTML
+1&lt;%= myVariable %&gt; Output of a raw value, usually in the form of a JavaScript function
+1&lt;%- myFunction() %&gt; Hexo’s helper system is based on the latter. So you can include a JavaScript file in your template that makes use of the JS Helper in node_modules\hexo\lib\plugins\helper\js.js as follows …
+1&lt;%- js(&#39;/js/dist/myFancyFunctions.js&#39;) %&gt; … which will be rendered to:
+1&lt;script src=&#34;/js/dist//js/dist/qr-code-styling.js&#34;&gt;&lt;/script&gt; The ProblemSo far and short, so good … but I recently tried to use this way to include a JSON file whose data one of my scripts needed as startup options and I noticed that the above mentioned JS helper unfortunately takes care of the possibly missing file extension js. It doesn’t matter if you only pass the path to the file as a string or if all necessary attributes as an object.">
+  
+  
   <link rel="canonical" href="https://kiko.io/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="/favicon.ico">
@@ -390,15 +400,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cllz9voth0033mnoy2whvehz4">
+      <div class="article-permalink" id="article-permalink-cllzijt2s0033k7otfxc28rkm">
     <input class="article-permalink-value" value="https://kiko.io/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/" 
-           data-id="cllz9voth0033mnoy2whvehz4" data-title="Include and provide JSON data in Hexo EJS Templates" />
+           data-id="cllzijt2s0033k7otfxc28rkm" data-title="Include and provide JSON data in Hexo EJS Templates" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz9voth0033mnoy2whvehz4");
+        initPermalink("cllzijt2s0033k7otfxc28rkm");
     });
 </script>
 

@@ -11,9 +11,14 @@
   <meta name="author" content="Kristof Zerbe">
   <meta name="title" content="How to prevent duplicate events - kiko.io">
   
-  <meta name="description" content="I&#39;m working on a new web app that contains a sliding out panel with some additional information on the selected element. This panel can be closed by t...">
+  <meta name="description" content="I’m working on a new web app that contains a sliding out panel with some additional information on the selected element. This panel can be closed by t...">
   
-
+   
+  <meta name="excerpt" content="I’m working on a new web app that contains a sliding out panel with some additional information on the selected element. This panel can be closed by the user via the ESC key. The implementation on initializing the panel seems very straight forward:
+1234567891011class Panel() {  init() {    document.addEventListener(&#34;keydown&#34;, function(event) {      if(event.key === &#34;Escape&#34;){        //close the panel      }    });      }} Problem is: the panel, which is part of the basic HTML, will be initialized with its content and functionality in a ES6 class. So … on every init, another event listener is added.
+You can easily figure that out, by calling getEventListeners(document) in the Chrome DevTools:">
+  
+  
   <link rel="canonical" href="https://kiko.io/post/How-to-prevent-duplicate-events/">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="/favicon.ico">
@@ -21,14 +26,14 @@
   <meta name="theme-color" content="#444">
 
     
-  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"Article","@id":"https://kiko.io/post/How-to-prevent-duplicate-events/#article","mainEntityOfPage":{"@id":"https://kiko.io/post/How-to-prevent-duplicate-events/"},"headline":"How to prevent duplicate events - kiko.io","description":"I&#39;m working on a new web app that contains a sliding out panel with some additional information on the selected element. This panel can be closed by t...","datePublished":"2021-01-07T16:22:25Z","dateModified":"2021-01-07T16:22:25Z","image":{"@id":"https://kiko.io#image/How-to-prevent-duplicate-events"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/post/How-to-prevent-duplicate-events/","url":"https://kiko.io/post/How-to-prevent-duplicate-events/","name":"How to prevent duplicate events - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"I&#39;m working on a new web app that contains a sliding out panel with some additional information on the selected element. This panel can be closed by t...","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#image/How-to-prevent-duplicate-events"},"image":{"@id":"https://kiko.io#photo/DSC_7239.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/DSC_7239.jpg","caption":"Whirling Spark I","url":"https://kiko.io/photos/normal/DSC_7239.jpg","contentUrl":"https://kiko.io/photos/normal/DSC_7239.jpg","discussionUrl":"https://500px.com/photo/84885887/Whirling-Spark-I-by-Kristof-Zerbe/","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}},{"@type":"ImageObject","@id":"https://kiko.io#image/How-to-prevent-duplicate-events","url":"https://kiko.io/images/social-media/How-to-prevent-duplicate-events.png","contentUrl":"https://kiko.io/images/social-media/How-to-prevent-duplicate-events.png","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"Article","@id":"https://kiko.io/post/How-to-prevent-duplicate-events/#article","mainEntityOfPage":{"@id":"https://kiko.io/post/How-to-prevent-duplicate-events/"},"headline":"How to prevent duplicate events - kiko.io","description":"I’m working on a new web app that contains a sliding out panel with some additional information on the selected element. This panel can be closed by t...","datePublished":"2021-01-07T16:22:25Z","dateModified":"2021-01-07T16:22:25Z","image":{"@id":"https://kiko.io#image/How-to-prevent-duplicate-events"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/post/How-to-prevent-duplicate-events/","url":"https://kiko.io/post/How-to-prevent-duplicate-events/","name":"How to prevent duplicate events - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"I’m working on a new web app that contains a sliding out panel with some additional information on the selected element. This panel can be closed by t...","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#image/How-to-prevent-duplicate-events"},"image":{"@id":"https://kiko.io#photo/DSC_7239.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/DSC_7239.jpg","caption":"Whirling Spark I","url":"https://kiko.io/photos/normal/DSC_7239.jpg","contentUrl":"https://kiko.io/photos/normal/DSC_7239.jpg","discussionUrl":"https://500px.com/photo/84885887/Whirling-Spark-I-by-Kristof-Zerbe/","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}},{"@type":"ImageObject","@id":"https://kiko.io#image/How-to-prevent-duplicate-events","url":"https://kiko.io/images/social-media/How-to-prevent-duplicate-events.png","contentUrl":"https://kiko.io/images/social-media/How-to-prevent-duplicate-events.png","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
   <meta property="og:url" content="https://kiko.io/post/How-to-prevent-duplicate-events/index.html">
   <meta property="og:title" content="How to prevent duplicate events - kiko.io">
   
-  <meta property="og:description" content="I&#39;m working on a new web app that contains a sliding out panel with some additional information on the selected element. This panel can be closed by t...">
+  <meta property="og:description" content="I’m working on a new web app that contains a sliding out panel with some additional information on the selected element. This panel can be closed by t...">
   
   <meta property="og:image" content="https://kiko.io/images/social-media/How-to-prevent-duplicate-events.png">
   <meta property="og:locale" content="en_US">
@@ -38,7 +43,7 @@
   <meta property="twitter:url" content="https://kiko.io/post/How-to-prevent-duplicate-events/index.html">
   <meta property="twitter:title" content="How to prevent duplicate events - kiko.io">
   
-  <meta property="twitter:description" content="I&#39;m working on a new web app that contains a sliding out panel with some additional information on the selected element. This panel can be closed by t...">
+  <meta property="twitter:description" content="I’m working on a new web app that contains a sliding out panel with some additional information on the selected element. This panel can be closed by t...">
   
   <meta property="twitter:image" content="https://kiko.io/images/social-media/How-to-prevent-duplicate-events.png">
 
@@ -353,15 +358,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz9vost001pmnoy9zp95v23">
+      <div class="article-permalink" id="article-permalink-cllzijt28001pk7otc0sa6q07">
     <input class="article-permalink-value" value="https://kiko.io/post/How-to-prevent-duplicate-events/" 
-           data-id="cllz9vost001pmnoy9zp95v23" data-title="How to prevent duplicate events" />
+           data-id="cllzijt28001pk7otc0sa6q07" data-title="How to prevent duplicate events" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz9vost001pmnoy9zp95v23");
+        initPermalink("cllzijt28001pk7otc0sa6q07");
     });
 </script>
 

@@ -13,7 +13,17 @@
   
   <meta name="description" content="How to create multiple device dependent header photos with Node">
   
-
+   
+  <meta name="excerpt" content="Since the existence of this blog, the posts all have a custom header image that I generate from my own photos. Already three years ago (omg … really?) I described in an article how to do this with Hexo: Automatic Header Images in Hexo.
+To keep it short, I use a pool folder for this, in which I keep in subfolders next to a meta.txt, for the title of the image and an external url on 500px for interactions to the image, three variants that I need for a new post: mobile.jpg (width 480px)
+tablet.jpg (width 768px)
+normal.jpg (width 1280px) The only piece of the puzzle that was still missing was the automatic generation of these three image variants and the meta file based on a selected photo that I want to add to the pool of available header images. So far it was fun to generate the header images manually either on the desktop or on the smartphone, but it really doesn’t have to be. My goal now was to write a script where I just throw a selected photo into a folder and the NodeJS script does the rest.
+My photo workflow is based on Adobe Lightroom Classic and one of the steps is to give a title to the good ones I use here as well. So the script had to include four steps when iterating over the inbound folder’s JPG files: create new pool folder
+read meta data (IPTC -&gt; title) and write it to meta.txt
+create the three image variants
+delete the processed image from the inbound folder">
+  
+  
   <link rel="canonical" href="https://kiko.io/post/Pool-Photo-Generator/">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="/favicon.ico">
@@ -400,15 +410,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cllz9voti0037mnoy53fc0ejx">
+      <div class="article-permalink" id="article-permalink-cllzijt2u0037k7othbe2etn3">
     <input class="article-permalink-value" value="https://kiko.io/post/Pool-Photo-Generator/" 
-           data-id="cllz9voti0037mnoy53fc0ejx" data-title="Pool Photo Generator" />
+           data-id="cllzijt2u0037k7othbe2etn3" data-title="Pool Photo Generator" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz9voti0037mnoy53fc0ejx");
+        initPermalink("cllzijt2u0037k7othbe2etn3");
     });
 </script>
 

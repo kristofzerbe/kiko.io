@@ -11,9 +11,15 @@
   <meta name="author" content="Kristof Zerbe">
   <meta name="title" content="Pagefind UI and URL Parameters - kiko.io">
   
-  <meta name="description" content="UPDATE: Parts of the original post are outdated, as Pagefind DOES offer a way to preset a search string, which just hasn&#39;t been documented yet ... \o/...">
+  <meta name="description" content="UPDATE: Parts of the original post are outdated, as Pagefind DOES offer a way to preset a search string, which just hasn’t been documented yet … \o/ …...">
   
-
+   
+  <meta name="excerpt" content="UPDATE: Parts of the original post are outdated, as Pagefind DOES offer a way to preset a search string, which just hasn’t been documented yet … \o/ … see below.     
+   A couple of days ago I wrote about my attempt to integrate Pagefind in my blog. In the meantime, I further refined the indexing by excluding more content areas and adding more for the metadata to make the search results even better.
+But one thing was still missing: controlling the search via url parameters, so that you can actually consider the page as a search page. I came across this in a post about the sense and nonsense of Open Graph attributes and other search engine related metadata nowadays. Google, for example, likes to use JSON-LD and when describing the site you can define a search page which then makes it easier to search the site directly via Google … see Sitelinks search box (WebSite) structured data
+In my implementation, I decided to adapt the Pagefind UI for myself instead of developing everything from scratch via JavaScript. There are always some limitations with pre-built solutions, but I want to show here that they are actually none for the inclusion of a url parameter.">
+  
+  
   <link rel="canonical" href="https://kiko.io/post/Pagefind-UI-and-URL-Parameters/">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="/favicon.ico">
@@ -21,14 +27,14 @@
   <meta name="theme-color" content="#444">
 
     
-  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"Article","@id":"https://kiko.io/post/Pagefind-UI-and-URL-Parameters/#article","mainEntityOfPage":{"@id":"https://kiko.io/post/Pagefind-UI-and-URL-Parameters/"},"headline":"Pagefind UI and URL Parameters - kiko.io","description":"UPDATE: Parts of the original post are outdated, as Pagefind DOES offer a way to preset a search string, which just hasn&#39;t been documented yet ... \\o/...","datePublished":"2023-01-31T10:04:00Z","dateModified":"2023-02-03T10:51:00Z","image":{"@id":"https://kiko.io#image/Pagefind-UI-and-URL-Parameters"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/post/Pagefind-UI-and-URL-Parameters/","url":"https://kiko.io/post/Pagefind-UI-and-URL-Parameters/","name":"Pagefind UI and URL Parameters - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"UPDATE: Parts of the original post are outdated, as Pagefind DOES offer a way to preset a search string, which just hasn&#39;t been documented yet ... \\o/...","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#image/Pagefind-UI-and-URL-Parameters"},"image":{"@id":"https://kiko.io#photo/D50_7076.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/D50_7076.jpg","caption":"German Roofage","url":"https://kiko.io/photos/normal/D50_7076.jpg","contentUrl":"https://kiko.io/photos/normal/D50_7076.jpg","discussionUrl":"https://500px.com/photo/1045391866","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}},{"@type":"ImageObject","@id":"https://kiko.io#image/Pagefind-UI-and-URL-Parameters","url":"https://kiko.io/images/social-media/Pagefind-UI-and-URL-Parameters.png","contentUrl":"https://kiko.io/images/social-media/Pagefind-UI-and-URL-Parameters.png","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"Article","@id":"https://kiko.io/post/Pagefind-UI-and-URL-Parameters/#article","mainEntityOfPage":{"@id":"https://kiko.io/post/Pagefind-UI-and-URL-Parameters/"},"headline":"Pagefind UI and URL Parameters - kiko.io","description":"UPDATE: Parts of the original post are outdated, as Pagefind DOES offer a way to preset a search string, which just hasn’t been documented yet … \\o/ …...","datePublished":"2023-01-31T10:04:00Z","dateModified":"2023-02-03T10:51:00Z","image":{"@id":"https://kiko.io#image/Pagefind-UI-and-URL-Parameters"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/post/Pagefind-UI-and-URL-Parameters/","url":"https://kiko.io/post/Pagefind-UI-and-URL-Parameters/","name":"Pagefind UI and URL Parameters - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"UPDATE: Parts of the original post are outdated, as Pagefind DOES offer a way to preset a search string, which just hasn’t been documented yet … \\o/ …...","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#image/Pagefind-UI-and-URL-Parameters"},"image":{"@id":"https://kiko.io#photo/D50_7076.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/D50_7076.jpg","caption":"German Roofage","url":"https://kiko.io/photos/normal/D50_7076.jpg","contentUrl":"https://kiko.io/photos/normal/D50_7076.jpg","discussionUrl":"https://500px.com/photo/1045391866","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}},{"@type":"ImageObject","@id":"https://kiko.io#image/Pagefind-UI-and-URL-Parameters","url":"https://kiko.io/images/social-media/Pagefind-UI-and-URL-Parameters.png","contentUrl":"https://kiko.io/images/social-media/Pagefind-UI-and-URL-Parameters.png","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
   <meta property="og:url" content="https://kiko.io/post/Pagefind-UI-and-URL-Parameters/index.html">
   <meta property="og:title" content="Pagefind UI and URL Parameters - kiko.io">
   
-  <meta property="og:description" content="UPDATE: Parts of the original post are outdated, as Pagefind DOES offer a way to preset a search string, which just hasn&#39;t been documented yet ... \o/...">
+  <meta property="og:description" content="UPDATE: Parts of the original post are outdated, as Pagefind DOES offer a way to preset a search string, which just hasn’t been documented yet … \o/ …...">
   
   <meta property="og:image" content="https://kiko.io/images/social-media/Pagefind-UI-and-URL-Parameters.png">
   <meta property="og:locale" content="en_US">
@@ -38,7 +44,7 @@
   <meta property="twitter:url" content="https://kiko.io/post/Pagefind-UI-and-URL-Parameters/index.html">
   <meta property="twitter:title" content="Pagefind UI and URL Parameters - kiko.io">
   
-  <meta property="twitter:description" content="UPDATE: Parts of the original post are outdated, as Pagefind DOES offer a way to preset a search string, which just hasn&#39;t been documented yet ... \o/...">
+  <meta property="twitter:description" content="UPDATE: Parts of the original post are outdated, as Pagefind DOES offer a way to preset a search string, which just hasn’t been documented yet … \o/ …...">
   
   <meta property="twitter:image" content="https://kiko.io/images/social-media/Pagefind-UI-and-URL-Parameters.png">
 
@@ -393,15 +399,15 @@ Since Pagefind already shows results when typing the first characters, the easie
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-cllz9voti0036mnoyae470q49">
+      <div class="article-permalink" id="article-permalink-cllzijt2t0036k7ot8u6fd6sm">
     <input class="article-permalink-value" value="https://kiko.io/post/Pagefind-UI-and-URL-Parameters/" 
-           data-id="cllz9voti0036mnoyae470q49" data-title="Pagefind UI and URL Parameters" />
+           data-id="cllzijt2t0036k7ot8u6fd6sm" data-title="Pagefind UI and URL Parameters" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz9voti0036mnoyae470q49");
+        initPermalink("cllzijt2t0036k7ot8u6fd6sm");
     });
 </script>
 

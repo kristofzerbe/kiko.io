@@ -11,9 +11,16 @@
   <meta name="author" content="Kristof Zerbe">
   <meta name="title" content="#Link | Avoid CORS problems with allOrigins 2023 - kiko.io">
   
-  <meta name="description" content="Ever got crazy on CORS problems when using an API? While examine the code of Christian Heilmann&#39;s WebComponent **github-include**, I stumbled over his...">
+  <meta name="description" content="Ever got crazy on CORS problems when using an API? While examine the code of Christian Heilmann’s WebComponent github-include, I stumbled over his fet...">
   
-
+   
+  <meta name="excerpt" content="Ever got crazy on CORS problems when using an API? While examine the code of Christian Heilmann’s WebComponent github-include, I stumbled over his fetching URL towards GitHub: 
+let proxy = &#39;https://api.allorigins.win/raw?url=&#39;;
+Never mind, but great…
+https://allorigins.win
+#api #proxy #cors">
+  
+  
   <link rel="canonical" href="https://kiko.io/notes/2023/avoid-cors-problems-with-allorgins/">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="/favicon.ico">
@@ -21,14 +28,14 @@
   <meta name="theme-color" content="#444">
 
     
-  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"BlogPosting","@id":"https://kiko.io/notes/2023/avoid-cors-problems-with-allorgins/#article","mainEntityOfPage":{"@id":"https://kiko.io/notes/2023/avoid-cors-problems-with-allorgins/"},"headline":"#Link | Avoid CORS problems with allOrigins 2023 - kiko.io","datePublished":"2023-08-26T00:00:00Z","dateModified":"2023-08-26T00:00:00Z","image":{"@id":"https://kiko.io#photo/$notes-2023.jpg"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/notes/2023/avoid-cors-problems-with-allorgins/","url":"https://kiko.io/notes/2023/avoid-cors-problems-with-allorgins/","name":"#Link | Avoid CORS problems with allOrigins 2023 - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"Ever got crazy on CORS problems when using an API? While examine the code of Christian Heilmann&#39;s WebComponent **github-include**, I stumbled over his...","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#photo/$notes-2023.jpg"},"image":{"@id":"https://kiko.io#photo/$notes-2023.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/$notes-2023.jpg","caption":"Rusty Locks","url":"https://kiko.io/photos/normal/$notes-2023.jpg","contentUrl":"https://kiko.io/photos/normal/$notes-2023.jpg","discussionUrl":"https://500px.com/photo/1037372000","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"BlogPosting","@id":"https://kiko.io/notes/2023/avoid-cors-problems-with-allorgins/#article","mainEntityOfPage":{"@id":"https://kiko.io/notes/2023/avoid-cors-problems-with-allorgins/"},"headline":"#Link | Avoid CORS problems with allOrigins 2023 - kiko.io","datePublished":"2023-08-26T00:00:00Z","dateModified":"2023-08-26T00:00:00Z","image":{"@id":"https://kiko.io#photo/$notes-2023.jpg"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/notes/2023/avoid-cors-problems-with-allorgins/","url":"https://kiko.io/notes/2023/avoid-cors-problems-with-allorgins/","name":"#Link | Avoid CORS problems with allOrigins 2023 - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"Ever got crazy on CORS problems when using an API? While examine the code of Christian Heilmann’s WebComponent github-include, I stumbled over his fet...","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#photo/$notes-2023.jpg"},"image":{"@id":"https://kiko.io#photo/$notes-2023.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/$notes-2023.jpg","caption":"Rusty Locks","url":"https://kiko.io/photos/normal/$notes-2023.jpg","contentUrl":"https://kiko.io/photos/normal/$notes-2023.jpg","discussionUrl":"https://500px.com/photo/1037372000","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
   <meta property="og:url" content="https://kiko.io/notes/2023/avoid-cors-problems-with-allorgins/index.html">
   <meta property="og:title" content="#Link | Avoid CORS problems with allOrigins 2023 - kiko.io">
   
-  <meta property="og:description" content="Ever got crazy on CORS problems when using an API? While examine the code of Christian Heilmann&#39;s WebComponent **github-include**, I stumbled over his...">
+  <meta property="og:description" content="Ever got crazy on CORS problems when using an API? While examine the code of Christian Heilmann’s WebComponent github-include, I stumbled over his fet...">
   
   <meta property="og:image" content="">
   <meta property="og:locale" content="en_US">
@@ -38,7 +45,7 @@
   <meta property="twitter:url" content="https://kiko.io/notes/2023/avoid-cors-problems-with-allorgins/index.html">
   <meta property="twitter:title" content="#Link | Avoid CORS problems with allOrigins 2023 - kiko.io">
   
-  <meta property="twitter:description" content="Ever got crazy on CORS problems when using an API? While examine the code of Christian Heilmann&#39;s WebComponent **github-include**, I stumbled over his...">
+  <meta property="twitter:description" content="Ever got crazy on CORS problems when using an API? While examine the code of Christian Heilmann’s WebComponent github-include, I stumbled over his fet...">
   
   <meta property="twitter:image" content="">
 

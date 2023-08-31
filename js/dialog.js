@@ -64,17 +64,27 @@ var dpDialog = {
     });
 
     // CONTENT
+
+    //>> Meta
+    let excerptElm = document.querySelector("meta[name='excerpt']");
+    if (excerptElm) {
+      let secMeta = $('<section></section>').appendTo(dpDialog.base.content);
+      secMeta.append(`<label>Excerpt:</label><p style="white-space: pre-line;">${excerptElm.getAttribute("content")}</p>`);
+      $('<hr class="divider" style="margin:8px 0">').appendTo(dpDialog.base.content);
+    }
+
+    //>> JSONLD
     let json = JSON.parse($('script[type="application/ld+json"]').text());
 
-    let secVisual = $('<section></section>').appendTo(dpDialog.base.content);
+    let secJSONLD = $('<section></section>').appendTo(dpDialog.base.content);
     let tIntroduction = `
       <p style="margin-bottom: 20px; font-style: italic;">
-        This is a visual representation of the metadata for this page, included as JSON-LD. 
+        Following data are a visual representation of the metadata for this page, included as JSON-LD. 
         For more information on this topic, see my post 
         <a href="https://kiko.io/post/Provide-Blog-Metadata-via-JSON-LD/">Provide Blog Metadata via JSON-LD</a> and the raw metadata below.
       </p>
     `;
-    secVisual.append(tIntroduction);
+    secJSONLD.append(tIntroduction);
     
     let state = "open";
     //---
@@ -85,7 +95,7 @@ var dpDialog = {
       let jPublisher = json["@graph"].filter(x => x["@id"] === jArticle[0].publisher["@id"]);
       let tArticle = getArticle(state, jArticle[0], jAuthor[0], jPublisher[0], jImage[0]);
       state = "";
-      secVisual.append($(tArticle));
+      secJSONLD.append($(tArticle));
     }
     //--
     let jBlogPosting = json["@graph"].filter(x => x["@type"] === "BlogPosting");
@@ -94,26 +104,26 @@ var dpDialog = {
       let jPublisher = json["@graph"].filter(x => x["@id"] === jBlogPosting[0].publisher["@id"]);
       let tBlogPosting = getBlogPosting(state, jBlogPosting[0], jAuthor[0], jPublisher[0]);
       state = "";
-      secVisual.append($(tBlogPosting));
+      secJSONLD.append($(tBlogPosting));
     }
     //--
     let jWebPage = json["@graph"].filter(x => x["@type"] === "WebPage");
     let jPhoto = json["@graph"].filter(x => x["@id"] === jWebPage[0].image["@id"]);
     let tWebPage = getWebPage(state, jWebPage[0], jPhoto[0]);
-    secVisual.append($(tWebPage));
+    secJSONLD.append($(tWebPage));
     //--
     let jWebSite = json["@graph"].filter(x => x["@type"] === "WebSite");
     let jPublisher = json["@graph"].filter(x => x["@id"] === jWebSite[0].publisher["@id"]);
     let tWebSite = getWebSite(jWebSite[0], jPublisher[0]);
-    secVisual.append($(tWebSite));
+    secJSONLD.append($(tWebSite));
     //--
     let jOrganization = json["@graph"].filter(x => x["@type"] === "Organization");
     let tOrganization = getOrganization(jOrganization[0]);
-    secVisual.append($(tOrganization));
+    secJSONLD.append($(tOrganization));
     //--
     let jPerson = json["@graph"].filter(x => x["@type"] === "Person");
     let tPerson = getPerson(jPerson[0]);
-    secVisual.append($(tPerson));
+    secJSONLD.append($(tPerson));
 
     let secCode = $('<section></section>').appendTo(dpDialog.base.content);
     secCode.append('<h1>JSON-LD</h1>');
@@ -146,7 +156,7 @@ var dpDialog = {
             <label>Image</label>
             <figure>
               <img src="${image.contentUrl}" />
-              <figcaption>(Social Media Image)</figcaption>
+              <figcaption>${image.contentUrl}</figcaption>
             </figure>
           </div>
         </details>

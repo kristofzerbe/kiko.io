@@ -13,7 +13,13 @@
   
   <meta name="description" content="In ECMAScript 2020 the optional chaining operator was introduced into JavaScript. The question mark right behind the property name helps to prevent nu...">
   
-
+   
+  <meta name="excerpt" content="In ECMAScript 2020 the optional chaining operator was introduced into JavaScript. The question mark right behind the property name helps to prevent null reference exceptions:
+const foo = { bar: null }; foo.bar.prop // TypeError: Cannot read properties of undefined = NullReferenceException foo?.bar?.prop // undefined This works also on methods calls and index access:
+foo.doSomething.?()
+foo.aList.?[0] Important: The parentheses for the parameter listing or the index expression must be preceded by a period!">
+  
+  
   <link rel="canonical" href="https://kiko.io/notes/2021/TIL-Optional-Chaining-on-Methods-and-Indexes/">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="/favicon.ico">

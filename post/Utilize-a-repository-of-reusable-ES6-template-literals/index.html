@@ -11,9 +11,16 @@
   <meta name="author" content="Kristof Zerbe">
   <meta name="title" content="Utilize a repository of reusable ES6 template literals - kiko.io">
   
-  <meta name="description" content="The **Template Literals** introduced with ES6 are very useful to deal with multiline strings, because they support embedded expressions. Gone are the ...">
+  <meta name="description" content="The Template Literals introduced with ES6 are very useful to deal with multiline strings, because they support embedded expressions. Gone are the days...">
   
-
+   
+  <meta name="excerpt" content="The Template Literals introduced with ES6 are very useful to deal with multiline strings, because they support embedded expressions. Gone are the days of endless string concatination or replacing variables in a string by using RegEx.
+Instead of… 
+12345678var url = ...var file = ...var template =   &#39;&lt;div class=&#34;photo&#34;&gt;&#39; +      &#39;&lt;a href=&#34;&#39; + url + &#34;&#39; +         &#39;style=&#34;background-image: url(&#39; + file + &#39;)&#34;&lt;/a&gt;&#39; +   &#39;&lt;/div&gt;&#39; … you can write:
+123456789var url = ...var file = ...var template = `  &lt;div class=&#34;photo&#34;&gt;    &lt;a href=&#34;${url}/&#34;    style=&#34;background-image: url(${file});&#34;&gt;&lt;/a&gt;  &lt;/div&gt;`, It’s much cleaner and easier to handle, as you can copy your needed HTML right into your code and surround it by backtick (!) characters. Insert your variable placeholders (expressions), indicated by a dollar sign and curly braces, and you are done.
+But there is one “restriction”, you have to be aware of: the interpolation (substitution of the expressions) is done at declaration time and not at runtime. You can’t define your literals seperatly, take one and make your substitution as you need it, like you would do with Handlebars or other templating engines. Therefore the name template literals is a bit misleading. But … there is a way to achieve this anyway…">
+  
+  
   <link rel="canonical" href="https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="/favicon.ico">
@@ -21,14 +28,14 @@
   <meta name="theme-color" content="#444">
 
     
-  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"Article","@id":"https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/#article","mainEntityOfPage":{"@id":"https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/"},"headline":"Utilize a repository of reusable ES6 template literals - kiko.io","description":"The **Template Literals** introduced with ES6 are very useful to deal with multiline strings, because they support embedded expressions. Gone are the ...","datePublished":"2021-01-03T12:29:01Z","dateModified":"2021-01-03T12:29:01Z","image":{"@id":"https://kiko.io#image/Utilize-a-repository-of-reusable-ES6-template-literals"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/","url":"https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/","name":"Utilize a repository of reusable ES6 template literals - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"The **Template Literals** introduced with ES6 are very useful to deal with multiline strings, because they support embedded expressions. Gone are the ...","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#image/Utilize-a-repository-of-reusable-ES6-template-literals"},"image":{"@id":"https://kiko.io#photo/DSC_7897.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/DSC_7897.jpg","caption":"Rusted Bike","url":"https://kiko.io/photos/normal/DSC_7897.jpg","contentUrl":"https://kiko.io/photos/normal/DSC_7897.jpg","discussionUrl":"https://500px.com/photo/86258961/Rusted-Bike-by-Kristof-Zerbe/","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}},{"@type":"ImageObject","@id":"https://kiko.io#image/Utilize-a-repository-of-reusable-ES6-template-literals","url":"https://kiko.io/images/social-media/Utilize-a-repository-of-reusable-ES6-template-literals.png","contentUrl":"https://kiko.io/images/social-media/Utilize-a-repository-of-reusable-ES6-template-literals.png","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"Article","@id":"https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/#article","mainEntityOfPage":{"@id":"https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/"},"headline":"Utilize a repository of reusable ES6 template literals - kiko.io","description":"The Template Literals introduced with ES6 are very useful to deal with multiline strings, because they support embedded expressions. Gone are the days...","datePublished":"2021-01-03T12:29:01Z","dateModified":"2021-01-03T12:29:01Z","image":{"@id":"https://kiko.io#image/Utilize-a-repository-of-reusable-ES6-template-literals"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/","url":"https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/","name":"Utilize a repository of reusable ES6 template literals - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"The Template Literals introduced with ES6 are very useful to deal with multiline strings, because they support embedded expressions. Gone are the days...","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#image/Utilize-a-repository-of-reusable-ES6-template-literals"},"image":{"@id":"https://kiko.io#photo/DSC_7897.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/DSC_7897.jpg","caption":"Rusted Bike","url":"https://kiko.io/photos/normal/DSC_7897.jpg","contentUrl":"https://kiko.io/photos/normal/DSC_7897.jpg","discussionUrl":"https://500px.com/photo/86258961/Rusted-Bike-by-Kristof-Zerbe/","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}},{"@type":"ImageObject","@id":"https://kiko.io#image/Utilize-a-repository-of-reusable-ES6-template-literals","url":"https://kiko.io/images/social-media/Utilize-a-repository-of-reusable-ES6-template-literals.png","contentUrl":"https://kiko.io/images/social-media/Utilize-a-repository-of-reusable-ES6-template-literals.png","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
   <meta property="og:url" content="https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/index.html">
   <meta property="og:title" content="Utilize a repository of reusable ES6 template literals - kiko.io">
   
-  <meta property="og:description" content="The **Template Literals** introduced with ES6 are very useful to deal with multiline strings, because they support embedded expressions. Gone are the ...">
+  <meta property="og:description" content="The Template Literals introduced with ES6 are very useful to deal with multiline strings, because they support embedded expressions. Gone are the days...">
   
   <meta property="og:image" content="https://kiko.io/images/social-media/Utilize-a-repository-of-reusable-ES6-template-literals.png">
   <meta property="og:locale" content="en_US">
@@ -38,7 +45,7 @@
   <meta property="twitter:url" content="https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/index.html">
   <meta property="twitter:title" content="Utilize a repository of reusable ES6 template literals - kiko.io">
   
-  <meta property="twitter:description" content="The **Template Literals** introduced with ES6 are very useful to deal with multiline strings, because they support embedded expressions. Gone are the ...">
+  <meta property="twitter:description" content="The Template Literals introduced with ES6 are very useful to deal with multiline strings, because they support embedded expressions. Gone are the days...">
   
   <meta property="twitter:image" content="https://kiko.io/images/social-media/Utilize-a-repository-of-reusable-ES6-template-literals.png">
 
@@ -389,15 +396,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllz9vot10025mnoy50dbfdpd">
+      <div class="article-permalink" id="article-permalink-cllzijt2e0025k7ot8hdv6pxm">
     <input class="article-permalink-value" value="https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/" 
-           data-id="cllz9vot10025mnoy50dbfdpd" data-title="Utilize a repository of reusable ES6 template literals" />
+           data-id="cllzijt2e0025k7ot8hdv6pxm" data-title="Utilize a repository of reusable ES6 template literals" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllz9vot10025mnoy50dbfdpd");
+        initPermalink("cllzijt2e0025k7ot8hdv6pxm");
     });
 </script>
 

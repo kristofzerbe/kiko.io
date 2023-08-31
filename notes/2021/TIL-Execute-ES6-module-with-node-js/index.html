@@ -11,9 +11,13 @@
   <meta name="author" content="Kristof Zerbe">
   <meta name="title" content="#TIL | Execute ES6 module with node.js 2021 - kiko.io">
   
-  <meta name="description" content="When executing a script designed as an ES6 module (f.e. ``node my-module.js``), it will fail with the error ``Cannot use import statement outside a mo...">
+  <meta name="description" content="When executing a script designed as an ES6 module (f.e. node my-module.js), it will fail with the error Cannot use import statement outside a module....">
   
-
+   
+  <meta name="excerpt" content="When executing a script designed as an ES6 module (f.e. node my-module.js), it will fail with the error Cannot use import statement outside a module.
+Add &#34;type&#34;: &#34;module&#34; to package.json and it will work.">
+  
+  
   <link rel="canonical" href="https://kiko.io/notes/2021/TIL-Execute-ES6-module-with-node-js/">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="/favicon.ico">
@@ -21,14 +25,14 @@
   <meta name="theme-color" content="#444">
 
     
-  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"BlogPosting","@id":"https://kiko.io/notes/2021/TIL-Execute-ES6-module-with-node-js/#article","mainEntityOfPage":{"@id":"https://kiko.io/notes/2021/TIL-Execute-ES6-module-with-node-js/"},"headline":"#TIL | Execute ES6 module with node.js 2021 - kiko.io","datePublished":"2021-07-06T12:00:00Z","dateModified":"2021-07-06T12:00:00Z","image":{"@id":"https://kiko.io#photo/$notes-2021.jpg"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/notes/2021/TIL-Execute-ES6-module-with-node-js/","url":"https://kiko.io/notes/2021/TIL-Execute-ES6-module-with-node-js/","name":"#TIL | Execute ES6 module with node.js 2021 - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"When executing a script designed as an ES6 module (f.e. ``node my-module.js``), it will fail with the error ``Cannot use import statement outside a mo...","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#photo/$notes-2021.jpg"},"image":{"@id":"https://kiko.io#photo/$notes-2021.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/$notes-2021.jpg","caption":"Riga Locks","url":"https://kiko.io/photos/normal/$notes-2021.jpg","contentUrl":"https://kiko.io/photos/normal/$notes-2021.jpg","discussionUrl":"https://500px.com/photo/82409189/riga-locks-by-kristof-zerbe","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"BlogPosting","@id":"https://kiko.io/notes/2021/TIL-Execute-ES6-module-with-node-js/#article","mainEntityOfPage":{"@id":"https://kiko.io/notes/2021/TIL-Execute-ES6-module-with-node-js/"},"headline":"#TIL | Execute ES6 module with node.js 2021 - kiko.io","datePublished":"2021-07-06T12:00:00Z","dateModified":"2021-07-06T12:00:00Z","image":{"@id":"https://kiko.io#photo/$notes-2021.jpg"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/notes/2021/TIL-Execute-ES6-module-with-node-js/","url":"https://kiko.io/notes/2021/TIL-Execute-ES6-module-with-node-js/","name":"#TIL | Execute ES6 module with node.js 2021 - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"When executing a script designed as an ES6 module (f.e. node my-module.js), it will fail with the error Cannot use import statement outside a module....","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#photo/$notes-2021.jpg"},"image":{"@id":"https://kiko.io#photo/$notes-2021.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/$notes-2021.jpg","caption":"Riga Locks","url":"https://kiko.io/photos/normal/$notes-2021.jpg","contentUrl":"https://kiko.io/photos/normal/$notes-2021.jpg","discussionUrl":"https://500px.com/photo/82409189/riga-locks-by-kristof-zerbe","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
   <meta property="og:url" content="https://kiko.io/notes/2021/TIL-Execute-ES6-module-with-node-js/index.html">
   <meta property="og:title" content="#TIL | Execute ES6 module with node.js 2021 - kiko.io">
   
-  <meta property="og:description" content="When executing a script designed as an ES6 module (f.e. ``node my-module.js``), it will fail with the error ``Cannot use import statement outside a mo...">
+  <meta property="og:description" content="When executing a script designed as an ES6 module (f.e. node my-module.js), it will fail with the error Cannot use import statement outside a module....">
   
   <meta property="og:image" content="">
   <meta property="og:locale" content="en_US">
@@ -38,7 +42,7 @@
   <meta property="twitter:url" content="https://kiko.io/notes/2021/TIL-Execute-ES6-module-with-node-js/index.html">
   <meta property="twitter:title" content="#TIL | Execute ES6 module with node.js 2021 - kiko.io">
   
-  <meta property="twitter:description" content="When executing a script designed as an ES6 module (f.e. ``node my-module.js``), it will fail with the error ``Cannot use import statement outside a mo...">
+  <meta property="twitter:description" content="When executing a script designed as an ES6 module (f.e. node my-module.js), it will fail with the error Cannot use import statement outside a module....">
   
   <meta property="twitter:image" content="">
 
