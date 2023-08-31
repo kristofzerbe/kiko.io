@@ -50,7 +50,7 @@
   <link href="https://github.com/kristofzerbe" rel="me authn">
   <link href="mailto:kristof.zerbe@gmail.com" rel="me authn">
   
-    
+    <link rel="alternate" href="/atom.xml" title="Triangulate your images with Triangula - kiko.io" type="application/atom+xml">
 
   <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>
@@ -193,10 +193,10 @@
           </li>
         
           
-          <li class="menu-item menu-item-icon" id="nav-rss-link">
+          <li class="menu-item" id="nav-feeds-link">
             <a class="sub-nav-link"
-               href="/atom.xml">
-                <span>Feed</span>
+               href="/feeds">
+                <span>Feeds</span>
               </a>
           </li>
         
@@ -340,7 +340,7 @@
 <p>These images are absolute great for background images in websites, in order to make the details less recognisable.</p>
 <p>There is a <a href="https://rh12503.github.io/triangula/">web version of Triangula</a>, but the desktop version (including a console version) is much faster. Best feature is the ability not only to save the generated images as PNG, but also as SVG!</p>
 <h3 id="Example-with-1-000-Generations"><a href="#Example-with-1-000-Generations" class="headerlink" title="Example with 1.000 Generations"></a>Example with 1.000 Generations</h3>
-    <div id="image-compare-i9rp03">
+    <div id="image-compare-n095k5">
       <img class="image-compare image-original" src="/post/Triangulate-your-images-with-Triangula/DSC_7006-HDR_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Triangulate-your-images-with-Triangula/DSC_7006-HDR_TRIANGULATED.png" alt="" />
     </div>
@@ -349,7 +349,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-i9rp03"),
+      new ImageCompare(document.getElementById("image-compare-n095k5"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -365,7 +365,7 @@
   
 
 <h3 id="Example-with-10-000-Generations"><a href="#Example-with-10-000-Generations" class="headerlink" title="Example with 10.000 Generations"></a>Example with 10.000 Generations</h3>
-    <div id="image-compare-vd7smx">
+    <div id="image-compare-opcwfb">
       <img class="image-compare image-original" src="/post/Triangulate-your-images-with-Triangula/19-07 Schottland-0512_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Triangulate-your-images-with-Triangula/19-07 Schottland-0512_TRIANGULATED.png" alt="" />
     </div>
@@ -374,7 +374,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-vd7smx"),
+      new ImageCompare(document.getElementById("image-compare-opcwfb"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -390,7 +390,7 @@
   
 
 <h3 id="Example-with-20-000-Generations"><a href="#Example-with-20-000-Generations" class="headerlink" title="Example with 20.000 Generations"></a>Example with 20.000 Generations</h3>
-    <div id="image-compare-djgre3">
+    <div id="image-compare-q7cx9z">
       <img class="image-compare image-original" src="/post/Triangulate-your-images-with-Triangula/DSC_8860_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Triangulate-your-images-with-Triangula/DSC_8860_TRIANGULATED.png" alt="" />
     </div>
@@ -399,7 +399,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-djgre3"),
+      new ImageCompare(document.getElementById("image-compare-q7cx9z"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -423,15 +423,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clluqg66l0021k1on358x3f28">
+      <div class="article-permalink" id="article-permalink-cllz44y9r0020kkoi91jme79b">
     <input class="article-permalink-value" value="https://kiko.io/post/Triangulate-your-images-with-Triangula/" 
-           data-id="clluqg66l0021k1on358x3f28" data-title="Triangulate your images with Triangula" />
+           data-id="cllz44y9r0020kkoi91jme79b" data-title="Triangulate your images with Triangula" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clluqg66l0021k1on358x3f28");
+        initPermalink("cllz44y9r0020kkoi91jme79b");
     });
 </script>
 
@@ -774,7 +774,7 @@
         <a href="/impressum">Impressum</a>
         <span class="dot-space">&#9679;</span>
         
-        <a href="/atom.xml">Feed</a>
+        <a href="/feeds">Feeds</a>
         <span class="dot-space">&#9679;</span>
         
         <a href="javascript:dialog.pageMeta();">Page Meta</a>
@@ -1074,6 +1074,12 @@
   // BACK-TO-TOP
   addBackToTop({ diameter: 30 });
 
+  // MENU-ITEM-SCROLL
+  let pathItem = window.location.pathname.split('/')[1].toLowerCase();
+  if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
+  console.log(pathItem);
+  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+
   // AUTOTYPING
   setTimeout(function() {
     $("#title-wrap").empty();
@@ -1100,10 +1106,6 @@
 
   <script>
     //HOOK LINKS FOR PIRSCH EVENT...
-
-    //FEED
-    let feed = document.querySelector("#nav-rss-link a.sub-nav-link");
-    if (feed) feed.addEventListener("click", function() { pirsch('Feed clicked') });
 
     //VSCODE
     let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));

@@ -50,7 +50,7 @@
   <link href="https://github.com/kristofzerbe" rel="me authn">
   <link href="mailto:kristof.zerbe@gmail.com" rel="me authn">
   
-    
+    <link rel="alternate" href="/atom.xml" title="SVWW vs. Karlsruhe @ 2023-08-18 - kiko.io" type="application/atom+xml">
 
   <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>
@@ -193,10 +193,10 @@
           </li>
         
           
-          <li class="menu-item menu-item-icon" id="nav-rss-link">
+          <li class="menu-item" id="nav-feeds-link">
             <a class="sub-nav-link"
-               href="/atom.xml">
-                <span>Feed</span>
+               href="/feeds">
+                <span>Feeds</span>
               </a>
           </li>
         
@@ -335,12 +335,12 @@
 <hr>
 <h2 id="The-Game"><a href="#The-Game" class="headerlink" title="The Game"></a>The Game</h2><p>The club has of course strengthened itself for the new season with new players in all sections of the team, whom I have now seen play for the first time. And unfortunately, some of them, such as Brooklyn Ezeh and Benedikt Hollerbach, who grew on me during the few games last year, have moved to other clubs.</p>
 
-      <div class="image-slider" id="image-slide-q6xdgg">
+      <div class="image-slider" id="image-slide-seqxfd">
         <div><img src="/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_162508253.jpg" alt="SVWW vs Karlsruhe - Before the start of the game" /></div><div><img src="/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_162748966.jpg" alt="SVWW vs Karlsruhe - Team line-up" /></div><div><img src="/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_165147461.jpg" alt="SVWW vs Karlsruhe - Goal to 1:1" /></div><div><img src="/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_165151113.jpg" alt="SVWW vs Karlsruhe - Goal to 1:1" /></div><div><img src="/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_165331533.jpg" alt="SVWW vs Karlsruhe - Drinking break" /></div><div><img src="/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_171135513.jpg" alt="SVWW vs Karlsruhe - Treatment" /></div><div><img src="/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_175443989.jpg" alt="SVWW vs Karlsruhe - 2. Half" /></div><div><img src="/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_180413434.jpg" alt="SVWW vs Karlsruhe - Lees substitution" /></div><div><img src="/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_182650426.jpg" alt="SVWW vs Karlsruhe - Cheers of victory" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-q6xdgg",
+          container: "#image-slide-seqxfd",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -381,15 +381,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clluqg678003ak1onfo921mho">
+      <div class="article-permalink" id="article-permalink-cllz44ya8003akkoi4s7p7gmk">
     <input class="article-permalink-value" value="https://kiko.io/post/SVWW-vs-Karlsruhe-2023-08-18/" 
-           data-id="clluqg678003ak1onfo921mho" data-title="SVWW vs. Karlsruhe @ 2023-08-18" />
+           data-id="cllz44ya8003akkoi4s7p7gmk" data-title="SVWW vs. Karlsruhe @ 2023-08-18" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clluqg678003ak1onfo921mho");
+        initPermalink("cllz44ya8003akkoi4s7p7gmk");
     });
 </script>
 
@@ -629,7 +629,7 @@
         <a href="/impressum">Impressum</a>
         <span class="dot-space">&#9679;</span>
         
-        <a href="/atom.xml">Feed</a>
+        <a href="/feeds">Feeds</a>
         <span class="dot-space">&#9679;</span>
         
         <a href="javascript:dialog.pageMeta();">Page Meta</a>
@@ -929,6 +929,12 @@
   // BACK-TO-TOP
   addBackToTop({ diameter: 30 });
 
+  // MENU-ITEM-SCROLL
+  let pathItem = window.location.pathname.split('/')[1].toLowerCase();
+  if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
+  console.log(pathItem);
+  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+
   // AUTOTYPING
   setTimeout(function() {
     $("#title-wrap").empty();
@@ -955,10 +961,6 @@
 
   <script>
     //HOOK LINKS FOR PIRSCH EVENT...
-
-    //FEED
-    let feed = document.querySelector("#nav-rss-link a.sub-nav-link");
-    if (feed) feed.addEventListener("click", function() { pirsch('Feed clicked') });
 
     //VSCODE
     let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));

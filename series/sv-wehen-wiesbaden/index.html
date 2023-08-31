@@ -50,7 +50,7 @@
   <link href="https://github.com/kristofzerbe" rel="me authn">
   <link href="mailto:kristof.zerbe@gmail.com" rel="me authn">
   
-    
+    <link rel="alternate" href="/atom.xml" title="SV Wehen Wiesbaden - kiko.io" type="application/atom+xml">
 
   <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>
@@ -193,10 +193,10 @@
           </li>
         
           
-          <li class="menu-item menu-item-icon" id="nav-rss-link">
+          <li class="menu-item" id="nav-feeds-link">
             <a class="sub-nav-link"
-               href="/atom.xml">
-                <span>Feed</span>
+               href="/feeds">
+                <span>Feeds</span>
               </a>
           </li>
         
@@ -340,15 +340,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clluqg678003ak1onfo921mho">
+      <div class="article-permalink" id="article-permalink-cllz44ya8003akkoi4s7p7gmk">
     <input class="article-permalink-value" value="https://kiko.io/post/SVWW-vs-Karlsruhe-2023-08-18/" 
-           data-id="clluqg678003ak1onfo921mho" data-title="SVWW vs. Karlsruhe @ 2023-08-18" />
+           data-id="cllz44ya8003akkoi4s7p7gmk" data-title="SVWW vs. Karlsruhe @ 2023-08-18" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clluqg678003ak1onfo921mho");
+        initPermalink("cllz44ya8003akkoi4s7p7gmk");
     });
 </script>
 
@@ -437,15 +437,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clluqg6760035k1onfsuh7s4l">
+      <div class="article-permalink" id="article-permalink-cllz44ya60035kkoia6sg0nhx">
     <input class="article-permalink-value" value="https://kiko.io/post/My-Hometown-My-Club/" 
-           data-id="clluqg6760035k1onfsuh7s4l" data-title="My Hometown, My Club" />
+           data-id="cllz44ya60035kkoia6sg0nhx" data-title="My Hometown, My Club" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clluqg6760035k1onfsuh7s4l");
+        initPermalink("cllz44ya60035kkoia6sg0nhx");
     });
 </script>
 
@@ -546,7 +546,7 @@
         <a href="/impressum">Impressum</a>
         <span class="dot-space">&#9679;</span>
         
-        <a href="/atom.xml">Feed</a>
+        <a href="/feeds">Feeds</a>
         <span class="dot-space">&#9679;</span>
         
         <a href="javascript:dialog.pageMeta();">Page Meta</a>
@@ -846,6 +846,12 @@
   // BACK-TO-TOP
   addBackToTop({ diameter: 30 });
 
+  // MENU-ITEM-SCROLL
+  let pathItem = window.location.pathname.split('/')[1].toLowerCase();
+  if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
+  console.log(pathItem);
+  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+
   // AUTOTYPING
   setTimeout(function() {
     $("#title-wrap").empty();
@@ -872,10 +878,6 @@
 
   <script>
     //HOOK LINKS FOR PIRSCH EVENT...
-
-    //FEED
-    let feed = document.querySelector("#nav-rss-link a.sub-nav-link");
-    if (feed) feed.addEventListener("click", function() { pirsch('Feed clicked') });
 
     //VSCODE
     let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));

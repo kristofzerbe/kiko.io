@@ -50,7 +50,7 @@
   <link href="https://github.com/kristofzerbe" rel="me authn">
   <link href="mailto:kristof.zerbe@gmail.com" rel="me authn">
   
-    
+    <link rel="alternate" href="/atom.xml" title="Indian Presets for Lightroom - kiko.io" type="application/atom+xml">
 
   <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>
@@ -193,10 +193,10 @@
           </li>
         
           
-          <li class="menu-item menu-item-icon" id="nav-rss-link">
+          <li class="menu-item" id="nav-feeds-link">
             <a class="sub-nav-link"
-               href="/atom.xml">
-                <span>Feed</span>
+               href="/feeds">
+                <span>Feeds</span>
               </a>
           </li>
         
@@ -333,7 +333,7 @@
 <span id="more"></span>
 
 <h2 id="Indian-Sunset"><a href="#Indian-Sunset" class="headerlink" title="Indian Sunset"></a>Indian Sunset</h2>
-    <div id="image-compare-bzysbl">
+    <div id="image-compare-7q3ydb">
       <img class="image-compare image-original" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_165823_HDR_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_165823_HDR_PRESET_Sunset.jpg" alt="" />
     </div>
@@ -342,7 +342,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-bzysbl"),
+      new ImageCompare(document.getElementById("image-compare-7q3ydb"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -359,7 +359,7 @@
 
 <hr>
 
-    <div id="image-compare-yrl8cr">
+    <div id="image-compare-bd0m77">
       <img class="image-compare image-original" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_164343_HDR_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_164343_HDR_PRESET_Sunset.jpg" alt="" />
     </div>
@@ -368,7 +368,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-yrl8cr"),
+      new ImageCompare(document.getElementById("image-compare-bd0m77"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -400,15 +400,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clluqg65p000tk1on2u3iambp">
+      <div class="article-permalink" id="article-permalink-cllz44y8z000ukkoi12dtb73v">
     <input class="article-permalink-value" value="https://kiko.io/post/Indian-Presets-for-Lightroom/" 
-           data-id="clluqg65p000tk1on2u3iambp" data-title="Indian Presets for Lightroom" />
+           data-id="cllz44y8z000ukkoi12dtb73v" data-title="Indian Presets for Lightroom" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clluqg65p000tk1on2u3iambp");
+        initPermalink("cllz44y8z000ukkoi12dtb73v");
     });
 </script>
 
@@ -745,7 +745,7 @@
         <a href="/impressum">Impressum</a>
         <span class="dot-space">&#9679;</span>
         
-        <a href="/atom.xml">Feed</a>
+        <a href="/feeds">Feeds</a>
         <span class="dot-space">&#9679;</span>
         
         <a href="javascript:dialog.pageMeta();">Page Meta</a>
@@ -1045,6 +1045,12 @@
   // BACK-TO-TOP
   addBackToTop({ diameter: 30 });
 
+  // MENU-ITEM-SCROLL
+  let pathItem = window.location.pathname.split('/')[1].toLowerCase();
+  if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
+  console.log(pathItem);
+  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+
   // AUTOTYPING
   setTimeout(function() {
     $("#title-wrap").empty();
@@ -1071,10 +1077,6 @@
 
   <script>
     //HOOK LINKS FOR PIRSCH EVENT...
-
-    //FEED
-    let feed = document.querySelector("#nav-rss-link a.sub-nav-link");
-    if (feed) feed.addEventListener("click", function() { pirsch('Feed clicked') });
 
     //VSCODE
     let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));

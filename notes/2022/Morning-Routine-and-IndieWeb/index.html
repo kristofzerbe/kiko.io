@@ -50,7 +50,7 @@
   <link href="https://github.com/kristofzerbe" rel="me authn">
   <link href="mailto:kristof.zerbe@gmail.com" rel="me authn">
   
-    
+    <link rel="alternate" href="/atom.xml" title="Morning Routine and IndieWeb 2022 - kiko.io" type="application/atom+xml">
 
   <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>
@@ -193,10 +193,10 @@
           </li>
         
           
-          <li class="menu-item menu-item-icon" id="nav-rss-link">
+          <li class="menu-item" id="nav-feeds-link">
             <a class="sub-nav-link"
-               href="/atom.xml">
-                <span>Feed</span>
+               href="/feeds">
+                <span>Feeds</span>
               </a>
           </li>
         
@@ -311,7 +311,7 @@
     </header>
 
     <div class="article-entry e-content">
-      <p>Get up. Make coffee. Grab Smartphone. Read news. Read RSS feeds. It goes like this or something similar every morning and I ALWAYS get stuck on the topic of IndieWeb. Surfing around for an hour or so. The topic simply hooked me. Today it was the wonderful work from Ryan Barrett (@<a href="mailto:&#x73;&#110;&#97;&#114;&#102;&#x65;&#x64;&#46;&#111;&#114;&#x67;&#64;&#x73;&#x6e;&#97;&#114;&#x66;&#x65;&#x64;&#46;&#111;&#x72;&#103;">&#x73;&#110;&#97;&#114;&#102;&#x65;&#x64;&#46;&#111;&#114;&#x67;&#64;&#x73;&#x6e;&#97;&#114;&#x66;&#x65;&#x64;&#46;&#111;&#x72;&#103;</a>). Ended up thinking what I can do with …</p>
+      <p>Get up. Make coffee. Grab Smartphone. Read news. Read RSS feeds. It goes like this or something similar every morning and I ALWAYS get stuck on the topic of IndieWeb. Surfing around for an hour or so. The topic simply hooked me. Today it was the wonderful work from Ryan Barrett (@<a href="mailto:&#x73;&#x6e;&#97;&#114;&#102;&#101;&#x64;&#46;&#x6f;&#114;&#103;&#x40;&#115;&#110;&#97;&#114;&#102;&#101;&#100;&#x2e;&#x6f;&#114;&#x67;">&#x73;&#x6e;&#97;&#114;&#102;&#101;&#x64;&#46;&#x6f;&#114;&#103;&#x40;&#115;&#110;&#97;&#114;&#102;&#101;&#100;&#x2e;&#x6f;&#114;&#x67;</a>). Ended up thinking what I can do with …</p>
 <p><a href="https://granary.io/">https://granary.io/</a></p>
 
     </div>
@@ -491,7 +491,7 @@
         <a href="/impressum">Impressum</a>
         <span class="dot-space">&#9679;</span>
         
-        <a href="/atom.xml">Feed</a>
+        <a href="/feeds">Feeds</a>
         <span class="dot-space">&#9679;</span>
         
         <a href="javascript:dialog.pageMeta();">Page Meta</a>
@@ -791,6 +791,12 @@
   // BACK-TO-TOP
   addBackToTop({ diameter: 30 });
 
+  // MENU-ITEM-SCROLL
+  let pathItem = window.location.pathname.split('/')[1].toLowerCase();
+  if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
+  console.log(pathItem);
+  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+
   // AUTOTYPING
   setTimeout(function() {
     $("#title-wrap").empty();
@@ -817,10 +823,6 @@
 
   <script>
     //HOOK LINKS FOR PIRSCH EVENT...
-
-    //FEED
-    let feed = document.querySelector("#nav-rss-link a.sub-nav-link");
-    if (feed) feed.addEventListener("click", function() { pirsch('Feed clicked') });
 
     //VSCODE
     let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));

@@ -50,7 +50,7 @@
   <link href="https://github.com/kristofzerbe" rel="me authn">
   <link href="mailto:kristof.zerbe@gmail.com" rel="me authn">
   
-    
+    <link rel="alternate" href="/atom.xml" title="Radio Garden - kiko.io" type="application/atom+xml">
 
   <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>
@@ -193,10 +193,10 @@
           </li>
         
           
-          <li class="menu-item menu-item-icon" id="nav-rss-link">
+          <li class="menu-item" id="nav-feeds-link">
             <a class="sub-nav-link"
-               href="/atom.xml">
-                <span>Feed</span>
+               href="/feeds">
+                <span>Feeds</span>
               </a>
           </li>
         
@@ -345,12 +345,12 @@
 <p>The British <a href="http://puckey.studio/"><strong>Jonathan Puckey</strong> and his studio</a> played a key role in the project and its technical implementation. In several iteration stages, this resulted in the web app radio.garden, which Puckey is still in charge of today. Instead of maps, the team from Amsterdam used satellite images from the beginning to illustrate that radio signals have always had the power to cross borders.</p>
 <p>Radio Garden is free, and you don’t need to register, log in, or even provide an email address. Nothing. Open up, select a station, listen to the radio.</p>
 
-      <div class="image-slider" id="image-slide-smcq8f">
+      <div class="image-slider" id="image-slide-03mwfc">
         <div><img src="/post/Radio-Garden/radio-garden-screen-1.png" alt="Screenshot Radio Garden" /></div><div><img src="/post/Radio-Garden/radio-garden-screen-3.png" alt="Screenshot Radio Garden" /></div><div><img src="/post/Radio-Garden/radio-garden-screen-4.png" alt="Screenshot Radio Garden" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-smcq8f",
+          container: "#image-slide-03mwfc",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -382,20 +382,20 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clluqg6780039k1on7btzbfg8">
+      <div class="article-permalink" id="article-permalink-cllz44ya80039kkoihlgscmza">
     <input class="article-permalink-value" value="https://kiko.io/post/Radio-Garden/" 
-           data-id="clluqg6780039k1on7btzbfg8" data-title="Radio Garden" />
+           data-id="cllz44ya80039kkoihlgscmza" data-title="Radio Garden" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clluqg6780039k1on7btzbfg8");
+        initPermalink("cllz44ya80039kkoihlgscmza");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-clluqg6780039k1on7btzbfg8">
+        <div class="article-golem" id="article-golem-cllz44ya80039kkoihlgscmza">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 26 Jan 2023 
     in German under the title <span style="font-weight:bold;">&laquo;Alle Arten kommen in den Garten&raquo;</span>&nbsp;&nbsp;  
@@ -743,7 +743,7 @@
         <a href="/impressum">Impressum</a>
         <span class="dot-space">&#9679;</span>
         
-        <a href="/atom.xml">Feed</a>
+        <a href="/feeds">Feeds</a>
         <span class="dot-space">&#9679;</span>
         
         <a href="javascript:dialog.pageMeta();">Page Meta</a>
@@ -1043,6 +1043,12 @@
   // BACK-TO-TOP
   addBackToTop({ diameter: 30 });
 
+  // MENU-ITEM-SCROLL
+  let pathItem = window.location.pathname.split('/')[1].toLowerCase();
+  if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
+  console.log(pathItem);
+  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+
   // AUTOTYPING
   setTimeout(function() {
     $("#title-wrap").empty();
@@ -1069,10 +1075,6 @@
 
   <script>
     //HOOK LINKS FOR PIRSCH EVENT...
-
-    //FEED
-    let feed = document.querySelector("#nav-rss-link a.sub-nav-link");
-    if (feed) feed.addEventListener("click", function() { pirsch('Feed clicked') });
 
     //VSCODE
     let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));

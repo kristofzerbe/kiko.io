@@ -50,7 +50,7 @@
   <link href="https://github.com/kristofzerbe" rel="me authn">
   <link href="mailto:kristof.zerbe@gmail.com" rel="me authn">
   
-    
+    <link rel="alternate" href="/atom.xml" title="Impressum - kiko.io" type="application/atom+xml">
 
   <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>
@@ -193,10 +193,10 @@
           </li>
         
           
-          <li class="menu-item menu-item-icon" id="nav-rss-link">
+          <li class="menu-item" id="nav-feeds-link">
             <a class="sub-nav-link"
-               href="/atom.xml">
-                <span>Feed</span>
+               href="/feeds">
+                <span>Feeds</span>
               </a>
           </li>
         
@@ -287,7 +287,7 @@
 
 <h1 id="Verantwortlich-fur-den-Inhalt-gemas-§-55-Abs-2-RStV"><a href="#Verantwortlich-fur-den-Inhalt-gemas-§-55-Abs-2-RStV" class="headerlink" title="Verantwortlich für den Inhalt gemäß § 55 Abs.2 RStV"></a>Verantwortlich für den Inhalt gemäß § 55 Abs.2 RStV</h1><p>Kristof Zerbe<br>Kaiser-Friedrich-Str. 8<br>65193 Wiesbaden</p>
 <p>Mobil: +49 171 6998867</p>
-<p><a href="mailto:&#x6b;&#114;&#x69;&#115;&#x74;&#x6f;&#x66;&#46;&#122;&#101;&#114;&#98;&#101;&#64;&#x67;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#x6b;&#114;&#x69;&#115;&#x74;&#x6f;&#x66;&#46;&#122;&#101;&#114;&#98;&#101;&#64;&#x67;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#x6d;</a></p>
+<p><a href="mailto:&#107;&#x72;&#x69;&#115;&#x74;&#x6f;&#102;&#x2e;&#x7a;&#101;&#114;&#x62;&#x65;&#x40;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;">&#107;&#x72;&#x69;&#115;&#x74;&#x6f;&#102;&#x2e;&#x7a;&#101;&#114;&#x62;&#x65;&#x40;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a></p>
 </section>
 
 <section>
@@ -400,7 +400,7 @@
         <a href="/impressum">Impressum</a>
         <span class="dot-space">&#9679;</span>
         
-        <a href="/atom.xml">Feed</a>
+        <a href="/feeds">Feeds</a>
         <span class="dot-space">&#9679;</span>
         
         <a href="javascript:dialog.pageMeta();">Page Meta</a>
@@ -700,6 +700,12 @@
   // BACK-TO-TOP
   addBackToTop({ diameter: 30 });
 
+  // MENU-ITEM-SCROLL
+  let pathItem = window.location.pathname.split('/')[1].toLowerCase();
+  if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
+  console.log(pathItem);
+  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+
   // AUTOTYPING
   setTimeout(function() {
     $("#title-wrap").empty();
@@ -726,10 +732,6 @@
 
   <script>
     //HOOK LINKS FOR PIRSCH EVENT...
-
-    //FEED
-    let feed = document.querySelector("#nav-rss-link a.sub-nav-link");
-    if (feed) feed.addEventListener("click", function() { pirsch('Feed clicked') });
 
     //VSCODE
     let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));

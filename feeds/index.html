@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Feeds - kiko.io</title>
+  <meta name="author" content="Kristof Zerbe">
+  <meta name="title" content="Feeds - kiko.io">
+  
+  <meta name="description" content="Feeds by Kristof Zerbe">
+  
+
+  <link rel="canonical" href="https://kiko.io/feeds/">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <meta name="theme-color" content="#444">
+
+    
+  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"WebPage","@id":"https://kiko.io/feeds/","url":"https://kiko.io/feeds/","name":"Feeds - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"Feeds by Kristof Zerbe","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#photo/$feeds.jpg"},"image":{"@id":"https://kiko.io#photo/$feeds.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/$feeds.jpg","caption":"Knitting Colors","url":"https://kiko.io/photos/normal/$feeds.jpg","contentUrl":"https://kiko.io/photos/normal/$feeds.jpg","discussionUrl":"https://500px.com/photo/1074191746","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
+
+    <meta property="og:site_name" content="kiko.io">
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="https://kiko.io/feeds/index.html">
+  <meta property="og:title" content="Feeds - kiko.io">
+  
+  <meta property="og:description" content="Feeds by Kristof Zerbe">
+  
+  <meta property="og:image" content="https://kiko.io/photos/normal/$feeds.jpg">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://kiko.io/feeds/index.html">
+  <meta property="twitter:title" content="Feeds - kiko.io">
+  
+  <meta property="twitter:description" content="Feeds by Kristof Zerbe">
+  
+  <meta property="twitter:image" content="https://kiko.io/photos/normal/$feeds.jpg">
+
+    <link rel="webmention" href="https://webmention.io/kiko.io/webmention" />
+  <link rel="pingback" href="https://webmention.io/kiko.io/xmlrpc" />
+
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
+  <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
+  <link href="https://github.com/kristofzerbe" rel="me authn">
+  <link href="mailto:kristof.zerbe@gmail.com" rel="me authn">
+  
+    <link rel="alternate" href="/atom.xml" title="Feeds - kiko.io" type="application/atom+xml">
+
+  <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-semibold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-semibolditalic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Regular.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-It.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Bold.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/fontawesome/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="preload" as="image" href="/images/hero.jpg" imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$search.jpg" imagesrcset="/photos/mobile/$search.jpg 480w, /photos/tablet/$search.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$notes-2023.jpg" imagesrcset="/photos/mobile/$notes-2023.jpg 480w, /photos/tablet/$notes-2023.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$projects.jpg" imagesrcset="/photos/mobile/$projects.jpg 480w, /photos/tablet/$projects.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$tiny-tools.jpg" imagesrcset="/photos/mobile/$tiny-tools.jpg 480w, /photos/tablet/$tiny-tools.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$photos.jpg" imagesrcset="/photos/mobile/$photos.jpg 480w, /photos/tablet/$photos.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$about.jpg" imagesrcset="/photos/mobile/$about.jpg 480w, /photos/tablet/$about.jpg 768w">
+  <link rel="preload" as="image" href="/photos/normal/$404.jpg" imagesrcset="/photos/mobile/$404.jpg 480w, /photos/tablet/$404.jpg 768w">
+
+  
+<link rel="stylesheet" href="/css/dist/bundle.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/tools.js"></script>
+
+  
+<script src="/js/dialog.js"></script>
+
+  
+<script src="/js/dist/scroll-timeline.js"></script>
+
+  
+<script src="/js/dist/image-compare-viewer.min.js"></script>
+
+  
+<script src="/js/dist/tiny-slider.min.js"></script>
+
+
+
+  <script defer type="text/javascript" 
+    src="https://api.pirsch.io/pirsch.js"
+    id="pirschjs"
+    data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>
+  <script type="text/javascript" 
+    src="https://api.pirsch.io/pirsch-events.js"
+    id="pirscheventsjs"
+    data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body id="body">  
+  <div id="container" class="container">
+    <div class="inner-container">
+      <div id="wrap">
+        <header id="header">
+  <a href="#" id="header-photo-link" target="_blank" rel="noopener" ></a>
+  <div id="banner">
+    <div id="header-nav-start"></div>
+    <nav id="header-nav" role="navigation">
+      <ul class="menu">
+        
+          
+          <li class="menu-item menu-item-icon" id="nav-home-link">
+            <a class="sub-nav-link"
+               href="/">
+                <span>Home</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item menu-item-icon" id="nav-search-link">
+            <a class="sub-nav-link"
+               href="/search">
+                <span>Search</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-archives-link">
+            <a class="sub-nav-link"
+               href="/archives">
+                <span>Archives</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-series-link">
+            <a class="sub-nav-link"
+               href="/series">
+                <span>series</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-notes-link">
+            <a class="sub-nav-link"
+               href="/notes">
+                <span>notes</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-projects-link">
+            <a class="sub-nav-link"
+               href="/projects">
+                <span>projects</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-tiny-tools-link">
+            <a class="sub-nav-link"
+               href="/collections/tiny-tools">
+                <span>tiny-tools</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-photos-link">
+            <a class="sub-nav-link"
+               href="/photos">
+                <span>photos</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-about-link">
+            <a class="sub-nav-link"
+               href="/about">
+                <span>About</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-feeds-link">
+            <a class="sub-nav-link"
+               href="/feeds">
+                <span>Feeds</span>
+              </a>
+          </li>
+        
+      </ul>
+    </nav>
+    <div id="header-nav-end"></div>
+  </div>
+  <div id="progress"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+        <a href="/" id="logo">
+          <h1 id="title-wrap">
+            <span style="opacity:0.2;">kiko.io</span>
+          </h1>
+        </a>
+      
+        <h2 id="subtitle">
+          Memorable Tech Stuff
+        </h2>
+        <div id="sub-socialmediaimage-link" onclick="copysocialmediaimageLink();"></div>
+        <script>
+          function copysocialmediaimageLink() {
+            let smil = document.querySelector('meta[property="og:image"]').content;
+            copyTextToClipboard(smil);
+          }
+        </script>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        <div id="sub-nav-theme">          
+          <input type="checkbox" id="theme-switch">
+          <label for="theme-switch"></label>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+<script>
+  if (location.pathname === "/") {
+    document.getElementById("nav-home-link").remove();
+  }
+</script>
+        <div id="content" class="outer">
+          <main class="">
+  <style>
+#banner {
+    background-size: cover;
+}
+@media screen and (max-width: 479px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/$feeds.jpg"); }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/$feeds.jpg"); }
+}
+@media screen and (min-width: 768px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/$feeds.jpg"); }    
+}
+</style>
+
+<img id="header-photo" data-pagefind-meta="image[src], image_alt[alt]"
+     src="/photos/normal/$feeds.jpg" 
+     alt="Knitting Colors"
+     width="0" height="0"/>
+
+
+    <script>
+        var header = document.getElementById("header");
+        header.classList.add("photograph");
+        
+        var photoLink = document.getElementById("header-photo-link");
+        photoLink.href = "https://500px.com/photo/1074191746";
+        photoLink.innerHTML = "see <strong>Knitting Colors</strong> at 500px";
+    </script>
+
+
+
+
+
+
+<h1 class="page-title" data-pagefind-meta="title" data-pagefind-meta="type:Page">
+  Feeds
+</h1>
+
+<div class="page-content" data-pagefind-body>
+    <p>For years, I had integrated only one <a href="https://en.wikipedia.org/wiki/Atom_(web_standard)">Atom</a> feed in this blog, which gave an excerpt of the article to the posts and a link to read more. A poll on Mastodon on the topic <a href="/notes/2023/feed-full-length-article/">made me change</a> to the full article text … but this also meant that the feed size grew by about 80%, which is also not okay for everyone.</p>
+<p>On this page you will now find not only both Atom feed variants for my <a href="/archives"><strong>Posts</strong></a>, but also some in the good old <a href="https://en.wikipedia.org/wiki/RSS">RSS 2.0</a> and the relatively new <a href="https://en.wikipedia.org/wiki/JSON_Feed">JSON feed</a> format. More feeds for my <a href="/notes"><strong>Notes</strong></a> will be available here later on also.</p>
+<section class="feeds">
+
+<h2 id="Posts"><a href="#Posts" class="headerlink" title="Posts"></a>Posts</h2><div class="feed-group">
+  <strong>Full Content</strong>
+  <a href="/atom.xml" class="atom site-default">
+    <span><strong>Atom Feed</strong> (atom.xml)</span>
+  </a>
+  <a href="/rss.xml" class="rss">
+    <span><strong>RSS 2.0 Feed</strong> (rss.xml)</span>
+  </a>
+  <a href="/feed.json" class="json">
+    <span><strong>JSON Feed</strong> (feed.json)</span>
+  </a>
+</div>
+
+<div class="feed-group">
+  <strong>Excerpt Only</strong>
+  <a href="/atom-excerpt.xml" class="atom">
+    <span><strong>Atom Feed</strong> (atom-excerpt.xml)</span>
+  </a>
+  <a href="/rss-excerpt.xml" class="rss">
+    <span><strong>RSS 2.0 Feed</strong> (rss-excerpt.json)</span>
+  </a>
+  <a href="/feed-excerpt.json" class="json">
+    <span><strong>JSON Feed</strong> (feed-excerpt.json)</span>
+  </a>
+</div>
+
+</section>
+</div></main>
+          
+            <aside id="sidebar">
+  
+    <div class="widget-wrap">
+    <div class="widget about h-card"><!--http://microformats.org/wiki/h-card-->
+        <div class="avatar">
+            <a href="/about"><img class="u-photo" src="/images/kristof-zerbe.png" alt="Kristof Zerbe"></a>
+            <a href="https://github.com/kristofzerbe" target="_blank" class="fab fa-github" rel="me"></a>
+            <a href="https://www.xing.com/profile/Kristof_Zerbe" target="_blank" class="fab fa-xing" rel="me"></a>
+            <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" target="_blank" class="fab fa-linkedin" rel="me"></a>      
+            <a href="https://500px.com/kikon" target="_blank" class="fab fa-500px" rel="me"></a>
+            <a href="https://indieweb.social/@kiko" target="_blank" class="fab fa-mastodon" rel="me"></a>
+        </div>
+        <h3 class="p-name">Kristof Zerbe</h3>
+        <p class="p-note">
+            <i class="p-role">Developer & Team Lead</i> located in <i class="p-locality">Wiesbaden</i>, <i class="p-country-name">Germany</i>
+        </p>
+        <a class="u-url u-uid" href="https://kiko.io" style="display:none;"></a>
+    </div>
+</div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            
+              <a href="/post/Pool-Photo-Generator/">Pool Photo Generator</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/SVWW-vs-Karlsruhe-2023-08-18/">SVWW vs. Karlsruhe @ 2023-08-18</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/My-Hometown-My-Club/">My Hometown, My Club</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/CONTINUE-READING-Link-Auto-Scrolling-on-the-called-page/">CONTINUE READING Link &amp; Auto Scrolling on the called page</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+
+  <div class="widget widget-wrap">
+    <p>
+      Want more? This way ... to the <a href="/archives">archives</a>
+    </p>
+  </div>  
+</aside>
+          
+        </div>
+        <footer id="footer">
+  
+  <div class="outer">
+    <div class="inner">
+
+      <ul id="footer-dots">
+        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+      </ul>
+
+      <div id="footer-info" class="footer-block">
+        &copy; 2019-2023&nbsp;&nbsp;<a href="https://bio.link/kristof">Kristof Zerbe</a>
+        <span class="dot-space">&#9679;</span>
+        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+      </div>
+
+      <div id="footer-links">
+        
+        <a href="/about">About</a>
+        <span class="dot-space">&#9679;</span>
+        
+        <a href="/impressum">Impressum</a>
+        <span class="dot-space">&#9679;</span>
+        
+        <a href="/feeds">Feeds</a>
+        <span class="dot-space">&#9679;</span>
+        
+        <a href="javascript:dialog.pageMeta();">Page Meta</a>
+      </div>
+
+      <div id="footer-perf">
+        Page loaded in <span class="perf-loadtime">0</span> at <span class="perf-viewport"></span>
+        <script>
+          window.addEventListener("resize", function () {
+            const height = document.documentElement.clientHeight;
+            const width = document.documentElement.clientWidth;
+            document.querySelector("#footer-perf span.perf-viewport").innerHTML = `${width} x ${height}`;
+          });
+          window.addEventListener("load", function () {
+            const pageEnd = performance.mark("pageEnd")
+            const loadTime = pageEnd.startTime / 1000;
+            document.querySelector("#footer-perf span.perf-loadtime").innerHTML = loadTime.toFixed(2);
+            window.dispatchEvent(new Event('resize'));
+          });
+        </script>
+      </div>
+
+      <div id="webring">
+        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+      </div>
+      <script>
+  let isOffline = 'false' === 'true';
+</script>
+
+
+<script src="/js/jquery-3.6.0.min.js"></script>
+
+
+<script src="/js/dist/bundle.min.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+<script src="/js/dist/qr-code-styling.js"></script>
+
+
+<script src="/js/dist/qr-code-styling-options-contact.json" id="qr-code-styling-options" type="application&#x2F;json"></script>
+
+
+<script>
+  //--- eval url hash on load
+  var hash = window.location.hash.substr(1);
+  switch (hash.toLowerCase()) {
+    case "contact":
+      window.addEventListener('load', function () {
+        dialog.contact();
+      });
+      break;
+    case "continue":
+      //has no offset due to fixed header
+      //...document.getElementById("more").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest"});
+      window.scrollTo({
+        behavior: 'smooth',
+        top:
+          document.querySelector("#more").getBoundingClientRect().top -
+          document.body.getBoundingClientRect().top -
+          200,
+      });
+      history.replaceState(null, null, ' '); // remove hash
+    default: break;
+  }
+</script>
+
+<script>
+  /*** DEFINITIONS */
+
+  //HEADER
+  var header = {
+    height: 0,
+    top: 0,
+    offset: 55,
+    photoLinkOpacity: 0,
+    titleFontSize: 0
+  };
+  function initHeader() {
+    $("#header").css("height", ""); //reset inline css
+    $("#header-title").css("top", "");
+    $("#header-photo-link").css("opacity", "");
+    $("#title-wrap").css("font-size", "");
+    header.height = $("#header").height(); //set from given css
+    header.top = parseFloat($("#header-title").css("top"));
+    header.photoLinkOpacity = parseFloat($("#header-photo-link").css("opacity"));
+    header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
+
+    //change subtitle a bit
+    let sub = $("#header").find("#subtitle");
+    let col = sub.css("color");
+    let rpl = `<span style="text-decoration:line-through;color:rgb(120 120 120)" title="not only anymore"><span style="color:${col};opacity:0.75">Tech</span></span>`;
+    let txt = sub.text().trim().replace('Tech', rpl);
+    sub.html(txt);
+
+    scrollHeader();
+  }
+  function scrollHeader() {
+    var h = header.height - header.offset,
+        st = $(document).scrollTop(),  
+        d = (h - st),
+        p = (d / h),
+        hfs = header.titleFontSize / 5 * 3,
+        jSide = $("aside");
+    if (d > 0) {
+      $("#header").css("height", d + header.offset + "px");
+      $("#header-photo-link").css("opacity", header.photoLinkOpacity * p);
+      $("#banner").css("opacity", p);
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1 - p) );
+      $("#header-title").css("top", header.top - (hfs * (1 - p)) + "px");
+      $("#subtitle").css("opacity", p);
+      jSide.css("max-width", "").css("position", "").css("top", "");
+    } else {
+      $("#header").css("height", header.offset + "px");
+      $("#header-photo-link").css("opacity", 0);
+      $("#banner").css("opacity", 0);
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );      
+      $("#header-title").css("top", header.top - (hfs * (1)) + "px");      
+      $("#subtitle").css("opacity", 0);
+      if (window.matchMedia("screen and (min-width: 768px)").matches & window.innerHeight > (jSide.height() + 50)) {
+        jSide.css("max-width", $("aside").width()).css("position", "fixed").css("top", "50px");
+      }
+    }    
+  }
+
+  // IMAGE VIEWPORT
+  function isVisibleInViewPort(e) {
+    var viewTop = $(window).scrollTop();
+    var viewBottom = viewTop + $(window).height();
+  
+    var eTop = $(e).offset().top;
+    var eBottom = eTop + $(e).height();
+  
+    return ((eBottom <= viewBottom) && (eTop >= viewTop));
+  }
+  function initViewportImage() {
+    $(".article-photo, .archive-article-photo, .card-img, .img-link").each(function() {
+      if (isVisibleInViewPort($(this))) {
+        $(this).addClass("in-view");
+      } else {
+        $(this).removeClass("in-view");
+      }
+    });
+  }
+
+  //SCROLL PROGRESS
+  function initScrollProgress() {
+
+    // Create ScrollTimeline
+    const myScrollTimeline = new ScrollTimeline({
+      source: document.scrollingElement,
+      scrollSource: document.scrollingElement, // For legacy implementations
+      orientation: 'block',
+        scrollOffsets: [
+            new CSSUnitValue(0, 'percent'),
+            new CSSUnitValue(100, 'percent'),
+        ],
+    });
+
+    // Animate Progress Bar on Scroll
+    document.querySelector("#progress").animate(
+      {
+        transform: ["scaleX(0)", "scaleX(1)"]
+      },
+      { 
+        duration: 1, 
+        fill: "forwards", 
+        timeline: myScrollTimeline 
+      }
+    );
+  }
+
+  // HORIZONTAL NAV MENU SCROLL
+  function initNavMenuScroll() {
+    const nav = document.querySelector('#header-nav');
+    const menu = nav.querySelector('.menu');
+    const firstMenuItem = menu.querySelector('.menu-item:first-child');
+    const lastMenuItem = menu.querySelector('.menu-item:last-child');
+
+    firstMenuItem.setAttribute("data-scim", "start");
+    lastMenuItem.setAttribute("data-scim", "end");
+    
+    let observer = new IntersectionObserver((entries, observer) => { 
+      entries.forEach(entry => {
+
+        let scimElement = document.querySelector("#header-nav-" + entry.target.getAttribute("data-scim"));
+        if (entry.intersectionRatio != 1) { 
+          scimElement.classList.add("show");
+        } else {
+          scimElement.classList.remove("show");
+        }
+      });
+    }, {threshold: 1});
+    
+    observer.observe(firstMenuItem);
+    observer.observe(lastMenuItem);
+  }
+
+  //THEME
+  function initColorScheme() {
+    /* https://stackoverflow.com/questions/56300132/how-to-over-ride-css-prefers-color-scheme-setting */
+
+    var theme = "light"; //default
+
+    // get last used theme from local cache
+    if (localStorage.getItem("theme")) {
+      if (localStorage.getItem("theme") === "dark") {
+        theme = "dark";
+      }
+    } else if (!window.matchMedia) {
+      return false;
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      theme = "dark";
+    }
+
+    if (theme === "dark") {
+      setThemeDark();
+    } else {
+      setThemeLight();
+    }
+  }
+  function setThemeDark() {
+    localStorage.setItem("theme", "dark");
+    document.documentElement.setAttribute("data-theme", "dark");
+    toggleTheme.checked = true;
+    setCodepenTheme();
+  }
+  function setThemeLight() {
+    localStorage.setItem("theme", "light");
+    document.documentElement.setAttribute("data-theme", "light");
+    toggleTheme.checked = false;
+    setCodepenTheme();
+  }
+  function setCodepenTheme() {
+    //https://codepen.io/kristofzerbe/embed/xxxxx?height=400&default-tab=js,result&theme-id=dark
+    var pens = document.getElementsByClassName("codepen");
+    for (var i = 0; i < pens.length; i++) {
+      var src = pens[i].src;
+      const arr = src.split("?");
+      const params = arr[1].split("&").slice(0, -1);
+      src =
+        arr[0] +
+        "?" +
+        params.join("&") +
+        "&theme-id=" +
+        localStorage.getItem("theme");
+      pens[i].src = src;
+    }
+  }
+
+</script>
+
+<script>
+  /*** EVENTS */
+
+  window.addEventListener('scroll', function() {
+    scrollHeader();
+    initViewportImage();
+  }, { passive: true });
+
+  window.addEventListener('resize', function() {
+    initHeader();
+    initViewportImage();
+  });
+
+  // TOGGLE THEME
+  const toggleTheme = document.querySelector('input#theme-switch[type="checkbox"]');
+  toggleTheme.addEventListener("change", function (e) {
+    if (e.target.checked) { setThemeDark(); } 
+    else { setThemeLight(); }
+  }, false);
+
+  // TOGGLE THEME BY OS
+  var toggleOS = window.matchMedia("(prefers-color-scheme: dark)");
+  toggleOS.addEventListener("change", function (e) {
+    if (e.matches) { setThemeDark(); } 
+    else { setThemeLight(); }
+  });
+
+  /*** INITS */
+
+  initHeader();
+  initColorScheme();
+  initViewportImage();
+  initNavMenuScroll();
+  initScrollProgress();
+
+  // BACK-TO-TOP
+  addBackToTop({ diameter: 30 });
+
+  // MENU-ITEM-SCROLL
+  let pathItem = window.location.pathname.split('/')[1].toLowerCase();
+  if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
+  console.log(pathItem);
+  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+
+  // AUTOTYPING
+  setTimeout(function() {
+    $("#title-wrap").empty();
+    new AutoTyping({
+      id: 'title-wrap',
+      typeText: ['kiko.io'],
+      textColor: '#fff',
+      typeSpeed: 100,
+      typeDelay: 100,
+      showCursor: false,
+      delete: false,
+      typeInfinity: false
+    }).init();
+  }, 1000);
+
+  //MEDIUM-ZOOM
+  mediumZoom(document.querySelectorAll('img.zoom'), {
+    background: 'rgba(55, 55, 55, 0.5)',
+    margin: 20
+  });
+
+</script>
+
+
+  <script>
+    //HOOK LINKS FOR PIRSCH EVENT...
+
+    //VSCODE
+    let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));
+    
+  </script>  
+
+    </div>
+  </div>
+</body>
+<template id="contact-dialog">
+  <div class="contact-content">
+    <div class="contact-card">
+      <div class="contact-face face-front">
+        <div class="contact-face-wrapper">
+          <img class="photo" src="/images/kristof-zerbe.png" alt="Kristof Zerbe">
+          <div class="header">
+            <h3>Kristof Zerbe</h3>
+            <h4>Developer & Team Lead</h4>
+            <p>Wiesbaden, Germany</p>
+            <p class="download">
+              <label>Save my contact by<br>downloading my</label>
+              <a href="/kristof-zerbe.vcf" download="kristof-zerbe.vcf" class="fa-icon-download">vCard</a>  
+            </p>
+          </div>
+          <hr class="divider">
+          <div class="info">
+            <p>
+              <label>Mail me at</label>
+              <a href="mailto:kristof.zerbe@gmail.com" class="fa-icon-mail">kristof.zerbe@gmail.com</a>    
+            </p>
+            <p>
+              <label>Call me at</label>
+              <a href="tel:+491716998867" class="fa-icon-phone">+49 171 6998867</a>  
+            </p>
+            <p>
+              <label>Connect with me via</label>
+              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+            </p>
+            <p>
+              <label>Connect with me via</label>
+              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+            </p>
+            <p>
+              <label>Follow me on</label>
+              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+            </p>
+            <p>
+              <label>Review my projects on</label>
+              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+            </p>
+            <p>
+              <label>Review my photos on</label>
+              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+            </p>
+          </div>
+        </div>
+        <div class="contact-face-flip">flip for qrcode</div>
+      </div>
+      <div class="contact-face face-back">
+        <div class="contact-face-wrapper">
+          <div class="header">
+            <h3>Kristof Zerbe</h3>
+            <h4>kiko.io/#contact</h4>
+          </div>
+          <hr class="divider">
+          <div id="contact-qrcode" class="qrcode"></div>
+        </div>
+        <div class="contact-face-flip">flip for card</div>
+      </div>
+    </div>
+  </div>
+</template>
+</html>

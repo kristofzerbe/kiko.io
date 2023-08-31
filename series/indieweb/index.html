@@ -50,7 +50,7 @@
   <link href="https://github.com/kristofzerbe" rel="me authn">
   <link href="mailto:kristof.zerbe@gmail.com" rel="me authn">
   
-    
+    <link rel="alternate" href="/atom.xml" title="IndieWeb - kiko.io" type="application/atom+xml">
 
   <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>
@@ -193,10 +193,10 @@
           </li>
         
           
-          <li class="menu-item menu-item-icon" id="nav-rss-link">
+          <li class="menu-item" id="nav-feeds-link">
             <a class="sub-nav-link"
-               href="/atom.xml">
-                <span>Feed</span>
+               href="/feeds">
+                <span>Feeds</span>
               </a>
           </li>
         
@@ -339,15 +339,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clluqg669001lk1on9rh4405r">
+      <div class="article-permalink" id="article-permalink-cllz44y9k001mkkoi6e3d0v35">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/" 
-           data-id="clluqg669001lk1on9rh4405r" data-title="Hexo and the IndieWeb (Receiving Webmentions)" />
+           data-id="cllz44y9k001mkkoi6e3d0v35" data-title="Hexo and the IndieWeb (Receiving Webmentions)" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clluqg669001lk1on9rh4405r");
+        initPermalink("cllz44y9k001mkkoi6e3d0v35");
     });
 </script>
 
@@ -434,15 +434,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clluqg66a001mk1on0cyg6pkm">
+      <div class="article-permalink" id="article-permalink-cllz44y9k001nkkoi2ozc4xrt">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb-Sending-Webmentions/" 
-           data-id="clluqg66a001mk1on0cyg6pkm" data-title="Hexo and the IndieWeb (Sending Webmentions)" />
+           data-id="cllz44y9k001nkkoi2ozc4xrt" data-title="Hexo and the IndieWeb (Sending Webmentions)" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clluqg66a001mk1on0cyg6pkm");
+        initPermalink("cllz44y9k001nkkoi2ozc4xrt");
     });
 </script>
 
@@ -523,15 +523,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clluqg66a001nk1ondy2ugu75">
+      <div class="article-permalink" id="article-permalink-cllz44y9l001okkoi5zbh0gsy">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb/" 
-           data-id="clluqg66a001nk1ondy2ugu75" data-title="Hexo and the IndieWeb" />
+           data-id="cllz44y9l001okkoi5zbh0gsy" data-title="Hexo and the IndieWeb" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clluqg66a001nk1ondy2ugu75");
+        initPermalink("cllz44y9l001okkoi5zbh0gsy");
     });
 </script>
 
@@ -632,7 +632,7 @@
         <a href="/impressum">Impressum</a>
         <span class="dot-space">&#9679;</span>
         
-        <a href="/atom.xml">Feed</a>
+        <a href="/feeds">Feeds</a>
         <span class="dot-space">&#9679;</span>
         
         <a href="javascript:dialog.pageMeta();">Page Meta</a>
@@ -932,6 +932,12 @@
   // BACK-TO-TOP
   addBackToTop({ diameter: 30 });
 
+  // MENU-ITEM-SCROLL
+  let pathItem = window.location.pathname.split('/')[1].toLowerCase();
+  if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
+  console.log(pathItem);
+  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+
   // AUTOTYPING
   setTimeout(function() {
     $("#title-wrap").empty();
@@ -958,10 +964,6 @@
 
   <script>
     //HOOK LINKS FOR PIRSCH EVENT...
-
-    //FEED
-    let feed = document.querySelector("#nav-rss-link a.sub-nav-link");
-    if (feed) feed.addEventListener("click", function() { pirsch('Feed clicked') });
 
     //VSCODE
     let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));

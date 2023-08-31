@@ -50,7 +50,7 @@
   <link href="https://github.com/kristofzerbe" rel="me authn">
   <link href="mailto:kristof.zerbe@gmail.com" rel="me authn">
   
-    
+    <link rel="alternate" href="/atom.xml" title="Hexo Tag Plugin Collection - kiko.io" type="application/atom+xml">
 
   <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>
@@ -193,10 +193,10 @@
           </li>
         
           
-          <li class="menu-item menu-item-icon" id="nav-rss-link">
+          <li class="menu-item" id="nav-feeds-link">
             <a class="sub-nav-link"
-               href="/atom.xml">
-                <span>Feed</span>
+               href="/feeds">
+                <span>Feeds</span>
               </a>
           </li>
         
@@ -534,7 +534,7 @@
 
 <p><strong>Live Output:</strong></p>
 
-    <div id="image-compare-ra2s32">
+    <div id="image-compare-fyxwd9">
       <img class="image-compare image-original" src="/post/Hexo-Tag-Plugin-Collection/example-image_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified" src="/post/Hexo-Tag-Plugin-Collection/example-image_PRESET.jpg" alt="" />
     </div>
@@ -543,7 +543,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-ra2s32"),
+      new ImageCompare(document.getElementById("image-compare-fyxwd9"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -585,12 +585,12 @@
 
 <p><strong>Live Output:</strong></p>
 
-      <div class="image-slider" id="image-slide-n44jqb">
+      <div class="image-slider" id="image-slide-qre3cd">
         <div><img src="/post/Hexo-Tag-Plugin-Collection/example-image_ORIGINAL.jpg" alt="Original" /></div><div><img src="/post/Hexo-Tag-Plugin-Collection/example-image_PRESET.jpg" alt="Lightroom Preset" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-n44jqb",
+          container: "#image-slide-qre3cd",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -647,15 +647,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clluqg669001kk1onbi9jg266">
+      <div class="article-permalink" id="article-permalink-cllz44y9j001lkkoi3ojp83gh">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-Tag-Plugin-Collection/" 
-           data-id="clluqg669001kk1onbi9jg266" data-title="Hexo Tag Plugin Collection" />
+           data-id="cllz44y9j001lkkoi3ojp83gh" data-title="Hexo Tag Plugin Collection" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clluqg669001kk1onbi9jg266");
+        initPermalink("cllz44y9j001lkkoi3ojp83gh");
     });
 </script>
 
@@ -1000,7 +1000,7 @@
         <a href="/impressum">Impressum</a>
         <span class="dot-space">&#9679;</span>
         
-        <a href="/atom.xml">Feed</a>
+        <a href="/feeds">Feeds</a>
         <span class="dot-space">&#9679;</span>
         
         <a href="javascript:dialog.pageMeta();">Page Meta</a>
@@ -1300,6 +1300,12 @@
   // BACK-TO-TOP
   addBackToTop({ diameter: 30 });
 
+  // MENU-ITEM-SCROLL
+  let pathItem = window.location.pathname.split('/')[1].toLowerCase();
+  if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
+  console.log(pathItem);
+  document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+
   // AUTOTYPING
   setTimeout(function() {
     $("#title-wrap").empty();
@@ -1326,10 +1332,6 @@
 
   <script>
     //HOOK LINKS FOR PIRSCH EVENT...
-
-    //FEED
-    let feed = document.querySelector("#nav-rss-link a.sub-nav-link");
-    if (feed) feed.addEventListener("click", function() { pirsch('Feed clicked') });
 
     //VSCODE
     let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));
