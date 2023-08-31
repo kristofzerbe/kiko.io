@@ -1,0 +1,43 @@
+<%_
+  const updated = (post) => {
+    let pub = moment(post.date).toISOString();
+    let upd = moment(post.updated).toISOString();
+    return (pub === upd) ? null : upd;
+  }
+  const slug = (post) => {
+    let slugArray = post.slug.split("/");
+    let slug = slugArray[slugArray.length - 1];
+    return slug;
+  }
+  const regEx = /<(script|style)[^>]*>(?<content>[^<]*)<\/(script|style)>/gim;
+  const content = (post) => {
+    let fc = post.excerpt.replace(regEx, "");
+    fc = fc + '<p><a href="' + post.permalink + '">Continue reading <strong>`' + post.title + '`</strong> on kiko.io ...</a></p>';
+    if (post.photograph) { fc = '<p><img src="' + config.url + '/images/social-media/' + slug(post) + '.png" /></p>' + fc; }
+    return fc;
+  }
+_%>
+<%- JSON.stringify({
+  version: 'https://jsonfeed.org/version/1',
+  title: config.title,
+  description: config.description,
+  home_page_url: config.url,
+  feed_url: config.url + "/" + output,
+  icon: config.url + "/" + config.feed.logo,
+  favicon: config.url + "/" + config.feed.icon,
+  author: {
+    name: config.author,
+    url: config.url,
+    avatar: config.url + config.photo
+  },
+  items: posts.map(post => ({
+    id: post.permalink,
+    url: post.permalink,
+    title: post.title,
+    image: config.url + '/images/social-media/' + slug(post) + '.thumb.png',
+    date_published: moment(post.date).toISOString(),
+    date_modified: updated(post),    
+    content_html: content(post) || '',
+    tags:  (post.tags ? post.tags.toArray() : []).map(({ name }) => name)
+  }))
+}, null, 4) _%>

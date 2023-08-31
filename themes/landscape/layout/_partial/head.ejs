@@ -231,19 +231,17 @@
   <meta property="twitter:image" content="<%= meta.imageUrl %>">
 
   <%#!-- webmention.io --%>
-  <link rel="webmention" href="https://webmention.io/kiko.io/webmention" />
-  <link rel="pingback" href="https://webmention.io/kiko.io/xmlrpc" />
+  <link rel="webmention" href="https://webmention.io/<%= config.title %>/webmention" />
+  <link rel="pingback" href="https://webmention.io/<%= config.title %>/xmlrpc" />
 
   <%#!-- IndieAuth --%>
   <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
   <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
-  <link href="https://github.com/kristofzerbe" rel="me authn">
-  <link href="mailto:kristof.zerbe@gmail.com" rel="me authn">
+  <link href="https://github.com/<%= config.github_user %>" rel="me authn">
+  <link href="mailto:<%= config.email %>" rel="me authn">
   
   <%#!-- Feed --%>
-  <% if (theme.rss){ %>
-    <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= meta.title %>" type="application/atom+xml">
-  <% } %>
+  <link rel="alternate" href="<%= url_for(config.feed.default) %>" title="<%= meta.title %>" type="application/atom+xml">
 
   <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>

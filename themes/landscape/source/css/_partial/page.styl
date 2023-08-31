@@ -455,6 +455,52 @@
     .card.trans
       transform: scale(0)
       opacity: 0
-
-
-
+  section.feeds
+    h2
+      margin-top: 0
+    .feed-group
+      margin: 2rem 0 0
+      > strong
+        display: block
+        margin-bottom: 0.5rem
+      a
+        display: grid
+        grid-template-columns: 36px max-content auto
+        grid-template-areas: "icon link info"
+        padding: 0.5rem
+        text-decoration: none
+        align-items: center
+        &:hover
+          background-color: color-hover-background
+          /[data-theme="dark"] &
+            background-color: dark-color-hover-background
+      a.atom
+        color: #4b81d1
+      a.rss
+        color: #56a5d5
+      a.json
+        color: #bf403b
+      a:before
+        grid-area: icon
+        display: inline-block
+        content: ""
+        background-repeat: no-repeat
+        background-size: 24px 24px
+        width: 24px
+        height: 24px
+      a.atom:before
+        background-image: url(/images/atom.svg)
+      a.rss:before
+        background-image: url(/images/rss-alt.svg)
+      a.json:before
+        background-image: url(/images/jsonfeed.svg)
+        span
+          grid-area: link
+      a.site-default:after
+        grid-area: info
+        display: inline-block
+        content: "- site's default"
+        margin-left: 0.5rem
+        font-size: 0.8rem
+        color: color-default
+        opacity: 0.6

@@ -10,6 +10,8 @@ title: kiko.io
 subtitle: Memorable Tech Stuff
 description: Blog about memorable tech stuff by Kristof Zerbe
 description_short: by Kristof Zerbe
+language: en
+timezone: Europe/Berlin
 hero:
   file: $main.jpg
   name: Sea Wall
@@ -20,8 +22,7 @@ keywords:
 author: Kristof Zerbe
 email: kristof.zerbe@gmail.com
 photo: /images/kristof-zerbe.png
-language: en
-timezone: Europe/Berlin
+github_user: kristofzerbe
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -188,7 +189,10 @@ jsonContent:
     tags: true
 
 # Feed : https://github.com/sergeyzwezdin/hexo-feed
+# all switched off in favor of custom feed generators
+#   -> uses limit, order_by, icon and logo
 feed:
+  default: atom.xml
   limit: 20
   order_by: "-date"
   icon: images/favicon-32x32.png
@@ -196,9 +200,7 @@ feed:
   tag_dir: false
   category_dir: false
   atom:
-    enable: true
-    template: "./templates/atom.ejs"
-    output: "atom.xml"
+    enable: false
   rss:
     enable: false
   jsonFeed:
