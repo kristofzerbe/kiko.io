@@ -21,7 +21,7 @@ related:
   - Forking-Hexo-plugin-hexo-index-anything
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/110991254816820166
 ---
 
 Displaying a few more images than usual in a post is always a bit tricky, because you have to make sure they don't get too big and drown out the text. But they should not be too small either and the arrangement is also important to consider.
