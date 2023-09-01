@@ -21,7 +21,7 @@ related:
   - Provide-Blog-Metadata-via-JSON-LD
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/110986400682618334
 ---
 
 Hexo, on which this blog is based, is a Static Site Generator (SSG) that generates a whole structure of HTML files from individual Markdown files in which the articles were written. Besides the actual posts, also overview pages like the archives and others. For the latter, however, it only needs an excerpt from the actual article, which Hexo automatically creates from the initially generated HTML content and which is also available as HTML.
