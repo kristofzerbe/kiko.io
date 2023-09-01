@@ -80,6 +80,14 @@ module.exports = function(grunt){
         ],
         dest: 'themes/landscape/source/js/dist'
       },
+      macy: {
+        expand: true,
+        cwd: 'themes/landscape/assets/macy',
+        src: [
+          'macy.js'
+        ],
+        dest: 'themes/landscape/source/js/dist'
+      },
       qrcodestyling: {
         expand: true,
         cwd: 'themes/landscape/assets/qr-code-styling',

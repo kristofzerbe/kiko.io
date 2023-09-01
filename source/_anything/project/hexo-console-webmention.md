@@ -1,12 +1,12 @@
 ---
-title: hexo-console-webmention
+title: Hexo Console Webmention
 photograph:
   file: $projects.jpg
   name: Ancient Mosaic
   link: 'https://500px.com/photo/1057290585'
 ---
 
-**hexo-console-webmention** is a console command for [Hexo](https://hexo.io/) to send Webmentions from your blog to others. It utilizes the work of [Remy Sharp](https://remysharp.com/2019/06/18/send-outgoing-webmentions), who wrote a JS library to parse a URL for sending Webmentions to linked Blogs. It is mainly used at [**webmention.app**](https://webmention.app/)
+**Hexo Console Webmention** is a console command for [Hexo](https://hexo.io/) to send Webmentions from your blog to others. It utilizes the work of [Remy Sharp](https://remysharp.com/2019/06/18/send-outgoing-webmentions), who wrote a JS library to parse a URL for sending Webmentions to linked Blogs. It is mainly used at [**webmention.app**](https://webmention.app/)
 
 <div class="shields-io">
 

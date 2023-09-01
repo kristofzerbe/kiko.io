@@ -8,7 +8,7 @@ photograph:
   name: Winch
   link: 'https://500px.com/photo/80797993'
   socialmedia: /static/images/social-media/GitHub-Tag-Plugins-for-Hexo.png
-project: hexo-tag-plugins
+project: Hexo Tag Plugins
 categories:
   - Tools
 tags:

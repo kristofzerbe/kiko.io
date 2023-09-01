@@ -44,7 +44,7 @@ Sitting next to them, however, are two or three guys in their 50s who don't real
 
 The club has of course strengthened itself for the new season with new players in all sections of the team, whom I have now seen play for the first time. And unfortunately, some of them, such as Brooklyn Ezeh and Benedikt Hollerbach, who grew on me during the few games last year, have moved to other clubs.
 
-{% image_slide
+{% image_masonry
   "PXL_20230818_162508253.jpg|SVWW vs Karlsruhe - Before the start of the game"
   "PXL_20230818_162748966.jpg|SVWW vs Karlsruhe - Team line-up"
   "PXL_20230818_165147461.jpg|SVWW vs Karlsruhe - Goal to 1:1"

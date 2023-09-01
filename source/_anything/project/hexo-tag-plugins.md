@@ -1,12 +1,12 @@
 ---
-title: hexo-tag-plugins
+title: Hexo Tag Plugins
 photograph:
   file: $projects.jpg
   name: Ancient Mosaic
   link: 'https://500px.com/photo/1057290585'
 ---
 
-**hexo-tag-plugins** is a collection of [Hexo Tag Plugins](https://hexo.io/docs/tag-plugins.html) I have created for this blog. Some of them are quite simple, others are more complex, but overall maybe helpful for you.
+**Hexo Tag Plugins** is a collection of [Tag Plugins for Hexo](https://hexo.io/docs/tag-plugins.html) I have created for this blog. Some of them are quite simple, others are more complex, but overall maybe helpful for you.
 
 <div class="shields-io">
 

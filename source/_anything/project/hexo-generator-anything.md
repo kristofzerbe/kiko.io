@@ -1,12 +1,12 @@
 ---
-title: hexo-generator-anything
+title: Hexo Generator Anything
 photograph:
   file: $projects.jpg
   name: Ancient Mosaic
   link: 'https://500px.com/photo/1057290585'
 ---
 
-**hexo-generator-anything** is a plugin for [Hexo](https://hexo.io/) to generate index pages from custom front matter variables.   
+**Hexo Generator Anything** is a plugin for [Hexo](https://hexo.io/) to generate index pages from custom front matter variables.   
 It's a fork from [*hexo-index-anything*](https://github.com/leviwheatcroft/hexo-index-anything) by Levi Wheatcroft, who is no longer maintaining the project.
 
 <div class="shields-io">

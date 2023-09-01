@@ -10,7 +10,7 @@ photograph:
   link: 'https://500px.com/photo/172323475'
   socialmedia: /static/images/social-media/Hexo-and-the-IndieWeb-Sending-Webmentions.png
 series: IndieWeb
-project: hexo-console-webmention
+project: Hexo Console Webmention
 categories:
   - Tools
 tags:

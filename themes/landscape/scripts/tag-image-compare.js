@@ -22,8 +22,8 @@ hexo.extend.tag.register('image_compare', function (args) {
 
   var elements = `
     <div id="${id}">
-      <img class="image-compare image-original" src="/${assetPath + original}" alt="" />
-      <img class="image-compare image-modified" src="/${assetPath + modified}" alt="" />
+      <img class="image-compare image-original no-zoom no-caption" src="/${assetPath + original}" alt="" />
+      <img class="image-compare image-modified no-zoom no-caption" src="/${assetPath + modified}" alt="" />
     </div>
     <script>
       var themeColor = "#ffffff";

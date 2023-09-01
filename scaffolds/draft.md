@@ -9,12 +9,13 @@ photograph:
   link: 
   socialmedia: /static/images/social-media/{{ slug }}.png
 series: 
+project: 
 categories:
-  - 
+  - xxx
 tags:
-  - 
+  - xxx
 related:
-  - 
+  - xxx
 syndication:
   - host: Mastodon
     url: 

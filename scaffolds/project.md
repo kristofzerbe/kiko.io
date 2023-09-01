@@ -10,11 +10,11 @@ photograph:
   socialmedia: /static/images/social-media/{{ slug }}.png
 project: 
 categories:
-  - 
+  - xxx
 tags:
-  - 
+  - xxx
 related:
-  - 
+  - xxx
 ---
 
 

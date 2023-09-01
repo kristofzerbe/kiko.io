@@ -9,7 +9,7 @@ photograph:
   name: Red Golden Leafs
   link: 'https://500px.com/photo/1023572919'
   socialmedia: /static/images/social-media/Forking-Hexo-plugin-hexo-index-anything.png
-project: hexo-generator-anything
+project: Hexo Generator Anything
 categories:
   - JavaScript
 tags:

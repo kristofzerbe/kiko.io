@@ -8,7 +8,7 @@ photograph:
   name: Ready To Fly
   link: 'https://500px.com/photo/1038382606'
   socialmedia: /static/images/social-media/Hexo-Tag-Plugin-Collection.png
-project: hexo-tag-plugins
+project: Hexo Tag Plugins
 categories:
   - Tools
 tags:
