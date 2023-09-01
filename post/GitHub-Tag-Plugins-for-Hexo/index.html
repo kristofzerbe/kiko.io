@@ -99,6 +99,9 @@
   
 <script src="/js/dist/tiny-slider.min.js"></script>
 
+  
+<script src="/js/dist/macy.js"></script>
+
 
 
   <script defer type="text/javascript" 
@@ -314,7 +317,7 @@
 
 
 
-    <a class="article-anything" href="/projects/hexo-tag-plugins">hexo-tag-plugins</a>
+    <a class="article-anything" href="/projects/hexo-tag-plugins">Hexo Tag Plugins</a>
 
         
 
@@ -355,7 +358,7 @@
         <details class="github-readme">
           <summary>README for 'hexo-tag-plugins' on GitHub</summary>
           <div><p><a href="https://github.com/kristofzerbe/hexo-tag-plugins/issues"><img src="https://img.shields.io/github/issues/kristofzerbe/hexo-tag-plugins?label=github%20issues&style=flat-square" alt="issues"></a></p>
-<h1 id="hexo-tag-plugins"><a href="#hexo-tag-plugins" class="headerlink" title="hexo-tag-plugins"></a>hexo-tag-plugins</h1><p><strong>Hexo Tag Plugin Collection from kiko.io</strong></p>
+<h1 id="Hexo-Tag-Plugins"><a href="#Hexo-Tag-Plugins" class="headerlink" title="Hexo Tag Plugins"></a>Hexo Tag Plugins</h1><p><strong>Hexo Tag Plugin Collection from kiko.io</strong></p>
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p><strong><a href="https://hexo.io/">Hexo</a></strong> is a <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> based SSG (Static Site Generator). Because the Mardown syntax is limited for good reason, Hexo has <em><strong>tag plugins</strong></em> you can use in your content to simplify and centralize complex structures, instead of writing pure HTML. For more information, see <a href="https://hexo.io/docs/tag-plugins.html">hexo.io&#x2F;docs&#x2F;tag-plugins</a>.</p>
 <p>This project is a growing collection of tag plugins that I have developed and use for my blog <a href="https://kiko.io/">kiko.io</a>. Some of them are quite simple, others are more complex, but overall maybe helpful for you.</p>
 <h2 id="Installation-Using"><a href="#Installation-Using" class="headerlink" title="Installation &#x2F; Using"></a>Installation &#x2F; Using</h2><p>There is no automatic installation of all tag plugins via NPM or other package managers, because every tag plugin stands for itself and you can pick the one you need simply by copying the appropriate JS file into your Hexo’s script folder: <code>THEMES</code> &#x2F; <code>&lt;YOUR-THEME&gt;</code> &#x2F; <code>SCRIPTS</code>.</p>
@@ -406,6 +409,7 @@
 <li><a href="#image-slide">Image Slide</a></li>
 <li><a href="#indiepen">Indiepen</a></li>
 <li><a href="#more-info">More Info</a></li>
+<li><a href="#image-masonry">Image Masonry</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/kristofzerbe/hexo-tag-plugins/main/assets/divider.png" alt="-"></p>
 <h2 id="Anchor"><a href="#Anchor" class="headerlink" title="Anchor"></a>Anchor</h2><p>A simple anchor element as <code>A</code>- or <code>HR</code>-Tag as jump target for example from a <code>Anchorlist</code>.</p>
@@ -1405,7 +1409,100 @@ indiepen:
 }
 </code></pre>
 <p><img src="https://raw.githubusercontent.com/kristofzerbe/hexo-tag-plugins/main/assets/divider.png" alt="-"></p>
-<h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><p><strong>2021-12-29</strong></p>
+<h2 id="Image-Masonry"><a href="#Image-Masonry" class="headerlink" title="Image Masonry"></a>Image Masonry</h2><p>Shows multiple images in a masonry grid with the aid of the JS library <a href="http://macyjs.com/">Macy.js</a>.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li><a href="https://github.com/kristofzerbe/hexo-tag-plugins/blob/main/tag-image-masonry.js">tag-image-masonry.js</a></li>
+</ul>
+<p><strong>Prequisites:</strong></p>
+<p>As this tag plugin relies on an external JS library, the library file <code>macy.js</code> must be loaded in the header of the web page.</p>
+<p><strong>Syntax:</strong>  </p>
+<pre><code class="txt">{% image_masonry ...&quot;assetImg|title&quot; %}
+</code></pre>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Parameter</th>
+<th>optional&#x2F;default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>...&quot;assetImg|title&quot;</code></td>
+<td></td>
+<td>List of pipe separated items with asset image file and title</td>
+</tr>
+</tbody></table>
+<p><strong>Usage Example:</strong></p>
+<pre><code class="js">{% image_masonry
+  &quot;example-image-1.jpg|First Image&quot;
+  &quot;example-image-2.jpg|Second Image&quot;
+  &quot;example-image-3.jpg|Third Image&quot;
+  &quot;example-image-4.jpg|Fourth Image&quot;
+  &quot;example-image-5.jpg|Fifth Image&quot;
+  &quot;example-image-6.jpg|Sixth Image&quot;
+  &quot;example-image-7.jpg|Seventh Image&quot;
+  &quot;example-image-8.jpg|Eighth Image&quot;
+%}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code class="html">&lt;div id=&quot;#image-masonry-z8katm&quot;&gt;
+  &lt;div&gt;&lt;img src=&quot;example-image-1.jpg&quot; alt=&quot;First Image&quot;&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;img src=&quot;example-image-2.jpg&quot; alt=&quot;Second Image&quot;&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;img src=&quot;example-image-3.jpg&quot; alt=&quot;Third Image&quot;&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;img src=&quot;example-image-4.jpg&quot; alt=&quot;Fourth Image&quot;&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;img src=&quot;example-image-5.jpg&quot; alt=&quot;Fifth Image&quot;&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;img src=&quot;example-image-6.jpg&quot; alt=&quot;Sixth Image&quot;&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;img src=&quot;example-image-7.jpg&quot; alt=&quot;Seventh Image&quot;&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;img src=&quot;example-image-8.jpg&quot; alt=&quot;Eighth Image&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;  
+&lt;script&gt;
+  let macy = new Macy({
+    container: &quot;#image-masonry-z8katm&quot;,
+    trueOrder: false,
+    waitForImages: false,
+    useOwnImageLoader: false,
+    debug: true,
+    mobileFirst: true,
+    columns: 2,
+    margin: {
+      y: 6,
+      x: 6
+    },
+    breakAt: {
+      1024: {
+        margin: {
+          x: 8,
+          y: 8
+        },
+        columns: 4
+      },
+      768: 3
+    }
+  });
+&lt;/script&gt;
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/kristofzerbe/hexo-tag-plugins/main/assets/tag-image-masonry-example.png" alt="Image Masonry Example"></p>
+<p>See a live example at <a href="https://kiko.io/post/Image-Masonry-Tag-Plugin-for-Hexo/">https://kiko.io/post/Image-Masonry-Tag-Plugin-for-Hexo/</a></p>
+<p><strong>VS Code Snippet:</strong></p>
+<pre><code class="json">&quot;hexo.kiko-io.image_masonry&quot;: {
+  &quot;scope&quot;: &quot;markdown&quot;,
+  &quot;prefix&quot;: &quot;hexo.kiko-io.image_masonry&quot;,
+  &quot;body&quot;: [
+    &quot;{% image_masonry ${1:...\&quot;assetImg|title\&quot;} %}&quot;
+  ],
+  &quot;description&quot;: &quot;Insert kiko.io&#39;s image_masonry&quot;
+}
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/kristofzerbe/hexo-tag-plugins/main/assets/divider.png" alt="-"></p>
+<h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><p><strong>2023-09-01</strong></p>
+<ul>
+<li><strong>Image Masonry</strong> added</li>
+</ul>
+<p><strong>2021-12-29</strong></p>
 <ul>
 <li>Description of parameters added</li>
 <li><strong>Github Readme</strong> added</li>
@@ -1490,28 +1587,28 @@ indiepen:
           <p>Hexo Tag Plugin Collection from kiko.io</p>
           <div class="gh-language-bar">
             
-      <span style="background-color: #f1e05a; width: 64.2%;"></span>
+      <span style="background-color: #f1e05a; width: 65.1%;"></span>
     
-      <span style="background-color: #e34c26; width: 18.6%;"></span>
+      <span style="background-color: #e34c26; width: 18.2%;"></span>
     
-      <span style="background-color: #563d7c; width: 17.1%;"></span>
+      <span style="background-color: #563d7c; width: 16.7%;"></span>
     
           </div>
           <ul class="gh-language-list">
             
       <li>
         <svg xmlns="http://www.w3.org/2000/svg" style="color:#f1e05a !important;" aria-hidden="true" viewBox="0 0 16 16" data-view-component="true"><path fill-rule="evenodd" d="M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
-        <strong>JavaScript</strong><span>64.2%</span>
+        <strong>JavaScript</strong><span>65.1%</span>
       </li>
     
       <li>
         <svg xmlns="http://www.w3.org/2000/svg" style="color:#e34c26 !important;" aria-hidden="true" viewBox="0 0 16 16" data-view-component="true"><path fill-rule="evenodd" d="M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
-        <strong>HTML</strong><span>18.6%</span>
+        <strong>HTML</strong><span>18.2%</span>
       </li>
     
       <li>
         <svg xmlns="http://www.w3.org/2000/svg" style="color:#563d7c !important;" aria-hidden="true" viewBox="0 0 16 16" data-view-component="true"><path fill-rule="evenodd" d="M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
-        <strong>CSS</strong><span>17.1%</span>
+        <strong>CSS</strong><span>16.7%</span>
       </li>
     
           </ul>
@@ -1535,15 +1632,15 @@ indiepen:
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cllzp045v001jk0np1b86aqbe">
+      <div class="article-permalink" id="article-permalink-clm0wiece001jk4pr48qg6r1h">
     <input class="article-permalink-value" value="https://kiko.io/post/GitHub-Tag-Plugins-for-Hexo/" 
-           data-id="cllzp045v001jk0np1b86aqbe" data-title="GitHub Tag Plugins for Hexo" />
+           data-id="clm0wiece001jk4pr48qg6r1h" data-title="GitHub Tag Plugins for Hexo" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cllzp045v001jk0np1b86aqbe");
+        initPermalink("clm0wiece001jk4pr48qg6r1h");
     });
 </script>
 
@@ -1637,7 +1734,7 @@ indiepen:
 
 
 
-    <a class="archive-article-anything" href="/projects/hexo-tag-plugins">hexo-tag-plugins</a>
+    <a class="archive-article-anything" href="/projects/hexo-tag-plugins">Hexo Tag Plugins</a>
 
       
 
@@ -1743,7 +1840,7 @@ indiepen:
 
 
 
-    <a class="archive-article-anything" href="/projects/hexo-generator-anything">hexo-generator-anything</a>
+    <a class="archive-article-anything" href="/projects/hexo-generator-anything">Hexo Generator Anything</a>
 
       
 
@@ -1827,6 +1924,12 @@ indiepen:
         
           <li>
             
+              <a href="/post/Image-Masonry-Tag-Plugin-for-Hexo/">Image Masonry Tag Plugin for Hexo</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Convert-HTML-into-Plain-Text-in-Hexo/">Convert HTML into Plain Text in Hexo</a>
             
           </li>
@@ -1840,12 +1943,6 @@ indiepen:
           <li>
             
               <a href="/post/SVWW-vs-Karlsruhe-2023-08-18/">SVWW vs. Karlsruhe @ 2023-08-18</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/My-Hometown-My-Club/">My Hometown, My Club</a>
             
           </li>
         

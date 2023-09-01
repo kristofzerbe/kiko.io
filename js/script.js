@@ -1,14 +1,18 @@
 function initImageZoom() {
   $(".article-entry").each(function (i) {
     $(this)
-      .find("img:not(.image-compare)")
+      .find("img")
       .each(function () {
         if ($(this).parent().is("a")) return;
   
-        $(this).addClass("zoom");
+        if (!$(this).hasClass("no-zoom")) {
+          $(this).addClass("zoom");
+        }
   
-        var alt = this.alt;
-        if (alt) $(this).after('<span class="caption">' + alt + "</span>");
+        if (!$(this).hasClass("no-caption")) {
+          var alt = this.alt;
+          if (alt) $(this).after('<span class="caption">' + alt + "</span>");  
+        }
       });
   });  
 }
