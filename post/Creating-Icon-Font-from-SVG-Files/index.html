@@ -480,15 +480,15 @@ And yes gulp-iconfont from Nicolas Froidure was exactly what I needed. First Sol
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clm1te4xo002dk7op9wcu0tmv">
+      <div class="article-permalink" id="article-permalink-clm1uxfmd002dk3olh46i3o8e">
     <input class="article-permalink-value" value="https://kiko.io/post/Creating-Icon-Font-from-SVG-Files/" 
-           data-id="clm1te4xo002dk7op9wcu0tmv" data-title="Creating Icon Font from SVG Files" />
+           data-id="clm1uxfmd002dk3olh46i3o8e" data-title="Creating Icon Font from SVG Files" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4xo002dk7op9wcu0tmv");
+        initPermalink("clm1uxfmd002dk3olh46i3o8e");
     });
 </script>
 
@@ -1081,7 +1081,8 @@ And yes gulp-iconfont from Nicolas Froidure was exactly what I needed. First Sol
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1102,7 +1103,8 @@ And yes gulp-iconfont from Nicolas Froidure was exactly what I needed. First Sol
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

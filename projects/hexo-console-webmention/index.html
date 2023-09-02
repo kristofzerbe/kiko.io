@@ -389,15 +389,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4x6001nk7ope4l06tgh">
+      <div class="article-permalink" id="article-permalink-clm1uxfls001nk3ol6pmx18wg">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb-Sending-Webmentions/" 
-           data-id="clm1te4x6001nk7ope4l06tgh" data-title="Hexo and the IndieWeb (Sending Webmentions)" />
+           data-id="clm1uxfls001nk3ol6pmx18wg" data-title="Hexo and the IndieWeb (Sending Webmentions)" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4x6001nk7ope4l06tgh");
+        initPermalink("clm1uxfls001nk3ol6pmx18wg");
     });
 </script>
 
@@ -802,7 +802,8 @@
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -823,7 +824,8 @@
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

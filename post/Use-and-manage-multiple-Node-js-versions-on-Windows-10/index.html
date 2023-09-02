@@ -379,15 +379,15 @@ Ok … I needed a solution to install multiple Node.js versions and switch betwe
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4xj0024k7op4fi60yb5">
+      <div class="article-permalink" id="article-permalink-clm1uxfm30024k3ol0afs5776">
     <input class="article-permalink-value" value="https://kiko.io/post/Use-and-manage-multiple-Node-js-versions-on-Windows-10/" 
-           data-id="clm1te4xj0024k7op4fi60yb5" data-title="Use and manage multiple Node.js versions on Windows 10" />
+           data-id="clm1uxfm30024k3ol0afs5776" data-title="Use and manage multiple Node.js versions on Windows 10" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4xj0024k7op4fi60yb5");
+        initPermalink("clm1uxfm30024k3ol0afs5776");
     });
 </script>
 
@@ -1044,7 +1044,8 @@ Ok … I needed a solution to install multiple Node.js versions and switch betwe
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1065,7 +1066,8 @@ Ok … I needed a solution to install multiple Node.js versions and switch betwe
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

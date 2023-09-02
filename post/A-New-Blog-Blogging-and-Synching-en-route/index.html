@@ -432,15 +432,15 @@ The blog is synced via Dropbox, but hosted on GitHub Pages, so on every device I
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4w00009k7op15dq2kri">
+      <div class="article-permalink" id="article-permalink-clm1uxfkr0009k3olbhukewj5">
     <input class="article-permalink-value" value="https://kiko.io/post/A-New-Blog-Blogging-and-Synching-en-route/" 
-           data-id="clm1te4w00009k7op15dq2kri" data-title="A New Blog: Blogging and Synching en route" />
+           data-id="clm1uxfkr0009k3olbhukewj5" data-title="A New Blog: Blogging and Synching en route" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4w00009k7op15dq2kri");
+        initPermalink("clm1uxfkr0009k3olbhukewj5");
     });
 </script>
 
@@ -1095,7 +1095,8 @@ The blog is synced via Dropbox, but hosted on GitHub Pages, so on every device I
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1116,7 +1117,8 @@ The blog is synced via Dropbox, but hosted on GitHub Pages, so on every device I
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

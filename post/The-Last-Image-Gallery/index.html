@@ -386,15 +386,15 @@ However, from today on, I don’t need to look for a suitable solution for my ne
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4xh0020k7op5976dpfg">
+      <div class="article-permalink" id="article-permalink-clm1uxfm10022k3olapzq8ybx">
     <input class="article-permalink-value" value="https://kiko.io/post/The-Last-Image-Gallery/" 
-           data-id="clm1te4xh0020k7op5976dpfg" data-title="The Last Image Gallery..." />
+           data-id="clm1uxfm10022k3olapzq8ybx" data-title="The Last Image Gallery..." />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4xh0020k7op5976dpfg");
+        initPermalink("clm1uxfm10022k3olapzq8ybx");
     });
 </script>
 
@@ -1039,7 +1039,8 @@ However, from today on, I don’t need to look for a suitable solution for my ne
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1060,7 +1061,8 @@ However, from today on, I don’t need to look for a suitable solution for my ne
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

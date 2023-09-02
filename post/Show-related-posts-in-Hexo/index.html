@@ -385,15 +385,15 @@ In the default Hexo theme Landscape, on which this blog is based, there is no su
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4wj000zk7opb199cils">
+      <div class="article-permalink" id="article-permalink-clm1uxfl9000zk3olf2g083m6">
     <input class="article-permalink-value" value="https://kiko.io/post/Show-related-posts-in-Hexo/" 
-           data-id="clm1te4wj000zk7opb199cils" data-title="Show related posts in Hexo" />
+           data-id="clm1uxfl9000zk3olf2g083m6" data-title="Show related posts in Hexo" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4wj000zk7opb199cils");
+        initPermalink("clm1uxfl9000zk3olf2g083m6");
     });
 </script>
 
@@ -1048,7 +1048,8 @@ In the default Hexo theme Landscape, on which this blog is based, there is no su
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1069,7 +1070,8 @@ In the default Hexo theme Landscape, on which this blog is based, there is no su
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

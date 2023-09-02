@@ -402,15 +402,15 @@ Since Pagefind already shows results when typing the first characters, the easie
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clm1te4y40038k7op0wee8k3k">
+      <div class="article-permalink" id="article-permalink-clm1uxfmv0038k3ol622r1njo">
     <input class="article-permalink-value" value="https://kiko.io/post/Pagefind-UI-and-URL-Parameters/" 
-           data-id="clm1te4y40038k7op0wee8k3k" data-title="Pagefind UI and URL Parameters" />
+           data-id="clm1uxfmv0038k3ol622r1njo" data-title="Pagefind UI and URL Parameters" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4y40038k7op0wee8k3k");
+        initPermalink("clm1uxfmv0038k3ol622r1njo");
     });
 </script>
 
@@ -1062,7 +1062,8 @@ Since Pagefind already shows results when typing the first characters, the easie
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1083,7 +1084,8 @@ Since Pagefind already shows results when typing the first characters, the easie
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

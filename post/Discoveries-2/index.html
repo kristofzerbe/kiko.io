@@ -457,15 +457,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4wa000mk7op9uzh9t80">
+      <div class="article-permalink" id="article-permalink-clm1uxfl1000mk3olcz3y5fow">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-2/" 
-           data-id="clm1te4wa000mk7op9uzh9t80" data-title="Discoveries #2" />
+           data-id="clm1uxfl1000mk3olcz3y5fow" data-title="Discoveries #2" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4wa000mk7op9uzh9t80");
+        initPermalink("clm1uxfl1000mk3olcz3y5fow");
     });
 </script>
 
@@ -1108,7 +1108,8 @@
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1129,7 +1130,8 @@
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

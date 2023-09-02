@@ -370,15 +370,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4w4000ek7op9q5m28we">
+      <div class="article-permalink" id="article-permalink-clm1uxfkv000ek3ol6mugg57h">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-Dark-Mode/" 
-           data-id="clm1te4w4000ek7op9q5m28we" data-title="Hexo and the Dark Mode" />
+           data-id="clm1uxfkv000ek3ol6mugg57h" data-title="Hexo and the Dark Mode" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4w4000ek7op9q5m28we");
+        initPermalink("clm1uxfkv000ek3ol6mugg57h");
     });
 </script>
 
@@ -1033,7 +1033,8 @@
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1054,7 +1055,8 @@
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

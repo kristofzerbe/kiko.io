@@ -389,15 +389,15 @@ An design related Instagram post from Muhammad Abdull of thewilsonthings, inspir
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4xi0023k7ope76h382h">
+      <div class="article-permalink" id="article-permalink-clm1uxfm10021k3ol6zmt36pd">
     <input class="article-permalink-value" value="https://kiko.io/post/Use-a-duplicate-image-to-drop-a-shadow/" 
-           data-id="clm1te4xi0023k7ope76h382h" data-title="Use a duplicate image to drop a shadow" />
+           data-id="clm1uxfm10021k3ol6zmt36pd" data-title="Use a duplicate image to drop a shadow" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4xi0023k7ope76h382h");
+        initPermalink("clm1uxfm10021k3ol6zmt36pd");
     });
 </script>
 
@@ -1042,7 +1042,8 @@ An design related Instagram post from Muhammad Abdull of thewilsonthings, inspir
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1063,7 +1064,8 @@ An design related Instagram post from Muhammad Abdull of thewilsonthings, inspir
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

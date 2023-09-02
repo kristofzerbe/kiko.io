@@ -413,15 +413,15 @@ delete the processed image from the inbound folder">
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clm1te4y50039k7op9lb937ej">
+      <div class="article-permalink" id="article-permalink-clm1uxfmw003ak3ol68s89q9g">
     <input class="article-permalink-value" value="https://kiko.io/post/Pool-Photo-Generator/" 
-           data-id="clm1te4y50039k7op9lb937ej" data-title="Pool Photo Generator" />
+           data-id="clm1uxfmw003ak3ol68s89q9g" data-title="Pool Photo Generator" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4y50039k7op9lb937ej");
+        initPermalink("clm1uxfmw003ak3ol68s89q9g");
     });
 </script>
 
@@ -1071,7 +1071,8 @@ delete the processed image from the inbound folder">
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1092,7 +1093,8 @@ delete the processed image from the inbound folder">
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

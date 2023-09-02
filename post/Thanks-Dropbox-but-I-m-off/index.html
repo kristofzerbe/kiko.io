@@ -370,15 +370,15 @@ To me it is obvious that software manufacturers cannot support every operating s
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4xw002tk7op1j61fle4">
+      <div class="article-permalink" id="article-permalink-clm1uxfmn002tk3ol9hz07lem">
     <input class="article-permalink-value" value="https://kiko.io/post/Thanks-Dropbox-but-I-m-off/" 
-           data-id="clm1te4xw002tk7op1j61fle4" data-title="Thanks Dropbox, but I&#39;m off" />
+           data-id="clm1uxfmn002tk3ol9hz07lem" data-title="Thanks Dropbox, but I&#39;m off" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4xw002tk7op1j61fle4");
+        initPermalink("clm1uxfmn002tk3ol9hz07lem");
     });
 </script>
 
@@ -859,7 +859,8 @@ To me it is obvious that software manufacturers cannot support every operating s
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -880,7 +881,8 @@ To me it is obvious that software manufacturers cannot support every operating s
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

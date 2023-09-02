@@ -397,15 +397,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clm1te4wp0014k7opdgxff6hb">
+      <div class="article-permalink" id="article-permalink-clm1uxfle0013k3olfgz9agkp">
     <input class="article-permalink-value" value="https://kiko.io/post/Automatic-Duplicate-Image-Shadow/" 
-           data-id="clm1te4wp0014k7opdgxff6hb" data-title="Automatic Duplicate Image Shadow" />
+           data-id="clm1uxfle0013k3olfgz9agkp" data-title="Automatic Duplicate Image Shadow" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4wp0014k7opdgxff6hb");
+        initPermalink("clm1uxfle0013k3olfgz9agkp");
     });
 </script>
 
@@ -1049,7 +1049,8 @@
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1070,7 +1071,8 @@
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

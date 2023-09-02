@@ -496,15 +496,15 @@ Happy Reading…
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clm1te4y00031k7op52jg39x8">
+      <div class="article-permalink" id="article-permalink-clm1uxfmr0031k3olghy70bl9">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-25-Tutorials-HowTo-s/" 
-           data-id="clm1te4y00031k7op52jg39x8" data-title="Discoveries #25 - Tutorials &amp; HowTo&#39;s" />
+           data-id="clm1uxfmr0031k3olghy70bl9" data-title="Discoveries #25 - Tutorials &amp; HowTo&#39;s" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4y00031k7op52jg39x8");
+        initPermalink("clm1uxfmr0031k3olghy70bl9");
     });
 </script>
 
@@ -1146,7 +1146,8 @@ Happy Reading…
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1167,7 +1168,8 @@ Happy Reading…
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

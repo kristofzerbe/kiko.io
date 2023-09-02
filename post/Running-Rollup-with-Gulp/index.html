@@ -389,15 +389,15 @@ In this article I will show you, how to integrate Rollup in your Gulp bundling p
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clm1te4xb001vk7opebkd97co">
+      <div class="article-permalink" id="article-permalink-clm1uxflx001vk3ol8uo28q71">
     <input class="article-permalink-value" value="https://kiko.io/post/Running-Rollup-with-Gulp/" 
-           data-id="clm1te4xb001vk7opebkd97co" data-title="Running Rollup with Gulp" />
+           data-id="clm1uxflx001vk3ol8uo28q71" data-title="Running Rollup with Gulp" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4xb001vk7opebkd97co");
+        initPermalink("clm1uxflx001vk3ol8uo28q71");
     });
 </script>
 
@@ -994,7 +994,8 @@ In this article I will show you, how to integrate Rollup in your Gulp bundling p
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1015,7 +1016,8 @@ In this article I will show you, how to integrate Rollup in your Gulp bundling p
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

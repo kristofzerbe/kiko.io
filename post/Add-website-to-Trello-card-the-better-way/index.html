@@ -371,15 +371,15 @@ On installing the Trello Android app, you will find a new SHARE target Add new T
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4w7000hk7ophn3n7g1f">
+      <div class="article-permalink" id="article-permalink-clm1uxfkx000hk3olemad8cwc">
     <input class="article-permalink-value" value="https://kiko.io/post/Add-website-to-Trello-card-the-better-way/" 
-           data-id="clm1te4w7000hk7ophn3n7g1f" data-title="Add website to Trello card the better way" />
+           data-id="clm1uxfkx000hk3olemad8cwc" data-title="Add website to Trello card the better way" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4w7000hk7ophn3n7g1f");
+        initPermalink("clm1uxfkx000hk3olemad8cwc");
     });
 </script>
 
@@ -862,7 +862,8 @@ On installing the Trello Android app, you will find a new SHARE target Add new T
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -883,7 +884,8 @@ On installing the Trello Android app, you will find a new SHARE target Add new T
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

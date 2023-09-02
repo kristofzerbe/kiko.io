@@ -363,15 +363,15 @@ This small club played only a regional role at all until 1979, when a local busi
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clm1te4y40037k7opbkko6p3b">
+      <div class="article-permalink" id="article-permalink-clm1uxfmu0037k3ol84ue3y94">
     <input class="article-permalink-value" value="https://kiko.io/post/My-Hometown-My-Club/" 
-           data-id="clm1te4y40037k7opbkko6p3b" data-title="My Hometown, My Club" />
+           data-id="clm1uxfmu0037k3ol84ue3y94" data-title="My Hometown, My Club" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4y40037k7opbkko6p3b");
+        initPermalink("clm1uxfmu0037k3ol84ue3y94");
     });
 </script>
 
@@ -915,7 +915,8 @@ This small club played only a regional role at all until 1979, when a local busi
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -936,7 +937,8 @@ This small club played only a regional role at all until 1979, when a local busi
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

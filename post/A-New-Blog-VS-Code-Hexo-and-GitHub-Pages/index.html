@@ -408,15 +408,15 @@ I decided to write an article just in HTML and publish it on my personal GitHub 
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4w2000bk7op86lc0wnc">
+      <div class="article-permalink" id="article-permalink-clm1uxfku000ck3olc6rtc59u">
     <input class="article-permalink-value" value="https://kiko.io/post/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/" 
-           data-id="clm1te4w2000bk7op86lc0wnc" data-title="A New Blog: VS Code, Hexo and GitHub Pages" />
+           data-id="clm1uxfku000ck3olc6rtc59u" data-title="A New Blog: VS Code, Hexo and GitHub Pages" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4w2000bk7op86lc0wnc");
+        initPermalink("clm1uxfku000ck3olc6rtc59u");
     });
 </script>
 
@@ -1071,7 +1071,8 @@ I decided to write an article just in HTML and publish it on my personal GitHub 
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1092,7 +1093,8 @@ I decided to write an article just in HTML and publish it on my personal GitHub 
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

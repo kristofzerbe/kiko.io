@@ -370,15 +370,15 @@ Today, Max Böck gave me the momentum with his article The IndieWeb for Everyone
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clm1te4xv002sk7opavc0053y">
+      <div class="article-permalink" id="article-permalink-clm1uxfmm002sk3ol40b9bdgz">
     <input class="article-permalink-value" value="https://kiko.io/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/" 
-           data-id="clm1te4xv002sk7opavc0053y" data-title="Syndicate Mastodon Hashtags in your favorite Feed Reader" />
+           data-id="clm1uxfmm002sk3ol40b9bdgz" data-title="Syndicate Mastodon Hashtags in your favorite Feed Reader" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4xv002sk7opavc0053y");
+        initPermalink("clm1uxfmm002sk3ol40b9bdgz");
     });
 </script>
 
@@ -1024,7 +1024,8 @@ Today, Max Böck gave me the momentum with his article The IndieWeb for Everyone
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1045,7 +1046,8 @@ Today, Max Böck gave me the momentum with his article The IndieWeb for Everyone
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

@@ -358,12 +358,12 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
 
 <p><strong>Live Output:</strong></p>
 
-      <div class="image-masonry" id="image-masonry-m44ru5">
+      <div class="image-masonry" id="image-masonry-yqywhi">
         <div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0053.jpg" alt="Thomas' Ruby Prince I" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/_D50_3251.jpg" alt="No Name" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0086.jpg" alt="Thomas' German Flag" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_1147.jpg" alt="Poppy Green" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0075.jpg" alt="Thomas Wild Tulips" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_7474.jpg" alt="Garden Beauties XIV" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_4451.jpg" alt="Garden Beauties I" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_1577.jpg" alt="Floral Magic XIV" /></div>
       </div>
       <script>
         let macy = new Macy({
-          container: '#image-masonry-m44ru5',
+          container: '#image-masonry-yqywhi',
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -408,15 +408,15 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clm1te4y20034k7op5qt75by9">
+      <div class="article-permalink" id="article-permalink-clm1uxfmt0034k3ol8hg91ru4">
     <input class="article-permalink-value" value="https://kiko.io/post/Image-Masonry-Tag-Plugin-for-Hexo/" 
-           data-id="clm1te4y20034k7op5qt75by9" data-title="Image Masonry Tag Plugin for Hexo" />
+           data-id="clm1uxfmt0034k3ol8hg91ru4" data-title="Image Masonry Tag Plugin for Hexo" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4y20034k7op5qt75by9");
+        initPermalink("clm1uxfmt0034k3ol8hg91ru4");
     });
 </script>
 
@@ -1057,7 +1057,8 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1078,7 +1079,8 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

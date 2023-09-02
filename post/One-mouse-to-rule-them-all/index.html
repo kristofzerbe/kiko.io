@@ -366,20 +366,20 @@ The trend is toward second or third devices, especially among IT workers. In add
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4xu002pk7op68rv5ia6">
+      <div class="article-permalink" id="article-permalink-clm1uxfml002pk3ol4ojfb5wm">
     <input class="article-permalink-value" value="https://kiko.io/post/One-mouse-to-rule-them-all/" 
-           data-id="clm1te4xu002pk7op68rv5ia6" data-title="One mouse to rule them all" />
+           data-id="clm1uxfml002pk3ol4ojfb5wm" data-title="One mouse to rule them all" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4xu002pk7op68rv5ia6");
+        initPermalink("clm1uxfml002pk3ol4ojfb5wm");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-clm1te4xu002pk7op68rv5ia6">
+        <div class="article-golem" id="article-golem-clm1uxfml002pk3ol4ojfb5wm">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 30 Sep 2022 
     in German under the title <span style="font-weight:bold;">&laquo;Eine Maus für alles&raquo;</span>&nbsp;&nbsp;  
@@ -1034,7 +1034,8 @@ The trend is toward second or third devices, especially among IT workers. In add
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1055,7 +1056,8 @@ The trend is toward second or third devices, especially among IT workers. In add
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

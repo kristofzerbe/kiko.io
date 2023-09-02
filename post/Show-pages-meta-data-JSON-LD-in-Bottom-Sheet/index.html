@@ -425,15 +425,15 @@ Since I’ve been a fan of the so-called bottom sheets since the first version o
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clm1te4z0003dk7op97qv7sps">
+      <div class="article-permalink" id="article-permalink-clm1uxfmx003dk3olbxsq7gkf">
     <input class="article-permalink-value" value="https://kiko.io/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/" 
-           data-id="clm1te4z0003dk7op97qv7sps" data-title="Show pages meta data (JSON-LD) in Bottom Sheet" />
+           data-id="clm1uxfmx003dk3olbxsq7gkf" data-title="Show pages meta data (JSON-LD) in Bottom Sheet" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4z0003dk7op97qv7sps");
+        initPermalink("clm1uxfmx003dk3olbxsq7gkf");
     });
 </script>
 
@@ -1079,7 +1079,8 @@ Since I’ve been a fan of the so-called bottom sheets since the first version o
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1100,7 +1101,8 @@ Since I’ve been a fan of the so-called bottom sheets since the first version o
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

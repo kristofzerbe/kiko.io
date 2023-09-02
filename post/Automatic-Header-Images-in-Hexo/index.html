@@ -406,15 +406,15 @@ For serving these pictures I use a static folder, as described in A New Blog: Cu
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4w7000ik7op76kt4rgm">
+      <div class="article-permalink" id="article-permalink-clm1uxfky000ik3ol374wdtu2">
     <input class="article-permalink-value" value="https://kiko.io/post/Automatic-Header-Images-in-Hexo/" 
-           data-id="clm1te4w7000ik7op76kt4rgm" data-title="Automatic Header Images in Hexo" />
+           data-id="clm1uxfky000ik3ol374wdtu2" data-title="Automatic Header Images in Hexo" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4w7000ik7op76kt4rgm");
+        initPermalink("clm1uxfky000ik3ol374wdtu2");
     });
 </script>
 
@@ -1069,7 +1069,8 @@ For serving these pictures I use a static folder, as described in A New Blog: Cu
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1090,7 +1091,8 @@ For serving these pictures I use a static folder, as described in A New Blog: Cu
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

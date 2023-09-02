@@ -397,15 +397,15 @@ Ok then … make a successor on your own, fella…">
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4x3001hk7op0u3o6ca1">
+      <div class="article-permalink" id="article-permalink-clm1uxflp001ik3ol3ivd6som">
     <input class="article-permalink-value" value="https://kiko.io/post/Forking-Hexo-plugin-hexo-index-anything/" 
-           data-id="clm1te4x3001hk7op0u3o6ca1" data-title="Forking Hexo plugin &#39;hexo-index-anything&#39;" />
+           data-id="clm1uxflp001ik3ol3ivd6som" data-title="Forking Hexo plugin &#39;hexo-index-anything&#39;" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4x3001hk7op0u3o6ca1");
+        initPermalink("clm1uxflp001ik3ol3ivd6som");
     });
 </script>
 
@@ -1056,7 +1056,8 @@ Ok then … make a successor on your own, fella…">
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1077,7 +1078,8 @@ Ok then … make a successor on your own, fella…">
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

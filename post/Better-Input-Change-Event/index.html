@@ -354,15 +354,15 @@ The intended event for this is change, which will be triggered, when the user ha
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4w3000ck7op91ib73g0">
+      <div class="article-permalink" id="article-permalink-clm1uxfkt000bk3olers562z5">
     <input class="article-permalink-value" value="https://kiko.io/post/Better-Input-Change-Event/" 
-           data-id="clm1te4w3000ck7op91ib73g0" data-title="Better Input Change Event" />
+           data-id="clm1uxfkt000bk3olers562z5" data-title="Better Input Change Event" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4w3000ck7op91ib73g0");
+        initPermalink("clm1uxfkt000bk3olers562z5");
     });
 </script>
 
@@ -956,7 +956,8 @@ The intended event for this is change, which will be triggered, when the user ha
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -977,7 +978,8 @@ The intended event for this is change, which will be triggered, when the user ha
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

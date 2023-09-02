@@ -337,15 +337,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4xh0020k7op5976dpfg">
+      <div class="article-permalink" id="article-permalink-clm1uxfm10022k3olapzq8ybx">
     <input class="article-permalink-value" value="https://kiko.io/post/The-Last-Image-Gallery/" 
-           data-id="clm1te4xh0020k7op5976dpfg" data-title="The Last Image Gallery..." />
+           data-id="clm1uxfm10022k3olapzq8ybx" data-title="The Last Image Gallery..." />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4xh0020k7op5976dpfg");
+        initPermalink("clm1uxfm10022k3olapzq8ybx");
     });
 </script>
 
@@ -423,15 +423,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4x9001rk7opb2hs7nrg">
+      <div class="article-permalink" id="article-permalink-clm1uxflv001rk3oldan05vce">
     <input class="article-permalink-value" value="https://kiko.io/post/Open-Source-Insights-Seeing-the-big-picture/" 
-           data-id="clm1te4x9001rk7opb2hs7nrg" data-title="Open Source Insights - Seeing the big picture" />
+           data-id="clm1uxflv001rk3oldan05vce" data-title="Open Source Insights - Seeing the big picture" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4x9001rk7opb2hs7nrg");
+        initPermalink("clm1uxflv001rk3oldan05vce");
     });
 </script>
 
@@ -507,15 +507,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4xh0021k7op4bnh916p">
+      <div class="article-permalink" id="article-permalink-clm1uxfm00020k3ol3m5f01p0">
     <input class="article-permalink-value" value="https://kiko.io/post/Triangulate-your-images-with-Triangula/" 
-           data-id="clm1te4xh0021k7op4bnh916p" data-title="Triangulate your images with Triangula" />
+           data-id="clm1uxfm00020k3ol3m5f01p0" data-title="Triangulate your images with Triangula" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4xh0021k7op4bnh916p");
+        initPermalink("clm1uxfm00020k3ol3m5f01p0");
     });
 </script>
 
@@ -644,15 +644,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4xc001wk7op2wuo9jx6">
+      <div class="article-permalink" id="article-permalink-clm1uxflx001wk3olag7o5rax">
     <input class="article-permalink-value" value="https://kiko.io/post/SVG-Resources/" 
-           data-id="clm1te4xc001wk7op2wuo9jx6" data-title="SVG Resources" />
+           data-id="clm1uxflx001wk3olag7o5rax" data-title="SVG Resources" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4xc001wk7op2wuo9jx6");
+        initPermalink("clm1uxflx001wk3olag7o5rax");
     });
 </script>
 
@@ -732,15 +732,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4wc000qk7opf89ud6mh">
+      <div class="article-permalink" id="article-permalink-clm1uxfl2000pk3olam7y6p9c">
     <input class="article-permalink-value" value="https://kiko.io/post/Dopamine-How-Software-should-be/" 
-           data-id="clm1te4wc000qk7opf89ud6mh" data-title="Dopamine: How Software should be..." />
+           data-id="clm1uxfl2000pk3olam7y6p9c" data-title="Dopamine: How Software should be..." />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4wc000qk7opf89ud6mh");
+        initPermalink("clm1uxfl2000pk3olam7y6p9c");
     });
 </script>
 
@@ -1145,7 +1145,8 @@
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1166,7 +1167,8 @@
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

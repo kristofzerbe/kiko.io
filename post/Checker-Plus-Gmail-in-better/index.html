@@ -394,20 +394,20 @@ That’s what Montreal-based software developer Jason Savard seems to have thoug
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4xn002ck7ophkjy9ezw">
+      <div class="article-permalink" id="article-permalink-clm1uxfmd002ck3olettwcval">
     <input class="article-permalink-value" value="https://kiko.io/post/Checker-Plus-Gmail-in-better/" 
-           data-id="clm1te4xn002ck7ophkjy9ezw" data-title="Checker Plus - Gmail in better..." />
+           data-id="clm1uxfmd002ck3olettwcval" data-title="Checker Plus - Gmail in better..." />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4xn002ck7ophkjy9ezw");
+        initPermalink("clm1uxfmd002ck3olettwcval");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-clm1te4xn002ck7ophkjy9ezw">
+        <div class="article-golem" id="article-golem-clm1uxfmd002ck3olettwcval">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 20 Dec 2021 
     in German under the title <span style="font-weight:bold;">&laquo;Checker Plus - Gmail in besser&raquo;</span>&nbsp;&nbsp;  
@@ -1060,7 +1060,8 @@ That’s what Montreal-based software developer Jason Savard seems to have thoug
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1081,7 +1082,8 @@ That’s what Montreal-based software developer Jason Savard seems to have thoug
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

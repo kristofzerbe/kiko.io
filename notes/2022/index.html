@@ -529,7 +529,7 @@
     </header>
   
     <div class="article-entry">
-      <p>Get up. Make coffee. Grab Smartphone. Read news. Read RSS feeds. It goes like this or something similar every morning and I ALWAYS get stuck on the topic of IndieWeb. Surfing around for an hour or so. The topic simply hooked me. Today it was the wonderful work from Ryan Barrett (@<a href="mailto:&#115;&#110;&#97;&#x72;&#102;&#x65;&#x64;&#x2e;&#x6f;&#114;&#x67;&#64;&#115;&#110;&#97;&#114;&#102;&#x65;&#x64;&#x2e;&#x6f;&#x72;&#103;">&#115;&#110;&#97;&#x72;&#102;&#x65;&#x64;&#x2e;&#x6f;&#114;&#x67;&#64;&#115;&#110;&#97;&#114;&#102;&#x65;&#x64;&#x2e;&#x6f;&#x72;&#103;</a>). Ended up thinking what I can do with …</p>
+      <p>Get up. Make coffee. Grab Smartphone. Read news. Read RSS feeds. It goes like this or something similar every morning and I ALWAYS get stuck on the topic of IndieWeb. Surfing around for an hour or so. The topic simply hooked me. Today it was the wonderful work from Ryan Barrett (@<a href="mailto:&#x73;&#110;&#x61;&#114;&#102;&#101;&#x64;&#x2e;&#x6f;&#114;&#x67;&#64;&#115;&#x6e;&#x61;&#114;&#x66;&#x65;&#x64;&#x2e;&#111;&#114;&#103;">&#x73;&#110;&#x61;&#114;&#102;&#101;&#x64;&#x2e;&#x6f;&#114;&#x67;&#64;&#115;&#x6e;&#x61;&#114;&#x66;&#x65;&#x64;&#x2e;&#111;&#114;&#103;</a>). Ended up thinking what I can do with …</p>
 <p><a href="https://granary.io/">https://granary.io/</a></p>
 
       
@@ -1346,7 +1346,8 @@
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1367,7 +1368,8 @@
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

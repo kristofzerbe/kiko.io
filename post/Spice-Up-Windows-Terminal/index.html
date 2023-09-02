@@ -397,15 +397,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4xe001zk7op9gge7qxw">
+      <div class="article-permalink" id="article-permalink-clm1uxflz001zk3olh8xf3q74">
     <input class="article-permalink-value" value="https://kiko.io/post/Spice-Up-Windows-Terminal/" 
-           data-id="clm1te4xe001zk7op9gge7qxw" data-title="Spice Up Windows Terminal" />
+           data-id="clm1uxflz001zk3olh8xf3q74" data-title="Spice Up Windows Terminal" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4xe001zk7op9gge7qxw");
+        initPermalink("clm1uxflz001zk3olh8xf3q74");
     });
 </script>
 
@@ -888,7 +888,8 @@
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -909,7 +910,8 @@
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

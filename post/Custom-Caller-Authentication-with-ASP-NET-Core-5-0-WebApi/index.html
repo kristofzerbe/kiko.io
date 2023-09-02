@@ -371,15 +371,15 @@ A common way is to limit the service access by providing API Keys to well known 
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4wq0016k7op3qyw3car">
+      <div class="article-permalink" id="article-permalink-clm1uxflg0016k3ol65ah5nhl">
     <input class="article-permalink-value" value="https://kiko.io/post/Custom-Caller-Authentication-with-ASP-NET-Core-5-0-WebApi/" 
-           data-id="clm1te4wq0016k7op3qyw3car" data-title="Custom Caller Authentication with ASP.NET Core 5.0 Web API" />
+           data-id="clm1uxflg0016k3ol65ah5nhl" data-title="Custom Caller Authentication with ASP.NET Core 5.0 Web API" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4wq0016k7op3qyw3car");
+        initPermalink("clm1uxflg0016k3ol65ah5nhl");
     });
 </script>
 
@@ -975,7 +975,8 @@ A common way is to limit the service access by providing API Keys to well known 
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -996,7 +997,8 @@ A common way is to limit the service access by providing API Keys to well known 
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

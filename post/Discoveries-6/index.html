@@ -486,15 +486,15 @@ All the finds in this issue have something to do with visual aspects of web desi
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4x1001dk7opd4yz8wxx">
+      <div class="article-permalink" id="article-permalink-clm1uxfll001dk3ol23j97exx">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-6/" 
-           data-id="clm1te4x1001dk7opd4yz8wxx" data-title="Discoveries #6" />
+           data-id="clm1uxfll001dk3ol23j97exx" data-title="Discoveries #6" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4x1001dk7opd4yz8wxx");
+        initPermalink("clm1uxfll001dk3ol23j97exx");
     });
 </script>
 
@@ -1137,7 +1137,8 @@ All the finds in this issue have something to do with visual aspects of web desi
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1158,7 +1159,8 @@ All the finds in this issue have something to do with visual aspects of web desi
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

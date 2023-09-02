@@ -402,15 +402,15 @@ The starting point of my example is the requirement to display several elements 
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4x9001sk7op3zdp9v3a">
+      <div class="article-permalink" id="article-permalink-clm1uxflv001sk3ol4jp6c0s4">
     <input class="article-permalink-value" value="https://kiko.io/post/Pattern-for-dynamic-Hexo-pages/" 
-           data-id="clm1te4x9001sk7op3zdp9v3a" data-title="Pattern for dynamic Hexo pages" />
+           data-id="clm1uxflv001sk3ol4jp6c0s4" data-title="Pattern for dynamic Hexo pages" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4x9001sk7op3zdp9v3a");
+        initPermalink("clm1uxflv001sk3ol4jp6c0s4");
     });
 </script>
 
@@ -1055,7 +1055,8 @@ The starting point of my example is the requirement to display several elements 
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1076,7 +1077,8 @@ The starting point of my example is the requirement to display several elements 
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

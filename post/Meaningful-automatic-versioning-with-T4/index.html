@@ -444,15 +444,15 @@ But seriously … who does that? I guess 99% of all C# developers are entering t
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4wh000xk7opc5gb0a3x">
+      <div class="article-permalink" id="article-permalink-clm1uxfl7000wk3olbty7ftpq">
     <input class="article-permalink-value" value="https://kiko.io/post/Meaningful-automatic-versioning-with-T4/" 
-           data-id="clm1te4wh000xk7opc5gb0a3x" data-title="Meaningful automatic versioning with T4" />
+           data-id="clm1uxfl7000wk3olbty7ftpq" data-title="Meaningful automatic versioning with T4" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4wh000xk7opc5gb0a3x");
+        initPermalink("clm1uxfl7000wk3olbty7ftpq");
     });
 </script>
 
@@ -935,7 +935,8 @@ But seriously … who does that? I guess 99% of all C# developers are entering t
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -956,7 +957,8 @@ But seriously … who does that? I guess 99% of all C# developers are entering t
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

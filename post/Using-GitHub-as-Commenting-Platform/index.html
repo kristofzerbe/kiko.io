@@ -378,15 +378,15 @@ As I host this blog at GitHub (see A New Blog (Part One): VS Code, Hexo and GitH
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4wn0011k7op4qvvegxg">
+      <div class="article-permalink" id="article-permalink-clm1uxfld0011k3ol0eqt3wmf">
     <input class="article-permalink-value" value="https://kiko.io/post/Using-GitHub-as-Commenting-Platform/" 
-           data-id="clm1te4wn0011k7op4qvvegxg" data-title="Using GitHub as Commenting Platform" />
+           data-id="clm1uxfld0011k3ol0eqt3wmf" data-title="Using GitHub as Commenting Platform" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4wn0011k7op4qvvegxg");
+        initPermalink("clm1uxfld0011k3ol0eqt3wmf");
     });
 </script>
 
@@ -1041,7 +1041,8 @@ As I host this blog at GitHub (see A New Blog (Part One): VS Code, Hexo and GitH
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1062,7 +1063,8 @@ As I host this blog at GitHub (see A New Blog (Part One): VS Code, Hexo and GitH
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

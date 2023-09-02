@@ -486,15 +486,15 @@ Below are a few JavaScript libraries that help to create appealing interfaces.
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4xq002hk7op7pma4kji">
+      <div class="article-permalink" id="article-permalink-clm1uxfmg002hk3ol835a7vas">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-19-Visual-Helpers/" 
-           data-id="clm1te4xq002hk7op7pma4kji" data-title="Discoveries #19 - Visual Helpers" />
+           data-id="clm1uxfmg002hk3ol835a7vas" data-title="Discoveries #19 - Visual Helpers" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4xq002hk7op7pma4kji");
+        initPermalink("clm1uxfmg002hk3ol835a7vas");
     });
 </script>
 
@@ -1135,7 +1135,8 @@ Below are a few JavaScript libraries that help to create appealing interfaces.
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1156,7 +1157,8 @@ Below are a few JavaScript libraries that help to create appealing interfaces.
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

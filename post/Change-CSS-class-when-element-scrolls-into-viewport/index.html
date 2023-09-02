@@ -360,15 +360,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4w8000jk7op5yew9rbz">
+      <div class="article-permalink" id="article-permalink-clm1uxfkz000jk3olc9s8666k">
     <input class="article-permalink-value" value="https://kiko.io/post/Change-CSS-class-when-element-scrolls-into-viewport/" 
-           data-id="clm1te4w8000jk7op5yew9rbz" data-title="Change CSS class when element scrolls into viewport" />
+           data-id="clm1uxfkz000jk3olc9s8666k" data-title="Change CSS class when element scrolls into viewport" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4w8000jk7op5yew9rbz");
+        initPermalink("clm1uxfkz000jk3olc9s8666k");
     });
 </script>
 
@@ -968,7 +968,8 @@
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -989,7 +990,8 @@
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

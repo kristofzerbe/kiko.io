@@ -429,15 +429,15 @@ Lets say you have a list of boxes you want to show in a grid-like list, but the 
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4xn002bk7opaviwgsjs">
+      <div class="article-permalink" id="article-permalink-clm1uxfmc002bk3ole09z8o2g">
     <input class="article-permalink-value" value="https://kiko.io/post/CSS-Columns-and-Drop-Shadow/" 
-           data-id="clm1te4xn002bk7opaviwgsjs" data-title="CSS Columns and Drop Shadow" />
+           data-id="clm1uxfmc002bk3ole09z8o2g" data-title="CSS Columns and Drop Shadow" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4xn002bk7opaviwgsjs");
+        initPermalink("clm1uxfmc002bk3ole09z8o2g");
     });
 </script>
 
@@ -1031,7 +1031,8 @@ Lets say you have a list of boxes you want to show in a grid-like list, but the 
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1052,7 +1053,8 @@ Lets say you have a list of boxes you want to show in a grid-like list, but the 
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>

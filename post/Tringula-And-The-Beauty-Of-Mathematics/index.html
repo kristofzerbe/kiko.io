@@ -355,12 +355,12 @@ How wonderfully this field of mathematics can be applied to photos is shown by t
 <span id="more"></span>
 
 
-      <div class="image-slider" id="image-slide-02th84">
+      <div class="image-slider" id="image-slide-p50yh1">
         <div><img src="/post/Tringula-And-The-Beauty-Of-Mathematics/triangula.png" alt="UI of the tool Triangula written in Go" /></div><div><img src="/post/Tringula-And-The-Beauty-Of-Mathematics/sample-40-generations.png" alt="Sample 40 generations" /></div><div><img src="/post/Tringula-And-The-Beauty-Of-Mathematics/sample-400-generations.png" alt="Sample 400 generations" /></div><div><img src="/post/Tringula-And-The-Beauty-Of-Mathematics/sample-4000-generations.png" alt="Sample 4000 generations" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-02th84",
+          container: "#image-slide-p50yh1",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -417,20 +417,20 @@ How wonderfully this field of mathematics can be applied to photos is shown by t
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clm1te4xi0022k7op6sf28wvo">
+      <div class="article-permalink" id="article-permalink-clm1uxfm20023k3olb3iz8bns">
     <input class="article-permalink-value" value="https://kiko.io/post/Tringula-And-The-Beauty-Of-Mathematics/" 
-           data-id="clm1te4xi0022k7op6sf28wvo" data-title="Tringula And The Beauty Of Mathematics" />
+           data-id="clm1uxfm20023k3olb3iz8bns" data-title="Tringula And The Beauty Of Mathematics" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clm1te4xi0022k7op6sf28wvo");
+        initPermalink("clm1uxfm20023k3olb3iz8bns");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-clm1te4xi0022k7op6sf28wvo">
+        <div class="article-golem" id="article-golem-clm1uxfm20023k3olb3iz8bns">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 29 Nov 2021 
     in German under the title <span style="font-weight:bold;">&laquo;Tringula und die Schönheit der Mathematik&raquo;</span>&nbsp;&nbsp;  
@@ -1077,7 +1077,8 @@ How wonderfully this field of mathematics can be applied to photos is shown by t
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
   if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
-    document.getElementById(`nav-${pathItem}-link`).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 
   // AUTOTYPING
@@ -1098,7 +1099,8 @@ How wonderfully this field of mathematics can be applied to photos is shown by t
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
     background: 'rgba(55, 55, 55, 0.5)',
-    margin: 20
+    margin: 20,
+    scrollOffset: 10
   });
 
 </script>
