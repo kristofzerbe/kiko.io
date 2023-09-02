@@ -12,10 +12,10 @@ categories:
   - Football
 tags:
   - SVWW
-  - Karlsruher FC
   - 2. Bundesliga
 related:
   - My-Hometown-My-Club
+  - SVWW-vs-Schalke-2023-09-02
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/110922099448185014
@@ -56,7 +56,7 @@ The club has of course strengthened itself for the new season with new players i
   "PXL_20230818_182650426.jpg|SVWW vs Karlsruhe - Cheers of victory"
 %}
 
-But we quickly saw that our coach, **Markus Kauczinski**, knows his ex-club Karlsruher FC well. At the beginning of the first half, the players of this traditional club directly tried to overrun our team. There was a lot of pressure on the defence, but it held up magnificently. There was always a Wiesbaden leg between the ball and the goal and we limited ourselves to counterattacks, which led to success in the 22nd minute when the newcomer from Bayern Munich **Lee Hyun-Ju** marked the **1:0**.
+But we quickly saw that our coach, **Markus Kauczinski**, knows his ex-club Karlsruher FC well. At the beginning of the first half, the players of this traditional club directly tried to overrun our team, seen by 10,626 spectators. There was a lot of pressure on the defence, but it held up magnificently. There was always a Wiesbaden leg between the ball and the goal and we limited ourselves to counterattacks, which led to success in the 22nd minute when the newcomer from Bayern Munich **Lee Hyun-Ju** marked the **1:0**.
 
 The rest of the first half was quite even, because Karlsruhe had lost the momentum a little bit, but they found it again at the beginning of the second half. Again, the game ran in only one direction, our goal, but the last 16 metres, in the box, were impregnable for them and when they did manage it, they failed because of our goalkeeper **Florian Stritzel**.
 
