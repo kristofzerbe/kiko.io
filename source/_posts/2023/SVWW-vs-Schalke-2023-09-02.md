@@ -21,7 +21,7 @@ syndication:
     url: https://indieweb.social/@kiko/110996975032155101
 ---
 
-On this game, some in my circle of friends have feverishly awaited, especially my neighbor and girlfriend, who for years is an ardent fan of one of the traditional clubs **Schalke 04**. We got six additional tickets for the game in time and with a crowd of 11,003 fans, this was also urgently necessary. The stadium (12,566 standing and seated) was full to the roof. Only one of three blocks of the guests was empty. Some Schalke fans seem to have expected nothing from the game in Wiesbaden. No wonder after table position 15 after the last match day.
+On this game, some in my circle of friends have feverishly awaited, especially my neighbor and friend, who for years is an ardent fan of one of the traditional clubs **Schalke 04**. We got six additional tickets for the game in time and with a crowd of 11,003 fans, this was also urgently necessary. The stadium (12,566 standing and seated) was full to the roof. Only one of three blocks of the guests was empty. Some Schalke fans seem to have expected nothing from the game in Wiesbaden. No wonder after table position 15 after the last match day.
 
 Since season ticket holders get into the stadium a little faster and my friends sat a little scattered in different blocks, I lost sight of them at some point, but that was not tragic, because they had fun.
 
@@ -54,7 +54,7 @@ At the beginning of the second half, this continued seamlessly, even if you noti
   "PXL_20230902_130050774.jpg|"
 %}
 
-After our guys had digested the shock, so after 10 minutes, they began ... yes indeed ... to play football! Also because Kauczinski had replaced a few snoozers. In the last 20 minutes it went with steam on the opponents goal, but we ran out of time. In the 90th minute, 6 minutes of injury time were displayed and it was almost hectic ... kick and rush. With success! In the 95th minute it was **1:1**, thanks to the leg of **Reinthaler**, from which bounced a defensive attempt, and in the 97th almost 2:1 ... huuuuh, damn close.
+After our guys had digested the shock, after 10 minutes or so, they began ... yes indeed ... to play football! Also because Kauczinski had replaced a few snoozers. In the last 20 minutes it went with steam on the opponents goal, but we ran slightly out of time. In the 90th minute, 6 minutes of injury time were displayed and it was almost hectic ... kick and rush. With success! In the 95th minute it was **1:1**, thanks to the leg of **Reinthaler**, from which bounced a defensive attempt, and in the 97th almost 2:1 ... huuuuh, damn close.
 
 Before the game I had bet on a 1:1 and was unfortunately/fortunately right. **It felt like a victory.**
 
