@@ -6,7 +6,6 @@ date: 2022-09-17 15:08:34
 photograph:
   file: D70_8789.jpg
   name: Old Master Veggies II
-  link: https://500px.com/photo/1024009266
   socialmedia: /static/images/social-media/Creating-Icon-Font-from-SVG-Files.png
 categories:
   - JavaScript

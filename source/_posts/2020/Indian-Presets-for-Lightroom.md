@@ -7,7 +7,6 @@ date: 2020-10-28T14:07:20.000Z
 photograph:
   file: IMG_20191009_164133_HDR.jpg
   name: Iza Khans Tomb 1
-  link: 'https://500px.com/photo/1023881285/iza-khans-tomb-1-2nd-edition-by-kristof-zerbe'
   socialmedia: /static/images/social-media/Indian-Presets-for-Lightroom.png
 series: Lightroom Presets
 categories:

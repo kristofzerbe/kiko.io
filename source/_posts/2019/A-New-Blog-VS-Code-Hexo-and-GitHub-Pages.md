@@ -7,7 +7,6 @@ date: 2019-09-24T00:00:00.000Z
 photograph:
     file: 19-07 Schottland-0405.jpg
     name: Tiny Scots 7
-    link: 'https://500px.com/photo/1002666873/Tiny-Scots-7-by-Kristof-Zerbe'
     socialmedia: /static/images/social-media/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages.png
 series: A New Blog
 tags:

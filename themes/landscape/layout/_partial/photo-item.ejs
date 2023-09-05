@@ -7,14 +7,12 @@
   <a class="spotlight card-img" 
        data-title="<%- item.name %>"
        data-description="<%- item.key %>&nbsp;&bull;&nbsp;<%- item.status %>"
-       data-src="<%- item.photo %>">
-    <img src="<%- item.path %>" alt="<%- item.name %>" />
+       data-src="<%- item.pathNormal %>">
+    <img src="<%- item.pathMobile %>" alt="<%- item.name %>" />
   </a>
   <span class="pre-title"><%- item.key %></span>
   <h3><%- item.name %></h3>
-  <% if (item.link) { %>
-  <a class="icon-link" href="<%- item.link %>">
-    <img src="/images/500px_full.svg" alt="see on 500px" style="height" />
-  </a>
+  <% if (item) { %>
+  <a class="icon-link" href="/<%= config.photo_dir %>/<%= item.key %>"></a>
   <% } %>
 </div>

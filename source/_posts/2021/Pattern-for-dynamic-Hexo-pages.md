@@ -6,7 +6,6 @@ date: 2021-08-25T09:43:44.000Z
 photograph:
   file: D50_4451.jpg
   name: Garden Beauties I
-  link: 'https://500px.com/photo/1036128326/untitled-by-kristof-zerbe'
   socialmedia: /static/images/social-media/Pattern-for-dynamic-Hexo-pages.png
 categories:
   - Tools

@@ -6,7 +6,6 @@ date: 2022-11-13 17:48:40
 photograph:
   file: DSC_1936.jpg
   name: Botanical Coexistence
-  link: https://500px.com/photo/80797867
   socialmedia: >-
     /static/images/social-media/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader.png
 categories:

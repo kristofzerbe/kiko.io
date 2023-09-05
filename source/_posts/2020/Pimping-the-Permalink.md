@@ -7,7 +7,6 @@ date: 2020-09-20T16:30:37.000Z
 photograph:
   file: 18-09 Kroatien-0245.jpg
   name: Summer Reading
-  link: 'https://500px.com/photo/1005494226/Untitled-by-Kristof-Zerbe'
   socialmedia: /static/images/social-media/Pimping-the-Permalink.png
 series: A New Blog
 tags:

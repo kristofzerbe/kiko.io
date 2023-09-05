@@ -6,7 +6,6 @@ date: 2022-11-12 12:26:34
 photograph:
   file: 22-05 Malta-8654.jpg
   name: Rocky Stairway
-  link: https://500px.com/photo/1049918236/Rocky-Stairway-by-Kristof-Zerbe/
   socialmedia: /static/images/social-media/Anatomy-of-Service-Worker-Communication.png
 categories:
   - JavaScript

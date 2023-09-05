@@ -6,7 +6,6 @@ date: 2022-10-08 11:46:57
 photograph:
   file: 22-05 Malta-8364.jpg
   name: Ancient Cockpit
-  link: https://500px.com/photo/1049918250/Ancient-Cockpit-by-Kristof-Zerbe/
   socialmedia: /static/images/social-media/One-mouse-to-rule-them-all.png
 series: Golem
 golem:

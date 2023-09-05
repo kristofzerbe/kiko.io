@@ -8,7 +8,6 @@ updated: 2021-04-16T11:55:15.000Z
 photograph:
   file: DSC_8860.jpg
   name: Illuminated Kurhaus I
-  link: 'https://500px.com/photo/86254711/Illuminated-Kurhaus-I-by-Kristof-Zerbe/'
   socialmedia: /static/images/social-media/Spice-Up-Windows-Terminal.png
 categories:
   - Tools

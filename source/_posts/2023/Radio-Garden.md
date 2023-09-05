@@ -6,7 +6,6 @@ date: 2023-02-02
 photograph:
   file: D50_1147.jpg
   name: Poppy Green
-  link: https://500px.com/photo/1034529691/Poppy-Green-by-Kristof-Zerbe/
   socialmedia: /static/images/social-media/Radio-Garden.png
 series: Golem
 golem:

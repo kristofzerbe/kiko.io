@@ -6,7 +6,6 @@ date: 2022-12-23 22:40:00
 photograph:
   file: DSC_0654.jpg
   name: Green Rag
-  link: https://500px.com/photo/1022780752/Green-Rag-by-Kristof-Zerbe/
   socialmedia: /static/images/social-media/The-State-of-the-Blog.png
 series: A New Blog
 categories:

@@ -7,7 +7,6 @@ date: 2021-04-25T13:41:46.000Z
 photograph:
   file: 20-08 Mallorca-7200.jpg
   name: Red Golden Leafs
-  link: 'https://500px.com/photo/1023572919'
   socialmedia: /static/images/social-media/Forking-Hexo-plugin-hexo-index-anything.png
 project: Hexo Generator Anything
 categories:

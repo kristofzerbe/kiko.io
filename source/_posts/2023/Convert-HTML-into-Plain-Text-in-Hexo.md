@@ -6,7 +6,6 @@ date: 2023-08-31 21:58:36
 photograph:
   file: D70_9227.jpg
   name: Tulips
-  link: https://500px.com/photo/1031574242
   socialmedia: /static/images/social-media/Convert-HTML-into-Plain-Text-in-Hexo.png
 series: A New Blog
 categories:

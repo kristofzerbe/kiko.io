@@ -60,6 +60,7 @@
     else if (is_tag())      { meta.area = "TAG"; }
     else {
       let rootPath = page.path.split(/[\\\/]/)[0].toLowerCase();
+      // console.log(page);
       switch (rootPath) {
         case "notes":
           meta.area = "NOTE";
@@ -147,6 +148,7 @@
         break;
  
       case "DYNAMIC":
+        //console.log(meta);
         meta.title = page.title + " - " + config.title;
         meta.description = page.title + " " + config.description_short;
         meta.photograph = page.photograph;
@@ -274,13 +276,6 @@
   <link rel="preload" href="/css/fonts/fontawesome/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="preload" as="image" href="/images/hero.jpg" imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
-  <link rel="preload" as="image" href="/photos/normal/$search.jpg" imagesrcset="/photos/mobile/$search.jpg 480w, /photos/tablet/$search.jpg 768w">
-  <link rel="preload" as="image" href="/photos/normal/$notes-<%= currentYear %>.jpg" imagesrcset="/photos/mobile/$notes-<%= currentYear %>.jpg 480w, /photos/tablet/$notes-<%= currentYear %>.jpg 768w">
-  <link rel="preload" as="image" href="/photos/normal/$projects.jpg" imagesrcset="/photos/mobile/$projects.jpg 480w, /photos/tablet/$projects.jpg 768w">
-  <link rel="preload" as="image" href="/photos/normal/$tiny-tools.jpg" imagesrcset="/photos/mobile/$tiny-tools.jpg 480w, /photos/tablet/$tiny-tools.jpg 768w">
-  <link rel="preload" as="image" href="/photos/normal/$photos.jpg" imagesrcset="/photos/mobile/$photos.jpg 480w, /photos/tablet/$photos.jpg 768w">
-  <link rel="preload" as="image" href="/photos/normal/$about.jpg" imagesrcset="/photos/mobile/$about.jpg 480w, /photos/tablet/$about.jpg 768w">
-  <link rel="preload" as="image" href="/photos/normal/$404.jpg" imagesrcset="/photos/mobile/$404.jpg 480w, /photos/tablet/$404.jpg 768w">
 
   <%- css('css/dist/bundle.min.css') %>
   <%- css('css/style.css') %>

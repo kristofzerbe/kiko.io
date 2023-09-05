@@ -6,7 +6,6 @@ date: 2023-04-28 16:39:01
 photograph:
   file: DSC_2186.jpg
   name: Sweat Lodge
-  link: https://500px.com/photo/80797955/sweat-lodge-by-kristof-zerbe
   socialmedia: /static/images/social-media/Discoveries-24-JavaScript-UI.png
 series: Discoveries
 categories:

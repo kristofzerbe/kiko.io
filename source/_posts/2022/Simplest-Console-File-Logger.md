@@ -6,7 +6,6 @@ date: 2022-06-19 13:31:25
 photograph:
   file: DSC_8817.jpg
   name: DJing II
-  link: https://500px.com/photo/86990881/DJing-II-by-Kristof-Zerbe/
   socialmedia: /static/images/social-media/Simplest-Console-File-Logger.png
 categories:
   - .NET

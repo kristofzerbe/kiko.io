@@ -6,7 +6,6 @@ date: 2021-09-21T13:40:25.000Z
 photograph:
   file: D70_1408.jpg
   name: Mooring Ropes
-  link: 'https://500px.com/photo/1017604391'
   socialmedia: /static/images/social-media/Uups-empty-posts.png
 categories:
   - Tools

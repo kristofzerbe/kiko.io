@@ -1,7 +1,6 @@
 ---
 title: Notes
 photograph:
-  file: $notes-2022.jpg
+  file: $21-08-05 Kroatien-3011.jpg
   name: Lilla & Zoli Lock
-  link: https://500px.com/photo/1037371998
 ---

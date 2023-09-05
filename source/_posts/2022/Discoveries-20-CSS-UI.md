@@ -6,7 +6,6 @@ date: 2022-10-08 13:23:33
 photograph:
   file: D50_7474.jpg
   name: Garden Beauties XIV
-  link: https://500px.com/photo/1049601905/Garden-Beauties-XIV-by-Kristof-Zerbe/
   socialmedia: /static/images/social-media/Discoveries-20-CSS-UI.png
 series: Discoveries
 categories:

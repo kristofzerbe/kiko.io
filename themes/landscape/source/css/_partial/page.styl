@@ -297,7 +297,7 @@
       h3
         margin-top: 0
       a.icon-link
-        bottom: -.5em
+        top: 40px
       span.pre-title
         grid-area: link
       .status
@@ -334,7 +334,7 @@
           display: block
           margin-top: 5px
       a.icon-link
-        top: 187px
+        top: 198px
       .status
         grid-area: status
         margin: -1em -1em 1em -1em
@@ -356,14 +356,21 @@
         display: inline-block
       a.icon-link
         position: absolute
-        right: 12px
+        right: 0
         opacity: 0.33
+        color: color-default
+        /[data-theme="dark"] &
+          color: dark-color-default
         &:hover
           opacity: 1
-        img
-          width: 42px;
-          /[data-theme="dark"] &
-            filter: invert(1);
+        &:before
+          font-family: fa-icon-solid
+          font-size: icon-home-size
+          margin-right: 10px
+          width: icon-home-size
+          height: icon-home-size
+          content: icon-arrow-right
+
       .card-img
         display: block
         position: relative
@@ -444,6 +451,8 @@
           background-color: rgba(95, 158, 160, 0.9)
         &.used.dynamic
           background-color: rgba(93, 65, 167 ,0.5)
+        &.used.anything
+          background-color: rgba(163, 43, 32 ,0.5)
         &.used.notes
           background-color: rgba(122, 75, 20, 0.5)
         &.pool
@@ -505,3 +514,28 @@
         color: color-footer-text
         /[data-theme="dark"] &
           color: dark-footer-text
+  section.meta
+    ul
+      margin: 0 0 2rem 0
+      list-style: none
+      display: flex
+      flex-direction: column
+      gap: 1rem
+      li
+        display: flex
+        flex-direction: column
+        gap: 0.2rem
+        label
+          font-weight: bold
+          font-size: 80%
+          text-transform: uppercase
+          opacity: 0.5
+          line-height: normal
+        span
+          line-height: normal
+          a
+            white-space: nowrap
+  img.section
+    @extend $block-inner
+    width: 100%
+    height: auto

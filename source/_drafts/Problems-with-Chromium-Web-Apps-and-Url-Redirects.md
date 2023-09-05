@@ -5,7 +5,6 @@ date: 2022-01-19 15:36:59
 photograph:
   file: DSC_6371-HDR.jpg
   name: Lonely Lock
-  link: 'https://500px.com/photo/83252729/Lonely-Lock-by-Kristof-Zerbe/'
 categories:
   - Misc
 tags:

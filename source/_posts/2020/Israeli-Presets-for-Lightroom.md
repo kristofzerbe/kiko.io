@@ -7,7 +7,6 @@ date: 2020-10-27T15:07:20.000Z
 photograph:
   file: 19-05 Israel-0498.jpg
   name: Dead Sea Colors
-  link: 'https://500px.com/photo/1001751158/Dead-Sea-Colors-by-Kristof-Zerbe'
   socialmedia: /static/images/social-media/Israeli-Presets-for-Lightroom.png
 series: Lightroom Presets
 categories:

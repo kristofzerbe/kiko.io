@@ -1,7 +1,6 @@
 ---
 title: Notes
 photograph:
-  file: $notes-2025.jpg
+  file: $21-08-05 Kroatien-3015.jpg
   name: Combination Lock
-  link: 'https://500px.com/photo/1037371999'
 ---

@@ -8,6 +8,10 @@
   position: fixed
   z-index: 999
   overflow: hidden;
+  filter: grayscale(0)
+  transition: filter 1.5s ease
+  &.gray
+    filter: grayscale(1)
   background-color: color-base
   border-radius: 0 0 1px 1px //??? 0 leads to inset shadow on mobile ?
   /[data-theme="dark"] &
@@ -43,9 +47,9 @@
 header.photograph #header-photo-link
   position: absolute
   display: block
-  top: 12px
+  top: 4px
   right: 100%
-  padding: 7px
+  padding: 8px
   white-space: nowrap
   font-size: 90%
   text-decoration: none

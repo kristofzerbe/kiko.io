@@ -1,0 +1,123 @@
+<% if (page.photograph){ %>
+  <%- partial('_partial/photograph') %>
+<% } %>
+
+<h1 class="archive-title">
+  <span>Photo<b>|</b></span><%= page.name %>
+</h1>
+
+<div class="page-content">
+
+  <img class="section" src="<%- page.pathNormal %>" alt="<%- page.name %>" />
+
+  <section class="meta">
+    <ul>
+      <li>
+        <label>File</label>
+        <span><%= page.file %></span>
+      </li>
+      <li>
+        <label>Status</label>
+        <% if (page.status === 'pool') { %>
+          <span>Unused (Pool Photo)</span>
+        <% } else { %>
+          <span>Used at <a href="<%= page.article.url %>"><%= page.article.title %></a></span>
+        <% } %>
+      </li>
+      <li>
+        <label>Links</label>
+        <% page.meta.custom.links.forEach(link => { %>
+          <% if (link.url) { %>
+          <a target="_blank" href="<%= link.url %>"><%= link.url %></a>
+          <% } %>
+        <% }); %>
+      </li>
+      <% if (page.meta) { %>
+      <li><hr style="margin:0"></li>
+      <li>
+        <label>Title</label>
+        <span><%= page.meta.ObjectName %></span>
+      </li>
+      <li>
+        <label>Keywords</label>
+        <span><%= page.meta.Keywords.join(", ") %></span>
+      </li>
+      <li>
+        <label>Artist</label>
+        <span><%= page.meta.Artist ?? "---" %></span>
+      </li>
+      <li>
+        <label>Copyright</label>
+        <span><%= page.meta.Copyright ?? "---" %></span>
+      </li>
+      <li>
+        <label>Create Date</label>
+        <span><%= page.meta.CreateDate ?? "---" %></span>
+      </li>
+      <li>
+        <label>Country</label>
+        <span><%= page.meta.Country ?? "---" %></span>
+      </li>
+      <li>
+        <label>State</label>
+        <span><%= page.meta.State ?? "---" %></span>
+      </li>
+      <li>
+        <label>City</label>
+        <span><%= page.meta.City ?? "---" %></span>
+      </li>
+      <li>
+        <label>Camera</label>
+        <span><%= page.meta.Model ?? "---" %></span>
+      </li>
+      <li>
+        <label>Lens</label>
+        <span><%= page.meta.LensModel ?? "---" %></span>
+      </li>
+      <li>
+        <label>Focal Length</label>
+        <span><%= page.meta.FocalLength ?? "---" %></span>
+      </li>
+      <li>
+        <label>ISO</label>
+        <span><%= page.meta.ISO ?? "---" %></span>
+      </li>
+      <li>
+        <label>FNumber</label>
+        <span><%= page.meta.FNumber ?? "---" %></span>
+      </li>
+      <li>
+        <label>Exposure Time</label>
+        <span><%= page.meta.ExposureTime ?? "---" %></span>
+      </li>
+      <li>
+        <label>Shutter Speed</label>
+        <span><%= page.meta.ShutterSpeedValue ?? "---" %></span>
+      </li>
+      <li>
+        <label>Aperture</label>
+        <span><%= page.meta.ApertureValue ?? "---" %></span>
+      </li>
+      <li>
+        <label>Metering Mode</label>
+        <span><%= page.meta.MeteringMode ?? "---" %></span>
+      </li>
+      <li>
+        <label>Software</label>
+        <span><%= page.meta.Software ?? "---" %></span>
+      </li>
+      <% } %>
+    </ul>
+    <%- partial('_partial/post/permalink', { post: page, class_name: 'article-permalink' }) %>
+  </section>
+
+  <%- partial('_partial/post/interaction', { post: page, type: 'photo', comments: false }) %>
+
+  <script>
+    setTimeout(() => {
+      let header = document.getElementById("header");
+      header.classList.add("gray");
+    }, 750);
+  </script>
+
+</div>

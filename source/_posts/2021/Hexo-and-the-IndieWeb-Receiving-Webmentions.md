@@ -7,7 +7,6 @@ date: 2021-05-13T14:16:00.000Z
 photograph:
   file: 19-12 Kroatien-0183.jpg
   name: Dubrovnik Fishnet
-  link: 'https://500px.com/photo/1022776833/Dubrovnik-Fishnet-by-Kristof-Zerbe/'
   socialmedia: /static/images/social-media/Hexo-and-the-IndieWeb-Receiving-Webmentions.png
 series: IndieWeb
 categories:

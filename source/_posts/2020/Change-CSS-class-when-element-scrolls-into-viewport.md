@@ -7,7 +7,6 @@ date: 2020-07-13T18:24:39.000Z
 photograph:
   file: D70_7695.jpg
   name: Onion Bokeh
-  link: 'https://500px.com/photo/260478167'
   socialmedia: /static/images/social-media/Change-CSS-class-when-element-scrolls-into-viewport.png
 series: A New Blog
 tags:

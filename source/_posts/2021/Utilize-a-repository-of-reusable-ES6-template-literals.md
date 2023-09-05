@@ -7,7 +7,6 @@ date: 2021-01-03T13:29:01.000Z
 photograph:
   file: DSC_7897.jpg
   name: Rusted Bike
-  link: 'https://500px.com/photo/86258961/Rusted-Bike-by-Kristof-Zerbe/'
   socialmedia: /static/images/social-media/Utilize-a-repository-of-reusable-ES6-template-literals.png
 categories:
   - JavaScript

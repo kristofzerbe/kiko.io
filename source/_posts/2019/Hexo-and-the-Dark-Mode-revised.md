@@ -7,7 +7,6 @@ date: 2019-10-26T14:08:05.000Z
 photograph:
     file: 19-07 Schottland-0025.jpg
     name: Glencoe River
-    link: 'https://500px.com/photo/1005490038/Glencoe-River-by-Kristof-Zerbe'
     socialmedia: /static/images/social-media/Hexo-and-the-Dark-Mode-revised.png
 series: A New Blog
 tags:

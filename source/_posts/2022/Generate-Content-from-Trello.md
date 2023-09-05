@@ -6,7 +6,6 @@ date: 2022-12-29 12:08:00
 photograph:
   file: DSC_9482-HDR.jpg
   name: Orange Shades
-  link: https://500px.com/photo/117444961
   socialmedia: /static/images/social-media/Generate-Content-from-Trello.png
 series: A New Blog
 categories:

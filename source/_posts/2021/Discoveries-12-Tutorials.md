@@ -6,7 +6,6 @@ date: 2021-07-30T10:41:51.000Z
 photograph:
   file: 19-07 Schottland-0479.jpg
   name: Beer Barrels
-  link: 'https://500px.com/photo/1022777513/Beer-Barrels-by-Kristof-Zerbe/'
   socialmedia: /static/images/social-media/Discoveries-12-Tutorials.png
 series: Discoveries
 categories:

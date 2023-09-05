@@ -6,7 +6,6 @@ date: 2023-05-08 15:34:15
 photograph:
   file: D50_1577.jpg
   name: Floral Magic XIV
-  link: https://500px.com/photo/1068126744
   socialmedia: /static/images/social-media/Top-10-Pens-of-Jon-Kantner.png
 categories:
   - UI/UX

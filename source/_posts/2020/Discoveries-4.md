@@ -7,7 +7,6 @@ date: 2020-10-10T15:27:47.000Z
 photograph:
   file: DSC_6114.jpg
   name: On The Rocks
-  link: 'https://500px.com/photo/84012179/On-The-Rocks-by-Kristof-Zerbe/'
   socialmedia: /static/images/social-media/Discoveries-4.png
 series: Discoveries
 categories:

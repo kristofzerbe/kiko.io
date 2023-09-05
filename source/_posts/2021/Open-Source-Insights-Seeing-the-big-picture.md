@@ -6,7 +6,6 @@ date: 2021-06-06T09:36:49.000Z
 photograph:
   file: DSC_0482.jpg
   name: Meek Window
-  link: 'https://500px.com/photo/1022780903/Meek-Window-by-Kristof-Zerbe/'
   socialmedia: /static/images/social-media/Open-Source-Insights-Seeing-the-big-picture.png
 series: Great Finds
 categories:

@@ -6,7 +6,6 @@ date: 2021-07-10T11:07:31.000Z
 photograph:
   file: DSC_6776.jpg
   name: Color Brushes
-  link: 'https://500px.com/photo/79965349'
   socialmedia: /static/images/social-media/Generate-Social-Media-Images-Automatically.png
 project: Social Media Image Generator
 categories:

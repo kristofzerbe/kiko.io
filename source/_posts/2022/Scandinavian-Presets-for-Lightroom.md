@@ -6,7 +6,6 @@ date: 2022-07-19 15:01:37
 photograph:
   file: D70_0710.jpg
   name: Nyhaven
-  link: https://500px.com/photo/259720013/Nyhaven-by-Kristof-Zerbe/
   socialmedia: /static/images/social-media/Scandinavian-Presets-for-Lightroom.png
 series: Lightroom Presets
 categories:

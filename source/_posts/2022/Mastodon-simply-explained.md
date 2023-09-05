@@ -6,7 +6,6 @@ date: 2022-11-15 16:32:07
 photograph:
   file: 20-08 Mallorca-8177.jpg
   name: Ready For Takeoff
-  link: https://500px.com/photo/1023572526
   socialmedia: /static/images/social-media/Mastodon-simply-explained.png
 categories:
   - Tools

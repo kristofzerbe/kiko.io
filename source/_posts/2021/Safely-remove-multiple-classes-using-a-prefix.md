@@ -7,7 +7,6 @@ date: 2021-01-18T11:17:46.000Z
 photograph:
   file: DSC_1690.jpg
   name: Metal Rose
-  link: 'https://500px.com/photo/83252609/Metal-Rose-by-Kristof-Zerbe/'
   socialmedia: /static/images/social-media/Safely-remove-multiple-classes-using-a-prefix.png
 categories:
   - JavaScript

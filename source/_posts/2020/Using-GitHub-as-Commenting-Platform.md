@@ -7,7 +7,6 @@ date: 2020-07-05T14:55:16.000Z
 photograph:
   file: D70_7530.jpg
   name: Shadow Hat
-  link: 'https://500px.com/photo/1017605689'
   socialmedia: /static/images/social-media/Using-GitHub-as-Commenting-Platform.png
 series: A New Blog
 tags:

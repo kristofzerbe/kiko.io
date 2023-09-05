@@ -7,7 +7,6 @@ date: 2021-04-20T11:02:14.000Z
 photograph:
   file: DSC_0190.jpg
   name: Pipes & Wheels
-  link: 'https://500px.com/photo/116725445'
   socialmedia: /static/images/social-media/Discoveries-9.png
 series: Discoveries
 categories:

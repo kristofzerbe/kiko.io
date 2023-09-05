@@ -1,7 +1,7 @@
 ---
 title: Projects
+permalink: /projects
 photograph:
-  file: $projects.jpg
+  file: $19-05 Israel-0245.jpg
   name: Ancient Mosaic
-  link: 'https://500px.com/photo/1057290585'
 ---

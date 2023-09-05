@@ -7,7 +7,6 @@ date: 2019-11-26T16:51:17.000Z
 photograph:
   file: 19-05 Israel-0624.jpg
   name: Jerusalem Seat
-  link: 'https://500px.com/photo/1001751283/Jerusalem-Seat-by-Kristof-Zerbe'
   socialmedia: /static/images/social-media/Better-Input-Change-Event.png
 tags:
   - jQuery

@@ -7,7 +7,6 @@ date: 2020-06-22T17:49:16.000Z
 photograph:
   file: D70_7344.jpg
   name: Non Toccare
-  link: 'https://500px.com/photo/1017605762'
   socialmedia: /static/images/social-media/Automatic-Header-Images-in-Hexo.png
 series: A New Blog
 tags:

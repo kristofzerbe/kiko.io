@@ -7,7 +7,6 @@ date: 2021-01-20T10:38:50.000Z
 photograph:
   file: D702440.jpg
   name: Oriental Lights
-  link: 'https://500px.com/photo/116725473'
   socialmedia: /static/images/social-media/Use-a-duplicate-image-to-drop-a-shadow.png
 categories:
   - UI/UX

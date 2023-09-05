@@ -18,13 +18,13 @@
      alt="<%= page.photograph.name%>"
      width="0" height="0"/>
 
-<% if (page.photograph.link) { %>
+<% if (page.photograph.file) { %>
     <script>
         var header = document.getElementById("header");
         header.classList.add("photograph");
         
         var photoLink = document.getElementById("header-photo-link");
-        photoLink.href = "<%= page.photograph.link%>";
-        photoLink.innerHTML = "see <strong><%= page.photograph.name%></strong> at 500px";
+        photoLink.href = "/<%= config.photo_dir %>/<%= page.photograph.file.replace('.jpg', '') %>";
+        photoLink.innerHTML = "<strong><%= page.photograph.name%></strong>";
     </script>
 <% } %>

@@ -6,7 +6,6 @@ date: 2021-08-21T07:55:00.000Z
 photograph:
   file: D50_0086.jpg
   name: Thomas' German Flag
-  link: 'https://500px.com/photo/1031618816'
   socialmedia: /static/images/social-media/Visualize-the-codebase-of-your-GitHub-repo.png
 categories:
   - Tools

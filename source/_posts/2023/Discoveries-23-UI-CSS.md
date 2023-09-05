@@ -6,7 +6,6 @@ date: 2023-02-12 11:45:10
 photograph:
   file: 22-08 Bretagne-Jersey-1332.jpg
   name: Seagull Meeting
-  link: https://500px.com/photo/1056125597/seagull-meeting-by-kristof-zerbe
   socialmedia: /static/images/social-media/Discoveries-23-UI-CSS.png
 series: Discoveries
 categories:

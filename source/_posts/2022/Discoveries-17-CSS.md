@@ -4,9 +4,8 @@ title: "Discoveries #17 - CSS"
 subtitle: null
 date: 2022-03-11 09:28:10
 photograph:
-  file: tel-aviv-sunset.jpg
+  file: 19-05 Israel-DSC-0093.jpg
   name: Tel Aviv Sunset
-  link: https://500px.com/photo/1001751554/Tel-Aviv-Sunset-by-Kristof-Zerbe
   socialmedia: /static/images/social-media/Discoveries-17-CSS.png
 series: Discoveries
 categories:

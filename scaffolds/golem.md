@@ -6,7 +6,6 @@ date: {{ date }}
 photograph: 
   file: 
   name: 
-  link: 
   socialmedia: /static/images/social-media/{{ slug }}.png
 series: Golem
 golem:

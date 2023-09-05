@@ -6,7 +6,6 @@ date: 2022-05-13 19:57:43
 photograph:
   file: 20-08 Mallorca-7134.jpg
   name: Boombox Reflections I
-  link: https://500px.com/photo/1023572696
   socialmedia: /static/images/social-media/Thanks-Dropbox-but-I-m-off.png
 categories:
   - Misc

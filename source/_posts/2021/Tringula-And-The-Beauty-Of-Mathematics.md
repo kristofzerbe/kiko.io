@@ -6,7 +6,6 @@ date: 2021-12-07T14:45:00.000Z
 photograph:
   file: D50_0075.jpg
   name: Thomas Wild Tulips
-  link: 'https://500px.com/photo/1031618832/thomas-wild-tulips-by-kristof-zerbe'
   socialmedia: /static/images/social-media/Tringula-And-The-Beauty-Of-Mathematics.png
 series: Golem
 golem:

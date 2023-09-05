@@ -7,7 +7,6 @@ date: 2020-10-03T13:17:03.000Z
 photograph:
   file: 18-09 Kroatien-0323.jpg
   name: Garden Eden
-  link: 'https://500px.com/photo/303713999'
   socialmedia: /static/images/social-media/Show-related-posts-in-Hexo.png
 series: A New Blog
 categories:

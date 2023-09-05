@@ -3,9 +3,8 @@ title: 404
 date: 2020-09-23 12:31:40
 permalink: 404.html
 photograph: 
-  file: $404.jpg
+  file: $D50_5119.jpg
   name: Brake
-  link: 'https://500px.com/photo/1038382604'
 ---
 I don't know how you ended up here, but you have jumped over the edge of this blog. Maybe it's the end of the internet and you can power off your machine now...
 

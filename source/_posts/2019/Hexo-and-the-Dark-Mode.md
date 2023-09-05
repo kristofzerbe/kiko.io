@@ -7,7 +7,6 @@ date: 2019-10-23T15:28:04.000Z
 photograph:
   file: 19-07 Schottland-0016_AUR.jpg
   name: Glencoe Valley HDR
-  link: 'https://500px.com/photo/1005490349/Glencoe-Valley-HDR-by-Kristof-Zerbe'
   socialmedia: /static/images/social-media/Hexo-and-the-Dark-Mode.png
 series: A New Blog
 tags:

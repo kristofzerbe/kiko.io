@@ -6,7 +6,6 @@ date: 2023-09-01 16:07:37
 photograph:
   file: 20-08 Mallorca-7333.jpg
   name: Red Hopper
-  link: https://500px.com/photo/1023564296
   socialmedia: /static/images/social-media/Image-Masonry-Tag-Plugin-for-Hexo.png
 project: Hexo Tag Plugins
 categories:

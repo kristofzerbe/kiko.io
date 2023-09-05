@@ -6,7 +6,6 @@ date: 2022-07-17 15:00:00
 photograph:
   file: D50_7090.jpg
   name: Manometer
-  link: https://500px.com/photo/1045390652
   socialmedia: /static/images/social-media/Gitpod-Visual-Studio-Code-on-the-Web.png
 series: Golem
 golem:

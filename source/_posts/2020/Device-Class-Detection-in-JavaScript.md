@@ -7,7 +7,6 @@ date: 2020-09-28T15:27:17.000Z
 photograph:
   file: 19-05 Israel-0145.jpg
   name: Jaffa Pepsi
-  link: 'https://500px.com/photo/1001750615/Jaffa-Pepsi-by-Kristof-Zerbe'
   socialmedia: /static/images/social-media/Device-Class-Detection-in-JavaScript.png
 categories:
   - JavaScript

@@ -7,7 +7,6 @@ date: 2021-01-24T14:47:10.000Z
 photograph:
   file: DSC_9368.jpg
   name: Direction Airport
-  link: 'https://500px.com/photo/86991283/Direction-Airport-by-Kristof-Zerbe/'
   socialmedia: /static/images/social-media/Remote-Testing-and-Debugging-with-Chrome.png
 series: Step By Step
 categories:

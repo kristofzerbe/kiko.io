@@ -6,7 +6,6 @@ date: 2021-12-25T12:18:51.000Z
 photograph:
   file: IMGP1149.jpg
   name: Büyükada Landing
-  link: 'https://500px.com/photo/81585221/'
   socialmedia: /static/images/social-media/Discoveries-15-Self-Hosted.png
 series: Discoveries
 categories:

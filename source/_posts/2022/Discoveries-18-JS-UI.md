@@ -6,7 +6,6 @@ date: 2022-05-10 19:22:16
 photograph:
   file: DSC_6655-HDR.jpg
   name: Wood'n Glass
-  link: https://500px.com/photo/84012231/Woodn-Glass-by-Kristof-Zerbe/
   socialmedia: /static/images/social-media/Discoveries-18-JS-UI.png
 series: Discoveries
 categories:

@@ -7,7 +7,6 @@ date: 2020-09-29T12:02:10.000Z
 photograph:
   file: 18-09 Kroatien-0112.jpg
   name: Enlightenment
-  link: 'https://500px.com/photo/1001114737/Untitled-by-Kristof-Zerbe'
   socialmedia: /static/images/social-media/Discoveries-3-Tutorials.png
 series: Discoveries
 categories:

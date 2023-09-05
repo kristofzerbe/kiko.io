@@ -7,7 +7,6 @@ date: 2020-06-13T15:49:10.000Z
 photograph:
   file: 19-05 Israel-0161.jpg
   name: Zern
-  link: 'https://500px.com/photo/1005493426/Zern-by-Kristof-Zerbe'
   socialmedia: /static/images/social-media/Localization-with-resource-files-in-JavaScript-web-apps.png
 tags:
   - Visual Studio

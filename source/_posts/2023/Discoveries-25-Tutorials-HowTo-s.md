@@ -6,7 +6,6 @@ date: 2023-07-01 13:19:22
 photograph:
   file: 22-08 Bretagne-Jersey-1386.jpg
   name: Ancient Tools
-  link: https://500px.com/photo/1056125598/ancient-tools-by-kristof-zerbe
   socialmedia: /static/images/social-media/Discoveries-25-Tutorials-HowTo-s.png
 series: Discoveries
 categories:

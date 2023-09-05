@@ -7,7 +7,6 @@ date: 2020-10-04T17:01:02.000Z
 photograph:
   file: DSC_6063.jpg
   name: Illuminated Chair
-  link: 'https://500px.com/photo/84012135/Illuminated-Chair-by-Kristof-Zerbe/'
   socialmedia: /static/images/social-media/Implement-source-switch-for-SPA.png
 categories:
   - JavaScript

@@ -2,10 +2,11 @@ const PoolPhotoGenerator = require("../lib/pool-photo-generator.cjs").PoolPhotoG
 
 hexo.on("ready", function() {
     
-  const inboundFolder = "../new_photos";
+  const inboundFolder = "../photos_new";
+  const originalFolder = "../photos_original";
   const poolFolder = "../static/pool";
 
-  const generator = new PoolPhotoGenerator(inboundFolder, poolFolder);
+  const generator = new PoolPhotoGenerator(inboundFolder, originalFolder, poolFolder);
   generator.generate();
 
 });

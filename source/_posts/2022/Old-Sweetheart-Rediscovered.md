@@ -6,7 +6,6 @@ date: 2022-06-21 13:21:15
 photograph:
   file: D50_1092.jpg
   name: Nature Finds A Way
-  link: https://500px.com/photo/1034530045/nature-finds-a-way-by-kristof-zerbe
   socialmedia: /static/images/social-media/Old-Sweetheart-Rediscovered.png
 categories:
   - Tools

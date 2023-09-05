@@ -7,7 +7,6 @@ date: 2021-01-20T15:01:34.000Z
 photograph:
   file: DSC_4935.jpg
   name: Light Bulbs
-  link: 'https://500px.com/photo/82409147/Light-Bulbs-by-Kristof-Zerbe/'
   socialmedia: /static/images/social-media/Discoveries-6.png
 series: Discoveries
 categories:

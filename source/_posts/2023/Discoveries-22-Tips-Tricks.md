@@ -6,7 +6,6 @@ date: 2023-01-06 15:05:55
 photograph:
   file: D70_1372.jpg
   name: Black Window
-  link: https://500px.com/photo/1022779815/Black-Window-by-Kristof-Zerbe/
   socialmedia: /static/images/social-media/Discoveries-22-Tips-Tricks.png
 series: Discoveries
 categories:

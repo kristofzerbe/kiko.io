@@ -6,7 +6,6 @@ date: 2022-12-28 18:38:22
 photograph:
   file: 22-08 Bretagne-Jersey-0818.jpg
   name: Bird House
-  link: https://500px.com/photo/1056132008/bird-house-by-kristof-zerbe
   socialmedia: /static/images/social-media/Discoveries-21-Sites-Pages.png
 series: Discoveries
 categories:

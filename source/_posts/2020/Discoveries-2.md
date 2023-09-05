@@ -7,7 +7,6 @@ date: 2020-09-07T17:54:50.000Z
 photograph:
   file: 19-05 Israel-0661.jpg
   name: Jerusalem Marks
-  link: 'https://500px.com/photo/1001751386/Jerusalem-Marks-by-Kristof-Zerbe'
   socialmedia: /static/images/social-media/Discoveries-2.png
 series: Discoveries
 categories:

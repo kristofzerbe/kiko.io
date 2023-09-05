@@ -1,9 +1,9 @@
 ---
 title: Hexo Generator Anything
+permalink: /projects/hexo-generator-anything
 photograph:
-  file: $projects.jpg
+  file: $19-05 Israel-0245.jpg
   name: Ancient Mosaic
-  link: 'https://500px.com/photo/1057290585'
 ---
 
 **Hexo Generator Anything** is a plugin for [Hexo](https://hexo.io/) to generate index pages from custom front matter variables.   

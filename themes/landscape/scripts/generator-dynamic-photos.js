@@ -4,10 +4,14 @@ const path = require('path');
 const fs = require('hexo-fs');
 const front = require('hexo-front-matter');
 
+const _rootDir = hexo.source_dir.replace("source", "");
+
 hexo.extend.generator.register("dynamic-photos", async function(locals) {
   let config = this.config;
 
-  log.info("Processing photos for dynamic page...");
+  log.info("Processing photos...");
+
+  let result = [];
 
   let page = {};
   page.name = "photos";
@@ -22,43 +26,61 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
   page.content = hexo.render.renderSync({ text: page._content, engine: 'markdown' });  
 
   // Get pool photos
-  let p1 = getPoolPhotos(config);
-  log.info(magenta(p1.length) + " pool photos");
+  let pPool = getPoolPhotos(config);
+  log.info(magenta(pPool.length) + " pool photos");
   
   // Get used photos in Posts & Pages
-  let p2 = getPostAndPagePhotos(config, locals);
-  log.info(magenta(p2.length) + " used photos in posts and pages");
+  let pPostPages = getPostAndPagePhotos(config, locals);
+  log.info(magenta(pPostPages.length) + " used photos in posts and pages");
 
-  // Get used photos in Dynmic pages
-  let p3 = getDynamicPagePhotos(config);
-  log.info(magenta(p3.length) + " used photos in dynamic pages");
+  // Get used photos in Dynamic pages
+  let pDynamic = getDynamicPagePhotos(config);
+  log.info(magenta(pDynamic.length) + " used photos in dynamic pages");
 
-  // Get used photos in Dynmic pages
-  let p4 = getNotesPhotos(config);
-  log.info(magenta(p4.length) + " used photos in notes");
-
-  //TODO: anything pages
+  // Get used photos in Notes
+  let pAnything = getAnythingPagePhotos(config, "project");
+  log.info(magenta(pAnything.length) + " used photos in anything pages 'project'");
+  
+  // Get used photos in Notes
+  let pNotes = getNotesPhotos(config);
+  log.info(magenta(pNotes.length) + " used photos in notes");
 
   // Set items for page
-  page.items = [...p1, ...p2, ...p3, ...p4]
+  page.items = [...pPool, ...pPostPages, ...pDynamic, ...pAnything, ...pNotes]
     .filter(p => (p.name)) //filter out all without photo name
     .sort((a, b) => a.key.localeCompare(b.key));
-  //log.debug(page.items);
 
-  let result = {
+  result.push({
       data: page,
       path: path.join(page.name, "index.html"),
       layout: "photos"
-  }
+  });
+
+  //for each page.items (photos) generate photo page
+  page.items.forEach(item => {
+    item.photograph = page.photograph;
+
+    item.title = "Photo " + item.name;
+    item.path = path.join(config.photo_dir, item.key, "index.html");
+    item.slug = item.key;
+    item.permalink = path.join(config.url, config.photo_dir, item.key);
+
+    result.push({
+      name: item.key,
+      data: item,
+      path: path.join(config.photo_dir, item.key, "index.html"),
+      layout: "photo"
+    });
+
+  });
 
   return result;
 
 });
 
 function getPoolPhotos(config) {
-  
-  var poolDir = path.join(hexo.source_dir.replace("source", ""), hexo.config.static_dir, hexo.config.pool_dir);
-  log.debug('poolDir = ' + hexo.source_dir + ' -> ' + poolDir);
+
+  var poolDir = path.join(_rootDir, hexo.config.static_dir, hexo.config.pool_dir);
 
   let pool = fs
     .readdirSync(poolDir)
@@ -66,30 +88,29 @@ function getPoolPhotos(config) {
     .map(entry => ({ key: entry, status: "pool", file: null }));
 
   pool.forEach(entry => {
-    let meta = fs.readFileSync(path.join(poolDir, entry.key, "meta.txt")).split("\n");
-    entry.file = "mobile.jpg";
-    entry.path = "/" + path.join(config.pool_dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
-    entry.photo = "/" + path.join(config.pool_dir, entry.key, "normal.jpg").replace(/\134/g,"/");
-    entry.name = meta[0];
-    entry.link = meta[1];
+
+    if (fs.existsSync(path.join(poolDir, entry.key, "meta.json"))) {
+      entry.meta = JSON.parse(fs.readFileSync(path.join(poolDir, entry.key, "meta.json")));
+    }
+
+    entry.name = entry.meta?.ObjectName;
+    entry.file = entry.key + ".jpg";
+    entry.pathMobile = "/" + path.join(config.pool_dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
+    entry.pathNormal = "/" + path.join(config.pool_dir, entry.key, "normal.jpg").replace(/\134/g,"/");
     entry.article = null;
   });
-
-  //console.log(JSON.stringify(pool));
 
   return pool;
 }
 
 function getPostAndPagePhotos(config, locals) {
 
-  var usedDir = path.join(hexo.source_dir.replace("\source", ""), hexo.config.static_dir, hexo.config.photo_dir, "mobile");
-  log.debug('usedDir = ' + hexo.source_dir + ' -> ' + usedDir);
+  var photoDir = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "mobile");
+  var metaDir = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "meta");
 
   let used = fs
-    .readdirSync(usedDir)
+    .readdirSync(photoDir)
     .map(entry => ({ key: null, status: "used", file: entry }))
-
-  //console.log(locals.pages.data);
 
   let postsAndPages = [...locals.posts.data, ...locals.pages.data].map(y => {
     if (y.photograph) {
@@ -101,22 +122,24 @@ function getPostAndPagePhotos(config, locals) {
         layout: y.layout,
         photographFile: y.photograph.file,
         photographName: y.photograph.name,
-        photographLink: y.photograph.link
       }  
     }
   });
-  //console.log(JSON.stringify(postsAndPages));
 
   used.forEach(entry => {
     entry.key = entry.file.replace(".jpg", "");
-    entry.path = "/" + path.join(config.photo_dir, "mobile", entry.file).replace(/\134/g,"/");
-    entry.photo = "/" + path.join(config.photo_dir, "normal", entry.file).replace(/\134/g,"/");
+
+    if (fs.existsSync(path.join(metaDir, entry.key + ".json"))) {
+      entry.meta = JSON.parse(fs.readFileSync(path.join(metaDir, entry.key + ".json")));
+    }
+
+    entry.pathMobile = "/" + path.join(config.photo_dir, "mobile", entry.file).replace(/\134/g,"/");
+    entry.pathNormal = "/" + path.join(config.photo_dir, "normal", entry.file).replace(/\134/g,"/");
 
     let p = postsAndPages.find(p => (p && p.photographFile === entry.file));
 
     if (p) {
       entry.name = p.photographName;
-      entry.link = p.photographLink;
       entry.article = {
         type: p.layout,
         title: p.title,
@@ -126,36 +149,43 @@ function getPostAndPagePhotos(config, locals) {
     }
 
   })
-  //console.log(JSON.stringify(used));
   return used;
 }
 
 function getDynamicPagePhotos(config) {
 
   var dynamicDir = path.join(config.source_dir, "_dynamic");
+  var metaDir = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "meta");
 
   let dynamic = fs.readdirSync(dynamicDir)
     .reduce((used, file) => {
+      
       const mdSource = path.join(dynamicDir, file);
       const md = fs.readFileSync(mdSource);
       let fm = front.parse(md);
 
       if (fm.photograph) {
-        used.push({
+        
+        let entry = {
           key: fm.photograph.file.replace(".jpg", ""),
           status: "used",
           file: fm.photograph.file,
-          path: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
-          photo: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
+          pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
+          pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
           name: fm.photograph.name,
-          link: fm.photograph.link,
           article: {
             type: "dynamic",
             title: fm.title,
             subtitle: fm.subTitle,
             url: fm.permalink
           }
-        });
+        };
+
+        if (fs.existsSync(path.join(metaDir, entry.key + ".json"))) {
+          entry.meta = JSON.parse(fs.readFileSync(path.join(metaDir, entry.key + ".json")));
+        }    
+
+        used.push(entry);
       }
       return used;
     }, []);
@@ -163,9 +193,53 @@ function getDynamicPagePhotos(config) {
   return dynamic;
 }
 
+function getAnythingPagePhotos(config, subDir) {
+
+  var anythingDir = path.join(config.source_dir, "_anything/" + subDir);
+  var metaDir = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "meta");
+
+  let anything = fs.readdirSync(anythingDir)
+    .filter(f => f === "index.md") //TODO: Better: Filter out duplicates
+    .reduce((used, file) => {
+
+      const mdSource = path.join(anythingDir, file);
+      const md = fs.readFileSync(mdSource);
+      let fm = front.parse(md);
+
+      if (fm.photograph) {
+
+        let entry = {
+          key: fm.photograph.file.replace(".jpg", ""),
+          status: "used",
+          file: fm.photograph.file,
+          pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
+          pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
+          name: fm.photograph.name,
+          article: {
+            type: "anything",
+            title: fm.title,
+            subtitle: fm.subTitle,
+            url: fm.permalink
+          }
+        };
+
+        if (fs.existsSync(path.join(metaDir, entry.key + ".json"))) {
+          entry.meta = JSON.parse(fs.readFileSync(path.join(metaDir, entry.key + ".json")));
+        }
+
+        used.push(entry);
+      }
+      return used;
+    }, []);
+
+  return anything;
+}
+
+
 function getNotesPhotos(config) {
 
   var notesDir = path.join(config.source_dir, "_notes");
+  var metaDir = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "meta");
 
   let notes = fs.readdirSync(notesDir)
     .filter(entry => fs.statSync(path.join(notesDir, entry)).isDirectory())
@@ -179,20 +253,26 @@ function getNotesPhotos(config) {
         let fm = front.parse(md);
   
         if (fm.photograph) {
-          used.push({
+
+          let entry = {
             key: fm.photograph.file.replace(".jpg", ""),
             status: "used",
             file: fm.photograph.file,
-            path: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
-            photo: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
+            pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
+            pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
             name: fm.photograph.name,
-            link: fm.photograph.link,
             article: {
               type: "notes",
               title: fm.title + " " + dir,
               url: "/notes/" + dir
             }
-          });
+          };
+
+          if (fs.existsSync(path.join(metaDir, entry.key + ".json"))) {
+            entry.meta = JSON.parse(fs.readFileSync(path.join(metaDir, entry.key + ".json")));
+          }  
+
+          used.push(entry);
         }
           
       }
@@ -200,6 +280,5 @@ function getNotesPhotos(config) {
 
     }, []);
 
-  // console.log(JSON.stringify(notes));
   return notes;
 }

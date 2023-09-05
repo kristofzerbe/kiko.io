@@ -6,7 +6,6 @@ date: 2021-12-12T14:07:36.000Z
 photograph:
   file: D50_4919.jpg
   name: Ready To Fly
-  link: 'https://500px.com/photo/1038382606'
   socialmedia: /static/images/social-media/Hexo-Tag-Plugin-Collection.png
 project: Hexo Tag Plugins
 categories:

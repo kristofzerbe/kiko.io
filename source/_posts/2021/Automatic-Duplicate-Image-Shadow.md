@@ -6,7 +6,6 @@ date: 2021-07-16T17:45:30.000Z
 photograph:
   file: 18-09 Kroatien-0349.jpg
   name: Colorful Twig
-  link: 'https://500px.com/photo/303713979'
   socialmedia: /static/images/social-media/Automatic-Duplicate-Image-Shadow.png
 categories:
   - JavaScript

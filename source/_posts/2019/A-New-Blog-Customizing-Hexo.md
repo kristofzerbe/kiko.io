@@ -7,7 +7,6 @@ date: 2019-09-25T12:00:00.000Z
 photograph:
     file: 19-07 Schottland-0198.jpg
     name: Thistle Fence
-    link: 'https://500px.com/photo/1005489951/Thistle-Fence-by-Kristof-Zerbe'
     socialmedia: /static/images/social-media/A-New-Blog-Customizing-Hexo.png
 series: A New Blog
 tags:

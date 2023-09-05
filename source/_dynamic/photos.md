@@ -3,9 +3,8 @@ title: Photos
 date: 2021-08-24 15:56:00
 permalink: /photos
 photograph:
-  file: $photos.jpg
+  file: $20-08 Mallorca-7627.jpg
   name: Photographers Mosaic
-  link: 'https://500px.com/photo/1023750696/Photographers-Mosaic-by-Kristof-Zerbe/'
 ---
 
 <img src="/images/cc-free-culture.png" class="float-element" 

@@ -6,7 +6,6 @@ date: 2022-01-29T13:39:24.000Z
 photograph:
   file: 20-08 Mallorca-7019.jpg
   name: Sliced
-  link: 'https://500px.com/photo/1023572758'
   socialmedia: /static/images/social-media/Discoveries-16-JavaScript.png
 series: Discoveries
 categories:

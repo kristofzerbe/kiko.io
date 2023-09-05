@@ -2,9 +2,8 @@
 title: Feeds
 date: 2023-08-30 14:47:33
 photograph:
-  file: $feeds.jpg
+  file: $D50_2414.jpg
   name: Knitting Colors
-  link: 'https://500px.com/photo/1074191746'
 ---
 
 For years, I had integrated only one [Atom](https://en.wikipedia.org/wiki/Atom_(web_standard)) feed in this blog, which gave an excerpt of the article to the posts and a link to read more. A poll on Mastodon on the topic [made me change](/notes/2023/feed-full-length-article/) to the full article text ... but this also meant that the feed size grew by about 80%, which is also not okay for everyone.

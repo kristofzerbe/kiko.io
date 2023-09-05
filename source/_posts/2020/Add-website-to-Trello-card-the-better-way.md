@@ -7,7 +7,6 @@ date: 2020-09-07T15:17:21.000Z
 photograph:
   file: 19-05 Israel-0321.jpg
   name: Haifa Roses
-  link: 'https://500px.com/photo/1001750931/Haifa-Roses-by-Kristof-Zerbe'
   socialmedia: /static/images/social-media/Add-website-to-Trello-card-the-better-way.png
 categories:
   - Tools
