@@ -2,6 +2,32 @@
   <%- partial('_partial/photograph') %>
 <% } %>
 
+<%
+  function convertDecimalToFraction(decimalValue) {
+    //https://www.insidethediv.com/javascript-simple-projects-with-source-code-fraction-calculator
+
+    const [whole, decimal] = decimalValue.toString().split('.');
+    const numerator = + (whole + decimal);
+    const denominator = Math.pow(10, decimal.length);
+    const gcf = getGCF(numerator, denominator);
+    const fraction = reduceFraction(numerator/gcf, denominator/gcf);
+
+    return fraction.join("/");
+
+    function getGCF(a, b) {
+    if (b === 0) {
+      return a;
+    }
+    return getGCF(b, a % b);
+    }
+
+    function reduceFraction(numerator, denominator) {
+      const gcf = getGCF(numerator, denominator);
+      return [numerator/gcf, denominator/gcf];
+    }
+  }
+%>
+
 <h1 class="archive-title">
   <span>Photo<b>|</b></span><%= page.name %>
 </h1>
@@ -40,31 +66,19 @@
       </li>
       <li>
         <label>Keywords</label>
-        <span><%= page.meta.Keywords.join(", ") %></span>
+        <span><%= page.meta.Keywords?.join(", ") %></span>
       </li>
       <li>
-        <label>Artist</label>
-        <span><%= page.meta.Artist ?? "---" %></span>
-      </li>
-      <li>
-        <label>Copyright</label>
-        <span><%= page.meta.Copyright ?? "---" %></span>
+        <label>Artist, Copyright</label>
+        <span><%= page.meta.Artist ?? "---" %>,  &copy; <%= page.meta.Copyright ?? "---" %> CC-BY-SA</span>
       </li>
       <li>
         <label>Create Date</label>
-        <span><%= page.meta.CreateDate ?? "---" %></span>
+        <span><%= new Date(page.meta.CreateDate).toLocaleString('de-DE', { weekday:"long", year:"numeric", month:"long", day:"numeric", hour: "2-digit", minute: "2-digit"}) ?? "---" %></span>
       </li>
       <li>
-        <label>Country</label>
-        <span><%= page.meta.Country ?? "---" %></span>
-      </li>
-      <li>
-        <label>State</label>
-        <span><%= page.meta.State ?? "---" %></span>
-      </li>
-      <li>
-        <label>City</label>
-        <span><%= page.meta.City ?? "---" %></span>
+        <label>Country, State, City</label>
+        <span><%= (page.meta?.Country?? "---") + ", " + (page.meta.State ?? "---") + ", " + (page.meta.City ?? "---") %></span>
       </li>
       <li>
         <label>Camera</label>
@@ -76,7 +90,7 @@
       </li>
       <li>
         <label>Focal Length</label>
-        <span><%= page.meta.FocalLength ?? "---" %></span>
+        <span><%= (page.meta.FocalLength + "mm") ?? "---" %></span>
       </li>
       <li>
         <label>ISO</label>
@@ -84,11 +98,11 @@
       </li>
       <li>
         <label>FNumber</label>
-        <span><%= page.meta.FNumber ?? "---" %></span>
+        <span><em>f&nbsp;</em><%= page.meta.FNumber ?? "---" %></span>
       </li>
       <li>
         <label>Exposure Time</label>
-        <span><%= page.meta.ExposureTime ?? "---" %></span>
+        <span><%= convertDecimalToFraction(page.meta.ExposureTime) ?? "---" %></span>
       </li>
       <li>
         <label>Shutter Speed</label>

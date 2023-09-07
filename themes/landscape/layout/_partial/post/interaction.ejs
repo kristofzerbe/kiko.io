@@ -7,25 +7,24 @@
         }
       });
     }
+
+    let synText = "";
+    if (synArray.length > 0) {
+      synText = "or by replying to its syndication on " + synArray.join(" or ");
+    }
+
+    let commentText = "";
+    if (comments) {
+      commentText = "... or you leave a good old comment with your GitHub account";
+    }
 %>
 
 <div class="article-interaction" data-pagefind-ignore>
-<% if (synArray.length > 0) { %>
   <p>
     You can interact with this <%= type %> (applause, criticism, whatever) 
-    by mention it in one of your posts or by replying to its syndication on 
-    <%- synArray.join(" or ") %>, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... 
-    or you leave a good old <strong>comment</strong> with your GitHub account.
+    by mention it in one of your posts <%- synText %>, which will also be shown here as a  
+    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> <%- commentText %>.   
   </p>
-<% } else { %>
-  <p>
-    You can interact with this <%= type %> (applause, criticism, whatever) 
-    by mention it in one of your posts, which will be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a>, or 
-    by leaving a good old <strong>comment</strong> with your GitHub account.
-  </p>
-<% } %>
 </div>
 
 <div class="article-webmentions" data-pagefind-ignore>
@@ -51,7 +50,7 @@
 
   <script>
     window.addEventListener('load', function () {
-      insertWebmentions('<%- post.slug.toLowerCase() %>', '<%- config.url %>', '<%- config.author %>');
+      insertWebmentions('<%- post.slug %>', '<%- config.url %>', '<%- config.author %>');
     });
   </script>
 
