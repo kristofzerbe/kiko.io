@@ -296,8 +296,8 @@
           width: 100%
       h3
         margin-top: 0
-      a.icon-link
-        top: 40px
+      // a.icon-link
+      //   top: 40px
       span.pre-title
         grid-area: link
       .status
@@ -333,8 +333,8 @@
       span.pre-title
           display: block
           margin-top: 5px
-      a.icon-link
-        top: 198px
+      // a.icon-link
+      //   top: 198px
       .status
         grid-area: status
         margin: -1em -1em 1em -1em
@@ -354,22 +354,22 @@
         text-decoration: none
         word-break: break-all
         display: inline-block
-      a.icon-link
-        position: absolute
-        right: 0
-        opacity: 0.33
-        color: color-default
-        /[data-theme="dark"] &
-          color: dark-color-default
-        &:hover
-          opacity: 1
-        &:before
-          font-family: fa-icon-solid
-          font-size: icon-home-size
-          margin-right: 10px
-          width: icon-home-size
-          height: icon-home-size
-          content: icon-arrow-right
+      // a.icon-link
+      //   position: absolute
+      //   right: 0
+      //   opacity: 0.33
+      //   color: color-default
+      //   /[data-theme="dark"] &
+      //     color: dark-color-default
+      //   &:hover
+      //     opacity: 1
+      //   &:before
+      //     font-family: fa-icon-solid
+      //     font-size: icon-home-size
+      //     margin-right: 10px
+      //     width: icon-home-size
+      //     height: icon-home-size
+      //     content: icon-arrow-right
 
       .card-img
         display: block
@@ -535,6 +535,26 @@
           line-height: normal
           a
             white-space: nowrap
+        div.site-links
+          display: flex
+          flex-flow: column
+          gap: 8px
+          a.site-link
+            padding: 18px 0 12px 48px
+            text-decoration: none
+            background-size: 24px 24px
+            background-repeat: no-repeat
+            background-color: color-hover-background
+            /[data-theme="dark"] &
+              background-color: dark-color-hover-background
+            &.site-500px
+              background-image: url(/images/500px.svg)
+              /[data-theme="dark"] &
+                background-image: url(/images/500px_invert.svg)
+              background-position: 12px 18px
+            &.site-pixelfed
+              background-image: url(/images/pixelfed.svg)
+              background-position: 12px 16px
   img.section
     @extend $block-inner
     width: 100%

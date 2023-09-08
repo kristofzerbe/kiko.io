@@ -47,16 +47,18 @@
         <% if (page.status === 'pool') { %>
           <span>Unused (Pool Photo)</span>
         <% } else { %>
-          <span>Used at <a href="<%= page.article.url %>"><%= page.article.title %></a></span>
+          <span>Used at <%= page.article.type + ((["page", "post"].some(v => page.article.type.includes(v))) ? "" : " page") %> <a href="<%= page.article.url %>"><%= page.article.title %></a></span>
         <% } %>
       </li>
       <li>
         <label>Links</label>
+        <div class="site-links">
         <% page.meta.custom.links.forEach(link => { %>
           <% if (link.url) { %>
-          <a target="_blank" href="<%= link.url %>"><%= link.url %></a>
+          <a class="site-link site-<%= link.site %>" target="_blank" href="<%= link.url %>"><%= link.url %></a>
           <% } %>
         <% }); %>
+        </div> 
       </li>
       <% if (page.meta) { %>
       <li><hr style="margin:0"></li>
@@ -70,7 +72,7 @@
       </li>
       <li>
         <label>Artist, Copyright</label>
-        <span><%= page.meta.Artist ?? "---" %>,  &copy; <%= page.meta.Copyright ?? "---" %> CC-BY-SA</span>
+        <span><%= page.meta.Artist ?? "Kristof Zerbe" %>,  &copy; <%= page.meta.Copyright ?? "" %> CC-BY-SA</span>
       </li>
       <li>
         <label>Create Date</label>
@@ -80,6 +82,7 @@
         <label>Country, State, City</label>
         <span><%= (page.meta?.Country?? "---") + ", " + (page.meta.State ?? "---") + ", " + (page.meta.City ?? "---") %></span>
       </li>
+      <li><hr style="margin:0"></li>
       <li>
         <label>Camera</label>
         <span><%= page.meta.Model ?? "---" %></span>
@@ -102,7 +105,10 @@
       </li>
       <li>
         <label>Exposure Time</label>
-        <span><%= convertDecimalToFraction(page.meta.ExposureTime) ?? "---" %></span>
+        <span>
+          <%= convertDecimalToFraction(page.meta.ExposureTime.toFixed(4)) ?? "---" %>&nbsp;
+          <em style="font-style:normal;opacity:0.5">(<%= page.meta.ExposureTime %>)</em>
+        </span>
       </li>
       <li>
         <label>Shutter Speed</label>
