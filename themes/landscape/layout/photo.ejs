@@ -28,6 +28,15 @@
   }
 %>
 
+<% if (page.meta.latitude && page.meta.longitude) { %>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
+<% } %>
+
 <h1 class="archive-title">
   <span>Photo<b>|</b></span><%= page.name %>
 </h1>
@@ -38,6 +47,10 @@
 
   <section class="meta">
     <ul>
+      <li>
+        <label>Title</label>
+        <span><%= page.meta.ObjectName %></span>
+      </li>
       <li>
         <label>File</label>
         <span><%= page.file %></span>
@@ -63,10 +76,6 @@
       <% if (page.meta) { %>
       <li><hr style="margin:0"></li>
       <li>
-        <label>Title</label>
-        <span><%= page.meta.ObjectName %></span>
-      </li>
-      <li>
         <label>Keywords</label>
         <span><%= page.meta.Keywords?.join(", ") %></span>
       </li>
@@ -81,6 +90,13 @@
       <li>
         <label>Country, State, City</label>
         <span><%= (page.meta?.Country?? "---") + ", " + (page.meta.State ?? "---") + ", " + (page.meta.City ?? "---") %></span>
+      </li>
+      <li>
+        <label>GPS Coordinates (Lat/Long)</label>
+        <span><%= page.meta.latitude ?? "---" %> / <%= page.meta.longitude ?? "---" %></span>
+        <% if (page.meta.latitude && page.meta.longitude) { %>
+        <div id="map" style="height: 320px; margin: 12px -28px 0"></div>
+        <% } %>
       </li>
       <li><hr style="margin:0"></li>
       <li>
@@ -133,6 +149,21 @@
 
   <%- partial('_partial/post/interaction', { post: page, type: 'photo', comments: false }) %>
 
+  <% if (page.meta.latitude && page.meta.longitude) { %>
+  <script>
+    var map = L.map('map', {
+      center: [<%= page.meta.latitude %>, <%= page.meta.longitude %>],
+      zoom: 11,
+      zoomControl: false,
+    })
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    var marker = L.marker([<%= page.meta.latitude %>, <%= page.meta.longitude %>]).addTo(map);
+  </script>
+  <% } %>
+  
   <script>
     setTimeout(() => {
       let header = document.getElementById("header");
