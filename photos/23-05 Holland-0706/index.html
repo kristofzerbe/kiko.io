@@ -275,6 +275,13 @@
 
 
 
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
+
 
 <h1 class="archive-title">
   <span>Photo<b>|</b></span>Clogs &amp; Lamp
@@ -332,7 +339,9 @@
       </li>
       <li>
         <label>GPS Coordinates (Lat/Long)</label>
-        <span>--- / ---</span>
+        <span>52.08031829 / 4.314162323333333</span>
+        
+        <div id="map" style="height: 320px; margin: 12px -28px 6px"></div>
         
       </li>
       <li><hr style="margin:0"></li>
@@ -438,6 +447,19 @@
 
 
 
+  
+  <script>
+    var map = L.map('map', {
+      center: [52.08031829, 4.314162323333333],
+      zoom: 11,
+      zoomControl: false,
+    })
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    var marker = L.marker([52.08031829, 4.314162323333333]).addTo(map);
+  </script>
   
   
   <script>
