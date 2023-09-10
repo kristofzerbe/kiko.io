@@ -10,7 +10,7 @@ photograph:
   socialmedia: /static/images/social-media/Indian-Presets-for-Lightroom.png
 series: Lightroom Presets
 categories:
-  - Photo-Editing
+  - Photo
 tags:
   - Lightroom
   - Presets

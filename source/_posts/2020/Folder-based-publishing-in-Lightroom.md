@@ -9,7 +9,7 @@ photograph:
   name: Color Seat
   socialmedia: /static/images/social-media/Folder-based-publishing-in-Lightroom.png
 categories:
-  - Photo-Editing
+  - Photo
 tags:
   - Lightroom
   - Publishing

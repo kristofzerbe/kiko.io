@@ -10,7 +10,7 @@ photograph:
   socialmedia: /static/images/social-media/Israeli-Presets-for-Lightroom.png
 series: Lightroom Presets
 categories:
-  - Photo-Editing
+  - Photo
 tags:
   - Lightroom
   - Presets

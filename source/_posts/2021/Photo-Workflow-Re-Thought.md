@@ -9,7 +9,7 @@ photograph:
   socialmedia: /static/images/social-media/Photo-Workflow-Re-Thought.png
 series: Step By Step
 categories:
-  - Photo-Editing
+  - Photo
 tags:
   - Lightroom
   - Imaging
