@@ -17,7 +17,7 @@ related:
   - Photo-Workflow-Re-Thought
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/111040308580076130
 ---
 
 Since my youth with I hardrock/metal fan, but from good music I let myself convince, even if it does not fit into this scheme. This is what happened with the German medieval/folk band [**Versengold**](https://de.wikipedia.org/wiki/Versengold) from Bremen, to whose concert in Bochum my better half dragged me one day. And what can I say ... the guys are so much fun with their easy-going manner, their good, funny and sometimes profound German lyrics and their shanty-like music, from which the North German sailor tradition can be clearly heard.
