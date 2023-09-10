@@ -267,6 +267,107 @@
 
   
      
+<article id="post-2023/Provide-Blog-Metadata-via-JSON-LD" 
+         class="article article-type-post">
+  
+  <div class="article-meta">
+    <a href="/post/Provide-Blog-Metadata-via-JSON-LD/" class="article-date">
+  
+  <time class="published dt-published" data-pagefind-meta="date" 
+        datetime="2023-02-09T23:00:00.000Z">10 Feb 2023</time>
+</a>
+    
+  <div class="article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Provide-Blog-Metadata-via-JSON-LD/">
+        <img class="article-photo" src="/photos/tablet/D70_9216.jpg" alt="Broken Onion" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+    <a class="article-anything" href="/series/a-new-blog">A New Blog</a>
+
+
+
+        
+
+
+  
+    <h1>
+      <a class="article-title"
+         href="/post/Provide-Blog-Metadata-via-JSON-LD/">Provide Blog Metadata via JSON-LD</a>
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle">
+        Centralization of a website&#39;s schema.org data in the HEAD instead of everywhere in the HTML
+    </h2>
+
+      </header>
+    
+    
+    <div class="article-entry">
+      <p>Chris Coyier’s post “<a href="https://chriscoyier.net/2023/01/28/open-graph-blues/">Open Graph Blues</a>“ got me thinking that my blog’s metadata, which are used by Google among others to index my pages, aren’t really at the cutting edge anymore. I took the markup of the individual elements of the pages via <a href="https://schema.org/">schema.org</a> Microdata attributes from the standard Hexo template years ago and always adjusted it by value, but never questioned that there are more modern variants to provide the metadata.</p>
+<p>It’s Ok for Google to use Microdata attributes, but the HTML code of my templates is getting more and more opaque, because next to these stick to the tags also those for the Indieweb, classes for CSS and last but not least those for the own indexing via Pagefind. There becomes from a simple</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Title of my latest blog post<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>quickly becomes a …</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span> <span class="attr">class</span>=<span class="string">&quot;article-type-post h-entry&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">data-pagefind-body</span>=<span class="string">&quot;&quot;</span> <span class="attr">data-pagefind-meta</span>=<span class="string">&quot;type:Article&quot;</span> <span class="attr">itemscope</span> <span class="attr">itemprop</span>=<span class="string">&quot;blogPost&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;article-title p-name&quot;</span> </span></span><br><span class="line"><span class="tag">      <span class="attr">itemprop</span>=<span class="string">&quot;name&quot;</span>&gt;</span>Title of my latest blog post<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Lots of textual overhead and the hardest part is maintaining it over the long term. Better would be a complete search engine description in the header of a page, where also the other meta information is available. In one place and not spread all over the HTML code. <strong>JSON-LD to the rescue</strong>…</p>
+      
+        <p class="article-more-link">
+          <a href="/post/Provide-Blog-Metadata-via-JSON-LD/#continue">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON-LD/" rel="tag">JSON-LD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Search/" rel="tag">Search</a></li></ul>  
+  </div>
+
+      
+  
+  
+    <div class="article-syndication">
+      
+          <a class="syndication-link u-syndication fab fa-mastodon" 
+            href="https://indieweb.social/@kiko/109841057119450891" rel="syndication" target="_blank"></a>
+      
+    </div>
+  
+
+      <div class="article-permalink" id="article-permalink-clmdacefj003al2p38999570t">
+    <input class="article-permalink-value" value="https://kiko.io/post/Provide-Blog-Metadata-via-JSON-LD/" 
+           data-id="clmdacefj003al2p38999570t" data-title="Provide Blog Metadata via JSON-LD" />
+    <a class="article-action action-copy"></a>
+    <a class="article-action action-share"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clmdacefj003al2p38999570t");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
 <article id="post-2023/Pagefind-UI-and-URL-Parameters" 
          class="article article-type-post">
   
@@ -352,15 +453,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clmc9cg2u0038k0ov8q6w95gt">
+      <div class="article-permalink" id="article-permalink-clmdacefj0038l2p3etrl697f">
     <input class="article-permalink-value" value="https://kiko.io/post/Pagefind-UI-and-URL-Parameters/" 
-           data-id="clmc9cg2u0038k0ov8q6w95gt" data-title="Pagefind UI and URL Parameters" />
+           data-id="clmdacefj0038l2p3etrl697f" data-title="Pagefind UI and URL Parameters" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmc9cg2u0038k0ov8q6w95gt");
+        initPermalink("clmdacefj0038l2p3etrl697f");
     });
 </script>
 
@@ -448,15 +549,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clmc9cg2w003bk0ovahv633dt">
+      <div class="article-permalink" id="article-permalink-clmdacefk003bl2p3adktd3pj">
     <input class="article-permalink-value" value="https://kiko.io/post/Radio-Garden/" 
-           data-id="clmc9cg2w003bk0ovahv633dt" data-title="Radio Garden" />
+           data-id="clmdacefk003bl2p3adktd3pj" data-title="Radio Garden" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmc9cg2w003bk0ovahv633dt");
+        initPermalink("clmdacefk003bl2p3adktd3pj");
     });
 </script>
 
@@ -555,15 +656,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clmc9cg2t0036k0ovca3mfvp3">
+      <div class="article-permalink" id="article-permalink-clmdacefi0036l2p3eq205g54">
     <input class="article-permalink-value" value="https://kiko.io/post/Integration-of-Pagefind-in-Hexo/" 
-           data-id="clmc9cg2t0036k0ovca3mfvp3" data-title="Integration of Pagefind in Hexo" />
+           data-id="clmdacefi0036l2p3eq205g54" data-title="Integration of Pagefind in Hexo" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmc9cg2t0036k0ovca3mfvp3");
+        initPermalink("clmdacefi0036l2p3eq205g54");
     });
 </script>
 
@@ -646,15 +747,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clmc9cg2s0033k0ov4bzkf17o">
+      <div class="article-permalink" id="article-permalink-clmdacefh0033l2p3arfqd19o">
     <input class="article-permalink-value" value="https://kiko.io/post/Favourite-Pens-of-2022/" 
-           data-id="clmc9cg2s0033k0ov4bzkf17o" data-title="Favourite Pens of 2022" />
+           data-id="clmdacefh0033l2p3arfqd19o" data-title="Favourite Pens of 2022" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmc9cg2s0033k0ov4bzkf17o");
+        initPermalink("clmdacefh0033l2p3arfqd19o");
     });
 </script>
 
@@ -740,15 +841,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clmc9cg2q002yk0ov8rzq7kw3">
+      <div class="article-permalink" id="article-permalink-clmdaceff002yl2p33iav756s">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-22-Tips-Tricks/" 
-           data-id="clmc9cg2q002yk0ov8rzq7kw3" data-title="Discoveries #22 -  Tips/Tricks" />
+           data-id="clmdaceff002yl2p33iav756s" data-title="Discoveries #22 -  Tips/Tricks" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmc9cg2q002yk0ov8rzq7kw3");
+        initPermalink("clmdaceff002yl2p33iav756s");
     });
 </script>
 
@@ -845,15 +946,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clmc9cg2k002lk0ovf5sjdbj1">
+      <div class="article-permalink" id="article-permalink-clmdacef9002ll2p3cn368cw7">
     <input class="article-permalink-value" value="https://kiko.io/post/Generate-Content-from-Trello/" 
-           data-id="clmc9cg2k002lk0ovf5sjdbj1" data-title="Generate Content from Trello" />
+           data-id="clmdacef9002ll2p3cn368cw7" data-title="Generate Content from Trello" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmc9cg2k002lk0ovf5sjdbj1");
+        initPermalink("clmdacef9002ll2p3cn368cw7");
     });
 </script>
 
@@ -930,111 +1031,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clmc9cg2j002jk0ov0n3c7qtj">
+      <div class="article-permalink" id="article-permalink-clmdacef8002jl2p3h6z86oqe">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-21-Sites-Pages/" 
-           data-id="clmc9cg2j002jk0ov0n3c7qtj" data-title="Discoveries #21 -  Sites &amp; Pages" />
+           data-id="clmdacef8002jl2p3h6z86oqe" data-title="Discoveries #21 -  Sites &amp; Pages" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmc9cg2j002jk0ov0n3c7qtj");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2022/The-State-of-the-Blog" 
-         class="article article-type-post">
-  
-  <div class="article-meta">
-    <a href="/post/The-State-of-the-Blog/" class="article-date">
-  
-  <time class="published dt-published" data-pagefind-meta="date" 
-        datetime="2022-12-23T21:40:00.000Z">23 Dec 2022</time>
-</a>
-    
-  <div class="article-category category-tools">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/The-State-of-the-Blog/">
-        <img class="article-photo" src="/photos/tablet/DSC_0654.jpg" alt="Green Rag" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-    <a class="article-anything" href="/series/a-new-blog">A New Blog</a>
-
-
-
-        
-
-
-  
-    <h1>
-      <a class="article-title"
-         href="/post/The-State-of-the-Blog/">The State of the Blog</a>
-    </h1>
-  
-
-        
-    <h2 class="article-subtitle">
-        Recap &amp; Workflow after 3 years with Hexo
-    </h2>
-
-      </header>
-    
-    
-    <div class="article-entry">
-      <p>I’ve started this blog in 2019 with <a href="/post/How-To-Visual-Studio-Database-Project-and-ADSI/" title="How-To: Visual Studio Database Project and ADSI">this article</a> primarily because I needed an area to record things learned for myself, with the side effect that others can benefit from it if they want.</p>
-<p>Why my choice fell on the static site generator <a href="https://hexo.io/">Hexo</a>, I no longer know, but I have now become accustomed (even to the shortcomings) and so far I have been able to implement all my ideas in it … and I had a few of them.</p>
-<p>In this post I would like to share a few experiences I have had with Hexo, regarding the main functionality and the things I’ve customized and describe my workflow behind the individual features of my blog. The latter is not as straightforward as I would like it to be, especially because I have different devices in use that require different approaches. The main purpose of this post is to simply write down for me, how things currently work on kiko.io and to have one or the other idea how to do it better while writing. Doing this publicly is in the hope that you might read this and have a terrific idea that I haven’t come up with yet and leave a comment or webmention … :)</p>
-      
-        <p class="article-more-link">
-          <a href="/post/The-State-of-the-Blog/#continue">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
-  </div>
-
-      
-  
-  
-    <div class="article-syndication">
-      
-          <a class="syndication-link u-syndication fab fa-mastodon" 
-            href="https://indieweb.social/@kiko/109565325472177128" rel="syndication" target="_blank"></a>
-      
-    </div>
-  
-
-      <div class="article-permalink" id="article-permalink-clmc9cg2o002uk0ov5vvp6f63">
-    <input class="article-permalink-value" value="https://kiko.io/post/The-State-of-the-Blog/" 
-           data-id="clmc9cg2o002uk0ov5vvp6f63" data-title="The State of the Blog" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("clmc9cg2o002uk0ov5vvp6f63");
+        initPermalink("clmdacef8002jl2p3h6z86oqe");
     });
 </script>
 
@@ -1083,6 +1088,12 @@
         
           <li>
             
+              <a href="/post/Versengold-in-Concert/">Versengold in Concert</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/SVWW-vs-Schalke-2023-09-02/">SVWW vs. Schalke @ 2023-09-02</a>
             
           </li>
@@ -1096,12 +1107,6 @@
           <li>
             
               <a href="/post/Convert-HTML-into-Plain-Text-in-Hexo/">Convert HTML into Plain Text in Hexo</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Pool-Photo-Generator/">Pool Photo Generator</a>
             
           </li>
         
