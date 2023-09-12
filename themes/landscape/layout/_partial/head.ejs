@@ -18,7 +18,7 @@
     let currentYear = new Date().getFullYear();
 
     if (page.photograph) {
-      page.photograph.url = config.url + "/photos/normal/" + page.photograph.file
+      page.photograph.url = "/photos/normal/" + page.photograph.file
     }
 
     let excerpt;
@@ -275,7 +275,13 @@
   <link rel="preload" href="/css/fonts/fontawesome/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/fontawesome/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="preload" as="image" href="/images/hero.jpg" imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
+  <link rel="preload" as="image" href="/images/hero.jpg" 
+        imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
+
+  <% if (page.photograph) { %>
+  <link rel="preload" as="image" href="<%= page.photograph.url %>" 
+        imagesrcset="<%= page.photograph.url.replace("normal", "mobile") %> 480w, <%= page.photograph.url.replace("normal", "tablet") %> 768w">
+  <% } %>
 
   <%- css('css/dist/bundle.min.css') %>
   <%- css('css/style.css') %>
