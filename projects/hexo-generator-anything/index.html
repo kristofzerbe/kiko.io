@@ -22,7 +22,7 @@
   <meta name="theme-color" content="#444">
 
     
-  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"WebPage","@id":"https://kiko.io/projects/hexo-generator-anything/","url":"https://kiko.io/projects/hexo-generator-anything/","name":"Hexo Generator Anything - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"Series &#39;Hexo Generator Anything&#39; by Kristof Zerbe","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#photo/$19-05 Israel-0245.jpg"},"image":{"@id":"https://kiko.io#photo/$19-05 Israel-0245.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/$19-05 Israel-0245.jpg","caption":"Ancient Mosaic","url":"https://kiko.io/photos/normal/$19-05 Israel-0245.jpg","contentUrl":"https://kiko.io/photos/normal/$19-05 Israel-0245.jpg","discussionUrl":"https://kiko.io/photos/$19-05 Israel-0245","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"WebPage","@id":"https://kiko.io/projects/hexo-generator-anything/","url":"https://kiko.io/projects/hexo-generator-anything/","name":"Hexo Generator Anything - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"Series &#39;Hexo Generator Anything&#39; by Kristof Zerbe","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#photo/$19-05 Israel-0245.jpg"},"image":{"@id":"https://kiko.io#photo/$19-05 Israel-0245.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/$19-05 Israel-0245.jpg","caption":"Ancient Mosaic","url":"/photos/normal/$19-05 Israel-0245.jpg","contentUrl":"/photos/normal/$19-05 Israel-0245.jpg","discussionUrl":"https://kiko.io/photos/$19-05 Israel-0245","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
@@ -31,7 +31,7 @@
   
   <meta property="og:description" content="Series &#39;Hexo Generator Anything&#39; by Kristof Zerbe">
   
-  <meta property="og:image" content="https://kiko.io/photos/normal/$19-05 Israel-0245.jpg">
+  <meta property="og:image" content="/photos/normal/$19-05 Israel-0245.jpg">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter -->
@@ -41,7 +41,7 @@
   
   <meta property="twitter:description" content="Series &#39;Hexo Generator Anything&#39; by Kristof Zerbe">
   
-  <meta property="twitter:image" content="https://kiko.io/photos/normal/$19-05 Israel-0245.jpg">
+  <meta property="twitter:image" content="/photos/normal/$19-05 Israel-0245.jpg">
 
     <link rel="webmention" href="https://webmention.io/kiko.io/webmention" />
   <link rel="pingback" href="https://webmention.io/kiko.io/xmlrpc" />
@@ -65,7 +65,13 @@
   <link rel="preload" href="/css/fonts/fontawesome/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/fontawesome/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="preload" as="image" href="/images/hero.jpg" imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
+  <link rel="preload" as="image" href="/images/hero.jpg" 
+        imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
+
+  
+  <link rel="preload" as="image" href="/photos/normal/$19-05 Israel-0245.jpg" 
+        imagesrcset="/photos/mobile/$19-05 Israel-0245.jpg 480w, /photos/tablet/$19-05 Israel-0245.jpg 768w">
+  
 
   
 <link rel="stylesheet" href="/css/dist/bundle.min.css">
@@ -374,15 +380,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clme0lv1a001hk8ov3m492fzd">
+      <div class="article-permalink" id="article-permalink-clmg73g53001glvoogkp46wxm">
     <input class="article-permalink-value" value="https://kiko.io/post/Forking-Hexo-plugin-hexo-index-anything/" 
-           data-id="clme0lv1a001hk8ov3m492fzd" data-title="Forking Hexo plugin &#39;hexo-index-anything&#39;" />
+           data-id="clmg73g53001glvoogkp46wxm" data-title="Forking Hexo plugin &#39;hexo-index-anything&#39;" />
     <a class="article-action action-copy"></a>
     <a class="article-action action-share"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clme0lv1a001hk8ov3m492fzd");
+        initPermalink("clmg73g53001glvoogkp46wxm");
     });
 </script>
 
@@ -422,6 +428,12 @@
         
           <li>
             
+              <a href="/post/Discoveries-26-JavaScript-HowTo-s/">Discoveries #26 - JavaScript HowTo&#39;s</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Versengold-in-Concert/">Versengold in Concert</a>
             
           </li>
@@ -435,12 +447,6 @@
           <li>
             
               <a href="/post/Image-Masonry-Tag-Plugin-for-Hexo/">Image Masonry Tag Plugin for Hexo</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Convert-HTML-into-Plain-Text-in-Hexo/">Convert HTML into Plain Text in Hexo</a>
             
           </li>
         

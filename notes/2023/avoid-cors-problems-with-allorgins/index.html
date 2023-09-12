@@ -28,7 +28,7 @@ https://allorigins.win
   <meta name="theme-color" content="#444">
 
     
-  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"BlogPosting","@id":"https://kiko.io/notes/2023/avoid-cors-problems-with-allorgins/#article","mainEntityOfPage":{"@id":"https://kiko.io/notes/2023/avoid-cors-problems-with-allorgins/"},"headline":"#Link | Avoid CORS problems with allOrigins 2023 - kiko.io","datePublished":"2023-08-26T00:00:00Z","dateModified":"2023-08-26T00:00:00Z","image":{"@id":"https://kiko.io#photo/$D50_3000.jpg"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/notes/2023/avoid-cors-problems-with-allorgins/","url":"https://kiko.io/notes/2023/avoid-cors-problems-with-allorgins/","name":"#Link | Avoid CORS problems with allOrigins 2023 - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"Ever got crazy on CORS problems when using an API? While examine the code of Christian Heilmann’s WebComponent github-include, I stumbled over his fet...","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#photo/$D50_3000.jpg"},"image":{"@id":"https://kiko.io#photo/$D50_3000.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/$D50_3000.jpg","caption":"Rusty Locks","url":"https://kiko.io/photos/normal/$D50_3000.jpg","contentUrl":"https://kiko.io/photos/normal/$D50_3000.jpg","discussionUrl":"https://kiko.io/photos/$D50_3000","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"BlogPosting","@id":"https://kiko.io/notes/2023/avoid-cors-problems-with-allorgins/#article","mainEntityOfPage":{"@id":"https://kiko.io/notes/2023/avoid-cors-problems-with-allorgins/"},"headline":"#Link | Avoid CORS problems with allOrigins 2023 - kiko.io","datePublished":"2023-08-26T00:00:00Z","dateModified":"2023-08-26T00:00:00Z","image":{"@id":"https://kiko.io#photo/$D50_3000.jpg"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/notes/2023/avoid-cors-problems-with-allorgins/","url":"https://kiko.io/notes/2023/avoid-cors-problems-with-allorgins/","name":"#Link | Avoid CORS problems with allOrigins 2023 - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"Ever got crazy on CORS problems when using an API? While examine the code of Christian Heilmann’s WebComponent github-include, I stumbled over his fet...","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#photo/$D50_3000.jpg"},"image":{"@id":"https://kiko.io#photo/$D50_3000.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"/images/kristof-zerbe.png","sameAs":["https://indieweb.social/@kiko","https://github.com/kristofzerbe","https://500px.com/p/kikon"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/$D50_3000.jpg","caption":"Rusty Locks","url":"/photos/normal/$D50_3000.jpg","contentUrl":"/photos/normal/$D50_3000.jpg","discussionUrl":"https://kiko.io/photos/$D50_3000","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
@@ -71,7 +71,13 @@ https://allorigins.win
   <link rel="preload" href="/css/fonts/fontawesome/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/fontawesome/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="preload" as="image" href="/images/hero.jpg" imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
+  <link rel="preload" as="image" href="/images/hero.jpg" 
+        imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
+
+  
+  <link rel="preload" as="image" href="/photos/normal/$D50_3000.jpg" 
+        imagesrcset="/photos/mobile/$D50_3000.jpg 480w, /photos/tablet/$D50_3000.jpg 768w">
+  
 
   
 <link rel="stylesheet" href="/css/dist/bundle.min.css">
@@ -426,6 +432,12 @@ https://allorigins.win
         
           <li>
             
+              <a href="/post/Discoveries-26-JavaScript-HowTo-s/">Discoveries #26 - JavaScript HowTo&#39;s</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Versengold-in-Concert/">Versengold in Concert</a>
             
           </li>
@@ -439,12 +451,6 @@ https://allorigins.win
           <li>
             
               <a href="/post/Image-Masonry-Tag-Plugin-for-Hexo/">Image Masonry Tag Plugin for Hexo</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Convert-HTML-into-Plain-Text-in-Hexo/">Convert HTML into Plain Text in Hexo</a>
             
           </li>
         
