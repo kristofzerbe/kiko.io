@@ -18,10 +18,10 @@ related:
   - Discoveries-23-UI-CSS
 syndication:
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/111051865862806060
 ---
 
-Over time, everyone accumulates links somewhere about procedures that one has not yet internalized. This is also the case with JavaScript development. "Damn ... what was that about Call | Proxy | Map | &lt;You name it&gt;?!". Here are 11 of them ...
+Over time, everyone accumulates links somewhere about procedures that one has not yet internalized. This is also the case with me and JavaScript development. "Damn ... what was that about Call | Proxy | Map | &lt;You name it&gt;?!". Here are 11 of them ...
 
 {% anchorlist 
   "Processing images with sharp in Node.js|processing-images-with-sharp-in-node-js"
