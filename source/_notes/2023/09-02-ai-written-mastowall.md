@@ -3,7 +3,7 @@ title: AI written Mastowall
 date: 2023-09-01
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/110994589015920362
 photograph:
   socialmedia: /static/images/social-media/ai-written-mastowall.png
 ---
