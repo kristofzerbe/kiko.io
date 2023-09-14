@@ -19,7 +19,6 @@ related:
 syndication:
   - host: Mastodon
     url: null
-hidden: true
 ---
 
 <!-- more -->

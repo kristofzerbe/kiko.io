@@ -223,6 +223,11 @@
           &::before
             font-family: fa-icon-solid
             content: icon-list
+      input#switch-masonry
+        + label
+          &::before
+            font-family: fa-icon-solid
+            content: icon-masonry
       input#filter-all
         + label
           &::before
@@ -338,12 +343,29 @@
       .status
         grid-area: status
         margin: -1em -1em 1em -1em
+    
+  .masonry
+    display: block
+    .card.photo
+      border-radius: 0
+      .card-img
+        display: flex
+        width: auto
+        filter: grayscale(0) contrast(1) !important
+        img 
+          width: 100%
+      span.pre-title
+        display: none
+      .status
+        display: none !important
+      h3
+        display: none
 
   .view
     .card
       @extend $block-inner
       @extend $base-style
-      transition: all ease-out 0.3s
+      transition: all ease-out 0.2s
       transform: scale(1)
       opacity: 1
       color: color-default
@@ -375,7 +397,7 @@
         display: block
         position: relative
         filter: grayscale(0.5) contrast(0.5)
-        transition: all ease-out 0.6s
+        // transition: all ease-out 0.2s
         img
           background-color: color-background
           /[data-theme="dark"] &
@@ -431,7 +453,8 @@
             /[data-theme="dark"] &
               color: dark-color-border
     .card.photo
-      .card-img
+      box-shadow: none
+      .card-img.spotlight
         cursor: zoom-in
       span.pre-title
         font-size: .85em;

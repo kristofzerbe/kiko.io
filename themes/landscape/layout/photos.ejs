@@ -8,7 +8,7 @@
 <% if (page.subtitle) { %>
 <h2 class="page-subtitle"><%= page.subtitle %></h2>
 <% } %>
-  
+
 <div class="page-content" data-pagefind-body>
   <%- page.content %>
 
@@ -16,68 +16,103 @@
     <div class="bar-info">
       <span class="info-count"><%= page.items.length %></span> Photos <span class="info-des"></span>
     </div>
-    
+
     <div class="bar-cmd">
       <input type="radio" name="view-filter" id="filter-all" checked
-             data-status="all" 
+             data-status="all"
              data-next-status="pool"
              data-designator="overall">
       <label for="filter-all"></label>
-      <input type="radio" name="view-filter" id="filter-pool" 
-             data-status="pool" 
+      <input type="radio" name="view-filter" id="filter-pool"
+             data-status="pool"
              data-next-status="used"
              data-designator="unused">
       <label for="filter-pool"></label>
-      <input type="radio" name="view-filter" id="filter-used" 
-             data-status="used" 
+      <input type="radio" name="view-filter" id="filter-used"
+             data-status="used"
              data-next-status="all"
              data-designator="used">
       <label for="filter-used"></label>
     </div>
 
     <div class="bar-cmd">
-      <input type="radio" name="view-switch" id="switch-grid" checked 
+      <input type="radio" name="view-switch" id="switch-grid" checked
              onchange="setView('grid');">
-      <label for="switch-grid"></label>
-      <input type="radio" name="view-switch" id="switch-list" 
+      <label for="switch-grid" title="Switch to Grid View"></label>
+      <input type="radio" name="view-switch" id="switch-list"
              onchange="setView('list');">
-      <label for="switch-list"></label>
+      <label for="switch-list" title="Switch to List View"></label>
+      <input type="radio" name="view-switch" id="switch-masonry"
+             onchange="setView('masonry');">
+      <label for="switch-masonry" title="Switch to Masonry View"></label>
     </div>
   </div>
 
-  <div class="view grid">
+  <div class="view grid" id="photos">
     <% for(var i=0; i < page.items.length; i++) { %>
       <%- partial('_partial/photo-item', { item: page.items[i] }) %>
     <% } %>
-  </div>  
+  </div>
 
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', (event) => {
+  let currentView = getCookie("view-photos");
+  if (currentView) {
+    document.querySelector("#switch-" + currentView).checked = true;
+    setView(currentView);
+  }
 
-    let currentView = getCookie("view");
-    if (currentView) {
-      document.querySelector("#switch-" + currentView).checked = true; 
-      setView(currentView);
-    }
-
-    document.querySelectorAll("input[name=view-filter]").forEach(element => {
-      element.addEventListener("click", (event) => {
-        setFilter(element);
-      });
+  document.querySelectorAll("input[name=view-filter]").forEach(element => {
+    element.addEventListener("click", (event) => {
+      setFilter(element);
     });
+  });
 
-  })
+  var macyInstance;
 
   function setView(newView) {
     let view = document.querySelector('.view');
-    if (newView === 'list') {
-      view.classList.replace('grid', 'list')
+    view.classList = "view " + newView;
+
+    if (newView === "masonry") {
+      document.querySelectorAll(".card-img").forEach(item => {
+        item.classList.remove("spotlight");
+      });
+      macyInstance = new Macy({
+        container: '#photos',
+        trueOrder: false,
+        waitForImages: false,
+        useOwnImageLoader: false,
+        debug: true,
+        mobileFirst: true,
+        columns: 2,
+        margin: {
+          y: 6,
+          x: 6
+        },
+        breakAt: {
+          980: {
+            margin: {
+              x: 8,
+              y: 8
+            },
+            columns: 3
+          },
+          768: 2,
+          640: 3
+        }
+      });
     } else {
-      view.classList.replace('list', 'grid')
+      if (macyInstance) { 
+        macyInstance.remove();
+        macyInstance = null; 
+      }
     }
-    setCookie("view", newView, 365);
+
+    setFilter();
+
+    setCookie("view-photos", newView, 365);
   }
 
   function setFilter(currentFilterElement) {
@@ -88,29 +123,31 @@
       newFilter = currentFilterElement.getAttribute("data-status");
     } else {
       newFilter = currentFilterElement.getAttribute("data-next-status");
-    }    
+    }
 
     let newfilterElement = document.querySelector("#filter-" + newFilter);
     let designator = newfilterElement.getAttribute("data-designator");
 
     newfilterElement.checked = true;
-
+;
     document.querySelectorAll(".card").forEach(item => {
       if (newFilter === 'all' || (newFilter === item.getAttribute("data-status"))) {
         item.style.display = "block";
-        setTimeout(() => { 
-          item.classList.remove("hide"); 
-          item.querySelector(".card-img").classList.add("spotlight");
+        setTimeout(() => {
+          item.classList.remove("hide");
+          if (currentView !== "masonry") {
+            item.querySelector(".card-img").classList.add("spotlight");
+          }
         }, 100);
       } else {
         item.classList.add("hide");
         item.querySelector(".card-img").classList.remove("spotlight");
-        setTimeout(() => { 
-          item.style.display = "none"; 
+        setTimeout(() => {
+          item.style.display = "none";
         }, 300);
       }
     });
-    setTimeout(() => { 
+    setTimeout(() => {
         initViewportImage();
 
         let resultCount = document.querySelectorAll(".card:not(.hide)").length;
@@ -121,6 +158,8 @@
         desElement.textContent = designator;
 
         Spotlight.init();
+
+        if (macyInstance) macyInstance.reInit();
 
       }, 300);
   }
