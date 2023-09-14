@@ -373,10 +373,10 @@
       <div class="bar-cmd">
         <input type="radio" name="view-switch" id="switch-grid" checked 
                onchange="setView('grid');">
-        <label for="switch-grid"></label>
+        <label for="switch-grid" title="Switch to Grid View"></label>
         <input type="radio" name="view-switch" id="switch-list" 
                onchange="setView('list');">
-        <label for="switch-list"></label>
+        <label for="switch-list" title="Switch to List View"></label>
       </div>
     </div>
 
@@ -3809,7 +3809,7 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   });
 
   document.addEventListener('DOMContentLoaded', (event) => {
-    let currentView = getCookie("view");
+    let currentView = getCookie("view-tinytools");
     if (currentView) {
       document.querySelector("#switch-" + currentView).checked = true; 
       setView(currentView);
@@ -3823,7 +3823,7 @@ Available in SVG Sprite, styled-components, NPM & API</p>
     } else {
       view.classList.replace('list', 'grid')
     }
-    setCookie("view", newView, 365);
+    setCookie("view-tinytools", newView, 365);
   }
 
   function filterCards(new_value) {
