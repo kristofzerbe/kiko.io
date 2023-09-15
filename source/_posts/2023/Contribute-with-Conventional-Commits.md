@@ -19,7 +19,7 @@ related:
   - Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/111070207610797812
 ---
 
 I'll be honest ... I need some Git training. From time to time I contribute small things to GitHub projects and sometimes get confused with all the commands. ``Fork``, ``Clone``, ``Commit``, ``Stage``, ``Pull Request`` ... all things that mean something to me, but that I certainly haven't internalized. And so it happens that I sometimes mess up a pull request or something similar.
