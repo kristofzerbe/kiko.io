@@ -89,7 +89,6 @@ All of them are enabled by default. You can edit them in `widget` setting.
 ### Grunt tasks
 
 - **default** - Download [Font Awesome].
-- **fontawesome** - Only download [Font Awesome].
 - **clean** - Clean temporarily files and downloaded files.
 
 [Hexo]: https://hexo.io/

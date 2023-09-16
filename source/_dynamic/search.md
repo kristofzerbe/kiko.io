@@ -4,7 +4,7 @@ subtitle:
 date: 2023-01-16 16:37:00
 permalink: /search
 photograph:
-  file: $_D702858.jpg
+  file: $D702858.jpg
   name: Hide and Seek
 ---
 

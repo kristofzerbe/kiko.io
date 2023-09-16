@@ -25,10 +25,13 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
   // Convert Markdown content into HTML
   page.content = hexo.render.renderSync({ text: page._content, engine: 'markdown' });  
 
+  // Get hero photo
+  let pHero = getHeroPhoto(config);
+
   // Get pool photos
   let pPool = getPoolPhotos(config);
   log.info(magenta(pPool.length) + " pool photos");
-  
+
   // Get used photos in Posts & Pages
   let pPostPages = getPostAndPagePhotos(config, locals);
   log.info(magenta(pPostPages.length) + " used photos in posts and pages");
@@ -46,7 +49,7 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
   log.info(magenta(pNotes.length) + " used photos in notes");
 
   // Set items for page
-  page.items = [...pPool, ...pPostPages, ...pDynamic, ...pAnything, ...pNotes]
+  page.items = [...pHero ,...pPool, ...pPostPages, ...pDynamic, ...pAnything, ...pNotes]
     .filter(p => (p.name)) //filter out all without photo name
     .sort((a, b) => a.key.localeCompare(b.key));
 
@@ -78,6 +81,36 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
 
 });
 
+/** ================================================================================= */
+
+function getHeroPhoto(config) {
+
+  var photoDir = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir);
+
+  let entry = {
+    key: key = config.hero.file.replace(".jpg", ""),
+    status: "used",
+    file: config.hero.file,
+    name: config.hero.name,
+    article: {
+      type: "home",
+      title: "Home",
+      url: "/index.html"
+    }
+  };
+
+  entry.pathMobile = "/" + path.join(config.photo_dir, "mobile", entry.file).replace(/\134/g,"/");
+  entry.pathNormal = "/" + path.join(config.photo_dir, "normal", entry.file).replace(/\134/g,"/");
+
+  if (fs.existsSync(path.join(photoDir, "meta" , entry.key + ".json"))) {
+    entry.meta = JSON.parse(fs.readFileSync(path.join(photoDir, "meta" , entry.key + ".json")));
+  }
+
+  return [entry];  
+}
+
+/** ================================================================================= */
+
 function getPoolPhotos(config) {
 
   var poolDir = path.join(_rootDir, hexo.config.static_dir, hexo.config.pool_dir);
@@ -103,6 +136,8 @@ function getPoolPhotos(config) {
   return pool;
 }
 
+/** ================================================================================= */
+
 function getPostAndPagePhotos(config, locals) {
 
   var photoDir = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "mobile");
@@ -110,7 +145,7 @@ function getPostAndPagePhotos(config, locals) {
 
   let used = fs
     .readdirSync(photoDir)
-    .map(entry => ({ key: null, status: "used", file: entry }))
+    .map(entry => ({ key: null, status: "used", file: entry }));
 
   let postsAndPages = [...locals.posts.data, ...locals.pages.data].map(y => {
     if (y.photograph) {
@@ -122,7 +157,7 @@ function getPostAndPagePhotos(config, locals) {
         layout: y.layout,
         photographFile: y.photograph.file,
         photographName: y.photograph.name,
-      }  
+      };
     }
   });
 
@@ -145,12 +180,14 @@ function getPostAndPagePhotos(config, locals) {
         title: p.title,
         subtitle: p.subTitle,
         url: "/" + p.path.replace("/index.html", "")
-      }
+      };
     }
 
-  })
+  });
   return used;
 }
+
+/** ================================================================================= */
 
 function getDynamicPagePhotos(config) {
 
@@ -192,6 +229,8 @@ function getDynamicPagePhotos(config) {
 
   return dynamic;
 }
+
+/** ================================================================================= */
 
 function getAnythingPagePhotos(config, subDir) {
 
@@ -235,6 +274,7 @@ function getAnythingPagePhotos(config, subDir) {
   return anything;
 }
 
+/** ================================================================================= */
 
 function getNotesPhotos(config) {
 

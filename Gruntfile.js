@@ -3,12 +3,6 @@ module.exports = function(grunt){
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     gitclone: {
-      fontawesome: {
-        options: {
-          repository: 'https://github.com/FortAwesome/Font-Awesome.git',
-          directory: 'themes/landscape/tmp/fontawesome'
-        },
-      },
       opensans: {
         options: {
           repository: 'https://github.com/webfontkit/open-sans.git',
@@ -23,12 +17,6 @@ module.exports = function(grunt){
       }
     },
     copy: {
-      fontawesome: {
-        expand: true,
-        cwd: 'themes/landscape/tmp/fontawesome/webfonts/',
-        src: ['**'],
-        dest: 'themes/landscape/source/css/fonts/fontawesome'
-      },
       opensans: {
         expand: true,
         cwd: 'themes/landscape/tmp/opensans/fonts/',
@@ -99,8 +87,7 @@ module.exports = function(grunt){
       }
     },
     _clean: {
-      tmp: ['tmp'],
-      fontawesome: ['themes/landscape/source/css/fonts'],
+      tmp: ['tmp']
     },
     concat: {
       asset_scripts: {
