@@ -144,7 +144,24 @@
       </li>
       <% } %>
     </ul>
-    <%- partial('_partial/post/permalink', { post: page, class_name: 'article-permalink' }) %>
+
+    <% 
+      page.syndication = [];
+      page.meta.custom.links.forEach(link => {
+        if (link.url) {
+          page.syndication.push({
+            host: link.site,
+            url: link.url
+          });
+        }
+      });
+    %>
+
+    <div class="section-footer">
+      <%- partial('_partial/post/syndication', { post: page, class_name: 'article-syndication' }) %>
+      <%- partial('_partial/post/permalink', { post: page, class_name: 'article-permalink' }) %>        
+    </div>
+  
   </section>
 
   <%- partial('_partial/post/interaction', { post: page, type: 'photo', comments: false }) %>

@@ -46,7 +46,7 @@ Years later, after dozens of clients, authoring a [book about Access](https://ww
 
 I'm still first and foremost fascinated by the technology on building software, in particular in creating pleasing, but functional UI's, a user wants to works with, even if I spend my daily working time on management stuff. So it is not surprising that I sit at my laptop in my spare time, working on my private projects or trying out new technologies. I made by hobby a profession...
 
-If you want to talk about the old, recent or new times in IT,  [contact me](javascript:showContact();):  
+If you want to talk about the old, recent or new times in IT,  [contact me](javascript:dialog.contact();). 
 
 </section>
 
@@ -66,5 +66,10 @@ Find some of my photographs on
 
 **500px**
 [https://500px.com/p/kikon](https://500px.com/p/kikon)
+
+<img src="/images/pixelfed.svg" style="float: left;margin-right: 18px;height: 44px;" alt="Pixelfed" />
+
+**Pixelfed**
+[https://pixelfed.social/kristofz](https://pixelfed.social/kristofz)
 
 </section>

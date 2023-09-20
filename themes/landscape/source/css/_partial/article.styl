@@ -564,7 +564,8 @@
   // border-top-color: transparent
   margin-top: 1.5 * line-height
 
-.article-footer
+.article-footer, 
+.section-footer
   font-size: 0.85em
   line-height: line-height
   padding-top: line-height
@@ -579,6 +580,10 @@
     grid-template-columns: auto 1fr
     grid-template-rows: auto auto auto
     grid-template-areas: "tags" "syndication permalink" "golem"
+
+.section-footer
+  padding: 0
+  margin: -12px
 
 .article-tags { grid-area: tags }
 .article-permalink { grid-area: permalink }
@@ -617,7 +622,9 @@
     display: inline-block
     margin-right: 4px
   .syndication-link
-    padding: 0 10px 0 0;
+    padding: 0 16px 0 0;
+    @media mq-mobile
+      padding: 0 12px 0 0;
     &:before
       font-family: fa-icons
       font-size: 21px;
@@ -627,6 +634,12 @@
   & .fa-twitter:before
     content: icon-twitter
     color: color-twitter
+  & .fa-500px:before
+    content: icon-500px
+    color: color-500px
+  & .fa-pixelfed:before
+    content: icon-pixelfed
+    color: color-pixelfed
 
 .article-permalink,
 .article-syndication 
