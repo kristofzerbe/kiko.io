@@ -29,7 +29,7 @@
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/Change-CSS-class-when-element-scrolls-into-viewport/index.html">
+  <meta property="og:url" content="https://kiko.io/post/Change-CSS-class-when-element-scrolls-into-viewport/">
   <meta property="og:title" content="Change CSS class when element scrolls into viewport - kiko.io">
   
   <meta property="og:description" content="I had a neat visual gimmick on the start page of this blog, that the gray-scaled header image of a post in the list scaled up to 100% and became color...">
@@ -39,7 +39,7 @@
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/Change-CSS-class-when-element-scrolls-into-viewport/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/Change-CSS-class-when-element-scrolls-into-viewport/">
   <meta property="twitter:title" content="Change CSS class when element scrolls into viewport - kiko.io">
   
   <meta property="twitter:description" content="I had a neat visual gimmick on the start page of this blog, that the gray-scaled header image of a post in the list scaled up to 100% and became color...">
@@ -357,15 +357,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clmxrpte8000ilbowc118e0uo">
+      <div class="article-permalink" id="article-permalink-clmyvungt000ikkos18dbcfpn">
     <input class="article-permalink-value" value="https://kiko.io/post/Change-CSS-class-when-element-scrolls-into-viewport/" 
-           data-id="clmxrpte8000ilbowc118e0uo" data-title="Change CSS class when element scrolls into viewport" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvungt000ikkos18dbcfpn" data-title="Change CSS class when element scrolls into viewport" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrpte8000ilbowc118e0uo");
+        initPermalink("clmyvungt000ikkos18dbcfpn");
     });
 </script>
 
@@ -376,6 +376,10 @@
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1070,6 +1074,25 @@
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

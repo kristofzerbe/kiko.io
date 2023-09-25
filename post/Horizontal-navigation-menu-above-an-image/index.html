@@ -29,7 +29,7 @@ My choice was to implement a horizontal scrolling menu, which can grow over the 
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/Horizontal-navigation-menu-above-an-image/index.html">
+  <meta property="og:url" content="https://kiko.io/post/Horizontal-navigation-menu-above-an-image/">
   <meta property="og:title" content="Horizontal navigation menu above an image - kiko.io">
   
   <meta property="og:description" content="How to deal with coverage, readability and scrollbars">
@@ -39,7 +39,7 @@ My choice was to implement a horizontal scrolling menu, which can grow over the 
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/Horizontal-navigation-menu-above-an-image/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/Horizontal-navigation-menu-above-an-image/">
   <meta property="twitter:title" content="Horizontal navigation menu above an image - kiko.io">
   
   <meta property="twitter:description" content="How to deal with coverage, readability and scrollbars">
@@ -362,15 +362,15 @@ My choice was to implement a horizontal scrolling menu, which can grow over the 
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clmxrptee000rlbowhdgo7a2g">
+      <div class="article-permalink" id="article-permalink-clmyvungz000rkkos618whxnv">
     <input class="article-permalink-value" value="https://kiko.io/post/Horizontal-navigation-menu-above-an-image/" 
-           data-id="clmxrptee000rlbowhdgo7a2g" data-title="Horizontal navigation menu above an image" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvungz000rkkos618whxnv" data-title="Horizontal navigation menu above an image" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrptee000rlbowhdgo7a2g");
+        initPermalink("clmyvungz000rkkos618whxnv");
     });
 </script>
 
@@ -381,6 +381,10 @@ My choice was to implement a horizontal scrolling menu, which can grow over the 
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1130,6 +1134,25 @@ My choice was to implement a horizontal scrolling menu, which can grow over the 
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

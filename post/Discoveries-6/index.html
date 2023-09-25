@@ -30,7 +30,7 @@ All the finds in this issue have something to do with visual aspects of web desi
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/Discoveries-6/index.html">
+  <meta property="og:url" content="https://kiko.io/post/Discoveries-6/">
   <meta property="og:title" content="Discoveries #6 - kiko.io">
   
   <meta property="og:description" content="2020 is over and history. Well, may 2021 be with us. With this post I would like to continue the Discoveries, with new momentum. There was a lot to re...">
@@ -40,7 +40,7 @@ All the finds in this issue have something to do with visual aspects of web desi
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/Discoveries-6/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/Discoveries-6/">
   <meta property="twitter:title" content="Discoveries #6 - kiko.io">
   
   <meta property="twitter:description" content="2020 is over and history. Well, may 2021 be with us. With this post I would like to continue the Discoveries, with new momentum. There was a lot to re...">
@@ -483,15 +483,15 @@ All the finds in this issue have something to do with visual aspects of web desi
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clmxrpteu001clbow6sb8cdih">
+      <div class="article-permalink" id="article-permalink-clmyvunhe001ckkose2l3909v">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-6/" 
-           data-id="clmxrpteu001clbow6sb8cdih" data-title="Discoveries #6" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvunhe001ckkose2l3909v" data-title="Discoveries #6" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrpteu001clbow6sb8cdih");
+        initPermalink("clmyvunhe001ckkose2l3909v");
     });
 </script>
 
@@ -502,6 +502,10 @@ All the finds in this issue have something to do with visual aspects of web desi
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1239,6 +1243,25 @@ All the finds in this issue have something to do with visual aspects of web desi
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

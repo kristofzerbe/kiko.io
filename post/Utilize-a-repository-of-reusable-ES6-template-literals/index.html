@@ -32,7 +32,7 @@ But there is one “restriction”, you have to be aware of: the interpolation (
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/index.html">
+  <meta property="og:url" content="https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/">
   <meta property="og:title" content="Utilize a repository of reusable ES6 template literals - kiko.io">
   
   <meta property="og:description" content="The Template Literals introduced with ES6 are very useful to deal with multiline strings, because they support embedded expressions. Gone are the days...">
@@ -42,7 +42,7 @@ But there is one “restriction”, you have to be aware of: the interpolation (
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/">
   <meta property="twitter:title" content="Utilize a repository of reusable ES6 template literals - kiko.io">
   
   <meta property="twitter:description" content="The Template Literals introduced with ES6 are very useful to deal with multiline strings, because they support embedded expressions. Gone are the days...">
@@ -396,15 +396,15 @@ But there is one “restriction”, you have to be aware of: the interpolation (
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clmxrptfb0024lbow64u19bbl">
+      <div class="article-permalink" id="article-permalink-clmyvunhv0024kkosd0795bir">
     <input class="article-permalink-value" value="https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/" 
-           data-id="clmxrptfb0024lbow64u19bbl" data-title="Utilize a repository of reusable ES6 template literals" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvunhv0024kkosd0795bir" data-title="Utilize a repository of reusable ES6 template literals" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrptfb0024lbow64u19bbl");
+        initPermalink("clmyvunhv0024kkosd0795bir");
     });
 </script>
 
@@ -415,6 +415,10 @@ But there is one “restriction”, you have to be aware of: the interpolation (
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1154,6 +1158,25 @@ But there is one “restriction”, you have to be aware of: the interpolation (
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

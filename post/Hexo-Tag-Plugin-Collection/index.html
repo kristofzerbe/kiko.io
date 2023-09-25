@@ -31,7 +31,7 @@ On the Github page you can find all the info on how to use the plugins. In this 
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/Hexo-Tag-Plugin-Collection/index.html">
+  <meta property="og:url" content="https://kiko.io/post/Hexo-Tag-Plugin-Collection/">
   <meta property="og:title" content="Hexo Tag Plugin Collection - kiko.io">
   
   <meta property="og:description" content="All tag plugins used for kiko.io available on Github">
@@ -41,7 +41,7 @@ On the Github page you can find all the info on how to use the plugins. In this 
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/Hexo-Tag-Plugin-Collection/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/Hexo-Tag-Plugin-Collection/">
   <meta property="twitter:title" content="Hexo Tag Plugin Collection - kiko.io">
   
   <meta property="twitter:description" content="All tag plugins used for kiko.io available on Github">
@@ -540,7 +540,7 @@ On the Github page you can find all the info on how to use the plugins. In this 
 
 <p><strong>Live Output:</strong></p>
 
-    <div id="image-compare-okfdr5">
+    <div id="image-compare-my8946">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Hexo-Tag-Plugin-Collection/example-image_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Hexo-Tag-Plugin-Collection/example-image_PRESET.jpg" alt="" />
     </div>
@@ -549,7 +549,7 @@ On the Github page you can find all the info on how to use the plugins. In this 
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-okfdr5"),
+      new ImageCompare(document.getElementById("image-compare-my8946"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -591,12 +591,12 @@ On the Github page you can find all the info on how to use the plugins. In this 
 
 <p><strong>Live Output:</strong></p>
 
-      <div class="image-slider" id="image-slide-mmwm0e">
+      <div class="image-slider" id="image-slide-19h56e">
         <div><img src="/post/Hexo-Tag-Plugin-Collection/example-image_ORIGINAL.jpg" alt="Original" /></div><div><img src="/post/Hexo-Tag-Plugin-Collection/example-image_PRESET.jpg" alt="Lightroom Preset" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-mmwm0e",
+          container: "#image-slide-19h56e",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -653,15 +653,15 @@ On the Github page you can find all the info on how to use the plugins. In this 
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clmxrptez001klbowdoi06t7x">
+      <div class="article-permalink" id="article-permalink-clmyvunhj001kkkos0d6g16gu">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-Tag-Plugin-Collection/" 
-           data-id="clmxrptez001klbowdoi06t7x" data-title="Hexo Tag Plugin Collection" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvunhj001kkkos0d6g16gu" data-title="Hexo Tag Plugin Collection" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrptez001klbowdoi06t7x");
+        initPermalink("clmyvunhj001kkkos0d6g16gu");
     });
 </script>
 
@@ -672,6 +672,10 @@ On the Github page you can find all the info on how to use the plugins. In this 
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1415,6 +1419,25 @@ On the Github page you can find all the info on how to use the plugins. In this 
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

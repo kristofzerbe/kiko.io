@@ -31,7 +31,7 @@ Many times this overload is simply not necessary, when you just need a log file 
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/Simplest-Console-File-Logger/index.html">
+  <meta property="og:url" content="https://kiko.io/post/Simplest-Console-File-Logger/">
   <meta property="og:title" content="Simplest Console File Logger - kiko.io">
   
   <meta property="og:description" content="How to implement your own logger with just a StringBuilder in C#">
@@ -41,7 +41,7 @@ Many times this overload is simply not necessary, when you just need a log file 
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/Simplest-Console-File-Logger/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/Simplest-Console-File-Logger/">
   <meta property="twitter:title" content="Simplest Console File Logger - kiko.io">
   
   <meta property="twitter:description" content="How to implement your own logger with just a StringBuilder in C#">
@@ -379,15 +379,15 @@ Many times this overload is simply not necessary, when you just need a log file 
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clmxrptfp002qlbowa4l2beb1">
+      <div class="article-permalink" id="article-permalink-clmyvuni7002qkkosdtceecei">
     <input class="article-permalink-value" value="https://kiko.io/post/Simplest-Console-File-Logger/" 
-           data-id="clmxrptfp002qlbowa4l2beb1" data-title="Simplest Console File Logger" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvuni7002qkkosdtceecei" data-title="Simplest Console File Logger" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrptfp002qlbowa4l2beb1");
+        initPermalink("clmyvuni7002qkkosdtceecei");
     });
 </script>
 
@@ -398,6 +398,10 @@ Many times this overload is simply not necessary, when you just need a log file 
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1139,6 +1143,25 @@ Many times this overload is simply not necessary, when you just need a log file 
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

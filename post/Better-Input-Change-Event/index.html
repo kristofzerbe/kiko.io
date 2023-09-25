@@ -29,7 +29,7 @@ The intended event for this is change, which will be triggered, when the user ha
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/Better-Input-Change-Event/index.html">
+  <meta property="og:url" content="https://kiko.io/post/Better-Input-Change-Event/">
   <meta property="og:title" content="Better Input Change Event - kiko.io">
   
   <meta property="og:description" content="Often it is important to trigger an event, after the user of your website/web app has filled out an text input. You have to do something with the give...">
@@ -39,7 +39,7 @@ The intended event for this is change, which will be triggered, when the user ha
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/Better-Input-Change-Event/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/Better-Input-Change-Event/">
   <meta property="twitter:title" content="Better Input Change Event - kiko.io">
   
   <meta property="twitter:description" content="Often it is important to trigger an event, after the user of your website/web app has filled out an text input. You have to do something with the give...">
@@ -351,15 +351,15 @@ The intended event for this is change, which will be triggered, when the user ha
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clmxrpte3000blbowbou0ftml">
+      <div class="article-permalink" id="article-permalink-clmyvungo000bkkosdocjgdgr">
     <input class="article-permalink-value" value="https://kiko.io/post/Better-Input-Change-Event/" 
-           data-id="clmxrpte3000blbowbou0ftml" data-title="Better Input Change Event" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvungo000bkkosdocjgdgr" data-title="Better Input Change Event" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrpte3000blbowbou0ftml");
+        initPermalink("clmyvungo000bkkosdocjgdgr");
     });
 </script>
 
@@ -370,6 +370,10 @@ The intended event for this is change, which will be triggered, when the user ha
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1058,6 +1062,25 @@ The intended event for this is change, which will be triggered, when the user ha
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

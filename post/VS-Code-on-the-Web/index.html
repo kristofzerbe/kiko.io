@@ -32,7 +32,7 @@ What was exciting for me was the question of how long it would take for someone 
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/VS-Code-on-the-Web/index.html">
+  <meta property="og:url" content="https://kiko.io/post/VS-Code-on-the-Web/">
   <meta property="og:title" content="VS Code on the Web - kiko.io">
   
   <meta property="og:description" content="Multiple ways to work with Visual Studio Code online">
@@ -42,7 +42,7 @@ What was exciting for me was the question of how long it would take for someone 
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/VS-Code-on-the-Web/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/VS-Code-on-the-Web/">
   <meta property="twitter:title" content="VS Code on the Web - kiko.io">
   
   <meta property="twitter:description" content="Multiple ways to work with Visual Studio Code online">
@@ -377,15 +377,15 @@ What was exciting for me was the question of how long it would take for someone 
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clmxrptfc0026lbow7avn41qo">
+      <div class="article-permalink" id="article-permalink-clmyvunhw0026kkos4sw298gf">
     <input class="article-permalink-value" value="https://kiko.io/post/VS-Code-on-the-Web/" 
-           data-id="clmxrptfc0026lbow7avn41qo" data-title="VS Code on the Web" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvunhw0026kkos4sw298gf" data-title="VS Code on the Web" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrptfc0026lbow7avn41qo");
+        initPermalink("clmyvunhw0026kkos4sw298gf");
     });
 </script>
 
@@ -396,6 +396,10 @@ What was exciting for me was the question of how long it would take for someone 
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1139,6 +1143,25 @@ What was exciting for me was the question of how long it would take for someone 
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

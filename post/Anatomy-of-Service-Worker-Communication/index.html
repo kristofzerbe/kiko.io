@@ -30,7 +30,7 @@ If you research this topic on the web, you have to dig through many architecture
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/Anatomy-of-Service-Worker-Communication/index.html">
+  <meta property="og:url" content="https://kiko.io/post/Anatomy-of-Service-Worker-Communication/">
   <meta property="og:title" content="Anatomy of Service Worker Communication - kiko.io">
   
   <meta property="og:description" content="Let your App communicate with its Service Worker">
@@ -40,7 +40,7 @@ If you research this topic on the web, you have to dig through many architecture
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/Anatomy-of-Service-Worker-Communication/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/Anatomy-of-Service-Worker-Communication/">
   <meta property="twitter:title" content="Anatomy of Service Worker Communication - kiko.io">
   
   <meta property="twitter:description" content="Let your App communicate with its Service Worker">
@@ -410,23 +410,23 @@ If you research this topic on the web, you have to dig through many architecture
     <div class="article-syndication">
       
           <a class="syndication-link u-syndication fab fa-mastodon" 
-            href="https://indieweb.social/@kiko/109337328502493774" title="Mastodon" rel="syndication" target="_blank"></a>
+            href="https://indieweb.social/@kiko/109337328502493774" title="Syndication on Mastodon" rel="syndication" target="_blank"></a>
       
           <a class="syndication-link u-syndication fab fa-twitter" 
-            href="https://twitter.com/kristofz/status/1591765769284878339" title="Twitter" rel="syndication" target="_blank"></a>
+            href="https://twitter.com/kristofz/status/1591765769284878339" title="Syndication on Twitter" rel="syndication" target="_blank"></a>
       
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clmxrptfe0029lbowdzwr3n40">
+      <div class="article-permalink" id="article-permalink-clmyvunhx0029kkosak349afn">
     <input class="article-permalink-value" value="https://kiko.io/post/Anatomy-of-Service-Worker-Communication/" 
-           data-id="clmxrptfe0029lbowdzwr3n40" data-title="Anatomy of Service Worker Communication" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvunhx0029kkosak349afn" data-title="Anatomy of Service Worker Communication" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrptfe0029lbowdzwr3n40");
+        initPermalink("clmyvunhx0029kkosak349afn");
     });
 </script>
 
@@ -437,6 +437,10 @@ If you research this topic on the web, you have to dig through many architecture
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1174,6 +1178,25 @@ If you research this topic on the web, you have to dig through many architecture
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

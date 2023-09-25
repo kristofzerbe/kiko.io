@@ -29,7 +29,7 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/Image-Masonry-Tag-Plugin-for-Hexo/index.html">
+  <meta property="og:url" content="https://kiko.io/post/Image-Masonry-Tag-Plugin-for-Hexo/">
   <meta property="og:title" content="Image Masonry Tag Plugin for Hexo - kiko.io">
   
   <meta property="og:description" content="Easy use of the wonderful Macy.js library to display images in posts">
@@ -39,7 +39,7 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/Image-Masonry-Tag-Plugin-for-Hexo/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/Image-Masonry-Tag-Plugin-for-Hexo/">
   <meta property="twitter:title" content="Image Masonry Tag Plugin for Hexo - kiko.io">
   
   <meta property="twitter:description" content="Easy use of the wonderful Macy.js library to display images in posts">
@@ -355,12 +355,12 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
 
 <p><strong>Live Output:</strong></p>
 
-      <div class="image-masonry" id="image-masonry-wr6iv6">
+      <div class="image-masonry" id="image-masonry-5sknte">
         <div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0053.jpg" alt="Thomas' Ruby Prince I" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/_D50_3251.jpg" alt="No Name" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0086.jpg" alt="Thomas' German Flag" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_1147.jpg" alt="Poppy Green" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0075.jpg" alt="Thomas Wild Tulips" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_7474.jpg" alt="Garden Beauties XIV" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_4451.jpg" alt="Garden Beauties I" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_1577.jpg" alt="Floral Magic XIV" /></div>
       </div>
       <script>
         let macy = new Macy({
-          container: '#image-masonry-wr6iv6',
+          container: '#image-masonry-5sknte',
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -400,20 +400,20 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
     <div class="article-syndication">
       
           <a class="syndication-link u-syndication fab fa-mastodon" 
-            href="https://indieweb.social/@kiko/110991254816820166" title="Mastodon" rel="syndication" target="_blank"></a>
+            href="https://indieweb.social/@kiko/110991254816820166" title="Syndication on Mastodon" rel="syndication" target="_blank"></a>
       
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clmxrptfx0035lbowespx7evc">
+      <div class="article-permalink" id="article-permalink-clmyvunif0035kkos2jzm56an">
     <input class="article-permalink-value" value="https://kiko.io/post/Image-Masonry-Tag-Plugin-for-Hexo/" 
-           data-id="clmxrptfx0035lbowespx7evc" data-title="Image Masonry Tag Plugin for Hexo" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvunif0035kkos2jzm56an" data-title="Image Masonry Tag Plugin for Hexo" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrptfx0035lbowespx7evc");
+        initPermalink("clmyvunif0035kkos2jzm56an");
     });
 </script>
 
@@ -424,6 +424,10 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1167,6 +1171,25 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

@@ -26,7 +26,7 @@
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/categories/Photo/index.html">
+  <meta property="og:url" content="https://kiko.io/categories/Photo/">
   <meta property="og:title" content="Category Photo - kiko.io">
   
   <meta property="og:description" content="Archive about memorable tech stuff by Kristof Zerbe">
@@ -36,7 +36,7 @@
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/categories/Photo/index.html">
+  <meta property="twitter:url" content="https://kiko.io/categories/Photo/">
   <meta property="twitter:title" content="Category Photo - kiko.io">
   
   <meta property="twitter:description" content="Archive about memorable tech stuff by Kristof Zerbe">
@@ -1267,6 +1267,25 @@
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

@@ -29,7 +29,7 @@
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/Discoveries-26-JavaScript-HowTo-s/index.html">
+  <meta property="og:url" content="https://kiko.io/post/Discoveries-26-JavaScript-HowTo-s/">
   <meta property="og:title" content="Discoveries #26 - JavaScript HowTo&#39;s - kiko.io">
   
   <meta property="og:description" content="Over time, everyone accumulates links somewhere about procedures that one has not yet internalized. This is also the case with me and JavaScript devel...">
@@ -39,7 +39,7 @@
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/Discoveries-26-JavaScript-HowTo-s/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/Discoveries-26-JavaScript-HowTo-s/">
   <meta property="twitter:title" content="Discoveries #26 - JavaScript HowTo&#39;s - kiko.io">
   
   <meta property="twitter:description" content="Over time, everyone accumulates links somewhere about procedures that one has not yet internalized. This is also the case with me and JavaScript devel...">
@@ -500,20 +500,20 @@
     <div class="article-syndication">
       
           <a class="syndication-link u-syndication fab fa-mastodon" 
-            href="https://indieweb.social/@kiko/111051865862806060" title="Mastodon" rel="syndication" target="_blank"></a>
+            href="https://indieweb.social/@kiko/111051865862806060" title="Syndication on Mastodon" rel="syndication" target="_blank"></a>
       
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clmxrptfw0032lbowg3uzgv0f">
+      <div class="article-permalink" id="article-permalink-clmyvunie0032kkosa8x3ge4a">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-26-JavaScript-HowTo-s/" 
-           data-id="clmxrptfw0032lbowg3uzgv0f" data-title="Discoveries #26 - JavaScript HowTo&#39;s" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvunie0032kkosa8x3ge4a" data-title="Discoveries #26 - JavaScript HowTo&#39;s" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrptfw0032lbowg3uzgv0f");
+        initPermalink("clmyvunie0032kkosa8x3ge4a");
     });
 </script>
 
@@ -524,6 +524,10 @@
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1259,6 +1263,25 @@
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

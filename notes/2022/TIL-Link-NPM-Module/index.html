@@ -30,7 +30,7 @@ or to use npm link, which works with global symlinks, but does not save the depe
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/notes/2022/TIL-Link-NPM-Module/index.html">
+  <meta property="og:url" content="https://kiko.io/notes/2022/TIL-Link-NPM-Module/">
   <meta property="og:title" content="#TIL | Link NPM Module 2022 - kiko.io">
   
   <meta property="og:description" content="Sometimes it is advisable to outsource functionality into seperate NPM modules. But to avoid having to run npm publish (module) and npm install (main ...">
@@ -40,7 +40,7 @@ or to use npm link, which works with global symlinks, but does not save the depe
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/notes/2022/TIL-Link-NPM-Module/index.html">
+  <meta property="twitter:url" content="https://kiko.io/notes/2022/TIL-Link-NPM-Module/">
   <meta property="twitter:title" content="#TIL | Link NPM Module 2022 - kiko.io">
   
   <meta property="twitter:description" content="Sometimes it is advisable to outsource functionality into seperate NPM modules. But to avoid having to run npm publish (module) and npm install (main ...">
@@ -335,7 +335,7 @@ or to use npm link, which works with global symlinks, but does not save the depe
     <div class="article-syndication">
       
           <a class="syndication-link u-syndication fab fa-mastodon" 
-            href="https://indieweb.social/@kiko/109462482394505029" title="Mastodon" rel="syndication" target="_blank"></a>
+            href="https://indieweb.social/@kiko/109462482394505029" title="Syndication on Mastodon" rel="syndication" target="_blank"></a>
       
     </div>
   
@@ -343,8 +343,8 @@ or to use npm link, which works with global symlinks, but does not save the depe
       <div class="article-permalink" id="article-permalink-">
     <input class="article-permalink-value" value="https://kiko.io/notes/2022/TIL-Link-NPM-Module/" 
            data-id="" data-title="#TIL | Link NPM Module" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
@@ -357,6 +357,10 @@ or to use npm link, which works with global symlinks, but does not save the depe
   </div>
 
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -901,6 +905,25 @@ or to use npm link, which works with global symlinks, but does not save the depe
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

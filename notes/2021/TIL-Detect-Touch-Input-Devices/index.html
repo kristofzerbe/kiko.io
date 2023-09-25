@@ -35,7 +35,7 @@
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/notes/2021/TIL-Detect-Touch-Input-Devices/index.html">
+  <meta property="og:url" content="https://kiko.io/notes/2021/TIL-Detect-Touch-Input-Devices/">
   <meta property="og:title" content="#TIL | Detect Touch Input Devices 2021 - kiko.io">
   
   <meta property="og:description" content="As of the W3C draft of Media Queries Level 5, touch devices can be detected by using the hover and the pointer media feature:/* smartphones, touchscr...">
@@ -45,7 +45,7 @@
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/notes/2021/TIL-Detect-Touch-Input-Devices/index.html">
+  <meta property="twitter:url" content="https://kiko.io/notes/2021/TIL-Detect-Touch-Input-Devices/">
   <meta property="twitter:title" content="#TIL | Detect Touch Input Devices 2021 - kiko.io">
   
   <meta property="twitter:description" content="As of the W3C draft of Media Queries Level 5, touch devices can be detected by using the hover and the pointer media feature:/* smartphones, touchscr...">
@@ -342,8 +342,8 @@
       <div class="article-permalink" id="article-permalink-">
     <input class="article-permalink-value" value="https://kiko.io/notes/2021/TIL-Detect-Touch-Input-Devices/" 
            data-id="" data-title="#TIL | Detect Touch Input Devices" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
@@ -356,6 +356,10 @@
   </div>
 
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -900,6 +904,25 @@
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

@@ -31,7 +31,7 @@ To me it is obvious that software manufacturers cannot support every operating s
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/Thanks-Dropbox-but-I-m-off/index.html">
+  <meta property="og:url" content="https://kiko.io/post/Thanks-Dropbox-but-I-m-off/">
   <meta property="og:title" content="Thanks Dropbox, but I&#39;m off - kiko.io">
   
   <meta property="og:description" content="How to do homework or say goodbye to the market">
@@ -41,7 +41,7 @@ To me it is obvious that software manufacturers cannot support every operating s
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/Thanks-Dropbox-but-I-m-off/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/Thanks-Dropbox-but-I-m-off/">
   <meta property="twitter:title" content="Thanks Dropbox, but I&#39;m off - kiko.io">
   
   <meta property="twitter:description" content="How to do homework or say goodbye to the market">
@@ -367,15 +367,15 @@ To me it is obvious that software manufacturers cannot support every operating s
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clmxrptfq002slbowebduh6fa">
+      <div class="article-permalink" id="article-permalink-clmyvuni8002skkos7as0citc">
     <input class="article-permalink-value" value="https://kiko.io/post/Thanks-Dropbox-but-I-m-off/" 
-           data-id="clmxrptfq002slbowebduh6fa" data-title="Thanks Dropbox, but I&#39;m off" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvuni8002skkos7as0citc" data-title="Thanks Dropbox, but I&#39;m off" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrptfq002slbowebduh6fa");
+        initPermalink("clmyvuni8002skkos7as0citc");
     });
 </script>
 
@@ -386,6 +386,10 @@ To me it is obvious that software manufacturers cannot support every operating s
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -961,6 +965,25 @@ To me it is obvious that software manufacturers cannot support every operating s
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

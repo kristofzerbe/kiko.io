@@ -30,7 +30,7 @@ Of course, I couldn’t manipulate the media query prefers-color-scheme itself, 
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/Hexo-and-the-Dark-Mode-revised/index.html">
+  <meta property="og:url" content="https://kiko.io/post/Hexo-and-the-Dark-Mode-revised/">
   <meta property="og:title" content="Hexo and the Dark Mode ... revised - kiko.io">
   
   <meta property="og:description" content="Second approach to implement &#39;prefers-color-scheme&#39;">
@@ -40,7 +40,7 @@ Of course, I couldn’t manipulate the media query prefers-color-scheme itself, 
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/Hexo-and-the-Dark-Mode-revised/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/Hexo-and-the-Dark-Mode-revised/">
   <meta property="twitter:title" content="Hexo and the Dark Mode ... revised - kiko.io">
   
   <meta property="twitter:description" content="Second approach to implement &#39;prefers-color-scheme&#39;">
@@ -376,15 +376,15 @@ Of course, I couldn’t manipulate the media query prefers-color-scheme itself, 
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clmxrpte4000clbow8zglbrgd">
+      <div class="article-permalink" id="article-permalink-clmyvungo000ckkos6qrja8z1">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-Dark-Mode-revised/" 
-           data-id="clmxrpte4000clbow8zglbrgd" data-title="Hexo and the Dark Mode ... revised" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvungo000ckkos6qrja8z1" data-title="Hexo and the Dark Mode ... revised" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrpte4000clbow8zglbrgd");
+        initPermalink("clmyvungo000ckkos6qrja8z1");
     });
 </script>
 
@@ -395,6 +395,10 @@ Of course, I couldn’t manipulate the media query prefers-color-scheme itself, 
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1144,6 +1148,25 @@ Of course, I couldn’t manipulate the media query prefers-color-scheme itself, 
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

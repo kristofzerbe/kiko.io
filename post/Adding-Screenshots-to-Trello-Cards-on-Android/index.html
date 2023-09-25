@@ -30,7 +30,7 @@ Because it is easier to find a card with visual support, I create my own screens
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/Adding-Screenshots-to-Trello-Cards-on-Android/index.html">
+  <meta property="og:url" content="https://kiko.io/post/Adding-Screenshots-to-Trello-Cards-on-Android/">
   <meta property="og:title" content="Adding Screenshots to Trello Cards on Android - kiko.io">
   
   <meta property="og:description" content="I’m collecting interesting One-Page-Tools on the web on a Trello board. To add a new card, I use a simple little script on my Android smartphone, I wr...">
@@ -40,7 +40,7 @@ Because it is easier to find a card with visual support, I create my own screens
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/Adding-Screenshots-to-Trello-Cards-on-Android/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/Adding-Screenshots-to-Trello-Cards-on-Android/">
   <meta property="twitter:title" content="Adding Screenshots to Trello Cards on Android - kiko.io">
   
   <meta property="twitter:description" content="I’m collecting interesting One-Page-Tools on the web on a Trello board. To add a new card, I use a simple little script on my Android smartphone, I wr...">
@@ -424,15 +424,15 @@ Because it is easier to find a card with visual support, I create my own screens
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clmxrpten0011lbowfeyo2w5r">
+      <div class="article-permalink" id="article-permalink-clmyvunh70011kkos4gq92imq">
     <input class="article-permalink-value" value="https://kiko.io/post/Adding-Screenshots-to-Trello-Cards-on-Android/" 
-           data-id="clmxrpten0011lbowfeyo2w5r" data-title="Adding Screenshots to Trello Cards on Android" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvunh70011kkos4gq92imq" data-title="Adding Screenshots to Trello Cards on Android" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrpten0011lbowfeyo2w5r");
+        initPermalink("clmyvunh70011kkos4gq92imq");
     });
 </script>
 
@@ -443,6 +443,10 @@ Because it is easier to find a card with visual support, I create my own screens
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1080,6 +1084,25 @@ Because it is easier to find a card with visual support, I create my own screens
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

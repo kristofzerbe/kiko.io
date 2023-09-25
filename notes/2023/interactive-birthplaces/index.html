@@ -30,7 +30,7 @@ https://tjukanovt.github.io/notable-people
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/notes/2023/interactive-birthplaces/index.html">
+  <meta property="og:url" content="https://kiko.io/notes/2023/interactive-birthplaces/">
   <meta property="og:title" content="#Link | Interactive Birthplaces 2023 - kiko.io">
   
   <meta property="og:description" content="What do Simone Signoret, French actress, and John McEnroe, American tennis player, have in common? They were both born in my hometown of Wiesbaden, Ge...">
@@ -40,7 +40,7 @@ https://tjukanovt.github.io/notable-people
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/notes/2023/interactive-birthplaces/index.html">
+  <meta property="twitter:url" content="https://kiko.io/notes/2023/interactive-birthplaces/">
   <meta property="twitter:title" content="#Link | Interactive Birthplaces 2023 - kiko.io">
   
   <meta property="twitter:description" content="What do Simone Signoret, French actress, and John McEnroe, American tennis player, have in common? They were both born in my hometown of Wiesbaden, Ge...">
@@ -332,7 +332,7 @@ https://tjukanovt.github.io/notable-people
     <div class="article-syndication">
       
           <a class="syndication-link u-syndication fab fa-mastodon" 
-            href="https://indieweb.social/@kiko/110614747963417636" title="Mastodon" rel="syndication" target="_blank"></a>
+            href="https://indieweb.social/@kiko/110614747963417636" title="Syndication on Mastodon" rel="syndication" target="_blank"></a>
       
     </div>
   
@@ -340,8 +340,8 @@ https://tjukanovt.github.io/notable-people
       <div class="article-permalink" id="article-permalink-">
     <input class="article-permalink-value" value="https://kiko.io/notes/2023/interactive-birthplaces/" 
            data-id="" data-title="#Link | Interactive Birthplaces" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
@@ -354,6 +354,10 @@ https://tjukanovt.github.io/notable-people
   </div>
 
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -898,6 +902,25 @@ https://tjukanovt.github.io/notable-people
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

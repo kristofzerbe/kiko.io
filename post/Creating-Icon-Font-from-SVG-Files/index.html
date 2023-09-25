@@ -30,7 +30,7 @@ And yes gulp-iconfont from Nicolas Froidure was exactly what I needed. First Sol
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/Creating-Icon-Font-from-SVG-Files/index.html">
+  <meta property="og:url" content="https://kiko.io/post/Creating-Icon-Font-from-SVG-Files/">
   <meta property="og:title" content="Creating Icon Font from SVG Files - kiko.io">
   
   <meta property="og:description" content="A several years ago I started building a little PWA and chose Bootswatch 3.3.5. for theming. As it depends on Bootstrap I was able to use the icons fr...">
@@ -40,7 +40,7 @@ And yes gulp-iconfont from Nicolas Froidure was exactly what I needed. First Sol
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/Creating-Icon-Font-from-SVG-Files/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/Creating-Icon-Font-from-SVG-Files/">
   <meta property="twitter:title" content="Creating Icon Font from SVG Files - kiko.io">
   
   <meta property="twitter:description" content="A several years ago I started building a little PWA and chose Bootswatch 3.3.5. for theming. As it depends on Bootstrap I was able to use the icons fr...">
@@ -472,20 +472,20 @@ And yes gulp-iconfont from Nicolas Froidure was exactly what I needed. First Sol
     <div class="article-syndication">
       
           <a class="syndication-link u-syndication fab fa-twitter" 
-            href="https://twitter.com/kristofz/status/1571557065222508544" title="Twitter" rel="syndication" target="_blank"></a>
+            href="https://twitter.com/kristofz/status/1571557065222508544" title="Syndication on Twitter" rel="syndication" target="_blank"></a>
       
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clmxrptfg002clbow440k4rni">
+      <div class="article-permalink" id="article-permalink-clmyvunhz002ckkos7svogpq0">
     <input class="article-permalink-value" value="https://kiko.io/post/Creating-Icon-Font-from-SVG-Files/" 
-           data-id="clmxrptfg002clbow440k4rni" data-title="Creating Icon Font from SVG Files" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvunhz002ckkos7svogpq0" data-title="Creating Icon Font from SVG Files" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrptfg002clbow440k4rni");
+        initPermalink("clmyvunhz002ckkos7svogpq0");
     });
 </script>
 
@@ -496,6 +496,10 @@ And yes gulp-iconfont from Nicolas Froidure was exactly what I needed. First Sol
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1182,6 +1186,25 @@ And yes gulp-iconfont from Nicolas Froidure was exactly what I needed. First Sol
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

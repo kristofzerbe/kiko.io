@@ -31,7 +31,7 @@ In this post, I want to show you, what my workflow looks like today and how your
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/Photo-Workflow-Re-Thought/index.html">
+  <meta property="og:url" content="https://kiko.io/post/Photo-Workflow-Re-Thought/">
   <meta property="og:title" content="Photo Workflow Re-Thought - kiko.io">
   
   <meta property="og:description" content="To be honest: many of my posts here on kiko.io are written just for me. To internalize things by writing them down and to give my future me the chance...">
@@ -41,7 +41,7 @@ In this post, I want to show you, what my workflow looks like today and how your
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/Photo-Workflow-Re-Thought/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/Photo-Workflow-Re-Thought/">
   <meta property="twitter:title" content="Photo Workflow Re-Thought - kiko.io">
   
   <meta property="twitter:description" content="To be honest: many of my posts here on kiko.io are written just for me. To internalize things by writing them down and to give my future me the chance...">
@@ -449,15 +449,15 @@ In this post, I want to show you, what my workflow looks like today and how your
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clmxrptf4001slbow5lyfda0d">
+      <div class="article-permalink" id="article-permalink-clmyvunho001skkosdiu8gcvr">
     <input class="article-permalink-value" value="https://kiko.io/post/Photo-Workflow-Re-Thought/" 
-           data-id="clmxrptf4001slbow5lyfda0d" data-title="Photo Workflow Re-Thought" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvunho001skkosdiu8gcvr" data-title="Photo Workflow Re-Thought" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrptf4001slbow5lyfda0d");
+        initPermalink("clmyvunho001skkosdiu8gcvr");
     });
 </script>
 
@@ -468,6 +468,10 @@ In this post, I want to show you, what my workflow looks like today and how your
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1201,6 +1205,25 @@ In this post, I want to show you, what my workflow looks like today and how your
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

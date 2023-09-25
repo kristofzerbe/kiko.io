@@ -29,7 +29,7 @@ Belgian software developer Raphaël Godart (twitter.com/RaphaelGodart) must have
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/index.html">
+  <meta property="og:url" content="https://kiko.io/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/">
   <meta property="og:title" content="Dopamine, a music player for Windows 10 as it should be - kiko.io">
   
   <meta property="og:description" content="A minimalist MP3 player under Windows, distributed as open source, which does not shy away from large collections">
@@ -39,7 +39,7 @@ Belgian software developer Raphaël Godart (twitter.com/RaphaelGodart) must have
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/">
   <meta property="twitter:title" content="Dopamine, a music player for Windows 10 as it should be - kiko.io">
   
   <meta property="twitter:description" content="A minimalist MP3 player under Windows, distributed as open source, which does not shy away from large collections">
@@ -351,12 +351,12 @@ Belgian software developer Raphaël Godart (twitter.com/RaphaelGodart) must have
 <li>Automatic updates</li>
 </ul>
 
-      <div class="image-slider" id="image-slide-wga7vm">
+      <div class="image-slider" id="image-slide-e7evvq">
         <div><img src="/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/dopamine2.png" alt="Dopamine 2.0.9 on Windows 10" /></div><div><img src="/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/dopamine2-playlist.png" alt="Dopamine 2.0.9 Playlist" /></div><div><img src="/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/dopamine2-settings.png" alt="Dopamine 2.0.9 Settings Page" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-wga7vm",
+          container: "#image-slide-e7evvq",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -390,25 +390,25 @@ Belgian software developer Raphaël Godart (twitter.com/RaphaelGodart) must have
     <div class="article-syndication">
       
           <a class="syndication-link u-syndication fab fa-twitter" 
-            href="https://twitter.com/kristofz/status/1561338160323469315" title="Twitter" rel="syndication" target="_blank"></a>
+            href="https://twitter.com/kristofz/status/1561338160323469315" title="Syndication on Twitter" rel="syndication" target="_blank"></a>
       
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clmxrptfk002jlbow4hlsd704">
+      <div class="article-permalink" id="article-permalink-clmyvuni3002jkkos5ll2hz6g">
     <input class="article-permalink-value" value="https://kiko.io/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/" 
-           data-id="clmxrptfk002jlbow4hlsd704" data-title="Dopamine, a music player for Windows 10 as it should be" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvuni3002jkkos5ll2hz6g" data-title="Dopamine, a music player for Windows 10 as it should be" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrptfk002jlbow4hlsd704");
+        initPermalink("clmyvuni3002jkkos5ll2hz6g");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-clmxrptfk002jlbow4hlsd704">
+        <div class="article-golem" id="article-golem-clmyvuni3002jkkos5ll2hz6g">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 11 Aug 2022 
     in German under the title <span style="font-weight:bold;">&laquo;Ein Musikplayer, wie er sein sollte&raquo;</span>&nbsp;&nbsp;  
@@ -421,6 +421,10 @@ Belgian software developer Raphaël Godart (twitter.com/RaphaelGodart) must have
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1168,6 +1172,25 @@ Belgian software developer Raphaël Godart (twitter.com/RaphaelGodart) must have
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

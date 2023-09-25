@@ -49,9 +49,10 @@ var dpDialog = {
 
       dpDialog.base.element.downupPopup(opt);
     },
-    'show': function() {
+    'show': function(callback) {
       setTimeout(() => {
         dpDialog.base.element.downupPopup("open");
+        if (typeof callback === "function") callback();
       }, 100);  
     }
   },
@@ -60,7 +61,8 @@ var dpDialog = {
       headerText: "Page Meta",
       urlHash: "meta",
       contentScroll: true,
-      distance: 6
+      distance: 6,
+      width: "min(960px, 100%)"
     });
 
     // CONTENT
@@ -215,7 +217,7 @@ var dpDialog = {
           </div>
         </details>
       `;
-    };
+    }
     function getWebSite(website, organization) {
       return `
         <details>
@@ -273,7 +275,7 @@ var dpDialog = {
     dpDialog.base.init({
       headerText: "Contact",
       urlHash: "contact",
-      distance: 20,
+      // distance: 20,
       minContentHeight: 620,
       width: "min(600px, 100%)",
       contentTransparency: 0.33
@@ -299,6 +301,47 @@ var dpDialog = {
     })(); //immediately invoked async function
     
     dpDialog.base.show();
+  },
+  'shareOnMastodon': function() {
+    dpDialog.base.init({
+      headerText: "Share on Mastodon",
+      urlHash: "share",
+      // distance: 60,
+      minContentHeight: 400,
+      width: "min(600px, 100%)"
+    });
+
+    let content = document.getElementById("mastodon-share-dialog").content.cloneNode(true);
+    let jContent = $(content);
+
+    let instance = getCookie("mastodon-instance");
+    if (instance) {
+      jContent.find("#mastodon-instance").val(instance);
+    }
+
+    const title = document.querySelector('meta[name="title"]').content.replace(" - kiko.io", "");
+    const description = document.querySelector('meta[name="description"]').content;
+    const permalink = document.querySelector('link[rel="canonical"]').href;
+    jContent.find("#mastodon-text").val(title + "\n\n" + description + "\n\n" + permalink);
+
+    jContent.find("#mastodon-share").click(function(e) { 
+      const eInstance = document.getElementById("mastodon-instance");
+      const eText = document.getElementById("mastodon-text");
+      
+      const isValid = eInstance.reportValidity();
+      if (isValid) {
+        setCookie("mastodon-instance", eInstance.value);
+        let shareUrl = `https://${eInstance.value}/share?text=${encodeURIComponent(eText.value)}`;
+        window.open(shareUrl, '_blank');
+        dpDialog.base.element.downupPopup("close");
+      }
+    });
+
+    jContent.appendTo(dpDialog.base.content);
+
+    dpDialog.base.show(function() {
+      document.getElementById("mastodon-instance").focus();
+    });
   },
   'myFirstTest': function() {
     dpDialog.base.init({

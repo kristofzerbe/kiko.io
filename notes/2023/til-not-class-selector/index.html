@@ -31,7 +31,7 @@ What I didn’t know until now is that you can use a:not([class]) {...} to gener
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/notes/2023/til-not-class-selector/index.html">
+  <meta property="og:url" content="https://kiko.io/notes/2023/til-not-class-selector/">
   <meta property="og:title" content="#TIL | CSS&#39;s :not([class]) selector 2023 - kiko.io">
   
   <meta property="og:description" content="Some links need to look different from standard links, be it with a background image or other special formatting. Mostly you simply create a new class...">
@@ -41,7 +41,7 @@ What I didn’t know until now is that you can use a:not([class]) {...} to gener
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/notes/2023/til-not-class-selector/index.html">
+  <meta property="twitter:url" content="https://kiko.io/notes/2023/til-not-class-selector/">
   <meta property="twitter:title" content="#TIL | CSS&#39;s :not([class]) selector 2023 - kiko.io">
   
   <meta property="twitter:description" content="Some links need to look different from standard links, be it with a background image or other special formatting. Mostly you simply create a new class...">
@@ -333,7 +333,7 @@ What I didn’t know until now is that you can use a:not([class]) {...} to gener
     <div class="article-syndication">
       
           <a class="syndication-link u-syndication fab fa-mastodon" 
-            href="https://indieweb.social/@kiko/109620622105567591" title="Mastodon" rel="syndication" target="_blank"></a>
+            href="https://indieweb.social/@kiko/109620622105567591" title="Syndication on Mastodon" rel="syndication" target="_blank"></a>
       
     </div>
   
@@ -341,8 +341,8 @@ What I didn’t know until now is that you can use a:not([class]) {...} to gener
       <div class="article-permalink" id="article-permalink-">
     <input class="article-permalink-value" value="https://kiko.io/notes/2023/til-not-class-selector/" 
            data-id="" data-title="#TIL | CSS&#39;s :not([class]) selector" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
@@ -355,6 +355,10 @@ What I didn’t know until now is that you can use a:not([class]) {...} to gener
   </div>
 
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -899,6 +903,25 @@ What I didn’t know until now is that you can use a:not([class]) {...} to gener
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

@@ -33,7 +33,7 @@ The key to achive that in Hexo is the configuration option post_asset_folder: tr
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/Uups-empty-posts/index.html">
+  <meta property="og:url" content="https://kiko.io/post/Uups-empty-posts/">
   <meta property="og:title" content="Uups ... empty posts - kiko.io">
   
   <meta property="og:description" content="Problems with post asset files in Hexo and a solution approach">
@@ -43,7 +43,7 @@ The key to achive that in Hexo is the configuration option post_asset_folder: tr
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/Uups-empty-posts/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/Uups-empty-posts/">
   <meta property="twitter:title" content="Uups ... empty posts - kiko.io">
   
   <meta property="twitter:description" content="Problems with post asset files in Hexo and a solution approach">
@@ -393,15 +393,15 @@ The key to achive that in Hexo is the configuration option post_asset_folder: tr
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clmxrptfc0025lbowhy3q7yyz">
+      <div class="article-permalink" id="article-permalink-clmyvunhv0025kkosd6qe9jac">
     <input class="article-permalink-value" value="https://kiko.io/post/Uups-empty-posts/" 
-           data-id="clmxrptfc0025lbowhy3q7yyz" data-title="Uups ... empty posts" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvunhv0025kkosd6qe9jac" data-title="Uups ... empty posts" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrptfc0025lbowhy3q7yyz");
+        initPermalink("clmyvunhv0025kkosd6qe9jac");
     });
 </script>
 
@@ -412,6 +412,10 @@ The key to achive that in Hexo is the configuration option post_asset_folder: tr
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1157,6 +1161,25 @@ The key to achive that in Hexo is the configuration option post_asset_folder: tr
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

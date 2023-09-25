@@ -33,7 +33,7 @@ Bryce Wray set me on a new path with his post Sweeter searches with Pagefind, in
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/Integration-of-Pagefind-in-Hexo/index.html">
+  <meta property="og:url" content="https://kiko.io/post/Integration-of-Pagefind-in-Hexo/">
   <meta property="og:title" content="Integration of Pagefind in Hexo - kiko.io">
   
   <meta property="og:description" content="Adding a low-bandwidth local search to a static Hexo-powered website">
@@ -43,7 +43,7 @@ Bryce Wray set me on a new path with his post Sweeter searches with Pagefind, in
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/Integration-of-Pagefind-in-Hexo/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/Integration-of-Pagefind-in-Hexo/">
   <meta property="twitter:title" content="Integration of Pagefind in Hexo - kiko.io">
   
   <meta property="twitter:description" content="Adding a low-bandwidth local search to a static Hexo-powered website">
@@ -504,20 +504,20 @@ Bryce Wray set me on a new path with his post Sweeter searches with Pagefind, in
     <div class="article-syndication">
       
           <a class="syndication-link u-syndication fab fa-mastodon" 
-            href="https://indieweb.social/@kiko/109715917785769598" title="Mastodon" rel="syndication" target="_blank"></a>
+            href="https://indieweb.social/@kiko/109715917785769598" title="Syndication on Mastodon" rel="syndication" target="_blank"></a>
       
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clmxrptfz0037lbow8vrad5qp">
+      <div class="article-permalink" id="article-permalink-clmyvunig0037kkosg2el7scn">
     <input class="article-permalink-value" value="https://kiko.io/post/Integration-of-Pagefind-in-Hexo/" 
-           data-id="clmxrptfz0037lbow8vrad5qp" data-title="Integration of Pagefind in Hexo" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvunig0037kkosg2el7scn" data-title="Integration of Pagefind in Hexo" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrptfz0037lbow8vrad5qp");
+        initPermalink("clmyvunig0037kkosg2el7scn");
     });
 </script>
 
@@ -528,6 +528,10 @@ Bryce Wray set me on a new path with his post Sweeter searches with Pagefind, in
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1273,6 +1277,25 @@ Bryce Wray set me on a new path with his post Sweeter searches with Pagefind, in
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

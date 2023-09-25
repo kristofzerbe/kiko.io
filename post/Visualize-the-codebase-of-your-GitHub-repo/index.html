@@ -29,7 +29,7 @@ On the project page Visualizing a codebase, she talks about the advantages of co
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/Visualize-the-codebase-of-your-GitHub-repo/index.html">
+  <meta property="og:url" content="https://kiko.io/post/Visualize-the-codebase-of-your-GitHub-repo/">
   <meta property="og:title" content="Visualize the codebase of your GitHub repo - kiko.io">
   
   <meta property="og:description" content="Try GitHub Next&#39;s repo-vizualizer action for generating a diagram of your codebase">
@@ -39,7 +39,7 @@ On the project page Visualizing a codebase, she talks about the advantages of co
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/Visualize-the-codebase-of-your-GitHub-repo/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/Visualize-the-codebase-of-your-GitHub-repo/">
   <meta property="twitter:title" content="Visualize the codebase of your GitHub repo - kiko.io">
   
   <meta property="twitter:description" content="Try GitHub Next&#39;s repo-vizualizer action for generating a diagram of your codebase">
@@ -395,20 +395,20 @@ On the project page Visualizing a codebase, she talks about the advantages of co
     <div class="article-syndication">
       
           <a class="syndication-link u-syndication fab fa-twitter" 
-            href="https://twitter.com/kristofz/status/1428965811075653636" title="Twitter" rel="syndication" target="_blank"></a>
+            href="https://twitter.com/kristofz/status/1428965811075653636" title="Syndication on Twitter" rel="syndication" target="_blank"></a>
       
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clmxrptfd0027lbow956o52gk">
+      <div class="article-permalink" id="article-permalink-clmyvunhw0027kkos2csf063w">
     <input class="article-permalink-value" value="https://kiko.io/post/Visualize-the-codebase-of-your-GitHub-repo/" 
-           data-id="clmxrptfd0027lbow956o52gk" data-title="Visualize the codebase of your GitHub repo" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvunhw0027kkos2csf063w" data-title="Visualize the codebase of your GitHub repo" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrptfd0027lbow956o52gk");
+        initPermalink("clmyvunhw0027kkos2csf063w");
     });
 </script>
 
@@ -419,6 +419,10 @@ On the project page Visualizing a codebase, she talks about the advantages of co
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1160,6 +1164,25 @@ On the project page Visualizing a codebase, she talks about the advantages of co
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

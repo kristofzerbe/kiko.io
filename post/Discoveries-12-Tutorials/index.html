@@ -29,7 +29,7 @@
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/Discoveries-12-Tutorials/index.html">
+  <meta property="og:url" content="https://kiko.io/post/Discoveries-12-Tutorials/">
   <meta property="og:title" content="Discoveries #12 - Tutorials - kiko.io">
   
   <meta property="og:description" content="Some great articles from CSS masters">
@@ -39,7 +39,7 @@
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/Discoveries-12-Tutorials/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/Discoveries-12-Tutorials/">
   <meta property="twitter:title" content="Discoveries #12 - Tutorials - kiko.io">
   
   <meta property="twitter:description" content="Some great articles from CSS masters">
@@ -485,15 +485,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clmxrptes0018lbow7ljl4tph">
+      <div class="article-permalink" id="article-permalink-clmyvunhc0018kkosggbe90mv">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-12-Tutorials/" 
-           data-id="clmxrptes0018lbow7ljl4tph" data-title="Discoveries #12 - Tutorials" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvunhc0018kkosggbe90mv" data-title="Discoveries #12 - Tutorials" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrptes0018lbow7ljl4tph");
+        initPermalink("clmyvunhc0018kkosggbe90mv");
     });
 </script>
 
@@ -504,6 +504,10 @@
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1239,6 +1243,25 @@
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

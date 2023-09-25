@@ -29,7 +29,7 @@ This small club played only a regional role at all until 1979, when a local busi
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/My-Hometown-My-Club/index.html">
+  <meta property="og:url" content="https://kiko.io/post/My-Hometown-My-Club/">
   <meta property="og:title" content="My Hometown, My Club - kiko.io">
   
   <meta property="og:description" content="How I became a football fan over 50">
@@ -39,7 +39,7 @@ This small club played only a regional role at all until 1979, when a local busi
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/My-Hometown-My-Club/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/My-Hometown-My-Club/">
   <meta property="twitter:title" content="My Hometown, My Club - kiko.io">
   
   <meta property="twitter:description" content="How I became a football fan over 50">
@@ -364,20 +364,20 @@ This small club played only a regional role at all until 1979, when a local busi
     <div class="article-syndication">
       
           <a class="syndication-link u-syndication fab fa-mastodon" 
-            href="https://indieweb.social/@kiko/110917059328457153" title="Mastodon" rel="syndication" target="_blank"></a>
+            href="https://indieweb.social/@kiko/110917059328457153" title="Syndication on Mastodon" rel="syndication" target="_blank"></a>
       
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clmxrptfz0038lbow6c5dfcj0">
+      <div class="article-permalink" id="article-permalink-clmyvunih0038kkosczb585gi">
     <input class="article-permalink-value" value="https://kiko.io/post/My-Hometown-My-Club/" 
-           data-id="clmxrptfz0038lbow6c5dfcj0" data-title="My Hometown, My Club" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvunih0038kkosczb585gi" data-title="My Hometown, My Club" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrptfz0038lbow6c5dfcj0");
+        initPermalink("clmyvunih0038kkosczb585gi");
     });
 </script>
 
@@ -388,6 +388,10 @@ This small club played only a regional role at all until 1979, when a local busi
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1025,6 +1029,25 @@ This small club played only a regional role at all until 1979, when a local busi
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

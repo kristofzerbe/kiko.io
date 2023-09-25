@@ -30,7 +30,7 @@ But the most interesting thing about it, is the following statement from the aut
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/notes/2023/ai-written-mastowall/index.html">
+  <meta property="og:url" content="https://kiko.io/notes/2023/ai-written-mastowall/">
   <meta property="og:title" content="AI written Mastowall 2023 - kiko.io">
   
   <meta property="og:description" content="This morning I stumbled across a Mastodon post that was excited about a Twitterwall-like alternative for Mastodon: Mastowall from @rstockmYes, the we...">
@@ -40,7 +40,7 @@ But the most interesting thing about it, is the following statement from the aut
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/notes/2023/ai-written-mastowall/index.html">
+  <meta property="twitter:url" content="https://kiko.io/notes/2023/ai-written-mastowall/">
   <meta property="twitter:title" content="AI written Mastowall 2023 - kiko.io">
   
   <meta property="twitter:description" content="This morning I stumbled across a Mastodon post that was excited about a Twitterwall-like alternative for Mastodon: Mastowall from @rstockmYes, the we...">
@@ -333,7 +333,7 @@ But the most interesting thing about it, is the following statement from the aut
     <div class="article-syndication">
       
           <a class="syndication-link u-syndication fab fa-mastodon" 
-            href="https://indieweb.social/@kiko/110994589015920362" title="Mastodon" rel="syndication" target="_blank"></a>
+            href="https://indieweb.social/@kiko/110994589015920362" title="Syndication on Mastodon" rel="syndication" target="_blank"></a>
       
     </div>
   
@@ -341,8 +341,8 @@ But the most interesting thing about it, is the following statement from the aut
       <div class="article-permalink" id="article-permalink-">
     <input class="article-permalink-value" value="https://kiko.io/notes/2023/ai-written-mastowall/" 
            data-id="" data-title="AI written Mastowall" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
@@ -355,6 +355,10 @@ But the most interesting thing about it, is the following statement from the aut
   </div>
 
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -899,6 +903,25 @@ But the most interesting thing about it, is the following statement from the aut
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

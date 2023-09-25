@@ -31,7 +31,7 @@ Ok … I needed a solution to install multiple Node.js versions and switch betwe
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/post/Use-and-manage-multiple-Node-js-versions-on-Windows-10/index.html">
+  <meta property="og:url" content="https://kiko.io/post/Use-and-manage-multiple-Node-js-versions-on-Windows-10/">
   <meta property="og:title" content="Use and manage multiple Node.js versions on Windows 10 - kiko.io">
   
   <meta property="og:description" content="For a new project I needed to have Node 14 running on my Windows 10 machine, so installation was done quickly via downloading and running the setup fi...">
@@ -41,7 +41,7 @@ Ok … I needed a solution to install multiple Node.js versions and switch betwe
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/post/Use-and-manage-multiple-Node-js-versions-on-Windows-10/index.html">
+  <meta property="twitter:url" content="https://kiko.io/post/Use-and-manage-multiple-Node-js-versions-on-Windows-10/">
   <meta property="twitter:title" content="Use and manage multiple Node.js versions on Windows 10 - kiko.io">
   
   <meta property="twitter:description" content="For a new project I needed to have Node 14 running on my Windows 10 machine, so installation was done quickly via downloading and running the setup fi...">
@@ -376,15 +376,15 @@ Ok … I needed a solution to install multiple Node.js versions and switch betwe
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clmxrptfb0023lbowe8dg6rkd">
+      <div class="article-permalink" id="article-permalink-clmyvunhu0023kkos30lq6fov">
     <input class="article-permalink-value" value="https://kiko.io/post/Use-and-manage-multiple-Node-js-versions-on-Windows-10/" 
-           data-id="clmxrptfb0023lbowe8dg6rkd" data-title="Use and manage multiple Node.js versions on Windows 10" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+           data-id="clmyvunhu0023kkos30lq6fov" data-title="Use and manage multiple Node.js versions on Windows 10" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clmxrptfb0023lbowe8dg6rkd");
+        initPermalink("clmyvunhu0023kkos30lq6fov");
     });
 </script>
 
@@ -395,6 +395,10 @@ Ok … I needed a solution to install multiple Node.js versions and switch betwe
 
   
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -1146,6 +1150,25 @@ Ok … I needed a solution to install multiple Node.js versions and switch betwe
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

@@ -29,7 +29,7 @@ Add &#34;type&#34;: &#34;module&#34; to package.json and it will work.">
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/notes/2021/TIL-Execute-ES6-module-with-node-js/index.html">
+  <meta property="og:url" content="https://kiko.io/notes/2021/TIL-Execute-ES6-module-with-node-js/">
   <meta property="og:title" content="#TIL | Execute ES6 module with node.js 2021 - kiko.io">
   
   <meta property="og:description" content="When executing a script designed as an ES6 module (f.e. node my-module.js), it will fail with the error Cannot use import statement outside a module....">
@@ -39,7 +39,7 @@ Add &#34;type&#34;: &#34;module&#34; to package.json and it will work.">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/notes/2021/TIL-Execute-ES6-module-with-node-js/index.html">
+  <meta property="twitter:url" content="https://kiko.io/notes/2021/TIL-Execute-ES6-module-with-node-js/">
   <meta property="twitter:title" content="#TIL | Execute ES6 module with node.js 2021 - kiko.io">
   
   <meta property="twitter:description" content="When executing a script designed as an ES6 module (f.e. node my-module.js), it will fail with the error Cannot use import statement outside a module....">
@@ -327,8 +327,8 @@ Add &#34;type&#34;: &#34;module&#34; to package.json and it will work.">
       <div class="article-permalink" id="article-permalink-">
     <input class="article-permalink-value" value="https://kiko.io/notes/2021/TIL-Execute-ES6-module-with-node-js/" 
            data-id="" data-title="#TIL | Execute ES6 module with node.js" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
@@ -341,6 +341,10 @@ Add &#34;type&#34;: &#34;module&#34; to package.json and it will work.">
   </div>
 
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -885,6 +889,25 @@ Add &#34;type&#34;: &#34;module&#34; to package.json and it will work.">
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

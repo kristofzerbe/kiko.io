@@ -31,7 +31,7 @@ foo.aList.?[0] Important: The parentheses for the parameter listing or the index
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/notes/2021/TIL-Optional-Chaining-on-Methods-and-Indexes/index.html">
+  <meta property="og:url" content="https://kiko.io/notes/2021/TIL-Optional-Chaining-on-Methods-and-Indexes/">
   <meta property="og:title" content="#TIL | Optional Chaining on Methods and Indexes 2021 - kiko.io">
   
   <meta property="og:description" content="In ECMAScript 2020 the optional chaining operator was introduced into JavaScript. The question mark right behind the property name helps to prevent nu...">
@@ -41,7 +41,7 @@ foo.aList.?[0] Important: The parentheses for the parameter listing or the index
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/notes/2021/TIL-Optional-Chaining-on-Methods-and-Indexes/index.html">
+  <meta property="twitter:url" content="https://kiko.io/notes/2021/TIL-Optional-Chaining-on-Methods-and-Indexes/">
   <meta property="twitter:title" content="#TIL | Optional Chaining on Methods and Indexes 2021 - kiko.io">
   
   <meta property="twitter:description" content="In ECMAScript 2020 the optional chaining operator was introduced into JavaScript. The question mark right behind the property name helps to prevent nu...">
@@ -339,8 +339,8 @@ foo.aList.?[0]
       <div class="article-permalink" id="article-permalink-">
     <input class="article-permalink-value" value="https://kiko.io/notes/2021/TIL-Optional-Chaining-on-Methods-and-Indexes/" 
            data-id="" data-title="#TIL | Optional Chaining on Methods and Indexes" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
@@ -353,6 +353,10 @@ foo.aList.?[0]
   </div>
 
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -897,6 +901,25 @@ foo.aList.?[0]
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

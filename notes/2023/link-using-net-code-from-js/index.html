@@ -30,7 +30,7 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/notes/2023/link-using-net-code-from-js/index.html">
+  <meta property="og:url" content="https://kiko.io/notes/2023/link-using-net-code-from-js/">
   <meta property="og:title" content="#Link | Using .NET code from JavaScript 2023 - kiko.io">
   
   <meta property="og:description" content="Ever had a fancy calculation written in C# and now you need it in JavaScript? Blazor WebAssembly has been developed to build such bridges and with .NE...">
@@ -40,7 +40,7 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/notes/2023/link-using-net-code-from-js/index.html">
+  <meta property="twitter:url" content="https://kiko.io/notes/2023/link-using-net-code-from-js/">
   <meta property="twitter:title" content="#Link | Using .NET code from JavaScript 2023 - kiko.io">
   
   <meta property="twitter:description" content="Ever had a fancy calculation written in C# and now you need it in JavaScript? Blazor WebAssembly has been developed to build such bridges and with .NE...">
@@ -318,7 +318,7 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
     </header>
 
     <div class="article-entry e-content">
-      <p>Ever had a fancy calculation written in C# and now you need it in JavaScript? Blazor WebAssembly has been developed to build such bridges and with .NET 7 it is very easy to externalize individual functions. With some overhead, but never mind. Thanks for this @<a href="mailto:&#109;&#x65;&#x7a;&#x69;&#97;&#x6e;&#x74;&#x6f;&#117;&#x40;&#104;&#x61;&#x63;&#104;&#121;&#100;&#x65;&#114;&#109;&#x2e;&#105;&#x6f;">&#109;&#x65;&#x7a;&#x69;&#97;&#x6e;&#x74;&#x6f;&#117;&#x40;&#104;&#x61;&#x63;&#104;&#121;&#100;&#x65;&#114;&#109;&#x2e;&#105;&#x6f;</a> …</p>
+      <p>Ever had a fancy calculation written in C# and now you need it in JavaScript? Blazor WebAssembly has been developed to build such bridges and with .NET 7 it is very easy to externalize individual functions. With some overhead, but never mind. Thanks for this @<a href="mailto:&#109;&#101;&#122;&#105;&#97;&#x6e;&#x74;&#111;&#117;&#x40;&#x68;&#97;&#x63;&#x68;&#121;&#100;&#101;&#114;&#x6d;&#x2e;&#105;&#x6f;">&#109;&#101;&#122;&#105;&#97;&#x6e;&#x74;&#111;&#117;&#x40;&#x68;&#97;&#x63;&#x68;&#121;&#100;&#101;&#114;&#x6d;&#x2e;&#105;&#x6f;</a> …</p>
 <p><a href="https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.htm">https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.htm</a></p>
 <p>#NET #Blazor #JavaScript</p>
 
@@ -331,7 +331,7 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
     <div class="article-syndication">
       
           <a class="syndication-link u-syndication fab fa-mastodon" 
-            href="https://indieweb.social/@kiko/109742999808592889" title="Mastodon" rel="syndication" target="_blank"></a>
+            href="https://indieweb.social/@kiko/109742999808592889" title="Syndication on Mastodon" rel="syndication" target="_blank"></a>
       
     </div>
   
@@ -339,8 +339,8 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
       <div class="article-permalink" id="article-permalink-">
     <input class="article-permalink-value" value="https://kiko.io/notes/2023/link-using-net-code-from-js/" 
            data-id="" data-title="#Link | Using .NET code from JavaScript" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
@@ -353,6 +353,10 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
   </div>
 
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -897,6 +901,25 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>

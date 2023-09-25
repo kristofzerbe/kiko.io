@@ -29,7 +29,7 @@ https://granary.io/">
 
     <meta property="og:site_name" content="kiko.io">
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://kiko.io/notes/2022/Morning-Routine-and-IndieWeb/index.html">
+  <meta property="og:url" content="https://kiko.io/notes/2022/Morning-Routine-and-IndieWeb/">
   <meta property="og:title" content="Morning Routine and IndieWeb 2022 - kiko.io">
   
   <meta property="og:description" content="Get up. Make coffee. Grab Smartphone. Read news. Read RSS feeds. It goes like this or something similar every morning and I ALWAYS get stuck on the to...">
@@ -39,7 +39,7 @@ https://granary.io/">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://kiko.io/notes/2022/Morning-Routine-and-IndieWeb/index.html">
+  <meta property="twitter:url" content="https://kiko.io/notes/2022/Morning-Routine-and-IndieWeb/">
   <meta property="twitter:title" content="Morning Routine and IndieWeb 2022 - kiko.io">
   
   <meta property="twitter:description" content="Get up. Make coffee. Grab Smartphone. Read news. Read RSS feeds. It goes like this or something similar every morning and I ALWAYS get stuck on the to...">
@@ -315,7 +315,7 @@ https://granary.io/">
     </header>
 
     <div class="article-entry e-content">
-      <p>Get up. Make coffee. Grab Smartphone. Read news. Read RSS feeds. It goes like this or something similar every morning and I ALWAYS get stuck on the topic of IndieWeb. Surfing around for an hour or so. The topic simply hooked me. Today it was the wonderful work from Ryan Barrett (@<a href="mailto:&#115;&#x6e;&#x61;&#114;&#x66;&#101;&#100;&#46;&#111;&#x72;&#103;&#x40;&#115;&#x6e;&#97;&#x72;&#x66;&#101;&#x64;&#46;&#x6f;&#x72;&#x67;">&#115;&#x6e;&#x61;&#114;&#x66;&#101;&#100;&#46;&#111;&#x72;&#103;&#x40;&#115;&#x6e;&#97;&#x72;&#x66;&#101;&#x64;&#46;&#x6f;&#x72;&#x67;</a>). Ended up thinking what I can do with …</p>
+      <p>Get up. Make coffee. Grab Smartphone. Read news. Read RSS feeds. It goes like this or something similar every morning and I ALWAYS get stuck on the topic of IndieWeb. Surfing around for an hour or so. The topic simply hooked me. Today it was the wonderful work from Ryan Barrett (@<a href="mailto:&#115;&#x6e;&#x61;&#x72;&#x66;&#x65;&#x64;&#x2e;&#x6f;&#114;&#x67;&#x40;&#115;&#110;&#x61;&#114;&#x66;&#101;&#100;&#46;&#x6f;&#x72;&#x67;">&#115;&#x6e;&#x61;&#x72;&#x66;&#x65;&#x64;&#x2e;&#x6f;&#114;&#x67;&#x40;&#115;&#110;&#x61;&#114;&#x66;&#101;&#100;&#46;&#x6f;&#x72;&#x67;</a>). Ended up thinking what I can do with …</p>
 <p><a href="https://granary.io/">https://granary.io/</a></p>
 
     </div>
@@ -327,7 +327,7 @@ https://granary.io/">
     <div class="article-syndication">
       
           <a class="syndication-link u-syndication fab fa-mastodon" 
-            href="https://indieweb.social/@kiko/109471776510837100" title="Mastodon" rel="syndication" target="_blank"></a>
+            href="https://indieweb.social/@kiko/109471776510837100" title="Syndication on Mastodon" rel="syndication" target="_blank"></a>
       
     </div>
   
@@ -335,8 +335,8 @@ https://granary.io/">
       <div class="article-permalink" id="article-permalink-">
     <input class="article-permalink-value" value="https://kiko.io/notes/2022/Morning-Routine-and-IndieWeb/" 
            data-id="" data-title="Morning Routine and IndieWeb" />
-    <a class="article-action action-copy"></a>
-    <a class="article-action action-share"></a>
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
@@ -349,6 +349,10 @@ https://granary.io/">
   </div>
 
   
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share">Share on Mastodon</button>
+</div>
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
@@ -893,6 +897,25 @@ https://granary.io/">
         <div class="contact-face-flip">flip for card</div>
       </div>
     </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
   </div>
 </template>
 </html>
