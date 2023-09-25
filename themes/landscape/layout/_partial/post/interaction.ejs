@@ -48,7 +48,7 @@
     <label for="webmention-form-source">Your Article URL:</label><br>
     <input class="webmention-form-source" type="url" name="source" placeholder="https://your-blog.com/your-article"
       required="">
-    <input type="hidden" name="target" value="<%- post.permalink %>">
+    <input type="hidden" name="target" value="<%= encodeURI(post.permalink) %>">
     <input type="submit" value="Send Webmention">
   </form>
 
