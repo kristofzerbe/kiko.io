@@ -488,7 +488,7 @@
     font-size: 0.9em;
     position: relative
     text-decoration: none
-    padding: 10px 15px
+    padding: 12px
     background-color: color-button
     color: color-button-link
     border-radius: border-radius-small
@@ -510,7 +510,6 @@
 .article-interaction,
 .article-comments,
 .article-webmentions
-  // min-height: 286px
   min-height: 86px 
   margin-top: line-height
   border-top-style: solid
@@ -527,11 +526,31 @@
     line-height: line-height-title
     margin: line-height-title 0
 
+.article-share
+  @extend $base-style
+  margin-top: line-height
+  margin-bottom: (2 * line-height)
+  min-height: auto
+  border-top: none
+  display: flex
+  flex-direction: row-reverse
+  button.share
+    align-content: right
+    text-decoration: none
+    padding: 12px
+    border-radius: 2px
+    border: none
+    color: color-mastodon
+    background-color: color-wm-button-background
+    /[data-theme="dark"] &
+      background-color: dark-color-wm-button-background
+    &:focus
+      outline: none
+
 .article-interaction
   @extend $base-style
   min-height: auto
   border-top: none
-  margin-top: (3 * line-height)
   position: relative
   padding-left: 2rem
   &:before
@@ -824,7 +843,7 @@
       grid-template-rows: auto
       align-items: center
       column-gap: 5px
-      padding: 10px 15px
+      padding: 12px
       border-top-left-radius: 4px
       border-top-right-radius: 4px
       border-width: 1px
@@ -932,7 +951,7 @@
           border-right-color: dark-color-wm-meta-background-own
 
   .wm-content
-    padding: 10px 15px
+    padding: 12px
     margin-left: 60px
     line-height: 1.5
     border-bottom-left-radius: 4px
@@ -972,7 +991,7 @@
     grid-template: "label" "source" "submit"
     grid-template-columns: 1fr
   input
-    padding: 10px 15px
+    padding: 12px
     border-radius: 2px
   label
     grid-area: label

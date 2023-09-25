@@ -61,7 +61,7 @@
 }
 
 .downupPopup-content section {
-  padding: 15px;
+  padding: 20px;
   overflow-x: hidden;
 }
 .downupPopup-content section:first-child {
@@ -99,6 +99,9 @@
 .downupPopup-content section details > div {
   margin: 0 15px 10px;
 }
+.downupPopup-content section p {
+  padding: 10px 0;
+}
 .downupPopup-content section label {
   display: block;
   margin-top: 10px;
@@ -106,6 +109,50 @@
   margin-left: -2px;
   font-family: 'Roboto Mono',monospace;
   font-size: 12px;
+  font-style: italic;
+  opacity: 0.5;
+}
+.downupPopup-content section input,
+.downupPopup-content section textarea,
+.downupPopup-content section button {
+  padding: 12px;
+  border-radius: 2px;
+}
+.downupPopup-content section input,
+.downupPopup-content section textarea {
+  width: 100%;
+  font-size: inherit;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e4e4e4;
+  background-color: #fff;
+}
+[data-theme="dark"] .downupPopup-content section input,
+[data-theme="dark"] .downupPopup-content section textarea {
+  border-color: #333;
+  background-color: #181818;
+}
+.downupPopup-content section button {
+  cursor: pointer;
+  /* border: none; */
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ddd;
+  background-color: #ddd;
+  color: #222;
+}
+[data-theme="dark"] .downupPopup-content section button {
+  border-color: #111;
+  background-color: #111;
+  color: #fff;
+}
+
+.downupPopup-content section input:focus,
+.downupPopup-content section button:focus {
+  outline: none;
+}
+.downupPopup-content section input::placeholder {
   font-style: italic;
   opacity: 0.5;
 }

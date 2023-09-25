@@ -3,7 +3,7 @@
 @import "_util/mixin"
 @import "_util/grid"
 @import "_pagefind"
-@import "_contact"
+@import "_dialog"
 @import "_forkawesome"
 @import "_opensans"
 @import "_sourcecodepro"
@@ -25,12 +25,24 @@ global-reset()
   /[data-theme="dark"] &
     background-color: dark-color-border
 
-input, button
+input, textarea, button, .button
   margin: 0
   padding: 0
+  font-family: Arial, Helvetica, sans-serif
+  font-size: 13px
   &::-moz-focus-inner
     border: 0
     padding: 0
+
+button, .button
+  cursor: pointer
+
+input, textarea
+  &:focus
+    outline: none
+
+textarea
+  resize: none
 
 a
   transition: all ease-out 0.2s
