@@ -25,30 +25,8 @@ global-reset()
   /[data-theme="dark"] &
     background-color: dark-color-border
 
-input, textarea, button
-  margin: 0
-  padding: 0
-  font-family: Arial, Helvetica, sans-serif
-  font-size: 13px
-  &::-moz-focus-inner
-    border: 0
-    padding: 0
-
-button
-  cursor: pointer
-
-input, textarea
-  &:focus
-    outline: none
-
-textarea
-  resize: none
-
-a
-  transition: all ease-out 0.2s
-  color: color-link
-  /[data-theme="dark"] &
-    color: dark-color-link
+html
+  text-size-adjust: none // Andy Bells Modernized Reset
 
 html, body, #container
   height: 100%
@@ -78,9 +56,8 @@ body
     color: dark-color-foreground
     background: dark-color-background
   font: font-size font-sans
-  -webkit-text-size-adjust: 100%
-  @media mq-normal
-    // overflow: scroll !important --- why that, interfers with downupPopup
+  min-height: 100vh // Andy Bells Modernized Reset
+  line-height: line-height // Andy Bells Modernized Reset
 
 .outer
   clearfix()
@@ -102,6 +79,50 @@ body
 
 .hide
   display: none
+
+h1, h2, h3, h4, button, input, label
+  line-height: 1.1 // Andy Bells Modernized Reset
+
+h1, h2, h3, h4
+  text-wrap: balance // Andy Bells Modernized Reset !
+
+ul[role='list'],
+ol[role='list']
+  list-style: none // Andy Bells Modernized Reset
+
+// input, button, textarea, select
+//   font: inherit
+
+input, textarea, button
+  margin: 0
+  padding: 0
+  font-family: Arial, Helvetica, sans-serif
+  font-size: 13px
+  &::-moz-focus-inner
+    border: 0
+    padding: 0
+
+button
+  cursor: pointer
+
+input, textarea
+  &:focus
+    outline: none
+
+textarea
+  resize: none
+
+textarea:not([rows])
+  min-height: 10em // Andy Bells Modernized Reset
+
+a
+  transition: all ease-out 0.2s
+  color: color-link
+  /[data-theme="dark"] &
+    color: dark-color-link
+
+a:not([class])
+  text-decoration-skip-ink: auto // Andy Bells Modernized Reset (not need, because border underline here)
 
 hr.divider
   display: block
@@ -228,7 +249,7 @@ if sidebar is left
 #introduction
   .page-title
     text-align: center
-    font-size: 2.4em
+    font-size: 2.45em
     @media mq-mobile
       font-size: 2em
     margin: 1em auto 0.5em
@@ -254,6 +275,7 @@ if sidebar is left
       z-index: -1
       color: #fff
       opacity: 0.75
+      line-height: 1em
       /[data-theme="dark"] &
         color: #1a1a1a
   &.d0
@@ -284,7 +306,7 @@ if sidebar is left
     .page-content:before
       content: icon-thumbtack
       font-size: 15em
-      top: -4px
+      top: -24px
       left: -106px
       transform: rotate(339deg)
       @media mq-mobile
