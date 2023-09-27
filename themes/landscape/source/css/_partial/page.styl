@@ -503,7 +503,8 @@
       a
         display: grid
         grid-template-columns: 36px max-content auto
-        grid-template-areas: "icon link info"
+        grid-template-rows: auto
+        grid-template-areas: "icon link info" ". size ."
         padding: 0.5rem
         text-decoration: none
         align-items: center
@@ -511,6 +512,10 @@
           background-color: color-hover-background
           /[data-theme="dark"] &
             background-color: dark-color-hover-background
+        span
+          grid-area: link
+        em
+          grid-area: size
       a.atom
         color: #4b81d1
       a.rss
@@ -531,8 +536,6 @@
         background-image: url(/images/rss-alt.svg)
       a.json:before
         background-image: url(/images/jsonfeed.svg)
-        span
-          grid-area: link
       a.site-default:after
         grid-area: info
         display: inline-block

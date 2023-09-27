@@ -25,7 +25,7 @@ hexo.extend.generator.register("dynamic-about", async function(locals) {
       data: page,
       path: path.join(page.name, "index.html"),
       layout: "about"
-  }
+  };
 
   return result;
 

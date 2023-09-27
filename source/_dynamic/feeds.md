@@ -1,6 +1,7 @@
 ---
 title: Feeds
 date: 2023-08-30 14:47:33
+permalink: /feeds
 photograph:
   file: $D50_2414.jpg
   name: Knitting Colors
@@ -18,12 +19,15 @@ On this page you will now find not only both Atom feed variants for my [**Posts*
   <strong>Full Content</strong>
   <a href="/atom.xml" class="atom site-default">
     <span><strong>Atom Feed</strong> (atom.xml)</span>
+    <em>...</em>
   </a>
   <a href="/rss.xml" class="rss">
     <span><strong>RSS 2.0 Feed</strong> (rss.xml)</span>
+    <em>...</em>
   </a>
   <a href="/feed.json" class="json">
     <span><strong>JSON Feed</strong> (feed.json)</span>
+    <em>...</em>
   </a>
 </div>
 
@@ -31,12 +35,15 @@ On this page you will now find not only both Atom feed variants for my [**Posts*
   <strong>Excerpt Only</strong>
   <a href="/atom-excerpt.xml" class="atom">
     <span><strong>Atom Feed</strong> (atom-excerpt.xml)</span>
+    <em>...</em>
   </a>
   <a href="/rss-excerpt.xml" class="rss">
     <span><strong>RSS 2.0 Feed</strong> (rss-excerpt.json)</span>
+    <em>...</em>
   </a>
   <a href="/feed-excerpt.json" class="json">
     <span><strong>JSON Feed</strong> (feed-excerpt.json)</span>
+    <em>...</em>
   </a>
 </div>
 

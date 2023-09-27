@@ -4,13 +4,13 @@ const path = require('path');
 const fs = require('hexo-fs');
 const front = require('hexo-front-matter');
 
-hexo.extend.generator.register("dynamic-console", async function(locals) {
+hexo.extend.generator.register("dynamic-feeds", async function(locals) {
   let config = this.config;
 
-  log.info("Processing dynamic console page...");
+  log.info("Processing dynamic feeds page...");
 
   let page = {};
-  page.name = "console";
+  page.name = "feeds";
 
   // Get MD data
   const mdSource = path.join(config.source_dir, "_dynamic", page.name + ".md");
@@ -24,7 +24,7 @@ hexo.extend.generator.register("dynamic-console", async function(locals) {
   let result = {
       data: page,
       path: path.join(page.name, "index.html"),
-      layout: "console"
+      layout: "feeds"
   };
 
   return result;

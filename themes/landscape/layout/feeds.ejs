@@ -1,0 +1,28 @@
+<% if (page.photograph){ %>
+  <%- partial('_partial/photograph') %>
+<% } %>
+
+<h1 class="page-title"><%= page.title %></h1>
+<% if (page.subtitle) { %>
+<h2 class="page-subtitle"><%= page.subtitle %></h2>
+<% } %>
+
+<div class="page-content">
+  <%- page.content %>
+</div>
+
+<script>
+  let feeds = document.querySelectorAll(".feed-group a");
+  feeds.forEach(eLink => {
+    let url = eLink.getAttribute("href");
+    let eSize = eLink.querySelector("em");
+
+    fetchSizeFromUrl("<%= config.url %>" + url, (size) => {
+      eSize.textContent = eSize.textContent.replace("...", size);
+    });
+    // fetchSizeFromUrlAsync(url).then(size => {
+    //   eSize.textContent = eSize.textContent.replace("...", bytesToSize(size));
+    // });
+    
+  });
+</script>
