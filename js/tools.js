@@ -124,3 +124,29 @@ function syntaxHighlight(json) {
       return '<span class="' + cls + '">' + match + '</span>';
   });
 }
+
+function getSizeFromUrl(url, callback) {
+  const xhr = new XMLHttpRequest();
+  xhr.open('HEAD', url, true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      const fileSize = xhr.getResponseHeader('Content-Length');
+      callback(humanFileSize(fileSize));
+    }
+  };
+  xhr.send();
+}
+function fetchSizeFromUrl(url, callback) {
+  fetch(url, { method: 'HEAD' })
+    .then(response => callback(humanFileSize(response.headers.get("content-length"))));
+}
+async function fetchSizeFromUrlAsync(url) {
+  const response = await fetch(url, { method: 'HEAD' });
+  return response.headers.get("content-length");
+}
+
+//https://stackoverflow.com/questions/10420352/converting-file-size-in-bytes-to-human-readable-string
+function humanFileSize(size) {
+  var i = size == 0 ? 0 : Math.floor(Math.log(size) / Math.log(1024));
+  return (size / Math.pow(1024, i)).toFixed(2) * 1 + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i];
+}
