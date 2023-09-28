@@ -6,12 +6,15 @@ var dpDialog = {
     'options': {
       animation: "ease",
       duration: 400,
+      background: true,
       radiusLeft: "4px",
       radiusRight: "4px",
+      distance: 20, // overruled by 'minContentHeight'
+      minContentHeight: null, // overrules 'distance'
       width: "100%",
       contentScroll: false,
-      contentTransparency: 1,
-      minHeightInPixel: null
+      urlHash: null,
+      contentTransparency: 1 // dialog-only
     },
     'init': function(options) {
       let opt = {...dpDialog.base.options, ...options};
@@ -275,7 +278,6 @@ var dpDialog = {
     dpDialog.base.init({
       headerText: "Contact",
       urlHash: "contact",
-      // distance: 20,
       minContentHeight: 620,
       width: "min(600px, 100%)",
       contentTransparency: 0.33
@@ -306,7 +308,6 @@ var dpDialog = {
     dpDialog.base.init({
       headerText: "Share on Mastodon",
       urlHash: "share",
-      // distance: 60,
       minContentHeight: 400,
       width: "min(600px, 100%)"
     });

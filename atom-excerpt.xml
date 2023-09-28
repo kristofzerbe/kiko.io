@@ -7,7 +7,7 @@
   <logo>https://kiko.io/images/icon-72x72.png</logo>
   <link href="https://kiko.io" />
   <link href="https://kiko.io/atom-excerpt.xml" rel="self" type="application/rss+xml" />
-  <updated>2023-09-15T15:57:40.000Z</updated>
+  <updated>2023-09-28T07:57:54.000Z</updated>
   <author>
     <name>Kristof Zerbe</name>
     <email>kristof.zerbe@gmail.com</email>
@@ -73,20 +73,44 @@
   <category term="Hosting" scheme="https://kiko.io/tags/Hosting/" />
   <category term="Remote" scheme="https://kiko.io/tags/Remote/" />
   <category term="Social Media" scheme="https://kiko.io/tags/Social-Media/" />
+  <category term="Mastodon" scheme="https://kiko.io/tags/Mastodon/" />
   <category term="Office" scheme="https://kiko.io/tags/Office/" />
   <category term="Logging" scheme="https://kiko.io/tags/Logging/" />
   <category term="C#" scheme="https://kiko.io/tags/C/" />
-  <category term="Mastodon" scheme="https://kiko.io/tags/Mastodon/" />
   <category term="Rant" scheme="https://kiko.io/tags/Rant/" />
   <category term="Usability" scheme="https://kiko.io/tags/Usability/" />
   <category term="Git/GitHub" scheme="https://kiko.io/tags/Git-GitHub/" />
   <category term="Meta" scheme="https://kiko.io/tags/Meta/" />
   <category term="Contributing" scheme="https://kiko.io/tags/Contributing/" />
   <category term="Search" scheme="https://kiko.io/tags/Search/" />
+  <category term="JavaScript" scheme="https://kiko.io/tags/JavaScript/" />
   <category term="SVWW" scheme="https://kiko.io/tags/SVWW/" />
   <category term="JSON-LD" scheme="https://kiko.io/tags/JSON-LD/" />
   <category term="2. Bundesliga" scheme="https://kiko.io/tags/2-Bundesliga/" />
   <category term="Concert" scheme="https://kiko.io/tags/Concert/" />
+  <entry>
+    <id>https://kiko.io/post/Mastodon-Share-Bottom-Sheet-Dialog/</id>
+    <title>Mastodon Share Bottom Sheet Dialog</title>
+    <published>2023-09-28T07:57:54.000Z</published>
+    <updated></updated>
+    <link href="https://kiko.io/post/Mastodon-Share-Bottom-Sheet-Dialog/"/>
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kiko.io/images/social-media/Mastodon-Share-Bottom-Sheet-Dialog.thumb.png" height="1200" width="630" />
+    <content type="html">&lt;p&gt;&lt;img src=&#34;https://kiko.io/images/social-media/Mastodon-Share-Bottom-Sheet-Dialog.png&#34; /&gt;&lt;/p&gt;&lt;p&gt;Social media thrives on sharing. Thoughts, experiences, self-dramatizations or even texts or posts from other people. This is especially true for microblogging on (formerly) Twitter and (today) Mastodon. To make this easy, the platforms often offer a SHARE endpoint (URL), such as the famous&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;http://www.twitter.com/share?text=My impossible thoughts on X&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;… or any dirt buttons to collect user data.&lt;/p&gt;
+&lt;p&gt;A few months after the groundbreaking of Mastodon 2016, such a feature was also &lt;a href=&#34;https://github.com/mastodon/mastodon/issues/442&#34;&gt;discussed and implemented&lt;/a&gt; on GitHub and out came: &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;https://&amp;lt;your-instance&amp;gt;/share&amp;amp;text=My benevolent thoughts on the Fediverse&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;But … where Twitter had it easy due to its central structure (twitter.com … period.), we Mastodon users all fidget around on &lt;strong&gt;different instances&lt;/strong&gt;, i.e. each instance has its own &lt;code&gt;/SHARE&lt;/code&gt; endpoint and so it’s a bit harder to stick a share button on your own blog, because you have to ask the user where he lives.&lt;/p&gt;
+&lt;p&gt;Of course, online services like &lt;a href=&#34;https://toot.kytta.dev/&#34;&gt;toot.kytta.dev&lt;/a&gt;, &lt;a href=&#34;https://s2f.kytta.dev/&#34;&gt;s2f.kytta.dev&lt;/a&gt;, &lt;a href=&#34;https://mastodonshare.com/&#34;&gt;mastodonshare.com&lt;/a&gt; sprouted immediately, but also the button providers expanded their portfolio or new ones were launched, like &lt;a href=&#34;https://shareon.js.org/&#34;&gt;shareon.js.org&lt;/a&gt;, &lt;a href=&#34;https://share-on-mastodon.social/&#34;&gt;share-on-mastodon.social&lt;/a&gt;, &lt;a href=&#34;https://www.shareaholic.com/website-tools/social-share-buttons/mastodon/&#34;&gt;shareaholic.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But seriously … does it take an external service to ask the user for an instance name and redirect him to an URL (and run the risk of falling victim to data collection mania)? Because that’s all it is. All of the above do it exactly that way.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/Mastodon-Share-Bottom-Sheet-Dialog/indieweb-social-share.png&#34; alt=&#34;indieweb.social Share&#34;&gt;&lt;/p&gt;
+&lt;p&gt;So we come to the ready-made developer solutions e.g. How-To tutorials. Here, too, there are a lot of hits after a search: &lt;a href=&#34;https://github.com/codesyntax/mastodon-share-button&#34;&gt;Mastodon-share-button (WebComponent)&lt;/a&gt;, &lt;a href=&#34;https://github.com/Aly-ve/Mastodon-share-button&#34;&gt;Mastodon-share-button (JS)&lt;/a&gt;, &lt;a href=&#34;https://www.bentasker.co.uk/posts/documentation/general/adding-a-share-on-mastodon-button-to-a-website.html&#34;&gt;Adding a Share On Mastodon button to a website&lt;/a&gt;, &lt;a href=&#34;https://christianheilmann.com/2023/08/18/adding-a-share-to-mastodon-link-to-any-web-site-and-here/&#34;&gt;Adding a “share to mastodon” link to any web site – and here&lt;/a&gt;, &lt;a href=&#34;&#34;&gt;&lt;/a&gt; … and I’ll join them here for my Hexo-driven blog.&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://kiko.io/post/Mastodon-Share-Bottom-Sheet-Dialog/&#34;&gt;Continue reading &lt;strong&gt;`Mastodon Share Bottom Sheet Dialog`&lt;/strong&gt; on kiko.io ...&lt;/a&gt;&lt;/p&gt;</content>
+    <category term="Tools" scheme="https://kiko.io/categories/Tools/" />
+    <category term="Publishing" scheme="https://kiko.io/tags/Publishing/" />
+    <category term="Social Media" scheme="https://kiko.io/tags/Social-Media/" />
+    <category term="Mastodon" scheme="https://kiko.io/tags/Mastodon/" />
+    <category term="JavaScript" scheme="https://kiko.io/tags/JavaScript/" />
+  </entry>
   <entry>
     <id>https://kiko.io/post/Contribute-with-Conventional-Commits/</id>
     <title>Contribute with Conventional Commits</title>
@@ -398,18 +422,5 @@
     <category term="Hexo" scheme="https://kiko.io/tags/Hexo/" />
     <category term="Search" scheme="https://kiko.io/tags/Search/" />
     <category term="JSON-LD" scheme="https://kiko.io/tags/JSON-LD/" />
-  </entry>
-  <entry>
-    <id>https://kiko.io/post/Radio-Garden/</id>
-    <title>Radio Garden</title>
-    <published>2023-02-01T23:00:00.000Z</published>
-    <updated></updated>
-    <link href="https://kiko.io/post/Radio-Garden/"/>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kiko.io/images/social-media/Radio-Garden.thumb.png" height="1200" width="630" />
-    <content type="html">&lt;p&gt;&lt;img src=&#34;https://kiko.io/images/social-media/Radio-Garden.png&#34; /&gt;&lt;/p&gt;&lt;p&gt;In the age of streaming services, radio may seem out of date, but it still surrounds us constantly, even if we often hardly notice it - in the car, on the public transport, at work or simply at home in the kitchen. One strength of the old medium is that it presents us with music we haven’t heard before, away from our playlists on Spotify or iTunes.&lt;/p&gt;
-&lt;p&gt;The easiest way to rediscover new artists or entire genres of music is to pick a radio station at random. It’s precisely this lack of control, the being at the mercy, the sometimes unpredictable that makes the medium so appealing to many - and with digital streaming, many of the world’s stations are just a tap away.&lt;/p&gt;
-&lt;p&gt;As is so often the case in the modern world, it’s the oversupply that leaves some confused and frustrated. You first have to be able to pick out what you might like from the gigantic haystack of options. For this purpose, there are little helpers that more or less independently suggest what you might listen to. One of them stands out from the crowd because, on the one hand, it does not pursue commercial interests and, on the other hand, it approaches the station search very intuitively: &lt;strong&gt;&lt;a href=&#34;https://radio.garden/&#34;&gt;Radio Garden (https://radio.garden)&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://kiko.io/post/Radio-Garden/&#34;&gt;Continue reading &lt;strong&gt;`Radio Garden`&lt;/strong&gt; on kiko.io ...&lt;/a&gt;&lt;/p&gt;</content>
-    <category term="Tools" scheme="https://kiko.io/categories/Tools/" />
-    <category term="Audio" scheme="https://kiko.io/tags/Audio/" />
   </entry>
 </feed>

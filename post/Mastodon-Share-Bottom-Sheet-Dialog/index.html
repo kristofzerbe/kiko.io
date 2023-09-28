@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Mastodon Share Bottom Sheet Dialog - kiko.io</title>
+  <meta name="author" content="Kristof Zerbe">
+  <meta name="title" content="Mastodon Share Bottom Sheet Dialog - kiko.io">
+  
+  <meta name="description" content="Implement a &#39;Share Post&#39; dialog in Hexo">
+  
+   
+  <meta name="excerpt" content="Social media thrives on sharing. Thoughts, experiences, self-dramatizations or even texts or posts from other people. This is especially true for microblogging on (formerly) Twitter and (today) Mastodon. To make this easy, the platforms often offer a SHARE endpoint (URL), such as the famous
+http://www.twitter.com/share?text=My impossible thoughts on X
+… or any dirt buttons to collect user data.
+A few months after the groundbreaking of Mastodon 2016, such a feature was also discussed and implemented on GitHub and out came: 
+https://&lt;your-instance&gt;/share&amp;text=My benevolent thoughts on the Fediverse
+But … where Twitter had it easy due to its central structure (twitter.com … period.), we Mastodon users all fidget around on different instances, i.e. each instance has its own /SHARE endpoint and so it’s a bit harder to stick a share button on your own blog, because you have to ask the user where he lives.
+Of course, online services like toot.kytta.dev, s2f.kytta.dev, mastodonshare.com sprouted immediately, but also the button providers expanded their portfolio or new ones were launched, like shareon.js.org, share-on-mastodon.social, shareaholic.com.
+But seriously … does it take an external service to ask the user for an instance name and redirect him to an URL (and run the risk of falling victim to data collection mania)? Because that’s all it is. All of the above do it exactly that way. So we come to the ready-made developer solutions e.g. How-To tutorials. Here, too, there are a lot of hits after a search: Mastodon-share-button (WebComponent), Mastodon-share-button (JS), Adding a Share On Mastodon button to a website, Adding a “share to mastodon” link to any web site – and here,  … and I’ll join them here for my Hexo-driven blog.">
+  
+  
+  <link rel="canonical" href="https://kiko.io/post/Mastodon-Share-Bottom-Sheet-Dialog/">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <meta name="theme-color" content="#444">
+
+    
+  <script type="application/ld+json">{"@context":"http://schema.org/","@graph":[{"@type":"Article","@id":"https://kiko.io/post/Mastodon-Share-Bottom-Sheet-Dialog/#article","mainEntityOfPage":{"@id":"https://kiko.io/post/Mastodon-Share-Bottom-Sheet-Dialog/"},"headline":"Mastodon Share Bottom Sheet Dialog - kiko.io","description":"Implement a &#39;Share Post&#39; dialog in Hexo","datePublished":"2023-09-28T07:57:54Z","dateModified":"2023-09-28T07:57:54Z","image":{"@id":"https://kiko.io#image/Mastodon-Share-Bottom-Sheet-Dialog"},"author":{"@id":"https://kiko.io/#person"},"publisher":{"@id":"https://kiko.io/#organization"}},{"@type":"WebPage","@id":"https://kiko.io/post/Mastodon-Share-Bottom-Sheet-Dialog/","url":"https://kiko.io/post/Mastodon-Share-Bottom-Sheet-Dialog/","name":"Mastodon Share Bottom Sheet Dialog - kiko.io","isPartOf":{"@id":"https://kiko.io/#website"},"description":"Implement a &#39;Share Post&#39; dialog in Hexo","inLanguage":"en-US","primaryImageOfPage":{"@id":"https://kiko.io#image/Mastodon-Share-Bottom-Sheet-Dialog"},"image":{"@id":"https://kiko.io#photo/DSC_2903.jpg"}},{"@type":"WebSite","@id":"https://kiko.io/#website","url":"https://kiko.io","name":"kiko.io","description":"Blog about memorable tech stuff by Kristof Zerbe","inLanguage":"en-US","publisher":{"@id":"https://kiko.io/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kiko.io/search/?q={searchTerm}"},"query-input":"required name=searchTerm"}},{"@type":"Organization","@id":"https://kiko.io/#organization","name":"kiko.io","url":"https://kiko.io","logo":"https://kiko.io/images/icon-192x192.png"},{"@type":"Person","@id":"https://kiko.io/#person","name":"Kristof Zerbe","url":"https://kiko.io/about","image":"https://kiko.io/images/kristof-zerbe.png","sameAs":["https://github.com/kristofzerbe","https://www.xing.com/profile/Kristof_Zerbe","https://www.linkedin.com/in/kristof-zerbe-91012510/","https://500px.com/p/kikon","https://indieweb.social/@kiko","https://pixelfed.social/kristofz"]},{"@type":"ImageObject","@id":"https://kiko.io#photo/DSC_2903.jpg","caption":"Guinness Orchestra","url":"https://kiko.io/photos/normal/DSC_2903.jpg","contentUrl":"https://kiko.io/photos/normal/DSC_2903.jpg","discussionUrl":"https://kiko.io/photos/DSC_2903","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}},{"@type":"ImageObject","@id":"https://kiko.io#image/Mastodon-Share-Bottom-Sheet-Dialog","url":"https://kiko.io/images/social-media/Mastodon-Share-Bottom-Sheet-Dialog.png","contentUrl":"https://kiko.io/images/social-media/Mastodon-Share-Bottom-Sheet-Dialog.png","license":"https://creativecommons.org/licenses/by-sa/4.0/","acquireLicensePage":"https://kiko.io/photos","creditText":"Kristof Zerbe","copyrightNotice":"Kristof Zerbe (CC BY-SA 4.0)","creator":{"@id":"https://kiko.io/#person"}}]}</script>
+
+    <meta property="og:site_name" content="kiko.io">
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="https://kiko.io/post/Mastodon-Share-Bottom-Sheet-Dialog/">
+  <meta property="og:title" content="Mastodon Share Bottom Sheet Dialog - kiko.io">
+  
+  <meta property="og:description" content="Implement a &#39;Share Post&#39; dialog in Hexo">
+  
+  <meta property="og:image" content="https://kiko.io/images/social-media/Mastodon-Share-Bottom-Sheet-Dialog.png">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://kiko.io/post/Mastodon-Share-Bottom-Sheet-Dialog/">
+  <meta property="twitter:title" content="Mastodon Share Bottom Sheet Dialog - kiko.io">
+  
+  <meta property="twitter:description" content="Implement a &#39;Share Post&#39; dialog in Hexo">
+  
+  <meta property="twitter:image" content="https://kiko.io/images/social-media/Mastodon-Share-Bottom-Sheet-Dialog.png">
+
+    <link rel="webmention" href="https://webmention.io/kiko.io/webmention" />
+  <link rel="pingback" href="https://webmention.io/kiko.io/xmlrpc" />
+
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
+  <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
+  <link href="https://github.com/kristofzerbe" rel="me authn">
+  <link href="mailto:kristof.zerbe@gmail.com" rel="me authn">
+  
+    <link rel="alternate" href="/atom.xml" title="Mastodon Share Bottom Sheet Dialog - kiko.io" type="application/atom+xml">
+
+  <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-semibold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/opensans/opensans-semibolditalic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Regular.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-It.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Bold.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/css/fonts/forkawesome/forkawesome-webfont.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="preload" as="image" href="/images/hero.jpg" 
+        imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
+
+  
+  <link rel="preload" as="image" href="/photos/normal/DSC_2903.jpg" 
+        imagesrcset="/photos/mobile/DSC_2903.jpg 480w, /photos/tablet/DSC_2903.jpg 768w">
+  
+
+  
+<link rel="stylesheet" href="/css/dist/bundle.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/tools.js"></script>
+
+  
+<script src="/js/dialog.js"></script>
+
+  
+<script src="/js/dist/scroll-timeline.js"></script>
+
+  
+<script src="/js/dist/image-compare-viewer.min.js"></script>
+
+  
+<script src="/js/dist/tiny-slider.min.js"></script>
+
+  
+<script src="/js/dist/macy.js"></script>
+
+
+
+  <script defer type="text/javascript" 
+    src="https://api.pirsch.io/pirsch.js"
+    id="pirschjs"
+    data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>
+  <script type="text/javascript" 
+    src="https://api.pirsch.io/pirsch-events.js"
+    id="pirscheventsjs"
+    data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body id="body">  
+  <div id="container" class="container">
+    <div class="inner-container">
+      <div id="wrap">
+        <header id="header">
+  <a href="#" id="header-photo-link" rel="noopener" ></a>
+  <div id="banner">
+    <div id="header-nav-start"></div>
+    <nav id="header-nav" role="navigation">
+      <ul class="menu">
+        
+          
+          <li class="menu-item menu-item-icon" id="nav-home-link">
+            <a class="sub-nav-link"
+               href="/">
+                <span>Home</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item menu-item-icon" id="nav-search-link">
+            <a class="sub-nav-link"
+               href="/search">
+                <span>Search</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-archives-link">
+            <a class="sub-nav-link"
+               href="/archives">
+                <span>Archives</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-series-link">
+            <a class="sub-nav-link"
+               href="/series">
+                <span>series</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-notes-link">
+            <a class="sub-nav-link"
+               href="/notes">
+                <span>notes</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-photos-link">
+            <a class="sub-nav-link"
+               href="/photos">
+                <span>photos</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-tiny-tools-link">
+            <a class="sub-nav-link"
+               href="/collections/tiny-tools">
+                <span>tiny-tools</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-projects-link">
+            <a class="sub-nav-link"
+               href="/projects">
+                <span>projects</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-about-link">
+            <a class="sub-nav-link"
+               href="/about">
+                <span>About</span>
+              </a>
+          </li>
+        
+          
+          <li class="menu-item" id="nav-feeds-link">
+            <a class="sub-nav-link"
+               href="/feeds">
+                <span>Feeds</span>
+              </a>
+          </li>
+        
+      </ul>
+    </nav>
+    <div id="header-nav-end"></div>
+  </div>
+  <div id="progress"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+        <a href="/" id="logo">
+          <h1 id="title-wrap">
+            <span style="opacity:0.2;">kiko.io</span>
+          </h1>
+        </a>
+      
+        <h2 id="subtitle">
+          Memorable Tech Stuff
+        </h2>
+        <div id="sub-socialmediaimage-link" onclick="copysocialmediaimageLink();"></div>
+        <script>
+          function copysocialmediaimageLink() {
+            let smil = document.querySelector('meta[property="og:image"]').content;
+            copyTextToClipboard(smil);
+          }
+        </script>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        <div id="sub-nav-theme">          
+          <input type="checkbox" id="theme-switch">
+          <label for="theme-switch"></label>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+<script>
+  if (location.pathname === "/") {
+    document.getElementById("nav-home-link").remove();
+  }
+</script>
+        <div id="content" class="outer">
+          <main class="">
+  <style>
+#banner {
+    background-size: cover;
+}
+@media screen and (max-width: 479px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/DSC_2903.jpg"); }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/DSC_2903.jpg"); }
+}
+@media screen and (min-width: 768px) {
+    #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/DSC_2903.jpg"); }    
+}
+</style>
+
+<img id="header-photo" data-pagefind-meta="image[src], image_alt[alt]"
+     src="/photos/normal/DSC_2903.jpg" 
+     alt="Guinness Orchestra"
+     width="0" height="0"/>
+
+
+    <script>
+        var header = document.getElementById("header");
+        header.classList.add("photograph");
+        
+        var photoLink = document.getElementById("header-photo-link");
+        photoLink.href = "/photos/DSC_2903";
+        photoLink.innerHTML = "<strong>Guinness Orchestra</strong>";
+    </script>
+
+
+
+
+<script>
+  var body = document.getElementById("body");
+  body.classList.add("article-view");
+</script>
+  
+<article id="post-2023/Mastodon-Share-Bottom-Sheet-Dialog" data-pagefind-body data-pagefind-meta="type:Article"
+         class="article article-type-post h-entry">
+  
+  <div class="article-meta" data-pagefind-ignore>
+    <div class="h-card p-author" style="display:none">
+      <img class="u-photo" src="/images/kristof-zerbe.png" alt="Kristof Zerbe" />
+      <a class="p-name u-url" href="https://kiko.io" rel="author">Kristof Zerbe</a>
+    </div>
+    <a class="u-url u-uid" href="https://kiko.io/post/Mastodon-Share-Bottom-Sheet-Dialog/" style="display:none;">https://kiko.io/post/Mastodon-Share-Bottom-Sheet-Dialog/</a>
+    <a href="/post/Mastodon-Share-Bottom-Sheet-Dialog/" class="article-date">
+  
+  <time class="published dt-published" data-pagefind-meta="date" 
+        datetime="2023-09-28T07:57:54.000Z">28 Sep 2023</time>
+</a>
+    
+  <div class="article-category p-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+
+
+  
+    <h1 class="article-title p-name" data-pagefind-ignore
+        data-title="Mastodon Share Bottom Sheet Dialog" 
+        data-pagefind-meta="title[data-title]">
+        
+        <span>Mastodon Share Bottom Sheet Dialog</span>
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle p-summary">
+        Implement a &#39;Share Post&#39; dialog in Hexo
+    </h2>
+
+      </header>
+    
+    
+    <div class="article-entry e-content">
+      <p>Social media thrives on sharing. Thoughts, experiences, self-dramatizations or even texts or posts from other people. This is especially true for microblogging on (formerly) Twitter and (today) Mastodon. To make this easy, the platforms often offer a SHARE endpoint (URL), such as the famous</p>
+<p><code>http://www.twitter.com/share?text=My impossible thoughts on X</code></p>
+<p>… or any dirt buttons to collect user data.</p>
+<p>A few months after the groundbreaking of Mastodon 2016, such a feature was also <a href="https://github.com/mastodon/mastodon/issues/442">discussed and implemented</a> on GitHub and out came: </p>
+<p><code>https://&lt;your-instance&gt;/share&amp;text=My benevolent thoughts on the Fediverse</code></p>
+<p>But … where Twitter had it easy due to its central structure (twitter.com … period.), we Mastodon users all fidget around on <strong>different instances</strong>, i.e. each instance has its own <code>/SHARE</code> endpoint and so it’s a bit harder to stick a share button on your own blog, because you have to ask the user where he lives.</p>
+<p>Of course, online services like <a href="https://toot.kytta.dev/">toot.kytta.dev</a>, <a href="https://s2f.kytta.dev/">s2f.kytta.dev</a>, <a href="https://mastodonshare.com/">mastodonshare.com</a> sprouted immediately, but also the button providers expanded their portfolio or new ones were launched, like <a href="https://shareon.js.org/">shareon.js.org</a>, <a href="https://share-on-mastodon.social/">share-on-mastodon.social</a>, <a href="https://www.shareaholic.com/website-tools/social-share-buttons/mastodon/">shareaholic.com</a>.</p>
+<p>But seriously … does it take an external service to ask the user for an instance name and redirect him to an URL (and run the risk of falling victim to data collection mania)? Because that’s all it is. All of the above do it exactly that way.</p>
+<p><img src="/post/Mastodon-Share-Bottom-Sheet-Dialog/indieweb-social-share.png" alt="indieweb.social Share"></p>
+<p>So we come to the ready-made developer solutions e.g. How-To tutorials. Here, too, there are a lot of hits after a search: <a href="https://github.com/codesyntax/mastodon-share-button">Mastodon-share-button (WebComponent)</a>, <a href="https://github.com/Aly-ve/Mastodon-share-button">Mastodon-share-button (JS)</a>, <a href="https://www.bentasker.co.uk/posts/documentation/general/adding-a-share-on-mastodon-button-to-a-website.html">Adding a Share On Mastodon button to a website</a>, <a href="https://christianheilmann.com/2023/08/18/adding-a-share-to-mastodon-link-to-any-web-site-and-here/">Adding a “share to mastodon” link to any web site – and here</a>, <a href=""></a> … and I’ll join them here for my Hexo-driven blog.</p>
+<span id="more"></span>
+
+<hr>
+<h2 id="My-Mastodon-Share-Variant"><a href="#My-Mastodon-Share-Variant" class="headerlink" title="My Mastodon Share Variant"></a>My Mastodon Share Variant</h2><p>It’s really not hard to develop an appealing looking and working JavaScript solution to the “problem”. Where <a href="https://toot.cafe/@codepo8">Christian Heilmann</a> (last link in the list above) relies on a simple <code>window.prompt</code>, I recently introduced my Bottom Sheet dialogs in this blog (<a href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/" title="Show pages meta data (JSON-LD) in Bottom Sheet">here</a> and <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/" title="Extension of downupPopup: Back Button, Escape Key &amp; More">here</a>), which are perfectly suited for this.</p>
+<p>Each shareable post should get a SHARE button that lets a bottom sheet pop out where the user can enter their instance name, which is then remembered for next time, and already contains suggested text (title, description, and url of the post) for the Mastodon toot.</p>
+<h3 id="The-Button"><a href="#The-Button" class="headerlink" title="The Button"></a>The Button</h3><p>In every post the interaction section is rendered and there is now a new button, which calls a new dialog method, described later on:</p>
+<figure class="highlight js"><figcaption><span>themes\landscape\layout\_partial\post\interaction.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">&lt;button onclick=<span class="string">&quot;dialog.shareOnMastodon();&quot;</span> <span class="keyword">class</span>=<span class="string">&quot;share mastodon&quot;</span>&gt;<span class="title class_">Share</span> on <span class="title class_">Mastodon</span>&lt;/button&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="Adding-a-dialog-template-to-the-DOM"><a href="#Adding-a-dialog-template-to-the-DOM" class="headerlink" title="Adding a dialog template to the DOM"></a>Adding a dialog template to the DOM</h3><p>For my dialog I first needed a UI, preferably a template in the DOM to avoid having to fiddle with HTML in the JS code:</p>
+<figure class="highlight html"><figcaption><span>themes\landscape\layout\_partial\templates\mastodon-share-dialog.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span>=<span class="string">&quot;mastodon-share-dialog&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;mastodon-share-content&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;mastodon-share-intro&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/images/mastodon.svg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Mastodon&quot;</span>&gt;</span></span><br><span class="line">        There are many Mastodon instances out there. </span><br><span class="line">        Tell me yours and I will redirect you to the share dialog of your server:</span><br><span class="line">      <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;mastodon-instance&quot;</span>&gt;</span>Your Mastodon Instance<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;mastodon-instance-wrapper&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>https://<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;mastodon-instance&quot;</span> <span class="attr">name</span>=<span class="string">&quot;intance&quot;</span> <span class="attr">required</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;mastodon-text&quot;</span>&gt;</span>Text to share ...<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">&quot;mastodon-text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;text&quot;</span> <span class="attr">rows</span>=<span class="string">&quot;8&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;mastodon-share&quot;</span>&gt;</span>Share<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>The template is embedded in <code>layout.ejs</code> near the closing HTML tag. It contains mainly an INPUT for the instance name, a TEXTAREA for the suggested text and a button for the action. I’ll leave out the styles here, because if you adopt my implementation, the CSS (or Stylus) will be completely different.</p>
+<h3 id="Extending-the-dialog-script"><a href="#Extending-the-dialog-script" class="headerlink" title="Extending the dialog script"></a>Extending the dialog script</h3><p>Ok … let’s extend the <strong>dialog.js</strong> code, I first described <a href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/" title="Show pages meta data (JSON-LD) in Bottom Sheet">here</a>, with a new method as used at the button:</p>
+<figure class="highlight js"><figcaption><span>themes\landscape\source\js\dialog.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dpDialog = &#123; </span><br><span class="line">  <span class="string">&#x27;base&#x27;</span>: &#123; ... &#125;,</span><br><span class="line">  <span class="string">&#x27;init&#x27;</span>: <span class="keyword">function</span>(<span class="params">options</span>) &#123; ... &#125;,</span><br><span class="line">  <span class="string">&#x27;show&#x27;</span>: <span class="keyword">function</span>(<span class="params">callback</span>) &#123; ... &#125;</span><br><span class="line"></span><br><span class="line">  <span class="string">&#x27;shareOnMastodon&#x27;</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123; </span><br><span class="line">     dpDialog.<span class="property">base</span>.<span class="title function_">init</span>(&#123;</span><br><span class="line">      <span class="attr">headerText</span>: <span class="string">&quot;Share on Mastodon&quot;</span>,</span><br><span class="line">      <span class="attr">urlHash</span>: <span class="string">&quot;share&quot;</span>, <span class="comment">// show hash in url</span></span><br><span class="line">      <span class="attr">minContentHeight</span>: <span class="number">400</span>, <span class="comment">// limit height of dialog</span></span><br><span class="line">      <span class="attr">width</span>: <span class="string">&quot;min(600px, 100%)&quot;</span> <span class="comment">// center dialog with max width 600px</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Grab the template and make it a jQuery object</span></span><br><span class="line">  <span class="keyword">let</span> content = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;mastodon-share-dialog&quot;</span>).<span class="property">content</span>.<span class="title function_">cloneNode</span>(<span class="literal">true</span>);</span><br><span class="line">  <span class="keyword">let</span> jContent = $(content);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Read the cookie if the user has already used the dialog ...</span></span><br><span class="line">  <span class="keyword">let</span> instance = <span class="title function_">getCookie</span>(<span class="string">&quot;mastodon-instance&quot;</span>);</span><br><span class="line">  <span class="keyword">if</span> (instance) &#123;</span><br><span class="line">    <span class="comment">// ... and enter it in the INPUT</span></span><br><span class="line">    jContent.<span class="title function_">find</span>(<span class="string">&quot;#mastodon-instance&quot;</span>).<span class="title function_">val</span>(instance);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Create a suggestion text from the page metadata</span></span><br><span class="line">  <span class="keyword">const</span> title = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;meta[name=&quot;title&quot;]&#x27;</span>).<span class="property">content</span>;</span><br><span class="line">  <span class="keyword">const</span> description = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;meta[name=&quot;description&quot;]&#x27;</span>).<span class="property">content</span>;</span><br><span class="line">  <span class="keyword">const</span> permalink = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;link[rel=&quot;canonical&quot;]&#x27;</span>).<span class="property">href</span>;</span><br><span class="line">  jContent.<span class="title function_">find</span>(<span class="string">&quot;#mastodon-text&quot;</span>).<span class="title function_">val</span>(title + <span class="string">&quot;\n\n&quot;</span> + description + <span class="string">&quot;\n\n&quot;</span> + permalink);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Set the BUTTON action ...</span></span><br><span class="line">  jContent.<span class="title function_">find</span>(<span class="string">&quot;#mastodon-share&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params">e</span>) &#123; </span><br><span class="line">    <span class="keyword">const</span> eInstance = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;mastodon-instance&quot;</span>);</span><br><span class="line">    <span class="keyword">const</span> eText = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;mastodon-text&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Let the browser validate the input attribute REQUIRED</span></span><br><span class="line">    <span class="keyword">const</span> isValid = eInstance.<span class="title function_">reportValidity</span>();</span><br><span class="line">    <span class="keyword">if</span> (isValid) &#123;</span><br><span class="line">      <span class="comment">// Save the entered instance name to a cookie</span></span><br><span class="line">      <span class="title function_">setCookie</span>(<span class="string">&quot;mastodon-instance&quot;</span>, eInstance.<span class="property">value</span>);</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Generate the share URL for the instance</span></span><br><span class="line">      <span class="keyword">let</span> shareUrl = <span class="string">`https://<span class="subst">$&#123;eInstance.value&#125;</span>/share?text=<span class="subst">$&#123;<span class="built_in">encodeURIComponent</span>(eText.value)&#125;</span>`</span>;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Open the share URL in a new window and close the dialog</span></span><br><span class="line">      <span class="variable language_">window</span>.<span class="title function_">open</span>(shareUrl, <span class="string">&#x27;_blank&#x27;</span>);</span><br><span class="line">      dpDialog.<span class="property">base</span>.<span class="property">element</span>.<span class="title function_">downupPopup</span>(<span class="string">&quot;close&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Add the dialog to the DOM</span></span><br><span class="line">  jContent.<span class="title function_">appendTo</span>(dpDialog.<span class="property">base</span>.<span class="property">content</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Open the dialog and set the focus in the INPUT</span></span><br><span class="line">  dpDialog.<span class="property">base</span>.<span class="title function_">show</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;mastodon-instance&quot;</span>).<span class="title function_">focus</span>();</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="The-Result"><a href="#The-Result" class="headerlink" title="The Result"></a>The Result</h3><p>This is it … and here you can see the result of my implementation:</p>
+<p><img src="/post/Mastodon-Share-Bottom-Sheet-Dialog/mastodon-share-dialog.gif" alt="Mastodon Share Dialog on kiko.io"></p>
+<p>… or look at the button in the bottom right corner and use it ;)</p>
+<p>As I said, it’s just a tool to make it easier for the user to share your content via a URL of their instance to their audience. There is no external stuff, data collection or influence on what is shared. Just JavaScript, HTML running in the browser and one cookie for convenience.</p>
+<p>You can find all files as usual on the GitHub repo of this blog at <a href="https://github.com/kristofzerbe/kiko.io">https://github.com/kristofzerbe/kiko.io</a></p>
+
+    </div>
+    
+    <footer class="article-footer" data-pagefind-ignore>      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mastodon/" rel="tag">Mastodon</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Publishing/" rel="tag">Publishing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Social-Media/" rel="tag">Social Media</a></li></ul>  
+  </div>
+
+      
+  
+  
+
+      <div class="article-permalink" id="article-permalink-cln3cplvq0039jyol9gzxfng4">
+    <input class="article-permalink-value" value="https://kiko.io/post/Mastodon-Share-Bottom-Sheet-Dialog/" 
+           data-id="cln3cplvq0039jyol9gzxfng4" data-title="Mastodon Share Bottom Sheet Dialog" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("cln3cplvq0039jyol9gzxfng4");
+    });
+</script>
+
+      
+    </footer>
+
+  </div>
+
+  
+  
+
+<div class="article-share" data-pagefind-ignore>
+  <button onclick="dialog.shareOnMastodon();" class="share mastodon">Share on Mastodon</button>
+</div>
+
+<div class="article-interaction" data-pagefind-ignore>
+  <p>
+    You can interact with this article (applause, criticism, whatever) 
+    by mention it in one of your posts, which will also be shown here as a  
+    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+  </p>
+</div>
+
+<div class="article-webmentions" data-pagefind-ignore>
+  <h2>Webmentions</h2>
+
+  <div class="webmentions-placeholder">
+    <p class="wm-placeholder">No Webmentions yet...</p>
+  </div>
+
+  <p class="webmention-form-info">
+    In case your blog software can't send Webmentions, 
+    you can use this form to submit me a mention of this article...
+  </p>
+
+  <form class="webmention-form" action="https://webmention.io/kiko.io>/webmention" name="webmention-form"
+    method="post">
+    <label for="webmention-form-source">Your Article URL:</label><br>
+    <input class="webmention-form-source" type="url" name="source" placeholder="https://your-blog.com/your-article"
+      required="">
+    <input type="hidden" name="target" value="https://kiko.io/post/Mastodon-Share-Bottom-Sheet-Dialog/">
+    <input type="submit" value="Send Webmention">
+  </form>
+
+  <script>
+    window.addEventListener('load', function () {
+      insertWebmentions('2023/Mastodon-Share-Bottom-Sheet-Dialog', 'https://kiko.io', 'Kristof Zerbe');
+    });
+  </script>
+
+  
+
+</div>
+
+
+<div class="article-comments" data-pagefind-ignore>
+  <h2>Comments</h2>
+  <div id="comment-placeholder"></div>
+  <script>
+    window.addEventListener('load', function () {
+      insertUtterancesCommentBlock();
+    });
+  </script>
+</div>
+
+  
+  <div class="article-related">
+    <h2>Related</h2>
+    <div class="archives">
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/">
+        <img class="archive-article-photo" src="/photos/tablet/22-08 Bretagne-Jersey-0683.jpg" alt="Water Numbers" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/" class="archive-article-date">
+  
+  <time class="published dt-published" data-pagefind-meta="date" 
+        datetime="2023-06-11T12:11:45.000Z">11 Jun 2023</time>
+</a>
+      
+  <div class="archive-article-category category-ui/ux">
+    <a class="article-category-link" href="/categories/UI-UX/">UI/UX</a> 
+  </div>
+
+      
+
+
+
+
+      
+
+
+  
+    <h1>
+      <a class="archive-article-title"
+         href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/">Show pages meta data (JSON-LD) in Bottom Sheet</a>
+    </h1>
+  
+
+      
+    <h2 class="archive-article-subtitle">
+        Visualize the generated meta code on your page in a sliding panel for review and information purposes
+    </h2>
+              
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON-LD/" rel="tag">JSON-LD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Meta/" rel="tag">Meta</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Publishing/" rel="tag">Publishing</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">
+        <img class="archive-article-photo" src="/photos/tablet/D50_7484.jpg" alt="Garden Beauties XV" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/" class="archive-article-date">
+  
+  <time class="published dt-published" data-pagefind-meta="date" 
+        datetime="2023-07-04T11:07:38.000Z">04 Jul 2023</time>
+</a>
+      
+  <div class="archive-article-category category-ui/ux">
+    <a class="article-category-link" href="/categories/UI-UX/">UI/UX</a> 
+  </div>
+
+      
+
+
+
+
+      
+
+
+  
+    <h1>
+      <a class="archive-article-title"
+         href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">Extension of downupPopup: Back Button, Escape Key &amp; More</a>
+    </h1>
+  
+
+      
+    <h2 class="archive-article-subtitle">
+        Contributing to Ali Dinçer&#39;s Bottom Sheet project
+    </h2>
+              
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Contributing/" rel="tag">Contributing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UI/" rel="tag">UI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+        
+        <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+    <a href="/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/">
+        <img class="archive-article-photo" src="/photos/tablet/DSC_1936.jpg" alt="Botanical Coexistence" />
+    </a>
+
+    </header>
+    <div class="archive-article-content">
+      <a href="/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/" class="archive-article-date">
+  
+  <time class="published dt-published" data-pagefind-meta="date" 
+        datetime="2022-11-13T16:48:40.000Z">13 Nov 2022</time>
+</a>
+      
+  <div class="archive-article-category category-tools">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
+  </div>
+
+      
+
+
+
+
+      
+
+
+  
+    <h1>
+      <a class="archive-article-title"
+         href="/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/">Syndicate Mastodon Hashtags in your favorite Feed Reader</a>
+    </h1>
+  
+
+                    
+    </div>
+    <div class="archive-article-footer">
+      
+  <div class="archive-article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Collection/" rel="tag">Collection</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mastodon/" rel="tag">Mastodon</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Publishing/" rel="tag">Publishing</a></li></ul>  
+  </div>
+
+    </div>
+</div>
+</article>
+        
+      
+    </div>
+  </div>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/post/Contribute-with-Conventional-Commits/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Contribute with Conventional Commits</div>
+    </a>
+  
+</nav>
+
+  
+
+</article></main>
+          
+            <aside id="sidebar">
+  
+    <div class="widget-wrap">
+    <div class="widget about h-card"><!--http://microformats.org/wiki/h-card-->
+        <div class="avatar">
+            <a href="/about"><img class="u-photo" src="/images/kristof-zerbe.png" alt="Kristof Zerbe"></a>
+            <a href="https://github.com/kristofzerbe" target="_blank" class="fab fa-github" rel="me"></a>
+            <a href="https://www.xing.com/profile/Kristof_Zerbe" target="_blank" class="fab fa-xing" rel="me"></a>
+            <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" target="_blank" class="fab fa-linkedin" rel="me"></a>      
+            <a href="https://500px.com/kikon" target="_blank" class="fab fa-500px" rel="me"></a>
+            <a href="https://indieweb.social/@kiko" target="_blank" class="fab fa-mastodon" rel="me"></a>
+            <a href="https://pixelfed.social/kristofz" target="_blank" class="fab fa-pixelfed" rel="me"></a>
+        </div>
+        <h3 class="p-name">Kristof Zerbe</h3>
+        <p class="p-note">
+            <i class="p-role">Developer & Team Lead</i> located in <i class="p-locality">Wiesbaden</i>, <i class="p-country-name">Germany</i>
+        </p>
+        <a class="u-url u-uid" href="https://kiko.io" style="display:none;"></a>
+    </div>
+</div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            
+              <a href="/post/Mastodon-Share-Bottom-Sheet-Dialog/">Mastodon Share Bottom Sheet Dialog</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/Contribute-with-Conventional-Commits/">Contribute with Conventional Commits</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/Discoveries-26-JavaScript-HowTo-s/">Discoveries #26 - JavaScript HowTo&#39;s</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/Versengold-in-Concert/">Versengold in Concert</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+
+  <div class="widget widget-wrap">
+    <p>
+      Want more? This way ... to the <a href="/archives">archives</a>
+    </p>
+  </div>  
+</aside>
+          
+        </div>
+        <footer id="footer">
+  
+  <div class="outer">
+    <div class="inner">
+
+      <ul id="footer-dots">
+        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+      </ul>
+
+      <div id="footer-info" class="footer-block">
+        &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
+        <span class="dot-space">&#9679;</span>
+        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+      </div>
+
+      <div id="footer-links">
+        
+        <a href="/about">About</a>
+        <span class="dot-space">&#9679;</span>
+        
+        <a href="/impressum">Impressum</a>
+        <span class="dot-space">&#9679;</span>
+        
+        <a href="/feeds">Feeds</a>
+        <span class="dot-space">&#9679;</span>
+        
+        <a href="javascript:dialog.pageMeta();">Page Meta</a>
+      </div>
+
+      <div id="footer-perf">
+        Page loaded in <span class="perf-loadtime">0</span> at <span class="perf-viewport"></span>
+        <script>
+          window.addEventListener("resize", function () {
+            const height = document.documentElement.clientHeight;
+            const width = document.documentElement.clientWidth;
+            document.querySelector("#footer-perf span.perf-viewport").innerHTML = `${width} x ${height}`;
+          });
+          window.addEventListener("load", function () {
+            const pageEnd = performance.mark("pageEnd")
+            const loadTime = pageEnd.startTime / 1000;
+            document.querySelector("#footer-perf span.perf-loadtime").innerHTML = loadTime.toFixed(2);
+            window.dispatchEvent(new Event('resize'));
+          });
+        </script>
+      </div>
+
+      <div id="webring">
+        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+      </div>
+      <script>
+  let isOffline = 'false' === 'true';
+</script>
+
+
+<script src="/js/jquery-3.6.0.min.js"></script>
+
+
+<script src="/js/dist/bundle.min.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+<script src="/js/dist/qr-code-styling.js"></script>
+
+
+<script src="/js/dist/qr-code-styling-options-contact.json" id="qr-code-styling-options" type="application&#x2F;json"></script>
+
+
+<script>
+  //--- eval url hash on load
+  var hash = window.location.hash.substr(1);
+  switch (hash.toLowerCase()) {
+    case "contact":
+      window.addEventListener('load', function () {
+        dialog.contact();
+      });
+      break;
+    case "continue":
+      //has no offset due to fixed header
+      //...document.getElementById("more").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest"});
+      window.scrollTo({
+        behavior: 'smooth',
+        top:
+          document.querySelector("#more").getBoundingClientRect().top -
+          document.body.getBoundingClientRect().top -
+          200,
+      });
+      history.replaceState(null, null, ' '); // remove hash
+    default: break;
+  }
+</script>
+
+<script>
+  /*** DEFINITIONS */
+
+  //HEADER
+  var header = {
+    height: 0,
+    top: 0,
+    offset: 55,
+    photoLinkOpacity: 0,
+    titleFontSize: 0
+  };
+  function initHeader() {
+    $("#header").css("height", ""); //reset inline css
+    $("#header-title").css("top", "");
+    $("#header-photo-link").css("opacity", "");
+    $("#title-wrap").css("font-size", "");
+    header.height = $("#header").height(); //set from given css
+    header.top = parseFloat($("#header-title").css("top"));
+    header.photoLinkOpacity = parseFloat($("#header-photo-link").css("opacity"));
+    header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
+
+    //change subtitle a bit
+    let sub = $("#header").find("#subtitle");
+    let col = sub.css("color");
+    let rpl = `<span style="text-decoration:line-through;color:rgb(120 120 120)" title="not only anymore"><span style="color:${col};opacity:0.75">Tech</span></span>`;
+    let txt = sub.text().trim().replace('Tech', rpl);
+    sub.html(txt);
+
+    scrollHeader();
+  }
+  function scrollHeader() {
+    var h = header.height - header.offset,
+        st = $(document).scrollTop(),  
+        d = (h - st),
+        p = (d / h),
+        hfs = header.titleFontSize / 5 * 3,
+        jSide = $("aside");
+    if (d > 0) {
+      $("#header").css("height", d + header.offset + "px");
+      $("#header-photo-link").css("opacity", header.photoLinkOpacity * p);
+      $("#banner").css("opacity", p);
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1 - p) );
+      $("#header-title").css("top", header.top - (hfs * (1 - p)) + "px");
+      $("#subtitle").css("opacity", p);
+      jSide.css("max-width", "").css("position", "").css("top", "");
+    } else {
+      $("#header").css("height", header.offset + "px");
+      $("#header-photo-link").css("opacity", 0);
+      $("#banner").css("opacity", 0);
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );      
+      $("#header-title").css("top", header.top - (hfs * (1)) + "px");      
+      $("#subtitle").css("opacity", 0);
+      if (window.matchMedia("screen and (min-width: 768px)").matches & window.innerHeight > (jSide.height() + 50)) {
+        jSide.css("max-width", $("aside").width()).css("position", "fixed").css("top", "50px");
+      }
+    }    
+  }
+
+  // IMAGE VIEWPORT
+  function isVisibleInViewPort(e) {
+    var viewTop = $(window).scrollTop();
+    var viewBottom = viewTop + $(window).height();
+  
+    var eTop = $(e).offset().top;
+    var eBottom = eTop + $(e).height();
+  
+    return ((eBottom <= viewBottom) && (eTop >= viewTop));
+  }
+  function initViewportImage() {
+    $(".article-photo, .archive-article-photo, .card-img, .img-link").each(function() {
+      if (isVisibleInViewPort($(this))) {
+        $(this).addClass("in-view");
+      } else {
+        $(this).removeClass("in-view");
+      }
+    });
+  }
+
+  //SCROLL PROGRESS
+  function initScrollProgress() {
+
+    // Create ScrollTimeline
+    const myScrollTimeline = new ScrollTimeline({
+      source: document.scrollingElement,
+      scrollSource: document.scrollingElement, // For legacy implementations
+      orientation: 'block',
+        scrollOffsets: [
+            new CSSUnitValue(0, 'percent'),
+            new CSSUnitValue(100, 'percent'),
+        ],
+    });
+
+    // Animate Progress Bar on Scroll
+    document.querySelector("#progress").animate(
+      {
+        transform: ["scaleX(0)", "scaleX(1)"]
+      },
+      { 
+        duration: 1, 
+        fill: "forwards", 
+        timeline: myScrollTimeline 
+      }
+    );
+  }
+
+  // HORIZONTAL NAV MENU SCROLL
+  function initNavMenuScroll() {
+    const nav = document.querySelector('#header-nav');
+    const menu = nav.querySelector('.menu');
+    const firstMenuItem = menu.querySelector('.menu-item:first-child');
+    const lastMenuItem = menu.querySelector('.menu-item:last-child');
+
+    firstMenuItem.setAttribute("data-scim", "start");
+    lastMenuItem.setAttribute("data-scim", "end");
+    
+    let observer = new IntersectionObserver((entries, observer) => { 
+      entries.forEach(entry => {
+
+        let scimElement = document.querySelector("#header-nav-" + entry.target.getAttribute("data-scim"));
+        if (entry.intersectionRatio != 1) { 
+          scimElement.classList.add("show");
+        } else {
+          scimElement.classList.remove("show");
+        }
+      });
+    }, {threshold: 1});
+    
+    observer.observe(firstMenuItem);
+    observer.observe(lastMenuItem);
+  }
+
+  //THEME
+  function initColorScheme() {
+    /* https://stackoverflow.com/questions/56300132/how-to-over-ride-css-prefers-color-scheme-setting */
+
+    var theme = "light"; //default
+
+    // get last used theme from local cache
+    if (localStorage.getItem("theme")) {
+      if (localStorage.getItem("theme") === "dark") {
+        theme = "dark";
+      }
+    } else if (!window.matchMedia) {
+      return false;
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      theme = "dark";
+    }
+
+    if (theme === "dark") {
+      setThemeDark();
+    } else {
+      setThemeLight();
+    }
+  }
+  function setThemeDark() {
+    localStorage.setItem("theme", "dark");
+    document.documentElement.setAttribute("data-theme", "dark");
+    toggleTheme.checked = true;
+    setCodepenTheme();
+  }
+  function setThemeLight() {
+    localStorage.setItem("theme", "light");
+    document.documentElement.setAttribute("data-theme", "light");
+    toggleTheme.checked = false;
+    setCodepenTheme();
+  }
+  function setCodepenTheme() {
+    //https://codepen.io/kristofzerbe/embed/xxxxx?height=400&default-tab=js,result&theme-id=dark
+    var pens = document.getElementsByClassName("codepen");
+    for (var i = 0; i < pens.length; i++) {
+      var src = pens[i].src;
+      const arr = src.split("?");
+      const params = arr[1].split("&").slice(0, -1);
+      src =
+        arr[0] +
+        "?" +
+        params.join("&") +
+        "&theme-id=" +
+        localStorage.getItem("theme");
+      pens[i].src = src;
+    }
+  }
+
+</script>
+
+<script>
+  /*** EVENTS */
+
+  window.addEventListener('scroll', function() {
+    scrollHeader();
+    initViewportImage();
+  }, { passive: true });
+
+  window.addEventListener('resize', function() {
+    initHeader();
+    initViewportImage();
+  });
+
+  // TOGGLE THEME
+  const toggleTheme = document.querySelector('input#theme-switch[type="checkbox"]');
+  toggleTheme.addEventListener("change", function (e) {
+    if (e.target.checked) { setThemeDark(); } 
+    else { setThemeLight(); }
+  }, false);
+
+  // TOGGLE THEME BY OS
+  var toggleOS = window.matchMedia("(prefers-color-scheme: dark)");
+  toggleOS.addEventListener("change", function (e) {
+    if (e.matches) { setThemeDark(); } 
+    else { setThemeLight(); }
+  });
+
+  /*** INITS */
+
+  initHeader();
+  initColorScheme();
+  initViewportImage();
+  initNavMenuScroll();
+  initScrollProgress();
+
+  // BACK-TO-TOP
+  addBackToTop({ diameter: 30 });
+
+  // MENU-ITEM-SCROLL
+  let pathItem = window.location.pathname.split('/')[1].toLowerCase();
+  if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
+  setTimeout(() => {
+    let e = document.getElementById(`nav-${pathItem}-link`);
+    if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }, 250);
+
+  // AUTOTYPING
+  setTimeout(function() {
+    $("#title-wrap").empty();
+    new AutoTyping({
+      id: 'title-wrap',
+      typeText: ['kiko.io'],
+      textColor: '#fff',
+      typeSpeed: 100,
+      typeDelay: 100,
+      showCursor: false,
+      delete: false,
+      typeInfinity: false
+    }).init();
+  }, 1000);
+
+  //MEDIUM-ZOOM
+  mediumZoom(document.querySelectorAll('img.zoom'), {
+    background: 'rgba(55, 55, 55, 0.5)',
+    margin: 20,
+    scrollOffset: 10
+  });
+
+</script>
+
+
+  <script>
+    //HOOK LINKS FOR PIRSCH EVENT...
+
+    //VSCODE
+    let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));
+    
+  </script>  
+
+    </div>
+  </div>
+</body>
+<template id="contact-dialog">
+  <div class="contact-content">
+    <div class="contact-card">
+      <div class="contact-face face-front">
+        <div class="contact-face-wrapper">
+          <img class="photo" src="/images/kristof-zerbe.png" alt="Kristof Zerbe">
+          <div class="header">
+            <h3>Kristof Zerbe</h3>
+            <h4>Developer & Team Lead</h4>
+            <p>Wiesbaden, Germany</p>
+            <p class="download">
+              <label>Save my contact by<br>downloading my</label>
+              <a href="/kristof-zerbe.vcf" download="kristof-zerbe.vcf" class="fa-icon-download">vCard</a>  
+            </p>
+          </div>
+          <hr class="divider">
+          <div class="info">
+            <p>
+              <label>Mail me at</label>
+              <a href="mailto:kristof.zerbe@gmail.com" class="fa-icon-mail">kristof.zerbe@gmail.com</a>    
+            </p>
+            <p>
+              <label>Call me at</label>
+              <a href="tel:+491716998867" class="fa-icon-phone">+49 171 6998867</a>  
+            </p>
+            <p>
+              <label>Connect with me via</label>
+              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+            </p>
+            <p>
+              <label>Connect with me via</label>
+              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+            </p>
+            <p>
+              <label>Follow me on</label>
+              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+            </p>
+            <p>
+              <label>Review my projects on</label>
+              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+            </p>
+            <p>
+              <label>Review my photos on</label>
+              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+            </p>
+            <p>
+              <label>Comment my photos on</label>
+              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+            </p>
+          </div>
+        </div>
+        <div class="contact-face-flip">flip for qrcode</div>
+      </div>
+      <div class="contact-face face-back">
+        <div class="contact-face-wrapper">
+          <div class="header">
+            <h3>Kristof Zerbe</h3>
+            <h4>kiko.io/#contact</h4>
+          </div>
+          <hr class="divider">
+          <div id="contact-qrcode" class="qrcode"></div>
+        </div>
+        <div class="contact-face-flip">flip for card</div>
+      </div>
+    </div>
+  </div>
+</template>
+<template id="mastodon-share-dialog">
+  <div class="mastodon-share-content">
+    <section>
+      <p id="mastodon-share-intro">
+        <img src="/images/mastodon.svg" alt="Mastodon">
+        There are many Mastodon instances out there. 
+        Tell me yours and I will redirect you to the share dialog of your server:
+      </p>
+      <label for="mastodon-instance">Your Mastodon Instance</label>
+      <div id="mastodon-instance-wrapper">
+        <span>https://</span>
+        <input id="mastodon-instance" name="intance" required />
+      </div>
+      <label for="mastodon-text">Text to share ...</label>
+      <textarea id="mastodon-text" name="text" rows="8"></textarea>
+      <button id="mastodon-share">Share</button>
+    </section>
+  </div>
+</template>
+</html>
