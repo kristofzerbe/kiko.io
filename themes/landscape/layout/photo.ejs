@@ -60,7 +60,13 @@
         <% if (page.status === 'pool') { %>
           <span>Unused (Pool Photo)</span>
         <% } else { %>
-          <span>Used at <%= page.article.type + ((["page", "post"].some(v => page.article.type.includes(v))) ? "" : " page") %> <a href="<%= page.article.url %>"><%= page.article.title %></a></span>
+          <% if (page.article.type === "draft") { %>
+            <span>Used at draft <em><%= page.article.title %></em></span>
+          <% } else { %>
+            <span>Used at <%= page.article.type + ((["page", "post"].some(v => page.article.type.includes(v))) ? "" : " page") %> 
+              <a href="<%= page.article.url %>"><%= page.article.title %></a>
+            </span>
+          <% } %>
         <% } %>
       </li>
       <li>

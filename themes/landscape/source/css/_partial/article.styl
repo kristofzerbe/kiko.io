@@ -529,7 +529,7 @@
 
 .article-share
   @extend $base-style
-  margin-top: line-height
+  // margin-top: line-height
   margin-bottom: (2 * line-height)
   min-height: auto
   border-top: none
@@ -539,14 +539,24 @@
     align-content: right
     text-decoration: none
     padding: 12px
-    border-radius: 2px
     border: none
-    color: color-mastodon
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    transition: all ease-out .2s
+    box-shadow: inset 0 20px 20px -20px color-border-amp
     background-color: color-wm-button-background
     /[data-theme="dark"] &
       background-color: dark-color-wm-button-background
+      box-shadow: inset 0 20px 20px -20px dark-color-border-amp
     &:focus
       outline: none
+    &.mastodon
+      color: color-mastodon
+      &:hover
+        background-color: color-mastodon
+        color: color-hover-background
+        /[data-theme="dark"] &
+          color: dark-color-hover-background
 
 .article-interaction
   @extend $base-style

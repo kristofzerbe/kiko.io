@@ -14,6 +14,7 @@ tags:
   - Mastodon
   - Publishing
   - Collection
+  - Mastodon
 related:
   - Anatomy-of-Service-Worker-Communication
   - Thanks-Dropbox-but-I-m-off

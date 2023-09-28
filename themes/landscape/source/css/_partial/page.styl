@@ -121,7 +121,7 @@
   section
     @extend $block-inner
     position: relative
-    margin: 2em 0
+    margin: 2em 0 0
     padding: 2em
     color: color-default
     /[data-theme="dark"] &
@@ -377,7 +377,7 @@
         color: dark-color-default
       a
         text-decoration: none
-        word-break: break-all
+        // word-break: break-all
         display: inline-block
       // a.icon-link
       //   position: absolute
@@ -477,14 +477,18 @@
           background-color: rgba(65, 117, 212, 0.6)
         &.used.page
           background-color: rgba(95, 158, 160, 0.9)
+        &.used.draft
+          background-color: rgba(240, 75, 75 ,0.5)
         &.used.dynamic
           background-color: rgba(93, 65, 167 ,0.5)
         &.used.anything
-          background-color: rgba(163, 43, 32 ,0.5)
+          background-color: rgba(163, 55, 32 ,0.5)
         &.used.notes
           background-color: rgba(122, 75, 20, 0.5)
         &.pool
           background-color: rgba(95, 95, 95, 0.6)
+        em
+          opacity: 0.5
       &:hover
         .status
           opacity: 1

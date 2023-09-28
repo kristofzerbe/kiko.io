@@ -1,8 +1,12 @@
 <div class="card photo" data-status="<%- item.status %>">
   <% if (item.article){ %>
-  <a class="status <%- item.status %> <%- item.article.type %>" href="<%- item.article.url %>"><%- item.article.title %></a>
+    <% if (item.article.type === "draft"){ %>
+      <span class="status <%- item.status %> <%- item.article.type %>">Draft <em>&rbarr; <%- item.article.title %>)</em></span>
+    <% } else { %>
+      <a class="status <%- item.status %> <%- item.article.type %>" href="<%- item.article.url %>"><%- item.article.title %></a>
+    <% } %>
   <% } else { %>
-  <span class="status <%- item.status %>">unused</span>
+    <span class="status <%- item.status %>">Unused</span>
   <% } %>
   <a class="spotlight card-img" href="/<%= config.photo_dir %>/<%= item.key %>"
        data-title="<%- item.name %>"

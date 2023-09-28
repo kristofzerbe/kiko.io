@@ -12,6 +12,7 @@ categories:
 tags:
   - Social Media
   - Publishing
+  - Mastodon
 related:
   - Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader
   - Hexo-and-the-IndieWeb-Receiving-Webmentions

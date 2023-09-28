@@ -5,6 +5,9 @@ photograph:
   file: 19-07 Schottland-0490.jpg
   name: Fishermans Home
   socialmedia: /static/images/social-media/create-deployment-server-net-based-clients.png
+syndication:
+  - host: Mastodon
+    url: null
 ---
 Deploying .NET clients (WPF or WinForms) under Windows is usually easy, because copying the assemblies is enough, if the client machines have installed the required .NET framework. You can use specialized software packages like [Octopus Deploy](https://octopus.com/), which in the best case integrate into your build pipeline ... or you write your own mechanism to let update the clients itself.
 

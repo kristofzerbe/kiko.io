@@ -5,7 +5,7 @@
   <% if (syn === true) { %>
     <div class="<%= class_name %>">
       <% post.syndication.forEach(function(syn){ %>
-          <a class="syndication-link u-syndication fab fa-<%- syn.host.toLowerCase() %>" 
+          <a class="syndication-link u-syndication fab fa-<%- syn.host?.toLowerCase() %>" 
             href="<%- syn.url %>" title="Syndication on <%- syn.host %>" rel="syndication" target="_blank"></a>
       <% }); %>
     </div>
