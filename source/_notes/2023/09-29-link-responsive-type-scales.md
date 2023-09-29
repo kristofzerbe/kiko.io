@@ -3,16 +3,18 @@ title: "#Link | Responsive type scales"
 date: 2023-09-29
 syndication: 
 - host: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/111150583926797975
 ---
 
 This CSS calculation to create responsive type size by Tobias Ahlin is somewhat the sickest I've ever seen ...
 
-`.container-adaptive {  
+``` css
+.container-adaptive {  
   --font-size: calc(var(--min-size) * 1px + (var(--max-size) - var(--min-size)) * (100cqw - var(--container-min) * 1px) / (var(--container-max) - var(--container-min)));
   
   font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);  
-}`
+}
+```
 
 ... but works great. It would only be nice if it were simpler.
 
