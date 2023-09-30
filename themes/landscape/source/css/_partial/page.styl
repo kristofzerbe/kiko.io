@@ -377,8 +377,11 @@
         color: dark-color-default
       a
         text-decoration: none
-        // word-break: break-all
         display: inline-block
+        &.break
+          overflow-wrap: break-word
+          word-wrap: break-word
+          word-break: break-all /* important to break tiny-tools url's */
       // a.icon-link
       //   position: absolute
       //   right: 0
