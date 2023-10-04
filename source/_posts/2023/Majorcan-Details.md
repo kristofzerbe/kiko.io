@@ -29,33 +29,14 @@ In July I was for a few days with friends on a finca in the south of Mallorca an
 
 Usually the best photos end up unnoticed as {% post_link 2023/Pool-Photo-Generator "pool photos" %} here on my blog until I use one as a header image, but now I make a separate post out of each set before I publish the individual photos on other sites like [500px](https://500px.com/p/kikon) or [Pixelfed](https://pixelfed.social/kristofz).
 
-<a href="/photos/23-07 Mallorca-0300">
-<figure>
-  <img src="23-07 Mallorca-0300.jpg" alt="Lots of Things" class="no-zoom">
-</figure>
-</a>
-
-<a href="/photos/23-07 Mallorca-0305">
-  <figure><img src="23-07 Mallorca-0305.jpg" alt="Mallorquin Letterbox" class="no-zoom"></figure>
-</a>
-<a href="/photos/23-07 Mallorca-0339">
-  <figure><img src="23-07 Mallorca-0339.jpg" alt="Basket Parking" class="no-zoom"></figure>
-</a>
-<a href="/photos/23-07 Mallorca-0342">
-  <figure><img src="23-07 Mallorca-0342.jpg" alt="Aigua Tub" class="no-zoom"></figure>
-</a>
-<a href="/photos/23-07 Mallorca-0357">
-  <figure><img src="23-07 Mallorca-0357.jpg" alt="Tomato Beauties" class="no-zoom"></figure>
-</a>
-<a href="/photos/23-07 Mallorca-0542">
-  <figure><img src="23-07 Mallorca-0542.jpg" alt="Veltins Crown" class="no-zoom"></figure>
-</a>
-<a href="/photos/23-07 Mallorca-0755">
-  <figure><img src="23-07 Mallorca-0755.jpg" alt="Rusty Grate" class="no-zoom"></figure>
-</a>
-<a href="/photos/23-07 Mallorca-0758">
-  <figure><img src="23-07 Mallorca-0758.jpg" alt="Sticker Direction" class="no-zoom"></figure>
-</a>
-<a href="/photos/23-07 Mallorca-0773">
-  <figure><img src="23-07 Mallorca-0773.jpg" alt="Table Greenery" class="no-zoom"></figure>
-</a>
+{% photo_list
+  "23-07 Mallorca-0300|Lots of Things"
+  "23-07 Mallorca-0305|Mallorquin Letterbox"
+  "23-07 Mallorca-0339|Basket Parking"
+  "23-07 Mallorca-0342|Aigua Tub"
+  "23-07 Mallorca-0357|Tomato Beauties"
+  "23-07 Mallorca-0542|Veltins Crown"
+  "23-07 Mallorca-0755|Rusty Grate"
+  "23-07 Mallorca-0758|Sticker Direction"
+  "23-07 Mallorca-0773|Table Greener"
+%}
