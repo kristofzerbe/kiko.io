@@ -4,6 +4,7 @@ function initImageZoom() {
       .find("img")
       .each(function () {
         if ($(this).parent().is("a")) return;
+        if ($(this).parent().is("figure")) return;
   
         if (!$(this).hasClass("no-zoom")) {
           $(this).addClass("zoom");
