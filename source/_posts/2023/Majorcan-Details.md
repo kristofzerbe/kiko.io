@@ -38,5 +38,5 @@ Usually the best photos end up unnoticed as {% post_link 2023/Pool-Photo-Generat
   "23-07 Mallorca-0542|Veltins Crown"
   "23-07 Mallorca-0755|Rusty Grate"
   "23-07 Mallorca-0758|Sticker Direction"
-  "23-07 Mallorca-0773|Table Greener"
+  "23-07 Mallorca-0773|Table Greenery"
 %}
