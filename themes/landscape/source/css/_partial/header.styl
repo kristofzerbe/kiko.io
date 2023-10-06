@@ -209,6 +209,10 @@ $logo-text
 #title-wrap
   font-size: title-size
   line-height: 60px
+  @media mq-mobile
+    font-size: title-size-mobile
+    line-height: title-size-mobile
+
   .typing-placeholder
     border: 0
     margin: -1px
@@ -218,10 +222,14 @@ $logo-text
 
 #subtitle
   @extend $logo-text
+  letter-spacing: 0.7px
   font-size: subtitle-size
   line-height: subtitle-size
   margin-top: (subtitle-size / 3) * 2
-  letter-spacing: 0.7px
+  @media mq-mobile
+    font-size: subtitle-size-mobile
+    line-height: subtitle-size-mobile
+    margin-top: (subtitle-size-mobile / 2)
 
 #sub-socialmediaimage-link
   background: transparent !important

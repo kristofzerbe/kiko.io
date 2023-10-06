@@ -1,0 +1,173 @@
+header
+  position: relative
+  z-index: 999
+  height: header-height-extended
+  @media mq-mobile
+    height: header-height-extended-mobile
+  min-height: header-height-minimum
+  width: 100%
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 75%), url("/images/banner.jpg")
+  background-size: contain
+  background-position: 50% 50%
+  background-blend-mode: normal
+  filter: grayscale(0)
+  transition: filter 1.5s ease
+  color: color-logo
+  /[data-theme="dark"] &
+    color: dark-color-logo
+  &.gray
+    filter: grayscale(1)
+
+  #h-overlay
+    content: ""
+    display: block
+    width: 100%
+    height: 100%
+    background-color: color-base
+    /[data-theme="dark"] &
+      background-color: dark-color-base
+    opacity: 0
+
+  #h-signet
+    position: absolute
+    top: 2rem
+    width: 100%
+    place-items: center
+    text-align: center
+  #h-title,
+  #h-subtitle
+    text-decoration: none
+    font-weight: 400
+  #h-title
+    display: inline-block
+    font-family: font-sans
+    font-size: 1.8rem
+    @media mq-mobile
+      font-size: 1.5rem
+    font-variant: small-caps
+    font-weight: 600
+    color: color-logo
+    letter-spacing: 0.1rem
+  #h-title h1
+    font-weight: inherit
+    margin: 0
+    line-height: 2.75rem
+  #h-subtitle
+    font-size: 0.88rem
+    letter-spacing: 0.066rem
+    margin-block-start: 0.5rem
+    @media mq-mobile
+      font-size: 0.8rem
+      letter-spacing: 0.033rem
+      margin-block-start: 0.25rem
+    em
+      font-style: normal
+      text-decoration: line-through
+      opacity: 0.5
+
+  #h-photo, #h-photo-link  
+    display: none
+  &.photograph #h-photo-link
+    display: block
+  #h-photo-link
+    position: absolute
+    top: 0.5rem
+    right: 100%
+    padding: 0.5rem
+    white-space: nowrap
+    font-size: 90%
+    font-weight: 300
+    text-decoration: none
+    transform: rotate(270deg)
+    transform-origin: right top
+    transition: all 0.2s ease-out
+    color: rgba(255, 255, 255, 0.75)
+    &:hover
+      color: rgba(255, 255, 255, 1)
+    z-index: 99
+
+  #h-commands
+    display: flex
+    flex-direction: row
+    position: absolute
+    top: 0
+    right: 0
+    height: header-height-minimum
+    z-index: 99
+    #h-command-theme
+      padding-block: 0.75rem
+      padding-inline: 1rem
+      font-size: 1.5rem
+      @media mq-mobile
+        padding-block: 0.5rem 
+        padding-inline: 0.75rem
+        font-size: 1.25rem
+      transition: all 0.2s ease-out
+      color: rgba(255, 255, 255, 0.5)
+      &:hover
+        color: rgba(255, 255, 255, 1)
+      #h-theme-switch 
+        display: none
+      #h-theme-switch ~ label
+        display: inline-block
+        cursor: pointer
+    
+    #h-progress
+      position: absolute
+      display: block
+      width: 100%
+      height: 4px
+      bottom: 0
+      transform-origin: 0 50%
+      transform: scaleX(100)
+      background-color: color-highlight
+      /[data-theme="dark"] &
+        background-color: dark-color-highlight
+
+    nav
+      position: absolute
+      left: 0
+      bottom: 0
+      width: 100%
+      height: auto
+      backdrop-filter: blur(5px) brightness(90%)
+      font-size: 2rem
+      #h-menu
+        display: flex
+        list-style: none
+        margin: 0
+        padding: 0
+        width: 100%
+        li.h-menu-item
+          flex-basis: 3rem
+          flex-shrink: 0
+          flex-grow: 0
+          &:first-child
+            margin-inline-start: 0.5rem
+          &.h-menu-item-icon
+            font-family: fa-icons
+            font-size: icon-size
+            text-align: center
+            width: 16px
+            height: 16px
+            padding: 16px 12px
+            position: relative
+            cursor: pointer
+          a
+            color: color-logo
+            /[data-theme="dark"] &
+              color: dark-color-logo
+            font-weight: 600
+            text-decoration: none
+            text-align: center
+            display: block
+            width: 100%
+            padding-block: 0.75rem
+            font-size: 1rem
+            text-transform: uppercase
+            text-overflow: ellipsis
+            white-space: nowrap
+            overflow: hidden
+
+#content
+  padding-top: 1rem
