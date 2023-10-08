@@ -16,6 +16,7 @@ tags:
 related:
   - My-Hometown-My-Club
   - SVWW-vs-Karlsruhe-2023-08-18
+  - SVWW-vs-HSV-2023-10-07
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/110996975032155101

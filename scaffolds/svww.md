@@ -23,12 +23,14 @@ syndication:
 
 <!-- more -->
 
+---
+
 ## The Game
 
 ...
 
 {% image_masonry
-  "PXL....jpg|"
+  "PXL.jpg|"
 %}
 
 
@@ -36,6 +38,8 @@ syndication:
 
 
 &#x21FE;&nbsp;[Match report on kicker.de](https://www.kicker.de/.../spielbericht)
+
+---
 
 ## Conclusion
 
