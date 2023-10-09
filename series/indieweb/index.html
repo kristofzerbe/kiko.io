@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>IndieWeb - kiko.io</title>
+  <title data-area="ANYTHING">IndieWeb - kiko.io</title>
   <meta name="author" content="Kristof Zerbe">
   <meta name="title" content="IndieWeb - kiko.io">
   
@@ -63,11 +63,13 @@
   <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/forkawesome/forkawesome-webfont.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="preload" as="image" href="/images/hero.jpg" 
-        imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
-
   
-
+  <link rel="preload" as="image" id="img-preload" href="/images/hero.jpg" 
+        imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
+  <link rel="preload" as="image" id="photo-preload" href="/images/hero.jpg" 
+        imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
+  
+    
   
 <link rel="stylesheet" href="/css/dist/bundle.min.css">
 
@@ -337,15 +339,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnhknzb3001monotf8j115xs">
+      <div class="article-permalink" id="article-permalink-clnj170th001mkmp48xvcfvnp">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/" 
-           data-id="clnhknzb3001monotf8j115xs" data-title="Hexo and the IndieWeb (Receiving Webmentions)" />
+           data-id="clnj170th001mkmp48xvcfvnp" data-title="Hexo and the IndieWeb (Receiving Webmentions)" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnhknzb3001monotf8j115xs");
+        initPermalink("clnj170th001mkmp48xvcfvnp");
     });
 </script>
 
@@ -432,15 +434,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnhknzb4001nonot1ahk4sxa">
+      <div class="article-permalink" id="article-permalink-clnj170th001nkmp49f2efop4">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb-Sending-Webmentions/" 
-           data-id="clnhknzb4001nonot1ahk4sxa" data-title="Hexo and the IndieWeb (Sending Webmentions)" />
+           data-id="clnj170th001nkmp49f2efop4" data-title="Hexo and the IndieWeb (Sending Webmentions)" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnhknzb4001nonot1ahk4sxa");
+        initPermalink("clnj170th001nkmp49f2efop4");
     });
 </script>
 
@@ -521,15 +523,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnhknzb4001oonotdrg474qh">
+      <div class="article-permalink" id="article-permalink-clnj170ti001okmp40ctq9iur">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb/" 
-           data-id="clnhknzb4001oonotdrg474qh" data-title="Hexo and the IndieWeb" />
+           data-id="clnj170ti001okmp40ctq9iur" data-title="Hexo and the IndieWeb" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnhknzb4001oonotdrg474qh");
+        initPermalink("clnj170ti001okmp40ctq9iur");
     });
 </script>
 
@@ -679,6 +681,9 @@
 
 
 <script src="/js/dist/qr-code-styling.js"></script>
+
+
+<script src="/js/dist/vibrant.min.js"></script>
 
 
 <script src="/js/dist/qr-code-styling-options-contact.json" id="qr-code-styling-options" type="application&#x2F;json"></script>
@@ -866,12 +871,14 @@
     localStorage.setItem("theme", "dark");
     document.documentElement.setAttribute("data-theme", "dark");
     toggleTheme.checked = true;
+    setVibrantColor("dark");
     setCodepenTheme();
   }
   function setThemeLight() {
     localStorage.setItem("theme", "light");
     document.documentElement.setAttribute("data-theme", "light");
     toggleTheme.checked = false;
+    setVibrantColor();
     setCodepenTheme();
   }
   function setCodepenTheme() {
@@ -890,6 +897,37 @@
       pens[i].src = src;
     }
   }
+
+  //VIBRANT COLOR
+ function setVibrantColor(theme) {
+  /* https://jariz.github.io/vibrant.js/
+     https://github.com/Vibrant-Colors/node-vibrant
+     https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
+  */
+  let img = $("#photo-preload").attr("href");
+  Vibrant.from(img).getPalette().then(palette => {
+    let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+    switch (theme) {
+      case "dark":
+        swatch = palette.DarkMuted;
+        break;
+      default:
+        swatch = palette.Muted;
+        break;
+    }
+
+    const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
+    let rgb = _rgbToString(swatch.getRgb()); 
+
+    setTimeout(function() { 
+      if(!$("#header").hasClass("gray")) {
+        $("#header").css("background-color", rgb);
+        $("#footer").css("background-color", rgb);
+        $("#back-to-top").css("background-color", rgb);
+      }
+    }, 500);
+  });
+ }
 
 </script>
 

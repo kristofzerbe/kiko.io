@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>#TIL | Convert backslash into forward slash 2021 - kiko.io</title>
+  <title data-area="NOTE">#TIL | Convert backslash into forward slash 2021 - kiko.io</title>
   <meta name="author" content="Kristof Zerbe">
   <meta name="title" content="#TIL | Convert backslash into forward slash 2021 - kiko.io">
   
@@ -35,7 +35,7 @@ let myPath = path.join(root, &#34;images&#34;, &#34;my-image.jpg&#34;).replace(/
   
   <meta property="og:description" content="While developing Node.js on Windows and dealing with paths, like path.join, the folder separator will be a backslash always. But on the web a forward ...">
   
-  <meta property="og:image" content="">
+  <meta property="og:image" content="https://kiko.io/photos/normal/$DSC_5031.jpg">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter -->
@@ -45,7 +45,7 @@ let myPath = path.join(root, &#34;images&#34;, &#34;my-image.jpg&#34;).replace(/
   
   <meta property="twitter:description" content="While developing Node.js on Windows and dealing with paths, like path.join, the folder separator will be a backslash always. But on the web a forward ...">
   
-  <meta property="twitter:image" content="">
+  <meta property="twitter:image" content="https://kiko.io/photos/normal/$DSC_5031.jpg">
 
     <link rel="webmention" href="https://webmention.io/kiko.io/webmention" />
   <link rel="pingback" href="https://webmention.io/kiko.io/xmlrpc" />
@@ -67,14 +67,13 @@ let myPath = path.join(root, &#34;images&#34;, &#34;my-image.jpg&#34;).replace(/
   <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/forkawesome/forkawesome-webfont.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="preload" as="image" href="/images/hero.jpg" 
-        imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
-
   
-  <link rel="preload" as="image" href="/photos/normal/$DSC_5031.jpg" 
+  <link rel="preload" as="image" id="img-preload" href="/photos/normal/$DSC_5031.jpg" 
+        imagesrcset="/photos/mobile/$DSC_5031.jpg 480w, /photos/tablet/$DSC_5031.jpg 768w">
+  <link rel="preload" as="image" id="photo-preload" href="/photos/normal/$DSC_5031.jpg" 
         imagesrcset="/photos/mobile/$DSC_5031.jpg 480w, /photos/tablet/$DSC_5031.jpg 768w">
   
-
+    
   
 <link rel="stylesheet" href="/css/dist/bundle.min.css">
 
@@ -534,6 +533,9 @@ let myPath = path.join(root, &#34;images&#34;, &#34;my-image.jpg&#34;).replace(/
 <script src="/js/dist/qr-code-styling.js"></script>
 
 
+<script src="/js/dist/vibrant.min.js"></script>
+
+
 <script src="/js/dist/qr-code-styling-options-contact.json" id="qr-code-styling-options" type="application&#x2F;json"></script>
 
 
@@ -719,12 +721,14 @@ let myPath = path.join(root, &#34;images&#34;, &#34;my-image.jpg&#34;).replace(/
     localStorage.setItem("theme", "dark");
     document.documentElement.setAttribute("data-theme", "dark");
     toggleTheme.checked = true;
+    setVibrantColor("dark");
     setCodepenTheme();
   }
   function setThemeLight() {
     localStorage.setItem("theme", "light");
     document.documentElement.setAttribute("data-theme", "light");
     toggleTheme.checked = false;
+    setVibrantColor();
     setCodepenTheme();
   }
   function setCodepenTheme() {
@@ -743,6 +747,37 @@ let myPath = path.join(root, &#34;images&#34;, &#34;my-image.jpg&#34;).replace(/
       pens[i].src = src;
     }
   }
+
+  //VIBRANT COLOR
+ function setVibrantColor(theme) {
+  /* https://jariz.github.io/vibrant.js/
+     https://github.com/Vibrant-Colors/node-vibrant
+     https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
+  */
+  let img = $("#photo-preload").attr("href");
+  Vibrant.from(img).getPalette().then(palette => {
+    let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+    switch (theme) {
+      case "dark":
+        swatch = palette.DarkMuted;
+        break;
+      default:
+        swatch = palette.Muted;
+        break;
+    }
+
+    const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
+    let rgb = _rgbToString(swatch.getRgb()); 
+
+    setTimeout(function() { 
+      if(!$("#header").hasClass("gray")) {
+        $("#header").css("background-color", rgb);
+        $("#footer").css("background-color", rgb);
+        $("#back-to-top").css("background-color", rgb);
+      }
+    }, 500);
+  });
+ }
 
 </script>
 

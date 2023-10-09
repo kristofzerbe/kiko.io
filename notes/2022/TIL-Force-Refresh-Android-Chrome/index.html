@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>#TIL | Force Refresh Android Chrome 2022 - kiko.io</title>
+  <title data-area="NOTE">#TIL | Force Refresh Android Chrome 2022 - kiko.io</title>
   <meta name="author" content="Kristof Zerbe">
   <meta name="title" content="#TIL | Force Refresh Android Chrome 2022 - kiko.io">
   
@@ -37,7 +37,7 @@ Confirm the dialog “Do you really want to reset all local data…” Last thin
   
   <meta property="og:description" content="Reloading a web page in Chrome on Android without letting the browser use it’s cache (hard reload, CTRL + F5 on desktop) isn’t that simple, if you wan...">
   
-  <meta property="og:image" content="">
+  <meta property="og:image" content="https://kiko.io/photos/normal/$21-08-05 Kroatien-3011.jpg">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter -->
@@ -47,7 +47,7 @@ Confirm the dialog “Do you really want to reset all local data…” Last thin
   
   <meta property="twitter:description" content="Reloading a web page in Chrome on Android without letting the browser use it’s cache (hard reload, CTRL + F5 on desktop) isn’t that simple, if you wan...">
   
-  <meta property="twitter:image" content="">
+  <meta property="twitter:image" content="https://kiko.io/photos/normal/$21-08-05 Kroatien-3011.jpg">
 
     <link rel="webmention" href="https://webmention.io/kiko.io/webmention" />
   <link rel="pingback" href="https://webmention.io/kiko.io/xmlrpc" />
@@ -69,14 +69,13 @@ Confirm the dialog “Do you really want to reset all local data…” Last thin
   <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/forkawesome/forkawesome-webfont.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="preload" as="image" href="/images/hero.jpg" 
-        imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
-
   
-  <link rel="preload" as="image" href="/photos/normal/$21-08-05 Kroatien-3011.jpg" 
+  <link rel="preload" as="image" id="img-preload" href="/photos/normal/$21-08-05 Kroatien-3011.jpg" 
+        imagesrcset="/photos/mobile/$21-08-05 Kroatien-3011.jpg 480w, /photos/tablet/$21-08-05 Kroatien-3011.jpg 768w">
+  <link rel="preload" as="image" id="photo-preload" href="/photos/normal/$21-08-05 Kroatien-3011.jpg" 
         imagesrcset="/photos/mobile/$21-08-05 Kroatien-3011.jpg 480w, /photos/tablet/$21-08-05 Kroatien-3011.jpg 768w">
   
-
+    
   
 <link rel="stylesheet" href="/css/dist/bundle.min.css">
 
@@ -550,6 +549,9 @@ Confirm the dialog “Do you really want to reset all local data…” Last thin
 <script src="/js/dist/qr-code-styling.js"></script>
 
 
+<script src="/js/dist/vibrant.min.js"></script>
+
+
 <script src="/js/dist/qr-code-styling-options-contact.json" id="qr-code-styling-options" type="application&#x2F;json"></script>
 
 
@@ -735,12 +737,14 @@ Confirm the dialog “Do you really want to reset all local data…” Last thin
     localStorage.setItem("theme", "dark");
     document.documentElement.setAttribute("data-theme", "dark");
     toggleTheme.checked = true;
+    setVibrantColor("dark");
     setCodepenTheme();
   }
   function setThemeLight() {
     localStorage.setItem("theme", "light");
     document.documentElement.setAttribute("data-theme", "light");
     toggleTheme.checked = false;
+    setVibrantColor();
     setCodepenTheme();
   }
   function setCodepenTheme() {
@@ -759,6 +763,37 @@ Confirm the dialog “Do you really want to reset all local data…” Last thin
       pens[i].src = src;
     }
   }
+
+  //VIBRANT COLOR
+ function setVibrantColor(theme) {
+  /* https://jariz.github.io/vibrant.js/
+     https://github.com/Vibrant-Colors/node-vibrant
+     https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
+  */
+  let img = $("#photo-preload").attr("href");
+  Vibrant.from(img).getPalette().then(palette => {
+    let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+    switch (theme) {
+      case "dark":
+        swatch = palette.DarkMuted;
+        break;
+      default:
+        swatch = palette.Muted;
+        break;
+    }
+
+    const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
+    let rgb = _rgbToString(swatch.getRgb()); 
+
+    setTimeout(function() { 
+      if(!$("#header").hasClass("gray")) {
+        $("#header").css("background-color", rgb);
+        $("#footer").css("background-color", rgb);
+        $("#back-to-top").css("background-color", rgb);
+      }
+    }, 500);
+  });
+ }
 
 </script>
 

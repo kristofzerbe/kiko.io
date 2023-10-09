@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>#Link | Using .NET code from JavaScript 2023 - kiko.io</title>
+  <title data-area="NOTE">#Link | Using .NET code from JavaScript 2023 - kiko.io</title>
   <meta name="author" content="Kristof Zerbe">
   <meta name="title" content="#Link | Using .NET code from JavaScript 2023 - kiko.io">
   
@@ -35,7 +35,7 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
   
   <meta property="og:description" content="Ever had a fancy calculation written in C# and now you need it in JavaScript? Blazor WebAssembly has been developed to build such bridges and with .NE...">
   
-  <meta property="og:image" content="">
+  <meta property="og:image" content="https://kiko.io/photos/normal/$D50_3000.jpg">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter -->
@@ -45,7 +45,7 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
   
   <meta property="twitter:description" content="Ever had a fancy calculation written in C# and now you need it in JavaScript? Blazor WebAssembly has been developed to build such bridges and with .NE...">
   
-  <meta property="twitter:image" content="">
+  <meta property="twitter:image" content="https://kiko.io/photos/normal/$D50_3000.jpg">
 
     <link rel="webmention" href="https://webmention.io/kiko.io/webmention" />
   <link rel="pingback" href="https://webmention.io/kiko.io/xmlrpc" />
@@ -67,14 +67,13 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
   <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/forkawesome/forkawesome-webfont.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="preload" as="image" href="/images/hero.jpg" 
-        imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
-
   
-  <link rel="preload" as="image" href="/photos/normal/$D50_3000.jpg" 
+  <link rel="preload" as="image" id="img-preload" href="/photos/normal/$D50_3000.jpg" 
+        imagesrcset="/photos/mobile/$D50_3000.jpg 480w, /photos/tablet/$D50_3000.jpg 768w">
+  <link rel="preload" as="image" id="photo-preload" href="/photos/normal/$D50_3000.jpg" 
         imagesrcset="/photos/mobile/$D50_3000.jpg 480w, /photos/tablet/$D50_3000.jpg 768w">
   
-
+    
   
 <link rel="stylesheet" href="/css/dist/bundle.min.css">
 
@@ -318,7 +317,7 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
     </header>
 
     <div class="article-entry e-content">
-      <p>Ever had a fancy calculation written in C# and now you need it in JavaScript? Blazor WebAssembly has been developed to build such bridges and with .NET 7 it is very easy to externalize individual functions. With some overhead, but never mind. Thanks for this @<a href="mailto:&#109;&#x65;&#122;&#x69;&#97;&#x6e;&#x74;&#x6f;&#x75;&#x40;&#104;&#x61;&#x63;&#104;&#121;&#x64;&#x65;&#114;&#109;&#x2e;&#x69;&#111;">&#109;&#x65;&#122;&#x69;&#97;&#x6e;&#x74;&#x6f;&#x75;&#x40;&#104;&#x61;&#x63;&#104;&#121;&#x64;&#x65;&#114;&#109;&#x2e;&#x69;&#111;</a> …</p>
+      <p>Ever had a fancy calculation written in C# and now you need it in JavaScript? Blazor WebAssembly has been developed to build such bridges and with .NET 7 it is very easy to externalize individual functions. With some overhead, but never mind. Thanks for this @<a href="mailto:&#109;&#101;&#x7a;&#105;&#x61;&#110;&#116;&#111;&#117;&#64;&#104;&#97;&#x63;&#104;&#121;&#100;&#101;&#x72;&#109;&#x2e;&#105;&#x6f;">&#109;&#101;&#x7a;&#105;&#x61;&#110;&#116;&#111;&#117;&#64;&#104;&#97;&#x63;&#104;&#121;&#100;&#101;&#x72;&#109;&#x2e;&#105;&#x6f;</a> …</p>
 <p><a href="https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.htm">https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.htm</a></p>
 <p>#NET #Blazor #JavaScript</p>
 
@@ -542,6 +541,9 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
 <script src="/js/dist/qr-code-styling.js"></script>
 
 
+<script src="/js/dist/vibrant.min.js"></script>
+
+
 <script src="/js/dist/qr-code-styling-options-contact.json" id="qr-code-styling-options" type="application&#x2F;json"></script>
 
 
@@ -727,12 +729,14 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
     localStorage.setItem("theme", "dark");
     document.documentElement.setAttribute("data-theme", "dark");
     toggleTheme.checked = true;
+    setVibrantColor("dark");
     setCodepenTheme();
   }
   function setThemeLight() {
     localStorage.setItem("theme", "light");
     document.documentElement.setAttribute("data-theme", "light");
     toggleTheme.checked = false;
+    setVibrantColor();
     setCodepenTheme();
   }
   function setCodepenTheme() {
@@ -751,6 +755,37 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
       pens[i].src = src;
     }
   }
+
+  //VIBRANT COLOR
+ function setVibrantColor(theme) {
+  /* https://jariz.github.io/vibrant.js/
+     https://github.com/Vibrant-Colors/node-vibrant
+     https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
+  */
+  let img = $("#photo-preload").attr("href");
+  Vibrant.from(img).getPalette().then(palette => {
+    let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+    switch (theme) {
+      case "dark":
+        swatch = palette.DarkMuted;
+        break;
+      default:
+        swatch = palette.Muted;
+        break;
+    }
+
+    const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
+    let rgb = _rgbToString(swatch.getRgb()); 
+
+    setTimeout(function() { 
+      if(!$("#header").hasClass("gray")) {
+        $("#header").css("background-color", rgb);
+        $("#footer").css("background-color", rgb);
+        $("#back-to-top").css("background-color", rgb);
+      }
+    }, 500);
+  });
+ }
 
 </script>
 
