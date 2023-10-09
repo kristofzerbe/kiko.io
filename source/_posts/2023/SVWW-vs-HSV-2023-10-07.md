@@ -19,7 +19,9 @@ related:
   - My-Hometown-My-Club
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/111199878782019669
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/616643017017178527
 ---
 
 Since my youth I am a (small) fan of the **Hamburger Sportverein (HSV)**. Magath, Hrubesch, Keegan were my sporting heroes back then. This was certainly also related to the fact that the club was one of the best in Europe in the early 80s. Two championships, European Cup victory and a strong team left an impression on me. As the last founding member of the 1. Bundesliga, however, it was always in danger of relegation in the last 10 years and then really relegated to the 2. Bundesliga in 2018 after 55 years. What followed were sad attempts to climb back up. Always so close that the saying prevailed: "How can you tell that it's springtime in Germany? The trees are sprouting and HSV is fucking up the promotion!"
