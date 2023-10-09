@@ -95,6 +95,9 @@
   
 <script src="/js/dist/macy.js"></script>
 
+  
+<script src="/js/dist/vibrant.min.js"></script>
+
 
 
   <script defer type="text/javascript" 
@@ -339,15 +342,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnj170th001mkmp48xvcfvnp">
+      <div class="article-permalink" id="article-permalink-clnj3r423001mk8ova7mn67oi">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/" 
-           data-id="clnj170th001mkmp48xvcfvnp" data-title="Hexo and the IndieWeb (Receiving Webmentions)" />
+           data-id="clnj3r423001mk8ova7mn67oi" data-title="Hexo and the IndieWeb (Receiving Webmentions)" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnj170th001mkmp48xvcfvnp");
+        initPermalink("clnj3r423001mk8ova7mn67oi");
     });
 </script>
 
@@ -434,15 +437,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnj170th001nkmp49f2efop4">
+      <div class="article-permalink" id="article-permalink-clnj3r423001nk8ovc77i8bja">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb-Sending-Webmentions/" 
-           data-id="clnj170th001nkmp49f2efop4" data-title="Hexo and the IndieWeb (Sending Webmentions)" />
+           data-id="clnj3r423001nk8ovc77i8bja" data-title="Hexo and the IndieWeb (Sending Webmentions)" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnj170th001nkmp49f2efop4");
+        initPermalink("clnj3r423001nk8ovc77i8bja");
     });
 </script>
 
@@ -523,15 +526,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnj170ti001okmp40ctq9iur">
+      <div class="article-permalink" id="article-permalink-clnj3r424001ok8ovb5099qe7">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb/" 
-           data-id="clnj170ti001okmp40ctq9iur" data-title="Hexo and the IndieWeb" />
+           data-id="clnj3r424001ok8ovb5099qe7" data-title="Hexo and the IndieWeb" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnj170ti001okmp40ctq9iur");
+        initPermalink("clnj3r424001ok8ovb5099qe7");
     });
 </script>
 
@@ -899,36 +902,31 @@
   }
 
   //VIBRANT COLOR
- function setVibrantColor(theme) {
-  /* https://jariz.github.io/vibrant.js/
-     https://github.com/Vibrant-Colors/node-vibrant
-     https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
-  */
-  let img = $("#photo-preload").attr("href");
-  Vibrant.from(img).getPalette().then(palette => {
-    let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-    switch (theme) {
-      case "dark":
-        swatch = palette.DarkMuted;
-        break;
-      default:
-        swatch = palette.Muted;
-        break;
+  function setVibrantColor(theme) {
+    /* https://jariz.github.io/vibrant.js/
+       https://github.com/Vibrant-Colors/node-vibrant
+       https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
+    */
+    try {
+      let img = $("#photo-preload").attr("href");
+      Vibrant.from(img).getPalette().then(palette => {
+        let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+        switch (theme) {
+          case "dark": swatch = palette.DarkMuted; break;
+          default: swatch = palette.Muted; break;
+        }
+        const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
+        let rgb = _rgbToString(swatch.getRgb()); 
+
+        if(!$("#header").hasClass("no-vibrant")) {
+          $("#header, #footer, #back-to-top").css("background-color", rgb);
+        }
+      });
+      
+    } catch (error) {
+      
     }
-
-    const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
-    let rgb = _rgbToString(swatch.getRgb()); 
-
-    setTimeout(function() { 
-      if(!$("#header").hasClass("gray")) {
-        $("#header").css("background-color", rgb);
-        $("#footer").css("background-color", rgb);
-        $("#back-to-top").css("background-color", rgb);
-      }
-    }, 500);
-  });
- }
-
+  }
 </script>
 
 <script>

@@ -95,6 +95,9 @@
   
 <script src="/js/dist/macy.js"></script>
 
+  
+<script src="/js/dist/vibrant.min.js"></script>
+
 
 
   <script defer type="text/javascript" 
@@ -287,7 +290,7 @@
 
 <h1 id="Verantwortlich-fur-den-Inhalt-gemas-§-55-Abs-2-RStV"><a href="#Verantwortlich-fur-den-Inhalt-gemas-§-55-Abs-2-RStV" class="headerlink" title="Verantwortlich für den Inhalt gemäß § 55 Abs.2 RStV"></a>Verantwortlich für den Inhalt gemäß § 55 Abs.2 RStV</h1><p>Kristof Zerbe<br>Kaiser-Friedrich-Str. 8<br>65193 Wiesbaden</p>
 <p>Mobil: +49 171 6998867</p>
-<p><a href="mailto:&#107;&#x72;&#x69;&#x73;&#116;&#x6f;&#102;&#46;&#x7a;&#x65;&#x72;&#x62;&#x65;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#111;&#109;">&#107;&#x72;&#x69;&#x73;&#116;&#x6f;&#102;&#46;&#x7a;&#x65;&#x72;&#x62;&#x65;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
+<p><a href="mailto:&#x6b;&#114;&#x69;&#115;&#x74;&#x6f;&#x66;&#x2e;&#x7a;&#101;&#114;&#98;&#101;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;">&#x6b;&#114;&#x69;&#115;&#x74;&#x6f;&#x66;&#x2e;&#x7a;&#101;&#114;&#98;&#101;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;</a></p>
 </section>
 
 <section>
@@ -667,36 +670,31 @@
   }
 
   //VIBRANT COLOR
- function setVibrantColor(theme) {
-  /* https://jariz.github.io/vibrant.js/
-     https://github.com/Vibrant-Colors/node-vibrant
-     https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
-  */
-  let img = $("#photo-preload").attr("href");
-  Vibrant.from(img).getPalette().then(palette => {
-    let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-    switch (theme) {
-      case "dark":
-        swatch = palette.DarkMuted;
-        break;
-      default:
-        swatch = palette.Muted;
-        break;
+  function setVibrantColor(theme) {
+    /* https://jariz.github.io/vibrant.js/
+       https://github.com/Vibrant-Colors/node-vibrant
+       https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
+    */
+    try {
+      let img = $("#photo-preload").attr("href");
+      Vibrant.from(img).getPalette().then(palette => {
+        let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+        switch (theme) {
+          case "dark": swatch = palette.DarkMuted; break;
+          default: swatch = palette.Muted; break;
+        }
+        const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
+        let rgb = _rgbToString(swatch.getRgb()); 
+
+        if(!$("#header").hasClass("no-vibrant")) {
+          $("#header, #footer, #back-to-top").css("background-color", rgb);
+        }
+      });
+      
+    } catch (error) {
+      
     }
-
-    const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
-    let rgb = _rgbToString(swatch.getRgb()); 
-
-    setTimeout(function() { 
-      if(!$("#header").hasClass("gray")) {
-        $("#header").css("background-color", rgb);
-        $("#footer").css("background-color", rgb);
-        $("#back-to-top").css("background-color", rgb);
-      }
-    }, 500);
-  });
- }
-
+  }
 </script>
 
 <script>

@@ -98,6 +98,9 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
   
 <script src="/js/dist/macy.js"></script>
 
+  
+<script src="/js/dist/vibrant.min.js"></script>
+
 
 
   <script defer type="text/javascript" 
@@ -354,12 +357,12 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
 
 <p><strong>Live Output:</strong></p>
 
-      <div class="image-masonry" id="image-masonry-jjeagr">
+      <div class="image-masonry" id="image-masonry-jpjiv0">
         <div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0053.jpg" alt="Thomas' Ruby Prince I" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/_D50_3251.jpg" alt="No Name" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0086.jpg" alt="Thomas' German Flag" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_1147.jpg" alt="Poppy Green" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0075.jpg" alt="Thomas Wild Tulips" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_7474.jpg" alt="Garden Beauties XIV" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_4451.jpg" alt="Garden Beauties I" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_1577.jpg" alt="Floral Magic XIV" /></div>
       </div>
       <script>
         let macy = new Macy({
-          container: '#image-masonry-jjeagr',
+          container: '#image-masonry-jpjiv0',
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -404,15 +407,15 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnj170ua0036kmp4014zb954">
+      <div class="article-permalink" id="article-permalink-clnj3r42p0036k8ov2n52306z">
     <input class="article-permalink-value" value="https://kiko.io/post/Image-Masonry-Tag-Plugin-for-Hexo/" 
-           data-id="clnj170ua0036kmp4014zb954" data-title="Image Masonry Tag Plugin for Hexo" />
+           data-id="clnj3r42p0036k8ov2n52306z" data-title="Image Masonry Tag Plugin for Hexo" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnj170ua0036kmp4014zb954");
+        initPermalink("clnj3r42p0036k8ov2n52306z");
     });
 </script>
 
@@ -1027,36 +1030,31 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
   }
 
   //VIBRANT COLOR
- function setVibrantColor(theme) {
-  /* https://jariz.github.io/vibrant.js/
-     https://github.com/Vibrant-Colors/node-vibrant
-     https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
-  */
-  let img = $("#photo-preload").attr("href");
-  Vibrant.from(img).getPalette().then(palette => {
-    let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-    switch (theme) {
-      case "dark":
-        swatch = palette.DarkMuted;
-        break;
-      default:
-        swatch = palette.Muted;
-        break;
+  function setVibrantColor(theme) {
+    /* https://jariz.github.io/vibrant.js/
+       https://github.com/Vibrant-Colors/node-vibrant
+       https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
+    */
+    try {
+      let img = $("#photo-preload").attr("href");
+      Vibrant.from(img).getPalette().then(palette => {
+        let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+        switch (theme) {
+          case "dark": swatch = palette.DarkMuted; break;
+          default: swatch = palette.Muted; break;
+        }
+        const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
+        let rgb = _rgbToString(swatch.getRgb()); 
+
+        if(!$("#header").hasClass("no-vibrant")) {
+          $("#header, #footer, #back-to-top").css("background-color", rgb);
+        }
+      });
+      
+    } catch (error) {
+      
     }
-
-    const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
-    let rgb = _rgbToString(swatch.getRgb()); 
-
-    setTimeout(function() { 
-      if(!$("#header").hasClass("gray")) {
-        $("#header").css("background-color", rgb);
-        $("#footer").css("background-color", rgb);
-        $("#back-to-top").css("background-color", rgb);
-      }
-    }, 500);
-  });
- }
-
+  }
 </script>
 
 <script>

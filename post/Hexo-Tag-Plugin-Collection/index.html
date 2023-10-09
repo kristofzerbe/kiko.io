@@ -100,6 +100,9 @@ On the Github page you can find all the info on how to use the plugins. In this 
   
 <script src="/js/dist/macy.js"></script>
 
+  
+<script src="/js/dist/vibrant.min.js"></script>
+
 
 
   <script defer type="text/javascript" 
@@ -539,7 +542,7 @@ On the Github page you can find all the info on how to use the plugins. In this 
 
 <p><strong>Live Output:</strong></p>
 
-    <div id="image-compare-ct7bv8">
+    <div id="image-compare-97g96p">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Hexo-Tag-Plugin-Collection/example-image_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Hexo-Tag-Plugin-Collection/example-image_PRESET.jpg" alt="" />
     </div>
@@ -548,7 +551,7 @@ On the Github page you can find all the info on how to use the plugins. In this 
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-ct7bv8"),
+      new ImageCompare(document.getElementById("image-compare-97g96p"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -590,12 +593,12 @@ On the Github page you can find all the info on how to use the plugins. In this 
 
 <p><strong>Live Output:</strong></p>
 
-      <div class="image-slider" id="image-slide-s2pt16">
+      <div class="image-slider" id="image-slide-fjy82t">
         <div><img src="/post/Hexo-Tag-Plugin-Collection/example-image_ORIGINAL.jpg" alt="Original" /></div><div><img src="/post/Hexo-Tag-Plugin-Collection/example-image_PRESET.jpg" alt="Lightroom Preset" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-s2pt16",
+          container: "#image-slide-fjy82t",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -652,15 +655,15 @@ On the Github page you can find all the info on how to use the plugins. In this 
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnj170tg001lkmp42qijbsie">
+      <div class="article-permalink" id="article-permalink-clnj3r423001lk8ov4uef86nd">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-Tag-Plugin-Collection/" 
-           data-id="clnj170tg001lkmp42qijbsie" data-title="Hexo Tag Plugin Collection" />
+           data-id="clnj3r423001lk8ov4uef86nd" data-title="Hexo Tag Plugin Collection" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnj170tg001lkmp42qijbsie");
+        initPermalink("clnj3r423001lk8ov4uef86nd");
     });
 </script>
 
@@ -1275,36 +1278,31 @@ On the Github page you can find all the info on how to use the plugins. In this 
   }
 
   //VIBRANT COLOR
- function setVibrantColor(theme) {
-  /* https://jariz.github.io/vibrant.js/
-     https://github.com/Vibrant-Colors/node-vibrant
-     https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
-  */
-  let img = $("#photo-preload").attr("href");
-  Vibrant.from(img).getPalette().then(palette => {
-    let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-    switch (theme) {
-      case "dark":
-        swatch = palette.DarkMuted;
-        break;
-      default:
-        swatch = palette.Muted;
-        break;
+  function setVibrantColor(theme) {
+    /* https://jariz.github.io/vibrant.js/
+       https://github.com/Vibrant-Colors/node-vibrant
+       https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
+    */
+    try {
+      let img = $("#photo-preload").attr("href");
+      Vibrant.from(img).getPalette().then(palette => {
+        let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+        switch (theme) {
+          case "dark": swatch = palette.DarkMuted; break;
+          default: swatch = palette.Muted; break;
+        }
+        const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
+        let rgb = _rgbToString(swatch.getRgb()); 
+
+        if(!$("#header").hasClass("no-vibrant")) {
+          $("#header, #footer, #back-to-top").css("background-color", rgb);
+        }
+      });
+      
+    } catch (error) {
+      
     }
-
-    const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
-    let rgb = _rgbToString(swatch.getRgb()); 
-
-    setTimeout(function() { 
-      if(!$("#header").hasClass("gray")) {
-        $("#header").css("background-color", rgb);
-        $("#footer").css("background-color", rgb);
-        $("#back-to-top").css("background-color", rgb);
-      }
-    }, 500);
-  });
- }
-
+  }
 </script>
 
 <script>

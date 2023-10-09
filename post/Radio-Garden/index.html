@@ -99,6 +99,9 @@ As is so often the case in the modern world, it’s the oversupply that leaves s
   
 <script src="/js/dist/macy.js"></script>
 
+  
+<script src="/js/dist/vibrant.min.js"></script>
+
 
 
   <script defer type="text/javascript" 
@@ -349,12 +352,12 @@ As is so often the case in the modern world, it’s the oversupply that leaves s
 <p>The British <a href="http://puckey.studio/"><strong>Jonathan Puckey</strong> and his studio</a> played a key role in the project and its technical implementation. In several iteration stages, this resulted in the web app radio.garden, which Puckey is still in charge of today. Instead of maps, the team from Amsterdam used satellite images from the beginning to illustrate that radio signals have always had the power to cross borders.</p>
 <p>Radio Garden is free, and you don’t need to register, log in, or even provide an email address. Nothing. Open up, select a station, listen to the radio.</p>
 
-      <div class="image-slider" id="image-slide-38316g">
+      <div class="image-slider" id="image-slide-cd3uhx">
         <div><img src="/post/Radio-Garden/radio-garden-screen-1.png" alt="Screenshot Radio Garden" /></div><div><img src="/post/Radio-Garden/radio-garden-screen-3.png" alt="Screenshot Radio Garden" /></div><div><img src="/post/Radio-Garden/radio-garden-screen-4.png" alt="Screenshot Radio Garden" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-38316g",
+          container: "#image-slide-cd3uhx",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -386,20 +389,20 @@ As is so often the case in the modern world, it’s the oversupply that leaves s
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnj170uf003fkmp4bqz7d1kd">
+      <div class="article-permalink" id="article-permalink-clnj3r42s003fk8ov369g8s4a">
     <input class="article-permalink-value" value="https://kiko.io/post/Radio-Garden/" 
-           data-id="clnj170uf003fkmp4bqz7d1kd" data-title="Radio Garden" />
+           data-id="clnj3r42s003fk8ov369g8s4a" data-title="Radio Garden" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnj170uf003fkmp4bqz7d1kd");
+        initPermalink("clnj3r42s003fk8ov369g8s4a");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-clnj170uf003fkmp4bqz7d1kd">
+        <div class="article-golem" id="article-golem-clnj3r42s003fk8ov369g8s4a">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 26 Jan 2023 
     in German under the title <span style="font-weight:bold;">&laquo;Alle Arten kommen in den Garten&raquo;</span>&nbsp;&nbsp;  
@@ -1016,36 +1019,31 @@ As is so often the case in the modern world, it’s the oversupply that leaves s
   }
 
   //VIBRANT COLOR
- function setVibrantColor(theme) {
-  /* https://jariz.github.io/vibrant.js/
-     https://github.com/Vibrant-Colors/node-vibrant
-     https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
-  */
-  let img = $("#photo-preload").attr("href");
-  Vibrant.from(img).getPalette().then(palette => {
-    let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-    switch (theme) {
-      case "dark":
-        swatch = palette.DarkMuted;
-        break;
-      default:
-        swatch = palette.Muted;
-        break;
+  function setVibrantColor(theme) {
+    /* https://jariz.github.io/vibrant.js/
+       https://github.com/Vibrant-Colors/node-vibrant
+       https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
+    */
+    try {
+      let img = $("#photo-preload").attr("href");
+      Vibrant.from(img).getPalette().then(palette => {
+        let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+        switch (theme) {
+          case "dark": swatch = palette.DarkMuted; break;
+          default: swatch = palette.Muted; break;
+        }
+        const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
+        let rgb = _rgbToString(swatch.getRgb()); 
+
+        if(!$("#header").hasClass("no-vibrant")) {
+          $("#header, #footer, #back-to-top").css("background-color", rgb);
+        }
+      });
+      
+    } catch (error) {
+      
     }
-
-    const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
-    let rgb = _rgbToString(swatch.getRgb()); 
-
-    setTimeout(function() { 
-      if(!$("#header").hasClass("gray")) {
-        $("#header").css("background-color", rgb);
-        $("#footer").css("background-color", rgb);
-        $("#back-to-top").css("background-color", rgb);
-      }
-    }, 500);
-  });
- }
-
+  }
 </script>
 
 <script>

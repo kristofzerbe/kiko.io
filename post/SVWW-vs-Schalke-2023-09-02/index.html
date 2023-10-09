@@ -99,6 +99,9 @@ To my delight, the booth operators, who I had to criticize last time, actually d
   
 <script src="/js/dist/macy.js"></script>
 
+  
+<script src="/js/dist/vibrant.min.js"></script>
+
 
 
   <script defer type="text/javascript" 
@@ -348,12 +351,12 @@ To my delight, the booth operators, who I had to criticize last time, actually d
 <p>It wasn’t, however, that Schalke dominated the game. We carelessly let them just do it and the fans had their fun when they shot the ball into the clouds again after a lot of roaring and stomping. Funny.</p>
 <p>At the beginning of the second half, this continued seamlessly, even if you noticed that the coach in the cabin must have yelled at one or the other and these were now somewhat more active … and suddenly the ball was in our net … <strong>0:1</strong>! What? How? A goal in the 54. minute for Schalke out of (almost) nothing! I have to watch that again on TV … :|</p>
 
-      <div class="image-masonry" id="image-masonry-hzqkw1">
+      <div class="image-masonry" id="image-masonry-9suc43">
         <div><img class="no-caption" src="/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_104957617.jpg" alt="" /></div><div><img class="no-caption" src="/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_105327820.jpg" alt="" /></div><div><img class="no-caption" src="/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_105347190.jpg" alt="" /></div><div><img class="no-caption" src="/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_105548827.jpg" alt="" /></div><div><img class="no-caption" src="/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_105749100.jpg" alt="" /></div><div><img class="no-caption" src="/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_124411594.jpg" alt="" /></div><div><img class="no-caption" src="/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_111931000.jpg" alt="" /></div><div><img class="no-caption" src="/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_120730081.jpg" alt="" /></div><div><img class="no-caption" src="/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_125820397.jpg" alt="" /></div><div><img class="no-caption" src="/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_130050774.jpg" alt="" /></div>
       </div>
       <script>
         let macy = new Macy({
-          container: '#image-masonry-hzqkw1',
+          container: '#image-masonry-9suc43',
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -409,15 +412,15 @@ To my delight, the booth operators, who I had to criticize last time, actually d
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnj170uh003ikmp4ayzl0dsb">
+      <div class="article-permalink" id="article-permalink-clnj3r42t003ik8ov184xfjax">
     <input class="article-permalink-value" value="https://kiko.io/post/SVWW-vs-Schalke-2023-09-02/" 
-           data-id="clnj170uh003ikmp4ayzl0dsb" data-title="SVWW vs. Schalke @ 2023-09-02" />
+           data-id="clnj3r42t003ik8ov184xfjax" data-title="SVWW vs. Schalke @ 2023-09-02" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnj170uh003ikmp4ayzl0dsb");
+        initPermalink("clnj3r42t003ik8ov184xfjax");
     });
 </script>
 
@@ -1036,36 +1039,31 @@ To my delight, the booth operators, who I had to criticize last time, actually d
   }
 
   //VIBRANT COLOR
- function setVibrantColor(theme) {
-  /* https://jariz.github.io/vibrant.js/
-     https://github.com/Vibrant-Colors/node-vibrant
-     https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
-  */
-  let img = $("#photo-preload").attr("href");
-  Vibrant.from(img).getPalette().then(palette => {
-    let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-    switch (theme) {
-      case "dark":
-        swatch = palette.DarkMuted;
-        break;
-      default:
-        swatch = palette.Muted;
-        break;
+  function setVibrantColor(theme) {
+    /* https://jariz.github.io/vibrant.js/
+       https://github.com/Vibrant-Colors/node-vibrant
+       https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
+    */
+    try {
+      let img = $("#photo-preload").attr("href");
+      Vibrant.from(img).getPalette().then(palette => {
+        let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+        switch (theme) {
+          case "dark": swatch = palette.DarkMuted; break;
+          default: swatch = palette.Muted; break;
+        }
+        const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
+        let rgb = _rgbToString(swatch.getRgb()); 
+
+        if(!$("#header").hasClass("no-vibrant")) {
+          $("#header, #footer, #back-to-top").css("background-color", rgb);
+        }
+      });
+      
+    } catch (error) {
+      
     }
-
-    const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
-    let rgb = _rgbToString(swatch.getRgb()); 
-
-    setTimeout(function() { 
-      if(!$("#header").hasClass("gray")) {
-        $("#header").css("background-color", rgb);
-        $("#footer").css("background-color", rgb);
-        $("#back-to-top").css("background-color", rgb);
-      }
-    }, 500);
-  });
- }
-
+  }
 </script>
 
 <script>
