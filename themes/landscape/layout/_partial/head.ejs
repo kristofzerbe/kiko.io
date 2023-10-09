@@ -12,7 +12,8 @@
       title: null,
       description: null,
       photograph: config.hero,
-      imageUrl: config.url + config.hero.url
+      photoUrl: config.hero.url,
+      imageUrl: config.hero.url
     }
 
     let currentYear = new Date().getFullYear();
@@ -71,11 +72,12 @@
           meta.area = "ANYTHING"; 
           meta.subarea = rootPath.toUpperCase();
           break;
-        case "collections":
+        case "collections": //tiny-tools, etc.
         case "about":
+        case "console":
+        case "feeds":
         case "photos":
         case "search":
-        case "console":
           meta.area = "DYNAMIC";
           break;
         default:
@@ -124,6 +126,7 @@
           meta.description = page.title + " " + config.description_short;
         }
         meta.photograph = page.photograph;
+        meta.photoUrl = page.photograph.url;
         meta.imageUrl = page.photograph.url;
         break;
 
@@ -143,6 +146,7 @@
         //--
         if (meta.subarea === "PROJECTS") {
           meta.photograph = page.photograph;
+          meta.photoUrl = page.photograph.url;
           meta.imageUrl = page.photograph.url;
         }
         break;
@@ -152,6 +156,7 @@
         meta.title = page.title + " - " + config.title;
         meta.description = page.title + " " + config.description_short;
         meta.photograph = page.photograph;
+        meta.photoUrl = page.photograph.url;
         meta.imageUrl = page.photograph.url;
         break;
 
@@ -171,7 +176,8 @@
         let slugArray = page.slug.split("/"); //due to subfolders
         meta.slug = slugArray[slugArray.length - 1];
         meta.photograph = page.photograph;
-        meta.imageUrl = config.url + "/images/social-media/" + meta.slug + ".png";
+        meta.photoUrl = page.photograph.url;
+        meta.imageUrl = "/images/social-media/" + meta.slug + ".png";
         meta.type = "article";
         break;
 
@@ -190,7 +196,8 @@
         }
         //--
         meta.photograph = page.photograph;
-        meta.imageUrl = meta.photoUrl;        
+        meta.photoUrl = page.photograph.url;
+        meta.imageUrl = page.photograph.url;        
 
       default: 
         break;
@@ -199,7 +206,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title><%= meta.title %></title>
+  <title data-area="<%= meta.area %>"><%= meta.title %></title>
   <meta name="author" content="<%= config.author %>">
   <meta name="title" content="<%= meta.title %>">
   <% if (meta.description) { %>
@@ -238,7 +245,7 @@
   <% if (meta.description) { %>
   <meta property="og:description" content="<%= meta.description %>">
   <% } %>
-  <meta property="og:image" content="<%= meta.imageUrl %>">
+  <meta property="og:image" content="<%= config.url + meta.imageUrl %>">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter -->
@@ -248,7 +255,7 @@
   <% if (meta.description) { %>
   <meta property="twitter:description" content="<%= meta.description %>">
   <% } %>
-  <meta property="twitter:image" content="<%= meta.imageUrl %>">
+  <meta property="twitter:image" content="<%= config.url + meta.imageUrl %>">
 
   <%#!-- webmention.io --%>
   <link rel="webmention" href="https://webmention.io/<%= config.title %>/webmention" />
@@ -273,14 +280,18 @@
   <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/forkawesome/forkawesome-webfont.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="preload" as="image" href="/images/hero.jpg" 
+  <% if (!page.photograph) { %>
+  <link rel="preload" as="image" id="img-preload" href="/images/hero.jpg" 
         imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
-
-  <% if (page.photograph) { %>
-  <link rel="preload" as="image" href="<%= page.photograph.url %>" 
-        imagesrcset="<%= page.photograph.url.replace("normal", "mobile") %> 480w, <%= page.photograph.url.replace("normal", "tablet") %> 768w">
+  <link rel="preload" as="image" id="photo-preload" href="/images/hero.jpg" 
+        imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
+  <% } else { %>
+  <link rel="preload" as="image" id="img-preload" href="<%= meta.imageUrl %>" 
+        imagesrcset="<%= meta.imageUrl.replace("normal", "mobile") %> 480w, <%= meta.imageUrl.replace("normal", "tablet") %> 768w">
+  <link rel="preload" as="image" id="photo-preload" href="<%= meta.photoUrl %>" 
+        imagesrcset="<%= meta.photoUrl.replace("normal", "mobile") %> 480w, <%= meta.photoUrl.replace("normal", "tablet") %> 768w">
   <% } %>
-
+    
   <%- css('css/dist/bundle.min.css') %>
   <%- css('css/style.css') %>
 

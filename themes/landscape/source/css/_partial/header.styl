@@ -10,6 +10,7 @@
   overflow: hidden;
   filter: grayscale(0)
   transition: filter 1.5s ease
+  transition: background 0.5s ease
   &.gray
     filter: grayscale(1)
   background-color: color-base
@@ -23,11 +24,11 @@
     left: 0
     right: 0
     height: 40px
-  &:before
-    top: 0
-    background: linear-gradient(rgba(0, 0, 0, 0.2), transparent)
-    /[data-theme="dark"] &
-      background: linear-gradient(rgba(0, 0, 0, 0.4), transparent)
+  // &:before ... not needed
+  //   top: 0
+  //   background: linear-gradient(rgba(0, 0, 0, 0.2), transparent)
+  //   /[data-theme="dark"] &
+  //     background: linear-gradient(rgba(0, 0, 0, 0.4), transparent)
   
 #content
   padding-top: banner-height

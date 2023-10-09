@@ -76,6 +76,14 @@ module.exports = function(grunt){
         ],
         dest: 'themes/landscape/source/js/dist'
       },
+      vibrant: {
+        expand: true,
+        cwd: 'themes/landscape/assets/vibrant',
+        src: [
+          'vibrant.min.js'
+        ],
+        dest: 'themes/landscape/source/js/dist'
+      },
       qrcodestyling: {
         expand: true,
         cwd: 'themes/landscape/assets/qr-code-styling',

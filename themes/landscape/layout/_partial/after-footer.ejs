@@ -6,6 +6,7 @@
 <%- js('js/dist/bundle.min.js') %>
 <%- js('js/script.js') %>
 <%- js('js/dist/qr-code-styling.js') %>
+<%- js('js/dist/vibrant.min.js') %>
 <%- json({
   src: 'js/dist/qr-code-styling-options-contact.json', 
   id: 'qr-code-styling-options'
@@ -193,12 +194,14 @@
     localStorage.setItem("theme", "dark");
     document.documentElement.setAttribute("data-theme", "dark");
     toggleTheme.checked = true;
+    setVibrantColor("dark");
     setCodepenTheme();
   }
   function setThemeLight() {
     localStorage.setItem("theme", "light");
     document.documentElement.setAttribute("data-theme", "light");
     toggleTheme.checked = false;
+    setVibrantColor();
     setCodepenTheme();
   }
   function setCodepenTheme() {
@@ -217,6 +220,37 @@
       pens[i].src = src;
     }
   }
+
+  //VIBRANT COLOR
+ function setVibrantColor(theme) {
+  /* https://jariz.github.io/vibrant.js/
+     https://github.com/Vibrant-Colors/node-vibrant
+     https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
+  */
+  let img = $("#photo-preload").attr("href");
+  Vibrant.from(img).getPalette().then(palette => {
+    let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+    switch (theme) {
+      case "dark":
+        swatch = palette.DarkMuted;
+        break;
+      default:
+        swatch = palette.Muted;
+        break;
+    }
+
+    const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
+    let rgb = _rgbToString(swatch.getRgb()); 
+
+    setTimeout(function() { 
+      if(!$("#header").hasClass("gray")) {
+        $("#header").css("background-color", rgb);
+        $("#footer").css("background-color", rgb);
+        $("#back-to-top").css("background-color", rgb);
+      }
+    }, 500);
+  });
+ }
 
 </script>
 

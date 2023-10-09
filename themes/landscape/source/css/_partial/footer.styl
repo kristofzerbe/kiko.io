@@ -22,12 +22,12 @@
   font-size: 0.85em
   display: grid
   grid-template-columns: max-content auto max-content
-  grid-template-rows: max-content max-content max-content 12px max-content
+  grid-template-rows: max-content max-content 12px max-content max-content
   grid-gap: 2px 64px
-  grid-template-areas: "info webring ." "links . ." "perf . ." ". . ." "dots . ."
+  grid-template-areas: "info webring ." "links . ." ". . ." "perf . ." "dots . ."
   @media mq-mobile
-    grid-template-columns: 1fr max-content  
-    grid-template-rows: max-content max-content max-content 12px max-content
+    grid-template-columns: 1fr max-content 
+    grid-template-rows: max-content max-content max-content 12px max-content 
     grid-gap: 2px 5px
     grid-template-areas: "dots info" "dots links" "dots perf" "dots ." "dots webring"
 
@@ -71,10 +71,7 @@
           margin: 0 10px 
         height: 9px
         width: 9px
-        background-color: color-grey
-        /[data-theme="dark"] &
-          background: dark-color-block 
-        opacity: 0.5 
+        background-color: color-footer-dots
         border-radius: 50%
         display: inline-block
 
