@@ -1,20 +1,14 @@
 <%- partial('_partial/head') %>
 <body id="body">  
-  <div id="container" class="container">
-    <div class="inner-container">
-      <div id="wrap">
-        <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
-        <div id="content" class="outer">
-          <main class="<%= (page?.layoutParam?.hideSidebar) ? "hide-sidebar" : "" %>"><%- body %></main>
-          <% if (theme.sidebar && theme.sidebar !== 'bottom' && !page?.layoutParam?.hideSidebar){ %>
-            <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
-          <% } %>
-        </div>
-        <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
-      </div>
-      <%- partial('_partial/after-footer') %>
-    </div>
+  <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
+  <div id="content" class="outer">
+    <main class="<%= (page?.layoutParam?.hideSidebar) ? "hide-sidebar" : "" %>"><%- body %></main>
+    <% if (theme.sidebar && theme.sidebar !== 'bottom' && !page?.layoutParam?.hideSidebar){ %>
+      <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
+    <% } %>
   </div>
+  <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+  <%- partial('_partial/after-footer') %>
 </body>
 <%- partial('_partial/templates/contact-dialog') %>
 <%- partial('_partial/templates/mastodon-share-dialog') %>

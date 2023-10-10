@@ -28,26 +28,8 @@ global-reset()
 html
   text-size-adjust: none // Andy Bells Modernized Reset
 
-html, body, #container
+html, body
   height: 100%
-
-html.gray
-  #content, #footer, img, svg
-    filter: grayscale(1) !important
-
-html.gray[data-theme="light"]
-  #content
-    p, a
-      color: #111 !important
-    li:hover
-      border-color: #111 !important
-
-html.gray[data-theme="dark"]
-  #content
-    p, a
-      color: #fff !important
-    li:hover
-      border-color: #fff !important
 
 body
   color: color-foreground
@@ -58,6 +40,18 @@ body
   font: font-size font-sans
   min-height: 100vh // Andy Bells Modernized Reset
   line-height: line-height // Andy Bells Modernized Reset
+
+// #wrap
+//   height: 100%
+//   width: 100%
+//   position: absolute
+//   top: 0
+//   left: 0
+//   transition: 0.2s ease-out
+//   z-index: 1
+//   background: color-background
+//   /[data-theme="dark"] &
+//     background: dark-color-background
 
 .outer
   clearfix()
@@ -205,21 +199,6 @@ pre.json
     color: #ababab
   .key
     color: #c15353
-
-#container, #inner-container
-  position: relative
-
-#wrap
-  height: 100%
-  width: 100%
-  position: absolute
-  top: 0
-  left: 0
-  transition: 0.2s ease-out
-  z-index: 1
-  background: color-background
-  /[data-theme="dark"] &
-    background: dark-color-background
 
 if sidebar and sidebar isnt bottom
   main:not(.hide-sidebar)

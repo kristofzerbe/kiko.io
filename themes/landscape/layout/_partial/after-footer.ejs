@@ -222,23 +222,24 @@
 
   //VIBRANT COLOR
   function setVibrantColor(theme) {
-    /* https://jariz.github.io/vibrant.js/
-       https://github.com/Vibrant-Colors/node-vibrant
-       https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
-    */
     try {
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
-        let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-        switch (theme) {
-          case "dark": swatch = palette.DarkMuted; break;
-          default: swatch = palette.Muted; break;
-        }
-        const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
-        let rgb = _rgbToString(swatch.getRgb()); 
+        let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+
+        let _hsl = swatch.getHsl();
+        let h = (_hsl[0]*360);
+        let s = (_hsl[1]*100);
+        let l = (_hsl[2]*100); 
+
+        l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
+        let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
+        l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
+
+        const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
 
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", rgb);
+          $("#header, #footer, #back-to-top").css("background-color", _hslToString(h, s, l));
         }
       });
       
@@ -276,12 +277,13 @@
   });
 
   /*** INITS */
-
-  initHeader();
-  initColorScheme();
-  initViewportImage();
-  initNavMenuScroll();
-  initScrollProgress();
+  // $(document).ready(function() {
+    initHeader();
+    initColorScheme();
+    initViewportImage();
+    initNavMenuScroll();
+    initScrollProgress();
+  // });
 
   // BACK-TO-TOP
   addBackToTop({ diameter: 30 });
