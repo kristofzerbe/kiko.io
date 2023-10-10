@@ -117,10 +117,7 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body id="body">  
-  <div id="container" class="container">
-    <div class="inner-container">
-      <div id="wrap">
-        <header id="header">
+  <header id="header">
   <a href="#" id="header-photo-link" rel="noopener" ></a>
   <div id="banner">
     <div id="header-nav-start"></div>
@@ -247,8 +244,8 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
     document.getElementById("nav-home-link").remove();
   }
 </script>
-        <div id="content" class="outer">
-          <main class="">
+  <div id="content" class="outer">
+    <main class="">
   <style>
 #banner {
     background-size: cover;
@@ -320,7 +317,7 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
     </header>
 
     <div class="article-entry e-content">
-      <p>Ever had a fancy calculation written in C# and now you need it in JavaScript? Blazor WebAssembly has been developed to build such bridges and with .NET 7 it is very easy to externalize individual functions. With some overhead, but never mind. Thanks for this @<a href="mailto:&#109;&#x65;&#x7a;&#105;&#x61;&#110;&#116;&#x6f;&#x75;&#x40;&#104;&#97;&#x63;&#x68;&#121;&#x64;&#101;&#114;&#x6d;&#46;&#105;&#x6f;">&#109;&#x65;&#x7a;&#105;&#x61;&#110;&#116;&#x6f;&#x75;&#x40;&#104;&#97;&#x63;&#x68;&#121;&#x64;&#101;&#114;&#x6d;&#46;&#105;&#x6f;</a> …</p>
+      <p>Ever had a fancy calculation written in C# and now you need it in JavaScript? Blazor WebAssembly has been developed to build such bridges and with .NET 7 it is very easy to externalize individual functions. With some overhead, but never mind. Thanks for this @<a href="mailto:&#109;&#x65;&#122;&#x69;&#97;&#110;&#x74;&#111;&#117;&#x40;&#x68;&#97;&#x63;&#104;&#x79;&#x64;&#x65;&#x72;&#x6d;&#x2e;&#x69;&#x6f;">&#109;&#x65;&#122;&#x69;&#97;&#110;&#x74;&#111;&#117;&#x40;&#x68;&#97;&#x63;&#104;&#x79;&#x64;&#x65;&#x72;&#x6d;&#x2e;&#x69;&#x6f;</a> …</p>
 <p><a href="https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.htm">https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.htm</a></p>
 <p>#NET #Blazor #JavaScript</p>
 
@@ -403,8 +400,8 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
 
 </article>
 </main>
-          
-            <aside id="sidebar">
+    
+      <aside id="sidebar">
   
     <div class="widget-wrap">
     <div class="widget about h-card"><!--http://microformats.org/wiki/h-card-->
@@ -433,6 +430,12 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
         
           <li>
             
+              <a href="/post/Get-and-use-a-dominant-color-that-matches-the-header-image/">Get and use a dominant color that matches the header image</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/SVWW-vs-HSV-2023-10-07/">SVWW vs. HSV @ 2023-10-07</a>
             
           </li>
@@ -449,12 +452,6 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
             
           </li>
         
-          <li>
-            
-              <a href="/post/Contribute-with-Conventional-Commits/">Contribute with Conventional Commits</a>
-            
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -467,9 +464,9 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
     </p>
   </div>  
 </aside>
-          
-        </div>
-        <footer id="footer">
+    
+  </div>
+  <footer id="footer">
   
   <div class="outer">
     <div class="inner">
@@ -526,8 +523,7 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
     </div>
   </div>
 </footer>
-      </div>
-      <script>
+  <script>
   let isOffline = 'false' === 'true';
 </script>
 
@@ -758,23 +754,24 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
 
   //VIBRANT COLOR
   function setVibrantColor(theme) {
-    /* https://jariz.github.io/vibrant.js/
-       https://github.com/Vibrant-Colors/node-vibrant
-       https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
-    */
     try {
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
-        let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-        switch (theme) {
-          case "dark": swatch = palette.DarkMuted; break;
-          default: swatch = palette.Muted; break;
-        }
-        const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
-        let rgb = _rgbToString(swatch.getRgb()); 
+        let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+
+        let _hsl = swatch.getHsl();
+        let h = (_hsl[0]*360);
+        let s = (_hsl[1]*100);
+        let l = (_hsl[2]*100); 
+
+        l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
+        let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
+        l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
+
+        const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
 
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", rgb);
+          $("#header, #footer, #back-to-top").css("background-color", _hslToString(h, s, l));
         }
       });
       
@@ -812,12 +809,13 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
   });
 
   /*** INITS */
-
-  initHeader();
-  initColorScheme();
-  initViewportImage();
-  initNavMenuScroll();
-  initScrollProgress();
+  // $(document).ready(function() {
+    initHeader();
+    initColorScheme();
+    initViewportImage();
+    initNavMenuScroll();
+    initScrollProgress();
+  // });
 
   // BACK-TO-TOP
   addBackToTop({ diameter: 30 });
@@ -863,8 +861,6 @@ https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.ht
     
   </script>  
 
-    </div>
-  </div>
 </body>
 <template id="contact-dialog">
   <div class="contact-content">

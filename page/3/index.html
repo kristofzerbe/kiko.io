@@ -113,10 +113,7 @@
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body id="body">  
-  <div id="container" class="container">
-    <div class="inner-container">
-      <div id="wrap">
-        <header id="header">
+  <header id="header">
   <a href="#" id="header-photo-link" rel="noopener" ></a>
   <div id="banner">
     <div id="header-nav-start"></div>
@@ -243,8 +240,8 @@
     document.getElementById("nav-home-link").remove();
   }
 </script>
-        <div id="content" class="outer">
-          <main class=""><!-- TODO: Extract to root INDEX.MD -->
+  <div id="content" class="outer">
+    <main class=""><!-- TODO: Extract to root INDEX.MD -->
 <div id="introduction">
   <h1 class="page-title">
     <strong>Welcome</strong> ... I'm Kristof
@@ -271,6 +268,116 @@
 </script>
 
 
+  
+     
+<article id="post-2023/Include-and-provide-JSON-data-in-Hexo-EJS-Templates" 
+         class="article article-type-post">
+  
+  <div class="article-meta">
+    <a href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/" class="article-date">
+  
+  <time class="published dt-published" data-pagefind-meta="date" 
+        datetime="2023-06-27T05:26:21.000Z">27 Jun 2023</time>
+</a>
+    
+  <div class="article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/">
+        <img class="article-photo" src="/photos/tablet/D70_1538.jpg" alt="Smiling Guard" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+
+
+  
+    <h1>
+      <a class="article-title"
+         href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/">Include and provide JSON data in Hexo EJS Templates</a>
+    </h1>
+  
+
+        
+    <h2 class="article-subtitle">
+        ... with a new Helper and an async function
+    </h2>
+
+      </header>
+    
+    
+    <div class="article-entry">
+      <p>The three main components of a standard installation of the Static Site Generator <a href="https://hexo.io/">Hexo</a> are the template system <a href="https://ejs.co/">EJS (Embedded JavaScript Templating)</a>, <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> for the content and <a href="https://stylus-lang.com/">Stylus</a> for the styles.</p>
+<p>In the template files are the three main tags for driving content:</p>
+<p><strong>Scriptlet tag for control flow (no output)</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">  ... my JavaScript code to process data into the template</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Output a value as escaped HTML</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%= myVariable %&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Output of a raw value, usually in the form of a JavaScript function</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%- myFunction() %&gt;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://hexo.io/docs/helpers">Hexo’s helper system</a> is based on the latter. So you can include a JavaScript file in your template that makes use of the <a href="https://hexo.io/docs/helpers#js"><strong>JS Helper</strong></a> in <code>node_modules\hexo\lib\plugins\helper\js.js</code> as follows …</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%- <span class="title function_">js</span>(<span class="string">&#x27;/js/dist/myFancyFunctions.js&#x27;</span>) %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>… which will be rendered to:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;/js/dist//js/dist/qr-code-styling.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="The-Problem"><a href="#The-Problem" class="headerlink" title="The Problem"></a>The Problem</h2><p>So far and short, so good … but I recently tried to use this way to include a JSON file whose data one of my scripts needed as startup options and I noticed that the above mentioned JS helper unfortunately takes care of the possibly missing file extension <code>js</code>. It doesn’t matter if you only pass the path to the file as a string or if all necessary attributes as an object.</p>
+      
+        <p class="article-more-link">
+          <a href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/#continue">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Templating/" rel="tag">Templating</a></li></ul>  
+  </div>
+
+      
+  
+  
+    <div class="article-syndication">
+      
+          <a class="syndication-link u-syndication fab fa-mastodon" 
+            href="https://indieweb.social/@kiko/110617439442558814" title="Syndication on Mastodon" rel="syndication" target="_blank"></a>
+      
+    </div>
+  
+
+      <div class="article-permalink" id="article-permalink-clnkmosy80038oforfr41gpti">
+    <input class="article-permalink-value" value="https://kiko.io/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/" 
+           data-id="clnkmosy80038oforfr41gpti" data-title="Include and provide JSON data in Hexo EJS Templates" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clnkmosy80038oforfr41gpti");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
   
      
 <article id="post-2023/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet" 
@@ -355,15 +462,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnj3sprh003jjaotdkjgfd46">
+      <div class="article-permalink" id="article-permalink-clnkmosyf003kofor6o364okl">
     <input class="article-permalink-value" value="https://kiko.io/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/" 
-           data-id="clnj3sprh003jjaotdkjgfd46" data-title="Show pages meta data (JSON-LD) in Bottom Sheet" />
+           data-id="clnkmosyf003kofor6o364okl" data-title="Show pages meta data (JSON-LD) in Bottom Sheet" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnj3sprh003jjaotdkjgfd46");
+        initPermalink("clnkmosyf003kofor6o364okl");
     });
 </script>
 
@@ -444,15 +551,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnj3sprh003kjaot43i5ax4e">
+      <div class="article-permalink" id="article-permalink-clnkmosyf003loforfjl61sqf">
     <input class="article-permalink-value" value="https://kiko.io/post/Top-10-Pens-of-Jon-Kantner/" 
-           data-id="clnj3sprh003kjaot43i5ax4e" data-title="Top 10 Pens of Jon Kantner" />
+           data-id="clnkmosyf003loforfjl61sqf" data-title="Top 10 Pens of Jon Kantner" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnj3sprh003kjaot43i5ax4e");
+        initPermalink("clnkmosyf003loforfjl61sqf");
     });
 </script>
 
@@ -538,15 +645,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnj3sprb0031jaot8s64am98">
+      <div class="article-permalink" id="article-permalink-clnkmosy40031ofor3mzoa6us">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-24-JavaScript-UI/" 
-           data-id="clnj3sprb0031jaot8s64am98" data-title="Discoveries #24 - JavaScript &amp; UI" />
+           data-id="clnkmosy40031ofor3mzoa6us" data-title="Discoveries #24 - JavaScript &amp; UI" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnj3sprb0031jaot8s64am98");
+        initPermalink("clnkmosy40031ofor3mzoa6us");
     });
 </script>
 
@@ -628,15 +735,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnj3spr8002vjaot65ckffpy">
+      <div class="article-permalink" id="article-permalink-clnkmosy1002voforf8upc91x">
     <input class="article-permalink-value" value="https://kiko.io/post/Breton-Presets-for-Lightroom/" 
-           data-id="clnj3spr8002vjaot65ckffpy" data-title="Breton Presets for Lightroom" />
+           data-id="clnkmosy1002voforf8upc91x" data-title="Breton Presets for Lightroom" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnj3spr8002vjaot65ckffpy");
+        initPermalink("clnkmosy1002voforf8upc91x");
     });
 </script>
 
@@ -722,15 +829,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnj3spra0030jaot4p8w7xpn">
+      <div class="article-permalink" id="article-permalink-clnkmosy40030ofor1pkeg4dl">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-23-UI-CSS/" 
-           data-id="clnj3spra0030jaot4p8w7xpn" data-title="Discoveries #23 -  UI/CSS" />
+           data-id="clnkmosy40030ofor1pkeg4dl" data-title="Discoveries #23 -  UI/CSS" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnj3spra0030jaot4p8w7xpn");
+        initPermalink("clnkmosy40030ofor1pkeg4dl");
     });
 </script>
 
@@ -823,118 +930,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnj3sprf003ejaotdxenbymj">
+      <div class="article-permalink" id="article-permalink-clnkmosyc003fofor0ni19vyl">
     <input class="article-permalink-value" value="https://kiko.io/post/Provide-Blog-Metadata-via-JSON-LD/" 
-           data-id="clnj3sprf003ejaotdxenbymj" data-title="Provide Blog Metadata via JSON-LD" />
+           data-id="clnkmosyc003fofor0ni19vyl" data-title="Provide Blog Metadata via JSON-LD" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnj3sprf003ejaotdxenbymj");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2023/Pagefind-UI-and-URL-Parameters" 
-         class="article article-type-post">
-  
-  <div class="article-meta">
-    <a href="/post/Pagefind-UI-and-URL-Parameters/" class="article-date">
-  
-    <time class="updated dt-updated" data-pagefind-meta="date" 
-          datetime="2023-02-03T10:51:00.000Z">03 Feb 2023</time>
-    <br>
-  
-  <time class="published dt-published" data-pagefind-meta="date" 
-        datetime="2023-01-31T10:04:00.000Z">31 Jan 2023</time>
-</a>
-    
-  <div class="article-category category-tools">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/Pagefind-UI-and-URL-Parameters/">
-        <img class="article-photo" src="/photos/tablet/D50_7076.jpg" alt="German Roofage" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-    <a class="article-anything" href="/series/a-new-blog">A New Blog</a>
-
-
-
-        
-
-
-  
-    <h1>
-      <a class="article-title"
-         href="/post/Pagefind-UI-and-URL-Parameters/">Pagefind UI and URL Parameters</a>
-    </h1>
-  
-
-        
-      </header>
-    
-    
-    <div class="article-entry">
-      <div class="alertbox alertbox-exclamation">
-      <p><strong>UPDATE</strong>: Parts of the original post are outdated, as Pagefind <strong>DOES</strong> offer a way to preset a search string, which just hasn’t been documented yet … \o&#x2F; … see below.</p>
-
-    </div>
-  
-
-<hr>
-<p>A couple of days ago I wrote about my attempt to <a href="/post/Integration-of-Pagefind-in-Hexo/" title="Integration of Pagefind in Hexo">integrate Pagefind in my blog</a>. In the meantime, I further refined the indexing by excluding more content areas and adding more for the metadata to make the search results even better.</p>
-<p>But one thing was still missing: controlling the search via url parameters, so that you can actually consider the page as a search page. I came across this in a post about the sense and nonsense of Open Graph attributes and other search engine related metadata nowadays. Google, for example, <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data">likes to use JSON-LD</a> and when describing the site you can define a search page which then makes it easier to search the site directly via Google … see <a href="https://developers.google.com/search/docs/appearance/structured-data/sitelinks-searchbox">Sitelinks search box (WebSite) structured data</a></p>
-<p>In my implementation, I decided to adapt the <a href="https://pagefind.app/docs/ui/">Pagefind UI</a> for myself instead of developing everything from scratch via JavaScript. There are always some limitations with pre-built solutions, but I want to show here that they are actually none for the inclusion of a url parameter.</p>
-      
-        <p class="article-more-link">
-          <a href="/post/Pagefind-UI-and-URL-Parameters/#continue">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Search/" rel="tag">Search</a></li></ul>  
-  </div>
-
-      
-  
-  
-    <div class="article-syndication">
-      
-          <a class="syndication-link u-syndication fab fa-mastodon" 
-            href="https://indieweb.social/@kiko/109784950464754190" title="Syndication on Mastodon" rel="syndication" target="_blank"></a>
-      
-    </div>
-  
-
-      <div class="article-permalink" id="article-permalink-clnj3spre003cjaot44gmd73s">
-    <input class="article-permalink-value" value="https://kiko.io/post/Pagefind-UI-and-URL-Parameters/" 
-           data-id="clnj3spre003cjaot44gmd73s" data-title="Pagefind UI and URL Parameters" />
-    <a class="article-action action-copy" title="Copy URL"></a>
-    <a class="article-action action-share" title="Open Share Dialog"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("clnj3spre003cjaot44gmd73s");
+        initPermalink("clnkmosyc003fofor0ni19vyl");
     });
 </script>
 
@@ -1022,15 +1026,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnj3sprf003fjaotbx5yer2c">
+      <div class="article-permalink" id="article-permalink-clnkmosyc003gofor3zr42abo">
     <input class="article-permalink-value" value="https://kiko.io/post/Radio-Garden/" 
-           data-id="clnj3sprf003fjaotbx5yer2c" data-title="Radio Garden" />
+           data-id="clnkmosyc003gofor3zr42abo" data-title="Radio Garden" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnj3sprf003fjaotbx5yer2c");
+        initPermalink("clnkmosyc003gofor3zr42abo");
     });
 </script>
 
@@ -1045,13 +1049,13 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&lt; Previous</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/4/">Next &gt;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&lt; Previous</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/4/">Next &gt;</a>
   </nav>
 
 
 </main>
-          
-            <aside id="sidebar">
+    
+      <aside id="sidebar">
   
     <div class="widget-wrap">
     <div class="widget about h-card"><!--http://microformats.org/wiki/h-card-->
@@ -1080,6 +1084,12 @@
         
           <li>
             
+              <a href="/post/Get-and-use-a-dominant-color-that-matches-the-header-image/">Get and use a dominant color that matches the header image</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/SVWW-vs-HSV-2023-10-07/">SVWW vs. HSV @ 2023-10-07</a>
             
           </li>
@@ -1096,12 +1106,6 @@
             
           </li>
         
-          <li>
-            
-              <a href="/post/Contribute-with-Conventional-Commits/">Contribute with Conventional Commits</a>
-            
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -1114,9 +1118,9 @@
     </p>
   </div>  
 </aside>
-          
-        </div>
-        <footer id="footer">
+    
+  </div>
+  <footer id="footer">
   
   <div class="outer">
     <div class="inner">
@@ -1173,8 +1177,7 @@
     </div>
   </div>
 </footer>
-      </div>
-      <script>
+  <script>
   let isOffline = 'false' === 'true';
 </script>
 
@@ -1405,23 +1408,24 @@
 
   //VIBRANT COLOR
   function setVibrantColor(theme) {
-    /* https://jariz.github.io/vibrant.js/
-       https://github.com/Vibrant-Colors/node-vibrant
-       https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
-    */
     try {
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
-        let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-        switch (theme) {
-          case "dark": swatch = palette.DarkMuted; break;
-          default: swatch = palette.Muted; break;
-        }
-        const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
-        let rgb = _rgbToString(swatch.getRgb()); 
+        let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+
+        let _hsl = swatch.getHsl();
+        let h = (_hsl[0]*360);
+        let s = (_hsl[1]*100);
+        let l = (_hsl[2]*100); 
+
+        l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
+        let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
+        l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
+
+        const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
 
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", rgb);
+          $("#header, #footer, #back-to-top").css("background-color", _hslToString(h, s, l));
         }
       });
       
@@ -1459,12 +1463,13 @@
   });
 
   /*** INITS */
-
-  initHeader();
-  initColorScheme();
-  initViewportImage();
-  initNavMenuScroll();
-  initScrollProgress();
+  // $(document).ready(function() {
+    initHeader();
+    initColorScheme();
+    initViewportImage();
+    initNavMenuScroll();
+    initScrollProgress();
+  // });
 
   // BACK-TO-TOP
   addBackToTop({ diameter: 30 });
@@ -1510,8 +1515,6 @@
     
   </script>  
 
-    </div>
-  </div>
 </body>
 <template id="contact-dialog">
   <div class="contact-content">

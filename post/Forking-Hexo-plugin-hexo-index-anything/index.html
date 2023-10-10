@@ -118,10 +118,7 @@ Ok then … make a successor on your own, fella…">
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body id="body">  
-  <div id="container" class="container">
-    <div class="inner-container">
-      <div id="wrap">
-        <header id="header">
+  <header id="header">
   <a href="#" id="header-photo-link" rel="noopener" ></a>
   <div id="banner">
     <div id="header-nav-start"></div>
@@ -248,8 +245,8 @@ Ok then … make a successor on your own, fella…">
     document.getElementById("nav-home-link").remove();
   }
 </script>
-        <div id="content" class="outer">
-          <main class="">
+  <div id="content" class="outer">
+    <main class="">
   <style>
 #banner {
     background-size: cover;
@@ -396,15 +393,15 @@ Ok then … make a successor on your own, fella…">
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnj3spqo001hjaot2uw6fkwu">
+      <div class="article-permalink" id="article-permalink-clnkmosx6001hoforapuih37e">
     <input class="article-permalink-value" value="https://kiko.io/post/Forking-Hexo-plugin-hexo-index-anything/" 
-           data-id="clnj3spqo001hjaot2uw6fkwu" data-title="Forking Hexo plugin &#39;hexo-index-anything&#39;" />
+           data-id="clnkmosx6001hoforapuih37e" data-title="Forking Hexo plugin &#39;hexo-index-anything&#39;" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnj3spqo001hjaot2uw6fkwu");
+        initPermalink("clnkmosx6001hoforapuih37e");
     });
 </script>
 
@@ -664,8 +661,8 @@ Ok then … make a successor on your own, fella…">
   
 
 </article></main>
-          
-            <aside id="sidebar">
+    
+      <aside id="sidebar">
   
     <div class="widget-wrap">
     <div class="widget about h-card"><!--http://microformats.org/wiki/h-card-->
@@ -694,6 +691,12 @@ Ok then … make a successor on your own, fella…">
         
           <li>
             
+              <a href="/post/Get-and-use-a-dominant-color-that-matches-the-header-image/">Get and use a dominant color that matches the header image</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/SVWW-vs-HSV-2023-10-07/">SVWW vs. HSV @ 2023-10-07</a>
             
           </li>
@@ -710,12 +713,6 @@ Ok then … make a successor on your own, fella…">
             
           </li>
         
-          <li>
-            
-              <a href="/post/Contribute-with-Conventional-Commits/">Contribute with Conventional Commits</a>
-            
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -728,9 +725,9 @@ Ok then … make a successor on your own, fella…">
     </p>
   </div>  
 </aside>
-          
-        </div>
-        <footer id="footer">
+    
+  </div>
+  <footer id="footer">
   
   <div class="outer">
     <div class="inner">
@@ -787,8 +784,7 @@ Ok then … make a successor on your own, fella…">
     </div>
   </div>
 </footer>
-      </div>
-      <script>
+  <script>
   let isOffline = 'false' === 'true';
 </script>
 
@@ -1019,23 +1015,24 @@ Ok then … make a successor on your own, fella…">
 
   //VIBRANT COLOR
   function setVibrantColor(theme) {
-    /* https://jariz.github.io/vibrant.js/
-       https://github.com/Vibrant-Colors/node-vibrant
-       https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
-    */
     try {
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
-        let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-        switch (theme) {
-          case "dark": swatch = palette.DarkMuted; break;
-          default: swatch = palette.Muted; break;
-        }
-        const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
-        let rgb = _rgbToString(swatch.getRgb()); 
+        let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+
+        let _hsl = swatch.getHsl();
+        let h = (_hsl[0]*360);
+        let s = (_hsl[1]*100);
+        let l = (_hsl[2]*100); 
+
+        l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
+        let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
+        l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
+
+        const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
 
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", rgb);
+          $("#header, #footer, #back-to-top").css("background-color", _hslToString(h, s, l));
         }
       });
       
@@ -1073,12 +1070,13 @@ Ok then … make a successor on your own, fella…">
   });
 
   /*** INITS */
-
-  initHeader();
-  initColorScheme();
-  initViewportImage();
-  initNavMenuScroll();
-  initScrollProgress();
+  // $(document).ready(function() {
+    initHeader();
+    initColorScheme();
+    initViewportImage();
+    initNavMenuScroll();
+    initScrollProgress();
+  // });
 
   // BACK-TO-TOP
   addBackToTop({ diameter: 30 });
@@ -1124,8 +1122,6 @@ Ok then … make a successor on your own, fella…">
     
   </script>  
 
-    </div>
-  </div>
 </body>
 <template id="contact-dialog">
   <div class="contact-content">

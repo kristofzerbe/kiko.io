@@ -117,10 +117,7 @@ To get a better overview over dependencies, regarding NPM and other repositories
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body id="body">  
-  <div id="container" class="container">
-    <div class="inner-container">
-      <div id="wrap">
-        <header id="header">
+  <header id="header">
   <a href="#" id="header-photo-link" rel="noopener" ></a>
   <div id="banner">
     <div id="header-nav-start"></div>
@@ -247,8 +244,8 @@ To get a better overview over dependencies, regarding NPM and other repositories
     document.getElementById("nav-home-link").remove();
   }
 </script>
-        <div id="content" class="outer">
-          <main class="">
+  <div id="content" class="outer">
+    <main class="">
   <style>
 #banner {
     background-size: cover;
@@ -368,15 +365,15 @@ To get a better overview over dependencies, regarding NPM and other repositories
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnj3spqs001rjaotbjp8g4pb">
+      <div class="article-permalink" id="article-permalink-clnkmosxd001roforhlvs5s3v">
     <input class="article-permalink-value" value="https://kiko.io/post/Open-Source-Insights-Seeing-the-big-picture/" 
-           data-id="clnj3spqs001rjaotbjp8g4pb" data-title="Open Source Insights - Seeing the big picture" />
+           data-id="clnkmosxd001roforhlvs5s3v" data-title="Open Source Insights - Seeing the big picture" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnj3spqs001rjaotbjp8g4pb");
+        initPermalink("clnkmosxd001roforhlvs5s3v");
     });
 </script>
 
@@ -636,8 +633,8 @@ To get a better overview over dependencies, regarding NPM and other repositories
   
 
 </article></main>
-          
-            <aside id="sidebar">
+    
+      <aside id="sidebar">
   
     <div class="widget-wrap">
     <div class="widget about h-card"><!--http://microformats.org/wiki/h-card-->
@@ -666,6 +663,12 @@ To get a better overview over dependencies, regarding NPM and other repositories
         
           <li>
             
+              <a href="/post/Get-and-use-a-dominant-color-that-matches-the-header-image/">Get and use a dominant color that matches the header image</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/SVWW-vs-HSV-2023-10-07/">SVWW vs. HSV @ 2023-10-07</a>
             
           </li>
@@ -682,12 +685,6 @@ To get a better overview over dependencies, regarding NPM and other repositories
             
           </li>
         
-          <li>
-            
-              <a href="/post/Contribute-with-Conventional-Commits/">Contribute with Conventional Commits</a>
-            
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -700,9 +697,9 @@ To get a better overview over dependencies, regarding NPM and other repositories
     </p>
   </div>  
 </aside>
-          
-        </div>
-        <footer id="footer">
+    
+  </div>
+  <footer id="footer">
   
   <div class="outer">
     <div class="inner">
@@ -759,8 +756,7 @@ To get a better overview over dependencies, regarding NPM and other repositories
     </div>
   </div>
 </footer>
-      </div>
-      <script>
+  <script>
   let isOffline = 'false' === 'true';
 </script>
 
@@ -991,23 +987,24 @@ To get a better overview over dependencies, regarding NPM and other repositories
 
   //VIBRANT COLOR
   function setVibrantColor(theme) {
-    /* https://jariz.github.io/vibrant.js/
-       https://github.com/Vibrant-Colors/node-vibrant
-       https://github.com/Vibrant-Colors/vibrant-colors.github.io/blob/master/src/VibrantColors.js
-    */
     try {
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
-        let swatch; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-        switch (theme) {
-          case "dark": swatch = palette.DarkMuted; break;
-          default: swatch = palette.Muted; break;
-        }
-        const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
-        let rgb = _rgbToString(swatch.getRgb()); 
+        let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+
+        let _hsl = swatch.getHsl();
+        let h = (_hsl[0]*360);
+        let s = (_hsl[1]*100);
+        let l = (_hsl[2]*100); 
+
+        l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
+        let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
+        l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
+
+        const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
 
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", rgb);
+          $("#header, #footer, #back-to-top").css("background-color", _hslToString(h, s, l));
         }
       });
       
@@ -1045,12 +1042,13 @@ To get a better overview over dependencies, regarding NPM and other repositories
   });
 
   /*** INITS */
-
-  initHeader();
-  initColorScheme();
-  initViewportImage();
-  initNavMenuScroll();
-  initScrollProgress();
+  // $(document).ready(function() {
+    initHeader();
+    initColorScheme();
+    initViewportImage();
+    initNavMenuScroll();
+    initScrollProgress();
+  // });
 
   // BACK-TO-TOP
   addBackToTop({ diameter: 30 });
@@ -1096,8 +1094,6 @@ To get a better overview over dependencies, regarding NPM and other repositories
     
   </script>  
 
-    </div>
-  </div>
 </body>
 <template id="contact-dialog">
   <div class="contact-content">
