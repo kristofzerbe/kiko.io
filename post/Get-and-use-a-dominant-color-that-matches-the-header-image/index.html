@@ -381,9 +381,10 @@ After a short testing period I decided to use Vibrant Colors (also because of th
 <p>A complete conversion to HSV seemed a bit too much for my case. Therefore, I limited myself to downscaling the lightness proportionally from a saturation value of 70%:</p>
 <figure class="highlight js"><figcaption><span>after-footer.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">setVibrantColor</span>(<span class="params">theme</span>) &#123;</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    <span class="comment">// overwrite l with new fixed hue depending on theme</span></span><br><span class="line">    l = (theme === <span class="string">&quot;dark&quot;</span>) ? <span class="number">20</span> : <span class="number">35</span>; </span><br><span class="line"></span><br><span class="line">    <span class="comment">// calculate hue reduction when saturation too high</span></span><br><span class="line">    <span class="keyword">let</span> reduce = (s &gt; <span class="number">70</span>) ? <span class="number">10</span> - ((<span class="number">100</span> - s) / <span class="number">4</span>) : <span class="number">0</span>; </span><br><span class="line"></span><br><span class="line">    <span class="comment">// take half of reduction when dark theme</span></span><br><span class="line">    l -= (theme === <span class="string">&quot;dark&quot;</span>) ? reduce / <span class="number">2</span> : reduce; </span><br><span class="line"></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="The-Result"><a href="#The-Result" class="headerlink" title="The Result"></a>The Result</h3><p>The result convinces me, even if it is not (yet) perfect. But that is primarily due to the choice of the dominant color of the library. According to my color perception, it could be different from time to time … like for example for this page page of this post. My eye would have expected some kind of violet. </p>
-<p>But on other pages it works fine, also because my header image at the top is darkened with a gradient to let the text pop out more.</p>
+<h3 id="The-Result"><a href="#The-Result" class="headerlink" title="The Result"></a>The Result</h3><p>The result convinces me, even if it is not (yet) perfect. But that is primarily due to the choice of the dominant color of the library. According to my color perception, it could be different from time to time … like for example for the page of this post. My eye would have expected some kind of violet. </p>
+<p>But on other pages it works fine, even the reduced lightness, because my header image at the top is darkened too with a gradient to let the text pop out more.</p>
 <img src="/post/Get-and-use-a-dominant-color-that-matches-the-header-image/scroll-header-vibrant-back.gif" title="Scrolling with default dark vibrant header background" style="max-width: 40vw" />
+
     </div>
     
     <footer class="article-footer" data-pagefind-ignore>      
@@ -396,15 +397,15 @@ After a short testing period I decided to use Vibrant Colors (also because of th
   
   
 
-      <div class="article-permalink" id="article-permalink-clnkmosy70036ofor84gs4dy8">
+      <div class="article-permalink" id="article-permalink-clnkp84x900361jou2dp78wap">
     <input class="article-permalink-value" value="https://kiko.io/post/Get-and-use-a-dominant-color-that-matches-the-header-image/" 
-           data-id="clnkmosy70036ofor84gs4dy8" data-title="Get and use a dominant color that matches the header image" />
+           data-id="clnkp84x900361jou2dp78wap" data-title="Get and use a dominant color that matches the header image" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnkmosy70036ofor84gs4dy8");
+        initPermalink("clnkp84x900361jou2dp78wap");
     });
 </script>
 
