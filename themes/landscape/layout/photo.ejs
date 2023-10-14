@@ -206,39 +206,17 @@
 
   <%- js('js/dist/colornames.umd.js') %>
   <%- js('js/dist/nearestColor.js') %>
-  <%- js('js/dist/tinycolor-min.js') %>
   <script>
     window.onload = (event) => {
       Vibrant.from("<%= page.pathNormal %>").getPalette().then((palette) => {
-
         const colorList = document.querySelector("#color-list ul");
-
-        // Insert Custom Header Color (like afterfooter.setVibrantColor)
-        let hsl = getVibrantColorHSL(palette.Vibrant, $("html").data("theme"));
-        let tColor = tinycolor(hsl);
-        let color = {
-          swatch: "kiko.io Custom",
-          hex: tColor.toHexString(),
-          hsl: tColor.toHslString(),
-          rgb: tColor.toRgbString(),
-          light: tColor.isLight(),
-          dark: tColor.isDark()
-        };
-        color.name = getColorName(color.hex);
-        colorList.appendChild(getColorElement(color));
-
-        // Insert all other Vibrant Colors
         for(let swatch in palette) {
           let color = { swatch: swatch };
           color.hex = palette[swatch].getHex();
           color.name = getColorName(color.hex);
-
           let tColor = tinycolor(color.hex);
           color.hsl = tColor.toHslString();
           color.rgb = tColor.toRgbString();
-          color.light = tColor.isLight();
-          color.dark = tColor.isDark();
-
           colorList.appendChild(getColorElement(color));
         }        
       });
