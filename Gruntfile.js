@@ -91,17 +91,13 @@ module.exports = function(grunt){
       lcselect: {
         expand: true,
         cwd: 'node_modules/lc-select',
-        src: [
-          'lc_select.min.js'
-        ],
+        src: [ 'lc_select.min.js' ],
         dest: 'themes/landscape/source/js/dist'
       },
       spotlight: {
         expand: true,
         cwd: 'themes/landscape/assets/spotlight',
-        src: [
-          'spotlight.bundle.js'
-        ],
+        src: [ 'spotlight.bundle.js' ],
         dest: 'themes/landscape/source/js/dist'
       },
       tinyslider: {
@@ -125,25 +121,25 @@ module.exports = function(grunt){
       macy: {
         expand: true,
         cwd: 'themes/landscape/assets/macy',
-        src: [
-          'macy.js'
-        ],
+        src: [ 'macy.js' ],
         dest: 'themes/landscape/source/js/dist'
       },
       colornames: {
         expand: true,
         cwd: 'themes/landscape/assets',
-        src: [
-          'colornames.umd.js'
-        ],
+        src: [ 'colornames.umd.js' ],
         dest: 'themes/landscape/source/js/dist'
       },
       nearestcolor: {
         expand: true,
         cwd: 'themes/landscape/assets',
-        src: [
-          'nearestColor.js'
-        ],
+        src: [ 'nearestColor.js' ],
+        dest: 'themes/landscape/source/js/dist'
+      },
+      tinycolor: {
+        expand: true,
+        cwd: 'themes/landscape/assets',
+        src: [ 'tinycolor-min.js' ],
         dest: 'themes/landscape/source/js/dist'
       }
     },
