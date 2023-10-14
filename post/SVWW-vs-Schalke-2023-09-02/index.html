@@ -345,12 +345,12 @@ To my delight, the booth operators, who I had to criticize last time, actually d
 <p>It wasn’t, however, that Schalke dominated the game. We carelessly let them just do it and the fans had their fun when they shot the ball into the clouds again after a lot of roaring and stomping. Funny.</p>
 <p>At the beginning of the second half, this continued seamlessly, even if you noticed that the coach in the cabin must have yelled at one or the other and these were now somewhat more active … and suddenly the ball was in our net … <strong>0:1</strong>! What? How? A goal in the 54. minute for Schalke out of (almost) nothing! I have to watch that again on TV … :|</p>
 
-      <div class="image-masonry" id="image-masonry-vtr44d">
+      <div class="image-masonry" id="image-masonry-pze2sd">
         <div><img class="no-caption" src="/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_104957617.jpg" alt="" /></div><div><img class="no-caption" src="/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_105327820.jpg" alt="" /></div><div><img class="no-caption" src="/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_105347190.jpg" alt="" /></div><div><img class="no-caption" src="/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_105548827.jpg" alt="" /></div><div><img class="no-caption" src="/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_105749100.jpg" alt="" /></div><div><img class="no-caption" src="/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_124411594.jpg" alt="" /></div><div><img class="no-caption" src="/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_111931000.jpg" alt="" /></div><div><img class="no-caption" src="/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_120730081.jpg" alt="" /></div><div><img class="no-caption" src="/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_125820397.jpg" alt="" /></div><div><img class="no-caption" src="/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_130050774.jpg" alt="" /></div>
       </div>
       <script>
         let macy = new Macy({
-          container: '#image-masonry-vtr44d',
+          container: '#image-masonry-pze2sd',
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -406,15 +406,15 @@ To my delight, the booth operators, who I had to criticize last time, actually d
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnqjpqsf003jj2oxe5139cq5">
+      <div class="article-permalink" id="article-permalink-clnqlecd9003jkaq3d66b8wia">
     <input class="article-permalink-value" value="https://kiko.io/post/SVWW-vs-Schalke-2023-09-02/" 
-           data-id="clnqjpqsf003jj2oxe5139cq5" data-title="SVWW vs. Schalke @ 2023-09-02" />
+           data-id="clnqlecd9003jkaq3d66b8wia" data-title="SVWW vs. Schalke @ 2023-09-02" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnqjpqsf003jj2oxe5139cq5");
+        initPermalink("clnqlecd9003jkaq3d66b8wia");
     });
 </script>
 
@@ -816,6 +816,9 @@ To my delight, the booth operators, who I had to criticize last time, actually d
 <script src="/js/dist/qr-code-styling.js"></script>
 
 
+<script src="/js/dist/tinycolor-min.js"></script>
+
+
 <script src="/js/dist/qr-code-styling-options-contact.json" id="qr-code-styling-options" type="application&#x2F;json"></script>
 
 
@@ -1033,29 +1036,18 @@ To my delight, the booth operators, who I had to criticize last time, actually d
     try {
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
-        let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-        
-        let hsl = getVibrantColorHSL(swatch, theme);
-
+        let swatch = palette.DarkVibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+        let color = swatch.getHex();
+        if (theme === "dark") {
+          let tColor = tinycolor(color).darken(10);
+          color = tColor.toHexString();
+        }
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", hsl);
+          $("#header, #footer, #back-to-top").css("background-color", color);
         }
       });
     } catch (error) {
     }
-  }
-  function getVibrantColorHSL(swatch, theme) {
-    let _hsl = swatch.getHsl();
-    let h = (_hsl[0]*360);
-    let s = (_hsl[1]*100);
-    let l = (_hsl[2]*100); 
-
-    l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
-    let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
-    l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
-
-    const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
-    return _hslToString(h, s, l);
   }
 </script>
 

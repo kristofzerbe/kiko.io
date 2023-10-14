@@ -348,12 +348,12 @@ How wonderfully this field of mathematics can be applied to photos is shown by t
 <span id="more"></span>
 
 
-      <div class="image-slider" id="image-slide-grm67v">
+      <div class="image-slider" id="image-slide-h9j9cb">
         <div><img src="/post/Tringula-And-The-Beauty-Of-Mathematics/triangula.png" alt="UI of the tool Triangula written in Go" /></div><div><img src="/post/Tringula-And-The-Beauty-Of-Mathematics/sample-40-generations.png" alt="Sample 40 generations" /></div><div><img src="/post/Tringula-And-The-Beauty-Of-Mathematics/sample-400-generations.png" alt="Sample 400 generations" /></div><div><img src="/post/Tringula-And-The-Beauty-Of-Mathematics/sample-4000-generations.png" alt="Sample 4000 generations" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-grm67v",
+          container: "#image-slide-h9j9cb",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -410,20 +410,20 @@ How wonderfully this field of mathematics can be applied to photos is shown by t
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnqjpqrv0022j2oxcx9ifxo5">
+      <div class="article-permalink" id="article-permalink-clnqleccm0022kaq32z8m0d14">
     <input class="article-permalink-value" value="https://kiko.io/post/Tringula-And-The-Beauty-Of-Mathematics/" 
-           data-id="clnqjpqrv0022j2oxcx9ifxo5" data-title="Tringula And The Beauty Of Mathematics" />
+           data-id="clnqleccm0022kaq32z8m0d14" data-title="Tringula And The Beauty Of Mathematics" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnqjpqrv0022j2oxcx9ifxo5");
+        initPermalink("clnqleccm0022kaq32z8m0d14");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-clnqjpqrv0022j2oxcx9ifxo5">
+        <div class="article-golem" id="article-golem-clnqleccm0022kaq32z8m0d14">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 29 Nov 2021 
     in German under the title <span style="font-weight:bold;">&laquo;Tringula und die Schönheit der Mathematik&raquo;</span>&nbsp;&nbsp;  
@@ -819,6 +819,9 @@ How wonderfully this field of mathematics can be applied to photos is shown by t
 <script src="/js/dist/qr-code-styling.js"></script>
 
 
+<script src="/js/dist/tinycolor-min.js"></script>
+
+
 <script src="/js/dist/qr-code-styling-options-contact.json" id="qr-code-styling-options" type="application&#x2F;json"></script>
 
 
@@ -1036,29 +1039,18 @@ How wonderfully this field of mathematics can be applied to photos is shown by t
     try {
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
-        let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-        
-        let hsl = getVibrantColorHSL(swatch, theme);
-
+        let swatch = palette.DarkVibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+        let color = swatch.getHex();
+        if (theme === "dark") {
+          let tColor = tinycolor(color).darken(10);
+          color = tColor.toHexString();
+        }
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", hsl);
+          $("#header, #footer, #back-to-top").css("background-color", color);
         }
       });
     } catch (error) {
     }
-  }
-  function getVibrantColorHSL(swatch, theme) {
-    let _hsl = swatch.getHsl();
-    let h = (_hsl[0]*360);
-    let s = (_hsl[1]*100);
-    let l = (_hsl[2]*100); 
-
-    l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
-    let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
-    l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
-
-    const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
-    return _hslToString(h, s, l);
   }
 </script>
 

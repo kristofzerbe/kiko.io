@@ -353,15 +353,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnqjpqr0000jj2oxdn459s60">
+      <div class="article-permalink" id="article-permalink-clnqlecbm000jkaq3c2gzhygu">
     <input class="article-permalink-value" value="https://kiko.io/post/Change-CSS-class-when-element-scrolls-into-viewport/" 
-           data-id="clnqjpqr0000jj2oxdn459s60" data-title="Change CSS class when element scrolls into viewport" />
+           data-id="clnqlecbm000jkaq3c2gzhygu" data-title="Change CSS class when element scrolls into viewport" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnqjpqr0000jj2oxdn459s60");
+        initPermalink("clnqlecbm000jkaq3c2gzhygu");
     });
 </script>
 
@@ -710,6 +710,9 @@
 <script src="/js/dist/qr-code-styling.js"></script>
 
 
+<script src="/js/dist/tinycolor-min.js"></script>
+
+
 <script src="/js/dist/qr-code-styling-options-contact.json" id="qr-code-styling-options" type="application&#x2F;json"></script>
 
 
@@ -927,29 +930,18 @@
     try {
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
-        let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-        
-        let hsl = getVibrantColorHSL(swatch, theme);
-
+        let swatch = palette.DarkVibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+        let color = swatch.getHex();
+        if (theme === "dark") {
+          let tColor = tinycolor(color).darken(10);
+          color = tColor.toHexString();
+        }
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", hsl);
+          $("#header, #footer, #back-to-top").css("background-color", color);
         }
       });
     } catch (error) {
     }
-  }
-  function getVibrantColorHSL(swatch, theme) {
-    let _hsl = swatch.getHsl();
-    let h = (_hsl[0]*360);
-    let s = (_hsl[1]*100);
-    let l = (_hsl[2]*100); 
-
-    l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
-    let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
-    l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
-
-    const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
-    return _hslToString(h, s, l);
   }
 </script>
 

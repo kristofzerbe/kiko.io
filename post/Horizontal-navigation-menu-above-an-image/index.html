@@ -358,15 +358,15 @@ My choice was to implement a horizontal scrolling menu, which can grow over the 
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnqjpqr4000sj2ox6bkec5r2">
+      <div class="article-permalink" id="article-permalink-clnqlecbq000skaq338qlg2zk">
     <input class="article-permalink-value" value="https://kiko.io/post/Horizontal-navigation-menu-above-an-image/" 
-           data-id="clnqjpqr4000sj2ox6bkec5r2" data-title="Horizontal navigation menu above an image" />
+           data-id="clnqlecbq000skaq338qlg2zk" data-title="Horizontal navigation menu above an image" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnqjpqr4000sj2ox6bkec5r2");
+        initPermalink("clnqlecbq000skaq338qlg2zk");
     });
 </script>
 
@@ -770,6 +770,9 @@ My choice was to implement a horizontal scrolling menu, which can grow over the 
 <script src="/js/dist/qr-code-styling.js"></script>
 
 
+<script src="/js/dist/tinycolor-min.js"></script>
+
+
 <script src="/js/dist/qr-code-styling-options-contact.json" id="qr-code-styling-options" type="application&#x2F;json"></script>
 
 
@@ -987,29 +990,18 @@ My choice was to implement a horizontal scrolling menu, which can grow over the 
     try {
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
-        let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-        
-        let hsl = getVibrantColorHSL(swatch, theme);
-
+        let swatch = palette.DarkVibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+        let color = swatch.getHex();
+        if (theme === "dark") {
+          let tColor = tinycolor(color).darken(10);
+          color = tColor.toHexString();
+        }
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", hsl);
+          $("#header, #footer, #back-to-top").css("background-color", color);
         }
       });
     } catch (error) {
     }
-  }
-  function getVibrantColorHSL(swatch, theme) {
-    let _hsl = swatch.getHsl();
-    let h = (_hsl[0]*360);
-    let s = (_hsl[1]*100);
-    let l = (_hsl[2]*100); 
-
-    l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
-    let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
-    l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
-
-    const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
-    return _hslToString(h, s, l);
   }
 </script>
 

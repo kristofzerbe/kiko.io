@@ -359,20 +359,20 @@ The trend is toward second or third devices, especially among IT workers. In add
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnqjpqs5002pj2ox92tu87sr">
+      <div class="article-permalink" id="article-permalink-clnqleccv002pkaq39xtmhk21">
     <input class="article-permalink-value" value="https://kiko.io/post/One-mouse-to-rule-them-all/" 
-           data-id="clnqjpqs5002pj2ox92tu87sr" data-title="One mouse to rule them all" />
+           data-id="clnqleccv002pkaq39xtmhk21" data-title="One mouse to rule them all" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnqjpqs5002pj2ox92tu87sr");
+        initPermalink("clnqleccv002pkaq39xtmhk21");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-clnqjpqs5002pj2ox92tu87sr">
+        <div class="article-golem" id="article-golem-clnqleccv002pkaq39xtmhk21">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 30 Sep 2022 
     in German under the title <span style="font-weight:bold;">&laquo;Eine Maus für alles&raquo;</span>&nbsp;&nbsp;  
@@ -776,6 +776,9 @@ The trend is toward second or third devices, especially among IT workers. In add
 <script src="/js/dist/qr-code-styling.js"></script>
 
 
+<script src="/js/dist/tinycolor-min.js"></script>
+
+
 <script src="/js/dist/qr-code-styling-options-contact.json" id="qr-code-styling-options" type="application&#x2F;json"></script>
 
 
@@ -993,29 +996,18 @@ The trend is toward second or third devices, especially among IT workers. In add
     try {
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
-        let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-        
-        let hsl = getVibrantColorHSL(swatch, theme);
-
+        let swatch = palette.DarkVibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+        let color = swatch.getHex();
+        if (theme === "dark") {
+          let tColor = tinycolor(color).darken(10);
+          color = tColor.toHexString();
+        }
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", hsl);
+          $("#header, #footer, #back-to-top").css("background-color", color);
         }
       });
     } catch (error) {
     }
-  }
-  function getVibrantColorHSL(swatch, theme) {
-    let _hsl = swatch.getHsl();
-    let h = (_hsl[0]*360);
-    let s = (_hsl[1]*100);
-    let l = (_hsl[2]*100); 
-
-    l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
-    let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
-    l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
-
-    const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
-    return _hslToString(h, s, l);
   }
 </script>
 

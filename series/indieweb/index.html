@@ -336,15 +336,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnqjpqrp001mj2ox0uki2hnw">
+      <div class="article-permalink" id="article-permalink-clnqleccg001mkaq3hwf88gwu">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/" 
-           data-id="clnqjpqrp001mj2ox0uki2hnw" data-title="Hexo and the IndieWeb (Receiving Webmentions)" />
+           data-id="clnqleccg001mkaq3hwf88gwu" data-title="Hexo and the IndieWeb (Receiving Webmentions)" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnqjpqrp001mj2ox0uki2hnw");
+        initPermalink("clnqleccg001mkaq3hwf88gwu");
     });
 </script>
 
@@ -431,15 +431,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnqjpqrq001nj2oxcfzhftpu">
+      <div class="article-permalink" id="article-permalink-clnqleccg001nkaq3fk8u4jre">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb-Sending-Webmentions/" 
-           data-id="clnqjpqrq001nj2oxcfzhftpu" data-title="Hexo and the IndieWeb (Sending Webmentions)" />
+           data-id="clnqleccg001nkaq3fk8u4jre" data-title="Hexo and the IndieWeb (Sending Webmentions)" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnqjpqrq001nj2oxcfzhftpu");
+        initPermalink("clnqleccg001nkaq3fk8u4jre");
     });
 </script>
 
@@ -520,15 +520,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnqjpqrq001oj2oxbe7c7g6a">
+      <div class="article-permalink" id="article-permalink-clnqleccg001okaq379pjdnqx">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb/" 
-           data-id="clnqjpqrq001oj2oxbe7c7g6a" data-title="Hexo and the IndieWeb" />
+           data-id="clnqleccg001okaq379pjdnqx" data-title="Hexo and the IndieWeb" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnqjpqrq001oj2oxbe7c7g6a");
+        initPermalink("clnqleccg001okaq379pjdnqx");
     });
 </script>
 
@@ -677,6 +677,9 @@
 
 
 <script src="/js/dist/qr-code-styling.js"></script>
+
+
+<script src="/js/dist/tinycolor-min.js"></script>
 
 
 <script src="/js/dist/qr-code-styling-options-contact.json" id="qr-code-styling-options" type="application&#x2F;json"></script>
@@ -896,29 +899,18 @@
     try {
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
-        let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-        
-        let hsl = getVibrantColorHSL(swatch, theme);
-
+        let swatch = palette.DarkVibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+        let color = swatch.getHex();
+        if (theme === "dark") {
+          let tColor = tinycolor(color).darken(10);
+          color = tColor.toHexString();
+        }
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", hsl);
+          $("#header, #footer, #back-to-top").css("background-color", color);
         }
       });
     } catch (error) {
     }
-  }
-  function getVibrantColorHSL(swatch, theme) {
-    let _hsl = swatch.getHsl();
-    let h = (_hsl[0]*360);
-    let s = (_hsl[1]*100);
-    let l = (_hsl[2]*100); 
-
-    l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
-    let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
-    l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
-
-    const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
-    return _hslToString(h, s, l);
   }
 </script>
 
