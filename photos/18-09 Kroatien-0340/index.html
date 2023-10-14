@@ -87,16 +87,13 @@
 <script src="/js/dist/scroll-timeline.js"></script>
 
   
-<script src="/js/dist/image-compare-viewer.min.js"></script>
-
-  
 <script src="/js/dist/tiny-slider.min.js"></script>
 
   
-<script src="/js/dist/macy.js"></script>
+<script src="/js/dist/image-compare-viewer.min.js"></script>
 
   
-<script src="/js/dist/vibrant.min.js"></script>
+<script src="/js/dist/macy.js"></script>
 
 
 
@@ -292,9 +289,14 @@
 
 <div class="page-content">
 
-  <img class="section" src="/photos/normal/18-09 Kroatien-0340.jpg" alt="Seating Group" 
-       data-pagefind-meta="image[src], image_alt[alt]" />
-
+  <section class="image">
+    <img id="photo" src="/photos/normal/18-09 Kroatien-0340.jpg" alt="Seating Group" 
+         data-pagefind-meta="image[src], image_alt[alt]" />
+    <small>Tap to show colors...</small>
+  </section>
+  
+  <section id="color-list"><ul></ul></section>
+    
   <section class="meta" data-pagefind-body>
     <ul>
       <li>
@@ -327,8 +329,12 @@
         
         </div> 
       </li>
-      
-      <li><hr style="margin:0"></li>
+    </ul>
+  </section>
+
+  
+  <section class="meta" data-pagefind-body>
+    <ul style="margin-bottom: 2rem">
       <li>
         <label>Keywords</label>
         <span>2018, Kroatien, kristofz</span>
@@ -396,10 +402,9 @@
         <label>Software</label>
         <span>Adobe Photoshop Lightroom Classic 10.4 (Windows)</span>
       </li>
-      
     </ul>
-
-    
+  
+  
 
     <div class="section-footer">
       
@@ -496,6 +501,47 @@
     setTimeout(() => {
       document.getElementById("header").classList.add("gray");
     }, 900);
+  </script>
+
+  
+<script src="/js/dist/colornames.umd.js"></script>
+
+  
+<script src="/js/dist/nearestColor.js"></script>
+
+  <script>
+    window.onload = (event) => {
+      Vibrant.from("/photos/normal/18-09 Kroatien-0340.jpg").getPalette().then((palette) => {
+        const colorList = document.querySelector("#color-list ul");
+        for(let swatch in palette) {
+          //const textColor = palette[swatch].getTitleTextColor(); -> undefined !?
+          const hex = palette[swatch].getHex();
+          //const hexColor = palette[swatch].getBodyTextColor(); -> undefined !?
+          const name = getColorName(hex);
+          //const nameColor = palette[swatch].getBodyTextColor(); -> undefined !?
+
+          const colorElement = `
+            <li>
+              <span>${swatch}</span>
+              <strong>${hex}</strong>
+              <em>${name}</em>  
+              <div style="background-color:${hex}"></div>
+            </li>
+          `;
+          colorList.insertAdjacentHTML('beforeend', colorElement);
+        }
+        
+      });
+      function GetColorName() {
+        const colors = colorNameList.reduce((o, { name, hex }) => Object.assign(o, { [name]: hex }), {});
+        const nearest = nearestColor.from(colors);
+        return hexColor => nearest(hexColor).name;
+      }
+      const getColorName = new GetColorName();
+      $("#photo").click(() => {
+        $("#color-list").slideToggle();
+      });
+    };
   </script>
 
 </div>
