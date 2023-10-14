@@ -172,8 +172,8 @@ function setVibrantColor(theme) {
 
 ### The Result
 
-The result convinces me, even if it is not (yet) perfect. But that is primarily due to the choice of the dominant color of the library. According to my color perception, it could be different from time to time ... like for example for this page page of this post. My eye would have expected some kind of violet. 
+The result convinces me, even if it is not (yet) perfect. But that is primarily due to the choice of the dominant color of the library. According to my color perception, it could be different from time to time ... like for example for the page of this post. My eye would have expected some kind of violet. 
 
-But on other pages it works fine, also because my header image at the top is darkened with a gradient to let the text pop out more.
+But on other pages it works fine, even the reduced lightness, because my header image at the top is darkened too with a gradient to let the text pop out more.
 
 <img src="/post/Get-and-use-a-dominant-color-that-matches-the-header-image/scroll-header-vibrant-back.gif" title="Scrolling with default dark vibrant header background" style="max-width: 40vw" />
