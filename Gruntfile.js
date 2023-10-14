@@ -16,6 +16,51 @@ module.exports = function(grunt){
         },
       }
     },
+    _clean: {
+      tmp: ['tmp']
+    },
+    concat: {
+      asset_scripts: {
+        options: { separator: '\n' },
+        src: [
+          'node_modules/medium-zoom/dist/medium-zoom.js',
+          'node_modules/node-vibrant/dist/vibrant.js',
+          'themes/landscape/assets/AutoTyping.js',
+          'themes/landscape/assets/utterances-comment.js',
+          'themes/landscape/assets/webmentions.js',
+          'themes/landscape/assets/vanilla-back-to-top.js',
+          'themes/landscape/assets/downupPopup/downupPopup.js'
+        ],
+        dest: 'themes/landscape/tmp/asset-bundle.js'
+      },
+      asset_styles: {
+        src: [
+          'themes/landscape/assets/lc-select/lc_select.custom.css',
+          'themes/landscape/assets/image-compare-viewer/image-compare-viewer.css',
+          'themes/landscape/assets/tiny-slider/tiny-slider.css',
+          'themes/landscape/assets/github-cards.css',
+          'themes/landscape/assets/downupPopup/downupPopup.css'
+        ],
+        dest: 'themes/landscape/tmp/asset-bundle.css'
+      }
+    },
+    cssmin: {
+      dist: {
+          files: {
+            'themes/landscape/source/css/dist/bundle.min.css': 'themes/landscape/tmp/asset-bundle.css'
+          }
+      }
+    },  
+    uglify: {
+      options: {
+        sourceMap: false
+      },
+      dist: {
+        files: {
+          'themes/landscape/source/js/dist/bundle.min.js': 'themes/landscape/tmp/asset-bundle.js'
+        }
+      }
+    },
     copy: {
       opensans: {
         expand: true,
@@ -45,7 +90,7 @@ module.exports = function(grunt){
       },
       lcselect: {
         expand: true,
-        cwd: 'themes/landscape/assets/lc-select',
+        cwd: 'node_modules/lc-select',
         src: [
           'lc_select.min.js'
         ],
@@ -68,22 +113,6 @@ module.exports = function(grunt){
         ],
         dest: 'themes/landscape/source/js/dist'
       },
-      macy: {
-        expand: true,
-        cwd: 'themes/landscape/assets/macy',
-        src: [
-          'macy.js'
-        ],
-        dest: 'themes/landscape/source/js/dist'
-      },
-      vibrant: {
-        expand: true,
-        cwd: 'themes/landscape/assets/vibrant',
-        src: [
-          'vibrant.min.js'
-        ],
-        dest: 'themes/landscape/source/js/dist'
-      },
       qrcodestyling: {
         expand: true,
         cwd: 'themes/landscape/assets/qr-code-styling',
@@ -92,53 +121,32 @@ module.exports = function(grunt){
           'qr-code-styling-options-*.json'
         ],
         dest: 'themes/landscape/source/js/dist'
-      }
-    },
-    _clean: {
-      tmp: ['tmp']
-    },
-    concat: {
-      asset_scripts: {
-        options: { separator: '\n' },
-        src: [
-          'themes/landscape/assets/AutoTyping.js',
-          'themes/landscape/assets/utterances-comment.js',
-          'themes/landscape/assets/webmentions.js',
-          'themes/landscape/assets/vanilla-back-to-top.js',
-          'themes/landscape/assets/medium-zoom.js',
-          'themes/landscape/assets/downupPopup/downupPopup.js'
-        ],
-        dest: 'themes/landscape/tmp/asset-bundle.js'
       },
-      asset_styles: {
+      macy: {
+        expand: true,
+        cwd: 'themes/landscape/assets/macy',
         src: [
-          'themes/landscape/assets/lc-select/lc_select.css',
-          'themes/landscape/assets/image-compare-viewer/image-compare-viewer.css',
-          'themes/landscape/assets/tiny-slider/tiny-slider.css',
-          'themes/landscape/assets/github-cards.css',
-          'themes/landscape/assets/downupPopup/downupPopup.css'
+          'macy.js'
         ],
-        dest: 'themes/landscape/tmp/asset-bundle.css'
-      }
-    },
-    uglify: {
-      options: {
-        sourceMap: false
+        dest: 'themes/landscape/source/js/dist'
       },
-      dist: {
-        files: {
-          'themes/landscape/source/js/dist/bundle.min.js': 'themes/landscape/tmp/asset-bundle.js',
-          'themes/landscape/assets/lc-select/lc_select.min.js': 'themes/landscape/assets/lc-select/lc_select.js'
-        }
+      colornames: {
+        expand: true,
+        cwd: 'themes/landscape/assets',
+        src: [
+          'colornames.umd.js'
+        ],
+        dest: 'themes/landscape/source/js/dist'
+      },
+      nearestcolor: {
+        expand: true,
+        cwd: 'themes/landscape/assets',
+        src: [
+          'nearestColor.js'
+        ],
+        dest: 'themes/landscape/source/js/dist'
       }
     },
-    cssmin: {
-      dist: {
-          files: {
-            'themes/landscape/source/css/dist/bundle.min.css': 'themes/landscape/tmp/asset-bundle.css'
-          }
-      }
-    },  
     hexo: {
       clean: {
         options: {
