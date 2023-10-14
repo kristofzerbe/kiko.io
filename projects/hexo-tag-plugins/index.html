@@ -381,15 +381,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnq5urdu0037m0onbxmr2lzv">
+      <div class="article-permalink" id="article-permalink-clnqjpqsb0037j2ox3mwv74gf">
     <input class="article-permalink-value" value="https://kiko.io/post/Image-Masonry-Tag-Plugin-for-Hexo/" 
-           data-id="clnq5urdu0037m0onbxmr2lzv" data-title="Image Masonry Tag Plugin for Hexo" />
+           data-id="clnqjpqsb0037j2ox3mwv74gf" data-title="Image Masonry Tag Plugin for Hexo" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnq5urdu0037m0onbxmr2lzv");
+        initPermalink("clnqjpqsb0037j2ox3mwv74gf");
     });
 </script>
 
@@ -465,15 +465,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnq5urcz001jm0onb2x82kup">
+      <div class="article-permalink" id="article-permalink-clnqjpqro001jj2ox2wz5h1zo">
     <input class="article-permalink-value" value="https://kiko.io/post/GitHub-Tag-Plugins-for-Hexo/" 
-           data-id="clnq5urcz001jm0onb2x82kup" data-title="GitHub Tag Plugins for Hexo" />
+           data-id="clnqjpqro001jj2ox2wz5h1zo" data-title="GitHub Tag Plugins for Hexo" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnq5urcz001jm0onb2x82kup");
+        initPermalink("clnqjpqro001jj2ox2wz5h1zo");
     });
 </script>
 
@@ -555,15 +555,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnq5urd0001lm0on0m3zfrqv">
+      <div class="article-permalink" id="article-permalink-clnqjpqrp001lj2ox6f73huvh">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-Tag-Plugin-Collection/" 
-           data-id="clnq5urd0001lm0on0m3zfrqv" data-title="Hexo Tag Plugin Collection" />
+           data-id="clnqjpqrp001lj2ox6f73huvh" data-title="Hexo Tag Plugin Collection" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnq5urd0001lm0on0m3zfrqv");
+        initPermalink("clnqjpqrp001lj2ox6f73huvh");
     });
 </script>
 
@@ -932,26 +932,28 @@
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
         let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-
-        let _hsl = swatch.getHsl();
-        let h = (_hsl[0]*360);
-        let s = (_hsl[1]*100);
-        let l = (_hsl[2]*100); 
-
-        l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
-        let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
-        l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
-
-        const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+        
+        let hsl = getVibrantColorHSL(swatch, theme);
 
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", _hslToString(h, s, l));
+          $("#header, #footer, #back-to-top").css("background-color", hsl);
         }
       });
-      
     } catch (error) {
-      
     }
+  }
+  function getVibrantColorHSL(swatch, theme) {
+    let _hsl = swatch.getHsl();
+    let h = (_hsl[0]*360);
+    let s = (_hsl[1]*100);
+    let l = (_hsl[2]*100); 
+
+    l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
+    let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
+    l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
+
+    const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+    return _hslToString(h, s, l);
   }
 </script>
 

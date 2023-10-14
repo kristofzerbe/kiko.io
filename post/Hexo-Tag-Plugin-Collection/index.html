@@ -536,7 +536,7 @@ On the Github page you can find all the info on how to use the plugins. In this 
 
 <p><strong>Live Output:</strong></p>
 
-    <div id="image-compare-bba44d">
+    <div id="image-compare-u24yjd">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Hexo-Tag-Plugin-Collection/example-image_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Hexo-Tag-Plugin-Collection/example-image_PRESET.jpg" alt="" />
     </div>
@@ -545,7 +545,7 @@ On the Github page you can find all the info on how to use the plugins. In this 
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-bba44d"),
+      new ImageCompare(document.getElementById("image-compare-u24yjd"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -587,12 +587,12 @@ On the Github page you can find all the info on how to use the plugins. In this 
 
 <p><strong>Live Output:</strong></p>
 
-      <div class="image-slider" id="image-slide-p7wpsf">
+      <div class="image-slider" id="image-slide-qlg31c">
         <div><img src="/post/Hexo-Tag-Plugin-Collection/example-image_ORIGINAL.jpg" alt="Original" /></div><div><img src="/post/Hexo-Tag-Plugin-Collection/example-image_PRESET.jpg" alt="Lightroom Preset" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-p7wpsf",
+          container: "#image-slide-qlg31c",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -649,15 +649,15 @@ On the Github page you can find all the info on how to use the plugins. In this 
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnq5urd0001lm0on0m3zfrqv">
+      <div class="article-permalink" id="article-permalink-clnqjpqrp001lj2ox6f73huvh">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-Tag-Plugin-Collection/" 
-           data-id="clnq5urd0001lm0on0m3zfrqv" data-title="Hexo Tag Plugin Collection" />
+           data-id="clnqjpqrp001lj2ox6f73huvh" data-title="Hexo Tag Plugin Collection" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnq5urd0001lm0on0m3zfrqv");
+        initPermalink("clnqjpqrp001lj2ox6f73huvh");
     });
 </script>
 
@@ -1273,26 +1273,28 @@ On the Github page you can find all the info on how to use the plugins. In this 
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
         let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-
-        let _hsl = swatch.getHsl();
-        let h = (_hsl[0]*360);
-        let s = (_hsl[1]*100);
-        let l = (_hsl[2]*100); 
-
-        l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
-        let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
-        l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
-
-        const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+        
+        let hsl = getVibrantColorHSL(swatch, theme);
 
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", _hslToString(h, s, l));
+          $("#header, #footer, #back-to-top").css("background-color", hsl);
         }
       });
-      
     } catch (error) {
-      
     }
+  }
+  function getVibrantColorHSL(swatch, theme) {
+    let _hsl = swatch.getHsl();
+    let h = (_hsl[0]*360);
+    let s = (_hsl[1]*100);
+    let l = (_hsl[2]*100); 
+
+    l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
+    let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
+    l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
+
+    const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+    return _hslToString(h, s, l);
   }
 </script>
 

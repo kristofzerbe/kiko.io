@@ -394,20 +394,20 @@ It all started with the Monaco Editor, the core around which VS Code is built an
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnq5urdj002mm0on776fgfan">
+      <div class="article-permalink" id="article-permalink-clnqjpqs4002mj2oxa1xjaz29">
     <input class="article-permalink-value" value="https://kiko.io/post/Gitpod-Visual-Studio-Code-on-the-Web/" 
-           data-id="clnq5urdj002mm0on776fgfan" data-title="Gitpod - Visual Studio Code on the Web" />
+           data-id="clnqjpqs4002mj2oxa1xjaz29" data-title="Gitpod - Visual Studio Code on the Web" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnq5urdj002mm0on776fgfan");
+        initPermalink("clnqjpqs4002mj2oxa1xjaz29");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-clnq5urdj002mm0on776fgfan">
+        <div class="article-golem" id="article-golem-clnqjpqs4002mj2oxa1xjaz29">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 05 Jul 2022 
     in German under the title <span style="font-weight:bold;">&laquo;Visual Studio Code im Web mit Gitpod - Ein Gewinn für jede Tool-Sammlung&raquo;</span>&nbsp;&nbsp;  
@@ -1023,26 +1023,28 @@ It all started with the Monaco Editor, the core around which VS Code is built an
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
         let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-
-        let _hsl = swatch.getHsl();
-        let h = (_hsl[0]*360);
-        let s = (_hsl[1]*100);
-        let l = (_hsl[2]*100); 
-
-        l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
-        let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
-        l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
-
-        const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+        
+        let hsl = getVibrantColorHSL(swatch, theme);
 
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", _hslToString(h, s, l));
+          $("#header, #footer, #back-to-top").css("background-color", hsl);
         }
       });
-      
     } catch (error) {
-      
     }
+  }
+  function getVibrantColorHSL(swatch, theme) {
+    let _hsl = swatch.getHsl();
+    let h = (_hsl[0]*360);
+    let s = (_hsl[1]*100);
+    let l = (_hsl[2]*100); 
+
+    l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
+    let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
+    l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
+
+    const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+    return _hslToString(h, s, l);
   }
 </script>
 

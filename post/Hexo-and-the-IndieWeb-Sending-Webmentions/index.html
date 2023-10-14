@@ -429,15 +429,15 @@ Good news: you don’t have to write your own solution to scan your article for 
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnq5urd1001nm0on8zax3ov7">
+      <div class="article-permalink" id="article-permalink-clnqjpqrq001nj2oxcfzhftpu">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb-Sending-Webmentions/" 
-           data-id="clnq5urd1001nm0on8zax3ov7" data-title="Hexo and the IndieWeb (Sending Webmentions)" />
+           data-id="clnqjpqrq001nj2oxcfzhftpu" data-title="Hexo and the IndieWeb (Sending Webmentions)" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnq5urd1001nm0on8zax3ov7");
+        initPermalink("clnqjpqrq001nj2oxcfzhftpu");
     });
 </script>
 
@@ -1004,26 +1004,28 @@ Good news: you don’t have to write your own solution to scan your article for 
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
         let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-
-        let _hsl = swatch.getHsl();
-        let h = (_hsl[0]*360);
-        let s = (_hsl[1]*100);
-        let l = (_hsl[2]*100); 
-
-        l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
-        let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
-        l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
-
-        const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+        
+        let hsl = getVibrantColorHSL(swatch, theme);
 
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", _hslToString(h, s, l));
+          $("#header, #footer, #back-to-top").css("background-color", hsl);
         }
       });
-      
     } catch (error) {
-      
     }
+  }
+  function getVibrantColorHSL(swatch, theme) {
+    let _hsl = swatch.getHsl();
+    let h = (_hsl[0]*360);
+    let s = (_hsl[1]*100);
+    let l = (_hsl[2]*100); 
+
+    l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
+    let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
+    l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
+
+    const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+    return _hslToString(h, s, l);
   }
 </script>
 

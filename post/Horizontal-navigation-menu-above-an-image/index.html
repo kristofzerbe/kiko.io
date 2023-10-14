@@ -358,15 +358,15 @@ My choice was to implement a horizontal scrolling menu, which can grow over the 
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnq5urch000sm0ond3kl2wu8">
+      <div class="article-permalink" id="article-permalink-clnqjpqr4000sj2ox6bkec5r2">
     <input class="article-permalink-value" value="https://kiko.io/post/Horizontal-navigation-menu-above-an-image/" 
-           data-id="clnq5urch000sm0ond3kl2wu8" data-title="Horizontal navigation menu above an image" />
+           data-id="clnqjpqr4000sj2ox6bkec5r2" data-title="Horizontal navigation menu above an image" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnq5urch000sm0ond3kl2wu8");
+        initPermalink("clnqjpqr4000sj2ox6bkec5r2");
     });
 </script>
 
@@ -988,26 +988,28 @@ My choice was to implement a horizontal scrolling menu, which can grow over the 
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
         let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-
-        let _hsl = swatch.getHsl();
-        let h = (_hsl[0]*360);
-        let s = (_hsl[1]*100);
-        let l = (_hsl[2]*100); 
-
-        l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
-        let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
-        l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
-
-        const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+        
+        let hsl = getVibrantColorHSL(swatch, theme);
 
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", _hslToString(h, s, l));
+          $("#header, #footer, #back-to-top").css("background-color", hsl);
         }
       });
-      
     } catch (error) {
-      
     }
+  }
+  function getVibrantColorHSL(swatch, theme) {
+    let _hsl = swatch.getHsl();
+    let h = (_hsl[0]*360);
+    let s = (_hsl[1]*100);
+    let l = (_hsl[2]*100); 
+
+    l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
+    let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
+    l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
+
+    const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+    return _hslToString(h, s, l);
   }
 </script>
 

@@ -339,7 +339,7 @@
 <p>These images are absolute great for background images in websites, in order to make the details less recognisable.</p>
 <p>There is a <a href="https://rh12503.github.io/triangula/">web version of Triangula</a>, but the desktop version (including a console version) is much faster. Best feature is the ability not only to save the generated images as PNG, but also as SVG!</p>
 <h3 id="Example-with-1-000-Generations"><a href="#Example-with-1-000-Generations" class="headerlink" title="Example with 1.000 Generations"></a>Example with 1.000 Generations</h3>
-    <div id="image-compare-ad9jqz">
+    <div id="image-compare-4pgpcq">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Triangulate-your-images-with-Triangula/DSC_7006-HDR_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Triangulate-your-images-with-Triangula/DSC_7006-HDR_TRIANGULATED.png" alt="" />
     </div>
@@ -348,7 +348,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-ad9jqz"),
+      new ImageCompare(document.getElementById("image-compare-4pgpcq"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -364,7 +364,7 @@
   
 
 <h3 id="Example-with-10-000-Generations"><a href="#Example-with-10-000-Generations" class="headerlink" title="Example with 10.000 Generations"></a>Example with 10.000 Generations</h3>
-    <div id="image-compare-11q7uz">
+    <div id="image-compare-d6ofrf">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Triangulate-your-images-with-Triangula/19-07 Schottland-0512_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Triangulate-your-images-with-Triangula/19-07 Schottland-0512_TRIANGULATED.png" alt="" />
     </div>
@@ -373,7 +373,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-11q7uz"),
+      new ImageCompare(document.getElementById("image-compare-d6ofrf"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -389,7 +389,7 @@
   
 
 <h3 id="Example-with-20-000-Generations"><a href="#Example-with-20-000-Generations" class="headerlink" title="Example with 20.000 Generations"></a>Example with 20.000 Generations</h3>
-    <div id="image-compare-9si02g">
+    <div id="image-compare-bgv7xn">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Triangulate-your-images-with-Triangula/DSC_8860_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Triangulate-your-images-with-Triangula/DSC_8860_TRIANGULATED.png" alt="" />
     </div>
@@ -398,7 +398,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-9si02g"),
+      new ImageCompare(document.getElementById("image-compare-bgv7xn"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -422,15 +422,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnq5urd80021m0on1z9gfaaf">
+      <div class="article-permalink" id="article-permalink-clnqjpqrv0021j2ox1ci7dwfz">
     <input class="article-permalink-value" value="https://kiko.io/post/Triangulate-your-images-with-Triangula/" 
-           data-id="clnq5urd80021m0on1z9gfaaf" data-title="Triangulate your images with Triangula" />
+           data-id="clnqjpqrv0021j2ox1ci7dwfz" data-title="Triangulate your images with Triangula" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnq5urd80021m0on1z9gfaaf");
+        initPermalink("clnqjpqrv0021j2ox1ci7dwfz");
     });
 </script>
 
@@ -1044,26 +1044,28 @@
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
         let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-
-        let _hsl = swatch.getHsl();
-        let h = (_hsl[0]*360);
-        let s = (_hsl[1]*100);
-        let l = (_hsl[2]*100); 
-
-        l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
-        let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
-        l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
-
-        const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+        
+        let hsl = getVibrantColorHSL(swatch, theme);
 
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", _hslToString(h, s, l));
+          $("#header, #footer, #back-to-top").css("background-color", hsl);
         }
       });
-      
     } catch (error) {
-      
     }
+  }
+  function getVibrantColorHSL(swatch, theme) {
+    let _hsl = swatch.getHsl();
+    let h = (_hsl[0]*360);
+    let s = (_hsl[1]*100);
+    let l = (_hsl[2]*100); 
+
+    l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
+    let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
+    l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
+
+    const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+    return _hslToString(h, s, l);
   }
 </script>
 

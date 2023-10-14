@@ -346,12 +346,12 @@ As is so often the case in the modern world, it’s the oversupply that leaves s
 <p>The British <a href="http://puckey.studio/"><strong>Jonathan Puckey</strong> and his studio</a> played a key role in the project and its technical implementation. In several iteration stages, this resulted in the web app radio.garden, which Puckey is still in charge of today. Instead of maps, the team from Amsterdam used satellite images from the beginning to illustrate that radio signals have always had the power to cross borders.</p>
 <p>Radio Garden is free, and you don’t need to register, log in, or even provide an email address. Nothing. Open up, select a station, listen to the radio.</p>
 
-      <div class="image-slider" id="image-slide-999rjz">
+      <div class="image-slider" id="image-slide-vu6a7g">
         <div><img src="/post/Radio-Garden/radio-garden-screen-1.png" alt="Screenshot Radio Garden" /></div><div><img src="/post/Radio-Garden/radio-garden-screen-3.png" alt="Screenshot Radio Garden" /></div><div><img src="/post/Radio-Garden/radio-garden-screen-4.png" alt="Screenshot Radio Garden" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-999rjz",
+          container: "#image-slide-vu6a7g",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -383,20 +383,20 @@ As is so often the case in the modern world, it’s the oversupply that leaves s
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnq5urdy003gm0on50oh9474">
+      <div class="article-permalink" id="article-permalink-clnqjpqse003gj2oxalmp30fk">
     <input class="article-permalink-value" value="https://kiko.io/post/Radio-Garden/" 
-           data-id="clnq5urdy003gm0on50oh9474" data-title="Radio Garden" />
+           data-id="clnqjpqse003gj2oxalmp30fk" data-title="Radio Garden" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnq5urdy003gm0on50oh9474");
+        initPermalink("clnqjpqse003gj2oxalmp30fk");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-clnq5urdy003gm0on50oh9474">
+        <div class="article-golem" id="article-golem-clnqjpqse003gj2oxalmp30fk">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 26 Jan 2023 
     in German under the title <span style="font-weight:bold;">&laquo;Alle Arten kommen in den Garten&raquo;</span>&nbsp;&nbsp;  
@@ -1014,26 +1014,28 @@ As is so often the case in the modern world, it’s the oversupply that leaves s
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
         let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-
-        let _hsl = swatch.getHsl();
-        let h = (_hsl[0]*360);
-        let s = (_hsl[1]*100);
-        let l = (_hsl[2]*100); 
-
-        l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
-        let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
-        l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
-
-        const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+        
+        let hsl = getVibrantColorHSL(swatch, theme);
 
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", _hslToString(h, s, l));
+          $("#header, #footer, #back-to-top").css("background-color", hsl);
         }
       });
-      
     } catch (error) {
-      
     }
+  }
+  function getVibrantColorHSL(swatch, theme) {
+    let _hsl = swatch.getHsl();
+    let h = (_hsl[0]*360);
+    let s = (_hsl[1]*100);
+    let l = (_hsl[2]*100); 
+
+    l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
+    let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
+    l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
+
+    const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+    return _hslToString(h, s, l);
   }
 </script>
 

@@ -347,12 +347,12 @@ Belgian software developer Raphaël Godart (twitter.com/RaphaelGodart) must have
 <li>Automatic updates</li>
 </ul>
 
-      <div class="image-slider" id="image-slide-uyto59">
+      <div class="image-slider" id="image-slide-i4tdda">
         <div><img src="/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/dopamine2.png" alt="Dopamine 2.0.9 on Windows 10" /></div><div><img src="/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/dopamine2-playlist.png" alt="Dopamine 2.0.9 Playlist" /></div><div><img src="/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/dopamine2-settings.png" alt="Dopamine 2.0.9 Settings Page" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-uyto59",
+          container: "#image-slide-i4tdda",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -391,20 +391,20 @@ Belgian software developer Raphaël Godart (twitter.com/RaphaelGodart) must have
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnq5urdi002km0one0ed993p">
+      <div class="article-permalink" id="article-permalink-clnqjpqs3002kj2oxhznm09lj">
     <input class="article-permalink-value" value="https://kiko.io/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/" 
-           data-id="clnq5urdi002km0one0ed993p" data-title="Dopamine, a music player for Windows 10 as it should be" />
+           data-id="clnqjpqs3002kj2oxhznm09lj" data-title="Dopamine, a music player for Windows 10 as it should be" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnq5urdi002km0one0ed993p");
+        initPermalink("clnqjpqs3002kj2oxhznm09lj");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-clnq5urdi002km0one0ed993p">
+        <div class="article-golem" id="article-golem-clnqjpqs3002kj2oxhznm09lj">
     This article appeared first on <a href="https://golem.de">golem.de</a> 
     on 11 Aug 2022 
     in German under the title <span style="font-weight:bold;">&laquo;Ein Musikplayer, wie er sein sollte&raquo;</span>&nbsp;&nbsp;  
@@ -1026,26 +1026,28 @@ Belgian software developer Raphaël Godart (twitter.com/RaphaelGodart) must have
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
         let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-
-        let _hsl = swatch.getHsl();
-        let h = (_hsl[0]*360);
-        let s = (_hsl[1]*100);
-        let l = (_hsl[2]*100); 
-
-        l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
-        let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
-        l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
-
-        const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+        
+        let hsl = getVibrantColorHSL(swatch, theme);
 
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", _hslToString(h, s, l));
+          $("#header, #footer, #back-to-top").css("background-color", hsl);
         }
       });
-      
     } catch (error) {
-      
     }
+  }
+  function getVibrantColorHSL(swatch, theme) {
+    let _hsl = swatch.getHsl();
+    let h = (_hsl[0]*360);
+    let s = (_hsl[1]*100);
+    let l = (_hsl[2]*100); 
+
+    l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
+    let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
+    l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
+
+    const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+    return _hslToString(h, s, l);
   }
 </script>
 

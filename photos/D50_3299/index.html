@@ -483,29 +483,71 @@
   
 <script src="/js/dist/nearestColor.js"></script>
 
+  
+<script src="/js/dist/tinycolor-min.js"></script>
+
   <script>
     window.onload = (event) => {
       Vibrant.from("/pool/D50_3299/normal.jpg").getPalette().then((palette) => {
-        const colorList = document.querySelector("#color-list ul");
-        for(let swatch in palette) {
-          //const textColor = palette[swatch].getTitleTextColor(); -> undefined !?
-          const hex = palette[swatch].getHex();
-          //const hexColor = palette[swatch].getBodyTextColor(); -> undefined !?
-          const name = getColorName(hex);
-          //const nameColor = palette[swatch].getBodyTextColor(); -> undefined !?
 
-          const colorElement = `
-            <li>
-              <span>${swatch}</span>
-              <strong>${hex}</strong>
-              <em>${name}</em>  
-              <div style="background-color:${hex}"></div>
-            </li>
-          `;
-          colorList.insertAdjacentHTML('beforeend', colorElement);
-        }
-        
+        const colorList = document.querySelector("#color-list ul");
+
+        // Insert Custom Header Color (like afterfooter.setVibrantColor)
+        let hsl = getVibrantColorHSL(palette.Vibrant, $("html").data("theme"));
+        let tColor = tinycolor(hsl);
+        let color = {
+          swatch: "kiko.io Custom",
+          hex: tColor.toHexString(),
+          hsl: tColor.toHslString(),
+          rgb: tColor.toRgbString(),
+          light: tColor.isLight(),
+          dark: tColor.isDark()
+        };
+        color.name = getColorName(color.hex);
+        colorList.appendChild(getColorElement(color));
+
+        // Insert all other Vibrant Colors
+        for(let swatch in palette) {
+          let color = { swatch: swatch };
+          color.hex = palette[swatch].getHex();
+          color.name = getColorName(color.hex);
+
+          let tColor = tinycolor(color.hex);
+          color.hsl = tColor.toHslString();
+          color.rgb = tColor.toRgbString();
+          color.light = tColor.isLight();
+          color.dark = tColor.isDark();
+
+          colorList.appendChild(getColorElement(color));
+        }        
       });
+      function getColorElement(obj) {
+        let eItem = document.createElement("li");
+        for (const prop in obj) {
+          eItem.setAttribute(`data-${prop}`, obj[prop]);
+        };
+        eItem.dataset.current = "hex";
+        eItem.insertAdjacentHTML("beforeend", `
+            <span>${obj.swatch}</span>
+            <strong>${obj.hex}</strong>
+            <em>${obj.name}</em>  
+            <div style="background-color:${obj.hex}"></div>
+        `);
+        let eSample = document.createElement("div");
+        eSample.style.cssText = `background-color:${obj.hex}`;
+        eSample.addEventListener("click", (e) => {
+          let eItem = e.target.parentNode;
+          let eColor = eItem.querySelector("strong");
+          switch (eItem.dataset.current) {
+            case "hex": eColor.innerHTML = eItem.dataset.hsl; eItem.dataset.current = "hsl"; break;
+            case "hsl": eColor.innerHTML = eItem.dataset.rgb; eItem.dataset.current = "rgb"; break;
+            case "rgb": eColor.innerHTML = eItem.dataset.hex; eItem.dataset.current = "hex"; break;
+            default: break;
+          }
+        });
+        eItem.appendChild(eSample);
+        return eItem;
+      }
       function GetColorName() {
         const colors = colorNameList.reduce((o, { name, hex }) => Object.assign(o, { [name]: hex }), {});
         const nearest = nearestColor.from(colors);
@@ -878,26 +920,28 @@
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
         let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-
-        let _hsl = swatch.getHsl();
-        let h = (_hsl[0]*360);
-        let s = (_hsl[1]*100);
-        let l = (_hsl[2]*100); 
-
-        l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
-        let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
-        l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
-
-        const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+        
+        let hsl = getVibrantColorHSL(swatch, theme);
 
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", _hslToString(h, s, l));
+          $("#header, #footer, #back-to-top").css("background-color", hsl);
         }
       });
-      
     } catch (error) {
-      
     }
+  }
+  function getVibrantColorHSL(swatch, theme) {
+    let _hsl = swatch.getHsl();
+    let h = (_hsl[0]*360);
+    let s = (_hsl[1]*100);
+    let l = (_hsl[2]*100); 
+
+    l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
+    let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
+    l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
+
+    const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+    return _hslToString(h, s, l);
   }
 </script>
 

@@ -330,15 +330,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnq5urd80020m0onbm143h6m">
+      <div class="article-permalink" id="article-permalink-clnqjpqrv0020j2ox82apg78d">
     <input class="article-permalink-value" value="https://kiko.io/post/The-Last-Image-Gallery/" 
-           data-id="clnq5urd80020m0onbm143h6m" data-title="The Last Image Gallery..." />
+           data-id="clnqjpqrv0020j2ox82apg78d" data-title="The Last Image Gallery..." />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnq5urd80020m0onbm143h6m");
+        initPermalink("clnqjpqrv0020j2ox82apg78d");
     });
 </script>
 
@@ -416,15 +416,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnq5urd3001rm0onh1zo7b9r">
+      <div class="article-permalink" id="article-permalink-clnqjpqrr001rj2oxbgmb5577">
     <input class="article-permalink-value" value="https://kiko.io/post/Open-Source-Insights-Seeing-the-big-picture/" 
-           data-id="clnq5urd3001rm0onh1zo7b9r" data-title="Open Source Insights - Seeing the big picture" />
+           data-id="clnqjpqrr001rj2oxbgmb5577" data-title="Open Source Insights - Seeing the big picture" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnq5urd3001rm0onh1zo7b9r");
+        initPermalink("clnqjpqrr001rj2oxbgmb5577");
     });
 </script>
 
@@ -500,15 +500,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnq5urd80021m0on1z9gfaaf">
+      <div class="article-permalink" id="article-permalink-clnqjpqrv0021j2ox1ci7dwfz">
     <input class="article-permalink-value" value="https://kiko.io/post/Triangulate-your-images-with-Triangula/" 
-           data-id="clnq5urd80021m0on1z9gfaaf" data-title="Triangulate your images with Triangula" />
+           data-id="clnqjpqrv0021j2ox1ci7dwfz" data-title="Triangulate your images with Triangula" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnq5urd80021m0on1z9gfaaf");
+        initPermalink("clnqjpqrv0021j2ox1ci7dwfz");
     });
 </script>
 
@@ -637,15 +637,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnq5urd6001wm0on9k5ofjmw">
+      <div class="article-permalink" id="article-permalink-clnqjpqrt001wj2ox1nldb2yt">
     <input class="article-permalink-value" value="https://kiko.io/post/SVG-Resources/" 
-           data-id="clnq5urd6001wm0on9k5ofjmw" data-title="SVG Resources" />
+           data-id="clnqjpqrt001wj2ox1nldb2yt" data-title="SVG Resources" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnq5urd6001wm0on9k5ofjmw");
+        initPermalink("clnqjpqrt001wj2ox1nldb2yt");
     });
 </script>
 
@@ -725,15 +725,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnq5urcg000qm0on1v2i2ql7">
+      <div class="article-permalink" id="article-permalink-clnqjpqr3000qj2oxc2zr2t1b">
     <input class="article-permalink-value" value="https://kiko.io/post/Dopamine-How-Software-should-be/" 
-           data-id="clnq5urcg000qm0on1v2i2ql7" data-title="Dopamine: How Software should be..." />
+           data-id="clnqjpqr3000qj2oxc2zr2t1b" data-title="Dopamine: How Software should be..." />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnq5urcg000qm0on1v2i2ql7");
+        initPermalink("clnqjpqr3000qj2oxc2zr2t1b");
     });
 </script>
 
@@ -1102,26 +1102,28 @@
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
         let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-
-        let _hsl = swatch.getHsl();
-        let h = (_hsl[0]*360);
-        let s = (_hsl[1]*100);
-        let l = (_hsl[2]*100); 
-
-        l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
-        let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
-        l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
-
-        const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+        
+        let hsl = getVibrantColorHSL(swatch, theme);
 
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", _hslToString(h, s, l));
+          $("#header, #footer, #back-to-top").css("background-color", hsl);
         }
       });
-      
     } catch (error) {
-      
     }
+  }
+  function getVibrantColorHSL(swatch, theme) {
+    let _hsl = swatch.getHsl();
+    let h = (_hsl[0]*360);
+    let s = (_hsl[1]*100);
+    let l = (_hsl[2]*100); 
+
+    l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
+    let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
+    l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
+
+    const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+    return _hslToString(h, s, l);
   }
 </script>
 

@@ -326,15 +326,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnq5urd4001tm0onduxl4tvk">
+      <div class="article-permalink" id="article-permalink-clnqjpqrs001tj2oxe9rw9e9m">
     <input class="article-permalink-value" value="https://kiko.io/post/Photo-Workflow-Re-Thought/" 
-           data-id="clnq5urd4001tm0onduxl4tvk" data-title="Photo Workflow Re-Thought" />
+           data-id="clnqjpqrs001tj2oxe9rw9e9m" data-title="Photo Workflow Re-Thought" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnq5urd4001tm0onduxl4tvk");
+        initPermalink("clnqjpqrs001tj2oxe9rw9e9m");
     });
 </script>
 
@@ -408,15 +408,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnq5urcp0012m0oneu295cfo">
+      <div class="article-permalink" id="article-permalink-clnqjpqrb0012j2ox4uylco2b">
     <input class="article-permalink-value" value="https://kiko.io/post/Adding-Screenshots-to-Trello-Cards-on-Android/" 
-           data-id="clnq5urcp0012m0oneu295cfo" data-title="Adding Screenshots to Trello Cards on Android" />
+           data-id="clnqjpqrb0012j2ox4uylco2b" data-title="Adding Screenshots to Trello Cards on Android" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnq5urcp0012m0oneu295cfo");
+        initPermalink("clnqjpqrb0012j2ox4uylco2b");
     });
 </script>
 
@@ -493,15 +493,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnq5urd5001um0on13ooc0uz">
+      <div class="article-permalink" id="article-permalink-clnqjpqrs001uj2oxglnt0ttl">
     <input class="article-permalink-value" value="https://kiko.io/post/Remote-Testing-and-Debugging-with-Chrome/" 
-           data-id="clnq5urd5001um0on13ooc0uz" data-title="Remote Testing and Debugging with Chrome" />
+           data-id="clnqjpqrs001uj2oxglnt0ttl" data-title="Remote Testing and Debugging with Chrome" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnq5urd5001um0on13ooc0uz");
+        initPermalink("clnqjpqrs001uj2oxglnt0ttl");
     });
 </script>
 
@@ -870,26 +870,28 @@
       let img = $("#photo-preload").attr("href");
       Vibrant.from(img).getPalette().then(palette => {
         let swatch = palette.Vibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-
-        let _hsl = swatch.getHsl();
-        let h = (_hsl[0]*360);
-        let s = (_hsl[1]*100);
-        let l = (_hsl[2]*100); 
-
-        l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
-        let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
-        l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
-
-        const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+        
+        let hsl = getVibrantColorHSL(swatch, theme);
 
         if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", _hslToString(h, s, l));
+          $("#header, #footer, #back-to-top").css("background-color", hsl);
         }
       });
-      
     } catch (error) {
-      
     }
+  }
+  function getVibrantColorHSL(swatch, theme) {
+    let _hsl = swatch.getHsl();
+    let h = (_hsl[0]*360);
+    let s = (_hsl[1]*100);
+    let l = (_hsl[2]*100); 
+
+    l = (theme === "dark") ? 20 : 35; // new fixed hue depending on theme
+    let reduce = (s > 70) ? 10 - ((100 - s) / 4) : 0; // calc hue reduction when saturation too high
+    l -= (theme === "dark") ? reduce / 2 : reduce; // take half of reduction when dark theme
+
+    const _hslToString = (h, s, l) => `hsl(${h.toFixed(4)}, ${s.toFixed(4)}%, ${l.toFixed(4)}%)`;
+    return _hslToString(h, s, l);
   }
 </script>
 
