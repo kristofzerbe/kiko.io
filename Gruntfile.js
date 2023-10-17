@@ -17,7 +17,7 @@ module.exports = function(grunt){
       }
     },
     _clean: {
-      tmp: ['tmp']
+      tmp: ['themes/landscape/tmp']
     },
     concat: {
       asset_scripts: {
@@ -35,9 +35,10 @@ module.exports = function(grunt){
       },
       asset_styles: {
         src: [
-          'themes/landscape/assets/lc-select/lc_select.custom.css',
-          'themes/landscape/assets/image-compare-viewer/image-compare-viewer.css',
-          'themes/landscape/assets/tiny-slider/tiny-slider.css',
+          'node_modules/image-compare-viewer/dist/image-compare-viewer.min.css',
+          'node_modules/tiny-slider/dist/tiny-slider.css',
+          'themes/landscape/assets/tiny-slider.custom.css',
+          'themes/landscape/assets/lc_select.custom.css',
           'themes/landscape/assets/github-cards.css',
           'themes/landscape/assets/downupPopup/downupPopup.css'
         ],
@@ -79,13 +80,31 @@ module.exports = function(grunt){
         ],
         dest: 'themes/landscape/source/css/fonts/sourcecodepro'
       },
+      scrolltimeline: {
+        expand: true,
+        cwd: 'themes/landscape/assets/',
+        src: [ 'scroll-timeline.js' ],
+        dest: 'themes/landscape/source/js/dist'
+      },
+      leaflet_css: {
+        expand: true,
+        cwd: 'node_modules/leaflet/dist/',
+        src: [
+          'images/*',
+          'leaflet.css'
+        ],
+        dest: 'themes/landscape/source/css/dist'
+      },
+      leaflet_js: {
+        expand: true,
+        cwd: 'node_modules/leaflet/dist/',
+        src: [ 'leaflet.js' ],
+        dest: 'themes/landscape/source/js/dist'
+      },
       imagecompare: {
         expand: true,
-        cwd: 'themes/landscape/assets/image-compare-viewer',
-        src: [
-          'image-compare-viewer.min.js',
-          'image-compare-viewer.min.js.map'
-        ],
+        cwd: 'node_modules/image-compare-viewer/dist',
+        src: [ 'image-compare-viewer.min.js' ],
         dest: 'themes/landscape/source/js/dist'
       },
       lcselect: {
@@ -96,49 +115,49 @@ module.exports = function(grunt){
       },
       spotlight: {
         expand: true,
-        cwd: 'themes/landscape/assets/spotlight',
+        cwd: 'node_modules/spotlight.js/dist',
         src: [ 'spotlight.bundle.js' ],
         dest: 'themes/landscape/source/js/dist'
       },
       tinyslider: {
         expand: true,
-        cwd: 'themes/landscape/assets/tiny-slider',
-        src: [
-          'tiny-slider.min.js',
-          'tiny-slider.min.js.map'
-        ],
+        cwd: 'node_modules/tiny-slider/dist/min',
+        src: [ 'tiny-slider.js' ],
         dest: 'themes/landscape/source/js/dist'
       },
       qrcodestyling: {
         expand: true,
-        cwd: 'themes/landscape/assets/qr-code-styling',
-        src: [
-          'qr-code-styling.js',
-          'qr-code-styling-options-*.json'
-        ],
+        cwd: 'node_modules/qr-code-styling/lib',
+        src: [ 'qr-code-styling.js' ],
+        dest: 'themes/landscape/source/js/dist'
+      },
+      qrcodestyling_options: {
+        expand: true,
+        cwd: 'themes/landscape/assets',
+        src: [ 'qr-code-styling-options-*.json' ],
         dest: 'themes/landscape/source/js/dist'
       },
       macy: {
         expand: true,
-        cwd: 'themes/landscape/assets/macy',
+        cwd: 'node_modules/macy/dist',
         src: [ 'macy.js' ],
         dest: 'themes/landscape/source/js/dist'
       },
       colornames: {
         expand: true,
-        cwd: 'themes/landscape/assets',
+        cwd: 'node_modules/color-name-list/dist',
         src: [ 'colornames.umd.js' ],
         dest: 'themes/landscape/source/js/dist'
       },
       nearestcolor: {
         expand: true,
-        cwd: 'themes/landscape/assets',
+        cwd: 'node_modules/nearest-color',
         src: [ 'nearestColor.js' ],
         dest: 'themes/landscape/source/js/dist'
       },
       tinycolor: {
         expand: true,
-        cwd: 'themes/landscape/assets',
+        cwd: 'node_modules/tinycolor2/dist',
         src: [ 'tinycolor-min.js' ],
         dest: 'themes/landscape/source/js/dist'
       }
