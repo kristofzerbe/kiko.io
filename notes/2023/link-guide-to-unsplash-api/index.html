@@ -85,7 +85,7 @@ A Beginner’s Guide to Unsplash API in JavaScript
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
       theme = "dark";
     }
 

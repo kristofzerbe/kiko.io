@@ -86,7 +86,7 @@ In my implementation, I decided to adapt the Pagefind UI for myself instead of d
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
       theme = "dark";
     }
 
@@ -410,15 +410,15 @@ Since Pagefind already shows results when typing the first characters, the easie
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnyqkch5003dksozevof3ytt">
+      <div class="article-permalink" id="article-permalink-clnyuengo003dkfoo2vw5avuv">
     <input class="article-permalink-value" value="https://kiko.io/post/Pagefind-UI-and-URL-Parameters/" 
-           data-id="clnyqkch5003dksozevof3ytt" data-title="Pagefind UI and URL Parameters" />
+           data-id="clnyuengo003dkfoo2vw5avuv" data-title="Pagefind UI and URL Parameters" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyqkch5003dksozevof3ytt");
+        initPermalink("clnyuengo003dkfoo2vw5avuv");
     });
 </script>
 

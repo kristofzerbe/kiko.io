@@ -85,7 +85,7 @@ https://tjukanovt.github.io/notable-people
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
       theme = "dark";
     }
 

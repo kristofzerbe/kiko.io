@@ -86,7 +86,7 @@ foo.aList.?[0] Important: The parentheses for the parameter listing or the index
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
       theme = "dark";
     }
 
