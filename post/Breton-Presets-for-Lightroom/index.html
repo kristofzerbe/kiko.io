@@ -73,11 +73,26 @@
   
     
   
-<link rel="stylesheet" href="/css/dist/bundle.min.css">
+<link rel="stylesheet" href="/css/dist/asset-bundle.min.css">
 
   
 <link rel="stylesheet" href="/css/style.css">
 
+
+  <script>
+    var theme = "light"; //default
+
+    var storedTheme = localStorage.getItem("theme"); 
+    if ((storedTheme && storedTheme === "dark") || window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      theme = "dark";
+    }
+
+    localStorage.setItem("theme", theme);
+    document.documentElement.setAttribute("data-theme", theme);
+
+    window.onload = function () { setTheme(theme); };
+
+  </script>
 
   
 <script src="/js/tools.js"></script>
@@ -334,7 +349,7 @@
 <hr>
 <h2 id="Breton-Glow"><a href="#Breton-Glow" class="headerlink" title="Breton Glow"></a>Breton Glow</h2><p>The sunsets off Saint-Malo are wonderful. The water of the English Channel glows and in the sky the silhuettes of the paragliders stand out, pulling the sportsmen over the rippling water. You can sit on the waterfront for hours and still not get enough of it.</p>
 
-    <div id="image-compare-yy9zeh">
+    <div id="image-compare-mme624">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Breton-Presets-for-Lightroom/22-08 Bretagne-Jersey-0218_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Breton-Presets-for-Lightroom/22-08 Bretagne-Jersey-0218_PRESET-Glow.jpg" alt="" />
     </div>
@@ -343,7 +358,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-yy9zeh"),
+      new ImageCompare(document.getElementById("image-compare-mme624"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -369,7 +384,7 @@
 <hr>
 <h2 id="Breton-Sundown"><a href="#Breton-Sundown" class="headerlink" title="Breton Sundown"></a>Breton Sundown</h2><p>Having good and clear weather here, as in the British Isles, is not a given. The evenings are all the more beautiful when it is like this and the small islands off the coast are bathed in a warm orange.</p>
 
-    <div id="image-compare-twghfr">
+    <div id="image-compare-0xk1fu">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Breton-Presets-for-Lightroom/22-08 Bretagne-Jersey-0582_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Breton-Presets-for-Lightroom/22-08 Bretagne-Jersey-0582_PRESET_Sundown.jpg" alt="" />
     </div>
@@ -378,7 +393,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-twghfr"),
+      new ImageCompare(document.getElementById("image-compare-0xk1fu"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -404,7 +419,7 @@
 <hr>
 <h2 id="Breton-Color"><a href="#Breton-Color" class="headerlink" title="Breton Color"></a>Breton Color</h2><p>I love colors, but rarely does the camera manage to capture that magic the way I feel it. And Brittany has beautiful colors. Be it the famous Mont Saint-Michel or a cornfield … :)</p>
 
-    <div id="image-compare-2vlvou">
+    <div id="image-compare-fd7zma">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Breton-Presets-for-Lightroom/22-08 Bretagne-Jersey-0246_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Breton-Presets-for-Lightroom/22-08 Bretagne-Jersey-0246_PRESET-Color.jpg" alt="" />
     </div>
@@ -413,7 +428,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-2vlvou"),
+      new ImageCompare(document.getElementById("image-compare-fd7zma"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -439,7 +454,7 @@
 <hr>
 <h2 id="Breton-Sea-Circle"><a href="#Breton-Sea-Circle" class="headerlink" title="Breton Sea Circle"></a>Breton Sea Circle</h2><p>Oysters from Cancale are not only famous in the region, but far beyond. A product that tastes just like the sea from which it comes looks: Awesome.</p>
 
-    <div id="image-compare-dmtmdh">
+    <div id="image-compare-e29ug3">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Breton-Presets-for-Lightroom/22-08 Bretagne-Jersey-0761_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Breton-Presets-for-Lightroom/22-08 Bretagne-Jersey-0761_PRESET-SeaCircle.jpg" alt="" />
     </div>
@@ -448,7 +463,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-dmtmdh"),
+      new ImageCompare(document.getElementById("image-compare-e29ug3"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -474,7 +489,7 @@
 <hr>
 <h2 id="Breton-Beach"><a href="#Breton-Beach" class="headerlink" title="Breton Beach"></a>Breton Beach</h2><p>The beach in Saint-Malo is 3 kilometers long and it is fascinating to observe how one of the highest tides in Europe swallows it in no time and later releases it cleaned.</p>
 
-    <div id="image-compare-p9aywu">
+    <div id="image-compare-o15fxz">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Breton-Presets-for-Lightroom/22-08 Bretagne-Jersey-1074_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Breton-Presets-for-Lightroom/22-08 Bretagne-Jersey-1074_PRESET-Beach.jpg" alt="" />
     </div>
@@ -483,7 +498,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-p9aywu"),
+      new ImageCompare(document.getElementById("image-compare-o15fxz"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -525,15 +540,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnugd1g0002vleq4gp5u2hjr">
+      <div class="article-permalink" id="article-permalink-clnyq1ymi002vjtovbcef65l4">
     <input class="article-permalink-value" value="https://kiko.io/post/Breton-Presets-for-Lightroom/" 
-           data-id="clnugd1g0002vleq4gp5u2hjr" data-title="Breton Presets for Lightroom" />
+           data-id="clnyq1ymi002vjtovbcef65l4" data-title="Breton Presets for Lightroom" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnugd1g0002vleq4gp5u2hjr");
+        initPermalink("clnyq1ymi002vjtovbcef65l4");
     });
 </script>
 
@@ -914,10 +929,10 @@
 <script src="/js/jquery-3.6.0.min.js"></script>
 
 
-<script src="/js/dist/bundle.min.js"></script>
+<script src="/js/dist/asset-bundle.min.js"></script>
 
 
-<script src="/js/script.js"></script>
+<script src="/js/scripts.js"></script>
 
 
 <script src="/js/dist/qr-code-styling.js"></script>
@@ -954,7 +969,6 @@
 </script>
 
 <script>
-  /*** DEFINITIONS */
 
   //HEADER
   var header = {
@@ -985,7 +999,7 @@
   }
   function scrollHeader() {
     var h = header.height - header.offset,
-        st = $(document).scrollTop(),  
+        st = $(document).scrollTop(),
         d = (h - st),
         p = (d / h),
         hfs = header.titleFontSize / 5 * 3,
@@ -1002,160 +1016,15 @@
       $("#header").css("height", header.offset + "px");
       $("#header-photo-link").css("opacity", 0);
       $("#banner").css("opacity", 0);
-      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );      
-      $("#header-title").css("top", header.top - (hfs * (1)) + "px");      
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );
+      $("#header-title").css("top", header.top - (hfs * (1)) + "px");
       $("#subtitle").css("opacity", 0);
       if (window.matchMedia("screen and (min-width: 768px)").matches & window.innerHeight > (jSide.height() + 50)) {
         jSide.css("max-width", $("aside").width()).css("position", "fixed").css("top", "50px");
       }
-    }    
-  }
-
-  // IMAGE VIEWPORT
-  function isVisibleInViewPort(e) {
-    var viewTop = $(window).scrollTop();
-    var viewBottom = viewTop + $(window).height();
-  
-    var eTop = $(e).offset().top;
-    var eBottom = eTop + $(e).height();
-  
-    return ((eBottom <= viewBottom) && (eTop >= viewTop));
-  }
-  function initViewportImage() {
-    $(".article-photo, .archive-article-photo, .card-img, .img-link").each(function() {
-      if (isVisibleInViewPort($(this))) {
-        $(this).addClass("in-view");
-      } else {
-        $(this).removeClass("in-view");
-      }
-    });
-  }
-
-  //SCROLL PROGRESS
-  function initScrollProgress() {
-
-    // Create ScrollTimeline
-    const myScrollTimeline = new ScrollTimeline({
-      source: document.scrollingElement,
-      scrollSource: document.scrollingElement, // For legacy implementations
-      orientation: 'block',
-        scrollOffsets: [
-            new CSSUnitValue(0, 'percent'),
-            new CSSUnitValue(100, 'percent'),
-        ],
-    });
-
-    // Animate Progress Bar on Scroll
-    document.querySelector("#progress").animate(
-      {
-        transform: ["scaleX(0)", "scaleX(1)"]
-      },
-      { 
-        duration: 1, 
-        fill: "forwards", 
-        timeline: myScrollTimeline 
-      }
-    );
-  }
-
-  // HORIZONTAL NAV MENU SCROLL
-  function initNavMenuScroll() {
-    const nav = document.querySelector('#header-nav');
-    const menu = nav.querySelector('.menu');
-    const firstMenuItem = menu.querySelector('.menu-item:first-child');
-    const lastMenuItem = menu.querySelector('.menu-item:last-child');
-
-    firstMenuItem.setAttribute("data-scim", "start");
-    lastMenuItem.setAttribute("data-scim", "end");
-    
-    let observer = new IntersectionObserver((entries, observer) => { 
-      entries.forEach(entry => {
-
-        let scimElement = document.querySelector("#header-nav-" + entry.target.getAttribute("data-scim"));
-        if (entry.intersectionRatio != 1) { 
-          scimElement.classList.add("show");
-        } else {
-          scimElement.classList.remove("show");
-        }
-      });
-    }, {threshold: 1});
-    
-    observer.observe(firstMenuItem);
-    observer.observe(lastMenuItem);
-  }
-
-  //THEME
-  function initColorScheme() {
-    /* https://stackoverflow.com/questions/56300132/how-to-over-ride-css-prefers-color-scheme-setting */
-
-    var theme = "light"; //default
-
-    // get last used theme from local cache
-    if (localStorage.getItem("theme")) {
-      if (localStorage.getItem("theme") === "dark") {
-        theme = "dark";
-      }
-    } else if (!window.matchMedia) {
-      return false;
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      theme = "dark";
-    }
-
-    if (theme === "dark") {
-      setThemeDark();
-    } else {
-      setThemeLight();
-    }
-  }
-  function setThemeDark() {
-    localStorage.setItem("theme", "dark");
-    document.documentElement.setAttribute("data-theme", "dark");
-    toggleTheme.checked = true;
-    setVibrantColor("dark");
-    setCodepenTheme();
-  }
-  function setThemeLight() {
-    localStorage.setItem("theme", "light");
-    document.documentElement.setAttribute("data-theme", "light");
-    toggleTheme.checked = false;
-    setVibrantColor();
-    setCodepenTheme();
-  }
-  function setCodepenTheme() {
-    //https://codepen.io/kristofzerbe/embed/xxxxx?height=400&default-tab=js,result&theme-id=dark
-    var pens = document.getElementsByClassName("codepen");
-    for (var i = 0; i < pens.length; i++) {
-      var src = pens[i].src;
-      const arr = src.split("?");
-      const params = arr[1].split("&").slice(0, -1);
-      src =
-        arr[0] +
-        "?" +
-        params.join("&") +
-        "&theme-id=" +
-        localStorage.getItem("theme");
-      pens[i].src = src;
     }
   }
 
-  //VIBRANT COLOR
-  function setVibrantColor(theme) {
-    try {
-      let img = $("#photo-preload").attr("href");
-      Vibrant.from(img).getPalette().then(palette => {
-        let swatch = palette.DarkVibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-        let color = swatch.getHex();
-        if (theme === "dark") {
-          let tColor = tinycolor(color).darken(10);
-          color = tColor.toHexString();
-        }
-        if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", color);
-        }
-      });
-    } catch (error) {
-    }
-  }
 </script>
 
 <script>
@@ -1171,24 +1040,9 @@
     initViewportImage();
   });
 
-  // TOGGLE THEME
-  const toggleTheme = document.querySelector('input#theme-switch[type="checkbox"]');
-  toggleTheme.addEventListener("change", function (e) {
-    if (e.target.checked) { setThemeDark(); } 
-    else { setThemeLight(); }
-  }, false);
-
-  // TOGGLE THEME BY OS
-  var toggleOS = window.matchMedia("(prefers-color-scheme: dark)");
-  toggleOS.addEventListener("change", function (e) {
-    if (e.matches) { setThemeDark(); } 
-    else { setThemeLight(); }
-  });
-
   /*** INITS */
   // $(document).ready(function() {
     initHeader();
-    initColorScheme();
     initViewportImage();
     initNavMenuScroll();
     initScrollProgress();
@@ -1235,8 +1089,8 @@
 
     //VSCODE
     let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));
-    
-  </script>  
+
+  </script>
 
 </body>
 <template id="contact-dialog">

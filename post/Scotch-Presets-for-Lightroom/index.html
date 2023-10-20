@@ -73,11 +73,26 @@
   
     
   
-<link rel="stylesheet" href="/css/dist/bundle.min.css">
+<link rel="stylesheet" href="/css/dist/asset-bundle.min.css">
 
   
 <link rel="stylesheet" href="/css/style.css">
 
+
+  <script>
+    var theme = "light"; //default
+
+    var storedTheme = localStorage.getItem("theme"); 
+    if ((storedTheme && storedTheme === "dark") || window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      theme = "dark";
+    }
+
+    localStorage.setItem("theme", theme);
+    document.documentElement.setAttribute("data-theme", theme);
+
+    window.onload = function () { setTheme(theme); };
+
+  </script>
 
   
 <script src="/js/tools.js"></script>
@@ -333,7 +348,7 @@
 
 <h2 id="Scotch-Lights"><a href="#Scotch-Lights" class="headerlink" title="Scotch Lights"></a>Scotch Lights</h2><p>So far in the north the light is totally different. When it shines through the clouds, it hits you.</p>
 
-    <div id="image-compare-jy4e7p">
+    <div id="image-compare-5klmdx">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Scotch-Presets-for-Lightroom/19-07 Schottland-0025_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Scotch-Presets-for-Lightroom/19-07 Schottland-0025_PRESET-Lights.jpg" alt="" />
     </div>
@@ -342,7 +357,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-jy4e7p"),
+      new ImageCompare(document.getElementById("image-compare-5klmdx"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -368,7 +383,7 @@
 <hr>
 <h2 id="Scotch-Strength"><a href="#Scotch-Strength" class="headerlink" title="Scotch Strength"></a>Scotch Strength</h2><p>You must be made of different stuff if you are Scottish. There is hardly anything fine and graceful about the landscape and the weather. It’s rough and tough and you have to deal with it.</p>
 
-    <div id="image-compare-m2pmbw">
+    <div id="image-compare-5tv67l">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Scotch-Presets-for-Lightroom/19-07 Schottland-0080_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Scotch-Presets-for-Lightroom/19-07 Schottland-0080_PRESET-Strength.jpg" alt="" />
     </div>
@@ -377,7 +392,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-m2pmbw"),
+      new ImageCompare(document.getElementById("image-compare-5tv67l"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -403,7 +418,7 @@
 <hr>
 <h2 id="Scotch-Sunset"><a href="#Scotch-Sunset" class="headerlink" title="Scotch Sunset"></a>Scotch Sunset</h2><p>The view over the North Sea at the edge of the continent is really unique, especially at sunset. Hear the the seagulls scream, the waves crashing against the cliffs and see the stunning colors.</p>
 
-    <div id="image-compare-rifnb6">
+    <div id="image-compare-yu2gav">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Scotch-Presets-for-Lightroom/19-07 Schottland-0310_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Scotch-Presets-for-Lightroom/19-07 Schottland-0310_PRESET-Sunset.jpg" alt="" />
     </div>
@@ -412,7 +427,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-rifnb6"),
+      new ImageCompare(document.getElementById("image-compare-yu2gav"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -438,7 +453,7 @@
 <hr>
 <h2 id="Scotch-Energy"><a href="#Scotch-Energy" class="headerlink" title="Scotch Energy"></a>Scotch Energy</h2><p>Scotland is bold and so full with energy, even in the details.</p>
 
-    <div id="image-compare-dj2heu">
+    <div id="image-compare-klmcia">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Scotch-Presets-for-Lightroom/19-07 Schottland-0595_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Scotch-Presets-for-Lightroom/19-07 Schottland-0595_PRESET-Energy.jpg" alt="" />
     </div>
@@ -447,7 +462,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-dj2heu"),
+      new ImageCompare(document.getElementById("image-compare-klmcia"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -473,7 +488,7 @@
 <hr>
 <h2 id="Scotch-Tattoo"><a href="#Scotch-Tattoo" class="headerlink" title="Scotch Tattoo"></a>Scotch Tattoo</h2><p>The Edinburgh Military Tattoo, which takes place twice a year, is a feast for the senses. The incredible sound on one hand and the colors on the other. The brass, the feathers, the uniforms stand out in the setting sun.</p>
 
-    <div id="image-compare-52yqy9">
+    <div id="image-compare-11jz67">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Scotch-Presets-for-Lightroom/19-07 Schottland-0935_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Scotch-Presets-for-Lightroom/19-07 Schottland-0935_PRESET-Tattoo.jpg" alt="" />
     </div>
@@ -482,7 +497,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-52yqy9"),
+      new ImageCompare(document.getElementById("image-compare-11jz67"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -514,15 +529,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnugd1fh001yleq4fsxk8m1o">
+      <div class="article-permalink" id="article-permalink-clnyq1ym5001yjtovd49decad">
     <input class="article-permalink-value" value="https://kiko.io/post/Scotch-Presets-for-Lightroom/" 
-           data-id="clnugd1fh001yleq4fsxk8m1o" data-title="Scotch Presets for Lightroom" />
+           data-id="clnyq1ym5001yjtovd49decad" data-title="Scotch Presets for Lightroom" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnugd1fh001yleq4fsxk8m1o");
+        initPermalink("clnyq1ym5001yjtovd49decad");
     });
 </script>
 
@@ -903,10 +918,10 @@
 <script src="/js/jquery-3.6.0.min.js"></script>
 
 
-<script src="/js/dist/bundle.min.js"></script>
+<script src="/js/dist/asset-bundle.min.js"></script>
 
 
-<script src="/js/script.js"></script>
+<script src="/js/scripts.js"></script>
 
 
 <script src="/js/dist/qr-code-styling.js"></script>
@@ -943,7 +958,6 @@
 </script>
 
 <script>
-  /*** DEFINITIONS */
 
   //HEADER
   var header = {
@@ -974,7 +988,7 @@
   }
   function scrollHeader() {
     var h = header.height - header.offset,
-        st = $(document).scrollTop(),  
+        st = $(document).scrollTop(),
         d = (h - st),
         p = (d / h),
         hfs = header.titleFontSize / 5 * 3,
@@ -991,160 +1005,15 @@
       $("#header").css("height", header.offset + "px");
       $("#header-photo-link").css("opacity", 0);
       $("#banner").css("opacity", 0);
-      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );      
-      $("#header-title").css("top", header.top - (hfs * (1)) + "px");      
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );
+      $("#header-title").css("top", header.top - (hfs * (1)) + "px");
       $("#subtitle").css("opacity", 0);
       if (window.matchMedia("screen and (min-width: 768px)").matches & window.innerHeight > (jSide.height() + 50)) {
         jSide.css("max-width", $("aside").width()).css("position", "fixed").css("top", "50px");
       }
-    }    
-  }
-
-  // IMAGE VIEWPORT
-  function isVisibleInViewPort(e) {
-    var viewTop = $(window).scrollTop();
-    var viewBottom = viewTop + $(window).height();
-  
-    var eTop = $(e).offset().top;
-    var eBottom = eTop + $(e).height();
-  
-    return ((eBottom <= viewBottom) && (eTop >= viewTop));
-  }
-  function initViewportImage() {
-    $(".article-photo, .archive-article-photo, .card-img, .img-link").each(function() {
-      if (isVisibleInViewPort($(this))) {
-        $(this).addClass("in-view");
-      } else {
-        $(this).removeClass("in-view");
-      }
-    });
-  }
-
-  //SCROLL PROGRESS
-  function initScrollProgress() {
-
-    // Create ScrollTimeline
-    const myScrollTimeline = new ScrollTimeline({
-      source: document.scrollingElement,
-      scrollSource: document.scrollingElement, // For legacy implementations
-      orientation: 'block',
-        scrollOffsets: [
-            new CSSUnitValue(0, 'percent'),
-            new CSSUnitValue(100, 'percent'),
-        ],
-    });
-
-    // Animate Progress Bar on Scroll
-    document.querySelector("#progress").animate(
-      {
-        transform: ["scaleX(0)", "scaleX(1)"]
-      },
-      { 
-        duration: 1, 
-        fill: "forwards", 
-        timeline: myScrollTimeline 
-      }
-    );
-  }
-
-  // HORIZONTAL NAV MENU SCROLL
-  function initNavMenuScroll() {
-    const nav = document.querySelector('#header-nav');
-    const menu = nav.querySelector('.menu');
-    const firstMenuItem = menu.querySelector('.menu-item:first-child');
-    const lastMenuItem = menu.querySelector('.menu-item:last-child');
-
-    firstMenuItem.setAttribute("data-scim", "start");
-    lastMenuItem.setAttribute("data-scim", "end");
-    
-    let observer = new IntersectionObserver((entries, observer) => { 
-      entries.forEach(entry => {
-
-        let scimElement = document.querySelector("#header-nav-" + entry.target.getAttribute("data-scim"));
-        if (entry.intersectionRatio != 1) { 
-          scimElement.classList.add("show");
-        } else {
-          scimElement.classList.remove("show");
-        }
-      });
-    }, {threshold: 1});
-    
-    observer.observe(firstMenuItem);
-    observer.observe(lastMenuItem);
-  }
-
-  //THEME
-  function initColorScheme() {
-    /* https://stackoverflow.com/questions/56300132/how-to-over-ride-css-prefers-color-scheme-setting */
-
-    var theme = "light"; //default
-
-    // get last used theme from local cache
-    if (localStorage.getItem("theme")) {
-      if (localStorage.getItem("theme") === "dark") {
-        theme = "dark";
-      }
-    } else if (!window.matchMedia) {
-      return false;
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      theme = "dark";
-    }
-
-    if (theme === "dark") {
-      setThemeDark();
-    } else {
-      setThemeLight();
-    }
-  }
-  function setThemeDark() {
-    localStorage.setItem("theme", "dark");
-    document.documentElement.setAttribute("data-theme", "dark");
-    toggleTheme.checked = true;
-    setVibrantColor("dark");
-    setCodepenTheme();
-  }
-  function setThemeLight() {
-    localStorage.setItem("theme", "light");
-    document.documentElement.setAttribute("data-theme", "light");
-    toggleTheme.checked = false;
-    setVibrantColor();
-    setCodepenTheme();
-  }
-  function setCodepenTheme() {
-    //https://codepen.io/kristofzerbe/embed/xxxxx?height=400&default-tab=js,result&theme-id=dark
-    var pens = document.getElementsByClassName("codepen");
-    for (var i = 0; i < pens.length; i++) {
-      var src = pens[i].src;
-      const arr = src.split("?");
-      const params = arr[1].split("&").slice(0, -1);
-      src =
-        arr[0] +
-        "?" +
-        params.join("&") +
-        "&theme-id=" +
-        localStorage.getItem("theme");
-      pens[i].src = src;
     }
   }
 
-  //VIBRANT COLOR
-  function setVibrantColor(theme) {
-    try {
-      let img = $("#photo-preload").attr("href");
-      Vibrant.from(img).getPalette().then(palette => {
-        let swatch = palette.DarkVibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-        let color = swatch.getHex();
-        if (theme === "dark") {
-          let tColor = tinycolor(color).darken(10);
-          color = tColor.toHexString();
-        }
-        if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", color);
-        }
-      });
-    } catch (error) {
-    }
-  }
 </script>
 
 <script>
@@ -1160,24 +1029,9 @@
     initViewportImage();
   });
 
-  // TOGGLE THEME
-  const toggleTheme = document.querySelector('input#theme-switch[type="checkbox"]');
-  toggleTheme.addEventListener("change", function (e) {
-    if (e.target.checked) { setThemeDark(); } 
-    else { setThemeLight(); }
-  }, false);
-
-  // TOGGLE THEME BY OS
-  var toggleOS = window.matchMedia("(prefers-color-scheme: dark)");
-  toggleOS.addEventListener("change", function (e) {
-    if (e.matches) { setThemeDark(); } 
-    else { setThemeLight(); }
-  });
-
   /*** INITS */
   // $(document).ready(function() {
     initHeader();
-    initColorScheme();
     initViewportImage();
     initNavMenuScroll();
     initScrollProgress();
@@ -1224,8 +1078,8 @@
 
     //VSCODE
     let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));
-    
-  </script>  
+
+  </script>
 
 </body>
 <template id="contact-dialog">

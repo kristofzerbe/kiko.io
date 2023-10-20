@@ -74,11 +74,26 @@ Over the past years a have created some presets to bring my images, shot in Croa
   
     
   
-<link rel="stylesheet" href="/css/dist/bundle.min.css">
+<link rel="stylesheet" href="/css/dist/asset-bundle.min.css">
 
   
 <link rel="stylesheet" href="/css/style.css">
 
+
+  <script>
+    var theme = "light"; //default
+
+    var storedTheme = localStorage.getItem("theme"); 
+    if ((storedTheme && storedTheme === "dark") || window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      theme = "dark";
+    }
+
+    localStorage.setItem("theme", theme);
+    document.documentElement.setAttribute("data-theme", theme);
+
+    window.onload = function () { setTheme(theme); };
+
+  </script>
 
   
 <script src="/js/tools.js"></script>
@@ -336,7 +351,7 @@ Over the past years a have created some presets to bring my images, shot in Croa
 <hr>
 <h2 id="Croatian-Warm-Sea"><a href="#Croatian-Warm-Sea" class="headerlink" title="Croatian Warm Sea"></a>Croatian Warm Sea</h2><p>The sea in Croatia is amazing clear because almost the entire coast is made of stone instead of sand. There is hardly any algae or other things that cloud the wonderful green-blue water.</p>
 
-    <div id="image-compare-l5w9sg">
+    <div id="image-compare-5fjp0x">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Croatian-Presets-for-Lightroom/18-09 Kroatien-0508_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Croatian-Presets-for-Lightroom/18-09 Kroatien-0508_PRESET.jpg" alt="" />
     </div>
@@ -345,7 +360,7 @@ Over the past years a have created some presets to bring my images, shot in Croa
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-l5w9sg"),
+      new ImageCompare(document.getElementById("image-compare-5fjp0x"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -371,7 +386,7 @@ Over the past years a have created some presets to bring my images, shot in Croa
 <hr>
 <h2 id="Croatian-Brightness"><a href="#Croatian-Brightness" class="headerlink" title="Croatian Brightness"></a>Croatian Brightness</h2><p>Yes, I’m guilty: I love colors and contrast! If you do also, his preset is for you. It brings out any image that is too flat or dull by helping to control the brightness and contrast.</p>
 
-    <div id="image-compare-x1kcrc">
+    <div id="image-compare-i0lljq">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Croatian-Presets-for-Lightroom/21-08-05 Kroatien-3201_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Croatian-Presets-for-Lightroom/21-08-05 Kroatien-3201_PRESET.jpg" alt="" />
     </div>
@@ -380,7 +395,7 @@ Over the past years a have created some presets to bring my images, shot in Croa
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-x1kcrc"),
+      new ImageCompare(document.getElementById("image-compare-i0lljq"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -406,7 +421,7 @@ Over the past years a have created some presets to bring my images, shot in Croa
 <hr>
 <h2 id="Croatian-Winter-Drama"><a href="#Croatian-Winter-Drama" class="headerlink" title="Croatian Winter Drama"></a>Croatian Winter Drama</h2><p>A drive along the coast in the morning or evening hours makes you want to stop all the time because one panorama is more beautiful than the next.</p>
 
-    <div id="image-compare-bdywar">
+    <div id="image-compare-jkoaa0">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Croatian-Presets-for-Lightroom/19-12 Kroatien-0137_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Croatian-Presets-for-Lightroom/19-12 Kroatien-0137_PRESET.jpg" alt="" />
     </div>
@@ -415,7 +430,7 @@ Over the past years a have created some presets to bring my images, shot in Croa
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-bdywar"),
+      new ImageCompare(document.getElementById("image-compare-jkoaa0"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -441,7 +456,7 @@ Over the past years a have created some presets to bring my images, shot in Croa
 <hr>
 <h2 id="Croatian-Winter-City"><a href="#Croatian-Winter-City" class="headerlink" title="Croatian Winter City"></a>Croatian Winter City</h2><p>The walls of Split have this wonderful warm tone of the winter sun and this preset brings this out particularly well.</p>
 
-    <div id="image-compare-1ookfu">
+    <div id="image-compare-v1w27y">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Croatian-Presets-for-Lightroom/19-12 Kroatien-0172_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Croatian-Presets-for-Lightroom/19-12 Kroatien-0172_PRESET.jpg" alt="" />
     </div>
@@ -450,7 +465,7 @@ Over the past years a have created some presets to bring my images, shot in Croa
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-1ookfu"),
+      new ImageCompare(document.getElementById("image-compare-v1w27y"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -477,7 +492,7 @@ Over the past years a have created some presets to bring my images, shot in Croa
 <h2 id="Croatian-Winter-Sunset"><a href="#Croatian-Winter-Sunset" class="headerlink" title="Croatian Winter Sunset"></a>Croatian Winter Sunset</h2><p>The sunset in Croatia is special for me, because I feel these wonderful colors and my camera isn’t able to reproduce this feeling. This preset is an approximation of it.</p>
 <p>The walls of Split have this wonderful warm tone of the winter sun and this preset brings this out particularly well.</p>
 
-    <div id="image-compare-kgnuk4">
+    <div id="image-compare-eicd5u">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Croatian-Presets-for-Lightroom/19-12 Kroatien-0215_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Croatian-Presets-for-Lightroom/19-12 Kroatien-0215_PRESET.jpg" alt="" />
     </div>
@@ -486,7 +501,7 @@ Over the past years a have created some presets to bring my images, shot in Croa
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-kgnuk4"),
+      new ImageCompare(document.getElementById("image-compare-eicd5u"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -518,15 +533,15 @@ Over the past years a have created some presets to bring my images, shot in Croa
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnugd1ez0015leq47wly9i28">
+      <div class="article-permalink" id="article-permalink-clnyq1yls0015jtovfvwxalud">
     <input class="article-permalink-value" value="https://kiko.io/post/Croatian-Presets-for-Lightroom/" 
-           data-id="clnugd1ez0015leq47wly9i28" data-title="Croatian Presets for Lightroom" />
+           data-id="clnyq1yls0015jtovfvwxalud" data-title="Croatian Presets for Lightroom" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnugd1ez0015leq47wly9i28");
+        initPermalink("clnyq1yls0015jtovfvwxalud");
     });
 </script>
 
@@ -907,10 +922,10 @@ Over the past years a have created some presets to bring my images, shot in Croa
 <script src="/js/jquery-3.6.0.min.js"></script>
 
 
-<script src="/js/dist/bundle.min.js"></script>
+<script src="/js/dist/asset-bundle.min.js"></script>
 
 
-<script src="/js/script.js"></script>
+<script src="/js/scripts.js"></script>
 
 
 <script src="/js/dist/qr-code-styling.js"></script>
@@ -947,7 +962,6 @@ Over the past years a have created some presets to bring my images, shot in Croa
 </script>
 
 <script>
-  /*** DEFINITIONS */
 
   //HEADER
   var header = {
@@ -978,7 +992,7 @@ Over the past years a have created some presets to bring my images, shot in Croa
   }
   function scrollHeader() {
     var h = header.height - header.offset,
-        st = $(document).scrollTop(),  
+        st = $(document).scrollTop(),
         d = (h - st),
         p = (d / h),
         hfs = header.titleFontSize / 5 * 3,
@@ -995,160 +1009,15 @@ Over the past years a have created some presets to bring my images, shot in Croa
       $("#header").css("height", header.offset + "px");
       $("#header-photo-link").css("opacity", 0);
       $("#banner").css("opacity", 0);
-      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );      
-      $("#header-title").css("top", header.top - (hfs * (1)) + "px");      
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );
+      $("#header-title").css("top", header.top - (hfs * (1)) + "px");
       $("#subtitle").css("opacity", 0);
       if (window.matchMedia("screen and (min-width: 768px)").matches & window.innerHeight > (jSide.height() + 50)) {
         jSide.css("max-width", $("aside").width()).css("position", "fixed").css("top", "50px");
       }
-    }    
-  }
-
-  // IMAGE VIEWPORT
-  function isVisibleInViewPort(e) {
-    var viewTop = $(window).scrollTop();
-    var viewBottom = viewTop + $(window).height();
-  
-    var eTop = $(e).offset().top;
-    var eBottom = eTop + $(e).height();
-  
-    return ((eBottom <= viewBottom) && (eTop >= viewTop));
-  }
-  function initViewportImage() {
-    $(".article-photo, .archive-article-photo, .card-img, .img-link").each(function() {
-      if (isVisibleInViewPort($(this))) {
-        $(this).addClass("in-view");
-      } else {
-        $(this).removeClass("in-view");
-      }
-    });
-  }
-
-  //SCROLL PROGRESS
-  function initScrollProgress() {
-
-    // Create ScrollTimeline
-    const myScrollTimeline = new ScrollTimeline({
-      source: document.scrollingElement,
-      scrollSource: document.scrollingElement, // For legacy implementations
-      orientation: 'block',
-        scrollOffsets: [
-            new CSSUnitValue(0, 'percent'),
-            new CSSUnitValue(100, 'percent'),
-        ],
-    });
-
-    // Animate Progress Bar on Scroll
-    document.querySelector("#progress").animate(
-      {
-        transform: ["scaleX(0)", "scaleX(1)"]
-      },
-      { 
-        duration: 1, 
-        fill: "forwards", 
-        timeline: myScrollTimeline 
-      }
-    );
-  }
-
-  // HORIZONTAL NAV MENU SCROLL
-  function initNavMenuScroll() {
-    const nav = document.querySelector('#header-nav');
-    const menu = nav.querySelector('.menu');
-    const firstMenuItem = menu.querySelector('.menu-item:first-child');
-    const lastMenuItem = menu.querySelector('.menu-item:last-child');
-
-    firstMenuItem.setAttribute("data-scim", "start");
-    lastMenuItem.setAttribute("data-scim", "end");
-    
-    let observer = new IntersectionObserver((entries, observer) => { 
-      entries.forEach(entry => {
-
-        let scimElement = document.querySelector("#header-nav-" + entry.target.getAttribute("data-scim"));
-        if (entry.intersectionRatio != 1) { 
-          scimElement.classList.add("show");
-        } else {
-          scimElement.classList.remove("show");
-        }
-      });
-    }, {threshold: 1});
-    
-    observer.observe(firstMenuItem);
-    observer.observe(lastMenuItem);
-  }
-
-  //THEME
-  function initColorScheme() {
-    /* https://stackoverflow.com/questions/56300132/how-to-over-ride-css-prefers-color-scheme-setting */
-
-    var theme = "light"; //default
-
-    // get last used theme from local cache
-    if (localStorage.getItem("theme")) {
-      if (localStorage.getItem("theme") === "dark") {
-        theme = "dark";
-      }
-    } else if (!window.matchMedia) {
-      return false;
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      theme = "dark";
-    }
-
-    if (theme === "dark") {
-      setThemeDark();
-    } else {
-      setThemeLight();
-    }
-  }
-  function setThemeDark() {
-    localStorage.setItem("theme", "dark");
-    document.documentElement.setAttribute("data-theme", "dark");
-    toggleTheme.checked = true;
-    setVibrantColor("dark");
-    setCodepenTheme();
-  }
-  function setThemeLight() {
-    localStorage.setItem("theme", "light");
-    document.documentElement.setAttribute("data-theme", "light");
-    toggleTheme.checked = false;
-    setVibrantColor();
-    setCodepenTheme();
-  }
-  function setCodepenTheme() {
-    //https://codepen.io/kristofzerbe/embed/xxxxx?height=400&default-tab=js,result&theme-id=dark
-    var pens = document.getElementsByClassName("codepen");
-    for (var i = 0; i < pens.length; i++) {
-      var src = pens[i].src;
-      const arr = src.split("?");
-      const params = arr[1].split("&").slice(0, -1);
-      src =
-        arr[0] +
-        "?" +
-        params.join("&") +
-        "&theme-id=" +
-        localStorage.getItem("theme");
-      pens[i].src = src;
     }
   }
 
-  //VIBRANT COLOR
-  function setVibrantColor(theme) {
-    try {
-      let img = $("#photo-preload").attr("href");
-      Vibrant.from(img).getPalette().then(palette => {
-        let swatch = palette.DarkVibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-        let color = swatch.getHex();
-        if (theme === "dark") {
-          let tColor = tinycolor(color).darken(10);
-          color = tColor.toHexString();
-        }
-        if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", color);
-        }
-      });
-    } catch (error) {
-    }
-  }
 </script>
 
 <script>
@@ -1164,24 +1033,9 @@ Over the past years a have created some presets to bring my images, shot in Croa
     initViewportImage();
   });
 
-  // TOGGLE THEME
-  const toggleTheme = document.querySelector('input#theme-switch[type="checkbox"]');
-  toggleTheme.addEventListener("change", function (e) {
-    if (e.target.checked) { setThemeDark(); } 
-    else { setThemeLight(); }
-  }, false);
-
-  // TOGGLE THEME BY OS
-  var toggleOS = window.matchMedia("(prefers-color-scheme: dark)");
-  toggleOS.addEventListener("change", function (e) {
-    if (e.matches) { setThemeDark(); } 
-    else { setThemeLight(); }
-  });
-
   /*** INITS */
   // $(document).ready(function() {
     initHeader();
-    initColorScheme();
     initViewportImage();
     initNavMenuScroll();
     initScrollProgress();
@@ -1228,8 +1082,8 @@ Over the past years a have created some presets to bring my images, shot in Croa
 
     //VSCODE
     let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));
-    
-  </script>  
+
+  </script>
 
 </body>
 <template id="contact-dialog">

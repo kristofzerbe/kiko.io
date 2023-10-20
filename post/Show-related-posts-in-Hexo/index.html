@@ -74,11 +74,26 @@ In the default Hexo theme Landscape, on which this blog is based, there is no su
   
     
   
-<link rel="stylesheet" href="/css/dist/bundle.min.css">
+<link rel="stylesheet" href="/css/dist/asset-bundle.min.css">
 
   
 <link rel="stylesheet" href="/css/style.css">
 
+
+  <script>
+    var theme = "light"; //default
+
+    var storedTheme = localStorage.getItem("theme"); 
+    if ((storedTheme && storedTheme === "dark") || window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      theme = "dark";
+    }
+
+    localStorage.setItem("theme", theme);
+    document.documentElement.setAttribute("data-theme", theme);
+
+    window.onload = function () { setTheme(theme); };
+
+  </script>
 
   
 <script src="/js/tools.js"></script>
@@ -378,15 +393,15 @@ In the default Hexo theme Landscape, on which this blog is based, there is no su
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnugd1et000zleq41v5t7578">
+      <div class="article-permalink" id="article-permalink-clnyq1ylo000zjtovf7hbczgc">
     <input class="article-permalink-value" value="https://kiko.io/post/Show-related-posts-in-Hexo/" 
-           data-id="clnugd1et000zleq41v5t7578" data-title="Show related posts in Hexo" />
+           data-id="clnyq1ylo000zjtovf7hbczgc" data-title="Show related posts in Hexo" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnugd1et000zleq41v5t7578");
+        initPermalink("clnyq1ylo000zjtovf7hbczgc");
     });
 </script>
 
@@ -781,10 +796,10 @@ In the default Hexo theme Landscape, on which this blog is based, there is no su
 <script src="/js/jquery-3.6.0.min.js"></script>
 
 
-<script src="/js/dist/bundle.min.js"></script>
+<script src="/js/dist/asset-bundle.min.js"></script>
 
 
-<script src="/js/script.js"></script>
+<script src="/js/scripts.js"></script>
 
 
 <script src="/js/dist/qr-code-styling.js"></script>
@@ -821,7 +836,6 @@ In the default Hexo theme Landscape, on which this blog is based, there is no su
 </script>
 
 <script>
-  /*** DEFINITIONS */
 
   //HEADER
   var header = {
@@ -852,7 +866,7 @@ In the default Hexo theme Landscape, on which this blog is based, there is no su
   }
   function scrollHeader() {
     var h = header.height - header.offset,
-        st = $(document).scrollTop(),  
+        st = $(document).scrollTop(),
         d = (h - st),
         p = (d / h),
         hfs = header.titleFontSize / 5 * 3,
@@ -869,160 +883,15 @@ In the default Hexo theme Landscape, on which this blog is based, there is no su
       $("#header").css("height", header.offset + "px");
       $("#header-photo-link").css("opacity", 0);
       $("#banner").css("opacity", 0);
-      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );      
-      $("#header-title").css("top", header.top - (hfs * (1)) + "px");      
+      $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );
+      $("#header-title").css("top", header.top - (hfs * (1)) + "px");
       $("#subtitle").css("opacity", 0);
       if (window.matchMedia("screen and (min-width: 768px)").matches & window.innerHeight > (jSide.height() + 50)) {
         jSide.css("max-width", $("aside").width()).css("position", "fixed").css("top", "50px");
       }
-    }    
-  }
-
-  // IMAGE VIEWPORT
-  function isVisibleInViewPort(e) {
-    var viewTop = $(window).scrollTop();
-    var viewBottom = viewTop + $(window).height();
-  
-    var eTop = $(e).offset().top;
-    var eBottom = eTop + $(e).height();
-  
-    return ((eBottom <= viewBottom) && (eTop >= viewTop));
-  }
-  function initViewportImage() {
-    $(".article-photo, .archive-article-photo, .card-img, .img-link").each(function() {
-      if (isVisibleInViewPort($(this))) {
-        $(this).addClass("in-view");
-      } else {
-        $(this).removeClass("in-view");
-      }
-    });
-  }
-
-  //SCROLL PROGRESS
-  function initScrollProgress() {
-
-    // Create ScrollTimeline
-    const myScrollTimeline = new ScrollTimeline({
-      source: document.scrollingElement,
-      scrollSource: document.scrollingElement, // For legacy implementations
-      orientation: 'block',
-        scrollOffsets: [
-            new CSSUnitValue(0, 'percent'),
-            new CSSUnitValue(100, 'percent'),
-        ],
-    });
-
-    // Animate Progress Bar on Scroll
-    document.querySelector("#progress").animate(
-      {
-        transform: ["scaleX(0)", "scaleX(1)"]
-      },
-      { 
-        duration: 1, 
-        fill: "forwards", 
-        timeline: myScrollTimeline 
-      }
-    );
-  }
-
-  // HORIZONTAL NAV MENU SCROLL
-  function initNavMenuScroll() {
-    const nav = document.querySelector('#header-nav');
-    const menu = nav.querySelector('.menu');
-    const firstMenuItem = menu.querySelector('.menu-item:first-child');
-    const lastMenuItem = menu.querySelector('.menu-item:last-child');
-
-    firstMenuItem.setAttribute("data-scim", "start");
-    lastMenuItem.setAttribute("data-scim", "end");
-    
-    let observer = new IntersectionObserver((entries, observer) => { 
-      entries.forEach(entry => {
-
-        let scimElement = document.querySelector("#header-nav-" + entry.target.getAttribute("data-scim"));
-        if (entry.intersectionRatio != 1) { 
-          scimElement.classList.add("show");
-        } else {
-          scimElement.classList.remove("show");
-        }
-      });
-    }, {threshold: 1});
-    
-    observer.observe(firstMenuItem);
-    observer.observe(lastMenuItem);
-  }
-
-  //THEME
-  function initColorScheme() {
-    /* https://stackoverflow.com/questions/56300132/how-to-over-ride-css-prefers-color-scheme-setting */
-
-    var theme = "light"; //default
-
-    // get last used theme from local cache
-    if (localStorage.getItem("theme")) {
-      if (localStorage.getItem("theme") === "dark") {
-        theme = "dark";
-      }
-    } else if (!window.matchMedia) {
-      return false;
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      theme = "dark";
-    }
-
-    if (theme === "dark") {
-      setThemeDark();
-    } else {
-      setThemeLight();
-    }
-  }
-  function setThemeDark() {
-    localStorage.setItem("theme", "dark");
-    document.documentElement.setAttribute("data-theme", "dark");
-    toggleTheme.checked = true;
-    setVibrantColor("dark");
-    setCodepenTheme();
-  }
-  function setThemeLight() {
-    localStorage.setItem("theme", "light");
-    document.documentElement.setAttribute("data-theme", "light");
-    toggleTheme.checked = false;
-    setVibrantColor();
-    setCodepenTheme();
-  }
-  function setCodepenTheme() {
-    //https://codepen.io/kristofzerbe/embed/xxxxx?height=400&default-tab=js,result&theme-id=dark
-    var pens = document.getElementsByClassName("codepen");
-    for (var i = 0; i < pens.length; i++) {
-      var src = pens[i].src;
-      const arr = src.split("?");
-      const params = arr[1].split("&").slice(0, -1);
-      src =
-        arr[0] +
-        "?" +
-        params.join("&") +
-        "&theme-id=" +
-        localStorage.getItem("theme");
-      pens[i].src = src;
     }
   }
 
-  //VIBRANT COLOR
-  function setVibrantColor(theme) {
-    try {
-      let img = $("#photo-preload").attr("href");
-      Vibrant.from(img).getPalette().then(palette => {
-        let swatch = palette.DarkVibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-        let color = swatch.getHex();
-        if (theme === "dark") {
-          let tColor = tinycolor(color).darken(10);
-          color = tColor.toHexString();
-        }
-        if(!$("#header").hasClass("no-vibrant")) {
-          $("#header, #footer, #back-to-top").css("background-color", color);
-        }
-      });
-    } catch (error) {
-    }
-  }
 </script>
 
 <script>
@@ -1038,24 +907,9 @@ In the default Hexo theme Landscape, on which this blog is based, there is no su
     initViewportImage();
   });
 
-  // TOGGLE THEME
-  const toggleTheme = document.querySelector('input#theme-switch[type="checkbox"]');
-  toggleTheme.addEventListener("change", function (e) {
-    if (e.target.checked) { setThemeDark(); } 
-    else { setThemeLight(); }
-  }, false);
-
-  // TOGGLE THEME BY OS
-  var toggleOS = window.matchMedia("(prefers-color-scheme: dark)");
-  toggleOS.addEventListener("change", function (e) {
-    if (e.matches) { setThemeDark(); } 
-    else { setThemeLight(); }
-  });
-
   /*** INITS */
   // $(document).ready(function() {
     initHeader();
-    initColorScheme();
     initViewportImage();
     initNavMenuScroll();
     initScrollProgress();
@@ -1102,8 +956,8 @@ In the default Hexo theme Landscape, on which this blog is based, there is no su
 
     //VSCODE
     let vscode = document.querySelectorAll(".brand-links .vscode").forEach(link => link.addEventListener("click", function() { pirsch("Open in VSCode"); }));
-    
-  </script>  
+
+  </script>
 
 </body>
 <template id="contact-dialog">
