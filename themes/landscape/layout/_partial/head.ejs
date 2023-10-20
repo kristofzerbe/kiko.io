@@ -291,8 +291,23 @@
         imagesrcset="<%= meta.photoUrl.replace("normal", "mobile") %> 480w, <%= meta.photoUrl.replace("normal", "tablet") %> 768w">
   <% } %>
     
-  <%- css('css/dist/bundle.min.css') %>
+  <%- css('css/dist/asset-bundle.min.css') %>
   <%- css('css/style.css') %>
+
+  <script>
+    var theme = "light"; //default
+
+    var storedTheme = localStorage.getItem("theme"); 
+    if ((storedTheme && storedTheme === "dark") || window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      theme = "dark";
+    }
+
+    localStorage.setItem("theme", theme);
+    document.documentElement.setAttribute("data-theme", theme);
+
+    window.onload = function () { setTheme(theme); };
+
+  </script>
 
   <%- js('js/tools.js') %>
   <%- js('js/dialog.js') %>

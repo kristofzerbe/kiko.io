@@ -48,7 +48,7 @@ module.exports = function(grunt){
     cssmin: {
       dist: {
           files: {
-            'themes/landscape/source/css/dist/bundle.min.css': 'themes/landscape/tmp/asset-bundle.css'
+            'themes/landscape/source/css/dist/asset-bundle.min.css': 'themes/landscape/tmp/asset-bundle.css'
           }
       }
     },  
@@ -58,7 +58,7 @@ module.exports = function(grunt){
       },
       dist: {
         files: {
-          'themes/landscape/source/js/dist/bundle.min.js': 'themes/landscape/tmp/asset-bundle.js'
+          'themes/landscape/source/js/dist/asset-bundle.min.js': 'themes/landscape/tmp/asset-bundle.js'
         }
       }
     },
