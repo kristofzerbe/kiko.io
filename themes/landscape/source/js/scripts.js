@@ -204,22 +204,17 @@ function setTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   toggleTheme.checked = (theme === "dark");
   setVibrantColor(theme);
-  setCodepenTheme();
+  setCodepenTheme(theme);
 }
 
-function setCodepenTheme() {
+function setCodepenTheme(theme) {
   //https://codepen.io/kristofzerbe/embed/xxxxx?height=400&default-tab=js,result&theme-id=dark
   var pens = document.getElementsByClassName("codepen");
   for (var i = 0; i < pens.length; i++) {
     var src = pens[i].src;
     const arr = src.split("?");
     const params = arr[1].split("&").slice(0, -1);
-    src =
-      arr[0] +
-      "?" +
-      params.join("&") +
-      "&theme-id=" +
-      localStorage.getItem("theme");
+    src = arr[0] + "?" + params.join("&") + "&theme-id=" + theme;
     pens[i].src = src;
   }
 }
