@@ -85,7 +85,7 @@ Because it is easier to find a card with visual support, I create my own screens
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -435,15 +435,15 @@ Because it is easier to find a card with visual support, I create my own screens
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnyuenfi0012kfoogd0zb3er">
+      <div class="article-permalink" id="article-permalink-clnzptabl0012ohopbud1bzc1">
     <input class="article-permalink-value" value="https://kiko.io/post/Adding-Screenshots-to-Trello-Cards-on-Android/" 
-           data-id="clnyuenfi0012kfoogd0zb3er" data-title="Adding Screenshots to Trello Cards on Android" />
+           data-id="clnzptabl0012ohopbud1bzc1" data-title="Adding Screenshots to Trello Cards on Android" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyuenfi0012kfoogd0zb3er");
+        initPermalink("clnzptabl0012ohopbud1bzc1");
     });
 </script>
 

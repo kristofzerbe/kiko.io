@@ -84,7 +84,7 @@
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -1640,15 +1640,15 @@ indiepen:
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnyuenft001jkfoogtsb73qd">
+      <div class="article-permalink" id="article-permalink-clnzptac0001johophvcmhhhg">
     <input class="article-permalink-value" value="https://kiko.io/post/GitHub-Tag-Plugins-for-Hexo/" 
-           data-id="clnyuenft001jkfoogtsb73qd" data-title="GitHub Tag Plugins for Hexo" />
+           data-id="clnzptac0001johophvcmhhhg" data-title="GitHub Tag Plugins for Hexo" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyuenft001jkfoogtsb73qd");
+        initPermalink("clnzptac0001johophvcmhhhg");
     });
 </script>
 

@@ -85,7 +85,7 @@ If you research this topic on the web, you have to dig through many architecture
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -429,15 +429,15 @@ If you research this topic on the web, you have to dig through many architecture
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnyueng6002akfooekvjgatd">
+      <div class="article-permalink" id="article-permalink-clnzptace002aohopdw1f2z1h">
     <input class="article-permalink-value" value="https://kiko.io/post/Anatomy-of-Service-Worker-Communication/" 
-           data-id="clnyueng6002akfooekvjgatd" data-title="Anatomy of Service Worker Communication" />
+           data-id="clnzptace002aohopdw1f2z1h" data-title="Anatomy of Service Worker Communication" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyueng6002akfooekvjgatd");
+        initPermalink("clnzptace002aohopdw1f2z1h");
     });
 </script>
 

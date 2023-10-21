@@ -84,7 +84,7 @@ This small club played only a regional role at all until 1979, when a local busi
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -380,15 +380,15 @@ This small club played only a regional role at all until 1979, when a local busi
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnyuengo003ckfoo3yv2h4gu">
+      <div class="article-permalink" id="article-permalink-clnzptacw003cohopfpyz2o32">
     <input class="article-permalink-value" value="https://kiko.io/post/My-Hometown-My-Club/" 
-           data-id="clnyuengo003ckfoo3yv2h4gu" data-title="My Hometown, My Club" />
+           data-id="clnzptacw003cohopfpyz2o32" data-title="My Hometown, My Club" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyuengo003ckfoo3yv2h4gu");
+        initPermalink("clnzptacw003cohopfpyz2o32");
     });
 </script>
 

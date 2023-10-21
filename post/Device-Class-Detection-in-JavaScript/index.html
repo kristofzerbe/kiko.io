@@ -86,7 +86,7 @@ One point of criticism on this pure JS approach can be, that you have to maintai
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -393,15 +393,15 @@ One point of criticism on this pure JS approach can be, that you have to maintai
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnyuenf3000kkfoohp013j16">
+      <div class="article-permalink" id="article-permalink-clnzptab9000kohop8akfhudq">
     <input class="article-permalink-value" value="https://kiko.io/post/Device-Class-Detection-in-JavaScript/" 
-           data-id="clnyuenf3000kkfoohp013j16" data-title="Device Class Detection in JavaScript" />
+           data-id="clnzptab9000kohop8akfhudq" data-title="Device Class Detection in JavaScript" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyuenf3000kkfoohp013j16");
+        initPermalink("clnzptab9000kohop8akfhudq");
     });
 </script>
 

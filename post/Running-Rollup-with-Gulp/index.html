@@ -86,7 +86,7 @@ In this article I will show you, how to integrate Rollup in your Gulp bundling p
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -397,15 +397,15 @@ In this article I will show you, how to integrate Rollup in your Gulp bundling p
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnyuenfy001vkfoo5zhy0nha">
+      <div class="article-permalink" id="article-permalink-clnzptac6001vohopexh0cox5">
     <input class="article-permalink-value" value="https://kiko.io/post/Running-Rollup-with-Gulp/" 
-           data-id="clnyuenfy001vkfoo5zhy0nha" data-title="Running Rollup with Gulp" />
+           data-id="clnzptac6001vohopexh0cox5" data-title="Running Rollup with Gulp" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyuenfy001vkfoo5zhy0nha");
+        initPermalink("clnzptac6001vohopexh0cox5");
     });
 </script>
 

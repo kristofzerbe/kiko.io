@@ -84,7 +84,7 @@ My favorite in terms of CSS coding art this year is the work A moment of pure CS
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -528,15 +528,15 @@ My favorite in terms of CSS coding art this year is the work A moment of pure CS
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnyuengl0035kfood4an0r8y">
+      <div class="article-permalink" id="article-permalink-clnzptacs0035ohop39zg4aax">
     <input class="article-permalink-value" value="https://kiko.io/post/Favourite-Pens-of-2022/" 
-           data-id="clnyuengl0035kfood4an0r8y" data-title="Favourite Pens of 2022" />
+           data-id="clnzptacs0035ohop39zg4aax" data-title="Favourite Pens of 2022" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyuengl0035kfood4an0r8y");
+        initPermalink("clnzptacs0035ohop39zg4aax");
     });
 </script>
 

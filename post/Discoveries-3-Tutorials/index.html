@@ -89,7 +89,7 @@ CSS
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -467,15 +467,15 @@ CSS
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnyuenf4000nkfoocvhhfk2a">
+      <div class="article-permalink" id="article-permalink-clnzptabb000nohopd5423c1r">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-3-Tutorials/" 
-           data-id="clnyuenf4000nkfoocvhhfk2a" data-title="Discoveries #3 - Tutorials" />
+           data-id="clnzptabb000nohopd5423c1r" data-title="Discoveries #3 - Tutorials" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyuenf4000nkfoocvhhfk2a");
+        initPermalink("clnzptabb000nohopd5423c1r");
     });
 </script>
 

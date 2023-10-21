@@ -84,7 +84,7 @@ For my Page Meta dialog, however, I recently needed the excerpt as plain text to
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -386,15 +386,15 @@ For my Page Meta dialog, however, I recently needed the excerpt as plain text to
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnyuengi002ykfooeftc40tp">
+      <div class="article-permalink" id="article-permalink-clnzptacp002yohopcxz74yw2">
     <input class="article-permalink-value" value="https://kiko.io/post/Convert-HTML-into-Plain-Text-in-Hexo/" 
-           data-id="clnyuengi002ykfooeftc40tp" data-title="Convert HTML into Plain Text in Hexo" />
+           data-id="clnzptacp002yohopcxz74yw2" data-title="Convert HTML into Plain Text in Hexo" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyuengi002ykfooeftc40tp");
+        initPermalink("clnzptacp002yohopcxz74yw2");
     });
 </script>
 

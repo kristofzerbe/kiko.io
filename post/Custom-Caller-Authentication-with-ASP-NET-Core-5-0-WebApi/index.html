@@ -84,7 +84,7 @@ A common way is to limit the service access by providing API Keys to well known 
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -379,15 +379,15 @@ A common way is to limit the service access by providing API Keys to well known 
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnyuenfk0016kfoo9ugy1d4t">
+      <div class="article-permalink" id="article-permalink-clnzptabn0016ohop8fj7b6e4">
     <input class="article-permalink-value" value="https://kiko.io/post/Custom-Caller-Authentication-with-ASP-NET-Core-5-0-WebApi/" 
-           data-id="clnyuenfk0016kfoo9ugy1d4t" data-title="Custom Caller Authentication with ASP.NET Core 5.0 Web API" />
+           data-id="clnzptabn0016ohop8fj7b6e4" data-title="Custom Caller Authentication with ASP.NET Core 5.0 Web API" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyuenfk0016kfoo9ugy1d4t");
+        initPermalink("clnzptabn0016ohop8fj7b6e4");
     });
 </script>
 

@@ -85,7 +85,7 @@ Of course, I couldn’t manipulate the media query prefers-color-scheme itself, 
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -387,15 +387,15 @@ Of course, I couldn’t manipulate the media query prefers-color-scheme itself, 
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnyuenez000dkfoo1cp98ihj">
+      <div class="article-permalink" id="article-permalink-clnzptab5000dohopaqe3ek0g">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-Dark-Mode-revised/" 
-           data-id="clnyuenez000dkfoo1cp98ihj" data-title="Hexo and the Dark Mode ... revised" />
+           data-id="clnzptab5000dohopaqe3ek0g" data-title="Hexo and the Dark Mode ... revised" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyuenez000dkfoo1cp98ihj");
+        initPermalink("clnzptab5000dohopaqe3ek0g");
     });
 </script>
 

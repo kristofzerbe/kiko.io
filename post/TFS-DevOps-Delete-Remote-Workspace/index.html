@@ -83,7 +83,7 @@
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -385,15 +385,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnyuenfh0010kfooayyt1tiv">
+      <div class="article-permalink" id="article-permalink-clnzptabk0010ohop098hbk7d">
     <input class="article-permalink-value" value="https://kiko.io/post/TFS-DevOps-Delete-Remote-Workspace/" 
-           data-id="clnyuenfh0010kfooayyt1tiv" data-title="TFS/DevOps: Delete Remote Workspace" />
+           data-id="clnzptabk0010ohop098hbk7d" data-title="TFS/DevOps: Delete Remote Workspace" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyuenfh0010kfooayyt1tiv");
+        initPermalink("clnzptabk0010ohop098hbk7d");
     });
 </script>
 

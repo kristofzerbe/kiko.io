@@ -84,7 +84,7 @@ In the default Hexo theme Landscape, on which this blog is based, there is no su
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -393,15 +393,15 @@ In the default Hexo theme Landscape, on which this blog is based, there is no su
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnyuenfb000zkfoo20v76qz2">
+      <div class="article-permalink" id="article-permalink-clnzptabi000zohop257i4cgd">
     <input class="article-permalink-value" value="https://kiko.io/post/Show-related-posts-in-Hexo/" 
-           data-id="clnyuenfb000zkfoo20v76qz2" data-title="Show related posts in Hexo" />
+           data-id="clnzptabi000zohop257i4cgd" data-title="Show related posts in Hexo" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyuenfb000zkfoo20v76qz2");
+        initPermalink("clnzptabi000zohop257i4cgd");
     });
 </script>
 

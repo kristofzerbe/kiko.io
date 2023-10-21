@@ -85,7 +85,7 @@ Many modern applications are written with Web technologies, thanks to cross plat
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -457,15 +457,15 @@ Many modern applications are written with Web technologies, thanks to cross plat
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnyuenfi0013kfoogeicghhb">
+      <div class="article-permalink" id="article-permalink-clnzptabm0013ohop5kkv3xwk">
     <input class="article-permalink-value" value="https://kiko.io/post/Application-Specific-Links-on-Windows-10/" 
-           data-id="clnyuenfi0013kfoogeicghhb" data-title="Application-Specific Links on Windows 10" />
+           data-id="clnzptabm0013ohop5kkv3xwk" data-title="Application-Specific Links on Windows 10" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyuenfi0013kfoogeicghhb");
+        initPermalink("clnzptabm0013ohop5kkv3xwk");
     });
 </script>
 

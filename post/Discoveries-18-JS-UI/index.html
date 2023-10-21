@@ -84,7 +84,7 @@
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -492,15 +492,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnyueng8002gkfoo5h1q6yop">
+      <div class="article-permalink" id="article-permalink-clnzptach002gohop1jfd15ju">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-18-JS-UI/" 
-           data-id="clnyueng8002gkfoo5h1q6yop" data-title="Discoveries #18 - JS UI" />
+           data-id="clnzptach002gohop1jfd15ju" data-title="Discoveries #18 - JS UI" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyueng8002gkfoo5h1q6yop");
+        initPermalink("clnzptach002gohop1jfd15ju");
     });
 </script>
 

@@ -83,7 +83,7 @@
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -347,7 +347,7 @@
 <span id="more"></span>
 
 <h2 id="Indian-Sunset"><a href="#Indian-Sunset" class="headerlink" title="Indian Sunset"></a>Indian Sunset</h2>
-    <div id="image-compare-kxstj0">
+    <div id="image-compare-ptyx9k">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_165823_HDR_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_165823_HDR_PRESET_Sunset.jpg" alt="" />
     </div>
@@ -356,7 +356,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-kxstj0"),
+      new ImageCompare(document.getElementById("image-compare-ptyx9k"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -373,7 +373,7 @@
 
 <hr>
 
-    <div id="image-compare-bfdkag">
+    <div id="image-compare-io4ck1">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_164343_HDR_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_164343_HDR_PRESET_Sunset.jpg" alt="" />
     </div>
@@ -382,7 +382,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-bfdkag"),
+      new ImageCompare(document.getElementById("image-compare-io4ck1"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -414,15 +414,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnyuenf8000ukfoof1dp4jn6">
+      <div class="article-permalink" id="article-permalink-clnzptabf000uohopg4j6fjto">
     <input class="article-permalink-value" value="https://kiko.io/post/Indian-Presets-for-Lightroom/" 
-           data-id="clnyuenf8000ukfoof1dp4jn6" data-title="Indian Presets for Lightroom" />
+           data-id="clnzptabf000uohopg4j6fjto" data-title="Indian Presets for Lightroom" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyuenf8000ukfoof1dp4jn6");
+        initPermalink("clnzptabf000uohopg4j6fjto");
     });
 </script>
 

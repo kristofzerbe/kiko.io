@@ -84,7 +84,7 @@ The blog is synced via Dropbox, but hosted on GitHub Pages, so on every device I
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -440,15 +440,15 @@ The blog is synced via Dropbox, but hosted on GitHub Pages, so on every device I
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnyuenes0009kfoo0z8y42b4">
+      <div class="article-permalink" id="article-permalink-clnzptaaz0009ohopfwfw9x3d">
     <input class="article-permalink-value" value="https://kiko.io/post/A-New-Blog-Blogging-and-Synching-en-route/" 
-           data-id="clnyuenes0009kfoo0z8y42b4" data-title="A New Blog: Blogging and Synching en route" />
+           data-id="clnzptaaz0009ohopfwfw9x3d" data-title="A New Blog: Blogging and Synching en route" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyuenes0009kfoo0z8y42b4");
+        initPermalink("clnzptaaz0009ohopfwfw9x3d");
     });
 </script>
 

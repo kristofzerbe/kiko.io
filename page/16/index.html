@@ -81,7 +81,7 @@
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -342,15 +342,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnyuenf0000fkfoo2x7l0961">
+      <div class="article-permalink" id="article-permalink-clnzptab6000fohop7l455c7x">
     <input class="article-permalink-value" value="https://kiko.io/post/How-To-Visual-Studio-Database-Project-and-ADSI/" 
-           data-id="clnyuenf0000fkfoo2x7l0961" data-title="How-To: Visual Studio Database Project and ADSI" />
+           data-id="clnzptab6000fohop7l455c7x" data-title="How-To: Visual Studio Database Project and ADSI" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyuenf0000fkfoo2x7l0961");
+        initPermalink("clnzptab6000fohop7l455c7x");
     });
 </script>
 

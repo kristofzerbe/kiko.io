@@ -84,7 +84,7 @@ This article will show you firstly, how to test your local solution on a smartph
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -424,15 +424,15 @@ This article will show you firstly, how to test your local solution on a smartph
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnyuenfy001ukfoo6eyz658u">
+      <div class="article-permalink" id="article-permalink-clnzptac5001uohop96aldbrk">
     <input class="article-permalink-value" value="https://kiko.io/post/Remote-Testing-and-Debugging-with-Chrome/" 
-           data-id="clnyuenfy001ukfoo6eyz658u" data-title="Remote Testing and Debugging with Chrome" />
+           data-id="clnzptac5001uohop96aldbrk" data-title="Remote Testing and Debugging with Chrome" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyuenfy001ukfoo6eyz658u");
+        initPermalink("clnzptac5001uohop96aldbrk");
     });
 </script>
 

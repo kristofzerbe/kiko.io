@@ -84,7 +84,7 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -366,12 +366,12 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
 
 <p><strong>Live Output:</strong></p>
 
-      <div class="image-masonry" id="image-masonry-lrg77z">
+      <div class="image-masonry" id="image-masonry-lqipct">
         <div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0053.jpg" alt="Thomas' Ruby Prince I" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/_D50_3251.jpg" alt="No Name" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0086.jpg" alt="Thomas' German Flag" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_1147.jpg" alt="Poppy Green" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0075.jpg" alt="Thomas Wild Tulips" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_7474.jpg" alt="Garden Beauties XIV" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_4451.jpg" alt="Garden Beauties I" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_1577.jpg" alt="Floral Magic XIV" /></div>
       </div>
       <script>
         let macy = new Macy({
-          container: '#image-masonry-lrg77z',
+          container: '#image-masonry-lqipct',
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -416,15 +416,15 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnyuengm0037kfood0kee8dp">
+      <div class="article-permalink" id="article-permalink-clnzptact0037ohopc3pg9w7l">
     <input class="article-permalink-value" value="https://kiko.io/post/Image-Masonry-Tag-Plugin-for-Hexo/" 
-           data-id="clnyuengm0037kfood0kee8dp" data-title="Image Masonry Tag Plugin for Hexo" />
+           data-id="clnzptact0037ohopc3pg9w7l" data-title="Image Masonry Tag Plugin for Hexo" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyuengm0037kfood0kee8dp");
+        initPermalink("clnzptact0037ohopc3pg9w7l");
     });
 </script>
 

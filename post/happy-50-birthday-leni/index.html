@@ -81,7 +81,7 @@
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -418,15 +418,15 @@
     <footer class="article-footer" data-pagefind-ignore>      
       
       
-      <div class="article-permalink" id="article-permalink-clnyueng50029kfoo9874bq8r">
+      <div class="article-permalink" id="article-permalink-clnzptacd0029ohop8yci57q2">
     <input class="article-permalink-value" value="https://kiko.io/post/happy-50-birthday-leni/" 
-           data-id="clnyueng50029kfoo9874bq8r" data-title="Happy Birthday" />
+           data-id="clnzptacd0029ohop8yci57q2" data-title="Happy Birthday" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyueng50029kfoo9874bq8r");
+        initPermalink("clnzptacd0029ohop8yci57q2");
     });
 </script>
 

@@ -86,7 +86,7 @@ Aaron Parecki, co-founder of the IndieWeb, has made a service called webmention.
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -579,15 +579,15 @@ Aaron Parecki, co-founder of the IndieWeb, has made a service called webmention.
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnyuenfu001mkfoo5hq0d665">
+      <div class="article-permalink" id="article-permalink-clnzptac1001mohopbn5g6s09">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/" 
-           data-id="clnyuenfu001mkfoo5hq0d665" data-title="Hexo and the IndieWeb (Receiving Webmentions)" />
+           data-id="clnzptac1001mohopbn5g6s09" data-title="Hexo and the IndieWeb (Receiving Webmentions)" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyuenfu001mkfoo5hq0d665");
+        initPermalink("clnzptac1001mohopbn5g6s09");
     });
 </script>
 

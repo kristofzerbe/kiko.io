@@ -84,7 +84,7 @@ Today, Max Böck gave me the momentum with his article The IndieWeb for Everyone
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if ((storedTheme && storedTheme === "dark") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -378,15 +378,15 @@ Today, Max Böck gave me the momentum with his article The IndieWeb for Everyone
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnyuengf002skfoo87ik9yg7">
+      <div class="article-permalink" id="article-permalink-clnzptacm002sohopd5520c8z">
     <input class="article-permalink-value" value="https://kiko.io/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/" 
-           data-id="clnyuengf002skfoo87ik9yg7" data-title="Syndicate Mastodon Hashtags in your favorite Feed Reader" />
+           data-id="clnzptacm002sohopd5520c8z" data-title="Syndicate Mastodon Hashtags in your favorite Feed Reader" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnyuengf002skfoo87ik9yg7");
+        initPermalink("clnzptacm002sohopd5520c8z");
     });
 </script>
 
