@@ -86,7 +86,7 @@ What I didn’t know until now is that you can use a:not([class]) {...} to gener
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if (storedTheme) { theme = storedTheme; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 

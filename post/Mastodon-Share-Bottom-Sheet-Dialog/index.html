@@ -90,7 +90,7 @@ But seriously … does it take an external service to ask the user for an instan
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if (storedTheme) { theme = storedTheme; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -395,15 +395,15 @@ But seriously … does it take an external service to ask the user for an instan
   
   
 
-      <div class="article-permalink" id="article-permalink-clnzptacv003bohop1ep19tvg">
+      <div class="article-permalink" id="article-permalink-clnzqcc6y003bmhpw88b7buml">
     <input class="article-permalink-value" value="https://kiko.io/post/Mastodon-Share-Bottom-Sheet-Dialog/" 
-           data-id="clnzptacv003bohop1ep19tvg" data-title="Mastodon Share Bottom Sheet Dialog" />
+           data-id="clnzqcc6y003bmhpw88b7buml" data-title="Mastodon Share Bottom Sheet Dialog" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnzptacv003bohop1ep19tvg");
+        initPermalink("clnzqcc6y003bmhpw88b7buml");
     });
 </script>
 

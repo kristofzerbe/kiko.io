@@ -84,7 +84,7 @@ My choice was to implement a horizontal scrolling menu, which can grow over the 
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if (storedTheme) { theme = storedTheme; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -373,15 +373,15 @@ My choice was to implement a horizontal scrolling menu, which can grow over the 
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clnzptabe000sohopemtw5ocz">
+      <div class="article-permalink" id="article-permalink-clnzqcc5g000smhpw4olo6tw4">
     <input class="article-permalink-value" value="https://kiko.io/post/Horizontal-navigation-menu-above-an-image/" 
-           data-id="clnzptabe000sohopemtw5ocz" data-title="Horizontal navigation menu above an image" />
+           data-id="clnzqcc5g000smhpw4olo6tw4" data-title="Horizontal navigation menu above an image" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnzptabe000sohopemtw5ocz");
+        initPermalink("clnzqcc5g000smhpw4olo6tw4");
     });
 </script>
 

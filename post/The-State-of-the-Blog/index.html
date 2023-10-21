@@ -85,7 +85,7 @@ In this post I would like to share a few experiences I have had with Hexo, regar
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if (storedTheme && storedTheme === "dark") { theme = "dark"; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if (storedTheme) { theme = storedTheme; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -534,15 +534,15 @@ In this post I would like to share a few experiences I have had with Hexo, regar
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clnzptacn002uohop2wsc50mn">
+      <div class="article-permalink" id="article-permalink-clnzqcc6p002umhpw1j9g5pal">
     <input class="article-permalink-value" value="https://kiko.io/post/The-State-of-the-Blog/" 
-           data-id="clnzptacn002uohop2wsc50mn" data-title="The State of the Blog" />
+           data-id="clnzqcc6p002umhpw1j9g5pal" data-title="The State of the Blog" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clnzptacn002uohop2wsc50mn");
+        initPermalink("clnzqcc6p002umhpw1j9g5pal");
     });
 </script>
 
