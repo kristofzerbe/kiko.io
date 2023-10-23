@@ -128,10 +128,10 @@
   transform-style: preserve-3d
   transition: all ease-out .6s  
   opacity: 0.3
-  filter: grayscale(1) contrast(0.5)
+  filter: filter-gray
   /[data-theme="dark"] &
     opacity: 0.75
-    filter: grayscale(1) contrast(0.5) brightness(0.6)
+    filter: dark-filter-gray
 
 .article-photo.in-view
     transform: scale(1.05)
@@ -277,10 +277,10 @@
     transition: all ease-out .6s 
     transform: scale(1)
     opacity: 0.75
-    filter: grayscale(1) contrast(0.75)
+    filter: filter-gray
     /[data-theme="dark"] &
       opacity: 0.75
-      filter: grayscale(1) contrast(0.5) brightness(0.6)
+      filter: dark-filter-gray
   a.img-link.in-view
     transform: scale(1.0125)
     opacity: 1
@@ -707,13 +707,15 @@
 .article-permalink
   display: flex
   flex-direction: row
+  font-size: font-size-small
   padding-left: 50px
   @media mq-mobile
     padding-left: 30px
   a
     cursor: pointer
   input
-    font-size: 1rem
+    font-size: font-size-small
+    font-family: font-sans
     background: transparent
     text-align: right
     white-space: nowrap
