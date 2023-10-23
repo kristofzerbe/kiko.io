@@ -9,8 +9,8 @@
   padding: default-padding default-padding 0
 
 .anything-entry
-  font-size: 2em
-  font-weight: 600
+  font-size: font-title-size
+  font-weight: font-weight-bold
   line-height: line-height-title
   transition: color 0.4s
   a
@@ -46,15 +46,15 @@
       /[data-theme="dark"] &
         background: dark-color-hover-background
       content: ""
-      border-radius: 4px
+      border-radius: border-radius
       inset: 0
       transform: scaleX(0)
       transform-origin: right
       transition: transform 0.4s ease-in-out
     em
-      font-size: 0.6em
-      line-height: 1.6em
-      padding: 5px
+      font-size: font-subtitle-size
+      line-height: line-height-subtitle
+      padding: (default-padding-vert / 4) (default-padding / 2)
       min-width: 80px
       max-height: 26px
       text-align: center
@@ -83,26 +83,26 @@
   p
     line-height: line-height
     margin: line-height 0
-  div.shields-io p
-    clear: both
-    display: flex
-    flex-direction: row
-    flex-wrap: wrap
-    img
-      margin: 0 10px 10px 0
+  div.shields-io 
+    p
+      clear: both
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      img
+        margin: 0 medium-margin medium-margin 0
   .brand-links
     display: flex
     flex-direction: row
-    margin: 10px 0 30px
-    gap: 30px
+    margin: default-margin 0 double-margin
+    gap: 2rem
     @media mq-mobile
-      gap: 20px
+      gap: 1rem
     a
       display: flex
       flex-direction: column
       align-items: center
       row-gap: 6px
-      // border-bottom: 1px white solid
       img
         width: 42px
       span
