@@ -3,27 +3,33 @@
 
 .archives
   clearfix()
+  column-gap: 0
+  margin: -(medium-margin)
+  @media mq-tablet
+    column-count: 2
+  @media mq-normal
+    column-count: 3
 
 .archive-title
-  font-size: 1.6em
-  font-weight: 600
+  font-size: font-pagetitle-size
+  font-weight: font-weight-bold
   line-height: line-height-title
   margin-top: line-height-title
-  margin-bottom: 1em
+  margin-bottom: medium-margin
   color: color-default
   /[data-theme="dark"] &
     color: dark-color-default
   span
-    font-weight: 400
+    font-weight: font-weight-normal
     text-transform: uppercase
     b 
       padding: 0 8px
       text-transform: none
-      font-weight: 400
+      font-weight: font-weight-normal
       opacity: 0.5
     em
-      padding-right: 12px
-      font-size: 18px
+      padding-right: (default-padding / 2)
+      font-size: 1.5rem
     em.tag
       &:before
         content: icon-tag
@@ -34,7 +40,7 @@
         font-family: fa-icons
 
 .archive-year-wrap
-  margin-bottom: 1em
+  margin-bottom: medium-margin
 
 .archive-year
   @extend $block-caption
@@ -42,16 +48,9 @@
   color: color-header
   /[data-theme="dark"] &
     color: dark-color-header
-      
-.archives
-  column-gap: 0
-  @media mq-tablet
-    column-count: 2
-  @media mq-normal
-    column-count: 3
 
 .archive-list-navigation
-  padding: 20px 20px 5px 0
+  padding: default-padding-vert default-padding-vert (default-padding-vert / 3) 0
   display: flex
   justify-content: flex-start
   flex-wrap: nowrap
@@ -61,16 +60,16 @@
     background: linear-gradient(90deg, dark-color-background 30%, dark-color-block 80%, dark-color-background 100%)
   .archive-list-wrapper
     flex: 0 0 auto
-    padding-right: 25px
+    padding-right: default-padding
     transition: all .2s ease
     &:hover
       color: color-link
       /[data-theme="dark"] &
         color: dark-color-link
     h2
-      font-weight: 600
-      font-size: 16px
-      margin-bottom: 10px
+      font-weight: font-weight-bold
+      font-size: 1rem
+      margin-bottom: medium-margin
     ul
       display: flex
       justify-content: flex-start
@@ -80,8 +79,6 @@
       li
         flex: 1 0 25%
         box-sizing: border-box
-        line-height: 24px
-        transition: all .2s ease
         border-left: 2px color-border solid
         /[data-theme="dark"] &
           border-color: dark-color-border
@@ -131,8 +128,8 @@
 
 .archive-article
   avoid-column-break()
-  padding: 2em 0
-  margin: -2em 1em
+  padding: default-padding 0
+  margin: -(default-padding) medium-margin
   &:first-child
     margin-top: 0
 
@@ -170,22 +167,18 @@
       filter: grayscale(0) contrast(1) brightness(0.75)
 
 .archive-article-content
-  padding: 0 5px 15px
+  padding: 0 (default-padding / 4) (default-padding-vert / 2)
 
 .archive-article-date,
 .archive-article-category
-  font-size: 0.85em
-  line-height: 1em
-  margin-bottom: 1.5em
+  font-size: font-size-small
+  margin-bottom: medium-margin
   display: inline-block
 
 .archive-article-category
   float: right
-  margin-top: 4px
 
 .archive-article-date
-  time
-    line-height: 1.5em
   time.updated
     color: color-foreground
     /[data-theme="dark"] &
@@ -198,7 +191,7 @@
   text-decoration: none
   line-height: line-height
   text-transform: uppercase
-  font-size: 0.8em
+  font-size: font-size-small
   color: color-grey
   /[data-theme="dark"] &
     color: dark-color-grey
@@ -211,12 +204,13 @@
   position relative
   z-index: 0
   display: inline-block
-  margin-top: 5px
-  margin-bottom: 5px
+  margin-top: small-margin
+  margin-bottom: small-margin
   text-decoration: none
-  line-height: line-height-title
-  font-size: 16px
-  font-weight: 600
+  line-height: line-height
+  font-size: font-subtitle-size
+  line-height: line-height-subtitle
+  font-weight: font-weight-bold
   color: color-default
   /[data-theme="dark"] &
     color: dark-color-default
@@ -231,27 +225,26 @@
   &:before
     position: absolute
     z-index: -1
-    margin: -3px -9px
+    margin: -0.25rem -0.5rem
     background: color-hover-background
     /[data-theme="dark"] &
       background: dark-color-hover-background
     content: ""
-    border-radius: 4px
+    border-radius: border-radius
     inset: 0
     transform: scaleX(0)
     transform-origin: right
     transition: transform 0.4s ease-in-out
 
 .archive-article-subtitle
-  line-height: 1.5em
-  font-size: 0.9em
-  margin-top: 4px
+  font-size: font-size-small
+  margin-top: small-margin
   color: color-grey
   /[data-theme="dark"] &
     color: dark-color-grey
 
 .archive-article-footer
-  font-size: 0.75em
+  font-size: font-size-small
 
 .archive-article-tags
   opacity: 0.5
@@ -282,7 +275,7 @@
   /[data-theme="dark"] &
     color: dark-color-grey
   a, span
-    padding: 10px 20px
+    padding: (default-padding-vert / 2) (default-padding / 2)
     line-height: 1
     height: 2ex
   a
@@ -304,9 +297,9 @@
       display: none
   .current
     color: color-default
-    font-weight: 600
+    font-weight: font-weight-bold
   .space
     color: color-default
-    font-weight: 600
+    font-weight: font-weight-bold
     @media mq-mobile
       display: none

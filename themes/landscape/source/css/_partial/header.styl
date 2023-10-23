@@ -57,11 +57,10 @@ header.photograph #header-photo-link
     color: rgba(255, 255, 255, 1)
 
   strong 
-    font-weight: 600
+    font-weight: font-weight-bold
 
 #header-inner
   position: relative
-  // overflow: hidden
   width: auto
   margin: auto
   float: right
@@ -132,14 +131,14 @@ header.photograph #header-photo-link
       max-width: 100px
       margin: auto 10px
       a
-        color: #ffffff
-        font-weight: 600
+        color: color-logo
+        font-weight: font-weight-bold
         text-decoration: none
         text-align: center
         display: block
         width: 100%
         padding: 10px 0
-        font-size: 1rem
+        font-size: 1.2rem
         text-transform: uppercase
         text-overflow: ellipsis
         white-space: nowrap
@@ -154,7 +153,7 @@ header.photograph #header-photo-link
     &:before
       font-family: fa-icons
       font-size: icon-home-size
-      font-weight: normal
+      font-weight: font-weight-normal
       width: icon-home-size
       height: icon-home-size
     span 
@@ -199,7 +198,7 @@ body.article-view #progress
 $logo-text
   text-decoration: none
   color: color-logo
-  font-weight: 400
+  font-weight: font-weight-normal
 
 #title-wrap
   font-size: title-size
@@ -246,9 +245,7 @@ $logo-text
 
 $sub-nav-link
   float: left
-  color: #fff
-  /[data-theme="dark"] &
-    color: #fff
+  color: color-logo
   opacity: 0.6
   text-decoration: none
   transition: opacity 0.2s ease-out
@@ -275,7 +272,7 @@ $sub-nav-link
   input#theme-switch[type=checkbox]
       display:none
     input#theme-switch[type=checkbox] + label
-      color: #fff
+      color: color-logo
       opacity: 0.4
       height: 32px
       width: 32px

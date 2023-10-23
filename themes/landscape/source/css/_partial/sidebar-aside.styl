@@ -3,10 +3,11 @@
     column(sidebar-column)
 
 .widget-wrap
-  margin: widget-margin 1em
+  margin: default-margin medium-margin
 
 .widget-title
-  @extend $block-caption  
+  @extend $block-caption
+  margin: small-margin 0  
   color: color-header
   /[data-theme="dark"] &
     color: dark-color-header
@@ -19,7 +20,7 @@
     color: dark-color-sidebar-text
     background: dark-color-widget-background
     border: 1px solid dark-color-widget-border
-  padding: 0 15px
+  padding: 0 (default-padding / 2)
   a
     color: color-widget-link
     /[data-theme="dark"] &
@@ -41,21 +42,19 @@
 
   ul, ol, dl
     ul, ol, dl
-      margin-left: 15px
+      margin-left: 1rem
       list-style: disc
     li
-      transition: all .2s ease
-      line-height: 1.4em            
       border-left: 2px color-border solid
       /[data-theme="dark"] &
         border-color: dark-color-border
-      margin: 10px 0 0 -12px
+      margin: small-margin 0 0 -12px
       padding: 0 10px      
       &:hover
         border-left: 4px color-link solid
         /[data-theme="dark"] &
           border-color: dark-color-border-hover
-        margin-left: -13px;
+        margin-left: -13px
         padding-left: 9px
         a 
           color: color-link

@@ -3,10 +3,13 @@
 @import "_util/mixin"
 @import "_util/grid"
 @import "_pagefind"
+@import "_lc-select"
+@import "_downpopup"
 @import "_dialog"
-@import "_forkawesome"
 @import "_opensans"
+@import "_lexend"
 @import "_sourcecodepro"
+@import "_forkawesome"
 
 global-reset()
 
@@ -27,6 +30,7 @@ global-reset()
 
 html
   text-size-adjust: none // Andy Bells Modernized Reset
+  font-size: font-size
 
 html, body
   height: 100%
@@ -37,7 +41,8 @@ body
   /[data-theme="dark"] &
     color: dark-color-foreground
     background: dark-color-background
-  font: font-size font-sans
+  font-family: font-sans
+  font-weight: font-weight-normal
   min-height: 100vh // Andy Bells Modernized Reset
   line-height: line-height // Andy Bells Modernized Reset
 
@@ -63,7 +68,7 @@ body
   display: none
 
 h1, h2, h3, h4, button, input, label
-  line-height: 1.1 // Andy Bells Modernized Reset
+  line-height: line-height // Andy Bells Modernized Reset
 
 h1, h2, h3, h4
   text-wrap: balance // Andy Bells Modernized Reset !
@@ -71,9 +76,6 @@ h1, h2, h3, h4
 ul[role='list'],
 ol[role='list']
   list-style: none // Andy Bells Modernized Reset
-
-// input, button, textarea, select
-//   font: inherit
 
 input, textarea, button
   margin: 0
@@ -93,6 +95,7 @@ input, textarea
 
 textarea
   resize: none
+  line-height: line-height
 
 textarea:not([rows])
   min-height: 10em // Andy Bells Modernized Reset
@@ -137,7 +140,7 @@ th, td {
 	padding: 8px;
 }
 th {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .fa-icon-mail:before

@@ -4,23 +4,23 @@
 
 .note-list
   .article.note
-    margin-left: 2.5em
+    margin-left: 2.5rem
     @media mq-mobile
-      margin-left: 1.5em
-      margin-bottom: 3em
+      margin-left: default-margin
+      margin-bottom: double-margin
     &:not(:last-child)::before
       content: ""
       display: block
       position: absolute
-      height: calc(100% + 4em)
-      left: -1.5em
+      height: calc(100% + 4rem)
+      left: -1.5rem
       @media mq-mobile
-        height: calc(100% + 3em)
-        left: calc(-1.4em + 6px)
+        height: calc(100% + 3rem)
+        left: calc(-1.4rem + 6px)
       top: 0
       border-color: color-highlight
-      border-width: 1px;
-      border-style: solid;
+      border-width: 1px
+      border-style: solid
       /[data-theme="dark"] &
         border-color: dark-color-highlight
     .article-header a, .article-footer, .article-entry
@@ -31,16 +31,16 @@
 
 .note-list.condensed
   .article.note
-    margin-bottom: 2em
+    margin-bottom: default-margin
     &:not(:first-child)
-      margin-top: 2.5em
+      margin-top: block-margin
     &:not(:last-child)::before
-      height: calc(100% + 3em)
+      height: "calc(100% + %s)" % double-margin
     .article-header
       padding: 24px 24px 12px 16px
       a
-        font-size: 1.2em
-        font-weight: 600
+        font-size: font-subtitle-size
+        font-weight: font-weight-bold
     .article-entry, .article-footer
       height: 0
       padding: 0
@@ -50,7 +50,7 @@
 
 .article-meta
   clearfix()
-  position: relative;
+  position: relative
   z-index: 99
 
 .article-date
@@ -59,11 +59,9 @@
   /[data-theme="dark"] &
     color: dark-color-header
   float: left
-  margin-bottom: 0.5em
-  margin-right: 20px
-  font-size: 14px
+  margin-bottom: 0.5rem
+  margin-right: 1.25rem
   letter-spacing: 0
-  line-height: 1.5em
   &:hover
     color: color-link
     /[data-theme="dark"] &
@@ -79,23 +77,23 @@
   .article.note
     .article-meta
       time
-        top: -1em
-        left: -2.75em
+        top: -1rem
+        left: -2.75rem
         @media mq-mobile
-          left: -1.5em
+          left: -1.5rem
 
 .article.note
   &:not(:first-child)
-    margin-top: 3.5em
+    margin-top: 3.5rem
   .article-meta
     time
-      top: -1em
-      left: 1em
+      top: -1rem
+      left: 1rem
       position: absolute
       padding: 5px 10px
-      font-weight: bold
-      border-radius: 3px
-      font-size: 0.9em
+      font-weight: font-weight-bold
+      border-radius: border-radius-small
+      font-size: font-size-small
       color: color-logo
       background-color: color-highlight
       /[data-theme="dark"] &
@@ -112,11 +110,11 @@
 .article-inner
   @extend $block-inner
   overflow: hidden
-  margin-bottom: 2em
+  margin-bottom: default-margin
 
 .article.note
   .article-header
-    padding-top: 36px
+    padding-top: (default-padding-vert * 2)
 
 .article-photo
   height: 150px
@@ -160,10 +158,9 @@
 .article-category
   position: absolute
   right: 0
-  bottom: 0;
-  margin-bottom: 0.5em;
-  line-height: 1.5em
-  margin-left: 8px
+  bottom: 0
+  margin-bottom: small-margin
+  margin-left: small-margin
   border: none
   &:hover
     a
@@ -178,16 +175,15 @@
       color: dark-color-header
 
 .article-header
-  padding: article-padding article-padding 0
+  padding: default-padding default-padding 0
 
 .article-anything
-  line-height: line-height
   text-transform: uppercase
   text-decoration: none
   display: inline-block
-  font-size: 0.9em
-  margin-bottom: 5px
-  margin-right: 5px
+  font-size: font-size-small
+  margin-bottom: small-margin
+  margin-right: small-margin
   color: color-grey
   /[data-theme="dark"] &
     color: dark-color-grey
@@ -201,9 +197,9 @@
   z-index: 0
   display: table
   text-decoration: none
-  font-size: 2em
-  font-weight: 600
+  font-weight: font-weight-bold
   letter-spacing: -1px
+  font-size: font-title-size
   line-height: line-height-title
   transition: color 0.4s
   color: color-default
@@ -229,7 +225,7 @@
     /[data-theme="dark"] &
       background: dark-color-hover-background
     content: ""
-    border-radius: 4px
+    border-radius: border-radius
     inset: 0
     transform: scaleX(0)
     transform-origin: right
@@ -240,34 +236,34 @@
       transform-origin: left
 
 .article-subtitle
-  font-size: 1.2em
-  margin-top: subtitle-margin
+  font-size: font-subtitle-size
+  line-height: line-height-subtitle
+  margin-top: default-margin
   color: color-header
 
 .article-entry
   @extend $base-style
   clearfix()
   color: color-default
-  // text-align: justify
   /[data-theme="dark"] &
     color: dark-color-default
-  padding: 0 article-padding
+  padding: 0 default-padding
   .float-element 
     display: block
     float: right
     margin: line-height 0 line-height line-height
   p, table
-    line-height: line-height
-    margin: line-height 0
+    margin: default-margin 0
+    line-height: line-height-text
   h1, h2, h3, h5
-    font-weight: 600
+    font-weight: font-weight-bold
   h4, h6
-    font-weight: normal
+    font-weight: font-weight-normal
   h1, h2, h3, h4, h5, h6
     line-height: line-height-title
-    margin: (line-height-title * 1.5) 0 (line-height-title / 2)
+    margin: (line-height-title) 0 (line-height-title / 2)
   hr + h1, hr + h2, hr + h3
-    margin: (line-height-title / 1.5) 0 (line-height-title / 2)
+    margin: (line-height-title / 3) 0 (line-height-title / 2)
   a:not([class])
     text-decoration: none
     white-space: pre-line
@@ -295,10 +291,9 @@
     &:hover
       transform: scale(1.025)
   ul, ol, dl
-    margin-top: line-height
-    margin-bottom: line-height
+    margin-top: default-margin
+    margin-bottom: default-margin
     li
-      line-height: line-height
       margin-bottom: 6px
   img, video
     max-width: 100%
@@ -323,8 +318,8 @@
     border-collapse: collapse
     border-spacing: 0
   th
-    font-weight: 600
-    padding-bottom: 0.5em
+    font-weight: font-weight-bold
+    padding-bottom: small-margin
     border-bottom: 3px solid color-border-article
     /[data-theme="dark"] &
       border-bottom: 3px solid dark-color-border-article
@@ -336,11 +331,11 @@
   details
     margin-top: 2px
     &:hover summary
-      font-weight: bold
+      font-weight: font-weight-bold
     &[open]
       margin-bottom: 20px
       summary 
-        font-weight: bold
+        font-weight: font-weight-bold
     summary
       cursor: pointer
       padding: 5px 0
@@ -355,13 +350,13 @@
     padding: 10px 25px
     border-left: 6px color-github solid  
     &[open]
-      background-color: color-github-back
+      background-color: dark-color-github
       /[data-theme="dark"] &
-        background-color: dark-color-github-back
+        background-color: color-github
       summary
-        background-color: color-github-back
+        background-color: dark-color-github
         /[data-theme="dark"] &
-          background-color: dark-color-github-back
+          background-color: color-github
     summary
       padding: 10px
       margin: -10px 0 -10px -10px
@@ -373,9 +368,8 @@
   blockquote //like alertbox
     position: relative
     padding: 5px 35px
-    margin: 20px 0 0
+    margin: default-margin 0 0
     text-align: left
-    line-height: 1.3em
     font-size: 110%
     font-style: italic
     background-color: rgba(205,205,205,0.2)
@@ -419,8 +413,8 @@
       margin-top: 0
       margin-bottom: 0
     p
-      line-height: 1.4em
-      margin: 12px 0
+      line-height: line-height-text
+      margin: medium-margin 0
     footer
       font-size: font-size
       margin: line-height 0
@@ -428,26 +422,26 @@
       cite
         &:before
           content: "—"
-          padding: 0 0.5em
+          padding: 0 small-margin
   .pullquote
     text-align: left
     width: 45%
     margin: 0
     &.left
-      margin-left: 0.5em
-      margin-right: 1em
+      margin-left: small-margin
+      margin-right: medium-margin
     &.right
-      margin-right: 0.5em
-      margin-left: 1em
+      margin-right: small-margin
+      margin-left: medium-margin
   .caption
     color: color-grey
     /[data-theme="dark"] &
       color: dark-color-grey
     display: block
-    font-size: 0.9em
+    font-size: font-size-small
     font-style: italic
     opacity: 0.6
-    margin-top: 0.5em
+    margin-top: small-margin
     position: relative
     text-align: center
   // http://webdesignerwall.com/tutorials/css-elastic-videos
@@ -467,8 +461,8 @@
     display: flex
     flex-wrap: wrap
     justify-content: center
-    gap: 2em
-    margin-block-start: 2em
+    gap: 2rem
+    margin-block-start: 2rem
     figure
       img
         border-radius: 4px
@@ -477,7 +471,7 @@
           box-shadow: 1px 1px 12px 0px #000 !important
       figcaption
         text-align: center
-        padding-block: 0.75em
+        padding-block: 0.75rem
         font-style: italic
         color: color-grey
         /[data-theme="dark"] &
@@ -489,28 +483,28 @@
   margin: 0 !important
 
 .article-more-link
-  font-size: 0.8em
+  font-size: font-size-small
   text-transform: uppercase
   &:before
     font-family: fa-icons
     margin-right: 4px
-    font-size: 12px
-    font-weight: 400
+    font-size: font-size-small
+    font-weight: font-weight-normal
     content: icon-chevron-right 
     color: color-link
     /[data-theme="dark"] &
       color: dark-color-link
 
 .download-link
-  margin: 20px 0 !important
+  margin: default-margin 0 !important
   text-align: center
   a.button
     display: inline-block
     text-align: center
-    font-size: 0.9em;
+    font-size: font-size-small
     position: relative
     text-decoration: none
-    padding: 12px
+    padding: medium-margin
     background-color: color-button
     color: color-button-link
     border-radius: border-radius-small
@@ -533,7 +527,7 @@
 .article-comments,
 .article-webmentions
   min-height: 86px 
-  margin-top: line-height
+  margin-top: medium-margin
   border-top-style: solid
   border-top-width: 1px
   border-top-color: color-block
@@ -544,13 +538,13 @@
     color: color-header
     /[data-theme="dark"] &
       color: dark-color-header
-    font-size: 1.2em
-    line-height: line-height-title
-    margin: line-height-title 0
+    font-size: font-subtitle-size
+    line-height: line-height
+    margin: default-margin 0
 
 .article-share
   @extend $base-style
-  margin-top: -2em
+  margin-top: -(default-margin)
   margin-bottom: (2 * line-height)
   min-height: auto
   border-top: none
@@ -559,10 +553,10 @@
   button.share
     align-content: right
     text-decoration: none
-    padding: 12px
+    padding: small-margin medium-margin
     border: none
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px
+    border-bottom-right-radius: 4px
     transition: all ease-out .2s
     z-index: 1
     box-shadow: inset 0 20px 20px -20px color-border-amp
@@ -585,7 +579,7 @@
   min-height: auto
   border-top: none
   position: relative
-  padding-left: 2rem
+  padding-left: default-padding
   &:before
     display: block
     position: absolute 
@@ -593,7 +587,7 @@
     top: -14px     
     content: icon-feather
     font-family: fa-icons      
-    font-size: 6em
+    font-size: 6rem
     text-rendering: auto
     -webkit-font-smoothing: antialiased      
     z-index: -1
@@ -602,7 +596,6 @@
     /[data-theme="dark"] &
       color: dark-color-border
   p
-    line-height: line-height
     opacity: .75
     a
       text-decoration: none
@@ -613,29 +606,27 @@
           border-bottom: dark-color-link 1px solid
     
 .article-webmentions
-  // border-top-color: transparent
-  margin-top: 1.5 * line-height
+  margin-top: double-margin
 
 .article-footer, 
 .section-footer
-  font-size: 0.85em
-  line-height: line-height
-  padding-top: line-height
-  margin: 0 article-padding article-padding-vert
+  font-size: font-size-small
+  padding-top: (default-padding / 2)
+  margin: 0 default-padding default-padding-vert
   display: grid
   gap: 0 0
   grid-template-columns: auto 1fr
   grid-template-rows: auto 1fr auto
   grid-template-areas: "tags tags" "syndication permalink" "golem golem"
   @media mq-mobile
-    margin: 0 (article-padding / 2) article-padding-vert
+    margin: 0 (default-padding / 2) default-padding-vert
     grid-template-columns: auto 1fr
     grid-template-rows: auto auto auto
     grid-template-areas: "tags" "syndication permalink" "golem"
 
 .section-footer
   padding: 0
-  margin: -12px
+  margin: -(medium-margin)
 
 .article-tags { grid-area: tags }
 .article-permalink { grid-area: permalink }
@@ -674,24 +665,33 @@
     display: inline-block
     margin-right: 4px
   .syndication-link
-    padding: 0 16px 0 0;
+    padding: 0 16px 0 0
     @media mq-mobile
-      padding: 0 12px 0 0;
+      padding: 0 12px 0 0
     &:before
       font-family: fa-icons
-      font-size: 21px;
+      font-size: 1.5rem
   & .fa-mastodon:before
-    content: icon-mastodon
     color: color-mastodon
+    /[data-theme="dark"] &
+      color: dark-color-mastodon
+    content: icon-mastodon
   & .fa-twitter:before
-    content: icon-twitter
     color: color-twitter
+    /[data-theme="dark"] &
+      color: dark-color-twitter
+    content: icon-twitter
   & .fa-500px:before
-    content: icon-500px
     color: color-500px
+    /[data-theme="dark"] &
+      color: dark-color-500px
+    content: icon-500px
   & .fa-pixelfed:before
-    content: icon-pixelfed
     color: color-pixelfed
+    /[data-theme="dark"] &
+      color: dark-color-pixelfed
+    content: icon-pixelfed
+    font-size: 1.66rem
 
 .article-permalink,
 .article-syndication 
@@ -713,7 +713,7 @@
   a
     cursor: pointer
   input
-    font-size: 1em
+    font-size: 1rem
     background: transparent
     text-align: right
     white-space: nowrap
@@ -733,7 +733,7 @@
     padding-left: 12px
     &:before
       font-family: fa-icons
-      font-size: 21px
+      font-size: 1.5rem
   .action-copy
     &:before
       content: icon-copy
@@ -743,15 +743,15 @@
 
 .article-golem
   padding-top: line-height
-  padding-bottom: article-padding-vert
+  padding-bottom: default-padding-vert
   padding-left: 140px
-  padding-right: article-padding
+  padding-right: default-padding
   margin-top: line-height
-  margin-bottom: -(article-padding-vert)
-  margin-left: -(article-padding)
-  margin-right: -(article-padding)
+  margin-bottom: -(default-padding-vert)
+  margin-left: -(default-padding)
+  margin-right: -(default-padding)
   background-repeat: no-repeat
-  background-position: article-padding-vert 24px
+  background-position: default-padding-vert 24px
   background-color: color-background
   background-image: url("/images/golem-light-100.png")
   /[data-theme="dark"] &
@@ -762,7 +762,7 @@
   overflow: auto
   .article-tag-list-item
     float: right
-    margin-left: 10px
+    margin: 0 (small-margin / 2)
     .article-tag-list-link
       &:before
         content: "#"
@@ -777,7 +777,6 @@
       content: ""
       border-radius: 50%
       background: color-grey
-      // box-shadow: 0 1px 2px #fff
 
 .article-nav-link-wrap
   text-decoration: none
@@ -796,27 +795,25 @@
   @media mq-normal
     float: left
     text-align: right
-    padding-right: 20px
+    padding-right: default-padding
 
 #article-nav-older
   @media mq-normal
     float: right
     text-align: left
-    padding-left: 20px
+    padding-left: default-padding
 
 .article-nav-caption
   text-transform: uppercase
   letter-spacing: 2px
   color: color-grey
-  line-height: 1em
-  font-weight: 600
+  font-weight: font-weight-bold
   #article-nav-newer &
     margin-right: -2px
 
 .article-nav-title
-  font-size: 0.85em
-  line-height: line-height
-  margin-top: 0.5em
+  font-size: font-size-small
+  margin-top: small-margin
 
 .article-gallery
   background: color-default
@@ -850,8 +847,8 @@
     opacity: 0.75
     font-style: italic
 .webmention
-  margin: 16px 0
-  font-size: 13px
+  margin: default-margin 0
+  font-size: 1rem
   overflow: hidden
   a
     color: inherit
@@ -866,7 +863,7 @@
       margin-right: 16px
       .wm-photo
         width: 44px
-        border-radius: 6px
+        border-radius: border-radius
     .wm-meta
       position: relative
       width: 100%
@@ -876,9 +873,9 @@
       grid-template-rows: auto
       align-items: center
       column-gap: 5px
-      padding: 12px
-      border-top-left-radius: 4px
-      border-top-right-radius: 4px
+      padding: (default-padding-vert / 2) (default-padding / 2) (default-padding-vert / 2) (default-padding / 4)
+      border-top-left-radius: border-radius
+      border-top-right-radius: border-radius
       border-width: 1px
       border-style: solid 
       border-color: color-wm-border
@@ -892,8 +889,8 @@
         grid-template-rows: auto
       .wm-name
         grid-area: name
-        padding-left: 20px
-        font-weight: bold
+        padding-left: default-padding
+        font-weight: font-weight-bold
         max-width: 220px
         white-space: nowrap
         text-overflow: ellipsis
@@ -904,9 +901,9 @@
             text-decoration: underline
       .wm-name
         &:before
-          position: absolute;
-          margin-top: 3px
-          margin-left: -28px
+          position: absolute
+          margin-top: 0
+          margin-left: -(default-padding)
           font-family: fa-icons
           padding: 0 4px 0 8px
           /[data-theme="dark"] &
@@ -949,7 +946,7 @@
         grid-area: no
         margin-left: auto
         opacity: 0.25
-        font-size: 0.9em
+        font-size: font-size-small
       &:before, &:after
         position: absolute
         top: 11px
@@ -984,11 +981,11 @@
           border-right-color: dark-color-wm-meta-background-own
 
   .wm-content
-    padding: 12px
+    padding: (default-padding-vert / 2) (default-padding / 2)
     margin-left: 60px
-    line-height: 1.5
-    border-bottom-left-radius: 4px
-    border-bottom-right-radius: 4px
+    line-height: line-height-text
+    border-bottom-left-radius: border-radius
+    border-bottom-right-radius: border-radius
     border-width: 1px
     border-style: solid
     border-color: color-wm-border
@@ -1006,13 +1003,14 @@
       word-break: break-all
 .webmention.wm-liked, .webmention.wm-bookmarked
   .wm-meta
-    border-bottom-left-radius: 4px
-    border-bottom-right-radius: 4px
+    border-bottom-left-radius: border-radius
+    border-bottom-right-radius: border-radius
+
 .webmention-form-info
   opacity: 0.75
-  margin: 30px 10px 0 0
+  margin: block-margin default-margin 0 0
 .webmention-form
-  padding: 10px 0 0
+  padding: (default-padding / 2) 0 0
   display: grid
   column-gap: 20px
   row-gap: 10px
@@ -1024,8 +1022,8 @@
     grid-template: "label" "source" "submit"
     grid-template-columns: 1fr
   input
-    padding: 12px
-    border-radius: 2px
+    padding: small-margin medium-margin
+    border-radius: border-radius-small
   label
     grid-area: label
     opacity: 0.75

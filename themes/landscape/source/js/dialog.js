@@ -296,9 +296,9 @@ var dpDialog = {
 
     // Get options and generate qrcode
     (async () => {
-      const response = await fetch(document.getElementById('qr-code-styling-options').src);
-      const json = await response.json();    
-      let qrCode = new QRCodeStyling(json);
+      const response = await fetch(document.getElementById('qr-code-styling-options-' + theme).src);
+      const options = await response.json();
+      let qrCode = new QRCodeStyling(options);
       qrCode.append(document.getElementById("contact-qrcode"));      
     })(); //immediately invoked async function
     
@@ -308,7 +308,7 @@ var dpDialog = {
     dpDialog.base.init({
       headerText: "Share on Mastodon",
       urlHash: "share",
-      minContentHeight: 400,
+      minContentHeight: 450,
       width: "min(600px, 100%)"
     });
 

@@ -1,10 +1,9 @@
 .page-title
-  font-size: 1.6em
-  font-weight: 600
+  font-size: font-pagetitle-size
+  font-weight: font-weight-bold
   line-height: line-height-title
   text-transform: uppercase
-  margin-top: line-height-title
-  margin-bottom: 1em
+  margin: default-margin 0
   color: color-default
   /[data-theme="dark"] &
     color: dark-color-default
@@ -18,12 +17,12 @@
   background-size: cover
   width: 36px
   height: 36px
-  opacity: 0.8t
+  opacity: 0.8
   /[data-theme="dark"] &
     filter:invert(1)
 
 .page-subtitle, .page-backlink
-  font-size: 1.2em
+  font-size: font-pagetitle-size
   line-height: line-height-title
   text-transform: uppercase
   color: color-grey
@@ -31,25 +30,27 @@
     color: dark-color-grey
 
 .page-subtitle
-  font-weight: 400
-  margin-top: -0.5em
-  margin-bottom: 2em
+  font-weight: font-weight-normal
+  margin-top: -(small-margin)
+  margin-bottom: default-margin
 
 .page-backlink
+  position: relative
   display: inline-block
-  margin-top: 2em
+  margin: default-margin 0 0 default-margin
   text-decoration: none
-  font-weight: 600
+  font-weight: font-weight-bold
   opacity: 0.75
   &:hover
     color: color-link
     /[data-theme="dark"] &
       color: dark-color-link
   &:before
+    position: absolute
+    left: -(default-margin)
+    top: 0.1rem;
     font-family: fa-icons
-    font-size: 15px
-    font-weight: 400
-    margin-right: 10px
+    font-weight: font-weight-normal
     width: icon-home-size
     height: icon-home-size
     content: icon-chevron-left
@@ -62,9 +63,9 @@
   a
     flex: 0 0 auto
     display: block
-    margin: 0 10px 10px 0
-    padding: 6px 10px
-    font-size: 1.2em
+    margin: 0 medium-margin medium-margin 0
+    padding: (default-padding-vert / 3) (default-padding / 3)
+    font-size: font-subtitle-size
     text-decoration: none
     border-radius: border-radius-small
     border-width: 1px
@@ -77,8 +78,8 @@
       background-color: dark-color-border
       color: dark-color-button-link
     &.current
-      font-size: 1.3em
-      font-weight: bold
+      font-size: font-subtitle-size
+      font-weight: font-weight-bold
       background-color: transparent
       border-color: color-border
       /[data-theme="dark"] &
@@ -114,15 +115,15 @@
   .float-element 
     display: block
     float: right
-    padding-left: 2rem
-    padding-bottom: 2rem 
+    padding-left: default-padding
+    padding-bottom: default-padding 
   p
-    margin: 1em 0 0.75em
+    margin: medium-margin 0 (default-margin)
   section
     @extend $block-inner
     position: relative
-    margin: 2em 0
-    padding: 2em
+    margin: default-margin 0
+    padding: default-padding
     color: color-default
     /[data-theme="dark"] &
       color: dark-color-default
@@ -130,8 +131,8 @@
       margin-left: -28px !important /* HACK */
       margin-right: -28px !important /* HACK */
     p, table
-      line-height: line-height
-      margin: line-height 0
+      margin: default-margin 0
+      line-height: line-height-text
     p:first-child
       margin-top: 0
     p:last-child
@@ -139,12 +140,12 @@
     h1:first-child
       margin-top: 0
     h1, h2, h3, h5
-      font-weight: 600
+      font-weight: font-weight-bold
     h4, h6
-      font-weight: 400
+      font-weight: font-weight-normal
     h1, h2, h3, h4, h5, h6
       line-height: line-height-title
-      margin: 1em 0 0.75em
+      margin: medium-margin 0 (default-margin)
     ul, ol, dl
       margin-top: line-height
       margin-bottom: line-height
@@ -155,8 +156,8 @@
       span.result.error
         color: color-error
     time
-      font-size: .85em
-      margin-bottom: -20px
+      font-size: font-size-small
+      margin-bottom: -(default-margin)
       position: absolute
       color: color-header
       /[data-theme="dark"] &
@@ -172,7 +173,7 @@
     fieldset
       flex: 1 1 auto
     fieldset.gap
-      margin-right: 2em
+      margin-right: default-margin
       margin-bottom: auto;
     fieldset.max
       max-width: max-content
@@ -180,30 +181,30 @@
       fieldset.gap
         width: 100%
         margin-right: auto;
-        margin-bottom: 1em
+        margin-bottom: medium-margin
       fieldset.max
         max-width: 25%
       fieldset.max.expand
         max-width: 75%
+
   .view-bar
-    margin: 1em 0.25em
+    margin: block-margin (medium-margin / 4) medium-margin
     display: flex
     flex-direction: row
     justify-content: flex-end
-    gap: 1em
+    gap: 1rem
     .bar-info
       margin-right: auto
-      line-height: 2em
-      font-weight: bold
+      font-weight: font-weight-bold
       .info-des
-        font-weight: normal
+        font-weight: font-weight-normal
     .bar-cmd
-      padding-left: 12px
+      margin-left: default-margin
       input[type=radio]
         display: none
         + label
           padding-left: 8px
-          font-size: 1.5em
+          font-size: 1.66rem
           opacity: 0.25
           cursor: pointer
           &::before
@@ -250,121 +251,9 @@
         &:checked
           + label
             display: inline-block
-  .list
-    display: flex
-    flex-direction: column
-    flex-wrap: nowrap
-    margin-bottom: 2em
-    .card
-      padding: .5em .5em 0 .5em
-      margin: .5em 0
-      display: grid
-      .card-img
-        grid-area: image
-        margin-right: 1em
-        margin-top: -0.5em
-        margin-left: -0.5em
-        float: left;
-      h3
-        margin: .5em 0 1em 0
-        font-size: 120%
-        grid-area: title
-        overflow: hidden
-        a
-          display: block
-          white-space: nowrap
-          overflow: hidden
-          text-overflow: ellipsis
-      small, p
-        display: none
-    .card.tiny-tools
-      grid-template-columns: 90px auto
-      grid-template-areas: "image title" "image tags"
-      .card-img
-        height: 82px
-        img
-          height: 100%
-          width: 100%
-      .tags
-        grid-area: tags
-        margin: 0
-        margin-bottom: 0.5em
-    .card.photo
-      grid-template-rows: auto 25px auto
-      grid-template-columns: 160px auto
-      grid-template-areas: "status status" "image link" "image title"
-      .card-img
-        height: 90px
-        width: 150px
-        overflow: hidden
-        border-radius: 0 0 0 4px
-        img
-          width: 100%
-      // h3
-      //   margin-top: 0
-      // a.icon-link
-      //   top: 40px
-      span.pre-title
-        grid-area: link
-      .status
-        grid-area: status
-        margin: -.5em -.5em .5em
-
-  .grid
-    display: grid
-    grid-gap: 2em
-    grid-template-columns: repeat(auto-fill, minmax(220px,1fr))
-    margin-bottom: 3em
-    .card
-      padding: 1em
-      .card-img
-        margin: -1em -1em 0 -1em
-        height: auto
-        img
-          width: 100%
-          height: 100%
-          object-fit: cover
-      h3
-        margin: 1.5rem 0 0.25rem
-        font-size: 1.6em
-    .card.tiny-tools
-      div.tags
-        margin: 1.5rem 0 0.75rem
-    .card.photo
-      grid-template-areas: "status" "image" "text"
-      .card-img
-        grid-area: image
-        img
-          height: 160px
-      span.pre-title
-          display: block
-          margin-top: 5px
-      // a.icon-link
-      //   top: 198px
-      .status
-        grid-area: status
-        margin: -1em -1em 1em -1em
-    
-  .masonry
-    display: block
-    .card.photo
-      border-radius: 0
-      &:hover
-        transform: scale(1) translateY(0) !important
-      .card-img
-        display: flex
-        width: auto
-        filter: grayscale(0) contrast(1) !important
-        img 
-          width: 100%
-      span.pre-title
-        display: none
-      .status
-        display: none !important
-      h3
-        display: none
 
   .view
+    margin-bottom: double-margin
     .card
       @extend $block-inner
       @extend $base-style
@@ -382,38 +271,22 @@
           overflow-wrap: break-word
           word-wrap: break-word
           word-break: break-all /* important to break tiny-tools url's */
-      // a.icon-link
-      //   position: absolute
-      //   right: 0
-      //   opacity: 0.33
-      //   color: color-default
-      //   /[data-theme="dark"] &
-      //     color: dark-color-default
-      //   &:hover
-      //     opacity: 1
-      //   &:before
-      //     font-family: fa-icons
-      //     font-size: icon-home-size
-      //     margin-right: 10px
-      //     width: icon-home-size
-      //     height: icon-home-size
-      //     content: icon-chevron-right
-
       .card-img
         display: block
+        height: 90px
+        overflow: hidden
+        border-radius: 0 0 0 border-radius
         position: relative
         filter: grayscale(0.5) contrast(0.5)
-        // transition: all ease-out 0.2s
         img
+          height: 100%
+          width: 100%
           background-color: color-background
           /[data-theme="dark"] &
             background-color: dark-color-background
       h3
         line-height: line-height-title
-        font-weight: 600
-        // white-space: nowrap
-        // overflow: hidden
-        // text-overflow: ellipsis
+        font-weight: font-weight-bold
         a
           text-decoration: none
           color: color-default
@@ -430,8 +303,10 @@
           box-shadow: dark-box-shadow dark-color-base
       .card-img.in-view
         filter: grayscale(0) contrast(1)
+
     .card.tiny-tools
       .card-img
+        border-radius: border-radius border-radius 0 0
         img
           border-bottom: 1px color-background solid
           /[data-theme="dark"] &
@@ -441,9 +316,9 @@
         flex-flow: row wrap
         span, a.tag
           display: block
-          border-radius: 2px
-          padding: 3px 6px
-          margin: 0 5px 5px 0
+          border-radius: border-radius-small
+          padding: 3px 9px
+          margin: 0 small-margin small-margin 0
           text-transform: uppercase
           font-size: 0.75rem
           background-color: color-light
@@ -451,28 +326,21 @@
           /[data-theme="dark"] &
             background-color: dark-color-light
             color: dark-color-grey
-          &:before
-            font-family: fa-icons
-            content: icon-cat
-            margin-right: 5px
-            color: color-border
-            /[data-theme="dark"] &
-              color: dark-color-border
+    
     .card.photo
-      box-shadow: none
       .card-img.spotlight
         cursor: zoom-in
       span.pre-title
-        font-size: .85em;
+        font-size: font-size-small;
         opacity: 0.5
       .status
         display: block
         white-space: nowrap
         overflow: hidden
         text-overflow: ellipsis
-        padding: 5px 8px 7px
+        padding: (default-padding-vert / 3) (default-padding / 2)
         opacity: 0.75
-        border-radius: 4px 4px 0 0
+        border-radius: border-radius border-radius 0 0
         color: white
         &.used.home
           background-color: rgba(221, 120, 26, 0.5)
@@ -499,20 +367,132 @@
     .card.trans
       transform: scale(0)
       opacity: 0
+
+  .list
+    display: flex
+    flex-direction: column
+    flex-wrap: nowrap
+    .card
+      padding: small-margin
+      padding-bottom: 0
+      margin: (default-margin / 2) 0
+      display: grid
+      .card-img
+        grid-area: image
+        margin: -(small-margin)
+        margin-right: medium-margin
+        margin-bottom: 0
+        float: left;
+      h3
+        margin: medium-margin 0 0
+        font-size: font-subtitle-size
+        grid-area: title
+        overflow: hidden
+        a
+          display: block
+          white-space: nowrap
+          overflow: hidden
+          text-overflow: ellipsis
+      small, p
+        display: none
+
+    .card.tiny-tools
+      grid-template-rows: 50px auto
+      grid-template-columns: 100px auto
+      grid-template-areas: "image title" "image tags"
+      .card-img
+        width: 90px
+        border-radius: border-radius 0 0 border-radius
+      h3
+        margin-top: small-margin
+      div.tags
+        grid-area: tags
+        margin: 0
+
+    .card.photo
+      grid-template-rows: auto 25px auto
+      grid-template-columns: 160px auto
+      grid-template-areas: "status status" "image link" "image title"
+      .card-img
+        width: 150px
+      span.pre-title
+        grid-area: link
+      .status
+        grid-area: status
+        margin: -(small-margin)
+        margin-bottom: (small-margin)
+
+  .grid
+    display: grid
+    grid-gap: 2em
+    grid-template-columns: repeat(auto-fill, minmax(220px,1fr))
+    .card
+      padding: (default-padding / 2)
+      .card-img
+        margin: -(default-padding / 2)
+        margin-bottom: 0
+        height: auto
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+      h3
+        margin: default-margin 0 0
+        font-size: font-subtitle-size
+        
+    .card.tiny-tools
+      div.tags
+        margin: default-margin 0 small-margin
+
+    .card.photo
+      grid-template-areas: "status" "image" "text"
+      .card-img
+        grid-area: image
+        img
+          height: 160px
+      span.pre-title
+        display: block
+        margin-top: small-margin
+      .status
+        grid-area: status
+        margin: -(default-padding / 2)
+        margin-bottom: (default-padding / 2)
+    
+  .masonry
+    display: block
+    .card.photo
+      border-radius: 0
+      &:hover
+        box-shadow: none
+        transform: scale(1) translateY(0) !important
+      .card-img
+        display: flex
+        width: auto
+        filter: grayscale(0) contrast(1) !important
+        img 
+          box-shadow: none
+          width: 100%
+      span.pre-title
+        display: none
+      .status
+        display: none !important
+      h3
+        display: none
+
   section.feeds
     h2
       margin-top: 0
     .feed-group
-      margin: 2rem 0 0
+      margin: default-margin 0 0
       > strong
         display: block
-        margin-bottom: 0.5rem
+        margin-bottom: small-margin
       a
         display: grid
         grid-template-columns: 36px max-content auto
         grid-template-rows: auto
         grid-template-areas: "icon link info" ". size ."
-        padding: 0.5rem
+        padding: small-margin
         text-decoration: none
         align-items: center
         &:hover
@@ -547,8 +527,8 @@
         grid-area: info
         display: inline-block
         content: "- site's default"
-        margin-left: 0.5rem
-        font-size: 0.8rem
+        margin-left: small-margin
+        font-size: font-size-small
         color: color-footer-text
         /[data-theme="dark"] &
           color: dark-footer-text
@@ -571,17 +551,14 @@
           line-height: normal
         span
           line-height: normal
-          a
-            // white-space: nowrap
         div.site-links
           display: flex
           flex-flow: column
           gap: 8px
           a.site-link
-            padding: 18px 12px 12px 48px
+            padding: 1.25rem 1rem 1rem 4rem
             text-decoration: none
             overflow-wrap: break-word
-            line-height: 18px
             background-size: 24px 24px
             background-repeat: no-repeat
             background-color: color-hover-background
@@ -595,6 +572,7 @@
             &.site-pixelfed
               background-image: url(/images/pixelfed.svg)
               background-position: 12px 16px
+
   section.image
     background: transparent
     box-shadow: none
@@ -613,6 +591,7 @@
       bottom: -1rem
       opacity: 0.33
       font-size: 0.66rem
+
   section#color-list
     display: none
     background: transparent
@@ -652,8 +631,8 @@
           grid-area: 3/1/4/2
         div
           grid-area: 1/2/4/3
-          width: 6rem
-          height: 6rem
+          width: 6.5rem
+          height: 6.5rem
           position: absolute
           top: -1rem
           right: -1rem

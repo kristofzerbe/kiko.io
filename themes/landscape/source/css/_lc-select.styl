@@ -1,0 +1,240 @@
+.lcslt-wrapper
+  label
+    display: inline-block
+    margin-bottom: 0.75rem
+  .lcslt-wrap
+    width: 100%
+
+.lcslt
+  border-radius: 0
+  transition: all .25s ease
+  background-color: transparent !important
+  border-width: 1px
+  border-style: solid
+  border-color: #ededed
+  background: #fdfdfd
+  /[data-theme="dark"] &
+    border-color: #444
+    background: #111
+
+  &.lcslt_dd-open
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+  &:not(.lcslt-multiple)
+    & > span
+      padding: 2px 0
+  &.lcslt-multiple
+    & > span
+      &:not(.lcslt-multi-callout)
+        padding: 2px 0
+        font-size: 1rem
+  &.lcslt-disabled
+    background: #f4f4f4
+    /[data-theme="dark"] &
+      background: #f4f4f4
+    .lcslt-multi-selected
+      padding-left: 9px
+      color: #666
+      /[data-theme="dark"] &
+        color: #666
+      &:before
+        display: none
+    &:not(.lcslt-multiple):after
+      border-top-color: #aaa !important
+      /[data-theme="dark"] &
+        border-top-color: #888 !important
+    &:not(.lcslt-multiple)
+      & > span
+        color: #848484
+        /[data-theme="dark"] &
+          color: #848484
+
+  &:not(.lcslt-multiple):after
+    border-top-color: #888 !important
+    /[data-theme="dark"] &
+      border-top-color #aaa !important
+
+  &:not(.lcslt-disabled)
+    .lcslt-multi-selected
+      &:hover
+        background: #ddd
+        /[data-theme="dark"] &
+          background: #414141
+
+.lcslt-opt
+  border-radius: border-radius-small
+  background: #bbb
+  /[data-theme="dark"] &
+    background: #bbb
+
+.lcslt-multiple
+  font-size: font-size-small !important
+  padding: 5px !important
+
+.lcslt-multi-selected,
+.lcslt-multi-callout
+  padding: 2px 10px 2px 8px
+  border-radius: border-radius-small
+  margin: 0 5px 0 0
+  transition: all .3s ease
+  color: #494949
+  /[data-theme="dark"] &
+    color: #dfdfdf
+
+.lcslt-multi-callout
+  padding: 0.75rem 0.4581rem
+  font-family: arial
+  border-radius: 50%
+
+.lcslt-multi-selected
+  background-color: #eee
+  /[data-theme="dark"] &
+    background-color: #555
+  &:before
+    padding-right: 6px
+
+#lc-select-dd
+  border-radius: 0 0 border-radius border-radius
+  border-width: 0 1px 1px
+  border-style: solid
+  font-size: font-size-small
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2)
+  /[data-theme="dark"] &
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2)
+  li
+    border: none
+    border-top-width: 1px
+    border-top-style: solid
+    border-top-color: #ededed
+    /[data-theme="dark"] &
+      border-top-color: #3f3f3f
+    span
+      padding: 7px 12px
+      font-size: font-size-small
+    img
+      padding-right: 7px
+    &.lcslt-dd-opt
+      &.lcslt-disabled
+        background: #ddd
+        color: #777
+        /[data-theme="dark"] &
+          background: #404040
+          color: #7f7f7f
+    &.lcslt-selected
+      color: #fff
+      background: #0069dc
+      /[data-theme="dark"] &
+        color: #fff
+        background: #005ba5
+      .lcslt-img
+        filter: invert(1)
+      &.lcslt-dd-opt-hlight
+        box-shadow: 6px 0 0 #ddd inset
+        /[data-theme="dark"] &
+          box-shadow: 6px 0 0 #fff inset
+
+.lcslt-search-li
+  background #fdfdfd
+  /[data-theme="dark"] &
+    background: #444
+  input
+    font-size: inherit
+    padding-top: 8px
+    padding-bottom: 8px
+    padding-left: 8px
+    font-size: font-size-small
+    color: #888
+    background: transparent
+    /[data-theme="dark"] &
+      color: #000
+    &::placeholder
+      color: #ddd
+      /[data-theme="dark"] &
+        color: #666
+  &:before
+    background: #666
+    /[data-theme="dark"] &
+      color: #666
+
+.lcslt-search-li input:hover,
+.lcslt-search-li input:active,
+.lcslt-search-li input:focus,
+.lcslt-is-searching .lcslt-search-li input
+  color: inherit
+
+.lcslt-group-name
+  font-weight: bold
+
+.lcslt-group-opts
+  & > li
+    padding-left: 12px
+
+.lcslt-dd-opt
+  transition: all .15s ease
+  color: #6f6f6f
+  /[data-theme="dark"] &
+    color: #6f6f6f
+
+.lcslt-is-searching li.lcslt-group,
+.lcslt-no-results
+  border: none !important
+
+.lcslt-no-results
+  text-align center
+  padding 12px
+  color: #777
+  /[data-theme="dark"] &
+    color: #777
+
+.lcslt-img
+  display: inline-block
+  height: 17px
+  width: 20px
+  margin-right: 7px
+  /[data-theme="dark"] &
+    filter: invert(0.9)
+
+.lcslt:not(.lcslt-disabled):hover,
+.lcslt.lcslt_dd-open,
+#lc-select-dd
+  border-color: #ededed
+  background-color: #fdfdfd
+  /[data-theme="dark"] &
+    border-color: #444
+    background: #111
+
+.lcslt:not(.lcslt-multiple):hover:after,
+.lcslt.lcslt_dd-open:not(.lcslt-multiple):after
+  border-top-color: #666 !important
+  /[data-theme="dark"] &
+    border-top-color: #444 !important
+
+.lcslt span:not(.lcslt-placeholder):not(.lcslt-multi-callout)
+  line-height: line-height !important
+  font-size: font-size-small !important
+
+.lcslt span:not(.lcslt-placeholder):not(.lcslt-multi-callout),
+#lc-select-dd li
+  color: #484848
+  /[data-theme="dark"] &
+    color: #ddd
+
+.lcslt:not(.lcslt-disabled) .lcslt-multi-selected:hover,
+.lcslt:not(.lcslt-disabled) .lcslt-multi-callout:hover
+  color: #3f3f3f
+  /[data-theme="dark"] &
+    color: #e2e2e2
+
+.lcslt-placeholder
+  transform: scale(0.9) translate3d(-5%, -5%, 0)
+  color: #bbb
+  /[data-theme="dark"] &
+    color: #888
+
+#lc-select-dd li.lcslt-dd-opt:not(.lcslt-disabled):not(.lcslt-selected):hover,
+#lc-select-dd .lcslt-dd-opt-hlight
+  color: #333
+  background: #ddd
+  /[data-theme="dark"] &
+    color: #fff
+    background: #555

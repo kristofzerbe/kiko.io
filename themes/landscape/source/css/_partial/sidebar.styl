@@ -5,9 +5,7 @@ else
 
 .widget
   @extend $base-style
-  line-height: line-height
   word-wrap: break-word
-  font-size: 1em
   ul, ol
     list-style: none
     margin: 0
@@ -19,7 +17,7 @@ else
       list-style: decimal
 
 .widget.about
-  padding: 1em 0
+  padding: 1rem 0
   *:not(i)
     display: block
     margin: 0 auto
@@ -55,6 +53,8 @@ else
     a.fa-github
       &:hover  
         color: color-github
+        /[data-theme="dark"] &
+          color: dark-color-github
       &:before
         content: icon-github
         top: -11px
@@ -76,6 +76,8 @@ else
     a.fa-500px
       &:hover  
         color: color-500px
+        /[data-theme="dark"] &
+          color: dark-color-500px
       &:before
         content: icon-500px
         top: 63px
@@ -90,6 +92,8 @@ else
     a.fa-pixelfed
       &:hover  
         color: color-pixelfed
+        /[data-theme="dark"] &
+          color: dark-color-pixelfed
       &:before
         content: icon-pixelfed
         top: 110px
@@ -98,21 +102,21 @@ else
   h3, p
     text-align: center  
   h3 
-    margin: 32px 0 10px
+    margin: block-margin 0 medium-margin
     text-transform: uppercase
-    font-weight: bold
+    font-weight: font-weight-bolder
+    letter-spacing: 0.05rem;
   p
+    font-size: font-size-small
     line-height: line-height
-    font-size: 13px
-    padding: 0 10%
-
+    padding: 0 default-padding
 
 .category-list-count
 .tag-list-count
 .archive-list-count
   padding-left: 5px
   color: color-grey
-  font-size: 0.85em
+  font-size: font-size-small
 
 .tagcloud
   a

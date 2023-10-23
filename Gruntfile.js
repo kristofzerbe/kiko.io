@@ -3,6 +3,12 @@ module.exports = function(grunt){
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     gitclone: {
+      lexend: {
+        options: {
+          repository: 'https://github.com/googlefonts/lexend.git',
+          directory: 'themes/landscape/tmp/lexend'
+        },
+      },
       opensans: {
         options: {
           repository: 'https://github.com/webfontkit/open-sans.git',
@@ -29,7 +35,7 @@ module.exports = function(grunt){
           'themes/landscape/assets/utterances-comment.js',
           'themes/landscape/assets/webmentions.js',
           'themes/landscape/assets/vanilla-back-to-top.js',
-          'themes/landscape/assets/downupPopup/downupPopup.js'
+          'themes/landscape/assets/downupPopup.js'
         ],
         dest: 'themes/landscape/tmp/asset-bundle.js'
       },
@@ -38,9 +44,7 @@ module.exports = function(grunt){
           'node_modules/image-compare-viewer/dist/image-compare-viewer.min.css',
           'node_modules/tiny-slider/dist/tiny-slider.css',
           'themes/landscape/assets/tiny-slider.custom.css',
-          'themes/landscape/assets/lc_select.custom.css',
-          'themes/landscape/assets/github-cards.css',
-          'themes/landscape/assets/downupPopup/downupPopup.css'
+          'themes/landscape/assets/github-cards.css'
         ],
         dest: 'themes/landscape/tmp/asset-bundle.css'
       }
@@ -63,12 +67,18 @@ module.exports = function(grunt){
       }
     },
     copy: {
+      lexend: {
+        expand: true,
+        cwd: 'themes/landscape/tmp/lexend/fonts/lexend',
+        src: ['**'],
+        dest: 'themes/landscape/source/css/fonts/lexend'
+      },
       opensans: {
         expand: true,
         cwd: 'themes/landscape/tmp/opensans/fonts/',
         src: ['**'],
         dest: 'themes/landscape/source/css/fonts/opensans'
-      },      
+      },
       sourcecodepro: {
         expand: true,
         cwd: 'themes/landscape/tmp/sourcecodepro/',
