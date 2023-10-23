@@ -83,7 +83,9 @@
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if (storedTheme) { theme = storedTheme; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if (storedTheme) { 
+      theme = storedTheme; 
+    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -347,7 +349,7 @@
 <span id="more"></span>
 
 <h2 id="Indian-Sunset"><a href="#Indian-Sunset" class="headerlink" title="Indian Sunset"></a>Indian Sunset</h2>
-    <div id="image-compare-z7nfeo">
+    <div id="image-compare-ob1oag">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_165823_HDR_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_165823_HDR_PRESET_Sunset.jpg" alt="" />
     </div>
@@ -356,7 +358,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-z7nfeo"),
+      new ImageCompare(document.getElementById("image-compare-ob1oag"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -373,7 +375,7 @@
 
 <hr>
 
-    <div id="image-compare-xss0zy">
+    <div id="image-compare-pxhde4">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_164343_HDR_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Indian-Presets-for-Lightroom/IMG_20191009_164343_HDR_PRESET_Sunset.jpg" alt="" />
     </div>
@@ -382,7 +384,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-xss0zy"),
+      new ImageCompare(document.getElementById("image-compare-pxhde4"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -414,15 +416,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clo18ojh3000ukqq19x2t34wj">
+      <div class="article-permalink" id="article-permalink-clo31cy7i000unfokei1172yd">
     <input class="article-permalink-value" value="https://kiko.io/post/Indian-Presets-for-Lightroom/" 
-           data-id="clo18ojh3000ukqq19x2t34wj" data-title="Indian Presets for Lightroom" />
+           data-id="clo31cy7i000unfokei1172yd" data-title="Indian Presets for Lightroom" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clo18ojh3000ukqq19x2t34wj");
+        initPermalink("clo31cy7i000unfokei1172yd");
     });
 </script>
 
@@ -688,7 +690,7 @@
         </div>
         <h3 class="p-name">Kristof Zerbe</h3>
         <p class="p-note">
-            <i class="p-role">Developer & Team Lead</i> located in <i class="p-locality">Wiesbaden</i>, <i class="p-country-name">Germany</i>
+            <i class="p-role">Developer & Team Lead</i><br>located in <i class="p-locality">Wiesbaden</i>,<br><i class="p-country-name">Germany</i>
         </p>
         <a class="u-url u-uid" href="https://kiko.io" style="display:none;"></a>
     </div>
@@ -815,7 +817,10 @@
 <script src="/js/dist/tinycolor-min.js"></script>
 
 
-<script src="/js/dist/qr-code-styling-options-contact.json" id="qr-code-styling-options" type="application&#x2F;json"></script>
+<script src="/js/dist/qr-code-styling-options-contact-light.json" id="qr-code-styling-options-light" type="application&#x2F;json"></script>
+
+
+<script src="/js/dist/qr-code-styling-options-contact-dark.json" id="qr-code-styling-options-dark" type="application&#x2F;json"></script>
 
 
 <script>

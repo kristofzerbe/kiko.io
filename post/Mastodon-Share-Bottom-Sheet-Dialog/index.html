@@ -90,7 +90,9 @@ But seriously … does it take an external service to ask the user for an instan
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if (storedTheme) { theme = storedTheme; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if (storedTheme) { 
+      theme = storedTheme; 
+    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -395,15 +397,15 @@ But seriously … does it take an external service to ask the user for an instan
   
   
 
-      <div class="article-permalink" id="article-permalink-clo18ojii003bkqq183er630q">
+      <div class="article-permalink" id="article-permalink-clo31cy97003bnfok1tdrc49k">
     <input class="article-permalink-value" value="https://kiko.io/post/Mastodon-Share-Bottom-Sheet-Dialog/" 
-           data-id="clo18ojii003bkqq183er630q" data-title="Mastodon Share Bottom Sheet Dialog" />
+           data-id="clo31cy97003bnfok1tdrc49k" data-title="Mastodon Share Bottom Sheet Dialog" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clo18ojii003bkqq183er630q");
+        initPermalink("clo31cy97003bnfok1tdrc49k");
     });
 </script>
 
@@ -671,7 +673,7 @@ But seriously … does it take an external service to ask the user for an instan
         </div>
         <h3 class="p-name">Kristof Zerbe</h3>
         <p class="p-note">
-            <i class="p-role">Developer & Team Lead</i> located in <i class="p-locality">Wiesbaden</i>, <i class="p-country-name">Germany</i>
+            <i class="p-role">Developer & Team Lead</i><br>located in <i class="p-locality">Wiesbaden</i>,<br><i class="p-country-name">Germany</i>
         </p>
         <a class="u-url u-uid" href="https://kiko.io" style="display:none;"></a>
     </div>
@@ -798,7 +800,10 @@ But seriously … does it take an external service to ask the user for an instan
 <script src="/js/dist/tinycolor-min.js"></script>
 
 
-<script src="/js/dist/qr-code-styling-options-contact.json" id="qr-code-styling-options" type="application&#x2F;json"></script>
+<script src="/js/dist/qr-code-styling-options-contact-light.json" id="qr-code-styling-options-light" type="application&#x2F;json"></script>
+
+
+<script src="/js/dist/qr-code-styling-options-contact-dark.json" id="qr-code-styling-options-dark" type="application&#x2F;json"></script>
 
 
 <script>

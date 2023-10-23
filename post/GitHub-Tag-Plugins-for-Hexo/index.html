@@ -84,7 +84,9 @@
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if (storedTheme) { theme = storedTheme; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if (storedTheme) { 
+      theme = storedTheme; 
+    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -1552,7 +1554,7 @@ indiepen:
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true" fill="#fff"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 0 0 1.06 1.06l1.25-1.25a2 2 0 1 1 2.83 2.83l-2.5 2.5a2 2 0 0 1-2.83 0 .75.75 0 0 0-1.06 1.06 3.5 3.5 0 0 0 4.95 0l2.5-2.5a3.5 3.5 0 0 0-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 0 1 0-2.83l2.5-2.5a2 2 0 0 1 2.83 0 .75.75 0 0 0 1.06-1.06 3.5 3.5 0 0 0-4.95 0l-2.5 2.5a3.5 3.5 0 0 0 4.95 4.95l1.25-1.25a.75.75 0 0 0-1.06-1.06l-1.25 1.25a2 2 0 0 1-2.83 0z"/></svg>            
     </a>
   
-      <a href="https://github.com/kristofzerbe">
+      <a href="https://github.com/kristofzerbe" class="gh-person">
         <img class="gh-avatar" src="https://avatars.githubusercontent.com/u/243113?v=4" />
       </a>
       <a href="https://github.com/kristofzerbe" class="gh-user">
@@ -1640,15 +1642,15 @@ indiepen:
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clo18ojhl001jkqq100ac38ev">
+      <div class="article-permalink" id="article-permalink-clo31cy81001jnfok17lx0472">
     <input class="article-permalink-value" value="https://kiko.io/post/GitHub-Tag-Plugins-for-Hexo/" 
-           data-id="clo18ojhl001jkqq100ac38ev" data-title="GitHub Tag Plugins for Hexo" />
+           data-id="clo31cy81001jnfok17lx0472" data-title="GitHub Tag Plugins for Hexo" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clo18ojhl001jkqq100ac38ev");
+        initPermalink("clo31cy81001jnfok17lx0472");
     });
 </script>
 
@@ -1922,7 +1924,7 @@ indiepen:
         </div>
         <h3 class="p-name">Kristof Zerbe</h3>
         <p class="p-note">
-            <i class="p-role">Developer & Team Lead</i> located in <i class="p-locality">Wiesbaden</i>, <i class="p-country-name">Germany</i>
+            <i class="p-role">Developer & Team Lead</i><br>located in <i class="p-locality">Wiesbaden</i>,<br><i class="p-country-name">Germany</i>
         </p>
         <a class="u-url u-uid" href="https://kiko.io" style="display:none;"></a>
     </div>
@@ -2049,7 +2051,10 @@ indiepen:
 <script src="/js/dist/tinycolor-min.js"></script>
 
 
-<script src="/js/dist/qr-code-styling-options-contact.json" id="qr-code-styling-options" type="application&#x2F;json"></script>
+<script src="/js/dist/qr-code-styling-options-contact-light.json" id="qr-code-styling-options-light" type="application&#x2F;json"></script>
+
+
+<script src="/js/dist/qr-code-styling-options-contact-dark.json" id="qr-code-styling-options-dark" type="application&#x2F;json"></script>
 
 
 <script>

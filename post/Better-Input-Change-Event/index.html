@@ -84,7 +84,9 @@ The intended event for this is change, which will be triggered, when the user ha
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if (storedTheme) { theme = storedTheme; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if (storedTheme) { 
+      theme = storedTheme; 
+    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -362,15 +364,15 @@ The intended event for this is change, which will be triggered, when the user ha
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clo18ojgs000ckqq1emae4jl5">
+      <div class="article-permalink" id="article-permalink-clo31cy6u000cnfokaiake84e">
     <input class="article-permalink-value" value="https://kiko.io/post/Better-Input-Change-Event/" 
-           data-id="clo18ojgs000ckqq1emae4jl5" data-title="Better Input Change Event" />
+           data-id="clo31cy6u000cnfokaiake84e" data-title="Better Input Change Event" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clo18ojgs000ckqq1emae4jl5");
+        initPermalink("clo31cy6u000cnfokaiake84e");
     });
 </script>
 
@@ -589,7 +591,7 @@ The intended event for this is change, which will be triggered, when the user ha
         </div>
         <h3 class="p-name">Kristof Zerbe</h3>
         <p class="p-note">
-            <i class="p-role">Developer & Team Lead</i> located in <i class="p-locality">Wiesbaden</i>, <i class="p-country-name">Germany</i>
+            <i class="p-role">Developer & Team Lead</i><br>located in <i class="p-locality">Wiesbaden</i>,<br><i class="p-country-name">Germany</i>
         </p>
         <a class="u-url u-uid" href="https://kiko.io" style="display:none;"></a>
     </div>
@@ -716,7 +718,10 @@ The intended event for this is change, which will be triggered, when the user ha
 <script src="/js/dist/tinycolor-min.js"></script>
 
 
-<script src="/js/dist/qr-code-styling-options-contact.json" id="qr-code-styling-options" type="application&#x2F;json"></script>
+<script src="/js/dist/qr-code-styling-options-contact-light.json" id="qr-code-styling-options-light" type="application&#x2F;json"></script>
+
+
+<script src="/js/dist/qr-code-styling-options-contact-dark.json" id="qr-code-styling-options-dark" type="application&#x2F;json"></script>
 
 
 <script>

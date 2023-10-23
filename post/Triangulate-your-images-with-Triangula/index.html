@@ -83,7 +83,9 @@
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if (storedTheme) { theme = storedTheme; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if (storedTheme) { 
+      theme = storedTheme; 
+    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -354,7 +356,7 @@
 <p>These images are absolute great for background images in websites, in order to make the details less recognisable.</p>
 <p>There is a <a href="https://rh12503.github.io/triangula/">web version of Triangula</a>, but the desktop version (including a console version) is much faster. Best feature is the ability not only to save the generated images as PNG, but also as SVG!</p>
 <h3 id="Example-with-1-000-Generations"><a href="#Example-with-1-000-Generations" class="headerlink" title="Example with 1.000 Generations"></a>Example with 1.000 Generations</h3>
-    <div id="image-compare-zq6v5d">
+    <div id="image-compare-ysm279">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Triangulate-your-images-with-Triangula/DSC_7006-HDR_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Triangulate-your-images-with-Triangula/DSC_7006-HDR_TRIANGULATED.png" alt="" />
     </div>
@@ -363,7 +365,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-zq6v5d"),
+      new ImageCompare(document.getElementById("image-compare-ysm279"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -379,7 +381,7 @@
   
 
 <h3 id="Example-with-10-000-Generations"><a href="#Example-with-10-000-Generations" class="headerlink" title="Example with 10.000 Generations"></a>Example with 10.000 Generations</h3>
-    <div id="image-compare-vqoq48">
+    <div id="image-compare-5lo6fp">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Triangulate-your-images-with-Triangula/19-07 Schottland-0512_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Triangulate-your-images-with-Triangula/19-07 Schottland-0512_TRIANGULATED.png" alt="" />
     </div>
@@ -388,7 +390,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-vqoq48"),
+      new ImageCompare(document.getElementById("image-compare-5lo6fp"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -404,7 +406,7 @@
   
 
 <h3 id="Example-with-20-000-Generations"><a href="#Example-with-20-000-Generations" class="headerlink" title="Example with 20.000 Generations"></a>Example with 20.000 Generations</h3>
-    <div id="image-compare-7hfg2c">
+    <div id="image-compare-39jlz2">
       <img class="image-compare image-original no-zoom no-caption" src="/post/Triangulate-your-images-with-Triangula/DSC_8860_ORIGINAL.jpg" alt="" />
       <img class="image-compare image-modified no-zoom no-caption" src="/post/Triangulate-your-images-with-Triangula/DSC_8860_TRIANGULATED.png" alt="" />
     </div>
@@ -413,7 +415,7 @@
       if (localStorage.getItem("theme") === 'dark') {
         themeColor = "#222222"
       }
-      new ImageCompare(document.getElementById("image-compare-7hfg2c"),
+      new ImageCompare(document.getElementById("image-compare-39jlz2"),
       {
         controlColor: themeColor,
         controlShadow: false,
@@ -437,15 +439,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clo18ojhu0021kqq13wzzer55">
+      <div class="article-permalink" id="article-permalink-clo31cy8d0021nfok5vlqb59i">
     <input class="article-permalink-value" value="https://kiko.io/post/Triangulate-your-images-with-Triangula/" 
-           data-id="clo18ojhu0021kqq13wzzer55" data-title="Triangulate your images with Triangula" />
+           data-id="clo31cy8d0021nfok5vlqb59i" data-title="Triangulate your images with Triangula" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clo18ojhu0021kqq13wzzer55");
+        initPermalink("clo31cy8d0021nfok5vlqb59i");
     });
 </script>
 
@@ -717,7 +719,7 @@
         </div>
         <h3 class="p-name">Kristof Zerbe</h3>
         <p class="p-note">
-            <i class="p-role">Developer & Team Lead</i> located in <i class="p-locality">Wiesbaden</i>, <i class="p-country-name">Germany</i>
+            <i class="p-role">Developer & Team Lead</i><br>located in <i class="p-locality">Wiesbaden</i>,<br><i class="p-country-name">Germany</i>
         </p>
         <a class="u-url u-uid" href="https://kiko.io" style="display:none;"></a>
     </div>
@@ -844,7 +846,10 @@
 <script src="/js/dist/tinycolor-min.js"></script>
 
 
-<script src="/js/dist/qr-code-styling-options-contact.json" id="qr-code-styling-options" type="application&#x2F;json"></script>
+<script src="/js/dist/qr-code-styling-options-contact-light.json" id="qr-code-styling-options-light" type="application&#x2F;json"></script>
+
+
+<script src="/js/dist/qr-code-styling-options-contact-dark.json" id="qr-code-styling-options-dark" type="application&#x2F;json"></script>
 
 
 <script>

@@ -84,7 +84,9 @@ The blog is synced via Dropbox, but hosted on GitHub Pages, so on every device I
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if (storedTheme) { theme = storedTheme; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if (storedTheme) { 
+      theme = storedTheme; 
+    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -440,15 +442,15 @@ The blog is synced via Dropbox, but hosted on GitHub Pages, so on every device I
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clo18ojgp0009kqq10edyde8z">
+      <div class="article-permalink" id="article-permalink-clo31cy6r0009nfokhrj3cms5">
     <input class="article-permalink-value" value="https://kiko.io/post/A-New-Blog-Blogging-and-Synching-en-route/" 
-           data-id="clo18ojgp0009kqq10edyde8z" data-title="A New Blog: Blogging and Synching en route" />
+           data-id="clo31cy6r0009nfokhrj3cms5" data-title="A New Blog: Blogging and Synching en route" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clo18ojgp0009kqq10edyde8z");
+        initPermalink("clo31cy6r0009nfokhrj3cms5");
     });
 </script>
 
@@ -728,7 +730,7 @@ The blog is synced via Dropbox, but hosted on GitHub Pages, so on every device I
         </div>
         <h3 class="p-name">Kristof Zerbe</h3>
         <p class="p-note">
-            <i class="p-role">Developer & Team Lead</i> located in <i class="p-locality">Wiesbaden</i>, <i class="p-country-name">Germany</i>
+            <i class="p-role">Developer & Team Lead</i><br>located in <i class="p-locality">Wiesbaden</i>,<br><i class="p-country-name">Germany</i>
         </p>
         <a class="u-url u-uid" href="https://kiko.io" style="display:none;"></a>
     </div>
@@ -855,7 +857,10 @@ The blog is synced via Dropbox, but hosted on GitHub Pages, so on every device I
 <script src="/js/dist/tinycolor-min.js"></script>
 
 
-<script src="/js/dist/qr-code-styling-options-contact.json" id="qr-code-styling-options" type="application&#x2F;json"></script>
+<script src="/js/dist/qr-code-styling-options-contact-light.json" id="qr-code-styling-options-light" type="application&#x2F;json"></script>
+
+
+<script src="/js/dist/qr-code-styling-options-contact-dark.json" id="qr-code-styling-options-dark" type="application&#x2F;json"></script>
 
 
 <script>

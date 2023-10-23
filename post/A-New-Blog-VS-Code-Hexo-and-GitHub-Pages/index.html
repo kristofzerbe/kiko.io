@@ -86,7 +86,9 @@ I decided to write an article just in HTML and publish it on my personal GitHub 
     var theme = "light"; //default
 
     var storedTheme = localStorage.getItem("theme"); 
-    if (storedTheme) { theme = storedTheme; } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if (storedTheme) { 
+      theme = storedTheme; 
+    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme = "dark";
     }
 
@@ -416,15 +418,15 @@ I decided to write an article just in HTML and publish it on my personal GitHub 
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clo18ojgr000bkqq1cp59hhpg">
+      <div class="article-permalink" id="article-permalink-clo31cy6t000bnfok5fbxht44">
     <input class="article-permalink-value" value="https://kiko.io/post/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/" 
-           data-id="clo18ojgr000bkqq1cp59hhpg" data-title="A New Blog: VS Code, Hexo and GitHub Pages" />
+           data-id="clo31cy6t000bnfok5fbxht44" data-title="A New Blog: VS Code, Hexo and GitHub Pages" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clo18ojgr000bkqq1cp59hhpg");
+        initPermalink("clo31cy6t000bnfok5fbxht44");
     });
 </script>
 
@@ -704,7 +706,7 @@ I decided to write an article just in HTML and publish it on my personal GitHub 
         </div>
         <h3 class="p-name">Kristof Zerbe</h3>
         <p class="p-note">
-            <i class="p-role">Developer & Team Lead</i> located in <i class="p-locality">Wiesbaden</i>, <i class="p-country-name">Germany</i>
+            <i class="p-role">Developer & Team Lead</i><br>located in <i class="p-locality">Wiesbaden</i>,<br><i class="p-country-name">Germany</i>
         </p>
         <a class="u-url u-uid" href="https://kiko.io" style="display:none;"></a>
     </div>
@@ -831,7 +833,10 @@ I decided to write an article just in HTML and publish it on my personal GitHub 
 <script src="/js/dist/tinycolor-min.js"></script>
 
 
-<script src="/js/dist/qr-code-styling-options-contact.json" id="qr-code-styling-options" type="application&#x2F;json"></script>
+<script src="/js/dist/qr-code-styling-options-contact-light.json" id="qr-code-styling-options-light" type="application&#x2F;json"></script>
+
+
+<script src="/js/dist/qr-code-styling-options-contact-dark.json" id="qr-code-styling-options-dark" type="application&#x2F;json"></script>
 
 
 <script>
