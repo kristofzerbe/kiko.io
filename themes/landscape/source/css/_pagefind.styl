@@ -22,7 +22,7 @@ html[data-theme="dark"]
   --pagefind-ui-tag: dark-color-light
 
 /* OVERRIDES */
-.pagefind-ui__search-input
+.pagefind-ui__search-input  
   &:focus-visible
     outline: none
     border-color: color-border-3d !important
@@ -31,7 +31,7 @@ html[data-theme="dark"]
 
 .pagefind-ui__search-input,
 .pagefind-ui__message
-  font-weight: normal !important
+  font-weight: font-weight-normal !important
 
 .pagefind-ui__message
   padding: 0 !important
@@ -53,7 +53,13 @@ html[data-theme="dark"]
     /[data-theme="dark"] &
       color: dark-color-link !important
 
+.pagefind-ui__result-title
+  font-weight: font-weight-bold !important
+  font-size: font-titlelist-size !important
+
 .pagefind-ui__result-excerpt
+  font-weight: font-weight-normal !important
+  line-height: line-height-text !important
   mark
     background-color: var(--pagefind-ui-background) !important
     color: var(--pagefind-ui-primary) !important
