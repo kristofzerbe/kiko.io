@@ -324,7 +324,6 @@
     /[data-theme="dark"] &
       border-bottom: 3px solid dark-color-border-article
   td
-    padding: 10px 0
     border-bottom: 1px solid color-border-article
     /[data-theme="dark"] &
       border-bottom: 1px solid dark-color-border-article
@@ -854,6 +853,7 @@
   a
     color: inherit
     text-decoration: none
+    word-wrap: break-word
     &:hover
       text-decoration: underline
   .wm-card
@@ -996,9 +996,14 @@
       background-color: dark-color-wm-content-background
     border-top: 0
     > p
+      // font-size: font-size-small
       ~ .wm-source
         margin-top: 10px
         opacity: 0.5
+    a
+      color: color-link
+      /[data-theme="dark"] &
+        color: dark-color-link
     .wm-source
       display: inline-block
       word-break: break-all

@@ -14,8 +14,8 @@
 global-reset()
 
 ::-webkit-scrollbar
-  width: 8px;
-  height: 8px;
+  width: 8px
+  height: 8px
   background-color: color-background
   /[data-theme="dark"] &
     background-color: dark-color-background
@@ -127,22 +127,23 @@ hr.divider
   /[data-theme="dark"] &
     opacity: 0.5
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-tbody tr:nth-child(even) {
-    background: #eee;
-}
-tr:not(.no-border) th:not(:empty), td {
-  border: 1px #eee solid;
-}
-th, td {
-	padding: 8px;
-}
-th {
-  font-weight: 600;
-}
+table 
+  width: 100%
+  border-collapse: collapse
+  tbody, thead
+    tr
+      &:nth-child(even)
+        background: #eee
+      th, td 
+        padding: (default-padding / 3)
+      td
+        font-weight: font-weight-normal    
+      th 
+        font-weight: font-weight-bold
+    tr:not(.no-border) 
+      th:not(:empty), td
+        border: 1px #eee solid
+
 
 .fa-icon-mail:before
   font-family: fa-icons
@@ -297,10 +298,10 @@ if sidebar is left
       left: -137px
       transform: rotate(293deg)
       @media mq-mobile
-        font-size: 14em;
-        top: -16px;
-        left: -98px;
-        transform: rotate(298deg);
+        font-size: 14em
+        top: -16px
+        left: -98px
+        transform: rotate(298deg)
   &.d4
     .page-content:before
       content: icon-bullhorn
