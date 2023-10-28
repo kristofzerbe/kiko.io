@@ -273,9 +273,7 @@
           word-break: break-all /* important to break tiny-tools url's */
       .card-img
         display: block
-        height: 90px
         overflow: hidden
-        border-radius: 0 0 0 border-radius
         position: relative
         filter: grayscale(0.5) contrast(0.5)
         img
@@ -379,10 +377,12 @@
       display: grid
       .card-img
         grid-area: image
+        height: 90px
         margin: -(small-margin)
         margin-right: medium-margin
         margin-bottom: 0
-        float: left;
+        float: left
+        border-radius: 0 0 0 border-radius
       h3
         margin: medium-margin 0 0
         font-size: font-subtitle-size
@@ -461,7 +461,7 @@
   .masonry
     display: block
     .card.photo
-      border-radius: 0
+      box-shadow: none
       &:hover
         box-shadow: none
         transform: scale(1) translateY(0) !important
@@ -470,7 +470,7 @@
         width: auto
         filter: grayscale(0) contrast(1) !important
         img 
-          box-shadow: none
+          border-radius: border-radius-small
           width: 100%
       span.pre-title
         display: none
