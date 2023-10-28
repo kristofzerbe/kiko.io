@@ -10,8 +10,8 @@
     </image>
     <description>Blog about memorable tech stuff by Kristof Zerbe</description>
     <language>en</language>
-    <pubDate>Tue, 10 Oct 2023 13:34:57 +0000</pubDate>
-    <lastBuildDate>Tue, 10 Oct 2023 13:34:57 +0000</lastBuildDate>
+    <pubDate>Sat, 28 Oct 2023 12:00:55 +0000</pubDate>
+    <lastBuildDate>Sat, 28 Oct 2023 12:00:55 +0000</lastBuildDate>
     <category>UI</category>
     <category>Hexo</category>
     <category>CSS</category>
@@ -73,12 +73,50 @@
     <category>Git/GitHub</category>
     <category>Meta</category>
     <category>Contributing</category>
+    <category>Metadata</category>
     <category>Search</category>
     <category>JavaScript</category>
     <category>SVWW</category>
     <category>JSON-LD</category>
     <category>2. Bundesliga</category>
     <category>Concert</category>
+    <item>
+      <guid isPermalink="true">https://kiko.io/post/Handling-IPTC-metadata-on-Android-and-Windows/</guid>
+      <title>Handling IPTC metadata on Android and Windows</title>
+      <link>https://kiko.io/post/Handling-IPTC-metadata-on-Android-and-Windows/</link>
+      <category>Windows</category>
+      <category>Android</category>
+      <category>Imaging</category>
+      <category>Metadata</category>
+      <pubDate>Sat, 28 Oct 2023 12:00:55 +0000</pubDate>
+      <description>
+        <![CDATA[ &lt;p&gt;Most of the photos that I prepare for this website for example, I take with my big Nikon camera in RAW format and then edit them under Windows in &lt;strong&gt;Adobe Lightroom Classic&lt;/strong&gt;. I always give the image a name and a few keywords, which are then also displayed on the photo page. Lightroom stores these as &lt;a href=&#34;https://www.iptc.org/standards/photo-metadata/&#34;&gt;&lt;strong&gt;IPTC metadata&lt;/strong&gt;&lt;/a&gt; in the sidecar file and writes them, when exporting the image, directly into the header of the generated JPG file.&lt;/p&gt;
+&lt;p&gt;Now, however, I take pictures on the go with my Pixel smartphone and process them with the Google Photos Android app, and although the &lt;strong&gt;IPTC&lt;/strong&gt; standard is only 30 years old, &lt;strong&gt;Google doesn’t support it!&lt;/strong&gt; You can give the image a “description” but it is not written into the image as a metadata, but is probably lying around somewhere on the Google servers.&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+
+&lt;p&gt;&lt;img src=&#34;/post/Handling-IPTC-metadata-on-Android-and-Windows/google-photos-properties.png&#34; alt=&#34;Google Photos Properties&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Downloading the image via Google Photos and giving it a name and a few keywords using on-board tools under Windows doesn’t work either. There is the display of metadata in File Explorer under PROPERTIES and DETAILS, but editing TITLE or DESCRIPTION does not lead to IPTC metadata either, because these are &lt;strong&gt;not supported by Microsoft&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/Handling-IPTC-metadata-on-Android-and-Windows/windows-explorer-properties-metadata.png&#34; alt=&#34;Windows Explorer Properties Metadata&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Now you can ask yourself why IPTC is not important to the big companies, especially since it doesn’t seem to be the problem technically, as Adobe and other companies prove, but so what … I need a solution for my problem.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;Android-Solution&#34;&gt;&lt;a href=&#34;#Android-Solution&#34; class=&#34;headerlink&#34; title=&#34;Android Solution&#34;&gt;&lt;/a&gt;Android Solution&lt;/h2&gt;&lt;p&gt;For Android, there is probably no better image metadata app than &lt;a href=&#34;https://play.google.com/store/apps/details?id=net.xnano.android.exifpro&#34;&gt;&lt;strong&gt;EXIF Pro&lt;/strong&gt;&lt;/a&gt;. Besides the GALLERY, which lists all images on the smartphone, it also has a browser to load other images and it supports all metadata formats, including IPTC. All metadata can be edited, added or deleted if you want to save space, for example.&lt;/p&gt;
+&lt;p&gt;In my case, I just have to select the image in the app and use ADD in the IPTC section to select the &lt;code&gt;ObjectName&lt;/code&gt; (for the name) and &lt;code&gt;Keywords&lt;/code&gt; (for the keywords), enter the values and save the file. Done.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/Handling-IPTC-metadata-on-Android-and-Windows/android-exif-pro.png&#34; alt=&#34;Android EXIF Pro&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The app is based on the platform-independent Perl library &lt;a href=&#34;https://exiftool.org/&#34;&gt;&lt;strong&gt;ExifTool by Phil Harvey&lt;/strong&gt;&lt;/a&gt; … and as often as you research for ways to manipulate image metadata and whatever platform on the net, you will always come across Phil’s tool. It is the gold standard in this area, so to speak. The list of supported formats is more than impressive and that of meta formats leaves nothing to be desired.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;Windows-Solution&#34;&gt;&lt;a href=&#34;#Windows-Solution&#34; class=&#34;headerlink&#34; title=&#34;Windows Solution&#34;&gt;&lt;/a&gt;Windows Solution&lt;/h2&gt;&lt;p&gt;My problem described above is actually already solved with the Android solution, but under Windows there is this IPTC gap too and it can be filled with … what do you think … the ExifTool from Phil Harvey ;)&lt;/p&gt;
+&lt;p&gt;First of all, ExifTool is a pure command line tool and also comes without an installer or anything like that. For Windows there is a ZIP download with a single file inside: &lt;code&gt;exiftool(-k).exe&lt;/code&gt;. You save it in a folder of your choice and drag &amp;amp; drop an image file onto it and the metadata will be displayed in a terminal window. “-k” in the name means that ExifTool is called with this parameter, which makes sure that the terminal window stays open after processing.&lt;/p&gt;
+&lt;p&gt;For use in the command line it is best to copy the file and rename it to &lt;code&gt;exiftool.exe&lt;/code&gt; or you can download the &lt;a href=&#34;https://oliverbetz.de/pages/Artikel/ExifTool-for-Windows&#34;&gt;installer variant by Oliver Betz&lt;/a&gt;, which also makes a PATH entry to be able to call it from anywhere.&lt;/p&gt;
+&lt;p&gt;To add the name and the keywords to a file, the following call is sufficient:&lt;/p&gt;
+&lt;figure class=&#34;highlight cmd&#34;&gt;&lt;figcaption&gt;&lt;span&gt;(lines wrapped for readability)&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;exiftool &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  -overwrite_original&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  -iptc:ObjectName=&amp;quot;My New Name&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  -iptc:Keywords=&amp;quot;keyword1,keyword2,keyword3&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &amp;quot;C:\Pictures\MyImage.jpg&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;Okay … You don’t buy Windows to use the command line. There is also a GUI called &lt;a href=&#34;https://exiftool.org/gui/&#34;&gt;ExifToolGUI for Windows v5.xx&lt;/a&gt; by Bogdan Hrastnik. It is already more than 10 years old and also comes without an installer, but it works great … if you have understood the somewhat strange concept of workspaces and adding new fields to them, or if you have somehow muddled your way through.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/Handling-IPTC-metadata-on-Android-and-Windows/exiftool-gui-edit.png&#34; alt=&#34;ExifTool GUI Editing&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;Conclusion&#34;&gt;&lt;a href=&#34;#Conclusion&#34; class=&#34;headerlink&#34; title=&#34;Conclusion&#34;&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;&lt;p&gt;I wish IPTC would not only be supported by the &lt;a href=&#34;https://www.iptc.org/standards/photo-metadata/software-support/&#34;&gt;handful of programs&lt;/a&gt;, but like the technical meta format EXIF would become a standard in every image processing software, especially in the Big Five, who neglect it so far. But maybe my contribution here helped you to deal with it.&lt;/p&gt;
+ ]]>
+      </description>
+    </item>
     <item>
       <guid isPermalink="true">https://kiko.io/post/Get-and-use-a-dominant-color-that-matches-the-header-image/</guid>
       <title>Get and use a dominant color that matches the header image</title>
@@ -158,12 +196,12 @@
 &lt;h2 id=&#34;The-Game&#34;&gt;&lt;a href=&#34;#The-Game&#34; class=&#34;headerlink&#34; title=&#34;The Game&#34;&gt;&lt;/a&gt;The Game&lt;/h2&gt;&lt;p&gt;HSV is actually in shape this year to make it back to the Bundesliga. They have already dropped a few points, but have been on the promotion places from the beginning. This year it should be something and accordingly dominant have the Hamburg the game against once again deep standing Wiesbadener also started. Very sure of the ball and winning almost every duel, they were unable to capitalize on this in the first half. They brought the ball very close to the goal, but not into it, and you could tell that the guests were getting a little more annoyed as time went on.&lt;/p&gt;
 &lt;p&gt;This was expressed shortly before the half-time break also in a few unsportsmanlike conduct. Dropping and claiming foul play is simply stupid and only provokes catcalls. The one or other time is overall bad referee but also fell for the trick or has made other nonsensical decisions, which caused the “right” fans around me to nastiest insults.&lt;/p&gt;
 
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-6bpp6d&#34;&gt;
+      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-ifunzr&#34;&gt;
         &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_103936756.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_104935878.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_105740138.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_105912858.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_110002467.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_110827714.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_111728897.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_123948926.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_125719562.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_125751495.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;script&gt;
         let macy = new Macy({
-          container: &#39;#image-masonry-6bpp6d&#39;,
+          container: &#39;#image-masonry-ifunzr&#39;,
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -217,7 +255,7 @@
 
 &lt;p&gt;Usually the best photos end up unnoticed as &lt;a href=&#34;/post/Pool-Photo-Generator/&#34; title=&#34;Pool Photo Generator&#34;&gt;pool photos&lt;/a&gt; here on my blog until I use one as a header image, but now I make a separate post out of each set before I publish the individual photos on other sites like &lt;a href=&#34;https://500px.com/p/kikon&#34;&gt;500px&lt;/a&gt; or &lt;a href=&#34;https://pixelfed.social/kristofz&#34;&gt;Pixelfed&lt;/a&gt;.&lt;/p&gt;
 
-      &lt;div class=&#34;photo-list&#34; id=&#34;photo-list-mzz2re&#34;&gt;
+      &lt;div class=&#34;photo-list&#34; id=&#34;photo-list-k5u9fz&#34;&gt;
         
         &lt;figure&gt;
           &lt;a href=&#34;/photos/23-07 Mallorca-0300&#34; class=&#34;no-break&#34;&gt;
@@ -533,12 +571,12 @@
 &lt;p&gt;In the meantime we were on two more concerts in Frankfurt, then in Marburg (Open-Air) and in Mainz on the “Night of the Ballads”. Most recently we saw them two weeks ago at the MPS (“Mittelalterlich Phantasie Spectaculum”, a medieval festival) in Speyer, where they played open-air with other bands from the “industry”. On the one hand, I think it’s great that the guys, even if they now fill large halls in Germany, have not forgotten their origins, and on the other hand, I now had the opportunity to get very close to the stage with my camera.&lt;/p&gt;
 &lt;p&gt;Here are the results:&lt;/p&gt;
 
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-zauocx&#34;&gt;
+      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-sb8wza&#34;&gt;
         &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0092.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0094.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0103.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0104.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0105.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0106.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0108.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0111.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0115.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0123.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0126.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0128.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0131.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0136.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0150.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0151.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0152.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0153.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0156.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0157.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0159.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0162.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0169.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0171.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0172.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0173.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0177.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0179.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0182.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;script&gt;
         let macy = new Macy({
-          container: &#39;#image-masonry-zauocx&#39;,
+          container: &#39;#image-masonry-sb8wza&#39;,
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -587,12 +625,12 @@
 &lt;p&gt;It wasn’t, however, that Schalke dominated the game. We carelessly let them just do it and the fans had their fun when they shot the ball into the clouds again after a lot of roaring and stomping. Funny.&lt;/p&gt;
 &lt;p&gt;At the beginning of the second half, this continued seamlessly, even if you noticed that the coach in the cabin must have yelled at one or the other and these were now somewhat more active … and suddenly the ball was in our net … &lt;strong&gt;0:1&lt;/strong&gt;! What? How? A goal in the 54. minute for Schalke out of (almost) nothing! I have to watch that again on TV … :|&lt;/p&gt;
 
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-lz5px6&#34;&gt;
+      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-06akko&#34;&gt;
         &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_104957617.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_105327820.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_105347190.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_105548827.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_105749100.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_124411594.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_111931000.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_120730081.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_125820397.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_130050774.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;script&gt;
         let macy = new Macy({
-          container: &#39;#image-masonry-lz5px6&#39;,
+          container: &#39;#image-masonry-06akko&#39;,
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -658,12 +696,12 @@
 
 &lt;p&gt;&lt;strong&gt;Live Output:&lt;/strong&gt;&lt;/p&gt;
 
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-sq5tlw&#34;&gt;
+      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-uc2igs&#34;&gt;
         &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0053.jpg&#34; alt=&#34;Thomas&#39; Ruby Prince I&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/_D50_3251.jpg&#34; alt=&#34;No Name&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0086.jpg&#34; alt=&#34;Thomas&#39; German Flag&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_1147.jpg&#34; alt=&#34;Poppy Green&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0075.jpg&#34; alt=&#34;Thomas Wild Tulips&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_7474.jpg&#34; alt=&#34;Garden Beauties XIV&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_4451.jpg&#34; alt=&#34;Garden Beauties I&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_1577.jpg&#34; alt=&#34;Floral Magic XIV&#34; /&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;script&gt;
         let macy = new Macy({
-          container: &#39;#image-masonry-sq5tlw&#39;,
+          container: &#39;#image-masonry-uc2igs&#39;,
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -800,12 +838,12 @@
 &lt;hr&gt;
 &lt;h2 id=&#34;The-Game&#34;&gt;&lt;a href=&#34;#The-Game&#34; class=&#34;headerlink&#34; title=&#34;The Game&#34;&gt;&lt;/a&gt;The Game&lt;/h2&gt;&lt;p&gt;The club has of course strengthened itself for the new season with new players in all sections of the team, whom I have now seen play for the first time. And unfortunately, some of them, such as Brooklyn Ezeh and Benedikt Hollerbach, who grew on me during the few games last year, have moved to other clubs.&lt;/p&gt;
 
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-zwxyac&#34;&gt;
+      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-d7jyhq&#34;&gt;
         &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_162508253.jpg&#34; alt=&#34;SVWW vs Karlsruhe - Before the start of the game&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_162748966.jpg&#34; alt=&#34;SVWW vs Karlsruhe - Team line-up&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_165147461.jpg&#34; alt=&#34;SVWW vs Karlsruhe - Goal to 1:1&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_165151113.jpg&#34; alt=&#34;SVWW vs Karlsruhe - Goal to 1:1&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_165331533.jpg&#34; alt=&#34;SVWW vs Karlsruhe - Drinking break&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_171135513.jpg&#34; alt=&#34;SVWW vs Karlsruhe - Treatment&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_175443989.jpg&#34; alt=&#34;SVWW vs Karlsruhe - 2. Half&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_180413434.jpg&#34; alt=&#34;SVWW vs Karlsruhe - Lees substitution&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_182650426.jpg&#34; alt=&#34;SVWW vs Karlsruhe - Cheers of victory&#34; /&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;script&gt;
         let macy = new Macy({
-          container: &#39;#image-masonry-zwxyac&#39;,
+          container: &#39;#image-masonry-d7jyhq&#39;,
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -1394,155 +1432,6 @@
 
 &lt;p&gt;&lt;br&gt;&lt;hr&gt;&lt;/p&gt;
 &lt;p&gt;As I said, this is the list of my personal favorite works by Jon. I can only recommend everyone to check out his work on &lt;a href=&#34;https://codepen.io/jkantner&#34;&gt;Codepen&lt;/a&gt;. He really is a UI rockstar …&lt;/p&gt;
- ]]>
-      </description>
-    </item>
-    <item>
-      <guid isPermalink="true">https://kiko.io/post/Discoveries-24-JavaScript-UI/</guid>
-      <title>Discoveries #24 - JavaScript &amp; UI</title>
-      <link>https://kiko.io/post/Discoveries-24-JavaScript-UI/</link>
-      <category>Collection</category>
-      <pubDate>Fri, 28 Apr 2023 14:39:01 +0000</pubDate>
-      <description>
-        <![CDATA[ &lt;p&gt;I’m such a UI person. It’s a blast for me to discover and try out new interface components on the web and for the web. Simplicity and a tidy text desert is not my thing. Here are a few JavaScript UI gems I found the other day for you…&lt;/p&gt;
-
-        &lt;ul class=&#34;anchorlist&#34;&gt;
-            &lt;li data-anchor=&#34;#frontle-bottomsheet&#34;&gt;Frontle - BottomSheet&lt;/li&gt;&lt;li data-anchor=&#34;#downuppopup-js&#34;&gt;downupPopup.js&lt;/li&gt;&lt;li data-anchor=&#34;#pikaday&#34;&gt;Pikaday&lt;/li&gt;&lt;li data-anchor=&#34;#add-to-calendar-button&#34;&gt;Add to Calendar Button&lt;/li&gt;&lt;li data-anchor=&#34;#tippy-js&#34;&gt;Tippy.js&lt;/li&gt;&lt;li data-anchor=&#34;#responsive-full-page-scroll&#34;&gt;Responsive Full Page Scroll&lt;/li&gt;&lt;li data-anchor=&#34;#lucafalasco-scroll-snap&#34;&gt;lucafalasco/scroll-snap&lt;/li&gt;&lt;li data-anchor=&#34;#bgzy-js&#34;&gt;Bgzy.js&lt;/li&gt;&lt;li data-anchor=&#34;#scrollyvideo-js&#34;&gt;ScrollyVideo.js&lt;/li&gt;&lt;li data-anchor=&#34;#cal-heatmap&#34;&gt;Cal-Heatmap&lt;/li&gt;
-        &lt;/ul&gt;
-    
-
-&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
-
-
-    &lt;hr id=&#34;frontle-bottomsheet&#34;/&gt;
-    &lt;h2 style=&#34;margin-bottom: 10px;&#34;&gt;
-      Frontle - BottomSheet
-    &lt;/h2&gt;
-    &lt;small&gt;by Frontl (HyeongJun Yun)&amp;nbsp;&lt;br&gt;&lt;a href=&#34;https://github.com/Frontle-Foundation/BottomSheet&#34;&gt;https://github.com/Frontle-Foundation/BottomSheet&lt;/a&gt;&lt;/small&gt;
-    &lt;p&gt;BottomSheet is part of the &lt;a href=&#34;https://frontle.org/&#34; title=&#34;‌&#34;&gt;Frontl&lt;/a&gt; multi-platform SPA framework from South Korea and is a vanilla JavaScript implementation of the Android Bottom Sheet to show options or settings. Very neat and useful for Web Apps.&lt;/p&gt;
-
-    &lt;a style=&#34;display:block; margin: 10px 0 30px;&#34; class=&#34;img-link&#34; href=&#34;https://github.com/Frontle-Foundation/BottomSheet&#34;&gt;
-      &lt;img class=&#34;limit&#34; src=&#34;frontle-bottomsheet.png&#34; alt=&#34;Frontle - BottomSheet&#34; /&gt;
-    &lt;/a&gt;
-  
-
-
-    &lt;hr id=&#34;downuppopup-js&#34;/&gt;
-    &lt;h2 style=&#34;margin-bottom: 10px;&#34;&gt;
-      downupPopup.js
-    &lt;/h2&gt;
-    &lt;small&gt;by Ali Dinçer&amp;nbsp;&lt;br&gt;&lt;a href=&#34;https://github.com/ali-dincer/downupPopup.js&#34;&gt;https://github.com/ali-dincer/downupPopup.js&lt;/a&gt;&lt;/small&gt;
-    &lt;p&gt;&lt;a href=&#34;https://dincerali.com/&#34; title=&#34;‌&#34;&gt;Ali’s&lt;/a&gt; downupPopup is a wonderful UI element for replacing boring dialogs or showing additional information in a sliding panel, similar to the the previous BottomSheet. It masters HTML, forms and can be shown with a duration and full screen.&lt;/p&gt;
-
-    &lt;a style=&#34;display:block; margin: 10px 0 30px;&#34; class=&#34;img-link&#34; href=&#34;https://github.com/ali-dincer/downupPopup.js&#34;&gt;
-      &lt;img class=&#34;limit&#34; src=&#34;downuppopup-js.png&#34; alt=&#34;downupPopup.js&#34; /&gt;
-    &lt;/a&gt;
-  
-
-
-    &lt;hr id=&#34;pikaday&#34;/&gt;
-    &lt;h2 style=&#34;margin-bottom: 10px;&#34;&gt;
-      Pikaday
-    &lt;/h2&gt;
-    &lt;small&gt;by David Bushell and Ramiro Rikkert&amp;nbsp;&lt;br&gt;&lt;a href=&#34;https://github.com/Pikaday/Pikaday&#34;&gt;https://github.com/Pikaday/Pikaday&lt;/a&gt;&lt;/small&gt;
-    &lt;p&gt;This date picker is not the fanciest one, but it is very lightweight, has no dependencies and is written in plain JavaScript. The ease of use and the ability to style it however you want, makes it a great little thing.&lt;/p&gt;
-
-    &lt;a style=&#34;display:block; margin: 10px 0 30px;&#34; class=&#34;img-link&#34; href=&#34;https://github.com/Pikaday/Pikaday&#34;&gt;
-      &lt;img class=&#34;limit&#34; src=&#34;pikaday.png&#34; alt=&#34;Pikaday&#34; /&gt;
-    &lt;/a&gt;
-  
-
-
-    &lt;hr id=&#34;add-to-calendar-button&#34;/&gt;
-    &lt;h2 style=&#34;margin-bottom: 10px;&#34;&gt;
-      Add to Calendar Button
-    &lt;/h2&gt;
-    &lt;small&gt;by Jens Kürschner&amp;nbsp;&lt;br&gt;&lt;a href=&#34;https://add-to-calendar-button.com/&#34;&gt;https://add-to-calendar-button.com/&lt;/a&gt;&lt;/small&gt;
-    &lt;p&gt;Letting the user select a date is just the first part of a process when it comes to making appointments. In the second part, the appointment must be added to the user&amp;#39;s own calendar. This button makes it very easy in terms of Outlook, Google Calendar, Yahoo or as an ICS file.&lt;/p&gt;
-
-    &lt;a style=&#34;display:block; margin: 10px 0 30px;&#34; class=&#34;img-link&#34; href=&#34;https://add-to-calendar-button.com/&#34;&gt;
-      &lt;img class=&#34;limit&#34; src=&#34;add-to-calendar-button.png&#34; alt=&#34;Add to Calendar Button&#34; /&gt;
-    &lt;/a&gt;
-  
-
-
-    &lt;hr id=&#34;tippy-js&#34;/&gt;
-    &lt;h2 style=&#34;margin-bottom: 10px;&#34;&gt;
-      Tippy.js
-    &lt;/h2&gt;
-    &lt;small&gt;by James, somewhere from Australia&amp;nbsp;&lt;br&gt;&lt;a href=&#34;https://atomiks.github.io/tippyjs/&#34;&gt;https://atomiks.github.io/tippyjs/&lt;/a&gt;&lt;/small&gt;
-    &lt;p&gt;Tooltip libraries really exist a lot. But Tiffy, a side project of Floating UI (now &lt;a href=&#34;https://popper.js.org/&#34; title=&#34;‌&#34;&gt;Popper&lt;/a&gt;), offers so many possibilities that I replace existing ones with it. Animations, Themes, Add-Ons, Plugins, and much more. Even SVG&amp;#39;s are supported. Awesome!&lt;/p&gt;
-
-    &lt;a style=&#34;display:block; margin: 10px 0 30px;&#34; class=&#34;img-link&#34; href=&#34;https://atomiks.github.io/tippyjs/&#34;&gt;
-      &lt;img class=&#34;limit&#34; src=&#34;tippy-js.png&#34; alt=&#34;Tippy.js&#34; /&gt;
-    &lt;/a&gt;
-  
-
-
-    &lt;hr id=&#34;responsive-full-page-scroll&#34;/&gt;
-    &lt;h2 style=&#34;margin-bottom: 10px;&#34;&gt;
-      Responsive Full Page Scroll
-    &lt;/h2&gt;
-    &lt;small&gt;by Fabian Graßl&amp;nbsp;&lt;br&gt;&lt;a href=&#34;https://github.com/fabeat/responsive-fullpage-scroll&#34;&gt;https://github.com/fabeat/responsive-fullpage-scroll&lt;/a&gt;&lt;/small&gt;
-    &lt;p&gt;If you throw this library on a bit of HTML you get a wonderful a full screen scrolling page that can be activated and deactivated using a media query. Perfect for marketing pages or photo slideshows.&lt;/p&gt;
-
-    &lt;a style=&#34;display:block; margin: 10px 0 30px;&#34; class=&#34;img-link&#34; href=&#34;https://github.com/fabeat/responsive-fullpage-scroll&#34;&gt;
-      &lt;img class=&#34;limit&#34; src=&#34;responsive-full-page-scroll.png&#34; alt=&#34;Responsive Full Page Scroll&#34; /&gt;
-    &lt;/a&gt;
-  
-
-
-    &lt;hr id=&#34;lucafalasco-scroll-snap&#34;/&gt;
-    &lt;h2 style=&#34;margin-bottom: 10px;&#34;&gt;
-      lucafalasco/scroll-snap
-    &lt;/h2&gt;
-    &lt;small&gt;by Luca Falasco&amp;nbsp;&lt;br&gt;&lt;a href=&#34;https://github.com/lucafalasco/scroll-snap&#34;&gt;https://github.com/lucafalasco/scroll-snap&lt;/a&gt;&lt;/small&gt;
-    &lt;p&gt;This library helps to snap a page when user stops scrolling. It is build on top of the CSS feature &lt;code&gt;scroll-snap&lt;/code&gt;, but offers a customizable configuration and a consistent cross browser behaviour.&lt;/p&gt;
-
-    &lt;a style=&#34;display:block; margin: 10px 0 30px;&#34; class=&#34;img-link&#34; href=&#34;https://github.com/lucafalasco/scroll-snap&#34;&gt;
-      &lt;img class=&#34;limit&#34; src=&#34;lucafalasco-scroll-snap.png&#34; alt=&#34;lucafalasco/scroll-snap&#34; /&gt;
-    &lt;/a&gt;
-  
-
-
-    &lt;hr id=&#34;bgzy-js&#34;/&gt;
-    &lt;h2 style=&#34;margin-bottom: 10px;&#34;&gt;
-      Bgzy.js
-    &lt;/h2&gt;
-    &lt;small&gt;by Nino Camdzic&amp;nbsp;&lt;br&gt;&lt;a href=&#34;https://ninocamdzic.github.io/bgzy/#&#34;&gt;https://ninocamdzic.github.io/bgzy/#&lt;/a&gt;&lt;/small&gt;
-    &lt;p&gt;Visually appealing backgrounds are sometimes the salt in the soup. Of course, it depends on the photo and so that it does not look boring in the long run, Nico thought, then I&amp;#39;ll change them in adjustable time periods with JavaScript. Great idea and nice implementation.&lt;/p&gt;
-
-    &lt;a style=&#34;display:block; margin: 10px 0 30px;&#34; class=&#34;img-link&#34; href=&#34;https://ninocamdzic.github.io/bgzy/#&#34;&gt;
-      &lt;img class=&#34;limit&#34; src=&#34;bgzy-js.png&#34; alt=&#34;Bgzy.js&#34; /&gt;
-    &lt;/a&gt;
-  
-
-
-    &lt;hr id=&#34;scrollyvideo-js&#34;/&gt;
-    &lt;h2 style=&#34;margin-bottom: 10px;&#34;&gt;
-      ScrollyVideo.js
-    &lt;/h2&gt;
-    &lt;small&gt;by Daniel Kao&amp;nbsp;&lt;br&gt;&lt;a href=&#34;https://scrollyvideo.js.org/&#34;&gt;https://scrollyvideo.js.org/&lt;/a&gt;&lt;/small&gt;
-    &lt;p&gt;Parallax effects when scrolling through a website are well known by now. But the fact that you can use a video for this was new to me. What an idea! And how cool it looks in the end…&lt;/p&gt;
-
-    &lt;a style=&#34;display:block; margin: 10px 0 30px;&#34; class=&#34;img-link&#34; href=&#34;https://scrollyvideo.js.org/&#34;&gt;
-      &lt;img class=&#34;limit&#34; src=&#34;scrollyvideo-js.png&#34; alt=&#34;ScrollyVideo.js&#34; /&gt;
-    &lt;/a&gt;
-  
-
-
-    &lt;hr id=&#34;cal-heatmap&#34;/&gt;
-    &lt;h2 style=&#34;margin-bottom: 10px;&#34;&gt;
-      Cal-Heatmap
-    &lt;/h2&gt;
-    &lt;small&gt;by Wan from Dubai&amp;nbsp;&lt;br&gt;&lt;a href=&#34;https://cal-heatmap.com/&#34;&gt;https://cal-heatmap.com/&lt;/a&gt;&lt;/small&gt;
-    &lt;p&gt;Anyone who has ever been on GitHub knows the heatmaps that show when and how often commits have taken place. But this kind of chart can be used for other things, Wan probably thought and made a library out of it.&lt;/p&gt;
-
-    &lt;a style=&#34;display:block; margin: 10px 0 30px;&#34; class=&#34;img-link&#34; href=&#34;https://cal-heatmap.com/&#34;&gt;
-      &lt;img class=&#34;limit&#34; src=&#34;cal-heatmap.png&#34; alt=&#34;Cal-Heatmap&#34; /&gt;
-    &lt;/a&gt;
-  
-
  ]]>
       </description>
     </item>
