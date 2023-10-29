@@ -20,7 +20,7 @@ related:
   - Folder-based-publishing-in-Lightroom
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/111313781768761478
 ---
 
 Most of the photos that I prepare for this website for example, I take with my big Nikon camera in RAW format and then edit them under Windows in **Adobe Lightroom Classic**. I always give the image a name and a few keywords, which are then also displayed on the photo page. Lightroom stores these as [**IPTC metadata**](https://www.iptc.org/standards/photo-metadata/) in the sidecar file and writes them, when exporting the image, directly into the header of the generated JPG file.
