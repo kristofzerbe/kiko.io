@@ -21,6 +21,12 @@ syndication:
     url: https://indieweb.social/@kiko/110922099448185014
 ---
 
+<div class="float-matchgrid">
+  <img src="/images/logos/SV-Wehen-Wiesbaden.svg" />
+  <span>vs.</span>
+  <img src="/images/logos/Karlsruher-SC.svg" />
+</div>
+
 I already had my season ticket on the first matchday of the 2023/2024 season, but was unable to get into the stadium for the team's first home game and thus missed the 1:1 draw against **Magdeburg**.
 
 ## First Impressions

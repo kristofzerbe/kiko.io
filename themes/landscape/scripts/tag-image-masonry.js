@@ -18,14 +18,15 @@ hexo.extend.tag.register("image_masonry", function(args){
       list += `<div><img class="no-caption" src="/${assetPath + assetImg}" alt="${title}" /></div>`
     });
 
-    var id = "image-masonry-" + Math.random().toString(36).substring(2,8);
+    var rnd = Math.random().toString(36).substring(2,8);
+    var id = "image-masonry-" + rnd;
 
     var elements = `
       <div class="image-masonry" id="${id}">
         ${list}
       </div>
       <script>
-        let macy = new Macy({
+        let macy_${rnd} = new Macy({
           container: '#${id}',
           trueOrder: false,
           waitForImages: false,
