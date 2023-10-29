@@ -320,11 +320,13 @@
     margin: default-margin 0 default-margin default-margin
     grid-template-columns: 1fr max-content 1fr
     img
-      width: clamp(64px, 9vw, 200px)
+      width: clamp(64px,8vw,100px)
     span
-      padding: small-margin
+      padding: medium-margin
+      @media mq-mobile
+        padding: small-margin
       font-weight: font-weight-extrabold
-      font-size: 1.25rem
+      font-size: clamp(1.75rem, 6vw, 2.5rem)
       align-self: center
   iframe
     border: none

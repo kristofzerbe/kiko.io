@@ -24,7 +24,7 @@ syndication:
 
 <div class="float-matchgrid">
   <img src="/images/logos/SV-Wehen-Wiesbaden.svg" />
-  <span>vs.</span>
+  <span>1:1</span>
   <img src="/images/logos/Schalke-04.svg" />
 </div>
 
