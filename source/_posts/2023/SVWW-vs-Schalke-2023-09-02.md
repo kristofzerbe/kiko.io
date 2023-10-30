@@ -22,11 +22,7 @@ syndication:
     url: https://indieweb.social/@kiko/110996975032155101
 ---
 
-<div class="float-matchgrid">
-  <img src="/images/logos/SV-Wehen-Wiesbaden.svg" />
-  <span>1:1</span>
-  <img src="/images/logos/Schalke-04.svg" />
-</div>
+{% match_grid "SV-Wehen-Wiesbaden" "1:1" "Schalke-04" %}
 
 On this game, some in my circle of friends have feverishly awaited, especially my neighbor and friend, who for years is an ardent fan of one of the traditional clubs **Schalke 04**. We got six additional tickets for the game in time and with a crowd of 11,003 fans, this was also urgently necessary. The stadium (12,566 standing and seated) was full to the roof. Only one of three blocks of the guests was empty. Some Schalke fans seem to have expected nothing from the game in Wiesbaden. No wonder after table position 15 after the last match day.
 

@@ -21,6 +21,8 @@ syndication:
     url: 
 ---
 
+{% match_grid "SV-Wehen-Wiesbaden" "x:y" "guestteam" %}
+
 <!-- more -->
 
 ---

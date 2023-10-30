@@ -11,6 +11,8 @@ For years, I had integrated only one [Atom](https://en.wikipedia.org/wiki/Atom_(
 
 On this page you will now find not only both Atom feed variants for my [**Posts**](/archives), but also some in the good old [RSS 2.0](https://en.wikipedia.org/wiki/RSS) and the relatively new [JSON feed](https://en.wikipedia.org/wiki/JSON_Feed) format. More feeds for my [**Notes**](/notes) will be available here later on also.
 
+---
+
 <section class="feeds">
 
 ## Posts
