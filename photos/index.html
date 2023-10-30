@@ -304,7 +304,7 @@
 <h1 class="page-title" data-pagefind-meta="title" data-pagefind-meta="type:Page">Photos</h1>
 
 
-<div class="page-content" data-pagefind-body>
+<div class="page-content" data-pagefind-body style="min-height:1200px;">
   <p><img src="/images/cc-free-culture.png" class="float-element" 
      style="width:5rem;" /></p>
 <p>Mostly all posts or pages in this blog have a unique photo as hero image, to represent the page. I have shot and edited all these photographs over the last few years. All these images can be used under the Attribution-ShareAlike 4.0 International (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>) license.</p>
@@ -314,25 +314,55 @@
 
   <div class="view-bar">
     <div class="bar-info">
-      <span class="info-count">257</span> Photos <span class="info-des"></span>
-    </div>
-
-    <div class="bar-cmd">
-      <input type="radio" name="view-filter" id="filter-all" checked
-             data-status="all"
-             data-next-status="pool"
-             data-designator="overall">
-      <label for="filter-all"></label>
-      <input type="radio" name="view-filter" id="filter-pool"
-             data-status="pool"
-             data-next-status="used"
-             data-designator="unused">
-      <label for="filter-pool"></label>
-      <input type="radio" name="view-filter" id="filter-used"
-             data-status="used"
-             data-next-status="all"
-             data-designator="used">
-      <label for="filter-used"></label>
+      <span class="info-count">257</span> Photos 
+      <div id="view-filter-wrap" style="display:inline-block">
+        <input type="radio" name="view-filter" id="filter-all" checked
+              data-status="all"
+              data-next-status="pool">
+        <label for="filter-all">overall</label>
+        <input type="radio" name="view-filter" id="filter-pool"
+              data-status="pool"
+              data-next-status="used">
+        <label for="filter-pool">unused</label>
+        <input type="radio" name="view-filter" id="filter-used"
+              data-status="used"
+              data-next-status="all">
+        <label for="filter-used">used</label>
+      </div>
+      <div id="view-filter-used-wrap" style="display:inline-block">
+        <input type="radio" name="view-filter-used" id="filter-used-all" checked
+              data-type="all"
+              data-next-type="post">
+        <label for="filter-used-all">overall</label>
+        <input type="radio" name="view-filter-used" id="filter-used-post"
+              data-type="post"
+              data-next-type="draft">
+        <label for="filter-used-post">at posts</label>
+        <input type="radio" name="view-filter-used" id="filter-used-draft"
+              data-type="draft"
+              data-next-type="notes">
+        <label for="filter-used-draft">at drafts</label>
+        <input type="radio" name="view-filter-used" id="filter-used-notes"
+              data-type="notes"
+              data-next-type="page">
+        <label for="filter-used-notes">at notes</label>
+        <input type="radio" name="view-filter-used" id="filter-used-page"
+              data-type="page"
+              data-next-type="dynamic">
+        <label for="filter-used-page">at default pages</label>
+        <input type="radio" name="view-filter-used" id="filter-used-dynamic"
+              data-type="dynamic"
+              data-next-type="anything">
+        <label for="filter-used-dynamic">at dynamic pages</label>
+        <input type="radio" name="view-filter-used" id="filter-used-anything"
+              data-type="anything"
+              data-next-type="general">
+        <label for="filter-used-anything">at anything pages</label>
+        <input type="radio" name="view-filter-used" id="filter-used-general"
+              data-type="general"
+              data-next-type="all">
+        <label for="filter-used-general">at general pages</label>
+      </div>
     </div>
 
     <div class="bar-cmd">
@@ -350,10 +380,10 @@
 
   <div class="view grid" id="photos">
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="general">
   
     
-      <a class="status used home" href="/index.html">Home</a>
+      <a class="status used general" href="/index.html">General</a>
     
   
   <a class="spotlight card-img" href="/photos/$19-05 Israel-0228"
@@ -366,7 +396,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="anything">
   
     
       <a class="status used anything" href="/projects">Projects</a>
@@ -382,7 +412,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="dynamic">
   
     
       <a class="status used dynamic" href="/photos">Photos</a>
@@ -398,7 +428,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="notes">
   
     
       <a class="status used notes" href="/notes/2022">Notes 2022</a>
@@ -414,7 +444,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="dynamic">
   
     
       <a class="status used dynamic" href="/console">Console</a>
@@ -430,7 +460,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="dynamic">
   
     
       <a class="status used dynamic" href="/collections/tiny-tools">Tiny Tools</a>
@@ -446,7 +476,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="dynamic">
   
     
       <a class="status used dynamic" href="/feeds">Feeds</a>
@@ -462,7 +492,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="notes">
   
     
       <a class="status used notes" href="/notes/2023">Notes 2023</a>
@@ -478,7 +508,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="page">
   
     
       <a class="status used page" href="/404.html">404</a>
@@ -494,7 +524,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="dynamic">
   
     
       <a class="status used dynamic" href="/search">Search</a>
@@ -510,7 +540,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="page">
   
     
       <a class="status used page" href="/impressum">Impressum</a>
@@ -526,7 +556,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="notes">
   
     
       <a class="status used notes" href="/notes/2021">Notes 2021</a>
@@ -542,7 +572,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/VS-Code-on-the-Web/">VS Code on the Web</a>
@@ -558,7 +588,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/TFS-DevOps-Delete-Remote-Workspace/">TFS/DevOps: Delete Remote Workspace</a>
@@ -574,7 +604,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-3-Tutorials/">Discoveries #3 - Tutorials</a>
@@ -590,7 +620,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Pimping-the-Permalink/">Pimping the Permalink</a>
@@ -606,7 +636,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Show-related-posts-in-Hexo/">Show related posts in Hexo</a>
@@ -622,7 +652,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/The-Last-Image-Gallery/">The Last Image Gallery...</a>
@@ -638,7 +668,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Automatic-Duplicate-Image-Shadow/">Automatic Duplicate Image Shadow</a>
@@ -654,7 +684,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Dopamine-How-Software-should-be/">Dopamine: How Software should be...</a>
@@ -670,7 +700,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Device-Class-Detection-in-JavaScript/">Device Class Detection in JavaScript</a>
@@ -686,7 +716,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Localization-with-resource-files-in-JavaScript-web-apps/">Localization with resource files in JavaScript web apps</a>
@@ -702,7 +732,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -716,7 +746,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-1/">Discoveries #1</a>
@@ -732,7 +762,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Add-website-to-Trello-card-the-better-way/">Add website to Trello card the better way</a>
@@ -748,7 +778,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Israeli-Presets-for-Lightroom/">Israeli Presets for Lightroom</a>
@@ -764,7 +794,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/How-To-Visual-Studio-Database-Project-and-ADSI/">How-To: Visual Studio Database Project and ADSI</a>
@@ -780,7 +810,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Better-Input-Change-Event/">Better Input Change Event</a>
@@ -796,7 +826,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-2/">Discoveries #2</a>
@@ -812,7 +842,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-8/">Discoveries #8</a>
@@ -828,7 +858,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-17-CSS/">Discoveries #17 - CSS</a>
@@ -844,7 +874,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Hexo-and-the-Dark-Mode/">Hexo and the Dark Mode</a>
@@ -860,7 +890,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Hexo-and-the-Dark-Mode-revised/">Hexo and the Dark Mode ... revised</a>
@@ -876,7 +906,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -890,7 +920,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/A-New-Blog-Customizing-Hexo/">A New Blog: Customizing Hexo</a>
@@ -906,7 +936,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/A-New-Blog-Blogging-and-Synching-en-route/">A New Blog: Blogging and Synching en route</a>
@@ -922,7 +952,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-10/">Discoveries #10</a>
@@ -938,7 +968,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/">A New Blog: VS Code, Hexo and GitHub Pages</a>
@@ -954,7 +984,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-12-Tutorials/">Discoveries #12 - Tutorials</a>
@@ -970,7 +1000,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="draft">
   
     
       <span class="status used draft">Draft <em>&rbarr; Create your own Deployment Server for .NET-based clients)</em></span>
@@ -986,7 +1016,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Horizontal-navigation-menu-above-an-image/">Horizontal navigation menu above an image</a>
@@ -1002,7 +1032,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Scotch-Presets-for-Lightroom/">Scotch Presets for Lightroom</a>
@@ -1018,7 +1048,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/GitHubs-Magic-Dot/">GitHubs Magic Dot</a>
@@ -1034,7 +1064,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/404-Page-in-Hexo-for-GitHub-Pages/">404 Page in Hexo for GitHub Pages</a>
@@ -1050,7 +1080,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Handling-IPTC-metadata-on-Android-and-Windows/">Handling IPTC metadata on Android and Windows</a>
@@ -1066,7 +1096,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Croatian-Presets-for-Lightroom/">Croatian Presets for Lightroom</a>
@@ -1082,7 +1112,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1096,7 +1126,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/">Hexo and the IndieWeb (Receiving Webmentions)</a>
@@ -1112,7 +1142,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Running-Rollup-with-Gulp/">Running Rollup with Gulp</a>
@@ -1128,7 +1158,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-26-JavaScript-HowTo-s/">Discoveries #26 - JavaScript HowTo's</a>
@@ -1144,7 +1174,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1158,7 +1188,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-16-JavaScript/">Discoveries #16 - JavaScript</a>
@@ -1174,7 +1204,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Thanks-Dropbox-but-I-m-off/">Thanks Dropbox, but I'm off</a>
@@ -1190,7 +1220,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Triangulate-your-images-with-Triangula/">Triangulate your images with Triangula</a>
@@ -1206,7 +1236,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Forking-Hexo-plugin-hexo-index-anything/">Forking Hexo plugin 'hexo-index-anything'</a>
@@ -1222,7 +1252,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Image-Masonry-Tag-Plugin-for-Hexo/">Image Masonry Tag Plugin for Hexo</a>
@@ -1238,7 +1268,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Mastodon-simply-explained/">Mastodon simply explained</a>
@@ -1254,7 +1284,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1268,7 +1298,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1282,7 +1312,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1296,7 +1326,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1310,7 +1340,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/One-mouse-to-rule-them-all/">One mouse to rule them all</a>
@@ -1326,7 +1356,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1340,7 +1370,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Anatomy-of-Service-Worker-Communication/">Anatomy of Service Worker Communication</a>
@@ -1356,7 +1386,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1370,7 +1400,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1384,7 +1414,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1398,7 +1428,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Integration-of-Pagefind-in-Hexo/">Integration of Pagefind in Hexo</a>
@@ -1414,7 +1444,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1428,7 +1458,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1442,7 +1472,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1456,7 +1486,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/">Show pages meta data (JSON-LD) in Bottom Sheet</a>
@@ -1472,7 +1502,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-21-Sites-Pages/">Discoveries #21 -  Sites & Pages</a>
@@ -1488,7 +1518,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1502,7 +1532,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="draft">
   
     
       <span class="status used draft">Draft <em>&rbarr; Display the expected download file size)</em></span>
@@ -1518,7 +1548,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Breton-Presets-for-Lightroom/">Breton Presets for Lightroom</a>
@@ -1534,7 +1564,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1548,7 +1578,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1562,7 +1592,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1576,7 +1606,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-23-UI-CSS/">Discoveries #23 -  UI/CSS</a>
@@ -1592,7 +1622,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1606,7 +1636,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-25-Tutorials-HowTo-s/">Discoveries #25 - Tutorials & HowTo's</a>
@@ -1622,7 +1652,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1636,7 +1666,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1650,7 +1680,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1664,7 +1694,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1678,7 +1708,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1692,7 +1722,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1706,7 +1736,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Pool-Photo-Generator/">Pool Photo Generator</a>
@@ -1722,7 +1752,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1736,7 +1766,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1750,7 +1780,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1764,7 +1794,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1778,7 +1808,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1792,7 +1822,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1806,7 +1836,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1820,7 +1850,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1834,7 +1864,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1848,7 +1878,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1862,7 +1892,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1876,7 +1906,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1890,7 +1920,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1904,7 +1934,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1918,7 +1948,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1932,7 +1962,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1946,7 +1976,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1960,7 +1990,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1974,7 +2004,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -1988,7 +2018,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2002,7 +2032,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2016,7 +2046,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2030,7 +2060,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2044,7 +2074,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2058,7 +2088,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2072,7 +2102,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2086,7 +2116,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="draft">
   
     
       <span class="status used draft">Draft <em>&rbarr; Revision of my parallax-like Header from JavaScript to CSS)</em></span>
@@ -2102,7 +2132,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2116,7 +2146,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2130,7 +2160,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Majorcan-Details/">Majorcan Details</a>
@@ -2146,7 +2176,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2160,7 +2190,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2174,7 +2204,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2188,7 +2218,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2202,7 +2232,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2216,7 +2246,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2230,7 +2260,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2244,7 +2274,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2258,7 +2288,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2272,7 +2302,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Versengold-in-Concert/">Versengold in Concert</a>
@@ -2288,7 +2318,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-19-Visual-Helpers/">Discoveries #19 - Visual Helpers</a>
@@ -2304,7 +2334,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2318,7 +2348,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Tringula-And-The-Beauty-Of-Mathematics/">Tringula And The Beauty Of Mathematics</a>
@@ -2334,7 +2364,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Visualize-the-codebase-of-your-GitHub-repo/">Visualize the codebase of your GitHub repo</a>
@@ -2350,7 +2380,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2364,7 +2394,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Photo-Workflow-Re-Thought/">Photo Workflow Re-Thought</a>
@@ -2380,7 +2410,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2394,7 +2424,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Old-Sweetheart-Rediscovered/">Old Sweetheart Rediscovered</a>
@@ -2410,7 +2440,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Radio-Garden/">Radio Garden</a>
@@ -2426,7 +2456,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2440,7 +2470,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2454,7 +2484,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2468,7 +2498,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2482,7 +2512,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Top-10-Pens-of-Jon-Kantner/">Top 10 Pens of Jon Kantner</a>
@@ -2498,7 +2528,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2512,7 +2542,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Dopamine-a-music-player-for-Windows-10-as-it-should-be/">Dopamine, a music player for Windows 10 as it should be</a>
@@ -2528,7 +2558,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2542,7 +2572,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2556,7 +2586,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2570,7 +2600,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2584,7 +2614,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2598,7 +2628,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2612,7 +2642,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Pattern-for-dynamic-Hexo-pages/">Pattern for dynamic Hexo pages</a>
@@ -2628,7 +2658,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2642,7 +2672,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2656,7 +2686,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2670,7 +2700,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Hexo-Tag-Plugin-Collection/">Hexo Tag Plugin Collection</a>
@@ -2686,7 +2716,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2700,7 +2730,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2714,7 +2744,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2728,7 +2758,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/CONTINUE-READING-Link-Auto-Scrolling-on-the-called-page/">CONTINUE READING Link & Auto Scrolling on the called page</a>
@@ -2744,7 +2774,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Get-and-use-a-dominant-color-that-matches-the-header-image/">Get and use a dominant color that matches the header image</a>
@@ -2760,7 +2790,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2774,7 +2804,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2788,7 +2818,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2802,7 +2832,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2816,7 +2846,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Pagefind-UI-and-URL-Parameters/">Pagefind UI and URL Parameters</a>
@@ -2832,7 +2862,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2846,7 +2876,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Gitpod-Visual-Studio-Code-on-the-Web/">Gitpod - Visual Studio Code on the Web</a>
@@ -2862,7 +2892,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="draft">
   
     
       <span class="status used draft">Draft <em>&rbarr; Creating a flipping Contact Card with QR Code)</em></span>
@@ -2878,7 +2908,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2892,7 +2922,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2906,7 +2936,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2920,7 +2950,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2934,7 +2964,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2948,7 +2978,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2962,7 +2992,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -2976,7 +3006,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-20-CSS-UI/">Discoveries #20 - CSS & UI</a>
@@ -2992,7 +3022,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/">Extension of downupPopup: Back Button, Escape Key & More</a>
@@ -3008,7 +3038,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -3022,7 +3052,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -3036,7 +3066,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Application-Specific-Links-on-Windows-10/">Application-Specific Links on Windows 10</a>
@@ -3052,7 +3082,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Scandinavian-Presets-for-Lightroom/">Scandinavian Presets for Lightroom</a>
@@ -3068,7 +3098,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -3082,7 +3112,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-5/">Discoveries #5</a>
@@ -3098,7 +3128,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-22-Tips-Tricks/">Discoveries #22 -  Tips/Tricks</a>
@@ -3114,7 +3144,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Uups-empty-posts/">Uups ... empty posts</a>
@@ -3130,7 +3160,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/">Include and provide JSON data in Hexo EJS Templates</a>
@@ -3146,7 +3176,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -3160,7 +3190,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -3174,7 +3204,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -3188,7 +3218,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -3202,7 +3232,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -3216,7 +3246,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Meaningful-automatic-versioning-with-T4/">Meaningful automatic versioning with T4</a>
@@ -3232,7 +3262,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Automatic-Header-Images-in-Hexo/">Automatic Header Images in Hexo</a>
@@ -3248,7 +3278,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Using-GitHub-as-Commenting-Platform/">Using GitHub as Commenting Platform</a>
@@ -3264,7 +3294,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Change-CSS-class-when-element-scrolls-into-viewport/">Change CSS class when element scrolls into viewport</a>
@@ -3280,7 +3310,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Use-and-manage-multiple-Node-js-versions-on-Windows-10/">Use and manage multiple Node.js versions on Windows 10</a>
@@ -3296,7 +3326,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Hexo-and-the-IndieWeb-Sending-Webmentions/">Hexo and the IndieWeb (Sending Webmentions)</a>
@@ -3312,7 +3342,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Creating-Icon-Font-from-SVG-Files/">Creating Icon Font from SVG Files</a>
@@ -3328,7 +3358,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -3342,7 +3372,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Provide-Blog-Metadata-via-JSON-LD/">Provide Blog Metadata via JSON-LD</a>
@@ -3358,7 +3388,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Convert-HTML-into-Plain-Text-in-Hexo/">Convert HTML into Plain Text in Hexo</a>
@@ -3374,7 +3404,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -3388,7 +3418,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Use-a-duplicate-image-to-drop-a-shadow/">Use a duplicate image to drop a shadow</a>
@@ -3404,7 +3434,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -3418,7 +3448,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Folder-based-publishing-in-Lightroom/">Folder based publishing in Lightroom</a>
@@ -3434,7 +3464,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-9/">Discoveries #9</a>
@@ -3450,7 +3480,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/My-Hometown-My-Club/">My Hometown, My Club</a>
@@ -3466,7 +3496,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-14/">Discoveries #14</a>
@@ -3482,7 +3512,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Open-Source-Insights-Seeing-the-big-picture/">Open Source Insights - Seeing the big picture</a>
@@ -3498,7 +3528,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/The-State-of-the-Blog/">The State of the Blog</a>
@@ -3514,7 +3544,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -3528,7 +3558,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Safely-remove-multiple-classes-using-a-prefix/">Safely remove multiple classes using a prefix</a>
@@ -3544,7 +3574,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/">Syndicate Mastodon Hashtags in your favorite Feed Reader</a>
@@ -3560,7 +3590,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -3574,7 +3604,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-24-JavaScript-UI/">Discoveries #24 - JavaScript & UI</a>
@@ -3590,7 +3620,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/GitHub-Tag-Plugins-for-Hexo/">GitHub Tag Plugins for Hexo</a>
@@ -3606,7 +3636,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Checker-Plus-Gmail-in-better/">Checker Plus - Gmail in better...</a>
@@ -3622,7 +3652,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Mastodon-Share-Bottom-Sheet-Dialog/">Mastodon Share Bottom Sheet Dialog</a>
@@ -3638,7 +3668,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/CSS-Columns-and-Drop-Shadow/">CSS Columns and Drop Shadow</a>
@@ -3654,7 +3684,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -3668,7 +3698,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -3682,7 +3712,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -3696,7 +3726,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-6/">Discoveries #6</a>
@@ -3712,7 +3742,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/SVG-Resources/">SVG Resources</a>
@@ -3728,7 +3758,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Hexo-and-the-IndieWeb/">Hexo and the IndieWeb</a>
@@ -3744,7 +3774,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -3758,7 +3788,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Implement-source-switch-for-SPA/">Implement source switch for SPA</a>
@@ -3774,7 +3804,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-4/">Discoveries #4</a>
@@ -3790,7 +3820,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="draft">
   
     
       <span class="status used draft">Draft <em>&rbarr; Problems with Chromium Web Apps and Url Redirects)</em></span>
@@ -3806,7 +3836,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -3820,7 +3850,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-18-JS-UI/">Discoveries #18 - JS UI</a>
@@ -3836,7 +3866,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Native-JavaScript-Multilanguage-Templating/">Native JavaScript Multilanguage Templating</a>
@@ -3852,7 +3882,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Generate-Social-Media-Images-Automatically/">Generate Social Media Images Automatically</a>
@@ -3868,7 +3898,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-13/">Discoveries #13</a>
@@ -3884,7 +3914,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Adding-Screenshots-to-Trello-Cards-on-Android/">Adding Screenshots to Trello Cards on Android</a>
@@ -3900,7 +3930,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Custom-Caller-Authentication-with-ASP-NET-Core-5-0-WebApi/">Custom Caller Authentication with ASP.NET Core 5.0 Web API</a>
@@ -3916,7 +3946,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/How-to-prevent-duplicate-events/">How to prevent duplicate events</a>
@@ -3932,7 +3962,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Utilize-a-repository-of-reusable-ES6-template-literals/">Utilize a repository of reusable ES6 template literals</a>
@@ -3948,7 +3978,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Favourite-Pens-of-2022/">Favourite Pens of 2022</a>
@@ -3964,7 +3994,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Contribute-with-Conventional-Commits/">Contribute with Conventional Commits</a>
@@ -3980,7 +4010,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -3994,7 +4024,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -4008,7 +4038,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Simplest-Console-File-Logger/">Simplest Console File Logger</a>
@@ -4024,7 +4054,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Spice-Up-Windows-Terminal/">Spice Up Windows Terminal</a>
@@ -4040,7 +4070,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-7/">Discoveries #7</a>
@@ -4056,7 +4086,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -4070,7 +4100,7 @@
   
 </div>
     
-      <div class="card photo" data-status="pool">
+      <div class="card photo" data-status="pool" data-type="">
   
     <span class="status pool">Unused</span>
   
@@ -4084,7 +4114,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Remote-Testing-and-Debugging-with-Chrome/">Remote Testing and Debugging with Chrome</a>
@@ -4100,7 +4130,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-11/">Discoveries #11</a>
@@ -4116,7 +4146,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Generate-Content-from-Trello/">Generate Content from Trello</a>
@@ -4132,7 +4162,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Indian-Presets-for-Lightroom/">Indian Presets for Lightroom</a>
@@ -4148,7 +4178,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/Discoveries-15-Self-Hosted/">Discoveries #15 - Self Hosted</a>
@@ -4164,7 +4194,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/SVWW-vs-Karlsruhe-2023-08-18/">SVWW vs. Karlsruhe @ 2023-08-18</a>
@@ -4180,7 +4210,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/SVWW-vs-Schalke-2023-09-02/">SVWW vs. Schalke @ 2023-09-02</a>
@@ -4196,7 +4226,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/SVWW-vs-HSV-2023-10-07/">SVWW vs. HSV @ 2023-10-07</a>
@@ -4212,7 +4242,7 @@
   
 </div>
     
-      <div class="card photo" data-status="used">
+      <div class="card photo" data-status="used" data-type="post">
   
     
       <a class="status used post" href="/post/SGE-vs-HJK-2023-10-26/">SGE vs. HJK @ 2023-10-26</a>
@@ -4241,7 +4271,12 @@
 
   document.querySelectorAll("input[name=view-filter]").forEach(element => {
     element.addEventListener("click", (event) => {
-      setFilter(element);
+      setStatusFilter(element);
+    });
+  });
+  document.querySelectorAll("input[name=view-filter-used]").forEach(element => {
+    element.addEventListener("click", (event) => {
+      setTypeFilter(element);
     });
   });
 
@@ -4285,62 +4320,108 @@
       }
     }
 
-    setFilter();
+    setStatusFilter();
 
     currentView = newView;
     setCookie("view-photos", newView, 365);
   }
 
-  function setFilter(currentFilterElement) {
+  function setStatusFilter(eStatus) {
 
-    let newFilter;
-    if (!currentFilterElement) { //for initialization
-      currentFilterElement = document.querySelector("input[name=view-filter]:checked")
-      newFilter = currentFilterElement.getAttribute("data-status");
+    let newStatus;
+    if (!eStatus) { //for initialization
+      eStatus = document.querySelector("input[name=view-filter]:checked")
+      newStatus = eStatus.getAttribute("data-status");
+      if (newStatus === "used") { // set filter by directly, if status 'used' and type != 'all'
+        eType = document.querySelector("input[name=view-filter-used]:checked");
+        if (eType.getAttribute("data-type") !== "all") {
+          setTypeFilter();
+          return;
+        }
+      }
     } else {
-      newFilter = currentFilterElement.getAttribute("data-next-status");
+      newStatus = eStatus.getAttribute("data-next-status");
     }
 
-    let newfilterElement = document.querySelector("#filter-" + newFilter);
-    let designator = newfilterElement.getAttribute("data-designator");
+    let eNewStatus = document.querySelector("#filter-" + newStatus);
+    eNewStatus.checked = true;
 
-    newfilterElement.checked = true;
-;
+    if (newStatus === "used") { 
+      document.getElementById("view-filter-used-wrap").style.visibility = "visible";
+    } else { 
+      document.getElementById("view-filter-used-wrap").style.visibility = "hidden";
+      document.getElementById("filter-used-all").checked = true; //reset used e.g. type filter
+    }
+
     document.querySelectorAll(".card").forEach(item => {
-      if (newFilter === 'all' || (newFilter === item.getAttribute("data-status"))) {
-        item.style.display = "block";
-        setTimeout(() => {
-          item.classList.remove("hide");
-          if (currentView !== "masonry") {
-            item.querySelector(".card-img").classList.add("spotlight");
-          }
-        }, 100);
+      if (newStatus === 'all' || (newStatus === item.getAttribute("data-status"))) {
+        showFilterItem(item);
       } else {
-        item.classList.add("hide");
-        item.querySelector(".card-img").classList.remove("spotlight");
-        setTimeout(() => {
-          item.style.display = "none";
-        }, 300);
+        hideFilterItem(item);
       }
     });
+    refreshView();
+  }
+
+  function setTypeFilter(eType) {
+
+    let newType;
+    if (!eType) { //for initialization
+      eType = document.querySelector("input[name=view-filter-used]:checked")
+      newType = eType.getAttribute("data-type");
+    } else {
+      newType = eType.getAttribute("data-next-type");
+    }
+
+    let eNewType = document.querySelector("#filter-used-" + newType);
+    eNewType.checked = true;
+
+    document.querySelectorAll(".card").forEach(item => {
+      if (item.getAttribute("data-status") === "used") {
+        if (newType === 'all' || (newType === item.getAttribute("data-type"))) {
+          showFilterItem(item);
+        } else {
+          hideFilterItem(item);
+        }
+      } else {
+        hideFilterItem(item);
+      }
+    });
+    refreshView();
+  }
+
+  function showFilterItem(item) {
+    item.style.display = "block";
+    setTimeout(() => {
+      item.classList.remove("hide");
+      if (currentView !== "masonry") {
+        item.querySelector(".card-img").classList.add("spotlight");
+      }
+    }, 100);
+  }
+  function hideFilterItem(item) {
+    item.classList.add("hide");
+    item.querySelector(".card-img").classList.remove("spotlight");
+    setTimeout(() => {
+      item.style.display = "none";
+    }, 300);
+  }
+
+  function refreshView() {
     setTimeout(() => {
         initViewportImage();
 
         let resultCount = document.querySelectorAll(".card:not(.hide)").length;
-        let resultElement = document.querySelector(".bar-info span.info-count");
-        let desElement = document.querySelector(".bar-info span.info-des");
-
+        let resultElement = document.querySelector(".bar-info .info-count");
         resultElement.textContent = resultCount;
-        desElement.textContent = designator;
 
         Spotlight.init();
-
         if (macyInstance) macyInstance.reInit();
-
       }, 300);
   }
+  
   setTimeout(function() { //Hack for returning from external to page
-    setFilter();
+    setStatusFilter();
   }, 500)
 
 </script></main>
