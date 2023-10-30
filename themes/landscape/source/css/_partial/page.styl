@@ -196,8 +196,16 @@
     .bar-info
       margin-right: auto
       font-weight: font-weight-bold
-      .info-des
-        font-weight: font-weight-normal
+      input[type=radio]
+        display: none
+      input[name="view-filter"], input[name="view-filter-used"]
+        + label
+          font-weight: font-weight-normal
+          cursor: pointer
+          display: none
+        &:checked
+          + label
+            display: inline-block
     .bar-cmd
       margin-left: default-margin
       input[type=radio]
@@ -230,27 +238,6 @@
           &::before
             font-family: fa-icons
             content: icon-masonry
-      input#filter-all
-        + label
-          &::before
-            font-family: fa-icons
-            content: icon-circle
-      input#filter-pool
-        + label
-          &::before
-            font-family: fa-icons
-            content: icon-circle-notch
-      input#filter-used
-        + label
-          &::before
-            font-family: fa-icons
-            content: icon-circle-dot
-      input[name="view-filter"]
-        + label
-          display: none
-        &:checked
-          + label
-            display: inline-block
 
   .view
     margin-bottom: double-margin
@@ -340,20 +327,20 @@
         opacity: 0.75
         border-radius: border-radius border-radius 0 0
         color: white
-        &.used.home
-          background-color: rgba(221, 120, 26, 0.5)
+        &.used.general
+          background-color: rgba(187, 94, 8, 0.5)
+        &.used.dynamic
+          background-color: rgba(187, 94, 8, 0.5)
+        &.used.anything
+          background-color: rgba(187, 94, 8, 0.5)
+        &.used.page
+          background-color: rgba(93, 65, 167 ,0.5)
         &.used.post
           background-color: rgba(65, 117, 212, 0.6)
-        &.used.page
-          background-color: rgba(95, 158, 160, 0.9)
-        &.used.draft
-          background-color: rgba(240, 75, 75 ,0.5)
-        &.used.dynamic
-          background-color: rgba(93, 65, 167 ,0.5)
-        &.used.anything
-          background-color: rgba(163, 55, 32 ,0.5)
         &.used.notes
-          background-color: rgba(122, 75, 20, 0.5)
+          background-color: rgba(95, 158, 160, 0.8)
+        &.used.draft
+          background-color: rgba(240, 75, 75 ,0.6)
         &.pool
           background-color: rgba(95, 95, 95, 0.6)
         em

@@ -1,4 +1,4 @@
-<div class="card photo" data-status="<%- item.status %>">
+<div class="card photo" data-status="<%- item.status %>" data-type="<%- item.article?.type %>">
   <% if (item.article){ %>
     <% if (item.article.type === "draft"){ %>
       <span class="status <%- item.status %> <%- item.article.type %>">Draft <em>&rbarr; <%- item.article.title %>)</em></span>

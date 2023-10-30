@@ -9,30 +9,60 @@
 <h2 class="page-subtitle"><%= page.subtitle %></h2>
 <% } %>
 
-<div class="page-content" data-pagefind-body>
+<div class="page-content" data-pagefind-body style="min-height:1200px;">
   <%- page.content %>
 
   <div class="view-bar">
     <div class="bar-info">
-      <span class="info-count"><%= page.items.length %></span> Photos <span class="info-des"></span>
-    </div>
-
-    <div class="bar-cmd">
-      <input type="radio" name="view-filter" id="filter-all" checked
-             data-status="all"
-             data-next-status="pool"
-             data-designator="overall">
-      <label for="filter-all"></label>
-      <input type="radio" name="view-filter" id="filter-pool"
-             data-status="pool"
-             data-next-status="used"
-             data-designator="unused">
-      <label for="filter-pool"></label>
-      <input type="radio" name="view-filter" id="filter-used"
-             data-status="used"
-             data-next-status="all"
-             data-designator="used">
-      <label for="filter-used"></label>
+      <span class="info-count"><%= page.items.length %></span> Photos 
+      <div id="view-filter-wrap" style="display:inline-block">
+        <input type="radio" name="view-filter" id="filter-all" checked
+              data-status="all"
+              data-next-status="pool">
+        <label for="filter-all">overall</label>
+        <input type="radio" name="view-filter" id="filter-pool"
+              data-status="pool"
+              data-next-status="used">
+        <label for="filter-pool">unused</label>
+        <input type="radio" name="view-filter" id="filter-used"
+              data-status="used"
+              data-next-status="all">
+        <label for="filter-used">used</label>
+      </div>
+      <div id="view-filter-used-wrap" style="display:inline-block">
+        <input type="radio" name="view-filter-used" id="filter-used-all" checked
+              data-type="all"
+              data-next-type="post">
+        <label for="filter-used-all">overall</label>
+        <input type="radio" name="view-filter-used" id="filter-used-post"
+              data-type="post"
+              data-next-type="draft">
+        <label for="filter-used-post">at posts</label>
+        <input type="radio" name="view-filter-used" id="filter-used-draft"
+              data-type="draft"
+              data-next-type="notes">
+        <label for="filter-used-draft">at drafts</label>
+        <input type="radio" name="view-filter-used" id="filter-used-notes"
+              data-type="notes"
+              data-next-type="page">
+        <label for="filter-used-notes">at notes</label>
+        <input type="radio" name="view-filter-used" id="filter-used-page"
+              data-type="page"
+              data-next-type="dynamic">
+        <label for="filter-used-page">at default pages</label>
+        <input type="radio" name="view-filter-used" id="filter-used-dynamic"
+              data-type="dynamic"
+              data-next-type="anything">
+        <label for="filter-used-dynamic">at dynamic pages</label>
+        <input type="radio" name="view-filter-used" id="filter-used-anything"
+              data-type="anything"
+              data-next-type="general">
+        <label for="filter-used-anything">at anything pages</label>
+        <input type="radio" name="view-filter-used" id="filter-used-general"
+              data-type="general"
+              data-next-type="all">
+        <label for="filter-used-general">at general pages</label>
+      </div>
     </div>
 
     <div class="bar-cmd">
@@ -65,7 +95,12 @@
 
   document.querySelectorAll("input[name=view-filter]").forEach(element => {
     element.addEventListener("click", (event) => {
-      setFilter(element);
+      setStatusFilter(element);
+    });
+  });
+  document.querySelectorAll("input[name=view-filter-used]").forEach(element => {
+    element.addEventListener("click", (event) => {
+      setTypeFilter(element);
     });
   });
 
@@ -109,62 +144,108 @@
       }
     }
 
-    setFilter();
+    setStatusFilter();
 
     currentView = newView;
     setCookie("view-photos", newView, 365);
   }
 
-  function setFilter(currentFilterElement) {
+  function setStatusFilter(eStatus) {
 
-    let newFilter;
-    if (!currentFilterElement) { //for initialization
-      currentFilterElement = document.querySelector("input[name=view-filter]:checked")
-      newFilter = currentFilterElement.getAttribute("data-status");
+    let newStatus;
+    if (!eStatus) { //for initialization
+      eStatus = document.querySelector("input[name=view-filter]:checked")
+      newStatus = eStatus.getAttribute("data-status");
+      if (newStatus === "used") { // set filter by directly, if status 'used' and type != 'all'
+        eType = document.querySelector("input[name=view-filter-used]:checked");
+        if (eType.getAttribute("data-type") !== "all") {
+          setTypeFilter();
+          return;
+        }
+      }
     } else {
-      newFilter = currentFilterElement.getAttribute("data-next-status");
+      newStatus = eStatus.getAttribute("data-next-status");
     }
 
-    let newfilterElement = document.querySelector("#filter-" + newFilter);
-    let designator = newfilterElement.getAttribute("data-designator");
+    let eNewStatus = document.querySelector("#filter-" + newStatus);
+    eNewStatus.checked = true;
 
-    newfilterElement.checked = true;
-;
+    if (newStatus === "used") { 
+      document.getElementById("view-filter-used-wrap").style.visibility = "visible";
+    } else { 
+      document.getElementById("view-filter-used-wrap").style.visibility = "hidden";
+      document.getElementById("filter-used-all").checked = true; //reset used e.g. type filter
+    }
+
     document.querySelectorAll(".card").forEach(item => {
-      if (newFilter === 'all' || (newFilter === item.getAttribute("data-status"))) {
-        item.style.display = "block";
-        setTimeout(() => {
-          item.classList.remove("hide");
-          if (currentView !== "masonry") {
-            item.querySelector(".card-img").classList.add("spotlight");
-          }
-        }, 100);
+      if (newStatus === 'all' || (newStatus === item.getAttribute("data-status"))) {
+        showFilterItem(item);
       } else {
-        item.classList.add("hide");
-        item.querySelector(".card-img").classList.remove("spotlight");
-        setTimeout(() => {
-          item.style.display = "none";
-        }, 300);
+        hideFilterItem(item);
       }
     });
+    refreshView();
+  }
+
+  function setTypeFilter(eType) {
+
+    let newType;
+    if (!eType) { //for initialization
+      eType = document.querySelector("input[name=view-filter-used]:checked")
+      newType = eType.getAttribute("data-type");
+    } else {
+      newType = eType.getAttribute("data-next-type");
+    }
+
+    let eNewType = document.querySelector("#filter-used-" + newType);
+    eNewType.checked = true;
+
+    document.querySelectorAll(".card").forEach(item => {
+      if (item.getAttribute("data-status") === "used") {
+        if (newType === 'all' || (newType === item.getAttribute("data-type"))) {
+          showFilterItem(item);
+        } else {
+          hideFilterItem(item);
+        }
+      } else {
+        hideFilterItem(item);
+      }
+    });
+    refreshView();
+  }
+
+  function showFilterItem(item) {
+    item.style.display = "block";
+    setTimeout(() => {
+      item.classList.remove("hide");
+      if (currentView !== "masonry") {
+        item.querySelector(".card-img").classList.add("spotlight");
+      }
+    }, 100);
+  }
+  function hideFilterItem(item) {
+    item.classList.add("hide");
+    item.querySelector(".card-img").classList.remove("spotlight");
+    setTimeout(() => {
+      item.style.display = "none";
+    }, 300);
+  }
+
+  function refreshView() {
     setTimeout(() => {
         initViewportImage();
 
         let resultCount = document.querySelectorAll(".card:not(.hide)").length;
-        let resultElement = document.querySelector(".bar-info span.info-count");
-        let desElement = document.querySelector(".bar-info span.info-des");
-
+        let resultElement = document.querySelector(".bar-info .info-count");
         resultElement.textContent = resultCount;
-        desElement.textContent = designator;
 
         Spotlight.init();
-
         if (macyInstance) macyInstance.reInit();
-
       }, 300);
   }
+  
   setTimeout(function() { //Hack for returning from external to page
-    setFilter();
+    setStatusFilter();
   }, 500)
 
 </script>

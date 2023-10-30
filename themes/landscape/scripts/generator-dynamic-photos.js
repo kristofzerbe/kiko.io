@@ -97,8 +97,8 @@ function getHeroPhoto(config) {
     file: config.hero.file,
     name: config.hero.name,
     article: {
-      type: "home",
-      title: "Home",
+      type: "general",
+      title: "General",
       url: "/index.html"
     }
   };
