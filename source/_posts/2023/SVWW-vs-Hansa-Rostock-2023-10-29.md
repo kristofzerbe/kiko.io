@@ -19,7 +19,7 @@ related:
   - My-Hometown-My-Club
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/111325721580276293
 ---
 
 {% match_grid "SV-Wehen-Wiesbaden" "1:0" "Hansa-Rostock" %}
