@@ -112,7 +112,7 @@ After many days of standardising, dismantling, recalculating, rewriting and also
   let bFontToggle = false;
   function fontToggle() {
     if (bFontToggle === false) {
-      document.getElementById("body").style.fontFamily = "Open Sans,sans-serif";
+      document.getElementById("body").style.fontFamily = "Open Sans";
       document.getElementById("body").style.fontWeight = 400;
       document.getElementById("fontToggle").textContent = "Reset to Lexend";
     } else {
