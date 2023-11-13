@@ -18,7 +18,7 @@ related:
   - The-State-of-the-Blog
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/111403133122810943
 ---
 
 A few weeks ago, a blog entry (I can't remember which one) drew my attention to a font called [**LEXEND**](https://www.lexend.com/). In this article, the author also went into the scientific background of the font, which was developed to simplify reading and thus support those with reading difficulties. The website [lexend.com](https://www.lexend.com/), operated by The Lexend Group, therefore also advertises the font with all kinds of reading statistics, although it is open source and is also freely available via Google Fonts.
@@ -28,6 +28,8 @@ A few weeks ago, a blog entry (I can't remember which one) drew my attention to 
 I simply liked the font style and wanted to try it out on this blog, which has always used the [Open Sans](https://www.opensans.com/) font. It was harder than I thought...
 
 <!-- more -->
+
+---
 
 ## The Download Odyssey
 
@@ -61,7 +63,7 @@ To include the font in your CSS, you ONLY need the following code for modern bro
 }
 ```
 
-----
+---
 
 But back to Lexend and a download that works. All fonts on Google Fonts can also be found on **GitHub** and so there is also a repository for Lexend: [**googlefonts/lexend**](https://github.com/googlefonts/lexend). In it you will find both TTF and WOFF2 files, at least for the standard font Lexend, although not for the variants (Deca, Lexa, Giga etc.), which I don't need for my part anyway.
 
@@ -98,7 +100,7 @@ You might have noticed in the files list, that there are **no italic or oblique 
 ](https://github.com/google/fonts/issues/4237)), but it hasn't really been going anywhere for over a year. Richard Hriech did publish a cursive variant called [LexendItalic](https://github.com/richardhriech/LexendItalic) last year, but the project looks more like a quick fix created within a day and therefore I haven't tried it out.  
 However, the absence does not bother me, because according to the W3C, the browser mimics the so-called sloping effect if it cannot find an appropriate font. I think it does this quite well and saves me having to work with additional font files.
 
-----
+---
 
 ## The Integration Madness
 
@@ -122,7 +124,7 @@ After many days of standardising, dismantling, recalculating, rewriting and also
   }
 </script>
 
-----
+---
 
 ## More Info
 
