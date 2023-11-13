@@ -11,20 +11,20 @@
 %>
 
 <% if (post.link && show_link){ // index page %>
-  <h1>
+  <h2>
     <a class="<%= class_name %>" href="<%- url_for(post.link) %>">
       <% if (pretitle) { %>
         <em><%= pretitle%></em><strong>&nbsp;|&nbsp;</strong>
       <% } %>
       <span><%= title %></span>
   </a>
-  </h1>
+  </h2>
 <% } else if (post.title){ %>
   <% if (index || show_link){ // archive cards %>
-    <h1>
+    <h3>
       <a class="<%= class_name %>"
          href="<%- url_for(post.path) %>"><%= post.title %></a>
-    </h1>
+    </h3>
   <% } else { // content page  %>
     <h1 class="<%= class_name %>" data-pagefind-ignore
         data-title="<%= post.title %>" 

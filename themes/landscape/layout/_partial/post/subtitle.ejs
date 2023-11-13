@@ -1,5 +1,11 @@
 <% if (post.subtitle){ %>
+  <% if (index){ %>
+    <h3 class="<%= class_name %>">
+      <%= post.subtitle %>
+    </h3>
+  <% } else { %>
     <h2 class="<%= class_name %>">
-        <%= post.subtitle %>
+      <%= post.subtitle %>
     </h2>
+  <% } %>
 <% } %>

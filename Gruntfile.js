@@ -6,24 +6,24 @@ module.exports = function(grunt){
       lexend: {
         options: {
           repository: 'https://github.com/googlefonts/lexend.git',
-          directory: 'themes/landscape/tmp/lexend'
+          directory: '~temp/lexend'
         },
       },
       opensans: {
         options: {
-          repository: 'https://github.com/webfontkit/open-sans.git',
-          directory: 'themes/landscape/tmp/opensans'
+          repository: 'https://github.com/webfontkit/open-sans',
+          directory: '~temp/opensans'
         },
       },
       sourcecodepro: {
         options: {
           repository: 'https://github.com/adobe-fonts/source-code-pro.git',
-          directory: 'themes/landscape/tmp/sourcecodepro'
+          directory: '~temp/sourcecodepro'
         },
       }
     },
     _clean: {
-      tmp: ['themes/landscape/tmp']
+      tmp: ['~temp']
     },
     concat: {
       asset_scripts: {
@@ -37,7 +37,7 @@ module.exports = function(grunt){
           'themes/landscape/assets/vanilla-back-to-top.js',
           'themes/landscape/assets/downupPopup.js'
         ],
-        dest: 'themes/landscape/tmp/asset-bundle.js'
+        dest: '~temp/asset-bundle.js'
       },
       asset_styles: {
         src: [
@@ -46,13 +46,13 @@ module.exports = function(grunt){
           'themes/landscape/assets/tiny-slider.custom.css',
           'themes/landscape/assets/github-cards.css'
         ],
-        dest: 'themes/landscape/tmp/asset-bundle.css'
+        dest: '~temp/asset-bundle.css'
       }
     },
     cssmin: {
       dist: {
           files: {
-            'themes/landscape/source/css/dist/asset-bundle.min.css': 'themes/landscape/tmp/asset-bundle.css'
+            'themes/landscape/source/css/dist/asset-bundle.min.css': '~temp/asset-bundle.css'
           }
       }
     },  
@@ -62,30 +62,31 @@ module.exports = function(grunt){
       },
       dist: {
         files: {
-          'themes/landscape/source/js/dist/asset-bundle.min.js': 'themes/landscape/tmp/asset-bundle.js'
+          'themes/landscape/source/js/dist/asset-bundle.min.js': '~temp/asset-bundle.js'
         }
       }
     },
     copy: {
       lexend: {
         expand: true,
-        cwd: 'themes/landscape/tmp/lexend/fonts/lexend',
+        cwd: '~temp/lexend/fonts/lexend',
         src: ['**'],
         dest: 'themes/landscape/source/css/fonts/lexend'
       },
       opensans: {
         expand: true,
-        cwd: 'themes/landscape/tmp/opensans/fonts/',
-        src: ['**'],
+        cwd: '~temp/opensans/fonts/',
+        src: [
+          '*.woff2',
+          '*.ttf'
+        ],
         dest: 'themes/landscape/source/css/fonts/opensans'
       },
       sourcecodepro: {
         expand: true,
-        cwd: 'themes/landscape/tmp/sourcecodepro/',
+        cwd: '~temp/sourcecodepro/',
         src: [
           'WOFF2/TTF/*',
-          'WOFF/OTF/*',
-          'OTF/*',
           'TTF/*'
         ],
         dest: 'themes/landscape/source/css/fonts/sourcecodepro'

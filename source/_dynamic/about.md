@@ -18,7 +18,7 @@ I love three things: Software Development, Photography and first and foremost th
 
 <section>
 
-# The Developer
+## The Developer
 
 I'm a creative person and most people are shaking their heads in disbelief, when I'm telling them, that IT has a lot to do with creativity and not with math.
 
@@ -52,7 +52,7 @@ If you want to talk about the old, recent or new times in IT,  [contact me](java
 
 <section>
 
-# The Photo Enthusiast
+## The Photo Enthusiast
 
 As I was around 14 years old, I catched from wherever a [Praktika TL 1000](https://de.wikipedia.org/wiki/Praktica_Super_TL_500_und_Super_TL_1000), a fully mechanic SLR build in the former GDR. It was a revelation. I pointed my camera on everything and spend all my little money in developing the negatives and getting the prints. My first big purchase was a [Nikon F301](https://de.wikipedia.org/wiki/Nikon_F-301) with some additional lenses and some equipment for my own black/white darkroom at home in the  bathroom, for the joy of my family.
 

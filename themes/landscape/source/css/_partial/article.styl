@@ -510,28 +510,30 @@
     /[data-theme="dark"] &
       color: dark-color-link
 
+.button
+  display: inline-block
+  text-align: center
+  font-size: font-size
+  position: relative
+  text-decoration: none
+  padding: (default-padding-vert/2) (default-padding/2)
+  background-color: color-button
+  color: color-button-link
+  border: none
+  border-radius: border-radius-small
+  &:hover    
+    background-color: color-link
+    color: color-logo
+  /[data-theme="dark"] &
+    background-color: dark-color-button
+    color: dark-color-button-link
+    &:hover    
+      background-color: dark-color-link
+      color: color-logo
+
 .download-link
   margin: default-margin 0 !important
   text-align: center
-  a.button
-    display: inline-block
-    text-align: center
-    font-size: font-size-small
-    position: relative
-    text-decoration: none
-    padding: medium-margin
-    background-color: color-button
-    color: color-button-link
-    border-radius: border-radius-small
-    &:hover    
-      background-color: color-link
-      color: color-logo
-    /[data-theme="dark"] &
-      background-color: dark-color-button
-      color: dark-color-button-link
-      &:hover    
-        background-color: dark-color-link
-        color: color-logo
   @media mq-mobile
     a
       strong 
