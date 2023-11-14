@@ -116,6 +116,8 @@ openUrl(trelloAddUrl);
 
 The result is convincing and frees me from the bookmarklet on my smartphone, but I will continue to use it on my desktop browser.
 
+{% download_link "AddToTrello-Shortcut.zip" "Shortcut Files for Import in HTTP Shortcut" %}
+
 The HTTP Shortcuts app, however, has really got me hooked. I see a lot of potential for automating things on my smartphone and will keep you updated as I develop more solutions with it. Thank you Roland for this gem ...
 
 ![Shortcut as Share Target](httpshortcuts-share.png)
