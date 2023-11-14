@@ -18,7 +18,7 @@ related:
   - Generate-Content-from-Trello
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/111409517358884472
 ---
 
 I have been collecting interesting links in various Trello boards for many years and also process some of them automatically, such as my [Tiny Tools](/collections/tiny-tools).
