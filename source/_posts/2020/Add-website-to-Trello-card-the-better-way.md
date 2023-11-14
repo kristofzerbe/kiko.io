@@ -13,7 +13,12 @@ categories:
 tags:
   - Trello
   - Browser
+related:
+  - Discoveries-1
+  - Horizontal-navigation-menu-above-an-image
+  - Localization-with-resource-files-in-JavaScript-web-apps
 ---
+
 I was looking for a new way to store interesting website articles for reading later, as Pocket, my favourite tool until here, gets worse and worse. As I am a big [Trello](https://trello.com) fan, I wanted to give it a chance to be Pockets successor on my smartphone, where I'm reading mostly.
 
 On installing the Trello Android app, you will find a new SHARE target **Add new Trello card**, which is comfortable to use:
