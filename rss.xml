@@ -10,8 +10,8 @@
     </image>
     <description>Blog about memorable tech stuff by Kristof Zerbe</description>
     <language>en</language>
-    <pubDate>Sun, 12 Nov 2023 17:24:00 +0000</pubDate>
-    <lastBuildDate>Sun, 12 Nov 2023 17:24:00 +0000</lastBuildDate>
+    <pubDate>Mon, 13 Nov 2023 16:11:47 +0000</pubDate>
+    <lastBuildDate>Mon, 13 Nov 2023 16:11:47 +0000</lastBuildDate>
     <category>UI</category>
     <category>Hexo</category>
     <category>CSS</category>
@@ -19,14 +19,14 @@
     <category>VS Code</category>
     <category>GitHub</category>
     <category>Blogging</category>
-    <category>jQuery</category>
     <category>Stylus</category>
     <category>Dark Mode</category>
+    <category>jQuery</category>
+    <category>Error</category>
+    <category>Trello</category>
     <category>ADSI</category>
     <category>Visual Studio</category>
     <category>Database Project</category>
-    <category>Error</category>
-    <category>Trello</category>
     <category>MediaQuery</category>
     <category>Collection</category>
     <category>Tutorial</category>
@@ -35,18 +35,30 @@
     <category>Lightroom</category>
     <category>Publishing</category>
     <category>Plugin</category>
+    <category>Presets</category>
     <category>SPA</category>
     <category>Bundling</category>
-    <category>Presets</category>
-    <category>Resource</category>
-    <category>Localization</category>
     <category>Versioning</category>
     <category>T4</category>
+    <category>Resource</category>
+    <category>Localization</category>
     <category>Share</category>
     <category>TFS/DevOps</category>
+    <category>PWA</category>
+    <category>Mail</category>
+    <category>SVG</category>
+    <category>Font</category>
+    <category>Hosting</category>
+    <category>Remote</category>
+    <category>Social Media</category>
+    <category>Mastodon</category>
+    <category>Office</category>
+    <category>Workflow</category>
+    <category>Logging</category>
+    <category>C#</category>
+    <category>Rant</category>
     <category>Android</category>
     <category>Imaging</category>
-    <category>PWA</category>
     <category>DOM</category>
     <category>WebAPI</category>
     <category>Authentication</category>
@@ -54,21 +66,9 @@
     <category>Events</category>
     <category>Templating</category>
     <category>Node.js</category>
-    <category>Workflow</category>
     <category>Debugging</category>
-    <category>SVG</category>
     <category>Theming</category>
     <category>PowerShell</category>
-    <category>Mail</category>
-    <category>Font</category>
-    <category>Hosting</category>
-    <category>Remote</category>
-    <category>Social Media</category>
-    <category>Mastodon</category>
-    <category>Office</category>
-    <category>Logging</category>
-    <category>C#</category>
-    <category>Rant</category>
     <category>Usability</category>
     <category>Git/GitHub</category>
     <category>Meta</category>
@@ -81,6 +81,52 @@
     <category>Eintracht</category>
     <category>2. Bundesliga</category>
     <category>Concert</category>
+    <item>
+      <guid isPermalink="true">https://kiko.io/post/Add-Link-to-Trello-on-Android-via-Share-Menu/</guid>
+      <title>Add Link to Trello on Android via Share Menu</title>
+      <link>https://kiko.io/post/Add-Link-to-Trello-on-Android-via-Share-Menu/</link>
+      <category>Trello</category>
+      <category>Android</category>
+      <pubDate>Mon, 13 Nov 2023 16:11:47 +0000</pubDate>
+      <description>
+        <![CDATA[ &lt;p&gt;I have been collecting interesting links in various Trello boards for many years and also process some of them automatically, such as my &lt;a href=&#34;/collections/tiny-tools&#34;&gt;Tiny Tools&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;However, the official Trello Android App has the problem eversince that, when you want to create a URL as a Trello card in the browser, the URL is entered in the &lt;code&gt;Description&lt;/code&gt; and not as an &lt;code&gt;Attachment&lt;/code&gt;, where it actually belongs.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/Add-Link-to-Trello-on-Android-via-Share-Menu/share-trello-app.png&#34; alt=&#34;Share Link with Trello App&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I have solved this for myself for years using a &lt;strong&gt;bookmarklet&lt;/strong&gt; in the Chrome browser (see &lt;a href=&#34;/post/Add-website-to-Trello-card-the-better-way/&#34; title=&#34;Add website to Trello card the better way&#34;&gt;Add website to Trello card the better way&lt;/a&gt;) and get along quite well with it. However, there is one catch, that has annoyed me ever since:&lt;br&gt;I find an interesting link in the Mastodon WebApp, for example, and tap on it. What opens, however, is the WebView integrated in Android and not my standard Chrome browser, in which the bookmarklet would be available. So, for links that I want to store, I always have to open the WebView menu and select “Open in Chrome Browser”. I cannot use the general SHARE menu. At least not so far … :)&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+
+&lt;p&gt;The bookmarklet does nothing more as sending the link with some additional information like &lt;code&gt;name&lt;/code&gt; (title) to the URL &lt;a href=&#34;https://trello.com/add-card&#34;&gt;https://trello.com/add-card&lt;/a&gt;, where the user can select the desired board and list:&lt;/p&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Trello-AddCard-Bookmarklet.js&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;javascript&lt;/span&gt;: (&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt; (&lt;span class=&#34;params&#34;&gt;win, name, desc&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  win.&lt;span class=&#34;title function_&#34;&gt;open&lt;/span&gt;(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;&amp;quot;https://trello.com/add-card&amp;quot;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;string&#34;&gt;&amp;quot;?source=&amp;quot;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      win.&lt;span class=&#34;property&#34;&gt;location&lt;/span&gt;.&lt;span class=&#34;property&#34;&gt;host&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;amp;mode=popup&amp;quot;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;amp;url=&amp;quot;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;built_in&#34;&gt;encodeURIComponent&lt;/span&gt;(win.&lt;span class=&#34;property&#34;&gt;location&lt;/span&gt;.&lt;span class=&#34;property&#34;&gt;href&lt;/span&gt;) +&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      (name ? &lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;amp;name=&amp;quot;&lt;/span&gt; + &lt;span class=&#34;built_in&#34;&gt;encodeURIComponent&lt;/span&gt;(name) : &lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;) +&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      (desc ? &lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;amp;desc=&amp;quot;&lt;/span&gt; + &lt;span class=&#34;built_in&#34;&gt;encodeURIComponent&lt;/span&gt;(desc) : &lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;&amp;quot;add-trello-card&amp;quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;&amp;quot;width=500,height=600,left=&amp;quot;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      (win.&lt;span class=&#34;property&#34;&gt;screenX&lt;/span&gt; + (win.&lt;span class=&#34;property&#34;&gt;outerWidth&lt;/span&gt; - &lt;span class=&#34;number&#34;&gt;500&lt;/span&gt;) / &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;) +&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;string&#34;&gt;&amp;quot;,top=&amp;quot;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      (win.&lt;span class=&#34;property&#34;&gt;screenY&lt;/span&gt; + (win.&lt;span class=&#34;property&#34;&gt;outerHeight&lt;/span&gt; - &lt;span class=&#34;number&#34;&gt;740&lt;/span&gt;) / &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  );&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;)(&lt;span class=&#34;variable language_&#34;&gt;window&lt;/span&gt;, &lt;span class=&#34;variable language_&#34;&gt;document&lt;/span&gt;.&lt;span class=&#34;property&#34;&gt;title&lt;/span&gt;, getSelection ? &lt;span class=&#34;title function_&#34;&gt;getSelection&lt;/span&gt;().&lt;span class=&#34;title function_&#34;&gt;toString&lt;/span&gt;() : &lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;If you want to use this bookmarklet, you have to remove all line breaks from the code, decode the url and save it as a bookmark … or you visit &lt;a href=&#34;https://trello.com/add-card&#34;&gt;https://trello.com/add-card&lt;/a&gt; and drag the link “Send to Trello” to your bookmark list. It comes out the same.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/Add-Link-to-Trello-on-Android-via-Share-Menu/trello-add-page.png&#34; alt=&#34;Create Link Card via Trello Add Card Page&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As I said above, the Trello Bookmarklet e.g. Add Card page works differently to the Android app from the same company in terms of the URL. Are different departments not talking to each other?&lt;/p&gt;
+&lt;p&gt;However … for me, the bookmarklet is history, because there is a much better approach that uses the Add Card page also, but can be called up from the standard Android Share Menu.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;Power-Tool-HTTP-Shortcuts&#34;&gt;&lt;a href=&#34;#Power-Tool-HTTP-Shortcuts&#34; class=&#34;headerlink&#34; title=&#34;Power Tool: HTTP Shortcuts&#34;&gt;&lt;/a&gt;Power Tool: HTTP Shortcuts&lt;/h2&gt;&lt;p&gt;The trigger for my new solution was my search for better interaction possibilities from my blog to the IndieWeb. One hit was the article &lt;a href=&#34;https://snarfed.org/android-indieweb-interactions-with-the-http-shortcuts-app&#34;&gt;Android IndieWeb interactions with the HTTP Shortcuts app&lt;/a&gt; by Ryan Barrett, which uses the app &lt;a href=&#34;https://http-shortcuts.rmy.ch/&#34;&gt;&lt;strong&gt;HTTP Shortcuts&lt;/strong&gt;&lt;/a&gt; by &lt;strong&gt;Roland Meyer&lt;/strong&gt; to serve as a &lt;strong&gt;Share Target&lt;/strong&gt; for LIKE, FOLLOW and REPLY actions. &lt;/p&gt;
+&lt;p&gt;Share Target? A while ago I had the idea of using the &lt;a href=&#34;https://developer.chrome.com/articles/web-share-target/&#34;&gt;Web Share Target API&lt;/a&gt; to solve my problem above, but haven’t got round to setting up such a PWA yet.&lt;/p&gt;
+&lt;p&gt;But I no longer have to do that, because the HTTP Shortcuts app not only offers me the option of serving as a share target, but also significantly more functions for creating Android shortcuts, which are extremely useful:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Browser Shortcut&lt;/strong&gt; - Open the URL in the browser&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Scripting Shortcut&lt;/strong&gt; - Write JavaScript for advanced workflows&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Multi-Shortcut&lt;/strong&gt; - Trigger multiple shortcuts at once&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All these shortcuts can be used to send any HTTP requests and process the responses in a variety of ways. The feature list is impressive and well &lt;a href=&#34;https://http-shortcuts.rmy.ch/documentation&#34;&gt;documented&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;Scripting-Shortcut-for-calling-Trello’s-Add-Card-Page&#34;&gt;&lt;a href=&#34;#Scripting-Shortcut-for-calling-Trello’s-Add-Card-Page&#34; class=&#34;headerlink&#34; title=&#34;Scripting Shortcut for calling Trello’s Add Card Page&#34;&gt;&lt;/a&gt;Scripting Shortcut for calling Trello’s Add Card Page&lt;/h3&gt;&lt;p&gt;For my case, I need a scripting shortcut to process the information shared by the Android sharing dialogue to call the Add Card page. This is done via static variables that are created in HTTP Shortcuts and can then be used later in the script:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/Add-Link-to-Trello-on-Android-via-Share-Menu/httpshortcuts-variables.png&#34; alt=&#34;Setting Up Variables&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Creating the shortcut is quite simple, as you can see from the screenshots. Select the type, assign a name, perhaps a suitable icon and (importantly) tick the option &lt;strong&gt;Show as app shortcut on launcher and promote as Direct Share target&lt;/strong&gt;, which ensures that the shortcut appears in the Android Share menu.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/Add-Link-to-Trello-on-Android-via-Share-Menu/httpshortcuts-shortcut.png&#34; alt=&#34;Shortcuts List and Creating/Editing Shortcut&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/Add-Link-to-Trello-on-Android-via-Share-Menu/httpshortcuts-shortcut-settings.png&#34; alt=&#34;Scripting Shortcut Settings&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The script is no less straightforward, because it simply assembles the URL to the Trello Add Card page with the static variables and opens it using the app’s built-in JavaScript function &lt;code&gt;openUrl&lt;/code&gt;:&lt;/p&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;const&lt;/span&gt; url = &lt;span class=&#34;title function_&#34;&gt;getVariable&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;SharedUrl&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;const&lt;/span&gt; title = &lt;span class=&#34;title function_&#34;&gt;getVariable&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;SharedTitle&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;getHostnameFromRegex&lt;/span&gt; = (&lt;span class=&#34;params&#34;&gt;url&lt;/span&gt;) =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;keyword&#34;&gt;const&lt;/span&gt; matches = url.&lt;span class=&#34;title function_&#34;&gt;match&lt;/span&gt;(&lt;span class=&#34;regexp&#34;&gt;/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; matches &amp;amp;&amp;amp; matches[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;const&lt;/span&gt; hostname = &lt;span class=&#34;title function_&#34;&gt;getHostnameFromRegex&lt;/span&gt;(url);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;const&lt;/span&gt; trelloAddUrl = &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;string&#34;&gt;&amp;quot;https://trello.com/add-card?source=&amp;quot;&lt;/span&gt; + hostname + &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;amp;mode=popup&amp;amp;url=&amp;quot;&lt;/span&gt; + &lt;span class=&#34;built_in&#34;&gt;encodeURIComponent&lt;/span&gt;(url) + &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;amp;name=&amp;quot;&lt;/span&gt; + &lt;span class=&#34;built_in&#34;&gt;encodeURIComponent&lt;/span&gt;(title);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;title function_&#34;&gt;openUrl&lt;/span&gt;(trelloAddUrl);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;hr&gt;
+&lt;h2 id=&#34;Conclusion&#34;&gt;&lt;a href=&#34;#Conclusion&#34; class=&#34;headerlink&#34; title=&#34;Conclusion&#34;&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;&lt;p&gt;The result is convincing and frees me from the bookmarklet on my smartphone, but I will continue to use it on my desktop browser.&lt;/p&gt;
+&lt;p&gt;The HTTP Shortcuts app, however, has really got me hooked. I see a lot of potential for automating things on my smartphone and will keep you updated as I develop more solutions with it. Thank you Roland for this gem …&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/Add-Link-to-Trello-on-Android-via-Share-Menu/httpshortcuts-share.png&#34; alt=&#34;Shortcut as Share Target&#34;&gt;&lt;/p&gt;
+ ]]>
+      </description>
+    </item>
     <item>
       <guid isPermalink="true">https://kiko.io/post/Experimenting-with-the-font-LEXEND/</guid>
       <title>Experimenting with the font LEXEND</title>
@@ -170,12 +216,12 @@
 &lt;p&gt;Stritzel has saved fantastic balls this season, but not a penalty yet … until then, as he parried Kinsombi’s weak shot to the side. Yesss…!&lt;/p&gt;
 &lt;p&gt;Nothing much happened until half-time, but our guys were slowly gaining the upper hand, as the game was played almost exclusively in the opponent’s half at the beginning of the second half, with occasional counter-attacks by Rostock, but they were too erratic to have any effect. Our defence stood firm.&lt;/p&gt;
 
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-viqvds&#34;&gt;
+      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-1bnqzs&#34;&gt;
         &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Hansa-Rostock-2023-10-29/PXL_20231029_122726572.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Hansa-Rostock-2023-10-29/PXL_20231029_122837500.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Hansa-Rostock-2023-10-29/PXL_20231029_121402556.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Hansa-Rostock-2023-10-29/PXL_20231029_123926894.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Hansa-Rostock-2023-10-29/PXL_20231029_140540817.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Hansa-Rostock-2023-10-29/PXL_20231029_141750690.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Hansa-Rostock-2023-10-29/PXL_20231029_142643939.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Hansa-Rostock-2023-10-29/PXL_20231029_142901228.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Hansa-Rostock-2023-10-29/PXL_20231029_142951071.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;script&gt;
-        let macy_viqvds = new Macy({
-          container: &#39;#image-masonry-viqvds&#39;,
+        let macy_1bnqzs = new Macy({
+          container: &#39;#image-masonry-1bnqzs&#39;,
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -241,12 +287,12 @@
 &lt;hr&gt;
 &lt;h2 id=&#34;The-Game&#34;&gt;&lt;a href=&#34;#The-Game&#34; class=&#34;headerlink&#34; title=&#34;The Game&#34;&gt;&lt;/a&gt;The Game&lt;/h2&gt;&lt;p&gt;The first 10 minutes of the game were unspectacular. They felt each other out and the Finns played diligently and should have been in the lead after 5 minutes, but got in the 9th minute after some guesswork from the referee with VAR support a penalty against them. &lt;/p&gt;
 
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-ejq1f6&#34;&gt;
+      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-6ahd57&#34;&gt;
         &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SGE-vs-HJK-2023-10-26/PXL_20231026_191040789.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SGE-vs-HJK-2023-10-26/PXL_20231026_191000090.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;script&gt;
-        let macy_ejq1f6 = new Macy({
-          container: &#39;#image-masonry-ejq1f6&#39;,
+        let macy_6ahd57 = new Macy({
+          container: &#39;#image-masonry-6ahd57&#39;,
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -282,12 +328,12 @@
 &lt;p&gt;In the break, the coach of the Finns seems to have been a little louder, because his guys played a little stronger and more determined, only to get another one in the 55th minute.&lt;/p&gt;
 &lt;p&gt;With 10 minutes to go, things got emotional in the stadium: the coach substituted Timothy Chandler, a Frankfurt veteran who has been with the club for almost 10 years and his first appearance this season. The tens of thousands of fans were completely out of their minds, screaming “Tiiiimmmyyy” as soon as he got to the ball. It was crazy. How must it feel to be showered with so much fan love! Things almost got out of hand when Chandler sprinted forward on the right flank in the 89th minute and made a wonderful pass into the middle and Dina Ebimbe just had to slot it in for 6:0.&lt;/p&gt;
 
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-v9l0el&#34;&gt;
+      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-ttes76&#34;&gt;
         &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SGE-vs-HJK-2023-10-26/PXL_20231026_183650025.jpg&#34; alt=&#34;Attila, the Eintracht Eagle&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SGE-vs-HJK-2023-10-26/PXL_20231026_184409439.jpg&#34; alt=&#34;Game Comic&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SGE-vs-HJK-2023-10-26/PXL_20231026_183658672.jpg&#34; alt=&#34;Just before kickoff&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SGE-vs-HJK-2023-10-26/PXL_20231026_192703385.jpg&#34; alt=&#34;2:0&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SGE-vs-HJK-2023-10-26/PXL_20231026_193136300.jpg&#34; alt=&#34;Kickoff after 3:0&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SGE-vs-HJK-2023-10-26/PXL_20231026_205110961.jpg&#34; alt=&#34;Final whistle&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SGE-vs-HJK-2023-10-26/PXL_20231026_205742073.jpg&#34; alt=&#34;Lap of Honor&#34; /&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;script&gt;
-        let macy_v9l0el = new Macy({
-          container: &#39;#image-masonry-v9l0el&#39;,
+        let macy_ttes76 = new Macy({
+          container: &#39;#image-masonry-ttes76&#39;,
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -443,12 +489,12 @@
 &lt;h2 id=&#34;The-Game&#34;&gt;&lt;a href=&#34;#The-Game&#34; class=&#34;headerlink&#34; title=&#34;The Game&#34;&gt;&lt;/a&gt;The Game&lt;/h2&gt;&lt;p&gt;HSV is actually in shape this year to make it back to the Bundesliga. They have already dropped a few points, but have been on the promotion places from the beginning. This year it should be something and accordingly dominant have the Hamburg the game against once again deep standing Wiesbadener also started. Very sure of the ball and winning almost every duel, they were unable to capitalize on this in the first half. They brought the ball very close to the goal, but not into it, and you could tell that the guests were getting a little more annoyed as time went on.&lt;/p&gt;
 &lt;p&gt;This was expressed shortly before the half-time break also in a few unsportsmanlike conduct. Dropping and claiming foul play is simply stupid and only provokes catcalls. The one or other time is overall bad referee but also fell for the trick or has made other nonsensical decisions, which caused the “right” fans around me to nastiest insults.&lt;/p&gt;
 
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-ajui80&#34;&gt;
+      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-75b97r&#34;&gt;
         &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_103936756.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_104935878.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_105740138.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_105912858.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_110002467.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_110827714.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_111728897.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_123948926.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_125719562.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_125751495.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;script&gt;
-        let macy_ajui80 = new Macy({
-          container: &#39;#image-masonry-ajui80&#39;,
+        let macy_75b97r = new Macy({
+          container: &#39;#image-masonry-75b97r&#39;,
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -502,7 +548,7 @@
 
 &lt;p&gt;Usually the best photos end up unnoticed as &lt;a href=&#34;/post/Pool-Photo-Generator/&#34; title=&#34;Pool Photo Generator&#34;&gt;pool photos&lt;/a&gt; here on my blog until I use one as a header image, but now I make a separate post out of each set before I publish the individual photos on other sites like &lt;a href=&#34;https://500px.com/p/kikon&#34;&gt;500px&lt;/a&gt; or &lt;a href=&#34;https://pixelfed.social/kristofz&#34;&gt;Pixelfed&lt;/a&gt;.&lt;/p&gt;
 
-      &lt;div class=&#34;photo-list&#34; id=&#34;photo-list-795aec&#34;&gt;
+      &lt;div class=&#34;photo-list&#34; id=&#34;photo-list-5y38kn&#34;&gt;
         
         &lt;figure&gt;
           &lt;a href=&#34;/photos/23-07 Mallorca-0300&#34; class=&#34;no-break&#34;&gt;
@@ -818,12 +864,12 @@
 &lt;p&gt;In the meantime we were on two more concerts in Frankfurt, then in Marburg (Open-Air) and in Mainz on the “Night of the Ballads”. Most recently we saw them two weeks ago at the MPS (“Mittelalterlich Phantasie Spectaculum”, a medieval festival) in Speyer, where they played open-air with other bands from the “industry”. On the one hand, I think it’s great that the guys, even if they now fill large halls in Germany, have not forgotten their origins, and on the other hand, I now had the opportunity to get very close to the stage with my camera.&lt;/p&gt;
 &lt;p&gt;Here are the results:&lt;/p&gt;
 
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-tm7wbj&#34;&gt;
+      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-tkwsyz&#34;&gt;
         &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0092.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0094.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0103.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0104.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0105.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0106.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0108.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0111.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0115.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0123.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0126.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0128.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0131.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0136.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0150.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0151.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0152.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0153.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0156.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0157.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0159.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0162.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0169.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0171.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0172.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0173.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0177.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0179.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26 MPS Speyer-0182.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;script&gt;
-        let macy_tm7wbj = new Macy({
-          container: &#39;#image-masonry-tm7wbj&#39;,
+        let macy_tkwsyz = new Macy({
+          container: &#39;#image-masonry-tkwsyz&#39;,
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -880,12 +926,12 @@
 &lt;p&gt;It wasn’t, however, that Schalke dominated the game. We carelessly let them just do it and the fans had their fun when they shot the ball into the clouds again after a lot of roaring and stomping. Funny.&lt;/p&gt;
 &lt;p&gt;At the beginning of the second half, this continued seamlessly, even if you noticed that the coach in the cabin must have yelled at one or the other and these were now somewhat more active … and suddenly the ball was in our net … &lt;strong&gt;0:1&lt;/strong&gt;! What? How? A goal in the 54. minute for Schalke out of (almost) nothing! I have to watch that again on TV … :|&lt;/p&gt;
 
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-6jlgxt&#34;&gt;
+      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-lo0ds3&#34;&gt;
         &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_104957617.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_105327820.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_105347190.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_105548827.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_105749100.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_124411594.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_111931000.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_120730081.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_125820397.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_130050774.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;script&gt;
-        let macy_6jlgxt = new Macy({
-          container: &#39;#image-masonry-6jlgxt&#39;,
+        let macy_lo0ds3 = new Macy({
+          container: &#39;#image-masonry-lo0ds3&#39;,
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -951,12 +997,12 @@
 
 &lt;p&gt;&lt;strong&gt;Live Output:&lt;/strong&gt;&lt;/p&gt;
 
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-0ktt9z&#34;&gt;
+      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-gg7j9o&#34;&gt;
         &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0053.jpg&#34; alt=&#34;Thomas&#39; Ruby Prince I&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/_D50_3251.jpg&#34; alt=&#34;No Name&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0086.jpg&#34; alt=&#34;Thomas&#39; German Flag&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_1147.jpg&#34; alt=&#34;Poppy Green&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0075.jpg&#34; alt=&#34;Thomas Wild Tulips&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_7474.jpg&#34; alt=&#34;Garden Beauties XIV&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_4451.jpg&#34; alt=&#34;Garden Beauties I&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_1577.jpg&#34; alt=&#34;Floral Magic XIV&#34; /&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;script&gt;
-        let macy_0ktt9z = new Macy({
-          container: &#39;#image-masonry-0ktt9z&#39;,
+        let macy_gg7j9o = new Macy({
+          container: &#39;#image-masonry-gg7j9o&#39;,
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -1101,12 +1147,12 @@
 &lt;hr&gt;
 &lt;h2 id=&#34;The-Game&#34;&gt;&lt;a href=&#34;#The-Game&#34; class=&#34;headerlink&#34; title=&#34;The Game&#34;&gt;&lt;/a&gt;The Game&lt;/h2&gt;&lt;p&gt;The club has of course strengthened itself for the new season with new players in all sections of the team, whom I have now seen play for the first time. And unfortunately, some of them, such as Brooklyn Ezeh and Benedikt Hollerbach, who grew on me during the few games last year, have moved to other clubs.&lt;/p&gt;
 
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-030njn&#34;&gt;
+      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-iunl5o&#34;&gt;
         &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_162508253.jpg&#34; alt=&#34;SVWW vs Karlsruhe - Before the start of the game&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_162748966.jpg&#34; alt=&#34;SVWW vs Karlsruhe - Team line-up&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_165147461.jpg&#34; alt=&#34;SVWW vs Karlsruhe - Goal to 1:1&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_165151113.jpg&#34; alt=&#34;SVWW vs Karlsruhe - Goal to 1:1&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_165331533.jpg&#34; alt=&#34;SVWW vs Karlsruhe - Drinking break&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_171135513.jpg&#34; alt=&#34;SVWW vs Karlsruhe - Treatment&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_175443989.jpg&#34; alt=&#34;SVWW vs Karlsruhe - 2. Half&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_180413434.jpg&#34; alt=&#34;SVWW vs Karlsruhe - Lees substitution&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Karlsruhe-2023-08-18/PXL_20230818_182650426.jpg&#34; alt=&#34;SVWW vs Karlsruhe - Cheers of victory&#34; /&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;script&gt;
-        let macy_030njn = new Macy({
-          container: &#39;#image-masonry-030njn&#39;,
+        let macy_iunl5o = new Macy({
+          container: &#39;#image-masonry-iunl5o&#39;,
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -1241,155 +1287,6 @@
 &lt;hr&gt;
 &lt;h2 id=&#34;Conclusion&#34;&gt;&lt;a href=&#34;#Conclusion&#34; class=&#34;headerlink&#34; title=&#34;Conclusion&#34;&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;&lt;p&gt;Everything works as expected and I hope that Ali will process my pull request soon. Until then you can find the code &lt;a href=&#34;https://github.com/kristofzerbe/downupPopup.js&#34;&gt;in my fork&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;All in all, the script has not become more readable or easier to maintain, even by using jQuery. In my head I already have the idea to do a complete rewrite as ESM class. Reason for this is surely Ali’s approach to realize commands like ‘open’ and ‘close’ as string parameters. This works better than real functions of an instantiated object. Furthermore, it is necessary to cache settings like &lt;code&gt;distance&lt;/code&gt; and &lt;code&gt;urlHash&lt;/code&gt; in HTML attributes, which does not have to be this way.&lt;/p&gt;
- ]]>
-      </description>
-    </item>
-    <item>
-      <guid isPermalink="true">https://kiko.io/post/Discoveries-25-Tutorials-HowTo-s/</guid>
-      <title>Discoveries #25 - Tutorials &amp; HowTo&#39;s</title>
-      <link>https://kiko.io/post/Discoveries-25-Tutorials-HowTo-s/</link>
-      <category>Collection</category>
-      <pubDate>Sat, 01 Jul 2023 11:19:22 +0000</pubDate>
-      <description>
-        <![CDATA[ &lt;p&gt;This Discoveries issue is generally about tutorials from different areas: CORS, Azure, Elektron, GitHub Action, SVG. Outstanding articles by outstanding authors, who explain things in an easy and understandable way.&lt;/p&gt;
-&lt;p&gt;Happy Reading…&lt;/p&gt;
-
-        &lt;ul class=&#34;anchorlist&#34;&gt;
-            &lt;li data-anchor=&#34;#cs-visualized-cors-dev&#34;&gt;CS Visualized: CORS&lt;/li&gt;&lt;li data-anchor=&#34;#use-azure-functions-azure-storage-blobs-and-cosmos-db-to-copy-images-from-public-urls&#34;&gt;Use Azure Functions, Azure Storage blobs, and Cosmos DB to copy images from public URLs&lt;/li&gt;&lt;li data-anchor=&#34;#build-a-secure-desktop-app-with-electron-forge-and-react&#34;&gt;Build a Secure Desktop App with Electron Forge and React&lt;/li&gt;&lt;li data-anchor=&#34;#node-js-api-authentication-with-json-web-tokens&#34;&gt;Node.js API Authentication with JSON Web Tokens&lt;/li&gt;&lt;li data-anchor=&#34;#how-to-build-an-smtp-mail-server-with-express-node-and-gmail&#34;&gt;How To Build an SMTP Mail Server with Express, Node, and Gmail&lt;/li&gt;&lt;li data-anchor=&#34;#advanced-git-series-1-8-creating-the-perfect-commit-in-git&#34;&gt;Advanced Git Series 1/8: Creating the Perfect Commit in Git&lt;/li&gt;&lt;li data-anchor=&#34;#learn-how-to-use-git-and-github-in-a-team-like-a-pro&#34;&gt;Learn how to use Git and GitHub in a team like a pro&lt;/li&gt;&lt;li data-anchor=&#34;#how-to-build-your-first-javascript-github-action&#34;&gt;How to Build Your First JavaScript GitHub Action&lt;/li&gt;&lt;li data-anchor=&#34;#getting-the-gist-of-github-actions&#34;&gt;Getting the Gist of GitHub Actions&lt;/li&gt;&lt;li data-anchor=&#34;#swipey-image-grids-with-svg&#34;&gt;Swipey Image Grids (with SVG)&lt;/li&gt;
-        &lt;/ul&gt;
-    
-
-&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
-
-
-    &lt;hr id=&#34;cs-visualized-cors-dev&#34;/&gt;
-    &lt;h2 style=&#34;margin-bottom: 10px;&#34;&gt;
-      CS Visualized: CORS
-    &lt;/h2&gt;
-    &lt;small&gt;by Lydia Hallie&amp;nbsp;&lt;br&gt;&lt;a href=&#34;https://dev.to/lydiahallie/cs-visualized-cors-5b8h&#34;&gt;https://dev.to/lydiahallie/cs-visualized-cors-5b8h&lt;/a&gt;&lt;/small&gt;
-    &lt;p&gt;What web dev hasn&amp;#39;t struggled with CORS errors? Lydia explains here in great detail and with visual support the whys and wherefores of CORS and how to work around problems.&lt;/p&gt;
-
-    &lt;a style=&#34;display:block; margin: 10px 0 30px;&#34; class=&#34;img-link&#34; href=&#34;https://dev.to/lydiahallie/cs-visualized-cors-5b8h&#34;&gt;
-      &lt;img class=&#34;limit&#34; src=&#34;cs-visualized-cors-dev.png&#34; alt=&#34;CS Visualized: CORS&#34; /&gt;
-    &lt;/a&gt;
-  
-
-
-    &lt;hr id=&#34;use-azure-functions-azure-storage-blobs-and-cosmos-db-to-copy-images-from-public-urls&#34;/&gt;
-    &lt;h2 style=&#34;margin-bottom: 10px;&#34;&gt;
-      Use Azure Functions, Azure Storage blobs, and Cosmos DB to copy images from public URLs
-    &lt;/h2&gt;
-    &lt;small&gt;by Dave Brock&amp;nbsp;&lt;br&gt;&lt;a href=&#34;https://daveabrock.com/2020/11/25/images-azure-blobs-cosmos&#34;&gt;https://daveabrock.com/2020/11/25/images-azure-blobs-cosmos&lt;/a&gt;&lt;/small&gt;
-    &lt;p&gt;In this post, Dave shows how to work with Azure Storage blobs and Cosmos DB to copy images that are available over the public Internet.&lt;/p&gt;
-
-    &lt;a style=&#34;display:block; margin: 10px 0 30px;&#34; class=&#34;img-link&#34; href=&#34;https://daveabrock.com/2020/11/25/images-azure-blobs-cosmos&#34;&gt;
-      &lt;img class=&#34;limit&#34; src=&#34;use-azure-functions-azure-storage-blobs-and-cosmos-db-to-copy-images-from-public-urls.png&#34; alt=&#34;Use Azure Functions, Azure Storage blobs, and Cosmos DB to copy images from public URLs&#34; /&gt;
-    &lt;/a&gt;
-  
-
-
-    &lt;hr id=&#34;build-a-secure-desktop-app-with-electron-forge-and-react&#34;/&gt;
-    &lt;h2 style=&#34;margin-bottom: 10px;&#34;&gt;
-      Build a Secure Desktop App with Electron Forge and React
-    &lt;/h2&gt;
-    &lt;small&gt;by Kilian Valkhof&amp;nbsp;&lt;br&gt;&lt;a href=&#34;https://www.sitepoint.com/electron-forge-react-build-secure-desktop-app/?utm_source=rss&#34;&gt;https://www.sitepoint.com/electron-forge-react-build-secure-desktop-app/?utm_source=rss&lt;/a&gt;&lt;/small&gt;
-    &lt;p&gt;Creating a cross-platform desktop app is easy thanks to Electron. Learn from Kilian how to create a secure desktop app using React, Electron and Electron Forge.&lt;/p&gt;
-
-    &lt;a style=&#34;display:block; margin: 10px 0 30px;&#34; class=&#34;img-link&#34; href=&#34;https://www.sitepoint.com/electron-forge-react-build-secure-desktop-app/?utm_source=rss&#34;&gt;
-      &lt;img class=&#34;limit&#34; src=&#34;build-a-secure-desktop-app-with-electron-forge-and-react.jpg&#34; alt=&#34;Build a Secure Desktop App with Electron Forge and React&#34; /&gt;
-    &lt;/a&gt;
-  
-
-
-    &lt;hr id=&#34;node-js-api-authentication-with-json-web-tokens&#34;/&gt;
-    &lt;h2 style=&#34;margin-bottom: 10px;&#34;&gt;
-      Node.js API Authentication with JSON Web Tokens
-    &lt;/h2&gt;
-    &lt;small&gt;by Jay Krishna Reddy&amp;nbsp;&lt;br&gt;&lt;a href=&#34;https://javascript.plainenglish.io/node-js-api-authentication-with-json-web-tokens-bb511f603723&#34;&gt;https://javascript.plainenglish.io/node-js-api-authentication-with-json-web-tokens-bb511f603723&lt;/a&gt;&lt;/small&gt;
-    &lt;p&gt;In this article, Jay shows how to access the JSON web token (JWT) in Node.js and also to protect our routes with it.&lt;/p&gt;
-
-    &lt;a style=&#34;display:block; margin: 10px 0 30px;&#34; class=&#34;img-link&#34; href=&#34;https://javascript.plainenglish.io/node-js-api-authentication-with-json-web-tokens-bb511f603723&#34;&gt;
-      &lt;img class=&#34;limit&#34; src=&#34;node-js-api-authentication-with-json-web-tokens.jpg&#34; alt=&#34;Node.js API Authentication with JSON Web Tokens&#34; /&gt;
-    &lt;/a&gt;
-  
-
-
-    &lt;hr id=&#34;how-to-build-an-smtp-mail-server-with-express-node-and-gmail&#34;/&gt;
-    &lt;h2 style=&#34;margin-bottom: 10px;&#34;&gt;
-      How To Build an SMTP Mail Server with Express, Node, and Gmail
-    &lt;/h2&gt;
-    &lt;small&gt;by Michael Rehnert&amp;nbsp;&lt;br&gt;&lt;a href=&#34;https://daily.dev/blog/how-to-build-an-smtp-mail-server-with-express-node-and-gmail&#34;&gt;https://daily.dev/blog/how-to-build-an-smtp-mail-server-with-express-node-and-gmail&lt;/a&gt;&lt;/small&gt;
-    &lt;p&gt;Michael shows in his tutorial how to use Node and Express to develop a mail server that uses Gmail for free transport via SMTP.&lt;/p&gt;
-
-    &lt;a style=&#34;display:block; margin: 10px 0 30px;&#34; class=&#34;img-link&#34; href=&#34;https://daily.dev/blog/how-to-build-an-smtp-mail-server-with-express-node-and-gmail&#34;&gt;
-      &lt;img class=&#34;limit&#34; src=&#34;how-to-build-an-smtp-mail-server-with-express-node-and-gmail.png&#34; alt=&#34;How To Build an SMTP Mail Server with Express, Node, and Gmail&#34; /&gt;
-    &lt;/a&gt;
-  
-
-
-    &lt;hr id=&#34;advanced-git-series-1-8-creating-the-perfect-commit-in-git&#34;/&gt;
-    &lt;h2 style=&#34;margin-bottom: 10px;&#34;&gt;
-      Advanced Git Series 1/8: Creating the Perfect Commit in Git
-    &lt;/h2&gt;
-    &lt;small&gt;by Tobias Günther&amp;nbsp;&lt;br&gt;&lt;a href=&#34;https://css-tricks.com/creating-the-perfect-commit-in-git/&#34;&gt;https://css-tricks.com/creating-the-perfect-commit-in-git/&lt;/a&gt;&lt;/small&gt;
-    &lt;p&gt;In this series from 2021 on CSS-Tricks, Tobias goes into the most important aspects in the advanced handling of Git in a vivid way. Better commits, branching, collaboration, rebasing, cherry-picking … a good reminder.&lt;/p&gt;
-
-    &lt;a style=&#34;display:block; margin: 10px 0 30px;&#34; class=&#34;img-link&#34; href=&#34;https://css-tricks.com/creating-the-perfect-commit-in-git/&#34;&gt;
-      &lt;img class=&#34;limit&#34; src=&#34;advanced-git-series-1-8-creating-the-perfect-commit-in-git.jpg&#34; alt=&#34;Advanced Git Series 1/8: Creating the Perfect Commit in Git&#34; /&gt;
-    &lt;/a&gt;
-  
-
-
-    &lt;hr id=&#34;learn-how-to-use-git-and-github-in-a-team-like-a-pro&#34;/&gt;
-    &lt;h2 style=&#34;margin-bottom: 10px;&#34;&gt;
-      Learn how to use Git and GitHub in a team like a pro
-    &lt;/h2&gt;
-    &lt;small&gt;by Damian Demasi&amp;nbsp;&lt;br&gt;&lt;a href=&#34;https://dev.to/colocodes/learn-how-to-use-git-and-github-in-a-team-like-a-pro-2dk7&#34;&gt;https://dev.to/colocodes/learn-how-to-use-git-and-github-in-a-team-like-a-pro-2dk7&lt;/a&gt;&lt;/small&gt;
-    &lt;p&gt;This short two-part series by Damian clearly highlights the possibilities of collaboration with Git and the platform Github, which is usually neglected in other tutorials.&lt;/p&gt;
-
-    &lt;a style=&#34;display:block; margin: 10px 0 30px;&#34; class=&#34;img-link&#34; href=&#34;https://dev.to/colocodes/learn-how-to-use-git-and-github-in-a-team-like-a-pro-2dk7&#34;&gt;
-      &lt;img class=&#34;limit&#34; src=&#34;learn-how-to-use-git-and-github-in-a-team-like-a-pro.png&#34; alt=&#34;Learn how to use Git and GitHub in a team like a pro&#34; /&gt;
-    &lt;/a&gt;
-  
-
-
-    &lt;hr id=&#34;how-to-build-your-first-javascript-github-action&#34;/&gt;
-    &lt;h2 style=&#34;margin-bottom: 10px;&#34;&gt;
-      How to Build Your First JavaScript GitHub Action
-    &lt;/h2&gt;
-    &lt;small&gt;by Bassem Dghaidi&amp;nbsp;&lt;br&gt;&lt;a href=&#34;https://www.freecodecamp.org/news/build-your-first-javascript-github-action/&#34;&gt;https://www.freecodecamp.org/news/build-your-first-javascript-github-action/&lt;/a&gt;&lt;/small&gt;
-    &lt;p&gt;The automation possibilities of Github&amp;#39;s Actions seem limitless. There is hardly a JavaScript workflow that cannot be mapped in some way. This is also due to the openness, because anyone can provide workflows. Bassem explains the basic system with examples.&lt;/p&gt;
-
-    &lt;a style=&#34;display:block; margin: 10px 0 30px;&#34; class=&#34;img-link&#34; href=&#34;https://www.freecodecamp.org/news/build-your-first-javascript-github-action/&#34;&gt;
-      &lt;img class=&#34;limit&#34; src=&#34;how-to-build-your-first-javascript-github-action.png&#34; alt=&#34;How to Build Your First JavaScript GitHub Action&#34; /&gt;
-    &lt;/a&gt;
-  
-
-
-    &lt;hr id=&#34;getting-the-gist-of-github-actions&#34;/&gt;
-    &lt;h2 style=&#34;margin-bottom: 10px;&#34;&gt;
-      Getting the Gist of GitHub Actions
-    &lt;/h2&gt;
-    &lt;small&gt;by Brendon Smith&amp;nbsp;&lt;br&gt;&lt;a href=&#34;https://gist.github.com/br3ndonland/f9c753eb27381f97336aa21b8d932be6&#34;&gt;https://gist.github.com/br3ndonland/f9c753eb27381f97336aa21b8d932be6&lt;/a&gt;&lt;/small&gt;
-    &lt;p&gt;Like Bassem, Brendon shows some of the the basic principle of GitHub Actions, but expands on it with pro tips and workarounds when things get stuck.&lt;/p&gt;
-
-    &lt;a style=&#34;display:block; margin: 10px 0 30px;&#34; class=&#34;img-link&#34; href=&#34;https://gist.github.com/br3ndonland/f9c753eb27381f97336aa21b8d932be6&#34;&gt;
-      &lt;img class=&#34;limit&#34; src=&#34;getting-the-gist-of-github-actions.png&#34; alt=&#34;Getting the Gist of GitHub Actions&#34; /&gt;
-    &lt;/a&gt;
-  
-
-
-    &lt;hr id=&#34;swipey-image-grids-with-svg&#34;/&gt;
-    &lt;h2 style=&#34;margin-bottom: 10px;&#34;&gt;
-      Swipey Image Grids (with SVG)
-    &lt;/h2&gt;
-    &lt;small&gt;by Cassie Evans&amp;nbsp;&lt;br&gt;&lt;a href=&#34;https://www.cassie.codes/posts/swipey-image-grids/&#34;&gt;https://www.cassie.codes/posts/swipey-image-grids/&lt;/a&gt;&lt;/small&gt;
-    &lt;p&gt;If you&amp;#39;re familiar with CSS animations, you might be interested in this post by Cassie, as she shows how to do it without CSS directly in SVG.&lt;/p&gt;
-
-    &lt;a style=&#34;display:block; margin: 10px 0 30px;&#34; class=&#34;img-link&#34; href=&#34;https://www.cassie.codes/posts/swipey-image-grids/&#34;&gt;
-      &lt;img class=&#34;limit&#34; src=&#34;swipey-image-grids-with-svg.png&#34; alt=&#34;Swipey Image Grids (with SVG)&#34; /&gt;
-    &lt;/a&gt;
-  
  ]]>
       </description>
     </item>
