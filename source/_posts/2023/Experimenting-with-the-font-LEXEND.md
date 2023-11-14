@@ -96,8 +96,7 @@ But back to Lexend and a download that works. All fonts on Google Fonts can also
       Lexend-Thin.woff2
 ```
 
-You might have noticed in the files list, that there are **no italic or oblique faces. There is a reason for this, because there are currently none for Lexend. Although there is a corresponding GitHub issue ([Update Lexend with Italics
-](https://github.com/google/fonts/issues/4237)), but it hasn't really been going anywhere for over a year. Richard Hriech did publish a cursive variant called [LexendItalic](https://github.com/richardhriech/LexendItalic) last year, but the project looks more like a quick fix created within a day and therefore I haven't tried it out.  
+You might have noticed in the files list, that there are **no italic or oblique font faces**. There is a reason for this, because there are currently none for Lexend. Although there is a corresponding GitHub issue ([Update Lexend with Italics](https://github.com/google/fonts/issues/4237)), but it hasn't really been going anywhere for over a year. Richard Hriech did publish a cursive variant called [LexendItalic](https://github.com/richardhriech/LexendItalic) last year, but the project looks more like a quick fix created within a day and therefore I haven't tried it out.  
 However, the absence does not bother me, because according to the W3C, the browser mimics the so-called sloping effect if it cannot find an appropriate font. I think it does this quite well and saves me having to work with additional font files.
 
 ---
