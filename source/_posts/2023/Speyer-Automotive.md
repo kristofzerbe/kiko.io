@@ -18,8 +18,8 @@ related:
   - Pool-Photo-Generator
   - Automatic-Header-Images-in-Hexo
 syndication:
-  - host: Mastodon
-    url: null
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/630440527679651863
 ---
 
 In September, my wife and I took a trip to the [Museum of Technology in nearby Speyer](https://en.wikipedia.org/wiki/Technik_Museum_Speyer). I don't really know why I've never been there before, not even as a child, because the collection of cars and aeroplanes is quite unique in Germany. A dream for every boy, even if he's not as young as he might think :)
