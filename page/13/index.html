@@ -365,15 +365,101 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cloygwgga002knxq3cmp50uib">
+      <div class="article-permalink" id="article-permalink-cloztg1k8001zoconbcu4b2hz">
     <input class="article-permalink-value" value="https://kiko.io/post/Spice-Up-Windows-Terminal/" 
-           data-id="cloygwgga002knxq3cmp50uib" data-title="Spice Up Windows Terminal" />
+           data-id="cloztg1k8001zoconbcu4b2hz" data-title="Spice Up Windows Terminal" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cloygwgga002knxq3cmp50uib");
+        initPermalink("cloztg1k8001zoconbcu4b2hz");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
+<article id="post-2021/Utilize-a-repository-of-reusable-ES6-template-literals" 
+         class="article article-type-post">
+  
+  <div class="article-meta">
+    <a href="/post/Utilize-a-repository-of-reusable-ES6-template-literals/" class="article-date">
+  
+  <time class="published dt-published" data-pagefind-meta="date" 
+        datetime="2021-01-03T12:29:01.000Z">03 Jan 2021</time>
+</a>
+    
+  <div class="article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Utilize-a-repository-of-reusable-ES6-template-literals/">
+        <img class="article-photo" src="/photos/tablet/DSC_7897.jpg" alt="Rusted Bike" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+
+
+  
+    <h3>
+      <a class="article-title"
+         href="/post/Utilize-a-repository-of-reusable-ES6-template-literals/">Utilize a repository of reusable ES6 template literals</a>
+    </h3>
+  
+
+        
+      </header>
+    
+    
+    <div class="article-entry">
+      <p>The <a href="http://es6-features.org/#StringInterpolation"><strong>Template Literals</strong></a> introduced with ES6 are very useful to deal with multiline strings, because they support <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Expression_interpolation">embedded expressions</a>. Gone are the days of endless string concatination or replacing variables in a string by using RegEx.</p>
+<p>Instead of… </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> url = ...</span><br><span class="line"><span class="keyword">var</span> file = ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> template = </span><br><span class="line">  <span class="string">&#x27;&lt;div class=&quot;photo&quot;&gt;&#x27;</span> + </span><br><span class="line">     <span class="string">&#x27;&lt;a href=&quot;&#x27;</span> + url + <span class="string">&quot;&#x27; + </span></span><br><span class="line"><span class="string">        &#x27;style=&quot;</span>background-<span class="attr">image</span>: <span class="title function_">url</span>(<span class="string">&#x27; + file + &#x27;</span>)<span class="string">&quot;&lt;/a&gt;&#x27; + </span></span><br><span class="line"><span class="string">  &#x27;&lt;/div&gt;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>… you can write:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> url = ...</span><br><span class="line"><span class="keyword">var</span> file = ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> template = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;div class=&quot;photo&quot;&gt;</span></span><br><span class="line"><span class="string">    &lt;a href=&quot;<span class="subst">$&#123;url&#125;</span>/&quot;</span></span><br><span class="line"><span class="string">    style=&quot;background-image: url(<span class="subst">$&#123;file&#125;</span>);&quot;&gt;&lt;/a&gt;</span></span><br><span class="line"><span class="string">  &lt;/div&gt;</span></span><br><span class="line"><span class="string">`</span>,</span><br></pre></td></tr></table></figure>
+
+<p>It’s much cleaner and easier to handle, as you can copy your needed HTML right into your code and surround it by <strong>backtick</strong> (!) characters. Insert your variable placeholders (expressions), indicated by a dollar sign and curly braces, and you are done.</p>
+<p>But there is one “restriction”, you have to be aware of: the interpolation (substitution of the expressions) is done at declaration time and not at runtime. You can’t define your literals seperatly, take one and make your substitution as you need it, like you would do with <a href="https://handlebarsjs.com/">Handlebars</a> or other templating engines. Therefore the name <em>template</em> literals is a bit misleading. But … there is a way to achieve this anyway…</p>
+      
+        <p class="article-more-link">
+          <a href="/post/Utilize-a-repository-of-reusable-ES6-template-literals/#continue">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Templating/" rel="tag">Templating</a></li></ul>  
+  </div>
+
+      
+      <div class="article-permalink" id="article-permalink-cloztg1ka0025ocond7i217ix">
+    <input class="article-permalink-value" value="https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/" 
+           data-id="cloztg1ka0025ocond7i217ix" data-title="Utilize a repository of reusable ES6 template literals" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("cloztg1ka0025ocond7i217ix");
     });
 </script>
 
@@ -449,15 +535,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cloygwgfi000snxq3e854fpg1">
+      <div class="article-permalink" id="article-permalink-cloztg1jo000poconech9ey2z">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-5/" 
-           data-id="cloygwgfi000snxq3e854fpg1" data-title="Discoveries #5" />
+           data-id="cloztg1jo000poconech9ey2z" data-title="Discoveries #5" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cloygwgfi000snxq3e854fpg1");
+        initPermalink("cloztg1jo000poconech9ey2z");
     });
 </script>
 
@@ -529,15 +615,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cloygwgfj000unxq3463a2wfc">
+      <div class="article-permalink" id="article-permalink-cloztg1jq000uocon7mkvhoc9">
     <input class="article-permalink-value" value="https://kiko.io/post/Indian-Presets-for-Lightroom/" 
-           data-id="cloygwgfj000unxq3463a2wfc" data-title="Indian Presets for Lightroom" />
+           data-id="cloztg1jq000uocon7mkvhoc9" data-title="Indian Presets for Lightroom" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cloygwgfj000unxq3463a2wfc");
+        initPermalink("cloztg1jq000uocon7mkvhoc9");
     });
 </script>
 
@@ -610,15 +696,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cloygwgfj000vnxq3e5n3d70o">
+      <div class="article-permalink" id="article-permalink-cloztg1jr000vocon4ayi4sne">
     <input class="article-permalink-value" value="https://kiko.io/post/Israeli-Presets-for-Lightroom/" 
-           data-id="cloygwgfj000vnxq3e5n3d70o" data-title="Israeli Presets for Lightroom" />
+           data-id="cloztg1jr000vocon4ayi4sne" data-title="Israeli Presets for Lightroom" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cloygwgfj000vnxq3e5n3d70o");
+        initPermalink("cloztg1jr000vocon4ayi4sne");
     });
 </script>
 
@@ -693,15 +779,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cloygwgfh000qnxq39rpf1tat">
+      <div class="article-permalink" id="article-permalink-cloztg1jp000rocon3j22b5iv">
     <input class="article-permalink-value" value="https://kiko.io/post/Folder-based-publishing-in-Lightroom/" 
-           data-id="cloygwgfh000qnxq39rpf1tat" data-title="Folder based publishing in Lightroom" />
+           data-id="cloztg1jp000rocon3j22b5iv" data-title="Folder based publishing in Lightroom" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cloygwgfh000qnxq39rpf1tat");
+        initPermalink("cloztg1jp000rocon3j22b5iv");
     });
 </script>
 
@@ -777,15 +863,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cloygwgfg000onxq3c18d3qqh">
+      <div class="article-permalink" id="article-permalink-cloztg1jo000oocondnt1c12g">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-4/" 
-           data-id="cloygwgfg000onxq3c18d3qqh" data-title="Discoveries #4" />
+           data-id="cloztg1jo000oocondnt1c12g" data-title="Discoveries #4" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cloygwgfg000onxq3c18d3qqh");
+        initPermalink("cloztg1jo000oocondnt1c12g");
     });
 </script>
 
@@ -863,96 +949,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-cloygwgfi000tnxq3bqs911hi">
+      <div class="article-permalink" id="article-permalink-cloztg1jq000tocon3clp6e1p">
     <input class="article-permalink-value" value="https://kiko.io/post/Implement-source-switch-for-SPA/" 
-           data-id="cloygwgfi000tnxq3bqs911hi" data-title="Implement source switch for SPA" />
+           data-id="cloztg1jq000tocon3clp6e1p" data-title="Implement source switch for SPA" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("cloygwgfi000tnxq3bqs911hi");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-2020/Show-related-posts-in-Hexo" 
-         class="article article-type-post">
-  
-  <div class="article-meta">
-    <a href="/post/Show-related-posts-in-Hexo/" class="article-date">
-  
-  <time class="published dt-published" data-pagefind-meta="date" 
-        datetime="2020-10-03T11:17:03.000Z">03 Oct 2020</time>
-</a>
-    
-  <div class="article-category category-tools">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/Show-related-posts-in-Hexo/">
-        <img class="article-photo" src="/photos/tablet/18-09 Kroatien-0323.jpg" alt="Garden Eden" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-    <a class="article-anything" href="/series/a-new-blog">A New Blog</a>
-
-
-
-        
-
-
-  
-    <h3>
-      <a class="article-title"
-         href="/post/Show-related-posts-in-Hexo/">Show related posts in Hexo</a>
-    </h3>
-  
-
-        
-      </header>
-    
-    
-    <div class="article-entry">
-      <p>It is always nice to point the readers of your blog’s articles to related posts, they might be interested in. They stay a little longer to understand what you have to offer and increases the likelihood that they become loyal readers, followers or subscribers. Related posts has become a standard on delivering news and posts.</p>
-<p>In the default Hexo theme <strong>Landscape</strong>, on which this blog is based, there is no such function built in, but as the Hexo community is very busy, there are some plugins you can use.</p>
-      
-        <p class="article-more-link">
-          <a href="/post/Show-related-posts-in-Hexo/#continue">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogging/" rel="tag">Blogging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>  
-  </div>
-
-      
-      <div class="article-permalink" id="article-permalink-cloygwgfk000znxq3eafndyq7">
-    <input class="article-permalink-value" value="https://kiko.io/post/Show-related-posts-in-Hexo/" 
-           data-id="cloygwgfk000znxq3eafndyq7" data-title="Show related posts in Hexo" />
-    <a class="article-action action-copy" title="Copy URL"></a>
-    <a class="article-action action-share" title="Open Share Dialog"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("cloygwgfk000znxq3eafndyq7");
+        initPermalink("cloztg1jq000tocon3clp6e1p");
     });
 </script>
 
@@ -1002,6 +1007,12 @@
         
           <li>
             
+              <a href="/post/SVWW-vs-Kaiserslautern-2023-11-12/">SVWW vs. Kaiserslautern @ 2023-11-12</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Add-Link-to-Trello-on-Android-via-Share-Menu/">Add Link to Trello on Android via Share Menu</a>
             
           </li>
@@ -1015,12 +1026,6 @@
           <li>
             
               <a href="/post/SVWW-vs-Hansa-Rostock-2023-10-29/">SVWW vs. Hansa Rostock @ 2023-10-29</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/SGE-vs-HJK-2023-10-26/">SGE vs. HJK @ 2023-10-26</a>
             
           </li>
         
