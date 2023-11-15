@@ -7,6 +7,7 @@ photograph:
   file: 23-07 Mallorca-0339.jpg
   name: Basket Parking
   socialmedia: /static/images/social-media/Majorcan-Details.png
+series: New Photos
 categories:
   - Photo
 tags:
