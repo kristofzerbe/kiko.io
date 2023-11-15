@@ -19,7 +19,7 @@ related:
   - SVWW-vs-HSV-2023-10-07
 syndication:
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/111414930653623458
 ---
 
 {% match_grid "SV-Wehen-Wiesbaden" "2:1" "1-FC-Kaiserslautern" %}
