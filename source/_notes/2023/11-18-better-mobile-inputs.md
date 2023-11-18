@@ -3,7 +3,7 @@ title: "#Link | Better Mobile Inputs Playground"
 date: 2023-11-18
 syndication: 
 - host: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/111431164571042503
 ---
 
 WebDevs use INPUTs all the time, but often neglect to set the right attributes, especially for mobile devices. Alex Holachek has already created a very practical playground for the use of ``type``, ``inputmode`` and ``autocomplete`` in 2020. It shows you the resulting keyboard layout for Android/iOS and links to the appropriate docs.
