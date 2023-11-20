@@ -11,7 +11,7 @@ const photoSelector = require("../lib/photograph-selector.cjs").Selector;
 
 hexo.on('new', function(data) {
 
-    log.info("Processing Photo...");
+    log.info("Processing Photograph ...");
 
     let post = front.parse(data.content);
 
