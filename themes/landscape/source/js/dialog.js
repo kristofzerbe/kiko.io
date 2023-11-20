@@ -321,9 +321,10 @@ var dpDialog = {
     }
 
     const title = document.querySelector('meta[name="title"]').content.replace(" - kiko.io", "");
-    const description = document.querySelector('meta[name="description"]').content;
+    //const description = document.querySelector('meta[name="description"]').content;
+    const excerpt = document.querySelector('meta[name="excerpt"]').content;
     const permalink = document.querySelector('link[rel="canonical"]').href;
-    jContent.find("#mastodon-text").val(title + "\n\n" + description + "\n\n" + permalink);
+    jContent.find("#mastodon-text").val(title + "\n\n" + excerpt + "\n\n" + permalink);
 
     jContent.find("#mastodon-share").click(function(e) { 
       const eInstance = document.getElementById("mastodon-instance");
