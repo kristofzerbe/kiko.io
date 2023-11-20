@@ -18,7 +18,7 @@ related:
   - Discoveries-24-JavaScript-UI
 syndication:
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/111443843746228740
 ---
 
 This month&#39;s Discoveries are about small, large, new and somewhat older JavaScript tools that can make life and coding easier for developers. Why reinvent the wheel when someone has already done it. Happy Coding :)
