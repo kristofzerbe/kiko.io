@@ -135,7 +135,7 @@ For serving these pictures I use a static folder, as described in A New Blog: Cu
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -361,14 +361,14 @@ For serving these pictures I use a static folder, as described in A New Blog: Cu
     
     <div class="article-entry e-content">
       <p>Every article in this blog has an individual header image, to bring a little bit color into it. In this post I will show you how I deal with the images in using and automatic provisioning.</p>
-<p>For serving these pictures I use a static folder, as described in <a href="/categories/Tools/A-New-Blog-Customizing-Hexo/">A New Blog: Customizing Hexo</a>. The hard work is done by the plugin <a href="https://github.com/niahoo/hexo-generator-copy">Hexo Generator Copy</a>, which copies the static files into the <code>public_dir</code> while generating.</p>
+<p>For serving these pictures I use a static folder, as described in <a href="/categories/Tools/A-New-Blog-Customizing-Hexo/">A New Blog: Customizing Hexo</a>. The hard work is done by the plugin <a target="_blank" rel="noopener" href="https://github.com/niahoo/hexo-generator-copy">Hexo Generator Copy</a>, which copies the static files into the <code>public_dir</code> while generating.</p>
 <span id="more"></span>
 
 <h2 id="Static-File-Structure"><a href="#Static-File-Structure" class="headerlink" title="Static File Structure"></a>Static File Structure</h2><p>It is always advisable to provide one image for every device class, in order to save bandwidth and make the page loading as fast as possible:</p>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">| static/</span><br><span class="line">   | photos/</span><br><span class="line">      | mobile/</span><br><span class="line">         | my-lovely-picture.jpg</span><br><span class="line">         | ...</span><br><span class="line">      | tablet/</span><br><span class="line">         | my-lovely-picture.jpg</span><br><span class="line">         | ...</span><br><span class="line">      | normal/</span><br><span class="line">         | my-lovely-picture.jpg</span><br><span class="line">         | ...</span><br></pre></td></tr></table></figure>
 
 <p>The <code>mobile</code> images are at least 480 pixels wide, the <code>tablet</code> variants 768 pixels and the standard or <code>normal</code> one 1280 pixels.</p>
-<p>While creating the JPG files, it is important to compress them with a tool like <a href="https://www.jpegmini.com/">JPEGMini</a> to save data while loading.</p>
+<p>While creating the JPG files, it is important to compress them with a tool like <a target="_blank" rel="noopener" href="https://www.jpegmini.com/">JPEGMini</a> to save data while loading.</p>
 <h2 id="Binding"><a href="#Binding" class="headerlink" title="Binding"></a>Binding</h2><p>In order to bind a picture with some additional information to an article, I have extended the Frontmatter of every post:</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">photograph:</span></span><br><span class="line">    <span class="attr">file:</span> <span class="string">&#x27;my-lovely-image.jpg&#x27;</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">&#x27;My Lovely Image&#x27;</span></span><br><span class="line">    <span class="attr">link:</span> <span class="string">&#x27;https://500px.com/photo/123456789/My-Lovely-Image&#x27;</span></span><br></pre></td></tr></table></figure>
 
@@ -382,7 +382,7 @@ For serving these pictures I use a static folder, as described in A New Blog: Cu
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">My Lovely Image</span><br><span class="line">https://500px.com/photo/123456789/My-Lovely-Image</span><br></pre></td></tr></table></figure>
 
 <h2 id="Automate-binding-and-provisioning-on-new-post"><a href="#Automate-binding-and-provisioning-on-new-post" class="headerlink" title="Automate binding and provisioning on new post"></a>Automate binding and provisioning on new post</h2><p>Developers are lazy and I do not make an exception. Having all these pool images and the meta informations, it would be nice, if Hexo just picks and processes one of the pool folders automatically, when I’m creating a new post by calling <code>hexo new &quot;My shiny new post&quot;</code> … and it was easier then I thought.</p>
-<h3 id="Where-to-place-the-code-for-the-automatism"><a href="#Where-to-place-the-code-for-the-automatism" class="headerlink" title="Where to place the code for the automatism"></a>Where to place the code for the automatism</h3><p>Hexo has a great <a href="https://hexo.io/api/">API</a> to write <a href="https://hexo.io/plugins/">plugins</a> and it is not very difficult to setup a new plugin for this, which can be published to the <a href="https://www.npmjs.com/search?q=hexo">NPM registry</a>. But it is also possible to extend Hexo’s functionality by using a simple script. All you need is a <strong><code>script</code></strong> folder in the root of your Hexo project. Any JS files which is placed there, will be executed by Hexo.</p>
+<h3 id="Where-to-place-the-code-for-the-automatism"><a href="#Where-to-place-the-code-for-the-automatism" class="headerlink" title="Where to place the code for the automatism"></a>Where to place the code for the automatism</h3><p>Hexo has a great <a target="_blank" rel="noopener" href="https://hexo.io/api/">API</a> to write <a target="_blank" rel="noopener" href="https://hexo.io/plugins/">plugins</a> and it is not very difficult to setup a new plugin for this, which can be published to the <a target="_blank" rel="noopener" href="https://www.npmjs.com/search?q=hexo">NPM registry</a>. But it is also possible to extend Hexo’s functionality by using a simple script. All you need is a <strong><code>script</code></strong> folder in the root of your Hexo project. Any JS files which is placed there, will be executed by Hexo.</p>
 <p>Therefore, lets use a script called <code>\scripts\process-photo-on-new.js</code> …</p>
 <h3 id="Things-an-automatism-should-do-Step-by-Step"><a href="#Things-an-automatism-should-do-Step-by-Step" class="headerlink" title="Things an automatism should do - Step by Step"></a>Things an automatism should do - Step by Step</h3><ol>
 <li>Hook into the creation of a post</li>
@@ -426,15 +426,15 @@ For serving these pictures I use a static folder, as described in A New Blog: Cu
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clp89x9cs000inioj9romekpt">
+      <div class="article-permalink" id="article-permalink-clp8jajvu000insow08mxfogf">
     <input class="article-permalink-value" value="https://kiko.io/post/Automatic-Header-Images-in-Hexo/" 
-           data-id="clp89x9cs000inioj9romekpt" data-title="Automatic Header Images in Hexo" />
+           data-id="clp8jajvu000insow08mxfogf" data-title="Automatic Header Images in Hexo" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9cs000inioj9romekpt");
+        initPermalink("clp8jajvu000insow08mxfogf");
     });
 </script>
 
@@ -454,7 +454,7 @@ For serving these pictures I use a static folder, as described in A New Blog: Cu
   <p>
     You can interact with this article (applause, criticism, whatever) by mention it in one of 
     your posts, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
   </p>
 
   <p class="webmention-form-info">
@@ -777,15 +777,15 @@ For serving these pictures I use a static folder, as described in A New Blog: Cu
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -820,9 +820,9 @@ For serving these pictures I use a static folder, as described in A New Blog: Cu
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -1030,27 +1030,27 @@ For serving these pictures I use a static folder, as described in A New Blog: Cu
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>

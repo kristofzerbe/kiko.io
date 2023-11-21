@@ -136,7 +136,7 @@ And yes gulp-iconfont from Nicolas Froidure was exactly what I needed. First Sol
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -353,18 +353,18 @@ And yes gulp-iconfont from Nicolas Froidure was exactly what I needed. First Sol
     
     
     <div class="article-entry e-content">
-      <p>A several years ago I started building a little PWA and chose <a href="https://bootswatch.com/3/">Bootswatch 3.3.5.</a> for theming. As it depends on Bootstrap I was able to use the <a href="https://icons.getbootstrap.com/">icons from Bootstrap</a>. At the beginning I needed only a handful of these icons, but with the time it became more and more difficult to find the right one, because the Bootstrap Glyphicons in version 3 included only around 250 icons and there was not always the right one. Also, the app was always lugging around well over 100 KB of extra files, of which I actually only needed a few kilobytes.</p>
-<p>In another project I had used <a href="https://fontello.com/">Fontello</a>, where you can build and download your own icon font from a selection of available icons. Very nice, but I didn’t feel like fiddling with project-specific configuration files on the Fontello website. But since you could upload your own SVG files in Fontello, which were then taken over into the font, the same had to work somehow with a Node.JS plugin!?</p>
-<p>And yes <a href="https://www.npmjs.com/package/gulp-iconfont">gulp-iconfont</a> from <a href="https://github.com/nfroidure">Nicolas Froidure</a> was exactly what I needed.</p>
+      <p>A several years ago I started building a little PWA and chose <a target="_blank" rel="noopener" href="https://bootswatch.com/3/">Bootswatch 3.3.5.</a> for theming. As it depends on Bootstrap I was able to use the <a target="_blank" rel="noopener" href="https://icons.getbootstrap.com/">icons from Bootstrap</a>. At the beginning I needed only a handful of these icons, but with the time it became more and more difficult to find the right one, because the Bootstrap Glyphicons in version 3 included only around 250 icons and there was not always the right one. Also, the app was always lugging around well over 100 KB of extra files, of which I actually only needed a few kilobytes.</p>
+<p>In another project I had used <a target="_blank" rel="noopener" href="https://fontello.com/">Fontello</a>, where you can build and download your own icon font from a selection of available icons. Very nice, but I didn’t feel like fiddling with project-specific configuration files on the Fontello website. But since you could upload your own SVG files in Fontello, which were then taken over into the font, the same had to work somehow with a Node.JS plugin!?</p>
+<p>And yes <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/gulp-iconfont">gulp-iconfont</a> from <a target="_blank" rel="noopener" href="https://github.com/nfroidure">Nicolas Froidure</a> was exactly what I needed.</p>
 <p><img src="/post/Creating-Icon-Font-from-SVG-Files/gulp-iconfont.png" alt="gulp-iconfont on GitHub"></p>
 <hr>
-<h2 id="First-Solution"><a href="#First-Solution" class="headerlink" title="First Solution"></a>First Solution</h2><p>Just copy a bunch of SVG files in a folder, run gulp and there was my own customized icon font with a tolerable size of around 20 kilobytes. At that time, <a href="https://github.com/backflip">Thomas Jaggi</a> had taken care of the creation of a CSS file with the correct code points that matched the font with his tool <a href="https://www.npmjs.com/package/gulp-iconfont-css">gulp-iconfont-css</a>.</p>
+<h2 id="First-Solution"><a href="#First-Solution" class="headerlink" title="First Solution"></a>First Solution</h2><p>Just copy a bunch of SVG files in a folder, run gulp and there was my own customized icon font with a tolerable size of around 20 kilobytes. At that time, <a target="_blank" rel="noopener" href="https://github.com/backflip">Thomas Jaggi</a> had taken care of the creation of a CSS file with the correct code points that matched the font with his tool <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/gulp-iconfont-css">gulp-iconfont-css</a>.</p>
 <span id="more"></span>
 
 <h3 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h3><p>First I needed some SVG files…</p>
 <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">|-- Images</span><br><span class="line"><span class="code">    |-- SVG</span></span><br><span class="line"><span class="code">        |-- alert.svg</span></span><br><span class="line"><span class="code">        |-- cancel.svg</span></span><br><span class="line"><span class="code">        |-- delete.svg</span></span><br><span class="line"><span class="code">        |-- email.svg</span></span><br><span class="line"><span class="code">        |-- flag.svg</span></span><br><span class="line"><span class="code">        |-- link.svg</span></span><br></pre></td></tr></table></figure>
 
-<p>… and the NPM packages of my task runner <a href="https://gulpjs.com/">gulp.js</a>:</p>
+<p>… and the NPM packages of my task runner <a target="_blank" rel="noopener" href="https://gulpjs.com/">gulp.js</a>:</p>
 <figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install --<span class="built_in">save</span>-<span class="built_in">dev</span> gulp-iconfont</span><br><span class="line">npm install --<span class="built_in">save</span>-<span class="built_in">dev</span> gulp-iconfont-css</span><br></pre></td></tr></table></figure>
 
 <p>For generating the CSS file a template called <code>_icons.css</code> is shipped with the NPM package of <strong>gulp-iconfont-css</strong>, which can be customized as needed. In my case I just made a copy into a folder called <code>Templates</code>, where I store all other template files I need for my PWA.</p>
@@ -398,7 +398,7 @@ And yes gulp-iconfont from Nicolas Froidure was exactly what I needed. First Sol
 <td>Path to the icon font file</td>
 </tr>
 </tbody></table>
-<h4 id="gulp-iconfont"><a href="#gulp-iconfont" class="headerlink" title="gulp-iconfont"></a>gulp-iconfont</h4><p>The library combines some other projects such as <a href="https://github.com/nfroidure/svgicons2svgfont">svgicons2svgfont</a>, <a href="https://github.com/nfroidure/svgicons2svgfont#svgicons2svgfontoptions">gulp-svgicons2svgfont</a> and <a href="https://github.com/nfroidure/gulp-svg2ttf">gulp-svg2ttf</a> to create the different font formats, because its just a wrapper around them.</p>
+<h4 id="gulp-iconfont"><a href="#gulp-iconfont" class="headerlink" title="gulp-iconfont"></a>gulp-iconfont</h4><p>The library combines some other projects such as <a target="_blank" rel="noopener" href="https://github.com/nfroidure/svgicons2svgfont">svgicons2svgfont</a>, <a target="_blank" rel="noopener" href="https://github.com/nfroidure/svgicons2svgfont#svgicons2svgfontoptions">gulp-svgicons2svgfont</a> and <a target="_blank" rel="noopener" href="https://github.com/nfroidure/gulp-svg2ttf">gulp-svg2ttf</a> to create the different font formats, because its just a wrapper around them.</p>
 <table>
 <thead>
 <tr>
@@ -449,14 +449,14 @@ And yes gulp-iconfont from Nicolas Froidure was exactly what I needed. First Sol
     <div>
         <blockquote><p>Recent versions of gulp-iconfont emit a glyphs (or codepoints &lt; 4.0.0) event (see docs) which should likely be used instead of the workflow described below. However, it will continue to work as expected.</p>
 </blockquote>
-        <cite><a href="https://github.com/backflip/gulp-iconfont-css">--- backflip (Thomas Jaggi)</a></cite>
+        <cite><a target="_blank" rel="noopener" href="https://github.com/backflip/gulp-iconfont-css">--- backflip (Thomas Jaggi)</a></cite>
     </div>
   
 
 <p>Ahh, ok. I don’t need the <strong>gulp-iconfont-css</strong> anymore. I can create the CSS file by myself. Lets see how the <strong>gulp-iconfont</strong> task looks, after rewriting:</p>
 <figure class="highlight js"><figcaption><span>/gulpfile.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> iconfont = <span class="built_in">require</span>(<span class="string">&#x27;gulp-iconfont&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> distFolder = <span class="string">&#x27;Build&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fontObj = &#123;</span><br><span class="line">  <span class="attr">fontName</span>: <span class="string">&quot;MyAppIcons&quot;</span>,</span><br><span class="line">  <span class="attr">cssClass</span>: <span class="string">&quot;icon&quot;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">gulp.<span class="title function_">task</span>(<span class="string">&quot;create-iconfont&quot;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> gulp</span><br><span class="line">    .<span class="title function_">src</span>([<span class="string">&quot;Images/SVG/*.svg&quot;</span>])</span><br><span class="line">    .<span class="title function_">pipe</span>(</span><br><span class="line">      <span class="title function_">iconfont</span>(&#123;</span><br><span class="line">        <span class="attr">fontName</span>: fontObj.<span class="property">fontName</span>,</span><br><span class="line">        <span class="attr">fontHeight</span>: <span class="number">1001</span>,</span><br><span class="line">        <span class="attr">formats</span>: [<span class="string">&quot;svg&quot;</span>, <span class="string">&quot;ttf&quot;</span>, <span class="string">&quot;eot&quot;</span>, <span class="string">&quot;woff&quot;</span>, <span class="string">&quot;woff2&quot;</span>],</span><br><span class="line">        <span class="attr">normalize</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">prependUnicode</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">timestamp</span>: <span class="title class_">Math</span>.<span class="title function_">round</span>(<span class="title class_">Date</span>.<span class="title function_">now</span>() / <span class="number">1000</span>),</span><br><span class="line">      &#125;)</span><br><span class="line">    )</span><br><span class="line">    .<span class="title function_">on</span>(<span class="string">&quot;glyphs&quot;</span>, <span class="keyword">function</span> (<span class="params">glyphs, options</span>) &#123;</span><br><span class="line"></span><br><span class="line">      fontObj.<span class="property">glyphs</span> = glyphs.<span class="title function_">map</span>(mapGlyphs);</span><br><span class="line"></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(fontObj, options);</span><br><span class="line"></span><br><span class="line">      gulp</span><br><span class="line">        .<span class="title function_">src</span>(<span class="string">&#x27;Templates/icons-template.css&#x27;</span>)</span><br><span class="line">        .<span class="title function_">pipe</span>(<span class="title function_">consolidate</span>(<span class="string">&quot;lodash&quot;</span>, fontObj))</span><br><span class="line">        .<span class="title function_">pipe</span>(<span class="title function_">rename</span>(&#123; <span class="attr">basename</span>: fontObj.<span class="property">fontName</span> &#125;))</span><br><span class="line">        .<span class="title function_">pipe</span>(gulp.<span class="title function_">dest</span>(distFolder));</span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="title function_">pipe</span>(gulp.<span class="title function_">dest</span>(distFolder));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">mapGlyphs</span>(<span class="params">glyph</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">fileName</span>: glyph.<span class="property">name</span>,</span><br><span class="line">    <span class="attr">codePoint</span>: glyph.<span class="property">unicode</span>[<span class="number">0</span>].<span class="title function_">charCodeAt</span>(<span class="number">0</span>).<span class="title function_">toString</span>(<span class="number">16</span>).<span class="title function_">toUpperCase</span>(),</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">gulp.<span class="title function_">task</span>(<span class="string">&#x27;build&#x27;</span>, </span><br><span class="line">  gulp.<span class="title function_">series</span>(</span><br><span class="line">    <span class="string">&#x27;create-iconfont&#x27;</span></span><br><span class="line">    <span class="comment">// other gulp tasks</span></span><br><span class="line">  )</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
-<p>First I have introduced a new <code>fontObj</code> variable to hold all informations for the untouched CSS template. The major difference is now, that <code>iconfont</code> is the only main task, with a subtask where the glyphs are processed directly via <a href="https://www.npmjs.com/package/consolidate"><code>consolidate</code></a>. The <code>mapGlyphs()</code> function ensures that the file names with the CodePoints are transferred into an easily usable structure.</p>
+<p>First I have introduced a new <code>fontObj</code> variable to hold all informations for the untouched CSS template. The major difference is now, that <code>iconfont</code> is the only main task, with a subtask where the glyphs are processed directly via <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/consolidate"><code>consolidate</code></a>. The <code>mapGlyphs()</code> function ensures that the file names with the CodePoints are transferred into an easily usable structure.</p>
 <p>Works fine, but doesn’t solve my problem with the shifted CodePoints, when inserting new SVG icons … but someone remarked in a StackOverflow article to have a look at the test files of <em>gulp-iconfont</em>. <strong>There, the SVG files carry as prefix the name of the CodePoints to be used for this file!</strong>. Unfortunately, this feature is not documented, but it works…</p>
 <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">|-- Images</span><br><span class="line"><span class="code">    |-- SVG</span></span><br><span class="line"><span class="code">        |-- uE001-alert.svg</span></span><br><span class="line"><span class="code">        |-- uE002-cancel.svg</span></span><br><span class="line"><span class="code">        |-- uE003-delete.svg</span></span><br><span class="line"><span class="code">        |-- uE004-email.svg</span></span><br><span class="line"><span class="code">        |-- uE005-flag.svg</span></span><br><span class="line"><span class="code">        |-- uE006-link.svg</span></span><br><span class="line"><span class="code">        |-- uE007-cloud.svg</span></span><br></pre></td></tr></table></figure>
 
@@ -467,15 +467,15 @@ And yes gulp-iconfont from Nicolas Froidure was exactly what I needed. First Sol
     <div>
         <blockquote><p>Warning: While this plugin may still be useful for fonts generation or old browser support, you should consider using SVG icons directly. Indeed, when i created gulp-iconfont and all its related modules, using SVG icons was just not realistic for a wide browser suppport but i was already conviced that SVG was the future, that’s why i wanted my SVG source files to sit separated in a folder. So, now, just enjoy switching to SVG with almost no effort :). Was a great open source journey with you all!</p>
 </blockquote>
-        <cite><a href="https://github.com/nfroidure/gulp-iconfont">--- Nicolas Froidure (nfroidure)</a></cite>
+        <cite><a target="_blank" rel="noopener" href="https://github.com/nfroidure/gulp-iconfont">--- Nicolas Froidure (nfroidure)</a></cite>
     </div>
   
 
 <p>This goes along with some older articles of Chris Coyer from CSSTricks:</p>
 <ul>
-<li><a href="https://css-tricks.com/svg-sprites-use-better-icon-fonts/">https://css-tricks.com/svg-sprites-use-better-icon-fonts/</a></li>
-<li><a href="https://css-tricks.com/svg-symbol-good-choice-icons/">https://css-tricks.com/svg-symbol-good-choice-icons/</a></li>
-<li><a href="https://github.com/w0rm/gulp-svgstore">https://github.com/w0rm/gulp-svgstore</a></li>
+<li><a target="_blank" rel="noopener" href="https://css-tricks.com/svg-sprites-use-better-icon-fonts/">https://css-tricks.com/svg-sprites-use-better-icon-fonts/</a></li>
+<li><a target="_blank" rel="noopener" href="https://css-tricks.com/svg-symbol-good-choice-icons/">https://css-tricks.com/svg-symbol-good-choice-icons/</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/w0rm/gulp-svgstore">https://github.com/w0rm/gulp-svgstore</a></li>
 </ul>
 <p>Maybe it’s time to say goodbye to icon fonts completely and use SVG files directly, but in my opinion this is not suitable for all needs. Especially if you work a lot with pesudo selectors, a general rebuild of the code and the UI will be necessary and you would do well to weigh the cost-benefit carefully.</p>
 
@@ -498,15 +498,15 @@ And yes gulp-iconfont from Nicolas Froidure was exactly what I needed. First Sol
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clp89x9d50016nioj72yxfmo9">
+      <div class="article-permalink" id="article-permalink-clp8jajw50015nsow9y2g11y7">
     <input class="article-permalink-value" value="https://kiko.io/post/Creating-Icon-Font-from-SVG-Files/" 
-           data-id="clp89x9d50016nioj72yxfmo9" data-title="Creating Icon Font from SVG Files" />
+           data-id="clp8jajw50015nsow9y2g11y7" data-title="Creating Icon Font from SVG Files" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9d50016nioj72yxfmo9");
+        initPermalink("clp8jajw50015nsow9y2g11y7");
     });
 </script>
 
@@ -526,7 +526,7 @@ And yes gulp-iconfont from Nicolas Froidure was exactly what I needed. First Sol
   <p>
     You can interact with this article (applause, criticism, whatever) by mention it in one of 
     your posts, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
   </p>
 
   <p class="webmention-form-info">
@@ -782,15 +782,15 @@ And yes gulp-iconfont from Nicolas Froidure was exactly what I needed. First Sol
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -825,9 +825,9 @@ And yes gulp-iconfont from Nicolas Froidure was exactly what I needed. First Sol
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -1035,27 +1035,27 @@ And yes gulp-iconfont from Nicolas Froidure was exactly what I needed. First Sol
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>

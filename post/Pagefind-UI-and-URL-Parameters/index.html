@@ -137,7 +137,7 @@ In my implementation, I decided to adapt the Pagefind UI for myself instead of d
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -369,8 +369,8 @@ In my implementation, I decided to adapt the Pagefind UI for myself instead of d
 
 <hr>
 <p>A couple of days ago I wrote about my attempt to <a href="/post/Integration-of-Pagefind-in-Hexo/" title="Integration of Pagefind in Hexo">integrate Pagefind in my blog</a>. In the meantime, I further refined the indexing by excluding more content areas and adding more for the metadata to make the search results even better.</p>
-<p>But one thing was still missing: controlling the search via url parameters, so that you can actually consider the page as a search page. I came across this in a post about the sense and nonsense of Open Graph attributes and other search engine related metadata nowadays. Google, for example, <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data">likes to use JSON-LD</a> and when describing the site you can define a search page which then makes it easier to search the site directly via Google … see <a href="https://developers.google.com/search/docs/appearance/structured-data/sitelinks-searchbox">Sitelinks search box (WebSite) structured data</a></p>
-<p>In my implementation, I decided to adapt the <a href="https://pagefind.app/docs/ui/">Pagefind UI</a> for myself instead of developing everything from scratch via JavaScript. There are always some limitations with pre-built solutions, but I want to show here that they are actually none for the inclusion of a url parameter.</p>
+<p>But one thing was still missing: controlling the search via url parameters, so that you can actually consider the page as a search page. I came across this in a post about the sense and nonsense of Open Graph attributes and other search engine related metadata nowadays. Google, for example, <a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data">likes to use JSON-LD</a> and when describing the site you can define a search page which then makes it easier to search the site directly via Google … see <a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/appearance/structured-data/sitelinks-searchbox">Sitelinks search box (WebSite) structured data</a></p>
+<p>In my implementation, I decided to adapt the <a target="_blank" rel="noopener" href="https://pagefind.app/docs/ui/">Pagefind UI</a> for myself instead of developing everything from scratch via JavaScript. There are always some limitations with pre-built solutions, but I want to show here that they are actually none for the inclusion of a url parameter.</p>
 <span id="more"></span>
 
 <p>My Pagefind search page is accessible at <a href="/search">&#x2F;search</a> and therefore it’s easy to provide with parameters, f.e. <code>/search/?q=test</code>. Retrieving them on the page via JavaScript is no rocket science either:</p>
@@ -385,8 +385,8 @@ Unfortunately, Pagefind also does not provide a callback method to do things aft
 </p>
 
 <p><strong>Update</strong></p>
-<p>As I learned after creating an <a href="https://github.com/CloudCannon/pagefind/issues/214">issue (#214)</a> in Pagefind’s GitHub repo, there IS a way to preset the incoming search string by using the method <code>triggerSearch</code>, but as Liam pointed out it is not yet documented.</p>
-<p>But I still need the following function called <code>waitForElm</code> to set the <strong>focus</strong> into the created INPUT … but there is also an existing <a href="https://github.com/CloudCannon/pagefind/issues/121">issue (#121)</a> for this focus feature, so let’s see how long I need the function at all.</p>
+<p>As I learned after creating an <a target="_blank" rel="noopener" href="https://github.com/CloudCannon/pagefind/issues/214">issue (#214)</a> in Pagefind’s GitHub repo, there IS a way to preset the incoming search string by using the method <code>triggerSearch</code>, but as Liam pointed out it is not yet documented.</p>
+<p>But I still need the following function called <code>waitForElm</code> to set the <strong>focus</strong> into the created INPUT … but there is also an existing <a target="_blank" rel="noopener" href="https://github.com/CloudCannon/pagefind/issues/121">issue (#121)</a> for this focus feature, so let’s see how long I need the function at all.</p>
 <figure class="highlight js"><figcaption><span>tools.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">waitForElm</span>(<span class="params">selector</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">document</span>.<span class="title function_">querySelector</span>(selector)) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="title function_">resolve</span>(<span class="variable language_">document</span>.<span class="title function_">querySelector</span>(selector));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> observer = <span class="keyword">new</span> <span class="title class_">MutationObserver</span>(<span class="function">(<span class="params">mutations</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">document</span>.<span class="title function_">querySelector</span>(selector)) &#123;</span><br><span class="line">        <span class="title function_">resolve</span>(<span class="variable language_">document</span>.<span class="title function_">querySelector</span>(selector));</span><br><span class="line">        observer.<span class="title function_">disconnect</span>();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    observer.<span class="title function_">observe</span>(<span class="variable language_">document</span>.<span class="property">body</span>, &#123;</span><br><span class="line">      <span class="attr">childList</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">subtree</span>: <span class="literal">true</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p style="text-decoration: line-through;">
@@ -420,15 +420,15 @@ Since Pagefind already shows results when typing the first characters, the easie
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clp89x9ee003hnioje5i8etxy">
+      <div class="article-permalink" id="article-permalink-clp8jajx3003hnsow4i0hcojz">
     <input class="article-permalink-value" value="https://kiko.io/post/Pagefind-UI-and-URL-Parameters/" 
-           data-id="clp89x9ee003hnioje5i8etxy" data-title="Pagefind UI and URL Parameters" />
+           data-id="clp8jajx3003hnsow4i0hcojz" data-title="Pagefind UI and URL Parameters" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9ee003hnioje5i8etxy");
+        initPermalink("clp8jajx3003hnsow4i0hcojz");
     });
 </script>
 
@@ -447,8 +447,8 @@ Since Pagefind already shows results when typing the first characters, the easie
 <div class="article-interaction" data-pagefind-ignore>
   <p>
     You can interact with this article (applause, criticism, whatever) by mention it in one of 
-    your posts or by replying to its syndication on <a class="mastodon" href="https://indieweb.social/@kiko/109784950464754190">Mastodon</a>, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+    your posts or by replying to its syndication on <a class="mastodon" target="_blank" rel="noopener" href="https://indieweb.social/@kiko/109784950464754190">Mastodon</a>, which will also be shown here as a  
+    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
   </p>
 
   <p class="webmention-form-info">
@@ -767,15 +767,15 @@ Since Pagefind already shows results when typing the first characters, the easie
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -810,9 +810,9 @@ Since Pagefind already shows results when typing the first characters, the easie
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -1020,27 +1020,27 @@ Since Pagefind already shows results when typing the first characters, the easie
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>

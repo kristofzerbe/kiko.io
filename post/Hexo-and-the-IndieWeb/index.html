@@ -137,7 +137,7 @@ In this article I will only briefly go into the basics and then show an implemen
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -363,12 +363,12 @@ In this article I will only briefly go into the basics and then show an implemen
     
     <div class="article-entry e-content">
       
-    <a href="https://news.indieweb.org/en" class="u-syndication" style="display:none;">Posted on IndieNews</a>
+    <a target="_blank" rel="noopener" href="https://news.indieweb.org/en" class="u-syndication" style="display:none;">Posted on IndieNews</a>
   
 
 <p>It is cool to publish your thoughts on your own blog under your only domain and not only on big social media platforms, because that way you keep control over your content. But what makes Facebook, Twitter and others “social” is the interaction between the people. Likes, Retweets, Mentions, Replies are the fuel which drives them. But most of the blogging solutions offers only rudimentary interactions, in form of article comments. The comment hurdle is high because interacting on someone else’s site is different from interacting on what is supposed to be your own, such as your Twitter or Facebook feed.</p>
-<p>The project <a href="https://indieweb.org/"><strong>IndieWeb</strong></a> and their approach of <a href="https://indieweb.org/Webmention"><strong>Webmentions</strong></a>, has the goal to fill this gap. As a <a href="https://www.w3.org/TR/webmention/">W3C recommendation</a>, it defines standards how the social interaction of independent blogging solutions can be technically implemented without the need of manual intervention. Let software do the job…</p>
-<p>In this article I will only briefly go into the basics and then show an implementation solution for the SSG <a href="https://hexo.io/"><strong>Hexo</strong></a>.</p>
+<p>The project <a target="_blank" rel="noopener" href="https://indieweb.org/"><strong>IndieWeb</strong></a> and their approach of <a target="_blank" rel="noopener" href="https://indieweb.org/Webmention"><strong>Webmentions</strong></a>, has the goal to fill this gap. As a <a target="_blank" rel="noopener" href="https://www.w3.org/TR/webmention/">W3C recommendation</a>, it defines standards how the social interaction of independent blogging solutions can be technically implemented without the need of manual intervention. Let software do the job…</p>
+<p>In this article I will only briefly go into the basics and then show an implementation solution for the SSG <a target="_blank" rel="noopener" href="https://hexo.io/"><strong>Hexo</strong></a>.</p>
 <span id="more"></span>
 
 <hr>
@@ -383,11 +383,11 @@ In this article I will only briefly go into the basics and then show an implemen
 <li>Frankie’s software then fetches Alex’s post to verify that it really does link back, and then chooses how to display the reaction alongside Frankie’s post.</li>
 </ol>
 </blockquote>
-        <cite><a href="https://allinthehead.com/retro/378/implementing-webmentions">--- Drew McLellan</a></cite>
+        <cite><a target="_blank" rel="noopener" href="https://allinthehead.com/retro/378/implementing-webmentions">--- Drew McLellan</a></cite>
     </div>
   
 
-<p>Basically Webmentions allow notifications between <strong>web addresses</strong>, therefore every post, which is part of the interaction, has to have a unique <a href="https://en.wikipedia.org/wiki/Permalink">permalink</a>.</p>
+<p>Basically Webmentions allow notifications between <strong>web addresses</strong>, therefore every post, which is part of the interaction, has to have a unique <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Permalink">permalink</a>.</p>
 <p>A blog software that wants to support webmentions must cover 4 main points:</p>
 <ol>
 <li>The HTML has to tell others who you are</li>
@@ -412,7 +412,7 @@ In this article I will only briefly go into the basics and then show an implemen
 </tr>
 </thead>
 <tbody><tr>
-<td><a href="http://microformats.org/wiki/h-card"><strong>h-card</strong></a></td>
+<td><a target="_blank" rel="noopener" href="http://microformats.org/wiki/h-card"><strong>h-card</strong></a></td>
 <td>Wrapper for all personal information.<br> <em>All other classes below has to be used on child tags</em></td>
 </tr>
 <tr>
@@ -455,8 +455,8 @@ In this article I will only briefly go into the basics and then show an implemen
     </div>
   
 
-<h3 id="Profile-Information"><a href="#Profile-Information" class="headerlink" title="Profile Information"></a>Profile Information</h3><p>For providing links to other profiles, anchor (<code>A</code>) tags with the special attribute <a href="http://microformats.org/wiki/rel-me"><code>rel=&quot;me&quot;</code></a> will be used, which indicates profile equivalence and can be used for <a href="http://microformats.org/wiki/identity-consolidation">identity-consolidation</a>.</p>
-<p>With this extension of your blog HTML, you are able to sign in using your domain at sites which supports <strong>Web Sign-In</strong> over the concept of <strong>RelMeAuth</strong>, for example those who use <a href="https://indieauth.net/"><strong>IndieAuth.net - OAuth for the open web</strong></a>. You only have to make sure, that the endpoints of your profile links have <strong>backlinks to your blog</strong> with a <code>rel=&quot;me</code>“. Unfortunately, not many services offer the definition of such a backlink. Github, for example, is an exception. You can give it a try at <a href="https://indieauth.com/">IndieAuth.com</a>.</p>
+<h3 id="Profile-Information"><a href="#Profile-Information" class="headerlink" title="Profile Information"></a>Profile Information</h3><p>For providing links to other profiles, anchor (<code>A</code>) tags with the special attribute <a target="_blank" rel="noopener" href="http://microformats.org/wiki/rel-me"><code>rel=&quot;me&quot;</code></a> will be used, which indicates profile equivalence and can be used for <a target="_blank" rel="noopener" href="http://microformats.org/wiki/identity-consolidation">identity-consolidation</a>.</p>
+<p>With this extension of your blog HTML, you are able to sign in using your domain at sites which supports <strong>Web Sign-In</strong> over the concept of <strong>RelMeAuth</strong>, for example those who use <a target="_blank" rel="noopener" href="https://indieauth.net/"><strong>IndieAuth.net - OAuth for the open web</strong></a>. You only have to make sure, that the endpoints of your profile links have <strong>backlinks to your blog</strong> with a <code>rel=&quot;me</code>“. Unfortunately, not many services offer the definition of such a backlink. Github, for example, is an exception. You can give it a try at <a target="_blank" rel="noopener" href="https://indieauth.com/">IndieAuth.com</a>.</p>
 <h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><p><img src="/post/Hexo-and-the-IndieWeb/about-markup.png" alt="About markup"></p>
 <hr>
 <h2 id="Step-2-The-Article-HTML"><a href="#Step-2-The-Article-HTML" class="headerlink" title="Step 2: The Article HTML"></a>Step 2: The Article HTML</h2><p>Tagging articles with meta information for the IndieWeb is similarly simple, by adding following classes in your article.ejs file:</p>
@@ -468,7 +468,7 @@ In this article I will only briefly go into the basics and then show an implemen
 </tr>
 </thead>
 <tbody><tr>
-<td><a href="http://microformats.org/wiki/h-entry"><strong>h-entry</strong></a></td>
+<td><a target="_blank" rel="noopener" href="http://microformats.org/wiki/h-entry"><strong>h-entry</strong></a></td>
 <td>Wrapper for all article related information</td>
 </tr>
 <tr>
@@ -506,14 +506,14 @@ In this article I will only briefly go into the basics and then show an implemen
 <p>It will be transformed while generating into something like that:</p>
 <figure class="highlight html"><figcaption><span>/output/.../my-fancy-post/index.html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="tag">&lt;<span class="name">article</span> <span class="attr">class</span>=<span class="string">&quot;h-entry&quot;</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;article-inner&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">header</span> <span class="attr">class</span>=<span class="string">&quot;article-header&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;p-name&quot;</span>&gt;</span>My Fancy Post<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;article-entry e-content&quot;</span>&gt;</span></span><br><span class="line">        ...</span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">          Jack has done a wonderful job with his <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://jacks-blog.com/awesome-work&quot;</span>&gt;</span>Awesome Work<span class="tag">&lt;/<span class="name">a</span>&gt;</span>.</span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        ...</span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      ...</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>In the terms of the IndieWeb concept, your post will a be an <a href="https://indieweb.org/article">article</a>, which mentions other posts, as the old-fashioned pingbacks do.</p>
+<p>In the terms of the IndieWeb concept, your post will a be an <a target="_blank" rel="noopener" href="https://indieweb.org/article">article</a>, which mentions other posts, as the old-fashioned pingbacks do.</p>
 <hr>
-<h2 id="Special-Post-Formats"><a href="#Special-Post-Formats" class="headerlink" title="Special Post Formats"></a>Special Post Formats</h2><p>A true interaction takes place, when you are posting in a certain syndication context … with a <a href="https://indieweb.org/note">note</a> as a <a href="https://indieweb.org/responses">response</a> to the work of others, mainly by adding additional classes to the external link:</p>
+<h2 id="Special-Post-Formats"><a href="#Special-Post-Formats" class="headerlink" title="Special Post Formats"></a>Special Post Formats</h2><p>A true interaction takes place, when you are posting in a certain syndication context … with a <a target="_blank" rel="noopener" href="https://indieweb.org/note">note</a> as a <a target="_blank" rel="noopener" href="https://indieweb.org/responses">response</a> to the work of others, mainly by adding additional classes to the external link:</p>
 <ul>
-<li><a href="https://indieweb.org/reply">u-in-reply-to</a> … to indicate that your post is a <strong>reply</strong> to a post as part of a conversation</li>
-<li><a href="https://indieweb.org/like">u-like-of</a> … to indicate that your post is a <strong>like</strong></li>
-<li><a href="https://indieweb.org/repost">u-repost-of</a> … to indicate that your post is a <strong>repost</strong> (100% re-publication)</li>
-<li><a href="https://indieweb.org/bookmark">u-bookmark-of</a> … to indicate that your post is a <strong>bookmark</strong></li>
+<li><a target="_blank" rel="noopener" href="https://indieweb.org/reply">u-in-reply-to</a> … to indicate that your post is a <strong>reply</strong> to a post as part of a conversation</li>
+<li><a target="_blank" rel="noopener" href="https://indieweb.org/like">u-like-of</a> … to indicate that your post is a <strong>like</strong></li>
+<li><a target="_blank" rel="noopener" href="https://indieweb.org/repost">u-repost-of</a> … to indicate that your post is a <strong>repost</strong> (100% re-publication)</li>
+<li><a target="_blank" rel="noopener" href="https://indieweb.org/bookmark">u-bookmark-of</a> … to indicate that your post is a <strong>bookmark</strong></li>
 </ul>
 <p>Every response type can have additional information about your post and the syndication of it.</p>
 <h3 id="Example-REPLY"><a href="#Example-REPLY" class="headerlink" title="Example REPLY"></a>Example REPLY</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;h-entry&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      In reply to: <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">&quot;u-in-reply-to&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://jacks-blog.com/awesome-work&quot;</span>&gt;</span>Jacks Blog: Awesome Work<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;p-name e-content&quot;</span>&gt;</span></span><br><span class="line">      Jack, you have done a wonderful job!</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -528,7 +528,7 @@ In this article I will only briefly go into the basics and then show an implemen
   
 
 <hr>
-<h2 id="Verification"><a href="#Verification" class="headerlink" title="Verification"></a>Verification</h2><p>To check all your changes, you can use <a href="https://indiewebify.me/">IndieWebify.Me (Level 1 &amp; 2)</a>:</p>
+<h2 id="Verification"><a href="#Verification" class="headerlink" title="Verification"></a>Verification</h2><p>To check all your changes, you can use <a target="_blank" rel="noopener" href="https://indiewebify.me/">IndieWebify.Me (Level 1 &amp; 2)</a>:</p>
 <p><img src="/post/Hexo-and-the-IndieWeb/indiewebify-me-level1+2.png" alt="IndieWebify.Me (Level 1 &amp; 2)"></p>
 <hr>
 
@@ -545,7 +545,7 @@ In this article I will only briefly go into the basics and then show an implemen
         <summary>Personal Domain</summary>
         <blockquote><p>… is a domain name that you personally own, control, and use to represent yourself on the internet. Getting a personal domain is the first step towards getting on the indieweb, and is therefore a requirement for IndieMark Level 1</p>
 </blockquote>
-        <cite><a href="https://indieweb.org/personal-domain">--- indieweb.org (Personal Domain)</a></cite>
+        <cite><a target="_blank" rel="noopener" href="https://indieweb.org/personal-domain">--- indieweb.org (Personal Domain)</a></cite>
     </details>
   
 
@@ -554,7 +554,7 @@ In this article I will only briefly go into the basics and then show an implemen
         <summary>Microformats</summary>
         <blockquote><p>… are small patterns of HTML to represent commonly published things like people, events, blog posts, reviews and tags in web pages. They are the quickest &amp; simplest way to provide an API to the information on your website.</p>
 </blockquote>
-        <cite><a href="http://microformats.org/">--- microformats.org (Wiki)</a></cite>
+        <cite><a target="_blank" rel="noopener" href="http://microformats.org/">--- microformats.org (Wiki)</a></cite>
     </details>
   
 
@@ -563,7 +563,7 @@ In this article I will only briefly go into the basics and then show an implemen
         <summary>POSSE</summary>
         <blockquote><p>… is an abbreviation for Publish (on your) Own Site, Syndicate Elsewhere, the practice of posting content on your own site first, then publishing copies or sharing links to third parties (like social media silos) with original post links to provide viewers a path to directly interacting with your content.</p>
 </blockquote>
-        <cite><a href="https://indieweb.org/POSSE">--- indieweb.org (POSSE)</a></cite>
+        <cite><a target="_blank" rel="noopener" href="https://indieweb.org/POSSE">--- indieweb.org (POSSE)</a></cite>
     </details>
   
 
@@ -572,7 +572,7 @@ In this article I will only briefly go into the basics and then show an implemen
         <summary>Backfeed</summary>
         <blockquote><p>… is the process of syndicating interactions on your POSSE copies back (AKA reverse syndicating) to your original posts.</p>
 </blockquote>
-        <cite><a href="https://indieweb.org/backfeed">--- indieweb.org (Backfeed)</a></cite>
+        <cite><a target="_blank" rel="noopener" href="https://indieweb.org/backfeed">--- indieweb.org (Backfeed)</a></cite>
     </details>
   
 
@@ -581,7 +581,7 @@ In this article I will only briefly go into the basics and then show an implemen
         <summary>Web sign-in</summary>
         <blockquote><p>… is signing in to websites using your personal web address (without having to use your e-mail address). Web sign-in supersedes OpenID.</p>
 </blockquote>
-        <cite><a href="https://indieweb.org/Web_sign-in">--- indieweb.org (Web sign-in)</a></cite>
+        <cite><a target="_blank" rel="noopener" href="https://indieweb.org/Web_sign-in">--- indieweb.org (Web sign-in)</a></cite>
     </details>
   
 
@@ -590,7 +590,7 @@ In this article I will only briefly go into the basics and then show an implemen
         <summary>RelMeAuth</summary>
         <blockquote><p>… is a proposed open standard for using rel&#x3D;”me” links to profiles on oauth supporting services to authenticate via either those profiles or your own site. RelMeAuth is the technology behind Web sign-in.</p>
 </blockquote>
-        <cite><a href="http://microformats.org/wiki/RelMeAuth">--- microformats.org (RelMeAuth)</a></cite>
+        <cite><a target="_blank" rel="noopener" href="http://microformats.org/wiki/RelMeAuth">--- microformats.org (RelMeAuth)</a></cite>
     </details>
   
 
@@ -599,14 +599,14 @@ In this article I will only briefly go into the basics and then show an implemen
         <summary>IndieAuth</summary>
         <blockquote><p>… is a federated login protocol for Web sign-in, enabling users to use their own domain to sign in to other sites and services.</p>
 </blockquote>
-        <cite><a href="https://indieweb.org/IndieAuth">--- indieweb.org (IndieAuth)</a></cite>
+        <cite><a target="_blank" rel="noopener" href="https://indieweb.org/IndieAuth">--- indieweb.org (IndieAuth)</a></cite>
     </details>
   
 
 <hr>
 <h2 id="More-Info"><a href="#More-Info" class="headerlink" title="More Info"></a>More Info</h2>
         <ul class="moreinfo-list">
-            <li>A List Apart: <a href="https://alistapart.com/article/webmentions-enabling-better-communication-on-the-internet/">Webmentions: Enabling Better Communication on the Internet</a></li><li>indieweb.org: <a href="https://indieweb.org/Getting_Started">Getting Started</a></li><li>indieweb.org: <a href="https://indieweb.org/How_to_set_up_web_sign-in_on_your_own_domain">How to set up web sign-in on your own domain</a></li><li>indieweb.org: <a href="https://indieweb.org/Webmention-developer#IndieWeb_Examples">IndieWeb Examples</a></li><li>Bryce Wray: <a href="https://brycewray.com/posts/2020/04/webmentions-three-ssgs-1">Webmentions in three SSGs: Part 1</a></li><li>Keith J. Grant: <a href="https://keithjgrant.com/posts/2019/02/adding-webmention-support-to-a-static-site/">Adding Webmention Support to a Static Site</a></li><li>Alessio Caiazza: <a href="https://abisso.org/stream/tags/indieweb/">Articles tagged ´indieweb´</a></li><li>* (Forum): <a href="https://discourse.gohugo.io/t/anyone-for-webmention/10411">Anyone for Webmention?</a></li>
+            <li>A List Apart: <a target="_blank" rel="noopener" href="https://alistapart.com/article/webmentions-enabling-better-communication-on-the-internet/">Webmentions: Enabling Better Communication on the Internet</a></li><li>indieweb.org: <a target="_blank" rel="noopener" href="https://indieweb.org/Getting_Started">Getting Started</a></li><li>indieweb.org: <a target="_blank" rel="noopener" href="https://indieweb.org/How_to_set_up_web_sign-in_on_your_own_domain">How to set up web sign-in on your own domain</a></li><li>indieweb.org: <a target="_blank" rel="noopener" href="https://indieweb.org/Webmention-developer#IndieWeb_Examples">IndieWeb Examples</a></li><li>Bryce Wray: <a target="_blank" rel="noopener" href="https://brycewray.com/posts/2020/04/webmentions-three-ssgs-1">Webmentions in three SSGs: Part 1</a></li><li>Keith J. Grant: <a target="_blank" rel="noopener" href="https://keithjgrant.com/posts/2019/02/adding-webmention-support-to-a-static-site/">Adding Webmention Support to a Static Site</a></li><li>Alessio Caiazza: <a target="_blank" rel="noopener" href="https://abisso.org/stream/tags/indieweb/">Articles tagged ´indieweb´</a></li><li>* (Forum): <a target="_blank" rel="noopener" href="https://discourse.gohugo.io/t/anyone-for-webmention/10411">Anyone for Webmention?</a></li>
         </ul>
     
     </div>
@@ -618,15 +618,15 @@ In this article I will only briefly go into the basics and then show an implemen
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clp89x9dn0029niojgxz921fo">
+      <div class="article-permalink" id="article-permalink-clp8jajwn0029nsow800e7xtw">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb/" 
-           data-id="clp89x9dn0029niojgxz921fo" data-title="Hexo and the IndieWeb" />
+           data-id="clp8jajwn0029nsow800e7xtw" data-title="Hexo and the IndieWeb" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9dn0029niojgxz921fo");
+        initPermalink("clp8jajwn0029nsow800e7xtw");
     });
 </script>
 
@@ -646,7 +646,7 @@ In this article I will only briefly go into the basics and then show an implemen
   <p>
     You can interact with this article (applause, criticism, whatever) by mention it in one of 
     your posts, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
   </p>
 
   <p class="webmention-form-info">
@@ -914,15 +914,15 @@ In this article I will only briefly go into the basics and then show an implemen
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -957,9 +957,9 @@ In this article I will only briefly go into the basics and then show an implemen
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -1167,27 +1167,27 @@ In this article I will only briefly go into the basics and then show an implemen
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>

@@ -134,7 +134,7 @@
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -361,8 +361,8 @@
 <p>The <code>script</code> points to the following ES6 module class in the file <strong>app.js</strong>:</p>
 <figure class="highlight js"><figcaption><span>app.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">App</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="comment">// do something when the class is instantiated</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">init</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// do something to initialize the app</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> &#123; <span class="title class_">App</span> &#125;;</span><br></pre></td></tr></table></figure>
 
-<p>Nothing uncommon so far, if you are familiar with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">ES6 classes</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import">imports</a>&#x2F;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export">exports</a>. </p>
-<p>Now let’s create a <strong>localizations.js</strong> file, to store the needed localized strings in all wanted languages. Every language will have its own branch in a <code>Localizations</code> object, represented by its two-letter <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO-639-1 language code</a>. All translations are accessible via an unique english key word:</p>
+<p>Nothing uncommon so far, if you are familiar with <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">ES6 classes</a> and <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import">imports</a>&#x2F;<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export">exports</a>. </p>
+<p>Now let’s create a <strong>localizations.js</strong> file, to store the needed localized strings in all wanted languages. Every language will have its own branch in a <code>Localizations</code> object, represented by its two-letter <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO-639-1 language code</a>. All translations are accessible via an unique english key word:</p>
 <figure class="highlight js"><figcaption><span>localizations.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">Localizations</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="string">&quot;EN&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;helloWorld&quot;</span>: <span class="string">&quot;Hello World&quot;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&quot;DE&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;helloWorld&quot;</span>: <span class="string">&quot;Hallo Welt&quot;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&quot;ES&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;helloWorld&quot;</span>: <span class="string">&quot;Hola, mundo&quot;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&quot;FR&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;helloWorld&quot;</span>: <span class="string">&quot;Bonjour le monde&quot;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&quot;RU&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;helloWorld&quot;</span>: <span class="string">&quot;Здравствуйте, мир&quot;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&quot;JP&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;helloWorld&quot;</span>: <span class="string">&quot;ハローワールド&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>As we import the <strong>localizations.js</strong> in our <strong>app.js</strong>, we can initialize the localizations in the constructor of the app class with the language code of the users browser:</p>
@@ -378,7 +378,7 @@
 
 <p>This is it …</p>
 <p>In the following <strong>Github</strong> repository you will find a solution based on this example, extented with a language selector, cookie support and some helper methods to keep the code nice and clean:</p>
-<p>  <a href="https://github.com/kristofzerbe/Native-JavaScript-Multilanguage-Templating">https://github.com/kristofzerbe/Native-JavaScript-Multilanguage-Templating</a></p>
+<p>  <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe/Native-JavaScript-Multilanguage-Templating">https://github.com/kristofzerbe/Native-JavaScript-Multilanguage-Templating</a></p>
 <p><img src="/post/Native-JavaScript-Multilanguage-Templating/github-solution.gif"></p>
 
     </div>
@@ -390,15 +390,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clp89x9do002bnioja1fg9ccz">
+      <div class="article-permalink" id="article-permalink-clp8jajwo002bnsow6kkx17no">
     <input class="article-permalink-value" value="https://kiko.io/post/Native-JavaScript-Multilanguage-Templating/" 
-           data-id="clp89x9do002bnioja1fg9ccz" data-title="Native JavaScript Multilanguage Templating" />
+           data-id="clp8jajwo002bnsow6kkx17no" data-title="Native JavaScript Multilanguage Templating" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9do002bnioja1fg9ccz");
+        initPermalink("clp8jajwo002bnsow6kkx17no");
     });
 </script>
 
@@ -418,7 +418,7 @@
   <p>
     You can interact with this article (applause, criticism, whatever) by mention it in one of 
     your posts, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
   </p>
 
   <p class="webmention-form-info">
@@ -729,15 +729,15 @@
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -772,9 +772,9 @@
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -982,27 +982,27 @@
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>

@@ -141,7 +141,7 @@ Scriptlet tag for control flow (no output)
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -364,7 +364,7 @@ Scriptlet tag for control flow (no output)
     
     
     <div class="article-entry e-content">
-      <p>The three main components of a standard installation of the Static Site Generator <a href="https://hexo.io/">Hexo</a> are the template system <a href="https://ejs.co/">EJS (Embedded JavaScript Templating)</a>, <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> for the content and <a href="https://stylus-lang.com/">Stylus</a> for the styles.</p>
+      <p>The three main components of a standard installation of the Static Site Generator <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> are the template system <a target="_blank" rel="noopener" href="https://ejs.co/">EJS (Embedded JavaScript Templating)</a>, <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> for the content and <a target="_blank" rel="noopener" href="https://stylus-lang.com/">Stylus</a> for the styles.</p>
 <p>In the template files are the three main tags for driving content:</p>
 <p><strong>Scriptlet tag for control flow (no output)</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">  ... my JavaScript code to process data into the template</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
@@ -375,7 +375,7 @@ Scriptlet tag for control flow (no output)
 <p><strong>Output of a raw value, usually in the form of a JavaScript function</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%- myFunction() %&gt;</span><br></pre></td></tr></table></figure>
 
-<p><a href="https://hexo.io/docs/helpers">Hexo’s helper system</a> is based on the latter. So you can include a JavaScript file in your template that makes use of the <a href="https://hexo.io/docs/helpers#js"><strong>JS Helper</strong></a> in <code>node_modules\hexo\lib\plugins\helper\js.js</code> as follows …</p>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/docs/helpers">Hexo’s helper system</a> is based on the latter. So you can include a JavaScript file in your template that makes use of the <a target="_blank" rel="noopener" href="https://hexo.io/docs/helpers#js"><strong>JS Helper</strong></a> in <code>node_modules\hexo\lib\plugins\helper\js.js</code> as follows …</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%- <span class="title function_">js</span>(<span class="string">&#x27;/js/dist/myFancyFunctions.js&#x27;</span>) %&gt;</span><br></pre></td></tr></table></figure>
 
 <p>… which will be rendered to:</p>
@@ -394,7 +394,7 @@ Scriptlet tag for control flow (no output)
 <h2 id="The-JSON-Helper"><a href="#The-JSON-Helper" class="headerlink" title="The JSON Helper"></a>The JSON Helper</h2><p>Since Hexo’s developers went a bit over my&#x2F;the target with the helper’s functionality, I had to build my own JSON helper, which is actually just a slightly customized copy of the original:</p>
 <figure class="highlight js"><figcaption><span>themes\landscape\scripts\json-helper.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; htmlTag, url_for &#125; = <span class="built_in">require</span>(<span class="string">&#x27;hexo-util&#x27;</span>);</span><br><span class="line"></span><br><span class="line">hexo.<span class="property">extend</span>.<span class="property">helper</span>.<span class="title function_">register</span>(<span class="string">&#x27;json&#x27;</span>, <span class="keyword">function</span>(<span class="params">...args</span>)&#123;</span><br><span class="line">  <span class="keyword">let</span> result = <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">  </span><br><span class="line">  args.<span class="title function_">flat</span>(<span class="title class_">Infinity</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> item === <span class="string">&#x27;string&#x27;</span> || item <span class="keyword">instanceof</span> <span class="title class_">String</span>) &#123;</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// args = String only</span></span><br><span class="line">      <span class="keyword">let</span> path = item;</span><br><span class="line">      <span class="keyword">if</span> (!path.<span class="title function_">endsWith</span>(<span class="string">&#x27;.json&#x27;</span>)) &#123;</span><br><span class="line">        path += <span class="string">&#x27;.json&#x27;</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      result += <span class="string">`&lt;script src=&quot;<span class="subst">$&#123;url_for.call(<span class="variable language_">this</span>, path)&#125;</span>&quot; type=&quot;application/json&quot;&gt;&lt;/script&gt;\n`</span>;</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// args = Object -&gt; Custom Attributes</span></span><br><span class="line">      item.<span class="property">src</span> = url_for.<span class="title function_">call</span>(<span class="variable language_">this</span>, item.<span class="property">src</span>);</span><br><span class="line">      item.<span class="property">type</span> = <span class="string">&quot;application/json&quot;</span>;</span><br><span class="line">      <span class="keyword">if</span> (!item.<span class="property">src</span>.<span class="title function_">endsWith</span>(<span class="string">&#x27;.json&#x27;</span>)) item.<span class="property">src</span> += <span class="string">&#x27;.json&#x27;</span>;</span><br><span class="line">      result += <span class="title function_">htmlTag</span>(<span class="string">&#x27;script&#x27;</span>, &#123; ...item &#125;, <span class="string">&#x27;&#x27;</span>) + <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<p>You can find the complete file <a href="https://github.com/kristofzerbe/kiko.io/blob/master/themes/landscape/scripts/json-helper.js">here</a>.</p>
+<p>You can find the complete file <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe/kiko.io/blob/master/themes/landscape/scripts/json-helper.js">here</a>.</p>
 <p>With this its possible to reference the JSON like this:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%- <span class="title function_">json</span>(<span class="string">&#x27;js/dist/myOptions.json&#x27;</span>) %&gt;</span><br></pre></td></tr></table></figure>
 
@@ -423,15 +423,15 @@ Scriptlet tag for control flow (no output)
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clp89x9ec003cnioj7ab456w6">
+      <div class="article-permalink" id="article-permalink-clp8jajx1003cnsowbaqe7bnb">
     <input class="article-permalink-value" value="https://kiko.io/post/Include-and-provide-JSON-data-in-Hexo-EJS-Templates/" 
-           data-id="clp89x9ec003cnioj7ab456w6" data-title="Include and provide JSON data in Hexo EJS Templates" />
+           data-id="clp8jajx1003cnsowbaqe7bnb" data-title="Include and provide JSON data in Hexo EJS Templates" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9ec003cnioj7ab456w6");
+        initPermalink("clp8jajx1003cnsowbaqe7bnb");
     });
 </script>
 
@@ -450,8 +450,8 @@ Scriptlet tag for control flow (no output)
 <div class="article-interaction" data-pagefind-ignore>
   <p>
     You can interact with this article (applause, criticism, whatever) by mention it in one of 
-    your posts or by replying to its syndication on <a class="mastodon" href="https://indieweb.social/@kiko/110617439442558814">Mastodon</a>, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+    your posts or by replying to its syndication on <a class="mastodon" target="_blank" rel="noopener" href="https://indieweb.social/@kiko/110617439442558814">Mastodon</a>, which will also be shown here as a  
+    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
   </p>
 
   <p class="webmention-form-info">
@@ -770,15 +770,15 @@ Scriptlet tag for control flow (no output)
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -813,9 +813,9 @@ Scriptlet tag for control flow (no output)
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -1023,27 +1023,27 @@ Scriptlet tag for control flow (no output)
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>

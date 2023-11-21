@@ -136,7 +136,7 @@ Many modern applications are written with Web technologies, thanks to cross plat
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -359,31 +359,31 @@ Many modern applications are written with Web technologies, thanks to cross plat
     
     
     <div class="article-entry e-content">
-      <p>While reading the Chris Coyier’s post <a href="https://css-tricks.com/application-specific-links/">Application-Specific Links</a> the other day, I realized what has been bugging me for a long time now: a proper solution for openening a certain URL in a modern Web App.</p>
+      <p>While reading the Chris Coyier’s post <a target="_blank" rel="noopener" href="https://css-tricks.com/application-specific-links/">Application-Specific Links</a> the other day, I realized what has been bugging me for a long time now: a proper solution for openening a certain URL in a modern Web App.</p>
 <p>Since the beginning of the digital age (feels like that), we have files associated to a certain application, installed on our machine, regardless if its running Windows, iOS, OS&#x2F;2 or whatever. We have learned that well and no one questions it … but … the IT world keeps on turning and today we are not only talking about files, but about links.</p>
-<p>Many modern applications are written with Web technologies, thanks to cross platform frameworks like <a href="https://www.electronjs.org/">Electron</a>. Some of them are real apps for working on things, like the famous editor <a href="https://code.visualstudio.com/">Visual Studio Code</a>, and some are mirroring their online services in a desktop app only, like <a href="https://slack.com/intl/en-de/downloads/windows">Slack</a> or <a href="https://www.notion.so/desktop">Notion</a>. However, the latter have the problem how to deal with links to their online services. When a user is sent a link and has become accustomed to using the desktop app, it won’t open in the app as he clicks on it, but in his default browser. The question is, how to associate not only files, but links with certain desktop apps?</p>
+<p>Many modern applications are written with Web technologies, thanks to cross platform frameworks like <a target="_blank" rel="noopener" href="https://www.electronjs.org/">Electron</a>. Some of them are real apps for working on things, like the famous editor <a target="_blank" rel="noopener" href="https://code.visualstudio.com/">Visual Studio Code</a>, and some are mirroring their online services in a desktop app only, like <a target="_blank" rel="noopener" href="https://slack.com/intl/en-de/downloads/windows">Slack</a> or <a target="_blank" rel="noopener" href="https://www.notion.so/desktop">Notion</a>. However, the latter have the problem how to deal with links to their online services. When a user is sent a link and has become accustomed to using the desktop app, it won’t open in the app as he clicks on it, but in his default browser. The question is, how to associate not only files, but links with certain desktop apps?</p>
 <span id="more"></span>
 
 <hr>
-<h2 id="Executables-and-URL-Schemes"><a href="#Executables-and-URL-Schemes" class="headerlink" title="Executables and URL Schemes"></a>Executables and URL Schemes</h2><p>Triggered by <a href="https://thomasjfrank.com/how-to-share-notion-links-that-open-directly-in-the-app/">Notions announcement</a> of using a dedicated link protocol <code>notion://</code> to open up Notion links directly in the Notion App, Chris wrote about the possibilities an a Mac to associate certain URL schemes with a Web App in general. His choice fell on <a href="https://www.choosyosx.com/">Choosy</a>, an app which hooks into to the process on opening links by beeing the systems default browser and forwarding the URL to configured applications.</p>
+<h2 id="Executables-and-URL-Schemes"><a href="#Executables-and-URL-Schemes" class="headerlink" title="Executables and URL Schemes"></a>Executables and URL Schemes</h2><p>Triggered by <a target="_blank" rel="noopener" href="https://thomasjfrank.com/how-to-share-notion-links-that-open-directly-in-the-app/">Notions announcement</a> of using a dedicated link protocol <code>notion://</code> to open up Notion links directly in the Notion App, Chris wrote about the possibilities an a Mac to associate certain URL schemes with a Web App in general. His choice fell on <a target="_blank" rel="noopener" href="https://www.choosyosx.com/">Choosy</a>, an app which hooks into to the process on opening links by beeing the systems default browser and forwarding the URL to configured applications.</p>
 <p>Fair enough, but it’s a tool for Mac. However, it was not particularly difficult to find equivalent programs for Windows 10, my preferred OS:</p>
 <ul>
-<li><a href="https://github.com/DanTup/BrowserSelector">Browser Selector</a></li>
-<li><a href="https://github.com/zumoshi/BrowserSelect">Browser Select</a></li>
-<li><a href="https://github.com/mortenn/BrowserPicker">Browser Picker</a></li>
-<li><a href="https://browserchooser2.com/#about">Browser Choose 2</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/DanTup/BrowserSelector">Browser Selector</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/zumoshi/BrowserSelect">Browser Select</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/mortenn/BrowserPicker">Browser Picker</a></li>
+<li><a target="_blank" rel="noopener" href="https://browserchooser2.com/#about">Browser Choose 2</a></li>
 <li>… name yours</li>
 </ul>
 <p>Interestingly, Microsoft already has something similar built into Windows, but prevents users from messing with it:</p>
 <p><img src="/post/Application-Specific-Links-on-Windows-10/apps-for-websites.png" alt="Apps for Websites"></p>
-<p>The feature is targeted from <a href="https://de.wikipedia.org/wiki/Universal_Windows_Platform">UWP</a> applications only, therefore the developer has to implement it by extending the app manifest: <a href="https://blogs.windows.com/windowsdeveloper/2016/10/14/web-to-app-linking-with-appurihandlers/">Web-to-App Linking with AppUriHandlers</a>.</p>
+<p>The feature is targeted from <a target="_blank" rel="noopener" href="https://de.wikipedia.org/wiki/Universal_Windows_Platform">UWP</a> applications only, therefore the developer has to implement it by extending the app manifest: <a target="_blank" rel="noopener" href="https://blogs.windows.com/windowsdeveloper/2016/10/14/web-to-app-linking-with-appurihandlers/">Web-to-App Linking with AppUriHandlers</a>.</p>
 <p>What Chris’ approach and all similar Windows programs have in common is, that they are based on executables, EXE files and yes, the cross-platform apps mentioned above are executables, but for me this is too short. What about Chromium based Progressive Web Apps (PWA)?</p>
-<p>Since the Chromium team has introduced the possibility to add a website as desktop shortcut and start it in a new window, without any browser specific toolbars and other stuff, it became very popular, especially if this website was implemented by the developer as a <a href="https://web.dev/progressive-web-apps/">PWA</a>.It does not matter whether all PWA features, such as offline mode or similar, are available. The mere fact of being able to use an online service in its own window is a gain.</p>
+<p>Since the Chromium team has introduced the possibility to add a website as desktop shortcut and start it in a new window, without any browser specific toolbars and other stuff, it became very popular, especially if this website was implemented by the developer as a <a target="_blank" rel="noopener" href="https://web.dev/progressive-web-apps/">PWA</a>.It does not matter whether all PWA features, such as offline mode or similar, are available. The mere fact of being able to use an online service in its own window is a gain.</p>
 <p>But such an app has no specific executable! It will be executed by the browser with some parameters itself. The question is, how to associate a certain URL scheme or a custom protocol with these web apps?</p>
 <hr>
 <h2 id="PWA’s-on-Windows"><a href="#PWA’s-on-Windows" class="headerlink" title="PWA’s on Windows"></a>PWA’s on Windows</h2><p>Some basics about how Chromium based browsers are dealing with this feature:</p>
-<p>As you click on <strong>Create Shortcut…</strong> in the <strong>More Tools</strong> menu in Chrome or Edge and confirm the following dialog (or install the PWA), a new folder in <code>%LOCALAPPDATA%\Google\Chrome\User Data\Default\Web Applications</code> will be created. Its name starts with <code>_crx_</code> and is followed by a random string (so called <strong>app-id</strong>), f.e. <strong><code>ffokdlainpppngbbhdcobaocmbobgdii</code></strong>. In this folder the <a href="https://en.wikipedia.org/wiki/Favicon">Favicon</a> of the website is stored.</p>
-<p>If it is a real PWA and has a <a href="https://developer.mozilla.org/de/docs/Web/Manifest">Web App Manifest</a>, you will find all resources defined there in another subfolder named by the app-id below <code>%LOCALAPPDATA%\Google\Chrome\User Data\Default\Web Applications\Manifest Resources</code>.</p>
+<p>As you click on <strong>Create Shortcut…</strong> in the <strong>More Tools</strong> menu in Chrome or Edge and confirm the following dialog (or install the PWA), a new folder in <code>%LOCALAPPDATA%\Google\Chrome\User Data\Default\Web Applications</code> will be created. Its name starts with <code>_crx_</code> and is followed by a random string (so called <strong>app-id</strong>), f.e. <strong><code>ffokdlainpppngbbhdcobaocmbobgdii</code></strong>. In this folder the <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Favicon">Favicon</a> of the website is stored.</p>
+<p>If it is a real PWA and has a <a target="_blank" rel="noopener" href="https://developer.mozilla.org/de/docs/Web/Manifest">Web App Manifest</a>, you will find all resources defined there in another subfolder named by the app-id below <code>%LOCALAPPDATA%\Google\Chrome\User Data\Default\Web Applications\Manifest Resources</code>.</p>
 
     <div class="alertbox alertbox-exclamation">
       <p>The paths differ depending on which browser profile is active. In this case <strong>‘default’</strong>.</p>
@@ -391,13 +391,13 @@ Many modern applications are written with Web technologies, thanks to cross plat
     </div>
   
 
-<p>The desktop shortcut, which will be created, points to an executable named <code>chrome_proxy.exe</code> or <code>msedge_proxy.exe</code>. These files are scaled-down versions of the browser executable itself. Its main purpose is to bypass a Windows error as described in its <a href="https://chromium.googlesource.com/chromium/src/+/refs/heads/main/chrome/chrome_proxy/chrome_proxy_main_win.cc">source code</a>, in order to create a correct shortcut.</p>
+<p>The desktop shortcut, which will be created, points to an executable named <code>chrome_proxy.exe</code> or <code>msedge_proxy.exe</code>. These files are scaled-down versions of the browser executable itself. Its main purpose is to bypass a Windows error as described in its <a target="_blank" rel="noopener" href="https://chromium.googlesource.com/chromium/src/+/refs/heads/main/chrome/chrome_proxy/chrome_proxy_main_win.cc">source code</a>, in order to create a correct shortcut.</p>
 <p>The important part of the shortcut are the calling parameters:</p>
 <ul>
 <li><code>--app-id</code> - the random ID generated by the browser</li>
 <li><code>--profile-directory</code> - the browser profile to use; mostly ‘default’</li>
 </ul>
-<p>If you are interested, Chromium has dozens of parameters, some to change the behaviour and others only for debugging purposes. Peter Beverloo provides an automatic generated <a href="https://peter.sh/experiments/chromium-command-line-switches/">List of all Chromium Command Line Switches</a>.</p>
+<p>If you are interested, Chromium has dozens of parameters, some to change the behaviour and others only for debugging purposes. Peter Beverloo provides an automatic generated <a target="_blank" rel="noopener" href="https://peter.sh/experiments/chromium-command-line-switches/">List of all Chromium Command Line Switches</a>.</p>
 <h3 id="…-a-bit-deeper-just-for-fun"><a href="#…-a-bit-deeper-just-for-fun" class="headerlink" title="… a bit deeper, just for fun"></a>… a bit deeper, just for fun</h3><p>The following has nothing to do with the actual problem and doesn’t help in any way, but it was interesting to dig a bit deeper into the operating principles of Chromium.</p>
 <p>As we saw that the browser creates a unique ID for the new shortcut, we find all needed data referenced in the file <code>%LOCALAPPDATA%\Google\Chrome\User Data\Default\preferences</code>. It has no extension, but it is a JSON file.</p>
 <p>Two sections are relevant in this file:</p>
@@ -425,7 +425,7 @@ Many modern applications are written with Web technologies, thanks to cross plat
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;web+myfancyapp:settings&quot;</span>&gt;</span>Go To Settings<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>The registration and a click on such a link causes the browser to request <code>https://my-fancy-web-app.com/?url=settings</code>.</p>
-<p>For understandable reasons some protocols are blacklisted, like <em>mailto</em>, <em>irc</em>, <em>tel</em> and others. Custom protocol schemes has to have the prefix <code>web+</code>, in order to avoid interference with the standardized protocols. As of May 2021, it is part of the <a href="https://developers.google.com/web/updates/capabilities">capabilities project</a> and is in development currently.</p>
+<p>For understandable reasons some protocols are blacklisted, like <em>mailto</em>, <em>irc</em>, <em>tel</em> and others. Custom protocol schemes has to have the prefix <code>web+</code>, in order to avoid interference with the standardized protocols. As of May 2021, it is part of the <a target="_blank" rel="noopener" href="https://developers.google.com/web/updates/capabilities">capabilities project</a> and is in development currently.</p>
 <p>Nice … but doesn’t helps in solving our problem in the first place, because we can’t yet break out of the browser with it. We need something to tell the browser that an installed PWA is responsible for this protocol…</p>
 <hr>
 <h2 id="Manifest-Protocol-Handlers"><a href="#Manifest-Protocol-Handlers" class="headerlink" title="Manifest Protocol Handlers"></a>Manifest Protocol Handlers</h2><p>There is no official W3C proposal, but experiments around the Chromium team to extend the <strong>PWA’s manifest file</strong> like that:</p>
@@ -436,7 +436,7 @@ Many modern applications are written with Web technologies, thanks to cross plat
 <h2 id="Manifest-URL-Handlers"><a href="#Manifest-URL-Handlers" class="headerlink" title="Manifest URL Handlers"></a>Manifest URL Handlers</h2><p>Another approach on connecting certain links to a PWA is similar to the manifests <code>protocol_handlers</code> but for URL schemes. No need for registering a protocol … browser just parse the URL and show up my app:</p>
 <figure class="highlight json"><figcaption><span>web.manifest</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;url_handlers&quot;</span> <span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">  <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;origin&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://my-fancy-app.com&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;origin&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://*.my-fancy-app.com&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
 
-<p>Simple and straightforward. There is a <a href="https://www.chromestatus.com/feature/5739732661174272">Chrome Platform Page</a> for this feature and the current status is <em>Origin Trial</em> for version 93!</p>
+<p>Simple and straightforward. There is a <a target="_blank" rel="noopener" href="https://www.chromestatus.com/feature/5739732661174272">Chrome Platform Page</a> for this feature and the current status is <em>Origin Trial</em> for version 93!</p>
 <p>To try it out, you can enable <code>#enable-desktop-pwas-url-handling</code> in Edge and Chrome:</p>
 <p><img src="/post/Application-Specific-Links-on-Windows-10/enable-desktop-pwas-url-handling.png" alt="Chrome Flag: Desktop PWA URL handling"></p>
 <p>But … it is also not even on the way to an official proposal :|</p>
@@ -446,7 +446,7 @@ Many modern applications are written with Web technologies, thanks to cross plat
 <hr>
 <h2 id="More-Info"><a href="#More-Info" class="headerlink" title="More Info"></a>More Info</h2>
         <ul class="moreinfo-list">
-            <li>whatwg.org: <a href="https://html.spec.whatwg.org/multipage/system-state.html#custom-handlers">HTML - Living Standard</a></li><li>MDB Web Docs: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/registerProtocolHandler/Web-based_protocol_handlers">Web-based protocol handlers</a></li><li>Thomas Steiner (web.dev): <a href="https://web.dev/url-protocol-handler/">URL protocol handler registration for PWAs</a></li><li>Matt West: <a href="https://mattwest.design/registering-protocol-handlers-to-intercept-special-links">Registering Protocol Handlers to Intercept Special Links</a></li><li>Gyuyoung: <a href="https://blogs.igalia.com/gyuyoung/2017/12/13/what-is-navigator-registerprotocolhandler/">What is navigator.registerProtocolHandler?</a></li><li>GitHub Issue on W3C/Manifest: <a href="https://github.com/w3c/manifest/issues/846">Add manifest option for PWAs to be registered as scheme/protocol handlers</a></li><li>MDN Web Docs: <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest/protocol_handlers">protocol_handlers</a></li><li>Microsoft Docs: <a href="https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/experimental-features">Experimental features in Progressive Web Apps (PWAs)</a></li><li>GitHub MicrosoftEdge/MSEdgeExplainers: <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/URLProtocolHandler/explainer.md">URL Protocol Handler Registration for PWAs</a></li>
+            <li>whatwg.org: <a target="_blank" rel="noopener" href="https://html.spec.whatwg.org/multipage/system-state.html#custom-handlers">HTML - Living Standard</a></li><li>MDB Web Docs: <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/registerProtocolHandler/Web-based_protocol_handlers">Web-based protocol handlers</a></li><li>Thomas Steiner (web.dev): <a target="_blank" rel="noopener" href="https://web.dev/url-protocol-handler/">URL protocol handler registration for PWAs</a></li><li>Matt West: <a target="_blank" rel="noopener" href="https://mattwest.design/registering-protocol-handlers-to-intercept-special-links">Registering Protocol Handlers to Intercept Special Links</a></li><li>Gyuyoung: <a target="_blank" rel="noopener" href="https://blogs.igalia.com/gyuyoung/2017/12/13/what-is-navigator-registerprotocolhandler/">What is navigator.registerProtocolHandler?</a></li><li>GitHub Issue on W3C/Manifest: <a target="_blank" rel="noopener" href="https://github.com/w3c/manifest/issues/846">Add manifest option for PWAs to be registered as scheme/protocol handlers</a></li><li>MDN Web Docs: <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/Manifest/protocol_handlers">protocol_handlers</a></li><li>Microsoft Docs: <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/experimental-features">Experimental features in Progressive Web Apps (PWAs)</a></li><li>GitHub MicrosoftEdge/MSEdgeExplainers: <a target="_blank" rel="noopener" href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/URLProtocolHandler/explainer.md">URL Protocol Handler Registration for PWAs</a></li>
         </ul>
     
 
@@ -469,15 +469,15 @@ Many modern applications are written with Web technologies, thanks to cross plat
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clp89x9dd001onioj372f32ni">
+      <div class="article-permalink" id="article-permalink-clp8jajwg001pnsowejfp745u">
     <input class="article-permalink-value" value="https://kiko.io/post/Application-Specific-Links-on-Windows-10/" 
-           data-id="clp89x9dd001onioj372f32ni" data-title="Application-Specific Links on Windows 10" />
+           data-id="clp8jajwg001pnsowejfp745u" data-title="Application-Specific Links on Windows 10" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9dd001onioj372f32ni");
+        initPermalink("clp8jajwg001pnsowejfp745u");
     });
 </script>
 
@@ -497,7 +497,7 @@ Many modern applications are written with Web technologies, thanks to cross plat
   <p>
     You can interact with this article (applause, criticism, whatever) by mention it in one of 
     your posts, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
   </p>
 
   <p class="webmention-form-info">
@@ -812,15 +812,15 @@ Many modern applications are written with Web technologies, thanks to cross plat
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -855,9 +855,9 @@ Many modern applications are written with Web technologies, thanks to cross plat
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -1065,27 +1065,27 @@ Many modern applications are written with Web technologies, thanks to cross plat
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>

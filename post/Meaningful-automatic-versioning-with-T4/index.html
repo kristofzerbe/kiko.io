@@ -136,7 +136,7 @@ But seriously … who does that? I guess 99% of all C# developers are entering t
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -377,7 +377,7 @@ But seriously … who does that? I guess 99% of all C# developers are entering t
 <p>But, the BUILD number should explain, how often a software with a particular MAJOR.MINOR has been build, due to minor changes and bug fixes.</p>
 <p>The “Asterisk” REVISION number is a little weird, but at least with the BUILD number unique. But it says nothing. Better to pick up the idea of a date calculated, unique number, but not an arbitrary date … let’s take the date the project has started.</p>
 <p>For example: <strong>1.2.16.158</strong> … reads version 1.2 with 16 builds on the 158’th day after the project has started.</p>
-<h2 id="Start-with-T4"><a href="#Start-with-T4" class="headerlink" title="Start with T4"></a>Start with T4</h2><p>T4 (Text Template Transformation Toolkit) is a templating system in Visual Studio for generating text files during design time. It is very suitable to even generate code. Read about it <a href="https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates">here</a> and <a href="https://docs.microsoft.com/en-us/visualstudio/modeling/writing-a-t4-text-template">here</a>.</p>
+<h2 id="Start-with-T4"><a href="#Start-with-T4" class="headerlink" title="Start with T4"></a>Start with T4</h2><p>T4 (Text Template Transformation Toolkit) is a templating system in Visual Studio for generating text files during design time. It is very suitable to even generate code. Read about it <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates">here</a> and <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/visualstudio/modeling/writing-a-t4-text-template">here</a>.</p>
 <p>A Text Template (.tt) has <strong>Directives</strong> (how the template is processed), <strong>Text blocks</strong> (text copied to the output) and <strong>Control blocks</strong> (program code).</p>
 <p>For our versioning template, we start with this in a new file named <strong><code>AssemblyVersion.tt</code></strong>:</p>
 <p><em>Directives</em>:</p>
@@ -442,7 +442,7 @@ But seriously … who does that? I guess 99% of all C# developers are entering t
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="meta">#</span></span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Set REVISION</span></span><br><span class="line">    <span class="keyword">var</span> dateCreated = DateTime.Parse(avObject.initialDate);</span><br><span class="line">    <span class="built_in">int</span> revision = (DateTime.Now.Date - dateCreated.Date).Days;</span><br><span class="line"><span class="meta">#&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="Transforming-T4-template-on-build"><a href="#Transforming-T4-template-on-build" class="headerlink" title="Transforming T4 template on build"></a>Transforming T4 template on build</h2><p>The last hurdle is to run the text transformation every time you build your product. Until now it runs only on saving the <code>AssemblyVersion.tt</code>.</p>
-<p>A great helper on that was Thomas Levesque’s post <a href="https://thomaslevesque.com/2017/11/13/transform-t4-templates-as-part-of-the-build-and-pass-variables-from-the-project/">“Transform T4 templates as part of the build, and pass variables from the project”</a>, where he describes every difficulty to reach this goal.</p>
+<p>A great helper on that was Thomas Levesque’s post <a target="_blank" rel="noopener" href="https://thomaslevesque.com/2017/11/13/transform-t4-templates-as-part-of-the-build-and-pass-variables-from-the-project/">“Transform T4 templates as part of the build, and pass variables from the project”</a>, where he describes every difficulty to reach this goal.</p>
 <p>To make it short: We have to edit the CSPROJ file again, to introduce TextTemplating to MSBuild.</p>
 <p>First we need following near the beginning of the projects XML:</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">PropertyGroup</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">VisualStudioVersion</span> <span class="attr">Condition</span>=<span class="string">&quot;&#x27;$(VisualStudioVersion)&#x27; == &#x27;&#x27;&quot;</span>&gt;</span></span><br><span class="line">      16.0</span><br><span class="line">    <span class="tag">&lt;/<span class="name">VisualStudioVersion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">VSToolsPath</span> <span class="attr">Condition</span>=<span class="string">&quot;&#x27;$(VSToolsPath)&#x27; == &#x27;&#x27;&quot;</span>&gt;</span></span><br><span class="line">      $(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</span><br><span class="line">    <span class="tag">&lt;/<span class="name">VSToolsPath</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">TransformOnBuild</span>&gt;</span>true<span class="tag">&lt;/<span class="name">TransformOnBuild</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">OverwriteReadOnlyOutputFiles</span>&gt;</span>true<span class="tag">&lt;/<span class="name">OverwriteReadOnlyOutputFiles</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">TransformOutOfDateOnly</span>&gt;</span>false<span class="tag">&lt;/<span class="name">TransformOutOfDateOnly</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">PropertyGroup</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -451,7 +451,7 @@ But seriously … who does that? I guess 99% of all C# developers are entering t
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Import</span> <span class="attr">Project</span>=<span class="string">&quot;$(MSBuildToolsPath)\Microsoft.CSharp.targets&quot;</span> /&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;<span class="name">Import</span> <span class="attr">Project</span>=<span class="string">&quot;$(VSToolsPath)\TextTemplating\Microsoft.TextTemplating.targets&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>If you build your product now, a new build log is created and the version numbers BUILD and REVISION are automatically increased.</p>
-<h2 id="See-it-in-action"><a href="#See-it-in-action" class="headerlink" title="See it in action"></a>See it in action</h2><p>The project where I implemented this versioning first is <a href="https://github.com/kristofzerbe/HexoCommander">HexoCommander</a>. Feel free to download the code and see how the new versioning mechanism works.</p>
+<h2 id="See-it-in-action"><a href="#See-it-in-action" class="headerlink" title="See it in action"></a>See it in action</h2><p>The project where I implemented this versioning first is <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe/HexoCommander">HexoCommander</a>. Feel free to download the code and see how the new versioning mechanism works.</p>
 <p><img src="/post/Meaningful-automatic-versioning-with-T4/screencast-build-hexocommander.gif" alt="Screencast Build HexoCommander"></p>
 <p>Enjoy versioning…</p>
 
@@ -464,15 +464,15 @@ But seriously … who does that? I guess 99% of all C# developers are entering t
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clp89x9cz000xniojh2re9e83">
+      <div class="article-permalink" id="article-permalink-clp8jajw0000xnsow9k1bba0i">
     <input class="article-permalink-value" value="https://kiko.io/post/Meaningful-automatic-versioning-with-T4/" 
-           data-id="clp89x9cz000xniojh2re9e83" data-title="Meaningful automatic versioning with T4" />
+           data-id="clp8jajw0000xnsow9k1bba0i" data-title="Meaningful automatic versioning with T4" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9cz000xniojh2re9e83");
+        initPermalink("clp8jajw0000xnsow9k1bba0i");
     });
 </script>
 
@@ -492,7 +492,7 @@ But seriously … who does that? I guess 99% of all C# developers are entering t
   <p>
     You can interact with this article (applause, criticism, whatever) by mention it in one of 
     your posts, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
   </p>
 
   <p class="webmention-form-info">
@@ -637,15 +637,15 @@ But seriously … who does that? I guess 99% of all C# developers are entering t
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -680,9 +680,9 @@ But seriously … who does that? I guess 99% of all C# developers are entering t
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -890,27 +890,27 @@ But seriously … who does that? I guess 99% of all C# developers are entering t
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>

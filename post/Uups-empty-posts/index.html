@@ -139,7 +139,7 @@ The key to achive that in Hexo is the configuration option post_asset_folder: tr
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -362,10 +362,10 @@ The key to achive that in Hexo is the configuration option post_asset_folder: tr
     
     
     <div class="article-entry e-content">
-      <p>A while ago I wrote about <a href="/post/Automatic-Duplicate-Image-Shadow/" title="Automatic Duplicate Image Shadow">Automatic Duplicate Image Shadow</a> and used <a href="https://indiepen.tech/">indiepen</a> for showing the result of my efforts.</p>
+      <p>A while ago I wrote about <a href="/post/Automatic-Duplicate-Image-Shadow/" title="Automatic Duplicate Image Shadow">Automatic Duplicate Image Shadow</a> and used <a target="_blank" rel="noopener" href="https://indiepen.tech/">indiepen</a> for showing the result of my efforts.</p>
 
     <div class="alertbox alertbox-note">
-      <p><strong><a href="https://indiepen.tech/">indiepen</a></strong> is a solution for showing code samples without the need of a code sharing platform, like <a href="https://codepen.io/">codepen</a>. Just reference a <code>index.html</code>, <code>main.js</code> and <code>styles.css</code> from wherever you want and indiepen is wrapping it with a neat viewer inside an IFrame.</p>
+      <p><strong><a target="_blank" rel="noopener" href="https://indiepen.tech/">indiepen</a></strong> is a solution for showing code samples without the need of a code sharing platform, like <a target="_blank" rel="noopener" href="https://codepen.io/">codepen</a>. Just reference a <code>index.html</code>, <code>main.js</code> and <code>styles.css</code> from wherever you want and indiepen is wrapping it with a neat viewer inside an IFrame.</p>
 
     </div>
   
@@ -383,10 +383,10 @@ The key to achive that in Hexo is the configuration option post_asset_folder: tr
 <span id="more"></span>
 
 <hr>
-<p><strong>The indiepen files in the asset subfolder were treated like posts by Hexo by no obvious reason!</strong> A short research on the web lead me to a Github issue called <a href="https://github.com/hexojs/hexo/issues/1490">asset files were rendered when post_asset_folder set to true</a> from 2015, with several requests to fix the bug.</p>
+<p><strong>The indiepen files in the asset subfolder were treated like posts by Hexo by no obvious reason!</strong> A short research on the web lead me to a Github issue called <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues/1490">asset files were rendered when post_asset_folder set to true</a> from 2015, with several requests to fix the bug.</p>
 <p>Since I’m little familiar with Hexo’s processors, I saw two ways to fix the problem:</p>
 <ol>
-<li>Write a plugin like <a href="https://github.com/printempw/hexo-hide-posts">Hexo Hide Posts</a> to filter out unwanted “posts” after processing</li>
+<li>Write a plugin like <a target="_blank" rel="noopener" href="https://github.com/printempw/hexo-hide-posts">Hexo Hide Posts</a> to filter out unwanted “posts” after processing</li>
 <li>Try to find the problem in Hexo’s source code, to avoid these files to be treated as posts a priori</li>
 </ol>
 <p>After a little searching around in Hexo’s source code, I was able to identify the location where the problem was. In the post processor:</p>
@@ -405,7 +405,7 @@ The key to achive that in Hexo is the configuration option post_asset_folder: tr
 <p>These considerations led to a small extension of the above code below line 24:</p>
 <figure class="highlight js"><figcaption><span>./node_modules/hexo/lib/plugins/processor/post.js (shortened)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"></span><br><span class="line">result.<span class="property">renderable</span> = ctx.<span class="property">render</span>.<span class="title function_">isRenderable</span>(path) &amp;&amp; !<span class="title function_">isMatch</span>(path, ctx.<span class="property">config</span>.<span class="property">skip_render</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//if post_asset_folder is set, restrict renderable files to default file extension </span></span><br><span class="line"><span class="keyword">if</span> (result.<span class="property">renderable</span> &amp;&amp; ctx.<span class="property">config</span>.<span class="property">post_asset_folder</span>) &#123;</span><br><span class="line">  result.<span class="property">renderable</span> = (<span class="title function_">extname</span>(ctx.<span class="property">config</span>.<span class="property">new_post_name</span>) === <span class="title function_">extname</span>(path));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
-<p>This is what I pushed as a <a href="https://github.com/hexojs/hexo/pull/4781">Pull Request</a> to the Hexo team today. I know, it not ideal, but maybe they accept my approach and ship the fix with the next version.</p>
+<p>This is what I pushed as a <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/pull/4781">Pull Request</a> to the Hexo team today. I know, it not ideal, but maybe they accept my approach and ship the fix with the next version.</p>
 
     </div>
     
@@ -416,15 +416,15 @@ The key to achive that in Hexo is the configuration option post_asset_folder: tr
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clp89x9dy002rnioj7ky47veu">
+      <div class="article-permalink" id="article-permalink-clp8jajwt002rnsow3acqalyu">
     <input class="article-permalink-value" value="https://kiko.io/post/Uups-empty-posts/" 
-           data-id="clp89x9dy002rnioj7ky47veu" data-title="Uups ... empty posts" />
+           data-id="clp8jajwt002rnsow3acqalyu" data-title="Uups ... empty posts" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9dy002rnioj7ky47veu");
+        initPermalink("clp8jajwt002rnsow3acqalyu");
     });
 </script>
 
@@ -444,7 +444,7 @@ The key to achive that in Hexo is the configuration option post_asset_folder: tr
   <p>
     You can interact with this article (applause, criticism, whatever) by mention it in one of 
     your posts, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
   </p>
 
   <p class="webmention-form-info">
@@ -763,15 +763,15 @@ The key to achive that in Hexo is the configuration option post_asset_folder: tr
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -806,9 +806,9 @@ The key to achive that in Hexo is the configuration option post_asset_folder: tr
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -1016,27 +1016,27 @@ The key to achive that in Hexo is the configuration option post_asset_folder: tr
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>

@@ -135,7 +135,7 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -361,29 +361,29 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
     
     <div class="article-entry e-content">
       <p>Displaying a few more images than usual in a post is always a bit tricky, because you have to make sure they don’t get too big and drown out the text. But they should not be too small either and the arrangement is also important to consider.</p>
-<p>For this purpose I have so far used my <a href="/post/Hexo-Tag-Plugin-Collection/#image-slide">Image Slider Tag Plugin</a>, but with this you only ever see one of the images and have to scroll through the rest horizontally. A medium sized overview, best in the so called masonry format, where images are automatically assembled based on their size on a limited area, would be much better for some cases. There are a variety of CSS or JavaScript solutions out there on the net, but the most suitable for me was <a href="http://macyjs.com/"><strong>Macy.js</strong></a> … and how I integrated it into my Hexo environment is what I want to describe here.</p>
+<p>For this purpose I have so far used my <a href="/post/Hexo-Tag-Plugin-Collection/#image-slide">Image Slider Tag Plugin</a>, but with this you only ever see one of the images and have to scroll through the rest horizontally. A medium sized overview, best in the so called masonry format, where images are automatically assembled based on their size on a limited area, would be much better for some cases. There are a variety of CSS or JavaScript solutions out there on the net, but the most suitable for me was <a target="_blank" rel="noopener" href="http://macyjs.com/"><strong>Macy.js</strong></a> … and how I integrated it into my Hexo environment is what I want to describe here.</p>
 <span id="more"></span>
 
-<p>Like (<a href="https://github.com/ganlanyuan/tiny-slider">Tiny Slider</a>), Macy.js is also based on JavaScript, as the name already expresses. The setup in HTML is very simple: a certain number of wrappers are arranged in a container, each of which contains an image:</p>
+<p>Like (<a target="_blank" rel="noopener" href="https://github.com/ganlanyuan/tiny-slider">Tiny Slider</a>), Macy.js is also based on JavaScript, as the name already expresses. The setup in HTML is very simple: a certain number of wrappers are arranged in a container, each of which contains an image:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;macy-container&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/photos/normal/D50_0053.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/photos/normal/D50_0075.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/photos/normal/D50_0086.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/photos/normal/D50_1092.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/photos/normal/D50_1147.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/photos/normal/D50_1577.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/photos/normal/_D50_3251.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br></pre></td></tr></table></figure>
 
 <p>It does not matter whether the images are the same size or whether they are in portrait or landscape format. Macy.js then takes care of the sensible arrangement of the images in the container. All that is missing now is the call to the script:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> macy = <span class="keyword">new</span> <span class="title class_">Macy</span>(&#123;</span><br><span class="line">  <span class="attr">container</span>: <span class="string">&#x27;#macy-container&#x27;</span>,</span><br><span class="line">  <span class="attr">trueOrder</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">waitForImages</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">useOwnImageLoader</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">debug</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">mobileFirst</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">columns</span>: <span class="number">2</span>,</span><br><span class="line">  <span class="attr">margin</span>: &#123;</span><br><span class="line">    <span class="attr">y</span>: <span class="number">6</span>,</span><br><span class="line">    <span class="attr">x</span>: <span class="number">6</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">breakAt</span>: &#123;</span><br><span class="line">    <span class="number">1024</span>: &#123;</span><br><span class="line">      <span class="attr">margin</span>: &#123;</span><br><span class="line">        <span class="attr">x</span>: <span class="number">8</span>,</span><br><span class="line">        <span class="attr">y</span>: <span class="number">8</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">columns</span>: <span class="number">4</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="number">768</span>: <span class="number">3</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<p>For more information on the available parameters (and there are some interesting), please visit <a href="https://github.com/bigbite/macy.js">https://github.com/bigbite/macy.js</a>.</p>
+<p>For more information on the available parameters (and there are some interesting), please visit <a target="_blank" rel="noopener" href="https://github.com/bigbite/macy.js">https://github.com/bigbite/macy.js</a>.</p>
 <hr>
-<h2 id="The-Tag-Plugin"><a href="#The-Tag-Plugin" class="headerlink" title="The Tag Plugin"></a>The Tag Plugin</h2><p>To make it easy for Hexo users, I created a tag plugin from the code above and added it to my <a href="https://github.com/kristofzerbe/hexo-tag-plugins#image-masonry">Hexo Tag Plugin Collection on GitHub</a>.</p>
+<h2 id="The-Tag-Plugin"><a href="#The-Tag-Plugin" class="headerlink" title="The Tag Plugin"></a>The Tag Plugin</h2><p>To make it easy for Hexo users, I created a tag plugin from the code above and added it to my <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe/hexo-tag-plugins#image-masonry">Hexo Tag Plugin Collection on GitHub</a>.</p>
 <p><strong>Usage Example:</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;% image_masonry</span><br><span class="line">  <span class="string">&quot;../../photos/normal/D50_0053.jpg|Thomas&#x27; Ruby Prince I&quot;</span></span><br><span class="line">  <span class="string">&quot;../../photos/normal/_D50_3251.jpg|No Name&quot;</span></span><br><span class="line">  <span class="string">&quot;../../photos/normal/D50_0086.jpg|Thomas&#x27; German Flag&quot;</span></span><br><span class="line">  <span class="string">&quot;../../photos/normal/D50_1147.jpg|Poppy Green&quot;</span></span><br><span class="line">  <span class="string">&quot;../../photos/normal/D50_0075.jpg|Thomas Wild Tulips&quot;</span></span><br><span class="line">  <span class="string">&quot;../../photos/normal/D50_7474.jpg|Garden Beauties XIV&quot;</span></span><br><span class="line">  <span class="string">&quot;../../photos/normal/D50_4451.jpg|Garden Beauties I&quot;</span></span><br><span class="line">  <span class="string">&quot;../../photos/normal/D50_1577.jpg|Floral Magic XIV&quot;</span></span><br><span class="line">%&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>Live Output:</strong></p>
 
-      <div class="image-masonry" id="image-masonry-jiqm2z">
+      <div class="image-masonry" id="image-masonry-xnx1tr">
         <div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0053.jpg" alt="Thomas' Ruby Prince I" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/_D50_3251.jpg" alt="No Name" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0086.jpg" alt="Thomas' German Flag" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_1147.jpg" alt="Poppy Green" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0075.jpg" alt="Thomas Wild Tulips" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_7474.jpg" alt="Garden Beauties XIV" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_4451.jpg" alt="Garden Beauties I" /></div><div><img class="no-caption" src="/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_1577.jpg" alt="Floral Magic XIV" /></div>
       </div>
       <script>
-        let macy_jiqm2z = new Macy({
-          container: '#image-masonry-jiqm2z',
+        let macy_xnx1tr = new Macy({
+          container: '#image-masonry-xnx1tr',
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -428,15 +428,15 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clp89x9ec003bniojglut04nz">
+      <div class="article-permalink" id="article-permalink-clp8jajx1003bnsow7gmfewo9">
     <input class="article-permalink-value" value="https://kiko.io/post/Image-Masonry-Tag-Plugin-for-Hexo/" 
-           data-id="clp89x9ec003bniojglut04nz" data-title="Image Masonry Tag Plugin for Hexo" />
+           data-id="clp8jajx1003bnsow7gmfewo9" data-title="Image Masonry Tag Plugin for Hexo" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9ec003bniojglut04nz");
+        initPermalink("clp8jajx1003bnsow7gmfewo9");
     });
 </script>
 
@@ -455,8 +455,8 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
 <div class="article-interaction" data-pagefind-ignore>
   <p>
     You can interact with this article (applause, criticism, whatever) by mention it in one of 
-    your posts or by replying to its syndication on <a class="mastodon" href="https://indieweb.social/@kiko/110991254816820166">Mastodon</a>, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+    your posts or by replying to its syndication on <a class="mastodon" target="_blank" rel="noopener" href="https://indieweb.social/@kiko/110991254816820166">Mastodon</a>, which will also be shown here as a  
+    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
   </p>
 
   <p class="webmention-form-info">
@@ -771,15 +771,15 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -814,9 +814,9 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -1024,27 +1024,27 @@ For this purpose I have so far used my Image Slider Tag Plugin, but with this yo
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>

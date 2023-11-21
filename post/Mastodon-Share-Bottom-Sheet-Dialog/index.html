@@ -141,7 +141,7 @@ But seriously … does it take an external service to ask the user for an instan
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -367,17 +367,17 @@ But seriously … does it take an external service to ask the user for an instan
       <p>Social media thrives on sharing. Thoughts, experiences, self-dramatizations or even texts or posts from other people. This is especially true for microblogging on (formerly) Twitter and (today) Mastodon. To make this easy, the platforms often offer a SHARE endpoint (URL), such as the famous</p>
 <p><code>http://www.twitter.com/share?text=My impossible thoughts on X</code></p>
 <p>… or any dirt buttons to collect user data.</p>
-<p>A few months after the groundbreaking of Mastodon 2016, such a feature was also <a href="https://github.com/mastodon/mastodon/issues/442">discussed and implemented</a> on GitHub and out came: </p>
+<p>A few months after the groundbreaking of Mastodon 2016, such a feature was also <a target="_blank" rel="noopener" href="https://github.com/mastodon/mastodon/issues/442">discussed and implemented</a> on GitHub and out came: </p>
 <p><code>https://&lt;your-instance&gt;/share&amp;text=My benevolent thoughts on the Fediverse</code></p>
 <p>But … where Twitter had it easy due to its central structure (twitter.com … period.), we Mastodon users all fidget around on <strong>different instances</strong>, i.e. each instance has its own <code>/SHARE</code> endpoint and so it’s a bit harder to stick a share button on your own blog, because you have to ask the user where he lives.</p>
-<p>Of course, online services like <a href="https://toot.kytta.dev/">toot.kytta.dev</a>, <a href="https://s2f.kytta.dev/">s2f.kytta.dev</a>, <a href="https://mastodonshare.com/">mastodonshare.com</a> sprouted immediately, but also the button providers expanded their portfolio or new ones were launched, like <a href="https://shareon.js.org/">shareon.js.org</a>, <a href="https://share-on-mastodon.social/">share-on-mastodon.social</a>, <a href="https://www.shareaholic.com/website-tools/social-share-buttons/mastodon/">shareaholic.com</a>.</p>
+<p>Of course, online services like <a target="_blank" rel="noopener" href="https://toot.kytta.dev/">toot.kytta.dev</a>, <a target="_blank" rel="noopener" href="https://s2f.kytta.dev/">s2f.kytta.dev</a>, <a target="_blank" rel="noopener" href="https://mastodonshare.com/">mastodonshare.com</a> sprouted immediately, but also the button providers expanded their portfolio or new ones were launched, like <a target="_blank" rel="noopener" href="https://shareon.js.org/">shareon.js.org</a>, <a target="_blank" rel="noopener" href="https://share-on-mastodon.social/">share-on-mastodon.social</a>, <a target="_blank" rel="noopener" href="https://www.shareaholic.com/website-tools/social-share-buttons/mastodon/">shareaholic.com</a>.</p>
 <p>But seriously … does it take an external service to ask the user for an instance name and redirect him to an URL (and run the risk of falling victim to data collection mania)? Because that’s all it is. All of the above do it exactly that way.</p>
 <p><img src="/post/Mastodon-Share-Bottom-Sheet-Dialog/indieweb-social-share.png" alt="indieweb.social Share"></p>
-<p>So we come to the ready-made developer solutions e.g. How-To tutorials. Here, too, there are a lot of hits after a search: <a href="https://github.com/codesyntax/mastodon-share-button">Mastodon-share-button (WebComponent)</a>, <a href="https://github.com/Aly-ve/Mastodon-share-button">Mastodon-share-button (JS)</a>, <a href="https://www.bentasker.co.uk/posts/documentation/general/adding-a-share-on-mastodon-button-to-a-website.html">Adding a Share On Mastodon button to a website</a>, <a href="https://christianheilmann.com/2023/08/18/adding-a-share-to-mastodon-link-to-any-web-site-and-here/">Adding a “share to mastodon” link to any web site – and here</a>, <a href=""></a> … and I’ll join them here for my Hexo-driven blog.</p>
+<p>So we come to the ready-made developer solutions e.g. How-To tutorials. Here, too, there are a lot of hits after a search: <a target="_blank" rel="noopener" href="https://github.com/codesyntax/mastodon-share-button">Mastodon-share-button (WebComponent)</a>, <a target="_blank" rel="noopener" href="https://github.com/Aly-ve/Mastodon-share-button">Mastodon-share-button (JS)</a>, <a target="_blank" rel="noopener" href="https://www.bentasker.co.uk/posts/documentation/general/adding-a-share-on-mastodon-button-to-a-website.html">Adding a Share On Mastodon button to a website</a>, <a target="_blank" rel="noopener" href="https://christianheilmann.com/2023/08/18/adding-a-share-to-mastodon-link-to-any-web-site-and-here/">Adding a “share to mastodon” link to any web site – and here</a>, <a href=""></a> … and I’ll join them here for my Hexo-driven blog.</p>
 <span id="more"></span>
 
 <hr>
-<h2 id="My-Mastodon-Share-Variant"><a href="#My-Mastodon-Share-Variant" class="headerlink" title="My Mastodon Share Variant"></a>My Mastodon Share Variant</h2><p>It’s really not hard to develop an appealing looking and working JavaScript solution to the “problem”. Where <a href="https://toot.cafe/@codepo8">Christian Heilmann</a> (last link in the list above) relies on a simple <code>window.prompt</code>, I recently introduced my Bottom Sheet dialogs in this blog (<a href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/" title="Show pages meta data (JSON-LD) in Bottom Sheet">here</a> and <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/" title="Extension of downupPopup: Back Button, Escape Key &amp; More">here</a>), which are perfectly suited for this.</p>
+<h2 id="My-Mastodon-Share-Variant"><a href="#My-Mastodon-Share-Variant" class="headerlink" title="My Mastodon Share Variant"></a>My Mastodon Share Variant</h2><p>It’s really not hard to develop an appealing looking and working JavaScript solution to the “problem”. Where <a target="_blank" rel="noopener" href="https://toot.cafe/@codepo8">Christian Heilmann</a> (last link in the list above) relies on a simple <code>window.prompt</code>, I recently introduced my Bottom Sheet dialogs in this blog (<a href="/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/" title="Show pages meta data (JSON-LD) in Bottom Sheet">here</a> and <a href="/post/Extension-of-downupPopup-Back-Button-Escape-Key-More/" title="Extension of downupPopup: Back Button, Escape Key &amp; More">here</a>), which are perfectly suited for this.</p>
 <p>Each shareable post should get a SHARE button that lets a bottom sheet pop out where the user can enter their instance name, which is then remembered for next time, and already contains suggested text (title, description, and url of the post) for the Mastodon toot.</p>
 <h3 id="The-Button"><a href="#The-Button" class="headerlink" title="The Button"></a>The Button</h3><p>In every post the interaction section is rendered and there is now a new button, which calls a new dialog method, described later on:</p>
 <figure class="highlight js"><figcaption><span>themes\landscape\layout\_partial\post\interaction.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">&lt;button onclick=<span class="string">&quot;dialog.shareOnMastodon();&quot;</span> <span class="keyword">class</span>=<span class="string">&quot;share mastodon&quot;</span>&gt;<span class="title class_">Share</span> on <span class="title class_">Mastodon</span>&lt;/button&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
@@ -393,7 +393,7 @@ But seriously … does it take an external service to ask the user for an instan
 <p><img src="/post/Mastodon-Share-Bottom-Sheet-Dialog/mastodon-share-dialog.gif" alt="Mastodon Share Dialog on kiko.io"></p>
 <p>… or look at the button in the bottom right corner and use it ;)</p>
 <p>As I said, it’s just a tool to make it easier for the user to share your content via a URL of their instance to their audience. There is no external stuff, data collection or influence on what is shared. Just JavaScript, HTML running in the browser and one cookie for convenience.</p>
-<p>You can find all files as usual on the GitHub repo of this blog at <a href="https://github.com/kristofzerbe/kiko.io">https://github.com/kristofzerbe/kiko.io</a></p>
+<p>You can find all files as usual on the GitHub repo of this blog at <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe/kiko.io">https://github.com/kristofzerbe/kiko.io</a></p>
 
     </div>
     
@@ -407,15 +407,15 @@ But seriously … does it take an external service to ask the user for an instan
   
   
 
-      <div class="article-permalink" id="article-permalink-clp89x9ee003fniojdjol6gu5">
+      <div class="article-permalink" id="article-permalink-clp8jajx3003gnsowhnznbunj">
     <input class="article-permalink-value" value="https://kiko.io/post/Mastodon-Share-Bottom-Sheet-Dialog/" 
-           data-id="clp89x9ee003fniojdjol6gu5" data-title="Mastodon Share Bottom Sheet Dialog" />
+           data-id="clp8jajx3003gnsowhnznbunj" data-title="Mastodon Share Bottom Sheet Dialog" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9ee003fniojdjol6gu5");
+        initPermalink("clp8jajx3003gnsowhnznbunj");
     });
 </script>
 
@@ -435,7 +435,7 @@ But seriously … does it take an external service to ask the user for an instan
   <p>
     You can interact with this article (applause, criticism, whatever) by mention it in one of 
     your posts, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
   </p>
 
   <p class="webmention-form-info">
@@ -744,15 +744,15 @@ But seriously … does it take an external service to ask the user for an instan
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -787,9 +787,9 @@ But seriously … does it take an external service to ask the user for an instan
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -997,27 +997,27 @@ But seriously … does it take an external service to ask the user for an instan
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>

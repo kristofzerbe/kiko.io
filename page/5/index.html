@@ -132,7 +132,7 @@
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -280,7 +280,7 @@
     </p>
     <p>
       My latest stuff is below and here is more <a href="/about">about me</a>. 
-      Meet me <a href="https://indieweb.social/@kiko">@kiko@indieweb.social</a>.
+      Meet me <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko">@kiko@indieweb.social</a>.
     </p>
     <hr>
   </div>
@@ -351,8 +351,8 @@
 
 <hr>
 <p>A couple of days ago I wrote about my attempt to <a href="/post/Integration-of-Pagefind-in-Hexo/" title="Integration of Pagefind in Hexo">integrate Pagefind in my blog</a>. In the meantime, I further refined the indexing by excluding more content areas and adding more for the metadata to make the search results even better.</p>
-<p>But one thing was still missing: controlling the search via url parameters, so that you can actually consider the page as a search page. I came across this in a post about the sense and nonsense of Open Graph attributes and other search engine related metadata nowadays. Google, for example, <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data">likes to use JSON-LD</a> and when describing the site you can define a search page which then makes it easier to search the site directly via Google … see <a href="https://developers.google.com/search/docs/appearance/structured-data/sitelinks-searchbox">Sitelinks search box (WebSite) structured data</a></p>
-<p>In my implementation, I decided to adapt the <a href="https://pagefind.app/docs/ui/">Pagefind UI</a> for myself instead of developing everything from scratch via JavaScript. There are always some limitations with pre-built solutions, but I want to show here that they are actually none for the inclusion of a url parameter.</p>
+<p>But one thing was still missing: controlling the search via url parameters, so that you can actually consider the page as a search page. I came across this in a post about the sense and nonsense of Open Graph attributes and other search engine related metadata nowadays. Google, for example, <a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data">likes to use JSON-LD</a> and when describing the site you can define a search page which then makes it easier to search the site directly via Google … see <a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/appearance/structured-data/sitelinks-searchbox">Sitelinks search box (WebSite) structured data</a></p>
+<p>In my implementation, I decided to adapt the <a target="_blank" rel="noopener" href="https://pagefind.app/docs/ui/">Pagefind UI</a> for myself instead of developing everything from scratch via JavaScript. There are always some limitations with pre-built solutions, but I want to show here that they are actually none for the inclusion of a url parameter.</p>
       
         <p class="article-more-link">
           <a href="/post/Pagefind-UI-and-URL-Parameters/#continue">Continue reading ...</a>
@@ -377,15 +377,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clp89x9ee003hnioje5i8etxy">
+      <div class="article-permalink" id="article-permalink-clp8jajx3003hnsow4i0hcojz">
     <input class="article-permalink-value" value="https://kiko.io/post/Pagefind-UI-and-URL-Parameters/" 
-           data-id="clp89x9ee003hnioje5i8etxy" data-title="Pagefind UI and URL Parameters" />
+           data-id="clp8jajx3003hnsow4i0hcojz" data-title="Pagefind UI and URL Parameters" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9ee003hnioje5i8etxy");
+        initPermalink("clp8jajx3003hnsow4i0hcojz");
     });
 </script>
 
@@ -452,16 +452,16 @@
 <p>There are a few Hexo plugins that have approached the subject, but it was not really satisfactory and performant. So I relied on the worlds biggest search engine: Google. A search button, which drives out a small input field and with the pressing of the ENTER key the form was sent via GET to <code>//google.com/search</code>.</p>
 <p><img src="/post/Integration-of-Pagefind-in-Hexo/google-site-search.png" alt="Google Site Search on kiko.io"></p>
 <p>The procedure was simple, but also burdened with the fact that I always expose my users to Google. At least until now … :)</p>
-<p><a href="https://mstdn.social/@BryceWrayTX">Bryce Wray</a> set me on a new path with his post <a href="https://www.brycewray.com/posts/2022/12/sweeter-searches-pagefind/">Sweeter searches with Pagefind</a>, in which he talks about his experience with the still fairly fresh tool <a href="https://pagefind.app/"><strong>Pagefind</strong></a>…</p>
+<p><a target="_blank" rel="noopener" href="https://mstdn.social/@BryceWrayTX">Bryce Wray</a> set me on a new path with his post <a target="_blank" rel="noopener" href="https://www.brycewray.com/posts/2022/12/sweeter-searches-pagefind/">Sweeter searches with Pagefind</a>, in which he talks about his experience with the still fairly fresh tool <a target="_blank" rel="noopener" href="https://pagefind.app/"><strong>Pagefind</strong></a>…</p>
 
     <div>
         <blockquote><p>Pagefind is a fully static search library that aims to perform well on large sites, while using as little of your users’ bandwidth as possible, and without hosting any infrastructure …</p>
 </blockquote>
-        <cite><a href="https://pagefind.app/">--- Liam Bigelow @ pagefind.app</a></cite>
+        <cite><a target="_blank" rel="noopener" href="https://pagefind.app/">--- Liam Bigelow @ pagefind.app</a></cite>
     </div>
   
 
-<p>Pardon me? A full text search for SSG’s running completely in the browser? It sounded so great that I had to try it right away. And what can I say … it not only works fantastically well, but is also extremely easy to implement. Of course, you have to consider a few things, especially with regard to the SSG Hexo I use, but I didn’t find any big hurdles, also because the tool is so <a href="https://pageind.app/">well documented</a>. Let’s see what my implementation looks like…</p>
+<p>Pardon me? A full text search for SSG’s running completely in the browser? It sounded so great that I had to try it right away. And what can I say … it not only works fantastically well, but is also extremely easy to implement. Of course, you have to consider a few things, especially with regard to the SSG Hexo I use, but I didn’t find any big hurdles, also because the tool is so <a target="_blank" rel="noopener" href="https://pageind.app/">well documented</a>. Let’s see what my implementation looks like…</p>
       
         <p class="article-more-link">
           <a href="/post/Integration-of-Pagefind-in-Hexo/#continue">Continue reading ...</a>
@@ -486,15 +486,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clp89x9ed003dnioj7ibcezvh">
+      <div class="article-permalink" id="article-permalink-clp8jajx2003dnsowg4605s1f">
     <input class="article-permalink-value" value="https://kiko.io/post/Integration-of-Pagefind-in-Hexo/" 
-           data-id="clp89x9ed003dnioj7ibcezvh" data-title="Integration of Pagefind in Hexo" />
+           data-id="clp8jajx2003dnsowg4605s1f" data-title="Integration of Pagefind in Hexo" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9ed003dnioj7ibcezvh");
+        initPermalink("clp8jajx2003dnsowg4605s1f");
     });
 </script>
 
@@ -549,8 +549,8 @@
     
     
     <div class="article-entry">
-      <p>Every year CodePen publishes a list of the 100 most “liked” pens on their site: <a href="https://codepen.io/2022/popular/">The Most Hearted of 2022</a>. It’s always exciting to scroll through the list and marvel at the incredibly good work of CSS artists. </p>
-<p>My favorite in terms of CSS coding art this year is the work <a href="https://codepen.io/ivorjetski/pen/yLjeqgb">A moment of pure CSS</a> by Ben Evans. Absolutely amazing what he does with pure CSS:</p>
+      <p>Every year CodePen publishes a list of the 100 most “liked” pens on their site: <a target="_blank" rel="noopener" href="https://codepen.io/2022/popular/">The Most Hearted of 2022</a>. It’s always exciting to scroll through the list and marvel at the incredibly good work of CSS artists. </p>
+<p>My favorite in terms of CSS coding art this year is the work <a target="_blank" rel="noopener" href="https://codepen.io/ivorjetski/pen/yLjeqgb">A moment of pure CSS</a> by Ben Evans. Absolutely amazing what he does with pure CSS:</p>
 <p><img src="/post/Favourite-Pens-of-2022/a-moment-of-pure-css.png" alt="Really ... no image involved!"></p>
 <p>From all these works you can take a lot of know-how for yourself, but many of these pens have no practical use at first, i.e. you can’t really use them directly on your own website. They are art. Some of them impressed me not only because of their creativity, but I saved them on my own Trello list to try them out in one of the next projects. Partly they are clever approaches regarding usability, partly more or less standard functions were implemented in a visually impressive way. Some of them need some JS to work, sime of them not. Let yourself be inspired …</p>
       
@@ -577,15 +577,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clp89x9ea0036nioj9ic74b30">
+      <div class="article-permalink" id="article-permalink-clp8jajwy0037nsow19zwgqso">
     <input class="article-permalink-value" value="https://kiko.io/post/Favourite-Pens-of-2022/" 
-           data-id="clp89x9ea0036nioj9ic74b30" data-title="Favourite Pens of 2022" />
+           data-id="clp8jajwy0037nsow19zwgqso" data-title="Favourite Pens of 2022" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9ea0036nioj9ic74b30");
+        initPermalink("clp8jajwy0037nsow19zwgqso");
     });
 </script>
 
@@ -671,15 +671,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clp89x9e50030nioj4sx3doni">
+      <div class="article-permalink" id="article-permalink-clp8jajwv0030nsow88i1fxxg">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-22-Tips-Tricks/" 
-           data-id="clp89x9e50030nioj4sx3doni" data-title="Discoveries #22 -  Tips/Tricks" />
+           data-id="clp8jajwv0030nsow88i1fxxg" data-title="Discoveries #22 -  Tips/Tricks" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9e50030nioj4sx3doni");
+        initPermalink("clp8jajwv0030nsow88i1fxxg");
     });
 </script>
 
@@ -753,7 +753,7 @@
 <li>Setting the author</li>
 <li>Setting the screenshot file</li>
 </ol>
-<p>I do use two tag plugins (<a href="https://github.com/kristofzerbe/kiko.io/blob/2c80a548e188c05879039a15e67419b548bfbfcd/themes/landscape/scripts/tag-anchorlist.js">tag-anchorlist</a> and <a href="https://github.com/kristofzerbe/kiko.io/blob/2c80a548e188c05879039a15e67419b548bfbfcd/themes/landscape/scripts/tag-discovery.js">tag-discovery</a>) for this in the post draft, but despite that, it’s quite time-consuming and always the same procedure that can be wonderfully automated… and here I’d like to write about how I approached this task, while I’m working on it.</p>
+<p>I do use two tag plugins (<a target="_blank" rel="noopener" href="https://github.com/kristofzerbe/kiko.io/blob/2c80a548e188c05879039a15e67419b548bfbfcd/themes/landscape/scripts/tag-anchorlist.js">tag-anchorlist</a> and <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe/kiko.io/blob/2c80a548e188c05879039a15e67419b548bfbfcd/themes/landscape/scripts/tag-discovery.js">tag-discovery</a>) for this in the post draft, but despite that, it’s quite time-consuming and always the same procedure that can be wonderfully automated… and here I’d like to write about how I approached this task, while I’m working on it.</p>
       
         <p class="article-more-link">
           <a href="/post/Generate-Content-from-Trello/#continue">Continue reading ...</a>
@@ -778,15 +778,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clp89x9d9001dniojescn3wqt">
+      <div class="article-permalink" id="article-permalink-clp8jajwb001dnsowatqm2739">
     <input class="article-permalink-value" value="https://kiko.io/post/Generate-Content-from-Trello/" 
-           data-id="clp89x9d9001dniojescn3wqt" data-title="Generate Content from Trello" />
+           data-id="clp8jajwb001dnsowatqm2739" data-title="Generate Content from Trello" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9d9001dniojescn3wqt");
+        initPermalink("clp8jajwb001dnsowatqm2739");
     });
 </script>
 
@@ -863,15 +863,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clp89x9d8001bnioj75hlacj1">
+      <div class="article-permalink" id="article-permalink-clp8jajwa001cnsow3spydkte">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-21-Sites-Pages/" 
-           data-id="clp89x9d8001bnioj75hlacj1" data-title="Discoveries #21 -  Sites &amp; Pages" />
+           data-id="clp8jajwa001cnsow3spydkte" data-title="Discoveries #21 -  Sites &amp; Pages" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9d8001bnioj75hlacj1");
+        initPermalink("clp8jajwa001cnsow3spydkte");
     });
 </script>
 
@@ -935,7 +935,7 @@
     
     <div class="article-entry">
       <p>I’ve started this blog in 2019 with <a href="/post/How-To-Visual-Studio-Database-Project-and-ADSI/" title="How-To: Visual Studio Database Project and ADSI">this article</a> primarily because I needed an area to record things learned for myself, with the side effect that others can benefit from it if they want.</p>
-<p>Why my choice fell on the static site generator <a href="https://hexo.io/">Hexo</a>, I no longer know, but I have now become accustomed (even to the shortcomings) and so far I have been able to implement all my ideas in it … and I had a few of them.</p>
+<p>Why my choice fell on the static site generator <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>, I no longer know, but I have now become accustomed (even to the shortcomings) and so far I have been able to implement all my ideas in it … and I had a few of them.</p>
 <p>In this post I would like to share a few experiences I have had with Hexo, regarding the main functionality and the things I’ve customized and describe my workflow behind the individual features of my blog. The latter is not as straightforward as I would like it to be, especially because I have different devices in use that require different approaches. The main purpose of this post is to simply write down for me, how things currently work on kiko.io and to have one or the other idea how to do it better while writing. Doing this publicly is in the hope that you might read this and have a terrific idea that I haven’t come up with yet and leave a comment or webmention … :)</p>
       
         <p class="article-more-link">
@@ -961,15 +961,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clp89x9dc001mnioj6duwdpz8">
+      <div class="article-permalink" id="article-permalink-clp8jajwf001mnsowaipmcq5m">
     <input class="article-permalink-value" value="https://kiko.io/post/The-State-of-the-Blog/" 
-           data-id="clp89x9dc001mnioj6duwdpz8" data-title="The State of the Blog" />
+           data-id="clp8jajwf001mnsowaipmcq5m" data-title="The State of the Blog" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9dc001mnioj6duwdpz8");
+        initPermalink("clp8jajwf001mnsowaipmcq5m");
     });
 </script>
 
@@ -1030,13 +1030,13 @@
     
     
     <div class="article-entry">
-      <p>This weekend I had a revival experience. I got myself a <a href="https://joinmastodon.org/"><strong>Mastodon</strong></a> account, after many years of staying away from social media as far as I could and at most tweeting a new blog post. Since my active Twitter days, things have taken such a turn for the worse, that I’ve preferred to stay away completely.</p>
+      <p>This weekend I had a revival experience. I got myself a <a target="_blank" rel="noopener" href="https://joinmastodon.org/"><strong>Mastodon</strong></a> account, after many years of staying away from social media as far as I could and at most tweeting a new blog post. Since my active Twitter days, things have taken such a turn for the worse, that I’ve preferred to stay away completely.</p>
 <p>I don’t know what made me join Mastodon on Sunday, but it sparked something in me: The love for the good old internet of the late 90s, early 2000s. These guys gave me a warm welcome and made me feel that Internet communities, away from sleazy influencers and banner ads, could actually still work. I got a taste of it, when I let this blog become part of IndieWeb over a year ago, but didn’t quite believe in it because of the low traffic and mentions.</p>
 <p>Now the richest man on the planet has to come along and buy the bird site, and a niche product called Mastodon, well known but underestimated in tech circles, almost explodes under the onslaught of disappointed commercial users. And that’s what we are on Twitter, Facebook and Co … a commercial object.</p>
 <p>The problem now will be how the community can integrate these many users for whom it was not mentally prepared. What now adapts to whom? The most important thing, however, will be to teach the newcomers (and I count myself among them) that Mastodon is not Twitter in new clothes!</p>
-<p>I was going to write a few things about this, but this morning I read a Twitter thread from <a href="https://mastodon.green/@pjakobs"><strong>Peter Jakobs</strong></a>, a self-proclaimed digital Aboriginal from Germany, that just sums it all up and explains it so well I could hardly do it:</p>
-<p><a href="https://twitter.com/pjakobs/status/1590276045521195008"><img src="/post/Mastodon-simply-explained/tweet-peter-jakobs-22-11-09.png" alt="Tweet from Peter Jakobs, November 29, 2022"></a></p>
-<p>That’s why I’m now doing something I’ve never done before: I quote Peter here completely, translated from German into English … Curtain up (and thank you <a href="https://www.deepl.com/en/translator">DeepL</a> :D):</p>
+<p>I was going to write a few things about this, but this morning I read a Twitter thread from <a target="_blank" rel="noopener" href="https://mastodon.green/@pjakobs"><strong>Peter Jakobs</strong></a>, a self-proclaimed digital Aboriginal from Germany, that just sums it all up and explains it so well I could hardly do it:</p>
+<p><a target="_blank" rel="noopener" href="https://twitter.com/pjakobs/status/1590276045521195008"><img src="/post/Mastodon-simply-explained/tweet-peter-jakobs-22-11-09.png" alt="Tweet from Peter Jakobs, November 29, 2022"></a></p>
+<p>That’s why I’m now doing something I’ve never done before: I quote Peter here completely, translated from German into English … Curtain up (and thank you <a target="_blank" rel="noopener" href="https://www.deepl.com/en/translator">DeepL</a> :D):</p>
       
         <p class="article-more-link">
           <a href="/post/Mastodon-simply-explained/#continue">Continue reading ...</a>
@@ -1064,15 +1064,15 @@
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clp89x9da001fnioj16sq55v9">
+      <div class="article-permalink" id="article-permalink-clp8jajwc001fnsow56it5qwz">
     <input class="article-permalink-value" value="https://kiko.io/post/Mastodon-simply-explained/" 
-           data-id="clp89x9da001fnioj16sq55v9" data-title="Mastodon simply explained" />
+           data-id="clp8jajwc001fnsow56it5qwz" data-title="Mastodon simply explained" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9da001fnioj16sq55v9");
+        initPermalink("clp8jajwc001fnsow56it5qwz");
     });
 </script>
 
@@ -1164,15 +1164,15 @@
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -1207,9 +1207,9 @@
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -1417,27 +1417,27 @@
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>

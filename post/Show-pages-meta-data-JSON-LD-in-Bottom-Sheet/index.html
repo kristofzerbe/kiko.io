@@ -138,7 +138,7 @@ Since I’ve been a fan of the so-called bottom sheets since the first version o
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -373,7 +373,7 @@ Since I’ve been a fan of the so-called bottom sheets since the first version o
 <span id="more"></span>
 
 <hr>
-<h2 id="The-Bottom-Sheet-Component"><a href="#The-Bottom-Sheet-Component" class="headerlink" title="The Bottom Sheet Component"></a>The Bottom Sheet Component</h2><p>Recently I stumbled across a small but nice bottom sheet script that is based on jQuery but that I still use on this blog itself: <a href="https://downuppopupjs.dincerali.com/"><strong>downupPopup.js</strong></a> by <a href="https://dincerali.com/">Ali Dinçer</a>. It has several settings and is just about 5 KB in size, if you add the CSS code. What’s nice about it is, that all the animations that make such a component stand out, are based on said CSS and are not jQuery-driven.</p>
+<h2 id="The-Bottom-Sheet-Component"><a href="#The-Bottom-Sheet-Component" class="headerlink" title="The Bottom Sheet Component"></a>The Bottom Sheet Component</h2><p>Recently I stumbled across a small but nice bottom sheet script that is based on jQuery but that I still use on this blog itself: <a target="_blank" rel="noopener" href="https://downuppopupjs.dincerali.com/"><strong>downupPopup.js</strong></a> by <a target="_blank" rel="noopener" href="https://dincerali.com/">Ali Dinçer</a>. It has several settings and is just about 5 KB in size, if you add the CSS code. What’s nice about it is, that all the animations that make such a component stand out, are based on said CSS and are not jQuery-driven.</p>
 <p>The bottom sheet is based on a base HTML element with a required child element:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;myElement1&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;downupPopup-content&quot;</span>&gt;</span></span><br><span class="line">    Lorem ipsum dolor sit amet...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -389,16 +389,16 @@ Since I’ve been a fan of the so-called bottom sheets since the first version o
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:dpDialog.myFirstTest()&quot;</span>&gt;</span>Open Test Dialog<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>Try here: <a href="javascript:dpDialog.myFirstTest()">Open Test Dialog</a></p>
-<h3 id="Problem-with-the-original-implementation-solved"><a href="#Problem-with-the-original-implementation-solved" class="headerlink" title="Problem with the original implementation solved"></a>Problem with the original implementation solved</h3><p>Ali decided in his original implementation to apply the given settings only once to a popup element. Once initialized, it could not be reused with different settings. To avoid having to destroy an existing element before initializing a new one, which would have caused a massive timing problem due to the animation, I decided to fork his code and give him a <a href="https://github.com/ali-dincer/downupPopup.js/pull/2">pull request</a>.</p>
-<p>You can find my script here, as long as Ali didn’t include the PR in his code: <a href="https://github.com/kristofzerbe/downupPopup.js">kristofzerbe&#x2F;downupPopup.js</a></p>
+<h3 id="Problem-with-the-original-implementation-solved"><a href="#Problem-with-the-original-implementation-solved" class="headerlink" title="Problem with the original implementation solved"></a>Problem with the original implementation solved</h3><p>Ali decided in his original implementation to apply the given settings only once to a popup element. Once initialized, it could not be reused with different settings. To avoid having to destroy an existing element before initializing a new one, which would have caused a massive timing problem due to the animation, I decided to fork his code and give him a <a target="_blank" rel="noopener" href="https://github.com/ali-dincer/downupPopup.js/pull/2">pull request</a>.</p>
+<p>You can find my script here, as long as Ali didn’t include the PR in his code: <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe/downupPopup.js">kristofzerbe&#x2F;downupPopup.js</a></p>
 <hr>
 <h2 id="The-PageMeta-Dialog"><a href="#The-PageMeta-Dialog" class="headerlink" title="The PageMeta Dialog"></a>The PageMeta Dialog</h2><p>Now that I had my desired display option, it was time to bring the <code>pageMeta</code> dialog function to life.</p>
-<p>My first thought was to use a JSON-LD parser in JavaScript provided by <a href="https://json-ld.org/"><strong>json-ld.org</strong></a>, but this is not even quickly usable, since it validates the code to be parsed at runtime against schema.org and every of my calls failed with CORS warnings. Now I didn’t want to turn this into a PhD thesis, I just wanted to display my highly customized JSON-LD, so I worked out the function quite individually.</p>
+<p>My first thought was to use a JSON-LD parser in JavaScript provided by <a target="_blank" rel="noopener" href="https://json-ld.org/"><strong>json-ld.org</strong></a>, but this is not even quickly usable, since it validates the code to be parsed at runtime against schema.org and every of my calls failed with CORS warnings. Now I didn’t want to turn this into a PhD thesis, I just wanted to display my highly customized JSON-LD, so I worked out the function quite individually.</p>
 <h3 id="The-Code-Itself"><a href="#The-Code-Itself" class="headerlink" title="The Code Itself"></a>The Code Itself</h3><p>I wanted to show two things in the dialog: the code itself and a visual representation of it for a better overview.</p>
 <p>Getting the content for the code was really straight forward:</p>
 <figure class="highlight js"><figcaption><span>dialog.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">  <span class="string">&#x27;pageMeta&#x27;</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// INIT DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">init</span>(&#123;</span><br><span class="line">      <span class="attr">headerText</span>: <span class="string">&quot;Page Meta&quot;</span>,</span><br><span class="line">      <span class="attr">contentScroll</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">distance</span>: <span class="number">6</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ADD CONTENT</span></span><br><span class="line">    <span class="comment">// Grab the JSON-LD code from the page</span></span><br><span class="line">    <span class="keyword">let</span> json = <span class="title class_">JSON</span>.<span class="title function_">parse</span>($(<span class="string">&#x27;script[type=&quot;application/ld+json&quot;]&#x27;</span>).<span class="title function_">text</span>());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Create new dialog section for the code</span></span><br><span class="line">    <span class="keyword">let</span> secCode = $(<span class="string">&#x27;&lt;section&gt;&lt;/section&gt;&#x27;</span>).<span class="title function_">appendTo</span>(dpDialog.<span class="property">base</span>.<span class="property">content</span>);</span><br><span class="line">    <span class="comment">// Append header</span></span><br><span class="line">    secCode.<span class="title function_">append</span>(<span class="string">&#x27;&lt;h1&gt;JSON-LD&lt;/h1&gt;&#x27;</span>);</span><br><span class="line">    <span class="comment">// Append formatted code als PRE element</span></span><br><span class="line">    secCode.<span class="title function_">append</span>(<span class="string">&#x27;&lt;pre class=&quot;json&quot;&gt;&#x27;</span> + <span class="title function_">syntaxHighlight</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(json, <span class="literal">undefined</span>, <span class="number">2</span>))) + <span class="string">&#x27;&lt;/pre&gt;&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// OPEN DIALOG</span></span><br><span class="line">    dpDialog.<span class="property">base</span>.<span class="title function_">show</span>();</span><br><span class="line">  &#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
-<p>Since I had taken care to compress my JSON-LD code to save space, I now needed to get it back into a readable format. Time saver was the following script, which I found on <a href="https://stackoverflow.com/questions/4810841/pretty-print-json-using-javascript">StackOverflow (pretty-print JSON using JavaScript)</a>:</p>
+<p>Since I had taken care to compress my JSON-LD code to save space, I now needed to get it back into a readable format. Time saver was the following script, which I found on <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/4810841/pretty-print-json-using-javascript">StackOverflow (pretty-print JSON using JavaScript)</a>:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">syntaxHighlight</span>(<span class="params">json</span>) &#123;</span><br><span class="line">  json = json.<span class="title function_">replace</span>(<span class="regexp">/&amp;/g</span>, <span class="string">&#x27;&amp;amp;&#x27;</span>).<span class="title function_">replace</span>(<span class="regexp">/&lt;/g</span>, <span class="string">&#x27;&amp;lt;&#x27;</span>).<span class="title function_">replace</span>(<span class="regexp">/&gt;/g</span>, <span class="string">&#x27;&amp;gt;&#x27;</span>);</span><br><span class="line">  <span class="keyword">return</span> json.<span class="title function_">replace</span>(<span class="regexp">/(&quot;(\\u[a-zA-Z0-9]&#123;4&#125;|\\[^u]|[^\\&quot;])*&quot;(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g</span>, <span class="keyword">function</span> (<span class="params">match</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> cls = <span class="string">&#x27;number&#x27;</span>;</span><br><span class="line">      <span class="keyword">if</span> (<span class="regexp">/^&quot;/</span>.<span class="title function_">test</span>(match)) &#123;</span><br><span class="line">          <span class="keyword">if</span> (<span class="regexp">/:$/</span>.<span class="title function_">test</span>(match)) &#123;</span><br><span class="line">              cls = <span class="string">&#x27;key&#x27;</span>;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              cls = <span class="string">&#x27;string&#x27;</span>;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/true|false/</span>.<span class="title function_">test</span>(match)) &#123;</span><br><span class="line">          cls = <span class="string">&#x27;boolean&#x27;</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/null/</span>.<span class="title function_">test</span>(match)) &#123;</span><br><span class="line">          cls = <span class="string">&#x27;null&#x27;</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&#x27;&lt;span class=&quot;&#x27;</span> + cls + <span class="string">&#x27;&quot;&gt;&#x27;</span> + match + <span class="string">&#x27;&lt;/span&gt;&#x27;</span>;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight css"><figcaption><span>(Stylus format)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">pre<span class="selector-class">.json</span></span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">&#x27;Roboto Mono&#x27;</span>,monospace</span><br><span class="line">  font-size: <span class="number">13px</span></span><br><span class="line">  .string </span><br><span class="line">    color: <span class="number">#4271ae</span></span><br><span class="line">  .number </span><br><span class="line">    color: <span class="number">#4271ae</span></span><br><span class="line">  .boolean </span><br><span class="line">    color: <span class="number">#4271ae</span></span><br><span class="line">  .null</span><br><span class="line">    color: <span class="number">#ababab</span></span><br><span class="line">  .key</span><br><span class="line">    color: <span class="number">#c15353</span></span><br></pre></td></tr></table></figure>
@@ -410,7 +410,7 @@ Since I’ve been a fan of the so-called bottom sheets since the first version o
 <p>To save space, only one block is included in the example below. The others work similarly. </p>
 
     <div class="alertbox alertbox-info">
-      <p>You can see the complete code here and modify it for your purposes: <a href="https://github.com/kristofzerbe/kiko.io/blob/master/themes/landscape/source/js/dialog.js"><strong>dialog.js</strong> of the blog kiko.io</a>.</p>
+      <p>You can see the complete code here and modify it for your purposes: <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe/kiko.io/blob/master/themes/landscape/source/js/dialog.js"><strong>dialog.js</strong> of the blog kiko.io</a>.</p>
 
     </div>
   
@@ -423,7 +423,7 @@ Since I’ve been a fan of the so-called bottom sheets since the first version o
 <hr>
 <h2 id="More-Information"><a href="#More-Information" class="headerlink" title="More Information"></a>More Information</h2>
         <ul class="moreinfo-list">
-            <li>Ali Dinçer: <a href="https://downuppopupjs.dincerali.com/">downupPopup.js</a></li><li>Kristof Zerbe: <a href="https://github.com/kristofzerbe/downupPopup.js">Fork from downupPopup.js (Make Popup Reusable, with PR)</a></li><li>Google: <a href="https://m3.material.io/components/bottom-sheets/overview">Material Design 3 - Compontents, Bottom Sheets</a></li>
+            <li>Ali Dinçer: <a target="_blank" rel="noopener" href="https://downuppopupjs.dincerali.com/">downupPopup.js</a></li><li>Kristof Zerbe: <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe/downupPopup.js">Fork from downupPopup.js (Make Popup Reusable, with PR)</a></li><li>Google: <a target="_blank" rel="noopener" href="https://m3.material.io/components/bottom-sheets/overview">Material Design 3 - Compontents, Bottom Sheets</a></li>
         </ul>
     
     </div>
@@ -445,15 +445,15 @@ Since I’ve been a fan of the so-called bottom sheets since the first version o
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clp89x9ek003rniojfjuv1s4v">
+      <div class="article-permalink" id="article-permalink-clp8jajya003vnsow5rjkaz0k">
     <input class="article-permalink-value" value="https://kiko.io/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/" 
-           data-id="clp89x9ek003rniojfjuv1s4v" data-title="Show pages meta data (JSON-LD) in Bottom Sheet" />
+           data-id="clp8jajya003vnsow5rjkaz0k" data-title="Show pages meta data (JSON-LD) in Bottom Sheet" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9ek003rniojfjuv1s4v");
+        initPermalink("clp8jajya003vnsow5rjkaz0k");
     });
 </script>
 
@@ -472,8 +472,8 @@ Since I’ve been a fan of the so-called bottom sheets since the first version o
 <div class="article-interaction" data-pagefind-ignore>
   <p>
     You can interact with this article (applause, criticism, whatever) by mention it in one of 
-    your posts or by replying to its syndication on <a class="mastodon" href="https://indieweb.social/@kiko/110526411227460649">Mastodon</a>, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+    your posts or by replying to its syndication on <a class="mastodon" target="_blank" rel="noopener" href="https://indieweb.social/@kiko/110526411227460649">Mastodon</a>, which will also be shown here as a  
+    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
   </p>
 
   <p class="webmention-form-info">
@@ -782,15 +782,15 @@ Since I’ve been a fan of the so-called bottom sheets since the first version o
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -825,9 +825,9 @@ Since I’ve been a fan of the so-called bottom sheets since the first version o
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -1035,27 +1035,27 @@ Since I’ve been a fan of the so-called bottom sheets since the first version o
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>

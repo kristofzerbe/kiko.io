@@ -137,7 +137,7 @@ In this article I will show you, how to integrate Rollup in your Gulp bundling p
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -360,9 +360,9 @@ In this article I will show you, how to integrate Rollup in your Gulp bundling p
     
     
     <div class="article-entry e-content">
-      <p>Writing an SPA (Single Page Application) in JavaScript&#x2F;CSS always means to keep an eye on small files to deliver. Especially when utilizing a bunch of libraries and frameworks, bundling is some sort of a must. The offer on bundlers and task runners is large on the web: <a href="https://webpack.js.org/">WebPack</a>, <a href="https://www.snowpack.dev/">Snowpack</a>, <a href="https://browserify.org/">Browserify</a>, <a href="https://parceljs.org/">Parcel</a>, <a href="https://gruntjs.com/">Grunt</a>, <a href="https://gulpjs.com/">Gulp</a> and “DingDong” (just replace with the hotest new shit available).</p>
-<p>But, it is not always necessary to replace your complete building pipeline, when the new “DingDong” is hyped in the media. Brave old tools like <a href="https://gulpjs.com/">Gulp</a> are doing their job pretty well … and you are able to integrate some more modern approaches on bundling JS, for example.</p>
-<p>I couple of months ago, while working on a private project, I became attentive to <a href="https://www.rollupjs.org/">Rollup.js</a>, a next-generation JavaScript module bundler from Rich Harris, the author of Svelte. Rollup uses the new standardized format for code modules included in the ES6 revision of JavaScript and supports Tree-Shaking, which means that it analyzes all your ES6 <code>imports</code> statements and bundles only the code which is used. Pretty cool … but … it is a JavaScript bundler only and there are no plugins for Gulp, my favourite task runner.</p>
+      <p>Writing an SPA (Single Page Application) in JavaScript&#x2F;CSS always means to keep an eye on small files to deliver. Especially when utilizing a bunch of libraries and frameworks, bundling is some sort of a must. The offer on bundlers and task runners is large on the web: <a target="_blank" rel="noopener" href="https://webpack.js.org/">WebPack</a>, <a target="_blank" rel="noopener" href="https://www.snowpack.dev/">Snowpack</a>, <a target="_blank" rel="noopener" href="https://browserify.org/">Browserify</a>, <a target="_blank" rel="noopener" href="https://parceljs.org/">Parcel</a>, <a target="_blank" rel="noopener" href="https://gruntjs.com/">Grunt</a>, <a target="_blank" rel="noopener" href="https://gulpjs.com/">Gulp</a> and “DingDong” (just replace with the hotest new shit available).</p>
+<p>But, it is not always necessary to replace your complete building pipeline, when the new “DingDong” is hyped in the media. Brave old tools like <a target="_blank" rel="noopener" href="https://gulpjs.com/">Gulp</a> are doing their job pretty well … and you are able to integrate some more modern approaches on bundling JS, for example.</p>
+<p>I couple of months ago, while working on a private project, I became attentive to <a target="_blank" rel="noopener" href="https://www.rollupjs.org/">Rollup.js</a>, a next-generation JavaScript module bundler from Rich Harris, the author of Svelte. Rollup uses the new standardized format for code modules included in the ES6 revision of JavaScript and supports Tree-Shaking, which means that it analyzes all your ES6 <code>imports</code> statements and bundles only the code which is used. Pretty cool … but … it is a JavaScript bundler only and there are no plugins for Gulp, my favourite task runner.</p>
 <p>In this article I will show you, how to integrate Rollup in your Gulp bundling pipeline.</p>
 <span id="more"></span>
 
@@ -376,7 +376,7 @@ In this article I will show you, how to integrate Rollup in your Gulp bundling p
 
 <p>This pipeline only bundles CSS yet, when calling <code>gulp</code> in the command line.</p>
 <hr>
-<h2 id="Calling-Rollup-for-JS-bundling"><a href="#Calling-Rollup-for-JS-bundling" class="headerlink" title="Calling Rollup for JS bundling"></a>Calling Rollup for JS bundling</h2><p>Rollup has <a href="https://www.rollupjs.org/guide/en/#command-line-reference">dozens of parameters</a> to define everything you need, but it also supports a config file, which allows you to configure everything there and run <code>rollup -c</code> only. Very useful on this approach.</p>
+<h2 id="Calling-Rollup-for-JS-bundling"><a href="#Calling-Rollup-for-JS-bundling" class="headerlink" title="Calling Rollup for JS bundling"></a>Calling Rollup for JS bundling</h2><p>Rollup has <a target="_blank" rel="noopener" href="https://www.rollupjs.org/guide/en/#command-line-reference">dozens of parameters</a> to define everything you need, but it also supports a config file, which allows you to configure everything there and run <code>rollup -c</code> only. Very useful on this approach.</p>
 <figure class="highlight js"><figcaption><span>rollup.config.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">input</span>: <span class="string">&#x27;./js/app.js&#x27;</span>,</span><br><span class="line">  <span class="attr">output</span>: &#123;</span><br><span class="line">    <span class="attr">file</span>: <span class="string">&#x27;./dist/app.js&#x27;</span>,</span><br><span class="line">    <span class="attr">format</span>: <span class="string">&#x27;es&#x27;</span>,</span><br><span class="line">    <span class="attr">sourcemap</span>: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p>As there is no Gulp plugin for Rollup, we need to execute Rollup in the Gulp pipeline by command. For this I’ve created a helper in my <code>gulpfile.js</code>, to be able to execute whichever command:</p>
@@ -409,15 +409,15 @@ In this article I will show you, how to integrate Rollup in your Gulp bundling p
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clp89x9dq002gniojdrb3252k">
+      <div class="article-permalink" id="article-permalink-clp8jajwp002gnsowbrgff6jz">
     <input class="article-permalink-value" value="https://kiko.io/post/Running-Rollup-with-Gulp/" 
-           data-id="clp89x9dq002gniojdrb3252k" data-title="Running Rollup with Gulp" />
+           data-id="clp8jajwp002gnsowbrgff6jz" data-title="Running Rollup with Gulp" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9dq002gniojdrb3252k");
+        initPermalink("clp8jajwp002gnsowbrgff6jz");
     });
 </script>
 
@@ -437,7 +437,7 @@ In this article I will show you, how to integrate Rollup in your Gulp bundling p
   <p>
     You can interact with this article (applause, criticism, whatever) by mention it in one of 
     your posts, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
   </p>
 
   <p class="webmention-form-info">
@@ -699,15 +699,15 @@ In this article I will show you, how to integrate Rollup in your Gulp bundling p
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -742,9 +742,9 @@ In this article I will show you, how to integrate Rollup in your Gulp bundling p
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -952,27 +952,27 @@ In this article I will show you, how to integrate Rollup in your Gulp bundling p
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>

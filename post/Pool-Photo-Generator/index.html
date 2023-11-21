@@ -141,7 +141,7 @@ delete the processed image from the inbound folder">
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -388,10 +388,10 @@ delete the processed image from the inbound folder">
 <h3 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h3><p>To handle files and folders in NodeJS you need at least <code>fs</code> and <code>path</code>:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br></pre></td></tr></table></figure>
 
-<p>For image processing there’s no better solution as <a href="https://sharp.pixelplumbing.com/">Sharp</a>:</p>
+<p>For image processing there’s no better solution as <a target="_blank" rel="noopener" href="https://sharp.pixelplumbing.com/">Sharp</a>:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sharp = <span class="built_in">require</span>(<span class="string">&#x27;sharp&#x27;</span>);</span><br><span class="line">sharp.<span class="title function_">cache</span>(<span class="literal">false</span>); <span class="comment">//prevents keeping source file open</span></span><br></pre></td></tr></table></figure>
 
-<p>Similarly powerful, but intended for reading image metadata is <a href="https://mutiny.cz/exifr/">EXIFR</a>:</p>
+<p>Similarly powerful, but intended for reading image metadata is <a target="_blank" rel="noopener" href="https://mutiny.cz/exifr/">EXIFR</a>:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> exifr = <span class="built_in">require</span>(<span class="string">&#x27;exifr&#x27;</span>);</span><br></pre></td></tr></table></figure>
 
 <h3 id="Vars"><a href="#Vars" class="headerlink" title="Vars"></a>Vars</h3><p>I just needed three vars for holding the full qualified path of the current execution folder and the names of the two incoming parameters:</p>
@@ -406,13 +406,13 @@ delete the processed image from the inbound folder">
 <h3 id="Function-‘createImageVariant’"><a href="#Function-‘createImageVariant’" class="headerlink" title="Function ‘createImageVariant’"></a>Function ‘createImageVariant’</h3><p>This helper function reduces the original image to the desired size and saves it in the destination (pool) folder as a JPG:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="title function_">createImageVariant</span>(<span class="params">imgSource, imgTarget, sizeWidth</span>) &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">await</span> <span class="title function_">sharp</span>(imgSource)</span><br><span class="line">    .<span class="title function_">resize</span>(&#123;</span><br><span class="line">      <span class="attr">fit</span>: sharp.<span class="property">fit</span>.<span class="property">contain</span>,</span><br><span class="line">      <span class="attr">width</span>: sizeWidth</span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="title function_">jpeg</span>(&#123; <span class="attr">quality</span>: <span class="number">90</span>, <span class="attr">mozjpeg</span>: <span class="literal">true</span> &#125;)</span><br><span class="line">    .<span class="title function_">toFile</span>(imgTarget);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>In the above code I have omitted some syntactical sugar. You can find the complete script here: <a href="https://github.com/kristofzerbe/kiko.io/blob/master/lib/pool-photo-generator.cjs">https://github.com/kristofzerbe/kiko.io/blob/master/lib/pool-photo-generator.cjs</a></p>
+<p>In the above code I have omitted some syntactical sugar. You can find the complete script here: <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe/kiko.io/blob/master/lib/pool-photo-generator.cjs">https://github.com/kristofzerbe/kiko.io/blob/master/lib/pool-photo-generator.cjs</a></p>
 <hr>
 <h2 id="The-Runner"><a href="#The-Runner" class="headerlink" title="The Runner"></a>The Runner</h2><p>I integrated the call to the generator into my Hexo workflow, but also wrote a small runner to run it independently:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This is only for executing the selector manually. </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * Execution:</span></span><br><span class="line"><span class="comment"> * node &quot;./lib/_run_pool-photo-generator.cjs&quot;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">PoolPhotoGenerator</span> = <span class="built_in">require</span>(<span class="string">&quot;../lib/pool-photo-generator.cjs&quot;</span>).<span class="property">PoolPhotoGenerator</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> inboundFolder = <span class="string">&quot;../new_photos&quot;</span>; <span class="comment">//my inbound folder</span></span><br><span class="line"><span class="keyword">const</span> poolFolder = <span class="string">&quot;../static/pool&quot;</span>; <span class="comment">//my pool folder</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> generator = <span class="keyword">new</span> <span class="title class_">PoolPhotoGenerator</span>(inboundFolder, poolFolder);</span><br><span class="line">generator.<span class="title function_">generate</span>();</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Last but not least, in my existing Lightroom workflow, I configured the wonderful <a href="http://regex.info/blog/lightroom-goodies/collection-publisher">plugin Jeffrey’s “Collection Publisher”</a> to create the new pool photos directly through it into the Inbound folder. Once the changes are committed to Github, where the blog is hosted and the deployment action happens, the new header images are created and displayed at <a href="https://kiko.io/photos">https:\kiko.io\photos</a> and are available for a new post.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Last but not least, in my existing Lightroom workflow, I configured the wonderful <a target="_blank" rel="noopener" href="http://regex.info/blog/lightroom-goodies/collection-publisher">plugin Jeffrey’s “Collection Publisher”</a> to create the new pool photos directly through it into the Inbound folder. Once the changes are committed to Github, where the blog is hosted and the deployment action happens, the new header images are created and displayed at <a href="https://kiko.io/photos">https:\kiko.io\photos</a> and are available for a new post.</p>
 
     </div>
     
@@ -433,15 +433,15 @@ delete the processed image from the inbound folder">
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clp89x9ef003inioj3n5p736y">
+      <div class="article-permalink" id="article-permalink-clp8jajx4003insow19a4bdv8">
     <input class="article-permalink-value" value="https://kiko.io/post/Pool-Photo-Generator/" 
-           data-id="clp89x9ef003inioj3n5p736y" data-title="Pool Photo Generator" />
+           data-id="clp8jajx4003insow19a4bdv8" data-title="Pool Photo Generator" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9ef003inioj3n5p736y");
+        initPermalink("clp8jajx4003insow19a4bdv8");
     });
 </script>
 
@@ -460,8 +460,8 @@ delete the processed image from the inbound folder">
 <div class="article-interaction" data-pagefind-ignore>
   <p>
     You can interact with this article (applause, criticism, whatever) by mention it in one of 
-    your posts or by replying to its syndication on <a class="mastodon" href="https://indieweb.social/@kiko/110928964865915942">Mastodon</a>, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+    your posts or by replying to its syndication on <a class="mastodon" target="_blank" rel="noopener" href="https://indieweb.social/@kiko/110928964865915942">Mastodon</a>, which will also be shown here as a  
+    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
   </p>
 
   <p class="webmention-form-info">
@@ -776,15 +776,15 @@ delete the processed image from the inbound folder">
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -819,9 +819,9 @@ delete the processed image from the inbound folder">
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -1029,27 +1029,27 @@ delete the processed image from the inbound folder">
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>

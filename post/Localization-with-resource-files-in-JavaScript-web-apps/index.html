@@ -135,7 +135,7 @@ One of the most time saving tools in VS is the plugin ResXManager, which is an a
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -359,14 +359,14 @@ One of the most time saving tools in VS is the plugin ResXManager, which is an a
     
     <div class="article-entry e-content">
       <p>There are plenty of editors out there to help you writing JavaScript web applications. As I’m working in my daily life with Visual Studio, it is a obvious choice for me.</p>
-<p>One of the most time saving tools in VS is the plugin <a href="https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager">ResXManager</a>, which is an awesome assistant on managing the translations for a Desktop- or ASP.NET-App, which uses XML-based RESX files.</p>
+<p>One of the most time saving tools in VS is the plugin <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager">ResXManager</a>, which is an awesome assistant on managing the translations for a Desktop- or ASP.NET-App, which uses XML-based RESX files.</p>
 <span id="more"></span>
 
 <p>Mostly very localization is based on key&#x2F;value pairs, defined in separate files for every language provided.</p>
 <p>Implementing several languages in pure JavaScript apps is a little more difficult, because it makes no sense to deal with big XML files in JS. All localization libraries in the market uses JSON for storing the translations and it is a little bit of work to find the right one for your requirements.</p>
 <!-- more -->
 
-<h2 id="Localization-in-JavaScript"><a href="#Localization-in-JavaScript" class="headerlink" title="Localization in JavaScript"></a>Localization in JavaScript</h2><p>For a current project I use  <a href="https://github.com/Irrelon/jquery-lang-js">jquery-lang</a>, because it provides the switch of the apps UI language without reloading and it is easy to implement. Thanks Rob Evans for your work…</p>
+<h2 id="Localization-in-JavaScript"><a href="#Localization-in-JavaScript" class="headerlink" title="Localization in JavaScript"></a>Localization in JavaScript</h2><p>For a current project I use  <a target="_blank" rel="noopener" href="https://github.com/Irrelon/jquery-lang-js">jquery-lang</a>, because it provides the switch of the apps UI language without reloading and it is easy to implement. Thanks Rob Evans for your work…</p>
 <p>The definition of “tokens” in one JSON file for each language is quite easy:</p>
 <figure class="highlight js"><figcaption><span>../languages/en.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;token&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;my-test&quot;</span>: <span class="string">&quot;My Test in English&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -376,13 +376,13 @@ One of the most time saving tools in VS is the plugin ResXManager, which is an a
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span> <span class="attr">data-lang-token</span>=<span class="string">&quot;my-test&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="Using-RESX-and-convert-to-JSON-on-build"><a href="#Using-RESX-and-convert-to-JSON-on-build" class="headerlink" title="Using RESX and convert to JSON on build"></a>Using RESX and convert to JSON on build</h2><p>Having this, the most time consuming work is to enter the translations to the localization files. If you have hundreds of them, it is hard to keep the 2, 3 or more language files in sync. You need a helper…</p>
-<p>And here comes ResXManager to the rescue, if you work with VS … but it needs a conversation from RESX to the JSON format jquery-lang uses and this a task, which can be done on building the JS app, by using a task runner like <a href="https://gruntjs.com/">Grunt</a>.</p>
-<p>As there was no Grunt plugin&#x2F;task out there to fit my needs, I have created  <strong>grunt-resource2json</strong> (<a href="https://github.com/kristofzerbe/grunt-resource2json">GitHub</a>, <a href="https://www.npmjs.com/package/grunt-resource2json">NPM</a>). The configuration in the <strong>gruntfile.js</strong> is like: </p>
+<p>And here comes ResXManager to the rescue, if you work with VS … but it needs a conversation from RESX to the JSON format jquery-lang uses and this a task, which can be done on building the JS app, by using a task runner like <a target="_blank" rel="noopener" href="https://gruntjs.com/">Grunt</a>.</p>
+<p>As there was no Grunt plugin&#x2F;task out there to fit my needs, I have created  <strong>grunt-resource2json</strong> (<a target="_blank" rel="noopener" href="https://github.com/kristofzerbe/grunt-resource2json">GitHub</a>, <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/grunt-resource2json">NPM</a>). The configuration in the <strong>gruntfile.js</strong> is like: </p>
 <figure class="highlight json"><figcaption><span>gruntfile.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">grunt.initConfig(<span class="punctuation">&#123;</span></span><br><span class="line">    resource2json<span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      convert<span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        options<span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">          format<span class="punctuation">:</span> <span class="string">&quot;jquery-lang&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        files<span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">          <span class="punctuation">&#123;</span></span><br><span class="line">            input<span class="punctuation">:</span> <span class="string">&quot;resources/Resource.resx&quot;</span><span class="punctuation">,</span></span><br><span class="line">            output<span class="punctuation">:</span> <span class="string">&quot;build/langpacks/en.json&quot;</span></span><br><span class="line">          <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="punctuation">&#123;</span></span><br><span class="line">            input<span class="punctuation">:</span> <span class="string">&quot;resources/Resource.de-DE.resx&quot;</span><span class="punctuation">,</span></span><br><span class="line">            output<span class="punctuation">:</span> <span class="string">&quot;build/langpacks/de.json&quot;</span></span><br><span class="line">          <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="punctuation">&#123;</span></span><br><span class="line">            input<span class="punctuation">:</span> <span class="string">&quot;resources/Resource.es-ES.resx&quot;</span><span class="punctuation">,</span></span><br><span class="line">            output<span class="punctuation">:</span> <span class="string">&quot;build/langpacks/es.json&quot;</span></span><br><span class="line">          <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span>);</span><br></pre></td></tr></table></figure>
 
 <p>It takes one RESX file (input) and converts it to a JSON file (output) in an array of files.</p>
-<p>The heavy work in the plugin is done by the library <a href="https://www.npmjs.com/package/xml2js">xml2js</a>, which transforms the complete XML of the RESX file into a JSON object in one call. All I had to do, was to write all DATA nodes in a loop into the jquery-lang given structure and save it as JSON.</p>
-<p>Currently supported is the format for jquery-lang only, but it would be awesome, if you fork the code on <a href="https://github.com/kristofzerbe/grunt-resource2json">GitHub</a> and send me a Pull Request with the implementation of your needed format.</p>
+<p>The heavy work in the plugin is done by the library <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/xml2js">xml2js</a>, which transforms the complete XML of the RESX file into a JSON object in one call. All I had to do, was to write all DATA nodes in a loop into the jquery-lang given structure and save it as JSON.</p>
+<p>Currently supported is the format for jquery-lang only, but it would be awesome, if you fork the code on <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe/grunt-resource2json">GitHub</a> and send me a Pull Request with the implementation of your needed format.</p>
 
     </div>
     
@@ -393,15 +393,15 @@ One of the most time saving tools in VS is the plugin ResXManager, which is an a
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clp89x9cz000wnioj71q1892g">
+      <div class="article-permalink" id="article-permalink-clp8jajvz000wnsow22858s3w">
     <input class="article-permalink-value" value="https://kiko.io/post/Localization-with-resource-files-in-JavaScript-web-apps/" 
-           data-id="clp89x9cz000wnioj71q1892g" data-title="Localization with resource files in JavaScript web apps" />
+           data-id="clp8jajvz000wnsow22858s3w" data-title="Localization with resource files in JavaScript web apps" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9cz000wnioj71q1892g");
+        initPermalink("clp8jajvz000wnsow22858s3w");
     });
 </script>
 
@@ -421,7 +421,7 @@ One of the most time saving tools in VS is the plugin ResXManager, which is an a
   <p>
     You can interact with this article (applause, criticism, whatever) by mention it in one of 
     your posts, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
   </p>
 
   <p class="webmention-form-info">
@@ -677,15 +677,15 @@ One of the most time saving tools in VS is the plugin ResXManager, which is an a
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -720,9 +720,9 @@ One of the most time saving tools in VS is the plugin ResXManager, which is an a
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -930,27 +930,27 @@ One of the most time saving tools in VS is the plugin ResXManager, which is an a
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>

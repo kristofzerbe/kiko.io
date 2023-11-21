@@ -134,7 +134,7 @@
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -364,10 +364,10 @@
 <span id="more"></span>
 
 <p>Starting point is the new media query <code>prefers-color-scheme</code>, which is actually supported by all modern browsers.</p>
-<h2 id="Technique"><a href="#Technique" class="headerlink" title="Technique"></a>Technique</h2><p>My first read was Tom Brow’s <a href="https://tombrow.com/dark-mode-website-css">Dark mode in a website with CSS</a>, where he shows how to use the media query. Simplified, this is it, assuming the light version is the default:</p>
+<h2 id="Technique"><a href="#Technique" class="headerlink" title="Technique"></a>Technique</h2><p>My first read was Tom Brow’s <a target="_blank" rel="noopener" href="https://tombrow.com/dark-mode-website-css">Dark mode in a website with CSS</a>, where he shows how to use the media query. Simplified, this is it, assuming the light version is the default:</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: white;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">prefers-color-scheme</span>: dark) &#123;</span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: black;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="Pimping-CSS-for-automatic-switching"><a href="#Pimping-CSS-for-automatic-switching" class="headerlink" title="Pimping CSS for automatic switching"></a>Pimping CSS for automatic switching</h2><p>To support the automatic browser&#x2F;OS-based automatic switch in Hexo, where <a href="http://stylus-lang.com/">Stylus</a> is used, I had to change some template files. First the <code>_variables.styl</code>:</p>
+<h2 id="Pimping-CSS-for-automatic-switching"><a href="#Pimping-CSS-for-automatic-switching" class="headerlink" title="Pimping CSS for automatic switching"></a>Pimping CSS for automatic switching</h2><p>To support the automatic browser&#x2F;OS-based automatic switch in Hexo, where <a target="_blank" rel="noopener" href="http://stylus-lang.com/">Stylus</a> is used, I had to change some template files. First the <code>_variables.styl</code>:</p>
 <figure class="highlight styl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// existing color variables</span></span><br><span class="line"><span class="attribute">color</span>-background = <span class="number">#f1f1f1</span></span><br><span class="line"><span class="attribute">color</span>-foreground = <span class="number">#111</span></span><br><span class="line"><span class="attribute">color</span>-border = <span class="number">#ddd</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">// new dark color variables</span></span><br><span class="line">dark-<span class="attribute">color</span>-background = <span class="number">#111</span></span><br><span class="line">dark-<span class="attribute">color</span>-foreground = <span class="number">#eee</span></span><br><span class="line">dark-<span class="attribute">color</span>-border = <span class="number">#000</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">// new media query variable</span></span><br><span class="line">prefers-dark = <span class="string">&quot;(prefers-color-scheme: dark)&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>Next step was to change the <code>_extend.styl</code>, where some Stylus variables are defining complete blocks to extend. Here I had to supplement all lines, where something mode-dependend was defined, by adding the new <code>prefers-dark</code> media query and beneath the new ‘dark’ equivalence of the style:</p>
@@ -390,15 +390,15 @@
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clp89x9cp000dnioj8iz7awfo">
+      <div class="article-permalink" id="article-permalink-clp8jajvs000ensow0yvp1b5b">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-Dark-Mode/" 
-           data-id="clp89x9cp000dnioj8iz7awfo" data-title="Hexo and the Dark Mode" />
+           data-id="clp8jajvs000ensow0yvp1b5b" data-title="Hexo and the Dark Mode" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9cp000dnioj8iz7awfo");
+        initPermalink("clp8jajvs000ensow0yvp1b5b");
     });
 </script>
 
@@ -418,7 +418,7 @@
   <p>
     You can interact with this article (applause, criticism, whatever) by mention it in one of 
     your posts, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
   </p>
 
   <p class="webmention-form-info">
@@ -741,15 +741,15 @@
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -784,9 +784,9 @@
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -994,27 +994,27 @@
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>

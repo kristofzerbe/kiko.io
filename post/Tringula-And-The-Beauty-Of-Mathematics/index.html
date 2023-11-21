@@ -137,7 +137,7 @@ How wonderfully this field of mathematics can be applied to photos is shown by t
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -364,23 +364,23 @@ How wonderfully this field of mathematics can be applied to photos is shown by t
     <div class="article-entry e-content">
       
     <div class="alertbox alertbox-note">
-      <p>This post is a new version of <a href="/post/Triangulate-your-images-with-Triangula/" title="Triangulate your images with Triangula">Triangulate your images with Triangula</a> and the first in a series of articles published on the German news site <a href="https://golem.de/">golem.de</a>.</p>
+      <p>This post is a new version of <a href="/post/Triangulate-your-images-with-Triangula/" title="Triangulate your images with Triangula">Triangulate your images with Triangula</a> and the first in a series of articles published on the German news site <a target="_blank" rel="noopener" href="https://golem.de/">golem.de</a>.</p>
 
     </div>
   
 
 <p>When talking about triangulation, non-mathematicians generally understand it as a geometric method for measuring distances. Roughly speaking, two known points in space can be used to calculate a third via the angles to it. In one or the other Hollywood flick of the genres war or spy movie you have surely come across this.</p>
 <p>However, triangulation also refers to the division of a surface into triangles or, more generally, the description of an object by means of polygons. It is used in topology and land surveying, but also in imaging methods of modeling.</p>
-<p>How wonderfully this field of mathematics can be applied to photos is shown by the GitHub user <a href="https://github.com/RH12503"><strong>RyanH</strong></a> with his program <a href="https://github.com/RH12503/triangula"><strong>Triangula</strong></a> written in Go, which first roughly splits a given JPG or PNG image into triangles and then refines it further and further via mutations. Among other things, you can specify how many points you want to start with and how many mutations the program should perform. It is also possible to calculate the new image using hexagons instead of classic triangles.</p>
+<p>How wonderfully this field of mathematics can be applied to photos is shown by the GitHub user <a target="_blank" rel="noopener" href="https://github.com/RH12503"><strong>RyanH</strong></a> with his program <a target="_blank" rel="noopener" href="https://github.com/RH12503/triangula"><strong>Triangula</strong></a> written in Go, which first roughly splits a given JPG or PNG image into triangles and then refines it further and further via mutations. Among other things, you can specify how many points you want to start with and how many mutations the program should perform. It is also possible to calculate the new image using hexagons instead of classic triangles.</p>
 <span id="more"></span>
 
 
-      <div class="image-slider" id="image-slide-h2klum">
+      <div class="image-slider" id="image-slide-agchj8">
         <div><img src="/post/Tringula-And-The-Beauty-Of-Mathematics/triangula.png" alt="UI of the tool Triangula written in Go" /></div><div><img src="/post/Tringula-And-The-Beauty-Of-Mathematics/sample-40-generations.png" alt="Sample 40 generations" /></div><div><img src="/post/Tringula-And-The-Beauty-Of-Mathematics/sample-400-generations.png" alt="Sample 400 generations" /></div><div><img src="/post/Tringula-And-The-Beauty-Of-Mathematics/sample-4000-generations.png" alt="Sample 4000 generations" /></div>
       </div>
       <script>
         tns({
-          container: "#image-slide-h2klum",
+          container: "#image-slide-agchj8",
           items: 1,
           slideBy: "page",
           controls: false,
@@ -392,12 +392,12 @@ How wonderfully this field of mathematics can be applied to photos is shown by t
 <p>The result is stylized images of the original, which can be used as a chic desktop background, for example. Due to the abstraction of the actual motif, such images are also very suitable as header images on websites, such as blogs, if the image should not distract from the actual content. Such an image has a great closeness to the original, but looks more like art.</p>
 <p>Besides PNG, SVG (Scalable Vector Graphics) is also available as output format, which makes sense because SVG is an XML format and the polygons calculated by the program can also be written away directly as corresponding <code>polygon</code> entries as text. The generated SVG files are thereby smaller by a factor of 30, depending on the original, and thus fit in many places much better with tight bandwidths or used-up consumption limits on the Internet.</p>
 <hr>
-<h2 id="Using-Triangula-on-the-command-line"><a href="#Using-Triangula-on-the-command-line" class="headerlink" title="Using Triangula on the command line"></a>Using Triangula on the command line</h2><p>Ryan offers his program Triangula also as <a href="https://github.com/RH12503/Triangula-CLI/">CLI version</a>, which is called via the command line. The process of triangulating is separated into two parts: First you create the desired abstraction of an original image via the parameter <code>run</code>, which is stored in a JSON file on the hard disk and in a second step you create either a PNG or an SVG as output file via <code>render</code> and the specification of the JSON file.</p>
+<h2 id="Using-Triangula-on-the-command-line"><a href="#Using-Triangula-on-the-command-line" class="headerlink" title="Using Triangula on the command line"></a>Using Triangula on the command line</h2><p>Ryan offers his program Triangula also as <a target="_blank" rel="noopener" href="https://github.com/RH12503/Triangula-CLI/">CLI version</a>, which is called via the command line. The process of triangulating is separated into two parts: First you create the desired abstraction of an original image via the parameter <code>run</code>, which is stored in a JSON file on the hard disk and in a second step you create either a PNG or an SVG as output file via <code>render</code> and the specification of the JSON file.</p>
 <p>Since the command line tool has the same options as the UI version, it is great for automating the processing of the images used when building a website, for example. It also makes it much easier to turn an entire folder of images into such artistic abstractions.</p>
 <hr>
 <h2 id="Using-triangulated-images-as-placeholders-on-websites"><a href="#Using-triangulated-images-as-placeholders-on-websites" class="headerlink" title="Using triangulated images as placeholders on websites"></a>Using triangulated images as placeholders on websites</h2><p>Depending on how good the Internet connection is and how well the developers brain of a website has worked, it can take a while until the browser of the smartphone has loaded the x-megabyte header or illustration image to finally be able to display it. It gets really annoying when no space has been reserved on the website for the image beforehand and the text that you have started to read suddenly jumps away.</p>
 <p>In any case, the solution is to always use images that are as small as possible and adapted to the device, but they still have a certain file size if they are to look good. To prevent text jumping, nowadays one usually uses gray placeholders with or without loading bars to signal to the user that something will be displayed at this point shortly.</p>
-<p>Ryan has found an amazingly effective solution for this as well: <a href="https://github.com/RH12503/tip">tip - Triagulated Placeholders</a> - creating the smallest possible triangulated images and blending them using JavaScript.</p>
+<p>Ryan has found an amazingly effective solution for this as well: <a target="_blank" rel="noopener" href="https://github.com/RH12503/tip">tip - Triagulated Placeholders</a> - creating the smallest possible triangulated images and blending them using JavaScript.</p>
 <p>The basis is a frontend, also written in Go, which uses the same algorithms as Triangula and with which the user can process several original images or an entire folder of photos at once via the interface.</p>
 <p><img src="/post/Tringula-And-The-Beauty-Of-Mathematics/tip.png" alt="Very simple but functional interface of the tool tip, also written in Go, for generating binary placeholders for web pages"></p>
 <p>The output format from <strong>tip</strong> is not PNG or SVG, but a binary file, which consumes the least amount of memory of all technical possibilities.</p>
@@ -437,24 +437,24 @@ How wonderfully this field of mathematics can be applied to photos is shown by t
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clp89x9dv002nnioj8uotcy2a">
+      <div class="article-permalink" id="article-permalink-clp8jajwr002mnsow4v1vftzl">
     <input class="article-permalink-value" value="https://kiko.io/post/Tringula-And-The-Beauty-Of-Mathematics/" 
-           data-id="clp89x9dv002nnioj8uotcy2a" data-title="Tringula And The Beauty Of Mathematics" />
+           data-id="clp8jajwr002mnsow4v1vftzl" data-title="Tringula And The Beauty Of Mathematics" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9dv002nnioj8uotcy2a");
+        initPermalink("clp8jajwr002mnsow4v1vftzl");
     });
 </script>
 
       
-        <div class="article-golem" id="article-golem-clp89x9dv002nnioj8uotcy2a">
-    This article appeared first on <a href="https://golem.de">golem.de</a> 
+        <div class="article-golem" id="article-golem-clp8jajwr002mnsow4v1vftzl">
+    This article appeared first on <a target="_blank" rel="noopener" href="https://golem.de">golem.de</a> 
     on 29 Nov 2021 
     in German under the title <span style="font-weight:bold;">&laquo;Tringula und die Schönheit der Mathematik&raquo;</span>&nbsp;&nbsp;  
-    <a href="https://www.golem.de/news/bildbearbeitungstool-bei-github-triangula-und-die-schoenheit-der-mathematik-2111-161275.html">https://www.golem.de/news/bildbearbeitungstool-bei-github-triangula-und-die-schoenheit-der-mathematik-2111-161275.html</a>
+    <a target="_blank" rel="noopener" href="https://www.golem.de/news/bildbearbeitungstool-bei-github-triangula-und-die-schoenheit-der-mathematik-2111-161275.html">https://www.golem.de/news/bildbearbeitungstool-bei-github-triangula-und-die-schoenheit-der-mathematik-2111-161275.html</a>
 </div>
       
     </footer>
@@ -472,7 +472,7 @@ How wonderfully this field of mathematics can be applied to photos is shown by t
   <p>
     You can interact with this article (applause, criticism, whatever) by mention it in one of 
     your posts, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
   </p>
 
   <p class="webmention-form-info">
@@ -781,15 +781,15 @@ How wonderfully this field of mathematics can be applied to photos is shown by t
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -824,9 +824,9 @@ How wonderfully this field of mathematics can be applied to photos is shown by t
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -1034,27 +1034,27 @@ How wonderfully this field of mathematics can be applied to photos is shown by t
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>

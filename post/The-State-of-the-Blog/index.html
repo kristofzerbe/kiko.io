@@ -136,7 +136,7 @@ In this post I would like to share a few experiences I have had with Hexo, regar
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -362,22 +362,22 @@ In this post I would like to share a few experiences I have had with Hexo, regar
     
     <div class="article-entry e-content">
       <p>I’ve started this blog in 2019 with <a href="/post/How-To-Visual-Studio-Database-Project-and-ADSI/" title="How-To: Visual Studio Database Project and ADSI">this article</a> primarily because I needed an area to record things learned for myself, with the side effect that others can benefit from it if they want.</p>
-<p>Why my choice fell on the static site generator <a href="https://hexo.io/">Hexo</a>, I no longer know, but I have now become accustomed (even to the shortcomings) and so far I have been able to implement all my ideas in it … and I had a few of them.</p>
+<p>Why my choice fell on the static site generator <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>, I no longer know, but I have now become accustomed (even to the shortcomings) and so far I have been able to implement all my ideas in it … and I had a few of them.</p>
 <p>In this post I would like to share a few experiences I have had with Hexo, regarding the main functionality and the things I’ve customized and describe my workflow behind the individual features of my blog. The latter is not as straightforward as I would like it to be, especially because I have different devices in use that require different approaches. The main purpose of this post is to simply write down for me, how things currently work on kiko.io and to have one or the other idea how to do it better while writing. Doing this publicly is in the hope that you might read this and have a terrific idea that I haven’t come up with yet and leave a comment or webmention … :)</p>
 <span id="more"></span>
 
 <hr>
-<h2 id="Hexo-…"><a href="#Hexo-…" class="headerlink" title="Hexo …"></a>Hexo …</h2><p>I don’t have experience with other SSGs like Hugo or others, so I can’t make comparisons, but I can share a few things about Hexo that have kept me engaged in my work with Hexo. I won’t go into the general functionality of Hexo here, but the ones that interest me most for my particular needs. A more or less good start into the tool is <a href="https://hexo.io/">https://hexo.io</a> with its DOCS and API.</p>
-<p>One of the first commands you get to know is <code>generate</code>, which generates the static HTML pages from the MD files stored in the <code>source/_posts</code> folder. You can add your own <a href="https://hexo.io/api/generator">generators</a>, which can generate any other custom pages, to this process and put them under <code>themes/&lt;your-theme/scripts</code> for automatic execution. Every generator has a <code>locals</code> argument, which holds all site variables, including a list of all posts.</p>
-<p>Unfortunately, the documentation at <a href="https://hexo.io/api/">hexo.io&#x2F;api</a> is rather poor and so only after a while I realized, that a custom generator is called relatively late in the process, when the MD files have long since been preprocessed. So you can process any MD files in a generator, but you have to do without the automatic processing of the powerful <a href="https://hexo.io/docs/tag-plugins">Tag Plugins</a> or syntax highlighting, because this takes place in an upstream <a href="https://hexo.io/api/processor">processor</a>, which deals with <a href="https://hexo.io/api/box">boxes</a>.</p>
+<h2 id="Hexo-…"><a href="#Hexo-…" class="headerlink" title="Hexo …"></a>Hexo …</h2><p>I don’t have experience with other SSGs like Hugo or others, so I can’t make comparisons, but I can share a few things about Hexo that have kept me engaged in my work with Hexo. I won’t go into the general functionality of Hexo here, but the ones that interest me most for my particular needs. A more or less good start into the tool is <a target="_blank" rel="noopener" href="https://hexo.io/">https://hexo.io</a> with its DOCS and API.</p>
+<p>One of the first commands you get to know is <code>generate</code>, which generates the static HTML pages from the MD files stored in the <code>source/_posts</code> folder. You can add your own <a target="_blank" rel="noopener" href="https://hexo.io/api/generator">generators</a>, which can generate any other custom pages, to this process and put them under <code>themes/&lt;your-theme/scripts</code> for automatic execution. Every generator has a <code>locals</code> argument, which holds all site variables, including a list of all posts.</p>
+<p>Unfortunately, the documentation at <a target="_blank" rel="noopener" href="https://hexo.io/api/">hexo.io&#x2F;api</a> is rather poor and so only after a while I realized, that a custom generator is called relatively late in the process, when the MD files have long since been preprocessed. So you can process any MD files in a generator, but you have to do without the automatic processing of the powerful <a target="_blank" rel="noopener" href="https://hexo.io/docs/tag-plugins">Tag Plugins</a> or syntax highlighting, because this takes place in an upstream <a target="_blank" rel="noopener" href="https://hexo.io/api/processor">processor</a>, which deals with <a target="_blank" rel="noopener" href="https://hexo.io/api/box">boxes</a>.</p>
 <p>I don’t understand Hexo’s concept at this point. For me it is not particularly catchy and straightforward. Unfortunately a few help-, discussion- and example pages are written in Chinese, since the creator Tommy Chen is from Taiwan, as I guess, but my Chinese really sucks… ;)</p>
 <p>The best thing about Hexo in general is, that you can get your first results quickly after the basic installation, so you are able to concentrate on writing and prettying things up for a while. Only when the requirements increase is it necessary to take a closer look at the insufficiently documented substructure. A challenge even for experienced web developers, but unfortunately absolutely impossible for beginners…</p>
 <hr>
 <h2 id="Posts"><a href="#Posts" class="headerlink" title="Posts"></a>Posts</h2><p>Hexo is based on a structure of posts and pages, where posts can be aggregated in various ways, whether in the time-based archive or via tags and categories. Posts has to have a specific structure, regarding the Frontmatter in the MD file and teh storage of attached images. Hexo offers the user a separate command for this: <code>hexo new</code>, which works with template files in the folder <code>scaffolds</code>.</p>
 <p>For the presentation of my posts, I decided to incorporate my passion of photography by assigning a unique header image to each post (and most pages). How I implemented this, I have described in the article <a href="/post/Automatic-Header-Images-in-Hexo/" title="Automatic Header Images in Hexo">Automatic Header Images in Hexo</a>. The main point is, when I create a new post, I automatically and randomly pick a photo (in the three media-dependent versions <em>normal</em>, <em>tablet</em> and <em>mobile</em>) from a pool, copy the images to the appropriate delivery folder and bind it to the new post via frontmatter. For this I’ve written the Hexo event hook <code>on-new-get-photo-for-post.js</code>, which runs on the command <code>hexo new post &quot;&lt;title-of-new-post&gt;&quot;</code>.</p>
 <p>Works great, except for the fact that I’m often on the go and using a Node.JS-powered command towards an SSG project hosted on GitHub definitely doesn’t work on an Android smartphone. So, how do I get it to create a new post remotely?</p>
-<p>First part of the answer, regarding access to all project files, was to store the project in a folder that is synchronized with one of the usual suspects: Dropbox, OneDrive, GoogleDrive. With this, I have access to the entire project at all times on all devices that can sync the files. In the case of Android with the help of one of the <a href="https://play.google.com/store/search?q=metactrl+%22autosync%22&c=apps">Autosync apps from metactrl</a>.</p>
-<p>The second part of the answer, regarding execution of the new post command, was a bit more difficult, but part of my solution was to use my little home server, where the project also syncs and which is always switched on. Problem here: This tiny box is not publicly available on the web and never will be. Therefore the only communication channel I had, was file synchronization and the solution was to use a simple text file to hold the commands I want to be executed. For this purpose, I have written a small command line tool that runs and processes a modified command file when it is received. For file monitoring I have <a href="https://www.2brightsparks.com/syncback/sbpro.html">SyncBackPro</a> in use, which has the incredibly useful feature of being able to execute commands before and after a synchronization takes place, in this case my tool, which I have named <strong>HexoCommander</strong> and whose source code is <a href="https://github.com/kristofzerbe/HexoCommander">available on GitHub</a>.</p>
+<p>First part of the answer, regarding access to all project files, was to store the project in a folder that is synchronized with one of the usual suspects: Dropbox, OneDrive, GoogleDrive. With this, I have access to the entire project at all times on all devices that can sync the files. In the case of Android with the help of one of the <a target="_blank" rel="noopener" href="https://play.google.com/store/search?q=metactrl+%22autosync%22&c=apps">Autosync apps from metactrl</a>.</p>
+<p>The second part of the answer, regarding execution of the new post command, was a bit more difficult, but part of my solution was to use my little home server, where the project also syncs and which is always switched on. Problem here: This tiny box is not publicly available on the web and never will be. Therefore the only communication channel I had, was file synchronization and the solution was to use a simple text file to hold the commands I want to be executed. For this purpose, I have written a small command line tool that runs and processes a modified command file when it is received. For file monitoring I have <a target="_blank" rel="noopener" href="https://www.2brightsparks.com/syncback/sbpro.html">SyncBackPro</a> in use, which has the incredibly useful feature of being able to execute commands before and after a synchronization takes place, in this case my tool, which I have named <strong>HexoCommander</strong> and whose source code is <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe/HexoCommander">available on GitHub</a>.</p>
 
     <div class="alertbox alertbox-note">
       <p>Before you think “<em>What the hell is he doing? That’s what</em> [fill in the Linux tool of your choice] <em>is for</em>“ … I’m more of a Windows guy. Linux means something to me, but I’ve never worked with it and never had to … and yessss, there is a career in IT also with Windows ;)</p>
@@ -385,7 +385,7 @@ In this post I would like to share a few experiences I have had with Hexo, regar
     </div>
   
 
-<p>The advantage of synchronizing the whole GitHub project via cloud storage service is that I also host <strong>kiko.io</strong> on <a href="https://pages.github.com/">Github Pages</a> and that a commit to the repository on GitHub automatically triggers a deployment, which I don’t always want right away. So, because of my changes to the post process, I don’t use Hexo’s built-in drafts, but write on a new post until I’m done and then release by committing to GitHub.</p>
+<p>The advantage of synchronizing the whole GitHub project via cloud storage service is that I also host <strong>kiko.io</strong> on <a target="_blank" rel="noopener" href="https://pages.github.com/">Github Pages</a> and that a commit to the repository on GitHub automatically triggers a deployment, which I don’t always want right away. So, because of my changes to the post process, I don’t use Hexo’s built-in drafts, but write on a new post until I’m done and then release by committing to GitHub.</p>
 
     <div class="alertbox thinkbox">
       <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="17.018" fill="#ffcb4c" r="17"/><g fill="#65471b"><path d="m14.524 21.036c-.145-.116-.258-.274-.312-.464-.134-.46.13-.918.59-1.021 4.528-1.021 7.577 1.363 7.706 1.465.384.306.459.845.173 1.205-.286.358-.828.401-1.211.097-.11-.084-2.523-1.923-6.182-1.098-.274.061-.554-.016-.764-.184z"/><ellipse cx="13.119" cy="11.174" rx="2.125" ry="2.656"/><ellipse cx="24.375" cy="12.236" rx="2.125" ry="2.656"/></g><path d="m17.276 35.149s1.265-.411 1.429-1.352c.173-.972-.624-1.167-.624-1.167s1.041-.208 1.172-1.376c.123-1.101-.861-1.363-.861-1.363s.97-.4 1.016-1.539c.038-.959-.995-1.428-.995-1.428s5.038-1.221 5.556-1.341c.516-.12 1.32-.615 1.069-1.694-.249-1.08-1.204-1.118-1.697-1.003-.494.115-6.744 1.566-8.9 2.068l-1.439.334c-.54.127-.785-.11-.404-.512.508-.536.833-1.129.946-2.113.119-1.035-.232-2.313-.433-2.809-.374-.921-1.005-1.649-1.734-1.899-1.137-.39-1.945.321-1.542 1.561.604 1.854.208 3.375-.833 4.293-2.449 2.157-3.588 3.695-2.83 6.973.828 3.575 4.377 5.876 7.952 5.048z" fill="#f19020"/><path d="m9.296 6.351c-.164-.088-.303-.224-.391-.399-.216-.428-.04-.927.393-1.112 4.266-1.831 7.699-.043 7.843.034.433.231.608.747.391 1.154-.216.405-.74.546-1.173.318-.123-.063-2.832-1.432-6.278.047-.257.109-.547.085-.785-.042zm12.135 3.75c-.156-.098-.286-.243-.362-.424-.187-.442.023-.927.468-1.084 4.381-1.536 7.685.48 7.823.567.415.26.555.787.312 1.178-.242.39-.776.495-1.191.238-.12-.072-2.727-1.621-6.267-.379-.266.091-.553.046-.783-.096z" fill="#65471b"/></svg>
@@ -399,14 +399,14 @@ In this post I would like to share a few experiences I have had with Hexo, regar
 <hr>
 <h2 id="Photos"><a href="#Photos" class="headerlink" title="Photos"></a><a href="/photos">Photos</a></h2><p>As I speak from photos … to provide header images for my new posts (or pages), I have prepared a pool of photos that I display on a special filterable page. This page is not one that comes with Hexo, but is based on a dynamic page generator I’ve created for this purpose. I wrote about it in 2021: <a href="/post/Pattern-for-dynamic-Hexo-pages/" title="Pattern for dynamic Hexo pages">Pattern for dynamic Hexo pages</a>.</p>
 <p>But how do I fill this pool with new photos, especially because I need three variants of a new photo for the standard device classes Desktop (normal), Tablet and Mobile?</p>
-<p>I have a very specific workflow in Lightroom to edit my photos and convert them from RAW to JPEG while exporting, to add them to <a href="https://500px.com/p/kikon">my 500px collection</a> for example. The destination of these export is again my cloud storage.</p>
+<p>I have a very specific workflow in Lightroom to edit my photos and convert them from RAW to JPEG while exporting, to add them to <a target="_blank" rel="noopener" href="https://500px.com/p/kikon">my 500px collection</a> for example. The destination of these export is again my cloud storage.</p>
 <p>From time to time I pick some images from these export folders that I want to use on the blog. I do this mostly on my Android smartphone in a quiet minute and these are the steps and Android apps I need, to turn a high resolution 10MB photo into one that can be used on the web:</p>
 <ol>
-<li><a href="https://play.google.com/store/apps/details?id=pl.solidexplorer2">Solid Explorer</a>: Creating a new folder in the projects pool folder with the name of the image.</li>
-<li><a href="https://play.google.com/store/apps/details?id=pl.solidexplorer2">Solid Explorer</a>: Copy the original photo into the new pool folder.</li>
-<li><a href="https://play.google.com/store/apps/details?id=pl.solidexplorer2">Solid Explorer</a>: Create <code>meta.txt</code> to hold the name and the 500px Url of the photo in the new pool folder.</li>
-<li><a href="https://play.google.com/store/apps/details?id=de.vsmedia.imagesize">ImageSize</a>: Create normal (1280px), tablet (768px) and mobile (480px) versions of the photo as web images.</li>
-<li><a href="https://play.google.com/store/apps/details?id=pl.solidexplorer2">Solid Explorer</a>: Copy web images to new pool folder and delete original.</li>
+<li><a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=pl.solidexplorer2">Solid Explorer</a>: Creating a new folder in the projects pool folder with the name of the image.</li>
+<li><a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=pl.solidexplorer2">Solid Explorer</a>: Copy the original photo into the new pool folder.</li>
+<li><a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=pl.solidexplorer2">Solid Explorer</a>: Create <code>meta.txt</code> to hold the name and the 500px Url of the photo in the new pool folder.</li>
+<li><a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=de.vsmedia.imagesize">ImageSize</a>: Create normal (1280px), tablet (768px) and mobile (480px) versions of the photo as web images.</li>
+<li><a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=pl.solidexplorer2">Solid Explorer</a>: Copy web images to new pool folder and delete original.</li>
 </ol>
 <p>I have a similar workflow working on my Windows machine, but both workflows are manual ones.</p>
 <p><img src="/post/The-State-of-the-Blog/kiko-io-PHOTOS.png" alt="kiko.io&#39;s Photos Workflow"></p>
@@ -414,7 +414,7 @@ In this post I would like to share a few experiences I have had with Hexo, regar
     <div class="alertbox thinkbox">
       <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="17.018" fill="#ffcb4c" r="17"/><g fill="#65471b"><path d="m14.524 21.036c-.145-.116-.258-.274-.312-.464-.134-.46.13-.918.59-1.021 4.528-1.021 7.577 1.363 7.706 1.465.384.306.459.845.173 1.205-.286.358-.828.401-1.211.097-.11-.084-2.523-1.923-6.182-1.098-.274.061-.554-.016-.764-.184z"/><ellipse cx="13.119" cy="11.174" rx="2.125" ry="2.656"/><ellipse cx="24.375" cy="12.236" rx="2.125" ry="2.656"/></g><path d="m17.276 35.149s1.265-.411 1.429-1.352c.173-.972-.624-1.167-.624-1.167s1.041-.208 1.172-1.376c.123-1.101-.861-1.363-.861-1.363s.97-.4 1.016-1.539c.038-.959-.995-1.428-.995-1.428s5.038-1.221 5.556-1.341c.516-.12 1.32-.615 1.069-1.694-.249-1.08-1.204-1.118-1.697-1.003-.494.115-6.744 1.566-8.9 2.068l-1.439.334c-.54.127-.785-.11-.404-.512.508-.536.833-1.129.946-2.113.119-1.035-.232-2.313-.433-2.809-.374-.921-1.005-1.649-1.734-1.899-1.137-.39-1.945.321-1.542 1.561.604 1.854.208 3.375-.833 4.293-2.449 2.157-3.588 3.695-2.83 6.973.828 3.575 4.377 5.876 7.952 5.048z" fill="#f19020"/><path d="m9.296 6.351c-.164-.088-.303-.224-.391-.399-.216-.428-.04-.927.393-1.112 4.266-1.831 7.699-.043 7.843.034.433.231.608.747.391 1.154-.216.405-.74.546-1.173.318-.123-.063-2.832-1.432-6.278.047-.257.109-.547.085-.785-.042zm12.135 3.75c-.156-.098-.286-.243-.362-.424-.187-.442.023-.927.468-1.084 4.381-1.536 7.685.48 7.823.567.415.26.555.787.312 1.178-.242.39-.776.495-1.191.238-.12-.072-2.727-1.621-6.267-.379-.266.091-.553.046-.783-.096z" fill="#65471b"/></svg>
       <h4>is there an easier way?</h4>
-      <p>Fiddling around with images on the smartphone like this almost has a medidative effect on me, but it’s not really effective. Better would be to throw the original image into a folder and let Hexo do the work of resizing by utilizing <a href="https://sharp.pixelplumbing.com/">Sharp</a> and <a href="https://github.com/imagemin/imagemin">imagemin</a>.</p>
+      <p>Fiddling around with images on the smartphone like this almost has a medidative effect on me, but it’s not really effective. Better would be to throw the original image into a folder and let Hexo do the work of resizing by utilizing <a target="_blank" rel="noopener" href="https://sharp.pixelplumbing.com/">Sharp</a> and <a target="_blank" rel="noopener" href="https://github.com/imagemin/imagemin">imagemin</a>.</p>
 
     </div>
   
@@ -435,7 +435,7 @@ In this post I would like to share a few experiences I have had with Hexo, regar
 <hr>
 <h2 id="Tiny-Tools"><a href="#Tiny-Tools" class="headerlink" title="Tiny-Tools"></a><a href="/collections/tiny-tools">Tiny-Tools</a></h2><p>Since this blog is primarily a memory aid for me and my future self (how often do I have stumbled across my own posts during web search), it was logical to place a special bookmark collection here, because it happened to me more often that I found and used an online tool and some time later wonder what the thing was called when I have the same requirement again. </p>
 <p>That’s why I started to collect these URL’s in a public Trello board (see <a href="/post/Add-website-to-Trello-card-the-better-way/" title="Add website to Trello card the better way">Add website to Trello card the better way</a>) and provide them with keywords and a screenshot. But Trello is a Kanban tool and not designed for such special requirements as the display of bookmarks and so I use it only as a data source for my page TINY-TOOLS.</p>
-<p>Generating a static page out of Trello cards was again a job for my dynamic pages, I had introduced for the photos page. It takes advantage of the fact that any Trello board can be retrieved as machine-readable data by extending the url with <code>.json</code>. The <a href="https://github.com/kristofzerbe/kiko.io/blob/26ccfa18b8abff279a05b1f12363992a278c130c/themes/landscape/scripts/generator-dynamic-trello.js">Dynamic Trello Generator</a> is really straight forward.</p>
+<p>Generating a static page out of Trello cards was again a job for my dynamic pages, I had introduced for the photos page. It takes advantage of the fact that any Trello board can be retrieved as machine-readable data by extending the url with <code>.json</code>. The <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe/kiko.io/blob/26ccfa18b8abff279a05b1f12363992a278c130c/themes/landscape/scripts/generator-dynamic-trello.js">Dynamic Trello Generator</a> is really straight forward.</p>
 <p>With this script it is only a matter of configuration to generate a page from a given list of a board (URL ist shortended):</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">trello:</span></span><br><span class="line">  <span class="attr">boards:</span> </span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Collections</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://trello.com/.../collections.json?fields=all&amp;cards=all&amp;card_fields=all&amp;card_attachments=true&amp;lists=all&amp;list_fields=all</span></span><br><span class="line">    <span class="attr">pages:</span> </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">tiny-tools</span></span><br><span class="line">      <span class="attr">list:</span> <span class="string">TinyTools</span></span><br></pre></td></tr></table></figure>
 
@@ -455,9 +455,9 @@ In this post I would like to share a few experiences I have had with Hexo, regar
 <p>Since I am familiar with Hexo generators, I built a new one called <code>generator-notes</code> that iterates through the entire <code>source/_notes</code> folder and generates an index file for all the notes in a year, as well as the notes file itself, and copies the images to the source path.</p>
 <p>This approach also freed me from using my HexoCommander, because there is no need of executing a <code>new xxx</code> command. I can now create new Notes from the smartphone quite easily:</p>
 <ol>
-<li><a href="https://play.google.com/store/search?q=metactrl+%22autosync%22&c=apps">Autosync App</a>: Synchronization of the source&#x2F;notes folder</li>
-<li><a href="https://play.google.com/store/apps/details?id=net.gsantner.markor">Markor</a>: Edit or create new Note MD file via snippet.</li>
-<li><a href="https://github.com/">GitHub PWA</a>: Upload MD file to the appropriate folder of the repository</li>
+<li><a target="_blank" rel="noopener" href="https://play.google.com/store/search?q=metactrl+%22autosync%22&c=apps">Autosync App</a>: Synchronization of the source&#x2F;notes folder</li>
+<li><a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=net.gsantner.markor">Markor</a>: Edit or create new Note MD file via snippet.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/">GitHub PWA</a>: Upload MD file to the appropriate folder of the repository</li>
 </ol>
 <p>The upload will automatically trigger the build and deployment to GitHub. Done.</p>
 <p><img src="/post/The-State-of-the-Blog/kiko-io-NOTES.png" alt="kiko.io&#39;s Notes Workflow"></p>
@@ -466,14 +466,14 @@ In this post I would like to share a few experiences I have had with Hexo, regar
       <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="17.018" fill="#ffcb4c" r="17"/><g fill="#65471b"><path d="m14.524 21.036c-.145-.116-.258-.274-.312-.464-.134-.46.13-.918.59-1.021 4.528-1.021 7.577 1.363 7.706 1.465.384.306.459.845.173 1.205-.286.358-.828.401-1.211.097-.11-.084-2.523-1.923-6.182-1.098-.274.061-.554-.016-.764-.184z"/><ellipse cx="13.119" cy="11.174" rx="2.125" ry="2.656"/><ellipse cx="24.375" cy="12.236" rx="2.125" ry="2.656"/></g><path d="m17.276 35.149s1.265-.411 1.429-1.352c.173-.972-.624-1.167-.624-1.167s1.041-.208 1.172-1.376c.123-1.101-.861-1.363-.861-1.363s.97-.4 1.016-1.539c.038-.959-.995-1.428-.995-1.428s5.038-1.221 5.556-1.341c.516-.12 1.32-.615 1.069-1.694-.249-1.08-1.204-1.118-1.697-1.003-.494.115-6.744 1.566-8.9 2.068l-1.439.334c-.54.127-.785-.11-.404-.512.508-.536.833-1.129.946-2.113.119-1.035-.232-2.313-.433-2.809-.374-.921-1.005-1.649-1.734-1.899-1.137-.39-1.945.321-1.542 1.561.604 1.854.208 3.375-.833 4.293-2.449 2.157-3.588 3.695-2.83 6.973.828 3.575 4.377 5.876 7.952 5.048z" fill="#f19020"/><path d="m9.296 6.351c-.164-.088-.303-.224-.391-.399-.216-.428-.04-.927.393-1.112 4.266-1.831 7.699-.043 7.843.034.433.231.608.747.391 1.154-.216.405-.74.546-1.173.318-.123-.063-2.832-1.432-6.278.047-.257.109-.547.085-.785-.042zm12.135 3.75c-.156-.098-.286-.243-.362-.424-.187-.442.023-.927.468-1.084 4.381-1.536 7.685.48 7.823.567.415.26.555.787.312 1.178-.242.39-.776.495-1.191.238-.12-.072-2.727-1.621-6.267-.379-.266.091-.553.046-.783-.096z" fill="#65471b"/></svg>
       <h4>is there an easier way?</h4>
       <p>Using a generator directly means, that I can’t use tag plugins in my Notes and code blocks won’t be prettied up, as I mentioned earlier.</p>
-<p>Also the Notes are not included in the Hexo <code>Locals</code> and are therefore not available later on for RSS feeds or other stuff to create. So I will probably extend my approach with a custom <a href="https://hexo.io/api/processor.html">Hexo processor</a>, that will allow me to do this.</p>
+<p>Also the Notes are not included in the Hexo <code>Locals</code> and are therefore not available later on for RSS feeds or other stuff to create. So I will probably extend my approach with a custom <a target="_blank" rel="noopener" href="https://hexo.io/api/processor.html">Hexo processor</a>, that will allow me to do this.</p>
 
     </div>
   
 
 <hr>
-<h2 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h2><p>As I mentioned earlier, kiko.io is hosted at GitHub Pages. Due to a bug in Hexo regarding the treatment of non markdown files in post folders (<a href="https://github.com/hexojs/hexo/pull/4781">Fix #1490</a>), I had to process all files locally and transfer the output folder to the repository as well. I would have liked to use a GitHub action for the entire deployment, including the generation of the output files, but for a long time there was no NPM package with a working Hexo version that would have allowed this.</p>
-<p>I recently checked again to see if the current Hexo release 6.0.3. had fixed my bug and the subsequent bugs …. and yes. With one or two workarounds, my Hexo installation now runs completely on NPM packages, without any manual adjustments!<br>So I could finally switch the deployment and automate it with its own <a href="https://github.com/kristofzerbe/kiko.io/blob/master/.github/workflows/hexo-build.yml">build action</a>. This enables me to write a text on the go, commit the file via github.com and the build and deployment starts. Woohoo … \o&#x2F;</p>
+<h2 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h2><p>As I mentioned earlier, kiko.io is hosted at GitHub Pages. Due to a bug in Hexo regarding the treatment of non markdown files in post folders (<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/pull/4781">Fix #1490</a>), I had to process all files locally and transfer the output folder to the repository as well. I would have liked to use a GitHub action for the entire deployment, including the generation of the output files, but for a long time there was no NPM package with a working Hexo version that would have allowed this.</p>
+<p>I recently checked again to see if the current Hexo release 6.0.3. had fixed my bug and the subsequent bugs …. and yes. With one or two workarounds, my Hexo installation now runs completely on NPM packages, without any manual adjustments!<br>So I could finally switch the deployment and automate it with its own <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe/kiko.io/blob/master/.github/workflows/hexo-build.yml">build action</a>. This enables me to write a text on the go, commit the file via github.com and the build and deployment starts. Woohoo … \o&#x2F;</p>
 
     <div class="alertbox thinkbox">
       <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="17.018" fill="#ffcb4c" r="17"/><g fill="#65471b"><path d="m14.524 21.036c-.145-.116-.258-.274-.312-.464-.134-.46.13-.918.59-1.021 4.528-1.021 7.577 1.363 7.706 1.465.384.306.459.845.173 1.205-.286.358-.828.401-1.211.097-.11-.084-2.523-1.923-6.182-1.098-.274.061-.554-.016-.764-.184z"/><ellipse cx="13.119" cy="11.174" rx="2.125" ry="2.656"/><ellipse cx="24.375" cy="12.236" rx="2.125" ry="2.656"/></g><path d="m17.276 35.149s1.265-.411 1.429-1.352c.173-.972-.624-1.167-.624-1.167s1.041-.208 1.172-1.376c.123-1.101-.861-1.363-.861-1.363s.97-.4 1.016-1.539c.038-.959-.995-1.428-.995-1.428s5.038-1.221 5.556-1.341c.516-.12 1.32-.615 1.069-1.694-.249-1.08-1.204-1.118-1.697-1.003-.494.115-6.744 1.566-8.9 2.068l-1.439.334c-.54.127-.785-.11-.404-.512.508-.536.833-1.129.946-2.113.119-1.035-.232-2.313-.433-2.809-.374-.921-1.005-1.649-1.734-1.899-1.137-.39-1.945.321-1.542 1.561.604 1.854.208 3.375-.833 4.293-2.449 2.157-3.588 3.695-2.83 6.973.828 3.575 4.377 5.876 7.952 5.048z" fill="#f19020"/><path d="m9.296 6.351c-.164-.088-.303-.224-.391-.399-.216-.428-.04-.927.393-1.112 4.266-1.831 7.699-.043 7.843.034.433.231.608.747.391 1.154-.216.405-.74.546-1.173.318-.123-.063-2.832-1.432-6.278.047-.257.109-.547.085-.785-.042zm12.135 3.75c-.156-.098-.286-.243-.362-.424-.187-.442.023-.927.468-1.084 4.381-1.536 7.685.48 7.823.567.415.26.555.787.312 1.178-.242.39-.776.495-1.191.238-.12-.072-2.727-1.621-6.267-.379-.266.091-.553.046-.783-.096z" fill="#65471b"/></svg>
@@ -484,8 +484,8 @@ In this post I would like to share a few experiences I have had with Hexo, regar
   
 
 <hr>
-<h2 id="Syndication"><a href="#Syndication" class="headerlink" title="Syndication"></a>Syndication</h2><p>As I’m a fan of the <a href="https://indieweb.org/">Indieweb</a>, I started early with <a href="https://indieweb.org/Webmention">Webmentions</a> on my blog. The idea behind it is to mention an article from blog A in a post on Blog B or social media like Twitter or Mastodon and blog A gets an automated message like “<em>Hey, I’ve mentioned you here</em>“. The operator of Blog A can now also automatically display this message under the article mentioned.</p>
-<h3 id="Receiving-Webmentions"><a href="#Receiving-Webmentions" class="headerlink" title="Receiving Webmentions"></a>Receiving Webmentions</h3><p>kiko.io is a static site, therefore, there are no active components on the web server that could react to an incoming webmention. But that’s not a problem, because there are services like <a href="https://webmention.io/">webmention.io</a> that can serve as recipients and from where you can then pick up the messages. Some bloggers do this by fetching and inserting them into the articles while generating the static pages, but for me this can take too long. My approach is, to load the mentions from webmention.io via JavaScript dynamically into the page, as described in my post <a href="/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/" title="Hexo and the IndieWeb (Receiving Webmentions)">Hexo and the IndieWeb (Receiving Webmentions)</a>.</p>
+<h2 id="Syndication"><a href="#Syndication" class="headerlink" title="Syndication"></a>Syndication</h2><p>As I’m a fan of the <a target="_blank" rel="noopener" href="https://indieweb.org/">Indieweb</a>, I started early with <a target="_blank" rel="noopener" href="https://indieweb.org/Webmention">Webmentions</a> on my blog. The idea behind it is to mention an article from blog A in a post on Blog B or social media like Twitter or Mastodon and blog A gets an automated message like “<em>Hey, I’ve mentioned you here</em>“. The operator of Blog A can now also automatically display this message under the article mentioned.</p>
+<h3 id="Receiving-Webmentions"><a href="#Receiving-Webmentions" class="headerlink" title="Receiving Webmentions"></a>Receiving Webmentions</h3><p>kiko.io is a static site, therefore, there are no active components on the web server that could react to an incoming webmention. But that’s not a problem, because there are services like <a target="_blank" rel="noopener" href="https://webmention.io/">webmention.io</a> that can serve as recipients and from where you can then pick up the messages. Some bloggers do this by fetching and inserting them into the articles while generating the static pages, but for me this can take too long. My approach is, to load the mentions from webmention.io via JavaScript dynamically into the page, as described in my post <a href="/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/" title="Hexo and the IndieWeb (Receiving Webmentions)">Hexo and the IndieWeb (Receiving Webmentions)</a>.</p>
 
     <div class="alertbox thinkbox">
       <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="17.018" fill="#ffcb4c" r="17"/><g fill="#65471b"><path d="m14.524 21.036c-.145-.116-.258-.274-.312-.464-.134-.46.13-.918.59-1.021 4.528-1.021 7.577 1.363 7.706 1.465.384.306.459.845.173 1.205-.286.358-.828.401-1.211.097-.11-.084-2.523-1.923-6.182-1.098-.274.061-.554-.016-.764-.184z"/><ellipse cx="13.119" cy="11.174" rx="2.125" ry="2.656"/><ellipse cx="24.375" cy="12.236" rx="2.125" ry="2.656"/></g><path d="m17.276 35.149s1.265-.411 1.429-1.352c.173-.972-.624-1.167-.624-1.167s1.041-.208 1.172-1.376c.123-1.101-.861-1.363-.861-1.363s.97-.4 1.016-1.539c.038-.959-.995-1.428-.995-1.428s5.038-1.221 5.556-1.341c.516-.12 1.32-.615 1.069-1.694-.249-1.08-1.204-1.118-1.697-1.003-.494.115-6.744 1.566-8.9 2.068l-1.439.334c-.54.127-.785-.11-.404-.512.508-.536.833-1.129.946-2.113.119-1.035-.232-2.313-.433-2.809-.374-.921-1.005-1.649-1.734-1.899-1.137-.39-1.945.321-1.542 1.561.604 1.854.208 3.375-.833 4.293-2.449 2.157-3.588 3.695-2.83 6.973.828 3.575 4.377 5.876 7.952 5.048z" fill="#f19020"/><path d="m9.296 6.351c-.164-.088-.303-.224-.391-.399-.216-.428-.04-.927.393-1.112 4.266-1.831 7.699-.043 7.843.034.433.231.608.747.391 1.154-.216.405-.74.546-1.173.318-.123-.063-2.832-1.432-6.278.047-.257.109-.547.085-.785-.042zm12.135 3.75c-.156-.098-.286-.243-.362-.424-.187-.442.023-.927.468-1.084 4.381-1.536 7.685.48 7.823.567.415.26.555.787.312 1.178-.242.39-.776.495-1.191.238-.12-.072-2.727-1.621-6.267-.379-.266.091-.553.046-.783-.096z" fill="#65471b"/></svg>
@@ -496,14 +496,14 @@ In this post I would like to share a few experiences I have had with Hexo, regar
   
 
 <h3 id="Sending-Webmentions"><a href="#Sending-Webmentions" class="headerlink" title="Sending Webmentions"></a>Sending Webmentions</h3><p>Unfortunately a I can’t integrate sending Webmentions for the mentioned Url’s in a particular (new) post into the generation process while building the static files for the blog, because the target Url’s not yet exist at this point of time. I have to wait until it is deployed and thus publicly available. So this step is currently still a manual one.</p>
-<p>My current solution is based on Remy Sharp’s NPM package <a href="https://www.npmjs.com/package/@remy/webmention">@remy&#x2F;webmention</a>, which he himself also uses for his web service  <a href="https://webmention.app/">webmention.app</a>. I integrate it into a Hexo console command called “console-webmention” which I call via <code>hexo webmention</code>. Without parameters, the last post is searched for outgoing url’s and their webmention endpoints respectively. See the <a href="/projects/hexo-console-webmention/">project page</a> for more details.</p>
+<p>My current solution is based on Remy Sharp’s NPM package <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/@remy/webmention">@remy&#x2F;webmention</a>, which he himself also uses for his web service  <a target="_blank" rel="noopener" href="https://webmention.app/">webmention.app</a>. I integrate it into a Hexo console command called “console-webmention” which I call via <code>hexo webmention</code>. Without parameters, the last post is searched for outgoing url’s and their webmention endpoints respectively. See the <a href="/projects/hexo-console-webmention/">project page</a> for more details.</p>
 
     <div class="alertbox thinkbox">
       <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="17.018" fill="#ffcb4c" r="17"/><g fill="#65471b"><path d="m14.524 21.036c-.145-.116-.258-.274-.312-.464-.134-.46.13-.918.59-1.021 4.528-1.021 7.577 1.363 7.706 1.465.384.306.459.845.173 1.205-.286.358-.828.401-1.211.097-.11-.084-2.523-1.923-6.182-1.098-.274.061-.554-.016-.764-.184z"/><ellipse cx="13.119" cy="11.174" rx="2.125" ry="2.656"/><ellipse cx="24.375" cy="12.236" rx="2.125" ry="2.656"/></g><path d="m17.276 35.149s1.265-.411 1.429-1.352c.173-.972-.624-1.167-.624-1.167s1.041-.208 1.172-1.376c.123-1.101-.861-1.363-.861-1.363s.97-.4 1.016-1.539c.038-.959-.995-1.428-.995-1.428s5.038-1.221 5.556-1.341c.516-.12 1.32-.615 1.069-1.694-.249-1.08-1.204-1.118-1.697-1.003-.494.115-6.744 1.566-8.9 2.068l-1.439.334c-.54.127-.785-.11-.404-.512.508-.536.833-1.129.946-2.113.119-1.035-.232-2.313-.433-2.809-.374-.921-1.005-1.649-1.734-1.899-1.137-.39-1.945.321-1.542 1.561.604 1.854.208 3.375-.833 4.293-2.449 2.157-3.588 3.695-2.83 6.973.828 3.575 4.377 5.876 7.952 5.048z" fill="#f19020"/><path d="m9.296 6.351c-.164-.088-.303-.224-.391-.399-.216-.428-.04-.927.393-1.112 4.266-1.831 7.699-.043 7.843.034.433.231.608.747.391 1.154-.216.405-.74.546-1.173.318-.123-.063-2.832-1.432-6.278.047-.257.109-.547.085-.785-.042zm12.135 3.75c-.156-.098-.286-.243-.362-.424-.187-.442.023-.927.468-1.084 4.381-1.536 7.685.48 7.823.567.415.26.555.787.312 1.178-.242.39-.776.495-1.191.238-.12-.072-2.727-1.621-6.267-.379-.266.091-.553.046-.783-.096z" fill="#65471b"/></svg>
       <h4>is there an easier way?</h4>
-      <p>This works so far, but depending on a console application means once again having to use my HexoCommander and write commands to a text file when I’m on the road. Then I can also send the webmentions for a post directly manually via the <strong><a href="https://telegraph.p3k.io/">Telegraph</a></strong> service.</p>
+      <p>This works so far, but depending on a console application means once again having to use my HexoCommander and write commands to a text file when I’m on the road. Then I can also send the webmentions for a post directly manually via the <strong><a target="_blank" rel="noopener" href="https://telegraph.p3k.io/">Telegraph</a></strong> service.</p>
 <p>One possibility would be a cron job in a Github Action, but this would require creating a new container with all dependencies every time the build has just run and Github has deployed the created files, just to run a console command that might not even return any results since there is nothing to mention in the last post. Unsatisfactory.</p>
-<p>Another possibility would be to utilize my Atom feed by setting up a Zapier, IFTT or Make&#x2F;Integromat task, which picks the last added entry and run the <a href="https://telegraph.p3k.io/api">Telegraph API</a> against it.</p>
+<p>Another possibility would be to utilize my Atom feed by setting up a Zapier, IFTT or Make&#x2F;Integromat task, which picks the last added entry and run the <a target="_blank" rel="noopener" href="https://telegraph.p3k.io/api">Telegraph API</a> against it.</p>
 <p>Any ideas?</p>
 
     </div>
@@ -546,15 +546,15 @@ In this post I would like to share a few experiences I have had with Hexo, regar
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clp89x9dc001mnioj6duwdpz8">
+      <div class="article-permalink" id="article-permalink-clp8jajwf001mnsowaipmcq5m">
     <input class="article-permalink-value" value="https://kiko.io/post/The-State-of-the-Blog/" 
-           data-id="clp89x9dc001mnioj6duwdpz8" data-title="The State of the Blog" />
+           data-id="clp8jajwf001mnsowaipmcq5m" data-title="The State of the Blog" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9dc001mnioj6duwdpz8");
+        initPermalink("clp8jajwf001mnsowaipmcq5m");
     });
 </script>
 
@@ -573,8 +573,8 @@ In this post I would like to share a few experiences I have had with Hexo, regar
 <div class="article-interaction" data-pagefind-ignore>
   <p>
     You can interact with this article (applause, criticism, whatever) by mention it in one of 
-    your posts or by replying to its syndication on <a class="mastodon" href="https://indieweb.social/@kiko/109565325472177128">Mastodon</a>, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+    your posts or by replying to its syndication on <a class="mastodon" target="_blank" rel="noopener" href="https://indieweb.social/@kiko/109565325472177128">Mastodon</a>, which will also be shown here as a  
+    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
   </p>
 
   <p class="webmention-form-info">
@@ -895,15 +895,15 @@ In this post I would like to share a few experiences I have had with Hexo, regar
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -938,9 +938,9 @@ In this post I would like to share a few experiences I have had with Hexo, regar
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -1148,27 +1148,27 @@ In this post I would like to share a few experiences I have had with Hexo, regar
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>

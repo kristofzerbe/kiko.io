@@ -137,7 +137,7 @@ Aaron Parecki, co-founder of the IndieWeb, has made a service called webmention.
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -371,11 +371,11 @@ Aaron Parecki, co-founder of the IndieWeb, has made a service called webmention.
 
 <hr>
 <p>A meaningful interaction has always two directions: sending and receiving. In this part of the post I want to show you how to receive Webmentions from other blogs participating in the IndieWeb.</p>
-<p>As Hexo is a SSG it generates static HTML pages. This has the advantage that the pages can be hosted just about anywhere (in my case <a href="https://pages.github.com/">Github Pages</a>, but also the disadvantage of not having a real backend. Therefore, we need an external service that acts as an Webmention endpoint, where other people can send their webmentions.</p>
-<p><a href="https://aaronparecki.com/">Aaron Parecki</a>, co-founder of the IndieWeb, has made a service called <a href="https://webmention.io/"><strong>webmention.io</strong></a> we can use for free. It is able to convert old-fashioned Pingbacks to Webmentions, supports deleting of unwanted mentions, has a Blocklist for blocking domains, Webhooks for real-time processing and last but not least an API to get all your Webmentions per page or per site.</p>
+<p>As Hexo is a SSG it generates static HTML pages. This has the advantage that the pages can be hosted just about anywhere (in my case <a target="_blank" rel="noopener" href="https://pages.github.com/">Github Pages</a>, but also the disadvantage of not having a real backend. Therefore, we need an external service that acts as an Webmention endpoint, where other people can send their webmentions.</p>
+<p><a target="_blank" rel="noopener" href="https://aaronparecki.com/">Aaron Parecki</a>, co-founder of the IndieWeb, has made a service called <a target="_blank" rel="noopener" href="https://webmention.io/"><strong>webmention.io</strong></a> we can use for free. It is able to convert old-fashioned Pingbacks to Webmentions, supports deleting of unwanted mentions, has a Blocklist for blocking domains, Webhooks for real-time processing and last but not least an API to get all your Webmentions per page or per site.</p>
 <span id="more"></span>
 
-<h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><p>webmention.io needs a registration and Aaron uses his own authentication method <strong>Web Sign-In</strong> over <a href="https://indielogin.com/">IndieLogin</a> to achieve that.</p>
+<h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><p>webmention.io needs a registration and Aaron uses his own authentication method <strong>Web Sign-In</strong> over <a target="_blank" rel="noopener" href="https://indielogin.com/">IndieLogin</a> to achieve that.</p>
 <p><img src="/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/indielogin.png" alt="IndieLogin.com"></p>
 <p>After you have signed in, you see your settings with two important links, you have to integrate in the head of your HTML:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;webmention&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://webmention.io/[YOUR-BLOG-DOMAIN]/webmention&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;pingback&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://webmention.io/[YOUR-BLOG-DOMAIN]/xmlrpc&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
@@ -384,7 +384,7 @@ Aaron Parecki, co-founder of the IndieWeb, has made a service called webmention.
 <p>You will also find your <strong>API Key</strong> on this page. To be honest, is not a real API key, but rather a key to retrieve all incoming webmentions at once. Therefore it does not need to be kept private and secured. There is no way to modify your incoming Webmentions over it.</p>
 <h2 id="Incoming-Webmentions"><a href="#Incoming-Webmentions" class="headerlink" title="Incoming Webmentions"></a>Incoming Webmentions</h2>
     <div class="alertbox alertbox-info">
-      <p>I’m implementing my Hexo&#x2F;Webmention solution as I’m writing this post, therefore I don’t have any Webmentions to show as an example. Since all mentions on webmention.io are publicly accessible, I simply use Max Böcks article <a href="https://mxb.dev/blog/using-webmentions-on-static-sites/">Using Webmentions in Eleventy</a> in the following. Max, I hope it is ok … :)</p>
+      <p>I’m implementing my Hexo&#x2F;Webmention solution as I’m writing this post, therefore I don’t have any Webmentions to show as an example. Since all mentions on webmention.io are publicly accessible, I simply use Max Böcks article <a target="_blank" rel="noopener" href="https://mxb.dev/blog/using-webmentions-on-static-sites/">Using Webmentions in Eleventy</a> in the following. Max, I hope it is ok … :)</p>
 
     </div>
   
@@ -450,7 +450,7 @@ Aaron Parecki, co-founder of the IndieWeb, has made a service called webmention.
 <td><code>?since_id=500</code>).</td>
 </tr>
 </tbody></table>
-<p>You can find more on parameters in the documentation of webmention.io’s source code here: <a href="https://github.com/aaronpk/webmention.io">https://github.com/aaronpk/webmention.io</a>.</p>
+<p>You can find more on parameters in the documentation of webmention.io’s source code here: <a target="_blank" rel="noopener" href="https://github.com/aaronpk/webmention.io">https://github.com/aaronpk/webmention.io</a>.</p>
 <h2 id="The-Data"><a href="#The-Data" class="headerlink" title="The Data"></a>The Data</h2><p>Let’s dive into the data. The JSON is a list and every Webmention is an entry underneath <code>children</code>, with following useful fields:</p>
 <table>
 <thead>
@@ -562,7 +562,7 @@ Aaron Parecki, co-founder of the IndieWeb, has made a service called webmention.
 
 <p>The result will look like this, after adding some styles:</p>
 <p><img src="/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/wm-example.png" alt="Webmention example"></p>
-<p>You can download the complete JavaScript- and the Stylus file on Github:<br><a href="https://github.com/kristofzerbe/Hexo-and-the-IndieWeb-Files"><strong>https://github.com/kristofzerbe/Hexo-and-the-IndieWeb-Files</strong></a></p>
+<p>You can download the complete JavaScript- and the Stylus file on Github:<br><a target="_blank" rel="noopener" href="https://github.com/kristofzerbe/Hexo-and-the-IndieWeb-Files"><strong>https://github.com/kristofzerbe/Hexo-and-the-IndieWeb-Files</strong></a></p>
 <hr>
 <h3 id="Form-for-sending-Webmentions-manually"><a href="#Form-for-sending-Webmentions-manually" class="headerlink" title="Form for sending Webmentions manually"></a>Form for sending Webmentions manually</h3><p>As you may noticed in <a href="/post/Hexo-and-the-IndieWeb-Sending-Webmentions/" title="Hexo and the IndieWeb (Sending Webmentions)">Part 2</a>, some manual work is necessary to have webmentions sent. Therefore, it is good to give the user a possibility to submit his blog post, where he mentions yours, directly. As webmentions.io supports posting a new source, the HTML form is quite simple an we can integrate it in the partial from above, below the script tag:</p>
 <figure class="highlight html"><figcaption><span>layout/_partial/post/webmentions.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;article-webmentions&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  ...</span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">&quot;webmention-form&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">action</span>=<span class="string">&quot;https://webmention.io/&lt;%- config.title %&gt;&gt;/webmention&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">name</span>=<span class="string">&quot;webmention-form&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;webmention-form-source&quot;</span>&gt;</span>Your Article URL:<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">&quot;webmention-form-source&quot;</span> </span></span><br><span class="line"><span class="tag">          <span class="attr">type</span>=<span class="string">&quot;url&quot;</span> <span class="attr">name</span>=<span class="string">&quot;source&quot;</span> </span></span><br><span class="line"><span class="tag">          <span class="attr">placeholder</span>=<span class="string">&quot;https://your-blog.com/your-article&quot;</span> <span class="attr">required</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;hidden&quot;</span> <span class="attr">name</span>=<span class="string">&quot;target&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&lt;%- post.permalink %&gt;&gt;&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Send Webmention&quot;</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -570,7 +570,7 @@ Aaron Parecki, co-founder of the IndieWeb, has made a service called webmention.
 <p>The variable <code>config.title</code> defines the name of your blog with which you have registered at webmention.io. In the hidden input, we use the permalink of the current page&#x2F;article as the mentions target.</p>
 <hr>
 <h2 id="Building-Bridges"><a href="#Building-Bridges" class="headerlink" title="Building Bridges"></a>Building Bridges</h2><p>Yes, the IndieWeb and Webmentions are an alternative concept of social networking, bypassing the big silos like Facebook, Twitter and Co. … but they exist and they have a massive reach. Of course, your posts will be shared there, so why not include those mentions?</p>
-<p><a href="https://brid.gy/"><strong>Bridgy</strong></a> is such a bridge builder. It connects your blog with the big social media players:</p>
+<p><a target="_blank" rel="noopener" href="https://brid.gy/"><strong>Bridgy</strong></a> is such a bridge builder. It connects your blog with the big social media players:</p>
 <p><img src="/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/bridgy.png" alt="Bridgy"></p>
 <p>The only thing you have to do, is to allow Bridgy to access your social media data, like your Tweets on Twitter. If somebody mentions you and one of your articles as a Tweet, Reply or Like, it sends a mention to the endpoint defined in your HTML, in our case webmention.io. Thats it … kinda magic.</p>
 <hr>
@@ -578,7 +578,7 @@ Aaron Parecki, co-founder of the IndieWeb, has made a service called webmention.
 <hr>
 <h2 id="More-Info"><a href="#More-Info" class="headerlink" title="More Info"></a>More Info</h2>
         <ul class="moreinfo-list">
-            <li>indieweb.org: <a href="https://indieweb.org/webmention.io">webmention.io</a></li><li>Max Böck: <a href="https://mxb.dev/blog/using-webmentions-on-static-sites/">Using Webmentions in Eleventy</a></li><li>Max Böck: <a href="https://mxb.dev/blog/webmention-analytics/">Webmention Analytics</a></li><li>Paul Kinlan: <a href="https://paul.kinlan.me/using-web-mentions-in-a-static-sitehugo/">Using Web Mentions in a static site (Hugo)</a></li><li>Sia Karamalegos: <a href="https://sia.codes/posts/webmentions-eleventy-in-depth/">An In-Depth Tutorial of Webmentions + Eleventy</a></li><li>Keith J. Grant: <a href="https://keithjgrant.com/posts/2019/02/adding-webmention-support-to-a-static-site/">Adding Webmention Support to a Static Site</a></li><li>Chris Bongers: <a href="https://h.daily-dev-tips.com/goodbye-comments-welcome-webmentions">Goodbye comments, welcome Webmentions</a></li>
+            <li>indieweb.org: <a target="_blank" rel="noopener" href="https://indieweb.org/webmention.io">webmention.io</a></li><li>Max Böck: <a target="_blank" rel="noopener" href="https://mxb.dev/blog/using-webmentions-on-static-sites/">Using Webmentions in Eleventy</a></li><li>Max Böck: <a target="_blank" rel="noopener" href="https://mxb.dev/blog/webmention-analytics/">Webmention Analytics</a></li><li>Paul Kinlan: <a target="_blank" rel="noopener" href="https://paul.kinlan.me/using-web-mentions-in-a-static-sitehugo/">Using Web Mentions in a static site (Hugo)</a></li><li>Sia Karamalegos: <a target="_blank" rel="noopener" href="https://sia.codes/posts/webmentions-eleventy-in-depth/">An In-Depth Tutorial of Webmentions + Eleventy</a></li><li>Keith J. Grant: <a target="_blank" rel="noopener" href="https://keithjgrant.com/posts/2019/02/adding-webmention-support-to-a-static-site/">Adding Webmention Support to a Static Site</a></li><li>Chris Bongers: <a target="_blank" rel="noopener" href="https://h.daily-dev-tips.com/goodbye-comments-welcome-webmentions">Goodbye comments, welcome Webmentions</a></li>
         </ul>
     
 
@@ -591,15 +591,15 @@ Aaron Parecki, co-founder of the IndieWeb, has made a service called webmention.
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clp89x9dm0026niojhi3l1kij">
+      <div class="article-permalink" id="article-permalink-clp8jajwn0028nsowfzdsgtls">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/" 
-           data-id="clp89x9dm0026niojhi3l1kij" data-title="Hexo and the IndieWeb (Receiving Webmentions)" />
+           data-id="clp8jajwn0028nsowfzdsgtls" data-title="Hexo and the IndieWeb (Receiving Webmentions)" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9dm0026niojhi3l1kij");
+        initPermalink("clp8jajwn0028nsowfzdsgtls");
     });
 </script>
 
@@ -619,7 +619,7 @@ Aaron Parecki, co-founder of the IndieWeb, has made a service called webmention.
   <p>
     You can interact with this article (applause, criticism, whatever) by mention it in one of 
     your posts, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
   </p>
 
   <p class="webmention-form-info">
@@ -887,15 +887,15 @@ Aaron Parecki, co-founder of the IndieWeb, has made a service called webmention.
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -930,9 +930,9 @@ Aaron Parecki, co-founder of the IndieWeb, has made a service called webmention.
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -1140,27 +1140,27 @@ Aaron Parecki, co-founder of the IndieWeb, has made a service called webmention.
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>

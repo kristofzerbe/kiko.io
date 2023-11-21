@@ -137,7 +137,7 @@ It’s Ok for Google to use Microdata attributes, but the HTML code of my templa
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -362,7 +362,7 @@ It’s Ok for Google to use Microdata attributes, but the HTML code of my templa
     
     
     <div class="article-entry e-content">
-      <p>Chris Coyier’s post “<a href="https://chriscoyier.net/2023/01/28/open-graph-blues/">Open Graph Blues</a>“ got me thinking that my blog’s metadata, which are used by Google among others to index my pages, aren’t really at the cutting edge anymore. I took the markup of the individual elements of the pages via <a href="https://schema.org/">schema.org</a> Microdata attributes from the standard Hexo template years ago and always adjusted it by value, but never questioned that there are more modern variants to provide the metadata.</p>
+      <p>Chris Coyier’s post “<a target="_blank" rel="noopener" href="https://chriscoyier.net/2023/01/28/open-graph-blues/">Open Graph Blues</a>“ got me thinking that my blog’s metadata, which are used by Google among others to index my pages, aren’t really at the cutting edge anymore. I took the markup of the individual elements of the pages via <a target="_blank" rel="noopener" href="https://schema.org/">schema.org</a> Microdata attributes from the standard Hexo template years ago and always adjusted it by value, but never questioned that there are more modern variants to provide the metadata.</p>
 <p>It’s Ok for Google to use Microdata attributes, but the HTML code of my templates is getting more and more opaque, because next to these stick to the tags also those for the Indieweb, classes for CSS and last but not least those for the own indexing via Pagefind. There becomes from a simple</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Title of my latest blog post<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -373,8 +373,8 @@ It’s Ok for Google to use Microdata attributes, but the HTML code of my templa
 <span id="more"></span>
 
 <hr>
-<h2 id="Structured-Meta-Data"><a href="#Structured-Meta-Data" class="headerlink" title="Structured Meta Data"></a>Structured Meta Data</h2><p>Google has published tons of information in its <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data">Search Central</a> on how to place metadata on your page to be found more easily in the index. You can also see that they are maintained by the update date of individual pages, for example “<em>Last updated 2023-01-26 UTC</em>“. End of last week. That’s up to date, fine.</p>
-<p>Of course, they also show how to use Microdata, but recommended is the use of <a href="https://json-ld.org/">JSON-LD</a>, a structured and centralized inclusion of the required information via a SCRIPT tag in the header of the page. Thereby information about the <strong>website</strong> in general, the <strong>author</strong>, the <strong>organization</strong> behind it and the actual <strong>article</strong> page can be combined separately in one piece of JSON-LD code.</p>
+<h2 id="Structured-Meta-Data"><a href="#Structured-Meta-Data" class="headerlink" title="Structured Meta Data"></a>Structured Meta Data</h2><p>Google has published tons of information in its <a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data">Search Central</a> on how to place metadata on your page to be found more easily in the index. You can also see that they are maintained by the update date of individual pages, for example “<em>Last updated 2023-01-26 UTC</em>“. End of last week. That’s up to date, fine.</p>
+<p>Of course, they also show how to use Microdata, but recommended is the use of <a target="_blank" rel="noopener" href="https://json-ld.org/">JSON-LD</a>, a structured and centralized inclusion of the required information via a SCRIPT tag in the header of the page. Thereby information about the <strong>website</strong> in general, the <strong>author</strong>, the <strong>organization</strong> behind it and the actual <strong>article</strong> page can be combined separately in one piece of JSON-LD code.</p>
 
     <div class="alertbox alertbox-exclamation">
       <p>Google’s solution is based on schema.org, but they have picked only what is necessary for them, which means: they deal only with a subset of the schema.org types.</p>
@@ -382,14 +382,14 @@ It’s Ok for Google to use Microdata attributes, but the HTML code of my templa
     </div>
   
 
-<p>Since it is somewhat cumbersome to write correct JSON-LD by hand, there are of course online editors for it, e.g. within the <a href="https://webcode.tools/generators/structured-data">web code tools</a> or <a href="https://technicalseo.com/tools/schema-markup-generator/">Merkle</a>. But these generators unfortunately do not map all the possibilities and useful entries, so they can only generate general templates to be elaborated. Moreover, you can use the JSON-LD code from this article as a basis for your solution, because it covers the most important aspects.</p>
+<p>Since it is somewhat cumbersome to write correct JSON-LD by hand, there are of course online editors for it, e.g. within the <a target="_blank" rel="noopener" href="https://webcode.tools/generators/structured-data">web code tools</a> or <a target="_blank" rel="noopener" href="https://technicalseo.com/tools/schema-markup-generator/">Merkle</a>. But these generators unfortunately do not map all the possibilities and useful entries, so they can only generate general templates to be elaborated. Moreover, you can use the JSON-LD code from this article as a basis for your solution, because it covers the most important aspects.</p>
 <p>In the following I first describe the general content of the individual JSON-LD blocks and then how to assemble them, so that it makes sense for the search engine.</p>
 <h3 id="Author"><a href="#Author" class="headerlink" title="Author"></a>Author</h3><p>First of all, this code is about me myself and I…</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;@type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Person&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;@id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://kiko.io/#person&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Kristof Zerbe&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://kiko.io/about&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;image&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://kiko.io/images/kristof-zerbe.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;sameAs&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;https://indieweb.social/@kiko&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;https://github.com/kristofzerbe&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;https://500px.com/p/kikon&quot;</span></span><br><span class="line">  <span class="punctuation">]</span>  </span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
 
     <div class="alertbox alertbox-info">
-      <p>It is advisable to include so called <strong>Node Identifiers</strong> (<code>@id</code>) in order to reuse certain information later on as a reference and prevent repeating data. These <a href="https://schema.org/docs/datamodel.html#identifierBg">identifiers</a> are canonical URL&#x2F;URI representations.</p>
+      <p>It is advisable to include so called <strong>Node Identifiers</strong> (<code>@id</code>) in order to reuse certain information later on as a reference and prevent repeating data. These <a target="_blank" rel="noopener" href="https://schema.org/docs/datamodel.html#identifierBg">identifiers</a> are canonical URL&#x2F;URI representations.</p>
 
     </div>
   
@@ -400,7 +400,7 @@ It’s Ok for Google to use Microdata attributes, but the HTML code of my templa
 <h3 id="Website"><a href="#Website" class="headerlink" title="Website"></a>Website</h3><p>The JSON-LD block related to this website itself looks like this:</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;@type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;WebSite&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;@id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://kiko.io/#website&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://kiko.io&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;kiko.io&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Blog about memorable tech stuff by Kristof Zerbe&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;inLanguage&quot;</span><span class="punctuation">:</span> <span class="string">&quot;en-US&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;publisher&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;@id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://kiko.io/#organization&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;potentialAction&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;@type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;SearchAction&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;target&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;@type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;EntryPoint&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;urlTemplate&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://kiko.io/search/?q=&#123;searchTerm&#125;&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;query-input&quot;</span><span class="punctuation">:</span> <span class="string">&quot;required name=searchTerm&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
-<p>Remarkable in this block is the <code>potentialAction</code>, which specifies the possibility to let the search engine (Google, whatelse) integrate a Sitelinks Search Box, a search box inside the result list, as described <a href="https://developers.google.com/search/docs/appearance/structured-data/sitelinks-searchbox">here</a>. There is a shorthand format for this and some generators like Merkle are using it, but it is not recommended, because it’s non-standard.</p>
+<p>Remarkable in this block is the <code>potentialAction</code>, which specifies the possibility to let the search engine (Google, whatelse) integrate a Sitelinks Search Box, a search box inside the result list, as described <a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/appearance/structured-data/sitelinks-searchbox">here</a>. There is a shorthand format for this and some generators like Merkle are using it, but it is not recommended, because it’s non-standard.</p>
 <h3 id="Page-Images"><a href="#Page-Images" class="headerlink" title="(Page) Images"></a>(Page) Images</h3><p>I use my own photographs on every page as header images and to provide some additional information on these, there is a JSON-LD block for the image I use.</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;@type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ImageObject&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;@id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://kiko.io#photo/D70_9216&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;caption&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Broken Onion&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://kiko.io/photos/normal/D70_9216.jpg&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;contentUrl&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://kiko.io/photos/normal/D70_9216.jpg&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;license&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://creativecommons.org/licenses/by-sa/4.0/&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;acquireLicensePage&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://kiko.io/photos&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;creditText&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Kristof Zerbe&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;copyrightNotice&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Kristof Zerbe (CC BY-SA 4.0)&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;creator&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;@id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://kiko.io/#person&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
@@ -431,7 +431,7 @@ It’s Ok for Google to use Microdata attributes, but the HTML code of my templa
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;application/ld+json&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="string">&quot;@context&quot;</span>: <span class="string">&quot;http://schema.org/&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">    <span class="string">&quot;@graph&quot;</span>: </span></span><br><span class="line"><span class="language-javascript">    [</span></span><br><span class="line"><span class="language-javascript">      &#123; ... <span class="title class_">WebPage</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">      &#123; ... <span class="title class_">ImageObject</span> (<span class="title class_">Photo</span>) &#125;,</span></span><br><span class="line"><span class="language-javascript">      &#123; ... <span class="title class_">WebSite</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">      &#123; ... <span class="title class_">Organization</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">      &#123; ... <span class="title class_">Person</span> &#125;</span></span><br><span class="line"><span class="language-javascript">    ]</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="Generation"><a href="#Generation" class="headerlink" title="Generation"></a>Generation</h2><p>Since my blog is based on SSG <a href="https://hexo.io/">Hexo</a>, I have all the data and capabilities to have the JSON-LD data of a page automatically generated. I don&#96;t want to go into too much depth here about how I implemented this, but in general there is an EJS file for each block that renders the required JSON-LD code via the available configuration and page data stored and passed in a META object. Through various wrappers, these are then included in the <code>head.ejs</code>. I have currently three of them:</p>
+<h2 id="Generation"><a href="#Generation" class="headerlink" title="Generation"></a>Generation</h2><p>Since my blog is based on SSG <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>, I have all the data and capabilities to have the JSON-LD data of a page automatically generated. I don&#96;t want to go into too much depth here about how I implemented this, but in general there is an EJS file for each block that renders the required JSON-LD code via the available configuration and page data stored and passed in a META object. Through various wrappers, these are then included in the <code>head.ejs</code>. I have currently three of them:</p>
 <ul>
 <li><code>json-ld-page.ejs</code> … for all pages, except the other two below</li>
 <li><code>json-ld-article.ejs</code> … for articles (normal <a href="/archives">kiko.io Posts</a>)</li>
@@ -443,14 +443,14 @@ It’s Ok for Google to use Microdata attributes, but the HTML code of my templa
 
 <p>The last line in the JavaScript ensures, that the produced JSON is compacted to one single line … easy, by converting the string into an object and back to a string.</p>
 <hr>
-<h2 id="Test-the-JSON-LD"><a href="#Test-the-JSON-LD" class="headerlink" title="Test the JSON-LD"></a>Test the JSON-LD</h2><p>When you have everything together, it is advisable to test the resulting code. Schema.org offers such a tool at <strong><a href="https://validator.schema.org/">https://validator.schema.org/</a></strong>. In addition, there is the <a href="https://search.google.com/test/rich-results">Google Rich Results Test</a>, which validates your code against the partially specific implementation for their own search engine.</p>
+<h2 id="Test-the-JSON-LD"><a href="#Test-the-JSON-LD" class="headerlink" title="Test the JSON-LD"></a>Test the JSON-LD</h2><p>When you have everything together, it is advisable to test the resulting code. Schema.org offers such a tool at <strong><a target="_blank" rel="noopener" href="https://validator.schema.org/">https://validator.schema.org/</a></strong>. In addition, there is the <a target="_blank" rel="noopener" href="https://search.google.com/test/rich-results">Google Rich Results Test</a>, which validates your code against the partially specific implementation for their own search engine.</p>
 <p><img src="/post/Provide-Blog-Metadata-via-JSON-LD/schema-markup-validator.png" alt="Schema Markup Validator"></p>
 <hr>
 <h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>It may be a few bytes more that are delivered to the user in the browser or the search engine bot, but the advantage is, that all the information describing the page is stored in one place in the header of the page and nothing is scattered all over the HTML anymore. Maintenance of both the code and the meta data is made much easier as a result.</p>
 <hr>
 <h2 id="More-Information"><a href="#More-Information" class="headerlink" title="More Information"></a>More Information</h2>
         <ul class="moreinfo-list">
-            <li>Google Search Central: <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data">Introduction to structured data markup in Google Search</a></li><li>Patrick Coombe and Craig Mount: <a href="https://jsonld.com/">Steal Our JSON-LD</a></li><li>Andrew Welch: <a href="https://nystudio107.com/blog/annotated-json-ld-structured-data-examples">Annotated JSON-LD Structured Data Examples</a></li><li>Alberto Carniel: <a href="https://www.albertocarniel.com/post/schema-markup">Schema markup and structured data ultimate guide (JSON-LD)</a></li><li>Brian Gorman: <a href="https://moz.com/blog/writing-structured-data-guide">An SEO’s Guide to Writing Structured Data (JSON-LD)</a></li><li>Merkle: <a href="https://technicalseo.com/tools/schema-markup-generator/">Schema Markup Generator (JSON-LD)</a></li><li>webcode.tools: <a href="https://webcode.tools/generators/structured-data">Generators > Structured Data</a></li>
+            <li>Google Search Central: <a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data">Introduction to structured data markup in Google Search</a></li><li>Patrick Coombe and Craig Mount: <a target="_blank" rel="noopener" href="https://jsonld.com/">Steal Our JSON-LD</a></li><li>Andrew Welch: <a target="_blank" rel="noopener" href="https://nystudio107.com/blog/annotated-json-ld-structured-data-examples">Annotated JSON-LD Structured Data Examples</a></li><li>Alberto Carniel: <a target="_blank" rel="noopener" href="https://www.albertocarniel.com/post/schema-markup">Schema markup and structured data ultimate guide (JSON-LD)</a></li><li>Brian Gorman: <a target="_blank" rel="noopener" href="https://moz.com/blog/writing-structured-data-guide">An SEO’s Guide to Writing Structured Data (JSON-LD)</a></li><li>Merkle: <a target="_blank" rel="noopener" href="https://technicalseo.com/tools/schema-markup-generator/">Schema Markup Generator (JSON-LD)</a></li><li>webcode.tools: <a target="_blank" rel="noopener" href="https://webcode.tools/generators/structured-data">Generators > Structured Data</a></li>
         </ul>
     
 
@@ -473,15 +473,15 @@ It’s Ok for Google to use Microdata attributes, but the HTML code of my templa
     </div>
   
 
-      <div class="article-permalink" id="article-permalink-clp89x9ef003kniojg9sj7pgi">
+      <div class="article-permalink" id="article-permalink-clp8jajx4003jnsow3wpl5xfc">
     <input class="article-permalink-value" value="https://kiko.io/post/Provide-Blog-Metadata-via-JSON-LD/" 
-           data-id="clp89x9ef003kniojg9sj7pgi" data-title="Provide Blog Metadata via JSON-LD" />
+           data-id="clp8jajx4003jnsow3wpl5xfc" data-title="Provide Blog Metadata via JSON-LD" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9ef003kniojg9sj7pgi");
+        initPermalink("clp8jajx4003jnsow3wpl5xfc");
     });
 </script>
 
@@ -500,8 +500,8 @@ It’s Ok for Google to use Microdata attributes, but the HTML code of my templa
 <div class="article-interaction" data-pagefind-ignore>
   <p>
     You can interact with this article (applause, criticism, whatever) by mention it in one of 
-    your posts or by replying to its syndication on <a class="mastodon" href="https://indieweb.social/@kiko/109841057119450891">Mastodon</a>, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+    your posts or by replying to its syndication on <a class="mastodon" target="_blank" rel="noopener" href="https://indieweb.social/@kiko/109841057119450891">Mastodon</a>, which will also be shown here as a  
+    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
   </p>
 
   <p class="webmention-form-info">
@@ -820,15 +820,15 @@ It’s Ok for Google to use Microdata attributes, but the HTML code of my templa
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -863,9 +863,9 @@ It’s Ok for Google to use Microdata attributes, but the HTML code of my templa
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -1073,27 +1073,27 @@ It’s Ok for Google to use Microdata attributes, but the HTML code of my templa
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>

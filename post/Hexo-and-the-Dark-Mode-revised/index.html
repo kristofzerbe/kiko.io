@@ -136,7 +136,7 @@ Of course, I couldn’t manipulate the media query prefers-color-scheme itself, 
     data-code="aJ835msd85Jl5WkTLtS76XLxVxSm4ODZ"></script>    
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 <body id="body">  
   <header id="header">
@@ -362,14 +362,14 @@ Of course, I couldn’t manipulate the media query prefers-color-scheme itself, 
     
     <div class="article-entry e-content">
       <p>While writing my post <a href="/categories/Tools/Hexo-and-the-Dark-Mode">Hexo and the Dark Mode</a> a few days ago, I thought it would be nice, if I could switch between the normal (light) and the dark theme, I’ve created for the support of the OS-related Dark Mode, even manually. The only thing I needed was a toggle element and a little bit of JavaScript.</p>
-<p>Of course, I couldn’t manipulate the <a href="https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-color-scheme">media query <code>prefers-color-scheme</code></a> itself, but introduce a different way by blog uses it. Instead of implementing the media query directly into my CSS (or Stylus) code, I used a root selector, which can be manipulated by JavaScript … something like this:</p>
+<p>Of course, I couldn’t manipulate the <a target="_blank" rel="noopener" href="https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-color-scheme">media query <code>prefers-color-scheme</code></a> itself, but introduce a different way by blog uses it. Instead of implementing the media query directly into my CSS (or Stylus) code, I used a root selector, which can be manipulated by JavaScript … something like this:</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: white;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: black;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <span id="more"></span>
 
 <p>In every Stylus file, where I used <code>@media prefers-dark</code> to achieve the automatic switch by the OS, I changed this line into <code>/[data-theme=&quot;dark&quot;] &amp;</code> :</p>
 <figure class="highlight styl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#mobile-nav-header</span></span><br><span class="line">  <span class="attribute">background-color</span>: color-background</span><br><span class="line">  /<span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> &amp;</span><br><span class="line">    <span class="attribute">background-color</span>: dark-color-background</span><br><span class="line">  <span class="selector-tag">img</span><span class="selector-class">.avatar</span></span><br><span class="line">    ...</span><br><span class="line">    /<span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> &amp;</span><br><span class="line">      <span class="attribute">filter</span>: <span class="built_in">brightness</span>(<span class="number">85%</span>)</span><br></pre></td></tr></table></figure>
 
-<p>Some explanations on the <a href="http://stylus-lang.com/docs/selectors.html">Stylus syntax</a>: <code>/</code> means the root of the DOM and <code>&amp;</code> points to the parent selector. Therefore the example will be rendered into this:</p>
+<p>Some explanations on the <a target="_blank" rel="noopener" href="http://stylus-lang.com/docs/selectors.html">Stylus syntax</a>: <code>/</code> means the root of the DOM and <code>&amp;</code> points to the parent selector. Therefore the example will be rendered into this:</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#mobile-nav-header</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#f1f1f1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-id">#mobile-nav-header</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#111</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#mobile-nav-header</span> <span class="selector-tag">img</span><span class="selector-class">.avatar</span> &#123;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-id">#mobile-nav-header</span> <span class="selector-tag">img</span><span class="selector-class">.avatar</span></span><br><span class="line">    <span class="attribute">filter</span>: <span class="built_in">brightness</span>(<span class="number">85%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>Only problem was: the “Root + Parent” Stylus selector doesn’t work in the block variables in the <code>_extend.styl</code>. So I had to copy all theme relevant styles directly to the elements, where such a block was used: <code>@extend &lt;block-name&gt;</code>.</p>
@@ -399,15 +399,15 @@ Of course, I couldn’t manipulate the media query prefers-color-scheme itself, 
   </div>
 
       
-      <div class="article-permalink" id="article-permalink-clp89x9cq000fnioj3wwybvnk">
+      <div class="article-permalink" id="article-permalink-clp8jajvr000cnsowfnpd6own">
     <input class="article-permalink-value" value="https://kiko.io/post/Hexo-and-the-Dark-Mode-revised/" 
-           data-id="clp89x9cq000fnioj3wwybvnk" data-title="Hexo and the Dark Mode ... revised" />
+           data-id="clp8jajvr000cnsowfnpd6own" data-title="Hexo and the Dark Mode ... revised" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clp89x9cq000fnioj3wwybvnk");
+        initPermalink("clp8jajvr000cnsowfnpd6own");
     });
 </script>
 
@@ -427,7 +427,7 @@ Of course, I couldn’t manipulate the media query prefers-color-scheme itself, 
   <p>
     You can interact with this article (applause, criticism, whatever) by mention it in one of 
     your posts, which will also be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
+    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> ... or you leave a good old comment with your GitHub account.   
   </p>
 
   <p class="webmention-form-info">
@@ -750,15 +750,15 @@ Of course, I couldn’t manipulate the media query prefers-color-scheme itself, 
     <div class="inner">
 
       <ul id="footer-dots">
-        <li class="dot"><a href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
-        <li class="dot"><a href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
-        <li class="dot"><a href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://search.google.com/search-console?resource_id=sc-domain%3Akiko.io" title="SearchConsole"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://kiko-io.pirsch.io/" title="Pirsch"></a></li>
+        <li class="dot"><a target="_blank" rel="noopener" href="https://webmentions.kiko.io" title="Webmention Analytics"></a></li>
       </ul>
 
       <div id="footer-info" class="footer-block">
         &copy; 2019-2023&nbsp;&nbsp;Kristof Zerbe
         <span class="dot-space">&#9679;</span>
-        Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
+        Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
@@ -793,9 +793,9 @@ Of course, I couldn’t manipulate the media query prefers-color-scheme itself, 
       </div>
 
       <div id="webring">
-        <a id="webring-prev" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
-        <a id="webring-next" class="webring-link" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
+        <a id="webring-prev" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/previous">&nbsp;</a>
+        <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring&nbsp;🕸💍</a>
+        <a id="webring-next" class="webring-link" target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%A7%80%F0%9F%91%9F%F0%9F%8E%8A/next">&nbsp;</a>
       </div>
 
     </div>
@@ -1003,27 +1003,27 @@ Of course, I couldn’t manipulate the media query prefers-color-scheme itself, 
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kristof-zerbe-91012510/" class="fa-icon-linkedin">LinkedIn</a>
             </p>
             <p>
               <label>Connect with me via</label>
-              <a href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
+              <a target="_blank" rel="noopener" href="https://www.xing.com/profile/Kristof_Zerbe" class="fa-icon-xing">Xing</a>
             </p>
             <p>
               <label>Follow me on</label>
-              <a href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
+              <a target="_blank" rel="noopener" href="https://indieweb.social/@kiko" class="fa-icon-mastodon">Mastodon</a>  
             </p>
             <p>
               <label>Review my projects on</label>
-              <a href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
+              <a target="_blank" rel="noopener" href="https://github.com/kristofzerbe" class="fa-icon-github">GitHub</a>  
             </p>
             <p>
               <label>Review my photos on</label>
-              <a href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
+              <a target="_blank" rel="noopener" href="https://500px.com/kikon" class="fa-icon-500px">500px</a>  
             </p>
             <p>
               <label>Comment my photos on</label>
-              <a href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
+              <a target="_blank" rel="noopener" href="https://pixelfed.social/kristofz" class="fa-icon-pixelfed">Pixelfed</a>  
             </p>
           </div>
         </div>
