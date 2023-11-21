@@ -1,7 +1,7 @@
 
 const log = require('hexo-log')({ debug: false, silent: false });
 const { magenta, green, grey } = require('chalk');
-const Webmention = require('@remy/webmention/lib/webmention');
+const Webmention = require('@remy/webmention/shared/lib/webmention');
 
 function mapPost(p) {
     return {

@@ -27,7 +27,7 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
-        run: npm install
+        run: npm install --force
       - name: Build
         run: npm run generate
       - name: Run Pagefind

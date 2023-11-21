@@ -58,9 +58,6 @@ skip_render:
 new_post_name: :title.md # File name of new posts
 default_layout: draft
 titlecase: false # Transform title into titlecase
-external_link:
-  enable: false # Open external links in new tab
-  field: site #Applies to the whole site or post only
 filename_case: 0
 render_drafts: false
 post_asset_folder: true
@@ -195,8 +192,8 @@ jsonContent:
     categories: true
     tags: true
 
-# Feed : https://github.com/sergeyzwezdin/hexo-feed
-# all switched off in favor of custom feed generators
+# Feed: was https://github.com/sergeyzwezdin/hexo-feed
+# uninstalled in favor of custom feed generators
 #   -> uses limit, order_by, icon and logo
 feed:
   default: atom.xml
@@ -204,14 +201,6 @@ feed:
   order_by: "-date"
   icon: images/favicon-32x32.png
   logo: images/icon-72x72.png
-  tag_dir: false
-  category_dir: false
-  atom:
-    enable: false
-  rss:
-    enable: false
-  jsonFeed:
-    enable: false
         
 # Sitemap File: https://github.com/hexojs/hexo-generator-sitemap
 sitemap:
@@ -219,24 +208,25 @@ sitemap:
   template: ./templates/sitemap.xml
 
 # Info API
-hexo_info_api:
-  allowOrigin: "*" # Set to "*" to allow all origins (Access-Control-Allow-Origin)
-  enable: # enable what api u need
-  - getInfo
-  - getPostCount
-  - getPosts
-  - getPostsByCategory
-  - getPostsByCategoryId
-  - getPostsByTag
-  - getPostsByTagId
-  - getPostByPath
-  - getPostById
-  - getCategories
-  - getTags
-  - getLatestPost
-  - getLatest5Posts
-  # Disable default api(host:port/api/) default: false
-  disable_default_api: false 
+# currently not compatible with Hexo 7
+# hexo_info_api:
+#   allowOrigin: "*" # Set to "*" to allow all origins (Access-Control-Allow-Origin)
+#   enable: # enable what api u need
+#   - getInfo
+#   - getPostCount
+#   - getPosts
+#   - getPostsByCategory
+#   - getPostsByCategoryId
+#   - getPostsByTag
+#   - getPostsByTagId
+#   - getPostByPath
+#   - getPostById
+#   - getCategories
+#   - getTags
+#   - getLatestPost
+#   - getLatest5Posts
+#   # Disable default api(host:port/api/) default: false
+#   disable_default_api: false 
 
 # Codepen Defaults
 codepen:
@@ -268,6 +258,10 @@ trello:
     pages: 
     - name: tiny-tools
       list: TinyTools
+      preview_width: 300
+    - name: tools
+      list: Tools
+      preview_width: 128
 
 # Trello Discoveries Generator Script
 discoveries:
