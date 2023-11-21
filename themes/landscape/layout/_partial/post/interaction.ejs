@@ -3,14 +3,17 @@
     if (post.syndication && post.syndication.length) {
       post.syndication.forEach(function(syn) {
         if (syn.host && syn.url) {
-          synArray.push(`<a class="${syn.host.toLowerCase()}" href="${syn.url}">${syn.host}</a>`);
+          let wm = config.syndication_hosts.find(h => h.name === syn.host)?.webmention;
+          if (wm) {
+            synArray.push(`<a class="${syn.host.toLowerCase()}" href="${syn.url}">${syn.host}</a>`);
+          }
         }
       });
     }
 
     let synText = "";
     if (synArray.length > 0) {
-      synText = " or by replying to its syndication on " + synArray.join(" or ");
+      synText = "or by replying to its syndication on " + synArray.join(" or ");
     }
 
     let commentText = "";
@@ -25,22 +28,14 @@
 
 <div class="article-interaction" data-pagefind-ignore>
   <p>
-    You can interact with this <%= type %> (applause, criticism, whatever) 
-    by mention it in one of your posts<%- synText %>, which will also be shown here as a  
+    You can interact with this <%= type %> (applause, criticism, whatever) by mention it in one of 
+    your posts <%- synText %>, which will also be shown here as a  
     <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> <%- commentText %>.   
   </p>
-</div>
-
-<div class="article-webmentions" data-pagefind-ignore>
-  <h2>Webmentions</h2>
-
-  <div class="webmentions-placeholder">
-    <p class="wm-placeholder">No Webmentions yet...</p>
-  </div>
 
   <p class="webmention-form-info">
-    In case your blog software can't send Webmentions, 
-    you can use this form to submit me a mention of this <%= type %>...
+    In case your blog software can't send Webmentions, you can use this form to submit me a mention 
+    of this <%= type %> or rather its URL ...
   </p>
 
   <form class="webmention-form" action="https://webmention.io/<%- config.title %>>/webmention" name="webmention-form"
@@ -51,6 +46,15 @@
     <input type="hidden" name="target" value="<%= encodeURI(post.permalink) %>">
     <input type="submit" value="Send Webmention">
   </form>
+
+</div>
+
+<div class="article-webmentions" data-pagefind-ignore>
+  <h2>Webmentions</h2>
+
+  <div class="webmentions-placeholder">
+    <p class="wm-placeholder">No Webmentions yet...</p>
+  </div>
 
   <script>
     window.addEventListener('load', function () {

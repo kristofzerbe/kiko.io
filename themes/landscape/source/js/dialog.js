@@ -321,10 +321,10 @@ var dpDialog = {
     }
 
     const title = document.querySelector('meta[name="title"]').content.replace(" - kiko.io", "");
-    //const description = document.querySelector('meta[name="description"]').content;
-    const excerpt = document.querySelector('meta[name="excerpt"]').content;
+    let text = document.querySelector('meta[name="excerpt"]')?.content;
+    if (!text) { text = document.querySelector('meta[name="description"]').content; }
     const permalink = document.querySelector('link[rel="canonical"]').href;
-    jContent.find("#mastodon-text").val(title + "\n\n" + excerpt + "\n\n" + permalink);
+    jContent.find("#mastodon-text").val(title + "\n\n" + text + "\n\n" + permalink);
 
     jContent.find("#mastodon-share").click(function(e) { 
       const eInstance = document.getElementById("mastodon-instance");
@@ -332,7 +332,7 @@ var dpDialog = {
       
       const isValid = eInstance.reportValidity();
       if (isValid) {
-        setCookie("mastodon-instance", eInstance.value);
+        setCookie("mastodon-instance", eInstance.value, 180);
         let shareUrl = `https://${eInstance.value}/share?text=${encodeURIComponent(eText.value)}`;
         window.open(shareUrl, '_blank');
         dpDialog.base.element.downupPopup("close");
