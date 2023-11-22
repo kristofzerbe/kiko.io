@@ -24,7 +24,7 @@ syndication:
 
 The pages of this website are all structured according to the scheme **Header**, **Content**, **Footer**, where the header contains an individual hero image and, like the footer, has a dark gray background color. I chose dark gray at the time because I needed contrast and it matches all the other colors, since the header image is slowly overlaid by the header background color as you scroll.
 
-In July last year, in {% post_link "2022/Discoveries-19-Visual-Helpers" "Discoveries #19 - Visual Helpers" %}, I introduced two tools that deal with determining the dominant color from an image, and since then I've been buzzing around in my head about using one of them to color the header and footer to match the image.
+In July last year, in {% post_link 2022/Discoveries-19-Visual-Helpers "Discoveries #19 - Visual Helpers" %}, I introduced two tools that deal with determining the dominant color from an image, and since then I've been buzzing around in my head about using one of them to color the header and footer to match the image.
 
 After a short testing period I decided to use [Vibrant Colors](https://github.com/Vibrant-Colors) (also because of the good example by Konstantin Polunin on [Codepen](https://codepen.io/kopol/details/QWjwrPN)) and how it works and how I had to adapt the results to my needs I want to highlight in this post.
 
