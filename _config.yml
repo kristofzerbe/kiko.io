@@ -23,10 +23,12 @@ email: kristof.zerbe@gmail.com
 photo: /images/kristof-zerbe.png
 github_user: kristofzerbe
 osm_tile_server: https://tile.openstreetmap.org/
-syndication_hosts:
+syndication_hosts: # on extension see article.styl '.syndication-link'
   - name: Mastodon
     webmention: true
   - name: Twitter
+    webmention: false
+  - name: 500px
     webmention: false
   - name: Pixelfed
     webmention: false
@@ -57,7 +59,7 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :title.md # File name of new posts
+new_post_name: :title.md # Folder and file name of new posts
 default_layout: draft
 titlecase: false # Transform title into titlecase
 filename_case: 0

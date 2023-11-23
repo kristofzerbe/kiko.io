@@ -70,16 +70,6 @@
           <% } %>
         <% } %>
       </li>
-      <li>
-        <label>Links</label>
-        <div class="site-links">
-        <% page.meta.custom.links.forEach(link => { %>
-          <% if (link.url) { %>
-          <a class="site-link site-<%= link.site %>" target="_blank" href="<%= link.url %>"><%= link.url %></a>
-          <% } %>
-        <% }); %>
-        </div> 
-      </li>
     </ul>
   </section>
 
@@ -155,6 +145,12 @@
       </li>
     </ul>
   
+    <div class="section-footer">
+      <%- partial('_partial/post/permalink', { post: page, class_name: 'article-permalink' }) %>        
+    </div>
+  
+  </section>
+
   <% 
     page.syndication = [];
     page.meta.custom.links.forEach(link => {
@@ -167,14 +163,6 @@
     });
   }
   %>
-
-    <div class="section-footer">
-      <%- partial('_partial/post/syndication', { post: page, class_name: 'article-syndication' }) %>
-      <%- partial('_partial/post/permalink', { post: page, class_name: 'article-permalink' }) %>        
-    </div>
-  
-  </section>
-
   <%- partial('_partial/post/interaction', { post: page, type: 'photo', comments: false }) %>
 
   <% if (page.meta.latitude && page.meta.longitude) { %>

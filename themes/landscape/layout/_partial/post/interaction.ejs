@@ -26,21 +26,34 @@
   <button onclick="dialog.shareOnMastodon();" class="share mastodon">Share on Mastodon</button>
 </div>
 
+<% if (post.syndication) { %>
+<div class="article-syndication" data-pagefind-ignore>
+  <h2>Syndication</h2>
+  <div class="syndication-wrapper">
+    <% post.syndication.forEach(function(syn){ %>
+      <a class="syndication-link host-<%- syn.host?.toLowerCase() %> u-syndication" 
+         href="<%- syn.url %>" rel="syndication" target="_blank"
+         title="Syndication of this <%- type %> on <%- syn.host %>" >
+        <span><%- syn.host %></span>
+      </a>
+    <% }); %>
+  </div>
+</div>
+<% } %>
+
 <div class="article-interaction" data-pagefind-ignore>
   <p>
     You can interact with this <%= type %> (applause, criticism, whatever) by mention it in one of 
-    your posts<%- synText %>, which will also be shown here as a  
+    your posts<%- synText %>, which will be shown here as a  
     <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> <%- commentText %>.   
   </p>
 
   <p class="webmention-form-info">
-    In case your blog software can't send Webmentions, you can use this form to submit me a mention 
-    of this <%= type %> or rather its URL ...
+    In case your blog software can't send Webmentions, you can use this form:
   </p>
 
   <form class="webmention-form" action="https://webmention.io/<%- config.title %>>/webmention" name="webmention-form"
     method="post">
-    <label for="webmention-form-source">Your Article URL:</label><br>
     <input class="webmention-form-source" type="url" name="source" placeholder="https://your-blog.com/your-article"
       required="">
     <input type="hidden" name="target" value="<%= encodeURI(post.permalink) %>">
