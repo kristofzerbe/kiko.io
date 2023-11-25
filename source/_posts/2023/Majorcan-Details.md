@@ -28,7 +28,7 @@ In July I was for a few days with friends on a finca in the south of Mallorca an
 
 <!-- more -->
 
-Usually the best photos end up unnoticed as {% post_link 2023/Pool-Photo-Generator "pool photos" %} here on my blog until I use one as a header image, but now I make a separate post out of each set before I publish the individual photos on other sites like [500px](https://500px.com/p/kikon) or [Pixelfed](https://pixelfed.social/kristofz).
+Usually the best photos end up unnoticed as {% post_link Pool-Photo-Generator "pool photos" %} here on my blog until I use one as a header image, but now I make a separate post out of each set before I publish the individual photos on other sites like [500px](https://500px.com/p/kikon) or [Pixelfed](https://pixelfed.social/kristofz).
 
 {% photo_list
   "23-07 Mallorca-0300|Lots of Things"

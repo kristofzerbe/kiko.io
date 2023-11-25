@@ -22,7 +22,7 @@ syndication:
     url: https://indieweb.social/@kiko/109565325472177128
 ---
 
-I've started this blog in 2019 with {% post_link 2019/How-To-Visual-Studio-Database-Project-and-ADSI "this article" %} primarily because I needed an area to record things learned for myself, with the side effect that others can benefit from it if they want.
+I've started this blog in 2019 with {% post_link How-To-Visual-Studio-Database-Project-and-ADSI "this article" %} primarily because I needed an area to record things learned for myself, with the side effect that others can benefit from it if they want.
 
 Why my choice fell on the static site generator [Hexo](https://hexo.io), I no longer know, but I have now become accustomed (even to the shortcomings) and so far I have been able to implement all my ideas in it ... and I had a few of them.
 
@@ -50,7 +50,7 @@ The best thing about Hexo in general is, that you can get your first results qui
 
 Hexo is based on a structure of posts and pages, where posts can be aggregated in various ways, whether in the time-based archive or via tags and categories. Posts has to have a specific structure, regarding the Frontmatter in the MD file and teh storage of attached images. Hexo offers the user a separate command for this: ``hexo new``, which works with template files in the folder ``scaffolds``.
 
-For the presentation of my posts, I decided to incorporate my passion of photography by assigning a unique header image to each post (and most pages). How I implemented this, I have described in the article {% post_link 2020/Automatic-Header-Images-in-Hexo %}. The main point is, when I create a new post, I automatically and randomly pick a photo (in the three media-dependent versions *normal*, *tablet* and *mobile*) from a pool, copy the images to the appropriate delivery folder and bind it to the new post via frontmatter. For this I've written the Hexo event hook ``on-new-get-photo-for-post.js``, which runs on the command ``hexo new post "<title-of-new-post>"``.
+For the presentation of my posts, I decided to incorporate my passion of photography by assigning a unique header image to each post (and most pages). How I implemented this, I have described in the article {% post_link Automatic-Header-Images-in-Hexo %}. The main point is, when I create a new post, I automatically and randomly pick a photo (in the three media-dependent versions *normal*, *tablet* and *mobile*) from a pool, copy the images to the appropriate delivery folder and bind it to the new post via frontmatter. For this I've written the Hexo event hook ``on-new-get-photo-for-post.js``, which runs on the command ``hexo new post "<title-of-new-post>"``.
 
 Works great, except for the fact that I'm often on the go and using a Node.JS-powered command towards an SSG project hosted on GitHub definitely doesn't work on an Android smartphone. So, how do I get it to create a new post remotely?
 
@@ -74,7 +74,7 @@ Currently I have no idea how to achieve this in a static site environment. Do yo
 
 ## [Photos](/photos)
 
-As I speak from photos ... to provide header images for my new posts (or pages), I have prepared a pool of photos that I display on a special filterable page. This page is not one that comes with Hexo, but is based on a dynamic page generator I've created for this purpose. I wrote about it in 2021: {% post_link 2021/Pattern-for-dynamic-Hexo-pages %}.
+As I speak from photos ... to provide header images for my new posts (or pages), I have prepared a pool of photos that I display on a special filterable page. This page is not one that comes with Hexo, but is based on a dynamic page generator I've created for this purpose. I wrote about it in 2021: {% post_link Pattern-for-dynamic-Hexo-pages %}.
 
 But how do I fill this pool with new photos, especially because I need three variants of a new photo for the standard device classes Desktop (normal), Tablet and Mobile?
 
@@ -127,7 +127,7 @@ Tag Plugins and syntax highlighting for code blocks in the reference MD files ar
 
 Since this blog is primarily a memory aid for me and my future self (how often do I have stumbled across my own posts during web search), it was logical to place a special bookmark collection here, because it happened to me more often that I found and used an online tool and some time later wonder what the thing was called when I have the same requirement again. 
 
-That's why I started to collect these URL's in a public Trello board (see {% post_link 2020/Add-website-to-Trello-card-the-better-way %}) and provide them with keywords and a screenshot. But Trello is a Kanban tool and not designed for such special requirements as the display of bookmarks and so I use it only as a data source for my page TINY-TOOLS.
+That's why I started to collect these URL's in a public Trello board (see {% post_link Add-website-to-Trello-card-the-better-way %}) and provide them with keywords and a screenshot. But Trello is a Kanban tool and not designed for such special requirements as the display of bookmarks and so I use it only as a data source for my page TINY-TOOLS.
 
 Generating a static page out of Trello cards was again a job for my dynamic pages, I had introduced for the photos page. It takes advantage of the fact that any Trello board can be retrieved as machine-readable data by extending the url with `.json`. The [Dynamic Trello Generator](https://github.com/kristofzerbe/kiko.io/blob/26ccfa18b8abff279a05b1f12363992a278c130c/themes/landscape/scripts/generator-dynamic-trello.js) is really straight forward.
 
@@ -196,7 +196,7 @@ As I'm a fan of the [Indieweb](https://indieweb.org/), I started early with [Web
 
 ### Receiving Webmentions
 
-kiko.io is a static site, therefore, there are no active components on the web server that could react to an incoming webmention. But that's not a problem, because there are services like [webmention.io](https://webmention.io) that can serve as recipients and from where you can then pick up the messages. Some bloggers do this by fetching and inserting them into the articles while generating the static pages, but for me this can take too long. My approach is, to load the mentions from webmention.io via JavaScript dynamically into the page, as described in my post {% post_link 2021/Hexo-and-the-IndieWeb-Receiving-Webmentions %}.
+kiko.io is a static site, therefore, there are no active components on the web server that could react to an incoming webmention. But that's not a problem, because there are services like [webmention.io](https://webmention.io) that can serve as recipients and from where you can then pick up the messages. Some bloggers do this by fetching and inserting them into the articles while generating the static pages, but for me this can take too long. My approach is, to load the mentions from webmention.io via JavaScript dynamically into the page, as described in my post {% post_link Hexo-and-the-IndieWeb-Receiving-Webmentions %}.
 
 {% thinkbox "IS THERE AN EASIER WAY?" %}
 I don't think so...

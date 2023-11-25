@@ -18,7 +18,7 @@ related:
   - A-New-Blog-Customizing-Hexo
 ---
 
-A while ago I wrote about {% post_link 2021/Automatic-Duplicate-Image-Shadow %} and used [indiepen](https://indiepen.tech/) for showing the result of my efforts.
+A while ago I wrote about {% post_link Automatic-Duplicate-Image-Shadow %} and used [indiepen](https://indiepen.tech/) for showing the result of my efforts.
 
 {% alertbox note %}
 **[indiepen](https://indiepen.tech/)** is a solution for showing code samples without the need of a code sharing platform, like [codepen](https://codepen.io/). Just reference a ``index.html``, ``main.js`` and ``styles.css`` from wherever you want and indiepen is wrapping it with a neat viewer inside an IFrame.

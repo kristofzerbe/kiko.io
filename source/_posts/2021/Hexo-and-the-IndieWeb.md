@@ -258,7 +258,7 @@ To check all your changes, you can use [IndieWebify.Me (Level 1 & 2)](https://in
 ---
 
 {% alertbox info %}
-This was supposed to be just one post, but it got longer and longer and so I split it into 3 parts. Don't miss Part 2: {% post_link 2021/Hexo-and-the-IndieWeb-Sending-Webmentions "Hexo and the IndieWeb (Sending Webmentions)" %} ...
+This was supposed to be just one post, but it got longer and longer and so I split it into 3 parts. Don't miss Part 2: {% post_link Hexo-and-the-IndieWeb-Sending-Webmentions "Hexo and the IndieWeb (Sending Webmentions)" %} ...
 {% endalertbox %}
 
 ---

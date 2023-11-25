@@ -44,7 +44,7 @@ I do use two tag plugins ([tag-anchorlist](https://github.com/kristofzerbe/kiko.
 
 ## The Trello List
 
-How easy it is to save a link as a card in a Trello board via Chrome, I described recently in my post {% post_link 2020/Add-website-to-Trello-card-the-better-way %}. As this works also in Chrome on Android, I store interesting links on the go mostly. In order to get all information I need later on, I have extended my collections board with a custom field called 'Author'. For adding the screenshot to the card as an attachment, I use actually the build-in feature of Android 6.
+How easy it is to save a link as a card in a Trello board via Chrome, I described recently in my post {% post_link Add-website-to-Trello-card-the-better-way %}. As this works also in Chrome on Android, I store interesting links on the go mostly. In order to get all information I need later on, I have extended my collections board with a custom field called 'Author'. For adding the screenshot to the card as an attachment, I use actually the build-in feature of Android 6.
 
 As I have a long, long list if incoming links, I sort them by topic into an appropriate list, for example, "Discoveries: JS Libraries" and this lists should then be automatically turned into new blog posts as I want to publish one.
 
@@ -175,7 +175,7 @@ What should he do:
    7. Create new POST.FOLDER for the images
    8. Download image from attachment URL into POST.FOLDER as IMAGENAME
    9. Add ITEM to POST.ITEMS
-6. Get photograph for new post (kiko.io special, see {% post_link 2020/Automatic-Header-Images-in-Hexo %})
+6. Get photograph for new post (kiko.io special, see {% post_link Automatic-Header-Images-in-Hexo %})
    1. Store PHOTOGRAPH information in POST
 7. Generate new post via Handlebars template
 8. Store new post

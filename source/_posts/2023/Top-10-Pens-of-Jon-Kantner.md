@@ -22,7 +22,7 @@ syndication:
     url: https://indieweb.social/@kiko/110337342444506775
 ---
 
-A while ago I posted my {% post_link 2023/Favourite-Pens-of-2022 "favourite pens of 2022" %}. Many of them came from the pen of **[John Kantner](https://jonkantner.com/)** and that was reason enough for me to highlight his most beautiful works in a post.
+A while ago I posted my {% post_link Favourite-Pens-of-2022 "favourite pens of 2022" %}. Many of them came from the pen of **[John Kantner](https://jonkantner.com/)** and that was reason enough for me to highlight his most beautiful works in a post.
 
 My "Best of Jon Kantner" selection is focused on the usefulness for UI's to be created, i.e. all these things I urgently need to try out or one or the other will end up in one of my projects. 
 

@@ -49,7 +49,7 @@ So we come to the ready-made developer solutions e.g. How-To tutorials. Here, to
 
 ## My Mastodon Share Variant
 
-It's really not hard to develop an appealing looking and working JavaScript solution to the "problem". Where [Christian Heilmann](https://toot.cafe/@codepo8) (last link in the list above) relies on a simple ``window.prompt``, I recently introduced my Bottom Sheet dialogs in this blog ({% post_link 2023/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet "here" %} and {% post_link 2023/Extension-of-downupPopup-Back-Button-Escape-Key-More "here" %}), which are perfectly suited for this.
+It's really not hard to develop an appealing looking and working JavaScript solution to the "problem". Where [Christian Heilmann](https://toot.cafe/@codepo8) (last link in the list above) relies on a simple ``window.prompt``, I recently introduced my Bottom Sheet dialogs in this blog ({% post_link Show-pages-meta-data-JSON-LD-in-Bottom-Sheet "here" %} and {% post_link Extension-of-downupPopup-Back-Button-Escape-Key-More "here" %}), which are perfectly suited for this.
 
 Each shareable post should get a SHARE button that lets a bottom sheet pop out where the user can enter their instance name, which is then remembered for next time, and already contains suggested text (title, description, and url of the post) for the Mastodon toot.
 
@@ -93,7 +93,7 @@ The template is embedded in ``layout.ejs`` near the closing HTML tag. It contain
 
 ### Extending the dialog script
 
-Ok ... let's extend the **dialog.js** code, I first described {% post_link 2023/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet "here" %}, with a new method as used at the button:
+Ok ... let's extend the **dialog.js** code, I first described {% post_link Show-pages-meta-data-JSON-LD-in-Bottom-Sheet "here" %}, with a new method as used at the button:
 
 ```js themes\landscape\source\js\dialog.js
 var dpDialog = { 

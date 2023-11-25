@@ -21,7 +21,7 @@ syndication:
     url: https://indieweb.social/@kiko/110928964865915942
 ---
 
-Since the existence of this blog, the posts all have a custom header image that I generate from my own photos. Already three years ago (omg ... really?) I described in an article how to do this with Hexo: {% post_link 2020/Automatic-Header-Images-in-Hexo %}.
+Since the existence of this blog, the posts all have a custom header image that I generate from my own photos. Already three years ago (omg ... really?) I described in an article how to do this with Hexo: {% post_link Automatic-Header-Images-in-Hexo %}.
 
 To keep it short, I use a pool folder for this, in which I keep in subfolders next to a ``meta.txt``, for the title of the image and an external url on 500px for interactions to the image, three variants that I need for a new post:
 

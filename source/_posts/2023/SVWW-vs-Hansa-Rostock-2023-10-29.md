@@ -24,7 +24,7 @@ syndication:
 
 {% match_grid "SV-Wehen-Wiesbaden" "1:0" "Hansa-Rostock" %}
 
-Football again. After my {% post_link 2023/SGE-vs-HJK-2023-10-26 "little excursion into the Europa Conference League" %}, my team from **SV Wehen Wiesbaden** was called upon again on Sunday and with them the fans in the stadium. On the one hand because it was raining (and that is sometimes no fun in the front row) and on the other hand because the boys had won the last away game in Osnabrück and now had the opportunity to temporarily establish themselves in the midfield of the 2. Bundesliga. Another win was needed against an opponent from **Rostock** who, after a good start at the beginning of the season, had lost the last 6 games!
+Football again. After my {% post_link SGE-vs-HJK-2023-10-26 "little excursion into the Europa Conference League" %}, my team from **SV Wehen Wiesbaden** was called upon again on Sunday and with them the fans in the stadium. On the one hand because it was raining (and that is sometimes no fun in the front row) and on the other hand because the boys had won the last away game in Osnabrück and now had the opportunity to temporarily establish themselves in the midfield of the 2. Bundesliga. Another win was needed against an opponent from **Rostock** who, after a good start at the beginning of the season, had lost the last 6 games!
 
 Since I have no chance to park my car anywhere at the stadium, I have already planned before the season to always go there with the scooter, which is a pure pleasure in the summer. With 10 degrees and light rain it was diemal but rather suboptimal conditions. But anyway...
 

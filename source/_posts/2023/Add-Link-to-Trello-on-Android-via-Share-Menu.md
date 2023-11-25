@@ -27,7 +27,7 @@ However, the official Trello Android App has the problem eversince that, when yo
 
 ![Share Link with Trello App](share-trello-app.png)
 
-I have solved this for myself for years using a **bookmarklet** in the Chrome browser (see {% post_link 2020/Add-website-to-Trello-card-the-better-way %}) and get along quite well with it. However, there is one catch, that has annoyed me ever since:  
+I have solved this for myself for years using a **bookmarklet** in the Chrome browser (see {% post_link Add-website-to-Trello-card-the-better-way %}) and get along quite well with it. However, there is one catch, that has annoyed me ever since:  
 I find an interesting link in the Mastodon WebApp, for example, and tap on it. What opens, however, is the WebView integrated in Android and not my standard Chrome browser, in which the bookmarklet would be available. So, for links that I want to store, I always have to open the WebView menu and select "Open in Chrome Browser". I cannot use the general SHARE menu. At least not so far ... :)
 
 <!-- more -->

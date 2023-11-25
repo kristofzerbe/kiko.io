@@ -158,7 +158,7 @@ The following code is the basic structure of the search page as suggested by Pag
 </script>
 ```
 
-To accommodate this in Hexo, it is advisable to use your own template and generate the page with an appropriate generator. A standard PAGE in Markdown format is only conditionally suitable for this, because links and scripts are needed. I described how to implement such a generator that renders descriptive Markdown in addition to the EJS template in my post {% post_link 2021/Pattern-for-dynamic-Hexo-pages %}, and I've taken that approach here as well.
+To accommodate this in Hexo, it is advisable to use your own template and generate the page with an appropriate generator. A standard PAGE in Markdown format is only conditionally suitable for this, because links and scripts are needed. I described how to implement such a generator that renders descriptive Markdown in addition to the EJS template in my post {% post_link Pattern-for-dynamic-Hexo-pages %}, and I've taken that approach here as well.
 
 For simplicity, I won't list the full code here, but link to my blog's GitHub repo:
 

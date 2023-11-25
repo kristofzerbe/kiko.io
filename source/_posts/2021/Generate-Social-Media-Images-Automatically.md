@@ -22,7 +22,7 @@ related:
   - A-New-Blog-Customizing-Hexo
 ---
 
-From day one of this blog I wanted to combine two of my passions: tech stuff and photography. All these photos I have shot myself in recent years and now they are representing my thoughts & findings about digital technology. I wrote about my approach to provide these images in my post {% post_link 2020/Automatic-Header-Images-in-Hexo %}.
+From day one of this blog I wanted to combine two of my passions: tech stuff and photography. All these photos I have shot myself in recent years and now they are representing my thoughts & findings about digital technology. I wrote about my approach to provide these images in my post {% post_link Automatic-Header-Images-in-Hexo %}.
 
 When I share one of my posts on social media I provide the appropriate image as a visual anchor to my writing. The technique behind this are the ``meta`` tags in the HTML of my posts:
 
@@ -48,7 +48,7 @@ But ... it's only the image, without a visual reference to the post itself. In t
 
 ---
 
-Starting point of my thoughts were two posts from [**Drew McLellan** (Dynamic Social Sharing Images)](https://24ways.org/2018/dynamic-social-sharing-images/) and [**Ryan Filler** (Automatic Social Share Images)](https://www.ryanfiller.com/blog/automatic-social-share-images/), to which I have already referred in my post {% post_link 2021/Discoveries-11 %}.
+Starting point of my thoughts were two posts from [**Drew McLellan** (Dynamic Social Sharing Images)](https://24ways.org/2018/dynamic-social-sharing-images/) and [**Ryan Filler** (Automatic Social Share Images)](https://www.ryanfiller.com/blog/automatic-social-share-images/), to which I have already referred in my post {% post_link Discoveries-11 %}.
 
 Drew and Ryan utilizes the Node.JS library [Puppeteer](https://github.com/puppeteer/puppeteer), which runs a headless Chromium (or Chrome browser) over the DevTools protocol to process a web page ... for example to take a screenshot:
 

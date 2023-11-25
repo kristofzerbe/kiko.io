@@ -41,7 +41,7 @@ It is so amazing how many cool stuff developers around the world are producing t
 {% enddiscovery %}
 
 {% discovery "Using Trello as a Super Simple CMS" "Phil Hawksworth" https://css-tricks.com/using-trello-as-a-super-simple-cms Discoveries-4 using-trello-as-cms.png %}
-  As I love Trello and use it daily, among others as a reading list (see {% post_link 2020/Add-website-to-Trello-card-the-better-way %}), I can't wait to try Phils approach to process Trello boards automatically.
+  As I love Trello and use it daily, among others as a reading list (see {% post_link Add-website-to-Trello-card-the-better-way %}), I can't wait to try Phils approach to process Trello boards automatically.
 {% enddiscovery %}
 
 {% discovery "Memorize Scroll Position Across Page Loads" "Chris Coyier" "https://css-tricks.com/memorize-scroll-position-across-page-loads/" Discoveries-4 memorize-scroll-position.png %}

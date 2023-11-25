@@ -30,7 +30,7 @@ syndication:
 
 ---
 
-A couple of days ago I wrote about my attempt to {% post_link 2023/Integration-of-Pagefind-in-Hexo "integrate Pagefind in my blog" %}. In the meantime, I further refined the indexing by excluding more content areas and adding more for the metadata to make the search results even better.
+A couple of days ago I wrote about my attempt to {% post_link Integration-of-Pagefind-in-Hexo "integrate Pagefind in my blog" %}. In the meantime, I further refined the indexing by excluding more content areas and adding more for the metadata to make the search results even better.
 
 But one thing was still missing: controlling the search via url parameters, so that you can actually consider the page as a search page. I came across this in a post about the sense and nonsense of Open Graph attributes and other search engine related metadata nowadays. Google, for example, [likes to use JSON-LD](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data) and when describing the site you can define a search page which then makes it easier to search the site directly via Google ... see [Sitelinks search box (WebSite) structured data](https://developers.google.com/search/docs/appearance/structured-data/sitelinks-searchbox)
 

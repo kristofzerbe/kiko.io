@@ -151,7 +151,7 @@ I use my own photographs on every page as header images and to provide some addi
 }
 ```
 
-For better recognition of my posts (currently articles only), I generate a special image for each post for the social media platforms. It is based on the  photo associated with the post and includes it's title and subtitle in addition to the logo. How I generate these things can be read in my post {% post_link 2021/Generate-Social-Media-Images-Automatically %}. For this image, there is a second JSON-LD block that I can reference later on:
+For better recognition of my posts (currently articles only), I generate a special image for each post for the social media platforms. It is based on the  photo associated with the post and includes it's title and subtitle in addition to the logo. How I generate these things can be read in my post {% post_link Generate-Social-Media-Images-Automatically %}. For this image, there is a second JSON-LD block that I can reference later on:
 
 ```json
 {

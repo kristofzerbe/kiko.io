@@ -24,7 +24,7 @@ related:
 ---
 
 {% alertbox note %}
-This post is a new version of {% post_link 2021/Triangulate-your-images-with-Triangula %} and the first in a series of articles published on the German news site [golem.de](https://golem.de).
+This post is a new version of {% post_link Triangulate-your-images-with-Triangula %} and the first in a series of articles published on the German news site [golem.de](https://golem.de).
 {% endalertbox %}
 
 When talking about triangulation, non-mathematicians generally understand it as a geometric method for measuring distances. Roughly speaking, two known points in space can be used to calculate a third via the angles to it. In one or the other Hollywood flick of the genres war or spy movie you have surely come across this.

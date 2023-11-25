@@ -18,7 +18,7 @@ tags:
 related:
   - Add-website-to-Trello-card-the-better-way
 ---
-I'm collecting interesting One-Page-Tools on the web on a Trello board. To add a new card, I use a simple little script on my Android smartphone, I wrote about here: {% post_link 2020/Add-website-to-Trello-card-the-better-way %}.
+I'm collecting interesting One-Page-Tools on the web on a Trello board. To add a new card, I use a simple little script on my Android smartphone, I wrote about here: {% post_link Add-website-to-Trello-card-the-better-way %}.
 
 On processing the page to store on a card, Trello scrapes the page and takes the ``<meta>`` tag ``og:image`` out of the HTML to generate an image attachment and take it as cover for the card. This sometimes works, but most of the time it doesn't, because website owners often don't pay attention to reasonable ``<meta>`` tags.
 

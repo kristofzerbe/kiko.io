@@ -23,7 +23,7 @@ related:
 ---
 
 {% alertbox info %}
-This is part two of a blog post that turned out to be a bit too long. Don't miss Part 1: {% post_link 2021/Hexo-and-the-IndieWeb "Hexo and the IndieWeb" %} ...
+This is part two of a blog post that turned out to be a bit too long. Don't miss Part 1: {% post_link Hexo-and-the-IndieWeb "Hexo and the IndieWeb" %} ...
 {% endalertbox %}
 
 ---
@@ -114,7 +114,7 @@ The source code is available at: [https://github.com/kristofzerbe/hexo-console-w
 ---
 
 {% alertbox info %}
-Do not linger ... this way to Part 3: {% post_link 2021/Hexo-and-the-IndieWeb-Receiving-Webmentions "Hexo and the IndieWeb (Receiving Webmentions)" %} ...
+Do not linger ... this way to Part 3: {% post_link Hexo-and-the-IndieWeb-Receiving-Webmentions "Hexo and the IndieWeb (Receiving Webmentions)" %} ...
 {% endalertbox %}
 
 ---
