@@ -18,6 +18,8 @@ related:
   - Speyer-Automotive
   - Majorcan-Details
 syndication:
+  - host: Mastodon
+    url: https://indieweb.social/@kiko/111479244359603591
   - host: Pixelfed
     url: https://pixelfed.social/p/kristofz/634452975081842226
 ---
