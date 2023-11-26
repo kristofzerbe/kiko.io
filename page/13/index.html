@@ -364,15 +364,108 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PowerShell/" rel="tag">PowerShell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Theming/" rel="tag">Theming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-clpe71vsk002kobqd1hza43cg">
+      <div class="article-permalink" id="article-permalink-clpfkruaq002lnyozd2mtcoko">
     <input class="article-permalink-value" value="https://kiko.io/post/Spice-Up-Windows-Terminal/" 
-           data-id="clpe71vsk002kobqd1hza43cg" data-title="Spice Up Windows Terminal" />
+           data-id="clpfkruaq002lnyozd2mtcoko" data-title="Spice Up Windows Terminal" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clpe71vsk002kobqd1hza43cg");
+        initPermalink("clpfkruaq002lnyozd2mtcoko");
+    });
+</script>
+
+    </footer>
+  </div>
+
+</article>
+  
+     
+<article id="post-Safely-remove-multiple-classes-using-a-prefix" 
+         class="article article-type-post">
+  
+  <div class="article-meta">
+    <a href="/post/Safely-remove-multiple-classes-using-a-prefix/" class="article-date">
+  
+  <time class="published dt-published" data-pagefind-meta="date" 
+        datetime="2021-01-18T10:17:46.000Z">18 Jan 2021</time>
+</a>
+    
+  <div class="article-category category-javascript">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a> 
+  </div>
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <a href="/post/Safely-remove-multiple-classes-using-a-prefix/">
+        <img class="article-photo" src="/photos/tablet/DSC_1690.jpg" alt="Metal Rose" />
+    </a>
+
+    
+    
+      <header class="article-header">
+        
+
+
+
+
+        
+
+
+  
+    <h3>
+      <a class="article-title"
+         href="/post/Safely-remove-multiple-classes-using-a-prefix/">Safely remove multiple classes using a prefix</a>
+    </h3>
+  
+
+        
+  
+    <h3 class="article-subtitle">
+      Avoiding pitfalls when iterating over classList
+    </h3>
+  
+
+      </header>
+    
+    
+    <div class="article-entry">
+      <p>Writing a Web App with HTML and JavaScript means you deal with several classes on your DOM elements in order to visualize state changes. And there are some pitfalls to be aware of with regard to removal.</p>
+<p>Assuming you want to open some kind of sidebar above a container. In this sidebar you have several buttons to show different content via JavaScript and a close button, which closes the sidebar again. You HTML code maybe looks like this:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;container&quot;</span>&gt;</span>... Main Content ...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;open-sidebar&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">aside</span> <span class="attr">id</span>=<span class="string">&quot;sidebar&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span>... Sidebar Content ...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;close&quot;</span>&gt;</span>Close Sidebar<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;content1&quot;</span>&gt;</span>Show Content 1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;content2&quot;</span>&gt;</span>Show Content 2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;content3&quot;</span>&gt;</span>Show Content 3<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>By clicking on the <code>open-sidebar</code> button, the sidebar is opened and the action, respectively the new state, is vizualized by adding an appropriate class to the parent sidebar element. In order to make it easy for the user, the default content (Content 1) will be loaded also and its state will be marked with another class.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;sidebar open open-content1&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>A click on of the other content buttons (let’s say Content 2), will replace the current content and the <code>aside</code> classes will change into:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;sidebar open open-content2&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Now we want to close the sidebar again, assuming that we don’t have stored the currently opened content in the JavaScript code…</p>
+      
+        <p class="article-more-link">
+          <a href="/post/Safely-remove-multiple-classes-using-a-prefix/#continue">Continue reading ...</a>
+        </p>
+      
+    </div>
+    
+    <footer class="article-footer">      
+      
+  <div class="article-tags">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li></ul>  
+  </div>
+
+      <div class="article-permalink" id="article-permalink-clpfkruap002hnyozdkkn0ke5">
+    <input class="article-permalink-value" value="https://kiko.io/post/Safely-remove-multiple-classes-using-a-prefix/" 
+           data-id="clpfkruap002hnyozdkkn0ke5" data-title="Safely remove multiple classes using a prefix" />
+    <a class="article-action action-copy" title="Copy URL"></a>
+    <a class="article-action action-share" title="Open Share Dialog"></a>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        initPermalink("clpfkruap002hnyozdkkn0ke5");
     });
 </script>
 
@@ -444,15 +537,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-clpe71vsl002pobqd3hyz1u8x">
+      <div class="article-permalink" id="article-permalink-clpfkruar002pnyoz9l6ldtmt">
     <input class="article-permalink-value" value="https://kiko.io/post/Use-and-manage-multiple-Node-js-versions-on-Windows-10/" 
-           data-id="clpe71vsl002pobqd3hyz1u8x" data-title="Use and manage multiple Node.js versions on Windows 10" />
+           data-id="clpfkruar002pnyoz9l6ldtmt" data-title="Use and manage multiple Node.js versions on Windows 10" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clpe71vsl002pobqd3hyz1u8x");
+        initPermalink("clpfkruar002pnyoz9l6ldtmt");
     });
 </script>
 
@@ -526,15 +619,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Events/" rel="tag">Events</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-clpe71vsh002aobqdaxfk121c">
+      <div class="article-permalink" id="article-permalink-clpfkruan002anyoz4ss650ba">
     <input class="article-permalink-value" value="https://kiko.io/post/How-to-prevent-duplicate-events/" 
-           data-id="clpe71vsh002aobqdaxfk121c" data-title="How to prevent duplicate events" />
+           data-id="clpfkruan002anyoz4ss650ba" data-title="How to prevent duplicate events" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clpe71vsh002aobqdaxfk121c");
+        initPermalink("clpfkruan002anyoz4ss650ba");
     });
 </script>
 
@@ -611,15 +704,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Templating/" rel="tag">Templating</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-clpe71vsm002robqd14jgdiib">
+      <div class="article-permalink" id="article-permalink-clpfkruas002qnyoz95oohbwi">
     <input class="article-permalink-value" value="https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/" 
-           data-id="clpe71vsm002robqd14jgdiib" data-title="Utilize a repository of reusable ES6 template literals" />
+           data-id="clpfkruas002qnyoz95oohbwi" data-title="Utilize a repository of reusable ES6 template literals" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clpe71vsm002robqd14jgdiib");
+        initPermalink("clpfkruas002qnyoz95oohbwi");
     });
 </script>
 
@@ -694,15 +787,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Collection/" rel="tag">Collection</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-clpe71vrv000pobqd0q14bej2">
+      <div class="article-permalink" id="article-permalink-clpfkrua0000pnyoz5o6xh3jm">
     <input class="article-permalink-value" value="https://kiko.io/post/Discoveries-5/" 
-           data-id="clpe71vrv000pobqd0q14bej2" data-title="Discoveries #5" />
+           data-id="clpfkrua0000pnyoz5o6xh3jm" data-title="Discoveries #5" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clpe71vrv000pobqd0q14bej2");
+        initPermalink("clpfkrua0000pnyoz5o6xh3jm");
     });
 </script>
 
@@ -773,15 +866,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lightroom/" rel="tag">Lightroom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Presets/" rel="tag">Presets</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-clpe71vrw000tobqdfyr66fa3">
+      <div class="article-permalink" id="article-permalink-clpfkrua2000unyoz7wup50ko">
     <input class="article-permalink-value" value="https://kiko.io/post/Indian-Presets-for-Lightroom/" 
-           data-id="clpe71vrw000tobqdfyr66fa3" data-title="Indian Presets for Lightroom" />
+           data-id="clpfkrua2000unyoz7wup50ko" data-title="Indian Presets for Lightroom" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clpe71vrw000tobqdfyr66fa3");
+        initPermalink("clpfkrua2000unyoz7wup50ko");
     });
 </script>
 
@@ -853,97 +946,15 @@
     <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lightroom/" rel="tag">Lightroom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Presets/" rel="tag">Presets</a></li></ul>  
   </div>
 
-      <div class="article-permalink" id="article-permalink-clpe71vrx000uobqd3yx029y3">
+      <div class="article-permalink" id="article-permalink-clpfkrua2000wnyozhguu4cz7">
     <input class="article-permalink-value" value="https://kiko.io/post/Israeli-Presets-for-Lightroom/" 
-           data-id="clpe71vrx000uobqd3yx029y3" data-title="Israeli Presets for Lightroom" />
+           data-id="clpfkrua2000wnyozhguu4cz7" data-title="Israeli Presets for Lightroom" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("clpe71vrx000uobqd3yx029y3");
-    });
-</script>
-
-    </footer>
-  </div>
-
-</article>
-  
-     
-<article id="post-Folder-based-publishing-in-Lightroom" 
-         class="article article-type-post">
-  
-  <div class="article-meta">
-    <a href="/post/Folder-based-publishing-in-Lightroom/" class="article-date">
-  
-  <time class="published dt-published" data-pagefind-meta="date" 
-        datetime="2020-10-26T12:28:59.000Z">26 Oct 2020</time>
-</a>
-    
-  <div class="article-category category-photo">
-    <a class="article-category-link" href="/categories/Photo/">Photo</a> 
-  </div>
-
-  </div>
-  
-  <div class="article-inner">
-    
-    <a href="/post/Folder-based-publishing-in-Lightroom/">
-        <img class="article-photo" src="/photos/tablet/DSC_0181.jpg" alt="Color Seat" />
-    </a>
-
-    
-    
-      <header class="article-header">
-        
-
-
-
-
-        
-
-
-  
-    <h3>
-      <a class="article-title"
-         href="/post/Folder-based-publishing-in-Lightroom/">Folder based publishing in Lightroom</a>
-    </h3>
-  
-
-        
-      </header>
-    
-    
-    <div class="article-entry">
-      <p>In all times photography was a process: First you shoot you images, then you edit them and in the third step you publish them elsewhere.</p>
-<p>Today <strong>Adobe Lightroom</strong> is a de-facto standard in photo processing, especially when you shoot RAW images. And I mean <a target="_blank" rel="noopener" href="https://www.adobe.com/de/products/photoshop-lightroom-classic.html">Lightroom Classic</a> and not the new web&#x2F;smartphone based software, which doesn’t come even close to the desktop application yet.</p>
-<p>I use Lightroom for all purposes after I shot my images: editing, cataloguing, managing and … publishing. On publishing Lightroom offers you two approaches: <em>Export</em> and <em>Publish</em>. While <em>Export</em> is mainly for creating JPG copies of edited RAW images, <em>Publish</em> goes one step further and gives you the ability to do “something” with your exported JPG’s, for example upload them on Flickr, Instagram, 500px or to your own web server via FTP. Major difference to <em>Export</em> is, that <em>Publish</em> keeps your images in sync. Everytime you change the source images, the defined publish services recognizes and offer you to re-publish your image.</p>
-<p><img src="/post/Folder-based-publishing-in-Lightroom/lr-re-publish.png" alt="Lightroom Publish"></p>
-<p>In the past years I tried a lot of Lightroom plugins for publishing on several platforms, but it doesn’t work out for long, because all these platforms change their API almost every year (or are stamped) and the sparely maintained 3rd party plugins break.</p>
-<p>My workflow for quite some time is to publish my photos on the hard drive, in a folder, which is synced via Dropbox with the cloud. From there I distribute them further.</p>
-      
-        <p class="article-more-link">
-          <a href="/post/Folder-based-publishing-in-Lightroom/#continue">Continue reading ...</a>
-        </p>
-      
-    </div>
-    
-    <footer class="article-footer">      
-      
-  <div class="article-tags">
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lightroom/" rel="tag">Lightroom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Plugin/" rel="tag">Plugin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Publishing/" rel="tag">Publishing</a></li></ul>  
-  </div>
-
-      <div class="article-permalink" id="article-permalink-clpe71vrv000robqd5txl8mtj">
-    <input class="article-permalink-value" value="https://kiko.io/post/Folder-based-publishing-in-Lightroom/" 
-           data-id="clpe71vrv000robqd5txl8mtj" data-title="Folder based publishing in Lightroom" />
-    <a class="article-action action-copy" title="Copy URL"></a>
-    <a class="article-action action-share" title="Open Share Dialog"></a>
-</div>
-<script>
-    window.addEventListener("load", () => {
-        initPermalink("clpe71vrv000robqd5txl8mtj");
+        initPermalink("clpfkrua2000wnyozhguu4cz7");
     });
 </script>
 
@@ -993,6 +1004,12 @@
         
           <li>
             
+              <a href="/post/Mecklenburg-Lakes/">Mecklenburg Lakes</a>
+            
+          </li>
+        
+          <li>
+            
               <a href="/post/Discoveries-27-JavaScript-Tools/">Discoveries #27 - JavaScript Tools</a>
             
           </li>
@@ -1006,12 +1023,6 @@
           <li>
             
               <a href="/post/SVWW-vs-Kaiserslautern-2023-11-12/">SVWW vs. Kaiserslautern @ 2023-11-12</a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/Add-Link-to-Trello-on-Android-via-Share-Menu/">Add Link to Trello on Android via Share Menu</a>
             
           </li>
         
