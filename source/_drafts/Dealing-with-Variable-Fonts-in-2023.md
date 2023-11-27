@@ -15,7 +15,7 @@ related:
   - Experimenting-with-the-font-LEXEND
 syndication:
   - host: Mastodon
-    url: null
+    url: 
 ---
 
 

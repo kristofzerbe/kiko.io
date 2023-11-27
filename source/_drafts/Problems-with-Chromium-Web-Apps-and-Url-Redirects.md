@@ -15,7 +15,7 @@ related:
   - Device-Class-Detection-in-JavaScript
 syndication:
 - host: Mastodon
-  url: null
+  url: 
 ---
 
 Mostly all modern browsers nowadays offer a way to put web pages on the desktop as an "app" link. Be it as a real PWA to install or simply via the "Add To Homescreen" (A2HS) feature. On execution those links opens up the page in a seperate window so that it feels like an app to the user.

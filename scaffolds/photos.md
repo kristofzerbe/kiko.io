@@ -17,7 +17,7 @@ related:
   - Pool-Photo-Generator
 syndication:
   - host: Mastodon
-    url: null
+    url: 
 ---
 
 

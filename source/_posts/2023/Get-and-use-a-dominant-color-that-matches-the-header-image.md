@@ -19,7 +19,7 @@ related:
   - Discoveries-19-Visual-Helpers
 syndication:
   - host: Mastodon
-    url: null
+    url: 
 ---
 
 The pages of this website are all structured according to the scheme **Header**, **Content**, **Footer**, where the header contains an individual hero image and, like the footer, has a dark gray background color. I chose dark gray at the time because I needed contrast and it matches all the other colors, since the header image is slowly overlaid by the header background color as you scroll.

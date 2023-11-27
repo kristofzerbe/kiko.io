@@ -18,7 +18,7 @@ related:
   - Show-pages-meta-data-JSON-LD-in-Bottom-Sheet
 syndication:
   - host: Mastodon
-    url: null
+    url: 
 ---
 
 <!-- more -->

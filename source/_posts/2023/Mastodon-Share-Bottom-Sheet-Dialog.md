@@ -20,7 +20,7 @@ related:
   - Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader
 syndication:
   - host: Mastodon
-    url: null
+    url: 
 ---
 
 Social media thrives on sharing. Thoughts, experiences, self-dramatizations or even texts or posts from other people. This is especially true for microblogging on (formerly) Twitter and (today) Mastodon. To make this easy, the platforms often offer a SHARE endpoint (URL), such as the famous

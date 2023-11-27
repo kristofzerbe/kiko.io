@@ -19,7 +19,7 @@ related:
   - Majorcan-Details
 syndication:
   - host: Pixelfed
-    url: null
+    url: 
 ---
 
 August in Germany is usually a safe bet when it comes to the weather, so my wife and I decided to relax for a few days on the [Mecklenburg Lake Plateau](https://en.wikipedia.org/wiki/Mecklenburg_Lake_Plateau) ... on a chartered boat. In general, you need a driving license for everything that moves in this country, but there are a few exceptions, such as in Brandenburg/Mecklenburg where even inexperienced tourists are allowed to steer a 12-metre houseboat/yacht across the many lakes after a short briefing.

@@ -19,7 +19,7 @@ related:
   - Photo-Workflow-Re-Thought
 syndication:
   - host: Mastodon
-    url: null
+    url: 
 ---
 
 Summer is over and I'm spending some of my free time post-processing in Lightroom the many photos I've taken over the past few months. As a casual photographer, I mostly use my vacation and weekend trips to take my Nikon for a walk and let its chip card glow. My better half is constantly wondering why I stopped there or here again, even if she likes the results afterwards. The point is that I am a color-and-shape junkie. Of course I also do landscapes and portraits, but the details of things have done it to me the most. Colors & Shapes ...

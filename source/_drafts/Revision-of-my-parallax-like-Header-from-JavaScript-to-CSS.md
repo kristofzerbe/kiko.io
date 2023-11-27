@@ -15,7 +15,7 @@ related:
   - xxx
 syndication:
   - host: Mastodon
-    url: null
+    url: 
 ---
 
 ... XXX\Scroll-driven Animations\index.html
