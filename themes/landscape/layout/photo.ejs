@@ -46,7 +46,7 @@
     <ul>
       <li>
         <label>Title</label>
-        <span><%= page.meta.ObjectName %></span>
+        <span><%= page.meta?.ObjectName %></span>
       </li>
       <li>
         <label>File</label>
@@ -56,16 +56,18 @@
         <label>Status</label>
         <% if (page.status === 'pool') { %>
           <span>Unused (Pool Photo)</span>
+        <% } else if (page.status === 'shed') { %>
+          <span>Shed Photo</span>
         <% } else { %>
-          <% if (page.article.type === "draft") { %>
-            <span>Used at draft <em><%= page.article.title %></em></span>
-          <% } else if (page.article.type === "general") { %>
-            <span>Used at <%= page.article.type %> page like  
+          <% if (page.article?.type === "draft") { %>
+            <span>Used at draft <em><%= page.article?.title %></em></span>
+          <% } else if (page.article?.type === "general") { %>
+            <span>Used at <%= page.article?.type %> page like  
               <a href="<%= page.article.url %>">Home</a>
             </span>
           <% } else { %>
-            <span>Used at <%= page.article.type + ((["page", "post"].some(v => page.article.type.includes(v))) ? "" : " page") %> 
-              <a href="<%= page.article.url %>"><%= page.article.title %></a>
+            <span>Used at <%= page.article?.type + ((["page", "post"].some(v => page.article?.type.includes(v))) ? "" : " page") %> 
+              <a href="<%= page.article?.url %>"><%= page.article?.title %></a>
             </span>
           <% } %>
         <% } %>
@@ -94,9 +96,9 @@
       </li>
       <li>
         <label>GPS Coordinates (Lat/Long)</label>
-        <span><%= page.meta.latitude ?? "---" %> / <%= page.meta.longitude ?? "---" %></span>
-        <% if (page.meta.latitude && page.meta.longitude) { %>
-        <div id="map" style="height: 320px; margin: 12px -28px 6px"></div>
+        <span><%= page.meta?.latitude ?? "---" %> / <%= page.meta?.longitude ?? "---" %></span>
+        <% if (page.meta?.latitude && page.meta?.longitude) { %>
+        <div id="map" style="height: 320px; margin: 12px -30px 6px"></div>
         <% } %>
       </li>
       <li><hr style="margin:0"></li>
@@ -165,12 +167,12 @@
   %>
   <%- partial('_partial/post/interaction', { post: page, type: 'photo', comments: false }) %>
 
-  <% if (page.meta.latitude && page.meta.longitude) { %>
+  <% if (page.meta?.latitude && page.meta?.longitude) { %>
   <%- js('js/dist/leaflet.js') %>  
   <%- css('css/dist/leaflet.css') %>    
   <script>
     var map = L.map('map', {
-      center: [<%= page.meta.latitude %>, <%= page.meta.longitude %>],
+      center: [<%= page.meta?.latitude %>, <%= page.meta?.longitude %>],
       zoom: 11,
       zoomControl: false,
     })
@@ -178,7 +180,7 @@
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
-    var marker = L.marker([<%= page.meta.latitude %>, <%= page.meta.longitude %>]).addTo(map);
+    var marker = L.marker([<%= page.meta?.latitude %>, <%= page.meta?.longitude %>]).addTo(map);
   </script>
   <% } %>
   

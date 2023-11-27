@@ -32,6 +32,10 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
   let pPool = getPoolPhotos(config);
   log.info(magenta(pPool.length) + " pool photos");
 
+  // Get shed photos
+  let pShed = getShedPhotos(config);
+  log.info(magenta(pShed.length) + " shed photos");
+
   // Get used photos in Posts & Pages
   let pPostPages = getPostAndPagePhotos(config, locals);
   log.info(magenta(pPostPages.length) + " used photos in posts and pages");
@@ -52,8 +56,8 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
   let pNotes = getNotesPhotos(config);
   log.info(magenta(pNotes.length) + " used photos in notes");
 
-  // Set items for page
-  page.items = [...pHero ,...pPool, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes]
+  // Set items for page (excluding Shed photos)
+  page.items = [...pHero, ...pPool, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes]
     .filter(p => (p.name)) //filter out all without photo name
     .sort((a, b) => a.key.localeCompare(b.key));
 
@@ -63,8 +67,9 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
       layout: "photos"
   });
 
-  //for each page.items (photos) generate photo page
-  page.items.forEach(item => {
+  // Generate photo pages (all, incl. Shed)
+  let photos = [...pHero, ...pPool, ...pShed, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes];
+  photos.forEach(item => {
     item.photograph = page.photograph;
 
     item.title = "Photo " + item.name;
@@ -138,6 +143,32 @@ function getPoolPhotos(config) {
   });
 
   return pool;
+}
+
+/** ================================================================================= */
+
+function getShedPhotos(config) {
+
+  var shedDir = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir);
+
+  let shed = fs
+    .readdirSync(shedDir)
+    .filter(entry => fs.statSync(path.join(shedDir, entry)).isDirectory())
+    .map(entry => ({ key: entry, status: "shed", file: null }));
+
+  shed.forEach(entry => {
+
+    if (fs.existsSync(path.join(shedDir, entry.key, "meta.json"))) {
+      entry.meta = JSON.parse(fs.readFileSync(path.join(shedDir, entry.key, "meta.json")));
+    }
+
+    entry.name = entry.meta?.ObjectName;
+    entry.file = entry.key + ".jpg";
+    entry.pathMobile = "/" + path.join(config.shed_dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
+    entry.pathNormal = "/" + path.join(config.shed_dir, entry.key, "normal.jpg").replace(/\134/g,"/");
+    entry.article = null;
+  });
+  return shed;
 }
 
 /** ================================================================================= */

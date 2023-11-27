@@ -22,6 +22,7 @@ syndication:
     url: https://indieweb.social/@kiko/111479244359603591
   - host: Pixelfed
     url: https://pixelfed.social/p/kristofz/634452975081842226
+    title: Mecklenburg Lakes I
 ---
 
 August in Germany is usually a safe bet when it comes to the weather, so my wife and I decided to relax for a few days on the [Mecklenburg Lake Plateau](https://en.wikipedia.org/wiki/Mecklenburg_Lake_Plateau) ... on a chartered boat. In general, you need a driving license for everything that moves in this country, but there are a few exceptions, such as in Brandenburg/Mecklenburg where even inexperienced tourists are allowed to steer a 12-metre houseboat/yacht across the many lakes after a short briefing.
@@ -37,11 +38,15 @@ Below are a few pictures from this trip, some of which will be used again as her
 {% photo_list
   "23-08 Mecklenburg Seen-0040|Grinning Horse"
   "23-08 Mecklenburg Seen-0062|Sea Magic"
+  "23-08 Mecklenburg Seen-0154|Rainy Tourism"
   "23-08 Mecklenburg Seen-0160|Rainy Planks"
   "23-08 Mecklenburg Seen-0186|Chrome Bollard"
+  "23-08 Mecklenburg Seen-0202|Rheinsberg Palace"
   "23-08 Mecklenburg Seen-0204|Pink Lotus"
   "23-08 Mecklenburg Seen-0211|Stony Vegetation"
   "23-08 Mecklenburg Seen-0216|Golden Drama"
+  "23-08 Mecklenburg Seen-0229|Buddy Support"
+  "23-08 Mecklenburg Seen-0256|Stormy Lake"
   "23-08 Mecklenburg Seen-0275|Green Canal"
   "23-08 Mecklenburg Seen-0323|Boiler Mirroring"
   "23-08 Mecklenburg Seen-0335|Into the Storm"
@@ -52,10 +57,3 @@ Below are a few pictures from this trip, some of which will be used again as her
   "23-08 Mecklenburg Seen-0433|Sparkling Duck"
   "23-08 Mecklenburg Seen-0468|Mirrored Boathouses"
 %}
-
-<!-- 
-  "23-08 Mecklenburg Seen-0256|Stormy Lake"
-  "23-08 Mecklenburg Seen-0229|Buddy Support"
-  "23-08 Mecklenburg Seen-0202|Rheinsberg Palace"
-  "23-08 Mecklenburg Seen-0154|Rainy Tourism"
- -->

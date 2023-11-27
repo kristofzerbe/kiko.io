@@ -37,7 +37,7 @@ let syndication = post.syndication?.filter(s => s.url?.length > 0)
       <a class="syndication-link host-<%- syn.host?.toLowerCase() %> u-syndication" 
          href="<%- syn.url %>" rel="syndication" target="_blank"
          title="Syndication of this <%- type %> on <%- syn.host %>" >
-        <span><%- syn.host %></span>
+        <span><%- syn.host.charAt(0).toUpperCase() + syn.host.slice(1) + ((syn.title) ? " (" + syn.title + ")" : "") %></span>
       </a>
     <% }); %>
   </div>
