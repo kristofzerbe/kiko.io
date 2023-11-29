@@ -4,7 +4,7 @@ title: Versengold in Concert
 subtitle: Photos from the performance in Speyer as part of the MPS
 date: 2023-09-10 10:59:19
 photograph:
-  file: 23-08-26 MPS Speyer-0172.jpg
+  file: 23-08-26-MPS-Speyer-0172.jpg
   name: Versengold in Concert I
   socialmedia: /static/images/social-media/Versengold-in-Concert.png
 categories:
@@ -31,35 +31,35 @@ In the meantime we were on two more concerts in Frankfurt, then in Marburg (Open
 Here are the results:
 
 {% image_masonry
-  "23-08-26 MPS Speyer-0092.jpg|"
-  "23-08-26 MPS Speyer-0094.jpg|"
-  "23-08-26 MPS Speyer-0103.jpg|"
-  "23-08-26 MPS Speyer-0104.jpg|"
-  "23-08-26 MPS Speyer-0105.jpg|"
-  "23-08-26 MPS Speyer-0106.jpg|"
-  "23-08-26 MPS Speyer-0108.jpg|"
-  "23-08-26 MPS Speyer-0111.jpg|"
-  "23-08-26 MPS Speyer-0115.jpg|"
-  "23-08-26 MPS Speyer-0123.jpg|"
-  "23-08-26 MPS Speyer-0126.jpg|"
-  "23-08-26 MPS Speyer-0128.jpg|"
-  "23-08-26 MPS Speyer-0131.jpg|"
-  "23-08-26 MPS Speyer-0136.jpg|"
-  "23-08-26 MPS Speyer-0150.jpg|"
-  "23-08-26 MPS Speyer-0151.jpg|"
-  "23-08-26 MPS Speyer-0152.jpg|"
-  "23-08-26 MPS Speyer-0153.jpg|"
-  "23-08-26 MPS Speyer-0156.jpg|"
-  "23-08-26 MPS Speyer-0157.jpg|"
-  "23-08-26 MPS Speyer-0159.jpg|"
-  "23-08-26 MPS Speyer-0162.jpg|"
-  "23-08-26 MPS Speyer-0169.jpg|"
-  "23-08-26 MPS Speyer-0171.jpg|"
-  "23-08-26 MPS Speyer-0172.jpg|"
-  "23-08-26 MPS Speyer-0173.jpg|"
-  "23-08-26 MPS Speyer-0177.jpg|"
-  "23-08-26 MPS Speyer-0179.jpg|"
-  "23-08-26 MPS Speyer-0182.jpg|"
+  "23-08-26-MPS-Speyer-0092.jpg|"
+  "23-08-26-MPS-Speyer-0094.jpg|"
+  "23-08-26-MPS-Speyer-0103.jpg|"
+  "23-08-26-MPS-Speyer-0104.jpg|"
+  "23-08-26-MPS-Speyer-0105.jpg|"
+  "23-08-26-MPS-Speyer-0106.jpg|"
+  "23-08-26-MPS-Speyer-0108.jpg|"
+  "23-08-26-MPS-Speyer-0111.jpg|"
+  "23-08-26-MPS-Speyer-0115.jpg|"
+  "23-08-26-MPS-Speyer-0123.jpg|"
+  "23-08-26-MPS-Speyer-0126.jpg|"
+  "23-08-26-MPS-Speyer-0128.jpg|"
+  "23-08-26-MPS-Speyer-0131.jpg|"
+  "23-08-26-MPS-Speyer-0136.jpg|"
+  "23-08-26-MPS-Speyer-0150.jpg|"
+  "23-08-26-MPS-Speyer-0151.jpg|"
+  "23-08-26-MPS-Speyer-0152.jpg|"
+  "23-08-26-MPS-Speyer-0153.jpg|"
+  "23-08-26-MPS-Speyer-0156.jpg|"
+  "23-08-26-MPS-Speyer-0157.jpg|"
+  "23-08-26-MPS-Speyer-0159.jpg|"
+  "23-08-26-MPS-Speyer-0162.jpg|"
+  "23-08-26-MPS-Speyer-0169.jpg|"
+  "23-08-26-MPS-Speyer-0171.jpg|"
+  "23-08-26-MPS-Speyer-0172.jpg|"
+  "23-08-26-MPS-Speyer-0173.jpg|"
+  "23-08-26-MPS-Speyer-0177.jpg|"
+  "23-08-26-MPS-Speyer-0179.jpg|"
+  "23-08-26-MPS-Speyer-0182.jpg|"
 %}
 
 Love you guys...!

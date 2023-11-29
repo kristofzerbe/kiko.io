@@ -4,7 +4,7 @@ title: 'Discoveries #27 - JavaScript Tools'
 subtitle:
 date: 2023-11-20 15:16:39
 photograph:
-  file: 22-08 Bretagne-Jersey-1491.jpg
+  file: 22-08-Bretagne-Jersey-1491.jpg
   name: Medieval Art
   socialmedia: /static/images/social-media/Discoveries-27-JavaScript-Tools.png
 series: Discoveries

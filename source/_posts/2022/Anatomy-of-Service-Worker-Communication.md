@@ -4,7 +4,7 @@ title: Anatomy of Service Worker Communication
 subtitle: Let your App communicate with its Service Worker
 date: 2022-11-12 12:26:34
 photograph:
-  file: 22-05 Malta-8654.jpg
+  file: 22-05-Malta-8654.jpg
   name: Rocky Stairway
   socialmedia: /static/images/social-media/Anatomy-of-Service-Worker-Communication.png
 categories:

@@ -2,7 +2,7 @@
 title: Hexo Generator Anything
 permalink: /projects/hexo-generator-anything
 photograph:
-  file: $19-05 Israel-0245.jpg
+  file: $19-05-Israel-0245.jpg
   name: Ancient Mosaic
 ---
 

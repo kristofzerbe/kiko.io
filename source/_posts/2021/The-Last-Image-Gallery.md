@@ -4,7 +4,7 @@ title: The Last Image Gallery...
 subtitle: '... you have to deal with: Spotlight'
 date: 2021-10-10T12:28:09.000Z
 photograph:
-  file: 18-09 Kroatien-0340.jpg
+  file: 18-09-Kroatien-0340.jpg
   name: Seating Group
   socialmedia: /static/images/social-media/The-Last-Image-Gallery.png
 series: Great Finds

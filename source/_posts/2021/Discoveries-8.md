@@ -5,7 +5,7 @@ title: 'Discoveries #8'
 subtitle: null
 date: 2021-03-31T13:41:26.000Z
 photograph:
-  file: 19-05 Israel-0724.jpg
+  file: 19-05-Israel-0724.jpg
   name: Jad Vashem Vista
   socialmedia: /static/images/social-media/Discoveries-8.png
 series: Discoveries

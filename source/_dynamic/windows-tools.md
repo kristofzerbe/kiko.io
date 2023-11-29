@@ -4,7 +4,7 @@ subtitle:
 date: 2023-11-23
 permalink: /collections/windows-tools
 photograph: 
-  file: $23-05 Holland-0839.jpg
+  file: $23-05-Holland-0839.jpg
   name: Arrowhead Offer
 ---
 

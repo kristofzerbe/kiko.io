@@ -4,7 +4,7 @@ title: Mastodon simply explained
 subtitle: Why it is not Twitter and never will be 
 date: 2022-11-15 16:32:07
 photograph:
-  file: 20-08 Mallorca-8177.jpg
+  file: 20-08-Mallorca-8177.jpg
   name: Ready For Takeoff
   socialmedia: /static/images/social-media/Mastodon-simply-explained.png
 categories:

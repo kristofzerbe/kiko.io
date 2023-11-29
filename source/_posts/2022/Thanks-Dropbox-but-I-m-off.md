@@ -4,7 +4,7 @@ title: Thanks Dropbox, but I'm off
 subtitle: How to do homework or say goodbye to the market
 date: 2022-05-13 19:57:43
 photograph:
-  file: 20-08 Mallorca-7134.jpg
+  file: 20-08-Mallorca-7134.jpg
   name: Boombox Reflections I
   socialmedia: /static/images/social-media/Thanks-Dropbox-but-I-m-off.png
 categories:

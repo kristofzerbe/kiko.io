@@ -2,7 +2,7 @@
 title: Hexo Console Webmention
 permalink: /projects/hexo-console-webmention
 photograph:
-  file: $19-05 Israel-0245.jpg
+  file: $19-05-Israel-0245.jpg
   name: Ancient Mosaic
 ---
 

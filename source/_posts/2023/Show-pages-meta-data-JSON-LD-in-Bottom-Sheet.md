@@ -4,7 +4,7 @@ title: Show pages meta data (JSON-LD) in Bottom Sheet
 subtitle: Visualize the generated meta code on your page in a sliding panel for review and information purposes
 date: 2023-06-11 14:11:45
 photograph:
-  file: 22-08 Bretagne-Jersey-0683.jpg
+  file: 22-08-Bretagne-Jersey-0683.jpg
   name: Water Numbers
   socialmedia: /static/images/social-media/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet.png
 categories:

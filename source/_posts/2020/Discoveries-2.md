@@ -5,7 +5,7 @@ title: 'Discoveries #2'
 subtitle: null
 date: 2020-09-07T17:54:50.000Z
 photograph:
-  file: 19-05 Israel-0661.jpg
+  file: 19-05-Israel-0661.jpg
   name: Jerusalem Marks
   socialmedia: /static/images/social-media/Discoveries-2.png
 series: Discoveries

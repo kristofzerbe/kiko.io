@@ -4,7 +4,7 @@ title: One mouse to rule them all
 subtitle:
 date: 2022-10-08 11:46:57
 photograph:
-  file: 22-05 Malta-8364.jpg
+  file: 22-05-Malta-8364.jpg
   name: Ancient Cockpit
   socialmedia: /static/images/social-media/One-mouse-to-rule-them-all.png
 series: Golem

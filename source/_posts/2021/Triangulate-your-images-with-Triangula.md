@@ -5,7 +5,7 @@ title: Triangulate your images with Triangula
 subtitle: null
 date: 2021-04-30T14:56:13.000Z
 photograph:
-  file: 20-08 Mallorca-7195.jpg
+  file: 20-08-Mallorca-7195.jpg
   name: Bottle Series
   socialmedia: /static/images/social-media/Triangulate-your-images-with-Triangula.png
 series: Great Finds
@@ -46,8 +46,8 @@ There is a [web version of Triangula](https://rh12503.github.io/triangula/), but
 ### Example with 10.000 Generations
 
 {% image_compare
-  "19-07 Schottland-0512_ORIGINAL.jpg"
-  "19-07 Schottland-0512_TRIANGULATED.png"
+  "19-07-Schottland-0512_ORIGINAL.jpg"
+  "19-07-Schottland-0512_TRIANGULATED.png"
   "Triangulated"
 %}
 

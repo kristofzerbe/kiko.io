@@ -5,7 +5,7 @@ title: Pimping the Permalink
 subtitle: How to copy and share the permalink programatically
 date: 2020-09-20T16:30:37.000Z
 photograph:
-  file: 18-09 Kroatien-0245.jpg
+  file: 18-09-Kroatien-0245.jpg
   name: Summer Reading
   socialmedia: /static/images/social-media/Pimping-the-Permalink.png
 series: A New Blog

@@ -5,7 +5,7 @@ title: Israeli Presets for Lightroom
 subtitle: null
 date: 2020-10-27T15:07:20.000Z
 photograph:
-  file: 19-05 Israel-0498.jpg
+  file: 19-05-Israel-0498.jpg
   name: Dead Sea Colors
   socialmedia: /static/images/social-media/Israeli-Presets-for-Lightroom.png
 series: Lightroom Presets
@@ -31,8 +31,8 @@ Back in 2019, I was traveling around Israel, a fascinating country where almost 
 The mediaval walls of Jaffa glow in an inimitable way and brings other colors to shine the same way.
 
 {% image_compare
-  "19-05 Israel-0078_ORIGINAL.jpg"
-  "19-05 Israel-0078_PRESET-Colors.jpg"
+  "19-05-Israel-0078_ORIGINAL.jpg"
+  "19-05-Israel-0078_PRESET-Colors.jpg"
   "Preset"
 %}
 
@@ -45,8 +45,8 @@ The mediaval walls of Jaffa glow in an inimitable way and brings other colors to
 The light in the eastern Mediterranean is stunning. The warm tone of the sand and the turquoise color of the water had to pop out.
 
 {% image_compare
-  "19-05 Israel-0196_ORIGINAL.jpg"
-  "19-05 Israel-0196_PRESET-Lights.jpg"
+  "19-05-Israel-0196_ORIGINAL.jpg"
+  "19-05-Israel-0196_PRESET-Lights.jpg"
   "Preset"
 %}
 
@@ -59,8 +59,8 @@ The light in the eastern Mediterranean is stunning. The warm tone of the sand an
 A visit of Yad Vashem moved me a lot and this preset is a expression of that.
 
 {% image_compare
-  "19-05 Israel-0733_ORIGINAL.jpg"
-  "19-05 Israel-0733_PRESET-Drama.jpg"
+  "19-05-Israel-0733_ORIGINAL.jpg"
+  "19-05-Israel-0733_PRESET-Drama.jpg"
   "Preset"
 %}
 
@@ -73,8 +73,8 @@ A visit of Yad Vashem moved me a lot and this preset is a expression of that.
 If you think of the tourists away, Jerusalem takes you to another level because of its age and history and nothing fits more to that than the sepia look of old pictures.
 
 {% image_compare
-  "19-05 Israel-0624_ORIGINAL.jpg"
-  "19-05 Israel-0624_PRESET-Near Black.jpg"
+  "19-05-Israel-0624_ORIGINAL.jpg"
+  "19-05-Israel-0624_PRESET-Near Black.jpg"
   "Preset" 
 %}
 

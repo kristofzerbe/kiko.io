@@ -4,7 +4,7 @@ title: Majorcan Details
 subtitle:
 date: 2023-10-03 13:52:10
 photograph:
-  file: 23-07 Mallorca-0339.jpg
+  file: 23-07-Mallorca-0339.jpg
   name: Basket Parking
   socialmedia: /static/images/social-media/Majorcan-Details.png
 series: New Photos
@@ -31,13 +31,13 @@ In July I was for a few days with friends on a finca in the south of Mallorca an
 Usually the best photos end up unnoticed as {% post_link Pool-Photo-Generator "pool photos" %} here on my blog until I use one as a header image, but now I make a separate post out of each set before I publish the individual photos on other sites like [500px](https://500px.com/p/kikon) or [Pixelfed](https://pixelfed.social/kristofz).
 
 {% photo_list
-  "23-07 Mallorca-0300|Lots of Things"
-  "23-07 Mallorca-0305|Mallorquin Letterbox"
-  "23-07 Mallorca-0339|Basket Parking"
-  "23-07 Mallorca-0342|Aigua Tub"
-  "23-07 Mallorca-0357|Tomato Beauties"
-  "23-07 Mallorca-0542|Veltins Crown"
-  "23-07 Mallorca-0755|Rusty Grate"
-  "23-07 Mallorca-0758|Sticker Direction"
-  "23-07 Mallorca-0773|Table Greenery"
+  "23-07-Mallorca-0300|Lots of Things"
+  "23-07-Mallorca-0305|Mallorquin Letterbox"
+  "23-07-Mallorca-0339|Basket Parking"
+  "23-07-Mallorca-0342|Aigua Tub"
+  "23-07-Mallorca-0357|Tomato Beauties"
+  "23-07-Mallorca-0542|Veltins Crown"
+  "23-07-Mallorca-0755|Rusty Grate"
+  "23-07-Mallorca-0758|Sticker Direction"
+  "23-07-Mallorca-0773|Table Greenery"
 %}

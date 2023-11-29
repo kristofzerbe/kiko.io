@@ -5,7 +5,7 @@ title: Horizontal navigation menu above an image
 subtitle: 'How to deal with coverage, readability and scrollbars'
 date: 2020-07-20T15:55:47.000Z
 photograph:
-  file: 19-07 Schottland-0495.jpg
+  file: 19-07-Schottland-0495.jpg
   name: Ancient Kitchen Stuff
   socialmedia: /static/images/social-media/Horizontal-navigation-menu-above-an-image.png
 series: A New Blog

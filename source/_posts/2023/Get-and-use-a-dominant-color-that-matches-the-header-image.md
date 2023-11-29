@@ -61,8 +61,8 @@ By adding an ID to the LINK it will be easy later on to get the URL of the image
 ```html
 <link rel="preload" as="image" 
       id="photo-preload" 
-      href="/photos/normal/20-08 Mallorca-7333.jpg" 
-      imagesrcset="/photos/mobile/20-08 Mallorca-7333.jpg 480w, /photos/tablet/20-08 Mallorca-7333.jpg 768w">
+      href="/photos/normal/20-08-Mallorca-7333.jpg" 
+      imagesrcset="/photos/mobile/20-08-Mallorca-7333.jpg 480w, /photos/tablet/20-08-Mallorca-7333.jpg 768w">
 ```
 
 ---

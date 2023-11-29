@@ -4,7 +4,7 @@ title: Handling IPTC metadata on Android and Windows
 subtitle: 
 date: 2023-10-28 14:00:55
 photograph:
-  file: 19-12 Kroatien-0045.jpg
+  file: 19-12-Kroatien-0045.jpg
   name: Split Junk
   socialmedia: /static/images/social-media/Handling-IPTC-metadata-on-Android-and-Windows.png
 categories:

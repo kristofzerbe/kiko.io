@@ -4,7 +4,7 @@ title: Speyer Automotive
 subtitle: 
 date: 2023-11-15 16:13:13
 photograph:
-  file: 23-09-11 Speyer-0001.jpg
+  file: 23-09-11-Speyer-0001.jpg
   name: Red Bull 12
   socialmedia: /static/images/social-media/Speyer-Automotive.png
 series: New Photos
@@ -31,13 +31,13 @@ Here are a few pictures of the car exhibition that I brought back from there and
 <!-- more -->
 
 {% photo_list
-  "23-09-11 Speyer-0001|Red Bull 12"
-  "23-09-11 Speyer-0006|Packard Monster"
-  "23-09-11 Speyer-0007|Golden Cooler"
-  "23-09-11 Speyer-0008|Vespa Treasure"
-  "23-09-11 Speyer-0022|Yellow Curves"
-  "23-09-11 Speyer-0029|Red Motor Cover"
-  "23-09-11 Speyer-0031|Maybach Zeppelin"
-  "23-09-11 Speyer-0041|Mercedes Gold"
-  "23-09-11 Speyer-0048|Magirus Red"
+  "23-09-11-Speyer-0001|Red Bull 12"
+  "23-09-11-Speyer-0006|Packard Monster"
+  "23-09-11-Speyer-0007|Golden Cooler"
+  "23-09-11-Speyer-0008|Vespa Treasure"
+  "23-09-11-Speyer-0022|Yellow Curves"
+  "23-09-11-Speyer-0029|Red Motor Cover"
+  "23-09-11-Speyer-0031|Maybach Zeppelin"
+  "23-09-11-Speyer-0041|Mercedes Gold"
+  "23-09-11-Speyer-0048|Magirus Red"
 %}

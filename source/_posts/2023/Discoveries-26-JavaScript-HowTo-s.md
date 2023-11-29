@@ -4,7 +4,7 @@ title: 'Discoveries #26 - JavaScript HowTo''s'
 subtitle:
 date: 2023-09-12 07:53:45
 photograph:
-  file: 20-08 Mallorca-6881.jpg
+  file: 20-08-Mallorca-6881.jpg
   name: Sunset Drinks
   socialmedia: /static/images/social-media/Discoveries-26-JavaScript-HowTo-s.png
 series: Discoveries

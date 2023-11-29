@@ -2,7 +2,7 @@
 title: Hexo Tag Plugins
 permalink: /projects/hexo-tag-plugins
 photograph:
-  file: $19-05 Israel-0245.jpg
+  file: $19-05-Israel-0245.jpg
   name: Ancient Mosaic
 ---
 

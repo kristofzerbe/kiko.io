@@ -4,7 +4,7 @@ title: VS Code on the Web
 subtitle: Multiple ways to work with Visual Studio Code online
 date: 2021-10-22T18:38:29.000Z
 photograph:
-  file: 18-09 Kroatien-0012.jpg
+  file: 18-09-Kroatien-0012.jpg
   name: Cabbage & Friends
   socialmedia: /static/images/social-media/VS-Code-on-the-Web.png
 categories:

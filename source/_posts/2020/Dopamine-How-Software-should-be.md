@@ -5,7 +5,7 @@ title: 'Dopamine: How Software should be...'
 subtitle: A great media player for Windows 10
 date: 2020-07-10T13:49:09.000Z
 photograph:
-  file: 19-05 Israel-0143.jpg
+  file: 19-05-Israel-0143.jpg
   name: Jaffa Antiques
   socialmedia: /static/images/social-media/Dopamine-How-Software-should-be.png
 series: Great Finds

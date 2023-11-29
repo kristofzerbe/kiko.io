@@ -4,7 +4,7 @@ title: "Discoveries #17 - CSS"
 subtitle: null
 date: 2022-03-11 09:28:10
 photograph:
-  file: 19-05 Israel-DSC-0093.jpg
+  file: 19-05-Israel-DSC-0093.jpg
   name: Tel Aviv Sunset
   socialmedia: /static/images/social-media/Discoveries-17-CSS.png
 series: Discoveries

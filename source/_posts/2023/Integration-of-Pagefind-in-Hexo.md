@@ -4,7 +4,7 @@ title: Integration of Pagefind in Hexo
 subtitle: Adding a low-bandwidth local search to a static Hexo-powered website
 date: 2023-01-19 13:24:00
 photograph:
-  file: 22-08 Bretagne-Jersey-0201.jpg
+  file: 22-08-Bretagne-Jersey-0201.jpg
   name: Proud Vespa
   socialmedia: /static/images/social-media/Integration-of-Pagefind-in-Hexo.png
 series: A New Blog

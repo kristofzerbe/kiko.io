@@ -4,7 +4,7 @@ title: Pool Photo Generator
 subtitle: How to create multiple device dependent header photos with Node
 date: 2023-08-21
 photograph:
-  file: 23-05 Holland-0174.jpg
+  file: 23-05-Holland-0174.jpg
   name: Beer Copper
   socialmedia: /static/images/social-media/Pool-Photo-Generator.png
 categories:

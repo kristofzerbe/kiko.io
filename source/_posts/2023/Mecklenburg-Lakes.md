@@ -4,7 +4,7 @@ title: Mecklenburg Lakes
 subtitle: Impressions of a Houseboat Trip
 date: 2023-11-26 14:59:17
 photograph:
-  file: 23-08 Mecklenburg Seen-0275.jpg
+  file: 23-08-Mecklenburg-Seen-0275.jpg
   name: Green Canal
   socialmedia: /static/images/social-media/Mecklenburg-Lakes.png
 series: New Photos
@@ -39,24 +39,24 @@ Not only because it felt like luxury camping without people but only water aroun
 Below are a few pictures from this trip, some of which will be used again as hero images in this blog:
 
 {% photo_list
-  "23-08 Mecklenburg Seen-0040|Grinning Horse"
-  "23-08 Mecklenburg Seen-0062|Sea Magic"
-  "23-08 Mecklenburg Seen-0154|Rainy Tourism"
-  "23-08 Mecklenburg Seen-0160|Rainy Planks"
-  "23-08 Mecklenburg Seen-0186|Chrome Bollard"
-  "23-08 Mecklenburg Seen-0202|Rheinsberg Palace"
-  "23-08 Mecklenburg Seen-0204|Pink Lotus"
-  "23-08 Mecklenburg Seen-0211|Stony Vegetation"
-  "23-08 Mecklenburg Seen-0216|Golden Drama"
-  "23-08 Mecklenburg Seen-0229|Buddy Support"
-  "23-08 Mecklenburg Seen-0256|Stormy Lake"
-  "23-08 Mecklenburg Seen-0275|Green Canal"
-  "23-08 Mecklenburg Seen-0323|Boiler Mirroring"
-  "23-08 Mecklenburg Seen-0335|Into the Storm"
-  "23-08 Mecklenburg Seen-0341|Sunset Jetty"
-  "23-08 Mecklenburg Seen-0343|Golden Surfing"
-  "23-08 Mecklenburg Seen-0408|Blue Lake"
-  "23-08 Mecklenburg Seen-0432|Green Ducks"
-  "23-08 Mecklenburg Seen-0433|Sparkling Duck"
-  "23-08 Mecklenburg Seen-0468|Mirrored Boathouses"
+  "23-08-Mecklenburg-Seen-0040|Grinning Horse"
+  "23-08-Mecklenburg-Seen-0062|Sea Magic"
+  "23-08-Mecklenburg-Seen-0154|Rainy Tourism"
+  "23-08-Mecklenburg-Seen-0160|Rainy Planks"
+  "23-08-Mecklenburg-Seen-0186|Chrome Bollard"
+  "23-08-Mecklenburg-Seen-0202|Rheinsberg Palace"
+  "23-08-Mecklenburg-Seen-0204|Pink Lotus"
+  "23-08-Mecklenburg-Seen-0211|Stony Vegetation"
+  "23-08-Mecklenburg-Seen-0216|Golden Drama"
+  "23-08-Mecklenburg-Seen-0229|Buddy Support"
+  "23-08-Mecklenburg-Seen-0256|Stormy Lake"
+  "23-08-Mecklenburg-Seen-0275|Green Canal"
+  "23-08-Mecklenburg-Seen-0323|Boiler Mirroring"
+  "23-08-Mecklenburg-Seen-0335|Into the Storm"
+  "23-08-Mecklenburg-Seen-0341|Sunset Jetty"
+  "23-08-Mecklenburg-Seen-0343|Golden Surfing"
+  "23-08-Mecklenburg-Seen-0408|Blue Lake"
+  "23-08-Mecklenburg-Seen-0432|Green Ducks"
+  "23-08-Mecklenburg-Seen-0433|Sparkling Duck"
+  "23-08-Mecklenburg-Seen-0468|Mirrored Boathouses"
 %}

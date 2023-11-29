@@ -2,7 +2,7 @@
 title: Create your own Deployment Server for .NET-based clients
 subtitle: Implementing a self updating client/server environment
 photograph:
-  file: 19-07 Schottland-0490.jpg
+  file: 19-07-Schottland-0490.jpg
   name: Fishermans Home
   socialmedia: /static/images/social-media/create-deployment-server-net-based-clients.png
 syndication:

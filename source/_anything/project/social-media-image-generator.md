@@ -2,7 +2,7 @@
 title: Social Media Image Generator
 permalink: /projects/social-media-image-generator
 photograph:
-  file: $19-05 Israel-0245.jpg
+  file: $19-05-Israel-0245.jpg
   name: Ancient Mosaic
 ---
 

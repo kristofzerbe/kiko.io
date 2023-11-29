@@ -4,7 +4,7 @@ title: 'Discoveries #21 -  Sites & Pages'
 subtitle:
 date: 2022-12-28 18:38:22
 photograph:
-  file: 22-08 Bretagne-Jersey-0818.jpg
+  file: 22-08-Bretagne-Jersey-0818.jpg
   name: Bird House
   socialmedia: /static/images/social-media/Discoveries-21-Sites-Pages.png
 series: Discoveries

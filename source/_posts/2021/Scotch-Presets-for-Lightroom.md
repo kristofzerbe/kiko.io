@@ -5,7 +5,7 @@ title: Scotch Presets for Lightroom
 subtitle: null
 date: 2021-04-18T19:51:35.000Z
 photograph:
-  file: 19-07 Schottland-0512.jpg
+  file: 19-07-Schottland-0512.jpg
   name: Lonely Call Box
   socialmedia: /static/images/social-media/Scotch-Presets-for-Lightroom.png
 series: Lightroom Presets
@@ -29,8 +29,8 @@ Have you ever been in Scotland during summertime? Wonderful tranquility, great s
 So far in the north the light is totally different. When it shines through the clouds, it hits you.
 
 {% image_compare
-  "19-07 Schottland-0025_ORIGINAL.jpg"
-  "19-07 Schottland-0025_PRESET-Lights.jpg"
+  "19-07-Schottland-0025_ORIGINAL.jpg"
+  "19-07-Schottland-0025_PRESET-Lights.jpg"
   "Preset"
 %}
 
@@ -43,8 +43,8 @@ So far in the north the light is totally different. When it shines through the c
 You must be made of different stuff if you are Scottish. There is hardly anything fine and graceful about the landscape and the weather. It's rough and tough and you have to deal with it.
 
 {% image_compare
-  "19-07 Schottland-0080_ORIGINAL.jpg"
-  "19-07 Schottland-0080_PRESET-Strength.jpg"
+  "19-07-Schottland-0080_ORIGINAL.jpg"
+  "19-07-Schottland-0080_PRESET-Strength.jpg"
   "Preset" 
 %}
 
@@ -57,8 +57,8 @@ You must be made of different stuff if you are Scottish. There is hardly anythin
 The view over the North Sea at the edge of the continent is really unique, especially at sunset. Hear the the seagulls scream, the waves crashing against the cliffs and see the stunning colors.
 
 {% image_compare
-  "19-07 Schottland-0310_ORIGINAL.jpg"
-  "19-07 Schottland-0310_PRESET-Sunset.jpg"
+  "19-07-Schottland-0310_ORIGINAL.jpg"
+  "19-07-Schottland-0310_PRESET-Sunset.jpg"
   "Preset" 
 %}
 
@@ -71,8 +71,8 @@ The view over the North Sea at the edge of the continent is really unique, espec
 Scotland is bold and so full with energy, even in the details.
 
 {% image_compare
-  "19-07 Schottland-0595_ORIGINAL.jpg"
-  "19-07 Schottland-0595_PRESET-Energy.jpg"
+  "19-07-Schottland-0595_ORIGINAL.jpg"
+  "19-07-Schottland-0595_PRESET-Energy.jpg"
   "Preset"
 %}
 
@@ -85,8 +85,8 @@ Scotland is bold and so full with energy, even in the details.
 The Edinburgh Military Tattoo, which takes place twice a year, is a feast for the senses. The incredible sound on one hand and the colors on the other. The brass, the feathers, the uniforms stand out in the setting sun.
 
 {% image_compare
-  "19-07 Schottland-0935_ORIGINAL.jpg"
-  "19-07 Schottland-0935_PRESET-Tattoo.jpg"
+  "19-07-Schottland-0935_ORIGINAL.jpg"
+  "19-07-Schottland-0935_PRESET-Tattoo.jpg"
   "Preset"
 %}
 

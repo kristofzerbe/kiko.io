@@ -4,7 +4,7 @@ title: 'Discoveries #25 - Tutorials & HowTo''s'
 subtitle:
 date: 2023-07-01 13:19:22
 photograph:
-  file: 22-08 Bretagne-Jersey-1386.jpg
+  file: 22-08-Bretagne-Jersey-1386.jpg
   name: Ancient Tools
   socialmedia: /static/images/social-media/Discoveries-25-Tutorials-HowTo-s.png
 series: Discoveries
