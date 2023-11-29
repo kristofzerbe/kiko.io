@@ -68,7 +68,10 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
   });
 
   // Generate photo pages (all, incl. Shed)
-  let photos = [...pHero, ...pPool, ...pShed, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes];
+  let photos = [...pHero, ...pPool, ...pShed, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes]
+    .filter(p => (p.name)) //filter out all without photo name
+    .sort((a, b) => a.key.localeCompare(b.key));
+        
   photos.forEach(item => {
     item.photograph = page.photograph;
 
