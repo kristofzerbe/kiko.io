@@ -45,12 +45,8 @@
   <section class="meta" data-pagefind-body>
     <ul>
       <li>
-        <label>Title</label>
-        <span><%= page.meta?.ObjectName %></span>
-      </li>
-      <li>
         <label>File</label>
-        <span><%= page.file %></span>
+        <a class="download" style="text-decoration:none;color:inherit;font-weight:400" href="<%- page.pathNormal %>" download="<%= page.file %>"><%= page.file %></a>
       </li>
       <li>
         <label>Status</label>
