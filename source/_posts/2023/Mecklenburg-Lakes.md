@@ -26,6 +26,9 @@ syndication:
   - host: Pixelfed
     url: https://pixelfed.social/i/web/post/634785436120802808
     title: Mecklenburg Lakes II
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/636075202168502860
+    title: Mecklenburg Lakes III
 ---
 
 August in Germany is usually a safe bet when it comes to the weather, so my wife and I decided to relax for a few days on the [Mecklenburg Lake Plateau](https://en.wikipedia.org/wiki/Mecklenburg_Lake_Plateau) ... on a chartered boat. In general, you need a driving license for everything that moves in this country, but there are a few exceptions, such as in Brandenburg/Mecklenburg where even inexperienced tourists are allowed to steer a 12-metre houseboat/yacht across the many lakes after a short briefing.
