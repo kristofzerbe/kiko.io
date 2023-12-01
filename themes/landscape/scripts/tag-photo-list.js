@@ -1,40 +1,68 @@
 /*
-    Photo List Tag
+    Photo List Tag for global, pool or shed photos
 
     Syntax:
-    {% photo_list ..."assetPhotoName|title" %}
+    {% photo_list ..."photoName|title" %}
 
-    The asset photo should be a copy of the mobile photo and has to have the original photo name
-    
 */
+
+const fs = require("fs");
+const path = require("path");
 
 hexo.extend.tag.register("photo_list", function(args){
 
-    var list = "";
-    args.forEach(function(e) {
-      var item = e.split("|"); 
-      var assetPhotoName = item[0];
-      var title = item[1];
+  const _rootDir = hexo.source_dir.replace("source", "");
 
-      var element = `
-        <figure>
-          <a href="/photos/${assetPhotoName}" class="no-break">
-            <img src="${assetPhotoName}.jpg">
-          </a>
-          <figcaption>${title}</figcaption>
-        </figure>
-    `;
+  var list = "";
+  args.forEach(function(e) {
+    let photoName = e;
+    
+    let url;
+    let metaPath;
+    let title = "";
 
-      list += element;
-    });
+    let photoPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "normal", photoName + ".jpg");
+    if (fs.existsSync(photoPath)) { 
+      url = `/photos/normal/${photoName}.jpg`; 
+      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "meta", photoName + ".json");
+    }
+    
+    let poolPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.pool_dir, photoName, "normal.jpg");
+    if (fs.existsSync(poolPath)) { 
+      url = `/pool/${photoName}/normal.jpg`; 
+      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.pool_dir, photoName, "meta.json");
+    }
+    
+    let shedPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir, photoName, "normal.jpg");
+    if (fs.existsSync(shedPath)) { 
+      url = `/shed/${photoName}/normal.jpg`; 
+      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir, photoName, "meta.json");
+    }
 
-    var id = "photo-list-" + Math.random().toString(36).substring(2,8);
+    if (fs.existsSync(metaPath)) {
+      let meta = JSON.parse(fs.readFileSync(metaPath));
+      title = meta?.ObjectName;
+    }
 
-    var elements = `
-      <div class="photo-list" id="${id}">
-        ${list}
-      </div>
-    `;
+    let element = `
+      <figure>
+        <a href="/photos/${photoName}" class="no-break">
+          <img src="${url}">
+        </a>
+        <figcaption>${title}</figcaption>
+      </figure>
+  `;
 
-    return elements;
+    list += element;
+  });
+
+  var id = "photo-list-" + Math.random().toString(36).substring(2,8);
+
+  var elements = `
+    <div class="photo-list" id="${id}">
+      ${list}
+    </div>
+  `;
+
+  return elements;
 });
