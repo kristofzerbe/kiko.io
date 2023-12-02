@@ -10,8 +10,8 @@
     </image>
     <description>Blog about memorable (tech) stuff by Kristof Zerbe</description>
     <language>en</language>
-    <pubDate>Sun, 26 Nov 2023 13:59:17 +0000</pubDate>
-    <lastBuildDate>Sun, 26 Nov 2023 13:59:17 +0000</lastBuildDate>
+    <pubDate>Sat, 02 Dec 2023 13:19:03 +0000</pubDate>
+    <lastBuildDate>Sat, 02 Dec 2023 13:19:03 +0000</lastBuildDate>
     <category>VS Code</category>
     <category>Hexo</category>
     <category>GitHub</category>
@@ -23,9 +23,9 @@
     <category>ADSI</category>
     <category>Visual Studio</category>
     <category>Database Project</category>
+    <category>Error</category>
     <category>Trello</category>
     <category>Browser</category>
-    <category>Error</category>
     <category>MediaQuery</category>
     <category>Collection</category>
     <category>Tutorial</category>
@@ -34,14 +34,14 @@
     <category>Lightroom</category>
     <category>Publishing</category>
     <category>Plugin</category>
-    <category>Presets</category>
     <category>SPA</category>
     <category>Bundling</category>
+    <category>Presets</category>
+    <category>Resource</category>
+    <category>Localization</category>
     <category>Versioning</category>
     <category>T4</category>
     <category>Share</category>
-    <category>Resource</category>
-    <category>Localization</category>
     <category>TFS/DevOps</category>
     <category>Android</category>
     <category>Imaging</category>
@@ -50,16 +50,16 @@
     <category>WebAPI</category>
     <category>Authentication</category>
     <category>ES6</category>
-    <category>Templating</category>
     <category>Events</category>
+    <category>Templating</category>
     <category>Node.js</category>
     <category>Workflow</category>
     <category>Debugging</category>
     <category>SVG</category>
     <category>Theming</category>
     <category>PowerShell</category>
-    <category>Font</category>
     <category>Mail</category>
+    <category>Font</category>
     <category>UI</category>
     <category>Hosting</category>
     <category>Remote</category>
@@ -69,18 +69,40 @@
     <category>Logging</category>
     <category>C#</category>
     <category>Rant</category>
-    <category>Git/GitHub</category>
     <category>Usability</category>
+    <category>Git/GitHub</category>
     <category>Meta</category>
     <category>Contributing</category>
     <category>Metadata</category>
+    <category>Fediverse</category>
     <category>Search</category>
-    <category>SVWW</category>
     <category>JavaScript</category>
+    <category>SVWW</category>
     <category>JSON-LD</category>
     <category>Eintracht</category>
     <category>2. Bundesliga</category>
     <category>Concert</category>
+    <item>
+      <guid isPermalink="true">https://kiko.io/post/Hexo-Webfinger-and-better-discoverability/</guid>
+      <title>Hexo, WebFinger and better discoverability</title>
+      <link>https://kiko.io/post/Hexo-Webfinger-and-better-discoverability/</link>
+      <category>Fediverse</category>
+      <pubDate>Sat, 02 Dec 2023 13:19:03 +0000</pubDate>
+      <description>
+        <![CDATA[ &lt;p&gt;&lt;img src=&#34;https://kiko.io/images/social-media/Hexo-Webfinger-and-better-discoverability.png&#34; /&gt;&lt;/p&gt;&lt;p&gt;Recently I read the &lt;a href=&#34;https://blog.maartenballiauw.be/post/2022/11/05/mastodon-own-donain-without-hosting-server.html&#34;&gt;blog post “Mastodon on your own domain without hosting a server”&lt;/a&gt; by &lt;a href=&#34;https://mastodon.online/@maartenballiauw&#34;&gt;Maarten Balliauw&lt;/a&gt;, which dealt with how to become more visible in the Fediverse, more precisely in Mastodon, with &lt;strong&gt;your own domain&lt;/strong&gt;, because in contrast to the &lt;strong&gt;Indieweb&lt;/strong&gt; approach, the &lt;strong&gt;Fediverse&lt;/strong&gt; relies on Actors (&lt;code&gt;@USER@INSTANCE&lt;/code&gt;) of the respective instance&amp;#x2F;platform and can only include your own domain, if it becomes a Fediverse endpoint itself.&lt;/p&gt;
+&lt;p&gt;In my case, the latter is not possible because this blog is a static site, generated via &lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt; and hosted on GitHub. It simply lacks a modifiable active server component.&lt;/p&gt;
+&lt;p&gt;However, Marten has found a trick to at least make it findable in Mastadon via his own domain. First, he explains how Fediverse platforms work in general:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Mastodon (and others) use ActivityPub as their protocol to communicate between “actors”.&lt;/li&gt;
+&lt;li&gt;Actors are discovered using WebFinger, a way to attach information to an email address, or other online resource.&lt;/li&gt;
+&lt;li&gt;WebFinger lives on &amp;#x2F;.well-known&amp;#x2F;webfinger on a server.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;His idea was to simply copy the WebFinger file to his server and make it available in the same way, to allow the Fediverse server to find the correct actor, so search for &lt;code&gt;@me@mydomain.xxx&lt;/code&gt; and find &lt;code&gt;@me@my-fediverse-instance.xxx&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Copy a file and deliver it via Hexo over &lt;code&gt;.wellknown/webfinger&lt;/code&gt;? What can be so difficult about that…&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://kiko.io/post/Hexo-Webfinger-and-better-discoverability/&#34;&gt;Continue reading &lt;strong&gt;`Hexo, WebFinger and better discoverability`&lt;/strong&gt; on kiko.io ...&lt;/a&gt;&lt;/p&gt; ]]>
+      </description>
+    </item>
     <item>
       <guid isPermalink="true">https://kiko.io/post/Mecklenburg-Lakes/</guid>
       <title>Mecklenburg Lakes</title>
@@ -370,31 +392,6 @@
       <description>
         <![CDATA[ &lt;p&gt;&lt;img src=&#34;https://kiko.io/images/social-media/Convert-HTML-into-Plain-Text-in-Hexo.png&#34; /&gt;&lt;/p&gt;&lt;p&gt;Hexo, on which this blog is based, is a Static Site Generator (SSG) that generates a whole structure of HTML files from individual Markdown files in which the articles were written. Besides the actual posts, also overview pages like the archives and others. For the latter, however, it only needs an excerpt from the actual article, which Hexo automatically creates from the initially generated HTML content and which is also available as HTML.&lt;/p&gt;
 &lt;p&gt;For my &lt;a href=&#34;/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/&#34; title=&#34;Show pages meta data (JSON-LD) in Bottom Sheet&#34;&gt;Page Meta dialog&lt;/a&gt;, however, I recently needed the excerpt as plain text to make it easier to transfer it manually to a Mastodon post, for example. My initial attempts to extract the plain text from the original Markdown turned out to be quite difficult, because in Hexo not only Markdown is used, but also special &lt;a href=&#34;https://hexo.io/docs/tag-plugins&#34;&gt;Tag Plugins&lt;/a&gt; in Nunjucks format and of course plain HTML. Long speech, short sense … after the first dozen RegEx-Replace calls, I got doubts to be on the right way and remembered &lt;code&gt;Page.Excerpt&lt;/code&gt;, the variant already generated by Hexo in HTML.&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://kiko.io/post/Convert-HTML-into-Plain-Text-in-Hexo/&#34;&gt;Continue reading &lt;strong&gt;`Convert HTML into Plain Text in Hexo`&lt;/strong&gt; on kiko.io ...&lt;/a&gt;&lt;/p&gt; ]]>
-      </description>
-    </item>
-    <item>
-      <guid isPermalink="true">https://kiko.io/post/Pool-Photo-Generator/</guid>
-      <title>Pool Photo Generator</title>
-      <link>https://kiko.io/post/Pool-Photo-Generator/</link>
-      <category>Imaging</category>
-      <category>Node.js</category>
-      <pubDate>Sun, 20 Aug 2023 22:00:00 +0000</pubDate>
-      <description>
-        <![CDATA[ &lt;p&gt;&lt;img src=&#34;https://kiko.io/images/social-media/Pool-Photo-Generator.png&#34; /&gt;&lt;/p&gt;&lt;p&gt;Since the existence of this blog, the posts all have a custom header image that I generate from my own photos. Already three years ago (omg … really?) I described in an article how to do this with Hexo: &lt;a href=&#34;/post/Automatic-Header-Images-in-Hexo/&#34; title=&#34;Automatic Header Images in Hexo&#34;&gt;Automatic Header Images in Hexo&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;To keep it short, I use a pool folder for this, in which I keep in subfolders next to a &lt;code&gt;meta.txt&lt;/code&gt;, for the title of the image and an external url on 500px for interactions to the image, three variants that I need for a new post:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;mobile.jpg (width 480px)&lt;/li&gt;
-&lt;li&gt;tablet.jpg (width 768px)&lt;/li&gt;
-&lt;li&gt;normal.jpg (width 1280px)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The only piece of the puzzle that was still missing was the automatic generation of these three image variants and the meta file based on a selected photo that I want to add to the pool of available header images. So far it was fun to generate the header images manually either on the desktop or on the smartphone, but it really doesn’t have to be. My goal now was to write a script where I just throw a selected photo into a folder and the NodeJS script does the rest.&lt;/p&gt;
-&lt;p&gt;My photo workflow is based on Adobe Lightroom Classic and one of the steps is to give a title to the good ones I use here as well. So the script had to include four steps when iterating over the inbound folder’s JPG files:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;create new pool folder&lt;/li&gt;
-&lt;li&gt;read meta data (IPTC -&amp;gt; title) and write it to meta.txt&lt;/li&gt;
-&lt;li&gt;create the three image variants&lt;/li&gt;
-&lt;li&gt;delete the processed image from the inbound folder&lt;/li&gt;
-&lt;/ol&gt;&lt;p&gt;&lt;a href=&#34;https://kiko.io/post/Pool-Photo-Generator/&#34;&gt;Continue reading &lt;strong&gt;`Pool Photo Generator`&lt;/strong&gt; on kiko.io ...&lt;/a&gt;&lt;/p&gt; ]]>
       </description>
     </item>
   </channel>
