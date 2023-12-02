@@ -118,7 +118,7 @@ hexo.extend.generator.register("wellknown-webfinger", async function() {
 
 ## The Result
 
-After deploying to GitHub I was able to search on Fediverse platform on **@kristof@kiko.io** and the result is the appropriate account of my Mastodon instance. :)
+After deploying to GitHub I was able to search on Fediverse platform on ``@kristof@kiko.io`` and the result is the appropriate account of my Mastodon instance. :)
 
 ![Search on Mastodon](mastodon-search.png)
 
