@@ -19,13 +19,15 @@ related:
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/111511819358041476
+  - host: IndieNews
+    url: https://news.indieweb.org/en
 ---
 
 Recently I read the [blog post "Mastodon on your own domain without hosting a server"](https://blog.maartenballiauw.be/post/2022/11/05/mastodon-own-donain-without-hosting-server.html) by [Maarten Balliauw](https://mastodon.online/@maartenballiauw), which dealt with how to become more visible in the Fediverse, more precisely in Mastodon, with **your own domain**, because in contrast to the **Indieweb** approach, the **Fediverse** relies on Actors (``@USER@INSTANCE``) of the respective instance/platform and can only include your own domain, if it becomes a Fediverse endpoint itself.
 
 In my case, the latter is not possible because this blog is a static site, generated via [Hexo](https://hexo.io) and hosted on GitHub. It simply lacks a modifiable active server component.
 
-However, Marten has found a trick to at least make it findable in Mastadon via his own domain. First, he explains how Fediverse platforms work in general:
+However, Maarten has found a trick to at least make it findable in Mastadon via his own domain. First, he explains how Fediverse platforms work in general:
 
 > - Mastodon (and others) use ActivityPub as their protocol to communicate between "actors".
 > - Actors are discovered using WebFinger, a way to attach information to an email address, or other online resource.
@@ -118,7 +120,7 @@ hexo.extend.generator.register("wellknown-webfinger", async function() {
 
 ## The Result
 
-After deploying to GitHub I was able to search on Fediverse platform on ``@kristof@kiko.io`` and the result is the appropriate account of my Mastodon instance. :)
+After deploying to GitHub I was able to search on a Fediverse platform for ``@kristof@kiko.io`` and the result is the corresponding account of my Mastodon instance. :)
 
 ![Search on Mastodon](mastodon-search.png)
 
