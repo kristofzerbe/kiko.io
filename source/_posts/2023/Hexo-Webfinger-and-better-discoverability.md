@@ -20,7 +20,7 @@ syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/111511819358041476
   - host: IndieNews
-    url: https://news.indieweb.org/en
+    url: https://news.indieweb.org/en/kiko.io/post/Hexo-Webfinger-and-better-discoverability/
 ---
 
 Recently I read the [blog post "Mastodon on your own domain without hosting a server"](https://blog.maartenballiauw.be/post/2022/11/05/mastodon-own-donain-without-hosting-server.html) by [Maarten Balliauw](https://mastodon.online/@maartenballiauw), which dealt with how to become more visible in the Fediverse, more precisely in Mastodon, with **your own domain**, because in contrast to the **Indieweb** approach, the **Fediverse** relies on Actors (``@USER@INSTANCE``) of the respective instance/platform and can only include your own domain, if it becomes a Fediverse endpoint itself.
