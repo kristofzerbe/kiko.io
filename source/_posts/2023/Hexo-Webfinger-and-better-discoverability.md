@@ -12,6 +12,8 @@ categories:
   - Tools
 tags:
   - Fediverse
+  - IndieWeb
+  - Identity
 related:
   - Hexo-and-the-IndieWeb
   - Mastodon-Share-Bottom-Sheet-Dialog
@@ -29,9 +31,9 @@ In my case, the latter is not possible because this blog is a static site, gener
 
 However, Maarten has found a trick to at least make it findable in Mastadon via his own domain. First, he explains how Fediverse platforms work in general:
 
-> - Mastodon (and others) use ActivityPub as their protocol to communicate between "actors".
-> - Actors are discovered using WebFinger, a way to attach information to an email address, or other online resource.
-> - WebFinger lives on /.well-known/webfinger on a server.
+> -- Mastodon (and others) use ActivityPub as their protocol to communicate between "actors".
+> -- Actors are discovered using WebFinger, a way to attach information to an email address, or other online resource.
+> -- WebFinger lives on /.well-known/webfinger on a server.
 
 His idea was to simply copy the WebFinger file to his server and make it available in the same way, to allow the Fediverse server to find the correct actor, so search for ``@me@mydomain.xxx`` and find ``@me@my-fediverse-instance.xxx``.
 
@@ -129,3 +131,13 @@ However, this currently only works with one instance and the user specification 
 ![Search on Pixelfed](pixelfed-search.png)
 
 As mentioned above, the Fediverse works a little differently than the Indieweb. My wish would be to find something that identifies me with my domain everywhere.
+
+---
+
+## More Info
+
+{% moreinfo '{ "list": [
+  [ "IndieWebCamp", "WebFinger", "https://indieweb.org/WebFinger" ],
+  [ "Brandon Rozek", "Mastodon/Webfinger Alias using HTTP Redirects", "https://brandonrozek.com/blog/mastodon-webfinger-alias-using-redirects/" ],
+  [ "GitHub Issue from r3pek at webfinger.net", "Is webfinger able to distinguish between 2 services on the same URI?", "https://github.com/webfinger/webfinger.net/issues/26" ]
+]}' %}
