@@ -76,7 +76,7 @@
     <ul style="margin-bottom: 2rem">
       <li>
         <label>Keywords</label>
-        <span><%= page.meta.Keywords?.join(", ") %></span>
+        <span><%= page.meta.Keywords ? page.meta.Keywords?.join(", ") : "---" %></span>
       </li>
       <li>
         <label>Artist, Copyright</label>
@@ -84,11 +84,11 @@
       </li>
       <li>
         <label>Create Date</label>
-        <span data-pagefind-meta="date"><%= new Date(page.meta.CreateDate).toLocaleString('de-DE', { weekday:"long", year:"numeric", month:"long", day:"numeric", hour: "2-digit", minute: "2-digit"}) ?? "---" %></span>
+        <span data-pagefind-meta="date"><%= new Date(page.meta.CreateDate).toLocaleString('en-GB', { weekday:"long", year:"numeric", month:"long", day:"numeric"}) ?? "---" %></span>
       </li>
       <li>
         <label>Country, State, City</label>
-        <span data-pagefind-meta="location"><%= (page.meta?.Country?? "---") + ", " + (page.meta.State ?? "---") + ", " + (page.meta.City ?? "---") %></span>
+        <span data-pagefind-meta="location"><%= (page.meta?.Country ?? "---") + ", " + (page.meta.State ?? "---") + ", " + (page.meta.City ?? "---") %></span>
       </li>
       <li>
         <label>GPS Coordinates (Lat/Long)</label>

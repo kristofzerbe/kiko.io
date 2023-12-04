@@ -189,17 +189,22 @@
         max-width: 75%
 
   .view-bar
-    margin: block-margin (medium-margin / 4) medium-margin
+    margin: default-margin (medium-margin / 4) default-margin
     display: flex
     flex-direction: row
     justify-content: flex-end
     gap: 1rem
     .bar-info
       margin-right: auto
-      font-weight: font-weight-bold
+      .info-count
+        font-weight: font-weight-bold
       input[type=radio]
         display: none
-      input[name="view-filter"], input[name="view-filter-used"]
+      input[name="view-filter-status"], 
+      input[name="view-filter-type"],
+      input[name="view-presentation"],
+      input[name="view-sort-field"],
+      input[name="view-sort-direction"]
         + label
           font-weight: font-weight-normal
           cursor: pointer
@@ -319,6 +324,8 @@
       span.pre-title
         font-size: font-size-small;
         opacity: 0.5
+        em
+          display: inline-block
       .status
         display: block
         white-space: nowrap
