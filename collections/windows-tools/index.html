@@ -268,6 +268,9 @@
 <script src="/js/dist/lc_select.min.js"></script>
 
 
+<script src="/js/dist/tinysort.min.js"></script>
+
+
 
   <style>
 #banner {
@@ -306,80 +309,131 @@
 
   
 <div class="page-content" data-pagefind-body>
-    <p>I have been working with Microsoft Windows my entire professional life. Starting with DOS and Windows 3.11 up to Windows 11 today. Over time, I’ve built up a stock of tools that I can’t do without. <strong>Windows Software</strong> that is essential for me to get things done.</p>
+  <p>I have been working with Microsoft Windows my entire professional life. Starting with DOS and Windows 3.11 up to Windows 11 today. Over time, I’ve built up a stock of tools that I can’t do without. <strong>Windows Software</strong> that is essential for me to get things done.</p>
 <p>So that I have them on the radar whenever there’s a new machine on my desk, here’s the Trello-supported list of my favourites.</p>
 <p>See also my <a href="/collections/tiny-tools">Tiny-Tools</a> page, where I have listed small but useful web tools.</p>
 <hr>
 
 
-    <section class="flex">
-      <fieldset class="lcslt-wrapper gap">
-        <label>Filter:</label>
-        <select name="category" id="category" data-placeholder="Select a category..." multiple>
-          
-          <option value="Code">Code</option>
-          
-          <option value="Collection">Collection</option>
-          
-          <option value="Compression">Compression</option>
-          
-          <option value="Configuration">Configuration</option>
-          
-          <option value="Converter">Converter</option>
-          
-          <option value="Editor">Editor</option>
-          
-          <option value="Extension">Extension</option>
-          
-          <option value="Imaging">Imaging</option>
-          
-          <option value="Mail">Mail</option>
-          
-          <option value="Management">Management</option>
-          
-          <option value="Security">Security</option>
-          
-          <option value="Transfer">Transfer</option>
-          
-          <option value="Translation">Translation</option>
-          
-        </select>
-      </fieldset>
-      <fieldset class="lcslt-wrapper max expand">
-        <label>Sort by:</label>
-        <select name="sorting-field" id="sorting-field" class="sorting">
-          <option value="date-last-activity" selected>Last Activity</option>
-          <option value="string-title">Title</option>
-          <option value="position">Position</option>
-          <option value="id">ID</option>
-        </select>
-      </fieldset>
-      <fieldset class="lcslt-wrapper max">
-        <label>&nbsp;</label>
-        <select name="sorting-direction" id="sorting-direction" class="sorting">
-          <option value="asc" data-image="/images/long-arrow-down.svg"></option>
-          <option value="desc" data-image="/images/long-arrow-up.svg" selected></option>
-        </select>
-      </fieldset>
-    </section>
+  <div class="view-bar">
+    <span class="info-count">21</span> Entries <span class="info-des"></span>
+    <span id="view-presentation-wrap">
+      displayed as
+      <input type="radio" name="view-presentation" id="presentation-grid" checked
+              data-presentation="grid"
+              data-next-presentation="list">
+      <label for="presentation-grid" title="Display as list"><mark>grid</mark></label>
+      <input type="radio" name="view-presentation" id="presentation-list"
+              data-presentation="list"
+              data-next-presentation="grid">
+      <label for="presentation-list" title="Display as grid"><mark>list</mark></label>
+    </span>
+    <span id="view-sort-wrap">
+      sorted by
+      <span id="view-sort-field">
+          <input type="radio" name="view-sort-field" id="sort-field-date-last-activity" checked
+                  data-sort-field="date-last-activity"
+                  data-next-sort-field="string-title">
+          <label for="sort-field-date-last-activity" title="Sort by title"><mark>last activity</mark></label>
+          <input type="radio" name="view-sort-field" id="sort-field-string-title"
+                  data-sort-field="string-title"
+                  data-next-sort-field="position">
+          <label for="sort-field-string-title" title="Sort by position"><mark>title</mark></label>
+          <input type="radio" name="view-sort-field" id="sort-field-position"
+                  data-sort-field="position"
+                  data-next-sort-field="date-last-activity">
+          <label for="sort-field-position" title="Sort by last activity"><mark>position</mark></label>
+      </span>
+      <span id="view-sort-direction">
+          <input type="radio" name="view-sort-direction" id="sort-direction-desc" checked
+                  data-sort-direction="desc"
+                  data-next-sort-direction="asc">
+          <label for="sort-direction-desc" title="Sort descending"><mark>descending</mark></label>
+          <input type="radio" name="view-sort-direction" id="sort-direction-asc"
+                  data-sort-direction="asc"
+                  data-next-sort-direction="desc">
+          <label for="sort-direction-asc" title="Sort descending"><mark>ascending</mark></label>
+      </span>          
+    </span>
 
-    <div class="view-bar">
-      <div class="bar-info">
-        <span class="info-count">21</span> Entries <span class="info-des"></span>
-      </div>
-      <div class="bar-cmd">
-        <input type="radio" name="view-switch" id="switch-grid" checked 
-               onchange="setView('grid');">
-        <label for="switch-grid" title="Switch to Grid View"></label>
-        <input type="radio" name="view-switch" id="switch-list" 
-               onchange="setView('list');">
-        <label for="switch-list" title="Switch to List View"></label>
-      </div>
+    <div style="width:100%; margin-top: 10px;">
+      <label>Filter:</label>
+      <select name="tag" id="tag" data-placeholder="Select a tag..." multiple>
+        
+        <option value="Code">Code</option>
+        
+        <option value="Collection">Collection</option>
+        
+        <option value="Compression">Compression</option>
+        
+        <option value="Configuration">Configuration</option>
+        
+        <option value="Converter">Converter</option>
+        
+        <option value="Editor">Editor</option>
+        
+        <option value="Extension">Extension</option>
+        
+        <option value="Imaging">Imaging</option>
+        
+        <option value="Mail">Mail</option>
+        
+        <option value="Management">Management</option>
+        
+        <option value="Security">Security</option>
+        
+        <option value="Transfer">Transfer</option>
+        
+        <option value="Translation">Translation</option>
+        
+      </select>  
     </div>
+  </div>
 
-    <div class="view grid">
-      
-        <div class="card collection" 
+
+  <div class="view grid" id="collection">
+    
+      <div class="card collection" 
+    data-tags="Imaging"
+    data-string-title="Paint.NET" 
+    data-id="875"
+    data-position="18432"
+    data-date-last-activity="2023-12-04T15:24:08.254Z">
+  <a class="card-img" target="_blank" rel="noopener" href="https://www.getpaint.net/">
+    <img src="/images/trello/paintnet.png" />
+  </a>
+  <h3><a target="_blank" rel="noopener" href="https://www.getpaint.net/" class="h-link">Paint.NET</a></h3>
+  <small><a target="_blank" rel="noopener" href="https://www.getpaint.net/" class="break">https://www.getpaint.net/</a></small>
+  <div class="tags">
+    
+      <a class="tag" href="#" onclick="return filterByTag(this);">Imaging</a>
+    
+  </div>
+  <p>Free Software for Digital Photo Editing</p>
+</div>
+
+    
+      <div class="card collection" 
+    data-tags="Security"
+    data-string-title="KeePass" 
+    data-id="873"
+    data-position="4096"
+    data-date-last-activity="2023-12-04T15:13:07.515Z">
+  <a class="card-img" target="_blank" rel="noopener" href="https://keepass.info/">
+    <img src="/images/trello/keepass.png" />
+  </a>
+  <h3><a target="_blank" rel="noopener" href="https://keepass.info/" class="h-link">KeePass</a></h3>
+  <small><a target="_blank" rel="noopener" href="https://keepass.info/" class="break">https://keepass.info/</a></small>
+  <div class="tags">
+    
+      <a class="tag" href="#" onclick="return filterByTag(this);">Security</a>
+    
+  </div>
+  <p>Free, open source, light-weight and easy-to-use password manager</p>
+</div>
+
+    
+      <div class="card collection" 
     data-tags="Editor;Imaging"
     data-string-title="draw.io" 
     data-id="969"
@@ -400,8 +454,8 @@
   <p>Security-first diagramming for teams</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Transfer;Management"
     data-string-title="SyncBackPro" 
     data-id="884"
@@ -422,8 +476,8 @@
   <p>Backup software for Windows</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Code;Management"
     data-string-title="Sourcetree" 
     data-id="883"
@@ -444,8 +498,8 @@
   <p>Free Git GUI for Mac and Windows</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Imaging;Compression"
     data-string-title="PNGGauntlet" 
     data-id="880"
@@ -466,8 +520,8 @@
   <p>PNG Compression Software</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Imaging;Compression"
     data-string-title="JPEGmini" 
     data-id="881"
@@ -488,28 +542,8 @@
   <p>Reduce file size, not quality</p>
 </div>
 
-      
-        <div class="card collection" 
-    data-tags="Security"
-    data-string-title="KeePass" 
-    data-id="873"
-    data-position="16384"
-    data-date-last-activity="2023-11-21T16:24:36.643Z">
-  <a class="card-img" target="_blank" rel="noopener" href="https://keepass.info/">
-    <img src="/images/trello/keepass.png" />
-  </a>
-  <h3><a target="_blank" rel="noopener" href="https://keepass.info/" class="h-link">KeePass</a></h3>
-  <small><a target="_blank" rel="noopener" href="https://keepass.info/" class="break">https://keepass.info/</a></small>
-  <div class="tags">
     
-      <a class="tag" href="#" onclick="return filterByTag(this);">Security</a>
-    
-  </div>
-  <p>Free, open source, light-weight and easy-to-use password manager</p>
-</div>
-
-      
-        <div class="card collection" 
+      <div class="card collection" 
     data-tags="Imaging"
     data-string-title="Cropper" 
     data-id="874"
@@ -528,8 +562,8 @@
   <p>Cropper is a screen capture utility written in C#</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Configuration"
     data-string-title="USB Drive Letter Manager" 
     data-id="889"
@@ -548,8 +582,8 @@
   <p>USBDLM is a Windows service that gives control over Windows' drive letter assignment for USB drives</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Compression"
     data-string-title="7-Zip" 
     data-id="887"
@@ -568,8 +602,8 @@
   <p>7-Zip is a file archiver with a high compression ratio</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Translation"
     data-string-title="DeepL" 
     data-id="888"
@@ -588,8 +622,8 @@
   <p>Translate: the world's most accurate translator</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;Extension"
     data-string-title="FileMenu Tools" 
     data-id="890"
@@ -610,8 +644,8 @@
   <p>Customize and add several tools to the context menu of Windows File Explorer</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;Configuration"
     data-string-title="Microsoft PowerToys" 
     data-id="972"
@@ -632,8 +666,8 @@
   <p>Utilities to customize Windows</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Converter"
     data-string-title="PDF24" 
     data-id="971"
@@ -652,8 +686,8 @@
   <p>PDF24 has solutions for all PDF problems</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Transfer;Configuration"
     data-string-title="Mouse Without Borders" 
     data-id="970"
@@ -674,8 +708,8 @@
   <p>Control up to four computers from a single mouse and keyboard</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Security"
     data-string-title="VeraCrypt" 
     data-id="886"
@@ -694,8 +728,8 @@
   <p>Free Open source disk encryption with strong security for the Paranoid</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Code"
     data-string-title="Visual Studio Code" 
     data-id="885"
@@ -714,8 +748,8 @@
   <p>Code Editing. Redefined</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Transfer"
     data-string-title="FileZilla" 
     data-id="882"
@@ -734,8 +768,8 @@
   <p>The free FTP solution</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Security"
     data-string-title="Autoruns for Windows" 
     data-id="879"
@@ -754,8 +788,8 @@
   <p></p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Security"
     data-string-title="Process Explorer" 
     data-id="878"
@@ -774,8 +808,8 @@
   <p></p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Mail"
     data-string-title="Papercut SMTP" 
     data-id="876"
@@ -794,71 +828,111 @@
   <p>The Simple Desktop Email Server</p>
 </div>
 
-      
-        <div class="card collection" 
-    data-tags="Imaging"
-    data-string-title="Paint.NET" 
-    data-id="875"
-    data-position="49152"
-    data-date-last-activity="2023-11-21T15:29:42.384Z">
-  <a class="card-img" target="_blank" rel="noopener" href="https://www.getpaint.net/">
-    <img src="/images/trello/paintnet.png" />
-  </a>
-  <h3><a target="_blank" rel="noopener" href="https://www.getpaint.net/" class="h-link">Paint.NET</a></h3>
-  <small><a target="_blank" rel="noopener" href="https://www.getpaint.net/" class="break">https://www.getpaint.net/</a></small>
-  <div class="tags">
-    
-      <a class="tag" href="#" onclick="return filterByTag(this);">Imaging</a>
     
   </div>
-  <p>Free Software for Digital Photo Editing</p>
-</div>
-
-      
-    </div>
 </div>
 
 <script>
-  let lcCategory = new lc_select('select[name="category"]', {
-      enable_search: true,
-      on_change: function(new_value, target_field) {
-        filterCards(new_value);
-      }
-  });
-  let lcSorting = new lc_select('select.sorting', {
-    enable_search: false,
+  let lcTag = new lc_select('select[name="tag"]', {
+    enable_search: true,
     on_change: function(new_value, target_field) {
-      let field = document.querySelector("#sorting-field").value;
-      let dir = document.querySelector("#sorting-direction").value;
-      $('.view').find('.card').addClass("trans");
-      setTimeout(() => { 
-          sortCards(field, dir);
-          $('.view').find('.card').removeClass("trans");
-          initViewportImage();
-      }, 300);
+      filterCards(new_value);
     }
   });
 
-  document.addEventListener('DOMContentLoaded', (event) => {
-    let currentView = getCookie("view-tinytools");
-    if (currentView) {
-      document.querySelector("#switch-" + currentView).checked = true; 
-      setView(currentView);
-    }
-  })
+  document.querySelectorAll("input[name=view-presentation]").forEach(element => {
+    element.addEventListener("click", (event) => {
+      setPresentation(element);
+    });
+  });
+  document.querySelectorAll("input[name=view-sort-field]").forEach(element => {
+    element.addEventListener("click", (event) => {
+      setSortField(element);
+    });
+  });
+  document.querySelectorAll("input[name=view-sort-direction]").forEach(element => {
+    element.addEventListener("click", (event) => {
+      setSortDirection(element);
+    });
+  });
 
-  function setView(newView) {
+  // Init
+  let currentPresentation = getCookie("view-collection");
+  if (currentPresentation) {
+    document.querySelector("#presentation-" + currentPresentation).checked = true;
+    setView(currentPresentation);
+  }
+
+  function setView(newPresentation) {
     let view = document.querySelector('.view');
-    if (newView === 'list') {
+    if (newPresentation === 'list') {
       view.classList.replace('grid', 'list')
     } else {
       view.classList.replace('list', 'grid')
     }
-    setCookie("view-tinytools", newView, 365);
+    currentPresentation = newPresentation;
+    setCookie("view-collection", newPresentation, 365);
+  }
+
+  function setPresentation(ePresentation) {
+    let newPresentation;
+    if(!ePresentation) { //for initialization
+      ePresentation = document.querySelector("input[name=view-presentation]:checked");
+      newPresentation = ePresentation.getAttribute("data-presentation");
+    } else {
+      newPresentation = ePresentation.getAttribute("data-next-presentation");
+    }
+
+    let eNewPresentation = document.querySelector("#presentation-" + newPresentation);
+    eNewPresentation.checked = true;
+
+    setView(newPresentation);
+  }
+
+  function setSorting() {
+    let field = document.querySelector("input[name=view-sort-field]:checked").getAttribute("data-sort-field");
+    let dir = document.querySelector("input[name=view-sort-direction]:checked").getAttribute("data-sort-direction");;
+
+    $('.view').find('.card').addClass("trans");
+    setTimeout(() => { 
+      tinysort('#collection > .card',{data: field, order: dir, forceStrings: !["position"].includes(field)});
+      $('.view').find('.card').removeClass("trans");
+      setView(currentPresentation);
+      initViewportImage();
+    }, 300);
+  }
+
+  function setSortDirection(eSortDirection) {
+    let newSortDirection;
+    if(!eSortDirection) { //for initialization
+      eSortDirection = document.querySelector("input[name=view-sort-direction]:checked");
+      newSortDirection = eSortDirection.getAttribute("data-sort-direction");
+    } else {
+      newSortDirection = eSortDirection.getAttribute("data-next-sort-direction");
+    }
+
+    let eNewSortDirection = document.querySelector("#sort-direction-" + newSortDirection);
+    eNewSortDirection.checked = true;
+
+    setSorting();
+  }
+
+  function setSortField(eSortField) {
+    let newSortField;
+    if(!eSortField) { //for initialization
+      eSortField = document.querySelector("input[name=view-sort-field]:checked");
+      newSortField = eSortField.getAttribute("data-sort-field");
+    } else {
+      newSortField = eSortField.getAttribute("data-next-sort-field");
+    }
+
+    let eNewSortField = document.querySelector("#sort-field-" + newSortField);
+    eNewSortField.checked = true;
+
+    setSorting();
   }
 
   function filterCards(new_value) {
-    //console.log("NV:" + new_value);
     let i = 0;
     document.querySelectorAll(".card").forEach(item => {
       i += 1;
@@ -881,8 +955,8 @@
 
         let resultCount = document.querySelectorAll(".card:not(.hide)").length;
         let totalCount = document.querySelectorAll(".card").length;
-        let resultElement = document.querySelector(".bar-info span.info-count");
-        let desElement = document.querySelector(".bar-info span.info-des");
+        let resultElement = document.querySelector(".view-bar span.info-count");
+        let desElement = document.querySelector(".view-bar span.info-des");
 
         resultElement.textContent = resultCount;
 
@@ -894,29 +968,8 @@
       }, 300);
   }
 
-  function sortCards(field, dir) {
-    $('.view').find('.card').sort(function (a, b) {
-      let minuend;
-      let subtrahend;
-      if (dir === "desc") {
-        minuend = $(b).attr('data-' + field);
-        subtrahend = $(a).attr('data-' + field);
-      } else {
-        minuend = $(a).attr('data-' + field);
-        subtrahend = $(b).attr('data-' + field);
-      }
-      if (field.includes("date")) {
-        return Date.parse(minuend) - Date.parse(subtrahend);
-      } else if (field.includes("string")) {
-        return ('' + minuend).localeCompare('' + subtrahend);
-      } else {
-        return minuend - subtrahend;
-      }
-    }).appendTo('.view');
-  }
-
   function filterByTag(e) {
-    let select = document.getElementById("category");
+    let select = document.getElementById("tag");
     // let current = [...select.selectedOptions].map(option => option.value)
     // console.log(current);
 

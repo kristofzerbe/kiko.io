@@ -268,6 +268,9 @@
 <script src="/js/dist/lc_select.min.js"></script>
 
 
+<script src="/js/dist/tinysort.min.js"></script>
+
+
 
   <style>
 #banner {
@@ -306,107 +309,118 @@
 
   
 <div class="page-content" data-pagefind-body>
-    <p>Almost every day, while reading news and social media posts, I stumble across small <strong>web tools</strong> that can make developer life immensely easier. In order not to lose sight of them, I have created a collection in Trello, which are automatically listed here.</p>
+  <p>Almost every day, while reading news and social media posts, I stumble across small <strong>web tools</strong> that can make developer life immensely easier. In order not to lose sight of them, I have created a collection in Trello, which are automatically listed here.</p>
 <p>See also my <a href="/collections/windows-tools">Windows Tools</a> page, where I have listed my essential Windows software.</p>
 <hr>
 
 
-    <section class="flex">
-      <fieldset class="lcslt-wrapper gap">
-        <label>Filter:</label>
-        <select name="category" id="category" data-placeholder="Select a category..." multiple>
-          
-          <option value="Analyzer">Analyzer</option>
-          
-          <option value="CSS">CSS</option>
-          
-          <option value="Code">Code</option>
-          
-          <option value="Collection">Collection</option>
-          
-          <option value="Color">Color</option>
-          
-          <option value="Compression">Compression</option>
-          
-          <option value="Converter">Converter</option>
-          
-          <option value="Editor">Editor</option>
-          
-          <option value="Extension">Extension</option>
-          
-          <option value="Fediverse">Fediverse</option>
-          
-          <option value="Font">Font</option>
-          
-          <option value="Generator">Generator</option>
-          
-          <option value="HTML">HTML</option>
-          
-          <option value="Icon">Icon</option>
-          
-          <option value="Imaging">Imaging</option>
-          
-          <option value="IndieWeb">IndieWeb</option>
-          
-          <option value="Information">Information</option>
-          
-          <option value="JSON">JSON</option>
-          
-          <option value="Mail">Mail</option>
-          
-          <option value="Management">Management</option>
-          
-          <option value="SVG">SVG</option>
-          
-          <option value="Search">Search</option>
-          
-          <option value="Security">Security</option>
-          
-          <option value="Test/Playground">Test/Playground</option>
-          
-          <option value="Transfer">Transfer</option>
-          
-          <option value="Website">Website</option>
-          
-          <option value="Writing/Contribution">Writing/Contribution</option>
-          
-        </select>
-      </fieldset>
-      <fieldset class="lcslt-wrapper max expand">
-        <label>Sort by:</label>
-        <select name="sorting-field" id="sorting-field" class="sorting">
-          <option value="date-last-activity" selected>Last Activity</option>
-          <option value="string-title">Title</option>
-          <option value="position">Position</option>
-          <option value="id">ID</option>
-        </select>
-      </fieldset>
-      <fieldset class="lcslt-wrapper max">
-        <label>&nbsp;</label>
-        <select name="sorting-direction" id="sorting-direction" class="sorting">
-          <option value="asc" data-image="/images/long-arrow-down.svg"></option>
-          <option value="desc" data-image="/images/long-arrow-up.svg" selected></option>
-        </select>
-      </fieldset>
-    </section>
+  <div class="view-bar">
+    <span class="info-count">155</span> Entries <span class="info-des"></span>
+    <span id="view-presentation-wrap">
+      displayed as
+      <input type="radio" name="view-presentation" id="presentation-grid" checked
+              data-presentation="grid"
+              data-next-presentation="list">
+      <label for="presentation-grid" title="Display as list"><mark>grid</mark></label>
+      <input type="radio" name="view-presentation" id="presentation-list"
+              data-presentation="list"
+              data-next-presentation="grid">
+      <label for="presentation-list" title="Display as grid"><mark>list</mark></label>
+    </span>
+    <span id="view-sort-wrap">
+      sorted by
+      <span id="view-sort-field">
+          <input type="radio" name="view-sort-field" id="sort-field-date-last-activity" checked
+                  data-sort-field="date-last-activity"
+                  data-next-sort-field="string-title">
+          <label for="sort-field-date-last-activity" title="Sort by title"><mark>last activity</mark></label>
+          <input type="radio" name="view-sort-field" id="sort-field-string-title"
+                  data-sort-field="string-title"
+                  data-next-sort-field="position">
+          <label for="sort-field-string-title" title="Sort by position"><mark>title</mark></label>
+          <input type="radio" name="view-sort-field" id="sort-field-position"
+                  data-sort-field="position"
+                  data-next-sort-field="date-last-activity">
+          <label for="sort-field-position" title="Sort by last activity"><mark>position</mark></label>
+      </span>
+      <span id="view-sort-direction">
+          <input type="radio" name="view-sort-direction" id="sort-direction-desc" checked
+                  data-sort-direction="desc"
+                  data-next-sort-direction="asc">
+          <label for="sort-direction-desc" title="Sort descending"><mark>descending</mark></label>
+          <input type="radio" name="view-sort-direction" id="sort-direction-asc"
+                  data-sort-direction="asc"
+                  data-next-sort-direction="desc">
+          <label for="sort-direction-asc" title="Sort descending"><mark>ascending</mark></label>
+      </span>          
+    </span>
 
-    <div class="view-bar">
-      <div class="bar-info">
-        <span class="info-count">155</span> Entries <span class="info-des"></span>
-      </div>
-      <div class="bar-cmd">
-        <input type="radio" name="view-switch" id="switch-grid" checked 
-               onchange="setView('grid');">
-        <label for="switch-grid" title="Switch to Grid View"></label>
-        <input type="radio" name="view-switch" id="switch-list" 
-               onchange="setView('list');">
-        <label for="switch-list" title="Switch to List View"></label>
-      </div>
+    <div style="width:100%; margin-top: 10px;">
+      <label>Filter:</label>
+      <select name="tag" id="tag" data-placeholder="Select a tag..." multiple>
+        
+        <option value="Analyzer">Analyzer</option>
+        
+        <option value="CSS">CSS</option>
+        
+        <option value="Code">Code</option>
+        
+        <option value="Collection">Collection</option>
+        
+        <option value="Color">Color</option>
+        
+        <option value="Compression">Compression</option>
+        
+        <option value="Converter">Converter</option>
+        
+        <option value="Editor">Editor</option>
+        
+        <option value="Extension">Extension</option>
+        
+        <option value="Fediverse">Fediverse</option>
+        
+        <option value="Font">Font</option>
+        
+        <option value="Generator">Generator</option>
+        
+        <option value="HTML">HTML</option>
+        
+        <option value="Icon">Icon</option>
+        
+        <option value="Imaging">Imaging</option>
+        
+        <option value="IndieWeb">IndieWeb</option>
+        
+        <option value="Information">Information</option>
+        
+        <option value="JSON">JSON</option>
+        
+        <option value="Mail">Mail</option>
+        
+        <option value="Management">Management</option>
+        
+        <option value="SVG">SVG</option>
+        
+        <option value="Search">Search</option>
+        
+        <option value="Security">Security</option>
+        
+        <option value="Test/Playground">Test/Playground</option>
+        
+        <option value="Transfer">Transfer</option>
+        
+        <option value="Website">Website</option>
+        
+        <option value="Writing/Contribution">Writing/Contribution</option>
+        
+      </select>  
     </div>
+  </div>
 
-    <div class="view grid">
-      
-        <div class="card collection" 
+
+  <div class="view grid" id="collection">
+    
+      <div class="card collection" 
     data-tags="SVG;Code"
     data-string-title="SVG Path Visualizer" 
     data-id="973"
@@ -427,8 +441,8 @@
   <p>Describes a SVG path in natural language</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Imaging;Compression"
     data-string-title="Compresser" 
     data-id="540"
@@ -449,8 +463,8 @@
   <p>Compress And Optimize JPEG, PNG images Online</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Imaging;Converter;Compression"
     data-string-title="Shrink.media" 
     data-id="706"
@@ -473,8 +487,8 @@
   <p>Reduce File Size for your Images</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;Website"
     data-string-title="Request Map" 
     data-id="708"
@@ -495,8 +509,8 @@
   <p>Visual request map of third-party services</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;JSON;Editor"
     data-string-title="JSON Hero" 
     data-id="765"
@@ -519,8 +533,8 @@
   <p></p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Fediverse;Search"
     data-string-title="Fedifinder" 
     data-id="782"
@@ -541,8 +555,8 @@
   <p>Find Fediverse accounts of your Twitter followings</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="IndieWeb;Transfer;Information"
     data-string-title="Bridgy" 
     data-id="783"
@@ -565,8 +579,8 @@
   <p>Bridgy connects your web site to social media. Likes, retweets, mentions, cross-posting, and more...</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Fediverse;Management"
     data-string-title="Mastodon List Manager" 
     data-id="828"
@@ -587,8 +601,8 @@
   <p>Manager for Mastodon lists to separate user groups for easier reading</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Test/Playground"
     data-string-title="Toools Cloud Glob Tester" 
     data-id="830"
@@ -607,8 +621,8 @@
   <p>Visualise and Test Glob Pattern Matching Online</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Converter;Font"
     data-string-title="Convert variable font TTF to WOFF2" 
     data-id="964"
@@ -629,8 +643,8 @@
   <p>Google Fonts f.e. sometimes only offers TTF files, but the compressed WOFF2 Webfonts are smaller for using on website. This tool converts them easily.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Fediverse"
     data-string-title="gathio" 
     data-id="967"
@@ -649,8 +663,8 @@
   <p>Create and share events that act as a Fediverse actor others can follow and comment</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;Converter;Imaging;Generator"
     data-string-title="Image Candy - Online Image Editor" 
     data-id="945"
@@ -675,8 +689,8 @@
   <p>Edit images online with the complete image processing toolkit.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Generator;Icon"
     data-string-title="Favicon Generator" 
     data-id="944"
@@ -697,8 +711,8 @@
   <p>Generate favicons online and in-browser from an image or logo for free</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer"
     data-string-title="npmgraph" 
     data-id="922"
@@ -717,8 +731,8 @@
   <p>Show interactive dependency graph of a npm module or analyze your complete package.json</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer"
     data-string-title="WhatTheDuck" 
     data-id="921"
@@ -737,8 +751,8 @@
   <p>Run SQL queries against your CSV files right in the browser</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Editor;Generator"
     data-string-title="PDF Tool" 
     data-id="920"
@@ -759,8 +773,8 @@
   <p>Edit PDF files right in your browser...</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;Test/Playground"
     data-string-title="Exifr Demo" 
     data-id="924"
@@ -781,8 +795,8 @@
   <p>This demo page of the EXIFR library is great for getting a quick overview of the metadata of an image</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Color;Generator"
     data-string-title="Color Picker Tool | 0to255" 
     data-id="75"
@@ -803,8 +817,8 @@
   <p>Choose colors for your logo, website, business, room, or print design project. Adjust colors quickly and easily</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;Website"
     data-string-title="Test for modern Internet Standards like IPv6, DNSSEC, HTTPS, DMARC, STARTTLS and DANE." 
     data-id="139"
@@ -825,8 +839,8 @@
   <p>Test for modern Internet Standards like IPv6, DNSSEC, HTTPS, TLS, HSTS,  DMARC, DKIM, SPF, STARTTLS and DANE.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Editor;Code;Generator"
     data-string-title="Nodexr" 
     data-id="739"
@@ -849,8 +863,8 @@
   <p>Edit RegEx visually</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Test/Playground;Code"
     data-string-title="PLAYCODE" 
     data-id="757"
@@ -871,8 +885,8 @@
   <p>Javascript Playground</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="JSON;Editor;Analyzer"
     data-string-title="JSON Crack" 
     data-id="764"
@@ -895,8 +909,8 @@
   <p>JSON editor with graph visualization</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Color;Test/Playground"
     data-string-title="OddContrast" 
     data-id="916"
@@ -917,8 +931,8 @@
   <p>This tool lets you check color contrast ratios using modern CSS formats</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;Icon;SVG"
     data-string-title="Flowbite" 
     data-id="892"
@@ -941,8 +955,8 @@
   <p>Collection of free and open-source SVG icons compatible with Flowbite and Tailwind CSS based on solid and outline styles with React (JSX) and Figma support</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Generator;Imaging;Code"
     data-string-title="QR Code Styling" 
     data-id="870"
@@ -965,8 +979,8 @@
   <p>An open source JS library for generating styled QR codes</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Converter;Imaging"
     data-string-title="Bigjpg" 
     data-id="863"
@@ -987,8 +1001,8 @@
   <p>AI Super-Resolution lossless image enlarging / upscaling tool using Deep Convolutional Neural Networks</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Code;Search"
     data-string-title="grep.app" 
     data-id="846"
@@ -1009,8 +1023,8 @@
   <p>Search Code Across a Half Million GitHub Repos — A code search engine that lets you use regexes or syntax in your search</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Editor;Icon;Imaging;Website"
     data-string-title="Maskable.app" 
     data-id="841"
@@ -1035,8 +1049,8 @@
   <p>Maskable.app Editor lets you generate maskable PWA icons before adding them to your web app manifest.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Generator;Imaging;Code"
     data-string-title="Easing Gradients" 
     data-id="837"
@@ -1059,8 +1073,8 @@
   <p>Linear gradients often have hard edges where they start and/or end. We can avoid those by controlling the color mix with easing functions.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Generator;Imaging"
     data-string-title="Calligrapher.ai" 
     data-id="835"
@@ -1081,8 +1095,8 @@
   <p>Realistic computer-generated handwriting</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;HTML;Website"
     data-string-title="OpenGraph.xyz" 
     data-id="831"
@@ -1105,8 +1119,8 @@
   <p>Preview Social Media Share and Generate Metatags - OpenGraph</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;Generator;Writing/Contribution"
     data-string-title="GitHub Contributions Chart Generator" 
     data-id="822"
@@ -1129,8 +1143,8 @@
   <p>Visualize your GitHub contributions in a customized image</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Website;Converter;Information"
     data-string-title="12ft Ladder" 
     data-id="816"
@@ -1153,8 +1167,8 @@
   <p>Shows a paywalled website as the Google crawler sees it ... without the paywall</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Test/Playground;IndieWeb;Analyzer"
     data-string-title="Webmention Rocks!" 
     data-id="805"
@@ -1177,8 +1191,8 @@
   <p>Webmention Rocks! is a validator to help you test your Webmention implementation. Several kinds of tests are available on the site.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Converter;Generator;HTML;JSON;IndieWeb"
     data-string-title="Granary" 
     data-id="804"
@@ -1205,8 +1219,8 @@
   <p>Fetches and converts data between social networks, HTML and JSON with microformats2, ActivityStreams 1 and 2, Atom, RSS, JSON Feed, and more.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Generator;Imaging;SVG"
     data-string-title="vectormaker" 
     data-id="802"
@@ -1229,8 +1243,8 @@
   <p>Convert images to SVG vectors, PNG-to-SVG Vectors.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;Fediverse"
     data-string-title="Fediverse Observer" 
     data-id="801"
@@ -1251,8 +1265,8 @@
   <p>Fediverse Observer checks all servers in the Fediverse and offers you an easy way to find a home using a map or list</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;Fediverse"
     data-string-title="fediverse.space" 
     data-id="800"
@@ -1273,8 +1287,8 @@
   <p>fediverse.space is a tool to visualize networks and communities on the fediverse.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Website;IndieWeb;Security"
     data-string-title="IndieLogin.com" 
     data-id="794"
@@ -1297,8 +1311,8 @@
   <p>IndieLogin.com makes it easy to add web sign-in to your applications</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="IndieWeb;Information;Website"
     data-string-title="Telegraph" 
     data-id="793"
@@ -1321,8 +1335,8 @@
   <p>Sends Webmentions with retry and callback</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;IndieWeb;Website"
     data-string-title="X-Ray" 
     data-id="792"
@@ -1345,8 +1359,8 @@
   <p>Scans a page for IndieWebs microformats</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Test/Playground"
     data-string-title="HTTPie for Web" 
     data-id="784"
@@ -1365,8 +1379,8 @@
   <p>API testing client</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Color;Imaging;Generator"
     data-string-title="Palette - Colorize Photos" 
     data-id="780"
@@ -1389,8 +1403,8 @@
   <p></p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Generator;Imaging"
     data-string-title="PWABuilder" 
     data-id="776"
@@ -1411,8 +1425,8 @@
   <p>Generates all necessary images for a PWA manifest</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Imaging;Editor"
     data-string-title="Edit.Photo" 
     data-id="768"
@@ -1433,8 +1447,8 @@
   <p>Free Online Photo Editor In Your Browser, Based on Pintura.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Generator;CSS"
     data-string-title="CSS gradient text generator" 
     data-id="762"
@@ -1455,8 +1469,8 @@
   <p>Create CSS for Gradient text effect</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;Icon"
     data-string-title="MingCute Icon" 
     data-id="730"
@@ -1477,8 +1491,8 @@
   <p>Carefully Designed Icon Library</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="CSS;Collection"
     data-string-title="AnimatiSS" 
     data-id="729"
@@ -1499,8 +1513,8 @@
   <p>A nice, colorful collection of CSS animations for your projects</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Generator;Imaging"
     data-string-title="QlndR.io" 
     data-id="711"
@@ -1521,8 +1535,8 @@
   <p>Generate QR Codes for Events and Appointments</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Information"
     data-string-title="IP2Location.io" 
     data-id="709"
@@ -1541,8 +1555,8 @@
   <p>IP2Location.io provides a fast and accurate IP Geolocation API tool to determine a user's location</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Converter;HTML;Code"
     data-string-title="Text Cleaner" 
     data-id="707"
@@ -1565,8 +1579,8 @@
   <p>Text Formatter, Text Formatting Online</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Test/Playground;Code;Editor"
     data-string-title="[Array Builder]" 
     data-id="701"
@@ -1589,8 +1603,8 @@
   <p>Array Builder is a free tool to visualize the returned values of array transformations and computations made from map/filter/reduce.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Color;CSS;Generator"
     data-string-title="hue.tools" 
     data-id="676"
@@ -1613,8 +1627,8 @@
   <p>Tools for mixing, blending and modify colours with several interpolation modes</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;Icon"
     data-string-title="Icônes" 
     data-id="666"
@@ -1635,8 +1649,8 @@
   <p>Great and very useful collection of icon collections, to find and bundle the icons you need</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;Converter;Generator"
     data-string-title="TinyWow - Free PDF, Video, Image & Other Online Tools" 
     data-id="645"
@@ -1659,8 +1673,8 @@
   <p>Create, convert or manipulate PDF, XML, CSV, images, videos and more with different tools</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Converter;Security"
     data-string-title="Cryptii - Unicode Lookup" 
     data-id="644"
@@ -1681,8 +1695,8 @@
   <p>Web app offering modular conversion, encoding and encryption online.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;Icon;SVG"
     data-string-title="Iconoir | Free Icons" 
     data-id="640"
@@ -1705,8 +1719,8 @@
   <p>Iconoir is one of the biggest open source libraries with currently 1007 SVG Icons.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Color;Generator;CSS"
     data-string-title="CSS Gradient Generator" 
     data-id="636"
@@ -1729,8 +1743,8 @@
   <p>Create beautiful, lush gradients</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Color;CSS;Generator"
     data-string-title="Non Boring Gradients" 
     data-id="628"
@@ -1753,8 +1767,8 @@
   <p>Web tool for generating gradients by selecting different interpolation spaces and easing.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Generator;Imaging;SVG"
     data-string-title="SVG Backgrounds" 
     data-id="624"
@@ -1777,8 +1791,8 @@
   <p>Create customized backgrounds for download</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="CSS;Generator"
     data-string-title="Glassmorphism CSS Generator - Glass UI" 
     data-id="617"
@@ -1799,8 +1813,8 @@
   <p></p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Imaging;Generator;SVG"
     data-string-title="ffflux → Online SVG Fluid Gradient Background Generator" 
     data-id="610"
@@ -1823,8 +1837,8 @@
   <p>SVG generator for fluid gradient backgrounds</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="CSS;Generator;Editor"
     data-string-title="Modern fluid typography editor" 
     data-id="608"
@@ -1847,8 +1861,8 @@
   <p>Generate fluid typography CSS</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="CSS;Generator"
     data-string-title="CSS Shadow Palette Generator" 
     data-id="560"
@@ -1869,8 +1883,8 @@
   <p>Create a set of lush, realistic CSS shadows</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Generator;Imaging;Converter"
     data-string-title="Erase.bg" 
     data-id="557"
@@ -1893,8 +1907,8 @@
   <p>Remove Background From Images For Free</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;Website"
     data-string-title="Google Title Rewrite Checker" 
     data-id="544"
@@ -1915,8 +1929,8 @@
   <p>Because SEO should be accessible, you can use this free tool to check if Google is rewriting the title of a list of pages</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Icon;Generator"
     data-string-title="IconKitchen" 
     data-id="543"
@@ -1937,8 +1951,8 @@
   <p>Create and download app icons</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Imaging;Converter;Generator"
     data-string-title="Cleanup.pictures" 
     data-id="541"
@@ -1961,8 +1975,8 @@
   <p>Remove objects, people, text and defects from any picture</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;CSS"
     data-string-title="Online CSS Analyzer" 
     data-id="535"
@@ -1983,8 +1997,8 @@
   <p>Analyze CSS is an online tool that analyzes your website’s CSS</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Converter"
     data-string-title="MConverter: Easy to Use Online File Converter" 
     data-id="527"
@@ -2003,8 +2017,8 @@
   <p>Convert videos, images, documents, audio files and much more.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Security;Generator;Information"
     data-string-title="Share a secret" 
     data-id="526"
@@ -2027,8 +2041,8 @@
   <p>Share a secret with a link that only works one time and then self-destructs.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Color;CSS;Generator"
     data-string-title="Accessible Palette" 
     data-id="510"
@@ -2051,8 +2065,8 @@
   <p>Create color systems with consistent lightness and contrast</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Generator;Security;Information"
     data-string-title="Share a secret - One Time" 
     data-id="503"
@@ -2075,8 +2089,8 @@
   <p>Keep sensitive info out of your email and chat logs by creating a one-time link to send to your recipient.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="SVG;Converter;Analyzer"
     data-string-title="SVGOMG - UI for SVG Optimizer" 
     data-id="501"
@@ -2099,8 +2113,8 @@
   <p>UI for SVG Optimizer, a Node.js-based tool for optimizing SVG vector graphics files.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;Security"
     data-string-title="Vytal" 
     data-id="500"
@@ -2121,8 +2135,8 @@
   <p>Vytal shows you what traces your browser leaves behind while surfing the web.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;Website"
     data-string-title="Redirect Detective - Discover where those redirects really go to" 
     data-id="499"
@@ -2143,8 +2157,8 @@
   <p>Redirect Detective – Analyze redirects without opening them yourself</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;Icon;SVG"
     data-string-title="SVGPORN" 
     data-id="484"
@@ -2167,8 +2181,8 @@
   <p>Hundreds of vector logos from brands</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="SVG;Imaging;Extension"
     data-string-title="SVG Gobbler" 
     data-id="481"
@@ -2191,8 +2205,8 @@
   <p>Download icons, logos, and vector SVGs from any site via Chrome or Firefox extension</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Color;Generator;Imaging"
     data-string-title="Wicked Backgrounds" 
     data-id="476"
@@ -2215,8 +2229,8 @@
   <p>Create beautiful backgrounds waves for your illustrations.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;HTML;Icon"
     data-string-title="Unicode Arrows" 
     data-id="474"
@@ -2239,8 +2253,8 @@
   <p>Collection of Unicode arrows for using on websites</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Font;CSS;Collection"
     data-string-title="Variable Fonts" 
     data-id="469"
@@ -2263,8 +2277,8 @@
   <p>A simple resource for finding and trying variable fonts</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Converter;Imaging"
     data-string-title="Compress Image Online | compressImage.io" 
     data-id="442"
@@ -2285,8 +2299,8 @@
   <p>Compress JPG and PNG images at light speed with Browser based Image compressor.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;Website"
     data-string-title="Yellow Lab Tools - Page Speed audit" 
     data-id="441"
@@ -2307,8 +2321,8 @@
   <p>Online test to help speeding up heavy web pages</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;Icon;SVG"
     data-string-title="Icons - Google Fonts" 
     data-id="432"
@@ -2331,8 +2345,8 @@
   <p>Material Icons are available in five styles and a range of downloadable sizes and densities. The icons are based on the core Material Design principles and metrics.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;Icon;SVG"
     data-string-title="SVG Repo" 
     data-id="431"
@@ -2356,8 +2370,8 @@
 Explore, search and find the best fitting icons or vectors for your projects using wide variety vector library.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;Icon;SVG"
     data-string-title="css.gg" 
     data-id="430"
@@ -2381,8 +2395,8 @@ Explore, search and find the best fitting icons or vectors for your projects usi
 Available in SVG Sprite, styled-components, NPM & API</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;Icon;SVG"
     data-string-title="Boxicons" 
     data-id="429"
@@ -2405,8 +2419,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>High Quality Web Icons Set</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;SVG;Icon"
     data-string-title="FeatherIcons" 
     data-id="428"
@@ -2429,8 +2443,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Simply beautiful open source icons</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;Icon;SVG"
     data-string-title="Majesticons Pro" 
     data-id="427"
@@ -2453,8 +2467,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Over 300 beautiful line icons as SVG</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;Icon;SVG"
     data-string-title="Simple Icons" 
     data-id="426"
@@ -2477,8 +2491,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Free SVG icons for popular brands</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Generator"
     data-string-title="RANDOM.ORG - String Generator" 
     data-id="425"
@@ -2497,8 +2511,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Generate random strings</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;Icon;SVG"
     data-string-title="VISIWIG - Indie Icons" 
     data-id="424"
@@ -2521,8 +2535,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Click + Paste Graphics - that elevates your your website and brand visuals</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;HTML;Test/Playground"
     data-string-title="DOM Events" 
     data-id="407"
@@ -2545,8 +2559,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Learn about the DOM Event system through exploration.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Code;Converter"
     data-string-title="SlidesCodeHighlighter" 
     data-id="405"
@@ -2567,8 +2581,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Create syntax-highlighted code for your slide decks.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;Website"
     data-string-title="BuiltWith Technology Lookup" 
     data-id="370"
@@ -2589,8 +2603,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Find out what websites are BuiltWith</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Converter;SVG"
     data-string-title="SVG Crop" 
     data-id="367"
@@ -2611,8 +2625,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Remove blank space from around any SVG instantly.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Generator;SVG"
     data-string-title="Haikei" 
     data-id="366"
@@ -2633,8 +2647,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>A web-based design tool to generate unique SVG design assets for websites, social media, blog posts, desktop and mobile wallpapers, posters, and more! Our generators let you discover, customize, randomize, and export generative SVG design assets ready to use with your favorite design tools.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Imaging;Generator"
     data-string-title="ProductShot" 
     data-id="363"
@@ -2655,8 +2669,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Generate better performing screenshots by focusing the user's attention.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Code;Test/Playground"
     data-string-title="regex101: build, test, and debug regex" 
     data-id="362"
@@ -2677,8 +2691,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Regular expression tester with syntax highlighting, explanation, cheat sheet for PHP/PCRE, Python, GO, JavaScript, Java. Features a regex quiz & library.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;Website"
     data-string-title="Waterfaller" 
     data-id="355"
@@ -2699,8 +2713,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Site owners and digital marketers use Waterfaller as as an alternative to Google PageSpeed Insights to find and fix problems with page speed and core web vital scores.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Mail;Generator"
     data-string-title="dropmail.me - Email for 10 minutes or more" 
     data-id="349"
@@ -2721,8 +2735,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Create a temporary email. For 10 minutes or more. Anonymous email service allows you to receive emails for a safe registration on sites and services. Unlimited mailbox lifetime. No registration. Unlimited mailbox size. Attachments allowed.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;Code"
     data-string-title="Microjs" 
     data-id="348"
@@ -2743,8 +2757,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Fantastic Micro-Frameworks and Micro-Libraries for Fun and Profit.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="CSS;Generator"
     data-string-title="UI Gradient Generator" 
     data-id="345"
@@ -2765,8 +2779,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Create gorgeous, buttery-smooth color gradients for UI design. Export as CSS or SVG image.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;Website"
     data-string-title="Compare your Page Speed" 
     data-id="332"
@@ -2787,8 +2801,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Compare performance metrics of your pages against each other or your competitors using Google PageSpeed Insights.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Converter;SVG;Imaging"
     data-string-title="Free SVG Converter" 
     data-id="331"
@@ -2811,8 +2825,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Convert online picture to svg freely.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="CSS;Generator"
     data-string-title="Easing Gradients" 
     data-id="326"
@@ -2833,8 +2847,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Supercharge your gradients with non-linear color mix and custom color spaces.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Imaging;Generator"
     data-string-title="Plaiceholder" 
     data-id="319"
@@ -2855,8 +2869,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Beautiful image placeholders, without the hassle.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="CSS;Generator"
     data-string-title="CSS Grid Generator" 
     data-id="318"
@@ -2877,8 +2891,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>You can set the numbers, and units of your columns and rows, and I'll generate a CSS grid for you! Drag within the boxes to create divs placed within the grid.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;Font;Information"
     data-string-title="Type Scale - A Visual Calculator" 
     data-id="316"
@@ -2901,8 +2915,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Preview and choose the right type scale for your project. Experiment with font size, scale and different webfonts.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection"
     data-string-title="Omatsuri" 
     data-id="315"
@@ -2921,8 +2935,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Progressive Web Application with 12 open source frontend focused tools</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="CSS;Generator"
     data-string-title="brumm.af" 
     data-id="313"
@@ -2943,8 +2957,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>CSS Shadow generator</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Converter;SVG"
     data-string-title="myScale - Quick SVG Icon Resizer" 
     data-id="301"
@@ -2965,8 +2979,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Small Lightweight Tool scratched in Pure JavaScript to Quickly Resize and Convert SVG to PNG</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="CSS;Generator"
     data-string-title="Toolbox - Glassmorphism Generator" 
     data-id="296"
@@ -2987,8 +3001,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Glass effect generator.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Information"
     data-string-title="Device.js" 
     data-id="281"
@@ -3007,8 +3021,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Helpy small tool, to get some device features, such as the different widths, heights, orientation, full screen, mobile or desktop, height of the navigation bar, etc.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Security;Analyzer"
     data-string-title="URL and website scanner - urlscan.io" 
     data-id="272"
@@ -3029,8 +3043,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Website scanner for suspicious and malicious URLs</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Code;HTML;Information"
     data-string-title="HTML Arrow Symbols, Entities and Codes" 
     data-id="270"
@@ -3053,8 +3067,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>HTML Arrows is a comprehensive reference website for finding HTML symbol codes and entities, ASCII characters and Unicode hexadecimal values to use in your web design.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Information"
     data-string-title="Numbr" 
     data-id="267"
@@ -3073,8 +3087,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>An elegant, text-based calculator for the Web</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Converter;Imaging"
     data-string-title="JPEG.rocks: Privacy-aware JPEG optimizer" 
     data-id="264"
@@ -3095,8 +3109,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Browser-based, privacy-aware JPEG optimizer</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;SVG;Icon"
     data-string-title="Tabler Icons: over 1250 vector icons for web design" 
     data-id="257"
@@ -3119,8 +3133,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Free and open source icons designed with attention to detail to make your design stand out.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Test/Playground;Code"
     data-string-title="RegExr: Learn, Build, & Test RegEx" 
     data-id="256"
@@ -3141,8 +3155,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>RegExr is an online tool to learn, build, & test Regular Expressions (RegEx / RegExp).</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Imaging;Converter"
     data-string-title="remove.bg" 
     data-id="248"
@@ -3163,8 +3177,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Remove Image Background: 100% automatically – in 5 seconds – without a single click – for free.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Information;Code"
     data-string-title="Event KeyCodes" 
     data-id="247"
@@ -3185,8 +3199,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Shows the typed key code.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Code;Generator;Icon"
     data-string-title="Favicon Generator for perfect icons on all browsers" 
     data-id="242"
@@ -3209,8 +3223,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>The ultimate favicon generator. Design your icons platform per platform and make them look great everywhere. Including in Google results pages.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;Icon;SVG;CSS"
     data-string-title="useAnimations" 
     data-id="234"
@@ -3235,8 +3249,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Animated icons in Lottie Framework and for immediate implementation to your apps or websites.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Test/Playground;Website"
     data-string-title="Responsinator" 
     data-id="232"
@@ -3257,8 +3271,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>The Responsinator is designed to test responsive websites on different device resolutions</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Test/Playground;Website"
     data-string-title="Multi Screen Test" 
     data-id="231"
@@ -3279,8 +3293,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Test your website at different screen resolutions.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Generator;CSS"
     data-string-title="CSS Filter Generator" 
     data-id="208"
@@ -3301,8 +3315,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>CSSFilterGenerator produces CSS filters and mix-blend-mizode overlay code using a graphical user interface.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Font;Analyzer"
     data-string-title="Wakamai Fondue" 
     data-id="193"
@@ -3323,8 +3337,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>The tool that answers the question “what can my font do?”</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="CSS;Generator"
     data-string-title="CSS clip-path Editor" 
     data-id="185"
@@ -3345,8 +3359,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Generate clip-path CSS code, based on editable templates.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Generator;Color"
     data-string-title="Contrast Ratio" 
     data-id="172"
@@ -3367,8 +3381,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Easily calculate color contrast ratios.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="CSS;Generator"
     data-string-title="Tint and Shade Generator" 
     data-id="165"
@@ -3389,8 +3403,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Easily make tints and shades that match the output of Chrome DevTools, PostCSS, and Sass.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="CSS;Generator"
     data-string-title="The good line-height" 
     data-id="164"
@@ -3411,8 +3425,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Tool to calculate the exact number of the right line-height for every text size in the scale, so it always fits the baseline grid!</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Imaging;Generator"
     data-string-title="link-to-qr" 
     data-id="152"
@@ -3433,8 +3447,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Free beautiful QR codes. Add/remove borders. Add text, use transperant background, apply any color.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;Color"
     data-string-title="Color Contrast & Color Perception Accessibility Checker" 
     data-id="136"
@@ -3455,8 +3469,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>This tool lets you check the color contrast between different color pairings and check for common color perceptions against WCAG accessibility standards.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="CSS;Generator"
     data-string-title="Clippy — CSS clip-path maker" 
     data-id="111"
@@ -3477,8 +3491,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p></p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;Security"
     data-string-title="Blacklight – The Markup" 
     data-id="102"
@@ -3499,8 +3513,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>A Real-Time Website Privacy Inspector</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Font;Generator;Code"
     data-string-title="google webfonts helper" 
     data-id="98"
@@ -3523,8 +3537,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>A Hassle-Free Way to Self-Host Google Fonts. Get eot, ttf, svg, woff and woff2 files + CSS snippets!</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;Website"
     data-string-title="webhint's online scanner" 
     data-id="96"
@@ -3545,8 +3559,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Analyze any public website using webhint's online tool</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;Website"
     data-string-title="web.dev Measure" 
     data-id="95"
@@ -3567,8 +3581,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>See how well your website performs. Then, get tips to improve your user experience.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Converter;Imaging"
     data-string-title="TinyJPG – Compress JPEG images intelligently" 
     data-id="94"
@@ -3589,8 +3603,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Make your website faster and save bandwidth. TinyJPG is the best automatic JPEG optimizer and compresses your JPEG images by 40-60%!</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;Security"
     data-string-title="SSL Checker" 
     data-id="93"
@@ -3611,8 +3625,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Verify that your SSL certificate is installed correctly, identify installation issues if any.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Imaging;Analyzer"
     data-string-title="Squoosh" 
     data-id="92"
@@ -3633,8 +3647,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Compress and compare images with different codecs, right in your browser</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Analyzer;Security"
     data-string-title="Analyse your HTTP response headers" 
     data-id="91"
@@ -3655,8 +3669,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Quickly and easily assess the security of your HTTP response headers</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Generator;HTML;Analyzer;Website"
     data-string-title="Open Graph (OG) Meta Tags Checker" 
     data-id="90"
@@ -3681,8 +3695,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Check how search engines and social medias such as  Google, Facebook, Twitter display your website.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Imaging;Converter"
     data-string-title="jpeg.io - Convert any major image format into a highly optimized JPEG" 
     data-id="89"
@@ -3703,8 +3717,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Convert any major image format into a highly optimized JPEG</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Code;Collection"
     data-string-title="HTTP Status Codes — httpstatuses.com" 
     data-id="88"
@@ -3725,8 +3739,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>HTTP Status Code directory, with definitions, details and helpful code references.</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Code;Converter"
     data-string-title="Hashler" 
     data-id="86"
@@ -3747,8 +3761,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Compute different hashes of a string</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="CSS;Test/Playground"
     data-string-title="Flexbox Playground" 
     data-id="83"
@@ -3769,8 +3783,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>A web app for exploring Flexbox</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Icon;Collection"
     data-string-title="FA Icons - Copy Font Awesome Icons as SVG" 
     data-id="82"
@@ -3791,8 +3805,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Easily copy your favorite icons from Font Awesome as SVG</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection;HTML;Code"
     data-string-title="Browser Default Styles" 
     data-id="81"
@@ -3815,8 +3829,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Search against any element for standardized and default styles from all major rendering engines (WebKit, Blink, Gecko, Trident)</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Converter;Code"
     data-string-title="Base64 Converter" 
     data-id="80"
@@ -3837,8 +3851,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>A fast and simple tool to convert to and from base64</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="CSS;Generator"
     data-string-title="Animista" 
     data-id="79"
@@ -3859,8 +3873,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>Animista is a place where you can play with a collection of ready to use CSS animations, tweak them and download only those you will actually use</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Code;HTML"
     data-string-title="All Characters" 
     data-id="77"
@@ -3881,8 +3895,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>A simple page that shows all the different characters and their HTML code</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Converter;Code"
     data-string-title="Alchemize" 
     data-id="76"
@@ -3903,8 +3917,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>A free app to minimize, pretty print, and inspect HTML, CSS, Javascript, JSON, or XML</p>
 </div>
 
-      
-        <div class="card collection" 
+    
+      <div class="card collection" 
     data-tags="Collection"
     data-string-title="All – Tiny Helpers" 
     data-id="74"
@@ -3923,51 +3937,111 @@ Available in SVG Sprite, styled-components, NPM & API</p>
   <p>A collection of free single-purpose online tools for web developers.</p>
 </div>
 
-      
-    </div>
+    
+  </div>
 </div>
 
 <script>
-  let lcCategory = new lc_select('select[name="category"]', {
-      enable_search: true,
-      on_change: function(new_value, target_field) {
-        filterCards(new_value);
-      }
-  });
-  let lcSorting = new lc_select('select.sorting', {
-    enable_search: false,
+  let lcTag = new lc_select('select[name="tag"]', {
+    enable_search: true,
     on_change: function(new_value, target_field) {
-      let field = document.querySelector("#sorting-field").value;
-      let dir = document.querySelector("#sorting-direction").value;
-      $('.view').find('.card').addClass("trans");
-      setTimeout(() => { 
-          sortCards(field, dir);
-          $('.view').find('.card').removeClass("trans");
-          initViewportImage();
-      }, 300);
+      filterCards(new_value);
     }
   });
 
-  document.addEventListener('DOMContentLoaded', (event) => {
-    let currentView = getCookie("view-tinytools");
-    if (currentView) {
-      document.querySelector("#switch-" + currentView).checked = true; 
-      setView(currentView);
-    }
-  })
+  document.querySelectorAll("input[name=view-presentation]").forEach(element => {
+    element.addEventListener("click", (event) => {
+      setPresentation(element);
+    });
+  });
+  document.querySelectorAll("input[name=view-sort-field]").forEach(element => {
+    element.addEventListener("click", (event) => {
+      setSortField(element);
+    });
+  });
+  document.querySelectorAll("input[name=view-sort-direction]").forEach(element => {
+    element.addEventListener("click", (event) => {
+      setSortDirection(element);
+    });
+  });
 
-  function setView(newView) {
+  // Init
+  let currentPresentation = getCookie("view-collection");
+  if (currentPresentation) {
+    document.querySelector("#presentation-" + currentPresentation).checked = true;
+    setView(currentPresentation);
+  }
+
+  function setView(newPresentation) {
     let view = document.querySelector('.view');
-    if (newView === 'list') {
+    if (newPresentation === 'list') {
       view.classList.replace('grid', 'list')
     } else {
       view.classList.replace('list', 'grid')
     }
-    setCookie("view-tinytools", newView, 365);
+    currentPresentation = newPresentation;
+    setCookie("view-collection", newPresentation, 365);
+  }
+
+  function setPresentation(ePresentation) {
+    let newPresentation;
+    if(!ePresentation) { //for initialization
+      ePresentation = document.querySelector("input[name=view-presentation]:checked");
+      newPresentation = ePresentation.getAttribute("data-presentation");
+    } else {
+      newPresentation = ePresentation.getAttribute("data-next-presentation");
+    }
+
+    let eNewPresentation = document.querySelector("#presentation-" + newPresentation);
+    eNewPresentation.checked = true;
+
+    setView(newPresentation);
+  }
+
+  function setSorting() {
+    let field = document.querySelector("input[name=view-sort-field]:checked").getAttribute("data-sort-field");
+    let dir = document.querySelector("input[name=view-sort-direction]:checked").getAttribute("data-sort-direction");;
+
+    $('.view').find('.card').addClass("trans");
+    setTimeout(() => { 
+      tinysort('#collection > .card',{data: field, order: dir, forceStrings: !["position"].includes(field)});
+      $('.view').find('.card').removeClass("trans");
+      setView(currentPresentation);
+      initViewportImage();
+    }, 300);
+  }
+
+  function setSortDirection(eSortDirection) {
+    let newSortDirection;
+    if(!eSortDirection) { //for initialization
+      eSortDirection = document.querySelector("input[name=view-sort-direction]:checked");
+      newSortDirection = eSortDirection.getAttribute("data-sort-direction");
+    } else {
+      newSortDirection = eSortDirection.getAttribute("data-next-sort-direction");
+    }
+
+    let eNewSortDirection = document.querySelector("#sort-direction-" + newSortDirection);
+    eNewSortDirection.checked = true;
+
+    setSorting();
+  }
+
+  function setSortField(eSortField) {
+    let newSortField;
+    if(!eSortField) { //for initialization
+      eSortField = document.querySelector("input[name=view-sort-field]:checked");
+      newSortField = eSortField.getAttribute("data-sort-field");
+    } else {
+      newSortField = eSortField.getAttribute("data-next-sort-field");
+    }
+
+    let eNewSortField = document.querySelector("#sort-field-" + newSortField);
+    eNewSortField.checked = true;
+
+    setSorting();
   }
 
   function filterCards(new_value) {
-    //console.log("NV:" + new_value);
     let i = 0;
     document.querySelectorAll(".card").forEach(item => {
       i += 1;
@@ -3990,8 +4064,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
 
         let resultCount = document.querySelectorAll(".card:not(.hide)").length;
         let totalCount = document.querySelectorAll(".card").length;
-        let resultElement = document.querySelector(".bar-info span.info-count");
-        let desElement = document.querySelector(".bar-info span.info-des");
+        let resultElement = document.querySelector(".view-bar span.info-count");
+        let desElement = document.querySelector(".view-bar span.info-des");
 
         resultElement.textContent = resultCount;
 
@@ -4003,29 +4077,8 @@ Available in SVG Sprite, styled-components, NPM & API</p>
       }, 300);
   }
 
-  function sortCards(field, dir) {
-    $('.view').find('.card').sort(function (a, b) {
-      let minuend;
-      let subtrahend;
-      if (dir === "desc") {
-        minuend = $(b).attr('data-' + field);
-        subtrahend = $(a).attr('data-' + field);
-      } else {
-        minuend = $(a).attr('data-' + field);
-        subtrahend = $(b).attr('data-' + field);
-      }
-      if (field.includes("date")) {
-        return Date.parse(minuend) - Date.parse(subtrahend);
-      } else if (field.includes("string")) {
-        return ('' + minuend).localeCompare('' + subtrahend);
-      } else {
-        return minuend - subtrahend;
-      }
-    }).appendTo('.view');
-  }
-
   function filterByTag(e) {
-    let select = document.getElementById("category");
+    let select = document.getElementById("tag");
     // let current = [...select.selectedOptions].map(option => option.value)
     // console.log(current);
 
