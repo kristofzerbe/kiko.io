@@ -14,10 +14,10 @@
     <span class="status <%- item.status %>">Unused</span>
   <% } %>
   <a class="spotlight card-img" href="/<%= config.photo_dir %>/<%= item.key %>"
-       data-description="<%- item.key %>&nbsp;&bull;&nbsp;<%- item.status %>"
-       data-src="<%- item.pathNormal %>"><img src="<%- item.pathMobile %>" alt="<%- item.name %>" /></a>
+     data-description="<%- item.key %>&nbsp;&bull;&nbsp;<%- item.status %>"
+     data-src="<%- item.pathNormal %>"><img src="<%- item.pathMobile %>" alt="<%- item.name %>" /></a>
   <span class="pre-title">
-    <%- item.key %><% if (item.meta?.CreateDate) { %>, <em><%- new Date(item.meta?.CreateDate).toISOString().split('T')[0] %></em><% } %>
+    <%- item.key %><% if (item.meta?.CreateDate) { %>&nbsp; <em><%- new Date(item.meta?.CreateDate).toISOString().split('T')[0] %></em><% } %>
   </span>
   <% if (item) { %>
     <h3><a href="/<%= config.photo_dir %>/<%= item.key %>" class="h-link"><%- item.name %></a></h3>

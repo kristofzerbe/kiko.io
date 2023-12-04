@@ -190,61 +190,23 @@
 
   .view-bar
     margin: default-margin (medium-margin / 4) default-margin
-    display: flex
-    flex-direction: row
-    justify-content: flex-end
-    gap: 1rem
-    .bar-info
-      margin-right: auto
-      line-height: 1.8rem
-      .info-count
-        font-weight: font-weight-bold
-      input[type=radio]
+    line-height: 1.8rem
+    .info-count
+      font-weight: font-weight-bold
+    input[type=radio]
+      display: none
+    input[name="view-filter-status"], 
+    input[name="view-filter-type"],
+    input[name="view-presentation"],
+    input[name="view-sort-field"],
+    input[name="view-sort-direction"]
+      + label
+        font-weight: font-weight-normal
+        cursor: pointer
         display: none
-      input[name="view-filter-status"], 
-      input[name="view-filter-type"],
-      input[name="view-presentation"],
-      input[name="view-sort-field"],
-      input[name="view-sort-direction"]
+      &:checked
         + label
-          font-weight: font-weight-normal
-          cursor: pointer
-          display: none
-        &:checked
-          + label
-            display: inline-block
-    .bar-cmd
-      margin-left: default-margin
-      input[type=radio]
-        display: none
-        + label
-          padding-left: 8px
-          font-size: 1.66rem
-          opacity: 0.25
-          cursor: pointer
-          &::before
-            display: inline-block
-            font-size: inherit
-            text-rendering: auto
-            -webkit-font-smoothing: antialiased
-        &:checked
-          + label
-            opacity: 1
-      input#switch-grid
-        + label
-          &::before
-            font-family: fa-icons
-            content: icon-grid
-      input#switch-list
-        + label
-          &::before
-            font-family: fa-icons
-            content: icon-list
-      input#switch-masonry
-        + label
-          &::before
-            font-family: fa-icons
-            content: icon-masonry
+          display: inline-block
 
   .view
     margin-bottom: double-margin
@@ -413,6 +375,8 @@
         width: 150px
       span.pre-title
         grid-area: link
+        em
+          display: none
       .status
         grid-area: status
         margin: -(small-margin)
