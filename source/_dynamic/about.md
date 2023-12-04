@@ -67,6 +67,11 @@ Find some of my photographs on
 **500px**
 [https://500px.com/p/kikon](https://500px.com/p/kikon)
 
+<img src="/images/flickr.svg" style="float: left;margin-right: 18px;height: 44px;" alt="Flickr" />
+
+**Flickr**
+[https://flickr.com/photos/kzerbe/](https://flickr.com/photos/kzerbe/)
+
 <img src="/images/pixelfed.svg" style="float: left;margin-right: 18px;height: 44px;" alt="Pixelfed" />
 
 **Pixelfed**
