@@ -1,0 +1,33 @@
+<%- js('js/dist/leaflet.js') %>  
+<%- css('css/dist/leaflet.css') %>    
+
+<% if (page.photograph){ %>
+  <%- partial('_partial/photograph') %>
+<% } %>
+
+<h1 class="archive-title">
+  <span>Photos<b> | </b></span>Map
+</h1>
+<% if (page.subtitle) { %>
+<h2 class="page-subtitle"><%= page.subtitle %></h2>
+<% } %>
+
+<div class="page-content">
+  <%- page.content %>
+
+  <div id="map" style="height:calc(80vh); width:100%; margin: 0 0 30px 0"></div>
+</div>
+
+<script>
+  var map = L.map('map', {
+    center: [50.08287272650057, 8.243133271560554],
+    zoom: 4,
+    zoomControl: false,
+  })
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+
+  // var marker = L.marker([lat, lng]).addTo(map);
+</script>

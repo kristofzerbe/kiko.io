@@ -13,18 +13,6 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
 
   let result = [];
 
-  let page = {};
-  page.name = "photos";
-
-  // Get MD data for list
-  const mdSource = path.join(config.source_dir, "_dynamic", page.name + ".md");
-  const md = fs.readFileSync(mdSource);
-  let fm = front.parse(md);
-  page = {...page, ...fm};
-
-  // Convert Markdown content into HTML
-  page.content = hexo.render.renderSync({ text: page._content, engine: 'markdown' });  
-
   // Get hero photo
   let pHero = getHeroPhoto(config);
 
@@ -56,24 +44,71 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
   let pNotes = getNotesPhotos(config);
   log.info(magenta(pNotes.length) + " used photos in notes");
 
+  /** ----------------------------------------------------- */
+  // Init photos page
+  let pagePhotos = {};
+  pagePhotos.name = "photos";
+
+  // Get MD data and convert content into HTML
+  const mdSourcePhoto = path.join(config.source_dir, "_dynamic", pagePhotos.name + ".md");
+  const mdPhotos = fs.readFileSync(mdSourcePhoto);
+  let fmPhotos = front.parse(mdPhotos);
+  pagePhotos = {...pagePhotos, ...fmPhotos};
+  pagePhotos.content = hexo.render.renderSync({ text: pagePhotos._content, engine: 'markdown' });  
+
   // Set items for page (excluding Shed photos)
-  page.items = [...pHero, ...pPool, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes]
+  pagePhotos.items = [...pHero, ...pPool, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes]
     .filter(p => (p.name)) //filter out all without photo name
     .sort((a, b) => a.key.localeCompare(b.key));
 
   result.push({
-      data: page,
-      path: path.join(page.name, "index.html"),
+      data: pagePhotos,
+      path: path.join(pagePhotos.name, "index.html"),
       layout: "photos"
   });
 
+  /** ----------------------------------------------------- */
+  // Init Photo Map page
+  let pageMap = {};
+  pageMap.name = "photos-map";
+
+  // Get MD data and convert content into HTML
+  const mdSourceMap = path.join(config.source_dir, "_dynamic", pageMap.name + ".md");
+  const mdMap = fs.readFileSync(mdSourceMap);
+  let fmMap = front.parse(mdMap);
+  pageMap = {...pageMap, ...fmMap};
+  pageMap.content = hexo.render.renderSync({ text: pageMap._content, engine: 'markdown' });  
+
+  //Get coordinates array without duplicates
+  let coordinates = {};
+  pagePhotos.items.forEach((obj) => {
+    let latlng = obj.meta.latitude + "|" + obj.meta.longitude;
+    if (coordinates.hasOwnProperty(latlng)) {
+      coordinates[latlng]++;
+    } else {
+      coordinates[latlng] = 1;
+    }
+  });
+  pageMap.coordinates = Object.keys(coordinates).map((key) => { 
+    return { 'latlng': key, 'count': coordinates[key] };
+  }).sort((a,b) => (a.latlng > b.latlng) ? 1 : ((b.latlng > a.latlng) ? -1 : 0));
+
+  // console.log(coordinates);
+
+  result.push({
+    data: pageMap,
+    path: path.join(pagePhotos.name, "map", "index.html"),
+    layout: "photos-map"
+  });
+
+  /** ----------------------------------------------------- */
   // Generate photo pages (all, incl. Shed)
   let photos = [...pHero, ...pPool, ...pShed, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes]
     .filter(p => (p.name)) //filter out all without photo name
     .sort((a, b) => a.key.localeCompare(b.key));
         
   photos.forEach(item => {
-    item.photograph = page.photograph;
+    item.photograph = pagePhotos.photograph;
 
     item.title = "Photo " + item.name;
     item.path = path.join(config.photo_dir, item.key, "index.html");
