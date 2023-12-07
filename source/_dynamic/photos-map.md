@@ -7,6 +7,6 @@ photograph:
   name: Photographers Mosaic
 ---
 
-Lorem ipsum dolor sit amet ...
+Most of the images listed in [photos](/photos) (and some more out of the shed) contain geo-localisations in the form of GPS coordinates in their metadata. These **{{photo.count}} photos** are pinned on this map.
 
 ---

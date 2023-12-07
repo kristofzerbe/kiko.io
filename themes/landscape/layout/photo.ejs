@@ -35,7 +35,7 @@
 <div class="page-content">
 
   <section class="image">
-    <img id="photo" src="<%- page.pathNormal %>" alt="<%- page.name %>" 
+    <img id="photo" src="<%- page.pathTablet %>" alt="<%- page.name %>" 
          data-pagefind-meta="image[src], image_alt[alt]" />
     <small>Tap to show colors...</small>
   </section>
@@ -83,8 +83,8 @@
         <span><%= page.meta.Artist ?? "Kristof Zerbe" %>,  &copy; <%= page.meta.Copyright ?? "" %> CC-BY-SA</span>
       </li>
       <li>
-        <label>Create Date</label>
-        <span data-pagefind-meta="date"><%= new Date(page.meta.CreateDate).toLocaleString('en-GB', { weekday:"long", year:"numeric", month:"long", day:"numeric"}) ?? "---" %></span>
+        <label>Original Date</label>
+        <span data-pagefind-meta="date" data-create-date="<%- page.meta.DateTimeOriginal %>"><%= new Date(page.meta.DateTimeOriginal).toLocaleString('en-GB', { weekday:"long", year:"numeric", month:"long", day:"numeric"}) ?? "---" %></span>
       </li>
       <li>
         <label>Country, State, City</label>
@@ -94,7 +94,7 @@
         <label>GPS Coordinates (Lat/Long)</label>
         <span><%= page.meta?.latitude ?? "---" %> / <%= page.meta?.longitude ?? "---" %></span>
         <% if (page.meta?.latitude && page.meta?.longitude) { %>
-        <div id="map" style="height: 320px; margin: 12px -30px 6px"></div>
+        <div id="map" class="page-map"></div>
         <% } %>
       </li>
       <li><hr style="margin:0"></li>
@@ -165,18 +165,31 @@
 
   <% if (page.meta?.latitude && page.meta?.longitude) { %>
   <%- js('js/dist/leaflet.js') %>  
-  <%- css('css/dist/leaflet.css') %>    
+  <%- css('css/dist/leaflet.css') %> 
+  <object type="image/svg+xml" data="/images/marker-photo.svg" id="marker-image" width="0" height="0"></object>   
   <script>
-    var map = L.map('map', {
+    let map = L.map('map', {
       center: [<%= page.meta?.latitude %>, <%= page.meta?.longitude %>],
-      zoom: 11,
+      zoom: 10,
       zoomControl: false,
     })
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
+        maxZoom: 18,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
-    var marker = L.marker([<%= page.meta?.latitude %>, <%= page.meta?.longitude %>]).addTo(map);
+
+    const markerImage = document.getElementById("marker-image");
+    markerImage.addEventListener("load",function() {
+      const markerIcon = L.divIcon({
+        className: "marker",
+        html: markerImage.contentDocument.getElementsByTagName("svg")[0].outerHTML,
+        iconSize: [20, 20]
+      });
+      this.remove(); // remove marker object, because we got the SVG code
+
+      const marker = L.marker([<%= page.meta?.latitude %>, <%= page.meta?.longitude %>], 
+        { icon: markerIcon }).addTo(map).on('click', function(e) { window.location.href = "/photos/map"; });
+    });
   </script>
   <% } %>
   
@@ -191,7 +204,7 @@
   <%- js('js/dist/nearestColor.js') %>
   <script>
     window.onload = (event) => {
-      Vibrant.from("<%= page.pathNormal %>").getPalette().then((palette) => {
+      Vibrant.from("<%= page.pathTablet %>").getPalette().then((palette) => {
         const colorList = document.querySelector("#color-list ul");
         for(let swatch in palette) {
           let color = { swatch: swatch };

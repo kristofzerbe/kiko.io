@@ -15,9 +15,10 @@
 <div class="page-content">
   <%- page.content %>
 
-  <div id="map" style="height:calc(80vh); width:100%; margin: 0 0 30px 0"></div>
+  <div id="map" class="inline-map"></div>
 </div>
 
+<object type="image/svg+xml" data="/images/marker-photo.svg" id="marker-image" width="0" height="0"></object>   
 <script>
   var map = L.map('map', {
     center: [50.08287272650057, 8.243133271560554],
@@ -25,9 +26,33 @@
     zoomControl: false,
   })
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
+      maxZoom: 18,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
 
-  // var marker = L.marker([lat, lng]).addTo(map);
+  const markerImage = document.getElementById("marker-image");
+  markerImage.addEventListener("load",function() {
+    const markerIcon = L.divIcon({
+      className: "marker",
+      html: markerImage.contentDocument.getElementsByTagName("svg")[0].outerHTML,
+      iconSize: [20, 20]
+    });
+    this.remove(); // remove marker object, because we got the SVG code
+
+    let jsonCoords = <%- JSON.stringify(page.coordinates) %>;
+
+    jsonCoords.forEach(item => {
+      let marker = L.marker([item.latitude, item.longitude], { icon: markerIcon }).addTo(map);
+      let list = item.photos.map(p => {
+        return `<li><a href="/photos/${p.name}">${p.title}</a>&nbsp;<span>(${p.year})</span></li>`;
+      }).join('');      
+      let popup = `<b>${item.photos.length} ${item.photos.length === 1 ? "Photo":"Photos"}</b><ul>${list}</ul>`;
+      let options = {
+        'maxWidth': '400',
+        'width': '200',
+        'className' : 'photoPopup'
+      }
+      marker.bindPopup(popup,options);
+    });
+  });
 </script>

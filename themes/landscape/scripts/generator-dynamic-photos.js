@@ -68,40 +68,6 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
   });
 
   /** ----------------------------------------------------- */
-  // Init Photo Map page
-  let pageMap = {};
-  pageMap.name = "photos-map";
-
-  // Get MD data and convert content into HTML
-  const mdSourceMap = path.join(config.source_dir, "_dynamic", pageMap.name + ".md");
-  const mdMap = fs.readFileSync(mdSourceMap);
-  let fmMap = front.parse(mdMap);
-  pageMap = {...pageMap, ...fmMap};
-  pageMap.content = hexo.render.renderSync({ text: pageMap._content, engine: 'markdown' });  
-
-  //Get coordinates array without duplicates
-  let coordinates = {};
-  pagePhotos.items.forEach((obj) => {
-    let latlng = obj.meta.latitude + "|" + obj.meta.longitude;
-    if (coordinates.hasOwnProperty(latlng)) {
-      coordinates[latlng]++;
-    } else {
-      coordinates[latlng] = 1;
-    }
-  });
-  pageMap.coordinates = Object.keys(coordinates).map((key) => { 
-    return { 'latlng': key, 'count': coordinates[key] };
-  }).sort((a,b) => (a.latlng > b.latlng) ? 1 : ((b.latlng > a.latlng) ? -1 : 0));
-
-  // console.log(coordinates);
-
-  result.push({
-    data: pageMap,
-    path: path.join(pagePhotos.name, "map", "index.html"),
-    layout: "photos-map"
-  });
-
-  /** ----------------------------------------------------- */
   // Generate photo pages (all, incl. Shed)
   let photos = [...pHero, ...pPool, ...pShed, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes]
     .filter(p => (p.name)) //filter out all without photo name
@@ -124,8 +90,59 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
 
   });
 
-  return result;
+  /** ----------------------------------------------------- */
+  // Init Photo Map page
+  let pageMap = {};
+  pageMap.name = "photos-map";
 
+  //Get coordinates array without duplicates
+  function shortDec(dec) {
+    return dec.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0];
+  }
+  let coordinates = {};
+  let photoCount = 0;
+  photos.forEach((obj) => {
+    if (obj.meta.latitude && obj.meta.longitude) {
+      let latlng = shortDec(obj.meta.latitude) + "|" + shortDec(obj.meta.longitude);
+      if (!coordinates.hasOwnProperty(latlng)) {
+        coordinates[latlng] = { 
+          latitude: obj.meta.latitude,
+          longitude: obj.meta.longitude,
+          photos: [] 
+        };
+      }
+      if (!coordinates[latlng].photos.find(p => p.name === obj.key)) {
+        photoCount++;
+        coordinates[latlng].photos.push({
+          name: obj.key, 
+          title: obj.name,
+          year: new Date(obj.meta?.DateTimeOriginal).toLocaleString('en-GB', {year:"numeric"})
+        });  
+      }      
+    }
+  });
+  pageMap.coordinates = Object.keys(coordinates).map((key) => {     
+    return coordinates[key];
+  }).sort((a,b) => (a.latlng > b.latlng) ? 1 : ((b.latlng > a.latlng) ? -1 : 0));
+
+  // Get MD data and convert content into HTML
+  const mdSourceMap = path.join(config.source_dir, "_dynamic", pageMap.name + ".md");
+  const mdMap = fs.readFileSync(mdSourceMap);
+  let fmMap = front.parse(mdMap);
+  pageMap = {...pageMap, ...fmMap};
+  pageMap.content = hexo.render.renderSync({ 
+    text: pageMap._content.replace("{{photo.count}}", photoCount), 
+    engine: 'markdown' 
+  });
+    
+  result.push({
+    data: pageMap,
+    path: path.join(pagePhotos.name, "map", "index.html"),
+    layout: "photos-map"
+  });
+
+  /** ----------------------------------------------------- */
+  return result;
 });
 
 /** ================================================================================= */
@@ -147,6 +164,7 @@ function getHeroPhoto(config) {
   };
 
   entry.pathMobile = "/" + path.join(config.photo_dir, "mobile", entry.file).replace(/\134/g,"/");
+  entry.pathTablet = "/" + path.join(config.photo_dir, "tablet", entry.file).replace(/\134/g,"/");
   entry.pathNormal = "/" + path.join(config.photo_dir, "normal", entry.file).replace(/\134/g,"/");
 
   if (fs.existsSync(path.join(photoDir, "meta" , entry.key + ".json"))) {
@@ -176,6 +194,7 @@ function getPoolPhotos(config) {
     entry.name = entry.meta?.ObjectName;
     entry.file = entry.key + ".jpg";
     entry.pathMobile = "/" + path.join(config.pool_dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
+    entry.pathTablet = "/" + path.join(config.pool_dir, entry.key, "tablet.jpg").replace(/\134/g,"/");
     entry.pathNormal = "/" + path.join(config.pool_dir, entry.key, "normal.jpg").replace(/\134/g,"/");
     entry.article = null;
   });
@@ -203,6 +222,7 @@ function getShedPhotos(config) {
     entry.name = entry.meta?.ObjectName;
     entry.file = entry.key + ".jpg";
     entry.pathMobile = "/" + path.join(config.shed_dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
+    entry.pathTablet = "/" + path.join(config.shed_dir, entry.key, "tablet.jpg").replace(/\134/g,"/");
     entry.pathNormal = "/" + path.join(config.shed_dir, entry.key, "normal.jpg").replace(/\134/g,"/");
     entry.article = null;
   });
@@ -242,6 +262,7 @@ function getPostAndPagePhotos(config, locals) {
     }
 
     entry.pathMobile = "/" + path.join(config.photo_dir, "mobile", entry.file).replace(/\134/g,"/");
+    entry.pathTablet = "/" + path.join(config.photo_dir, "tablet", entry.file).replace(/\134/g,"/");
     entry.pathNormal = "/" + path.join(config.photo_dir, "normal", entry.file).replace(/\134/g,"/");
 
     let p = postsAndPages.find(p => (p && p.photographFile === entry.file));
@@ -283,6 +304,7 @@ function getDraftPagePhotos(config) {
           status: "used",
           file: fm.photograph.file,
           pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
+          pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
           pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
           name: fm.photograph.name,
           article: {
@@ -326,6 +348,7 @@ function getDynamicPagePhotos(config) {
           status: "used",
           file: fm.photograph.file,
           pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
+          pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
           pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
           name: fm.photograph.name,
           article: {
@@ -370,6 +393,7 @@ function getAnythingPagePhotos(config, subDir) {
           status: "used",
           file: fm.photograph.file,
           pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
+          pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
           pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
           name: fm.photograph.name,
           article: {
@@ -417,6 +441,7 @@ function getNotesPhotos(config) {
             status: "used",
             file: fm.photograph.file,
             pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
+            pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
             pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
             name: fm.photograph.name,
             article: {
