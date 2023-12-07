@@ -306,7 +306,7 @@
 <div class="page-content">
 
   <section class="image">
-    <img id="photo" src="/photos/normal/DSC_9482-HDR.jpg" alt="Orange Shades" 
+    <img id="photo" src="/photos/tablet/DSC_9482-HDR.jpg" alt="Orange Shades" 
          data-pagefind-meta="image[src], image_alt[alt]" />
     <small>Tap to show colors...</small>
   </section>
@@ -344,8 +344,8 @@
         <span>Kristof Zerbe,  &copy;  CC-BY-SA</span>
       </li>
       <li>
-        <label>Create Date</label>
-        <span data-pagefind-meta="date">Sunday, 2 November 2014</span>
+        <label>Original Date</label>
+        <span data-pagefind-meta="date" data-create-date="2014-11-02T16:14:45.000Z">Sunday, 2 November 2014</span>
       </li>
       <li>
         <label>Country, State, City</label>
@@ -499,7 +499,7 @@
 
   <script>
     window.onload = (event) => {
-      Vibrant.from("/photos/normal/DSC_9482-HDR.jpg").getPalette().then((palette) => {
+      Vibrant.from("/photos/tablet/DSC_9482-HDR.jpg").getPalette().then((palette) => {
         const colorList = document.querySelector("#color-list ul");
         for(let swatch in palette) {
           let color = { swatch: swatch };

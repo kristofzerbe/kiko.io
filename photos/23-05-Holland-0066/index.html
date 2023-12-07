@@ -306,7 +306,7 @@
 <div class="page-content">
 
   <section class="image">
-    <img id="photo" src="/pool/23-05-Holland-0066/normal.jpg" alt="Amsterdam Waterway" 
+    <img id="photo" src="/pool/23-05-Holland-0066/tablet.jpg" alt="Amsterdam Waterway" 
          data-pagefind-meta="image[src], image_alt[alt]" />
     <small>Tap to show colors...</small>
   </section>
@@ -340,8 +340,8 @@
         <span>Kristof Zerbe,  &copy; 2023 CC-BY-SA</span>
       </li>
       <li>
-        <label>Create Date</label>
-        <span data-pagefind-meta="date">Sunday, 14 May 2023</span>
+        <label>Original Date</label>
+        <span data-pagefind-meta="date" data-create-date="2023-05-14T17:11:31.000Z">Sunday, 14 May 2023</span>
       </li>
       <li>
         <label>Country, State, City</label>
@@ -351,7 +351,7 @@
         <label>GPS Coordinates (Lat/Long)</label>
         <span>52.37414376666667 / 4.884228645</span>
         
-        <div id="map" style="height: 320px; margin: 12px -30px 6px"></div>
+        <div id="map" class="page-map"></div>
         
       </li>
       <li><hr style="margin:0"></li>
@@ -473,18 +473,31 @@
   
   
 <link rel="stylesheet" href="/css/dist/leaflet.css">
-    
+ 
+  <object type="image/svg+xml" data="/images/marker-photo.svg" id="marker-image" width="0" height="0"></object>   
   <script>
-    var map = L.map('map', {
+    let map = L.map('map', {
       center: [52.37414376666667, 4.884228645],
-      zoom: 11,
+      zoom: 10,
       zoomControl: false,
     })
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
+        maxZoom: 18,
         attribution: '&copy; <a target="_blank" rel="noopener" href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
-    var marker = L.marker([52.37414376666667, 4.884228645]).addTo(map);
+
+    const markerImage = document.getElementById("marker-image");
+    markerImage.addEventListener("load",function() {
+      const markerIcon = L.divIcon({
+        className: "marker",
+        html: markerImage.contentDocument.getElementsByTagName("svg")[0].outerHTML,
+        iconSize: [20, 20]
+      });
+      this.remove(); // remove marker object, because we got the SVG code
+
+      const marker = L.marker([52.37414376666667, 4.884228645], 
+        { icon: markerIcon }).addTo(map).on('click', function(e) { window.location.href = "/photos/map"; });
+    });
   </script>
   
   
@@ -503,7 +516,7 @@
 
   <script>
     window.onload = (event) => {
-      Vibrant.from("/pool/23-05-Holland-0066/normal.jpg").getPalette().then((palette) => {
+      Vibrant.from("/pool/23-05-Holland-0066/tablet.jpg").getPalette().then((palette) => {
         const colorList = document.querySelector("#color-list ul");
         for(let swatch in palette) {
           let color = { swatch: swatch };

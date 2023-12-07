@@ -306,7 +306,7 @@
 <div class="page-content">
 
   <section class="image">
-    <img id="photo" src="/photos/normal/DSC_7207.jpg" alt="Green Lightbeam" 
+    <img id="photo" src="/photos/tablet/DSC_7207.jpg" alt="Green Lightbeam" 
          data-pagefind-meta="image[src], image_alt[alt]" />
     <small>Tap to show colors...</small>
   </section>
@@ -344,8 +344,8 @@
         <span>Kristof Zerbe,  &copy;  CC-BY-SA</span>
       </li>
       <li>
-        <label>Create Date</label>
-        <span data-pagefind-meta="date">Wednesday, 10 September 2014</span>
+        <label>Original Date</label>
+        <span data-pagefind-meta="date" data-create-date="2014-09-10T18:31:24.000Z">Wednesday, 10 September 2014</span>
       </li>
       <li>
         <label>Country, State, City</label>
@@ -511,7 +511,7 @@
 
   <script>
     window.onload = (event) => {
-      Vibrant.from("/photos/normal/DSC_7207.jpg").getPalette().then((palette) => {
+      Vibrant.from("/photos/tablet/DSC_7207.jpg").getPalette().then((palette) => {
         const colorList = document.querySelector("#color-list ul");
         for(let swatch in palette) {
           let color = { swatch: swatch };
