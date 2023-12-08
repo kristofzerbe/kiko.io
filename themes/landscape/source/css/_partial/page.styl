@@ -574,6 +574,12 @@
           top: -1rem
           right: -1rem
   #map
+    /[data-theme="dark"] &
+      .leaflet-layer,
+      .leaflet-control-zoom-in,
+      .leaflet-control-zoom-out,
+      .leaflet-control-attribution
+        filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
     &.page-map
       height: 320px
       margin: medium-margin -2rem small-margin
@@ -583,13 +589,24 @@
       width: 100%
       margin: 0 0 block-margin 0
     .photoPopup
-      .leaflet-popup-content-wrapper
+      .leaflet-popup-content-wrapper, .leaflet-popup-tip
         border-radius: border-radius
+        background-color: color-background
+        color: color-foreground
+        /[data-theme="dark"] &
+          background-color: dark-color-background
+          color: dark-color-foreground
+      .leaflet-popup-content-wrapper
         .leaflet-popup-content
           ul
             margin: small-margin 0 0 0
             list-style-type: none
           li
             line-height: line-height
+            a
+              transition: all ease-out 0.2s
+              color: color-link
+              /[data-theme="dark"] &
+                color: dark-color-link
             span
               opacity: 0.5

@@ -240,16 +240,16 @@ function getPostAndPagePhotos(config, locals) {
     .readdirSync(photoDir)
     .map(entry => ({ key: null, status: "used", file: entry }));
 
-  let postsAndPages = [...locals.posts.data, ...locals.pages.data].map(y => {
-    if (y.photograph) {
+  let postsAndPages = [...locals.posts.data, ...locals.pages.data].map(fm => {
+    if (fm.photograph && !fm.photograph.keepOutOverview) {
       return {
-        title: y.title,
-        subTitle: y.subtitle,
-        date: y.date,
-        path: y.path,
-        layout: y.layout,
-        photographFile: y.photograph.file,
-        photographName: y.photograph.name,
+        title: fm.title,
+        subTitle: fm.subtitle,
+        date: fm.date,
+        path: fm.path,
+        layout: fm.layout,
+        photographFile: fm.photograph.file,
+        photographName: fm.photograph.name,
       };
     }
   });
@@ -297,7 +297,7 @@ function getDraftPagePhotos(config) {
 
       let fm = front.parse(md);
 
-      if (fm.photograph) {
+      if (fm.photograph && !fm.photograph.keepOutOverview) {
 
         let entry = {
           key: fm.photograph.file.replace(".jpg", ""),
@@ -341,7 +341,7 @@ function getDynamicPagePhotos(config) {
       const md = fs.readFileSync(mdSource);
       let fm = front.parse(md);
 
-      if (fm.photograph) {
+      if (fm.photograph && !fm.photograph.keepOutOverview) {
         
         let entry = {
           key: fm.photograph.file.replace(".jpg", ""),
@@ -386,7 +386,7 @@ function getAnythingPagePhotos(config, subDir) {
       const md = fs.readFileSync(mdSource);
       let fm = front.parse(md);
 
-      if (fm.photograph) {
+      if (fm.photograph && !fm.photograph.keepOutOverview) {
 
         let entry = {
           key: fm.photograph.file.replace(".jpg", ""),
