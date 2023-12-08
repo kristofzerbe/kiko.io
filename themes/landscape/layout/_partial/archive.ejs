@@ -17,7 +17,7 @@
         <div class="archive-year-wrap">
           <a href="<%- url_for(config.archive_dir + '/' + year) %>" class="archive-year"><%= year %></a>
         </div>
-        <div class="archives">
+        <div class="archives" data-pagefind-ignore>
     <% } %>
     <%- partial('archive-post', { post: post, show_link: true, even: i % 2 == 0 }) %>
   <% }) %>
