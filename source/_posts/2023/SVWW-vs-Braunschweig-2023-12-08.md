@@ -19,7 +19,7 @@ related:
   - My-Hometown-My-Club
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/111562801234044569
 ---
 
 {% match_grid "SV-Wehen-Wiesbaden" "1:3" "Eintracht-Braunschweig" %}
