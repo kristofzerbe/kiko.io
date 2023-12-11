@@ -5,7 +5,7 @@ subtitle: The winning streak continues in curious fashion
 date: 2023-11-15 14:12:00
 photograph:
   file: PXL_20231112_122739398.jpg
-  name: SVWW vs Kaiserslautern @2023-11-12
+  name: SVWW vs Kaiserslautern @ 2023-11-12
   socialmedia: /static/images/social-media/SVWW-vs-Kaiserslautern-2023-11-12.png
 series: SV Wehen Wiesbaden
 categories:

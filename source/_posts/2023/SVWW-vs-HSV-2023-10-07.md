@@ -5,7 +5,7 @@ subtitle: Two hearts beat in my chest
 date: 2023-10-07 17:46:04
 photograph:
   file: PXL_20231007_105740138.jpg
-  name: SVWW vs HSV
+  name: SVWW vs HSV @ 2023-10-07
   socialmedia: /static/images/social-media/SVWW-vs-HSV-2023-10-07.png
 series: SV Wehen Wiesbaden
 categories:
