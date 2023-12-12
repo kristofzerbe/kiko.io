@@ -17,7 +17,7 @@
      data-description="<%- item.key %>&nbsp;&bull;&nbsp;<%- item.status %>"
      data-src="<%- item.pathNormal %>"><img src="<%- item.pathMobile %>" alt="<%- item.name %>" /></a>
   <span class="pre-title">
-    <%- item.key %><% if (item.meta?.DateTimeOriginal) { %>, <em><%- new Date(item.meta?.DateTimeOriginal).toLocaleString('en-GB', {year:"numeric"}) %></em><% } %>
+    <%- item.key %><% if (item.meta?.DateTimeOriginal) { %>, <em><%- new Date(item.meta?.DateTimeOriginal).toLocaleString('en-GB', { month:"long", year:"numeric" }) %></em><% } %>
   </span>
   <% if (item) { %>
     <h3><a href="/<%= config.photo_dir %>/<%= item.key %>" class="h-link"><%- item.name %></a></h3>

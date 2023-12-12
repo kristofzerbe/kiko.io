@@ -32,11 +32,21 @@ Interestingly, however, Ryan has been able to integrate Flickr into brid.gy (pro
 
 500px, my regular photo platform in the last years, on the other hand, completely discontinued its API back in 2018 and is increasingly becoming an isolated photo license sales booth. A walled-garden platform as its best, which values interoperability in no way whatsoever.
 
-So now I have my own website and three completely different public platforms where I publish my photos. Each of these platforms has its advantages but also its disadvantages and I would like to make a completely subjective comparison of the three from my point if view in this post.
+So now I have my own website and its photo pages and three completely different public platforms where I publish them. Each of these platforms has its advantages but also its disadvantages and I would like to make a completely subjective comparison of the three from my point if view in this post.
 
 <!-- more -->
 
-## Uploading photos
-## Photo overviews
+## UI/UX
+
+
+
+### Uploading photos
+### Photo overviews
+
+## Features
+
+I'll skip all the commercial features here, that might be of interest to professional photographers, because they're not for me. My photos are all under a [CC-BY-SA license](https://creativecommons.org/licenses/by-sa/4.0/), which means that anyone who likes them can use them, as long as they attribute the author, which means me.
+
 ## Interoperability
+
 ## Quality and Community
