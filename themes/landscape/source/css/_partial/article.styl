@@ -598,14 +598,14 @@
   .syndication-wrapper
     display: flex
     flex-wrap: wrap
-    margin-left: -0.75rem
+    margin-left: -1rem
     a.syndication-link /* on extension see config.syndication_hosts */
-      padding: 0.75rem 0.75rem 0.75rem 2.75rem
+      padding: 0.5rem 0.5rem 0.5rem 2.75rem
       text-decoration: none
       overflow-wrap: break-word
       background-size: 20px 20px
       background-repeat: no-repeat
-      background-position: 1rem 0.75rem
+      background-position: 1rem 0.5rem
       text-decoration: none
       span
         border-bottom: transparent 1px solid
@@ -621,6 +621,8 @@
         background-image: url(/images/flickr.svg)
       &.host-pixelfed
         background-image: url(/images/pixelfed.svg)
+        /[data-theme="dark"] &
+          background-image: url(/images/pixelfed_invert.svg)
       &.host-unsplash
         background-image: url(/images/unsplash.svg)
         /[data-theme="dark"] &
