@@ -142,19 +142,40 @@
     });
   });
 
+  /* ------------------------------------- */
   // Init
-  let currentPresentation = getCookie("view-photos");
-  if (currentPresentation) {
-    document.querySelector("#presentation-" + currentPresentation).checked = true;
-    setView(currentPresentation);
+  let currentPresentation = getCookie("photos-presentation");
+  if (!currentPresentation) { 
+    currentPresentation = 
+      document.querySelector("input[name=view-presentation]:checked").getAttribute("data-presentation");
   }
 
-  var macyInstance;
-  function setView(newPresentation) {
-    let view = document.querySelector('.view');
-    view.classList = "view " + newPresentation;
+  let currentSorting = getCookie("photos-sorting");
+  if (!currentSorting) {
+    currentSorting = 
+      document.querySelector("input[name=view-sort-field]:checked").getAttribute("data-sort-field") + "|" + 
+      document.querySelector("input[name=view-sort-direction]:checked").getAttribute("data-sort-direction");
+  }
 
-    if (newPresentation === "masonry") {
+  setView(currentPresentation, currentSorting);
+
+  var macyInstance;
+
+  /* ------------------------------------- */
+
+  function setView(presentation, sorting) {
+
+    let aSorting = sorting.split("|");
+    document.querySelector("#sort-field-" + aSorting[0]).checked = true;
+    document.querySelector("#sort-direction-" + aSorting[1]).checked = true;
+    tinysort('#photos > .card',{data: aSorting[0], order: aSorting[1], forceStrings: true});
+    currentSorting = sorting;
+    setCookie("photos-sorting", sorting, 365);
+
+    let view = document.querySelector('.view');
+    view.classList = "view " + presentation;
+
+    if (presentation === "masonry") {
       document.querySelectorAll(".card-img").forEach(item => {
         item.classList.remove("spotlight");
       });
@@ -189,8 +210,9 @@
       }
     }
 
-    currentPresentation = newPresentation;
-    setCookie("view-photos", newPresentation, 365);
+    document.querySelector("#presentation-" + presentation).checked = true;
+    currentPresentation = presentation;
+    setCookie("photos-presentation", presentation, 365);
 
     setFilterStatus();
   }
@@ -207,35 +229,21 @@
     let eNewPresentation = document.querySelector("#presentation-" + newPresentation);
     eNewPresentation.checked = true;
 
-    setView(newPresentation);
+    setView(newPresentation, currentSorting);
   }
 
   function setSorting() {
     let field = document.querySelector("input[name=view-sort-field]:checked").getAttribute("data-sort-field");
-    let dir = document.querySelector("input[name=view-sort-direction]:checked").getAttribute("data-sort-direction");;
+    let dir = document.querySelector("input[name=view-sort-direction]:checked").getAttribute("data-sort-direction");
+    let newSorting = field + "|" + dir;
 
     $('.view').find('.card').addClass("trans");
     setTimeout(() => { 
       tinysort('#photos > .card',{data: field, order: dir, forceStrings: true});
       $('.view').find('.card').removeClass("trans");
-      setView(currentPresentation);
+      setView(currentPresentation, newSorting);
       initViewportImage();
     }, 300);
-  }
-
-  function setSortDirection(eSortDirection) {
-    let newSortDirection;
-    if(!eSortDirection) { //for initialization
-      eSortDirection = document.querySelector("input[name=view-sort-direction]:checked");
-      newSortDirection = eSortDirection.getAttribute("data-sort-direction");
-    } else {
-      newSortDirection = eSortDirection.getAttribute("data-next-sort-direction");
-    }
-
-    let eNewSortDirection = document.querySelector("#sort-direction-" + newSortDirection);
-    eNewSortDirection.checked = true;
-
-    setSorting();
   }
 
   function setSortField(eSortField) {
@@ -249,6 +257,21 @@
 
     let eNewSortField = document.querySelector("#sort-field-" + newSortField);
     eNewSortField.checked = true;
+
+    setSorting();
+  }
+
+  function setSortDirection(eSortDirection) {
+    let newSortDirection;
+    if(!eSortDirection) { //for initialization
+      eSortDirection = document.querySelector("input[name=view-sort-direction]:checked");
+      newSortDirection = eSortDirection.getAttribute("data-sort-direction");
+    } else {
+      newSortDirection = eSortDirection.getAttribute("data-next-sort-direction");
+    }
+
+    let eNewSortDirection = document.querySelector("#sort-direction-" + newSortDirection);
+    eNewSortDirection.checked = true;
 
     setSorting();
   }
@@ -318,6 +341,7 @@
   }
 
   function showPhoto(item) {
+    item.style.display = null;
     setTimeout(() => {
       item.classList.remove("hide");
       if (currentPresentation !== "masonry") {
