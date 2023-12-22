@@ -10,8 +10,8 @@
     </image>
     <description>Blog about memorable (tech) stuff by Kristof Zerbe</description>
     <language>en</language>
-    <pubDate>Sun, 10 Dec 2023 16:15:16 +0000</pubDate>
-    <lastBuildDate>Sun, 10 Dec 2023 16:15:16 +0000</lastBuildDate>
+    <pubDate>Fri, 22 Dec 2023 11:54:51 +0000</pubDate>
+    <lastBuildDate>Fri, 22 Dec 2023 11:54:51 +0000</lastBuildDate>
     <category>VS Code</category>
     <category>Hexo</category>
     <category>GitHub</category>
@@ -77,13 +77,57 @@
     <category>Fediverse</category>
     <category>IndieWeb</category>
     <category>Identity</category>
-    <category>JavaScript</category>
     <category>Search</category>
+    <category>JavaScript</category>
     <category>SVWW</category>
     <category>JSON-LD</category>
     <category>Eintracht</category>
     <category>2. Bundesliga</category>
     <category>Concert</category>
+    <item>
+      <guid isPermalink="true">https://kiko.io/post/Don-t-be-ignorant-and-offer-a-theme-switch/</guid>
+      <title>Don&#39;t be ignorant and offer a theme switch</title>
+      <link>https://kiko.io/post/Don-t-be-ignorant-and-offer-a-theme-switch/</link>
+      <category>UI</category>
+      <category>Theming</category>
+      <category>Usability</category>
+      <pubDate>Fri, 22 Dec 2023 11:54:51 +0000</pubDate>
+      <description>
+        <![CDATA[ &lt;p&gt;Coming from a &lt;a href=&#34;https://minutestomidnight.co.uk/blog/giving-context-to-a-blogroll/&#34;&gt;IndieNews post from Simone&lt;/a&gt;, I stumbled over Garrit’s post &lt;a href=&#34;https://garrit.xyz/posts/2023-12-12-roast-my-site&#34; class=&#34;u-in-reply-to&#34;&gt;&lt;strong&gt;Roast my Site!&lt;/strong&gt;&lt;/a&gt;, to which Simone had referred. I was also just in roast mode again and if someone asks me so kindly, then go for it…&lt;/p&gt;
+&lt;p&gt;A little background …&lt;/p&gt;
+&lt;p&gt;I have often talked about a topic on Mastodon or other channels that keeps bothering me for very personal reasons: &lt;strong&gt;Dark and Light mode on websites&lt;/strong&gt;. I am glad that both exist, but the way they are usually implemented sometimes drives me crazy.&lt;/p&gt;
+&lt;p&gt;My eyes (and I think many other people can relate to this) start to flicker slightly after a few seconds of reading white text on a dark background, or at least it feels that way. The stronger the contrast, e.g. pure white on pure black, the faster it goes and the worse it is. I then have to stop reading. If I then look away, white lines continue to dance in front of my eyes for about a minute until the effect disappears. &lt;a href=&#34;https://indieweb.social/@aworkinglibrary@mstdn.social/110979375072106482&#34;&gt;Mandy reported on Mastodon&lt;/a&gt; about this halation effect, which in her case is due to astigmatism. I don’t know of any such corneal curvature in my case, but the result seems to be similar.&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+
+&lt;p&gt;The problem is, that &lt;strong&gt;the effect only occurs with text&lt;/strong&gt; and I have activated dark mode on all my devices because I generally find it more pleasant. Icons, images and the like look better and it perhaps also saves a bit of power. Just not when I read text longer than a headline!&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Back to Garrit and roasting him ;)&lt;/p&gt;
+&lt;p&gt;What really got me going was that he wrote something about “&lt;em&gt;Proud Member of &lt;a href=&#34;https://darktheme.club/&#34;&gt;darktheme.club&lt;/a&gt;&lt;/em&gt;“ on his blog, which he also founded himself. In the FAQ it says, among other things:&lt;/p&gt;
+
+    &lt;div&gt;
+        &lt;blockquote&gt;&lt;p&gt;What’s the point of all this?&lt;br&gt;…&lt;br&gt;People with certain visual imparements have a hard time navigating a web without a dark theme. There are plugins that try to emulate a dark theme for some sites, but those are not always accurate.&lt;br&gt;…&lt;/p&gt;
+&lt;/blockquote&gt;
+        &lt;cite&gt;&lt;a href=&#34;https://darktheme.club/faq&#34;&gt;--- darktheme.club FAQ&lt;/a&gt;&lt;/cite&gt;
+    &lt;/div&gt;
+  
+
+&lt;p&gt;Yes, Garrit. You’re right. But you’re falling a little short here. It’s perfectly fine and almost a must-have nowadays to automatically display a web page to the user in the mode they have set using the CSS media feature &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme&#34;&gt;&lt;code&gt;prefers-color-theme&lt;/code&gt;&lt;/a&gt;, but unfortunately that’s not enough. Being a member of a dark theme club and referring to the visually impaired in this way excludes others, like me for example.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;Simple-Solution&#34;&gt;&lt;a href=&#34;#Simple-Solution&#34; class=&#34;headerlink&#34; title=&#34;Simple Solution&#34;&gt;&lt;/a&gt;Simple Solution&lt;/h2&gt;&lt;p&gt;Yet it is so easy to SIGNIFICANTLY increase acceptance by simply adding a &lt;strong&gt;customizable theme button&lt;/strong&gt; to your own site! People like me almost automatically look in the top right-hand corner of a page (do it now ;) to see whether the almost standardized moon or sun symbol can be found there. Every website operator, who has implemented &lt;code&gt;prefers-color-theme&lt;/code&gt; has already written the necessary CSS code. &lt;strong&gt;The ONLY thing left to do is to add a f&amp;#42;&amp;#42;&amp;#42; switch for it!&lt;/strong&gt; You don’t even need JavaScript for that. It also works with pure CSS, as shown &lt;a href=&#34;https://alexandersandberg.com/articles/creating-a-website-theme-switcher-with-css-only/&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://codepen.io/michellebarker/pen/GzzrGJ/&#34;&gt;here&lt;/a&gt;. Many of the JavaScript solutions also offer the option of saving the selection in the browser’s local storage for the next visit. Your choice…&lt;/p&gt;
+
+    &lt;a href=&#34;https://codepen.io/michellebarker/pen/GzzrGJ/&#34;&gt;
+        &lt;img src=&#34;theme-switcher.png&#34; alt=&#34;Theme Switcher Pen from Michelle Barker&#34; /&gt;
+    &lt;/a&gt;
+    
+
+&lt;p&gt;In the list of darktheme.club members, however, there are only a handful of websites with the tag &lt;strong&gt;JavaScript&lt;/strong&gt; which indicates such an individual theme switcher and I wonder whether this is due to ignorance or lack of knowledge!?&lt;br&gt;Even design experts and proven CSS specialists who constantly write about UI&amp;#x2F;UX and accessibility (I won’t mention any names) have the audacity to use &lt;code&gt;background-color:#222; color:#fff&lt;/code&gt; on their own blogs and sometimes even do without the CSS media feature! NO … THIS IS NOT A COOL DESIGN! I immediately unfollow such people, because there must be more pretense than reality.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;Be-kind-to-your-readers-…-let-them-choose&#34;&gt;&lt;a href=&#34;#Be-kind-to-your-readers-…-let-them-choose&#34; class=&#34;headerlink&#34; title=&#34;Be kind to your readers … let them choose&#34;&gt;&lt;/a&gt;Be kind to your readers … let them choose&lt;/h2&gt;&lt;p&gt;I approached a few bloggers and asked if they could add a theme switch and only got the lapidary answer that I could use the OS theme switch. Yes, I can, but do I want to keep fiddling with my settings just because I generally like the dark theme and only need the light theme for reading? No, since such a switch is so easy to implement, I’d rather do without the textual outpourings of these lazy morons … :|&lt;/p&gt;
+&lt;p&gt;As is so often the case, think of your users and they will be thankful. Maybe you didn’t had this “problem” on your radar and that’s perfectly ok (my site is also far from perfect) … but if my contribution here has given you the impetus to add a switch on your site, then I (and many others too, I’m sure) will be VERY happy about it.&lt;/p&gt;
+&lt;p&gt;Ok Garrit … now its time to roast me :D&lt;/p&gt;
+ ]]>
+      </description>
+    </item>
     <item>
       <guid isPermalink="true">https://kiko.io/post/SVWW-vs-Braunschweig-2023-12-08/</guid>
       <title>SVWW vs. Braunschweig @ 2023-12-08</title>
@@ -110,12 +154,12 @@
 &lt;h2 id=&#34;The-Game&#34;&gt;&lt;a href=&#34;#The-Game&#34; class=&#34;headerlink&#34; title=&#34;The Game&#34;&gt;&lt;/a&gt;The Game&lt;/h2&gt;&lt;p&gt;The coach seemed to have had something similar in mind, because as soon as the ball started rolling, our boys attacked their opponents and had their first 100% chance after just 20 seconds (!). A few minutes later, the ball was actually in the goal, but it was probably disallowed by the referee for offside or something similar. I don’t know but it didn’t matter as long as it continued at this pace. Braunschweig were hopelessly out of their depth and simply tried to prevent the inevitable … until the 18th minute … 1:0 - A fine header by our defender &lt;strong&gt;Aleksandar Vukotic&lt;/strong&gt; :)&lt;/p&gt;
 &lt;p&gt;However, the problem was that our team then let themselves go a little and only benefited from the opponent’s harmlessness until the break. As if the job was already done…&lt;/p&gt;
 
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-cmff8q&#34;&gt;
+      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-kic6sc&#34;&gt;
         &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Braunschweig-2023-12-08/PXL_20231208_165816147.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Braunschweig-2023-12-08/PXL_20231208_170229560.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Braunschweig-2023-12-08/PXL_20231208_170946775.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Braunschweig-2023-12-08/PXL_20231208_172204474.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Braunschweig-2023-12-08/PXL_20231208_172706390.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Braunschweig-2023-12-08/PXL_20231208_173932826.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Braunschweig-2023-12-08/PXL_20231208_174727767.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Braunschweig-2023-12-08/PXL_20231208_183243917.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Braunschweig-2023-12-08/PXL_20231208_184445039.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;script&gt;
-        let macy_cmff8q = new Macy({
-          container: &#39;#image-masonry-cmff8q&#39;,
+        let macy_kic6sc = new Macy({
+          container: &#39;#image-masonry-kic6sc&#39;,
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -217,7 +261,7 @@
 &lt;p&gt;Not only because it felt like luxury camping without people but only water around, but also because it gave a pleasant feeling of freedom. Yes, we weren’t nearly alone on the lakes and getting a good spot in a marina for electricity and fresh water wasn’t always easy, but then just anchoring in any lake for the night and being woken up by birdsong and a gentle swell was magical.&lt;/p&gt;
 &lt;p&gt;Below are a few pictures from this trip, some of which will be used again as hero images in this blog:&lt;/p&gt;
 
-    &lt;div class=&#34;photo-list&#34; id=&#34;photo-list-zyu9ga&#34;&gt;
+    &lt;div class=&#34;photo-list&#34; id=&#34;photo-list-6jube6&#34;&gt;
       
       &lt;figure&gt;
         &lt;a href=&#34;/photos/23-08-Mecklenburg-Seen-0040&#34; class=&#34;no-break&#34;&gt;
@@ -526,7 +570,7 @@
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 
 
-    &lt;div class=&#34;photo-list&#34; id=&#34;photo-list-jmd3ar&#34;&gt;
+    &lt;div class=&#34;photo-list&#34; id=&#34;photo-list-9tn5k4&#34;&gt;
       
       &lt;figure&gt;
         &lt;a href=&#34;/photos/23-09-11-Speyer-0001&#34; class=&#34;no-break&#34;&gt;
@@ -622,12 +666,12 @@
 &lt;hr&gt;
 &lt;h2 id=&#34;The-Game&#34;&gt;&lt;a href=&#34;#The-Game&#34; class=&#34;headerlink&#34; title=&#34;The Game&#34;&gt;&lt;/a&gt;The Game&lt;/h2&gt;&lt;p&gt;In the first half, the game was rather well balanced, even if you had the feeling that our team was the only ones playing. There was no sign of Kaiserlautern’s attacking drive. Up until the 39th minute, we had one chance to score, but the visitors hadn’t even had a shot on our goal. Nothing, nada, niente. But then the ball was in our net: &lt;strong&gt;0:1&lt;/strong&gt;! A strange goal, because it didn’t look intentional. The ball just bounced at Ritter’s feet by chance and he simply took a shot. Goal. Damn…&lt;/p&gt;
 
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-9vxbau&#34;&gt;
+      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-hkbq41&#34;&gt;
         &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Kaiserslautern-2023-11-12/PXL_20231112_120526904.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Kaiserslautern-2023-11-12/PXL_20231112_122110857.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Kaiserslautern-2023-11-12/PXL_20231112_122854839.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Kaiserslautern-2023-11-12/PXL_20231112_122739398.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Kaiserslautern-2023-11-12/PXL_20231112_122947255.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Kaiserslautern-2023-11-12/PXL_20231112_135210240.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Kaiserslautern-2023-11-12/PXL_20231112_141045409.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Kaiserslautern-2023-11-12/PXL_20231112_142300311.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Kaiserslautern-2023-11-12/PXL_20231112_142353462.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Kaiserslautern-2023-11-12/PXL_20231112_142646533.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Kaiserslautern-2023-11-12/PXL_20231112_142730319.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Kaiserslautern-2023-11-12/PXL_20231112_142841643.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;script&gt;
-        let macy_9vxbau = new Macy({
-          container: &#39;#image-masonry-9vxbau&#39;,
+        let macy_hkbq41 = new Macy({
+          container: &#39;#image-masonry-hkbq41&#39;,
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -811,12 +855,12 @@
 &lt;p&gt;Stritzel has saved fantastic balls this season, but not a penalty yet … until then, as he parried Kinsombi’s weak shot to the side. Yesss…!&lt;/p&gt;
 &lt;p&gt;Nothing much happened until half-time, but our guys were slowly gaining the upper hand, as the game was played almost exclusively in the opponent’s half at the beginning of the second half, with occasional counter-attacks by Rostock, but they were too erratic to have any effect. Our defence stood firm.&lt;/p&gt;
 
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-x554w2&#34;&gt;
+      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-58gzq7&#34;&gt;
         &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Hansa-Rostock-2023-10-29/PXL_20231029_122726572.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Hansa-Rostock-2023-10-29/PXL_20231029_122837500.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Hansa-Rostock-2023-10-29/PXL_20231029_121402556.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Hansa-Rostock-2023-10-29/PXL_20231029_123926894.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Hansa-Rostock-2023-10-29/PXL_20231029_140540817.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Hansa-Rostock-2023-10-29/PXL_20231029_141750690.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Hansa-Rostock-2023-10-29/PXL_20231029_142643939.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Hansa-Rostock-2023-10-29/PXL_20231029_142901228.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Hansa-Rostock-2023-10-29/PXL_20231029_142951071.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;script&gt;
-        let macy_x554w2 = new Macy({
-          container: &#39;#image-masonry-x554w2&#39;,
+        let macy_58gzq7 = new Macy({
+          container: &#39;#image-masonry-58gzq7&#39;,
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -882,12 +926,12 @@
 &lt;hr&gt;
 &lt;h2 id=&#34;The-Game&#34;&gt;&lt;a href=&#34;#The-Game&#34; class=&#34;headerlink&#34; title=&#34;The Game&#34;&gt;&lt;/a&gt;The Game&lt;/h2&gt;&lt;p&gt;The first 10 minutes of the game were unspectacular. They felt each other out and the Finns played diligently and should have been in the lead after 5 minutes, but got in the 9th minute after some guesswork from the referee with VAR support a penalty against them. &lt;/p&gt;
 
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-xvpllf&#34;&gt;
+      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-kd94wx&#34;&gt;
         &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SGE-vs-HJK-2023-10-26/PXL_20231026_191040789.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SGE-vs-HJK-2023-10-26/PXL_20231026_191000090.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;script&gt;
-        let macy_xvpllf = new Macy({
-          container: &#39;#image-masonry-xvpllf&#39;,
+        let macy_kd94wx = new Macy({
+          container: &#39;#image-masonry-kd94wx&#39;,
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -923,12 +967,12 @@
 &lt;p&gt;In the break, the coach of the Finns seems to have been a little louder, because his guys played a little stronger and more determined, only to get another one in the 55th minute.&lt;/p&gt;
 &lt;p&gt;With 10 minutes to go, things got emotional in the stadium: the coach substituted Timothy Chandler, a Frankfurt veteran who has been with the club for almost 10 years and his first appearance this season. The tens of thousands of fans were completely out of their minds, screaming “Tiiiimmmyyy” as soon as he got to the ball. It was crazy. How must it feel to be showered with so much fan love! Things almost got out of hand when Chandler sprinted forward on the right flank in the 89th minute and made a wonderful pass into the middle and Dina Ebimbe just had to slot it in for 6:0.&lt;/p&gt;
 
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-d090op&#34;&gt;
+      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-oi927j&#34;&gt;
         &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SGE-vs-HJK-2023-10-26/PXL_20231026_183650025.jpg&#34; alt=&#34;Attila, the Eintracht Eagle&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SGE-vs-HJK-2023-10-26/PXL_20231026_184409439.jpg&#34; alt=&#34;Game Comic&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SGE-vs-HJK-2023-10-26/PXL_20231026_183658672.jpg&#34; alt=&#34;Just before kickoff&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SGE-vs-HJK-2023-10-26/PXL_20231026_192703385.jpg&#34; alt=&#34;2:0&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SGE-vs-HJK-2023-10-26/PXL_20231026_193136300.jpg&#34; alt=&#34;Kickoff after 3:0&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SGE-vs-HJK-2023-10-26/PXL_20231026_205110961.jpg&#34; alt=&#34;Final whistle&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SGE-vs-HJK-2023-10-26/PXL_20231026_205742073.jpg&#34; alt=&#34;Lap of Honor&#34; /&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;script&gt;
-        let macy_d090op = new Macy({
-          container: &#39;#image-masonry-d090op&#39;,
+        let macy_oi927j = new Macy({
+          container: &#39;#image-masonry-oi927j&#39;,
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -1084,12 +1128,12 @@
 &lt;h2 id=&#34;The-Game&#34;&gt;&lt;a href=&#34;#The-Game&#34; class=&#34;headerlink&#34; title=&#34;The Game&#34;&gt;&lt;/a&gt;The Game&lt;/h2&gt;&lt;p&gt;HSV is actually in shape this year to make it back to the Bundesliga. They have already dropped a few points, but have been on the promotion places from the beginning. This year it should be something and accordingly dominant have the Hamburg the game against once again deep standing Wiesbadener also started. Very sure of the ball and winning almost every duel, they were unable to capitalize on this in the first half. They brought the ball very close to the goal, but not into it, and you could tell that the guests were getting a little more annoyed as time went on.&lt;/p&gt;
 &lt;p&gt;This was expressed shortly before the half-time break also in a few unsportsmanlike conduct. Dropping and claiming foul play is simply stupid and only provokes catcalls. The one or other time is overall bad referee but also fell for the trick or has made other nonsensical decisions, which caused the “right” fans around me to nastiest insults.&lt;/p&gt;
 
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-i5x4cu&#34;&gt;
+      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-amlqr4&#34;&gt;
         &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_103936756.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_104935878.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_105740138.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_105912858.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_110002467.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_110827714.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_111728897.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_123948926.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_125719562.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-HSV-2023-10-07/PXL_20231007_125751495.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;script&gt;
-        let macy_i5x4cu = new Macy({
-          container: &#39;#image-masonry-i5x4cu&#39;,
+        let macy_amlqr4 = new Macy({
+          container: &#39;#image-masonry-amlqr4&#39;,
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -1143,7 +1187,7 @@
 
 &lt;p&gt;Usually the best photos end up unnoticed as &lt;a href=&#34;/post/Pool-Photo-Generator/&#34; title=&#34;Pool Photo Generator&#34;&gt;pool photos&lt;/a&gt; here on my blog until I use one as a header image, but now I make a separate post out of each set before I publish the individual photos on other sites like &lt;a href=&#34;https://500px.com/p/kikon&#34;&gt;500px&lt;/a&gt; or &lt;a href=&#34;https://pixelfed.social/kristofz&#34;&gt;Pixelfed&lt;/a&gt;.&lt;/p&gt;
 
-    &lt;div class=&#34;photo-list&#34; id=&#34;photo-list-19v47m&#34;&gt;
+    &lt;div class=&#34;photo-list&#34; id=&#34;photo-list-kftlqu&#34;&gt;
       
       &lt;figure&gt;
         &lt;a href=&#34;/photos/23-07-Mallorca-0300&#34; class=&#34;no-break&#34;&gt;
@@ -1459,12 +1503,12 @@
 &lt;p&gt;In the meantime we were on two more concerts in Frankfurt, then in Marburg (Open-Air) and in Mainz on the “Night of the Ballads”. Most recently we saw them two weeks ago at the MPS (“Mittelalterlich Phantasie Spectaculum”, a medieval festival) in Speyer, where they played open-air with other bands from the “industry”. On the one hand, I think it’s great that the guys, even if they now fill large halls in Germany, have not forgotten their origins, and on the other hand, I now had the opportunity to get very close to the stage with my camera.&lt;/p&gt;
 &lt;p&gt;Here are the results:&lt;/p&gt;
 
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-2k57g7&#34;&gt;
+      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-wzba2h&#34;&gt;
         &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0092.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0094.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0103.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0104.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0105.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0106.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0108.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0111.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0115.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0123.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0126.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0128.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0131.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0136.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0150.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0151.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0152.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0153.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0156.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0157.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0159.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0162.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0169.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0171.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0172.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0173.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0177.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0179.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Versengold-in-Concert/23-08-26-MPS-Speyer-0182.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;script&gt;
-        let macy_2k57g7 = new Macy({
-          container: &#39;#image-masonry-2k57g7&#39;,
+        let macy_wzba2h = new Macy({
+          container: &#39;#image-masonry-wzba2h&#39;,
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -1521,12 +1565,12 @@
 &lt;p&gt;It wasn’t, however, that Schalke dominated the game. We carelessly let them just do it and the fans had their fun when they shot the ball into the clouds again after a lot of roaring and stomping. Funny.&lt;/p&gt;
 &lt;p&gt;At the beginning of the second half, this continued seamlessly, even if you noticed that the coach in the cabin must have yelled at one or the other and these were now somewhat more active … and suddenly the ball was in our net … &lt;strong&gt;0:1&lt;/strong&gt;! What? How? A goal in the 54. minute for Schalke out of (almost) nothing! I have to watch that again on TV … :|&lt;/p&gt;
 
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-bziksa&#34;&gt;
+      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-475pt0&#34;&gt;
         &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_104957617.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_105327820.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_105347190.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_105548827.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_105749100.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_124411594.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_111931000.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_120730081.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_125820397.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/SVWW-vs-Schalke-2023-09-02/PXL_20230902_130050774.jpg&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;script&gt;
-        let macy_bziksa = new Macy({
-          container: &#39;#image-masonry-bziksa&#39;,
+        let macy_475pt0 = new Macy({
+          container: &#39;#image-masonry-475pt0&#39;,
           trueOrder: false,
           waitForImages: false,
           useOwnImageLoader: false,
@@ -1561,66 +1605,6 @@
     &lt;a href=&#34;https://www.kicker.de/2-bundesliga/tabelle&#34;&gt;
         &lt;img src=&#34;tabelle-23-09-02.png&#34; alt=&#34;Table 2. Liga, Saturday 02. September 2023&#34; /&gt;
     &lt;/a&gt;
-    
- ]]>
-      </description>
-    </item>
-    <item>
-      <guid isPermalink="true">https://kiko.io/post/Image-Masonry-Tag-Plugin-for-Hexo/</guid>
-      <title>Image Masonry Tag Plugin for Hexo</title>
-      <link>https://kiko.io/post/Image-Masonry-Tag-Plugin-for-Hexo/</link>
-      <category>Hexo</category>
-      <category>GitHub</category>
-      <category>Plugin</category>
-      <pubDate>Fri, 01 Sep 2023 14:07:37 +0000</pubDate>
-      <description>
-        <![CDATA[ &lt;p&gt;Displaying a few more images than usual in a post is always a bit tricky, because you have to make sure they don’t get too big and drown out the text. But they should not be too small either and the arrangement is also important to consider.&lt;/p&gt;
-&lt;p&gt;For this purpose I have so far used my &lt;a href=&#34;/post/Hexo-Tag-Plugin-Collection/#image-slide&#34;&gt;Image Slider Tag Plugin&lt;/a&gt;, but with this you only ever see one of the images and have to scroll through the rest horizontally. A medium sized overview, best in the so called masonry format, where images are automatically assembled based on their size on a limited area, would be much better for some cases. There are a variety of CSS or JavaScript solutions out there on the net, but the most suitable for me was &lt;a href=&#34;http://macyjs.com/&#34;&gt;&lt;strong&gt;Macy.js&lt;/strong&gt;&lt;/a&gt; … and how I integrated it into my Hexo environment is what I want to describe here.&lt;/p&gt;
-&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
-
-&lt;p&gt;Like (&lt;a href=&#34;https://github.com/ganlanyuan/tiny-slider&#34;&gt;Tiny Slider&lt;/a&gt;), Macy.js is also based on JavaScript, as the name already expresses. The setup in HTML is very simple: a certain number of wrappers are arranged in a container, each of which contains an image:&lt;/p&gt;
-&lt;figure class=&#34;highlight html&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;id&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;macy-container&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;src&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;/photos/normal/D50_0053.jpg&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;alt&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;src&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;/photos/normal/D50_0075.jpg&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;alt&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;src&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;/photos/normal/D50_0086.jpg&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;alt&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;src&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;/photos/normal/D50_1092.jpg&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;alt&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;src&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;/photos/normal/D50_1147.jpg&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;alt&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;src&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;/photos/normal/D50_1577.jpg&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;alt&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;src&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;/photos/normal/_D50_3251.jpg&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;alt&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;  &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;It does not matter whether the images are the same size or whether they are in portrait or landscape format. Macy.js then takes care of the sensible arrangement of the images in the container. All that is missing now is the call to the script:&lt;/p&gt;
-&lt;figure class=&#34;highlight js&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;let&lt;/span&gt; macy = &lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;Macy&lt;/span&gt;(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;container&lt;/span&gt;: &lt;span class=&#34;string&#34;&gt;&amp;#x27;#macy-container&amp;#x27;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;trueOrder&lt;/span&gt;: &lt;span class=&#34;literal&#34;&gt;false&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;waitForImages&lt;/span&gt;: &lt;span class=&#34;literal&#34;&gt;false&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;useOwnImageLoader&lt;/span&gt;: &lt;span class=&#34;literal&#34;&gt;false&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;debug&lt;/span&gt;: &lt;span class=&#34;literal&#34;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;mobileFirst&lt;/span&gt;: &lt;span class=&#34;literal&#34;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;columns&lt;/span&gt;: &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;margin&lt;/span&gt;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;y&lt;/span&gt;: &lt;span class=&#34;number&#34;&gt;6&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;x&lt;/span&gt;: &lt;span class=&#34;number&#34;&gt;6&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;breakAt&lt;/span&gt;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;number&#34;&gt;1024&lt;/span&gt;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;attr&#34;&gt;margin&lt;/span&gt;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;attr&#34;&gt;x&lt;/span&gt;: &lt;span class=&#34;number&#34;&gt;8&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;attr&#34;&gt;y&lt;/span&gt;: &lt;span class=&#34;number&#34;&gt;8&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;attr&#34;&gt;columns&lt;/span&gt;: &lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;number&#34;&gt;768&lt;/span&gt;: &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;For more information on the available parameters (and there are some interesting), please visit &lt;a href=&#34;https://github.com/bigbite/macy.js&#34;&gt;https://github.com/bigbite/macy.js&lt;/a&gt;.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;The-Tag-Plugin&#34;&gt;&lt;a href=&#34;#The-Tag-Plugin&#34; class=&#34;headerlink&#34; title=&#34;The Tag Plugin&#34;&gt;&lt;/a&gt;The Tag Plugin&lt;/h2&gt;&lt;p&gt;To make it easy for Hexo users, I created a tag plugin from the code above and added it to my &lt;a href=&#34;https://github.com/kristofzerbe/hexo-tag-plugins#image-masonry&#34;&gt;Hexo Tag Plugin Collection on GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Usage Example:&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight js&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;% image_masonry&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;string&#34;&gt;&amp;quot;../../photos/normal/D50_0053.jpg|Thomas&amp;#x27; Ruby Prince I&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;string&#34;&gt;&amp;quot;../../photos/normal/_D50_3251.jpg|No Name&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;string&#34;&gt;&amp;quot;../../photos/normal/D50_0086.jpg|Thomas&amp;#x27; German Flag&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;string&#34;&gt;&amp;quot;../../photos/normal/D50_1147.jpg|Poppy Green&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;string&#34;&gt;&amp;quot;../../photos/normal/D50_0075.jpg|Thomas Wild Tulips&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;string&#34;&gt;&amp;quot;../../photos/normal/D50_7474.jpg|Garden Beauties XIV&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;string&#34;&gt;&amp;quot;../../photos/normal/D50_4451.jpg|Garden Beauties I&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;string&#34;&gt;&amp;quot;../../photos/normal/D50_1577.jpg|Floral Magic XIV&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;%&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;Live Output:&lt;/strong&gt;&lt;/p&gt;
-
-      &lt;div class=&#34;image-masonry&#34; id=&#34;image-masonry-aez654&#34;&gt;
-        &lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0053.jpg&#34; alt=&#34;Thomas&#39; Ruby Prince I&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/_D50_3251.jpg&#34; alt=&#34;No Name&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0086.jpg&#34; alt=&#34;Thomas&#39; German Flag&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_1147.jpg&#34; alt=&#34;Poppy Green&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_0075.jpg&#34; alt=&#34;Thomas Wild Tulips&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_7474.jpg&#34; alt=&#34;Garden Beauties XIV&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_4451.jpg&#34; alt=&#34;Garden Beauties I&#34; /&gt;&lt;/div&gt;&lt;div&gt;&lt;img class=&#34;no-caption&#34; src=&#34;/post/Image-Masonry-Tag-Plugin-for-Hexo/../../photos/normal/D50_1577.jpg&#34; alt=&#34;Floral Magic XIV&#34; /&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;script&gt;
-        let macy_aez654 = new Macy({
-          container: &#39;#image-masonry-aez654&#39;,
-          trueOrder: false,
-          waitForImages: false,
-          useOwnImageLoader: false,
-          debug: true,
-          mobileFirst: true,
-          columns: 2,
-          margin: {
-            y: 6,
-            x: 6
-          },
-          breakAt: {
-            980: {
-              margin: {
-                x: 8,
-                y: 8
-              },
-              columns: 3
-            },
-            768: 2,
-            640: 3
-          }
-        });
-      &lt;/script&gt;
     
  ]]>
       </description>
