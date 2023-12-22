@@ -1,10 +1,12 @@
 ---
+slug: Problems-with-Chromium-Web-Apps-and-Url-Redirects
 title: Problems with Chromium Web Apps and Url Redirects
 subtitle: How to deal with "Add To Home Screen" when calling Url has redirects
 date: 2022-01-19 15:36:59
 photograph:
-  file: DSC_6371-HDR.jpg
-  name: Lonely Lock
+  file: DSC_1290.jpg
+  name: Untitled
+  socialmedia: /static/images/social-media/Problems-with-Chromium-Web-Apps-and-Url-Redirects.png
 categories:
   - Misc
 tags:
