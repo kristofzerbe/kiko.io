@@ -10,15 +10,15 @@ jobs:
   hexo-build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           # If your repository depends on submodule, please see: https://github.com/actions/checkout
           submodules: recursive
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v3
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: '20'
       - name: Cache NPM dependencies
         uses: actions/cache@v3
         with:
@@ -33,7 +33,7 @@ jobs:
       - name: Run Pagefind
         run: npm_config_yes=true npx pagefind
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
+          token: ${{ secrets.GITHUB_TOKEN }}
+          folder: docs
