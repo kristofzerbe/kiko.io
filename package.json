@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "build": "grunt && hexo generate && npx pagefind",
-    "generate": "hexo generate",
+    "generate": "grunt && hexo generate",
     "start": "hexo generate && npx pagefind && hexo server",
-    "all": "grunt && hexo clean && hexo generate && npx pagefind && hexo server"
+    "all": "grunt && hexo clean && hexo generate && npx pagefind && hexo server",
+    "webmention": "hexo webmention --send"
   },
   "hexo": {
     "version": "7.0.0"
