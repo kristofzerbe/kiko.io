@@ -19,7 +19,7 @@ related:
   - Get-and-use-a-dominant-color-that-matches-the-header-image
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/111624290725749988
 ---
 
 Coming from a [IndieNews post from Simone](https://minutestomidnight.co.uk/blog/giving-context-to-a-blogroll/), I stumbled over Garrit's post <a href="https://garrit.xyz/posts/2023-12-12-roast-my-site" class="u-in-reply-to">**Roast my Site!**</a>, to which Simone had referred. I was also just in roast mode again and if someone asks me so kindly, then go for it...
