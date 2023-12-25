@@ -20,7 +20,7 @@ related:
   - Photo-Workflow-Re-Thought
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/111636128937846531
 ---
 
 I don't like to call myself a "photographer", as my friends sometimes do when they are enthusiastic about one of my pictures, but rather a "photo enthusiast", because I know that I have no idea about real photography and am simply too lazy to take the perfect photo.
