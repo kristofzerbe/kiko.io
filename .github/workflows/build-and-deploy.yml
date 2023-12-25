@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-      - run: npm ci
+      - run: npm install -force
       #---------------------------------------------------
       - name: Run Grunt & Hexo Generate
         run: npm run generate
@@ -55,7 +55,7 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-      - run: npm ci
+      - run: npm install -force
       #---------------------------------------------------
       - name: Send Webmentions
         run: npm run webmention # latest published post only
