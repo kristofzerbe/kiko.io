@@ -23,7 +23,7 @@ syndication:
   - host: DevTo
     url: https://dev.to/kristofzerbe/indiefediwebverse-3hpe
   - host: IndieNews
-    url: https://news.indieweb.org/en
+    url: https://news.indieweb.org/en/kiko.io/post/IndieFediWebVerse/
 ---
 
 Today I was listening to Mike McCue's Dot Social podcast where he [talks](https://about.flipboard.com/inside-flipboard/eugen-rochko/) with Eugen Rochko about Mastodon and ActivityPub. At around 12:30 Eugen talked about Twitter and the fact that Tumblr is willing to join the Fediverse network and he asked a question, which he immediately tried to improve again:
