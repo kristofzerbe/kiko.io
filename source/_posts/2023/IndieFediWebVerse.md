@@ -19,7 +19,7 @@ related:
   - Don-t-be-ignorant-and-offer-a-theme-switch
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/111652881681835667
 ---
 
 Today I was listening to Mike McCue's Dot Social podcast where he [talks](https://about.flipboard.com/inside-flipboard/eugen-rochko/) with Eugen Rochko about Mastodon and ActivityPub. At around 12:30 Eugen talked about Twitter and the fact that Tumblr is willing to join the Fediverse network and he asked a question, which he immediately tried to improve again:
