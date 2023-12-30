@@ -559,11 +559,11 @@
     border-bottom-right-radius: 4px
     transition: all ease-out .2s
     z-index: 1
-    box-shadow: inset 0 20px 20px -20px color-border-amp
+    box-shadow: inset 0 20px 20px -20px #aaa
     background-color: color-wm-button-background
     /[data-theme="dark"] &
+      box-shadow: inset 0 20px 20px -20px #000
       background-color: dark-color-wm-button-background
-      box-shadow: inset 0 20px 20px -20px dark-color-border-amp
     &:focus
       outline: none
     &.mastodon
@@ -572,9 +572,11 @@
         color: var(--dark-color-link)
         background-color: dark-color-block
       &:hover
+        box-shadow: inset 0 20px 20px -20px #666
         color: color-hover-background
         background-color: var(--color-link)
         /[data-theme="dark"] &
+          box-shadow: inset 0 20px 20px -20px #222
           color: dark-color-hover-background
           background-color: var(--dark-color-link)
 
@@ -622,36 +624,75 @@
       &.host-500px
         color: color-500px
         background-image: url(/images/500px.svg)
+        background-size: 16px
+        background-position: 18px 10px
         /[data-theme="dark"] &
           filter: invert(0.75)
+        &:hover
+          border-bottom-color: color-500px
       &.host-flickr
         color: color-flickr
         background-image: url(/images/flickr.svg)
+        background-size: 20px
+        background-position: 14px 9px
+        span
+          &:hover
+            border-bottom-color: color-flickr
       &.host-pixelfed
         color: color-pixelfed
         background-image: url(/images/pixelfed.svg)
+        background-size: 16px
+        background-position: 18px 10px
         /[data-theme="dark"] &
           background-image: url(/images/pixelfed_invert.svg)
           color: #aaa
+        span
+          &:hover
+            border-bottom-color: color-pixelfed
       &.host-unsplash
         color: color-unsplash
         background-image: url(/images/unsplash.svg)
+        background-size: 21px
+        background-position: 15px 7px
         /[data-theme="dark"] &
           filter: invert(0.75)
+        span
+          &:hover
+            border-bottom-color: color-unsplash
       &.host-twitter
         color: color-twitter
         background-image: url(/images/twitter.svg)
+        background-size: 16px
+        background-position: 18px 12px
+        span
+          &:hover
+            border-bottom-color: color-twitter
       &.host-mastodon
         color: color-mastodon
         background-image: url(/images/mastodon.svg)
+        background-size: 16px
+        background-position: 19px 11px
+        span
+          &:hover
+            border-bottom-color: color-mastodon
       &.host-indienews
         color: color-indieweb
         background-image: url(/images/indieweb.svg)
+        background-size: 24px
+        background-position: 12px 6px
+        span
+          &:hover
+            border-bottom-color: color-indieweb
       &.host-devto
         color: color-devto
         background-image: url(/images/devto.svg)
+        background-size: 16px
+        background-position: 17px 9px
         /[data-theme="dark"] &
           filter: invert(0.75)
+        span
+          &:hover
+            border-bottom-color: color-devto
 
 .article-interaction
   @extend $base-style

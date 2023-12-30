@@ -52,7 +52,7 @@ Like ([Tiny Slider](https://github.com/ganlanyuan/tiny-slider)), Macy.js is also
     <img src="/photos/normal/D50_1577.jpg" alt="">
   </div>
   <div>
-    <img src="/photos/normal/_D50_3251.jpg" alt="">
+    <img src="/photos/normal/D50_1860.jpg" alt="">
   </div>
 </div>  
 ```
@@ -98,7 +98,7 @@ To make it easy for Hexo users, I created a tag plugin from the code above and a
 ```js
 {% image_masonry
   "../../photos/normal/D50_0053.jpg|Thomas' Ruby Prince I"
-  "../../photos/normal/_D50_3251.jpg|No Name"
+  "../../photos/normal/D50_1860.jpg|Thomas' Garden VI"
   "../../photos/normal/D50_0086.jpg|Thomas' German Flag"
   "../../photos/normal/D50_1147.jpg|Poppy Green"
   "../../photos/normal/D50_0075.jpg|Thomas Wild Tulips"
@@ -111,7 +111,7 @@ To make it easy for Hexo users, I created a tag plugin from the code above and a
 **Live Output:**
 {% image_masonry
   "../../photos/normal/D50_0053.jpg|Thomas' Ruby Prince I"
-  "../../photos/normal/_D50_3251.jpg|No Name"
+  "../../photos/normal/D50_1860.jpg|Thomas' Garden VI"
   "../../photos/normal/D50_0086.jpg|Thomas' German Flag"
   "../../photos/normal/D50_1147.jpg|Poppy Green"
   "../../photos/normal/D50_0075.jpg|Thomas Wild Tulips"
