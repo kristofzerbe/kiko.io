@@ -620,27 +620,38 @@
           /[data-theme="dark"] &
             border-bottom: var(--dark-color-link) 1px solid
       &.host-500px
+        color: color-500px
         background-image: url(/images/500px.svg)
         /[data-theme="dark"] &
-          background-image: url(/images/500px_invert.svg)
+          filter: invert(0.75)
       &.host-flickr
+        color: color-flickr
         background-image: url(/images/flickr.svg)
       &.host-pixelfed
+        color: color-pixelfed
         background-image: url(/images/pixelfed.svg)
         /[data-theme="dark"] &
           background-image: url(/images/pixelfed_invert.svg)
+          color: #aaa
       &.host-unsplash
+        color: color-unsplash
         background-image: url(/images/unsplash.svg)
         /[data-theme="dark"] &
-          background-image: url(/images/unsplash_invert.svg)
+          filter: invert(0.75)
       &.host-twitter
+        color: color-twitter
         background-image: url(/images/twitter.svg)
       &.host-mastodon
+        color: color-mastodon
         background-image: url(/images/mastodon.svg)
       &.host-indienews
+        color: color-indieweb
         background-image: url(/images/indieweb.svg)
       &.host-devto
+        color: color-devto
         background-image: url(/images/devto.svg)
+        /[data-theme="dark"] &
+          filter: invert(0.75)
 
 .article-interaction
   @extend $base-style
