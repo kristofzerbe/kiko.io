@@ -28,6 +28,10 @@ global-reset()
   /[data-theme="dark"] &
     background-color: dark-color-border
 
+:root
+  --color-link: color-link
+  --dark-color-link: dark-color-link
+
 html
   text-size-adjust: none // Andy Bells Modernized Reset
   font-size: font-size
@@ -117,9 +121,9 @@ figure
 
 a
   transition: all ease-out 0.2s
-  color: color-link
+  color: var(--color-link)
   /[data-theme="dark"] &
-    color: dark-color-link
+    color: var(--dark-color-link)
 
 a:not([class])
   text-decoration-skip-ink: auto // Andy Bells Modernized Reset (not need, because border underline here)

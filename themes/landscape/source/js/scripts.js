@@ -220,20 +220,25 @@ function setCodepenTheme(theme) {
 }
 
 function setVibrantColor(theme) {
-  try {
-    let img = $("#photo-preload").attr("href");
-    Vibrant.from(img).getPalette().then(palette => {
-      let swatch = palette.DarkVibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-      let color = swatch.getHex();
-      if (theme === "dark") {
-        let tColor = tinycolor(color).darken(10);
-        color = tColor.toHexString();
-      }
-      if(!$("#header").hasClass("no-vibrant")) {
+  if(!$("#header").hasClass("no-vibrant")) {
+    try {
+      let img = $("#photo-preload").attr("href");
+      Vibrant.from(img).getPalette().then(palette => {
+        
+        let swatch = palette.DarkVibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+
+        let color = swatch.getHex();
+        let colorDark = tinycolor(color).darken(10).toHexString();
+
+        if (theme === "dark") { color = colorDark; }
+        
         $("#header, #footer, #back-to-top").css("background-color", color);
-      }
-    });
-  } catch (error) {
+        $(":root").css("--color-link", color);
+        $(":root").css("--dark-color-link", tinycolor(color).brighten(50).toHexString())
+        
+      });
+    } catch (error) {
+    }
   }
 }
 

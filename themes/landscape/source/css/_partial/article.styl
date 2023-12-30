@@ -63,9 +63,9 @@
   margin-right: 1.25rem
   letter-spacing: 0
   &:hover
-    color: color-link
+    color: var(--color-link)
     /[data-theme="dark"] &
-      color: dark-color-link
+      color: var(--dark-color-link)
   time.updated
     color: color-foreground
     /[data-theme="dark"] &
@@ -166,10 +166,10 @@
   border: none
   &:hover
     a
-      color: color-link
+      color: var(--color-link)
     /[data-theme="dark"] &
       a 
-        color: dark-color-link
+        color: var(--dark-color-link)
   .article-category-link
     @extend $block-caption
     color: color-header
@@ -190,9 +190,9 @@
   /[data-theme="dark"] &
     color: dark-color-grey
   &:hover
-      color: color-link
+      color: var(--color-link)
       /[data-theme="dark"] &
-        color: dark-color-link
+        color: var(--dark-color-link)
 
 .article-title
   position: relative
@@ -212,9 +212,9 @@
   strong 
     opacity: 0.2
   a&:hover
-    color: color-link
+    color: var(--color-link)
     /[data-theme="dark"] &
-      color: dark-color-link
+      color: var(--dark-color-link)
     em, strong
       opacity: 1
   // https://css-tricks.com/adam-argyles-sick-mouse-out-css-hover-effect/
@@ -270,11 +270,13 @@
     text-decoration: none
     white-space: pre-line
     word-break: break-word
-    border-bottom: transparent 1px solid
+    border-bottom: color-border-3d 1px dashed
+    /[data-theme="dark"] &
+      border-bottom: dark-color-border-3d 1px dashed
     &:hover
-      border-bottom: color-link 1px solid
+      border-bottom: var(--color-link) 1px solid
       /[data-theme="dark"] &
-        border-bottom: dark-color-link 1px solid
+        border-bottom: var(--dark-color-link) 1px solid
   a.img-link
     transition: all ease-out .6s 
     transform: scale(1)
@@ -425,7 +427,7 @@
           border: none !important
           &:hover
             border: none !important
-            color: color-link !important
+            color: var(--color-link) !important
     ol, ul
       margin-top: 0
       margin-bottom: 0
@@ -508,9 +510,9 @@
     font-size: font-size-small
     font-weight: font-weight-normal
     content: icon-chevron-right 
-    color: color-link
+    color: var(--color-link)
     /[data-theme="dark"] &
-      color: dark-color-link
+      color: var(--dark-color-link)
 
 .button:not(.posts)
   display: inline-block
@@ -524,13 +526,13 @@
   border: none
   border-radius: border-radius-small
   &:hover    
-    background-color: color-link
+    background-color: var(--color-link)
     color: color-logo
   /[data-theme="dark"] &
     background-color: dark-color-button
     color: dark-color-button-link
     &:hover    
-      background-color: dark-color-link
+      background-color: var(--dark-color-link)
       color: color-logo
 
 .download-link
@@ -565,12 +567,16 @@
     &:focus
       outline: none
     &.mastodon
-      color: color-mastodon
+      color: var(--color-link)
+      /[data-theme="dark"] &
+        color: var(--dark-color-link)
+        background-color: dark-color-block
       &:hover
-        background-color: color-mastodon
         color: color-hover-background
+        background-color: var(--color-link)
         /[data-theme="dark"] &
           color: dark-color-hover-background
+          background-color: var(--dark-color-link)
 
 .article-syndication,
 .article-interaction,
@@ -610,9 +616,9 @@
       span
         border-bottom: transparent 1px solid
         &:hover
-          border-bottom: color-link 1px solid
+          border-bottom: var(--color-link) 1px solid
           /[data-theme="dark"] &
-            border-bottom: dark-color-link 1px solid
+            border-bottom: var(--dark-color-link) 1px solid
       &.host-500px
         background-image: url(/images/500px.svg)
         /[data-theme="dark"] &
@@ -663,9 +669,9 @@
       text-decoration: none
       border-bottom: transparent 1px solid
       &:hover
-        border-bottom: color-link 1px solid
+        border-bottom: var(--color-link) 1px solid
         /[data-theme="dark"] &
-          border-bottom: dark-color-link 1px solid
+          border-bottom: var(--dark-color-link) 1px solid
     
 .article-webmentions
   margin-bottom: block-margin
@@ -705,9 +711,9 @@
     /[data-theme="dark"] &
       color: dark-color-grey
   a:hover
-    color: color-link
+    color: var(--color-link)
     /[data-theme="dark"] &
-      color: dark-color-link
+      color: var(--dark-color-link)
 
 .article-tags,
 // .article-syndication,
@@ -1065,9 +1071,9 @@
         margin-top: 10px
         opacity: 0.5
     a
-      color: color-link
+      color: var(--color-link)
       /[data-theme="dark"] &
-        color: dark-color-link
+        color: var(--dark-color-link)
     .wm-source
       display: inline-block
       word-break: break-all
@@ -1077,7 +1083,6 @@
     border-bottom-right-radius: border-radius
 
 .webmention-form-info
-  opacity: 0.75
   margin: default-margin default-margin small-margin 0 !important
 .webmention-form
   // padding: (default-padding / 2) 0 0

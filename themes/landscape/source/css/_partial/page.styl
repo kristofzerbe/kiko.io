@@ -42,9 +42,9 @@
   font-weight: font-weight-bold
   opacity: 0.75
   &:hover
-    color: color-link
+    color: var(--color-link)
     /[data-theme="dark"] &
-      color: dark-color-link
+      color: var(--dark-color-link)
   &:before
     position: absolute
     left: -(default-margin)
@@ -96,8 +96,8 @@
         &:before
           content: icon-maximize
     &:not(.current):hover
-      border-color: color-link
-      background-color: color-link
+      border-color: var(--color-link)
+      background-color: var(--color-link)
       color: color-logo
       /[data-theme="dark"] &
         border-color: dark-color-base
@@ -108,11 +108,13 @@
   @extend $base-style
   a:not([class])
     text-decoration: none
-    border-bottom: transparent 1px solid
+    border-bottom: color-border-3d 1px dashed
+    /[data-theme="dark"] &
+      border-bottom: dark-color-border-3d 1px dashed
     &:hover
-      border-bottom: color-link 1px solid
+      border-bottom: var(--color-link) 1px solid
       /[data-theme="dark"] &
-        border-bottom: dark-color-link 1px solid
+        border-bottom: var(--dark-color-link) 1px solid
   p
     margin: medium-margin 0 (default-margin)
   .float-element 
@@ -247,9 +249,9 @@
           /[data-theme="dark"] &
             color: dark-color-default
           &:hover
-            color: color-link
+            color: var(--color-link)
             /[data-theme="dark"] &
-              color: dark-color-link
+              color: var(--dark-color-link)
       &:hover
         transform: scale(1) translateY(-1px)
         box-shadow: box-shadow color-border-3d
@@ -632,8 +634,8 @@
             line-height: line-height
             a
               transition: all ease-out 0.2s
-              color: color-link
+              color: var(--color-link)
               /[data-theme="dark"] &
-                color: dark-color-link
+                color: var(--dark-color-link)
             span
               opacity: 0.5
