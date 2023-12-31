@@ -17,7 +17,7 @@ related:
   - Add-Link-to-Trello-on-Android-via-Share-Menu
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/111672239944572580
 ---
 
 First I saw it on [Robb Knight's website](https://rknight.me/blog/app-defaults/) and said to myself "yeah look, another one with a list of his tools". Then I saw it on [Garrit's blog](https://garrit.xyz/posts/2023-11-07-app-defaults), then on [Chris Coyier's](https://chriscoyier.net/2023/11/25/default-apps-2023/) and today on [Cory Dransfeld's](https://coryd.dev/posts/2023/default-apps-2023/) and [Chris McLeod's](https://chrismcleod.dev/blog/default-apps-for-2023/) and I thought: funny trend with the [**App Defaults**](https://defaults.rknight.me/). Let's go for it...
