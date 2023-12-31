@@ -1,10 +1,9 @@
 // https://github.com/chriskempson/tomorrow-theme
-highlight-background = #f4f4f4
+highlight-background = rgba(230,230,230,.6)
 highlight-foreground = #4d4d4c
 highlight-line-numbers = #666
 highlight-current-line = #333
 highlight-selection = #515151
-highlight-inlinecode-foreground = #630000
 highlight-comment = #8e908c
 highlight-red = #c50000 
 highlight-orange = #f5871f 
@@ -14,12 +13,11 @@ highlight-aqua = #3e999f
 highlight-blue = #4271ae 
 highlight-purple = #8959a8
 
-dark-highlight-background = #0e0e0e
+dark-highlight-background = rgba(10,10,10,.4)
 dark-highlight-foreground = #f1f1f1
 dark-highlight-line-numbers = #888
 dark-highlight-current-line = #999
 dark-highlight-selection = #ccc
-dark-highlight-inlinecode-foreground = #ddb2b3
 dark-highlight-comment = #bbb
 dark-highlight-red = #e06669 
 dark-highlight-orange = #da9554 
@@ -31,14 +29,14 @@ dark-highlight-purple = #ae70d5
 
 $code-block
   margin: 0 default-padding * -1
-  padding: 15px default-padding
+  padding: (default-padding / 2) default-padding
   overflow: auto  
-  font-size: 13px
-  line-height: 20px
+  font-size: font-size-code
+  line-height: line-height
 
-$dark-code-block
-  background: dark-highlight-background
-  color: dark-highlight-foreground
+// $dark-code-block
+//   background: dark-highlight-background
+//   color: dark-highlight-foreground
 
 $line-numbers
   font-size: font-size-small
@@ -48,26 +46,21 @@ $line-numbers
   pre, code
     font-family: font-mono    
   code
-    color: highlight-inlinecode-foreground
     background-color: highlight-background
     /[data-theme="dark"] &
-      color: dark-highlight-inlinecode-foreground
       background-color: dark-highlight-background
     line-break: anywhere
-    font-size: 0.98rem
+    font-size: font-size-code
     padding: 0 0.33rem
   a
     code
-      border-bottom: highlight-inlinecode-foreground 1px dotted
       &:hover
         border-color: inherit 
         color: inherit
   pre
     @extend $code-block
-    background: highlight-background
     color: highlight-foreground
     /[data-theme="dark"] &
-      background: dark-highlight-background
       color: dark-highlight-foreground
     code
       color: highlight-foreground
