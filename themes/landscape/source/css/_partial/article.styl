@@ -778,41 +778,6 @@
   .article-permalink
     opacity: 1
 
-// .article-syndication
-//   display: flex
-//   align-items: flex-end
-//   span
-//     display: inline-block
-//     margin-right: 4px
-//   .syndication-link
-//     padding: 0 16px 0 0
-//     @media mq-mobile
-//       padding: 0 12px 0 0
-//     &:before
-//       font-family: fa-icons
-//       font-size: 1.5rem
-//   & .fa-mastodon:before
-//     color: color-mastodon
-//     /[data-theme="dark"] &
-//       color: dark-color-mastodon
-//     content: icon-mastodon
-//   & .fa-twitter:before
-//     color: color-twitter
-//     /[data-theme="dark"] &
-//       color: dark-color-twitter
-//     content: icon-twitter
-//   & .fa-500px:before
-//     color: color-500px
-//     /[data-theme="dark"] &
-//       color: dark-color-500px
-//     content: icon-500px
-//   & .fa-pixelfed:before
-//     color: color-pixelfed
-//     /[data-theme="dark"] &
-//       color: dark-color-pixelfed
-//     content: icon-pixelfed
-//     font-size: 1.66rem
-
 .article-permalink
 // .article-syndication 
   padding-top: line-height
@@ -960,17 +925,14 @@
     max-width: 100%
     margin: 0 auto
 
-.utterances
-  margin: 0
-  max-width: 100%
-
 .webmentions-placeholder
   .wm-placeholder
     opacity: 0.75
     font-style: italic
+    
 .webmention
-  margin: default-margin 0
-  font-size: 1rem
+  margin: medium-margin 0
+  font-size: .9rem
   overflow: hidden
   a
     color: inherit
@@ -983,10 +945,11 @@
     flex-direction: row
     flex-wrap: nowrap
     .wm-photo-link
-      margin-right: 16px
+      height: 42px
+      margin-right: 8px /* + 42 photo = 50 left content*/
       .wm-photo
-        width: 44px
-        border-radius: border-radius
+        width: 42px
+        border-radius: 50%
     .wm-meta
       position: relative
       width: 100%
@@ -996,7 +959,7 @@
       grid-template-rows: auto
       align-items: center
       column-gap: 5px
-      padding: (default-padding-vert / 2) (default-padding / 2) (default-padding-vert / 2) (default-padding / 4)
+      padding: 0 (default-padding-vert / 2)
       border-top-left-radius: border-radius
       border-top-right-radius: border-radius
       border-width: 1px
@@ -1012,7 +975,6 @@
         grid-template-rows: auto
       .wm-name
         grid-area: name
-        padding-left: default-padding
         font-weight: font-weight-bold
         max-width: 220px
         white-space: nowrap
@@ -1024,13 +986,8 @@
             text-decoration: underline
       .wm-name
         &:before
-          position: absolute
-          margin-top: 0
-          margin-left: -(default-padding)
+          margin-right: 5px
           font-family: fa-icons
-          padding: 0 4px 0 8px
-          /[data-theme="dark"] &
-            color: dark-color-grey !important
           &:hover
             text-decoration: none
       .wm-name.wm-source-web
@@ -1070,43 +1027,15 @@
         margin-left: auto
         opacity: 0.25
         font-size: font-size-small
-      &:before, &:after
-        position: absolute
-        top: 11px
-        right: 100%
-        left: -16px
-        display: block
-        width: 0
-        height: 0
-        pointer-events: none
-        content: " "
-        border-color: transparent
-        border-style: solid solid outset
-      &:before
-        border-width: 8px
-        border-right-color: color-wm-border-before
-        /[data-theme="dark"] &
-          border-right-color: dark-color-wm-border-before
-      &:after
-        margin-top: 1px
-        margin-left: 2px
-        border-width: 7px
-        border-right-color: color-wm-meta-background
-        /[data-theme="dark"] &
-          border-right-color: dark-color-wm-meta-background
     .wm-meta.wm-own
-      background-color: color-wm-meta-background-own
+      color: color-highlight
       /[data-theme="dark"] &
-        background-color: dark-color-wm-meta-background-own
-      &:after
-        border-right-color: color-wm-meta-background-own
-        /[data-theme="dark"] &
-          border-right-color: dark-color-wm-meta-background-own
+          color: dark-color-highlight
 
   .wm-content
-    padding: (default-padding-vert / 2) (default-padding / 2)
-    margin-left: 60px
-    line-height: line-height-text
+    padding: (default-padding-vert / 6) (default-padding / 2)
+    margin-left: 50px
+    line-height: line-height
     border-bottom-left-radius: border-radius
     border-bottom-right-radius: border-radius
     border-width: 1px
@@ -1118,14 +1047,19 @@
       background-color: dark-color-wm-content-background
     border-top: 0
     > p
-      // font-size: font-size-small
+      margin: 4px 0 8px
       ~ .wm-source
         margin-top: 10px
         opacity: 0.5
     a
-      color: var(--color-link)
+      text-decoration-line: underline
+      text-decoration-style: dotted
+      text-decoration-color: color-border-3d
       /[data-theme="dark"] &
-        color: var(--dark-color-link)
+        text-decoration-color: dark-color-border-3d
+      &:hover
+        text-decoration-style: solid
+        text-decoration-color: inherit
     .wm-source
       display: inline-block
       word-break: break-all
@@ -1137,7 +1071,6 @@
 .webmention-form-info
   margin: default-margin default-margin small-margin 0 !important
 .webmention-form
-  // padding: (default-padding / 2) 0 0
   display: grid
   column-gap: 20px
   row-gap: 10px
@@ -1157,7 +1090,6 @@
   input[type=url]
     grid-area: source
     font-family: inherit
-    background-color: color-wm-content-background
     border-width: 1px
     border-style: solid
     border-color: color-wm-border

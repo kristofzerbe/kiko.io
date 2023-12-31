@@ -15,11 +15,6 @@
     if (synArray.length > 0) {
       synText = " or by replying to its syndication on " + synArray.join(" or ");
     }
-
-    let commentText = "";
-    if (comments) {
-      commentText = "... or you leave a good old comment with your GitHub account";
-    }
 %>
 
 <div class="article-share" data-pagefind-ignore>
@@ -48,7 +43,7 @@ let syndication = post.syndication?.filter(s => s.url?.length > 0)
   <p>
     You can interact with this <%= type %> (applause, criticism, whatever) by mention it in one of 
     your posts<%- synText %>, which will be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a> <%- commentText %>.   
+    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a>.   
   </p>
 
   <p class="webmention-form-info">
@@ -83,15 +78,3 @@ let syndication = post.syndication?.filter(s => s.url?.length > 0)
   <% } %>
 
 </div>
-
-<% if (comments) { %>
-<div class="article-comments" data-pagefind-ignore>
-  <h2>Comments</h2>
-  <div id="comment-placeholder"></div>
-  <script>
-    window.addEventListener('load', function () {
-      insertUtterancesCommentBlock();
-    });
-  </script>
-</div>
-<% } %>

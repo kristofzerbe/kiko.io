@@ -43,10 +43,6 @@ Die anwendbaren datenschutzrechtlichen Bestimmungen werden bei der Erhebung, bei
 
 Diese Website wird auf GitHub Pages gehostet. Wenn eine GitHub Pages-Website besucht wird, wird die IP-Adresse des Besuchers zu Sicherheitszwecken protokolliert und gespeichert, unabhängig davon, ob sich der Besucher bei GitHub angemeldet hat oder nicht. Weitere Informationen zu den Sicherheitspraktiken von GitHub sind in den  [GitHub-Datenschutzbestimmungen](https://docs.github.com/de/site-policy/privacy-policies/github-privacy-statement) zu finden.
 
-## Kommentare
-
-Die Kommentare auf dieser Website werden von der Open-Source-Bibliothek [Utterances](https://utteranc.es/) ermöglicht, das ebenfalls auf GitHub gehostet wird. Von dort wird der Kommentar-Client nachgeladen und auf der entsprechenden Artikelseite angezeigt. Um zu kommentieren ist eine Anmeldung mittels Ihres eigenen GitHub-Kontos notwendig. Die Kommentare werden im GitHub-Repository als sogenanntes 'Issue' an der Artikeldatei dieser Webseite mit einer Verknüpfung zu Ihren GitHub-Profilinformationen gespeichert. Weitere Informationen ergeben sich aus dem obigen Abschnitt 'Hosting'.
-
 ## Webmentions
 
 Webmentions sind ein Mechanismus, mit dem andere Websites benachrichtigt werden, wenn Sie auf Ihrer eigenen Website auf sie verweisen. Indem Sie Webmentions auf Ihrer Website unterstützen, signalisieren Sie ausdrücklich, dass Sie möchten, dass die verlinkten Websites Ihre öffentlichen Antworten auf deren Inhalte verarbeiten und veröffentlichen. Sie können jederzeit die Entfernung einer oder aller Webmentions, die von Ihrer Website stammen, beantragen.

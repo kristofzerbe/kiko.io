@@ -32,7 +32,7 @@ function insertWebmentions(key, originalHost, owner) {
   } else {
     // Get Webmentions from webmention.io
     load().then(() => { process(); });
-  };
+  }
 
   /**
    * Load webmention.io's JSON data for the current page
@@ -109,9 +109,8 @@ function insertWebmentions(key, originalHost, owner) {
 
     if (!wm.author.photo) {
       wm.author.photo = 
-        "https://avatars.dicebear.com/api/identicon/" + 
-        Math.random().toString(36).substring(3) + ".svg" + 
-        "?width=44&margin=5&colors=grey&colorLevel=400";
+        "https://api.dicebear.com/7.x/initials/svg?seed=" + wm.author.name +
+        "?size=42&scale=75&backgroundColor=bbbbbb";
       wm.author.photo_class = "";
     }
     
@@ -130,26 +129,29 @@ function insertWebmentions(key, originalHost, owner) {
     wm.source_type = "web";
 
     // all services brid.gy supports:
-    if (wm['wm-source'].toLowerCase().includes("/twitter")) {
-      wm.source_type = "twitter";
-    }
-    if (wm['wm-source'].toLowerCase().includes("/mastodon")) {
-      wm.source_type = "mastodon";
-    }
-    if (wm['wm-source'].toLowerCase().includes("/github")) {
-      wm.source_type = "github";
-    }
     if (wm['wm-source'].toLowerCase().includes("/facebook")) {
       wm.source_type = "facebook";
     }
     if (wm['wm-source'].toLowerCase().includes("/instagram")) {
       wm.source_type = "instagram";
     }
+    if (wm['wm-source'].toLowerCase().includes("/twitter")) {
+      wm.source_type = "twitter";
+    }
     if (wm['wm-source'].toLowerCase().includes("/flickr")) {
       wm.source_type = "flickr";
     }
+    if (wm['wm-source'].toLowerCase().includes("/github")) {
+      wm.source_type = "github";
+    }
+    if (wm['wm-source'].toLowerCase().includes("/mastodon")) {
+      wm.source_type = "mastodon";
+    }
     if (wm['wm-source'].toLowerCase().includes("/reddit")) {
       wm.source_type = "reddit";
+    }
+    if (wm['wm-source'].toLowerCase().includes("/bluesky")) {
+      wm.source_type = "bluesky";
     }
   }
 
@@ -165,7 +167,7 @@ function insertWebmentions(key, originalHost, owner) {
       </div>
     `);
 
-    wrapper.insertAdjacentElement("beforeend", getHeader(wm, verb))
+    wrapper.insertAdjacentElement("beforeend", getHeader(wm, verb));
     return wrapper;
   }
 
@@ -182,7 +184,7 @@ function insertWebmentions(key, originalHost, owner) {
     let e = createElementFromHtml(`
       <div class="wm-card ${wm.author.card_class}">
         <a class="wm-photo-link ${wm.author.url_class}" href="${wm.author.url}">
-          <img class="wm-photo ${wm.author.photo_class}" width="44" height="44"
+          <img class="wm-photo ${wm.author.photo_class}" 
                src="${wm.author.photo}" alt="${wm.author.name}" />
         </a>
         <div class="wm-meta ${((wm.own) ? "wm-own" : "")}">
@@ -218,7 +220,7 @@ function insertWebmentions(key, originalHost, owner) {
         <a class="wm-source" href="${wm['wm-source']}">${wm['wm-source']}</a>
       </div>
     `;
-    wrapper.insertAdjacentHTML("beforeend", content)    
+    wrapper.insertAdjacentHTML("beforeend", content); 
     return wrapper;
   }
 
@@ -235,7 +237,7 @@ function insertWebmentions(key, originalHost, owner) {
         <p>${wm.content.html}</p>
       </div>
     `;
-    wrapper.insertAdjacentHTML("beforeend", content)    
+    wrapper.insertAdjacentHTML("beforeend", content);
     return wrapper;  }
 
   /**
@@ -257,10 +259,10 @@ function insertWebmentions(key, originalHost, owner) {
     
     let content = `
       <div class="wm-content p-content">
-        <p>... at <a href="${wm['wm-source']}">${wm['wm-source']}</a></p>
+        <a href="${wm['wm-source']}">${wm['wm-source']}</a>
       </div>
     `;
-    wrapper.insertAdjacentHTML("beforeend", content)    
+    wrapper.insertAdjacentHTML("beforeend", content);
     return wrapper;
   }
 
