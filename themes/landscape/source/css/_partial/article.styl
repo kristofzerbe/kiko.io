@@ -583,7 +583,6 @@
 .article-syndication,
 .article-interaction,
 .article-webmentions,
-.article-comments,
 .article-related
   min-height: 86px 
   padding-bottom: default-padding
@@ -699,7 +698,7 @@
   min-height: auto
   border-top: none
   position: relative
-  margin-top: 3rem
+  margin-top: default-margin
   &:before
     display: block
     position: absolute 
@@ -726,7 +725,13 @@
           border-bottom: var(--dark-color-link) 1px solid
     
 .article-webmentions
-  margin-bottom: block-margin
+  padding-bottom: (default-padding / 2)
+
+.article-related
+  margin-bottom: -(medium-margin)
+  padding-bottom: default-padding-vert
+  > h2
+    margin-bottom: small-margin
 
 .article-footer, 
 .section-footer
@@ -948,7 +953,7 @@
       height: 42px
       margin-right: 8px /* + 42 photo = 50 left content*/
       .wm-photo
-        width: 42px
+        max-width: 42px
         border-radius: 50%
     .wm-meta
       position: relative
@@ -1049,7 +1054,7 @@
     > p
       margin: 4px 0 8px
       ~ .wm-source
-        margin-top: 10px
+        margin-bottom: 8px
         opacity: 0.5
     a
       text-decoration-line: underline
