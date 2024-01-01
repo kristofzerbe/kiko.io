@@ -723,7 +723,9 @@
         border-bottom: var(--color-link) 1px solid
         /[data-theme="dark"] &
           border-bottom: var(--dark-color-link) 1px solid
-    
+  .alertbox
+    margin-bottom: 0
+
 .article-webmentions
   padding-bottom: (default-padding / 2)
 
@@ -1038,7 +1040,7 @@
           color: dark-color-highlight
 
   .wm-content
-    padding: (default-padding-vert / 6) (default-padding / 2)
+    padding: (default-padding-vert / 3) (default-padding / 2)
     margin-left: 50px
     line-height: 1.33rem
     border-bottom-left-radius: border-radius
@@ -1055,16 +1057,9 @@
       margin: 4px 0 8px
       ~ .wm-source
         margin-bottom: 8px
-        opacity: 0.5
     a
-      text-decoration-line: underline
-      text-decoration-style: dotted
-      text-decoration-color: color-border-3d
-      /[data-theme="dark"] &
-        text-decoration-color: dark-color-border-3d
-      &:hover
-        text-decoration-style: solid
-        text-decoration-color: inherit
+      @extend $neutral-anchor
+      opacity: 0.66
     .wm-source
       display: inline-block
       word-break: break-all
@@ -1073,19 +1068,20 @@
     border-bottom-left-radius: border-radius
     border-bottom-right-radius: border-radius
 
-.webmention-form-info
-  margin: default-margin default-margin small-margin 0 !important
 .webmention-form
+  margin-top: default-margin
   display: grid
   column-gap: 20px
   row-gap: 10px
   align-items: center
-  grid-template: "source submit"
-  grid-template-columns: auto max-content
-  grid-template-rows: auto
+  grid-template: "info info" "source submit"
+  grid-template-columns: 1fr max-content
+  grid-template-rows: auto auto
   @media mq-mobile
-    grid-template: "source" "submit"
+    grid-template: "info" "source" "submit"
     grid-template-columns: 1fr
+  p
+    grid-area: info
   input
     padding: small-margin medium-margin
     border-radius: border-radius-small

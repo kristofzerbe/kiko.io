@@ -3,12 +3,14 @@
   padding: 20px 20px 20px 32px
   margin: 20px 0
 
+.alertbox.no-block
+  margin-left: 10px
+
 .alertbox.thinkbox
   padding: 20px 40px 20px 45px
   margin: 40px 0 20px 10px
   background-color: rgba(255,203,76,0.1)
   background: linear-gradient(125deg, rgba(241,144,32,0.4) 0, rgba(241,144,32,0.1) 64px, rgba(255,203,76,0.1) 128px)
-
 
 .alertbox.thinkbox svg
   width: 32px
@@ -27,7 +29,12 @@
   content: ""
   background: color-block
   /[data-theme="dark"] &
-    background: dark-color-block  
+    background: dark-color-block
+
+.alertbox.no-block::before
+  background: color-background
+  /[data-theme="dark"] &
+    background: dark-color-background
 
 .alertbox.thinkbox::before
   width: 50px
@@ -110,6 +117,8 @@
   p
     + p
       margin-top: 1em !important
+  a
+    @extend $neutral-anchor
 
 li > .alertbox
   margin: 12px
