@@ -278,7 +278,7 @@ var dpDialog = {
     dpDialog.base.init({
       headerText: "Contact",
       urlHash: "contact",
-      minContentHeight: 600,
+      minContentHeight: 540,
       width: "min(600px, 100%)",
       contentTransparency: 0.33
     });
