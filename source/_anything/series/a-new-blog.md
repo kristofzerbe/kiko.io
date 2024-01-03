@@ -1,5 +1,8 @@
 ---
 title: A New Blog
+photograph:
+  file: $23-05-Holland-0996.jpg
+  name: Stone Chains
 ---
 
 Starting a new project is always exciting, especially when the building platform is totally new for oneself. As I started this blog with <a href="https://hexo.io/">Hexo</a>, I had a good experience with JavaScript and some with Node, but no with EJS, Lodash and some of the other libraries Hexo is using.

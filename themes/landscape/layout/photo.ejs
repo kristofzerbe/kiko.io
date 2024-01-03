@@ -2,32 +2,6 @@
   <%- partial('_partial/photograph') %>
 <% } %>
 
-<%
-  function convertDecimalToFraction(decimalValue) {
-    //https://www.insidethediv.com/javascript-simple-projects-with-source-code-fraction-calculator
-
-    const [whole, decimal] = decimalValue.toString().split('.');
-    const numerator = + (whole + decimal);
-    const denominator = Math.pow(10, decimal.length);
-    const gcf = getGCF(numerator, denominator);
-    const fraction = reduceFraction(numerator/gcf, denominator/gcf);
-
-    return fraction.join("/");
-
-    function getGCF(a, b) {
-    if (b === 0) {
-      return a;
-    }
-    return getGCF(b, a % b);
-    }
-
-    function reduceFraction(numerator, denominator) {
-      const gcf = getGCF(numerator, denominator);
-      return [numerator/gcf, denominator/gcf];
-    }
-  }
-%>
-
 <h1 class="archive-title" data-pagefind-meta="title" data-pagefind-meta="type:Photo">
   <span>Photo<b> | </b></span><%= page.name %>
 </h1>
@@ -75,7 +49,32 @@
     </ul>
   </section>
 
-  <% if (page.meta) { %>
+  <% if (page.meta) { 
+
+    function convertDecimalToFraction(decimalValue) {
+      //https://www.insidethediv.com/javascript-simple-projects-with-source-code-fraction-calculator
+
+      const [whole, decimal] = decimalValue.toString().split('.');
+      const numerator = + (whole + decimal);
+      const denominator = Math.pow(10, decimal.length);
+      const gcf = getGCF(numerator, denominator);
+      const fraction = reduceFraction(numerator/gcf, denominator/gcf);
+
+      return fraction.join("/");
+
+      function getGCF(a, b) {
+      if (b === 0) {
+        return a;
+      }
+      return getGCF(b, a % b);
+      }
+
+      function reduceFraction(numerator, denominator) {
+        const gcf = getGCF(numerator, denominator);
+        return [numerator/gcf, denominator/gcf];
+      }
+    }
+  %>
   <section class="meta">
     <ul style="margin-bottom: 2rem">
       <li>

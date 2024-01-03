@@ -8,6 +8,6 @@ photograph:
   keepOutOverview: true
 ---
 
-Most of the images listed in [photos](/photos) (and some more out of the shed) contain geo-localisations in the form of GPS coordinates in their metadata. These **{{photo.count}} photos** are pinned on this map.
+Most of the images listed in the collection (and some more out of the shed) contain geo-localisations in the form of GPS coordinates in their metadata. These **{{photo.count}} photos** are pinned on this map.
 
 ---

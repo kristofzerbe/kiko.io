@@ -1,15 +1,19 @@
-<% if (page.photograph){ %>
-    <%- partial('_partial/photograph') %>
-  <% } %>
-  
+<% if (page.photograph) { %>
+  <%- partial('_partial/photograph') %>
+<% } %>
+
+<% if (page.index.name !== "project") { %>
+  <%- partial('_partial/nav-index-archives') %>
+<% } %>
+
 <h1 class="archive-title"><%= page.title %></h1>
 
 <% if (page.content){ %>
-    <%- page.content %>
+  <%- page.content %>
 <% } %>
 
 <div class="anything-list">
-    <% page.posts.each(function(item){ %>
-        <%- partial('_partial/anything-index-item', { item: item, index: page.index }) %>
-    <% }) %>    
+  <% page.posts.each(function(item){ %>
+    <%- partial('_partial/anything-index-item', { item: item, index: page.index }) %>
+  <% }) %>    
 </div>

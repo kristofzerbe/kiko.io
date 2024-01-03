@@ -1,5 +1,8 @@
 ---
 title: Discoveries
+photograph:
+  file: $23-05-Holland-0996.jpg
+  name: Stone Chains
 ---
 
 Surfing around in the web is a daily routine every developer should have. Learning about new platforms, libraries or techniques is a must, due to the tremendous speed on our business. Stay current, all the time.

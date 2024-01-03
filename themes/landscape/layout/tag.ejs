@@ -1,5 +1,17 @@
+<%# if (page.photograph) { %>
+  <% //TODO: Refactor to _source/archives/index.md
+    page.photograph = {
+      file: "$22-05-Malta-7531.jpg",
+      name: "Suspended Window"
+    }
+  %>
+  <%- partial('_partial/photograph') %>
+<%# } %>
+
+<%- partial('_partial/nav-index-archives') %>
+
 <h1 class="archive-title">
-    <span>Archives<b> | </b><em class="tag"></em></span><%= page.tag %>
+  <span>Archives<b> | </b><em class="tag"></em></span><%= page.tag %>
 </h1>
 <%- partial('_partial/archive-navigation') %>
 <%- partial('_partial/archive', { pagination: config.tag, index: true }) %>

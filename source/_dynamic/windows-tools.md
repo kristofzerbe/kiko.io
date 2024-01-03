@@ -12,6 +12,4 @@ I have been working with Microsoft Windows my entire professional life. Starting
 
 So that I have them on the radar whenever there's a new machine on my desk, here's the Trello-supported list of my favourites.
 
-See also my [Tiny-Tools](/collections/tiny-tools) page, where I have listed small but useful web tools.
-
 ---

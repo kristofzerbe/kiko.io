@@ -20,6 +20,9 @@
 
     if (page.photograph) {
       page.photograph.url = "/photos/normal/" + page.photograph.file
+      meta.photograph = page.photograph;
+      meta.photoUrl = page.photograph.url;
+      meta.imageUrl = page.photograph.url;
     }
 
     let excerpt;
@@ -125,9 +128,6 @@
         } else { 
           meta.description = page.title + " " + config.description_short;
         }
-        meta.photograph = page.photograph;
-        meta.photoUrl = page.photograph.url;
-        meta.imageUrl = page.photograph.url;
         break;
 
       case "ANYTHING":
@@ -143,20 +143,11 @@
         } else {
           meta.description = "Series '" + page.title + "' " + config.description_short;
         }
-        //--
-        if (meta.subarea === "PROJECTS") {
-          meta.photograph = page.photograph;
-          meta.photoUrl = page.photograph.url;
-          meta.imageUrl = page.photograph.url;
-        }
         break;
  
       case "DYNAMIC":
         meta.title = page.title + " - " + config.title;
         meta.description = page.title + " " + config.description_short;
-        meta.photograph = page.photograph;
-        meta.photoUrl = page.photograph.url;
-        meta.imageUrl = page.photograph.url;
         break;
 
       case "POST":
@@ -174,9 +165,7 @@
         //--
         let slugArray = page.slug.split("/"); //due to subfolders
         meta.slug = slugArray[slugArray.length - 1];
-        meta.photograph = page.photograph;
-        meta.photoUrl = page.photograph.url;
-        meta.imageUrl = "/images/social-media/" + meta.slug + ".png";
+        meta.imageUrl = "/images/social-media/" + meta.slug + ".png"; // image = social media image
         meta.type = "article";
         break;
 
@@ -193,10 +182,6 @@
           }
           meta.type = "blogposting";
         }
-        //--
-        meta.photograph = page.photograph;
-        meta.photoUrl = page.photograph.url;
-        meta.imageUrl = page.photograph.url;        
 
       default: 
         break;
@@ -296,11 +281,28 @@
   <link rel="preload" as="image" id="img-preload" href="<%= meta.imageUrl %>" 
         imagesrcset="<%= meta.imageUrl.replace("normal", "mobile") %> 480w, <%= meta.imageUrl.replace("normal", "tablet") %> 768w">
   <link rel="preload" as="image" id="photo-preload" href="<%= meta.photoUrl %>" 
-        imagesrcset="<%= meta.photoUrl.replace("normal", "mobile") %> 480w, <%= meta.photoUrl.replace("normal", "tablet") %> 768w">
+        imagesrcset="<%= meta.photoUrl.replace("normal", "mobile") %> 480w, <%= meta.photoUrl.replace("normal", "tablet") %> 768w">  
   <% } %>
     
   <%- css('css/dist/asset-bundle.min.css') %>
   <%- css('css/style.css') %>
+
+  <% if (page.photograph) { %>
+  <style>
+    #banner {
+      background-size: cover;
+    }
+    @media screen and (max-width: 479px) {
+      #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/<%= page.photograph.file %>"); }
+    }
+    @media screen and (min-width: 480px) and (max-width: 767px) {
+      #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/<%= page.photograph.file %>"); }
+    }
+    @media screen and (min-width: 768px) {
+      #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/<%= page.photograph.file %>"); }    
+    }
+  </style>
+  <% } %>
 
   <script>
     var theme = "light"; //default

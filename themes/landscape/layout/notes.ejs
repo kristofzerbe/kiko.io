@@ -1,21 +1,18 @@
-<% if (page.photograph){ %>
-<%- partial('_partial/photograph') %>
+<% if (page.photograph) { %>
+  <%- partial('_partial/photograph') %>
 <% } %>
 
-<h1 class="page-title"><%= page.title %> <%= page.year %></h1>
-<% if (page.subtitle) { %>
-<h2 class="page-subtitle"><%= page.subtitle %></h2>
+<nav class="page-nav-index">
+<% for(var i=0; i < page.years.length; i++) { %>
+  <a class="<%= (page.years[i].year == page.year) ? "current" : "" %>" href="<%= "/" + page.years[i].link %>"><%= page.years[i].year %></a>
 <% } %>
+</nav>
 
-<div class="page-index-list">
-  <% for(var i=0; i < page.years.length; i++) { %>
-  <% if (page.years[i].year == page.year) { %>
-  <a class="current" href="#" onclick="switchCondensed(this); return false;"></a>
-  <% } else { %>
-  <a href="<%= "/" + page.years[i].link %>"><%= page.years[i].year %></a>
-  <% } %>
-  <% } %>
-</div>
+<h1 class="page-title">
+  <span><%= page.title %><b> | </b></span><%= page.year %>
+  <button class="title-command switch-condensed" onclick="switchCondensed(this); return false;"></button>
+</h1>
+
 <script>
   function switchCondensed(e) {
     if (e.classList.contains("condensed")) {

@@ -10,7 +10,6 @@ $block-inner
     background: dark-color-block
     box-shadow: dark-box-shadow dark-color-border
 
-
 $block-caption
   text-decoration: none
   text-transform: uppercase
@@ -76,6 +75,25 @@ $base-style
     font-weight: font-weight-bold
   fieldset
     position: relative
+
+$title
+  position: relative
+  font-size: font-pagetitle-size
+  font-weight: font-weight-bold
+  line-height: line-height-title
+  text-transform: uppercase
+  margin: default-padding 0
+  color: color-default
+  /[data-theme="dark"] &
+    color: dark-color-default
+  span
+    font-weight: font-weight-normal
+    text-transform: uppercase
+    b 
+      padding: 0 (default-padding / 5)
+      text-transform: none
+      font-weight: font-weight-normal
+      opacity: 0.33
 
 $neutral-anchor
   color: inherit !important

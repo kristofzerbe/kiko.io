@@ -12,6 +12,4 @@ photograph:
 
 Mostly all posts or pages in this blog have a unique photo as hero image, to represent the page. I have shot and edited all these photographs over the last few years. All these images can be used under the Attribution-ShareAlike 4.0 International ([CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)) license.
 
-Here you will find a list of all photos that have been used or saved for future posts. There is also a [map](/photos/map) for locating the photos.
-
 ---

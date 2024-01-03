@@ -5,10 +5,11 @@
   <%- partial('_partial/photograph') %>
 <% } %>
 
-<h1 class="page-title" data-pagefind-meta="title" data-pagefind-meta="type:Page"><%= page.title %></h1>
-<% if (page.subtitle) { %>
-<h2 class="page-subtitle"><%= page.subtitle %></h2>
-<% } %>
+<%- partial('_partial/nav-index-photos') %>
+
+<h1 class="page-title" data-pagefind-meta="title" data-pagefind-meta="type:Page">
+  <%= page.title %>
+</h1>
 
 <div class="page-content" style="min-height:1200px;">
   <%- page.content %>

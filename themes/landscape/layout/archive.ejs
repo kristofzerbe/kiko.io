@@ -1,15 +1,27 @@
+<%# if (page.photograph) { %>
+  <% //TODO: Refactor to _source/archives/index.md
+    page.photograph = {
+      file: "$22-05-Malta-7531.jpg",
+      name: "Suspended Window"
+    }
+  %>
+  <%- partial('_partial/photograph') %>
+<%# } %>
+
+<%- partial('_partial/nav-index-archives') %>
+
 <% if (page.month) { %>
-    <h1 class="archive-title">
-        <span>Archives<b> | </b></span><%= moment().month(page.month).subtract(1, "month").format('MMMM') %> <%= page.year %>
-    </h1>
+  <h1 class="archive-title">
+    <span>Archives<b> | </b></span><%= moment().month(page.month).subtract(1, "month").format('MMMM') %> <%= page.year %>
+  </h1>
 <% } else { %>
-    <% if (page.year) { %>
-        <h1 class="archive-title">
-            <span>Archives<b> | </b></span><%= page.year %>
-        </h1>
-    <% } else { %>
-        <h1 class="archive-title">Archives</h1>
-    <% } %>
+  <% if (page.year) { %>
+    <h1 class="archive-title">
+      <span>Archives<b> | </b></span><%= page.year %>
+    </h1>
+  <% } else { %>
+    <h1 class="archive-title">Archives</h1>
+  <% } %>
 <% } %>
 <%- partial('_partial/archive-navigation') %>
 <%- partial('_partial/archive', { pagination: config.archive, index: true }) %>

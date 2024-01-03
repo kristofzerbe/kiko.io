@@ -6,6 +6,11 @@
   <%- partial('_partial/photograph', { page: page }) %>
 <% } %>
 
+<nav class="page-nav-index">
+  <a href="/collections/tiny-tools" class="<%= (page.name === "tiny-tools") ? "current" : "" %>">Tiny Tools</a>
+  <a href="/collections/windows-tools" class="<%= (page.name === "windows-tools") ? "current" : "" %>">Windows Tools</a>
+</nav>
+
 <h1 class="page-title" data-pagefind-meta="title" data-pagefind-meta="type:Page"><%= page.title %></h1>
 <% if (page.subtitle) { %>
 <h2 class="page-subtitle"><%= page.subtitle %></h2>
