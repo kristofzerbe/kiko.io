@@ -73,31 +73,52 @@
     &:before
       content: "Update, "
 
-.note-list
-  .article.note
-    .article-meta
-      time
-        top: -1rem
-        left: -2.75rem
-        @media mq-mobile
-          left: -1.5rem
-
-.article.note
+.article.note  
   &:not(:first-child)
-    margin-top: 3.5rem
+    margin-top: double-margin
+  .article-header
+    padding-top: (default-padding-vert * 2)
   .article-meta
     time
-      top: -1rem
-      left: 1rem
+      top: (medium-margin * -1)
+      left: medium-margin
       position: absolute
-      padding: 5px 10px
+      padding: small-padding (small-padding * 3)
       font-weight: font-weight-bold
       border-radius: border-radius-small
       font-size: font-size-small
       color: color-logo
+      z-index: 99
       background-color: color-highlight
       /[data-theme="dark"] &
         background-color: dark-color-highlight
+    small
+      display: none
+  &.rel
+    .article-header
+      padding-top: (default-padding-vert * 3)
+    .article-meta
+      small
+        display: block
+        position: absolute
+        padding-top: small-padding
+        padding-bottom: small-padding
+        padding-right: 0.5rem
+        padding-left: 8rem
+        width: calc(100% - 8.5rem)
+        @media mq-mobile
+          padding-left: 8rem
+          width: calc(100% - 8.5rem)
+        font-size: font-size-small
+        border-radius: 0 border-radius 0 0
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+        background-color: color-background
+        /[data-theme="dark"] &
+          background-color: dark-color-background
+        a
+          text-decoration: none
   img
     max-width: 240px
     @media mq-normal
@@ -107,14 +128,24 @@
   span.caption
     display: none
 
+.note-list
+  .article.note
+    .article-meta
+      time
+        left: -2.75rem
+        @media mq-mobile
+          left: -1.5rem
+      small
+        padding-left: 4.5rem
+        width: calc(100% - 5rem)
+        @media mq-mobile
+          padding-left: 5.5rem
+          width: calc(100% - 6rem)
+
 .article-inner
   @extend $block-inner
   overflow: hidden
   margin-bottom: default-margin
-
-.article.note
-  .article-header
-    padding-top: (default-padding-vert * 2)
 
 .article-photo
   height: 150px

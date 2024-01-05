@@ -1,8 +1,13 @@
 
-<article id="note-<%= note.slug %>" data-key="<%= note.key %>" class="article note h-entry">
+<article id="note-<%= note.slug %>" data-key="<%= note.key %>" class="article note <%= (note.rel?.verb) && "rel" %>">
 
   <div class="article-meta">
     <time datetime="<%= date_xml(note.date) %>"><%= date(note.date, 'DD MMM YYYY') %></time>
+    <% if (note.rel?.verb) { %>
+      <small>
+        <%= note.rel.verb.replace("-", " ") %>&nbsp;
+        <a href="#" class="u-<%= note.rel.verb %>"><%= note.rel.caption %></a></small>
+    <% } %>
   </div>
 
   <div class="article-inner">

@@ -1,6 +1,10 @@
 ---
 title: "#Link | Rethinking my Webmention Implementation"
 date: 2024-01-01
+rel:
+  verb: like-of
+  caption: "janmonschke.com: Adding webmentions to your static blog"
+  url: https://janmonschke.com/adding-webmentions-to-your-static-blog
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/111681633236614494
@@ -13,5 +17,3 @@ I was triggered by **Jan Monschke** who, almost exactly a year ago, described in
 This will also be a good opportunity to finally integrate my Notes into the automatic Webmention sending (incl. setting the correct verbs such as ``u-in-reply-to``, ``u-repost-of`` ``u-like-of``, ``u-bookmark-of``, etc.), because at the moment I still do this manually via [webmention.app](https://webmention.app).
 
 **Let's go** ... and a happy new year to everyone on the #IndieWeb
-
-[>>> janmonschke.com: Adding webmentions to your static blog](https://janmonschke.com/adding-webmentions-to-your-static-blog)
