@@ -19,7 +19,7 @@
           datetime="<%= date_xml(page.date) %>"><%= date(page.date, 'DD MMM YYYY') %></time>
     <% if (page.rel?.verb) { %>
       <small>
-        <span><%= page.rel.verb.replace("-", " ") %></span>
+        <span><%= page.rel.verb.replaceAll("-", " ") %></span>
         <a href="<%= page.rel.url %>" class="u-<%= page.rel.verb %>" title="<%= page.rel.caption %>"><%= page.rel.caption %></a></small>
     <% } %>
   </div>
