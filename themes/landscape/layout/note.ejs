@@ -32,6 +32,11 @@
 
     <div class="article-entry e-content">
       <%- page.content %>
+      <p>
+    <% if (page.rel?.verb) { %>
+        <a href="<%= page.rel.url %>"><strong><%= page.rel.caption %></strong><br/><%= page.rel.url %></a></small>
+    <% } %>
+      </p>
     </div>
   
     <footer class="article-footer" data-pagefind-ignore>
