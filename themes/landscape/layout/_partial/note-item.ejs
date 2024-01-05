@@ -1,32 +1,32 @@
 
-<article id="note-<%= note.slug %>" data-key="<%= note.key %>" class="article note <%= (note.rel?.verb) && "rel" %>">
+<article id="note-<%= page.slug %>" data-key="<%= page.key %>" class="article note <%= (page.rel?.verb) && "rel" %>">
 
   <div class="article-meta">
-    <time datetime="<%= date_xml(note.date) %>"><%= date(note.date, 'DD MMM YYYY') %></time>
-    <% if (note.rel?.verb) { %>
+    <time datetime="<%= date_xml(page.date) %>"><%= date(page.date, 'DD MMM YYYY') %></time>
+    <% if (page.rel?.verb) { %>
       <small>
-        <%= note.rel.verb.replace("-", " ") %>&nbsp;
-        <a href="#" class="u-<%= note.rel.verb %>"><%= note.rel.caption %></a></small>
+        <span><%= page.rel.verb.replace("-", " ") %></span>
+        <a href="<%= page.rel.url %>" class="u-<%= page.rel.verb %>" title="<%= page.rel.caption %>"><%= page.rel.caption %></a></small>
     <% } %>
   </div>
 
   <div class="article-inner">
 
     <header class="article-header">
-      <%- partial('post/title', { post: note, class_name: 'article-title p-name', show_link: true, index: true }) %>    
+      <%- partial('post/title', { post: page, class_name: 'article-title p-name', show_link: true, index: true }) %>    
     </header>
   
     <div class="article-entry">
-      <%- note.excerpt %>
-      <% if (note.more && theme.excerpt_link){ %>
+      <%- page.excerpt %>
+      <% if (page.more && theme.excerpt_link){ %>
         <p class="article-more-link">
-          <a href="<%- url_for(note.link) + '#continue' %>"><%= theme.excerpt_link %></a>
+          <a href="<%- url_for(page.link) + '#continue' %>"><%= theme.excerpt_link %></a>
         </p>
       <% } %>
     </div>
 
     <footer class="article-footer">      
-      <%- partial('post/permalink', { post: note, class_name: 'article-permalink' }) %>
+      <%- partial('post/permalink', { post: page, class_name: 'article-permalink' }) %>
     </footer>
     
   </div>
