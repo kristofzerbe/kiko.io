@@ -143,7 +143,8 @@ hexo.extend.generator.register("dynamic-trello", async function(locals) {
           // Add page to generator result
           result.push({
             data: page,
-            path: path.join(board.name.toLowerCase(), page.name, "index.html"),
+            //path: path.join(board.name.toLowerCase(), page.name, "index.html"),
+            path: path.join(page.permalink, "index.html"),
             layout: "trello-list"
           });
 

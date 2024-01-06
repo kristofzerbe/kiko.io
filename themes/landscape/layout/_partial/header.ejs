@@ -4,20 +4,23 @@
     <div id="header-nav-start"></div>
     <nav id="header-nav" role="navigation">
       <ul class="menu">
-        <% for (var i in theme.nav_menu){ %>
-          <%
+        <% 
+          for (var i in theme.nav_menu) {
+            //if (i === 'home') continue;
             let cl;
-            if (['home', 'search',].some(v => i.includes(v))) {
+            if (['search',].some(v => i.includes(v))) {
               cl = " menu-item-icon";
             }
-          %>
-          <li class="menu-item<%= cl %>" id="nav-<%= i%>-link">
-            <a class="sub-nav-link"
-               href="<%- url_for(theme.nav_menu[i]) %>">
-                <span><%= __(i) %></span>
-              </a>
-          </li>
-        <% } %>
+        %>
+        <li class="menu-item<%= cl %>" id="nav-<%= i%>-link">
+          <a class="sub-nav-link"
+             href="<%- url_for(theme.nav_menu[i]) %>">
+              <span><%= __(i) %></span>
+            </a>
+        </li>
+        <% 
+          } 
+        %>
       </ul>
     </nav>
     <div id="header-nav-end"></div>
@@ -44,8 +47,3 @@
     </div>
   </div>
 </header>
-<script>
-  if (location.pathname === "/") {
-    document.getElementById("nav-home-link").remove();
-  }
-</script>

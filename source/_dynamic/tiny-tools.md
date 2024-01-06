@@ -2,7 +2,7 @@
 title: Tiny Tools
 subtitle: 
 date: 2021-04-14 09:11:40
-permalink: /collections/tiny-tools
+permalink: /tools/tiny-tools
 photograph: 
   file: $500-0246.jpg
   name: Chess
