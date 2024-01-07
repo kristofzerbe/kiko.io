@@ -28,7 +28,7 @@ Here are my 10 favourite pens from 2023 ... and, like last year, an 11th jaw-dro
 
 ![Fantastic piece of CSS art ... and a little JavaScript](Favourite-Pens-of-2023/climacode.png)
 
-What **[Rafa](https://codepen.io/RAFA3L)** has conjured up with his pen **ClimaCode** is truly breathtaking and is spread over 3,658 lines of HTML (including SVG objects), 904 lines of CSS and "only" 138 lines of JavaScript. It's fun to try out all the controls of this climate dashboard and enjoy the soft parallax effects. My favourite button is of course Nessy.
+What **[Rafa](https://codepen.io/RAFA3L)** has conjured up with his pen [**ClimaCode**](https://codepen.io/RAFA3L/pen/ZEmBzEv) is truly breathtaking and is spread over 3,658 lines of HTML (including SVG objects), 904 lines of CSS and "only" 138 lines of JavaScript. It's fun to try out all the controls of this climate dashboard and enjoy the soft parallax effects. My favourite button is of course Nessy.
 
 (Also try out his coffee generator ["For The Love Of Coffee"](https://codepen.io/RAFA3L/pen/QWJOmrL), which is indispensable for IT professionals ;))
 
