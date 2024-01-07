@@ -19,7 +19,7 @@ related:
   - Discoveries-20-CSS-UI
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/111716205115289289
 ---
 
 I've been collecting imaginative and technologically tricky Codepens on a Trello list for quite a while, primarily to learn and perhaps implement them in a project at some point. A good source for high-quality pens is the recently published list of the [Top 100 Pens of 2023 on codepen.io](https://codepen.io/2023/popular/pens/). I have already noticed some of the works over the course of the year, but some have slipped through my fingers and so I am glad that I have this list, the order of which is calculated from the hearts (likes) given and their level.
