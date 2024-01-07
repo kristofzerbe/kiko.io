@@ -35,10 +35,8 @@
         <% } else { %>
           <% if (page.article?.type === "draft") { %>
             <span>Used at draft <em><%= page.article?.title %></em></span>
-          <% } else if (page.article?.type === "general") { %>
-            <span>Used at <%= page.article?.type %> page like  
-              <a href="<%= page.article.url %>">Home</a>
-            </span>
+          <% } else if (page.article?.type === "start") { %>
+            <span>Used at <a href="<%= page.article.url %>"><%= page.article?.type %></a> page</span>
           <% } else { %>
             <span>Used at <%= page.article?.type + ((["page", "post"].some(v => page.article?.type.includes(v))) ? "" : " page") %> 
               <a href="<%= page.article?.url %>"><%= page.article?.title %></a>

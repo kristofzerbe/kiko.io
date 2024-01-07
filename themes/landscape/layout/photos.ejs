@@ -16,94 +16,94 @@
 
   <div class="view-bar">
     <span class="info-count"><%= page.items.length %></span> photos 
-    <span id="view-filter-status-wrap" >
+    <span id="view-filter-status-wrap">
       <input type="radio" name="view-filter-status" id="filter-status-all" checked
-            data-status="all"
-            data-next-status="pool">
+             data-status="all"
+             data-next-status="pool">
       <label for="filter-status-all" title="Filter for unused photos (Pool)"><mark>overall</mark></label>
       <input type="radio" name="view-filter-status" id="filter-status-pool"
-            data-status="pool"
-            data-next-status="used">
+             data-status="pool"
+             data-next-status="used">
       <label for="filter-status-pool" title="Filter for used photos"><mark>unused</mark></label>
       <input type="radio" name="view-filter-status" id="filter-status-used"
-            data-status="used"
-            data-next-status="all">
+             data-status="used"
+             data-next-status="all">
       <label for="filter-status-used" title="Show all photos"><mark>used</mark></label>
     </span>
     <span id="view-filter-type-wrap" style="display:none">
       <input type="radio" name="view-filter-type" id="filter-type-all" checked
-            data-type="all"
-            data-next-type="post">
+             data-type="all"
+             data-next-type="post">
       <label for="filter-type-all" title="Filter for used in drafts"><mark>overall</mark></label>
       <input type="radio" name="view-filter-type" id="filter-type-post"
-            data-type="post"
-            data-next-type="draft">
-      <label for="filter-type-post" title="Filter for used in notes"><mark>in posts</mark></label>
+             data-type="post"
+             data-next-type="draft">
+      <label for="filter-type-post" title="Filter for used in notes"><mark>for posts</mark></label>
       <input type="radio" name="view-filter-type" id="filter-type-draft"
-            data-type="draft"
-            data-next-type="notes">
-      <label for="filter-type-draft" title="Filter for used in pages"><mark>in drafts</mark></label>
+             data-type="draft"
+             data-next-type="notes">
+      <label for="filter-type-draft" title="Filter for used in pages"><mark>for drafts</mark></label>
       <input type="radio" name="view-filter-type" id="filter-type-notes"
-            data-type="notes"
-            data-next-type="page">
-      <label for="filter-type-notes" title="Filter for used in dynamic pages"><mark>in notes</mark></label>
+             data-type="notes"
+             data-next-type="page">
+      <label for="filter-type-notes" title="Filter for used in dynamic pages"><mark>for notes</mark></label>
       <input type="radio" name="view-filter-type" id="filter-type-page"
-            data-type="page"
-            data-next-type="dynamic">
-      <label for="filter-type-page" title="Filter for used in anything pages"><mark>in default pages</mark></label>
+             data-type="page"
+             data-next-type="dynamic">
+      <label for="filter-type-page" title="Filter for used in anything pages"><mark>for default pages</mark></label>
       <input type="radio" name="view-filter-type" id="filter-type-dynamic"
-            data-type="dynamic"
-            data-next-type="anything">
-      <label for="filter-type-dynamic" title="Filter for used in dynamic pages"><mark>in dynamic pages</mark></label>
+             data-type="dynamic"
+             data-next-type="anything">
+      <label for="filter-type-dynamic" title="Filter for used in dynamic pages"><mark>for dynamic pages</mark></label>
       <input type="radio" name="view-filter-type" id="filter-type-anything"
-            data-type="anything"
-            data-next-type="general">
-      <label for="filter-type-anything" title="Show all used photos"><mark>in anything pages</mark></label>
-      <input type="radio" name="view-filter-type" id="filter-type-general"
-            data-type="general"
-            data-next-type="all">
-      <label for="filter-type-general"><mark>in general pages</mark></label>
+             data-type="anything"
+             data-next-type="start">
+      <label for="filter-type-anything" title="Show all used photos"><mark>for anything pages</mark></label>
+      <input type="radio" name="view-filter-type" id="filter-type-start"
+             data-type="start"
+             data-next-type="all">
+      <label for="filter-type-start"><mark>at start page</mark></label>
     </span>
     <span id="view-presentation-wrap">
       displayed as
       <input type="radio" name="view-presentation" id="presentation-grid" checked
-              data-presentation="grid"
-              data-next-presentation="list">
+             data-presentation="grid"
+             data-next-presentation="list">
       <label for="presentation-grid" title="Display as list"><mark>grid</mark></label>
       <input type="radio" name="view-presentation" id="presentation-list"
-              data-presentation="list"
-              data-next-presentation="masonry">
+             data-presentation="list"
+             data-next-presentation="masonry">
       <label for="presentation-list" title="Display as masonry"><mark>list</mark></label>
       <input type="radio" name="view-presentation" id="presentation-masonry"
-              data-presentation="masonry"
-              data-next-presentation="grid">
+             data-presentation="masonry"
+             data-next-presentation="grid">
       <label for="presentation-masonry" title="Display as grid"><mark>masonry</mark></label>
     </span>
     <span id="view-sort-wrap">
       sorted by
       <span id="view-sort-field">
-          <input type="radio" name="view-sort-field" id="sort-field-file" checked
-                  data-sort-field="file"
-                  data-next-sort-field="title">
-          <label for="sort-field-file" title="Sort by title"><mark>file name</mark></label>
-          <input type="radio" name="view-sort-field" id="sort-field-title"
-                  data-sort-field="title"
-                  data-next-sort-field="date-created">
-          <label for="sort-field-title" title="Sort by date created"><mark>title</mark></label>
-          <input type="radio" name="view-sort-field" id="sort-field-date-created"
-                  data-sort-field="date-created"
-                  data-next-sort-field="file">
-          <label for="sort-field-date-created" title="Sort by file name"><mark>date created</mark></label>
+        <input type="radio" name="view-sort-field" id="sort-field-file" checked
+               data-sort-field="file"
+               data-next-sort-field="title">
+        <label for="sort-field-file" title="Sort by title"><mark>file name</mark></label>
+        <input type="radio" name="view-sort-field" id="sort-field-title"
+               data-sort-field="title"
+               data-next-sort-field="date-created">
+        <label for="sort-field-title" title="Sort by date created"><mark>title</mark></label>
+        <input type="radio" name="view-sort-field" id="sort-field-date-created"
+               data-sort-field="date-created"
+               data-next-sort-field="file">
+        <label for="sort-field-date-created" title="Sort by file name"><mark>date created</mark></label>
       </span>
       <span id="view-sort-direction">
-          <input type="radio" name="view-sort-direction" id="sort-direction-asc" checked
-                  data-sort-direction="asc"
-                  data-next-sort-direction="desc">
-          <label for="sort-direction-asc" title="Sort descending"><mark>ascending</mark></label>
-          <input type="radio" name="view-sort-direction" id="sort-direction-desc"
-                  data-sort-direction="desc"
-                  data-next-sort-direction="asc">
-          <label for="sort-direction-desc" title="Sort descending"><mark>descending</mark></label>
+        <input type="radio" name="view-sort-direction" id="sort-direction-asc" checked
+               data-sort-direction="asc"
+               data-next-sort-direction="desc">
+        <label for="sort-direction-asc" title="Sort descending"><mark>ascending</mark></label>
+        <input type="radio" name="view-sort-direction" id="sort-direction-desc"
+               data-sort-direction="desc"
+               data-next-sort-direction="asc">
+        <label for="sort-direction-desc" title="Sort descending"><mark>descending</mark></label>
       </span>          
     </span>
   </div>

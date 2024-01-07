@@ -36,8 +36,8 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
   let pDynamic = getDynamicPagePhotos(config);
   log.info(magenta(pDynamic.length) + " used photos in dynamic pages");
 
-  // Get used photos in Notes
-  let pAnything = getAnythingPagePhotos(config, "project");
+  // Get used photos in Anything pages
+  let pAnything = getAnythingPagePhotos(config);
   log.info(magenta(pAnything.length) + " used photos in anything pages 'project'");
   
   // Get used photos in Notes
@@ -157,8 +157,8 @@ function getHeroPhoto(config) {
     file: config.hero.file,
     name: config.hero.name,
     article: {
-      type: "general",
-      title: "General",
+      type: "start",
+      title: "Start",
       url: "/index.html"
     }
   };
@@ -208,8 +208,7 @@ function getShedPhotos(config) {
 
   var shedDir = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir);
 
-  let shed = fs
-    .readdirSync(shedDir)
+  let shed = fs.readdirSync(shedDir)
     .filter(entry => fs.statSync(path.join(shedDir, entry)).isDirectory())
     .map(entry => ({ key: entry, status: "shed", file: null }));
 
@@ -373,16 +372,18 @@ function getDynamicPagePhotos(config) {
 
 /** ================================================================================= */
 
-function getAnythingPagePhotos(config, subDir) {
+function getAnythingPagePhotos(config) {
 
-  var anythingDir = path.join(_rootDir, config.source_dir, "_anything/" + subDir);
+  var anythingDir = path.join(_rootDir, config.source_dir, "_anything/");
   var metaDir = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "meta");
 
   let anything = fs.readdirSync(anythingDir)
-    .filter(f => f === "index.md") //TODO: Better: Filter out duplicates
-    .reduce((used, file) => {
+    //.filter(f => f === "index.md") //TODO: Better: Filter out duplicates
+    .filter(entry => fs.statSync(path.join(anythingDir, entry)).isDirectory())
+    .reduce((used, dir) => {
 
-      const mdSource = path.join(anythingDir, file);
+      const mdSource = path.join(anythingDir, dir, "index.md");
+      console.log(mdSource);
       const md = fs.readFileSync(mdSource);
       let fm = front.parse(md);
 
