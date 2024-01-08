@@ -12,7 +12,7 @@ However, I recently came across a Mastodon poll, where [Sean](https://social.tre
 
 So I have changed that now...
 
-https://social.treehouse.systems/@deadsuperhero/110608652068691549
+[https://social.treehouse.systems/@deadsuperhero/110608652068691549](https://social.treehouse.systems/@deadsuperhero/110608652068691549)
 
 ![06-29-results-full-article-poll](images/06-29-results-full-article-poll.png)
 

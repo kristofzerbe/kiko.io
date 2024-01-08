@@ -120,7 +120,7 @@ function isVisibleInViewPort(e) {
 
   return ((eBottom <= viewBottom) && (eTop >= viewTop));
 }
-function initViewportImage() {
+function initImageViewportVisibility() {
   $(".article-photo, .archive-article-photo, .card-img, .img-link").each(function() {
     if (isVisibleInViewPort($(this))) {
       $(this).addClass("in-view");

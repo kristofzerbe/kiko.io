@@ -20,56 +20,54 @@
   <%- page.content %>
 
   <div class="view-bar">
-    <span class="info-count"><%= page.items.length %></span> Entries <span class="info-des"></span>
-    <span id="view-presentation-wrap">
-      displayed as
-      <input type="radio" name="view-presentation" id="presentation-grid" checked
-              data-presentation="grid"
-              data-next-presentation="list">
-      <label for="presentation-grid" title="Display as list"><mark>grid</mark></label>
-      <input type="radio" name="view-presentation" id="presentation-list"
-              data-presentation="list"
-              data-next-presentation="grid">
-      <label for="presentation-list" title="Display as grid"><mark>list</mark></label>
-    </span>
-    <span id="view-sort-wrap">
-      sorted by
-      <span id="view-sort-field">
-          <input type="radio" name="view-sort-field" id="sort-field-date-last-activity" checked
-                  data-sort-field="date-last-activity"
-                  data-next-sort-field="string-title">
-          <label for="sort-field-date-last-activity" title="Sort by title"><mark>last activity</mark></label>
-          <input type="radio" name="view-sort-field" id="sort-field-string-title"
-                  data-sort-field="string-title"
-                  data-next-sort-field="position">
-          <label for="sort-field-string-title" title="Sort by position"><mark>title</mark></label>
-          <input type="radio" name="view-sort-field" id="sort-field-position"
-                  data-sort-field="position"
-                  data-next-sort-field="date-last-activity">
-          <label for="sort-field-position" title="Sort by last activity"><mark>position</mark></label>
-      </span>
-      <span id="view-sort-direction">
-          <input type="radio" name="view-sort-direction" id="sort-direction-desc" checked
-                  data-sort-direction="desc"
-                  data-next-sort-direction="asc">
-          <label for="sort-direction-desc" title="Sort descending"><mark>descending</mark></label>
-          <input type="radio" name="view-sort-direction" id="sort-direction-asc"
-                  data-sort-direction="asc"
-                  data-next-sort-direction="desc">
-          <label for="sort-direction-asc" title="Sort descending"><mark>ascending</mark></label>
-      </span>          
-    </span>
-
-    <div style="width:100%; margin-top: 10px;">
-      <label>Filter:</label>
-      <select name="tag" id="tag" data-placeholder="Select a tag..." multiple>
+    <span class="view-count"><%= page.items.length %></span> 
+    <span>Entries</span> 
+    <span>filtered by tag</span>
+    <span>
+      <select name="tag" id="tag" data-placeholder="Select ..." multiple>
         <% for(var i=0; i < page.labels.length; i++) { %>
         <option value="<%- page.labels[i] %>"><%- page.labels[i] %></option>
         <% } %>
-      </select>  
-    </div>
-  </div>
+      </select>
+    </span>
+    <span>displayed as</span>
+    <span>
+      <input type="radio" name="view-presentation" id="presentation-grid" checked
+             data-presentation="grid"
+             data-next-presentation="list">
+      <label for="presentation-grid" title="Display as list"><mark>grid</mark></label>
+      <input type="radio" name="view-presentation" id="presentation-list"
+             data-presentation="list"
+             data-next-presentation="grid">
+      <label for="presentation-list" title="Display as grid"><mark>list</mark></label>
+    </span>
+    <span>sorted by</span>
+    <span>
+      <input type="radio" name="view-sort-field" id="sort-field-date-last-activity" checked
+             data-sort-field="date-last-activity"
+             data-next-sort-field="string-title">
+      <label for="sort-field-date-last-activity" title="Sort by title"><mark>last activity</mark></label>
+      <input type="radio" name="view-sort-field" id="sort-field-string-title"
+             data-sort-field="string-title"
+             data-next-sort-field="position">
+      <label for="sort-field-string-title" title="Sort by position"><mark>title</mark></label>
+      <input type="radio" name="view-sort-field" id="sort-field-position"
+             data-sort-field="position"
+             data-next-sort-field="date-last-activity">
+      <label for="sort-field-position" title="Sort by last activity"><mark>position</mark></label>
+    </span>
+    <span>
+      <input type="radio" name="view-sort-direction" id="sort-direction-desc" checked
+             data-sort-direction="desc"
+             data-next-sort-direction="asc">
+      <label for="sort-direction-desc" title="Sort descending"><mark>descending</mark></label>
+      <input type="radio" name="view-sort-direction" id="sort-direction-asc"
+             data-sort-direction="asc"
+             data-next-sort-direction="desc">
+      <label for="sort-direction-asc" title="Sort descending"><mark>ascending</mark></label>
+    </span>          
 
+  </div>
 
   <div class="view grid" id="collection">
     <% for(var i=0; i < page.items.length; i++) { %>
@@ -144,7 +142,7 @@
       tinysort('#collection > .card',{data: field, order: dir, forceStrings: !["position"].includes(field)});
       $('.view').find('.card').removeClass("trans");
       setView(currentPresentation);
-      initViewportImage();
+      initImageViewportVisibility();
     }, 300);
   }
 
@@ -197,20 +195,20 @@
       }
     });
     setTimeout(() => { 
-        initViewportImage();
+        initImageViewportVisibility();
 
         let resultCount = document.querySelectorAll(".card:not(.hide)").length;
         let totalCount = document.querySelectorAll(".card").length;
-        let resultElement = document.querySelector(".view-bar span.info-count");
-        let desElement = document.querySelector(".view-bar span.info-des");
+        let resultElement = document.querySelector(".view-bar .view-count");
+        //let desElement = document.querySelector(".view-bar .view-filter");
 
         resultElement.textContent = resultCount;
 
-        if (resultCount === totalCount) {
-          desElement.textContent = "";
-        } else {
-          desElement.textContent = "found";
-        }
+        // if (resultCount === totalCount) {
+        //   desElement.textContent = "";
+        // } else {
+        //   desElement.textContent = "found";
+        // }
       }, 300);
   }
 

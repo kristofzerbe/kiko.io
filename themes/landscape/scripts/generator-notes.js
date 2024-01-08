@@ -43,7 +43,7 @@ hexo.extend.generator.register("notes", function (locals) {
     index.name = "notes" + index.year;
     index = {
       ...index,
-      ...getMDInfo(path.join(yearDir, "index.md"), index.false),
+      ...getMDInfo(path.join(yearDir, "index.md"), index, false),
     };
     index.notes = [];
     //console.log(index);

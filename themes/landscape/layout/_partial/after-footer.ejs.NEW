@@ -136,7 +136,7 @@
   
     return ((eBottom <= viewBottom) && (eTop >= viewTop));
   }
-  function initViewportImage() {
+  function initImageViewportVisibility() {
     $(".article-photo, .archive-article-photo, .card-img, .img-link").each(function() {
       if (isVisibleInViewPort($(this))) {
         $(this).addClass("in-view");
@@ -231,12 +231,12 @@
 
   window.addEventListener('scroll', function() {
     scrollHeader();
-    initViewportImage();
+    initImageViewportVisibility();
   }, { passive: true });
 
   window.addEventListener('resize', function() {
     initHeader();
-    initViewportImage();
+    initImageViewportVisibility();
   });
 
   // TOGGLE THEME
@@ -257,7 +257,7 @@
   $( document ).ready(function() {
     initHeader();
     initColorScheme();
-    initViewportImage();
+    initImageViewportVisibility();
     //TODO: Einschalten initNavMenuScroll();
     initScrollProgress();
   });

@@ -15,8 +15,9 @@
   <%- page.content %>
 
   <div class="view-bar">
-    <span class="info-count"><%= page.items.length %></span> photos 
-    <span id="view-filter-status-wrap">
+    <span class="view-count"><%= page.items.length %></span> 
+    <span>photos</span> 
+    <span>
       <input type="radio" name="view-filter-status" id="filter-status-all" checked
              data-status="all"
              data-next-status="pool">
@@ -30,7 +31,7 @@
              data-next-status="all">
       <label for="filter-status-used" title="Show all photos"><mark>used</mark></label>
     </span>
-    <span id="view-filter-type-wrap" style="display:none">
+    <span id="view-filter-type" style="display:none">
       <input type="radio" name="view-filter-type" id="filter-type-all" checked
              data-type="all"
              data-next-type="post">
@@ -64,8 +65,8 @@
              data-next-type="all">
       <label for="filter-type-start"><mark>at start page</mark></label>
     </span>
-    <span id="view-presentation-wrap">
-      displayed as
+    <span>displayed as</span>
+    <span>
       <input type="radio" name="view-presentation" id="presentation-grid" checked
              data-presentation="grid"
              data-next-presentation="list">
@@ -79,33 +80,31 @@
              data-next-presentation="grid">
       <label for="presentation-masonry" title="Display as grid"><mark>masonry</mark></label>
     </span>
-    <span id="view-sort-wrap">
-      sorted by
-      <span id="view-sort-field">
-        <input type="radio" name="view-sort-field" id="sort-field-file" checked
-               data-sort-field="file"
-               data-next-sort-field="title">
-        <label for="sort-field-file" title="Sort by title"><mark>file name</mark></label>
-        <input type="radio" name="view-sort-field" id="sort-field-title"
-               data-sort-field="title"
-               data-next-sort-field="date-created">
-        <label for="sort-field-title" title="Sort by date created"><mark>title</mark></label>
-        <input type="radio" name="view-sort-field" id="sort-field-date-created"
-               data-sort-field="date-created"
-               data-next-sort-field="file">
-        <label for="sort-field-date-created" title="Sort by file name"><mark>date created</mark></label>
-      </span>
-      <span id="view-sort-direction">
-        <input type="radio" name="view-sort-direction" id="sort-direction-asc" checked
-               data-sort-direction="asc"
-               data-next-sort-direction="desc">
-        <label for="sort-direction-asc" title="Sort descending"><mark>ascending</mark></label>
-        <input type="radio" name="view-sort-direction" id="sort-direction-desc"
-               data-sort-direction="desc"
-               data-next-sort-direction="asc">
-        <label for="sort-direction-desc" title="Sort descending"><mark>descending</mark></label>
-      </span>          
+    <span>sorted by</span>
+    <span>
+      <input type="radio" name="view-sort-field" id="sort-field-file" checked
+              data-sort-field="file"
+              data-next-sort-field="title">
+      <label for="sort-field-file" title="Sort by title"><mark>file name</mark></label>
+      <input type="radio" name="view-sort-field" id="sort-field-title"
+              data-sort-field="title"
+              data-next-sort-field="date-created">
+      <label for="sort-field-title" title="Sort by date created"><mark>title</mark></label>
+      <input type="radio" name="view-sort-field" id="sort-field-date-created"
+              data-sort-field="date-created"
+              data-next-sort-field="file">
+      <label for="sort-field-date-created" title="Sort by file name"><mark>date created</mark></label>
     </span>
+    <span>
+      <input type="radio" name="view-sort-direction" id="sort-direction-asc" checked
+              data-sort-direction="asc"
+              data-next-sort-direction="desc">
+      <label for="sort-direction-asc" title="Sort descending"><mark>ascending</mark></label>
+      <input type="radio" name="view-sort-direction" id="sort-direction-desc"
+              data-sort-direction="desc"
+              data-next-sort-direction="asc">
+      <label for="sort-direction-desc" title="Sort descending"><mark>descending</mark></label>
+    </span>          
   </div>
 
   <div class="view grid" id="photos">
@@ -124,7 +123,7 @@
   });
   document.querySelectorAll("input[name=view-filter-type]").forEach(element => {
     element.addEventListener("click", (event) => {
-      setTypeFilter(element);
+      setFilterType(element);
     });
   });
   document.querySelectorAll("input[name=view-presentation]").forEach(element => {
@@ -243,7 +242,7 @@
       tinysort('#photos > .card',{data: field, order: dir, forceStrings: true});
       $('.view').find('.card').removeClass("trans");
       setView(currentPresentation, newSorting);
-      initViewportImage();
+      initImageViewportVisibility();
     }, 300);
   }
 
@@ -286,7 +285,7 @@
       if (newStatus === "used") { // set filter by directly, if status 'used' and type != 'all'
         eType = document.querySelector("input[name=view-filter-type]:checked");
         if (eType.getAttribute("data-type") !== "all") {
-          setTypeFilter();
+          setFilterType();
           return;
         }
       }
@@ -298,9 +297,9 @@
     eNewStatus.checked = true;
 
     if (newStatus === "used") { 
-      document.getElementById("view-filter-type-wrap").style.display = "inline-block";
+      document.getElementById("view-filter-type").style.display = "inline-block";
     } else { 
-      document.getElementById("view-filter-type-wrap").style.display = "none";
+      document.getElementById("view-filter-type").style.display = "none";
       document.getElementById("filter-type-all").checked = true; //reset used e.g. type filter
     }
 
@@ -311,10 +310,10 @@
         hidePhoto(item);
       }
     });
-    refreshFilterView();
+    refreshView();
   }
 
-  function setTypeFilter(eType) {
+  function setFilterType(eType) {
 
     let newType;
     if (!eType) { //for initialization
@@ -338,7 +337,7 @@
         hidePhoto(item);
       }
     });
-    refreshFilterView();
+    refreshView();
   }
 
   function showPhoto(item) {
@@ -358,12 +357,12 @@
     }, 300);
   }
 
-  function refreshFilterView() {
+  function refreshView() {
     setTimeout(() => {
-        initViewportImage();
+        initImageViewportVisibility();
 
         let resultCount = document.querySelectorAll(".card:not(.hide)").length;
-        let resultElement = document.querySelector(".view-bar .info-count");
+        let resultElement = document.querySelector(".view-bar .view-count");
         resultElement.textContent = resultCount;
 
         Spotlight.init();

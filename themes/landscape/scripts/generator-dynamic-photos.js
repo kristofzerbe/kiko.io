@@ -383,7 +383,6 @@ function getAnythingPagePhotos(config) {
     .reduce((used, dir) => {
 
       const mdSource = path.join(anythingDir, dir, "index.md");
-      console.log(mdSource);
       const md = fs.readFileSync(mdSource);
       let fm = front.parse(md);
 

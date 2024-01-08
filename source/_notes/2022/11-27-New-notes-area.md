@@ -8,7 +8,7 @@ syndication:
 
 As a start for #POSSE, I've introduced a new area called 'Notes' on my blog, which replaces the TIL page. Still beta, because of some problems with #Hexo and currently it lacks of automation, regarding deployment and syndication, but I do need a few challenges.
 
-https://kiko.io/notes
+[https://kiko.io/notes](https://kiko.io/notes)
 
 <!-- more -->
 

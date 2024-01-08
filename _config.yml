@@ -75,11 +75,18 @@ titlecase: false # Transform title into titlecase
 filename_case: 0
 render_drafts: false
 post_asset_folder: true
-marked:
-  prependRoot: true
-  postAsset: true
+
+# Markdown Renderer
+# https://github.com/hexojs/hexo-renderer-marked?tab=readme-ov-file
+marked: 
+  prependRoot: true # Prepend config.root to internal images
+  postAsset: true # Resolve post asset's image path to relative path
+  descriptionLists: false # Support for description lists syntax
+  autolink: false # Autolink for URLs and mail adresses, BUT doesn't work for Fediverse adresses!
+  mangle: false # Obscure email address
 relative_link: false
 future: false
+
 highlight:
   enable: true
   line_number: true

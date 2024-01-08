@@ -13,6 +13,6 @@ Each browser or browser engine interprets the common CSS rules a bit differently
 - text-decoration-skip-ink: auto;
 - scroll-margin-block: 5ex;
 
-https://andy-bell.co.uk/a-more-modern-css-reset
+[https://andy-bell.co.uk/a-more-modern-css-reset](https://andy-bell.co.uk/a-more-modern-css-reset)
 
 #css #reset
