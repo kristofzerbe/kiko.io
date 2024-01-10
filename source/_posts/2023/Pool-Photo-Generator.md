@@ -7,6 +7,7 @@ photograph:
   file: 23-05-Holland-0174.jpg
   name: Beer Copper
   socialmedia: /static/images/social-media/Pool-Photo-Generator.png
+series: A New Blog
 categories:
   - JavaScript
 tags:
