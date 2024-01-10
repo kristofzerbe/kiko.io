@@ -7,6 +7,7 @@ photograph:
   file: DSC_2903.jpg
   name: Guinness Orchestra
   socialmedia: /static/images/social-media/Mastodon-Share-Dialog.png
+series: A New Blog
 categories:
   - Tools
 tags:
