@@ -7,6 +7,7 @@ photograph:
   file: D50_5535_2309.jpg
   name: Floral Magic XCI
   socialmedia: /static/images/social-media/How-to-get-and-use-an-eye-catching-color-that-matches-the-header-image.png
+series: A New Blog
 categories:
   - JavaScript
 tags:
