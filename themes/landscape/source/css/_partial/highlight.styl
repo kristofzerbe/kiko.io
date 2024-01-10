@@ -28,11 +28,15 @@ dark-highlight-blue = #6d95c9
 dark-highlight-purple = #ae70d5
 
 $code-block
-  margin: 0 default-padding * -1
-  padding: (default-padding / 2)
+  margin: 0 default-padding * -1  
   overflow: auto  
   font-size: font-size-code
   line-height: line-height
+  background: highlight-background
+  color: highlight-foreground
+  /[data-theme="dark"] &
+    background: dark-highlight-background
+    color: dark-highlight-foreground
 
 // $dark-code-block
 //   background: dark-highlight-background
@@ -59,9 +63,7 @@ $line-numbers
         color: inherit
   pre
     @extend $code-block
-    color: highlight-foreground
-    /[data-theme="dark"] &
-      color: dark-highlight-foreground
+    padding: (default-padding / 2) default-padding
     code
       color: highlight-foreground
       /[data-theme="dark"] &
@@ -71,13 +73,9 @@ $line-numbers
       padding: 0
   .highlight
     @extend $code-block
-    // margin-bottom: 10px
-    background: highlight-background
-    color: highlight-foreground
-    /[data-theme="dark"] &
-      background: dark-highlight-background
-      color: dark-highlight-foreground
+    padding: (default-padding / 2)
     pre
+      background: none
       border: none
       margin: 0
       padding: 0
