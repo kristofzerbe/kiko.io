@@ -7,6 +7,7 @@ photograph:
   file: 22-08-Bretagne-Jersey-0683.jpg
   name: Water Numbers
   socialmedia: /static/images/social-media/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet.png
+series: A New Blog
 categories:
   - UI/UX
 tags:
