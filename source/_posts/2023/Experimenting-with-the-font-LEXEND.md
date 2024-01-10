@@ -7,6 +7,7 @@ photograph:
   file: 22-08-Bretagne-Jersey-0920.jpg
   name: Watergate 9
   socialmedia: /static/images/social-media/Experimenting-with-the-font-LEXEND.png
+series: A New Blog
 categories:
   - UI/UX
 tags:
