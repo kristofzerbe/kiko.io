@@ -7,6 +7,7 @@ photograph:
   file: D50_5099.jpg
   name: Ground Light
   socialmedia: /static/images/social-media/CONTINUE-READING-Link-Auto-Scrolling-on-the-called-page.png
+series: A New Blog
 categories:
   - JavaScript
 tags:
