@@ -2,11 +2,7 @@
   <%- partial('_partial/photograph') %>
 <% } %>
 
-<nav class="page-nav-index">
-<% for(var i=0; i < page.years.length; i++) { %>
-  <a class="<%= (page.years[i].year == page.year) ? "current" : "" %>" href="<%= "/" + page.years[i].link %>"><%= page.years[i].year %></a>
-<% } %>
-</nav>
+<%- partial('_partial/nav-index-notes') %>
 
 <h1 class="page-title">
   <span><%= page.title %><b> | </b></span><%= page.year %>

@@ -1,4 +1,9 @@
 <nav class="page-nav-index">
-  <a href="/archives" class="<%= (["archives","categories","tags"].filter(p => page.path.startsWith(p)).length > 0) ? "current" : "" %>">Archives</a>
-  <a href="/series" class="<%= (page.path.startsWith("series")) ? "current" : "" %>">Series</a>
+<% if (["archives","categories","tags"].filter(p => page.path.startsWith(p)).length > 0) { %>
+  <a href="/archives" class="current">&#10022;</a>
+  <a href="/series">Series</a>
+<% } else if (page.path.startsWith("series")) { %>
+  <a href="/series" class="current">&#10022;</a>
+  <a href="/archives">Archives</a>
+<% } %>
 </nav>

@@ -1,4 +1,12 @@
 <nav class="page-nav-index">
-  <a href="/photos" class="<%= (page.name === "photos") ? "current" : "" %>">Collection</a>
-  <a href="/photos/map" class="<%= (page.name === "photos-map") ? "current" : "" %>">Map</a>
+  <% switch (page.name) {
+    case "photos": %>
+      <a href="/photos" class="current">&#10022;</a>
+      <a href="/photos/map">Map</a>
+      <% break;
+    case "photos-map": %>
+      <a href="/photos/map" class="current">&#10022;</a>
+      <a href="/photos">Collection</a>
+      <% break;
+  } %>
 </nav>

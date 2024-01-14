@@ -88,39 +88,45 @@
   @media mq-normal
     margin: 0
   ~ h1
-    margin-top: medium-margin
+    margin-top: 0
   a
     flex: 0 0 auto
     display: block
     margin: 0
     padding: (default-padding-vert / 3) (default-padding / 2)
     font-size: 15px
-    font-weight: 400
+    font-weight: 500
     text-transform: uppercase
     text-decoration: none
     opacity: 0.75
-    box-shadow: inset 0px 32px 8px -32px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 32px 8px -32px rgba(0,0,0,0.5)
+    // box-shadow: inset -2px -8px 14px -14px rgba(0,0,0,0.5)
     background-color: color-border
     color: color-button-link
     /[data-theme="dark"] &
       border-color: dark-color-border
       background-color: dark-color-border
       color: dark-color-button-link
-    &.current
+    &.current, &:hover
       box-shadow: none
-      opacity: 1
+      // opacity: 1
       background-color: transparent
       /[data-theme="dark"] &
         border-color: dark-color-border
-    &:not(.current):hover
-      opacity: 1
-      border-color: var(--color-link)
-      background-color: var(--color-link)
-      color: color-logo
+    &.current
+      font-size: 1.2rem
+    &:hover
+      color: var(--color-link)
       /[data-theme="dark"] &
-        border-color: dark-color-base
-        background-color: dark-color-base
-        color: dark-color-logo
+        color: var(--dark-color-link)
+    &.prev:before, &.next::after
+      font-size: 0.9rem
+    &.prev:before
+      content: "\276E"
+      margin-right: 10px
+    &.next::after
+      content: "\276F"
+      margin-left: 10px
 
 .page-content
   @extend $base-style

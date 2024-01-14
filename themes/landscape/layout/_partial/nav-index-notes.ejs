@@ -1,0 +1,28 @@
+<%
+console.log(page.years);
+  let currentIndex = page.years.map(function(y) { return y.year; }).indexOf(page.year);
+console.log(page.year);
+console.log(currentIndex);
+  let prevIndex = -1;
+  let nextIndex = -1;
+  if (currentIndex > 0) prevIndex = currentIndex - 1;
+  if (currentIndex < page.years.length - 1) nextIndex = currentIndex + 1;
+%>
+<nav class="page-nav-index" data-year="<%= page.year %>">
+  <a href="/<%= page.years[currentIndex].link %>" class="current">&#10022;</a>
+  <% if (prevIndex > -1 ) { %>
+  <a href="/<%= page.years[prevIndex].link %>" class="prev"><%= page.years[prevIndex].year %></a>
+  <% } %>
+  <% if (nextIndex > -1 ) { %>
+  <a href="/<%= page.years[nextIndex].link %>" class="next"><%= page.years[nextIndex].year %></a>
+  <% } %>
+</nav>
+
+  <%# for(var i=0; i < page.years.length; i++) { %>
+    <!-- 
+    <a class="<%# (page.years[i].year == page.year) ? "current" : "" %>" 
+       href="<%# "/" + page.years[i].link %>">
+      <%# page.years[i].year %>
+    </a>
+    -->
+  <%# } %>
