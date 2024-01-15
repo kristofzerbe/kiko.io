@@ -4,8 +4,8 @@ const path = require("path");
 const fs = require("hexo-fs");
 const front = require("hexo-front-matter");
 const sharp = require("sharp");
-// const { highlight } = require("hexo-util");
-// const { config } = require("process");
+const { highlight } = require("hexo-util");
+const { config } = require("process");
 
 hexo.extend.generator.register("notes", function (locals) {
   let config = this.config;
@@ -153,6 +153,8 @@ function getMDInfo(filePath, obj, parseContent) {
   obj = { ...obj, ...fm };
 
   if (parseContent) {
+    //obj._content = highlight(obj._content, config.highlight); //TAKES COMPLETE CONTENT!?
+
     let content = obj._content.split("\n<!-- more -->\n");
 
     if (content.length === 2) {
@@ -175,8 +177,6 @@ function getMDInfo(filePath, obj, parseContent) {
     }
 
     // console.log(obj);
-
-    //obj.content = highlight(obj.content, config.highlight);
   }
   return obj;
 }
