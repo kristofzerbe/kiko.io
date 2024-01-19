@@ -153,6 +153,8 @@
         border-bottom: var(--dark-color-link) 1px solid
   p
     margin: medium-margin 0 (default-margin)
+  p:first-of-type
+    margin-top: 0
   .float-element 
     display: block
     float: right
@@ -269,8 +271,8 @@
         display: block
         overflow: hidden
         position: relative
-        filter: grayscale(0.5) contrast(0.5)
         img
+          @extend $inview-image
           height: 100%
           width: 100%
           background-color: color-background
@@ -294,7 +296,8 @@
         /[data-theme="dark"] &
           box-shadow: dark-box-shadow dark-color-base
       .card-img.in-view
-        filter: grayscale(0) contrast(1)
+        img
+          @extend $inview-image-visible
 
     .card.collection
       .card-img

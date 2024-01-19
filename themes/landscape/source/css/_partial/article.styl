@@ -90,6 +90,8 @@
 .note-list
   .article.note
     margin-left: 2.5rem
+    &:first-of-type
+      margin-top: 1rem
     @media mq-mobile
       margin-left: default-margin
       margin-bottom: double-margin
@@ -154,6 +156,7 @@
   margin-bottom: default-margin
 
 .article-photo
+  @extend $inview-image
   height: 150px
   @media mq-tablet
     height: 175px
@@ -163,22 +166,9 @@
     height: 250px
   width: 100%
   object-fit: cover
-  transform: scale(1)
-  transform-style: preserve-3d
-  transition: all ease-out .6s  
-  opacity: 0.3
-  filter: filter-gray
-  /[data-theme="dark"] &
-    opacity: 0.75
-    filter: dark-filter-gray
 
 .article-photo.in-view
-    transform: scale(1.05)
-    opacity: 1
-    filter: grayscale(0) contrast(1)
-    /[data-theme="dark"] &
-      opacity: 1
-      filter: grayscale(0) contrast(1) brightness(0.75)
+  @extend $inview-image-visible
 
 .article-comment-link
   @extend $block-caption

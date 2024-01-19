@@ -78,11 +78,12 @@ $base-style
 
 $title
   position: relative
+  display: inline-block
+  margin: 2.5rem 0 default-padding-vert
   font-size: font-pagetitle-size
   font-weight: font-weight-bold
   line-height: line-height-title
   text-transform: uppercase
-  margin: default-padding 0
   color: color-default
   /[data-theme="dark"] &
     color: dark-color-default
@@ -106,6 +107,26 @@ $neutral-anchor
   &:hover
     text-decoration-style: solid !important
     text-decoration-color: inherit !important
+
+$inview-image
+  @media (prefers-reduced-motion: no-preference)
+    transform: scale(1)
+    transform-style: preserve-3d
+    transition: all ease-out .6s  
+    opacity: 0.6
+    filter: filter-gray
+    /[data-theme="dark"] &
+      opacity: 0.8
+      filter: dark-filter-gray
+
+$inview-image-visible
+  @media (prefers-reduced-motion: no-preference)
+    transform: scale(1.025)
+    opacity: 1
+    filter: grayscale(0) contrast(1)
+    /[data-theme="dark"] &
+      opacity: 1
+      filter: grayscale(0) contrast(1) brightness(0.75)
 
 placeholder()
 	&::-webkit-input-placeholder

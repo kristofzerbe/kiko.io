@@ -132,26 +132,14 @@
       box-shadow: dark-box-shadow dark-color-base
 
 .archive-article-photo
-    height: 120px
-    width: calc(100% + 20px)
-    margin: -10px 0 10px -10px
-    object-fit: cover
-    transform: scale(1)
-    transform-style: preserve-3d
-    transition: all ease-out .4s  
-    opacity: 0.3
-    filter: filter-gray
-    /[data-theme="dark"] &
-        opacity: 0.75
-        filter: dark-filter-gray
+  @extend $inview-image
+  height: 120px
+  width: calc(100% + 20px)
+  margin: -10px 0 10px -10px
+  object-fit: cover
 
 .archive-article-photo.in-view
-  transform: scale(1.05)
-  opacity: 1
-  filter: grayscale(0) contrast(1)
-  /[data-theme="dark"] &
-      opacity: 1
-      filter: grayscale(0) contrast(1) brightness(0.75)
+  @extend $inview-image-visible
 
 .archive-article-content
   padding: 0 (default-padding / 4) (default-padding-vert / 2)
