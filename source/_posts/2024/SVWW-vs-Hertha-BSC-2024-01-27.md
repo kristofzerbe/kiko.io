@@ -19,7 +19,7 @@ related:
   - SVWW-vs-Kaiserslautern-2023-11-12
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/111833964541078339
 ---
 
 {% match_grid "SV-Wehen-Wiesbaden" "3:1" "Hertha-BSC" %}
