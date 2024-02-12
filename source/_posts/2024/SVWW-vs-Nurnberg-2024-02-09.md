@@ -19,7 +19,7 @@ related:
   - SVWW-vs-Braunschweig-2023-12-08
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/111919986554554676
 ---
 
 {% match_grid "SV-Wehen-Wiesbaden" "1:1" "1-FC-Nuernberg" %}
