@@ -218,7 +218,7 @@ function getShedPhotos(config) {
       entry.meta = JSON.parse(fs.readFileSync(path.join(shedDir, entry.key, "meta.json")));
     }
 
-    entry.name = entry.meta?.ObjectName;
+    entry.name = entry.meta?.ObjectName ?? entry.key;
     entry.file = entry.key + ".jpg";
     entry.pathMobile = "/" + path.join(config.shed_dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
     entry.pathTablet = "/" + path.join(config.shed_dir, entry.key, "tablet.jpg").replace(/\134/g,"/");

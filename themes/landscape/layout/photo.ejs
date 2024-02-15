@@ -22,10 +22,12 @@
         <label>File</label>
         <a class="download" style="text-decoration:none;color:inherit;font-weight:400" href="<%- page.pathNormal %>" download="<%= page.file %>"><%= page.file %></a>
       </li>
+      <% if (!page.file.startsWith(page.name)) { %>
       <li>
         <label>Title</label>
         <span><%= page.name %></span>
       </li>
+      <% } %>
       <li>
         <label>Status</label>
         <% if (page.status === 'pool') { %>

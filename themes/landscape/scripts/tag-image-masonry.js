@@ -15,7 +15,11 @@ hexo.extend.tag.register("image_masonry", function(args){
       var assetImg = item[0];
       var title = item[1];
 
-      list += `<div><img class="no-caption" src="/${assetPath + assetImg}" alt="${title}" /></div>`
+      list += `
+        <div>
+          <img class="no-caption" src="/${assetPath + assetImg}" alt="${title}" />
+        </div>
+      `;
     });
 
     var rnd = Math.random().toString(36).substring(2,8);
