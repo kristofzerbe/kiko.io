@@ -18,7 +18,11 @@ related:
   - Speyer-Automotive
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/111936965244478065
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/663812099571872747
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/663813161256785617
 ---
 
 In Germany, especially along the Rhine, there is only one thing for many people every February: Fasching, Fastnacht, Fasnet or simply Karneval. Many terms that all mean the same thing: Making party as long as you can. Mainz, on the other (wrong) side of the Rhine from my home town Wiesbaden, is one of the three strongholds of carnival in this respect. Their Rose Monday parade is really impressive, but Wiesbaden also has such a parade, on Sunday, and it is usually a little longer than the one in Mainz, although not as pompous and live on TV.
