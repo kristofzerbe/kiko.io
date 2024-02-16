@@ -121,7 +121,7 @@ function isVisibleInViewPort(e) {
   return ((eBottom <= viewBottom) && (eTop >= viewTop));
 }
 function initImageViewportVisibility() {
-  $(".article-photo, .archive-article-photo, .card-img, .img-link").each(function() {
+  $(".article-photo, .archive-article-photo, .img-link").each(function() { //.card-img, 
     if (isVisibleInViewPort($(this))) {
       $(this).addClass("in-view");
     } else {

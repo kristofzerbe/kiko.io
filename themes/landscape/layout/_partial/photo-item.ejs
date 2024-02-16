@@ -15,7 +15,9 @@
   <% } %>
   <a class="spotlight card-img" href="/<%= config.photo_dir %>/<%= item.key %>"
      data-description="<%- item.key %>&nbsp;&bull;&nbsp;<%- item.status %>"
-     data-src="<%- item.pathNormal %>">
+     data-src="<%- item.pathNormal %>"
+     data-button="Open Page"
+     data-button-href="/<%= config.photo_dir %>/<%= item.key %>">
     <img src="<%- item.pathMobile %>" alt="<%- item.name %>" />
   </a>
   <span class="pre-title">

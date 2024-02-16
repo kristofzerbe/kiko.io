@@ -153,22 +153,6 @@
 </div>
 
 <script>
-
-  let currentPresentation = getCookie("photos-presentation");
-  if (!currentPresentation) { 
-    currentPresentation = 
-      document.querySelector("input[name=view-presentation]:checked").getAttribute("data-presentation");
-  }
-
-  let currentSorting = getCookie("photos-sorting");
-  if (!currentSorting) {
-    currentSorting = 
-      document.querySelector("input[name=view-sort-field]:checked").getAttribute("data-sort-field") + "|" + 
-      document.querySelector("input[name=view-sort-order]:checked").getAttribute("data-sort-order");
-  }
-
-  /* ------------------------------------- */
-
   document.querySelectorAll("input[name=view-filter-status]").forEach(element => {
     element.addEventListener("click", (event) => {
       setFilterStatus(element);
@@ -195,48 +179,43 @@
     });
   });
 
-  setView();
+  /* ------------------------------------- */
+  // Init
+  let currentPresentation = getCookie("photos-presentation");
+  if (!currentPresentation) { 
+    currentPresentation = 
+      document.querySelector("input[name=view-presentation]:checked").getAttribute("data-presentation");
+  }
+
+  let currentSorting = getCookie("photos-sorting");
+  if (!currentSorting) {
+    currentSorting = 
+      document.querySelector("input[name=view-sort-field]:checked").getAttribute("data-sort-field") + "|" + 
+      document.querySelector("input[name=view-sort-order]:checked").getAttribute("data-sort-order");
+  }
+
+  setView(currentPresentation, currentSorting);
 
   var macyInstance;
 
   /* ------------------------------------- */
 
-  function setView() {
+  function setView(presentation, sorting) {
 
-    let aSorting = currentSorting.split("|");
+    let aSorting = sorting.split("|");
     document.querySelector("#sort-field-" + aSorting[0]).checked = true;
     document.querySelector("#sort-order-" + aSorting[1]).checked = true;
     tinysort('#photos > .card',{data: aSorting[0], order: aSorting[1], forceStrings: true});
-    setCookie("photos-sorting", currentSorting, 365);
-
-
-    setPresentation();
-
-    
-  }
-
-  function setPresentation(ePresentation) {
-    let newPresentation;
-    if(!ePresentation) { //for initialization
-      ePresentation = document.querySelector("input[name=view-presentation]:checked");
-      newPresentation = ePresentation.getAttribute("data-presentation");
-    } else {
-      newPresentation = ePresentation.getAttribute("data-next-presentation");
-    }
-
-    let eNewPresentation = document.querySelector("#presentation-" + newPresentation);
-    eNewPresentation.checked = true;
-
-    currentPresentation = newPresentation;
-    setCookie("photos-presentation", currentPresentation, 365);
+    currentSorting = sorting;
+    setCookie("photos-sorting", sorting, 365);
 
     let view = document.querySelector('.view');
-    view.classList = "view " + currentPresentation;
+    view.classList = "view " + presentation;
 
-    if (currentPresentation === "masonry") {
-      document.querySelectorAll(".card-img").forEach(item => {
-        item.classList.remove("spotlight");
-      });
+    if (presentation === "masonry") {
+      // document.querySelectorAll(".card-img").forEach(item => {
+      //   item.classList.remove("spotlight");
+      // });
       macyInstance = new Macy({
         container: '#photos',
         trueOrder: false,
@@ -268,7 +247,26 @@
       }
     }
 
+    document.querySelector("#presentation-" + presentation).checked = true;
+    currentPresentation = presentation;
+    setCookie("photos-presentation", presentation, 365);
+
     setFilterStatus();
+  }
+
+  function setPresentation(ePresentation) {
+    let newPresentation;
+    if(!ePresentation) { //for initialization
+      ePresentation = document.querySelector("input[name=view-presentation]:checked");
+      newPresentation = ePresentation.getAttribute("data-presentation");
+    } else {
+      newPresentation = ePresentation.getAttribute("data-next-presentation");
+    }
+
+    let eNewPresentation = document.querySelector("#presentation-" + newPresentation);
+    eNewPresentation.checked = true;
+
+    setView(newPresentation, currentSorting);
   }
 
   function setSorting() {
@@ -280,11 +278,7 @@
     setTimeout(() => { 
       tinysort('#photos > .card',{data: field, order: dir, forceStrings: true});
       $('.view').find('.card').removeClass("trans");
-      
-      currentSorting = newSorting;
-      setView();
-      
-      initImageViewportVisibility();
+      setView(currentPresentation, newSorting);
     }, 300);
   }
 
@@ -305,7 +299,12 @@
 
   function setSortOrder(eSortOrder) {
     let newSortOrder;
-    newSortOrder = eSortOrder.getAttribute("data-next-sort-order");
+    if(!eSortOrder) { //for initialization
+      eSortOrder = document.querySelector("input[name=view-sort-order]:checked");
+      newSortOrder = eSortOrder.getAttribute("data-sort-order");
+    } else {
+      newSortOrder = eSortOrder.getAttribute("data-next-sort-order");
+    }
 
     let eNewSortOrder = document.querySelector("#sort-order-" + newSortOrder);
     eNewSortOrder.checked = true;
@@ -381,14 +380,14 @@
     item.style.display = null;
     setTimeout(() => {
       item.classList.remove("hide");
-      if (currentPresentation !== "masonry") {
-        item.querySelector(".card-img").classList.add("spotlight");
-      }
+      // if (currentPresentation !== "masonry") {
+      //   item.querySelector(".card-img").classList.add("spotlight");
+      // }
     }, 100);
   }
   function hidePhoto(item) {
     item.classList.add("hide");
-    item.querySelector(".card-img").classList.remove("spotlight");
+    // item.querySelector(".card-img").classList.remove("spotlight");
     setTimeout(() => {
       item.style.display = "none";
     }, 300);
@@ -396,8 +395,6 @@
 
   function refreshView() {
     setTimeout(() => {
-        initImageViewportVisibility();
-
         let resultCount = document.querySelectorAll(".card:not(.hide)").length;
         let resultElement = document.querySelector(".view-bar #view-count");
         resultElement.textContent = resultCount;
