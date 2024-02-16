@@ -109,7 +109,7 @@
     </span>
     <span>sorted by</span>
     <span id="view-sort-field">
-      <input type="radio" name="view-sort-field" id="sort-field-file" checked
+      <input type="radio" name="view-sort-field" id="sort-field-file" 
               data-sort-field="file"
               data-next-sort-field="title">
       <label for="sort-field-file" title="Sort by title">
@@ -121,7 +121,7 @@
       <label for="sort-field-title" title="Sort by date created">
         <mark>title</mark>
       </label>
-      <input type="radio" name="view-sort-field" id="sort-field-date-created"
+      <input type="radio" name="view-sort-field" id="sort-field-date-created" checked
               data-sort-field="date-created"
               data-next-sort-field="file">
       <label for="sort-field-date-created" title="Sort by file name">
@@ -129,13 +129,13 @@
       </label>
     </span>
     <span id="view-sort-order">
-      <input type="radio" name="view-sort-order" id="sort-order-asc" checked
+      <input type="radio" name="view-sort-order" id="sort-order-asc" 
               data-sort-order="asc"
               data-next-sort-order="desc">
       <label for="sort-order-asc" title="Sort descending">
         <mark>ascending</mark>
       </label>
-      <input type="radio" name="view-sort-order" id="sort-order-desc"
+      <input type="radio" name="view-sort-order" id="sort-order-desc" checked
               data-sort-order="desc"
               data-next-sort-order="asc">
       <label for="sort-order-desc" title="Sort descending">
@@ -153,6 +153,25 @@
 </div>
 
 <script>
+
+  let macyInstance;
+
+  // Init
+  let currentPresentation = getCookie("photos-presentation");
+  if (!currentPresentation) { 
+    currentPresentation = 
+      document.querySelector("input[name=view-presentation]:checked").getAttribute("data-presentation");
+  }
+
+  let currentSorting = getCookie("photos-sorting");
+  if (!currentSorting) {
+    currentSorting = 
+      document.querySelector("input[name=view-sort-field]:checked").getAttribute("data-sort-field") + "|" + 
+      document.querySelector("input[name=view-sort-order]:checked").getAttribute("data-sort-order");
+  }
+
+  /* ------------------------------------- */
+
   document.querySelectorAll("input[name=view-filter-status]").forEach(element => {
     element.addEventListener("click", (event) => {
       setFilterStatus(element);
@@ -180,142 +199,94 @@
   });
 
   /* ------------------------------------- */
-  // Init
-  let currentPresentation = getCookie("photos-presentation");
-  if (!currentPresentation) { 
-    currentPresentation = 
-      document.querySelector("input[name=view-presentation]:checked").getAttribute("data-presentation");
-  }
 
-  let currentSorting = getCookie("photos-sorting");
-  if (!currentSorting) {
-    currentSorting = 
-      document.querySelector("input[name=view-sort-field]:checked").getAttribute("data-sort-field") + "|" + 
-      document.querySelector("input[name=view-sort-order]:checked").getAttribute("data-sort-order");
-  }
-
-  setView(currentPresentation, currentSorting);
-
-  var macyInstance;
+  setView();
 
   /* ------------------------------------- */
 
-  function setView(presentation, sorting) {
+  function setView() {
 
-    let aSorting = sorting.split("|");
-    document.querySelector("#sort-field-" + aSorting[0]).checked = true;
-    document.querySelector("#sort-order-" + aSorting[1]).checked = true;
-    tinysort('#photos > .card',{data: aSorting[0], order: aSorting[1], forceStrings: true});
-    currentSorting = sorting;
-    setCookie("photos-sorting", sorting, 365);
+    // document.querySelectorAll(".view .card").forEach((el) => { el.classList.add("trans"); });
+    // setTimeout(() => { 
 
-    let view = document.querySelector('.view');
-    view.classList = "view " + presentation;
+      setFilterStatus();
 
-    if (presentation === "masonry") {
-      // document.querySelectorAll(".card-img").forEach(item => {
-      //   item.classList.remove("spotlight");
-      // });
-      macyInstance = new Macy({
-        container: '#photos',
-        trueOrder: false,
-        waitForImages: false,
-        useOwnImageLoader: false,
-        debug: true,
-        mobileFirst: true,
-        columns: 2,
-        margin: {
-          y: 6,
-          x: 6
-        },
-        breakAt: {
-          980: {
-            margin: {
-              x: 8,
-              y: 8
-            },
-            columns: 3
+      //SORTING
+      let aSorting = currentSorting.split("|");
+      document.querySelector("#sort-field-" + aSorting[0]).checked = true;
+      document.querySelector("#sort-order-" + aSorting[1]).checked = true;
+      tinysort('#photos > .card',{data: aSorting[0], order: aSorting[1], forceStrings: true});
+
+      document.querySelector('.view').classList = "view " + currentPresentation;
+      document.querySelector("#presentation-" + currentPresentation).checked = true;
+
+      //PRESENTATION
+      if (currentPresentation === "masonry") {
+        macyInstance = new Macy({
+          container: '#photos',
+          trueOrder: false,
+          waitForImages: false,
+          useOwnImageLoader: false,
+          debug: true,
+          mobileFirst: true,
+          columns: 2,
+          margin: {
+            y: 6,
+            x: 6
           },
-          768: 2,
-          640: 3
+          breakAt: {
+            980: {
+              margin: {
+                x: 8,
+                y: 8
+              },
+              columns: 3
+            },
+            768: 2,
+            640: 3
+          }
+        });
+      } else {
+        if (macyInstance) { 
+          macyInstance.remove();
+          macyInstance = null; 
         }
-      });
-    } else {
-      if (macyInstance) { 
-        macyInstance.remove();
-        macyInstance = null; 
       }
-    }
 
-    document.querySelector("#presentation-" + presentation).checked = true;
-    currentPresentation = presentation;
-    setCookie("photos-presentation", presentation, 365);
-
-    setFilterStatus();
+    //   document.querySelectorAll(".view .card").forEach((el) => { el.classList.remove("trans"); });
+    // }, 400);
+    
   }
 
   function setPresentation(ePresentation) {
-    let newPresentation;
-    if(!ePresentation) { //for initialization
-      ePresentation = document.querySelector("input[name=view-presentation]:checked");
-      newPresentation = ePresentation.getAttribute("data-presentation");
-    } else {
-      newPresentation = ePresentation.getAttribute("data-next-presentation");
-    }
+    currentPresentation = ePresentation.getAttribute("data-next-presentation");
+    setCookie("photos-presentation", currentPresentation, 365);
 
-    let eNewPresentation = document.querySelector("#presentation-" + newPresentation);
-    eNewPresentation.checked = true;
-
-    setView(newPresentation, currentSorting);
-  }
-
-  function setSorting() {
-    let field = document.querySelector("input[name=view-sort-field]:checked").getAttribute("data-sort-field");
-    let dir = document.querySelector("input[name=view-sort-order]:checked").getAttribute("data-sort-order");
-    let newSorting = field + "|" + dir;
-
-    $('.view').find('.card').addClass("trans");
-    setTimeout(() => { 
-      tinysort('#photos > .card',{data: field, order: dir, forceStrings: true});
-      $('.view').find('.card').removeClass("trans");
-      setView(currentPresentation, newSorting);
-    }, 300);
+    setView();
   }
 
   function setSortField(eSortField) {
-    let newSortField;
-    if(!eSortField) { //for initialization
-      eSortField = document.querySelector("input[name=view-sort-field]:checked");
-      newSortField = eSortField.getAttribute("data-sort-field");
-    } else {
-      newSortField = eSortField.getAttribute("data-next-sort-field");
-    }
+    let newSortField = eSortField.getAttribute("data-next-sort-field");
+    let sortOrder = document.querySelector("input[name=view-sort-order]:checked").getAttribute("data-sort-order");
+    currentSorting = newSortField + "|" + sortOrder;
+    setCookie("photos-sorting", currentSorting, 365);
 
-    let eNewSortField = document.querySelector("#sort-field-" + newSortField);
-    eNewSortField.checked = true;
-
-    setSorting();
+    setView();
   }
 
   function setSortOrder(eSortOrder) {
-    let newSortOrder;
-    if(!eSortOrder) { //for initialization
-      eSortOrder = document.querySelector("input[name=view-sort-order]:checked");
-      newSortOrder = eSortOrder.getAttribute("data-sort-order");
-    } else {
-      newSortOrder = eSortOrder.getAttribute("data-next-sort-order");
-    }
+    let newSortOrder = eSortOrder.getAttribute("data-next-sort-order");
+    let sortField = document.querySelector("input[name=view-sort-field]:checked").getAttribute("data-sort-field");
+    currentSorting = sortField + "|" + newSortOrder;
+    setCookie("photos-sorting", currentSorting, 365);
 
-    let eNewSortOrder = document.querySelector("#sort-order-" + newSortOrder);
-    eNewSortOrder.checked = true;
-
-    setSorting();
+    setView();
   }
 
   function setFilterStatus(eStatus) {
 
     let newStatus;
-    if (!eStatus) { //for initialization
+    if (!eStatus) {
       eStatus = document.querySelector("input[name=view-filter-status]:checked");
       newStatus = eStatus.getAttribute("data-status");
       if (newStatus === "used") { // set filter by directly, if status 'used' and type != 'all'
@@ -352,7 +323,7 @@
   function setFilterType(eType) {
 
     let newType;
-    if (!eType) { //for initialization
+    if (!eType) {
       eType = document.querySelector("input[name=view-filter-type]:checked");
       newType = eType.getAttribute("data-type");
     } else {
@@ -380,14 +351,10 @@
     item.style.display = null;
     setTimeout(() => {
       item.classList.remove("hide");
-      // if (currentPresentation !== "masonry") {
-      //   item.querySelector(".card-img").classList.add("spotlight");
-      // }
     }, 100);
   }
   function hidePhoto(item) {
     item.classList.add("hide");
-    // item.querySelector(".card-img").classList.remove("spotlight");
     setTimeout(() => {
       item.style.display = "none";
     }, 300);
@@ -405,7 +372,8 @@
   }
   
   setTimeout(function() { //Hack for returning from external to page
-    setFilterStatus();
+    // setFilterStatus();
+    setView();
   }, 500)
 
 </script>
