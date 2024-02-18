@@ -17,7 +17,9 @@ related:
   - SVWW-vs-Nurnberg-2024-02-09
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/111954207446583586
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/664916612053494499
 ---
 
 To anticipate: I'm a fucking groupie when it comes to seeing **Daniel Wirtz** in action on stage. My wife (also a long-time fan) and I drove 400 and some crushed kilometres to **Leipzig** to see his show at the [Felsenkeller](https://www.felsenkeller-leipzig.com/). FINALLY he is back on tour with his new damn good and loud album [DNA](https://wirtz.bandzoogle.com/album/2657636/dna).
