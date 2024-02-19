@@ -9,8 +9,9 @@ photograph:
   socialmedia: /static/images/social-media/SVWW-vs-Hertha-BSC-2024-01-27.png
 series: SV Wehen Wiesbaden
 categories:
-  - Football
+  - Event
 tags:
+  - Football
   - SVWW
   - 2. Bundesliga
 related:

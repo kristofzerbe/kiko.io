@@ -9,8 +9,9 @@ photograph:
   socialmedia: /static/images/social-media/SVWW-vs-Hansa-Rostock-2023-10-29.png
 series: SV Wehen Wiesbaden
 categories:
-  - Football
+  - Event
 tags:
+  - Football
   - SVWW
   - 2. Bundesliga
 related:

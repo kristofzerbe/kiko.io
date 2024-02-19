@@ -9,8 +9,9 @@ photograph:
   socialmedia: /static/images/social-media/SVWW-vs-Braunschweig-2023-12-08.png
 series: SV Wehen Wiesbaden
 categories:
-  - Football
+  - Event
 tags:
+  - Football
   - SVWW
   - 2. Bundesliga
 related:

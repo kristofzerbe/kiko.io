@@ -8,7 +8,7 @@ photograph:
   name: Leipzig Music Colors
   socialmedia: /static/images/social-media/WIRTZ-DNA-Tour-2024-Leipzig-2024-02-17.png
 categories:
-  - Music
+  - Event
 tags:
   - Concert
 related:

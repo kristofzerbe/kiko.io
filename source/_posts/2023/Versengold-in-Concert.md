@@ -8,7 +8,7 @@ photograph:
   name: Versengold in Concert I
   socialmedia: /static/images/social-media/Versengold-in-Concert.png
 categories:
-  - Photo
+  - Event
 tags:
   - Concert
 related:

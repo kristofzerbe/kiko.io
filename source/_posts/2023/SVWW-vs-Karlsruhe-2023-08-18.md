@@ -9,8 +9,9 @@ photograph:
   socialmedia: /static/images/social-media/SVWW-vs-Karlsruhe-2023-08-18.png
 series: SV Wehen Wiesbaden
 categories:
-  - Football
+  - Event
 tags:
+  - Football
   - SVWW
   - 2. Bundesliga
 related:
