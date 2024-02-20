@@ -47,7 +47,7 @@ hexo.extend.tag.register("photo_list", function(args){
     let element = `
       <figure>
         <a href="/photos/${photoName}" class="no-break">
-          <img src="${url}">
+          <img loading="lazy" src="${url}">
         </a>
         <figcaption>${title}</figcaption>
       </figure>

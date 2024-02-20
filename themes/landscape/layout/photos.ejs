@@ -14,8 +14,8 @@
   <%- page.content %>
 
   <div class="view-bar">
-    <span id="view-count"><%= page.items.length %></span> 
-    <span>photos</span> 
+    <span id="view-count" style="font-weight:400"><%= page.items.length %></span>
+    <span>photos</span>
     <span id="view-filter-status">
       <input type="radio" name="view-filter-status" id="filter-status-all" checked
              data-status="all"
@@ -109,7 +109,7 @@
     </span>
     <span>sorted by</span>
     <span id="view-sort-field">
-      <input type="radio" name="view-sort-field" id="sort-field-file" 
+      <input type="radio" name="view-sort-field" id="sort-field-file"
               data-sort-field="file"
               data-next-sort-field="title">
       <label for="sort-field-file" title="Sort by title">
@@ -129,7 +129,7 @@
       </label>
     </span>
     <span id="view-sort-order">
-      <input type="radio" name="view-sort-order" id="sort-order-asc" 
+      <input type="radio" name="view-sort-order" id="sort-order-asc"
               data-sort-order="asc"
               data-next-sort-order="desc">
       <label for="sort-order-asc" title="Sort descending">
@@ -141,7 +141,7 @@
       <label for="sort-order-desc" title="Sort descending">
         <mark>descending</mark>
       </label>
-    </span>          
+    </span>
   </div>
 
   <div class="view grid" id="photos">
@@ -158,17 +158,22 @@
 
   // Init
   let currentPresentation = getCookie("photos-presentation");
-  if (!currentPresentation) { 
-    currentPresentation = 
+  if (!currentPresentation) {
+    currentPresentation =
       document.querySelector("input[name=view-presentation]:checked").getAttribute("data-presentation");
   }
 
   let currentSorting = getCookie("photos-sorting");
   if (!currentSorting) {
-    currentSorting = 
-      document.querySelector("input[name=view-sort-field]:checked").getAttribute("data-sort-field") + "|" + 
+    currentSorting =
+      document.querySelector("input[name=view-sort-field]:checked").getAttribute("data-sort-field") + "|" +
       document.querySelector("input[name=view-sort-order]:checked").getAttribute("data-sort-order");
   }
+
+  let currentStatus =
+    document.querySelector("input[name=view-filter-status]:checked").getAttribute("data-status");
+  let currentType = 
+    document.querySelector("input[name=view-filter-type]:checked").getAttribute("data-type");
 
   /* ------------------------------------- */
 
@@ -207,20 +212,48 @@
   function setView() {
 
     // document.querySelectorAll(".view .card").forEach((el) => { el.classList.add("trans"); });
-    // setTimeout(() => { 
+    // setTimeout(() => {
 
-      setFilterStatus();
+      //STATUS + TYPE
+      document.querySelector("#filter-status-" + currentStatus).checked = true;
+      document.querySelector("#filter-type-" + currentType).checked = true;
+      //---
+      document.getElementById("view-filter-type")
+        .style.display = (currentStatus === "used") ? "inline-block" : "none";
+
+      document.querySelectorAll(".card").forEach(item => {
+        let bShow = false;
+        switch (currentStatus) {
+          case "all":
+            bShow = true;
+            break;
+
+          case "pool":
+            bShow = (item.getAttribute("data-status") === currentStatus);
+            break;
+            
+          case "used":
+            bShow = (item.getAttribute("data-status") === currentStatus); 
+            if (currentType !== "all") {
+              bShow = (currentType === item.getAttribute("data-type"));
+              break;
+            }
+        }
+        if (bShow) { showPhoto(item); } else { hidePhoto(item); }
+      });
+      refreshView();
 
       //SORTING
       let aSorting = currentSorting.split("|");
       document.querySelector("#sort-field-" + aSorting[0]).checked = true;
       document.querySelector("#sort-order-" + aSorting[1]).checked = true;
+      //---
       tinysort('#photos > .card',{data: aSorting[0], order: aSorting[1], forceStrings: true});
 
+      //PRESENTATION
       document.querySelector('.view').classList = "view " + currentPresentation;
       document.querySelector("#presentation-" + currentPresentation).checked = true;
-
-      //PRESENTATION
+      //---
       if (currentPresentation === "masonry") {
         macyInstance = new Macy({
           container: '#photos',
@@ -247,15 +280,15 @@
           }
         });
       } else {
-        if (macyInstance) { 
+        if (macyInstance) {
           macyInstance.remove();
-          macyInstance = null; 
+          macyInstance = null;
         }
       }
 
     //   document.querySelectorAll(".view .card").forEach((el) => { el.classList.remove("trans"); });
     // }, 400);
-    
+
   }
 
   function setPresentation(ePresentation) {
@@ -284,80 +317,31 @@
   }
 
   function setFilterStatus(eStatus) {
-
-    let newStatus;
-    if (!eStatus) {
-      eStatus = document.querySelector("input[name=view-filter-status]:checked");
-      newStatus = eStatus.getAttribute("data-status");
-      if (newStatus === "used") { // set filter by directly, if status 'used' and type != 'all'
-        eType = document.querySelector("input[name=view-filter-type]:checked");
-        if (eType.getAttribute("data-type") !== "all") {
-          setFilterType();
-          return;
-        }
-      }
-    } else {
-      newStatus = eStatus.getAttribute("data-next-status");
+    currentStatus = eStatus.getAttribute("data-next-status");
+    if (currentStatus === "all") { // reset TYPE
+      currentType = "all";
     }
 
-    let eNewStatus = document.querySelector("#filter-status-" + newStatus);
-    eNewStatus.checked = true;
-
-    if (newStatus === "used") { 
-      document.getElementById("view-filter-type").style.display = "inline-block";
-    } else { 
-      document.getElementById("view-filter-type").style.display = "none";
-      document.getElementById("filter-type-all").checked = true; //reset used e.g. type filter
-    }
-
-    document.querySelectorAll(".card").forEach(item => {
-      if (newStatus === 'all' || (newStatus === item.getAttribute("data-status"))) {
-        showPhoto(item);
-      } else {
-        hidePhoto(item);
-      }
-    });
-    refreshView();
+    setView();
   }
 
   function setFilterType(eType) {
+    currentType = eType.getAttribute("data-next-type");
 
-    let newType;
-    if (!eType) {
-      eType = document.querySelector("input[name=view-filter-type]:checked");
-      newType = eType.getAttribute("data-type");
-    } else {
-      newType = eType.getAttribute("data-next-type");
-    }
-
-    let eNewType = document.querySelector("#filter-type-" + newType);
-    eNewType.checked = true;
-
-    document.querySelectorAll(".card").forEach(item => {
-      if (item.getAttribute("data-status") === "used") {
-        if (newType === 'all' || (newType === item.getAttribute("data-type"))) {
-          showPhoto(item);
-        } else {
-          hidePhoto(item);
-        }
-      } else {
-        hidePhoto(item);
-      }
-    });
-    refreshView();
+    setView();
   }
 
   function showPhoto(item) {
     item.style.display = null;
     setTimeout(() => {
       item.classList.remove("hide");
-    }, 100);
+    }, 250);
   }
   function hidePhoto(item) {
     item.classList.add("hide");
     setTimeout(() => {
       item.style.display = "none";
-    }, 300);
+    }, 250);
   }
 
   function refreshView() {
@@ -370,9 +354,8 @@
         if (macyInstance) macyInstance.reInit();
       }, 300);
   }
-  
+
   setTimeout(function() { //Hack for returning from external to page
-    // setFilterStatus();
     setView();
   }, 500)
 

@@ -17,7 +17,7 @@ hexo.extend.tag.register("image_masonry", function(args){
 
       list += `
         <div>
-          <img class="no-caption" src="/${assetPath + assetImg}" alt="${title}" />
+          <img loading="lazy" class="no-caption" src="/${assetPath + assetImg}" alt="${title}" />
         </div>
       `;
     });
