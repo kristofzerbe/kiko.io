@@ -7,6 +7,7 @@ photograph:
   file: D50_3856.jpg
   name: Garden Beauties V
   socialmedia: /static/images/social-media/Manipulation-of-Lists-within-a-Sentence-of-Natural-Language.png
+series: A New Blog
 categories:
   - JavaScript
 tags:
