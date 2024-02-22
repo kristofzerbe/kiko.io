@@ -251,8 +251,15 @@
   <link href="https://github.com/<%= config.github_user %>" rel="me authn">
   <link href="mailto:<%= config.email %>" rel="me authn">
   
-  <%#!-- Feed --%>
-  <link rel="alternate" href="<%= url_for(config.feed.default) %>" title="<%= meta.title %>" type="application/atom+xml">
+  <%#!-- Feeds --%>
+  <!-- <link rel="alternate" href="%= url_for(config.feed.default) %" 
+        title="%= meta.title %" type="application/atom+xml"> -->
+  <%  
+  config.feed.feed_types.forEach(e => { 
+    if (e.alternate_link === true) { %>
+    <link rel="alternate" href="<%= url_for(e.output) %>" title="<%= e.title %>" type="<%= e.content %>">
+  <% } 
+  }); %>
 
   <link rel="preload" href="/css/fonts/lexend/webfonts/Lexend-ExtraLight.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/css/fonts/lexend/webfonts/Lexend-Light.woff2" as="font" type="font/woff2" crossorigin>

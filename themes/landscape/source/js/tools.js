@@ -136,7 +136,7 @@ function getSizeFromUrl(url, callback) {
   };
   xhr.send();
 }
-function fetchSizeFromUrl(url, callback) {
+function fetchSizeFromUrl(url, callback) { //always wrong and dont know why...
   fetch(url, { method: 'HEAD' })
     .then(response => callback(formatFileSize(response.headers.get("content-length"))));
 }

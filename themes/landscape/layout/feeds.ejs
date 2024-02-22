@@ -11,15 +11,17 @@
   <%- page.content %>
 </div>
 
+<%# 
 <script>
   let feeds = document.querySelectorAll(".feed-group a");
   feeds.forEach(eLink => {
     let url = eLink.getAttribute("href");
     let eSize = eLink.querySelector("em");
 
-    fetchSizeFromUrl("<%= config.url %>" + url, (size) => {
+    fetchSizeFromUrl("%= config.url %" + url, (size) => {
       eSize.textContent = eSize.textContent.replace("...", size);
     });
     
   });
 </script>
+%>

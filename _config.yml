@@ -222,14 +222,56 @@ jsonContent:
 
 # Feed: was https://github.com/sergeyzwezdin/hexo-feed
 # uninstalled in favor of custom feed generators
-#   -> uses limit, order_by, icon and logo
 feed:
-  default: atom.xml
+  # default: atom.xml
   limit: 20
   order_by: "-date"
   icon: images/favicon-32x32.png
   logo: images/icon-72x72.png
-        
+  feed_types:
+  - name: feed-posts-atom-full
+    title: Atom Feed (Full Content)
+    content: application/atom+xml
+    output: atom.xml
+    generator: true
+    alternate_link: true
+  - name: feed-posts-atom-excerpt
+    title: Atom Feed (Excerpt)
+    content: application/atom+xml
+    output: atom-excerpt.xml
+    generator: true
+    alternate_link: false
+  - name: feed-posts-rss-full
+    title: RSS Feed (Full Content)
+    content: application/rss+xml
+    output: rss.xml
+    generator: true
+    alternate_link: true
+  - name: feed-posts-rss-excerpt
+    title: RSS Feed (Excerpt)
+    content: application/rss+xml
+    output: rss-excerpt.xml
+    generator: true
+    alternate_link: false
+  - name: feed-posts-json-full
+    title: JSON Feed (Full Content)
+    content: application/json
+    output: feed.json
+    generator: true
+    alternate_link: true
+  - name: feed-posts-json-excerpt
+    title: JSON Feed (Excerpt)
+    content: application/json
+    output: feed-excerpt.json
+    generator: true
+    alternate_link: false
+  - name: feed-posts-html-excerpt
+    title: HTML Microformats Feed (Excerpt)
+    content: application/mf2+html
+    output: feeds/index.html
+    generator: false
+    alternate_link: true
+
 # Sitemap File: https://github.com/hexojs/hexo-generator-sitemap
 sitemap:
   path: sitemap.xml
