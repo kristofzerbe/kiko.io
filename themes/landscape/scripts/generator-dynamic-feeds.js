@@ -37,7 +37,6 @@ hexo.extend.generator.register("dynamic-feeds", async function(locals) {
     let slug = slugArray[slugArray.length - 1];
     return slug;
   }
-  const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };  
   const regEx = /<(script|style)[^>]*>(?<content>[^<]*)<\/(script|style)>/gim;
   const content = (post) => {
     let fc = post.excerpt.replace(regEx, "");
@@ -48,16 +47,16 @@ hexo.extend.generator.register("dynamic-feeds", async function(locals) {
   postsToRender.forEach(post => {
     let img = `<img src="/images/social-media/${slug(post)}.thumb.png" />`;
     let subTitle = (post.subtitle) ? `<h4 class="p-summary">${post.subtitle}</h4>` : "";
-    let postCreated = new Date(post.date).toLocaleDateString("en-US", dateOptions);
-    let postUpdated = new Date(post.updated).toLocaleDateString("en-US", dateOptions);  
-    let updated = (postCreated !== postUpdated) ? `, <small class="dt-updated">Updated: ${postUpdated}</small>` : "";
+    let dateCreated = new Date(post.date).toISOString();
+    let dateUpdated = new Date(post.updated).toISOString();
+    let updated = (dateCreated !== dateUpdated) ? `, <time class="dt-updated" datetime="${dateUpdated}">Updated: ${dateUpdated.substring(0,10)}</time>` : "";
     let item = `
       <div class="h-entry">
         <details>
           <summary>${img}</summary>
           <header>
             <div>
-              <small class="dt-published">${postCreated}</small>
+              <time class="dt-published" datetime="${dateCreated}">${dateCreated.substring(0,10)}</time>
               ${updated}
             </div>
             <h3 class="p-name">
@@ -81,7 +80,7 @@ hexo.extend.generator.register("dynamic-feeds", async function(locals) {
       <data class="p-author h-card">
         <data class="p-name" value="${config.author}"></data>
         <data class="p-url" value="${config.url}"></data>
-        <data class="p-photo" value="${config.photo}"></data>
+        <data class="p-photo" value="${config.url + "/" + config.photo}"></data>
       </data>
       ${list}
     </div>
