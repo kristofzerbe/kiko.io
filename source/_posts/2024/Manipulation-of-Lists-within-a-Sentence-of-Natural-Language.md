@@ -7,6 +7,7 @@ photograph:
   file: D50_3856.jpg
   name: Garden Beauties V
   socialmedia: /static/images/social-media/Manipulation-of-Lists-within-a-Sentence-of-Natural-Language.png
+series: A New Blog
 categories:
   - JavaScript
 tags:
@@ -18,7 +19,7 @@ related:
   - Generate-Content-from-Trello
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/111965280439751641
 ---
 
 The [**photo section**](/photos) on my blog, the main page of which I have now named COLLECTION, initially only served as an overview of the available or already used hero images for the various pages of the blog, such as posts and others. In the meantime, detailed pages for the individual photos and a world map have been added, in order to follow the IndieWeb idea that I want to publish my photos on my own site with all the information first and then syndicate them on other platforms.

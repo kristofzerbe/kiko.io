@@ -6,7 +6,7 @@
      data-date-created="<%- item.meta?.DateTimeOriginal %>">
     <% if (item.article){ %>
     <% if (item.article.type === "draft"){ %>
-      <span class="status <%- item.status %> <%- item.article.type %>">Draft <em>&rbarr; <%- item.article.title %>)</em></span>
+      <span class="status <%- item.status %> <%- item.article.type %>">Draft <em>&rbarr; <%- item.article.title %></em></span>
     <% } else { %>
       <a class="status <%- item.status %> <%- item.article.type %>" href="<%- item.article.url %>"><%- item.article.title %></a>
     <% } %>
