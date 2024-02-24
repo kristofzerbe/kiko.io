@@ -29,14 +29,10 @@ dark-highlight-purple = #ae70d5
 
 $code-block
   margin: 0 default-padding * -1  
+  padding: (default-padding / 2) default-padding
   overflow: auto  
   font-size: font-size-code
   line-height: line-height
-  background: highlight-background
-  color: highlight-foreground
-  /[data-theme="dark"] &
-    background: dark-highlight-background
-    color: dark-highlight-foreground
 
 // $dark-code-block
 //   background: dark-highlight-background
@@ -50,12 +46,9 @@ $line-numbers
   pre, code
     font-family: font-mono    
   code
-    background-color: highlight-background
-    /[data-theme="dark"] &
-      background-color: dark-highlight-background
     line-break: anywhere
     font-size: font-size-code
-    padding: 0 0.33rem
+    padding: 0 small-padding
   a
     code
       &:hover
@@ -63,17 +56,24 @@ $line-numbers
         color: inherit
   pre
     @extend $code-block
-    padding: (default-padding / 2) default-padding
+    // overflow-y: hidden
+    background: highlight-background
+    color: highlight-foreground
+    /[data-theme="dark"] &
+      background: dark-highlight-background
+      color: dark-highlight-foreground
+    .caption
+      text-align: left
+      margin-block-start: 0
+      margin-block-end: small-margin
+      font-style: normal
+      text-transform: lowercase
     code
-      color: highlight-foreground
-      /[data-theme="dark"] &
-        color: dark-highlight-foreground
       background: none
       text-shadow: none
       padding: 0
   .highlight
     @extend $code-block
-    padding: (default-padding / 2)
     pre
       background: none
       border: none
