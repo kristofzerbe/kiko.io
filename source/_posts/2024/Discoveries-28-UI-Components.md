@@ -18,7 +18,7 @@ related:
   - Discoveries-25-Tutorials-HowTo-s
 syndication:
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/111986306738554713
 ---
 
 UI is the first building block for UX. Build a user interface that is easy to understand and use and your users will have a good experience and enjoy your website or web app.
