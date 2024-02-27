@@ -20,7 +20,7 @@ related:
   - SVWW-vs-Hertha-BSC-2024-01-27
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/111987795546274594
 ---
 
 {% match_grid "SV-Wehen-Wiesbaden" "1:2" "SC-Paderborn" %}
