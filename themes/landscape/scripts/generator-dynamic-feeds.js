@@ -64,7 +64,7 @@ hexo.extend.generator.register("dynamic-feeds", async function(locals) {
             </h3>
             ${subTitle}
           </header>
-          <article class="e-content">${content(post)}</article>
+          <article class="e-content article-entry">${content(post)}</article>
           <hr class="divider">
         </details>
       </div>
