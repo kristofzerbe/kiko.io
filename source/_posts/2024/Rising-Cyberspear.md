@@ -17,7 +17,7 @@ related:
   - Favourite-Pens-of-2023
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112185013505270911
 ---
 
 My wife is a childcare worker and looked after a small number of the Wiesbaden-based dwarfs aged 1 to 3 until 2022 with some very nice people, all of whom I had the honour of getting to know. Although almost all the staff from back then (like my wife) have since moved to another workplace, we are still in good contact with some of them. This includes **Denis Durban**, a very interesting man in his mid-thirties with Russian roots, Korean relatives and a big heart, which is probably why he landed in childcare.
