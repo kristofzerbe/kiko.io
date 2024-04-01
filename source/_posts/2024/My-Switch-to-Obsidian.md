@@ -2,7 +2,7 @@
 slug: My-Switch-to-Obsidian
 title: My Switch to Obsidian
 subtitle: One To Replace Them All
-date: 2024-04-01 12:00:00
+date: 2024-04-02 12:00:00
 photograph:
   file: 23-07-Mallorca-0300.jpg
   name: Lots of Things
