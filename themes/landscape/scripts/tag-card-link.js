@@ -39,7 +39,7 @@ hexo.extend.tag.register("cardlink", function(args, content){
   
   let element = `
     <div class="auto-card-link-container">
-      <a class="auto-card-link-card">
+      <a class="auto-card-link-card" href="${lines.url}">
         <div class="auto-card-link-main">
           <div class="auto-card-link-title">${lines.title}</div>
           <div class="auto-card-link-description">${lines.description}</div>

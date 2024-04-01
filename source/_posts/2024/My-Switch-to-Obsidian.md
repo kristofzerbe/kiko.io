@@ -18,12 +18,14 @@ related:
   - Provide-Blog-Metadata-via-JSON-LD
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/112197053480608719
 ---
 
 The best ideas always come to you at the most inopportune moments and places. Whereas you used to grab a piece of paper and try to capture the idea in illegible handwriting, today it is often a mobile app or a desktop application into which you hammer the most important key points. This change has advantages, as not a single tree needs to be chopped down for the many ideas that are produced every day and the digital scraps of ideas can later be changed, refined, formatted and processed in other ways very easily. But it also has disadvantages, because the range of digital helpers is so large that you always have the feeling you've backed the wrong horse. One app can do this, but not that, while another can do that, but is only available in the cloud, where you don't know who is reading what, and the third can do all that, but is only available with an expensive subscription. There's always something. Paper, on the other hand, is always paper...
 
 Even though I still do a lot of handwriting on paper, simply because it is often much quicker, I have acquired an amazing zoo of different digital helpers in recent years (I work in IT anyway), all of which have a specific purpose but are more or less not interoperable with each other. This is on the one hand because a suitable tool for me is not available for a different device class or operating system and on the other, because the objectives of the tools differ, as you not only have ideas that you want to capture in text, but also have to deal with tasks, collections of links, research texts, code snippets and the like.
+
+![Obsisian Switch](My-Switch-to-Obsidian/obsidian-switch.png)
 
 <!-- more -->
 
@@ -49,7 +51,7 @@ One eye-opener was that Obsidian is by no means one of the above-mentioned cloud
 "*Microsoft OneDrive ... uuhhh*", some people may think, and they could even be right, but in order to be able to work in a distributed way, you have to, as they say, die a death. So far, I haven't regretted my [switch from Dropbox to OneDrive](https://kiko.io/post/Thanks-Dropbox-but-I-m-off/), because Microsoft is doing everything right for Windows users in terms of functionality and stability.
 {% endalertbox %}
 
-![Obsisian Switch](My-Switch-to-Obsidian/obsidian-switch.png)
+---
 
 ## Replacement of Markor
 
