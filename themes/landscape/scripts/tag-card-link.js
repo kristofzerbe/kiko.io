@@ -11,7 +11,7 @@
     url: yyy
     ...
 
-    -> see Obsidian Card Links
+    -> see Obsidian Auto Card Links -> https://github.com/nekoshita/obsidian-auto-card-link
 */
 hexo.extend.tag.register("cardlink", function(args, content){
 
