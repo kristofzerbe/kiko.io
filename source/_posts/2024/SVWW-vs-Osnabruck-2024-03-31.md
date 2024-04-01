@@ -19,7 +19,7 @@ related:
   - SVWW-vs-Nurnberg-2024-02-09
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112196475034873122
 ---
 
 {% match_grid "SV-Wehen-Wiesbaden" "0:1" "VfL-Osnabrueck" %}
