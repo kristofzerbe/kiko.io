@@ -19,7 +19,7 @@ related:
   - IndieFediWebVerse
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112270869266405497
 ---
 
 Everyone collects a lot of things over time. This applies to the basement at home, where old coffee machines in their original packaging (they're still good and I might need them again), 3 generations of old laptops, boxes of cables (power, CAT, HDMI, USB, VGA, you name it) and the like pile up in a corner or even cover an entire area. Honestly, when was the last time you tidied up there? 
