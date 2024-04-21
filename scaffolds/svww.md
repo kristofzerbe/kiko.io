@@ -33,6 +33,23 @@ syndication:
 
 {% image_masonry
   "PXL.jpg|"
+  "PXL.jpg|"
+  "PXL.jpg|"
+  "PXL.jpg|"
+  "PXL.jpg|"
+  "PXL.jpg|"
+  "PXL.jpg|"
+  "PXL.jpg|"
+  "PXL.jpg|"
+  "PXL.jpg|"
+  "PXL.jpg|"
+  "PXL.jpg|"
+  "PXL.jpg|"
+  "PXL.jpg|"
+  "PXL.jpg|"
+  "PXL.jpg|"
+  "PXL.jpg|"
+  "PXL.jpg|"
 %}
 
 ...
@@ -45,4 +62,4 @@ syndication:
 
 ...
 
-{% image_link "tabelle-....png" "https://www.kicker.de/2-bundesliga/tabelle" "Table 2. Liga, Friday dd. MMMM 2023" %}
+{% image_link "tabelle-....png" "https://www.kicker.de/2-bundesliga/tabelle" "Table 2. Liga, DDDDday dd. MMMM YYYY" %}
