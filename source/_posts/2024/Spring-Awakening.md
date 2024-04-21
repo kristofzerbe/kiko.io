@@ -19,7 +19,14 @@ related:
   - Speyer-Automotive
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112310591058800541
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/687724260686305325
+    title: Part 1
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/687725385098115769
+    title: Part 2
+
 ---
 
 Over the last few years, I have taken a lot of photos in the garden of my neighbour and friend Thomas, many of which I also use here on the blog. Thomas is a gifted gardener for me, being completely clueless in this respect, and he has a very clear idea of when to plant what and where in the garden. So you don't have to look for him at weekends, because everyone knows where he is ... out digging. 
