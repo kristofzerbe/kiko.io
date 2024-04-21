@@ -18,7 +18,7 @@ related:
   - SVWW-vs-Osnabruck-2024-03-31
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112309689568355263
 ---
 
 {% match_grid "1-FC-Kaiserslautern" "1:1" "SV-Wehen-Wiesbaden" %}
