@@ -19,7 +19,7 @@ related:
   - SVWW-vs-Paderborn-2024-02-23
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112294211723642645
 ---
 
 {% match_grid "SV-Wehen-Wiesbaden" "0:2" "Fortuna-Duesseldorf" %}
