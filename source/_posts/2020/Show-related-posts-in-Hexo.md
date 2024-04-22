@@ -13,7 +13,6 @@ categories:
   - Tools
 tags:
   - Hexo
-  - Blogging
 related:
   - 404-Page-in-Hexo-for-GitHub-Pages
   - A-New-Blog-Customizing-Hexo

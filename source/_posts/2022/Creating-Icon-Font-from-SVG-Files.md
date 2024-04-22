@@ -8,8 +8,9 @@ photograph:
   name: Old Master Veggies II
   socialmedia: /static/images/social-media/Creating-Icon-Font-from-SVG-Files.png
 categories:
-  - JavaScript
+  - Coding
 tags:
+  - JavaScript
   - SVG
   - Font
   - Bundling

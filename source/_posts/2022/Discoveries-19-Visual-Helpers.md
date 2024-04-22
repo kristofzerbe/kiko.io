@@ -9,9 +9,11 @@ photograph:
   socialmedia: /static/images/social-media/Discoveries-19-Visual-Helpers.png
 series: Discoveries
 categories:
-  - Misc
-tags:
   - Collection
+tags:
+  - UI
+  - JavaScript
+  - SVG
 related:
   - Discoveries-18-JS-UI
   - Discoveries-17-CSS

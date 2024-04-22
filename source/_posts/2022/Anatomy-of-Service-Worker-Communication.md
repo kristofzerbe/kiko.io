@@ -8,8 +8,9 @@ photograph:
   name: Rocky Stairway
   socialmedia: /static/images/social-media/Anatomy-of-Service-Worker-Communication.png
 categories:
-  - JavaScript
+  - Coding
 tags:
+  - JavaScript
   - PWA
   - SPA
 related:

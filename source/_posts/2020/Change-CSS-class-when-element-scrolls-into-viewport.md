@@ -9,11 +9,12 @@ photograph:
   name: Onion Bokeh
   socialmedia: /static/images/social-media/Change-CSS-class-when-element-scrolls-into-viewport.png
 series: A New Blog
+categories:
+  - Coding
 tags:
+  - JavaScript
   - jQuery
   - CSS
-categories:
-  - JavaScript
 related:
   - Using-GitHub-as-Commenting-Platform
   - A-New-Blog-Customizing-Hexo

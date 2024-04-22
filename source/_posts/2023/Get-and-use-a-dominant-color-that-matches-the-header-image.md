@@ -9,8 +9,9 @@ photograph:
   socialmedia: /static/images/social-media/How-to-get-and-use-an-eye-catching-color-that-matches-the-header-image.png
 series: A New Blog
 categories:
-  - JavaScript
+  - Coding
 tags:
+  - JavaScript
   - CSS
   - Imaging
   - Theming

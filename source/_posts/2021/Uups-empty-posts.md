@@ -8,10 +8,9 @@ photograph:
   name: Mooring Ropes
   socialmedia: /static/images/social-media/Uups-empty-posts.png
 categories:
-  - Tools
+  - Misc
 tags:
   - Hexo
-  - Blogging
 related:
   - Pattern-for-dynamic-Hexo-pages
   - 404-Page-in-Hexo-for-GitHub-Pages

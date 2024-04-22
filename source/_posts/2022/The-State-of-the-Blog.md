@@ -9,9 +9,8 @@ photograph:
   socialmedia: /static/images/social-media/The-State-of-the-Blog.png
 series: A New Blog
 categories:
-  - Tools
+  - Misc
 tags:
-  - Blogging
   - Hexo
 related:
   - Automatic-Header-Images-in-Hexo

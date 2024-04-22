@@ -9,8 +9,9 @@ photograph:
   socialmedia: /static/images/social-media/CONTINUE-READING-Link-Auto-Scrolling-on-the-called-page.png
 series: A New Blog
 categories:
-  - JavaScript
+  - Coding
 tags:
+  - JavaScript
   - UI
   - Usability
 related:

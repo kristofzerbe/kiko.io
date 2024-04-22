@@ -9,9 +9,8 @@ photograph:
   socialmedia: /static/images/social-media/SVWW-vs-HSV-2023-10-07.png
 series: SV Wehen Wiesbaden
 categories:
-  - Event
-tags:
   - Football
+tags:
   - SVWW
   - 2. Bundesliga
 related:

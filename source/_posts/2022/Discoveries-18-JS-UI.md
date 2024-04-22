@@ -9,9 +9,10 @@ photograph:
   socialmedia: /static/images/social-media/Discoveries-18-JS-UI.png
 series: Discoveries
 categories:
-  - Misc
-tags:
   - Collection
+tags:
+  - JavaScript
+  - UI
 related:
   - Discoveries-17-CSS
   - Discoveries-16-Javascript

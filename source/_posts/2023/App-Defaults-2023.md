@@ -10,7 +10,6 @@ photograph:
 categories:
   - Tools
 tags:
-  - Collection
 related:
   - IndieFediWebVerse
   - Hexo-WebFinger-and-better-discoverability

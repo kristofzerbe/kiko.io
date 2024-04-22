@@ -10,9 +10,10 @@ photograph:
   socialmedia: /static/images/social-media/Discoveries-7.png
 series: Discoveries
 categories:
-  - Misc
-tags:
   - Collection
+tags:
+  - VS Code
+  - JavaScript
 related:
   - Discoveries-8
   - Discoveries-6

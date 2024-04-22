@@ -9,9 +9,9 @@ photograph:
   name: Rusted Bike
   socialmedia: /static/images/social-media/Utilize-a-repository-of-reusable-ES6-template-literals.png
 categories:
-  - JavaScript
+  - Coding
 tags:
-  - ES6
+  - JavaScript
   - Templating
 related:
   - Native-JavaScript-Multilanguage-Templating

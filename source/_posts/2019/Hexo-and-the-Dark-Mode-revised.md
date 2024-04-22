@@ -5,21 +5,21 @@ title: Hexo and the Dark Mode ... revised
 subtitle: Second approach to implement 'prefers-color-scheme'
 date: 2019-10-26T14:08:05.000Z
 photograph:
-    file: 19-07-Schottland-0025.jpg
-    name: Glencoe River
-    socialmedia: /static/images/social-media/Hexo-and-the-Dark-Mode-revised.png
+  file: 19-07-Schottland-0025.jpg
+  name: Glencoe River
+  socialmedia: /static/images/social-media/Hexo-and-the-Dark-Mode-revised.png
 series: A New Blog
 tags:
-    - Hexo
-    - CSS
-    - Stylus
-    - Dark Mode
+  - Hexo
+  - CSS
+  - Stylus
+  - Dark Mode
 categories:
-    - Tools
+  - Tools
 related:
-    - Hexo-and-the-Dark-Mode
-    - A-New-Blog-Customizing-Hexo
-    - A-New-Blog-VS-Code-Hexo-and-GitHub-Pages
+  - Hexo-and-the-Dark-Mode
+  - A-New-Blog-Customizing-Hexo
+  - A-New-Blog-VS-Code-Hexo-and-GitHub-Pages
 ---
 
 While writing my post [Hexo and the Dark Mode](/categories/Tools/Hexo-and-the-Dark-Mode) a few days ago, I thought it would be nice, if I could switch between the normal (light) and the dark theme, I've created for the support of the OS-related Dark Mode, even manually. The only thing I needed was a toggle element and a little bit of JavaScript.

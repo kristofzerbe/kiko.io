@@ -10,9 +10,9 @@ photograph:
   socialmedia: /static/images/social-media/Discoveries-9.png
 series: Discoveries
 categories:
-  - JavaScript
-tags:
   - Collection
+tags:
+  - JavaScript
 related:
   - Discoveries-10
   - Discoveries-8

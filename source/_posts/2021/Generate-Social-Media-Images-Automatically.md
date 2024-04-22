@@ -9,12 +9,11 @@ photograph:
   socialmedia: /static/images/social-media/Generate-Social-Media-Images-Automatically.png
 project: Social Media Image Generator
 categories:
-  - JavaScript
+  - Coding
 tags:
+  - JavaScript
   - Imaging
   - Hexo
-  - ES6
-  - Blogging
   - GitHub
 related:
   - Automatic-Header-Images-in-Hexo

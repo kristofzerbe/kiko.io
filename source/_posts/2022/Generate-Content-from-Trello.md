@@ -9,8 +9,9 @@ photograph:
   socialmedia: /static/images/social-media/Generate-Content-from-Trello.png
 series: A New Blog
 categories:
-  - JavaScript
+  - Coding
 tags:
+  - JavaScript
   - Trello
   - Publishing
   - Hexo

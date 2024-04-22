@@ -9,8 +9,9 @@ photograph:
   name: Metal Rose
   socialmedia: /static/images/social-media/Safely-remove-multiple-classes-using-a-prefix.png
 categories:
-  - JavaScript
+  - Coding
 tags:
+  - JavaScript
   - DOM
 related:
   - How-to-prevent-duplicate-events

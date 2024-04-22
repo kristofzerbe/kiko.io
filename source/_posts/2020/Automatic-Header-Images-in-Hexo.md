@@ -9,11 +9,10 @@ photograph:
   name: Non Toccare
   socialmedia: /static/images/social-media/Automatic-Header-Images-in-Hexo.png
 series: A New Blog
-tags:
-  - Hexo
-  - Blogging
 categories:
   - Tools
+tags:
+  - Hexo
 related:
   - Hexo-and-the-Dark-Mode-revised
   - A-New-Blog-Customizing-Hexo

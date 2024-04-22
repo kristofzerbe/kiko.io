@@ -9,11 +9,11 @@ photograph:
   name: Blue Lock
   socialmedia: /static/images/social-media/Native-JavaScript-Multilanguage-Templating.png
 categories:
-  - JavaScript
+  - Coding
 tags:
+  - JavaScript
   - Templating
   - Localization
-  - ES6
 related:
   - Utilize-a-repository-of-reusable-ES6-template-literals
   - Localization-with-resource-files-in-JavaScript-web-apps

@@ -10,9 +10,11 @@ photograph:
   socialmedia: /static/images/social-media/Discoveries-1.png
 series: Discoveries
 categories:
-  - Misc
-tags:
   - Collection
+tags:
+  - CSS
+  - JavaScript
+  - PWA
 related:
   - Discoveries-2
   - Discoveries-3

@@ -8,10 +8,11 @@ photograph:
   file: 19-05-Israel-0624.jpg
   name: Jerusalem Seat
   socialmedia: /static/images/social-media/Better-Input-Change-Event.png
-tags:
-  - jQuery
 categories:
+  - Coding
+tags:
   - JavaScript
+  - jQuery
 related:
   - Device-Class-Detection-in-JavaScript
   - Change-CSS-class-when-element-scrolls-into-viewport

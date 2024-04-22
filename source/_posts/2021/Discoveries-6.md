@@ -10,9 +10,9 @@ photograph:
   socialmedia: /static/images/social-media/Discoveries-6.png
 series: Discoveries
 categories:
-  - Misc
-tags:
   - Collection
+tags:
+  - CSS
 related:
   - Discoveries-7
   - Discoveries-5

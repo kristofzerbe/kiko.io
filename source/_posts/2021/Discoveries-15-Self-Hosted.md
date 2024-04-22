@@ -9,9 +9,9 @@ photograph:
   socialmedia: /static/images/social-media/Discoveries-15-Self-Hosted.png
 series: Discoveries
 categories:
-  - Misc
-tags:
   - Collection
+tags:
+  - Hosting
 related:
   - Discoveries-14
   - Discoveries-13

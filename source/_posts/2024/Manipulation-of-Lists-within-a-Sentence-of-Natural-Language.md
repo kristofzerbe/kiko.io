@@ -9,8 +9,9 @@ photograph:
   socialmedia: /static/images/social-media/Manipulation-of-Lists-within-a-Sentence-of-Natural-Language.png
 series: A New Blog
 categories:
-  - JavaScript
+  - Coding
 tags:
+  - JavaScript
   - CSS
   - UI
 related:

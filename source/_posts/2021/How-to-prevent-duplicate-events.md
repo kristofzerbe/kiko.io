@@ -9,8 +9,9 @@ photograph:
   name: Whirling Spark I
   socialmedia: /static/images/social-media/How-to-prevent-duplicate-events.png
 categories:
-  - JavaScript
+  - Coding
 tags:
+  - JavaScript
   - Events
 related:
   - Utilize-a-repository-of-reusable-ES6-template-literals

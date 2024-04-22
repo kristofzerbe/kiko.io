@@ -9,11 +9,10 @@ photograph:
   name: Jaffa Pepsi
   socialmedia: /static/images/social-media/Device-Class-Detection-in-JavaScript.png
 categories:
-  - JavaScript
+  - Coding
 tags:
-  - MediaQuery
+  - JavaScript
   - CSS
-  - Browser
 related:
   - Change-CSS-class-when-element-scrolls-into-viewport
 ---

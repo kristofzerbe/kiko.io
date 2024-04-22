@@ -9,9 +9,8 @@ photograph:
   socialmedia: /static/images/social-media/Discoveries-20-CSS-UI.png
 series: Discoveries
 categories:
-  - Misc
-tags:
   - Collection
+tags:
   - CSS
   - UI
 related:

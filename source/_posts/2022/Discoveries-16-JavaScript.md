@@ -9,9 +9,9 @@ photograph:
   socialmedia: /static/images/social-media/Discoveries-16-JavaScript.png
 series: Discoveries
 categories:
-  - Misc
-tags:
   - Collection
+tags:
+  - JavaScript
 related:
   - Discoveries-15-Self-Hosted
   - Discoveries-14

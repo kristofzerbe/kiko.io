@@ -11,7 +11,7 @@ categories:
   - Tools
 tags:
   - Obsidian
-  - Plugins
+  - Plugin
 related:
   - Johnny-Decimal-Emerging-from-the-Abyss
   - Manipulation-of-Lists-within-a-Sentence-of-Natural-Language

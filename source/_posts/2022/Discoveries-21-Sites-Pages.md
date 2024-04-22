@@ -9,9 +9,8 @@ photograph:
   socialmedia: /static/images/social-media/Discoveries-21-Sites-Pages.png
 series: Discoveries
 categories:
-  - Misc
-tags:
   - Collection
+tags:
   - Hosting
   - Publishing
 related:

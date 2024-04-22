@@ -10,9 +10,10 @@ photograph:
   socialmedia: /static/images/social-media/Discoveries-8.png
 series: Discoveries
 categories:
-  - UI/UX
-tags:
   - Collection
+tags:
+  - UI
+  - CSS
 related:
   - Discoveries-9
   - Discoveries-7

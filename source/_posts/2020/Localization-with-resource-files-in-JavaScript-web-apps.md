@@ -8,13 +8,13 @@ photograph:
   file: 19-05-Israel-0161.jpg
   name: Zern
   socialmedia: /static/images/social-media/Localization-with-resource-files-in-JavaScript-web-apps.png
+categories:
+  - Coding
 tags:
+  - JavaScript
   - Visual Studio
   - Resource
   - Localization
-  - GitHub
-categories:
-  - JavaScript
 related:
   - Device-Class-Detection-in-JavaScript
   - Better-Input-Change-Event

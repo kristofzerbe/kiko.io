@@ -10,9 +10,8 @@ photograph:
   socialmedia: /static/images/social-media/Discoveries-3-Tutorials.png
 series: Discoveries
 categories:
-  - Misc
-tags:
   - Collection
+tags:
   - Tutorial
 related:
   - Discoveries-2

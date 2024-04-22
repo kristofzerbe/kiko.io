@@ -9,9 +9,9 @@ photograph:
   socialmedia: /static/images/social-media/Discoveries-28-UI-Components.png
 series: Discoveries
 categories:
-  - Misc
-tags:
   - Collection
+tags:
+  - UI
 related:
   - Discoveries-27-JavaScript-Tools
   - Discoveries-26-JavaScript-HowTo-s

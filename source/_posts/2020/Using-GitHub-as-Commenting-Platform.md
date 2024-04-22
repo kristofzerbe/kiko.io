@@ -9,12 +9,11 @@ photograph:
   name: Shadow Hat
   socialmedia: /static/images/social-media/Using-GitHub-as-Commenting-Platform.png
 series: A New Blog
-tags:
-  - Blogging
-  - Hexo
-  - GitHub
 categories:
   - Tools
+tags:
+  - Hexo
+  - GitHub
 related:
   - Automatic-Header-Images-in-Hexo
   - A-New-Blog-Customizing-Hexo

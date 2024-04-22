@@ -11,8 +11,7 @@ series: Thomas Garden
 categories:
   - Photo
 tags:
-  - Garden
-  - Flowers
+  - Flora
 related:
   - Impressions-from-the-Carnival-Parade-in-Wiesbaden
   - Mecklenburg-Lakes

@@ -9,8 +9,9 @@ photograph:
   socialmedia: /static/images/social-media/Pool-Photo-Generator.png
 series: A New Blog
 categories:
-  - JavaScript
+  - Coding
 tags:
+  - JavaScript
   - Imaging
   - Node.js
 related:

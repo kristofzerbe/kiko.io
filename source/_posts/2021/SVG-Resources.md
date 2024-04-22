@@ -12,7 +12,6 @@ series: Great Finds
 categories:
   - UI/UX
 tags:
-  - Collection
   - SVG
   - Imaging
 related:

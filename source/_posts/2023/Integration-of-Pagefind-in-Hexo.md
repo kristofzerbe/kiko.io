@@ -13,7 +13,6 @@ categories:
 tags:
   - Hexo
   - Search
-  - Blogging
 related:
   - Pagefind-UI-and-URL-Parameters
   - Pattern-for-dynamic-Hexo-pages

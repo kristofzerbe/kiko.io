@@ -9,13 +9,14 @@ photograph:
   name: Summer Reading
   socialmedia: /static/images/social-media/Pimping-the-Permalink.png
 series: A New Blog
+categories:
+  - Coding
 tags:
+  - JavaScript
   - CSS
   - Stylus
   - Hexo
   - Share
-categories:
-  - JavaScript
 related:
   - Horizontal-navigation-menu-above-an-image
   - A-New-Blog-Customizing-Hexo

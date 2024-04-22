@@ -9,9 +9,11 @@ photograph:
   socialmedia: /static/images/social-media/Discoveries-22-Tips-Tricks.png
 series: Discoveries
 categories:
-  - Misc
-tags:
   - Collection
+tags:
+  - Tutorial
+  - JavaScript
+  - SQL
 related:
   - Generate-Content-from-Trello
   - Discoveries-21-Sites-Pages

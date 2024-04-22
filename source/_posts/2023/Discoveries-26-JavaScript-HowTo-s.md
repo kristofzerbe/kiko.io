@@ -9,9 +9,9 @@ photograph:
   socialmedia: /static/images/social-media/Discoveries-26-JavaScript-HowTo-s.png
 series: Discoveries
 categories:
-  - Misc
-tags:
   - Collection
+tags:
+  - JavaScript
 related:
   - Discoveries-25-Tutorials-HowTo-s
   - Discoveries-24-JavaScript-UI

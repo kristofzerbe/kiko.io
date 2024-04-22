@@ -10,9 +10,11 @@ photograph:
   socialmedia: /static/images/social-media/Discoveries-5.png
 series: Discoveries
 categories:
-  - Misc
-tags:
   - Collection
+tags:
+  - .NET
+  - JavaScript
+  - UI
 related:
   - Discoveries-6
   - Discoveries-4

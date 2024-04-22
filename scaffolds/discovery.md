@@ -9,9 +9,9 @@ photograph:
   socialmedia: /static/images/social-media/{{ slug }}.png
 series: Discoveries
 categories:
-  - Misc
-tags:
   - Collection
+tags:
+  - xxx
 related:
   - Discoveries-X
   - Discoveries-Y

@@ -9,9 +9,8 @@ photograph:
   socialmedia: /static/images/social-media/Discoveries-17-CSS.png
 series: Discoveries
 categories:
-  - Misc
-tags:
   - Collection
+tags:
   - CSS
 related:
   - Discoveries-16-Javascript

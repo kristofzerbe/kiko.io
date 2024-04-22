@@ -10,7 +10,6 @@ photograph:
 categories:
   - Photo
 tags:
-  - Collection
   - Imaging
   - Publishing
 related:

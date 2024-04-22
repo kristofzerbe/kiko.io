@@ -9,8 +9,9 @@ photograph:
   name: Green Lightbeam
   socialmedia: /static/images/social-media/Custom-Caller-Authentication-with-ASP-NET-Core-5-0-WebApi.png
 categories:
-  - .NET
+  - Coding
 tags:
+  - .NET
   - WebAPI
   - Authentication
   - Visual Studio

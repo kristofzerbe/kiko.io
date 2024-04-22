@@ -9,8 +9,9 @@ photograph:
   socialmedia: /static/images/social-media/Include-and-provide-JSON-data-in-Hexo-EJS-Templates.png
 series: A New Blog
 categories:
-  - JavaScript
+  - Coding
 tags:
+  - JavaScript
   - Hexo
   - Templating
 related:

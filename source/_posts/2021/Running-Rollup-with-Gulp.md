@@ -8,8 +8,9 @@ photograph:
   name: Coal Flame
   socialmedia: /static/images/social-media/Running-Rollup-with-Gulp.png
 categories:
-  - JavaScript
+  - Coding
 tags:
+  - JavaScript
   - SPA
   - Bundling
 related:

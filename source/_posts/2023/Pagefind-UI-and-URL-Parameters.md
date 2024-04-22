@@ -14,7 +14,6 @@ categories:
 tags:
   - Hexo
   - Search
-  - Blogging
 related:
   - Integration-of-Pagefind-in-Hexo
   - The-State-of-the-Blog

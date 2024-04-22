@@ -9,9 +9,9 @@ photograph:
   socialmedia: /static/images/social-media/{{ slug }}.png
 series: Step By Step
 categories:
-  - Misc
+  - xxx
 tags:
-  - 
+  - xxx
 related:
   - 
 ---

@@ -12,7 +12,6 @@ categories:
 tags:
   - UI
   - CSS
-  - Collection
 related:
   - Discoveries-20-CSS-UI
   - CSS-Columns-and-Drop-Shadow

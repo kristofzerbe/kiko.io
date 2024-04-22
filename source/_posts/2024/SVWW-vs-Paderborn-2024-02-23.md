@@ -9,9 +9,8 @@ photograph:
   socialmedia: /static/images/social-media/SVWW-vs-Paderborn-2024-02-23.png
 series: SV Wehen Wiesbaden
 categories:
-  - Event
-tags:
   - Football
+tags:
   - SVWW
   - 2. Bundesliga
 related:

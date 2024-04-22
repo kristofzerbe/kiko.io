@@ -9,9 +9,8 @@ photograph:
   socialmedia: /static/images/social-media/My-Hometown-My-Club.png
 series: SV Wehen Wiesbaden
 categories:
-  - Misc
-tags:
   - Football
+tags:
   - SVWW
   - 2. Bundesliga
 related:

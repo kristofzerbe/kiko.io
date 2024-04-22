@@ -9,9 +9,9 @@ photograph:
   socialmedia: /static/images/social-media/Discoveries-25-Tutorials-HowTo-s.png
 series: Discoveries
 categories:
-  - Misc
-tags:
   - Collection
+tags:
+  - Tutorial
 related:
   - Discoveries-24-JavaScript-UI
   - Discoveries-23-UI-CSS

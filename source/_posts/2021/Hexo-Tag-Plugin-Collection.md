@@ -13,7 +13,6 @@ categories:
 tags:
   - Hexo
   - Plugin
-  - Collection
   - GitHub
   - VS Code
 related:

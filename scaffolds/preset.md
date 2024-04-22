@@ -9,7 +9,7 @@ photograph:
   socialmedia: /static/images/social-media/{{ slug }}.png
 series: Lightroom Presets
 categories:
-  - Photo-Editing
+  - Photo
 tags:
   - Lightroom
   - Presets

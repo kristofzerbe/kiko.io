@@ -9,8 +9,9 @@ photograph:
   name: Illuminated Chair
   socialmedia: /static/images/social-media/Implement-source-switch-for-SPA.png
 categories:
-  - JavaScript
+  - Coding
 tags:
+  - JavaScript
   - SPA
   - Bundling
 related:

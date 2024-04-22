@@ -12,7 +12,6 @@ categories:
 tags:
   - UI
   - CSS
-  - Collection
 related:
   - Favourite-Pens-of-2022
   - Discoveries-23-UI-CSS

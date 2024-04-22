@@ -8,10 +8,10 @@ photograph:
   name: DJing II
   socialmedia: /static/images/social-media/Simplest-Console-File-Logger.png
 categories:
-  - .NET
+  - Coding
 tags:
+  - .NET
   - Logging
-  - C#
   - Visual Studio
 related:
   - Custom-Caller-Authentication-with-ASP-NET-Core-5-0-WebApi

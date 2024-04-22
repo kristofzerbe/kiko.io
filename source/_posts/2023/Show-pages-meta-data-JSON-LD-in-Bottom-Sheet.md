@@ -12,7 +12,7 @@ categories:
   - UI/UX
 tags:
   - JSON-LD
-  - Meta
+  - Metadata
   - Publishing
 related:
   - Provide-Blog-Metadata-via-JSON-LD

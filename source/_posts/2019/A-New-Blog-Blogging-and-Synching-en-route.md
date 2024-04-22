@@ -9,13 +9,11 @@ photograph:
   name: Tiny Scots 5
   socialmedia: /static/images/social-media/A-New-Blog-Blogging-and-Synching-en-route.png
 series: A New Blog
+categories:
+  - Tools
 tags:
   - VS Code
   - Hexo
-  - GitHub
-  - Blogging
-categories:
-  - Tools
 related:
   - Using-GitHub-as-Commenting-Platform
   - A-New-Blog-Customizing-Hexo

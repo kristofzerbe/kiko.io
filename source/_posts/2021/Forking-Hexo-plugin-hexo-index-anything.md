@@ -10,8 +10,9 @@ photograph:
   socialmedia: /static/images/social-media/Forking-Hexo-plugin-hexo-index-anything.png
 project: Hexo Generator Anything
 categories:
-  - JavaScript
+  - Coding
 tags:
+  - JavaScript
   - Hexo
   - Plugin
   - GitHub

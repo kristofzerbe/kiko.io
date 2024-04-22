@@ -11,7 +11,6 @@ categories:
   - Tools
 tags:
   - Hexo
-  - Blogging
 related:
   - Generate-Social-Media-Images-Automatically
   - Forking-Hexo-plugin-hexo-index-anything

@@ -8,8 +8,9 @@ photograph:
   name: Colorful Twig
   socialmedia: /static/images/social-media/Automatic-Duplicate-Image-Shadow.png
 categories:
-  - JavaScript
+  - Coding
 tags:
+  - JavaScript
   - CSS
   - DOM
   - Imaging

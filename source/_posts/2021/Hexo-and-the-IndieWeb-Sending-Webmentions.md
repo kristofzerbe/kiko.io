@@ -14,7 +14,6 @@ categories:
   - Tools
 tags:
   - Hexo
-  - Blogging
   - Publishing
   - Share
 related:

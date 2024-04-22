@@ -9,9 +9,9 @@ photograph:
   socialmedia: /static/images/social-media/Discoveries-12-Tutorials.png
 series: Discoveries
 categories:
-  - UI/UX
-tags:
   - Collection
+tags:
+  - UI
   - Tutorial
 related:
   - Discoveries-11

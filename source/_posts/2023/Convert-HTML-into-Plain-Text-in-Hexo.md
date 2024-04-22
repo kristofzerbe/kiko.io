@@ -9,10 +9,11 @@ photograph:
   socialmedia: /static/images/social-media/Convert-HTML-into-Plain-Text-in-Hexo.png
 series: A New Blog
 categories:
-  - JavaScript
+  - Coding
 tags:
+  - JavaScript
   - Hexo
-  - Meta
+  - Metadata
   - Node.js
 related:
   - Show-pages-meta-data-JSON-LD-in-Bottom-Sheet

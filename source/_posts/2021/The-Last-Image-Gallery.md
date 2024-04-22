@@ -9,8 +9,9 @@ photograph:
   socialmedia: /static/images/social-media/The-Last-Image-Gallery.png
 series: Great Finds
 categories:
-  - JavaScript
+  - Coding
 tags:
+  - JavaScript
   - Plugin
   - Imaging
   - GitHub

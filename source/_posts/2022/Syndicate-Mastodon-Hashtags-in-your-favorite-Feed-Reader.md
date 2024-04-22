@@ -13,7 +13,6 @@ categories:
 tags:
   - Mastodon
   - Publishing
-  - Collection
   - Mastodon
 related:
   - Anatomy-of-Service-Worker-Communication

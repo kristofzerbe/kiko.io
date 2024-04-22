@@ -12,7 +12,7 @@ categories:
 tags:
   - Publishing
   - VS Code
-  - Git/GitHub
+  - GitHub
 related:
   - Gitpod-Visual-Studio-Code-on-the-Web
   - Mastodon-simply-explained
