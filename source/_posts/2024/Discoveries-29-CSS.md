@@ -18,7 +18,7 @@ related:
   - Discoveries-26-JavaScript-HowTo-s
 syndication:
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/112315522798697329
 ---
 
 It&#39;s almost impossible to keep track of all the wonderful tips and tricks about CSS, because hardly a quarter goes by without new functions being introduced by the W3C and browser manufacturers. I diligently collect everything I can find in order to try it out at some point, but I hardly ever get round to it. If you feel the same way ... here are a few more gems for your pile ... :)
