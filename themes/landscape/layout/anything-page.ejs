@@ -6,9 +6,9 @@
 <%- partial('_partial/nav-index-archives') %>
 <% } %>
 
-<% let capPageIndexName = page.index.name[0].toUpperCase() + page.index.name.substring(1); %>
 <h1 class="archive-title" data-pagefind-meta="title" data-pagefind-meta="type:Anything">
-  <span><%= capPageIndexName %><b> | </b></span><strong><%= page.key.caption %></strong>
+  <small><%= page.index.name %></small>
+  <%= page.key.caption %>
 </h1>
 
 <%- partial('_partial/anything-page-item', { item: page }) %>
