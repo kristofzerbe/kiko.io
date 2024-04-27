@@ -1,6 +1,5 @@
 ---
 title: Windows Tools
-subtitle: 
 date: 2023-11-23
 permalink: /tools/windows-tools
 photograph: 

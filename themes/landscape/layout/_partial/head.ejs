@@ -64,7 +64,6 @@
     else if (is_tag())      { meta.area = "TAG"; }
     else {
       let rootPath = page.path.split(/[\\\/]/)[0].toLowerCase();
-      // console.log(page);
       switch (rootPath) {
         case "notes":
           meta.area = "NOTE";
@@ -81,6 +80,7 @@
         case "feeds":
         case "photos":
         case "search":
+        case "apps":
           meta.area = "DYNAMIC";
           break;
         default:

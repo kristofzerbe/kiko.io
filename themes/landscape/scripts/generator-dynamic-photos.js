@@ -9,7 +9,7 @@ const _rootDir = hexo.source_dir.replace("source", "");
 hexo.extend.generator.register("dynamic-photos", async function(locals) {
   let config = this.config;
 
-  log.info("Processing photos...");
+  log.info("Processing dynamic photos...");
 
   let result = [];
 
@@ -252,6 +252,7 @@ function getPostAndPagePhotos(config, locals) {
       };
     }
   });
+  // console.log(postsAndPages);
 
   used.forEach(entry => {
     entry.key = entry.file.replace(".jpg", "");

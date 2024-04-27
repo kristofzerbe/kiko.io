@@ -1,6 +1,5 @@
 ---
 title: Search
-subtitle: 
 date: 2023-01-16 16:37:00
 permalink: /search
 photograph:
