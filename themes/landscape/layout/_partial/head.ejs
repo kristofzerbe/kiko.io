@@ -148,6 +148,10 @@
       case "DYNAMIC":
         meta.title = page.title + " - " + config.title;
         meta.description = page.title + " " + config.description_short;
+        if (page.app) {
+          meta.type = "app";
+          meta.app = page.app;
+        }
         break;
 
       case "POST":
@@ -201,12 +205,20 @@
   <% }%>
   
   <link rel="canonical" href="<%= url.replace("index.html", "") %>">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="icon" href="<%- theme.favicon %>">
-  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-  <meta name="theme-color" content="#444">
+  <% if (!meta.app) { %>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <meta name="theme-color" content="#444">
+  <% } else { %>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="theme-color" content="<%= meta.app.color %>">  
+  <% }%>
 
   <%#!-- JSON-LD (schema.org) for Google --%>
+  <% if (!meta.app) { %>
   <%
     let jsonPartial = "json-ld-" + meta.type;
     let jsonLD = partial('_partial/meta/' + jsonPartial, { meta: meta });
@@ -220,7 +232,8 @@
     }
   %>
   <script type="application/ld+json"><%- jsonLD %></script>
-
+  <% }%>
+  
   <%#!-- Open Graph --%>
   <meta property="og:site_name" content="<%= config.title %>">
   <meta property="og:type" content="blog">

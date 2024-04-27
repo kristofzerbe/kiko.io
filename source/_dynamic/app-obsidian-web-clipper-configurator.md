@@ -5,6 +5,8 @@ permalink: /apps/obsidian-web-clipper-configurator
 photograph:
   file: $23-05-Holland-0449.jpg
   name: Clog Rack
+app:
+  color: #740b07
 ---
 
 lorem ipsum
