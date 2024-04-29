@@ -4,6 +4,7 @@ permalink: /series/indieweb
 photograph:
   file: $23-05-Holland-0996.jpg
   name: Stone Chains
+  keepOutOverview: true
 ---
 
 I work in the IT industry, so it's perhaps not surprising that I'm not a fan boy of Facebook and other social media giants. You don't pay with money, but with your data.

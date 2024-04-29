@@ -378,43 +378,51 @@ function getAnythingPagePhotos(config) {
   var anythingDir = path.join(_rootDir, config.source_dir, "_anything/");
   var metaDir = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "meta");
 
-  let anything = fs.readdirSync(anythingDir)
-    //.filter(f => f === "index.md") //TODO: Better: Filter out duplicates
+  let used = [];
+
+  fs.readdirSync(anythingDir)
     .filter(entry => fs.statSync(path.join(anythingDir, entry)).isDirectory())
-    .reduce((used, dir) => {
+    .forEach((dir) => {
 
-      const mdSource = path.join(anythingDir, dir, "index.md");
-      const md = fs.readFileSync(mdSource);
-      let fm = front.parse(md);
+      let itemDir = path.join(anythingDir, dir);
+      fs.readdirSync(itemDir)
+        .filter(entry => fs.statSync(path.join(itemDir, entry)).isFile())
+        .forEach((file) => {
 
-      if (fm.photograph && !fm.photograph.keepOutOverview) {
+          const mdSource = path.join(itemDir, file);
+          const md = fs.readFileSync(mdSource);
+    
+          let fm = front.parse(md);
+          let photoKey = fm.photograph.file.replace(".jpg", "");
+          if (fm.photograph && !fm.photograph.keepOutOverview && !used.some(e => e.key === photoKey)) {
 
-        let entry = {
-          key: fm.photograph.file.replace(".jpg", ""),
-          status: "used",
-          file: fm.photograph.file,
-          pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
-          pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
-          pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
-          name: fm.photograph.name,
-          article: {
-            type: "anything",
-            title: fm.title,
-            subtitle: fm.subTitle,
-            url: fm.permalink
-          }
-        };
+            let entry = {
+              key: photoKey,
+              status: "used",
+              file: fm.photograph.file,
+              pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
+              pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
+              pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
+              name: fm.photograph.name,
+              article: {
+                type: "anything",
+                title: fm.title,
+                subtitle: fm.subTitle,
+                url: fm.permalink
+              }
+            };
+    
+            if (fs.existsSync(path.join(metaDir, entry.key + ".json"))) {
+              entry.meta = JSON.parse(fs.readFileSync(path.join(metaDir, entry.key + ".json")));
+            }
+    
+            used.push(entry);
+          }    
+        });
 
-        if (fs.existsSync(path.join(metaDir, entry.key + ".json"))) {
-          entry.meta = JSON.parse(fs.readFileSync(path.join(metaDir, entry.key + ".json")));
-        }
-
-        used.push(entry);
-      }
-      return used;
     }, []);
 
-  return anything;
+  return used;
 }
 
 /** ================================================================================= */

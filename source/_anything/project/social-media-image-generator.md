@@ -4,6 +4,7 @@ permalink: /projects/social-media-image-generator
 photograph:
   file: $19-05-Israel-0245.jpg
   name: Ancient Mosaic
+  keepOutOverview: true
 ---
 
 **Social Media Image Generator** is a script to generate social media images for blog posts. It utilizes [Puppeteer](https://github.com/puppeteer/puppeteer) for running a headless Chromium to take a screenshot of a temporary created HTML file, which is generated with your posts Frontmatter information and a referenced photograph.

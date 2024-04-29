@@ -4,6 +4,7 @@ permalink: /projects/hexo-tag-plugins
 photograph:
   file: $19-05-Israel-0245.jpg
   name: Ancient Mosaic
+  keepOutOverview: true
 ---
 
 **Hexo Tag Plugins** is a collection of [Tag Plugins for Hexo](https://hexo.io/docs/tag-plugins.html) I have created for this blog. Some of them are quite simple, others are more complex, but overall maybe helpful for you.

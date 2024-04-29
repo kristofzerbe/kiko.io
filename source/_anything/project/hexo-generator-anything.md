@@ -4,6 +4,7 @@ permalink: /projects/hexo-generator-anything
 photograph:
   file: $19-05-Israel-0245.jpg
   name: Ancient Mosaic
+  keepOutOverview: true
 ---
 
 **Hexo Generator Anything** is a plugin for [Hexo](https://hexo.io/) to generate index pages from custom front matter variables.   
