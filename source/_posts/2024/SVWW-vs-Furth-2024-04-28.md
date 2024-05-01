@@ -19,7 +19,7 @@ related:
   - SVWW-vs-Dusseldorf-2024-04-13
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112365622660400918
 ---
 
 {% match_grid "SV-Wehen-Wiesbaden" "3:5" "Greuther-Fuerth" %}
