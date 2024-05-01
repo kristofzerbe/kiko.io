@@ -19,6 +19,8 @@ related:
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/112366455161768391
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/691306746569695794
 ---
 
 First of May is a bank holiday in Germany, this year it's in the middle of the week and it has 25 degrees Celsius. Fantastic! The light is a little hazy because there's a lot of Saharan dust in the air again, but what should Thomas care ... he's in the garden and I have the opportunity to keep him company with my latest acquisition: the **TAMRON SP 150-600mm F/5-6.3 Di VC USD G2**.
