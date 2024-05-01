@@ -26,7 +26,7 @@ First of May is a bank holiday in Germany, this year it's in the middle of the w
 My heavens, that thing is a stovepipe! Thank goodness I thought of getting a monopod, because holding almost 3 kilograms steady in your hand is hardly possible, regardless of the image stabiliser. It looks a bit strange now, trudging through Thomas' densely overgrown garden like a sports photographer, but it's a lot of fun and I don't regret a cent at the moment. I need training on the device, because with a focal length like this, the handling I'm familiar with is completely different.
 
 Have a nice holiday, take it easy and enjoy the weather ...
- 
+
 <!-- more -->
 
 {% photo_masonry
