@@ -37,7 +37,7 @@ Here are a few pictures of the car exhibition that I brought back from there and
   "23-09-11-Speyer-0008"
   "23-09-11-Speyer-0022"
   "23-09-11-Speyer-0029"
-  "23-09-11-Speyer-0031"
+  "$23-09-11-Speyer-0031"
   "23-09-11-Speyer-0041"
   "23-09-11-Speyer-0048"
 %}
