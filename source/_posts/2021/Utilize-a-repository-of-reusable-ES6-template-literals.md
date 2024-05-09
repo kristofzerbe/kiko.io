@@ -1,5 +1,4 @@
 ---
-alias: /categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/index.html
 slug: Utilize-a-repository-of-reusable-ES6-template-literals
 title: Utilize a repository of reusable ES6 template literals
 subtitle: null

@@ -1,5 +1,4 @@
 ---
-alias: /categories/C/Meaningful-automatic-versioning-with-T4/index.html
 slug: Meaningful-automatic-versioning-with-T4
 title: Meaningful automatic versioning with T4
 subtitle: How to implement versioning in C# projects the better way

@@ -1,5 +1,4 @@
 ---
-alias: /categories/JavaScript/Change-CSS-class-when-element-scrolls-into-viewport/index.html
 slug: Change-CSS-class-when-element-scrolls-into-viewport
 title: Change CSS class when element scrolls into viewport
 subtitle: null

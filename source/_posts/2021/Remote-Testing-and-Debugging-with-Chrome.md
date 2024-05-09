@@ -1,5 +1,4 @@
 ---
-alias: /categories/Tools/Remote-Testing-and-Debugging-with-Chrome/index.html
 slug: Remote-Testing-and-Debugging-with-Chrome
 title: Remote Testing and Debugging with Chrome
 subtitle: How to test a local site on a mobile device and debug it locally

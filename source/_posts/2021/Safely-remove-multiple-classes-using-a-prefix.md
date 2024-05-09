@@ -1,5 +1,4 @@
 ---
-alias: /categories/JavaScript/Safely-remove-multiple-classes-using-a-prefix/index.html
 slug: Safely-remove-multiple-classes-using-a-prefix
 title: Safely remove multiple classes using a prefix
 subtitle: Avoiding pitfalls when iterating over classList

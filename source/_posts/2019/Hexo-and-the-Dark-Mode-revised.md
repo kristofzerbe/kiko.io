@@ -1,5 +1,4 @@
 ---
-alias: /categories/Tools/Hexo-and-the-Dark-Mode-revised/index.html
 slug: Hexo-and-the-Dark-Mode-revised
 title: Hexo and the Dark Mode ... revised
 subtitle: Second approach to implement 'prefers-color-scheme'
@@ -22,7 +21,7 @@ related:
   - A-New-Blog-VS-Code-Hexo-and-GitHub-Pages
 ---
 
-While writing my post [Hexo and the Dark Mode](/categories/Tools/Hexo-and-the-Dark-Mode) a few days ago, I thought it would be nice, if I could switch between the normal (light) and the dark theme, I've created for the support of the OS-related Dark Mode, even manually. The only thing I needed was a toggle element and a little bit of JavaScript.
+While writing my post [Hexo and the Dark Mode](/post/Hexo-and-the-Dark-Mode) a few days ago, I thought it would be nice, if I could switch between the normal (light) and the dark theme, I've created for the support of the OS-related Dark Mode, even manually. The only thing I needed was a toggle element and a little bit of JavaScript.
 
 Of course, I couldn't manipulate the [media query ``prefers-color-scheme``](https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-color-scheme) itself, but introduce a different way by blog uses it. Instead of implementing the media query directly into my CSS (or Stylus) code, I used a root selector, which can be manipulated by JavaScript ... something like this:
 

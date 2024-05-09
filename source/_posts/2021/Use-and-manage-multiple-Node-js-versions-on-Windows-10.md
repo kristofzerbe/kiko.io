@@ -1,5 +1,4 @@
 ---
-alias: /categories/Tools/Use-and-manage-multiple-Node-js-versions-on-Windows-10/index.html
 slug: Use-and-manage-multiple-Node-js-versions-on-Windows-10
 title: Use and manage multiple Node.js versions on Windows 10
 subtitle: null

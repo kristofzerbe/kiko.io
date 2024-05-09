@@ -1,5 +1,4 @@
 ---
-alias: /categories/JavaScript/Better-Input-Change-Event/index.html
 slug: Better-Input-Change-Event
 title: Better Input Change Event
 subtitle: null

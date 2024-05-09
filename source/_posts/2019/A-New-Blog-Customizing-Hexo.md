@@ -1,5 +1,4 @@
 ---
-alias: /categories/Tools/A-New-Blog-Customizing-Hexo/index.html
 slug: A-New-Blog-Customizing-Hexo
 title: 'A New Blog: Customizing Hexo'
 subtitle: Part Two of having fun with Hexo and GitHub Pages
@@ -20,7 +19,7 @@ related:
   - A-New-Blog-Blogging-and-Synching-en-route
 ---
 
-Hexo is a great tool to get quick results (see [Part One of this series](/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/)), when you decide to have a blog and its defaults are practical, but it's power lies in the possiblities of customization via plugins. On the [official plugin page](https://hexo.io/plugins/index.html), there are actually 302 plugins listed, but there are many more and no wish will be unsatisfied.
+Hexo is a great tool to get quick results (see [Part One of this series](/post/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/)), when you decide to have a blog and its defaults are practical, but it's power lies in the possiblities of customization via plugins. On the [official plugin page](https://hexo.io/plugins/index.html), there are actually 302 plugins listed, but there are many more and no wish will be unsatisfied.
 
 I will show you which of these I found worth to work with...
 <!-- more -->

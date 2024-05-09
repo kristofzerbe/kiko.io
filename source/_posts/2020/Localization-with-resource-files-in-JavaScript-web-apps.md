@@ -1,5 +1,4 @@
 ---
-alias: /categories/JavaScript/Localization-with-resource-files-in-JavaScript-web-apps/index.html
 slug: Localization-with-resource-files-in-JavaScript-web-apps
 title: Localization with resource files in JavaScript web apps
 subtitle: How to work with Visual Studio resource files for localization in Single Page Applications

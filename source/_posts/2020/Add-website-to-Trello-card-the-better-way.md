@@ -1,5 +1,4 @@
 ---
-alias: /categories/Tools/Add-website-to-Trello-card-the-better-way/index.html
 slug: Add-website-to-Trello-card-the-better-way
 title: Add website to Trello card the better way
 subtitle: 'Avoid default share, use the Trello bookmarklet'

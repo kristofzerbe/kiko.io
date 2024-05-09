@@ -1,5 +1,4 @@
 ---
-alias: /categories/JavaScript/Device-Class-Detection-in-JavaScript/index.html
 slug: Device-Class-Detection-in-JavaScript
 title: Device Class Detection in JavaScript
 subtitle: The unusual way by using CSS Media Queries

@@ -1,5 +1,4 @@
 ---
-alias: /categories/Tools/Hexo-and-the-Dark-Mode/index.html
 slug: Hexo-and-the-Dark-Mode
 title: Hexo and the Dark Mode
 subtitle: First approach to implement 'prefers-color-scheme'

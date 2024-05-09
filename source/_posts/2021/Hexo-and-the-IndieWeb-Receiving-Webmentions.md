@@ -1,5 +1,4 @@
 ---
-alias: /categories/Tools/Hexo-and-the-IndieWeb-Receiving-Webmentions/index.html
 slug: Hexo-and-the-IndieWeb-Receiving-Webmentions
 title: Hexo and the IndieWeb (Receiving Webmentions)
 subtitle: Use webmention.io the easy way

@@ -1,5 +1,4 @@
 ---
-alias: /categories/JavaScript/Implement-source-switch-for-SPA/index.html
 slug: Implement-source-switch-for-SPA
 title: Implement source switch for SPA
 subtitle: Asynchronous loading of JS and CSS depending on the environment

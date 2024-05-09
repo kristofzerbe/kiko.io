@@ -1,5 +1,4 @@
 ---
-alias: /categories/Discoveries/Discoveries-8/index.html
 slug: Discoveries-8
 title: 'Discoveries #8'
 subtitle: null

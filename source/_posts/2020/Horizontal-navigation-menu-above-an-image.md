@@ -1,5 +1,4 @@
 ---
-alias: /categories/UI-Design/Horizontal-navigation-menu-above-an-image/index.html
 slug: Horizontal-navigation-menu-above-an-image
 title: Horizontal navigation menu above an image
 subtitle: 'How to deal with coverage, readability and scrollbars'

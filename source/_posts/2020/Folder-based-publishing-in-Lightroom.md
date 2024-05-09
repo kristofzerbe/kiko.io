@@ -1,5 +1,4 @@
 ---
-alias: /categories/Photo-Editing/Folder-based-publishing-in-Lightroom/index.html
 slug: Folder-based-publishing-in-Lightroom
 title: Folder based publishing in Lightroom
 subtitle: null

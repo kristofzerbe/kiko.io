@@ -62,7 +62,7 @@ function bindWebmentionSending(formName) {
 
 /**
  * Method to retreive Webmentions from webmention.io and insert them into a article page
- * see: https://kiko.io/categories/Tools/Hexo-and-the-IndieWeb-Receiving-Webmentions/
+ * see: https://kiko.io/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/
  * @param {string} key - slug of the article 
  * @param {string} originalHost - name of the original host of the webmention
  * @param {string} owner - name of the website owner

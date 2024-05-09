@@ -1,5 +1,4 @@
 ---
-alias: /categories/Photo-Editing/Scotch-Presets-for-Lightroom/index.html
 slug: Scotch-Presets-for-Lightroom
 title: Scotch Presets for Lightroom
 subtitle: null

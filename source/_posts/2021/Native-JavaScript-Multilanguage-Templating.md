@@ -1,5 +1,4 @@
 ---
-alias: /categories/JavaScript/Native-JavaScript-Multilanguage-Templating/index.html
 slug: Native-JavaScript-Multilanguage-Templating
 title: Native JavaScript Multilanguage Templating
 subtitle: null
@@ -24,7 +23,7 @@ In the project I'm currently working on, I faced the "problem" to integrate mult
 
 <!-- more -->
 
-My solution is based on a template system that I implemented into my project at an earlier stage. If you are interested in how this works, I recommend you read my article **[Utilize a repository of reusable ES6 template literals](https://kiko.io/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/)**.
+My solution is based on a template system that I implemented into my project at an earlier stage. If you are interested in how this works, I recommend you read my article **[Utilize a repository of reusable ES6 template literals](https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/)**.
 
 Let's start with the standard scaffold of an HTML5 app, extended with some ``style``'s, an initialization ``script`` and a lonely ``main`` element, we want to fill with some localized content:
 
@@ -125,7 +124,7 @@ class App {
 
 ``app.localization`` now holds the key/value list of the current language.
 
-Now we implement the templating class, as described in [Utilize a repository of reusable ES6 template literals](https://kiko.io/categories/JavaScript/Utilize-a-repository-of-reusable-ES6-template-literals/) and define a first template called ``helloWorld`` ...
+Now we implement the templating class, as described in [Utilize a repository of reusable ES6 template literals](https://kiko.io/post/Utilize-a-repository-of-reusable-ES6-template-literals/) and define a first template called ``helloWorld`` ...
 
 ```js templates.js
 class Templates {

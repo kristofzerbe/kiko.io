@@ -1,5 +1,4 @@
 ---
-alias: /categories/Tools/Hexo-and-the-IndieWeb/index.html
 slug: Hexo-and-the-IndieWeb
 title: Hexo and the IndieWeb
 subtitle: Make your blog ready for social interaction via Webmentions

@@ -1,5 +1,4 @@
 ---
-alias: /categories/Tools/Dopamine-How-Software-should-be/index.html
 slug: Dopamine-How-Software-should-be
 title: 'Dopamine: How Software should be...'
 subtitle: A great media player for Windows 10

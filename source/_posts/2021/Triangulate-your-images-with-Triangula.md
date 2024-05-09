@@ -1,5 +1,4 @@
 ---
-alias: /categories/Photo-Editing/Triangulate-your-images-with-Triangula/index.html
 slug: Triangulate-your-images-with-Triangula
 title: Triangulate your images with Triangula
 subtitle: null

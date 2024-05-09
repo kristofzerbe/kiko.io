@@ -1,5 +1,4 @@
 ---
-alias: /categories/Tools/Automatic-Header-Images-in-Hexo/index.html
 slug: Automatic-Header-Images-in-Hexo
 title: Automatic Header Images in Hexo
 subtitle: Use static images randomly for posts via Hexo script
@@ -21,7 +20,7 @@ related:
 
 Every article in this blog has an individual header image, to bring a little bit color into it. In this post I will show you how I deal with the images in using and automatic provisioning.
 
-For serving these pictures I use a static folder, as described in [A New Blog: Customizing Hexo](/categories/Tools/A-New-Blog-Customizing-Hexo/). The hard work is done by the plugin [Hexo Generator Copy](https://github.com/niahoo/hexo-generator-copy), which copies the static files into the ``public_dir`` while generating.
+For serving these pictures I use a static folder, as described in [A New Blog: Customizing Hexo](/post/A-New-Blog-Customizing-Hexo/). The hard work is done by the plugin [Hexo Generator Copy](https://github.com/niahoo/hexo-generator-copy), which copies the static files into the ``public_dir`` while generating.
 
 <!-- more -->
 

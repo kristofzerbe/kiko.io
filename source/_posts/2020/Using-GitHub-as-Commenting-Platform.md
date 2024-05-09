@@ -1,5 +1,4 @@
 ---
-alias: /categories/Tools/Using-GitHub-as-Commenting-Platform/index.html
 slug: Using-GitHub-as-Commenting-Platform
 title: Using GitHub as Commenting Platform
 subtitle: Integrate Utterances' GitHub Issue Commenting to Hexo
@@ -24,7 +23,7 @@ If you run a blog, it is always advisable to integrate a commenting system, in o
 
 So did I, when I start this blog and I decided to use the [Disqus platform](https://disqus.com), as it was very easy to integrate ... but I always had a bad feeling about a third-party platform collecting data from my readers. Disqus is probably not without reason under criticism by many people in the community.
 
-As I host this blog at GitHub (see [A New Blog (Part One): VS Code, Hexo and GitHub Pages](/categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/)) I was looking for a solution to host the comments also on my prefered platform. There were some solutions, which uses GitHub Issues for this and wanted to implement something like that someday.
+As I host this blog at GitHub (see [A New Blog (Part One): VS Code, Hexo and GitHub Pages](/post/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/)) I was looking for a solution to host the comments also on my prefered platform. There were some solutions, which uses GitHub Issues for this and wanted to implement something like that someday.
 
 <!-- more -->
 
@@ -58,7 +57,7 @@ The result you see below ...
 
 ## UPDATE...
 
-The utterances script tag has the attribute ``theme``, to tell utterances  which style should be delivered. There are several themes available, but if users are able to switch between light or dark mode on the page (see [Hexo and the Dark Mode](/categories/Tools/Hexo-and-the-Dark-Mode)), the comment block should change to an suitable theme also.
+The utterances script tag has the attribute ``theme``, to tell utterances  which style should be delivered. There are several themes available, but if users are able to switch between light or dark mode on the page (see [Hexo and the Dark Mode](/post/Hexo-and-the-Dark-Mode)), the comment block should change to an suitable theme also.
 
 On order to respond on a mode change, it is necessary to write a more dynamic script loading.
 

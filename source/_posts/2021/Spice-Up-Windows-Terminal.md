@@ -1,5 +1,4 @@
 ---
-alias: /categories/Tools/Spice-Up-Windows-Terminal/index.html
 slug: Spice-Up-Windows-Terminal
 title: Spice Up Windows Terminal
 subtitle: How to make Powershell a little prettier

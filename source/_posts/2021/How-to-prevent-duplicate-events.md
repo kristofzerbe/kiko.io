@@ -1,5 +1,4 @@
 ---
-alias: /categories/JavaScript/How-to-prevent-duplicate-events/index.html
 slug: How-to-prevent-duplicate-events
 title: How to prevent duplicate events
 date: 2021-01-07T17:22:25.000Z

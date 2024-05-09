@@ -1,5 +1,4 @@
 ---
-alias: /categories/Tools/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages/index.html
 slug: A-New-Blog-VS-Code-Hexo-and-GitHub-Pages
 title: 'A New Blog: VS Code, Hexo and GitHub Pages'
 subtitle: Part One of having fun with Hexo and GitHub Pages

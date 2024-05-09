@@ -1,5 +1,4 @@
 ---
-alias: /categories/Photo-Editing/Israeli-Presets-for-Lightroom/index.html
 slug: Israeli-Presets-for-Lightroom
 title: Israeli Presets for Lightroom
 subtitle: null

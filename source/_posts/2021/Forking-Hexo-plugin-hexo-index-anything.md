@@ -1,5 +1,4 @@
 ---
-alias: /categories/JavaScript/Forking-Hexo-plugin-hexo-index-anything/index.html
 slug: Forking-Hexo-plugin-hexo-index-anything
 title: Forking Hexo plugin 'hexo-index-anything'
 subtitle: Introducing its successor 'hexo-generator-anything'

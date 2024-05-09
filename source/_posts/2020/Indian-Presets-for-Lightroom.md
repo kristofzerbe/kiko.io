@@ -1,5 +1,4 @@
 ---
-alias: /categories/Photo-Editing/Indian-Presets-for-Lightroom/index.html
 slug: Indian-Presets-for-Lightroom
 title: Indian Presets for Lightroom
 subtitle: null

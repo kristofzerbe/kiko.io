@@ -1,5 +1,4 @@
 ---
-alias: /categories/Tools/Hexo-and-the-IndieWeb-Sending-Webmentions/index.html
 slug: Hexo-and-the-IndieWeb-Sending-Webmentions
 title: Hexo and the IndieWeb (Sending Webmentions)
 subtitle: Use webmention.app the easy way

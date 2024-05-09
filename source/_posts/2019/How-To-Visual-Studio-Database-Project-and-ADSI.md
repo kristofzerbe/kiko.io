@@ -1,5 +1,4 @@
 ---
-alias: /categories/SQL/How-To-Visual-Studio-Database-Project-and-ADSI/index.html
 slug: How-To-Visual-Studio-Database-Project-and-ADSI
 title: "How-To: Visual Studio Database Project and ADSI"
 subtitle: null

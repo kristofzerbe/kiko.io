@@ -1,5 +1,4 @@
 ---
-alias: /categories/UI-Design/SVG-Resources/index.html
 slug: SVG-Resources
 title: SVG Resources
 subtitle: null

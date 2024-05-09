@@ -1,5 +1,4 @@
 ---
-alias: /categories/Misc/Adding-Screenshots-to-Trello-Cards-on-Android/index.html
 slug: Adding-Screenshots-to-Trello-Cards-on-Android
 title: Adding Screenshots to Trello Cards on Android
 subtitle: null

@@ -1,5 +1,4 @@
 ---
-alias: /categories/C/Custom-Caller-Authentication-with-ASP-NET-Core-5-0-WebApi/index.html
 slug: Custom-Caller-Authentication-with-ASP-NET-Core-5-0-WebApi
 title: Custom Caller Authentication with ASP.NET Core 5.0 Web API
 subtitle: null

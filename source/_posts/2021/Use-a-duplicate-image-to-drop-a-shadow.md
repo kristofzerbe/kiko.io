@@ -1,5 +1,4 @@
 ---
-alias: /categories/UI-Design/Use-a-duplicate-image-to-drop-a-shadow/index.html
 slug: Use-a-duplicate-image-to-drop-a-shadow
 title: Use a duplicate image to drop a shadow
 subtitle: An alternative for 'box-shadow' on images

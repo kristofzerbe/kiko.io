@@ -1,5 +1,4 @@
 ---
-alias: /categories/Tools/Show-related-posts-in-Hexo/index.html
 slug: Show-related-posts-in-Hexo
 title: Show related posts in Hexo
 subtitle: null

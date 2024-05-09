@@ -1,5 +1,4 @@
 ---
-alias: /categories/Tools/404-Page-in-Hexo-for-GitHub-Pages/index.html
 slug: 404-Page-in-Hexo-for-GitHub-Pages
 title: 404 Page in Hexo for GitHub Pages
 subtitle: Provide an error page automatically when resource not found

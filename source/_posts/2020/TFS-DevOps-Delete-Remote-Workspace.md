@@ -1,5 +1,4 @@
 ---
-alias: /categories/Tools/TFS-DevOps-Delete-Remote-Workspace/index.html
 slug: TFS-DevOps-Delete-Remote-Workspace
 title: 'TFS/DevOps: Delete Remote Workspace'
 subtitle: null

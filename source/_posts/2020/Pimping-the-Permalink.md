@@ -1,5 +1,4 @@
 ---
-alias: /categories/JavaScript/Pimping-the-Permalink/index.html
 slug: Pimping-the-Permalink
 title: Pimping the Permalink
 subtitle: How to copy and share the permalink programatically

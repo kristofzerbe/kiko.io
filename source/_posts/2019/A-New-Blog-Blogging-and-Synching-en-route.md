@@ -1,5 +1,4 @@
 ---
-alias: /categories/Tools/A-New-Blog-Blogging-and-Synching-en-route/index.html
 slug: A-New-Blog-Blogging-and-Synching-en-route
 title: 'A New Blog: Blogging and Synching en route'
 subtitle: Part Three of having fun with Hexo and GitHub Pages
