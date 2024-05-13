@@ -72,11 +72,11 @@ hexo.extend.generator.register("notes", function (locals) {
       note.link = path.join("notes", note.slug).replace(/\\/g, "/") + "/";
       note.permalink = config.url + "/" + note.link;
 
-      note.excerpt = note.excerpt.replace(
+      note.excerpt = note.excerpt.replaceAll(
         "/images/",
         "/notes/" + index.year + "/images/"
       ); /** HACK */
-      note.content = note.content.replace(
+      note.content = note.content.replaceAll(
         "/images/",
         "/notes/" + index.year + "/images/"
       ); /** HACK */
@@ -213,15 +213,16 @@ function processImages(sourceDir, year) {
 
     // extend image path info
     images.forEach((image) => {
-      // console.log(image);
+      //console.log(image);
       image.sourcePathRel = path.join(sourcePathRel, image.file);
       image.source = path.join(sourcePath, image.file);
       image.target = path.join(targetPath, image.file);
+      //console.log(image);
 
       if (!fs.existsSync(image.target)) {
 
         sharp(image.source).metadata(function(err, metadata) {
-          // console.log(metadata);
+          //console.log(metadata.format + " - " + metadata.width);
 
           if (metadata.width > 600) {
 
@@ -239,7 +240,8 @@ function processImages(sourceDir, year) {
                   });
                 break;
             
-              case 'jpg':
+              case 'jpg', 'jpeg':
+                //console.log(image.source);
                 sharp(image.source)
                   .resize({ width: 600 })
                   .jpeg({ mozjpeg: true })
