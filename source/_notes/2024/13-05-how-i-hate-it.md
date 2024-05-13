@@ -3,7 +3,7 @@ title: How I hate it...
 date: 2024-05-13
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/112434815439483162
 ---
 
 A few months ago I bought a new camera strap, which seemed to be a bit easier to handle than the old one, which had completely twisted after a year, and was also much cheaper. Today, a 1 cent part broke off, which caused the camera to crash onto hard Welsh stones from just under a metre, lens first ... \<insert a few swear words here\>...
