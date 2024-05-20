@@ -17,7 +17,7 @@ related:
   - Photo-Workflow-Re-Thought
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112472736655987068
 ---
 
 Recently, it has become increasingly difficult to properly geotag the pictures I take with my SLR camera using my photo editing tool of choice, Lightroom (Classic), because the map functionality was either not available or simply too buggy to enter the correct data in the metadata. They weren't very accurate anyway because I usually only placed the photos roughly on the map. In some cases, however, I wanted to record the exact location of the photo for the future, and this turned into hours of puzzle work. A different, preferably automatic solution had to be found. One that would do the work for me during the shoot and require as little reworking as possible, according to the motto: Technology do your job and leave me alone.
