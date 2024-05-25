@@ -18,9 +18,9 @@ related:
   - How-to-keep-the-GPS-coordinates-accurate-while-shooting
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112502590496609233
   - host: Pixelfed
-    url: null
+    url: https://pixelfed.social/i/web/post/700014248013872447
 ---
 
 A pleasant 23 degrees Celsius, the occasional cloud and a buzzing hum everywhere ... summer is just around the corner. Gorgeous!
