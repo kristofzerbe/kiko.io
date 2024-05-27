@@ -10,7 +10,7 @@ On the [IndieWeb](https://indieweb.org/), it's becoming more and more fashionabl
 
 These are ordinary pages at root level that are part of the standard repertoire (such as ``/about`` or ``/contact``) or trendy pages such as ``/now`` or ``/used``. But even well-known standard alternative content links such as ``/feeds`` or ``/sitemap`` are now often listed under this name. Rob Knight has also published a small guide on this topic: [slashpages.net](https://slashpages.net/).
 
-With this page, I am taking up the trend for myself ...  ... also in order to save some space in my footer.
+With this page, I am taking up the trend for myself ... also in order to save some space in my footer.
 
 ---
 
