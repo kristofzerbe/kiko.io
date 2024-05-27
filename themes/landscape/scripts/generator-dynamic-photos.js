@@ -80,6 +80,7 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
     item.path = path.join(config.photo_dir, item.key, "index.html");
     item.slug = item.key;
     item.permalink = config.url + "/" + config.photo_dir + "/" + item.key;
+    item.type = "photo";
 
     result.push({
       name: item.key,

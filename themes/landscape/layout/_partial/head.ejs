@@ -1,200 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
   
-  <%
-    let meta = {
-      type: "page",
-      area: null,
-      subarea: null,
-      slug: null,
-      title: null,
-      description: null,
-      photograph: config.hero,
-      photoUrl: config.hero.url,
-      imageUrl: config.hero.url
-    }
+<%
+  let meta = {
+    type: "page",
+    area: null,
+    subarea: null,
+    slug: null,
+    title: null,
+    description: null,
+    photograph: config.hero,
+    photoUrl: config.hero.url,
+    imageUrl: config.hero.url
+  }
 
-    let currentYear = new Date().getFullYear();
+  let currentYear = new Date().getFullYear();
 
-    if (page.photograph) {
-      page.photograph.url = "/photos/normal/" + page.photograph.file
-      meta.photograph = page.photograph;
-      meta.photoUrl = page.photograph.url;
-      meta.imageUrl = page.photograph.url;
-    }
+  if (page.photograph) {
+    page.photograph.url = "/photos/normal/" + page.photograph.file
+    meta.photograph = page.photograph;
+    meta.photoUrl = page.photograph.url;
+    meta.imageUrl = page.photograph.url;
+  }
 
-    let excerpt;
-    let excerptDesc;
-    if (page.excerpt) {
-      excerpt = excerpt_plain(page.excerpt)
-        .replace(/^(\r\n|\n|\r)/, "") // Remove Leading break
-        .replace(/(\r\n|\n|\r){2,}/g, " ") // Remove Multiple breaks
-        .trim();
-    }
-    if (excerpt) {
-      excerptDesc = excerpt.substring(0, 150)
-        .replace(/(\r\n|\n|\r)/g, "") // Remove line breaks
-        .replace(/"/g, '\\"') + "...";
-    }
+  let excerpt;
+  let excerptDesc;
+  if (page.excerpt) {
+    excerpt = excerpt_plain(page.excerpt)
+      .replace(/^(\r\n|\n|\r)/, "") // Remove Leading break
+      .replace(/(\r\n|\n|\r){2,}/g, " ") // Remove Multiple breaks
+      .trim();
+  }
+  if (excerpt) {
+    excerptDesc = excerpt.substring(0, 150)
+      .replace(/(\r\n|\n|\r)/g, "") // Remove line breaks
+      .replace(/"/g, '\\"') + "...";
+  }
 
-    // let excerpt;
-    // if (page._content) { 
-    //   excerpt = page._content
-    //     .replace(/^(\n)/, "") // Remove Leading break
-    //     .replace(/\{%\s.*%\}\n/g, "") // Remove multi line Nunjucks Vars
-    //     .replace(/\{%\s(post_link) (?<content>.+?)%\}/g, "($<content>)") // Replace single line Nunjucks vars with its content
-    //     .replace(/(\n-{3})/g, "") // Remove MD horizontal lines
-    //     .replace(/(```.+?```)/gim, "[code]") // Replace MD code blocks with placeholder
-    //     .replace(/__|\*|!|\#|(?:\[([^\]]*)\]\([^)]*\))/g, "$1") // Replace other MD elements
-    //     .split("\n")[0] // Get first paragraph
-    //     .replace(/(\n){2,}/g, " ") // Remove Multiple breaks
-    //     .substring(0, 150) + "...";
-    // }
+  // let excerpt;
+  // if (page._content) { 
+  //   excerpt = page._content
+  //     .replace(/^(\n)/, "") // Remove Leading break
+  //     .replace(/\{%\s.*%\}\n/g, "") // Remove multi line Nunjucks Vars
+  //     .replace(/\{%\s(post_link) (?<content>.+?)%\}/g, "($<content>)") // Replace single line Nunjucks vars with its content
+  //     .replace(/(\n-{3})/g, "") // Remove MD horizontal lines
+  //     .replace(/(```.+?```)/gim, "[code]") // Replace MD code blocks with placeholder
+  //     .replace(/__|\*|!|\#|(?:\[([^\]]*)\]\([^)]*\))/g, "$1") // Replace other MD elements
+  //     .split("\n")[0] // Get first paragraph
+  //     .replace(/(\n){2,}/g, " ") // Remove Multiple breaks
+  //     .substring(0, 150) + "...";
+  // }
 
-    if      (is_home())     { meta.area = "HOME"; }
-    else if (is_post())     { meta.area = "POST"; }
-    else if (is_page())     { meta.area = "PAGE"; }
-    else if (is_archive())  { meta.area = "ARCHIVE";
-      if      (is_month())    { meta.subarea = "MONTH"; }
-      else if (is_year())     { meta.subarea = "YEAR"; }
+  if      (is_home())     { meta.area = "HOME"; }
+  else if (is_post())     { meta.area = "POST"; }
+  else if (is_page())     { meta.area = "PAGE"; }
+  else if (is_archive())  { meta.area = "ARCHIVE";
+    if      (is_month())    { meta.subarea = "MONTH"; }
+    else if (is_year())     { meta.subarea = "YEAR"; }
+  }
+  else if (is_category()) { meta.area = "CATEGORY"; }
+  else if (is_tag())      { meta.area = "TAG"; }
+  else {
+    let rootPath = page.path.split(/[\\\/]/)[0].toLowerCase();
+    switch (rootPath) {
+      case "notes":
+        meta.area = "NOTE";
+        meta.subarea = page.path.split(/[\\\/]/)[1]; //year
+        break;
+      case "series":
+      case "projects":
+        meta.area = "ANYTHING"; 
+        meta.subarea = rootPath.toUpperCase();
+        break;
+      case "tools": //tiny-tools, etc.
+      case "about":
+      case "console":
+      case "feeds":
+      case "photos":
+      case "search":
+      case "apps":
+        meta.area = "DYNAMIC";
+        break;
+      default:
+        meta.area = rootPath.toUpperCase();
+        break;
     }
-    else if (is_category()) { meta.area = "CATEGORY"; }
-    else if (is_tag())      { meta.area = "TAG"; }
-    else {
-      let rootPath = page.path.split(/[\\\/]/)[0].toLowerCase();
-      switch (rootPath) {
-        case "notes":
-          meta.area = "NOTE";
-          meta.subarea = page.path.split(/[\\\/]/)[1]; //year
+  }
+
+  switch (meta.area) {
+    case "HOME":
+      meta.title = config.title + " - " + config.subtitle;
+      meta.description = config.description;
+      break;
+
+    case "ARCHIVE":
+      switch (meta.subarea) {
+        case "MONTH": 
+          meta.title = __("archive_a") + " " + page.year + "/" + page.month + " - " + config.title; 
           break;
-        case "series":
-        case "projects":
-          meta.area = "ANYTHING"; 
-          meta.subarea = rootPath.toUpperCase();
+        case "YEAR": 
+          meta.title = __("archive_a") + " " + page.year + " - " + config.title; 
           break;
-        case "tools": //tiny-tools, etc.
-        case "about":
-        case "console":
-        case "feeds":
-        case "photos":
-        case "search":
-        case "apps":
-          meta.area = "DYNAMIC";
-          break;
-        default:
-          meta.area = rootPath.toUpperCase();
-          break;
+        default: 
+          meta.title = __("archive_a") + " - " + config.title;
+        break;
       }
-    }
+      //--
+      meta.description = config.description.replace("Blog", "Archive");
+      break;
 
-    switch (meta.area) {
-      case "HOME":
-        meta.title = config.title + " - " + config.subtitle;
-        meta.description = config.description;
-        break;
+    case "CATEGORY":
+      meta.title = __("category") + " " + page.category + " - " + config.title;
+      meta.description = config.description.replace("Blog", "Archive");
+      break;
 
-      case "ARCHIVE":
-        switch (meta.subarea) {
-          case "MONTH": 
-            meta.title = __("archive_a") + " " + page.year + "/" + page.month + " - " + config.title; 
-            break;
-          case "YEAR": 
-            meta.title = __("archive_a") + " " + page.year + " - " + config.title; 
-            break;
-          default: 
-            meta.title = __("archive_a") + " - " + config.title;
-          break;
-        }
-        //--
-        meta.description = config.description.replace("Blog", "Archive");
-        break;
+    case "TAG":
+      meta.title = __("tag") + " " + page.tag + " - " + config.title;
+      meta.description = config.description.replace("Blog", "Archive");
+      break;
 
-      case "CATEGORY":
-        meta.title = __("category") + " " + page.category + " - " + config.title;
-        meta.description = config.description.replace("Blog", "Archive");
-        break;
-
-      case "TAG":
-        meta.title = __("tag") + " " + page.tag + " - " + config.title;
-        meta.description = config.description.replace("Blog", "Archive");
-        break;
-
-      case "PAGE":
-        meta.title = page.title + " - " + config.title;
-        if (page.description) { 
-          meta.description = page.description;
-        } else { 
-          meta.description = page.title + " " + config.description_short;
-        }
-        break;
-
-      case "ANYTHING":
-        meta.title = page.title + " - " + config.title;
-        //--
-        if (page.title === "Projects") {
-          meta.description = page.title + " " + config.description_short;
-        } else {
-          meta.description = "Project '" + page.title + "' " + config.description_short;
-        }
-        if (page.title === "Series") {
-          meta.description = page.title + " " + config.description_short;
-        } else {
-          meta.description = "Series '" + page.title + "' " + config.description_short;
-        }
-        break;
- 
-      case "DYNAMIC":
-        meta.title = page.title + " - " + config.title;
+    case "PAGE":
+      meta.title = page.title + " - " + config.title;
+      if (page.description) { 
+        meta.description = page.description;
+      } else { 
         meta.description = page.title + " " + config.description_short;
-        if (page.app) {
-          meta.type = "app";
-          meta.app = page.app;
-        }
-        break;
+      }
+      break;
 
-      case "POST":
-        meta.title = page.title + " - " + config.title;
-        //--
+    case "ANYTHING":
+      meta.title = page.title + " - " + config.title;
+      //--
+      if (page.title === "Projects") {
+        meta.description = page.title + " " + config.description_short;
+      } else {
+        meta.description = "Project '" + page.title + "' " + config.description_short;
+      }
+      if (page.title === "Series") {
+        meta.description = page.title + " " + config.description_short;
+      } else {
+        meta.description = "Series '" + page.title + "' " + config.description_short;
+      }
+      break;
+
+    case "DYNAMIC":
+      meta.title = page.title + " - " + config.title;
+      meta.description = page.title + " " + config.description_short;
+      if (page.type === "photo") {
+        meta.type = "photo";
+        meta.imageUrl = page.pathNormal;
+      }
+      if (page.app) {
+        meta.type = "app";
+        meta.app = page.app;
+      }
+      break;
+
+    case "POST":
+      meta.title = page.title + " - " + config.title;
+      //--
+      if (page.description) {
+        meta.description = page.description;
+      } else {
+        if (page.subtitle) {
+          meta.description = page.subtitle;
+        } else {
+          meta.description = excerptDesc;
+        }
+      }
+      //--
+      let slugArray = page.slug.split("/"); //due to subfolders
+      meta.slug = slugArray[slugArray.length - 1];
+      meta.imageUrl = "/images/social-media/" + meta.slug + ".png"; // image = social media image
+      meta.type = "article";
+      break;
+
+    case "NOTE":
+      meta.title = page.title + " - " + config.title;
+      //--
+      if (page.title === "Notes") {
+        meta.description = page.title + " of " + meta.subarea + " " + config.description_short;
+      } else {
         if (page.description) {
           meta.description = page.description;
         } else {
-          if (page.subtitle) {
-            meta.description = page.subtitle;
-          } else {
-            meta.description = excerptDesc;
-          }
+          meta.description = excerptDesc;
         }
-        //--
-        let slugArray = page.slug.split("/"); //due to subfolders
-        meta.slug = slugArray[slugArray.length - 1];
-        meta.imageUrl = "/images/social-media/" + meta.slug + ".png"; // image = social media image
-        meta.type = "article";
-        break;
+        meta.type = "blogposting";
+      }
+      break;
 
-      case "NOTE":
-        meta.title = page.title + " - " + config.title;
-        //--
-        if (page.title === "Notes") {
-          meta.description = page.title + " of " + meta.subarea + " " + config.description_short;
-        } else {
-          if (page.description) {
-            meta.description = page.description;
-          } else {
-            meta.description = excerptDesc;
-          }
-          meta.type = "blogposting";
-        }
+    default: 
+      break;
+  }
+%>
 
-      default: 
-        break;
-    }
-  %>
+<head data-area="<%= meta.area %>" 
+      data-subarea="<%= meta.subarea %>"
+      data-type="<%= meta.type %>">
+  <meta charset="utf-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title data-area="<%= meta.area %>"><%= meta.title %></title>
+  <title><%= meta.title %></title>
   <meta name="author" content="<%= config.author %>">
   <meta name="title" content="<%= meta.title %>">
   <% if (meta.description) { %>
