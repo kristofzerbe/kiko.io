@@ -7,15 +7,17 @@
         <% 
           for (var i in theme.nav_menu) {
             //if (i === 'home') continue;
+            let tx = __(i);
             let cl;
-            if (['search',].some(v => i.includes(v))) {
+            if (['search'].some(v => i.includes(v))) {
               cl = " menu-item-icon";
             }
+            if (i === 'slashes') tx = "/...";
         %>
         <li class="menu-item<%= cl %>" id="nav-<%= i%>-link">
           <a class="sub-nav-link"
              href="<%- url_for(theme.nav_menu[i]) %>">
-              <span><%= __(i) %></span>
+              <span><%= tx %></span>
             </a>
         </li>
         <% 

@@ -18,15 +18,17 @@
       </div>
 
       <div id="footer-links">
-        <% for (var i in theme.footer_menu){ %>
-        <a href="<%- url_for(theme.footer_menu[i]) %>"><%= __(i) %></a>
+        <a href="<%- url_for("/about") %>">/About</a>
         <span class="dot-space">&#9679;</span>
-        <% } %>
-        <a href="javascript:dialog.pageMeta();">Page Meta</a>
+        <a href="<%- url_for("/impressum") %>">/Impressum</a>
+        <span class="dot-space">&#9679;</span>
+        <a href="<%- url_for("/slashes") %>">/... more slash pages</a>
       </div>
 
       <div id="footer-perf">
         Page loaded in <span class="perf-loadtime">0</span> at <span class="perf-viewport"></span>
+        <span class="dot-space">&#9679;</span>
+        <a href="javascript:dialog.pageMeta();">Meta</a>
         <script>
           window.addEventListener("resize", function () {
             const height = document.documentElement.clientHeight;
