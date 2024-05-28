@@ -8,7 +8,7 @@ photograph:
 
 On the [IndieWeb](https://indieweb.org/), it's becoming more and more fashionable to refer to the descriptive or supporting pages of a blog or website as slash pages ... or **slashes** for short. 
 
-These are ordinary pages at root level that are part of the standard repertoire (such as ``/about`` or ``/contact``) or trendy pages such as ``/now`` or ``/used``. But even well-known standard alternative content links such as ``/feeds`` or ``/sitemap`` are now often listed under this name. Rob Knight has also published a small guide on this topic: [slashpages.net](https://slashpages.net/).
+These are ordinary pages at root level that are part of the standard repertoire (such as ``/about`` or ``/contact``) or trendy pages such as ``/now`` or ``/used``. But even well-known standard alternative content links such as ``/feeds`` or ``/sitemap`` are now often listed under this name. Robb Knight has also published a small guide on this topic: [slashpages.net](https://slashpages.net/).
 
 With this page, I am taking up the trend for myself ... also in order to save some space in my footer.
 
