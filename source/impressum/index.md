@@ -1,6 +1,7 @@
 ---
 title: Impressum
 date: 2023-01-09 19:48:35
+permalink: /impressum
 photograph: 
   file: $DSC_3117.jpg
   name: Instructions

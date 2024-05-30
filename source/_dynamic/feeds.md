@@ -19,7 +19,7 @@ On this page you will now find not only both Atom feed variants for my last 20 [
 
 <div class="feed-group">
   <strong>Full Content</strong>
-  <!-- Tag Plugins are not working here: https://github.com/hexojs/hexo/issues/4713
+  <!-- TODO: Tag Plugins are not working here: see https://github.com/hexojs/hexo/issues/4713
   {% feed_link "feed-posts-atom-full", "atom" %}
   {% feed_link "feed-posts-rss-full", "rss" %}
   {% feed_link "feed-posts-json-full", "json" %}
@@ -37,7 +37,7 @@ On this page you will now find not only both Atom feed variants for my last 20 [
 
 <div class="feed-group">
   <strong>Excerpt Only</strong>
-  <!-- Tag Plugins are not working here: https://github.com/hexojs/hexo/issues/4713
+  <!-- TODO: Tag Plugins are not working here: see https://github.com/hexojs/hexo/issues/4713
   {% feed_link "feed-posts-atom-excerpt", "atom" %}
   {% feed_link "feed-posts-rss-excerpt", "rss" %}
   {% feed_link "feed-posts-json-excerpt", "json" %} -->
@@ -61,7 +61,7 @@ On this page you will now find not only both Atom feed variants for my last 20 [
 
   As an alternative, that can be read by humans and machines, here is the same data in the form of a microformat-based [h-feed](https://microformats.org/wiki/h-feed).
 
-  <!-- Tag Plugins are not working here: https://github.com/hexojs/hexo/issues/4713 ... Workaround: placeholder replacement in generator-dynamic-feeds.js
+  <!-- TODO: Tag Plugins are not working here: see https://github.com/hexojs/hexo/issues/4713 ... Workaround: placeholder replacement in generator-dynamic-feeds.js
    -->
    {% feed_microformats %}
   
