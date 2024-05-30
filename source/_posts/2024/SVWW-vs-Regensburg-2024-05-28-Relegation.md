@@ -19,7 +19,7 @@ related:
   - SVWW-vs-Dusseldorf-2024-04-13
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112529933811867150
 ---
 
 {% match_grid "SV-Wehen-Wiesbaden" "1:2" "Jahn-Regensburg" %}
