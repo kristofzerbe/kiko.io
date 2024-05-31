@@ -32,8 +32,8 @@ hexo.extend.generator.register("dynamic-slashes", async function(locals) {
     }
   });
   page.items.push({
-    title: "/#Contact",
-    path: "/about/#contact",
+    title: "#Contact",
+    path: "/#contact",
     teaser: "Not a classic slash, but a hash that works on every page and provides information to get in touch with me",
     photograph: {
       file: "22-08-Bretagne-Jersey-1381.jpg",

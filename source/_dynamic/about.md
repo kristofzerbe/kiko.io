@@ -7,7 +7,7 @@ photograph:
   file: $about.jpg
 ---
 
-<a id="contact-Link" href="/about/#contact" class="float-element">
+<a id="contact-Link" href="javascript:dialog.contact();" class="float-element">
 <img src="/images/contact-me.png" style="width:5rem;" />
 </a>
 
