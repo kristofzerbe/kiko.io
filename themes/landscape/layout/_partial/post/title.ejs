@@ -20,15 +20,14 @@
   </a>
   </h2>
 <% } else if (post.title){ %>
-  <% if (index || show_link){ // archive cards %>
+  <% if (index || show_link){ // (archive) panels %>
     <h3>
-      <a class="<%= class_name %>"
-         href="<%- url_for(post.path) %>"><%= post.title %></a>
+      <% let link = (post.path?.startsWith("javascript:") ? post.path : url_for(post.path)); %>
+      <a class="<%= class_name %>" href="<%= link %>"><%= post.title %></a>
     </h3>
   <% } else { // content page  %>
     <h1 class="<%= class_name %>" 
-        data-title="<%= post.title %>" 
-        data-pagefind-meta="title[data-title]">
+        data-title="<%= post.title %>" data-pagefind-meta="title[data-title]">
         <% if (pretitle) { %>
           <em><%= pretitle%></em><strong>&nbsp;|&nbsp;</strong>
         <% } %>
