@@ -12,13 +12,13 @@
     <div class="archives" style="margin-bottom: 2rem;" data-pagefind-ignore>
 
     <% for(var i=0; i < page.items.length; i++) { %>
-    <div class="archive-article">
-      <div class="archive-article-inner">
-        <header class="archive-article-header">
-          <%- partial('_partial/post/photograph', { post: page.items[i], class_name: 'archive-article-photo' }) %>
+    <div class="panel">
+      <div class="panel-inner">
+        <header class="panel-header">
+          <%- partial('_partial/post/photograph', { post: page.items[i], class_name: 'panel-photo' }) %>
         </header>
-        <div class="archive-article-content">
-          <%- partial('_partial/post/title', { post: page.items[i], class_name: 'archive-article-title', show_link: true, index: false }) %>
+        <div class="panel-content">
+          <%- partial('_partial/post/title', { post: page.items[i], class_name: 'panel-title', show_link: true, index: false }) %>
           <p><%= page.items[i].teaser %></p>
         </div>
       </div>

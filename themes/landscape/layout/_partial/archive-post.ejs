@@ -1,17 +1,17 @@
-<article class="archive-article archive-type-<%= post.layout %>">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <%- partial('post/photograph', { class_name: 'archive-article-photo' }) %>
+<article class="panel archive-type-<%= post.layout %>">
+  <div class="panel-inner">
+    <header class="panel-header">
+      <%- partial('post/photograph', { class_name: 'panel-photo' }) %>
     </header>
-    <div class="archive-article-content">
-      <%- partial('post/date', { class_name: 'archive-article-date', date_format: 'DD MMM YYYY' }) %>
-      <%- partial('post/category', { class_name: 'archive-article-category' }) %>
-      <%- partial('post/anything', { class_name: 'archive-article-anything' }) %>
-      <%- partial('post/title', { class_name: 'archive-article-title', show_link: show_link, index: false }) %>
-      <%- partial('post/subtitle', { class_name: 'archive-article-subtitle', index: false }) %>              
+    <div class="panel-content">
+      <%- partial('post/date', { class_name: 'panel-date', date_format: 'DD MMM YYYY' }) %>
+      <%- partial('post/category', { class_name: 'panel-category' }) %>
+      <%- partial('post/anything', { class_name: 'panel-anything' }) %>
+      <%- partial('post/title', { class_name: 'panel-title', show_link: show_link, index: false }) %>
+      <%- partial('post/subtitle', { class_name: 'panel-subtitle', index: false }) %>              
     </div>
-    <div class="archive-article-footer">
-      <%- partial('post/tag', { class_name: 'archive-article-tags' }) %>
+    <div class="panel-footer">
+      <%- partial('post/tag', { class_name: 'panel-tags' }) %>
     </div>
 </div>
 </article>
