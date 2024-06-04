@@ -5,6 +5,7 @@ permalink: /colophon
 photograph:
   file: $23-07-Mallorca-0773.jpg
   name: Table Greenery
+teaser: "A few words about how this blog is structured, created and hosted"
 ---
 
 Coming soon ...

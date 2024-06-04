@@ -51,6 +51,8 @@
   //     .substring(0, 150) + "...";
   // }
 
+  let rootPath = page.path.split(/[\\\/]/)[0].toLowerCase();
+
   if      (is_home())     { meta.area = "HOME"; }
   else if (is_post())     { meta.area = "POST"; }
   else if (is_page())     { meta.area = "PAGE"; }
@@ -60,8 +62,13 @@
   }
   else if (is_category()) { meta.area = "CATEGORY"; }
   else if (is_tag())      { meta.area = "TAG"; }
+  else if (is_dynamic(rootPath)) { meta.area = "DYNAMIC"; } // custom helper
+  // else if (is_anything(rootPath)) { // custom helper //TODO: DOES NOT WORK FOR proejct(s)
+  //   console.log("ANYTHING: " + rootPath);
+  //   meta.area = "ANYTHING"; 
+  //   meta.subarea = rootPath.toUpperCase();
+  // } 
   else {
-    let rootPath = page.path.split(/[\\\/]/)[0].toLowerCase();
     switch (rootPath) {
       case "notes":
         meta.area = "NOTE";
@@ -71,16 +78,6 @@
       case "projects":
         meta.area = "ANYTHING"; 
         meta.subarea = rootPath.toUpperCase();
-        break;
-      case "tools": //tiny-tools, etc.
-      case "about":
-      case "console":
-      case "feeds":
-      case "photos":
-      case "search":
-      case "slashes":
-      case "apps":
-        meta.area = "DYNAMIC";
         break;
       default:
         meta.area = rootPath.toUpperCase();

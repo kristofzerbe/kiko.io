@@ -5,6 +5,7 @@ permalink: /impressum
 photograph: 
   file: $DSC_3117.jpg
   name: Instructions
+teaser: "A German necessity that shows who is responsible for the content ... Legal stuff in German"
 ---
 
 The following information is required under German law.

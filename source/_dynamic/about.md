@@ -5,6 +5,8 @@ permalink: /about
 description: About Kristof Zerbe
 photograph: 
   file: $about.jpg
+  name: ""
+teaser: "On this page I tell you a little bit about myself..."
 ---
 
 <a id="contact-Link" href="javascript:dialog.contact();" class="float-element">

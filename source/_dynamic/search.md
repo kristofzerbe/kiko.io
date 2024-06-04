@@ -5,6 +5,7 @@ permalink: /search
 photograph:
   file: $D702858.jpg
   name: Hide and Seek
+teaser: "Full text search across the entire site"
 ---
 
 This full text search over all contents of kiko.io is powered by [pagefind](https://pagefind.app/), a completely static search library that runs entirely in your browser, with no connection to a search engine.
