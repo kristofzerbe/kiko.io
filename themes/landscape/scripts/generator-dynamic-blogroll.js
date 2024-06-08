@@ -39,36 +39,40 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
     let fmBlog = front.parse(blog);
     delete fmBlog._content;
 
-    promises.push(new Promise((resolve, reject) => {
-      log.info("Request latest item from feed of " + fmBlog.title);
+    page.items.push(fmBlog);
+  }
 
-      axios.get(fmBlog.feed, { validateStatus: () => true }).then(response => {
-        feed2json.fromString(response.data, fmBlog.feed, (error, json) => {
+  // Get latest post for every feed
+  page.items.forEach(item => {
+
+    promises.push(new Promise((resolve, reject) => {
+      log.info("Request latest item from feed of " + item.title);
+
+      axios.get(item.feed, { validateStatus: () => true }).then(response => {
+        feed2json.fromString(response.data, item.feed, (error, json) => {
           
           if (!error) {
             json.items.sort((a,b) => a.date_published - b.date_published).reverse();
             let feedItem = json.items[0];
 
-            fmBlog.latest_post = {
+            item.latest_post = {
               "url": feedItem.url,
               "title": feedItem.title,
               "date_published": feedItem.date_published
             };
-
-            page.items.push(fmBlog);
         
             resolve();  
           } else {
-            log.error("Parsing feed from " + fmBlog.title + " failed");
+            log.error("Parsing feed from " + item.title + " failed");
             reject();    
           }
         });
       }).catch(err => {
-        log.error("Fetching feed from " + fmBlog.title + " failed");
+        log.error("Fetching feed from " + item.title + " failed");
         reject();
       });
     }));
-  }
+  });
 
   //Resolve all promises, but avoid rejections
   return Promise.allSettled(promises).then(function() {
