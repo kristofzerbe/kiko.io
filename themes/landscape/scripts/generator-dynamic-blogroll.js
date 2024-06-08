@@ -45,13 +45,13 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
     promises.push(new Promise((resolve, reject) => {
       log.info("Request latest item from feed of " + fmBlog.title);
 
-      axios.get(fmBlog.feed).then(response => {
+      axios.get(fmBlog.feed, { validateStatus: () => true }).then(response => {
         feed2json.fromString(response.data, fmBlog.feed, (error, json) => {
           
           if (!error) {
             json.items.sort((a,b) => a.date_published - b.date_published).reverse();
             let feedItem = json.items[0];
-            
+
             fmBlog.latest_post = {
               "url": feedItem.url,
               "title": feedItem.title,

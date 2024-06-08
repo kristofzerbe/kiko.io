@@ -66,8 +66,8 @@ let promises = [];
 ... {
   promises.push(new Promise((resolve, reject) => {
 
-    // fetch feed
-    axios.get(fmBlog.feed).then(response => {
+    // fetch feed, while skipping errors
+    axios.get(fmBlog.feed, { validateStatus: () => true }).then(response => {
 
       // parse result
       feed2json.fromString(response.data, fmBlog.feed, (error, json) => {
@@ -114,4 +114,4 @@ The wonderful thing about this code is its simplicity thanks to the wrapper and 
 * [../layout/blogroll.ejs](https://github.com/kristofzerbe/kiko.io/blob/master/themes/landscape/layout/blogroll.ejs)
 * [../source/_dynamic/blogroll.md](https://github.com/kristofzerbe/kiko.io/blob/master/source/_dynamic/blogroll.md)
 
-I currently have 28 entries on my blogroll and the page is generated in around 3 seconds on my little Surface notebook. Can leave it like that...
+I currently have 28 entries on my blogroll and the page is generated in around 3 seconds on my little Surface notebook. Of course, it also depends a little on how accessible the feeds are. To ensure that axios does not stop the whole process when downloading, it is advisable to simply skip them. 
