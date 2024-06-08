@@ -83,7 +83,7 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
     };
 
     return result;
-  });
+  }).catch((e) => { /*ignore errors*/ });
 
 });
 
