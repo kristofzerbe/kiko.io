@@ -7,7 +7,7 @@ const front = require('hexo-front-matter');
 hexo.extend.generator.register("dynamic-console", async function(locals) {
   let config = this.config;
 
-  log.info("Processing dynamic console page...");
+  log.info("Processing dynamic page " + magenta("CONSOLE") + " ...");
 
   let page = {};
   page.name = "console";

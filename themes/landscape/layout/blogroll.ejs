@@ -1,0 +1,45 @@
+<% if (page.photograph){ %>
+  <%- partial('_partial/photograph') %>
+<% } %>
+
+<h1 class="page-title" data-pagefind-meta="title" data-pagefind-meta="type:Page">
+  Blogroll
+</h1>
+
+<div class="page-content">
+  <%- page.content %>
+
+    <div class="panels" style="margin-bottom: 2rem;" data-pagefind-ignore>
+
+    <% page.items.forEach(item => { %>
+    <div class="panel">
+      <div class="panel-inner">
+        <div class="panel-content">
+          <a class="panel-favicon" href="<%= item.url %>"><img src="<%= item.favicon %>" /></a>
+          <%- partial('_partial/post/title', { post: item, class_name: 'panel-title'}) %>
+          <p class="small">
+            <% if (item.title != item.author) { %>
+              <small>by <%= item.author %></small><br>
+            <% } %>    
+            <a href="<%= item.host %>"><%= item.host %></a>
+          </p>
+          <p><%= item.description %></p>
+          <div class="icon-links">
+            <a class="fa-mastodon" href="<%= item.mastodon %>"></a>
+            <a class="fa-rss" href="<%= item.feed %>"></a>
+          </div>
+          <% if (item.latest_post) { %>
+            <small class="label">
+              Last Post @ 
+              <span><%= new Date(item.latest_post.date_published).toLocaleString('en-GB', { year:"numeric", month:"long", day:"numeric"}) ?? "---" %></span>:
+            </small>
+            <a href="<%= item.latest_post.url %>"><%= item.latest_post.title %></a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <% }); %>
+      
+    </div>
+  
+</div>

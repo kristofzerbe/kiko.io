@@ -12,15 +12,15 @@
       </ul>
 
       <div id="footer-info" class="footer-block">
-        &copy; 2019-<%= date(new Date(), 'YYYY') %>&nbsp;&nbsp;<%= config.author || config.title %>
+        &copy; 2019-<%= date(new Date(), 'YYYY') %>&nbsp;&nbsp;<a href="<%- url_for("/about") %>"><%= config.author %></a>
         <span class="dot-space">&#9679;</span>
         <%= __('powered_by') %> <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/">GitHub</a>
       </div>
 
       <div id="footer-links">
-        <a href="javascript:dialog.contact();">#Contact</a>
+        <a href="<%- url_for("/feeds") %>">/Feeds</a>
         <span class="dot-space">&#9679;</span>
-        <a href="<%- url_for("/about") %>">/About</a>
+        <a href="javascript:dialog.contact();">#Contact</a>
         <span class="dot-space">&#9679;</span>
         <a href="<%- url_for("/impressum") %>">/Impressum</a>
         <span class="dot-space">&#9679;</span>

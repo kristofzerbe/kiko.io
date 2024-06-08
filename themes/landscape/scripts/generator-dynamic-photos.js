@@ -9,7 +9,7 @@ const _rootDir = hexo.source_dir.replace("source", "");
 hexo.extend.generator.register("dynamic-photos", async function(locals) {
   let config = this.config;
 
-  log.info("Processing dynamic photos...");
+  log.info("Processing dynamic page " + magenta("PHOTOS") + " ...");
 
   let result = [];
 

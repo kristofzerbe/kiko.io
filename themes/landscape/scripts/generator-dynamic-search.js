@@ -7,7 +7,7 @@ const front = require('hexo-front-matter');
 hexo.extend.generator.register("dynamic-search", async function(locals) {
   let config = this.config;
 
-  log.info("Processing dynamic search page...");
+  log.info("Processing dynamic page " + magenta("SEARCH") + " ...");
 
   let page = {};
   page.name = "search";

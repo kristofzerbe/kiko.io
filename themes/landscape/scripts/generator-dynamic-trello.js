@@ -9,7 +9,7 @@ const { isInternetAvailable, InternetAvailabilityService } = require('is-interne
 hexo.extend.generator.register("dynamic-trello", async function(locals) {
   let config = this.config;
 
-  log.info("Processing Trello board for dynamic page...");
+  log.info("Start processing Trello board ...");
 
   isInternetAvailable({ authority: 'https://trello.com' }).then(function(status) {
     if(status === false) { 
@@ -28,7 +28,7 @@ hexo.extend.generator.register("dynamic-trello", async function(locals) {
 
     // Collect Promises to resolve later
     promises.push(new Promise((resolve, reject) => {
-      log.info("Fetching Trello data from board " + magenta(board.name.toUpperCase()));
+      //log.info("Fetching Trello data from board " + magenta(board.name.toUpperCase()));
 
       // Get board data from Trello
       axios.get(board.url).then(response => {
@@ -36,7 +36,7 @@ hexo.extend.generator.register("dynamic-trello", async function(locals) {
   
         // Level 2: Process pages (lists) configured in board
         board.pages.forEach(page => {
-          log.info("Processing Trello list " + magenta(page.name.toUpperCase()) + " for dynamic page");
+          log.info("Processing Trello list for dynamic page " + magenta(page.name.toUpperCase()) + " ...");
     
           // Get MD data for list
           const mdSource = path.join(config.source_dir, "_dynamic", page.name + ".md");

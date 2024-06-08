@@ -10,7 +10,11 @@
   }
 %>
 
-<% if (post.link && show_link){ // index page %>
+<% if (post.url){ // external %>
+  <h2>
+    <a class="<%= class_name %>" href="<%= post.url %>"><%= post.title %></a>
+  </h2>
+<% } else if (post.link && show_link) { // index page %>
   <h2>
     <a class="<%= class_name %>" href="<%- url_for(post.link) %>">
       <% if (pretitle) { %>

@@ -1,3 +1,12 @@
+.panels
+  clearfix()
+  column-gap: 0
+  margin: -(medium-margin)
+  @media mq-tablet
+    column-count: 2
+  @media mq-normal
+    column-count: 3
+
 .panel
   avoid-column-break()
   padding: default-padding 0
@@ -16,6 +25,13 @@
     /[data-theme="dark"] &
       box-shadow: dark-box-shadow dark-color-base
 
+.panel-favicon
+  display: block
+  margin-top: 10px
+  img
+    width: 32px
+    height: 32px
+
 .panel-photo
   @extend $inview-image
   height: 150px
@@ -30,6 +46,39 @@
   padding: 0 (default-padding / 4) (default-padding-vert / 2)
   p
     margin-bottom: 0 !important
+  p.small
+    font-size: 0.8rem
+    line-height: 1.1rem
+  small.label
+    display: block
+    margin-bottom: 0.25rem
+    opacity: .5
+    line-height: 1rem
+    span
+      text-wrap: nowrap
+  div.icon-links
+    margin: 1rem 0 1.25rem
+    a
+      text-decoration: none
+      padding-right: 0.5rem
+      opacity: 0.4
+      color: color-button-link
+      /[data-theme="dark"] &
+        color: dark-color-button-link
+      &:hover
+        opacity: 1
+      &:before
+        font-family: fa-icons
+    a.fa-mastodon
+      &:hover
+        color: color-mastodon
+      &:before
+        content: icon-mastodon
+    a.fa-rss
+      &:hover
+        color: color-rss
+      &:before
+        content: icon-rss
 
 .panel-date,
 .panel-category
