@@ -19,7 +19,7 @@ related:
   - Generate-Content-from-Trello
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112581793409878030
 ---
 
 Weekend! To compensate another turbulent management week I needed a little HTML/CSS/JS tinkering. The most willing victim was the idea to add the feeds of the great bloggers to [my new blogroll](/blogroll), I was working on, and then read out the latest post from the feed and display it as well. Greetings to Ryan Mulligan, whose [Blogroll](https://ryanmulligan.dev/blogroll/) gave me the impetus for this.
