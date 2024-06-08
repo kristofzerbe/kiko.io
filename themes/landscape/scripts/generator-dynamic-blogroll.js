@@ -1,5 +1,5 @@
 const log = require('hexo-log')({ debug: false, silent: false });
-const { magenta, green } = require('chalk');
+const { magenta, magentaBright } = require('chalk');
 const path = require('path');
 const fs = require('hexo-fs');
 const front = require('hexo-front-matter');
@@ -11,6 +11,7 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
 
   log.info("Processing dynamic page " + magenta("BLOGROLL") + " ...");
 
+  let result = [];
   let promises = [];
 
   let page = {};
@@ -46,7 +47,7 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
   page.items.forEach(item => {
 
     promises.push(new Promise((resolve, reject) => {
-      log.info("Request latest post from " + green(item.title));
+      log.info("Request latest post from " + magentaBright(item.title));
 
       axios.get(item.feed, { validateStatus: () => true }).then(response => {
         feed2json.fromString(response.data, item.feed, (error, json) => {
@@ -75,35 +76,20 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
   });
 
   //Resolve all promises, but avoid rejections
-  return Promise.allSettled(promises).then(function() {
+  return Promise.all(promises).then(function() {
 
-    // shuffle(page.items);
     page.items.sort((a,b) => a.latest_post.date_published - b.latest_post.date_published).reverse();
   
-    let result = {
+    result.push({
       data: page,
       path: path.join(page.name, "index.html"),
       layout: "blogroll"
-    };
+    });
+
+    //TODO: Render OPML by template and add to sesult
 
     return result;
+
   }).catch((e) => { /*ignore errors*/ });
 
 });
-
-// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-function shuffle(array) {
-  let currentIndex = array.length;
-
-  // While there remain elements to shuffle...
-  while (currentIndex != 0) {
-
-    // Pick a remaining element...
-    let randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
-  }
-}

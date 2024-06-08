@@ -36,37 +36,37 @@ const generateFeed = (render, title, posts, tags, categories, config, renderOpti
     .filter((post) => post.draft !== true)
     .filter((post) => post.published === undefined || post.published === true);
 
-    const lastPublishedPost = publishedPosts.sort('-date').first();
-    const lastPublishedPostDate = lastPublishedPost ? lastPublishedPost.date : helpers.moment();
+  const lastPublishedPost = publishedPosts.sort('-date').first();
+  const lastPublishedPostDate = lastPublishedPost ? lastPublishedPost.date : helpers.moment();
 
-    let postsToRender = publishedPosts
-      .sort(order_by || config.feed.order_by || '-date')
-      .limit(limit || 20);
+  let postsToRender = publishedPosts
+    .sort(order_by || config.feed.order_by || '-date')
+    .limit(limit || 20);
 
-    return render
-      .render(renderOptions, {
-        ...helpers,
-        ...{
-          tag: undefined,
-          category: undefined,
-          ...context
-      },
-        lastBuildDate: lastPublishedPostDate,
-        posts: postsToRender.toArray(),
-        tags: tags.toArray(),
-        categories: categories.toArray(),
-        config: config,
-        output: output
-      })
-      .then((content) => {
-        log.debug(`${title} generated: %s`, magenta(output));
+  return render
+    .render(renderOptions, {
+      ...helpers,
+      ...{
+        tag: undefined,
+        category: undefined,
+        ...context
+    },
+      lastBuildDate: lastPublishedPostDate,
+      posts: postsToRender.toArray(),
+      tags: tags.toArray(),
+      categories: categories.toArray(),
+      config: config,
+      output: output
+    })
+    .then((content) => {
+      log.debug(`${title} generated: %s`, magenta(output));
 
-        return [
-          {
-            path: output,
-            data: content
-          }
-        ];
-      });
+      return [
+        {
+          path: output,
+          data: content
+        }
+      ];
+    });
 
 }
