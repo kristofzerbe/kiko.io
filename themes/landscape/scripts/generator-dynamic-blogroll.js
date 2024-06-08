@@ -70,8 +70,8 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
     }));
   }
 
-  //Resolve all promises
-  return Promise.all(promises).then(function() {
+  //Resolve all promises, but avoid rejections
+  return Promise.allSettled(promises).then(function() {
 
     // shuffle(page.items);
     page.items.sort((a,b) => a.latest_post.date_published - b.latest_post.date_published).reverse();
@@ -83,7 +83,7 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
     };
 
     return result;
-  }).catch((e) => { /*ignore errors*/ });
+  });
 
 });
 
