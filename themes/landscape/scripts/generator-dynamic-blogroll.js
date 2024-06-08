@@ -1,5 +1,5 @@
 const log = require('hexo-log')({ debug: false, silent: false });
-const { magenta, magentaBright } = require('chalk');
+const { magenta, blue } = require('chalk');
 const path = require('path');
 const fs = require('hexo-fs');
 const front = require('hexo-front-matter');
@@ -47,7 +47,7 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
   page.items.forEach(item => {
 
     promises.push(new Promise((resolve, reject) => {
-      log.info("Request latest post from " + magentaBright(item.title));
+      log.info("Request latest post from " + blue(item.title));
 
       axios.get(item.feed, { validateStatus: () => true }).then(response => {
         feed2json.fromString(response.data, item.feed, (error, json) => {
@@ -61,24 +61,22 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
               "title": feedItem.title,
               "date_published": feedItem.date_published
             };
-        
-            resolve();  
           } else {
             log.error("Parsing feed from " + item.title + " failed");
-            reject();    
           }
         });
+        resolve(); 
       }).catch(err => {
         log.error("Fetching feed from " + item.title + " failed");
-        reject();
+        resolve(); // Resolve anyway, to suppress errors
       });
     }));
   });
 
-  //Resolve all promises, but avoid rejections
+  // Resolve all promises
   return Promise.all(promises).then(function() {
 
-    page.items.sort((a,b) => a.latest_post.date_published - b.latest_post.date_published).reverse();
+    page.items.sort((a,b) => a.latest_post?.date_published - b.latest_post?.date_published).reverse();
   
     result.push({
       data: page,
@@ -90,6 +88,6 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
 
     return result;
 
-  }).catch((e) => { /*ignore errors*/ });
+  });
 
 });

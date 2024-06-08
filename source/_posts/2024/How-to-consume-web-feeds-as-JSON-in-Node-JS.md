@@ -85,25 +85,23 @@ page.items.forEach(item => {
             "title": feedItem.title,
             "date_published": feedItem.date_published
           };
-
-          resolve();
-        } else {
-          reject();
         }
+        resolve();
       });
-    });
+    }).catch(err => {
+        resolve(); // resolve anyway, to suppress errors
+      });
   }));
 }
 
-// resolve all promises, but avoid rejections
-return Promise.allSettled(promises).then(function() {
+// resolve all promises
+return Promise.all(promises).then(function() {
 
   // sort blogs on page by latest post
-  page.items.sort((a,b) => a.latest_post.date_published - b.latest_post.date_published).reverse();
+  page.items.sort((a,b) => a.latest_post?.date_published - b?.latest_post.date_published).reverse();
 
   // ... return page for generation via layout
-  
-}).catch((e) => { /*ignore errors*/ });
+});
 ```
 
 The wonderful thing about this code is its simplicity thanks to the wrapper and the underlying parser library. You can find the complete Hexo blogroll generator that leads to this result here:
