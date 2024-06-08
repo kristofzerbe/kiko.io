@@ -38,9 +38,6 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
     let blog = match[0].replace("```cardlink\n", "---\n").replace("\n```", "\n---"); //.replace(/\r?\n|\r/g, ",\n");
     let fmBlog = front.parse(blog);
     delete fmBlog._content;
-   
-    //TODO: Fetch feed and get latest post
-    // ...
 
     promises.push(new Promise((resolve, reject) => {
       log.info("Request latest item from feed of " + fmBlog.title);
