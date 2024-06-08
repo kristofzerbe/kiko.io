@@ -102,7 +102,8 @@ return Promise.allSettled(promises).then(function() {
   page.items.sort((a,b) => a.latest_post.date_published - b.latest_post.date_published).reverse();
 
   // ... return page for generation via layout
-});
+  
+}).catch((e) => { /*ignore errors*/ });
 ```
 
 The wonderful thing about this code is its simplicity thanks to the wrapper and the underlying parser library. You can find the complete Hexo blogroll generator that leads to this result here:

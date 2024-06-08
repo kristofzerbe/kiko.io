@@ -1,5 +1,5 @@
 const log = require('hexo-log')({ debug: false, silent: false });
-const { magenta } = require('chalk');
+const { magenta, green } = require('chalk');
 const path = require('path');
 const fs = require('hexo-fs');
 const front = require('hexo-front-matter');
@@ -46,7 +46,7 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
   page.items.forEach(item => {
 
     promises.push(new Promise((resolve, reject) => {
-      log.info("Request latest item from feed of " + item.title);
+      log.info("Request latest post from " + green(item.title));
 
       axios.get(item.feed, { validateStatus: () => true }).then(response => {
         feed2json.fromString(response.data, item.feed, (error, json) => {
@@ -87,7 +87,7 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
     };
 
     return result;
-  });
+  }).catch((e) => { /*ignore errors*/ });
 
 });
 
