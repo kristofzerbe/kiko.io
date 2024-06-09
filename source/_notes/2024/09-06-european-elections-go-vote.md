@@ -1,0 +1,12 @@
+---
+title: European Elections - Go Vote
+date: 2024-06-09
+syndication:
+  - host: Mastodon
+    url:
+---
+Today I am a voluntary election board member for the [European Elections](https://elections.europa.eu/).
+
+It is so important to go to the polls to marginalise those who consider democracy unnecessary but use it to abolish it afterwards
+
+#eu2024 #useyourvote
