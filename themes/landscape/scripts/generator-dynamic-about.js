@@ -7,7 +7,7 @@ const front = require('hexo-front-matter');
 hexo.extend.generator.register("dynamic-about", async function(locals) {
   let config = this.config;
 
-  log.info("Processing dynamic about page...");
+  log.info("Generating Dynamic Page " + magenta("ABOUT") + " ...");
 
   let page = {};
   page.name = "about";

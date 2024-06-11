@@ -7,7 +7,7 @@ const front = require('hexo-front-matter');
 hexo.extend.generator.register("dynamic-slashes", async function(locals) {
   let config = this.config;
 
-  log.info("Processing dynamic page " + magenta("SLASHES") + " ...");
+  log.info("Generating Dynamic Page " + magenta("SLASHES") + " ...");
 
   let page = {};
   page.name = "slashes";

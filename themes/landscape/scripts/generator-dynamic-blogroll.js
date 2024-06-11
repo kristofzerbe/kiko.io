@@ -9,7 +9,8 @@ const feed2json = require('feed2json');
 hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
   let config = this.config;
 
-  log.info("Processing dynamic page " + magenta("BLOGROLL") + " ...");
+  log.info("Generating Dynamic Page " + magenta("BLOGROLL") + " ...");
+
 
   let result = [];
   let promises = [];

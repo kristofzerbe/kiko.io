@@ -9,7 +9,7 @@ const _rootDir = hexo.source_dir.replace("source", "");
 hexo.extend.generator.register("dynamic-photos", async function(locals) {
   let config = this.config;
 
-  log.info("Processing dynamic page " + magenta("PHOTOS") + " ...");
+  log.info("Generating Dynamic Page " + magenta("PHOTOS") + " ...");
 
   let result = [];
 
@@ -18,31 +18,31 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
 
   // Get pool photos
   let pPool = getPoolPhotos(config);
-  log.info(magenta(pPool.length) + " pool photos");
+  log.info("-> " + magenta(pPool.length) + " pool photos");
 
   // Get shed photos
   let pShed = getShedPhotos(config);
-  log.info(magenta(pShed.length) + " shed photos");
+  log.info("-> " + magenta(pShed.length) + " shed photos");
 
   // Get used photos in Posts & Pages
   let pPostPages = getPostAndPagePhotos(config, locals);
-  log.info(magenta(pPostPages.length) + " used photos in posts and pages");
+  log.info("-> " + magenta(pPostPages.length) + " used photos in posts and pages");
 
   // Get used photos in Drafts
   let pDrafts = getDraftPagePhotos(config);
-  log.info(magenta(pDrafts.length) + " used photos in drafts");
+  log.info("-> " + magenta(pDrafts.length) + " used photos in drafts");
   
   // Get used photos in Dynamic pages
   let pDynamic = getDynamicPagePhotos(config);
-  log.info(magenta(pDynamic.length) + " used photos in dynamic pages");
+  log.info("-> " + magenta(pDynamic.length) + " used photos in dynamic pages");
 
   // Get used photos in Anything pages
   let pAnything = getAnythingPagePhotos(config);
-  log.info(magenta(pAnything.length) + " used photos in anything pages 'project'");
+  log.info("-> " + magenta(pAnything.length) + " used photos in anything pages 'project'");
   
   // Get used photos in Notes
   let pNotes = getNotesPhotos(config);
-  log.info(magenta(pNotes.length) + " used photos in notes");
+  log.info("-> " + magenta(pNotes.length) + " used photos in notes");
 
   /** ----------------------------------------------------- */
   // Init photos page

@@ -8,7 +8,8 @@ const entry = require('hexo-cli');
 hexo.extend.generator.register("dynamic-apps", async function(locals) {
   let config = this.config;
 
-  log.info("Processing dynamic apps...");
+  log.info("Generating Dynamic Page " + magenta("APPS") + " ...");
+
 
   let result = [];
 
