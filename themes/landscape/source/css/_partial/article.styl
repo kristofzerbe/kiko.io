@@ -16,10 +16,10 @@
   margin-bottom: 0.5rem
   margin-right: 1.25rem
   letter-spacing: 0
-  &:hover
-    color: var(--color-link)
-    /[data-theme="dark"] &
-      color: var(--dark-color-link)
+  // &:hover
+  //   color: var(--color-accent)
+  //   /[data-theme="dark"] &
+  //     color: var(--dark-color-accent)
   time.updated
     color: color-foreground
     /[data-theme="dark"] &
@@ -30,6 +30,8 @@
 .article.note  
   &:not(:first-child)
     margin-top: double-margin
+  &.h-entry
+    margin-top: double-margin + medium-margin
   .article-header
     padding-top: (default-padding-vert * 2)
   .article-meta
@@ -37,16 +39,17 @@
       top: (medium-margin * -1)
       left: medium-margin
       position: absolute
-      padding: small-padding (small-padding * 3)
+      padding: small-padding (small-padding * 3) (small-padding / 3 * 2)
       font-weight: font-weight-bold
       border-radius: border-radius-small
       font-size: font-size-small
       text-transform: uppercase
       color: color-logo
       z-index: 99
-      background-color: color-highlight
+      background-color: var(--color-accent2)
       /[data-theme="dark"] &
-        background-color: dark-color-highlight
+        background-color: var(--dark-color-accent2)
+
     small
       display: none
   &.rel
@@ -87,6 +90,27 @@
   span.caption
     display: none
 
+.index-list
+  margin-top: double-margin
+  .article.note
+    margin-top: double-margin + medium-margin
+    margin-left: default-margin
+    &:first-of-type
+      margin-top: double-margin + default-margin
+    @media mq-mobile
+      margin-left: default-margin
+    .article-meta
+      time
+        left: -(default-margin)
+        @media mq-mobile
+          left: -1.5rem
+      small
+        padding-left: 5rem
+        width: calc(100% - 5.5rem)
+        @media mq-mobile
+          padding-left: 5.5rem
+          width: calc(100% - 6rem)
+          
 .note-list
   .article.note
     margin-left: 2.5rem
@@ -99,17 +123,17 @@
       content: ""
       display: block
       position: absolute
-      height: calc(100% + 4rem)
+      height: calc(100% + 3rem)
       left: -1.5rem
       @media mq-mobile
         height: calc(100% + 3rem)
         left: calc(-1.4rem + 6px)
       top: 0
-      border-color: color-highlight
+      border-color: var(--color-accent2)
+      /[data-theme="dark"] &
+        border-color: var(--dark-color-accent2)
       border-width: 1px
       border-style: solid
-      /[data-theme="dark"] &
-        border-color: dark-color-highlight
     .article-meta
       time
         left: -2.75rem
@@ -193,10 +217,10 @@
   border: none
   &:hover
     a
-      color: var(--color-link)
+      color: var(--color-accent)
     /[data-theme="dark"] &
       a 
-        color: var(--dark-color-link)
+        color: var(--dark-color-accent)
   .article-category-link
     @extend $block-caption
     color: color-header
@@ -217,9 +241,9 @@
   /[data-theme="dark"] &
     color: dark-color-grey
   &:hover
-      color: var(--color-link)
+      color: var(--color-accent)
       /[data-theme="dark"] &
-        color: var(--dark-color-link)
+        color: var(--dark-color-accent)
 
 .article-title
   position: relative
@@ -239,9 +263,9 @@
   strong 
     opacity: 0.2
   a&:hover
-    color: var(--color-link)
+    color: var(--color-accent)
     /[data-theme="dark"] &
-      color: var(--dark-color-link)
+      color: var(--dark-color-accent)
     em, strong
       opacity: 1
   // https://css-tricks.com/adam-argyles-sick-mouse-out-css-hover-effect/
@@ -301,9 +325,9 @@
     /[data-theme="dark"] &
       border-bottom: dark-color-border-3d 1px dashed
     &:hover
-      border-bottom: var(--color-link) 1px solid
+      border-bottom: var(--color-accent) 1px solid
       /[data-theme="dark"] &
-        border-bottom: var(--dark-color-link) 1px solid
+        border-bottom: var(--dark-color-accent) 1px solid
   a.img-link
     transition: all ease-out .6s 
     transform: scale(1)
@@ -454,7 +478,7 @@
           border: none !important
           &:hover
             border: none !important
-            color: var(--color-link) !important
+            color: var(--color-accent) !important
     ol, ul
       margin-top: 0
       margin-bottom: 0
@@ -537,9 +561,9 @@
     font-size: font-size-small
     font-weight: font-weight-normal
     content: icon-chevron-right 
-    color: var(--color-link)
+    color: var(--color-accent)
     /[data-theme="dark"] &
-      color: var(--dark-color-link)
+      color: var(--dark-color-accent)
 
 .button:not(.posts)
   display: inline-block
@@ -553,13 +577,13 @@
   border: none
   border-radius: border-radius-small
   &:hover    
-    background-color: var(--color-link)
+    background-color: var(--color-accent)
     color: color-logo
   /[data-theme="dark"] &
     background-color: dark-color-button
     color: dark-color-button-link
     &:hover    
-      background-color: var(--dark-color-link)
+      background-color: var(--dark-color-accent)
       color: color-logo
 
 .download-link
@@ -594,18 +618,18 @@
     &:focus
       outline: none
     &.mastodon
-      color: var(--color-link)
+      color: var(--color-accent)
       /[data-theme="dark"] &
-        color: var(--dark-color-link)
+        color: var(--dark-color-accent)
         background-color: dark-color-block
       &:hover
         box-shadow: inset 0 20px 20px -20px #666
         color: color-hover-background
-        background-color: var(--color-link)
+        background-color: var(--color-accent)
         /[data-theme="dark"] &
           box-shadow: inset 0 20px 20px -20px #222
           color: dark-color-hover-background
-          background-color: var(--dark-color-link)
+          background-color: var(--dark-color-accent)
 
 .article-syndication,
 .article-interaction,
@@ -644,9 +668,9 @@
       span
         border-bottom: transparent 1px solid
         &:hover
-          border-bottom: var(--color-link) 1px solid
+          border-bottom: var(--color-accent) 1px solid
           /[data-theme="dark"] &
-            border-bottom: var(--dark-color-link) 1px solid
+            border-bottom: var(--dark-color-accent) 1px solid
       &.host-500px
         color: color-500px
         background-image: url(/images/500px.svg)
@@ -747,9 +771,9 @@
       text-decoration: none
       border-bottom: transparent 1px solid
       &:hover
-        border-bottom: var(--color-link) 1px solid
+        border-bottom: var(--color-accent) 1px solid
         /[data-theme="dark"] &
-          border-bottom: var(--dark-color-link) 1px solid
+          border-bottom: var(--dark-color-accent) 1px solid
   .alertbox
     margin-bottom: 0
 
@@ -765,8 +789,8 @@
 .article-footer, 
 .section-footer
   font-size: font-size-small
-  padding-top: (default-padding / 2)
-  margin: 0 default-padding default-padding-vert
+  // padding-top: (default-padding / 2)
+  margin: 0 default-padding default-margin
   display: grid
   gap: 0 0
   grid-template-columns: auto 1fr
@@ -777,6 +801,9 @@
     grid-template-columns: auto 1fr
     grid-template-rows: auto auto auto
     grid-template-areas: "tags" "syndication permalink" "golem"
+
+.article-footer:empty
+  margin-bottom: small-margin
 
 .section-footer
   padding: 0
@@ -797,9 +824,9 @@
     /[data-theme="dark"] &
       color: dark-color-grey
   a:hover
-    color: var(--color-link)
+    color: var(--color-accent)
     /[data-theme="dark"] &
-      color: var(--dark-color-link)
+      color: var(--dark-color-accent)
 
 .article-tags,
 // .article-syndication,
@@ -1062,9 +1089,7 @@
         opacity: 0.25
         font-size: font-size-small
     .wm-meta.wm-own
-      color: color-highlight
-      /[data-theme="dark"] &
-          color: dark-color-highlight
+      color: var(--color-accent)
 
   .wm-content
     padding: (default-padding-vert / 3) (default-padding / 2)

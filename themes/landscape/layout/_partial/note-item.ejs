@@ -1,33 +1,37 @@
 
-<article id="note-<%= page.slug %>" data-key="<%= page.key %>" class="article note <%= (page.rel?.verb) && "rel" %>">
+<article id="note-<%= post.slug %>" data-key="<%= post.key %>" 
+         class="article note <%= (post.rel?.verb) && "rel" %>">
 
   <div class="article-meta">
-    <time datetime="<%= date_xml(page.date) %>"><%= date(page.date, 'DD MMM YYYY') %></time>
-    <% if (page.rel?.verb) { %>
+    <% if (index === true) { %>
+    <div class="article-category">
+      <a class="article-category-link" href="<%- url_for(post.indexlink) %>">Note</a>
+    </div>
+    <% } %>
+    <time datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'DD MMM YYYY') %></time>
+    <% if (post.rel?.verb) { %>
       <small>
-        <span><%= page.rel.verb.replaceAll("-", " ") %></span>
-        <a href="<%= page.rel.url %>" title="<%= page.rel.caption %>"><%= page.rel.caption %></a></small>
+        <span><%= post.rel.verb.replaceAll("-", " ") %></span>
+        <a href="<%= post.rel.url %>" title="<%= post.rel.caption %>"><%= post.rel.caption %></a></small>
     <% } %>
   </div>
 
   <div class="article-inner">
 
     <header class="article-header">
-      <%- partial('post/title', { post: page, class_name: 'article-title p-name', show_link: true, index: true }) %>    
+      <%- partial('post/title', { post: post, class_name: 'article-title p-name', show_link: true, index: true }) %>    
     </header>
   
     <div class="article-entry">
-      <%- page.excerpt %>
-      <% if (page.more && theme.excerpt_link){ %>
+      <%- post.excerpt %>
+      <% if (post.more && theme.excerpt_link){ %>
         <p class="article-more-link">
-          <a href="<%- url_for(page.link) + '#continue' %>"><%= theme.excerpt_link %></a>
+          <a href="<%- url_for(post.link) + '#continue' %>"><%= theme.excerpt_link %></a>
         </p>
       <% } %>
     </div>
 
-    <footer class="article-footer">      
-      <%# partial('post/permalink', { post: page, class_name: 'article-permalink' }) %>
-    </footer>
+    <footer class="article-footer"></footer><%# partial('post/permalink', { post: post, class_name: 'article-permalink' }) %>
     
   </div>
 

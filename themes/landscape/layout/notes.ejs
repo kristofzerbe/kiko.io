@@ -24,7 +24,7 @@
 <% if (page.notes.length > 0) { %>
 <div class="note-list" data-pagefind-ignore>
   <% page.notes.forEach(function(note){ %>
-  <%- partial('_partial/note-item', { page: note }) %>
+  <%- partial('_partial/note-item', { post: note, index: false }) %>
   <% }) %>
 </div>
 <% } else { %>

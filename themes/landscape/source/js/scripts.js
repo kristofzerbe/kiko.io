@@ -233,8 +233,10 @@ function setVibrantColor(theme) {
         if (theme === "dark") { color = colorDark; }
         
         $("#header, #footer, #back-to-top").css("background-color", color);
-        $(":root").css("--color-link", color);
-        $(":root").css("--dark-color-link", tinycolor(color).brighten(50).toHexString())
+        $(":root").css("--color-accent", color);
+        $(":root").css("--color-accent2", tinycolor(color).brighten(25).toHexString())
+        $(":root").css("--dark-color-accent", tinycolor(color).brighten(50).toHexString());
+        $(":root").css("--dark-color-accent2", tinycolor(color).brighten(25).toHexString());
         
       });
     } catch (error) {

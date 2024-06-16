@@ -13,8 +13,7 @@
 
 <%- partial('_partial/anything-page-item', { item: page }) %>
 
-<%#- partial('_partial/archive', { pagination: 2, index: true }) --- does not work, because of sorting error %>
 <% page.posts.each(function(post){ %>
-  <%- partial('_partial/excerpt', { post: post, index: true }) %>
+  <%- partial('_partial/post-item', { post: post, index: true }) %>
 <% }) %>
 

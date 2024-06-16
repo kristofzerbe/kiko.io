@@ -4,24 +4,11 @@ const { red } = require("chalk");
 hexo.on('ready', function(){
   log.info(red(">>> ready ------------------------------------------------------"));
   //console.log(this);
-  // this.custom = {
-  //   notes: [{
-  //     title: "Lorem ipsum"
-  //   }]
-  // }
-  // this.locals.set('notes', [
-  //   {
-  //     title: "Lorem ipsum"
-  //   }
-  // ])
 });
 
 hexo.on('generateBefore', function(){
   log.info(red(">>> generateBefore ---------------------------------------------"));
-  // console.log(this.locals);
-  // console.log(this.locals.toObject().posts);
-  // console.log(this.locals.get('notes')[0]);
-  // console.log(this.locals.get("posts").data[0]);
+  // console.log(this);
 });
 
 hexo.extend.filter.register('before_generate', function() {
@@ -35,7 +22,7 @@ hexo.on('generateAfter', function(){
 });
 
 hexo.on('exit', function(){
-  log.info(red(">>> exit ======================================================="));
+//  log.info(red(">>> exit ======================================================="));
 
 });
 

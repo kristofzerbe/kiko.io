@@ -1,17 +1,19 @@
-<!-- TODO: Extract to root INDEX.MD -->
 <div id="introduction">
   <h1 class="page-title">
     <strong>Welcome</strong> ... <span>I'm Kristof</span>
   </h1>
   <div class="page-content">
+    <!-- TODO: Extract to root INDEX.MD -->
     <p>I've been a passionate software developer for almost 30 years and currently a tech-savvy IT manager. I tinker with things like this blog in my spare time, because creating things never lets you go. Here is more <a href="/about">about me</a> ...</p>
-    <hr>
   </div>
 </div>
 <script>
   document.querySelector("#introduction").classList.add("d" + new Date().getDay().toString());
 </script>
 
-<div data-pagefind-ignore>
-<%- partial('_partial/archive', { pagination: 2, index: true }) %>
+<div class="index-list" data-pagefind-ignore>
+  <% page.posts.forEach(function(post){ %>
+    <%- partial('_partial/' + post.layout + '-item', { post: post, index: true }) %>
+  <% }) %>
+  <%- partial('_partial/pagination') %>
 </div>

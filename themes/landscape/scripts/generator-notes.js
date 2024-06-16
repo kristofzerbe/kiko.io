@@ -4,8 +4,8 @@ const path = require("path");
 const fs = require("hexo-fs");
 const front = require("hexo-front-matter");
 const sharp = require("sharp");
-const { highlight } = require("hexo-util");
-const { config } = require("process");
+// const { highlight } = require("hexo-util");
+// const { config } = require("process");
 
 hexo.extend.generator.register("notes", function (locals) {
   let config = this.config;
@@ -15,7 +15,7 @@ hexo.extend.generator.register("notes", function (locals) {
   // collection of pages to render
   let result = [];
 
-  log.info("Processing Notes...");
+  log.info("Generating Pages for " + magenta("NOTES") + " ...");
 
   let years = fs
     .readdirSync(notesDir)
@@ -25,7 +25,6 @@ hexo.extend.generator.register("notes", function (locals) {
       path: path.join("notes", entry, "index.html"),
       link: path.join("notes", entry).replace(/\\/g, "/")
     }));
-  //console.log(years);
 
   if (years.filter(y => y.year === currentYear.toString()).length === 0) {
     log.error("Notes folder for current year doesn't exist!");
@@ -34,7 +33,6 @@ hexo.extend.generator.register("notes", function (locals) {
 
   let indexes = [];
   years.forEach((year) => {
-    //console.log(year);
 
     let yearDir = path.join(notesDir, year.year);
 
@@ -46,54 +44,17 @@ hexo.extend.generator.register("notes", function (locals) {
       ...getMDInfo(path.join(yearDir, "index.md"), index, false),
     };
     index.notes = [];
-    //console.log(index);
 
-    // get notes
-    let notes = fs
-      .readdirSync(yearDir)
-      .filter((entry) => fs.statSync(path.join(yearDir, entry)).isFile())
-      .filter((file) => file.match(/\d{2}-\d{2}-.*.md/g))
-      .map((entry) => ({
-        file: entry,
-        key: index.year + "/" + entry.replace(".md", ""),
-        slug: index.year + "/" + entry.replace(".md", "").replace(/\d{2}-\d{2}-/g, ""), // same as post
-        year: index.year,
-        indexlink: "/" + index.link,
-      }));
-    //console.log(notes);
+    // (processed in 'on-ready-get-notes')
+    locals.notes.filter((note) => note.year === year.year).forEach((note) => {
+      result.push({
+        data: note,
+        path: note.path,
+        layout: "note",
+      });
 
-    notes.forEach((note) => {
-      note = {
-        ...note,
-        ...getMDInfo(path.join(yearDir, note.file), note, true),
-      };
-      note.photograph = index.photograph;
-      note.path = path.join("notes", note.slug, "index.html");
-      note.link = path.join("notes", note.slug).replace(/\\/g, "/") + "/";
-      note.permalink = config.url + "/" + note.link;
-
-      note.excerpt = note.excerpt.replaceAll(
-        "/images/",
-        "/notes/" + index.year + "/images/"
-      ); /** HACK */
-      note.content = note.content.replaceAll(
-        "/images/",
-        "/notes/" + index.year + "/images/"
-      ); /** HACK */
-
-      // console.log(note);
-
-      if (!note.hide) {
-        // add note to result
-        result.push({
-          data: note,
-          path: note.path,
-          layout: "note",
-        });
-
-        //... and to index notes list
-        index.notes.push(note);
-      }
+      //... and to index notes list
+      index.notes.push(note);  
     });
 
     index.notes.sort(function (a, b) {
@@ -101,31 +62,21 @@ hexo.extend.generator.register("notes", function (locals) {
     });
 
     if (index.notes.length > 0 || index.year === currentYear.toString()) {
-      //console.log("index push: " + index.year);
       indexes.push(index);
-      log.info(
-        magenta(index.notes.length) + " Notes for " + magenta(index.year)
-      );
+      log.info("-> " + magenta(index.notes.length) + " Notes for " + magenta(index.year));
 
       processImages(yearDir, index.year);
     }
-
-    // console.log("\n====================================================\n");
-    // console.log(index);
   });
-  //console.log(indexes);
 
   let yearsAvailable = indexes.map((index) => index.year);
-  //console.log(yearsAvailable);
 
   let yearList = years
     .filter((item) => yearsAvailable.includes(item.year))
     .sort((a, b) => b.year - a.year);
-  //console.log(yearList);
 
   indexes.forEach((index) => {
     index.years = yearList;
-    //console.log(index);
 
     // add year index to result
     result.push({
@@ -153,8 +104,6 @@ function getMDInfo(filePath, obj, parseContent) {
   obj = { ...obj, ...fm };
 
   if (parseContent) {
-    //obj._content = highlight(obj._content, config.highlight); //TAKES COMPLETE CONTENT!?
-
     let content = obj._content.split("\n<!-- more -->\n");
 
     if (content.length === 2) {
@@ -175,8 +124,6 @@ function getMDInfo(filePath, obj, parseContent) {
       obj.excerpt = obj.content;
       obj.more = false;
     }
-
-    // console.log(obj);
   }
   return obj;
 }
