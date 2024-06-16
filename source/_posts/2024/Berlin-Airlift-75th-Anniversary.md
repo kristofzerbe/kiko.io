@@ -18,7 +18,7 @@ related:
   - Pool-Photo-Generator
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112627596416002110
 ---
 
 On 12 May 1949, the blockade of Berlin ended and with it the airlift organised by the Americans, which had supplied the city with the most necessary goods in over 200,000 flights since 24 June 1948. One of the airports from which the so-called "Rosinenbomber" took off was the former Air Force Base in Wiesbaden-Erbenheim. At this site, which is now home to the U.S. Army Garrison Wiesbaden, a commemoration service was held this weekend with all kinds of supporting programmes.
