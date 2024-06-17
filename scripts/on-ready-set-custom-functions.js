@@ -2,7 +2,7 @@ hexo.on('ready', function() {
 
   this.custom = {};
 
-  // Merges Locals POSTS with NOTES
+  // Merge POSTS with NOTES
   this.custom.getAllPosts = () => {
 
     const posts = this.locals.get('posts').map(e => {
