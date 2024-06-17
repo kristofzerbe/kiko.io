@@ -10,12 +10,14 @@ photograph:
 categories:
   - Tools
 tags:
-  - xxx
+  - Search
 related:
-  - xxx
+  - My-Switch-to-Obsidian
+  - Hexo-WebFinger-and-better-discoverability
+  - Provide-Blog-Metadata-via-JSON-LD
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112634223188805978
 ---
 
 The word 'google' is now firmly burnt into people's brains for "I search the Web ...". However, what the market leader spits out nowadays is by no means just a list of text links, as it was many years ago, but a hodgepodge of different types of search results. And in times of AI hype, it is to be expected that the results will move further and further away from their origins. Google is already preparing for this, as there is no other way to explain why a new results filter called 'Web' was announced at Google I/O 2024, which displays nothing other than text links.
