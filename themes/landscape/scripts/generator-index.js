@@ -6,14 +6,6 @@
 
 const pagination = require('hexo-pagination');
 
-//https://stackoverflow.com/questions/39875871/how-to-remove-all-getters-and-setters-from-an-object-in-javascript-and-keep-pure
-const shallowClone = (obj) => {
-  return Object.keys(obj).reduce((clone, key) => {
-    clone[key] = obj[key];
-    return clone;
-  }, {});
-}
-
 hexo.config.index_generator = Object.assign({
   per_page: typeof hexo.config.per_page === 'undefined' ? 10 : hexo.config.per_page,
   order_by: '-date'
@@ -27,17 +19,7 @@ hexo.extend.generator.register("index", function (locals) {
   //TODO: Consider Sticky
   //??? posts.data.sort((a, b) => (b.sticky || 0) - (a.sticky || 0));
   
-  // Remove Getters and Setters
-  const posts = locals.posts.data.map(e => {
-    delete e.prev;
-    delete e.next;    
-    return shallowClone(e);
-  })
-
-  const notes = locals.notes;
-
-  // Merge Notes with Posts
-  const items = [...posts, ... notes];
+  const items = this.custom.getAllPosts();
 
   // Sort over all by date ascending -> date|updated: Moment<...>
   //TODO: Consider UPDATED

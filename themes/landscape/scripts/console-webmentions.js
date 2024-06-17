@@ -32,19 +32,21 @@ hexo.extend.console.register(
     log.debug(magenta(JSON.stringify(opt)));
 
     return this.load().then(() => {
-      const posts = this.model("Post");
+      //const posts = this.model("Post");
+      const items = this.custom.getAllPosts();
 
       let data;
 
       if (opt.slug) {
-        data = posts
+        data = items
           .filter((p) => p.slug.toLowerCase() === opt.slug.toLowerCase())
           .map((p) => {
             return mapPost(p);
           });
       } else {
-        data = posts
-          .sort({ date: -1 })
+        data = items
+          //.sort({ date: -1 })
+          .sort((a, b) => a.date.diff(b.date)).reverse()
           .filter((p) => p.published != false && p.hidden != true)
           .slice(0, opt.count)
           .map((p) => {

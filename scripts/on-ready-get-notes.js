@@ -11,10 +11,8 @@ hexo.on('ready', function() {
   log.info("Getting Notes");
 
   let noteItems = [];
-  let yearItems = [];
 
   let notesDir = path.join(config.source_dir, "_" + config.notes_dir);
-  let currentYear = new Date().getFullYear();
 
   let years = fs
     .readdirSync(notesDir)
@@ -57,6 +55,7 @@ hexo.on('ready', function() {
       };
       note.layout = "note";
       note.date = moment(note.date);
+      note.published = true;
       note.photograph = index.photograph;
       note.path = path.join("notes", note.slug, "index.html");
       note.link = path.join("notes", note.slug).replace(/\\/g, "/") + "/";

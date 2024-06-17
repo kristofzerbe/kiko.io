@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+  schedule:
+    - cron: '0 0 * * *' # Run at the end of every day
   workflow_dispatch: # Run workflow manually, through the Github Actions Workflow page directly
   
 jobs:
