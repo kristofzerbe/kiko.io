@@ -7,7 +7,7 @@ rel:
   url: https://www.joshwcomeau.com/javascript/promises/
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/112634438675444484
 ---
 I admit it ... I struggle with Promises from time to time. I can't make it stick in my head as easily as other JavaScript concepts, and then I sit there and google it again.
 
