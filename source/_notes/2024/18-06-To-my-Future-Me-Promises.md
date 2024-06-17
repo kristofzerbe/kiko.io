@@ -3,8 +3,8 @@ title: "#Link | To My Future Me: Promises"
 date: 2024-06-18
 rel:
   verb: bookmark-of like-of in-reply-to
-  caption: TITLE
-  url: URL
+  caption: "Promises From The Ground Up"
+  url: https://www.joshwcomeau.com/javascript/promises/
 syndication:
   - host: Mastodon
     url:
