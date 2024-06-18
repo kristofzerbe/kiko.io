@@ -21,7 +21,8 @@
     <% if (page.rel?.verb) { %>
       <small>
         <span><%= page.rel.verb.replaceAll("-", " ") %></span>
-        <a href="<%= page.rel.url %>" class="u-<%= page.rel.verb %>" title="<%= page.rel.caption %>"><%= page.rel.caption %></a></small>
+        <a href="<%= page.rel.url %>" class="u-<%= page.rel.verb %>" title="<%= page.rel.caption %>"><%= page.rel.caption %></a>
+      </small>
     <% } %>
   </div>
     
@@ -33,11 +34,12 @@
 
     <div class="article-entry e-content">
       <%- page.content %>
-      <p>
+      
     <% if (page.rel?.verb) { %>
-        <a href="<%= page.rel.url %>"><strong><%= page.rel.caption %></strong><br/><%= page.rel.url %></a></small>
+      <hr>
+      <a href="<%= page.rel.url %>"><strong><%= page.rel.caption %></strong><br/><%= page.rel.url %></a></small>
     <% } %>
-      </p>
+      
     </div>
   
     <footer class="article-footer" data-pagefind-ignore>
