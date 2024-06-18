@@ -44,7 +44,7 @@ hexo.on('ready', function() {
         key: index.year + "/" + entry.replace(".md", ""),
         slug: index.year + "/" + entry.replace(".md", "").replace(/\d{2}-\d{2}-/g, ""), // same as post
         year: index.year,
-        indexlink: "/" + index.link,
+        indexlink: "/" + index.link
       })
     );
 
@@ -60,6 +60,7 @@ hexo.on('ready', function() {
       note.path = path.join("notes", note.slug, "index.html");
       note.link = path.join("notes", note.slug).replace(/\\/g, "/") + "/";
       note.permalink = config.url + "/" + note.link;
+      note.categories = [{ name: "Note", path: "notes" }];
 
       note.excerpt = note.excerpt.replaceAll(
         "/images/",

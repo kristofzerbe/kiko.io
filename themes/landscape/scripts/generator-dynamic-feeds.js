@@ -24,6 +24,7 @@ hexo.extend.generator.register("dynamic-feeds", async function(locals) {
   // Workaround for not working tag plugin 'feed_microformat' in feeds.md
   // similar to generator-feed-custom.js 
   // ======================================================================================
+  //TODO: ??? Merge with Notes like in generator-feed-custom.js ?
   const publishedPosts = locals.posts
     .filter((post) => post.draft !== true)
     .filter((post) => post.published === undefined || post.published === true);
@@ -32,11 +33,18 @@ hexo.extend.generator.register("dynamic-feeds", async function(locals) {
     .sort(config.feed.order_by || '-date')
     .limit(config.feed.limit|| 20);
 
-  const slug = (post) => {
-    let slugArray = post.slug.split("/");
-    let slug = slugArray[slugArray.length - 1];
-    return slug;
+  const imageSource = (item) => {
+    if (item.photograph) {
+      if (item.photograph.socialmedia) {
+        return config.url + item.photograph.socialmedia
+          .replace("/static", "")
+          .replace(".png", ".thumb.png");
+      } else {
+        return config.url + "/photos/mobile/" + item.photograph.file;
+      }
+    }
   }
+
   const regEx = /<(script|style)[^>]*>(?<content>[^<]*)<\/(script|style)>/gim;
   const content = (post) => {
     let fc = post.excerpt.replace(regEx, "");
@@ -45,7 +53,7 @@ hexo.extend.generator.register("dynamic-feeds", async function(locals) {
   
   let list = "";
   postsToRender.forEach(post => {
-    let img = `<img src="/images/social-media/${slug(post)}.thumb.png" />`;
+    let img = `<img src="${imageSource(post)}" />`;
     let subTitle = (post.subtitle) ? `<h4 class="p-summary">${post.subtitle}</h4>` : "";
     let dateCreated = new Date(post.date).toISOString();
     let dateUpdated = new Date(post.updated).toISOString();

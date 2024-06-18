@@ -1,14 +1,21 @@
 <%_
-  const updated = (post) => {
-    let pub = moment(post.date).toISOString();
-    let upd = moment(post.updated).toISOString();
+  const updated = (item) => {
+    let pub = moment(item.date).toISOString();
+    let upd = moment(item.updated).toISOString();
     return (pub === upd) ? null : upd;
   }
-  const slug = (post) => {
-    let slugArray = post.slug.split("/");
-    let slug = slugArray[slugArray.length - 1];
-    return slug;
+  const imageSource = (item) => {
+    if (item.photograph) {
+      if (item.photograph.socialmedia) {
+        return config.url + item.photograph.socialmedia
+          .replace("/static", "")
+          .replace(".png", ".thumb.png");
+      } else {
+        return config.url + "/photos/mobile/" + item.photograph.file;
+      }
+    }
   }
+
 _%>
 <%- JSON.stringify({
   version: 'https://jsonfeed.org/version/1',
@@ -23,14 +30,14 @@ _%>
     url: config.url,
     avatar: config.url + config.photo
   },
-  items: posts.map(post => ({
-    id: post.permalink,
-    url: post.permalink,
-    title: post.title,
-    image: config.url + '/images/social-media/' + slug(post) + '.thumb.png',
-    date_published: moment(post.date).toISOString(),
-    date_modified: updated(post),
-    content_html: post.content || '',
-    tags:  (post.tags ? post.tags.toArray() : []).map(({ name }) => name)
+  items: items.map(item => ({
+    id: item.permalink,
+    url: item.permalink,
+    title: item.title,
+    image: imageSource(item),
+    date_published: moment(item.date).toISOString(),
+    date_modified: updated(item),
+    content_html: item.content || '',
+    tags:  (item.tags ? item.tags.toArray() : []).map(({ name }) => name)
   }))
 }, null, 4) _%>

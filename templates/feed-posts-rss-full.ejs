@@ -10,22 +10,28 @@
     </image>
     <description><%= config.description %></description>
     <language><%= config.language %></language>
-    <pubDate><%= moment(lastBuildDate).locale('en').format('ddd, DD MMM YYYY HH:mm:ss ZZ') %></pubDate>
+    <pubDate><%= moment(lastPublishedPostDate).locale('en').format('ddd, DD MMM YYYY HH:mm:ss ZZ') %></pubDate>
     <lastBuildDate><%= moment(lastBuildDate).locale('en').format('ddd, DD MMM YYYY HH:mm:ss ZZ') %></lastBuildDate>
-    <%_ for (const { name } of (tags || [])) { _%>
-    <category><%= name %></category>
+    <%_ for (const category of (categories || [])) { _%>
+    <category><%= category.name %></category>
     <%_ } _%>
-    <%_ for (const post of posts) { _%>
+    <%_ for (const tag of (tags || [])) { _%>
+    <category><%= tag.name %></category>
+    <%_ } _%>
+    <%_ for (const item of items) { _%>
     <item>
-      <guid isPermalink="true"><%= post.permalink %></guid>
-      <title><%= post.title %></title>
-      <link><%= post.permalink %></link>
-      <%_ for (const tag of (post.tags ? post.tags.toArray() : [])) { _%>
+      <guid isPermalink="true"><%= item.permalink %></guid>
+      <title><%= item.title %></title>
+      <link><%= item.permalink %></link>
+      <%_ for (const category of (item.categories ? (Array.isArray(item.categories) ? item.categories : item.categories.toArray()) : [])) { _%>
+      <category><%= category.name %></category>
+      <%_ } _%>
+      <%_ for (const tag of (item.tags ? item.tags.toArray() : [])) { _%>
       <category><%= tag.name %></category>
       <%_ } _%>
-      <pubDate><%= moment(post.date).locale('en').format('ddd, DD MMM YYYY HH:mm:ss ZZ') %></pubDate>
+      <pubDate><%= moment(item.date).locale('en').format('ddd, DD MMM YYYY HH:mm:ss ZZ') %></pubDate>
       <description>
-        <![CDATA[ <%= post.content %> ]]>
+        <![CDATA[ <%= item.content %> ]]>
       </description>
     </item>
     <%_ } _%>

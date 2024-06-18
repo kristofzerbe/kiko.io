@@ -15,8 +15,6 @@ const { magenta } = require('chalk');
 
 const baseGenerator = (hexo, locals, title, template, output) => {
   const { config, render, log } = hexo;
-  const { posts, tags, categories } = locals;
-  const order_by = config.feed["order_by"];
   const limit = config.feed["limit"];
 
   const helpers = Object.keys(hexo.extend.helper.store).reduce((result, name) => {
@@ -26,22 +24,33 @@ const baseGenerator = (hexo, locals, title, template, output) => {
 
   const renderOptions = { path: template };
 
-  return generateFeed(render, title, posts, tags, categories, config, renderOptions, {}, output, order_by, limit, helpers, log);
+  return generateFeed(render, title, locals, config, renderOptions, {}, output, limit, helpers, log);
 }
 
-const generateFeed = (render, title, posts, tags, categories, config, renderOptions, context, output, order_by, limit, helpers, log) => { 
+const generateFeed = (render, title, locals, config, renderOptions, context, output, limit, helpers, log) => { 
   log.debug(`Generating ${title}: %s`, magenta(output));
 
-  const publishedPosts = posts
-    .filter((post) => post.draft !== true)
-    .filter((post) => post.published === undefined || post.published === true);
+  let tags = locals.tags.toArray();
+  let categories = locals.categories.toArray().map((cat) => {
+    return {
+      name: cat.name,
+      path: cat.path
+    }
+  });
+  categories.push({
+    name: "Note",
+    path: "notes"
+  });
 
-  const lastPublishedPost = publishedPosts.sort('-date').first();
-  const lastPublishedPostDate = lastPublishedPost ? lastPublishedPost.date : helpers.moment();
+  // Merge POSTS with NOTES
+  let items = [...locals.posts.data, ...locals.notes]
+    .filter((i) => i.draft !== true)
+    .filter((i) => i.published === undefined || i.published === true)
+    .sort((a, b) => a.date.diff(b.date)).reverse()
+    .slice(0, limit);
 
-  let postsToRender = publishedPosts
-    .sort(order_by || config.feed.order_by || '-date')
-    .limit(limit || 20);
+  const lastPublishedPostDate = items.slice(0, 1).date; //first item
+  const lastBuildDate = helpers.moment();
 
   return render
     .render(renderOptions, {
@@ -51,10 +60,11 @@ const generateFeed = (render, title, posts, tags, categories, config, renderOpti
         category: undefined,
         ...context
     },
-      lastBuildDate: lastPublishedPostDate,
-      posts: postsToRender.toArray(),
-      tags: tags.toArray(),
-      categories: categories.toArray(),
+      lastPublishedPostDate: lastPublishedPostDate,
+      lastBuildDate: lastBuildDate,
+      items: items,
+      tags: tags,
+      categories: categories,
       config: config,
       output: output
     })

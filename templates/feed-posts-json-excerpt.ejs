@@ -1,19 +1,19 @@
 <%_
-  const updated = (post) => {
-    let pub = moment(post.date).toISOString();
-    let upd = moment(post.updated).toISOString();
+  const updated = (item) => {
+    let pub = moment(item.date).toISOString();
+    let upd = moment(item.updated).toISOString();
     return (pub === upd) ? null : upd;
   }
-  const slug = (post) => {
-    let slugArray = post.slug.split("/");
+  const slug = (item) => {
+    let slugArray = item.slug.split("/");
     let slug = slugArray[slugArray.length - 1];
     return slug;
   }
   const regEx = /<(script|style)[^>]*>(?<content>[^<]*)<\/(script|style)>/gim;
-  const content = (post) => {
-    let fc = post.excerpt.replace(regEx, "");
-    fc = fc + '<p><a href="' + post.permalink + '">Continue reading <strong>`' + post.title + '`</strong> on kiko.io ...</a></p>';
-    if (post.photograph) { fc = '<p><img src="' + config.url + '/images/social-media/' + slug(post) + '.png" /></p>' + fc; }
+  const content = (item) => {
+    let fc = item.excerpt.replace(regEx, "");
+    fc = fc + '<p><a href="' + item.permalink + '">Continue reading <strong>`' + item.title + '`</strong> on kiko.io ...</a></p>';
+    if (item.photograph) { fc = '<p><img src="' + config.url + '/images/social-media/' + slug(item) + '.png" /></p>' + fc; }
     return fc;
   }
 _%>
@@ -30,14 +30,14 @@ _%>
     url: config.url,
     avatar: config.url + config.photo
   },
-  items: posts.map(post => ({
-    id: post.permalink,
-    url: post.permalink,
-    title: post.title,
-    image: config.url + '/images/social-media/' + slug(post) + '.thumb.png',
-    date_published: moment(post.date).toISOString(),
-    date_modified: updated(post),    
-    content_html: content(post) || '',
-    tags:  (post.tags ? post.tags.toArray() : []).map(({ name }) => name)
+  items: items.map(item => ({
+    id: item.permalink,
+    url: item.permalink,
+    title: item.title,
+    image: config.url + '/images/social-media/' + slug(item) + '.thumb.png',
+    date_published: moment(item.date).toISOString(),
+    date_modified: updated(item),    
+    content_html: content(item) || '',
+    tags:  (item.tags ? item.tags.toArray() : []).map(({ name }) => name)
   }))
 }, null, 4) _%>

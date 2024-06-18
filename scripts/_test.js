@@ -12,7 +12,7 @@ hexo.on('generateBefore', function(){
 });
 
 hexo.extend.filter.register('before_generate', function() {
-  log.info(red(">>> filter > before_generate ---------------------------------------"));
+  log.info(red(">>> filter > before_generate -----------------------------------"));
   // console.log(this);
 });
 
