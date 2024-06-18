@@ -19,7 +19,8 @@ hexo.extend.generator.register("index", function (locals) {
   //TODO: Consider Sticky
   //??? posts.data.sort((a, b) => (b.sticky || 0) - (a.sticky || 0));
   
-  const items = this.custom.getAllPosts();
+  // Merge POSTS with NOTES
+  const items = [...locals.posts.data, ...locals.notes];
 
   // Sort over all by date ascending -> date|updated: Moment<...>
   //TODO: Consider UPDATED

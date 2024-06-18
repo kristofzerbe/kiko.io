@@ -33,7 +33,9 @@ hexo.extend.console.register(
 
     return this.load().then(() => {
       //const posts = this.model("Post");
-      const items = this.custom.getAllPosts();
+
+      // Merge POSTS with NOTES
+      const items = [...this.locals.get('posts').data, ...this.locals.get('notes')];
 
       let data;
 
