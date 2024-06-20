@@ -41,8 +41,7 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
     let fmBlog = front.parse(blog);
     delete fmBlog._content;
 
-    // replace favicon with Google service url
-    fmBlog.favicon = "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=" + fmBlog.url + "&size=32";
+    fmBlog.favicon = config.favicon_service_url.replace("{URL}", fmBlog.url);
 
     page.items.push(fmBlog);
   }

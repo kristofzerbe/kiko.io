@@ -160,11 +160,9 @@ function processImages(sourceDir, year) {
 
     // extend image path info
     images.forEach((image) => {
-      //console.log(image);
       image.sourcePathRel = path.join(sourcePathRel, image.file);
       image.source = path.join(sourcePath, image.file);
       image.target = path.join(targetPath, image.file);
-      //console.log(image);
 
       if (!fs.existsSync(image.target)) {
 
@@ -188,7 +186,6 @@ function processImages(sourceDir, year) {
                 break;
             
               case 'jpg', 'jpeg':
-                //console.log(image.source);
                 sharp(image.source)
                   .resize({ width: 600 })
                   .jpeg({ mozjpeg: true })
@@ -244,6 +241,5 @@ function processImages(sourceDir, year) {
 
       }
     });
-    //console.log(images);
   }
 }

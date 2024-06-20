@@ -17,3 +17,12 @@ Here's a notable reminder: Josh Comeau's introduction '**[Promises From The Grou
 Future Me ... Don't await, read Josh's post again!
 
 #JavaScript
+
+```cardlink
+url: https://www.joshwcomeau.com/javascript/promises/
+title: "Promises From The Ground Up"
+description: "The “Promises” API is a surprisingly tricky part of modern JavaScript. Without the right context, it doesn’t make much sense at all! In this tutorial, you’ll build an intuition for how Promises work by getting a deeper understanding of JavaScript and its limitations."
+host: www.joshwcomeau.com
+favicon: https://www.joshwcomeau.com/assets/favicon.png?v=4
+image: https://www.joshwcomeau.com/images/og-promises.png
+```

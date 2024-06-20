@@ -1,6 +1,10 @@
 ---
 title: "#Link | CSS text-wrap balanced and pretty"
 date: 2023-10-31
+rel:
+  verb: like-of
+  caption: "When to use CSS text-wrap: balance; vs text-wrap: pretty; - Stephanie Stimac's Blog"
+  url: https://blog.stephaniestimac.com/posts/2023/10/css-text-wrap/
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/111329744377473872
@@ -11,3 +15,12 @@ In this worth reading article, Stephanie Stimac ([@seaotta](https://toot.cafe/@s
 [When to use CSS text-wrap: balance; vs text-wrap: pretty;](https://blog.stephaniestimac.com/posts/2023/10/css-text-wrap/)
 
 #CSS #Typography
+
+```cardlink
+url: https://blog.stephaniestimac.com/posts/2023/10/css-text-wrap/
+title: "When to use CSS text-wrap: balance; vs text-wrap: pretty; - Stephanie Stimac's Blog"
+description: "A ruthless look at when to use these two CSS text-wrap values."
+host: blog.stephaniestimac.com
+favicon: ../img/favicon.svg
+image: https://blog.stephaniestimac.comundefined
+```

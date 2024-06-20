@@ -1,6 +1,10 @@
 ---
 title: "#Link | EXIFR: Incredible Image Metadata Library for JavaScript"
 date: 2023-08-21
+rel:
+  verb: bookmark-of
+  caption: "GitHub - MikeKovarik/exifr: 📷 The fastest and most versatile JS EXIF reading library."
+  url: https://github.com/MikeKovarik/exifr
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/110927684459168884
@@ -17,3 +21,12 @@ I have bookmarked Mike's example page, if I need the data of a photo quickly...
 ![08-21-exifr](images/08-21-exifr.png)
 
 #JavaScript #NodeJS #EXIF
+
+```cardlink
+url: https://github.com/MikeKovarik/exifr
+title: "GitHub - MikeKovarik/exifr: 📷 The fastest and most versatile JS EXIF reading library."
+description: "📷 The fastest and most versatile JS EXIF reading library. - MikeKovarik/exifr"
+host: github.com
+favicon: https://github.githubassets.com/favicons/favicon.svg
+image: https://repository-images.githubusercontent.com/143209709/ed4d6b00-02ed-11ea-9beb-5c8f01ae5aaa
+```

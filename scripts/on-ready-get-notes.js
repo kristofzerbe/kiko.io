@@ -4,6 +4,7 @@ const path = require("path");
 const fs = require("hexo-fs");
 const front = require("hexo-front-matter");
 const moment = require("moment");
+const { getDataFromCardlinkCodeBlock, compileHandlebar } = require("../lib/tools.cjs");
 
 hexo.on('ready', function() {
   let config = this.config;
@@ -62,15 +63,6 @@ hexo.on('ready', function() {
       note.permalink = config.url + "/" + note.link;
       note.categories = [{ name: "Note", path: "notes" }];
 
-      note.excerpt = note.excerpt.replaceAll(
-        "/images/",
-        "/notes/" + index.year + "/images/"
-      ); /** HACK */
-      note.content = note.content.replaceAll(
-        "/images/",
-        "/notes/" + index.year + "/images/"
-      ); /** HACK */
-
       if (!note.hide) {
         noteItems.push(note);
       }
@@ -88,26 +80,54 @@ function getMDInfo(filePath, obj, parseContent) {
   obj = { ...obj, ...fm };
 
   if (parseContent) {
+
+    // HACK: Bend the image source of Markdown to correct subfolder
+    obj._content = obj._content.replaceAll("](images/", "](notes/" + obj.year + "/images/");
+    
     let content = obj._content.split("\n<!-- more -->\n");
 
     if (content.length === 2) {
+      obj.more = true;
       obj.content = hexo.render.renderSync({
-        text: content.join("\n"),
+        text: convertObsidianCardlink(content.join("\n")),
         engine: "markdown",
       });
       obj.excerpt = hexo.render.renderSync({
-        text: content[0],
+        text: removeObsidianCardlink(content[0]),
         engine: "markdown",
       });
-      obj.more = true;
+      
     } else {
+      obj.more = false;
       obj.content = hexo.render.renderSync({
-        text: obj._content,
+        text: convertObsidianCardlink(obj._content),
         engine: "markdown",
       });
-      obj.excerpt = obj.content;
-      obj.more = false;
+      obj.excerpt = hexo.render.renderSync({
+        text: removeObsidianCardlink(obj._content),
+        engine: "markdown",
+      });
     }
   }
   return obj;
+}
+
+function convertObsidianCardlink(content) {
+    const regexp = /```cardlink\n(.*?)\n```/gs
+    const matches = content.matchAll(regexp);
+    for (const match of matches) {
+      const lines = getDataFromCardlinkCodeBlock(match[0], hexo.config.favicon_service_url);
+      const element = compileHandlebar(hexo, "cardlink-with-separator.handlebars", lines);
+      content = content.replace(match[0], element);
+    }
+    return content;
+}
+
+function removeObsidianCardlink(content) {
+  const regexp = /```cardlink\n(.*?)\n```/gs
+  const matches = content.matchAll(regexp);
+  for (const match of matches) {
+    content = content.replace(match[0], "");
+  }
+  return content;
 }

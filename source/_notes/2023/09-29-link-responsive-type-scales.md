@@ -1,6 +1,10 @@
 ---
 title: "#Link | Responsive type scales"
 date: 2023-09-29
+rel:
+  verb: like-of
+  caption: "Responsive type scales with composable CSS utilities"
+  url: https://tobiasahlin.com/blog/responsive-fluid-css-type-scales
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/111150583926797975
@@ -21,3 +25,12 @@ This CSS calculation to create responsive type size by Tobias Ahlin is somewhat 
 [https://tobiasahlin.com/blog/responsive-fluid-css-type-scales](https://tobiasahlin.com/blog/responsive-fluid-css-type-scales)
 
 #css #responsive #type
+
+```cardlink
+url: https://tobiasahlin.com/blog/responsive-fluid-css-type-scales
+title: "Responsive type scales with composable CSS utilities"
+description: "With the help of calc(), clamp() and CSS vars, we can create composable, responsive, and fluid type scales that smoothly adapts to viewport and container widths."
+host: tobiasahlin.com
+favicon: https://tobiasahlin.com/images/favicon.ico
+image: https://tobiasahlin.com/static/-social/og_blog-responsive-fluid-css-type-scales.jpg
+```
