@@ -16,7 +16,7 @@ related:
   - SGE-vs-HJK-2023-10-26
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112655180949543395
 ---
 
 {% match_grid "_DEN_Dansk-Boldspil-Union" "1:1" "_ENG_England-Football-Association" %}
