@@ -25,7 +25,9 @@
           </p>
           <p><%= item.description %></p>
           <div class="icon-links">
+            <% if (item.mastodon) { %>
             <a class="fa-mastodon" href="<%= item.mastodon %>"></a>
+            <% } %>
             <a class="fa-rss" href="<%= item.feed %>"></a>
           </div>
           <% if (item.latest_post) { %>
