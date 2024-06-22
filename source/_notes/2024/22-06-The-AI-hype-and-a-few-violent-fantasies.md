@@ -7,7 +7,7 @@ rel:
   url: https://ludic.mataroa.blog/blog/i-will-fucking-piledrive-you-if-you-mention-ai-again/
 syndication: 
 - host: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/112662486449683827
 ---
 I've been in IT too long not to be sceptical about the many hypes I've come across so far. This includes the current madness surrounding #ChatGPT and its peers. 
 
