@@ -18,7 +18,14 @@ related:
   - First-of-May
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112666894180695933
+  - host: Pixelfed
+    url: https://pixelfed.social/i/web/post/710531961491491984
+    title: Part 1
+  - host: Pixelfed
+    url: https://pixelfed.social/i/web/post/710532301957844299
+    title: Part 2
+  
 ---
 
 June is currently quite warm, but it was generally too wet. All over Europe, not just in Germany, where Thomas and I live. A few days of sunshine in a row without thunderstorms or anything like that would be really nice. But that doesn't stop Thomas from continuing to work on his garden and the results have probably benefited from all the water. It's already been view weeks since I last crawled through the greenery with my camera. Today it's overcast again, but I think the photos for the [**Thomas Garden 2024**](/series/thomas-garden/) series turned out well anyway.
