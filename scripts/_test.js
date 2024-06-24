@@ -8,7 +8,9 @@ hexo.on('ready', function(){
 
 hexo.on('generateBefore', function(){
   log.info(red(">>> generateBefore ---------------------------------------------"));
-  // console.log(this);
+  // console.log(this.pages);
+  // console.log(this.locals.get("pages"));
+  // console.log(this.locals.get("posts"));
 });
 
 hexo.extend.filter.register('before_generate', function() {

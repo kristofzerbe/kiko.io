@@ -23,7 +23,7 @@ hexo.extend.generator.register("index", function (locals) {
   const items = [...locals.posts.data, ...locals.notes];
 
   // Sort over all by date ascending -> date|updated: Moment<...>
-  //TODO: Consider UPDATED
+  //TODO: Consider UPDATED ?
   items.sort((a, b) => a.date.diff(b.date)).reverse();
 
   const paginationDir = config.pagination_dir || 'page';

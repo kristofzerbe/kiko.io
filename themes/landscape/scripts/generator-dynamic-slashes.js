@@ -5,24 +5,15 @@ const fs = require('hexo-fs');
 const front = require('hexo-front-matter');
 
 hexo.extend.generator.register("dynamic-slashes", async function(locals) {
-  let config = this.config;
-
   log.info("Generating Dynamic Page " + magenta("SLASHES") + " ...");
 
-  let page = {};
-  page.name = "slashes";
+  const config = this.config;
 
-  // Get MD data
-  const mdSource = path.join(config.source_dir, "_dynamic", page.name + ".md");
-  const md = fs.readFileSync(mdSource);
-  let fm = front.parse(md);
-  page = {...page, ...fm};
-
-  // Convert Markdown content into HTML
-  page.content = hexo.render.renderSync({ text: page._content, engine: 'markdown' });
+  let page = locals.dynamic.slashes;
 
   page.items = [];
   
+  // TODO: Outsource to theme.config
   page.items.push(getFileInfo("/Search", path.join(config.source_dir, "_dynamic", "search.md")));
   page.items.push(getFileInfo("/Feeds", path.join(config.source_dir, "_dynamic", "feeds.md")));
   page.items.push(getFileInfo("/About", path.join(config.source_dir, "_dynamic", "about.md")));

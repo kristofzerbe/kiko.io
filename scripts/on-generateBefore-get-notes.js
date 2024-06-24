@@ -6,10 +6,10 @@ const front = require("hexo-front-matter");
 const moment = require("moment");
 const { getDataFromCardlinkCodeBlock, compileHandlebar } = require("../lib/tools.cjs");
 
-hexo.on('ready', function() {
-  let config = this.config;
+hexo.on('generateBefore', function() {
+  log.info("Getting " + magenta("NOTES") + " ...");
 
-  log.info("Getting Notes");
+  const config = this.config;
 
   let noteItems = [];
 

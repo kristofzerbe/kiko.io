@@ -6,8 +6,15 @@ const front = require('hexo-front-matter');
 const axios = require('axios');
 const { isInternetAvailable, InternetAvailabilityService } = require('is-internet-available');
 
+//TODO: Switch from Trello to Obsidian
+//TODO: Extract to ON-READY-GET-...
 hexo.extend.generator.register("dynamic-trello", async function(locals) {
-  let config = this.config;
+  const config = this.config;
+
+  const helpers = Object.keys(hexo.extend.helper.store).reduce((result, name) => {
+    result[name] = hexo.extend.helper.get(name).bind({ ...hexo, page: {} });
+    return result;
+  }, {});
 
   isInternetAvailable({ authority: 'https://trello.com' }).then(function(status) {
     if(status === false) { 
@@ -46,6 +53,7 @@ hexo.extend.generator.register("dynamic-trello", async function(locals) {
 
           // Convert Markdown content into HTML
           page.content = hexo.render.renderSync({ text: page._content, engine: 'markdown' });
+          page.updated = helpers.moment();
 
           // Get list id to filter cards
           let list = json.lists.filter(l => {

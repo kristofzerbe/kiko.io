@@ -1,50 +1,15 @@
 const log = require('hexo-log')({ debug: false, silent: false });
 const { magenta, blue } = require('chalk');
 const path = require('path');
-const fs = require('hexo-fs');
-const front = require('hexo-front-matter');
 const axios = require('axios');
 const feed2json = require('feed2json');
 
 hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
-  let config = this.config;
-
   log.info("Generating Dynamic Page " + magenta("BLOGROLL") + " ...");
 
+  let page = locals.dynamic.blogroll;
 
-  let result = [];
   let promises = [];
-
-  let page = {};
-  page.name = "blogroll";
-
-  // Get MD data
-  const mdSource = path.join(config.source_dir, "_dynamic", page.name + ".md");
-  const md = fs.readFileSync(mdSource);
-  let fm = front.parse(md);
-  page = {...page, ...fm};
-
-  let content = page._content.replace("{% generation_date %}", new Date(Date.now()).toLocaleString('en-GB', { year:"numeric", month:"long", day:"numeric"}));
-  page.content = hexo.render.renderSync({ text: content, engine: 'markdown' });
-
-  page.items = [];
-
-  // Get Blogroll data
-  const mdBlogroll = path.join(config.data_dir, "21.13 Blogroll.md");
-  const blogroll = fs.readFileSync(mdBlogroll);
-  const regexp = /```cardlink\n(.*?)\n```/gs
-  const matches = blogroll.matchAll(regexp);
-  for (const match of matches) { 
-
-    // convert blog's cardlink to Frontmatter for parsing
-    let blog = match[0].replace("```cardlink\n", "---\n").replace("\n```", "\n---"); //.replace(/\r?\n|\r/g, ",\n");
-    let fmBlog = front.parse(blog);
-    delete fmBlog._content;
-
-    fmBlog.favicon = config.favicon_service_url.replace("{URL}", fmBlog.url);
-
-    page.items.push(fmBlog);
-  }
 
   // Get latest post for every feed
   page.items.forEach(item => {
@@ -76,6 +41,8 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
     }));
   });
 
+  let result = [];
+
   // Resolve all promises
   return Promise.all(promises).then(function() {
 
@@ -87,10 +54,9 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
       layout: "blogroll"
     });
 
-    //TODO: Render OPML by template and add to sesult
+    //TODO: Render OPML by template and add to result
 
     return result;
-
   });
 
 });

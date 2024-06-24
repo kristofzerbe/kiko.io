@@ -1,6 +1,7 @@
 ---
 title: Slashes
 date: 2024-05-27 14:07:55
+updated: 2024-05-30 14:38:52
 permalink: /slashes
 photograph:
   file: $22-08-Bretagne-Jersey-1408.jpg

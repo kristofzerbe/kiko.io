@@ -1,30 +1,17 @@
 const log = require('hexo-log')({ debug: false, silent: false });
 const { magenta } = require('chalk');
 const path = require('path');
-const fs = require('hexo-fs');
-const front = require('hexo-front-matter');
 
 hexo.extend.generator.register("dynamic-feeds", async function(locals) {
-  let config = this.config;
-
   log.info("Generating Dynamic Page " + magenta("FEEDS") + " ...");
 
-  let page = {};
-  page.name = "feeds";
+  const config = this.config;
 
-  // Get MD data
-  const mdSource = path.join(config.source_dir, "_dynamic", page.name + ".md");
-  const md = fs.readFileSync(mdSource);
-  let fm = front.parse(md);
-  page = {...page, ...fm};
-
-  // Convert Markdown content into HTML
-  page.content = hexo.render.renderSync({ text: page._content, engine: 'markdown' }); 
+  let page = locals.dynamic.feeds;
   
   // Workaround for not working tag plugin 'feed_microformat' in feeds.md
   // similar to generator-feed-custom.js 
   // ======================================================================================
-  //TODO: ??? Merge with Notes like in generator-feed-custom.js ?
   const publishedPosts = locals.posts
     .filter((post) => post.draft !== true)
     .filter((post) => post.published === undefined || post.published === true);
@@ -58,6 +45,8 @@ hexo.extend.generator.register("dynamic-feeds", async function(locals) {
     let dateCreated = new Date(post.date).toISOString();
     let dateUpdated = new Date(post.updated).toISOString();
     let updated = (dateCreated !== dateUpdated) ? `, <time class="dt-updated" datetime="${dateUpdated}">Updated: ${dateUpdated.substring(0,10)}</time>` : "";
+    
+    //TODO: outsource to handlebars template
     let item = `
       <div class="h-entry">
         <details>
@@ -80,6 +69,7 @@ hexo.extend.generator.register("dynamic-feeds", async function(locals) {
     list += item;
   });
 
+  //TODO: outsource to handlebars template
   let element = `
     <div class="h-feed">
       <data class="p-name" value="${config.title} HTML Microformats Feed"></data>
