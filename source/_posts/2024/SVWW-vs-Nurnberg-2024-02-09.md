@@ -5,7 +5,7 @@ subtitle: A game among friends
 date: 2024-02-12 16:05:44
 photograph:
   file: PXL_20240209_172706114.jpg
-  name: SVWW vs Nürnberg @ 2024-02-09
+  _name: SVWW vs Nürnberg @ 2024-02-09
   socialmedia: /static/images/social-media/SVWW-vs-Nurnberg-2024-02-09.png
 series: SV Wehen Wiesbaden
 categories:

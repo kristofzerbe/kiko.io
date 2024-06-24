@@ -5,7 +5,7 @@ subtitle: My first home game in this season
 date: 2023-08-19 18:33:00
 photograph:
   file: PXL_20230818_162748966.jpg
-  name: SVWW vs Karlsruhe @ 2023-08-18
+  _name: SVWW vs Karlsruhe @ 2023-08-18
   socialmedia: /static/images/social-media/SVWW-vs-Karlsruhe-2023-08-18.png
 series: SV Wehen Wiesbaden
 categories:

@@ -5,7 +5,7 @@ subtitle: A wild game, another defeat
 date: 2024-04-29 09:32:07
 photograph:
   file: PXL_20240428_112740381.RAW.jpg
-  name: SVWW vs Fürth @ 2024-04-28
+  _name: SVWW vs Fürth @ 2024-04-28
   socialmedia: /static/images/social-media/SVWW-vs-Furth-2024-04-28.png
 series: SV Wehen Wiesbaden
 categories:

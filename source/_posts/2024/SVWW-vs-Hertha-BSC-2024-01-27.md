@@ -5,7 +5,7 @@ subtitle: First home game this year ... and another win
 date: 2024-01-28 13:04:17
 photograph:
   file: PXL_20240127_115652902.jpg
-  name: SVWW vs Hertha BSC @ 2024-01-27
+  _name: SVWW vs Hertha BSC @ 2024-01-27
   socialmedia: /static/images/social-media/SVWW-vs-Hertha-BSC-2024-01-27.png
 series: SV Wehen Wiesbaden
 categories:

@@ -5,7 +5,7 @@ subtitle: An odyssey and a defeat
 date: 2024-02-24 15:36:07
 photograph:
   file: PXL_20240223_172728706.jpg
-  name: SVWW vs Paderborn @ 2024-02-23
+  _name: SVWW vs Paderborn @ 2024-02-23
   socialmedia: /static/images/social-media/SVWW-vs-Paderborn-2024-02-23.png
 series: SV Wehen Wiesbaden
 categories:

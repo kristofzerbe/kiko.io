@@ -5,7 +5,7 @@ subtitle: It's slowly getting tight
 date: 2024-04-17 16:07:40
 photograph:
   file: PXL_20240413_105725362.jpg
-  name: SVWW vs Düsseldorf @ 2024-04-13
+  _name: SVWW vs Düsseldorf @ 2024-04-13
   socialmedia: /static/images/social-media/SVWW-vs-Dusseldorf-2024-04-13.png
 series: SV Wehen Wiesbaden
 categories:

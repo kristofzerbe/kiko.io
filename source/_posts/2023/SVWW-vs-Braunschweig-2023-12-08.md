@@ -5,7 +5,7 @@ subtitle: Third defeat in a row, this time at home
 date: 2023-12-10 17:15:16
 photograph:
   file: PXL_20231208_172706390.jpg
-  name: SVWW vs Braunschweig @ 2023-12-08
+  _name: SVWW vs Braunschweig @ 2023-12-08
   socialmedia: /static/images/social-media/SVWW-vs-Braunschweig-2023-12-08.png
 series: SV Wehen Wiesbaden
 categories:
