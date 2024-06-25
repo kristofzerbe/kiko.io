@@ -3,7 +3,7 @@ const { magenta } = require('chalk');
 const path = require('path');
 const fs = require('hexo-fs');
 const front = require('hexo-front-matter');
-const { getMD, getHelpers } = require("../lib/tools.cjs");
+const { getMD, updateMDField } = require("../lib/tools.cjs");
 
 const _rootDir = hexo.source_dir.replace("source", "");
 
@@ -11,7 +11,6 @@ hexo.on('generateBefore', function() {
   log.info("Getting Dynamic Page " + magenta("PHOTOS") + " ...");
 
   const config = this.config;
-  const helpers = getHelpers(hexo);
 
   let pages = {};
 
@@ -25,10 +24,21 @@ hexo.on('generateBefore', function() {
   let pAnything = getAnythingPagePhotos();
   let pNotes = getNotesPhotos();
 
+  let photos = [...pHero, ...pPool, ...pShed, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes]
+    .filter(p => (p.name)) //filter out all without photo name
+    .sort((a, b) => a.key.localeCompare(b.key));
+
+  let newestPhotoDate = new Date(Math.max(...photos.map(p => new Date(p.creationDateMeta))));
+// console.log(newestPhotoDate);
+
   // PHOTOS page -------------------------------------------
   let page = { name: "photos" };
-  page = getMD(hexo, path.join("_dynamic", page.name + ".md"), page);
-  page.updated = helpers.moment();
+  let mdPage = path.join("_dynamic", page.name + ".md");
+  page = getMD(hexo, mdPage, page);
+
+  if (newestPhotoDate > new Date(page.updated)) { 
+    page.updated = updateMDField(hexo, mdPage, "updated", newestPhotoDate);
+  }
 
   page.items = [...pHero, ...pPool, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes]
     .filter(p => (p.name)) //filter out all without photo name
@@ -38,10 +48,6 @@ hexo.on('generateBefore', function() {
 // console.log(page);
 
   // individual PHOTO pages -----------------------------------
-  let photos = [...pHero, ...pPool, ...pShed, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes]
-    .filter(p => (p.name)) //filter out all without photo name
-    .sort((a, b) => a.key.localeCompare(b.key));
-
   photos.forEach(photo => {
     photo.photograph = page.photograph;
     photo.title = "Photo " + photo.name;
@@ -49,14 +55,19 @@ hexo.on('generateBefore', function() {
     photo.slug = photo.key;
     photo.permalink = config.url + "/" + config.photo_dir + "/" + photo.key;
     photo.type = "photo";
-    photo.updated = helpers.moment();
+    //TODO: photo.updated = helpers.moment();
 
     pages["photo-" + photo.key] = photo;
   });
 
   // PHOTO MAP page -------------------------------------------
   let map = { name: "photos-map" };
-  page = getMD(hexo, path.join("_dynamic", map.name + ".md"), map);
+  let mdMap = path.join("_dynamic", map.name + ".md");
+  map = getMD(hexo, mdMap, map);
+
+  if (newestPhotoDate > new Date(map.updated)) { 
+    map.updated = updateMDField(hexo, mdMap, "updated", newestPhotoDate);
+  }
 
   let coordinates = {};
   let photoCount = 0;
@@ -121,8 +132,10 @@ function getHeroPhoto() {
   entry.pathTablet = "/" + path.join(config.photo_dir, "tablet", entry.file).replace(/\134/g,"/");
   entry.pathNormal = "/" + path.join(config.photo_dir, "normal", entry.file).replace(/\134/g,"/");
 
-  if (fs.existsSync(path.join(photoDir, "meta" , entry.key + ".json"))) {
-    entry.meta = JSON.parse(fs.readFileSync(path.join(photoDir, "meta" , entry.key + ".json")));
+  let metaFile = path.join(photoDir, "meta" , entry.key + ".json");
+  if (fs.existsSync(metaFile)) {    
+    entry.creationDateMeta = fs.statSync(metaFile).birthtime;
+    entry.meta = JSON.parse(fs.readFileSync(metaFile));
   }
 
   return [entry];  
@@ -142,18 +155,21 @@ function getPoolPhotos() {
 
   pool.forEach(entry => {
 
-    let meta;
-    if (fs.existsSync(path.join(poolDir, entry.key, "meta.json"))) {
-      meta = JSON.parse(fs.readFileSync(path.join(poolDir, entry.key, "meta.json")));
+    let metaFile = path.join(poolDir, entry.key, "meta.json");
+    let creationDateMeta, meta;
+    if (fs.existsSync(metaFile)) {
+      creationDateMeta = fs.statSync(metaFile).birthtime;
+      meta = JSON.parse(fs.readFileSync(metaFile));
     }
 
     entry.file = entry.key + ".jpg";
     entry.name = meta?.ObjectName;
-    entry.meta = meta;
+    entry.article = null;
     entry.pathMobile = "/" + path.join(config.pool_dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
     entry.pathTablet = "/" + path.join(config.pool_dir, entry.key, "tablet.jpg").replace(/\134/g,"/");
     entry.pathNormal = "/" + path.join(config.pool_dir, entry.key, "normal.jpg").replace(/\134/g,"/");
-    entry.article = null;
+    entry.creationDateMeta = creationDateMeta;
+    entry.meta = meta;
   });
 
   log.info("-> " + magenta(pool.length) + " pool photos");
@@ -173,18 +189,21 @@ function getShedPhotos() {
 
   shed.forEach(entry => {
 
-    let meta;
-    if (fs.existsSync(path.join(shedDir, entry.key, "meta.json"))) {
-      meta = JSON.parse(fs.readFileSync(path.join(shedDir, entry.key, "meta.json")));
+    let metaFile = path.join(shedDir, entry.key, "meta.json");
+    let creationDateMeta, meta;
+    if (fs.existsSync(metaFile)) {
+      creationDateMeta = fs.statSync(metaFile).birthtime;
+      meta = JSON.parse(fs.readFileSync(metaFile));
     }
 
     entry.file = entry.key + ".jpg";
     entry.name = entry.meta?.ObjectName ?? entry.key;
-    entry.meta = meta;
+    entry.article = null;
     entry.pathMobile = "/" + path.join(config.shed_dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
     entry.pathTablet = "/" + path.join(config.shed_dir, entry.key, "tablet.jpg").replace(/\134/g,"/");
     entry.pathNormal = "/" + path.join(config.shed_dir, entry.key, "normal.jpg").replace(/\134/g,"/");
-    entry.article = null;
+    entry.creationDateMeta = creationDateMeta;
+    entry.meta = meta;
   });
 
   log.info("-> " + magenta(shed.length) + " shed photos");
@@ -223,14 +242,6 @@ function getPostAndPagePhotos() {
 
     entry.key = entry.file.replace(".jpg", "");
 
-    if (fs.existsSync(path.join(metaDir, entry.key + ".json"))) {
-      entry.meta = JSON.parse(fs.readFileSync(path.join(metaDir, entry.key + ".json")));
-    }
-
-    entry.pathMobile = "/" + path.join(config.photo_dir, "mobile", entry.file).replace(/\134/g,"/");
-    entry.pathTablet = "/" + path.join(config.photo_dir, "tablet", entry.file).replace(/\134/g,"/");
-    entry.pathNormal = "/" + path.join(config.photo_dir, "normal", entry.file).replace(/\134/g,"/");
-
     let p = postsAndPages.find(p => (p && p.photographFile === entry.file));
     if (p) {
       entry.name = p.photographName;
@@ -240,6 +251,16 @@ function getPostAndPagePhotos() {
         subtitle: p.subTitle,
         url: "/" + p.path.replace("/index.html", "")
       };
+    }
+
+    entry.pathMobile = "/" + path.join(config.photo_dir, "mobile", entry.file).replace(/\134/g,"/");
+    entry.pathTablet = "/" + path.join(config.photo_dir, "tablet", entry.file).replace(/\134/g,"/");
+    entry.pathNormal = "/" + path.join(config.photo_dir, "normal", entry.file).replace(/\134/g,"/");
+
+    let metaFile = path.join(metaDir, entry.key + ".json");
+    if (fs.existsSync(metaFile)) {
+      entry.creationDateMeta = fs.statSync(metaFile).birthtime;
+      entry.meta = JSON.parse(fs.readFileSync(metaFile));
     }
 
   });
@@ -273,21 +294,23 @@ function getDraftPagePhotos() {
           status: "used",
           file: fm.photograph.file,
           name: fm.photograph.name,
-          pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
-          pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
-          pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
           article: {
             type: "draft",
             title: fm.title,
             subtitle: fm.subTitle,
             url: fm.permalink
-          }
+          },
+          pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
+          pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
+          pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/")
         };
 
-        if (fs.existsSync(path.join(metaDir, entry.key + ".json"))) {
-          entry.meta = JSON.parse(fs.readFileSync(path.join(metaDir, entry.key + ".json")));
+        let metaFile = path.join(metaDir, entry.key + ".json");
+        if (fs.existsSync(metaFile)) {
+          entry.creationDateMeta = fs.statSync(metaFile).birthtime;
+          entry.meta = JSON.parse(fs.readFileSync(metaFile));
         }
-
+    
         used.push(entry);
       }
       return used;
@@ -319,19 +342,21 @@ function getDynamicPagePhotos() {
           status: "used",
           file: fm.photograph.file,
           name: fm.photograph.name,
-          pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
-          pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
-          pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
           article: {
             type: "dynamic",
             title: fm.title,
             subtitle: fm.subTitle,
             url: fm.permalink
-          }
+          },
+          pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
+          pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
+          pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/")
         };
 
-        if (fs.existsSync(path.join(metaDir, entry.key + ".json"))) {
-          entry.meta = JSON.parse(fs.readFileSync(path.join(metaDir, entry.key + ".json")));
+        let metaFile = path.join(metaDir, entry.key + ".json");
+        if (fs.existsSync(metaFile)) {
+          entry.creationDateMeta = fs.statSync(metaFile).birthtime;
+          entry.meta = JSON.parse(fs.readFileSync(metaFile));
         }
 
         used.push(entry);
@@ -374,21 +399,23 @@ function getAnythingPagePhotos() {
               status: "used",
               file: fm.photograph.file,
               name: fm.photograph.name,
-              pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
-              pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
-              pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
               article: {
                 type: "anything",
                 title: fm.title,
                 subtitle: fm.subTitle,
                 url: fm.permalink
-              }
+              },
+              pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
+              pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
+              pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/")
             };
     
-            if (fs.existsSync(path.join(metaDir, entry.key + ".json"))) {
-              entry.meta = JSON.parse(fs.readFileSync(path.join(metaDir, entry.key + ".json")));
+            let metaFile = path.join(metaDir, entry.key + ".json");
+            if (fs.existsSync(metaFile)) {
+              entry.creationDateMeta = fs.statSync(metaFile).birthtime;
+              entry.meta = JSON.parse(fs.readFileSync(metaFile));
             }
-    
+
             used.push(entry);
           }    
         });
@@ -425,19 +452,21 @@ function getNotesPhotos() {
             status: "used",
             file: fm.photograph.file,
             name: fm.photograph.name,
-            pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
-            pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
-            pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
             article: {
               type: "notes",
               title: fm.title + " " + dir,
               url: "/notes/" + dir
-            }
+            },
+            pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
+            pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
+            pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/")
           };
 
-          if (fs.existsSync(path.join(metaDir, entry.key + ".json"))) {
-            entry.meta = JSON.parse(fs.readFileSync(path.join(metaDir, entry.key + ".json")));
-          }  
+          let metaFile = path.join(metaDir, entry.key + ".json");
+          if (fs.existsSync(metaFile)) {
+            entry.creationDateMeta = fs.statSync(metaFile).birthtime;
+            entry.meta = JSON.parse(fs.readFileSync(metaFile));
+          }
 
           used.push(entry);
         }
