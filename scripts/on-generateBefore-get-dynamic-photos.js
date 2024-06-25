@@ -56,7 +56,8 @@ hexo.on('generateBefore', function() {
 
   // PHOTO MAP page -------------------------------------------
   let map = { name: "photos-map" };
-  page = getMD(hexo, path.join("_dynamic", map.name + ".md"), map);
+  map = getMD(hexo, path.join("_dynamic", map.name + ".md"), map);
+  map.updated = helpers.moment();
 
   let coordinates = {};
   let photoCount = 0;
