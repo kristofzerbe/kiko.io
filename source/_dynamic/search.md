@@ -1,6 +1,7 @@
 ---
 title: Search
 date: 2023-01-16 16:37:00
+updated: 
 permalink: /search
 photograph:
   file: $D702858.jpg

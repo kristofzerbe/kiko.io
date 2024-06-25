@@ -1,24 +1,34 @@
 const log = require('hexo-log')({ debug: false, silent: false });
-const { magenta, blue } = require('chalk');
+const { magenta } = require('chalk');
 const path = require('path');
 const fs = require('hexo-fs');
 const front = require('hexo-front-matter');
-const { getMD, getHelpers } = require("../lib/tools.cjs");
+const { getMD, updateMDField } = require("../lib/tools.cjs");
+
+const _rootDir = hexo.source_dir.replace("source", "");
 
 hexo.on('generateBefore', function() {
   log.info("Getting Dynamic Page " + magenta("BLOGROLL") + " ...");
 
   const config = this.config;
-  const helpers = getHelpers(hexo);
+
+  const mdBlogroll = path.join(_rootDir, config.data_dir, "21.13 Blogroll.md");
+  console.log(mdBlogroll);
 
   let page = { name: "blogroll" };
-  page = getMD(hexo, path.join("_dynamic", page.name + ".md"), page);
-  page.updated = helpers.moment();
+  const mdPage = path.join("_dynamic", page.name + ".md");
+  page = getMD(hexo, mdPage, page);
+
+  let blogrollUpdated = fs.statSync(mdBlogroll).mtime; // modified time
+  console.log(blogrollUpdated);
+  if (!page.updated || blogrollUpdated > new Date(page.updated)) {
+    console.log(new Date(page.updated));
+    page.updated = updateMDField(hexo, mdPage, "updated", blogrollUpdated);
+  }
 
   page.items = [];
 
   // Get Blogroll data
-  const mdBlogroll = path.join(config.data_dir, "21.13 Blogroll.md");
   const blogroll = fs.readFileSync(mdBlogroll);
   const regexp = /```cardlink\n(.*?)\n```/gs
   const matches = blogroll.matchAll(regexp);

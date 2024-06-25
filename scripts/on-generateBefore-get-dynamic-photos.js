@@ -36,7 +36,7 @@ hexo.on('generateBefore', function() {
   let mdPage = path.join("_dynamic", page.name + ".md");
   page = getMD(hexo, mdPage, page);
 
-  if (newestPhotoDate > new Date(page.updated)) { 
+  if (!page.updated || newestPhotoDate > new Date(page.updated)) { 
     page.updated = updateMDField(hexo, mdPage, "updated", newestPhotoDate);
   }
 
@@ -55,7 +55,10 @@ hexo.on('generateBefore', function() {
     photo.slug = photo.key;
     photo.permalink = config.url + "/" + config.photo_dir + "/" + photo.key;
     photo.type = "photo";
-    //TODO: photo.updated = helpers.moment();
+
+    if (photo.article && photo.article.date > new Date(photo.creationDateMeta)) {
+      photo.updated = photo.article.date;
+    }
 
     pages["photo-" + photo.key] = photo;
   });
@@ -65,7 +68,7 @@ hexo.on('generateBefore', function() {
   let mdMap = path.join("_dynamic", map.name + ".md");
   map = getMD(hexo, mdMap, map);
 
-  if (newestPhotoDate > new Date(map.updated)) { 
+  if (!map.updated || newestPhotoDate > new Date(map.updated)) { 
     map.updated = updateMDField(hexo, mdMap, "updated", newestPhotoDate);
   }
 
@@ -244,14 +247,15 @@ function getPostAndPagePhotos() {
 
     entry.key = entry.file.replace(".jpg", "");
 
-    let p = postsAndPages.find(p => (p && p.photographFile === entry.file));
-    if (p) {
-      entry.name = p.photographName;
+    let post = postsAndPages.find(p => (p && p.photographFile === entry.file));
+    if (post) {
+      entry.name = post.photographName;
       entry.article = {
-        type: p.layout,
-        title: p.title,
-        subtitle: p.subTitle,
-        url: "/" + p.path.replace("/index.html", "")
+        type: post.layout,
+        date: post.date,
+        title: post.title,
+        subtitle: post.subTitle,
+        url: "/" + post.path.replace("/index.html", "")
       };
     }
 
@@ -298,6 +302,7 @@ function getDraftPagePhotos() {
           name: fm.photograph.name,
           article: {
             type: "draft",
+            date: fm.date,
             title: fm.title,
             subtitle: fm.subTitle,
             url: fm.permalink
@@ -346,6 +351,7 @@ function getDynamicPagePhotos() {
           name: fm.photograph.name,
           article: {
             type: "dynamic",
+            date: fm.date,
             title: fm.title,
             subtitle: fm.subTitle,
             url: fm.permalink
@@ -403,6 +409,7 @@ function getAnythingPagePhotos() {
               name: fm.photograph.name,
               article: {
                 type: "anything",
+                date: fm.date,
                 title: fm.title,
                 subtitle: fm.subTitle,
                 url: fm.permalink
@@ -456,6 +463,7 @@ function getNotesPhotos() {
             name: fm.photograph.name,
             article: {
               type: "notes",
+              date: fm.date,
               title: fm.title + " " + dir,
               url: "/notes/" + dir
             },

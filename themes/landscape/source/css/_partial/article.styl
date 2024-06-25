@@ -665,84 +665,88 @@
       background-repeat: no-repeat
       background-position: 1rem 0.5rem
       text-decoration: none
+      color: color-link
+      /[data-theme="dark"] &
+        color: dark-color-link
       span
         border-bottom: transparent 1px solid
         &:hover
-          border-bottom: var(--color-accent) 1px solid
+          border-bottom: color-link 1px solid
           /[data-theme="dark"] &
-            border-bottom: var(--dark-color-accent) 1px solid
+            border-bottom: dark-color-link 1px solid
       &.host-500px
-        color: color-500px
+        // color: color-500px
         background-image: url(/images/500px.svg)
         background-size: 16px
         background-position: 14px 6px
         /[data-theme="dark"] &
           filter: invert(0.75)
-        &:hover
-          border-bottom-color: color-500px
+        // span
+        //   &:hover
+        //     border-bottom-color: color-500px
       &.host-flickr
-        color: color-flickr
+        // color: color-flickr
         background-image: url(/images/flickr.svg)
         background-size: 20px
         background-position: 11px 5px
-        span
-          &:hover
-            border-bottom-color: color-flickr
+        // span
+        //   &:hover
+        //     border-bottom-color: color-flickr
       &.host-pixelfed
-        color: color-pixelfed
+        // color: color-pixelfed
         background-image: url(/images/pixelfed.svg)
         background-size: 16px
         background-position: 16px 6px
         /[data-theme="dark"] &
           background-image: url(/images/pixelfed_invert.svg)
           color: #aaa
-        span
-          &:hover
-            border-bottom-color: color-pixelfed
+        // span
+        //   &:hover
+        //     border-bottom-color: color-pixelfed
       &.host-unsplash
-        color: color-unsplash
+        // color: color-unsplash
         background-image: url(/images/unsplash.svg)
         background-size: 21px
         background-position: 14px 3px
         /[data-theme="dark"] &
           filter: invert(0.75)
-        span
-          &:hover
-            border-bottom-color: color-unsplash
+        // span
+        //   &:hover
+        //     border-bottom-color: color-unsplash
       &.host-twitter
-        color: color-twitter
+        // color: color-twitter
         background-image: url(/images/twitter.svg)
         background-size: 16px
         background-position: 14px 8px
-        span
-          &:hover
-            border-bottom-color: color-twitter
+        // span
+        //   &:hover
+        //     border-bottom-color: color-twitter
       &.host-mastodon
-        color: color-mastodon
+        // color: color-mastodon
         background-image: url(/images/mastodon.svg)
         background-size: 16px
         background-position: 14px 7px
-        span
-          &:hover
-            border-bottom-color: color-mastodon
+        // span
+        //   &:hover
+        //     border-bottom-color: color-mastodon
       &.host-indienews
-        color: color-indieweb
+        // color: color-indieweb
         background-image: url(/images/indieweb.svg)
         background-size: 20px
         background-position: 12px 4px
-        span
-          &:hover
-            border-bottom-color: color-indieweb
+        // span
+        //   &:hover
+        //     border-bottom-color: color-indieweb
       &.host-devto
-        color: color-devto
+        // color: color-devto
         background-image: url(/images/devto.svg)
         background-size: 16px
         background-position: 13px 5px
         /[data-theme="dark"] &
           filter: invert(0.75)
-        span
-          &:hover
-            border-bottom-color: color-devto
+        // span
+        //   &:hover
+        //     border-bottom-color: color-devto
 
 .article-interaction
   @extend $base-style

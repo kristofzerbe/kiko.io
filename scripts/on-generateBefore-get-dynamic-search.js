@@ -10,7 +10,6 @@ hexo.on('generateBefore', function() {
 
   let page = { name: "search" };
   page = getMD(hexo, path.join("_dynamic", page.name + ".md"), page);
-  page.updated = helpers.moment();
 
   let dyn = {...hexo.locals.get('dynamic'), ...{ search: page }};
   hexo.locals.set('dynamic', dyn);
