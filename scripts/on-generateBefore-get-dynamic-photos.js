@@ -85,6 +85,8 @@ hexo.on('generateBefore', function() {
     return coordinates[key];
   }).sort((a,b) => (a.latlng > b.latlng) ? 1 : ((b.latlng > a.latlng) ? -1 : 0));
 
+  map.content = map.content.replace("{{photo.count}}", photoCount);
+
   pages.photomap = map;
 
   // ------------------------------------------------------------
