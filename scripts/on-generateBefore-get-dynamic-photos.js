@@ -271,13 +271,22 @@ function getPostAndPagePhotos() {
         type: post.layout,
         date: post.date,
         title: post.title,
-        subtitle: post.subTitle,
-        url: (post.layout == "post") ? "/" + post.path.replace("/index.html", "") : post.path.replace(".html", "")
+        subtitle: post.subTitle
       };
+
+      let url = post.path.replace("/index.html", ""); // for posts und archives
+      if (post.layout == "page") {
+        url = `/${url}`.replace("//", "/").replace(".html", ""); // for archives + other pages
+      }
+      entry.article.url= url;
+
       // console.log(post.layout + " | " + post.path);
-      // if (post.layout == "page") {
-      //   console.log(entry.article);
-      // }
+      if (post.layout == "page") {
+        console.log("===================");
+        console.log(post);
+        console.log("-----------");
+        console.log(entry.article);
+      }
     }
 
     entry.pathMobile = "/" + path.join(config.photo_dir, "mobile", entry.file).replace(/\134/g,"/");
