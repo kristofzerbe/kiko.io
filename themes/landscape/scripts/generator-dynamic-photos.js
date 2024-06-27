@@ -24,7 +24,7 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
       result.push({
         name: photo.key,
         data: photo,
-        path: path.join(config.photo_dir, photo.key, "index.html"),
+        path: path.join(config.photo_dir, photo.route, "index.html"),
         layout: "photo"
       });
     };

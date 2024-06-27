@@ -13,16 +13,13 @@ hexo.on('generateBefore', function() {
   const config = this.config;
 
   const mdBlogroll = path.join(_rootDir, config.data_dir, "21.13 Blogroll.md");
-  console.log(mdBlogroll);
 
   let page = { name: "blogroll" };
   const mdPage = path.join("_dynamic", page.name + ".md");
   page = getMD(hexo, mdPage, page);
 
   let blogrollUpdated = fs.statSync(mdBlogroll).mtime; // modified time
-  console.log(blogrollUpdated);
   if (!page.updated || blogrollUpdated > new Date(page.updated)) {
-    console.log(new Date(page.updated));
     page.updated = updateMDField(hexo, mdPage, "updated", blogrollUpdated);
   }
 

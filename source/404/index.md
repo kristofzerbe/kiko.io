@@ -1,7 +1,7 @@
 ---
 title: 404
 date: 2020-09-23 12:31:40
-permalink: 404.html
+permalink: /404
 photograph: 
   file: $D50_5119.jpg
   name: Brake
