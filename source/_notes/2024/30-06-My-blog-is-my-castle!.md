@@ -7,13 +7,11 @@ rel:
   url: https://hamatti.org/posts/why-personal-site-rather-than-social-media-presence/
 syndication: 
 - host: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/112707451745098035
 ---
 Juha-Matti answers my question of why I'm doing this blog at all. On the one hand, because I am technically able to do it and it is incredible fun **(Playground)** and on the other hand, because I have had the feeling of being utilized for long enough (**Ownership** and **No Middle Man**). 
 
 But the motivation that is becoming more and more important to me is to create MY OWN space, my home ground, my digital centre on the web (**Home Address**), where I decide on the **Permanence** myself, even if I know that I can't influence all the surrounding conditions and am ultimately dependent on some company to keep my blog alive and accessible.
-
-#blogging
 
 ```cardlink
 url: https://hamatti.org/posts/why-personal-site-rather-than-social-media-presence/
