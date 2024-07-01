@@ -281,12 +281,12 @@ function getPostAndPagePhotos() {
       entry.article.url= url;
 
       // console.log(post.layout + " | " + post.path);
-      if (post.layout == "page") {
-        console.log("===================");
-        console.log(post);
-        console.log("-----------");
-        console.log(entry.article);
-      }
+      // if (post.layout == "page") {
+      //   console.log("===================");
+      //   console.log(post);
+      //   console.log("-----------");
+      //   console.log(entry.article);
+      // }
     }
 
     entry.pathMobile = "/" + path.join(config.photo_dir, "mobile", entry.file).replace(/\134/g,"/");

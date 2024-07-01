@@ -36,6 +36,8 @@
               <span><%= new Date(item.latest_post.date_published).toLocaleString('en-GB', { year:"numeric", month:"long", day:"numeric"}) ?? "---" %></span>:
             </small>
             <a href="<%= item.latest_post.url %>"><%= item.latest_post.title %></a>
+          <% } else { %>
+            <small class="label">Failed to read the feed. Tryin' again tomorrow...</small>
           <% } %>
         </div>
       </div>
