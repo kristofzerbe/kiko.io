@@ -190,49 +190,6 @@ anything:
     - variable: project
       path: projects
 
-# JSON Content : https://github.com/alexbruno/hexo-generator-json-content
-jsonContent:
-  meta: true
-  drafts: false
-  file: content.json
-  keywords: english
-  dateFormat: YYYY-MM-DD
-  pages:
-    title: true
-    slug: false
-    date: true
-    updated: true
-    comments: false
-    path: true
-    link: false
-    permalink: true
-    excerpt: true
-    keywords: false
-    text: true
-    raw: false
-    content: false
-    author: true
-  posts:
-    title: true
-    subtitle: true
-    series: true
-    part: true
-    slug: false
-    date: true
-    updated: true
-    comments: false
-    path: true
-    link: false
-    permalink: true
-    excerpt: true
-    keywords: true
-    text: true
-    raw: false
-    content: false
-    author: true
-    categories: true
-    tags: true
-
 # Feed: WAS! https://github.com/sergeyzwezdin/hexo-feed
 # uninstalled in favor of custom feed generators
 feed:
@@ -284,10 +241,16 @@ feed:
     generator: false
     alternate_link: true
 
-# Sitemap File: https://github.com/hexojs/hexo-generator-sitemap
+# Blogroll
+blogroll:
+  data_file: "21.13 Blogroll.md"
+  opml_template: opml.handlebars
+  opml_path: blogroll.opml
+
+# Sitemap: WAS! https://github.com/hexojs/hexo-generator-sitemap
 sitemap:
   path: sitemap.xml
-  template: ./templates/sitemap.xml
+  template: sitemap.handlebars
 
 # Info API ... ERRORS
 # hexo_info_api:

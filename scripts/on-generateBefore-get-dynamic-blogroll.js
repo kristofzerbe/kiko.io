@@ -12,7 +12,7 @@ hexo.on('generateBefore', function() {
 
   const config = this.config;
 
-  const mdBlogroll = path.join(_rootDir, config.data_dir, "21.13 Blogroll.md");
+  const mdBlogroll = path.join(_rootDir, config.data_dir, config.blogroll.data_file);
 
   let page = { name: "blogroll" };
   const mdPage = path.join("_dynamic", page.name + ".md");

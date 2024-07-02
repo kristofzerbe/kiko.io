@@ -13,7 +13,7 @@ tags:
   - Euro2024
 related:
   - SVWW-vs-Regensburg-2024-05-28-Relegation
-  - Kaiserslautern-vs-SVWW-2024-04-20
+  - My-Hometown-My-Club
   - SGE-vs-HJK-2023-10-26
 syndication:
   - host: Mastodon

@@ -65,15 +65,19 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
     });
 
     //Render OPML by template and add to result
-    const opmlTemplate = path.join(_rootDir, config.template_dir, "opml.handlebars");
+    const opmlTemplate = path.join(_rootDir, config.template_dir, config.blogroll.opml_template);
     if (!fs.existsSync(opmlTemplate)) { throw "OPML Template file not found"; }
 
+    handlebars.registerHelper('toISOString', function(number) {
+      return number.toISOString()
+    })
+    
     const opmlSource = fs.readFileSync(opmlTemplate).toString('utf8');
     const opml = handlebars.compile(opmlSource);
     const opmlResult = opml(page);
 
     result.push({
-      path: "blogroll.opml",
+      path: config.blogroll.opml_path,
       data: opmlResult
     });
 

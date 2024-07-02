@@ -2,7 +2,11 @@
 <opml version="1.0">
 	<head>
 		<title>kiko.io's Blogroll</title>
-		<dateCreated>{{{updated}}}</dateCreated>
+		{{#if updated}}
+		<dateCreated>{{toISOString updated}}</dateCreated>
+		{{else}}
+		<dateCreated>{{toISOString date}}</dateCreated>
+		{{/if}}
 	</head>
 	<body>
     {{#each items}}

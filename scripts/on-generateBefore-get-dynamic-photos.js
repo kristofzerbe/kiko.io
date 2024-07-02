@@ -28,7 +28,7 @@ hexo.on('generateBefore', function() {
     .filter(p => (p.name)) //filter out all without photo name
     .sort((a, b) => a.key.localeCompare(b.key));
 
-  let newestPhotoDate = new Date(Math.max(...photos.map(p => new Date(p.creationDateMeta))));
+  let newestPhotoDate = new Date(Math.max(...photos.map(p => new Date(p.date))));
 // console.log(newestPhotoDate);
 
   // PHOTOS page -------------------------------------------
@@ -56,7 +56,7 @@ hexo.on('generateBefore', function() {
     photo.permalink = config.url + "/" + config.photo_dir + "/" + photo.key;
     photo.type = "photo";
 
-    if (photo.article && photo.article.date > new Date(photo.creationDateMeta)) {
+    if (photo.article && photo.article.date > new Date(photo.date)) {
       photo.updated = photo.article.date;
     }
 
@@ -98,7 +98,7 @@ hexo.on('generateBefore', function() {
     return coordinates[key];
   }).sort((a,b) => (a.latlng > b.latlng) ? 1 : ((b.latlng > a.latlng) ? -1 : 0));
 
-  map.content = map.content.replace("{{photo.count}}", photoCount);
+  map.content = map.content.replace("{% photo.count %}", photoCount);
 
   pages.photomap = map;
 
@@ -144,7 +144,7 @@ function getHeroPhoto() {
     pathMobile: "/" + path.join(config.photo_dir, "mobile", config.hero.file).replace(/\134/g,"/"),
     pathTablet: "/" + path.join(config.photo_dir, "tablet", config.hero.file).replace(/\134/g,"/"),
     pathNormal: "/" + path.join(config.photo_dir, "normal", config.hero.file).replace(/\134/g,"/"),
-    creationDateMeta: metaCreationDate,
+    date: metaCreationDate,
     meta: meta
   };
 
@@ -180,7 +180,7 @@ function getPoolPhotos() {
     entry.pathMobile = "/" + path.join(config.pool_dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
     entry.pathTablet = "/" + path.join(config.pool_dir, entry.key, "tablet.jpg").replace(/\134/g,"/");
     entry.pathNormal = "/" + path.join(config.pool_dir, entry.key, "normal.jpg").replace(/\134/g,"/");
-    entry.creationDateMeta = metaCreationDate;
+    entry.date = metaCreationDate;
     entry.meta = meta;
   });
 
@@ -215,7 +215,7 @@ function getShedPhotos() {
     entry.pathMobile = "/" + path.join(config.shed_dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
     entry.pathTablet = "/" + path.join(config.shed_dir, entry.key, "tablet.jpg").replace(/\134/g,"/");
     entry.pathNormal = "/" + path.join(config.shed_dir, entry.key, "normal.jpg").replace(/\134/g,"/");
-    entry.creationDateMeta = metaCreationDate;
+    entry.date = metaCreationDate;
     entry.meta = meta;
   });
 
@@ -292,7 +292,7 @@ function getPostAndPagePhotos() {
     entry.pathMobile = "/" + path.join(config.photo_dir, "mobile", entry.file).replace(/\134/g,"/");
     entry.pathTablet = "/" + path.join(config.photo_dir, "tablet", entry.file).replace(/\134/g,"/");
     entry.pathNormal = "/" + path.join(config.photo_dir, "normal", entry.file).replace(/\134/g,"/");
-    entry.creationDateMeta = metaCreationDate;
+    entry.date = metaCreationDate;
     entry.meta = meta;
 
   });
@@ -346,7 +346,7 @@ function getDraftPagePhotos() {
           pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
           pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
           pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
-          creationDateMeta: metaCreationDate,
+          date: metaCreationDate,
           meta: meta
         };
         
@@ -401,7 +401,7 @@ function getDynamicPagePhotos() {
           pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
           pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
           pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
-          creationDateMeta: metaCreationDate,
+          date: metaCreationDate,
           meta: meta
         };
 
@@ -466,7 +466,7 @@ function getAnythingPagePhotos() {
                 pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
                 pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
                 pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
-                creationDateMeta: metaCreationDate,
+                date: metaCreationDate,
                 meta: meta
               };
          
@@ -526,7 +526,7 @@ function getNotesPhotos() {
             pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
             pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
             pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
-            creationDateMeta: metaCreationDate,
+            date: metaCreationDate,
             meta: meta
           };
 
