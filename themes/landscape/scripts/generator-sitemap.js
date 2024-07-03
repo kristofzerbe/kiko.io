@@ -74,7 +74,7 @@ hexo.extend.generator.register("sitemap", async function(locals) {
 
 function get(entry) {
   return {
-    url: ensurePermaLink(hexo, entry.permalink),
+    url: ensurePermaLink(hexo, entry.permalink).replace("/index.html", "").replace(".html", ""),
     date: getNewestDateString(entry)
   }
 }
