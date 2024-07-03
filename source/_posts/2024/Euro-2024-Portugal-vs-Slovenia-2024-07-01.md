@@ -16,7 +16,7 @@ related:
   - SGE-vs-HJK-2023-10-26
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/112721578144616749
 ---
 
 {% match_grid "_POR_Portuguesa-de-Futebol" "3:0" "_SVN_Nogometna-zveza-Slovenije" %}
