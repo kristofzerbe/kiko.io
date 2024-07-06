@@ -26,7 +26,7 @@ Since the [forced demise](https://killedbygoogle.com/) of [Google Reader](https:
 
 My latest tinkering here on my blog is my [Blogroll](/blogroll), which I recently expanded to include a corresponding OPML file so that everyone can quickly import the feeds of the bloggers presented here into their reader in one go. Of course I did a little research on Google. Where else. About the OPML format itself, best practices, etc. and of course Aunt Google then showed me more content in the news that was about RSS feeds and the like. What else. Three cheers for machine learning and the I-know-What-You-Want-To-Read-Now algorithms.
 
-However, I was quite grateful to see a post from [Caschy](https://stadt-bremerhaven.de/read-you-rss-reader-fuer-android-open-source-kostenlos/) (German tech blog), as it was about a fairly new feed reader called **Read You** ... and I took a closer look at the thing.
+However, I was quite grateful to see a post from [Caschy](https://stadt-bremerhaven.de/read-you-rss-reader-fuer-android-open-source-kostenlos/) (German tech blog), as it was about a fairly new feed reader called [**Read You**](https://github.com/Ashinch/ReadYou) ... and I took a closer look at the thing.
 
 <!-- more -->
 
@@ -56,6 +56,15 @@ What is really impressive for such a new product is, that it already supports 25
 What I like most is the customisability of the UI in terms of fonts, alignment, borders and the like. The idea of pseudo-endless scrolling in the form of the "Pull to Switch Article" function is also fun and a wonderful shift away from classic left-right swiping.
 
 I think Ash and the notable number of 92 contributors are on the right path with **Read You** and a few more features and I'm considering switching over from Feedly completely.
+
+{% cardlink %}
+url: https://github.com/Ashinch/ReadYou
+title: "GitHub - Ashinch/ReadYou: An Android RSS reader presented in Material You style."
+description: "An Android RSS reader presented in Material You style. - Ashinch/ReadYou"
+host: github.com
+favicon: https://github.githubassets.com/favicons/favicon.svg
+image: https://repository-images.githubusercontent.com/464981831/c42423eb-77b8-4260-8d6f-c916f6c4df99
+{% endcardlink %}
 
 ---
 

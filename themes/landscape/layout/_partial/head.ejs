@@ -199,6 +199,7 @@
   <meta charset="utf-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="<%= config.meta_generator %>">
 
   <title><%= meta.title %></title>
   <meta name="author" content="<%= config.author %>">
@@ -248,8 +249,11 @@
   <% if (meta.description) { %>
   <meta property="og:description" content="<%= meta.description %>">
   <% } %>
+  <meta property="og:logo" content="<%= config.url + config.icon %>" />
   <meta property="og:image" content="<%= config.url + meta.imageUrl %>">
   <meta property="og:locale" content="en_US">
+
+  <meta property="fediverse:creator" content="@<%= config.mastodon.user %>@<%= config.mastodon.server %>" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
