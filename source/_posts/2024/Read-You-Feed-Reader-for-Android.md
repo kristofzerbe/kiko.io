@@ -19,10 +19,10 @@ related:
   - Handling-IPTC-metadata-on-Android-and-Windows
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112740972219391678
 ---
 
-Since the [forced demise](https://killedbygoogle.com/) of [Google Reader](https://en.wikipedia.org/wiki/Google_Reader) in 2013, I have been reading my subscribed feeds in [Feedly](https://feedly.com/). This reader is available as an Android app as well as a web version, but my reading habits are limited exclusively to my Pixel 8 smartphone and I'm actually quite happy with the range of functions and the UI of feedly, although I notice things in every app that could be done better.
+Since the [forced demise](https://killedbygoogle.com/) of [Google Reader](https://en.wikipedia.org/wiki/Google_Reader) in 2013, I have been reading my subscribed feeds in [Feedly](https://feedly.com/). This reader is available as an Android app as well as a web version, but my reading habits are limited exclusively to my Pixel 8 smartphone and I'm actually quite happy with the range of functions and the UI of Feedly, although I notice things in every app that could be done better.
 
 My latest tinkering here on my blog is my [Blogroll](/blogroll), which I recently expanded to include a corresponding OPML file so that everyone can quickly import the feeds of the bloggers presented here into their reader in one go. Of course I did a little research on Google. Where else. About the OPML format itself, best practices, etc. and of course Aunt Google then showed me more content in the news that was about RSS feeds and the like. What else. Three cheers for machine learning and the I-know-What-You-Want-To-Read-Now algorithms.
 
