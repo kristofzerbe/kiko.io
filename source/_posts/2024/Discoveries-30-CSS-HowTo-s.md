@@ -19,7 +19,7 @@ related:
   - Discoveries-27-JavaScript-Tools
 syndication:
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/112762023777510643
 ---
 
 CSS is and remains the tool that creates the visual magic on the web that we humans, as visual beings, cannot escape. Once again, here are 10 how-to&#39;s collected over the last few months that will make you want to start coding right away.
