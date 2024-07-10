@@ -1,6 +1,7 @@
 ---
 title: "#Link | Understanding OPFS"
 date: 2023-06-17
+type: link
 rel:
   verb: bookmark-of
   caption: "Das private Dateisystem des Ursprungs  |  Articles  |  web.dev"

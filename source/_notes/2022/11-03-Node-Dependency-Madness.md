@@ -1,6 +1,7 @@
 ---
 title: "Node Dependency Madness"
 date: 2022-12-03 17:47:00
+type: 
 syndication:
 - host: Mastodon
   url: https://indieweb.social/@kiko/109450865948421049

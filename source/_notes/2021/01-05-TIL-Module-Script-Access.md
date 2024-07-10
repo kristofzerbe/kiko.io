@@ -1,6 +1,7 @@
 ---
 title: "#TIL | Module Script Access"
 date: 2021-01-05 12:00:00
+type: til
 syndication: 
 ---
 

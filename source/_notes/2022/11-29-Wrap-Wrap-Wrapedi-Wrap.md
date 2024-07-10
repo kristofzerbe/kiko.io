@@ -1,6 +1,7 @@
 ---
 title: "Wrap Wrap Wrapedi-Wrap"
 date: 2022-11-29 07:45:00
+type: 
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/109426757955654512

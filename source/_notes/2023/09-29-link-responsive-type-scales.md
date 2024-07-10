@@ -1,6 +1,7 @@
 ---
 title: "#Link | Responsive type scales"
 date: 2023-09-29
+type: link
 rel:
   verb: like-of
   caption: "Responsive type scales with composable CSS utilities"

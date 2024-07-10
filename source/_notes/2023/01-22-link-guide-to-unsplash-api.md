@@ -1,6 +1,7 @@
 ---
 title: "#Link | Guide to Unsplash API"
 date: 2023-01-22
+type: link
 rel:
   verb: like-of
   caption: "A Beginner’s Guide to Unsplash API in JavaScript"

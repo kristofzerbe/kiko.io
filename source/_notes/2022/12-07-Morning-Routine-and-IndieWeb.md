@@ -1,6 +1,11 @@
 ---
 title: "Morning Routine and IndieWeb"
 date: 2022-12-07 09:40:00
+type: link
+rel:
+  verb: bookmark-of
+  caption: "granary.io"
+  url: https://granary.io/
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/109471776510837100 

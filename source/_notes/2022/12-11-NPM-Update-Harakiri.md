@@ -1,6 +1,7 @@
 ---
 title: "NPM Update Harakiri"
 date: 2022-12-11 14:55:00
+type: 
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/109495505530111802

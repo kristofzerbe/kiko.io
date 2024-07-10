@@ -1,6 +1,7 @@
 ---
-title: "#Link | Geogen 4, Surnames in Germany"
+title: "Geogen 4, Surnames in Germany"
 date: 2023-05-05
+type: link
 rel:
   verb: bookmark-of
   caption: "Geogen"

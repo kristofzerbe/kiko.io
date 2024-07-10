@@ -1,6 +1,7 @@
 ---
 title: "#TIL | CSS's :not([class]) selector"
 date: 2023-01-02 17:35:00
+type: til
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/109620622105567591

@@ -1,6 +1,7 @@
 ---
 title: "#TIL | CSS's :where()"
 date: 2022-01-29 12:00:00
+type: til
 syndication: 
 ---
 

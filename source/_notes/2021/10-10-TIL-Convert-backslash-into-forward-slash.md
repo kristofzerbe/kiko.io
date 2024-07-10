@@ -1,6 +1,7 @@
 ---
 title: "#TIL | Convert backslash into forward slash"
 date: 2021-10-10 12:00:00
+type: til
 syndication: 
 ---
 

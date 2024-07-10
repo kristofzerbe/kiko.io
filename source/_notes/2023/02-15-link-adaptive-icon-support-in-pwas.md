@@ -1,6 +1,7 @@
 ---
 title: "#Link | Adaptive icon support in PWAs with maskable icons"
 date: 2023-02-15
+type: link
 rel:
   verb: bookmark-of
   caption: "Adaptive icon support in PWAs with maskable icons  |  Articles  |  web.dev"

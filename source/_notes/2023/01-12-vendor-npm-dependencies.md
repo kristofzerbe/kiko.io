@@ -1,6 +1,7 @@
 ---
-title: "#Link | Vendor npm dependencies"
+title: "Vendor npm dependencies"
 date: 2023-01-12 08:20:00
+type: link
 rel:
   verb: like-of
   caption: "How to vendor npm dependencies"

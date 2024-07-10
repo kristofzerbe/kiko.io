@@ -1,6 +1,7 @@
 ---
 title: "#TIL | Avoid NPX install prompt"
 date: 2023-01-16
+type: til
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/109697950778319099

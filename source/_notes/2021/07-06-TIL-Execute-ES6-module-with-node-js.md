@@ -1,6 +1,7 @@
 ---
 title: "#TIL | Execute ES6 module with node.js"
 date: 2021-07-06 12:00:00
+type: til
 syndication: 
 ---
 

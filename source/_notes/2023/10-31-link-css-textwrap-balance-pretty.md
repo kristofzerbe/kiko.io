@@ -1,6 +1,7 @@
 ---
 title: "#Link | CSS text-wrap balanced and pretty"
 date: 2023-10-31
+type: link
 rel:
   verb: like-of
   caption: "When to use CSS text-wrap: balance; vs text-wrap: pretty; - Stephanie Stimac's Blog"

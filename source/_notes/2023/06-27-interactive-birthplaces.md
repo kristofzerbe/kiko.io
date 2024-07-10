@@ -1,6 +1,7 @@
 ---
-title: "#Link | Interactive Birthplaces"
+title: "Interactive Birthplaces"
 date: 2023-06-27
+type: link
 rel:
   verb: bookmark-of
   caption: "Notable people"

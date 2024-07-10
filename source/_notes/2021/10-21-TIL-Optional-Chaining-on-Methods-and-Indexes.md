@@ -1,6 +1,7 @@
 ---
 title: "#TIL | Optional Chaining on Methods and Indexes"
 date: 2021-10-21 12:00:00
+type: til
 syndication: 
 ---
 

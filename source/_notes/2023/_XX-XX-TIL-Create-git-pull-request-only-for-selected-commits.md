@@ -1,10 +1,11 @@
 ---
 title: "TIL | Create Git pull request only for selected commits"
 date: 2022-11-14 12:01:00
+type: til
 syndication: 
 - host: 
   url:  
-hide: true
+hidden: true
 ---
 
 https://poanchen.github.io/blog/2017/11/12/How-to-create-a-GitHub-pull-request-with-a-specific-commits

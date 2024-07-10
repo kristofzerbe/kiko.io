@@ -1,10 +1,11 @@
 ---
-title: "#Link | Typographic Hierarchy"
+title: "Typographic Hierarchy"
 date: 2023-02-05
+type: link
 rel:
   verb: like-of
-  caption: ""
-  url: 
+  caption: "Typographic Hierarchy in Print, Web & App Design - Pimp my Type"
+  url: https://pimpmytype.com/hierarchy/
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/109812150349497228

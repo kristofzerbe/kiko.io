@@ -1,11 +1,14 @@
 ---
 title: AI written Mastowall
 date: 2023-09-01
+type: link
+rel:
+  verb: bookmark-of
+  caption: "Mastowall"
+  url: https://github.com/rstockm/mastowall
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/110994589015920362
-photograph:
-  socialmedia: /static/images/social-media/ai-written-mastowall.png
 ---
 
 This morning I stumbled across a Mastodon post that was excited about a Twitterwall-like alternative for Mastodon: [**Mastowall**](https://github.com/rstockm/mastowall) from [@rstockm](https://chaos.social/@rstockm)

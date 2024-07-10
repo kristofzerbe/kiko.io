@@ -1,6 +1,11 @@
 ---
 title: "personalsit.es"
 date: 2023-01-02 16:30:00
+type: link
+rel:
+  verb: bookmark-of
+  caption: "personalsit.es"
+  url: https://personalsit.es/
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/109620394679043124

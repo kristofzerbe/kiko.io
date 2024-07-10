@@ -1,6 +1,7 @@
 ---
-title: "#Link | The AI hype and a few violent fantasies"
+title: "The AI hype and a few violent fantasies"
 date: 2024-06-22
+type: link
 rel:
   verb: like-of
   caption: "I Will Fucking Piledrive You If You Mention AI Again"
@@ -9,7 +10,7 @@ syndication:
 - host: Mastodon
   url: https://indieweb.social/@kiko/112662486449683827
 ---
-I've been in IT too long not to be sceptical about the many hypes I've come across so far. This includes the current madness surrounding #ChatGPT and its peers. 
+I've been in IT too long not to be sceptical about the many hypes I've come across so far. This includes the current madness surrounding #ChatGPT and its peers.
 
 If #AI causes you to get moist spots somewhere on your body, read the post by [@ludicity](https://mastodon.sprawl.club/@ludicity), who as a data scientist is somewhat close to the topic and reacts as follows to the cheering about the AI industry, which is imho mainly driven by false promises and greed:
 

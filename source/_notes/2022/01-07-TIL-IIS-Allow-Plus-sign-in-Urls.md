@@ -1,6 +1,7 @@
 ---
 title: "#TIL | IIS: Allow Plus sign in Url's"
 date: 2022-01-07 12:00:00
+type: til
 syndication: 
 ---
 

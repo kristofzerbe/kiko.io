@@ -1,6 +1,7 @@
 ---
-title: "#Link | On POSSE and IndieWeb"
+title: "On POSSE and IndieWeb"
 date: 2023-03-16
+type: link
 rel:
   verb: like-of
   caption: "On POSSE and IndieWeb"

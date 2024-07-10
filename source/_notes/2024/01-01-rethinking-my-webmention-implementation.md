@@ -1,6 +1,7 @@
 ---
-title: "#Link | Rethinking my Webmention Implementation"
+title: "Rethinking my Webmention Implementation"
 date: 2024-01-01
+type: link
 rel:
   verb: like-of
   caption: "janmonschke.com: Adding webmentions to your static blog"

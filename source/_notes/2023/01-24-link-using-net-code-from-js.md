@@ -1,6 +1,7 @@
 ---
 title: "#Link | Using .NET code from JavaScript"
 date: 2023-01-24
+type: link
 rel:
   verb: bookmark-of
   caption: "Using .NET code from JavaScript using WebAssembly - Gérald Barré"

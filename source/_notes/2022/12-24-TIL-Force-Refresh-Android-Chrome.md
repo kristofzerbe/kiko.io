@@ -1,6 +1,7 @@
 ---
 title: "#TIL | Force Refresh Android Chrome"
 date: 2022-12-24 10:05:00
+type: til
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/109568040848262163
@@ -14,4 +15,4 @@ Reloading a web page in Chrome on Android without letting the browser use it's c
 4. Tap on "Delete and Reset"
 5. Confirm the dialog "Do you really want to reset all local data..."
 
-Last thing is the point: It doesn't delete the PWA itself, but all data stored in the cache for it. 
+Last thing is the point: It doesn't delete the PWA itself, but all data stored in the cache for it.

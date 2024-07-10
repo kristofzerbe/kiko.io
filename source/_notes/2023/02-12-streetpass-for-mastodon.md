@@ -1,7 +1,11 @@
 ---
 title: "StreetPass for Mastodon"
 date: 2023-02-12
-hide: false
+type: link
+rel:
+  verb: bookmark-of
+  caption: StreetPass
+  url: https://streetpass.social/
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/109852165969514657

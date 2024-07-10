@@ -1,6 +1,11 @@
 ---
 title: "Feed: Full Length Article"
-date: 2023-06-29 07:30
+date: 2023-06-29
+type: link
+rel:
+  verb: reply-of
+  caption: "Mastodon Poll: excerpt or full article"
+  url: https://social.treehouse.systems/@deadsuperhero/110608652068691549
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/110627017988458573

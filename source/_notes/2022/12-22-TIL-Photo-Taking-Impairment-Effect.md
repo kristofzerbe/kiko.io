@@ -1,6 +1,7 @@
 ---
 title: "#TIL | Photo Taking Impairment Effect"
 date: 2022-12-22 09:50:00
+type: til
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/109556793846771865

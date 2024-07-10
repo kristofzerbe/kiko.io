@@ -1,6 +1,7 @@
 ---
-title: "#Link | To My Future Me: Promises"
+title: "To My Future Me: Promises"
 date: 2024-06-18
+type: link
 rel:
   verb: bookmark-of
   caption: "Promises From The Ground Up"

@@ -1,6 +1,7 @@
 ---
 title: "#TIL | Scroll Listener Performance"
 date: 2023-03-09
+type: til
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/109993992225379350

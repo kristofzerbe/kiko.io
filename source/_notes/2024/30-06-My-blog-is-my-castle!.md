@@ -1,6 +1,7 @@
 ---
-title: "#Link | My blog is my castle!"
+title: "My blog is my castle!"
 date: 2024-06-30
+type: link
 rel:
   verb: like-of
   caption: "Why a personal site rather than social media presence?"

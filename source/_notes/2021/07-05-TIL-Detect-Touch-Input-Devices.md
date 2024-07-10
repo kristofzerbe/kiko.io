@@ -1,6 +1,7 @@
 ---
 title: "#TIL | Detect Touch Input Devices"
 date: 2021-07-02 12:00:00
+type: til
 syndication: 
 ---
 

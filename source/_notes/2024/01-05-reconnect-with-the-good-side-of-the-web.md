@@ -1,6 +1,7 @@
 ---
 title: "Reconnect with the good side of the Web"
 date: 2024-01-05
+type: link
 rel:
   verb: in-reply-to
   caption: "olano.dev: Reclaiming the Web with a Personal Reader"

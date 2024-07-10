@@ -1,6 +1,11 @@
 ---
 title: "More modern CSS Reset"
 date: 2023-09-25
+type: link
+rel:
+  verb: bookmark-of
+  caption: "A (more) Modern CSS Reset"
+  url: https://andy-bell.co.uk/a-more-modern-css-reset
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/111127936125931030

@@ -63,7 +63,7 @@ hexo.on('generateBefore', function() {
       note.permalink = config.url + "/" + note.link;
       note.categories = [{ name: "Note", path: "notes" }];
 
-      if (!note.hide) {
+      if (!note.hidden) {
         noteItems.push(note);
       }
 

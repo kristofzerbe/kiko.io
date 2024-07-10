@@ -1,6 +1,7 @@
 ---
 title: "#TIL | display: contents"
 date: 2021-09-15 12:00:00
+type: til
 syndication: 
 ---
 

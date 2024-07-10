@@ -1,6 +1,7 @@
 ---
 title: "#TIL | Stylus vs. CSS built-in functions"
 date: 2023-06-29 18:30
+type: til
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/110629153911568315

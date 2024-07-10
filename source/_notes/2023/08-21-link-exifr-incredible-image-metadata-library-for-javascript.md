@@ -1,6 +1,7 @@
 ---
 title: "#Link | EXIFR: Incredible Image Metadata Library for JavaScript"
 date: 2023-08-21
+type: link
 rel:
   verb: bookmark-of
   caption: "GitHub - MikeKovarik/exifr: 📷 The fastest and most versatile JS EXIF reading library."

@@ -1,6 +1,11 @@
 ---
 title: "Grandpa Peter tell us ..."
 date: 2023-01-13
+type: link
+rel:
+  verb: like-of
+  caption: "Opa Peter erzähl doch mal…"
+  url: https://opaerzaehldochmalblog.wordpress.com
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/109682675029725273

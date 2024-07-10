@@ -1,6 +1,7 @@
 ---
 title: "#TIL | Async Delay using Timeout"
 date: 2021-07-05 12:00:00
+type: til
 syndication: 
 ---
 

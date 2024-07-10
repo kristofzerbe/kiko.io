@@ -1,6 +1,7 @@
 ---
-title: "#Link | Run Promises Sequentially"
+title: "Run Promises Sequentially"
 date: 2023-10-22
+type: link
 rel:
   verb: like-of
   caption: "Run JavaScript promises in series - 30 seconds of code"

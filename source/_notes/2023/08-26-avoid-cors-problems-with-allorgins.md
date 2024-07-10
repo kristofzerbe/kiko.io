@@ -1,6 +1,7 @@
 ---
-title: "#Link | Avoid CORS problems with allOrigins"
+title: "Avoid CORS problems with allOrigins"
 date: 2023-08-26
+type: link
 rel:
   verb: like-of
   caption: "All Origins"

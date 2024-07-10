@@ -31,7 +31,9 @@ global-reset()
 
 :root
   --color-accent: color-link
+  --color-accent2: color-button-link
   --dark-color-accent: dark-color-link
+  --dark-color-accent2: dark-color-button-link
 
 html
   text-size-adjust: none // Andy Bells Modernized Reset
@@ -43,9 +45,11 @@ html, body
 body
   color: color-foreground
   background: color-background
+  accent-color: var(--color-accent)
   /[data-theme="dark"] &
     color: dark-color-foreground
     background: dark-color-background
+    accent-color: var(--dark-color-accent)
   font-family: font-sans
   font-weight: font-weight-normal
   min-height: 100vh // Andy Bells Modernized Reset

@@ -1,6 +1,11 @@
 ---
-title: "#Link | Better Mobile Inputs Playground"
+title: "Better Mobile Inputs Playground"
 date: 2023-11-18
+type: link
+rel:
+  verb: bookmark-of
+  caption: "Better Form Inputs for Better Mobile User Experiences"
+  url: https://css-tricks.com/better-form-inputs-for-better-mobile-user-experiences
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/111431164571042503

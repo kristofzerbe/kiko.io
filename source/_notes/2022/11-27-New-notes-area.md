@@ -1,6 +1,7 @@
 ---
 title: New Notes Area
 date: 2022-11-27 18:50:00
+type: 
 syndication:
 - host: Mastodon
   url: https://indieweb.social/@kiko/109417308426578417

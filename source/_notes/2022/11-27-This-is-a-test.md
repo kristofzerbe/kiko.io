@@ -1,8 +1,9 @@
 ---
 title: This is a test...
 date: 2022-11-27 17:30:00
+type: 
 syndication: 
-hide: true
+hidden: true
 ---
 
 Bla **blubb** test text

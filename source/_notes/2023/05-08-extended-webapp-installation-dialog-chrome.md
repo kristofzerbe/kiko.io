@@ -1,6 +1,11 @@
 ---
 title: "Extended WebApp Installation Dialog in Chrome"
 date: 2023-05-08
+type: link
+rel:
+  verb: bookmark-of
+  caption: "Richer UI install available for desktop"
+  url: https://developer.chrome.com/blog/richer-install-ui-desktop/
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/110332516211065405
