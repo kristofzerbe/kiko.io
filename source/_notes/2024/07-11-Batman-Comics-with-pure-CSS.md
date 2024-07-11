@@ -9,6 +9,8 @@ rel:
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/112767128980027149
+  - host: DevTo
+    url: https://dev.to/kristofzerbe/batman-comics-with-pure-css-5ggk
 ---
 
 I really can't say that I'm a big fan of TailwindCSS, because I don't like decorating my HTML with dozens of predefined classes instead of implementing a meaningful class directly in my own CSS code.
