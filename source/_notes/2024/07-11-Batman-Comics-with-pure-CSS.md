@@ -8,12 +8,12 @@ rel:
   url: https://alvaromontoro.com/blog/68056/batman-comic-css
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/112767128980027149
 ---
 
 I really can't say that I'm a big fan of TailwindCSS, because I don't like decorating my HTML with dozens of predefined classes instead of implementing a meaningful class directly in my own CSS code.
 
-However, [Alvaro Montoro](https://front-end.social/@alvaromontoro) shows how you can use predefined classes in a meaningful and even hilarious way with his [**Batman-Comic.CSS project**](https://alvaromontoro.com/sansjs/demos/batman-comic-css/) ... which enables you to create a comic without having the slightest idea about drawing comics!
+However, [Alvaro Montoro](https://front-end.social/@alvaromontoro) shows how you can use predefined classes in a meaningful and even hilarious way with his [**Batman-Comic.CSS project**](https://alvaromontoro.com/sansjs/demos/batman-comic-css/), which enables you to create a comic without having the slightest idea about drawing comics!
 
 Define the basic structure, add CSS classes for the various facial expressions, add texts for the speech bubbles ... Done. It's so amazingly cool and I think I will use it frequently in my posts, because sometimes a comic says more than a thousand words.
 
