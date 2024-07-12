@@ -19,7 +19,7 @@ hexo.extend.generator.register("dynamic-slashes", async function(locals) {
   page.items.push(getFileInfo("/About", path.join(config.source_dir, "_dynamic", "about.md")));
   page.items.push(getFileInfo("#Contact", path.join(config.source_dir, "_dynamic", "_contact.md")));
   page.items.push(getFileInfo("/Colophon", path.join(config.source_dir, "colophon", "index.md")));
-  page.items.push(getFileInfo("/Sitemap.xml", path.join(config.source_dir, "_dynamic", "_sitemap.md")));
+  page.items.push(getFileInfo("/Sitemap", path.join(config.source_dir, "_dynamic", "_sitemap.md")));
   page.items.push(getFileInfo("/Impressum", path.join(config.source_dir, "impressum", "index.md")));
   page.items.push(getFileInfo("/Blogroll", path.join(config.source_dir, "_dynamic", "blogroll.md")));
 

@@ -39,10 +39,6 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
           item.feedSize = `${feedSize.toFixed(2)} KB`
         }
         // console.log(item.title + ": " + item.feedSize);
-
-        if (item.title === "Nicolas Hoizey") {
-          console.log(response);
-        }
         
         feed2json.fromString(response.data, item.feed, (error, json) => {
           
