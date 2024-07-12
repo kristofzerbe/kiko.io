@@ -17,7 +17,9 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
 
   let page = locals.dynamic.blogroll;
 
-  page.content = page.content.replace("{% generation_date %}", _helpers.moment().format("dddd, DD MMMM YYYY hh:mm"));
+  page.content = page.content
+    .replace("{% blogroll_length %}", page.items.length)
+    .replace("{% generation_date %}", _helpers.moment().format("dddd, DD MMMM YYYY hh:mm"));
 
   let promises = [];
 
@@ -28,12 +30,23 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
       log.info("Request latest post from " + blue(item.title));
 
       axios.get(item.feed, { validateStatus: () => true }).then(response => {
+        const contentLen = response.headers?.['content-length'];
+        const dataLen = response.data.length;
+        const feedSize = (contentLen || dataLen) / 1024;
+        if (feedSize > 1024) {
+          item.feedSize = `${(feedSize / 1024).toFixed(2)} MB`;
+        } else {
+          item.feedSize = `${feedSize.toFixed(2)} KB`
+        }
+        // console.log(item.title + ": " + item.feedSize);
+        
         feed2json.fromString(response.data, item.feed, (error, json) => {
           
           if (!error) {
             json.items.sort((a,b) => a.date_published - b.date_published).reverse();
+            item.feedLength = json.items.length;
+            
             let feedItem = json.items[0];
-
             item.latest_post = {
               "url": feedItem.url,
               "title": feedItem.title,

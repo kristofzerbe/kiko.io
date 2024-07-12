@@ -17,18 +17,20 @@
         <div class="panel-content">
           <a class="panel-favicon" href="<%= item.url %>"><img src="<%= item.favicon %>" /></a>
           <%- partial('_partial/post/title', { post: item, class_name: 'panel-title'}) %>
-          <p class="small">
-            <% if (item.title != item.author) { %>
-              <small>by <%= item.author %></small><br>
-            <% } %>    
-            <a href="https://<%= item.host %>"><%= item.host %></a>
-          </p>
-          <p><%= item.description %></p>
+          <% if (item.title != item.author) { %>
+            <small style="display:block; margin-block: -0.5rem 0.5rem">by <%= item.author %></small>
+          <% } %>    
+          <p class="small"><a href="https://<%= item.host %>"><%= item.host %></a></p>
+          <p class="limit-4-lines"><%= item.description %></p>
           <div class="icon-links">
             <% if (item.mastodon) { %>
             <a class="fa-mastodon" href="<%= item.mastodon %>"></a>
             <% } %>
-            <a class="fa-rss" href="<%= item.feed %>"></a>
+            <a class="fa-rss" href="<%= item.feed %>">
+              <% if (item.feedLength) { %>
+              <small title="<%= item.feedSize %>"><%= item.feedLength %> posts</small>
+              <% } %>
+            </a>
           </div>
           <% if (item.latest_post) { %>
             <small class="label">
