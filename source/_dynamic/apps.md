@@ -6,6 +6,7 @@ permalink: /apps
 photograph:
   file: $D50_7031_2404.jpg
   name: Thomas Garden 24-04 VI
+hidden: true
 ---
 
 Here you will find a list of small WebApps in the future that I am working on and that may be useful for some of you.  

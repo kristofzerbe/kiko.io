@@ -31,7 +31,9 @@ hexo.extend.generator.register("sitemap", async function(locals) {
   const dynamic = [];
   Object.keys(locals.dynamic).forEach((key, index) => {
     const entry = locals.dynamic[key];
-    dynamic.push(get(entry));
+    if (!entry.hidden) {
+      dynamic.push(get(entry));
+    }
   });
   log.info("-> " + magenta(dynamic.length) + " dynamic pages");
   links.items = [...links.items, ...dynamic];

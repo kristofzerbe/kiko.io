@@ -9,42 +9,85 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style type="text/css">
+          @font-face {
+            font-family: 'Open Sans';
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+            src: url("/css/fonts/opensans/opensans-semibold.woff2") format("woff2"), 
+                 url("/css/fonts/opensans/opensans-semibold.ttf") format("truetype");
+          }
+          @font-face {
+            font-family: 'Lexend';
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+            src: url("fonts/lexend/webfonts/Lexend-Light.woff2") format("woff2"),
+                 url("fonts/lexend/ttf/Lexend-Light.ttf") format("truetype")
+          }
+          @font-face {
+            font-family: "Lexend";
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+            src: url("/css//fonts/lexend/webfonts/Lexend-Regular.woff2") format("woff2"),
+                 url("/css/fonts/lexend/ttf/Lexend-Regular.ttf") format("truetype")
+          }
+          :root {
+            --color: #555;
+            --back-color: #f1f1f1;
+            --accent-color: #587307;
+            --header-height: 55px;
+          }
           body {
-            font-family: Helvetica, Arial, sans-serif;
             margin: 0;
-            color: #555;
-            background: #f1f1f1;
+            color: var(--color);
+            background: var(--back-color);
+            font-family: "Lexend","Open Sans","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
             font-size: 1rem;
+            font-weight: 300;
           }
           header {
             position: fixed;
             width: 100%;
-            background-color: rgb(4, 67, 145);
-            height: 55px;
-            line-height: 55px;
+            background-color: var(--accent-color);
+            height: var(--header-height);
+            line-height: var(--header-height);
             text-align: center;
           }
           header a {
             color: #fff;
             text-transform: uppercase;
             font-weight: 600;
-            font-family: 'Open Sans';
-            font-size: 32px;
+            font-family: "Open Sans";
             text-decoration: none !important;
+            font-size: 31px;
+          }
+          @media screen and (max-width: 479px) {
+            header a {
+              font-size: 25px;
+            }
           }
           #content {
             max-width: 1220px;
             margin: 0 auto;
-            padding: 55px 2rem;
+            padding-block: var(--header-height);
+            padding-inline: 2rem;
+          }
+          @media screen and (max-width: 479px) {
+            #content {
+              padding-inline: 1.5rem;
+            }
           }
           h1 {
-            margin: 2.5rem 0;
+            margin: 2rem 0;
             text-transform: uppercase;
-            font-size: 1.6rem;
+            font-family: "Lexend";
             font-weight: 400;
+            font-size: 1.6rem;
           }
           a {
-            color: #555;
+            color: var(--color);
             text-decoration: none;
           }
           a:hover {
@@ -53,30 +96,44 @@
           p {
             margin: 2rem 0rem;
             line-height: 1.5rem;
+            font-size: 0.9rem;
           }
           p a {
-            color: #ff8c00;
+            color: var(--accent-color);
           }
           table {
             table-layout: fixed;
             width: 100%;
             border: none;
             border-collapse: collapse;
+            font-size: 1rem;
+          }
+          @media screen and (max-width: 479px) {
+            table {
+              font-size: 0.9rem;
+            }
           }
           tr:nth-child(odd) td {
             background-color: #fff;
           }
           tbody tr:hover td, 
           tbody tr:hover td a {
-            color: #ff8c00;
+            color: var(--accent-color);
           }
           th, td {
-            padding: 0.5rem 0.6rem;
             text-align: left;
-            font-weight: normal;
+            font-weight: 300;
+          }
+          th {
+            vertical-align: top;
+          }
+          td {
+            padding: 0.5rem 0.6rem;
           }
           td a {
             word-break: break-all;
+            display: inline-block;
+            width: 100%;
           }
         </style>
       </head>
@@ -92,7 +149,10 @@
             <table>
               <thead>
               <tr>
-                <th><strong><xsl:value-of select="count(sitemap:urlset/sitemap:url)"/> URL's</strong> ... https://kiko.io</th>
+                <th>
+                  <strong><xsl:value-of select="count(sitemap:urlset/sitemap:url)"/> URL's</strong>
+                  <div style="margin: 1rem 0 0.5rem">https://kiko.io ...</div>
+                </th>
                 <th style="width: 30%; text-align: right"><strong>Last Modified</strong></th>
               </tr>
               </thead>

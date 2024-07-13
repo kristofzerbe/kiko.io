@@ -6,8 +6,9 @@ permalink: /console
 photograph:
   file: $22-08-Bretagne-Jersey-0048.jpg
   name: Golden Lamp
+hidden: true
 ---
 
-This page is not yet ready ...
+Coming soon ... maybe
 
 ---

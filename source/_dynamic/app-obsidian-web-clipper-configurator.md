@@ -8,6 +8,7 @@ photograph:
   name: Clog Rack
 app:
   color: #740b07
+hidden: true
 ---
 
 lorem ipsum
