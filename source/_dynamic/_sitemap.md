@@ -5,5 +5,5 @@ permalink: /sitemap.xml
 photograph:
   file: D50_7084_2405.jpg
   name: Thomas Garden 24-05 VII
-teaser: "A classic machine-readable sitemap in XML format"
+teaser: "A classic machine-readable sitemap in XML format beautified with XSL"
 ---
