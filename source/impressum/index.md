@@ -12,7 +12,7 @@ The following information is required under German law.
 
 <section>
 
-# Verantwortlich für den Inhalt gemäß § 55 Abs.2 RStV
+## Verantwortlich für den Inhalt gemäß § 55 Abs.2 RStV
 
 Kristof Zerbe
 Kaiser-Friedrich-Str. 8
@@ -25,7 +25,7 @@ kristof.zerbe@gmail.com
 
 <section>
 
-# Rechtliche Hinweise
+## Rechtliche Hinweise
 
 Hiermit wird darauf hingewiesen, dass Informationen auf dieser Site technische Ungenauigkeiten oder typografische Fehler enthalten können. Es gilt der Vorbehalt, dass die Informationen dieser Site jederzeit und ohne vorherige Ankündigung geändert oder aktualisiert werden können.
 
@@ -37,21 +37,21 @@ Die Inhalte der Seiten wurden sorgfältig geprüft und nach bestem Wissen erstel
 
 <section>
 
-# Datenschutz
+## Datenschutz
 
 Die anwendbaren datenschutzrechtlichen Bestimmungen werden bei der Erhebung, bei der Nutzung und bei der Verarbeitung personenbezogener Daten beachtet. Sofern innerhalb des Internet-Angebotes die Möglichkeit der Eingabe von persönlichen Daten (E-Mail-Adresse oder Namen) besteht, erfolgt diese freiwillig. Die von Ihnen zur Verfügung gestellten personenbezogenen Daten werden nur intern zur Kommunikation mit Ihnen verwendet.
 
-## Hosting
+### Hosting
 
 Diese Website wird auf GitHub Pages gehostet. Wenn eine GitHub Pages-Website besucht wird, wird die IP-Adresse des Besuchers zu Sicherheitszwecken protokolliert und gespeichert, unabhängig davon, ob sich der Besucher bei GitHub angemeldet hat oder nicht. Weitere Informationen zu den Sicherheitspraktiken von GitHub sind in den  [GitHub-Datenschutzbestimmungen](https://docs.github.com/de/site-policy/privacy-policies/github-privacy-statement) zu finden.
 
-## Webmentions
+### Webmentions
 
 Webmentions sind ein Mechanismus, mit dem andere Websites benachrichtigt werden, wenn Sie auf Ihrer eigenen Website auf sie verweisen. Indem Sie Webmentions auf Ihrer Website unterstützen, signalisieren Sie ausdrücklich, dass Sie möchten, dass die verlinkten Websites Ihre öffentlichen Antworten auf deren Inhalte verarbeiten und veröffentlichen. Sie können jederzeit die Entfernung einer oder aller Webmentions, die von Ihrer Website stammen, beantragen.
 
 In der Regel werden empfangene Webmentions als Kommentare auf einer Webseite angezeigt. Dies bedeutet, dass eine Kopie Ihres Inhalts auf der Website angezeigt wird, auf die Sie in Ihrem eigenen Beitrag verlinken. Eine eingehende Webmention-Anfrage wird als Aufforderung zur Verarbeitung personenbezogener Daten behandelt und ist somit von vornherein eine Anfrage zur Veröffentlichung eines Kommentars von einer anderen Stelle im Web. Dafür wurde das Protokoll entwickelt und deshalb ist es auf Ihrer Website aktiv. Zu den veröffentlichten persönlichen Daten gehören Ihr Name, Ihr Profilbild von Ihrer Website oder einem gleichartigen Dienst, die URL Ihrer Website und persönliche Informationen, die Sie möglicherweise in Ihrem Beitrag angegeben haben. Die Veröffentlichung eingehender Webmentions basiert auf dem berechtigten Interesse, die Interaktion mit den Lesern dieser Website zu ermöglichen (Art. 6 (1) DSGVO), und folgt der Designabsicht des Webmention-Protokolls.
 
-## Analyse-Tool Pirsch
+### Analyse-Tool Pirsch
 
 Auf dieser Website kommt das Open-Source-Webanalysedienst Pirsch.io der Emvi Software GmbH, Nickelstraße 1b, 33378 Rheda-Wiedenbrück mit Sitz in Deutschland zum Einsatz, um die Nutzung der Website analysieren und regelmäßig verbessern zu können.
 

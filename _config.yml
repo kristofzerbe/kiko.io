@@ -253,25 +253,35 @@ sitemap:
   path: sitemap.xml
   template: sitemap.handlebars
 
-# Info API ... ERRORS
-# hexo_info_api:
-#   allowOrigin: "*" # Set to "*" to allow all origins (Access-Control-Allow-Origin)
-#   enable: # enable what api u need
-#   - getInfo
-#   - getPostCount
-#   - getPosts
-#   - getPostsByCategory
-#   - getPostsByCategoryId
-#   - getPostsByTag
-#   - getPostsByTagId
-#   - getPostByPath
-#   - getPostById
-#   - getCategories
-#   - getTags
-#   - getLatestPost
-#   - getLatest5Posts
-#   # Disable default api(host:port/api/) default: false
-#   disable_default_api: false 
+slashes:
+  - page: "/Search"
+    folder: _dynamic
+    file: search.md
+  - page: "/Feeds"
+    folder: _dynamic
+    file: feeds.md
+  - page: "/About"
+    folder: _dynamic
+    file: about.md
+  - page: "#Contact"
+    folder: _dynamic
+    file: _contact.md
+  - page: "/Colophon"
+    folder: colophon
+    file: index.md
+  - page: "/Sitemap"
+    folder: _dynamic
+    file: _sitemap.md
+  - page: "/Blogroll"
+    folder: _dynamic
+    file: blogroll.md
+  - page: "/Uses"
+    folder: uses
+    file: index.md
+  - page: "/Impressum"
+    folder: impressum
+    file: index.md
+
 
 # Codepen Defaults
 codepen:
@@ -304,9 +314,6 @@ trello:
     - name: tiny-tools
       list: TinyTools
       preview_width: 300
-    - name: windows-tools
-      list: WindowsTools
-      preview_width: 128
 
 # Trello Discoveries Generator Script
 discoveries:
@@ -333,3 +340,22 @@ discoveries:
       value: true
   template: discoveries.handlebars
       
+# Info API ... ERRORS
+# hexo_info_api:
+#   allowOrigin: "*" # Set to "*" to allow all origins (Access-Control-Allow-Origin)
+#   enable: # enable what api u need
+#   - getInfo
+#   - getPostCount
+#   - getPosts
+#   - getPostsByCategory
+#   - getPostsByCategoryId
+#   - getPostsByTag
+#   - getPostsByTagId
+#   - getPostByPath
+#   - getPostById
+#   - getCategories
+#   - getTags
+#   - getLatestPost
+#   - getLatest5Posts
+#   # Disable default api(host:port/api/) default: false
+#   disable_default_api: false 

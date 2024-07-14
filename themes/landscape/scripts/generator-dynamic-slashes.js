@@ -13,15 +13,9 @@ hexo.extend.generator.register("dynamic-slashes", async function(locals) {
 
   page.items = [];
   
-  // TODO: Outsource to theme.config
-  page.items.push(getFileInfo("/Search", path.join(config.source_dir, "_dynamic", "search.md")));
-  page.items.push(getFileInfo("/Feeds", path.join(config.source_dir, "_dynamic", "feeds.md")));
-  page.items.push(getFileInfo("/About", path.join(config.source_dir, "_dynamic", "about.md")));
-  page.items.push(getFileInfo("#Contact", path.join(config.source_dir, "_dynamic", "_contact.md")));
-  page.items.push(getFileInfo("/Colophon", path.join(config.source_dir, "colophon", "index.md")));
-  page.items.push(getFileInfo("/Sitemap", path.join(config.source_dir, "_dynamic", "_sitemap.md")));
-  page.items.push(getFileInfo("/Impressum", path.join(config.source_dir, "impressum", "index.md")));
-  page.items.push(getFileInfo("/Blogroll", path.join(config.source_dir, "_dynamic", "blogroll.md")));
+  config.slashes.forEach(slash => {
+    page.items.push(getFileInfo(slash.page, path.join(config.source_dir, slash.folder, slash.file)));
+  });
 
   let result = {
       data: page,
