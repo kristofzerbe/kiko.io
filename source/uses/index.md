@@ -8,7 +8,7 @@ photograph:
 teaser: "What I use in my daily digital life"
 ---
 
-What stuff do I spend my digital life with? Here's my completely personal and non-transferable list of things I have today and desperately need and may have needed in the past. Inspired by Web Bos' [uses.tech](https://uses.tech/).
+What stuff do I spend my digital life with? Here's my completely personal and non-transferable list of things I have today and desperately need and may have needed in the past. Inspired by Wes Bos' [uses.tech](https://uses.tech/).
 
 *Last updated on 14 July 2024*
 
