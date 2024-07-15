@@ -4,6 +4,17 @@
     let upd = moment(item.updated).toISOString();
     return (pub === upd) ? null : upd;
   }
+  const imageSource = (item) => {
+    if (item.photograph) {
+      if (item.photograph.socialmedia) {
+        return config.url + item.photograph.socialmedia
+          .replace("/static", "")
+          .replace(".png", ".thumb.png");
+      } else {
+        return config.url + "/photos/mobile/" + item.photograph.file;
+      }
+    }
+  }
   const slug = (item) => {
     let slugArray = item.slug.split("/");
     let slug = slugArray[slugArray.length - 1];
@@ -13,7 +24,7 @@
   const content = (item) => {
     let fc = item.excerpt.replace(regEx, "");
     fc = fc + '<p><a href="' + item.permalink + '">Continue reading <strong>`' + item.title + '`</strong> on kiko.io ...</a></p>';
-    if (item.photograph) { fc = '<p><img src="' + config.url + '/images/social-media/' + slug(item) + '.png" /></p>' + fc; }
+    if (item.photograph) { fc = '<p><img src="' + imageSource(item) + '" /></p>' + fc; }
     return fc;
   }
 _%>
@@ -34,7 +45,7 @@ _%>
     id: item.permalink,
     url: item.permalink,
     title: item.title,
-    image: config.url + '/images/social-media/' + slug(item) + '.thumb.png',
+    image: imageSource(item),
     date_published: moment(item.date).toISOString(),
     date_modified: updated(item),    
     content_html: content(item) || '',
