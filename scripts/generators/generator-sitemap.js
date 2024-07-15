@@ -4,7 +4,7 @@ const path = require('path');
 const axios = require('axios');
 const fs = require("hexo-fs");
 const handlebars = require("handlebars");
-const { getHelpers, getNewestDateString, ensurePermaLink } = require("../../../lib/tools.cjs");
+const { getHelpers, getNewestDateString, ensurePermaLink } = require("../../lib/tools.cjs");
 
 const _helpers = getHelpers(hexo);
 const _rootDir = hexo.source_dir.replace("source", "");

@@ -3,7 +3,7 @@ const { magenta } = require('chalk');
 const path = require('path');
 const fs = require('hexo-fs');
 const front = require('hexo-front-matter');
-const { getMD, updateMDField } = require("../lib/tools.cjs");
+const { getMD, updateMDField } = require("../../lib/tools.cjs");
 
 const _rootDir = hexo.source_dir.replace("source", "");
 

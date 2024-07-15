@@ -13,7 +13,7 @@
 
     -> see Obsidian Auto Card Links -> https://github.com/nekoshita/obsidian-auto-card-link
 */
-const { getDataFromCardlinkCodeBlock, compileHandlebar } = require("../../../lib/tools.cjs");
+const { getDataFromCardlinkCodeBlock, compileHandlebar } = require("../../lib/tools.cjs");
 
 hexo.extend.tag.register("cardlink", function(args, content){
 

@@ -1,4 +1,4 @@
-const SocialMediaImageGenerator = require("../lib/social-media-image-generator.cjs").SocialMediaImageGenerator;
+const SocialMediaImageGenerator = require("../../lib/social-media-image-generator.cjs").SocialMediaImageGenerator;
 
 hexo.on("ready", function() {
     

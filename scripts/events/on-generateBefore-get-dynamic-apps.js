@@ -2,7 +2,7 @@ const log = require('hexo-log')({ debug: false, silent: false });
 const { magenta } = require('chalk');
 const path = require('path');
 const fs = require('hexo-fs');
-const { getMD, getHelpers } = require("../lib/tools.cjs");
+const { getMD, getHelpers } = require("../../lib/tools.cjs");
 
 hexo.on('generateBefore', function() {
   log.info("Getting Dynamic Page " + magenta("APPS") + " ...");

@@ -4,7 +4,7 @@ const path = require("path");
 const fs = require("hexo-fs");
 const front = require("hexo-front-matter");
 const moment = require("moment");
-const { getDataFromCardlinkCodeBlock, compileHandlebar } = require("../lib/tools.cjs");
+const { getDataFromCardlinkCodeBlock, compileHandlebar } = require("../../lib/tools.cjs");
 
 hexo.on('generateBefore', function() {
   log.info("Getting " + magenta("NOTES") + " ...");

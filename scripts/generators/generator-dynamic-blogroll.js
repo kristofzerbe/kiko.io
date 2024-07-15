@@ -5,7 +5,7 @@ const axios = require('axios');
 const fs = require("hexo-fs");
 const feed2json = require('feed2json');
 const handlebars = require("handlebars");
-const { getHelpers } = require("../../../lib/tools.cjs");
+const { getHelpers } = require("../../lib/tools.cjs");
 
 const _helpers = getHelpers(hexo);
 const _rootDir = hexo.source_dir.replace("source", "");

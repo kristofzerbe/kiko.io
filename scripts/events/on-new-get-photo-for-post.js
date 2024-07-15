@@ -7,7 +7,7 @@ const log = require('hexo-log')({
 const front = require('hexo-front-matter');
 const fs = require('hexo-fs');
 
-const photoSelector = require("../lib/photograph-selector.cjs").Selector;
+const photoSelector = require("../../lib/photograph-selector.cjs").Selector;
 
 hexo.on('new', function(data) {
 
@@ -22,7 +22,6 @@ hexo.on('new', function(data) {
     post.photograph.file = photo.file;
     post.photograph.name = photo.name;
     post.photograph.link = photo.link;
-
 
     let postStr = front.stringify(post);
     postStr = '---\n' + postStr;

@@ -1,15 +1,18 @@
 const log = require('hexo-log')({ debug: false, silent: false });
 const { magenta } = require('chalk');
 const path = require('path');
-const { getMD, ensurePermaLink } = require("../lib/tools.cjs");
+const { getMD, getHelpers } = require("../../lib/tools.cjs");
 
 hexo.on('generateBefore', function() {
-  log.info("Getting Dynamic Page " + magenta("ABOUT") + " ...");
+  log.info("Getting Dynamic Page " + magenta("FEEDS") + " ...");
 
-  let page = { name: "about" };
+  const helpers = getHelpers(hexo);
+
+  let page = { name: "feeds" };
   page = getMD(hexo, path.join("_dynamic", page.name + ".md"), page);
+  page.updated = helpers.moment();
 
-  let dyn = {...hexo.locals.get('dynamic'), ...{ about: page }};
+  let dyn = {...hexo.locals.get('dynamic'), ...{ feeds: page }};
   hexo.locals.set('dynamic', dyn);
 
   // console.log(hexo.locals.get('dynamic'));

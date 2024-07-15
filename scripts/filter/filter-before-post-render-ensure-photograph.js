@@ -1,4 +1,4 @@
-const photoSelector = require("../lib/photograph-selector.cjs").Selector;
+const photoSelector = require("../../lib/photograph-selector.cjs").Selector;
 
 const log = require('hexo-log')({
   debug: false,
