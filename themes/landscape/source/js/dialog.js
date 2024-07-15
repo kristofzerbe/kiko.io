@@ -105,9 +105,10 @@ var dpDialog = {
     //--
     let jBlogPosting = json["@graph"].filter(x => x["@type"] === "BlogPosting");
     if (jBlogPosting.length > 0) {
+      let jImage = json["@graph"].filter(x => x["@id"] === jBlogPosting[0].image["@id"]);
       let jAuthor = json["@graph"].filter(x => x["@id"] === jBlogPosting[0].author["@id"]);
       let jPublisher = json["@graph"].filter(x => x["@id"] === jBlogPosting[0].publisher["@id"]);
-      let tBlogPosting = getBlogPosting(state, jBlogPosting[0], jAuthor[0], jPublisher[0]);
+      let tBlogPosting = getBlogPosting(state, jBlogPosting[0], jAuthor[0], jPublisher[0], jImage[0]);
       state = "";
       secJSONLD.append($(tBlogPosting));
     }
@@ -167,7 +168,7 @@ var dpDialog = {
         </details>
       `;
     }
-    function getBlogPosting(state, post, person, organization) {
+    function getBlogPosting(state, post, person, organization, image) {
       let dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
       let datePublished = new Date(post.datePublished).toLocaleDateString("en-US", dateOptions);
       let dateModified = new Date(post.dateModified).toLocaleDateString("en-US", dateOptions);
@@ -186,6 +187,11 @@ var dpDialog = {
             <p>${person.name}</p>
             <label>Publisher</label>
             <p>${organization.name}</p>
+            <label>Image</label>
+            <figure>
+              <img src="${image.contentUrl}" />
+              <figcaption>${image.contentUrl}</figcaption>
+            </figure>
           </div>
         </details>
       `;
