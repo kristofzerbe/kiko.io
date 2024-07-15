@@ -6,6 +6,7 @@ permalink: /feeds
 photograph:
   file: $23-05-Holland-0806.jpg
   name: Knitting Colors
+caption: "/Feeds"
 teaser: "Aggregation of the articles as Atom, RSS, JSON or HTML feed"
 ---
 

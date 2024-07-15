@@ -6,6 +6,7 @@ permalink: /search
 photograph:
   file: $D702858.jpg
   name: Hide and Seek
+caption: "/Search"
 teaser: "Full text search across the entire site"
 ---
 

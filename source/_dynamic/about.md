@@ -7,6 +7,7 @@ description: About Kristof Zerbe
 photograph: 
   file: $about.jpg
   name: ""
+caption: "/About"
 teaser: "On this page I tell you a little bit about myself..."
 ---
 

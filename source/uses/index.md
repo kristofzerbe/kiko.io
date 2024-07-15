@@ -5,6 +5,7 @@ permalink: /uses
 photograph:
   file: $D50_7237.jpg
   name: Troubadour Accessoires
+caption: "/Uses"
 teaser: "What I use in my daily digital life"
 ---
 

@@ -253,35 +253,19 @@ sitemap:
   path: sitemap.xml
   template: sitemap.handlebars
 
+# Slash Index Page (in order of appearance)
 slashes:
-  - page: "/Search"
-    folder: _dynamic
-    file: search.md
-  - page: "/Feeds"
-    folder: _dynamic
-    file: feeds.md
-  - page: "/About"
-    folder: _dynamic
-    file: about.md
-  - page: "#Contact"
-    folder: _dynamic
-    file: _contact.md
-  - page: "/Colophon"
-    folder: colophon
-    file: index.md
-  - page: "/Sitemap"
-    folder: _dynamic
-    file: _sitemap.md
-  - page: "/Blogroll"
-    folder: _dynamic
-    file: blogroll.md
-  - page: "/Uses"
-    folder: uses
-    file: index.md
-  - page: "/Impressum"
-    folder: impressum
-    file: index.md
-
+  - folder: _dynamic
+    items:
+      - search
+      - feeds
+      - about
+      - _contact
+      - _sitemap
+      - blogroll
+  - folder: colophon
+  - folder: uses
+  - folder: impressum
 
 # Codepen Defaults
 codepen:

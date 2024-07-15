@@ -12,9 +12,15 @@ hexo.extend.generator.register("dynamic-slashes", async function(locals) {
   let page = locals.dynamic.slashes;
 
   page.items = [];
-  
+
   config.slashes.forEach(slash => {
-    page.items.push(getFileInfo(slash.page, path.join(config.source_dir, slash.folder, slash.file)));
+    if (slash.items) {
+      slash.items.forEach(item => {
+        page.items.push(getFileInfo(path.join(config.source_dir, slash.folder, item + ".md")));
+      });
+    } else {
+      page.items.push(getFileInfo(path.join(config.source_dir, slash.folder, "index.md")));
+    }
   });
 
   let result = {
@@ -26,12 +32,13 @@ hexo.extend.generator.register("dynamic-slashes", async function(locals) {
   return result;
 });
 
-function getFileInfo(title, path) {
+function getFileInfo(path) {
   const md = fs.readFileSync(path);
   let fm = front.parse(md);
 
-  fm.title = title;
+  fm.title = fm.caption;
   fm.path = fm.permalink;
 
   return fm;
 }
+

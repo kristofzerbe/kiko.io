@@ -4,6 +4,7 @@ permalink: /blogroll
 photograph:
   file: $23-08-26-MPS-Speyer-0052.jpg
   name: Golden Mead
+caption: "/Blogroll"
 teaser: >-
   Great people who write stuff on the internet that I follow, either on Mastodon
   or via feed
