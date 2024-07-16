@@ -47,6 +47,12 @@
           <% } %>
         <% } %>
       </li>
+      <% if (page.meta?.custom?.featured?.url) { %>
+      <li>
+        <label>Featured In</label>
+        <span><a href="<%= page.meta.custom.featured.url %>"><%= page.meta.custom.featured.title %></a></span>
+      </li>
+      <% } %> 
     </ul>
   </section>
 

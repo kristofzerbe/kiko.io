@@ -235,6 +235,7 @@ function getPostAndPagePhotos() {
   let used = fs
     .readdirSync(photoDir)
     .map(entry => ({ key: null, status: "used", file: entry }));
+//console.log(JSON.stringify(used) + "\n ----------------------------------");
 
   let postsAndPages = [...locals.get("posts").data, ...locals.get("pages").data].map(fm => {
     if (fm.photograph && !fm.photograph.keepOutOverview) {
@@ -249,7 +250,7 @@ function getPostAndPagePhotos() {
       };
     }
   });
-  // console.log(postsAndPages);
+//console.log(JSON.stringify(postsAndPages) + "\n ----------------------------------");
 
   used.forEach(entry => {
 
@@ -276,9 +277,9 @@ function getPostAndPagePhotos() {
 
       let url = post.path.replace("/index.html", ""); // for posts und archives
       if (post.layout == "page") {
-        url = `/${url}`.replace("//", "/").replace(".html", ""); // for archives + other pages
+        url = `${url}`.replace("//", "/").replace(".html", ""); // for archives + other pages
       }
-      entry.article.url= url;
+      entry.article.url = "/" + url;
 
       // console.log(post.layout + " | " + post.path);
       // if (post.layout == "page") {
@@ -296,6 +297,7 @@ function getPostAndPagePhotos() {
     entry.meta = meta;
 
   });
+//console.log(JSON.stringify(used) + "\n ----------------------------------");
 
   log.info("-> " + magenta(used.length) + " used photos in posts and pages");
   // console.log(used);
