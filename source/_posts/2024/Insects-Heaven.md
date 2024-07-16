@@ -18,7 +18,9 @@ related:
   - First-of-May
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112797522974732744
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/718884944325910550
 ---
 
 Thomas' garden is buzzing, whirring, flying and dancing. This is also due to the fact that the small garden is overgrown with all kinds of flowers, shrubs and other plants. You can hardly find a way through it, especially with a camera and a 600mm lens screwed on. But it's marvellous to see how life goes crazy on this little piece of earth. Only the white butterflies could take it easy for once ... you can't even get them in front of the lens...
