@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
 	<head>
-		<title>kiko.io's Blogroll</title>
-		{{#if updated}}
-		<dateCreated>{{toISOString updated}}</dateCreated>
-		{{else}}
+		<title>{{designation}}</title>
 		<dateCreated>{{toISOString date}}</dateCreated>
+		{{#if updated}}
+		<dateModified>{{toISOString updated}}</dateModified>
 		{{/if}}
+		<ownerName>{{owner.name}}</ownerName>
+		<ownerEmail>{{owner.email}}</ownerEmail>
+		<ownerId>{{owner.id}}</ownerId>
+		<docs>{{docs}}</docs>
 	</head>
 	<body>
     {{#each items}}

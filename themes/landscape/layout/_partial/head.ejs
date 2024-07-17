@@ -195,131 +195,121 @@
   }
 %>
 
-<head data-area="<%= meta.area %>" 
-      data-subarea="<%= meta.subarea %>"
-      data-type="<%= meta.type %>">
+<head data-area="<%= meta.area %>" data-subarea="<%= meta.subarea %>"data-type="<%= meta.type %>">
   <meta charset="utf-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="<%= config.meta_generator %>">
+  <meta name="author" content="<%= config.author %>">
+  <meta name="fediverse:creator" content="@<%= config.mastodon.user %>@<%= config.mastodon.server %>" />
 
   <title><%= meta.title %></title>
-  <meta name="author" content="<%= config.author %>">
   <meta name="title" content="<%= meta.title %>">
-  <% if (meta.description) { %>
+<% if (meta.description) { %>
   <meta name="description" content="<%= meta.description %>">
-  <% }%>
-  <% if (excerpt) { %> 
+<% }%>
+<% if (excerpt) { %> 
   <meta name="excerpt" content="<%= excerpt %>">
-  <% }%>
-  
-  <link rel="canonical" href="<%= url.replace("index.html", "") %>">
-  <% if (!meta.app) { %>
-    <link rel="manifest" href="/manifest.json">
-    <link rel="icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-    <meta name="theme-color" content="#444">
-  <% } else { %>
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="favicon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <meta name="theme-color" content="<%= meta.app.color %>">  
-  <% }%>
+<% }%>
 
-  <%#!-- JSON-LD (schema.org) for Google --%>
-  <% if (!meta.app) { %>
-  <%
-    let jsonPartial = "json-ld-" + meta.type;
-    let jsonLD = partial('_partial/meta/' + jsonPartial, { meta: meta });
-    try {
-      jsonLD = jsonLD.replace(/\\/g, '\\\\');
-      jsonLD = JSON.stringify(JSON.parse(jsonLD));
-    } catch (error) {
-      console.error(error);
-      console.log(jsonLD);
-      console.log(excerptDesc);
-    }
-  %>
-  <script type="application/ld+json"><%- jsonLD %></script>
-  <% }%>
-  
-  <%#!-- Open Graph --%>
   <meta property="og:site_name" content="<%= config.title %>">
   <meta property="og:type" content="blog">
   <meta property="og:url" content="<%= url.replace("index.html", "") %>">
   <meta property="og:title" content="<%= meta.title %>">
-  <% if (meta.description) { %>
+<% if (meta.description) { %>
   <meta property="og:description" content="<%= meta.description %>">
-  <% } %>
+<% } %>
   <meta property="og:logo" content="<%= config.url + config.icon %>" />
   <meta property="og:image" content="<%= config.url + meta.imageUrl %>">
   <meta property="og:locale" content="en_US">
 
-  <meta property="fediverse:creator" content="@<%= config.mastodon.user %>@<%= config.mastodon.server %>" />
-
-  <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="<%= url.replace("index.html", "") %>">
   <meta property="twitter:title" content="<%= meta.title %>">
-  <% if (meta.description) { %>
+<% if (meta.description) { %>
   <meta property="twitter:description" content="<%= meta.description %>">
-  <% } %>
+<% } %>
   <meta property="twitter:image" content="<%= config.url + meta.imageUrl %>">
 
-  <%#!-- webmention.io --%>
+<% if (!meta.app) { 
+  let jsonPartial = "json-ld-" + meta.type;
+  let jsonLD = partial('_partial/meta/' + jsonPartial, { meta: meta });
+  try {
+    jsonLD = jsonLD.replace(/\\/g, '\\\\');
+    jsonLD = JSON.stringify(JSON.parse(jsonLD));
+  } catch (error) {
+    console.error(error);
+    console.log(jsonLD);
+    console.log(excerptDesc);
+  }
+%>
+  <script type="application/ld+json"><%- jsonLD %></script><% }%>
+  
+  <link rel="canonical" href="<%= url.replace("index.html", "") %>">
+
+  <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" type="text/html" />
+  <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/rdf" type="application/rdf+xml" />
+
   <link rel="webmention" href="https://webmention.io/<%= config.title %>/webmention" />
   <link rel="pingback" href="https://webmention.io/<%= config.title %>/xmlrpc" />
 
-  <%#!-- IndieAuth --%>
   <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
   <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
-  <link href="https://github.com/<%= config.github_user %>" rel="me authn">
-  <link href="mailto:<%= config.email %>" rel="me authn">
-  
-  <%#!-- Feeds --%>
-  <!-- <link rel="alternate" href="%= url_for(config.feed.default) %" 
-        title="%= meta.title %" type="application/atom+xml"> -->
-  <%  
-  config.feed.feed_types.forEach(e => { 
-    if (e.alternate_link === true) { %>
-    <link rel="alternate" href="<%= url_for(e.output) %>" title="<%= e.title %>" type="<%= e.content %>">
-  <% } 
-  }); %>
 
-  <link rel="preload" href="/css/fonts/lexend/webfonts/Lexend-ExtraLight.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/css/fonts/lexend/webfonts/Lexend-Light.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/css/fonts/lexend/webfonts/Lexend-Regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/css/fonts/lexend/webfonts/Lexend-Medium.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/css/fonts/lexend/webfonts/Lexend-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="me authn" href="https://github.com/<%= config.github_user %>">
+  <link rel="me authn" href="mailto:<%= config.email %>">
+  <link rel="me authn" href="https://<%= config.mastodon.server %>/@<%= config.mastodon.user %>">
   
-  <link rel="preload" href="/css/fonts/opensans/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/css/fonts/opensans/opensans-italic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/css/fonts/opensans/opensans-semibold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/css/fonts/opensans/opensans-semibolditalic.woff2" as="font" type="font/woff2" crossorigin>
-  
-  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Regular.ttf.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-It.ttf.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Bold.ttf.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2" as="font" type="font/woff2" crossorigin>
-  
-  <link rel="preload" href="/css/fonts/forkawesome/forkawesome-webfont.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="blogroll" type="text/xml" href="<%= config.url %>/<%= config.blogroll.opml_path %>" title="<%= config.designation.replace("{TITLE}", "Blogroll") %>">
+  <link rel="search" type="application/opensearchdescription+xml" href="<%= config.url %>/<%= config.search.opensearch_path %>" title="<%= config.title %>"/>
 
-  <% if (!page.photograph) { %>
-  <link rel="preload" as="image" id="img-preload" href="/images/hero.jpg" 
-        imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
-  <link rel="preload" as="image" id="photo-preload" href="/images/hero.jpg" 
-        imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w">
-  <% } else { %>
-  <link rel="preload" as="image" id="img-preload" href="<%= meta.imageUrl %>" 
-        imagesrcset="<%= meta.imageUrl.replace("normal", "mobile") %> 480w, <%= meta.imageUrl.replace("normal", "tablet") %> 768w">
-  <link rel="preload" as="image" id="photo-preload" href="<%= meta.photoUrl %>" 
-        imagesrcset="<%= meta.photoUrl.replace("normal", "mobile") %> 480w, <%= meta.photoUrl.replace("normal", "tablet") %> 768w">  
-  <% } %>
+<% config.feed.feed_types.forEach(e => { if (e.alternate_link === true) { %>
+  <link rel="alternate" type="<%= e.content %>" href="<%= config.url %>/<%= e.output %>" title="<%= config.designation.replace("{TITLE}", e.title) %>">
+<% }}); %>
+
+  <meta name="color-scheme" content="light dark">
+<% if (!meta.app) { %>
+  <meta name="theme-color" content="#444">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/<%= config.favicon %>">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<% } else { %>
+  <meta name="theme-color" content="<%= meta.app.color %>">  
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<% }%>
+    
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/lexend/webfonts/Lexend-ExtraLight.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/lexend/webfonts/Lexend-Light.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/lexend/webfonts/Lexend-Regular.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/lexend/webfonts/Lexend-Medium.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/lexend/webfonts/Lexend-SemiBold.woff2" crossorigin>
+  
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/opensans/opensans-regular.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/opensans/opensans-italic.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/opensans/opensans-semibold.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/opensans/opensans-semibolditalic.woff2" crossorigin>
+  
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Regular.ttf.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-It.ttf.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Bold.ttf.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2" crossorigin>
+  
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/forkawesome/forkawesome-webfont.woff2" crossorigin>
+
+<% if (!page.photograph) { %>
+  <link rel="preload" as="image" type="image/jpeg" href="/images/hero.jpg" imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w" id="img-preload">
+  <link rel="preload" as="image" type="image/jpeg" href="/images/hero.jpg" imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w" id="photo-preload">
+<% } else { %>
+  <link rel="preload" as="image" type="image/jpeg" href="<%= meta.imageUrl %>" imagesrcset="<%= meta.imageUrl.replace("normal", "mobile") %> 480w, <%= meta.imageUrl.replace("normal", "tablet") %> 768w" id="img-preload">
+  <link rel="preload" as="image" type="image/jpeg" href="<%= meta.photoUrl %>" imagesrcset="<%= meta.photoUrl.replace("normal", "mobile") %> 480w, <%= meta.photoUrl.replace("normal", "tablet") %> 768w" id="photo-preload">  
+<% } %>
     
   <%- css('css/dist/asset-bundle.min.css') %>
   <%- css('css/style.css') %>
 
-  <% if (page.photograph) { %>
+<% if (page.photograph) { %>
   <style>
     #banner {
       background-size: cover;
@@ -334,7 +324,7 @@
       #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/<%= page.photograph.file %>"); }    
     }
   </style>
-  <% } %>
+<% } %>
 
   <script>
     var theme = "light"; //default

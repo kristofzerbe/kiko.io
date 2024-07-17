@@ -8,6 +8,7 @@ offline: false
 
 # Site
 title: kiko.io
+designation: kiko.io's {TITLE}
 subtitle: Memorable (Tech) Stuff
 description: Blog about memorable (tech) stuff by Kristof Zerbe
 description_short: by Kristof Zerbe
@@ -17,6 +18,7 @@ hero:
   file: $19-05-Israel-0228.jpg
   name: Sea Wall
   url: /images/hero.jpg
+favicon: favicon.ico
 icon: /images/icon-192x192.png
 keywords: 
 author: Kristof Zerbe
@@ -246,7 +248,14 @@ feed:
 blogroll:
   data_file: "21.13 Blogroll.md"
   opml_template: opml.handlebars
-  opml_path: blogroll.opml
+  opml_path: blogroll.xml
+
+# Search (OpenSearch)
+search: 
+  path: search
+  url_parameter: q
+  opensearch_template: opensearch.handlebars
+  opensearch_path: opensearch.xml
 
 # Sitemap: WAS! https://github.com/hexojs/hexo-generator-sitemap
 sitemap:

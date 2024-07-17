@@ -18,6 +18,14 @@ hexo.on('generateBefore', function() {
   const mdPage = path.join("_dynamic", page.name + ".md");
   page = getMD(hexo, mdPage, page);
 
+  page.designation = config.designation.replace("{TITLE}", page.title);
+  page.owner = {
+    name: config.author,
+    email: config.email,
+    id: config.url
+  }
+  page.docs = page.permalink;
+
   let blogrollUpdated = fs.statSync(mdBlogroll).mtime; // modified time
   if (!page.updated || blogrollUpdated > new Date(page.updated)) {
     page.updated = updateMDField(hexo, mdPage, "updated", blogrollUpdated);

@@ -18,8 +18,9 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
   let page = locals.dynamic.blogroll;
 
   page.content = page.content
-    .replace("{% blogroll_length %}", page.items.length)
-    .replace("{% generation_date %}", _helpers.moment().format("dddd, DD MMMM YYYY hh:mm"));
+    .replaceAll("{% blogroll_length %}", page.items.length)
+    .replaceAll("{% blogroll_path %}", config.blogroll.opml_path)
+    .replaceAll("{% generation_date %}", _helpers.moment().format("dddd, DD MMMM YYYY hh:mm"));
 
   let promises = [];
 
