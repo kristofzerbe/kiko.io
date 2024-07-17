@@ -13,9 +13,9 @@ categories:
 tags:
   - Flora
 related:
+  - Wet-Summer-Solstice
   - Smells-Like-Summer
   - Spring-Awakening
-  - First-of-May
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/112797522974732744
