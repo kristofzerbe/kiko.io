@@ -19,7 +19,9 @@ related:
   - Get-and-use-a-dominant-color-that-matches-the-header-image
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112808925304713486
+  - host: DevTo
+    url: https://dev.to/kristofzerbe/head-care-cleaning-up-meta-and-link-tags-1a93
 ---
 
 Actually, I just wanted to add the [blogroll link tag](https://opml.org/blogroll.opml) to the header of my blog, which [Dave Winer](http://davewiner.com/) mentioned in a comment on Dan Q's post [.well-known/feeds](https://danq.me/2023/08/23/well-known-feeds/#comment-246479). But since I was already in my [``head.ejs``](https://github.com/kristofzerbe/kiko.io/blob/master/themes/landscape/layout/_partial/head.ejs), I tidied up and reorganised it a bit. It's like a basement: you just put things in there and at some point it looks messy.
@@ -203,7 +205,6 @@ This blog is a static one and lives on GitHub Pages, i.e. there is no reactive c
 ``` html
 <link rel="webmention" href="https://webmention.io/kiko.io/webmention" />
 <link rel="pingback" href="https://webmention.io/kiko.io/xmlrpc" />
-
 ```
 
 {% moreinfo_label "More Info:" '[
@@ -258,7 +259,7 @@ Of course, my head element also contains the JSON-LD script that I wrote about o
 
 {% moreinfo_label "More Info:" '[
   [ "Google Search Central", "Introduction to structured data markup in Google Search", "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" ],
-  [ "(myself)", "Provide Blog Metadata via JSON-LD", "/post/Provide-Blog-Metadata-via-JSON-LD/" ]
+  [ "(myself)", "Provide Blog Metadata via JSON-LD", "https://kiko.io/post/Provide-Blog-Metadata-via-JSON-LD/" ]
 ]' %}
 
 ---
