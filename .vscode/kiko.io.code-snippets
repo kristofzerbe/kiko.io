@@ -174,18 +174,26 @@
 		"prefix": "hexo.kiko-io.moreinfo",
 		"body": [
 			"{% moreinfo '{ \"list\": [",
-			"  [ ${1:\"publisher\"}, ${2:\"title\"},",
-			"  ${3:\"url\"} ]$0",
+			"  [ ${1:\"publisher\"}, ${2:\"title\"}, ${3:\"url\"} ]$0",
 			"]}' %}"
 		],
 		"description": "Insert kiko.io's moreinfo"
+	},
+	"hexo.kiko-io.moreinfo_label": {
+		"scope": "markdown",
+		"prefix": "hexo.kiko-io.moreinfo_label",
+		"body": [
+			"{% moreinfo_label ${1:\"More Info:\"} '[",
+			"  [ ${2:\"publisher\"}, ${3:\"title\"}, ${4:\"url\"} ]$0",
+			"]' %}"
+		],
+		"description": "Insert kiko.io's moreinfo with Label"
 	},
 	"hexo.kiko-io.moreinfo.item": {
 		"scope": "markdown",
 		"prefix": "hexo.kiko-io.moreinfo.item",
 		"body": [
-			"[ ${1:\"publisher\"}, ${2:\"title\"},", 
-			"${3:\"url\"} ]$0"
+			"[ ${1:\"publisher\"}, ${2:\"title\"}, ${3:\"url\"} ]$0"
 		],
 		"description": "Insert kiko.io's moreinfo item"
 	},

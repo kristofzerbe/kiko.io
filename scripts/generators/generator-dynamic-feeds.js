@@ -23,7 +23,7 @@ hexo.extend.generator.register("dynamic-feeds", async function(locals) {
   const imageSource = (item) => {
     if (item.photograph) {
       if (item.photograph.socialmedia) {
-        return config.url + item.photograph.socialmedia
+        return item.photograph.socialmedia
           .replace("/static", "")
           .replace(".png", ".thumb.png");
       } else {

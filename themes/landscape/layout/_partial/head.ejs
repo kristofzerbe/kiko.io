@@ -198,10 +198,12 @@
 <head data-area="<%= meta.area %>" data-subarea="<%= meta.subarea %>"data-type="<%= meta.type %>">
   <meta charset="utf-8">
 
+  <!-- Ah, great. You have a closer look at the source code. Keep it up, because that's what the web is made for. If you have any questions about the many HEAD tags, here might be some information for you: https://kiko.io/post/Head-Care/ -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="<%= config.meta_generator %>">
-  <meta name="author" content="<%= config.author %>">
-  <meta name="fediverse:creator" content="@<%= config.mastodon.user %>@<%= config.mastodon.server %>" />
+
+  <link rel="canonical" href="<%= url.replace("index.html", "") %>">
 
   <title><%= meta.title %></title>
   <meta name="title" content="<%= meta.title %>">
@@ -230,73 +232,74 @@
   <meta property="twitter:description" content="<%= meta.description %>">
 <% } %>
   <meta property="twitter:image" content="<%= config.url + meta.imageUrl %>">
-
-<% if (!meta.app) { 
-  let jsonPartial = "json-ld-" + meta.type;
-  let jsonLD = partial('_partial/meta/' + jsonPartial, { meta: meta });
-  try {
-    jsonLD = jsonLD.replace(/\\/g, '\\\\');
-    jsonLD = JSON.stringify(JSON.parse(jsonLD));
-  } catch (error) {
-    console.error(error);
-    console.log(jsonLD);
-    console.log(excerptDesc);
-  }
-%>
-  <script type="application/ld+json"><%- jsonLD %></script><% }%>
   
-  <link rel="canonical" href="<%= url.replace("index.html", "") %>">
-
   <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" type="text/html" />
   <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/rdf" type="application/rdf+xml" />
 
+  <meta name="author" content="<%= config.author %>">
+  <meta name="fediverse:creator" content="@<%= config.mastodon.user %>@<%= config.mastodon.server %>" />
+
+  <link rel="me" href="https://<%= config.mastodon.server %>/@<%= config.mastodon.user %>">
+  <link rel="me authn" href="https://github.com/<%= config.github_user %>">
+  <link rel="me authn" href="mailto:<%= config.email %>">
+ 
   <link rel="webmention" href="https://webmention.io/<%= config.title %>/webmention" />
   <link rel="pingback" href="https://webmention.io/<%= config.title %>/xmlrpc" />
 
   <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
   <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
 
-  <link rel="me authn" href="https://github.com/<%= config.github_user %>">
-  <link rel="me authn" href="mailto:<%= config.email %>">
-  <link rel="me authn" href="https://<%= config.mastodon.server %>/@<%= config.mastodon.user %>">
-  
   <link rel="blogroll" type="text/xml" href="<%= config.url %>/<%= config.blogroll.opml_path %>" title="<%= config.designation.replace("{TITLE}", "Blogroll") %>">
   <link rel="search" type="application/opensearchdescription+xml" href="<%= config.url %>/<%= config.search.opensearch_path %>" title="<%= config.title %>"/>
 
+  <% if (!meta.app) { 
+    let jsonPartial = "json-ld-" + meta.type;
+    let jsonLD = partial('_partial/meta/' + jsonPartial, { meta: meta });
+    try {
+      jsonLD = jsonLD.replace(/\\/g, '\\\\');
+      jsonLD = JSON.stringify(JSON.parse(jsonLD));
+    } catch (error) {
+      console.error(error);
+      console.log(jsonLD);
+      console.log(excerptDesc);
+    }
+  %>
+  <script type="application/ld+json"><%- jsonLD %></script><% }%>
+  
 <% config.feed.feed_types.forEach(e => { if (e.alternate_link === true) { %>
   <link rel="alternate" type="<%= e.content %>" href="<%= config.url %>/<%= e.output %>" title="<%= config.designation.replace("{TITLE}", e.title) %>">
 <% }}); %>
 
-  <meta name="color-scheme" content="light dark">
 <% if (!meta.app) { %>
-  <meta name="theme-color" content="#444">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="/<%= config.favicon %>">
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <meta name="theme-color" content="#444">
 <% } else { %>
-  <meta name="theme-color" content="<%= meta.app.color %>">  
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="<%= meta.app.color %>">  
 <% }%>
+  <meta name="color-scheme" content="light dark">
     
-  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/lexend/webfonts/Lexend-ExtraLight.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/lexend/webfonts/Lexend-Light.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/lexend/webfonts/Lexend-Regular.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/lexend/webfonts/Lexend-Medium.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/lexend/webfonts/Lexend-SemiBold.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/lexend/webfonts/Lexend-ExtraLight.woff2">
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/lexend/webfonts/Lexend-Light.woff2">
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/lexend/webfonts/Lexend-Regular.woff2">
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/lexend/webfonts/Lexend-Medium.woff2">
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/lexend/webfonts/Lexend-SemiBold.woff2">
   
-  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/opensans/opensans-regular.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/opensans/opensans-italic.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/opensans/opensans-semibold.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/opensans/opensans-semibolditalic.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/opensans/opensans-regular.woff2">
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/opensans/opensans-italic.woff2">
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/opensans/opensans-semibold.woff2">
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/opensans/opensans-semibolditalic.woff2">
   
-  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Regular.ttf.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-It.ttf.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Bold.ttf.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Regular.ttf.woff2">
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-It.ttf.woff2">
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-Bold.ttf.woff2">
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2">
   
-  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/forkawesome/forkawesome-webfont.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/css/fonts/forkawesome/forkawesome-webfont.woff2">
 
 <% if (!page.photograph) { %>
   <link rel="preload" as="image" type="image/jpeg" href="/images/hero.jpg" imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w" id="img-preload">
