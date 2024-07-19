@@ -23,7 +23,7 @@ syndication:
 
 Triggered by [Dan Q.'s post '.well-known/feeds'](https://danq.me/2023/08/23/well-known-feeds/), in which he suggests using a consistent per-site file along the lines of the resource identifier pattern [.well-known](https://en.wikipedia.org/wiki/Well-known_URI) for providing feeds, instead of placing links on all individual pages, I have summarised my feeds accordingly today, simply because this solution feels more correct to me.
 
-His approach is actually quite smart, because he simply combines two existing techniques: [OPML (Outline Processor Markup Language)](https://en.wikipedia.org/wiki/OPML) and those well-known URI's. It was therefore not particularly difficult for me to create such a file. I do exactly the same with my [blogroll](/blogroll), only now the [feeds](/feeds) are my own, in different formats and variants.
+His approach is actually quite smart, because he simply combines two existing techniques: [OPML (Outline Processor Markup Language)](https://en.wikipedia.org/wiki/OPML) and those [well-known URI's](https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml). It was therefore not particularly difficult for me to create such a file. I do exactly the same with my [blogroll](/blogroll), only now the [feeds](/feeds) are my own, in different formats and variants.
 
 > Every idea has to start somewhere
 
