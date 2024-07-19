@@ -14,6 +14,8 @@ For years, I had integrated only one [Atom](https://en.wikipedia.org/wiki/Atom_(
 
 On this page you will now find not only both Atom feed variants for my last 20 posts ([Articles](/archives) and [Notes](notes)), but also some in the good old [RSS 2.0](https://en.wikipedia.org/wiki/RSS) and the relatively new [JSON feed](https://en.wikipedia.org/wiki/JSON_Feed) format.
 
+A list of all feeds can also be found via my [.well-known/feeds](/.well-known/feeds) endpoint, which I wrote about [here](/post/My-well-known-feeds-and-thoughts-beyond/).
+
 ---
 
 <section class="feeds">
@@ -62,7 +64,7 @@ On this page you will now find not only both Atom feed variants for my last 20 p
 
   ## HTML Feed
 
-  As an alternative, that can be read by humans and machines, here are the posts (articles only) in the form of a microformat-based [h-feed](https://microformats.org/wiki/h-feed).
+  As an alternative, that can be read by humans and machines, here are the posts (articles with excerpt only) in the form of a microformat-based [h-feed](https://microformats.org/wiki/h-feed).
 
   <!-- TODO: Tag Plugins are not working here: see https://github.com/hexojs/hexo/issues/4713 ... Workaround: placeholder replacement in generator-dynamic-feeds.js
    -->
