@@ -40,6 +40,7 @@ Here's my [.well-known/feeds](/.well-known/feeds):
     <title>kiko.io&#x27;s Feeds</title>
     <dateCreated>2023-08-30T12:47:33.000Z</dateCreated>
     <ownerName>Kristof Zerbe</ownerName>
+    <ownerEmail>kristof.zerbe@gmail.com</ownerEmail>
     <ownerId>https://kiko.io</ownerId>
     <docs>https://kiko.io/feeds</docs>
   </head>

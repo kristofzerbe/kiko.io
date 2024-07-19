@@ -6,8 +6,13 @@ hexo.extend.generator.register("wellknown-webfinger", async function() {
 
   log.info("Generating File " + magenta(".well-known/webfinger"));
 
+  let mastodonUrl = this.config.profiles.mastodon.split("@");
+  let mastodonServer = mastodonUrl[0];
+  let mastodonHost = mastodonServer.replaceAll("/","").replace("https:", "");
+  let mastodonUser = mastodonUrl[1];
+
   const url = 
-    `https://${this.config.mastodon.server}/.well-known/webfinger?resource=acct:${this.config.mastodon.user}@${this.config.mastodon.server}`;
+    `${mastodonServer}.well-known/webfinger?resource=acct:${mastodonUser}@${mastodonHost}`;
 
   const _path = ".well-known/webfinger";
 

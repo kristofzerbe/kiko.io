@@ -14,6 +14,11 @@
     imageUrl: config.hero.url
   }
 
+  let mastodonUrl = config.profiles.mastodon.split("@");
+  let mastodonServer = mastodonUrl[0];
+  let mastodonHost = mastodonServer.replaceAll("/","").replace("https:", "");
+  let mastodonUser = mastodonUrl[1];
+
   let currentYear = new Date().getFullYear();
 
   if (page.photograph) {
@@ -237,11 +242,18 @@
   <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/rdf" type="application/rdf+xml" />
 
   <meta name="author" content="<%= config.author %>">
-  <meta name="fediverse:creator" content="@<%= config.mastodon.user %>@<%= config.mastodon.server %>" />
+  <meta name="fediverse:creator" content="@<%= mastodonUser %>@<%= mastodonHost %>" />
 
-  <link rel="me" href="https://<%= config.mastodon.server %>/@<%= config.mastodon.user %>">
-  <link rel="me authn" href="https://github.com/<%= config.github_user %>">
+  <link rel="me authn" href="<%= config.profiles.github %>">
   <link rel="me authn" href="mailto:<%= config.email %>">
+  <link rel="me" href="<%= config.profiles.mastodon %>">
+  <link rel="me" href="<%= config.profiles.devto %>">
+  <link rel="me" href="<%= config.profiles.xing %>">
+  <link rel="me" href="<%= config.profiles.linkedin %>">
+  <link rel="me" href="<%= config.profiles.fivehundredpx %>">
+  <link rel="me" href="<%= config.profiles.flickr %>">
+  <link rel="me" href="<%= config.profiles.unsplash %>">
+  <link rel="me" href="<%= config.profiles.pixelfed %>">
  
   <link rel="webmention" href="https://webmention.io/<%= config.title %>/webmention" />
   <link rel="pingback" href="https://webmention.io/<%= config.title %>/xmlrpc" />
