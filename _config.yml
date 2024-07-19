@@ -200,45 +200,61 @@ feed:
   limit: 20
   icon: images/favicon-32x32.png
   logo: images/icon-72x72.png
+  opml_template: feeds-opml.handlebars
+  opml_path: .well-known/feeds
   feed_types:
-  - name: feed-posts-atom-full
+  - template: feed-atom-full.ejs
     title: Atom Feed (Full Content)
+    description: Last :limit posts as Atom feed
+    version: ATOM1
     content: application/atom+xml
     output: atom.xml
     generator: true
     alternate_link: true
-  - name: feed-posts-atom-excerpt
+  - template: feed-atom-excerpt.ejs
     title: Atom Feed (Excerpt)
+    description: Last :limit posts with excerpt only as Atom feed
+    version: ATOM1
     content: application/atom+xml
     output: atom-excerpt.xml
     generator: true
     alternate_link: false
-  - name: feed-posts-rss-full
+  - template: feed-rss-full.ejs
     title: RSS Feed (Full Content)
+    description: Last :limit posts as RSS feed
+    version: RSS2
     content: application/rss+xml
     output: rss.xml
     generator: true
     alternate_link: true
-  - name: feed-posts-rss-excerpt
+  - template: feed-rss-excerpt.ejs
     title: RSS Feed (Excerpt)
+    description: Last :limit posts with excerpt only as RSS feed
+    version: RSS2
     content: application/rss+xml
     output: rss-excerpt.xml
     generator: true
     alternate_link: false
-  - name: feed-posts-json-full
+  - template: feed-json-full.ejs
     title: JSON Feed (Full Content)
+    description: Last :limit posts as JSON feed
+    version: JSON1
     content: application/json
     output: feed.json
     generator: true
     alternate_link: true
-  - name: feed-posts-json-excerpt
+  - template: feed-json-excerpt.ejs
     title: JSON Feed (Excerpt)
+    description: Last :limit posts with excerpt only as JSON feed
+    version: JSON1
     content: application/json
     output: feed-excerpt.json
     generator: true
     alternate_link: false
-  - name: feed-posts-html-excerpt
+  - template: feed-html-excerpt.handlebars
     title: HTML Microformats Feed (Excerpt)
+    description: Last :limit arcticles with excerpt only as HTML Microformats feed
+    version: MF2HTML
     content: application/mf2+html
     output: feeds/index.html
     generator: false
@@ -247,7 +263,7 @@ feed:
 # Blogroll
 blogroll:
   data_file: "21.13 Blogroll.md"
-  opml_template: opml.handlebars
+  opml_template: blogroll-opml.handlebars
   opml_path: blogroll.xml
 
 # Search (OpenSearch)

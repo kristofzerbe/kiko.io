@@ -4,8 +4,8 @@
 
 hexo.config.feed.feed_types.forEach(e => {
   if (e.generator === true) {
-    hexo.extend.generator.register(e.name, function(locals) {
-      return baseGenerator(hexo, locals, e.title, "./templates/" + e.name + ".ejs", e.output);
+    hexo.extend.generator.register(e.template, function(locals) {
+      return baseGenerator(hexo, locals, e.title, "./templates/" + e.template, e.output);
     });
   }
 });

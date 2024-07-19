@@ -1,6 +1,10 @@
 const log = require('hexo-log')({ debug: false, silent: false });
 const { magenta } = require('chalk');
 const path = require('path');
+const fs = require("hexo-fs");
+const handlebars = require("handlebars");
+
+const _rootDir = hexo.source_dir.replace("source", "");
 
 hexo.extend.generator.register("dynamic-feeds", async function(locals) {
   log.info("Generating Dynamic Page " + magenta("FEEDS") + " ...");
@@ -10,7 +14,6 @@ hexo.extend.generator.register("dynamic-feeds", async function(locals) {
   let page = locals.dynamic.feeds;
   
   // Workaround for not working tag plugin 'feed_microformat' in feeds.md
-  // similar to generator-feed-custom.js 
   // ======================================================================================
   const publishedPosts = locals.posts
     .filter((post) => post.draft !== true)
@@ -38,61 +41,69 @@ hexo.extend.generator.register("dynamic-feeds", async function(locals) {
     return fc + '<p><a href="' + post.permalink + '">Continue reading ...</a></p>';
   }
   
-  let list = "";
+  // Generate MF2/HTML feed
+  let feedData = {
+    name: config.title,
+    url: config.url + "/feeds",
+    photo: config.url + "/" + config.feed.logo,
+    author: {
+      name: config.author,
+      url: config.url,
+      photo: config.url + "/" + config.photo
+    },
+    items: []
+  };
   postsToRender.forEach(post => {
-    let img = `<img src="${imageSource(post)}" />`;
-    let subTitle = (post.subtitle) ? `<h4 class="p-summary">${post.subtitle}</h4>` : "";
     let dateCreated = new Date(post.date).toISOString();
     let dateUpdated = new Date(post.updated).toISOString();
-    let updated = (dateCreated !== dateUpdated) ? `, <time class="dt-updated" datetime="${dateUpdated}">Updated: ${dateUpdated.substring(0,10)}</time>` : "";
-    
-    //TODO: outsource to handlebars template
-    let item = `
-      <div class="h-entry">
-        <details>
-          <summary>${img}</summary>
-          <header>
-            <div>
-              <time class="dt-published" datetime="${dateCreated}">${dateCreated.substring(0,10)}</time>
-              ${updated}
-            </div>
-            <h3 class="p-name">
-              <a href="${post.permalink}" class="u-url">${post.title}</a>
-            </h3>
-            ${subTitle}
-          </header>
-          <article class="e-content article-entry">${content(post)}</article>
-          <hr class="divider">
-        </details>
-      </div>
-    `;
-    list += item;
+
+    feedData.items.push({
+      img: imageSource(post),
+      published: dateCreated,
+      publishedString: dateCreated.substring(0,10),
+      updated: (dateCreated !== dateUpdated) ? dateUpdated : null,
+      updatedString: dateUpdated.substring(0,10),
+      url: post.permalink,
+      title: post.title,
+      subtitle: post.subtitle,
+      content: content(post)
+    });
   });
 
-  //TODO: outsource to handlebars template
-  let element = `
-    <div class="h-feed">
-      <data class="p-name" value="${config.title} HTML Microformats Feed"></data>
-      <data class="u-url" value="${config.url}/feeds"></data>
-      <data class="u-photo" value="${config.url + "/" + config.feed.logo}"></data>
-      <data class="p-author h-card">
-        <data class="p-name" value="${config.author}"></data>
-        <data class="p-url" value="${config.url}"></data>
-        <data class="p-photo" value="${config.url + "/" + config.photo}"></data>
-      </data>
-      ${list}
-    </div>
-  `;
+  const feedTemplate = path.join(_rootDir, config.template_dir, "feed-html-excerpt.handlebars");
+  if (!fs.existsSync(feedTemplate)) { throw "HTML Feed template file not found"; }
 
-  page.content = page.content.replace("{% feed_microformats %}", element);
+  const feedSource = fs.readFileSync(feedTemplate).toString('utf8');
+  const feed = handlebars.compile(feedSource);
+  const feedResult = feed(feedData);
+
+  page.content = page.content.replace("{% feed_microformats %}", feedResult);
   // ======================================================================================
 
-  let result = {
+  let result = [];
+
+  result.push({
       data: page,
       path: path.join(page.name, "index.html"),
       layout: "feeds"
-  };
+  });
+
+  //Render Feed OPML by template and add to result
+  const opmlTemplate = path.join(_rootDir, config.template_dir, config.feed.opml_template);
+  if (!fs.existsSync(opmlTemplate)) { throw "Feed OPML template file not found"; }
+
+  handlebars.registerHelper('toISOString', function(number) {
+    return number.toISOString()
+  })
+  
+  const opmlSource = fs.readFileSync(opmlTemplate).toString('utf8');
+  const opml = handlebars.compile(opmlSource);
+  const opmlResult = opml(page);
+
+  result.push({
+    path: config.feed.opml_path,
+    data: opmlResult
+  });
 
   return result;
-
 });

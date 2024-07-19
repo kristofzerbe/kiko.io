@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+		<title>{{designation}}</title>
+		<dateCreated>{{toISOString date}}</dateCreated>
+		<ownerName>{{owner.name}}</ownerName>
+		<ownerEmail>{{owner.email}}</ownerEmail>
+		<ownerId>{{owner.id}}</ownerId>
+		<docs>{{docs}}</docs>
+  </head>
+  <body>
+    {{#each items}}
+		<outline text="{{title}}" type="rss" version="{{version}}" xmlUrl="{{feed}}" htmlUrl="{{url}}" description="{{description}}"/>
+    {{/each}}
+  </body>
+</opml>

@@ -30,7 +30,34 @@ So I went through every META and LINK tag and researched it in documentaries or 
 
 <!-- more -->
 
----
+<details>
+  <summary>Table of Contents</summary>
+  {% anchorlist
+    "meta name=&quot;viewport&quot;|viewport"
+    "meta name=&quot;generator&quot;|generator"
+    "link rel=&quot;canonical&quot;|canonical"
+    "meta name=&quot;title &vert; description &vert; excerpt&quot;|title-desc-exerpt"
+    "meta property=&quot;og: ...&quot;|og"
+    "meta property=&quot;twitter: ...&quot;|twitter"
+    "link rel=&quot;license&quot;|license"
+    "meta name=&quot;author&quot;|author"
+    "meta name=&quot;fediverse:creator&quot;|fediverse-creator"
+    "link rel=&quot;me&quot;|me"
+    "link rel=&quot;webmention &vert; pingback&quot;|webmention-pingback"
+    "link rel=&quot;blogroll&quot;|blogroll"
+    "link rel=&quot;search&quot;|search"
+    "script type=&quot;application/ld+json&quot;|jsonld"
+    "link rel=&quot;alternate&quot;|alternate"
+    "link rel=&quot;manifest&quot;|manifest"
+    "link rel=&quot;icon &vert; apple-touch-icon&quot;|icon"
+    "meta name=&quot;theme-color&quot;|theme-color"
+    "meta name=&quot;color-scheme&quot;|color-scheme"
+    "link rel=&quot;preload&quot;|preload"
+    "link rel=&quot;stylesheet&quot;|stylesheet"
+  %}
+</details>
+
+<hr id="viewport"/>
 
 ## meta name="viewport"
 
@@ -44,7 +71,7 @@ This HTML5 classic has remained unchanged and is essential for a responsive web 
   [ "MDN Web Docs", "Viewport meta tag", "https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag" ]
 ]' %}
 
----
+<hr id="generator"/>
 
 ## meta name="generator"
 
@@ -58,7 +85,7 @@ This tag indicates which software was used to generate a website and I have noti
   [ "whatwg.org", "HTML Standard - Standard metadata names", "https://html.spec.whatwg.org/multipage/semantics.html#standard-metadata-names" ]
 ]' %}
 
----
+<hr id="canonical"/>
 
 ## link rel="canonical"
 
@@ -73,7 +100,7 @@ One of the most important link tags intended for search engines, it indicates wh
   [ "Google Search Central", "How to specify a canonical with rel=&quot;canonical&quot; and other methods", "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls" ]
 ]' %}
 
----
+<hr id="title-desc-exerpt"/>
 
 ## meta name="title | description | excerpt"
 
@@ -93,7 +120,7 @@ By the way, I have completely stopped offering meta keywords at this point. They
   [ "whatwg.org", "HTML Standard - Standard metadata names", "https://html.spec.whatwg.org/multipage/semantics.html#standard-metadata-names" ]
 ]' %}
 
----
+<hr id="og"/>
 
 ## meta property="og: ..."
 
@@ -114,7 +141,7 @@ Open Graph, and thus the ``og:`` meta tags, is an invention of Facebook, but is 
   [ null, "The Open Graph protocol", "https://ogp.me/" ]
 ]' %}
 
----
+<hr id="twitter"/>
 
 ## meta property="twitter: ..."
 
@@ -134,7 +161,7 @@ What do you think? Should they be taken out?
   [ "Twitter Developer Platform", "Getting started with Cards", "https://developer.x.com/en/docs/twitter-for-websites/cards/overview/markup" ]
 ]' %}
 
----
+<hr id="license"/>
 
 ## link rel="license"
 
@@ -149,7 +176,7 @@ I have copied these two tags from [Matthias Pfefferle's notizBlog](https://notiz
   [ "Microformats Wiki", "rel=&quot;license&quot;", "https://microformats.org/wiki/rel-license" ]
 ]' %}
 
----
+<hr id="author"/>
 
 ## meta name="author"
 
@@ -163,7 +190,7 @@ So that everyone knows who is responsible by name for what you are forced to rea
   [ "whatwg.org", "HTML Standard - Standard metadata names", "https://html.spec.whatwg.org/multipage/semantics.html#standard-metadata-names" ]
 ]' %}
 
----
+<hr id="fediverse-creator"/>
 
 ## meta name="fediverse:creator"
 
@@ -178,7 +205,7 @@ Here's the newest kid in town ... launched by the creators of [Mastodon](https:/
   [ "Chris McLeod", "Adding the New Mastodon Link Attribution Meta Tag", "https://chrismcleod.dev/blog/adding-the-new-mastodon-link-attribution-meta-tag/" ]
 ]' %}
 
----
+<hr id="me"/>
 
 ## link rel="me"
 
@@ -196,7 +223,7 @@ I use these tags to link my blog to my other identities/profile pages on the web
   [ "auth.hawx.me", "relme-auth - Sign in with your domain", "https://auth.hawx.me/" ]
 ]' %}
 
----
+<hr id="webmention-pingback"/>
 
 ## link rel="webmention | pingback"
 
@@ -213,7 +240,7 @@ This blog is a static one and lives on GitHub Pages, i.e. there is no reactive c
   [ "(myself)", "Hexo and the IndieWeb (Receiving Webmentions)", "https://kiko.io/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/" ]
 ]' %}
 
----
+<hr id="blogroll"/>
 
 ## link rel="blogroll"
 
@@ -231,7 +258,7 @@ Now let's get to the main reason for this post ... (see introduction above). I'v
   [ "opml.org (Dave Winer)", "About blogrolls", "https://opml.org/blogroll.opml" ]
 ]' %}
 
----
+<hr id="search"/>
 
 ## link rel="search"
 
@@ -247,7 +274,7 @@ Last year I integrated a [search via Pagefind into this blog](/post/Integration-
   [ "MDN Web Docs", "OpenSearch description format", "https://developer.mozilla.org/en-US/docs/Web/OpenSearch" ]
 ]' %}
 
----
+<hr id="jsonld"/>
 
 ## script type="application/ld+json"
 
@@ -262,7 +289,7 @@ Of course, my head element also contains the JSON-LD script that I wrote about o
   [ "(myself)", "Provide Blog Metadata via JSON-LD", "https://kiko.io/post/Provide-Blog-Metadata-via-JSON-LD/" ]
 ]' %}
 
----
+<hr id="alternate"/>
 
 ## link rel="alternate"
 
@@ -284,7 +311,7 @@ What appeals to me now is what Dan Q. brought up in the post in the introduction
   [ "Jim Nielsen", "Making Your RSS Feeds Automatically Discoverable", "https://blog.jim-nielsen.com/2021/automatically-discoverable-rss-feeds/" ]
 ]' %}
 
----
+<hr id="manifest"/>
 
 ## link rel="manifest"
 
@@ -298,7 +325,7 @@ Is a blog an app? I think so. An app for reading stuff. That's why it makes sens
   [ "MDN Web Docs", "Web app manifests", "https://developer.mozilla.org/en-US/docs/Web/Manifest" ]
 ]' %}
 
----
+<hr id="icon"/>
 
 ## link rel="icon | apple-touch-icon"
 
@@ -316,7 +343,7 @@ As with all resources, relative paths are useful here so that the site is also d
   [ "webhint", "Use Apple Touch Icon", "https://webhint.io/docs/user-guide/hints/hint-apple-touch-icons/" ]
 ]' %}
 
----
+<hr id="theme-color"/>
 
 ## meta name="theme-color"
 
@@ -330,7 +357,7 @@ This tag is similar to the icon and can also be found in the manifest, but it is
   [ "MDN Web Docs", "theme-color", "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color" ]
 ]' %}
 
----
+<hr id="color-scheme"/>
 
 ## meta name="color-scheme"
 
@@ -350,7 +377,7 @@ I've defined them the wrong way round so far, as I'm not a fan of dark themes an
   [ "web.dev (Thomas Steiner)", "Improved dark mode default styling with the color-scheme CSS property and the corresponding meta tag", "https://web.dev/articles/color-scheme" ]
 ]' %}
 
----
+<hr id="preload"/>
 
 ## link rel="preload"
 
@@ -369,7 +396,7 @@ It is essential to inform the browser of the correct MIME type of the resource a
   [ "whatwg.org", "HTML Standard - Link type &quot;preload&quot;", "https://html.spec.whatwg.org/multipage/links.html#link-type-preload" ]
 ]' %}
 
----
+<hr id="stylesheet"/>
 
 ## link rel="stylesheet"
 

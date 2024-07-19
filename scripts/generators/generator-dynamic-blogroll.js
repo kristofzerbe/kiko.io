@@ -78,9 +78,9 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
       layout: "blogroll"
     });
 
-    //Render OPML by template and add to result
+    //Render Blogroll OPML by template and add to result
     const opmlTemplate = path.join(_rootDir, config.template_dir, config.blogroll.opml_template);
-    if (!fs.existsSync(opmlTemplate)) { throw "OPML Template file not found"; }
+    if (!fs.existsSync(opmlTemplate)) { throw "Blogroll OPML template file not found"; }
 
     handlebars.registerHelper('toISOString', function(number) {
       return number.toISOString()

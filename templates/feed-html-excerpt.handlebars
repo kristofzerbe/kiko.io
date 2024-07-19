@@ -1,0 +1,31 @@
+<div class="h-feed">
+  <data class="p-name" value="{{name}} HTML Microformats Feed"></data>
+  <data class="u-url" value="{{url}}"></data>
+  <data class="u-photo" value="{{photo}}"></data>
+  <data class="p-author h-card">
+    <data class="p-name" value="{{author.name}}"></data>
+    <data class="p-url" value="{{author.url}}"></data>
+    <data class="p-photo" value="{{author.photo}}"></data>
+  </data>
+  {{#each items}}
+  <div class="h-entry">
+    <details>
+      <summary><img src="{{img}}" /></summary>
+      <header>
+        <div>
+          <time class="dt-published" datetime="{{published}}">{{publishedString}}</time>
+          {{#if updated}}
+          <time class="dt-updated" datetime="{{updated}}">Updated: {{updatedString}}</time>
+          {{/if}}
+        </div>
+        <h3 class="p-name"><a href="{{url}}" class="u-url">{{title}}</a></h3>
+        {{#if subtitle}}
+        <h4 class="p-summary">{{subtitle}}</h4>
+        {{/if}}
+      </header>
+      <article class="e-content article-entry">{{{content}}}</article>
+      <hr class="divider">
+    </details>
+  </div>
+  {{/each}}
+</div>
