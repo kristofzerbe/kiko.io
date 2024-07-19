@@ -2,6 +2,7 @@
 slug: My-well-known-feeds-and-thoughts-beyond
 title: My .well-known/feeds and thoughts beyond
 subtitle: Every idea has to start somewhere
+date: 2024-07-19 14:42:05
 photograph:
   file: D50_9022_2405.jpg
   name: Thomas Garden 24-05 XXII
@@ -17,8 +18,7 @@ related:
   - Show-pages-meta-data-JSON-LD-in-Bottom-Sheet
 syndication:
   - host: Mastodon
-    url: null
-date: 2024-07-19 14:42:05
+    url: https://indieweb.social/@kiko/112814832031474529
 ---
 
 Triggered by [Dan Q.'s post '.well-known/feeds'](https://danq.me/2023/08/23/well-known-feeds/), in which he suggests using a consistent per-site file along the lines of the resource identifier pattern [.well-known](https://en.wikipedia.org/wiki/Well-known_URI) for providing feeds, instead of placing links on all individual pages, I have summarised my feeds accordingly today, simply because this solution feels more correct to me.
