@@ -81,8 +81,9 @@ function getMDInfo(filePath, obj, parseContent) {
 
   if (parseContent) {
 
-    // HACK: Bend the image source of Markdown to correct subfolder
-    obj._content = obj._content.replaceAll("](images/", "](notes/" + obj.year + "/images/");
+    // HACK: Bend image and other file sources in Markdown to correct subfolder
+    obj._content = obj._content.replaceAll('](images/', '](/notes/' + obj.year + '/images/');
+    obj._content = obj._content.replaceAll('src="images/', 'src="/notes/' + obj.year + '/images/');
     
     let content = obj._content.split("\n<!-- more -->\n");
 

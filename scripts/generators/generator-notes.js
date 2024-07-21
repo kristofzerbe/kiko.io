@@ -135,28 +135,49 @@ function processImages(sourceDir, year) {
     return;
   }
 
-  // get images of notes
-  let images = fs
+  // set relative paths
+  let sourcePathRel = path.join("_" + "notes", year, "images");
+  let targetPathRel = path.join("notes", year, "images");
+
+  // set absolute paths
+  let sourcePath = path.join(hexo.source_dir, sourcePathRel);
+  let targetPath = path.join(hexo.public_dir, targetPathRel);
+
+  if (!fs.existsSync(targetPath)) {
+    fs.mkdirSync(targetPath, { recursive: true });
+  }
+
+  let files = fs
     .readdirSync(imageDir)
-    .filter((entry) => fs.statSync(path.join(imageDir, entry)).isFile())
-    .filter((file) => file.match(/.*.(jpg|jpeg|png)/g))
-    .map((entry) => ({
-      file: entry,
-    }));
-  // console.log(images);
+    .filter((entry) => fs.statSync(path.join(imageDir, entry)).isFile());
+
+  let imgRegEx = /.*.(jpg|jpeg|png)/g
+
+  // ----------------------------------------------------------------------------------
+
+  let others = files
+    .filter((file) => !file.match(imgRegEx))
+    .map((entry) => ({ file: entry }));
+
+  if (others.length > 0) {
+    others.forEach((other) => {
+      other.sourcePathRel = path.join(sourcePathRel, other.file);
+      other.source = path.join(sourcePath, other.file);
+      other.target = path.join(targetPath, other.file);
+
+      fs.copyFile(other.source, other.target);  
+      log.info("Processed: '" + magenta(other.sourcePathRel));
+    });
+  }
+
+  // ----------------------------------------------------------------------------------
+
+  // get images of notes
+  let images = files
+    .filter((file) => file.match(imgRegEx))
+    .map((entry) => ({ file: entry }));
 
   if (images.length > 0) {
-    // set relative paths
-    let sourcePathRel = path.join("_" + "notes", year, "images");
-    let targetPathRel = path.join("notes", year, "images");
-
-    // set absolute paths
-    let sourcePath = path.join(hexo.source_dir, sourcePathRel);
-    let targetPath = path.join(hexo.public_dir, targetPathRel);
-
-    if (!fs.existsSync(targetPath)) {
-      fs.mkdirSync(targetPath, { recursive: true });
-    }
 
     // extend image path info
     images.forEach((image) => {
