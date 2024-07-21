@@ -3,9 +3,10 @@ title: "#TIL | Theme Color - Meta vs. Manifest"
 date: 2024-07-20
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/112821729396540861
 ---
-A few weeks ago, I finally implemented the [dominant color automatically extracted from the header image](/post/get-and-use-a-dominant-color-that-matches-the-header-image/) also in the CSS as [`accent-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/accent-color) and of course I use it for the respective page as [`theme-color`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color) too.
+
+A few weeks ago, I finally implemented the [dominant color automatically extracted from the header image](/post/get-and-use-a-dominant-color-that-matches-the-header-image/) also in the CSS as [`accent-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/accent-color) and of course I use it for the respective page in the [Meta tag `theme-color`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color) too.
 
 However, I noticed today that the latter does not work and after some research it was clear that a fixed `theme_color` from a web manifest suppresses the value of the meta tag. At least in Chromium browsers.
 
