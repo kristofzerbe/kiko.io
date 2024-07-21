@@ -43,6 +43,10 @@ hexo.extend.tag.register("photo_masonry", function(args){
       metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir, photoName, "meta.json");
     }
 
+    if (!urlNormal || !urlMobile) {
+      console.error(photoName + " not found in photos, pool or shed!");
+    }
+
     if (fs.existsSync(metaPath)) {
       let meta = JSON.parse(fs.readFileSync(metaPath));
       if (typeof meta?.ObjectName !== "undefined") {
@@ -60,8 +64,7 @@ hexo.extend.tag.register("photo_masonry", function(args){
           <img src="${urlMobile}">
         </a>
       </div>
-  `;
-
+    `;
     list += element;
   });
 
