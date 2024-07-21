@@ -13,7 +13,7 @@ syndication:
 
 [Christoph Stoepel](https://christoph.stoepel.net/) has created an awesome visualization of the geographical distribution of surnames in Germany. He started this genealogical project back in 2004, but I just stumbled across it now. Interesting to see where most namesakes live...
 
-![05-05-geogen](images/05-05-geogen.png)
+![05-05-geogen](_attachments/05-05-geogen.png)
 
 ```cardlink
 url: https://geogen.stoepel.net/index.html

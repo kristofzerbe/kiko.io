@@ -65,7 +65,7 @@ hexo.extend.generator.register("notes", function (locals) {
       indexes.push(index);
       log.info("-> " + magenta(index.notes.length) + " Notes for " + magenta(index.year));
 
-      processImages(yearDir, index.year);
+      processAttachments(yearDir, index.year);
     }
   });
 
@@ -128,16 +128,16 @@ function getMDInfo(filePath, obj, parseContent) {
   return obj;
 }
 
-function processImages(sourceDir, year) {
-  let imageDir = path.join(sourceDir, "images");
+function processAttachments(sourceDir, year) {
+  let attachmentDir = path.join(sourceDir, "_attachments");
 
-  if (!fs.existsSync(imageDir)) {
+  if (!fs.existsSync(attachmentDir)) {
     return;
   }
 
   // set relative paths
-  let sourcePathRel = path.join("_" + "notes", year, "images");
-  let targetPathRel = path.join("notes", year, "images");
+  let sourcePathRel = path.join("_" + "notes", year, "_attachments");
+  let targetPathRel = path.join("notes", year, "_attachments");
 
   // set absolute paths
   let sourcePath = path.join(hexo.source_dir, sourcePathRel);
@@ -148,15 +148,15 @@ function processImages(sourceDir, year) {
   }
 
   let files = fs
-    .readdirSync(imageDir)
-    .filter((entry) => fs.statSync(path.join(imageDir, entry)).isFile());
+    .readdirSync(attachmentDir)
+    .filter((entry) => fs.statSync(path.join(attachmentDir, entry)).isFile());
 
-  let imgRegEx = /.*.(jpg|jpeg|png)/g
+  let imageRegEx = /.*.(jpg|jpeg|png)/g
 
   // ----------------------------------------------------------------------------------
 
   let others = files
-    .filter((file) => !file.match(imgRegEx))
+    .filter((file) => !file.match(imageRegEx))
     .map((entry) => ({ file: entry }));
 
   if (others.length > 0) {
@@ -174,7 +174,7 @@ function processImages(sourceDir, year) {
 
   // get images of notes
   let images = files
-    .filter((file) => file.match(imgRegEx))
+    .filter((file) => file.match(imageRegEx))
     .map((entry) => ({ file: entry }));
 
   if (images.length > 0) {
@@ -224,8 +224,6 @@ function processImages(sourceDir, year) {
             }
 
           } else {
-            //fs.copyFile(image.source, image.target);
-            //log.info("Note image '" + magenta(image.sourcePathRel) + "' copied");
 
             switch (metadata.format) {
               case 'png':

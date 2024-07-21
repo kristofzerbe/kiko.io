@@ -19,6 +19,6 @@ So I have changed that now...
 
 [https://social.treehouse.systems/@deadsuperhero/110608652068691549](https://social.treehouse.systems/@deadsuperhero/110608652068691549)
 
-![06-29-results-full-article-poll](images/06-29-results-full-article-poll.png)
+![06-29-results-full-article-poll](_attachments/06-29-results-full-article-poll.png)
 
 #feed #poll

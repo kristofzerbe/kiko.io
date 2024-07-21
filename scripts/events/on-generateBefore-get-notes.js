@@ -66,7 +66,6 @@ hexo.on('generateBefore', function() {
       if (!note.hidden) {
         noteItems.push(note);
       }
-
     });
 
     this.locals.set('notes', noteItems);
@@ -81,9 +80,9 @@ function getMDInfo(filePath, obj, parseContent) {
 
   if (parseContent) {
 
-    // HACK: Bend image and other file sources in Markdown to correct subfolder
-    obj._content = obj._content.replaceAll('](images/', '](/notes/' + obj.year + '/images/');
-    obj._content = obj._content.replaceAll('src="images/', 'src="/notes/' + obj.year + '/images/');
+    // HACK: Bend image and other attachment sources in Markdown to correct subfolder
+    obj._content = obj._content.replaceAll('](_attachments/', '](/notes/' + obj.year + '/_attachments/');
+    obj._content = obj._content.replaceAll('src="_attachments/', 'src="/notes/' + obj.year + '/_attachments/');
     
     let content = obj._content.split("\n<!-- more -->\n");
 

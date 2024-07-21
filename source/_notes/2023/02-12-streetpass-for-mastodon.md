@@ -14,4 +14,4 @@ syndication:
 [rel=me](http://microformats.org/wiki/rel-me) links are an important part to verify users on Mastodon, but not every site provides a visible link to follow or you have to search around. **[StreetPass](https://streetpass.social/)** is a little extension for Chromium and FF which collects those REL links while browsing. Extremely convenient
 ... Thank you [@tvler@mastodon.social](https://mastodon.social/@tvler)
 
-![02-12-streetpass](images/02-12-streetpass.png)
+![02-12-streetpass](_attachments/02-12-streetpass.png)

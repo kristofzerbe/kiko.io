@@ -20,4 +20,4 @@ More test test with no meaning...
 
 Lorem ipsum dolor sit amet ...!
 
-![22-11-19-123420](images/22-11-19-123420.png)
+![22-11-19-123420](_attachments/22-11-19-123420.png)

@@ -15,4 +15,4 @@ I don't really know what the site **[personalsit.es](https://personalsit.es/#htt
 
 #Visibility #Fun
 
-![personalsit.es](images/01-02-personalsites.png)
+![personalsit.es](_attachments/01-02-personalsites.png)

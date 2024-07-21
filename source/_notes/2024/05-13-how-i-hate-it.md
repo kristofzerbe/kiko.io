@@ -13,6 +13,6 @@ Info: The camera is fine, the lens is missing a small but insignificant piece
 
 Now I don't always carry duct tape with me, so my wife helped me out with plasters.
 
-![Broken 1 cent part](images/PXL_20240513_140721869.jpg)
+![Broken 1 cent part](_attachments/PXL_20240513_140721869.jpg)
 
-![Plasters always help](images/PXL_20240513_142428210.jpg)
+![Plasters always help](_attachments/PXL_20240513_142428210.jpg)

@@ -19,7 +19,7 @@ This thing not only maps all sorts of image metadata, but is also incredibly fas
 
 I have bookmarked Mike's example page, if I need the data of a photo quickly...
 
-![08-21-exifr](images/08-21-exifr.png)
+![08-21-exifr](_attachments/08-21-exifr.png)
 
 #JavaScript #NodeJS #EXIF
 

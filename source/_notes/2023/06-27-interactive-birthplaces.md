@@ -15,7 +15,7 @@ What do Simone Signoret, French actress, and John McEnroe, American tennis playe
 
 #map #people
 
-![06-27-notable-people](images/06-27-notable-people.png)
+![06-27-notable-people](_attachments/06-27-notable-people.png)
 
 ```cardlink
 url: https://tjukanovt.github.io/notable-people

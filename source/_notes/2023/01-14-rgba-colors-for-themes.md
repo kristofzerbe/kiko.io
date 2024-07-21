@@ -13,4 +13,4 @@ Instead of using two different colors for the light and the dark theme, take ONE
 
 #CSS #Colors #RGBA
 
-![Background RGBA Color for Theme](images/01-14-background-rgba.png)
+![Background RGBA Color for Theme](_attachments/01-14-background-rgba.png)
