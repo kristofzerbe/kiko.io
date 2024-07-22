@@ -33,7 +33,7 @@ A slim tablet is essential for handling photos or writing texts while on the go.
 
 ### Mobile
 
-My first mobile phone was a **Nokia**, of course, and with the transition to smartphones, **HTC** with Android was my home for several devices and years until I switched to Google Pixel products due to the annoying update issue. My current one is a **[Pixel 8](https://store.google.com/de/product/pixel_8)** because the Pro version reminds me more of a baking tray.
+My first mobile phone was a **Nokia**, of course, and with the transition to smartphones, **HTC** and several **Sony Xperia** with Android were my home for many years, until I switched to Google Pixel products due to the annoying update issue. My current one is a **[Pixel 8](https://store.google.com/de/product/pixel_8)** because the Pro version reminds me more of a baking tray.
 
 ### Photo
 
