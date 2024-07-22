@@ -19,6 +19,8 @@ related:
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/112826024121106437
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/720888002073935771
 ---
 
 33 degrees Celsius outside makes life sluggish. And when it starts to rain, it feels like a laundry room. Just the right weather for Thomas' garden treasures, which continue to be surrounded by more fliers than the eye can count. I've even had one crawl into my collar while trying to push my way through the dense greenery with my camera. This time, however, without my stovepipe. That way I can get closer. The only annoying thing today was that I had forgotten to switch off the bracket function from the last photo session and didn't realise that I had underexposed one photo and overexposed another, followed by a normal exposure. But what the heck ... still some nice shots, I think.

@@ -44,7 +44,9 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
         feed2json.fromString(response.data, item.feed, (error, json) => {
           
           if (!error) {
-            json.items.sort((a,b) => a.date_published - b.date_published).reverse();
+            // json.items.sort((a,b) => a.date_published - b.date_published).reverse();
+            json.items.sort((a,b) => _helpers.moment(a.date_published).diff(b.date_published)).reverse();
+
             item.feedLength = json.items.length;
             
             let feedItem = json.items[0];
@@ -70,15 +72,14 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
   // Resolve all promises
   return Promise.all(promises).then(function() {
 
-    page.items.sort((a,b) => a.latest_post?.date_published - b.latest_post?.date_published).reverse();
-  
+    // Render Blogroll
     result.push({
       path: path.join(page.name, "index.html"),
       data: page,
       layout: "blogroll"
     });
 
-    //Render Blogroll OPML by template and add to result
+    // Render Blogroll OPML by template and add to result
     const opmlTemplate = path.join(_rootDir, config.template_dir, config.blogroll.opml_template);
     if (!fs.existsSync(opmlTemplate)) { throw "Blogroll OPML template file not found"; }
 

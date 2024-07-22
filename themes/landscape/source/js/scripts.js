@@ -237,7 +237,7 @@ function setVibrantColor(theme) {
         $(":root").css("--color-accent2", tinycolor(color).brighten(25).toHexString())
         $(":root").css("--dark-color-accent", tinycolor(color).brighten(50).toHexString());
         $(":root").css("--dark-color-accent2", tinycolor(color).brighten(25).toHexString());
-        document.querySelector('meta[name="theme-color"]').setAttribute('content', color);
+        document.querySelector('meta[name="theme-color"]').setAttribute("content", color);
       });
     } catch (error) {
     }

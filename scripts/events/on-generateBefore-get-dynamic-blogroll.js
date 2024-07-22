@@ -46,6 +46,12 @@ hexo.on('generateBefore', function() {
 
     fmBlog.favicon = config.favicon_service_url.replace("{URL}", fmBlog.url);
 
+    fmBlog.latest_post = {
+      "url": null,
+      "title": null,
+      "date_published": 0
+    }
+
     page.items.push(fmBlog);
   }
 
