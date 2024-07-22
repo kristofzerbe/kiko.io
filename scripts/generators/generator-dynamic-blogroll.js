@@ -52,7 +52,7 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
             let feedItem = json.items[0];
             item.latest_post = {
               "url": feedItem.url,
-              "title": feedItem.title,
+              "title": feedItem.title || "- no title -",
               "date_published": feedItem.date_published
             };
           } else {
@@ -80,6 +80,8 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
     });
 
     // Render Blogroll OPML by template and add to result
+    log.info("Generating File " + magenta(config.blogroll.opml_path));
+
     const opmlTemplate = path.join(_rootDir, config.template_dir, config.blogroll.opml_template);
     if (!fs.existsSync(opmlTemplate)) { throw "Blogroll OPML template file not found"; }
 

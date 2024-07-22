@@ -8,14 +8,14 @@ const sharp = require("sharp");
 // const { config } = require("process");
 
 hexo.extend.generator.register("notes", function (locals) {
+  log.info("Generating Pages for " + magenta("NOTES") + " ...");
+
   let config = this.config;
   let notesDir = path.join(config.source_dir, "_" + config.notes_dir);
   let currentYear = new Date().getFullYear();
 
   // collection of pages to render
   let result = [];
-
-  log.info("Generating Pages for " + magenta("NOTES") + " ...");
 
   let years = fs
     .readdirSync(notesDir)

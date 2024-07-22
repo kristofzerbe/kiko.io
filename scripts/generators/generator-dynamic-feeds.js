@@ -89,6 +89,8 @@ hexo.extend.generator.register("dynamic-feeds", async function(locals) {
   });
 
   //Render Feed OPML by template and add to result
+  log.info("Generating File " + magenta(config.feed.opml_path));
+  
   const opmlTemplate = path.join(_rootDir, config.template_dir, config.feed.opml_template);
   if (!fs.existsSync(opmlTemplate)) { throw "Feed OPML template file not found"; }
 
