@@ -207,7 +207,7 @@
     document.getElementById("header").classList.add("no-vibrant");
     setTimeout(() => {
       document.getElementById("header").classList.add("gray");
-      document.querySelector('meta[name="theme-color"]').setAttribute("content", "gray");
+      document.querySelector('meta[name="theme-color"]').setAttribute("content", window.getComputedStyle(document.getElementById("header")).backgroundColor;);
     }, 900);
   </script>
 
