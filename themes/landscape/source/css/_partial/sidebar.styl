@@ -112,6 +112,12 @@ else
         top: 120px
         right: 16px
         opacity: 0.5
+        /[data-theme="dark"] &
+          filter: grayscale(1) invert(0)
+          background-image: url(/images/icons/pixelfed_invert.svg)
+          &:hover
+            filter: grayscale(0)
+
       &.me-mastodon
         background-image: url(/images/icons/mastodon.svg)
         top: 127px

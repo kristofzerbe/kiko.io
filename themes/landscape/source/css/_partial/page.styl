@@ -464,24 +464,48 @@
           height: 160px
       div.card-links
         padding-top: (small-margin / 2)
-        a
+        a.syndication-link /* on extension see config.syndication_hosts */
           position: relative
-          padding-inline-end: 5px
+          width: 16px
+          height: 16px
+          padding-inline-end: 4px
+          background-size: 14px
+          background-repeat: no-repeat 
+          background-position: 0
           filter: grayscale(1)
-          &.syndication-link /* on extension see config.syndication_hosts */
-            &.host-500px
-              opacity: 0.33
-            &.host-flickr
-              opacity: 0.33
-            &.host-unsplash
-              opacity: 0.25
-            &.host-pixelfed
-              opacity: 0.4
-          img
-            width: 14px
+          /[data-theme="dark"] &
+            filter: grayscale(1) invert(1)
           &:hover
             filter: grayscale(0)
             opacity: 1 !important
+          &.host-500px
+            background-image: url(/images/icons/500px.svg)
+            opacity: 0.33
+            /[data-theme="dark"] &
+              &:hover
+                filter: invert(1)
+          &.host-flickr
+            background-image: url(/images/icons/flickr.svg)
+            opacity: 0.33
+            background-size: 16px
+            margin-inline-start: -1px
+            padding-inline-end: 7px
+          &.host-unsplash
+            background-image: url(/images/icons/unsplash.svg)
+            opacity: 0.25
+            background-size: 12px
+            /[data-theme="dark"] &
+              &:hover
+                filter: invert(1)
+          &.host-pixelfed
+            background-image: url(/images/icons/pixelfed.svg)
+            opacity: 0.4
+            /[data-theme="dark"] &
+              background-image: url(/images/icons/pixelfed_invert.svg)
+              filter: grayscale(1) invert(0)
+              &:hover
+                filter: grayscale(0)
+
       span.pre-title
         display: block
         margin-top: small-margin
