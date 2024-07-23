@@ -678,6 +678,8 @@
         color: dark-color-link
       span
         border-bottom: transparent 1px solid
+        /[data-theme="dark"] &
+          opacity: 0.75
         &:hover
           border-bottom: color-link 1px solid
           /[data-theme="dark"] &
@@ -687,7 +689,10 @@
         background-size: 16px
         background-position: 15px 6px
         /[data-theme="dark"] &
-          filter: invert(0.75)
+          filter: invert(1)
+        span
+          /[data-theme="dark"] &
+            filter: invert(1)
       &.host-flickr
         background-image: url(/images/icons/flickr.svg)
         background-size: 20px
@@ -698,13 +703,15 @@
         background-position: 15px 7px
         /[data-theme="dark"] &
           background-image: url(/images/icons/pixelfed_invert.svg)
-          color: #aaa
       &.host-unsplash
         background-image: url(/images/icons/unsplash.svg)
         background-size: 16px
         background-position: 14px 6px
         /[data-theme="dark"] &
-          filter: invert(0.75)
+          filter: invert(1)
+        span
+          /[data-theme="dark"] &
+            filter: invert(1)
       &.host-twitter
         background-image: url(/images/icons/twitter.svg)
         background-size: 16px
@@ -722,7 +729,7 @@
         background-size: 16px
         background-position: 13px 5px
         /[data-theme="dark"] &
-          filter: invert(0.75)
+          filter: invert(1)
 
 .article-interaction
   @extend $base-style
