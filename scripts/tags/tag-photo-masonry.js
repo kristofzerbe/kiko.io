@@ -59,7 +59,7 @@ hexo.extend.tag.register("photo_masonry", function(args){
         <a class="spotlight" href="/photos/${photoName}"
            data-description="${title}"
            data-src="${urlNormal}"
-           data-button="Open Page"
+           data-button="Photo Page&nbsp;&nbsp;&#10148;"
            data-button-href="/photos/${photoName}">
           <img src="${urlMobile}">
         </a>

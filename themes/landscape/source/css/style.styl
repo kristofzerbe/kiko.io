@@ -402,11 +402,19 @@ if sidebar is left
       right: 0
       bottom: 0
       margin: 0
-      padding: 20px
-      background-color: transparent
+      padding: medium-margin default-margin
+      margin: default-margin
+      border-radius: border-radius-small
+      background-color: var(--color-accent2)
       color: #fff
       opacity: 0.5
       text-transform: uppercase
+      &:hover
+        opacity: 1
+        background-color: var(--color-accent)
+      @media mq-mobile
+        padding: (medium-margin / 3) medium-margin
+        margin: medium-margin
 
 @import "_extend"
 @import "_partial/header"

@@ -335,12 +335,14 @@
     item.style.display = null;
     setTimeout(() => {
       item.classList.remove("hide");
+      item.querySelector("a.card-img").classList.add("spotlight");
     }, 250);
   }
   function hidePhoto(item) {
     item.classList.add("hide");
     setTimeout(() => {
       item.style.display = "none";
+      item.querySelector("a.card-img").classList.remove("spotlight");
     }, 250);
   }
 
@@ -350,7 +352,7 @@
         let resultElement = document.querySelector(".view-bar #view-count");
         resultElement.textContent = resultCount;
 
-        Spotlight.init();
+        //No need: Spotlight.init();
         if (macyInstance) macyInstance.reInit();
       }, 300);
   }
