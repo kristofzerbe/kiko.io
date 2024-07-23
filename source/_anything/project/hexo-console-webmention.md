@@ -20,9 +20,9 @@ photograph:
 For more information visit:
 
 <div class="brand-links">
-<a href="https://github.com/kristofzerbe/hexo-console-webmention" class="github"><img src="/images/github.svg" alt="Github" /><span>Github</span></a>
-<a href="https://www.npmjs.com/package/hexo-console-webmention" class="npm"><img src="/images/npm.svg" alt="NPM" /><span>NPM</span></a>
+<a href="https://github.com/kristofzerbe/hexo-console-webmention" class="github"><img src="/images/icons/github.svg" alt="Github" /><span>Github</span></a>
+<a href="https://www.npmjs.com/package/hexo-console-webmention" class="npm"><img src="/images/icons/npm.svg" alt="NPM" /><span>NPM</span></a>
 <a href="https://deps.dev/npm/hexo-console-webmention" class="insights"><img src="/images/insights.svg" alt="Open Source Insights" /><span>Insights</span></a>
 <span style="margin-top:25px">or</span>
-<a href="https://open.vscode.dev/kristofzerbe/hexo-console-webmention" class="vscode"><img src="/images/vscode.svg" alt="VSCode" /><span>Open in VSCode</span></a>
+<a href="https://open.vscode.dev/kristofzerbe/hexo-console-webmention" class="vscode"><img src="/images/icons/vscode.svg" alt="VSCode" /><span>Open in VSCode</span></a>
 </div>

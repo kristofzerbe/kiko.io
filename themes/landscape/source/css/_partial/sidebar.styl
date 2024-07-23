@@ -27,7 +27,7 @@ else
     position: relative 
     width: 120px 
     border: 1px transparent solid
-    a:not(.fab)
+    a:not(.profile)
       border-radius: 50%;
       &:hover
         border-color: color-border
@@ -35,99 +35,89 @@ else
         /[data-theme="dark"] &
           border-color: dark-color-border
           box-shadow: 1px 2px 20px 5px dark-color-border
-
       img 
         width: 120px
         border-radius: 50%;
         /[data-theme="dark"] &
           filter: brightness(85%)
-    a.fab
+    a.profile
+      display: inline-block
+      width: 20px
+      height: 20px
+      position: absolute
+      filter: grayscale(1)
+      /[data-theme="dark"] &
+        filter: grayscale(1) invert(1)
+      opacity: 0.4
+      background-size: 16px
+      background-repeat: no-repeat
+      background-position: 2px
       &:hover
-        &:before
-          opacity: 1
-      &:before
-        font-family: fa-icons
-        position: absolute
-        font-size: 18px;
-        opacity: 0.42
-    a.fa-github
-      &:hover  
-        color: color-github
-        /[data-theme="dark"] &
-          color: dark-color-github
-      &:before
-        content: icon-github
+        filter: grayscale(0)
+        opacity: 1 !important
+      &.me-github
+        background-image: url(/images/icons/github.svg)
+        background-size: 17px
         top: -27px
-        right: 50px
-        font-size: 20px
-    a.fa-devto
-      &:hover  
-        color: color-devto
+        right: 48px
+        opacity: 0.3
         /[data-theme="dark"] &
-          color: dark-color-devto
-      &:before
-        content: icon-devto
+          &:hover
+            filter: invert(1)
+      &.me-devto
+        background-image: url(/images/icons/devto.svg)
+        background-size: 15px
         top: -22px
-        right: 20px
-    a.fa-xing
-      &:hover  
-        color: color-xing
-      &:before
-        content: icon-xing
+        right: 18px
+        opacity: 0.25
+        /[data-theme="dark"] &
+          &:hover
+            filter: invert(1)
+      &.me-linkedin
+        background-image: url(/images/icons/linkedin.svg)
+        background-size: 15px
         top: -5px
-        right: -5px
-    a.fa-linkedin
-      &:hover  
-        color: color-linkedin
-      &:before
-        content: icon-linkedin
+        right: -7px
+      &.me-xing
+        background-image: url(/images/icons/xing-mono.svg)
         top: 20px
-        right: -22px
-        font-size: 18px
-    a.fa-500px
-      &:hover  
-        color: color-500px
-        /[data-theme="dark"] &
-          color: dark-color-500px
-      &:before
-        content: icon-500px
-        top: 52px
         right: -24px
-    a.fa-flickr
-      &:hover  
-        color: color-flickr
+        opacity: 0.3
+        &:hover
+          background-image: url(/images/icons/xing.svg)
+      &.me-500px
+        background-image: url(/images/icons/500px.svg)
+        top: 52px
+        right: -28px
         /[data-theme="dark"] &
-          color: dark-color-flickr
-      &:before
-        content: icon-flickr
+          &:hover
+            filter: invert(1)
+      &.me-flickr
+        background-image: url(/images/icons/flickr.svg)
         top: 81px
-        right: -21px
-    a.fa-unsplash
-      &:hover  
-        color: color-unsplash
+        right: -23px
+        width: 18px
+      &.me-unsplash
+        background-image: url(/images/icons/unsplash.svg)
+        background-size: 15px
+        top: 102px
+        right: -13px
+        width: 24px
+        opacity: 0.25
         /[data-theme="dark"] &
-          color: dark-color-unsplash
-      &:before
-        content: icon-unsplash
-        top: 104px
-        right: -5px
-    a.fa-pixelfed
-      &:hover  
-        color: color-pixelfed
-        /[data-theme="dark"] &
-          color: dark-color-pixelfed
-      &:before
-        content: icon-pixelfed
-        top: 119px
-        right: 20px
-        font-size: 20px
-    a.fa-mastodon
-      &:hover  
-        color: color-mastodon
-      &:before
-        content: icon-mastodon
-        top: 126px
-        right: 50px
+          &:hover
+            filter: invert(1)
+      &.me-pixelfed
+        background-image: url(/images/icons/pixelfed.svg)
+        top: 120px
+        right: 16px
+        opacity: 0.5
+      &.me-mastodon
+        background-image: url(/images/icons/mastodon.svg)
+        top: 127px
+        right: 45px
+        opacity: 0.5
+
   h3, p
     text-align: center  
   h3 

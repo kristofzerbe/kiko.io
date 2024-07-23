@@ -423,6 +423,8 @@
       h3
         margin: 0
         align-self: center
+      div.card-links
+        display: none
       span.pre-title
         grid-area: link
         line-height: 1rem
@@ -447,7 +449,7 @@
           height: 100%
           object-fit: cover
       h3
-        margin: default-margin 0 0
+        margin: medium-margin 0 0
         font-size: font-subtitle-size
         
     .card.collection
@@ -460,6 +462,26 @@
         grid-area: image
         img
           height: 160px
+      div.card-links
+        padding-top: (small-margin / 2)
+        a
+          position: relative
+          padding-inline-end: 5px
+          filter: grayscale(1)
+          &.syndication-link /* on extension see config.syndication_hosts */
+            &.host-500px
+              opacity: 0.33
+            &.host-flickr
+              opacity: 0.33
+            &.host-unsplash
+              opacity: 0.25
+            &.host-pixelfed
+              opacity: 0.4
+          img
+            width: 14px
+          &:hover
+            filter: grayscale(0)
+            opacity: 1 !important
       span.pre-title
         display: block
         margin-top: small-margin
@@ -482,6 +504,8 @@
         img 
           border-radius: border-radius-small
           width: 100%
+      div.card-links
+        display: none
       span.pre-title
         display: none
       .status
@@ -547,11 +571,11 @@
         width: 24px
         height: 24px
       a.atom:before
-        background-image: url(/images/atom.svg)
+        background-image: url(/images/icons/atom.svg)
       a.rss:before
-        background-image: url(/images/rss-alt.svg)
+        background-image: url(/images/icons/rss-alt.svg)
       a.json:before
-        background-image: url(/images/jsonfeed.svg)
+        background-image: url(/images/icons/jsonfeed.svg)
       a.site-default:after
         grid-area: info
         display: inline-block

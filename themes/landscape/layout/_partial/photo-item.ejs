@@ -24,6 +24,10 @@
     <%- item.key %><% if (item.meta?.DateTimeOriginal) { %>, <em><%- new Date(item.meta?.DateTimeOriginal).toLocaleString('en-GB', { month:"long", year:"numeric" }) %></em><% } %>
   </span>
   <% if (item) { %>
+    <%  let syndication = item.meta?.custom?.links?.filter(l => l.url?.length > 0).map(s => ({ host: s.site, url: s.url })); %>
+    <div class="card-links">
+      <%- partial('_partial/post/syndication-links', { syndication: syndication, type: "photo", view: "icon" }) %>
+    </div>
     <h3><a href="/<%= config.photo_dir %>/<%= item.key %>" class="h-link"><%- item.name %></a></h3>
   <% } else { %>
     <h3><%- item.name %></h3>

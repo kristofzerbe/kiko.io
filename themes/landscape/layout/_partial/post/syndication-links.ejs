@@ -1,0 +1,12 @@
+<% syndication.forEach(function(syn){ %>
+  <% let hostname = syn.host.charAt(0).toUpperCase() + syn.host.slice(1) + ((syn.title) ? " (" + syn.title + ")" : "") %>
+  <a class="syndication-link host-<%- syn.host?.toLowerCase() %> u-syndication" 
+     href="<%- syn.url %>" rel="syndication" target="_blank"
+     title="Syndication of this <%- type %> on <%- hostname %>">
+    <% if (view === "text") { %>
+      <span><%- hostname %></span>
+    <% } else { %>
+      <img src="/images/icons/<%- syn.host?.toLowerCase() %>.svg" />
+     <% } %>
+  </a>
+<% }); %>

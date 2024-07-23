@@ -21,20 +21,12 @@
   <button onclick="dialog.shareOnMastodon();" class="share mastodon">Share on Mastodon</button>
 </div>
 
-<%
-let syndication = post.syndication?.filter(s => s.url?.length > 0)
-%>
+<% let syndication = post.syndication?.filter(s => s.url?.length > 0) %>
 <% if (syndication?.length > 0) { %>
 <div class="article-syndication" data-pagefind-ignore>
   <h2>Syndication</h2>
   <div class="syndication-wrapper">
-    <% syndication.forEach(function(syn){ %>
-      <a class="syndication-link host-<%- syn.host?.toLowerCase() %> u-syndication" 
-         href="<%- syn.url %>" rel="syndication" target="_blank"
-         title="Syndication of this <%- type %> on <%- syn.host %>" >
-        <span><%- syn.host.charAt(0).toUpperCase() + syn.host.slice(1) + ((syn.title) ? " (" + syn.title + ")" : "") %></span>
-      </a>
-    <% }); %>
+    <%- partial('syndication-links', { syndication: syndication, type: type, view: "text" }) %>
   </div>
 </div>
 <% } %>

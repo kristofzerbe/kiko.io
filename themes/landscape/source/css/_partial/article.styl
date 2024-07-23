@@ -683,78 +683,46 @@
           /[data-theme="dark"] &
             border-bottom: dark-color-link 1px solid
       &.host-500px
-        // color: color-500px
-        background-image: url(/images/500px.svg)
+        background-image: url(/images/icons/500px.svg)
         background-size: 16px
         background-position: 14px 6px
         /[data-theme="dark"] &
           filter: invert(0.75)
-        // span
-        //   &:hover
-        //     border-bottom-color: color-500px
       &.host-flickr
-        // color: color-flickr
-        background-image: url(/images/flickr.svg)
+        background-image: url(/images/icons/flickr.svg)
         background-size: 20px
         background-position: 11px 5px
-        // span
-        //   &:hover
-        //     border-bottom-color: color-flickr
       &.host-pixelfed
-        // color: color-pixelfed
-        background-image: url(/images/pixelfed.svg)
+        background-image: url(/images/icons/pixelfed.svg)
         background-size: 16px
         background-position: 16px 6px
         /[data-theme="dark"] &
-          background-image: url(/images/pixelfed_invert.svg)
+          background-image: url(/images/icons/pixelfed_invert.svg)
           color: #aaa
-        // span
-        //   &:hover
-        //     border-bottom-color: color-pixelfed
       &.host-unsplash
-        // color: color-unsplash
-        background-image: url(/images/unsplash.svg)
+        background-image: url(/images/icons/unsplash.svg)
         background-size: 21px
         background-position: 14px 3px
         /[data-theme="dark"] &
           filter: invert(0.75)
-        // span
-        //   &:hover
-        //     border-bottom-color: color-unsplash
       &.host-twitter
-        // color: color-twitter
-        background-image: url(/images/twitter.svg)
+        background-image: url(/images/icons/twitter.svg)
         background-size: 16px
         background-position: 14px 8px
-        // span
-        //   &:hover
-        //     border-bottom-color: color-twitter
       &.host-mastodon
-        // color: color-mastodon
-        background-image: url(/images/mastodon.svg)
+        background-image: url(/images/icons/mastodon.svg)
         background-size: 16px
         background-position: 14px 7px
-        // span
-        //   &:hover
-        //     border-bottom-color: color-mastodon
       &.host-indienews
-        // color: color-indieweb
-        background-image: url(/images/indieweb.svg)
+        background-image: url(/images/icons/indieweb.svg)
         background-size: 20px
         background-position: 12px 4px
-        // span
-        //   &:hover
-        //     border-bottom-color: color-indieweb
       &.host-devto
-        // color: color-devto
-        background-image: url(/images/devto.svg)
+        background-image: url(/images/icons/devto.svg)
         background-size: 16px
         background-position: 13px 5px
         /[data-theme="dark"] &
           filter: invert(0.75)
-        // span
-        //   &:hover
-        //     border-bottom-color: color-devto
 
 .article-interaction
   @extend $base-style
@@ -1058,38 +1026,33 @@
           span
             text-decoration: underline
       .wm-name
-        &:before
-          margin-right: 5px
-          font-family: fa-icons
-          &:hover
-            text-decoration: none
+        margin-right: 5px
+        padding-left: 24px
+        background-size: 16px
+        background-repeat: no-repeat
+        background-position: 0 3px 
+        &:hover
+          text-decoration: none
       .wm-name.wm-source-web
-        &:before
-          content: icon-mastodon
+        background-image: url(/images/icons/web.svg)
       .wm-name.wm-source-twitter
-        &:before
-          content: icon-twitter
-          color: color-twitter
+        background-image: url(/images/icons/twitter.svg)
       .wm-name.wm-source-mastodon
-        &:before
-          content: icon-mastodon
-          color: color-mastodon
+        background-image: url(/images/icons/mastodon.svg)
       .wm-name.wm-source-instagram
-        &:before
-          content: icon-instagram
-          color: color-instagram
+        background-image: url(/images/icons/instagram.svg)
       .wm-name.wm-source-facebook
-        &:before
-          content: icon-facebook
-          color: color-facebook
+        background-image: url(/images/icons/facebook.svg)
       .wm-name.wm-source-flickr
-        &:before
-          content: icon-flickr
-          color: color-flickr
+        background-image: url(/images/icons/flickr.svg)
       .wm-name.wm-source-reddit
-        &:before
-          content: icon-reddit
-          color: color-reddit
+        background-image: url(/images/icons/reddit.svg)
+      .wm-name.wm-source-pixelfed
+        background-image: url(/images/icons/pixelfed.svg)
+      .wm-name.wm-source-threads
+        background-image: url(/images/icons/threads.svg)
+      .wm-name.wm-source-devto
+        background-image: url(/images/icons/devto.svg)
       .wm-verb
         grid-area: verb
         display: inline-block

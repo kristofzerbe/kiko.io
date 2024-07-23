@@ -19,7 +19,7 @@ photograph:
 For more information visit:
 
 <div class="brand-links">
-<a href="https://github.com/kristofzerbe/social-media-image-generator" class="github"><img src="/images/github.svg" alt="Github" /><span>Github</span></a>
+<a href="https://github.com/kristofzerbe/social-media-image-generator" class="github"><img src="/images/icons/github.svg" alt="Github" /><span>Github</span></a>
 <span style="margin-top:25px">or</span>
-<a href="https://open.vscode.dev/kristofzerbe/social-media-image-generator" class="vscode"><img src="/images/vscode.svg" alt="VSCode" /><span>Open in VSCode</span></a>
+<a href="https://open.vscode.dev/kristofzerbe/social-media-image-generator" class="vscode"><img src="/images/icons/vscode.svg" alt="VSCode" /><span>Open in VSCode</span></a>
 </div>
