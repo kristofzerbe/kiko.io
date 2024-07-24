@@ -1033,7 +1033,7 @@
           span
             text-decoration: underline
       .wm-name
-        margin-right: 5px
+        // margin-right: 5px
         padding-left: 24px
         background-size: 16px
         background-repeat: no-repeat
@@ -1071,7 +1071,9 @@
         opacity: 0.25
         font-size: font-size-small
     .wm-meta.wm-own
-      color: var(--color-accent)
+      color: var(--color-accent) !important
+      /[data-theme="dark"] &
+        color: var(--dark-color-accent) !important
 
   .wm-content
     padding: (default-padding-vert / 3) (default-padding / 2)
@@ -1101,6 +1103,9 @@
   .wm-meta
     border-bottom-left-radius: border-radius
     border-bottom-right-radius: border-radius
+.webmention.wm-reposted
+  .wm-content
+    display: none
 
 .webmention-form
   margin-top: default-margin
