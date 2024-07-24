@@ -22,6 +22,8 @@ syndication:
     url: https://indieweb.social/@kiko/112808925304713486
   - host: DevTo
     url: https://dev.to/kristofzerbe/head-care-cleaning-up-meta-and-link-tags-1a93
+  - host: IndieNews
+    url: https://news.indieweb.org/en
 ---
 
 Actually, I just wanted to add the [blogroll link tag](https://opml.org/blogroll.opml) to the header of my blog, which [Dave Winer](http://davewiner.com/) mentioned in a comment on Dan Q's post [.well-known/feeds](https://danq.me/2023/08/23/well-known-feeds/#comment-246479). But since I was already in my [``head.ejs``](https://github.com/kristofzerbe/kiko.io/blob/master/themes/landscape/layout/_partial/head.ejs), I tidied up and reorganised it a bit. It's like a basement: you just put things in there and at some point it looks messy.
