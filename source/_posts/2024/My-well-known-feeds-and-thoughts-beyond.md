@@ -22,7 +22,7 @@ syndication:
   - host: DevTo
     url: https://dev.to/kristofzerbe/my-well-known-feeds-and-thoughts-beyond-22kp
   - host: IndieNews
-    url: https://news.indieweb.org/en
+    url: https://news.indieweb.org/en/kiko.io/post/My-well-known-feeds-and-thoughts-beyond/
 ---
 
 Triggered by [Dan Q.'s post '.well-known/feeds'](https://danq.me/2023/08/23/well-known-feeds/), in which he suggests using a consistent per-site file along the lines of the resource identifier pattern [.well-known](https://en.wikipedia.org/wiki/Well-known_URI) for providing feeds, instead of placing links on all individual pages, I have summarised my feeds accordingly today, simply because this solution feels more correct to me.
