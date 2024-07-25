@@ -5,7 +5,7 @@ photograph:
   file: $20-08-Mallorca-7627.jpg
   name: Photographers Mosaic
 date: 2021-08-24 15:56:00
-updated: 2024-07-21 18:26:44
+updated: 2024-07-25 11:06:35
 ---
 
 <div><img src="/images/cc-free-culture.png" class="float-element" style="width:5rem;" /></div>

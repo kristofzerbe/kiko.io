@@ -23,7 +23,7 @@ For more information visit:
 <div class="brand-links">
 <a href="https://github.com/kristofzerbe/hexo-generator-anything" class="github"><img src="/images/icons/github.svg" alt="Github" /><span>Github</span></a>
 <a href="https://www.npmjs.com/package/hexo-generator-anything" class="npm"><img src="/images/icons/npm.svg" alt="NPM" /><span>NPM</span></a>
-<a href="https://deps.dev/npm/hexo-generator-anything" class="insights"><img src="/images/insights.svg" alt="Open Source Insights" /><span>Insights</span></a>
+<a href="https://deps.dev/npm/hexo-generator-anything" class="insights"><img src="/images/icons/insights.svg" alt="Open Source Insights" /><span>Insights</span></a>
 <span style="margin-top:25px">or</span>
 <a href="https://open.vscode.dev/kristofzerbe/hexo-generator-anything" class="vscode"><img src="/images/icons/vscode.svg" alt="VSCode" /><span>Open in VSCode</span></a>
 </div>

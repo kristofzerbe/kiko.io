@@ -43,7 +43,7 @@
   /[data-theme="dark"] &
     filter:invert(1)
 
-.page-subtitle, .page-backlink
+.page-subtitle
   font-size: font-pagetitle-size
   line-height: line-height-title
   text-transform: uppercase
@@ -55,28 +55,6 @@
   font-weight: font-weight-normal
   margin-top: -(small-margin)
   margin-bottom: default-margin
-
-.page-backlink
-  position: relative
-  display: inline-block
-  margin: default-margin 0 0 default-margin
-  text-decoration: none
-  font-weight: font-weight-bold
-  opacity: 0.75
-  &:hover
-    color: var(--color-accent)
-    /[data-theme="dark"] &
-      color: var(--dark-color-accent)
-  &:before
-    position: absolute
-    left: -(default-margin)
-    top: 0.15rem;
-    font-family: fa-icons
-    font-weight: font-weight-normal
-    font-size: font-size
-    width: icon-home-size
-    height: icon-home-size
-    content: icon-chevron-left
 
 .page-nav-index
   float: right
@@ -597,7 +575,7 @@
       a.atom:before
         background-image: url(/images/icons/atom.svg)
       a.rss:before
-        background-image: url(/images/icons/rss-alt.svg)
+        background-image: url(/images/icons/rss_blue.svg)
       a.json:before
         background-image: url(/images/icons/jsonfeed.svg)
       a.site-default:after

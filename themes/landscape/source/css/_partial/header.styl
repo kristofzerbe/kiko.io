@@ -292,16 +292,16 @@ $sub-nav-link
       transition: opacity 0.3s ease-out
       &:hover
         opacity: 1
-      &:before    
+      &:before 
         display: inline-block
-        margin: 2px 6px 6px 8px
-        font-size: inherit
-        text-rendering: auto
-        -webkit-font-smoothing: antialiased
-        font-family: fa-icons
-        content: icon-moon
+        margin: 0
+        width: 28px
+        height: 28px
+        content: ""
+        filter: invert(1)
+        background-size: 28px
+        background-repeat: no-repeat
+        background-image: url(/images/icons/moon.svg)
     input#theme-switch[type=checkbox]:checked + label
-      font-size: 20px
       &:before
-        content: icon-sun
-        margin-left: 6px
+        background-image: url(/images/icons/sun.svg)

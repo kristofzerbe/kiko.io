@@ -194,19 +194,19 @@
 .article-photo.in-view
   @extend $inview-image-visible
 
-.article-comment-link
-  @extend $block-caption
-  color: color-header
-  /[data-theme="dark"] &
-    color: dark-color-header
-  float: left
-  font-size: 12px
-  &:before
-    content: icon-comment
-    font-family: fa-icons
-    padding-right: 5px
-  .hide
-    display: none
+// .article-comment-link
+//   @extend $block-caption
+//   color: color-header
+//   /[data-theme="dark"] &
+//     color: dark-color-header
+//   float: left
+//   font-size: 12px
+//   &:before
+//     content: icon-comment
+//     font-family: fa-icons
+//     padding-right: 5px
+//   .hide
+//     display: none
 
 .article-category
   position: absolute
@@ -558,20 +558,29 @@
 
 .article-more-link,
 .download-link
-  margin: 0 !important
+  margin-block-end: 0 !important
 
 .article-more-link
+  position: relative
   font-size: font-size-small
   text-transform: uppercase
+  a
+    padding-left: 14px
   &:before
-    font-family: fa-icons
-    margin-right: 4px
-    font-size: font-size-small
-    font-weight: font-weight-normal
-    content: icon-chevron-right 
-    color: var(--color-accent)
+    display: block
+    position: absolute
+    left: -6px
+    top: -2px
+    width: 18px
+    height: 18px
+    content: ""
+    mask-image: url(/images/icons/chevron-right.svg)
+    mask-repeat: no-repeat
+    mask-size: 18px
+    mask-position: 0 4px
+    background-color: var(--color-accent)
     /[data-theme="dark"] &
-      color: var(--dark-color-accent)
+      background-color: var(--dark-color-accent)
 
 .button:not(.posts)
   display: inline-block

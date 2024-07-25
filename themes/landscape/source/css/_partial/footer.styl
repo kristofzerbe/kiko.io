@@ -79,25 +79,28 @@
     align-self: start
     display: flex
     a.webring-link
-      font-weight: font-weight-bold
-      padding: 0 8px    
       &:hover
         text-decoration: none
         color: color-highlight
         /[data-theme="dark"] &
           color: dark-color-highlight
-    #webring-prev
       &:before
-        content: icon-angles-left
-        font-family: fa-icons
-        font-size: 17px
-        font-weight: 400
-    #webring-next
-      &:before
-        content: icon-angles-right
-        font-family: fa-icons
-        font-size: 17px
-        font-weight: 400
+        display: inline-block
+        width: 16px
+        height: 16px
+        content: ""
+        filter: invert(1)
+        background-size: 16px
+        background-repeat: no-repeat
+        background-position: 0 4px
+      &.webring-prev
+        padding-right: small-padding
+        &:before
+          background-image: url(/images/icons/chevron-left-double.svg)
+      &.webring-next
+        padding-left: small-padding
+        &:before
+          background-image: url(/images/icons/chevron-right-double.svg)
 
 #back-to-top 
   color: color-logo

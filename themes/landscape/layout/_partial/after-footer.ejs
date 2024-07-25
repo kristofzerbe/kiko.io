@@ -90,6 +90,22 @@
     }
   }
 
+  function ensureIconLinkText() {
+    let linksWithoutText = document.querySelectorAll("a[href^='http']:empty");
+    linksWithoutText.forEach(e => {
+      if (window.getComputedStyle(e).display !== "none") {
+        if (e.title) {
+          let eText = document.createElement("span");
+          eText.innerText = e.title;
+          eText.classList.add("visually-hidden");
+          e.append(eText);
+        } else {
+          console.error("Link without Text and Title: " + e.outerHTML);
+        }
+      }
+    });
+  } 
+
 </script>
 
 <script>
@@ -111,6 +127,7 @@
     initImageViewportVisibility();
     initNavMenuScroll();
     initScrollProgress();
+    ensureIconLinkText();
   // });
 
   // BACK-TO-TOP
@@ -118,7 +135,6 @@
 
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
-  //if (pathItem === "collections") pathItem = window.location.pathname.split('/')[2].toLowerCase()
   setTimeout(() => {
     let e = document.getElementById(`nav-${pathItem}-link`);
     if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
