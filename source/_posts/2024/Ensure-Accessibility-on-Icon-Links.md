@@ -19,7 +19,7 @@ related:
   - SVG-Resources
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112848140684070777
 ---
 
 I am gradually saying goodbye to icon fonts in this blog in favor of SVG files, which I prefer to integrate using ``background-image`` in order to remain flexible. 
