@@ -14,7 +14,7 @@ For years, I had integrated only one [Atom](https://en.wikipedia.org/wiki/Atom_(
 
 On this page you will now find not only both Atom feed variants for my last 20 posts ([Articles](/archives) and [Notes](notes)), but also some in the good old [RSS 2.0](https://en.wikipedia.org/wiki/RSS) and the relatively new [JSON feed](https://en.wikipedia.org/wiki/JSON_Feed) format.
 
-A list of all feeds can also be found via my [.well-known/feeds](/.well-known/feeds) endpoint, which I wrote about [here](/post/My-well-known-feeds-and-thoughts-beyond/).
+A list of all feeds can also be found via my [.well-known/feeds](/.well-known/feeds) endpoint, which I wrote about [here](/post/My-well-known-feeds-and-thoughts-beyond/). You can find more feeds, including from the people I follow on Fediverse, at [rss-is-dead.lol](https://rss-is-dead.lol/user?profileUrl=https%3A%2F%2Findieweb.social%2Fusers%2Fkiko).
 
 ---
 
