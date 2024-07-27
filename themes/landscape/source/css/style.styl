@@ -271,99 +271,100 @@ if sidebar is left
     &:before
       display: block
       position: absolute
-      font-family: fa-icons
-      text-rendering: auto
-      -webkit-font-smoothing: antialiased
       z-index: -1
-      color: #fff
       opacity: 0.75
-      line-height: 1em
+      content: ""
+      background-repeat: no-repeat
+      background-position: 0 0
+      background-size: var(--icon-w) var(--icon-h)
+      width: var(--icon-w)
+      height: var(--icon-h)
+      filter: invert(1)
       /[data-theme="dark"] &
-        color: #1a1a1a
+        filter: invert(0)
   &.d0
     .page-content:before
-      content: icon-brush
-      font-size: 14em
-      top: -10px
-      left: -148px
-      transform: rotate(295deg)
-      @media mq-mobile
-        font-size: 14em
-        top: 4px
-        left: -100px
-        transform: rotate(295deg)
-  &.d1
-    .page-content:before
-      content: icon-pencil
-      font-size: 14em
-      top: -8px
-      left: -120px
+      --icon-w: 200px
+      --icon-h: 200px
+      background-image: url(/images/icons/brush.svg)
+      top: -70px
+      left: -125px
       transform: rotate(110deg)
       @media mq-mobile
-        font-size: 13em
-        top: 11px
-        left: -80px
-        transform: rotate(116deg)
-  &.d2
+        top: -60px
+        left: -100px
+        transform: rotate(300deg)
+  &.d1
     .page-content:before
-      content: icon-thumbtack
-      font-size: 15em
-      top: -24px
-      left: -106px
-      transform: rotate(339deg)
-      @media mq-mobile
-        font-size: 16em
-        top: -16px
-        left: -88px
-        transform: rotate(342deg)
-  &.d3
-    .page-content:before
-      content: icon-feather
-      font-size: 14em
-      top: -11px
-      left: -137px
-      transform: rotate(293deg)
-      @media mq-mobile
-        font-size: 14em
-        top: -16px
-        left: -98px
-        transform: rotate(298deg)
-  &.d4
-    .page-content:before
-      content: icon-bullhorn
-      font-size: 14em
-      top: -11px
-      left: -121px
-      transform: rotate(59deg) scaleX(-1)
-      @media mq-mobile
-        font-size: 13em
-        top: 1px
-        left: -80px
-        transform: rotate(59deg) scaleX(-1)
-  &.d5
-    .page-content:before
-      content: icon-asterisk
-      font-size: 13em
+      --icon-w: 140px
+      --icon-h: 145px
+      background-image: url(/images/icons/pencil.svg)
       top: -35px
       left: -100px
-      transform: rotate(298deg)
+      transform: rotate(200deg) scaleX(-1)
       @media mq-mobile
-        font-size: 13em
-        top: -20px
-        left: -90px
-        transform: scaleX(-1) rotate(327deg)
+        top: -30px
+        left: -70px
+        transform: rotate(20deg) scaleX(-1)
+  &.d2
+    .page-content:before
+      --icon-w: 220px
+      --icon-h: 225px
+      background-image: url(/images/icons/thumbtack.svg)
+      top: -70px
+      left: -150px
+      transform: rotate(340deg)
+      @media mq-mobile
+        top: -60px
+        left: -125px
+  &.d3
+    .page-content:before
+      --icon-w: 190px
+      --icon-h: 170px
+      background-image: url(/images/icons/feather.svg)
+      top: -40px
+      left: -110px
+      transform: rotate(280deg)
+      @media mq-mobile
+        top: -40px
+        left: -85px
+        transform: rotate(290deg)
+  &.d4
+    .page-content:before
+      --icon-w: 190px
+      --icon-h: 170px
+      background-image: url(/images/icons/bullhorn.svg)
+      top: -40px
+      left: -135px
+      transform: rotate(50deg) scaleX(-1)
+      @media mq-mobile
+        top: -25px
+        left: -110px
+        transform: rotate(55deg) scaleX(-1)
+  &.d5
+    .page-content:before
+      background-image: url(/images/icons/pen.svg)
+      --icon-w: 100px
+      --icon-h: 180px
+      top: -60px
+      left: -100px
+      transform: rotate(325deg)
+      @media mq-mobile
+        top: -40px
+        left: -30px
+        transform: rotate(140deg)
   &.d6
     .page-content:before
-      content: icon-tag
-      font-size: 14em
-      top: -25px
-      left: -110px
-      transform: scaleX(-1) rotate(72deg)
+      --icon-w: 170px
+      --icon-h: 175px
+      background-image: url(/images/icons/tag.svg)
+      top: -45px
+      left: -130px
+      transform: rotate(5deg)
       @media mq-mobile
-        font-size: 13em
-        top: 13px
-        left: -68px
-        transform: scaleX(-1) rotate(72deg)
+        top: -50px
+        left: -110px
+        transform: rotate(195deg)
 
 #spotlight
   .spl-footer

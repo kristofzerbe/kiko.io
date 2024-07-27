@@ -3,10 +3,10 @@
   button.title-command
     display: inline-block
     position: relative
-    left: 4px
-    top: 0
-    width: 32px
-    height: 32px
+    left: 6px
+    top: 2px
+    width: 20px
+    height: 20px
     background: transparent
     border: none
     transition: all ease-out 0.2s
@@ -15,20 +15,25 @@
       opacity: 0.75
     &:before
       display: inline-block
-      font-size: font-titlelist-size
-      text-rendering: auto
-      -webkit-font-smoothing: antialiased
-      font-family: fa-icons
-  button.title-command.switch-condensed
-    top: -1px
-    &:before
-      content: icon-minimize
-      color: color-button-link
+      position: absolute
+      left: 0
+      top: 0
+      content: ""
+      background-repeat: no-repeat
+      background-position: 0 0
+      background-size: 20px
+      width: 20px
+      height: 20px
+      filter: invert(0)
+      transition: all ease-out 0.2s
       /[data-theme="dark"] &
-        color: dark-color-button-link
+        filter: invert(1)
+  button.title-command.switch-condensed
+    &:before
+      background-image: url(/images/icons/minimize.svg)
     &.condensed
       &:before
-        content: icon-maximize
+        background-image: url(/images/icons/maximize.svg)
 
 .page-title-svg-link
   display: block

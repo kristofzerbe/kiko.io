@@ -558,7 +558,7 @@
 
 .article-more-link,
 .download-link
-  margin-block-end: 0 !important
+  margin-block-end: small-margin !important
 
 .article-more-link
   position: relative
@@ -749,17 +749,21 @@
   &:before
     display: block
     position: absolute 
-    left: -3rem
-    top: 1rem    
-    content: icon-feather
-    font-family: fa-icons      
-    font-size: 6rem
-    text-rendering: auto
-    -webkit-font-smoothing: antialiased      
+    left: -35px
+    top: -15px
+    content: ""
+    background-image: url(/images/icons/feather.svg)
+    background-repeat: no-repeat
+    background-position: 0 0
+    background-size: 100px
+    width: 100px
+    height: 100px
     z-index: -1
     transform: rotate(344deg)
     color: color-block
+    filter: invert(1)
     /[data-theme="dark"] &
+      filter: invert(0)
       color: dark-color-border
   p
     opacity: .75
@@ -874,16 +878,23 @@
     width: 24px
     height: 24px
     flex: 0 0 auto
-    padding-left: default-padding-vert
+    padding-left: 12px
     &:before
-      font-family: fa-icons
-      font-size: 1.5rem
+      display: inline-block
+      content: ""
+      background-repeat: no-repeat 
+      background-size: 24px
+      width: 24px
+      height: 24px
+      filter: invert(.4)
+      /[data-theme="dark"] &
+        filter: invert(.5)
   .action-copy
     &:before
-      content: icon-copy
+      background-image: url(/images/icons/copy.svg)
   .action-share
     &:before
-      content: icon-share
+      background-image: url(/images/icons/share.svg)
 
 .article-golem
   padding-top: line-height

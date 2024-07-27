@@ -13,13 +13,13 @@
 <% if (page.month) { %>
   <h1 class="archive-title">
     <small>Articles</small>
-    <%= moment().month(page.month).subtract(1, "month").format('MMMM') %> <%= page.year %>
+    <em class="date"></em><%= moment().month(page.month).subtract(1, "month").format('MMMM') %> <%= page.year %>
   </h1>
 <% } else { %>
   <% if (page.year) { %>
     <h1 class="archive-title">
       <small>Articles</small>
-      <%= page.year %>
+      <em class="date"></em><%= page.year %>
     </h1>
   <% } else { %>
     <h1 class="archive-title">Articles</h1>

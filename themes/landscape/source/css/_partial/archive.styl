@@ -4,16 +4,37 @@
 .archive-title
   @extend $title
   em
-    padding-right: (default-padding / 3)
-    font-size: 1.4rem
+    &:before
+      display: inline-block
+      content: ""
+      opacity: 0.6
+      background-repeat: no-repeat
+      background-size: var(--icon-w) var(--icon-h)
+      width: var(--icon-w)
+      height: var(--icon-h)
+      /[data-theme="dark"] &
+        filter: invert(0)
+  em.date
+    &:before
+      --icon-w: 24px
+      --icon-h: 28px
+      padding-right: 8px
+      background-position: 0 4px
+      background-image: url(/images/icons/date.svg)
   em.tag
     &:before
-      content: icon-tag
-      font-family: fa-icons
+      --icon-w: 18px
+      --icon-h: 22px
+      padding-right: 12px
+      background-position: 0 2px
+      background-image: url(/images/icons/tag.svg)
   em.category
     &:before
-      content: icon-bookmark
-      font-family: fa-icons
+      --icon-w: 22px
+      --icon-h: 26px
+      padding-right: 6px
+      background-position: -3px 4px
+      background-image: url(/images/icons/bookmark.svg)
 
 .archive-year-wrap
   margin-bottom: medium-margin
