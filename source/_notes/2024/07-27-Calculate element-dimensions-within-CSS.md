@@ -8,7 +8,7 @@ rel:
   url: https://frontendmasters.com/blog/how-to-get-the-width-height-of-any-element-in-only-css/
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/112857928210410688
 ---
 Somehow it's apt that [Temani Afif](https://css-articles.com/) has published his latest post on frontendmasters.com, because that's what he truly is: A Frontend Master. No one impresses me more with his ideas for what and how to use CSS. He thinks and breathes CSS.
 
