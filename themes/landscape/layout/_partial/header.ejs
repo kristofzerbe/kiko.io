@@ -5,19 +5,19 @@
     <nav id="header-nav" role="navigation">
       <ul class="menu">
         <% 
-          for (var i in theme.nav_menu) {
-            //if (i === 'home') continue;
-            let tx = __(i);
-            let cl;
-            if (['search'].some(v => i.includes(v))) {
-              cl = " menu-item-icon";
+          for (var item in theme.nav_menu) {
+            //if (item === 'home') continue;
+            let itemText = __(item);
+            let itemClass;
+            if (['search'].some(v => item.includes(v))) {
+              itemClass = " menu-item-icon";
             }
-            if (i === 'slashes') tx = "/" + tx;
+            if (item === 'slashes') itemText = "/" + itemText;
         %>
-        <li class="menu-item<%= cl %>" id="nav-<%= i%>-link">
+        <li class="menu-item<%= itemClass %>" id="nav-<%= item %>-link">
           <a class="sub-nav-link"
-             href="<%- url_for(theme.nav_menu[i]) %>">
-              <span><%= tx %></span>
+             href="<%- url_for(theme.nav_menu[item]) %>">
+              <span><%= itemText %></span>
             </a>
         </li>
         <% 
