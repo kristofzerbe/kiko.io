@@ -13,23 +13,63 @@
       &:before
         text-decoration: none
 
-// #footer .outer
-//   padding-right: 50px
-
 #footer .inner
   position: relative
+  width: 95%
   line-height: line-height
   font-size: 0.85em
   display: grid
   grid-template-columns: max-content auto max-content
-  grid-template-rows: max-content max-content 12px max-content max-content
+  grid-template-rows: max-content (line-height) max-content max-content max-content
   grid-gap: 2px 64px
-  grid-template-areas: "info webring ." "links . ." ". . ." "perf . ." "dots . ."
+  grid-template-areas: "links . webrings" ". . webrings" "perf . webrings" "info . webrings" "dots . webrings"
   @media mq-tablet-min
     grid-template-columns: 16px max-content 
-    grid-template-rows: max-content max-content max-content 12px max-content 
+    grid-template-rows: max-content (line-height/2) max-content max-content (line-height/2) max-content max-content 
     grid-gap: 2px 5px
-    grid-template-areas: "dots info" "dots links" "dots perf" "dots ." "dots webring"
+    grid-template-areas: "dots links" "dots ." "dots perf" "dots info" "dots ." "dots webrings" "dots webrings"
+
+  .webrings
+    grid-area: webrings
+    width: 220px
+    .webring
+      align-self: start
+      display: flex
+      flex-direction: row
+      justify-content: space-around
+      margin-inline-start: -4px
+      a.webring-link
+        &:hover
+          text-decoration: none
+          transition: all ease-out 0.2s
+          color: color-highlight
+          /[data-theme="dark"] &
+            color: dark-color-highlight
+          &:before
+            opacity: 1
+        &:before
+          display: inline-block
+          width: 20px
+          height: 16px
+          content: ""
+          opacity: color-footer-opacity
+          transition: all ease-out 0.2s
+          filter: invert(1)
+          background-size: 20px
+          background-repeat: no-repeat
+          background-position: 0 1px
+        &.webring-prev
+          padding-right: (2 * small-padding)
+          &:before
+            background-image: url(/images/icons/arrow-notch-left.svg)
+        &.webring-next, &.webring-random
+          padding-left: (2 * small-padding)
+        &.webring-next
+          &:before
+            background-image: url(/images/icons/arrow-notch-right.svg)
+        &.webring-random
+          &:before
+            background-image: url(/images/icons/shuffle.svg)
 
   .dot-space
     display: inline-block
@@ -73,34 +113,6 @@
         background-color: color-footer-dots
         border-radius: 50%
         display: inline-block
-
-  #webring
-    grid-area: webring
-    align-self: start
-    display: flex
-    a.webring-link
-      &:hover
-        text-decoration: none
-        color: color-highlight
-        /[data-theme="dark"] &
-          color: dark-color-highlight
-      &:before
-        display: inline-block
-        width: 16px
-        height: 16px
-        content: ""
-        filter: invert(1)
-        background-size: 16px
-        background-repeat: no-repeat
-        background-position: 0 4px
-      &.webring-prev
-        padding-right: small-padding
-        &:before
-          background-image: url(/images/icons/chevron-left-double.svg)
-      &.webring-next
-        padding-left: small-padding
-        &:before
-          background-image: url(/images/icons/chevron-right-double.svg)
 
 #back-to-top 
   color: color-logo
