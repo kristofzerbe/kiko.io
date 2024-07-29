@@ -8,7 +8,7 @@ rel:
   url: https://martymcgui.re/2024/06/23/ordering-an-indieweb-webring/
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/112870464946579479
 ---
 
 Without realizing it, [Marty](https://martymcgui.re/) has robbed me of my favorite toy: Accessing random pages of the [Indieweb Webring](https://xn--sr8hvo.ws/) and either creeping me out or continuing to surf the site with a smile.
