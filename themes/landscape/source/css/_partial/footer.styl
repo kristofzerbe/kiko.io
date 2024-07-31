@@ -31,14 +31,18 @@
 
   .webrings
     grid-area: webrings
-    width: 220px
     .webring
       align-self: start
       display: flex
       flex-direction: row
       justify-content: space-around
       margin-inline-start: -4px
+      a.webring-url
+        min-width: 120px
+        text-align: left
       a.webring-link
+        &[href*='#']
+          visibility: hidden
         &:hover
           text-decoration: none
           transition: all ease-out 0.2s
