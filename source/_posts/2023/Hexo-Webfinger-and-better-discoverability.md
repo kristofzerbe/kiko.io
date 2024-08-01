@@ -126,11 +126,11 @@ hexo.extend.generator.register("wellknown-webfinger", async function() {
 
 After deploying to GitHub I was able to search on a Fediverse platform for ``@kristof@kiko.io`` and the result is the corresponding account of my Mastodon instance. :)
 
-![Search on Mastodon](mastodon-search.png)
+![Search on Mastodon](Hexo-Webfinger-and-better-discoverability/mastodon-search.png)
 
 However, this currently only works with one instance and the user specification is arbitrary (as Maarten also notes). For example, if I search on Pixelfed, my Mastodon account is also displayed, but not my Pixelfed account, which is also available there, because I have not integrated Pixelfeds WebFinger file.
 
-![Search on Pixelfed](pixelfed-search.png)
+![Search on Pixelfed](Hexo-Webfinger-and-better-discoverability/pixelfed-search.png)
 
 As mentioned above, the Fediverse works a little differently than the Indieweb. My wish would be to find something that identifies me with my domain everywhere.
 
