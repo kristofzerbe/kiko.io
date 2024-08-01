@@ -18,7 +18,7 @@ related:
   - Top-10-Pens-of-Jon-Kantner
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112882279362201891
 ---
 
 It's incredibly fun to browse the **[codepen.io](https://codepen.io/)** homepage because there's always something great to discover. Many of the works there are so excellent, that I save them for later in my Trello list so that I can perhaps use them somewhere at some point.
