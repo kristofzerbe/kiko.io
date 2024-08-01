@@ -33,65 +33,75 @@ What **[Rafa](https://codepen.io/RAFA3L)** has conjured up with his pen [**Clima
 
 <!-- more -->
 
-<hr><br>
+---
 
-## 1. The aurora (only CSS) by [Ostylowany](https://codepen.io/ostylowany)
+## 1. The aurora (only CSS)
 
+{% small_link "by" "Ostylowany" "https://codepen.io/ostylowany" %}
 {% codepen "vYzPVZL" "The aurora (only CSS)" "result" 480 %}
 
-<br><hr><br>
+---
 
-## 2. ...CSS-only fluid slider... by [Ana Tudor](https://codepen.io/thebabydino)
+## 2. ...CSS-only fluid slider...
 
+{% small_link "by" "Ana Tudor" "https://codepen.io/thebabydino" %}
 {% codepen "qByGqOm" "...CSS-only fluid slider..." "result" 600 %}
 
-<br><hr><br>
+---
 
-## 3. Futuristic Dial Button by [LukyVj](https://codepen.io/LukyVj)
+## 3. Futuristic Dial Button
 
+{% small_link "by" "LukyVj" "https://codepen.io/LukyVj" %}
 {% codepen "xxyEYMJ" "Futuristic Dial Button" "result" 420 %}
 
-<br><hr><br>
+---
 
-## 4. Gooey Toggle Switch by [Nicolas Jesenberger](https://codepen.io/nicolasjesenberger)
+## 4. Gooey Toggle Switch
 
+{% small_link "by" "Nicolas Jesenberger" "https://codepen.io/nicolasjesenberger" %}
 {% codepen "xxmbvxL" "Gooey Toggle Switch" "result" %}
 
 (Don't miss his [Squishy Switch](https://codepen.io/nicolasjesenberger/pen/bGQwBYo) either)
 
-<br><hr><br>
+---
 
-## 5. Gorgeous animated gradient borders... by [Jason Lengstorf](https://codepen.io/jlengstorf)
+## 5. Gorgeous animated gradient borders... 
 
+{% small_link "by" "Jason Lengstorf" "https://codepen.io/jlengstorf" %}
 {% codepen "WNPGMJo" "Gorgeous animated gradient borders..." "result" %}
 
-<br><hr><br>
+---
 
-## 6. Fancy hover effect on avatar by [Temani Afif](https://codepen.io/t_afif)
+## 6. Fancy hover effect on avatar
 
+{% small_link "by" "Temani Afif" "https://codepen.io/t_afif" %}
 {% codepen "MWBjraa" "Fancy hover effect on avatar" "result" 540 %}
 
-<br><hr><br>
+---
 
-## 7. 3D Cards by [Mubanga](https://codepen.io/mubangadv)
+## 7. 3D Cards
 
+{% small_link "by" "Mubanga" "https://codepen.io/mubangadv" %}
 {% codepen "YzJNbOa" "3D Cards" "result" 720 %}
 
-<br><hr><br>
+---
 
-## 8. Stripe Sessions style Flex Carousel by [Simon Goellner](https://codepen.io/simeydotme)
+## 8. Stripe Sessions style Flex Carousel
 
+{% small_link "by" "Simon Goellner" "https://codepen.io/simeydotme" %}
 {% codepen "gOBMZMe" "Stripe Sessions style Flex Carousel" "result" 800 %}
 
-<br><hr><br>
+---
 
-## 9. Carousel with drag and wheel by [Fabio Ottaviani](https://codepen.io/supah)
+## 9. Carousel with drag and wheel
 
+{% small_link "by" "Fabio Ottaviani" "https://codepen.io/supah" %}
 {% codepen "xxJMbbg" "Carousel with drag and wheel" "result" 720 %}
 
-<br><hr><br>
+---
 
-## 10. Background Slider | Swiper by [Ecem Gokdogan](https://codepen.io/ecemgo)
+## 10. Background Slider | Swiper
 
+{% small_link "by" "Ecem Gokdogan" "https://codepen.io/ecemgo" %}
 {% codepen "QWzeQOK" "Background Slider | Swiper" "result" 580 %}
 

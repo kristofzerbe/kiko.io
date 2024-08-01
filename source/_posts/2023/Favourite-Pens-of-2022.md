@@ -31,62 +31,72 @@ From all these works you can take a lot of know-how for yourself, but many of th
 
 <!-- more -->
 
-<hr><br>
+---
 
-## 1. iOS Notifications by Yoav Kadosh
+## 1. iOS Notifications 
 
+{% small_link "by" "Yoav Kadosh" "https://codepen.io/ykadosh" %}
 {% codepen "ZERjpRJ" "iOS Notifications" "result" %}
 
-<br><hr><br>
+---
 
-## 2. Lotsa Notifications by Jon Kantner
+## 2. Lotsa Notifications
 
+{% small_link "by" "Jon Kantner" "https://codepen.io/jkantner" %}
 {% codepen "XWzePgp" "Lotsa Notifications" "result" %}
 
-<br><hr><br>
+---
 
-## 3. Animated Star Rating by Jon Kantner
+## 3. Animated Star Rating
 
+{% small_link "by" "Jon Kantner" "https://codepen.io/jkantner" %}
 {% codepen "BarvVNa" "Animated Star Rating" "result" %}
 
-<br><hr><br>
+---
 
-## 4. Changing Face Rating by Jon Kantner
+## 4. Changing Face Rating
 
+{% small_link "by" "Jon Kantner" "https://codepen.io/jkantner" %}
 {% codepen "YzLQoXM" "Changing Face Rating" "result" %}
 
-<br><hr><br>
+---
 
-## 5. CSS Minimal Dark Mode Toggle Button by Greg Vissing
+## 5. CSS Minimal Dark Mode Toggle Button
 
+{% small_link "by" "Greg Vissing" "https://codepen.io/gvissing" %}
 {% codepen "OJvxoJq" "CSS Minimal Dark Mode Toggle Button" "result" %}
 
-<br><hr><br>
+---
 
-## 6. Menu micro-interaction with CSS by Mert Cukuren
+## 6. Menu micro-interaction with CSS
 
+{% small_link "by" "Mert Cukuren" "https://codepen.io/knyttneve" %}
 {% codepen "rNJxwGR" "Menu micro-interaction with CSS" "result" %}
 
-<br><hr><br>
+---
 
-## 7. Animated BottomBar Experiment by Chris Bautista
+## 7. Animated BottomBar Experiment
 
+{% small_link "by" "Chris Bautista" "https://codepen.io/chrisbautista" %}
 {% codepen "NWXjqLN" "Animated BottomBar Experiment" "result" %}
 
-<br><hr><br>
+---
 
-## 8. Progress Button by Taylon, Chan
+## 8. Progress Button
 
+{% small_link "by" "Taylon Chan" "https://codepen.io/fuzionix" %}
 {% codepen "dyepVJp" "Progress Button" "result" %}
 
-<br><hr><br>
+---
 
-## 9. Gradient background with waves by Bárbara Rodríguez
+## 9. Gradient background with waves
 
+{% small_link "by" "Bárbara Rodríguez" "https://codepen.io/baarbaracrr" %}
 {% codepen "KKovmGb" "Gradient background with waves" "result" %}
 
-<br><hr><br>
+---
 
-## 10. Cascading CSS Text Effects by Jhey
+## 10. Cascading CSS Text Effects
 
+{% small_link "by" "Jhey" "https://codepen.io/jh3y" %}
 {% codepen "gOeGmRN" "Cascading CSS Text Effects" "result" %}
