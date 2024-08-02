@@ -24,7 +24,7 @@ syndication:
   - host: DevTo
     url: https://dev.to/kristofzerbe/push-over-webmentions-n6n
   - host: IndieNews
-    url: https://news.indieweb.org/en
+    url: https://news.indieweb.org/en/kiko.io/post/Push-Over-Webmentions/
 ---
 
 If you offer [Webmentions](https://indieweb.org/Webmention) on your website, i.e. the option of being notified via a link on another website, it is advisable to keep an eye on the incoming mentions. Otherwise, it is all too easy for a page to become a spam sling if you [automatically display](https://kiko.io/post/Hexo-and-the-IndieWeb-Receiving-Webmentions/) the incoming messages under an article, as I do using JavaScript.
