@@ -8,7 +8,7 @@ rel:
   url: https://dev.to/ghostaram/writing-meaningful-git-commit-messages-with-semantic-tags-1dim
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/112897495757452670
 ---
 I learned something about Git commit conventions last year and processed it for myself in the article [Contribute with Conventional Commits](https://kiko.io/post/Contribute-with-Conventional-Commits/). But I didn't really take anything away from it. 
 
