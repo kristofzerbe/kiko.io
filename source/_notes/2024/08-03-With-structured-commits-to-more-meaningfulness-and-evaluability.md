@@ -14,6 +14,17 @@ I learned something about Git commit conventions last year and processed it for 
 
 Today, Felix confronted me with the topic again via his post and his good explanation, coupled with useful examples, have inspired me to actually rethink my own commits, even though I am the only contributor in my little GH projects. It just can help me ... DO IT!
 
+The tags again:
+- feat
+- refactor
+- fix
+- breaking
+- test
+- chore
+- revert
+- docs
+- style
+
 #git #github #conventions
 
 
