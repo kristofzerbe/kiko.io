@@ -10,7 +10,7 @@ syndication:
   - host: Mastodon
     url:
 ---
-I learned something about Git commit conventions last year and processed it for myself in the article 'Contribute with Conventional Commits'. But I didn't really take anything away from it. 
+I learned something about Git commit conventions last year and processed it for myself in the article [Contribute with Conventional Commits](https://kiko.io/post/Contribute-with-Conventional-Commits/). But I didn't really take anything away from it. 
 
 Today, Felix confronted me with the topic again via his post and his good explanation, coupled with useful examples, have inspired me to actually rethink my own commits, even though I am the only contributor in my little GH projects. It just can help me ... DO IT!
 
