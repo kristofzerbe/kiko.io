@@ -1,5 +1,5 @@
 ---
-slug: happy-50-birthday-leni
+slug: -happy-50-birthday-leni
 title: Happy Birthday
 subtitle: ... schönste Frau von Welt
 date: 2021-11-09T00:00:01.000Z
@@ -37,7 +37,7 @@ Man lernt von den Besten!
 
 Viel Spass dabei, mein Herz!
 
-![HBD](happy-50-birthday-leni/HBD_480x480.png)
+![HBD](-happy-50-birthday-leni/HBD_480x480.png)
 
 ---
 
@@ -93,4 +93,4 @@ Schau mal hinter der Couch... &hearts;
 <div class="dot">.</div>
 <div class="dot">.</div>
 
-![Ukulele](happy-50-birthday-leni/ukulele.png)
+![Ukulele](-happy-50-birthday-leni/ukulele.png)

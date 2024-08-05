@@ -210,6 +210,10 @@
 
   <link rel="canonical" href="<%= url.replace("index.html", "") %>">
 
+  <% if (page.hidden) { %>
+    <meta name="robots" content="noindex">
+  <% } %>
+
   <title><%= meta.title %></title>
   <meta name="title" content="<%= meta.title %>">
 <% if (meta.description) { %>

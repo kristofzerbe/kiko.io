@@ -2,7 +2,7 @@
 <body id="body">  
   <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
   <div id="content" class="outer">
-    <main data-pagefind-body class="<%= (page?.layoutParam?.hideSidebar) ? "hide-sidebar" : "" %>">
+    <main <%= (page.hidden) ? "" : "data-pagefind-body" %> class="<%= (page?.layoutParam?.hideSidebar) ? "hide-sidebar" : "" %>">
       <%- body %>
     </main>
     <% if (theme.sidebar && theme.sidebar !== 'bottom' && !page?.layoutParam?.hideSidebar){ %>

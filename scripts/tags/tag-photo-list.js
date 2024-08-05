@@ -6,6 +6,8 @@
 
 */
 
+//TODO: Refactor like tag-photo-masonry including asses folder images & into handlebars
+
 const fs = require("fs");
 const path = require("path");
 

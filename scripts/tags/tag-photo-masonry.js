@@ -9,100 +9,70 @@
 const fs = require("fs");
 const path = require("path");
 
-hexo.extend.tag.register("photo_masonry", function(args){
+const { compileHandlebar } = require("../../lib/tools.cjs");
 
+hexo.extend.tag.register("photo_masonry", function(args) {
+  const that = this;
   const _rootDir = hexo.source_dir.replace("source", "");
 
-  var list = "";
+  let masonry = {
+    rnd: Math.random().toString(36).substring(2,8),
+    items: []
+  }
+
   args.forEach(function(e) {
-    let photoName = e;
-    
-    let urlNormal;
-    let urlMobile;
+
+    let item = {
+      photoName: e,
+      title: e,
+      urlNormal: "",
+      urlMobile: "",
+      isPhoto: true
+    }
     let metaPath;
-    let title = photoName;
 
-    let photoPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "normal", photoName + ".jpg");
+    let assetPath = path.join(that.asset_dir, item.photoName + ".jpg")
+    if (fs.existsSync(assetPath)) { 
+      item.urlNormal = `/${that.path}${item.photoName}.jpg`;
+      item.urlMobile = item.urlNormal;
+      item.isPhoto = false;
+    }
+
+    let photoPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "normal", item.photoName + ".jpg");
     if (fs.existsSync(photoPath)) { 
-      urlNormal = `/photos/normal/${photoName}.jpg`;
-      urlMobile = `/photos/mobile/${photoName}.jpg`;
-      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "meta", photoName + ".json");
+      item.urlNormal = `/photos/normal/${item.photoName}.jpg`;
+      item.urlMobile = `/photos/mobile/${item.photoName}.jpg`;
+      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "meta", item.photoName + ".json");
     }
     
-    let poolPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.pool_dir, photoName, "normal.jpg");
+    let poolPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.pool_dir, item.photoName, "normal.jpg");
     if (fs.existsSync(poolPath)) { 
-      urlNormal = `/pool/${photoName}/normal.jpg`; 
-      urlMobile = `/pool/${photoName}/mobile.jpg`; 
-      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.pool_dir, photoName, "meta.json");
+      item.urlNormal = `/pool/${item.photoName}/normal.jpg`; 
+      item.urlMobile = `/pool/${item.photoName}/mobile.jpg`; 
+      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.pool_dir, item.photoName, "meta.json");
     }
     
-    let shedPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir, photoName, "normal.jpg");
+    let shedPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir, item.photoName, "normal.jpg");
     if (fs.existsSync(shedPath)) { 
-      urlNormal = `/shed/${photoName}/normal.jpg`; 
-      urlMobile = `/shed/${photoName}/mobile.jpg`; 
-      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir, photoName, "meta.json");
+      item.urlNormal = `/shed/${item.photoName}/normal.jpg`; 
+      item.urlMobile = `/shed/${item.photoName}/mobile.jpg`; 
+      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir, item.photoName, "meta.json");
     }
 
-    if (!urlNormal || !urlMobile) {
-      console.error(photoName + " not found in photos, pool or shed!");
+    if (!item.urlNormal || !item.urlMobile) {
+      console.error(photoName + " not found in assets, photos, pool or shed!");
     }
 
     if (fs.existsSync(metaPath)) {
       let meta = JSON.parse(fs.readFileSync(metaPath));
       if (typeof meta?.ObjectName !== "undefined") {
-        title =  meta?.ObjectName;
+        item.title =  meta?.ObjectName;
       }
     }
 
-    let element = `
-      <div>
-        <a class="spotlight" href="/photos/${photoName}"
-           data-description="${title}"
-           data-src="${urlNormal}"
-           data-button="Photo Page&nbsp;&nbsp;&#10148;"
-           data-button-href="/photos/${photoName}">
-          <img src="${urlMobile}">
-        </a>
-      </div>
-    `;
-    list += element;
+    masonry.items.push(item);
   });
 
-  var rnd = Math.random().toString(36).substring(2,8);
-  var id = "photo-masonry-" + rnd;
-
-  var elements = `
-    <div class="photo-masonry" id="${id}">
-      ${list}
-    </div>
-    <script>
-      let macy_${rnd} = new Macy({
-        container: '#${id}',
-        trueOrder: false,
-        waitForImages: false,
-        useOwnImageLoader: false,
-        debug: true,
-        mobileFirst: true,
-        columns: 2,
-        margin: {
-          y: 6,
-          x: 6
-        },
-        breakAt: {
-          980: {
-            margin: {
-              x: 8,
-              y: 8
-            },
-            columns: 3
-          },
-          768: 2,
-          640: 3
-        }
-      });
-      Spotlight.init();
-  </script>
-  `;
-
-  return elements;
+  const element = compileHandlebar(hexo, "photo-masonry.handlebars", masonry);
+  return element;
 });
