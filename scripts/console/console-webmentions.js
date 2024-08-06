@@ -58,7 +58,7 @@ hexo.extend.console.register(
 
       log.debug(data);
 
-      const wm = new Webmention({ limit: 0, send: opt.send });
+      const wm = new Webmention({ limit: 0, send: opt.send, debug: true });
       const clearLine = () => {
         if (process.stdout.isTTY) {
           process.stdout.clearLine();
