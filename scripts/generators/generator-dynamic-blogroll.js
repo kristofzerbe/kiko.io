@@ -41,7 +41,7 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
         }
         // console.log(item.title + ": " + item.feedSize);
         
-        feed2json.fromString(response.data, item.feed, (error, json) => {
+        feed2json.fromString(response.data, item.feed, { log: false }, (error, json) => {
           
           if (!error) {
             // json.items.sort((a,b) => a.date_published - b.date_published).reverse();
