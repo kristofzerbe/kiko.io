@@ -230,13 +230,18 @@ function setVibrantColor(theme) {
         let color = swatch.getHex();
         let colorDark = tinycolor(color).darken(10).toHexString();
 
-        if (theme === "dark") { color = colorDark; }
+        let color1Factor = 0;
+        let color2Factor = 25;
+        if (theme === "dark") { 
+          color = colorDark; 
+          color1Factor = 50;
+          color2Factor = 15;
+        }
         
-        $("#header, #footer, #back-to-top").css("background-color", color);
         $(":root").css("--color-accent", color);
-        $(":root").css("--color-accent2", tinycolor(color).brighten(25).toHexString())
-        $(":root").css("--dark-color-accent", tinycolor(color).brighten(50).toHexString());
-        $(":root").css("--dark-color-accent2", tinycolor(color).brighten(25).toHexString());
+        $(":root").css("--color-accent1", tinycolor(color).brighten(color1Factor).toHexString())
+        $(":root").css("--color-accent2", tinycolor(color).brighten(color2Factor).toHexString())
+
         document.querySelector('meta[name="theme-color"]').setAttribute("content", color);
       });
     } catch (error) {

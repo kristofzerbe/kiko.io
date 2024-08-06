@@ -21,6 +21,10 @@
   </div>
   
   <div class="article-inner">
+
+    <% if (post.hidden) { %>
+      <small class="hidden-info"><span>This is a hidden post. You're lucky to have the URL ...</span></small>
+    <% } %>
     
     <% if (post.link || post.title){ %>
       <header class="article-header">

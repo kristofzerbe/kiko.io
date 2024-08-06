@@ -1,17 +1,16 @@
 #sidebar
+  margin-bottom: block-margin
   @media mq-normal
     column(sidebar-column)
 
 .widget-wrap
-  margin: default-margin medium-margin
+  margin: medium-margin
   line-height: line-height-medium
 
 .widget-title
   @extend $block-caption
-  margin: small-margin 0  
-  color: color-header
-  /[data-theme="dark"] &
-    color: dark-color-header
+  margin: (medium-margin / 3) 0
+  opacity: 0.33
 
 .widget
   color: color-sidebar-text
@@ -33,13 +32,9 @@
     a
       text-decoration: none
       border-bottom: transparent 1px solid
-      color: var(--color-accent)
-      /[data-theme="dark"] &
-        color: var(--dark-color-accent)
+      color: var(--color-accent1) !important
       &:hover
-        border-bottom: var(--color-accent) 1px solid
-        /[data-theme="dark"] &
-          border-bottom: var(--dark-color-accent) 1px solid
+        border-bottom: var(--color-accent1) 1px solid
 
   ul, ol, dl
     ul, ol, dl
@@ -49,7 +44,7 @@
       border-left: 2px color-border solid
       /[data-theme="dark"] &
         border-color: dark-color-border
-      margin: small-margin 0 0 -12px
+      margin: (medium-margin / 3 * 2) 0 0 -12px
       padding: 0 10px      
       &:hover
         border-left: 4px var(--color-accent) solid
@@ -58,6 +53,4 @@
         margin-left: -13px
         padding-left: 9px
         a 
-          color: var(--color-accent)
-          /[data-theme="dark"] &
-            color: var(--dark-color-accent)
+          color: var(--color-accent1)

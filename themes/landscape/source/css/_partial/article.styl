@@ -16,10 +16,6 @@
   margin-bottom: 0.5rem
   margin-right: 1.25rem
   letter-spacing: 0
-  // &:hover
-  //   color: var(--color-accent)
-  //   /[data-theme="dark"] &
-  //     color: var(--dark-color-accent)
   time.updated
     color: color-foreground
     /[data-theme="dark"] &
@@ -39,16 +35,14 @@
       top: (medium-margin * -1)
       left: medium-margin
       position: absolute
+      z-index: 99
       padding: small-padding (small-padding * 3) (small-padding / 3 * 2)
       font-weight: font-weight-bold
       border-radius: border-radius-small
       font-size: font-size-small
       text-transform: uppercase
       color: color-logo
-      z-index: 99
       background-color: var(--color-accent2)
-      /[data-theme="dark"] &
-        background-color: var(--dark-color-accent2)
 
     small
       display: none
@@ -130,8 +124,6 @@
         left: calc(-1.4rem + 6px)
       top: 0
       border-color: var(--color-accent2)
-      /[data-theme="dark"] &
-        border-color: var(--dark-color-accent2)
       border-width: 1px
       border-style: solid
     .article-meta
@@ -178,6 +170,27 @@
   @extend $block-inner
   overflow: hidden
   margin-bottom: default-margin
+  small.hidden-info
+    display: block
+    padding: (small-padding * 2) (small-padding * 3)
+    font-size: font-size-small
+    opacity: 0.5
+    background-color: color-background
+    /[data-theme="dark"] &
+      background-color: dark-color-background
+    span
+      margin-left: 24px
+    &:before
+      content: ""
+      width: 16px
+      height: 18px
+      display: block
+      position: absolute
+      mask-image: url(/images/icons/circle-info.svg)
+      mask-repeat: no-repeat
+      mask-size: 16px
+      mask-position: 0 2px
+      background-color: var(--color-accent1)
 
 .article-photo
   @extend $inview-image
@@ -203,10 +216,7 @@
   border: none
   &:hover
     a
-      color: var(--color-accent)
-    /[data-theme="dark"] &
-      a 
-        color: var(--dark-color-accent)
+      color: var(--color-accent1)
   .article-category-link
     @extend $block-caption
     color: color-header
@@ -227,9 +237,7 @@
   /[data-theme="dark"] &
     color: dark-color-grey
   &:hover
-      color: var(--color-accent)
-      /[data-theme="dark"] &
-        color: var(--dark-color-accent)
+    color: var(--color-accent1)
 
 .article-title
   position: relative
@@ -249,9 +257,7 @@
   strong 
     opacity: 0.2
   a&:hover
-    color: var(--color-accent)
-    /[data-theme="dark"] &
-      color: var(--dark-color-accent)
+    color: var(--color-accent1)
     em, strong
       opacity: 1
   // https://css-tricks.com/adam-argyles-sick-mouse-out-css-hover-effect/
@@ -311,9 +317,7 @@
     /[data-theme="dark"] &
       border-bottom: dark-color-border-3d 1px dashed
     &:hover
-      border-bottom: var(--color-accent) 1px solid
-      /[data-theme="dark"] &
-        border-bottom: var(--dark-color-accent) 1px solid
+      border-bottom: var(--color-accent1) 1px solid
   a.img-link
     transition: all ease-out .6s 
     transform: scale(1)
@@ -571,9 +575,7 @@
     mask-repeat: no-repeat
     mask-size: 18px
     mask-position: 0 4px
-    background-color: var(--color-accent)
-    /[data-theme="dark"] &
-      background-color: var(--dark-color-accent)
+    background-color: var(--color-accent1)
 
 .button:not(.posts)
   display: inline-block
@@ -587,14 +589,11 @@
   border: none
   border-radius: border-radius-small
   &:hover    
-    background-color: var(--color-accent)
+    background-color: var(--color-accent1)
     color: color-logo
   /[data-theme="dark"] &
     background-color: dark-color-button
     color: dark-color-button-link
-    &:hover    
-      background-color: var(--dark-color-accent)
-      color: color-logo
 
 .download-link
   margin: default-margin 0 !important
@@ -621,25 +620,20 @@
     transition: all ease-out .2s
     z-index: 1
     box-shadow: inset 0 20px 20px -20px #aaa
+    color: var(--color-accent1)
     background-color: color-wm-button-background
     /[data-theme="dark"] &
       box-shadow: inset 0 20px 20px -20px #000
       background-color: dark-color-wm-button-background
     &:focus
       outline: none
-    &.mastodon
-      color: var(--color-accent)
+    &:hover
+      box-shadow: inset 0 20px 20px -20px #666
+      color: color-hover-background
+      background-color: var(--color-accent1)
       /[data-theme="dark"] &
-        color: var(--dark-color-accent)
-        background-color: dark-color-block
-      &:hover
-        box-shadow: inset 0 20px 20px -20px #666
-        color: color-hover-background
-        background-color: var(--color-accent)
-        /[data-theme="dark"] &
-          box-shadow: inset 0 20px 20px -20px #222
-          color: dark-color-hover-background
-          background-color: var(--dark-color-accent)
+        box-shadow: inset 0 20px 20px -20px #222
+        color: dark-color-hover-background
 
 .article-syndication,
 .article-interaction,
@@ -732,6 +726,9 @@
         background-position: 13px 5px
         /[data-theme="dark"] &
           filter: invert(1)
+        span
+          /[data-theme="dark"] &
+            filter: invert(1)
 
 .article-interaction
   @extend $base-style
@@ -764,9 +761,7 @@
       text-decoration: none
       border-bottom: transparent 1px solid
       &:hover
-        border-bottom: var(--color-accent) 1px solid
-        /[data-theme="dark"] &
-          border-bottom: var(--dark-color-accent) 1px solid
+        border-bottom: var(--color-accent1) 1px solid
   .alertbox
     margin-bottom: 0
 
@@ -817,9 +812,7 @@
     /[data-theme="dark"] &
       color: dark-color-grey
   a:hover
-    color: var(--color-accent)
-    /[data-theme="dark"] &
-      color: var(--dark-color-accent)
+    color: var(--color-accent1)
 
 .article-tags,
 // .article-syndication,
@@ -1084,9 +1077,7 @@
         opacity: 0.25
         font-size: font-size-small
     .wm-meta.wm-own
-      color: var(--color-accent) !important
-      /[data-theme="dark"] &
-        color: var(--dark-color-accent) !important
+      color: var(--color-accent1) !important
 
   .wm-content
     padding: (default-padding-vert / 3) (default-padding / 2)
@@ -1140,26 +1131,34 @@
   label
     grid-area: label
     opacity: 0.75
-  input[type=url]
-    grid-area: source
+  input
     font-family: inherit
     border-width: 1px
     border-style: solid
+    &:focus
+      outline: none
+  input[type=url]
+    grid-area: source
     border-color: color-wm-border
     background-color: color-wm-input-background
     /[data-theme="dark"] &
       background-color: dark-color-wm-input-background
       border-color: dark-color-wm-border
-    &:focus
-      outline: none
     +placeholder()
       opacity: 0.8
   input[type=submit]
     grid-area: submit
     cursor: pointer
-    color: color-wm-button
-    border: none
+    transition: all ease-out .2s
+    color: var(--color-accent1)
     background-color: color-wm-button-background
+    border-color: color-wm-button-background
     /[data-theme="dark"] &
-      color: dark-color-wm-button
       background-color: dark-color-wm-button-background
+      border-color: dark-color-wm-button-background
+    &:hover
+      color: color-hover-background
+      background-color: var(--color-accent1)
+      border-color: var(--color-accent1)
+      /[data-theme="dark"] &
+        color: dark-color-hover-background

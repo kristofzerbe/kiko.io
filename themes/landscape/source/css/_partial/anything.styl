@@ -31,17 +31,27 @@
     color: color-default
     /[data-theme="dark"] &
       color: dark-color-default
-    &:hover
-      color: var(--color-accent)
+    em
+      font-size: font-subtitle-size
+      line-height: line-height-subtitle
+      padding: (default-padding-vert / 4) (default-padding / 2)
+      min-width: 80px
+      max-height: 26px
+      text-align: center
+      transition: all .5s ease-in
+      border-radius: border-radius-small
+      background-color: color-button
+      color: color-button-link
       /[data-theme="dark"] &
-        color: var(--dark-color-accent)
-      em
-        background-color: var(--color-accent)
+        background-color: dark-color-button
+        color: dark-color-button-link        
+    &:hover // https://css-tricks.com/adam-argyles-sick-mouse-out-css-hover-effect/
+      color: var(--color-accent1)
+      em 
+        background-color: var(--color-accent1)
         color: color-block
         /[data-theme="dark"] &
-          background-color: var(--dark-color-accent)
           color: dark-color-block
-      // https://css-tricks.com/adam-argyles-sick-mouse-out-css-hover-effect/
       &:before
         transform: scaleX(1)
         transform-origin: left
@@ -58,20 +68,6 @@
       transform: scaleX(0)
       transform-origin: right
       transition: transform 0.4s ease-in-out
-    em
-      font-size: font-subtitle-size
-      line-height: line-height-subtitle
-      padding: (default-padding-vert / 4) (default-padding / 2)
-      min-width: 80px
-      max-height: 26px
-      text-align: center
-      transition: all .5s ease-in
-      border-radius: border-radius-small
-      background-color: color-button
-      color: color-button-link
-      /[data-theme="dark"] &
-        background-color: dark-color-button
-        color: dark-color-button-link        
 
 .anything-content
   @extend $base-style
@@ -84,9 +80,7 @@
     text-decoration: none
     border-bottom: transparent 1px solid
     &:hover
-      border-bottom: var(--color-accent) 1px solid
-      /[data-theme="dark"] &
-        border-bottom: var(--dark-color-accent) 1px solid
+      border-bottom: var(--color-accent1) 1px solid
   p
     line-height: line-height
     margin: line-height 0
