@@ -18,7 +18,7 @@ related:
   - SVWW-vs-Furth-2024-04-28
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112944247449903499
 ---
 
 {% match_grid "SV-Wehen-Wiesbaden" "1:0" "Hansa-Rostock" %}
