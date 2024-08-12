@@ -35,7 +35,7 @@ On 12 May 1949, the blockade of Berlin ended and with it the airlift organised b
 A great event, with lots of old aircraft, a wonderful flying programme and more beer benches than I have ever seen. Here are a few photographic impressions ...
 
 <!-- more -->
-
+..
 {% photo_masonry
   "D50_9220_2406"
   "D50_9228_2406"
