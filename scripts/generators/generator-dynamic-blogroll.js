@@ -40,25 +40,31 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
           item.feedSize = `${feedSize.toFixed(2)} KB`
         }
         // console.log(item.title + ": " + item.feedSize);
+        // console.log(response.status);
         
-        feed2json.fromString(response.data, item.feed, { log: false }, (error, json) => {
+        if (response.status === 200) {
+          feed2json.fromString(response.data, item.feed, (error, json) => {
           
-          if (!error) {
-            // json.items.sort((a,b) => a.date_published - b.date_published).reverse();
-            json.items.sort((a,b) => _helpers.moment(a.date_published).diff(b.date_published)).reverse();
-
-            item.feedLength = json.items.length;
-            
-            let feedItem = json.items[0];
-            item.latest_post = {
-              "url": feedItem.url,
-              "title": feedItem.title || "- no title -",
-              "date_published": feedItem.date_published
-            };
-          } else {
-            log.error("Parsing feed from " + item.title + " failed");
-          }
-        });
+            if (!error) {
+              // json.items.sort((a,b) => a.date_published - b.date_published).reverse();
+              json.items.sort((a,b) => _helpers.moment(a.date_published).diff(b.date_published)).reverse();
+  
+              item.feedLength = json.items.length;
+              
+              let feedItem = json.items[0];
+              item.latest_post = {
+                "url": feedItem.url,
+                "title": feedItem.title || "- no title -",
+                "date_published": feedItem.date_published
+              };
+            } else {
+              log.error("Parsing feed from " + item.title + " failed");
+            }
+          });  
+        } else {
+          log.error("Fetching feed from " + item.title + " responded with status " + response.status);
+          item.errorStatus = response.status;
+        }
         resolve(); 
       }).catch(err => {
         log.error("Fetching feed from " + item.title + " failed");
