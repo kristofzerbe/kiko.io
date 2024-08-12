@@ -7,12 +7,11 @@ photograph:
   file: D50_0239_2408.jpg
   name: Thomas Garden 24-08 IV
   socialmedia: /static/images/social-media/Afternoon-Light.png
-series: New Photos
+series: Thomas Garden
 categories:
   - Photo
 tags:
-  - Imaging
-  - Publishing
+  - Flora
 related:
   - July-Heat
   - Insects-Heaven
