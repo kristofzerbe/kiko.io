@@ -18,7 +18,9 @@ related:
   - Wet-Summer-Solstice
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/112949551802763627
+  - host: Pixelfed
+  - url: https://pixelfed.social/i/web/post/728616129690736176
 ---
 
 In addition to the classic morning and evening hours, the afternoon sun is the most beautiful, especially as autumn approaches. You can already tell that the days are getting shorter and between 4 and 5 p.m., when the greatest heat slowly takes its leave, the colours shine a little more intensely.
