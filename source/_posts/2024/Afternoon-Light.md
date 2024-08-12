@@ -5,6 +5,7 @@ subtitle:
 date: 2024-08-12 08:29:27
 photograph:
   file: D50_0239_2408.jpg
+  name: Thomas Garden 24-08 IV
   socialmedia: /static/images/social-media/Afternoon-Light.png
 series: New Photos
 categories:
