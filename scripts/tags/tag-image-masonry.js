@@ -6,56 +6,27 @@
     
 */
 
+const { compileHandlebar } = require("../../lib/tools.cjs");
+
 hexo.extend.tag.register("image_masonry", function(args){
     var assetPath = this.path;
 
-    var list = "";
-    args.forEach(function(e) {
-      var item = e.split("|"); 
-      var assetImg = item[0];
-      var title = item[1];
+    let masonry = {
+      rnd: Math.random().toString(36).substring(2,8),
+      items: []
+    }
 
-      list += `
-        <div>
-          <img loading="lazy" class="no-caption" src="/${assetPath + assetImg}" alt="${title}" />
-        </div>
-      `;
+    args.forEach(function(e) {
+      var args = e.split("|"); 
+
+      let item = {
+        asset: assetPath + args[0],
+        title: args[1]
+      }
+
+      masonry.items.push(item);
     });
 
-    var rnd = Math.random().toString(36).substring(2,8);
-    var id = "image-masonry-" + rnd;
-
-    var elements = `
-      <div class="image-masonry" id="${id}">
-        ${list}
-      </div>
-      <script>
-        let macy_${rnd} = new Macy({
-          container: '#${id}',
-          trueOrder: false,
-          waitForImages: false,
-          useOwnImageLoader: false,
-          debug: true,
-          mobileFirst: true,
-          columns: 2,
-          margin: {
-            y: 6,
-            x: 6
-          },
-          breakAt: {
-            980: {
-              margin: {
-                x: 8,
-                y: 8
-              },
-              columns: 3
-            },
-            768: 2,
-            640: 3
-          }
-        });
-      </script>
-    `;
-
-    return elements;
+    const element = compileHandlebar(hexo, "image-masonry.handlebars", masonry);
+    return element;  
 });

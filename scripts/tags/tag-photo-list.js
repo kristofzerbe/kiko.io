@@ -1,70 +1,65 @@
 /*
-    Photo List Tag for global, pool or shed photos
+    Photo List Tag for global, pool, shed or asset photos
 
     Syntax:
     {% photo_list ..."photoName|title" %}
 
 */
 
-//TODO: Refactor like tag-photo-masonry including asses folder images & into handlebars
-
 const fs = require("fs");
 const path = require("path");
 
-hexo.extend.tag.register("photo_list", function(args){
+const { compileHandlebar } = require("../../lib/tools.cjs");
 
+hexo.extend.tag.register("photo_list", function(args){
+  const that = this;
   const _rootDir = hexo.source_dir.replace("source", "");
 
-  var list = "";
-  args.forEach(function(e) {
-    let photoName = e;
-    
-    let url;
-    let metaPath;
-    let title = "";
+  let list = {
+    rnd: Math.random().toString(36).substring(2,8),
+    items: []
+  }
 
-    let photoPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "normal", photoName + ".jpg");
+  args.forEach(function(e) {
+    
+    let item = {
+      photoName: e,
+      title: e,
+      url: ""
+    }
+    let metaPath;
+
+    let assetPath = path.join(that.asset_dir, item.photoName + ".jpg")
+    if (fs.existsSync(assetPath)) { 
+      item.url = `/${that.path}${item.photoName}.jpg`;
+    }
+
+    let photoPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "normal", item.photoName + ".jpg");
     if (fs.existsSync(photoPath)) { 
-      url = `/photos/normal/${photoName}.jpg`; 
-      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "meta", photoName + ".json");
+      item.url = `/photos/normal/${item.photoName}.jpg`; 
+      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "meta", item.photoName + ".json");
     }
     
-    let poolPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.pool_dir, photoName, "normal.jpg");
+    let poolPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.pool_dir, item.photoName, "normal.jpg");
     if (fs.existsSync(poolPath)) { 
-      url = `/pool/${photoName}/normal.jpg`; 
-      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.pool_dir, photoName, "meta.json");
+      item.url = `/pool/${item.photoName}/normal.jpg`; 
+      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.pool_dir, item.photoName, "meta.json");
     }
     
-    let shedPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir, photoName, "normal.jpg");
+    let shedPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir, item.photoName, "normal.jpg");
     if (fs.existsSync(shedPath)) { 
-      url = `/shed/${photoName}/normal.jpg`; 
-      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir, photoName, "meta.json");
+      item.url = `/shed/${item.photoName}/normal.jpg`; 
+      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir, item.photoName, "meta.json");
     }
 
     if (fs.existsSync(metaPath)) {
       let meta = JSON.parse(fs.readFileSync(metaPath));
-      title = meta?.ObjectName;
+      item.title = meta?.ObjectName;
     }
 
-    let element = `
-      <figure>
-        <a href="/photos/${photoName}" class="no-break">
-          <img loading="lazy" src="${url}">
-        </a>
-        <figcaption>${title}</figcaption>
-      </figure>
-  `;
-
-    list += element;
+    list.items.push(item);
   });
 
-  var id = "photo-list-" + Math.random().toString(36).substring(2,8);
-
-  var elements = `
-    <div class="photo-list" id="${id}">
-      ${list}
-    </div>
-  `;
-
-  return elements;
+  const element = compileHandlebar(hexo, "photo-list.handlebars", list);
+  return element;
 });
