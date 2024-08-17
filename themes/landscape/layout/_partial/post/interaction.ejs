@@ -1,32 +1,31 @@
 <%
-    let synArray = [];
-    if (post.syndication && post.syndication.length) {
-      post.syndication.forEach(function(syn) {
-        if (syn.host && syn.url) {
-          let wm = config.syndication_hosts.find(h => h.name === syn.host)?.webmention;
-          if (wm) {
-            synArray.push(`<a class="${syn.host.toLowerCase()}" href="${syn.url}">${syn.host}</a>`);
-          }
-        }
-      });
-    }
+  let syndications = post.syndication?.filter(s => s.url?.length > 0 && s.host?.length > 0)
+  let synDevTo = syndications?.find(s => s.host.toLowerCase() === "devto");
+  let synLinks = [];
+  let synText = "";
 
-    let synText = "";
-    if (synArray.length > 0) {
-      synText = " or by replying to its syndication on " + synArray.join(" or ");
+  if (syndications?.length > 0) {
+    syndications.forEach(function(syn) {
+      let wm = config.syndication_hosts.find(h => h.name === syn.host)?.webmention;
+      if (wm) {
+        synLinks.push(`<a class="${syn.host.toLowerCase()}" href="${syn.url}">${syn.host}</a>`);
+      }
+    });
+    if (synLinks.length > 0) {
+      synText = " or by replying to its syndication on " + synLinks.join(" or ");
     }
+  }
 %>
 
 <div class="article-share" data-pagefind-ignore>
   <button onclick="dialog.shareOnMastodon();" class="share mastodon">Share on Mastodon</button>
 </div>
 
-<% let syndication = post.syndication?.filter(s => s.url?.length > 0) %>
-<% if (syndication?.length > 0) { %>
+<% if (syndications?.length > 0) { %>
 <div class="article-syndication" data-pagefind-ignore>
   <h2>Syndication</h2>
   <div class="syndication-wrapper">
-    <%- partial('syndication-links', { syndication: syndication, type: type, text: true }) %>
+    <%- partial('syndication-links', { syndication: syndications, type: type, text: true }) %>
   </div>
 </div>
 <% } %>
@@ -60,6 +59,10 @@
   <div class="webmentions-placeholder">
     <p class="wm-placeholder">No Webmentions yet...</p>
   </div>
+
+  <%- js('js/mentions-united.js') %>
+  <%- js('js/mentions-united_webmentions.js') %>
+  <% if (synDevTo) { %><%- js('js/mentions-united_devto.js'); %><% } %>
 
   <script>
     window.addEventListener('load', function () {

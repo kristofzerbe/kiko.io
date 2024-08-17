@@ -249,4 +249,62 @@ function setVibrantColor(theme) {
   }
 }
 
+function bindWebmentionSending(formName) {
+
+  function submitWebmention(e) {
+    e.preventDefault();
+   
+    var wmForm = document.getElementsByName(formName)[0];
+    var wmData = new FormData(wmForm);
+
+    //DEBUG
+    // let dataElement = document.createElement("pre");
+    // var wmObject = {};
+    // wmData.forEach(function(value, key) { wmObject[key] = value; });
+    // dataElement.innerHTML = JSON.stringify(wmObject, null, 2);
+    // wmForm.replaceWith(dataElement);
+    // return;
+
+    let resElement = document.createElement("div");
+    resElement.classList.add("alertbox");
+    resElement.classList.add("no-block");
+  
+    fetch(wmForm.action, {
+      method: wmForm.method,
+      body: wmData,
+    })
+    .then(response => {
+      if (!response.ok) {
+        resElement.classList.add("alertbox-warning");
+        resElement.innerHTML = `<p>Network returns an error</p>`;
+        wmForm.replaceWith(resElement);
+      }
+      return response.json();
+    })
+    .then((resJson) => {
+      resElement.classList.add("alertbox-success");
+      //DEBUG: resElement.innerHTML = `<pre>${JSON.stringify(resJson, null, 2)}</pre>`;
+      // console.log(JSON.stringify(resJson, null, 2));
+      if (resJson && resJson.summary) {
+        resElement.innerHTML = `
+          <p><strong>Thank you!</strong> ${resJson.summary}</p>
+          <p><a href="${resJson.location}" target="blank">See result data...</a></p>
+        `;
+      } else {
+        resElement.innerHTML = `<p><strong>Thank you!</strong>`;
+      }
+      wmForm.replaceWith(resElement);
+    })
+    .catch((error) => {
+      resElement.classList.remove("alertbox-success");
+      resElement.classList.add("alertbox-warning");
+      resElement.innerHTML = `<p>${error}</p>`;
+      wmForm.replaceWith(resElement);
+    });
+  }
+
+  var myform = document.getElementsByName(formName)[0];
+  myform.addEventListener("submit", submitWebmention);
+}
+
 /** ============================================================ */
