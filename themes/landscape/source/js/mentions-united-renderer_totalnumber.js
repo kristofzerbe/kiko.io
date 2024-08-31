@@ -2,7 +2,11 @@
  * Mentions United Renderer plugin for displaying a total number of Interactions
  * as an anchor to jump to interaction list f.e.
  * 
- * Options:
+ * @author Kristof Zerbe
+ * @version 1.0.0
+ * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub}
+ * 
+* Options:
  *  - placeholderId {String}  = ID of the element which will be replaced
  *  - jumpToId {String}       = ID of the element to jump to on click
  *  - pageKey {String}        = Unique identifier of the page, e.g. slug
@@ -49,11 +53,10 @@ class MentionsUnitedRenderer_TotalNumber extends MentionsUnited.Renderer {
 
     //set and check placeholder where the anchor element should be inserted
     let placeholder = document.getElementById(this.options.placeholderId);
-    if (!placeholder) { throw "No placeholder defined to insert the total number anchor"; }
+    if (!placeholder) { throw "No placeholder defined to replace with the total number anchor"; }
 
     const templates = new this.#Templates(this.helper);
 
-    //define data object for template
     let data = {
       count: interactions.length,
       delta: delta,
@@ -64,7 +67,6 @@ class MentionsUnitedRenderer_TotalNumber extends MentionsUnited.Renderer {
     let html = templates.totalnumber(data);
     let element = this.helper.createElementFromHtml(html);
 
-    //replace placeholder with element
     placeholder.replaceWith(element);
 
     //call afterInsert callback, if defined
@@ -85,8 +87,8 @@ class MentionsUnitedRenderer_TotalNumber extends MentionsUnited.Renderer {
     }
 
     /**
-     * Composes a total number of Interaction anchor
-     * @param {Object} stats
+     * Composes a total number of Interactions anchor
+     * @param {Object} data
      * @returns {String}
      */
     totalnumber(data) {

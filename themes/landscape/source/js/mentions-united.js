@@ -1,5 +1,9 @@
 /**
- * Mentions United
+ * Mentions United v1.0
+ * 
+ * @author Kristof Zerbe
+ * @version 1.0.0
+ * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub}
  * 
  * Settings:
  *  - container {Node}    = HTML element into which the interactions are to be inserted

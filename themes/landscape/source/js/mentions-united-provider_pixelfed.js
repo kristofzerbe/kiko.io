@@ -1,6 +1,10 @@
 /**
  * Mentions United Provider plugin for retreiving interactions from Pixelfed
  * 
+ * @author Kristof Zerbe
+ * @version 1.0.0
+ * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub}
+ * 
  * API Documentation: There is no proper API documentation, but the source code is freely available at: 
  *                    https://github.com/pixelfed/pixelfed/blob/dev/app/Http/Controllers/Api/ApiV1Controller.php
  * 

@@ -1,6 +1,10 @@
 /**
  * Mentions United Provider plugin for retreiving interaction from DevTo
  * 
+ * @author Kristof Zerbe
+ * @version 1.0.0
+ * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub}
+ * 
  * API Documentation: https://developers.forem.com/api/v1
  *
  * Options:

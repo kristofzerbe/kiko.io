@@ -1,6 +1,10 @@
 /**
  * Mentions United Provider plugin for retreiving webmentions from webmention.io
  * 
+ * @author Kristof Zerbe
+ * @version 1.0.0
+ * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub}
+ * 
  * API Documentation: https://github.com/aaronpk/webmention.io
  * 
  * Options:

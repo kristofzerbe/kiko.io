@@ -1,6 +1,10 @@
 /**
  * Mentions United Renderer plugin for displaying Interactions as a list
  * 
+ * @author Kristof Zerbe
+ * @version 1.0.0
+ * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub}
+ * 
  * Options:
  *  - containerId {String} = ID of the HTML element into which the interactions are to be inserted
  * 
@@ -40,8 +44,6 @@ class MentionsUnitedRenderer_List extends MentionsUnited.Renderer {
           : templates["unknown"](ia);
         
         let element = this.helper.createElementFromHtml(html);
-
-        //add Interaction element to result array
         iaElements.push(element); 
 
       } catch (error) { console.error(error); }

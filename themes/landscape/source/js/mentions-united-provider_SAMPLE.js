@@ -1,10 +1,15 @@
 /**
- * Mentions United Provider plugin for retreiving interactions from <ORIGIN>
+ * Sample for a Mentions United Provider plugin for retreiving interactions from <ORIGIN>
+ * 
+ * @author <YOUR-NAME>
+ * @version 1.0.0
+ * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub} 
+ * It would be wonderful of you open up a PR here to let me add your plugin to the project
  * 
  * API Documentation: <URL>
  * 
  * Options:
- *  - sourceUrl {String} = URL of the mentioning page on <ORIGIN>
+ *  - sourceUrl {String} = for example an URL of the mentioning page on <ORIGIN>
  * 
  * Remarks on customizing:
  *  - the fields 'name', 'options' and the async method 'retrieve' are mandatory
@@ -29,31 +34,23 @@ class MentionsUnited_NAME extends MentionsUnited.Provider {
    * @returns {Array}
    * 
    * Remarks:
-   *  - be sure to set 'origin' to 'this.origin' in every instance of MentionsUnited.Interaction
+   *  - be sure to set 'provider' to 'this.name' in every new instance of MentionsUnited.Interaction
    */
   async retrieve() {
     const msg = `${this.constructor.name}: Retreiving interactions for '${this.options.sourceUrl}'`;
     console.time(msg);
     
-    // Example for fetching and processing data
-    // ----------------------------------------
-    // const apiResponse = await fetch("<URL>");
-    // const apiData = await apiResponse.json();
-    // let interactions = this.#processJsonData(apiData);
-    // console.timeEnd(msg);
-    // return interactions;
-
-    //(just a placeholder for testing)
-    return new Promise((resolve)  => {
-      resolve([]);
-    });
+    const apiResponse = await fetch("<URL>");
+    const apiData = await apiResponse.json();
+    let interactions = this.#processJsonData(apiData);
+    
+    console.timeEnd(msg);
+    return interactions;
 
   }
 
   //////////////////////////////////////////////////////////////////////////////////////////
   
-    // Use these private methods to process the retrieved api data or write you own
-
     /**
      * Processes retrieved JSON data into flat array of Interaction 
      * @param {Array} entries 
@@ -73,21 +70,21 @@ class MentionsUnited_NAME extends MentionsUnited.Provider {
     #convertToInteraction(entry) {
       let r = new MentionsUnited.Interaction();
   
-      r.source.provider = this.provider;
-      // r.source.origin = ...;
-      // r.source.sender = ...;
-      // r.source.url = ...;
-      // r.source.id = ...;
-      // r.source.title = ...
+      r.source.provider = this.name;
+      r.source.origin = "<TYPE-OF-SYSTEM>";
+      r.source.sender = this.name;
+      // r.source.url = entry...;
+      // r.source.id = entry...;
+      // r.source.title = entry...
 
-      // r.author.name = ...;
-      // r.author.avatar = ...;
-      // r.author.profile = ...;
+      // r.author.name = entry...;
+      // r.author.avatar = entry...;
+      // r.author.profile = entry...;
 
-      // r.type = ...;
-      // r.received = ...;
-      // r.content.text = ...;
-      // r.content.html = ...;
+      // r.type = entry...;
+      // r.received = entry...;
+      // r.content.text = entry...;
+      // r.content.html = entry...;
       
       return r;
     }
