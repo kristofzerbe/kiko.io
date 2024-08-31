@@ -37,7 +37,7 @@ Yesterday, [Stefan Münz drew my attention to the "Topaz Photo AI"](https://indi
 Here's a problematic photo I took handheld with the Tamron at f/4.5 and a shutter speed of 1/400 at the Heineken brewery this spring, as edited without denoising and published here. ISO ... (drum roll) ... 40.000!
 
 {% photo_list
-  "23-05-Holland-0184"
+  "!23-05-Holland-0184"
 %}
 
 ---

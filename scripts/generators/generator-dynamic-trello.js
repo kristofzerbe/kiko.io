@@ -8,8 +8,11 @@ const { isInternetAvailable, InternetAvailabilityService } = require('is-interne
 
 //TODO: Switch from Trello to Obsidian
 //TODO: Extract to ON-READY-GET-...
+
 hexo.extend.generator.register("dynamic-trello", async function(locals) {
   const config = this.config;
+
+  //if (config.offline === true) { return null; } //DOESN'T WORK WITH HEXO SERVER
 
   const helpers = Object.keys(hexo.extend.helper.store).reduce((result, name) => {
     result[name] = hexo.extend.helper.get(name).bind({ ...hexo, page: {} });
@@ -22,8 +25,6 @@ hexo.extend.generator.register("dynamic-trello", async function(locals) {
       return null; 
     }
   });
-
-  if (config.offline === true) { return null; }
 
   let promises = [];
   let result = [];

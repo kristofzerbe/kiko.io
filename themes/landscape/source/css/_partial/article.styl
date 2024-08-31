@@ -6,6 +6,7 @@
   clearfix()
   position: relative
   z-index: 99
+  font-size: font-size-medium
 
 .article-date
   @extend $block-caption
@@ -37,13 +38,12 @@
       position: absolute
       z-index: 99
       padding: small-padding (small-padding * 3) (small-padding / 3 * 2)
+      font-size: font-size-small
       font-weight: font-weight-bold
       border-radius: border-radius-small
-      font-size: font-size-small
       text-transform: uppercase
       color: color-logo
       background-color: var(--color-accent2)
-
     small
       display: none
   &.rel
@@ -51,17 +51,15 @@
       padding-top: (default-padding-vert * 2.5)
     .article-meta
       small
+        font-size: font-size-small
         display: block
         position: absolute
         padding-top: small-padding
         padding-bottom: small-padding
         padding-right: 0.5rem
-        padding-left: 8rem
-        width: calc(100% - 8.5rem)
-        @media mq-mobile
-          padding-left: 8rem
-          width: calc(100% - 8.5rem)
-        font-size: font-size-small
+        --padding-small: 8.5rem
+        padding-left: var(--padding-small)
+        width: calc(100% - calc(var(--padding-small) + 0.5rem))
         border-radius: 0 border-radius 0 0
         white-space: nowrap
         overflow: hidden
@@ -99,11 +97,13 @@
         @media mq-mobile
           left: -1.5rem
       small
-        padding-left: 6rem
-        width: calc(100% - 6.5rem)
-        @media mq-mobile
-          padding-left: 5.5rem
-          width: calc(100% - 6rem)
+        font-size: font-size-small
+        --padding-small: 6rem
+        padding-left: var(--padding-small)
+        width: calc(100% - calc(var(--padding-small) + 0.5rem))
+        // @media mq-mobile
+        //   padding-left: 6rem
+        //   width: calc(100% - 6.5rem)
           
 .note-list
   .article.note
@@ -127,16 +127,17 @@
       border-width: 1px
       border-style: solid
     .article-meta
+      font-size: font-size-small
       time
         left: -2.75rem
         @media mq-mobile
           left: -1.5rem
       small
-        padding-left: 4.5rem
-        width: calc(100% - 5rem)
+        --padding-small: 5rem
+        padding-left: var(--padding-small)
+        width: calc(100% - calc(var(--padding-small) + 0.5rem))
         @media mq-mobile
-          padding-left: 5.5rem
-          width: calc(100% - 6rem)
+          --padding-small: 6rem
     .article-header a, .article-footer, .article-entry
       transition: all ease-out .3s
     .article-footer, .article-entry
@@ -173,7 +174,7 @@
   small.hidden-info
     display: block
     padding: (small-padding * 2) (small-padding * 3)
-    font-size: font-size-small
+    font-size: font-size-medium
     opacity: 0.5
     background-color: color-background
     /[data-theme="dark"] &
@@ -230,7 +231,7 @@
   text-transform: uppercase
   text-decoration: none
   display: inline-block
-  font-size: font-size-small
+  font-size: font-size-medium
   margin-bottom: small-margin
   margin-right: small-margin
   color: color-grey
@@ -470,7 +471,7 @@
       width: 24px
       height: 24px
       //see /images/icons/quote.svg + fill rgb-color
-      background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' viewBox='0 0 24 24' fill='rgba(205,205,205,0.75)'%3E%3Cpath d='M20.309 17.708C22.196 15.66 22.006 13.03 22 13V5a1 1 0 0 0-1-1h-6c-1.103 0-2 .897-2 2v7a1 1 0 0 0 1 1h3.078a2.89 2.89 0 0 1-.429 1.396c-.508.801-1.465 1.348-2.846 1.624l-.803.16V20h1c2.783 0 4.906-.771 6.309-2.292zm-11.007 0C11.19 15.66 10.999 13.03 10.993 13V5a1 1 0 0 0-1-1h-6c-1.103 0-2 .897-2 2v7a1 1 0 0 0 1 1h3.078a2.89 2.89 0 0 1-.429 1.396c-.508.801-1.465 1.348-2.846 1.624l-.803.16V20h1c2.783 0 4.906-.771 6.309-2.292z'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' viewBox='0 0 24 24' fill='rgba(205,205,205,0.75)'%3E%3Cpath d='M20.309 17.708C22.196 15.66 22.006 13.03 22 13V5a1 1 0 0 0-1-1h-6c-1.103 0-2 .897-2 2v7a1 1 0 0 0 1 1h3.078a2.89 2.89 0 0 1-.429 1.396c-.508.801-1.465 1.348-2.846 1.624l-.803.16V20h1c2.783 0 4.906-.771 6.309-2.292zm-11.007 0C11.19 15.66 10.999 13.03 10.993 13V5a1 1 0 0 0-1-1h-6c-1.103 0-2 .897-2 2v7a1 1 0 0 0 1 1h3.078a2.89 2.89 0 0 1-.429 1.396c-.508.801-1.465 1.348-2.846 1.624l-.803.16V20h1c2.783 0 4.906-.771 6.309-2.292z'/%3E%3C/svg%3E")
     & +
       cite
         display: block
@@ -513,7 +514,7 @@
     /[data-theme="dark"] &
       color: dark-color-grey
     display: block
-    font-size: font-size-small
+    font-size: font-size-medium
     font-style: italic
     opacity: 0.6
     margin-top: small-margin
@@ -636,8 +637,8 @@
         color: dark-color-hover-background
 
 .article-syndication,
-.article-interaction,
-.article-webmentions,
+.article-webmention,
+.article-interactions,
 .article-related
   min-height: 86px 
   padding-bottom: default-padding
@@ -730,7 +731,7 @@
           /[data-theme="dark"] &
             filter: invert(1)
 
-.article-interaction
+.article-webmention
   @extend $base-style
   min-height: auto
   border-top: none
@@ -765,7 +766,7 @@
   .alertbox
     margin-bottom: 0
 
-.article-webmentions
+.article-interactions
   padding-bottom: (default-padding / 2)
 
 .article-related
@@ -846,7 +847,7 @@
   a
     cursor: pointer
   input
-    font-size: font-size-small
+    font-size: font-size-medium
     font-family: font-sans
     background: transparent
     text-align: right
@@ -953,7 +954,7 @@
     margin-right: -2px
 
 .article-nav-title
-  font-size: font-size-small
+  font-size: font-size-medium
   margin-top: small-margin
 
 .article-gallery
@@ -979,138 +980,6 @@
     max-width: 100%
     margin: 0 auto
 
-.webmentions-placeholder
-  .wm-placeholder
-    opacity: 0.75
-    font-style: italic
-    
-.webmention
-  margin: medium-margin 0
-  font-size: .9rem
-  overflow: hidden
-  a
-    color: inherit
-    text-decoration: none
-    word-wrap: break-word
-    &:hover
-      text-decoration: underline
-  .wm-card
-    display: flex
-    flex-direction: row
-    flex-wrap: nowrap
-    .wm-photo-link
-      height: 42px
-      margin-right: 8px /* + 42 photo = 50 left content*/
-      .wm-photo
-        max-width: 42px
-        border-radius: 50%
-    .wm-meta
-      position: relative
-      width: 100%
-      display: grid
-      grid-template-areas: "name name verb date no"
-      grid-template-columns: max-content max-content max-content max-content auto
-      grid-template-rows: auto
-      align-items: center
-      column-gap: 5px
-      padding: (default-padding-vert / 3) (default-padding-vert / 2)
-      border-top-left-radius: border-radius
-      border-top-right-radius: border-radius
-      border-width: 1px
-      border-style: solid 
-      border-color: color-wm-border
-      background-color: color-wm-meta-background
-      /[data-theme="dark"] &
-        border-color: dark-color-wm-border
-        background-color: dark-color-wm-meta-background
-      @media mq-mobile
-        grid-template-areas: "name name name" "verb date no"
-        grid-template-columns: max-content max-content auto
-        grid-template-rows: auto
-      .wm-name
-        grid-area: name
-        font-weight: font-weight-bold
-        max-width: 220px
-        white-space: nowrap
-        text-overflow: ellipsis
-        overflow: hidden
-        &:hover
-          text-decoration: none
-          span
-            text-decoration: underline
-      .wm-name
-        // margin-right: 5px
-        padding-left: 24px
-        background-size: 16px
-        background-repeat: no-repeat
-        background-position: 0 3px 
-        &:hover
-          text-decoration: none
-      .wm-name.wm-source-web
-        background-image: url(/images/icons/web.svg)
-      .wm-name.wm-source-twitter
-        background-image: url(/images/icons/twitter.svg)
-      .wm-name.wm-source-mastodon
-        background-image: url(/images/icons/mastodon.svg)
-      .wm-name.wm-source-instagram
-        background-image: url(/images/icons/instagram.svg)
-      .wm-name.wm-source-facebook
-        background-image: url(/images/icons/facebook.svg)
-      .wm-name.wm-source-flickr
-        background-image: url(/images/icons/flickr.svg)
-      .wm-name.wm-source-reddit
-        background-image: url(/images/icons/reddit.svg)
-      .wm-name.wm-source-pixelfed
-        background-image: url(/images/icons/pixelfed.svg)
-      .wm-name.wm-source-threads
-        background-image: url(/images/icons/threads.svg)
-      .wm-name.wm-source-devto
-        background-image: url(/images/icons/devto.svg)
-      .wm-verb
-        grid-area: verb
-        display: inline-block
-      .wm-date
-        grid-area: date
-      small
-        grid-area: no
-        margin-left: auto
-        opacity: 0.25
-        font-size: font-size-small
-    .wm-meta.wm-own
-      color: var(--color-accent1) !important
-
-  .wm-content
-    padding: (default-padding-vert / 3) (default-padding / 2)
-    margin-left: 50px
-    line-height: 1.33rem
-    border-bottom-left-radius: border-radius
-    border-bottom-right-radius: border-radius
-    border-width: 1px
-    border-style: solid
-    border-color: color-wm-border
-    background-color: color-wm-content-background
-    /[data-theme="dark"] &
-      border-color: dark-color-wm-border
-      background-color: dark-color-wm-content-background
-    border-top: 0
-    > p
-      margin: 4px 0 8px
-      ~ .wm-source
-        margin-bottom: 8px
-    a
-      @extend $neutral-anchor
-      opacity: 0.66
-    .wm-source
-      display: inline-block
-      word-break: break-all
-.webmention.wm-liked, .webmention.wm-bookmarked
-  .wm-meta
-    border-bottom-left-radius: border-radius
-    border-bottom-right-radius: border-radius
-.webmention.wm-reposted
-  .wm-content
-    display: none
-
 .webmention-form
   margin-top: default-margin
   display: grid
@@ -1133,17 +1002,18 @@
     opacity: 0.75
   input
     font-family: inherit
-    border-width: 1px
-    border-style: solid
+    border: none
+    // border-width: 1px
+    // border-style: solid
     &:focus
       outline: none
   input[type=url]
     grid-area: source
-    border-color: color-wm-border
+    // border-color: color-wm-border
     background-color: color-wm-input-background
     /[data-theme="dark"] &
       background-color: dark-color-wm-input-background
-      border-color: dark-color-wm-border
+      // border-color: dark-color-wm-border
     +placeholder()
       opacity: 0.8
   input[type=submit]
@@ -1162,3 +1032,144 @@
       border-color: var(--color-accent1)
       /[data-theme="dark"] &
         color: dark-color-hover-background
+
+.interactions-totalnumber 
+  display: block
+  line-height: line-height
+  margin-block-start: default-margin
+  padding: small-padding (small-padding * 3)
+  background-color: color-hover-background
+  /[data-theme="dark"] &
+    background-color: dark-color-hover-background
+  border-radius: border-radius
+  font-size: font-size-medium
+  color: var(--color-accent2)
+  text-decoration: none
+  // transition: all .2s ease-in-out
+  .delta
+    display: block
+    float: right
+    font-weight: 500
+
+.interactions
+  display: grid
+  grid-row-gap: 1rem
+  padding-block: 1rem
+  font-style: italic
+  color: color-header
+  /[data-theme="dark"] &
+    color: dark-color-header
+  --avatar-size: 42px
+  --avatar-border: 12px
+  --color-default: color-default
+  /[data-theme="dark"] &
+    --color-default: dark-color-default
+  --color-block: color-block
+  /[data-theme="dark"] &
+    --color-block: dark-color-block
+  --color-background: color-background
+  /[data-theme="dark"] &
+    --color-background: dark-color-background
+  --color-border: color-border
+  /[data-theme="dark"] &
+    --color-border: dark-color-border
+  .interaction
+    padding-inline-start: calc(var(--avatar-size) + calc(var(--avatar-border) * 2))
+    padding-inline-end: 1rem
+    padding-block: var(--avatar-border)
+    position: relative
+    background-color: var(--color-block)
+    color: var(--color-default)
+    border-radius: border-radius-small
+    font-style: normal
+    font-size: font-size-medium
+    line-height: 1.25rem
+    overflow: hidden
+    a
+      word-wrap: break-word
+      // color: var(--color-default)
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+      &:after, &:before
+        font-weight: 300
+        color: initial
+        cursor: initial
+    a.avatar
+      display: block
+      position: absolute
+      top: calc(-1 * var(--avatar-border))
+      left: calc(-1 * var(--avatar-border))
+      right: unset
+      img
+        width: var(--avatar-size)
+        height: var(--avatar-size)
+        border-radius: 50%
+        border-width: var(--avatar-border) 
+        border-style: solid
+        border-color: var(--color-background)
+    &.isown
+      padding-inline-end: calc(var(--avatar-size) + calc(var(--avatar-border) * 2))
+      padding-inline-start: 1rem
+      a.avatar
+        left: unset
+        right: calc(-1 * var(--avatar-border))
+    .meta
+      display: block
+      a.author
+        position: relative
+        padding-left: 20px
+        font-weight: 400
+        &:before
+          content: ""
+          position: absolute
+          top: 2px
+          display: block
+          width: 14px
+          height: 14px
+          background-repeat: no-repeat no-repeat
+          background-position: center center
+          background-size: cover
+        img
+          position: relative
+          top: 2px
+          width: 14px
+          padding-inline: 1px
+      a.origin
+        text-transform: capitalize
+    .content
+      margin-block-start: calc(var(--avatar-border) / 3 * 2);
+      padding-block-start: calc(var(--avatar-border) / 3* 2);
+      border-block-start: solid;
+      border-width: 1px;
+      border-image-slice: 1;
+      border-image-source: linear-gradient(to right, var(--color-block), var(--color-border), var(--color-block));
+      p
+        margin: 0
+      p + p
+        margin-block: 0.5rem
+      a
+        opacity: 0.75
+      & *
+        overflow: hidden
+
+  .interaction.origin-web a.author:before
+    background-image: url(/images/icons/web.svg)
+    /[data-theme="dark"] &
+      filter: invert(1)
+  .interaction.origin-mastodon a.author:before
+    background-image: url(/images/icons/mastodon.svg)
+  .interaction.origin-devto a.author:before
+    background-image: url(/images/icons/devto.svg)
+    /[data-theme="dark"] &
+      filter: invert(1)
+  .interaction.origin-pixelfed a.author:before
+    background-image: url(/images/icons/pixelfed.svg)
+    /[data-theme="dark"] &
+      background-image: url(/images/icons/pixelfed_invert.svg)
+  .interaction.origin-flickr a.author:before
+    background-image: url(/images/icons/flickr.svg)
+  .interaction.origin-reddit a.author:before
+    background-image: url(/images/icons/reddit.svg)
+  .interaction.origin-twitter a.author:before
+    background-image: url(/images/icons/twitter.svg)

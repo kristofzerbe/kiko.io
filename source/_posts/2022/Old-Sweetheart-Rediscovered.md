@@ -23,7 +23,7 @@ syndication:
 
 It seems like ages ago that I wrote a tool called **OutlookSignature** with Visual Basic 6 and put it on the web on my old German blog **zerbit.de**. But the [WayBackMachine](https://web.archive.org/web/20111116021952/http://www.zerbit.de/projekte/outlooksignature.aspx) says something different. Started in 2006, I released the last version 1.9 at the beginning of December 2008. Just 14 years ago...
 
-![OutlookSignature on zerbit.de ten years ago](zerbit-outlooksignature.png)
+![OutlookSignature on zerbit.de ten years ago](Old-Sweetheart-Rediscovered/zerbit-outlooksignature.png)
 
 The thing was a command line tool, that could be used to automatically generate signatures for Microsoft Outlook in the three formats TXT, RTF and HTML, for example centrally via a Windows login script for the entire organization. No hassle anymore for the users on creating an appropriate mail signature and no more stress for the marketing department in enforcing a uniform appearance. It was based on templates with placeholders for the data and configurable via an INI file. The data could come either from the ActiveDirectory via LDAP or from any database.
 
@@ -39,7 +39,7 @@ I own the domain *zerbit.de* until today and the other day I was looking on the 
 
 I don't know who the user [*'foobar0815'*](https://github.com/foobar0815) is, but he/she is definitely German and had the patience to rebuild my tool in the modern language Go in 2019.
 
-![GoSignature on GitHub](go-signature.png)
+![GoSignature on GitHub](Old-Sweetheart-Rediscovered/go-signature.png)
 
 **GoSignature** uses the orginal INI configuation file, with the field mappings and all the other stuff, but the database connection feature. It works only with LDAP, which is quite enough today.
 

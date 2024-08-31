@@ -26,7 +26,7 @@ Beginning of the month, [Amelia Wattenberger](https://twitter.com/Wattenberger) 
 
 On the project page **[Visualizing a codebase](https://next.github.com/projects/repo-visualization)**, she talks about the advantages of code vizualization in terms of a better overview and comparability of code ...  and I loved it at first sight, because I'm an absolute visual person.
 
-![Screenshot from the project page](screenshot-repo-visualization.png)
+![Screenshot from the project page](Visualize-the-codebase-of-your-GitHub-repo/screenshot-repo-visualization.png)
 
 But her attempt was not only to show us what's possible (static SVG files and even interactive apps for code browsing, filtering and comparing), but give us the possibility to create our own codebase diagrams as SVG automatically, whenever we commit our code, by running a [GitHub Action](https://docs.github.com/en/actions), she and her team has developed ... the [**Repo Vizualizer**](https://github.com/githubocto/repo-visualizer)
 

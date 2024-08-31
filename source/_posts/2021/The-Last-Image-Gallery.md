@@ -25,7 +25,7 @@ In the last decade(s) I have seen and tried many image galleries and lightboxes 
 
 However, from today on, I don't need to look for a suitable solution for my next project, because I found one that leaves absolutely none of my wishes unfulfillede: [**Spotlight**](https://nextapps-de.github.io/spotlight/) by Nextapps from Berlin, Germany.
 
-![Spotlight](spotlight.jpg)
+![Spotlight](The-Last-Image-Gallery/spotlight.jpg)
 
 To make it clear: this is not a paid advertising text or something like that. That wouldn't make sense either, because Spotlight is Open Source ([Apache 2.0 License](https://en.wikipedia.org/wiki/Apache_License)) and its code is availabel at GitHub. I'm just thrilled with the work of the developers.
 
@@ -98,4 +98,4 @@ The implementation is a breeze. It took me less than 10 minutes to get Spotlight
 
 I can't think of any use case right now, that you couldn't implement easily and quickly with this amazing library. Congrats folks ... extremely well done!
 
-[![Spotlight logo](The-Last-Image-Gallery/logo.png)](https://nextapps-de.github.io/spotlight/)
+[![Spotlight logo](The-Last-Image-Gallery/The-Last-Image-Gallery/logo.png)](https://nextapps-de.github.io/spotlight/)

@@ -80,7 +80,7 @@ function initPermalink(postId) {
 
 /** ============================================================ */
 
-function initScrollAnchorLink() {
+function initScrollAnchorLink(selector, offset) {
   /* Smooth scroll to anchor link
    * Automatically detects the hash and scroll smoothly to anchor link with URL hashchange
    * Author: Franco Moya - @iamravenous
@@ -88,7 +88,9 @@ function initScrollAnchorLink() {
   // If you need more autonomy,
   // You can replace hash detection with a data-attribute
   // e.g. $("[data-scroll='smooth']")
-  $("a[href^='#']:not([href='#'])").click(function (e) {
+  if (!selector) { selector = "a[href^='#']:not([href='#'])"; }
+  if (!offset) { offset === 40; }
+  $(selector).click(function (e) {
     e.preventDefault();
     var hash = this.hash;
     var section = $(hash);
@@ -96,7 +98,7 @@ function initScrollAnchorLink() {
     if (hash) {
       $("html, body").animate(
         {
-          scrollTop: section.offset().top - 40,
+          scrollTop: section.offset().top - offset,
         },
         1000,
         "swing",

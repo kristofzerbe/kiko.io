@@ -15,6 +15,8 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
 
   const config = this.config;
 
+  //if (config.offline === true) { return null; } //DOESN'T WORK WITH HEXO SERVER
+
   let page = locals.dynamic.blogroll;
 
   page.content = page.content

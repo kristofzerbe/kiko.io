@@ -1,20 +1,7 @@
 <%
   let syndications = post.syndication?.filter(s => s.url?.length > 0 && s.host?.length > 0)
   let synDevTo = syndications?.find(s => s.host.toLowerCase() === "devto");
-  let synLinks = [];
-  let synText = "";
-
-  if (syndications?.length > 0) {
-    syndications.forEach(function(syn) {
-      let wm = config.syndication_hosts.find(h => h.name === syn.host)?.webmention;
-      if (wm) {
-        synLinks.push(`<a class="${syn.host.toLowerCase()}" href="${syn.url}">${syn.host}</a>`);
-      }
-    });
-    if (synLinks.length > 0) {
-      synText = " or by replying to its syndication on " + synLinks.join(" or ");
-    }
-  }
+  let synPixelfed = syndications?.find(s => s.host.toLowerCase() === "pixelfed");
 %>
 
 <div class="article-share" data-pagefind-ignore>
@@ -30,11 +17,11 @@
 </div>
 <% } %>
 
-<div class="article-interaction" data-pagefind-ignore>
+<div class="article-webmention" data-pagefind-ignore>
   <p>
     You can interact with this <%= type %> (applause, criticism, whatever) by mention it in one of 
-    your posts<%- synText %>, which will be shown here as a  
-    <a href="https://en.wikipedia.org/wiki/Webmention"><em>Webmention</em></a>.   
+    your posts and sending <a href="https://indieweb.org/Webmention">Webmention</a> or 
+    by replying to one of its syndications, most of which are displayed here as an interaction..
   </p>
 
   <form class="webmention-form" name="webmention-form" method="post"
@@ -53,21 +40,58 @@
 
 </div>
 
-<div class="article-webmentions" data-pagefind-ignore>
-  <h2>Webmentions</h2>
+<div id="article-interactions" class="article-interactions" data-pagefind-ignore>
+  <h2>Interactions</h2>
 
-  <div class="webmentions-placeholder">
-    <p class="wm-placeholder">No Webmentions yet...</p>
+  <div id="interactions-container" class="interactions">
+    <div class="loading">Loading</div>
   </div>
 
   <%- js('js/mentions-united.js') %>
-  <%- js('js/mentions-united_webmentions.js') %>
-  <% if (synDevTo) { %><%- js('js/mentions-united_devto.js'); %><% } %>
+  <%- js('js/mentions-united-provider_webmentions.js') %>
+  <%- js('js/mentions-united-renderer_list.js') %>
+  <%- js('js/mentions-united-renderer_summary.js') %>
+  <% if (synDevTo) { %><%- js('js/mentions-united-provider_devto.js'); %><% } %>
+  <% if (synPixelfed) { %><%- js('js/mentions-united-provider_pixelfed.js'); %><% } %>
 
   <script>
     window.addEventListener('load', function () {
       bindWebmentionSending("webmention-form");
-      insertWebmentions('<%- post.slug %>', '<%- config.url %>', '<%- config.author %>');
+
+      const mentionsUnited = new MentionsUnited({ 
+          ownerName: "<%- config.author %>" 
+        }, 
+        [
+          new MentionsUnitedProvider_Webmentions({ 
+            targetUrl: "<%- post.permalink %>",
+            tryResolveTitle: true
+          }),
+          new MentionsUnitedRenderer_List({
+            containerId: "interactions-container"
+          }), 
+          new MentionsUnitedRenderer_TotalNumber({
+            placeholderId: "interactions-totalnumber-placeholder",
+            jumpToId: "article-interactions",
+            pageKey: "<%- post.slug %>",
+            afterInsert: () => { initScrollAnchorLink(".interactions-totalnumber", 80); }
+          })
+        ]);
+
+      <% if (synDevTo) { %>
+      mentionsUnited.register(new MentionsUnitedProvider_DevTo({ 
+        sourceUrl: "<%- synDevTo.url %>", 
+        sourceId: <%- synDevTo.id ?? 0 %> 
+      }));
+      <% } %>
+
+      <% if (synPixelfed) { %>
+      mentionsUnited.register(new MentionsUnitedProvider_Pixelfed({ 
+        sourceUrl: "<%- synPixelfed.url %>",
+        apiTokenReadOnly: "<%- config.pixelfed_api_token_readonly %>"
+      }));
+      <% } %>
+
+      mentionsUnited.load();
     });
   </script>
 

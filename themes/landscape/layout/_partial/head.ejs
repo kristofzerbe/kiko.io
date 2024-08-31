@@ -247,6 +247,7 @@
 
   <meta name="author" content="<%= config.author %>">
   <meta name="fediverse:creator" content="@<%= mastodonUser %>@<%= mastodonHost %>" />
+  <meta property="creator-payments" content="/payment.json">
 
   <link rel="me authn" href="<%= config.profiles.github %>">
   <link rel="me authn" href="mailto:<%= config.email %>">
@@ -368,7 +369,7 @@
   <%- js('js/dist/macy.js') %><%# Bundling Errors %>
   <%- js('js/dist/spotlight.bundle.js') %>
 
-<% if (config.pirsch.enabled === true) { %>
+<% if (config.features_available.pirsch) { %>
   <script defer type="text/javascript" 
     src="https://api.pirsch.io/pirsch.js"
     id="pirschjs"

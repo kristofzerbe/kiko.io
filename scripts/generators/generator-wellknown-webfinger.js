@@ -5,6 +5,10 @@ const axios = require("axios");
 hexo.extend.generator.register("wellknown-webfinger", async function() {
   log.info("Generating File " + magenta(".well-known/webfinger"));
 
+  const config = this.config;
+
+  //if (config.offline === true) { return null; } //DOESN'T WORK WITH HEXO SERVER
+
   let mastodonUrl = this.config.profiles.mastodon.split("@");
   let mastodonServer = mastodonUrl[0];
   let mastodonHost = mastodonServer.replaceAll("/","").replace("https:", "");

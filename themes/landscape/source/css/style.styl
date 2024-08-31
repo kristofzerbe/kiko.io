@@ -101,7 +101,7 @@ input, textarea, button
   margin: 0
   padding: 0
   font-family: Arial, Helvetica, sans-serif
-  font-size: 13px
+  font-size: font-size-medium
   &::-moz-focus-inner
     border: 0
     padding: 0
@@ -231,6 +231,17 @@ if sidebar is left
   z-index: 1000
   border-radius: (border-radius-small / 2)
 
+.loading /* https://codepen.io/thetallweeks/pen/yybGra */
+  font-size: 1rem
+  &:after
+    overflow: hidden
+    display: inline-block
+    vertical-align: bottom
+    -webkit-animation: ellipsis steps(4,end) 900ms infinite    
+    animation: ellipsis steps(4,end) 900ms infinite
+    content: "\2026" /* ascii code for the ellipsis character */
+    width: 0px
+
 #wrap-404
   text-align: center
   margin: 20px 0 40px
@@ -248,10 +259,10 @@ if sidebar is left
   .page-title
     display: block
     text-align: center
-    font-size: 2rem
+    font-size: 1.9rem
     letter-spacing: 0.1rem
     @media mq-mobile
-      font-size: 1.75rem
+      font-size: 1.6rem
       letter-spacing: 0
     margin: double-margin auto small-margin
     font-weight: font-weight-normal

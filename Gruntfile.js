@@ -32,7 +32,7 @@ module.exports = function(grunt){
           'node_modules/medium-zoom/dist/medium-zoom.js',
           'node_modules/node-vibrant/dist/vibrant.js',
           'themes/landscape/assets/AutoTyping.js',
-          'themes/landscape/assets/webmentions.js',
+          // 'themes/landscape/assets/webmentions.js',
           'themes/landscape/assets/vanilla-back-to-top.js',
           'themes/landscape/assets/downupPopup.js'
         ],
