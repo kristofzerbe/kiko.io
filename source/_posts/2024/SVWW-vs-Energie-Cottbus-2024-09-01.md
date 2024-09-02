@@ -18,7 +18,7 @@ related:
   - SVWW-vs-Regensburg-2024-05-28-Relegation
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/113069116680476743
 ---
 
 {% match_grid "SV-Wehen-Wiesbaden" "2:1" "Energie-Cottbus" %}
