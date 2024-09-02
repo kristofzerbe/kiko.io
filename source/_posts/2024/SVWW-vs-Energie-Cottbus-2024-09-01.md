@@ -33,13 +33,11 @@ I haven't quite got used to my new seat yet, because there are always other peop
 
 ## The Game
 
-As soon as the whistle blew, our boys charged forwards like impetuous puppies and wanted to show who the home side was, only to have to turn on their heels because the Cottbus team were far from stupid and almost scored the first goal after just thirty seconds. Our goalkeeper had to smash the ball onto the roof of the stadium no less than 3 times in the first 5 minutes to prevent the worst from happening. Oh my ...
+As soon as the whistle blew, our boys charged forwards like impetuous puppies and wanted to show who the home side was, only to have to turn on their heels because the Cottbus team were far from stupid and almost scored the first goal after just thirty seconds. Our goalkeeper **Florian Stritzel** had to smash the ball onto the roof of the stadium no less than 3 times in the first 5 minutes to prevent the worst from happening. Oh my ...
 
-This cluelessness, coupled with many mistakes and only occasional good attacks on our part, lasted a whole half hour. Cottbuss played much more efficiently, but were unable to overcome Stritzel, who was the best man on the pitch so far.
+This cluelessness, coupled with many mistakes and only occasional good attacks on our part, lasted a whole half hour. Cottbus played much more straightforwardly, but were unable to overcome our goalkeeper Stritzel, who was the best man on the pitch so far. In the 36th minute, **Thijme. Goppel** and **Moritz Flotho** launched a really well thought-out attack, but **Sascha Mockenhaupt** failed to beat the opposition goalkeeper, who was standing between his posts for a reason.
 
-This cluelessness, coupled with many mistakes and only occasional good attacks on our part, lasted a whole half hour. Cottbuss played much more straightforwardly, but were unable to overcome our goalkeeper Stritzel, who was the best man on the pitch so far. In the 36th minute, Goppel and Flotho launched a really well thought-out attack, but Mockenhaupt narrowly failed to beat the opposition goalkeeper, who was standing between his posts for a reason.
-
-It was all the more incomprehensible that Cottbus let Goppel go again 5 minutes later and did not prevent him from taking a full shot on goal. The ball bounced nicely off a defender's head into the top right-hand corner ... **1:0**. What a mystery... However, they were unlucky not only on their side, but also on the other, as their direct equaliser was denied for offside.
+It was all the more incomprehensible that Cottbus let **Goppel** go again 5 minutes later and did not prevent him from taking a full shot on goal. The ball bounced nicely off a defender's head into the top right-hand corner ... **1:0**. What a mystery... However, they were unlucky not only on their side, but also on the other, as their direct equaliser was denied for offside.
 
 {% image_masonry
   "PXL_20240901_112100470.jpg|"
@@ -60,7 +58,7 @@ It was all the more incomprehensible that Cottbus let Goppel go again 5 minutes 
 
 After the break, the Cottbus players and fans stepped up a gear and we had to work even harder to keep them away from our goal ... until the 63rd minute ... Corner ... Goal. **1:1.** It was bound to happen and in our hearts we had to grant it to them.
 
-Two minutes later, we went forward again down the left flank and Greilinger allegedly fouled his opponent, who stayed down for a moment, although the referee made no move to blow his whistle. The ball came into the centre and Kaya, who had just come on as a substitute, scored with ease to make it **2:1**.
+Two minutes later, we went forward again down the left flank and **Fabian Greilinger** allegedly fouled his opponent, who stayed down for a moment, although the referee made no move to blow his whistle. The ball came into the centre and **Fatih Kaya**, who had just come on as a substitute, scored with ease to make it **2:1**.
 
 Being a coach is not an easy job, especially when emotions are running high after a scene like this. The opposing coach was immediately shown a yellow card and everyone wondered why. Football without emotions? Is that what they teach at referee school? 
 
