@@ -12,7 +12,7 @@ categories:
   - Football
 tags:
   - SVWW
-  - 2. Bundesliga
+  - 3. Bundesliga
 related:
   - My-Hometown-My-Club
   - 
