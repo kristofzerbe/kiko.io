@@ -87,7 +87,7 @@
       <% if (synPixelfed) { %>
       mentionsUnited.register(new MentionsUnitedProvider_Pixelfed({ 
         sourceUrl: "<%- synPixelfed.url %>",
-        apiTokenReadOnly: "<%- config.pixelfed_api_token_readonly %>"
+        apiUrl: "https://mentionsunited-api-proxy.onrender.com/pixelfed"
       }));
       <% } %>
 

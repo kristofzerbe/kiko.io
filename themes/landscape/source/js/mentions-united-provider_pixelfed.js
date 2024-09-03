@@ -13,14 +13,19 @@
  *  - apiTokenReadOnly {String} = Your token to access Pixelfed's API in Read-Only mode
  * 
  * Remarks:
- *  - This implementation relies on a READ-ONLY token of your Pixelfed instance, 
- *    which is PUBLICLY AVAILABLE IN THE CODE and could therefore be used by ANYONE! 
- *    You can generate your token at: https://<INSTANCE>/settings/applications.
+ *  - This implementation relies either on a READ-ONLY token of your Pixelfed instance, 
+ *    then you have to set the option 'apiUrl' in the calling code to the base URL of 
+ *    your instance, or you use an API PROXY which forwards the requests to the 
+ *    Pixelfed API according to the same URL scheme. In this case the URL of your  
+ *    proxy has to be set to 'apiUrl' and you can leave 'apiTokenReadOnly' blank.
+ * 
+ *    IMPORTANT: The API Token approach means, that your token is visible in your 
+ *    JavaScript code and is therefore PUBLICLY AVAILABLE and could be used by ANYONE! 
  *    You can search for ‘tokenCan(’read‘)’ in the Pixelfed source code to see what 
  *    information you are making freely available with it.
- *    If you do not want your API token to be available to anyone, you need an 
- *    API PROXY that translates requests from this plugin into authorised requests 
- *    to Pixelfed.
+ 
+ *    However, both variants require the token, that you can generate your token at: 
+ *    https://<INSTANCE>/settings/applications.
  * 
 */
 class MentionsUnitedProvider_Pixelfed  extends MentionsUnited.Provider {
@@ -28,13 +33,14 @@ class MentionsUnitedProvider_Pixelfed  extends MentionsUnited.Provider {
   
   options = { 
     sourceUrl: "",
+    apiUrl: "",
     apiTokenReadOnly: ""
   }
 
-  statusApiUrl() { return `https://pixelfed.social/api/v1/statuses/${this.sourceId}` };
-  contextApiUrl() { return `https://pixelfed.social/api/v1/statuses/${this.sourceId}/context` };
-  favoritedApiUrl() { return `https://pixelfed.social/api/v1/statuses/${this.sourceId}/favourited_by`; }
-  rebloggedApiUrl() { return `https://pixelfed.social/api/v1/statuses/${this.sourceId}/reblogged_by`; }
+  statusApiUrl() { return `${this.options.apiUrl}/api/v1/statuses/${this.sourceId}` };
+  contextApiUrl() { return `${this.options.apiUrl}/api/v1/statuses/${this.sourceId}/context` };
+  favoritedApiUrl() { return `${this.options.apiUrl}/api/v1/statuses/${this.sourceId}/favourited_by`; }
+  rebloggedApiUrl() { return `${this.options.apiUrl}/api/v1/statuses/${this.sourceId}/reblogged_by`; }
   
   constructor(options) {
     super();
