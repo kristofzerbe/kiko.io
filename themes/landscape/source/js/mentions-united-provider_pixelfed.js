@@ -2,22 +2,31 @@
  * Mentions United Provider plugin for retreiving interactions from Pixelfed
  * 
  * @author Kristof Zerbe
- * @version 1.0.0
+ * @version 1.0.1
  * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub}
  * 
  * API Documentation: There is no proper API documentation, but the source code is freely available at: 
  *                    https://github.com/pixelfed/pixelfed/blob/dev/app/Http/Controllers/Api/ApiV1Controller.php
  * 
  * Options:
- *  - sourceUrl {String}        = URL of the mentioning page on Pixelfed - MANDATORY
- *  - apiTokenReadOnly {String} = Your token to access Pixelfed's API in Read-Only mode
+ *  - {String} sourceUrl          = Full URL of the mentioning page on Pixelfed
+ *  - {String} [apiBaseUrl]       = Base URL of API proxy, if existing
+ *  - {String} [apiTokenReadOnly] = Token to access Pixelfed's API in Read-Only mode, if no proxy
+ * 
+ * Supported origins:
+ *  - pixelfed
+ * 
+ * Supported type-verbs of interactions:
+ *  - repost
+ *  - like
+ *  - reply
  * 
  * Remarks:
  *  - This implementation relies either on a READ-ONLY token of your Pixelfed instance, 
- *    then you have to set the option 'apiUrl' in the calling code to the base URL of 
+ *    then you have to set the option 'apiBaseUrl' in the calling code to the URL of 
  *    your instance, or you use an API PROXY which forwards the requests to the 
  *    Pixelfed API according to the same URL scheme. In this case the URL of your  
- *    proxy has to be set to 'apiUrl' and you can leave 'apiTokenReadOnly' blank.
+ *    proxy has to be set to 'apiBaseUrl' and you can leave 'apiTokenReadOnly' blank.
  * 
  *    IMPORTANT: The API Token approach means, that your token is visible in your 
  *    JavaScript code and is therefore PUBLICLY AVAILABLE and could be used by ANYONE! 
@@ -25,36 +34,37 @@
  *    information you are making freely available with it.
  
  *    However, both variants require the token, that you can generate your token at: 
- *    https://<INSTANCE>/settings/applications.
+ *    https://__INSTANCE__/settings/applications.
  * 
 */
 class MentionsUnitedProvider_Pixelfed  extends MentionsUnited.Provider {
-  name = "pixelfed.social";
+  key = ""; // will be set via sourceUrl in constructor (must be unique across all provider plugins for registration)
   
-  options = { 
+  options = {
     sourceUrl: "",
-    apiUrl: "",
+    apiBaseUrl: "",
     apiTokenReadOnly: ""
   }
 
-  statusApiUrl() { return `${this.options.apiUrl}/api/v1/statuses/${this.sourceId}` };
-  contextApiUrl() { return `${this.options.apiUrl}/api/v1/statuses/${this.sourceId}/context` };
-  favoritedApiUrl() { return `${this.options.apiUrl}/api/v1/statuses/${this.sourceId}/favourited_by`; }
-  rebloggedApiUrl() { return `${this.options.apiUrl}/api/v1/statuses/${this.sourceId}/reblogged_by`; }
-  
   constructor(options) {
     super();
     this.options = {...this.options, ...options};
 
-    //check mandatory fields
+    //check mandatory options
     if (this.options.sourceUrl.length === 0) { throw "'sourceUrl' is missing"; }
+    if (this.options.apiBaseUrl.length === 0 && this.options.apiTokenReadOnly.length === 0) { 
+      throw "'apiTokenReadOnly' is missing, as no 'apiBaseUrl' is defined"; 
+    }
 
-    //get the id of the post from last element of the source URL
-    this.sourceId = new URL(this.options.sourceUrl).pathname.split("/").pop();
+    //get needed information from sourceUrl
+    let pixelfedUrl = new URL(this.options.sourceUrl);
+    this.key = pixelfedUrl.hostname;
+    this.sourceId = pixelfedUrl.pathname.split("/").pop();
+    this.options.apiBaseUrl = this.options.apiBaseUrl ?? pixelfedUrl.origin;
   }
 
   /**
-   * Retrieve data from Pixelfed and return an array of MentionsUnited.Interaction
+   * Retrieve data from Pixelfed
    * @returns {Array}
    */
   async retrieve() {
@@ -97,41 +107,46 @@ class MentionsUnitedProvider_Pixelfed  extends MentionsUnited.Provider {
 
   //////////////////////////////////////////////////////////////////////////////////////////
   
-    /**
-     * Processes retrieved JSON data into flat array of Interactions 
-     * @param {Array} entries 
-     * @param {String} type 
-     * @returns {Array}
-     */
-    #processJsonData(entries, type) {
-      return entries.map((item) => {
-        return this.#convertToInteraction(item, type);
-      });
-    }
+  statusApiUrl() { return `${this.options.apiBaseUrl}/api/v1/statuses/${this.sourceId}` };
+  contextApiUrl() { return `${this.options.apiBaseUrl}/api/v1/statuses/${this.sourceId}/context` };
+  favoritedApiUrl() { return `${this.options.apiBaseUrl}/api/v1/statuses/${this.sourceId}/favourited_by`; }
+  rebloggedApiUrl() { return `${this.options.apiBaseUrl}/api/v1/statuses/${this.sourceId}/reblogged_by`; }
   
-    /**
-     * Converts specific data object into Interaction
-     * @param {Object} entry 
-     * @returns {MentionsUnited.Interaction}
-     */
-    #convertToInteraction(entry, type) {
-      let r = new MentionsUnited.Interaction();
+  /**
+   * Processes retrieved JSON data into flat array of Interactions 
+   * @param {Array.<Object>} entries
+   * @param {String} type
+   * @returns {Array.<MentionsUnited.Interaction>}
+   */
+  #processJsonData(entries, type) {
+    return entries.map((item) => {
+      return this.#convertToInteraction(item, type);
+    });
+  }
   
-      r.source.provider = this.name;
-      r.source.origin = "pixelfed";
-      r.source.sender = this.name;
-      r.source.url = this.options.sourceUrl;
-      r.source.id = entry.id;
+  /**
+   * Converts specific data object into Interaction
+   * @param {Object} entry 
+   * @returns {MentionsUnited.Interaction}
+   */
+  #convertToInteraction(entry, type) {
+    let r = new MentionsUnited.Interaction();
 
-      r.author.name = (type === "reply") ? entry.account.display_name : entry.display_name;
-      r.author.avatar = (type === "reply") ? entry.account.avatar : entry.avatar;
-      r.author.profile = (type === "reply") ? entry.account.url : entry.url;
+    r.source.provider = this.key;
+    r.source.origin = "pixelfed";
+    r.source.sender = this.key;
+    r.source.url = this.options.sourceUrl;
+    r.source.id = entry.id;
 
-      r.type = type;
-      r.received = (type === "reply") ? entry.created_at : undefined;
-      r.content.text = entry.content;
-      
-      return r;
-    }
+    r.author.name = (type === "reply") ? entry.account.display_name : entry.display_name;
+    r.author.avatar = (type === "reply") ? entry.account.avatar : entry.avatar;
+    r.author.profile = (type === "reply") ? entry.account.url : entry.url;
+
+    r.type = type;
+    r.received = (type === "reply") ? entry.created_at : undefined;
+    r.content.text = entry.content;
+    
+    return r;
+  }
   
 }

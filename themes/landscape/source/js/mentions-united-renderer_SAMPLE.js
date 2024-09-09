@@ -6,12 +6,12 @@
  * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub}
  * It would be wonderful of you open up a PR here to let me add your plugin to the project
  * 
-* Options:
- *  - placeholderId {String}  = for example an ID of the element which will be replaced
- * 
+ * Options:
+ *  - {String} placeholderId   = for example an ID of the element which will be replaced
+ *  - {Callback} [afterRender] = JS function to call after render
  */
 class MentionsUnitedRenderer_NAME extends MentionsUnited.Renderer {
-  name = "<RENDERER>";
+  key = "__RENDERER__"; // must be unique across all renderer plugins for registration
 
   options = { 
     placeholderId: ""
@@ -21,17 +21,20 @@ class MentionsUnitedRenderer_NAME extends MentionsUnited.Renderer {
     super();
     this.options = {...this.options, ...options};
     this.helper = new MentionsUnited.Helper();
+
+    //check mandatory options
+    if (this.options.placeholderId.length === 0) { throw "'placeholderId' is missing"; }
   }
 
   /**
    * Renders the element regarding Interactions
-   * @param {Array} interactions 
+   * @param {Array.<MentionsUnited.Interaction>} interactions 
    */
   render(interactions) {
 
-    //set and check placeholder where the anchor element should be inserted
+    //set and check placeholder where the element will be inserted
     let placeholder = document.getElementById(this.options.placeholderId);
-    if (!placeholder) { throw "No placeholder defined to replace with interactions"; }
+    if (!placeholder) { throw "No placeholder defined to replace with ..."; }
     
     const templates = new this.#Templates(this.helper);
 
@@ -46,7 +49,12 @@ class MentionsUnitedRenderer_NAME extends MentionsUnited.Renderer {
 
     //replace placeholder with result element
     placeholder.replaceWith(result);
-  }
+
+     //call afterRender callback, if defined
+    if (typeof this.options.afterRender === "function") {
+      this.options.afterRender();
+    }
+ }
 
   //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -61,7 +69,7 @@ class MentionsUnitedRenderer_NAME extends MentionsUnited.Renderer {
 
     /**
      * Composes an Interaction element ... fo example 'like from John Doe'
-     * @param {Interaction} ia
+     * @param {MentionsUnited.Interaction} ia
      * @returns {String}
      */
     MY_TEMPLATE_FUNCTION(ia) {

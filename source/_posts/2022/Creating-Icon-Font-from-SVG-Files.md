@@ -28,7 +28,7 @@ In another project I had used [Fontello](https://fontello.com/), where you can b
 
 And yes [gulp-iconfont](https://www.npmjs.com/package/gulp-iconfont) from [Nicolas Froidure](https://github.com/nfroidure) was exactly what I needed.
 
-![gulp-iconfont on GitHub](..\Creating-Icon-Font-from-SVG-Files/gulp-iconfont.png)
+![gulp-iconfont on GitHub](Creating-Icon-Font-from-SVG-Files/gulp-iconfont.png)
 
 ---
 

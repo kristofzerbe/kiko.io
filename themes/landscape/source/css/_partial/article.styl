@@ -648,7 +648,7 @@
   /[data-theme="dark"] &
     border-bottom-color: dark-color-border
   > h2
-    @extend $block-caption  
+    @extend $block-caption
     color: color-header
     /[data-theme="dark"] &
       color: dark-color-header
@@ -765,9 +765,6 @@
         border-bottom: var(--color-accent1) 1px solid
   .alertbox
     margin-bottom: 0
-
-.article-interactions
-  padding-bottom: (default-padding / 2)
 
 .article-related
   margin-bottom: -(medium-margin)
@@ -1033,7 +1030,7 @@
       /[data-theme="dark"] &
         color: dark-color-hover-background
 
-.interactions-totalnumber 
+.interactions-totalnumber
   display: block
   line-height: line-height
   margin-block-start: default-margin
@@ -1045,131 +1042,193 @@
   font-size: font-size-medium
   color: var(--color-accent2)
   text-decoration: none
-  // transition: all .2s ease-in-out
   .delta
     display: block
     float: right
-    font-weight: 500
+    font-weight: font-weight-bolder
 
-.interactions
-  display: grid
-  grid-row-gap: 1rem
-  padding-block: 1rem
-  font-style: italic
-  color: color-header
-  /[data-theme="dark"] &
-    color: dark-color-header
-  --avatar-size: 42px
-  --avatar-border: 12px
+.article-interactions
   --color-default: color-default
-  /[data-theme="dark"] &
-    --color-default: dark-color-default
   --color-block: color-block
-  /[data-theme="dark"] &
-    --color-block: dark-color-block
   --color-background: color-background
-  /[data-theme="dark"] &
-    --color-background: dark-color-background
   --color-border: color-border
   /[data-theme="dark"] &
+    --color-default: dark-color-default
+    --color-block: dark-color-block
+    --color-background: dark-color-background
     --color-border: dark-color-border
-  .interaction
-    padding-inline-start: calc(var(--avatar-size) + calc(var(--avatar-border) * 2))
-    padding-inline-end: 1rem
-    padding-block: var(--avatar-border)
-    position: relative
-    background-color: var(--color-block)
-    color: var(--color-default)
-    border-radius: border-radius-small
-    font-style: normal
-    font-size: font-size-medium
-    line-height: 1.25rem
-    overflow: hidden
-    a
-      word-wrap: break-word
-      // color: var(--color-default)
-      text-decoration: none
-      &:hover
-        text-decoration: underline
-      &:after, &:before
-        font-weight: 300
-        color: initial
-        cursor: initial
-    a.avatar
-      display: block
-      position: absolute
-      top: calc(-1 * var(--avatar-border))
-      left: calc(-1 * var(--avatar-border))
-      right: unset
+  padding-block-end: (default-padding / 2)
+
+  .message, .interactions-list
+    font-style: italic
+    color: color-header
+
+  .interactions-avatars, .interactions-list
+    padding-block-end: default-padding-vert
+
+  .interactions-avatars
+    --avatar-size: 36px
+    --avatar-border: 4px
+    --avatar-gap: (default-margin / 2)
+    --icon-size: 12px
+    width: 99%
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    gap: 0 var(--avatar-gap)
+    h3
+      @extend $block-caption
+      font-size: font-size-medium
+      font-weight: font-weight-normal
+      padding-block-start: calc(var(--avatar-gap) / 2)
+      padding-inline-end: var(--avatar-gap)
+      color: color-header
+      /[data-theme="dark"] &
+        color: dark-color-header
+    .avatar
+      position: relative
       img
         width: var(--avatar-size)
         height: var(--avatar-size)
+        max-width: var(--avatar-size)
+        max-height: var(--avatar-size)
+        border-radius: 50%
+      &:after
+        content: ""
+        position: absolute
+        right: -8px
+        bottom: 2px
+        display: block
+        width: var(--icon-size)
+        height: var(--icon-size)
         border-radius: 50%
         border-width: var(--avatar-border) 
         border-style: solid
         border-color: var(--color-background)
-    &.isown
-      padding-inline-end: calc(var(--avatar-size) + calc(var(--avatar-border) * 2))
-      padding-inline-start: 1rem
-      a.avatar
-        left: unset
-        right: calc(-1 * var(--avatar-border))
-    .meta
-      display: block
-      a.author
-        position: relative
-        padding-left: 20px
-        font-weight: 400
-        &:before
-          content: ""
-          position: absolute
-          top: 2px
-          display: block
-          width: 14px
-          height: 14px
-          background-repeat: no-repeat no-repeat
-          background-position: center center
-          background-size: cover
-        img
-          position: relative
-          top: 2px
-          width: 14px
-          padding-inline: 1px
-      a.origin
-        text-transform: capitalize
-    .content
-      margin-block-start: calc(var(--avatar-border) / 3 * 2);
-      padding-block-start: calc(var(--avatar-border) / 3* 2);
-      border-block-start: solid;
-      border-width: 1px;
-      border-image-slice: 1;
-      border-image-source: linear-gradient(to right, var(--color-block), var(--color-border), var(--color-block));
-      p
-        margin: 0
-      p + p
-        margin-block: 0.5rem
+        background-repeat: no-repeat no-repeat
+        background-position: center center
+        background-size: cover
+
+  .interactions-list
+    --avatar-size: 42px
+    --avatar-border: 12px
+    --avatar-gap: small-margin
+    --icon-size: 14px
+    display: grid
+    grid-row-gap: medium-margin
+    /[data-theme="dark"] &
+      color: dark-color-header
+    .interaction
+      padding-inline-start: calc(var(--avatar-size) + calc(var(--avatar-border) * 2))
+      padding-inline-end: medium-margin
+      padding-block: var(--avatar-border)
+      position: relative
+      background-color: var(--color-block)
+      color: var(--color-default)
+      border-radius: border-radius-small
+      font-style: normal
+      font-size: font-size-medium
+      line-height: line-height-small
+      overflow: hidden
       a
-        opacity: 0.75
-      & *
-        overflow: hidden
+        word-wrap: break-word
+        text-decoration: none
+        &:hover
+          text-decoration: underline
+        &:after, &:before
+          font-weight: 300
+          color: initial
+          cursor: initial
+      .avatar
+        display: block
+        position: absolute
+        top: calc(-1 * var(--avatar-border))
+        left: calc(-1 * var(--avatar-border))
+        right: unset
+        img
+          width: var(--avatar-size)
+          height: var(--avatar-size)
+          max-width: var(--avatar-size)
+          max-height: var(--avatar-size)
+          border-radius: 50%
+          border-width: var(--avatar-border) 
+          border-style: solid
+          border-color: var(--color-background)
+      &.isown
+        padding-inline-end: calc(var(--avatar-size) + calc(var(--avatar-border) * 2))
+        padding-inline-start: 1rem
+        .avatar
+          left: unset
+          right: calc(-1 * var(--avatar-border))
+      .meta
+        display: block
+        .author
+          position: relative
+          padding-left: 20px
+          font-weight: 400
+          &:before
+            content: ""
+            position: absolute
+            top: 2px
+            display: block
+            width: var(--icon-size)
+            height: var(--icon-size)
+            background-repeat: no-repeat no-repeat
+            background-position: center center
+            background-size: cover
+          img.emoji
+            position: relative
+            top: 2px
+            width: var(--icon-size)
+            padding-inline: 1px
+      .content
+        margin-block-start: calc(var(--avatar-border) / 3 * 2);
+        padding-block-start: calc(var(--avatar-border) / 3 * 2);
+        border-block-start: solid;
+        border-width: 1px;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(to right, var(--color-block), var(--color-border), var(--color-block));
+        p
+          margin: 0
+        p + p
+          margin-block: small-margin
+        a
+          opacity: 0.75
+        & *
+          overflow: hidden
 
   .interaction.origin-web a.author:before
     background-image: url(/images/icons/web.svg)
     /[data-theme="dark"] &
       filter: invert(1)
-  .interaction.origin-mastodon a.author:before
+  .interaction.origin-mastodon a.author:before,
+  .avatar.origin-mastodon:after
     background-image: url(/images/icons/mastodon.svg)
-  .interaction.origin-devto a.author:before
+  .interaction.origin-bluesky a.author:before,
+  .avatar.origin-bluesky:after
+    background-image: url(/images/icons/bluesky.svg)
+  .interaction.origin-flickr a.author:before,
+  .avatar.origin-flickr:after
+    background-image: url(/images/icons/flickr.svg)
+  .interaction.origin-github a.author:before,
+  .avatar.origin-github:after
+    background-image: url(/images/icons/github.svg)
+  .interaction.origin-reddit a.author:before,
+  .avatar.origin-reddit:after
+    background-image: url(/images/icons/reddit.svg)
+  .interaction.origin-twitter a.author:before,
+  .avatar.origin-twitter:after
+    background-image: url(/images/icons/twitter.svg)
+  .interaction.origin-facebook a.author:before,
+  .avatar.origin-facebook:after
+    background-image: url(/images/icons/facebook.svg)
+  .interaction.origin-devto a.author:before,
+  .avatar.origin-devto:after
     background-image: url(/images/icons/devto.svg)
     /[data-theme="dark"] &
       filter: invert(1)
-  .interaction.origin-pixelfed a.author:before
+  .interaction.origin-pixelfed a.author:before,
+  .avatar.origin-pixelfed:after
     background-image: url(/images/icons/pixelfed.svg)
     /[data-theme="dark"] &
       background-image: url(/images/icons/pixelfed_invert.svg)
-  .interaction.origin-flickr a.author:before
-    background-image: url(/images/icons/flickr.svg)
-  .interaction.origin-reddit a.author:before
-    background-image: url(/images/icons/reddit.svg)
-  .interaction.origin-twitter a.author:before
-    background-image: url(/images/icons/twitter.svg)

@@ -2,40 +2,54 @@
  * Mentions United Renderer plugin for displaying Interactions as a list
  * 
  * @author Kristof Zerbe
- * @version 1.0.0
+ * @version 1.0.1
  * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub}
  * 
  * Options:
- *  - containerId {String} = ID of the HTML element into which the interactions are to be inserted
- * 
+ *  - {String} placeholderId    = ID of the element which will be replaced with list of interactions
+ *  - {String} [skipTypes]      = Comma-separated list of type-verbs to skip 
+ *  - {Callback} [afterRender]  = JS function to call after render
  */
 class MentionsUnitedRenderer_List extends MentionsUnited.Renderer {
-  name = "list";
+  key = "list"; // must be unique across all renderer plugins for registration
 
   options = { 
-    containerId: ""
+    placeholderId: "",
+    skipTypes: "",
+    afterRender: undefined
   }
 
   constructor(options) {
     super();
     this.options = {...this.options, ...options};
     this.helper = new MentionsUnited.Helper();
+
+    //check mandatory options
+    if (this.options.placeholderId.length === 0) { throw "'placeholderId' is missing"; }
   }
 
   /**
    * Renders Interactions
-   * @param {Array} interactions 
+   * @param {Array.<MentionsUnited.Interaction>} interactions
    */
   render(interactions) {
 
-    //set and check container where Interaction elements should be inserted
-    let container = document.getElementById(this.options.containerId);
-    if (!container) { throw "No container defined to insert all the interactions"; }
+    //set and check placeholder where the anchor element will be inserted
+    let placeholder = document.getElementById(this.options.placeholderId);
+    if (!placeholder) { throw "No placeholder defined to replace with all the interactions"; }
+
+    //filter types when specified and content is null
+    if (this.options.skipTypes.length > 0) {
+      interactions = interactions.filter((ia) => {
+        return !(this.options.skipTypes.toLowerCase().includes(ia.type.toLowerCase()));
+      });
+    }
 
     const templates = new this.#Templates(this.helper);
 
-    let iaElements = [];
+    let listElement = this.helper.createElementFromHtml(templates.list());
 
+    let iaElements = [];
     for (let ia of interactions) {
       try {
         //get template HTML and convert to element
@@ -50,13 +64,16 @@ class MentionsUnitedRenderer_List extends MentionsUnited.Renderer {
     }
 
     if (iaElements.length > 0) {
-      //replace container content with Interaction elements
-      container.replaceChildren(...iaElements);
+      listElement.append(...iaElements);
+      placeholder.replaceWith(listElement);
     } else {
-      //replace container content with n/a message
-      container.innerHTML = "No interaction yet";
+      placeholder.remove();
     }
 
+    //call afterRender callback, if defined
+    if (typeof this.options.afterRender === "function") {
+      this.options.afterRender();
+    }
   }
 
   //////////////////////////////////////////////////////////////////////////////////////////
@@ -71,12 +88,25 @@ class MentionsUnitedRenderer_List extends MentionsUnited.Renderer {
     }
 
     /**
+     * Composes a wrapper for the interactions
+     * @returns {HTML}
+     */
+    list() {
+      return this.helper.fillLiteralTemplate(
+        `
+        <div class="interactions-list"></div>
+        `,
+        {}
+      );  
+    }
+    
+    /**
      * Composes an unknown type, whose template method does not yet exist
-     * @param {Interaction} ia 
+     * @param {MentionsUnited.Interaction} ia 
      * @returns {HTML}
      */
     unknown(ia) {
-      ia.typeVerb = "? (" + ia.type + ")";
+      ia.typeWord = "? (" + ia.type + ")";
 
       let parts = {};
       parts.received = (ia.received) 
@@ -92,11 +122,11 @@ class MentionsUnitedRenderer_List extends MentionsUnited.Renderer {
     
     /**
      * Composes a LIKE
-     * @param {Interaction} ia 
+     * @param {MentionsUnited.Interaction} ia 
      * @returns {HTML}
      */
     like(ia) {
-      ia.typeVerb = "liked";
+      ia.typeWord = "liked";
 
       let parts = {};
       parts.received = (ia.received) 
@@ -108,11 +138,11 @@ class MentionsUnitedRenderer_List extends MentionsUnited.Renderer {
 
     /**
      * Composes a REPLY
-     * @param {Interaction} ia 
+     * @param {MentionsUnited.Interaction} ia 
      * @returns {HTML}
      */
     reply(ia) {
-      ia.typeVerb = "replied";
+      ia.typeWord = "replied";
       
       let parts = {};
       parts.received = this.#part_received(ia);
@@ -128,11 +158,11 @@ class MentionsUnitedRenderer_List extends MentionsUnited.Renderer {
     
     /**
      * Composes a COMMENT (same as REPLY)
-     * @param {Interaction} ia 
+     * @param {MentionsUnited.Interaction} ia 
      * @returns {HTML}
      */
     comment(ia) {
-      ia.typeVerb = "commented";
+      ia.typeWord = "commented";
 
       let parts = {};
       parts.received = this.#part_received(ia);
@@ -148,11 +178,11 @@ class MentionsUnitedRenderer_List extends MentionsUnited.Renderer {
 
     /**
      * Composes a MENTION
-     * @param {Interaction} ia 
+     * @param {MentionsUnited.Interaction} ia 
      * @returns {HTML}
      */
     mention(ia) {
-      ia.typeVerb = "mentioned";
+      ia.typeWord = "mentioned";
 
       let parts = {};
       parts.received = this.#part_received(ia);
@@ -168,28 +198,28 @@ class MentionsUnitedRenderer_List extends MentionsUnited.Renderer {
     
     /**
      * Composes a REPOST
-     * @param {Interaction} ia 
+     * @param {MentionsUnited.Interaction} ia 
      * @returns {HTML}
      */
     repost(ia) {
-      ia.typeVerb = "reposted";
+      ia.typeWord = "reposted";
 
       let parts = {};
       parts.received = this.#part_received(ia);
       parts.source = (ia.source.origin === "web") 
         ? this.#part_origin_title(ia) 
-        : this.#part_origin(ia);
+        : "";
 
       return this.#base(ia, parts);
     }
     
     /**
      * Composes a BOOKMARK
-     * @param {Interaction} ia 
+     * @param {MentionsUnited.Interaction} ia 
      * @returns {HTML}
      */
     bookmark(ia) {
-      ia.typeVerb = "bookmarked";
+      ia.typeWord = "bookmarked";
 
       let parts = {};
       parts.received = (ia.received) 
@@ -201,7 +231,7 @@ class MentionsUnitedRenderer_List extends MentionsUnited.Renderer {
 
     /**
      * Base template for Interaction
-     * @param {Interaction} ia
+     * @param {MentionsUnited.Interaction} ia
      * @param {HTML} parts 
      * @returns {String}
      */
@@ -209,12 +239,10 @@ class MentionsUnitedRenderer_List extends MentionsUnited.Renderer {
       return this.helper.fillLiteralTemplate(
         `
         <div class="interaction origin-${ia.source.origin} type-${ia.type} ${(ia.isOwn) ? "isown" : ""}">
-          <a class="avatar" href="${ia.author.profile ?? ""}">
-            <img src="${ia.author.avatar}" alt="${ia.author.name}" width="16px" height="16px" />
-          </a>
+          ${this.#part_avatar(ia)}
           <span class="meta">
             ${this.#part_author(ia)}
-            <span class="type">${ia.typeVerb}</span>
+            <span class="type">${ia.typeWord}</span>
             ${parts.received ?? ""}
             ${parts.source ?? ""}
           </span>
@@ -226,8 +254,35 @@ class MentionsUnitedRenderer_List extends MentionsUnited.Renderer {
     }
 
     /**
+     * Template part for avatar
+     * @param {MentionsUnited.Interaction} ia 
+     * @returns 
+     */
+    #part_avatar(ia) {
+      if (ia.author.profile) {
+        return this.helper.fillLiteralTemplate(
+          `
+          <a class="avatar" href="${ia.author.profile}">
+            <img src="${ia.author.avatar}" alt="${ia.author.name}" width="16px" height="16px" />
+          </a>
+          `,
+          ia
+        );  
+      } else {
+        return this.helper.fillLiteralTemplate(
+          `
+          <span class="avatar">
+            <img src="${ia.author.avatar}" alt="${ia.author.name}" width="16px" height="16px" />
+          </span>
+          `,
+          ia
+        );
+      }
+    }
+
+    /**
      * Template part for author
-     * @param {Interaction} ia 
+     * @param {MentionsUnited.Interaction} ia 
      */
     #part_author(ia) {
       let authorName = ia.author.name; 
@@ -235,22 +290,31 @@ class MentionsUnitedRenderer_List extends MentionsUnited.Renderer {
       //replace emoji codes with img elements
       if (ia.author.emojis?.length > 0) {
         for (const emoji of ia.author.emojis) {
-          const e = `<img src="${emoji.url}" alt="${emoji.code}" />`;
+          const e = `<img class="emoji" src="${emoji.url}" alt="${emoji.code}" />`;
           authorName = authorName.replace(":" + emoji.code + ":", e);
         }
       }
 
-      return this.helper.fillLiteralTemplate(
-        `
-        <a class="author" href="${ia.author.profile ?? ""}">${authorName}</a>
-        `,
-        ia
-      );
+      if (ia.author.profile) {
+        return this.helper.fillLiteralTemplate(
+          `
+          <a class="author" href="${ia.author.profile}">${authorName}</a>
+          `,
+          ia
+        );  
+      } else {
+        return this.helper.fillLiteralTemplate(
+          `
+          <span class="author">${authorName}</span>
+          `,
+          ia
+        );
+      }
     }
 
     /**
      * Template part for received date
-     * @param {Interaction} ia 
+     * @param {MentionsUnited.Interaction} ia 
      */
     #part_received(ia) {
       return this.helper.fillLiteralTemplate(
@@ -264,13 +328,13 @@ class MentionsUnitedRenderer_List extends MentionsUnited.Renderer {
 
     /**
      * Template part for origin
-     * @param {Interaction} ia 
+     * @param {MentionsUnited.Interaction} ia 
      */
     #part_origin(ia) {
       return this.helper.fillLiteralTemplate(
         `
         <span class="prep">on</span>
-        <a href="${ia.source.url}" class="origin">${ia.source.origin}</a>
+        <a href="${ia.source.url}" class="origin">${this.helper.capitalize(ia.source.origin)}</a>
         `,
         ia
       );
@@ -278,7 +342,7 @@ class MentionsUnitedRenderer_List extends MentionsUnited.Renderer {
 
     /**
      * Template part for origin with post (title)
-     * @param {Interaction} ia 
+     * @param {MentionsUnited.Interaction} ia 
      */
     #part_origin_title(ia) {
       return this.helper.fillLiteralTemplate(
@@ -294,7 +358,7 @@ class MentionsUnitedRenderer_List extends MentionsUnited.Renderer {
 
     /**
      * Template part for HTML content
-     * @param {Interaction} ia 
+     * @param {MentionsUnited.Interaction} ia 
      */
     #part_content_html(ia) {
       return this.helper.fillLiteralTemplate(
@@ -307,7 +371,7 @@ class MentionsUnitedRenderer_List extends MentionsUnited.Renderer {
 
     /**
      * Template part for text content
-     * @param {Interaction} ia 
+     * @param {MentionsUnited.Interaction} ia 
      */
     #part_content_text(ia) {
       return this.helper.fillLiteralTemplate(
@@ -322,7 +386,7 @@ class MentionsUnitedRenderer_List extends MentionsUnited.Renderer {
 
     /**
      * Template part for text content, excerpt only
-     * @param {Interaction} ia 
+     * @param {MentionsUnited.Interaction} ia 
      */
     #part_content_text_excerpt(ia) {
       return this.helper.fillLiteralTemplate(

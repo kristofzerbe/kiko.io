@@ -1,24 +1,30 @@
 /**
- * Sample for a Mentions United Provider plugin for retreiving interactions from <ORIGIN>
+ * Sample for a Mentions United Provider plugin for retreiving interactions from __ORIGIN__
  * 
- * @author <YOUR-NAME>
+ * @author __YOUR-NAME__
  * @version 1.0.0
  * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub} 
  * It would be wonderful of you open up a PR here to let me add your plugin to the project
  * 
- * API Documentation: <URL>
+ * API Documentation: __URL__
  * 
  * Options:
- *  - sourceUrl {String} = for example an URL of the mentioning page on <ORIGIN>
+ *  - {String} sourceUrl = for example an URL of the mentioning page on __ORIGIN__
+ * 
+ * Supported origins:
+ *  - __ORIGIN__
+ * 
+ * Supported type-verbs of interactions:
+ *  - __SUPPORTED-TYPE-VERB__
  * 
  * Remarks on customizing:
- *  - the fields 'name', 'options' and the async method 'retrieve' are mandatory
+ *  - the fields 'key', 'options' and the async method 'retrieve' are mandatory
  *  - 'options' should be defined as used afterwards during initialisation of the calling code
  */
 class MentionsUnited_NAME extends MentionsUnited.Provider {
-  name = "<PROVIDER>";
+  key = "__PROVIDER__"; // must be unique across all provider plugins for registration
   
-  options = { 
+  options = {
     sourceUrl: ""
   }
 
@@ -27,20 +33,23 @@ class MentionsUnited_NAME extends MentionsUnited.Provider {
     this.options = {...this.options, ...options};
     this.helper = new MentionsUnited.Helper(); // if needed
 
+    //check mandatory options
+    if (this.options.sourceUrl.length === 0) { throw "'sourceUrl' is missing"; }
+
   }
 
   /**
-   * Retrieve data from origin and return an array of MentionsUnited.Interaction
-   * @returns {Array}
+   * Retrieve data from __ORIGIN__
+   * @returns {Array.<MentionsUnited.Interaction>}
    * 
    * Remarks:
-   *  - be sure to set 'provider' to 'this.name' in every new instance of MentionsUnited.Interaction
+   *  - be sure to set 'provider' to 'this.key' in every new instance of MentionsUnited.Interaction
    */
   async retrieve() {
     const msg = `${this.constructor.name}: Retreiving interactions for '${this.options.sourceUrl}'`;
     console.time(msg);
     
-    const apiResponse = await fetch("<URL>");
+    const apiResponse = await fetch("__URL__");
     const apiData = await apiResponse.json();
     let interactions = this.#processJsonData(apiData);
     
@@ -51,42 +60,42 @@ class MentionsUnited_NAME extends MentionsUnited.Provider {
 
   //////////////////////////////////////////////////////////////////////////////////////////
   
-    /**
-     * Processes retrieved JSON data into flat array of Interaction 
-     * @param {Array} entries 
-     * @returns {Array}
-     */
-    #processJsonData(entries) {
-      return entries.map((item) => {
-        return this.#convertToInteraction(item);
-      });
-    }
+  /**
+   * Processes retrieved JSON data into flat array of Interaction 
+   * @param {Array.<Object>} entries 
+   * @returns {Array.<MentionsUnited.Interaction>}
+   */
+  #processJsonData(entries) {
+    return entries.map((item) => {
+      return this.#convertToInteraction(item);
+    });
+  }
   
-    /**
-     * Converts specific data object into Interaction
-     * @param {Object} entry 
-     * @returns {MentionsUnited.Interaction}
-     */
-    #convertToInteraction(entry) {
-      let r = new MentionsUnited.Interaction();
-  
-      r.source.provider = this.name;
-      r.source.origin = "<TYPE-OF-SYSTEM>";
-      r.source.sender = this.name;
-      // r.source.url = entry...;
-      // r.source.id = entry...;
-      // r.source.title = entry...
+  /**
+   * Converts specific data object into Interaction
+   * @param {Object} entry 
+   * @returns {MentionsUnited.Interaction}
+   */
+  #convertToInteraction(entry) {
+    let r = new MentionsUnited.Interaction();
 
-      // r.author.name = entry...;
-      // r.author.avatar = entry...;
-      // r.author.profile = entry...;
+    r.source.provider = this.key;
+    r.source.origin = "__TYPE-OF-SYSTEM__";
+    r.source.sender = this.key;
+    // r.source.url = entry...;
+    // r.source.id = entry...;
+    // r.source.title = entry...
 
-      // r.type = entry...;
-      // r.received = entry...;
-      // r.content.text = entry...;
-      // r.content.html = entry...;
-      
-      return r;
-    }
+    // r.author.name = entry...;
+    // r.author.avatar = entry...;
+    // r.author.profile = entry...;
+
+    // r.type = entry...;
+    // r.received = entry...;
+    // r.content.text = entry...;
+    // r.content.html = entry...;
+    
+    return r;
+  }
 
 }

@@ -29,11 +29,11 @@ Now, however, I take pictures on the go with my Pixel smartphone and process the
 
 <!-- more -->
 
-![Google Photos Properties](google-photos-properties.png)
+![Google Photos Properties](Handling-IPTC-metadata-on-Android-and-Windows/google-photos-properties.png)
 
 Downloading the image via Google Photos and giving it a name and a few keywords using on-board tools under Windows doesn't work either. There is the display of metadata in File Explorer under PROPERTIES and DETAILS, but editing TITLE or DESCRIPTION does not lead to IPTC metadata either, because these are **not supported by Microsoft**.
 
-![Windows Explorer Properties Metadata](windows-explorer-properties-metadata.png)
+![Windows Explorer Properties Metadata](Handling-IPTC-metadata-on-Android-and-Windows/windows-explorer-properties-metadata.png)
 
 Now you can ask yourself why IPTC is not important to the big companies, especially since it doesn't seem to be the problem technically, as Adobe and other companies prove, but so what ... I need a solution for my problem.
 
@@ -45,7 +45,7 @@ For Android, there is probably no better image metadata app than [**EXIF Pro**](
 
 In my case, I just have to select the image in the app and use ADD in the IPTC section to select the ``ObjectName`` (for the name) and ``Keywords`` (for the keywords), enter the values and save the file. Done.
 
-![Android EXIF Pro](android-exif-pro.png)
+![Android EXIF Pro](Handling-IPTC-metadata-on-Android-and-Windows/android-exif-pro.png)
 
 The app is based on the platform-independent Perl library [**ExifTool by Phil Harvey**](https://exiftool.org/) ... and as often as you research for ways to manipulate image metadata and whatever platform on the net, you will always come across Phil's tool. It is the gold standard in this area, so to speak. The list of supported formats is more than impressive and that of meta formats leaves nothing to be desired.
 
@@ -71,7 +71,7 @@ exiftool
 
 Okay ... You don't buy Windows to use the command line. There is also a GUI called [ExifToolGUI for Windows v5.xx](https://exiftool.org/gui/) by Bogdan Hrastnik. It is already more than 10 years old and also comes without an installer, but it works great ... if you have understood the somewhat strange concept of workspaces and adding new fields to them, or if you have somehow muddled your way through.
 
-![ExifTool GUI Editing](exiftool-gui-edit.png)
+![ExifTool GUI Editing](Handling-IPTC-metadata-on-Android-and-Windows/exiftool-gui-edit.png)
 
 ---
 

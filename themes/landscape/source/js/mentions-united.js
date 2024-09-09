@@ -1,13 +1,21 @@
 /**
- * Mentions United v1.0
+ * Mentions United
  * 
  * @author Kristof Zerbe
  * @version 1.0.0
  * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub}
  * 
- * Settings:
- *  - container {Node}    = HTML element into which the interactions are to be inserted
- *  - ownerName {String}  = Display the owner of the target (this) page ... your name
+ * This script relies on two different types of plug-ins: PROVIDER and RENDERER, 
+ * whose necessary structure is defined by the following two classes.
+ *
+ * A Provider plugin retrieves mentions of a page from a service and brings them into 
+ * the common form of an INTERACTION (see class structure below). 
+ * A Renderer plugin generates HTML from all the collected INTERACTIONS and inserts 
+ * it into the page.
+ * 
+* Settings:
+ *  - ownerName {String}  = The owner/creator of the page ... your name
+ * 
  */
 class MentionsUnited {
 
@@ -15,18 +23,20 @@ class MentionsUnited {
    * Basic structure where Provider plugins must extend from
    */
   static Provider = class Provider {
-    name;
-    options;
-    async retrieve() {};
+    key = ""; // unique key across all provider plugins for registration
+    options = {}; // incoming options for the plugin
+    constructor(options) {}; // constructor that takes the needed options
+    async retrieve() {}; // main method to retrieve interactions from provider
   }
 
   /** 
    * Basic structure where Renderer plugins must extend from
    */
   static Renderer = class Renderer {
-    name;
-    options;
-    render() {};
+    key = ""; // unique key across all renderer plugins for registration
+    options = {}; // incoming options for the plugin
+    constructor(options) {}; // constructor that takes the needed options
+    render(interactions) {}; // main method to render interactions via templates
   }
 
   /**
@@ -34,63 +44,42 @@ class MentionsUnited {
    */
   static Interaction = class Interaction {
     static Source = class Source {
-      provider;
-      origin;
-      sender;
-      url;
-      id;
-      title;
-      toObject() {
-        const {...object} = this;
-        return object;
-      }
+      provider; // pick-up point of the interaction
+      origin; // origin system of the interaction
+      sender; // transfer system of the interaction
+      url; // URL of the original interaction
+      id; // ID of the original interaction
+      title; // title of the original interaction
     }
     static Author = class Author {
-      name;
-      avatar;
-      profile;  
-      toObject() {
-        const {...object} = this;
-        return object;
-      }
+      name; // authors name
+      avatar; // authors avatar image URL
+      profile; // authors profile URL
     }
     static Content = class Content {
       html;
       text;
-      toObject() {
-        const {...object} = this;
-        return object;
-      }
     }
     source;
     author;
-    type;
-    received;
+    type; // type verb of the interaction (comment, like, reply, repost, mention, ...)
+    received; // date the interaction was created or received
     content; 
     constructor() {
       this.source = new Interaction.Source();
       this.author = new Interaction.Author();
       this.content = new Interaction.Content();
     } 
-    toObject() {
-      const {...object} = this;
-      object.source = this.source.toObject();
-      object.author = this.author.toObject();
-      object.content = this.content.toObject();
-      return object;
-    }
   }
 
   //////////////////////////////////////////////////////////////////////////////////////////
 
   settings = {
-    containerId: "",
     ownerName: ""
   };
 
   #providers = {};
   #renderers = {};
-
   #interactions = [];
 
   constructor(settings, plugins) {
@@ -108,14 +97,14 @@ class MentionsUnited {
    * @param {MentionsUnited plugin class} plugin 
    */
   register(plugin) {
-    const { name } = plugin;
+    const { key } = plugin;
 
     if (plugin instanceof MentionsUnited.Provider) {
-      this.#providers[name] = plugin;
+      this.#providers[key] = plugin;
     }
 
     if (plugin instanceof MentionsUnited.Renderer) {
-      this.#renderers[name] = plugin;
+      this.#renderers[key] = plugin;
     }
 
   }
@@ -130,7 +119,7 @@ class MentionsUnited {
       fetches.push(this.#providers[p].retrieve());
     }
 
-    Promise.all(fetches)
+    return Promise.all(fetches)
       .then((results) => {
         for (const res of results) {
           this.#interactions = this.#interactions.concat(res);
@@ -158,9 +147,6 @@ class MentionsUnited {
         });
         
         console.info("Interactions:", this.#interactions);
-
-        this.show();
-
       })
       .catch(console.error)
   }
@@ -170,9 +156,12 @@ class MentionsUnited {
    */
   show() {
 
-    for (const p in this.#renderers) {
-      this.#renderers[p].render(this.#interactions);
-    }
+    return new Promise((resolve) => {
+      for (const p in this.#renderers) {
+        this.#renderers[p].render(this.#interactions);
+      }
+      resolve(this.#interactions.length);  
+    });
 
   }
 
@@ -200,7 +189,7 @@ class MentionsUnited {
 
     /**
      * Resolves the existence of an avatar image of the author
-     * @param {Author} author 
+     * @param {MentionsUnited.Interaction.Author} author 
      */
     resolveAvatar(author) {
       this.checkImageExists(author.avatar, () => {
@@ -216,7 +205,7 @@ class MentionsUnited {
     /**
      * Check if remote image exists, with callback on error
      * @param {String} url 
-     * @param {Function} callback
+     * @param {Callback} callback
      */
     checkImageExists(url, callback) {
       if (url?.length > 0) {
@@ -234,7 +223,7 @@ class MentionsUnited {
    
     /**
      * Converts HTML into element
-     * @param {string} html 
+     * @param {String} html 
      * @returns {Element}
      */
     createElementFromHtml(html) {
@@ -254,8 +243,17 @@ class MentionsUnited {
         "return `" + templateString + "`.trim();"
       );
       return func(...Object.values(templateVars));
-    }    
-        
+    }
+
+    /**
+     * Captialize word
+     * @param {String} value 
+     * @returns 
+     */
+    capitalize(value) {
+      return (value && value[0].toUpperCase() + value.slice(1)) || "";
+    }
+   
   }
 
 }

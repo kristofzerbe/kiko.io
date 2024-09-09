@@ -2,20 +2,36 @@
  * Mentions United Provider plugin for retreiving webmentions from webmention.io
  * 
  * @author Kristof Zerbe
- * @version 1.0.0
+ * @version 1.0.1
  * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub}
  * 
  * API Documentation: https://github.com/aaronpk/webmention.io
  * 
  * Options:
- *  - targetUrl {String}         = URL of the page mentioned - MANDATORY
- *  - tryResolveTitle {Boolean}  = Should titles of web pages be resolved
+ *  - {String} targetUrl           = URL of the page mentioned
+ *  - {Boolean} [tryResolveTitle]  = Should titles of web pages be resolved
  * 
+ * Supported origins:
+ *  - web (native)
+ *  - mastodon (via brid.gy)
+ *  - bluesky (via bridgy)
+ *  - flickr (via bridgy)
+ *  - github (via bridgy)
+ *  - reddit (via bridgy)
+ *  - twitter (via bridgy, deprecated)
+ *  - facebook (via bridgy, deprecated)
+ * 
+ * Supported type-verbs of interactions:
+ *  - reply
+ *  - like
+ *  - repost
+ *  - bookmark
+ *  - mention
  */
 class MentionsUnitedProvider_Webmentions extends MentionsUnited.Provider {
-  name = "webmention.io";
+  key = "webmention.io"; // must be unique across all provider plugins for registration
   
-  options = { 
+  options = {
     targetUrl: "",
     tryResolveTitle: false
   }
@@ -25,15 +41,13 @@ class MentionsUnitedProvider_Webmentions extends MentionsUnited.Provider {
     this.options = {...this.options, ...options};
     this.helper = new MentionsUnited.Helper();
 
-    //check mandatory fields
+    //check mandatory options
     if (this.options.targetUrl.length === 0) { throw "'targetUrl' is missing"; }
   }
 
-  webmentionApiUrl() { return `https://webmention.io/api/mentions.jf2?target=${encodeURIComponent(this.options.targetUrl)}&per-page=1000&sort-dir=up`; };
-
   /**
-   * Retrieve data from webmention.io and return an array of MentionsUnited.Interaction
-   * @returns {Array}
+   * Retrieve data from webmention.io
+   * @returns {Array.<MentionsUnited.Interaction>}
    */
   async retrieve() {
     const msg = `${this.constructor.name}: Retreiving webmentions for '${this.options.targetUrl}'`;
@@ -58,6 +72,55 @@ class MentionsUnitedProvider_Webmentions extends MentionsUnited.Provider {
 
     console.timeEnd(msg);
     return interactions;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////////////////
+
+  webmentionApiUrl() { return `https://webmention.io/api/mentions.jf2?target=${encodeURIComponent(this.options.targetUrl)}&per-page=1000&sort-dir=up`; };
+
+  /**
+   * Processes retrieved JSON data into flat array of Interactions 
+   * @param {Array.<Object>} entries
+   * @returns {Array.<MentionsUnited.Interaction>}
+   */
+  #processJsonData(entries) {
+    return entries.map((item) => {
+      return this.#convertToInteraction(item);
+    });
+  }
+  
+  /**
+   * Converts specific data object into Interaction
+   * @param {Object} entry 
+   * @returns {MentionsUnited.Interaction}
+   */
+  #convertToInteraction(entry) {
+    let r = new MentionsUnited.Interaction();
+
+    const sourceUrl = new URL(entry["wm-source"]);
+
+    r.source.provider = this.key;
+    r.source.origin = "web"; // default
+    r.source.sender = sourceUrl.hostname;
+    r.source.url = sourceUrl.href;
+    r.source.id = entry["wm-id"];
+
+    r.author.name = entry.author?.name || "Somebody";
+    r.author.avatar = entry.author.photo;
+    r.author.profile = entry.author.url;
+
+    r.type = this.#translatePropertyVerb(entry["wm-property"]);
+    r.received = entry["published"] ?? entry["wm-received"];
+    r.content.html = entry.content?.html;
+    r.content.text = entry.content?.text;
+
+    // replace default, if it comes from bridgy
+    if (r.source.sender === "brid.gy") {
+      const bridgyPath = sourceUrl.pathname.split("/");
+      r.source.origin = bridgyPath[2]; //mastodon, flickr, github, reddit, bluesky, etc
+    }
+
+    return r;
   }
 
   #emojiBuffer = {};
@@ -131,67 +194,20 @@ class MentionsUnitedProvider_Webmentions extends MentionsUnited.Provider {
     }
   }
 
-  //////////////////////////////////////////////////////////////////////////////////////////
-
-    /**
-     * Processes retrieved JSON data into flat array of Interactions 
-     * @param {Array} entries
-     * @returns {Array}
-     */
-    #processJsonData(entries) {
-      return entries.map((item) => {
-        return this.#convertToInteraction(item);
-      });
+  /**
+   * Translates an IndieWeb property verb into a type verb
+   * @param {String} wmProperty 
+   * @returns 
+   */
+  #translatePropertyVerb(wmProperty) {
+    switch (wmProperty) {
+      case "in-reply-to": return "reply";  
+      case "like-of": return "like";  
+      case "repost-of": return "repost";  
+      case "bookmark-of": return "bookmark";  
+      case "mention-of": return "mention";  
+      default: return wmProperty;
     }
-  
-    /**
-     * Converts specific data object into Interaction
-     * @param {Object} entry 
-     * @returns {MentionsUnited.Interaction}
-     */
-    #convertToInteraction(entry) {
-      let r = new MentionsUnited.Interaction();
-
-      const sourceUrl = new URL(entry["wm-source"]);
-
-      r.source.provider = this.name;
-      r.source.origin = "web";
-      r.source.sender = sourceUrl.hostname;
-      r.source.url = sourceUrl.href;
-      r.source.id = entry["wm-id"];
-
-      r.author.name = entry.author?.name || "Somebody";
-      r.author.avatar = entry.author.photo;
-      r.author.profile = entry.author.url;
-
-      r.type = this.#translatePropertyVerb(entry["wm-property"]);
-      r.received = entry["published"] ?? entry["wm-received"];
-      r.content.html = entry.content?.html;
-      r.content.text = entry.content?.text;
-
-      // replace defaults, if it comes from bridgy
-      if (r.source.sender === "brid.gy") {
-        const bridgyPath = sourceUrl.pathname.split("/");
-        r.source.origin = bridgyPath[2]; //mastodon, flickr, github, reddit, bluesky, etc
-      }
-
-      return r;
-    }
-
-    /**
-     * Translates an IndieWeb property verb into a normal one
-     * @param {String} wmProperty 
-     * @returns 
-     */
-    #translatePropertyVerb(wmProperty) {
-      switch (wmProperty) {
-        case "in-reply-to": return "reply";  
-        case "like-of": return "like";  
-        case "repost-of": return "repost";  
-        case "bookmark-of": return "bookmark";  
-        case "mention-of": return "mention";  
-        default: return wmProperty;
-      }
-    }
+  }
   
 }

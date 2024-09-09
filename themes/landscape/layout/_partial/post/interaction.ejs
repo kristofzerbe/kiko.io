@@ -43,14 +43,18 @@
 <div id="article-interactions" class="article-interactions" data-pagefind-ignore>
   <h2>Interactions</h2>
 
-  <div id="interactions-container" class="interactions">
-    <div class="loading">Loading</div>
-  </div>
+  <div class="message loading">Loading</div>
+
+  <div id="interactions-likes-placeholder"></div>
+  <div id="interactions-reposts-placeholder"></div>
+  <div id="interactions-bookmarks-placeholder"></div>
+  <div id="interactions-list-placeholder"></div>
 
   <%- js('js/mentions-united.js') %>
   <%- js('js/mentions-united-provider_webmentions.js') %>
+  <%- js('js/mentions-united-renderer_total-number.js') %>
+  <%- js('js/mentions-united-renderer_avatars-by-type.js') %>
   <%- js('js/mentions-united-renderer_list.js') %>
-  <%- js('js/mentions-united-renderer_totalnumber.js') %>
   <% if (synDevTo) { %><%- js('js/mentions-united-provider_devto.js'); %><% } %>
   <% if (synPixelfed) { %><%- js('js/mentions-united-provider_pixelfed.js'); %><% } %>
 
@@ -66,14 +70,27 @@
             targetUrl: "<%- post.permalink %>",
             tryResolveTitle: true
           }),
-          new MentionsUnitedRenderer_List({
-            containerId: "interactions-container"
-          }), 
           new MentionsUnitedRenderer_TotalNumber({
             placeholderId: "interactions-totalnumber-placeholder",
-            jumpToId: "article-interactions",
             pageKey: "<%- post.slug %>",
-            afterInsert: () => { initScrollAnchorLink(".interactions-totalnumber", 80); }
+            anchorTargetId: "article-interactions",
+            afterRender: () => { initScrollAnchorLink(".interactions-totalnumber", 80); }
+          }),
+          new MentionsUnitedRenderer_AvatarsByType({
+            placeholderId: "interactions-likes-placeholder",
+            typeVerb: "like"
+          }),
+          new MentionsUnitedRenderer_AvatarsByType({
+            placeholderId: "interactions-reposts-placeholder",
+            typeVerb: "repost"
+          }),
+          new MentionsUnitedRenderer_AvatarsByType({
+            placeholderId: "interactions-bookmarks-placeholder",
+            typeVerb: "bookmark"
+          }),
+          new MentionsUnitedRenderer_List({
+            placeholderId: "interactions-list-placeholder",
+            skipTypes: "like,repost,bookmark"
           })
         ]);
 
@@ -87,11 +104,21 @@
       <% if (synPixelfed) { %>
       mentionsUnited.register(new MentionsUnitedProvider_Pixelfed({ 
         sourceUrl: "<%- synPixelfed.url %>",
-        apiUrl: "https://mentionsunited-api-proxy.up.railway.app/pixelfed"
+        apiBaseUrl: "https://mentionsunited-api-proxy.up.railway.app/pixelfed"
       }));
       <% } %>
 
-      mentionsUnited.load();
+      mentionsUnited.load()
+        .then(() => { return mentionsUnited.show(); })
+        .then((count) => { 
+          let msg = document.querySelector(".article-interactions .message");
+          if (count === 0) {
+            msg.classList.remove("loading");
+            msg.innerHTML = "No interactions yet";
+          } else {
+            msg.remove();
+          }
+         })
     });
   </script>
 

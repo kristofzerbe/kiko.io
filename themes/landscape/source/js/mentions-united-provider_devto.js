@@ -2,35 +2,38 @@
  * Mentions United Provider plugin for retreiving interaction from DevTo
  * 
  * @author Kristof Zerbe
- * @version 1.0.0
+ * @version 1.0.1
  * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub}
  * 
  * API Documentation: https://developers.forem.com/api/v1
  *
  * Options:
- *  - sourceUrl {String} = URL of the mentioning page on dev.to - MANDATORY
- *  - sourceId {Number}  = ID of dev.to article (only available over API)
+ *  - {String} sourceUrl  = URL of the mentioning page on dev.to
+ *  - {Number} [sourceId] = ID of dev.to article (only available over API)
  *
- * Remarks:
- *  - If 'sourceId' is not provided, the article will fetched over the published articles list
+  * Supported origins:
+ *  - devto
  * 
+* Supported type-verbs of interactions:
+ *  - comment
+ * 
+ * Remarks:
+ *  - If 'sourceId' is not provided, it will fetched over the published articles list
  */
 class MentionsUnitedProvider_DevTo  extends MentionsUnited.Provider {
-  name = "dev.to";
+  key = "DEV.to"; // must be unique across all provider plugins for registration
 
   options = {
     sourceUrl: "",
     sourceId: 0
   }
 
-  commentApiUrl() { return `https://dev.to/api/comments?a_id=${this.options.sourceId}` };
-
   constructor(options) {
     super();
     this.options = {...this.options, ...options};
     this.helper = new MentionsUnited.Helper();
 
-    //check mandatory fields
+    //check mandatory options
     if (this.options.sourceUrl.length === 0) { throw "'sourceUrl' is missing"; }
 
     // get sourceId if not provided
@@ -38,8 +41,8 @@ class MentionsUnitedProvider_DevTo  extends MentionsUnited.Provider {
   }
 
   /**
-   * Retrieve comment data from dev.to and return an array of MentionsUnited.Interaction
-   * @returns {Array}
+   * Retrieve comment data from dev.to
+   * @returns {Array.<MentionsUnited.Interaction>}
    */
   async retrieve() {
     const msg = `${this.constructor.name}: Retreiving comments for ${this.options.sourceUrl}`;
@@ -56,28 +59,12 @@ class MentionsUnitedProvider_DevTo  extends MentionsUnited.Provider {
 
   //////////////////////////////////////////////////////////////////////////////////////////
 
-  /**
-   * Get sourceId from users article list synchronously
-   */
-  #getSourceId() {
-
-    //get username from article URL
-    const userName = new URL(this.options.sourceUrl).pathname.split("/")[1];
-
-    //set api URL and get article data
-    const apiUrl = `https://dev.to/api/articles?username=${userName}&per_page=1000`;
-    const jsonArticles = this.helper.fetchJsonSync(apiUrl);
-    const dataArticle = jsonArticles.filter(a => a.url === this.options.sourceUrl)[0];
-
-    if (dataArticle) {
-      this.options.sourceId = dataArticle.id;
-    }
-  }
+  commentApiUrl() { return `https://dev.to/api/comments?a_id=${this.options.sourceId}` };
 
   /**
    * Processes retrieved JSON data into flat array of Interactions 
-   * @param {Array} entries 
-   * @returns {Array}
+   * @param {Array.<Object>} entries 
+   * @returns {Array.<MentionsUnited.Interaction>}
    */
   #processJsonData(entries) {
     let items = [];
@@ -100,9 +87,9 @@ class MentionsUnitedProvider_DevTo  extends MentionsUnited.Provider {
   #convertToInteraction(entry) {
     let r = new MentionsUnited.Interaction();
 
-    r.source.provider = this.name;
+    r.source.provider = this.key;
     r.source.origin = "devto";
-    r.source.sender = this.name;
+    r.source.sender = this.key;
     r.source.url = this.options.sourceUrl;
     r.source.id = this.sourceId;
 
@@ -116,4 +103,23 @@ class MentionsUnitedProvider_DevTo  extends MentionsUnited.Provider {
     
     return r;
   }
+
+  /**
+   * Get sourceId from users article list synchronously
+   */
+  #getSourceId() {
+
+    //get username from article URL
+    const userName = new URL(this.options.sourceUrl).pathname.split("/")[1];
+
+    //set api URL and get article data
+    const apiUrl = `https://dev.to/api/articles?username=${userName}&per_page=1000`;
+    const jsonArticles = this.helper.fetchJsonSync(apiUrl);
+    const dataArticle = jsonArticles.filter(a => a.url === this.options.sourceUrl)[0];
+
+    if (dataArticle) {
+      this.options.sourceId = dataArticle.id;
+    }
+  }
+
 }

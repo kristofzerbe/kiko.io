@@ -25,7 +25,7 @@ I have been collecting interesting links in various Trello boards for many years
 
 However, the official Trello Android App has the problem eversince that, when you want to create a URL as a Trello card in the browser, the URL is entered in the ``Description`` and not as an ``Attachment``, where it actually belongs.
 
-![Share Link with Trello App](share-trello-app.png)
+![Share Link with Trello App](Add-Link-to-Trello-on-Android-via-Share-Menu/share-trello-app.png)
 
 I have solved this for myself for years using a **bookmarklet** in the Chrome browser (see {% post_link Add-website-to-Trello-card-the-better-way %}) and get along quite well with it. However, there is one catch, that has annoyed me ever since:  
 I find an interesting link in the Mastodon WebApp, for example, and tap on it. What opens, however, is the WebView integrated in Android and not my standard Chrome browser, in which the bookmarklet would be available. So, for links that I want to store, I always have to open the WebView menu and select "Open in Chrome Browser". I cannot use the general SHARE menu. At least not so far ... :)
@@ -56,7 +56,7 @@ javascript: (function (win, name, desc) {
 
 If you want to use this bookmarklet, you have to remove all line breaks from the code, decode the url and save it as a bookmark ... or you visit [https://trello.com/add-card](https://trello.com/add-card) and drag the link "Send to Trello" to your bookmark list. It comes out the same.
 
-![Create Link Card via Trello Add Card Page](trello-add-page.png)
+![Create Link Card via Trello Add Card Page](Add-Link-to-Trello-on-Android-via-Share-Menu/trello-add-page.png)
 
 As I said above, the Trello Bookmarklet e.g. Add Card page works differently to the Android app from the same company in terms of the URL. Are different departments not talking to each other?
 
@@ -82,13 +82,13 @@ All these shortcuts can be used to send any HTTP requests and process the respon
 
 For my case, I need a scripting shortcut to process the information shared by the Android sharing dialogue to call the Add Card page. This is done via static variables that are created in HTTP Shortcuts and can then be used later in the script:
 
-![Setting Up Variables](httpshortcuts-variables.png)
+![Setting Up Variables](Add-Link-to-Trello-on-Android-via-Share-Menu/httpshortcuts-variables.png)
 
 Creating the shortcut is quite simple, as you can see from the screenshots. Select the type, assign a name, perhaps a suitable icon and (importantly) tick the option **Show as app shortcut on launcher and promote as Direct Share target**, which ensures that the shortcut appears in the Android Share menu.
 
-![Shortcuts List and Creating/Editing Shortcut](httpshortcuts-shortcut.png)
+![Shortcuts List and Creating/Editing Shortcut](Add-Link-to-Trello-on-Android-via-Share-Menu/httpshortcuts-shortcut.png)
 
-![Scripting Shortcut Settings](httpshortcuts-shortcut-settings.png)
+![Scripting Shortcut Settings](Add-Link-to-Trello-on-Android-via-Share-Menu/httpshortcuts-shortcut-settings.png)
 
 The script is no less straightforward, because it simply assembles the URL to the Trello Add Card page with the static variables and opens it using the app's built-in JavaScript function ``openUrl``:
 
@@ -120,4 +120,4 @@ The result is convincing and frees me from the bookmarklet on my smartphone, but
 
 The HTTP Shortcuts app, however, has really got me hooked. I see a lot of potential for automating things on my smartphone and will keep you updated as I develop more solutions with it. Thank you Roland for this gem ...
 
-![Shortcut as Share Target](httpshortcuts-share.png)
+![Shortcut as Share Target](Add-Link-to-Trello-on-Android-via-Share-Menu/httpshortcuts-share.png)
