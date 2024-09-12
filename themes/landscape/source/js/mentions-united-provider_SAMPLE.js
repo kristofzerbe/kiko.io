@@ -1,5 +1,5 @@
 /**
- * Sample for a Mentions United Provider plugin for retreiving interactions from __ORIGIN__
+ * Sample for a Mentions United Provider plugin class for retreiving interactions from __ORIGIN__
  * 
  * @author __YOUR-NAME__
  * @version 1.0.0
@@ -14,7 +14,7 @@
  * Supported origins:
  *  - __ORIGIN__
  * 
- * Supported type-verbs of interactions:
+ * Supported type-verbs:
  *  - __SUPPORTED-TYPE-VERB__
  * 
  * Remarks on customizing:
@@ -35,7 +35,6 @@ class MentionsUnited_NAME extends MentionsUnited.Provider {
 
     //check mandatory options
     if (this.options.sourceUrl.length === 0) { throw "'sourceUrl' is missing"; }
-
   }
 
   /**
@@ -79,6 +78,9 @@ class MentionsUnited_NAME extends MentionsUnited.Provider {
   #convertToInteraction(entry) {
     let r = new MentionsUnited.Interaction();
 
+    // r.type = entry...;
+    // r.received = entry...;
+
     r.source.provider = this.key;
     r.source.origin = "__TYPE-OF-SYSTEM__";
     r.source.sender = this.key;
@@ -90,8 +92,6 @@ class MentionsUnited_NAME extends MentionsUnited.Provider {
     // r.author.avatar = entry...;
     // r.author.profile = entry...;
 
-    // r.type = entry...;
-    // r.received = entry...;
     // r.content.text = entry...;
     // r.content.html = entry...;
     
@@ -99,3 +99,8 @@ class MentionsUnited_NAME extends MentionsUnited.Provider {
   }
 
 }
+/**
+ * Changelog
+ * 
+ * 1.0.0  - Initial
+ */

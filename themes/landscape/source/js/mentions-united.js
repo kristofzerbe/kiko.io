@@ -1,5 +1,5 @@
 /**
- * Mentions United
+ * Mentions United main class
  * 
  * @author Kristof Zerbe
  * @version 1.0.0
@@ -13,9 +13,8 @@
  * A Renderer plugin generates HTML from all the collected INTERACTIONS and inserts 
  * it into the page.
  * 
-* Settings:
+ * Settings:
  *  - ownerName {String}  = The owner/creator of the page ... your name
- * 
  */
 class MentionsUnited {
 
@@ -43,6 +42,9 @@ class MentionsUnited {
    * Representation of an interaction
    */
   static Interaction = class Interaction {
+    type; // type verb of the interaction (comment, like, reply, repost, mention, ...)
+    received; // date the interaction was created or received
+
     static Source = class Source {
       provider; // pick-up point of the interaction
       origin; // origin system of the interaction
@@ -51,20 +53,21 @@ class MentionsUnited {
       id; // ID of the original interaction
       title; // title of the original interaction
     }
+    source;
+
     static Author = class Author {
       name; // authors name
       avatar; // authors avatar image URL
       profile; // authors profile URL
     }
+    author;
+
     static Content = class Content {
       html;
       text;
     }
-    source;
-    author;
-    type; // type verb of the interaction (comment, like, reply, repost, mention, ...)
-    received; // date the interaction was created or received
     content; 
+
     constructor() {
       this.source = new Interaction.Source();
       this.author = new Interaction.Author();
@@ -257,3 +260,8 @@ class MentionsUnited {
   }
 
 }
+/**
+ * Changelog
+ * 
+ * 1.0.0  - Initial
+ */

@@ -124,7 +124,7 @@ class MentionsUnitedRenderer_AvatarsByType extends MentionsUnited.Renderer {
         <a class="avatar origin-${ia.source.origin}" 
            href="${ia.author.profile ?? ""}" 
            title="${ia.author.name} on ${this.helper.capitalize(ia.source.origin)}">
-          <img src="${ia.author.avatar}" alt="${ia.author.name}" />
+          <img src="${ia.author.avatar}" alt="${ia.author.name}" width="16px" height="16px" />
         </a>
         `,
         ia
@@ -134,3 +134,8 @@ class MentionsUnitedRenderer_AvatarsByType extends MentionsUnited.Renderer {
   }
 
 }
+/**
+ * Changelog
+ * 
+ * 1.0.0  - Initial
+ */

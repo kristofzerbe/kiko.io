@@ -1,8 +1,8 @@
 /**
- * Mentions United Provider plugin for retreiving interaction from DevTo
+ * Mentions United Provider plugin class for retreiving interaction from DevTo
  * 
  * @author Kristof Zerbe
- * @version 1.0.1
+ * @version 1.0.0
  * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub}
  * 
  * API Documentation: https://developers.forem.com/api/v1
@@ -14,7 +14,7 @@
   * Supported origins:
  *  - devto
  * 
-* Supported type-verbs of interactions:
+ * Supported type-verbs:
  *  - comment
  * 
  * Remarks:
@@ -87,6 +87,9 @@ class MentionsUnitedProvider_DevTo  extends MentionsUnited.Provider {
   #convertToInteraction(entry) {
     let r = new MentionsUnited.Interaction();
 
+    r.type = entry.type_of;
+    r.received = entry.created_at;
+
     r.source.provider = this.key;
     r.source.origin = "devto";
     r.source.sender = this.key;
@@ -97,8 +100,6 @@ class MentionsUnitedProvider_DevTo  extends MentionsUnited.Provider {
     r.author.avatar = entry.user.profile_image_90;
     r.author.profile = `https://dev.to/${entry.user.username}`;
 
-    r.type = entry.type_of;
-    r.received = entry.created_at;
     r.content.html = entry.body_html;
     
     return r;
@@ -123,3 +124,8 @@ class MentionsUnitedProvider_DevTo  extends MentionsUnited.Provider {
   }
 
 }
+/**
+ * Changelog
+ * 
+ * 1.0.0  - Initial
+ */

@@ -84,3 +84,8 @@ class MentionsUnitedRenderer_NAME extends MentionsUnited.Renderer {
   }
 
 }
+/**
+ * Changelog
+ * 
+ * 1.0.0  - Initial
+ */

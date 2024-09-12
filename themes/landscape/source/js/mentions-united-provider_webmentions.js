@@ -1,8 +1,8 @@
 /**
- * Mentions United Provider plugin for retreiving webmentions from webmention.io
+ * Mentions United Provider plugin class for retreiving webmentions from webmention.io
  * 
  * @author Kristof Zerbe
- * @version 1.0.1
+ * @version 1.0.0
  * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub}
  * 
  * API Documentation: https://github.com/aaronpk/webmention.io
@@ -21,7 +21,7 @@
  *  - twitter (via bridgy, deprecated)
  *  - facebook (via bridgy, deprecated)
  * 
- * Supported type-verbs of interactions:
+ * Supported type-verbs:
  *  - reply
  *  - like
  *  - repost
@@ -99,6 +99,9 @@ class MentionsUnitedProvider_Webmentions extends MentionsUnited.Provider {
 
     const sourceUrl = new URL(entry["wm-source"]);
 
+    r.type = this.#translatePropertyVerb(entry["wm-property"]);
+    r.received = entry["published"] ?? entry["wm-received"];
+
     r.source.provider = this.key;
     r.source.origin = "web"; // default
     r.source.sender = sourceUrl.hostname;
@@ -109,8 +112,6 @@ class MentionsUnitedProvider_Webmentions extends MentionsUnited.Provider {
     r.author.avatar = entry.author.photo;
     r.author.profile = entry.author.url;
 
-    r.type = this.#translatePropertyVerb(entry["wm-property"]);
-    r.received = entry["published"] ?? entry["wm-received"];
     r.content.html = entry.content?.html;
     r.content.text = entry.content?.text;
 
@@ -211,3 +212,8 @@ class MentionsUnitedProvider_Webmentions extends MentionsUnited.Provider {
   }
   
 }
+/**
+ * Changelog
+ * 
+ * 1.0.0  - Initial
+ */

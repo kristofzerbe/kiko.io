@@ -1,8 +1,8 @@
 /**
- * Mentions United Provider plugin for retreiving interactions from Pixelfed
+ * Mentions United Provider plugin class for retreiving interactions from Pixelfed
  * 
  * @author Kristof Zerbe
- * @version 1.0.1
+ * @version 1.0.0
  * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub}
  * 
  * API Documentation: There is no proper API documentation, but the source code is freely available at: 
@@ -16,7 +16,7 @@
  * Supported origins:
  *  - pixelfed
  * 
- * Supported type-verbs of interactions:
+ * Supported type-verbs:
  *  - repost
  *  - like
  *  - reply
@@ -132,6 +132,9 @@ class MentionsUnitedProvider_Pixelfed  extends MentionsUnited.Provider {
   #convertToInteraction(entry, type) {
     let r = new MentionsUnited.Interaction();
 
+    r.type = type;
+    r.received = (type === "reply") ? entry.created_at : undefined;
+
     r.source.provider = this.key;
     r.source.origin = "pixelfed";
     r.source.sender = this.key;
@@ -142,11 +145,14 @@ class MentionsUnitedProvider_Pixelfed  extends MentionsUnited.Provider {
     r.author.avatar = (type === "reply") ? entry.account.avatar : entry.avatar;
     r.author.profile = (type === "reply") ? entry.account.url : entry.url;
 
-    r.type = type;
-    r.received = (type === "reply") ? entry.created_at : undefined;
     r.content.text = entry.content;
     
     return r;
   }
   
 }
+/**
+ * Changelog
+ * 
+ * 1.0.0  - Initial
+ */

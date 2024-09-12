@@ -37,6 +37,13 @@ class MentionsUnitedRenderer_TotalNumber extends MentionsUnited.Renderer {
    */
   render(interactions) {
 
+    //nothing to show here -> exit
+    if (interactions.length === 0) { return; } 
+
+    //set and check placeholder where the anchor element will be inserted
+    let placeholder = document.getElementById(this.options.placeholderId);
+    if (!placeholder) { throw "No placeholder defined to replace with the total number anchor"; }
+
     //check interaction count from last visit and calculate delta, if necessary
     let delta = 0;
 
@@ -48,19 +55,12 @@ class MentionsUnitedRenderer_TotalNumber extends MentionsUnited.Renderer {
       } else {
         lastVisit = interactions.length; //for first visit
       }
-      if (interactions.length > lastVisit) {
+      if (interactions.length !== lastVisit) {
         delta = (interactions.length - lastVisit);
       }
       localStorage.setItem(storeKey, interactions.length);    
     }
     
-    //nothing to show here -> exit
-    if (interactions.length === 0) { return; } 
-
-    //set and check placeholder where the anchor element will be inserted
-    let placeholder = document.getElementById(this.options.placeholderId);
-    if (!placeholder) { throw "No placeholder defined to replace with the total number anchor"; }
-
     const templates = new this.#Templates(this.helper);
 
     let data = {
@@ -133,7 +133,7 @@ class MentionsUnitedRenderer_TotalNumber extends MentionsUnited.Renderer {
       return this.helper.fillLiteralTemplate(
         `
         <span>${data.count} Interaction${(data.count) === 1 ? "" : "s"}</span>
-        ${(data.delta > 0) ? this.#part_delta(data) : "" }
+        ${(data.delta !== 0) ? this.#part_delta(data) : "" }
         `,
         data
       );
@@ -146,7 +146,7 @@ class MentionsUnitedRenderer_TotalNumber extends MentionsUnited.Renderer {
     #part_delta(data) {
       return this.helper.fillLiteralTemplate(
         `
-        <span class="delta">+ ${data.delta}</span>
+        <span class="delta">${data.delta < 0 ? "-" : "+"} ${Math.abs(data.delta)}</span>
         `,
         data
       );  
@@ -155,3 +155,9 @@ class MentionsUnitedRenderer_TotalNumber extends MentionsUnited.Renderer {
   }
 
 }
+/**
+ * Changelog
+ * 
+ * 1.0.0  - Initial
+ * 1.0.1  - Support for negative numbers and dedicated number sign
+ */

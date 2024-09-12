@@ -2,7 +2,7 @@
  * Mentions United Renderer plugin for displaying Interactions as a list
  * 
  * @author Kristof Zerbe
- * @version 1.0.1
+ * @version 1.0.0
  * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub}
  * 
  * Options:
@@ -402,3 +402,8 @@ class MentionsUnitedRenderer_List extends MentionsUnited.Renderer {
   }
 
 }
+/**
+ * Changelog
+ * 
+ * 1.0.0  - Initial
+ */
