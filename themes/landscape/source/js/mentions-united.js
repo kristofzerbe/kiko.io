@@ -23,7 +23,7 @@ class MentionsUnited {
    */
   static Provider = class Provider {
     key = ""; // unique key across all provider plugins for registration
-    options = {}; // incoming options for the plugin
+    options = {}; // options for the plugin
     constructor(options) {}; // constructor that takes the needed options
     async retrieve() {}; // main method to retrieve interactions from provider
   }
@@ -33,7 +33,7 @@ class MentionsUnited {
    */
   static Renderer = class Renderer {
     key = ""; // unique key across all renderer plugins for registration
-    options = {}; // incoming options for the plugin
+    options = {}; // options for the plugin
     constructor(options) {}; // constructor that takes the needed options
     render(interactions) {}; // main method to render interactions via templates
   }
