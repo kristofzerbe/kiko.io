@@ -8,8 +8,8 @@
  * API Documentation: https://github.com/aaronpk/webmention.io
  * 
  * Options:
- *  - {String} targetUrl           = URL of the page mentioned
- *  - {Boolean} [tryResolveTitle]  = Should titles of web pages be resolved
+ *  - {String} targetUrl           = Full URL of the page mentioned (Permalink)
+ *  - {Boolean} [tryResolveTitle]  = Should titles of mentioning pages be resolved
  * 
  * Supported origins:
  *  - web (native)

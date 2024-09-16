@@ -41,7 +41,7 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
         } else {
           item.feedSize = `${feedSize.toFixed(2)} KB`
         }
-        // console.log(item.title + ": " + item.feedSize);
+        console.log(item.title + ": " + item.feedSize);
         // console.log(response.status);
         
         if (response.status === 200) {
@@ -54,11 +54,14 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
               item.feedLength = json.items.length;
               
               let feedItem = json.items[0];
-              item.latest_post = {
-                "url": feedItem.url,
-                "title": feedItem.title || "- no title -",
-                "date_published": feedItem.date_published
-              };
+              if (feedItem) {
+                item.latest_post = {
+                  "url": feedItem.url,
+                  "title": feedItem.title || "- no title -",
+                  "date_published": feedItem.date_published
+                };
+                console.log(item.title + ": " + item.latest_post.title);  
+              }
             } else {
               log.error("Parsing feed from " + item.title + " failed");
             }
