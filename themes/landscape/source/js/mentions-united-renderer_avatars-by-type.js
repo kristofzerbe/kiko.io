@@ -6,9 +6,9 @@
  * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub}
  * 
  * Options:
- *  - {String} placeholderId   = ID of the element which will be replaced
- *  - {String} typeVerb        = Type verb if interactions to show as avatars ... like, repost or else
- *  - {Callback} [afterRender] = JS function to call after render
+ *  - {String} placeholderId   = ID of the element which will be replaced by the generated HTML
+ *  - {String} typeVerb        = Type verb for filtering the interactions and to show as avatars ... like, repost or else
+ *  - {Callback} [afterRender] = Function to call after the generated HTML was inserted into the page
  */
 class MentionsUnitedRenderer_AvatarsByType extends MentionsUnited.Renderer {
   key = "avatars-by-type"; // must be unique across all renderer plugins for registration

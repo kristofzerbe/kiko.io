@@ -104,12 +104,14 @@
       <% if (synPixelfed) { %>
       mentionsUnited.register(new MentionsUnitedProvider_Pixelfed({ 
         sourceUrl: "<%- synPixelfed.url %>",
-        apiBaseUrl: "https://mentions-united-api-proxy.up.railway.app/pixelfed"
+        apiBaseUrl: "<%- config.api-proxy-base-url %>/pixelfed"
       }));
       <% } %>
 
       mentionsUnited.load()
-        .then(() => { return mentionsUnited.show(); })
+        .then(() => { 
+          return mentionsUnited.show(); 
+        })
         .then((count) => { 
           let msg = document.querySelector(".article-interactions .message");
           if (count === 0) {
@@ -118,7 +120,7 @@
           } else {
             msg.remove();
           }
-         })
+         });
     });
   </script>
 

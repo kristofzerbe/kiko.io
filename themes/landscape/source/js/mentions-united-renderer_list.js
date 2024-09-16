@@ -8,7 +8,7 @@
  * Options:
  *  - {String} placeholderId    = ID of the element which will be replaced with list of interactions
  *  - {String} [skipTypes]      = Comma-separated list of type-verbs to skip 
- *  - {Callback} [afterRender]  = JS function to call after render
+ *  - {Callback} [afterRender]  = Function to call after the generated HTML was inserted into the page
  */
 class MentionsUnitedRenderer_List extends MentionsUnited.Renderer {
   key = "list"; // must be unique across all renderer plugins for registration

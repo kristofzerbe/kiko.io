@@ -7,10 +7,10 @@
  * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub}
  * 
  * Options:
- *  - {String} placeholderId    = ID of the element which will be replaced with total number anchor
+ *  - {String} placeholderId    = ID of the element which will be replaced by the generated HTML
  *  - {String} [pageKey]        = Unique identifier of the page, e.g. slug, for caching feature
  *  - {String} [anchorTargetId] = ID of the element to jump to on click for rendering as anchor
- *  - {Callback} [afterRender]  = JS function to call after render
+ *  - {Callback} [afterRender]  = Function to call after the generated HTML was inserted into the page
  */
 class MentionsUnitedRenderer_TotalNumber extends MentionsUnited.Renderer {
   key = "total-number"; // must be unique across all renderer plugins for registration
