@@ -2,12 +2,14 @@
   let title = post.title;
   let pretitle = null;
 
-  let rx = new RegExp("^(#[a-zA-Z]* \| )"); // looking for "#TIL | ..." et al
-  if (rx.test(post.title)) {
-    let titleArray = post.title.split(" | ");
-    pretitle = titleArray[0];
-    title = titleArray[1].trim();
-  }
+  try {
+    let rx = new RegExp("^(#[a-zA-Z]* \| )"); // looking for "#TIL | ..." et al
+    if (rx.test(post.title)) {
+      let titleArray = post.title.split(" | ");
+      pretitle = titleArray[0];
+      title = titleArray[1].trim();
+    }    
+  } catch (error) { console.log(error); }
 %>
 
 <% if (post.url){ // external %>

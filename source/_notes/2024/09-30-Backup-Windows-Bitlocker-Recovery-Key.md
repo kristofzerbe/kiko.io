@@ -4,7 +4,7 @@ date: 2024-09-30
 type: til
 syndication: 
 - host: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/113225955666270226
 ---
 
 Even Microsoft can screw up an update so badly that the box no longer starts, as was proven in July with KB 5040442. So it's good to at least have everything you need to tackle the problem. First and foremost, this includes the Bitlocker keys if the hard disks are encrypted.
