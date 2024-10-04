@@ -1,15 +1,16 @@
 #sidebar
   margin-bottom: block-margin
+  font-size: font-size-medium
   @media mq-normal
     column(sidebar-column)
 
 .widget-wrap
-  margin: medium-margin
+  margin: medium-margin 0 medium-margin medium-margin
   line-height: line-height-medium
 
 .widget-title
   @extend $block-caption
-  margin: (medium-margin / 3) 0
+  margin: 0
   opacity: 0.33
 
 .widget
@@ -20,7 +21,7 @@
     color: dark-color-sidebar-text
     background: dark-color-widget-background
     border: 1px solid dark-color-widget-border
-  padding: 0 (default-padding / 2)
+  padding-left: (default-padding / 4)
   a
     color: color-widget-link
     /[data-theme="dark"] &
@@ -45,7 +46,7 @@
       /[data-theme="dark"] &
         border-color: dark-color-border
       margin: (medium-margin / 3 * 2) 0 0 -12px
-      padding: 0 10px      
+      padding-left: 10px      
       &:hover
         border-left: 4px var(--color-accent) solid
         /[data-theme="dark"] &
