@@ -24,7 +24,7 @@ syndication:
   - host: DevTo
     url: https://dev.to/kristofzerbe/mentions-united-3-2-1-go-213f
   - host: IndieNews
-    url: https://news.indieweb.org/en
+    url: https://news.indieweb.org/en/kiko.io/post/Mentions-United-3-2-1-go/
 ---
 
 <img src="/images/mentions-united.svg" class="float-right no-zoom">
