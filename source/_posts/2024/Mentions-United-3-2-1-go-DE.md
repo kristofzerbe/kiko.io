@@ -123,7 +123,7 @@ Sobald alle Interaktionen eingesammelt sind können die Renderer-Plugins diese a
 - Renderer-Plugin **Total Number** (``mentions-united-renderer_total-number.js``)
   Erzeugt einen Anker mit der Anzahl der Interaktionen
 
-Weitere Informationen zu den Plugins, den Optionen und viele weitere Details dazu sind auf dem [GitHub-Repository](https://github.com/kristofzerbe/Mentions-United) zum Projekt zu finden:
+Weitere Informationen zu den Plugins, den Optionen und viele weitere Details dazu sind auf dem [GitHub-Repository](https://github.com/kristofzerbe/Mentions-United) zum Projekt zu finden.
 
 ### Verwendung auf dieser Website
 

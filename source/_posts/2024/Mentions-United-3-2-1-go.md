@@ -20,7 +20,11 @@ related:
   - IndieFediWebVerse
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/113248737015518151
+  - host: DevTo
+    url: https://dev.to/kristofzerbe/mentions-united-3-2-1-go-213f
+  - host: IndieNews
+    url: https://news.indieweb.org/en
 ---
 
 <img src="/images/mentions-united.svg" class="float-right no-zoom">
@@ -121,7 +125,7 @@ Once all the interactions have been collected, the renderer plugins can integrat
 - Renderer-Plugin **Total Number** (``mentions-united-renderer_total-number.js``)
   Creates an anchor with the number of interactions
 
-Additional information about the plugins, the options and many more details can be found on the [GitHub repository](https://github.com/kristofzerbe/Mentions-United) for the project:
+Additional information about the plugins, the options and many more details can be found on the [GitHub repository](https://github.com/kristofzerbe/Mentions-United) for the project.
 
 ### Usage on this site
 
