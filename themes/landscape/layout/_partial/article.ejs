@@ -22,8 +22,21 @@
   
   <div class="article-inner">
 
-    <% if (post.hidden) { %>
-      <small class="hidden-info"><span>This is a hidden post. You're lucky to have the URL ...</span></small>
+    <% 
+    let infoText;
+    if (post.hidden) {
+      infoText = "This is a hidden post. You're lucky to have the URL ...";
+      if (post.isLocale) {
+        infoText = `... zurück zum <a href="${post.permalink.replace("/de", "")}"> englischen Beitrag</a>`;
+      }
+    } else {
+      if (post.hasLocale) { 
+        infoText = `This post is also available in <a href="${post.permalink + "de"}">German</a> ...`; 
+      }
+    }
+    %>
+    <% if(infoText) {%>
+      <small class="top-info"><span><%- infoText %></span></small>
     <% } %>
     
     <% if (post.link || post.title){ %>

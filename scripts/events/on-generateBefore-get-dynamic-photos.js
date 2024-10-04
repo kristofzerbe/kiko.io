@@ -238,7 +238,7 @@ function getPostAndPagePhotos() {
 //console.log(JSON.stringify(used) + "\n ----------------------------------");
 
   let postsAndPages = [...locals.get("posts").data, ...locals.get("pages").data].map(fm => {
-    if (fm.photograph && !fm.photograph.keepOutOverview) {
+    if (!fm.hidden && fm.photograph && !fm.photograph.keepOutOverview) {
       return {
         title: fm.title,
         subTitle: fm.subtitle,

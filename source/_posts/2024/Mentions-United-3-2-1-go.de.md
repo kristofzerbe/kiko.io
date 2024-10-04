@@ -1,7 +1,9 @@
 ---
 hidden: true
+isLocale: true
 permalink: post/Mentions-United-3-2-1-go/de
-slug: Mentions-United-3-2-1-go-DE
+#--------------------------------------------------
+slug: Mentions-United-3-2-1-go
 title: Mentions United ... 3, 2, 1, Go
 subtitle: Eine JavaScript-Lösung, um Blog-Beiträge mit ihren Interaktionen zu verbinden
 date: 2024-10-03 15:22:21
@@ -20,9 +22,6 @@ related:
   - Push-Over-Webmentions
   - Hexo-and-the-IndieWeb
   - IndieFediWebVerse
-syndication:
-  - host: Mastodon
-    url: null
 ---
 
 <img src="/images/mentions-united.svg" class="float-right no-zoom">

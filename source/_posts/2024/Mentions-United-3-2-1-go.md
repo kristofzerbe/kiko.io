@@ -1,4 +1,6 @@
 ---
+hasLocale: true
+#--------------------------------------------------
 slug: Mentions-United-3-2-1-go
 title: Mentions United ... 3, 2, 1, Go
 subtitle: A JavaScript solution to unite blog posts with their interactions
