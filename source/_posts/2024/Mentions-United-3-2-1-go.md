@@ -27,9 +27,9 @@ syndication:
     url: https://news.indieweb.org/en/kiko.io/post/Mentions-United-3-2-1-go/
 ---
 
-<img src="/images/mentions-united.svg" class="float-right no-zoom">
-
 ## Perspective
+
+<img src="/images/mentions-united.svg" class="float-right no-zoom">
 
 Blogging means putting your own opinion on public display, and of course you hope for reactions to it, otherwise you would rather write your thoughts in a small notebook and hide it in your bedside table. Blog posts are therefore always only the first half of a conversation with fellow human beings, readers, and web users. The other half is made up of reactions or, better yet, interactions. Likes, comments, or links from other bloggers who take up the opinion in their own blog post in order to spread it further or discuss it. A story emerges from these two halves.
 
