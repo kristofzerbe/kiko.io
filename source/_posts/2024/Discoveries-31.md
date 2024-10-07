@@ -21,7 +21,7 @@ related:
   - Discoveries-28-UI-Components
 syndication:
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/113266679764249475
 ---
 
 It's been three months since the last Discoveries, but it's by no means as if I haven't found a few things worth writing about in the meantime. I just had to prioritize my own new JS solution [**Mentions United**](/post/Mentions-United-3-2-1-go/) ... and there also had to be a bit of leisure time left over.
