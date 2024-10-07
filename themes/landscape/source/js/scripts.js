@@ -25,7 +25,7 @@ function initAnchorListItems() {
   $("body.article-view ul.anchorlist li").each(function (i, el) {
     var anchor = $(this).data("anchor");
     var text = $(this).text();
-    el.innerHTML = '<a href="' + anchor + '">' + text + "</a>";
+    el.innerHTML = '<a href="' + anchor + '">' + htmlencode(text) + "</a>";
   });  
 }
 initAnchorListItems();
@@ -89,7 +89,6 @@ function initScrollAnchorLink(selector, offset) {
   // You can replace hash detection with a data-attribute
   // e.g. $("[data-scroll='smooth']")
   if (!selector) { selector = "a[href^='#']:not([href='#'])"; }
-  if (!offset) { offset === 40; }
   $(selector).click(function (e) {
     e.preventDefault();
     var hash = this.hash;
@@ -98,7 +97,7 @@ function initScrollAnchorLink(selector, offset) {
     if (hash) {
       $("html, body").animate(
         {
-          scrollTop: section.offset().top - offset,
+          scrollTop: section.offset().top - (offset ?? 40),
         },
         1000,
         "swing",

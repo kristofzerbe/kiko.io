@@ -1,25 +1,25 @@
 /*
-    Anchorlist Tag
+  Anchorlist Tag
 
-    Syntax
-    {% anchorlist ..."title|anchorId" %}
+  Syntax
+  {% anchorlist ..."title|anchorId" %}
 */
 
-hexo.extend.tag.register("anchorlist", function(args){
+hexo.extend.tag.register("anchorlist", function (args) {
+  var listAnchors = "";
 
-    var listAnchors = "";
-    args.forEach(function(e) {
-        var item = e.split("|"); 
-        var title = item[0];
-        var anchorId = item[1];
-        listAnchors += `<li data-anchor="#${anchorId}">${title}</li>`;
-    });
+  args.forEach(function (e) {
+    var item = e.split("|");
+    var title = item[0];
+    var anchorId = item[1];
+    listAnchors += String.raw`<li data-anchor="#${anchorId}">${title}</li>`;
+  });
 
-    var elements = `
-        <ul class="anchorlist">
-            ${listAnchors}
-        </ul>
+  var elements = `
+    <ul class="anchorlist">
+      ${listAnchors}
+    </ul>
     `;
 
-    return elements;
+  return elements;
 });
