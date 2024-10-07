@@ -1,5 +1,5 @@
 const log = require('hexo-log')({ debug: false, silent: false });
-const { magenta, blue } = require('chalk');
+const { magenta } = require('chalk');
 const path = require('path');
 const axios = require('axios');
 const fs = require("hexo-fs");
@@ -11,13 +11,14 @@ const _helpers = getHelpers(hexo);
 const _rootDir = hexo.source_dir.replace("source", "");
 
 hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
-  log.info("Generating Dynamic Page " + magenta("BLOGROLL") + " ...");
+  
+  let page = locals.dynamic.blogroll;
+
+  log.info("Generating Dynamic Page " + magenta("BLOGROLL") + " for " + magenta(page.items.length + " blogs") + " ...");
 
   const config = this.config;
 
   //if (config.offline === true) { return null; } //DOESN'T WORK WITH HEXO SERVER
-
-  let page = locals.dynamic.blogroll;
 
   page.content = page.content
     .replaceAll("{% blogroll_length %}", page.items.length)
@@ -30,7 +31,7 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
   page.items.forEach(item => {
 
     promises.push(new Promise((resolve, reject) => {
-      log.info("Request latest post from " + blue(item.title));
+      //log.info("Request latest post from " + blue(item.title));
 
       axios.get(item.feed, { validateStatus: () => true }).then(response => {
         const contentLen = response.headers?.['content-length'];
@@ -41,8 +42,8 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
         } else {
           item.feedSize = `${feedSize.toFixed(2)} KB`
         }
-        console.log(item.title + ": " + item.feedSize);
-        // console.log(response.status);
+        //console.log(item.title + ": " + item.feedSize);
+        //console.log(response.status);
         
         if (response.status === 200) {
           feed2json.fromString(response.data, item.feed, (error, json) => {
@@ -60,7 +61,7 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
                   "title": feedItem.title || "- no title -",
                   "date_published": feedItem.date_published
                 };
-                console.log(item.title + ": " + item.latest_post.title);  
+                //console.log(item.title + ": " + item.latest_post.title);  
               }
             } else {
               log.error("Parsing feed from " + item.title + " failed");

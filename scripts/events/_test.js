@@ -12,6 +12,13 @@ hexo.on('generateBefore', function(){
   // console.log(this.pages);
   // console.log(this.locals.get("pages"));
   // console.log(this.locals.get("posts"));
+  // const posts = this.locals.get("posts")
+  //   .filter(item => item.isLocale || item.hasLocale)
+  //   .map(
+  //     ({ slug, title, source, path, permalink, isLocale, hasLocale }) => 
+  //     ({ slug, title, source, path, permalink, isLocale, hasLocale })
+  //   );
+  // console.log(posts);
 });
 
 hexo.extend.filter.register('before_generate', function() {

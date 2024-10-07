@@ -27,11 +27,11 @@
     if (post.hidden) {
       infoText = "This is a hidden post. You're lucky to have the URL ...";
       if (post.isLocale) {
-        infoText = `... zurück zum <a href="${post.permalink.replace("/de", "")}"> englischen Beitrag</a>`;
+        infoText = `... zurück zum <a href="${url_for(post.path).replace("/de", "")}"> englischen Originalbeitrag</a>`;
       }
     } else {
       if (post.hasLocale) { 
-        infoText = `This post is also available in <a href="${post.permalink + "de"}">German</a> ...`; 
+        infoText = `This post is also available in <a href="${url_for(post.path) + 'de'}">German</a> ...`; 
       }
     }
     %>
@@ -55,17 +55,24 @@
     <footer class="article-footer" data-pagefind-ignore>      
       <%- partial('post/tag', { class_name: 'article-tags' }) %>
       <%- partial('post/permalink', { class_name: 'article-permalink' }) %>
-      <% if (post.golem){ %>
+      <% if (post.golem) { %>
         <%- partial('post/golem', { class_name: 'article-golem' }) %>
       <% } %>
     </footer>
 
   </div>
 
-  <% if (!post.hidden){ %>
+  <% if (!post.hidden) { %>
   <%- partial('post/interaction', { post: post, type: 'article', comments: true }) %>
   <%- partial('post/related') %>
   <%- partial('post/nav') %>
+  <% } else { %>
+    <% if (post.isLocale) { %>
+      <p style="font-style: italic; font-size: 0.9rem;">
+        Diese Seite ist lediglich die Übersetzung des <a href="<%= url_for(post.path).replace('/de', '') %>">englischen Originalbeitrags</a>. 
+        Alle Syndizierungen und Interaktionen findest Du dort...
+      </p>
+    <% } %>
   <% } %>
 
 </article>

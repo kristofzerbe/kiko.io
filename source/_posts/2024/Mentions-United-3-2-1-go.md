@@ -163,7 +163,7 @@ First, it is determined whether other Provider scripts are required for this pos
 In an HTML block, the placeholders to be replaced by the Renderer plugins are defined and the **Mentions United** scripts are loaded on the spot, but some provider plugins only if this is necessary due to the syndication data:
 
 ```ejs
-<div id="article-interactions" class="article-interactions">
+<div id="interactions" class="article-interactions">
   <h2>Interactions</h2>
   
   <div class="message loading">Loading</div>

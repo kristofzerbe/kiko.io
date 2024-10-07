@@ -9,7 +9,7 @@
 </div>
 
 <% if (syndications?.length > 0) { %>
-<div class="article-syndication" data-pagefind-ignore>
+<div id="syndication" class="article-syndication" data-pagefind-ignore>
   <h2>Syndication</h2>
   <div class="syndication-wrapper">
     <%- partial('syndication-links', { syndication: syndications, type: type, text: true }) %>
@@ -17,7 +17,7 @@
 </div>
 <% } %>
 
-<div class="article-webmention" data-pagefind-ignore>
+<div id="send-webmention" class="article-webmention" data-pagefind-ignore>
   <p>
     You can interact with this <%= type %> (applause, criticism, whatever) by mention it in one of 
     your posts and sending <a href="https://indieweb.org/Webmention">Webmention</a> or 
@@ -40,7 +40,7 @@
 
 </div>
 
-<div id="article-interactions" class="article-interactions" data-pagefind-ignore>
+<div id="interactions" class="article-interactions" data-pagefind-ignore>
   <h2>Interactions</h2>
 
   <div class="message loading">Loading</div>
@@ -73,7 +73,7 @@
           new MentionsUnitedRenderer_TotalNumber({
             placeholderId: "interactions-totalnumber-placeholder",
             pageKey: "<%- post.slug %>",
-            anchorTargetId: "article-interactions",
+            anchorTargetId: "interactions",
             afterRender: () => { initScrollAnchorLink(".interactions-totalnumber", 80); }
           }),
           new MentionsUnitedRenderer_AvatarsByType({

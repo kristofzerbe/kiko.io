@@ -3,7 +3,6 @@ hidden: true
 isLocale: true
 permalink: post/Mentions-United-3-2-1-go/de
 #--------------------------------------------------
-slug: Mentions-United-3-2-1-go
 title: Mentions United ... 3, 2, 1, Go
 subtitle: Eine JavaScript-Lösung, um Blog-Beiträge mit ihren Interaktionen zu verbinden
 date: 2024-10-03 15:22:21
@@ -158,7 +157,7 @@ Zunächst wird festgestellt, ob für diesen Beitrag neben dem Standard-Provider-
 In einem HTML-Block werden die von den Renderer-Plugins zu ersetzenden Platzhalter definiert und die **Mentions United**-Skripte werden an Ort und Stelle geladen, aber einige Provider-Plugins nur, wenn dies aufgrund der Syndizierungsdaten erforderlich ist:
 
 ```ejs
-<div id="article-interactions" class="article-interactions">
+<div id="interactions" class="article-interactions">
   <h2>Interactions</h2>
   
   <div class="message loading">Loading</div>
