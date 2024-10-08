@@ -133,6 +133,75 @@ function initImageViewportVisibility() {
 
 /** ============================================================ */
 
+function ensureIconLinkText() {
+  let linksWithoutText = document.querySelectorAll("a[href^='http']:empty");
+  linksWithoutText.forEach(e => {
+    if (window.getComputedStyle(e).display !== "none") {
+      if (e.title) {
+        let eText = document.createElement("span");
+        eText.innerText = e.title;
+        eText.classList.add("visually-hidden");
+        e.append(eText);
+      } else {
+        console.error("Link without Text and Title: " + e.outerHTML);
+      }
+    }
+  });
+} 
+
+/** ============================================================ */
+
+//HEADER
+var header = {
+  height: 0,
+  top: 0,
+  offset: 55,
+  photoLinkOpacity: 0,
+  titleFontSize: 0
+};
+function initHeader() {
+  $("#header").css("height", ""); //reset inline css
+  $("#header-title").css("top", "");
+  $("#header-photo-link").css("opacity", "");
+  $("#title-wrap").css("font-size", "");
+  header.height = $("#header").height(); //set from given css
+  header.top = parseFloat($("#header-title").css("top"));
+  header.photoLinkOpacity = parseFloat($("#header-photo-link").css("opacity"));
+  header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
+
+  scrollHeader();
+}
+
+function scrollHeader() {
+  var h = header.height - header.offset,
+      st = $(document).scrollTop(),
+      d = (h - st),
+      p = (d / h),
+      hfs = header.titleFontSize / 5 * 3,
+      jSide = $("aside");
+  if (d > 0) {
+    $("#header").css("height", d + header.offset + "px");
+    $("#header-photo-link").css("opacity", header.photoLinkOpacity * p);
+    $("#banner").css("opacity", p);
+    $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1 - p) );
+    $("#header-title").css("top", header.top - (hfs * (1 - p)) + "px");
+    $("#subtitle").css("opacity", p);
+    jSide.css("max-width", "").css("position", "").css("top", "");
+  } else {
+    $("#header").css("height", header.offset + "px");
+    $("#header-photo-link").css("opacity", 0);
+    $("#banner").css("opacity", 0);
+    $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );
+    $("#header-title").css("top", header.top - (hfs * (1)) + "px");
+    $("#subtitle").css("opacity", 0);
+    if (window.matchMedia("screen and (min-width: 768px)").matches & window.innerHeight > (jSide.height() + 50)) {
+      jSide.css("max-width", $("aside").width()).css("position", "fixed").css("top", "50px");
+    }
+  }
+}
+
+/** ------------------------------------------------------------ */
+
 function initScrollProgress() {
 
   // Create ScrollTimeline
@@ -249,6 +318,8 @@ function setVibrantColor(theme) {
     }
   }
 }
+
+/** ============================================================ */
 
 function bindWebmentionSending(formName) {
 
