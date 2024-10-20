@@ -20,6 +20,9 @@ related:
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/113341222781469172
+  - host: Pixelfed
+    title: Dunkirk Colors
+    url: https://pixelfed.social/p/kristofz/753729907216302329
 ---
 
 A few months ago, my wife and I made our way to Wales for a two week vacation. By car. From Germany. Over 600 miles, including a ferry. By American standards, it's probably only some kind of morning trip, but it takes an aging European 2 days, so we stopped off in Dunkirk. Here are some photographic impressions of the famous northern French town.
