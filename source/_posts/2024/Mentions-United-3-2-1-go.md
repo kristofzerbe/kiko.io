@@ -27,6 +27,15 @@ syndication:
     url: https://dev.to/kristofzerbe/mentions-united-3-2-1-go-213f
   - host: IndieNews
     url: https://news.indieweb.org/en/kiko.io/post/Mentions-United-3-2-1-go/
+  - host: Lemmy
+    title: fediverse@lemmy.ml
+    url: https://programming.dev/post/20878811
+  - host: Lemmy
+    title: fediverse@lemmy.world
+    url: https://programming.dev/post/20880252
+  - host: Lemmy
+    title: indieweb@programming.dev
+    url: https://programming.dev/post/20881358
 ---
 
 ## Perspective

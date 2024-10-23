@@ -657,7 +657,7 @@
     flex-wrap: wrap
     margin-left: -1rem
     a.syndication-link /* on extension see config.syndication_hosts */
-      padding: 0.3rem 0.15rem 0.3rem 2.4rem
+      padding: 0.3rem 0.5rem 0.3rem 2.4rem
       text-decoration: none
       overflow-wrap: break-word
       background-size: 20px 20px
@@ -724,6 +724,10 @@
         span
           /[data-theme="dark"] &
             filter: invert(1)
+      &.host-lemmy
+        background-image: var(--brand-lemmy)
+        background-size: 22px
+        background-position: 10px 6px
 
 .article-webmention
   @extend $base-style
@@ -1227,3 +1231,7 @@
     background-image: var(--brand-pixelfed)
     /[data-theme="dark"] &
       background-image: url(/images/icons/pixelfed_invert.svg)
+  .avatar.origin-lemmy:after
+    background-image: var(--brand-lemmy)
+    /[data-theme="dark"] &
+      filter: invert(1)

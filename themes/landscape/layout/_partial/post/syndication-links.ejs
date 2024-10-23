@@ -1,10 +1,20 @@
 <% syndication.forEach(function(syn){ %>
-  <% let hostname = syn.host.charAt(0).toUpperCase() + syn.host.slice(1) + ((syn.title) ? " (" + syn.title + ")" : "") %>
+  <% 
+    let hostname = syn.host.charAt(0).toUpperCase() + syn.host.slice(1); // + ((syn.title) ? " (" + syn.title + ")" : "")
+    let synname = hostname;
+    if (syn.title) {
+      if (syn.host.toUpperCase() === "LEMMY") {
+        synname = syn.title;
+      } else {
+        synname += " (" + syn.title + ")";
+      }
+    }
+  %>
   <a class="syndication-link host-<%- syn.host?.toLowerCase() %> u-syndication" 
      href="<%- syn.url %>" rel="syndication" target="_blank"
      title="Syndication of this <%- type %> on <%- hostname %>">
     <% if (text === true) { %>
-      <span><%- hostname %></span>
+      <span><%- synname %></span>
      <% } %>
   </a>
 <% }); %>
