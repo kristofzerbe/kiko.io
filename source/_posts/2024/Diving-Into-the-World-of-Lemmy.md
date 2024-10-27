@@ -21,8 +21,11 @@ syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/113378863170909812
   - host: Lemmy
-    title: Lemmy@lemmy.ml
+    title: lemmy@lemmy.ml
     url: https://programming.dev/post/21031156
+  - host: Lemmy
+    title: meta@programming.dev
+    url: https://programming.dev/post/21031933
 ---
 
 Slightly triggered by the post [My blog now has Lemmy comments](https://blog.coship.fyi/blog/lemmy-comments/), I thought it would be a good idea to take a closer look at another great representative of the Fediverse world: [**Lemmy**](https://en.wikipedia.org/wiki/Lemmy_(social_network)). Of course, also with an eye on the possibility of developing another [**Mentions United Provider Plugin**](https://github.com/kristofzerbe/Mentions-United?tab=readme-ov-file#provider-plugins), along the lines of what “Coship” can do, I also can do and that for everyone ;)
