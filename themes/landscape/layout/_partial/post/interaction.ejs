@@ -1,7 +1,10 @@
 <%
   let syndications = post.syndication?.filter(s => s.url?.length > 0 && s.host?.length > 0)
   let synDevTo = syndications?.find(s => s.host.toLowerCase() === "devto");
-  let synPixelfed = syndications?.find(s => s.host.toLowerCase() === "pixelfed");
+  let synPixelfed = syndications?.filter(s => s.host.toLowerCase() === "pixelfed");
+  let synLemmy = syndications?.filter(s => s.host.toLowerCase() === "lemmy");
+
+  //console.log("---------------\n" + post.title + ": " + synPixelfed.length);
 %>
 
 <div class="article-share" data-pagefind-ignore>
@@ -56,7 +59,7 @@
   <%- js('js/mentions-united-renderer_avatars-by-type.js') %>
   <%- js('js/mentions-united-renderer_list.js') %>
   <% if (synDevTo) { %><%- js('js/mentions-united-provider_devto.js'); %><% } %>
-  <% if (synPixelfed) { %><%- js('js/mentions-united-provider_pixelfed.js'); %><% } %>
+  <% if (synPixelfed?.length > 0) { %><%- js('js/mentions-united-provider_pixelfed.js'); %><% } %>
 
   <script>
     window.addEventListener('load', function () {
@@ -101,12 +104,12 @@
       }));
       <% } %>
 
-      <% if (synPixelfed) { %>
-      mentionsUnited.register(new MentionsUnitedProvider_Pixelfed({ 
-        sourceUrl: "<%- synPixelfed.url %>",
-        apiBaseUrl: "<%- config.api_proxy_base_url %>/pixelfed"
-      }));
-      <% } %>
+      <% synPixelfed?.forEach(syn => { %>
+        mentionsUnited.register(new MentionsUnitedProvider_Pixelfed({ 
+          sourceUrl: "<%- syn.url %>",
+          apiBaseUrl: "<%- config.api_proxy_base_url %>/pixelfed"
+        }));
+      <% }); %>
 
       mentionsUnited.load()
         .then(() => { 

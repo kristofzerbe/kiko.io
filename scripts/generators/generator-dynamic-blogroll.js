@@ -75,12 +75,14 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
         } else {
           log.error("Fetching feed from " + item.title + " responded with status " + response.status);
           item.errorStatus = response.status;
-          if (item.errorStatus === 403) { console.log(response); }
+          if (item.errorStatus === 403) {
+            //console.log(response); 
+          }
         }
         resolve(); 
       }).catch(err => {
         log.error("Fetching feed from " + item.title + " failed");
-        console.log(err);
+        //console.log(err);
         resolve(); // Resolve anyway, to suppress errors
       });
     }));
