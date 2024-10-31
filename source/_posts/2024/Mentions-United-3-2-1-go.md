@@ -28,13 +28,10 @@ syndication:
   - host: IndieNews
     url: https://news.indieweb.org/en/kiko.io/post/Mentions-United-3-2-1-go/
   - host: Lemmy
-    title: fediverse@lemmy.ml
+    title: Lemmy (fediverse)
     url: https://programming.dev/post/20878811
   - host: Lemmy
-    title: fediverse@lemmy.world
-    url: https://programming.dev/post/20880252
-  - host: Lemmy
-    title: indieweb@programming.dev
+    title: Lemmy (indieweb)
     url: https://programming.dev/post/20881358
 ---
 
