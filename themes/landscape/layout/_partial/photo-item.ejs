@@ -26,7 +26,7 @@
   <% if (item) { %>
     <%  let syndication = item.meta?.custom?.links?.filter(l => l.url?.length > 0).map(s => ({ host: s.site, url: s.url })); %>
     <div class="card-links">
-      <%- partial('_partial/post/syndication-links', { syndication: syndication, type: "photo", text: false }) %>
+      <%- partial('_partial/post/syndication-links', { syndication: syndication, type: "photo", showText: false }) %>
       <% if (!item.meta?.latitude && !item.meta?.longitude) { %>
       <span class="info-location">
         <img src="/images/icons/location-none.svg" title="no location" />

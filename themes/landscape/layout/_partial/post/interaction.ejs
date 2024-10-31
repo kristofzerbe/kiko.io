@@ -2,9 +2,7 @@
   let syndications = post.syndication?.filter(s => s.url?.length > 0 && s.host?.length > 0)
   let synDevTo = syndications?.find(s => s.host.toLowerCase() === "devto");
   let synPixelfed = syndications?.filter(s => s.host.toLowerCase() === "pixelfed");
-  let synLemmy = syndications?.filter(s => s.host.toLowerCase() === "lemmy");
-
-  //console.log("---------------\n" + post.title + ": " + synPixelfed.length);
+  let synLemmy = null; //syndications?.filter(s => s.host.toLowerCase() === "lemmy");
 %>
 
 <div class="article-share" data-pagefind-ignore>
@@ -15,7 +13,7 @@
 <div id="syndication" class="article-syndication" data-pagefind-ignore>
   <h2>Syndication</h2>
   <div class="syndication-wrapper">
-    <%- partial('syndication-links', { syndication: syndications, type: type, text: true }) %>
+    <%- partial('syndication-links', { syndication: syndications, type: type, showText: true }) %>
   </div>
 </div>
 <% } %>
@@ -60,6 +58,7 @@
   <%- js('js/mentions-united-renderer_list.js') %>
   <% if (synDevTo) { %><%- js('js/mentions-united-provider_devto.js'); %><% } %>
   <% if (synPixelfed?.length > 0) { %><%- js('js/mentions-united-provider_pixelfed.js'); %><% } %>
+  <% if (synLemmy?.length > 0) { %><%- js('js/mentions-united-provider_lemmy.js'); %><% } %>
 
   <script>
     window.addEventListener('load', function () {
@@ -108,6 +107,12 @@
         mentionsUnited.register(new MentionsUnitedProvider_Pixelfed({ 
           sourceUrl: "<%- syn.url %>",
           apiBaseUrl: "<%- config.api_proxy_base_url %>/pixelfed"
+        }));
+      <% }); %>
+
+      <% synLemmy?.forEach(syn => { %>
+        mentionsUnited.register(new MentionsUnitedProvider_Lemmy({ 
+          sourceUrl: "<%- syn.url %>"
         }));
       <% }); %>
 

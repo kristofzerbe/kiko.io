@@ -21,10 +21,10 @@ syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/113378863170909812
   - host: Lemmy
-    title: Lemmy (Lemmy)
+    title: Lemmy
     url: https://programming.dev/post/21031156
   - host: Lemmy
-    title: Lemmy (Programming.dev Meta)
+    title: Programming.dev Meta
     url: https://programming.dev/post/21031933
 ---
 
