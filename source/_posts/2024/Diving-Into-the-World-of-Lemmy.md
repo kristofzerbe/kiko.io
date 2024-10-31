@@ -76,7 +76,7 @@ The JSON response from the Lemmy API is, as is often the case, massive and full 
 
 The ``community`` object alone contains 17 attributes, some of which are extensive text, and is inherently the same object for all entries. It is similar with the ``post`` object. It's not that there is no important information there, but I find the constant repetition to be a waste and a higher-level meta-object would have done the job.
 
-What I do find a really good solution for, though, is how the comments are linked to each other, or rather how this is reflected in the response. Wherever ``parent_id`` is used in other objects, a comment has a ``path'' with a dot-separated list of all comment IDs up to the current comment, starting with 0. This means that you don't have to work your way through the individual comments in search of the structure; instead, it is delivered to you directly.
+What I do find a really good solution for, though, is how the comments are linked to each other, or rather how this is reflected in the response. Wherever ``parent_id`` is used in other objects, a comment has a ``path`` with a dot-separated list of all comment IDs up to the current comment, starting with 0. This means that you don't have to work your way through the individual comments in search of the structure; instead, it is delivered to you directly.
 
 ---
 
