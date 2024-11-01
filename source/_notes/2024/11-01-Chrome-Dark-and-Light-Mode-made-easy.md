@@ -8,7 +8,7 @@ rel:
   url: https://www.bram.us/2024/10/30/chrome-dark-mode-toggle-v1-1/
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/113407789292726025
 ---
 Some like it light, others dark. Yet others, like me, [prefer it dark, but need it light to read](https://kiko.io/post/Don-t-be-ignorant-and-offer-a-theme-switch/) ... we're talking about websites, color schemes and the impossibility of pleasing everyone. 
 
