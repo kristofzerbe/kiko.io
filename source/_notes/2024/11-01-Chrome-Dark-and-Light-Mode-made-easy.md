@@ -17,10 +17,16 @@ While, [Sara](https://front-end.social/@sarajw) recently gave [on CSS-Tricks](ht
 But [Bramus](https://front-end.social/@bramus) comes to the rescue, at least for the desktop, with his new extension **[Chrome Dark Mode Toggle](https://www.bram.us/2024/10/30/chrome-dark-mode-toggle-v1-1/)**, which anticipates what Google wants to build into the browser directly at some point: the user decides centrally in the browser how they want it, light or dark.
 
 > This extension allows you to override the value of `prefers-color-scheme` on a per-origin basis. That way, if a site uses `prefers-color-scheme` in their stylesheet, you can keep your OS in Light Mode while watching a site in Dark Mode (or vice versa).
-> --- *Bramus Van Damme on Chrome Web Store*
+> --- Bramus Van Damme on Chrome Web Store
 
 The thing works great, even if it only gets me a little further personally, since I spend 80% of my reading time on my smartphone and ... no extensions are supported in Chrome for Android :|
 
 #chrome #color-scheme
 
-https://www.bram.us/2024/10/30/chrome-dark-mode-toggle-v1-1/
+```cardlink
+url: https://www.bram.us/2024/10/30/chrome-dark-mode-toggle-v1-1/
+title: "Chrome Dark Mode Toggle v1.1"
+description: "On top of a per-origin override, you can now set a Chrome-wide preference to have your OS in Dark Mode but all sites in Light Mode (or vice versa)."
+host: www.bram.us
+image: https://www.bram.us/wordpress/wp-content/uploads/2024/10/HyBtw8RTZ3Y.jpg
+```
