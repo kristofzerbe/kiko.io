@@ -20,9 +20,8 @@
 
 <div id="send-webmention" class="article-webmention" data-pagefind-ignore>
   <p>
-    You can interact with this <%= type %> (applause, criticism, whatever) by mention it in one of 
-    your posts and sending <a href="https://indieweb.org/Webmention">Webmention</a> or 
-    by replying to one of its syndications above, most of which are displayed here as an interaction.
+    You can interact with this <%= type %> (applause, criticism, whatever) by mention it in one of your posts 
+    and sending a <a href="https://indieweb.org/Webmention">Webmention</a><% if(syndications) { %> or by replying to one of its syndications above, most of which are displayed here as an interaction<% } %>.
   </p>
 
   <form class="webmention-form" name="webmention-form" method="post"
@@ -106,13 +105,15 @@
       <% synPixelfed?.forEach(syn => { %>
         mentionsUnited.register(new MentionsUnitedProvider_Pixelfed({ 
           sourceUrl: "<%- syn.url %>",
+          sourceTitle: "<%- syn.title %>",
           apiBaseUrl: "<%- config.api_proxy_base_url %>/pixelfed"
         }));
       <% }); %>
 
       <% synLemmy?.forEach(syn => { %>
         mentionsUnited.register(new MentionsUnitedProvider_Lemmy({ 
-          sourceUrl: "<%- syn.url %>"
+          sourceUrl: "<%- syn.url %>",
+          sourceTitle: "<%- syn.title %>"
         }));
       <% }); %>
 
