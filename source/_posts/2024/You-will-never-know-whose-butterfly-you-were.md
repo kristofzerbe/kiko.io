@@ -20,7 +20,7 @@ related:
   - IndieFediWebVerse
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/113421443081777798
 ---
 
 When I read about the topic of the current [IndieWeb Carnival](https://indieweb.org/IndieWeb_Carnival), which is being organized this time by [Alexandra](https://library.xandra.cc/) and in which I am participating for the first time... **[Impact](https://library.xandra.cc/indieweb-carnival/)**... my first and so far only thought about it was: **People**. The ones that cross your path in the course of your life and, whether intentionally or unintentionally, send you in a different direction like a pinball in a game machine.
