@@ -115,7 +115,7 @@ The initially developed plugins naturally cover my needs for this blog, but it w
   Get all interactions from the webmention.io API via the URL of the blog post (target), be they real webmentions or interactions from the platforms Mastodon, Bluesky, GitHub, Flickr and others that have been integrated via brid.gy
 
 - Provider-Plugin **Pixelfed** (``mentions-united-provider_pixelfed.js``)
-  Get all interactions from the API of a Pixelfed instance via the syndication URL (source). In the passed options, you can also specify an API proxy URL to prevent the key necessary for the retrieval from being publicly available.
+  Get all interactions from the API of a Pixelfed instance via the syndication URL. In the passed options, you can also specify an API proxy URL to prevent the key necessary for the retrieval from being publicly available.
 
 - Provider-Plugin **DEV.to** (``mentions-united-provider_devto.js``)
   Get all comments from the DEV API via the syndication URL
@@ -221,13 +221,13 @@ window.addEventListener('load', function () {
   // register plugins individually, if necessary for this post
   <% if (synDevTo) { %>
   mentionsUnited.register(new MentionsUnitedProvider_DevTo({
-    sourceUrl: "<%- synDevTo.url %>"
+    syndicationUrl: "<%- synDevTo.url %>"
   }));
   <% } %>
 
   <% if (synPixelfed) { %>
   mentionsUnited.register(new MentionsUnitedProvider_Pixelfed({
-    sourceUrl: "<%- synPixelfed.url %>",
+    syndicationUrl: "<%- synPixelfed.url %>",
     apiBaseUrl: "<%- config.api-proxy-base-url %>/pixelfed"
   }));
   <% } %>

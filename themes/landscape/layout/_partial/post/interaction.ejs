@@ -103,18 +103,18 @@
       <% } %>
 
       <% synPixelfed?.forEach(syn => { %>
-        mentionsUnited.register(new MentionsUnitedProvider_Pixelfed({ 
-          syndicationUrl: "<%- syn.url %>",
-          syndicationTitle: "<%- syn.title %>",
-          apiBaseUrl: "<%- config.api_proxy_base_url %>/pixelfed"
-        }));
+      mentionsUnited.register(new MentionsUnitedProvider_Pixelfed({ 
+        syndicationUrl: "<%- syn.url %>",
+        syndicationTitle: "<%- syn.title %>",
+        apiBaseUrl: "<%- config.api_proxy_base_url %>/pixelfed"
+      }));
       <% }); %>
 
       <% synLemmy?.forEach(syn => { %>
-        mentionsUnited.register(new MentionsUnitedProvider_Lemmy({ 
-          syndicationUrl: "<%- syn.url %>",
-          syndicationCommunity: "<%- syn.title %>"
-        }));
+      mentionsUnited.register(new MentionsUnitedProvider_Lemmy({ 
+        syndicationUrl: "<%- syn.url %>",
+        syndicationCommunity: "<%- syn.title %>"
+      }));
       <% }); %>
 
       mentionsUnited.load()

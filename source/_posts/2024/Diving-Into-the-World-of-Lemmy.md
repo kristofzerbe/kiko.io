@@ -58,7 +58,7 @@ Let's see if I need the ``max_depth`` parameter as well, as the tip suggests. At
 
 In general, however, I find the Lemmy API sometimes a bit strange, and not only because of the somewhat odd parameter values for ``sort``: Hot, Top, New, Old and Controversial. Whoever came up with this hasn't heard of self-explanatory code.
 
-The JSON response from the Lemmy API is, as is often the case, massive and full of redundancies, which is probably because pre-built objects are simply stuffed into the comments of the list when the route is called. So an entry contains not only the actual ``Comment'' object, but also the referencing information as a complete object:
+The JSON response from the Lemmy API is, as is often the case, massive and full of redundancies, which is probably because pre-built objects are simply stuffed into the comments of the list when the route is called. So an entry contains not only the actual ``Comment`` object, but also the referencing information as a complete object:
 
 ```json
 { 
