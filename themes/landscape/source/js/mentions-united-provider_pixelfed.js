@@ -10,7 +10,7 @@
  * 
  * Options:
  *  - {String} syndicationUrl     = Full URL of the Pixelfed post
- *  - {String} syndicationTitle   = Title of the Pixelfed post, if multiple syndications of original post
+ *  - {String} [syndicationTitle] = Title of the Pixelfed post, if multiple syndications of original post
  *  - {String} [apiBaseUrl]       = Base URL of API proxy, if existing
  *  - {String} [apiTokenReadOnly] = Token to access Pixelfed's API in Read-Only mode, if no proxy
  * 
