@@ -2,7 +2,7 @@
   let syndications = post.syndication?.filter(s => s.url?.length > 0 && s.host?.length > 0)
   let synDevTo = syndications?.find(s => s.host.toLowerCase() === "devto");
   let synPixelfed = syndications?.filter(s => s.host.toLowerCase() === "pixelfed");
-  let synLemmy = null; //syndications?.filter(s => s.host.toLowerCase() === "lemmy");
+  let synLemmy = syndications?.filter(s => s.host.toLowerCase() === "lemmy");
 %>
 
 <div class="article-share" data-pagefind-ignore>
@@ -48,13 +48,13 @@
   <div id="interactions-likes-placeholder"></div>
   <div id="interactions-reposts-placeholder"></div>
   <div id="interactions-bookmarks-placeholder"></div>
-  <div id="interactions-list-placeholder"></div>
+  <div id="interactions-grouplist-placeholder"></div>
 
   <%- js('js/mentions-united.js') %>
   <%- js('js/mentions-united-provider_webmentions.js') %>
   <%- js('js/mentions-united-renderer_total-number.js') %>
   <%- js('js/mentions-united-renderer_avatars-by-type.js') %>
-  <%- js('js/mentions-united-renderer_list.js') %>
+  <%- js('js/mentions-united-renderer_grouplist-by-origin.js') %>
   <% if (synDevTo) { %><%- js('js/mentions-united-provider_devto.js'); %><% } %>
   <% if (synPixelfed?.length > 0) { %><%- js('js/mentions-united-provider_pixelfed.js'); %><% } %>
   <% if (synLemmy?.length > 0) { %><%- js('js/mentions-united-provider_lemmy.js'); %><% } %>
@@ -68,7 +68,7 @@
         }, 
         [
           new MentionsUnitedProvider_Webmentions({ 
-            targetUrl: "<%- post.permalink %>",
+            originalUrl: "<%- post.permalink %>",
             tryResolveTitle: true
           }),
           new MentionsUnitedRenderer_TotalNumber({
@@ -89,31 +89,31 @@
             placeholderId: "interactions-bookmarks-placeholder",
             typeVerb: "bookmark"
           }),
-          new MentionsUnitedRenderer_List({
-            placeholderId: "interactions-list-placeholder",
+          new MentionsUnitedRenderer_GroupListByOrigin({
+            placeholderId: "interactions-grouplist-placeholder",
             skipTypes: "like,repost,bookmark"
           })
         ]);
 
       <% if (synDevTo) { %>
       mentionsUnited.register(new MentionsUnitedProvider_DevTo({ 
-        sourceUrl: "<%- synDevTo.url %>", 
-        sourceId: <%- synDevTo.id ?? 0 %> 
+        syndicationUrl: "<%- synDevTo.url %>", 
+        syndicationId: <%- synDevTo.id ?? 0 %> 
       }));
       <% } %>
 
       <% synPixelfed?.forEach(syn => { %>
         mentionsUnited.register(new MentionsUnitedProvider_Pixelfed({ 
-          sourceUrl: "<%- syn.url %>",
-          sourceTitle: "<%- syn.title %>",
+          syndicationUrl: "<%- syn.url %>",
+          syndicationTitle: "<%- syn.title %>",
           apiBaseUrl: "<%- config.api_proxy_base_url %>/pixelfed"
         }));
       <% }); %>
 
       <% synLemmy?.forEach(syn => { %>
         mentionsUnited.register(new MentionsUnitedProvider_Lemmy({ 
-          sourceUrl: "<%- syn.url %>",
-          sourceTitle: "<%- syn.title %>"
+          syndicationUrl: "<%- syn.url %>",
+          syndicationCommunity: "<%- syn.title %>"
         }));
       <% }); %>
 

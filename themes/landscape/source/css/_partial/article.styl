@@ -1056,12 +1056,19 @@
     --color-border: dark-color-border
   padding-block-end: (default-padding / 2)
 
-  .message, .interactions-list
+  .message
     font-style: italic
     color: color-header
 
   .interactions-avatars, .interactions-list
     padding-block-end: default-padding-vert
+    h3
+      @extend $block-caption
+      font-size: font-size-medium
+      font-weight: font-weight-normal
+      color: color-header
+      /[data-theme="dark"] &
+        color: dark-color-header
 
   .interactions-avatars
     --avatar-size: 36px
@@ -1074,14 +1081,8 @@
     flex-wrap: wrap
     gap: 0 var(--avatar-gap)
     h3
-      @extend $block-caption
-      font-size: font-size-medium
-      font-weight: font-weight-normal
       padding-block-start: calc(var(--avatar-gap) / 2)
       padding-inline-end: var(--avatar-gap)
-      color: color-header
-      /[data-theme="dark"] &
-        color: dark-color-header
     .avatar
       position: relative
       img
@@ -1116,6 +1117,23 @@
     grid-row-gap: medium-margin
     /[data-theme="dark"] &
       color: dark-color-header
+    .interaction-group
+      padding-left: 20px
+      &:before
+        content: ""
+        display: block
+        position: absolute
+        left: -4px
+        background-image: url(/images/icons/feather.svg)
+        background-repeat: no-repeat
+        background-position: 3px 3px
+        background-size: 16px
+        width: 24px
+        height: 24px
+        transform: rotate(2804deg)
+        filter: invert(.66)
+        /[data-theme="dark"] &
+          filter: invert(.33)
     .interaction
       padding-inline-start: calc(var(--avatar-size) + calc(var(--avatar-border) * 2))
       padding-inline-end: medium-margin
@@ -1162,7 +1180,7 @@
         display: block
         .author
           position: relative
-          padding-left: 20px
+          padding-left: calc(var(--icon-size) + 8px)
           font-weight: 400
           &:before
             content: ""
@@ -1180,12 +1198,12 @@
             width: var(--icon-size)
             padding-inline: 1px
       .content
-        margin-block-start: calc(var(--avatar-border) / 3 * 2);
-        padding-block-start: calc(var(--avatar-border) / 3 * 2);
-        border-block-start: solid;
-        border-width: 1px;
-        border-image-slice: 1;
-        border-image-source: linear-gradient(to right, var(--color-block), var(--color-border), var(--color-block));
+        margin-block-start: calc(var(--avatar-border) / 3 * 2)
+        padding-block-start: calc(var(--avatar-border) / 3 * 2)
+        border-block-start: solid
+        border-width: 1px
+        border-image-slice: 1
+        border-image-source: linear-gradient(to right, var(--color-block), var(--color-border), var(--color-block))
         p
           margin: 0
         p + p
@@ -1231,7 +1249,10 @@
     background-image: var(--brand-pixelfed)
     /[data-theme="dark"] &
       background-image: url(/images/icons/pixelfed_invert.svg)
+  .interaction.origin-lemmy .author:before,
   .avatar.origin-lemmy:after
     background-image: var(--brand-lemmy)
     /[data-theme="dark"] &
       filter: invert(1)
+  .interaction.origin-lemmy
+    --icon-size: 17px
