@@ -19,7 +19,13 @@ related:
   - Push-Over-Webmentions
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/113425944904022924
+  - host: Lemmy
+    title: Fediverse
+    url: https://programming.dev/post/21346794
+  - host: Lemmy
+    title: IndieWeb
+    url: https://programming.dev/post/21346804
 ---
 
 After I recently [dived into the Lemmy world](/post/Diving-Into-the-World-of-Lemmy/) and found out which API route I needed for a Lemmy integration as a [Mentions United Provider Plugin](https://github.com/kristofzerbe/Mentions-United?tab=readme-ov-file#provider-plugins), the rest was no longer particularly difficult, because the data is very heavy due to many redundancies, but easy to process. So my new plugin is ready and running on this blog to display Lemmy interactions ...
