@@ -8,7 +8,7 @@ rel:
   url: https://www.surinderbhomra.com/Blog/2020/05/12/Aligning-Images-In-Markdown
 syndication: 
 - host: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/113447973418426445
 ---
 Oh man! The other day I fumbled HTML with inline styles into one of my Markdown files to let the text flow past it classically with FLOAT on the left side. But there is a simple and charming solution to solve this in general purely via the image URL and some CSS that I could have come up with myself ...
 
