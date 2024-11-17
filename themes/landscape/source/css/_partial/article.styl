@@ -1060,6 +1060,15 @@
     font-style: italic
     color: color-header
 
+  .interactions-summary-line,
+  .interactions-summary-line > a
+    font-size: font-size-small
+    opacity: 0.75
+    margin-block-start: (default-margin/2)
+    color: color-header
+    /[data-theme="dark"] &
+      color: dark-color-header
+
   .interactions-avatars, .interactions-list
     position: relative
     padding-block-end: default-padding-vert
@@ -1116,8 +1125,6 @@
     --icon-size: 14px
     display: grid
     grid-row-gap: medium-margin
-    /[data-theme="dark"] &
-      color: dark-color-header
     .interaction-group
       padding-left: 20px
       &:before

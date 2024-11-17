@@ -49,12 +49,14 @@
   <div id="interactions-reposts-placeholder"></div>
   <div id="interactions-bookmarks-placeholder"></div>
   <div id="interactions-grouplist-placeholder"></div>
+  <div id="interactions-summaryline-placeholder"></div>
 
   <%- js('js/mentions-united.js') %>
   <%- js('js/mentions-united-provider_webmentions.js') %>
   <%- js('js/mentions-united-renderer_total-number.js') %>
   <%- js('js/mentions-united-renderer_avatars-by-type.js') %>
   <%- js('js/mentions-united-renderer_grouplist-by-origin.js') %>
+  <%- js('js/mentions-united-renderer_summary-line.js') %>
   <% if (synDevTo) { %><%- js('js/mentions-united-provider_devto.js'); %><% } %>
   <% if (synPixelfed?.length > 0) { %><%- js('js/mentions-united-provider_pixelfed.js'); %><% } %>
   <% if (synLemmy?.length > 0) { %><%- js('js/mentions-united-provider_lemmy.js'); %><% } %>
@@ -92,6 +94,9 @@
           new MentionsUnitedRenderer_GroupListByOrigin({
             placeholderId: "interactions-grouplist-placeholder",
             skipTypes: "like,repost,bookmark"
+          }),
+          new MentionsUnitedRenderer_SummaryLine({
+            placeholderId: "interactions-summaryline-placeholder"
           })
         ]);
 
