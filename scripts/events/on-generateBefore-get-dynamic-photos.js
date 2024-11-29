@@ -18,13 +18,14 @@ hexo.on('generateBefore', function() {
   let pHero = getHeroPhoto();
   let pPool = getPoolPhotos();
   let pShed = getShedPhotos();
+  let pReserve = getReservePhotos();
   let pPostPages = getPostAndPagePhotos();
   let pDrafts = getDraftPagePhotos();
   let pDynamic = getDynamicPagePhotos();
   let pAnything = getAnythingPagePhotos();
   let pNotes = getNotesPhotos();
 
-  let photos = [...pHero, ...pPool, ...pShed, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes]
+  let photos = [...pHero, ...pPool, ...pReserve, ...pShed, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes]
     .filter(p => (p.name)) //filter out all without photo name
     .sort((a, b) => a.key.localeCompare(b.key));
 
@@ -186,6 +187,41 @@ function getPoolPhotos() {
 
   log.info("-> " + magenta(pool.length) + " pool photos");
   return pool;
+}
+
+/** ================================================================================= */
+
+function getReservePhotos() {
+  const config = hexo.config;
+
+  var reserveDir = path.join(_rootDir, config.static_dir, config.reserve_dir);
+
+  let reserve = fs.readdirSync(reserveDir)
+    .filter(entry => fs.statSync(path.join(reserveDir, entry)).isDirectory())
+    .map(entry => ({ key: entry, status: "reserve", file: null }));
+
+  reserve.forEach(entry => {
+
+    let metaFile = path.join(reserveDir, entry.key, "meta.json");
+    let metaCreationDate, meta;
+    if (fs.existsSync(metaFile)) {
+      metaCreationDate = fs.statSync(metaFile).birthtime;
+      meta = JSON.parse(fs.readFileSync(metaFile));
+    }
+
+    entry.file = entry.key + ".jpg";
+    entry.route = entry.key; //meta?.custom.name || entry.key;
+    entry.name = entry.meta?.ObjectName || entry.key;
+    entry.article = null;
+    entry.pathMobile = "/" + path.join(config.reserve_dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
+    entry.pathTablet = "/" + path.join(config.reserve_dir, entry.key, "tablet.jpg").replace(/\134/g,"/");
+    entry.pathNormal = "/" + path.join(config.reserve_dir, entry.key, "normal.jpg").replace(/\134/g,"/");
+    entry.date = metaCreationDate;
+    entry.meta = meta;
+  });
+
+  log.info("-> " + magenta(reserve.length) + " reserve photos");
+  return reserve;
 }
 
 /** ================================================================================= */
