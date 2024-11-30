@@ -19,7 +19,7 @@ related:
   - Discoveries-29
 syndication:
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/113571754851830007
 ---
 
 This is now the fourth Discoveries issue in a row that deals with CSS and I wonder why. Maybe because CSS has been exploding in terms of functionality recently and many JavaScript articles on the web nearly always highlight some aspect of framework functionality, but I prefer to deal with vanilla JS.
