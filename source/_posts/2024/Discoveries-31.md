@@ -46,11 +46,11 @@ Have fun discovering new tech marvels…
 <!-- more -->
 
 {% discovery "&lt;browser-mockup&gt;" "catapart" "https://github.com/catapart/magnitce-browser-mockup" Discoveries-31 browser-mockup.png %}
-Whoever 'catapart' is, she/he/* did an amazing job on creating this custom HTML element, which mocks the Chrome browser for visual demonstrations and screenshots. You can just use his on <a href="https://catapart.github.io/magnitce-browser-mockup/demo/screenshot.html" title="‌">screenshot tool</a>  or integrate the Web Component into your solution.
+Whoever 'catapart' is, she/he/* did an amazing job on creating this custom HTML element, which mocks the Chrome browser for visual demonstrations and screenshots. You can just use his on <a href="https://catapart.github.io/magnitce-browser-mockup/demo/screenshot.html" title="browser-mockup demo">screenshot tool</a>  or integrate the Web Component into your solution.
 {% enddiscovery %}
 
 {% discovery "TypeIt" "Alex MacArthur" "https://www.typeitjs.com/" Discoveries-31 typeit.png %}
-Alex says about his typewriter solution “The most versatile JavaScript typewriter effect library on the planet”. I'm always a bit suspicious of such big words, but maybe it's true. In any case, the JS library is wonderfully suited for animating text on a website. However, it is only free for personal use or for open source projects.
+Alex says about his typewriter solution "The most versatile JavaScript typewriter effect library on the planet". I'm always a bit suspicious of such big words, but maybe it's true. In any case, the JS library is wonderfully suited for animating text on a website. However, it is only free for personal use or for open source projects.
 {% enddiscovery %}
 
 {% discovery "The Odin Project" "multiple contributors" "https://www.theodinproject.com/" Discoveries-31 the-odin-project.png %}
