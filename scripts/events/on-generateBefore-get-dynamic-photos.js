@@ -41,7 +41,7 @@ hexo.on('generateBefore', function() {
     page.updated = updateMDField(hexo, mdPage, "updated", newestPhotoDate);
   }
 
-  page.items = [...pHero, ...pPool, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes]
+  page.items = [...pHero, ...pPool, ...pReserve, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes]
     .filter(p => (p.name)) //filter out all without photo name
     .sort((a, b) => a.key.localeCompare(b.key));
 
