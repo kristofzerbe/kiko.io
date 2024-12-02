@@ -4,14 +4,14 @@
      data-file="<%- item.key %>"
      data-title="<%- item.name %>"
      data-date-created="<%- item.meta?.DateTimeOriginal %>">
-    <% if (item.article){ %>
-    <% if (item.article.type === "draft"){ %>
+  <% if (item.article){ %>
+    <% if (item.article.type === "draft") { %>
       <span class="status <%- item.status %> <%- item.article.type %>">Draft <em>&rbarr; <%- item.article.title %></em></span>
     <% } else { %>
       <a class="status <%- item.status %> <%- item.article.type %>" href="<%- item.article.url %>"><%- item.article.title %></a>
     <% } %>
   <% } else { %>
-    <span class="status <%- item.status %>">Unused</span>
+    <span class="status <%- item.status %>">Unused (<%- item.status.charAt(0).toUpperCase() + item.status.slice(1) %>)</span>
   <% } %>
   <a class="spotlight card-img" href="/<%= config.photo_dir %>/<%= item.key %>"
      data-description="<%- item.key %>&nbsp;&bull;&nbsp;<%- item.status %>"
