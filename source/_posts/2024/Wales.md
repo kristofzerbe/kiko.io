@@ -19,10 +19,19 @@ related:
   - Pool-Photo-Generator
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/113612225900700124
+  - host: Pixelfed
+    title: Wales - The South
+    url: https://pixelfed.social/p/kristofz/771040180441917384
+  - host: Pixelfed
+    title: Wales - The West
+    url: https://pixelfed.social/i/web/post/771043709338439853
+  - host: Pixelfed
+    title: Wales - The North
+    url: https://pixelfed.social/p/kristofz/771047222451419392
 ---
 
-As you may have gathered from my last photo post [Dunkirk] (/post/Dunkirk/), my wife and I tend to be rather restless when we travel. We always want to see and experience as much as possible... and my camera is always with me. In the 12 days in Wales in May this year, we not only covered almost 2,000 miles by car, but I also took about 1,700 photos. No wonder it took me so long to process them :D
+As you may have gathered from my last photo post [Dunkirk](/post/Dunkirk/), my wife and I tend to be rather restless when we travel. We always want to see and experience as much as possible... and my camera is always with me. In the 12 days in Wales in May this year, we not only covered almost 2,000 miles by car, but I also took about 1,700 photos. No wonder it took me so long to process them :D
 
 Of the almost 500 viable photos, I would like to show you a few of them here, along our route from the south to the north of this wonderful country.
 
