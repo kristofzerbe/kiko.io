@@ -16,7 +16,7 @@ tags:
 related:
   - Discoveries-31
   - Discoveries-30-CSS-HowTo-s
-  - Discoveries-29
+  - Discoveries-29-CSS
 syndication:
   - host: Mastodon
     url: 

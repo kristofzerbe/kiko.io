@@ -175,7 +175,7 @@ function getPoolPhotos() {
     }
 
     entry.file = entry.key + ".jpg";
-    entry.route = entry.key; //meta?.custom.name || entry.key;
+    entry.route = entry.key;
     entry.name = meta?.ObjectName;
     entry.article = null;
     entry.pathMobile = "/" + path.join(config.pool_dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
@@ -210,7 +210,7 @@ function getReservePhotos() {
     }
 
     entry.file = entry.key + ".jpg";
-    entry.route = entry.key; //meta?.custom.name || entry.key;
+    entry.route = entry.key;
     entry.name = entry.meta?.ObjectName || entry.key;
     entry.article = null;
     entry.pathMobile = "/" + path.join(config.reserve_dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
@@ -245,7 +245,7 @@ function getShedPhotos() {
     }
 
     entry.file = entry.key + ".jpg";
-    entry.route = entry.key; //meta?.custom.name || entry.key;
+    entry.route = entry.key;
     entry.name = entry.meta?.ObjectName || entry.key;
     entry.article = null;
     entry.pathMobile = "/" + path.join(config.shed_dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
