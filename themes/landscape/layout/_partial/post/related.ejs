@@ -1,12 +1,7 @@
 <% if (post.related && post.related.length){ %>
   <div class="article-related">
     <h2>Related</h2>
-    <% if (post.series) { %>
-      <p class="series">
-        This post is part of a series. Be sure to check out the other posts of 
-        <a href="<%- url_for('series/' + slugify(post.series.toLowerCase())) %>"><strong><%= post.series %></strong> ...</a>
-      </p>
-    <% } %>
+    <%- partial('anything-related') %>
     <div class="panels archives">
       <% post.related.forEach(function(item) { %>
         <% 

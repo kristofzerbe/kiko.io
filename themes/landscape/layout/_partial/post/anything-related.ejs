@@ -1,0 +1,12 @@
+<% if (post.series) { %>
+  <p>
+    This post is part of a series. Be sure to check out the other posts of 
+    <a href="<%- url_for('series/' + slugify(post.series.toLowerCase())) %>"><strong><%= post.series %></strong> ...</a>
+  </p>
+<% } %>
+<% if (post.project) { %>
+  <p>
+    This post belongs to a project. Be sure to check out the other posts of 
+    <a href="<%- url_for('projects/' + slugify(post.project.toLowerCase())) %>"><strong><%= post.project %></strong> ...</a>
+  </p>
+<% } %>
