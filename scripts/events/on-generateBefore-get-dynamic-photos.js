@@ -16,9 +16,9 @@ hexo.on('generateBefore', function() {
 
   // get photos
   let pHero = getHeroPhoto();
-  let pPool = getPoolPhotos();
-  let pShed = getShedPhotos();
-  let pReserve = getReservePhotos();
+  let pPool = getUnusedPhotos("pool", config.pool_dir);
+  let pShed = getUnusedPhotos("shed", config.shed_dir);
+  let pReserve = getUnusedPhotos("reserve", config.reserve_dir);
   let pPostPages = getPostAndPagePhotos();
   let pDrafts = getDraftPagePhotos();
   let pDynamic = getDynamicPagePhotos();
@@ -36,17 +36,13 @@ hexo.on('generateBefore', function() {
   let page = { name: "photos" };
   let mdPage = path.join("_dynamic", page.name + ".md");
   page = getMD(hexo, mdPage, page);
+  page.items = photos;
 
   if (!page.updated || newestPhotoDate > new Date(page.updated)) { 
     page.updated = updateMDField(hexo, mdPage, "updated", newestPhotoDate);
   }
 
-  page.items = [...pHero, ...pPool, ...pReserve, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes]
-    .filter(p => (p.name)) //filter out all without photo name
-    .sort((a, b) => a.key.localeCompare(b.key));
-
   pages.photos = page;
-// console.log(page);
 
   // individual PHOTO pages -----------------------------------
   photos.forEach(photo => {
@@ -55,7 +51,7 @@ hexo.on('generateBefore', function() {
     photo.path = path.join(config.photo_dir, photo.key, "index.html");
     photo.slug = photo.key;
     photo.permalink = config.url + "/" + config.photo_dir + "/" + photo.key;
-    photo.type = "photo";
+    // photo.type = "photo";
 
     if (photo.article && photo.article.date > new Date(photo.date)) {
       photo.updated = photo.article.date;
@@ -134,11 +130,11 @@ function getHeroPhoto() {
   let entry = {
     key: key,
     status: "used",
+    type: "start",
     file: config.hero.file,
     route: key, //meta?.custom.name || key,
     name: config.hero.name,
     article: {
-      type: "start",
       title: "Start",
       url: "/index.html"
     },
@@ -155,19 +151,19 @@ function getHeroPhoto() {
 
 /** ================================================================================= */
 
-function getPoolPhotos() {
+function getUnusedPhotos(type, dir) {
   const config = hexo.config;
 
-  var poolDir = path.join(_rootDir, config.static_dir, config.pool_dir);
+  var unusedDir = path.join(_rootDir, config.static_dir, dir);
 
-  let pool = fs
-    .readdirSync(poolDir)
-    .filter(entry => fs.statSync(path.join(poolDir, entry)).isDirectory())
-    .map(entry => ({ key: entry, status: "pool", file: null }));
+  let unused = fs
+    .readdirSync(unusedDir)
+    .filter(entry => fs.statSync(path.join(unusedDir, entry)).isDirectory())
+    .map(entry => ({ key: entry, status: "unused", type: type, file: null }));
 
-  pool.forEach(entry => {
+  unused.forEach(entry => {
 
-    let metaFile = path.join(poolDir, entry.key, "meta.json");
+    let metaFile = path.join(unusedDir, entry.key, "meta.json");
     let metaCreationDate, meta;
     if (fs.existsSync(metaFile)) {
       metaCreationDate = fs.statSync(metaFile).birthtime;
@@ -178,85 +174,15 @@ function getPoolPhotos() {
     entry.route = entry.key;
     entry.name = meta?.ObjectName;
     entry.article = null;
-    entry.pathMobile = "/" + path.join(config.pool_dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
-    entry.pathTablet = "/" + path.join(config.pool_dir, entry.key, "tablet.jpg").replace(/\134/g,"/");
-    entry.pathNormal = "/" + path.join(config.pool_dir, entry.key, "normal.jpg").replace(/\134/g,"/");
+    entry.pathMobile = "/" + path.join(dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
+    entry.pathTablet = "/" + path.join(dir, entry.key, "tablet.jpg").replace(/\134/g,"/");
+    entry.pathNormal = "/" + path.join(dir, entry.key, "normal.jpg").replace(/\134/g,"/");
     entry.date = metaCreationDate;
     entry.meta = meta;
   });
 
-  log.info("-> " + magenta(pool.length) + " pool photos");
-  return pool;
-}
-
-/** ================================================================================= */
-
-function getReservePhotos() {
-  const config = hexo.config;
-
-  var reserveDir = path.join(_rootDir, config.static_dir, config.reserve_dir);
-
-  let reserve = fs.readdirSync(reserveDir)
-    .filter(entry => fs.statSync(path.join(reserveDir, entry)).isDirectory())
-    .map(entry => ({ key: entry, status: "reserve", file: null }));
-
-  reserve.forEach(entry => {
-
-    let metaFile = path.join(reserveDir, entry.key, "meta.json");
-    let metaCreationDate, meta;
-    if (fs.existsSync(metaFile)) {
-      metaCreationDate = fs.statSync(metaFile).birthtime;
-      meta = JSON.parse(fs.readFileSync(metaFile));
-    }
-
-    entry.file = entry.key + ".jpg";
-    entry.route = entry.key;
-    entry.name = meta?.ObjectName || entry.key;
-    entry.article = null;
-    entry.pathMobile = "/" + path.join(config.reserve_dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
-    entry.pathTablet = "/" + path.join(config.reserve_dir, entry.key, "tablet.jpg").replace(/\134/g,"/");
-    entry.pathNormal = "/" + path.join(config.reserve_dir, entry.key, "normal.jpg").replace(/\134/g,"/");
-    entry.date = metaCreationDate;
-    entry.meta = meta;
-  });
-
-  log.info("-> " + magenta(reserve.length) + " reserve photos");
-  return reserve;
-}
-
-/** ================================================================================= */
-
-function getShedPhotos() {
-  const config = hexo.config;
-
-  var shedDir = path.join(_rootDir, config.static_dir, config.shed_dir);
-
-  let shed = fs.readdirSync(shedDir)
-    .filter(entry => fs.statSync(path.join(shedDir, entry)).isDirectory())
-    .map(entry => ({ key: entry, status: "shed", file: null }));
-
-  shed.forEach(entry => {
-
-    let metaFile = path.join(shedDir, entry.key, "meta.json");
-    let metaCreationDate, meta;
-    if (fs.existsSync(metaFile)) {
-      metaCreationDate = fs.statSync(metaFile).birthtime;
-      meta = JSON.parse(fs.readFileSync(metaFile));
-    }
-
-    entry.file = entry.key + ".jpg";
-    entry.route = entry.key;
-    entry.name = meta?.ObjectName || entry.key;
-    entry.article = null;
-    entry.pathMobile = "/" + path.join(config.shed_dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
-    entry.pathTablet = "/" + path.join(config.shed_dir, entry.key, "tablet.jpg").replace(/\134/g,"/");
-    entry.pathNormal = "/" + path.join(config.shed_dir, entry.key, "normal.jpg").replace(/\134/g,"/");
-    entry.date = metaCreationDate;
-    entry.meta = meta;
-  });
-
-  log.info("-> " + magenta(shed.length) + " shed photos");
-  return shed;
+  log.info("-> " + magenta(unused.length) + " " + type + " photos");
+  return unused;
 }
 
 /** ================================================================================= */
@@ -304,8 +230,8 @@ function getPostAndPagePhotos() {
     let post = postsAndPages.find(p => (p && p.photographFile === entry.file));
     if (post) {
       entry.name = post.photographName;
+      entry.type = post.layout;
       entry.article = {
-        type: post.layout,
         date: post.date,
         title: post.title,
         subtitle: post.subTitle
@@ -371,11 +297,11 @@ function getDraftPagePhotos() {
         let entry = {
           key: key,
           status: "used",
+          type: "draft",
           file: fm.photograph.file,
           route: key, //meta?.custom.name || key,
           name: fm.photograph.name,
           article: {
-            type: "draft",
             date: fm.date,
             title: fm.title,
             subtitle: fm.subTitle,
@@ -426,11 +352,11 @@ function getDynamicPagePhotos() {
         let entry = {
           key: key,
           status: "used",
+          type: "dynamic",
           file: fm.photograph.file,
           route: key, //meta?.custom.name || key,
           name: fm.photograph.name,
           article: {
-            type: "dynamic",
             date: fm.date,
             title: fm.title,
             subtitle: fm.subTitle,
@@ -491,11 +417,11 @@ function getAnythingPagePhotos() {
               let entry = {
                 key: key,
                 status: "used",
+                type: "anything",
                 file: fm.photograph.file,
                 route: key, //meta?.custom.name || key,
                 name: fm.photograph.name,
                 article: {
-                  type: "anything",
                   date: fm.date,
                   title: fm.title,
                   subtitle: fm.subTitle,
@@ -552,11 +478,11 @@ function getNotesPhotos() {
           let entry = {
             key: key,
             status: "used",
+            type: "notes",
             file: fm.photograph.file,
             route: key, //meta?.custom.name || key,
             name: fm.photograph.name,
             article: {
-              type: "notes",
               date: fm.date,
               title: fm.title + " " + dir,
               url: "/notes/" + dir

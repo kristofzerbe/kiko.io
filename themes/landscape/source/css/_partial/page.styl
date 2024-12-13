@@ -221,7 +221,8 @@
     input[type=radio]
       display: none
     input[name="view-filter-status"], 
-    input[name="view-filter-type"],
+    input[name="view-filter-used-type"],
+    input[name="view-filter-unused-type"],
     input[name="view-presentation"],
     input[name="view-sort-field"],
     input[name="view-sort-order"]
@@ -338,10 +339,12 @@
           background-color: rgba(95, 158, 160, 0.8)
         &.used.draft
           background-color: rgba(240, 75, 75 ,0.6)
-        &.pool
+        &.unused.pool
           background-color: rgba(95, 95, 95, 0.6)
-        &.reserve
+        &.unused.reserve
           background-color: rgba(130, 90, 90, 0.6)
+        &.unused.shed
+          background-color: rgba(90, 115, 130, 0.6)
         em
           opacity: 0.5
       &:hover

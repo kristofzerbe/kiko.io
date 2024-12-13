@@ -19,14 +19,14 @@
     <span id="view-filter-status">
       <input type="radio" name="view-filter-status" id="filter-status-all" checked
              data-status="all"
-             data-next-status="pool">
-      <label for="filter-status-all" title="Filter for unused photos (Pool)">
+             data-next-status="unused">
+      <label for="filter-status-all" title="Filter for unused photos">
         <mark>overall</mark>
       </label>
-      <input type="radio" name="view-filter-status" id="filter-status-pool"
-             data-status="pool"
+      <input type="radio" name="view-filter-status" id="filter-status-unused"
+             data-status="unused"
              data-next-status="used">
-      <label for="filter-status-pool" title="Filter for used photos">
+      <label for="filter-status-unused" title="Filter for used photos">
         <mark>unused</mark>
       </label>
       <input type="radio" name="view-filter-status" id="filter-status-used"
@@ -36,53 +36,79 @@
         <mark>used</mark>
       </label>
     </span>
-    <span id="view-filter-type" style="display:none">
-      <input type="radio" name="view-filter-type" id="filter-type-all" checked
+    <span id="view-filter-unused-type" style="display:none">
+      <input type="radio" name="view-filter-unused-type" id="filter-unused-type-all" checked
              data-type="all"
-             data-next-type="post">
-      <label for="filter-type-all" title="Filter for used in drafts">
+             data-next-type="pool">
+      <label for="filter-unused-type-all" title="Filter for unused in pool">
         <mark>overall</mark>
       </label>
-      <input type="radio" name="view-filter-type" id="filter-type-post"
+      <input type="radio" name="view-filter-unused-type" id="filter-unused-type-pool"
+             data-type="pool"
+             data-next-type="reserve">
+      <label for="filter-unused-type-pool" title="Filter for unused in pool">
+        <mark>in pool</mark>
+      </label>
+      <input type="radio" name="view-filter-unused-type" id="filter-unused-type-reserve"
+             data-type="reserve"
+             data-next-type="shed">
+      <label for="filter-unused-type-reserve" title="Filter for unused in reserve">
+        <mark>in reserve</mark>
+      </label>
+      <input type="radio" name="view-filter-unused-type" id="filter-unused-type-shed"
+             data-type="shed"
+             data-next-type="all">
+      <label for="filter-unused-type-shed" title="Filter for unused in shed">
+        <mark>in shed</mark>
+      </label>
+    </span>
+    <span id="view-filter-used-type" style="display:none">
+      <input type="radio" name="view-filter-used-type" id="filter-used-type-all" checked
+             data-type="all"
+             data-next-type="post">
+      <label for="filter-used-type-all" title="Filter for used in drafts">
+        <mark>overall</mark>
+      </label>
+      <input type="radio" name="view-filter-used-type" id="filter-used-type-post"
              data-type="post"
              data-next-type="draft">
-      <label for="filter-type-post" title="Filter for used in notes">
+      <label for="filter-used-type-post" title="Filter for used in notes">
         <mark>for posts</mark>
       </label>
-      <input type="radio" name="view-filter-type" id="filter-type-draft"
+      <input type="radio" name="view-filter-used-type" id="filter-used-type-draft"
              data-type="draft"
              data-next-type="notes">
-      <label for="filter-type-draft" title="Filter for used in pages">
+      <label for="filter-used-type-draft" title="Filter for used in pages">
         <mark>for drafts</mark>
       </label>
-      <input type="radio" name="view-filter-type" id="filter-type-notes"
+      <input type="radio" name="view-filter-used-type" id="filter-used-type-notes"
              data-type="notes"
              data-next-type="page">
-      <label for="filter-type-notes" title="Filter for used in dynamic pages">
+      <label for="filter-used-type-notes" title="Filter for used in dynamic pages">
         <mark>for notes</mark>
       </label>
-      <input type="radio" name="view-filter-type" id="filter-type-page"
+      <input type="radio" name="view-filter-used-type" id="filter-used-type-page"
              data-type="page"
              data-next-type="dynamic">
-      <label for="filter-type-page" title="Filter for used in anything pages">
+      <label for="filter-used-type-page" title="Filter for used in anything pages">
         <mark>for default pages</mark>
       </label>
-      <input type="radio" name="view-filter-type" id="filter-type-dynamic"
+      <input type="radio" name="view-filter-used-type" id="filter-used-type-dynamic"
              data-type="dynamic"
              data-next-type="anything">
-      <label for="filter-type-dynamic" title="Filter for used in dynamic pages">
+      <label for="filter-used-type-dynamic" title="Filter for used in dynamic pages">
         <mark>for dynamic pages</mark>
       </label>
-      <input type="radio" name="view-filter-type" id="filter-type-anything"
+      <input type="radio" name="view-filter-used-type" id="filter-used-type-anything"
              data-type="anything"
              data-next-type="start">
-      <label for="filter-type-anything" title="Show all used photos">
+      <label for="filter-used-type-anything" title="Show all used photos">
         <mark>for anything pages</mark>
       </label>
-      <input type="radio" name="view-filter-type" id="filter-type-start"
+      <input type="radio" name="view-filter-used-type" id="filter-used-type-start"
              data-type="start"
              data-next-type="all">
-      <label for="filter-type-start">
+      <label for="filter-used-type-start">
         <mark>at start page</mark>
       </label>
     </span>
@@ -170,10 +196,8 @@
       document.querySelector("input[name=view-sort-order]:checked").getAttribute("data-sort-order");
   }
 
-  let currentStatus =
-    document.querySelector("input[name=view-filter-status]:checked").getAttribute("data-status");
-  let currentType = 
-    document.querySelector("input[name=view-filter-type]:checked").getAttribute("data-type");
+  let currentStatus = document.querySelector("input[name=view-filter-status]:checked").getAttribute("data-status");
+  let currentType = (currentStatus !== "all") ? document.querySelector("input[name=view-filter-" + currentStatus + "type]:checked").getAttribute("data-type") : "all";
 
   /* ------------------------------------- */
 
@@ -182,7 +206,12 @@
       setFilterStatus(element);
     });
   });
-  document.querySelectorAll("input[name=view-filter-type]").forEach(element => {
+  document.querySelectorAll("input[name=view-filter-used-type]").forEach(element => {
+    element.addEventListener("click", (event) => {
+      setFilterType(element);
+    });
+  });
+  document.querySelectorAll("input[name=view-filter-unused-type]").forEach(element => {
     element.addEventListener("click", (event) => {
       setFilterType(element);
     });
@@ -211,90 +240,86 @@
 
   function setView() {
 
-    // document.querySelectorAll(".view .card").forEach((el) => { el.classList.add("trans"); });
-    // setTimeout(() => {
+    console.log(currentStatus + " : " + currentType);
 
-      //STATUS + TYPE
-      document.querySelector("#filter-status-" + currentStatus).checked = true;
-      document.querySelector("#filter-type-" + currentType).checked = true;
-      //---
-      document.getElementById("view-filter-type")
-        .style.display = (currentStatus === "used") ? "inline-block" : "none";
+    document.querySelector("#filter-status-" + currentStatus).checked = true;
+    if (currentStatus !== "all") {
+      document.querySelector("#filter-" + currentStatus + "-type-" + currentType).checked = true;
+    }
+    document.getElementById("view-filter-used-type").style.display = (currentStatus === "used") ? "inline-block" : "none";
+    document.getElementById("view-filter-unused-type").style.display = (currentStatus === "unused") ? "inline-block" : "none";
 
-      document.querySelectorAll(".card").forEach(item => {
-        let bShow = false;
-        switch (currentStatus) {
-          case "all":
-            bShow = true;
+    document.querySelectorAll(".card").forEach(item => {
+      let bShow = false;
+      switch (currentStatus) {
+        case "all":
+          bShow = true;
+          break;
+
+        // case "unused":
+        //   bShow = (item.getAttribute("data-status") === currentStatus);
+        //   break;
+          
+        // case "used":
+        default:
+          bShow = (item.getAttribute("data-status") === currentStatus); 
+          if (currentType !== "all") {
+            bShow = (currentType === item.getAttribute("data-type"));
             break;
-
-          case "pool":
-            bShow = (item.getAttribute("data-status") === currentStatus);
-            break;
-            
-          case "used":
-            bShow = (item.getAttribute("data-status") === currentStatus); 
-            if (currentType !== "all") {
-              bShow = (currentType === item.getAttribute("data-type"));
-              break;
-            }
-        }
-        if (bShow) { showPhoto(item); } else { hidePhoto(item); }
-      });
-      refreshView();
-
-      //SORTING
-      let aSorting = currentSorting.split("|");
-      document.querySelector("#sort-field-" + aSorting[0]).checked = true;
-      document.querySelector("#sort-order-" + aSorting[1]).checked = true;
-      //---
-      tinysort('#photos > .card',{data: aSorting[0], order: aSorting[1], forceStrings: true});
-
-      //PRESENTATION
-      document.querySelector('.view').classList = "view " + currentPresentation;
-      document.querySelector("#presentation-" + currentPresentation).checked = true;
-      //---
-      if (currentPresentation === "masonry") {
-        macyInstance = new Macy({
-          container: '#photos',
-          trueOrder: false,
-          waitForImages: false,
-          useOwnImageLoader: false,
-          debug: true,
-          mobileFirst: true,
-          columns: 2,
-          margin: {
-            y: 6,
-            x: 6
-          },
-          breakAt: {
-            980: {
-              margin: {
-                x: 8,
-                y: 8
-              },
-              columns: 3
-            },
-            768: 2,
-            640: 3
           }
-        });
-      } else {
-        if (macyInstance) {
-          macyInstance.remove();
-          macyInstance = null;
-        }
       }
+      if (bShow) { showPhoto(item); } else { hidePhoto(item); }
+    });
+    refreshView();
 
-    //   document.querySelectorAll(".view .card").forEach((el) => { el.classList.remove("trans"); });
-    // }, 400);
+    //SORTING
+    let aSorting = currentSorting.split("|");
+    document.querySelector("#sort-field-" + aSorting[0]).checked = true;
+    document.querySelector("#sort-order-" + aSorting[1]).checked = true;
+    //---
+    tinysort('#photos > .card',{data: aSorting[0], order: aSorting[1], forceStrings: true});
+
+    //PRESENTATION
+    document.querySelector('.view').classList = "view " + currentPresentation;
+    document.querySelector("#presentation-" + currentPresentation).checked = true;
+    //---
+    if (currentPresentation === "masonry") {
+      macyInstance = new Macy({
+        container: '#photos',
+        trueOrder: false,
+        waitForImages: false,
+        useOwnImageLoader: false,
+        debug: true,
+        mobileFirst: true,
+        columns: 2,
+        margin: {
+          y: 6,
+          x: 6
+        },
+        breakAt: {
+          980: {
+            margin: {
+              x: 8,
+              y: 8
+            },
+            columns: 3
+          },
+          768: 2,
+          640: 3
+        }
+      });
+    } else {
+      if (macyInstance) {
+        macyInstance.remove();
+        macyInstance = null;
+      }
+    }
 
   }
 
   function setPresentation(ePresentation) {
     currentPresentation = ePresentation.getAttribute("data-next-presentation");
     setCookie("photos-presentation", currentPresentation, 365);
-
     setView();
   }
 
@@ -303,7 +328,6 @@
     let sortOrder = document.querySelector("input[name=view-sort-order]:checked").getAttribute("data-sort-order");
     currentSorting = newSortField + "|" + sortOrder;
     setCookie("photos-sorting", currentSorting, 365);
-
     setView();
   }
 
@@ -312,22 +336,17 @@
     let sortField = document.querySelector("input[name=view-sort-field]:checked").getAttribute("data-sort-field");
     currentSorting = sortField + "|" + newSortOrder;
     setCookie("photos-sorting", currentSorting, 365);
-
     setView();
   }
 
   function setFilterStatus(eStatus) {
     currentStatus = eStatus.getAttribute("data-next-status");
-    if (currentStatus === "all") { // reset TYPE
-      currentType = "all";
-    }
-
+    currentType = "all"; // reset TYPE
     setView();
   }
 
   function setFilterType(eType) {
     currentType = eType.getAttribute("data-next-type");
-
     setView();
   }
 
@@ -351,7 +370,6 @@
         let resultCount = document.querySelectorAll(".card:not(.hide)").length;
         let resultElement = document.querySelector(".view-bar #view-count");
         resultElement.textContent = resultCount;
-
         //No need: Spotlight.init();
         if (macyInstance) macyInstance.reInit();
       }, 300);

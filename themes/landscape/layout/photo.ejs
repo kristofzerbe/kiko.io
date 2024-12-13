@@ -38,12 +38,12 @@
         <% } else if (page.status === 'shed') { %>
           <span>Shed Photo</span>
         <% } else { %>
-          <% if (page.article?.type === "draft") { %>
+          <% if (page.type === "draft") { %>
             <span>Used at draft <em><%= page.article?.title %></em></span>
-          <% } else if (page.article?.type === "start") { %>
-            <span>Used at <a href="<%= page.article.url %>"><%= page.article?.type %></a> page</span>
+          <% } else if (page.type === "start") { %>
+            <span>Used at <a href="<%= page.article.url %>"><%= page.type %></a> page</span>
           <% } else { %>
-            <span>Used at <%= page.article?.type + ((["page", "post"].some(v => page.article?.type.includes(v))) ? "" : " page") %> 
+            <span>Used at <%= page.type + ((["page", "post"].some(v => page.type.includes(v))) ? "" : " page") %> 
               <a href="<%= page.article?.url %>"><%= page.article?.title %></a>
             </span>
           <% } %>
