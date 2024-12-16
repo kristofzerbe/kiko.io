@@ -17,7 +17,7 @@ related:
   - Mentions-United-3-2-1-go
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/113664203082977292
 ---
 
 Every craftsman has one: his own toolbox, which he tends and takes care of. The most diverse tools accumulate there over the years, both bought and homemade, but all things that make his life easier.
