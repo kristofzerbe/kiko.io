@@ -41,7 +41,7 @@ The wonderful thing about the club is that they don't see themselves as a club a
 
 I love such hopeful projects and of course I now wear an HBUFC jersey, even if it's not the chic blue one, but the colourful home jersey, because that's all the guys had in XL ... which brings us back to the gingerbread again :D
 
-![Max and James](Hout-Bay-United-Football-Community/PXL_20241220_170226641.jpg)
+![James and Max](Hout-Bay-United-Football-Community/PXL_20241220_170226641.jpg)
 
 I think Max and James' commitment is really amazing and I wish them all the best for their future. These two boys strengthen my optimism in these turbulent times, that there is good in people and it thrives.
 
