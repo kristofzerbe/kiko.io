@@ -40,7 +40,7 @@ Das wunderbare an dem Club ist, das sie von sich sagen gar kein Club zu sein, so
 
 Ich liebe solche hoffnungsfrohen Projekte und natürlich trage ich nun ein HBUFC-Jersey, wenn auch nichts das schicke blaue, sondern das bunte Heimtrikot, denn nur das hatten die Jungs in XL da ... womit wir wieder bei den Lebkuchen wären :D
 
-![Max and James](/post/Hout-Bay-United-Football-Community/PXL_20241220_170226641.jpg)
+![James and Max](/post/Hout-Bay-United-Football-Community/PXL_20241220_170226641.jpg)
 
 Ich finde das Engagement von Max und James wirklich toll und ich wünsche ihnen das Allerbeste für Ihre Zukunft. Die beiden Jungs bestärken meinen Optimismus in diesen turbulenten Zeiten, dass das Gute im Menschen lebt und gedeiht.
 
