@@ -18,7 +18,7 @@ related:
   - How-to-keep-the-GPS-coordinates-accurate-while-shooting
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/113686924295765418
 ---
 
 <img src="/images/logos/hbufc.png" class="float-right no-zoom" />
