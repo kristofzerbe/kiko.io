@@ -16,7 +16,7 @@ related:
   - Johnny-Decimal-Emerging-from-the-Abyss
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/113713012309378223
 ---
 
 With this post, I would like to continue what I started last year and what inspired me, among others, [Robb Knights **App Defaults**](https://defaults.rknight.me/).
