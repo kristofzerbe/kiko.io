@@ -11,7 +11,7 @@ teaser: "What I use in my daily digital life"
 
 What stuff do I spend my digital life with? Here's my completely personal and non-transferable list of things I have today and desperately need and may have needed in the past. Inspired by Wes Bos' [uses.tech](https://uses.tech/).
 
-*Last updated on 14 July 2024*
+*Last updated on 25 December 2024*
 
 ---
 
@@ -47,7 +47,7 @@ My first piece of own technology was a camera build in the former GDR called **P
 
 ### Mail
 
-I don't remember when I wrote my first mail, but for a long time I was a **web.de** customer because I was fed up with fiddling with mail clients and since the release of **[Gmail](https://Gmail.com)** in 2004 this has been my central communication service of personal use and since 2024 completely [Johnny-Decimal-structured](/post/Johnny-Decimal-Emerging-from-the-Abyss/).
+I don't remember when I wrote my first mail, but for a long time I was a **web.de** customer because I was fed up with fiddling with mail clients and since the release of **[Gmail](https://gmail.com)** in 2004 this has been my central communication service of personal use and since 2024 completely [Johnny-Decimal-structured](/post/Johnny-Decimal-Emerging-from-the-Abyss/).
 
 ### Cloud Storage
 
@@ -60,6 +60,8 @@ Taking photos and not showing them to anyone is a waste of time. I publish my pu
 ### News
 
 On an Android smartphone from Google, their algorithm-based **Google News** is just a swipe away. A little closer to my real interests are the topics I subscribe to in **[Flipboard](https://flipboard.com/)**. For everything else, I have **[Feedly](https://feedly.com/)** and, more recently, **[Read You](https://github.com/Ashinch/ReadYou)**, where I mainly read private blogs of a technical nature.
+
+With the completion of the **[blogroll on kiko.io](/blogroll)** in 2024, which not only lists my favorite blogs, but also reads and displays the last available post from the configured feed, it has become a habit for me to read the latest posts from these bloggers first thing in the morning. My own blogroll reader, so to speak.
 
 ### Social media
 
@@ -105,7 +107,7 @@ I've been using Lightroom since I got into digital photography, now as a subscri
 
 Particularly under unfavourable lighting conditions, the camera setting "ISO Auto" produces a lot of image noise and grain and [Lightroom's solution to this is suboptimal](/post/Comparison-of-Lightroom-Classic-Denoise-with-Topaz-Photo-AI/), which is why the **[Topaz Photo AI](https://www.topazlabs.com/topaz-photo-ai)** plugin is used here.
 
-You can use the export function to get photos out of Lightroom, but it's easier and more convenient with the **[jf Collection Publisher](https://regex.info/blog/lightroom-goodies/collection-publisher)** plugin. 
+You can use the export function to get photos out of Lightroom, but it's easier and more convenient with the **[jf Collection Publisher](https://regex.info/blog/lightroom-goodies/collection-publisher)** plugin.
 
 When I'm not working with my own photos, I use the Windows classic **[Paint.NET](https://www.getpaint.net/)** to manipulate images of any kind.
 
