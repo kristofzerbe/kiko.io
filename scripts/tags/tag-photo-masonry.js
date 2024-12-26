@@ -22,55 +22,70 @@ hexo.extend.tag.register("photo_masonry", function(args) {
 
   args.forEach(function(e) {
 
-    let item = {
-      photoName: e,
-      title: e,
-      urlNormal: "",
-      urlMobile: "",
-      isPhoto: true
-    }
+    let item = null;
     let metaPath;
 
-    let assetPath = path.join(that.asset_dir, item.photoName + ".jpg")
-    if (fs.existsSync(assetPath)) { 
-      item.urlNormal = `/${that.path}${item.photoName}.jpg`;
-      item.urlMobile = item.urlNormal;
-      item.isPhoto = false;
+    let assetPath = path.join(that.asset_dir, e + ".jpg")
+    if (fs.existsSync(assetPath)) {
+      item = {
+        photoName: e,
+        title: e,
+        urlNormal: `/${that.path}${e}.jpg`,
+        urlMobile: `/${that.path}${e}.jpg`,
+        isPhoto: false
+      } 
     }
 
-    let photoPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "normal", item.photoName + ".jpg");
+    let photoPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "normal", e + ".jpg");
     if (fs.existsSync(photoPath)) { 
-      item.urlNormal = `/photos/normal/${item.photoName}.jpg`;
-      item.urlMobile = `/photos/mobile/${item.photoName}.jpg`;
-      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "meta", item.photoName + ".json");
+      item = {
+        photoName: e,
+        title: e,
+        urlNormal: `/photos/normal/${e}.jpg`,
+        urlMobile: `/photos/mobile/${e}.jpg`,
+        isPhoto: true
+      } 
+      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "meta", e + ".json");
     }
     
-    let poolPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.pool_dir, item.photoName, "normal.jpg");
+    let poolPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.pool_dir, e, "normal.jpg");
     if (fs.existsSync(poolPath)) { 
-      item.urlNormal = `/pool/${item.photoName}/normal.jpg`; 
-      item.urlMobile = `/pool/${item.photoName}/mobile.jpg`; 
-      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.pool_dir, item.photoName, "meta.json");
+      item = {
+        photoName: e,
+        title: e,
+        urlNormal: `/pool/${e}/normal.jpg`,
+        urlMobile: `/pool/${e}/mobile.jpg`,
+        isPhoto: true
+      } 
+      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.pool_dir, e, "meta.json");
     }
     
-    let shedPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir, item.photoName, "normal.jpg");
+    let shedPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir, e, "normal.jpg");
     if (fs.existsSync(shedPath)) { 
-      item.urlNormal = `/shed/${item.photoName}/normal.jpg`; 
-      item.urlMobile = `/shed/${item.photoName}/mobile.jpg`; 
-      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir, item.photoName, "meta.json");
+      item = {
+        photoName: e,
+        title: e,
+        urlNormal: `/shed/${e}/normal.jpg`,
+        urlMobile: `/shed/${e}/mobile.jpg`,
+        isPhoto: true
+      } 
+      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir, e, "meta.json");
     }
 
-    if (!item.urlNormal || !item.urlMobile) {
-      console.error(photoName + " not found in assets, photos, pool or shed!");
-    }
-
-    if (fs.existsSync(metaPath)) {
-      let meta = JSON.parse(fs.readFileSync(metaPath));
-      if (typeof meta?.ObjectName !== "undefined") {
-        item.title =  meta?.ObjectName;
+    if (item) {
+    
+      if (fs.existsSync(metaPath)) {
+        let meta = JSON.parse(fs.readFileSync(metaPath));
+        if (typeof meta?.ObjectName !== "undefined") {
+          item.title =  meta?.ObjectName;
+        }
       }
-    }
+  
+      masonry.items.push(item);
 
-    masonry.items.push(item);
+    } else {
+      console.error("tag-photo-masonry: " + e + " not found in assets, photos, pool or shed!");
+    }
   });
 
   const element = compileHandlebar(hexo, "photo-masonry.handlebars", masonry);
