@@ -19,7 +19,7 @@ related:
   - Include-and-provide-JSON-data-in-Hexo-EJS-Templates
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/113731040349316097
 ---
 
 I have customized my Hexo installation a lot over the last few years to generate my blog kiko.io. This mainly concerns countless generators that help me to create content aside from posts and integrate it into the structure. There are also a few that have to load data from external web servers, such as my [Blogroll](/blogroll).
