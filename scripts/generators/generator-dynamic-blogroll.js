@@ -11,14 +11,16 @@ const _helpers = getHelpers(hexo);
 const _rootDir = hexo.source_dir.replace("source", "");
 
 hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
+  const config = this.config;
   
+  if(hexo.status.online === false) { 
+    log.error("NO NETWORK CONNECTION FOR BLOGROLL GENERATION");
+    return null;
+  }
+
   let page = locals.dynamic.blogroll;
 
   log.info("Generating Dynamic Page " + magenta("BLOGROLL") + " for " + magenta(page.items.length + " blogs") + " ...");
-
-  const config = this.config;
-
-  //if (config.offline === true) { return null; } //DOESN'T WORK WITH HEXO SERVER
 
   page.content = page.content
     .replaceAll("{% blogroll_length %}", page.items.length)

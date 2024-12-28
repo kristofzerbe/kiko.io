@@ -7,9 +7,12 @@ hexo.extend.generator.register("wellknown-webfinger", async function() {
 
   const config = this.config;
 
-  //if (config.offline === true) { return null; } //DOESN'T WORK WITH HEXO SERVER
+  if(hexo.status.online === false) { 
+    log.error("NO NETWORK CONNECTION FOR WEBFINGER GENERATION");
+    return null;
+  }
 
-  let mastodonUrl = this.config.profiles.mastodon.split("@");
+  let mastodonUrl = config.profiles.mastodon.split("@");
   let mastodonServer = mastodonUrl[0];
   let mastodonHost = mastodonServer.replaceAll("/","").replace("https:", "");
   let mastodonUser = mastodonUrl[1];

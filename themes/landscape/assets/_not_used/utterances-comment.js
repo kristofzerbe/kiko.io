@@ -1,5 +1,5 @@
 function insertUtterancesCommentBlock() {
-  if (isOffline) return;
+  // if (isOffline) return;
   
   var commentTheme = "github-light";
   if(localStorage.getItem("theme")) {

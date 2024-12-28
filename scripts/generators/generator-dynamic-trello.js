@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('hexo-fs');
 const front = require('hexo-front-matter');
 const axios = require('axios');
-const { isInternetAvailable, InternetAvailabilityService } = require('is-internet-available');
+// const { isInternetAvailable } = require('is-internet-available');
 
 //TODO: Switch from Trello to Obsidian
 //TODO: Extract to ON-READY-GET-...
@@ -12,19 +12,20 @@ const { isInternetAvailable, InternetAvailabilityService } = require('is-interne
 hexo.extend.generator.register("dynamic-trello", async function(locals) {
   const config = this.config;
 
-  //if (config.offline === true) { return null; } //DOESN'T WORK WITH HEXO SERVER
+  if(hexo.status.online === false) { 
+    log.error("NO NETWORK CONNECTION FOR TRELLO GENERATION");
+    return null;
+  }
+  if(hexo.config.features_available.trello === false) { 
+    log.error("FEATURE TRELLO GENERATION SKIPPED");
+    return null;
+  }
+
 
   const helpers = Object.keys(hexo.extend.helper.store).reduce((result, name) => {
     result[name] = hexo.extend.helper.get(name).bind({ ...hexo, page: {} });
     return result;
   }, {});
-
-  isInternetAvailable({ authority: 'https://trello.com' }).then(function(status) {
-    if(status === false) { 
-      log.error("NO NETWORK CONNECTION TO TRELLO");
-      return null; 
-    }
-  });
 
   let promises = [];
   let result = [];

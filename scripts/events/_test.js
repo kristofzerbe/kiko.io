@@ -2,9 +2,7 @@ const log = require("hexo-log")({ debug: false, silent: false });
 const { red } = require("chalk");
 
 hexo.on('ready', function(){
-  log.info(red(">>> ready ------------------------------------------------------"));
-  //console.log(this);
-  console.log(this.env);
+  //see on-ready.js
 });
 
 hexo.on('generateBefore', function(){
