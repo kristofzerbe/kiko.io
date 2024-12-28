@@ -1,16 +1,13 @@
 const log = require("hexo-log")({ debug: false, silent: false });
-const { red } = require("chalk");
+const { green, red } = require("chalk");
 const { isInternetAvailable } = require('is-internet-available');
 
 hexo.on('ready', async function(){
-  log.info(red(">>> ready ------------------------------------------------------"));
 
-  hexo.status = {
-    online: await isInternetAvailable()
-  };
+  const isOnline = await isInternetAvailable();
+  hexo.status = isOnline ? "online" : "offline";
 
-  // console.log(hexo);
-  console.log(this.env);
-  console.log(this.status);
+  let statusColor = isOnline ? green : red;
+  log.info("Hexo is " + statusColor(hexo.status.toUpperCase()));
 
 });

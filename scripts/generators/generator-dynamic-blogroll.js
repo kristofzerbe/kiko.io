@@ -13,7 +13,7 @@ const _rootDir = hexo.source_dir.replace("source", "");
 hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
   const config = this.config;
   
-  if(hexo.status.online === false) { 
+  if(hexo.status === "offline") { 
     log.error("NO NETWORK CONNECTION FOR BLOGROLL GENERATION");
     return null;
   }

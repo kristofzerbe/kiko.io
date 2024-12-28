@@ -7,7 +7,7 @@ hexo.extend.generator.register("wellknown-webfinger", async function() {
 
   const config = this.config;
 
-  if(hexo.status.online === false) { 
+  if(hexo.status === "offline") { 
     log.error("NO NETWORK CONNECTION FOR WEBFINGER GENERATION");
     return null;
   }

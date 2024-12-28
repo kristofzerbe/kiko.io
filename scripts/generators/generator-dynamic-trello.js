@@ -12,7 +12,7 @@ const axios = require('axios');
 hexo.extend.generator.register("dynamic-trello", async function(locals) {
   const config = this.config;
 
-  if(hexo.status.online === false) { 
+  if(hexo.status === "offline") { 
     log.error("NO NETWORK CONNECTION FOR TRELLO GENERATION");
     return null;
   }
