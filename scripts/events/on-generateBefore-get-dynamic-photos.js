@@ -51,7 +51,7 @@ hexo.on('generateBefore', function() {
     photo.path = path.join(config.photo_dir, photo.key, "index.html");
     photo.slug = photo.key;
     photo.permalink = config.url + "/" + config.photo_dir + "/" + photo.key;
-    // photo.type = "photo";
+    photo.photo = true;
 
     if (photo.article && photo.article.date > new Date(photo.date)) {
       photo.updated = photo.article.date;
