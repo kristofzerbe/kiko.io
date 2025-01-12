@@ -15,8 +15,8 @@ tags:
   - Lemmy
 related:
   - Mentions-United-3-2-1-go
-  - Diving-Into-the-World-of-Lemmy
-  - Push-Over-Webmentions
+  - Mentions-United-New-Renderer-and-Refactorings
+  - Mentions-United-Native-Mastodon-Provider
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/113425944904022924
@@ -32,7 +32,7 @@ After I recently [dived into the Lemmy world](/post/Diving-Into-the-World-of-Lem
 
 <!-- more -->
 
-I decided not to use the thread view as Lemmy has done, as you can quickly reach the limits of readability with very convoluted comments, especially on a smartphone. I rely on a chronological display of comments, which in my opinion is just as clear and catchy. However, where I saw problems was in the mix of different interaction origins. If there are several syndications for a post, for example one on Mastodon and two in different Lemmy communities, and the comments and replies to them happen at different times, the overview is ruined again because it's not clear which comment was replied to in a purely chronological order. For this reason, there is also a new renderer plugin called “Grouplist by Origin”, which is able to group the interactions according to the actual syndications. But more on that later.
+I decided not to use the thread view as Lemmy has done, as you can quickly reach the limits of readability with very convoluted comments, especially on a smartphone. I rely on a chronological display of comments, which in my opinion is just as clear and catchy. However, where I saw problems was in the mix of different interaction origins. If there are several syndications for a post, for example one on Mastodon and two in different Lemmy communities, and the comments and replies to them happen at different times, the overview is ruined again because it's not clear which comment was replied to in a purely chronological order. For this reason, there is also a new renderer plugin called "Grouplist by Origin", which is able to group the interactions according to the actual syndications. But more on that later.
 
 {% alertbox info %}
 If you don't know what this is all about, I recommend the article [**Mentions United ... 3, 2, 1, Go**](/post/Mentions-United-3-2-1-go/), in which I describe what Mentions United actually is and what you can use it for.

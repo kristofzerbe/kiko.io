@@ -10,17 +10,16 @@ photograph:
   file: D50_0272_2408.jpg
   name: Thomas Garden 24-08 XIII
   socialmedia: /static/images/social-media/Mentions-United-3-2-1-go.png
-series: IndieWeb
 project: mentions-united
 categories:
-  - Tools
+  - Coding
 tags:
   - Webmention
   - Interactions
 related:
-  - Push-Over-Webmentions
-  - Hexo-and-the-IndieWeb
-  - IndieFediWebVerse
+  - Mentions-United-Lemmy-plugin-a-few-updates
+  - Mentions-United-New-Renderer-and-Refactorings
+  - Mentions-United-Native-Mastodon-Provider
 ---
 
 <img src="/images/mentions-united.svg" class="float-right no-zoom">

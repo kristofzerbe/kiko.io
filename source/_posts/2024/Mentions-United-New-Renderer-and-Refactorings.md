@@ -15,9 +15,9 @@ tags:
   - Webmention
   - Interactions
 related:
-  - Mentions-United-Lemmy-plugin-a-few-updates
   - Mentions-United-3-2-1-go
-  - Push-Over-Webmentions
+  - Mentions-United-Lemmy-plugin-a-few-updates
+  - Mentions-United-Native-Mastodon-Provider
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/113499449609783497

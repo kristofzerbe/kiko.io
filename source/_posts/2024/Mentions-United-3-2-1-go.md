@@ -9,17 +9,16 @@ photograph:
   file: D50_0272_2408.jpg
   name: Thomas Garden 24-08 XIII
   socialmedia: /static/images/social-media/Mentions-United-3-2-1-go.png
-series: IndieWeb
 project: mentions-united
 categories:
-  - Tools
+  - Coding
 tags:
   - Webmention
   - Interactions
 related:
-  - Push-Over-Webmentions
-  - Hexo-and-the-IndieWeb
-  - IndieFediWebVerse
+  - Mentions-United-Lemmy-plugin-a-few-updates
+  - Mentions-United-New-Renderer-and-Refactorings
+  - Mentions-United-Native-Mastodon-Provider
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/113248737015518151
@@ -43,7 +42,7 @@ Blogging means putting your own opinion on public display, and of course you hop
 
 <!-- more -->
 
-It seems that blogging is becoming more popular again. After many years of being fenced in by large “opinion corporations”, which made it easy to share information, many people have realized that this simplicity comes at a price, because the opinion itself or even the person was never the focus of interest. The content at the center of the closed networks is monetized or used to manipulate others. Today, blogging is also an expression of the desire for freedom and independence and emancipation from the large social media platforms.
+It seems that blogging is becoming more popular again. After many years of being fenced in by large "opinion corporations", which made it easy to share information, many people have realized that this simplicity comes at a price, because the opinion itself or even the person was never the focus of interest. The content at the center of the closed networks is monetized or used to manipulate others. Today, blogging is also an expression of the desire for freedom and independence and emancipation from the large social media platforms.
 
 However, this freedom also means that you have to have a fair amount of technical understanding and that linking content is not as easy as on the big platforms, where you just have to be able to use a keyboard. Blogging platforms like Wordpress are certainly a help at this point, but at the end of the day you just have a blog in which you can write down and publish your thoughts in the form of posts, but not automatically a conversation. The most important building block for a real conversation via a blog is the hyperlink, the central element of the World Wide Web. And in contrast to the 2000s, the early days of blogging, today there are a number of ways to communicate via a link and thus to engage in an interaction that goes beyond simply commenting on a blog post.
 
