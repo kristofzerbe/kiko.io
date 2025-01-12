@@ -492,8 +492,11 @@
                 filter: grayscale(0)
           &.host-vernissage
             background-image: var(--brand-vernissage)
-            opacity: 0.25
-            background-size: 12px
+            opacity: 0.6
+            background-size: 18px
+            /[data-theme="dark"] &
+              &:hover
+                filter: invert(1)
 
         span.info-location
           display: block
@@ -507,7 +510,8 @@
 
       span.pre-title
         display: block
-        margin-top: small-margin
+        margin-block: small-margin
+        line-height: line-height-small
       .status
         grid-area: status
         margin: -(default-padding / 2)

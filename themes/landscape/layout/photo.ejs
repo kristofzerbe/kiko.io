@@ -33,10 +33,8 @@
       <% } %>
       <li>
         <label>Status</label>
-        <% if (page.status === 'pool') { %>
-          <span>Unused (Pool Photo)</span>
-        <% } else if (page.status === 'shed') { %>
-          <span>Shed Photo</span>
+        <% if (page.status === 'unused') { %>
+          <span>Unused in <%= page.type %></span>
         <% } else { %>
           <% if (page.type === "draft") { %>
             <span>Used at draft <em><%= page.article?.title %></em></span>
