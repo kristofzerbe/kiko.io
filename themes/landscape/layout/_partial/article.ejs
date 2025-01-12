@@ -63,16 +63,18 @@
   </div>
 
   <% if (!post.hidden) { %>
-  <%- partial('post/interaction', { post: post, type: 'article', comments: true }) %>
-  <%- partial('post/related') %>
-  <%- partial('post/nav') %>
+    <%- partial('post/interaction', { post: post, type: 'article', comments: true }) %>
   <% } else { %>
     <% if (post.isLocale) { %>
-      <p style="font-style: italic; font-size: 0.9rem;">
-        Diese Seite ist lediglich die Übersetzung des <a href="<%= url_for(post.path).replace('/de', '') %>">englischen Originalbeitrags</a>. 
-        Alle Syndizierungen und Interaktionen findest Du dort...
-      </p>
+      <div class="article-syndication">
+        <p style="font-style: italic; font-size: 0.9rem; padding-top: 1rem">
+          Diese Seite ist lediglich die Übersetzung des <a href="<%= url_for(post.path).replace('/de', '') %>">englischen Originalbeitrags</a>. 
+          Alle Syndizierungen und Interaktionen findest Du dort...
+        </p>  
+      </div>
     <% } %>
   <% } %>
+  <%- partial('post/related') %>
+  <%- partial('post/nav') %>
 
 </article>
