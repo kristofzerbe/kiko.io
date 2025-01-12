@@ -21,7 +21,7 @@ related:
   - Mentions-United-New-Renderer-and-Refactorings
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/113816442246434483
 ---
 
 When I started Mentions United to collect and display the interactions of syndication from the various Fediverse platforms on my static blog, I initially focused on my needs with regard to the range of functions... see also [**Mentions United... 3, 2, 1, Go**](/post/Mentions-United-3-2-1-go/).
