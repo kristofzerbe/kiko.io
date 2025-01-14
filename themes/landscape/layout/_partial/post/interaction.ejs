@@ -3,6 +3,7 @@
   let synDevTo = syndications?.find(s => s.host.toLowerCase() === "devto");
   let synPixelfed = syndications?.filter(s => s.host.toLowerCase() === "pixelfed");
   let synLemmy = syndications?.filter(s => s.host.toLowerCase() === "lemmy");
+  let synVernissage = syndications?.filter(s => s.host.toLowerCase() === "vernissage");
 %>
 
 <div class="article-share" data-pagefind-ignore>
@@ -60,6 +61,7 @@
   <% if (synDevTo) { %><%- js('js/mentions-united-provider_devto.js'); %><% } %>
   <% if (synPixelfed?.length > 0) { %><%- js('js/mentions-united-provider_pixelfed.js'); %><% } %>
   <% if (synLemmy?.length > 0) { %><%- js('js/mentions-united-provider_lemmy.js'); %><% } %>
+  <% if (synVernissage?.length > 0) { %><%- js('js/mentions-united-provider_vernissage.js'); %><% } %>
 
   <script>
     window.addEventListener('load', function () {
@@ -119,6 +121,13 @@
       mentionsUnited.register(new MentionsUnitedProvider_Lemmy({ 
         syndicationUrl: "<%- syn.url %>",
         syndicationCommunity: "<%- syn.title %>"
+      }));
+      <% }); %>
+
+      <% synVernissage?.forEach(syn => { %>
+      mentionsUnited.register(new MentionsUnitedProvider_Vernissage({ 
+        syndicationUrl: "<%- syn.url %>",
+        syndicationTitle: "<%- syn.title %>"
       }));
       <% }); %>
 
