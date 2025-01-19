@@ -22,7 +22,7 @@ related:
   - Mentions-United-3-2-1-go
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/113854502773218968
 ---
 
 Since yet another tech billionaire (this time the one from Meta) has decided that he can go without morality and decency and crawl as far as possible into the far-right a*** of the soon-to-be 47th president of the United States, there has been a considerable significant migration of users from Instagram to the Fediverse alternative [**Pixelfed**](https://github.com/pixelfed/pixelfed), a photo-centric platform that has so far led a rather shadowy existence alongside the big player Mastodon.
@@ -39,7 +39,7 @@ I feel much more comfortable on the new and rising star in the Fediverse sky cal
 
 If you are somehow familiar with the name *Vernissage*, you might be using the formerly named iOS app for Pixelfed, which Marcin renamed [Impressia](https://apps.apple.com/de/app/impressia-for-pixelfed/id1663543216) when he started to build an [ActivityPub](https://en.wikipedia.org/wiki/ActivityPub) powered alternative photo hosting service under the old name.
 
-The platform technically consists of several components such as the VernissageServer (API, written in Swift) and the Angular frontend VernissageWeb, and it's impressive what it can already do since the initial commit on GitHub in mid-2023 and how stable the current beta is. The project's roadmap (https://github.com/orgs/VernissageApp/projects/2) promises a lot of good things for the future, even though Vernissage is already better than Pixelfed in many areas. Adding photos, for example, is much more convenient and even offers AI support for tags and ALT texts. The processing and display of metadata embedded in the photo file, such as EXIF, is exemplary and comparable to other commercial platforms such as 500px and Flickr. The web interface works as an installable WebApp and already offers various notification options and, above all, a photo-centered view without text, which I prefer.
+The platform technically consists of several components such as the VernissageServer (API, written in Swift) and the Angular frontend VernissageWeb, and it's impressive what it can already do since the initial commit on GitHub in mid-2023 and how stable the current beta is. The project's [roadmap](https://github.com/orgs/VernissageApp/projects/2) promises a lot of good things for the future, even though Vernissage is already better than Pixelfed in many areas. Adding photos, for example, is much more convenient and even offers AI support for tags and ALT texts. The processing and display of metadata embedded in the photo file, such as EXIF, is exemplary and comparable to other commercial platforms such as 500px and Flickr. The web interface works as an installable WebApp and already offers various notification options and, above all, a photo-centered view without text, which I prefer.
 
 So far, there is only the instance operated by Marcin himself **[vernissage.photos](https://vernissage.photos)**, but I am sure that in the near future one or the other IT enthusiast interested in photography will prefer to set up its own Vernissage instance rather than a new Pixelfed instance. For networking, it doesn't matter anyway, because through the Fediverse all platforms are connected and photo contributions from Mastodon, for example, are also displayed in Vernissage and you can connect with the creators.
 
