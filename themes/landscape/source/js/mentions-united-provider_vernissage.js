@@ -18,6 +18,7 @@
  *  - like
  *  - repost
  *  - comment
+ *  - reply
  * 
  * Remarks:
  *  - 
@@ -61,7 +62,9 @@ class MentionsUnitedProvider_Vernissage extends MentionsUnited.Provider {
       const apiResponseReblogged = await fetch(this.rebloggedApiUrl());
       const apiDataReblogged = await apiResponseReblogged.json();
       interactionsReblogged = this.#processJsonData(apiDataReblogged.data ?? [], "repost");        
-    } catch (e) { console.error(e); }
+    } 
+    catch (e) { console.error(e); }
+    finally { args.fCount(); }
 
     // 2 - Likes
     let interactionsFavorited = [];
@@ -69,15 +72,16 @@ class MentionsUnitedProvider_Vernissage extends MentionsUnited.Provider {
       const apiResponseFavorited = await fetch(this.favoritedApiUrl());
       const apiDataFavorited = await apiResponseFavorited.json();
       interactionsFavorited = this.#processJsonData(apiDataFavorited.data ?? [], "like");        
-    } catch (e) { console.error(e); }
+    } 
+    catch (e) { console.error(e); }
+    finally { args.fCount(); }
     
-    // 3 - Comments
+    // 3 - Comments and Replies
     let interactionsContext = [];
     try {
-      const apiResponseContext = await fetch(this.contextApiUrl());
-      const apiDataContext = await apiResponseContext.json();
-      interactionsContext = this.#processJsonData(apiDataContext.descendants ?? [], "comment");        
-    } catch (e) { console.error(e); }
+      await this.#traverseContextTree(this.sourceId, interactionsContext, "comment", args.fCount);
+    } 
+    catch (e) { console.error(e); }
 
     args.fEnd(msg);
     return [...interactionsReblogged, ...interactionsFavorited, ... interactionsContext];
@@ -85,9 +89,33 @@ class MentionsUnitedProvider_Vernissage extends MentionsUnited.Provider {
 
   //////////////////////////////////////////////////////////////////////////////////////////
   
-  contextApiUrl() { return `${this.options.apiBaseUrl}/api/v1/statuses/${this.sourceId}/context` };
+  contextApiUrl(id) { return `${this.options.apiBaseUrl}/api/v1/statuses/${id}/context` };
   favoritedApiUrl() { return `${this.options.apiBaseUrl}/api/v1/statuses/${this.sourceId}/favourited`; }
   rebloggedApiUrl() { return `${this.options.apiBaseUrl}/api/v1/statuses/${this.sourceId}/reblogged`; }
+
+  /**
+   * Traverse context tree recursively over descendants to get comments and their replies
+   * @param {Number} id 
+   * @param {Array.<MentionsUnited.Interaction>} interactionsContext 
+   * @param {String} type 
+   * @param {Func} fCount 
+   */
+  async #traverseContextTree(id, interactionsContext, type, fCount) {
+    let apiResponseContext = await fetch(this.contextApiUrl(id));
+    let apiDataContext = await apiResponseContext.json();
+    fCount();
+
+    if (apiDataContext.descendants.length > 0) {
+      let requests = [];
+      apiDataContext.descendants.forEach((descendant) => {
+        if (!interactionsContext.some((i) => i.source.id === descendant.id)) { 
+          interactionsContext.push(this.#convertToInteraction(descendant, type));
+        }
+        requests.push(this.#traverseContextTree(descendant.id, interactionsContext, "reply", fCount));
+      });
+      return Promise.all(requests);
+    }
+  }
 
   /**
    * Processes retrieved JSON data into flat array of Interaction 
@@ -123,9 +151,9 @@ class MentionsUnitedProvider_Vernissage extends MentionsUnited.Provider {
     r.source.id = entry.id;
     r.source.title = "";
 
-    r.author.name = (type === "comment") ? entry.user.name : entry.name;
-    r.author.avatar = (type === "comment") ? entry.user.avatarUrl : entry.avatarUrl;
-    r.author.profile = (type === "comment") ? entry.user.activityPubProfile : entry.activityPubProfile;
+    r.author.name = (["comment","reply"].includes(type)) ? entry.user.name : entry.name;
+    r.author.avatar = (["comment","reply"].includes(type)) ? entry.user.avatarUrl : entry.avatarUrl;
+    r.author.profile = (["comment","reply"].includes(type)) ? entry.user.activityPubProfile : entry.activityPubProfile;
 
     r.content.html = entry.noteHtml;
     
