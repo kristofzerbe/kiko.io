@@ -17,8 +17,6 @@ related:
   - Implement-source-switch-for-SPA
   - Remote-Testing-and-Debugging-with-Chrome
 syndication: 
-- host: Twitter
-  url:  https://twitter.com/kristofz/status/1420775400339345411
 ---
 
 Writing an SPA (Single Page Application) in JavaScript/CSS always means to keep an eye on small files to deliver. Especially when utilizing a bunch of libraries and frameworks, bundling is some sort of a must. The offer on bundlers and task runners is large on the web: [WebPack](https://webpack.js.org/), [Snowpack](https://www.snowpack.dev/), [Browserify](https://browserify.org/), [Parcel](https://parceljs.org/), [Grunt](https://gruntjs.com/), [Gulp](https://gulpjs.com/) and "DingDong" (just replace with the hotest new shit available).

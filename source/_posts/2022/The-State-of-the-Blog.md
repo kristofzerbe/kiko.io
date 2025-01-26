@@ -191,7 +191,7 @@ Nope. The only drawback I see is that this approach always generates the entire 
 
 ## Syndication
 
-As I'm a fan of the [Indieweb](https://indieweb.org/), I started early with [Webmentions](https://indieweb.org/Webmention) on my blog. The idea behind it is to mention an article from blog A in a post on Blog B or social media like Twitter or Mastodon and blog A gets an automated message like "_Hey, I've mentioned you here_". The operator of Blog A can now also automatically display this message under the article mentioned.
+As I'm a fan of the [Indieweb](https://indieweb.org/), I started early with [Webmentions](https://indieweb.org/Webmention) on my blog. The idea behind it is to mention an article from blog A in a post on Blog B or social media like Mastodon and blog A gets an automated message like "_Hey, I've mentioned you here_". The operator of Blog A can now also automatically display this message under the article mentioned.
 
 ### Receiving Webmentions
 

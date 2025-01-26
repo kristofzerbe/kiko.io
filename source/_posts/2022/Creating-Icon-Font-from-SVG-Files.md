@@ -18,8 +18,6 @@ related:
   - SVG-Resources
   - Running-Rollup-with-Gulp
 syndication: 
-- host: Twitter
-  url: https://twitter.com/kristofz/status/1571557065222508544
 ---
 
 A several years ago I started building a little PWA and chose [Bootswatch 3.3.5.](https://bootswatch.com/3/) for theming. As it depends on Bootstrap I was able to use the [icons from Bootstrap](https://icons.getbootstrap.com/). At the beginning I needed only a handful of these icons, but with the time it became more and more difficult to find the right one, because the Bootstrap Glyphicons in version 3 included only around 250 icons and there was not always the right one. Also, the app was always lugging around well over 100 KB of extra files, of which I actually only needed a few kilobytes.

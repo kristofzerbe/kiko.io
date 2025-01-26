@@ -40,7 +40,6 @@ So I went through every META and LINK tag and researched it in documentaries or 
     "link rel=&quot;canonical&quot;|canonical"
     "meta name=&quot;title &vert; description &vert; excerpt&quot;|title-desc-exerpt"
     "meta property=&quot;og: ...&quot;|og"
-    "meta property=&quot;twitter: ...&quot;|twitter"
     "link rel=&quot;license&quot;|license"
     "meta name=&quot;author&quot;|author"
     "meta name=&quot;fediverse:creator&quot;|fediverse-creator"
@@ -141,26 +140,6 @@ Open Graph, and thus the ``og:`` meta tags, is an invention of Facebook, but is 
 
 {% moreinfo_label "More Info:" '[
   [ null, "The Open Graph protocol", "https://ogp.me/" ]
-]' %}
-
-<hr id="twitter"/>
-
-## meta property="twitter: ..."
-
-The so-called Twitter Card Tags were a kind of counter-design from Twitter to Facebook's Open Graph and generally complement it today. I don't really fancy anything that comes out of Elon Musk's social media toy shop any more, but for the sake of tradition and to remain compatible, I'm leaving them in as they are.
-
-What do you think? Should they be taken out?
-
-``` html
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://kiko.io/post/Head-Care/">
-<meta property="twitter:title" content="Head Care - kiko.io">
-<meta property="twitter:description" content="Cleaning up META and LINK tags">
-<meta property="twitter:image" content="https://kiko.io/images/social-media/Head-Care.png">
-```
-
-{% moreinfo_label "More Info:" '[
-  [ "Twitter Developer Platform", "Getting started with Cards", "https://developer.x.com/en/docs/twitter-for-websites/cards/overview/markup" ]
 ]' %}
 
 <hr id="license"/>

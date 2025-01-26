@@ -42,7 +42,6 @@ June is currently quite warm, but it was generally too wet. All over Europe, not
   "D50_9569_2406"
   "D50_9575_2406"
   "D50_9588_2406"
-  "D50_9608_2406"
   "D50_9610_2406"
   "D50_9613_2406"
 %}

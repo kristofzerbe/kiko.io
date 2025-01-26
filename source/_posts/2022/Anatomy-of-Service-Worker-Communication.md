@@ -20,8 +20,6 @@ related:
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/109337328502493774
-- host: Twitter
-  url: https://twitter.com/kristofz/status/1591765769284878339
 ---
 
 I have a SPA that works as a PWA, which means that in the background a service worker makes sure that the required files for the offline mode end up in the cache.

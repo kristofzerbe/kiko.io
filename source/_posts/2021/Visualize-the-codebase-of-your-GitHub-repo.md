@@ -18,11 +18,9 @@ related:
   - Generate-Social-Media-Images-Automatically
   - Using-GitHub-as-Commenting-Platform
 syndication: 
-- host: Twitter
-  url:  https://twitter.com/kristofz/status/1428965811075653636
 ---
 
-Beginning of the month, [Amelia Wattenberger](https://twitter.com/Wattenberger) of [GitHub Next](https://next.github.com/) has published a project to create a SVG visualization of a GitHub repository's codebase.
+Beginning of the month, Amelia Wattenberger of [GitHub Next](https://next.github.com/) has published a project to create a SVG visualization of a GitHub repository's codebase.
 
 On the project page **[Visualizing a codebase](https://next.github.com/projects/repo-visualization)**, she talks about the advantages of code vizualization in terms of a better overview and comparability of code ...  and I loved it at first sight, because I'm an absolute visual person.
 

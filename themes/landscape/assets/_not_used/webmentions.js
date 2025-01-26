@@ -135,9 +135,6 @@ function insertWebmentions(key, originalHost, owner) {
     if (wm['wm-source'].toLowerCase().includes("/instagram")) {
       wm.source_type = "instagram";
     }
-    if (wm['wm-source'].toLowerCase().includes("/twitter")) {
-      wm.source_type = "twitter";
-    }
     if (wm['wm-source'].toLowerCase().includes("/flickr")) {
       wm.source_type = "flickr";
     }

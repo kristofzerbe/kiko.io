@@ -20,8 +20,6 @@ related:
 syndication: 
 - host: Mastodon
   url: https://indieweb.social/@kiko/109348995418574427
-- host: Twitter
-  url: https://twitter.com/kristofz/status/1592571148218564608
 ---
 
 This weekend I had a revival experience. I got myself a [**Mastodon**](https://joinmastodon.org/) account, after many years of staying away from social media as far as I could and at most tweeting a new blog post. Since my active Twitter days, things have taken such a turn for the worse, that I've preferred to stay away completely.

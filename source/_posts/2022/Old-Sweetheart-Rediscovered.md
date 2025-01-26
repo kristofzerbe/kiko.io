@@ -17,8 +17,6 @@ related:
   - Dopamine-How-Software-should-be
   - Checker-Plus-Gmail-in-better
 syndication: 
-- host: Twitter
-  url:  https://twitter.com/kristofz/status/1539277770315943937
 ---
 
 It seems like ages ago that I wrote a tool called **OutlookSignature** with Visual Basic 6 and put it on the web on my old German blog **zerbit.de**. But the [WayBackMachine](https://web.archive.org/web/20111116021952/http://www.zerbit.de/projekte/outlooksignature.aspx) says something different. Started in 2006, I released the last version 1.9 at the beginning of December 2008. Just 14 years ago...

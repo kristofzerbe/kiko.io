@@ -72,6 +72,18 @@ hexo.extend.tag.register("photo_masonry", function(args) {
       metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir, e, "meta.json");
     }
 
+    let reservePath = path.join(_rootDir, hexo.config.static_dir, hexo.config.reserve_dir, e, "normal.jpg");
+    if (fs.existsSync(reservePath)) { 
+      item = {
+        photoName: e,
+        title: e,
+        urlNormal: `/reserve/${e}/normal.jpg`,
+        urlMobile: `/reserve/${e}/mobile.jpg`,
+        isPhoto: true
+      } 
+      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.reserve_dir, e, "meta.json");
+    }
+
     if (item) {
     
       if (fs.existsSync(metaPath)) {
@@ -84,7 +96,7 @@ hexo.extend.tag.register("photo_masonry", function(args) {
       masonry.items.push(item);
 
     } else {
-      console.error("tag-photo-masonry: " + e + " not found in assets, photos, pool or shed!");
+      console.error("tag-photo-masonry: " + e + " not found in assets, photos, pool, shed or reserve!");
     }
   });
 

@@ -22,13 +22,11 @@ related:
   - Tringula-And-The-Beauty-Of-Mathematics
   - Checker-Plus-Gmail-in-better
 syndication: 
-- host: Twitter
-  url:  https://twitter.com/kristofz/status/1561338160323469315
 ---
 
 There are about fourleventy millions music apps for smartphones running Android and iOS. However, most of them are relatively junk or try to foist malware on users. You have to make sure that you separate the wheat from the chaff. On the other hand, the situation is surprisingly different for Windows, the much older operating system. The older ones of us will still remember the glorious WinAmp times, whose current owner Radionomy has been making a very long new attempt for a new version 6 since 2018 (version 5.8 is already a handsome 6 years old), but you can actually count the good music players for Windows 10 and higher on one hand, if you subtract the streaming apps such as Spotify and Co. and disregard everything that comes along as a jack of all trades and can ALSO play MP3. The best known are the in Windows included and miserably failed iTunes clone from Micosoft called **Groove**, **[AIMP](https://www.aimp.ru/)**, **[foobar2000](https://www.foobar2000.org/)**, **[MediaMonkey](https://www.mediamonkey.com/)** and **[MusicBee](https://www.getmusicbee.com/)**. Some nostalgic people might also add the good old [Windows Media Player](https://support.microsoft.com/en-us/windows/get-windows-media-player-81718e0d-cfce-25b1-aee3-94596b658287), which managed to survive on the net despite Groove. If you look at the download pages of these music player candidates and try to look behind the business model, some of them simply do not download. One or the other player also overdoes it with the featuritis. Bouncing balls or bars to the music are gimmicks that were thought to be outdated long ago, when it is actually only about listening to music.
 
-Belgian software developer **Raphaël Godart** ([twitter.com/RaphaelGodart](https://twitter.com/RaphaelGodart)) must have felt the same way a few years ago when he set out to launch his own player for local MP3 collections, which in this case sounds falsely commercial because his player **[Dopamine](http://www.digimezzo.com/software/)** is freely available on GitHub and open source under GPL 3.0 license. It plays music under a plain and simple, yet chic interface ... Period. Everything a music lover's heart desires is on board:
+Belgian software developer **Raphaël Godart** must have felt the same way a few years ago when he set out to launch his own player for local MP3 collections, which in this case sounds falsely commercial because his player **[Dopamine](http://www.digimezzo.com/software/)** is freely available on GitHub and open source under GPL 3.0 license. It plays music under a plain and simple, yet chic interface ... Period. Everything a music lover's heart desires is on board:
 
 <!-- more -->
 

@@ -32,9 +32,6 @@ When I share one of my posts on social media I provide the appropriate image as 
 <!-- Open Graph -->
 <meta property="og:image" content="https://kiko.io/photos/normal/DSC_6776.jpg">
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://kiko.io/photos/normal/DSC_6776.jpg">
 ```
 
 There are several meta tags for different purposes regarding images. For more information see the links at the end of this post. To make a long story short: The sum of these approaches ensures that when an article is posted, the corresponding image is also displayed in the social media post.
@@ -441,9 +438,9 @@ Here is the result from my approach in Hexo, as I run ``hexo generate`` for this
 
 The very last thing I had to do, was to change the source of the image meta tag mentioned at the top, to reference to newly created social media image.
 
-Here's the new image in action at Twitter:
+Here's the new image in action:
 
-![Tweet Preview](Generate-Social-Media-Images-Automatically/twitter.png)
+![Preview](Generate-Social-Media-Images-Automatically/twitter.png)
 
 ---
 

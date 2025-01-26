@@ -18,8 +18,6 @@ related:
   - Forking-Hexo-plugin-hexo-index-anything
   - Using-GitHub-as-Commenting-Platform
 syndication: 
-- host: Twitter
-  url:  https://twitter.com/kristofz/status/1428768991678455811
 ---
 
 GitHub has released the long awaited solution für code editing in the web today, or more precisely, the two new solutions: [**CodeSpaces** and **github.dev**](https://github.com/features/codespaces).

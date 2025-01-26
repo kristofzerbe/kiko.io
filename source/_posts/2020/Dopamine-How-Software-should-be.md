@@ -24,7 +24,7 @@ The Windows 10 built-in media player Groove is (to be kind) ... nice, but it is 
 
 Doing a research for a good alternative, you stumble always over the usual suspects: MediaMonkey, Foobar2000, Winamp, VLC or even Media Player Classic!? Not modern enough, not user friendly enough, not lean enough.
 
-I really don't remember where, but there was a screenshot of a player, which seems to be the complete opposite of the others: **Dopamine** from [Digimezzo](https://www.digimezzo.com/software/), a project by the Belgian developer [Raphaël Godart](https://twitter.com/RaphaelGodart)...
+I really don't remember where, but there was a screenshot of a player, which seems to be the complete opposite of the others: **Dopamine** from [Digimezzo](https://www.digimezzo.com/software/), a project by the Belgian developer Raphaël Godart...
 
 ![Screenshot Dopamine 2.0.2.](Dopamine-How-Software-should-be/screenshot_dopamine_202.png)
 <!-- more -->

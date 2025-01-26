@@ -18,9 +18,8 @@ related:
   - Use-and-manage-multiple-Node-js-versions-on-Windows-10
   - Remote-Testing-and-Debugging-with-Chrome
 syndication: 
-- host: Twitter
-  url:  https://twitter.com/kristofz/status/1434523646660333568
 ---
+
 While reading the Chris Coyier's post [Application-Specific Links](https://css-tricks.com/application-specific-links/) the other day, I realized what has been bugging me for a long time now: a proper solution for openening a certain URL in a modern Web App.
 
 Since the beginning of the digital age (feels like that), we have files associated to a certain application, installed on our machine, regardless if its running Windows, iOS, OS/2 or whatever. We have learned that well and no one questions it ... but ... the IT world keeps on turning and today we are not only talking about files, but about links.

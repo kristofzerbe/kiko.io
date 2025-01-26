@@ -64,6 +64,16 @@ hexo.extend.tag.register("photo_list", function(args){
       metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir, e, "meta.json");
     }
 
+    let reservePath = path.join(_rootDir, hexo.config.static_dir, hexo.config.reserve_dir, e, "normal.jpg");
+    if (fs.existsSync(reservePath)) { 
+      item = {
+        photoName: e,
+        title: e,
+        url: `/reserve/${e}/normal.jpg`
+      }
+      metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.reserve_dir, e, "meta.json");
+    }
+
     if (item) {
 
       if (fs.existsSync(metaPath)) {

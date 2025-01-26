@@ -40,12 +40,8 @@ I can now understand why this gives him so much pleasure, even if I don't need t
   "D50_9061_2405"
   "D50_9073_2405"
   "D50_9078_2405"
-  "D50_9098_2405"
   "D50_9099_2405"
-  "D50_9111_2405"
-  "D50_9131_2405"
   "D50_9166_2405"
-  "D50_9184_2405"
 %}
 
 Thomas, by the way: Your seedlings in the greenhouse are doing well :)
