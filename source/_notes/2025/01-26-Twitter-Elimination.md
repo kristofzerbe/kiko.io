@@ -8,7 +8,7 @@ rel:
   url: https://mastodon.social/@matthiasott/113891019122212388
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/113896995446609200
 ---
 
 My Twitter account has been closed since 20 November 2022, but I hadn't deleted it yet because I didn't want anyone to reuse my handle back then. That's over now. The thing is going in the bin. I will try to delete all my old tweets with Lucas' [tweetXer](https://github.com/lucahammer/tweetXer) and then deactivate the account so that it is deleted after 30 days. (It's annoying me again that there's no simple DELETE button on this f*** platform)
