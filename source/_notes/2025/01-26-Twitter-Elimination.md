@@ -19,9 +19,10 @@ Matthias is right when he says *"I don't want to link to a Nazi's website"*. In 
 
 #TwitterElimination #FckNzs
 
-{% alertbox success %}
-UPDATE: After two days, my data backup arrived today and thanks to tweetXer all followers and tweets are deleted. My Twitter account is now deactivated and waits for deletion in 30 days.
-{% endalertbox %}
+---
+
+**UPDATE:** After two days, my data backup arrived today and thanks to tweetXer all followers and tweets are deleted. My Twitter account is now deactivated and waits for deletion in 30 days.
+
 
 ```cardlink
 url: https://mastodon.social/@matthiasott/113891019122212388
