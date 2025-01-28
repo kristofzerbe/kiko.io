@@ -30,11 +30,13 @@ Thomas' garden is buzzing, whirring, flying and dancing. This is also due to the
 {% photo_masonry
   "D50_9636_2407"
   "D50_9653_2407"
+  "D50_9668_2407"
   "D50_9685_2407"
   "D50_9715_2407"
   "D50_9723_2407"
   "D50_9725_2407"
   "D50_9746_2407"
+  "D50_9752_2407"
   "D50_9754_2407"
   "D50_9796_2407"
   "D50_9807_2407"
