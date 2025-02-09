@@ -28,6 +28,7 @@ hexo.extend.tag.register("photo_masonry", function(args) {
     let assetPath = path.join(that.asset_dir, e + ".jpg")
     if (fs.existsSync(assetPath)) {
       item = {
+        type: "asset",
         photoName: e,
         title: e,
         urlNormal: `/${that.path}${e}.jpg`,
@@ -39,6 +40,7 @@ hexo.extend.tag.register("photo_masonry", function(args) {
     let photoPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "normal", e + ".jpg");
     if (fs.existsSync(photoPath)) { 
       item = {
+        type: "photo",
         photoName: e,
         title: e,
         urlNormal: `/photos/normal/${e}.jpg`,
@@ -51,6 +53,7 @@ hexo.extend.tag.register("photo_masonry", function(args) {
     let poolPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.pool_dir, e, "normal.jpg");
     if (fs.existsSync(poolPath)) { 
       item = {
+        type: "pool",
         photoName: e,
         title: e,
         urlNormal: `/pool/${e}/normal.jpg`,
@@ -63,6 +66,7 @@ hexo.extend.tag.register("photo_masonry", function(args) {
     let shedPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir, e, "normal.jpg");
     if (fs.existsSync(shedPath)) { 
       item = {
+        type: "shed",
         photoName: e,
         title: e,
         urlNormal: `/shed/${e}/normal.jpg`,
@@ -75,6 +79,7 @@ hexo.extend.tag.register("photo_masonry", function(args) {
     let reservePath = path.join(_rootDir, hexo.config.static_dir, hexo.config.reserve_dir, e, "normal.jpg");
     if (fs.existsSync(reservePath)) { 
       item = {
+        type: "reserve",
         photoName: e,
         title: e,
         urlNormal: `/reserve/${e}/normal.jpg`,

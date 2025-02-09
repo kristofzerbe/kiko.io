@@ -29,8 +29,12 @@ hexo.on('generateBefore', function() {
     .filter(p => (p.name)) //filter out all without photo name
     .sort((a, b) => a.key.localeCompare(b.key));
 
+  // let xxx = [...pHero, ...pPool, ...pReserve, ...pShed, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes]
+  //   .filter(p => !(p.name))
+  //   .map(p => console.log(p.type + " | " + p.file  + " | " + p.status)); 
+
   let newestPhotoDate = new Date(Math.max(...photos.map(p => new Date(p.date))));
-// console.log(newestPhotoDate);
+  // console.log(newestPhotoDate);
 
   // PHOTOS page -------------------------------------------
   let page = { name: "photos" };
@@ -72,7 +76,7 @@ hexo.on('generateBefore', function() {
   let coordinates = {};
   let photoCount = 0;
   photos.forEach((obj) => {
-    if (obj.meta.latitude && obj.meta.longitude) {
+    if (obj.meta?.latitude && obj.meta?.longitude) {
       let latlng = shortDec(obj.meta.latitude) + "|" + shortDec(obj.meta.longitude);
       if (!coordinates.hasOwnProperty(latlng)) {
         coordinates[latlng] = { 
@@ -172,7 +176,7 @@ function getUnusedPhotos(type, dir) {
 
     entry.file = entry.key + ".jpg";
     entry.route = entry.key;
-    entry.name = meta?.ObjectName;
+    entry.name = meta?.ObjectName || entry.key;
     entry.article = null;
     entry.pathMobile = "/" + path.join(dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
     entry.pathTablet = "/" + path.join(dir, entry.key, "tablet.jpg").replace(/\134/g,"/");
@@ -217,6 +221,7 @@ function getPostAndPagePhotos() {
   used.forEach(entry => {
 
     entry.key = entry.file.replace(".jpg", "");
+    entry.route = entry.key; //meta?.custom.name || entry.key;
 
     let metaFile = path.join(metaDir, entry.key + ".json");
     let metaCreationDate, meta;
@@ -225,8 +230,6 @@ function getPostAndPagePhotos() {
       meta = JSON.parse(fs.readFileSync(metaFile));
     }
     
-    entry.route = entry.key; //meta?.custom.name || entry.key;
-
     let post = postsAndPages.find(p => (p && p.photographFile === entry.file));
     if (post) {
       entry.name = post.photographName;

@@ -2,12 +2,12 @@
   {{#each items}}
     <div>
       <a class="spotlight" 
-          {{#if isPhoto}}
+        {{#if isPhoto}}
           href="/photos/{{photoName}}"
           data-button="Photo Page&nbsp;&nbsp;&#10148;"
           data-button-href="/photos/{{photoName}}"
-          {{/if}}
-          data-description="{{title}}"
+        {{/if}}
+          data-description="{{title}}&nbsp;&bull;&nbsp;{{type}}"
           data-src="{{urlNormal}}">
         <img src="{{urlMobile}}" />
       </a>
