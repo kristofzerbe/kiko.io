@@ -240,7 +240,7 @@
 
   function setView() {
 
-    console.log(currentStatus + " : " + currentType);
+    console.log("status: " + currentStatus + " | type: " + currentType);
 
     document.querySelector("#filter-status-" + currentStatus).checked = true;
     if (currentStatus !== "all") {
@@ -254,12 +254,14 @@
       switch (currentStatus) {
         case "all":
           bShow = true;
+          if (item.getAttribute("data-type") === "shed") { bShow = false; } //HACK, to hide SHED photos from OVERALL
           break;
         default:
           bShow = (item.getAttribute("data-status") === currentStatus); 
           if (currentType !== "all") {
             bShow = (currentType === item.getAttribute("data-type"));
-            break;
+          } else {
+            if (item.getAttribute("data-type") === "shed") { bShow = false; } //HACK, to hide SHED photos from OVERALL
           }
       }
       if (bShow) { showPhoto(item); } else { hidePhoto(item); }
