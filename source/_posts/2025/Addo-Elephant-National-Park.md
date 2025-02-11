@@ -20,6 +20,8 @@ related:
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/113984963798212224
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/794897953733790094
 ---
 
 In 2024, the best wife in the world and I had decided that it was time to explore South Africa, especially as I had never been south of the equator, but she had already traveled to the southernmost tip of Africa with a friend 10 years ago and had been raving about it ever since. I also can't remember having allowed myself three weeks in a row to relax, but for a trip like this it needs to be, and preferably over the Christmas holidays to escape the hustle and bustle in Germany. No "Oh Tannenbaum", "Kling Glöckchen Klingelingeleing" with a disgusting warm spiced red wine in my hand, but elephant stamping at 32 degrees in the shade ... Yes!
