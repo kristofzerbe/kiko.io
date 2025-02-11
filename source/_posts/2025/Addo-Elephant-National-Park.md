@@ -1,5 +1,4 @@
 ---
-hidden: true
 slug: Addo-Elephant-National-Park
 title: Addo Elephant National Park
 subtitle: Journey through marvelous South Africa
@@ -29,15 +28,15 @@ We had planned our trip as a round trip: first Cape Town and Hout Bay, then east
 
 <!-- more -->
 
-At some point I realized that I would need MONTHS to post-process the photos in Lightroom, as I always do. So I split the "work" into the individual stations and started with the highlights, the Games Drives in Addo Elephant National Park. Plural because we did a total of four guided tours in one week and three of them were always in the same park, Addo Elephant National Park. You might think one full day is enough, but game drives are addictive because they are different every time and you always see different animals and conditions.
+At some point I realized that I would need MONTHS to post-process the photos in Lightroom, as I always do. So I split the "work" into the individual stops and started with the highlights, the **Game Drives**. Plural, because we did a total of four guided tours in one week and three of them were always in the same park, the **Addo Elephant National Park**. Now you might think a day trip through the park would be enough and you would have seen everything, but it is so fascinating that I could have done it every day.
 
-...
+Here now my favorite photos from the park...
 
 ---
 
-## Game Drive 27-12
+## Game Drive, December 27th
 
-Lorem ipsum...
+The starting point of our first tour was our accommodation, [Camp Figtree](https://www.oystercollection.co.za/camp-figtree/), and our guide was **Noma**, who took my wife, me and the lovely Agnese and Stefano from Italy on a full-day tour, including barbecuing and chilling out.
 
 {% photo_masonry
   "24-12-Suedafrika-1744-D50"
@@ -99,9 +98,9 @@ Lorem ipsum...
 
 ---
 
-## Game Drive 29-12
+## Game Drive, December 29th
 
-Lorem ipsum...
+Two days later, we booked another tour straight away. This time it was only a half-day tour and with a few more guests, whose names I can't remember. We could have driven our own car without a guide, but this park is SO big and extensive that we preferred to rely on Noma's experience again ... and it paid off.
 
 {% photo_masonry
   "24-12-Suedafrika-2431-D50"
@@ -160,9 +159,9 @@ Lorem ipsum...
 
 ---
 
-## Game Drive 31-12
+## Game Drive, December 31st
 
-Lorem ipsum...
+After four days at Camp Figtree, we moved on to the nearby [Addo African Home](https://www.addoafricanhome.co.za/) and went on another tour into the park on the last day of the year. This time with Philipp as our guide and without any other guests. We knew there were 5 lions in the park and Philipp did his best to track them down, but it wasn't to be.
 
 {% photo_masonry
   "24-12-Suedafrika-3087-D70"
@@ -205,4 +204,5 @@ Lorem ipsum...
   "24-12-Suedafrika-3356-D50"
   "24-12-Suedafrika-3367-D70"
   "24-12-Suedafrika-3373-D70"
+  "24-12-Suedafrika-3376-PXL"
 %}
