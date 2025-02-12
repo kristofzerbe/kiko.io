@@ -11,7 +11,7 @@ series: New Photos
 categories:
   - Photo
 tags:
-  - Imaging
+  - Photography
   - Publishing
 related:
   - Impressions-from-the-Carnival-Parade-in-Wiesbaden

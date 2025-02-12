@@ -10,8 +10,8 @@ photograph:
 categories:
   - Photo
 tags:
+  - Photography
   - Publishing
-  - Imaging
 related:
   - Comparison-of-Lightroom-Classic-Denoise-with-Topaz-Photo-AI
   - Mecklenburg-Lakes

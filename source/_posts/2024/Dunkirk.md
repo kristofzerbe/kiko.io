@@ -11,7 +11,7 @@ series: New Photos
 categories:
   - Photo
 tags:
-  - Imaging
+  - Photography
   - Publishing
 related:
   - Berlin-Airlift-75th-Anniversary
