@@ -45,6 +45,9 @@ class MentionsUnitedProvider_Webmentions extends MentionsUnited.Provider {
 
     //check mandatory options
     if (this.options.originalUrl.length === 0) { throw "'originalUrl' is missing"; }
+
+    //ensure trailing slash
+    if (this.options.originalUrl.slice(-1) != '/') this.options.originalUrl += '/';
   }
 
   /**
