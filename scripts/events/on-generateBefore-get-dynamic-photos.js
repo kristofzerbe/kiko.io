@@ -136,7 +136,6 @@ function getHeroPhoto() {
     status: "used",
     type: "start",
     file: config.hero.file,
-    // route: key, //meta?.custom.name || key,
     name: meta?.ObjectName || config.hero.name,
     article: {
       title: "Start",
@@ -175,7 +174,6 @@ function getUnusedPhotos(type, dir) {
     }
 
     entry.file = entry.key + ".jpg";
-    // entry.route = entry.key;
     entry.name = meta?.ObjectName || meta?.custom.name || entry.key;
     entry.article = null;
     entry.pathMobile = "/" + path.join(dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
@@ -221,7 +219,6 @@ function getPostAndPagePhotos() {
   used.forEach(entry => {
 
     entry.key = entry.file.replace(".jpg", "");
-    // entry.route = entry.key; //meta?.custom.name || entry.key;
 
     let metaFile = path.join(metaDir, entry.key + ".json");
     let metaCreationDate, meta;
@@ -302,7 +299,6 @@ function getDraftPagePhotos() {
           status: "used",
           type: "draft",
           file: fm.photograph.file,
-          // route: key, //meta?.custom.name || key,
           name: meta?.ObjectName || fm.photograph.name,
           article: {
             date: fm.date,
@@ -357,7 +353,6 @@ function getDynamicPagePhotos() {
           status: "used",
           type: "dynamic",
           file: fm.photograph.file,
-          // route: key, //meta?.custom.name || key,
           name: meta?.ObjectName || fm.photograph.name,
           article: {
             date: fm.date,
@@ -422,7 +417,6 @@ function getAnythingPagePhotos() {
                 status: "used",
                 type: "anything",
                 file: fm.photograph.file,
-                // route: key, //meta?.custom.name || key,
                 name: meta?.ObjectName || fm.photograph.name,
                 article: {
                   date: fm.date,
@@ -483,7 +477,6 @@ function getNotesPhotos() {
             status: "used",
             type: "notes",
             file: fm.photograph.file,
-            // route: key, //meta?.custom.name || key,
             name: meta?.ObjectName || fm.photograph.name,
             article: {
               date: fm.date,
