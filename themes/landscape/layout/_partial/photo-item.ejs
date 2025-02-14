@@ -16,10 +16,12 @@
   <% } %>
   
   <a class="spotlight card-img" href="/<%= config.photo_dir %>/<%= item.key %>"
-     data-description="<%- item.key %>&nbsp;&bull;&nbsp;<%- item.status %>&nbsp;|&nbsp;<%- item.type %>"
+     data-title="<%- item.name %>"
+     data-description="<%- item.status %>&nbsp;|&nbsp;<%- item.type %>"
      data-src="<%- item.pathNormal %>"
      data-button="Photo Page&nbsp;&nbsp;&#10148;"
-     data-button-href="/<%= config.photo_dir %>/<%= item.key %>">
+     data-button-href="/<%= config.photo_dir %>/<%= item.key %>"
+     data-autohide="all">
     <img loading="lazy" src="<%- item.pathMobile %>" alt="<%- item.name %>" />
   </a>
   <span class="pre-title">

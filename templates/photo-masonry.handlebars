@@ -3,11 +3,13 @@
     <div>
       <a class="spotlight" 
         {{#if isPhoto}}
-          href="/photos/{{photoName}}"
+          href="/photos/{{key}}"
           data-button="Photo Page&nbsp;&nbsp;&#10148;"
-          data-button-href="/photos/{{photoName}}"
+          data-button-href="/photos/{{key}}"
+          data-autohide="all"
         {{/if}}
-          data-description="{{title}}&nbsp;&bull;&nbsp;{{type}}"
+          data-title="{{title}}"
+          data-description="{{type}}"
           data-src="{{urlNormal}}">
         <img src="{{urlMobile}}" />
       </a>

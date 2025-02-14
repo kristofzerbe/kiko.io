@@ -28,8 +28,7 @@ hexo.extend.tag.register("photo_list", function(args){
     let assetPath = path.join(that.asset_dir, e + ".jpg")
     if (fs.existsSync(assetPath)) { 
       item = {
-        photoName: e,
-        title: e,
+        key: e,
         url: `/${that.path}${e}.jpg`
       }
     }
@@ -37,8 +36,7 @@ hexo.extend.tag.register("photo_list", function(args){
     let photoPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "normal", e + ".jpg");
     if (fs.existsSync(photoPath)) { 
       item = {
-        photoName: e,
-        title: e,
+        key: e,
         url: `/photos/normal/${e}.jpg`
       }
       metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.photo_dir, "meta", e + ".json");
@@ -47,8 +45,7 @@ hexo.extend.tag.register("photo_list", function(args){
     let poolPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.pool_dir, e, "normal.jpg");
     if (fs.existsSync(poolPath)) { 
       item = {
-        photoName: e,
-        title: e,
+        key: e,
         url: `/pool/${e}/normal.jpg`
       }
       metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.pool_dir, e, "meta.json");
@@ -57,8 +54,7 @@ hexo.extend.tag.register("photo_list", function(args){
     let shedPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir, e, "normal.jpg");
     if (fs.existsSync(shedPath)) { 
       item = {
-        photoName: e,
-        title: e,
+        key: e,
         url: `/shed/${e}/normal.jpg`
       }
       metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.shed_dir, e, "meta.json");
@@ -67,8 +63,7 @@ hexo.extend.tag.register("photo_list", function(args){
     let reservePath = path.join(_rootDir, hexo.config.static_dir, hexo.config.reserve_dir, e, "normal.jpg");
     if (fs.existsSync(reservePath)) { 
       item = {
-        photoName: e,
-        title: e,
+        key: e,
         url: `/reserve/${e}/normal.jpg`
       }
       metaPath = path.join(_rootDir, hexo.config.static_dir, hexo.config.reserve_dir, e, "meta.json");
@@ -78,7 +73,7 @@ hexo.extend.tag.register("photo_list", function(args){
 
       if (fs.existsSync(metaPath)) {
         let meta = JSON.parse(fs.readFileSync(metaPath));
-        item.title = meta?.ObjectName;
+        item.title = meta?.ObjectName || meta?.custom.name || e;
       }
   
       list.items.push(item);

@@ -31,7 +31,7 @@ hexo.on('generateBefore', function() {
 
   // let xxx = [...pHero, ...pPool, ...pReserve, ...pShed, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes]
   //   .filter(p => !(p.name))
-  //   .map(p => console.log(p.type + " | " + p.file  + " | " + p.status)); 
+  //   .map(p => console.log(p.type + " | " + p.file  + " | " + p.status));
 
   let newestPhotoDate = new Date(Math.max(...photos.map(p => new Date(p.date))));
   // console.log(newestPhotoDate);
@@ -42,7 +42,7 @@ hexo.on('generateBefore', function() {
   page = getMD(hexo, mdPage, page);
   page.items = photos;
 
-  if (!page.updated || newestPhotoDate > new Date(page.updated)) { 
+  if (!page.updated || newestPhotoDate > new Date(page.updated)) {
     page.updated = updateMDField(hexo, mdPage, "updated", newestPhotoDate);
   }
 
@@ -69,7 +69,7 @@ hexo.on('generateBefore', function() {
   let mdMap = path.join("_dynamic", map.name + ".md");
   map = getMD(hexo, mdMap, map);
 
-  if (!map.updated || newestPhotoDate > new Date(map.updated)) { 
+  if (!map.updated || newestPhotoDate > new Date(map.updated)) {
     map.updated = updateMDField(hexo, mdMap, "updated", newestPhotoDate);
   }
 
@@ -79,23 +79,23 @@ hexo.on('generateBefore', function() {
     if (obj.meta?.latitude && obj.meta?.longitude) {
       let latlng = shortDec(obj.meta.latitude) + "|" + shortDec(obj.meta.longitude);
       if (!coordinates.hasOwnProperty(latlng)) {
-        coordinates[latlng] = { 
+        coordinates[latlng] = {
           latitude: obj.meta.latitude,
           longitude: obj.meta.longitude,
-          photos: [] 
+          photos: []
         };
       }
       if (!coordinates[latlng].photos.find(p => p.name === obj.key)) {
         photoCount++;
         coordinates[latlng].photos.push({
-          name: obj.key, 
+          name: obj.key,
           title: obj.name,
           year: new Date(obj.meta?.DateTimeOriginal).toLocaleString('en-GB', {year:"numeric"})
-        });  
-      }      
+        });
+      }
     }
   });
-  map.coordinates = Object.keys(coordinates).map((key) => {     
+  map.coordinates = Object.keys(coordinates).map((key) => {
     return coordinates[key];
   }).sort((a,b) => (a.latlng > b.latlng) ? 1 : ((b.latlng > a.latlng) ? -1 : 0));
 
@@ -126,7 +126,7 @@ function getHeroPhoto() {
 
   let metaFile = path.join(photoDir, "meta" , key + ".json");
   let metaCreationDate, meta;
-  if (fs.existsSync(metaFile)) {    
+  if (fs.existsSync(metaFile)) {
     metaCreationDate = fs.statSync(metaFile).birthtime;
     meta = JSON.parse(fs.readFileSync(metaFile));
   }
@@ -136,8 +136,8 @@ function getHeroPhoto() {
     status: "used",
     type: "start",
     file: config.hero.file,
-    route: key, //meta?.custom.name || key,
-    name: config.hero.name,
+    // route: key, //meta?.custom.name || key,
+    name: meta?.ObjectName || config.hero.name,
     article: {
       title: "Start",
       url: "/index.html"
@@ -150,7 +150,7 @@ function getHeroPhoto() {
   };
 
   log.info("-> " + magenta("1") + " hero photo");
-  return [entry];  
+  return [entry];
 }
 
 /** ================================================================================= */
@@ -175,8 +175,8 @@ function getUnusedPhotos(type, dir) {
     }
 
     entry.file = entry.key + ".jpg";
-    entry.route = entry.key;
-    entry.name = meta?.ObjectName || entry.key;
+    // entry.route = entry.key;
+    entry.name = meta?.ObjectName || meta?.custom.name || entry.key;
     entry.article = null;
     entry.pathMobile = "/" + path.join(dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
     entry.pathTablet = "/" + path.join(dir, entry.key, "tablet.jpg").replace(/\134/g,"/");
@@ -221,7 +221,7 @@ function getPostAndPagePhotos() {
   used.forEach(entry => {
 
     entry.key = entry.file.replace(".jpg", "");
-    entry.route = entry.key; //meta?.custom.name || entry.key;
+    // entry.route = entry.key; //meta?.custom.name || entry.key;
 
     let metaFile = path.join(metaDir, entry.key + ".json");
     let metaCreationDate, meta;
@@ -229,10 +229,10 @@ function getPostAndPagePhotos() {
       metaCreationDate = fs.statSync(metaFile).birthtime;
       meta = JSON.parse(fs.readFileSync(metaFile));
     }
-    
+
     let post = postsAndPages.find(p => (p && p.photographFile === entry.file));
     if (post) {
-      entry.name = post.photographName;
+      entry.name = meta?.ObjectName || post.photographName;
       entry.type = post.layout;
       entry.article = {
         date: post.date,
@@ -302,8 +302,8 @@ function getDraftPagePhotos() {
           status: "used",
           type: "draft",
           file: fm.photograph.file,
-          route: key, //meta?.custom.name || key,
-          name: fm.photograph.name,
+          // route: key, //meta?.custom.name || key,
+          name: meta?.ObjectName || fm.photograph.name,
           article: {
             date: fm.date,
             title: fm.title,
@@ -316,7 +316,7 @@ function getDraftPagePhotos() {
           date: metaCreationDate,
           meta: meta
         };
-        
+
         used.push(entry);
       }
       return used;
@@ -336,7 +336,7 @@ function getDynamicPagePhotos() {
 
   let dynamic = fs.readdirSync(dynamicDir)
     .reduce((used, file) => {
-      
+
       const mdSource = path.join(dynamicDir, file);
       const md = fs.readFileSync(mdSource);
       let fm = front.parse(md);
@@ -344,7 +344,7 @@ function getDynamicPagePhotos() {
       if (fm.photograph && !fm.photograph.keepOutOverview) {
 
         let key = fm.photograph.file.replace(".jpg", "");
-        
+
         let metaFile = path.join(metaDir, key + ".json");
         let metaCreationDate, meta;
         if (fs.existsSync(metaFile)) {
@@ -357,8 +357,8 @@ function getDynamicPagePhotos() {
           status: "used",
           type: "dynamic",
           file: fm.photograph.file,
-          route: key, //meta?.custom.name || key,
-          name: fm.photograph.name,
+          // route: key, //meta?.custom.name || key,
+          name: meta?.ObjectName || fm.photograph.name,
           article: {
             date: fm.date,
             title: fm.title,
@@ -402,28 +402,28 @@ function getAnythingPagePhotos() {
 
           const mdSource = path.join(itemDir, file);
           const md = fs.readFileSync(mdSource);
-    
+
           let fm = front.parse(md);
           if (fm.photograph && !fm.photograph.keepOutOverview) {
-            
+
             let key = fm.photograph.file.replace(".jpg", "");
 
             if (!used.some(e => e.key === key)) {
-  
+
               let metaFile = path.join(metaDir, key + ".json");
               let metaCreationDate, meta;
               if (fs.existsSync(metaFile)) {
                 metaCreationDate = fs.statSync(metaFile).birthtime;
                 meta = JSON.parse(fs.readFileSync(metaFile));
               }
-   
+
               let entry = {
                 key: key,
                 status: "used",
                 type: "anything",
                 file: fm.photograph.file,
-                route: key, //meta?.custom.name || key,
-                name: fm.photograph.name,
+                // route: key, //meta?.custom.name || key,
+                name: meta?.ObjectName || fm.photograph.name,
                 article: {
                   date: fm.date,
                   title: fm.title,
@@ -436,9 +436,9 @@ function getAnythingPagePhotos() {
                 date: metaCreationDate,
                 meta: meta
               };
-         
+
               used.push(entry);
-            }  
+            }
           }
         });
 
@@ -458,7 +458,7 @@ function getNotesPhotos() {
 
   let notes = fs.readdirSync(notesDir)
     .filter(entry => fs.statSync(path.join(notesDir, entry)).isDirectory())
-    .reduce((used, dir) => { 
+    .reduce((used, dir) => {
 
       let currentYear = new Date().getFullYear();
       if (dir <= currentYear) { // only this year and earlier are generated
@@ -466,7 +466,7 @@ function getNotesPhotos() {
         const mdSource = path.join(notesDir, dir, "index.md");
         const md = fs.readFileSync(mdSource);
         let fm = front.parse(md);
-  
+
         if (fm.photograph) {
 
           let key = fm.photograph.file.replace(".jpg", "");
@@ -483,8 +483,8 @@ function getNotesPhotos() {
             status: "used",
             type: "notes",
             file: fm.photograph.file,
-            route: key, //meta?.custom.name || key,
-            name: fm.photograph.name,
+            // route: key, //meta?.custom.name || key,
+            name: meta?.ObjectName || fm.photograph.name,
             article: {
               date: fm.date,
               title: fm.title + " " + dir,

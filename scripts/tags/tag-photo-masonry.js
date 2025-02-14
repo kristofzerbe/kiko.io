@@ -29,8 +29,7 @@ hexo.extend.tag.register("photo_masonry", function(args) {
     if (fs.existsSync(assetPath)) {
       item = {
         type: "asset",
-        photoName: e,
-        title: e,
+        key: e,
         urlNormal: `/${that.path}${e}.jpg`,
         urlMobile: `/${that.path}${e}.jpg`,
         isPhoto: false
@@ -41,8 +40,7 @@ hexo.extend.tag.register("photo_masonry", function(args) {
     if (fs.existsSync(photoPath)) { 
       item = {
         type: "photo",
-        photoName: e,
-        title: e,
+        key: e,
         urlNormal: `/photos/normal/${e}.jpg`,
         urlMobile: `/photos/mobile/${e}.jpg`,
         isPhoto: true
@@ -54,8 +52,7 @@ hexo.extend.tag.register("photo_masonry", function(args) {
     if (fs.existsSync(poolPath)) { 
       item = {
         type: "pool",
-        photoName: e,
-        title: e,
+        key: e,
         urlNormal: `/pool/${e}/normal.jpg`,
         urlMobile: `/pool/${e}/mobile.jpg`,
         isPhoto: true
@@ -67,8 +64,7 @@ hexo.extend.tag.register("photo_masonry", function(args) {
     if (fs.existsSync(shedPath)) { 
       item = {
         type: "shed",
-        photoName: e,
-        title: e,
+        key: e,
         urlNormal: `/shed/${e}/normal.jpg`,
         urlMobile: `/shed/${e}/mobile.jpg`,
         isPhoto: true
@@ -80,8 +76,7 @@ hexo.extend.tag.register("photo_masonry", function(args) {
     if (fs.existsSync(reservePath)) { 
       item = {
         type: "reserve",
-        photoName: e,
-        title: e,
+        key: e,
         urlNormal: `/reserve/${e}/normal.jpg`,
         urlMobile: `/reserve/${e}/mobile.jpg`,
         isPhoto: true
@@ -93,9 +88,9 @@ hexo.extend.tag.register("photo_masonry", function(args) {
     
       if (fs.existsSync(metaPath)) {
         let meta = JSON.parse(fs.readFileSync(metaPath));
-        if (typeof meta?.ObjectName !== "undefined") {
-          item.title =  meta?.ObjectName;
-        }
+        //if (typeof meta?.ObjectName !== "undefined") {
+        item.title =  meta?.ObjectName || meta?.custom.name || e;
+        //}
       }
   
       masonry.items.push(item);
