@@ -21,12 +21,16 @@ syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/113984963798212224
   - host: Pixelfed
+    title: Games Drives
     url: https://pixelfed.social/p/kristofz/794897953733790094
   - host: Pixelfed
+    title: Species
     url: https://pixelfed.social/p/kristofz/795638368102736823
   - host: Pixelfed
+    title: Symmetry 
     url: https://pixelfed.social/p/kristofz/796312439784309513
   - host: Pixelfed
+    title: Elephant Impressions
     url: https://pixelfed.social/p/kristofz/798115893967197390
 ---
 
