@@ -19,7 +19,7 @@ related:
   - Wales
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/114104768153335701
 ---
 
 I unorthodoxly started my photographic review of my journey through South Africa in the middle and the highlights with my two posts [Addo Elephant National Park](/post/Addo-Elephant-National-Park) and [Schotia Safaris Private Game Reserve](/post/Schotia-Safaris-Private-Game-Reserve), but of course there was also a beginning, namely in Cape Town, where me and my sweetheart landed in mid-December after an 11.5 hour flight from Frankfurt.
