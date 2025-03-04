@@ -15,8 +15,8 @@ tags:
   - Publishing
 related:
   - Addo-Elephant-National-Park
+  - Hout-Bay-Cape-Town
   - Wales
-  - Dunkirk
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/114007573028452315

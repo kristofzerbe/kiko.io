@@ -131,8 +131,10 @@
       <li>
         <label>Exposure Time</label>
         <span>
+          <% if (page.meta.ExposureTime) { %>
           <%= convertDecimalToFraction(page.meta.ExposureTime.toFixed(4)) ?? "---" %>&nbsp;
           <em style="font-style:normal;opacity:0.5">(<%= page.meta.ExposureTime %>)</em>
+          <% } %>
         </span>
       </li>
       <li>

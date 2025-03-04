@@ -15,8 +15,8 @@ tags:
   - Publishing
 related:
   - Schotia-Safaris-Private-Game-Reserve
+  - Hout-Bay-Cape-Town
   - Wales
-  - Dunkirk
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/113984963798212224
