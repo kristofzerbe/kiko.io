@@ -88,9 +88,9 @@ hexo.extend.tag.register("photo_masonry", function(args) {
     
       if (fs.existsSync(metaPath)) {
         let meta = JSON.parse(fs.readFileSync(metaPath));
-        //if (typeof meta?.ObjectName !== "undefined") {
         item.title =  meta?.ObjectName || meta?.custom.name || e;
-        //}
+      } else {
+        item.title = e;
       }
   
       masonry.items.push(item);

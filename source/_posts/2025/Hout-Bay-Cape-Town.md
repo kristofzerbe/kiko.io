@@ -1,7 +1,7 @@
 ---
 slug: Hout-Bay-Cape-Town
-subtitle: Journey through marvelous South Africa
 title: Hout Bay & Cape Town
+subtitle: Journey through marvelous South Africa
 date: 2025-03-04 09:57:55
 photograph:
   file: 24-12-Suedafrika-0635-D50.jpg
