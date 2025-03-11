@@ -51,16 +51,16 @@
       </label>
       <input type="radio" name="view-filter-unused-type" id="filter-unused-type-reserve"
              data-type="reserve"
-             data-next-type="shed">
+             data-next-type="all">
       <label for="filter-unused-type-reserve" title="Filter for unused in reserve">
         <mark>in reserve</mark>
       </label>
-      <input type="radio" name="view-filter-unused-type" id="filter-unused-type-shed"
+      <!-- <input type="radio" name="view-filter-unused-type" id="filter-unused-type-shed"
              data-type="shed"
              data-next-type="all">
       <label for="filter-unused-type-shed" title="Filter for unused in shed">
         <mark>in shed</mark>
-      </label>
+      </label> -->
     </span>
     <span id="view-filter-used-type" style="display:none">
       <input type="radio" name="view-filter-used-type" id="filter-used-type-all" checked
@@ -254,15 +254,16 @@
       switch (currentStatus) {
         case "all":
           bShow = true;
-          if (item.getAttribute("data-type") === "shed") { bShow = false; } //HACK, to hide SHED photos from OVERALL
+          // if (item.getAttribute("data-type") === "shed") { bShow = false; } //HACK, to hide SHED photos from OVERALL
           break;
         default:
           bShow = (item.getAttribute("data-status") === currentStatus); 
           if (currentType !== "all") {
             bShow = (currentType === item.getAttribute("data-type"));
-          } else {
-            if (item.getAttribute("data-type") === "shed") { bShow = false; } //HACK, to hide SHED photos from OVERALL
-          }
+          } 
+          // else {
+          //   if (item.getAttribute("data-type") === "shed") { bShow = false; } //HACK, to hide SHED photos from OVERALL
+          // }
       }
       if (bShow) { showPhoto(item); } else { hidePhoto(item); }
     });

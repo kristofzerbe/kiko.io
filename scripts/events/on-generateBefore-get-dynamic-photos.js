@@ -25,11 +25,11 @@ hexo.on('generateBefore', function() {
   let pAnything = getAnythingPagePhotos();
   let pNotes = getNotesPhotos();
 
-  let photos = [...pHero, ...pPool, ...pReserve, ...pShed, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes]
+  let photos = [...pHero, ...pPool, ...pReserve, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes] // ...pShed
     .filter(p => (p.name)) //filter out all without photo name
     .sort((a, b) => a.key.localeCompare(b.key));
 
-  // let xxx = [...pHero, ...pPool, ...pReserve, ...pShed, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes]
+  // let xxx = [...pHero, ...pPool, ...pReserve, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes]
   //   .filter(p => !(p.name))
   //   .map(p => console.log(p.type + " | " + p.file  + " | " + p.status));
 
@@ -49,7 +49,10 @@ hexo.on('generateBefore', function() {
   pages.photos = page;
 
   // individual PHOTO pages -----------------------------------
-  photos.forEach(photo => {
+  let photoPages = [...photos, ...pShed]
+    .filter(p => (p.name)) //filter out all without photo name
+
+  photoPages.forEach(photo => {
     photo.photograph = page.photograph;
     photo.title = "Photo " + photo.name;
     photo.path = path.join(config.photo_dir, photo.key, "index.html");
