@@ -17,6 +17,22 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
     layout: "photos"
   });
 
+  // photo shed page
+  let shed = locals.dynamic.photoshed;
+  result.push({
+    data: shed,
+    path: path.join(page.name, "shed", "index.html"),
+    layout: "photos-shed"
+  });
+
+  // photo map page
+  let map = locals.dynamic.photomap;
+  result.push({
+    data: map,
+    path: path.join(page.name, "map", "index.html"),
+    layout: "photos-map"
+  });
+
   // photo pages
   Object.keys(locals.dynamic).forEach(function(key,index) {
     if (key.startsWith("photo-")) {
@@ -29,14 +45,6 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
       });
     };
   });
-
-  // photo map page
-  let map = locals.dynamic.photomap;
-  result.push({
-    data: map,
-    path: path.join(page.name, "map", "index.html"),
-    layout: "photos-map"
-  });
-
+  
   return result;
 });

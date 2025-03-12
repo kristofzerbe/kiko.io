@@ -2,11 +2,18 @@
   <% switch (page.name) {
     case "photos": %>
       <a href="/photos" class="current">&#10022;</a>
+      <a href="/photos/shed">Shed</a>
+      <a href="/photos/map">Map</a>
+      <% break;
+    case "photos-shed": %>
+      <a href="/photos/shed" class="current">&#10022;</a>
+      <a href="/photos">Photos</a>
       <a href="/photos/map">Map</a>
       <% break;
     case "photos-map": %>
       <a href="/photos/map" class="current">&#10022;</a>
       <a href="/photos">Photos</a>
+      <a href="/photos/shed">Shed</a>
       <% break;
   } %>
 </nav>

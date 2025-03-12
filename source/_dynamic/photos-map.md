@@ -9,6 +9,6 @@ date: 2021-08-24 15:56:00
 updated: 2025-02-05 09:24:48
 ---
 
-Most of the images listed in the collection (and some more out of the shed) contain geo-localisations in the form of GPS coordinates in their metadata. These **{% photo.count %} photos** are pinned on this map.
+Most of the photos shown on this website contain geo-localisations in the form of GPS coordinates in their metadata. These **{% photo.count %} photos** are pinned on this map.
 
 ---

@@ -36,7 +36,7 @@ hexo.on('generateBefore', function() {
   let newestPhotoDate = new Date(Math.max(...photos.map(p => new Date(p.date))));
   // console.log(newestPhotoDate);
 
-  // PHOTOS page -------------------------------------------
+  // PHOTOS page -------------------------------------------------------------------------
   let page = { name: "photos" };
   let mdPage = path.join("_dynamic", page.name + ".md");
   page = getMD(hexo, mdPage, page);
@@ -48,26 +48,21 @@ hexo.on('generateBefore', function() {
 
   pages.photos = page;
 
-  // individual PHOTO pages -----------------------------------
-  let photoPages = [...photos, ...pShed]
-    .filter(p => (p.name)) //filter out all without photo name
+  // PHOTO SHED page -------------------------------------------------------------------------
+  let shed = { name: "photos-shed" };
+  let mdShed = path.join("_dynamic", shed.name + ".md");
+  shed = getMD(hexo, mdShed, shed);
+  shed.items = pShed;
 
-  photoPages.forEach(photo => {
-    photo.photograph = page.photograph;
-    photo.title = "Photo " + photo.name;
-    photo.path = path.join(config.photo_dir, photo.key, "index.html");
-    photo.slug = photo.key;
-    photo.permalink = config.url + "/" + config.photo_dir + "/" + photo.key;
-    photo.photo = true;
+  if (!shed.updated || newestPhotoDate > new Date(shed.updated)) {
+    shed.updated = updateMDField(hexo, mdShed, "updated", newestPhotoDate);
+  }
 
-    if (photo.article && photo.article.date > new Date(photo.date)) {
-      photo.updated = photo.article.date;
-    }
+  shed.content = shed.content.replace("{% photo.count %}", pShed.length);
 
-    pages["photo-" + photo.key] = photo;
-  });
+  pages.photoshed = shed;
 
-  // PHOTO MAP page -------------------------------------------
+  // PHOTO MAP page ----------------------------------------------------------------------
   let map = { name: "photos-map" };
   let mdMap = path.join("_dynamic", map.name + ".md");
   map = getMD(hexo, mdMap, map);
@@ -106,7 +101,26 @@ hexo.on('generateBefore', function() {
 
   pages.photomap = map;
 
-  // ------------------------------------------------------------
+  // individual PHOTO pages --------------------------------------------------------------
+  let photoPages = [...photos, ...pShed]
+    .filter(p => (p.name)) //filter out all without photo name
+
+  photoPages.forEach(photo => {
+    photo.photograph = page.photograph;
+    photo.title = "Photo " + photo.name;
+    photo.path = path.join(config.photo_dir, photo.key, "index.html");
+    photo.slug = photo.key;
+    photo.permalink = config.url + "/" + config.photo_dir + "/" + photo.key;
+    photo.photo = true;
+
+    if (photo.article && photo.article.date > new Date(photo.date)) {
+      photo.updated = photo.article.date;
+    }
+
+    pages["photo-" + photo.key] = photo;
+  });
+
+  // -----------------------------------------------------------------------------------
 
   let dyn = {...hexo.locals.get('dynamic'), ...pages};
   hexo.locals.set('dynamic', dyn);

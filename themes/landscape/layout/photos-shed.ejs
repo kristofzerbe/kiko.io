@@ -1,0 +1,24 @@
+<%- js('js/dist/tinysort.min.js') %>
+
+<% if (page.photograph){ %>
+  <%- partial('_partial/photograph') %>
+<% } %>
+
+<%- partial('_partial/nav-index-photos') %>
+
+<h1 class="archive-title">
+  <small>Photo</small>
+  Shed
+</h1>
+
+<div class="page-content">
+  <%- page.content %>
+
+  <div class="view grid" id="photos">
+    <% for(var i=0; i < page.items.length; i++) { %>
+      <%- partial('_partial/photo-item', { item: page.items[i] }) %>
+    <% } %>
+  </div>
+
+</div>
+
