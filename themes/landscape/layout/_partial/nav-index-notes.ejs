@@ -6,10 +6,10 @@
   if (currentIndex < page.years.length - 1) nextIndex = currentIndex + 1;
 %>
 <nav class="page-nav-index" data-year="<%= page.year %>">
-  <a href="/<%= page.years[currentIndex].link %>" class="current">&#10022;</a>
   <% if (prevIndex > -1 ) { %>
   <a href="/<%= page.years[prevIndex].link %>" class="prev"><%= page.years[prevIndex].year %></a>
   <% } %>
+  <a href="/<%= page.years[currentIndex].link %>" class="current">&#10022;</a>
   <% if (nextIndex > -1 ) { %>
   <a href="/<%= page.years[nextIndex].link %>" class="next"><%= page.years[nextIndex].year %></a>
   <% } %>
