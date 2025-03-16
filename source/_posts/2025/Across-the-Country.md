@@ -21,6 +21,9 @@ syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/114172418666834070
   - host: Pixelfed
+    title: Mossel Bay
+    url: https://pixelfed.social/p/kristofz/804975378637115928
+  - host: Pixelfed
     title: Sea Impressions
     url: https://pixelfed.social/p/kristofz/806450003667946460
 ---
