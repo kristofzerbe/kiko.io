@@ -16,7 +16,7 @@ tags:
 related:
   - Schotia-Safaris-Private-Game-Reserve
   - Hout-Bay-Cape-Town
-  - Wales
+  - Across-the-Country
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/113984963798212224

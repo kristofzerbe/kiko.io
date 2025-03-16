@@ -16,7 +16,7 @@ tags:
 related:
   - Addo-Elephant-National-Park
   - Schotia-Safaris-Private-Game-Reserve
-  - Wales
+  - Across-the-Country
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/114104768153335701

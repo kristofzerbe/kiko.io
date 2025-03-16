@@ -16,7 +16,7 @@ tags:
 related:
   - Addo-Elephant-National-Park
   - Hout-Bay-Cape-Town
-  - Wales
+  - Across-the-Country
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/114007573028452315
@@ -24,8 +24,8 @@ syndication:
     title: Animals
     url: https://pixelfed.social/p/kristofz/796880118065513275
   - host: Pixelfed
-    title: Landscapes
-    url: https://pixelfed.social/i/web/post/798220182517405606
+    title: Scenic Moments
+    url: https://pixelfed.social/p/kristofz/806661282577199656
 ---
 
 My [first photo post](/post/Addo-Elephant-National-Park) about my trip to South Africa was about pictures from the huge Addo Elephant National Park, where you can drive around for days and still see something new. Directly adjacent to it is the [**Schotia Safaris Private Game Reserve**](https://www.schotiasafaris.co.za/), a much smaller and privately run park that only offers guided tours, but with more service around it.
