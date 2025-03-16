@@ -19,7 +19,7 @@ related:
   - Schotia-Safaris-Private-Game-Reserve
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/114172418666834070
   - host: Pixelfed
     title: Sea Impressions
     url: https://pixelfed.social/p/kristofz/806450003667946460
