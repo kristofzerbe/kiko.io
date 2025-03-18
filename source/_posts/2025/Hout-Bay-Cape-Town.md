@@ -23,6 +23,9 @@ syndication:
   - host: Pixelfed
     title: Sea Impressions
     url: https://pixelfed.social/p/kristofz/806450003667946460
+  - host: Pixelfed
+    title: Mountains and Sea
+    url: https://pixelfed.social/p/kristofz/807500779985103085
 
 ---
 
