@@ -21,8 +21,8 @@ syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/114172418666834070
   - host: Pixelfed
-    title: Sea Impressions
-    url: https://pixelfed.social/p/kristofz/806450003667946460
+    title: Mossel Bay
+    url: https://pixelfed.social/p/kristofz/804975378637115928
 ---
 
 This is the fourth and final part of the photographic documentation of my 3-week trip through South Africa at the end of last year. My wife and I traveled over 1,700km (or about 1,000 miles) by car and my cameras took 4,366 photos. 865 of them made it to be shown after editing in Lightroom, 495 of them also made it to the public on this website. An acceptable average for a hobby photographer, I guess.
