@@ -19,10 +19,10 @@ related:
   - Discoveries-30-CSS-HowTo-s
 syndication:
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/114201073669594817
 ---
 
-Someone like me, with two hearts beating in its chest – web development and photography – always pays close attention when it comes to combining the two. Just like Adam Argyle's new article [CSS Carousel In Chrome 135](), in which he refers to a new blog post by the Chrome Dev Team that deals with using the new CSS Overflow Module Level 5 to build image carousels that no longer require JavaScript ... [Carousels with CSS](https://developer.chrome.com/blog/carousels-with-css). Ooohhh, how cool is that!
+Someone like me, with two hearts beating in its chest - web development and photography - always pays close attention when it comes to combining the two. Just like Adam Argyle's new article [CSS Carousel In Chrome 135](https://nerdy.dev/css-carousel-in-chrome-135), in which he refers to a new blog post by the Chrome Dev Team that deals with using the new CSS Overflow Module Level 5 to build image carousels that no longer require JavaScript ... [Carousels with CSS](https://developer.chrome.com/blog/carousels-with-css). How cool is that!
 
 Not that I use something like this on my website, but in the last few months I have collected a few Codepens on the topic, simply because I like them and maybe use them in one place or another. Almost all of them use JavaScript somewhere and not yet the above-mentioned possibilities of pure CSS, but I am sure that one or the other in this form will manage without JS in the future, once the browsers widely support the new stuff. Until then, these solutions are a good way to go.
 
