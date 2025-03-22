@@ -26,6 +26,9 @@ syndication:
   - host: Pixelfed
     title: Mountains and Sea
     url: https://pixelfed.social/p/kristofz/807500779985103085
+  - host: Pixelfed
+    title: Boulders Beach
+    url: https://pixelfed.social/p/kristofz/809036765161646353
 
 ---
 
