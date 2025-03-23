@@ -18,7 +18,9 @@ related:
   - Insects-Heaven
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/114212979767704179
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/809485581692272693
 ---
 
 It's that time of year again: Thomas is digging. For a while now, as he said, because the first early bloomers in his garden have already gone the way of all things. I'm a bit late with the first photos, but here they are, continuing the series I started last year in my neighbor Thomas's garden.
