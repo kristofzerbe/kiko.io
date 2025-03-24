@@ -39,9 +39,8 @@ The atmosphere in the arena was really impressive. Not as great as at a Frankfur
   "PXL_20240620_155504612.jpg|"
   "PXL_20240620_155509360.jpg|"
 %}
-{% video_asset "PXL_20240620_155555106.mp4" %}
-
-{% video_asset "PXL_20240620_155707097.mp4" %}
+{% youtube O7bzsfLFHfo %}
+{% youtube BgJZ1QZqcko %}
 
 ---
 
@@ -74,7 +73,7 @@ England hit new low with dire performance too bad to be boring
 
 However, the real thrill only began after the game. Amidst thousands of mainly English fans, we made our way back to the S-Bahn (Dear UEFA: not SBAHN as on your signs. Even I had to think for a moment). Most of them turned off in the station tunnel onto the platform towards Frankfurt, but many wanted to go in the other direction, to the airport or on to Mainz or Wiesbaden, like us. There was even a train there and the display board on the platform read WIESBADEN. The displays on the carriages, however, read FRANKFURT. What now? In, out? And again and again different statements from the few staff, amidst sweating, drunken English fans, some of whom were relieving themselves in beer bottles. 
 
-![](PXL_20240620_183004703.jpg)
+![](Euro-2024-Denmark-vs-England-2024-06-20/PXL_20240620_183004703.jpg)
 
 After 15 minutes of crowding, the display changed to PLEASE GET OUT. Wtf? Some more staff in yellow high-visibility waistcoats and additional police arrived to clear the train. No announcement, nothing. One of the yellow vests then shouted at the top of his voice in German "THE TRAIN IS BROKEN, THE TRAIN IS BROKEN", but it took another 20 minutes for the last Englishman to understand what was going on. And still no announcements, no information when the broken train left the station!
 
