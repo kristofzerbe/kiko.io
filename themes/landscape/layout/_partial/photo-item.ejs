@@ -36,6 +36,13 @@
         <img src="/images/icons/location-none.svg" title="no location" />
       </span>
       <% } %>
+      <% if (item.meta?.custom?.featured?.slug) { %>
+      <span class="info-featured">
+        <a class="featured-link" href="/post/<%= item.meta.custom.featured.slug %>">
+          <img src="/images/icons/featured.svg" title="featured" />
+        </a>
+      </span>
+      <% } %>
     </div>
     <h3><a href="/<%= config.photo_dir %>/<%= item.key %>" class="h-link"><%- item.name %></a></h3>
   <% } else { %>
