@@ -57,7 +57,7 @@ The coach seemed to have expressed his frustration in the dressing room, as the 
 
 What followed was a fan spectacle that we have already seen in other stadiums this week: In frustration against the DFL's decision to allow major investors into German football, large banners were hoisted in the Nuremberg curve and masses of tennis balls were thrown onto the pitch. The referee had to interrupt the game for almost 10 minutes for safety reasons, while both fan camps took turns chanting "Sch*** DFL". It was quite impressive.
 
-{% youtube rvx6q3ahq0U %}
+{% peertube "clip.place" "1rYe46Pze3kWAUMYbXgGHt" %} <!-- PXL_20240209_184625118_480p -->
 
 Shortly after they were allowed to play on, Wiesbaden pushed forward again and after a nice combination, Nuremberg lost sight of Prtajin, who had enough time and space to make it **1:0** from a good 15 metres! YES...!
 

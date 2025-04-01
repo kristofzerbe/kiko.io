@@ -47,7 +47,7 @@ The atmosphere in the stadium was once again fantastic and the Portuguese were s
   "PXL_20240701_190122632.jpg|"
   "PXL_20240701_194813843.jpg|"
 %}
-{% youtube _0RKDESbF1E %}
+{% peertube "clip.place" "quYThv6qBKtDc6jQznZ3Gr" %} <!-- PXL_20240701_185630310 -->
 
 ---
 
@@ -70,12 +70,12 @@ While some fought and defended with knives between their teeth and others dribbl
 
 In the 105th minute, the Portuguese got what they wanted all along: a penalty! CR7 against the internationally experienced goalkeeper Jan Oblak, of course! And ... the champion failed and burst into tears! No, really! On the big video cube, Ronaldo's disciples could be seen comforting him as tears streamed down his cheeks ... \*facepalm\*
 
-{% youtube HIF8FsPXPME %}
+{% peertube "clip.place" "bJPavT541HfmVeMXbqCqnR" %} <!-- PXL_20240701_211257326 -->
 
 After 120 minutes it was really over. Penalty shoot-out. I had hoped for it, because it was a premiere for me live in the stadium. It promised excitement! 
 Unfortunately, it was gone again after a few minutes because the first three Slovenians didn't manage to get the ball into the goal, but the Portuguese did ... even Ronaldo. Game over, Portugal win. Hmmpf...
 
-{% youtube 9BO3em2gFgQ %}
+{% peertube "clip.place" "sVfGfnb9uHfp4qs2io4T4V" %} <!-- PXL_20240701_213852443 -->
 
 ---
 

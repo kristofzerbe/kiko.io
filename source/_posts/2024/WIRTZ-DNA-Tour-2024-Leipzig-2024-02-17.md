@@ -54,6 +54,6 @@ My last concert with WIRTZ was a while ago, but we had tickets for his unplugged
   "PXL_20240217_211150032.jpg|"
 %}
 
-{% youtube h5bjYtoqfwk %}
+{% peertube "clip.place" "quf3PWpmKJjRwm89axBLY2" %} <!-- PXL_20240217_195411250_480 -->
 
 **Let's Rock ... or fuck off!**

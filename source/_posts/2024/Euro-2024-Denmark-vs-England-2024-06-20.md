@@ -39,8 +39,8 @@ The atmosphere in the arena was really impressive. Not as great as at a Frankfur
   "PXL_20240620_155504612.jpg|"
   "PXL_20240620_155509360.jpg|"
 %}
-{% youtube O7bzsfLFHfo %}
-{% youtube BgJZ1QZqcko %}
+{% peertube "clip.place" "47C5EprpphaHEQoEZX59Y5" %} <!-- PXL_20240620_155555106 -->
+{% peertube "clip.place" "8MsfvgSNKPkHXUdNDnTZYg" %} <!-- PXL_20240620_155707097 -->
 
 ---
 
