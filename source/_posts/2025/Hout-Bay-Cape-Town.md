@@ -32,6 +32,9 @@ syndication:
   - host: Pixelfed
     title: Cape Point
     url: https://pixelfed.social/p/kristofz/810414697905607194
+  - host: Pixelfed
+    title: Robben Island
+    url: https://pixelfed.social/p/kristofz/816607275672874825
 ---
 
 I unorthodoxly started my photographic review of my journey through South Africa in the middle and the highlights with my two posts [Addo Elephant National Park](/post/Addo-Elephant-National-Park) and [Schotia Safaris Private Game Reserve](/post/Schotia-Safaris-Private-Game-Reserve), but of course there was also a beginning, namely in Cape Town, where me and my sweetheart landed in mid-December after an 11.5 hour flight from Frankfurt.
