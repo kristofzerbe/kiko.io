@@ -20,7 +20,7 @@ related:
   - Exploit-the-feedback-potential-with-syndication-links
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/114337668395997816
 ---
 
 A few weeks ago, I received an email from **Kim Graves**, who is working on a book about the Pirate Party as part of her doctoral thesis at the **European School of Political and Social Sciences** in Lille (France). She would like to dedicate a chapter to a web tool called **OpenAntrag** that no longer exists, which at the time offered citizens the opportunity to submit proposals for political representation to mandate holders of the Pirate Party for consideration in parliament. Kim had me on her list because I wrote and ran the tool at the time. Currently, the only thing left of the original is the [GitHub page](https://github.com/kristofzerbe/OpenAntrag) with the source code, because I ended the project in 2019, but it seems to have had a long-term impact if you look at the Google results for the term 'OpenAntrag'.
