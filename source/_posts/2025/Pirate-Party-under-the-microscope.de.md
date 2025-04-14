@@ -19,9 +19,12 @@ related:
   - IndieFediWebVerse
   - Diving-Into-the-World-of-Lemmy
   - Exploit-the-feedback-potential-with-syndication-links
+syndication:
+  - host: Mastodon
+    url: https://indieweb.social/@kiko/114337668395997816
 ---
 
-Vor ein paar Wochen erhielt ich eine Mail von **Kim Graves**, die im Rahmen ihrer Doktorarbeit an der **European School of Political and Social Sciences** in Lille (Frankreich) zum Thema Partizipation an einem Buch über die Piratenpartei arbeitet. Ein Kapitel möchte sie dabei einem nicht mehr existierenden Web-Tool namens **OpenAntrag** widmen, das seinerzeit Bürgern die Möglichkeit bot Mandatsträgern der Piratenpartei in ihrer politischen Vertretung Vorschläge zur Behandlung im Parlament einzureichen. Mich hatte Kim auf dem Schirm, weil ich das Tool seinerzeit geschrieben und betrieben habe. Aktuell besteht vom Original nur noch die [GitHub-Seite](https://github.com/kristofzerbe/OpenAntrag) mit dem Quellcode, weil ich das Projekt 2019 beendet habe, aber es scheint langfristig etwas ausgelöst zu haben, wenn man sich die Google-Ergebnisse des Begriffs "OpenAntrag" anschaut.
+Vor ein paar Wochen erhielt ich eine Mail von **[Kim Graves](https://mastodon.online/@Kimger)**, die im Rahmen ihrer Doktorarbeit an der **European School of Political and Social Sciences** in Lille (Frankreich) zum Thema Partizipation an einem Buch über die Piratenpartei arbeitet. Ein Kapitel möchte sie dabei einem nicht mehr existierenden Web-Tool namens **OpenAntrag** widmen, das seinerzeit Bürgern die Möglichkeit bot Mandatsträgern der Piratenpartei in ihrer politischen Vertretung Vorschläge zur Behandlung im Parlament einzureichen. Mich hatte Kim auf dem Schirm, weil ich das Tool seinerzeit geschrieben und betrieben habe. Aktuell besteht vom Original nur noch die [GitHub-Seite](https://github.com/kristofzerbe/OpenAntrag) mit dem Quellcode, weil ich das Projekt 2019 beendet habe, aber es scheint langfristig etwas ausgelöst zu haben, wenn man sich die Google-Ergebnisse des Begriffs "OpenAntrag" anschaut.
 
 <!-- more -->
 

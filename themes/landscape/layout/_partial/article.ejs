@@ -62,7 +62,7 @@
 
   </div>
 
-  <% if (!post.hidden) { %>
+  <% if (post.syndication) { %>
     <%- partial('post/interaction', { post: post, type: 'article', comments: true }) %>
   <% } else { %>
     <% if (post.isLocale) { %>
@@ -70,6 +70,14 @@
         <p style="font-style: italic; font-size: 0.9rem; padding-top: 1rem">
           Diese Seite ist lediglich die Übersetzung des <a href="<%= url_for(post.path).replace('/de', '') %>">englischen Originalbeitrags</a>. 
           Alle Syndizierungen und Interaktionen findest Du dort...
+        </p>  
+      </div>
+    <% } %>
+    <% if (post.hasLocale) { %>
+      <div class="article-syndication">
+        <p style="font-style: italic; font-size: 0.9rem; padding-top: 1rem">
+          This page is merely a translation of a <a href="<%= url_for(post.path + '/de') %>""> German post</a>. 
+          You can find all syndication and interactions there...
         </p>  
       </div>
     <% } %>
