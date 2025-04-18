@@ -449,20 +449,22 @@
       div.card-links
         padding-top: (small-margin / 2)
         min-height: 2rem /* HACK */
-        a.syndication-link /* on extension see config.syndication_hosts */
-          position: relative
+        a.syndication-link,
+        span.info.content
           width: 16px
           height: 16px
-          padding-inline-end: 4px
-          background-size: 14px
-          background-repeat: no-repeat 
-          background-position: 0
           filter: grayscale(1)
           /[data-theme="dark"] &
             filter: grayscale(1) invert(1)
           &:hover
             filter: grayscale(0)
             opacity: 1 !important
+        a.syndication-link /* on extension see config.syndication_hosts */
+          position: relative
+          padding-inline-end: 4px
+          background-size: 14px
+          background-repeat: no-repeat 
+          background-position: 0
           &.host-500px
             background-image: var(--brand-500px)
             opacity: 0.33
@@ -497,18 +499,19 @@
             /[data-theme="dark"] &
               &:hover
                 filter: invert(1)
-
-        span.info-location,
-        span.info-featured
+        span.info-content
           display: block
           float: right
-          opacity: 0.25
-          width: 16px
-          height: 16px
           padding-inline-start: 8px
           img
             width: 16px
             height: 16px
+          &.info-location
+            opacity: 0.25
+          &.info-featured
+            opacity: 0.33
+          /[data-theme="dark"] &
+            filter: invert(1)
 
       span.pre-title
         display: block
