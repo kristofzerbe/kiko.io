@@ -2,38 +2,41 @@
     Image Slide Tag: https://github.com/ganlanyuan/tiny-slider
 
     Syntax:
-    {% image_slide ..."assetImg|title" %}
+    {% image_slide ..."assetImg|title|width" %}
     
 */
 
 hexo.extend.tag.register("image_slide", function(args){
-    var assetPath = this.path;
+  let assetPath = "/" + this.path;
 
-    var list = "";
-    args.forEach(function(e) {
-      var item = e.split("|"); 
-      var assetImg = item[0];
-      var title = item[1];
+  let list = "";
+  args.forEach(function(e) {
+    let item = e.split("|"); 
+    let assetImg = item[0];
+    let title = item[1];
+    let width = item[2] || "100%";
 
-      list += `<div><img src="/${assetPath + assetImg}" alt="${title}" /></div>`
-    });
+    if (assetImg.startsWith("/")) { assetPath = ""; }
 
-    var id = "image-slide-" + Math.random().toString(36).substring(2,8);
+    list += `<div><img width="${width}" src="${assetPath + assetImg}" alt="${title}" /></div>`
+  });
 
-    var elements = `
-      <div class="image-slider" id="${id}">
-        ${list}
-      </div>
-      <script>
-        tns({
-          container: "#${id}",
-          items: 1,
-          slideBy: "page",
-          controls: false,
-          nav: true
-        });
-      </script>
-    `;
+  let id = "image-slide-" + Math.random().toString(36).substring(2,8);
 
-    return elements;
+  let elements = `
+    <div class="image-slider" id="${id}">
+      ${list}
+    </div>
+    <script>
+      tns({
+        container: "#${id}",
+        items: 1,
+        slideBy: "page",
+        controls: false,
+        nav: true
+      });
+    </script>
+  `;
+
+  return elements;
 });

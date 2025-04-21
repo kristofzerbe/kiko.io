@@ -23,7 +23,7 @@ syndication:
     url: https://indieweb.social/@kiko/110657193763601130
 ---
 
-I recently introduced a Bottom Sheet dialog on this blog to display a page's metadata (<a href="javascript:dialog.pageMeta()">like this</a>), using Ali Dincer's work: [**downupPopup**](https://downuppopupjs.dincerali.com/). I described the way to do this in [a post](/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/) a couple three weeks ago.
+I recently introduced a Bottom Sheet dialog on this blog to display a page's metadata (<a href="javascript:dialog.pageMeta()">like this</a>), using Ali Dincer's work: [**downupPopup**](https://github.com/ali-dincer/downupPopup.js). I described the way to do this in [a post](/post/Show-pages-meta-data-JSON-LD-in-Bottom-Sheet/) a couple three weeks ago.
 
 Shortly after that [Koos Looijensteijn](https://octodon.social/@koos) triggered me with his post [How to make digital business cards and share them via QR codes](https://www.kooslooijesteijn.net/blog/digital-business-cards-vcard-qr-code-website) and I felt like using my newly introduced dialog manager based on downupPopup for my own contact card.  
 **But more about that at a later time, respectively blog post...**

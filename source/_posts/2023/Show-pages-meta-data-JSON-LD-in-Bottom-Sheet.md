@@ -40,7 +40,7 @@ Since I've been a fan of the so-called bottom sheets since the first version of 
 
 ## The Bottom Sheet Component
 
-Recently I stumbled across a small but nice bottom sheet script that is based on jQuery but that I still use on this blog itself: [**downupPopup.js**](https://downuppopupjs.dincerali.com/) by [Ali Dinçer](https://dincerali.com/). It has several settings and is just about 5 KB in size, if you add the CSS code. What's nice about it is, that all the animations that make such a component stand out, are based on said CSS and are not jQuery-driven.
+Recently I stumbled across a small but nice bottom sheet script that is based on jQuery but that I still use on this blog itself: [**downupPopup.js**](https://github.com/ali-dincer/downupPopup.js) by [Ali Dinçer](https://dincerali.com/). It has several settings and is just about 5 KB in size, if you add the CSS code. What's nice about it is, that all the animations that make such a component stand out, are based on said CSS and are not jQuery-driven.
 
 The bottom sheet is based on a base HTML element with a required child element:
 
@@ -320,7 +320,7 @@ Here (or in the footer of each page) you can see the result:
 
 {% moreinfo '{ "list": [
   [ "Ali Dinçer", "downupPopup.js",
-  "https://downuppopupjs.dincerali.com/" ],
+  "https://github.com/ali-dincer/downupPopup.js" ],
   [ "Kristof Zerbe", "Fork from downupPopup.js (Make Popup Reusable, with PR)",
   "https://github.com/kristofzerbe/downupPopup.js" ],
   [ "Google", "Material Design 3 - Compontents, Bottom Sheets",

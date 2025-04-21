@@ -3,7 +3,6 @@
 
     Syntax:
     {% photo_masonry ..."photoName" %}
-    
 */
 
 const fs = require("fs");
@@ -25,7 +24,8 @@ hexo.extend.tag.register("photo_masonry", function(args) {
     let item = null;
     let metaPath;
 
-    let assetPath = path.join(that.asset_dir, e + ".jpg")
+    let assetPath = path.join(that.asset_dir, e + ".jpg");
+    // console.log(assetPath);
     if (fs.existsSync(assetPath)) {
       item = {
         type: "asset",
@@ -85,7 +85,6 @@ hexo.extend.tag.register("photo_masonry", function(args) {
     }
 
     if (item) {
-    
       if (fs.existsSync(metaPath)) {
         let meta = JSON.parse(fs.readFileSync(metaPath));
         item.title =  meta?.ObjectName || meta?.custom.name || e;
