@@ -18,7 +18,7 @@ related:
   - The-State-of-the-Blog
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/114376388233094484
 ---
 
 Ever since I introduced [Slash Pages](/slashes) on my blog about a year ago, the entry "**Colophon**" has been bumming around in my to-do list. Intended to describe how this blog works and how I deal with it, this endeavor has taken on such proportions in my head that the "coming soon" sticker has become very resistant. I would now like to counter this with a new strategy: write it in chunks. I'm going to tackle the individual sections in a loose sequence, starting with the why and the choice of technology ...
@@ -109,4 +109,6 @@ For a little more functionality, I use a few external scripts that are integrate
 
 ---
 
-[Colophon](/colophon) to be continued ...
+[Colophon](/colophon) will be continued ...
+
+I have repeatedly written about certain aspects of this blog in the [A New Blog](/series/a-new-blog) series in recent years. Don't miss it.
