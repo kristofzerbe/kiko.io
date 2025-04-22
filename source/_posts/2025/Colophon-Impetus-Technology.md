@@ -109,4 +109,6 @@ For a little more functionality, I use a few external scripts that are integrate
 
 ---
 
-[Colophon](/colophon) to be continued ...
+[Colophon](/colophon) will be continued ...
+
+I have repeatedly written about certain aspects of this blog in the [A New Blog](/series/a-new-blog) series in recent years. Don't miss it.
