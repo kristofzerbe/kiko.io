@@ -21,7 +21,7 @@ Kaiser-Friedrich-Str. 8
 
 Mobil: +49 171 6998867
 
-kristof.zerbe@gmail.com
+mail@kristofz.me
 </section>
 
 <section>
@@ -30,7 +30,7 @@ kristof.zerbe@gmail.com
 
 Hiermit wird darauf hingewiesen, dass Informationen auf dieser Site technische Ungenauigkeiten oder typografische Fehler enthalten können. Es gilt der Vorbehalt, dass die Informationen dieser Site jederzeit und ohne vorherige Ankündigung geändert oder aktualisiert werden können.
 
-Alle auf diesem Blog veröffentlichten Werke bzw. Werkteile wie z.B. Texte, Dateien, Kompositionen und Bilder sind urheberrechtlich geschützt. Jede weitere Veröffentlichung, Vervielfältigung, Verbreitung oder sonstige Nutzung – auch auszugsweise – bedarf der Zustimmung des Seitenbetreibers.
+Alle auf diesem Blog veröffentlichten Werke bzw. Werkteile wie z.B. Texte, Dateien, Kompositionen und Bilder sind urheberrechtlich geschützt. Jede weitere Veröffentlichung, Vervielfältigung, Verbreitung oder sonstige Nutzung - auch auszugsweise - bedarf der Zustimmung des Seitenbetreibers.
 
 Die Inhalte der Seiten wurden sorgfältig geprüft und nach bestem Wissen erstellt. Dennoch wird für die hier bereitgestellten Informationen kein Anspruch auf Vollständigkeit, Aktualität, Qualität und Richtigkeit erhoben. Für Schäden, die durch das Vertrauen auf die Inhalte dieser Website oder deren Gebrauch entstehen, wird keine Haftung übernommen. Dies gilt insbesondere für Inhalte verlinkter Webseiten, für deren Inhalte ausschließlich deren Betreiber verantwortlich sind.
 
