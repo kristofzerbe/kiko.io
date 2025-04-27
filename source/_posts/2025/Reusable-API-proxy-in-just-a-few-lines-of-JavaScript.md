@@ -19,12 +19,12 @@ related:
   - jsrepo-Build-your-own-tool-registry
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/114409673179039161
   - host: DevTo
-    url: null
+    url: https://dev.to/kristofzerbe/reusable-api-proxy-in-just-a-few-lines-of-javascript-2044
   - host: Lemmy
     title: JavaScript
-    url: null
+    url: https://programming.dev/post/29325800
 ---
 
 For my project [Mentions United](/projects/mentions-united), which collects interactions from various platforms via API to display them on the own page, at some point I needed a way to hide the authentication tokens required for some APIs from being used by unauthorized parties. You simply don't leave your security keys lying around in the code, especially not if it's publicly visible on GitHub. This may still work somehow for server languages, but JavaScript (and my solution is based on this) is downloaded in the browser and can then be viewed freely. Obfuscators are useless here, as they have become obsolete in the age of AI anyway.
