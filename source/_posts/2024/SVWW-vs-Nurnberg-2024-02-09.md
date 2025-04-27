@@ -20,6 +20,8 @@ related:
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/111919986554554676
+  - host: Peertube
+    url: https://clip.place/w/1rYe46Pze3kWAUMYbXgGHt
 ---
 
 {% match_grid "SV-Wehen-Wiesbaden" "1:1" "1-FC-Nuernberg" %}

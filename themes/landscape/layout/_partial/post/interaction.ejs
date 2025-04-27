@@ -4,6 +4,7 @@
   let synPixelfed = syndications?.filter(s => s.host.toLowerCase() === "pixelfed");
   let synLemmy = syndications?.filter(s => s.host.toLowerCase() === "lemmy");
   let synVernissage = syndications?.filter(s => s.host.toLowerCase() === "vernissage");
+  let synPeertube = syndications?.filter(s => s.host.toLowerCase() === "peertube");
 %>
 
 <div class="article-share" data-pagefind-ignore>
@@ -61,6 +62,7 @@
   <% if (synPixelfed?.length > 0) { %><%- js('js/mentions-united-provider_pixelfed.js'); %><% } %>
   <% if (synLemmy?.length > 0) { %><%- js('js/mentions-united-provider_lemmy.js'); %><% } %>
   <% if (synVernissage?.length > 0) { %><%- js('js/mentions-united-provider_vernissage.js'); %><% } %>
+  <%# TODO if (synPeertube?.length > 0) { %><%#- js('js/mentions-united-provider_peertube.js'); %><%# } %>
 
   <script>
     window.addEventListener('load', function () {
@@ -128,6 +130,10 @@
         syndicationUrl: "<%- syn.url %>",
         syndicationTitle: "<%- syn.title %>"
       }));
+      <% }); %>
+
+      <% synPeertube?.forEach(syn => { %>
+        // TODO: Add Peertube provider
       <% }); %>
 
       mentionsUnited.load()

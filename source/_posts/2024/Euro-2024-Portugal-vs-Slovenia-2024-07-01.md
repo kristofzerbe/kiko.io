@@ -17,6 +17,12 @@ related:
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/112721578144616749
+  - host: Peertube
+    url: https://clip.place/w/quYThv6qBKtDc6jQznZ3Gr
+  - host: Peertube
+    url: https://clip.place/w/bJPavT541HfmVeMXbqCqnR
+  - host: Peertube
+    url: https://clip.place/w/sVfGfnb9uHfp4qs2io4T4V
 ---
 
 {% match_grid "_POR_Portuguesa-de-Futebol" "3:0" "_SVN_Nogometna-zveza-Slovenije" %}

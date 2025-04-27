@@ -737,6 +737,12 @@
         background-position: 0 7px
         span
           padding-left: 2px
+      &.host-peertube
+        background-image: var(--brand-peertube)
+        background-size: 12px
+        background-position: 3px 9px
+        span
+          padding-left: 0
 
 .article-webmention
   @extend $base-style
@@ -1291,3 +1297,8 @@
     background-image: var(--brand-vernissage)
     /[data-theme="dark"] &
       background-image: url(/images/icons/vernissage_invert.svg)
+  .interaction.origin-peertube .author:before,
+  .avatar.origin-peertube:after
+    background-image: var(--brand-peertube)
+    /[data-theme="dark"] &
+      background-image: url(/images/icons/peertube.svg)

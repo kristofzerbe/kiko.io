@@ -17,6 +17,10 @@ related:
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/112655180949543395
+  - host: Peertube
+    url: https://clip.place/w/47C5EprpphaHEQoEZX59Y5
+  - host: Peertube
+    url: https://clip.place/w/8MsfvgSNKPkHXUdNDnTZYg
 ---
 
 {% match_grid "_DEN_Dansk-Boldspil-Union" "1:1" "_ENG_England-Football-Association" %}
