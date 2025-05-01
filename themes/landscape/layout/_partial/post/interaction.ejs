@@ -62,7 +62,7 @@
   <% if (synPixelfed?.length > 0) { %><%- js('js/mentions-united-provider_pixelfed.js'); %><% } %>
   <% if (synLemmy?.length > 0) { %><%- js('js/mentions-united-provider_lemmy.js'); %><% } %>
   <% if (synVernissage?.length > 0) { %><%- js('js/mentions-united-provider_vernissage.js'); %><% } %>
-  <%# TODO if (synPeertube?.length > 0) { %><%#- js('js/mentions-united-provider_peertube.js'); %><%# } %>
+  <% if (synPeertube?.length > 0) { %><%- js('js/mentions-united-provider_peertube.js'); %><% } %>
 
   <script>
     window.addEventListener('load', function () {
@@ -133,7 +133,10 @@
       <% }); %>
 
       <% synPeertube?.forEach(syn => { %>
-        // TODO: Add Peertube provider
+      mentionsUnited.register(new MentionsUnitedProvider_Peertube({ 
+        syndicationUrl: "<%- syn.url %>",
+        syndicationTitle: "<%- syn.title %>"
+      }));
       <% }); %>
 
       mentionsUnited.load()
