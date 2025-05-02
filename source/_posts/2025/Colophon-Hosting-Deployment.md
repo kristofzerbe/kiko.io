@@ -18,7 +18,7 @@ related:
   - The-State-of-the-Blog
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/114439959438360765
 ---
 
 {% alertbox info %}
