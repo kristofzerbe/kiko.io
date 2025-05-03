@@ -21,7 +21,12 @@ related:
   - Mentions-United-3-2-1-go
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/114444873846639999
+  - host: DevTo
+    url: https://dev.to/kristofzerbe/mentions-united-peertube-provider-179a
+  - host: Lemmy
+    title: JavaScript
+    url: https://programming.dev/post/29679304
 ---
 
 I don't often work with videos, especially not on social media. But every now and then I record one with my smartphone, for example at a concert or a soccer match, and want to blog about the event later. I then embed the MP4 files as an asset in the corresponding Markdown. Over the years, a few MB have accumulated and at some point I had to think about where to put them in order to keep the size of the blog under 1GB. Outsourcing to YouTube? I can, but that would be the wrong direction for me. Something on Fediverse or the social web? Of course ... **Peertube**!
