@@ -22,10 +22,10 @@
   grid-gap: 2px 64px
   grid-template-areas: "links . webrings" ". . webrings" "perf . webrings" "info . webrings" "dots . webrings"
   @media mq-tablet-min
-    grid-template-columns: 16px max-content 
-    grid-template-rows: max-content (line-height/2) max-content max-content (line-height/2) max-content max-content 
+    grid-template-columns: max-content 
+    grid-template-rows: max-content (line-height/2) max-content max-content (line-height/2) max-content (line-height/5) max-content 
     grid-gap: 2px 5px
-    grid-template-areas: "dots links" "dots ." "dots perf" "dots info" "dots ." "dots webrings" "dots webrings"
+    grid-template-areas: "links" "." "perf" "info" "." "webrings" "." "dots"
 
   .webrings
     grid-area: webrings
@@ -94,22 +94,15 @@
 
   #footer-dots
     grid-area: dots
-    @media mq-tablet-min
-      margin-left: -16px 
     li
       display: block
       height: 24px
       margin-right: 10px
-      @media mq-tablet-min
-        height: auto
-        margin-right: 10px
       float: left
     li.dot
       a
         display: block
         margin: 0
-        @media mq-tablet-min
-          margin: 0 10px 
         height: 9px
         width: 9px
         background-color: color-footer-dots
