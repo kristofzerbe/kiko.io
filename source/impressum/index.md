@@ -52,12 +52,4 @@ Webmentions sind ein Mechanismus, mit dem andere Websites benachrichtigt werden,
 
 In der Regel werden empfangene Webmentions als Kommentare auf einer Webseite angezeigt. Dies bedeutet, dass eine Kopie Ihres Inhalts auf der Website angezeigt wird, auf die Sie in Ihrem eigenen Beitrag verlinken. Eine eingehende Webmention-Anfrage wird als Aufforderung zur Verarbeitung personenbezogener Daten behandelt und ist somit von vornherein eine Anfrage zur Veröffentlichung eines Kommentars von einer anderen Stelle im Web. Dafür wurde das Protokoll entwickelt und deshalb ist es auf Ihrer Website aktiv. Zu den veröffentlichten persönlichen Daten gehören Ihr Name, Ihr Profilbild von Ihrer Website oder einem gleichartigen Dienst, die URL Ihrer Website und persönliche Informationen, die Sie möglicherweise in Ihrem Beitrag angegeben haben. Die Veröffentlichung eingehender Webmentions basiert auf dem berechtigten Interesse, die Interaktion mit den Lesern dieser Website zu ermöglichen (Art. 6 (1) DSGVO), und folgt der Designabsicht des Webmention-Protokolls.
 
-### Analyse-Tool Pirsch
-
-Auf dieser Website kommt das Open-Source-Webanalysedienst Pirsch.io der Emvi Software GmbH, Nickelstraße 1b, 33378 Rheda-Wiedenbrück mit Sitz in Deutschland zum Einsatz, um die Nutzung der Website analysieren und regelmäßig verbessern zu können.
-
-Die Technologie von Pirsch ist eine Cookie-freie und datenschutzfreundliche Web-Analytik, um unsere Traffic genau messen zu können. Pirsch wird in Deutschland entwickelt und gehostet und arbeitet somit nach den strengen europäischen Datenschutzgesetzen der DSGVO. Die Analysedaten, welche erhoben werden, werden zu keiner Zeit an Dritte weitergegeben. Es werden mit der Technologie von Pirsch ausschließlich anonymisierte Daten (z.B. Datum und Uhrzeit des Seitenaufrufs, Verweildauer oder die Seite, von der sie unsere Website angesteuert haben) gespeichert und verwendet. Sie erlauben keine Identifikation der Besucher dieser Website. Rechtsgrundlage für die Nutzung von Pirsch ist Art. 6 Abs. 1 f) DSGVO.
-
-Sie haben die Möglichkeit, der Analyse zu widersprechen. Informationen zum Datenschutz von Pirsch erhalten sie unter: [https://pirsch.io/privacy](https://pirsch.io/privacy).
-
 </section>
