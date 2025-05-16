@@ -49,7 +49,7 @@ hexo.extend.generator.register("dynamic-feeds", async function(locals) {
     author: {
       name: config.author,
       url: config.url,
-      photo: config.url + "/" + config.photo
+      photo: config.url + "/" + config.avatar
     },
     items: []
   };

@@ -18,6 +18,11 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
     return null;
   }
 
+  if(hexo.config.features_available.blogroll === false) { 
+    log.warn("FEATURE BLOGROLL GENERATION SKIPPED");
+    return null;
+  }
+
   let page = locals.dynamic.blogroll;
 
   log.info("Generating Dynamic Page " + magenta("BLOGROLL") + " for " + magenta(page.items.length + " blogs") + " ...");
