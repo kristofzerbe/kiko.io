@@ -12,10 +12,12 @@ categories:
 tags:
   - Imaging
 related:
+  - New-Year-New-Gnomes
+  - Discoveries-33-Image-Presentation
   - Tringula-And-The-Beauty-Of-Mathematics
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/114518325360598940
 ---
 
 This is a kind of promotional post. For David "ReverentGeek" Neal and his craft ... his art. But this is also a post about ignorance and repression ... on my part.
