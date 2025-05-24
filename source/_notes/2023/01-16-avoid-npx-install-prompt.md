@@ -11,4 +11,4 @@ Using `npx` ([Node Package Runner](https://docs.npmjs.com/cli/v7/commands/npx)) 
 
 [https://github.com/npm/cli/issues/2226](https://github.com/npm/cli/issues/2226)
 
-#NPX #GitHubActions
+#NPX #GitHub/Actions

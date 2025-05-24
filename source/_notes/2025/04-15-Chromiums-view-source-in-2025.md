@@ -11,5 +11,5 @@ In the #TIL note [View Source on Chrome for Android](/notes/2023/view-source-on-
 
 ![Android Screenshot](_attachments/Screenshot_2025-04-15_093329.png)
 
-#chromium #view-source
+#Chromium #View-Source
 

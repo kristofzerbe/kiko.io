@@ -19,4 +19,4 @@ She also wrote about it on CSS Tricks:
 
 [Better Form Inputs for Better Mobile User Experiences](https://css-tricks.com/better-form-inputs-for-better-mobile-user-experiences)
 
-#html #inputs #mobile #playground
+#html #Inputs #Mobile #Playground

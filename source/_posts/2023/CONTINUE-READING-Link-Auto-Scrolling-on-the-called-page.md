@@ -64,7 +64,7 @@ In my template for the start page, 8 articles are currently rendered into the pa
 ...
 ```
 
-I simply appended the hash "**#continue**" to the ``url_for(post.path)`` statement and this is it for the start page.
+I simply appended the hash "**&#35;continue**" to the ``url_for(post.path)`` statement and this is it for the start page.
 
 ## The JS on the article page
 

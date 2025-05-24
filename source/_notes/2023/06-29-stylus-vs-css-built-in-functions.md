@@ -11,4 +11,4 @@ I think [Stylus](https://stylus-lang.com/) had its time, but it's starting to be
 
 Workaround: ``padding-top: @css { max(30px, 3%) }``
 
-#stylus #css
+#stylus #CSS

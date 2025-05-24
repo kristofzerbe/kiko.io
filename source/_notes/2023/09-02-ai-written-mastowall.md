@@ -19,4 +19,4 @@ But the most interesting thing about it, is the following statement from the aut
 
 > It was written entirely by ChatGPT4, guided only by text prompts.
 
-#mastodon #ai #chatgpt
+#Mastodon #AI #ChatGPT

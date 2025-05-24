@@ -17,7 +17,7 @@ Somehow it's apt that [Temani Afif](https://css-articles.com/) has published his
 
 And simply because he can, he adds a line counter and the conversion of a native progress element into a circle at the end ... Really impressive!
 
-#css
+#CSS
 
 ```cardlink
 url: https://frontendmasters.com/blog/how-to-get-the-width-height-of-any-element-in-only-css/

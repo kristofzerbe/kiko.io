@@ -15,4 +15,4 @@ Ever stumbled over an third-party JS library which uses callbacks and had to bui
 
 [>>> Bluebird](http://bluebirdjs.com/docs/getting-started.html)
 
-#js #promise #callback #conversion
+#JS #Promise #Callback #Conversion

@@ -32,7 +32,7 @@ Ich musste die beiden Jungs, James und Max aus München, natürlich wegen dem Ge
 
 Max machte mich im weiteren Gespräch dann darauf aufmerksam, was das besondere an diesem Verein ist, dessen Motto lautet:
 
-> Community is our soul. Football is the spark that brings us together. The magic is our journey that brings friendship, love, support, understanding, growth & opportunity. Football is just the beginning… We are #morethanateam #morethanagame
+> Community is our soul. Football is the spark that brings us together. The magic is our journey that brings friendship, love, support, understanding, growth & opportunity. Football is just the beginning… We are #MoreThanATeam #MoreThanAGame
 
 Es spielt hier keinerlei Rolle was für ein Mensch Du bist, sondern nur Deine Liebe zum Fußball und zur Gemeinschaft. Gerade Letzteres ist in Südafrika nicht wirklich ausgeprägt und ich erinnere mich noch gut an die Worte des ehemaligen Insassen von Robben Island von vor zwei Tagen, der sagte dass die eine Apartheit zwar vorbei sei, aber dass das Land nun an einer anderen leidet. Südafrika ist gespalten durch Hautfarbe und, vor allem ökonomischer, Ungleichheit. Dagegen ist das deutsche Ost/West-Problem der reinste Kindergeburtstag. Dies an alle verblödeten AfD-Wähler.
 

@@ -25,7 +25,7 @@ This CSS calculation to create responsive type size by Tobias Ahlin is somewhat 
 
 [https://tobiasahlin.com/blog/responsive-fluid-css-type-scales](https://tobiasahlin.com/blog/responsive-fluid-css-type-scales)
 
-#css #responsive #type
+#CSS #Responsive #Type
 
 ```cardlink
 url: https://tobiasahlin.com/blog/responsive-fluid-css-type-scales

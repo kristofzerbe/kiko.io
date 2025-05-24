@@ -32,7 +32,7 @@ tag: subject
      - body
 ```
 
-#git #github #conventions
+#Git #GitHub #Conventions
 
 
 ```cardlink

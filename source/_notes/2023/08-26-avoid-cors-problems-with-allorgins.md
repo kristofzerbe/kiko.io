@@ -17,7 +17,7 @@ Ever got crazy on CORS problems when using an API? While examine the code of Chr
 
 Never mind, but great...
 
-#api #proxy #cors
+#API #Proxy #CORS
 
 ```cardlink
 url: https://allorigins.win

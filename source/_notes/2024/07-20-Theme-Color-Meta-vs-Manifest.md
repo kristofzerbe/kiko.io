@@ -17,4 +17,4 @@ However, I noticed today that the latter does not work and after some research i
   <source src="_attachments/Screenshot_2024-07-20_160624~2.mp4" type="video/mp4">
 </video>
 
-#css #manifest #theme
+#CSS #Manifest #Theme

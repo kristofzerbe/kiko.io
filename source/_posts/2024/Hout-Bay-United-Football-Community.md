@@ -33,7 +33,7 @@ I had to tease the two guys, James and Max from Munich, a little about the pastr
 
 Max then pointed out to me what is special about this club, whose motto is:
 
-> Community is our soul. Football is the spark that brings us together. The magic is our journey that brings friendship, love, support, understanding, growth & opportunity. Football is just the beginning… We are #morethanateam #morethanagame
+> Community is our soul. Football is the spark that brings us together. The magic is our journey that brings friendship, love, support, understanding, growth & opportunity. Football is just the beginning… We are #MoreThanATeam #MoreThanAGame
 
 It doesn't matter what kind of human being you are, only your love for football and for the community. The latter is not really well developed in South Africa and I still remember the words of the former inmate of Robben Island from two days ago, who said that one form of apartheid may be over, but that the country is now suffering from another. South Africa is divided by skin colour and, above all, economic inequality. In contrast, the German east/west problem is a walk in the park. This is for all the stupid AfD voters.
 

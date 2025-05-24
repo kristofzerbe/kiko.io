@@ -21,7 +21,7 @@ But [Bramus](https://front-end.social/@bramus) comes to the rescue, at least for
 
 The thing works great, even if it only gets me a little further personally, since I spend 80% of my reading time on my smartphone and ... no extensions are supported in Chrome for Android :|
 
-#chrome #color-scheme
+#Chrome #Color-Scheme
 
 
 ```cardlink

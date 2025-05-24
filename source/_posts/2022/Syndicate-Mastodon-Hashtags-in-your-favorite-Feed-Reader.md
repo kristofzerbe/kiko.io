@@ -33,7 +33,7 @@ And as you just do ... you surf around a bit on it and read a few things until a
 
 [![Matthias Ott's Post on Mastodon, 30. October 2022](Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader/max-ott-post-on-mastondon-rss.png)](https://indieweb.social/web/@matthiasott@mastodon.social/109258009575261184)
 
-Ok, nice ... but does this work for other Mastadon things also, like hashtags? I have to say that I am currently very interested in creating PWAs and the techniques behind them, and I'm always looking for new resources to read. So it didn't take me 5 minutes to start reading posts in Mastodon with the hashtag [#pwa](https://indieweb.social/web/tags/pwa) almost automatically.
+Ok, nice ... but does this work for other Mastadon things also, like hashtags? I have to say that I am currently very interested in creating PWAs and the techniques behind them, and I'm always looking for new resources to read. So it didn't take me 5 minutes to start reading posts in Mastodon with the hashtag [#PWA](https://indieweb.social/web/tags/pwa) almost automatically.
 
 What can I say? It works...
 

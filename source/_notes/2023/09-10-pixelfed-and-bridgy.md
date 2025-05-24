@@ -11,4 +11,4 @@ Refactored the photo section on my blog and started to cross post some photos on
 
 [https://github.com/snarfed/bridgy/issues/927#issuecomment-911780729](https://github.com/snarfed/bridgy/issues/927#issuecomment-911780729)
 
-#pixelfed #bridgy #github
+#pixelfed #Bridgy #GitHub

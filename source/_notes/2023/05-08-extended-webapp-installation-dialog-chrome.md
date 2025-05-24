@@ -15,4 +15,4 @@ At the end of March, the [Chrome team announced](https://developer.chrome.com/bl
 
 ![Extended WebApp Installation Dialog in Chrome](_attachments/05-08-extended-webapp-installation-dialog-chrome.png)
 
-#Chrome #WebApp #Installation
+#Chrome #WebApps #Installation

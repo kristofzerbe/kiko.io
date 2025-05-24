@@ -23,4 +23,4 @@ manage-bde -protectors -get d: > y:\backup\bitlocker.txt
 
 If the machine was set up with a Microsoft account, the keys can also be found here: [https://account.microsoft.com/devices/recoverykey](https://account.microsoft.com/devices/recoverykey).
 
-#windows #bitlocker #backup
+#windows #Bitlocker #Backup

@@ -3,22 +3,20 @@ title: "#TIL | Styling images in Markdown via URL hash"
 date: 2024-11-08
 type: til
 rel:
-  verb: bookmark-of
-  caption: Aligning Images In Markdown
-  url: https://www.surinderbhomra.com/Blog/2020/05/12/Aligning-Images-In-Markdown
+  verb: like-of
+  caption: 
+  url: 
 syndication: 
 - host: Mastodon
-  url: https://indieweb.social/@kiko/113447973418426445
+  url: 
 ---
 Oh man! The other day I fumbled HTML with inline styles into one of my Markdown files to let the text flow past it classically with FLOAT on the left side. But there is a simple and charming solution to solve this in general purely via the image URL and some CSS that I could have come up with myself ...
 
-I was led to this by a [Mastodon post from Matt Wilkie](https://vmst.io/@maphew/113445531772804983), who cites a blog post from Surinder Bhomra. It's just a simple hash added to the Markdown image URL (and which has no further impact) ...
+I was led to this by a [Mastodon post from Matt Wilkie](https://vmst.io/@maphew/113445531772804983), who cites a blog post from Surinder Bhomra:
 
 ```md
-![my alt-text](path/to/my-image.jpg#right)
+![alt-text](path/to/image.jpg#right)
 ```
-
-... and a little bit CSS:
 
 ```css
 img[src*='#left'] {
@@ -28,7 +26,7 @@ img[src*='#left'] {
 ```
 
 
-#markdown #images 
+#Markdown #images 
 
 ```cardlink
 url: https://www.surinderbhomra.com/Blog/2020/05/12/Aligning-Images-In-Markdown

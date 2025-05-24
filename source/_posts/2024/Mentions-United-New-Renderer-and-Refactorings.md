@@ -27,7 +27,6 @@ syndication:
   - host: Lemmy
     title: IndieWeb
     url: https://programming.dev/post/21827931
-
 ---
 
 Until now, I only occasionally checked the runtime of my Mentions United scripts by using a console output. It didn't seem to be that important, because the scripts run asynchronously and the interactions only appear at the end of an article, with some time to spare before the reader gets there. However, the console times always referred to the providers that were actually executed and said nothing about the time that was actually needed. I also show the number of interactions at the beginning of an article, but not at the interactions themselves. In my head, the idea of a summary line was forming ...

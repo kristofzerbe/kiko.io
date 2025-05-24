@@ -1,21 +1,19 @@
 ---
 slug: Dealing-with-Variable-Fonts-in-2023
 title: Dealing with Variable Fonts in 2023
-subtitle:
+subtitle: 
 date: 2023-11-08 18:25:00
 photograph:
   file: 19-05-Israel-0165.jpg
   name: Fruit Colors
   socialmedia: /static/images/social-media/Dealing-with-Variable-Fonts-in-2023.png
-categories:
-  - xxx
-tags:
-  - xxx
+categories: []
+tags: 
 related:
   - Experimenting-with-the-font-LEXEND
 syndication:
   - host: Mastodon
-    url: 
+    url:
 ---
 
 
