@@ -18,7 +18,7 @@ related:
   - Discoveries-31
 syndication:
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/114562023025083098
 ---
 
 This is only the third issue of Discoveries in the last six months. That's because I currently have significantly less time and energy to devote to non-work-related activities. This includes reading my many news sources, but also collecting and summarising the things I want to highlight on my blog.
