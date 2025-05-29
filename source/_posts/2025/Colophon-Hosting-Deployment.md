@@ -13,8 +13,8 @@ categories:
 tags:
   - Hexo
 related:
+  - Colophon-Writing
   - Colophon-Impetus-Technology
-  - App-Defaults-2024
   - The-State-of-the-Blog
 syndication:
   - host: Mastodon

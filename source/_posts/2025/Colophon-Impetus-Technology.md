@@ -13,8 +13,8 @@ categories:
 tags:
   - Hexo
 related:
-  - App-Defaults-2024
-  - Include-and-provide-JSON-data-in-Hexo-EJS-Templates
+  - Colophon-Writing
+  - Colophon-Hosting-Deployment
   - The-State-of-the-Blog
 syndication:
   - host: Mastodon
