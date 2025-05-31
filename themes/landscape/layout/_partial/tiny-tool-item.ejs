@@ -1,0 +1,16 @@
+<div class="card collection" 
+    data-tags="<%= item.tags.join(";") %>"
+    data-string-title="<%- item.title %>" 
+    data-date-created="<%- item.created %>">
+  <a class="card-img" href="<%- item.url %>">
+    <img loading="lazy" src="<%- item.imageUrl %>" />
+  </a>
+  <h3><a href="<%- item.url %>" class="h-link"><%- item.title %></a></h3>
+  <small><a href="<%- item.url %>" class="break"><%- item.url %></a></small>
+  <div class="tags">
+    <% for(var j=0; j < item.tags.length; j++) { %>
+      <a class="tag" href="#" onclick="return filterByTag(this);"><%- item.tags[j] %></a>
+    <% } %>
+  </div>
+  <p><%- item.description %></p>
+</div>

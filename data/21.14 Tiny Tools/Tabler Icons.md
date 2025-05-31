@@ -1,0 +1,18 @@
+---
+created: 2025-05-12T08:41:14.681Z
+tags: 
+  - Collection
+  - SVG
+  - Icon
+title: Tabler Icons
+url: https://tabler-icons.io/
+---
+```meta-bind
+INPUT[TAGS-Tiny-Tools][:tags]
+```
+
+___
+Free and open source icons designed with attention to detail to make your design stand out.
+___
+
+![](_attachments/tabler-icons.jpg)

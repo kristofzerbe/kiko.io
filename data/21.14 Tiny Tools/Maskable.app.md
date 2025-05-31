@@ -1,0 +1,19 @@
+---
+created: 2023-08-21T12:38:57.662Z
+tags: 
+  - Editor
+  - Icon
+  - Imaging
+  - Website
+title: Maskable.app
+url: https://maskable.app/editor
+---
+```meta-bind
+INPUT[TAGS-Tiny-Tools][:tags]
+```
+
+___
+Maskable.app Editor lets you generate maskable PWA icons before adding them to your web app manifest.
+___
+
+![](_attachments/maskable-app.jpg)
