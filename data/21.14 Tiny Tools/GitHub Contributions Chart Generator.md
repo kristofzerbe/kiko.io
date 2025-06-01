@@ -1,5 +1,5 @@
 ---
-created: 2023-08-21T12:38:57.613Z
+created: 2023-01-01T09:08:02.349Z
 tags: 
   - Analyzer
   - Generator

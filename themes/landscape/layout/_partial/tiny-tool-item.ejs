@@ -1,7 +1,7 @@
 <div class="card collection" 
     data-tags="<%= item.tags.join(";") %>"
     data-string-title="<%- item.title %>" 
-    data-date-created="<%- item.created %>">
+    data-date-created="<%- item.created.toISOString() %>">
   <a class="card-img" href="<%- item.url %>">
     <img loading="lazy" src="<%- item.imageUrl %>" />
   </a>

@@ -1,5 +1,5 @@
 ---
-created: 2025-05-12T08:42:20.152Z
+created: 2020-10-01T05:48:14.341Z
 tags: 
   - CSS
   - Generator

@@ -1,5 +1,5 @@
 ---
-created: 2023-08-21T12:38:57.529Z
+created: 2022-11-27T10:27:59.013Z
 tags: 
   - Analyzer
   - IndieWeb

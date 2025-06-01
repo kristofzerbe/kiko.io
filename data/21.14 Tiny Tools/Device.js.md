@@ -1,5 +1,5 @@
 ---
-created: 2023-08-21T12:38:56.913Z
+created: 2021-02-19T15:06:19.821Z
 tags: 
   - Information
 title: Device.js

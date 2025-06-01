@@ -1,5 +1,5 @@
 ---
-created: 2023-08-31T14:37:12.664Z
+created: 2023-08-19T09:43:36.283Z
 tags: 
   - Analyzer
 title: WhatTheDuck

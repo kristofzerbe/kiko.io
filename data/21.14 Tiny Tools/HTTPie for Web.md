@@ -1,5 +1,5 @@
 ---
-created: 2023-08-21T12:38:57.529Z
+created: 2022-11-18T13:17:34.266Z
 tags: 
   - Test/Playground
 title: HTTPie for Web
