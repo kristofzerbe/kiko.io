@@ -51,7 +51,7 @@ This project aims to be a drop-in solution for sites to prefetch links based on 
 It is possible to operate a web app in a browser using the keyboard, but it only feels like an app when the developer provides hotkeys for important functions. This lib helps to create custom keyboard shortcuts, for example <code>new shortcut({ctrl: false, alt: false, shift: false, meta: false, key: "A", fn: ()=>{ alert("Hello World") }})</code>
 {% enddiscovery %}
 
-{% discovery "MapLibre GL JS" "MapLibre Organization" "maplibre-gl-js" Discoveries-34-JS-Libraries maplibre-gl-js.png %}
+{% discovery "MapLibre GL JS" "MapLibre Organization" "https://maplibre.org/maplibre-gl-js/docs/" Discoveries-34-JS-Libraries maplibre-gl-js.png %}
 Open source map solutions are rare and difficult to find among the many paid stuff available. Leaflet is a really good solution, and MapLibre doesn't want to let it grab all the attention. It's written in TypeScript and promises a good performance, due to GPU-accelerated vector tile rendering.
 {% enddiscovery %}
 
