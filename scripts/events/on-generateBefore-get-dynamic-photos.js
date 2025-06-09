@@ -29,10 +29,6 @@ hexo.on('generateBefore', function() {
     .filter(p => (p.name)) //filter out all without photo name
     .sort((a, b) => a.key.localeCompare(b.key));
 
-  // let xxx = [...pHero, ...pPool, ...pReserve, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes]
-  //   .filter(p => !(p.name))
-  //   .map(p => console.log(p.type + " | " + p.file  + " | " + p.status));
-
   let newestPhotoDate = new Date(Math.max(...photos.map(p => new Date(p.date))));
   // console.log(newestPhotoDate);
 
@@ -73,7 +69,8 @@ hexo.on('generateBefore', function() {
 
   let coordinates = {};
   let photoCount = 0;
-  photos.forEach((obj) => {
+  let photoMap = [...photos, ...pShed]
+  photoMap.forEach((obj) => {
     if (obj.meta?.latitude && obj.meta?.longitude) {
       let latlng = shortDec(obj.meta.latitude) + "|" + shortDec(obj.meta.longitude);
       if (!coordinates.hasOwnProperty(latlng)) {
