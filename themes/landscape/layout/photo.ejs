@@ -92,10 +92,18 @@
         <label>Artist, Copyright</label>
         <span><%= page.meta.Artist ?? "Kristof Zerbe" %>,  &copy; <%= page.meta.Copyright ?? "" %> CC-BY-SA</span>
       </li>
+      <% if(page.meta.DateTimeOriginal) { %>
       <li>
         <label>Original Date</label>
-        <span data-pagefind-meta="date" data-create-date="<%- page.meta.DateTimeOriginal %>"><%= new Date(page.meta.DateTimeOriginal).toLocaleString('en-GB', { weekday:"long", year:"numeric", month:"long", day:"numeric"}) ?? "---" %></span>
-      </li>
+        <span data-pagefind-meta="date" data-create-date="<%- page.meta.DateTimeOriginal %>"><%= new Date(page.meta.DateTimeOriginal).toLocaleString('en-GB', { weekday:"long", year:"numeric", month:"long", day:"numeric"}) %></span>
+        </li>
+      <% } else { %>
+      <% if(page.meta.DateCreated) { %>
+      <li>
+        <label>Date Created</label>
+        <span data-pagefind-meta="date" data-create-date="<%- page.meta.DateCreated %>"><%= page.meta.DateCreated ?? "---" %></span>
+        </li>
+      <% }} %>
       <li>
         <label>Country, State, City</label>
         <span data-pagefind-meta="location"><%= (page.meta?.Country ?? "---") + ", " + (page.meta.State ?? "---") + ", " + (page.meta.City ?? "---") %></span>
@@ -118,7 +126,9 @@
       </li>
       <li>
         <label>Focal Length</label>
-        <span><%= (page.meta.FocalLength + "mm") ?? "---" %></span>
+        <% if (page.meta.FocalLength) { %>
+        <span><%= page.meta.FocalLength %>mm</span>
+        <% } else { %><span>---</span><% } %>
       </li>
       <li>
         <label>ISO</label>
@@ -126,16 +136,18 @@
       </li>
       <li>
         <label>FNumber</label>
-        <span><em>f&nbsp;</em><%= page.meta.FNumber ?? "---" %></span>
+        <% if(page.meta.FNumber) { %>
+        <span><em>f&nbsp;</em><%= page.meta.FNumber %></span>
+        <% } else { %><span>---</span><% } %>
       </li>
       <li>
         <label>Exposure Time</label>
+        <% if (page.meta.ExposureTime) { %>
         <span>
-          <% if (page.meta.ExposureTime) { %>
           <%= convertDecimalToFraction(page.meta.ExposureTime.toFixed(4)) ?? "---" %>&nbsp;
           <em style="font-style:normal;opacity:0.5">(<%= page.meta.ExposureTime %>)</em>
-          <% } %>
         </span>
+        <% } else { %><span>---</span><% } %>
       </li>
       <li>
         <label>Shutter Speed</label>
