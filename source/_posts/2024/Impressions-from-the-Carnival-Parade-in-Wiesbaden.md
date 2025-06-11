@@ -6,7 +6,7 @@ date: 2024-02-14 17:34:05
 photograph:
   file: D50_6900_2402.jpg
   name: Carnival Brass
-  socialmedia: /static/images/social-media/Impressions-from-the-Carnival-Parade-in-Wiesbaden.png
+  socialmedia: /static/images/social-media/Impressions-from-the-Carnival-Parade-in-Wiesbaden.jpg
 categories:
   - Photo
 tags:

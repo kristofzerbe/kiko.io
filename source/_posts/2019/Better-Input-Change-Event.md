@@ -6,7 +6,7 @@ date: 2019-11-26T16:51:17.000Z
 photograph:
   file: 19-05-Israel-0624.jpg
   name: Jerusalem Seat
-  socialmedia: /static/images/social-media/Better-Input-Change-Event.png
+  socialmedia: /static/images/social-media/Better-Input-Change-Event.jpg
 categories:
   - Coding
 tags:

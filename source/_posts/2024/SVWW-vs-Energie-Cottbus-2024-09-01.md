@@ -5,7 +5,7 @@ subtitle: A very flattering win
 date: 2024-09-02 17:26:02
 photograph:
   file: PXL_20240901_112100470.jpg
-  socialmedia: /static/images/social-media/SVWW-vs-Energie-Cottbus-2024-09-01.png
+  socialmedia: /static/images/social-media/SVWW-vs-Energie-Cottbus-2024-09-01.jpg
 series: SV Wehen Wiesbaden
 categories:
   - Football

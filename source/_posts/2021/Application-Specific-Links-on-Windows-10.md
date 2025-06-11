@@ -6,7 +6,7 @@ date: 2021-09-03T09:31:08.000Z
 photograph:
   file: D70_0247.jpg
   name: Copenhagen Window
-  socialmedia: /static/images/social-media/Application-Specific-Links-on-Windows-10.png
+  socialmedia: /static/images/social-media/Application-Specific-Links-on-Windows-10.jpg
 categories:
   - Misc
 tags:

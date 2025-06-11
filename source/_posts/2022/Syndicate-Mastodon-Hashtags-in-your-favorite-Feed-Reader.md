@@ -7,7 +7,7 @@ photograph:
   file: DSC_1936.jpg
   name: Botanical Coexistence
   socialmedia: >-
-    /static/images/social-media/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader.png
+    /static/images/social-media/Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader.jpg
 categories:
   - Tools
 tags:

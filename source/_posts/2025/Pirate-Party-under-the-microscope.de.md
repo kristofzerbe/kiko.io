@@ -9,7 +9,7 @@ date: 2025-04-14 19:19:14
 photograph:
   file: D50_7028_2404.jpg
   name: Thomas Garden 24-04 IV
-  socialmedia: /static/images/social-media/Pirate-Party-under-the-microscope.png
+  socialmedia: /static/images/social-media/Pirate-Party-under-the-microscope.jpg
 categories:
   - Misc
 tags:

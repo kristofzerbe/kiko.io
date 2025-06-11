@@ -6,7 +6,7 @@ date: 2024-10-20 18:17:11
 photograph:
   file: 24-05-Wales-7221.jpg
   name: Dunkirk Colors
-  socialmedia: /static/images/social-media/Dunkirk.png
+  socialmedia: /static/images/social-media/Dunkirk.jpg
 series: New Photos
 categories:
   - Photo

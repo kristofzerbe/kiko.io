@@ -6,7 +6,7 @@ date: 2021-09-29T12:57:51.000Z
 photograph:
   file: DSC_6875-HDR.jpg
   name: Windowed Wall
-  socialmedia: /static/images/social-media/Discoveries-13.png
+  socialmedia: /static/images/social-media/Discoveries-13.jpg
 series: Discoveries
 categories:
   - Collection

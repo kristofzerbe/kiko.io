@@ -6,7 +6,7 @@ date: 2020-10-28T14:07:20.000Z
 photograph:
   file: IMG_20191009_164133_HDR.jpg
   name: Iza Khans Tomb 1
-  socialmedia: /static/images/social-media/Indian-Presets-for-Lightroom.png
+  socialmedia: /static/images/social-media/Indian-Presets-for-Lightroom.jpg
 series: Lightroom Presets
 categories:
   - Photo

@@ -6,7 +6,7 @@ date: 2024-10-07 13:28:54
 photograph:
   file: D50_9511_2406.jpg
   name: Bent Details
-  socialmedia: /static/images/social-media/Discoveries-31.png
+  socialmedia: /static/images/social-media/Discoveries-31.jpg
 series: Discoveries
 categories:
   - Collection

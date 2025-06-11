@@ -6,7 +6,7 @@ date: 2023-02-02
 photograph:
   file: D50_1147.jpg
   name: Poppy Green
-  socialmedia: /static/images/social-media/Radio-Garden.png
+  socialmedia: /static/images/social-media/Radio-Garden.jpg
 series: Golem
 golem:
   title: Alle Arten kommen in den Garten

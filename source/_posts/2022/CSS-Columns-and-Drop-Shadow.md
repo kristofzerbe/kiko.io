@@ -6,7 +6,7 @@ date: 2022-01-16
 photograph:
   file: DSC_2909.jpg
   name: Guinness Industry
-  socialmedia: /static/images/social-media/CSS-Columns-and-Drop-Shadow.png
+  socialmedia: /static/images/social-media/CSS-Columns-and-Drop-Shadow.jpg
 categories:
   - UI/UX
 tags:

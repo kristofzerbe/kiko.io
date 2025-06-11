@@ -6,7 +6,7 @@ date: 2023-11-08 18:25:00
 photograph:
   file: 19-05-Israel-0165.jpg
   name: Fruit Colors
-  socialmedia: /static/images/social-media/Dealing-with-Variable-Fonts-in-2023.png
+  socialmedia: /static/images/social-media/Dealing-with-Variable-Fonts-in-2023.jpg
 categories: []
 tags: 
 related:

@@ -6,7 +6,7 @@ date: 2020-10-26T13:28:59.000Z
 photograph:
   file: DSC_0181.jpg
   name: Color Seat
-  socialmedia: /static/images/social-media/Folder-based-publishing-in-Lightroom.png
+  socialmedia: /static/images/social-media/Folder-based-publishing-in-Lightroom.jpg
 categories:
   - Photo
 tags:

@@ -6,7 +6,7 @@ date: 2025-03-23 17:32:10
 photograph:
   file: D50_3760_2503.jpg
   name: Thomas Garden 25-03 I
-  socialmedia: /static/images/social-media/New-Year-New-Gnomes.png
+  socialmedia: /static/images/social-media/New-Year-New-Gnomes.jpg
 series: Thomas Garden
 categories:
   - Photo

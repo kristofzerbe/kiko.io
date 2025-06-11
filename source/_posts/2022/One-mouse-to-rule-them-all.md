@@ -6,7 +6,7 @@ date: 2022-10-08 11:46:57
 photograph:
   file: 22-05-Malta-8364.jpg
   name: Ancient Cockpit
-  socialmedia: /static/images/social-media/One-mouse-to-rule-them-all.png
+  socialmedia: /static/images/social-media/One-mouse-to-rule-them-all.jpg
 series: Golem
 golem:
   title: Eine Maus für alles

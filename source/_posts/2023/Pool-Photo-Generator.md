@@ -6,7 +6,7 @@ date: 2023-08-21
 photograph:
   file: 23-05-Holland-0174.jpg
   name: Beer Copper
-  socialmedia: /static/images/social-media/Pool-Photo-Generator.png
+  socialmedia: /static/images/social-media/Pool-Photo-Generator.jpg
 series: A New Blog
 categories:
   - Coding

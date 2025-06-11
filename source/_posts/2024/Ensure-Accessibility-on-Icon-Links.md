@@ -6,7 +6,7 @@ date: 2024-07-25 08:06:34
 photograph:
   file: 23-05-Holland-0368.jpg
   name: Red Black Pigeon
-  socialmedia: /static/images/social-media/Ensure-Accessibility-on-Icon-Links.png
+  socialmedia: /static/images/social-media/Ensure-Accessibility-on-Icon-Links.jpg
 categories:
   - UI/UX
 tags:

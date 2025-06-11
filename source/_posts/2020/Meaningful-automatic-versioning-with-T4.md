@@ -6,7 +6,7 @@ date: 2020-06-27T17:57:18.000Z
 photograph:
   file: D70_7184.jpg
   name: Specialita' Toscane
-  socialmedia: /static/images/social-media/Meaningful-automatic-versioning-with-T4.png
+  socialmedia: /static/images/social-media/Meaningful-automatic-versioning-with-T4.jpg
 categories:
   - Coding
 tags:

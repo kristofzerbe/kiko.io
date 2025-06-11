@@ -6,7 +6,7 @@ date: 2025-03-15 17:42:44
 photograph:
   file: 24-12-Suedafrika-4248-PXL.jpg
   name: Dassiesfontain
-  socialmedia: /static/images/social-media/Across-the-Country.png
+  socialmedia: /static/images/social-media/Across-the-Country.jpg
 series: New Photos
 categories:
   - Photo

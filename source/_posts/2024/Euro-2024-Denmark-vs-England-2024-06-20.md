@@ -5,7 +5,7 @@ subtitle: "The European Championship at Home"
 date: 2024-06-21 15:19:22
 photograph:
   file: PXL_20240620_155509360.jpg
-  socialmedia: /static/images/social-media/Euro-2024-Denmark-vs-England-2024-06-20.png
+  socialmedia: /static/images/social-media/Euro-2024-Denmark-vs-England-2024-06-20.jpg
 categories:
   - Football
 tags:

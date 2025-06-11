@@ -6,7 +6,7 @@ date: 2023-12-19 12:58:26
 photograph:
   file: DSC_6371-HDR.jpg
   name: Lonely Lock
-  socialmedia: /static/images/social-media/Securing-Single-User-Web-Apps.png
+  socialmedia: /static/images/social-media/Securing-Single-User-Web-Apps.jpg
 categories: 
 tags: 
 related: []

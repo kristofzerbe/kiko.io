@@ -6,7 +6,7 @@ date: 2020-12-19T12:12:44.000Z
 photograph:
   file: D70_0789.jpg
   name: Kitchen Copper
-  socialmedia: /static/images/social-media/Discoveries-5.png
+  socialmedia: /static/images/social-media/Discoveries-5.jpg
 series: Discoveries
 categories:
   - Collection

@@ -6,7 +6,7 @@ date: 2019-10-26T14:08:05.000Z
 photograph:
   file: 19-07-Schottland-0025.jpg
   name: Glencoe River
-  socialmedia: /static/images/social-media/Hexo-and-the-Dark-Mode-revised.png
+  socialmedia: /static/images/social-media/Hexo-and-the-Dark-Mode-revised.jpg
 series: A New Blog
 tags:
   - Hexo

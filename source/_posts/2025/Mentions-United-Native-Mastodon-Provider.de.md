@@ -9,7 +9,7 @@ date: 2025-01-12 14:54:21
 photograph:
   file: D50_9807_2407.jpg
   name: Thomas Garden 24-07 XIII
-  socialmedia: /static/images/social-media/Mentions-United-Native-Mastodon-Provider.png
+  socialmedia: /static/images/social-media/Mentions-United-Native-Mastodon-Provider.jpg
 project: mentions-united
 categories:
   - Coding

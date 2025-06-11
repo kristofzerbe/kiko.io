@@ -6,7 +6,7 @@ date: 2021-02-28T17:05:00.000Z
 photograph:
   file: DSC_7207.jpg
   name: Green Lightbeam
-  socialmedia: /static/images/social-media/Custom-Caller-Authentication-with-ASP-NET-Core-5-0-WebApi.png
+  socialmedia: /static/images/social-media/Custom-Caller-Authentication-with-ASP-NET-Core-5-0-WebApi.jpg
 categories:
   - Coding
 tags:

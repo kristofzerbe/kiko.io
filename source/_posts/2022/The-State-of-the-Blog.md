@@ -6,7 +6,7 @@ date: 2022-12-23 22:40:00
 photograph:
   file: DSC_0654.jpg
   name: Green Rag
-  socialmedia: /static/images/social-media/The-State-of-the-Blog.png
+  socialmedia: /static/images/social-media/The-State-of-the-Blog.jpg
 series: A New Blog
 categories:
   - Misc

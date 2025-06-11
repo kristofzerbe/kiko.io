@@ -6,7 +6,7 @@ date: 2021-10-10T12:28:09.000Z
 photograph:
   file: 18-09-Kroatien-0340.jpg
   name: Seating Group
-  socialmedia: /static/images/social-media/The-Last-Image-Gallery.png
+  socialmedia: /static/images/social-media/The-Last-Image-Gallery.jpg
 series: Great Finds
 categories:
   - Coding

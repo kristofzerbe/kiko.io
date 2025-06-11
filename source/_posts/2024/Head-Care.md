@@ -6,7 +6,7 @@ date: 2024-07-18 10:38:17
 photograph:
   file: 23-08-Mecklenburg-Seen-0433.jpg
   name: Sparkling Duck
-  socialmedia: /static/images/social-media/Head-Care.png
+  socialmedia: /static/images/social-media/Head-Care.jpg
 categories:
   - Coding
 tags:

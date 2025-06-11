@@ -6,7 +6,7 @@ date: 2021-01-24T14:47:10.000Z
 photograph:
   file: DSC_9368.jpg
   name: Direction Airport
-  socialmedia: /static/images/social-media/Remote-Testing-and-Debugging-with-Chrome.png
+  socialmedia: /static/images/social-media/Remote-Testing-and-Debugging-with-Chrome.jpg
 series: Step By Step
 categories:
   - Tools

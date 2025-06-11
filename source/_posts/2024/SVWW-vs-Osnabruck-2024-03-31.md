@@ -6,7 +6,7 @@ date: 2024-04-01 15:32:44
 photograph:
   file: PXL_20240331_112627954.jpg
   _name: SVWW vs Osnabrück @ 2024-03-31
-  socialmedia: /static/images/social-media/SVWW-vs-Osnabruck-2024-03-31.png
+  socialmedia: /static/images/social-media/SVWW-vs-Osnabruck-2024-03-31.jpg
 series: SV Wehen Wiesbaden
 categories:
   - Football

@@ -6,7 +6,7 @@ date: 2025-05-24 08:16:57
 photograph:
   file: D50_9418_2406.jpg
   name: Dependable Engines
-  socialmedia: /static/images/social-media/Discoveries-34-JS-Libraries.png
+  socialmedia: /static/images/social-media/Discoveries-34-JS-Libraries.jpg
 series: Discoveries
 categories:
   - Collection

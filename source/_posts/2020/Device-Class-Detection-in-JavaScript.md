@@ -6,7 +6,7 @@ date: 2020-09-28T15:27:17.000Z
 photograph:
   file: 19-05-Israel-0145.jpg
   name: Jaffa Pepsi
-  socialmedia: /static/images/social-media/Device-Class-Detection-in-JavaScript.png
+  socialmedia: /static/images/social-media/Device-Class-Detection-in-JavaScript.jpg
 categories:
   - Coding
 tags:

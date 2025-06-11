@@ -6,7 +6,7 @@ date: 2023-02-10
 photograph:
   file: D70_9216.jpg
   name: Broken Onion
-  socialmedia: /static/images/social-media/Provide-Blog-Metadata-via-JSON-LD.png
+  socialmedia: /static/images/social-media/Provide-Blog-Metadata-via-JSON-LD.jpg
 series: A New Blog
 categories:
   - Tools

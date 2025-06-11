@@ -6,7 +6,7 @@ subtitle: null
 photograph:
   file: DSC_7239.jpg
   name: Whirling Spark I
-  socialmedia: /static/images/social-media/How-to-prevent-duplicate-events.png
+  socialmedia: /static/images/social-media/How-to-prevent-duplicate-events.jpg
 categories:
   - Coding
 tags:

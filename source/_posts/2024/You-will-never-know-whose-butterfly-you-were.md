@@ -8,7 +8,7 @@ date: 2024-11-03 22:52:04
 photograph:
   file: DSC_2167.jpg
   name: Butterflies on Pink
-  socialmedia: /static/images/social-media/You-will-never-know-whose-butterfly-you-were.png
+  socialmedia: /static/images/social-media/You-will-never-know-whose-butterfly-you-were.jpg
 categories:
   - Misc
 tags:

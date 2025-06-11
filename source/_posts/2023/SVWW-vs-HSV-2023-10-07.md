@@ -6,7 +6,7 @@ date: 2023-10-07 17:46:04
 photograph:
   file: PXL_20231007_105740138.jpg
   _name: SVWW vs HSV @ 2023-10-07
-  socialmedia: /static/images/social-media/SVWW-vs-HSV-2023-10-07.png
+  socialmedia: /static/images/social-media/SVWW-vs-HSV-2023-10-07.jpg
 series: SV Wehen Wiesbaden
 categories:
   - Football

@@ -6,7 +6,7 @@ date: 2024-04-22 14:57:31
 photograph:
   file: DSC_7910.jpg
   name: White Crystal
-  socialmedia: /static/images/social-media/Discoveries-29-CSS.png
+  socialmedia: /static/images/social-media/Discoveries-29-CSS.jpg
 series: Discoveries
 categories:
   - Collection

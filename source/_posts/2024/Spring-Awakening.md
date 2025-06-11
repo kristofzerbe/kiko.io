@@ -6,7 +6,7 @@ date: 2024-04-21 19:20:12
 photograph:
   file: D50_7025_2404.jpg
   name: Thomas Garden 24-04 II
-  socialmedia: /static/images/social-media/Spring-Awakening.png
+  socialmedia: /static/images/social-media/Spring-Awakening.jpg
 series: Thomas Garden
 categories:
   - Photo

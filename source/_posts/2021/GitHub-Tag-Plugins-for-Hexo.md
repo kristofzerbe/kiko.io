@@ -6,7 +6,7 @@ date: 2021-12-29T12:20:34.000Z
 photograph:
   file: DSC_2443.jpg
   name: Winch
-  socialmedia: /static/images/social-media/GitHub-Tag-Plugins-for-Hexo.png
+  socialmedia: /static/images/social-media/GitHub-Tag-Plugins-for-Hexo.jpg
 project: Hexo Tag Plugins
 categories:
   - Tools

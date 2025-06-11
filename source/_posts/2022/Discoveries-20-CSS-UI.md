@@ -6,7 +6,7 @@ date: 2022-10-08 13:23:33
 photograph:
   file: D50_7474.jpg
   name: Garden Beauties XIV
-  socialmedia: /static/images/social-media/Discoveries-20-CSS-UI.png
+  socialmedia: /static/images/social-media/Discoveries-20-CSS-UI.jpg
 series: Discoveries
 categories:
   - Collection

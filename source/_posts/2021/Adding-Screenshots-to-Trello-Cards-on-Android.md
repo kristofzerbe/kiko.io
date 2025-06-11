@@ -6,7 +6,7 @@ date: 2021-04-11T16:11:10.000Z
 photograph:
   file: DSC_7006-HDR.jpg
   name: Break Dancer
-  socialmedia: /static/images/social-media/Adding-Screenshots-to-Trello-Cards-on-Android.png
+  socialmedia: /static/images/social-media/Adding-Screenshots-to-Trello-Cards-on-Android.jpg
 series: Step By Step
 categories:
   - Misc

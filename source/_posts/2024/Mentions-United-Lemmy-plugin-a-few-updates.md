@@ -6,7 +6,7 @@ date: 2024-11-04 15:47:21
 photograph:
   file: D50_0069_2408.jpg
   name: Delicate Blue
-  socialmedia: /static/images/social-media/Mentions-United-Lemmy-plugin-a-few-updates.png
+  socialmedia: /static/images/social-media/Mentions-United-Lemmy-plugin-a-few-updates.jpg
 project: mentions-united
 categories:
   - Coding

@@ -8,7 +8,7 @@ date: 2025-05-03 17:55:00
 photograph:
   file: D50_9566_2406.jpg
   name: Thomas Garden 24-06 VII
-  socialmedia: /static/images/social-media/Mentions-United-Peertube-Provider.png
+  socialmedia: /static/images/social-media/Mentions-United-Peertube-Provider.jpg
 project: mentions-united
 categories:
   - Coding

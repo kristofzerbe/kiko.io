@@ -6,7 +6,7 @@ date: 2024-07-21 18:07:24
 photograph:
   file: D50_9955_2407.jpg
   name: Thomas Garden 24-07 XXXI
-  socialmedia: /static/images/social-media/July-Heat.png
+  socialmedia: /static/images/social-media/July-Heat.jpg
 series: Thomas Garden
 categories:
   - Photo

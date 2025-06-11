@@ -6,7 +6,7 @@ date: 2021-05-13T14:16:00.000Z
 photograph:
   file: 19-12-Kroatien-0183.jpg
   name: Dubrovnik Fishnet
-  socialmedia: /static/images/social-media/Hexo-and-the-IndieWeb-Receiving-Webmentions.png
+  socialmedia: /static/images/social-media/Hexo-and-the-IndieWeb-Receiving-Webmentions.jpg
 series: IndieWeb
 categories:
   - Tools

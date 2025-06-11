@@ -6,7 +6,7 @@ date: 2023-12-27 13:54:38
 photograph:
   file: 23-09-11-Speyer-0022.jpg
   name: Yellow Curves
-  socialmedia: /static/images/social-media/IndieFediWebVerse.png
+  socialmedia: /static/images/social-media/IndieFediWebVerse.jpg
 series: IndieWeb
 categories:
   - Misc

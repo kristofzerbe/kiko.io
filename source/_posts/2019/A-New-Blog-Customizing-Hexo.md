@@ -6,7 +6,7 @@ date: 2019-09-25T12:00:00.000Z
 photograph:
     file: 19-07-Schottland-0198.jpg
     name: Thistle Fence
-    socialmedia: /static/images/social-media/A-New-Blog-Customizing-Hexo.png
+    socialmedia: /static/images/social-media/A-New-Blog-Customizing-Hexo.jpg
 series: A New Blog
 categories:
   - Tools

@@ -6,7 +6,7 @@ date: 2025-04-19 19:41:28
 photograph:
   file: 24-05-Wales-7490.jpg
   name: GKT 7 Something
-  socialmedia: /static/images/social-media/Colophon-Styling.png
+  socialmedia: /static/images/social-media/Colophon-Styling.jpg
 series: A New Blog
 categories:
   - Misc

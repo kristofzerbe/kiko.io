@@ -6,7 +6,7 @@ date: 2023-09-10 10:59:19
 photograph:
   file: 23-08-26-MPS-Speyer-0172.jpg
   name: Versengold in Concert I
-  socialmedia: /static/images/social-media/Versengold-in-Concert.png
+  socialmedia: /static/images/social-media/Versengold-in-Concert.jpg
 categories:
   - Event
 tags:

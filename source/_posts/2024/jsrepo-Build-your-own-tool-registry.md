@@ -6,7 +6,7 @@ date: 2024-12-16 18:06:50
 photograph:
   file: D50_9610_2406.jpg
   name: Thomas Garden 24-06 XIII
-  socialmedia: /static/images/social-media/jsrepo-Build-your-own-tool-registry.png
+  socialmedia: /static/images/social-media/jsrepo-Build-your-own-tool-registry.jpg
 categories:
   - Coding
 tags:

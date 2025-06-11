@@ -6,7 +6,7 @@ date: 2021-12-07T14:45:00.000Z
 photograph:
   file: D50_0075.jpg
   name: Thomas Wild Tulips
-  socialmedia: /static/images/social-media/Tringula-And-The-Beauty-Of-Mathematics.png
+  socialmedia: /static/images/social-media/Tringula-And-The-Beauty-Of-Mathematics.jpg
 series: Golem
 golem:
   title: Tringula und die Schönheit der Mathematik

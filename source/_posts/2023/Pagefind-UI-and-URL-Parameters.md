@@ -7,7 +7,7 @@ updated: 2023-02-03 11:51:00
 photograph:
   file: D50_7076.jpg
   name: German Roofage
-  socialmedia: /static/images/social-media/Pagefind-UI-and-URL-Parameters.png
+  socialmedia: /static/images/social-media/Pagefind-UI-and-URL-Parameters.jpg
 series: A New Blog
 categories:
   - Tools

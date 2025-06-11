@@ -6,7 +6,7 @@ date: 2024-04-01 18:55:00
 photograph:
   file: 23-07-Mallorca-0300.jpg
   name: Lots of Things
-  socialmedia: /static/images/social-media/My-Switch-to-Obsidian.png
+  socialmedia: /static/images/social-media/My-Switch-to-Obsidian.jpg
 categories:
   - Tools
 tags:

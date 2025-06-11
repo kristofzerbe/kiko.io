@@ -6,7 +6,7 @@ date: 2020-09-07T15:17:21.000Z
 photograph:
   file: 19-05-Israel-0321.jpg
   name: Haifa Roses
-  socialmedia: /static/images/social-media/Add-website-to-Trello-card-the-better-way.png
+  socialmedia: /static/images/social-media/Add-website-to-Trello-card-the-better-way.jpg
 categories:
   - Tools
 tags:

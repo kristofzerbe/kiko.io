@@ -6,7 +6,7 @@ date: 2023-11-15 14:12:00
 photograph:
   file: PXL_20231112_122739398.jpg
   _name: SVWW vs Kaiserslautern @ 2023-11-12
-  socialmedia: /static/images/social-media/SVWW-vs-Kaiserslautern-2023-11-12.png
+  socialmedia: /static/images/social-media/SVWW-vs-Kaiserslautern-2023-11-12.jpg
 series: SV Wehen Wiesbaden
 categories:
   - Football

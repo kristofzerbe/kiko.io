@@ -6,7 +6,7 @@ date: 2021-10-22T18:38:29.000Z
 photograph:
   file: 18-09-Kroatien-0012.jpg
   name: Cabbage & Friends
-  socialmedia: /static/images/social-media/VS-Code-on-the-Web.png
+  socialmedia: /static/images/social-media/VS-Code-on-the-Web.jpg
 categories:
   - Tools
 tags:

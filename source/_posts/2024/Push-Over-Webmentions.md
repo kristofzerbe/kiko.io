@@ -6,7 +6,7 @@ date: 2024-08-01 16:03:57
 photograph:
   file: 23-05-Holland-0101.jpg
   name: Do Not Tap The Glass
-  socialmedia: /static/images/social-media/Push-Over-Webmentions.png
+  socialmedia: /static/images/social-media/Push-Over-Webmentions.jpg
 series: IndieWeb
 project: webmention-pushover
 categories:

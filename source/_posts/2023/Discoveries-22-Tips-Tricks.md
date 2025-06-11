@@ -6,7 +6,7 @@ date: 2023-01-06 15:05:55
 photograph:
   file: D70_1372.jpg
   name: Black Window
-  socialmedia: /static/images/social-media/Discoveries-22-Tips-Tricks.png
+  socialmedia: /static/images/social-media/Discoveries-22-Tips-Tricks.jpg
 series: Discoveries
 categories:
   - Collection

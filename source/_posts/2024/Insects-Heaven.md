@@ -6,7 +6,7 @@ date: 2024-07-16 18:15:09
 photograph:
   file: D50_9653_2407.jpg
   name: Thomas Garden 24-07 II
-  socialmedia: /static/images/social-media/Insects-Heaven.png
+  socialmedia: /static/images/social-media/Insects-Heaven.jpg
 series: Thomas Garden
 categories:
   - Photo

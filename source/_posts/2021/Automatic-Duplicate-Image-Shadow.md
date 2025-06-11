@@ -6,7 +6,7 @@ date: 2021-07-16T17:45:30.000Z
 photograph:
   file: 18-09-Kroatien-0349.jpg
   name: Colorful Twig
-  socialmedia: /static/images/social-media/Automatic-Duplicate-Image-Shadow.png
+  socialmedia: /static/images/social-media/Automatic-Duplicate-Image-Shadow.jpg
 categories:
   - Coding
 tags:

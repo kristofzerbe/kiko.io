@@ -6,7 +6,7 @@ date: 2025-04-21 12:32:00
 photograph:
   file: DSC_6766.jpg
   name: Old Dice
-  socialmedia: /static/images/social-media/Colophon-Impetus-Technology.png
+  socialmedia: /static/images/social-media/Colophon-Impetus-Technology.jpg
 series: A New Blog
 categories:
   - Misc

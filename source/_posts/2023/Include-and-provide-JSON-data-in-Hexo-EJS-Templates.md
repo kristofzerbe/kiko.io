@@ -6,7 +6,7 @@ date: 2023-06-27 07:26:21
 photograph:
   file: D70_1538.jpg
   name: Smiling Guard
-  socialmedia: /static/images/social-media/Include-and-provide-JSON-data-in-Hexo-EJS-Templates.png
+  socialmedia: /static/images/social-media/Include-and-provide-JSON-data-in-Hexo-EJS-Templates.jpg
 series: A New Blog
 categories:
   - Coding

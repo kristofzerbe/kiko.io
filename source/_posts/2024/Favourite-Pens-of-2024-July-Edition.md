@@ -6,7 +6,7 @@ subtitle:
 photograph:
   file: 23-07-Mallorca-0357.jpg
   name: Tomato Beauties
-  socialmedia: /static/images/social-media/Favourite-Pens-of-2024-July-Edition.png
+  socialmedia: /static/images/social-media/Favourite-Pens-of-2024-July-Edition.jpg
 categories:
   - UI/UX
 tags:

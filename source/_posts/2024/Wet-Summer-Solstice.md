@@ -6,7 +6,7 @@ date: 2024-06-23 17:32:30
 photograph:
   file: D50_9536_2406.jpg
   name: Thomas Garden 24-06 II
-  socialmedia: /static/images/social-media/Wet-Summer-Solstice.png
+  socialmedia: /static/images/social-media/Wet-Summer-Solstice.jpg
 series: Thomas Garden
 categories:
   - Photo

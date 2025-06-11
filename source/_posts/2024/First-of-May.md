@@ -6,7 +6,7 @@ date: 2024-05-01 16:28:12
 photograph:
   file: D50_7099_2405.jpg
   name: Thomas Garden 24-05 X
-  socialmedia: /static/images/social-media/First-of-May.png
+  socialmedia: /static/images/social-media/First-of-May.jpg
 series: Thomas Garden
 categories:
   - Photo

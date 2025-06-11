@@ -4,7 +4,7 @@ subtitle: Implementing a self updating client/server environment
 photograph:
   file: 19-07-Schottland-0490.jpg
   name: Fishermans Home
-  socialmedia: /static/images/social-media/create-deployment-server-net-based-clients.png
+  socialmedia: /static/images/social-media/create-deployment-server-net-based-clients.jpg
 syndication:
   - host: Mastodon
     url: 

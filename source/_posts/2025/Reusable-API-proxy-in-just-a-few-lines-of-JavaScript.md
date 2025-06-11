@@ -6,7 +6,7 @@ date: 2025-04-27 13:09:00
 photograph:
   file: 24-12-Suedafrika-4306-D50.jpg
   name: Stellenbosch Stamp
-  socialmedia: /static/images/social-media/Reusable-API-proxy-in-just-a-few-lines-of-JavaScript.png
+  socialmedia: /static/images/social-media/Reusable-API-proxy-in-just-a-few-lines-of-JavaScript.jpg
 categories:
   - Coding
 tags:

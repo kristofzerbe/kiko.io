@@ -6,7 +6,7 @@ date: 2025-05-02 18:04:00
 photograph:
   file: DSC_9332.jpg
   name: Driving Home
-  socialmedia: /static/images/social-media/Colophon-Hosting-Deployment.png
+  socialmedia: /static/images/social-media/Colophon-Hosting-Deployment.jpg
 series: A New Blog
 categories:
   - Misc

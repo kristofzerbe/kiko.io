@@ -6,7 +6,7 @@ date: 2024-02-24 15:36:07
 photograph:
   file: PXL_20240223_172728706.jpg
   _name: SVWW vs Paderborn @ 2024-02-23
-  socialmedia: /static/images/social-media/SVWW-vs-Paderborn-2024-02-23.png
+  socialmedia: /static/images/social-media/SVWW-vs-Paderborn-2024-02-23.jpg
 series: SV Wehen Wiesbaden
 categories:
   - Football

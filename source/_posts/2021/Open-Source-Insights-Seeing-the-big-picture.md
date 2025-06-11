@@ -6,7 +6,7 @@ date: 2021-06-06T09:36:49.000Z
 photograph:
   file: DSC_0482.jpg
   name: Meek Window
-  socialmedia: /static/images/social-media/Open-Source-Insights-Seeing-the-big-picture.png
+  socialmedia: /static/images/social-media/Open-Source-Insights-Seeing-the-big-picture.jpg
 series: Great Finds
 categories:
   - Tools

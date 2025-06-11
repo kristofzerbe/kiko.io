@@ -6,7 +6,7 @@ date: 2023-12-22 12:54:51
 photograph:
   file: D50_6165_2312_Enhanced.jpg
   name: Carpet Rocker
-  socialmedia: /static/images/social-media/Don-t-be-ignorant-and-offer-a-theme-switch.png
+  socialmedia: /static/images/social-media/Don-t-be-ignorant-and-offer-a-theme-switch.jpg
 categories:
   - UI/UX
 tags:

@@ -6,7 +6,7 @@ date: 2024-11-30 11:24:28
 photograph:
   file: 23-09-11-Speyer-0029.jpg
   name: Red Motor Cover
-  socialmedia: /static/images/social-media/Discoveries-32-CSS.png
+  socialmedia: /static/images/social-media/Discoveries-32-CSS.jpg
 series: Discoveries
 categories:
   - Collection

@@ -6,7 +6,7 @@ date: {{ date }}
 photograph: 
   file: 
   name: 
-  socialmedia: /static/images/social-media/{{ slug }}.png
+  socialmedia: /static/images/social-media/{{ slug }}.jpg
 series: 
 project: 
 categories:

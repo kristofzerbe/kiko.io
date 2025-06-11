@@ -6,7 +6,7 @@ date: 2023-08-19 18:33:00
 photograph:
   file: PXL_20230818_162748966.jpg
   _name: SVWW vs Karlsruhe @ 2023-08-18
-  socialmedia: /static/images/social-media/SVWW-vs-Karlsruhe-2023-08-18.png
+  socialmedia: /static/images/social-media/SVWW-vs-Karlsruhe-2023-08-18.jpg
 series: SV Wehen Wiesbaden
 categories:
   - Football

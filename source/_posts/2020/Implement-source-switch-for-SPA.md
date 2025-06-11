@@ -6,7 +6,7 @@ date: 2020-10-04T17:01:02.000Z
 photograph:
   file: DSC_6063.jpg
   name: Illuminated Chair
-  socialmedia: /static/images/social-media/Implement-source-switch-for-SPA.png
+  socialmedia: /static/images/social-media/Implement-source-switch-for-SPA.jpg
 categories:
   - Coding
 tags:

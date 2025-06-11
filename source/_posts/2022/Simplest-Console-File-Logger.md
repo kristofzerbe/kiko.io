@@ -6,7 +6,7 @@ date: 2022-06-19 13:31:25
 photograph:
   file: DSC_8817.jpg
   name: DJing II
-  socialmedia: /static/images/social-media/Simplest-Console-File-Logger.png
+  socialmedia: /static/images/social-media/Simplest-Console-File-Logger.jpg
 categories:
   - Coding
 tags:

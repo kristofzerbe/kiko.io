@@ -6,7 +6,7 @@ date: 2023-10-30 18:56:08
 photograph:
   file: PXL_20231029_122726572.jpg
   _name: SVWW vs Hansa Rostock @ 2023-10-29
-  socialmedia: /static/images/social-media/SVWW-vs-Hansa-Rostock-2023-10-29.png
+  socialmedia: /static/images/social-media/SVWW-vs-Hansa-Rostock-2023-10-29.jpg
 series: SV Wehen Wiesbaden
 categories:
   - Football

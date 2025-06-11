@@ -6,7 +6,7 @@ date: 2019-10-23T15:28:04.000Z
 photograph:
   file: 19-07-Schottland-0016_AUR.jpg
   name: Glencoe Valley HDR
-  socialmedia: /static/images/social-media/Hexo-and-the-Dark-Mode.png
+  socialmedia: /static/images/social-media/Hexo-and-the-Dark-Mode.jpg
 series: A New Blog
 tags:
   - Hexo

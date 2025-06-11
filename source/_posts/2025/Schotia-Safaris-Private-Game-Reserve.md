@@ -6,7 +6,7 @@ date: 2025-02-15 10:46:49
 photograph:
   file: 24-12-Suedafrika-3854-D70.jpg
   name: Schotia Hippos
-  socialmedia: /static/images/social-media/Schotia-Safaris-Private-Game-Reserve.png
+  socialmedia: /static/images/social-media/Schotia-Safaris-Private-Game-Reserve.jpg
 series: New Photos
 categories:
   - Photo

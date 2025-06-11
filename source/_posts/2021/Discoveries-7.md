@@ -6,7 +6,7 @@ date: 2021-02-25T14:36:10.000Z
 photograph:
   file: DSC_8892.jpg
   name: Industrial Chrome
-  socialmedia: /static/images/social-media/Discoveries-7.png
+  socialmedia: /static/images/social-media/Discoveries-7.jpg
 series: Discoveries
 categories:
   - Collection

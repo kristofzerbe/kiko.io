@@ -7,7 +7,7 @@ photograph:
   file: D50_9555_2406.jpg
   name: Thomas Garden 24-06 V
   socialmedia: >-
-    /static/images/social-media/Mentions-United-New-Renderer-and-Refactorings.png
+    /static/images/social-media/Mentions-United-New-Renderer-and-Refactorings.jpg
 project: mentions-united
 categories:
   - Coding

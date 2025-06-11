@@ -6,7 +6,7 @@ date: 2022-01-29T13:39:24.000Z
 photograph:
   file: 20-08-Mallorca-7019.jpg
   name: Sliced
-  socialmedia: /static/images/social-media/Discoveries-16-JavaScript.png
+  socialmedia: /static/images/social-media/Discoveries-16-JavaScript.jpg
 series: Discoveries
 categories:
   - Collection

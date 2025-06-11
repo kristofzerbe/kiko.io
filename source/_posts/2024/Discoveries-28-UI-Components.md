@@ -6,7 +6,7 @@ date: 2024-02-23 14:14:10
 photograph:
   file: 23-08-Mecklenburg-Seen-0040.jpg
   name: Grinning Horse
-  socialmedia: /static/images/social-media/Discoveries-28-UI-Components.png
+  socialmedia: /static/images/social-media/Discoveries-28-UI-Components.jpg
 series: Discoveries
 categories:
   - Collection

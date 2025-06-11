@@ -6,7 +6,7 @@ date: 2021-01-03T13:29:01.000Z
 photograph:
   file: DSC_7897.jpg
   name: Rusted Bike
-  socialmedia: /static/images/social-media/Utilize-a-repository-of-reusable-ES6-template-literals.png
+  socialmedia: /static/images/social-media/Utilize-a-repository-of-reusable-ES6-template-literals.jpg
 categories:
   - Coding
 tags:

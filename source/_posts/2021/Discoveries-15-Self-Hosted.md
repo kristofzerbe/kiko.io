@@ -6,7 +6,7 @@ date: 2021-12-25T12:18:51.000Z
 photograph:
   file: IMGP1149.jpg
   name: Büyükada Landing
-  socialmedia: /static/images/social-media/Discoveries-15-Self-Hosted.png
+  socialmedia: /static/images/social-media/Discoveries-15-Self-Hosted.jpg
 series: Discoveries
 categories:
   - Collection

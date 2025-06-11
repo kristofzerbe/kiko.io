@@ -6,7 +6,7 @@ date: 2024-07-06 16:19:46
 photograph:
   file: D50_9061_2405.jpg
   name: Thomas Garden 24-05 XXVI
-  socialmedia: /static/images/social-media/Read-You-Feed-Reader-for-Android.png
+  socialmedia: /static/images/social-media/Read-You-Feed-Reader-for-Android.jpg
 series: Great Finds
 categories:
   - Tools

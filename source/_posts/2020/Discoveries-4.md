@@ -6,7 +6,7 @@ date: 2020-10-10T15:27:47.000Z
 photograph:
   file: DSC_6114.jpg
   name: On The Rocks
-  socialmedia: /static/images/social-media/Discoveries-4.png
+  socialmedia: /static/images/social-media/Discoveries-4.jpg
 series: Discoveries
 categories:
   - Collection

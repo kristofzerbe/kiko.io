@@ -6,7 +6,7 @@ date: 2021-09-12T18:16:48.000Z
 photograph:
   file: D50_0955.jpg
   name: Rainbow Crane
-  socialmedia: /static/images/social-media/Photo-Workflow-Re-Thought.png
+  socialmedia: /static/images/social-media/Photo-Workflow-Re-Thought.jpg
 series: Step By Step
 categories:
   - Photo

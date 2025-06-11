@@ -6,7 +6,7 @@ date: 2021-07-30T10:41:51.000Z
 photograph:
   file: 19-07-Schottland-0479.jpg
   name: Beer Barrels
-  socialmedia: /static/images/social-media/Discoveries-12-Tutorials.png
+  socialmedia: /static/images/social-media/Discoveries-12-Tutorials.jpg
 series: Discoveries
 categories:
   - Collection

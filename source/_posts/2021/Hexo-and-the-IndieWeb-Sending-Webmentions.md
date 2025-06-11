@@ -6,7 +6,7 @@ date: 2021-05-08T19:39:43.000Z
 photograph:
   file: D70_8704.jpg
   name: 1820 Feet
-  socialmedia: /static/images/social-media/Hexo-and-the-IndieWeb-Sending-Webmentions.png
+  socialmedia: /static/images/social-media/Hexo-and-the-IndieWeb-Sending-Webmentions.jpg
 series: IndieWeb
 project: Hexo Console Webmention
 categories:

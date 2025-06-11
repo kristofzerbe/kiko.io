@@ -6,7 +6,7 @@ date: 2019-09-17T12:00:01.000Z
 photograph:
   file: 19-05-Israel-0516.jpg
   name: Jerusalem Accessoirs
-  socialmedia: /static/images/social-media/How-To-Visual-Studio-Database-Project-and-ADSI.png
+  socialmedia: /static/images/social-media/How-To-Visual-Studio-Database-Project-and-ADSI.jpg
 categories:
   - Coding
 tags:

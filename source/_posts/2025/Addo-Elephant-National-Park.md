@@ -6,7 +6,7 @@ date: 2025-02-09 16:45:27
 photograph:
   file: 24-12-Suedafrika-3206-D70.jpg
   name: Addo Personality
-  socialmedia: /static/images/social-media/Addo-Elephant-National-Park.png
+  socialmedia: /static/images/social-media/Addo-Elephant-National-Park.jpg
 series: New Photos
 categories:
   - Photo

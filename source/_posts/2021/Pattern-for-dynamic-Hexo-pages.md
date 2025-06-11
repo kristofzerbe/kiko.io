@@ -6,7 +6,7 @@ date: 2021-08-25T09:43:44.000Z
 photograph:
   file: D50_4451.jpg
   name: Garden Beauties I
-  socialmedia: /static/images/social-media/Pattern-for-dynamic-Hexo-pages.png
+  socialmedia: /static/images/social-media/Pattern-for-dynamic-Hexo-pages.jpg
 categories:
   - Tools
 tags:

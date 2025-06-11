@@ -6,7 +6,7 @@ date: 2021-04-18T19:51:35.000Z
 photograph:
   file: 19-07-Schottland-0512.jpg
   name: Lonely Call Box
-  socialmedia: /static/images/social-media/Scotch-Presets-for-Lightroom.png
+  socialmedia: /static/images/social-media/Scotch-Presets-for-Lightroom.jpg
 series: Lightroom Presets
 categories:
   - Photo

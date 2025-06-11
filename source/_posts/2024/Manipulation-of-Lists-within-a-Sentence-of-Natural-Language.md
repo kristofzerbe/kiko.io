@@ -6,7 +6,7 @@ date: 2024-02-20 19:30:21
 photograph:
   file: D50_3856.jpg
   name: Garden Beauties V
-  socialmedia: /static/images/social-media/Manipulation-of-Lists-within-a-Sentence-of-Natural-Language.png
+  socialmedia: /static/images/social-media/Manipulation-of-Lists-within-a-Sentence-of-Natural-Language.jpg
 series: A New Blog
 categories:
   - Coding

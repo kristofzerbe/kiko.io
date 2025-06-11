@@ -6,7 +6,7 @@ date: 2021-11-20T11:14:29.000Z
 photograph:
   file: DSC_0447.jpg
   name: Salzburg Cathedral III
-  socialmedia: /static/images/social-media/Discoveries-14.png
+  socialmedia: /static/images/social-media/Discoveries-14.jpg
 series: Discoveries
 categories:
   - Collection

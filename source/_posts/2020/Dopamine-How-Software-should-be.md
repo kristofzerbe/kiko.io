@@ -6,7 +6,7 @@ date: 2020-07-10T13:49:09.000Z
 photograph:
   file: 19-05-Israel-0143.jpg
   name: Jaffa Antiques
-  socialmedia: /static/images/social-media/Dopamine-How-Software-should-be.png
+  socialmedia: /static/images/social-media/Dopamine-How-Software-should-be.jpg
 series: Great Finds
 categories:
   - Tools

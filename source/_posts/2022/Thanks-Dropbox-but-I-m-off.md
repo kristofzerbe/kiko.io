@@ -6,7 +6,7 @@ date: 2022-05-13 19:57:43
 photograph:
   file: 20-08-Mallorca-7134.jpg
   name: Boombox Reflections I
-  socialmedia: /static/images/social-media/Thanks-Dropbox-but-I-m-off.png
+  socialmedia: /static/images/social-media/Thanks-Dropbox-but-I-m-off.jpg
 categories:
   - Misc
 tags:

@@ -6,7 +6,7 @@ date: 2020-10-03T13:17:03.000Z
 photograph:
   file: 18-09-Kroatien-0323.jpg
   name: Garden Eden
-  socialmedia: /static/images/social-media/Show-related-posts-in-Hexo.png
+  socialmedia: /static/images/social-media/Show-related-posts-in-Hexo.jpg
 series: A New Blog
 categories:
   - Tools

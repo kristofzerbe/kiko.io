@@ -5,7 +5,7 @@ subtitle: A very special derby
 date: 2024-08-17 10:24:19
 photograph:
   file: PXL_20240816_161354535.jpg
-  socialmedia: /static/images/social-media/DFB-Cup-SVWW-vs-Mainz-05-2024-08-16.png
+  socialmedia: /static/images/social-media/DFB-Cup-SVWW-vs-Mainz-05-2024-08-16.jpg
 series: SV Wehen Wiesbaden
 categories:
   - Football

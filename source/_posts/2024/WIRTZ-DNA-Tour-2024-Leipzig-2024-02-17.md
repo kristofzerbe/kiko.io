@@ -6,7 +6,7 @@ date: 2024-02-18 17:31:36
 photograph:
   file: PXL_20240217_155459164-2.jpg
   name: Leipzig Music Colors
-  socialmedia: /static/images/social-media/WIRTZ-DNA-Tour-2024-Leipzig-2024-02-17.png
+  socialmedia: /static/images/social-media/WIRTZ-DNA-Tour-2024-Leipzig-2024-02-17.jpg
 categories:
   - Event
 tags:

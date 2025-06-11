@@ -6,7 +6,7 @@ date: 2023-09-02 17:24:24
 photograph:
   file: PXL_20230902_105749100.jpg
   _name: SVWW vs Schalke @ 2023-09-02
-  socialmedia: /static/images/social-media/SVWW-vs-Schalke-2023-09-02.png
+  socialmedia: /static/images/social-media/SVWW-vs-Schalke-2023-09-02.jpg
 series: SV Wehen Wiesbaden
 categories:
   - Football

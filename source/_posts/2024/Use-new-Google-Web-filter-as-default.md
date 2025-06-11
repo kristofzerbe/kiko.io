@@ -6,7 +6,7 @@ date: 2024-06-17 20:37:50
 photograph:
   file: D50_9513_2406.jpg
   name: 45-Degree Loop
-  socialmedia: /static/images/social-media/Use-new-Google-Web-filter-as-default.png
+  socialmedia: /static/images/social-media/Use-new-Google-Web-filter-as-default.jpg
 categories:
   - Tools
 tags:

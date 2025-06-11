@@ -6,7 +6,7 @@ date: 2022-01-19 15:36:59
 photograph:
   file: DSC_1290.jpg
   name: Untitled
-  socialmedia: /static/images/social-media/Problems-with-Chromium-Web-Apps-and-Url-Redirects.png
+  socialmedia: /static/images/social-media/Problems-with-Chromium-Web-Apps-and-Url-Redirects.jpg
 categories:
   - Misc
 tags:

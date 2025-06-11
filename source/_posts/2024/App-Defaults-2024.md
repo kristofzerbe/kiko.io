@@ -6,7 +6,7 @@ date: 2024-12-25 11:08:49
 photograph:
   file: PXL_20241224_075952090.jpg
   name: Mossel Bay Christmas
-  socialmedia: /static/images/social-media/App-Defaults-2024.png
+  socialmedia: /static/images/social-media/App-Defaults-2024.jpg
 categories:
   - Tools
 tags:

@@ -6,7 +6,7 @@ date: 2023-01-14 13:10:48
 photograph:
   file: DSC_7898.jpg
   name: Vintage Boxes
-  socialmedia: /static/images/social-media/Favourite-Pens-of-2022.png
+  socialmedia: /static/images/social-media/Favourite-Pens-of-2022.jpg
 categories:
   - UI/UX
 tags:

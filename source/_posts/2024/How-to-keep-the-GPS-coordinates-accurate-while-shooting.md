@@ -6,7 +6,7 @@ date: 2024-05-19 12:16:29
 photograph:
   file: 23-07-Mallorca-0758.jpg
   name: Sticker Direction
-  socialmedia: /static/images/social-media/How-to-keep-the-GPS-coordinates-accurate-while-shooting.png
+  socialmedia: /static/images/social-media/How-to-keep-the-GPS-coordinates-accurate-while-shooting.jpg
 categories:
   - Photo
 tags:

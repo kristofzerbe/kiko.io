@@ -6,7 +6,7 @@ date: 2024-04-14 18:00:00
 photograph:
   file: DSC_8444.jpg
   name: Apple Woods
-  socialmedia: /static/images/social-media/Johnny-Decimal-Emerging-from-the-Abyss.png
+  socialmedia: /static/images/social-media/Johnny-Decimal-Emerging-from-the-Abyss.jpg
 categories:
   - Misc
 tags:

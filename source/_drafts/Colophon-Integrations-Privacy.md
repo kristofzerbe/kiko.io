@@ -6,7 +6,7 @@ date: 2025-04-19 19:47:30
 photograph:
   file: 23-05-Holland-0707.jpg
   name: Mercedes Toys
-  socialmedia: /static/images/social-media/Colophon-Integrations-Privacy.png
+  socialmedia: /static/images/social-media/Colophon-Integrations-Privacy.jpg
 series: A New Blog
 categories:
   - Misc

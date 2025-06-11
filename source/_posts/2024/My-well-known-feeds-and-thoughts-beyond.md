@@ -6,7 +6,7 @@ date: 2024-07-19 14:42:05
 photograph:
   file: D50_9022_2405.jpg
   name: Thomas Garden 24-05 XXII
-  socialmedia: /static/images/social-media/My-well-known-feeds-and-thoughts-beyond.png
+  socialmedia: /static/images/social-media/My-well-known-feeds-and-thoughts-beyond.jpg
 categories:
   - Coding
 tags:

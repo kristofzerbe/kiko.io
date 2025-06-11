@@ -6,7 +6,7 @@ date: 2023-08-19 15:59:18
 photograph:
   file: DSC_0216.jpg
   name: SVWW vs Schalke 2017
-  socialmedia: /static/images/social-media/My-Hometown-My-Club.png
+  socialmedia: /static/images/social-media/My-Hometown-My-Club.jpg
 series: SV Wehen Wiesbaden
 categories:
   - Football

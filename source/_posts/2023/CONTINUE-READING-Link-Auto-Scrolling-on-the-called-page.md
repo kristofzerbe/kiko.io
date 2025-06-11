@@ -6,7 +6,7 @@ date: 2023-07-29 16:14:35
 photograph:
   file: D50_5099.jpg
   name: Ground Light
-  socialmedia: /static/images/social-media/CONTINUE-READING-Link-Auto-Scrolling-on-the-called-page.png
+  socialmedia: /static/images/social-media/CONTINUE-READING-Link-Auto-Scrolling-on-the-called-page.jpg
 series: A New Blog
 categories:
   - Coding

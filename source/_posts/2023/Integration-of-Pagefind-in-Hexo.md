@@ -6,7 +6,7 @@ date: 2023-01-19 13:24:00
 photograph:
   file: 22-08-Bretagne-Jersey-0201.jpg
   name: Proud Vespa
-  socialmedia: /static/images/social-media/Integration-of-Pagefind-in-Hexo.png
+  socialmedia: /static/images/social-media/Integration-of-Pagefind-in-Hexo.jpg
 series: A New Blog
 categories:
   - Tools

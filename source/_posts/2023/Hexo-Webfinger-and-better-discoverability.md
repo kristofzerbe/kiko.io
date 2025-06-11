@@ -6,7 +6,7 @@ date: 2023-12-02 14:19:03
 photograph:
   file: D50_4565.jpg
   name: Bubbles
-  socialmedia: /static/images/social-media/Hexo-Webfinger-and-better-discoverability.png
+  socialmedia: /static/images/social-media/Hexo-Webfinger-and-better-discoverability.jpg
 series: A New Blog
 categories:
   - Tools

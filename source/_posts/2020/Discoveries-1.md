@@ -6,7 +6,7 @@ date: 2020-07-12T09:55:10.000Z
 photograph:
   file: 19-05-Israel-0221.jpg
   name: Ceasarea View
-  socialmedia: /static/images/social-media/Discoveries-1.png
+  socialmedia: /static/images/social-media/Discoveries-1.jpg
 series: Discoveries
 categories:
   - Collection

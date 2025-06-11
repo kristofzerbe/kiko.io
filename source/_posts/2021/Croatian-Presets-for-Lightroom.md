@@ -6,7 +6,7 @@ date: 2021-10-16T15:41:42.000Z
 photograph:
   file: 19-12-Kroatien-0077.jpg
   name: Split Rotunda
-  socialmedia: /static/images/social-media/Croatian-Presets-for-Lightroom.png
+  socialmedia: /static/images/social-media/Croatian-Presets-for-Lightroom.jpg
 series: Lightroom Presets
 categories:
   - Photo

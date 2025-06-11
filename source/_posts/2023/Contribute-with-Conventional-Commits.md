@@ -6,7 +6,7 @@ date: 2023-09-15 17:57:40
 photograph:
   file: DSC_7903.jpg
   name: Vintage Letters
-  socialmedia: /static/images/social-media/Contribute-with-Conventional-Commits.png
+  socialmedia: /static/images/social-media/Contribute-with-Conventional-Commits.jpg
 categories:
   - Tools
 tags:

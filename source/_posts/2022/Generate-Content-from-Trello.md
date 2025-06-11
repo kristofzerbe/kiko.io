@@ -6,7 +6,7 @@ date: 2022-12-29 12:08:00
 photograph:
   file: DSC_9482-HDR.jpg
   name: Orange Shades
-  socialmedia: /static/images/social-media/Generate-Content-from-Trello.png
+  socialmedia: /static/images/social-media/Generate-Content-from-Trello.jpg
 series: A New Blog
 categories:
   - Coding

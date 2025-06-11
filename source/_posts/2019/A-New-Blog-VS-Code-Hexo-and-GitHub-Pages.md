@@ -6,7 +6,7 @@ date: 2019-09-24T00:00:00.000Z
 photograph:
     file: 19-07-Schottland-0405.jpg
     name: Tiny Scots 7
-    socialmedia: /static/images/social-media/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages.png
+    socialmedia: /static/images/social-media/A-New-Blog-VS-Code-Hexo-and-GitHub-Pages.jpg
 series: A New Blog
 categories:
   - Tools

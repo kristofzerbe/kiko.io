@@ -6,7 +6,7 @@ date: 2022-08-21 12:00
 photograph:
   file: D50_1860.jpg
   name: Thomas' Garden VI
-  socialmedia: /static/images/social-media/Dopamine-a-music-player-for-Windows-10-as-it-should-be.png
+  socialmedia: /static/images/social-media/Dopamine-a-music-player-for-Windows-10-as-it-should-be.jpg
 series: Golem
 golem:
   title: Ein Musikplayer, wie er sein sollte

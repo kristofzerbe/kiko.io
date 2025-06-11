@@ -6,7 +6,7 @@ date: 2021-08-20T13:43:04.000Z
 photograph:
   file: 19-07-Schottland-0595.jpg
   name: RYB Brass & Wires
-  socialmedia: /static/images/social-media/GitHubs-Magic-Dot.png
+  socialmedia: /static/images/social-media/GitHubs-Magic-Dot.jpg
 categories:
   - Tools
 tags:

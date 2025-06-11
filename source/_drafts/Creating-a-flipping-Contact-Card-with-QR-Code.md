@@ -6,7 +6,7 @@ date: 2023-07-06 21:57:37
 photograph:
   file: D50_7117.jpg
   name: Into A Huddle
-  socialmedia: /static/images/social-media/Creating-a-flipping-Contact-Card-with-QR-Code.png
+  socialmedia: /static/images/social-media/Creating-a-flipping-Contact-Card-with-QR-Code.jpg
 categories:
   - UI/UX
 tags:

@@ -6,7 +6,7 @@ date: 2023-12-24 13:38:51
 photograph:
   file: 23-05-Holland-0709.jpg
   name: Used Lenses
-  socialmedia: /static/images/social-media/Comparison-of-Lightroom-Classic-Denoise-with-Topaz-Photo-AI.png
+  socialmedia: /static/images/social-media/Comparison-of-Lightroom-Classic-Denoise-with-Topaz-Photo-AI.jpg
 categories:
   - Photo
 tags:

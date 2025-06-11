@@ -6,7 +6,7 @@ date: 2024-06-16 19:20:49
 photograph:
   file: D50_9402_2406.jpg
   name: Candy Drop
-  socialmedia: /static/images/social-media/Berlin-Airlift-75th-Anniversary.png
+  socialmedia: /static/images/social-media/Berlin-Airlift-75th-Anniversary.jpg
 series: New Photos
 categories:
   - Photo

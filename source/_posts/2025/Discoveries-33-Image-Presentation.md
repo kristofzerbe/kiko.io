@@ -6,7 +6,7 @@ date: 2025-03-20 13:45:39
 photograph:
   file: 24-12-Suedafrika-3035-D50.jpg
   name: Addo Beauty I
-  socialmedia: /static/images/social-media/Discoveries-33-Image-Presentation.png
+  socialmedia: /static/images/social-media/Discoveries-33-Image-Presentation.jpg
 series: Discoveries
 categories:
   - Collection

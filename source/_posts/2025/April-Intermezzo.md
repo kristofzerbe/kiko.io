@@ -6,7 +6,7 @@ date: 2025-04-27 15:44:27
 photograph:
   file: "D50_3925_2504.jpg"
   name: Thomas Garden 25-04 X
-  socialmedia: /static/images/social-media/April-Intermezzo.png
+  socialmedia: /static/images/social-media/April-Intermezzo.jpg
 series: Thomas Garden
 categories:
   - Photo

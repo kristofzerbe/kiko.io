@@ -6,7 +6,7 @@ date: 2023-11-26 14:59:17
 photograph:
   file: 23-08-Mecklenburg-Seen-0275.jpg
   name: Green Canal
-  socialmedia: /static/images/social-media/Mecklenburg-Lakes.png
+  socialmedia: /static/images/social-media/Mecklenburg-Lakes.jpg
 series: New Photos
 categories:
   - Photo

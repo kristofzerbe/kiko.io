@@ -6,7 +6,7 @@ date: 2023-07-04 13:07:38
 photograph:
   file: D50_7484.jpg
   name: Garden Beauties XV
-  socialmedia: /static/images/social-media/Extension-of-downupPopup-Back-Button-Escape-Key-More.png
+  socialmedia: /static/images/social-media/Extension-of-downupPopup-Back-Button-Escape-Key-More.jpg
 categories:
   - UI/UX
 tags:

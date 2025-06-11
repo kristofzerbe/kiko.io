@@ -6,7 +6,7 @@ date: 2022-11-12 12:26:34
 photograph:
   file: 22-05-Malta-8654.jpg
   name: Rocky Stairway
-  socialmedia: /static/images/social-media/Anatomy-of-Service-Worker-Communication.png
+  socialmedia: /static/images/social-media/Anatomy-of-Service-Worker-Communication.jpg
 categories:
   - Coding
 tags:

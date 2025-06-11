@@ -6,7 +6,7 @@ date: 2024-05-30 10:20:30
 photograph:
   file: PXL_20240528_182745735.jpg
   _name: 
-  socialmedia: /static/images/social-media/SVWW-vs-Regensburg-2024-05-28-Relegation.png
+  socialmedia: /static/images/social-media/SVWW-vs-Regensburg-2024-05-28-Relegation.jpg
 series: SV Wehen Wiesbaden
 categories:
   - Football

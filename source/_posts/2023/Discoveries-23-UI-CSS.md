@@ -6,7 +6,7 @@ date: 2023-02-12 11:45:10
 photograph:
   file: 22-08-Bretagne-Jersey-1332.jpg
   name: Seagull Meeting
-  socialmedia: /static/images/social-media/Discoveries-23-UI-CSS.png
+  socialmedia: /static/images/social-media/Discoveries-23-UI-CSS.jpg
 series: Discoveries
 categories:
   - Collection

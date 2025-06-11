@@ -6,7 +6,7 @@ date: 2020-02-28T00:00:00.000Z
 photograph:
   file: 18-09-Kroatien-0061.jpg
   name: Abandonded Fitting
-  socialmedia: /static/images/social-media/TFS-DevOps-Delete-Remote-Workspace.png
+  socialmedia: /static/images/social-media/TFS-DevOps-Delete-Remote-Workspace.jpg
 tags:
   - TFS/DevOps
   - Visual Studio

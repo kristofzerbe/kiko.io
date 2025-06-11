@@ -6,7 +6,7 @@ date: 2022-11-15 16:32:07
 photograph:
   file: 20-08-Mallorca-8177.jpg
   name: Ready For Takeoff
-  socialmedia: /static/images/social-media/Mastodon-simply-explained.png
+  socialmedia: /static/images/social-media/Mastodon-simply-explained.jpg
 categories:
   - Tools
 tags:

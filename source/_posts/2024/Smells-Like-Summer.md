@@ -6,7 +6,7 @@ date: 2024-05-25 16:58:31
 photograph:
   file: D50_9166_2405.jpg
   name: Thomas Garden 24-05 XXXIII
-  socialmedia: /static/images/social-media/Smells-Like-Summer.png
+  socialmedia: /static/images/social-media/Smells-Like-Summer.jpg
 series: Thomas Garden
 categories:
   - Photo

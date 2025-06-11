@@ -6,7 +6,7 @@ date: 2023-11-13 17:11:47
 photograph:
   file: D50_1524.jpg
   name: Floral Magic VIII
-  socialmedia: /static/images/social-media/Add-Link-to-Trello-on-Android-via-Share-Menu.png
+  socialmedia: /static/images/social-media/Add-Link-to-Trello-on-Android-via-Share-Menu.jpg
 categories:
   - Tools
 tags:

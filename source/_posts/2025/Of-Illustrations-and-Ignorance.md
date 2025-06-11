@@ -6,7 +6,7 @@ date: 2025-05-16 17:17:16
 photograph:
   file: 22-08-Bretagne-Jersey-0655.jpg
   name: Used Colors
-  socialmedia: /static/images/social-media/Of-Illustrations-and-Ignorance.png
+  socialmedia: /static/images/social-media/Of-Illustrations-and-Ignorance.jpg
 categories:
   - Misc
 tags:

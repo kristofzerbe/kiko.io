@@ -6,7 +6,7 @@ date: 2023-11-15 16:13:13
 photograph:
   file: 23-09-11-Speyer-0001.jpg
   name: Red Bull 12
-  socialmedia: /static/images/social-media/Speyer-Automotive.png
+  socialmedia: /static/images/social-media/Speyer-Automotive.jpg
 series: New Photos
 categories:
   - Photo

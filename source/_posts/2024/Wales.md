@@ -6,7 +6,7 @@ date: 2024-12-07 13:20:33
 photograph:
   file: 24-05-Wales-8642-HDR.jpg
   name: Point Of Ayr
-  socialmedia: /static/images/social-media/Wales.png
+  socialmedia: /static/images/social-media/Wales.jpg
 series: New Photos
 categories:
   - Photo

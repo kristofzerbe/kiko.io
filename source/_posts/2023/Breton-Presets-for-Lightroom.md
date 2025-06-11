@@ -6,7 +6,7 @@ date: 2023-03-10 12:04:05
 photograph:
   file: 22-08-Bretagne-Jersey-1074.jpg
   name: Blue Perspective
-  socialmedia: /static/images/social-media/Breton-Presets-for-Lightroom.png
+  socialmedia: /static/images/social-media/Breton-Presets-for-Lightroom.jpg
 series: Lightroom Presets
 categories:
   - Photo

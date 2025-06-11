@@ -6,7 +6,7 @@ date: 2022-05-10 19:22:16
 photograph:
   file: DSC_6655-HDR.jpg
   name: Wood'n Glass
-  socialmedia: /static/images/social-media/Discoveries-18-JS-UI.png
+  socialmedia: /static/images/social-media/Discoveries-18-JS-UI.jpg
 series: Discoveries
 categories:
   - Collection

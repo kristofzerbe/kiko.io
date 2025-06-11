@@ -6,7 +6,7 @@ date: 2024-06-08 15:47:14
 photograph:
   file: 23-09-11-Speyer-0041.jpg
   name: Mercedes Gold
-  socialmedia: /static/images/social-media/How-to-consume-web-feeds-as-JSON-in-Node-JS.png
+  socialmedia: /static/images/social-media/How-to-consume-web-feeds-as-JSON-in-Node-JS.jpg
 series: A New Blog
 categories:
   - Coding

@@ -6,7 +6,7 @@ date: 2020-06-22T17:49:16.000Z
 photograph:
   file: D70_7344.jpg
   name: Non Toccare
-  socialmedia: /static/images/social-media/Automatic-Header-Images-in-Hexo.png
+  socialmedia: /static/images/social-media/Automatic-Header-Images-in-Hexo.jpg
 series: A New Blog
 categories:
   - Tools

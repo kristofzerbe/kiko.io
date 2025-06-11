@@ -6,7 +6,7 @@ date: 2024-10-26 12:48:26
 photograph:
   file: D50_9942_2407.jpg
   name: Thomas Garden 24-07 XXIX
-  socialmedia: /static/images/social-media/Diving-Into-the-World-of-Lemmy.png
+  socialmedia: /static/images/social-media/Diving-Into-the-World-of-Lemmy.jpg
 project: mentions-united
 categories:
   - Coding

@@ -6,7 +6,7 @@ date: 2024-07-10 11:29:04
 photograph:
   file: 23-05-Holland-0172.jpg
   name: Bottle Art
-  socialmedia: /static/images/social-media/Discoveries-30-CSS-HowTo-s.png
+  socialmedia: /static/images/social-media/Discoveries-30-CSS-HowTo-s.jpg
 series: Discoveries
 categories:
   - Collection

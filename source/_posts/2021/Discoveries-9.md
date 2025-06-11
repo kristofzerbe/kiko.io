@@ -6,7 +6,7 @@ date: 2021-04-20T11:02:14.000Z
 photograph:
   file: DSC_0190.jpg
   name: Pipes & Wheels
-  socialmedia: /static/images/social-media/Discoveries-9.png
+  socialmedia: /static/images/social-media/Discoveries-9.jpg
 series: Discoveries
 categories:
   - Collection

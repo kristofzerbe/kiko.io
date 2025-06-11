@@ -6,7 +6,7 @@ date: 2024-03-30 13:34:08
 photograph:
   file: 23-05-Holland-0581.jpg
   name: Ancient Calculation
-  socialmedia: /static/images/social-media/Rising-Cyberspear.png
+  socialmedia: /static/images/social-media/Rising-Cyberspear.jpg
 categories:
   - Misc
 tags:

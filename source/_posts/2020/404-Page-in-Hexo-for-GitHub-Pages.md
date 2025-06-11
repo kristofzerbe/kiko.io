@@ -6,7 +6,7 @@ date: 2020-09-23T14:28:50.000Z
 photograph:
   file: 19-07-Schottland-0935.jpg
   name: Tattoo Tuba
-  socialmedia: /static/images/social-media/404-Page-in-Hexo-for-GitHub-Pages.png
+  socialmedia: /static/images/social-media/404-Page-in-Hexo-for-GitHub-Pages.jpg
 series: A New Blog
 categories:
   - Tools

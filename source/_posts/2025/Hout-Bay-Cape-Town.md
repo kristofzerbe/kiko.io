@@ -6,7 +6,7 @@ date: 2025-03-04 09:57:55
 photograph:
   file: 24-12-Suedafrika-0635-D50.jpg
   name: Cape Town View
-  socialmedia: /static/images/social-media/Hout-Bay-Cape-Town.png
+  socialmedia: /static/images/social-media/Hout-Bay-Cape-Town.jpg
 series: New Photos
 categories:
   - Photo

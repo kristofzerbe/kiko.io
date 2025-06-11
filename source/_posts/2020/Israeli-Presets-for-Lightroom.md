@@ -6,7 +6,7 @@ date: 2020-10-27T15:07:20.000Z
 photograph:
   file: 19-05-Israel-0498.jpg
   name: Dead Sea Colors
-  socialmedia: /static/images/social-media/Israeli-Presets-for-Lightroom.png
+  socialmedia: /static/images/social-media/Israeli-Presets-for-Lightroom.jpg
 series: Lightroom Presets
 categories:
   - Photo

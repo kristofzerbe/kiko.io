@@ -6,7 +6,7 @@ date: 2024-12-28 12:47:01
 photograph:
   file: D50_7042_2404.jpg
   name: Thomas Garden 24-04 XII
-  socialmedia: /static/images/social-media/Hexo-Determine-and-Use-Online-Status.png
+  socialmedia: /static/images/social-media/Hexo-Determine-and-Use-Online-Status.jpg
 categories:
   - Tools
 tags:

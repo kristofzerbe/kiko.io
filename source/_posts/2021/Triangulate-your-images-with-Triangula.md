@@ -6,7 +6,7 @@ date: 2021-04-30T14:56:13.000Z
 photograph:
   file: 20-08-Mallorca-7195.jpg
   name: Bottle Series
-  socialmedia: /static/images/social-media/Triangulate-your-images-with-Triangula.png
+  socialmedia: /static/images/social-media/Triangulate-your-images-with-Triangula.jpg
 series: Great Finds
 categories:
   - Tools

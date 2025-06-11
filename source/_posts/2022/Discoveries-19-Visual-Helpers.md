@@ -6,7 +6,7 @@ date: 2022-07-09 12:30:17
 photograph:
   file: D50_0053.jpg
   name: Thomas' Ruby Prince I
-  socialmedia: /static/images/social-media/Discoveries-19-Visual-Helpers.png
+  socialmedia: /static/images/social-media/Discoveries-19-Visual-Helpers.jpg
 series: Discoveries
 categories:
   - Collection

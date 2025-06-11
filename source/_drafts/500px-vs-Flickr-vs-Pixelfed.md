@@ -6,7 +6,7 @@ date: 2023-12-04 12:56:27
 photograph:
   file: 23-05-Holland-0580.jpg
   name: Analog Treasures
-  socialmedia: /static/images/social-media/500px-vs-Flickr-vs-Pixelfed.png
+  socialmedia: /static/images/social-media/500px-vs-Flickr-vs-Pixelfed.jpg
 categories:
   - Photo
 tags:

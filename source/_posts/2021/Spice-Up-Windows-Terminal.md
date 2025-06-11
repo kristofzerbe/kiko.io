@@ -7,7 +7,7 @@ updated: 2021-04-16T11:55:15.000Z
 photograph:
   file: DSC_8860.jpg
   name: Illuminated Kurhaus I
-  socialmedia: /static/images/social-media/Spice-Up-Windows-Terminal.png
+  socialmedia: /static/images/social-media/Spice-Up-Windows-Terminal.jpg
 categories:
   - Tools
 tags:

@@ -6,7 +6,7 @@ date: 2023-10-03 13:52:10
 photograph:
   file: 23-07-Mallorca-0339.jpg
   name: Basket Parking
-  socialmedia: /static/images/social-media/Majorcan-Details.png
+  socialmedia: /static/images/social-media/Majorcan-Details.jpg
 series: New Photos
 categories:
   - Photo

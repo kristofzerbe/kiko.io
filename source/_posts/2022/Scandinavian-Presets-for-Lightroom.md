@@ -6,7 +6,7 @@ date: 2022-07-19 15:01:37
 photograph:
   file: D70_0710.jpg
   name: Nyhaven
-  socialmedia: /static/images/social-media/Scandinavian-Presets-for-Lightroom.png
+  socialmedia: /static/images/social-media/Scandinavian-Presets-for-Lightroom.jpg
 series: Lightroom Presets
 categories:
   - Photo

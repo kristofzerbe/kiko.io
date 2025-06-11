@@ -6,7 +6,7 @@ date: 2021-07-29T15:34:03.000Z
 photograph:
   file: 20-08-Mallorca-6871.jpg
   name: Coal Flame
-  socialmedia: /static/images/social-media/Running-Rollup-with-Gulp.png
+  socialmedia: /static/images/social-media/Running-Rollup-with-Gulp.jpg
 categories:
   - Coding
 tags:

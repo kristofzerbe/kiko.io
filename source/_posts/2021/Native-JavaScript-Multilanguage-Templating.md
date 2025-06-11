@@ -6,7 +6,7 @@ date: 2021-02-24T13:31:58.000Z
 photograph:
   file: DSC_6682.jpg
   name: Blue Lock
-  socialmedia: /static/images/social-media/Native-JavaScript-Multilanguage-Templating.png
+  socialmedia: /static/images/social-media/Native-JavaScript-Multilanguage-Templating.jpg
 categories:
   - Coding
 tags:

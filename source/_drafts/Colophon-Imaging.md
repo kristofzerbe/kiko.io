@@ -6,7 +6,7 @@ date: 2025-04-19 19:45:24
 photograph:
   file: D70_3480.jpg
   name: Expensive Air Inlet
-  socialmedia: /static/images/social-media/Colophon-Imaging.png
+  socialmedia: /static/images/social-media/Colophon-Imaging.jpg
 series: A New Blog
 categories:
   - Misc

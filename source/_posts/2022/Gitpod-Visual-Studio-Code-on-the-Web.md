@@ -6,7 +6,7 @@ date: 2022-07-17 15:00:00
 photograph:
   file: D50_7090.jpg
   name: Manometer
-  socialmedia: /static/images/social-media/Gitpod-Visual-Studio-Code-on-the-Web.png
+  socialmedia: /static/images/social-media/Gitpod-Visual-Studio-Code-on-the-Web.jpg
 series: Golem
 golem:
   title: Visual Studio Code im Web mit Gitpod - Ein Gewinn für jede Tool-Sammlung

@@ -6,7 +6,7 @@ date: 2024-01-07 12:32:16
 photograph:
   file: D50_6727_2312.jpg
   name: Christmas End
-  socialmedia: /static/images/social-media/Favourite-Pens-of-2023.png
+  socialmedia: /static/images/social-media/Favourite-Pens-of-2023.jpg
 categories:
   - UI/UX
 tags:

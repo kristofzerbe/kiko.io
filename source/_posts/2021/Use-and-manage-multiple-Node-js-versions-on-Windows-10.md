@@ -6,7 +6,7 @@ date: 2021-01-08T13:47:22.000Z
 photograph:
   file: D70_8671.jpg
   name: Sky Rally III
-  socialmedia: /static/images/social-media/Use-and-manage-multiple-Node-js-versions-on-Windows-10.png
+  socialmedia: /static/images/social-media/Use-and-manage-multiple-Node-js-versions-on-Windows-10.jpg
 categories:
   - Tools
 tags:

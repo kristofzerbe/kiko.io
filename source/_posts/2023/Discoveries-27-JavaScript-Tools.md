@@ -6,7 +6,7 @@ date: 2023-11-20 15:16:39
 photograph:
   file: 22-08-Bretagne-Jersey-1491.jpg
   name: Medieval Art
-  socialmedia: /static/images/social-media/Discoveries-27-JavaScript-Tools.png
+  socialmedia: /static/images/social-media/Discoveries-27-JavaScript-Tools.jpg
 series: Discoveries
 categories:
   - Collection

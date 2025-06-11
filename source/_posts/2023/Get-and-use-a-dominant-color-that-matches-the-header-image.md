@@ -6,7 +6,7 @@ date: 2023-10-10 15:34:57
 photograph:
   file: D50_5535_2309.jpg
   name: Floral Magic XCI
-  socialmedia: /static/images/social-media/How-to-get-and-use-an-eye-catching-color-that-matches-the-header-image.png
+  socialmedia: /static/images/social-media/How-to-get-and-use-an-eye-catching-color-that-matches-the-header-image.jpg
 series: A New Blog
 categories:
   - Coding

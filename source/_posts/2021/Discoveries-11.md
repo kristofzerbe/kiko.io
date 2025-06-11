@@ -6,7 +6,7 @@ date: 2021-06-28T15:03:29.000Z
 photograph:
   file: DSC_9480-HDR.jpg
   name: Melting Hills
-  socialmedia: /static/images/social-media/Discoveries-11.png
+  socialmedia: /static/images/social-media/Discoveries-11.jpg
 series: Discoveries
 categories:
   - Collection

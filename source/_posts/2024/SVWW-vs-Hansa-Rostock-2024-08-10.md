@@ -5,7 +5,7 @@ subtitle: Home start to the new season ... in the 3rd league
 date: 2024-08-11 16:53:43
 photograph:
   file: PXL_20240810_120223342.jpg
-  socialmedia: /static/images/social-media/SVWW-vs-Hansa-Rostock-2024-08-10.png
+  socialmedia: /static/images/social-media/SVWW-vs-Hansa-Rostock-2024-08-10.jpg
 series: SV Wehen Wiesbaden
 categories:
   - Football

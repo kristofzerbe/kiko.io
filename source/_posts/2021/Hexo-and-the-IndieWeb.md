@@ -6,7 +6,7 @@ date: 2021-05-05T19:15:00.000Z
 photograph:
   file: DSC_5088.jpg
   name: Steel Flower
-  socialmedia: /static/images/social-media/Hexo-and-the-IndieWeb.png
+  socialmedia: /static/images/social-media/Hexo-and-the-IndieWeb.jpg
 series: 'IndieWeb'
 categories:
   - Tools

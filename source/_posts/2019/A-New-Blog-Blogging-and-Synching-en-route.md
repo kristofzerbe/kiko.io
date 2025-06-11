@@ -6,7 +6,7 @@ date: 2019-10-01T00:00:00.000Z
 photograph:
   file: 19-07-Schottland-0364.jpg
   name: Tiny Scots 5
-  socialmedia: /static/images/social-media/A-New-Blog-Blogging-and-Synching-en-route.png
+  socialmedia: /static/images/social-media/A-New-Blog-Blogging-and-Synching-en-route.jpg
 series: A New Blog
 categories:
   - Tools

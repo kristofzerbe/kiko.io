@@ -6,7 +6,7 @@ date: 2021-01-18T11:17:46.000Z
 photograph:
   file: DSC_1690.jpg
   name: Metal Rose
-  socialmedia: /static/images/social-media/Safely-remove-multiple-classes-using-a-prefix.png
+  socialmedia: /static/images/social-media/Safely-remove-multiple-classes-using-a-prefix.jpg
 categories:
   - Coding
 tags:

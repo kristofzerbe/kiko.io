@@ -5,7 +5,7 @@ date: 2024-07-01 14:09:22
 subtitle: The uninteresting round of 16 match
 photograph:
   file: PXL_20240701_185515710.jpg
-  socialmedia: /static/images/social-media/Euro-2024-Portugal-vs-Slovenia-2024-07-01.png
+  socialmedia: /static/images/social-media/Euro-2024-Portugal-vs-Slovenia-2024-07-01.jpg
 categories:
   - Football
 tags:

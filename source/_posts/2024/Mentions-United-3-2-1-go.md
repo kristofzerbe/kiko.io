@@ -8,7 +8,7 @@ date: 2024-10-03 15:22:21
 photograph:
   file: D50_0272_2408.jpg
   name: Thomas Garden 24-08 XIII
-  socialmedia: /static/images/social-media/Mentions-United-3-2-1-go.png
+  socialmedia: /static/images/social-media/Mentions-United-3-2-1-go.jpg
 project: mentions-united
 categories:
   - Coding

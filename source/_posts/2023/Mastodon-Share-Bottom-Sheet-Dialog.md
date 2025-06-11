@@ -6,7 +6,7 @@ date: 2023-09-28 09:57:54
 photograph:
   file: DSC_2903.jpg
   name: Guinness Orchestra
-  socialmedia: /static/images/social-media/Mastodon-Share-Dialog.png
+  socialmedia: /static/images/social-media/Mastodon-Share-Dialog.jpg
 series: A New Blog
 categories:
   - Tools

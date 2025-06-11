@@ -6,7 +6,7 @@ date: 2020-09-29T12:02:10.000Z
 photograph:
   file: 18-09-Kroatien-0112.jpg
   name: Enlightenment
-  socialmedia: /static/images/social-media/Discoveries-3-Tutorials.png
+  socialmedia: /static/images/social-media/Discoveries-3-Tutorials.jpg
 series: Discoveries
 categories:
   - Collection

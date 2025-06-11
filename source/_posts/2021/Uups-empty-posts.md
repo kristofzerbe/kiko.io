@@ -6,7 +6,7 @@ date: 2021-09-21T13:40:25.000Z
 photograph:
   file: D70_1408.jpg
   name: Mooring Ropes
-  socialmedia: /static/images/social-media/Uups-empty-posts.png
+  socialmedia: /static/images/social-media/Uups-empty-posts.jpg
 categories:
   - Misc
 tags:

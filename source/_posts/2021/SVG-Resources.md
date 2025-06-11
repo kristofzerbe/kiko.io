@@ -6,7 +6,7 @@ date: 2021-04-09T14:07:53.000Z
 photograph:
   file: DSC_4936.jpg
   name: Forgotten Motocycle
-  socialmedia: /static/images/social-media/SVG-Resources.png
+  socialmedia: /static/images/social-media/SVG-Resources.jpg
 series: Great Finds
 categories:
   - UI/UX

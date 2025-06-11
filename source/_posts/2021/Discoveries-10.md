@@ -6,7 +6,7 @@ date: 2021-05-24T17:04:26.000Z
 photograph:
   file: 19-07-Schottland-0372.jpg
   name: Tiny Scots 6
-  socialmedia: /static/images/social-media/Discoveries-10.png
+  socialmedia: /static/images/social-media/Discoveries-10.jpg
 series: Discoveries
 categories:
   - Collection

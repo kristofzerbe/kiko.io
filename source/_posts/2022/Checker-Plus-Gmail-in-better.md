@@ -6,7 +6,7 @@ date: 2022-02-13
 photograph:
   file: DSC_2819.jpg
   name: Dicker Anton
-  socialmedia: /static/images/social-media/Checker-Plus-Gmail-in-better.png
+  socialmedia: /static/images/social-media/Checker-Plus-Gmail-in-better.jpg
 series: 'Golem'
 golem:
   title: 'Checker Plus - Gmail in besser'

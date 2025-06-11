@@ -6,7 +6,7 @@ date: 2022-06-21 13:21:15
 photograph:
   file: D50_1092.jpg
   name: Nature Finds A Way
-  socialmedia: /static/images/social-media/Old-Sweetheart-Rediscovered.png
+  socialmedia: /static/images/social-media/Old-Sweetheart-Rediscovered.jpg
 categories:
   - Tools
 tags:

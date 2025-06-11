@@ -9,7 +9,7 @@ date: 2025-01-18 12:51:56
 photograph:
   file: D50_9044_2405.jpg
   name: Thomas Garden 24-05 XXIV
-  socialmedia: /static/images/social-media/Vernissage-Mentions-United.png
+  socialmedia: /static/images/social-media/Vernissage-Mentions-United.jpg
 project: mentions-united
 categories:
   - Coding
