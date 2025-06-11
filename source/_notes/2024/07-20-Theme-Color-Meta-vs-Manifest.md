@@ -13,8 +13,8 @@ However, I noticed today that the latter does not work and after some research i
 
 **Solution**: Simply omit `theme_color` in the manifest, because the browser then takes the meta value as a fallback, and the color of the entire WebApp changes per page and the dark gray status bar is gone ...
 
-<video width="360px" controls autoplay muted playsinline loop>
-  <source src="_attachments/Screenshot_2024-07-20_160624~2.mp4" type="video/mp4">
-</video>
+<div class="video-container">
+  <iframe src="https://clip.place/videos/embed/tr4vne3bhKiPmpBNAfJegn" title="theme-color-manifest-sample" frameborder="0" allowfullscreen loading="lazy"></iframe>
+</div>
 
 #CSS #Manifest #Theme
