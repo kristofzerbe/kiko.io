@@ -25,7 +25,7 @@
     <img loading="lazy" src="<%- item.pathMobile %>" alt="<%- item.name %>" />
   </a>
   <span class="pre-title">
-    <%- item.key %><% if (item.meta?.DateTimeOriginal) { %>, <em><%- new Date(item.meta?.DateTimeOriginal).toLocaleString('en-GB', { month:"long", year:"numeric" }) %></em><% } %>
+    <%- item.key %><% if (item.meta?.DateTimeOriginal || item.meta?.DateCreated) { %>, <em><%- new Date(item.meta?.DateTimeOriginal ?? item.meta?.DateCreated).toLocaleString('en-GB', { month:"long", year:"numeric" }) %></em><% } %>
   </span>
   <% if (item) { %>
     <%  let syndication = item.meta?.custom?.links?.filter(l => l.url?.length > 0).map(s => ({ host: s.site, url: s.url })); %>

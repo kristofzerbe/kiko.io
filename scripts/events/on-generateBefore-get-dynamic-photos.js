@@ -3,8 +3,9 @@ const { magenta } = require('chalk');
 const path = require('path');
 const fs = require('hexo-fs');
 const front = require('hexo-front-matter');
-const { getMD, updateMDField } = require("../../lib/tools.cjs");
+const { getHelpers, getMD, updateMDField } = require("../../lib/tools.cjs");
 
+const _helpers = getHelpers(hexo);
 const _rootDir = hexo.source_dir.replace("source", "");
 
 hexo.on('generateBefore', function() {
@@ -36,7 +37,7 @@ hexo.on('generateBefore', function() {
   let page = { name: "photos" };
   let mdPage = path.join("_dynamic", page.name + ".md");
   page = getMD(hexo, mdPage, page);
-  page.items = photos;
+  page.items = photos.sort((a,b) => _helpers.moment(a.meta?.DateTimeOriginal ?? a.meta?.DateCreated).diff(b.meta?.DateTimeOriginal ?? b.meta?.DateCreated)).reverse();;
 
   if (!page.updated || newestPhotoDate > new Date(page.updated)) {
     page.updated = updateMDField(hexo, mdPage, "updated", newestPhotoDate);
@@ -48,7 +49,7 @@ hexo.on('generateBefore', function() {
   let shed = { name: "photos-shed" };
   let mdShed = path.join("_dynamic", shed.name + ".md");
   shed = getMD(hexo, mdShed, shed);
-  shed.items = pShed;
+  shed.items = pShed.sort((a,b) => _helpers.moment(a.meta?.DateTimeOriginal ?? a.meta?.DateCreated).diff(b.meta?.DateTimeOriginal ?? b.meta?.DateCreated)).reverse();
 
   if (!shed.updated || newestPhotoDate > new Date(shed.updated)) {
     shed.updated = updateMDField(hexo, mdShed, "updated", newestPhotoDate);
