@@ -20,6 +20,8 @@ related:
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/114676815307101037
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/839272657839558183
 ---
 
 I started taking photos with SLR cameras when I was around 17. My first camera of this type was a Praktika TL 5000 from the former GDR (because it was so cheap). It was extremely uncomfortable to use, but great fun. After that, I had a Nikon F301 and then an F501, until I finally switched to a digital Nikon F90.
