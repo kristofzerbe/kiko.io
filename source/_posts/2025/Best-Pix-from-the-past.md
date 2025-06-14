@@ -24,7 +24,7 @@ syndication:
     url: https://pixelfed.social/p/kristofz/839272657839558183
 ---
 
-I started taking photos with SLR cameras when I was around 17. My first camera of this type was a Praktika TL 5000 from the former GDR (because it was so cheap). It was extremely uncomfortable to use, but great fun. After that, I had a Nikon F301 and then an F501, until I finally switched to a digital Nikon F90.
+I started taking photos with SLR cameras when I was around 17. My first camera of this type was a Praktika TL 1000 from the former GDR (because it was so cheap). It was extremely uncomfortable to use, but great fun. After that, I had a Nikon F301 and then an F501, until I finally switched to a digital Nikon F90.
 
 All the film negatives from that period (1985-1991) have been stored in three thick folders for years, and about 15 years ago I started digitizing them myself, but after weeks of cleaning, inserting, scanning, and saving, my computer's hard drive crashed and almost all the digital images were gone... No backup, no mercy.
 
