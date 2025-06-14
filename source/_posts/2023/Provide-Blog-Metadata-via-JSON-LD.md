@@ -165,7 +165,7 @@ For better recognition of my posts (currently articles only), I generate a speci
 }
 ```
 
-![Social Media image of this post](/images/social-media/Provide-Blog-Metadata-via-JSON-LD.thumb.png)
+![Social Media image of this post](/images/social-media/Provide-Blog-Metadata-via-JSON-LD.jpg)
 
 ### Webpage
 

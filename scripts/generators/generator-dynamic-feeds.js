@@ -28,7 +28,7 @@ hexo.extend.generator.register("dynamic-feeds", async function(locals) {
       if (item.photograph.socialmedia) {
         return item.photograph.socialmedia
           .replace("/static", "")
-          .replace(".png", ".thumb.png");
+          //.replace(".png", ".thumb.png");
       } else {
         return config.url + "/photos/mobile/" + item.photograph.file;
       }
