@@ -4,12 +4,13 @@ date: 2024-11-08
 type: til
 rel:
   verb: like-of
-  caption: 
-  url: 
+  caption: Aligning Images In Markdown
+  url: https://www.surinderbhomra.com/Blog/2020/05/12/Aligning-Images-In-Markdown
 syndication: 
 - host: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/113447973418426445
 ---
+
 Oh man! The other day I fumbled HTML with inline styles into one of my Markdown files to let the text flow past it classically with FLOAT on the left side. But there is a simple and charming solution to solve this in general purely via the image URL and some CSS that I could have come up with myself ...
 
 I was led to this by a [Mastodon post from Matt Wilkie](https://vmst.io/@maphew/113445531772804983), who cites a blog post from Surinder Bhomra:
@@ -24,7 +25,6 @@ img[src*='#left'] {
   margin: 10px 0 10px 10px;
 }
 ```
-
 
 #Markdown #images 
 
