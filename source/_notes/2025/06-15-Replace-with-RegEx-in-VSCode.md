@@ -4,7 +4,7 @@ date: 2025-06-15
 type: til
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/114687903770569949
 ---
 
 I have been working with Visual Studio Code for a long time now, and just recently I had to figure out how to use regular expressions not only to search, but also to replace code fragments. The trick is to use parentheses to create capturing groups, which you can then reference in order using the dollar sign.
