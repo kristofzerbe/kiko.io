@@ -14,7 +14,7 @@ tags:
   - Imaging
   - Publishing
 related:
-  - Pool-Photo-Generator
+  - 
 syndication:
   - host: Mastodon
     url: 
@@ -25,4 +25,8 @@ syndication:
 
 {% photo_list
   "name|title"
+%}
+
+{% photo_masonry
+  "name"
 %}
