@@ -2,36 +2,56 @@
   Discovery Tag
 
   Syntax
-  {% discovery "title" "author" "url" [assetFolder] [imgFile] %}
+  {% discovery "title" "author" "url" [assetFolder] [imgkey] %}
     content
   {% enddiscovery %}
 
 */
+const { getDataFromCardlinkDummyBlock, compileHandlebar } = require("../../lib/tools.cjs");
 
 hexo.extend.tag.register("discovery", function(args, content){
 
-  var title, author, url, assetFolder, imgFile, imgSrc;
+  const [
+    title,
+    author,
+    url,
+    assetFolder,
+    imgkey
+  ] = args;
 
-  title = args[0];
-  author = args[1];
-  url = args[2];
-  assetFolder = args[3];
-  imgFile = args[4];
+  let imgSrc, image = "", anchorId;
 
-  imgSrc = imgFile;
+  if (imgkey?.startsWith("key:")) {
+    anchorId = imgkey.split(':')[1];
+  } else {
+    imgSrc = imgkey;
+    image = `
+      <a style="display:block; margin: 2rem 0;" class="img-link" href="${url}">
+        <img class="limit" src="${imgSrc}" alt="${title}" />
+      </a>
+    `;
+    anchorId = imgkey.split('.')[0];
+  }
 
-  let anchorId = imgFile.split('.')[0];
+  // Dummy Cardlink
+  const regexp = /@@@cardlink\n(.*?)\n@@@/gs
+  const matches = content.matchAll(regexp);
+  for (const match of matches) {
+    const lines = getDataFromCardlinkDummyBlock(match[0], hexo.config.favicon_service_url);
+    const cardlink = compileHandlebar(hexo, "cardlink.handlebars", lines);
+    content = content.replace(match[0], cardlink);
+  }
 
   content = hexo.render.renderSync({ text: content, engine: 'markdown' });
 
-  var element = `
+  let element = `
     <hr id="${anchorId}"/>
-    <h2 class="link">${title}</h2>
-    <small>by ${author}&nbsp;<br><a href="${url}">${url}</a></small>
-    ${content}
-    <a style="display:block; margin: 10px 0 30px;" class="img-link" href="${url}">
-      <img class="limit" src="${imgSrc}" alt="${title}" />
-    </a>
+    <div class="discovery">
+      <h2 class="link">${title}</h2>
+      <small>by ${author}&nbsp;<br><a href="${url}">${url}</a></small>
+      ${content}
+      ${image}
+    </div>
   `;
 
   return element;
