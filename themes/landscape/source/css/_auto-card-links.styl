@@ -4,16 +4,6 @@
   overflow: hidden
   user-select: none
 
-  .auto-card-link-thumbnail
-    border-radius: border-radius 0 0 border-radius !important
-    height: 100%
-    object-fit: cover
-    object-position: left top
-    pointer-events: none
-    width: 28% !important
-    @media mq-mobile
-      width: 25% !important
-
   .auto-card-link-card
     display: flex
     flex-direction: row-reverse
@@ -40,6 +30,7 @@
         border-color: dark-color-hover-background
 
     .auto-card-link-main
+      width: 75vw
       display: flex
       flex-grow: 1
       flex-direction: column
@@ -80,3 +71,14 @@
         width: 16px !important
         height: auto !important
         margin: 0 0.5rem 0 0 !important
+
+  .auto-card-link-thumbnail
+    border-radius: border-radius 0 0 border-radius !important
+    height: 100%
+    background-position: left center
+    background-size: cover
+    pointer-events: none
+    width: 35vw !important
+    @media mq-mobile
+      width: 50vw !important
+
