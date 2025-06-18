@@ -19,7 +19,7 @@ related:
   - Discoveries-32-CSS
 syndication:
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/114705389325642812
 ---
 
 I've been using Visual Studio Code pretty much since it came out, initially to get away from its big, bulky "brother" Visual Studio in terms of web development. So I'm very happy about how the tool has evolved, especially the plugin scene, which has taken my primary work tool to new heights of productivity. I'd like to introduce a few of the "smaller" but no less helpful plugins in this edition of this month's Discoveries...
