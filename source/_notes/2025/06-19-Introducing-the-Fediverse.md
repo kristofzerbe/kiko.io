@@ -8,7 +8,7 @@ rel:
   url: https://elenarossini.com/portfolio/introducing-the-fediverse/
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/114709842460446330
 ---
 It was shared so many times in the last weeks, but because it's so important, here's my ...
 
