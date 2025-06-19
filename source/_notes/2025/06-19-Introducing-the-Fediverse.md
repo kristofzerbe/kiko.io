@@ -23,7 +23,8 @@ It was shared so many times in the last weeks, but because it's so important, he
 ```cardlink
 url: https://elenarossini.com/portfolio/introducing-the-fediverse/
 title: "Introducing the Fediverse — Elena Rossini"
+description: "Introducing the Fediverse: a New Era of Social Media is a 4-minute video explainer about the Fediverse, a galaxy of interconnected, free, open-source social networks."
 host: elenarossini.com
 favicon: https://elenarossini.com/wp-content/uploads/2024/10/cropped-ELE-avatar-muses-colors-bgalaxy-32x32.jpg
-image: https://elenarossini.com/wp-content/uploads/2025/06/Fedi-promo-cover-01-scaled.jpg
+image: /notes/2025/_attachments/Fedi-promo-cover-01-scaled.jpg
 ```

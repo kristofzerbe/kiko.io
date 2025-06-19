@@ -26,7 +26,7 @@ img[src*='#left'] {
 }
 ```
 
-#Markdown #images 
+#Markdown #Images 
 
 ```cardlink
 url: https://www.surinderbhomra.com/Blog/2020/05/12/Aligning-Images-In-Markdown
