@@ -18,7 +18,9 @@ related:
   - Afternoon-Light
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/114711573259355554
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/841388493558460143
 ---
 
 This year, Thomas invested in a drip irrigation system for his garden. As difficult as it may have been to install among all the plants, and as much as he cursed while doing it, the plants seem to love it. The little path with stone slabs, which normally prevents anyone from trampling on the beds, is completely overgrown and everything is blooming like crazy. A wonderful sight ...
