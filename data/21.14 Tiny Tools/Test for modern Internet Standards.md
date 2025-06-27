@@ -15,3 +15,11 @@ Test for modern Internet Standards like IPv6, DNSSEC, HTTPS, TLS, HSTS,  DMARC, 
 ___
 
 ![](_attachments/test-for-modern-internet-standards.jpg)
+
+```cardlink
+url: https://internet.nl/
+title: "Test for modern Internet Standards like IPv6, DNSSEC, HTTPS, DMARC, STARTTLS and DANE."
+description: "Test for modern Internet Standards IPv6, DNSSEC, HTTPS, HSTS, DMARC, DKIM, SPF, STARTTLS, DANE, RPKI and security.txt"
+host: internet.nl
+favicon: https://internet.nl/static/favicon.png
+```

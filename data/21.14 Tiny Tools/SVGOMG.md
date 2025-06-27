@@ -16,3 +16,12 @@ UI for SVG Optimizer, a Node.js-based tool for optimizing SVG vector graphics fi
 ___
 
 ![](_attachments/svgomg.jpg)
+
+```cardlink
+url: https://jakearchibald.github.io/svgomg/
+title: "SVGOMG - SVGO's Missing GUI"
+description: "Easy & visual compression of SVG images."
+host: jakearchibald.github.io
+favicon: imgs/icon.png
+image: https://jakearchibald.github.io/svgomg/imgs/icon.png
+```

@@ -15,3 +15,12 @@ This tool lets you check color contrast ratios using modern CSS formats
 ___
 
 ![](_attachments/oddcontrast.jpg)
+
+```cardlink
+url: https://www.oddcontrast.com/
+title: "OddContrast"
+description: "Color contrast checker with Oklch, Oklab, Display P3, and more – helping designers meet WCAG 2 accessibility standards."
+host: www.oddcontrast.com
+favicon: ./favicon.svg
+image: https://www.oddcontrast.com/social.png
+```

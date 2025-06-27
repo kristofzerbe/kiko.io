@@ -16,3 +16,9 @@ Webmention Rocks! is a validator to help you test your Webmention implementat
 ___
 
 ![](_attachments/webmention-rocks.jpg)
+
+```cardlink
+url: https://webmention.rocks/
+title: "Webmention Rocks!"
+host: webmention.rocks
+```

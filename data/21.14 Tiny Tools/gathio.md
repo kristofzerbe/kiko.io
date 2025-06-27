@@ -14,3 +14,12 @@ Create and share events that act as a Fediverse actor others can follow and comm
 ___
 
 ![](_attachments/gathio.jpg)
+
+```cardlink
+url: https://gath.io/
+title: "Gathio"
+description: "An easier, quicker, and much less privacy-invading way to make and share events"
+host: gath.io
+favicon: https://gath.io/favicon-32x32.png
+image: https://gath.io/og-image.jpg
+```

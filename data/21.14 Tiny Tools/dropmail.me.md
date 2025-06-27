@@ -15,3 +15,12 @@ Create a temporary email. For 10 minutes or more. Anonymous email service allows
 ___
 
 ![](_attachments/dropmail-me.jpg)
+
+```cardlink
+url: https://dropmail.me/en/
+title: "Disposable email service"
+description: "Create a temporary email. For 10 minutes or more. Anonymous email service allows you to receive emails for a safe registration on sites and services. Unlimited mailbox lifetime. No registration. Unlimited mailbox size. Attachments allowed."
+host: dropmail.me
+favicon: https://dropmail.me/favicon.svg
+image: https://dropmail.me/static/img/icon80x80.png
+```

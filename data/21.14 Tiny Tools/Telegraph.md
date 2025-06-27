@@ -16,3 +16,9 @@ Sends Webmentions with retry and callback
 ___
 
 ![](_attachments/telegraph.jpg)
+
+```cardlink
+url: https://telegraph.p3k.io/
+title: "Telegraph"
+host: telegraph.p3k.io
+```

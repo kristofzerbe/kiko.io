@@ -302,7 +302,7 @@
         span, a.tag
           display: block
           border-radius: border-radius-small
-          padding: 3px 9px
+          padding: 0 small-padding
           margin: 0 small-margin small-margin 0
           text-transform: uppercase
           font-size: 0.75rem
@@ -401,6 +401,8 @@
       div.tags
         grid-area: tags
         margin: 0
+        span, a.tag
+          margin: 0 small-margin (small-margin + thin-margin) 0
 
     .card.photo
       grid-template-rows: auto auto 1fr
@@ -663,7 +665,7 @@
           article
               padding-block-start: default-padding-vert
               @media mq-mobile
-                padding-block-start: small-padding
+                padding-block-start: thin-padding
             img
               max-width: 100%
           hr

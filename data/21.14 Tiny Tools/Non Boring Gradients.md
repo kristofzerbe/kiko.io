@@ -16,3 +16,9 @@ Web tool for generating gradients by selecting different interpolation spaces an
 ___
 
 ![](_attachments/non-boring-gradients.jpg)
+
+```cardlink
+url: https://non-boring-gradients.netlify.app/
+title: "Non-Boring Gradients - A non linear CSS gradient generator"
+host: non-boring-gradients.netlify.app
+```

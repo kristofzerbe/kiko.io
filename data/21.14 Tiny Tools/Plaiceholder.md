@@ -15,3 +15,11 @@ Beautiful image placeholders, without the hassle.
 ___
 
 ![](_attachments/plaiceholder.jpg)
+
+```cardlink
+url: https://plaiceholder.co/
+title: "Plaiceholder"
+description: "Beautiful image placeholders, without the hassle."
+host: plaiceholder.co
+image: https://plaiceholder.co/assets/img/og.png
+```

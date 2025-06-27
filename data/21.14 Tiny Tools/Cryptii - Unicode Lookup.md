@@ -15,3 +15,4 @@ Web app offering modular conversion, encoding and encryption online.
 ___
 
 ![](_attachments/cryptii-unicode-lookup.jpg)
+https://cryptii.com/pipes/unicode-lookup

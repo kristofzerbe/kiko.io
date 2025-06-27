@@ -16,3 +16,10 @@ Collection of free and open-source SVG icons compatible with Flowbite and Tailw
 ___
 
 ![](_attachments/flowbite.jpg)
+
+```cardlink
+url: https://flowbite.com/icons/
+title: "Flowbite"
+description: ""
+host: 
+```

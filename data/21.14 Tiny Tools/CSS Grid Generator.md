@@ -15,3 +15,11 @@ You can set the numbers, and units of your columns and rows, and I'll generate a
 ___
 
 ![](_attachments/css-grid-generator.jpg)
+
+```cardlink
+url: https://cssgrid-generator.netlify.app/
+title: "CSS Grid Generator"
+host: cssgrid-generator.netlify.app
+favicon: https://cssgrid-generator.netlify.app/favicon.ico
+image: https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/og-cssgrid.jpg
+```

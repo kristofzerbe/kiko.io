@@ -15,3 +15,12 @@ Free Online Photo Editor In Your Browser, Based on Pintura.
 ___
 
 ![](_attachments/edit-photo.jpg)
+
+```cardlink
+url: https://edit.photo/
+title: "Edit Photo"
+description: "No ads, no popups, no cookies, no account. The fastest way to edit photos online"
+host: edit.photo
+favicon: https://edit.photo/icon.svg
+image: https://edit.photo/static/assets/banner.jpeg
+```

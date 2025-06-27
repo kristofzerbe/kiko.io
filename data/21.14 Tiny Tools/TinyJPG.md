@@ -15,3 +15,11 @@ Make your website faster and save bandwidth. TinyJPG is the best automatic JPEG 
 ___
 
 ![](_attachments/tinyjpg.jpg)
+
+```cardlink
+url: https://tinyjpg.com/
+title: "TinyJPG – Compress WebP, PNG and JPEG images intelligently"
+description: "Make your website faster and save bandwidth. TinyJPG is the best automatic WEBP, JPEG and PNG optimizer and compresses your WEBP, JPEG and PNG images by 40-60%!"
+host: tinyjpg.com
+image: https://tinyjpg.com/images/social/website.jpg
+```

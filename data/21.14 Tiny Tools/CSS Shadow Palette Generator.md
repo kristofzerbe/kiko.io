@@ -15,3 +15,12 @@ Create a set of lush, realistic CSS shadows
 ___
 
 ![](_attachments/css-shadow-palette-generator.jpg)
+
+```cardlink
+url: https://www.joshwcomeau.com/shadow-palette
+title: "CSS Shadow Palette Generator"
+description: "Friendly tutorials for developers. Focus on React, CSS, Animation, and more!"
+host: www.joshwcomeau.com
+favicon: https://www.joshwcomeau.com/favicon.png
+image: https://www.joshwcomeau.com/images/og-announcing-shadow-palette-generator.png
+```

@@ -16,3 +16,12 @@ Over 300 beautiful line icons as SVG
 ___
 
 ![](_attachments/majesticons-pro.jpg)
+
+```cardlink
+url: https://www.majesticons.com/
+title: "Majesticons — Beautiful icons make stunning designs"
+description: "Save time, effort and money by selecting a clean, consistent and top-notch icon set."
+host: www.majesticons.com
+favicon: favicon.png
+image: https://www.majesticons.com/images/social.png
+```

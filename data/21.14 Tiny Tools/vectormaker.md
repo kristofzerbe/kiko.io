@@ -16,3 +16,12 @@ Convert images to SVG vectors, PNG-to-SVG Vectors.
 ___
 
 ![](_attachments/vectormaker.jpg)
+
+```cardlink
+url: https://vectormaker.co/
+title: "vectormaker | Convert PNG-to-SVG Vectors"
+description: "Convert images to SVG vectors, PNG-to-SVG Vectors. Vectormaker outlines your pixel based images and turns them into colored SVG vector files."
+host: vectormaker.co
+favicon: https://vectormaker.co/favicon.ico
+image: https://vectormaker.co/social_share.png
+```

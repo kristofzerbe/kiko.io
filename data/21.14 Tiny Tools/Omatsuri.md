@@ -14,3 +14,11 @@ Progressive Web Application with 12 open source frontend focused tools
 ___
 
 ![](_attachments/omatsuri.jpg)
+
+```cardlink
+url: https://omatsuri.app/
+title: "Omatsuri"
+description: "Progressive Web Application with 12 open source frontend focused tools"
+host: omatsuri.app
+favicon: https://omatsuri.app/assets/favicon-16x16.png
+```

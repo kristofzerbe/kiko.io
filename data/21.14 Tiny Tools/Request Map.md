@@ -15,3 +15,9 @@ Visual request map of third-party services
 ___
 
 ![](_attachments/request-map.jpg)
+
+```cardlink
+url: https://requestmap.webperf.tools
+title: "Request Map Generator"
+host: requestmap.webperf.tools
+```

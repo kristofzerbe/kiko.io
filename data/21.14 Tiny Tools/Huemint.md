@@ -16,3 +16,10 @@ Huemint uses machine learning to create unique color schemes for your brand, web
 ___
 
 ![](_attachments/huemint.jpg)
+
+```cardlink
+url: https://huemint.com
+title: "Huemint - AI color palette generator"
+host: huemint.com
+favicon: https://huemint.com/assets/img/logo-32.png
+```

@@ -16,3 +16,12 @@ Create vector dotted maps with custom options and download them as SVG or PNG fi
 ___
 
 ![](_attachments/world-in-dots.jpg)
+
+```cardlink
+url: https://www.worldindots.com/
+title: "World in Dots | Dotted Maps Generator"
+description: "Create vector dotted maps with custom options and download them as SVG or PNG files"
+host: www.worldindots.com
+favicon: https://www.worldindots.com/favicon.ico
+image: https://www.worldindots.com/og-image.png
+```

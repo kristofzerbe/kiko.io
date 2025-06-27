@@ -15,3 +15,12 @@ Convert any major image format into a highly optimized JPEG
 ___
 
 ![](_attachments/jpeg-io.jpg)
+
+```cardlink
+url: https://www.jpeg.io/
+title: "Jpeg.io"
+description: "Convert any major image format into a highly optimized JPEG"
+host: www.jpeg.io
+favicon: https://www.jpeg.io/favicon.ico
+image: https://www.jpeg.io/assets/images/facebook-image.png
+```

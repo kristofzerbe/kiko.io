@@ -16,3 +16,9 @@ Bridgy connects your web site to social media. Likes, retweets, mentions, cros
 ___
 
 ![](_attachments/bridgy.jpg)
+
+```cardlink
+url: https://brid.gy/
+title: "Bridgy"
+host: brid.gy
+```

@@ -17,3 +17,12 @@ Animated icons in Lottie Framework and for immediate implementation to your apps
 ___
 
 ![](_attachments/useanimations.jpg)
+
+```cardlink
+url: https://useanimations.com/
+title: "A micro-animations library"
+description: "Animated icons in Lottie Framework and for immediate implementation to your apps or websites."
+host: useanimations.com
+favicon: images/favicon-32x32.png
+image: https://useanimations.com/images/OGuseAnimationsImage.jpg
+```

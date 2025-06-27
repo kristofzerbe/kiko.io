@@ -16,3 +16,11 @@ Edit RegEx visually
 ___
 
 ![](_attachments/nodexr.jpg)
+
+```cardlink
+url: https://www.nodexr.net/
+title: "Nodexr"
+description: "A node-based Regular Expression (Regex) generator and editor for .NET"
+host: www.nodexr.net
+favicon: favicon.ico
+```

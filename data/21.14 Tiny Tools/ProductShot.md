@@ -15,3 +15,12 @@ Generate better performing screenshots by focusing the user's attention.
 ___
 
 ![](_attachments/productshot.jpg)
+
+```cardlink
+url: https://productshot.app/
+title: "ProductShot"
+description: "Generate better performing screenshots by focusing the user's attention."
+host: productshot.app
+favicon: https://productshot.app/images/favicon.ico
+image: https://productshot.app/images/seo-preview.png
+```

@@ -3,7 +3,7 @@ const { magenta } = require('chalk');
 const path = require('path');
 const fs = require('hexo-fs');
 const front = require('hexo-front-matter');
-const { getMD, updateMDField } = require("../../lib/tools.cjs");
+const { getMD, getCardLinkDataFromMarkdown, updateMDField } = require("../../lib/tools.cjs");
 
 const _rootDir = hexo.source_dir.replace("source", "");
 
@@ -35,28 +35,16 @@ hexo.on('generateBefore', function() {
 
   // Get Blogroll data
   const blogroll = fs.readFileSync(mdBlogroll);
-  const regexp = /```cardlink\n(.*?)\n```/gs
-  const matches = blogroll.matchAll(regexp);
-  for (const match of matches) { 
-
-    // convert blog's cardlink to Frontmatter for parsing
-    let blog = match[0].replace("```cardlink\n", "---\n").replace("\n```", "\n---"); //.replace(/\r?\n|\r/g, ",\n");
-    let fmBlog = front.parse(blog);
-    delete fmBlog._content;
-
-    fmBlog.favicon = config.favicon_service_url.replace("{URL}", fmBlog.url);
-
-    fmBlog.latest_post = {
+  page.items = getCardLinkDataFromMarkdown(blogroll, config.favicon_service_url);
+  page.items.forEach(blog => {
+    blog.latest_post = {
       "url": null,
       "title": null,
       "date_published": 0
     }
-
-    page.items.push(fmBlog);
-  }
+  });
 
   let dyn = {...hexo.locals.get('dynamic'), ...{ blogroll: page }};
   hexo.locals.set('dynamic', dyn);
-
   //console.log(hexo.locals.get('dynamic'));
 });

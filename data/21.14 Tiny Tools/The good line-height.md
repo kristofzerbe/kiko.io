@@ -15,3 +15,10 @@ Tool to calculate the exact number of the right line-height for every text size 
 ___
 
 ![](_attachments/the-good-line-height.jpg)
+
+```cardlink
+url: https://www.thegoodlineheight.com/
+title: "The Good Line-Height"
+host: www.thegoodlineheight.com
+favicon: ./favicon.ico
+```

@@ -15,3 +15,11 @@ CSSFilterGenerator produces CSS filters and mix-blend-mizode overlay code using 
 ___
 
 ![](_attachments/css-filter-generator.jpg)
+
+```cardlink
+url: https://www.cssfiltergenerator.com/
+title: "CSSfiltergenerator.com"
+description: "CSS Filter Generator produces CSS filters and mix-blend-mode overlay code using a graphical user interface."
+host: www.cssfiltergenerator.com
+image: https://www.cssfiltergenerator.com/img/simple.png
+```

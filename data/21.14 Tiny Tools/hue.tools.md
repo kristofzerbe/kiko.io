@@ -16,3 +16,10 @@ Tools for mixing, blending and modify colours with several interpolation modes
 ___
 
 ![](_attachments/hue-tools.jpg)
+
+```cardlink
+url: https://hue.tools/
+title: "hue.tools"
+description: ""
+host: 
+```

@@ -14,3 +14,10 @@ Generate random strings
 ___
 
 ![](_attachments/random-org-string-generator.jpg)
+
+```cardlink
+url: https://www.random.org/strings
+title: "RANDOM.ORG - String Generator"
+description: "This page allows you to generate random text strings using true randomness, which for many purposes is better than the pseudo-random number algorithms typically used in computer programs."
+host: www.random.org
+```

@@ -15,3 +15,10 @@ ___
 ___
 
 ![](_attachments/clippy.jpg)
+
+```cardlink
+url: https://bennettfeely.com/clippy/
+title: "Clippy — CSS clip-path maker"
+host: bennettfeely.com
+favicon: homescreen-196x196.png
+```

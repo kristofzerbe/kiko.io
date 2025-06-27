@@ -14,3 +14,11 @@ Helpy small tool, to get some device features, such as the different widths, hei
 ___
 
 ![](_attachments/device-js.jpg)
+
+```cardlink
+url: https://erovas.github.io/Device.js/
+title: "Device.js"
+description: "Device.js is a JavaScript library to detect device, viewport, and browser information using plain JavaScript."
+host: erovas.github.io
+favicon: Device-favicon.png
+```

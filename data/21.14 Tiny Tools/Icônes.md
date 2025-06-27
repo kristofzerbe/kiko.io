@@ -15,3 +15,10 @@ Great and very useful collection of icon collections, to find and bundle the ico
 ___
 
 ![](_attachments/icnes.jpg)
+
+```cardlink
+url: https://icones.js.org/
+title: "Icônes"
+host: icones.js.org
+favicon: https://icones.js.org/favicon.svg
+```

@@ -15,3 +15,11 @@ Website scanner for suspicious and malicious URLs
 ___
 
 ![](_attachments/urlscan-io.jpg)
+
+```cardlink
+url: https://urlscan.io/
+title: "URL and website scanner - urlscan.io"
+description: "urlscan.io - Website scanner for suspicious and malicious URLs"
+host: urlscan.io
+favicon: https://urlscan.io/img/urlscan_256.png
+```

@@ -15,3 +15,9 @@ A simple page that shows all the different characters and their HTML code
 ___
 
 ![](_attachments/all-characters.jpg)
+
+```cardlink
+url: https://aymkdn.github.io/characters
+title: "All Characters"
+host: aymkdn.github.io
+```

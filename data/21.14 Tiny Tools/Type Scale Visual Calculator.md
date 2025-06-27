@@ -16,3 +16,11 @@ Preview and choose the right type scale for your project. Experiment with font s
 ___
 
 ![](_attachments/type-scale-visual-calculator.jpg)
+
+```cardlink
+url: https://type-scale.com/
+title: "Typescale - Create stunning typography, generate CSS, and find inspiration."
+host: type-scale.com
+favicon: https://typescale.com/wp-content/themes/typescale/favicon/favicon-32x32.png?ver=1.2.49
+image: https://typescale.com/wp-content/uploads/2023/11/og-image.png
+```

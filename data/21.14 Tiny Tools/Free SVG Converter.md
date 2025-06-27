@@ -16,3 +16,10 @@ Convert online picture to svg freely.
 ___
 
 ![](_attachments/free-svg-converter.jpg)
+
+```cardlink
+url: https://picsvg.com/
+title: "Free SVG Converter"
+description: "Convert online picture to svg freely."
+host: picsvg.com
+```

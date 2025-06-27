@@ -15,3 +15,12 @@ Create and download app icons
 ___
 
 ![](_attachments/iconkitchen.jpg)
+
+```cardlink
+url: https://icon.kitchen/
+title: "IconKitchen"
+description: "Cook up app icons for any platform"
+host: icon.kitchen
+favicon: https://icon.kitchen/favicon.ico
+image: https://icon.kitchen/social-thumb.png
+```

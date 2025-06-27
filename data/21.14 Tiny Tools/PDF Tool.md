@@ -15,3 +15,11 @@ Edit PDF files right in your browser...
 ___
 
 ![](_attachments/pdf-tool.jpg)
+
+```cardlink
+url: https://www.pdftool.org/en
+title: "PDFTool: secure PDF modifications online for free"
+description: "Free & secure online PDF modifications. Merge, sign, encrypt, and more, all while prioritizing your privacy. No file upload required!"
+host: www.pdftool.org
+favicon: favicon.ico
+```

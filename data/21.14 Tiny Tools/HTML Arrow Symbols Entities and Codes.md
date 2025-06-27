@@ -16,3 +16,12 @@ HTML Arrows is a comprehensive reference website for finding HTML symbol codes a
 ___
 
 ![](_attachments/html-arrow-symbols-entities-and-codes.jpg)
+
+```cardlink
+url: https://www.toptal.com/designers/htmlarrows/arrows/
+title: "HTML Arrow Symbols, Entities and Codes — Toptal Designers"
+description: "Easily find HTML arrow symbols, entities, characters and codes with ASCII, HEX, CSS and Unicode values; including right arrow, left arrow, up and down arrows."
+host: www.toptal.com
+favicon: https://www.toptal.com/designers/htmlarrows/assets/images/favicon.ico
+image: https://www.toptal.com/designers/htmlarrows/assets/images/htmlarrows-hero-29eb905f.jpg
+```

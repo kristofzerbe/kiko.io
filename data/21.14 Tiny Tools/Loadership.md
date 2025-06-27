@@ -15,3 +15,12 @@ LoaderShip is a CSS-only loader configuration tool that allows you to customize 
 ___
 
 ![](_attachments/loadership.jpg)
+
+```cardlink
+url: https://www.loadership.com
+title: "LoaderShip"
+description: "Loadership is your go-to tool for generating and customizing loading spinners. Easily configure and copy-paste spinners in HTML/CSS, or SVG to enhance your web projects with smooth,      professional loaders."
+host: www.loadership.com
+favicon: https://www.loadership.com/loadership_logo_round.svg
+image: https://www.loadership.com/loadership_logo_text.svg
+```

@@ -16,3 +16,11 @@ Collection of Unicode arrows for using on websites
 ___
 
 ![](_attachments/unicode-arrows.jpg)
+
+```cardlink
+url: https://unicodearrows.com/all-arrows
+title: "Unicode Arrows"
+description: "↬ the best part of the unicode spec ↫"
+host: unicodearrows.com
+image: https://unicodearrows.com/arrows.png
+```

@@ -15,3 +15,10 @@ Fantastic Micro-Frameworks and Micro-Libraries for Fun and Profit.
 ___
 
 ![](_attachments/microjs.jpg)
+
+```cardlink
+url: http://microjs.com/
+title: "Microjs: Fantastic Micro-Frameworks and Micro-Libraries for Fun and Profit!"
+host: microjs.com
+favicon: resources/favicon-32x32.png
+```

@@ -16,3 +16,10 @@ A simple resource for finding and trying variable fonts
 ___
 
 ![](_attachments/variable-fonts.jpg)
+
+```cardlink
+url: https://v-fonts.com/
+title: "Variable Fonts"
+description: "A simple resource for finding and trying variable fonts."
+host: v-fonts.com
+```

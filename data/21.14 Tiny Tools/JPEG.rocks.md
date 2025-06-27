@@ -15,3 +15,12 @@ Browser-based, privacy-aware JPEG optimizer
 ___
 
 ![](_attachments/jpeg-rocks.jpg)
+
+```cardlink
+url: https://jpeg.rocks/
+title: "JPEG.rocks"
+description: "Browser-based, privacy-aware JPEG optimizer"
+host: jpeg.rocks
+favicon: https://jpeg.rocks/assets/favicon-32x32.png
+image: https://jpeg.rocks/assets/images/logo_light_mode.png
+```

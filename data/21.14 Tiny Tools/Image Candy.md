@@ -17,3 +17,10 @@ Edit images online with the complete image processing toolkit.
 ___
 
 ![](_attachments/image-candy.jpg)
+
+```cardlink
+url: https://imgcandy.com/
+title: "Image Candy - Online Image Editor"
+description: "Image Candy provides you with a complete set of online image editing tools: convert, compress, resize, rotate, etc. 100% Free."
+host: imgcandy.com
+```

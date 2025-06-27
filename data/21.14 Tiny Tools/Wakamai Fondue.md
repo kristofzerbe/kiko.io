@@ -15,3 +15,11 @@ The tool that answers the question “what can my font do?”
 ___
 
 ![](_attachments/wakamai-fondue.jpg)
+
+```cardlink
+url: https://wakamaifondue.com/
+title: "Wakamai Fondue"
+host: wakamaifondue.com
+favicon: favicon-196x196.png
+image: https://wakamaifondue.com/wf-screenshot-square.jpg
+```

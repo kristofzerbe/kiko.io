@@ -15,3 +15,12 @@ Find actively maintained and popular libraries in the Node.js ecosystem
 ___
 
 ![](_attachments/node-js-toolbox.jpg)
+
+```cardlink
+url: https://nodejstoolbox.com/
+title: "Node.js Toolbox"
+description: "Find actively maintained and popular packages in the Node.js ecosystem."
+host: nodejstoolbox.com
+favicon: https://nodejstoolbox.com/favicon.ico
+image: https://nodejstoolbox.com/social-image.png
+```

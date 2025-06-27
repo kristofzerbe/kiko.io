@@ -14,3 +14,11 @@ An elegant, text-based calculator for the Web
 ___
 
 ![](_attachments/numbr.jpg)
+
+```cardlink
+url: https://numbr.dev/
+title: "Numbr"
+description: "Numbr is a smart calculator combined with a notepad. You can use notes with numbers alongside each other."
+host: numbr.dev
+favicon: https://numbr.dev/favicon-32x32.png
+```

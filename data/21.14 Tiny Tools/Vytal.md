@@ -15,3 +15,11 @@ Vytal shows you what traces your browser leaves behind while surfing the web.
 ___
 
 ![](_attachments/vytal.jpg)
+
+```cardlink
+url: https://vytal.io/
+title: "Vytal - Spoof Timezone, Geolocation, Locale and User Agent"
+description: "Check if your location is actually hidden."
+host: vytal.io
+favicon: https://vytal.io/favicon.ico
+```

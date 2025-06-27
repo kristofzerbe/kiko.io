@@ -15,3 +15,11 @@ Because SEO should be accessible, you can use this free tool to check if Google 
 ___
 
 ![](_attachments/google-title-rewrite-checker.jpg)
+
+```cardlink
+url: https://www.seowl.co/title-rewrite-checker/
+title: "Google Title Rewrite Checker | SEOwl"
+description: "Check if Google has rewritten your page title for a list of URL, for free !"
+host: www.seowl.co
+favicon: https://www.seowl.co/images/favicon.ico
+```

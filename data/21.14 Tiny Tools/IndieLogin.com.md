@@ -16,3 +16,10 @@ IndieLogin.com makes it easy to add web sign-in to your applications
 ___
 
 ![](_attachments/indielogin-com.jpg)
+
+```cardlink
+url: https://indielogin.com/
+title: "IndieLogin.com"
+host: indielogin.com
+favicon: https://indielogin.com/icons/favicon-32x32.png
+```

@@ -16,3 +16,10 @@ Free SVG icons for popular brands
 ___
 
 ![](_attachments/simple-icons.jpg)
+
+```cardlink
+url: https://simpleicons.org/
+title: "Simple Icons"
+description: ""
+host: 
+```

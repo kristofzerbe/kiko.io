@@ -18,3 +18,9 @@ Fetches and converts data between social networks, HTML and JSON with microfor
 ___
 
 ![](_attachments/granary.jpg)
+
+```cardlink
+url: https://granary.io/
+title: "Granary"
+host: granary.io
+```

@@ -15,3 +15,11 @@ A Real-Time Website Privacy Inspector
 ___
 
 ![](_attachments/blacklight.jpg)
+
+```cardlink
+url: https://themarkup.org/blacklight
+title: "Blacklight – The Markup"
+description: "A Real-Time Website Privacy Inspector"
+host: themarkup.org
+image: https://mrkp-static-production.themarkup.org/uploads/2020/09/blacklight-1-1200x628.jpg
+```

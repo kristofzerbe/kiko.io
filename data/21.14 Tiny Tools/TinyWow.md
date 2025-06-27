@@ -16,3 +16,11 @@ Create, convert or manipulate PDF, XML, CSV, images, videos and more with differ
 ___
 
 ![](_attachments/tinywow.jpg)
+
+```cardlink
+url: https://tinywow.com/
+title: "Free AI Writing, PDF, Image, and other Online Tools - TinyWow"
+description: "Free AI Writing, PDF, Image, and other Online Tools - TinyWow"
+host: tinywow.com
+favicon: https://tinywow.com/v2/img/favicon.png
+```

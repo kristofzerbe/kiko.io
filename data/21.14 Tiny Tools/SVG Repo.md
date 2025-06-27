@@ -17,3 +17,12 @@ Explore, search and find the best fitting icons or vectors for your projects usi
 ___
 
 ![](_attachments/svg-repo.jpg)
+
+```cardlink
+url: https://www.svgrepo.com/
+title: "SVG Repo - Free SVG Vectors and Icons"
+description: "Free Vectors and Icons in SVG format. ✅ Download free mono or multi color vectors for commercial use. Search in 500.000+ Free SVG Vectors and Icons."
+host: www.svgrepo.com
+favicon: /favicon.ico
+image: https://www.svgrepo.com/social.png
+```

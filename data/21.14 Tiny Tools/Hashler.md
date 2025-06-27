@@ -15,3 +15,10 @@ Compute different hashes of a string
 ___
 
 ![](_attachments/hashler.jpg)
+
+```cardlink
+url: https://www.hashler.com/
+title: "Hashler"
+host: www.hashler.com
+favicon: https://www.hashler.com/img/favicon/favicon.ico
+```

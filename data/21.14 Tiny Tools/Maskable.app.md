@@ -17,3 +17,11 @@ Maskable.app Editor lets you generate maskable PWA icons before adding them to y
 ___
 
 ![](_attachments/maskable-app.jpg)
+
+```cardlink
+url: https://maskable.app/editor
+title: "Maskable.app Editor"
+description: "Preview maskable icons in the browser!"
+host: maskable.app
+favicon: favicon/favicon_16.png
+```

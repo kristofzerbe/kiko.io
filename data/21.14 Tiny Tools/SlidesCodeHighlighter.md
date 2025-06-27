@@ -15,3 +15,10 @@ Create syntax-highlighted code for your slide decks.
 ___
 
 ![](_attachments/slidescodehighlighter.jpg)
+
+```cardlink
+url: https://romannurik.github.io/SlidesCodeHighlighter/
+title: "SlidesCodeHighlighter"
+host: romannurik.github.io
+favicon: ./assets/favicon-D4QAsqWS.ico
+```

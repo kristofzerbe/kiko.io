@@ -15,3 +15,9 @@ CSS loading animations with minimal effort and code at GitHub
 ___
 
 ![](_attachments/whirl.jpg)
+
+```cardlink
+url: https://whirl.netlify.app
+title: "Whirl: CSS loading animations with minimal effort!"
+host: whirl.netlify.app
+```

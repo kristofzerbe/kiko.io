@@ -16,3 +16,12 @@ Create beautiful backgrounds waves for your illustrations.
 ___
 
 ![](_attachments/wicked-backgrounds.jpg)
+
+```cardlink
+url: https://wickedbackgrounds.com/backgrounds.html
+title: "Create beautiful SVG backgrounds for your UI designs."
+description: "Create beautiful SVG backgrounds for your UI designs."
+host: wickedbackgrounds.com
+favicon: ./images/favicons/favicon-32x32.png
+image: https://wickedbackgrounds.com/images/opengraph.png
+```

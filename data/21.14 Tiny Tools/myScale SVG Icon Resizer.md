@@ -15,3 +15,11 @@ Small Lightweight Tool scratched in Pure JavaScript to Quickly Resize and Conver
 ___
 
 ![](_attachments/myscale-svg-icon-resizer.jpg)
+
+```cardlink
+url: https://webkul.github.io/myscale/
+title: "myScale - Quick SVG Icon Resizer"
+description: "Small Lightweight Tool scratched in Pure JavaScript to Quickly Resize and Convert SVG to PNG"
+host: webkul.github.io
+image: http://webkul.com/blog/wp-content/uploads/2016/12/myscale-poster.png
+```

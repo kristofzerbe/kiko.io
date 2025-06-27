@@ -16,3 +16,9 @@ Convert SVG image code into CSS for background image
 ___
 
 ![](_attachments/url-encoder-for-svg.jpg)
+
+```cardlink
+url: https://yoksel.github.io/url-encoder/
+title: "URL-encoder for SVG"
+host: yoksel.github.io
+```

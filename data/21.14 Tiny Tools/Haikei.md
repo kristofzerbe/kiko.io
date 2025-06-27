@@ -15,3 +15,11 @@ A web-based design tool to generate unique SVG design assets for websites, socia
 ___
 
 ![](_attachments/haikei.jpg)
+
+```cardlink
+url: https://app.haikei.app/
+title: "Haikei"
+description: "A web-based design tool to generate unique SVG design assets for websites, social media, blog posts, desktop and mobile wallpapers, posters, and more! Our generators let you discover, customize, randomize, and export generative SVG design assets ready to use with your favorite design tools."
+host: app.haikei.app
+image: https://haikei.app/haikei-cover.png
+```

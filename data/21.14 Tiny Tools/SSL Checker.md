@@ -15,3 +15,11 @@ Verify that your SSL certificate is installed correctly, identify installation i
 ___
 
 ![](_attachments/ssl-checker.jpg)
+
+```cardlink
+url: https://decoder.link/
+title: "SSL Checker"
+description: "Verify that your SSL certificate is installed correctly, identify installation issues if any."
+host: decoder.link
+favicon: https://decoder.link/favicon.ico
+```

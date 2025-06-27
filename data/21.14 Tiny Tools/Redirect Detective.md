@@ -15,3 +15,9 @@ Redirect Detective – Analyze redirects without opening them yourself
 ___
 
 ![](_attachments/redirect-detective.jpg)
+
+```cardlink
+url: https://redirectdetective.com/
+title: "Redirect Detective - Discover where those redirects really go to"
+host: redirectdetective.com
+```

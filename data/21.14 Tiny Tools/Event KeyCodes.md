@@ -15,3 +15,9 @@ Shows the typed key code.
 ___
 
 ![](_attachments/event-keycodes.jpg)
+
+```cardlink
+url: https://50projects50days.com/projects/event-keycodes/
+title: "Event KeyCodes"
+host: 50projects50days.com
+```

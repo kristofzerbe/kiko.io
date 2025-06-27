@@ -15,3 +15,12 @@ Search Code Across a Half Million GitHub Repos — A code search engine that le
 ___
 
 ![](_attachments/grep-app.jpg)
+
+```cardlink
+url: https://grep.app/
+title: "Code Search | Grep by Vercel"
+description: "Effortlessly search for code, files, and paths across a million GitHub repositories."
+host: grep.app
+favicon: https://grep.app/icon.png?27d38f126102b607
+image: https://grep.app/opengraph-image.png?7418db2edff03759
+```
