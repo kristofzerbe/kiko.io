@@ -18,7 +18,9 @@ related:
   - New-Year-New-Gnomes
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/114760923197482786
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/844549621554554050
 ---
 
 I try to take pictures in Thomas' garden every month. May was no exception. But somehow I forgot to edit these pictures and publish them here, so I'm making up for that now. The main attraction in May was definitely the wonderful Allium Nigrum (Black Garlic), which attracted countless insects. There was buzzing and humming all around it, and in the middle of it all, a spider was crawling along... and Thomas trying to install his new drip irrigation system.
