@@ -14,8 +14,8 @@
     <% page.items
         .sort((a,b) => a.latest_post.date_published - b.latest_post.date_published).reverse()
         .forEach(item => { %>
-    <div class="panel">
-      <div class="panel-inner">
+    <div class="panel" data-latest-post-delta="<%= item.latest_post.today_delta %>">
+      <div class="panel-inner <%- (item.latest_post.today_delta == 0) ? "today" : (item.latest_post.today_delta == 1) ? "yesterday" : "" %>">
         <div class="panel-content">
           <a class="panel-favicon" href="<%= item.url %>"><img src="<%= item.favicon %>" /></a>
           <%- partial('_partial/post/title', { post: item, class_name: 'panel-title'}) %>

@@ -5,7 +5,7 @@ const axios = require('axios');
 const fs = require("hexo-fs");
 const feed2json = require('feed2json');
 const handlebars = require("handlebars");
-const { getHelpers, getCustomUA } = require("../../lib/tools.cjs");
+const { getHelpers, getCustomUA, getDeltaFromToday } = require("../../lib/tools.cjs");
 
 const _helpers = getHelpers(hexo);
 const _rootDir = hexo.source_dir.replace("source", "");
@@ -71,8 +71,10 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
                 item.latest_post = {
                   "url": feedItem.url,
                   "title": feedItem.title || "- no title -",
-                  "date_published": feedItem.date_published
+                  "date_published": feedItem.date_published,
+                  "today_delta": getDeltaFromToday(feedItem.date_published)
                 };
+                //console.log(feedItem.date_published + " > " + getDeltaFromToday(feedItem.date_published));
                 //console.log(item.title + ": " + item.latest_post.title);  
               }
             } else {

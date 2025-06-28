@@ -40,7 +40,8 @@ hexo.on('generateBefore', function() {
     blog.latest_post = {
       "url": null,
       "title": null,
-      "date_published": 0
+      "date_published": 0,
+      "today_delta": 0
     }
   });
 
