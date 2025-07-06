@@ -4,7 +4,7 @@ date: 2025-07-02
 type: til
 syndication: 
 - host: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/114785340899268057
 ---
 The output of a nested object from Node.js in the console is limited. Above a certain level, only ``object`` or ``[array]`` is displayed. However, there are three ways to get around this:
 
