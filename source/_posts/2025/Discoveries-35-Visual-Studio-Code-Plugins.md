@@ -11,7 +11,7 @@ series: Discoveries
 categories:
   - Collection
 tags:
-  - VSCode
+  - VS Code
   - Plugins
 related:
   - Discoveries-34-JS-Libraries
@@ -148,4 +148,3 @@ description: "Extension for Visual Studio Code - Visual Studio Code plugin that 
 image: https://christian-kohler.gallerycdn.vsassets.io/extensions/christian-kohler/path-intellisense/2.9.0/1717321332008/Microsoft.VisualStudio.Services.Icons.Default
 @@@
 {% enddiscovery %}
-
