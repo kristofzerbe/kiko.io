@@ -21,7 +21,7 @@ related:
   - jsrepo-Build-your-own-tool-registry
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/114807730118810821
 ---
 
 Bookmarking tools are not incredibly popular for nothing. We all collect interesting sources on the web in order to want to do something with the information in them later, even if it often remains a 'want' and the pile of bookmarks becomes steadily larger and more confusing. I am no exception.
