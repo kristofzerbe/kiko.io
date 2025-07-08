@@ -21,7 +21,7 @@ related:
   - Convert-HTML-into-Plain-Text-in-Hexo
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/114819276808921125
 ---
 
 I am always confused when I am researching something on the web and a hit does not include the date when the author wrote the post. Unfortunately, this is all too often the case with blog posts. Other sources such as forums (Stack Exchange and the usual suspects) normally do not have this problem. In that context, I always look at the date of the response first and can then guess whether the post is out of date or not. In the IT sector in particular, posts have a fairly short half-life, and it makes a world of difference whether you try to solve a problem with completely outdated information or with something that is still fairly recent.
