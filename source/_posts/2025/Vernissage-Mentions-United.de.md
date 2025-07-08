@@ -6,6 +6,7 @@ permalink: post/Vernissage-Mentions-United/de
 title: Vernissage & Mentions United
 subtitle: Eine neue Foto-Plattform und ihre Anbindung an Dein Blog
 date: 2025-01-18 12:51:56
+outdates: never
 photograph:
   file: D50_9044_2405.jpg
   name: Thomas Garden 24-05 XXIV

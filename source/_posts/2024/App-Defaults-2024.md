@@ -3,6 +3,7 @@ slug: App-Defaults-2024
 title: App Defaults 2024
 subtitle:
 date: 2024-12-25 11:08:49
+outdates: never
 photograph:
   file: PXL_20241224_075952090.jpg
   name: Mossel Bay Christmas

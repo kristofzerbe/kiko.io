@@ -3,6 +3,7 @@ slug: Mentions-United-New-Renderer-and-Refactorings
 title: 'Mentions United: New Renderer and Refactorings'
 subtitle:
 date: 2024-11-17 17:19:33
+outdates: never
 photograph:
   file: D50_9555_2406.jpg
   name: Thomas Garden 24-06 V

@@ -3,6 +3,7 @@ slug: Mentions-United-Lemmy-plugin-a-few-updates
 title: 'Mentions United: Lemmy plugin & a few updates'
 subtitle:
 date: 2024-11-04 15:47:21
+outdates: never
 photograph:
   file: D50_0069_2408.jpg
   name: Delicate Blue

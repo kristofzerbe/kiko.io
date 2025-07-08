@@ -37,7 +37,7 @@ In Juli 2021 GitHub announced the availability of **[github.dev]()** and **[GitH
 
 The main purpose of github.dev is to serve as a call target of the so-called **Magic Dot**, an easy way to open any repository in an editor. I blogged about this capabilty a while ago, see {% post_link GitHubs-Magic-Dot %}. Really amazing! Just press the ``dot`` key on every repository and you can browse the code files.
 
-![github.dev](github-dev.jpg)
+![github.dev](VS-Code-on-the-Web/github-dev.jpg)
 
 ---
 
@@ -47,7 +47,7 @@ Recently, in October 2021, Microsoft (who owns GitHub) announced another online 
 
 However, it also has the same limitation that you cannot run a project, because there is no VM running in the background. But it is a really neat online editor, which runs on mobile devices too and feels absolutely like a local installed VS Code.
 
-![vscode.dev](vscode-dev.jpg)
+![vscode.dev](VS-Code-on-the-Web/vscode-dev.jpg)
 
 ---
 
@@ -59,7 +59,7 @@ Whats special about Gitpod is, that users are able to start a browser-based inst
 
 This so called *Workspaces* can be stopped, resumed, shared and downloaded, because it is a container with everything in it you need to run. Really amazing!
 
-![Gitpod](gitpod-io.jpg)
+![Gitpod](VS-Code-on-the-Web/gitpod-io.jpg)
 
 ---
 
@@ -73,7 +73,7 @@ The IDE on **[stackblitz.com](https://stackblitz.com)** is mainly useful for web
 
 What makes Stackblitz very comfortable is that it runs your frontend directly on their servers and gives it to you in a browser-like preview window via a random Url like ``https://web-platform-ywqj4s.stackblitz.io``, you can open up in a separate browser also.
 
-![Stackblitz](stackblitz-com.jpg)
+![Stackblitz](VS-Code-on-the-Web/stackblitz-com.jpg)
 
 ---
 
@@ -83,4 +83,4 @@ What makes Stackblitz very comfortable is that it runs your frontend directly on
 
 Also, you have full control over the sandbox that runs the preview of your project and the ability to invite other developers or visitors to the project, which makes it perfect for online coding seminars e.g. classrooms.
 
-![CodeSandbox](codesandbox-io.jpg)
+![CodeSandbox](VS-Code-on-the-Web/codesandbox-io.jpg)

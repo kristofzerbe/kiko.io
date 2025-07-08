@@ -22,7 +22,7 @@ syndication:
     url: https://indieweb.social/@kiko/112270869266405497
 ---
 
-Everyone collects a lot of things over time. This applies to the basement at home, where old coffee machines in their original packaging (they're still good and I might need them again), 3 generations of old laptops, boxes of cables (power, CAT, HDMI, USB, VGA, you name it) and the like pile up in a corner or even cover an entire area. Honestly, when was the last time you tidied up there? 
+Everyone collects a lot of things over time. This applies to the basement at home, where old coffee machines in their original packaging (they're still good and I might need them again), 3 generations of old laptops, boxes of cables (power, CAT, HDMI, USB, VGA, you name it) and the like pile up in a corner or even cover an entire area. Honestly, when was the last time you tidied up there?
 
 But this also applies in particular to the digital legacy that we produce every day, especially if you work in IT. It's no coincidence that the Windows Explorer, macOS Finder or Konqueror under Linux are often used to start our daily digital work, and it's also no surprise that there are so many different file managers available on the market.
 

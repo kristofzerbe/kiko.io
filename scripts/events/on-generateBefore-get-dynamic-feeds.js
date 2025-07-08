@@ -8,11 +8,11 @@ hexo.on('generateBefore', function() {
 
   const config = this.config;
 
-  const helpers = getHelpers(hexo);
+  const _helpers = getHelpers(hexo);
 
   let page = { name: "feeds" };
   page = getMD(hexo, path.join("_dynamic", page.name + ".md"), page);
-  page.updated = helpers.moment();
+  page.updated = _helpers.moment();
 
   page.designation = config.designation.replace("{TITLE}", page.title);
   page.owner = {

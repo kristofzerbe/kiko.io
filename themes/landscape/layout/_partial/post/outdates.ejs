@@ -1,0 +1,53 @@
+<%
+  let outdateText;
+  let periodShort = post.outdates;
+  //console.log(post.slug);
+
+  let fConvertPeriodShort = (post.isLocale) ? convert_periodshort_de : convert_periodshort;
+
+  if (periodShort !== "never") {
+
+    // get default by category from config
+    if (periodShort === undefined && post.categories && post.categories.length) {
+      const category = post.categories.data[0].name;
+      periodShort = config.outdates.find(od => od.categories.includes(category))?.default;
+    }
+
+    if (periodShort) {
+
+      let period = fConvertPeriodShort(periodShort);
+      // console.log(period);
+
+      const dateToday = new Date();
+      const dateCreated = new Date((post.updated > post.date) ? post.updated : post.date);
+      const diffTime = Math.abs(dateToday - dateCreated);
+      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+      if (diffDays > period.days) {
+
+        let maxYears = Math.floor(diffDays / 365);
+        if ((period.unit === "y" && maxYears > period.num) || (period.unit !== "y" && maxYears >= 1)) {
+          period = fConvertPeriodShort(maxYears + "y");
+        }
+
+        if (post.isLocale) {
+          outdateText = 
+            `Dieser Beitrag ist älter als ${period.numString} ${period.unitString}. 
+            Bitte beachte, dass einige dieser Informationen möglicherweise nicht mehr aktuell sind, 
+            Links nicht mehr funktionieren oder der Autor heute möglicherweise eine andere Meinung 
+            oder Lösung hat.`;
+        } else {
+          outdateText =
+            `This post is over ${period.numString} ${period.unitString} old. Please be aware that  
+            some of this information may no longer be up to date, links may no longer work, or the 
+            author may simply has a different opinion or solution today.`;
+        }
+          
+      }
+    }
+
+  }
+%>
+<% if (outdateText) { %>
+  <small class="top-exclamation" data-period-short="<%- periodShort %>"><span><%- outdateText %></span></small>
+<% } %>

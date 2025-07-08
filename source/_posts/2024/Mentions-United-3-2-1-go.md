@@ -5,6 +5,7 @@ slug: Mentions-United-3-2-1-go
 title: Mentions United ... 3, 2, 1, Go
 subtitle: A JavaScript solution to unite blog posts with their interactions
 date: 2024-10-03 15:22:21
+outdates: never
 photograph:
   file: D50_0272_2408.jpg
   name: Thomas Garden 24-08 XIII

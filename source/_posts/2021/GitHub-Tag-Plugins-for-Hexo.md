@@ -3,6 +3,7 @@ slug: GitHub-Tag-Plugins-for-Hexo
 title: GitHub Tag Plugins for Hexo
 subtitle: null
 date: 2021-12-29T12:20:34.000Z
+outdates: never
 photograph:
   file: DSC_2443.jpg
   name: Winch

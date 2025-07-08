@@ -3,6 +3,7 @@ slug: Favourite-Pens-of-2023
 title: Favourite Pens of 2023
 subtitle:
 date: 2024-01-07 12:32:16
+outdates: never
 photograph:
   file: D50_6727_2312.jpg
   name: Christmas End

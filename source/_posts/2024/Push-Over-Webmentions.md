@@ -3,6 +3,7 @@ slug: Push-Over-Webmentions
 title: Push Over Webmentions
 subtitle: Get notified on your smartphone about an incoming webmention for your site
 date: 2024-08-01 16:03:57
+outdates: never
 photograph:
   file: 23-05-Holland-0101.jpg
   name: Do Not Tap The Glass

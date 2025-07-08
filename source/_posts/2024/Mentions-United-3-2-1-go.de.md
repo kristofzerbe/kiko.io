@@ -6,6 +6,7 @@ permalink: post/Mentions-United-3-2-1-go/de
 title: Mentions United ... 3, 2, 1, Go
 subtitle: Eine JavaScript-Lösung, um Blog-Beiträge mit ihren Interaktionen zu verbinden
 date: 2024-10-03 15:22:21
+outdates: never
 photograph:
   file: D50_0272_2408.jpg
   name: Thomas Garden 24-08 XIII

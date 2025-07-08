@@ -171,27 +171,35 @@
   @extend $block-inner
   overflow: hidden
   margin-bottom: default-margin
-  small.top-info
+  small.top-info, 
+  small.top-exclamation
     display: block
     padding: small-padding (thin-padding * 3)
     font-size: font-size-small
-    opacity: 0.5
-    background-color: color-background
-    /[data-theme="dark"] &
-      background-color: dark-color-background
     span
-      margin-left: 24px
+      display: block
+      margin-left: default-margin
+      line-height: line-height-small
+      opacity: 0.5
     &:before
       content: ""
       width: 20px
       height: 20px
       display: block
       position: absolute
-      mask-image: url(/images/icons/circle-info.svg)
       mask-repeat: no-repeat
       mask-size: 16px
-      mask-position: 0 4px
+      mask-position: 0 2px
+  small.top-info
+    background-color: var(--box-note2)
+    &:before
+      mask-image: url(/images/icons/circle-info.svg)
       background-color: var(--color-accent1)
+  small.top-exclamation
+    background-color: var(--box-exclamation2)
+    &:before
+      mask-image: url(/images/icons/circle-exclamation.svg)
+      background-color: var(--box-exclamation)
 
 .article-photo
   @extend $inview-image

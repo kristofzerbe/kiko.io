@@ -24,7 +24,7 @@ syndication:
     url: https://dev.to/kristofzerbe/ensure-accessibility-on-icon-links-4j7g
 ---
 
-I am gradually saying goodbye to icon fonts in this blog in favor of SVG files, which I prefer to integrate using ``background-image`` in order to remain flexible. 
+I am gradually saying goodbye to icon fonts in this blog in favor of SVG files, which I prefer to integrate using ``background-image`` in order to remain flexible.
 
 During the modification, I noticed that although I have sometimes provided icon-only links with a ``title``, these do not play any role in terms of [accessibility](https://www.a11yproject.com/posts/creating-valid-and-accessible-links/). People who are dependent on a screen reader have not yet been able to recognize what these links are.
 

@@ -24,11 +24,11 @@ On installing the Trello Android app, you will find a new SHARE target **Add new
 
 (Sry, for the German screenshots ;)
 
-![Android's default share with New Trello Card](android-share-website.png)
+![Android's default share with New Trello Card](Add-website-to-Trello-card-the-better-way/android-share-website.png)
 
 The result, website's title and Url set, is nice at best:
 
-![Trello card via Android Share](card-via-share.png)
+![Trello card via Android Share](Add-website-to-Trello-card-the-better-way/card-via-share.png)
 
 ... but Trello has a **[Bookmarklet](https://trello.com/add-card)**, which does the job much better.
 
@@ -44,8 +44,8 @@ After Chrome's sync is done, go to any website do you want to store as a Trello 
 
 Instead of requesting a different page, Chrome executes the JavaScript of the Bookmarklet against the currently open website. This script shows a Trello dialog, where you can choose, which board and list the new card should be created on.
 
-![Open Bookmarklet on Website in Android Chrome](open-bookmarklet.gif)
+![Open Bookmarklet on Website in Android Chrome](Add-website-to-Trello-card-the-better-way/open-bookmarklet.gif)
 
 This card creation method not only sets the title of the card, but fills the description with the [meta description](https://en.wikipedia.org/wiki/Meta_element) of the page, adds the first found meta image as cover and adds the Url as an attachment:
 
-![Trello card via Bookmarklet](card-via-bookmarklet.png)
+![Trello card via Bookmarklet](Add-website-to-Trello-card-the-better-way/card-via-bookmarklet.png)

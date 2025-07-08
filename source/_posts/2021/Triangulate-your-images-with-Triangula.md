@@ -28,7 +28,7 @@ Whoever [RH12503 (Ryan H??)](https://github.com/RH12503) is, he did an amazing j
 
 <!-- more -->
 
-![Triangula UI](triangula.gif)
+![Triangula UI](Triangulate-your-images-with-Triangula/triangula.gif)
 
 These images are absolute great for background images in websites, in order to make the details less recognisable.
 

@@ -1,7 +1,7 @@
 ---
 slug: Discoveries-33-Image-Presentation
 title: "Discoveries #33 - Image Presentation"
-subtitle:
+subtitle: A bunch of Codepens
 date: 2025-03-20 13:45:39
 photograph:
   file: 24-12-Suedafrika-3035-D50.jpg

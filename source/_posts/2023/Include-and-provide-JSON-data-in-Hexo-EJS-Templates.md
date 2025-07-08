@@ -3,6 +3,7 @@ slug: Include-and-provide-JSON-data-in-Hexo-EJS-Templates
 title: Include and provide JSON data in Hexo EJS Templates
 subtitle: ... with a new Helper and an async function
 date: 2023-06-27 07:26:21
+outdates: never
 photograph:
   file: D70_1538.jpg
   name: Smiling Guard

@@ -49,9 +49,9 @@ If you click on the icon, a pop-up opens with a clear list of all accounts and t
 
 If you now click on a mail, it is displayed in full in the popout and also takes any mail thread into account. The icon buttons *Archive*, *Mark Spam*, *Delete*, *Mark Read* and *Mark*, which are displayed when hovering over a mail, represent the most frequently used actions and usually make it unnecessary to use the *Open in Gmail* button.
 
-![Checker Plus for Gmail Chrome Extension Popup](checker-plus-for-gmail-1.png)
+![Checker Plus for Gmail Chrome Extension Popup](Checker-Plus-Gmail-in-better/checker-plus-for-gmail-1.png)
 
-![Checker Plus for Gmail Chrome Extension Popup - Display Mail Thread](checker-plus-for-gmail-2.png)
+![Checker Plus for Gmail Chrome Extension Popup - Display Mail Thread](Checker-Plus-Gmail-in-better/checker-plus-for-gmail-2.png)
 
 ### Massive Setting Options
 
@@ -81,7 +81,7 @@ The pop-up's interface is similar to the original at [calendar.google.com](https
 
 But it also does a few things better than Google. For example, the pop-up offers the same view options as *day*, *month*, *week*, *year* and *appointment overview*, but calls the latter a list and adds an overview as known from the Calendar Android app. In addition, you can define your own view in the settings, for example, if you want to keep an eye on the next three days or six weeks.
 
-![Pop-up of the Chrome extension Checker Plus for Google Calendar](checker-plus-for-calendar.png)
+![Pop-up of the Chrome extension Checker Plus for Google Calendar](Checker-Plus-Gmail-in-better/checker-plus-for-calendar.png)
 
 The current version v26.1.1 of Checker Plus for Google Calendar also has a lot of setting options, such as displaying the week numbers or marking the weekends. Particularly noteworthy here are the settings for notifications, which can be fine-tuned very well across multiple accounts and calendars.
 
@@ -91,7 +91,7 @@ The current version v26.1.1 of Checker Plus for Google Calendar also has a lot o
 
 The pop-up of the Drive extension is basically a copy of the Google interface at [drive.google.com](https://drive.google.com). It is limited to the list form and does without previews of the files, but also without advertisements, such as "Buy storage space". It also has nowhere near as many options in the context menu of a folder or file as the original, but this can generally be gotten over because the most important options such as *download*, *copy link*, *rename* and *remove* are available.
 
-![Pop-up of the Chrome extension Checker Plus for Google Drive](checker-plus-for-drive.png)
+![Pop-up of the Chrome extension Checker Plus for Google Drive](Checker-Plus-Gmail-in-better/checker-plus-for-drive.png)
 
 ---
 

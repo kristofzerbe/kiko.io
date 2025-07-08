@@ -23,12 +23,6 @@ syndication:
     url: https://indieweb.social/@kiko/109784950464754190
 ---
 
-{% alertbox exclamation %}
-**UPDATE**: Parts of the original post are outdated, as Pagefind **DOES** offer a way to preset a search string, which just hasn't been documented yet ... \o/ ... see below.
-{% endalertbox %}
-
----
-
 A couple of days ago I wrote about my attempt to {% post_link Integration-of-Pagefind-in-Hexo "integrate Pagefind in my blog" %}. In the meantime, I further refined the indexing by excluding more content areas and adding more for the metadata to make the search results even better.
 
 But one thing was still missing: controlling the search via url parameters, so that you can actually consider the page as a search page. I came across this in a post about the sense and nonsense of Open Graph attributes and other search engine related metadata nowadays. Google, for example, [likes to use JSON-LD](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data) and when describing the site you can define a search page which then makes it easier to search the site directly via Google ... see [Sitelinks search box (WebSite) structured data](https://developers.google.com/search/docs/appearance/structured-data/sitelinks-searchbox)
@@ -54,6 +48,10 @@ My Pagefind search page is accessible at [/search](/search) and therefore it's e
 
 </script>
 ```
+
+{% alertbox exclamation %}
+**UPDATE**: Parts of the original post are outdated, as Pagefind **DOES** offer a way to preset a search string, which just hasn't been documented yet ... \o/ ... see below.
+{% endalertbox %}
 
 <p style="text-decoration: line-through;">
 Now Pagefind does not offer the possibility to initialize the search on the page already with a certain value, which would be the easiest way. You can only insert the value supplied via the URL parameter into the initialized INPUT field **afterwards** and ensure that the search is triggered with it.

@@ -3,6 +3,7 @@ slug: Favourite-Pens-of-2022
 title: Favourite Pens of 2022
 subtitle:
 date: 2023-01-14 13:10:48
+outdates: never
 photograph:
   file: DSC_7898.jpg
   name: Vintage Boxes

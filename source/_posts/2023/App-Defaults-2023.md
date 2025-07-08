@@ -3,6 +3,7 @@ slug: App-Defaults-2023
 title: App Defaults 2023
 subtitle:
 date: 2023-12-31 00:27:00
+outdates: never
 photograph:
   file: DSC_6543.jpg
   name: Medieval Meal

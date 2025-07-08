@@ -5,6 +5,7 @@ slug: Vernissage-Mentions-United
 title: Vernissage & Mentions United
 subtitle: A new photo platform and how to link it to your blog
 date: 2025-01-18 12:51:56
+outdates: never
 photograph:
   file: D50_9044_2405.jpg
   name: Thomas Garden 24-05 XXIV
