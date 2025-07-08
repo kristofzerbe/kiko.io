@@ -61,7 +61,16 @@ So hatte ich schon einmal für alle Beiträge, die den Hinweis bekommen sollen, 
 
 Für den oberen Rand meiner Beiträge habe ich schon länger eine Möglichkeit für erläuternden Text eingebaut, den ich für die Hinweise nutzen konnte. Das wenige HTML und die Berechnung des Zeitpunkts der Anzeige habe ich in ein EJS-Partial gepackt und dies in der Hauptvorlage eingebunden:
 
-```ejs
+```ejs article.ejs
+...
+<div class="article-inner">
+  <%- partial('post/outdates') %>
+  ...
+</div>
+...
+```
+
+```ejs outdates.ejs
 <%
   let outdateText;
   let periodShort = post.outdates;
@@ -78,7 +87,7 @@ Für den oberen Rand meiner Beiträge habe ich schon länger eine Möglichkeit f
 
 Zunächst habe ich ausgeschlossen, dass der Wert ``never`` zu einem Ausgabetext führt und dann den Standard anhand der Kategorie ermittelt, wenn denn eine für den Artikel festgelegt ist:
 
-```js
+```js outdates.ejs
 let outdateText;
 let periodShort = post.outdates;
 
@@ -131,7 +140,7 @@ In Zeile 8 wird über ``humanizeNumber`` der Zahlenwert in ein Wort übersetzt, 
 
 Hier die Verwendung der Funktion im EJS-Partial und die Berechnung der Differenz zwischen dem Erstellungsdatum (oder dem Datum des letzten Updates, falls vorhanden) und dem aktuellen Datum in Tagen. Die beiden Tagessummen werden anschließend miteinander verglichen und ist die Differenz größer als die Anzahl der Tage aus dem Periodenwert, wird der Text zu Anzeige festgelegt und die Variablen darin gefüllt. Mittels ``maxYears`` prüfe ich zuvor aber noch, ob der Differenz vielleicht noch mehr Jahre zurückliegt als gefordert, um zu verhindert, das im Text steht "mehr als 2 Jahre", obwohl es bereits 5 sind.
 
-```js
+```js outdates.ejs
 if (periodShort !== "never") {
 
   // get default by category from config

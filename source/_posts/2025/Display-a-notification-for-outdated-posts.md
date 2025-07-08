@@ -63,7 +63,16 @@ So I already had a suitable value (a ``periodShort``) set for all posts that sho
 
 For the top edge of my posts, I have integrated a while ago a feature for informative text that I could use for the notes. I put the little bit of HTML and the calculation of when to display it in an EJS partial and integrated this into the main template:
 
-```ejs
+```ejs article.ejs
+...
+<div class="article-inner">
+  <%- partial('post/outdates') %>
+  ...
+</div>
+...
+```
+
+```ejs outdates.ejs
 <%
   let outdateText;
   let periodShort = post.outdates;
@@ -80,7 +89,7 @@ For the top edge of my posts, I have integrated a while ago a feature for inform
 
 First, I ruled out that the value 'never' would result in output text and then determine the default based on the category, if one is specified for the article:
 
-```js
+```js outdates.ejs
 let outdateText;
 let periodShort = post.outdates;
 
@@ -133,7 +142,7 @@ In line 8, ``humanizeNumber`` converts the numerical value into a word, for exam
 
 Here is how the function is used in the EJS partial and how the difference between the creation date (or the date of the last update, if available) and today is calculated in days. The two daily totals are then compared with each other and if the difference is greater than the number of days from the period value, the text is set to display and the variables are filled in. However, I use ``maxYears`` before to check whether the difference is perhaps more years ago than required, to prevent the text from saying "more than 2 years" when it is already 5.
 
-```js
+```js outdates.ejs
 if (periodShort !== "never") {
 
   // get default by category from config
