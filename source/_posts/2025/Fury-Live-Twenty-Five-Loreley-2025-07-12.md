@@ -17,7 +17,7 @@ related:
   - Impressions-from-the-Carnival-Parade-in-Wiesbaden
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/114846144261973485
 ---
 
 Every German who is part of Generation X and a fan of rock music knows the band **Fury in the Slaughterhouse**, or **Fury** for short. They are not as well known internationally as the Scorpions, for example, but these guys have a head start of almost 20 years. Founded in 1987 (interestingly enough, also in Hanover, Germany), the Fury's had a major influence on German rock music in the early 1990s with songs such as _Radio Orchid_, _Every Generation Got Its Own Disease_ and _Won't Forget These Days_. At least, that's how it seems to me and especially to my wife, who has been listening to and loving these guys since she was 15.
