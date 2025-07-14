@@ -24,9 +24,3 @@ syndication:
 
 
 <!-- more -->
-
-<!-- 
-{% photo_masonry
-  "name"
-%} 
--->
