@@ -20,9 +20,11 @@ related:
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/114852871790246913
+  - host: Pixelfed (Sundowns)
+    url: https://pixelfed.social/p/kristofz/850465614594752128
 ---
 
-Perhaps it's due to climate change, but my love and I are no longer interested in travelling to southern Europe in the peak of summer. That's why we've been doing it solely in spring for a few years now, when temperatures and tourist crowds are still manageable and bearable. This year, we chose **Portugal** in May and split up the trip into two parts: one week in the **west** around Lisbon and another at the Algarve, to see as much of the country and its people as possible. Neither of us are beach people, but rather roaming explorers of the many beautiful places a country has to offer. We just have to be careful not to take up too much, especially for the sake of our feet. This also determines the type of accommodation we choose, as we prefer holiday lets and autonomous catering to hotels and all-inclusive packages.
+Perhaps it's due to climate change, but my love and I are no longer interested in travelling to southern Europe in the peak of summer. That's why we've been doing it solely in spring for a few years now, when temperatures and tourist crowds are still manageable and bearable. This year, we chose **Portugal** in May and split up the trip into two parts: one week in the **west** around Lisbon and another in the **south** at the Algarve, to see as much of the country and its people as possible. Neither of us are beach people, but rather roaming explorers of the many beautiful places a country has to offer. We just have to be careful not to take up too much, especially for the sake of our feet. This also determines the type of accommodation we choose, as we prefer holiday lets and autonomous catering to hotels and all-inclusive packages.
 
 For our first week in Portugal, we stayed in a small cottage in picturesque **Azenhas Do Mar** on the Atlantic coast, which was the perfect starting point for various excursions to nearby Sintra and the capital Lisbon, among other places. The fact alone that this small village with its tiny beach offered truly spectacular tidal waves and sunsets made me put it on my top 10 list of the most beautiful places in Europe, even if the water temperature of around 15 degrees Celsius made swimming out of the question, at least for me.
 
