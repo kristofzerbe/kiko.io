@@ -20,7 +20,8 @@ related:
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/114852871790246913
-  - host: Pixelfed (Sundowns)
+  - host: Pixelfed
+    title: Sundowns
     url: https://pixelfed.social/p/kristofz/850465614594752128
 ---
 
