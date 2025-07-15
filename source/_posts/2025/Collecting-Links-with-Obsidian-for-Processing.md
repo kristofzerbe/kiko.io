@@ -169,7 +169,7 @@ dc.convert();
 
 ![Process Chain](post/Collecting-Links-with-Obsidian-for-Processing/process-chain-complete.png)
 
-The DiscoveriesConverter has become quite extensive because I have taken many special features of my blog into account in order to fully automate the process, so here is just a description of the separate steps. The complete code is available on GitHub (https://github.com/kristofzerbe/kiko.io/blob/master/lib/discoveries-converter.cjs).
+The DiscoveriesConverter has become quite extensive because I have taken many special features of my blog into account in order to fully automate the process, so here is just a description of the separate steps. The complete code is available on [GitHub](https://github.com/kristofzerbe/kiko.io/blob/master/lib/discoveries-converter.cjs).
 
 #### constructor()
 
