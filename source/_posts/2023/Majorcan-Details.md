@@ -37,7 +37,7 @@ Usually the best photos end up unnoticed as {% post_link Pool-Photo-Generator "p
   "23-07-Mallorca-0342"
   "23-07-Mallorca-0357"
   "23-07-Mallorca-0542"
-  "23-07-Mallorca-0755"
+  "$23-07-Mallorca-0755"
   "23-07-Mallorca-0758"
   "$23-07-Mallorca-0773"
 %}

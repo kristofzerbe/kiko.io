@@ -1,0 +1,29 @@
+<% if (page.photograph) { %>
+  <%- partial('_partial/photograph') %>
+<% } %>
+
+<% if (page.index.name !== "project") { %>
+<%- partial('_partial/nav-index-archives') %>
+<% } %>
+
+<h1 class="archive-title" data-pagefind-meta="title" data-pagefind-meta="type:Anything">
+  <small><%= page.index.name %></small>
+  <%= page.key.caption %>
+</h1>
+
+<div class="anything-wrap">
+  <div class="anything-inner">
+    <div class="anything-content">
+      <%- page.content %>
+      <hr>
+      <p>
+        Following <%= (page.count === 1) ? "post" : page.count + " posts" %> belong to <strong><%= page.title %></strong> ...
+      </p>
+      </div>
+  </div>
+</div>
+
+<% page.posts.each(function(post){ %>
+  <%- partial('_partial/post-item', { post: post, index: true }) %>
+<% }) %>
+

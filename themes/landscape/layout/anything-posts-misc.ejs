@@ -1,0 +1,17 @@
+<% if (page.photograph) { %>
+  <%- partial('_partial/photograph') %>
+<% } %>
+
+<h1 class="archive-title" data-pagefind-meta="title" data-pagefind-meta="type:Anything">
+  <%= page.key.caption %>
+</h1>
+
+<div class="page-content">
+  <%- page.content %>
+  <hr>
+</div>
+
+<% page.posts.each(function(post){ %>
+  <%- partial('_partial/post-item', { post: post, index: true }) %>
+<% }) %>
+

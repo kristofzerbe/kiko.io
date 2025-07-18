@@ -8,6 +8,7 @@ photograph:
   file: DSC_6543.jpg
   name: Medieval Meal
   socialmedia: /static/images/social-media/App-Defaults-2023.jpg
+misc: defaults
 categories:
   - Tools
 tags:

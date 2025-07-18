@@ -8,6 +8,7 @@ photograph:
   file: PXL_20241224_075952090.jpg
   name: Mossel Bay Christmas
   socialmedia: /static/images/social-media/App-Defaults-2024.jpg
+misc: defaults
 categories:
   - Tools
 tags:

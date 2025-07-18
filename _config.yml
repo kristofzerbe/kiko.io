@@ -211,13 +211,38 @@ alias:
 
 # Anything : https://github.com/kristofzerbe/hexo-generator-anything
 anything:
-  layout_index: anything-index
-  layout_posts: anything-page
+  defaults:
+    layout:
+      main: anything-main
+      posts: anything-posts
   index_mappings:
-    - variable: series
-      path: series
     - variable: project
       path: projects
+    - variable: series
+      path: series
+      layout:
+        posts: anything-posts-series
+    - variable: misc
+      path: misc
+      skip_main: true
+      layout:
+        posts: anything-posts-misc
+
+# Slash Index Page (in order of appearance)
+slashes:
+  - folder: _dynamic
+    items:
+      - search
+      - feeds
+      - about
+      - _contact
+      - _sitemap
+      - blogroll
+      - colophon
+  - folder: uses
+  - folder: _anything/misc
+    items:
+      - defaults
 
 # Feed: WAS! https://github.com/sergeyzwezdin/hexo-feed
 # uninstalled in favor of custom feed generators
@@ -297,19 +322,6 @@ search:
 sitemap:
   path: sitemap.xml
   template: sitemap.handlebars
-
-# Slash Index Page (in order of appearance)
-slashes:
-  - folder: _dynamic
-    items:
-      - search
-      - feeds
-      - about
-      - _contact
-      - _sitemap
-      - blogroll
-      - colophon
-  - folder: uses
 
 # Codepen Defaults
 codepen:

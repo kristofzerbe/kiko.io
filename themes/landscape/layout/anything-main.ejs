@@ -2,10 +2,6 @@
   <%- partial('_partial/photograph') %>
 <% } %>
 
-<% if (page.index.name !== "project") { %>
-  <%- partial('_partial/nav-index-archives') %>
-<% } %>
-
 <h1 class="archive-title"><%= page.title %></h1>
 
 <% if (page.content){ %>
@@ -14,6 +10,6 @@
 
 <div class="anything-list">
   <% page.posts.each(function(item){ %>
-    <%- partial('_partial/anything-index-item', { item: item, index: page.index }) %>
+    <%- partial('_partial/anything-main-item', { item: item, index: page.index }) %>
   <% }) %>    
 </div>
