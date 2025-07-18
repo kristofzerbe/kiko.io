@@ -296,7 +296,7 @@ async function setVibrantColor(theme) {
       let file = img.substr(img.lastIndexOf('/') + 1);
       let color;
 
-      //TODO: get color from substiution list by file
+      //get color from substiution list by file
       const response = await fetch('/photo-color-substitutions.json');
       const subst = await response.json();
       color = subst.find(obj => { return obj.file === file; })?.color;
