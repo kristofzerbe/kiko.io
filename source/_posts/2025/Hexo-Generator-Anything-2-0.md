@@ -21,7 +21,7 @@ related:
   - Simplest-Console-File-Logger
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/114874909320082032
 ---
 
 I recently wanted to add the entry [/Defaults](/defaults/) to my [Slash Pages](/slashes/) collection and implement it simply as an overview page of the existing AppDefaults posts for each year. My plugin [Hexo Generator Anything](https://github.com/kristofzerbe/hexo-generator-anything) seemed ideal for this, at least as a basis, because my requirements for /Defaults were a little different, but I thought that could be quickly resolved with one or two new features in the plugin.

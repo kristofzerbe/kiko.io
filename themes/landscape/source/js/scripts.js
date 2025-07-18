@@ -289,33 +289,42 @@ function setCodepenTheme(theme) {
   }
 }
 
-function setVibrantColor(theme) {
+async function setVibrantColor(theme) {
   if(!$("#header").hasClass("no-vibrant")) {
     try {
       let img = $("#photo-preload").attr("href");
-      Vibrant.from(img).getPalette().then(palette => {
-        
-        let swatch = palette.DarkVibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+      let file = img.substr(img.lastIndexOf('/') + 1);
+      let color;
 
-        let color = swatch.getHex();
-        let colorDark = tinycolor(color).darken(10).toHexString();
+      //TODO: get color from substiution list by file
+      const response = await fetch('/photo-color-substitutions.json');
+      const subst = await response.json();
+      color = subst.find(obj => { return obj.file === file; })?.color;
 
-        let color1Factor = 0;
-        let color2Factor = 25;
-        if (theme === "dark") { 
-          color = colorDark; 
+      if (!color) {
+        await Vibrant.from(img).getPalette().then(palette => {
+          let swatch = palette.DarkVibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
+          color = swatch.getHex();
+        });
+      }
+
+      if (theme === "dark") { 
+        color = tinycolor(color).darken(10).toHexString();; 
+      }
+
+      let color1Factor = 0;
+      let color2Factor = 25;
+      if (theme === "dark") { 
           color1Factor = 50;
           color2Factor = 15;
-        }
-        
-        $(":root").css("--color-accent", color);
-        $(":root").css("--color-accent1", tinycolor(color).brighten(color1Factor).toHexString())
-        $(":root").css("--color-accent2", tinycolor(color).brighten(color2Factor).toHexString())
+      }
 
-        document.querySelector('meta[name="theme-color"]').setAttribute("content", color);
-      });
-    } catch (error) {
-    }
+      $(":root").css("--color-accent", color);
+      $(":root").css("--color-accent1", tinycolor(color).brighten(color1Factor).toHexString())
+      $(":root").css("--color-accent2", tinycolor(color).brighten(color2Factor).toHexString())
+      document.querySelector('meta[name="theme-color"]').setAttribute("content", color);
+
+    } catch (error) { }
   }
 }
 
