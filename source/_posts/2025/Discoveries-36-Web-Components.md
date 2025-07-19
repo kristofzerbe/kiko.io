@@ -19,7 +19,7 @@ related:
   - Discoveries-33-Image-Presentation
 syndication:
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/114880457757072374
 ---
 
 I definitely don't know enough about **Web Components**, their possibilities, pitfalls, etc., but I want to learn more about them because I no longer do any programming in my day job, only tinkering around with this blog or small web apps in my spare time.
