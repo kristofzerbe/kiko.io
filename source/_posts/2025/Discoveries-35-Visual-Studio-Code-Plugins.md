@@ -46,6 +46,7 @@ I deal with many JSON files and often use the command "Format Document" when the
 url: https://marketplace.visualstudio.com/items?itemName=josee9988.minifyall
 title: "MinifyAll - Visual Studio Marketplace"
 description: "Extension for Visual Studio Code - Minifier for JSON, CSS, HTML, XML, TWIG, LESS, SASS, SCSS, JavaScript, JSONC, and JavaScriptReact(testing). Compressor of files and folders. You will love its simplicity!"
+host: marketplace.visualstudio.com
 image: https://josee9988.gallerycdn.vsassets.io/extensions/josee9988/minifyall/2.10.0/1634826159461/Microsoft.VisualStudio.Services.Icons.Default
 @@@
 {% enddiscovery %}
@@ -57,6 +58,7 @@ Sometimes, however, even readable formatting is only of limited help when editin
 url: https://marketplace.visualstudio.com/items?itemName=nickdemayo.vscode-json-editor
 title: "Json Editor - Visual Studio Marketplace"
 description: "Extension for Visual Studio Code - Generate a tree view editor of the active JSON document"
+host: marketplace.visualstudio.com
 image: https://nickdemayo.gallerycdn.vsassets.io/extensions/nickdemayo/vscode-json-editor/0.3.0/1614008149777/Microsoft.VisualStudio.Services.Icons.Default
 @@@
 {% enddiscovery %}
@@ -68,6 +70,7 @@ Regular expressions are pretty much the worst, but also the most powerful thing 
 url: https://marketplace.visualstudio.com/items?itemName=chrmarti.regex
 title: "Regex Previewer - Visual Studio Marketplace"
 description: "Extension for Visual Studio Code - Regex matches previewer for JavaScript, TypeScript, PHP and Haxe in Visual Studio Code."
+host: marketplace.visualstudio.com
 image: https://chrmarti.gallerycdn.vsassets.io/extensions/chrmarti/regex/0.5.1/1730212557494/Microsoft.VisualStudio.Services.Icons.Default
 @@@
 {% enddiscovery %}
@@ -79,6 +82,7 @@ I don't work exclusively with the keyboard, so I usually prefer a click UI. But 
 url: https://marketplace.visualstudio.com/items?itemName=bodil.file-browser
 title: "File Browser - Visual Studio Marketplace"
 description: "Extension for Visual Studio Code - A nicer alternative to the file open dialog."
+host: marketplace.visualstudio.com
 image: https://bodil.gallerycdn.vsassets.io/extensions/bodil/file-browser/0.2.11/1668854930123/Microsoft.VisualStudio.Services.Icons.Default
 @@@
 {% enddiscovery %}
@@ -90,6 +94,7 @@ While we're on the subject of file management... Once you've found the right fil
 url: https://marketplace.visualstudio.com/items?itemName=sleistner.vscode-fileutils
 title: "File Utils - Visual Studio Marketplace"
 description: "Extension for Visual Studio Code - A convenient way of creating, duplicating, moving, renaming and deleting files and directories."
+host: marketplace.visualstudio.com
 image: https://sleistner.gallerycdn.vsassets.io/extensions/sleistner/vscode-fileutils/3.10.3/1690034496024/Microsoft.VisualStudio.Services.Icons.Default
 @@@
 {% enddiscovery %}
@@ -101,6 +106,7 @@ On this blog, I use three different sizes for the hero images, which are created
 url: https://marketplace.visualstudio.com/items?itemName=moshfeu.compare-folders
 title: "Compare Folders - Visual Studio Marketplace"
 description: "Extension for Visual Studio Code - Compare folders by contents, present the files that have differences and display the diffs side by side"
+host: marketplace.visualstudio.com
 image: https://moshfeu.gallerycdn.vsassets.io/extensions/moshfeu/compare-folders/0.25.1/1729900268675/Microsoft.VisualStudio.Services.Icons.Default
 @@@
 {% enddiscovery %}
@@ -112,6 +118,7 @@ Basically, web development always involves working with text, with or without st
 url: https://marketplace.visualstudio.com/items?itemName=mitchdenny.ecdc
 title: "Encode Decode - Visual Studio Marketplace"
 description: "Extension for Visual Studio Code - An extension for Visual Studio Code that allows you to quickly convert text selections."
+host: marketplace.visualstudio.com
 image: https://mitchdenny.gallerycdn.vsassets.io/extensions/mitchdenny/ecdc/1.8.0/1656396518023/Microsoft.VisualStudio.Services.Icons.Default
 @@@
 {% enddiscovery %}
@@ -123,6 +130,7 @@ Typography is crucial when designing a website. It is important to choose the ri
 url: https://marketplace.visualstudio.com/items?itemName=ctcuff.font-preview
 title: "Font Preview - Visual Studio Marketplace"
 description: "Extension for Visual Studio Code - Preview fonts in VS Code"
+host: marketplace.visualstudio.com
 image: https://ctcuff.gallerycdn.vsassets.io/extensions/ctcuff/font-preview/2.2.1/1658365554442/Microsoft.VisualStudio.Services.Icons.Default
 @@@
 {% enddiscovery %}
@@ -134,6 +142,7 @@ A picture is sometimes worth a thousand words. Embedding them in Markdown is eas
 url: https://marketplace.visualstudio.com/items?itemName=mushan.vscode-paste-image
 title: "Paste Image - Visual Studio Marketplace"
 description: "Extension for Visual Studio Code - paste image from clipboard directly"
+host: marketplace.visualstudio.com
 image: https://mushan.gallerycdn.vsassets.io/extensions/mushan/vscode-paste-image/1.0.4/1548255946926/Microsoft.VisualStudio.Services.Icons.Default
 @@@
 {% enddiscovery %}
@@ -145,6 +154,7 @@ I don't know who came up with the Intellisense principle, but I think we all owe
 url: https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense
 title: "Path Intellisense - Visual Studio Marketplace"
 description: "Extension for Visual Studio Code - Visual Studio Code plugin that autocompletes filenames"
+host: marketplace.visualstudio.com
 image: https://christian-kohler.gallerycdn.vsassets.io/extensions/christian-kohler/path-intellisense/2.9.0/1717321332008/Microsoft.VisualStudio.Services.Icons.Default
 @@@
 {% enddiscovery %}
