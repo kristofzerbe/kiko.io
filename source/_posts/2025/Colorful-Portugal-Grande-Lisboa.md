@@ -14,8 +14,8 @@ tags:
   - Imaging
   - Publishing
 related:
+  - Colorful-Portugal-Algarve
   - Across-the-Country
-  - Hout-Bay-Cape-Town
   - Wales
 syndication:
   - host: Mastodon
