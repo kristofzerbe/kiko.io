@@ -19,7 +19,7 @@ related:
   - Wales
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/114885275899801528
 ---
 
 A week in the Lisbon area (see my first post: [Colorful Portugal - Grande Lisboa](/post/Colorful-Portugal-Grande-Lisboa/)) is obviously not enough, but we nevertheless got into our rental car and drove 340 kilometers south to our next destination: **Burgau**, on the Algarve. The small town is just as picturesque as Azenhas (right up our alley) and not overrun with beach tourists like Albufeira (the worst I've ever seen).  
