@@ -26,6 +26,9 @@ syndication:
   - host: Pixelfed
     title: Three more
     url: https://pixelfed.social/p/kristofz/852462742233148752
+  - host: Pixelfed
+    title: Queluz
+    url: https://pixelfed.social/p/kristofz/852934068033472856
 ---
 
 Perhaps it's due to climate change, but my love and I are no longer interested in travelling to southern Europe in the peak of summer. That's why we've been doing it solely in spring for a few years now, when temperatures and tourist crowds are still manageable and bearable. This year, we chose **Portugal** in May and split up the trip into two parts: one week in the **west** around Lisbon and another in the **south** at the Algarve, to see as much of the country and its people as possible. Neither of us are beach people, but rather roaming explorers of the many beautiful places a country has to offer. We just have to be careful not to take up too much, especially for the sake of our feet. This also determines the type of accommodation we choose, as we prefer holiday lets and autonomous catering to hotels and all-inclusive packages.
