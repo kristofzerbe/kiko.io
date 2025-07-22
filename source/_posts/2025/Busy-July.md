@@ -18,7 +18,9 @@ related:
   - April-Intermezzo
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/114896635890197405
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/853233003117137436
 ---
 
 It's absolutely amazing what's going on in Thomas' garden. There's buzzing and humming everywhere, and some of the plants can hardly keep up with all the pollinators and other visitors. They are mainly small flies, whose names I don't know, and bumblebees, which seem to appear in whole family groups: fat ones, thin ones, small ones, large ones. Unfortunately, bees are only seen sporadically, and I wonder why that is. May the plants currently in bloom not be to their liking, or is this a continuation of the trend toward the decline of wild and other bees?  
