@@ -27,6 +27,8 @@ It was much too dry in Germany during the first three months, even in April. At 
 
 <!-- more -->
 
+---
+
 {% photo_masonry
   "D50_3789_2504"
   "D50_3790_2504"

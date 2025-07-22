@@ -23,6 +23,8 @@ syndication:
 
 <!-- more -->
 
+---
+
 {% photo_masonry
   "D50xxx"
   "D50xxx"

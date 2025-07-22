@@ -27,6 +27,8 @@ I try to take pictures in Thomas' garden every month. May was no exception. But 
 
 <!-- more -->
 
+---
+
 {% photo_masonry
   "D50_4322_2505"
   "D50_4339_2505"

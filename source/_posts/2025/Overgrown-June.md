@@ -27,6 +27,8 @@ This year, Thomas invested in a drip irrigation system for his garden. As diffic
 
 <!-- more -->
 
+---
+
 {% photo_masonry
 "D50_5644_2506"
 "D50_5645_2506"
