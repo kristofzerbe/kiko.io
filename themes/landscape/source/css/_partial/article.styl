@@ -548,16 +548,21 @@
     flex-wrap: wrap
     justify-content: center
     gap: 2rem
-    margin-block-start: 2rem
+    margin-block-start: extra-margin
+    margin-block-end: medium-margin
     figure
       img
         border-radius: 4px
         box-shadow: 1px 1px 12px 0px #888 !important
         /[data-theme="dark"] &
           box-shadow: 1px 1px 12px 0px #000 !important
+        @media mq-mobile-up
+          max-width: 640px
+          max-height: 600px
       figcaption
         text-align: center
-        padding-block: 0.75rem
+        padding-block-start: small-padding
+        font-size: font-size-small
         font-style: italic
         color: color-grey
         /[data-theme="dark"] &
