@@ -25,6 +25,9 @@ syndication:
   - host: Pixelfed
     title: "New York City"
     url: https://pixelfed.social/p/kristofz/855085386230170833
+  - host: Pixelfed
+    title: Paris
+    url: https://pixelfed.social/p/kristofz/855533621518476337
 ---
 
 With my ["Best Pix ... from the past"](/post/Best-Pix-from-the-past/) a few weeks ago, I opened a gate to my past that, given my limited free time, would have been better left closed. I'm spending a lot of time in Lightroom at the moment anyway, and I now have a thick, open folder on my desk with all the negatives I took with my analogue cameras when I was a teenager.
