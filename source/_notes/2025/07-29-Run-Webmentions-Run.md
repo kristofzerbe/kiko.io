@@ -4,7 +4,7 @@ date: 2025-07-29
 type: link
 rel:
   verb: like-of
-  caption: "Run Webmentions, run"
+  caption: "My personal website should have support for webmentions now"
   url: https://chisenires.design/blog/my-personal-website-should-have-support-for-webmentions-now/
 syndication:
   - host: Mastodon
