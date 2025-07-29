@@ -8,7 +8,7 @@ rel:
   url: https://chisenires.design/blog/my-personal-website-should-have-support-for-webmentions-now/
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/114938531244043977
 ---
 
 I always think it's great when another blog starts supporting [Webmentions](https://kiko.io/search/?q=webmention). Unfortunately, there are still far too few. In my opinion, it's a fantastic way to connect blogs without having to rely on third-party platforms.
