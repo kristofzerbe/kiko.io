@@ -13,9 +13,9 @@ categories:
 tags:
   - Hexo
 related:
-  - Colophon-Hosting-Deployment
   - Colophon-Impetus-Technology
-  - The-State-of-the-Blog
+  - Colophon-Hosting-Deployment
+  - Colophon-Special-Pages
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/114592849975633469
