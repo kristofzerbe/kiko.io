@@ -18,7 +18,7 @@ related:
   - Colophon-Impetus-Technology
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/114937732276245938
 ---
 
 {% alertbox info %}
