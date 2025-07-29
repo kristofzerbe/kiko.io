@@ -14,7 +14,7 @@ categories:
 tags:
   - Hexo
   - Publishing
-  - Share
+  - Webmention
 related:
   - Hexo-and-the-IndieWeb
   - Hexo-and-the-IndieWeb-Receiving-Webmentions

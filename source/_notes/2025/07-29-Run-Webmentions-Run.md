@@ -5,7 +5,7 @@ type: link
 rel:
   verb: like-of
   caption: "Run Webmentions, run"
-  url: Xx
+  url: https://chisenires.design/blog/my-personal-website-should-have-support-for-webmentions-now/
 syndication:
   - host: Mastodon
     url:
