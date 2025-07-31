@@ -3,6 +3,7 @@ slug: Discoveries-36-Web-Components
 title: "Discoveries #36 - Web Components"
 subtitle:
 date: 2025-07-19 14:29:26
+updated: 2025-07-31 23:10:00
 photograph:
   file: 24-12-Suedafrika-0660-D50.jpg
   name: Heli Gauges
@@ -28,7 +29,7 @@ Over time, I've collected a few links on the topic that I think could be a good 
 
 Now all I need is the time...
 
-{% anchorlist 
+{% anchorlist
   "Plain Vanilla - Components|plain-vanilla-components"
   "A simple theme (dark-light) toggle custom web component|a-simple-theme-dark-light-toggle-custom-web-component"
   "I Made a Squircle Button (and of Course It's a Web Component)|i-made-a-squircle-button-and-of-course-its-a-web-component"
@@ -39,6 +40,7 @@ Now all I need is the time...
   "ap-components|ap-components"
   "Bluesky Likes Web Components|bluesky-likes-web-components"
   "Syntax Highlighting using the CSS Custom Highlight API|syntax-highlighting-using-the-css-custom-highlight-api"
+  "Anatomy of a Web Component [UPDATE]|anatomy-of-a-web-component"
 %}
 
 <!-- more -->
@@ -135,7 +137,7 @@ favicon: https://mayank.co/favicon.ico
 {% enddiscovery %}
 
 {% discovery "ap-components" "Evan Prodromou" "https://github.com/social-web-foundation/ap-components" Discoveries-36-Web-Components key:ap-components %}
-Following [Evan](https://evanp.me/), the co-author of the ActivityPub protocol which is running the Fediverse, is always a win. Lately he posted about a complete suite of Web Components to render simple [ActivityPub](https://activitypub.rocks/) objects, which were published under the patronage if the [Social Web Foundation](https://socialwebfoundation.org/2025/05/28/ap-components/), where he has the role of the Research Director.
+Following [Evan](https://evanp.me/), the co-author of the ActivityPub protocol which is running the Fediverse, is always a win. Lately he posted about a complete suite of Web Components to render simple [ActivityPub](https://activitypub.rocks/) objects, which were published under the patronage if the [Social Web Foundation](https://socialwebfoundation.org/2025/05/28/ap-components/), where he has the role of the Research Director.
 
 @@@cardlink
 url: https://github.com/social-web-foundation/ap-components
@@ -169,5 +171,19 @@ description: "👓 Syntax Highlighting using the CSS Custom Highlight API - andr
 host: github.com
 favicon: https://github.githubassets.com/favicons/favicon.svg
 image: https://repository-images.githubusercontent.com/931295844/5db86502-b221-4e23-b9cb-6a29e7afe71f
+@@@
+{% enddiscovery %}
+
+{% discovery "Anatomy of a Web Component [UPDATE]" "David Bushell" "https://dbushell.com/2025/08/01/anatomy-of-a-web-component/" Discoveries-36-Web-Components key:anatomy-of-a-web-component %}
+
+I had to update this edition of Discoveries with an eleventh link, because David's step-by-step description of the anatomy of a Web Component is simply too good to disappear into the "Read It Later" cabinet. I gained a lot of insight.
+
+@@@cardlink
+url: https://dbushell.com/2025/08/01/anatomy-of-a-web-component/
+title: "Anatomy of a Web Component"
+description: "The one where I present what I've learnt"
+host: dbushell.com
+favicon: https://dbushell.com/favicon.ico
+image: https://dbushell.com/images/articles/2025-08-01-anatomy-of-a-web-component.png
 @@@
 {% enddiscovery %}
