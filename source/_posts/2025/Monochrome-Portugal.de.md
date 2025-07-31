@@ -22,7 +22,7 @@ related:
   - Across-the-Country
 ---
 
-Das Credo meiner Fotografie war immer schon "Formen und Farben". Je ausgefallener und farbenfroher, desto besser. Am liebsten kleine Ausschnitte aus dem Leben mit viel Kontrast und Kolorit, wo mein Schatz sich immer fragt "Was fotografiert er denn jetzt?" und nachher vom Ergebnis begeistert ist. Natürlich gehören immer auch die großen, epischen Landschaften dazu, auch wenn ich hierbei hinsichtlich fotografischer Kenntnisse, Equipment und Zeit immer Abstiche machen muss. Menschen waren dagegen nie richtig in meinem Fokus, auch wenn hier und da das ein oder andere gute Foto dabei war. Interessanterweise gewann eine menschliche Szenerie in der Nachbearbeitung immer dadurch, wenn ich die Farben ganz wegließ und die kleine Geschichte im Foto in den Vordergrund trat, ohne von Farben abgelenkt zu werden. Das genaue Gegenteil meines eigentliches Credos.
+Das Credo meiner Fotografie war immer schon "Formen und Farben". Je ausgefallener und farbenfroher, desto besser. Am liebsten kleine Ausschnitte aus dem Leben mit viel Kontrast und Kolorit, wo mein Schatz sich immer fragt "Was fotografiert er denn jetzt?" und nachher vom Ergebnis begeistert ist. Natürlich gehören immer auch die großen, epischen Landschaften dazu, auch wenn ich hierbei hinsichtlich fotografischer Kenntnisse, Equipment und Zeit immer Abstriche machen muss. Menschen waren dagegen nie richtig in meinem Fokus, auch wenn hier und da das ein oder andere gute Foto dabei war. Interessanterweise gewann eine menschliche Szenerie in der Nachbearbeitung immer dadurch, wenn ich die Farben ganz wegließ und die kleine Geschichte im Foto in den Vordergrund trat, ohne von Farben abgelenkt zu werden. Das genaue Gegenteil meines eigentliches Credos.
 
 In meinem zweiwöchigen Urlaub in Portugal im Mai habe ich mich natürlich wieder den Farben und Formen hingegeben, wie man an meinen Posts [Colorful Portugal - Grande Lisboa](/posts/Colorful-Portugal-Grande-Lisboa) und [Colorful Portugal - Algarve](/posts/Colorful-Portugal-Algarve) sieht, aber wo immer ich war habe ich auch nach spannenden menschlichen (oder vergleichbaren) Momenten gesucht und versucht diese einzufangen. Dabei sind 60 sehenswerte Schwarz/Weiß-Exemplare herausgekommen, die ich mit Euch teilen möchte.
 
@@ -92,7 +92,7 @@ Nicht das ich nicht auch ohne Kamera stundenlang am Wasser sitzen könnte. Stran
 
 ## Perspektiven
 
-So manches Stillleben bekommt ohne Farben eine etwas andere Bedeutung. Es wirkt klarer und pointierter. Das gleiche gilt für die Architektur, wo es dann nur noch im die Schönheit der Form eines Gebäudes oder eines Teiles davon geht. Bei Landschaften ist das meistens etwas anders, denn dort wirkt der Kontrast zwischen Himmel und Erde meist nur wenn die erlernten Farben vorhanden sind und man sich quasi in die Landschaft hineinversetzen kann. Es gibt aber auch schöne Ausnahmen.
+So manches Stillleben bekommt ohne Farben eine etwas andere Bedeutung. Es wirkt klarer und pointierter. Das gleiche gilt für die Architektur, wo es dann nur noch um die Schönheit der Form eines Gebäudes oder eines Teiles davon geht. Bei Landschaften ist das meistens etwas anders, denn dort wirkt der Kontrast zwischen Himmel und Erde meist nur, wenn die erlernten Farben vorhanden sind und man sich quasi in die Landschaft hineinversetzen kann. Es gibt aber auch schöne Ausnahmen.
 
 {% photo_masonry
 "25-05-Portugal-0060-D50"
