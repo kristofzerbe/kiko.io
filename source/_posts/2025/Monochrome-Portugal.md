@@ -21,7 +21,7 @@ related:
   - Across-the-Country
 syndication:
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/114949541704829273
   - host: Pixelfed
     url: https://pixelfed.social/p/kristofz/856572381187343798
 ---
