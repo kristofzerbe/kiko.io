@@ -23,7 +23,11 @@ syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/114949541704829273
   - host: Pixelfed
+    title: City
     url: https://pixelfed.social/p/kristofz/856572381187343798
+  - host: Pixelfed
+    title: Five More
+    url: https://pixelfed.social/p/kristofz/857338870652034748
 ---
 
 The credo of my photography has always been "Colors and Shapes." The more unusual and colorful, the better. I prefer small snapshots of life with lots of contrast and color, where my sweetheart always asks, "What is he shooting now?," and is amazed by the result. Of course, large, epic landscapes are always part of it, even if I always have to make compromises in terms of photographic knowledge, equipment, and time. People, on the other hand, have never really been in my focus, even if there have been one or two good photos along the way. Interestingly, when I was editing, human scenes always benefited from leaving out the colors completely and letting the little story in the photo come to the front without being distracted by colors. The exact opposite of my usual credo.
