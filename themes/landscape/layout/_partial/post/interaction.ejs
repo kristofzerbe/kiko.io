@@ -16,8 +16,7 @@
         action="https://webmention.io/<%- config.title %>/webmention">
     <p>
       You can interact with this <%= type %> by mention it in one of your posts 
-      and sending a <a href="https://indieweb.org/Webmention">Webmention</a>
-      <% if(syndications) { %> or by replying to one of its syndications below<% } %>.
+      and sending a <a href="https://indieweb.org/Webmention">Webmention</a>.
       In case your blog software can't send Webmentions, you can use this form 
       or send it manually via <a href="https://webmention.app/check" target="_blank">webmention.app</a> 
       or <a href="https://telegraph.p3k.io/" target="_blank">Telegraph</a>:
@@ -28,22 +27,23 @@
     <input type="hidden" name="target" value="<%= encodeURI(post.permalink) %>">
     <input type="submit" value="Send Webmention">
   </form>
-
+  <% if (syndications?.length > 0) { %>
+  <p>Alternatively, you can respond to one of the following ...</p>
+  <% } %>
 </div>
 
 <% if (syndications?.length > 0) { %>
-  <div id="syndication" class="article-syndication" data-pagefind-ignore>
-    <h2>Syndications</h2>
-    <div class="syndication-wrapper">
-      <%- partial('syndication-links', { syndication: syndications, type: type, showText: true }) %>
-    </div>
+<div id="syndication" class="article-syndication" data-pagefind-ignore>
+  <h2>Syndications</h2>
+  <div class="syndication-wrapper">
+    <%- partial('syndication-links', { syndication: syndications, type: type, showText: true }) %>
   </div>
+  <p>Both will be show here as ...</p>
+</div>
 <% } %>
-  
   
 <div id="interactions" class="article-interactions" data-pagefind-ignore>
   <h2>Interactions</h2>
-
   <div class="message loading">Loading</div>
 
   <div id="interactions-likes-placeholder"></div>

@@ -14,6 +14,9 @@ tags:
   - ADSI
   - Visual Studio
   - Database
+syndication:
+  - host: GitHub
+    url: https://github.com/kristofzerbe/kiko.io/issues/4
 ---
 If you are working with a Visual Studio Database Project and have to deal with data from the Active Directory via a Linked Server, you have to announce the data structure of the AD data in order to get the project compiled.
 <!-- more -->

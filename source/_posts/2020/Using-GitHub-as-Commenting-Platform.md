@@ -17,6 +17,9 @@ related:
   - Automatic-Header-Images-in-Hexo
   - A-New-Blog-Customizing-Hexo
   - A-New-Blog-VS-Code-Hexo-and-GitHub-Pages
+syndication:
+  - host: GitHub
+    url: https://github.com/kristofzerbe/kiko.io/issues/3
 ---
 
 If you run a blog, it is always advisable to integrate a commenting system, in order to get feedback on your posts from your readers.

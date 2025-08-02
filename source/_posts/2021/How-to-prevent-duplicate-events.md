@@ -16,6 +16,9 @@ related:
   - Utilize-a-repository-of-reusable-ES6-template-literals
   - Implement-source-switch-for-SPA
   - Better-Input-Change-Event
+syndication:
+  - host: GitHub
+    url: https://github.com/kristofzerbe/kiko.io/issues/5
 ---
 
 I'm working on a new web app that contains a sliding out panel with some additional information on the selected element. This panel can be closed by the user via the ESC key. The implementation on initializing the panel seems very straight forward:
