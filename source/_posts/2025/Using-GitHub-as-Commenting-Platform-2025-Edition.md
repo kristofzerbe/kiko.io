@@ -24,7 +24,7 @@ syndication:
   - host: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/10
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/114960238792894189
 ---
 
 From the beginning of this blog in 2019, it was possible to comment on articles on the site. Initially, this was done with Disqus, but for reasons I won't go into here, I replaced it with [Utterances](https://utteranc.es) after less than a year. This worked well for me because the code for my blog is not only publicly available on GitHub, but is also hosted on GitHub Pages. After a while, however, I removed this from the code as well and focused entirely on Webmentions and Fediverse syndications, which ultimately resulted in the development of my [Mentions-United](/post/Mentions-United-3-2-1-go) solution.
