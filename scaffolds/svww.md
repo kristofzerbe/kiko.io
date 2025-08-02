@@ -17,6 +17,8 @@ related:
   - My-Hometown-My-Club
   - 
 syndication:
+  - host: GitHub
+    url: 
   - host: Mastodon
     url: 
 ---

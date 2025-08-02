@@ -13,7 +13,12 @@ categories:
 tags:
   - xxx
 related:
-  - 
+  - xxx
+syndication:
+  - host: GitHub
+    url: 
+  - host: Mastodon
+    url:   
 ---
 
 <!-- more -->

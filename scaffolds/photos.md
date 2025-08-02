@@ -14,8 +14,10 @@ tags:
   - Imaging
   - Publishing
 related:
-  - 
+  - xxx
 syndication:
+  - host: GitHub
+    url: 
   - host: Mastodon
     url: 
 ---

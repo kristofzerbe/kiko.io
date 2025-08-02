@@ -16,6 +16,8 @@ tags:
 related:
   - 
 syndication:
+  - host: GitHub
+    url: 
   - host: Mastodon
     url: 
 ---
