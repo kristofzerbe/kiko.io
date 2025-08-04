@@ -20,6 +20,9 @@ related:
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/114885275899801528
+  - host: Pixelfed
+    title: Sagres/Burgau
+    url: https://pixelfed.social/p/kristofz/858008233286694547
 ---
 
 A week in the Lisbon area (see my first post: [Colorful Portugal - Grande Lisboa](/post/Colorful-Portugal-Grande-Lisboa/)) is obviously not enough, but we nevertheless got into our rental car and drove 340 kilometers south to our next destination: **Burgau**, on the Algarve. The small town is just as picturesque as Azenhas (right up our alley) and not overrun with beach tourists like Albufeira (the worst I've ever seen).  
