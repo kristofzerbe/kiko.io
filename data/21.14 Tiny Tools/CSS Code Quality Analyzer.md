@@ -1,5 +1,5 @@
 ---
-created: 2025-08-04 17:48
+created: 2025-08-04T17:48:00Z
 tags:
   - Analyzer
   - Code

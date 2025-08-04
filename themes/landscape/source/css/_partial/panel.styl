@@ -29,18 +29,25 @@
   &.yesterday
     border-top: 8px var(--color-accent2) solid
 
+.panel-header
+  margin-inline: -10px
+  margin-block-start: -10px
+  margin-block-end: 20px
+
 .panel-favicon
   display: block
   margin-top: 10px
   img
     width: 32px
     height: 32px
+    margin: 0
 
 .panel-photo
   @extend $inview-image
   height: 150px
-  width: calc(100% + 20px)
-  margin: -10px 0 10px -10px
+  width: auto
+  // width: calc(100% + 20px)
+  // margin: -10px 0 10px -10px
   object-fit: cover
 
 .panel-photo.in-view

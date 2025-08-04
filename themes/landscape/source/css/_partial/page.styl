@@ -264,12 +264,15 @@
         overflow: hidden
         position: relative
         img
-          //@extend $inview-image
+          @extend $inview-image
           height: 100%
           width: 100%
           background-color: color-background
           /[data-theme="dark"] &
             background-color: dark-color-background
+        &.in-view
+          img
+            @extend $inview-image-visible
       h3
         line-height: line-height-subtitle
         font-weight: font-weight-bold

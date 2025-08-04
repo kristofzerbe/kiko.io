@@ -328,22 +328,24 @@
     &:hover
       border-bottom: var(--color-accent1) 1px solid
   a.img-link
-    transition: all ease-out .6s 
-    transform: scale(1)
-    opacity: 0.75
-    filter: filter-gray
-    /[data-theme="dark"] &
-      opacity: 0.75
-      filter: dark-filter-gray
+    @extend $inview-image
+    // transition: all ease-out .6s 
+    // transform: scale(1)
+    // opacity: 0.75
+    // filter: filter-gray
+    // /[data-theme="dark"] &
+      // opacity: 0.75
+      // filter: dark-filter-gray
   a.img-link.in-view
-    transform: scale(1.0125)
-    opacity: 1
-    filter: grayscale(0) contrast(1)
-    /[data-theme="dark"] &
-      opacity: 1
-      filter: grayscale(0) contrast(1) brightness(0.75)
+    @extend $inview-image-visible
     &:hover
       transform: scale(1.025)
+    // transform: scale(1.0125)
+    // opacity: 1
+    // filter: grayscale(0) contrast(1)
+    // /[data-theme="dark"] &
+      // opacity: 1
+      // filter: grayscale(0) contrast(1) brightness(0.75)
   ul, ol, dl
     margin-top: default-margin
     margin-bottom: default-margin

@@ -122,7 +122,7 @@ function isVisibleInViewPort(e) {
   return ((eBottom <= viewBottom) && (eTop >= viewTop));
 }
 function initImageViewportVisibility() {
-  $(".article-photo, .panel-photo, .img-link").each(function() { //.card-img, 
+  $(".article-photo, .panel-photo, .img-link, .card-img").each(function() { //.card-img, 
     if (isVisibleInViewPort($(this))) {
       $(this).addClass("in-view");
     } else {
