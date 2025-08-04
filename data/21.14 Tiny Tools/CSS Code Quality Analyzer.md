@@ -1,19 +1,19 @@
 ---
-created: 2025-08-04T17:48:00Z
+created: 2025-08-04 17:48
 tags:
   - Analyzer
   - Code
   - CSS
 title: CSS Code Quality Analyzer
-url: https://www.projectwallace.com/css-code-quality
 slug: css-code-quality-analyzer
+url: https://www.projectwallace.com/css-code-quality
 ---
 ```meta-bind
 INPUT[TAGS-Tiny-Tools][:tags]
 ```
 
 ___
-The best way to analyze your CSS is to use the [CSS analyzer](https://www.projectwallace.com/analyze-css), but if you're in a hurry or if you want an opinionated tool, then you can use this CSS Code Quality analyzer.
+The best way to analyze your CSS is to use the <a href="https://www.projectwallace.com/analyze-css">CSS analyzer</a>, but if you're in a hurry or if you want an opinionated tool, then you can use this CSS Code Quality analyzer.
 ___
 
 ```cardlink
