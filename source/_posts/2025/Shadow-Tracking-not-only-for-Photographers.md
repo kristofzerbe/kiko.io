@@ -23,7 +23,7 @@ syndication:
   - host: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/11
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/114970648836621777
 ---
 
 Photographs like the one illustrating this article would not be possible without the play of light and shadow. However, the emphasis here is on light. Without light, there would be no photography for me. Although I have a flash for my cameras, I never use it and could actually sell it.
