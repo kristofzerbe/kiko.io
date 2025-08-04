@@ -25,4 +25,4 @@ favicon: https://www.projectwallace.com/favicon.png
 image: https://www.projectwallace.com/_app/immutable/assets/og-image.BLkbbWKp.png
 ```
 
-![[_attachments/css-code-quality-analyzer.jpeg]]
+![](_attachments/css-code-quality-analyzer.jpeg)
