@@ -777,8 +777,12 @@
         background-image: var(--brand-vernissage)
         background-size: 22px
         background-position: 0 7px
+        /[data-theme="dark"] &
+          filter: invert(1)
         span
           padding-left: 2px
+          /[data-theme="dark"] &
+            filter: invert(1)
       &.host-peertube
         background-image: var(--brand-peertube)
         background-size: 12px
@@ -806,11 +810,11 @@
     height: 100px
     z-index: -1
     transform: rotate(344deg)
-    color: color-block
+    // color: color-block
     filter: invert(1)
     /[data-theme="dark"] &
-      filter: invert(0)
-      color: dark-color-border
+      filter: invert(0.075)
+      // color: dark-color-border
   .alertbox
     margin-bottom: 0
 
@@ -1053,9 +1057,11 @@
     grid-area: source
     // border-color: color-wm-border
     background-color: color-wm-input-background
+    color: color-foreground
     /[data-theme="dark"] &
-      background-color: dark-color-wm-input-background
       // border-color: dark-color-wm-border
+      background-color: dark-color-wm-input-background
+      color: dark-color-foreground
     +placeholder()
       opacity: 0.8
   input[type=submit]

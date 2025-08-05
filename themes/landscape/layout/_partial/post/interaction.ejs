@@ -28,7 +28,7 @@
     <input type="submit" value="Send Webmention">
   </form>
   <% if (syndications?.length > 0) { %>
-  <p>Alternatively, you can respond to one of the following ...</p>
+  <p>Alternatively, you can respond (comment, like, reply) to one of the following ...</p>
   <% } %>
 </div>
 
@@ -38,7 +38,7 @@
   <div class="syndication-wrapper">
     <%- partial('syndication-links', { syndication: syndications, type: type, showText: true }) %>
   </div>
-  <p>Webmentions and (most) responses will be show here as ...</p>
+  <p>Webmentions and (most) responses will be shown here as ...</p>
 </div>
 <% } %>
   
@@ -147,7 +147,7 @@
           let msg = document.querySelector(".article-interactions .message");
           if (count === 0) {
             msg.classList.remove("loading");
-            msg.innerHTML = "No interactions yet";
+            msg.innerHTML = "Nothing to show yet";
           } else {
             msg.remove();
           }
