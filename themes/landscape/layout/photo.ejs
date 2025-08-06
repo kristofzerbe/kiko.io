@@ -281,6 +281,9 @@
             case "rgb": eColor.innerHTML = eItem.dataset.hex; eItem.dataset.current = "hex"; break;
             default: break;
           }
+          //remove grayscale from header and set hex to accent-color
+          document.getElementById("header").classList.remove("gray");
+          document.documentElement.style.setProperty('--color-accent', eItem.dataset.hex);
         });
         eItem.appendChild(eSample);
         return eItem;
