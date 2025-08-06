@@ -12,7 +12,7 @@
   <section class="image">
     <img id="photo" src="<%- page.pathTablet %>" alt="<%- page.name %>" 
          data-pagefind-meta="image[src], image_alt[alt]" />
-    <small>Tap to show colors...</small>
+    <small>Tap to show <a href="https://jariz.github.io/vibrant.js/">vibrant colors</a> ...</small>
   </section>
   
   <section id="color-list"><ul></ul></section>
@@ -23,12 +23,12 @@
     <ul>
       <li>
         <label>File</label>
-        <a class="download" style="text-decoration:none;color:inherit;font-weight:400" href="<%- page.pathNormal %>" download="<%= page.file %>"><%= page.file %></a>
+        <a class="download" title="click to download file" style="text-decoration:none;color:inherit;font-weight:400" href="<%- page.pathNormal %>" download="<%= page.file %>"><%= page.file %></a>
       </li>
       <% if (!page.file.startsWith(page.name)) { %>
       <li>
         <label>Title</label>
-        <span><%= page.name %></span>
+        <span title="click to copy title" style="cursor:copy;" onclick="javascript:navigator.clipboard.writeText('<%= page.name %>')"><%= page.name %></span>
       </li>
       <% } %>
       <li>
@@ -228,19 +228,36 @@
   <%- js('js/dist/colornames.umd.js') %>
   <%- js('js/dist/nearestColor.js') %>
   <script>
+    let file = "<%= page.file %>";
     window.onload = (event) => {
       Vibrant.from("<%= page.pathTablet %>").getPalette().then((palette) => {
         const colorList = document.querySelector("#color-list ul");
+
         for(let swatch in palette) {
-          let color = { swatch: swatch };
-          color.hex = palette[swatch].getHex();
-          color.name = getColorName(color.hex);
-          let tColor = tinycolor(color.hex);
-          color.hsl = tColor.toHslString();
-          color.rgb = tColor.toRgbString();
+          let color = getColorObject(swatch, palette[swatch].getHex());
           colorList.appendChild(getColorElement(color));
-        }        
+        }
+
+        fetch('/photo-color-substitutions.json')
+          .then(substResp => { return substResp.json()})
+          .then(substData => {
+            let subHex = substData.find(obj => { return obj.file === file; })?.hex;
+            if (subHex) {
+              let substColor = getColorObject("Substitution", subHex);
+              console.log(substColor);
+              colorList.appendChild(getColorElement(substColor));
+            }
+          });
       });
+      function getColorObject(name, hex) {
+        let obj = { swatch: name };
+        obj.hex = hex;
+        obj.name = getColorName(hex);
+        let tColor = tinycolor(hex);
+        obj.hsl = tColor.toHslString();
+        obj.rgb = tColor.toRgbString();
+        return obj;
+      }
       function getColorElement(obj) {
         let eItem = document.createElement("li");
         for (const prop in obj) {

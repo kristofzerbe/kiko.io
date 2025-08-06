@@ -713,6 +713,7 @@
     box-shadow: none
     padding: 0
     position relative
+    margin-bottom: block-margin
     img
       @extend $block-inner
       width: 100%
@@ -725,7 +726,7 @@
     small
       position: absolute
       right: 0
-      bottom: -1rem
+      bottom: -(default-margin)
       opacity: 0.33
       font-size: 0.66rem
 
@@ -737,23 +738,38 @@
     position relative
     font-size: font-size-medium
     ul
-      display: flex
-      gap: 1rem
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      grid-template-areas: "x x" "a1 a2" "b1 b2" "c1 c2"
+      gap: medium-margin
       margin: 0
-      flex-wrap: wrap
-      flex-direction: row
       @media mq-medium
-        flex-wrap: nowrap
-        flex-direction: column
+        grid-template-columns: 1fr
+        grid-template-areas: "x" "a1" "b1" "c1" "a2" "b2" "c2"
       li
-        display: grid;
+        &[data-swatch="Substitution"]
+          grid-area: x
+        &[data-swatch="DarkVibrant"]
+          grid-area: a1
+        &[data-swatch="Vibrant"]
+          grid-area: b1
+        &[data-swatch="LightVibrant"]
+          grid-area: c1
+        &[data-swatch="DarkMuted"]
+          grid-area: a2
+        &[data-swatch="Muted"]
+          grid-area: b2
+        &[data-swatch="LightMuted"]
+          grid-area: c2
+        display: grid
         grid-template-columns: auto 64px
         grid-template-rows: repeat(3,1fr)
         align-items: center
-        padding: 1rem
-        gap: 0 2rem
+        margin: 0
+        gap: 0 default-padding
         width: auto
         position: relative
+        padding: 1rem
         border-radius: border-radius
         background: #fff
         box-shadow: 1px 2px 20px 5px #ddd
