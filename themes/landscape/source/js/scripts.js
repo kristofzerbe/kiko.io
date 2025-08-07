@@ -290,7 +290,12 @@ function setCodepenTheme(theme) {
 }
 
 async function setVibrantColor(theme) {
-  if(!$("#header").hasClass("no-vibrant")) {
+  let lsAccentColor = localStorage.getItem("accentcolor");
+
+  if(lsAccentColor) {
+    setAccentColor(theme, localStorage.getItem("accentcolor"));
+
+  } else {
     try {
       let img = $("#photo-preload").attr("href");
       let file = img.substr(img.lastIndexOf('/') + 1);
@@ -308,24 +313,27 @@ async function setVibrantColor(theme) {
         });
       }
 
-      if (theme === "dark") { 
-        color = tinycolor(color).darken(10).toHexString();; 
-      }
-
-      let color1Factor = 0;
-      let color2Factor = 25;
-      if (theme === "dark") { 
-          color1Factor = 50;
-          color2Factor = 15;
-      }
-
-      $(":root").css("--color-accent", color);
-      $(":root").css("--color-accent1", tinycolor(color).brighten(color1Factor).toHexString())
-      $(":root").css("--color-accent2", tinycolor(color).brighten(color2Factor).toHexString())
-      document.querySelector('meta[name="theme-color"]').setAttribute("content", color);
+      setAccentColor(theme, color);
 
     } catch (error) { }
   }
+}
+function setAccentColor(theme, color) {
+
+  if (theme === "dark") { 
+    color = tinycolor(color).darken(10).toHexString();; 
+  }
+
+  let color1Factor = 0;
+  let color2Factor = 25;
+  if (theme === "dark") { 
+      color1Factor = 50;
+      color2Factor = 15;
+  }
+  $(":root").css("--color-accent", color);
+  $(":root").css("--color-accent1", tinycolor(color).brighten(color1Factor).toHexString())
+  $(":root").css("--color-accent2", tinycolor(color).brighten(color2Factor).toHexString())
+  document.querySelector('meta[name="theme-color"]').setAttribute("content", color);
 }
 
 /** ============================================================ */

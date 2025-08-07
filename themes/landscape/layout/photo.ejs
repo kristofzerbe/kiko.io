@@ -217,27 +217,22 @@
   </script>
   <% } %>
   
-  <script>
-    document.getElementById("header").classList.add("no-vibrant");
-    setTimeout(() => {
-      document.getElementById("header").classList.add("gray");
-      document.querySelector('meta[name="theme-color"]').setAttribute("content", window.getComputedStyle(document.getElementById("header")).backgroundColor);
-    }, 900);
-  </script>
-
   <%- js('js/dist/colornames.umd.js') %>
   <%- js('js/dist/nearestColor.js') %>
   <script>
     let file = "<%= page.file %>";
+    let scripts_onload = window.onload;
     window.onload = (event) => {
       Vibrant.from("<%= page.pathTablet %>").getPalette().then((palette) => {
         const colorList = document.querySelector("#color-list ul");
+        let accentColor; 
 
         for(let swatch in palette) {
           let color = getColorObject(swatch, palette[swatch].getHex());
           colorList.appendChild(getColorElement(color));
+          if (swatch === "DarkVibrant") { accentColor = color; }
         }
-
+        
         fetch('/photo-color-substitutions.json')
           .then(substResp => { return substResp.json()})
           .then(substData => {
@@ -246,7 +241,9 @@
               let substColor = getColorObject("Substitution", subHex);
               console.log(substColor);
               colorList.appendChild(getColorElement(substColor));
+              accentColor = substColor;
             }
+            setPhotoAccentColor(accentColor);
           });
       });
       function getColorObject(name, hex) {
@@ -283,7 +280,8 @@
           }
           //remove grayscale from header and set hex to accent-color
           document.getElementById("header").classList.remove("gray");
-          document.documentElement.style.setProperty('--color-accent', eItem.dataset.hex);
+          $(":root").css("--color-accent", eItem.dataset.hex);
+          //document.documentElement.style.setProperty('--color-accent', eItem.dataset.hex);
         });
         eItem.appendChild(eSample);
         return eItem;
@@ -297,6 +295,13 @@
       $("#photo").click(() => {
         $("#color-list").slideToggle();
       });
+      function setPhotoAccentColor(color) {
+        localStorage.setItem("accentcolor", color.hex);
+        if (scripts_onload) { scripts_onload(); }
+        setTimeout(() => {
+          document.getElementById("header").classList.add("gray");
+        }, 1000);
+      }
     };
   </script>
 
