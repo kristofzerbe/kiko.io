@@ -23,12 +23,12 @@
     <ul>
       <li>
         <label>File</label>
-        <a class="download" title="click to download file" style="text-decoration:none;color:inherit;font-weight:400" href="<%- page.pathNormal %>" download="<%= page.file %>"><%= page.file %></a>
+        <a class="download" title="Click to download file" style="text-decoration:none;color:inherit;font-weight:400" href="<%- page.pathNormal %>" download="<%= page.file %>"><%= page.file %></a>
       </li>
       <% if (!page.file.startsWith(page.name)) { %>
       <li>
         <label>Title</label>
-        <span title="click to copy title" style="cursor:copy;" onclick="javascript:navigator.clipboard.writeText('<%= page.name %>')"><%= page.name %></span>
+        <span title="Click to copy title" style="cursor:copy;" onclick="javascript:navigator.clipboard.writeText('<%= page.name %>')"><%= page.name %></span>
       </li>
       <% } %>
       <li>
@@ -224,32 +224,48 @@
     let scripts_onload = window.onload;
     window.onload = (event) => {
       Vibrant.from("<%= page.pathTablet %>").getPalette().then((palette) => {
-        const colorList = document.querySelector("#color-list ul");
+        let colorItems = [];
         let accentColor; 
 
         for(let swatch in palette) {
           let color = getColorObject(swatch, palette[swatch].getHex());
-          colorList.appendChild(getColorElement(color));
+          colorItems.push(color);
           if (swatch === "DarkVibrant") { accentColor = color; }
         }
         
         fetch('/photo-color-substitutions.json')
           .then(substResp => { return substResp.json()})
           .then(substData => {
-            let subHex = substData.find(obj => { return obj.file === file; })?.hex;
+            let subHex = substData.find(obj => { return obj.file === file; })?.color;
             if (subHex) {
               let substColor = getColorObject("Substitution", subHex);
-              console.log(substColor);
-              colorList.appendChild(getColorElement(substColor));
-              accentColor = substColor;
+              let existColor = colorItems.find(i => i.hex === substColor.hex);
+              if (existColor) {
+                existColor.accent = true;
+                accentColor = existColor;
+              } else {
+                substColor.accent = true;
+                colorItems.push(substColor);
+                accentColor = substColor;
+              }
+            } else {
+              colorItems.find(i => i.swatch === "DarkVibrant").accent = true;
             }
+          })
+          .finally(() => {
             setPhotoAccentColor(accentColor);
+
+            const colorList = document.querySelector("#color-list ul");
+            colorItems.forEach(c => {
+              colorList.appendChild(getColorElement(c));
+            });
           });
       });
       function getColorObject(name, hex) {
         let obj = { swatch: name };
         obj.hex = hex;
         obj.name = getColorName(hex);
+        obj.accent = false;
         let tColor = tinycolor(hex);
         obj.hsl = tColor.toHslString();
         obj.rgb = tColor.toRgbString();
@@ -269,6 +285,7 @@
         `);
         let eSample = document.createElement("div");
         eSample.style.cssText = `background-color:${obj.hex}`;
+        eSample.title = "Try as accent color";
         eSample.addEventListener("click", (e) => {
           let eItem = e.target.parentNode;
           let eColor = eItem.querySelector("strong");
@@ -278,10 +295,7 @@
             case "rgb": eColor.innerHTML = eItem.dataset.hex; eItem.dataset.current = "hex"; break;
             default: break;
           }
-          //remove grayscale from header and set hex to accent-color
-          document.getElementById("header").classList.remove("gray");
-          $(":root").css("--color-accent", eItem.dataset.hex);
-          //document.documentElement.style.setProperty('--color-accent', eItem.dataset.hex);
+          setAccentColor(localStorage.getItem("theme"), eItem.dataset.hex);
         });
         eItem.appendChild(eSample);
         return eItem;

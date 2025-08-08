@@ -761,6 +761,17 @@
           grid-area: b2
         &[data-swatch="LightMuted"]
           grid-area: c2
+        &[data-accent="true"]:after
+          content: "\2713"
+          position: absolute
+          top: calc((6.5rem - 24px) / 2)
+          right: calc((6.5rem - 12px) / 2)
+          height: 24px
+          width: 12px
+          font-size: 16px
+          font-weight: 900
+          color: #fff
+          z-index: 0
         display: grid
         grid-template-columns: auto 64px
         grid-template-rows: repeat(3,1fr)
@@ -792,6 +803,7 @@
           top: -1rem
           right: -1rem
           border-radius: 0 border-radius border-radius 0
+          cursor: alias
   #map
     /[data-theme="dark"] &
       .leaflet-layer,
