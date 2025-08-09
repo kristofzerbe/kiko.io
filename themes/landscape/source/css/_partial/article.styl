@@ -676,7 +676,9 @@
     opacity: color-opacity
     margin-block: medium-margin
     font-size: font-size-medium
-    &:last-child
+    &:first-child
+      margin-block-start: 0  
+    &:last-child 
       margin-block-start: default-margin
       margin-block-end: -(medium-margin + thin-margin)
     a
@@ -1026,7 +1028,7 @@
     margin: 0 auto
 
 .webmention-form
-  margin-top: default-margin
+  // margin-top: -(medium-margin)
   display: grid
   column-gap: medium-margin
   row-gap: 0
@@ -1111,10 +1113,10 @@
 
   .message
     font-style: italic
+    margin-block: default-margin
 
   .interactions-summary-line
-    margin-block-start: (default-margin)
-    margin-block-end: 0
+    margin-block-start: 0
     line-height: line-height-small
     
   .interactions-summary-line,
