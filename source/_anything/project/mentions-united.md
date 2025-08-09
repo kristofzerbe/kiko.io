@@ -21,9 +21,9 @@ It includes a plugin system for retrieving data from various platform API's and 
 For more information visit:
 
 <div class="brand-links">
-<a href="https://github.com/kristofzerbe/Mentions-United" class="github"><img src="/images/icons/github.svg" alt="Github" /><span>Github</span></a>
+<a href="https://github.com/kristofzerbe/Mentions-United" class="github"><img src="/images/brands/github.svg" alt="Github" /><span>Github</span></a>
 <span style="margin-top:25px">or</span>
-<a href="https://open.vscode.dev/kristofzerbe/Mentions-United" class="vscode"><img src="/images/icons/vscode.svg" alt="VSCode" /><span>Open in VSCode</span></a>
+<a href="https://open.vscode.dev/kristofzerbe/Mentions-United" class="vscode"><img src="/images/brands/vscode.svg" alt="VSCode" /><span>Open in VSCode</span></a>
 </div>
 
 <!-- {% github_readme "kristofzerbe" "Mentions-United" %} -->

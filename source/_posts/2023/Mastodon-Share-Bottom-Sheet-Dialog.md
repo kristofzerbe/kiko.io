@@ -73,7 +73,7 @@ For my dialog I first needed a UI, preferably a template in the DOM to avoid hav
   <div class="mastodon-share-content">
     <section>
       <p id="mastodon-share-intro">
-        <img src="/images/mastodon.svg" alt="Mastodon">
+        <img src="/images/brands/mastodon.svg" alt="Mastodon">
         There are many Mastodon instances out there. 
         Tell me yours and I will redirect you to the share dialog of your server:
       </p>

@@ -55,22 +55,22 @@ If you want to talk about the old, recent or new times in IT,  [contact me](java
 
 ---
 
-<img class="link invert" src="/images/icons/github.svg" alt="GitHub" />
+<img class="link invert" src="/images/brands/github.svg" alt="GitHub" />
 
 **GitHub**
 [https://github.com/kristofzerbe](https://github.com/kristofzerbe)
 
-<img class="link invert" src="/images/icons/devto.svg" alt="DEV" />
+<img class="link invert" src="/images/brands/devto.svg" alt="DEV" />
 
 **DEV**
 [https://dev.to/kristofzerbe](https://dev.to/kristofzerbe)
 
-<img class="link" src="/images/icons/xing.svg" alt="Xing" />
+<img class="link" src="/images/brands/xing.svg" alt="Xing" />
 
 **Xing**
 [https://www.xing.com/profile/Kristof_Zerbe](https://www.xing.com/profile/Kristof_Zerbe)
 
-<img class="link" src="/images/icons/linkedin.svg" alt="LinkedIn" />
+<img class="link" src="/images/brands/linkedin.svg" alt="LinkedIn" />
 
 **LinkedIn**
 [https://www.linkedin.com/in/kristof-zerbe-91012510](https://www.linkedin.com/in/kristof-zerbe-91012510)
@@ -89,27 +89,27 @@ Today a have a lot of equipment, knowing that a good picture is done by the phot
 
 ---
 
-<img class="link" src="/images/icons/vernissage.svg" alt="Vernissage" />
+<img class="link" src="/images/brands/vernissage.svg" alt="Vernissage" />
 
 **Vernissage**
 [https://vernissage.photos/@kiko](https://vernissage.photos/@kiko)
 
-<img class="link" src="/images/icons/pixelfed.svg" alt="Pixelfed" />
+<img class="link" src="/images/brands/pixelfed.svg" alt="Pixelfed" />
 
 **Pixelfed**
 [https://pixelfed.social/kristofz](https://pixelfed.social/kristofz)
 
-<img class="link" src="/images/icons/flickr.svg" alt="Flickr" />
+<img class="link" src="/images/brands/flickr.svg" alt="Flickr" />
 
 **Flickr**
 [https://flickr.com/photos/kzerbe/](https://flickr.com/photos/kzerbe/)
 
-<img class="link invert" src="/images/icons/unsplash.svg" alt="Unsplash" />
+<img class="link invert" src="/images/brands/unsplash.svg" alt="Unsplash" />
 
 **Unsplash**
 [https://unsplash.com/de/@kristofz](https://unsplash.com/de/@kristofz)
 
-<img class="link invert" src="/images/icons/500px.svg" alt="500px" />
+<img class="link invert" src="/images/brands/500px.svg" alt="500px" />
 
 **500px**
 [https://500px.com/p/kikon](https://500px.com/p/kikon)
