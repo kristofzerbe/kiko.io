@@ -330,15 +330,18 @@ function setAccentColor(hex) {
     hex = tinycolor(hex).darken(10).toHexString();
     hexText = tinycolor(hex).brighten(50).toHexString();
     hexTextNear = tinycolor(hex).brighten(25).toHexString();
+    hexMedian = tinycolor(hex).brighten(15).toHexString();
   } else {
-    hexText = tinycolor(hex).brighten(5).toHexString();
+    hexText = hex; //tinycolor(hex).brighten(5).toHexString();
     hexTextNear = tinycolor(hex).brighten(25).toHexString();
+    hexMedian = tinycolor(hex).brighten(45).toHexString();
   }
 
   root = document.querySelector(':root');
   root.style.setProperty("--color-accent", hex);
   root.style.setProperty("--color-accent-text", hexText);
   root.style.setProperty("--color-accent-text-near", hexTextNear);
+  root.style.setProperty("--color-accent-median", hexMedian);
 
   document.querySelector('meta[name="theme-color"]').setAttribute("content", hex);
 }

@@ -190,6 +190,12 @@
       mask-repeat: no-repeat
       mask-size: 16px
       mask-position: 0 2px
+    a
+      text-decoration: none
+      border-bottom: transparent 1px solid
+      &:hover
+        border-bottom-color: var(--color-accent-text)
+
   small.top-info
     background-color: var(--box-note2)
     &:before
@@ -322,9 +328,13 @@
     white-space: pre-line
     word-break: break-word
     text-decoration: none
-    border-bottom: var(--color-accent) 1px dashed
+    border-bottom-style: dashed
+    border-bottom-width: 1px
+    border-bottom-color: color-border
+    /[data-theme="dark"] &
+      border-bottom-color: dark-color-border
     &:hover
-      border-bottom: var(--color-accent) 1px solid
+      border-bottom-color: var(--color-accent-text)
   a.img-link
     @extend $inview-image
     // transition: all ease-out .6s 
