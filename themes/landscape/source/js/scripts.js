@@ -273,8 +273,9 @@ function setTheme(theme) {
   localStorage.setItem("theme", theme);
   document.documentElement.setAttribute("data-theme", theme);
   toggleTheme.checked = (theme === "dark");
-  setVibrantColor(theme);
+  // setVibrantColor(theme);
   setCodepenTheme(theme);
+  setVibrantColor();
 }
 
 function setCodepenTheme(theme) {
@@ -289,51 +290,57 @@ function setCodepenTheme(theme) {
   }
 }
 
-async function setVibrantColor(theme) {
+async function setVibrantColor() {
   let lsAccentColor = localStorage.getItem("accentcolor");
 
   if(lsAccentColor) {
-    setAccentColor(theme, localStorage.getItem("accentcolor"));
-
+    setAccentColor(localStorage.getItem("accentcolor"));
   } else {
+
     try {
       let img = $("#photo-preload").attr("href");
       let file = img.substr(img.lastIndexOf('/') + 1);
-      let color;
+      let hex;
 
-      //get color from substiution list by file
+      //get color from substiution list
       const response = await fetch('/photo-color-substitutions.json');
       const subst = await response.json();
-      color = subst.find(obj => { return obj.file === file; })?.color;
+      hex = subst.find(obj => { return obj.file === file; })?.color;
 
-      if (!color) {
+      if (!hex) {
         await Vibrant.from(img).getPalette().then(palette => {
           let swatch = palette.DarkVibrant; //[|Dark|Light]Muted, [|Dark|Light]Vibrant
-          color = swatch.getHex();
+          hex = swatch.getHex();
         });
       }
 
-      setAccentColor(theme, color);
+      setAccentColor(hex);
 
     } catch (error) { }
   }
 }
-function setAccentColor(theme, color) {
+function setAccentColor(hex) {
+
+  //let theme = localStorage.getItem("theme");
+  let theme = document.documentElement.getAttribute("data-theme");
+  let hexText;
+  let hexTextNear;
 
   if (theme === "dark") { 
-    color = tinycolor(color).darken(10).toHexString();; 
+    hex = tinycolor(hex).darken(10).toHexString();
+    hexText = tinycolor(hex).brighten(50).toHexString();
+    hexTextNear = tinycolor(hex).brighten(25).toHexString();
+  } else {
+    hexText = tinycolor(hex).brighten(5).toHexString();
+    hexTextNear = tinycolor(hex).brighten(25).toHexString();
   }
 
-  let color1Factor = 0;
-  let color2Factor = 25;
-  if (theme === "dark") { 
-      color1Factor = 50;
-      color2Factor = 15;
-  }
-  $(":root").css("--color-accent", color);
-  $(":root").css("--color-accent1", tinycolor(color).brighten(color1Factor).toHexString())
-  $(":root").css("--color-accent2", tinycolor(color).brighten(color2Factor).toHexString())
-  document.querySelector('meta[name="theme-color"]').setAttribute("content", color);
+  root = document.querySelector(':root');
+  root.style.setProperty("--color-accent", hex);
+  root.style.setProperty("--color-accent-text", hexText);
+  root.style.setProperty("--color-accent-text-near", hexTextNear);
+
+  document.querySelector('meta[name="theme-color"]').setAttribute("content", hex);
 }
 
 /** ============================================================ */

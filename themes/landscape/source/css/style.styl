@@ -30,12 +30,12 @@ global-reset()
 
 :root
   --color-accent: color-base
-  --color-accent1: color-base
-  --color-accent2: color-base
+  --color-accent-text: color-base
+  --color-accent-text-near: color-base
   /[data-theme="dark"] &
     --color-accent: dark-color-base
-    --color-accent1: dark-color-default
-    --color-accent2: dark-color-base
+    --color-accent-text: dark-color-default
+    --color-accent-text-near: dark-color-base
   --box-exclamation: rgb(255,204,0)
   --box-exclamation2: rgba(255,204,0,0.2)
   --box-question: rgb(221,0,255)
@@ -191,7 +191,7 @@ figure
 
 a
   transition: all ease-out 0.2s
-  color: var(--color-accent1)
+  color: var(--color-accent-text)
 
 a:not([class])
   text-decoration-skip-ink: auto // Andy Bells Modernized Reset (not need, because border underline here)
@@ -458,7 +458,7 @@ if sidebar is left
       padding: (default-margin/2) default-margin
       margin: default-margin
       border-radius: border-radius-small
-      background-color: #000 //var(--color-accent2)
+      background-color: #000 //var(--color-accent)
       color: #fff
       opacity: 0.75
       text-transform: uppercase

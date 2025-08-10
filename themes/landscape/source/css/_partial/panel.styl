@@ -27,7 +27,7 @@
   &.today
     border-top: 8px var(--color-accent) solid
   &.yesterday
-    border-top: 8px var(--color-accent2) solid
+    border-top: none //8px var(--color-accent) solid
 
 .panel-header
   margin-inline: -10px
@@ -110,14 +110,15 @@
 .panel-anything
   display: block
   text-decoration: none
-  line-height: line-height
+  line-height: line-height-thin
+  margin-block: small-margin
   text-transform: uppercase
   font-size: font-size-small
   color: color-grey
   /[data-theme="dark"] &
     color: dark-color-grey
   &:hover
-    color: var(--color-accent1)
+    color: var(--color-accent-text)
 
 .panel-title
   position relative
@@ -134,7 +135,7 @@
     color: dark-color-default
   transition: color 0.2s
   &:hover
-    color: var(--color-accent1)
+    color: var(--color-accent-text)
     &:before
       transform: scaleX(1)
       transform-origin: left
@@ -154,6 +155,7 @@
 
 .panel-subtitle
   margin-top: small-margin
+  line-height: line-height-medium
   color: color-grey
   /[data-theme="dark"] &
     color: dark-color-grey
@@ -176,5 +178,8 @@
   color: color-header
   /[data-theme="dark"] &
     color: dark-color-header
+
+.panel-category a,
+.panel-tags a
   &:hover
-    color: var(--color-accent1)
+    color: var(--color-accent-text)

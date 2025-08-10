@@ -43,7 +43,7 @@
       border-radius: border-radius-small
       text-transform: uppercase
       color: color-logo
-      background-color: var(--color-accent2)
+      background-color: var(--color-accent)
     small
       display: none
   &.rel
@@ -123,7 +123,7 @@
         height: calc(100% + 3rem)
         left: calc(-1.4rem + 6px)
       top: 0
-      border-color: var(--color-accent2)
+      border-color: var(--color-accent)
       border-width: 1px
       border-style: solid
     .article-meta
@@ -194,7 +194,7 @@
     background-color: var(--box-note2)
     &:before
       mask-image: url(/images/icons/circle-info.svg)
-      background-color: var(--color-accent1)
+      background-color: var(--color-accent-text)
   small.top-exclamation
     background-color: var(--box-exclamation2)
     &:before
@@ -225,7 +225,7 @@
   border: none
   &:hover
     a
-      color: var(--color-accent1)
+      color: var(--color-accent-text)
   .article-category-link
     @extend $block-caption
     color: color-header
@@ -246,7 +246,7 @@
   /[data-theme="dark"] &
     color: dark-color-grey
   &:hover
-    color: var(--color-accent1)
+    color: var(--color-accent-text)
 
 .article-title
   position: relative
@@ -266,7 +266,7 @@
   strong 
     opacity: 0.2
   a&:hover
-    color: var(--color-accent1)
+    color: var(--color-accent-text)
     em, strong
       opacity: 1
   // https://css-tricks.com/adam-argyles-sick-mouse-out-css-hover-effect/
@@ -319,14 +319,12 @@
   hr + h1, hr + h2, hr + h3
     margin: (line-height-title / 3) 0 (line-height-title / 2)
   a:not([class]), a.u-in-reply-to
-    text-decoration: none
     white-space: pre-line
     word-break: break-word
-    border-bottom: color-border-3d 1px dashed
-    /[data-theme="dark"] &
-      border-bottom: dark-color-border-3d 1px dashed
+    text-decoration: none
+    border-bottom: var(--color-accent) 1px dashed
     &:hover
-      border-bottom: var(--color-accent1) 1px solid
+      border-bottom: var(--color-accent) 1px solid
   a.img-link
     @extend $inview-image
     // transition: all ease-out .6s 
@@ -593,7 +591,7 @@
     mask-repeat: no-repeat
     mask-size: 18px
     mask-position: 0 4px
-    background-color: var(--color-accent1)
+    background-color: var(--color-accent-text)
 
 .button:not(.posts)
   display: inline-block
@@ -607,7 +605,7 @@
   border: none
   border-radius: border-radius-small
   &:hover    
-    background-color: var(--color-accent1)
+    background-color: var(--color-accent-text)
     color: color-logo
   /[data-theme="dark"] &
     background-color: dark-color-button
@@ -638,7 +636,7 @@
     transition: all ease-out .2s
     z-index: 1
     box-shadow: inset 0 20px 20px -20px #aaa
-    color: var(--color-accent1)
+    color: var(--color-accent-text)
     background-color: color-wm-button-background
     /[data-theme="dark"] &
       box-shadow: inset 0 20px 20px -20px #000
@@ -648,7 +646,7 @@
     &:hover
       box-shadow: inset 0 20px 20px -20px #666
       color: color-hover-background
-      background-color: var(--color-accent1)
+      background-color: var(--color-accent-text)
       /[data-theme="dark"] &
         box-shadow: inset 0 20px 20px -20px #222
         color: dark-color-hover-background
@@ -685,7 +683,7 @@
       text-decoration: none
       border-bottom: transparent 1px solid
       &:hover
-        border-bottom: var(--color-accent1) 1px solid
+        border-bottom: var(--color-accent-text) 1px solid
   
 .article-syndication
   .syndication-wrapper
@@ -862,7 +860,7 @@
     /[data-theme="dark"] &
       color: dark-color-grey
   a:hover
-    color: var(--color-accent1)
+    color: var(--color-accent-text)
 
 .article-tags,
 .article-permalink
@@ -969,13 +967,11 @@
 
 .article-nav-link-wrap
   text-decoration: none
-  color: color-grey
   box-sizing: border-box
   margin-top: block-margin
   text-align: center
   display: block
-  &:hover
-    color: color-default
+  color: var(--color-accent-text)
   @media mq-normal
     width: 50%
     margin-top: 0
@@ -1003,6 +999,11 @@
 .article-nav-title
   font-size: font-size-medium
   margin-top: small-margin
+  span
+    transition: all ease-out 0.2s
+    border-bottom: transparent 1px solid;
+    &:hover
+      border-bottom-color: var(--color-accent-text)
 
 .article-gallery
   background: color-default
@@ -1070,7 +1071,7 @@
     grid-area: submit
     cursor: pointer
     transition: all ease-out .2s
-    color: var(--color-accent1)
+    color: var(--color-accent-text)
     background-color: color-wm-button-background
     border-color: color-wm-button-background
     /[data-theme="dark"] &
@@ -1078,8 +1079,8 @@
       border-color: dark-color-wm-button-background
     &:hover
       color: color-hover-background
-      background-color: var(--color-accent1)
-      border-color: var(--color-accent1)
+      background-color: var(--color-accent-text)
+      border-color: var(--color-accent-text)
       /[data-theme="dark"] &
         color: dark-color-hover-background
 

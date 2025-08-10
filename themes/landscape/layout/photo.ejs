@@ -221,7 +221,7 @@
   <%- js('js/dist/nearestColor.js') %>
   <script>
     let file = "<%= page.file %>";
-    let scripts_onload = window.onload;
+    let head_onload = window.onload;
     window.onload = (event) => {
       Vibrant.from("<%= page.pathTablet %>").getPalette().then((palette) => {
         let colorItems = [];
@@ -295,7 +295,8 @@
             case "rgb": eColor.innerHTML = eItem.dataset.hex; eItem.dataset.current = "hex"; break;
             default: break;
           }
-          setAccentColor(localStorage.getItem("theme"), eItem.dataset.hex);
+          localStorage.setItem("accentcolor", eItem.dataset.hex);
+          setAccentColor(eItem.dataset.hex);
         });
         eItem.appendChild(eSample);
         return eItem;
@@ -311,7 +312,7 @@
       });
       function setPhotoAccentColor(color) {
         localStorage.setItem("accentcolor", color.hex);
-        if (scripts_onload) { scripts_onload(); }
+        if (head_onload) { head_onload(); }
         setTimeout(() => {
           document.getElementById("header").classList.add("gray");
         }, 1000);

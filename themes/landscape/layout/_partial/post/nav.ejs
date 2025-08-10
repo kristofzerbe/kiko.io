@@ -4,18 +4,22 @@
     <a href="<%- url_for(post.prev.path) %>" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><%= __('newer') %></strong>
       <div class="article-nav-title">
+        <span>
         <% if (post.prev.title){ %>
           <%= post.prev.title %>
         <% } else { %>
           (no title)
         <% } %>
+        </span>
       </div>
     </a>
   <% } %>
   <% if (post.next){ %>
     <a href="<%- url_for(post.next.path) %>" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><%= __('older') %></strong>
-      <div class="article-nav-title"><%= post.next.title %></div>
+      <div class="article-nav-title">
+        <span><%= post.next.title %></span>
+      </div>
     </a>
   <% } %>
 </nav>
