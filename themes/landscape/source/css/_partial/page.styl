@@ -605,7 +605,7 @@
         grid-template-columns: 36px max-content auto
         grid-template-rows: auto
         grid-template-areas: "icon link info" ". size ."
-        padding: small-margin
+        padding-block: small-margin
         text-decoration: none
         align-items: center
         &:hover
@@ -627,21 +627,24 @@
         display: inline-block
         content: ""
         background-repeat: no-repeat
-        background-size: 24px 24px
-        width: 24px
-        height: 24px
+        background-size: 20px 20px
+        width: 20px
+        height: 20px
       a.atom:before
         background-image: var(--brand-atom)
       a.rss:before
-        background-image: var(--brand-rss)
+        background-image: var(--brand-rss-blue)
+        background-size: 22px 22px
       a.json:before
         background-image: var(--brand-jsonfeed)
+        background-size: 18px 18px
       a.site-default:after
         grid-area: info
         display: inline-block
-        content: "- site's default"
+        content: "- default"
         margin-left: small-margin
         font-size: font-size-small
+
   section.mf2feed
     .h-feed
       .h-entry
@@ -655,31 +658,34 @@
               top: 0
             img
               max-width: 480px
+              margin-inline-start: default-margin
+              margin-block-start: -(medium-margin)
               @media mq-mobile
                 max-width: 92%;
           header, article
-            padding-block-start: medium-margin
-            padding-inline: medium-margin
+            padding-inline: default-padding-vert
             @media mq-mobile
               padding-inline: 0
-          header              
+          header
+            padding-block-start: medium-padding
             a
               text-decoration: none
+              transition: all ease-out 0.2s
+              border-bottom: transparent 1px solid;
               &:hover
-                text-decoration: underline
+                border-bottom-color: var(--color-accent-text)
             time
               position: unset
               margin-block: small-margin
             h3, h4
               line-height: line-height-text
             h3
-              margin-block: small-margin
+              margin-block: small-margin 0
             h4
-              font-size: font-subtitle-size
+              font-size: 1rem
               @media mq-normal
                 margin-block-end: 0
           article
-              padding-block-start: default-padding-vert
               @media mq-mobile
                 padding-block-start: thin-padding
             img

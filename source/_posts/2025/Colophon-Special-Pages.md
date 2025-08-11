@@ -6,7 +6,7 @@ date: 2025-07-29 17:34:50
 photograph:
   file: 22-08-Bretagne-Jersey-0210.jpg
   name: Automotive Beauty
-  socialmedia: /static/images/social-media/Colophon-Specials.jpg
+  socialmedia: /static/images/social-media/Colophon-Special-Pages.jpg
 series: A New Blog
 categories:
   - Misc
