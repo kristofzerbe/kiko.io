@@ -125,11 +125,13 @@
   margin: block-margin auto
   text-align: center
   overflow: hidden
+  font-size: font-size-medium
   color: color-grey
   /[data-theme="dark"] &
     color: dark-color-grey
   a, span
-    padding: (default-padding-vert / 2) (default-padding / 2)
+    padding-inline: small-padding
+    margin: small-margin small-margin
     line-height: 1
     height: 2ex
   a
@@ -137,7 +139,10 @@
     /[data-theme="dark"] &
       color: dark-color-grey
     text-decoration: none
+    transition: all ease-out 0.2s
+    border-bottom: transparent 1px solid;
     &:hover
+      border-bottom-color: var(--color-accent-text)
       color: var(--color-accent-text)
   .prev
     float: left
@@ -150,6 +155,7 @@
   .current
     color: color-default
     font-weight: font-weight-bold
+    font-size: font-subtitle-size
   .space
     color: color-default
     font-weight: font-weight-bold

@@ -1,21 +1,21 @@
 #footer
   background: var(--color-accent)
-  padding: 15px 0 15px
+  padding: default-padding-vert 0 medium-padding
   color: var(--color-accent-text-near)
   border-radius: 0;
   a
     color: color-footer-link
     text-decoration: none
+    transition: all ease-out 0.2s
+    border-bottom: transparent 1px solid;
     &:hover
-      text-decoration: underline
-      &:before
-        text-decoration: none
+      border-bottom-color: color-footer-link
 
 #footer .inner
   position: relative
   width: 95%
   line-height: line-height
-  font-size: 0.85em
+  font-size: font-size-code
   display: grid
   grid-template-columns: max-content auto max-content
   grid-template-rows: max-content (line-height) max-content max-content max-content
@@ -94,6 +94,7 @@
 
   #footer-dots
     grid-area: dots
+    margin-block: 1rem
     li
       display: block
       height: 24px
