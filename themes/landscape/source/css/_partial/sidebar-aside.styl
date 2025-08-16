@@ -22,21 +22,6 @@
     background: dark-color-widget-background
     border: 1px solid dark-color-widget-border
   padding-left: (default-padding / 4)
-  a
-    color: color-widget-link
-    /[data-theme="dark"] &
-      color: dark-color-widget-link
-    text-decoration: none
-    &:hover
-      text-decoration: none
-  p
-    a
-      text-decoration: none
-      border-bottom: transparent 1px solid
-      color: var(--color-accent-text) !important
-      &:hover
-        border-bottom: var(--color-accent-text) 1px solid
-
   ul, ol, dl
     ul, ol, dl
       margin-left: 1rem
@@ -46,7 +31,9 @@
       /[data-theme="dark"] &
         border-color: dark-color-border
       margin: (medium-margin / 3 * 2) 0 0 -12px
-      padding-left: 10px      
+      padding-left: 10px
+      a
+        text-decoration: none
       &:hover
         border-left: 4px var(--color-accent) solid
         /[data-theme="dark"] &
@@ -54,4 +41,4 @@
         margin-left: -13px
         padding-left: 9px
         a 
-          color: var(--color-accent-text)
+          text-decoration: revert

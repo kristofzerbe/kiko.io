@@ -190,11 +190,6 @@
       mask-repeat: no-repeat
       mask-size: 16px
       mask-position: 0 2px
-    a
-      text-decoration: none
-      border-bottom: transparent 1px solid
-      &:hover
-        border-bottom-color: var(--color-accent-text)
 
   small.top-info
     background-color: var(--box-note2)
@@ -327,14 +322,7 @@
   a:not([class]), a.u-in-reply-to
     white-space: pre-line
     word-break: break-word
-    text-decoration: none
-    border-bottom-style: dashed
-    border-bottom-width: 1px
-    border-bottom-color: color-border
-    /[data-theme="dark"] &
-      border-bottom-color: dark-color-border
-    &:hover
-      border-bottom-color: var(--color-accent-text)
+    text-decoration-line: underline
   a.img-link
     @extend $inview-image
     // transition: all ease-out .6s 
@@ -689,11 +677,6 @@
     &:last-child 
       margin-block-start: default-margin
       margin-block-end: -(medium-margin + thin-margin)
-    a
-      text-decoration: none
-      border-bottom: transparent 1px solid
-      &:hover
-        border-bottom: var(--color-accent-text) 1px solid
   
 .article-syndication
   .syndication-wrapper
@@ -701,104 +684,120 @@
     flex-wrap: wrap
     a.syndication-link /* on extension see config.syndication_hosts */
       padding: 0.3rem 1.25rem 0.3rem 1.5rem
-      text-decoration: none
       overflow-wrap: break-word
       background-size: 20px 20px
       background-repeat: no-repeat
       background-position: 1rem 0.5rem
-      text-decoration: none
       color: color-link
       /[data-theme="dark"] &
         color: dark-color-link
-      span
-        border-bottom: transparent 1px solid
-        /[data-theme="dark"] &
-          opacity: 0.75
-        &:hover
-          border-bottom: color-link 1px solid
-          /[data-theme="dark"] &
-            border-bottom: dark-color-link 1px solid
       &.host-github
-        background-image: url(/images/brands/github.svg)
+        color: color-github
+        text-decoration-color: color-github
+        background-image: var(--brand-github)
         background-size: 16px
         background-position: 0 8px
         /[data-theme="dark"] &
           filter: invert(1)
-        span
-          /[data-theme="dark"] &
-            filter: invert(1)
       &.host-500px
-        background-image: url(/images/brands/500px.svg)
+        color: color-500px
+        text-decoration-color: color-500px
+        background-image: var(--brand-500px)
         background-size: 16px
         background-position: 0 8px
         /[data-theme="dark"] &
           filter: invert(1)
-        span
-          /[data-theme="dark"] &
-            filter: invert(1)
       &.host-flickr
+        color: color-flickr
+        text-decoration-color: color-flickr
         background-image: var(--brand-flickr)
         background-size: 20px
         background-position: 0 7px
         span
           padding-left: 4px
+        /[data-theme="dark"] &
+          color: dark-color-flickr
+          text-decoration-color: dark-color-flickr
       &.host-pixelfed
+        color: color-pixelfed
+        text-decoration-color: color-pixelfed
         background-image: var(--brand-pixelfed)
         background-size: 16px
         background-position: 0 8px
         /[data-theme="dark"] &
-          background-image: url(/images/brands/pixelfed_invert.svg)
+          background-image: var(--brand-pixelfed-invert)
+          color: dark-color-pixelfed
+          text-decoration-color: dark-color-pixelfed
       &.host-unsplash
+        color: color-unsplash
+        text-decoration-color: color-unsplash
         background-image: var(--brand-unsplash)
         background-size: 16px
         background-position: 0 8px
         /[data-theme="dark"] &
           filter: invert(1)
-        span
-          /[data-theme="dark"] &
-            filter: invert(1)
       &.host-mastodon
+        color: color-mastodon
+        text-decoration-color: color-mastodon
         background-image: var(--brand-mastodon)
         background-size: 16px
         background-position: 0 9px
+        /[data-theme="dark"] &
+          color: dark-color-mastodon
+          text-decoration-color: dark-color-mastodon
       &.host-indienews
+        color: color-indieweb
+        text-decoration-color: color-indieweb
         background-image: var(--brand-indieweb)
         background-size: 20px
         background-position: 0 7px
         span
           padding-left: 3px
+        /[data-theme="dark"] &
+          color: dark-color-indieweb
+          text-decoration-color: dark-color-indieweb
       &.host-devto
+        color: color-devto
+        text-decoration-color: color-devto
         background-image: var(--brand-devto)
         background-size: 16px
         background-position: 0 8px
-        /[data-theme="dark"] &
-          filter: invert(1)
         span
           padding-left: 1px
-          /[data-theme="dark"] &
-            filter: invert(1)
+        /[data-theme="dark"] &
+          filter: invert(1)
       &.host-lemmy
+        color: color-lemmy
+        text-decoration-color: color-lemmy
         background-image: var(--brand-lemmy)
         background-size: 22px
         background-position: 0 6px
         span
           padding-left: 5px
+        /[data-theme="dark"] &
+          color: dark-color-lemmy
+          text-decoration-color: dark-color-lemmy
       &.host-vernissage
+        color: color-vernissage
+        text-decoration-color: color-vernissage
         background-image: var(--brand-vernissage)
         background-size: 22px
         background-position: 0 7px
-        /[data-theme="dark"] &
-          filter: invert(1)
         span
           padding-left: 2px
-          /[data-theme="dark"] &
-            filter: invert(1)
+        /[data-theme="dark"] &
+          filter: invert(1)
       &.host-peertube
+        color: color-peertube
+        text-decoration-color: color-peertube
         background-image: var(--brand-peertube)
         background-size: 12px
         background-position: 3px 9px
         span
           padding-left: 0
+        /[data-theme="dark"] &
+          color: dark-color-peertube
+          text-decoration-color: dark-color-peertube
 
 .article-webmention
   @extend $base-style
@@ -976,12 +975,12 @@
       background: color-grey
 
 .article-nav-link-wrap
-  text-decoration: none
   box-sizing: border-box
   margin-top: block-margin
   text-align: center
   display: block
   color: var(--color-accent-text)
+  text-decoration: none
   @media mq-normal
     width: 50%
     margin-top: 0
@@ -1009,11 +1008,10 @@
 .article-nav-title
   font-size: font-size-medium
   margin-top: small-margin
-  span
-    transition: all ease-out 0.2s
-    border-bottom: transparent 1px solid;
-    &:hover
-      border-bottom-color: var(--color-accent-text)
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+    text-decoration-style: solid
 
 .article-gallery
   background: color-default
@@ -1219,9 +1217,6 @@
       overflow: hidden
       a
         word-wrap: break-word
-        text-decoration: none
-        &:hover
-          text-decoration: underline
         &:after, &:before
           font-weight: 300
           color: initial
@@ -1319,7 +1314,7 @@
   .avatar.origin-pixelfed:after
     background-image: var(--brand-pixelfed)
     /[data-theme="dark"] &
-      background-image: var(--brand-pixelfed_invert)
+      background-image: var(--brand-pixelfed-invert)
   .interaction.origin-lemmy .author:before,
   .avatar.origin-lemmy:after
     background-image: var(--brand-lemmy)

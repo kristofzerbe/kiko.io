@@ -121,13 +121,6 @@
     background: none
     opacity: 1
     height: 0;
-  a:not([class])
-    text-decoration: none
-    border-bottom: color-border-3d 1px dashed
-    /[data-theme="dark"] &
-      border-bottom: dark-color-border-3d 1px dashed
-    &:hover
-      border-bottom: var(--color-accent-text) 1px solid
   p
     margin: medium-margin 0 (default-margin)
   p.limit-4-lines
@@ -593,6 +586,96 @@
     img.link.invert
       /[data-theme="dark"] &
         filter: invert(1)
+    img.link.github + p
+      color: color-github
+      a
+        color: color-github
+        text-decoration-color: color-github
+      /[data-theme="dark"] &
+        color: dark-color-github
+        a
+          color: dark-color-github
+          text-decoration-color: dark-color-github
+    img.link.devto + p
+      color: color-devto
+      a
+        color: color-devto
+        text-decoration-color: color-devto
+      /[data-theme="dark"] &
+        color: dark-color-devto
+        a
+          color: dark-color-devto
+          text-decoration-color: dark-color-devto
+    img.link.xing + p
+      color: color-xing
+      a
+        color: color-xing
+        text-decoration-color: color-xing
+      /[data-theme="dark"] &
+        color: dark-color-xing
+        a
+          color: dark-color-xing
+          text-decoration-color: dark-color-xing
+    img.link.linkedin + p
+      color: color-linkedin
+      a
+        color: color-linkedin
+        text-decoration-color: color-linkedin
+      /[data-theme="dark"] &
+        color: dark-color-linkedin
+        a
+          color: dark-color-linkedin
+          text-decoration-color: dark-color-linkedin
+    img.link.vernissage + p
+      color: color-vernissage
+      a
+        color: color-vernissage
+        text-decoration-color: color-vernissage
+      /[data-theme="dark"] &
+        color: dark-color-vernissage
+        a
+          color: dark-color-vernissage
+          text-decoration-color: dark-color-vernissage
+    img.link.pixelfed + p
+      color: color-pixelfed
+      a
+        color: color-pixelfed
+        text-decoration-color: color-pixelfed
+      /[data-theme="dark"] &
+        color: dark-color-pixelfed
+        a
+          color: dark-color-pixelfed
+          text-decoration-color: dark-color-pixelfed
+    img.link.flickr + p
+      color: color-flickr
+      a
+        color: color-flickr
+        text-decoration-color: color-flickr
+      /[data-theme="dark"] &
+        color: dark-color-flickr
+        a
+          color: dark-color-flickr
+          text-decoration-color: dark-color-flickr
+    img.link.unsplash + p
+      color: color-unsplash
+      a
+        color: color-unsplash
+        text-decoration-color: color-unsplash
+      /[data-theme="dark"] &
+        color: dark-color-unsplash
+        a
+          color: dark-color-unsplash
+          text-decoration-color: dark-color-unsplash
+    img.link.fivehundredpx + p
+      color: color-500px
+      a
+        color: color-500px
+        text-decoration-color: color-500px
+      /[data-theme="dark"] &
+        color: dark-color-500px
+        a
+          color: dark-color-500px
+          text-decoration-color: dark-color-500px
 
   section.feeds
     .feed-group
@@ -606,22 +689,20 @@
         grid-template-rows: auto
         grid-template-areas: "icon link info" ". size ."
         padding-block: small-margin
-        text-decoration: none
         align-items: center
-        &:hover
-          background-color: color-hover-background
-          /[data-theme="dark"] &
-            background-color: dark-color-hover-background
         span
           grid-area: link
         em
           grid-area: size
       a.atom
-        color: #4b81d1
+        color: color-atom
+        text-decoration-color: color-atom
       a.rss
-        color: #56a5d5
+        color: color-rss
+        text-decoration-color: color-rss
       a.json
-        color: #bf403b
+        color: color-json
+        text-decoration-color: color-json
       a:before
         grid-area: icon
         display: inline-block
@@ -644,6 +725,7 @@
         content: "- default"
         margin-left: small-margin
         font-size: font-size-small
+        /* text-decoration-color: transparent --- doesn't work */
 
   section.mf2feed
     .h-feed
@@ -670,10 +752,8 @@
             padding-block-start: medium-padding
             a
               text-decoration: none
-              transition: all ease-out 0.2s
-              border-bottom: transparent 1px solid;
               &:hover
-                border-bottom-color: var(--color-accent-text)
+                text-decoration: revert
             time
               position: unset
               margin-block: small-margin

@@ -333,7 +333,7 @@ function setAccentColor(hex) {
     hexMedian = tinycolor(hex).brighten(15).toHexString();
   } else {
     hexText = hex; //tinycolor(hex).brighten(5).toHexString();
-    hexTextNear = tinycolor(hex).brighten(25).toHexString();
+    hexTextNear = tinycolor(hex).brighten(30).toHexString();
     hexMedian = tinycolor(hex).brighten(45).toHexString();
   }
 

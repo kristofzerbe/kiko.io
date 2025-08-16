@@ -196,9 +196,13 @@ figure
 a
   transition: all ease-out 0.2s
   color: var(--color-accent-text)
-
-a:not([class])
-  text-decoration-skip-ink: auto // Andy Bells Modernized Reset (not need, because border underline here)
+  text-decoration-color: var(--color-accent-text)
+  text-decoration-thickness: 1px
+  text-underline-offset: 0.3em
+  text-decoration-skip-ink: auto
+  text-decoration-style: dashed
+  &:hover
+    text-decoration-style: solid
 
 small.label
   display: block
