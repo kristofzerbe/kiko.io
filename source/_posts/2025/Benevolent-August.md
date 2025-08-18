@@ -20,7 +20,9 @@ syndication:
   - host: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/12
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/115049091806509053
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/863038966434306919
 ---
 
 The last days of July in Germany were marked by lots of rain and wind, and the nasty weather continued into August. Not that I noticed much of it, as I was in Sweden with my girl, but I kept getting weather warnings for Wiesbaden on my smartphone and we weren't completely left out in the north either.
