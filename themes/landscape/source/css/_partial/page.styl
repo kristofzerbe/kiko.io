@@ -324,9 +324,8 @@
         overflow: hidden
         text-overflow: ellipsis
         font-size: font-size-medium
-        padding: (default-padding-vert / 3) (default-padding / 2)
+        padding: thin-padding (thin-padding + small-padding)
         opacity: 0.75
-        border-radius: border-radius border-radius 0 0
         color: white
         &.used.start
           background-color: rgba(187, 94, 8, 0.5)
@@ -362,6 +361,11 @@
     display: flex
     flex-direction: column
     flex-wrap: nowrap
+    --card-photo-width: 12rem
+    --card-photo-padding: (small-padding + thin-padding)
+    @media mq-mobile
+      --card-photo-width: 8rem
+      --card-photo-padding: small-padding
     .card
       padding: small-margin
       padding-bottom: 0
@@ -369,10 +373,12 @@
       display: grid
       .card-img
         grid-area: image
-        height: 90px
+        height: auto
         margin: -(small-margin)
         margin-bottom: 0
-        border-radius: 0 0 0 border-radius
+        border-radius: border-radius 0 0 0
+      .status
+        border-radius: 0 0 border-radius border-radius
       h3
         margin: medium-margin 0 0
         font-size: font-subtitle-size
@@ -402,11 +408,11 @@
           margin: 0 small-margin (small-margin + thin-margin) 0
 
     .card.photo
-      grid-template-rows: auto auto 1fr
-      grid-template-columns: calc(150px + 0.25rem) auto
-      grid-template-areas: "status status" "image link" "image title"
+      grid-template-rows: 1.5rem auto auto
+      grid-template-columns: calc(var(--card-photo-width) + var(--card-photo-padding)) auto
+      grid-template-areas: "image link" "image title" "status status"
       .card-img
-        width: 150px
+        width: var(--card-photo-width)
       h3
         margin: 0
         align-self: center
@@ -418,17 +424,16 @@
         padding-top: 0.25rem
       .status
         grid-area: status
-        margin: -(small-margin)
-        margin-bottom: (small-margin)
+        margin: 0 -0.5rem
 
   .grid
     display: grid
     grid-gap: 2em
     grid-template-columns: repeat(auto-fill, minmax(220px,1fr))
     .card
-      padding: (default-padding / 2)
+      padding: medium-padding
       .card-img
-        margin: -(default-padding / 2)
+        margin: -(medium-margin)
         margin-bottom: 0
         height: auto
         img
@@ -436,7 +441,7 @@
           height: 100%
           object-fit: cover
       h3
-        margin: default-margin 0 small-margin
+        margin: medium-margin 0 default-margin
         font-size: font-subtitle-size
         
     .card.collection
@@ -456,16 +461,20 @@
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 75%, rgba(41, 41, 41, 1) 100%)
 
     .card.photo
-      grid-template-areas: "status" "image" "text"
+      grid-template-rows: auto auto 2rem 1fr 2rem
+      grid-template-areas: "image" "pretitle" "links" "title" "status"
+      padding: medium-padding medium-padding 0
       .card-img
         grid-area: image
+        border-radius: border-radius border-radius 0 0
         img
           height: 160px
       h3
-        min-height: 3rem /* HACK */
+        grid-area: title
+        align-self: center
       div.card-links
-        padding-top: (small-margin / 2)
-        min-height: 2rem /* HACK */
+        grid-area: links
+        padding-top: thin-margin
         a.syndication-link,
         span.info.content
           width: 16px
@@ -533,15 +542,15 @@
             opacity: 0.33
           /[data-theme="dark"] &
             filter: invert(1)
-
       span.pre-title
+        grid-area: pretitle
         display: block
         margin-block: small-margin
         line-height: line-height-small
       .status
         grid-area: status
-        margin: -(default-padding / 2)
-        margin-bottom: (default-padding / 2)
+        margin: 0 -1rem
+        border-radius: 0 0 border-radius border-radius
     
   .masonry
     display: block
@@ -554,8 +563,8 @@
         display: flex
         width: auto
         //filter: grayscale(0) contrast(1) !important
+        border-radius: border-radius
         img 
-          border-radius: border-radius-small
           width: 100%
       div.card-links
         display: none
