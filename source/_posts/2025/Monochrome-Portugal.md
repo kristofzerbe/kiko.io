@@ -29,7 +29,7 @@ syndication:
     title: Five More
     url: https://pixelfed.social/p/kristofz/857338870652034748
   - host: Pixelfed
-  - title: Beach People
+    title: Beach People
     url: https://pixelfed.social/p/kristofz/864800651846129663
 ---
 
