@@ -428,7 +428,7 @@
 
   .grid
     display: grid
-    grid-gap: 2em
+    grid-gap: default-margin
     grid-template-columns: repeat(auto-fill, minmax(220px,1fr))
     .card
       padding: medium-padding
@@ -468,7 +468,11 @@
         grid-area: image
         border-radius: border-radius border-radius 0 0
         img
-          height: 160px
+          height: 12rem
+          @media mq-tablet
+            height: 14rem
+          @media mq-mobile
+            height: 15rem
       h3
         grid-area: title
         align-self: center
