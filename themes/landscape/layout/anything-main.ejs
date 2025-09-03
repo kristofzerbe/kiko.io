@@ -2,6 +2,10 @@
   <%- partial('_partial/photograph') %>
 <% } %>
 
+<% if (page.path.startsWith("series")) { %>
+  <%- partial('_partial/nav-index-archives') %>
+<% } %>
+
 <h1 class="archive-title"><%= page.title %></h1>
 
 <% if (page.content){ %>

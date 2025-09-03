@@ -169,6 +169,10 @@ function initHeader() {
   header.photoLinkOpacity = parseFloat($("#header-photo-link").css("opacity"));
   header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
 
+  if (document.querySelector(".page-nav-index") != null) {
+    document.getElementById("header-nav").classList.add("has-nav-index");
+  }
+
   scrollHeader();
 }
 

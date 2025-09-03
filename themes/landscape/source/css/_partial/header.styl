@@ -101,8 +101,6 @@ header.photograph #header-photo-link
   width: 100%
   height: auto  
   backdrop-filter: blur(5px) brightness(90%)
-  @supports not (backdrop-filter: none)
-    background: rgba(0,0,0,0.25)
   box-sizing: content-box
   overflow-x: scroll
   overflow-y: hidden
@@ -111,6 +109,8 @@ header.photograph #header-photo-link
     display: none
   @supports not (webkit-scrollbar)  
     scrollbar-width: none
+  &.has-nav-index
+    background: linear-gradient(180deg, transparent 55%, var(--color-accent) 100%)
   .menu
     display: flex
     list-style: none
