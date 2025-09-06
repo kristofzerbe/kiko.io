@@ -1,14 +1,17 @@
-<div class="archive-list-navigation" data-pagefind-ignore>
+<div class="archive-list">
+  <em>Filter archive by ...</em>
+  <div class="archive-list-navigation" data-pagefind-ignore>
     <div class="archive-list-wrapper archive-list-months">
-        <h2>Month / Year</h2>
-        <%- list_archives({show_count: theme.show_count, type: theme.archive_type}) %>
+      <h2>Date</h2>
+      <%- list_archives({show_count: theme.show_count, type: theme.archive_type}) %>
     </div>
     <div class="archive-list-wrapper archive-list-categories">
-        <h2>Categories</h2>
-        <%- list_categories({show_count: theme.show_count}) %>
-    </div>  
+      <h2>Category</h2>
+      <%- list_categories({show_count: theme.show_count}) %>
+    </div>
     <div class="archive-list-wrapper archive-list-tags">
-        <h2>Tags</h2>
-        <%- list_tags({show_count: theme.show_count, amount: 0}) %>
-    </div> 
+      <h2>Tag</h2>
+      <%- list_tags({show_count: theme.show_count, amount: 0}) %>
+    </div>
+  </div>
 </div>

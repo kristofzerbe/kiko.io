@@ -1,9 +1,10 @@
+<% let iconDir = process.cwd() + '/static/images/icons/' %>
 <nav class="page-nav-index">
 <% if (["archives","categories","tags"].filter(p => page.path.startsWith(p)).length > 0) { %>
-  <a href="/archives" class="current"><%- iconCodeCurrent %></a>
+  <a href="/archives" class="current <%= currentClass %>"><%- include(iconDir + "black-diamond.svg") %></a>
   <a href="/series">Series</a>
 <% } else if (page.path.startsWith("series")) { %>
   <a href="/archives">Articles</a>
-  <a href="/series" class="current"><%- iconCodeCurrent %></a>
+  <a href="/series" class="current <%= currentClass %>"><%- include(iconDir + "black-diamond.svg") %></a>
 <% } %>
 </nav>

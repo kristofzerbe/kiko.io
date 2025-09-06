@@ -47,6 +47,12 @@
   /[data-theme="dark"] &
     color: dark-color-header
 
+.archive-list
+  > em
+    font-style: italic
+    font-size: font-size-medium
+    margin-left: thin-margin
+
 .archive-list-navigation
   padding: 0 default-padding-vert (default-padding-vert / 3) 0
   display: flex
@@ -54,24 +60,26 @@
   flex-wrap: nowrap
   overflow-x: auto
   font-size: font-size-medium
-  background: linear-gradient(90deg, color-background 30%, color-block 80%, color-background 100%)
+  background: linear-gradient(90deg, color-background 5%, color-block 50%, color-background 100%)
   /[data-theme="dark"] &
-    background: linear-gradient(90deg, dark-color-background 30%, dark-color-block 80%, dark-color-background 100%)
+    background: linear-gradient(90deg, dark-color-background 5%, dark-color-block 50%, dark-color-background 100%)
   .archive-list-wrapper
     flex: 0 0 auto
-    padding-right: default-padding
+    // padding-right: default-padding
     transition: all .2s ease
     &:hover
       color: var(--color-accent-text)
     h2
       font-weight: font-weight-bold
-      margin-bottom: medium-margin
+      margin-block: medium-margin small-margin
+      margin-left: (medium-margin - thin-margin)
     ul
       display: flex
       justify-content: flex-start
       flex-direction: column
       flex-wrap: wrap
-      max-height: 230px;
+      max-height: 230px
+      margin-block: small-margin
       li
         flex: 1 0 25%
         box-sizing: border-box
@@ -91,8 +99,8 @@
           padding-left: 9px
         a
           display: block
-          width: calc(100% - 40px)
-          margin-right: 20px
+          min-width: 6rem
+          margin-right: default-margin
           color: color-widget-link
           /[data-theme="dark"] &
             color: dark-color-widget-link

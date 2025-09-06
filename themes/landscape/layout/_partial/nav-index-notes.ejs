@@ -1,3 +1,4 @@
+<% let iconDir = process.cwd() + '/static/images/icons/' %>
 <%
   let currentIndex = page.years.map(function(y) { return y.year; }).indexOf(page.year);
   let prevIndex = -1;
@@ -9,7 +10,7 @@
   <% if (prevIndex > -1 ) { %>
   <a href="/<%= page.years[prevIndex].link %>" class="prev"><%= page.years[prevIndex].year %></a>
   <% } %>
-  <a href="/<%= page.years[currentIndex].link %>" class="current"><%- iconCodeCurrent %></a>
+  <a href="/<%= page.years[currentIndex].link %>" class="current <%= currentClass %>"><%- include(iconDir + "black-diamond.svg") %></a>
   <% if (nextIndex > -1 ) { %>
   <a href="/<%= page.years[nextIndex].link %>" class="next"><%= page.years[nextIndex].year %></a>
   <% } %>

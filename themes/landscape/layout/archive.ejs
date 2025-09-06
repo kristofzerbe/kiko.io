@@ -8,22 +8,25 @@
   <%- partial('_partial/photograph') %>
 <%# } %>
 
-<%- partial('_partial/nav-index-archives', { iconCodeCurrent: config.html_codes.four_pointed_star }) %>
+<% 
+let currentClass = "";
+if (page.year) { currentClass = "skip-right"; }
+%>
 
-<% if (page.month) { %>
+<%- partial('_partial/nav-index-archives', { currentClass: currentClass }) %>
+
+<% if (page.year) { %>
   <h1 class="archive-title">
     <small>Articles</small>
+  <% if (page.month) { %>
     <em class="date"></em><%= moment().month(page.month).subtract(1, "month").format('MMMM') %> <%= page.year %>
+  <% } else { %>
+    <em class="date"></em><%= page.year %>
+  <% } %>
   </h1>
 <% } else { %>
-  <% if (page.year) { %>
-    <h1 class="archive-title">
-      <small>Articles</small>
-      <em class="date"></em><%= page.year %>
-    </h1>
-  <% } else { %>
-    <h1 class="archive-title">Articles</h1>
-  <% } %>
+  <h1 class="archive-title">Articles</h1>
 <% } %>
+
 <%- partial('_partial/archive-navigation') %>
 <%- partial('_partial/archive-item', { pagination: config.archive, index: true }) %>
