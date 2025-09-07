@@ -27,7 +27,7 @@ syndication:
 
 In my hometown of Wiesbaden, they say, <cite>After the wine festival, autumn is just around the corner</cite>. That was only recently, so I am trying with a heavy heart to mentally prepare myself for the dark season.
 
-But this weekend, there's no sign of that yet. It's 82 degrees Fahrenheit, and the flowers and insects are going for it. Everything is blooming, buzzing, and humming, and Thomas is busy working in the middle of it all.
+But this weekend, there's no sign of that yet. It's 28 degrees Celsius, and the flowers and insects are going for it. Everything is blooming, buzzing, and humming, and Thomas is busy working in the middle of it all.
 
 <!-- more -->
 
