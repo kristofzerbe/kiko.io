@@ -18,11 +18,11 @@ related:
   - Overgrown-June
 syndication:
   - host: GitHub
-    url: null
+    url: https://github.com/kristofzerbe/kiko.io/issues/13
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/115167388110206603
   - host: Pixelfed
-    url: null
+    url: https://pixelfed.social/p/kristofz/870559518490351288
 ---
 
 In my hometown of Wiesbaden, they say, <cite>After the wine festival, autumn is just around the corner</cite>. That was only recently, so I am trying with a heavy heart to mentally prepare myself for the dark season.
