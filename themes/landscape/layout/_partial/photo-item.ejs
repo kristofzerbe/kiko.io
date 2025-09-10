@@ -6,10 +6,14 @@
      data-date-created="<%- item.meta?.DateTimeOriginal %>">
 
   <% if (item.article){ %>
-    <% if (item.type === "draft") { %>
-      <span class="status <%- item.status %> <%- item.type %>">Draft <em>&rbarr; <%- item.article.title %></em></span>
+    <% if (item.article.hidden) { %>
+      <span class="status <%- item.status %> <%- item.type %>">Used</span>
     <% } else { %>
-      <a class="status <%- item.status %> <%- item.type %>" href="<%- item.article.url %>"><%- item.article.title %></a>
+      <% if (item.type === "draft") { %>
+        <span class="status <%- item.status %> <%- item.type %>">Draft <em>&rbarr; <%- item.article.title %></em></span>
+      <% } else { %>
+        <a class="status <%- item.status %> <%- item.type %>" href="<%- item.article.url %>"><%- item.article.title %></a>
+      <% } %>
     <% } %>
   <% } else { %>
     <span class="status <%- item.status %> <%- item.type %>">Unused (<%- item.type.charAt(0).toUpperCase() + item.type.slice(1) %>)</span>

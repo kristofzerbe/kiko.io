@@ -217,7 +217,7 @@ function getPostAndPagePhotos() {
 //console.log(JSON.stringify(used) + "\n ----------------------------------");
 
   let postsAndPages = [...locals.get("posts").data, ...locals.get("pages").data].map(fm => {
-    if (!fm.hidden && fm.photograph && !fm.photograph.keepOutOverview) {
+    if (fm.photograph && !fm.photograph.keepOutOverview) {  
       return {
         title: fm.title,
         subTitle: fm.subtitle,
@@ -226,6 +226,7 @@ function getPostAndPagePhotos() {
         layout: fm.layout,
         photographFile: fm.photograph.file,
         photographName: fm.photograph.name,
+        hidden: fm.hidden
       };
     }
   });
@@ -246,10 +247,12 @@ function getPostAndPagePhotos() {
     if (post) {
       entry.name = meta?.ObjectName || post.photographName;
       entry.type = post.layout;
+
       entry.article = {
         date: post.date,
         title: post.title,
-        subtitle: post.subTitle
+        subtitle: post.subTitle,
+        hidden: post.hidden
       };
 
       let url = post.path.replace("/index.html", ""); // for posts und archives
@@ -257,14 +260,6 @@ function getPostAndPagePhotos() {
         url = `${url}`.replace("//", "/").replace(".html", ""); // for archives + other pages
       }
       entry.article.url = "/" + url;
-
-      // console.log(post.layout + " | " + post.path);
-      // if (post.layout == "page") {
-      //   console.log("===================");
-      //   console.log(post);
-      //   console.log("-----------");
-      //   console.log(entry.article);
-      // }
     }
 
     entry.pathMobile = "/" + path.join(config.photo_dir, "mobile", entry.file).replace(/\134/g,"/");

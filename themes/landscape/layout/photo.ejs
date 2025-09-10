@@ -36,14 +36,18 @@
         <% if (page.status === 'unused') { %>
           <span>Unused in <%= page.type %></span>
         <% } else { %>
-          <% if (page.type === "draft") { %>
-            <span>Used at draft <em><%= page.article?.title %></em></span>
-          <% } else if (page.type === "start") { %>
-            <span>Used at <a href="<%= page.article.url %>"><%= page.type %></a> page</span>
+          <% if (page.article.hidden) { %>
+            <span>Used</span>
           <% } else { %>
-            <span>Used at <%= page.type + ((["page", "post"].some(v => page.type.includes(v))) ? "" : " page") %> 
-              <a href="<%= page.article?.url %>"><%= page.article?.title %></a>
-            </span>
+            <% if (page.type === "draft") { %>
+              <span>Used at draft <em><%= page.article?.title %></em></span>
+            <% } else if (page.type === "start") { %>
+              <span>Used at <a href="<%= page.article.url %>"><%= page.type %></a> page</span>
+            <% } else { %>
+              <span>Used at <%= page.type + ((["page", "post"].some(v => page.type.includes(v))) ? "" : " page") %> 
+                <a href="<%= page.article?.url %>"><%= page.article?.title %></a>
+              </span>
+            <% } %>
           <% } %>
         <% } %>
       </li>
