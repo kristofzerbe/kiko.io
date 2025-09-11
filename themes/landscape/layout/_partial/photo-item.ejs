@@ -40,10 +40,15 @@
         <img src="/images/icons/location-none.svg" title="no location" />
       </span>
       <% } %>
+      <% if (item.meta?.custom?.box?.length > 0) { %>
+      <span class="info-content info-isinbox" data-box-slug="<%- slugify(item.meta.custom.box) %>">
+        <img src="/images/icons/box.svg" title="is in box &laquo;<%= item.meta.custom.box %>&raquo;" />
+      </span>
+      <% } %>
       <% if (item.meta?.custom?.featured?.slug) { %>
       <span class="info-content info-featured">
         <a class="featured-link" href="/post/<%= item.meta.custom.featured.slug %>">
-          <img src="/images/icons/featured.svg" title="featured in <%= item.meta.custom.featured.title %>" />
+          <img src="/images/icons/featured.svg" title="featured in &laquo;<%= item.meta.custom.featured.title %>&raquo;" />
         </a>
       </span>
       <% } %>
