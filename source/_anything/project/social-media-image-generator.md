@@ -21,5 +21,5 @@ For more information visit:
 <div class="brand-links">
 <a href="https://github.com/kristofzerbe/social-media-image-generator" class="github"><img src="/images/brands/github.svg" alt="Github" /><span>Github</span></a>
 <span style="margin-top:25px">or</span>
-<a href="https://open.vscode.dev/kristofzerbe/social-media-image-generator" class="vscode"><img src="/images/brands/vscode.svg" alt="VSCode" /><span>Open in VSCode</span></a>
+<a href="https://vscode.dev/github/kristofzerbe/social-media-image-generator" class="vscode"><img src="/images/brands/vscode.svg" alt="VSCode" /><span>Open in VSCode</span></a>
 </div>

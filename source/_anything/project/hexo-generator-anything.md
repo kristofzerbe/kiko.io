@@ -25,5 +25,5 @@ For more information visit:
 <a href="https://www.npmjs.com/package/hexo-generator-anything" class="npm"><img src="/images/brands/npm.svg" alt="NPM" /><span>NPM</span></a>
 <a href="https://deps.dev/npm/hexo-generator-anything" class="insights"><img src="/images/brands/insights.svg" alt="Open Source Insights" /><span>Insights</span></a>
 <span style="margin-top:25px">or</span>
-<a href="https://open.vscode.dev/kristofzerbe/hexo-generator-anything" class="vscode"><img src="/images/brands/vscode.svg" alt="VSCode" /><span>Open in VSCode</span></a>
+<a href="https://vscode.dev/github/kristofzerbe/hexo-generator-anything" class="vscode"><img src="/images/brands/vscode.svg" alt="VSCode" /><span>Open in VSCode</span></a>
 </div>
