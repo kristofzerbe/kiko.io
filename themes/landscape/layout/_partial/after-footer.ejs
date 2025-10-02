@@ -75,19 +75,17 @@
   }, 250);
 
   // AUTOTYPING
-  setTimeout(function() {
-    $("#title-wrap").empty();
-    new AutoTyping({
-      id: 'title-wrap',
-      typeText: ['<%= config.title %>'],
-      textColor: '#fff',
-      typeSpeed: 100,
-      typeDelay: 100,
-      showCursor: false,
-      delete: false,
-      typeInfinity: false
-    }).init();
-  }, 1000);
+  $("#title-wrap").empty();
+  new AutoTyping({
+    id: 'title-wrap',
+    typeText: ['<%= config.title %>'],
+    textColor: '#fff',
+    typeSpeed: 100,
+    typeDelay: 200,
+    showCursor: false,
+    delete: false,
+    typeInfinity: false
+  }).init();
 
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
