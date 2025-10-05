@@ -18,8 +18,10 @@ related:
 syndication:
   - host: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/14
+  - host: PeerTube
+    url: https://clip.place/w/g2Au5rvKrBuT2W53qFap3K
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/115321922654933080
 ---
 
 3 October is a public holiday in Germany: Unity Day. As it fell on a Friday this year, my wife and I had a relaxed 2.5-hour journey to Stuttgart to see our favourite band, **DISTURBED** on their 25th Sickness Anniversary Tour. What we didn't realise, however, was that Europe's second-largest folk festival, the **Cannstatter Wasen**, was taking place right next to the concert hall and our hotel. 
@@ -33,7 +35,6 @@ But we seized the opportunity and went to the Wasen before the concert, with MEG
 {% photo_masonry
   "PXL_20251003_143914294"
   "PXL_20251003_152345894"
-  "PXL_20251003_152751829"
   "PXL_20251003_152806688"
   "PXL_20251003_153819650"
   "PXL_20251003_161610193"
@@ -45,7 +46,6 @@ But we seized the opportunity and went to the Wasen before the concert, with MEG
   "PXL_20251003_193455009"
   "PXL_20251003_200957971"
   "PXL_20251003_201453305"
-  "PXL_20251003_203717292"
   "PXL_20251003_204119507"
   "PXL_20251003_205511647"
   "PXL_20251003_210012998"
