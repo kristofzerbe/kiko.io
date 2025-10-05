@@ -55,6 +55,6 @@ But we seized the opportunity and went to the Wasen before the concert, with MEG
   "PXL_20251003_214837454"
 %}
 
-Of course, songs like *Stupify* and *Violence Fetish* are among my all-time favourites, but *The Sound of Silence* is a such masterpiece, that even Paul Simon himself is said to have called the best interpretation he has ever heard. And live, it's only slightly less good than on the album:
+Of course, songs like *Stupify* and *Violence Fetish* are among my all-time favourites, but *The Sound of Silence* is such a masterpiece, that even Paul Simon himself is said to have called the best interpretation he has ever heard. And live, it's only slightly less good than on the album:
 
 {% peertube "clip.place" "g2Au5rvKrBuT2W53qFap3K" "PXL_20251003_202430681" %}
