@@ -22,6 +22,8 @@ syndication:
     url: https://clip.place/w/g2Au5rvKrBuT2W53qFap3K
   - host: Mastodon
     url: https://indieweb.social/@kiko/115321922654933080
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/880570669557468182
 ---
 
 3 October is a public holiday in Germany: Unity Day. As it fell on a Friday this year, my wife and I had a relaxed 2.5-hour journey to Stuttgart to see our favourite band, **DISTURBED** on their 25th Sickness Anniversary Tour. What we didn't realise, however, was that Europe's second-largest folk festival, the **Cannstatter Wasen**, was taking place right next to the concert hall and our hotel. 
