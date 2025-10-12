@@ -21,7 +21,10 @@ syndication:
   - host: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/15
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/115361194863671687
+  - host: Pixelfed
+    title: Colors
+    url: https://pixelfed.social/p/kristofz/882964082089369606
 ---
 
 Before my sweetheart and I went to Sweden for a two-week relaxing holiday in August this year, I had honestly never looked into the geographical particularities of the area around Stockholm. All I knew was that they have a lot of water and boats there. I was familiar with the skerries and the tens of thousands of islands towards the open sea, but I wasn't aware that this was repeated west of Stockholm in the fresh water of Lake Mälaren.
