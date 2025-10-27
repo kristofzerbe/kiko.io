@@ -3,7 +3,7 @@ const { magenta } = require('chalk');
 const path = require('path');
 const fs = require('hexo-fs');
 const front = require('hexo-front-matter');
-const { getHelpers, getMD, updateMDField } = require("../../lib/tools.cjs");
+const { getHelpers, getMD, updateMDField, slugify } = require("../../lib/tools.cjs");
 
 const _helpers = getHelpers(hexo);
 const _rootDir = hexo.source_dir.replace("source", "");
@@ -29,6 +29,8 @@ hexo.on('generateBefore', function() {
   let photos = [...pHero, ...pPool, ...pReserve, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes] // ...pShed
     .filter(p => (p.name)) //filter out all without photo name
     .sort((a, b) => a.key.localeCompare(b.key));
+
+  let photosPublic = [...photos, ...pShed];
 
   let newestPhotoDate = new Date(Math.max(...photos.map(p => new Date(p.date))));
   // console.log(newestPhotoDate);
@@ -69,9 +71,8 @@ hexo.on('generateBefore', function() {
   }
 
   let coordinates = {};
-  let photoCount = 0;
-  let photoMap = [...photos, ...pShed]
-  photoMap.forEach((obj) => {
+  let photomapCount = 0;
+  photosPublic.forEach((obj) => {
     if (obj.meta?.latitude && obj.meta?.longitude) {
       let latlng = shortDec(obj.meta.latitude) + "|" + shortDec(obj.meta.longitude);
       if (!coordinates.hasOwnProperty(latlng)) {
@@ -82,7 +83,7 @@ hexo.on('generateBefore', function() {
         };
       }
       if (!coordinates[latlng].photos.find(p => p.name === obj.key)) {
-        photoCount++;
+        photomapCount++;
         coordinates[latlng].photos.push({
           name: obj.key,
           title: obj.name,
@@ -95,12 +96,97 @@ hexo.on('generateBefore', function() {
     return coordinates[key];
   }).sort((a,b) => (a.latlng > b.latlng) ? 1 : ((b.latlng > a.latlng) ? -1 : 0));
 
-  map.content = map.content.replace("{% photo.count %}", photoCount);
+  map.content = map.content.replace("{% photo.count %}", photomapCount);
 
   pages.photomap = map;
 
+  // PHOTO BOXES page -------------------------------------------------------------------
+  // (get boxes and join photos)
+  let boxesFile = path.join(_rootDir, config.static_dir, "photo-boxes.json");
+  let boxesJson;
+  if (fs.existsSync(boxesFile)) {
+    boxesJson = JSON.parse(fs.readFileSync(boxesFile));
+  }
+  let boxesItems = boxesJson
+    .filter((b) => b.title.length > 0)
+    .map((box) => {
+      box.key = slugify(box.title);
+      box.photos = [];
+      return box;
+    })
+    //.sort((x, y) => x.period.localeCompare(y.period))
+    //.reverse();
+
+  let photoboxCount = 0;
+  photosPublic.forEach((p) => {
+    //console.log(p);
+    let box = boxesItems.find(b => b.title === p.meta.custom.box);
+    if (box) {
+      photoboxCount++;
+      box.photos.push(p);
+    }
+  });
+
+  boxesItems.forEach((b) => {
+    b.coverPhoto = b.photos.find(p => p.key === b.cover);
+    b.photos = b.photos.sort((x, y) => new Date(y.meta.DateCreated) - new Date(x.meta.DateCreated))
+
+    // console.log(b.title + " ... " + b.cover);
+    // console.log("------------------------------------------------");
+    // console.log(b.coverPhoto?.key);
+    // console.log("---------");
+    // console.log(b.photos.map(x => x.key));
+
+    if (b.period.includes("|")) {
+      let period = b.period.split("|");
+      b.periodStart = period[0];
+      b.periodEnd = period[1];
+
+      if (b.periodEnd?.length === 0) {
+        let latestDate = new Date(b.photos[0].meta.DateCreated);
+        b.periodEnd = latestDate.toISOString().split('T')[0];
+        b.periodString = "since " + b.periodStart
+      } else {
+        b.periodString = b.periodStart + " to " + b.periodEnd;
+      }
+    } else {
+      b.periodStart = b.period;
+      b.periodEnd = b.period;
+      b.periodString = b.period;
+    }
+  });
+
+  // -----
+  let boxes = { name: "photos-boxes" };
+  let mdBoxes = path.join("_dynamic", boxes.name + ".md");
+  boxes = getMD(hexo, mdBoxes, boxes);
+  boxes.items = boxesItems
+    .sort((x, y) => x.periodEnd.localeCompare(y.periodEnd))
+    .reverse();
+  boxes.content = boxes.content
+    .replace("{% photo.count %}", photoboxCount)
+    .replace("{% box.count %}", boxes.items.length);
+
+  pages.photoboxes = boxes;
+
+  // PHOTO BOX pages ---------------------------------------------------------------------
+  let boxTemplate = { name: "photos-box" };
+  let mdBox = path.join("_dynamic", boxTemplate.name + ".md");
+  boxTemplate = getMD(hexo, mdBox, boxTemplate);
+
+  boxesItems.forEach(box => {
+    box = {...boxTemplate, ...box};
+    box.path = path.join(config.photo_dir, "boxes", box.key, "index.html");
+    box.slug = box.key;
+    box.permalink = config.url + "/" + config.photo_dir + "/boxes/" + box.key;
+    box.items = box.photos;
+    // console.log(box);
+
+    pages["photosbox-" + box.key] = box;
+  });
+
   // individual PHOTO pages --------------------------------------------------------------
-  let photoPages = [...photos, ...pShed]
+  let photoPages = photosPublic
     .filter(p => (p.name)) //filter out all without photo name
 
   photoPages.forEach(photo => {
@@ -110,6 +196,8 @@ hexo.on('generateBefore', function() {
     photo.slug = photo.key;
     photo.permalink = config.url + "/" + config.photo_dir + "/" + photo.key;
     photo.photo = true;
+
+    //TODO: plus photo.box (URL)
 
     if (photo.article && photo.article.date > new Date(photo.date)) {
       photo.updated = photo.article.date;
@@ -122,9 +210,9 @@ hexo.on('generateBefore', function() {
 
   let dyn = {...hexo.locals.get('dynamic'), ...pages};
   hexo.locals.set('dynamic', dyn);
-
-  // console.log(hexo.locals.get('dynamic'));
 });
+
+/** ================================================================================= */
 
 function shortDec(dec) {
   return dec.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0];
@@ -217,7 +305,7 @@ function getPostAndPagePhotos() {
 //console.log(JSON.stringify(used) + "\n ----------------------------------");
 
   let postsAndPages = [...locals.get("posts").data, ...locals.get("pages").data].map(fm => {
-    if (fm.photograph && !fm.photograph.keepOutOverview) {  
+    if (fm.photograph && !fm.photograph.keepOutOverview) {
       return {
         title: fm.title,
         subTitle: fm.subtitle,

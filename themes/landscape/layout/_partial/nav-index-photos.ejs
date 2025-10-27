@@ -5,16 +5,26 @@
       <a href="/photos" class="current <%= currentClass %>"><%- include(iconDir + "black-diamond.svg") %></a>
       <a href="/photos/shed">Shed</a>
       <a href="/photos/map">Map</a>
+      <a href="/photos/boxes">Boxes</a>
       <% break;
     case "photos-shed": %>
       <a href="/photos">Photos</a>
       <a href="/photos/shed" class="current <%= currentClass %>"><%- include(iconDir + "black-diamond.svg") %></a>
       <a href="/photos/map">Map</a>
+      <a href="/photos/boxes">Boxes</a>
       <% break;
     case "photos-map": %>
       <a href="/photos">Photos</a>
       <a href="/photos/shed">Shed</a>
       <a href="/photos/map" class="current <%= currentClass %>"><%- include(iconDir + "black-diamond.svg") %></a>
+      <a href="/photos/boxes">Boxes</a>
+      <% break;
+    case "photos-boxes":
+    case "photos-box": %>
+      <a href="/photos">Photos</a>
+      <a href="/photos/shed">Shed</a>
+      <a href="/photos/map">Map</a>
+      <a href="/photos/boxes" class="current <%= currentClass %>"><%- include(iconDir + "black-diamond.svg") %></a>
       <% break;
   } %>
 </nav>

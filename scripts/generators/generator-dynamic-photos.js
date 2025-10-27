@@ -33,17 +33,40 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
     layout: "photos-map"
   });
 
-  // photo pages
+  // photo boxes page
+  let boxes = locals.dynamic.photoboxes;
+  result.push({
+    data: boxes,
+    path: path.join(page.name, "boxes", "index.html"),
+    layout: "photos-boxes"
+  });
+
+  // photo box pages
+  // TODO ...
+
+  // photo & photos box pages
   Object.keys(locals.dynamic).forEach(function(key,index) {
+
+    if (key.startsWith("photosbox-")) {
+      let box = locals.dynamic[key];
+      result.push({
+        name: box.key,
+        data: box,
+        path: box.path,
+        layout: "photos-box"
+      });
+    }
+
     if (key.startsWith("photo-")) {
       let photo = locals.dynamic[key];
       result.push({
         name: photo.key,
         data: photo,
-        path: path.join(config.photo_dir, photo.key, "index.html"),
+        path: photo.path,
         layout: "photo"
       });
     };
+
   });
   
   return result;

@@ -5,12 +5,12 @@
 <%- partial('_partial/nav-index-photos', { currentClass: "" }) %>
 
 <h1 class="archive-title">
-  <small>Photos</small>
-  Shed
+  <small>Photos Box</small>
+  <%= page.title %>
 </h1>
 
-<div class="page-content">
-  <%- page.content %>
+<div class="page-content" style="min-height:1200px;">
+  <%#- page.content %>
 
   <div class="view grid" id="photos">
     <% for(var i=0; i < page.items.length; i++) { %>
@@ -19,4 +19,3 @@
   </div>
 
 </div>
-

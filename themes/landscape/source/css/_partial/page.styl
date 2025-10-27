@@ -559,7 +559,92 @@
         grid-area: status
         margin: 0 -1rem
         border-radius: 0 0 border-radius border-radius
-    
+    .card.photobox
+      display: grid
+      grid-template-rows: 2rem auto
+      grid-template-areas: "period" "content"
+      padding: 0 1rem 0
+      margin-inline: 0.75rem
+      // border-width: 1px
+      // border-style: solid
+      // border-color: #ddd #ccc #ccc #ddd
+      // /[data-theme="dark"] &
+      //   border-color: #333 #000 #000 #333
+      &:before
+        content: ""
+        display: block
+        position: absolute
+        top: calc(1rem - 1px)
+        height: 2rem        
+        width: calc(100% + 1rem)
+        margin-inline: -0.5rem
+        margin-block-start: -1rem
+        border-radius: 4px
+        border-width: 1px
+        border-style: solid
+        border-color: #ddd #ccc #ccc #ddd 
+        box-shadow: 0px 8px 8px -8px #333
+        background-image: linear-gradient(0deg, #eee 20%, #fff 60%)
+        background-color: #fff
+        /[data-theme="dark"] &
+          border-color: #333 #111 #111 #333 
+          box-shadow: 0px 8px 8px -8px #111
+          background-image: linear-gradient(0deg, #333 20%, #222 60%)
+          background-color: #333
+      small.box-period
+        grid-area: period
+        z-index: 0
+        opacity: 0.33
+        font-size: 0.66rem
+        align-self: center
+        text-align: right
+        margin-inline: -1rem
+      div.box-content
+        grid-area: content
+        a.box-img
+          margin-inline: -(1rem)
+          margin-bottom: 0
+          height: auto
+          width: calc(100% + 2rem)
+          border-radius: border-radius border-radius 0 0
+          img
+            @extend $inview-image
+            transform: scale(1) !important
+            object-fit: cover
+            object-position: top
+            width: 100%
+            height: 10rem
+            @media mq-tablet
+              height: 12rem
+            @media mq-mobile
+              height: 13rem
+          &.in-view
+            img
+              @extend $inview-image-visible
+        span.box-count
+          position: absolute
+          display: flex
+          top: 10.25rem
+          @media mq-tablet
+            top: 12.25rem
+          @media mq-mobile
+            top: 13.25rem
+          right: 0
+          width: 3rem
+          height: auto
+          align-items: start
+          justify-content: space-evenly
+          padding: 0.25rem 0 0 0.125rem
+          font-size: 0.9rem
+          border-top-left-radius: 40% 70%
+          background-color: #fff
+          box-shadow: inset 4px 4px 8px -6px #333
+          /[data-theme="dark"] &
+            background-color: #333
+            box-shadow: inset 4px 4px 8px -6px #111
+        h3
+          align-self: center
+          word-break: break-word
   .masonry
     display: block
     .card.photo

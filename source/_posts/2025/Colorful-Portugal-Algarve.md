@@ -58,7 +58,6 @@ During a visit to Faro, the largest city in the Algarve, something curious happe
 "25-05-Portugal-1181-D50"
 "25-05-Portugal-1189-D50"
 "25-05-Portugal-1201-PXL"
-"25-05-Portugal-1205-D50"
 "25-05-Portugal-1215-D50"
 "25-05-Portugal-1232-D50"
 "25-05-Portugal-1274-D50"
