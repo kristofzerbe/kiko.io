@@ -130,6 +130,7 @@ hexo.on('generateBefore', function() {
   boxesItems.forEach((b) => {
     b.coverPhoto = b.photos.find(p => p.key === b.cover);
     b.photos = b.photos.sort((x, y) => new Date(y.meta.DateCreated) - new Date(x.meta.DateCreated))
+    b.sortPhotos = "ASC";
 
     // console.log(b.title + " ... " + b.cover);
     // console.log("------------------------------------------------");
@@ -145,7 +146,8 @@ hexo.on('generateBefore', function() {
       if (b.periodEnd?.length === 0) {
         let latestDate = new Date(b.photos[0].meta.DateCreated);
         b.periodEnd = latestDate.toISOString().split('T')[0];
-        b.periodString = "since " + b.periodStart
+        b.periodString = "since " + b.periodStart;
+        b.sortPhotos = "DESC";
       } else {
         b.periodString = b.periodStart + " to " + b.periodEnd;
       }
@@ -179,7 +181,11 @@ hexo.on('generateBefore', function() {
     box.path = path.join(config.photo_dir, "boxes", box.key, "index.html");
     box.slug = box.key;
     box.permalink = config.url + "/" + config.photo_dir + "/boxes/" + box.key;
-    box.items = box.photos;
+    if (box.sortPhotos === "ASC") {
+      box.items = box.photos.reverse();
+    } else {
+      box.items = box.photos;
+    }
     // console.log(box);
 
     pages["photosbox-" + box.key] = box;
