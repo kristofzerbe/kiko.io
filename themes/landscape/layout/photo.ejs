@@ -54,6 +54,12 @@
           <% } %>
         <% } %>
       </li>
+      <% if (page.boxlink) { %>
+      <li>
+        <label>Box</label>
+        <span><a href="<%= page.boxlink %>"><%= page.meta.custom.box %></a></span>
+      </li>
+      <% } %>
       <% if (page.meta?.custom?.featured?.slug) { %>
       <li>
         <label>Featured In</label>
