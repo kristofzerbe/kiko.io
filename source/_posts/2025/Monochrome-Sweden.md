@@ -21,7 +21,7 @@ related:
   - Across-the-Country
 syndication:
   - host: GitHub
-    url: null
+    url: https://github.com/kristofzerbe/kiko.io/issues/16
   - host: Mastodon
     url: https://indieweb.social/@kiko/115470652553437333
 ---
