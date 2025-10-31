@@ -35,7 +35,7 @@ syndication:
 
 The credo of my photography has always been "Colors and Shapes." The more unusual and colorful, the better. I prefer small snapshots of life with lots of contrast and color, where my sweetheart always asks, "What is he shooting now?," and is amazed by the result. Of course, large, epic landscapes are always part of it, even if I always have to make compromises in terms of photographic knowledge, equipment, and time. People, on the other hand, have never really been in my focus, even if there have been one or two good photos along the way. Interestingly, when I was editing, human scenes always benefited from leaving out the colors completely and letting the little story in the photo come to the front without being distracted by colors. The exact opposite of my usual credo.
 
-During my two-week vacation in Portugal in May, I naturally indulged in colors and shapes again, as you can see in my posts [Colorful Portugal - Grande Lisboa](/posts/Colorful-Portugal-Grande-Lisboa) and [Colorful Portugal - Algarve](/posts/Colorful-Portugal-Algarve), but wherever I went, I also looked for exciting human (or similar) moments and tried to capture them. This resulted in 60 Black & White photos that are worth seeing, and I would like to share them with you.
+During my two-week vacation in Portugal in May, I naturally indulged in colors and shapes again, as you can see in my posts [Colorful Portugal - Grande Lisboa](/post/Colorful-Portugal-Grande-Lisboa) and [Colorful Portugal - Algarve](/post/Colorful-Portugal-Algarve), but wherever I went, I also looked for exciting human (or similar) moments and tried to capture them. This resulted in 60 Black & White photos that are worth seeing, and I would like to share them with you.
 
 <!-- more -->
 
