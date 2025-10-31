@@ -203,7 +203,15 @@ hexo.on('generateBefore', function() {
     photo.permalink = config.url + "/" + config.photo_dir + "/" + photo.key;
     photo.photo = true;
 
-    //TODO: plus photo.box (URL)
+    if (photo.meta.ObjectName) {
+      photo.hasCustomName = false;
+    } else {
+      photo.hasCustomName = !photo.meta.custom.file.startsWith(photo.meta.custom.name)
+    }
+    
+    if (photo.meta.custom.box) {
+      photo.boxlink = "/" + path.join(config.photo_dir, "boxes", slugify(photo.meta.custom.box));
+    }
 
     if (photo.article && photo.article.date > new Date(photo.date)) {
       photo.updated = photo.article.date;

@@ -28,7 +28,10 @@
       <% if (!page.file.startsWith(page.name)) { %>
       <li>
         <label>Title</label>
-        <span title="Click to copy title" style="cursor:copy;" onclick="javascript:navigator.clipboard.writeText('<%= page.name %>')"><%= page.name %></span>
+        <span title="Click to copy title" 
+              style="cursor:copy;" 
+              onclick="javascript:navigator.clipboard.writeText('<%= page.name %>')"
+              class="<%= (page.hasCustomName) ? "italic" : "" %>"><%= page.name %></span>
       </li>
       <% } %>
       <li>

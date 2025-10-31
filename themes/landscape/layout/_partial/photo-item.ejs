@@ -40,9 +40,11 @@
         <img src="/images/icons/location-none.svg" title="no location" />
       </span>
       <% } %>
-      <% if (item.meta?.custom?.box?.length > 0) { %>
-      <span class="info-content info-isinbox" data-box-slug="<%- slugify(item.meta.custom.box) %>">
-        <img src="/images/icons/box.svg" title="In box &laquo;<%= item.meta.custom.box %>&raquo;" />
+      <% if (item.boxlink) { %>
+      <span class="info-content info-isinbox">
+        <a class="box-link" href="<%= item.boxlink %>">
+          <img src="/images/icons/box.svg" title="In box &laquo;<%= item.meta.custom.box %>&raquo;" />
+        </a>
       </span>
       <% } %>
       <% if (item.meta?.custom?.featured?.slug) { %>
@@ -53,7 +55,9 @@
       </span>
       <% } %>
     </div>
-    <h3><a href="/<%= config.photo_dir %>/<%= item.key %>" class="h-link"><%- item.name %></a></h3>
+    <h3 class="<%= (item.hasCustomName) ? "italic" : "" %>">
+      <a href="/<%= config.photo_dir %>/<%= item.key %>" class="h-link"><%- item.name %></a>
+    </h3>
   <% } else { %>
     <h3><%- item.name %></h3>
   <% } %>

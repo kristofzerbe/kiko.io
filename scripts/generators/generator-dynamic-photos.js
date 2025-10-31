@@ -41,9 +41,6 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
     layout: "photos-boxes"
   });
 
-  // photo box pages
-  // TODO ...
-
   // photo & photos box pages
   Object.keys(locals.dynamic).forEach(function(key,index) {
 
