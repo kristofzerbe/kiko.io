@@ -18,7 +18,7 @@ tags:
   - Publishing
 related:
   - Sweden
-  - Monochrome Portugal
+  - Monochrome-Portugal
   - Across-the-Country
 ---
 
