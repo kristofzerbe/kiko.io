@@ -24,6 +24,9 @@ syndication:
     url: https://github.com/kristofzerbe/kiko.io/issues/16
   - host: Mastodon
     url: https://indieweb.social/@kiko/115470652553437333
+  - host: Pixelfed
+    title: Impressions
+    url: https://pixelfed.social/p/kristofz/890193504169803379
 ---
 
 As I looked through the more than 1,600 photos from our [Sweden](/post/Sweden) vacation and edited the best ones in Lightroom, I noticed how fitting the colors of the Swedish flag are. Blue and Yellow. The colors of the sky on a beautiful sunny day, and they are reflected in many of the pictures in the series.
