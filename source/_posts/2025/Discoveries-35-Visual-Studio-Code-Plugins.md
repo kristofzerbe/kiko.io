@@ -12,7 +12,7 @@ categories:
   - Collection
 tags:
   - VS Code
-  - Plugins
+  - Plugin
 related:
   - Discoveries-34-JS-Libraries
   - Discoveries-33-Image-Presentation
