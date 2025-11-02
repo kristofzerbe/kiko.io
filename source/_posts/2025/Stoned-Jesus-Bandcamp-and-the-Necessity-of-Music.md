@@ -19,7 +19,7 @@ related:
   - Radio-Garden
 syndication:
   - host: GitHub
-    url: null
+    url: https://github.com/kristofzerbe/kiko.io/issues/17
   - host: Mastodon
     url: https://indieweb.social/@kiko/115480729807457282
 ---
