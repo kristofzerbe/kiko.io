@@ -21,7 +21,7 @@ syndication:
   - host: GitHub
     url: null
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/115480729807457282
 ---
 
 Since yesterday, I know why I've been feeling like something's been missing. For months, I've been trying to deal with work stress by finding little or larger distractions that calm my brain down a bit, take my mind off things, and release some of the happiness hormones. Unfortunately, I was on the path of short video dopamine kicks for a while, but two weeks ago I gave up YouTube, my last platform of this kind. The end, over, done. Deactivated.
