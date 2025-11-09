@@ -21,9 +21,14 @@ related:
   - Using-GitHub-as-Commenting-Platform-2025-Edition
 syndication:
   - host: GitHub
-    url: null
+    url: https://github.com/kristofzerbe/kiko.io/issues/18
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/115520553638427371
+  - host: DevTo
+    url: https://dev.to/kristofzerbe/mentions-united-github-graphql-1k4h
+  - host: Lemmy
+    title: IndieWeb
+    url: https://programming.dev/post/40476871
 ---
 
 A few months ago, in my post [Using GitHub as Commenting Platform, 2025 Edition](/post/Using-GitHub-as-Commenting-Platform-2025-Edition), I explained how GitHub Issues can be used quite easily as a commenting platform:
