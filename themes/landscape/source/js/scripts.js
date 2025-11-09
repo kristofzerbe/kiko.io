@@ -99,7 +99,7 @@ function initScrollAnchorLink(selector, offset) {
         {
           scrollTop: section.offset().top - (offset ?? 40),
         },
-        1000,
+        100,
         "swing",
         function () {
           history.replaceState({}, "", hash);

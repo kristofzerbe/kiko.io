@@ -1,5 +1,6 @@
 <%
   let syndications = post.syndication?.filter(s => s.url?.length > 0 && s.host?.length > 0)
+  let synGitHub = syndications?.find(s => s.host.toLowerCase() === "github");
   let synDevTo = syndications?.find(s => s.host.toLowerCase() === "devto");
   let synPixelfed = syndications?.filter(s => s.host.toLowerCase() === "pixelfed");
   let synLemmy = syndications?.filter(s => s.host.toLowerCase() === "lemmy");
@@ -60,6 +61,7 @@
   <%- js('js/mentions-united-renderer_avatars-by-type.js') %>
   <%- js('js/mentions-united-renderer_grouplist-by-origin.js') %>
   <%- js('js/mentions-united-renderer_summary-line.js') %>
+  <% if (synGitHub) { %><%- js('js/mentions-united-provider_github.js'); %><% } %>
   <% if (synDevTo) { %><%- js('js/mentions-united-provider_devto.js'); %><% } %>
   <% if (synPixelfed?.length > 0) { %><%- js('js/mentions-united-provider_pixelfed.js'); %><% } %>
   <% if (synLemmy?.length > 0) { %><%- js('js/mentions-united-provider_lemmy.js'); %><% } %>
@@ -76,7 +78,8 @@
         [
           new MentionsUnitedProvider_Webmentions({ 
             originalUrl: "<%- post.permalink %>",
-            tryResolveTitle: true
+            tryResolveTitle: true,
+            skipOrigins: "github"
           }),
           new MentionsUnitedRenderer_TotalNumber({
             placeholderId: "interactions-totalnumber-placeholder",
@@ -104,6 +107,13 @@
             placeholderId: "interactions-summaryline-placeholder"
           })
         ]);
+
+      <% if (synGitHub) { %>
+      mentionsUnited.register(new MentionsUnitedProvider_GitHub({ 
+        syndicationUrl: "<%- synGitHub.url %>",
+        apiBaseUrl: "<%- config.api_proxy_base_url %>/github"
+      }));
+      <% } %>
 
       <% if (synDevTo) { %>
       mentionsUnited.register(new MentionsUnitedProvider_DevTo({ 
