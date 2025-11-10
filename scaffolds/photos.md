@@ -25,6 +25,8 @@ syndication:
 
 <!-- more -->
 
+---
+
 {% photo_list
   "name|title"
 %}
