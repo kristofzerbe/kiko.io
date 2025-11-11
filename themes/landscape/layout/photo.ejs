@@ -246,12 +246,12 @@
           if (swatch === "DarkVibrant") { accentColor = color; }
         }
         
-        fetch('/photo-color-substitutions.json')
+        fetch('/photo-custom-colors.json')
           .then(substResp => { return substResp.json()})
           .then(substData => {
             let subHex = substData.find(obj => { return obj.file === file; })?.color;
             if (subHex) {
-              let substColor = getColorObject("Substitution", subHex);
+              let substColor = getColorObject("Custom", subHex);
               let existColor = colorItems.find(i => i.hex === substColor.hex);
               if (existColor) {
                 existColor.accent = true;
