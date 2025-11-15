@@ -51,9 +51,7 @@
   font-size: font-pagetitle-size
   line-height: line-height-title
   text-transform: uppercase
-  color: color-grey
-  /[data-theme="dark"] &
-    color: dark-color-grey
+  color: var(--color-meta)
 
 .page-subtitle
   font-weight: font-weight-normal
@@ -118,9 +116,7 @@
     padding-bottom: 0rem
     border-bottom-style: solid
     border-bottom-width: 1px
-    border-bottom-color: color-block
-    /[data-theme="dark"] &
-      border-bottom-color: dark-color-border
+    border-bottom-color: var(--color-block)
     margin-bottom: 2rem
     margin-top: 0
     background: none
@@ -150,9 +146,7 @@
     &:first-child
       margin-top: 0
     padding: default-padding
-    color: color-default
-    /[data-theme="dark"] &
-      color: dark-color-default
+    color: var(--color-text)
     figure, pre
       margin-left: -28px !important /* HACK */
       margin-right: -28px !important /* HACK */
@@ -185,9 +179,7 @@
       font-size: font-size-small
       margin-bottom: -(default-margin)
       position: absolute
-      color: color-header
-      /[data-theme="dark"] &
-        color: dark-color-header
+      color: var(--color-meta)
       &.raised
         display: block
         position: absolute
@@ -243,14 +235,12 @@
   .view
     margin-bottom: double-margin
     .card
-      @extend $block-inner
+      @extend $block-inner-hover
       @extend $base-style
       transform: scale(1)
       opacity: 1
-      color: color-default
+      color: var(--color-text)
       border: none
-      /[data-theme="dark"] &
-        color: dark-color-default
       a
         text-decoration: none
         display: inline-block
@@ -266,9 +256,7 @@
           @extend $inview-image
           height: 100%
           width: 100%
-          background-color: color-background
-          /[data-theme="dark"] &
-            background-color: dark-color-background
+          background-color: var(--color-background)
         &.in-view
           img
             @extend $inview-image-visible
@@ -277,16 +265,9 @@
         font-weight: font-weight-bold
         a
           text-decoration: none
-          color: color-default
-          /[data-theme="dark"] &
-            color: dark-color-default
+          color: var(--color-text)
           &:hover
             color: var(--color-accent-text)
-      &:hover
-        transform: scale(1) translateY(-1px)
-        box-shadow: box-shadow color-border-3d
-        /[data-theme="dark"] &
-          box-shadow: dark-box-shadow dark-color-base
       // .card-img.in-view
       //   img
       //     @extend $inview-image-visible
@@ -295,9 +276,7 @@
       .card-img
         border-radius: border-radius border-radius 0 0
         img
-          border-bottom: 1px color-background solid
-          /[data-theme="dark"] &
-            border-bottom: 1px dark-color-background solid
+          border-bottom: 1px var(--color-background) solid
       div.tags
         display: flex
         flex-flow: row wrap
@@ -308,11 +287,8 @@
           margin: 0 small-margin small-margin 0
           text-transform: uppercase
           font-size: 0.75rem
-          background-color: color-light
-          color: color-grey
-          /[data-theme="dark"] &
-            background-color: dark-color-light
-            color: dark-color-grey
+          background-color: var(--color-background)
+          color: var(--color-meta)
     
     .card.photo
       display: grid
@@ -903,7 +879,7 @@
     position relative
     margin-bottom: block-margin
     img
-      @extend $block-inner
+      @extend $block-inner-hover
       width: 100%
       height: auto
       box-shadow: 1px 1px 12px 0px #888 !important
@@ -967,11 +943,8 @@
         position: relative
         padding: 1rem
         border-radius: border-radius
-        background: #fff
-        box-shadow: 1px 2px 20px 5px #ddd
-        /[data-theme="dark"] &
-          background: #333
-          box-shadow: 1px 2px 40px 1px #111
+        background: var(--color-block)
+        // box-shadow: var(--length-shadow) var(--color-shadow)
         span
           grid-area: 1/1/2/2
           min-width: 5rem
@@ -1007,11 +980,8 @@
     .photoPopup
       .leaflet-popup-content-wrapper, .leaflet-popup-tip
         border-radius: border-radius
-        background-color: color-background
-        color: color-foreground
-        /[data-theme="dark"] &
-          background-color: dark-color-background
-          color: dark-color-foreground
+        background-color: var(--color-background)
+        color: var(--color-text)
       .leaflet-popup-content-wrapper
         .leaflet-popup-content
           ul

@@ -16,65 +16,11 @@ global-reset()
 ::-webkit-scrollbar
   width: 8px
   height: 8px
-  background-color: color-background
-  /[data-theme="dark"] &
-    background-color: dark-color-background
+  background-color: var(--color-background)
 ::-webkit-scrollbar-track
-  background-color: color-background
-  /[data-theme="dark"] &
-    background-color: dark-color-background
+  background-color: var(--color-background)
 ::-webkit-scrollbar-thumb
-  background-color: color-border
-  /[data-theme="dark"] &
-    background-color: dark-color-border
-
-:root
-  --color-accent: color-base
-  --color-accent-text: color-foreground
-  --color-accent-text-near: color-header
-  --color-accent-median: color-border-3d
-  /[data-theme="dark"] &
-    --color-accent: dark-color-base
-    --color-accent-text: dark-color-foreground
-    --color-accent-text-near: dark-color-header
-    --color-accent-median: dark-color-border-3d
-  --box-exclamation: rgb(255,204,0)
-  --box-exclamation2: rgba(255,204,0,0.2)
-  --box-question: rgb(221,0,255)
-  --box-question2: rgba(221,0,255,0.2)
-  --box-warning: rgb(226,37,0)
-  --box-warning2: rgba(226,37,0,0.2)
-  --box-info: rgb(0,136,224)
-  --box-info2: rgba(0,136,224,0.2)
-  --box-success: rgb(0,187,28)
-  --box-success2: rgba(0,187,28,0.2)
-  --box-note: rgb(205,205,205)
-  --box-note2: rgba(205,205,205,0.25)
-  --brand-mastodon: url(/images/brands/mastodon.svg)
-  --brand-bluesky: url(/images/brands/bluesky.svg)
-  --brand-flickr: url(/images/brands/flickr.svg)
-  --brand-github: url(/images/brands/github.svg)
-  --brand-reddit: url(/images/brands/reddit.svg)
-  --brand-facebook: url(/images/brands/facebook.svg)
-  --brand-devto: url(/images/brands/devto.svg)
-  --brand-pixelfed: url(/images/brands/pixelfed.svg)
-  --brand-pixelfed-invert: url(/images/brands/pixelfed_invert.svg)
-  --brand-linkedin: url(/images/brands/linkedin.svg)
-  --brand-xing: url(/images/brands/xing.svg)
-  --brand-xing-mono: url(/images/brands/xing-mono.svg)
-  --brand-500px: url(/images/brands/500px.svg)
-  --brand-unsplash: url(/images/brands/unsplash.svg)
-  --brand-lemmy: url(/images/brands/lemmy.svg)
-  --brand-vernissage: url(/images/brands/vernissage.svg)
-  --brand-vernissage-invert: url(/images/brands/vernissage_invert.svg)
-  --brand-peertube: url(/images/brands/peertube.svg)
-  --brand-signal: url(/images/brands/signal.svg)
-  --brand-fediverse: url(/images/brands/fediverse.svg)
-  --brand-indieweb: url(/images/brands/indieweb.svg)
-  --brand-rss: url(/images/brands/rss.svg)
-  --brand-rss-blue: url(/images/brands/rss_blue.svg)
-  --brand-atom: url(/images/brands/atom.svg)
-  --brand-jsonfeed: url(/images/brands/jsonfeed.svg)
+  background-color: var(--color-border)
 
 html
   text-size-adjust: none // Andy Bells Modernized Reset
@@ -94,11 +40,8 @@ html, body
 
 body
   accent-color: var(--color-accent)
-  color: color-foreground
-  background: color-background
-  /[data-theme="dark"] &
-    color: dark-color-foreground
-    background: dark-color-background
+  color: var(--color-text)
+  background: var(--color-background)
   font-family: font-sans
   font-weight: font-weight-normal
   min-height: 100vh // Andy Bells Modernized Reset
@@ -169,9 +112,9 @@ img.float-left-mini
 mark 
   background-color: color-mark
   padding: 0.15rem 0.3rem
-  color: color-foreground
-  /[data-theme="dark"] &
-    color: dark-color-foreground
+  color: var(--color-text) //TODO: was color-foreground
+  // /[data-theme="dark"] &
+  //   color: dark-color-text
 
 ul[role='list'],
 ol[role='list']
@@ -268,9 +211,7 @@ table
   tbody, thead
     tr
       &:nth-child(even)
-        background: color-light
-        /[data-theme="dark"] &
-          background: dark-color-light
+        background: var(--color-background)
       th, td 
         padding: (default-padding / 3)
       td
@@ -279,9 +220,7 @@ table
         font-weight: font-weight-bold
     tr:not(.no-border) 
       th:not(:empty), td
-        border: 1px color-border solid
-        /[data-theme="dark"] &
-          border: 1px dark-color-border solid
+        border: 1px var(--color-border) solid
 
 pre.json
   font-family: 'Roboto Mono',monospace

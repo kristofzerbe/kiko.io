@@ -4,11 +4,15 @@ $block
 $block-inner
   @extend $block
   border-radius: border-radius
-  background: color-block
-  box-shadow: box-shadow color-border
-  /[data-theme="dark"] &
-    background: dark-color-block
-    box-shadow: dark-box-shadow dark-color-border
+  background: var(--color-block)
+  box-shadow: var(--length-shadow) var(--color-border)
+
+$block-inner-hover
+  @extend $block-inner
+  transition: all ease-out 0.3s
+  &:hover
+    transform: scale(1) translateY(-1px)
+    box-shadow: var(--length-shadow) var(--color-shadow)
 
 $block-caption
   text-decoration: none
@@ -31,7 +35,7 @@ $base-style
     font-size: 1.1rem
   h6
     font-size: 1rem
-    color: color-grey
+    color: var(--color-meta)
   hr
     display: block
     border: 0px
@@ -84,9 +88,7 @@ $title
   font-weight: font-weight-bold
   line-height: line-height-title
   text-transform: uppercase
-  color: color-default
-  /[data-theme="dark"] &
-    color: dark-color-default
+  color: var(--color-text)
   small
     display: block
     font-weight: font-weight-normal
@@ -113,9 +115,7 @@ $neutral-anchor
   border-bottom: none !important
   text-decoration-line: underline !important
   text-decoration-style: dotted !important
-  text-decoration-color: color-border-3d !important
-  /[data-theme="dark"] &
-    text-decoration-color: dark-color-border-3d !important
+  text-decoration-color: var(--color-border) !important
   &:hover
     text-decoration-style: solid !important
     text-decoration-color: inherit !important

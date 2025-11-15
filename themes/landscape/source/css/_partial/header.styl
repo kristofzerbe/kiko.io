@@ -15,8 +15,6 @@
       transition: filter 2.5s ease, background-color 0.25s ease
   background-color: var(--color-accent)
   border-radius: 0 0 1px 1px //??? 0 leads to inset shadow on mobile ?
-  /[data-theme="dark"] &
-    border-bottom-color: dark-color-border
   &:before, &:after
     content: ""
     position: absolute
@@ -124,7 +122,7 @@ header.photograph #header-photo-link
       max-width: 100px
       margin: auto 10px
       a
-        color: color-logo
+        color: var(--color-logo)
         font-size: 16px
         font-weight: 400
         text-decoration: none
@@ -178,13 +176,11 @@ body.article-view #progress
   bottom: 0
   transform-origin: 0 50%
   transform: scaleX(0)
-  background-color: color-highlight
-  /[data-theme="dark"] &
-    background-color: dark-color-highlight
+  background-color: var(--color-highlight)
 
 $logo-text
   text-decoration: none
-  color: color-logo
+  color: var(--color-logo)
   font-weight: font-weight-normal
 
 #title-wrap
@@ -234,7 +230,7 @@ $logo-text
 
 $sub-nav-link
   float: left
-  color: color-logo
+  color: var(--color-logo)
   opacity: 0.6
   text-decoration: none
   transition: opacity 0.2s ease-out
@@ -249,7 +245,7 @@ $sub-nav-link
   input#theme-switch[type=checkbox]
       display:none
     input#theme-switch[type=checkbox] + label
-      color: color-logo
+      color: var(--color-logo)
       opacity: 0.4
       height: 32px
       width: 32px

@@ -33,8 +33,6 @@ Aber wie schon bei meinem [Portugal](/post/Monochrome-Portugal)-Bildern früher 
 {% photo_masonry
 "25-07-Schweden-004-PXL"
 "25-07-Schweden-076-PXL"
-"25-07-Schweden-161-D50-HDR"
-"25-07-Schweden-206-D50"
 "25-07-Schweden-246-D50"
 "25-07-Schweden-252-D50"
 "25-07-Schweden-262-D50"

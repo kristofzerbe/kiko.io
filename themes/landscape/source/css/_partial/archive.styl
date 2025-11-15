@@ -50,9 +50,7 @@
   @extend $block-caption
   margin-left: 0
   font-size: font-titlelist-size
-  color: color-header
-  /[data-theme="dark"] &
-    color: dark-color-header
+  color: var(--color-meta)
 
 .archive-list
   > em
@@ -67,9 +65,7 @@
   flex-wrap: nowrap
   overflow-x: auto
   font-size: font-size-medium
-  background: linear-gradient(90deg, color-background 5%, color-block 50%, color-background 100%)
-  /[data-theme="dark"] &
-    background: linear-gradient(90deg, dark-color-background 5%, dark-color-block 50%, dark-color-background 100%)
+  background: linear-gradient(90deg, var(--color-background) 5%, var(--color-block) 50%, var(--color-background) 100%)
   .archive-list-wrapper
     flex: 0 0 auto
     // padding-right: default-padding
@@ -90,9 +86,7 @@
       li
         flex: 1 0 25%
         box-sizing: border-box
-        border-left: 2px color-border solid
-        /[data-theme="dark"] &
-          border-color: dark-color-border
+        border-left: 2px var(--color-border) solid
         margin: 1px 0 1px 0
         padding: 0 8px 0 10px
         display: flex
@@ -100,8 +94,6 @@
         justify-content: space-between
         &:hover
           border-left: 4px var(--color-accent) solid
-          /[data-theme="dark"] &
-            border-color: dark-color-border-hover
           margin-left: -1px;
           padding-left: 9px
         a
@@ -122,9 +114,7 @@
           height: 22px
           width: 22px
           text-align: center
-          background-color: color-background
-          /[data-theme="dark"] &
-            background-color: dark-color-background
+          background-color: var(--color-background)
 
 .archive-list-wrapper.archive-list-months 
   ul
@@ -141,9 +131,7 @@
   text-align: center
   overflow: hidden
   font-size: font-size-medium
-  color: color-grey
-  /[data-theme="dark"] &
-    color: dark-color-grey
+  color: var(--color-meta)
   a, span
     padding-inline: small-padding
     margin: small-margin small-margin
@@ -162,11 +150,11 @@
     @media mq-mobile
       display: none
   .current
-    color: color-default
+    color: var(--color-text)
     font-weight: font-weight-bold
     font-size: font-subtitle-size
   .space
-    color: color-default
+    color: var(--color-text)
     font-weight: font-weight-bold
     @media mq-mobile
       display: none

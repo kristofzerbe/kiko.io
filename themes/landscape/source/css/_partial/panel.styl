@@ -15,15 +15,9 @@
     margin-top: 0
 
 .panel-inner
-  @extend $block-inner
+  @extend $block-inner-hover
   padding: 10px
   overflow: hidden  
-  transition: all ease-out 0.3s
-  &:hover
-    transform: scale(1) translateY(-1px)
-    box-shadow: box-shadow color-border-3d
-    /[data-theme="dark"] &
-      box-shadow: dark-box-shadow dark-color-base
   &.today
     border-top: 8px var(--color-accent) solid
   &.yesterday
@@ -102,9 +96,7 @@
 
 .panel-date
   time.updated
-    color: color-foreground
-    /[data-theme="dark"] &
-      color: dark-color-foreground
+    color: var(--color-text) //TODO: was color-foreground
     &:before
       content: "Update, "
 
@@ -115,9 +107,7 @@
   margin-block: small-margin
   text-transform: uppercase
   font-size: font-size-small
-  color: color-grey
-  /[data-theme="dark"] &
-    color: dark-color-grey
+  color: var(--color-meta)
   &:hover
     color: var(--color-accent-text)
 
@@ -131,9 +121,7 @@
   line-height: line-height-text
   font-size: font-titlelist-size
   font-weight: font-weight-bold
-  color: color-default
-  /[data-theme="dark"] &
-    color: dark-color-default
+  color: var(--color-text)
   transition: color 0.2s
   &:hover
     color: var(--color-accent-text)
@@ -144,9 +132,7 @@
     position: absolute
     z-index: -1
     margin: -0.25rem -0.5rem
-    background: color-hover-background
-    /[data-theme="dark"] &
-      background: dark-color-hover-background
+    background: var(--color-block)
     content: ""
     border-radius: border-radius
     inset: 0
@@ -157,9 +143,7 @@
 .panel-subtitle
   margin-top: small-margin
   line-height: line-height-medium
-  color: color-grey
-  /[data-theme="dark"] &
-    color: dark-color-grey
+  color: var(--color-meta)
 
 .panel-footer
   font-size: font-size-small
@@ -176,9 +160,7 @@
 .panel-category a,
 .panel-tags a
   text-decoration: none
-  color: color-header
-  /[data-theme="dark"] &
-    color: dark-color-header
+  color: var(--color-meta)
 
 .panel-category a,
 .panel-tags a

@@ -7,19 +7,12 @@
   --pagefind-ui-font: font-sans !important
   // --pagefind-ui-image-box-ratio: 3 / 2
 
-html[data-theme="light"]
-  --pagefind-ui-primary: color-highlight
-  --pagefind-ui-text: color-foreground 
-  --pagefind-ui-background: #fff 
-  --pagefind-ui-border: color-border-article
-  --pagefind-ui-tag: color-light
-
-html[data-theme="dark"]
-  --pagefind-ui-primary: dark-color-highlight
-  --pagefind-ui-text: dark-color-foreground
-  --pagefind-ui-background: #000
-  --pagefind-ui-border: dark-color-border-article
-  --pagefind-ui-tag: dark-color-light
+html //[data-theme="light"]
+  --pagefind-ui-primary: var(--color-highlight)
+  --pagefind-ui-text: var(--color-text)
+  --pagefind-ui-background: var(--color-block) 
+  --pagefind-ui-border: var(--color-border)
+  --pagefind-ui-tag: var(--color-background)
 
 /* OVERRIDES */
 .pagefind-ui__form:before
@@ -29,9 +22,7 @@ html[data-theme="dark"]
 .pagefind-ui__search-input  
   &:focus-visible
     outline: none
-    border-color: color-border-3d !important
-    /[data-theme="dark"] &
-      border-color: dark-color-border-3d !important
+    border-color: var(--color-shadow) !important
 
 .pagefind-ui__search-input,
 .pagefind-ui__message
@@ -64,7 +55,7 @@ html[data-theme="dark"]
   line-height: line-height-text !important
   mark
     background-color: transparent !important
-    color: color-highlight !important
+    color: var(--color-highlight) !important
 
 .pagefind-ui__result-tags
   margin-left: 0 !important
@@ -79,4 +70,4 @@ html[data-theme="dark"]
     color: dark-color-button-link !important
   &:hover
     background-color: var(--color-accent) !important
-    color: color-block !important
+    color: var(--color-block) !important

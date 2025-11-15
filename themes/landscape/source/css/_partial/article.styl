@@ -10,21 +10,17 @@
 
 .article-date
   @extend $block-caption
-  color: color-header
-  /[data-theme="dark"] &
-    color: dark-color-header
+  color: var(--color-meta)
   float: left
   margin-bottom: 0.5rem
   margin-right: 1.25rem
   letter-spacing: 0
   time.updated
-    color: color-foreground
-    /[data-theme="dark"] &
-      color: dark-color-foreground
+    color: var(--color-text)
     &:before
       content: "Update, "
 
-.article.note  
+.article.note
   &:not(:first-child)
     margin-top: double-margin
   &.h-entry
@@ -42,7 +38,7 @@
       font-weight: font-weight-bold
       border-radius: border-radius-small
       text-transform: uppercase
-      color: color-logo
+      color: var(--color-logo)
       background-color: var(--color-accent)
     small
       display: none
@@ -64,9 +60,7 @@
         white-space: nowrap
         overflow: hidden
         text-overflow: ellipsis
-        background-color: color-background
-        /[data-theme="dark"] &
-          background-color: dark-color-background
+        background-color: var(--color-background)
         span
           // text-transform: uppercase
           padding-right: 3px
@@ -104,7 +98,7 @@
         // @media mq-mobile
         //   padding-left: 6rem
         //   width: calc(100% - 6.5rem)
-          
+
 .note-list
   .article.note
     margin-left: 2.5rem
@@ -171,7 +165,7 @@
   @extend $block-inner
   overflow: hidden
   margin-bottom: default-margin
-  small.top-info, 
+  small.top-info,
   small.top-exclamation
     display: block
     padding: small-padding (thin-padding * 3)
@@ -229,9 +223,7 @@
       color: var(--color-accent-text)
   .article-category-link
     @extend $block-caption
-    color: color-header
-    /[data-theme="dark"] &
-      color: dark-color-header
+    color: var(--color-meta)
 
 .article-header
   padding: default-padding default-padding 0
@@ -243,9 +235,7 @@
   font-size: font-size-medium
   margin-bottom: small-margin
   margin-right: small-margin
-  color: color-grey
-  /[data-theme="dark"] &
-    color: dark-color-grey
+  color: var(--color-meta)
   &:hover
     color: var(--color-accent-text)
 
@@ -259,12 +249,10 @@
   font-size: font-title-size
   line-height: line-height-title
   transition: color 0.4s
-  color: color-default
-  /[data-theme="dark"] &
-    color: dark-color-default
+  color: var(--color-text)
   em
     opacity: 0.6
-  strong 
+  strong
     opacity: 0.2
   a&:hover
     color: var(--color-accent-text)
@@ -276,9 +264,7 @@
     z-index: -1
     display: table-cell
     margin: -3px -9px
-    background: color-hover-background
-    /[data-theme="dark"] &
-      background: dark-color-hover-background
+    background: var(--color-block)
     content: ""
     border-radius: border-radius
     inset: 0
@@ -294,16 +280,13 @@
   font-size: font-subtitle-size
   line-height: line-height
   margin-top: default-margin
-  color: color-header
 
 .article-entry
   @extend $base-style
   clearfix()
-  color: color-default
-  /[data-theme="dark"] &
-    color: dark-color-default
+  color: var(--color-text)
   padding: 0 default-padding
-  .float-element 
+  .float-element
     display: block
     float: right
     margin: line-height 0 line-height line-height
@@ -325,7 +308,7 @@
     text-decoration-line: underline
   a.img-link
     @extend $inview-image
-    // transition: all ease-out .6s 
+    // transition: all ease-out .6s
     // transform: scale(1)
     // opacity: 0.75
     // filter: filter-gray
@@ -370,7 +353,7 @@
   .image-compare.image-modified
     max-width: none
     height: 100%
-  .image-masonry 
+  .image-masonry
     img
       border-radius: border-radius-small
   .float-matchgrid
@@ -399,20 +382,16 @@
   th
     font-weight: font-weight-bold
     padding-bottom: small-margin
-    border-bottom: 3px solid color-border-article
-    /[data-theme="dark"] &
-      border-bottom: 3px solid dark-color-border-article
+    border-bottom: 3px solid var(--color-border-dim)
   td
-    border-bottom: 1px solid color-border-article
-    /[data-theme="dark"] &
-      border-bottom: 1px solid dark-color-border-article
+    border-bottom: 1px solid var(--color-border-dim)
   details
     margin-top: 2px
     &:hover summary
       font-weight: font-weight-bold
     &[open]
       margin-bottom: 20px
-      summary 
+      summary
         font-weight: font-weight-bold
     summary
       cursor: pointer
@@ -428,7 +407,7 @@
   details.github-readme
     margin: 0 -30px
     padding: 10px 25px
-    border-left: 6px color-github solid  
+    border-left: 6px color-github solid
     &[open]
       background-color: dark-color-github
       /[data-theme="dark"] &
@@ -442,9 +421,7 @@
       margin: -10px 0 -10px -10px
     pre
       margin: 0 -25px
-      background-color: color-block
-      /[data-theme="dark"] &
-        background-color: dark-color-block
+      background-color: var(--color-block)
   blockquote //like alertbox
     position: relative
     padding: 1px 35px
@@ -452,7 +429,7 @@
     text-align: left
     font-style: italic
     background-color: rgba(205,205,205,0.2)
-    border-left: 4px rgba(205,205,205,0.75) solid 
+    border-left: 4px rgba(205,205,205,0.75) solid
     &:before
       position: absolute
       width: 41px
@@ -462,9 +439,7 @@
       display: block
       border-radius: 50%
       content: ""
-      background: color-block
-      /[data-theme="dark"] &
-        background: dark-color-block  
+      background: var(--color-block)
     &:after
       display: block
       position: absolute
@@ -517,9 +492,7 @@
       margin-right: small-margin
       margin-left: medium-margin
   .caption
-    color: color-grey
-    /[data-theme="dark"] &
-      color: dark-color-grey
+    color: var(--color-meta)
     display: block
     font-size: font-size-medium
     font-style: italic
@@ -562,10 +535,7 @@
         padding-block-start: small-padding
         font-size: font-size-small
         font-style: italic
-        color: color-grey
-        /[data-theme="dark"] &
-          color: dark-color-grey
-
+        color: var(--color-meta)
 
 .article-more-link,
 .download-link
@@ -602,9 +572,9 @@
   color: color-button-link
   border: none
   border-radius: border-radius-small
-  &:hover    
+  &:hover
     background-color: var(--color-accent-text)
-    color: color-logo
+    color: var(--color-logo)
   /[data-theme="dark"] &
     background-color: dark-color-button
     color: dark-color-button-link
@@ -614,7 +584,7 @@
   text-align: center
   @media mq-mobile
     a
-      strong 
+      strong
         display: inline-block
 
 .article-share
@@ -633,38 +603,27 @@
     border-bottom-right-radius: 4px
     transition: all ease-out .2s
     z-index: 1
-    box-shadow: inset 0 20px 20px -20px #aaa
+    box-shadow: inset 0 20px 20px -20px var(--color-shadow)
     color: var(--color-accent-text)
     background-color: color-wm-button-background
-    /[data-theme="dark"] &
-      box-shadow: inset 0 20px 20px -20px #000
-      background-color: dark-color-wm-button-background
     &:focus
       outline: none
     &:hover
-      box-shadow: inset 0 20px 20px -20px #666
-      color: color-hover-background
+      color: var(--color-block)
       background-color: var(--color-accent-text)
-      /[data-theme="dark"] &
-        box-shadow: inset 0 20px 20px -20px #222
-        color: dark-color-hover-background
 
 .article-webmention,
 .article-syndication,
 .article-interactions,
 .article-related
-  min-height: 86px 
+  min-height: 86px
   padding-bottom: default-padding
   border-bottom-style: solid
   border-bottom-width: 1px
-  border-bottom-color: color-block
-  /[data-theme="dark"] &
-    border-bottom-color: dark-color-border
+  border-bottom-color: var(--color-block)
   > h2
     @extend $block-caption
-    color: color-header
-    /[data-theme="dark"] &
-      color: dark-color-header
+    color: var(--color-meta)
     font-size: font-subtitle-size
     line-height: line-height
     margin: default-margin 0
@@ -673,11 +632,11 @@
     margin-block: medium-margin
     font-size: font-size-medium
     &:first-child
-      margin-block-start: 0  
-    &:last-child 
+      margin-block-start: 0
+    &:last-child
       margin-block-start: default-margin
       margin-block-end: -(medium-margin + thin-margin)
-  
+
 .article-syndication
   .syndication-wrapper
     display: flex
@@ -807,7 +766,7 @@
   margin-top: default-margin
   &:before
     display: block
-    position: absolute 
+    position: absolute
     left: -35px
     top: -15px
     content: ""
@@ -819,11 +778,9 @@
     height: 100px
     z-index: -1
     transform: rotate(344deg)
-    // color: color-block
     filter: invert(1)
     /[data-theme="dark"] &
       filter: invert(0.075)
-      // color: dark-color-border
   .alertbox
     margin-bottom: 0
 
@@ -833,7 +790,7 @@
   > h2
     margin-bottom: small-margin
 
-.article-footer, 
+.article-footer,
 .section-footer
   font-size: font-size-small
   // padding-top: (default-padding / 2)
@@ -865,9 +822,7 @@
 .article-golem
   a, span
     text-decoration: none
-    color: color-grey
-    /[data-theme="dark"] &
-      color: dark-color-grey
+    color: var(--color-meta)
   a:hover
     color: var(--color-accent-text)
 
@@ -883,9 +838,7 @@
 .article-permalink
   padding-top: line-height
   margin-top: line-height
-  border-top: 1px color-border solid
-  /[data-theme="dark"] &
-    border-top: 1px dark-color-border solid
+  border-top: 1px var(--color-border) solid
   @media mq-mobile
     padding-top: line-height * 0.6
     margin-top: line-height * 0.6
@@ -910,10 +863,10 @@
     flex: 1 1 auto
     border: 0
     outline: 0
-    color: color-grey
-    :focus outline:none !important
-    /[data-theme="dark"] &
-      color: dark-color-grey
+    color: var(--color-meta)
+    &:focus 
+      outline:none !important
+    
   .article-action
     width: 24px
     height: 24px
@@ -922,7 +875,7 @@
     &:before
       display: inline-block
       content: ""
-      background-repeat: no-repeat 
+      background-repeat: no-repeat
       background-size: 24px
       width: 24px
       height: 24px
@@ -947,10 +900,9 @@
   margin-right: -(default-padding)
   background-repeat: no-repeat
   background-position: default-padding-vert 24px
-  background-color: color-background
+  background-color: var(--color-background)
   background-image: url("/images/golem-light-100.png")
   /[data-theme="dark"] &
-    background-color: dark-color-background
     background-image: url("/images/golem-dark-100.png")
 
 .article-tag-list
@@ -972,7 +924,7 @@
       absolute-center(8px)
       content: ""
       border-radius: 50%
-      background: color-grey
+      background: var(--color-meta)
 
 .article-nav-link-wrap
   box-sizing: border-box
@@ -1000,7 +952,7 @@
 .article-nav-caption
   text-transform: uppercase
   letter-spacing: 2px
-  color: color-grey
+  color: var(--color-meta)
   font-weight: font-weight-bold
   #article-nav-newer &
     margin-right: -2px
@@ -1014,9 +966,7 @@
     text-decoration-style: solid
 
 .article-gallery
-  background: color-default
-  /[data-theme="dark"] &
-    background: dark-color-default
+  background: var(--color-text) //TODO: use bg color
   position: relative
 
 .article-gallery-photos
@@ -1068,11 +1018,10 @@
     grid-area: source
     // border-color: color-wm-border
     background-color: color-wm-input-background
-    color: color-foreground
+    color: var(--color-text)
     /[data-theme="dark"] &
       // border-color: dark-color-wm-border
       background-color: dark-color-wm-input-background
-      color: dark-color-foreground
     +placeholder()
       opacity: 0.8
   input[type=submit]
@@ -1086,20 +1035,16 @@
       background-color: dark-color-wm-button-background
       border-color: dark-color-wm-button-background
     &:hover
-      color: color-hover-background
+      color: var(--color-block)
       background-color: var(--color-accent-text)
       border-color: var(--color-accent-text)
-      /[data-theme="dark"] &
-        color: dark-color-hover-background
 
 .interactions-totalnumber
   display: block
   line-height: line-height
   margin-block-start: default-margin
   padding: thin-padding (thin-padding * 3)
-  background-color: color-hover-background
-  /[data-theme="dark"] &
-    background-color: dark-color-hover-background
+  background-color: var(--color-back-dim)
   border-radius: border-radius
   font-size: font-size-medium
   text-decoration: none
@@ -1109,15 +1054,6 @@
     font-weight: font-weight-bolder
 
 .article-interactions
-  --color-default: color-default
-  --color-block: color-block
-  --color-background: color-background
-  --color-border: color-border
-  /[data-theme="dark"] &
-    --color-default: dark-color-default
-    --color-block: dark-color-block
-    --color-background: dark-color-background
-    --color-border: dark-color-border
   padding-block-end: (default-padding / 2)
 
   .message
@@ -1127,7 +1063,7 @@
   .interactions-summary-line
     margin-block-start: 0
     line-height: line-height-small
-    
+
   .interactions-summary-line,
   .interactions-summary-line > a
     font-size: font-size-small
@@ -1172,7 +1108,7 @@
         width: var(--icon-size)
         height: var(--icon-size)
         border-radius: 50%
-        border-width: var(--avatar-border) 
+        border-width: var(--avatar-border)
         border-style: solid
         border-color: var(--color-background)
         background-color: var(--color-background)
@@ -1208,7 +1144,7 @@
       padding-block: var(--avatar-border)
       position: relative
       background-color: var(--color-block)
-      color: var(--color-default)
+      color: var(--color-text)
       border-radius: border-radius
       font-style: normal
       font-size: font-size-medium
@@ -1232,7 +1168,7 @@
           max-width: var(--avatar-size)
           max-height: var(--avatar-size)
           border-radius: 50%
-          border-width: var(--avatar-border) 
+          border-width: var(--avatar-border)
           border-style: solid
           border-color: var(--color-background)
       &.isown
