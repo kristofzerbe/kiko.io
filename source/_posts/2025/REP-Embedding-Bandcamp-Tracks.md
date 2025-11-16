@@ -48,7 +48,7 @@ Well, if that isn't fate...
 
 ---
 
-I especially like her approach with the ``detail`` element, which only pulls the source of the ``iframe`` from the network when you open it. Nothing complicated, just pretty straightforward.
+I especially like his approach with the ``detail`` element, which only pulls the source of the ``iframe`` from the network when you open it. Nothing complicated, just pretty straightforward.
 
 From the beginning, I had a small icon of a musical note at the top of the post in mind, accompanied by the artist and track name, so that you know what's coming. Unfortunately, it's still a bit difficult to replace the ``marker`` of the ``detail`` element with an icon in SVG form, but at least you can make it disappear.
 
@@ -80,7 +80,7 @@ bandcamp:
 
 <small>*(Yes, I know... Pipe-separated strings in Frontmatter are ugly, but easier to keep track of)*</small>
 
-I don't know how Roma gets the necessary values for her songs, but the only way to extract the album and track IDs from the Bandcamp UI at the moment is via the link "Share/Embed", the opening dialogs, the "Embed Code" field, and an external editor, since the field is only an ``input`` and not a ``textarea`` that could be enlarged :|  
+I don't know how Roma gets the necessary values for his songs, but the only way to extract the album and track IDs from the Bandcamp UI at the moment is via the link "Share/Embed", the opening dialogs, the "Embed Code" field, and an external editor, since the field is only an ``input`` and not a ``textarea`` that could be enlarged :|  
 A little annoying, but bearable, because at least I don't write my posts on the fly and therefore take the time to pick out the data.
 
 What's left now is the CSS (here in Stylus format), which I'm still tinkering with because I'm not entirely satisfied with it yet. The ``details`` element is really quite special...
