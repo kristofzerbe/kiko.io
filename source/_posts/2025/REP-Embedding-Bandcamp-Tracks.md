@@ -111,15 +111,12 @@ details.bandcamp
       height: var(--bc-padding)
       float: right
       transition: all ease-out 0.2s
-  &:hover, &[open]
-    summary
-      font-weight: inherit
   &[open]
     summary
       em
         opacity: 0.333
     svg
-      transform: rotate(-18deg)
+      transform: rotate(-20deg)
 ```
 
 What I still need to do is make the theme change look good, because the colors of the Bandcamp player are coded in the iframe URL...
@@ -128,5 +125,6 @@ What I still need to do is make the theme change look good, because the colors o
 
 ## Conclusion
 
-Thanks Roma for the impetus for this fun little feature for my readers... at least if they like rock music ;)   
+Thanks Roma for the impetus for this fun little feature for my readers... at least if they like rock music ;)
+
 <small>*... he writes as the guitar riff kicks in massively and he raises the devil's horn towards the sky*</small>
