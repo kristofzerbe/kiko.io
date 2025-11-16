@@ -25,9 +25,9 @@ bandcamp:
   track: Blood Sacrifice|897654312
 syndication:
   - host: GitHub
-    url: null
+    url: https://github.com/kristofzerbe/kiko.io/issues/20
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/115560923679747902
 ---
 
 Recently, I was greatly inspired by [Roma Komarov](https://front-end.social/@kizu) to add another, audible layer to my blog posts...
