@@ -16,6 +16,10 @@ categories:
   - Coding
 tags:
   - GitHub
+bandcamp:
+  artist: Howling Giant
+  album: Crucible & Ruin|578609549
+  track: Beholder I, Downfall|508254087
 related:
   - Mentions-United-3-2-1-go
   - Mentions-United-Native-Mastodon-Provider

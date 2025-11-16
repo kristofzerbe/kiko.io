@@ -1,0 +1,21 @@
+<% if (post.bandcamp) { 
+  
+   let a = post.bandcamp.album.split("|");
+   let album = { name: a[0], id: a[1] }
+
+   let t = post.bandcamp.track.split("|");
+   let track = { name: t[0], id: t[1] }
+%>
+  <details class="bandcamp">
+    <summary>
+      <em><%= post.bandcamp.artist %> - <%= track.name; %></em>
+      <svg class="icon-music-note-accent">
+        <use xlink:href="/images/icons/music-note-accent.svg#note"></use>
+      </svg>
+    </summary>
+    <iframe src="https://bandcamp.com/EmbeddedPlayer/album=<%= album.id %>/size=small/bgcol=ffffff/linkcol=333333/track=<%= track.id %>/transparent=true/" 
+            width="100%" height="42px"
+            load="lazy" seamless>
+    </iframe>
+  </details>
+<% } %>

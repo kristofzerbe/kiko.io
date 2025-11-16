@@ -19,6 +19,10 @@ related:
   - Mentions-United-3-2-1-go
   - Mentions-United-Native-Mastodon-Provider
   - Using-GitHub-as-Commenting-Platform-2025-Edition
+bandcamp:
+  artist: Howling Giant
+  album: Crucible & Ruin|578609549
+  track: Beholder I, Downfall|508254087
 syndication:
   - host: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/18

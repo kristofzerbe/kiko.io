@@ -17,6 +17,10 @@ related:
   - Disturbed-Wasen-Stuttgart-2025-10-03
   - Monochrome-Sweden
   - Monochrome-Portugal
+bandcamp:
+  artist: Quintana
+  album: Hums & Coils|1105938143
+  track: Born For More|1698335405
 syndication:
   - host: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/19

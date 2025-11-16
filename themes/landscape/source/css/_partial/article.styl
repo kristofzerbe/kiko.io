@@ -195,6 +195,43 @@
     &:before
       mask-image: url(/images/icons/circle-exclamation.svg)
       background-color: var(--box-exclamation)
+  details.bandcamp
+    --bc-margin: 0.5rem
+    --bc-padding: 1.5rem
+    width: calc(100% - calc(var(--bc-margin) * 2))
+    margin-block: var(--bc-margin) 0
+    margin-inline: var(--bc-margin)
+    display: grid
+    justify-items: end
+    &::marker
+      display:none
+      content: ""
+    summary
+      list-style: none
+      padding: 0
+      em
+        display: inline-block
+        margin-right: calc(var(--bc-padding) / 2)
+        font-variant: all-small-caps
+        color: var(--color-accent-text)
+        transition: all ease-out 0.2s
+      svg
+        width: var(--bc-padding)
+        height: var(--bc-padding)
+        float: right
+        transition: all ease-out 0.2s
+    &:hover, &[open]
+      summary
+        font-weight: inherit
+    &[open]
+      summary
+        em
+          opacity: 0.333
+      svg
+        transform: rotate(-18deg)
+    @media mq-mobile-up
+      iframe
+        min-width: 400px
 
 .article-photo
   @extend $inview-image

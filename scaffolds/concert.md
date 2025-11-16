@@ -15,6 +15,10 @@ tags:
   - Concert
 related:
   - xxx
+bandcamp:
+  artist: xxx
+  album: xxx|0
+  track: xxx|0
 syndication:
   - host: GitHub
     url: 

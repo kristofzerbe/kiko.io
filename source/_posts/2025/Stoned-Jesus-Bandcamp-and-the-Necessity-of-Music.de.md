@@ -18,6 +18,10 @@ tags:
 related:
   - Dopamine-How-Software-should-be
   - Radio-Garden
+bandcamp:
+  artist: Stoned Jesus
+  album: Songs To Sun|3905788263
+  track: New Dawn|1199798427
 ---
 
 Ich weiß seit gestern wieder was mir die ganze Zeit gefehlt hat. Über Monate habe ich versucht dem beruflichen Stress mit kleinen oder großen Ablenkungen standzuhalten, die mein Gehirn etwas herunterregeln, mich auf andere Gedanken bringen und ein paar Glückshormone freisetzen. Leider war ich dabei eine Weile auf dem Pfad des Kurzvideo-Dopamin-Kicks, aber vor zwei Wochen habe dann auch meiner letzten derartigen Plattform YouTube entsagt. Schluß, aus, vorbei. Deaktiviert.

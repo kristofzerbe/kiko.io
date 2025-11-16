@@ -17,6 +17,10 @@ tags:
 related:
   - Dopamine-How-Software-should-be
   - Radio-Garden
+bandcamp:
+  artist: Stoned Jesus
+  album: Songs To Sun|3905788263
+  track: New Dawn|1199798427
 syndication:
   - host: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/17
