@@ -35,7 +35,16 @@ linkcol=${lnkColor}/\
 track=<%= track.id %>/\
 transparent=true/\
 `;
-      document.getElementById("bandcamp-player").src = bcPlayerUri;
+      //leads to browser history change --- document.getElementById("bandcamp-player").src = bcPlayerUri;
+      const orgFrame = document.getElementById("bandcamp-player");
+      const newFrame = document.createElement("iframe");
+      newFrame.setAttribute("id", "bandcamp-player");
+      newFrame.setAttribute("width", "100%");
+      newFrame.setAttribute("height", "42px");
+      newFrame.setAttribute("load", "lazy");
+      newFrame.setAttribute("src", bcPlayerUri);
+      orgFrame.parentNode.replaceChild(newFrame, orgFrame);
+
     }
     setThemeBandcampPlayer();
     new MutationObserver(mutations => { setThemeBandcampPlayer(); })
