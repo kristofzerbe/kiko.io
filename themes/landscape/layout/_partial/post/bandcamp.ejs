@@ -13,9 +13,34 @@
         <use xlink:href="/images/icons/music-note-accent.svg#note"></use>
       </svg>
     </summary>
-    <iframe src="https://bandcamp.com/EmbeddedPlayer/album=<%= album.id %>/size=small/bgcol=ffffff/linkcol=333333/track=<%= track.id %>/transparent=true/" 
+    <iframe id="bandcamp-player" src="" 
             width="100%" height="42px"
             load="lazy" seamless>
     </iframe>
   </details>
+  <script>
+    function setThemeBandcampPlayer() {
+      let theme = document.documentElement.getAttribute("data-theme");
+      let bgColor, lnkColor;
+
+      if (theme === "dark") { bgColor = "333333"; lnkColor = "ffffff"; } 
+      else { bgColor = "ffffff"; lnkColor = "333333";}
+
+      let bcPlayerUri = `\
+https://bandcamp.com/EmbeddedPlayer/\
+album=<%= album.id %>/\
+size=small/\
+bgcol=${bgColor}/\
+linkcol=${lnkColor}/\
+track=<%= track.id %>/\
+transparent=true/\
+`;
+      document.getElementById("bandcamp-player").src = bcPlayerUri;
+    }
+    setThemeBandcampPlayer();
+    new MutationObserver(mutations => { setThemeBandcampPlayer(); })
+      .observe(document.documentElement, {
+        attributes: true, attributeFilter: ["data-theme"], attributeOldValue: true
+      });
+  </script>
 <% } %>
