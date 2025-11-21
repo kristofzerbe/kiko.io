@@ -3,6 +3,7 @@ slug: REP-Embedding-Bandcamp-Tracks
 title: 'REP: Embedding Bandcamp Tracks'
 subtitle: Inspiration and Implementation
 date: 2025-11-16 16:59:50
+updated: 2025-11-20 20:00:00
 photograph:
   file: 25-07-Schweden-453-D50.jpg
   name: Curious Goat
@@ -119,7 +120,54 @@ details.bandcamp
       transform: rotate(-20deg)
 ```
 
-What I still need to do is make the theme change look good, because the colors of the Bandcamp player are coded in the iframe URL...
+---
+
+## Update: Theme Switching
+
+~~What I still need to do is make the theme change look good, because the colors of the Bandcamp player are coded in the iframe URL...~~
+
+The URL parameters for the embedded Bandcamp player contain information about the background and link colors, and the values appear to be HEX colors, but they are not; rather, they are keys to the predefined colors in Bandcamp's Customize dialog. It's a shame, because this means I can't use the page-specific accent colors for my pages. The only thing left is Light and Dark, along with the selected theme, and some JavaScript to set the player URL when the page is first opened and when the theme is switched.
+
+![Bandcamp's Embed Customize Dialog](REP-Embedding-Bandcamp-Tracks/bandcamp-embed-customize.png)
+
+Resetting the ``iframe`` URL via the ``src`` attribute is not a good idea, because (for whatever reason) this affects the browser history of the entire page and means that the user has to press the BACK button as many times as the player has been reset in order to return to the previous page in the blog. Annoying.
+
+One option is to replace the entire ``iframe`` element each time, but another, simpler option is to use ``contentWindow.location`` of the ``iframe`` element, which does not exhibit the history behavior.
+
+All wrapped up in a small JavaScript function and garnished with a ``MutationObserver`` that responds to the theme change at this point, the following addition to the EJS code results:
+
+```js
+<script>
+  function setThemeBandcampPlayer() {
+    let bgColor = "ffffff";
+    let lnkColor = "333333";
+    let theme = document.documentElement.getAttribute("data-theme");
+    if (theme === "dark") { bgColor = "333333"; lnkColor = "ffffff"; } 
+
+    let bcPlayerUri = `\
+  https://bandcamp.com/EmbeddedPlayer/\
+  album=<%= album.id %>/\
+  size=small/\
+  bgcol=${bgColor}/\
+  linkcol=${lnkColor}/\
+  track=<%= track.id %>/\
+  transparent=true/\
+  `;
+
+    document.getElementById("bandcamp-player").contentWindow.location.replace(bcPlayerUri)
+  }
+
+  // Startup
+  setThemeBandcampPlayer(); 
+
+  // Theme Switch
+  new MutationObserver(m => { 
+      setThemeBandcampPlayer(); 
+    }).observe(document.documentElement, {
+      attributes: true, attributeFilter: ["data-theme"], attributeOldValue: true
+    });
+</script>    
+```
 
 ---
 

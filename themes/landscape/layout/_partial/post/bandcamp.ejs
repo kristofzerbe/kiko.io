@@ -19,12 +19,11 @@
     </iframe>
   </details>
   <script>
-    function setThemeBandcampPlayer() {
+    function setThemeBandcampPlayer() {      
+      let bgColor = "ffffff";
+      let lnkColor = "333333";
       let theme = document.documentElement.getAttribute("data-theme");
-      let bgColor, lnkColor;
-
       if (theme === "dark") { bgColor = "333333"; lnkColor = "ffffff"; } 
-      else { bgColor = "ffffff"; lnkColor = "333333";}
 
       let bcPlayerUri = `\
 https://bandcamp.com/EmbeddedPlayer/\
@@ -36,20 +35,13 @@ track=<%= track.id %>/\
 transparent=true/\
 `;
       //leads to browser history change --- document.getElementById("bandcamp-player").src = bcPlayerUri;
-      const orgFrame = document.getElementById("bandcamp-player");
-      const newFrame = document.createElement("iframe");
-      newFrame.setAttribute("id", "bandcamp-player");
-      newFrame.setAttribute("width", "100%");
-      newFrame.setAttribute("height", "42px");
-      newFrame.setAttribute("load", "lazy");
-      newFrame.setAttribute("src", bcPlayerUri);
-      orgFrame.parentNode.replaceChild(newFrame, orgFrame);
-
+      document.getElementById("bandcamp-player").contentWindow.location.replace(bcPlayerUri)
     }
     setThemeBandcampPlayer();
-    new MutationObserver(mutations => { setThemeBandcampPlayer(); })
-      .observe(document.documentElement, {
-        attributes: true, attributeFilter: ["data-theme"], attributeOldValue: true
-      });
+    new MutationObserver(m => { 
+      setThemeBandcampPlayer(); 
+    }).observe(document.documentElement, {
+      attributes: true, attributeFilter: ["data-theme"], attributeOldValue: true
+    });
   </script>
 <% } %>
