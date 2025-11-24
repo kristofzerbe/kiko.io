@@ -345,23 +345,10 @@
     text-decoration-line: underline
   a.img-link
     @extend $inview-image
-    // transition: all ease-out .6s
-    // transform: scale(1)
-    // opacity: 0.75
-    // filter: filter-gray
-    // /[data-theme="dark"] &
-      // opacity: 0.75
-      // filter: dark-filter-gray
   a.img-link.in-view
     @extend $inview-image-visible
     &:hover
       transform: scale(1.025)
-    // transform: scale(1.0125)
-    // opacity: 1
-    // filter: grayscale(0) contrast(1)
-    // /[data-theme="dark"] &
-      // opacity: 1
-      // filter: grayscale(0) contrast(1) brightness(0.75)
   ul, ol, dl
     margin-top: default-margin
     margin-bottom: default-margin
@@ -444,15 +431,11 @@
   details.github-readme
     margin: 0 -30px
     padding: 10px 25px
-    border-left: 6px color-github solid
+    border-left: 6px #000 solid
     &[open]
-      background-color: dark-color-github
-      /[data-theme="dark"] &
-        background-color: color-github
+      background-color: var(--color-border)
       summary
-        background-color: dark-color-github
-        /[data-theme="dark"] &
-          background-color: color-github
+        background-color: var(--color-border)
     summary
       padding: 10px
       margin: -10px 0 -10px -10px
@@ -605,16 +588,13 @@
   position: relative
   text-decoration: none
   padding: (default-padding-vert/2) (default-padding/2)
-  background-color: color-button
-  color: color-button-link
+  background-color: var(--color-button-back)
+  color: var(--color-button-text)
   border: none
   border-radius: border-radius-small
   &:hover
     background-color: var(--color-accent-text)
     color: var(--color-logo)
-  /[data-theme="dark"] &
-    background-color: dark-color-button
-    color: dark-color-button-link
 
 .download-link
   margin: default-margin 0 !important
@@ -666,7 +646,7 @@
     line-height: line-height
     margin: default-margin 0
   p
-    opacity: color-opacity
+    opacity: var(--text-opacity)
     margin-block: medium-margin
     font-size: font-size-medium
     &:first-child
@@ -685,77 +665,64 @@
       background-size: 20px 20px
       background-repeat: no-repeat
       background-position: 1rem 0.5rem
-      color: color-link
-      /[data-theme="dark"] &
-        color: dark-color-link
+      color: var(--color-link)
       &.host-github
-        color: color-github
-        text-decoration-color: color-github
+        color: #000 /* fix because of invert filter */
+        text-decoration-color: #000
         background-image: var(--brand-github)
         background-size: 16px
         background-position: 0 8px
         /[data-theme="dark"] &
           filter: invert(1)
       &.host-500px
-        color: color-500px
-        text-decoration-color: color-500px
+        color: #000 /* fix because of invert filter */
+        text-decoration-color: #000
         background-image: var(--brand-500px)
         background-size: 16px
         background-position: 0 8px
         /[data-theme="dark"] &
           filter: invert(1)
       &.host-flickr
-        color: color-flickr
-        text-decoration-color: color-flickr
+        color: var(--color-flickr)
+        text-decoration-color: var(--color-flickr)
         background-image: var(--brand-flickr)
         background-size: 20px
         background-position: 0 7px
         span
           padding-left: 4px
-        /[data-theme="dark"] &
-          color: dark-color-flickr
-          text-decoration-color: dark-color-flickr
       &.host-pixelfed
-        color: color-pixelfed
-        text-decoration-color: color-pixelfed
+        color: var(--color-pixelfed)
+        text-decoration-color: var(--color-pixelfed)
         background-image: var(--brand-pixelfed)
         background-size: 16px
         background-position: 0 8px
         /[data-theme="dark"] &
           background-image: var(--brand-pixelfed-invert)
-          color: dark-color-pixelfed
-          text-decoration-color: dark-color-pixelfed
       &.host-unsplash
-        color: color-unsplash
-        text-decoration-color: color-unsplash
+        color: #000 /* fix because of invert filter */
+        text-decoration-color: #000
         background-image: var(--brand-unsplash)
         background-size: 16px
         background-position: 0 8px
         /[data-theme="dark"] &
           filter: invert(1)
       &.host-mastodon
-        color: color-mastodon
-        text-decoration-color: color-mastodon
+        color: var(--color-mastodon)
+        text-decoration-color: var(--color-mastodon)
         background-image: var(--brand-mastodon)
         background-size: 16px
         background-position: 0 9px
-        /[data-theme="dark"] &
-          color: dark-color-mastodon
-          text-decoration-color: dark-color-mastodon
       &.host-indienews
-        color: color-indieweb
-        text-decoration-color: color-indieweb
+        color: var(--color-indieweb)
+        text-decoration-color: var(--color-indieweb)
         background-image: var(--brand-indieweb)
         background-size: 20px
         background-position: 0 7px
         span
           padding-left: 3px
-        /[data-theme="dark"] &
-          color: dark-color-indieweb
-          text-decoration-color: dark-color-indieweb
       &.host-devto
-        color: color-devto
-        text-decoration-color: color-devto
+        color: #000 /* fix because of invert filter */
+        text-decoration-color: #000
         background-image: var(--brand-devto)
         background-size: 16px
         background-position: 0 8px
@@ -764,19 +731,16 @@
         /[data-theme="dark"] &
           filter: invert(1)
       &.host-lemmy
-        color: color-lemmy
-        text-decoration-color: color-lemmy
+        color: var(--color-lemmy)
+        text-decoration-color: var(--color-lemmy)
         background-image: var(--brand-lemmy)
         background-size: 22px
         background-position: 0 6px
         span
           padding-left: 5px
-        /[data-theme="dark"] &
-          color: dark-color-lemmy
-          text-decoration-color: dark-color-lemmy
       &.host-vernissage
-        color: color-vernissage
-        text-decoration-color: color-vernissage
+        color: #000 /* fix because of invert filter */
+        text-decoration-color: #000
         background-image: var(--brand-vernissage)
         background-size: 22px
         background-position: 0 7px
@@ -785,16 +749,13 @@
         /[data-theme="dark"] &
           filter: invert(1)
       &.host-peertube
-        color: color-peertube
-        text-decoration-color: color-peertube
+        color: var(--color-peertube)
+        text-decoration-color: var(--color-peertube)
         background-image: var(--brand-peertube)
         background-size: 12px
         background-position: 3px 9px
         span
           padding-left: 0
-        /[data-theme="dark"] &
-          color: dark-color-peertube
-          text-decoration-color: dark-color-peertube
 
 .article-webmention
   @extend $base-style
@@ -1025,7 +986,6 @@
     margin: 0 auto
 
 .webmention-form
-  // margin-top: -(medium-margin)
   display: grid
   column-gap: medium-margin
   row-gap: 0
@@ -1048,18 +1008,12 @@
   input
     font-family: inherit
     border: none
-    // border-width: 1px
-    // border-style: solid
     &:focus
       outline: none
   input[type=url]
     grid-area: source
-    // border-color: color-wm-border
-    background-color: color-wm-input-background
+    background-color: var(--color-block)
     color: var(--color-text)
-    /[data-theme="dark"] &
-      // border-color: dark-color-wm-border
-      background-color: dark-color-wm-input-background
     +placeholder()
       opacity: 0.8
   input[type=submit]
@@ -1067,11 +1021,8 @@
     cursor: pointer
     transition: all ease-out .2s
     color: var(--color-accent-text)
-    background-color: color-wm-button-background
-    border-color: color-wm-button-background
-    /[data-theme="dark"] &
-      background-color: dark-color-wm-button-background
-      border-color: dark-color-wm-button-background
+    background-color: var(--color-button-back-accent)
+    border-color: var(--color-button-back-accent)
     &:hover
       color: var(--color-block)
       background-color: var(--color-accent-text)
@@ -1113,7 +1064,7 @@
       @extend $block-caption
       font-size: font-size-medium
       font-weight: font-weight-normal
-      opacity: color-opacity
+      opacity: var(--text-opacity)
 
   .interactions-avatars
     --avatar-size: 36px

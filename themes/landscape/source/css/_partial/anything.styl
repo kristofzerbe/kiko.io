@@ -38,11 +38,8 @@
       text-align: center
       transition: all .5s ease-in
       border-radius: border-radius-small
-      background-color: color-button
-      color: color-button-link
-      /[data-theme="dark"] &
-        background-color: dark-color-button
-        color: dark-color-button-link        
+      background-color: var(--color-button-back)
+      color: var(--color-button-text)
     &:hover // https://css-tricks.com/adam-argyles-sick-mouse-out-css-hover-effect/
       color: var(--color-accent-text)
       em 
@@ -98,21 +95,21 @@
         font-weight: 1rem
         text-align: center
     a.github
-      color: color-github
-      text-decoration-color: color-github
+      color: #000 /* fix because of invert filter */
+      text-decoration-color: #000
       /[data-theme="dark"] &
         filter: invert(1);
     a.npm
-      color: color-npm
-      text-decoration-color: color-npm
+      color: var(--color-npm)
+      text-decoration-color: var(--color-npm)
       /[data-theme="dark"] &
         filter: brightness(1.25);
     a.insights
-      color: color-insights
+      color: var(--color-insights)
       filter: brightness(0.8);
-      text-decoration-color: color-insights
+      text-decoration-color: var(--color-insights)
     a.vscode
-      color: color-vscode
-      text-decoration-color: color-vscode
+      color: var(--color-vscode)
+      text-decoration-color: var(--color-vscode)
       /[data-theme="dark"] &
         filter: brightness(1.25);
