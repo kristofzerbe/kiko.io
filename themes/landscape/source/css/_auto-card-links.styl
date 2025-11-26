@@ -11,7 +11,7 @@
     transition: 20ms ease-in 0s
     cursor: pointer
     text-decoration: none
-    border-radius: border-radius
+    border-radius: var(--border-radius-normal)
     border-style: solid
     border-width: 1px
     border-color: var(--color-background)
@@ -37,19 +37,19 @@
         overflow: hidden
         white-space: nowrap
         text-overflow: ellipsis
-        font-weight: font-weight-bold
+        font-weight: var(--font-weight-bold)
         // &:hover
         //   text-decoration: underline
 
       .auto-card-link-description
         overflow: hidden
-        line-height: line-height-small
-        height: line-height-small * 2
+        line-height: var(--line-height-small)
+        height: calc(var(--line-height-small) * 2)
         color: var(--color-meta)
-        font-size: font-size-small
+        font-size: var(--font-size-small)
 
       .auto-card-link-host
-        font-size: font-size-small
+        font-size: var(--font-size-small)
         display: flex
         flex-direction: row
         align-items: center
@@ -66,7 +66,7 @@
         margin: 0 0.5rem 0 0 !important
 
   .auto-card-link-thumbnail
-    border-radius: border-radius 0 0 border-radius !important
+    border-radius: var(--border-radius-normal) 0 0 var(--border-radius-normal) !important
     height: 100%
     background-position: left center
     background-size: cover

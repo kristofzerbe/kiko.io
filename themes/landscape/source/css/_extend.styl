@@ -1,9 +1,9 @@
 $block
-  border-radius: border-radius-small
+  border-radius: var(--border-radius-small)
 
 $block-inner
   @extend $block
-  border-radius: border-radius
+  border-radius: var(--border-radius-normal)
   background: var(--color-block)
   box-shadow: var(--length-shadow) var(--color-border)
 
@@ -18,23 +18,23 @@ $block-caption
   text-decoration: none
   text-transform: uppercase
   letter-spacing: 1px
-  font-weight: font-weight-bold
+  font-weight: var(--font-weight-bold)
 
 $base-style
   h1
-    font-size: font-title-size
-    line-height: font-title-size
+    font-size: var(--font-title-size)
+    line-height: var(--line-height-title)
   h2
-    font-size: font-pagetitle-size
-    line-height: font-pagetitle-size
+    font-size: var(--font-pagetitle-size)
+    line-height: var(--line-height-normal)
   h3
-    font-size: font-subtitle-size
+    font-size: var(--font-subtitle-size)
   h4
-    font-size: font-subtitle-size
+    font-size: var(--font-subtitle-size)
   h5
-    font-size: 1.1rem
+    font-size: var(--font-minortitle-size);
   h6
-    font-size: 1rem
+    font-size: var(--font-size-normal);
     color: var(--color-meta)
   hr
     display: block
@@ -49,11 +49,11 @@ $base-style
     /[data-theme="dark"] &
       opacity: 0.5
   strong
-    font-weight: font-weight-bolder
+    font-weight: var(--font-weight-bolder)
   em, cite
     font-style: italic
   sup, sub
-    font-size: font-size-small
+    font-size: var(--font-size-small)
     line-height: 0
     position: relative
     vertical-align: baseline
@@ -62,11 +62,11 @@ $base-style
   sub
     bottom: -0.2rem
   small
-    font-size: font-size-small
+    font-size: var(--font-size-small)
   p
     small
       display: inline-block
-      line-height: line-height-small
+      line-height: var(--line-height-small)
   acronym, abbr
     border-bottom: 1px dotted
   ul, ol, dl
@@ -80,7 +80,7 @@ $base-style
   ol
     list-style: decimal
   dt
-    font-weight: font-weight-bold
+    font-weight: var(--font-weight-bold)
   fieldset
     position: relative
 
@@ -89,23 +89,23 @@ $title
   display: inline-block
   margin: block-margin 0
   font-size: font-pagetitle-size
-  font-weight: font-weight-bold
-  line-height: line-height-title
+  font-weight: var(--font-weight-bold)
+  line-height: var(--line-height-title)
   text-transform: uppercase
   color: var(--color-text)
   small
     display: block
-    font-weight: font-weight-normal
-    font-size: font-size
-    line-height: line-height
+    font-weight: var(--font-weight-normal)
+    font-size: var(--font-size-normal)
+    line-height: var(--line-height-normal)
     opacity: 0.66
   span
-    font-weight: font-weight-normal
+    font-weight: var(--font-weight-normal)
     text-transform: uppercase
     b 
       padding: 0 (default-padding / 5)
       text-transform: none
-      font-weight: font-weight-normal
+      font-weight: var(--font-weight-normal)
       opacity: 0.33
   strong
     word-wrap: break-word

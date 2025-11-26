@@ -48,13 +48,13 @@
     filter:invert(1)
 
 .page-subtitle
-  font-size: font-pagetitle-size
-  line-height: line-height-title
+  font-size: var(--font-pagetitle-size)
+  line-height: var(--line-height-title)
   text-transform: uppercase
   color: var(--color-meta)
 
 .page-subtitle
-  font-weight: font-weight-normal
+  font-weight: var(--font-weight-normal)
   margin-top: -(small-margin)
   margin-bottom: default-margin
 
@@ -73,18 +73,18 @@
     display: block
     margin: 0
     padding: thin-padding small-padding
-    font-size: 15px
-    font-weight: 500
+    font-size: var(--font-size-medium)
+    font-weight: var(--font-weight-bolder)
     text-transform: uppercase
     text-decoration: none
     background-color: transparent
     color: var(--color-button-text)
     &.current
-      font-size: 1rem
+      font-size: var(--font-size-normal)
       background: var(--color-accent)
-      border-radius: 0 0 border-radius-small border-radius-small
-      color: #fff
-      line-height: line-height-small
+      border-radius: 0 0 var(--border-radius-small) var(--border-radius-small)
+      color: var(--color-logo)
+      line-height: var(--line-height-small)
       padding-inline: 1rem
       margin-inline: 0.5rem
       svg#diamond
@@ -100,7 +100,7 @@
     &:not(.current):hover
       color: var(--color-accent-text)
     &.prev:before, &.next::after
-      font-size: 0.9rem
+      font-size: var(--font-size-medium-extra)
     &.prev:before
       content: "\276E"
       margin-right: 10px
@@ -150,23 +150,18 @@
       margin-right: -28px !important /* HACK */
     p, table
       margin: default-margin 0
-      line-height: line-height-text
-    // p:first-child
-    //   margin-top: 0
-    // p:last-child
-    //   margin-bottom: 0
+      line-height: var(--line-height-text)
     h1:first-child, h2:first-child
       margin-top: 0
     h1, h2, h3, h5
-      font-weight: font-weight-bold
+      font-weight: var(--font-weight-bold)
     h4, h6
-      font-weight: font-weight-normal
+      font-weight: var(--font-weight-normal)
     h1, h2, h3, h4, h5, h6
-      line-height: line-height-title
+      line-height: var(--line-height-title)
       margin: medium-margin 0 (default-margin)
     ul, ol, dl
-      margin-top: line-height
-      margin-bottom: line-height
+      margin-block: default-margin
     fieldset
       span.result
         position: absolute
@@ -174,7 +169,7 @@
       span.result.error
         color: var(--color-error)
     time
-      font-size: font-size-small
+      font-size: var(--font-size-small)
       margin-bottom: -(default-margin)
       position: absolute
       color: var(--color-meta)
@@ -211,9 +206,9 @@
 
   .view-bar
     margin: default-margin (medium-margin / 4) default-margin
-    line-height: 1.8rem
+    line-height: var(--line-height-text)
     .view-count
-      font-weight: font-weight-bold
+      font-weight: var(--font-weight-bold)
     input[type=radio]
       display: none
     input[name="view-filter-status"], 
@@ -223,7 +218,7 @@
     input[name="view-sort-field"],
     input[name="view-sort-order"]
       + label
-        font-weight: font-weight-normal
+        font-weight: var(--font-weight-normal)
         cursor: pointer
         display: none
       &:checked
@@ -259,20 +254,17 @@
           img
             @extend $inview-image-visible
       h3
-        line-height: line-height-subtitle
-        font-weight: font-weight-bold
+        line-height: var(--line-height-subtitle)
+        font-weight: var(--font-weight-bold)
         a
           text-decoration: none
           color: var(--color-text)
           &:hover
             color: var(--color-accent-text)
-      // .card-img.in-view
-      //   img
-      //     @extend $inview-image-visible
 
     .card.collection
       .card-img
-        border-radius: border-radius border-radius 0 0
+        border-radius: var(--border-radius-normal) var(--border-radius-normal) 0 0
         img
           border-bottom: 1px var(--color-background) solid
       div.tags
@@ -280,11 +272,11 @@
         flex-flow: row wrap
         span, a.tag
           display: block
-          border-radius: border-radius-small
+          border-radius: var(--border-radius-small)
           padding: 0 small-padding
           margin: 0 small-margin small-margin 0
           text-transform: uppercase
-          font-size: 0.75rem
+          font-size: var(--font-size-tiny)
           background-color: var(--color-background)
           color: var(--color-meta)
     
@@ -293,7 +285,7 @@
       .card-img.spotlight
         cursor: zoom-in
       span.pre-title
-        font-size: font-size-small;
+        font-size: var(--font-size-small)
         opacity: 0.5
         em
           display: inline-block
@@ -302,7 +294,7 @@
         white-space: nowrap
         overflow: hidden
         text-overflow: ellipsis
-        font-size: font-size-medium
+        font-size: var(--font-size-medium)
         padding: thin-padding (thin-padding + small-padding)
         opacity: 0.75
         color: white
@@ -355,12 +347,12 @@
         height: auto
         margin: -(small-margin)
         margin-bottom: 0
-        border-radius: border-radius 0 0 0
+        border-radius: var(--border-radius-normal) 0 0 0
       .status
-        border-radius: 0 0 border-radius border-radius
+        border-radius: 0 0 var(--border-radius-normal) var(--border-radius-normal)
       h3
         margin: medium-margin 0 0
-        font-size: font-subtitle-size
+        font-size: var(--font-subtitle-size)
         grid-area: title
         overflow: hidden
         a
@@ -377,7 +369,7 @@
       grid-template-areas: "image title" "image tags"
       .card-img
         width: 90px
-        border-radius: border-radius 0 0 border-radius
+        border-radius: var(--border-radius-normal) 0 0 var(--border-radius-normal)
       h3
         margin-top: small-margin
       div.tags
@@ -399,7 +391,7 @@
         display: none
       span.pre-title
         grid-area: link
-        line-height: 1rem
+        line-height: var(--line-height-thin)
         padding-top: 0.25rem
       .status
         grid-area: status
@@ -421,7 +413,7 @@
           object-fit: cover
       h3
         margin: medium-margin 0 default-margin
-        font-size: font-subtitle-size
+        font-size: var(--font-subtitle-size)
         
     .card.collection
       div.tags
@@ -445,7 +437,7 @@
       padding: medium-padding medium-padding 0
       .card-img
         grid-area: image
-        border-radius: border-radius border-radius 0 0
+        border-radius: var(--border-radius-normal) var(--border-radius-normal) 0 0
         img
           height: 12rem
           @media mq-tablet
@@ -497,7 +489,7 @@
             background-image: var(--brand-pixelfed)
             opacity: 0.4
             /[data-theme="dark"] &
-              background-image: url(/images/brands/pixelfed_invert.svg)
+              background-image: var(--brand-pixelfed-invert)
               filter: grayscale(1) invert(0)
               &:hover
                 filter: grayscale(0)
@@ -528,22 +520,17 @@
         grid-area: pretitle
         display: block
         margin-block: small-margin
-        line-height: line-height-small
+        line-height: var(--line-height-small)
       .status
         grid-area: status
         margin: 0 -1rem
-        border-radius: 0 0 border-radius border-radius
+        border-radius: 0 0 var(--border-radius-normal) var(--border-radius-normal)
     .card.photobox
       display: grid
       grid-template-rows: 2rem auto
       grid-template-areas: "period" "content"
       padding: 0 1rem 0
-      margin-inline: 0.75rem
-      // border-width: 1px
-      // border-style: solid
-      // border-color: #ddd #ccc #ccc #ddd
-      // /[data-theme="dark"] &
-      //   border-color: #333 #000 #000 #333
+      margin-inline: 0.75rem      
       &:before
         content: ""
         display: block
@@ -553,7 +540,7 @@
         width: calc(100% + 1rem)
         margin-inline: -0.5rem
         margin-block-start: -1rem
-        border-radius: 4px
+        border-radius: var(--border-radius-normal)
         border-width: 1px
         border-style: solid
         border-color: #ddd #ccc #ccc #ddd 
@@ -569,7 +556,7 @@
         grid-area: period
         z-index: 0
         opacity: 0.33
-        font-size: 0.66rem
+        font-size: var(--font-size-tiny)
         align-self: center
         text-align: right
         margin-inline: -1rem
@@ -580,7 +567,7 @@
           margin-bottom: 0
           height: auto
           width: calc(100% + 2rem)
-          border-radius: border-radius border-radius 0 0
+          border-radius: var(--border-radius-normal) var(--border-radius-normal) 0 0
           img
             @extend $inview-image
             transform: scale(1) !important
@@ -609,13 +596,10 @@
           align-items: start
           justify-content: space-evenly
           padding: 0.25rem 0 0 0.125rem
-          font-size: 0.9rem
+          font-size: var(--font-size-medium-extra)
           border-top-left-radius: 40% 70%
-          background-color: #fff
-          box-shadow: inset 4px 4px 8px -6px #333
-          /[data-theme="dark"] &
-            background-color: #333
-            box-shadow: inset 4px 4px 8px -6px #111
+          background-color: var(--color-block)
+          box-shadow: inset 4px 4px 8px -6px var(--color-shadow-dark)
         h3
           align-self: center
           word-break: break-word
@@ -629,8 +613,7 @@
       .card-img
         display: flex
         width: auto
-        //filter: grayscale(0) contrast(1) !important
-        border-radius: border-radius
+        border-radius: var(--border-radius-normal)
         img 
           width: 100%
       div.card-links
@@ -755,7 +738,7 @@
         display: inline-block
         content: "- default"
         margin-left: small-margin
-        font-size: font-size-small
+        font-size: var(--font-size-small)
         /* text-decoration-color: transparent --- doesn't work */
 
   section.mf2feed
@@ -789,11 +772,11 @@
               position: unset
               margin-block: small-margin
             h3, h4
-              line-height: line-height-text
+              line-height: var(--line-height-text)
             h3
               margin-block: small-margin 0
             h4
-              font-size: 1rem
+              font-size: var(--font-size-normal)
               @media mq-normal
                 margin-block-end: 0
           article
@@ -818,7 +801,7 @@
         gap: 0.2rem
         label
           font-family: var(--font-mono)
-          font-size: font-size-tiny
+          font-size: var(--font-size-tiny)
           text-transform: uppercase
           opacity: 0.5
           line-height: normal
@@ -845,7 +828,7 @@
       right: 0
       bottom: -(default-margin)
       opacity: 0.33
-      font-size: 0.66rem
+      font-size: var(--font-size-tiny)
 
   section#color-list
     display: none
@@ -853,7 +836,7 @@
     box-shadow: none
     padding: 0
     position relative
-    font-size: font-size-medium
+    font-size: var(--font-size-medium)
     ul
       display: grid
       grid-template-columns: repeat(2, 1fr)
@@ -895,7 +878,7 @@
         width: auto
         position: relative
         padding: 1rem
-        border-radius: border-radius
+        border-radius: var(--border-radius-normal)
         background: var(--color-block)
         // box-shadow: var(--length-shadow) var(--color-shadow)
         span
@@ -913,7 +896,7 @@
           position: absolute
           top: -1rem
           right: -1rem
-          border-radius: 0 border-radius border-radius 0
+          border-radius: 0 var(--border-radius-normal) var(--border-radius-normal) 0
           cursor: alias
   #map
     /[data-theme="dark"] &
@@ -926,13 +909,13 @@
       height: 320px
       margin: medium-margin -2rem small-margin
     &.inline-map
-      border-radius: border-radius
+      border-radius: var(--border-radius-normal)
       height: calc(80vh)
       width: 100%
       margin: 0 0 block-margin 0
     .photoPopup
       .leaflet-popup-content-wrapper, .leaflet-popup-tip
-        border-radius: border-radius
+        border-radius: var(--border-radius-normal)
         background-color: var(--color-background)
         color: var(--color-text)
       .leaflet-popup-content-wrapper
@@ -941,7 +924,7 @@
             margin: small-margin 0 0 0
             list-style-type: none
           li
-            line-height: line-height
+            line-height: var(--line-height-normal)
             a
               transition: all ease-out 0.2s
               color: var(--color-accent-text)

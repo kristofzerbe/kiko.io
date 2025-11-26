@@ -24,7 +24,7 @@ global-reset()
 
 html
   text-size-adjust: none // Andy Bells Modernized Reset
-  font-size: font-size
+  font-size: var(--font-size-default)
 
 html, body
   height: 100%
@@ -43,9 +43,9 @@ body
   color: var(--color-text)
   background: var(--color-background)
   font-family: var(--font-sans)
-  font-weight: font-weight-normal
+  font-weight: var(--font-weight-normal)
   min-height: 100vh // Andy Bells Modernized Reset
-  line-height: line-height // Andy Bells Modernized Reset
+  line-height: var(--line-height-normal) // Andy Bells Modernized Reset
 
 .outer
   clearfix()
@@ -69,7 +69,7 @@ body
   display: none
 
 h1, h2, h3, h4, button, input, label
-  line-height: line-height // Andy Bells Modernized Reset
+  line-height: var(--line-height-normal) // Andy Bells Modernized Reset
 
 h1, h2, h3, h4
   text-wrap: balance // Andy Bells Modernized Reset !
@@ -122,7 +122,7 @@ input, textarea, button
   margin: 0
   padding: 0
   font-family: Arial, Helvetica, sans-serif
-  font-size: font-size-medium
+  font-size: var(--font-size-medium)
   &::-moz-focus-inner
     border: 0
     padding: 0
@@ -137,7 +137,7 @@ input, textarea
 
 textarea
   resize: none
-  line-height: line-height
+  line-height: var(--line-height-normal)
 
 textarea:not([rows])
   min-height: 10em // Andy Bells Modernized Reset
@@ -159,10 +159,9 @@ a
 
 small.label
   display: block
-  margin-block: 0.25rem
+  margin-block: thin-margin
   opacity: .5
-  line-height: 1rem
-  // font-size: 0.75rem !important
+  line-height: var(--line-height-thin)
   span
     text-wrap: nowrap
 
@@ -213,16 +212,16 @@ table
       th, td 
         padding: (default-padding / 3)
       td
-        font-weight: font-weight-normal    
+        font-weight: var(--font-weight-normal)    
       th 
-        font-weight: font-weight-bold
+        font-weight: var(--font-weight-bold)
     tr:not(.no-border) 
       th:not(:empty), td
         border: 1px var(--color-border) solid
 
 pre.json
-  font-family: 'Roboto Mono',monospace
-  font-size: 13px
+  font-family: var(--font-mono) /*'Roboto Mono',monospace*/
+  font-size: var(--font-size-code)
   .string 
     color: #4271ae
   .number 
@@ -250,10 +249,10 @@ if sidebar is left
 
 .medium-zoom-image--opened
   z-index: 1000
-  border-radius: (border-radius-small / 2)
+  border-radius: calc(var(--border-radius-small) / 2)
 
 .loading /* https://codepen.io/thetallweeks/pen/yybGra */
-  font-size: 1rem
+  font-size: var(--font-size-normal)
   &:after
     overflow: hidden
     display: inline-block
@@ -271,7 +270,7 @@ if sidebar is left
     white-space:pre
     letter-spacing:0
     font-family: var(--font-mono)
-    font-size: 16px
+    font-size: var(--font-size-normal)
     zoom: 80%
     @media mq-mobile
       zoom: 50%
@@ -286,9 +285,9 @@ if sidebar is left
       font-size: 1.6rem
       letter-spacing: 0
     margin: double-margin auto small-margin
-    font-weight: font-weight-normal
+    font-weight: var(--font-weight-normal)
     strong
-      font-weight: font-weight-extrabold
+      font-weight: var(--font-weight-extrabold)
       background: url(/images/banner.jpg) no-repeat 58% 67%
       -webkit-background-clip: text
       color: transparent
@@ -403,7 +402,7 @@ if sidebar is left
       margin-left: medium-margin
   .spl-footer
     .spl-title
-      font-size: font-subtitle-size
+      font-size: var(--font-subtitle-size)
       margin-bottom: medium-margin
     .spl-description
       margin-bottom: extra-margin
@@ -414,7 +413,7 @@ if sidebar is left
       margin: 0
       padding: (default-margin/2) default-margin
       margin: default-margin
-      border-radius: border-radius-small
+      border-radius: var(--border-radius-small)
       background-color: #000 //var(--color-accent)
       color: #fff
       opacity: 0.75

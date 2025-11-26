@@ -49,13 +49,13 @@
 .archive-year
   @extend $block-caption
   margin-left: 0
-  font-size: font-titlelist-size
+  font-size: var(--font-subtitle-size)
   color: var(--color-meta)
 
 .archive-list
   > em
     font-style: italic
-    font-size: font-size-medium
+    font-size: var(--font-size-medium)
     margin-left: thin-margin
 
 .archive-list-navigation
@@ -64,7 +64,7 @@
   justify-content: flex-start
   flex-wrap: nowrap
   overflow-x: auto
-  font-size: font-size-medium
+  font-size: var(--font-size-medium)
   background: linear-gradient(90deg, var(--color-background) 5%, var(--color-block) 50%, var(--color-background) 100%)
   .archive-list-wrapper
     flex: 0 0 auto
@@ -73,7 +73,7 @@
     &:hover
       color: var(--color-accent-text)
     h2
-      font-weight: font-weight-bold
+      font-weight: var(--font-weight-bold)
       margin-block: medium-margin small-margin
       margin-left: (medium-margin - thin-margin)
     ul
@@ -128,13 +128,11 @@
   margin: block-margin auto
   text-align: center
   overflow: hidden
-  font-size: font-size-medium
+  font-size: var(--font-size-medium)
   color: var(--color-meta)
   a, span
-    padding-inline: small-padding
-    margin: small-margin small-margin
-    line-height: 1
-    height: 2ex
+    padding-block: thin-padding
+    padding-inline: (small-padding + thin-padding)    
   a
     text-decoration: none
     &:hover
@@ -148,11 +146,11 @@
     @media mq-mobile
       display: none
   .current
-    color: var(--color-text)
-    font-weight: font-weight-bold
-    font-size: font-subtitle-size
+    background-color: var(--color-accent)
+    color: var(--color-logo)
+    border-radius: var(--border-radius-small)
   .space
     color: var(--color-text)
-    font-weight: font-weight-bold
+    font-weight: var(--font-weight-bold)
     @media mq-mobile
       display: none

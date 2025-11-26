@@ -6,7 +6,7 @@
   clearfix()
   position: relative
   z-index: 99
-  font-size: font-size-medium
+  font-size: var(--font-size-medium)
 
 .article-date
   @extend $block-caption
@@ -34,9 +34,9 @@
       position: absolute
       z-index: 99
       padding: thin-padding (thin-padding * 3) (thin-padding / 3 * 2)
-      font-size: font-size-small
-      font-weight: font-weight-bold
-      border-radius: border-radius-small
+      font-size: var(--font-size-small)
+      font-weight: var(--font-weight-bold)
+      border-radius: var(--border-radius-small)
       text-transform: uppercase
       color: var(--color-logo)
       background-color: var(--color-accent)
@@ -47,7 +47,7 @@
       padding-top: (default-padding-vert * 2.5)
     .article-meta
       small
-        font-size: font-size-small
+        font-size: var(--font-size-small)
         display: block
         position: absolute
         padding-top: thin-padding
@@ -56,7 +56,7 @@
         --padding-small: 8.5rem
         padding-left: var(--padding-small)
         width: calc(100% - calc(var(--padding-small) + 0.5rem))
-        border-radius: 0 border-radius 0 0
+        border-radius: 0 var(--border-radius-normal) 0 0
         white-space: nowrap
         overflow: hidden
         text-overflow: ellipsis
@@ -91,7 +91,7 @@
         @media mq-mobile
           left: -1.5rem
       small
-        font-size: font-size-small
+        font-size: var(--font-size-small)
         --padding-small: 6rem
         padding-left: var(--padding-small)
         width: calc(100% - calc(var(--padding-small) + 0.5rem))
@@ -121,7 +121,7 @@
       border-width: 1px
       border-style: solid
     .article-meta
-      font-size: font-size-small
+      font-size: var(--font-size-small)
       time
         left: -2.75rem
         @media mq-mobile
@@ -154,9 +154,9 @@
     .article-header
       padding: 1.75rem 1rem 0.75rem 1rem
       a
-        font-size: font-subtitle-size
-        font-weight: font-weight-bold
-        line-height: line-height
+        font-size: var(--font-subtitle-size)
+        font-weight: var(--font-weight-bold)
+        line-height: var(--line-height-normal)
     &.rel
       .article-header
         padding: 2.5rem 1rem 0.5rem 1rem
@@ -169,11 +169,11 @@
   small.top-exclamation
     display: block
     padding: small-padding (thin-padding * 3)
-    font-size: font-size-small
+    font-size: var(--font-size-small)
     span
       display: block
       margin-left: default-margin
-      line-height: line-height-small
+      line-height: var(--line-height-small)
       opacity: 0.5
     &:before
       content: ""
@@ -269,7 +269,7 @@
   text-transform: uppercase
   text-decoration: none
   display: inline-block
-  font-size: font-size-medium
+  font-size: var(--font-size-medium)
   margin-bottom: small-margin
   margin-right: small-margin
   color: var(--color-meta)
@@ -281,10 +281,10 @@
   z-index: 0
   display: table
   text-decoration: none
-  font-weight: font-weight-bold
+  font-weight: var(--font-weight-bold)
   letter-spacing: -1px
-  font-size: font-title-size
-  line-height: line-height-title
+  font-size: var(--font-title-size)
+  line-height: var(--line-height-title)
   transition: color 0.4s
   color: var(--color-text)
   em
@@ -303,7 +303,7 @@
     margin: -3px -9px
     background: var(--color-block)
     content: ""
-    border-radius: border-radius
+    border-radius: var(--border-radius-normal)
     inset: 0
     transform: scaleX(0)
     transform-origin: right
@@ -314,8 +314,8 @@
       transform-origin: left
 
 .article-subtitle
-  font-size: font-subtitle-size
-  line-height: line-height
+  font-size: var(--font-subtitle-size)
+  line-height: var(--line-height-normal)
   margin-top: default-margin
 
 .article-entry
@@ -326,19 +326,19 @@
   .float-element
     display: block
     float: right
-    margin: line-height 0 line-height line-height
+    margin: default-margin 0 default-margin default-margin
   p, table
     margin: default-margin 0
-    line-height: line-height-text
+    line-height: var(--line-height-text)
   h1, h2, h3, h5
-    font-weight: font-weight-bold
+    font-weight: var(--font-weight-bold)
   h4, h6
-    font-weight: font-weight-normal
+    font-weight: var(--font-weight-normal)
   h1, h2, h3, h4, h5, h6
-    line-height: line-height-title
-    margin: (line-height-title) 0 (line-height-title / 2)
+    line-height: var(--line-height-title)
+    margin: block-margin 0 (block-margin / 2)
   hr + h1, hr + h2, hr + h3
-    margin: (line-height-title / 3) 0 (line-height-title / 2)
+    margin: (default-margin / 2) 0 (block-margin / 2)
   a:not([class]), a.u-in-reply-to
     white-space: pre-line
     word-break: break-word
@@ -379,7 +379,7 @@
     height: 100%
   .image-masonry
     img
-      border-radius: border-radius-small
+      border-radius: var(--border-radius-small)
   .float-matchgrid
     display: grid
     float: right
@@ -391,7 +391,7 @@
       padding: medium-margin
       @media mq-mobile
         padding: small-margin
-      font-weight: font-weight-extrabold
+      font-weight: var(--font-weight-extrabold)
       font-size: clamp(1.75rem, 6vw, 2.5rem)
       align-self: center
   h2 + small.link
@@ -404,7 +404,7 @@
     border-collapse: collapse
     border-spacing: 0
   th
-    font-weight: font-weight-bold
+    font-weight: var(--font-weight-bold)
     padding-bottom: small-margin
     border-bottom: 3px solid var(--color-border-dim)
   td
@@ -412,11 +412,11 @@
   details
     margin-top: 2px
     &:hover summary
-      font-weight: font-weight-bold
+      font-weight: var(--font-weight-bold)
     &[open]
       margin-bottom: 20px
       summary
-        font-weight: font-weight-bold
+        font-weight: var(--font-weight-bold)
     summary
       cursor: pointer
       padding: 5px 0
@@ -491,11 +491,11 @@
       margin-top: 0
       margin-bottom: 0
     p
-      line-height: line-height-text
+      line-height: var(--line-height-text)
       margin: medium-margin 0
     footer
-      font-size: font-size
-      margin: line-height 0
+      font-size: var(--font-size-normal)
+      margin: default-margin 0
       font-family: var(--font-sans)
       cite
         &:before
@@ -514,7 +514,7 @@
   .caption
     color: var(--color-meta)
     display: block
-    font-size: font-size-medium
+    font-size: var(--font-size-medium)
     font-style: italic
     opacity: 0.6
     margin-top: small-margin
@@ -543,7 +543,7 @@
     margin-block-end: medium-margin
     figure
       img
-        border-radius: 4px
+        border-radius: var(--border-radius-normal)
         box-shadow: 1px 1px 12px 0px #888 !important
         /[data-theme="dark"] &
           box-shadow: 1px 1px 12px 0px #000 !important
@@ -553,7 +553,7 @@
       figcaption
         text-align: center
         padding-block-start: small-padding
-        font-size: font-size-small
+        font-size: var(--font-size-small)
         font-style: italic
         color: var(--color-meta)
 
@@ -563,7 +563,7 @@
 
 .article-more-link
   position: relative
-  font-size: font-size-small
+  font-size: var(--font-size-small)
   text-transform: uppercase
   a
     padding-left: 14px
@@ -584,14 +584,14 @@
 .button:not(.posts)
   display: inline-block
   text-align: center
-  font-size: font-size
+  font-size: var(--font-size-normal)
   position: relative
   text-decoration: none
   padding: (default-padding-vert/2) (default-padding/2)
   background-color: var(--color-button-back)
   color: var(--color-button-text)
   border: none
-  border-radius: border-radius-small
+  border-radius: var(--border-radius-small)
   &:hover
     background-color: var(--color-accent-text)
     color: var(--color-logo)
@@ -642,13 +642,13 @@
   > h2
     @extend $block-caption
     color: var(--color-meta)
-    font-size: font-subtitle-size
-    line-height: line-height
+    font-size: var(--font-subtitle-size)
+    line-height: var(--line-height-normal)
     margin: default-margin 0
   p
     opacity: var(--text-opacity)
     margin-block: medium-margin
-    font-size: font-size-medium
+    font-size: var(--font-size-medium)
     &:first-child
       margin-block-start: 0
     &:last-child
@@ -791,7 +791,7 @@
 
 .article-footer,
 .section-footer
-  font-size: font-size-small
+  font-size: var(--font-size-small)
   // padding-top: (default-padding / 2)
   margin: 0 default-padding default-margin
   display: grid
@@ -835,24 +835,24 @@
     opacity: 1
 
 .article-permalink
-  padding-top: line-height
-  margin-top: line-height
+  padding-top: default-padding-vert
+  margin-top: default-margin
   border-top: 1px var(--color-border) solid
   @media mq-mobile
-    padding-top: line-height * 0.6
-    margin-top: line-height * 0.6
+    padding-top: medium-padding
+    margin-top: medium-margin
 
 .article-permalink
   display: flex
   flex-direction: row
-  font-size: font-size-small
+  font-size: var(--font-size-small)
   padding-left: 50px
   @media mq-mobile
     padding-left: 30px
   a
     cursor: pointer
   input
-    font-size: font-size-medium
+    font-size: var(--font-size-medium)
     font-family: var(--font-sans)
     background: transparent
     text-align: right
@@ -889,12 +889,11 @@
       background-image: url(/images/icons/share.svg)
 
 .article-golem
-  padding-top: line-height
-  padding-bottom: default-padding-vert
+  padding-block: default-padding-vert
   padding-left: 140px
   padding-right: default-padding
-  margin-top: line-height
-  margin-bottom: -(default-padding-vert)
+  margin-top: default-margin
+  margin-bottom: -(default-margin)
   margin-left: -(default-padding)
   margin-right: -(default-padding)
   background-repeat: no-repeat
@@ -952,12 +951,12 @@
   text-transform: uppercase
   letter-spacing: 2px
   color: var(--color-meta)
-  font-weight: font-weight-bold
+  font-weight: var(--font-weight-bold)
   #article-nav-newer &
     margin-right: -2px
 
 .article-nav-title
-  font-size: font-size-medium
+  font-size: var(--font-size-medium)
   margin-top: small-margin
   text-decoration: none
   &:hover
@@ -999,9 +998,9 @@
   p
     grid-area: info
   input
-    font-size: font-size-small
+    font-size: var(--font-size-small)
     padding: thin-margin (thin-margin + small-margin)
-    border-radius: border-radius-small
+    border-radius: var(--border-radius-small)
   label
     grid-area: label
     opacity: 0.75
@@ -1030,17 +1029,17 @@
 
 .interactions-totalnumber
   display: block
-  line-height: line-height
+  line-height: var(--line-height-normal)
   margin-block-start: default-margin
   padding: thin-padding (thin-padding * 3)
   background-color: var(--color-back-dim)
-  border-radius: border-radius
-  font-size: font-size-medium
+  border-radius: var(--border-radius-normal)
+  font-size: var(--font-size-medium)
   text-decoration: none
   .delta
     display: block
     float: right
-    font-weight: font-weight-bolder
+    font-weight: var(--font-weight-bolder)
 
 .article-interactions
   padding-block-end: (default-padding / 2)
@@ -1051,19 +1050,19 @@
 
   .interactions-summary-line
     margin-block-start: 0
-    line-height: line-height-small
+    line-height: var(--line-height-small)
 
   .interactions-summary-line,
   .interactions-summary-line > a
-    font-size: font-size-small
+    font-size: var(--font-size-small)
 
   .interactions-avatars, .interactions-list
     position: relative
     padding-block-end: default-padding-vert
     h3
       @extend $block-caption
-      font-size: font-size-medium
-      font-weight: font-weight-normal
+      font-size: var(--font-size-medium)
+      font-weight: var(--font-weight-normal)
       opacity: var(--text-opacity)
 
   .interactions-avatars
@@ -1134,10 +1133,10 @@
       position: relative
       background-color: var(--color-block)
       color: var(--color-text)
-      border-radius: border-radius
+      border-radius: var(--border-radius-normal)
       font-style: normal
-      font-size: font-size-medium
-      line-height: line-height-small
+      font-size: var(--font-size-medium)
+      line-height: var(--line-height-small)
       overflow: hidden
       a
         word-wrap: break-word

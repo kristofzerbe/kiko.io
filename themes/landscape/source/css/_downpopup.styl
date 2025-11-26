@@ -16,17 +16,17 @@
   padding: 2vh default-margin
   display: flex
   justify-content: space-between
-  font-weight: font-weight-bold
-  font-size: font-subtitle-size
+  font-weight: var(--font-weight-bold)
+  font-size: var(--font-subtitle-size)
   text-transform: uppercase
   background-color: rgba(255, 255, 255, 95%)
   /[data-theme="dark"] &
     background-color: rgba(51, 51, 51, 95%)
   .downupPopup-kapat
     align-self: center
-    font-size: 20px
+    font-size: var(--font-subtitle-size)
     cursor: pointer
-    stroke: var(--color-text) //TODO: was color-foreground
+    stroke: var(--color-text)
 
 .downupPopup-content
   background-color: rgba(255, 255, 255, 95%)
@@ -46,14 +46,14 @@
     h1
       margin: small-margin 0 default-margin
       padding: 0 0 small-margin
-      font-weight: font-weight-bold
+      font-weight: var(--font-weight-bold)
       opacity 0.8
     details
       overflow-x: hidden
       margin-bottom: small-margin
       summary
         padding: (default-padding / 2)
-        font-weight: font-weight-bold
+        font-weight: var(--font-weight-bold)
         opacity: 0.8
         cursor: pointer
         background-color: rgba(230, 230, 230, 95%)
@@ -69,7 +69,7 @@
       margin-bottom: 2px
       margin-left: 0
       font-family: var(--font-mono)
-      font-size: font-size-tiny
+      font-size: var(--font-size-tiny)
       text-transform: uppercase
       opacity: 0.5
       line-height: normal
@@ -88,7 +88,7 @@
       &:focus
         outline: none
     input
-      line-height: 1rem
+      line-height: var(--line-height-normal)
       &::placeholder
         font-style: italic
         opacity: 0.5
@@ -104,14 +104,14 @@
         background-color: #111
         color: #fff
     h3
-      font-weight: font-weight-bold
+      font-weight: var(--font-weight-bold)
     figure
       margin: 0
       img
         width: 100%
         max-width: 480px
       figcaption
-        font-size: font-size-small
+        font-size: var(--font-size-small)
         font-style: italic
 
 #dark-back

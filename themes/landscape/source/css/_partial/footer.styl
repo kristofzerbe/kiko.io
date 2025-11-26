@@ -12,16 +12,16 @@
 #footer .inner
   position: relative
   width: 95%
-  line-height: line-height
-  font-size: font-size-code
+  line-height: var(--line-height-normal)
+  font-size: var(--font-size-code)
   display: grid
   grid-template-columns: max-content auto max-content
-  grid-template-rows: max-content (line-height) max-content max-content max-content
+  grid-template-rows: max-content 0.75rem max-content max-content max-content
   grid-gap: 2px 64px
   grid-template-areas: "links . webrings" ". . webrings" "perf . webrings" "info . webrings" "dots . webrings"
   @media mq-tablet-min
     grid-template-columns: max-content 
-    grid-template-rows: max-content (line-height/2) max-content max-content (line-height/2) max-content (line-height/5) max-content 
+    grid-template-rows: max-content 0.75rem max-content max-content 0.75rem max-content 0.3rem max-content 
     grid-gap: 2px 5px
     grid-template-areas: "links" "." "perf" "info" "." "webrings" "." "dots"
 
@@ -107,7 +107,7 @@
 #back-to-top 
   color: var(--color-logo)
   background-color: var(--color-accent)
-  border-radius: border-radius-small
+  border-radius: var(--border-radius-small)
 
 #back-to-top
   right: 10px

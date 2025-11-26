@@ -31,15 +31,15 @@ $code-block
   margin: small-margin default-padding * -1  
   padding: (default-padding / 2) default-padding
   overflow: auto  
-  font-size: font-size-code
-  line-height: line-height
+  font-size: var(--font-size-code)
+  line-height: var(--line-height-normal)
 
 // $dark-code-block
 //   background: dark-highlight-background
 //   color: dark-highlight-foreground
 
 $line-numbers
-  font-size: font-size-small
+  font-size: var(--font-size-small)
 
 .article-entry,
 .page-content
@@ -47,7 +47,7 @@ $line-numbers
     font-family: var(--font-mono)    
   code
     line-break: anywhere
-    font-size: font-size-code
+    font-size: var(--font-size-code)
     padding: 0 thin-padding
   a
     code
@@ -57,7 +57,7 @@ $line-numbers
   p, li
     code
       white-space: nowrap
-      border-radius: 4px
+      border-radius: var(--border-radius-normal)
       background-color: var(--color-background)
   pre
     @extend $code-block
@@ -94,7 +94,7 @@ $line-numbers
       clearfix()
       font-size: 1em
       color: highlight-comment
-      line-height: 1em
+      line-height: var(--line-height-thin)
       margin-bottom: 1em
       a
         float: right
@@ -106,7 +106,7 @@ $line-numbers
       text-align: right
       padding-right: 20px
     .line
-      height: font-size * line-height
+      height: line-height /* ??? font-size * line-height */      
     .line.marked
       background: highlight-selection
   .gist
@@ -137,7 +137,7 @@ $line-numbers
       .gist-meta
         background: highlight-background
         color: highlight-comment
-        font: font-size-small var(--font-sans)
+        font: var(--font-size-small) var(--font-sans)
         text-shadow: 0 0
         padding: 0
         margin-top: 1em

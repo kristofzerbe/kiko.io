@@ -16,7 +16,7 @@
 
 .panel-inner
   @extend $block-inner-hover
-  padding: 10px
+  padding: 0.75rem
   overflow: hidden  
   &.today
     border-top: 8px var(--color-accent) solid
@@ -24,13 +24,13 @@
     border-top: 8px var(--color-accent-median) solid
 
 .panel-header
-  margin-inline: -10px
-  margin-block-start: -10px
-  margin-block-end: 20px
+  margin-inline: -0.75rem
+  margin-block-start: -0.75rem
+  margin-block-end: 0.75rem
 
 .panel-favicon
   display: block
-  margin-top: 10px
+  margin-top: 0.75rem
   img
     width: 32px
     height: 32px
@@ -48,13 +48,13 @@
   @extend $inview-image-visible
 
 .panel-content
-  padding: 0 (default-padding / 4) (default-padding-vert / 2)
+  padding: 0 small-padding medium-padding
   overflow: hidden
   p
     margin-bottom: 0 !important
   p.small
-    font-size: font-size-code
-    line-height: 1.1rem
+    font-size: var(--font-size-code)
+    line-height: var(--line-height-small)
   div.icon-links
     margin: 1rem 0 1.25rem
     a
@@ -85,7 +85,7 @@
 
 .panel-date,
 .panel-category
-  font-size: font-size-small
+  font-size: var(--font-size-small)
   margin-bottom: medium-margin
   display: inline-block
 
@@ -94,17 +94,16 @@
 
 .panel-date
   time.updated
-    color: var(--color-text) //TODO: was color-foreground
+    color: var(--color-text)
     &:before
       content: "Update, "
 
 .panel-anything
   display: block
   text-decoration: none
-  line-height: line-height-thin
-  margin-block: small-margin
+  line-height: var(--line-height-thin)
   text-transform: uppercase
-  font-size: font-size-small
+  font-size: var(--font-size-small)
   color: var(--color-meta)
   &:hover
     color: var(--color-accent-text)
@@ -116,9 +115,9 @@
   margin-top: small-margin
   margin-bottom: small-margin
   text-decoration: none
-  line-height: line-height-text
-  font-size: font-titlelist-size
-  font-weight: font-weight-bold
+  line-height: var(--line-height-text)
+  font-size: var(--font-subtitle-size)
+  font-weight: var(--font-weight-bold)
   color: var(--color-text)
   transition: color 0.2s
   &:hover
@@ -132,7 +131,7 @@
     margin: -0.25rem -0.5rem
     background: var(--color-block)
     content: ""
-    border-radius: border-radius
+    border-radius: var(--border-radius-normal)
     inset: 0
     transform: scaleX(0)
     transform-origin: right
@@ -140,11 +139,11 @@
 
 .panel-subtitle
   margin-top: small-margin
-  line-height: line-height-medium
+  line-height: var(--line-height-medium)
   color: var(--color-meta)
 
 .panel-footer
-  font-size: font-size-small
+  font-size: var(--font-size-small)
 
 .panel-tags
   opacity: 0.5

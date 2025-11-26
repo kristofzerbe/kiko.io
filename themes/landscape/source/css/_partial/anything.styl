@@ -16,9 +16,9 @@
   padding: default-padding default-padding 0
 
 .anything-entry
-  font-size: font-title-size
-  font-weight: font-weight-bold
-  line-height: line-height-title
+  font-size: var(--font-title-size)
+  font-weight: var(--font-weight-bold)
+  line-height: var(--line-height-title)
   transition: color 0.4s
   a.posts
     position relative
@@ -30,14 +30,14 @@
     text-decoration: none
     color: var(--color-text)
     em
-      font-size: font-subtitle-size
-      line-height: line-height-subtitle
+      font-size: var(--font-subtitle-size)
+      line-height: var(--line-height-subtitle)
       padding: (default-padding-vert / 4) (default-padding / 2)
       min-width: 80px
       max-height: 26px
       text-align: center
       transition: all .5s ease-in
-      border-radius: border-radius-small
+      border-radius: var(--border-radius-small)
       background-color: var(--color-button-back)
       color: var(--color-button-text)
     &:hover // https://css-tricks.com/adam-argyles-sick-mouse-out-css-hover-effect/
@@ -54,7 +54,7 @@
       margin: -3px -3px -3px -9px
       background: var(--color-block)
       content: ""
-      border-radius: border-radius
+      border-radius: var(--border-radius-normal)
       inset: 0
       transform: scaleX(0)
       transform-origin: right
@@ -66,8 +66,8 @@
   color: var(--color-text)
   padding: 0 default-padding
   p
-    line-height: line-height
-    margin: line-height 0
+    line-height: var(--line-height-normal)
+    margin: default-margin 0
   div.shields-io 
     p
       clear: both
