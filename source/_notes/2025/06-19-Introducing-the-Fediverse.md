@@ -18,6 +18,8 @@ It was shared so many times in the last weeks, but because it's so important, he
 
 > Watch now to discover a whole new world of social media, where privacy is respected, users are empowered, and Big Tech has no say.
 
+[German Version from Digital Courage on Peertube](https://digitalcourage.video/w/p4VBLACzX1sFG1YfVs1JEB)
+
 #Fediverse
 
 ```cardlink
