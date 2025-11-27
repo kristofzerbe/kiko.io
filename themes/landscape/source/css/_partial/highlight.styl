@@ -28,8 +28,8 @@ dark-highlight-blue = #6d95c9
 dark-highlight-purple = #ae70d5
 
 $code-block
-  margin: small-margin default-padding * -1  
-  padding: (default-padding / 2) default-padding
+  margin: var(--space-small) calc(var(--space-normal) * -1)  
+  padding: var(--space-medium) var(--space-normal)
   overflow: auto  
   font-size: var(--font-size-code)
   line-height: var(--line-height-normal)
@@ -48,7 +48,7 @@ $line-numbers
   code
     line-break: anywhere
     font-size: var(--font-size-code)
-    padding: 0 thin-padding
+    padding: 0 var(--space-thin)
   a
     code
       &:hover
@@ -70,7 +70,7 @@ $line-numbers
     .caption
       text-align: left
       margin-block-start: 0
-      margin-block-end: small-margin
+      margin-block-end: var(--space-small)
       font-style: normal
       text-transform: lowercase
     code
@@ -104,18 +104,18 @@ $line-numbers
       /[data-theme="dark"] &
         color: dark-highlight-line-numbers
       text-align: right
-      padding-right: 20px
+      padding-right: var(--space-moderate)
     .line
       height: line-height /* ??? font-size * line-height */      
     .line.marked
       background: highlight-selection
   .gist
-    margin: 0 default-padding * -1
+    margin: 0 calc(var(--space-normal) * -1)
     border-style: solid
     border-color: var(--color-border)
     border-width: 1px 0
     background: highlight-background
-    padding: 15px default-padding 15px 0
+    padding: var(--space-medium) var(--space-normal) var(--space-medium) 0
     .gist-file
       border: none
       font-family: var(--font-mono)
@@ -141,7 +141,7 @@ $line-numbers
         text-shadow: 0 0
         padding: 0
         margin-top: 1em
-        margin-left: default-padding
+        margin-left: var(--space-normal)
         a
           color: var(--color-link)
           font-weight: 400

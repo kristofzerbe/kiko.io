@@ -43,7 +43,7 @@ $base-style
     background-image: url('/images/divider.png')
     background-repeat: no-repeat
     background-position: center
-    margin: 24px 0
+    margin: var(--space-default) 0
     opacity: 0.1
     clear: both
     /[data-theme="dark"] &
@@ -70,7 +70,7 @@ $base-style
   acronym, abbr
     border-bottom: 1px dotted
   ul, ol, dl
-    margin: 0 20px
+    margin: 0 var(--space-default)
   ul, ol
     ul, ol
       margin-top: 0
@@ -87,8 +87,8 @@ $base-style
 $title
   position: relative
   display: inline-block
-  margin: block-margin 0
-  font-size: font-pagetitle-size
+  margin: var(--space-block) 0
+  font-size: var(--font-pagetitle-size)
   font-weight: var(--font-weight-bold)
   line-height: var(--line-height-title)
   text-transform: uppercase
@@ -103,7 +103,7 @@ $title
     font-weight: var(--font-weight-normal)
     text-transform: uppercase
     b 
-      padding: 0 (default-padding / 5)
+      padding: 0 var(--space-small)
       text-transform: none
       font-weight: var(--font-weight-normal)
       opacity: 0.33
@@ -111,8 +111,6 @@ $title
     word-wrap: break-word
     word-break: keep-all
     display: inline-block
-  // strong.gap
-  //     margin-top: 1rem
 
 $neutral-anchor
   color: inherit !important

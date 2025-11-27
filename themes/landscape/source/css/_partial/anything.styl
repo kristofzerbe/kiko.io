@@ -4,7 +4,7 @@
 .anything-list
   overflow: visible
   .anything-wrap
-    margin: block-margin 0
+    margin: var(--space-block) 0
     &:first-child
       margin-top: 0
 
@@ -13,7 +13,7 @@
   overflow: hidden
 
 .anything-header
-  padding: default-padding default-padding 0
+  padding: var(--space-normal) var(--space-normal) 0
 
 .anything-entry
   font-size: var(--font-title-size)
@@ -32,7 +32,7 @@
     em
       font-size: var(--font-subtitle-size)
       line-height: var(--line-height-subtitle)
-      padding: (default-padding-vert / 4) (default-padding / 2)
+      padding: var(--space-small) var(--space-medium)
       min-width: 80px
       max-height: 26px
       text-align: center
@@ -64,10 +64,10 @@
   @extend $base-style
   clearfix()
   color: var(--color-text)
-  padding: 0 default-padding
+  padding: 0 var(--space-normal)
   p
     line-height: var(--line-height-normal)
-    margin: default-margin 0
+    margin: var(--space-default) 0
   div.shields-io 
     p
       clear: both
@@ -75,11 +75,11 @@
       flex-direction: row
       flex-wrap: wrap
       img
-        margin: 0 medium-margin medium-margin 0
+        margin: 0 var(--space-medium) var(--space-medium) 0
   .brand-links
     display: flex
     flex-direction: row
-    margin: default-margin 0 double-margin
+    margin: var(--space-default) 0 var(--space-double)
     gap: 2rem
     @media mq-mobile
       gap: 1rem

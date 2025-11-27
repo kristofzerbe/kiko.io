@@ -13,7 +13,7 @@
 
 .downupPopup-header
   box-sizing: border-box
-  padding: 2vh default-margin
+  padding: 2vh var(--space-default)
   display: flex
   justify-content: space-between
   font-weight: var(--font-weight-bold)
@@ -35,7 +35,7 @@
   height: 100%
   padding-top: 0
   section
-    padding: default-margin
+    padding: var(--space-default)
     overflow-x: hidden
     &:first-child
       padding-top: 0
@@ -44,15 +44,15 @@
       /[data-theme="dark"] &
          background-color: rgba(34, 34, 34, 95%)
     h1
-      margin: small-margin 0 default-margin
-      padding: 0 0 small-margin
+      margin: var(--space-small) 0 var(--space-default)
+      padding: 0 0 var(--space-small)
       font-weight: var(--font-weight-bold)
       opacity 0.8
     details
       overflow-x: hidden
-      margin-bottom: small-margin
+      margin-bottom: var(--space-small)
       summary
-        padding: (default-padding / 2)
+        padding: var(--space-medium)
         font-weight: var(--font-weight-bold)
         opacity: 0.8
         cursor: pointer
@@ -60,7 +60,7 @@
         /[data-theme="dark"] &
            background-color: rgba(34, 34, 34, 95%)
       & > div
-        margin: 0 (default-padding / 2) (default-padding-vert / 2)
+        margin: 0 var(--space-medium) var(--space-median)
     p
       padding: 0
     label

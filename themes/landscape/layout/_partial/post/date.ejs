@@ -1,9 +1,8 @@
 <span class="<%= class_name %>">
-  <% if (post.updated > post.date) { %>
-    <time class="updated dt-updated" data-pagefind-meta="date" 
-          datetime="<%= date_xml(post.updated) %>"><%= date(post.updated, date_format) %></time>
-    <br>
-  <% } %>
+<% if (post.updated > post.date) { %>
+  <time class="updated dt-updated" data-pagefind-meta="date" 
+        datetime="<%= date_xml(post.updated) %>"><%= date(post.updated, date_format) %></time>
+<% } %>
   <time class="published dt-published" data-pagefind-meta="date" 
         datetime="<%= date_xml(post.date) %>"><%= date(post.date, date_format) %></time>
   </span>

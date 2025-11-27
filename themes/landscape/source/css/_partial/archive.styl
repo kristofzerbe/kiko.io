@@ -1,5 +1,5 @@
 .archives-wrap
-  margin: block-margin 0
+  margin: var(--space-block) 0
 
 .archive-title
   @extend $title
@@ -44,7 +44,7 @@
       background-image: url(/images/icons/box.svg)
 
 .archive-year-wrap
-  margin-bottom: medium-margin
+  margin-bottom: var(--space-medium)
 
 .archive-year
   @extend $block-caption
@@ -56,10 +56,10 @@
   > em
     font-style: italic
     font-size: var(--font-size-medium)
-    margin-left: thin-margin
+    margin-left: var(--space-thin)
 
 .archive-list-navigation
-  padding: 0 default-padding-vert (default-padding-vert / 3) 0
+  padding: 0 var(--space-default) var(--space-small) 0
   display: flex
   justify-content: flex-start
   flex-wrap: nowrap
@@ -68,21 +68,20 @@
   background: linear-gradient(90deg, var(--color-background) 5%, var(--color-block) 50%, var(--color-background) 100%)
   .archive-list-wrapper
     flex: 0 0 auto
-    // padding-right: default-padding
     transition: all .2s ease
     &:hover
       color: var(--color-accent-text)
     h2
       font-weight: var(--font-weight-bold)
-      margin-block: medium-margin small-margin
-      margin-left: (medium-margin - thin-margin)
+      margin-block: var(--space-medium) var(--space-small)
+      margin-left: var(--space-median)
     ul
       display: flex
       justify-content: flex-start
       flex-direction: column
       flex-wrap: wrap
       max-height: 230px
-      margin-block: small-margin
+      margin-block: var(--space-small)
       li
         flex: 1 0 25%
         box-sizing: border-box
@@ -99,7 +98,7 @@
         a
           display: block
           min-width: 6rem
-          margin-right: default-margin
+          margin-right: var(--space-default)
           color: var(--color-text)
           text-decoration: none
           &:hover
@@ -125,14 +124,14 @@
 
 #page-nav
   clearfix()
-  margin: block-margin auto
+  margin: var(--space-block) auto
   text-align: center
   overflow: hidden
   font-size: var(--font-size-medium)
   color: var(--color-meta)
   a, span
-    padding-block: thin-padding
-    padding-inline: (small-padding + thin-padding)    
+    padding-block: var(--space-thin)
+    padding-inline: var(--space-median)   
   a
     text-decoration: none
     &:hover

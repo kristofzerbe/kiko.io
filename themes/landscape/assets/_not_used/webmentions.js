@@ -6,7 +6,6 @@
  * @param {string} owner - name of the website owner
  */
 function insertWebmentions(key, originalHost, owner) {
-  // if (isOffline) return;
 
   const dtf = new Intl.DateTimeFormat('en-GB', { 
     year: 'numeric', month: 'short', day: '2-digit', 

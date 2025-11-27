@@ -55,8 +55,8 @@
 
 .page-subtitle
   font-weight: var(--font-weight-normal)
-  margin-top: -(small-margin)
-  margin-bottom: default-margin
+  margin-top: calc(var(--space-small) * -1)
+  margin-bottom: var(--space-default)
 
 .page-nav-index
   float: right
@@ -65,14 +65,14 @@
   flex-direction: row
   flex-wrap: wrap
   justify-content: flex-end
-  margin: 0 (small-margin * -1)
+  margin: 0 calc(var(--space-small) * -1)
   @media mq-normal
     margin: 0
   a
     flex: 0 0 auto
     display: block
     margin: 0
-    padding: thin-padding small-padding
+    padding: var(--space-thin) var(--space-small)
     font-size: var(--font-size-medium)
     font-weight: var(--font-weight-bolder)
     text-transform: uppercase
@@ -85,8 +85,8 @@
       border-radius: 0 0 var(--border-radius-small) var(--border-radius-small)
       color: var(--color-logo)
       line-height: var(--line-height-small)
-      padding-inline: 1rem
-      margin-inline: 0.5rem
+      padding-inline: var(--space-medium)
+      margin-inline: var(--space-small)
       svg#diamond
         display: block
         width: 13px
@@ -115,13 +115,13 @@
     border-bottom-style: solid
     border-bottom-width: 1px
     border-bottom-color: var(--color-block)
-    margin-bottom: 2rem
+    margin-bottom: var(--space-normal)
     margin-top: 0
     background: none
     opacity: 1
     height: 0;
   p
-    margin: medium-margin 0 (default-margin)
+    margin: var(--space-medium) 0 var(--space-default)
   p.limit-4-lines
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -135,21 +135,21 @@
   .float-element 
     display: block
     float: right
-    padding-left: default-padding
-    padding-bottom: default-padding 
+    padding-left: var(--space-normal)
+    padding-bottom: var(--space-normal) 
   section
     @extend $block-inner
     position: relative
-    margin: default-margin 0
+    margin: var(--space-default) 0
     &:first-child
       margin-top: 0
-    padding: default-padding
+    padding: var(--space-normal)
     color: var(--color-text)
     figure, pre
       margin-left: -28px !important /* HACK */
       margin-right: -28px !important /* HACK */
     p, table
-      margin: default-margin 0
+      margin: var(--space-default) 0
       line-height: var(--line-height-text)
     h1:first-child, h2:first-child
       margin-top: 0
@@ -159,9 +159,9 @@
       font-weight: var(--font-weight-normal)
     h1, h2, h3, h4, h5, h6
       line-height: var(--line-height-title)
-      margin: medium-margin 0 (default-margin)
+      margin: var(--space-medium) 0 var(--space-default)
     ul, ol, dl
-      margin-block: default-margin
+      margin-block: var(--space-default)
     fieldset
       span.result
         position: absolute
@@ -170,7 +170,7 @@
         color: var(--color-error)
     time
       font-size: var(--font-size-small)
-      margin-bottom: -(default-margin)
+      margin-bottom: calc(var(--space-default) * -1)
       position: absolute
       color: var(--color-meta)
       &.raised
@@ -190,7 +190,7 @@
     fieldset
       flex: 1 1 auto
     fieldset.gap
-      margin-right: default-margin
+      margin-right: var(--space-default)
       margin-bottom: auto;
     fieldset.max
       max-width: max-content
@@ -198,14 +198,14 @@
       fieldset.gap
         width: 100%
         margin-right: auto;
-        margin-bottom: medium-margin
+        margin-bottom: var(--space-medium)
       fieldset.max
         max-width: 25%
       fieldset.max.expand
         max-width: 75%
 
   .view-bar
-    margin: default-margin (medium-margin / 4) default-margin
+    margin: var(--space-default) var(--space-thin) var(--space-default)
     line-height: var(--line-height-text)
     .view-count
       font-weight: var(--font-weight-bold)
@@ -226,7 +226,7 @@
           display: inline-block
 
   .view
-    margin-bottom: double-margin
+    margin-bottom: var(--space-double)
     .card
       @extend $block-inner-hover
       @extend $base-style
@@ -273,8 +273,8 @@
         span, a.tag
           display: block
           border-radius: var(--border-radius-small)
-          padding: 0 small-padding
-          margin: 0 small-margin small-margin 0
+          padding: 0 var(--space-small)
+          margin: 0 var(--space-small) var(--space-small) 0
           text-transform: uppercase
           font-size: var(--font-size-tiny)
           background-color: var(--color-background)
@@ -295,7 +295,7 @@
         overflow: hidden
         text-overflow: ellipsis
         font-size: var(--font-size-medium)
-        padding: thin-padding (thin-padding + small-padding)
+        padding: var(--space-thin) var(--space-median)
         opacity: 0.75
         color: white
         &.used.start
@@ -333,25 +333,25 @@
     flex-direction: column
     flex-wrap: nowrap
     --card-photo-width: 12rem
-    --card-photo-padding: (small-padding + thin-padding)
+    --card-photo-padding: var(--space-median)
     @media mq-mobile
       --card-photo-width: 8rem
-      --card-photo-padding: small-padding
+      --card-photo-padding: var(--space-small)
     .card
-      padding: small-margin
+      padding: var(--space-small)
       padding-bottom: 0
-      margin: (default-margin / 2) 0
+      margin: var(--space-median) 0
       display: grid
       .card-img
         grid-area: image
         height: auto
-        margin: -(small-margin)
+        margin: calc(var(--space-small) * -1)
         margin-bottom: 0
         border-radius: var(--border-radius-normal) 0 0 0
       .status
         border-radius: 0 0 var(--border-radius-normal) var(--border-radius-normal)
       h3
-        margin: medium-margin 0 0
+        margin: var(--space-medium) 0 0
         font-size: var(--font-subtitle-size)
         grid-area: title
         overflow: hidden
@@ -371,15 +371,15 @@
         width: 90px
         border-radius: var(--border-radius-normal) 0 0 var(--border-radius-normal)
       h3
-        margin-top: small-margin
+        margin-top: var(--space-small)
       div.tags
         grid-area: tags
         margin: 0
         span, a.tag
-          margin: 0 small-margin (small-margin + thin-margin) 0
+          margin: 0 var(--space-small) var(--space-median) 0
 
     .card.photo
-      grid-template-rows: 1.5rem auto auto
+      grid-template-rows: var(--space-default) auto auto
       grid-template-columns: calc(var(--card-photo-width) + var(--card-photo-padding)) auto
       grid-template-areas: "image link" "image title" "status status"
       .card-img
@@ -392,19 +392,19 @@
       span.pre-title
         grid-area: link
         line-height: var(--line-height-thin)
-        padding-top: 0.25rem
+        padding-top: var(--space-thin)
       .status
         grid-area: status
-        margin: 0 -0.5rem
+        margin: 0 calc(var(--space-small * -1))
 
   .grid
     display: grid
-    grid-gap: default-margin
+    grid-gap: var(--space-default)
     grid-template-columns: repeat(auto-fill, minmax(220px,1fr))
     .card
-      padding: medium-padding
+      padding: var(--space-medium)
       .card-img
-        margin: -(medium-margin)
+        margin: calc(var(--space-medium) * -1)
         margin-bottom: 0
         height: auto
         img
@@ -412,12 +412,12 @@
           height: 100%
           object-fit: cover
       h3
-        margin: medium-margin 0 default-margin
+        margin: var(--space-medium) 0 var(--space-default)
         font-size: var(--font-subtitle-size)
         
     .card.collection
       div.tags
-        margin: default-margin 0 small-margin
+        margin: var(--space-default) 0 var(--space-small)
       .card-img
         &:after
           content: ""
@@ -434,7 +434,7 @@
     .card.photo
       grid-template-rows: auto auto 2rem 1fr 2rem
       grid-template-areas: "image" "pretitle" "links" "title" "status"
-      padding: medium-padding medium-padding 0
+      padding: var(--space-medium) var(--space-medium) 0
       .card-img
         grid-area: image
         border-radius: var(--border-radius-normal) var(--border-radius-normal) 0 0
@@ -449,7 +449,7 @@
         align-self: center
       div.card-links
         grid-area: links
-        padding-top: thin-margin
+        padding-top: var(--space-thin)
         a.syndication-link,
         span.info.content
           width: 16px
@@ -519,7 +519,7 @@
       span.pre-title
         grid-area: pretitle
         display: block
-        margin-block: small-margin
+        margin-block: var(--space-small)
         line-height: var(--line-height-small)
       .status
         grid-area: status
@@ -530,7 +530,7 @@
       grid-template-rows: 2rem auto
       grid-template-areas: "period" "content"
       padding: 0 1rem 0
-      margin-inline: 0.75rem      
+      margin-inline: var(--space-median)     
       &:before
         content: ""
         display: block
@@ -538,8 +538,8 @@
         top: calc(1rem - 1px)
         height: 2rem        
         width: calc(100% + 1rem)
-        margin-inline: -0.5rem
-        margin-block-start: -1rem
+        margin-inline: calc(var(--space-small) * -1)
+        margin-block-start: calc(var(--space-medium) * -1)
         border-radius: var(--border-radius-normal)
         border-width: 1px
         border-style: solid
@@ -559,14 +559,14 @@
         font-size: var(--font-size-tiny)
         align-self: center
         text-align: right
-        margin-inline: -1rem
+        margin-inline: calc(var(--space-medium) * -1)
       div.box-content
         grid-area: content
         a.box-img
-          margin-inline: -(1rem)
+          margin-inline: calc(var(--space-medium) * -1)
           margin-bottom: 0
           height: auto
-          width: calc(100% + 2rem)
+          width: calc(100% + var(--space-normal))
           border-radius: var(--border-radius-normal) var(--border-radius-normal) 0 0
           img
             @extend $inview-image
@@ -595,7 +595,7 @@
           height: auto
           align-items: start
           justify-content: space-evenly
-          padding: 0.25rem 0 0 0.125rem
+          padding: var(--space-thin) 0 0 calc(var(--space-thin) / 2)
           font-size: var(--font-size-medium-extra)
           border-top-left-radius: 40% 70%
           background-color: var(--color-block)
@@ -693,16 +693,16 @@
 
   section.feeds
     .feed-group
-      margin: default-margin 0 0
+      margin: var(--space-default) 0 0
       > strong
         display: block
-        margin-bottom: small-margin
+        margin-bottom: var(--space-small)
       a
         display: grid
         grid-template-columns: 36px max-content auto
         grid-template-rows: auto
         grid-template-areas: "icon link info" ". size ."
-        padding-block: small-margin
+        padding-block: var(--space-small)
         align-items: center
         span
           grid-area: link
@@ -737,14 +737,14 @@
         grid-area: info
         display: inline-block
         content: "- default"
-        margin-left: small-margin
+        margin-left: var(--space-small)
         font-size: var(--font-size-small)
         /* text-decoration-color: transparent --- doesn't work */
 
   section.mf2feed
     .h-feed
       .h-entry
-        margin-block: medium-margin
+        margin-block: var(--space-medium)
         details
           // &[open]
           summary
@@ -754,39 +754,39 @@
               top: 0
             img
               max-width: 480px
-              margin-inline-start: default-margin
-              margin-block-start: -(medium-margin)
+              margin-inline-start: var(--space-default)
+              margin-block-start: calc(var(--space-medium) * -1)
               @media mq-mobile
                 max-width: 92%;
           header, article
-            padding-inline: default-padding-vert
+            padding-inline: var(--space-default)
             @media mq-mobile
               padding-inline: 0
           header
-            padding-block-start: medium-padding
+            padding-block-start: var(--space-medium)
             a
               text-decoration: none
               &:hover
                 text-decoration: revert
             time
               position: unset
-              margin-block: small-margin
+              margin-block: var(--space-small)
             h3, h4
               line-height: var(--line-height-text)
             h3
-              margin-block: small-margin 0
+              margin-block: var(--space-small) 0
             h4
               font-size: var(--font-size-normal)
               @media mq-normal
                 margin-block-end: 0
           article
               @media mq-mobile
-                padding-block-start: thin-padding
+                padding-block-start: var(--space-thin)
             img
               max-width: 100%
           hr
             @media mq-normal
-              margin-block: medium-margin block-margin
+              margin-block: var(--space-medium) var(--space-block)
 
   section.meta
     ul
@@ -794,11 +794,11 @@
       list-style: none
       display: flex
       flex-direction: column
-      gap: 1rem
+      gap: var(--space-medium)
       li
         display: flex
         flex-direction: column
-        gap: 0.2rem
+        gap: var(--space-thin)
         label
           font-family: var(--font-mono)
           font-size: var(--font-size-tiny)
@@ -813,7 +813,7 @@
     box-shadow: none
     padding: 0
     position relative
-    margin-bottom: block-margin
+    margin-bottom: var(--space-block)
     img
       @extend $block-inner-hover
       width: 100%
@@ -826,7 +826,7 @@
     small
       position: absolute
       right: 0
-      bottom: -(default-margin)
+      bottom: calc(var(--space-default) * -1)
       opacity: 0.33
       font-size: var(--font-size-tiny)
 
@@ -841,7 +841,7 @@
       display: grid
       grid-template-columns: repeat(2, 1fr)
       grid-template-areas: "x x" "a1 a2" "b1 b2" "c1 c2"
-      gap: medium-margin
+      gap: var(--space-medium)
       margin: 0
       @media mq-medium
         grid-template-columns: 1fr
@@ -865,8 +865,8 @@
           //see /images/brands/badge.svg
           content:  url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 256 256' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath fill='%23FFFFFF' d='M92.3,171.9c-2.7-1.2-5.4-2.4-8-3.8v69.7c0,4.9,4,8.2,8.2,8.2c2.1,0,4.3-0.8,5.9-2.7l23.8-26c1.6-1.8,3.8-2.7,6-2.7c2.2,0,4.4,0.9,6,2.7l23.8,26c1.7,1.9,3.8,2.7,5.9,2.7c4.2,0,8.2-3.2,8.2-8.2v-70c-2.7,1.5-5.6,2.9-8.5,4.1c-11.3,4.8-23.4,7.2-35.7,7.2C115.6,179.2,103.6,176.7,92.3,171.9z'/%3E%3Cpath fill='%23FFFFFF' d='M128,10c-42.7,0-77.4,34.6-77.4,77.4c0,19.5,7.2,37.4,19.2,51c2.2,2.6,4.7,5,7.2,7.2c2.3,2,4.7,3.9,7.2,5.6c12.4,8.5,27.5,13.5,43.7,13.5c16.4,0,31.7-5.1,44.2-13.9c2.5-1.8,4.9-3.7,7.2-5.7c2.6-2.3,5-4.7,7.2-7.3c11.6-13.5,18.7-31.1,18.7-50.4C205.4,44.6,170.7,10,128,10z M147.4,123.8l-15.7-9.2c-2.3-1.3-5.1-1.3-7.3,0l-15.7,9.2c-5.5,3.2-12.2-1.7-10.7-7.9l2.8-11.5l1.4-5.9c0.1-0.5,0.2-0.9,0.2-1.4c0.1-2.2-0.8-4.3-2.4-5.8L98.3,90L85.4,78.7c-4.7-4.2-2.2-12,4.1-12.6l19.2-1.8c2.7-0.2,5-2,6-4.5l6.6-16c2.5-6,10.9-6,13.4,0l6.6,16c1,2.5,3.3,4.2,6,4.5l19.2,1.8c6.3,0.6,8.8,8.4,4.1,12.6l-12.8,11.3l-1.6,1.4c-1.7,1.5-2.5,3.6-2.4,5.8c0,0.5,0.1,0.9,0.2,1.4l1.4,5.9l2.8,11.5C159.6,122.1,152.9,127,147.4,123.8z'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
           position: absolute
-          top: (small-margin + thin-margin)
-          right: small-margin
+          top: var(--space-median)
+          right: var(--space-small)
           width: 24px
           z-index: 0
         display: grid
@@ -874,7 +874,7 @@
         grid-template-rows: repeat(3,1fr)
         align-items: center
         margin: 0
-        gap: 0 default-padding
+        gap: 0 var(--space-normal)
         width: auto
         position: relative
         padding: 1rem
@@ -907,12 +907,12 @@
         filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
     &.page-map
       height: 320px
-      margin: medium-margin -2rem small-margin
+      margin: var(--space-medium) calc(var(--space-normal) * -1) var(--space-small)
     &.inline-map
       border-radius: var(--border-radius-normal)
       height: calc(80vh)
       width: 100%
-      margin: 0 0 block-margin 0
+      margin: 0 0 var(--space-block) 0
     .photoPopup
       .leaflet-popup-content-wrapper, .leaflet-popup-tip
         border-radius: var(--border-radius-normal)
@@ -921,7 +921,7 @@
       .leaflet-popup-content-wrapper
         .leaflet-popup-content
           ul
-            margin: small-margin 0 0 0
+            margin: var(--space-small) 0 0 0
             list-style-type: none
           li
             line-height: var(--line-height-normal)

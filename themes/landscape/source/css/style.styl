@@ -159,7 +159,7 @@ a
 
 small.label
   display: block
-  margin-block: thin-margin
+  margin-block: var(--space-thin)
   opacity: .5
   line-height: var(--line-height-thin)
   span
@@ -210,7 +210,7 @@ table
       &:nth-child(even)
         background: var(--color-background)
       th, td 
-        padding: (default-padding / 3)
+        padding: var(--space-median)
       td
         font-weight: var(--font-weight-normal)    
       th 
@@ -264,7 +264,7 @@ if sidebar is left
 
 #wrap-404
   text-align: center
-  margin: 20px 0 40px
+  margin: var(--space-moderate) 0 var(--space-block)
   pre
     background-color: transparent
     white-space:pre
@@ -284,7 +284,7 @@ if sidebar is left
     @media mq-mobile
       font-size: 1.6rem
       letter-spacing: 0
-    margin: double-margin auto small-margin
+    margin: var(--space-double) auto var(--space-small)
     font-weight: var(--font-weight-normal)
     strong
       font-weight: var(--font-weight-extrabold)
@@ -399,20 +399,20 @@ if sidebar is left
 #spotlight
   .spl-header
     .spl-page
-      margin-left: medium-margin
+      margin-left: var(--space-medium)
   .spl-footer
     .spl-title
       font-size: var(--font-subtitle-size)
-      margin-bottom: medium-margin
+      margin-bottom: var(--space-medium)
     .spl-description
-      margin-bottom: extra-margin
+      margin-bottom: var(--space-extra)
     .spl-button
       position: absolute
       right: 0
       bottom: 0
       margin: 0
-      padding: (default-margin/2) default-margin
-      margin: default-margin
+      padding: var(--space-median) var(--space-default)
+      margin: var(--space-default)
       border-radius: var(--border-radius-small)
       background-color: #000 //var(--color-accent)
       color: #fff
@@ -422,8 +422,8 @@ if sidebar is left
         opacity: 1
         background-color: #000 //var(--color-accent)
       @media mq-mobile
-        padding: (medium-margin / 3) medium-margin
-        margin: medium-margin
+        padding: calc(var(--space-medium) / 3) var(--space-medium)
+        margin: var(--space-medium)
 
 @import "_extend"
 @import "_partial/header"
