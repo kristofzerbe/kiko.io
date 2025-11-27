@@ -26,7 +26,7 @@ syndication:
   - host: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/21
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/115622928872349924
 ---
 
 I have been working with [OpenStreetMap](https://www.openstreetmap.org/) for a while now from the developers' perspective, who can use it to conjure up attractive maps, such as my [Photo Map](/photos/map/), on the web free of charge. However, I am not part of the [community](https://community.openstreetmap.org/), nor have I given much thought to where all the data comes from and how it finds its way into the maps. Until recently... when I stumbled across an app review of [**StreetComplete**](https://streetcomplete.app/) by chance and installed the Android app (iOS is planned) out of curiosity.
