@@ -1,7 +1,4 @@
-@import "nib"
 @import "_variables"
-@import "_util/mixin"
-// @import "_util/grid"
 @import "_pagefind"
 @import "_lc-select"
 @import "_downpopup"
@@ -11,8 +8,6 @@
 @import "_sourcecodepro"
 @import "_auto-card-links"
   
-global-reset()
-
 ::-webkit-scrollbar
   width: 8px
   height: 8px
@@ -39,25 +34,25 @@ html, body
       scroll-behavior: smooth
 
 body
+  width: 100%
+  min-height: 100vh // Andy Bells Modernized Reset
+  line-height: var(--line-height-normal) // Andy Bells Modernized Reset
   accent-color: var(--color-accent)
   color: var(--color-text)
   background: var(--color-background)
   font-family: var(--font-sans)
   font-weight: var(--font-weight-normal)
-  min-height: 100vh // Andy Bells Modernized Reset
-  line-height: var(--line-height-normal) // Andy Bells Modernized Reset
 
 .outer
-  clearfix()
   max-width: 1220px
   margin: 0 auto
   padding: 0 20px
-  // max-width: (column-width + gutter-width) * columns + gutter-width
-  // margin: 0 auto
-  // padding: 0 gutter-width
-
-// .inner
-//   column(columns)
+  //clearfix()...
+  &:before, &:after
+    content: "";
+    display: table
+  &:after
+    clear: both
 
 main
   @media mq-normal
@@ -65,7 +60,6 @@ main
     float: left
     width: 73%
     margin: 0 1%
-    // column(main-column)
 
 .left, .alignleft
   float: left

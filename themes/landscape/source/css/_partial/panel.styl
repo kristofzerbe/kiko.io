@@ -1,5 +1,5 @@
 .panels
-  clearfix()
+  // clearfix()
   column-gap: 0
   margin: calc(var(--space-medium) * -1)
   @media mq-tablet
@@ -8,7 +8,8 @@
     column-count: 3
 
 .panel
-  avoid-column-break()
+  page-break-inside: avoid // for firefox
+  break-inside: avoid-column
   padding: var(--space-normal) 0
   margin: calc(var(--space-normal) * -1) var(--space-medium)
   &:first-child

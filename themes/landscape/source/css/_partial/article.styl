@@ -3,7 +3,12 @@
   position: relative
 
 .article-meta
-  clearfix()
+  //clearfix()...
+  &:before, &:after
+    content: "";
+    display: table
+  &:after
+    clear: both
   position: relative
   z-index: 99
   font-size: var(--font-size-medium)
@@ -322,7 +327,7 @@
 
 .article-entry
   @extend $base-style
-  clearfix()
+  // clearfix()
   color: var(--color-text)
   padding: 0 var(--space-normal)
   .float-element
@@ -912,12 +917,24 @@
         content: "#"
 
 #article-nav
-  clearfix()
+  //clearfix()...
+  &:before, &:after
+    content: "";
+    display: table
+  &:after
+    clear: both
   position: relative
   @media mq-normal
     margin: var(--space-block) 0
     &:before
-      absolute-center(8px)
+      position: absolute
+      top: 50%
+      left: 50%
+      width: 8px
+      height: 8px
+      margin-top: -4px
+      margin-left: -4px
+
       content: ""
       border-radius: 50%
       background: var(--color-meta)
