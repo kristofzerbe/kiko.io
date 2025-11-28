@@ -7,6 +7,7 @@ photograph:
   file: 24-05-Wales-7490.jpg
   name: GKT 7 Something
   socialmedia: /static/images/social-media/Colophon-Styling.jpg
+misc: colophon
 series: A New Blog
 categories:
   - Misc
@@ -19,5 +20,14 @@ syndication:
     url: null
 ---
 
+{% alertbox info %}
+This is the seventh post in completing my [colophon](/Colophon).
+{% endalertbox %}
+
+... INTRO
+
+---
+
+## XXX
 
 <!-- more -->

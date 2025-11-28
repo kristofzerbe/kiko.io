@@ -7,6 +7,7 @@ photograph:
   file: DSC_6766.jpg
   name: Old Dice
   socialmedia: /static/images/social-media/Colophon-Impetus-Technology.jpg
+misc: colophon
 series: A New Blog
 categories:
   - Misc
@@ -20,6 +21,10 @@ syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/114376388233094484
 ---
+
+{% alertbox info %}
+This is the first post in completing my [colophon](/Colophon).
+{% endalertbox %}
 
 Ever since I introduced [Slash Pages](/slashes) on my blog about a year ago, the entry "**Colophon**" has been bumming around in my to-do list. Intended to describe how this blog works and how I deal with it, this endeavor has taken on such proportions in my head that the "coming soon" sticker has become very resistant. I would now like to counter this with a new strategy: write it in chunks. I'm going to tackle the individual sections in a loose sequence, starting with the why and the choice of technology ...
 

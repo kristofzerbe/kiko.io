@@ -7,6 +7,7 @@ photograph:
   file: DSC_9332.jpg
   name: Driving Home
   socialmedia: /static/images/social-media/Colophon-Hosting-Deployment.jpg
+misc: colophon
 series: A New Blog
 categories:
   - Misc
@@ -22,7 +23,7 @@ syndication:
 ---
 
 {% alertbox info %}
-This is the second part of my [colophon](/Colophon), which I am writing in chunks, because of the resistant "coming soon" sticker. The first part was about the [impetus and technology](/post/Colophon-Impetus-Technology) behind kiko.io.
+This is the second post in completing my [colophon](/Colophon).
 {% endalertbox %}
 
 ---

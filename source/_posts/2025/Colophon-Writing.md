@@ -7,6 +7,7 @@ photograph:
   file: 23-05-Holland-0453.jpg
   name: Steel Tangle
   socialmedia: /static/images/social-media/Colophon-Writing.jpg
+misc: colophon
 series: A New Blog
 categories:
   - Misc
@@ -22,7 +23,7 @@ syndication:
 ---
 
 {% alertbox info %}
-This is the third part of my [colophon](/Colophon), which I am writing in chunks, because of the resistant "coming soon" sticker. The first part was about the [impetus and technology](/post/Colophon-Impetus-Technology) behind kiko.io and the second about [hosting and deployment](/post/Colophon-Hosting-Deployment).
+This is the third post in completing my [colophon](/Colophon).
 {% endalertbox %}
 
 ---

@@ -794,14 +794,14 @@
 .article-footer,
 .section-footer
   font-size: var(--font-size-small)
-  margin: 0 var(--space-normal) var(--space-default)
+  margin: var(--space-default) var(--space-normal)
   display: grid
   gap: 0 0
   grid-template-columns: auto 1fr
   grid-template-rows: auto 1fr auto
   grid-template-areas: "tags tags" "syndication permalink" "golem golem"
   @media mq-mobile
-    margin: 0 var(--space-medium) var(--space-default)
+    margin: var(--space-medium) var(--space-default)
     grid-template-columns: auto 1fr
     grid-template-rows: auto auto auto
     grid-template-areas: "tags" "syndication permalink" "golem"
@@ -833,12 +833,12 @@
     opacity: 1
 
 .article-permalink
-  padding-top: var(--space-default)
-  margin-top: var(--space-default)
+  padding-top: var(--space-medium)
+  margin-top: var(--space-medium)
   border-top: 1px var(--color-border) solid
   @media mq-mobile
-    padding-top: var(--space-medium)
-    margin-top: var(--space-medium)
+    padding-top: var(--space-median)
+    margin-top: var(--space-median)
 
 .article-permalink
   display: flex
@@ -850,7 +850,7 @@
   a
     cursor: pointer
   input
-    font-size: var(--font-size-medium)
+    font-size: var(--font-size-small)
     font-family: var(--font-sans)
     background: transparent
     text-align: right

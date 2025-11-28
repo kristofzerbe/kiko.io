@@ -8,8 +8,6 @@
     display: flex
     flex-direction: row-reverse
     height: 8rem
-    max-width: 600px
-    justify-self: center
     transition: 20ms ease-in 0s
     cursor: pointer
     text-decoration: none
@@ -19,6 +17,9 @@
     border-color: var(--color-background)
     background: var(--color-background)
     color: var(--color-link)
+    @media mq-large
+      max-width: 600px
+      justify-self: center
     &:hover
       border-color: var(--color-block)
       background: var(--color-block)

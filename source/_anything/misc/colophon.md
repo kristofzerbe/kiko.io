@@ -203,4 +203,6 @@ The [Sitemap](/sitemap) is a truly unique page, as it is not composed of traditi
 
 </section>
 
-More coming soon ...
+---
+
+The following articles are the source for this page:

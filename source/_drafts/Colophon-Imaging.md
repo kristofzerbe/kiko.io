@@ -7,6 +7,7 @@ photograph:
   file: D70_3480.jpg
   name: Expensive Air Inlet
   socialmedia: /static/images/social-media/Colophon-Imaging.png
+misc: colophon
 series: A New Blog
 categories:
   - Misc
@@ -18,8 +19,16 @@ syndication:
   - host: Mastodon
     url: null
 ---
-This part X of ...
 
+{% alertbox info %}
+This is the fifth post in completing my [colophon](/Colophon).
+{% endalertbox %}
+
+... INTRO
+
+---
+
+## XXX
 
 <!-- more -->
 
