@@ -1,11 +1,31 @@
-if sidebar is bottom
-  @import "sidebar-bottom"
-else
-  @import "sidebar-aside"
+#sidebar
+  margin-bottom: var(--space-block)
+  font-size: var(--font-size-medium)
+  @media mq-normal
+    display: inline
+    float: left
+    width: 23%
+    margin: 0 1%
+    // column(sidebar-column)
+
+.widget-wrap
+  margin: var(--space-medium)
+  line-height: var(--line-height-medium)
+  @media mq-normal
+    margin-right: 0
+
+.widget-title
+  @extend $block-caption
+  margin: 0
+  opacity: 0.33
 
 .widget
   @extend $base-style
   word-wrap: break-word
+  color: var(--color-text)
+  background: transparent
+  border: 1px solid transparent
+  padding-left: var(--space-small)
   ul, ol
     list-style: none
     margin: 0
@@ -15,6 +35,22 @@ else
       list-style: disc
     ol
       list-style: decimal
+  ul, ol, dl
+    ul, ol, dl
+      margin-left: 1rem
+      list-style: disc
+    li
+      border-left: 2px var(--color-border) solid
+      margin: calc(var(--space-medium) / 3 * 2) 0 0 -12px
+      padding-left: 10px
+      a
+        text-decoration: none
+      &:hover
+        border-left: 4px var(--color-accent) solid
+        margin-left: -13px
+        padding-left: 9px
+        a 
+          text-decoration: revert
 
 .widget.about
   padding: var(--space-normal) 0 var(--space-small)

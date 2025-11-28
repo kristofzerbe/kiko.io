@@ -1,7 +1,7 @@
 @import "nib"
 @import "_variables"
 @import "_util/mixin"
-@import "_util/grid"
+// @import "_util/grid"
 @import "_pagefind"
 @import "_lc-select"
 @import "_downpopup"
@@ -49,12 +49,23 @@ body
 
 .outer
   clearfix()
-  max-width: (column-width + gutter-width) * columns + gutter-width
+  max-width: 1220px
   margin: 0 auto
-  padding: 0 gutter-width
+  padding: 0 20px
+  // max-width: (column-width + gutter-width) * columns + gutter-width
+  // margin: 0 auto
+  // padding: 0 gutter-width
 
-.inner
-  column(columns)
+// .inner
+//   column(columns)
+
+main
+  @media mq-normal
+    display: inline
+    float: left
+    width: 73%
+    margin: 0 1%
+    // column(main-column)
 
 .left, .alignleft
   float: left
@@ -232,16 +243,6 @@ pre.json
     color: #ababab
   .key
     color: #c15353
-
-if sidebar and sidebar isnt bottom
-  main:not(.hide-sidebar)
-    @media mq-normal
-      column(main-column)
-
-if sidebar is left
-  @media mq-normal
-    main
-      float: right
 
 .medium-zoom--opened .medium-zoom-overlay
   z-index: 999
@@ -438,5 +439,4 @@ if sidebar is left
 @import "_partial/animation"
 @import "_partial/alertbox"
 
-if sidebar
-  @import "_partial/sidebar"
+@import "_partial/sidebar"
