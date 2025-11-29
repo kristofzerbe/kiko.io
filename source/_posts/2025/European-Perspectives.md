@@ -27,7 +27,11 @@ syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/115527306715054429
   - host: Pixelfed
+    title: Colored
     url: https://pixelfed.social/p/kristofz/896757461693798733
+  - host: Pixelfed
+    title: Portraits
+    url: https://pixelfed.social/p/kristofz/900351704575834699
 ---
 
 Earlier this year, my sweetie and I made a little trip to nearby Strasbourg. Not only because I really like the city and its French flair (she has never been there before), but also because I had never set foot in the **European Parliament** (EP) before. The people there have a big influence on our lives with their institutions and regulations, which eventually find their way into German law. As a committed European, you simply have to see it for yourself. And we live just 2.5 hours or 230 kilometers away.
