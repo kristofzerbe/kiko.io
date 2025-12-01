@@ -1,0 +1,122 @@
+/* global-reset() from Stylus NIB Extensions (https://stylus.github.io/nib) */
+html,body,
+div,span,
+applet,object,
+iframe,
+h1,h2,h3,h4,h5,h6,
+p,a,q,s,
+blockquote,
+pre,code,
+abbr,acronym,address,
+big,cite,
+del,dfn,img,ins,kbd,
+samp,sub,sup,
+strong,small,em,strike,
+tt,var,
+dl,dt,dd,
+ol,ul,li,
+fieldset,form,label,
+legend,caption,
+table,tbody,tfoot,thead,tr,th,td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  text-size-adjust: none; /* Andy Bells Modernized Reset */
+  font-size: var(--font-size-default);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  width: 100%
+  min-height: 100vh; /* Andy Bells Modernized Reset */
+  line-height: var(--line-height-normal); /* Andy Bells Modernized Reset */
+  accent-color: var(--color-accent);
+  color: var(--color-text);
+  background: var(--color-background);
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-normal);
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+
+caption,th,td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+a img {
+  border: none;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, button, input, label {
+  line-height: var(--line-height-normal); /* Andy Bells Modernized Reset */
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance; /* Andy Bells Modernized Reset */
+}
+
+input, textarea, button {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-default);
+  font-size: var(--font-size-medium);
+}
+input::-moz-focus-inner,
+textarea::-moz-focus-inner,
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+button,
+input[type=submit] {
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  line-height: var(--line-height-normal);
+}
+
+textarea:not([rows]) {
+  min-height: 10em; /* Andy Bells Modernized Reset */
+}
+
+figure {
+  margin: 0;
+  white-space-collapse: initial;
+}

@@ -3,9 +3,6 @@
 @import "_lc-select"
 @import "_downpopup"
 @import "_dialog"
-@import "_opensans"
-@import "_lexend"
-@import "_sourcecodepro"
 @import "_auto-card-links"
   
 ::-webkit-scrollbar
@@ -17,13 +14,6 @@
 ::-webkit-scrollbar-thumb
   background-color: var(--color-border)
 
-html
-  text-size-adjust: none // Andy Bells Modernized Reset
-  font-size: var(--font-size-default)
-
-html, body
-  height: 100%
-
 // https://piccalil.li/links/the-coyier-css-starter/
 @media (prefers-reduced-motion: no-preference)
   @view-transition
@@ -33,20 +23,10 @@ html, body
     &:focus-within
       scroll-behavior: smooth
 
-body
-  width: 100%
-  min-height: 100vh // Andy Bells Modernized Reset
-  line-height: var(--line-height-normal) // Andy Bells Modernized Reset
-  accent-color: var(--color-accent)
-  color: var(--color-text)
-  background: var(--color-background)
-  font-family: var(--font-sans)
-  font-weight: var(--font-weight-normal)
-
 .outer
   max-width: 1220px
   margin: 0 auto
-  padding: 0 20px
+  padding: 0 var(--space-moderate)
   //clearfix()...
   &:before, &:after
     content: "";
@@ -61,6 +41,15 @@ main
     width: 73%
     margin: 0 1%
 
+#sidebar
+  margin-bottom: var(--space-block)
+  font-size: var(--font-size-medium)
+  @media mq-normal
+    display: inline
+    float: left
+    width: 23%
+    margin: 0 1%
+
 .left, .alignleft
   float: left
 
@@ -72,15 +61,6 @@ main
 
 .hide
   display: none
-
-h1, h2, h3, h4, button, input, label
-  line-height: var(--line-height-normal) // Andy Bells Modernized Reset
-
-h1, h2, h3, h4
-  text-wrap: balance // Andy Bells Modernized Reset !
-
-p
-  text-wrap: pretty
 
 .italic
   font-style: italic
@@ -119,37 +99,9 @@ mark
   padding: 0.15rem 0.3rem
   color: var(--color-text)
 
-ul[role='list'],
-ol[role='list']
-  list-style: none // Andy Bells Modernized Reset
-
-input, textarea, button
-  margin: 0
-  padding: 0
-  font-family: Arial, Helvetica, sans-serif
-  font-size: var(--font-size-medium)
-  &::-moz-focus-inner
-    border: 0
-    padding: 0
-
 button, input[type=submit]
   cursor: pointer
   font-family: var(--font-sans)
-
-input, textarea
-  &:focus
-    outline: none
-
-textarea
-  resize: none
-  line-height: var(--line-height-normal)
-
-textarea:not([rows])
-  min-height: 10em // Andy Bells Modernized Reset
-
-figure
-  margin: 0
-  white-space-collapse: initial
 
 a
   transition: all ease-out 0.2s
@@ -207,9 +159,7 @@ hr.divider
   /[data-theme="dark"] &
     opacity: 0.5
 
-table 
-  width: 100%
-  border-collapse: collapse
+table
   tbody, thead
     tr
       &:nth-child(even)
