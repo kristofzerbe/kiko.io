@@ -28,7 +28,7 @@ syndication:
   - host: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/22
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/115643359647175107
 ---
 
 Since I decided in 2019 to use the static site generator (SSG) [Hexo](https://hexo.io/) as the foundation for my blog, I have been struggling with the fact that it works with the CSS preprocessor [Stylus](https://stylus-lang.com/) via a pre-installed plugin. I thought I just needed some time to get used to the simplified but unfamiliar notation and take advantage of features such as functions, mixins, variables, and the like. Over time, however, the functionality of native CSS grew to such an extent that I started to implement workarounds for new and unsupported features in my Stylus code, which made it significantly more complex and confusing. I didn't get used to it, but instead just got annoyed by Stylus for quite some time.
