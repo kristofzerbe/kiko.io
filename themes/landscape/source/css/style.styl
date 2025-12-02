@@ -1,27 +1,4 @@
 @import "_variables"
-@import "_pagefind"
-@import "_lc-select"
-@import "_downpopup"
-@import "_dialog"
-@import "_auto-card-links"
-  
-::-webkit-scrollbar
-  width: 8px
-  height: 8px
-  background-color: var(--color-background)
-::-webkit-scrollbar-track
-  background-color: var(--color-background)
-::-webkit-scrollbar-thumb
-  background-color: var(--color-border)
-
-// https://piccalil.li/links/the-coyier-css-starter/
-@media (prefers-reduced-motion: no-preference)
-  @view-transition
-    navigation: auto
-  html
-    interpolate-size: allow-keywords
-    &:focus-within
-      scroll-behavior: smooth
 
 .outer
   max-width: 1220px
@@ -49,21 +26,6 @@ main
     float: left
     width: 23%
     margin: 0 1%
-
-.left, .alignleft
-  float: left
-
-.right, .alignright
-  float: right
-
-.clear
-  clear: both
-
-.hide
-  display: none
-
-.italic
-  font-style: italic
 
 img.limit 
   max-width: 240px
@@ -93,26 +55,6 @@ img.float-left-mini
   @media mq-tablet
     width: 12%
     padding: 20px 24px 24px 0
-
-mark 
-  background-color: var(--color-mark)
-  padding: 0.15rem 0.3rem
-  color: var(--color-text)
-
-button, input[type=submit]
-  cursor: pointer
-  font-family: var(--font-sans)
-
-a
-  transition: all ease-out 0.2s
-  color: var(--color-accent-text)
-  text-decoration-color: var(--color-accent-text)
-  text-decoration-thickness: 1px
-  text-underline-offset: 0.3em
-  text-decoration-skip-ink: auto
-  text-decoration-style: dashed
-  &:hover
-    text-decoration-style: solid
 
 small.label
   display: block
@@ -158,21 +100,6 @@ hr.divider
   clear: both
   /[data-theme="dark"] &
     opacity: 0.5
-
-table
-  tbody, thead
-    tr
-      &:nth-child(even)
-        background: var(--color-background)
-      th, td 
-        padding: var(--space-median)
-      td
-        font-weight: var(--font-weight-normal)    
-      th 
-        font-weight: var(--font-weight-bold)
-    tr:not(.no-border) 
-      th:not(:empty), td
-        border: 1px var(--color-border) solid
 
 pre.json
   font-family: var(--font-mono) /*'Roboto Mono',monospace*/
@@ -340,35 +267,6 @@ pre.json
         top: -50px
         left: -110px
         transform: rotate(195deg)
-
-#spotlight
-  .spl-header
-    .spl-page
-      margin-left: var(--space-medium)
-  .spl-footer
-    .spl-title
-      font-size: var(--font-subtitle-size)
-      margin-bottom: var(--space-medium)
-    .spl-description
-      margin-bottom: var(--space-extra)
-    .spl-button
-      position: absolute
-      right: 0
-      bottom: 0
-      margin: 0
-      padding: var(--space-median) var(--space-default)
-      margin: var(--space-default)
-      border-radius: var(--border-radius-small)
-      background-color: #000 //var(--color-accent)
-      color: #fff
-      opacity: 0.75
-      text-transform: uppercase
-      &:hover
-        opacity: 1
-        background-color: #000 //var(--color-accent)
-      @media mq-mobile
-        padding: calc(var(--space-medium) / 3) var(--space-medium)
-        margin: var(--space-medium)
 
 @import "_extend"
 @import "_partial/header"

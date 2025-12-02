@@ -1,0 +1,206 @@
+.lcslt-wrapper label {
+  display: inline-block;
+  margin-bottom: var(--space-median)
+}
+
+.lcslt-wrapper .lcslt-wrap {
+  width: 100%
+}
+
+.lcslt {
+  transition: all .25s ease;
+  background-color: transparent !important;
+  border: none;
+  background: var(--color-background)
+}
+
+.lcslt.lcslt_dd-open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0
+}
+
+.lcslt:not(.lcslt-multiple)>span {
+  padding: 2px 0
+}
+
+.lcslt.lcslt-multiple>span:not(.lcslt-multi-callout) {
+  font-size: var(--font-size-normal)
+}
+
+.lcslt.lcslt-disabled {
+  background: var(--color-back-dim)
+}
+
+.lcslt.lcslt-disabled .lcslt-multi-selected {
+  padding-left: var(--space-small);
+  color: var(--color-meta)
+}
+
+.lcslt.lcslt-disabled .lcslt-multi-selected:before {
+  display: none
+}
+
+.lcslt-multiple {
+  font-size: var(--font-size-small) !important;
+  padding: 0 var(--space-thin) !important
+}
+
+.lcslt-multi-callout,
+.lcslt-multi-selected {
+  padding: 1px var(--space-thin) 1px var(--space-small);
+  border-radius: var(--border-radius-small);
+  margin: 0 var(--space-thin) var(--space-thin) 0;
+  transition: all .3s ease;
+  color: var(--color-text)
+}
+
+.lcslt-multi-callout {
+  padding: var(--space-median) 0;
+  font-family: var(--font-default);
+  border-radius: 0;
+  margin-right: 0
+}
+
+.lcslt-multi-selected {
+  background-color: var(--color-mark)
+}
+
+.lcslt-multi-selected:before {
+  padding-right: var(--space-thin);
+  font-size: var(--font-size-medium-extra)
+}
+
+#lc-select-dd {
+  min-width: 150px;
+  border-radius: 0 0 var(--border-radius-normal) var(--border-radius-normal);
+  border-width: 0 1px 1px;
+  border-style: solid;
+  font-size: var(--font-size-small);
+  box-shadow: 0 2px var(--space-small) var(--color-shadow-dark)
+}
+
+#lc-select-dd li {
+  border: none;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: var(--color-border);
+}
+
+#lc-select-dd li span {
+  padding: var(--space-small) var(--space-median);
+  font-size: var(--font-size-small);
+}
+
+#lc-select-dd li img {
+  padding-right: var(--space-small);
+}
+
+#lc-select-dd li.lcslt-dd-opt.lcslt-disabled {
+  background: var(--color-back-dim);
+  color: var(--color-text);
+}
+
+#lc-select-dd li.lcslt-selected {
+  color: #fff;
+  background: var(--color-accent);
+}
+
+#lc-select-dd li.lcslt-selected .lcslt-img {
+  filter: invert(1);
+}
+
+#lc-select-dd li.lcslt-selected.lcslt-dd-opt-hlight {
+  box-shadow: 6px 0 0 var(--color-shadow) inset;
+}
+
+.lcslt-search-li {
+  background: var(--color-block);
+}
+
+.lcslt-search-li input {
+  font-size: inherit;
+  padding-top: var(--space-small);
+  padding-bottom: var(--space-small);
+  padding-left: var(--space-small);
+  font-size: var(--font-size-small);
+  color: var(--color-text);
+  background: 0 0;
+}
+
+.lcslt-search-li input::placeholder {
+  color: var(--color-meta);
+}
+
+.lcslt-search-li:before {
+  background: var(--color-meta);
+}
+
+.lcslt-is-searching .lcslt-search-li input,
+.lcslt-search-li input:active,
+.lcslt-search-li input:focus,
+.lcslt-search-li input:hover {
+  color: inherit;
+}
+
+.lcslt-group-name {
+  font-weight: var(--font-weight-bold);
+}
+
+.lcslt-group-opts>li {
+  padding-left: var(--space-median);
+}
+
+.lcslt-dd-opt {
+  transition: all .15s ease;
+  color: var(--color-text);
+}
+
+.lcslt-is-searching li.lcslt-group,
+.lcslt-no-results {
+  border: none !important;
+}
+
+.lcslt-no-results {
+  text-align: center;
+  padding: var(--space-median);
+  color: var(--color-text);
+}
+
+#lc-select-dd,
+.lcslt.lcslt_dd-open,
+.lcslt:not(.lcslt-disabled):hover {
+  border-color: var(--color-border);
+  background-color: var(--color-block);
+}
+
+.lcslt.lcslt_dd-open:not(.lcslt-multiple):after,
+.lcslt:not(.lcslt-multiple):hover:after {
+  border-top-color: var(--color-shadow) !important;
+}
+
+.lcslt span:not(.lcslt-placeholder):not(.lcslt-multi-callout) {
+  line-height: var(--line-height-medium) !important;
+  font-size: var(--font-size-medium) !important;
+}
+
+#lc-select-dd li,
+.lcslt span:not(.lcslt-placeholder):not(.lcslt-multi-callout) {
+  color: var(--color-text);
+}
+
+.lcslt:not(.lcslt-disabled) .lcslt-multi-callout:hover,
+.lcslt:not(.lcslt-disabled) .lcslt-multi-selected:hover {
+  color: var(--color-text);
+}
+
+.lcslt-placeholder {
+  padding: 0 !important;
+  transform: scale(.9) translate3d(-5%, -5%, 0);
+  color: var(--color-meta);
+}
+
+#lc-select-dd .lcslt-dd-opt-hlight,
+#lc-select-dd li.lcslt-dd-opt:not(.lcslt-disabled):not(.lcslt-selected):hover {
+  color: var(--color-text);
+  background: var(--color-border);
+}

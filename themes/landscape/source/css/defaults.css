@@ -153,6 +153,11 @@
   --box-note: rgb(205,205,205);
   --box-note2: rgba(205,205,205,0.25);
 
+  --icon-mail: url(/images/icons/mail.svg);
+  --icon-mail-invert: url(/images/icons/mail-invert.svg);
+  --icon-download: url(/images/icons/download.svg);
+  --icon-download-invert: url(/images/icons/download-invert.svg);
+
   --brand-mastodon: url(/images/brands/mastodon.svg);
   --brand-bluesky: url(/images/brands/bluesky.svg);
   --brand-flickr: url(/images/brands/flickr.svg);
@@ -191,3 +196,105 @@
   --pagefind-ui-tag: var(--color-background) !important;
 }
 
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-background)
+}
+::-webkit-scrollbar-track {
+  background-color: var(--color-background)
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-border)
+}
+
+/* https://piccalil.li/links/the-coyier-css-starter/ */
+@media (prefers-reduced-motion:no-preference) {
+  @view-transition {
+    navigation: auto
+  }
+  html {
+    interpolate-size: allow-keywords
+  }
+  html:focus-within {
+    scroll-behavior: smooth
+  }
+}
+
+.alignleft,
+.left {
+  float: left
+}
+
+.alignright,
+.right {
+  float: right
+}
+
+.clear {
+  clear: both
+}
+
+.hide {
+  display: none
+}
+
+.italic {
+  font-style: italic
+}
+
+mark {
+  background-color: var(--color-mark);
+  padding: .15rem .3rem;
+  color: var(--color-text)
+}
+
+button,
+input[type=submit] {
+  cursor: pointer;
+  font-family: var(--font-sans)
+}
+
+a {
+  transition: all ease-out .2s;
+  color: var(--color-accent-text);
+  text-decoration-color: var(--color-accent-text);
+  text-decoration-thickness: 1px;
+  text-underline-offset: .3em;
+  text-decoration-skip-ink: auto;
+  text-decoration-style: dashed
+}
+
+a:hover {
+  text-decoration-style: solid
+}
+
+table tbody tr:nth-child(2n),
+table thead tr:nth-child(2n) {
+  background: var(--color-background)
+}
+
+table tbody tr td,
+table tbody tr th,
+table thead tr td,
+table thead tr th {
+  padding: var(--space-median)
+}
+
+table tbody tr td,
+table thead tr td {
+  font-weight: var(--font-weight-normal)
+}
+
+table tbody tr th,
+table thead tr th {
+  font-weight: var(--font-weight-bold)
+}
+
+table tbody tr:not(.no-border) td,
+table tbody tr:not(.no-border) th:not(:empty),
+table thead tr:not(.no-border) td,
+table thead tr:not(.no-border) th:not(:empty) {
+  border: 1px var(--color-border) solid
+}
