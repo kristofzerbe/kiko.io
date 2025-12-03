@@ -1,0 +1,198 @@
+/* Start ---------------------------------------------------------- */
+#introduction .page-title {
+  display: block;
+  text-align: center;
+  font-size: 1.9rem;
+  letter-spacing: .1rem;
+  margin: var(--space-double) auto var(--space-small);
+  font-weight: var(--font-weight-normal);
+}
+@media screen and (max-width:479px) {
+  #introduction .page-title {
+    font-size: 1.6rem;
+    letter-spacing: 0;
+  }
+}
+
+#introduction .page-title strong {
+  font-weight: var(--font-weight-extrabold);
+  background: url("/images/banner.jpg") no-repeat 58% 67%;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+#introduction .page-content {
+  position: relative;
+  text-align: justify;
+  max-width: 410px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width:479px) {
+  #introduction .page-content {
+    padding: 0 1.5rem;
+  }
+}
+
+#introduction .page-content:before {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  opacity: .75;
+  content: "";
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: var(--icon-w) var(--icon-h);
+  width: var(--icon-w);
+  height: var(--icon-h);
+  filter: invert(1);
+}
+[data-theme=dark] #introduction .page-content:before {
+  filter: invert(.1);
+}
+
+#introduction.d0 .page-content:before {
+  --icon-w: 200px;
+  --icon-h: 200px;
+  background-image: url("/images/icons/brush.svg");
+  top: -70px;
+  left: -125px;
+  transform: rotate(110deg);
+}
+@media screen and (max-width:479px) {
+  #introduction.d0 .page-content:before {
+    top: -60px;
+    left: -100px;
+    transform: rotate(300deg);
+  }
+}
+
+#introduction.d1 .page-content:before {
+  --icon-w: 140px;
+  --icon-h: 145px;
+  background-image: url("/images/icons/pencil.svg");
+  top: -35px;
+  left: -100px;
+  transform: rotate(200deg) scaleX(-1);
+}
+@media screen and (max-width:479px) {
+  #introduction.d1 .page-content:before {
+    top: -30px;
+    left: -70px;
+    transform: rotate(20deg) scaleX(-1);
+  }
+}
+
+#introduction.d2 .page-content:before {
+  --icon-w: 220px;
+  --icon-h: 225px;
+  background-image: url("/images/icons/thumbtack.svg");
+  top: -70px;
+  left: -150px;
+  transform: rotate(340deg);
+}
+@media screen and (max-width:479px) {
+  #introduction.d2 .page-content:before {
+    top: -60px;
+    left: -125px;
+  }
+}
+
+#introduction.d3 .page-content:before {
+  --icon-w: 190px;
+  --icon-h: 170px;
+  background-image: url("/images/icons/feather.svg");
+  top: -40px;
+  left: -110px;
+  transform: rotate(280deg);
+}
+@media screen and (max-width:479px) {
+  #introduction.d3 .page-content:before {
+    top: -40px;
+    left: -85px;
+    transform: rotate(290deg);
+  }
+}
+
+#introduction.d4 .page-content:before {
+  --icon-w: 190px;
+  --icon-h: 170px;
+  background-image: url("/images/icons/bullhorn.svg");
+  top: -40px;
+  left: -135px;
+  transform: rotate(50deg) scaleX(-1);
+}
+@media screen and (max-width:479px) {
+  #introduction.d4 .page-content:before {
+    top: -25px;
+    left: -110px;
+    transform: rotate(55deg) scaleX(-1);
+  }
+}
+
+#introduction.d5 .page-content:before {
+  background-image: url("/images/icons/pen.svg");
+  --icon-w: 100px;
+  --icon-h: 180px;
+  top: -60px;
+  left: -100px;
+  transform: rotate(325deg);
+}
+@media screen and (max-width:479px) {
+  #introduction.d5 .page-content:before {
+    top: -40px;
+    left: -30px;
+    transform: rotate(140deg);
+  }
+}
+
+#introduction.d6 .page-content:before {
+  --icon-w: 170px;
+  --icon-h: 175px;
+  background-image: url("/images/icons/tag.svg");
+  top: -45px;
+  left: -130px;
+  transform: rotate(5deg);
+}
+@media screen and (max-width:479px) {
+  #introduction.d6 .page-content:before {
+    top: -50px;
+    left: -110px;
+    transform: rotate(195deg);
+  }
+}
+
+/* 404 ---------------------------------------------------------- */
+
+#wrap-404 {
+  text-align: center;
+  margin: var(--space-moderate) 0 var(--space-block)
+}
+#wrap-404 pre {
+  background-color: transparent;
+  white-space: pre;
+  letter-spacing: 0;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-normal);
+  zoom: 80%
+}
+@media screen and (max-width:479px) {
+  #wrap-404 pre {
+    zoom: 50%
+  }
+}
+
+/* Comments ----------------------------------------------------- */
+
+#comments {
+  background: var(--color-block);
+  box-shadow: 1px 2px 3px var(--color-shadow);
+  padding: var(--space-normal);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-normal);
+  margin: var(--space-block) 0;
+}
+
+#comments a {
+  color: var(--color-accent-text);
+}

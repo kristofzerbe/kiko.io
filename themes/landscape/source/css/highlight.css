@@ -1,0 +1,273 @@
+:root {
+  --highlight-background: rgba(230,230,230,.6);
+  --highlight-foreground: #4d4d4c;
+  --highlight-line-numbers: #666;
+  --highlight-current-line: #333;
+  --highlight-selection: #515151;
+  --highlight-comment: #8e908c;
+  --highlight-red: #c50000 ;
+  --highlight-orange: #f5871f; 
+  --highlight-yellow: #eab700;
+  --highlight-green: #718c00;
+  --highlight-aqua: #3e999f;
+  --highlight-blue: #4271ae;
+  --highlight-purple: #8959a8;
+}
+
+:root[data-theme="dark"] { 
+  --highlight-background: rgba(10,10,10,.4);
+  --highlight-foreground: #f1f1f1;
+  --highlight-line-numbers: #888;
+  --highlight-current-line: #999;
+  --highlight-selection: #ccc;
+  --highlight-comment: #bbb;
+  --highlight-red: #e06669;
+  --highlight-orange: #da9554; 
+  --highlight-yellow: #e6c446; 
+  --highlight-green: #9dc107; 
+  --highlight-aqua: #5aa9ae; 
+  --highlight-blue: #6d95c9; 
+  --highlight-purple: #ae70d5;
+}
+
+.article-entry code,
+.article-entry pre,
+.page-content code,
+.page-content pre {
+  font-family: var(--font-mono)
+}
+
+.article-entry code,
+.page-content code {
+  line-break: anywhere;
+  font-size: var(--font-size-code);
+  padding: 0 var(--space-thin)
+}
+
+.article-entry a code:hover,
+.page-content a code:hover {
+  border-color: inherit;
+  color: inherit
+}
+
+.article-entry li code,
+.article-entry p code,
+.page-content li code,
+.page-content p code {
+  white-space: nowrap;
+  border-radius: var(--border-radius-normal);
+  background-color: var(--color-background)
+}
+
+.article-entry .highlight,
+.article-entry pre,
+.page-content .highlight,
+.page-content pre {
+  margin: var(--space-small) calc(var(--space-normal) * -1);
+  padding: var(--space-medium) var(--space-normal);
+  overflow: auto;
+  font-size: var(--font-size-code);
+  line-height: var(--line-height-medium)
+}
+
+.article-entry pre,
+.page-content pre {
+  background: var(--highlight-background);
+  color: var(--highlight-foreground)
+}
+
+.article-entry pre .caption,
+.page-content pre .caption {
+  text-align: left;
+  margin-block-start: 0;
+  margin-block-end: var(--space-small);
+  font-style: normal;
+  text-transform: lowercase
+}
+
+.article-entry pre code,
+.page-content pre code {
+  background: 0 0;
+  text-shadow: none;
+  padding: 0
+}
+
+.article-entry .highlight pre,
+.page-content .highlight pre {
+  background: 0 0;
+  border: none;
+  margin: 0;
+  padding: 0
+}
+
+.article-entry .highlight table,
+.page-content .highlight table {
+  margin: 0;
+  width: auto
+}
+
+.article-entry .highlight td,
+.page-content .highlight td {
+  border: none;
+  padding: 0
+}
+
+.article-entry .highlight figcaption,
+.page-content .highlight figcaption {
+  font-size: 1em;
+  color: var(--highlight-comment);
+  line-height: var(--line-height-thin);
+  margin-bottom: 1em
+}
+
+.article-entry .highlight figcaption a,
+.page-content .highlight figcaption a {
+  float: right
+}
+
+.article-entry .highlight .gutter pre,
+.page-content .highlight .gutter pre {
+  font-size: var(--font-size-small);
+  color: var(--highlight-line-numbers);
+  text-align: right;
+  padding-right: var(--space-moderate)
+}
+
+.article-entry .highlight .line,
+.page-content .highlight .line {
+  height: var(--line-height-medium)
+}
+
+.article-entry .highlight .line.marked,
+.page-content .highlight .line.marked {
+  background: var(--highlight-selection)
+}
+
+.article-entry .gist,
+.page-content .gist {
+  margin: 0 calc(var(--space-normal) * -1);
+  border-style: solid;
+  border-color: var(--color-border);
+  border-width: 1px 0;
+  background: var(--highlight-background);
+  padding: var(--space-medium) var(--space-normal) var(--space-medium) 0
+}
+
+.article-entry .gist .gist-file,
+.page-content .gist .gist-file {
+  border: none;
+  font-family: var(--font-mono);
+  margin: 0
+}
+
+.article-entry .gist .gist-file .gist-data,
+.page-content .gist .gist-file .gist-data {
+  background: 0 0;
+  border: none
+}
+
+.article-entry .gist .gist-file .gist-data .line-numbers,
+.page-content .gist .gist-file .gist-data .line-numbers {
+  font-size: var(--font-size-small);
+  background: 0 0;
+  border: none;
+  padding: 0 var(--space-moderate) 0 0
+}
+
+.article-entry .gist .gist-file .gist-data .line-data,
+.page-content .gist .gist-file .gist-data .line-data {
+  padding: 0 !important
+}
+
+.article-entry .gist .gist-file .highlight,
+.page-content .gist .gist-file .highlight {
+  margin: 0;
+  padding: 0;
+  border: none
+}
+
+.article-entry .gist .gist-file .gist-meta,
+.page-content .gist .gist-file .gist-meta {
+  background: var(--highlight-background);
+  color: var(--highlight-comment);
+  font: var(--font-size-small) var(--font-sans);
+  text-shadow: 0 0;
+  padding: 0;
+  margin-top: 1em;
+  margin-left: var(--space-normal)
+}
+
+.article-entry .gist .gist-file .gist-meta a,
+.page-content .gist .gist-file .gist-meta a {
+  color: var(--color-link);
+  font-weight: var(--font-weight-bold)
+}
+
+.article-entry .gist .gist-file .gist-meta a:hover,
+.page-content .gist .gist-file .gist-meta a:hover {
+  text-decoration: underline
+}
+
+pre .comment,
+pre .title {
+  color: var(--highlight-comment)
+}
+
+pre .attribute,
+pre .css .class,
+pre .css .id,
+pre .css .pseudo,
+pre .html .doctype,
+pre .regexp,
+pre .ruby .constant,
+pre .tag,
+pre .variable,
+pre .xml .doctype,
+pre .xml .pi,
+pre .xml .tag .title {
+  color: var(--highlight-red)
+}
+
+pre .built_in,
+pre .constant,
+pre .literal,
+pre .number,
+pre .params,
+pre .preprocessor {
+  color: var(--highlight-orange)
+}
+
+pre .class,
+pre .css .rules .attribute,
+pre .ruby .class .title {
+  color: var(--highlight-green)
+}
+
+pre .header,
+pre .inheritance,
+pre .ruby .symbol,
+pre .string,
+pre .value,
+pre .xml .cdata {
+  color: var(--highlight-blue)
+}
+
+pre .css .hexcolor {
+  color: var(--highlight-aqua)
+}
+
+pre .coffeescript .title,
+pre .function,
+pre .javascript .title,
+pre .perl .sub,
+pre .python .decorator,
+pre .python .title,
+pre .ruby .function .title,
+pre .ruby .title .keyword {
+  color: var(--highlight-blue)
+}
+
+pre .javascript .function,
+pre .keyword {
+  color: var(--highlight-purple)
+}

@@ -1,0 +1,39 @@
+.outer {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 var(--space-moderate)
+}
+
+/* clearfix()... */
+.outer:after,
+.outer:before { 
+  content: "";
+  display: table
+}
+.outer:after {
+  clear: both
+}
+
+@media screen and (min-width:768px) {
+  main {
+    display: inline;
+    float: left;
+    width: 73%;
+    margin: 0 1%
+  }
+}
+
+#sidebar {
+  margin-bottom: var(--space-block);
+  font-size: var(--font-size-medium)
+}
+
+@media screen and (min-width:768px) {
+  #sidebar {
+    display: inline;
+    float: left;
+    width: 23%;
+    margin: 0 1%
+  }
+}
+

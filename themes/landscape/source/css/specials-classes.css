@@ -1,0 +1,143 @@
+img.limit {
+  max-width: 240px;
+}
+@media screen and (min-width:768px) {
+  img.limit {
+    max-width: 360px;
+  }
+}
+@media screen and (min-width:480px) and (max-width:767px) {
+  img.limit {
+    max-width: 320px;
+  }
+}
+
+img.float-right {
+  float: right;
+  width: 38%;
+  padding: var(--space-medium) 0 var(--space-medium) var(--space-medium);
+}
+@media screen and (min-width:768px) {
+  img.float-right {
+    width: 24%;
+    padding: var(--space-normal) 0 var(--space-normal) var(--space-normal);
+  }
+}
+@media screen and (min-width:480px) and (max-width:767px) {
+  img.float-right {
+    width: 28%;
+    padding: var(--space-default) 0 var(--space-default) var(--space-default);
+  }
+}
+
+img.float-left-mini {
+  float: left;
+  width: 20%;
+  padding: var(--space-default) var(--space-medium) var(--space-medium) 0;
+}
+@media screen and (min-width:768px) {
+  img.float-left-mini {
+    width: 16%;
+    padding: var(--space-extra) var(--space-normal) var(--space-normal) 0;
+  }
+}
+@media screen and (min-width:480px) and (max-width:767px) {
+  img.float-left-mini {
+    width: 12%;
+    padding: var(--space-moderate) var(--space-default) var(--space-default) 0;
+  }
+}
+
+small.label {
+  display: block;
+  margin-block: var(--space-thin);
+  opacity: .5;
+  line-height: var(--line-height-thin);
+}
+small.label span {
+  text-wrap: nowrap;
+}
+
+span.visually-hidden { /* https://stackoverflow.com/questions/62703524/how-to-make-an-html-link-displayed-as-an-icon-accessible */
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(1px, 1px, 1px, 1px); /*maybe deprecated but we need to support legacy browsers */
+  clip-path: inset(50%); /*modern browsers, clip-path works inwards from each corner*/
+  white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+}
+
+div.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* aspect ratio 16:9 */
+  height: 0;
+}
+div.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+hr.divider {
+  display: block;
+  border: 0;
+  height: 24px;
+  background-image: url("/images/divider.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: var(--space-default) 0;
+  opacity: .1;
+  clear: both;
+}
+[data-theme=dark] hr.divider {
+  opacity: .5;
+}
+
+pre.json {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-code);
+}
+pre.json .string {
+  color: #4271ae;
+}
+pre.json .number {
+  color: #4271ae;
+}
+pre.json .boolean {
+  color: #4271ae;
+}
+pre.json .null {
+  color: #ababab;
+}
+pre.json .key {
+  color: #c15353;
+}
+
+.medium-zoom--opened .medium-zoom-overlay {
+  z-index: 999;
+  backdrop-filter: blur(8px);
+}
+.medium-zoom-image--opened {
+  z-index: 1000;
+  border-radius: calc(var(--border-radius-small)/ 2);
+}
+
+.loading { /* https://codepen.io/thetallweeks/pen/yybGra */
+  font-size: var(--font-size-normal);
+}
+.loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4, end) .9s infinite;
+  animation: ellipsis steps(4, end) .9s infinite;
+  content: "\2026"; /* ascii code for the ellipsis character */
+  width: 0;
+}
