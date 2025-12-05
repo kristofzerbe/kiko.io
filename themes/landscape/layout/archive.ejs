@@ -16,7 +16,7 @@ if (page.year) { currentClass = "skip-right"; }
 <%- partial('_partial/nav-index-archives', { currentClass: currentClass }) %>
 
 <% if (page.year) { %>
-  <h1 class="archive-title">
+  <h1 class="page-title">
     <small>Articles</small>
   <% if (page.month) { %>
     <em class="date"></em><%= moment().month(page.month).subtract(1, "month").format('MMMM') %> <%= page.year %>
@@ -25,7 +25,7 @@ if (page.year) { currentClass = "skip-right"; }
   <% } %>
   </h1>
 <% } else { %>
-  <h1 class="archive-title">Articles</h1>
+  <h1 class="page-title">Articles</h1>
 <% } %>
 
 <%- partial('_partial/archive-navigation') %>

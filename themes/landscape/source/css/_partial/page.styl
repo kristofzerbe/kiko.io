@@ -1,51 +1,16 @@
-.page-title
-  @extend $title
-  button.title-command
-    display: inline-block
-    position: relative
-    left: 6px
-    top: 2px
-    width: 20px
-    height: 20px
-    background: transparent
-    border: none
-    // transition: all ease-out 0.2s
-    opacity: 0.25
-    &:hover
-      opacity: 0.75
-    &:before
-      display: block
-      content: ""
-      background-repeat: no-repeat
-      background-position: 0 0
-      background-size: 20px
-      width: 20px
-      height: 20px
-      filter: invert(0)
-      // transition: all ease-out 0.2s
-      /[data-theme="dark"] &
-        filter: invert(1)
-  button.title-command.switch-condensed
-    &:before
-      //see /images/icons/minimize.svg
-      background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='%23000000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 14h4m0 0v4m0-4-6 6m14-10h-4m0 0V6m0 4 6-6'/%3E%3C/svg%3E");
-    &.condensed
-      &:before
-        //see /images/icons/maximize.svg
-        background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='%23000000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 20H4m0 0v-4m0 4 6-6m6-10h4m0 0v4m0-4-6 6'/%3E%3C/svg%3E");
 
-.page-title-svg-link
-  display: block
-  position: absolute
-  right: 0
-  top: -4px
-  background-repeat: no-repeat
-  background-size: cover
-  width: 36px
-  height: 36px
-  opacity: 0.8
-  /[data-theme="dark"] &
-    filter:invert(1)
+// .page-title-svg-link
+//   display: block
+//   position: absolute
+//   right: 0
+//   top: -4px
+//   background-repeat: no-repeat
+//   background-size: cover
+//   width: 36px
+//   height: 36px
+//   opacity: 0.8
+//   /[data-theme="dark"] &
+//     filter:invert(1)
 
 .page-subtitle
   font-size: var(--font-pagetitle-size)
