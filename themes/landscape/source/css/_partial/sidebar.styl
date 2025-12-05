@@ -5,7 +5,6 @@
     margin-right: 0
 
 .widget-title
-  @extend $block-caption
   margin: 0
   opacity: 0.33
 
@@ -19,34 +18,38 @@
   ul, ol
     list-style: none
     margin: 0
-    ul, ol
-      margin: 0 var(--space-moderate)
-    ul
-      list-style: disc
-    ol
-      list-style: decimal
-  ul, ol, dl
-    ul, ol, dl
-      margin-left: 1rem
-      list-style: disc
-    li
-      border-left: 2px var(--color-border) solid
-      margin: calc(var(--space-medium) / 3 * 2) 0 0 -12px
-      padding-left: 10px
-      a
-        text-decoration: none
-      &:hover
-        border-left: 4px var(--color-accent) solid
-        margin-left: -13px
-        padding-left: 9px
-        a 
-          text-decoration: revert
 
-.widget.about
+.widget#recent-posts    
+  li
+    --sel-width: 2px
+    --sel-space: 10px
+    border-left: var(--sel-width) var(--color-border) solid
+    margin-block-start: var(--space-small) 
+    margin-left: calc(calc(var(--sel-space) + var(--sel-width)) * -1)
+    padding-left: var(--sel-space)
+    a
+      text-decoration: none
+    &:hover
+      border-left: calc(var(--sel-width) * 2) var(--color-accent) solid
+      margin-left: calc(calc(var(--sel-space) + var(--sel-width) + calc(var(--sel-width) / 2)) * -1)
+      padding-left: calc(var(--sel-space) - calc(var(--sel-width) / 2))
+      a 
+        text-decoration: revert
+
+.widget#about
   padding: var(--space-normal) 0 var(--space-small)
   *:not(i)
     display: block
     margin: 0 auto
+  h3, p
+    text-align: center  
+  h3 
+    margin: calc(var(--space-double) + var(--space-small)) 0 var(--space-medium)
+    text-transform: uppercase
+    font-family: 'Open Sans'
+    font-weight: 700
+    letter-spacing: 0.125rem
+    word-wrap: normal
   i 
     font-style: normal
   .avatar
@@ -169,15 +172,6 @@
         right: 105px
         opacity: 0.5
 
-  h3, p
-    text-align: center  
-  h3 
-    margin: calc(var(--space-double) + var(--space-small)) 0 var(--space-medium)
-    text-transform: uppercase
-    font-family: 'Open Sans'
-    font-weight: 700
-    letter-spacing: 0.125rem
-    word-wrap: normal
 
 .category-list-count
 .tag-list-count
