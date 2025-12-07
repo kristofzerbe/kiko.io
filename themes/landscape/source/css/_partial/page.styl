@@ -768,19 +768,15 @@
     box-shadow: none
     padding: 0
     position relative
-    margin-bottom: var(--space-block)
+    margin-bottom: 0
     img
       width: 100%
       height: auto
-      box-shadow: 1px 1px 12px 0px #888 !important
-      /[data-theme="dark"] &
-        box-shadow: 1px 1px 12px 0px #000 !important
+      border-radius: var(--border-radius-normal)
+      box-shadow: var(--length-shadow) var(--color-border)
     & #photo
       cursor: help
     small
-      position: absolute
-      right: 0
-      bottom: calc(var(--space-default) * -1)
       opacity: 0.33
       font-size: var(--font-size-tiny)
 
@@ -790,6 +786,7 @@
     box-shadow: none
     padding: 0
     position relative
+    margin: 0
     font-size: var(--font-size-medium)
     ul
       display: grid
