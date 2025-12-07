@@ -14,3 +14,88 @@
   letter-spacing: 1px;
   font-weight: var(--font-weight-bold);
 }
+
+/* block-inner & block-inner-hover -------------------------------- */
+.article-inner,
+.anything-inner,
+.panel-inner, 
+.page-content section,
+.page-content .view .card,
+section.image img {
+  border-radius: var(--border-radius-normal);
+  background: var(--color-block);
+  box-shadow: var(--length-shadow) var(--color-border);
+  overflow: hidden;
+}
+
+.panel-inner,
+.page-content .view .card,
+section.image img {
+  transition: all ease-out 0.3s;
+}
+.panel-inner:hover,
+.page-content .view .card:hover,
+section.image img:hover {
+  transform: scale(1) translateY(-1px);
+  box-shadow: var(--length-shadow) var(--color-shadow);
+}
+
+/* inview-image -------------------------------- */
+@media (prefers-reduced-motion:no-preference) {
+  .article-photo,
+  .article-entry a.img-link,
+  .panel-photo,
+  .page-content .card a.card-img img,
+  .page-content .card a.box-img img {
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: all ease-out .6s;
+    opacity: var(--opacity-inview);
+    filter: var(--filter-inview);
+  }
+
+  .article-photo.in-view,
+  .article-entry a.img-link.in-view,
+  .panel-photo.in-view,
+  .page-content .card a.card-img.in-view img,
+  .page-content .card a.box-img.in-view img {
+    transform: scale(1.025);
+    opacity: 1;
+    filter: grayscale(0) contrast(1)
+  }
+}
+
+/* base-style -------------------------------- */
+.page-content hr,
+.anything-content hr,
+.article-entry hr,
+.article-share hr,
+.article-webmention hr,
+.view .card hr {
+  display: block;
+  border: 0px;
+  height: 24px;
+  background-image: url('/images/divider.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: var(--space-default) 0;
+  opacity: var(--opacity-line);
+  clear: both;
+}
+
+.page-content ul,
+.anything-content ul,
+.article-entry ul,
+.article-share ul,
+.article-webmention ul,
+.view .card ul {
+  list-style: disc;
+}
+.page-content ol,
+.anything-content ol,
+.article-entry ol,
+.article-share ol,
+.article-webmention ol,
+.view .card ol {
+  list-style: decimal;
+}

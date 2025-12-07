@@ -167,8 +167,6 @@
         padding: var(--space-block) var(--space-medium) var(--space-small) var(--space-medium)
 
 .article-inner
-  @extend $block-inner
-  overflow: hidden
   margin-bottom: var(--space-default)
   small.top-info,
   small.top-exclamation
@@ -233,6 +231,7 @@
       summary
         em
           opacity: 0.333
+          font-style: normal
       svg
         transform: rotate(-20deg)
     @media mq-mobile-up
@@ -240,7 +239,6 @@
         min-width: 400px
 
 .article-photo
-  @extend $inview-image
   height: 150px
   @media mq-tablet
     height: 175px
@@ -250,9 +248,6 @@
     height: 250px
   width: 100%
   object-fit: cover
-
-.article-photo.in-view
-  @extend $inview-image-visible
 
 .article-category
   position: absolute
@@ -324,7 +319,6 @@
   margin-top: var(--space-default)
 
 .article-entry
-  @extend $base-style
   // clearfix()
   color: var(--color-text)
   padding: 0 var(--space-normal)
@@ -348,12 +342,6 @@
     white-space: pre-line
     word-break: break-word
     text-decoration-line: underline
-  a.img-link
-    @extend $inview-image
-  a.img-link.in-view
-    @extend $inview-image-visible
-    &:hover
-      transform: scale(1.025)
   ul, ol, dl
     margin-block: var(--space-default)
     li
@@ -610,7 +598,6 @@
         display: inline-block
 
 .article-share
-  @extend $base-style
   margin-top: calc(var(--space-default) * -1)
   min-height: auto
   border-top: none
@@ -650,7 +637,7 @@
     line-height: var(--line-height-normal)
     margin: var(--space-default) 0
   p
-    opacity: var(--text-opacity)
+    opacity: var(--opacity-text)
     margin-block: var(--space-medium)
     font-size: var(--font-size-medium)
     &:first-child
@@ -762,7 +749,6 @@
           padding-left: 0
 
 .article-webmention
-  @extend $base-style
   min-height: auto
   border-top: none
   position: relative
@@ -1025,8 +1011,6 @@
     grid-area: source
     background-color: var(--color-block)
     color: var(--color-text)
-    +placeholder()
-      opacity: 0.8
   input[type=submit]
     grid-area: submit
     cursor: pointer
@@ -1075,7 +1059,7 @@
     h3
       font-size: var(--font-size-medium)
       font-weight: var(--font-weight-normal)
-      opacity: var(--text-opacity)
+      opacity: var(--opacity-text)
 
   .interactions-avatars
     --avatar-size: 36px

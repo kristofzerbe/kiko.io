@@ -1,50 +1,50 @@
 @keyframes pulse {
-  0%   { opacity: 0 }
-  10%  { opacity: .1 }
-  20%  { opacity: .2 }
-  30%  { opacity: .3 }
-  40%  { opacity: .4 }
-  50%  { opacity: .5 }
-  60%  { opacity: .6 }
-  70%  { opacity: .7 }
-  80%  { opacity: .8 }
-  90%  { opacity: .9 }
-  100% { opacity: 1 }
+  0%   { opacity: 0; }
+  10%  { opacity: .1; }
+  20%  { opacity: .2; }
+  30%  { opacity: .3; }
+  40%  { opacity: .4; }
+  50%  { opacity: .5; }
+  60%  { opacity: .6; }
+  70%  { opacity: .7; }
+  80%  { opacity: .8; }
+  90%  { opacity: .9; }
+  100% { opacity: 1; }
 }
 
 @keyframes ellipsis {
-  to { width: 1.25em }
+  to { width: 1.25em; }
 }
 
 @keyframes fadeIn {
-  0% { opacity: 0 }
-  100% { opacity: 1 }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @keyframes fadeOut {
-  0% { opacity: 1 }
-  100% { opacity: 0 }
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 @keyframes slideUp {
   0%, 50% { 
     transform: translateY(100%);
-    opacity: 0
+    opacity: 0;
   }
   100%, 60% {
     transform: translateY(0);
-    opacity: 1
+    opacity: 1;
   }
 }
 
 @keyframes slideDown {
   0%, 50% {
     transform: translateY(0);
-    opacity: 0
+    opacity: 0;
   }
   100%, 60% {
     transform: translateY(100%);
-    opacity: 1
+    opacity: 1;
   }
 }
 
@@ -53,38 +53,104 @@
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
-  background-color: var(--color-background)
+  background-color: var(--color-background);
 }
 ::-webkit-scrollbar-track {
-  background-color: var(--color-background)
+  background-color: var(--color-background);
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--color-border)
+  background-color: var(--color-border);
 }
 
 /* https://piccalil.li/links/the-coyier-css-starter/ */
 @media (prefers-reduced-motion:no-preference) {
   @view-transition {
-    navigation: auto
+    navigation: auto;
   }
   html {
-    interpolate-size: allow-keywords
+    interpolate-size: allow-keywords;
   }
   html:focus-within {
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
   }
+}
+
+h1 {
+  font-size: var(--font-title-size);
+  line-height: var(--line-height-title);
+}
+h2 {
+  font-size: var(--font-pagetitle-size);
+  line-height: var(--line-height-normal);
+}
+h3 {
+  font-size: var(--font-subtitle-size);
+}
+h4 {
+  font-size: var(--font-subtitle-size);
+}
+h5 {
+  font-size: var(--font-minortitle-size);
+}
+h6 {
+  font-size: var(--font-size-normal);
+  color: var(--color-meta);
+}
+strong {
+  font-weight: var(--font-weight-bolder);
+}
+em, cite {
+  font-style: italic;
+}
+small {
+  font-size: var(--font-size-small);
+}
+p small {
+  display: inline-block;
+  line-height: var(--line-height-small);
+}
+sup, sub {
+  font-size: var(--font-size-small);
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5rem;
+}
+sub {
+  bottom: -0.2rem;
+}
+acronym, abbr {
+  border-bottom: 1px dotted;
+}
+ul, ol, dl {
+  margin: 0 var(--space-default);
+}
+ul ul, ul ol, ol ul, ol ol {
+  margin-block: 0;
+}
+dt {
+  font-weight: var(--font-weight-bold);
+}
+fieldset {
+  position: relative;
 }
 
 mark {
   background-color: var(--color-mark);
   padding: .15rem .3rem;
-  color: var(--color-text)
+  color: var(--color-text);
 }
 
 button,
 input[type=submit] {
   cursor: pointer;
-  font-family: var(--font-sans)
+  font-family: var(--font-sans);
+}
+
+input[type=url]::placeholder {
+  opacity: 0.5;
 }
 
 a {
@@ -94,39 +160,39 @@ a {
   text-decoration-thickness: 1px;
   text-underline-offset: .3em;
   text-decoration-skip-ink: auto;
-  text-decoration-style: dashed
+  text-decoration-style: dashed;
 }
 
 a:hover {
-  text-decoration-style: solid
+  text-decoration-style: solid;
 }
 
 table tbody tr:nth-child(2n),
 table thead tr:nth-child(2n) {
-  background: var(--color-background)
+  background: var(--color-background);
 }
 
 table tbody tr td,
 table tbody tr th,
 table thead tr td,
 table thead tr th {
-  padding: var(--space-median)
+  padding: var(--space-median);
 }
 
 table tbody tr td,
 table thead tr td {
-  font-weight: var(--font-weight-normal)
+  font-weight: var(--font-weight-normal);
 }
 
 table tbody tr th,
 table thead tr th {
-  font-weight: var(--font-weight-bold)
+  font-weight: var(--font-weight-bold);
 }
 
 table tbody tr:not(.no-border) td,
 table tbody tr:not(.no-border) th:not(:empty),
 table thead tr:not(.no-border) td,
 table thead tr:not(.no-border) th:not(:empty) {
-  border: 1px var(--color-border) solid
+  border: 1px var(--color-border) solid;
 }
 

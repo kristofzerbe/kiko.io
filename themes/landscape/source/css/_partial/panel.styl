@@ -16,9 +16,7 @@
     margin-top: 0
 
 .panel-inner
-  @extend $block-inner-hover
   padding: var(--space-median)
-  overflow: hidden  
   &.today
     border-top: 8px var(--color-accent) solid
   &.yesterday
@@ -38,13 +36,9 @@
     margin: 0
 
 .panel-photo
-  @extend $inview-image
   height: 150px
   width: 100%
   object-fit: cover
-
-.panel-photo.in-view
-  @extend $inview-image-visible
 
 .panel-content
   padding: 0 var(--space-small) var(--space-medium)
@@ -140,6 +134,7 @@
 
 .panel-subtitle
   margin-top: var(--space-small)
+  font-size: var(--font-size-normal)
   line-height: var(--line-height-medium)
   color: var(--color-meta)
 
