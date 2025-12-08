@@ -1,3 +1,222 @@
+html {
+  text-size-adjust: none; /* Andy Bells Modernized Reset */
+  font-size: var(--font-size-default);
+}
+
+body {
+  line-height: var(--line-height-normal); /* Andy Bells Modernized Reset */
+  accent-color: var(--color-accent);
+  color: var(--color-text);
+  background: var(--color-background);
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-normal);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-background);
+}
+::-webkit-scrollbar-track {
+  background-color: var(--color-background);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+}
+
+/* https://piccalil.li/links/the-coyier-css-starter/ */
+@media (prefers-reduced-motion:no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+  html {
+    interpolate-size: allow-keywords;
+  }
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+}
+
+h1, h2, h3, h4, button, input, label {
+  line-height: var(--line-height-normal); /* Andy Bells Modernized Reset */
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance; /* Andy Bells Modernized Reset */
+}
+
+h1 {
+  font-size: var(--font-title-size);
+  line-height: var(--line-height-title);
+}
+h2 {
+  font-size: var(--font-pagetitle-size);
+  line-height: var(--line-height-normal);
+}
+h3 {
+  font-size: var(--font-subtitle-size);
+}
+h4 {
+  font-size: var(--font-subtitle-size);
+}
+h5 {
+  font-size: var(--font-minortitle-size);
+}
+h6 {
+  font-size: var(--font-size-normal);
+  color: var(--color-meta);
+}
+
+strong {
+  font-weight: var(--font-weight-bolder);
+}
+
+em, cite {
+  font-style: italic;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+small {
+  font-size: var(--font-size-small);
+}
+p small {
+  display: inline-block;
+  line-height: var(--line-height-small);
+}
+
+a {
+  transition: all ease-out .2s;
+  color: var(--color-accent-text);
+  text-decoration-color: var(--color-accent-text);
+  text-decoration-thickness: 1px;
+  text-underline-offset: .3em;
+  text-decoration-skip-ink: auto;
+  text-decoration-style: dashed;
+}
+a:hover {
+  text-decoration-style: solid;
+}
+a img {
+  border: none;
+}
+
+sup, sub {
+  font-size: var(--font-size-small);
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5rem;
+}
+sub {
+  bottom: -0.2rem;
+}
+
+acronym, abbr {
+  border-bottom: 1px dotted;
+}
+
+ul, ol {
+  list-style: none;
+}
+ul, ol, dl {
+  margin: 0 var(--space-default);
+}
+ul ul, ul ol, ol ul, ol ol {
+  margin-block: 0;
+}
+dt {
+  font-weight: var(--font-weight-bold);
+}
+fieldset {
+  position: relative;
+}
+
+mark {
+  background-color: var(--color-mark);
+  padding: .15rem .3rem;
+  color: var(--color-text);
+}
+
+input, textarea, button {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-default);
+  font-size: var(--font-size-medium);
+}
+input::-moz-focus-inner,
+textarea::-moz-focus-inner,
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+}
+button, input[type=submit] {
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-code) !important;
+}
+input[type=url]::placeholder {
+  opacity: 0.5;
+}
+textarea {
+  resize: none;
+  line-height: var(--line-height-normal);
+}
+textarea:not([rows]) {
+  min-height: 10em; /* Andy Bells Modernized Reset */
+}
+
+figure {
+  margin: 0;
+  white-space-collapse: initial;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+th, td, caption {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+table tbody tr:nth-child(2n),
+table thead tr:nth-child(2n) {
+  background: var(--color-background);
+}
+table tbody tr td,
+table tbody tr th,
+table thead tr td,
+table thead tr th {
+  padding: var(--space-median);
+}
+table tbody tr td,
+table thead tr td {
+  font-weight: var(--font-weight-normal);
+}
+table tbody tr th,
+table thead tr th {
+  font-weight: var(--font-weight-bold);
+}
+table tbody tr:not(.no-border) td,
+table tbody tr:not(.no-border) th:not(:empty),
+table thead tr:not(.no-border) td,
+table thead tr:not(.no-border) th:not(:empty) {
+  border: 1px var(--color-border) solid;
+}
+
+/* -------------------------------------------------------------------------- */
+
 @keyframes pulse {
   0%   { opacity: 0; }
   10%  { opacity: .1; }
@@ -47,152 +266,3 @@
     opacity: 1;
   }
 }
-
-/* -------------------------------------------------------------------------- */
-
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-  background-color: var(--color-background);
-}
-::-webkit-scrollbar-track {
-  background-color: var(--color-background);
-}
-::-webkit-scrollbar-thumb {
-  background-color: var(--color-border);
-}
-
-/* https://piccalil.li/links/the-coyier-css-starter/ */
-@media (prefers-reduced-motion:no-preference) {
-  @view-transition {
-    navigation: auto;
-  }
-  html {
-    interpolate-size: allow-keywords;
-  }
-  html:focus-within {
-    scroll-behavior: smooth;
-  }
-}
-
-h1 {
-  font-size: var(--font-title-size);
-  line-height: var(--line-height-title);
-}
-h2 {
-  font-size: var(--font-pagetitle-size);
-  line-height: var(--line-height-normal);
-}
-h3 {
-  font-size: var(--font-subtitle-size);
-}
-h4 {
-  font-size: var(--font-subtitle-size);
-}
-h5 {
-  font-size: var(--font-minortitle-size);
-}
-h6 {
-  font-size: var(--font-size-normal);
-  color: var(--color-meta);
-}
-strong {
-  font-weight: var(--font-weight-bolder);
-}
-em, cite {
-  font-style: italic;
-}
-small {
-  font-size: var(--font-size-small);
-}
-p small {
-  display: inline-block;
-  line-height: var(--line-height-small);
-}
-sup, sub {
-  font-size: var(--font-size-small);
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-sup {
-  top: -0.5rem;
-}
-sub {
-  bottom: -0.2rem;
-}
-acronym, abbr {
-  border-bottom: 1px dotted;
-}
-ul, ol, dl {
-  margin: 0 var(--space-default);
-}
-ul ul, ul ol, ol ul, ol ol {
-  margin-block: 0;
-}
-dt {
-  font-weight: var(--font-weight-bold);
-}
-fieldset {
-  position: relative;
-}
-
-mark {
-  background-color: var(--color-mark);
-  padding: .15rem .3rem;
-  color: var(--color-text);
-}
-
-button,
-input[type=submit] {
-  cursor: pointer;
-  font-family: var(--font-sans);
-}
-
-input[type=url]::placeholder {
-  opacity: 0.5;
-}
-
-a {
-  transition: all ease-out .2s;
-  color: var(--color-accent-text);
-  text-decoration-color: var(--color-accent-text);
-  text-decoration-thickness: 1px;
-  text-underline-offset: .3em;
-  text-decoration-skip-ink: auto;
-  text-decoration-style: dashed;
-}
-
-a:hover {
-  text-decoration-style: solid;
-}
-
-table tbody tr:nth-child(2n),
-table thead tr:nth-child(2n) {
-  background: var(--color-background);
-}
-
-table tbody tr td,
-table tbody tr th,
-table thead tr td,
-table thead tr th {
-  padding: var(--space-median);
-}
-
-table tbody tr td,
-table thead tr td {
-  font-weight: var(--font-weight-normal);
-}
-
-table tbody tr th,
-table thead tr th {
-  font-weight: var(--font-weight-bold);
-}
-
-table tbody tr:not(.no-border) td,
-table tbody tr:not(.no-border) th:not(:empty),
-table thead tr:not(.no-border) td,
-table thead tr:not(.no-border) th:not(:empty) {
-  border: 1px var(--color-border) solid;
-}
-

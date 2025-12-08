@@ -15,7 +15,7 @@
     <small>Tap to show <a href="https://jariz.github.io/vibrant.js/">vibrant colors</a> ...</small>
   </section>
   
-  <section id="color-list"><ul></ul></section>
+  <section class="colorlist"><ul></ul></section>
   
   <div id="interactions-totalnumber-placeholder"></div>
 
@@ -268,7 +268,7 @@
           .finally(() => {
             setPhotoAccentColor(accentColor);
 
-            const colorList = document.querySelector("#color-list ul");
+            const colorList = document.querySelector("section.colorlist ul");
             colorItems.forEach(c => {
               colorList.appendChild(getColorElement(c));
             });
@@ -321,7 +321,7 @@
       }
       const getColorName = new GetColorName();
       $("#photo").click(() => {
-        $("#color-list").slideToggle();
+        $("section.colorlist").slideToggle();
       });
       function setPhotoAccentColor(color) {
         localStorage.setItem("accentcolor", color.hex);

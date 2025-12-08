@@ -1,0 +1,161 @@
+#footer {
+  background: var(--color-accent);
+  padding: var(--space-default) 0 0;
+  color: var(--color-accent-text-near);
+  border-radius: var(--border-radius-normal) var(--border-radius-normal) 0 0
+}
+
+#footer a {
+  color: var(--color-footer-link);
+  text-decoration: none
+}
+
+#footer a:hover {
+  text-decoration: revert
+}
+
+#footer .inner {
+  position: relative;
+  width: 95%;
+  margin-inline: var(--space-medium);
+  line-height: var(--line-height-normal);
+  font-size: var(--font-size-code);
+  display: grid;
+  grid-template-columns: max-content auto max-content;
+  grid-template-rows: max-content .75rem max-content max-content max-content;
+  grid-gap: 2px 64px;
+  grid-template-areas: "links . webrings" ". . webrings" "perf . webrings" "info . webrings" "dots . webrings"
+}
+
+@media screen and (max-width:767px) {
+  #footer .inner {
+    margin-inline: var(--space-thin);
+    grid-template-columns: max-content;
+    grid-template-rows: max-content .75rem max-content max-content .75rem max-content .3rem max-content;
+    grid-gap: 2px 5px;
+    grid-template-areas: "links" "." "perf" "info" "." "webrings" "." "dots"
+  }
+}
+
+#footer .webrings {
+  grid-area: webrings
+}
+
+#footer .webring {
+  margin-inline-start: calc(var(--space-thin) * -1)
+}
+
+#footer a.webring-url {
+  min-width: 120px;
+  text-align: left
+}
+
+#footer a.webring-link[href*='#'] {
+  visibility: hidden
+}
+
+#footer a.webring-link:hover {
+  text-decoration: none;
+  transition: all ease-out .2s;
+  color: var(--color-highlight)
+}
+
+#footer a.webring-link:hover:before {
+  opacity: 1
+}
+
+#footer a.webring-link:before {
+  display: inline-block;
+  width: 20px;
+  height: 16px;
+  content: "";
+  opacity: var(--opacity-text);
+  transition: all ease-out .2s;
+  filter: invert(1);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 0 1px
+}
+
+#footer a.webring-link.webring-prev {
+  padding-right: var(--space-small)
+}
+
+#footer a.webring-link.webring-prev:before {
+  background-image: url("/images/icons/arrow-notch-left.svg")
+}
+
+#footer a.webring-link.webring-next,
+#footer a.webring-link.webring-random {
+  padding-left: var(--space-small)
+}
+
+#footer a.webring-link.webring-next:before {
+  background-image: url("/images/icons/arrow-notch-right.svg")
+}
+
+#footer a.webring-link.webring-random:before {
+  background-image: url("/images/icons/shuffle.svg")
+}
+
+#footer .dot-space {
+  display: inline-block;
+  margin: 0 var(--space-thin);
+  color: var(--color-highlight)
+}
+
+#footer .dot-space:last-child {
+  display: none
+}
+
+#footer #footer-info {
+  grid-area: info
+}
+
+#footer #footer-links {
+  grid-area: links
+}
+
+#footer #footer-perf {
+  grid-area: perf
+}
+
+#footer #footer-dots {
+  grid-area: dots;
+  margin-block: 1rem;
+  margin-inline: 0
+}
+
+#footer #footer-dots li {
+  display: block;
+  height: 24px;
+  margin-right: var(--space-median);
+  float: left
+}
+
+#footer #footer-dots li.dot a {
+  display: block;
+  margin: 0;
+  height: 10px;
+  width: 10px;
+  background-color: var(--color-footer-dots);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#back-to-top {
+  color: var(--color-logo);
+  background-color: var(--color-accent);
+  border-radius: var(--border-radius-small)
+}
+
+#back-to-top {
+  right: 10px;
+  bottom: 10px
+}
+
+#back-to-top svg {
+  height: 20px;
+  width: 20px;
+  margin: var(--space-small) auto 0
+}

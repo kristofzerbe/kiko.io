@@ -60,12 +60,13 @@ A list of all feeds can also be found via my [.well-known/feeds](/.well-known/fe
 
 <section class="mf2feed">
 
-  ## HTML Feed
+## HTML Feed
 
   As an alternative, that can be read by humans and machines, here are the posts (articles with excerpt only) in the form of a microformat-based [h-feed](https://microformats.org/wiki/h-feed).
 
   <!-- TODO: Tag Plugins are not working here: see https://github.com/hexojs/hexo/issues/4713 ... Workaround: placeholder replacement in generator-dynamic-feeds.js
    -->
-   {% feed_microformats %}
+   <hr />
+  {% feed_microformats %}
   
 </section>

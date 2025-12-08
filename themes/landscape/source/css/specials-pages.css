@@ -196,3 +196,146 @@
 #comments a {
   color: var(--color-accent-text);
 }
+
+/* Map ---------------------------------------------------------- */
+
+[data-theme=dark] #map .leaflet-control-attribution,
+[data-theme=dark] #map .leaflet-control-zoom-in,
+[data-theme=dark] #map .leaflet-control-zoom-out,
+[data-theme=dark] #map .leaflet-layer {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+#map.page-map {
+  height: 320px;
+  margin: var(--space-medium) calc(var(--space-normal) * -1) var(--space-small);
+}
+
+#map.inline-map {
+  border-radius: var(--border-radius-normal);
+  height: calc(80vh);
+  width: 100%;
+  margin: 0 0 var(--space-block) 0;
+}
+
+#map .photoPopup .leaflet-popup-content-wrapper,
+#map .photoPopup .leaflet-popup-tip {
+  border-radius: var(--border-radius-normal);
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+#map .photoPopup .leaflet-popup-content-wrapper .leaflet-popup-content ul {
+  margin: var(--space-small) 0 0 0;
+  list-style-type: none;
+}
+
+#map .photoPopup .leaflet-popup-content-wrapper .leaflet-popup-content li {
+  line-height: var(--line-height-normal);
+}
+
+#map .photoPopup .leaflet-popup-content-wrapper .leaflet-popup-content li a {
+  transition: all ease-out .2s;
+  color: var(--color-accent-text);
+}
+
+#map .photoPopup .leaflet-popup-content-wrapper .leaflet-popup-content li span {
+  opacity: .5;
+}
+
+/* Archive Filter ---------------------------------------------------------- */
+
+#archive-filter > em {
+  font-style: italic;
+  font-size: var(--font-size-medium);
+  margin-left: var(--space-thin);
+}
+
+#archive-filter #archive-filter-wrapper {
+  padding: 0 var(--space-default) var(--space-small) 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  font-size: var(--font-size-medium);
+  background: linear-gradient(90deg, var(--color-background) 5%, var(--color-block) 50%, var(--color-background) 100%);
+}
+
+#archive-filter .archive-filter-list {
+  flex: 0 0 auto;
+  transition: all .2s ease;
+}
+
+#archive-filter .archive-filter-list:hover {
+  color: var(--color-accent-text);
+}
+
+#archive-filter .archive-filter-list h2 {
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-bold);
+  margin-block: var(--space-medium) var(--space-small);
+  margin-left: var(--space-median);
+}
+
+#archive-filter .archive-filter-list ul {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 230px;
+  margin-block: var(--space-small);
+  margin-inline: var(--space-median);
+}
+
+#archive-filter .archive-filter-list ul li {
+  flex: 1 0 25%;
+  box-sizing: border-box;
+  border-left: 2px var(--color-border) solid;
+  margin: 1px 0 1px 0;
+  padding: 0 8px 0 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#archive-filter .archive-filter-list ul li:hover {
+  border-left: 4px var(--color-accent) solid;
+  margin-left: -1px;
+  padding-left: 9px;
+}
+
+#archive-filter .archive-filter-list ul li a {
+  display: block;
+  min-width: 6rem;
+  margin-right: var(--space-default);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+#archive-filter .archive-filter-list ul li a:hover {
+  text-decoration: none;
+}
+
+#archive-filter .archive-filter-list ul li:hover a,
+#archive-filter .archive-filter-list ul li:hover span {
+  color: var(--color-accent-text);
+}
+
+#archive-filter .archive-filter-list ul li span {
+  padding-left: 0;
+  height: 22px;
+  width: 22px;
+  text-align: center;
+  background-color: var(--color-background);
+}
+
+#archive-filter .archive-filter-list.archive-filter-list-months ul {
+  display: block;
+  overflow: auto;
+  max-height: 220px;
+  padding-left: 1px;
+}
+
+#archive-filter .archive-filter-list.archive-filter-list-months ul::-webkit-scrollbar {
+  width: 0;
+}

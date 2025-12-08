@@ -11,7 +11,7 @@ caption: "/About"
 teaser: "On this page I tell you a little bit about myself..."
 ---
 
-<a id="contact-Link" href="javascript:dialog.contact();" class="float-element">
+<a id="contact-Link" href="javascript:dialog.contact();" class="float-right">
 <img src="/images/contact-me.png" style="width:5rem;" />
 </a>
 

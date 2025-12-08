@@ -32,21 +32,22 @@ img.limit {
   }
 }
 
-img.float-right {
+.float-right {
+  display: block;
   float: right;
+  margin: 0 0 var(--space-normal) var(--space-normal) !important;
+}
+img.float-right {
   width: 38%;
-  padding: var(--space-medium) 0 var(--space-medium) var(--space-medium);
 }
 @media screen and (min-width:768px) {
   img.float-right {
     width: 24%;
-    padding: var(--space-normal) 0 var(--space-normal) var(--space-normal);
   }
 }
 @media screen and (min-width:480px) and (max-width:767px) {
   img.float-right {
     width: 28%;
-    padding: var(--space-default) 0 var(--space-default) var(--space-default);
   }
 }
 
@@ -165,15 +166,12 @@ pre.json .key {
 .fade-in-500 {
   animation: fadeIn ease .5s;
 }
-
 .fade-in-1000 {
   animation: fadeIn ease 1s;
 }
-
 .fade-out-500 {
   animation: fadeOut ease .5s;
 }
-
 .fade-out-1000 {
   animation: fadeOut ease 1s;
 }

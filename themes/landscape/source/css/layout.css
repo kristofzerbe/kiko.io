@@ -1,9 +1,50 @@
-.outer {
+html,
+body {
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh; /* Andy Bells Modernized Reset */
+}
+
+#header {
+  width: 100%;
+  height: var(--banner-height-normal);
+  position: fixed;
+  z-index: 1001;
+  overflow: hidden;
+}
+@media screen and (min-width:480px) and (max-width:767px) {
+  #header {
+    height: var(--banner-height-tablet)
+  }
+}
+@media screen and (max-width:479px) {
+  #header {
+    height: var(--banner-height-mobile)
+  }
+}
+
+#content {
+  padding-top: var(--banner-height-normal)
+}
+@media screen and (min-width:480px) and (max-width:767px) {
+  #content {
+    padding-top: var(--banner-height-tablet)
+  }
+}
+@media screen and (max-width:479px) {
+  #content {
+    padding-top: var(--banner-height-mobile)
+  }
+}
+
+.outer { /* #content, #header-outer, #footer */
   max-width: 1220px;
   margin: 0 auto;
   padding: 0 var(--space-moderate)
 }
-
 /* clearfix()... */
 .outer:after,
 .outer:before { 

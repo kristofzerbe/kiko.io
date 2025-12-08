@@ -28,5 +28,5 @@ if (page.year) { currentClass = "skip-right"; }
   <h1 class="page-title">Articles</h1>
 <% } %>
 
-<%- partial('_partial/archive-navigation') %>
-<%- partial('_partial/archive-item', { pagination: config.archive, index: true }) %>
+<%- partial('_partial/archive-filter') %>
+<%- partial('_partial/archive-articles', { pagination: config.archive, index: true }) %>

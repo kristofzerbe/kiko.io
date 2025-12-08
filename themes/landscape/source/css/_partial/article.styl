@@ -322,10 +322,6 @@
   // clearfix()
   color: var(--color-text)
   padding: 0 var(--space-normal)
-  .float-element
-    display: block
-    float: right
-    margin: var(--space-default) 0 var(--space-default) var(--space-default)
   p, table
     margin: var(--space-default) 0
     line-height: var(--line-height-text)
@@ -507,7 +503,7 @@
   .caption
     color: var(--color-meta)
     display: block
-    font-size: var(--font-size-medium)
+    font-size: var(--font-size-tiny)
     font-style: italic
     opacity: 0.6
     margin-top: var(--space-small)
@@ -606,10 +602,10 @@
   button.share
     align-content: right
     text-decoration: none
-    padding: var(--space-small) var(--space-medium)
+    padding: var(--space-small) var(--space-medium) var(--space-thin)
     border: none
-    border-bottom-left-radius: 4px
-    border-bottom-right-radius: 4px
+    border-bottom-left-radius: var(--border-radius-normal)
+    border-bottom-right-radius: var(--border-radius-normal)
     transition: all ease-out .2s
     z-index: 1
     color: var(--color-accent-text)
@@ -756,7 +752,7 @@
   &:before
     display: block
     position: absolute
-    left: -35px
+    left: -15px
     top: -15px
     content: ""
     background-image: url(/images/icons/feather.svg)
