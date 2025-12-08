@@ -7,10 +7,10 @@
   <%= page.name %>
 </h1>
 
-<div class="page-content">
+<div class="page-content h-entry">
 
   <section class="image">
-    <img id="photo" src="<%- page.pathTablet %>" alt="<%- page.name %>" 
+    <img id="photo" class="u-photo" src="<%- page.pathTablet %>" alt="<%- page.name %>" 
          data-pagefind-meta="image[src], image_alt[alt]" />
     <small>Tap to show <a href="https://jariz.github.io/vibrant.js/">vibrant colors</a> ...</small>
   </section>
@@ -31,7 +31,7 @@
         <span title="Click to copy title" 
               style="cursor:copy;" 
               onclick="javascript:navigator.clipboard.writeText('<%= page.name %>')"
-              class="<%= (page.hasCustomName) ? "italic" : "" %>"><%= page.name %></span>
+              class="p-name <%= (page.hasCustomName) ? "italic" : "" %>"><%= page.name %></span>
       </li>
       <% } %>
       <li>
@@ -103,12 +103,12 @@
       </li>
       <li>
         <label>Artist, Copyright</label>
-        <span><%= page.meta.Artist ?? "Kristof Zerbe" %>,  &copy; <%= page.meta.Copyright ?? "" %> CC-BY-SA</span>
+        <span><i class="u-author"><%= page.meta.Artist ?? "Kristof Zerbe" %></i>,  &copy; <i class="u-license"><%= page.meta.Copyright ?? "" %> CC-BY-SA</i></span>
       </li>
       <% if(page.meta.DateTimeOriginal) { %>
       <li>
         <label>Original Date</label>
-        <span data-pagefind-meta="date" data-create-date="<%- page.meta.DateTimeOriginal %>"><%= new Date(page.meta.DateTimeOriginal).toLocaleString('en-GB', { weekday:"long", year:"numeric", month:"long", day:"numeric"}) %></span>
+        <span data-pagefind-meta="date" data-original-date="<%- page.meta.DateTimeOriginal %>"><%= new Date(page.meta.DateTimeOriginal).toLocaleString('en-GB', { weekday:"long", year:"numeric", month:"long", day:"numeric"}) %></span>
         </li>
       <% } else { %>
       <% if(page.meta.DateCreated) { %>
@@ -123,7 +123,7 @@
       </li>
       <li>
         <label>GPS Coordinates (Lat/Long)</label>
-        <span><%= page.meta?.latitude ?? "---" %> / <%= page.meta?.longitude ?? "---" %></span>
+        <span class="p-location h-geo"><i class="p-latitude"><%= page.meta?.latitude ?? "---" %></i> / <i class="p-longitude"><%= page.meta?.longitude ?? "---" %></i></span>
         <% if (page.meta?.latitude && page.meta?.longitude) { %>
         <div id="map" class="page-map"></div>
         <% } %>
