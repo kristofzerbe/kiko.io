@@ -327,8 +327,8 @@ var dpDialog = {
     }
 
     const title = document.querySelector('meta[name="title"]').content.replace(" - kiko.io", "");
-    let text = document.querySelector('meta[name="excerpt"]')?.content;
-    if (!text) { text = document.querySelector('meta[name="description"]').content; }
+    const subtitle = document.querySelector('meta[name="description"]').content;
+    const text = document.querySelector('meta[name="excerpt"]')?.content;
     const permalink = document.querySelector('link[rel="canonical"]').href;
 
     let textarea = jContent.find("#mastodon-text");
@@ -336,7 +336,7 @@ var dpDialog = {
     textarea.on('input propertychange', function (e) {
       count[0].innerHTML = e.target.value.length;
     });
-    textarea.val(title + "\n\n" + text + "\n\n" + permalink);
+    textarea.val(title + "\n\n" + subtitle + "\n\n" + text + "\n\n" + permalink);
     textarea[0].dispatchEvent(new Event('input', { bubbles: true }));
 
     jContent.find("#mastodon-share").click(function(e) { 
