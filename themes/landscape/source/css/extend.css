@@ -17,7 +17,7 @@
 
 /* block-inner & block-inner-hover -------------------------------- */
 .article-inner,
-.anything-inner,
+.anything-item,
 .panel-inner, 
 .page-content section,
 .page-content .view .card {
@@ -28,11 +28,15 @@
 }
 
 .panel-inner,
-.page-content .view .card {
+.page-content .view .card,
+.anything-list .anything-item,
+.note-list article {
   transition: all ease-out 0.3s;
 }
 .panel-inner:hover,
-.page-content .view .card:hover {
+.page-content .view .card:hover,
+.anything-list .anything-item:hover,
+.note-list article:hover {
   transform: scale(1) translateY(-1px);
   box-shadow: var(--length-shadow) var(--color-shadow);
 }

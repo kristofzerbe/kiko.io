@@ -1,18 +1,16 @@
-<div class="anything-wrap" data-index="<%= index.name %>" data-key="<%= item.key %>">
-  <div class="anything-inner">
+<div class="anything-item" data-index="<%= index.name %>" data-key="<%= item.key %>">
     
-    <header class="anything-header">
-      <h2 class="anything-entry">
-        <a class="button posts" href="<%- url_for(item.path).replace("/index.html", "") %>">
-          <span><%= item.title %></span>
-          <em><%= item.count %> <%= (item.count === 1) ? "Post" : "Posts" %></em>
-        </a>
-      </h2>
-    </header>
-    
-    <div class="anything-content">
-      <%- item.content %>
-    </div>
-    
+  <header class="anything-header">
+    <h2>
+      <a class="button posts" href="<%- url_for(item.path).replace("/index.html", "") %>">
+        <span><%= item.title %></span>
+        <em><%= item.count %> <%= (item.count === 1) ? "Post" : "Posts" %></em>
+      </a>
+    </h2>
+  </header>
+  
+  <div class="anything-content">
+    <%- item.content %>
   </div>
+    
 </div>
