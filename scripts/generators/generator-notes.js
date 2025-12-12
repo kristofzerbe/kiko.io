@@ -14,7 +14,6 @@ hexo.extend.generator.register("notes", function (locals) {
   let notesDir = path.join(config.source_dir, "_" + config.notes_dir);
   let currentYear = new Date().getFullYear();
 
-  // collection of pages to render
   let result = [];
 
   let years = fs
