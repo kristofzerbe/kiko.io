@@ -12,9 +12,11 @@
 
 <div class="page-content">
   <%- page.content %>
+</div>
 
-  <div class="view-bar">
-    <span class="view-count"><%= page.items.length %></span>
+<div class="cardset">
+  <div class="cardview">
+    <span class="cardcount"><%= page.items.length %></span>
     <span>Entries</span>
     <span>filtered by tag</span>
     <span>
@@ -66,7 +68,7 @@
 
   </div>
 
-  <div class="view grid" id="tiny-tools">
+  <div class="cards grid" id="tiny-tools">
     <% for(var i=0; i < page.items.length; i++) { %>
       <%- partial('_partial/tiny-tool-item', { item: page.items[i] }) %>
     <% } %>
@@ -128,7 +130,7 @@
     tinysort('#tiny-tools > .card',{data: aSorting[0], order: aSorting[1], forceStrings: true});
 
     //PRESENTATION
-    document.querySelector('.view').classList = "view " + currentPresentation;
+    document.querySelector('.cards').classList = "cards " + currentPresentation;
     document.querySelector("#presentation-" + currentPresentation).checked = true;
   }
 
@@ -177,7 +179,7 @@
 
         let resultCount = document.querySelectorAll(".card:not(.hide)").length;
         let totalCount = document.querySelectorAll(".card").length;
-        let resultElement = document.querySelector(".view-bar .view-count");
+        let resultElement = document.querySelector(".cardview ,cardcount");
 
         resultElement.textContent = resultCount;
       }, 300);

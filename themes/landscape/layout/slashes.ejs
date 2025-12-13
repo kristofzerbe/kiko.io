@@ -8,23 +8,22 @@
 
 <div class="page-content">
   <%- page.content %>
+</div>
 
-    <div class="panels" style="margin-bottom: 2rem;" data-pagefind-ignore>
+<div class="panels" style="margin-bottom: 2rem;" data-pagefind-ignore>
 
-    <% for(var i=0; i < page.items.length; i++) { %>
-    <div class="panel">
-      <div class="panel-inner">
-        <header class="panel-header">
-          <%- partial('_partial/post/photograph', { post: page.items[i], class_name: 'panel-photo' }) %>
-        </header>
-        <div class="panel-content">
-          <%- partial('_partial/post/title', { post: page.items[i], class_name: 'panel-title', show_link: true, index: false }) %>
-          <p><%= page.items[i].teaser %></p>
-        </div>
+  <% for(var i=0; i < page.items.length; i++) { %>
+  <div class="panel">
+    <div class="panel-inner">
+      <header class="panel-header">
+        <%- partial('_partial/post/photograph', { post: page.items[i], class_name: 'panel-photo' }) %>
+      </header>
+      <div class="panel-content">
+        <%- partial('_partial/post/title', { post: page.items[i], class_name: 'panel-title', show_link: true, index: false }) %>
+        <p><%= page.items[i].teaser %></p>
       </div>
     </div>
-    <% } %>
-      
-    </div>
-  
+  </div>
+  <% } %>
+
 </div>

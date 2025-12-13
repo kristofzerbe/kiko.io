@@ -11,12 +11,12 @@
 
 <div class="page-content">
   <%- page.content %>
+</div>
 
-  <div class="view grid" id="photos">
+<div class="cardset">
+  <div class="cards grid">
     <% for(var i=0; i < page.items.length; i++) { %>
       <%- partial('_partial/photo-item', { item: page.items[i] }) %>
     <% } %>
   </div>
-
 </div>
-

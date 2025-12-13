@@ -1,7 +1,6 @@
 <% if (post.related && post.related.length){ %>
-  <div class="article-related">
+  <div id="related" class="article-extra">
     <h2>Related</h2>
-    <%- partial('anything-related') %>
     <div class="panels archives">
       <% post.related.forEach(function(item) { %>
         <% 
@@ -18,5 +17,6 @@
         %>
       <% }) %>
     </div>
+    <%- partial('anything-related') %><br>
   </div>
 <% } %>

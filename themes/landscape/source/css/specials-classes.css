@@ -176,3 +176,29 @@ pre.json .key {
   animation: fadeOut ease 1s;
 }
 
+.button:not(.posts) {
+  display: inline-block;
+  text-align: center;
+  font-size: var(--font-size-normal);
+  position: relative;
+  text-decoration: none;
+  padding: var(--space-median) var(--space-medium);
+  background-color: var(--color-button-back);
+  color: var(--color-button-text);
+  border: none;
+  border-radius: var(--border-radius-small);
+}
+.button:not(.posts):hover {
+  background-color: var(--color-accent-text);
+  color: var(--color-logo);
+}
+
+.download-link {
+  margin: var(--space-default) 0 !important;
+  text-align: center;
+}
+@media screen and (max-width:479px) {
+  .download-link a strong {
+    display: inline-block;
+  }
+}

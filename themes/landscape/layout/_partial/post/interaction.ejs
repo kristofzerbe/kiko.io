@@ -8,11 +8,7 @@
   let synPeertube = syndications?.filter(s => s.host.toLowerCase() === "peertube");
 %>
 
-<div class="article-share" data-pagefind-ignore>
-  <button onclick="dialog.shareOnMastodon();" class="share mastodon">Share on Mastodon</button>
-</div>
-
-<div id="send-webmention" class="article-webmention" data-pagefind-ignore>
+<div id="webmention" class="article-extra" data-pagefind-ignore>
   <h2>Webmentions</h2>
   <form class="webmention-form" name="webmention-form" method="post"
         action="https://webmention.io/<%- config.title %>/webmention">
@@ -35,17 +31,29 @@
   <% } %>
 </div>
 
-<% if (syndications?.length > 0) { %>
-<div id="syndication" class="article-syndication" data-pagefind-ignore>
+<div id="syndication" class="article-extra" data-pagefind-ignore>
   <h2>Syndications</h2>
-  <div class="syndication-wrapper">
-    <%- partial('syndication-links', { syndication: syndications, type: type, showText: true }) %>
-  </div>
-  <p>Webmentions and (most) responses will be shown here as ...</p>
+  <% if (syndications?.length > 0) { %>
+    <div id="syndication-wrapper">
+      <%- partial('syndication-links', { syndication: syndications, type: type, showText: true }) %>
+    </div>
+    <p>Webmentions and (most) responses will be shown here as ...</p>
+  <% } else { %>
+    <p class="info">
+    <% if (post.isLocale) { %>
+      Diese Seite ist lediglich die Übersetzung des <a href="<%= url_for(post.path).replace('/de', '') %>">englischen Originalbeitrags</a>. 
+      Alle Syndizierungen und Interaktionen findest Du dort...
+    <% } else if (post.hasLocale) { %>
+      This page is merely a translation of a <a href="<%= url_for(post.path + '/de') %>""> German post</a>. 
+      You can find all syndication and interactions there...       
+    <% } else { %>
+      There are no syndications on other platforms of this post yet.
+    <% } %>
+    </p>
+  <% } %>
 </div>
-<% } %>
-  
-<div id="interactions" class="article-interactions" data-pagefind-ignore>
+
+<div id="interactions" class="article-extra" data-pagefind-ignore>
   <h2>Interactions</h2>
   <div class="message loading">Loading</div>
 
@@ -156,7 +164,7 @@
           return mentionsUnited.show(); 
         })
         .then((count) => { 
-          let msg = document.querySelector(".article-interactions .message");
+          let msg = document.querySelector("#interactions .message");
           if (count === 0) {
             msg.classList.remove("loading");
             msg.innerHTML = "Nothing to show yet";

@@ -9,14 +9,15 @@
   <em class="box"></em><%= page.title %>
 </h1>
 
-<div class="page-content" style="min-height:1200px;">
-  <%#- page.content %>
+<div class="page-content">  
   <p>These <strong><%= page.items.length %></strong> photos were taken during the period <%= page.periodString %></p>
   <hr>
-  <div class="view grid" id="photos">
+</div>
+
+<div class="cardset">
+  <div class="cards grid">
     <% for(var i=0; i < page.items.length; i++) { %>
       <%- partial('_partial/photo-item', { item: page.items[i] }) %>
     <% } %>
   </div>
-
 </div>

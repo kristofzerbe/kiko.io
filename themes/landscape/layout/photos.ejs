@@ -10,11 +10,13 @@
   Photos
 </h1>
 
-<div class="page-content" style="min-height:1200px;">
+<div class="page-content">
   <%- page.content %>
+</div>
 
-  <div class="view-bar">
-    <span id="view-count" style="font-weight:400"><%= page.items.length %></span>
+<div class="cardset">  
+  <div class="cardview">
+    <span class="cardcount"><%= page.items.length %></span>
     <span>photos</span>
     <span id="view-filter-status">
       <input type="radio" name="view-filter-status" id="filter-status-all"
@@ -176,7 +178,7 @@
     </span>
   </div>
 
-  <div class="view grid" id="photos">
+  <div class="cards grid" id="photos">
     <% for(var i=0; i < page.items.length; i++) { %>
       <%- partial('_partial/photo-item', { item: page.items[i] }) %>
     <% } %>
@@ -282,7 +284,7 @@
     tinysort('#photos > .card',{data: aSorting[0], order: aSorting[1], forceStrings: true});
 
     //PRESENTATION
-    document.querySelector('.view').classList = "view " + currentPresentation;
+    document.querySelector('.cards').classList = "cards " + currentPresentation;
     document.querySelector("#presentation-" + currentPresentation).checked = true;
     //---
     if (currentPresentation === "masonry") {
@@ -370,7 +372,7 @@
   function refreshView() {
     setTimeout(() => {
         let resultCount = document.querySelectorAll(".card:not(.hide)").length;
-        let resultElement = document.querySelector(".view-bar #view-count");
+        let resultElement = document.querySelector(".cardview .cardcount");
         resultElement.textContent = resultCount;
         //No need: Spotlight.init();
         if (macyInstance) macyInstance.reInit();
