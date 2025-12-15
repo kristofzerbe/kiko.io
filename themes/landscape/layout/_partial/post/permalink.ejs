@@ -1,11 +1,11 @@
-<div class="<%= class_name %>" id="article-permalink-<%= post._id %>">
-    <input class="article-permalink-value" value="<%= encodeURI(post.permalink) %>" 
-           data-id="<%= post._id %>" data-title="<%= post.title %>" />
+<div class="article-permalink" id="permalink-<%= post.slug %>">
+    <input value="<%= encodeURI(post.permalink) %>" 
+           data-id="<%= post.slug %>" data-title="<%= post.title %>" />
     <a class="article-action action-copy" title="Copy URL"></a>
     <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
     window.addEventListener("load", () => {
-        initPermalink("<%= post._id %>");
+        initPermalink("<%= post.slug %>");
     });
 </script>

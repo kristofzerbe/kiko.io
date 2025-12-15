@@ -539,7 +539,12 @@ section.archive-articles .archive-articles-year .archive-year {
 
 /* ------------------------------------------------------- */
 
-.section-footer {
+section .article-footer {
   padding: 0;
-  margin: calc(var(--space-medium) * -1);
+  margin: calc(var(--space-small) * -1);
+}
+@media screen and (max-width:479px) {
+  section .article-footer {
+    margin: var(--space-medium) var(--space-default);
+  }
 }
