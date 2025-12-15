@@ -78,6 +78,7 @@
 <script>
   let lcTag = new lc_select('select[name="tag"]', {
     enable_search: true,
+    labels: [ "search", "add", "Select ...", "No matches ..."],
     on_change: function(new_value, target_field) {
       filterCards(new_value);
     }
@@ -117,7 +118,7 @@
 
   /* ------------------------------------- */
 
-    setView();
+  setView();
 
   /* ------------------------------------- */
 
@@ -179,7 +180,7 @@
 
         let resultCount = document.querySelectorAll(".card:not(.hide)").length;
         let totalCount = document.querySelectorAll(".card").length;
-        let resultElement = document.querySelector(".cardview ,cardcount");
+        let resultElement = document.querySelector(".cardview .cardcount");
 
         resultElement.textContent = resultCount;
       }, 300);
