@@ -15,7 +15,7 @@ tags:
   - Hexo
   - Plugin
   - GitHub
-  - VS Code
+  - VSCode
 related:
   - Show-related-posts-in-Hexo
   - A-New-Blog-Customizing-Hexo

@@ -17,7 +17,7 @@ categories:
 tags:
   - GitHub
   - Remote
-  - VS Code
+  - VSCode
 related:
   - VS-Code-on-the-Web
   - GitHubs-Magic-Dot

@@ -11,7 +11,7 @@ series: A New Blog
 categories:
   - Tools
 tags:
-  - VS Code
+  - VSCode
   - Hexo
   - GitHub
 related:

@@ -11,7 +11,7 @@ series: Discoveries
 categories:
   - Collection
 tags:
-  - VS Code
+  - VSCode
   - JavaScript
 related:
   - Discoveries-8

@@ -10,7 +10,7 @@ photograph:
 categories:
   - Tools
 tags:
-  - VS Code
+  - VSCode
 related:
   - GitHubs-Magic-Dot
   - Remote-Testing-and-Debugging-with-Chrome

@@ -11,7 +11,7 @@ categories:
   - Tools
 tags:
   - GitHub
-  - VS Code
+  - VSCode
   - Browser
 related:
   - Remote-Testing-and-Debugging-with-Chrome

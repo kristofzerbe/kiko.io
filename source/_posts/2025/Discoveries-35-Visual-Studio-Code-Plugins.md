@@ -11,7 +11,7 @@ series: Discoveries
 categories:
   - Collection
 tags:
-  - VS Code
+  - VSCode
   - Plugin
 related:
   - Discoveries-34-JS-Libraries

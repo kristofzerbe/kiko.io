@@ -11,7 +11,7 @@ categories:
   - Tools
 tags:
   - Publishing
-  - VS Code
+  - VSCode
   - GitHub
 related:
   - Gitpod-Visual-Studio-Code-on-the-Web

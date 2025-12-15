@@ -13,7 +13,7 @@ categories:
 tags:
   - Debugging
   - Browser
-  - VS Code
+  - VSCode
 related:
   - Utilize-a-repository-of-reusable-ES6-template-literals
   - Implement-source-switch-for-SPA
