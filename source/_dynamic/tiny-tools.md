@@ -7,6 +7,6 @@ photograph:
   name: Chess
 ---
 
-Almost every day, while reading news and social media posts, I stumble across small **web tools** that can make developer life immensely easier. In order not to lose sight of them, I have created a collection in Trello, which are automatically listed here.
+Almost every day, while reading news and social media posts, I stumble across small **web tools** that can make developer life immensely easier. In order not to lose sight of them, I collect them in Obsidian and automatically generate this list out of it.
 
 ---
