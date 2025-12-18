@@ -74,7 +74,7 @@
   new AutoTyping({
     id: 'title-wrap',
     typeText: ['<%= config.title %>'],
-    textColor: '#fff',
+    textColor: window.getComputedStyle(document.documentElement).getPropertyValue('--color-logo'),
     typeSpeed: 100,
     typeDelay: 200,
     showCursor: false,
@@ -84,7 +84,7 @@
 
   //MEDIUM-ZOOM
   mediumZoom(document.querySelectorAll('img.zoom'), {
-    background: 'rgba(55, 55, 55, 0.5)',
+    background: window.getComputedStyle(document.documentElement).getPropertyValue('--color-backdrop'),
     margin: 20,
     scrollOffset: 10
   });

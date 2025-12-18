@@ -1,6 +1,8 @@
 html {
-  text-size-adjust: none; /* Andy Bells Modernized Reset */
   font-size: var(--font-size-default);
+  text-size-adjust: none; /* Andy Bells Modernized Reset */
+  text-wrap: pretty;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -10,6 +12,12 @@ body {
   background: var(--color-background);
   font-family: var(--font-sans);
   font-weight: var(--font-weight-normal);
+}
+
+::selection,
+::target-text {
+  background: var(--color-highlight);
+  color: #fff;
 }
 
 ::-webkit-scrollbar {
@@ -78,10 +86,6 @@ em, cite {
 i {
   display: inline !important;
   font-style: normal !important;
-}
-
-p {
-  text-wrap: pretty;
 }
 
 small {

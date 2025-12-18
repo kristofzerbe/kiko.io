@@ -22,9 +22,9 @@ module.exports = function(grunt){
         },
       }
     },
-    _clean: {
-      tmp: ['~temp']
-    },
+    // _clean: {
+    //   tmp: ['~temp']
+    // },
     concat: {
       asset_scripts: {
         options: { separator: '\n' },
@@ -204,9 +204,9 @@ module.exports = function(grunt){
 
   grunt.renameTask('clean', '_clean');
 
-  grunt.registerTask('fonts', ['gitclone', 'copy', '_clean:tmp']);  
+  grunt.registerTask('fonts', ['gitclone', 'copy']);  
   grunt.registerTask('styles', ['concat:asset_styles', 'cssmin']);
   grunt.registerTask('scripts', ['concat:asset_scripts', 'uglify']);
-  grunt.registerTask('default', ['concat', 'cssmin', 'uglify', 'copy', '_clean:tmp']);
-  grunt.registerTask('complete', ['gitclone', 'concat', 'cssmin', 'uglify', 'copy', '_clean:tmp']);
+  grunt.registerTask('default', ['concat', 'cssmin', 'uglify', 'copy']);
+  grunt.registerTask('complete', ['gitclone', 'concat', 'cssmin', 'uglify', 'copy']);
 };
