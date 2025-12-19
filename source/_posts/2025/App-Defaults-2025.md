@@ -24,7 +24,7 @@ syndication:
   - host: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/23
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/115747353563862786
 ---
 
 While preparing this new [AppDefaults](https://defaults.rknight.me/) post for the passing year 2025, I took a look back at the two previous posts from [2023](post/App-Defaults-2023) and [2024](post/App-Defaults-2024) and find it exciting to see how my behavior has gradually changed over time.
