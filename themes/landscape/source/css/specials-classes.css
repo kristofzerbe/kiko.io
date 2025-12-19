@@ -93,17 +93,12 @@ span.visually-hidden { /* https://stackoverflow.com/questions/62703524/how-to-ma
   white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 }
 
-div.video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%; /* aspect ratio 16:9 */
-  height: 0;
-}
-div.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+p.limit-4-lines {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  overflow: hidden;
 }
 
 hr.divider {
@@ -119,6 +114,19 @@ hr.divider {
 }
 [data-theme=dark] hr.divider {
   opacity: .5;
+}
+
+div.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* aspect ratio 16:9 */
+  height: 0;
+}
+div.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 pre.json {
