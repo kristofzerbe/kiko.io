@@ -15,7 +15,7 @@ ___
 Shows a paywalled website as the Google crawler sees it ... without the paywall
 ___
 
-![](_attachments/12ft-ladder.jpg)
+![](_attachments/12ft-ladder.jpeg)
  
 ```cardlink
 url: https://12ft.io/
