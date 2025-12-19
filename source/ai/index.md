@@ -6,8 +6,12 @@ photograph:
   file: $D50_0869_2411.jpg
   name: Styrofoam Models
 caption: "/AI"
-teaser: "My AI Manifesto"
+teaser: "My Thoughts on AI"
 ---
+
+<section>
+
+## Opinion and Usage on this Site
 
 Honestly... AI and all the hype surrounding it really annoys me! I'm a sceptic. I do believe that this technology has a definite advantage over humans in comparative methods such as visual cancer screening and can help us in this area, but I find generative AI and the simulation of human interaction deeply inhuman and destructive. The fact that LLM's are mostly backed by profit-driven and power-hungry companies that have already proven in the past that they have no moral compass, makes the whole thing even more disturbing and dangerous.
 
@@ -24,3 +28,5 @@ I want to surround myself with creative and thoughtful people in the digital wor
 OK, my thoughts on AI here read like a rant and are not very nuanced. The technology certainly has potential and a future ... if we don't allow it to be misused (as is so often the case) for sinister purposes.
 
 The impetus if creating this page was the [AI Manifesto by Damola Morenikeji](https://www.bydamo.la/p/ai-manifesto).
+
+</section>
