@@ -11,7 +11,7 @@ teaser: "What I use in my daily digital life"
 
 What stuff do I spend my digital life with? Here's my completely personal and non-transferable list of things I have today and desperately need and may have needed in the past. Inspired by Wes Bos' [uses.tech](https://uses.tech/) and updated annually, including through my [/DEFAULTS](/defaults) series.
 
-*Last updated on 25 December 2024*
+*Last updated on 19 December 2025*
 
 ---
 
@@ -33,7 +33,7 @@ A slim tablet is essential for handling photos or writing texts while on the go.
 
 ### Mobile
 
-My first mobile phone was a **Nokia**, of course, and with the transition to smartphones, **HTC** and several **Sony Xperia** with Android were my home for many years, until I switched to Google Pixel products due to the annoying update issue. My current one is a **[Pixel 8](https://store.google.com/de/product/pixel_8)** because the Pro version reminds me more of a baking tray.
+My first mobile phone was a **Nokia**, of course, and with the transition to smartphones, **HTC** and several **Sony Xperia** with Android were my home for many years, until I switched to Google Pixel products due to the annoying update issue. My current one is a **[Pixel 9a](https://store.google.com/de/product/pixel_9a)**.
 
 ### Photo
 
@@ -47,7 +47,7 @@ My first piece of own technology was a camera build in the former GDR called **P
 
 ### Mail
 
-I don't remember when I wrote my first mail, but for a long time I was a **web.de** customer because I was fed up with fiddling with mail clients and since the release of **[Gmail](https://gmail.com)** in 2004 this has been my central communication service of personal use and since 2024 completely [Johnny-Decimal-structured](/post/Johnny-Decimal-Emerging-from-the-Abyss/).
+I don't remember when I wrote my first mail, but for a long time I was a **web.de** customer because I was fed up with fiddling with mail clients and since the release of **[Gmail](https://gmail.com)** in 2004 this has been my central communication service of personal use and since 2024 completely [Johnny-Decimal-structured](/post/Johnny-Decimal-Emerging-from-the-Abyss/). Since 2025, I have been establishing a second European base with **[Proton Mail](https://proton.me/mail)**.
 
 ### Cloud Storage
 
@@ -55,17 +55,17 @@ No longer having to handle floppy discs, CDs or USB sticks was a blessing with t
 
 ### Photo Sharing
 
-Taking photos and not showing them to anyone is a waste of time. I publish my public photos according to the POSSE principle first here on kiko.io and then syndicate them on **[500px](https://500px.com)**, **[Flickr](https://www.flickr.com)**, **[Unsplash](https://unsplash.com)** and **[Pixelfed](https://pixelfed.social)**. I share private photos individually or in albums via **[Google Photos](https://photos.google.com)**, where my smartphone snapshots also end up automatically.
+Taking photos and not showing them to anyone is a waste of time. I publish my public photos according to the POSSE principle first here on kiko.io and then syndicate them on **[Vernissage](https://vernissage.photos/)**, **[Flickr](https://www.flickr.com)** and **[Pixelfed](https://pixelfed.social)**. I share private photos individually or in albums via **[Google Photos](https://photos.google.com)**, where my smartphone snapshots also end up automatically.
 
 ### News
 
-On an Android smartphone from Google, their algorithm-based **Google News** is just a swipe away. A little closer to my real interests are the topics I subscribe to in **[Flipboard](https://flipboard.com/)**. For everything else, I have **[Feedly](https://feedly.com/)** and, more recently, **[Read You](https://github.com/Ashinch/ReadYou)**, where I mainly read private blogs of a technical nature.
+On an Android smartphone from Google, their algorithm-based **Google News** is just a swipe away. A little closer to my real interests are the topics I subscribe to in **[Flipboard](https://flipboard.com/)**. For everything else, I have **[Feedly](https://feedly.com/)**, where I mainly read private blogs of a technical nature.
 
 With the completion of the **[blogroll on kiko.io](/blogroll)** in 2024, which not only lists my favorite blogs, but also reads and displays the last available post from the configured feed, it has become a habit for me to read the latest posts from these bloggers first thing in the morning. My own blogroll reader, so to speak.
 
 ### Social media
 
-Apart from Instagram, I've completely left the Walled Gardens and moved into the Fediverse. For Mastodon I use **[Elk](https://elk.zone)**.
+Apart from Instagram, I've completely left the Walled Gardens and moved into the Fediverse. For Mastodon I use their native Web UI or **[Elk](https://elk.zone)**.
 
 </section>
 
@@ -83,11 +83,11 @@ Essential VSCode extensions for me are currently: [Front Matter CMS](https://mar
 
 Until recently, my note management was more like [creative chaos](https://kiko.io/post/My-Switch-to-Obsidian/). With the discovery of the file-based **[Obsidian](https://obsidian.md)** and the introduction of my Johnny Decimal structure, this is a passé. My Vault lives on OneDrive and is therefore available to me everywhere.
 
-The most important plugins for Obsidian for me are: [Auto Card Link](https://github.com/nekoshita/obsidian-auto-card-link), [Kanban](https://github.com/mgmeyers/obsidian-kanban), [QuickAdd](https://github.com/chhoumann/quickadd), [Commander](https://github.com/phibr0/obsidian-commander), [Folder Note](https://github.com/xpgo/obsidian-folder-note-plugin), [MetaBind](https://github.com/mProjectsCode/obsidian-meta-bind-plugin), [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker), [Waypoint](https://github.com/IdreesInc/Waypoint), [Note Folder Autorename](https://github.com/pjeby/note-folder-autorename) and of course [Templater](https://github.com/SilentVoid13/Templater).  
+The most important plugins for Obsidian for me are: [Auto Card Link](https://github.com/nekoshita/obsidian-auto-card-link), [Kanban](https://github.com/mgmeyers/obsidian-kanban), [Commander](https://github.com/phibr0/obsidian-commander), [Folder Note](https://github.com/xpgo/obsidian-folder-note-plugin), [MetaBind](https://github.com/mProjectsCode/obsidian-meta-bind-plugin), [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker), [Waypoint](https://github.com/IdreesInc/Waypoint), [Note Folder Autorename](https://github.com/pjeby/note-folder-autorename) and of course [Templater](https://github.com/SilentVoid13/Templater).  
 
 ### Browser
 
-There is hardly any other piece of software that has changed the world as much as the browser. Starting with Netscape Navigator, then IE and various iterations of Firefox, I eventually landed with the industry leader **[Google Chrome](https://www.google.com/chrome/)** and I'm happy with it. For a bit more privacy, I still have **[Vivaldi](https://vivaldi.com/)** and am currently puzzling over the new **[Arc](https://arc.net/)** to see if it can give me anything.
+There is hardly any other piece of software that has changed the world as much as the browser. Starting with Netscape Navigator, then IE and various iterations of Firefox, I eventually landed with the industry leader **[Google Chrome](https://www.google.com/chrome/)**. For a bit more privacy, I use more often **[Vivaldi](https://vivaldi.com/)**. Maybe it will be my default browser in the future.
 
 The most important extensions for Chrome for me are: [Checker Plus for Gmail](https://chromewebstore.google.com/detail/checker-plus-for-gmail/oeopbcgkkoapgobdbedcemjljbihmemj), [Copy Link](https://chromewebstore.google.com/detail/copy-link/mjpbijfgaajfmabmfnabchojdlpfnbbi), [JSON Viewer](https://chromewebstore.google.com/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh), [Pushbullet](https://chromewebstore.google.com/detail/pushbullet/chlffgpmiacpedhhbkiomidkjlcfhogd), [2FAS](https://chromewebstore.google.com/detail/2fas-two-factor-authentic/dbfoemgnkgieejfkaddieamagdfepnff) and the [Web Essentials](https://chromewebstore.google.com/detail/web-essentials/mghdcdlpcdiodelbplncnodiiadljhhk).
 
@@ -147,11 +147,11 @@ Building mail functionality into a software program is something quite normal an
 
 ### Communication
 
-It's sometimes really difficult to communicate with friends without **WhatsApp**, but it was a conscious decision for me and I'm gradually moving more people to **[Signal](https://signal.org/)** or **[Threema](https://threema.ch/)**.
+It's sometimes really difficult to communicate with friends without **WhatsApp**, but it was a conscious decision for me and I'm gradually moving more people to **[Signal](https://signal.org/)** or (much less common now) **[Threema](https://threema.ch/)**.
 
 ### Streaming
 
-In this time without data mediums, people are streaming for all they're worth. You can gain some independence from the major players with your own home solution, for example with **[Plex Media Server](https://www.plex.tv/media-server-downloads)**, which can supply both the **[Plex App](https://play.google.com/store/apps/details?id=com.plexapp.android)** with videos and the **[PlexAmp](https://play.google.com/store/apps/details?id=tv.plex.labs.plexamp)** app with music.
+In this time without data mediums, people are streaming for all they're worth. You can gain some independence from the major players with your own home solution, for example with **[Jellyfin](https://jellyfin.org/)**.
 
 Listening to music without the internet and therefore streaming means first copying/synchronising the files to the smartphone and then playing them in a suitable player. In my case, this is the **[BlackPlayer](https://play.google.com/store/apps/details?id=com.musicplayer.blackplayerfree)**.
 
