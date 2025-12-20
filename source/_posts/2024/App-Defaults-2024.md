@@ -27,26 +27,65 @@ Meanwhile, I also have a detailed and updated list of all the things I absolutel
 
 <!-- more -->
 
-- **Mail:**&nbsp;&nbsp;&nbsp;[Gmail](https://gmail.com)
-- **Tasks:**&nbsp;&nbsp;&nbsp;Google Tasks via [Business Calendar 2](https://www.appgenix-software.com/), [Obsidian](https://obsidian.md)
-- **Contacts:**&nbsp;&nbsp;&nbsp;[Google Contacts](https://contacts.google.com/)
-- **Photo Shooting:**&nbsp;&nbsp;&nbsp;Nikon D500, [Google Pixel 8](https://store.google.com/product/pixel_8)
-- **Photo Editing / Management:**&nbsp;&nbsp;&nbsp;[Adobe Lightroom Classic](https://www.adobe.com/products/photoshop-lightroom-classic.html)
-- **RSS:**&nbsp;&nbsp;&nbsp;[kiko.io's Blogroll](/blogroll), [Feedly](https://feedly.com/), [Read You](/post/Read-You-Feed-Reader-for-Android/)
-- **News:** &nbsp;&nbsp;&nbsp;[Google News](https://news.google.com/), [Flipboard](https://flipboard.com/), [Feedly](https://feedly.com/)
-- **Browser:**&nbsp;&nbsp;&nbsp;[Google Chrome](https://www.google.com/intl/en/chrome/), [Microsoft Edge](https://www.microsoft.com/edge), [Vivaldi](https://vivaldi.com/)
-- **Chat:**&nbsp;&nbsp;&nbsp;[Signal](https://signal.org/)
-- **Bookmarks:**&nbsp;&nbsp;&nbsp;[Google Chrome](https://www.google.com/intl/en/chrome/), [kiko.io's Tiny Tools](/collections/tiny-tools/)
-- **Read It Later:**&nbsp;&nbsp;&nbsp;[Obsidian](https://obsidian.md), [Google Chrome](https://www.google.com/intl/en/chrome/) (Android)
-- **Word Processing:**&nbsp;&nbsp;&nbsp;[M365](https://www.microsoft.com/microsoft-365)
-- **Spreadsheets:**&nbsp;&nbsp;&nbsp;[M365](https://www.microsoft.com/microsoft-365)
-- **Presentations:**&nbsp;&nbsp;&nbsp;[M365](https://www.microsoft.com/microsoft-365)
-- **Music:**&nbsp;&nbsp;&nbsp;[Plexamp](https://www.plex.tv/plexamp/), [BlackPlayer](https://play.google.com/store/apps/details?id=com.musicplayer.blackplayerfree&hl=de&gl=US)
-- **Passwords:**&nbsp;&nbsp;&nbsp;[KeePass](https://keepass.info/), [2FAS Auth](https://2fas.com/)
-- **Code Editor**&nbsp;&nbsp;&nbsp;[Visual Studio Code](https://code.visualstudio.com/), [Visual Studio](https://visualstudio.microsoft.com/), [github.dev](https://github.dev), [GitHub Codespaces](https://github.com/features/codespaces)
-- **Source Control**&nbsp;&nbsp;&nbsp;[GitHub](https://github.com), [OneDrive](https://www.microsoft.com/en/microsoft-365/onedrive/online-cloud-storage)
-- **Shopping Lists:**&nbsp;&nbsp;&nbsp;[Google Keep](https://keep.google.com/), [Obsidian](https://obsidian.md)
-- **Meal Planning:**&nbsp;&nbsp;&nbsp;Leni - Still ultimate version of wife
+- **Mail:**
+[Gmail](https://gmail.com)
+
+- **Tasks:**
+Google Tasks via [Business Calendar 2](https://www.appgenix-software.com/), [Obsidian](https://obsidian.md)
+
+- **Contacts:**
+[Google Contacts](https://contacts.google.com/)
+
+- **Photo Shooting:**
+Nikon D500, [Google Pixel 8](https://store.google.com/product/pixel_8)
+
+- **Photo Editing / Management:**
+[Adobe Lightroom Classic](https://www.adobe.com/products/photoshop-lightroom-classic.html)
+
+- **RSS:**
+[kiko.io's Blogroll](/blogroll), [Feedly](https://feedly.com/), [Read You](/post/Read-You-Feed-Reader-for-Android/)
+
+- **News:**
+[Google News](https://news.google.com/), [Flipboard](https://flipboard.com/), [Feedly](https://feedly.com/)
+
+- **Browser:**
+[Google Chrome](https://www.google.com/intl/en/chrome/), [Microsoft Edge](https://www.microsoft.com/edge), [Vivaldi](https://vivaldi.com/)
+
+- **Chat:**
+[Signal](https://signal.org/)
+
+- **Bookmarks:**
+[Google Chrome](https://www.google.com/intl/en/chrome/), [kiko.io's Tiny Tools](/tools/tiny-tools/)
+
+- **Read It Later:**
+[Obsidian](https://obsidian.md), [Google Chrome](https://www.google.com/intl/en/chrome/) (Android)
+
+- **Word Processing:**
+[M365](https://www.microsoft.com/microsoft-365)
+
+- **Spreadsheets:**
+[M365](https://www.microsoft.com/microsoft-365)
+
+- **Presentations:**
+[M365](https://www.microsoft.com/microsoft-365)
+
+- **Music:**
+[Plexamp](https://www.plex.tv/plexamp/), [BlackPlayer](https://play.google.com/store/apps/details?id=com.musicplayer.blackplayerfree&hl=de&gl=US)
+
+- **Passwords:**
+[KeePass](https://keepass.info/), [2FAS Auth](https://2fas.com/)
+
+- **Code Editor**
+[Visual Studio Code](https://code.visualstudio.com/), [Visual Studio](https://visualstudio.microsoft.com/), [github.dev](https://github.dev), [GitHub Codespaces](https://github.com/features/codespaces)
+
+- **Source Control**
+[GitHub](https://github.com), [OneDrive](https://www.microsoft.com/en/microsoft-365/onedrive/online-cloud-storage)
+
+- **Shopping Lists:**
+[Google Keep](https://keep.google.com/), [Obsidian](https://obsidian.md)
+
+- **Meal Planning:**
+Leni - Still ultimate version of wife
 
 ---
 

@@ -63,7 +63,7 @@ Nikon D500, [Google Pixel 9a](https://store.google.com/product/pixel_9a)
 [Signal](https://signal.org/)
 
 - **Bookmarks:**
-[Obsidian](https://obsidian.md), [kiko.io's Tiny Tools](/collections/tiny-tools/)
+[Obsidian](https://obsidian.md), [kiko.io's Tiny Tools](/tools/tiny-tools/)
 
 - **Read It Later:**
 [Obsidian](https://obsidian.md), [Google Chrome](https://www.google.com/intl/en/chrome/) (Android)
