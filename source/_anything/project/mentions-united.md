@@ -7,7 +7,7 @@ photograph:
   keepOutOverview: true
 ---
 
-<img src="/images/mentions-united.svg" class="float-left-mini no-zoom">
+<img src="/images/mentions-united.svg" class="float-left-mini top no-zoom">
 
 **Mentions United** is a JavaScript solution to unite your blog posts with their interactions.  
 It includes a plugin system for retrieving data from various platform API's and inserting the collected data into the page in various ways.

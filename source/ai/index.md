@@ -17,9 +17,9 @@ Honestly... AI and all the hype surrounding it really annoys me! I'm a sceptic. 
 
 As fascinating as [vibe coding](https://en.wikipedia.org/wiki/Vibe_coding) may be, for example, it is exclusively repetitive and means that humans hardly need to have any negative experiences with machines in order to achieve their goals, which ultimately prevents them from growing and improving. With AI of this kind, we will eventually only be dealing with idiots ...
 
-<img src="/images/Crafted-By-a-Human-Not-By-AI-Badge-white.svg" class="float-right" style="width: 9rem; margin-bottom: var(--space-default) !important; margin-right: var(--space-median) !important" />
+<img src="/images/Crafted-By-a-Human-Not-By-AI-Badge-white.svg" class="float-right" style="width: 8rem; margin-bottom: var(--space-small) !important; margin-right: var(--space-median) !important; margin-top: var(--space-small) !important;" />
 
-<p style="padding-inline: var(--space-median); font-weight: var(--font-weight-bold)">For this reason, every word and every pixel on this page is AI-free and comes exclusively from my brain and my fingers, which are controlled by it.</p>
+<p style="font-weight: var(--font-weight-bold)">For this reason, every word and every pixel on this page is AI-free and comes exclusively from my brain and my fingers, which are controlled by it.</p>
 
 Unfortunately, I can't say much about the tools used to build this site, such as Hexo and the many NPM packages behind and alongside, but I'll keep my eyes open and take action if necessary.
 
