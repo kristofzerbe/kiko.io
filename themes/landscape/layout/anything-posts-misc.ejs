@@ -10,6 +10,12 @@
   <%- page.content %>
 </div>
 
+<hr class="divider" />
+
+<p>
+  Following <%= (page.count === 1) ? "post" : page.count + " posts" %> belong to <strong><%= page.title %></strong> ...
+</p>
+
 <div class="anything-list">
 <% page.posts.each(function(post){ %>
   <%- partial('_partial/post-item', { post: post, index: true }) %>

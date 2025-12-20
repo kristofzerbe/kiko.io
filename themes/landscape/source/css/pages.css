@@ -31,6 +31,9 @@ h1.page-title strong {
   word-break: keep-all;
   display: inline-block;
 }
+h1.page-title em {
+  margin-inline-end: var(--space-median);
+}
 h1.page-title em:before {
   display: inline-block;
   content: "";
@@ -150,15 +153,15 @@ nav.page-index a.current {
   border-radius: 0 0 var(--border-radius-small) var(--border-radius-small);
   color: var(--color-logo);
   line-height: var(--line-height-small);
-  padding-inline: var(--space-medium);
+  padding-inline: var(--space-median);
   margin-inline: var(--space-small);
 }
 nav.page-index a.current svg#diamond {
   display: block;
-  width: 13px;
-  height: 13px;
+  width: 16px;
+  height: 16px;
   fill: currentColor;
-  margin: 4px auto 0;
+  margin: 2px auto 0;
 }
 nav.page-index a.current.skip-right svg#diamond rect#diamond-right {
   display: none;
@@ -251,6 +254,7 @@ nav.pagination .space {
 
 .page-content p {
   margin: var(--space-medium) 0 var(--space-default);
+  line-height: var(--line-height-text);
 }
 .page-content > p:first-of-type {
   margin-top: 0;
@@ -354,7 +358,7 @@ nav.pagination .space {
 .anything-content .brand-links {
   display: flex;
   flex-direction: row;
-  margin: var(--space-default) 0 var(--space-double);
+  margin: var(--space-default) 0 var(--space-block);
   gap: 2rem;
 }
 @media screen and (max-width:479px) {

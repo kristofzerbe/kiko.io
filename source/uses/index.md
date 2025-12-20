@@ -9,11 +9,9 @@ caption: "/Uses"
 teaser: "What I use in my daily digital life"
 ---
 
-What stuff do I spend my digital life with? Here's my completely personal and non-transferable list of things I have today and desperately need and may have needed in the past. Inspired by Wes Bos' [uses.tech](https://uses.tech/) and updated annually, including through my [/DEFAULTS](/defaults) series.
+What stuff do I spend my digital life with? Here's my completely personal and non-transferable list of things I have today and desperately need and may have needed in the past. Inspired by Wes Bos' [uses.tech](https://uses.tech/) and updated annually, including through my [/DEFAULTS](/defaults) series and last updated on *19 December 2025*.
 
-*Last updated on 19 December 2025*
-
----
+<hr class="divider" />
 
 <section>
 

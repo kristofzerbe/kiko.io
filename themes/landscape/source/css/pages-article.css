@@ -25,9 +25,9 @@
 
 .index-list .article.note .article-meta small {
   font-size: var(--font-size-small);
-  --padding-small: 6rem;
-  padding-left: var(--padding-small);
-  width: calc(100% - calc(var(--padding-small) + var(--space-small)));
+  --padding-rel: 6rem !important;
+  padding-left: var(--padding-rel);
+  width: calc(100% - calc(var(--padding-rel) + var(--space-small)));
 }
 
 /* NOTE-LIST =================================== */
@@ -76,13 +76,13 @@
 }
 
 .note-list .article.note .article-meta small {
-  --padding-small: 5rem;
-  padding-left: var(--padding-small);
-  width: calc(100% - calc(var(--padding-small) + var(--space-small)));
+  --padding-rel: 5rem !important;
+  padding-left: var(--padding-rel);
+  width: calc(100% - calc(var(--padding-rel) + var(--space-small)));
 }
 @media screen and (max-width:479px) {
   .note-list .article.note .article-meta small {
-    --padding-small: 6rem;
+    --padding-rel: 6rem !important;
   }
 }
 
@@ -224,9 +224,9 @@
   padding-top: var(--space-thin);
   padding-bottom: var(--space-thin);
   padding-right: var(--space-small);
-  --padding-small: 8.5rem;
-  padding-left: var(--padding-small);
-  width: calc(100% - calc(var(--padding-small) + var(--space-small)));
+  --padding-rel: 8.5rem;
+  padding-left: var(--padding-rel);
+  width: 100%;
   border-radius: 0 var(--border-radius-normal) 0 0;
   white-space: nowrap;
   overflow: hidden;
@@ -1362,10 +1362,10 @@
 }
 
 #interactions .interactions-list {
-  --interactions-avatar-size: 42px;
-  --interactions-avatar-border: 12px;
+  --interactions-avatar-size: 60px;
+  --interactions-avatar-border: 10px;
   --interactions-avatar-gap: var(--space-small);
-  --interactions-icon-size: 14px;
+  --interactions-icon-size: 16px;
   display: grid;
   grid-row-gap: var(--space-medium);
 }
@@ -1379,7 +1379,7 @@
   display: block;
   position: absolute;
   left: calc(var(--space-thin) * -1);
-  background-image: url("/images/icons/feather.svg");
+  background-image: var(--icon-feather);
   background-repeat: no-repeat;
   background-position: 3px 3px;
   background-size: 16px;
@@ -1391,7 +1391,7 @@
 
 #interactions .interactions-list .interaction {
   padding-inline-start: calc(var(--interactions-avatar-size) + calc(var(--interactions-avatar-border) * 2));
-  padding-inline-end: var(--space-medium);
+  padding-inline-end: var(--space-moderate);
   padding-block: var(--interactions-avatar-border);
   position: relative;
   background-color: var(--color-block);
@@ -1435,7 +1435,7 @@
 
 #interactions .interactions-list .interaction.isown {
   padding-inline-end: calc(var(--interactions-avatar-size) + calc(var(--interactions-avatar-border) * 2));
-  padding-inline-start: var(--space-medium);
+  padding-inline-start: var(--space-moderate);
 }
 
 #interactions .interactions-list .interaction.isown .avatar {

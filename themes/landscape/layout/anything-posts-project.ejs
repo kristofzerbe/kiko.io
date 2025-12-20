@@ -10,12 +10,13 @@
 <div class="anything-item">
   <div class="anything-content">
     <%- page.content %>
-    <hr>
-    <p>
-      Following <%= (page.count === 1) ? "post" : page.count + " posts" %> belong to <strong><%= page.title %></strong> ...
-    </p>
   </div>
 </div>
+
+<hr class="divider" />
+<p>
+  Following <%= (page.count === 1) ? "post" : page.count + " posts" %> belong to <strong><%= page.title %></strong> ...
+</p>
 
 <div class="anything-list">
 <% page.posts.each(function(post){ %>

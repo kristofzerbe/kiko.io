@@ -19,7 +19,7 @@ I'm Kristof from the lovely snoring Wiesbaden, in sometimes too hot and most tim
 
 I love three things: Software Development, Photography and first and foremost the brightest star in my sky: Leni.
 
---- 
+<hr class="divider" />
 
 <section class="about">
 

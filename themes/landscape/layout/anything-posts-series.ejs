@@ -9,14 +9,12 @@
   <%= page.key.caption %>
 </h1>
 
-<div class="anything-item">
-  <div class="anything-content">
-    <%- page.content %>
-    <hr>
-    <p>
-      Following <%= (page.count === 1) ? "post" : page.count + " posts" %> belong to <strong><%= page.title %></strong> ...
-    </p>
-  </div>
+<div class="page-content">
+  <%- page.content %>
+  <hr class="divider" />
+  <p>
+    Following <%= (page.count === 1) ? "post" : page.count + " posts" %> belong to <strong><%= page.title %></strong> ...
+  </p>
 </div>
 
 <div class="anything-list">

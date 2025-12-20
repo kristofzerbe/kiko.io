@@ -6,7 +6,7 @@ photograph:
   file: $D50_0869_2411.jpg
   name: Styrofoam Models
 caption: "/AI"
-teaser: "My Thoughts on AI"
+teaser: "Opinion and Usage on this Site"
 ---
 
 <section>

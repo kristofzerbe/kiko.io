@@ -202,7 +202,3 @@ Pretty much all of my [Slash Pages](/slashes/) are based on this four-part struc
 The [Sitemap](/sitemap) is a truly unique page, as it is not composed of traditional HTML, but rather XML, formatted according to the [sitemaps.org protocol](https://www.sitemaps.org/protocol.html) and simply dressed up a bit using XSL. As a result, it does not really match the look and feel of the other pages on this blog. However, this makes it uncompromisingly machine-readable.
 
 </section>
-
----
-
-The following articles are the source for this page:
