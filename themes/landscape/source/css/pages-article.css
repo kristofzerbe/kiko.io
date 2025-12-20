@@ -222,11 +222,11 @@
   display: block;
   position: absolute;
   padding-top: var(--space-thin);
-  padding-bottom: var(--space-thin);
+  padding-bottom: var(--space-small);
   padding-right: var(--space-small);
   --padding-rel: 8.5rem;
   padding-left: var(--padding-rel);
-  width: 100%;
+  width: calc(100% - var(--padding-rel) - var(--space-small));
   border-radius: 0 var(--border-radius-normal) 0 0;
   white-space: nowrap;
   overflow: hidden;
@@ -402,6 +402,7 @@
 
 .article-header .article-title em {
   opacity: .6;
+  font-style: normal;
 }
 .article-header .article-title strong {
   opacity: .2;
@@ -501,6 +502,7 @@
   height: auto;
   display: block;
   margin: auto;
+  border-radius: var(--border-radius-normal);
 }
 [data-theme=dark] .article-entry img:not(.image-compare),
 [data-theme=dark] .article-entry video:not(.image-compare) {
@@ -606,6 +608,7 @@
   font-style: italic;
   background-color: rgba(205, 205, 205, .2);
   border-left: 4px rgba(205, 205, 205, .75) solid;
+  border-radius: var(--border-radius-normal);
 }
 
 .article-entry blockquote:before {
@@ -704,6 +707,7 @@
   position: relative;
   padding-top: 56.25%;
   margin-bottom: var(--space-small);
+  border-radius: var(--border-radius-normal);
   height: 0;
   overflow: hidden;
 }
@@ -1362,8 +1366,8 @@
 }
 
 #interactions .interactions-list {
-  --interactions-avatar-size: 60px;
-  --interactions-avatar-border: 10px;
+  --interactions-avatar-size: 42px;
+  --interactions-avatar-border: 12px;
   --interactions-avatar-gap: var(--space-small);
   --interactions-icon-size: 16px;
   display: grid;
@@ -1390,16 +1394,16 @@
 }
 
 #interactions .interactions-list .interaction {
-  padding-inline-start: calc(var(--interactions-avatar-size) + calc(var(--interactions-avatar-border) * 2));
+  padding-inline-start: calc(var(--interactions-avatar-size) + var(--interactions-avatar-border) + var(--space-moderate));
   padding-inline-end: var(--space-moderate);
-  padding-block: var(--interactions-avatar-border);
+  padding-block: var(--space-medium);
   position: relative;
   background-color: var(--color-block);
   color: var(--color-text);
   border-radius: var(--border-radius-normal);
   font-style: normal;
   font-size: var(--font-size-medium);
-  line-height: var(--line-height-small);
+  line-height: var(--line-height-medium);
   overflow: hidden;
 }
 
@@ -1636,6 +1640,7 @@
 }
 
 .article-nav-link {
+  box-sizing: border-box;
   margin-top: var(--space-block);
   text-align: center;
   display: block;
