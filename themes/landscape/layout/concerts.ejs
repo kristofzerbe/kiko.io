@@ -12,9 +12,14 @@
 
   <hr class="divider" />
 
-  <% for(var i=0; i < page.items.length; i++) { %>
-    <%- partial('_partial/concert-item', { item: page.items[i] }) %>
-  <% } %>
+  <% let itemYear = 0; %>
+  <% page.items.forEach(item => { %>
+    <% if (itemYear !== item.date.getFullYear()) { %>
+      <h2 class="section-heading"><%= item.date.getFullYear() %></h2>
+      <% itemYear = item.date.getFullYear(); %>
+    <% } %>
+    <%- partial('_partial/concert-item', { item: item }) %>
+  <% }); %>
 
 </div>
 
