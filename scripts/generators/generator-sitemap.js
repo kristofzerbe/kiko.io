@@ -4,7 +4,7 @@ const path = require('path');
 const axios = require('axios');
 const fs = require("hexo-fs");
 const handlebars = require("handlebars");
-const { getHelpers, getNewestDateString, ensurePermaLink } = require("../../lib/tools.cjs");
+const { getHelpers, getNewestDateString } = require("../../lib/tools.cjs");
 
 const _helpers = getHelpers(hexo);
 const _rootDir = hexo.source_dir.replace("source", "");
@@ -74,9 +74,16 @@ hexo.extend.generator.register("sitemap", async function(locals) {
   
 });
 
+function ensurePermaLink(permalink) {
+  if (permalink && permalink.startsWith(hexo.config.url) == false) {
+    permalink = hexo.config.url + permalink;
+  }
+  return permalink;
+}
+
 function get(entry) {
   return {
-    url: ensurePermaLink(hexo, entry.permalink).replace("/index.html", "").replace(".html", ""),
+    url: ensurePermaLink(entry.permalink).replace("/index.html", "").replace(".html", ""),
     date: getNewestDateString(entry)
   }
 }

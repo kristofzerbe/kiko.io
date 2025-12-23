@@ -6,7 +6,7 @@ photograph:
   file: $23-05-Holland-0680.jpg
   name: Checkered Onions
 caption: "/Stats"
-teaser: "A few statistics regarding this blog"
+teaser: "A few facts and figures about this site"
 ---
 
-Coming soon ...
+Stats coming soon ...

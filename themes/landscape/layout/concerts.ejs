@@ -1,0 +1,20 @@
+
+<% if (page.photograph){ %>
+  <%- partial('_partial/photograph') %>
+<% } %>
+
+<h1 class="page-title" data-pagefind-meta="title" data-pagefind-meta="type:Page">
+  <%= page.title %>
+</h1>
+
+<div class="page-content">
+  <%- page.content %>
+
+  <hr class="divider" />
+
+  <% for(var i=0; i < page.items.length; i++) { %>
+    <%- partial('_partial/concert-item', { item: page.items[i] }) %>
+  <% } %>
+
+</div>
+

@@ -1,11 +1,17 @@
-<div class="article-permalink" id="permalink-<%= post.slug %>">
-    <input value="<%= encodeURI(post.permalink) %>" 
-           data-id="<%= post.slug %>" data-title="<%= post.title %>" />
-    <a class="article-action action-copy" title="Copy URL"></a>
-    <a class="article-action action-share" title="Open Share Dialog"></a>
+<% 
+if (post.permalink && post.permalink.startsWith(config.url) == false) {
+  post.permalink = config.url + post.permalink;
+} 
+let cleanSlug = post.slug.replace("/", "-");
+%>
+<div class="article-permalink" id="permalink-<%= cleanSlug %>">
+  <input value="<%= encodeURI(post.permalink) %>" 
+         data-id="<%= cleanSlug %>" data-title="<%= post.title %>" />
+  <a class="article-action action-copy" title="Copy URL"></a>
+  <a class="article-action action-share" title="Open Share Dialog"></a>
 </div>
 <script>
-    window.addEventListener("load", () => {
-        initPermalink("<%= post.slug %>");
-    });
+  window.addEventListener("load", () => {
+    initPermalink("<%= cleanSlug %>");
+  });
 </script>

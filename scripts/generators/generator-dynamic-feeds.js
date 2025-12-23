@@ -84,7 +84,7 @@ hexo.extend.generator.register("dynamic-feeds", async function(locals) {
 
   result.push({
       data: page,
-      path: path.join(page.name, "index.html"),
+      path: path.join(page.permalink, "index.html"),
       layout: "feeds"
   });
 

@@ -1,0 +1,21 @@
+<section class="concert">
+  <img src="/images/artists/<%- item.artist.slug %>.jpg" />
+  <div class="concert-name">
+    <h3><%- item.artist.name %></h3>
+
+    <% if (item.tour) { %>
+    <div><%- item.tour %></div>
+    <% } %>
+
+    <% if (item.guests) { %>
+    <div class="concert-guests"><small>/w</small>&nbsp;<%- item.guests %></div>
+    <% } %>
+  </div>
+  <div class="concert-info">
+    <div><%- item.location %> @ <%- item.date.toISOString().split('T')[0] %></div>
+
+    <% if (item.link) { %>
+    <a href="<%- item.link %>">View on ConcertArchives...</a>
+    <% } %>
+  </div>
+</section>

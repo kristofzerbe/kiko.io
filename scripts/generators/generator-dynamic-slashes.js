@@ -25,7 +25,7 @@ hexo.extend.generator.register("dynamic-slashes", async function(locals) {
 
   let result = {
       data: page,
-      path: path.join(page.name, "index.html"),
+      path: path.join(page.permalink, "index.html"),
       layout: "slashes"
   };
 

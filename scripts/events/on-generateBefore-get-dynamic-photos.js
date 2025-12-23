@@ -180,7 +180,7 @@ hexo.on('generateBefore', function() {
     box = {...boxTemplate, ...box};
     box.path = path.join(config.photo_dir, "boxes", box.key, "index.html");
     box.slug = box.key;
-    box.permalink = config.url + "/" + config.photo_dir + "/boxes/" + box.key;
+    box.permalink = "/" + config.photo_dir + "/boxes/" + box.key;
     if (box.sortPhotos === "ASC") {
       box.items = box.photos.reverse();
     } else {
@@ -200,7 +200,7 @@ hexo.on('generateBefore', function() {
     photo.title = "Photo " + photo.name;
     photo.path = path.join(config.photo_dir, photo.key, "index.html");
     photo.slug = photo.key;
-    photo.permalink = config.url + "/" + config.photo_dir + "/" + photo.key;
+    photo.permalink = "/" + config.photo_dir + "/" + photo.key;
     photo.photo = true;
 
     if (photo.meta.ObjectName) {

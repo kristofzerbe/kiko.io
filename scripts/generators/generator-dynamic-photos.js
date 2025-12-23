@@ -5,15 +5,13 @@ const path = require('path');
 hexo.extend.generator.register("dynamic-photos", async function(locals) {
   log.info("Generating Dynamic Page " + magenta("PHOTOS") + " ...");
 
-  const config = this.config;
-
   let result = [];
 
   // photos page
   let page = locals.dynamic.photos;
   result.push({
     data: page,
-    path: path.join(page.name, "index.html"),
+    path: path.join(page.permalink, "index.html"),
     layout: "photos"
   });
 
@@ -21,7 +19,7 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
   let shed = locals.dynamic.photoshed;
   result.push({
     data: shed,
-    path: path.join(page.name, "shed", "index.html"),
+    path: path.join(shed.permalink, "index.html"),
     layout: "photos-shed"
   });
 
@@ -29,7 +27,7 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
   let map = locals.dynamic.photomap;
   result.push({
     data: map,
-    path: path.join(page.name, "map", "index.html"),
+    path: path.join(map.permalink, "index.html"),
     layout: "photos-map"
   });
 
@@ -37,7 +35,7 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
   let boxes = locals.dynamic.photoboxes;
   result.push({
     data: boxes,
-    path: path.join(page.name, "boxes", "index.html"),
+    path: path.join(boxes.permalink, "index.html"),
     layout: "photos-boxes"
   });
 

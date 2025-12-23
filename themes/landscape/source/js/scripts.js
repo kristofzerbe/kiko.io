@@ -33,7 +33,8 @@ initAnchorListItems();
 /** ============================================================ */
 
 function initPermalink(postId) {
-  let wrapper = document.querySelector("#permalink-" + postId);
+  //let wrapper = document.querySelector("#permalink-" + postId);
+  let wrapper = document.getElementById("permalink-" + postId);
   let input = wrapper.querySelector("input");
   let copy = wrapper.querySelector("a.action-copy");
   let share = wrapper.querySelector("a.action-share");

@@ -104,7 +104,7 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
 
     // Render Blogroll
     result.push({
-      path: path.join(page.name, "index.html"),
+      path: path.join(page.permalink, "index.html"),
       data: page,
       layout: "blogroll"
     });

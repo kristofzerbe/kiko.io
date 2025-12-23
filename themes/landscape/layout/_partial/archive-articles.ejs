@@ -9,9 +9,7 @@
       <% } %>
       <% last = year; %>
       <section class="archive-articles">
-        <div class="archive-articles-year">
-          <a href="<%- url_for(config.archive_dir + '/' + year) %>" class="archive-year"><%= year %></a>
-        </div>
+        <a class="archive-year" href="<%- url_for(config.archive_dir + '/' + year) %>"><%= year %></a>
         <div class="panels archives" data-pagefind-ignore>
     <% } %>
     <%- partial('archive-post', { post: post, show_link: true, even: i % 2 == 0 }) %>

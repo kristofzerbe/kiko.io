@@ -60,7 +60,7 @@ hexo.on('generateBefore', function() {
       note.photograph = index.photograph;
       note.path = path.join("notes", note.slug, "index.html");
       note.link = path.join("notes", note.slug).replace(/\\/g, "/") + "/";
-      note.permalink = config.url + "/" + note.link;
+      note.permalink = "/" + note.link;
       note.categories = [{ name: "Note", path: "notes" }];
 
       if (!note.hidden) {

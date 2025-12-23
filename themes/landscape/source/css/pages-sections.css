@@ -400,6 +400,55 @@
 
 /* ------------------------------------------------------- */
 
+.page-content section.concert {
+  display: grid;
+  grid-template-areas: "image name" "info info";
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  gap: var(--space-medium);
+  padding: var(--space-medium);
+}
+@media screen and (min-width:768px) {
+  .page-content section.concert {
+    padding: var(--space-default);
+    padding-bottom: var(--space-medium);
+  }
+}
+
+.page-content section.concert img {
+  grid-area: image;
+  width: 75px;
+  border-radius: var(--border-radius-small);
+}
+.page-content section.concert div.concert-name {
+  grid-area: name;
+}
+.page-content section.concert div.concert-info {
+  grid-area: info;
+}
+.page-content section.concert > div {
+  font-size: var(--font-size-medium);
+}
+
+.page-content section.concert h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: var(--line-height-text);
+}
+
+.page-content section.concert .concert-guests {
+  margin-top: var(--space-thin);
+  opacity: 0.75;
+}
+
+.page-content section.concert .concert-info a {
+  font-size: var(--font-size-small);
+  margin-top: var(--space-small);
+  display: inline-block;
+}
+
+/* ------------------------------------------------------- */
+
 .page-content section.image {
   background: 0 0;
   box-shadow: none;
@@ -441,7 +490,7 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas: "x x" "a1 a2" "b1 b2" "c1 c2";
   gap: var(--space-medium);
-  margin: 0;
+  margin: var(--space-default) 0;
 }
 
 @media screen and (max-width:600px) {
@@ -527,14 +576,17 @@ section.archive-articles {
   margin: var(--space-block) 0;
 }
 
-section.archive-articles .archive-articles-year {
-  margin-bottom: var(--space-medium);
-}
-
-section.archive-articles .archive-articles-year .archive-year {
+h2.section-heading,
+section.archive-articles .archive-year {
+  display: block;
   margin-left: 0;
+  margin-bottom: var(--space-medium);
   font-size: var(--font-subtitle-size);
   color: var(--color-meta);
+}
+
+h2.section-heading {
+  margin-bottom: var(--space-extra);
 }
 
 /* ------------------------------------------------------- */

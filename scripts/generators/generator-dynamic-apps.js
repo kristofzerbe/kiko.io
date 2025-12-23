@@ -11,7 +11,7 @@ hexo.extend.generator.register("dynamic-apps", async function(locals) {
   let page = locals.dynamic.apps;
   result.push({
     data: page,
-    path: path.join(page.name, "index.html"),
+    path: path.join(page.permalink, "index.html"),
     layout: "about"
   });
 
@@ -22,7 +22,7 @@ hexo.extend.generator.register("dynamic-apps", async function(locals) {
       
       result.push({
         data: app,
-        path: path.join("apps", app.name, "index.html"),
+        path: path.join(app.permalink, "index.html"),
         layout: key
       });
     };

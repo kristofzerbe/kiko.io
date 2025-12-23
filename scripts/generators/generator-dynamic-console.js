@@ -9,7 +9,7 @@ hexo.extend.generator.register("dynamic-console", async function(locals) {
 
   return {
     data: page,
-    path: path.join(page.name, "index.html"),
+    path: path.join(page.permalink, "index.html"),
     layout: "console"
   };
 

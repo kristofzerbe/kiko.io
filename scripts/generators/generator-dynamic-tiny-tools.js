@@ -1,8 +1,9 @@
 const log = require("hexo-log")({ debug: false, silent: false });
 const { magenta } = require("chalk");
 const path = require('path');
-const fs = require('hexo-fs');
-const front = require('hexo-front-matter');
+// const fs = require('hexo-fs');
+// const front = require('hexo-front-matter');
+const { getMD } = require("../../lib/tools.cjs");
 
 const TinyToolsGenerator = require("../../lib/tiny-tools-generator.cjs").TinyToolsGenerator;
 
@@ -14,10 +15,8 @@ hexo.extend.generator.register("tiny-tools", async function(locals) {
     return result;
   }, {});
 
-  const mdSource = path.join(this.config.source_dir, "_dynamic", "tiny-tools.md");
-  const md = fs.readFileSync(mdSource);
-  let fm = front.parse(md);
-  let page = fm;
+  let page = { name: "tiny-tools" };
+  page = getMD(hexo, path.join("_dynamic", page.name + ".md"), page);
 
   page.content = hexo.render.renderSync({ text: page._content, engine: 'markdown' });
   page.updated = helpers.moment();
