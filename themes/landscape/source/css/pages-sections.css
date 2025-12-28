@@ -402,16 +402,17 @@
 
 .page-content section.concert {
   display: grid;
-  grid-template-areas: "image name" "info info";
+  grid-template-areas: "image name" "info info" "post post";
   grid-template-columns: auto 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto 1fr;
   gap: var(--space-medium);
   padding: var(--space-medium);
+  padding-bottom: 0;
 }
 @media screen and (min-width:768px) {
   .page-content section.concert {
     padding: var(--space-default);
-    padding-bottom: var(--space-medium);
+    padding-bottom: 0;
   }
 }
 
@@ -420,14 +421,31 @@
   width: 75px;
   border-radius: var(--border-radius-small);
 }
+.page-content section.concert div.concert-name,
+.page-content section.concert div.concert-info {
+  font-size: var(--font-size-medium);
+}
 .page-content section.concert div.concert-name {
   grid-area: name;
 }
 .page-content section.concert div.concert-info {
   grid-area: info;
 }
-.page-content section.concert > div {
-  font-size: var(--font-size-medium);
+.page-content section.concert div.concert-info hr.divider {
+  margin-block: var(--space-small) var(--space-thin);
+}
+.page-content section.concert .auto-card-link-container {
+  grid-area: post;
+  margin-bottom: var(--space-medium);
+}
+@media screen and (min-width:768px) {
+  .page-content section.concert .auto-card-link-container {
+    margin-bottom: var(--space-default);
+  }
+}
+.page-content section.concert .auto-card-link-container .auto-card-link-card {
+  width: 100% !important;
+  max-width: unset;
 }
 
 .page-content section.concert h3 {

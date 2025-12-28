@@ -9,6 +9,8 @@ const axios = require("axios");
 
 hexo.extend.tag.register("github_readme", async function(args){
 
+    if(hexo.status === "offline") { return null; }
+
     const [
       user,
       repo,

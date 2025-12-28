@@ -9,4 +9,4 @@ caption: "/Stats"
 teaser: "A few facts and figures about this site"
 ---
 
-Stats coming soon ...
+Over the years that this blog has been in operation, it has grown and flourished, and at some point it deserved a few small statistics to give an impression of its current size and complexity in terms of numbers.

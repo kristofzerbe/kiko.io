@@ -1,30 +1,17 @@
 const log = require("hexo-log")({ debug: false, silent: false });
 const { magenta } = require("chalk");
 const path = require('path');
-// const fs = require('hexo-fs');
-// const front = require('hexo-front-matter');
-const { getMD } = require("../../lib/tools.cjs");
+const { getHelpers } = require("../../lib/tools.cjs");
 
-const TinyToolsGenerator = require("../../lib/tiny-tools-generator.cjs").TinyToolsGenerator;
+const _helpers = getHelpers(hexo);
 
 hexo.extend.generator.register("tiny-tools", async function(locals) {
   log.info("Generating Dynamic Page " + magenta("TINY TOOLS") + " ...");
 
-  const helpers = Object.keys(hexo.extend.helper.store).reduce((result, name) => {
-    result[name] = hexo.extend.helper.get(name).bind({ ...hexo, page: {} });
-    return result;
-  }, {});
-
-  let page = { name: "tiny-tools" };
-  page = getMD(hexo, path.join("_dynamic", page.name + ".md"), page);
+  let page = locals.dynamic.tinytools;
 
   page.content = hexo.render.renderSync({ text: page._content, engine: 'markdown' });
-  page.updated = helpers.moment();
-
-  const generator = new TinyToolsGenerator();
-  page.items = generator.generate();
-
-  log.info("-> " + magenta(page.items.length) + " Tiny Tools");
+  page.updated = _helpers.moment();
 
   page.tags = [];
   page.items.map( item => {

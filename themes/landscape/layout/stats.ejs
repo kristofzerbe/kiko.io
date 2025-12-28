@@ -12,8 +12,38 @@
 <div class="page-content">
   <%- page.content %>
   
-  <section>
-    ...    
+  <hr class="divider" />
+
+  <section class="stats-section">
+    <b><%= page.postData.times.periodBetweenFirstLastPost.years %></b><span>years</span>,
+    <b><%= page.postData.times.periodBetweenFirstLastPost.months %></b><span>months</span> and 
+    <b><%= page.postData.times.periodBetweenFirstLastPost.days %></b><span>days</span> or a total of 
+    <b><%= page.postData.times.daysBetweenFirstLastPost %></b><span>days</span> have passed between my 
+    <a href="/post/<%= page.postData.times.firstPost.slug %>" title="<%= page.postData.times.firstPost.title %>">first post</a> on 
+    <i><%= page.postData.times.firstPost.dateFormat %></i> and the 
+    <a href="/post/<%= page.postData.times.lastPost.slug %>" title="<%= page.postData.times.lastPost.title %>">last one</a> 
+    <b><%= page.postData.times.daysSinceLastPost %></b><span>days ago</span>.
+  </section>
+
+  <section class="stats-section">
+    During this period I've written <b><%= page.postData.counts.posts %></b><span>articles</span> and 
+    <b><%= page.postData.counts.notes %></b><span>notes</span> and collected 
+    <b><%= page.postData.counts.tinytools %></b><span>Tiny Tools</span>, added 
+    <b><%= page.postData.counts.blogroll %></b><span>authors</span> to my <span>blogroll</span> and went to 
+    <b><%= page.postData.counts.concerts %></b><span>concerts</span>.
+  </section>
+
+  <section class="stats-section">
+    In between, I published 
+    <b><%= page.postData.counts.boxes %></b><span>photo boxes</span> and 
+    <b><%= page.postData.counts.photos.total %></b><span>photos in total</span>.<br> 
+    For all my pages, I <span>used</span> <b><%= page.postData.counts.photos.used.total %></b> 
+    of them as individual header photos and have set aside 
+    <b><%= page.postData.counts.photos.unused.pool %></b> as <span>pool</span> photos for future articles. 
+    <b><%= page.postData.counts.photos.unused.reserve %></b> more are already 
+    <span>reserved</span> for specific new pages. The remaining 
+    <b><%= page.postData.counts.photos.unused.shed %></b> photos are stored in the 
+    <span>shed</span> for publication via syndication.
   </section>
 
 </div>

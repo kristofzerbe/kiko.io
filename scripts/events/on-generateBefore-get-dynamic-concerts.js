@@ -14,13 +14,9 @@ hexo.on('generateBefore', function() {
   const generator = new ConcertsGenerator();
   page.items = generator.generate();
 
-  page.content = page.content
-    .replace("{% concert.count %}", page.items.length);
-
   log.info("-> " + magenta(page.items.length) + " concerts");
 
   let dyn = {...hexo.locals.get('dynamic'), ...{ concerts: page }};
   hexo.locals.set('dynamic', dyn);
 
-  // console.log(hexo.locals.get('dynamic'));
 });

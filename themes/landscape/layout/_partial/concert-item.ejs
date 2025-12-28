@@ -12,10 +12,15 @@
     <% } %>
   </div>
   <div class="concert-info">
-    <div><%- item.location %> @ <%- item.date.toISOString().split('T')[0] %></div>
+    <div><%- date(item.date, 'DD MMM YYYY') %>, <%- item.location %></div>
 
     <% if (item.link) { %>
     <a href="<%- item.link %>">View on ConcertArchives...</a>
     <% } %>
+
+    <% if (item.post) { %><hr class="divider" /><% } %>  
   </div>
+  <% if (item.post) { %>
+    <%- partial('post/cardlink-post', { post: item.post }) %>
+  <% } %> 
 </section>

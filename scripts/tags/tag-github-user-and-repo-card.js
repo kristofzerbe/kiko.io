@@ -9,6 +9,8 @@ const axios = require("axios");
 
 hexo.extend.tag.register("github_user_and_repo_card", async function(args){
 
+  if(hexo.status === "offline") { return null; }
+
   const [
     user,
     repo,
