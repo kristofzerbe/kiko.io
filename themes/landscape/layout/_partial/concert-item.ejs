@@ -17,10 +17,10 @@
     <% if (item.link) { %>
     <a href="<%- item.link %>">View on ConcertArchives...</a>
     <% } %>
-
-    <% if (item.post) { %><hr class="divider" /><% } %>  
   </div>
+
   <% if (item.post) { %>
+    <label class="cardlink-label">Event Post:</label>
     <%- partial('post/cardlink-post', { post: item.post }) %>
   <% } %> 
 </section>
