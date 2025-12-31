@@ -43,9 +43,38 @@
   box-shadow: var(--length-shadow) var(--color-shadow);
 }
 
+/* block photo -------------------------------- */
+
+.article-photo,
+.anything-photo {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+}
+@media screen and (min-width:480px) and (max-width:767px) {
+  .article-photo,
+  .anything-photo {
+    height: 175px;
+  }
+}
+@media screen and (min-width:768px) and (max-width:1023px) {
+  .article-photo,
+  .anything-photo {
+    height: 200px;
+  }
+}
+@media screen and (min-width:1024px) {
+  .article-photo,
+  .anything-photo {
+    height: 250px;
+  }
+}
+
+
 /* inview-image -------------------------------- */
 @media (prefers-reduced-motion:no-preference) {
   .article-photo,
+  .anything-photo,
   .article-entry a.img-link,
   .panel-photo,
   .page-content .card a.card-img img,
@@ -58,6 +87,7 @@
   }
 
   .article-photo.in-view,
+  .anything-photo.in-view,
   .article-entry a.img-link.in-view,
   .panel-photo.in-view,
   .page-content .card a.card-img.in-view img,

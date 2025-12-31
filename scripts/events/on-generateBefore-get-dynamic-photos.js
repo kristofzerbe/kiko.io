@@ -345,7 +345,7 @@ function getPostAndPagePhotos() {
       meta = JSON.parse(fs.readFileSync(metaFile));
     }
 
-    let post = postsAndPages.find(p => (p && p.photographFile === entry.file));
+    let post = postsAndPages.find(p => (p && !p.hidden && p.photographFile === entry.file));
     if (post) {
       entry.name = meta?.ObjectName || post.photographName;
       entry.type = post.layout;
@@ -359,7 +359,8 @@ function getPostAndPagePhotos() {
 
       let url = post.path.replace("/index.html", ""); // for posts und archives
       if (post.layout == "page") {
-        url = `${url}`.replace("//", "/").replace(".html", ""); // for archives + other pages
+        //console.log(entry.article.title + " >>> " + url);
+        url = url.replaceAll("/", "").replace(".html", ""); // for archives + other pages
       }
       entry.article.url = "/" + url;
     }

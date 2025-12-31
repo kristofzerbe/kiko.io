@@ -1,5 +1,5 @@
 <% if (post.photograph){ %>
-    <a href="<%- url_for(post.path) %>" class="x">
-        <img class="<%= class_name %>" src="/photos/tablet/<%= post.photograph.file %>" alt="<%= post.photograph.name %>" />
-    </a>
+  <a href="<%- url_for(post.path.replace("/index.html", "")) %>">
+    <img class="<%= class_name %>" src="/photos/tablet/<%= post.photograph.file %>" alt="<%= post.photograph.name %>" />
+  </a>
 <% } %>

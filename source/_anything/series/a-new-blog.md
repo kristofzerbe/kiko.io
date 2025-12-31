@@ -2,9 +2,8 @@
 title: A New Blog
 permalink: /series/a-new-blog
 photograph:
-  file: $23-05-Holland-0996.jpg
-  name: Stone Chains
-  keepOutOverview: true
+  file: $DSC_3670-HDR.jpg
+  name: Kilbeggan Window
 ---
 
 Starting a new project is always exciting, especially when the building platform is totally new for oneself. As I started this blog in 2019 with <a href="https://hexo.io/">Hexo</a>, I had a good experience with JavaScript and some with Node, but no with EJS, Lodash and some of the other libraries Hexo is using.

@@ -2,9 +2,8 @@
 title: Step By Step
 permalink: /series/step-by-step
 photograph:
-  file: $23-05-Holland-0996.jpg
-  name: Stone Chains
-  keepOutOverview: true
+  file: $DSC_5295.jpg
+  name: Jugendstil Staircase
 ---
 
 Software development is the art of automation ... because Developers are lazy. Manual work steps quickly end in writing scripts. But sometimes the effort is not justified or it is simply impossible to automate something, because of OS barriers or other show stoppers. Then it is better to optimize und document the manual steps.
