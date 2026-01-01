@@ -16,7 +16,7 @@ hexo.extend.generator.register("dynamic-stats", async function(locals) {
   let page = { name: "stats" };
   page = getMD(hexo, path.join("_dynamic", page.name + ".md"), page);
   page.postData = collector.getPostStats();
-
+  
   result.push({
     data: page,
     path: path.join(page.permalink, "index.html"),

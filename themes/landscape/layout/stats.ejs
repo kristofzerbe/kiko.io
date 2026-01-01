@@ -1,4 +1,6 @@
 
+<script type="module" src="/js/dist/activity-graph.min.js"></script>
+
 <% if (page.photograph){ %>
   <%- partial('_partial/photograph') %>
 <% } %>
@@ -19,19 +21,31 @@
     <b><%= page.postData.times.periodBetweenFirstLastPost.months %></b><span>months</span> and 
     <b><%= page.postData.times.periodBetweenFirstLastPost.days %></b><span>days</span> or a total of 
     <b><%= page.postData.times.daysBetweenFirstLastPost %></b><span>days</span> have passed between my 
-    <a href="/post/<%= page.postData.times.firstPost.slug %>" title="<%= page.postData.times.firstPost.title %>">first post</a> on 
+    <a href="/<%= page.postData.times.firstPost.path %>" title="<%= page.postData.times.firstPost.title %>">first post</a> on 
     <i><%= page.postData.times.firstPost.dateFormat %></i> and the 
-    <a href="/post/<%= page.postData.times.lastPost.slug %>" title="<%= page.postData.times.lastPost.title %>">last one</a> 
+    <a href="/<%= page.postData.times.lastPost.path %>" title="<%= page.postData.times.lastPost.title %>">last one</a> 
     <b><%= page.postData.times.daysSinceLastPost %></b><span>days ago</span>.
   </section>
 
   <section class="stats-section">
     During this period I've written 
-    <b><%= page.postData.counts.posts %></b><span>articles</span> in 
+    <b><%= page.postData.counts.articles %></b><span>articles</span> in 
     <b><%= page.postData.counts.categories %></b><span>categories</span> with 
     <b><%= page.postData.counts.tags %></b><span>tags</span> and published 
     <b><%= page.postData.counts.notes %></b><span>notes</span>.
   </section>
+
+  <div class="activity-graph-wrapper">
+    <activity-graph
+      range-start="<%= page.postData.times.firstPost.dateISO %>"
+      range-end="<%= page.postData.times.lastPost.dateISO %>"
+      activity-data="<%= page.postData.lists.postsAll.join(",") %>"
+      activity-levels="0,1,2,3,5"
+      first-day-of-week="1"
+      lang="en"
+      i18n='{"activities": "posts", "less": "less", "more": "more"}'>
+    </activity-graph>
+  </div>
 
   <section class="stats-section">
     In between, I published 
