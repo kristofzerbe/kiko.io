@@ -412,6 +412,31 @@
 }
 
 /* Activity Graph  ---------------------------------------------------------- */
+activity-graph {
+	--activity-graph-rounded: 2px;
+ 	--activity-graph-text-weight: var(--font-weight-normal);
+ 	--activity-graph-font-size: var(--font-size-code);
+	--activity-graph-text-color: var(--color-text);
+	--activity-graph-level-0-bg: #ededed;
+	--activity-graph-level-1-bg: #9be9a8;
+	--activity-graph-level-2-bg: #40c463;
+	--activity-graph-level-3-bg: #30a14e;
+	--activity-graph-level-4-bg: #216e39;
+	--activity-graph-disabled-bg: transparent;
+	--activity-graph-level-0-border: rgba(27, 31, 35, 0.06);
+	--activity-graph-level-1-border: rgba(27, 31, 35, 0.06);
+	--activity-graph-level-2-border: rgba(27, 31, 35, 0.06);
+	--activity-graph-level-3-border: rgba(27, 31, 35, 0.06);
+	--activity-graph-level-4-border: rgba(27, 31, 35, 0.06);
+	--activity-graph-disabled-border: rgba(27, 31, 35, 0.06);
+}
+:root[data-theme="dark"] activity-graph { 
+  --activity-graph-level-0-bg: #4b4b4b;
+	--activity-graph-level-1-bg: #216e39;  
+	--activity-graph-level-2-bg: #30a14e;
+	--activity-graph-level-3-bg: #40c463;
+	--activity-graph-level-4-bg: #9be9a8;
+}
 
 .activity-graph-wrapper {
   margin-top: calc(var(--space-extra) * -1);
@@ -435,7 +460,6 @@
 .activity-graph-wrapper table tr:nth-child(2n) {
   background: unset !important;
 }
-
 .activity-graph-wrapper table tr th.year {
   font-weight: bold;
 }
