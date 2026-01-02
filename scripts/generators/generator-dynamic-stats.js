@@ -15,7 +15,7 @@ hexo.extend.generator.register("dynamic-stats", async function(locals) {
 
   let page = { name: "stats" };
   page = getMD(hexo, path.join("_dynamic", page.name + ".md"), page);
-  page.postData = collector.getPostStats();
+  page.data = collector.getPostStats();
   
   result.push({
     data: page,
@@ -27,7 +27,8 @@ hexo.extend.generator.register("dynamic-stats", async function(locals) {
 
   let music = { name: "stats-music" };
   music = getMD(hexo, path.join("_dynamic", music.name + ".md"), music);
-  // TODO ... StatsCollector.getMusicStats();
+  music.data = collector.getMusicStats();
+
   result.push({
     data: music,
     path: path.join(music.permalink, "index.html"),
@@ -38,7 +39,7 @@ hexo.extend.generator.register("dynamic-stats", async function(locals) {
 
   let links = { name: "stats-links" };
   links = getMD(hexo, path.join("_dynamic", links.name + ".md"), links);
-  // TODO ... StatsCollector.getLinkStats();
+  // TODO ... collector.getLinkStats();
   result.push({
     data: links,
     path: path.join(links.permalink, "index.html"),

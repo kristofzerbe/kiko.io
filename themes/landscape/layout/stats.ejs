@@ -17,29 +17,29 @@
   <hr class="divider" />
 
   <section class="stats-section">
-    <b><%= page.postData.times.periodBetweenFirstLastPost.years %></b><span>years</span>,
-    <b><%= page.postData.times.periodBetweenFirstLastPost.months %></b><span>months</span> and 
-    <b><%= page.postData.times.periodBetweenFirstLastPost.days %></b><span>days</span> or a total of 
-    <b><%= page.postData.times.daysBetweenFirstLastPost %></b><span>days</span> have passed between my 
-    <a href="/<%= page.postData.times.firstPost.path %>" title="<%= page.postData.times.firstPost.title %>">first post</a> on 
-    <i><%= page.postData.times.firstPost.dateFormat %></i> and the 
-    <a href="/<%= page.postData.times.lastPost.path %>" title="<%= page.postData.times.lastPost.title %>">last one</a> 
-    <b><%= page.postData.times.daysSinceLastPost %></b><span>days ago</span>.
+    <b><%= page.data.times.periodBetweenFirstLastPost.years %></b><span>years</span>,
+    <b><%= page.data.times.periodBetweenFirstLastPost.months %></b><span>months</span> and 
+    <b><%= page.data.times.periodBetweenFirstLastPost.days %></b><span>days</span> or a total of 
+    <b><%= page.data.times.daysBetweenFirstLastPost %></b><span>days</span> have passed between my 
+    <a href="/<%= page.data.times.firstPost.path %>" title="<%= page.data.times.firstPost.title %>">first post</a> on 
+    <i><%= page.data.times.firstPost.dateFormat %></i> and the 
+    <a href="/<%= page.data.times.lastPost.path %>" title="<%= page.data.times.lastPost.title %>">last one</a> 
+    <b><%= page.data.times.daysSinceLastPost %></b><span>days ago</span>.
   </section>
 
   <section class="stats-section">
     During this period I've written 
-    <b><%= page.postData.counts.articles %></b><span>articles</span> in 
-    <b><%= page.postData.counts.categories %></b><span>categories</span> with 
-    <b><%= page.postData.counts.tags %></b><span>tags</span> and published 
-    <b><%= page.postData.counts.notes %></b><span>notes</span>.
+    <b><%= page.data.counts.articles %></b><span>articles</span> in 
+    <b><%= page.data.counts.categories %></b><span>categories</span> with 
+    <b><%= page.data.counts.tags %></b><span>tags</span> and published 
+    <b><%= page.data.counts.notes %></b><span>notes</span>.
   </section>
 
   <div class="activity-graph-wrapper">
     <activity-graph
-      range-start="<%= page.postData.times.firstPost.dateISO %>"
-      range-end="<%= page.postData.times.lastPost.dateISO %>"
-      activity-data="<%= page.postData.lists.postsAll.join(",") %>"
+      range-start="<%= page.data.times.firstPost.dateISO %>"
+      range-end="<%= page.data.times.lastPost.dateISO %>"
+      activity-data="<%= page.data.lists.postsAll.join(",") %>"
       activity-levels="0,1,2,4"
       first-day-of-week="1"
       lang="en"
@@ -49,22 +49,22 @@
 
   <section class="stats-section">
     In between, I published 
-    <b><%= page.postData.counts.boxes %></b><span>photo boxes</span> and 
-    <b><%= page.postData.counts.photos.total %></b><span>photos in total</span>.<br> 
-    For all my pages, I <span>used</span> <b><%= page.postData.counts.photos.used.total %></b> 
+    <b><%= page.data.counts.boxes %></b><span>photo boxes</span> and 
+    <b><%= page.data.counts.photos.total %></b><span>photos in total</span>.<br> 
+    For all my pages, I <span>used</span> <b><%= page.data.counts.photos.used.total %></b> 
     of them as individual header photos and have set aside 
-    <b><%= page.postData.counts.photos.unused.pool %></b> as <span>pool</span> photos for future articles. 
-    <b><%= page.postData.counts.photos.unused.reserve %></b> more are already 
+    <b><%= page.data.counts.photos.unused.pool %></b> as <span>pool</span> photos for future articles. 
+    <b><%= page.data.counts.photos.unused.reserve %></b> more are already 
     <span>reserved</span> for specific new pages. The remaining 
-    <b><%= page.postData.counts.photos.unused.shed %></b> photos are stored in the 
+    <b><%= page.data.counts.photos.unused.shed %></b> photos are stored in the 
     <span>shed</span> for publication via syndication.
   </section>
 
   <section class="stats-section">
     Furthermore I collected 
-    <b><%= page.postData.counts.tinytools %></b><span>Tiny Tools</span>, added 
-    <b><%= page.postData.counts.blogroll %></b><span>authors</span> to my <span>blogroll</span> and went to 
-    <b><%= page.postData.counts.concerts %></b><span>concerts</span>.
+    <b><%= page.data.counts.tinytools %></b><span>Tiny Tools</span>, added 
+    <b><%= page.data.counts.blogroll %></b><span>authors</span> to my <span>blogroll</span> and went to 
+    <b><%= page.data.counts.concerts %></b><span>concerts</span>.
   </section>
 
 </div>

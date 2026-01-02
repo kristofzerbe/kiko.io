@@ -1,5 +1,7 @@
 <section class="concert">
-  <img src="/images/artists/<%- item.artist.slug %>.jpg" />
+  <a class="concert-artist" href="https://www.last.fm/music/<%- item.artist.slug.replace("-", "+") %>">
+    <img src="/images/artists/<%- item.artist.slug %>.jpg" />
+  </a>
   <div class="concert-name">
     <h3><%- item.artist.name %></h3>
 
