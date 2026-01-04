@@ -41,7 +41,7 @@
               load="lazy" seamless>
             </iframe>
             <div class="bc-post">
-              <%- partial('_partial/post/postimagelink', { post: item.post }) %>
+              <%- partial('_partial/post/postimagelink', { post: item.post, label: "Used in Article" }) %>
             </div>
           </div>
         </details>
@@ -61,7 +61,7 @@
       if (event.target.open) {
         //console.log(event.target.dataset.trackId);
         let style = window.getComputedStyle(document.documentElement);    
-        let bgColor = style.getPropertyValue("--color-block").replace("#", "");
+        let bgColor = style.getPropertyValue("--color-button-back").replace("#", "");
         let lnkColor = style.getPropertyValue("--color-accent-text").replace("#", "");
         let bcPlayerUri = "https://bandcamp.com/EmbeddedPlayer/album=" + event.target.dataset.albumId + "/size=large/bgcol=" + bgColor + "/linkcol=" + lnkColor + "/tracklist=false/artwork=small/track=" + event.target.dataset.trackId + "/transparent=true/";
         bcPlayer.contentWindow.location.replace(bcPlayerUri);
