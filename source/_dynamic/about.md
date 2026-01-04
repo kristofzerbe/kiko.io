@@ -1,5 +1,5 @@
 ---
-title: About
+title: /About
 date: 2020-09-05 15:25:23
 updated: 2023-12-29 17:24:44
 permalink: /about

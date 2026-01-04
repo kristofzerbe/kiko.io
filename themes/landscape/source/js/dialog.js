@@ -282,7 +282,7 @@ var dpDialog = {
   },
   'contact': function() {
     dpDialog.base.init({
-      headerText: "Contact",
+      headerText: "#Contact",
       urlHash: "contact",
       minContentHeight: 540,
       width: "min(600px, 100%)",

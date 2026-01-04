@@ -64,8 +64,12 @@
 
   // MENU-ITEM-SCROLL
   let pathItem = window.location.pathname.split('/')[1].toLowerCase();
+  if (pathItem === "archives") pathItem = "articles"; //HACK
+  //console.log(window.location.pathname);
   setTimeout(() => {
     let e = document.getElementById(`nav-${pathItem}-link`);
+    if (!e) e = document.getElementById("nav-slashes-link"); //HACK
+    //console.log(e);
     if (e) e.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }, 250);
 

@@ -1,5 +1,5 @@
 ---
-title: Uses
+title: /Uses
 date: 2024-07-10 17:37:24
 permalink: /uses
 photograph:

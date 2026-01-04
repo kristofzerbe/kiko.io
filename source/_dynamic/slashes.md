@@ -1,5 +1,5 @@
 ---
-title: Slashes
+title: /Slashes
 date: 2024-05-27 14:07:55
 updated: 2024-05-30 14:38:52
 permalink: /slashes

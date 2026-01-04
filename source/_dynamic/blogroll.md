@@ -1,5 +1,5 @@
 ---
-title: Blogroll
+title: /Blogroll
 permalink: /blogroll
 photograph:
   file: $23-08-26-MPS-Speyer-0052.jpg

@@ -1,5 +1,5 @@
 ---
-title: Defaults
+title: /Defaults
 permalink: /defaults
 photograph:
   file: $23-07-Mallorca-0755.jpg

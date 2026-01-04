@@ -8,4 +8,4 @@ photograph:
   keepOutOverview: true
 ---
 
-Music stats coming soon ...
+For some time now, I have been adding an audio layer to my posts in the form of a Bandcamp music track that you can listen to while reading. Here is a list of all the music tracks used so far.

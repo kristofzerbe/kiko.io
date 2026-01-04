@@ -1,5 +1,5 @@
 ---
-title: Contact
+title: "#Contact"
 date: 2024-05-30 14:28:43
 permalink: javascript:dialog.contact();
 photograph:

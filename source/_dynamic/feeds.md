@@ -1,5 +1,5 @@
 ---
-title: Feeds
+title: /Feeds
 date: 2023-08-30 14:47:33
 updated: 2024-02-22 21:24:47
 permalink: /feeds

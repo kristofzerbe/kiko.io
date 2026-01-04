@@ -1,5 +1,5 @@
 ---
-title: Colophon
+title: /Colophon
 date: 2024-05-28 09:58:31
 updated: 2025-04-21 12:32:00
 permalink: /colophon

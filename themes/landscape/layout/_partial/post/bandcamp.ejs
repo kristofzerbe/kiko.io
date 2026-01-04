@@ -19,11 +19,10 @@
     </iframe>
   </details>
   <script>
-    function setThemeBandcampPlayer() {      
-      let bgColor = "ffffff";
-      let lnkColor = "333333";
-      let theme = document.documentElement.getAttribute("data-theme");
-      if (theme === "dark") { bgColor = "333333"; lnkColor = "ffffff"; } 
+    function setThemeBandcampPlayer() {
+      let style = window.getComputedStyle(document.documentElement);    
+      let bgColor = style.getPropertyValue("--color-block").replace("#", "");
+      let lnkColor = style.getPropertyValue("--color-accent-text").replace("#", "");
 
       let bcPlayerUri = `\
 https://bandcamp.com/EmbeddedPlayer/\
@@ -37,9 +36,9 @@ transparent=true/\
       //leads to browser history change --- document.getElementById("bandcamp-player").src = bcPlayerUri;
       document.getElementById("bandcamp-player").contentWindow.location.replace(bcPlayerUri)
     }
-    setThemeBandcampPlayer();
+    setTimeout(() => { setThemeBandcampPlayer(); }, 1000);
     new MutationObserver(m => { 
-      setThemeBandcampPlayer(); 
+      setThemeBandcampPlayer();
     }).observe(document.documentElement, {
       attributes: true, attributeFilter: ["data-theme"], attributeOldValue: true
     });

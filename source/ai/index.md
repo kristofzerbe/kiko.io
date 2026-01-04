@@ -1,5 +1,5 @@
 ---
-title: AI
+title: /AI
 date: 2024-06-27 15:41:54
 permalink: /ai
 photograph:
