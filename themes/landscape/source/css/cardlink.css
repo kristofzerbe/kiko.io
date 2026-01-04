@@ -1,11 +1,11 @@
-.auto-card-link-container {
+.cardlink-container {
   container-type: inline-size;
   position: relative;
   overflow: hidden;
   user-select: none
 }
 
-.auto-card-link-container .auto-card-link-card {
+.cardlink-container .cardlink-card {
   display: flex;
   flex-direction: row-reverse;
   height: 8rem;
@@ -21,19 +21,19 @@
 }
 
 @media screen and (min-width:1024px) {
-  .auto-card-link-container .auto-card-link-card {
+  .cardlink-container .cardlink-card {
     max-width: 600px;
     justify-self: center
   }
 }
 
-.auto-card-link-container .auto-card-link-card:hover {
+.cardlink-container .cardlink-card:hover {
   /* border-color: var(--color-block);
   background: var(--color-block); */
   text-decoration: none
 }
 
-.auto-card-link-container .auto-card-link-card .auto-card-link-main {
+.cardlink-container .cardlink-card .cardlink-main {
   width: 75vw;
   display: flex;
   flex-grow: 1;
@@ -45,14 +45,14 @@
   text-align: left
 }
 
-.auto-card-link-container .auto-card-link-card .auto-card-link-main .auto-card-link-title {
+.cardlink-container .cardlink-card .cardlink-main .cardlink-title {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   font-weight: var(--font-weight-bold)
 }
 
-.auto-card-link-container .auto-card-link-card .auto-card-link-main .auto-card-link-description {
+.cardlink-container .cardlink-card .cardlink-main .cardlink-description {
   overflow: hidden;
   line-height: var(--line-height-small);
   height: calc(var(--line-height-small) * 2);
@@ -60,30 +60,30 @@
   font-size: var(--font-size-small)
 }
 
-.auto-card-link-container .auto-card-link-card .auto-card-link-main .auto-card-link-host {
+.cardlink-container .cardlink-card .cardlink-main .cardlink-host {
   font-size: var(--font-size-small);
   display: flex;
   flex-direction: row;
   align-items: center
 }
 
-.auto-card-link-container .auto-card-link-card .auto-card-link-main .auto-card-link-host span {
+.cardlink-container .cardlink-card .cardlink-main .cardlink-host span {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap
 }
 
-.auto-card-link-container .auto-card-link-card .auto-card-link-main .auto-card-link-host span:hover {
+.cardlink-container .cardlink-card .cardlink-main .cardlink-host span:hover {
   text-decoration: underline
 }
 
-.auto-card-link-container .auto-card-link-card .auto-card-link-main .auto-card-link-favicon {
+.cardlink-container .cardlink-card .cardlink-main .cardlink-favicon {
   width: 16px !important;
   height: auto !important;
   margin: 0 var(--space-small) 0 0 !important
 }
 
-.auto-card-link-container .auto-card-link-thumbnail {
+.cardlink-container .cardlink-thumbnail {
   border-radius: var(--border-radius-normal) 0 0 var(--border-radius-normal) !important;
   height: 100%;
   background-position: left center;
@@ -93,7 +93,7 @@
 }
 
 @media screen and (max-width:479px) {
-  .auto-card-link-container .auto-card-link-thumbnail {
+  .cardlink-container .cardlink-thumbnail {
     width: 50vw !important
   }
 }

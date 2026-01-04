@@ -40,6 +40,9 @@
               width="100%" height="120px"
               load="lazy" seamless>
             </iframe>
+            <div class="bc-post">
+              <%- partial('_partial/post/postimagelink', { post: item.post }) %>
+            </div>
           </div>
         </details>
       </li>
@@ -54,13 +57,16 @@
   const details = document.querySelectorAll("details");
   details.forEach(d => {
     d.addEventListener("toggle", (event) => {
+      let bcPlayer = document.getElementById("bandcamp-player-" + event.target.dataset.trackId);
       if (event.target.open) {
         //console.log(event.target.dataset.trackId);
         let style = window.getComputedStyle(document.documentElement);    
         let bgColor = style.getPropertyValue("--color-block").replace("#", "");
         let lnkColor = style.getPropertyValue("--color-accent-text").replace("#", "");
         let bcPlayerUri = "https://bandcamp.com/EmbeddedPlayer/album=" + event.target.dataset.albumId + "/size=large/bgcol=" + bgColor + "/linkcol=" + lnkColor + "/tracklist=false/artwork=small/track=" + event.target.dataset.trackId + "/transparent=true/";
-        document.getElementById("bandcamp-player-" + event.target.dataset.trackId).contentWindow.location.replace(bcPlayerUri)
+        bcPlayer.contentWindow.location.replace(bcPlayerUri);
+      } else {
+        bcPlayer.contentWindow.location.replace("about:blank");
       }
     });
   });
