@@ -1,5 +1,6 @@
 
 <script type="module" src="/js/dist/activity-graph.min.js"></script>
+<%- css('css/dist/charts.min.css') %>
 
 <% if (page.photograph){ %>
   <%- partial('_partial/photograph') %>
@@ -16,7 +17,7 @@
   
   <hr class="divider" />
 
-  <section class="stats">
+  <section class="stats" style="z-index: 3">
     <h2>Posts</h2>
     <b><%= page.data.times.periodBetweenFirstLastPost.years %></b><span>years</span>,
     <b><%= page.data.times.periodBetweenFirstLastPost.months %></b><span>months</span> and 
@@ -34,7 +35,40 @@
     <b><%= page.data.counts.notes %></b><span>notes</span>.
   </section>
 
-  <div class="activity-graph-wrapper">
+  <div class="charts-wrapper" style="z-index: 2">
+    <table class="charts-css bar show-labels data-spacing-5 multiple stacked">
+      <thead>
+        <tr>
+          <th scope="col">Year</th>
+          <th scope="col" class="articles">Articles</th>
+          <th scope="col" class="notes">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% Object.entries(page.data.lists.postsYearCount).reverse().forEach(([key, value]) => { %>
+        <tr>
+          <th scope="row"><%= key %></th>
+          <% if (value.articles > 0) { %>
+          <td class="articles" style="--size: calc(<%= value.articles %>/100);">
+            <span class="data"><%= value.articles %></span>
+          </td>
+          <% } %>
+          <% if (value.notes > 0) { %>
+          <td class="notes" style="--size: calc(<%= value.notes %>/100);">
+            <span class="data"><%= value.notes %></span>
+          </td>
+          <% } %>
+        </tr>
+      <% }); %>
+      </tbody>
+    </table>
+    <ul class="charts-css legend legend-inline legend-square">
+      <li class="articles">Articles</li>
+      <li class="notes">Notes</li>
+    </ul>
+  </div>
+
+  <div class="activity-graph-wrapper" style="z-index: 1">
     <activity-graph
       range-start="<%= page.data.times.firstPost.dateISO %>"
       range-end="<%= page.data.times.lastPost.dateISO %>"

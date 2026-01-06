@@ -345,11 +345,6 @@ activity-graph {
  	--activity-graph-text-weight: var(--font-weight-normal);
  	--activity-graph-font-size: var(--font-size-code);
 	--activity-graph-text-color: var(--color-text);
-	--activity-graph-level-0-bg: #ededed;
-	--activity-graph-level-1-bg: #9be9a8;
-	--activity-graph-level-2-bg: #40c463;
-	--activity-graph-level-3-bg: #30a14e;
-	--activity-graph-level-4-bg: #216e39;
 	--activity-graph-disabled-bg: transparent;
 	--activity-graph-level-0-border: rgba(27, 31, 35, 0.06);
 	--activity-graph-level-1-border: rgba(27, 31, 35, 0.06);
@@ -357,23 +352,25 @@ activity-graph {
 	--activity-graph-level-3-border: rgba(27, 31, 35, 0.06);
 	--activity-graph-level-4-border: rgba(27, 31, 35, 0.06);
 	--activity-graph-disabled-border: rgba(27, 31, 35, 0.06);
+	--activity-graph-level-0-bg: #ededed;
+	--activity-graph-level-1-bg: var(--color-accent-median); /*#9be9a8*/
+	--activity-graph-level-2-bg: var(--color-accent-text-near); /*#40c463*/
+	--activity-graph-level-3-bg: var(--color-accent-text); /*#30a14e*/
+	--activity-graph-level-4-bg: var(--color-accent); /*#216e39*/
 }
 :root[data-theme="dark"] activity-graph { 
-  --activity-graph-level-0-bg: #4b4b4b;
-	--activity-graph-level-1-bg: #216e39;  
-	--activity-graph-level-2-bg: #30a14e;
-	--activity-graph-level-3-bg: #40c463;
-	--activity-graph-level-4-bg: #9be9a8;
+  --activity-graph-level-0-bg: #454545;
 }
 
 .activity-graph-wrapper {
-  margin-top: calc(var(--space-extra) * -1);
-  padding-block: var(--space-normal) var(--space-medium);
-  padding-inline: var(--space-normal);
+  position: relative;
+  margin-block: calc(var(--space-extra) * -1) var(--space-default);
+  padding-block: var(--space-normal) var(--space-default);
+  padding-inline: var(--space-normal); 
 }
 
 .activity-graph-wrapper figcaption { 
-  padding-block-end: var(--space-median);
+  padding-block-end: var(--space-medium);
 }
 
 .activity-graph-wrapper table tr td,
@@ -390,4 +387,87 @@ activity-graph {
 }
 .activity-graph-wrapper table tr th.year {
   font-weight: bold;
+}
+
+/* ChartsCSS  ---------------------------------------------------------- */
+.charts-wrapper {
+  position: relative;
+  margin-block: calc(var(--space-extra) * -1) var(--space-default);
+  padding-block: var(--space-normal) var(--space-default);
+  padding-inline: var(--space-normal); 
+}
+
+.charts-wrapper .charts-css {
+  font-size: var(--font-size-small) !important;
+}
+.charts-wrapper .charts-css.bar {
+  --labels-size: 48px;
+}
+
+.charts-wrapper .charts-css tr:nth-child(2n) {
+  background: unset;
+}
+.charts-wrapper .charts-css tr th, 
+.charts-wrapper .charts-css tr td {
+  padding: unset;
+  font-weight: unset;
+  border: 0px solid transparent !important;
+  --data-position: right;
+}
+@media screen and (max-width:479px) {
+  .charts-wrapper .charts-css tr th, 
+  .charts-wrapper .charts-css tr td {
+    --data-position: center;
+  }
+}
+.charts-wrapper .charts-css.bar tbody tr td {
+  color: #fff;
+  padding: calc(var(--space-thin) / 2) var(--space-small);  
+}
+
+.charts-wrapper .charts-css.bar span.data {
+  white-space: nowrap;
+}
+.charts-wrapper .charts-css.bar tbody tr td:first-of-type {
+  border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
+}
+.charts-wrapper .charts-css.bar tbody tr td:last-of-type {
+  border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
+}
+.charts-wrapper .charts-css.bar tbody tr td:first-of-type:last-of-type {
+  border-radius: var(--border-radius-small);
+}
+
+.charts-wrapper .charts-css.legend {
+  border: none !important;
+  width: auto;
+  padding: 0 !important;
+  justify-content: center;
+}
+@media screen and (max-width:479px) {
+  .charts-wrapper .charts-css.legend {
+    margin-top: var(--space-medium);
+  }
+}
+.charts-wrapper .charts-css.legend li {
+  line-height: 1;
+}
+.charts-wrapper .charts-css.legend li::before {
+  border: none !important;
+  border-radius: var(--border-radius-thin);
+  height: var(--space-median) !important;
+  width: var(--space-median) !important;
+}
+
+.charts-wrapper .charts-css.bar tbody tr td.articles,
+.charts-wrapper .charts-css.legend li.articles::before {
+  background-color: var(--color-accent) !important;
+}
+.charts-wrapper .charts-css.bar tbody tr td.notes,
+.charts-wrapper .charts-css.legend li.notes::before {
+  background-color: var(--color-accent-text-near) !important;
+}
+:root[data-theme="dark"] .charts-wrapper .charts-css.bar tbody tr td.articles,
+:root[data-theme="dark"] .charts-wrapper .charts-css.legend li.articles::before {
+  background-color: var(--color-accent-median) !important;
 }
