@@ -28,7 +28,7 @@ syndication:
   - host: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/24
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/115849509743528621
 ---
 
 <img src="/post/ChartsCSS-Without-a-single-line-of-JavaScript/logo-animation.svg" class="float-right no-zoom" />
