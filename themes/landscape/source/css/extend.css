@@ -45,6 +45,17 @@
   box-shadow: var(--length-shadow) var(--color-shadow);
 }
 
+/* no content links -------------------------------- */
+
+.widget a,
+.article-extra a:not(.panel-title) {
+  text-decoration: none;
+}
+.widget a:hover,
+.article-extra a:not(.panel-title):hover {
+  text-decoration: revert;
+}
+
 /* block photo -------------------------------- */
 
 .article-photo,
@@ -71,7 +82,6 @@
     height: 250px;
   }
 }
-
 
 /* inview-image -------------------------------- */
 @media (prefers-reduced-motion:no-preference) {

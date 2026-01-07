@@ -314,7 +314,7 @@ var dpDialog = {
     dpDialog.base.init({
       headerText: "Share on Mastodon",
       urlHash: "share",
-      minContentHeight: 475,
+      minContentHeight: 500,
       width: "min(600px, 100%)"
     });
 

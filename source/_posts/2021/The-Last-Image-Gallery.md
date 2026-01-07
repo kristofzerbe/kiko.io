@@ -98,4 +98,4 @@ The implementation is a breeze. It took me less than 10 minutes to get Spotlight
 
 I can't think of any use case right now, that you couldn't implement easily and quickly with this amazing library. Congrats folks ... extremely well done!
 
-[![Spotlight logo](The-Last-Image-Gallery/The-Last-Image-Gallery/logo.png)](https://nextapps-de.github.io/spotlight/)
+[![Spotlight logo](The-Last-Image-Gallery/logo.png)](https://nextapps-de.github.io/spotlight/)

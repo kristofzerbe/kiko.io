@@ -3,6 +3,7 @@ slug: Don-t-be-ignorant-and-offer-a-theme-switch
 title: Don't be ignorant and offer a theme switch
 subtitle: There is more to consider than the binary choice between dark or light mode
 date: 2023-12-22 12:54:51
+outdates: never
 photograph:
   file: D50_6165_2312_Enhanced.jpg
   name: Carpet Rocker

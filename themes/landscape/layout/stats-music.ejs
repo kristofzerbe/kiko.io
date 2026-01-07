@@ -15,7 +15,7 @@
   
   <hr class="divider" />
   
-  <% Object.entries(page.data.bandcamp).forEach(([key, value]) => { %>
+  <% Object.entries(page.data.bandcamp.list).forEach(([key, value]) => { %>
   <section class="stats-bc" data-key="<%= key %>">
     <a class="bc-artist" href="https://www.last.fm/music/<%- value.artist.slug.replaceAll("-", "+") %>">
       <img src="/images/artists/<%- value.artist.slug %>.jpg" />
