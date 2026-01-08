@@ -53,3 +53,19 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+  #===================================================
+  finish:
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      #---------------------------------------------------
+      - uses: actions/checkout@v4
+      - name: Setup Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm install -force
+      #---------------------------------------------------
+      - name: Send Webmentions
+        run: npm run webmention # latest published post only
