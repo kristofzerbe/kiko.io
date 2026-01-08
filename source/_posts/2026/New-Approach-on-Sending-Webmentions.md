@@ -30,7 +30,7 @@ syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/115862091855262716
   - host: IndieNews
-  - url: https://news.indieweb.org/en/kiko.io/post/New-Approach-on-Sending-Webmentions
+    url: https://news.indieweb.org/en/kiko.io/post/New-Approach-on-Sending-Webmentions
 ---
 
 Four years ago, I made this blog fit for [IndieWeb](https://en.wikipedia.org/wiki/IndieWeb). The most important part for me was the integration of [Webmentions](https://indieweb.org/Webmention), which are mainly automated "pings" sent from one website to another, telling the latter: "Hey, I mentioned your post ABC in my post XYZ." Such a connection between two blogs is certainly not the same as the fast interactions of the [Fediverse](https://en.wikipedia.org/wiki/Fediverse) [platforms](https://fediverse.party/en/miscellaneous/), which are more like email or chat, but are usually one-way and, unfortunately, still rather rare. But for me, they offer a healthy basis for networking my own digital home with others who think along similar lines.
