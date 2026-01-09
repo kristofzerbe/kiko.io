@@ -39,11 +39,11 @@ One research find stood out from the crowd of the usual JavaScript tools: [**Cha
 
 <!-- more -->
 
-I took advantage of a few days off at the end of the year to tackle my statistics, including Ramy's CSS framework, which is already five years old... and what can I say? It's really impressive how cleverly he uses common style methods to turn HTML tables (! ... read: correctly) into colorful charts that can be easily customized with your own styles without having to fiddle around with the mere 59KB ``charts.min.css`` file. I just wanted a bar chart, so I only peeked at the code for the pie charts, but I didn't really figure out how Ramy turns rectangular table cells into pie slices!?
+I took advantage of a few days off at the end of the year to tackle my statistics, including Rami's CSS framework, which is already five years old... and what can I say? It's really impressive how cleverly he uses common style methods to turn HTML tables (! ... read: correctly) into colorful charts that can be easily customized with your own styles without having to fiddle around with the mere 59KB ``charts.min.css`` file. I just wanted a bar chart, so I only peeked at the code for the pie charts, but I didn't really figure out how Rami turns rectangular table cells into pie slices!?
 
 ![ChartsCSS Samples](/post/ChartsCSS-Without-a-single-line-of-JavaScript/chartcss-samples.png)
 
-In addition to these five available chart types, according to the website, three more are planned: Radial, Polar, and Radar, but they are not really getting off the ground, as the project seems to have stalled a bit. Ramy released the current version 1.20 six months ago, and the previous one dates back to 2023. But that doesn't matter much, because what's there is excellent. The same goes for the documentation at [chartscss.org/docs](https://chartscss.org/docs/), which leaves hardly any questions unanswered thanks to its many examples.
+In addition to these five available chart types, according to the website, three more are planned: Radial, Polar, and Radar, but they are not really getting off the ground, as the project seems to have stalled a bit. Rami released the current version 1.20 six months ago, and the previous one dates back to 2023. But that doesn't matter much, because what's there is excellent. The same goes for the documentation at [chartscss.org/docs](https://chartscss.org/docs/), which leaves hardly any questions unanswered thanks to its many examples.
 
 ## Conclusion
 

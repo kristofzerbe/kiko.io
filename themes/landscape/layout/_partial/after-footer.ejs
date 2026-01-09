@@ -65,7 +65,7 @@
   // MENU-ITEM-SCROLL
   let path = window.location.pathname.split('/');
   let pathItem = path[1].toLowerCase();
-  if (pathItem === "archives") pathItem = "articles"; //HACK
+  if (["archives","post"].includes(pathItem)) pathItem = "articles"; //HACK
   //console.log(window.location.pathname + " ... " + path.length);
   setTimeout(() => {
     let e = document.getElementById(`nav-${pathItem}-link`);

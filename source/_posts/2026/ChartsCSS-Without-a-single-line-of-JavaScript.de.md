@@ -35,11 +35,11 @@ Ein Recherchefund stach aus der Masse der üblich verdächtigen JavaScript-Tools
 
 <!-- more -->
 
-Ich habe nun ein paar freie Tage am Jahresende genutzt und meine Statistiken in Angriff genommen, inklusive dem bereits 5 Jahre alten CSS-Framework von Ramy ... und was soll ich sagen: Es ist wirklich beeindruckend wie clever er die gängigen Style-Methoden nutzt, um aus HTML-Tabellen (! ... richtig gelesen) bunte Diagramme zu machen, die sich superleicht mit eigenen Styles anpassen lassen, ohne in der gerade einmal 59KB großen ``charts.min.css`` herumfingern zu müssen. Mir stand der Sinn lediglich nach einem Balkendiagramm, daher habe ich in die Torten codetechnisch nur mal reingeschaut, aber nicht wirklich durchdrungen wie Ramy aus rechteckigen Zellen Tortenstückchen macht!?
+Ich habe nun ein paar freie Tage am Jahresende genutzt und meine Statistiken in Angriff genommen, inklusive dem bereits 5 Jahre alten CSS-Framework von Rami ... und was soll ich sagen: Es ist wirklich beeindruckend wie clever er die gängigen Style-Methoden nutzt, um aus HTML-Tabellen (! ... richtig gelesen) bunte Diagramme zu machen, die sich superleicht mit eigenen Styles anpassen lassen, ohne in der gerade einmal 59KB großen ``charts.min.css`` herumfingern zu müssen. Mir stand der Sinn lediglich nach einem Balkendiagramm, daher habe ich in die Torten codetechnisch nur mal reingeschaut, aber nicht wirklich durchdrungen wie Rami aus rechteckigen Zellen Tortenstückchen macht!?
 
 ![ChartsCSS Beispiele](/post/ChartsCSS-Without-a-single-line-of-JavaScript/chartcss-samples.png)
 
-Neben diesen 5 verfügbaren Diagrammtypen sind laut Website drei weitere geplant: Radial, Polar und Radar, aber die kommen nicht wirklich in die Gänge, da das Projekt ein wenig zu stehen scheint. Ramy hat vor 6 Monaten die aktuelle Version 1.20 veröffentlicht und die vorherige stammt aus dem Jahr 2023. Das macht aber nicht viel, denn das was da ist, ist exzellent. So auch die Dokumentation unter [chartscss.org/docs](https://chartscss.org/docs/), die aufgrund der vielen Beispiele kaum Fragen offen lässt.
+Neben diesen 5 verfügbaren Diagrammtypen sind laut Website drei weitere geplant: Radial, Polar und Radar, aber die kommen nicht wirklich in die Gänge, da das Projekt ein wenig zu stehen scheint. Rami hat vor 6 Monaten die aktuelle Version 1.20 veröffentlicht und die vorherige stammt aus dem Jahr 2023. Das macht aber nicht viel, denn das was da ist, ist exzellent. So auch die Dokumentation unter [chartscss.org/docs](https://chartscss.org/docs/), die aufgrund der vielen Beispiele kaum Fragen offen lässt.
 
 ## Fazit
 
