@@ -26,6 +26,9 @@ syndication:
     url: https://github.com/kristofzerbe/kiko.io/issues/26
   - host: Mastodon
     url: https://indieweb.social/@kiko/115877386686468659
+  - host: Pixelfed
+    title: Chilling
+    url: https://pixelfed.social/p/kristofz/916323321803686938
 ---
 
 Every now and then, when my sweetheart and I go on a day trip in the region, I sling my camera over my shoulder in the hope of capturing a beautiful scene or two. Last year was no exception. Often, however, I don't get around to reviewing and editing the photos, but I have now caught up on three events from 2025. Enjoy...
