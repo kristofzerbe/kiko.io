@@ -20,7 +20,7 @@ syndication:
     url: https://indieweb.social/@kiko/111954207446583586
   - host: Pixelfed
     url: https://pixelfed.social/p/kristofz/664916612053494499
-  - host: Peertube
+  - host: PeerTube
     url: https://clip.place/w/quf3PWpmKJjRwm89axBLY2
 ---
 

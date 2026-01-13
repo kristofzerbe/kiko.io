@@ -20,7 +20,7 @@ related:
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/111919986554554676
-  - host: Peertube
+  - host: PeerTube
     url: https://clip.place/w/1rYe46Pze3kWAUMYbXgGHt
 ---
 

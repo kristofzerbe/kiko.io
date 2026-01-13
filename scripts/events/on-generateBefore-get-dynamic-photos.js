@@ -208,6 +208,14 @@ hexo.on('generateBefore', function() {
     } else {
       photo.hasCustomName = !photo.meta.custom.file.startsWith(photo.meta.custom.name)
     }
+
+    if (photo.meta.custom.links) {
+      photo.syndication = photo.meta.custom.links
+        .filter(l => l.url.length > 0)
+        .map(l => { 
+          return { host: l.site.charAt(0).toUpperCase() + l.site.slice(1), url: l.url }
+      });
+    }
     
     if (photo.meta.custom.box) {
       photo.boxlink = "/" + path.join(config.photo_dir, "boxes", slugify(photo.meta.custom.box));

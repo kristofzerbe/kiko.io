@@ -5,6 +5,7 @@
   "scripts": {
     "build": "grunt && hexo generate && npx pagefind",
     "generate": "grunt && hexo generate",
+    "genwarning": "npx cross-env NODE_OPTIONS=--trace-deprecation hexo generate",
     "start": "grunt && hexo generate && npx pagefind && hexo server",
     "refresh": "hexo clean && hexo generate",
     "go": "hexo generate && hexo server",

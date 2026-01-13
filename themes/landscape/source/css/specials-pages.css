@@ -398,10 +398,18 @@ activity-graph {
 }
 
 .charts-wrapper .charts-css {
-  font-size: var(--font-size-small) !important;
+  font-size: var(--font-size-medium) !important;
 }
-.charts-wrapper .charts-css.bar {
+.charts-wrapper #years-chart.charts-css.bar {
   --labels-size: 48px;
+}
+.charts-wrapper #syndication-chart.charts-css.bar {
+  --labels-size: 120px;
+  margin: 0;
+}
+
+.charts-wrapper .charts-css * {
+    box-sizing: content-box;
 }
 
 .charts-wrapper .charts-css tr:nth-child(2n) {
@@ -423,7 +431,32 @@ activity-graph {
 .charts-wrapper .charts-css.bar tbody tr td {
   color: #fff;
   padding: calc(var(--space-thin) / 2) var(--space-small);  
+  min-height: unset;
+  height: auto;
 }
+
+.charts-wrapper #syndication-chart tr[data-key] th small {
+  line-height: 2rem;
+  font-weight: var(--font-weight-bold);
+  padding-left: var(--space-narrow);
+}
+.charts-wrapper #syndication-chart tr[data-key] th::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background-repeat: no-repeat;
+}
+.charts-wrapper #syndication-chart tr[data-key="Mastodon"] th::before { background-image: var(--brand-mastodon); }
+.charts-wrapper #syndication-chart tr[data-key="Pixelfed"] th::before { background-image: var(--brand-pixelfed); }
+.charts-wrapper #syndication-chart tr[data-key="Flickr"] th::before { background-image: var(--brand-flickr); }
+.charts-wrapper #syndication-chart tr[data-key="500px"] th::before { background-image: var(--brand-500px); }
+.charts-wrapper #syndication-chart tr[data-key="Vernissage"] th::before { background-image: var(--brand-vernissage); }
+.charts-wrapper #syndication-chart tr[data-key="Unsplash"] th::before { background-image: var(--brand-unsplash); }
+.charts-wrapper #syndication-chart tr[data-key="GitHub"] th::before { background-image: var(--brand-github); }
+.charts-wrapper #syndication-chart tr[data-key="DevTo"] th::before { background-image: var(--brand-devto); }
+.charts-wrapper #syndication-chart tr[data-key="Lemmy"] th::before { background-image: var(--brand-lemmy); }
+.charts-wrapper #syndication-chart tr[data-key="PeerTube"] th::before { background-image: var(--brand-peertube); }
+.charts-wrapper #syndication-chart tr[data-key="IndieNews"] th::before { background-image: var(--brand-indienews); }
 
 .charts-wrapper .charts-css.bar span.data {
   white-space: nowrap;
@@ -459,8 +492,8 @@ activity-graph {
   width: var(--space-median) !important;
 }
 
-.charts-wrapper .charts-css.bar tbody tr td.articles,
-.charts-wrapper .charts-css.legend li.articles::before {
+.charts-wrapper .charts-css.bar tbody tr td,
+.charts-wrapper .charts-css.legend li::before {
   background-color: var(--color-accent) !important;
 }
 .charts-wrapper .charts-css.bar tbody tr td.notes,

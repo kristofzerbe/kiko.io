@@ -17,11 +17,11 @@ related:
 syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/112721578144616749
-  - host: Peertube
+  - host: PeerTube
     url: https://clip.place/w/quYThv6qBKtDc6jQznZ3Gr
-  - host: Peertube
+  - host: PeerTube
     url: https://clip.place/w/bJPavT541HfmVeMXbqCqnR
-  - host: Peertube
+  - host: PeerTube
     url: https://clip.place/w/sVfGfnb9uHfp4qs2io4T4V
 ---
 

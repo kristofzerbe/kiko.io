@@ -41,7 +41,7 @@
   </section>
 
   <div class="charts-wrapper" style="z-index: 2">
-    <table class="charts-css bar show-labels data-spacing-5 multiple stacked">
+    <table id="years-chart" class="charts-css bar show-labels data-spacing-5 multiple stacked">
       <thead>
         <tr>
           <th scope="col">Year</th>
@@ -97,6 +97,29 @@
     <span>reserved</span> for specific new pages. The remaining 
     <b><%= page.data.counts.photos.unused.shed %></b> photos are stored in the 
     <span>shed</span> for publication via syndication.
+  </section>
+
+  <section class="charts-wrapper">
+    <h2>Syndications</h2>
+    <table id="syndication-chart" class="charts-css bar show-labels data-spacing-5">
+      <thead>
+        <tr>
+          <th scope="col">Host</th>
+          <th scope="col">Syndications</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% let syn = Object.entries(page.data.lists.syndicationHostCount).sort(([,va],[,vb]) => vb-va); %>
+      <% syn.forEach(([key, value]) => { %>
+        <tr data-key="<%= key %>">
+          <th scope="row"><small><%= key %></small></th>
+          <td style="--size: calc(<%= value %>/<%= syn[0][1] + 50 %>);">
+            <span class="data"><%= value %></span>
+          </td>
+        </tr>
+      <% }); %>
+      </tbody>
+    </table>
   </section>
 
   <section class="stats">

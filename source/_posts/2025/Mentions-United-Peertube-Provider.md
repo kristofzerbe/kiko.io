@@ -48,7 +48,7 @@ As always, the data for the plugin, i.e. the video URLs, are in the frontmatter 
 
 ```yaml
 syndication:
-  - host: Peertube
+  - host: PeerTube
     url: https://clip.place/w/quf3PWpmKJjRwm89axBLY2
 ```
 

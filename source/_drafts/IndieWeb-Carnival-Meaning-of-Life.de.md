@@ -25,7 +25,7 @@ bandcamp:
   track: Badon|1757217712
 ---
 
-Ich nehme nicht oft am [IndieWeb Carnival](https://indieweb.org/IndieWeb_Carnival) teil. Das letzte mal im November 2024 mit meinem Beitrag [Du wirst nie wissen wessen Schmetterling Du warst](/post/You-will-never-know-whose-butterfly-you-were/de) zum Thema "Impact". Ich sollte es vielleicht öfter tun, denn es ist wirklich spannend Posts anderer Leute zum gleichen Thema zu lesen. Andere Meinung sind neue Perspektiven. 
+Ich nehme nicht oft am [IndieWeb Carnival](https://indieweb.org/IndieWeb_Carnival) teil. Das letzte mal im November 2024 mit meinem Beitrag [Du wirst nie wissen wessen Schmetterling Du warst](/post/You-will-never-know-whose-butterfly-you-were/de) zum Thema "Impact". Ich sollte es vielleicht öfter tun, denn es ist wirklich spannend Posts anderer Leute zum gleichen Thema zu lesen. Andere Meinung sind neue Perspektiven.
 
 Das Thema diesen Monat von [Jeremiah](https://www.jeremiahlee.com/) hat mich diesmal richtig getriggert und ich denke schon seit Tagen darüber nach ... [**The Meaning of Life**](https://www.jeremiahlee.com/posts/2026-01-indieweb-carnival/) ... und hier sind meine 5 Cent dazu.
 
