@@ -369,7 +369,15 @@ activity-graph {
   padding-inline: var(--space-normal); 
 }
 
+.activity-graph-wrapper figure {
+  direction: rtl;
+}
+.activity-graph-wrapper figure table {
+  direction: ltr;
+  margin-right: var(--space-small);
+}
 .activity-graph-wrapper figcaption { 
+  direction: ltr;
   padding-block-end: var(--space-medium);
 }
 
@@ -457,6 +465,13 @@ activity-graph {
 .charts-wrapper #syndication-chart tr[data-key="Lemmy"] th::before { background-image: var(--brand-lemmy); }
 .charts-wrapper #syndication-chart tr[data-key="PeerTube"] th::before { background-image: var(--brand-peertube); }
 .charts-wrapper #syndication-chart tr[data-key="IndieNews"] th::before { background-image: var(--brand-indienews); }
+[data-theme=dark] .charts-wrapper #syndication-chart tr[data-key="500px"] th::before,
+[data-theme=dark] .charts-wrapper #syndication-chart tr[data-key="Unsplash"] th::before,
+[data-theme=dark] .charts-wrapper #syndication-chart tr[data-key="GitHub"] th::before,
+[data-theme=dark] .charts-wrapper #syndication-chart tr[data-key="DevTo"] th::before { filter: invert(1); }
+[data-theme=dark] .charts-wrapper #syndication-chart tr[data-key="Pixelfed"] th::before { background-image: var(--brand-pixelfed-invert); }
+[data-theme=dark] .charts-wrapper #syndication-chart tr[data-key="Vernissage"] th::before { background-image: var(--brand-vernissage-invert); }
+[data-theme=dark] .charts-wrapper #syndication-chart tr[data-key="PeerTube"] th::before { background-image: var(--brand-peertube-invert); }
 
 .charts-wrapper .charts-css.bar span.data {
   white-space: nowrap;
@@ -500,7 +515,7 @@ activity-graph {
 .charts-wrapper .charts-css.legend li.notes::before {
   background-color: var(--color-accent-text-near) !important;
 }
-:root[data-theme="dark"] .charts-wrapper .charts-css.bar tbody tr td.articles,
-:root[data-theme="dark"] .charts-wrapper .charts-css.legend li.articles::before {
+:root[data-theme="dark"] .charts-wrapper .charts-css.bar tbody tr td,
+:root[data-theme="dark"] .charts-wrapper .charts-css.legend li::before {
   background-color: var(--color-accent-median) !important;
 }
