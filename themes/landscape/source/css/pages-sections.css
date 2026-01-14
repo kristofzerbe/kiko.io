@@ -529,7 +529,7 @@
     width: 1.5rem;
     height: 1.5rem;
     float: left;
-    margin-left: -2rem;
+    margin-left: calc(var(--space-normal) * -1);
     margin-top: var(--space-narrow);
     transition: all ease-out .2s;
 }
@@ -547,17 +547,16 @@
 
 /* ------------------------------------------------------- */
 
-.page-content section.stats {
-  line-height: 2.5rem;
-  /* padding-inline: var(--space-normal) !important;
-  padding-block: var(--space-default) !important; */
+.page-content section.stats,
+.page-content section.stats p {
+  line-height: var(--line-height-title);
 }
 
 .page-content section.stats b,
 .page-content section.stats i,
 .page-content section.stats a {
   display: inline;
-  margin-inline: 0.25rem;
+  margin-inline: var(--space-thin);
   white-space: nowrap;
   border-radius: var(--border-radius-small);
 }
@@ -568,32 +567,30 @@
   color: var(--color-logo);
 }
 .page-content section.stats b {
-  font-size: 1.25rem;
   background-color: var(--color-accent);
 }
 :root[data-theme="dark"] .page-content section.stats b {
   background-color: var(--color-accent-median);
 }
-.page-content section.stats span {
+.page-content section.stats em {
+  font-style: normal;
   font-weight: bold;
 }
-.page-content section.stats span,
+.page-content section.stats em,
 .page-content section.stats i,
 .page-content section.stats a {
-  font-size: 1.125rem;
+  font-size: var(--font-size-extra);
 }
 .page-content section.stats i {
   background-color: var(--color-accent-text-near);
-  padding-top: 0.25rem;
+  padding-top: var(--space-thin);
 }
 .page-content section.stats a {
   font-weight: var(--font-weight-extrabold);
 }
 @media screen and (max-width:479px) { 
   .page-content section.stats {
-    line-height: 2.25rem;
-    /* padding-inline: var(--space-moderate) !important;
-    padding-block: var(--space-medium) !important; */
+    line-height: var(--line-height-title);
   }
   .page-content section.stats b,
   .page-content section.stats i,
@@ -602,12 +599,12 @@
     margin-inline: var(--space-thin);
   }
   .page-content section.stats b {
-    font-size: 1.1rem;
+    font-size: var(--font-size-normal);
   }
-  .page-content section.stats span {
+  .page-content section.stats em {
     font-weight: bold;
   }
-  .page-content section.stats span,
+  .page-content section.stats em,
   .page-content section.stats i,
   .page-content section.stats a {
     font-size: 1rem;

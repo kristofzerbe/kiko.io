@@ -19,25 +19,25 @@
 
   <section class="stats" style="z-index: 3">
     <h2>Posts</h2>
-    <b><%= page.data.times.periodBetweenFirstLastPost.years %></b><span>years</span>,
-    <b><%= page.data.times.periodBetweenFirstLastPost.months %></b><span>months</span> and 
-    <b><%= page.data.times.periodBetweenFirstLastPost.days %></b><span>days</span> or a total of 
-    <b><%= page.data.times.daysBetweenFirstLastPost %></b><span>days</span> have passed between my 
+    <b><%= page.data.times.periodBetweenFirstLastPost.years %></b><em>years</em>,
+    <b><%= page.data.times.periodBetweenFirstLastPost.months %></b><em>months</em> and 
+    <b><%= page.data.times.periodBetweenFirstLastPost.days %></b><em>days</em> or a total of 
+    <b><%= page.data.times.daysBetweenFirstLastPost %></b><em>days</em> have passed between my 
     <a href="/<%= page.data.times.firstPost.path %>" title="<%= page.data.times.firstPost.title %>">first post</a> on 
     <i><%= page.data.times.firstPost.dateFormat %></i> and the 
     <a href="/<%= page.data.times.lastPost.path %>" title="<%= page.data.times.lastPost.title %>">last one</a> 
-    <b><%= page.data.times.daysSinceLastPost %></b><span>days ago</span>.
+    <b><%= page.data.times.daysSinceLastPost %></b><em>days ago</em>.
     <br><br>
     During this period I've written 
-    <b><%= page.data.counts.articles %></b><span>articles</span> in 
-    <b><%= page.data.counts.categories %></b><span>categories</span> with 
-    <b><%= page.data.counts.tags %></b><span>tags</span> and published 
-    <b><%= page.data.counts.notes %></b><span>notes</span>.
+    <b><%= page.data.counts.articles %></b><em>articles</em> in 
+    <b><%= page.data.counts.categories %></b><em>categories</em> with 
+    <b><%= page.data.counts.tags %></b><em>tags</em> and published 
+    <b><%= page.data.counts.notes %></b><em>notes</em>.
     <br><br>
-    <b><%= page.data.counts.series.articles %></b><span>articles</span> belong to one of a total of 
-    <b><%= page.data.counts.series.count %></b><span>series</span> and 
-    <b><%= page.data.counts.projects.articles %></b><span>articles</span> to one of the   
-    <b><%= page.data.counts.projects.count %></b><span>projects</span> I maintain.
+    <b><%= page.data.counts.series.articles %></b><em>articles</em> belong to one of a total of 
+    <b><%= page.data.counts.series.count %></b><em>series</em> and 
+    <b><%= page.data.counts.projects.articles %></b><em>articles</em> to one of the   
+    <b><%= page.data.counts.projects.count %></b><em>projects</em> I maintain.
   </section>
 
   <div class="charts-wrapper" style="z-index: 2">
@@ -88,19 +88,24 @@
   <section class="stats">
     <h2>Photos</h2>
     In between, I published 
-    <b><%= page.data.counts.boxes %></b><span>photo boxes</span> and 
-    <b><%= page.data.counts.photos.total %></b><span>photos in total</span>.<br> 
-    For all my pages, I <span>used</span> <b><%= page.data.counts.photos.used.total %></b> 
+    <b><%= page.data.counts.boxes %></b><em>photo boxes</em> and 
+    <b><%= page.data.counts.photos.total %></b><em>photos in total</em>.<br> 
+    For all my pages, I <em>used</em> <b><%= page.data.counts.photos.used.total %></b> 
     of them as individual header photos and have set aside 
-    <b><%= page.data.counts.photos.unused.pool %></b> as <span>pool</span> photos for future articles. 
+    <b><%= page.data.counts.photos.unused.pool %></b> as <em>pool</em> photos for future articles. 
     <b><%= page.data.counts.photos.unused.reserve %></b> more are already 
-    <span>reserved</span> for specific new pages. The remaining 
+    <em>reserved</em> for specific new pages. The remaining 
     <b><%= page.data.counts.photos.unused.shed %></b> photos are stored in the 
-    <span>shed</span> for publication via syndication.
+    <em>shed</em> for publication via syndication.
   </section>
 
-  <section class="charts-wrapper">
+  <section class="charts-wrapper stats">
     <h2>Syndications</h2>
+    <p>
+      <b><%= page.data.counts.syndications.posts %></b><em>posts</em> and 
+      <b><%= page.data.counts.syndications.photos %></b><em>photos</em> are 
+      syndicated to following platforms:
+    </p>
     <table id="syndication-chart" class="charts-css bar show-labels data-spacing-5">
       <thead>
         <tr>
@@ -125,9 +130,9 @@
   <section class="stats">
     <h2>Other</h2>
     Furthermore I collected 
-    <b><%= page.data.counts.tinytools %></b><span>Tiny Tools</span>, added 
-    <b><%= page.data.counts.blogroll %></b><span>authors</span> to my <span>blogroll</span> and went to 
-    <b><%= page.data.counts.concerts %></b><span>concerts</span>.
+    <b><%= page.data.counts.tinytools %></b><em>Tiny Tools</em>, added 
+    <b><%= page.data.counts.blogroll %></b><em>authors</em> to my <em>blogroll</em> and went to 
+    <b><%= page.data.counts.concerts %></b><em>concerts</em>.
   </section>
 
 </div>
