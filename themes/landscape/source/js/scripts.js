@@ -330,6 +330,8 @@ function setAccentColor(hex) {
   let theme = document.documentElement.getAttribute("data-theme");
   let hexText;
   let hexTextNear;
+  let hexMedian;
+  let hexCon;
 
   if (theme === "dark") { 
     hex = tinycolor(hex).darken(10).toHexString();
@@ -341,12 +343,14 @@ function setAccentColor(hex) {
     hexTextNear = tinycolor(hex).brighten(30).toHexString();
     hexMedian = tinycolor(hex).brighten(45).toHexString();
   }
+  hexCon = tinycolor(hex).complement().toHexString();
 
   root = document.querySelector(':root');
   root.style.setProperty("--color-accent", hex);
   root.style.setProperty("--color-accent-text", hexText);
   root.style.setProperty("--color-accent-text-near", hexTextNear);
   root.style.setProperty("--color-accent-median", hexMedian);
+  root.style.setProperty("--color-accent-con", hexCon);
 
   document.querySelector('meta[name="theme-color"]').setAttribute("content", hex);
 }
