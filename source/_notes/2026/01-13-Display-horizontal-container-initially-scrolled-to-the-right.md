@@ -6,7 +6,11 @@ syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/115892268584356693
 ---
-On my [/stats](/stats) page, I used the wonderful web component [activity-graph](https://mariohamann.github.io/activity-graph/) to implement an Activity Graph that displays my posts over the entire lifetime of my blog. Now, as is common in Western cultures, the graph starts on the left side and is displayed horizontally. This means that the most recent and interesting entries are on the very right, and you have to scroll to the end to see them. The question was how to make the graph display directly scrolled to the far right at the start, and the solution is quite simple and uses the component's various HTML levels:
+On my [/stats](/stats) page, I used the wonderful web component [activity-graph](https://mariohamann.github.io/activity-graph/) to implement an Activity Graph that displays my posts over the entire lifetime of my blog. 
+
+Now, as is common in Western cultures, the graph starts on the left side and is displayed horizontally. This means that the most recent and interesting entries are on the very right, and you have to scroll to the end to see them.
+
+The question was how to make the graph display directly scrolled to the far right at the start, and the solution is quite simple and uses the component's various HTML levels:
 
 ```html
 <div class="activity-graph-wrapper">

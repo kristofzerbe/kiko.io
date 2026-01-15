@@ -19,25 +19,29 @@
 
   <section class="stats" style="z-index: 3">
     <h2>Posts</h2>
-    <b><%= page.data.times.periodBetweenFirstLastPost.years %></b><em>years</em>,
-    <b><%= page.data.times.periodBetweenFirstLastPost.months %></b><em>months</em> and 
-    <b><%= page.data.times.periodBetweenFirstLastPost.days %></b><em>days</em> or a total of 
-    <b><%= page.data.times.daysBetweenFirstLastPost %></b><em>days</em> have passed between my 
-    <a href="/<%= page.data.times.firstPost.path %>" title="<%= page.data.times.firstPost.title %>">first post</a> on 
-    <i><%= page.data.times.firstPost.dateFormat %></i> and the 
-    <a href="/<%= page.data.times.lastPost.path %>" title="<%= page.data.times.lastPost.title %>">last one</a> 
-    <b><%= page.data.times.daysSinceLastPost %></b><em>days ago</em>.
-    <br><br>
-    During this period I've written 
-    <b><%= page.data.counts.articles %></b><em>articles</em> in 
-    <b><%= page.data.counts.categories %></b><em>categories</em> with 
-    <b><%= page.data.counts.tags %></b><em>tags</em> and published 
-    <b><%= page.data.counts.notes %></b><em>notes</em>.
-    <br><br>
-    <b><%= page.data.counts.series.articles %></b><em>articles</em> belong to one of a total of 
-    <b><%= page.data.counts.series.count %></b><em>series</em> and 
-    <b><%= page.data.counts.projects.articles %></b><em>articles</em> to one of the   
-    <b><%= page.data.counts.projects.count %></b><em>projects</em> I maintain.
+    <p>
+      <b><%= page.data.times.periodBetweenFirstLastPost.years %></b><em>years</em>,
+      <b><%= page.data.times.periodBetweenFirstLastPost.months %></b><em>months</em> and 
+      <b><%= page.data.times.periodBetweenFirstLastPost.days %></b><em>days</em> or a total of 
+      <b><%= page.data.times.daysBetweenFirstLastPost %></b><em>days</em> have passed between my 
+      <a href="/<%= page.data.times.firstPost.path %>" title="<%= page.data.times.firstPost.title %>">first post</a> on 
+      <i><%= page.data.times.firstPost.dateFormat %></i> and the 
+      <a href="/<%= page.data.times.lastPost.path %>" title="<%= page.data.times.lastPost.title %>">last one</a> 
+      <b><%= page.data.times.daysSinceLastPost %></b><em>days ago</em>.
+    </p>
+    <p>
+      During this period I've written 
+      <b><%= page.data.counts.articles %></b><em>articles</em> in 
+      <b><%= page.data.counts.categories %></b><em>categories</em> with 
+      <b><%= page.data.counts.tags %></b><em>tags</em> and published 
+      <b><%= page.data.counts.notes %></b><em>notes</em>.
+    </p>
+    <p>
+      <b><%= page.data.counts.series.articles %></b><em>articles</em> belong to one of a total of 
+      <b><%= page.data.counts.series.count %></b><em>series</em> and 
+      <b><%= page.data.counts.projects.articles %></b><em>articles</em> to one of the   
+      <b><%= page.data.counts.projects.count %></b><em>projects</em> I maintain.
+    </p>
   </section>
 
   <div class="charts-wrapper" style="z-index: 2">
@@ -45,8 +49,8 @@
       <thead>
         <tr>
           <th scope="col">Year</th>
-          <th scope="col" class="articles">Articles</th>
-          <th scope="col" class="notes">Notes</th>
+          <th scope="col">Articles</th>
+          <th scope="col">Notes</th>
         </tr>
       </thead>
       <tbody>
@@ -54,12 +58,12 @@
         <tr>
           <th scope="row"><%= key %></th>
           <% if (value.articles > 0) { %>
-          <td class="articles" style="--size: calc(<%= value.articles %>/100);">
+          <td style="--size: calc(<%= value.articles %>/100);">
             <span class="data"><%= value.articles %></span>
           </td>
           <% } %>
           <% if (value.notes > 0) { %>
-          <td class="notes" style="--size: calc(<%= value.notes %>/100);">
+          <td class="secondary" style="--size: calc(<%= value.notes %>/100);">
             <span class="data"><%= value.notes %></span>
           </td>
           <% } %>
@@ -68,8 +72,8 @@
       </tbody>
     </table>
     <ul class="charts-css legend legend-inline legend-square">
-      <li class="articles">Articles</li>
-      <li class="notes">Notes</li>
+      <li>Articles</li>
+      <li class="secondary">Notes</li>
     </ul>
   </div>
 
@@ -87,16 +91,18 @@
 
   <section class="stats">
     <h2>Photos</h2>
-    In between, I published 
-    <b><%= page.data.counts.boxes %></b><em>photo boxes</em> and 
-    <b><%= page.data.counts.photos.total %></b><em>photos in total</em>.<br> 
-    For all my pages, I <em>used</em> <b><%= page.data.counts.photos.used.total %></b> 
-    of them as individual header photos and have set aside 
-    <b><%= page.data.counts.photos.unused.pool %></b> as <em>pool</em> photos for future articles. 
-    <b><%= page.data.counts.photos.unused.reserve %></b> more are already 
-    <em>reserved</em> for specific new pages. The remaining 
-    <b><%= page.data.counts.photos.unused.shed %></b> photos are stored in the 
-    <em>shed</em> for publication via syndication.
+    <p>
+      In between, I published 
+      <b><%= page.data.counts.boxes %></b><em>photo boxes</em> and 
+      <b><%= page.data.counts.photos.total %></b><em>photos in total</em>.<br> 
+      For all my pages, I <em>used</em> <b><%= page.data.counts.photos.used.total %></b> 
+      of them as individual header photos and have set aside 
+      <b><%= page.data.counts.photos.unused.pool %></b> as <em>pool</em> photos for future articles. 
+      <b><%= page.data.counts.photos.unused.reserve %></b> more are already 
+      <em>reserved</em> for specific new pages. The remaining 
+      <b><%= page.data.counts.photos.unused.shed %></b> photos are stored in the 
+      <em>shed</em> for publication via syndication.
+    </p>
   </section>
 
   <section class="charts-wrapper stats">
