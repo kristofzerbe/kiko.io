@@ -1,7 +1,7 @@
 ---
 slug: Colophon-Imaging
 title: Colophon - Imaging
-subtitle:
+subtitle: Part Five in completing my colophon
 date: 2025-04-19 19:45:24
 photograph:
   file: D70_3480.jpg
@@ -20,15 +20,6 @@ syndication:
     url: null
 ---
 
-{% alertbox info %}
-This is the fifth post in completing my [colophon](/Colophon).
-{% endalertbox %}
-
-... INTRO
-
----
-
-## XXX
 
 <!-- more -->
 

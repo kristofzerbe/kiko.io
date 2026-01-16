@@ -1,7 +1,7 @@
 ---
 slug: Colophon-Integrations-Privacy
 title: Colophon - Integrations & Privacy
-subtitle:
+subtitle: Part Six in completing my colophon
 date: 2025-04-19 19:47:30
 photograph:
   file: 23-05-Holland-0707.jpg
@@ -20,14 +20,5 @@ syndication:
     url: null
 ---
 
-{% alertbox info %}
-This is the sixth post in completing my [colophon](/Colophon).
-{% endalertbox %}
-
-... INTRO
-
----
-
-## XXX
 
 <!-- more -->

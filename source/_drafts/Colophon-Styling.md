@@ -1,7 +1,7 @@
 ---
 slug: Colophon-Styling
 title: Colophon - Styling
-subtitle:
+subtitle: Part Seven in completing my colophon
 date: 2025-04-19 19:41:28
 photograph:
   file: 24-05-Wales-7490.jpg
@@ -20,14 +20,5 @@ syndication:
     url: null
 ---
 
-{% alertbox info %}
-This is the seventh post in completing my [colophon](/Colophon).
-{% endalertbox %}
-
-... INTRO
-
----
-
-## XXX
 
 <!-- more -->
