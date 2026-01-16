@@ -1,7 +1,7 @@
 ---
 slug: Colophon-Writing
 title: Colophon - Writing
-subtitle:
+subtitle: Part Three in completing my colophon
 date: 2025-05-29 19:42:12
 photograph:
   file: 23-05-Holland-0453.jpg
@@ -21,14 +21,6 @@ syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/114592849975633469
 ---
-
-{% alertbox info %}
-This is the third post in completing my [colophon](/Colophon).
-{% endalertbox %}
-
----
-
-## Writing
 
 I write my posts mainly in my favorite editor, [**Visual Studio Code**](https://code.visualstudio.com/), where I also develop all infrastructure code related to my SSG Hexo. This is the only place where I can start the whole thing and see if it works. The only exception is Android on my smartphone, as there is no reasonable VS Code-like solution for this. Here, I switch to [**Obsidian**](https://obsidian.md/), my central knowledge base. All drafts and posts that have already been created are automatically synchronized to my Obsidian vault, which also lives on OneDrive, using [**SyncBack Pro**](https://www.2brightsparks.com/syncback/sbpro.html) whenever changes are made. On Android, [**OneSync**](https://play.google.com/store/apps/details?id=com.ttxapps.onesyncv2) takes care of this job. This means that I also have everything automatically on my smartphone.
 

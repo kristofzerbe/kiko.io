@@ -2,6 +2,11 @@
   <%- partial('_partial/photograph') %>
 <% } %>
 
+<script>
+  var body = document.getElementById("body");
+  body.classList.add("note-view");
+</script>
+
 <article id="note-<%= page.slug %>" data-pagefind-meta="type:Note"
          class="article note h-entry <%= (page.rel?.verb) && "rel" %>">
 

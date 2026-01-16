@@ -1,7 +1,7 @@
 ---
 slug: Colophon-Special-Pages
 title: Colophon - Special Pages
-subtitle:
+subtitle: Part Four in completing my colophon
 date: 2025-07-29 17:34:50
 photograph:
   file: 22-08-Bretagne-Jersey-0210.jpg
@@ -21,10 +21,6 @@ syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/114937732276245938
 ---
-
-{% alertbox info %}
-This is the fourth post in completing my [colophon](/Colophon).
-{% endalertbox %}
 
 Of course, a blog is primarily intended for publishing articles, but to offer added value, these websites usually consist not only of the article pages themselves, but also of index pages, search pages, and other features, depending on the whims of the author and website developer. This site also has these special pages, which I will explain in this issue of my short series.
 

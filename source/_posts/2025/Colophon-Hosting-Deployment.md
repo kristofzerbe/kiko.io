@@ -1,7 +1,7 @@
 ---
 slug: Colophon-Hosting-Deployment
 title: Colophon - Hosting & Deployment
-subtitle: 
+subtitle: Part Two in completing my colophon
 date: 2025-05-02 18:04:00
 photograph:
   file: DSC_9332.jpg
@@ -21,14 +21,6 @@ syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/114439959438360765
 ---
-
-{% alertbox info %}
-This is the second post in completing my [colophon](/Colophon).
-{% endalertbox %}
-
----
-
-## Hosting
 
 I host the entire blog publicly on [**GitHub**](https://github.com/kristofzerbe/kiko.io) and thus commit every change, be it a code adjustment or a new post. Web hosting is handled by [**GitHub Pages**](https://pages.github.com/) via the address [https://kristofzerbe.github.io/kiko.io](https://kristofzerbe.github.io/kiko.io), to which I have bound my domain kiko.io via DNS entries.
 

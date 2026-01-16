@@ -35,7 +35,7 @@
           <a class="rss" href="<%= item.feed %>">
             <% if (item.feedLength) { %>
             <small title="<%= item.feedSize %>"><%= item.feedLength %> Posts</small>
-            <% } %>
+            <% } else { %>&nbsp;<% } %>
           </a>
         </div>
         <% if (item.latest_post?.url) { %>

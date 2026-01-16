@@ -132,7 +132,7 @@ var dpDialog = {
     secJSONLD.append($(tPerson));
 
     let secCode = $('<section></section>').appendTo(dpDialog.base.content);
-    secCode.append('<h1>JSON-LD</h1>');
+    secCode.append('<h5 style="margin-bottom: 1rem;">JSON-LD</h5>');
     secCode.append('<pre class="json">' + syntaxHighlight(JSON.stringify(json, undefined, 2))) + '</pre>';
 
     dpDialog.base.show();
