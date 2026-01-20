@@ -35,6 +35,12 @@ syndication:
   - host: Pixelfed
     title: Kaja
     url: https://pixelfed.social/p/kristofz/918070385393224935
+  - host: Pixelfed
+    title: Roman
+    url: https://pixelfed.social/p/kristofz/919194360818474577
+  - host: Pixelfed
+    title: Birds
+    url: https://pixelfed.social/p/kristofz/919193890541264176
 ---
 
 Every now and then, when my sweetheart and I go on a day trip in the region, I sling my camera over my shoulder in the hope of capturing a beautiful scene or two. Last year was no exception. Often, however, I don't get around to reviewing and editing the photos, but I have now caught up on three events from 2025. Enjoy...
