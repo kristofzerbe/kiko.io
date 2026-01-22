@@ -363,10 +363,7 @@ activity-graph {
 }
 
 .activity-graph-wrapper {
-  position: relative;
-  margin-block: calc(var(--space-extra) * -1) var(--space-default);
-  padding-block: var(--space-normal) var(--space-default);
-  padding-inline: var(--space-normal); 
+  padding-bottom: var(--space-moderate) !important;
 }
 
 .activity-graph-wrapper figure {
@@ -378,7 +375,7 @@ activity-graph {
 }
 .activity-graph-wrapper figcaption { 
   direction: ltr;
-  padding-block-end: var(--space-medium);
+  padding-block-end: var(--space-small);
 }
 
 .activity-graph-wrapper table tr td,
@@ -406,14 +403,10 @@ activity-graph {
 }
 
 .charts-wrapper .charts-css {
-  font-size: var(--font-size-medium) !important;
+  font-size: var(--font-size-code);
 }
-.charts-wrapper #years-chart.charts-css.bar {
-  --labels-size: 48px;
-}
-.charts-wrapper #syndication-chart.charts-css.bar {
-  --labels-size: 120px;
-  margin: 0;
+.charts-wrapper .charts-css.bar {
+  margin-block-end: 0;
 }
 
 .charts-wrapper .charts-css * {
@@ -423,7 +416,7 @@ activity-graph {
 .charts-wrapper .charts-css tr:nth-child(2n) {
   background: unset;
 }
-.charts-wrapper .charts-css tr th, 
+.charts-wrapper .charts-css tr th,
 .charts-wrapper .charts-css tr td {
   padding: unset;
   font-weight: unset;
@@ -436,6 +429,9 @@ activity-graph {
     --data-position: center;
   }
 }
+.charts-wrapper .charts-css tr th {
+  font-weight: var(--font-weight-bold);
+} 
 .charts-wrapper .charts-css.bar tbody tr td {
   color: #fff;
   padding: calc(var(--space-thin) / 2) var(--space-small);  
@@ -445,13 +441,13 @@ activity-graph {
 
 .charts-wrapper #syndication-chart tr[data-key] th small {
   line-height: 2rem;
-  font-weight: var(--font-weight-bold);
   padding-left: var(--space-narrow);
 }
 .charts-wrapper #syndication-chart tr[data-key] th::before {
     content: "";
     width: 14px;
     height: 14px;
+    padding-right: 18px;
     background-repeat: no-repeat;
 }
 .charts-wrapper #syndication-chart tr[data-key="Mastodon"] th::before { background-image: var(--brand-mastodon); }
@@ -489,8 +485,10 @@ activity-graph {
 .charts-wrapper .charts-css.legend {
   border: none !important;
   width: auto;
-  padding: 0 !important;
+  padding: 0;
+  margin: 0;
   justify-content: center;
+  font-size: var(--font-size-code);
 }
 @media screen and (max-width:479px) {
   .charts-wrapper .charts-css.legend {

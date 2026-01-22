@@ -13,6 +13,28 @@ hexo.on('generateBefore', function() {
 
   const config = this.config;
 
+  const cameraUnknown = "-Unknown-";
+  const cameras = [
+    { model: "NIKON D500",        camera: "Nikon D500" },
+    { model: "NIKON D7000",       camera: "Nikon D7000" },
+    { model: "NIKON D90",         camera: "Nikon D90" },
+    { model: "D90",               camera: "Nikon D90" },
+    { model: "F301",              camera: "Nikon F301/501" },
+    { model: "F501",              camera: "Nikon F301/501" },
+    { model: "E775",              camera: "Nikon E775" },
+    { model: "E2500",             camera: "Nikon E2500" },
+    { model: "PENTAX Optio M40",  camera: "Pentax M40" },
+    { model: "OpticFilm 7500i",   camera: cameraUnknown },
+    { model: "HTC One S",         camera: "HTC One S" },
+    { model: "Canon EOS 6D",      camera: "Canon EOS 6D" },
+    { model: "H8314",             camera: "Sony H8314" },
+    { model: "F5321",             camera: "Sony F5321" },
+    { model: "Pixel 6",           camera: "Google Pixel 6/6a" },
+    { model: "Pixel 6a",          camera: "Google Pixel 6/6a" },
+    { model: "Pixel 8",           camera: "Google Pixel 8" },
+    { model: "Pixel 9a",          camera: "Google Pixel 9a" }
+  ]
+
   let pages = {};
 
   // get photos
@@ -31,6 +53,16 @@ hexo.on('generateBefore', function() {
     .sort((a, b) => a.key.localeCompare(b.key));
 
   let photosPublic = [...photos, ...pShed];
+
+  // Set Camera (Product) and Year for stats
+  photosPublic.forEach((p) => {
+    let cam = cameras.find(c => c.model === p.meta?.Model);
+    p.meta.custom.camera = cam ? cam.camera : p.meta?.Model ?? cameraUnknown;
+    p.meta.custom.year = new Date(p.meta?.DateTimeOriginal ?? p.meta?.DateCreated).getFullYear();
+    //if (!cam) {
+      // console.log(p.meta.custom.year + ", " + p.meta.custom.name + " .. " + p.meta.custom.camera + " >>> " + p.meta?.Make + "/" + p.meta?.Model);
+    //}
+  });
 
   let newestPhotoDate = new Date(Math.max(...photos.map(p => new Date(p.date))));
   // console.log(newestPhotoDate);
@@ -353,7 +385,8 @@ function getPostAndPagePhotos() {
       meta = JSON.parse(fs.readFileSync(metaFile));
     }
 
-    let post = postsAndPages.find(p => (p && !p.hidden && p.photographFile === entry.file));
+    // ... !p.hidden doesn't work for photo box Rüdesheim
+    let post = postsAndPages.find(p => (p && p.photographFile === entry.file));
     if (post) {
       entry.name = meta?.ObjectName || post.photographName;
       entry.type = post.layout;

@@ -17,7 +17,7 @@
   
   <hr class="divider" />
 
-  <section class="stats" style="z-index: 3">
+  <section class="stats" style="z-index: 9">
     <h2>Posts</h2>
     <p>
       <b><%= page.data.times.periodBetweenFirstLastPost.years %></b><em>years</em>,
@@ -44,8 +44,22 @@
     </p>
   </section>
 
-  <div class="charts-wrapper" style="z-index: 2">
-    <table id="years-chart" class="charts-css bar show-labels data-spacing-5 multiple stacked">
+  <section class="stats overlap activity-graph-wrapper" style="z-index: 8">
+    <h3>... per Activity</h3>
+    <activity-graph
+      range-start="<%= page.data.times.firstPost.dateISO %>"
+      range-end="<%= page.data.times.lastPost.dateISO %>"
+      activity-data="<%= page.data.lists.postsAll.join(",") %>"
+      activity-levels="0,1,2,4"
+      first-day-of-week="1"
+      lang="en"
+      i18n='{"activities": "posts", "less": "less", "more": "more"}'>
+    </activity-graph>
+  </section>
+
+  <section class="stats overlap charts-wrapper" style="z-index: 7">
+    <h3>... per Year</h3>
+    <table id="years-chart" class="charts-css bar show-labels data-spacing-5 multiple stacked" style="--labels-size: 50px;">
       <thead>
         <tr>
           <th scope="col">Year</th>
@@ -54,7 +68,7 @@
         </tr>
       </thead>
       <tbody>
-      <% Object.entries(page.data.lists.postsYearCount).reverse().forEach(([key, value]) => { %>
+      <% Object.entries(page.data.lists.postsPerYear).reverse().forEach(([key, value]) => { %>
         <tr>
           <th scope="row"><%= key %></th>
           <% if (value.articles > 0) { %>
@@ -75,21 +89,84 @@
       <li>Articles</li>
       <li class="secondary">Notes</li>
     </ul>
-  </div>
+  </section>
 
-  <div class="activity-graph-wrapper" style="z-index: 1">
-    <activity-graph
-      range-start="<%= page.data.times.firstPost.dateISO %>"
-      range-end="<%= page.data.times.lastPost.dateISO %>"
-      activity-data="<%= page.data.lists.postsAll.join(",") %>"
-      activity-levels="0,1,2,4"
-      first-day-of-week="1"
-      lang="en"
-      i18n='{"activities": "posts", "less": "less", "more": "more"}'>
-    </activity-graph>
-  </div>
+  <section class="stats overlap charts-wrapper" style="z-index: 6">
+    <h3>... per Category</h3>
+    <table id="categories-chart" class="charts-css bar show-labels data-spacing-5" style="--labels-size: 90px;">
+      <thead>
+        <tr>
+          <th scope="col">Category</th>
+          <th scope="col">Articles</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% let categories = Object.entries(page.data.lists.postsPerCategory).sort(([,va],[,vb]) => vb-va); %>
+      <% categories.forEach(([key, value]) => { %>
+        <tr data-key="<%= key %>">
+          <th scope="row"><%= key %></th>
+          <td style="--size: calc(<%= value %>/<%= categories[0][1] + (categories[0][1]*0.1) %>);">
+            <span class="data"><%= value %></span>
+          </td>
+        </tr>
+      <% }); %>
+      </tbody>
+    </table>
+  </section>
 
-  <section class="stats">
+  <section class="stats overlap charts-wrapper" style="z-index: 5">
+    <h3>... per Top Ten Tags</h3>
+    <table id="tags-chart" class="charts-css bar show-labels data-spacing-5" style="--labels-size: 110px;">
+      <thead>
+        <tr>
+          <th scope="col">Tag</th>
+          <th scope="col">Articles</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% let tags = Object.entries(page.data.lists.postsPerTopTenTag).sort(([,va],[,vb]) => vb-va).slice(0,10); %>
+      <% tags.forEach(([key, value]) => { %>
+        <tr data-key="<%= key %>">
+          <th scope="row"><%= key %></th>
+          <td style="--size: calc(<%= value %>/<%= tags[0][1] + (tags[0][1]*0.1) %>);">
+            <span class="data"><%= value %></span>
+          </td>
+        </tr>
+      <% }); %>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="stats charts-wrapper">
+    <h2>Syndications</h2>
+    <p>
+      I have made 
+      <b><%= page.data.counts.syndications.posts %></b> syndications of <em>posts</em> and 
+      <b><%= page.data.counts.syndications.photos %></b> of <em>photos</em>  
+      on the following platforms:
+    </p>
+    <table id="syndication-chart" class="charts-css bar show-labels data-spacing-5" style="--labels-size: 120px;">
+      <thead>
+        <tr>
+          <th scope="col">Host</th>
+          <th scope="col">Syndications</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% let syn = Object.entries(page.data.lists.syndicationsPerHost).sort(([,va],[,vb]) => vb-va); %>
+      <% syn.forEach(([key, value]) => { %>
+        <tr data-key="<%= key %>">
+          <th scope="row"><%= key %></th>
+          <td style="--size: calc(<%= value %>/<%= syn[0][1] + (syn[0][1]*0.1) %>);">
+            <span class="data"><%= value %></span>
+          </td>
+        </tr>
+      <% }); %>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="stats" style="z-index: 9">
     <h2>Photos</h2>
     <p>
       In between, I published 
@@ -105,30 +182,26 @@
     </p>
   </section>
 
-  <section class="charts-wrapper stats">
-    <h2>Syndications</h2>
-    <p>
-      I have made 
-      <b><%= page.data.counts.syndications.posts %></b> syndications of <em>posts</em> and 
-      <b><%= page.data.counts.syndications.photos %></b> of <em>photos</em>  
-      on the following platforms:
-    </p>
-    <table id="syndication-chart" class="charts-css bar show-labels data-spacing-5">
+  <section class="stats overlap charts-wrapper" style="z-index: 5">
+    <h3>... per Camera</h3>
+    <table id="tags-chart" class="charts-css bar show-labels data-spacing-5" style="--labels-size: 140px;">
       <thead>
         <tr>
-          <th scope="col">Host</th>
-          <th scope="col">Syndications</th>
+          <th scope="col">Camera</th>
+          <th scope="col">Photos</th>
         </tr>
       </thead>
       <tbody>
-      <% let syn = Object.entries(page.data.lists.syndicationHostCount).sort(([,va],[,vb]) => vb-va); %>
-      <% syn.forEach(([key, value]) => { %>
+      <% let cameras = Object.entries(page.data.lists.photosPerCamera).sort(([,va],[,vb]) => vb-va); %>
+      <% cameras.forEach(([key, value]) => { %>
+        <% if(value > 1) { %>
         <tr data-key="<%= key %>">
-          <th scope="row"><small><%= key %></small></th>
-          <td style="--size: calc(<%= value %>/<%= syn[0][1] + 50 %>);">
+          <th scope="row"><%= key %></th>
+          <td style="--size: calc(<%= value %>/<%= cameras[0][1] + (cameras[0][1]*0.1) %>);">
             <span class="data"><%= value %></span>
           </td>
         </tr>
+        <% } %>
       <% }); %>
       </tbody>
     </table>

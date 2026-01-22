@@ -9,7 +9,11 @@
   margin-top: 0;
 }
 
-.page-content section figure,
+.page-content section.overlap {
+  margin-block: calc(var(--space-extra) * -1) var(--space-default);
+}
+
+.page-content section:not(.activity-graph-wrapper) figure,
 .page-content section pre {
   margin-left: -28px !important;
   margin-right: -28px !important;
@@ -547,6 +551,11 @@
 
 /* ------------------------------------------------------- */
 
+.page-content section.stats h3 {
+    margin-block: 0;
+    font-weight: var(--font-weight-normal);
+}
+
 .page-content section.stats,
 .page-content section.stats p {
   line-height: var(--line-height-title);
@@ -772,3 +781,5 @@ section .article-footer {
     margin: calc(var(--space-medium) * -1);
   }
 }
+
+/* ------------------------------------------------------- */
