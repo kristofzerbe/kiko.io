@@ -356,20 +356,22 @@ function getPostAndPagePhotos() {
     .map(entry => ({ key: null, status: "used", file: entry }));
 //console.log(JSON.stringify(used) + "\n ----------------------------------");
 
-  let postsAndPages = [...locals.get("posts").data, ...locals.get("pages").data].map(fm => {
-    if (fm.photograph && !fm.photograph.keepOutOverview) {
-      return {
-        title: fm.title,
-        subTitle: fm.subtitle,
-        date: fm.date,
-        path: fm.path,
-        layout: fm.layout,
-        photographFile: fm.photograph.file,
-        photographName: fm.photograph.name,
-        hidden: fm.hidden
-      };
-    }
-  });
+  let postsAndPages = [...locals.get("posts").data, ...locals.get("pages").data]
+    .filter(p => { return !p.isLocale; })
+    .map(fm => {
+      if (fm.photograph && !fm.photograph.keepOutOverview) {
+        return {
+          title: fm.title,
+          subTitle: fm.subtitle,
+          date: fm.date,
+          path: fm.path,
+          layout: fm.layout,
+          photographFile: fm.photograph.file,
+          photographName: fm.photograph.name,
+          hidden: fm.hidden
+        };
+      }
+    });
 //console.log(JSON.stringify(postsAndPages) + "\n ----------------------------------");
 
   used.forEach(entry => {
@@ -383,8 +385,7 @@ function getPostAndPagePhotos() {
       meta = JSON.parse(fs.readFileSync(metaFile));
     }
 
-    // ... !p.hidden doesn't work for photo box Rüdesheim
-    let post = postsAndPages.find(p => (p && p.photographFile === entry.file));
+    let post = postsAndPages.find(p => (p && p.photographFile === entry.file))
     if (post) {
       entry.name = meta?.ObjectName || post.photographName;
       entry.type = post.layout;
