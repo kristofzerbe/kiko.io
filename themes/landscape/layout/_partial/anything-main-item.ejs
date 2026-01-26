@@ -2,7 +2,7 @@
     
   <header class="anything-header">
     <% if (photo.file !== item.photograph.file) { %>
-      <%- partial('post/photograph', { post: item, class_name: 'anything-photo', size: 'mobile' }) %>
+      <%- partial('post/photograph', { post: item, class_name: 'anything-photo', size: 'normal' }) %>
     <% } %>
     <h2>
       <a class="button posts" href="<%- url_for(item.path).replace("/index.html", "") %>">
