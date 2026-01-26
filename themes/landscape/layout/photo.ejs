@@ -10,7 +10,7 @@
 <div class="page-content h-entry">
 
   <section class="image">
-    <img id="photo" class="u-photo" src="<%- page.pathTablet %>" alt="<%- page.name %>" 
+    <img id="photo" class="u-photo" src="<%- page.pathNormal %>" alt="<%- page.name %>" 
          data-pagefind-meta="image[src], image_alt[alt]" />
     <small>Tap to show <a href="https://jariz.github.io/vibrant.js/">vibrant colors</a> ...</small>
   </section>
@@ -224,7 +224,7 @@
     let file = "<%= page.file %>";
     let head_onload = window.onload;
     window.onload = (event) => {
-      Vibrant.from("<%= page.pathTablet %>").getPalette().then((palette) => {
+      Vibrant.from("<%= page.pathNormal %>").getPalette().then((palette) => {
         let colorItems = [];
         let accentColor; 
 

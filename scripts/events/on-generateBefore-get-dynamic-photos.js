@@ -299,7 +299,6 @@ function getHeroPhoto() {
       url: "/index.html"
     },
     pathMobile: "/" + path.join(config.photo_dir, "mobile", config.hero.file).replace(/\134/g,"/"),
-    pathTablet: "/" + path.join(config.photo_dir, "tablet", config.hero.file).replace(/\134/g,"/"),
     pathNormal: "/" + path.join(config.photo_dir, "normal", config.hero.file).replace(/\134/g,"/"),
     date: metaCreationDate,
     meta: meta
@@ -334,7 +333,6 @@ function getUnusedPhotos(type, dir) {
     entry.name = meta?.ObjectName || meta?.custom.name || entry.key;
     entry.article = null;
     entry.pathMobile = "/" + path.join(dir, entry.key, "mobile.jpg").replace(/\134/g,"/");
-    entry.pathTablet = "/" + path.join(dir, entry.key, "tablet.jpg").replace(/\134/g,"/");
     entry.pathNormal = "/" + path.join(dir, entry.key, "normal.jpg").replace(/\134/g,"/");
     entry.date = metaCreationDate;
     entry.meta = meta;
@@ -407,7 +405,6 @@ function getPostAndPagePhotos() {
     }
 
     entry.pathMobile = "/" + path.join(config.photo_dir, "mobile", entry.file).replace(/\134/g,"/");
-    entry.pathTablet = "/" + path.join(config.photo_dir, "tablet", entry.file).replace(/\134/g,"/");
     entry.pathNormal = "/" + path.join(config.photo_dir, "normal", entry.file).replace(/\134/g,"/");
     entry.date = metaCreationDate;
     entry.meta = meta;
@@ -461,7 +458,6 @@ function getDraftPagePhotos() {
             url: fm.permalink
           },
           pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
-          pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
           pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
           date: metaCreationDate,
           meta: meta
@@ -515,7 +511,6 @@ function getDynamicPagePhotos() {
             url: fm.permalink
           },
           pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
-          pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
           pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
           date: metaCreationDate,
           meta: meta
@@ -579,7 +574,6 @@ function getAnythingPagePhotos() {
                   url: fm.permalink
                 },
                 pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
-                pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
                 pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
                 date: metaCreationDate,
                 meta: meta
@@ -638,7 +632,6 @@ function getNotesPhotos() {
               url: "/notes/" + dir
             },
             pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
-            pathTablet: "/" + path.join(config.photo_dir, "tablet", fm.photograph.file).replace(/\134/g,"/"),
             pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
             date: metaCreationDate,
             meta: meta

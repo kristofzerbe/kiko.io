@@ -309,11 +309,11 @@
   <link rel="preload" as="font" type="font/woff2" href="/css/fonts/sourcecodepro/WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2">
   
 <% if (!page.photograph) { %>
-  <link rel="preload" as="image" type="image/jpeg" href="/images/hero.jpg" imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w" id="img-preload">
-  <link rel="preload" as="image" type="image/jpeg" href="/images/hero.jpg" imagesrcset="/images/hero-mobile.jpg 480w, /images/hero-tablet.jpg 768w" id="photo-preload">
+  <link rel="preload" as="image" type="image/jpeg" href="/images/hero.jpg" imagesrcset="/images/hero-mobile.jpg 480w" id="img-preload">
+  <link rel="preload" as="image" type="image/jpeg" href="/images/hero.jpg" imagesrcset="/images/hero-mobile.jpg 480w" id="photo-preload">
 <% } else { %>
-  <link rel="preload" as="image" type="image/jpeg" href="<%= meta.imageUrl %>" imagesrcset="<%= meta.imageUrl.replace("normal", "mobile") %> 480w, <%= meta.imageUrl.replace("normal", "tablet") %> 768w" id="img-preload">
-  <link rel="preload" as="image" type="image/jpeg" href="<%= meta.photoUrl %>" imagesrcset="<%= meta.photoUrl.replace("normal", "mobile") %> 480w, <%= meta.photoUrl.replace("normal", "tablet") %> 768w" id="photo-preload">  
+  <link rel="preload" as="image" type="image/jpeg" href="<%= meta.imageUrl %>" imagesrcset="<%= meta.imageUrl.replace("normal", "mobile") %> 480w" id="img-preload">
+  <link rel="preload" as="image" type="image/jpeg" href="<%= meta.photoUrl %>" imagesrcset="<%= meta.photoUrl.replace("normal", "mobile") %> 480w" id="photo-preload">  
 <% } %>
     
   <%- css('css/dist/asset-bundle.min.css') %>
@@ -327,10 +327,7 @@
     @media screen and (max-width: 479px) {
       #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/mobile/<%= page.photograph.file %>"); }
     }
-    @media screen and (min-width: 480px) and (max-width: 767px) {
-      #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/tablet/<%= page.photograph.file %>"); }
-    }
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 480px) {
       #banner { background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 75%), url("/photos/normal/<%= page.photograph.file %>"); }    
     }
   </style>

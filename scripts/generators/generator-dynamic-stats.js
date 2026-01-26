@@ -42,7 +42,8 @@ hexo.extend.generator.register("dynamic-stats", async function(locals) {
 
   let links = { name: "stats-links" };
   links = getMD(hexo, path.join("_dynamic", links.name + ".md"), links);
-  // TODO ... collector.getLinkStats();
+  links.data = collector.getLinkStats();
+  
   result.push({
     data: links,
     path: path.join(links.permalink, "index.html"),
