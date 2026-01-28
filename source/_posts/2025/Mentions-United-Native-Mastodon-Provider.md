@@ -27,7 +27,7 @@ syndication:
 
 When I started Mentions United to collect and display the interactions of syndication from the various Fediverse platforms on my static blog, I initially focused on my needs with regard to the range of functions... see also [**Mentions United... 3, 2, 1, Go**](/post/Mentions-United-3-2-1-go/).
 
-At the top of the list were, of course, **Webmentions**, closely followed by **Mastodon** and the classic non-Fediverse platforms such as Flickr, where I syndicate my photos, among other things. I was able to cover this group of platforms completely with the Webmentions provider plugin, because thanks to [brid.gy](https://brid.gy]) and [webmention.io](https://webmention.io), their interactions are also converted into Webmentions.
+At the top of the list were, of course, **Webmentions**, closely followed by **Mastodon** and the classic non-Fediverse platforms such as Flickr, where I syndicate my photos, among other things. I was able to cover this group of platforms completely with the Webmentions provider plugin, because thanks to [brid.gy](https://brid.gy) and [webmention.io](https://webmention.io), their interactions are also converted into Webmentions.
 
 ![Provider Webmention](post/Mentions-United-Native-Mastodon-Provider/Provider-webmention.png)
 

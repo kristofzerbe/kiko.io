@@ -25,7 +25,7 @@ related:
 
 Als ich mit Mentions United angefangen habe, um auf meinem statischen Blog die Interaktionen der Syndizierungen auf den verschiedenen Fediverse-Plattformen einzusammeln und anzuzeigen, habe ich mich hinsichtlich des Funktionsumfanges zunächst einmal um meine Bedürfnisse gekümmert ... siehe auch [**Mentions United ... 3, 2, 1, Go**](/post/Mentions-United-3-2-1-go/).
 
-Ganz oben auf der Liste standen natürlich **Webmentions**, dicht gefolgt von **Mastodon** und den klassischen Nicht-Fediverse-Plattformen wie Flickr, wo ich unter anderem meine Fotos syndiziere. Diese Gruppe an Plattformen konnte ich komplett über das Webmentions-Provider Plugin abdecken, denn dank [brid.gy](https://brid.gy]) und [webmention.io](https://webmention.io) werden deren Interaktionen ebenfalls in Webmentions umgewandelt.
+Ganz oben auf der Liste standen natürlich **Webmentions**, dicht gefolgt von **Mastodon** und den klassischen Nicht-Fediverse-Plattformen wie Flickr, wo ich unter anderem meine Fotos syndiziere. Diese Gruppe an Plattformen konnte ich komplett über das Webmentions-Provider Plugin abdecken, denn dank [brid.gy](https://brid.gy) und [webmention.io](https://webmention.io) werden deren Interaktionen ebenfalls in Webmentions umgewandelt.
 
 ![Provider Webmention](post/Mentions-United-Native-Mastodon-Provider/Provider-webmention.png)
 
