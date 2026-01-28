@@ -1,10 +1,9 @@
 ---
 title: Teams Call and The Shining
-created: 2026-01-28 11:37
 date: 2026-01-28
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/115974415183508694
 ---
 We try to have as much fun as possible in the department, because everyday life is hard enough. A quick-witted and funny response not only immediately lights up conversations, it also helps to create a good working atmosphere in general. Laughter is medicine for everything.
 
