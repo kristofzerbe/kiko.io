@@ -8,4 +8,4 @@ photograph:
   keepOutOverview: true
 ---
 
-Link stats coming soon ...
+Inspired by [Jim Nielsen's list of external links](https://blog.jim-nielsen.com/about/external-links/), I created my own for this blog.

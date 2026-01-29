@@ -3,18 +3,18 @@
   <% switch (page.name) {
     case "stats": %>
       <a href="/stats" class="current <%= currentClass %>"><%- include(iconDir + "black-diamond.svg") %></a>
+      <a href="/stats/links">Links</a>
       <a href="/stats/music">Music</a>
-      <a href="/stats/links">Links</a>
-      <% break;
-    case "stats-music": %>
-      <a href="/stats">Stats</a>
-      <a href="/stats/music" class="current <%= currentClass %>"><%- include(iconDir + "black-diamond.svg") %></a>
-      <a href="/stats/links">Links</a>
       <% break;
     case "stats-links": %>
       <a href="/stats">Stats</a>
-      <a href="/stats/music">Music</a>
       <a href="/stats/links" class="current <%= currentClass %>"><%- include(iconDir + "black-diamond.svg") %></a>
+      <a href="/stats/music">Music</a>
+      <% break;
+    case "stats-music": %>
+      <a href="/stats">Stats</a>
+      <a href="/stats/links">Links</a>
+      <a href="/stats/music" class="current <%= currentClass %>"><%- include(iconDir + "black-diamond.svg") %></a>
       <% break;
   } %>
 </nav>

@@ -1,4 +1,6 @@
 
+<%- css('css/dist/charts.min.css') %>
+
 <% if (page.photograph){ %>
   <%- partial('_partial/photograph') %>
 <% } %>
@@ -15,8 +17,42 @@
   
   <hr class="divider" />
   
-  <section>
-    ...    
+  <section class="stats charts-wrapper">
+    <h2>Hosts</h2>
+    <p>
+      In my posts, I have included 
+      <b><%= page.data.counts.linksAll %></b><em>links</em> to external websites that are grouped into 
+      <b><%= page.data.counts.hostsAll %></b><em>hosts</em>.
+      <b><%= page.data.counts.hostsOnce %></b> are only mentioned <em>once</em> and 
+      <b><%= page.data.lists.hosts.length %></b><em>hosts</em> in the following list multiple times:
+    </p>
+    <table id="host-chart" class="charts-css bar show-labels data-start data-spacing-5" 
+           style="--labels-size: 32px;">
+      <tbody>
+      <% 
+        let hosts = page.data.lists.hosts.sort((a,b) => b.count-a.count); 
+        let maxCount = hosts[0].count;
+        let maxPlus = maxCount * 0.1;
+        let maxCountPlus = maxCount + maxPlus; 
+      %>
+      <% hosts.forEach(h => { %>
+        <tr data-key="<%= h.host %>">
+          <th scope="row">
+            <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&size=16&url=https://<%= h.host %>" 
+                 width="16" height="16" alt="<%= h.host %>" loading="lazy">
+          </th>
+          <td style="--size: calc(<%= h.count %>/<%= maxCountPlus %>);">
+            <span class="data"><%= h.count %></span>
+          </td>
+          <% if (h.count === maxCount) { %>
+          <style>#host-chart tr[data-key="<%= h.host %>"]:after { content: "<%= h.host %>"; right: <%= maxPlus %>px; padding-right: 4%; color: #fff !important; }</style>          
+          <% } else { %>
+          <style>#host-chart tr[data-key="<%= h.host %>"]:after { content: "<%= h.host %>"; left: calc(100% * calc(<%= h.count %>/<%= maxCountPlus %>)); }</style>
+          <% } %>
+        </tr>
+      <% }); %>
+      </tbody>
+    </table>
   </section>
 
 </div>
