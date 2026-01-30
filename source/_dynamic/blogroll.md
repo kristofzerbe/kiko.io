@@ -11,4 +11,4 @@ date: 2024-06-05 00:29:29
 updated: 2026-01-29 18:33:51
 ---
 
-Over the years, the articles of certain bloggers keep popping up in my must-do/read-later lists or notes and I want to share the blogs/websites of these *{% blogroll_length %}* amazing people with you here ... in a good ol' blogroll, including the last post fetched on *{% generation_date %}* and an <a href="/{% blogroll_path %}" download="{% blogroll_path %}">OPML file (XML)</a> for quick import into your feed reader.
+Over the years, the articles of certain bloggers keep popping up in my must-do/read-later lists or notes and I want to share the blogs/websites of these **{% blogroll_length %}** amazing people with you here ... in a good ol' blogroll, including the last post fetched on *{% generation_date %}* and an <a href="/{% blogroll_path %}" download="{% blogroll_path %}">OPML file (XML)</a> for quick import into your feed reader.
