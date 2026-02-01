@@ -1,0 +1,2027 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Adrian Roselli</title>
+	<atom:link href="https://adrianroselli.com/feed" rel="self" type="application/rss+xml" />
+	<link>https://adrianroselli.com</link>
+	<description>Consultant, Writer, Speaker</description>
+	<lastBuildDate>Fri, 23 Jan 2026 02:03:47 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.9.12</generator>
+	<item>
+		<title>Barriers from Links with ARIA</title>
+		<link>https://adrianroselli.com/2026/01/barriers-from-links-with-aria.html</link>
+					<comments>https://adrianroselli.com/2026/01/barriers-from-links-with-aria.html#comments</comments>
+		
+		<dc:creator><![CDATA[Adrian Roselli]]></dc:creator>
+		<pubDate>Fri, 23 Jan 2026 01:53:22 +0000</pubDate>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[accessibility]]></category>
+		<category><![CDATA[ARIA]]></category>
+		<category><![CDATA[browser]]></category>
+		<category><![CDATA[html]]></category>
+		<category><![CDATA[standards]]></category>
+		<category><![CDATA[usability]]></category>
+		<guid isPermaLink="false">https://adrianroselli.com/?p=48694</guid>
+
+					<description><![CDATA[Today Temani Afif asked a question: Are the below codes equivalent if we consider all the aspects? (a11y, semantic, something else maybe?) If not, what is missing (or should be changed) in the second code CSS by T. Afif (@css@front-end.social) 22 January 2026, 2:52pm I have my canned response that&#8230;]]></description>
+										<content:encoded><![CDATA[<p>
+Today Temani Afif asked a question:
+</p>
+
+<blockquote class="twitter-tweet">
+ <p>
+ Are the below codes equivalent if we consider all the aspects? (a11y, semantic, something else maybe?)
+ </p>
+ <p>
+ If not, what is missing (or should be changed) in the second code
+ </p>
+ <p>
+ <img loading="lazy" src="/wp-content/uploads/2026/01/temani-afif_masto-post.png" alt="&lt;!-- Code 1 --&gt;&lt;a href=&quot;https://something.com&quot;&gt;Link&lt;/a&gt; &lt;!-- Code 2 --&gt;&lt;a href=&quot;https://something.com&quot; aria-label=&quot;link&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&lt;span&gt;L&lt;/span&gt;&lt;span&gt;i&lt;/span&gt;&lt;span&gt;n&lt;/span&gt;&lt;span&gt;k&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;" width="1316" height="678">
+ </p>
+ <footer>
+  <cite>CSS by T. Afif (@css@front-end.social) <a href="https://front-end.social/@css/115940496288155021">22 January 2026, 2:52pm</a></cite>
+ </footer>
+</blockquote>
+
+<p>
+I have my canned response that <a href="/2019/11/aria-label-does-not-translate.html"><code>aria-label</code> auto-translation is inconsistent</a>.
+</p>
+
+<p>
+But the <q>something else maybe</q> question is what reminded me that this construct has caused issues outside of WCAG concerns. In particular, the only <a href="/2024/08/at-is-more-than-screen-readers.html">assistive technologies</a> (AT) that consume ARIA are screen readers and, to a far lesser extent, voice control. That latter part only because browsers assemble the accessible names, not AT. There&#8217;s plenty more AT that never touches ARIA.
+</p>
+
+<p>
+I knew there were issues, but couldn&#8217;t rattle them off from the top of my head. So I built some examples and poked them with other accessibility features of browsers.
+</p>
+
+
+<h2 id="Results">Results</h2>
+
+<p>
+I am not testing screen readers nor voice control.
+</p>
+
+<ul>
+ <li>The text with each letter in its own span does not auto-translate..</li>
+ <li>Edge&#8217;s Read Aloud feature (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>U</kbd>) does not announce the <code>aria-label</code> value of any link.</li>
+ <li>Edge&#8217;s Read Aloud feature does not announce the links with <code>aria-hidden</code>, regardless of other attributes.</li>
+ <li>Chrome&#8217;s reader mode text-to-speech does not announce the <code>aria-label</code> value of any link.</li>
+ <li>Chrome&#8217;s reader mode text-to-speech does not announce the links with <code>aria-hidden</code>, regardless of other attributes.</li>
+ <li>Chrome&#8217;s reader mode visually hides every link with <code>aria-hidden</code>.
+ <li>Firefox&#8217;s reader mode visually hides every link with <code>aria-hidden</code>.
+ <li>Firefox&#8217;s reader mode visually styled every link that spanned its letters as white instead of blue or purple.</li>
+ <li>Safari&#8217;s Speech feature jumps past most of the page when it gets to the first instance of letters split across spans, and announces subsequent links with the wrong link text (using the Korean text for English links).</li>
+ <li>Safari&#8217;s Speech feature does not announce the <code>aria-label</code> value of any link.</li>
+ <li>Safari&#8217;s Speech feature does not announce the span-separated letters nor visible word they make up.</li>
+ <li>Chrome and Edge would not let me link to the highlighted text when I highlighted the <code>aria-hidden</code> links, though that changed when I got more content on the page.</li>
+</ul>
+
+<p>
+<a href="https://front-end.social/@AmeliaBR/115940740106574818">As Amelia Bellamy-Royds points out</a>, the text-to-speech features seem to respect the <code>aria-hidden</code> but ignore the <code>aria-label</code> — and by extension the accessible name the browser provides in the accessibility tree.
+</p>
+
+
+
+<h2 id="Takeaways">Takeaways</h2>
+
+<p>
+Three key takeaways here (yes, I know your use case is special):
+</p>
+
+<ol>
+ <li>Don&#8217;t use <code>aria-label</code> on links;</li>
+ <li>Don&#8217;t use <code>aria-hidden</code> within links;</li>
+ <li>Don&#8217;t split the letters of a word across elements.</li>
+</ol>
+
+<p>
+I look forward to you, dear reader, trying other approaches and letting me know where these fall down (or what I got wrong). I don&#8217;t need to know where they are supported. Just the gaps.
+</p>
+
+
+
+<h2 id="Tests">Tests</h2>
+
+<p>
+These are the tests I used to generate the results you just read (<a href="https://codepen.io/aardrian/pen/EayvaBL">originally as a Codepen</a>). You can ignore this part unless you want to run your own tests. If you want to find other ways these approaches might break for users, then please do so.
+</p>
+
+<p>
+I used the Korean words <span lang="ko">샌드위치</span> for &#8220;sandwich&#8221; and <span lang="ko">망치</span> for &#8220;hammer&#8221; (the values of <code>aria-label</code>).
+</p>
+
+<p>
+The links with <code>aria-label</code> all fail WCAG SC <a href="https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html">2.5.3 Label in Name</a>, but it&#8217;s intentional so I can quickly tell if the <code>aria-label</code> is exposed. Similarly, the links with <code>aria-hidden</code> and no <code>aria-label</code> fail <a href="https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html">4.1.2 Name, Role, Value</a>, but again I wanted to see how they performed.
+</p>
+
+
+<dl>
+  <dt>
+    Standard link: <a href="https://en.wikipedia.org/wiki/Sandwich">Sandwich</a>
+  </dt>
+ <dd><pre><code>&lt;a href="https://en.wikipedia.org/wiki/Sandwich"&gt;
+  Sandwich
+&lt;/a&gt;</code></pre></dd>
+
+
+  <dt>
+    Standard link in another language: <a href="https://ko.wikipedia.org/wiki/%EC%83%8C%EB%93%9C%EC%9C%84%EC%B9%98" hreflang="ko" lang="ko">샌드위치</a>
+  </dt>
+ <dd><pre><code>&lt;a href="https://ko.wikipedia.org/wiki/%EC%83%8C%EB%93%9C%EC%9C%84%EC%B9%98" hreflang="ko" lang="ko"&gt;
+  샌드위치
+&lt;/a&gt;</code></pre></dd>
+
+  <dt>
+    Link with <code>aria-label</code>: <a href="https://en.wikipedia.org/wiki/Sandwich" aria-label="hammer">Sandwich</a>
+  </dt>
+ <dd><pre><code>&lt;a href="https://en.wikipedia.org/wiki/Sandwich" aria-label="hammer"&gt;
+  Sandwich
+&lt;/a&gt;</code></pre></dd>
+
+  <dt>
+    Link in another language with <code>aria-label</code>: <a href="https://ko.wikipedia.org/wiki/%EC%83%8C%EB%93%9C%EC%9C%84%EC%B9%98" hreflang="ko" lang="ko" aria-label="망치">샌드위치</a>
+  </dt>
+ <dd><pre><code>&lt;a href="https://ko.wikipedia.org/wiki/%EC%83%8C%EB%93%9C%EC%9C%84%EC%B9%98" hreflang="ko" lang="ko" aria-label="망치"&gt;
+  샌드위치
+&lt;/a&gt;</code></pre></dd>
+
+  <dt>
+    Link with each letter of visible text in its own <code>&lt;span&gt;</code>: <a href="https://en.wikipedia.org/wiki/Sandwich">
+      <span>
+        <span>S</span><span>a</span><span>n</span><span>d</span><span>w</span><span>i</span><span>c</span><span>h</span>
+      </span>
+    </a>
+  </dt>
+ <dd><pre><code>&lt;a href="https://en.wikipedia.org/wiki/Sandwich"&gt;
+  &lt;span&gt;
+    &lt;span&gt;S&lt;/span&gt;&lt;span&gt;a&lt;/span&gt;&lt;span&gt;n&lt;/span&gt;&lt;span&gt;d&lt;/span&gt;&lt;span&gt;w&lt;/span&gt;&lt;span&gt;i&lt;/span&gt;&lt;span&gt;c&lt;/span&gt;&lt;span&gt;h&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/a&gt;</code></pre></dd>
+
+  <dt>
+    Link in another language with each letter of visible text in its own <code>&lt;span&gt;</code>: <a href="https://ko.wikipedia.org/wiki/%EC%83%8C%EB%93%9C%EC%9C%84%EC%B9%98" hreflang="ko" lang="ko">
+      <span>
+        <span>샌</span><span>드</span><span>위</span><span>치</span>
+      </span>
+    </a>
+  </dt>
+ <dd><pre><code>&lt;a href="https://ko.wikipedia.org/wiki/%EC%83%8C%EB%93%9C%EC%9C%84%EC%B9%98" hreflang="ko" lang="ko"&gt;
+  &lt;span&gt;
+    &lt;span&gt;샌&lt;/span&gt;&lt;span&gt;드&lt;/span&gt;&lt;span&gt;위&lt;/span&gt;&lt;span&gt;치&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/a&gt;</code></pre></dd>
+
+  <dt>
+    Link with <code>aria-label</code> and each letter of visible text in its own <code>&lt;span&gt;</code>: <a href="https://en.wikipedia.org/wiki/Sandwich" aria-label="hammer">
+      <span>
+        <span>S</span><span>a</span><span>n</span><span>d</span><span>w</span><span>i</span><span>c</span><span>h</span>
+      </span>
+    </a>
+  </dt>
+ <dd><pre><code>&lt;a href="https://en.wikipedia.org/wiki/Sandwich" aria-label="hammer"&gt;
+  &lt;span&gt;
+    &lt;span&gt;S&lt;/span&gt;&lt;span&gt;a&lt;/span&gt;&lt;span&gt;n&lt;/span&gt;&lt;span&gt;d&lt;/span&gt;&lt;span&gt;w&lt;/span&gt;&lt;span&gt;i&lt;/span&gt;&lt;span&gt;c&lt;/span&gt;&lt;span&gt;h&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/a&gt;</code></pre></dd>
+
+  <dt>
+    Link in another language with <code>aria-label</code> and each letter of visible text in its own <code>&lt;span&gt;</code>: <a href="https://ko.wikipedia.org/wiki/%EC%83%8C%EB%93%9C%EC%9C%84%EC%B9%98" hreflang="ko" lang="ko" aria-label="망치">
+      <span>
+        <span>샌</span><span>드</span><span>위</span><span>치</span>
+      </span>
+    </a>
+  </dt>
+ <dd><pre><code>&lt;a href="https://ko.wikipedia.org/wiki/%EC%83%8C%EB%93%9C%EC%9C%84%EC%B9%98" hreflang="ko" lang="ko" aria-label="망치"&gt;
+  &lt;span&gt;
+    &lt;span&gt;샌&lt;/span&gt;&lt;span&gt;드&lt;/span&gt;&lt;span&gt;위&lt;/span&gt;&lt;span&gt;치&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/a&gt;</code></pre></dd>
+
+  <dt>
+    Link with <code>aria-hidden</code> on visible text with each letter of visible text in its own <code>&lt;span&gt;</code>: <a href="https://en.wikipedia.org/wiki/Sandwich">
+      <span aria-hidden="true">
+        <span>S</span><span>a</span><span>n</span><span>d</span><span>w</span><span>i</span><span>c</span><span>h</span>
+      </span>
+    </a>
+  </dt>
+ <dd><pre><code>&lt;a href="https://en.wikipedia.org/wiki/Sandwich"&gt;
+  &lt;span aria-hidden="true"&gt;
+    &lt;span&gt;S&lt;/span&gt;&lt;span&gt;a&lt;/span&gt;&lt;span&gt;n&lt;/span&gt;&lt;span&gt;d&lt;/span&gt;&lt;span&gt;w&lt;/span&gt;&lt;span&gt;i&lt;/span&gt;&lt;span&gt;c&lt;/span&gt;&lt;span&gt;h&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/a&gt;</code></pre></dd>
+
+  <dt>
+    Link in another language with <code>aria-hidden</code> on visible text with each letter of visible text in its own <code>&lt;span&gt;</code>: <a href="https://ko.wikipedia.org/wiki/%EC%83%8C%EB%93%9C%EC%9C%84%EC%B9%98" hreflang="ko" lang="ko">
+      <span aria-hidden="true">
+        <span>샌</span><span>드</span><span>위</span><span>치</span>
+      </span>
+    </a>
+  </dt>
+ <dd><pre><code>&lt;a href="https://ko.wikipedia.org/wiki/%EC%83%8C%EB%93%9C%EC%9C%84%EC%B9%98" hreflang="ko" lang="ko"&gt;
+  &lt;span aria-hidden="true"&gt;
+    &lt;span&gt;샌&lt;/span&gt;&lt;span&gt;드&lt;/span&gt;&lt;span&gt;위&lt;/span&gt;&lt;span&gt;치&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/a&gt;</code></pre></dd>
+
+  <dt>
+    Link with <code>aria-label</code> and <code>aria-hidden</code> on visible text with each letter of visible text in its own <code>&lt;span&gt;</code>: <a href="https://en.wikipedia.org/wiki/Sandwich" aria-label="hammer">
+      <span aria-hidden="true">
+        <span>S</span><span>a</span><span>n</span><span>d</span><span>w</span><span>i</span><span>c</span><span>h</span>
+      </span>
+    </a>
+  </dt>
+ <dd><pre><code>&lt;a href="https://en.wikipedia.org/wiki/Sandwich" aria-label="hammer"&gt;
+  &lt;span aria-hidden="true"&gt;
+    &lt;span&gt;S&lt;/span&gt;&lt;span&gt;a&lt;/span&gt;&lt;span&gt;n&lt;/span&gt;&lt;span&gt;d&lt;/span&gt;&lt;span&gt;w&lt;/span&gt;&lt;span&gt;i&lt;/span&gt;&lt;span&gt;c&lt;/span&gt;&lt;span&gt;h&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/a&gt;</code></pre></dd>
+
+  <dt>
+    Link in another language with <code>aria-label</code> and <code>aria-hidden</code> on visible text with each letter of visible text in its own <code>&lt;span&gt;</code>: <a href="https://ko.wikipedia.org/wiki/%EC%83%8C%EB%93%9C%EC%9C%84%EC%B9%98" hreflang="ko" lang="ko" aria-label="망치">
+      <span aria-hidden="true">
+        <span>샌</span><span>드</span><span>위</span><span>치</span>
+      </span>
+    </a>
+  </dt>
+ <dd><pre><code>&lt;a href="https://ko.wikipedia.org/wiki/%EC%83%8C%EB%93%9C%EC%9C%84%EC%B9%98" hreflang="ko" lang="ko" aria-label="망치"&gt;
+  &lt;span aria-hidden="true"&gt;
+    &lt;span&gt;샌&lt;/span&gt;&lt;span&gt;드&lt;/span&gt;&lt;span&gt;위&lt;/span&gt;&lt;span&gt;치&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/a&gt;</code></pre></dd>
+
+</dl>
+
+<p>
+Don&#8217;t be shy about making your own variations and leaving your results in the comments.
+</p>
+
+
+<style>
+dl {
+  counter-reset: links;
+}
+dl dt::before {
+  counter-increment: links;
+  content: counter(links) ". ";
+}
+</style>]]></content:encoded>
+					
+					<wfw:commentRss>https://adrianroselli.com/2026/01/barriers-from-links-with-aria.html/feed</wfw:commentRss>
+			<slash:comments>6</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Live Region Support</title>
+		<link>https://adrianroselli.com/2026/01/live-region-support.html</link>
+					<comments>https://adrianroselli.com/2026/01/live-region-support.html#comments</comments>
+		
+		<dc:creator><![CDATA[Adrian Roselli]]></dc:creator>
+		<pubDate>Wed, 14 Jan 2026 19:57:57 +0000</pubDate>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[accessibility]]></category>
+		<category><![CDATA[ARIA]]></category>
+		<category><![CDATA[css]]></category>
+		<category><![CDATA[html]]></category>
+		<category><![CDATA[standards]]></category>
+		<guid isPermaLink="false">https://adrianroselli.com/?p=48638</guid>
+
+					<description><![CDATA[This post does not discuss whether live regions are good, nor is it a post about the best way to use them. This post only covers how they are exposed to the audience who experiences them — screen reader users. Written by a non-screen-reader user. If you&#8217;re here because your&#8230;]]></description>
+										<content:encoded><![CDATA[<p>
+This post does not discuss whether live regions are good, nor is it a post about the best way to use them. This post only covers how they are exposed to the audience who experiences them — screen reader users. Written by a non-screen-reader user.
+</p>
+
+<p>
+<img loading="lazy" src="/wp-content/uploads/2026/01/its-alive.jpg" alt="1970s movie poster of darkened baby carriage with two clawed and bloody hands reaching out while cops run in the far background, titled “It’s Alive!”." width="555" height="555" class="right">
+If you&#8217;re here because your live region isn&#8217;t working as you expect, then your expectation is wrong, you did something wrong, or you found a fun bug. Read Pat&#8217;s <a href="https://tetralogical.com/blog/2024/05/01/why-are-my-live-regions-not-working/"><cite>Why are my live regions not working?</cite></a> instead of this post.
+</p>
+
+<p>
+If you want a quick review of current support and simple test cases with testing steps, then keep reading. Otherwise, I dunno, close this tab?
+</p>
+
+
+
+<h2 id="Demo">Demo</h2>
+
+<p>
+I made this demo in mid-2024 to demonstrate a problem. It now covers five kinds of live regions:
+</p>
+
+<ul>
+ <li>polite, via <a href="https://w3c.github.io/aria/#aria-live:~:text=region%2E-,polite"><code>aria-live="polite"</code></a>;</li>
+ <li>assertive, via <a href="https://w3c.github.io/aria/#aria-live:~:text=assertive,-Indicates"><code>aria-live="assertive"</code></a>;</li>
+ <li>an alert, via <a href="https://w3c.github.io/aria/#alert"><code>role="alert"</code></a>;</li>
+ <li>the HTML <a href="https://html.spec.whatwg.org/#the-output-element"><code>&lt;output&gt;</code></a> element</li>
+ <li>a control with a node associated via <a href="https://w3c.github.io/aria/#aria-describedby"><code>aria-describedby</code></a> whose value changes, <a href="https://www.w3.org/TR/core-aam-1.2/#event-aria-describedby">triggering an event</a>.</li>
+</ul>
+
+<p>
+That last one is a bit of a curve ball because it isn&#8217;t a live region, but it can functionally behave like one. Many authors are unaware of this, and for those who are aware, many think it&#8217;s a bug. The example uses a button, text input, and select menu. The button fires on activation, the two fields on change. Give the live region time to clear before moving to the next control. When testing, be sure you are hearing the de facto live region and not that you moved focus to the subsequent control with a description.
+</p>
+
+<p>
+The demo also shows how these live regions work when hidden using any of three methods:
+</p>
+
+<ul>
+ <li>via HTML using <a href="https://html.spec.whatwg.org/#the-hidden-attribute"><code>hidden</code></a>;</li>
+ <li>via ARIA using <a href="https://w3c.github.io/aria/#aria-hidden"><code>aria-hidden</code></a>;</li>
+ <li>via CSS using <a href="https://drafts.csswg.org/css-display/#valdef-display-none"><code>display:none</code></a>.</li>
+</ul>
+
+<p>
+As always, I have a <a href="https://cdpn.io/aardrian/debug/rNQMXPY">debug view</a> without the Codepen cruft so you can test more easily.
+</p>
+
+
+<p class="codepen" data-height="685" data-default-tab="result" data-slug-hash="rNQMXPY" data-pen-title="Live Regions, Hidden and Not" data-user="aardrian" style="height: 685px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+      <span>See the Pen <a href="https://codepen.io/aardrian/pen/rNQMXPY">
+  Live Regions, Hidden and Not</a> by Adrian Roselli (<a href="https://codepen.io/aardrian">@aardrian</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+      </p>
+      <script async src="https://public.codepenassets.com/embed/index.js"></script>
+
+
+<h2 id="Results">Results</h2>
+
+    <p>
+      The detailed results that follow the table go into specific versions and browsers used. Failure for a screen reader to support a feature properly may be a function of the browser, not the screen reader (especially with dynamic descriptions). Other bits:
+    </p>
+
+<ul>
+ <li><span aria-hidden="true">❌</span><span class="visually-hidden">buggy</span> means that an implementation has bugs. These could be from the browser or the screen reader. Wade into the detailed results later in this post to check the most current version.</li>
+ <li><span aria-hidden="true">✔️</span><span class="visually-hidden">yes</span> means the feature works as intended. You&#8217;ll note it only appears in the last column because it&#8217;s the only one that&#8217;s unambiguous in what is expected or preferred.</li>
+ <li>Blank cells reflect what I could not test because I had no Braille viewer.</li>
+ <li>I updated Chrome just before publishing and got a different result on the dynamic description test, so I threw a question mark on it until I can confirm if this is user error or some kind of change.</li>
+</ul>
+
+<div role="region" tabindex="0" aria-labelledby="CurrSupport">
+    <table>
+      <caption id="CurrSupport">Current Support</caption>
+      <tr>
+        <th>Screen Reader / Browser</th>
+        <th>polite, Audio</th>
+        <th>polite, Braille</th>
+        <th>assertive, Audio</th>
+        <th>assertive, Braille</th>
+        <th>alert Role, Audio</th>
+        <th>alert Role, Braille</th>
+        <th>alert Role, Audio &#8220;alert&#8221;</th>
+        <th>alert Role, Braille &#8220;alert&#8221;</th>
+        <th>&lt;output&gt;, Audio</th>
+        <th>&lt;output&gt;, Braille</th>
+        <th>aria-describedby, Audio</th>
+        <th>aria-describedby, Braille</th>
+        <th>Hidden Regions Hidden</th>
+      </tr>
+      <tr>
+        <th>NVDA / Firefox</th>
+        <td>polite</td>
+        <td>assertive</td>
+        <td>polite</td>
+        <td>assertive</td>
+        <td>assertive</td>
+        <td><span aria-hidden="true">❌</span><span class="visually-hidden">buggy</span></td>
+        <td>yes</td>
+        <td><span aria-hidden="true">❌</span><span class="visually-hidden">buggy</span></td>
+        <td>polite</td>
+        <td>assertive</td>
+        <td>no</td>
+        <td>no</td>
+        <td><span aria-hidden="true">✔️</span><span class="visually-hidden">yes</span></td>
+      </tr>
+      <tr>
+        <th>JAWS / Chrome</th>
+        <td>polite</td>
+        <td>assertive</td>
+        <td>polite</td>
+        <td>assertive</td>
+        <td>polite</td>
+        <td>assertive</td>
+        <td>no</td>
+        <td>no</td>
+        <td>polite</td>
+        <td>assertive</td>
+        <td>polite?</td>
+        <td>assertive?</td>
+        <td><span aria-hidden="true">✔️</span><span class="visually-hidden">yes</span></td>
+      </tr>
+      <tr>
+        <th>Narrator / Edge</th>
+        <td>polite</td>
+        <td>assertive</td>
+        <td>polite</td>
+        <td>assertive</td>
+        <td>polite</td>
+        <td>assertive</td>
+        <td>no</td>
+        <td>no</td>
+        <td>polite</td>
+        <td>assertive</td>
+        <td>no</td>
+        <td>no</td>
+        <td><span aria-hidden="true">✔️</span><span class="visually-hidden">yes</span></td>
+      </tr>
+      <tr>
+        <th>VoiceOver macOS / Safari</th>
+        <td><span aria-hidden="true">❌</span><span class="visually-hidden">buggy</span></td>
+        <td><span aria-hidden="true">❌</span><span class="visually-hidden">buggy</span></td>
+        <td>assertive</td>
+        <td>assertive</td>
+        <td>assertive</td>
+        <td>assertive</td>
+        <td>no</td>
+        <td>no</td>
+        <td><span aria-hidden="true">❌</span><span class="visually-hidden">buggy</span></td>
+        <td><span aria-hidden="true">❌</span><span class="visually-hidden">buggy</span></td>
+        <td>no</td>
+        <td>no</td>
+        <td><span aria-hidden="true">✔️</span><span class="visually-hidden">yes</span></td>
+      </tr>
+      <tr>
+        <th>Orca / Firefox</th>
+        <td>polite</td>
+        <td></td>
+        <td>polite</td>
+        <td></td>
+        <td><span aria-hidden="true">❌</span><span class="visually-hidden">buggy</span></td>
+        <td></td>
+        <td><span aria-hidden="true">❌</span><span class="visually-hidden">buggy</span></td>
+        <td></td>
+        <td>polite</td>
+        <td></td>
+        <td>no</td>
+        <td>no</td>
+        <td><span aria-hidden="true">✔️</span><span class="visually-hidden">yes</span></td>
+      </tr>
+      <tr>
+        <th>TalkBack / Chrome</th>
+        <td>polite</td>
+        <td></td>
+        <td>polite</td>
+        <td></td>
+        <td>polite</td>
+        <td></td>
+        <td>no</td>
+        <td></td>
+        <td>polite</td>
+        <td></td>
+        <td>no</td>
+        <td>no</td>
+        <td><span aria-hidden="true">✔️</span><span class="visually-hidden">yes</span></td>
+      </tr>
+      <tr>
+        <th>VoiceOver iDevice / Safari</th>
+        <td>polite</td>
+        <td></td>
+        <td>assertive</td>
+        <td></td>
+        <td>assertive</td>
+        <td></td>
+        <td>no</td>
+        <td></td>
+        <td>polite</td>
+        <td></td>
+        <td>no</td>
+        <td>no</td>
+        <td><span aria-hidden="true">✔️</span><span class="visually-hidden">yes</span></td>
+      </tr>
+    </table>
+</div>
+
+
+
+
+
+
+
+<h2 id="Detailed">Detailed Results</h2>
+
+<p>
+For the read-all testing on macOS, I would activate it (<kbd>Ctrl</kbd> + <kbd>Opt</kbd> + <kbd>A</kbd>), then when a button had focus I would hit <kbd>Enter</kbd>. I could visually confirm the live region was populated and I had the Braille emulator running. NVDA&#8217;s read-all (<kbd>Caps Lock</kbd> + <kbd>A</kbd>) and JAWS&#8217; read-all (<kbd>Caps Lock</kbd> + <kbd>&darr;</kbd>) does not leave programmatic focus on controls while reading so the tactic does not work there.
+</p>
+
+<p>
+I&#8217;m not a daily screen reader user and I used the <a href="/2023/01/jaws-nvda-and-voiceover-braille-viewers.html">Braille viewers built into each screen reader</a>, so they may not reflect actual hardware exposure to users.
+</p>
+
+    <ul>
+      <li>JAWS 2023.2306.38 + Chrome 114
+        <ul>
+          <li>All live regions treated as polite (announces at first break, which is not at end of sentence).</li>
+          <li><code>alert</code> role does not pre-pend announcement with <q>alert</q>.</li>
+          <li>Each appeared as assertive in the Braille emulator.</li>
+          <li>No live region announces when hidden</li>
+        </ul>
+      </li>
+      <li>JAWS 2026.2512.50 + Chrome 143.0.7499.193
+        <ul>
+          <li>All live regions treated as polite (announces at first break, which is not at end of sentence).</li>
+          <li><code>alert</code> role does not pre-pend announcement with <q>alert</q>.</li>
+          <li>Each appeared as assertive in the Braille emulator.</li>
+          <li>The dynamic description announces and is exposed in Braille emulator.</li>
+          <li>No live region announces when hidden</li>
+        </ul>
+      </li>
+      <li>JAWS 2026.2512.50 + Chrome 144.0.7559.60
+        <ul>
+          <li>All live regions treated as polite (announces at first break, which is not at end of sentence).</li>
+          <li><code>alert</code> role does not pre-pend announcement with <q>alert</q>.</li>
+          <li>Each appeared as assertive in the Braille emulator.</li>
+          <li>The dynamic description does not announce nor is it exposed in the Braille emulator.</li>
+          <li>No live region announces when hidden</li>
+        </ul>
+      </li>
+      <li>NVDA 2023.1 + Firefox 114
+        <ul>
+          <li><code>alert</code> role treated as assertive (interrupts announcement but goes back and re-announces content it interrupted).</li>
+          <li><code>alert</code> role pre-pends announcement with <q>alert</q>.</li>
+          <li>Only the <code>alert</code> role message appeared in the Braille emulator.</li>
+          <li>No live region announces when hidden</li>
+        </ul>
+      </li>
+      <li>NVDA 2024.1 + Firefox 126
+        <ul>
+          <li>Polite, assertive, and <code>&lt;output&gt;</code> live regions treated as polite (announces at first break, which is not at end of sentence).</li>
+          <li><code>alert</code> role treated as assertive (interrupts announcement but goes back and re-announces content it interrupted).</li>
+          <li><code>alert</code> role pre-pends announcement with <q>alert</q>.</li>
+          <li>Each appeared as assertive in the Braille emulator.</li>
+          <li>The <code>alert</code> role was expsed in the Braille emulator only as &#8220;alert&#8221;, without the message..</li>
+          <li>No live region announces when hidden</li>
+        </ul>
+      </li>
+      <li>NVDA 2025.3.2 + Firefox 146.0.1
+        <ul>
+          <li>Polite, assertive, and <code>&lt;output&gt;</code> live regions treated as polite (announces at first break, which is not at end of sentence).</li>
+          <li><code>alert</code> role treated as assertive (interrupts announcement but goes back and re-announces content it interrupted).</li>
+          <li><code>alert</code> role pre-pends announcement with <q>alert</q>.</li>
+          <li><code>alert</code> role showed <q>alert</q> in Braille emulator, but not the rest of the message.</li>
+          <li>Each appeared as assertive in the Braille emulator.</li>
+          <li>The <code>alert</code> role was expsed in the Braille emulator only as &#8220;alert&#8221;, without the message..</li>
+          <li>The dynamic description does not announce nor is it exposed in the Braille emulator.</li>
+          <li>No live region announces when hidden</li>
+        </ul>
+      </li>
+      <li>Narrator Win11 22621.1702 + Edge 114
+        <ul>
+          <li>All live regions treated as polite, waiting for first sentence to finish before announcing live region and then continuing to read content.</li>
+          <li><code>&lt;output&gt;</code> is not announced at all. Likely a Narrator bug since it is not announced in Chrome or Firefox either. Though Chrome and Firefox both show it as a <code>status</code> region in Microsoft Accessibility Insights, Edge does not seem to expose it. Chatter on the socials suggests <a href="https://toot.cafe/@matt/110595061096851329" target="_top" rel="noopener">it might be a UIA bug</a>.</li>
+          <li><code>alert</code> role does not pre-pend announcement with <q>alert</q>.</li>
+          <li>It has no Braille emulator.</li>
+          <li>No live region announces when hidden</li>
+        </ul>
+      </li>
+      <li>Narrator Win11 25H2 + Edge 143.0.3650.139
+        <ul>
+          <li>All live regions treated as polite, waiting for first sentence to finish before announcing live region and then continuing to read content.</li>
+          <li>Each appeared as assertive in the Braille emulator.</li>
+          <li><code>alert</code> role does not pre-pend announcement with <q>alert</q>.</li>
+          <li>Each appeared as assertive in the Braille emulator.</li>
+          <li>The dynamic description does not announce nor is it exposed in the Braille emulator.</li>
+          <li>No live region announces when hidden</li>
+        </ul>
+      </li>
+      <li>VoiceOver + macOS 12.6.6 + Safari 16.5
+        <ul>
+          <li><code>aria-live="polite"</code> is not announced during read-all (<kbd>Ctrl</kbd> + <kbd>Opt</kbd> + <kbd>A</kbd>), but acts assertive in Braille displays and some content is lost.</li>
+          <li><code>aria-live="assertive"</code> treated as assertive (interrupts announcement, stops reading).</li>
+          <li><code>alert</code> role treated as assertive (interrupts announcement, stops reading).</li>
+          <li><code>alert</code> role does not pre-pend announcement with <q>alert</q>.</li>
+          <li><code>&lt;output&gt;</code> is not announced during read-all (<kbd>Ctrl</kbd> + <kbd>Opt</kbd> + <kbd>A</kbd>), but acts assertive in Braille displays and some content is lost.</li>
+          <li>No live region announces when hidden</li>
+        </ul>
+      </li>
+      <li>VoiceOver + macOS 26.0.1 + Safari 26.0.1
+        <ul>
+          <li><code>aria-live="polite"</code> is not announced during read-all (<kbd>Ctrl</kbd> + <kbd>Opt</kbd> + <kbd>A</kbd>), but acts assertive in Braille displays and some content is lost.</li>
+          <li><code>aria-live="assertive"</code> treated as assertive (interrupts announcement, stops reading).</li>
+          <li><code>alert</code> role treated as assertive (interrupts announcement, stops reading).</li>
+          <li><code>alert</code> role does not pre-pend announcement with <q>alert</q>.</li>
+          <li><code>&lt;output&gt;</code> announces twice and appears in Braille emulator twice.</li>
+          <li>The dynamic description does not announce nor is it exposed in the Braille emulator.</li>
+          <li>No live region announces when hidden</li>
+        </ul>
+      </li>
+      <li>Orca + Ubuntu 24.10 + Firefox 131.0.2
+        <ul>
+          <li>All live regions treated as polite, waiting for end of first visual line (at wrap) before announcing live region and then continuing to read content.</li>
+          <li><code>alert</code> role not announced at all.</li>
+          <li>The dynamic description does not announce.</li>
+          <li>I have no Braille emulator.</li>
+          <li>No live region announces when hidden</li>
+        </ul>
+      </li>
+      <li>Orca + Ubuntu 25.04 + Firefox 146.0.1
+        <ul>
+          <li>All live regions treated as polite, waiting for end of first visual line (at wrap) before announcing live region and then continuing to read content.</li>
+          <li><code>alert</code> role not announced at all.</li>
+          <li>The dynamic description does not announce.</li>
+          <li>I have no Braille emulator.</li>
+          <li>No live region announces when hidden</li>
+        </ul>
+      </li>
+      <li>TalkBack 13.1 + Android 13 + Chrome 114
+        <ul>
+          <li>All live regions treated as assertive (interrupts announcement, does not go back and re-announce content it interrupted).</li>
+          <li><code>alert</code> role does not pre-pend announcement with <q>alert</q>.</li>
+          <li>I have no Braille emulator.</li>
+          <li>No live region announces when hidden</li>
+        </ul>
+      </li>
+      <li>TalkBack 16.0.0.777931756 + Android 16 + Chrome 143.0.7499.146
+        <ul>
+          <li>All live regions treated as polite.</li>
+          <li><code>alert</code> role does not pre-pend announcement with <q>alert</q>.</li>
+          <li>I have no Braille emulator.</li>
+          <li>The dynamic description does not announce.</li>
+          <li>No live region announces when hidden</li>
+        </ul>
+      </li>
+      <li>VoiceOver + iPadOS 16.5 + Safari 16.5
+        <ul>
+          <li><code>aria-live="assertive"</code> and <code>alert</code> role treated as assertive (interrupts announcement but goes back and re-announces content it interrupted).</li>
+          <li><code>alert</code> role does not pre-pend announcement with <q>alert</q>.</li>
+          <li>I have no Braille emulator.</li>
+          <li>No live region announces when hidden</li>
+        </ul>
+      </li>
+      <li>VoiceOver + iPadOS 26.2 + Safari 26.2
+        <ul>
+          <li><code>aria-live="assertive"</code> and <code>alert</code> role treated as assertive (interrupts announcement but does not go back and re-announces content it interrupted).</li>
+          <li><code>alert</code> role does not pre-pend announcement with <q>alert</q>.</li>
+          <li>I have no Braille emulator.</li>
+          <li>The dynamic description does not announce.</li>
+          <li>No live region announces when hidden</li>
+        </ul>
+      </li>
+    </ul>
+
+
+
+<h2 id="Wrap">Wrap-up</h2>
+
+<p>
+This reflects support as noted for the latest releases in the <em>Detailed Results</em> section. If you find something amiss, leave a comment. It&#8217;s possible I got something wrong during transcription or testing. Or just, you know, life.
+</p>
+
+
+<style>
+caption {
+  text-align: left;
+  font-style: italic;
+}
+tr > th:first-child {
+  position: sticky;
+  inset-inline-start: 0;
+  z-index: 1;
+  background-color: var(--page-bg);
+  color: var(--text-color);
+}
+tr > th:first-child::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block: 0;
+  border-inline-end: .05em solid currentColor;
+}
+tr:nth-child(even), tr:nth-child(odd) {
+  background-color: unset;
+}
+td {
+  border-left: .01em dotted #ccc;
+}
+tr > * {
+  border-bottom: .01em dotted #ccc;
+}
+</style>]]></content:encoded>
+					
+					<wfw:commentRss>https://adrianroselli.com/2026/01/live-region-support.html/feed</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Brief Note on Application Keyboard Shortcuts</title>
+		<link>https://adrianroselli.com/2026/01/brief-note-on-application-keyboard-shortcuts.html</link>
+					<comments>https://adrianroselli.com/2026/01/brief-note-on-application-keyboard-shortcuts.html#respond</comments>
+		
+		<dc:creator><![CDATA[Adrian Roselli]]></dc:creator>
+		<pubDate>Fri, 09 Jan 2026 18:45:04 +0000</pubDate>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[accessibility]]></category>
+		<category><![CDATA[internationalization]]></category>
+		<category><![CDATA[usability]]></category>
+		<guid isPermaLink="false">https://adrianroselli.com/?p=45159</guid>
+
+					<description><![CDATA[Identifying keyboard shortcuts for an application is mostly an internationalization problem. It&#8217;s also not a new problem. A recent (to me) example is the WordPress Gutenberg team starting to discuss keyboard shortcuts in 2017, addressing what will and won&#8217;t work across keyboards for different languages. Sight gag for my old&#8230;]]></description>
+										<content:encoded><![CDATA[<p>
+Identifying keyboard shortcuts for an application is mostly an internationalization problem. It&#8217;s also not a new problem. A recent (to me) example is the <a href="https://github.com/WordPress/gutenberg/issues/3218">WordPress Gutenberg team starting to discuss keyboard shortcuts in 2017</a>, addressing what will and won&#8217;t work across keyboards for different languages.
+</p>
+
+<figure class="right">
+ <img loading="lazy" src="/wp-content/uploads/2026/01/kbd-shortcut.jpg" alt="A Mac keyboard with a hand contorting its fingers to as it presses Control, Option, Caps Lock, and a fourth finger is reaching for the J." width="800" height="800">
+ <figcaption>Sight gag for <a href="https://xcancel.com/aardrian/status/1644385909674999814">my old joke</a> that navigating text fields in NVDA and JAWS is just pressing <kbd>E</kbd>, but in VoiceOver it&#8217;s pressing <kbd>Caps Lock</kbd> + <kbd>Ctrl</kbd> + <kbd>Option</kbd> + <kbd>⌘</kbd> + <kbd>J</kbd>.</figcaption>
+</figure>
+
+<p>
+It&#8217;s a fascinating thread given all the international participation. It&#8217;s also outside the scope of this post.
+</p>
+
+<p>
+Instead, this post is to tell you not to stress about what keys a screen reader uses. This is because screen readers have pass-through commands, which tell the screen reader to ignore the next key or combo and pass it through to the application (whether an installed application or the web browser running your application).
+</p>
+
+<p>
+Windows desktop screen readers have explicit pass-through commands:
+</p>
+
+<dl>
+ <dt><a href="https://download.nvaccess.org/documentation/keyCommands.html#:~:text=Pass%20next%20key%20through">NVDA</a></dt>
+ <dd><kbd>NVDA</kbd> + <kbd>F2</kbd></dd>
+ <dt><a href="https://support.freedomscientific.com/content/html/jawshq/JAWS-Keystrokes.html#:~:text=Pass%20Key%20Through,-CAPS">JAWS</a></dt>
+ <dd><kbd>JAWS</kbd> + <kbd>3</kbd></dd>
+ <dt><a href="https://support.microsoft.com/en-us/windows/appendix-b-narrator-keyboard-commands-and-touch-gestures-8bdab3f4-b3e9-4554-7f28-8b15bd37410a#windowsversion=windows_11:~:text=Pass%20keys%20to%20application">Narrator</a> (Microsoft has a poor method of selecting between Win10 and Win11 on that page, so the text link may not work)</dt>
+ <dd><kbd>Narr</kbd> + <kbd>3</kbd></dd>
+</dl>
+
+<p>
+VoiceOver on macOS does as well, and I&#8217;m being very careful to qualify this as macOS, not iOS nor iPadOS:
+</p>
+
+<dl>
+ <dt><a href="https://support.apple.com/guide/voiceover-guide/general-commands-cpvokys01/web#:~:text=Tell%20VoiceOver%20to%20ignore%20the%20next%20key%20or%20key%20combination%20you%20press">VoiceOver on macOS</a></dt>
+ <dd><kbd>VO</kbd> + <kbd>Tab<span aria-hidden="true">↹</span></kbd></dd>
+</dl>
+
+<p>
+VoiceOver on macOS differs from Windows screen readers by requiring the modifier keys to execute most commands. But if you enable <a href="https://support.apple.com/guide/voiceover/with-quick-nav-vo27943/10/mac/26">Quick Nav</a> to allow single key use, you may need to turn it off sometimes (which is not a pass-through):
+</p>
+
+<dl>
+ <dt>Toggle single-key Quick Nav</dt>
+ <dd><kbd>VO</kbd> + <kbd>Q</kbd></dd>
+ <dt>Toggle arrow-key Quick Nav</dt>
+ <dd><kbd>VO</kbd> + <kbd>Shift</kbd> + <kbd>Q</kbd></dd>
+</dl>
+
+<p>
+Orca generally relies on a modifier key except in <a href="https://help.gnome.org/orca/commands_structural_navigation.html">structural navigation</a>, which you may need to disable (and is not the same as a pass-through):
+</p>
+
+<dl>
+ <dt>Toggle structural navigation</dt>
+ <dd><kbd>Orca</kbd> + <kbd>Z</kbd></dd>
+</dl>
+
+<p>
+In each case, the screen reader modifier key (<kbd>NVDA</kbd> or <kbd>VO</kbd>, for example) represents the <kbd>Caps Lock</kbd> or <kbd>Insert</kbd> (depending on preferences and keyboard layout), and for VoiceOver are the <kbd>Ctrl</kbd> + <kbd>Opt</kbd> keys combined.
+</p>
+
+<p>
+This, of course, assumes the screen reader audience for your application knows they exist. Not all screen reader users are <em>expert</em> screen reader users (imagine the same breakdown as with the general public and their computers). But this is stuff you would include in documentation and training (because you have documentation, right?) while also telling your developers and QA folks so they don&#8217;t file unnecessary bugs.
+</p>
+
+
+<h2 id="Update01">Update: 22 January 2026</h2>
+
+<p>
+<a href="https://dragonscave.space/@jscholes/115939534075248421">James Scholes told me</a> that VoiceOver on macOS does indeed have a pass-through command. I updated the post accordingly. I didn&#8217;t do my usual strikes to show the changes, mostly because it was getting unwieldy to read (I moved the Orca section to after macOS).
+</p>
+
+
+<style>
+dl {
+  margin-inline-start: 2.5em;
+}
+</style>]]></content:encoded>
+					
+					<wfw:commentRss>https://adrianroselli.com/2026/01/brief-note-on-application-keyboard-shortcuts.html/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How I Evaluate an ACR (VPAT&#174;)</title>
+		<link>https://adrianroselli.com/2026/01/how-i-evaluate-an-acr-vpat.html</link>
+					<comments>https://adrianroselli.com/2026/01/how-i-evaluate-an-acr-vpat.html#respond</comments>
+		
+		<dc:creator><![CDATA[Adrian Roselli]]></dc:creator>
+		<pubDate>Tue, 06 Jan 2026 00:02:54 +0000</pubDate>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[accessibility]]></category>
+		<category><![CDATA[standards]]></category>
+		<guid isPermaLink="false">https://adrianroselli.com/?p=38881</guid>
+
+					<description><![CDATA[ACRs are Accessibility Conformance Reports, which are the output of a VPAT, or Voluntary Product Accessibility Template maintained by ITIC, or the Information Technology Industry Council (which is why VPAT often has a &#174; symbol hanging off it). An organization may fill out the template to indicate how or if&#8230;]]></description>
+										<content:encoded><![CDATA[<p>
+ACRs are Accessibility Conformance Reports, which are the output of a <a href="https://www.itic.org/policy/accessibility/vpat">VPAT, or Voluntary Product Accessibility Template</a> maintained by ITIC, or the Information Technology Industry Council (which is why VPAT often has a &reg; symbol hanging off it). An organization may fill out the template to indicate how or if its offering conforms to WCAG, Section 508, EN 301 549, or all three.
+</p>
+
+<figure class="right">
+ <img loading="lazy" src="/wp-content/uploads/2026/01/kitchenaid-grinder.jpg" alt="KitchenAid with meat grinder attachment, labeled ‘VPAT®’, an arm labeled ‘vendor’ pushing food labeled ‘claims’ into the grinder, and a bowl beneath catching the results labeled ‘ACR’." width="800" height="800">
+ <figcaption>The process simplified: vendors feed their accessibility claims into the template to produce a report.</figcaption>
+</figure>
+
+<p>
+I&#8217;ve helped evaluate ACRs for clients looking to purchase a product but who want guarantees that the product is accessible. The existence of an ACR doesn&#8217;t mean the product is accessible or even conformant, nor does it mean the ACR itself is accurate. However, it&#8217;s often the first step to identifying how a company presents the accessibility of its offerings. I often remind my clients looking to acquire a product that &#8220;ACR or GTFO&#8221; is only a starting point.
+</p>
+
+<p>
+This post outlines, at a <em>very</em> high level, some of the steps I take when evaluating an ACR and, by extension, a vendor. You may have other approaches. You should comment with your own. Unless you feel it&#8217;s some sort of trade secret. Which is weird.
+</p>
+
+
+<h2 id="Steps">Steps</h2>
+
+<p>
+This list is not exhaustive and not always practical. It matches the front matter provided in the template.
+</p>
+
+<ol>
+ <li>Name of Product/Version: You want this to match the product and release version you&#8217;re considering using.</li>
+ <li>Report Date:
+  <ul>
+   <li>If undated, it should match the current VPAT release.</li>
+   <li>The freshness could be a function of the product&#8217;s deployment process.</li>
+   <li>Products following a continuous deployment (or unversioned) release cycle should be as current as possible.</li>
+   <li>Otherwise the update cadence should probably be under one year.</li>
+  </ul>
+ </li>
+ <li>Product Description: Make sure the product description in the ACR matches the product you&#8217;re considering.</li>
+ <li>Contact Information: This should be the product owner, ACR author, or otherwise make sense in context. If it&#8217;s a completely different company, one that may not be on your contract, ask for clarity.</li>
+ <li>Notes: This is where you pay attention to…
+  <ul>
+   <li>Carve-outs and exceptions which can exclude entire sections or features of a product from the report.</li>
+   <li>Language that gets squishy and tries to frame problems identified in the report.</li>
+   <li>This may be where the team performing the testing is identified.</li>
+  </ul>
+ </li>
+ <li>Evaluation Methods Used:
+  <ul>
+   <li>You don&#8217;t want a report that <a href="/2023/01/comparing-manual-and-free-automated-wcag-reviews.html">relies solely on automated testing</a> or “product knowledge.”</li>
+   <li>Look for version number of browsers, operating systems, and assistive technologies and ensure they are recent and / or match your audience.</li>
+   <li>Be cautious of testing performed in only one browser or only one screen reader or that doesn&#8217;t mention voice control or other assistive technologies. For example, if it was only tested in Safari with VoiceOver on a Mac, then it&#8217;s not a thorough review.</li>
+  </ul>
+ </li>
+ <li>Applicable Standards / Guidelines: It&#8217;s critical this matches the latest of each as well as the latest VPAT version. A WCAG review that only looks at WCAG 2.0 neglects the reality that you and your audience aren&#8217;t in 2008.
+  <ul>
+   <li>The VPAT is currently 2.5, or April 2025, and comes in the following flavors:
+    <ul>
+     <li>VPAT 2.5Rev EU (April 2025) covers EN 301 549.</li>
+     <li>VPAT 2.5Rev WCAG (April 2025) covers WCAG 2.2.</li>
+     <li>VPAT 2.5Rev 508 (April 2025) covers Revised Section 508 standards.</li>
+     <li>VPAT 2.5Rev INT (April 2025) covers all three.</li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ol>
+
+<p>
+This list addresses the content of the report itself.
+</p>
+
+<ol>
+ <li>Go back to the front matter and identify the report author (check Contact Information, Notes, or Evaluation Methods Used).
+  <ol>
+   <li>The author is also the vendor — be very wary.</li>
+   <li>The author is a digital accessibility consultancy you recognize — be less wary.</li>
+   <li>The author is a digital accessibility consultancy you <em>do not</em> recognize — do some research:
+    <ul>
+     <li>Look for an accessibility policy on the author&#8217;s site.</li>
+     <li>Find accessibility issues / contributions on GitHub.</li>
+     <li>Check if any issues / PRs are tagged as accessibility.</li>
+     <li>Look at how long it takes to close accessibility issues.</li>
+     <li>See if the author speaks to accessibility in its blog, social media, and so on.</li>
+     <li>Try to find any disability or accessibility community engagement.</li>
+     <li>Review the contracts for any language related to WCAG (or applicable laws).</li>
+     <li>Try to find any written accessibility guarantees.</li>
+     <li>Ask for a demo of the accessibility features of the product.</li>
+     <li>If the reviewers are Akbar and Jeff&#8217;s WCAG Hut then maybe put it under a bit more scrutiny.</li>
+    </ul>
+   </li>
+  </ol>
+ </li>
+ <li>Every row should have content in the Remarks and Explanations cell.
+  <ul>
+   <li>These should detail what is wrong and ideally what is testably wrong (so you can confirm it and understand the impact).</li>
+   <li>They should describe support as well, if only to brag about the effort, but typically don&#8217;t.</li>
+   <li>References to internal bugs are unlikely, but you can ask for the status and timelines of bugs related to your concerns.</li>
+   <li>Make sure the remarks demonstrate understanding of Success Criterion, etc., especially for anything marked N/A (pasting SC language is not understanding).</li>
+   <li>Within an INT ACR, look for cross-mappings across WCAG, Section 508, and EN 301 549.</li>
+  </ul>
+ </li>
+</ol>
+
+<h2 id="Related">Related</h2>
+
+<p>
+Way back in 2011, Karl Groves wrote <cite><a href="https://karlgroves.com/why-a-third-party-should-prepare-your-vpatgpat/">Why a Third Party Should Prepare Your VPAT</a></cite> and I think it&#8217;s useful for evaluating ACRs. In 2023 he also wrote <cite><a href="https://karlgroves.com/a-quick-guide-to-reviewing-a-vpat-acr/">A quick guide to reviewing a VPAT ACR</a></cite>, which is far longer than this post. Probably read it after this one for a more detail. There is also <a href="https://webaim.org/articles/procurement/vpat/">WebAIM&#8217;s process for vetting ACRs</a> as another reference point, from early 2024.
+</p>
+
+
+
+]]></content:encoded>
+					
+					<wfw:commentRss>https://adrianroselli.com/2026/01/how-i-evaluate-an-acr-vpat.html/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>My Use of ‘AI’ on this Site</title>
+		<link>https://adrianroselli.com/2025/12/my-use-of-ai-on-this-site.html</link>
+					<comments>https://adrianroselli.com/2025/12/my-use-of-ai-on-this-site.html#comments</comments>
+		
+		<dc:creator><![CDATA[Adrian Roselli]]></dc:creator>
+		<pubDate>Mon, 29 Dec 2025 21:35:16 +0000</pubDate>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[meta]]></category>
+		<guid isPermaLink="false">https://adrianroselli.com/?p=43774</guid>
+
+					<description><![CDATA[I&#8217;m using this post to acknowledge my past practices and establish future ones on this site related to ‘AI’. I have not, and will not, use LLMs to write, draft, review, or otherwise participate in content creation — outside of clearly-identified contexts to critique it. I have used generative technologies&#8230;]]></description>
+										<content:encoded><![CDATA[<p>
+I&#8217;m using this post to acknowledge my past practices and establish future ones on this site related to ‘AI’.
+</p>
+
+<span id="NoLLMWrap"><img loading="lazy" src="/wp-content/uploads/2025/12/No-LLM.svg" alt="LLM in a red circle and slash." width="500" height="500" class="alignnone size-full wp-image-45048" class="right"></span>
+
+<ul>
+ <li>I have not, and will not, use LLMs to write, draft, review, or otherwise participate in content creation — outside of clearly-identified contexts to critique it.</li>
+ <li>I have used generative technologies to create images for posts, but have abandoned the practice. Those instances are listed below.</li>
+ <li>I have no interest in becoming a blog about what is broadly (and inaccurately) called ‘AI’ nor one that spends much time dwelling on it. I have written only a handful of posts on it. Those instances are listed below.</li>
+ <li>I do not publish comments that are spam, and since the overwhelming majority of spam comments over the last year also appear to be LLM-generated, that means I am probably also blocking comments written by an LLM.
+</ul>
+
+
+<h2 id="Img">Generated Images</h2>
+
+<p>
+Cases through the end of 2025 where I have used generated images which were not part of the core subject of the post (as a critique or evaluation):
+</p>
+
+<ol>
+ <li><a href="/2024/03/csunatc-wcagmire.html">CSUNATC: WCAGmire</a> (the entire talk was made of generated images, so I am not changing the post), 22 March 2024</li>
+
+ <li><a href="/2024/01/under-supported-and-underpaid.html">Under-supported and Underpaid</a>, 19 January 2024 (I am not changing the image since it&#8217;s a parody of a generated image)</li>
+
+ <li><a href="/2023/12/web-development-advent-calendars-for-2023.html">Web Development Advent Calendars for 2023</a>, 1 December 2023</li>
+
+ <li><a href="/2023/11/oredev-2023-wcagmire.html">Øredev 2023: WCAGmire</a> (the entire talk was made of generated images, so I am not changing the post), 8 November 2023</li>
+
+ <li><a href="/2023/11/dont-turn-a-table-into-an-aria-grid-just-for-a-clickable-row.html">Don’t Turn a Table into an ARIA Grid Just for a Clickable Row</a>, 2 November 2023</li>
+
+ <li><a href="/2023/09/paris-web-2023-wcagmire.html">Paris Web 2023: WCAGmire</a> (the entire talk was made of generated images, so I am not changing the post), 28 September 2023</li>
+
+ <li><a href="/2023/09/browser-video-players-review.html">Browser Video Players Review</a>, 5 September 2023</li>
+
+ <li><a href="/2023/04/dont-override-screen-reader-pronunciation.html">Don’t Override Screen Reader Pronunciation</a>, 11 April 2023</li>
+
+ <li><a href="/2023/02/aria-vs-html.html">ARIA vs HTML</a>, 21 February 2023</li>
+
+ <li><a href="/2023/02/avoid-spanning-table-headers.html">Avoid Spanning Table Headers</a>, 20 February 2023</li>
+
+ <li><a href="/2023/01/comparing-manual-and-free-automated-wcag-reviews.html">Comparing Manual and Free Automated WCAG Reviews</a>, 19 January 2023</li>
+
+ <li><a href="/2022/12/the-411-on-4-1-1.html"><s>The 411 on 4.1.1</s></a>, 5 December 2022, <ins>replaced 5 January 2026</ins></li>
+
+ <li><a href="/2022/11/your-accessibility-claims-are-wrong-unless.html"><s>Your Accessibility Claims Are Wrong, Unless…</s></a>, 14 November 2022, <ins>replaced 5 January 2026</ins></li>
+
+ <li><a href="/2022/11/accessibility-gaps-in-mvps.html"><s>Accessibility ‘Gaps’ in MVPs</s></a>, 5 November 2022, <ins>replaced 5 January 2026</ins></li>
+
+ <li><a href="/2022/10/under-engineered-patterns-for-a11ytoconf.html">Under-Engineered Patterns for #a11yTOconf</a> (the entire talk was made of generated images, so I am not changing the post), 20 October 2022</li>
+
+ <li><a href="/2022/10/roledice-for-a11ytogaming.html">role=dice for #a11yTOgaming</a> (much of the talk was made of generated images, so I am not changing the post), 19 October 2022</li>
+
+ <li><a href="/2022/09/accessibility-at-the-edge-w3c-cg-is-an-overlay-smoke-screen.html"><s>‘Accessibility at the Edge’ W3C CG Is an Overlay Smoke Screen</s></a>, 1 September 2022, <ins>replaced 5 January 2026</ins></li>
+
+ <li><a href="/2022/08/conveying-all-caps-legal-text.html"><s>Conveying All-Caps Legal Text</s></a>, 27 August 2022, <ins>replaced 5 January 2026</ins></li>
+
+ <li><a href="/2022/06/internet-explorer-still-does-not-go-away-today.html">Internet Explorer Still Does Not Go Away Today</a> (I plan to leave this image given the context it offers), 15 June 2022</li>
+
+ <li><a href="/2022/06/keyboard-only-scrolling-areas.html">Keyboard-Only Scrolling Areas</a> (I plan to leave this image given what it demonstrates), 1 June 2022</li>
+
+ <li><a href="/2022/04/keyboard-challenges-for-twitters-new-alt-badge.html">Keyboard Challenges for Twitter’s New ALT Badge</a> (I plan to leave the images owing to context), 9 April 2022</li>
+
+</ol>
+
+<p>
+You can see where my fascination and experimentation dropped off. My use of generated images was never acceptable. Not because I was depriving designers of work, but because the work I generated was based on theft. I did it anyway. Some of the images were meant to demonstrate failures of the technology, but not all. In time I hope to replace nearly all generated images (keeping the ones where I am evaluating the output).
+</p>
+
+
+<h2 id="AIGH">Post about ‘AI’</h2>
+
+<p>
+Cases through the end of 2025 where I have written about ‘AI’ as the core subject of a post:
+</p>
+
+
+<ol>
+
+ <li>This post</li>
+
+ <li><a href="/2025/10/openai-aria-and-seo-making-the-web-worse.html">OpenAI, ARIA, and SEO: Making the Web Worse</a>, 22 October 2025</li>
+
+ <li><a href="/2025/02/generic-llm-chatbot-attestation.html">Generic LLM Chatbot Attestation</a>, 16 February 2025</li>
+
+ <li><a href="/2024/04/what-you-can-do-as-a-web-builder-on-earth-day.html">What You Can Do as a Web Builder on Earth Day</a>, 22 April 2024</li>
+
+ <li><a href="/2023/06/no-ai-will-not-fix-accessibility.html">No, ‘AI’ Will Not Fix Accessibility</a>, 8 June 2023</li>
+
+ <li><a href="/2023/01/ai-generated-images-from-ai-generated-prompts.html">AI-Generated Images from AI-Generated Prompts</a>, 9 January 2023</li>
+
+ <li><a href="/2022/08/ai-generated-images-from-ai-generated-alt-text.html">AI-Generated Images from AI-Generated Alt Text</a>, 4 August 2022</li>
+
+</ol>
+
+<p>
+I think it&#8217;s fair to say this blog has not turned into a pro- or anti-‘AI’ collection of posts. Generally I only touch on it when it directly impacts my work.
+</p>
+
+
+<h2 id="Wrap">Wrapping</h2>
+
+<p>
+All this together is me coming clean where I have cheated (images) and also committing to you (and me) that this has always been and will continue to be a site written by a human (still me). On top of that, this site is not following the fad of trying to chase the trend and write about every iteration of ‘AI’.
+</p>
+
+<p>
+Similarly, this site has no ads, does not gather nor sell your information, and has no third-party trackers. That said, I am exploring adding some kind of analytics to the site — but not Google.
+</p>
+
+<p>
+Like most writers, my content has also been stolen. I am not actively poisoning LLMs, but I rather want to.
+</p>
+
+
+<h2 id="User">Me, as a Reader</h2>
+
+<p>
+When reading content on other sites, if I sense an article or post has been generated, drafted, edited, or otherwise touched by an LLM, I close the site and add it to a block list. I should note that I have been much less strict about generated images when reading content on other sites. Yes, I still have to reconcile that. I am still torn about cases of LLM-generated image alternatives, but if it&#8217;s from an accessibility practitioner and has clearly not been reviewed, then possible block. I accept auto-generated closed captions because I recognize those are the only captions I will generally get.
+</p>
+
+<p>
+I look forward to a 2026 crafted by humans, even if it means I have to block everything else.
+</p>
+
+
+
+
+
+<style>
+@media (min-width: 25em) {
+  #NoLLMWrap {
+    /*   outline: 1px dotted #f00; */
+    float: right;
+    padding-left: 1em;
+    shape-margin: 0;
+    max-width: 49%;
+    shape-outside: polygon(29.05% 0.55%, 52.57% -1.05%, 76.31% 1.48%, 93.65% 17.05%, 100.24% 32.26%, 100.11% 59.1%, 91.99% 83.14%, 72.51% 97.47%, 49.81% 99.66%, 24.57% 95.49%, 12.11% 83.65%, 1.02% 63%, -0.19% 48.99%, 2.55% 34.44%, 13.13% 14.84%);
+  }
+
+  #NoLLMWrap img {
+    float: none;
+    margin-left: 0;
+    max-width: 100%;
+    /*   outline: 1px dotted #00f; */
+  }
+}
+
+ins {
+  text-decoration-style: wavy;
+}
+</style>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://adrianroselli.com/2025/12/my-use-of-ai-on-this-site.html/feed</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>You Can&#8217;t Make Something Accessible to Everyone</title>
+		<link>https://adrianroselli.com/2025/12/you-cant-make-something-accessible-to-everyone.html</link>
+					<comments>https://adrianroselli.com/2025/12/you-cant-make-something-accessible-to-everyone.html#comments</comments>
+		
+		<dc:creator><![CDATA[Adrian Roselli]]></dc:creator>
+		<pubDate>Tue, 02 Dec 2025 20:37:57 +0000</pubDate>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[accessibility]]></category>
+		<category><![CDATA[rant]]></category>
+		<guid isPermaLink="false">https://adrianroselli.com/?p=43541</guid>
+
+					<description><![CDATA[This post&#8217;s title is unpleasant, but it&#8217;s important to acknowledge the reality of the human condition and limitations in technologies. Even purpose-built assistive tech. Broadly, when someone says something is &#8220;accessible&#8221; that&#8217;s a hopeful statement that is based on some best efforts. Of course, there are bad actors who assert&#8230;]]></description>
+										<content:encoded><![CDATA[<p>
+This post&#8217;s title is unpleasant, but it&#8217;s important to acknowledge the reality of the human condition and limitations in technologies. Even purpose-built assistive tech.
+</p>
+
+<p>
+Broadly, when someone says something is &#8220;accessible&#8221; that&#8217;s a hopeful statement that is based on some best efforts. Of course, there are bad actors who <a href="/2022/11/your-accessibility-claims-are-wrong-unless.html">assert something is accessible</a> because they just <a href="https://github.com/GoogleChrome/web.dev/issues/8959">want the clicks</a> or <a href="/2025/05/my-request-to-google-on-accessibility.html">don&#8217;t invest much effort</a>. Others <a href="https://alice.boxhall.au/articles/a-threat-model-for-accessibility-on-the-web/">assert their pet features</a> are to &#8220;make something accessible&#8221; but are unable to explain how. Some even <a href="/tag/overlay">promise the technology to do it</a> — <a href="/2025/03/be-wary-of-accessibility-guarantees-from-anyone.html">even formerly legitimate practitioners</a>.
+</p>
+
+
+<aside class="right">
+<img loading="lazy" src="/wp-content/uploads/2025/12/robson-square-stramp.jpg" alt="Two wide concrete staircases with a steep ramp slashing through them in a zig zag, each turn at a wall or open to the stairs below it." width="577" height="577">
+<p>
+The stramp at <a href="https://en.wikipedia.org/wiki/Robson_Square">Robson Square</a> is often held up as a shining example of universal design — and when it was designed in the 1970s it was a beacon of progress. However, the angle is too steep and the blended spots are trip hazards. These are <a href="https://universaldesign.org/podcast/011-stramps">well known issues</a> raised by <a href="https://www.cbc.ca/news/canada/british-columbia/robson-square-accessibility-1.5255477">wheelchair users</a>, <a href="https://incl.ca/the-problems-with-ramps-blended-into-stairs/">more than once</a>, and which British Columbia has <a href="https://archinect.com/news/article/150156501/battle-over-stramp-accessibility-upgrades-in-british-columbia-takes-shape">always resisted changing</a> in favor of <a href="https://www.cbc.ca/news/canada/british-columbia/robson-square-province-reax-1.5265090">declaring them <q>ornamental</q></a>.
+</p>
+</aside>
+
+<p>
+There are many people who think making a web site that passes WCAG 2.2 at Level AA makes it accessible. I&#8217;ve <a href="https://adrianroselli.com/?s=%22adversarial+conformance%22">documented many cases</a> where that&#8217;s not true, <a href="https://www.craigabbott.co.uk/blog/2025/5-reasons-why-wcag-aa-compliance-does-not-mean-your-website-is-accessible/">as have others</a>, some <a href="https://www.youtube.com/watch?v=ADIgU53Y2Rg">for years now</a>.
+</p>
+
+<p>
+If you think passing WCAG at Level AAA will be <em>more</em> accessible, then I know plenty of people who&#8217;d like to have a conversation with <a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-enhanced.html">SC 1.4.6: Contrast (Enhanced)</a> for encoding eye pain.
+</p>
+
+<p>
+I keep trying to stress (with authors, clients, spec writers, GitHub randos, LLM aficionados, …) that accessibility is about people. It is not a strictly technical problem to be solved with code.
+</p>
+
+<p>
+Because people have varying needs across disparate contexts from assorted expectations with unequal skill levels using almost random technologies, never mind current moods and real-life distractions, to suggest one thing will be accessible for <em>everyone</em> in <em>all</em> those circumstances is pure hubris. Or lack of empathy. Maybe a mix.
+</p>
+
+<p>
+I&#8217;m not suggesting that claiming something is &#8220;accessible&#8221; is an overtly bad act. I am saying, however, that maybe you should explain <em>what</em> accessibility features it has, and let that guide people. It&#8217;s more honest to them and you.
+</p>
+
+<p>
+<em>This</em> is why we keep working at accessibility. To shrink those cases. To move halfway to the wall, over and over, until we cannot slide a sheet of paper between our nose and the cold vinyl siding of reality. That&#8217;s why we keep up the work. That&#8217;s why we continue to try. To make things better for yet more people, even if we can&#8217;t cover everyone.
+</p>
+
+<p>
+Stop beating yourself up and be wary of those who maybe aren&#8217;t.
+</p>]]></content:encoded>
+					
+					<wfw:commentRss>https://adrianroselli.com/2025/12/you-cant-make-something-accessible-to-everyone.html/feed</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Web Design / Dev Advent Calendars for 2025</title>
+		<link>https://adrianroselli.com/2025/12/web-design-dev-advent-calendars-for-2025.html</link>
+					<comments>https://adrianroselli.com/2025/12/web-design-dev-advent-calendars-for-2025.html#comments</comments>
+		
+		<dc:creator><![CDATA[Adrian Roselli]]></dc:creator>
+		<pubDate>Mon, 01 Dec 2025 15:05:55 +0000</pubDate>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[accessibility]]></category>
+		<category><![CDATA[css]]></category>
+		<category><![CDATA[design]]></category>
+		<category><![CDATA[html]]></category>
+		<category><![CDATA[internet]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[standards]]></category>
+		<category><![CDATA[UX]]></category>
+		<guid isPermaLink="false">https://adrianroselli.com/?p=41344</guid>
+
+					<description><![CDATA[The advent calendar I wanted to use for the photo hasn&#8217;t arrived yet, so enjoy this box of tree. Web developers around the world have for years given a nod to Saturnalia solstice Isaac Newton’s birthday Yule wassailing mummering end of Gregorian calendar year Christmas with advent calendars covering web-related&#8230;]]></description>
+										<content:encoded><![CDATA[<div id="Advent">
+
+<figure class="right">
+ <img loading="lazy" src="/wp-content/uploads/2025/12/2025-advent.jpg" alt="A boxed Charlie Brown lonely tree (a spindly pine stick with a single ornament bending it to the ground) on a carpet of concentric black and white diamonds." width="800" height="799">
+ <figcaption>The advent calendar I wanted to use for the photo hasn&#8217;t arrived yet, so enjoy this box of tree.</figcaption>
+</figure>
+
+
+<p>
+Web developers around the world have for years given a nod to <s><a href="https://aardrian.tumblr.com/post/105306017461/heydonworks-happy-to-report-ive-received-the">Saturnalia</a></s> <s>solstice</s> <s><a href="https://en.wikipedia.org/wiki/Isaac_Newton#Early_life">Isaac Newton’s birthday</a></s> <s>Yule</s> <s><a href="https://en.wikipedia.org/wiki/Wassailing">wassailing</a></s> <s>mummering</s> <s><a href="https://en.wikipedia.org/wiki/Conversion_between_Julian_and_Gregorian_calendars">end of Gregorian calendar year</a></s> Christmas with advent calendars covering web-related topics. As a result, you may (should) recognize some of the ones listed below.
+</p>
+
+<p>
+Every year I miss a few on December 1, so add a comment or <a href="https://toot.cafe/@aardrian">hit me up on the Fediverse</a> if you have more. I delayed posting again this year because I am a bit tired of people who just copy the entire thing and share their version on the socials. Also, this content originally appeared on AdrianRoselli.com and if you aren&#8217;t reading it there then the site you are on is a thieving site which should be held in the most contemptible disdain. Happy holidays!
+</p>
+
+<p>
+I have not included advent calendars that are single blog posts, image-only efforts with inaccessible images, or delivered only via email. It would be a terrible gift from me to you if you sign up for spam or end up taking advice from organizations that are clearly bad at advice. Maybe next year I&#8217;ll ban LinkedIn posts. I also don&#8217;t evaluate the quality of the calendars (hard to do when most have barely opened their first day).
+</p>
+
+<p>
+I am happy to see more of the calendar creators are available on the fediverse. I look forward to it being all of them. I resent those who are still on Twitter, so if you have a better social link for any of them, please let me know.
+</p>
+
+<style>
+#Advent {
+  counter-reset: advent;
+}
+#Advent h2 {
+  margin-top: 2em;
+}
+#Advent h2::before {
+  counter-increment: advent;
+  content: counter(advent) ". ";
+}
+iframe.cp_embed_iframe {
+  max-height: 100vh;
+  max-width: 100vh;
+}
+</style>
+
+
+
+
+
+
+<h2>HTMHell Advent Calendar (<a href="https://front-end.social/@matuzo">@matuzo<wbr>@front-end.social</a>)</h2>
+
+<p>
+<a href="https://www.htmhell.dev/adventcalendar/">HTMHell Advent Calendar</a> is Manuel Matuzović&#8217;s doubling-down on the theology of HTML. And Christianity. One of those. Anyway, each day will reveal an article, talk, or tool that focuses on HTML.
+</p>
+
+
+
+
+
+<h2>Advent of Code (<a href="https://hachyderm.io/@ericwastl">@ericwastl<wbr>@hachyderm.io</a>)</h2>
+
+<p>
+<a href="http://adventofcode.com/">Advent of Code</a> provides a small programming puzzle each of twelve days (that&#8217;s a change this year). They are stand-alone, but supposedly have a general theme. They also use different technologies so there is some variety as well. This year, in honor of 10 years, <a href="https://youtu.be/zF_4miExauw">Eric Wastl made a music video for it</a>.
+</p>
+
+
+
+
+
+
+<h2><span lang="fr">24 Jours de Web</span> (<a href="https://mamot.fr/@ParisWeb">@ParisWeb<wbr>@mamot.fr</a>)</h2>
+
+<p>
+<a href="https://www.24joursdeweb.fr/" hreflang="fr" lang="fr">24 Jours de Web</a> is back as an advent calendar for web folk. Written in French, it is clearly primarily targeted at French speakers, but a round of Google Translate will open it up to far more readers (like me).
+</p>
+
+
+
+
+<h2>Performance Calendar (<a href="https://bsky.app/profile/stoyan.org">@stoyan.org@bsky.app</a>)</h2>
+
+<p>
+<a href="https://calendar.perfplanet.com/2025/">Performance Calendar</a> hails this as the speed geek&#8217;s favorite time of the year, ostensibly because of the tips it has been offering each December since 2009. It isn&#8217;t just server optimizations you&#8217;ll find here, so don&#8217;t shy away because you&#8217;re not a system admin.
+</p>
+
+
+
+
+
+<h2>JVM Advent (<a href="https://twitter.com/JavaAdvent">@JavaAdvent</a>)</h2>
+
+<p>
+<a href="https://www.javaadvent.com/calendar">JVM Advent</a> is posting a technical article from various authors related to Java each day.
+</p>
+
+
+
+
+
+<h2><span lang="jp">アクセシビリティ</span> Advent Calendar 2025 (<a href="https://twitter.com/motchie">@motchie</a>)</h2>
+
+<p>
+<a href="https://adventar.org/calendars/9957" hreflang="jp">Accessibility (<span lang="jp">アクセシビリティ</span>) Advent Calendar 2024</a> is in Japanese, and thanks to the powers of Google Translate, I can tell you it covers a variety of accessibility issues, including web: <q lang="jp">Webのアクセシビリティを含む、様々なアクセシビリティについてのアドベントカレンダーです。</q>). If you know Japanese, I welcome any corrections. It has been running since 2013.
+</p>
+
+
+
+
+
+<h2>Selfhtml Advent (<a href="https://bildung.social/@selfhtml">@SELFHTML<wbr>@bildung.social</a>)</h2>
+
+<p>
+<a href="https://forum.selfhtml.org/advent/2025" hreflang="de">Selfhtml Advent</a> is from Germany&#8217;s oldest (since 1995) and largest web design Community. The advent calendar will present tips and examples from its contributors. As of 1 December, there doesn&#8217;t appear to be content, however.
+</p>
+
+
+
+
+
+
+
+<h2><span lang="no">Kodekalender</span> (<a href="https://twitter.com/knowitnorge">@knowitnorge</a>)</h2>
+
+<p>
+<a href="https://julekalender.knowit.no/" hreflang="no" lang="no">Kodekalender</a> is a Norwegian code-specific calendar. Each day solve a code puzzle and be entered in a drawing (you should check the rules).
+</p>
+
+
+
+
+
+
+
+<h2>Bekk Christmas (<a href="https://www.linkedin.com/company/bekk/">LinkedIn: bekk</a>)</h2>
+
+<p>
+<a href="https://bekk.christmas/">Bekk.christmas</a> collects a few topics per day in one calendar. In previous years I broke them all out, but with some of the domains not resolving it seems safest to link to the parent calendar. Posts will cover JavaScript, UX, security, and machine learning.
+</p>
+
+
+
+
+
+
+
+<h2>24 Days in Umbraco (<a href="https://umbracocommunity.social/@24DaysInUmbraco">@24DaysInUmbraco<wbr>@umbracocommunity.social</a>)</h2>
+
+<p>
+<a href="https://24days.in/umbraco-cms/2025/">24 Days in Umbraco</a> is dedicated to the Umbraco CMS. This calendar has been running since 2012.
+</p>
+
+
+
+
+
+
+
+<h2>24 Pull Requests (<a href="https://mastodon.social/@24pullrequests">@24PullRequests<wbr>@mastodon.social</a>)</h2>
+
+<p>
+<a href="http://24pullrequests.com/">24 Pull Requests</a> is less an advent calendar than it is an effort to mobilize developers. The goal is to get developers to send a pull request every day in December (up to Christmas), thereby supporting your favorite open source projects. I&#8217;m not sure it&#8217;s active in the sense that it posts, but you can still do your own contributions of course.
+</p>
+
+
+
+
+
+
+
+<h2>Perl Weekly Challenge Advent (<a href="https://twitter.com/PerlWChallenge">@PerlWChallenge</a>)</h2>
+
+<p>
+<a href="https://theweeklychallenge.org/blog/advent-calendar-2025/">Perl Weekly Challenge Advent</a> has been running since 2021. Each day it takes a response from a previous weekly challenge and re-posts it on the site.
+</p>
+
+
+
+
+
+
+<h2>Perl Advent Calendar (<a href="https://twitter.com/perladvent">@perladvent</a>)</h2>
+
+<p>
+<a href="https://perladvent.org/2025/">Perl Advent Calendar</a> goes all the way back to 2000 (and back then looked a bit more like a traditional advent calendar, too) and has been dispensing tips for Perl developers ever since.
+</p>
+
+
+
+
+
+<h2>C# Advent Calendar (<a href="https://twitter.com/mgroves">@mgroves</a>)</h2>
+
+<p>
+<a href="https://csadvent.christmas/">C# Advent Calendar</a> (sharp, not hashtag) is revealing two posts per day, including on December 25. That&#8217;s 50 posts over the course of the month.
+</p>
+
+
+
+
+
+
+
+<h2>Raku Advent Calendar</h2>
+
+<p>
+<a href="https://raku-advent.blog/2025/12/">Raku Advent Calendar</a> (Raku is Perl6) has a new daily post for your Perl/Raku needs.
+</p>
+
+
+
+
+
+
+<h2>Festive Tech Calendar (<a href="https://twitter.com/_cloudfamily">@_cloudfamily</a>)</h2>
+
+<p>
+<a href="https://www.youtube.com/watch?v=YFEKCeGYSOA&#038;list=PLaGfA5qEcV9IZjS9ynqNGIimPCdZmgt7d">Festive Tech Calendar</a> is a YouTube channel with videos ranging from a half hour to over an hour.
+</p>
+
+
+
+
+
+
+<h2>IndieWeb Gift Calendar</h2>
+
+<p>
+<a href="https://indieweb.org/2025-12-indieweb-gift-calendar">IndieWeb Gift Calendar</a> is an annual group effort starting in 2017 to gift (ship) one or more IndieWeb-related thing(s) each day of December that others can use to improve their IndieWeb experience.
+</p>
+
+
+
+
+<h2>The Tactile Times Advent Calendar and Countdown</h2>
+
+<p>
+<a href="https://games.tactiletimes.org/advent.html">The Tactile Times Advent Calendar and Countdown</a> is self-described as the first fully-accessible online advent calendar aimed specifically at young braillists (as far as they know). Its content is not web/dev-related, but it is good insight into what &#8220;3 blind children&#8221; can build for their &#8220;newspaper for young braillists&#8221;.
+</p>
+
+
+
+
+
+
+<h2>CSS Advent Calendar (<a href="https://twitter.com/stevenaharrison">@stevenaharrison</a>)</h2>
+
+<p>
+<a href="https://cssadventcalendar.dev/">CSS Advent Calendar</a> offers a brief note on a property or feature, with links to MDN and a related video. He&#8217;s also posting a very brief video on Twitter for each day.
+</p>
+
+
+
+
+
+
+<h2>F# Advent Calendar in English</h2>
+
+<p>
+<a href="https://sergeytihon.com/fsadvent/">F# Advent Calendar in English</a> collects folks who write posts or make videos about solving something in F#. The English version dates back to 2014 and there is a Japanese version back to 2010. It also collects folks who solve Advent of Code using F#.
+</p>
+
+
+
+
+
+
+<h2>adventJS</h2>
+
+<p>
+<a href="https://adventjs.dev/">adventJS</a> presents programming challenges to be solved using JavaScript, TypeScript and / or Python (though that one appears to still be in beta). It has been running since 2020 and appears to be available in Spanish and Portuguese.
+</p>
+
+
+
+
+
+
+<h2>Advent 2025 &#8211; 24 days of accessibility (<a href="https://drupal.community/@freelock">@freelock<wbr>@drupal.community</a>)</h2>
+
+<p>
+<a href="https://www.freelock.com/advent/2025">Advent 2025 &#8211; 24 days of accessibility</a> plans to highlight a section (or more) of the Web Content Accessibility Guidelines (WCAG) each day.
+</p>
+
+
+
+
+
+
+<h2>Advent of A11Y</h2>
+
+<p>
+<a href="https://www.manuelsanchezdev.com/advent-2025">Advent of A11Y</a> will offer a tip every day until Christmas how to make your web content more accessible. It promises each tip will be quick to read and easy to apply. Thanks to <a href="#comment-387928">Jens in the comments</a> for this one.
+</p>
+
+
+
+
+
+<h2>Advent of Svelte</h2>
+
+<p>
+<a href="https://advent.sveltesociety.dev/2025">Advent of Svelte</a> has no coding challenges, focusing instead on 24 days of Svelte knowledge, tips, and insights. Started in 2023, it used to focus on Svelte coding challenges. But in <em>this</em> economy&#8253;
+</p>
+
+
+
+
+<h2>Debug December</h2>
+
+<p>
+<a href="https://www.debugdecember.com/challenges/2025">Debug December</a> presents 24 coding challenges framed as bugs for you to solve. There&#8217;s also a raffle on days 3, 6, 12, 18 and 24. <a href="https://bsky.app/profile/wonday.bsky.social/post/3m7cskxzvqs2c">Thanks to T on Bluesky</a> for the heads-up.
+</p>
+
+
+
+
+<h2>Advent(ure) in System Seeing</h2>
+
+<p>
+<a href="https://www.ruthmalan.com/Advent/About.html">Advent(ure) in System Seeing</a> provides a daily activity to help you practice how you might perceive or understand a system so you can better design it. Collected, these become a journal of prompts for your system design and architecture work.
+</p>
+
+
+
+</div>
+
+
+
+
+<h2 id="Extras">Extras</h2>
+
+<p>
+<a href="https://inclusivedesign24.org/">Inclusive Design 24</a> (#id24) is an online conference that stuffs 24 talks into 24 consecutive hours. Thanks to a fluke of timekeeping, you can make your own advent calendar from #id24 videos for any year. For example, head over to the <a href="https://inclusivedesign24.org/2025/schedule/">2025 #id24 schedule</a> and watch the one that corresponds to the day of the month. Free content! No sign-in needed!
+</p>
+
+<p>
+Each day until Christmas <a href="https://front-end.social/@heydon/115643491947466740">Heydon is posting on Mastodon</a> a new shirt design in a series he calls “monochrome pride:” celebrating pride but without all the bright colors.
+</p>
+
+<p>
+Damien Guard is returning with his <a href="https://mastodon.social/@damieng/tagged/adventoffonts">Masto-only 8×8 Font Advent Calendar</a>.  The hashtag is #AdventOfFonts, so you can follow on your preferred Masto client / server.
+</p>
+
+
+
+
+
+<h2 id="Previous">Previous Years</h2>
+
+<p>
+I started tracking these in 2010. Since then some have come and gone. For the ones not returning, in many cases the content is still out there. Take a look and maybe you’ll find an older article that is useful today.
+</p>
+
+<ul>
+ <li><a href="/2010/12/two-advent-calendars-for-web-developers.html">2010</a></li>
+ <li>2011 (check between the couch cushions)</li>
+ <li><a href="/2012/12/2012-advent-calendars-for-web-devs.html">2012</a></li>
+ <li><a href="/2013/12/web-development-advent-calendars-for-2.html">2013</a></li>
+ <li><a href="/2014/12/web-development-advent-calendars-for.html">2014</a></li>
+ <li><a href="/2015/12/web-development-advent-calendars-for.html">2015</a></li>
+ <li><a href="/2016/12/web-development-advent-calendars-for-2016.html">2016</a></li>
+ <li><a href="/2017/12/web-development-advent-calendars-for-2017.html">2017</a></li>
+ <li><a href="/2018/12/web-development-advent-calendars-for-2018.html">2018</a></li>
+ <li><a href="/2019/12/web-development-advent-calendars-for-2019.html">2019</a></li>
+ <li><a href="/2020/12/web-development-advent-calendars-for-2020.html">2020</a></li>
+ <li><a href="/2021/12/web-development-advent-calendars-for-2021.html">2021</a></li>
+ <li><a href="/2022/12/web-development-advent-calendars-for-2022.html">2022</a></li>
+ <li><a href="/2023/12/web-development-advent-calendars-for-2023.html">2023</a></li>
+ <li><a href="/2024/12/development-advent-calendars-for-2024.html">2024</a></li>
+</ul>
+
+
+
+
+
+
+]]></content:encoded>
+					
+					<wfw:commentRss>https://adrianroselli.com/2025/12/web-design-dev-advent-calendars-for-2025.html/feed</wfw:commentRss>
+			<slash:comments>9</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>The Value of Selecting Selects by Value</title>
+		<link>https://adrianroselli.com/2025/11/the-value-of-selecting-selects-by-value.html</link>
+					<comments>https://adrianroselli.com/2025/11/the-value-of-selecting-selects-by-value.html#respond</comments>
+		
+		<dc:creator><![CDATA[Adrian Roselli]]></dc:creator>
+		<pubDate>Sat, 22 Nov 2025 01:30:37 +0000</pubDate>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[accessibility]]></category>
+		<category><![CDATA[browser]]></category>
+		<category><![CDATA[usability]]></category>
+		<category><![CDATA[UX]]></category>
+		<guid isPermaLink="false">https://adrianroselli.com/?p=38852</guid>
+
+					<description><![CDATA[This is meant to use voice control to test select menus (and other fields, but the title would be less weird) by their value because their accessible names are hidden. I&#8217;m sharing results of that testing. This was partially driven by: WCAG issue #3808 SC 3.3.2: Labels or Instructions and&#8230;]]></description>
+										<content:encoded><![CDATA[<p>
+This is meant to use voice control to test select menus (and other fields, but the title would be less weird) by their value because their accessible names are hidden. I&#8217;m sharing results of that testing.
+</p>
+
+<p>
+This was partially driven by:
+</p>
+
+<ul>
+ <li>WCAG issue <a href="https://github.com/w3c/wcag/issues/3808">#3808 SC 3.3.2: Labels or Instructions and a &lt;select&gt; element lacks a visible label and rely on default option</a>.</li>
+ <li>That issue spawned <a href="https://github.com/w3c/wcag/issues/4630">#4630 SC 3.3.2: Labels or Instructions needs another example for failure when a &lt;select&gt; element lacks a visible label</a>.</li>
+ <li>Both of those issues are pre-dated by <a href="https://github.com/w3c/wcag/issues/2484">#2484 2.5.3 is visible select option considered part of the accessible name here?</a> (which is closed) and</li>
+ <li><a href="https://github.com/w3c/wcag/issues/2509">#2509 3.3.2: provide failure examples/techniques for <code>placeholder</code>and <code>&lt;select&gt;</code> relying on default <code>&lt;option&gt;</code> only</a>.</li>
+</ul>
+
+<p>
+It&#8217;s not unusual <s>to be loved by anyone</s> for there to be multiple related WCAG issues.
+</p>
+
+
+
+
+
+
+<h2 id="Demo">Demo</h2>
+
+<p>
+A made a demo that looks somewhat like a flight booking form.
+</p>
+
+<p class="codepen" data-height="430" data-default-tab="result" data-slug-hash="MYadEmB" data-pen-title="Flights" data-user="aardrian" style="height: 430px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+      <span>See the Pen <a href="https://codepen.io/aardrian/pen/MYadEmB">
+  Flights</a> by Adrian Roselli (<a href="https://codepen.io/aardrian">@aardrian</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+      </p>
+      <script async src="https://public.codepenassets.com/embed/index.js"></script>
+
+<p>
+<a href="https://codepen.io/aardrian/pen/MYadEmB">Visit the pen directly</a> (for forking or reviewing). Also available in <a href="https://cdpn.io/aardrian/debug/MYadEmB">debug mode</a> (which gets rid of the wrapper cruft).
+</p>
+
+
+
+
+<h3 id="Notes">Notes</h3>
+
+    <ul>
+      <li>The accessible names come from visually-hidden <code>&lt;label&gt;</code>s, which you can make visible with the &#8220;Visible labels&#8221; button.</li>
+      <li>This demo is to test how voice control works when selecting controls by their value.
+        <ul>
+          <li>The first select menu and the first text input of each fieldset (and the one between the selects) have a defined value.</li>
+          <li>The second select menu has a default value (which is the first option), and the latter two text fields of each fieldset have no value.</li>
+          <li>The accessible names are correctly exposed according to browser dev tools.</li>
+        </ul>
+      </li>
+      <li>Feel free to <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fcdpn.io%2Faardrian%2Fdebug%2FMYadEmB">validate the HTML</a>.</li>
+    </ul>
+
+
+
+
+<h2 id="Results">Testing Results</h2>
+
+<p>
+Again, I only tested voice control. I didn&#8217;t test Dragon because I&#8217;m not paying. If you have it, feel free to leave your testing results in the comments.
+</p>
+
+
+
+<h3 id="Windows">Windows Voice Access with Chrome, Firefox</h3>
+
+    <ul>
+      <li>Speaking &#8220;Round trip&#8221; selected it.</li>
+      <li>Speaking &#8220;First class&#8221; selected it.</li>
+      <li>Any other non-hidden words on the page that included any of the spoken commands would cause voice access to offer me a choice instead of selecting the control.</li>
+      <li>Speaking the value of any other control did <em>not</em> select it (but sometimes offered a number to select it from others), and in the case of &#8220;BUF&#8221; focused a browser tab that had an article about tourism in Buffalo.</li>
+      <li>I could select a select menu by speaking one of its not visible options, <em>unless</em> the option had a hyphen.</li>
+      <li>I could select any control by speaking the accessible name provided by the <code>&lt;label&gt;</code>.</li>
+    </ul>
+
+
+
+<h3 id="macOS">macOS 26 Voice Control with Safari</h3>
+
+    <ul>
+      <li>Speaking &#8220;Round trip&#8221; selected it.</li>
+      <li>Speaking &#8220;First class&#8221; did <em>not</em>.</li>
+      <li>Any other non-hidden words on the page that included any of the spoken commands would cause voice control to offer me a choice instead of selecting the control.</li>
+      <li>Speaking the value of any other control did <em>not</em> select it.</li>
+      <li>I could select any control by speaking the accessible name provided by the <code>&lt;label&gt;</code>.</li>
+    </ul>
+
+
+
+<h3 id="Android">Android Voice Access with Chrome, Firefox</h3>
+
+    <ul>
+      <li>Speaking &#8220;Round trip&#8221; selected it in Chrome, <em>not</em> Firefox.</li>
+      <li>Speaking &#8220;First class&#8221; selected half the time.</li>
+      <li>Speaking the value of any other control did <em>not</em> select it.</li>
+      <li>I could select any control by speaking the accessible name provided by the <code>&lt;label&gt;</code>.</li>
+    </ul>
+
+
+
+<h3 id="iPad">iPadOS 26 Voice Control with Safari</h3>
+
+    <ul>
+      <li>Speaking &#8220;Round trip&#8221; did <em>not</em> select it.</li>
+      <li>Speaking &#8220;First class&#8221; also did <em>not</em> select it.</li>
+      <li>Any other non-hidden words on the page that included any of the spoken commands would cause voice control to offer me a choice instead of selecting the control.</li>
+      <li>Speaking the value of any other control did <em>not</em> select it.</li>
+      <li>I could select any control by speaking the accessible name provided by the <code>&lt;label&gt;</code>.</li>
+    </ul>
+
+
+
+<h2 id="Recommendation">Recommendation</h2>
+    
+<p>
+Remove ambiguity by using visible labels that correspond to the accessible name (<a href="/2020/01/my-priority-of-methods-for-labeling-a-control.html">ideally by using <code>&lt;label&gt;</code></a>). Relying on field values is risky, prone to error, can conflict with unknown values, is not per spec, and creates extra work for voice users. Avoid making extra work for voice users.
+</p>
+
+<p>
+In no way is this meant to <a href="/2020/03/i-dont-care-what-google-or-apple-or-whomever-did.html">denigrate</a> the <s>terrible</s> <a href="https://www.google.com/travel/flights/">work of others</a>.
+</p>
+    ]]></content:encoded>
+					
+					<wfw:commentRss>https://adrianroselli.com/2025/11/the-value-of-selecting-selects-by-value.html/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Pre-order “Digital Accessibility Ethics”</title>
+		<link>https://adrianroselli.com/2025/11/pre-order-digital-accessibility-ethics.html</link>
+					<comments>https://adrianroselli.com/2025/11/pre-order-digital-accessibility-ethics.html#comments</comments>
+		
+		<dc:creator><![CDATA[Adrian Roselli]]></dc:creator>
+		<pubDate>Wed, 12 Nov 2025 19:04:59 +0000</pubDate>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[accessibility]]></category>
+		<category><![CDATA[ethics]]></category>
+		<category><![CDATA[overlay]]></category>
+		<guid isPermaLink="false">https://adrianroselli.com/?p=38746</guid>
+
+					<description><![CDATA[Lainey Feingold, Reginé Gilbert, and Chancey Fleet gathered 36 authors across 10 countries and a commonwealth to write 32 chapters about ethics in digital accessibility. I am one of those 36 authors. The painting on the cover was created by Ana Maria Vidalon, a Spanish-speaking artist with a disability originally&#8230;]]></description>
+										<content:encoded><![CDATA[<p>
+Lainey Feingold, Reginé Gilbert, and Chancey Fleet gathered 36 authors across 10 countries and a commonwealth to write 32 chapters about ethics in digital accessibility. I am one of those 36 authors.
+</p>
+
+<figure class="right">
+ <img loading="lazy" src="/wp-content/uploads/2025/11/DigitalAccessibilityEthics-cover.jpg" alt="Book cover, “Digital Accessibility Ethics: Disability Inclusion in All Things Tech” set in blue text above a painting featuring bright arcs of yellow, orange, blue, turquoise, pink, and purple; the lower half of these colors show abstract figures, circles, and building-like shapes and the text “Edited by Lainey Feingold, Reginé Gilbert, Chancey Fleet” and “CRC Press, Taylor &#038; Francis Group.”" width="350" height="528">
+ <figcaption>The painting on the cover was created by Ana Maria Vidalon, a Spanish-speaking artist with a disability originally from Peru. She now lives in the United States and is associated with Creativity Explored, a studio in San Francisco that “partners with artists with developmental disabilities to celebrate and nurture the creative potential in all of us.” The cover image, untitled, was created in 2018. Ana Maria had her first solo show at the studio in 2021.</figcaption>
+</figure>
+
+<p>
+The book introduces the first (that I’ve heard of) Digital Accessibility Ethics Framework. It’s a three-part tool intended to influence, change, &#038; disrupt patterns of disability exclusion. <strong>#DigitalAccessibilityEthics</strong> is now a hashtag on <a href="https://toot.cafe/tags/DigitalAccessibilityEthics">Masto</a> (try your own instance), <a href="https://bsky.app/hashtag/DigitalAccessibilityEthics">Bluesky</a>, and <a href="https://www.linkedin.com/search/results/all/?keywords=%23digitalaccessibilityethics">LinkedIn</a>.
+</p>
+
+<p>
+My chapter covers <a href="/tag/overlay">overlays</a> and their false marketing claims.
+</p>
+
+<p>
+The goal of the Framework, and the goal of the book, is to help make the digital world more accessible to disabled people across the globe and to help organizations mitigate the risks of disability exclusion. 
+</p>
+
+
+
+<h2 id="CtA">Call to Action</h2>
+
+<p>
+Get the <a href="https://www.routledge.com/Digital-Accessibility-Ethics-Disability-Inclusion-in-All-Things-Tech/Feingold-Gilbert-Fleet/p/book/9781041018681">details from the publisher</a>, Taylor and Francis, and <a href="https://www.amazon.com/Digital-Accessibility-Ethics-Disability-Inclusion-ebook/dp/B0DQLRKF2K/">pre-order it from Amazon</a>, <a href="https://bookshop.org/p/books/digital-accessibility-ethics-disability-inclusion-in-all-things-tech/2706ddbaeebd9266">Bookshop.org</a> (to support independent book retailers), or contact your local independent book retailer directly. In Canada, try <a href="https://www.indigo.ca/en-ca/digital-accessibility-ethics-disability-inclusion-in-all-things-tech/9781041018681.html">Indigo</a> or <a href="https://anotherstory.ca/item/PBY3knU_Q9SZOv1k2MPfyQ">Another Story</a>. Pre-orders are good as it helps the publisher do things like know that I&#8217;m awesome at marketing the book.
+</p>
+
+<p>
+Maybe also add it to your &#8220;to-read&#8221; pile <a href="https://app.thestorygraph.com/books/42da2fec-4ee9-462f-adbd-6396dc112a19">on The Storygraph</a>.
+</p>
+
+<h2 id="ToC">Table of Contents</h2>
+
+<p>
+Lainey gathered the LinkedIn profiles of all the authors (I haven&#8217;t taken the time to track down their personal pages), so I linked them from their chapters.
+</p>
+
+<ul>
+ <li>Introduction: The Digital Accessibility Gap and the Need for an Ethics Framework</li>
+ <li>Section One: Foundation
+  <ol>
+   <li>Introducing the Digital Accessibility Ethics Framework; <a href="https://www.linkedin.com/in/laineyfeingold">Lainey Feingold</a>, <a href="https://www.linkedin.com/in/reginegilbert/">Reginé Gilbert</a>, and <a href="https://www.linkedin.com/in/chancey-fleet-35063317/">Chancey Fleet</a></li>
+   <li>Disability and Accessibility: Understanding the Terms at the Heart of this Collection; <a href="https://www.linkedin.com/in/crystalprestonwatson/">Crystal Preston Watson</a></li>
+   <li>The Ethical Dilemmas of Artificial Intelligence; <a href="https://www.linkedin.com/in/juttatreviranus/">Jutta Treviranus</a></li>
+   <li>The Global Digital Accessibility Legal Landscape; <a href="https://www.linkedin.com/in/laineyfeingold">Lainey Feingold</a></li>
+  </ol>
+ </li>
+ <li>Section Two: Ethical Accessibility Practices
+  <ol start="5">
+   <li>Designing With: Widening Power and Participation of Disabled People in the Design Process; <a href="https://www.linkedin.com/in/joshkimux/">Josh Kim</a></li>
+   <li>Achieving Ethical Accessibility in the Development Process; <a href="https://www.linkedin.com/in/lwatson/">Léonie Watson</a></li>
+   <li>The Ethics of Accessibility Leadership in India and Across the Globe; <a href="https://www.linkedin.com/in/shilpi-kapoor/">Shilpi Kapoor</a></li>
+   <li>Empower All Minds: Cognitive Accessibility Ethics; <a href="https://www.linkedin.com/in/margauxjoffe/">Margaux Joffe</a></li>
+   <li>Don’t Buy Broken Things: Ethical Accessible Procurement; <a href="https://www.linkedin.com/in/sheribyrnehaber/">Sheri Byrne-Haber</a></li>
+   <li>Hackathons, Student Projects, and Digital Accessibility Ethics; <a href="https://www.linkedin.com/in/jamielephd/">Joshua A. Miele</a></li>
+   <li>Deaf Leaders Now! The Ethics of Hiring Disabled People in Science and Technology; <a href="https://www.linkedin.com/in/jennychenlu/">Jenny C. Lu</a> and <a href="https://www.linkedin.com/in/sheilaxu/">Sheila Xu</a></li>
+   <li>Making Every Voice Heard: The Ethics of Voice Recognition Technology; <a href="https://www.linkedin.com/in/meena11/">Meenakshi Das</a></li>
+   <li>Digital Accessibility Ethics in Africa: Progress, Challenges, and Opportunities; <a href="https://www.linkedin.com/in/irene-mbari-kirika/">Irene Mbari-Kirika</a> and Dr. Samuel Kabue</li>
+   <li>Who Sees What?  Ethics Issues in Describing the Visual World; <a href="https://www.linkedin.com/in/nefertiti-matos/">Nefertiti Matos Olivares</a> and <a href="https://www.linkedin.com/in/thomassreid/">Thomas Reid</a></li>
+   <li>Facial Difference, AI Bias, and Digital Accessibility Ethics; <a href="https://www.linkedin.com/in/carly-findlay-oam-60b10221/">Carly Findlay</a></li>
+   <li>Everyone Needs (At Least A Little) Accessibility Education; <a href="https://www.linkedin.com/in/rolypepe/">Rolando J. Méndez Fernández</a> and <a href="https://www.linkedin.com/in/kate-sonka/">Kate Sonka</a></li>
+   <li>Accessibility Overlays and the Harms of Marketing “Quick Fixes”; <a href="https://adrianroselli.com/">Adrian A. Roselli</a></li>
+   <li>Accessibility Practitioner Burnout is an Ethics Issue; <a href="https://www.linkedin.com/in/maymatt/">Matt May</a></li>
+  </ol>
+ </li>
+ <li>Section Three: Digital Accessibility Ethics Across Sectors
+  <ol start="19">
+   <li>No One Left Behind: Digital Accessibility Ethics and Emergency Preparedness; <a href="https://www.linkedin.com/in/erinbrownconnects/">Erin E. Brown</a></li>
+   <li>When My Seeing Eye Dog and I Surprise a Delivery Robot: New Technologies Need to be Accessible, Too; <a href="https://www.linkedin.com/in/habengirma/">Haben Girma</a></li>
+   <li>Secure by Design, Accessible by Default: Building Cybersecurity Ethics That Include Everyone; <a href="https://www.linkedin.com/in/aligorithm/">Aliyu G. Yisa</a> and <a href="https://www.linkedin.com/in/justinmerhoff/">Justin Merhoff</a></li>
+   <li>From Both Sides of the Stethoscope: Digital Accessibility Ethics in Healthcare; <a href="https://www.linkedin.com/in/heidi-joshi-psy-d/">Dr. Heidi Joshi</a> and <a href="https://www.linkedin.com/in/okanlami/">Dr. Oluwaferanmi O. Okanlami</a></li>
+   <li>Beyond Technology: Ethics and Strategies for Inclusive Smart Cities; <a href="https://www.linkedin.com/in/monica-duhem-94117817/">Monica Duhem</a>, <a href="https://www.linkedin.com/in/josefina-ocampo-guchea-55b77b41/">Josefina Ocampo Guchea</a>, and <a href="https://www.linkedin.com/in/jamesthurston/">James Thurston</a></li>
+   <li>Tech-Facilitated Disability Discrimination and Artificial Intelligence Tools at Work; <a href="https://www.linkedin.com/in/arianaaboulafia/">Ariana Aboulafia</a></li>
+   <li>Who Gets to Read, Who Gets to Publish?  Digital Accessibility Ethics for Authors, Journalists, and Publishers; <a href="https://www.linkedin.com/in/laurab7/">Laura Brady</a> and <a href="https://www.linkedin.com/in/daniellalevypinto/">Daniella Levy-Pinto</a></li>
+   <li>Democracy for All: Addressing Accessibility Challenges for Disabled Voters; <a href="https://www.linkedin.com/in/jessmoorematthews/">Jess Moore Matthews, MA</a></li>
+   <li>Digital Accessibility and Open Source Need Each Other; <a href="https://www.linkedin.com/in/mgifford/">Mike Gifford</a></li>
+   <li>Immersive Technology Needs Digital Accessibility Ethics; <a href="https://www.linkedin.com/in/reginegilbert/">Reginé Gilbert</a></li>
+   <li>Public Relations, Marketing, Accessibility, and Ethics; <a href="https://www.linkedin.com/in/victoria-ottah-7294481ba/">Victoria Ottah Nnenna</a></li>
+   <li>The Future of Game Accessibility is Grounded in Ethics; <a href="https://www.linkedin.com/in/aderyn/">Aderyn Thompson</a></li>
+   <li>Digital Accessibility and Public Digital Amenities; <a href="https://www.linkedin.com/in/chancey-fleet-35063317/">Chancey Fleet</a></li>
+   <li>Legal Ethics, Access to Justice, and the Need for Digital Accessibility; <a href="https://www.linkedin.com/in/laineyfeingold">Lainey Feingold</a></li>
+  </ol>
+ </li>
+ <li>Conclusion: What’s Next for Digital Accessibility Ethics?</li>
+</ul>
+
+
+<h2 id="Publisher">From the Publisher</h2>
+
+<p>
+Digital Accessibility Ethics is a practical guide with an urgent goal: to help end tech exclusion of 1.3 billion people across the world with disabilities.
+</p>
+
+<p>
+The book introduces the first Digital Accessibility Ethics Framework – an action-oriented, three-part tool designed to influence, change, and disrupt patterns of exclusion with values, actions, and questions. This edited collection is written by 39 authors from 10 countries and one commonwealth, the majority of whom are disabled.
+</p>
+
+<p>
+The editors and authors have over 600 years of combined accessibility and disability advocacy experience. They offer and apply an ethics lens that supports disabled people’s right to fully participate in every facet of digital life. It is a lens that helps organizations reduce the financial, legal, privacy, safety, and other risks and harms of disability exclusion.
+</p>
+
+<p>
+Through stories, recommendations, strategies, and other guidance, the book looks at a wide range of topics through the Digital Accessibility Ethics Framework:  from gaming and smart cities to hackathons, procurement, and cybersecurity.  From accessibility practitioner burnout, to robots, artificial intelligence, workplace software, aerospace, design, healthcare, open source, emergency preparedness, legal ethics, publishing, and much more.
+</p>
+
+<p>
+This book is for leaders in all these fields. And it is for all technologists, educators, students, marketers, policy makers and everyone who has ever posted on social media or sent an email.  It encourages us to stop and ask ourselves: who are we excluding when digital accessibility is ignored? Who are we harming, what are we risking, by our decisions?
+</p>
+
+<p>
+As the world grows more digital, as AI is marketed everywhere, and as the number of people with disabilities continues to grow, there has never been a more urgent time to expose, explore, and act at the intersection of ethics, disability, and digital accessibility. Digital Accessibility Ethics offers a roadmap to show us the way.
+</p>
+
+<p>
+An accessible digital version of the book will be available, upon publication.
+</p>
+
+<ul>
+ <li>Paperback: ISBN 9781041018681</li>
+ <li>Hardback: ISBN 9781041018698</li>
+ <li>368 Pages, 21 color and 20 black-and-white illustrations</li>
+ <li>March 26, 2026 by Chapman &#038; Hall</li>
+</ul>
+
+
+
+
+
+<h2 id="Wrap">Wrap-up</h2>
+
+<p>
+If you read this far, you may have skipped that link to <a href="https://www.amazon.com/Digital-Accessibility-Ethics-Disability-Inclusion-ebook/dp/B0DQLRKF2K/">pre-order it from Amazon</a> or, to support independent book retailers, from <a href="https://bookshop.org/p/books/digital-accessibility-ethics-disability-inclusion-in-all-things-tech/2706ddbaeebd9266">Bookshop.org</a>. Though you could also contact your local independent book retailer and ask them to pre-order it.
+</p>
+
+
+
+<h2 id="Update01">Update: 18 November 2025</h2>
+
+<p>
+Laura Brady included more pre-order links <a href="https://laurabrady.ca/blog/digital-a11y-ethics">in her post</a>, which I&#8217;ve integrated into mine above.
+</p>]]></content:encoded>
+					
+					<wfw:commentRss>https://adrianroselli.com/2025/11/pre-order-digital-accessibility-ethics.html/feed</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Shopify Needs a Mirrorfy</title>
+		<link>https://adrianroselli.com/2025/11/shopify-needs-a-mirrorfy.html</link>
+					<comments>https://adrianroselli.com/2025/11/shopify-needs-a-mirrorfy.html#comments</comments>
+		
+		<dc:creator><![CDATA[Adrian Roselli]]></dc:creator>
+		<pubDate>Tue, 04 Nov 2025 01:51:45 +0000</pubDate>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[accessibility]]></category>
+		<category><![CDATA[rant]]></category>
+		<guid isPermaLink="false">https://adrianroselli.com/?p=38597</guid>
+
+					<description><![CDATA[Shopify is legitimately angry at drive-by ADA lawsuits, as outlined in its recent post The small business shakedown: Why thousands of entrepreneurs are getting buried in lawsuits. Like thousands of small business owners across the United States, Clay*, an online store owner, was sued without warning for his website allegedly&#8230;]]></description>
+										<content:encoded><![CDATA[<p>
+Shopify is legitimately angry at drive-by ADA lawsuits, as outlined in its recent post <cite><a href="https://www.shopify.com/news/accessibility-lawsuits">The small business shakedown: Why thousands of entrepreneurs are getting buried in lawsuits</a></cite>.
+</p>
+
+<blockquote>
+ <p>
+ Like thousands of small business owners across the United States, Clay*, an online store owner, was sued without warning for his website allegedly not complying with an accessibility law. 
+ </p>
+ <footer><cite><a href="https://www.shopify.com/news/accessibility-lawsuits">The small business shakedown: Why thousands of entrepreneurs are getting buried in lawsuits</a>, 22 October 2025, by &#8220;Shopify&#8221;</cite></footer>
+</blockquote>
+
+<p>
+But Shopify is wrong there are “no clear guidelines”:
+</p>
+
+<blockquote>
+ <p>
+ When it comes to websites, the uncertainty surrounding what constitutes “reasonable accessibility” can be overwhelming. When small business owners attempt to comply they quickly realize there are <a href="https://www.ada.gov/resources/web-guidance/">no clear guidelines or specific steps</a>, and compliance can be subjective.
+ </p>
+ <footer><cite><a href="https://www.shopify.com/news/accessibility-lawsuits">The small business shakedown: Why thousands of entrepreneurs are getting buried in lawsuits</a>, 22 October 2025, by &#8220;Shopify&#8221;</cite></footer>
+</blockquote>
+
+<p>
+That’s a signal the author didn’t consult Shopify’s own accessibility team, scroll down the linked ADA page to the linked resources, or talk to an attorney with experience in this area. It might also be a signal the unnamed author ignored them.
+</p>
+
+<p>
+Shopify also fails to note it has a role to protect its own clients and, by extension, its clients&#8217; customers. As a platform, Shopify says the following on what it offers:
+</p>
+
+<blockquote>
+ <p>
+ At Shopify, we actively collaborate with persons with disabilities to identify and address accessibility issues. We provide merchants with accessibility-optimized components, tools like Sidekick for automated alt text generation, and themes built with accessibility standards from the ground up.
+ </p>
+ <footer><cite><a href="https://www.shopify.com/news/accessibility-lawsuits">The small business shakedown: Why thousands of entrepreneurs are getting buried in lawsuits</a>, 22 October 2025, by &#8220;Shopify&#8221;</cite></footer>
+</blockquote>
+
+<p>
+But with nearly a hundred possible WCAG violations on its home page, Shopify&#8217;s offering is clearly not up to task. These violations are identified by automated tool that, <a href="/2023/01/comparing-manual-and-free-automated-wcag-reviews.html">according to my own testing</a>, reports only around 15% of actual WCAG violations. For example, the autoplaying video on the home page fails Success Criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/audio-only-and-video-only-prerecorded.html">1.2.1: Audio-only and Video-only (Prerecorded)</a> and  <a href="https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html">2.2.2: Pause, Stop, Hide</a>, neither of which was caught by the automated test.
+</p>
+
+<figure class="two">
+ <a href="/wp-content/uploads/2025/10/shopify_home.jpg"><img loading="lazy" src="/wp-content/uploads/2025/10/shopify_home.jpg" alt="80 issues: 75 need review, 4 serious, 1 minor; these include 10 misused ARIA attributes, 1 non-unique ID, 1 invalid ARIA attribute, 58 contrast issues, and 10 videos without captions." width="1602" height="1315"></a>
+ <a href="/wp-content/uploads/2025/10/shopify-home_30-october.jpg"><img loading="lazy" src="/wp-content/uploads/2025/10/shopify-home_30-october.jpg" alt="99 issues: 95 need review, 3 serious, 1 minor; these include 10 misused ARIA attributes, 1 non-unique ID, 1 invalid ARIA attribute, 77 contrast issues, and 10 videos without captions." width="1668" height="1325"></a>
+ <figcaption>Shopify home page as captured on Tuesday, 28 October and again on Thursday, 30 October 2025 using Firefox 144 on Windows 11 with axe DevTools 4.4.2 showing 80 and then 99 WCAG issues.</figcaption>
+</figure>
+
+<p>
+Shopify&#8217;s <em>active collaboration</em> doesn&#8217;t seem to include its own site. Nor does it seem to factor into which sites Shopify promotes on its home page:
+</p>
+
+<figure class="three">
+ <a href="/wp-content/uploads/2025/10/shopify_featured-01.jpg"><img loading="lazy" src="/wp-content/uploads/2025/10/shopify_featured-01.jpg" alt="Glossier home page, with 74 total axe issues: 37 need review, 2 are critical, 2 serious, and 2 minor; these include 1 misused ARIA attribute, 1 focusable aria-hidden element, 2 buttons without text, 2 non-unique IDs, 7 lists holding invalid elements, and far more hidden off-screen." width="1602" height="1315"></a>
+ <a href="/wp-content/uploads/2025/10/shopify_featured-02.jpg"><img loading="lazy" src="/wp-content/uploads/2025/10/shopify_featured-02.jpg" alt="The Sill home page, with 148 total axe issues: 78 need review, 7 are critical, 61 serious, and 2 minor; these include 2 buttons without text, 121 items with poor contrast, 6 non-unique IDs, 3 images without alt text, and far more hidden off-screen." width="1602" height="1315"></a>
+ <a href="/wp-content/uploads/2025/10/shopify_featured-03.jpg"><img loading="lazy" src="/wp-content/uploads/2025/10/shopify_featured-03.jpg" alt="Vacation Inc home home page, with 126 total axe issues: 125 need review and 1 is serious; these include 1 image without alt text, 6 elements misusing ARIA attributes, 1 focusable aria-hidden item, 1113 items with poor contrast, 3 links with same name, and at least one more hidden off-screen." width="1602" height="1315"></a>
+ <figcaption>The home pages of the first three Shopify stores promoted on the Shopify home page as captured on Tuesday, 28 October 2025. Between them they have a combined 348 WCAG issues.</figcaption>
+</figure>
+
+<p>
+<a href="https://www.shopify.com/accessibility#product-vpa-ts">Shopify provides VPATs</a>, an industry template for identifying how well a <em>thing</em> conforms to WCAG, for four of its flows — <a href="https://www.shopify.com/accessibility/vpat-checkout">checkout</a> (dated June 2025), <a href="https://www.shopify.com/accessibility/vpat-admin">store admin</a> (September 2023), <a href="https://www.shopify.com/accessibility/vpat-shopify-mobile">mobile admin</a> (October 2023), and the <a href="https://www.shopify.com/accessibility/vpat-theme-dawn">Dawn theme</a> (November 2021). Kudos to Shopify as this is more than many offer. These accessibility conformance reports demonstrate Shopify knows the rules, even if they show gaps in applying them.
+</p>
+
+<p>
+If Shopify is going to complain about frivolous lawsuits, it first needs to reduce its and its clients&#8217; exposure to legitimate claims. Shopify has a duty to prevent some of the basic errors these automated checks found. Some very quick ideas, based on my own experience running a CMS and also an ecommerce platform (though not at the same scale as Shopify):
+</p>
+
+<img loading="lazy" src="/wp-content/uploads/2025/10/shopify-glyph_99-issues.png" alt="The Shopify green bag logo, but the S has been replaced with “Total issues 99”." width="684" height="683" class="right thirds">
+
+<ul>
+ <li>Provide accessibility guarantees in the contracts for specific, unmodified templates and features;</li>
+ <li>When a customer makes a change to these, warn them, offer an automated check, and require their acknowledgment;</li>
+ <li>Prevent publishing content with clear violations;</li>
+ <li>Provide access to a response center for clients that have been threatened;</li>
+ <li>Provide ready-to-go response letter templates for demands / threats;</li>
+ <li>Offer access to attorneys at a reduced rate, ideally free for the couple hours it takes a competent attorney to dispute any demand letters;</li>
+ <li>Provide access to experts in a help desk;</li>
+ <li>Or use an LLM, given Shopify wants to replace its human employees anyway, and accept liability for the LLM&#8217;s responses;</li>
+ <li>Only promote companies that provide proven accessible shops, creating incentive for other shops to follow;</li>
+ <li>Offer free trainings on creating accessible content;</li>
+ <li>Disallow <a href="https://overlayfactsheet.com/en/">accessibility overlay</a> widgets on any site, as they are a beacon for complaints.</li>
+</ul>
+
+<p>
+And so on.
+</p>
+
+<p>
+Maybe Shopify already offers all this? Its post, however, doesn&#8217;t suggest that. Instead I see a company failing to acknowledge its responsibility. I see Shopify undercutting the ADA, removing motivation to conform to WCAG prior to a complaint.
+</p>
+
+<p>
+Shopify&#8217;s call for “notice and cure” legislation is not new. It was proposed <a href="https://www.govtrack.us/congress/bills/118/hr7668/text">last year</a> and regularly <a href="https://www.jdsupra.com/legalnews/house-votes-to-amend-the-ada-to-provide-86600/">back to 2018</a> or earlier, with <a href="https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB84">California exploring it this year</a>. Disability organizations have always opposed notice and cure, <a href="https://nfbofsc.org/comments-ada-title-ii-website-and-mobile-app-notice-proposed-rulemaking-september-19-2023#:~:text=The%20National%20Federation%20of%20the%20Blind%20unequivocally%20objects%20to%20the%20concept%20of%20notice%20and%20cure.">such as NFB</a>, though the <a href="https://cdrnys.org/wp-content/uploads/2019/11/ADA-2019.pdf">Center for Disability Rights provides a better explanation</a> than I can do here.
+</p>
+
+<p>
+All this aside, the ADA doesn’t provide for monetary damages. Amending the ADA with “notice and cure” won&#8217;t help businesses. These drive-by lawsuits would still happen under state laws (primarily California and New York).
+</p>
+
+<p>
+I wrote a bit about the <a href="/2022/03/ada-web-site-compliance-still-not-a-thing.html">scope of the ADA and the web</a> a few years ago, with occasional updates. I did so because the ADA has been broadly misrepresented by scammers — mostly drive-by litigants and <a href="/tag/overlay">overlay vendors</a>. Shopify feels dangerously close to that line with its article.
+</p>
+
+<p>
+Maybe don’t listen to me. I’m not a lawyer.
+</p>
+
+<p>
+<em>Don’t</em> listen to Shopify, since it’s not a law firm, it seems to not be protecting its clients, and its leadership doesn&#8217;t demonstrate it understands the ADA.
+</p>
+
+<p>
+I can&#8217;t imagine how frustrating this must be for Shopify&#8217;s internal accessibility team(s).
+</p>
+
+<aside>
+ <p>
+ This post expands a bit and memorializes my <a href="https://toot.cafe/@aardrian/115452320855757430">Mastodon thread</a> and <a href="https://bsky.app/profile/aardrian.bsky.social/post/3m4b6dx32nc2j">Bluesky thread</a>.
+ </p>
+</aside>]]></content:encoded>
+					
+					<wfw:commentRss>https://adrianroselli.com/2025/11/shopify-needs-a-mirrorfy.html/feed</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

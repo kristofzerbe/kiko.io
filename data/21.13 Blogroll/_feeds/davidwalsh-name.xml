@@ -1,0 +1,1188 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>David Walsh Blog</title>
+	<atom:link href="https://davidwalsh.name/feed" rel="self" type="application/rss+xml" />
+	<link>https://davidwalsh.name</link>
+	<description>A blog featuring tutorials about JavaScript, HTML5, AJAX, PHP, CSS, WordPress, and everything else development.</description>
+	<lastBuildDate>Thu, 20 Nov 2025 00:40:04 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>JavaScript SpeechSynthesis API</title>
+		<link>https://davidwalsh.name/speechsynthesis-api</link>
+		<comments>https://davidwalsh.name/speechsynthesis-api#respond</comments>
+		<pubDate>Thu, 20 Nov 2025 00:39:07 +0000</pubDate>
+		<dc:creator><![CDATA[David Walsh]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">https://davidwalsh.name/?p=27895</guid>
+		<description><![CDATA[<p>As the web continues to be the medium for all users, standards bodies need to continue to provide new APIs to enrich user experience and accessibility. One underused API for unsighted users is speechSynthesis, an API to programmatically direct the browser to audibly speak any arbitrary string. The Code You can direct the browser to [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/speechsynthesis-api">JavaScript SpeechSynthesis API</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></description>
+				<content:encoded><![CDATA[
+<p>As the web continues to be the medium for all users, standards bodies need to continue to provide new APIs to enrich user experience and accessibility.   One underused API for unsighted users is <code>speechSynthesis</code>, an API to programmatically direct the browser to audibly speak any arbitrary string.</p>
+
+
+
+<h2>The Code</h2>
+
+
+
+<p>You can direct the browser to utter speech with <code>window.speechSynthesis</code> and <code>SpeechSynthesisUtterance</code>:</p>
+
+
+
+<pre class="javascript">window.speechSynthesis.speak(
+    new SpeechSynthesisUtterance('Hey Jude!')
+)
+</pre>
+
+
+
+<p><code>speechSynthesis.speak</code> will robotically tell the user anything you provide as a <code>SpeechSynthesisUtterance</code> string.  Support for this API is available in all modern browsers.</p>
+
+
+
+<p>I wouldn&#8217;t consider <code>speechSynthesis</code> as a replacement for native accessibility tools, but this API could be used to improve what native tools provide!</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/speechsynthesis-api">JavaScript SpeechSynthesis API</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://davidwalsh.name/speechsynthesis-api/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Fix &#8220;This video format is not supported&#8221; on YouTube TV</title>
+		<link>https://davidwalsh.name/fix-this-video-format-is-not-supported-on-youtube-tv</link>
+		<comments>https://davidwalsh.name/fix-this-video-format-is-not-supported-on-youtube-tv#respond</comments>
+		<pubDate>Mon, 17 Nov 2025 23:47:34 +0000</pubDate>
+		<dc:creator><![CDATA[David Walsh]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">https://davidwalsh.name/?p=27892</guid>
+		<description><![CDATA[<p>Setting up a new computer is bliss &#8212; no old, unused apps and the machine performs much better than the previous. Unfortunately, you may encounter new problems based on the new hardware. One such issue I encountered with my new MacBook was a &#8220;This video format is not supported&#8221; message when I went to YouTube [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/fix-this-video-format-is-not-supported-on-youtube-tv">Fix &#8220;This video format is not supported&#8221; on YouTube TV</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></description>
+				<content:encoded><![CDATA[
+<p>Setting up a new computer is bliss &#8212; no old, unused apps and the machine performs much better than the previous.  Unfortunately, you may encounter new problems based on the new hardware.  One such issue I encountered with my new MacBook was a &#8220;This video format is not supported&#8221; message when I went to YouTube TV.</p>
+
+
+
+<p>Not being able to watch my favorite live show is a real problem.  After a bit of research, I found the solution to the &#8220;This video format is not supported&#8221; error message.  To solve this problem:</p>
+
+
+
+<ol><li>Open your browser settings and do a search for <code>DRM</code></li><li>You should see reference to <code>Widevine</code>, a form of DRM</li><li>Enable this <code>Widevine</code> setting</li><li>Restart your web browser</li></ol>
+
+
+
+<figure class="wp-block-image"><img src="https://davidwalsh.name/demo/2025/11/SCR-20251116-labx-1024x719.png" alt="" class="wp-image-27894" srcset="https://davidwalsh.name/demo/2025/11/SCR-20251116-labx-1024x719.png 1024w, https://davidwalsh.name/demo/2025/11/SCR-20251116-labx-300x211.png 300w, https://davidwalsh.name/demo/2025/11/SCR-20251116-labx-768x539.png 768w, https://davidwalsh.name/demo/2025/11/SCR-20251116-labx.png 1532w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Enabling Widevine within your browser will make your YouTube TV video feed work properly.  Better than needing to install a codec like the good old days, right?</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/fix-this-video-format-is-not-supported-on-youtube-tv">Fix &#8220;This video format is not supported&#8221; on YouTube TV</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://davidwalsh.name/fix-this-video-format-is-not-supported-on-youtube-tv/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Easy way to upload, transform and deliver files and images (Sponsored)</title>
+		<link>https://davidwalsh.name/easy-way-to-upload-transform-and-deliver-files-and-images</link>
+		<comments>https://davidwalsh.name/easy-way-to-upload-transform-and-deliver-files-and-images#comments</comments>
+		<pubDate>Mon, 24 Mar 2025 22:58:30 +0000</pubDate>
+		<dc:creator><![CDATA[David Walsh]]></dc:creator>
+				<category><![CDATA[Sponsored]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">https://davidwalsh.name/?p=27885</guid>
+		<description><![CDATA[<p>Managing media is a really difficult task if you try to do all of it yourself, especially if the media comes from other sources. The file can be submitted in any state and size, but what if you need something really specific? You can code it all yourself or you can use an awesome service [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/easy-way-to-upload-transform-and-deliver-files-and-images">Easy way to upload, transform and deliver files and images (Sponsored)</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></description>
+				<content:encoded><![CDATA[
+<p>Managing media is a really difficult task if you try to do all of it yourself, especially if the media comes from other sources.  The file can be submitted in any state and size, but what if you need something really specific?  You can code it all yourself or you can use an awesome service like <a href="https://www.filestack.com/">Filestack</a>, a utility to upload, transform, and deliver that media in the most optimal style imaginable!</p>
+
+
+
+<h2>The Setup</h2>
+
+
+
+<p>The first step in the <a href="https://www.filestack.com/">Filestack</a> journey is signing up for free. You&#8217;ll get at 21 day free trial and can cancel at any time.  Once signed up, you&#8217;ll have full access to the Filestack libraries of code. You&#8217;ll also want to spend time catching up on the <a href="https://www.filestack.com/docs/">Filestack documentation</a>, which is a developer&#8217;s dream &#8212; code samples and detailed usage information.</p>
+
+
+
+<h2>Upload</h2>
+
+
+
+<p>Allowing your users to take advantage of easy uploading with Filestack starts with the </p>
+
+
+
+<pre class="javascript">// Using JavaScript
+const client = filestack.init("apikey");
+const picker = client.picker(); 
+picker.open();
+</pre>
+
+
+
+<p>The result is an elegant, highly functional, and feature filled file uploading UI component:</p>
+
+
+
+<figure class="wp-block-image"><img src="https://davidwalsh.name/demo/2025/03/SCR-20250316-ntgo-1024x567.png" alt="" class="wp-image-27886" srcset="https://davidwalsh.name/demo/2025/03/SCR-20250316-ntgo-1024x567.png 1024w, https://davidwalsh.name/demo/2025/03/SCR-20250316-ntgo-300x166.png 300w, https://davidwalsh.name/demo/2025/03/SCR-20250316-ntgo-768x425.png 768w, https://davidwalsh.name/demo/2025/03/SCR-20250316-ntgo.png 1564w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>This great utility integrates with 20+ popular services like Google Drive, Dropbox, GitHub, Facebook, Instagram, and more. As the Filestack picker also illustrates, users can take advantage of the ease of dragging and dropping files to upload.  </p>
+
+
+
+<p>If you prefer to do your uploading on the back end, you can use the Filestack Python library:</p>
+
+
+
+<pre class="python">from filestack import Client
+
+client = Client(APIKEY)
+
+store_params = {
+    'location': 's3', 
+    'path': 'folder/subfolder/',
+    'upload_tags': {
+          "foo":"bar"
+    }
+}
+filelink = client.upload(filepath='path/to/filename.jpg', store_params=store_params)
+</pre>
+
+
+
+<p>Unlike many services, Filestack provides a number of code libraries to make the developer experience much easier. With files uploaded, it&#8217;s time to transform!</p>
+
+
+
+<h2>Transform</h2>
+
+
+
+<p>Users can upload any type of file at any size or format, so the ability to quickly and easily transform file that file into something more to the developer&#8217;s liking is key. Transformations can be applied to videos, images, and even documents.  Transformations can also be done on in real time or via sync workflows.</p>
+
+
+
+<p>For example, you can resize and manipulate images by adjusting URL parameters:</p>
+
+
+
+<pre class="text">// Resize an image to have a width of 300px
+https://cdn.filestackcontent.com/resize=width:300/pdn7PhZdT02GoYZCVYeF
+
+// Add a color filter, rotate the image, and add a "polaroid" border to the image
+https://cdn.filestackcontent.com/resize=width:300/sepia=tone:80/polaroid/pdn7PhZdT02GoYZCVYeF
+</pre>
+
+
+
+<p>So what else can be done with transformations beside file dimension and effects?  Lots!</p>
+
+
+
+<ul><li>Enhancing: Upscale and remove red eye effects</li><li>Borders &amp; Effects: Rounded corners, vignette, polaroid, torn edges, shadows</li><li>Filters: Sharpen, blur, b&amp;w, Sepia, oil paint, pixelate, and more</li><li>Facial Detection: detect, crop, pixelate, and blur faces</li><li>File Type: format conversion, animation (image to GIF), ASCII, collage, QR code, screenshot</li><li>Documents: PDF create and convert, document to image</li></ul>
+
+
+
+<p>All of these commands can be combined to completely transform any file into exactly what you&#8217;d like to present to your users!  And if you&#8217;d prefer to have a<a href="https://www.filestack.com/docs/transformations/ui/"> UI for users to transform medi</a>a themselves, you can!</p>
+
+
+
+<img src="https://www.filestack.com/docs/images/transformation_ui/tui_overview_compressed.webp" alt="">
+
+
+
+<h2>Deliver</h2>
+
+
+
+<p>With the files uploaded and transforms completed, the last step is delivering to clients. That delivery is incredibly important, as reliability and fast rendering can impact user retention and business conversion.</p>
+
+
+
+<p><a href="https://www.filestack.com/">Filestack’s</a> CDN caches Filestack URLs the first time they are accessed, such as in the case of storage aliases or transformations. The cached copy of any unique Filestack URL will live for 30 days – it will then be re-cached only when it is requested again.</p>
+
+
+
+<h2>Try Filestack!</h2>
+
+
+
+<p><a href="https://www.filestack.com/">Filestack&#8217;s</a> platform is incredibly flexible, powerful, and useful.  From the start of uploading, to transforming into a custom file, and delivering that file quickly, Filestack is a great platform that takes those files from start to finish; from source to consumer!</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/easy-way-to-upload-transform-and-deliver-files-and-images">Easy way to upload, transform and deliver files and images (Sponsored)</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://davidwalsh.name/easy-way-to-upload-transform-and-deliver-files-and-images/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>How to Download a YouTube Video or Channel</title>
+		<link>https://davidwalsh.name/download-youtube-mp3</link>
+		<comments>https://davidwalsh.name/download-youtube-mp3#comments</comments>
+		<pubDate>Wed, 04 Sep 2024 04:42:36 +0000</pubDate>
+		<dc:creator><![CDATA[David Walsh]]></dc:creator>
+				<category><![CDATA[Quick Tips]]></category>
+		<category><![CDATA[Shell]]></category>
+
+		<guid isPermaLink="false">https://davidwalsh.name/?p=27867</guid>
+		<description><![CDATA[<p>The ability to download media on the internet almost feels like a lost art. When I was in my teens, piracy of mp3s, movies, and just about everything else via torrents and apps like Kazaa, LimeWire, Napster, etc. was in full swing. These days sites use blob URLs and other means to prevent downloads. Luckily [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/download-youtube-mp3">How to Download a YouTube Video or Channel</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></description>
+				<content:encoded><![CDATA[
+<p>The ability to download media on the internet almost feels like a lost art.  When I was in my teens, piracy of mp3s, movies, and just about everything else via torrents and apps like Kazaa, LimeWire, Napster, etc. was in full swing.  These days sites use blob URLs and other means to prevent downloads.  Luckily we have tools like <code>yt-dlp</code> to download individual YouTube videos or entire channels of content.</p>
+
+
+
+<p>To download an entire channel, you can use <code>yt-dlp</code>:</p>
+
+
+
+<pre class="js">yt-dlp https://www.youtube.com/@beetlejuicearchives3490</pre>
+
+
+
+<p>If you&#8217;re like me and only care for the audio, you can use a few more arguments:</p>
+
+
+
+<pre class="js">yt-dlp -x --audio-format mp3 https://www.youtube.com/@beetlejuicearchives3490</pre>
+
+
+
+<p><code>youtube-dl</code> used to be the standard for downloading YouTube videos but <code>yt-dlp</code> seems to have taken the throne.  YouTube has such a wealth of information on just about anything, be sure to download content for travel, long walks, or any other reason!</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/download-youtube-mp3">How to Download a YouTube Video or Channel</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://davidwalsh.name/download-youtube-mp3/feed</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>How to Add a Header to a curl Request</title>
+		<link>https://davidwalsh.name/curl-add-header</link>
+		<comments>https://davidwalsh.name/curl-add-header#respond</comments>
+		<pubDate>Sat, 03 Aug 2024 16:51:46 +0000</pubDate>
+		<dc:creator><![CDATA[David Walsh]]></dc:creator>
+				<category><![CDATA[Quick Tips]]></category>
+		<category><![CDATA[Shell]]></category>
+
+		<guid isPermaLink="false">https://davidwalsh.name/?p=27866</guid>
+		<description><![CDATA[<p>curl is one of those great utilities that&#8217;s been around seemingly forever and has endless use cases. These days I find myself using curl to batch download files and test APIs. Sometimes my testing leads me to using different HTTP headers in my requests. To add a header to a curl request, use the -H [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/curl-add-header">How to Add a Header to a curl Request</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></description>
+				<content:encoded><![CDATA[
+<p><code>curl</code> is one of those great utilities that&#8217;s been around seemingly forever and has endless use cases.  These days I find myself <a href="https://davidwalsh.name/continue-download-curl">using </a><code><a href="https://davidwalsh.name/continue-download-curl">curl</a></code><a href="https://davidwalsh.name/continue-download-curl"> to batch download files</a> and test APIs.  Sometimes my testing leads me to using different HTTP headers in my requests.</p>
+
+
+
+<p>To add a header to a <code>curl</code> request, use the <code>-H</code> flag:</p>
+
+
+
+<pre class="shell">
+curl -X 'GET' \
+ 'https://nft.api.cx.metamask.io/collections?chainId=1' \
+ -H 'accept: application/json' \
+ -H 'Version: 1'
+</pre>
+
+
+
+<p>You can add multiple headers with multiple <code>-H</code> uses.  Header format is usually <code>[key]: [value]</code>.</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/curl-add-header">How to Add a Header to a curl Request</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://davidwalsh.name/curl-add-header/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Case Insensitive CSS Attribute Selector</title>
+		<link>https://davidwalsh.name/css-attribute-case</link>
+		<comments>https://davidwalsh.name/css-attribute-case#comments</comments>
+		<pubDate>Wed, 19 Jun 2024 11:31:27 +0000</pubDate>
+		<dc:creator><![CDATA[David Walsh]]></dc:creator>
+				<category><![CDATA[CSS]]></category>
+		<category><![CDATA[Quick Tips]]></category>
+
+		<guid isPermaLink="false">https://davidwalsh.name/?p=27859</guid>
+		<description><![CDATA[<p>CSS selectors never cease to amaze me in how powerful they can be in matching complex patterns. Most of that flexibility is in parent/child/sibling relationships, very seldomly in value matching. Consider my surprise when I learned that CSS allows matching attribute values regardless off case! Adding a {space}i to the attribute selector brackets will make [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/css-attribute-case">Case Insensitive CSS Attribute Selector</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></description>
+				<content:encoded><![CDATA[
+<p>CSS selectors never cease to amaze me in how powerful they can be in matching complex patterns.  Most of that flexibility is in parent/child/sibling relationships, very seldomly in value matching.  Consider my surprise when I learned that CSS allows matching attribute values regardless off case! </p>
+
+
+
+<p>Adding a <code>{space}i</code> to the attribute selector brackets will make the attribute value search case insensitive:</p>
+
+
+
+<pre class="css">
+/* case sensitive, only matches "example" */
+[class=example] {
+  background: pink;
+}
+
+/* case insensitive, matches "example", "eXampLe", etc. */
+[class=example i] {
+  background: lightblue;
+}
+</pre>
+
+
+
+<p>The use cases for this <code>i</code> flag are likely very limited, especially if this flag is knew knowledge for you and you&#8217;re used to a standard lower-case standard.  A loose CSS classname standard will have and would continue to lead to problems, so use this case insensitivity flag sparingly!</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/css-attribute-case">Case Insensitive CSS Attribute Selector</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://davidwalsh.name/css-attribute-case/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>How to Set Date Time from Mac Command Line</title>
+		<link>https://davidwalsh.name/mac-set-date</link>
+		<comments>https://davidwalsh.name/mac-set-date#comments</comments>
+		<pubDate>Mon, 17 Jun 2024 12:01:38 +0000</pubDate>
+		<dc:creator><![CDATA[David Walsh]]></dc:creator>
+				<category><![CDATA[Quick Tips]]></category>
+		<category><![CDATA[Shell]]></category>
+
+		<guid isPermaLink="false">https://davidwalsh.name/?p=27858</guid>
+		<description><![CDATA[<p>Working on a web extension that ships to an app store and isn&#8217;t immediately modifiable, like a website, can be difficult. Since you cannot immediately deploy updates, you sometimes need to bake in hardcoded date-based logic. Testing future dates can be difficult if you don&#8217;t know how to quickly change the date on your local [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/mac-set-date">How to Set Date Time from Mac Command Line</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></description>
+				<content:encoded><![CDATA[
+<p>Working on a web extension that ships to an app store and isn&#8217;t immediately modifiable, like a website, can be difficult.  Since you cannot immediately deploy updates, you sometimes need to bake in hardcoded date-based logic.  Testing future dates can be difficult if you don&#8217;t know how to quickly change the date on your local machine.</p>
+
+
+
+<p>To change the current date on your Mac, execute the following from command line:</p>
+
+
+
+<pre class="shell">
+# Date Format:  MMDDYYYY
+sudo date -I 06142024
+</pre>
+
+
+
+<p>This command does not modify time, only the current date.  Using the same command to reset to current date is easy as well!</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/mac-set-date">How to Set Date Time from Mac Command Line</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://davidwalsh.name/mac-set-date/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>How to Retrieve WiFi Password on Windows</title>
+		<link>https://davidwalsh.name/retrieve-wifi-password-windows</link>
+		<comments>https://davidwalsh.name/retrieve-wifi-password-windows#respond</comments>
+		<pubDate>Mon, 13 May 2024 10:45:29 +0000</pubDate>
+		<dc:creator><![CDATA[David Walsh]]></dc:creator>
+				<category><![CDATA[Microsoft]]></category>
+		<category><![CDATA[Shell]]></category>
+
+		<guid isPermaLink="false">https://davidwalsh.name/?p=27852</guid>
+		<description><![CDATA[<p>Remembering the WiFi password when on a guest network is never easy. Even worse is when it&#8217;s no longer posted and someone else is asking you for it. Luckily there&#8217;s a built in Windows command to recover the password of a given WiFi network. The Shell Code Open cmd and execute the following command: netsh [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/retrieve-wifi-password-windows">How to Retrieve WiFi Password on Windows</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></description>
+				<content:encoded><![CDATA[
+<p>Remembering the WiFi password when on a guest network is never easy.  Even worse is when it&#8217;s no longer posted and someone else is asking you for it.  Luckily there&#8217;s a built in Windows command to recover the password of a given WiFi network.</p>
+
+
+
+<h2>The Shell Code</h2>
+
+
+
+<p>Open <code>cmd</code> and execute the following command:</p>
+
+
+
+<pre class="shell">
+netsh wlan show profile name="David Walsh's Network" key=clear
+</pre>
+
+
+
+<p>The result of the command, assuming the network is found, is a long text output with a variety of information about the network.  To get the see the password for the network, look under the &#8220;Security settings&#8221; heading which will look like this:</p>
+
+
+
+<pre class="text">
+Security settings
+-----------------
+    Authentication         : WPA2-Personal
+    Cipher                 : CCMP
+    Authentication         : WPA2-Personal
+    Cipher                 : GCMP
+    Security key           : Present
+    Key Content            : **THE_PLAIN_TEXT_PASSWORD**
+</pre>
+
+
+
+<p>As with any complicated command line format, it&#8217;s best to create an alias so that you don&#8217;t need to remember the full string!</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/retrieve-wifi-password-windows">How to Retrieve WiFi Password on Windows</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://davidwalsh.name/retrieve-wifi-password-windows/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>How to Fix: Windows WASD Keys Reversed with Arrow Keys</title>
+		<link>https://davidwalsh.name/fix-wasd-keys</link>
+		<comments>https://davidwalsh.name/fix-wasd-keys#comments</comments>
+		<pubDate>Thu, 02 May 2024 01:55:27 +0000</pubDate>
+		<dc:creator><![CDATA[David Walsh]]></dc:creator>
+				<category><![CDATA[Quick Tips]]></category>
+
+		<guid isPermaLink="false">https://davidwalsh.name/?p=27850</guid>
+		<description><![CDATA[<p>This past weekend I had the opportunity to be what every father wants, if only for a moment: the &#8220;cool dad&#8221;. My wife was out of town and my youngest son wanted to play PUBG. I caved in, taught him the basic FPS key binds, and he was having a great time. While he was [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/fix-wasd-keys">How to Fix: Windows WASD Keys Reversed with Arrow Keys</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></description>
+				<content:encoded><![CDATA[
+<p>This past weekend I had the opportunity to be what every father wants, if only for a moment:  the &#8220;cool dad&#8221;.  My wife was out of town and my youngest son wanted to play PUBG.  I caved in, taught him the basic FPS key binds, and he was having a great time.  While he was fragging out, he pressed a bunch of random keys and ended up changing movement buttons.  Suddenly the traditional WASD movement keys were useless and the arrow keys triggered movement.  </p>
+
+
+
+<p>Of course, this was a degradation of player experience.  After struggling to figure out what my son did, I found the solution.</p>
+
+
+
+<p>To restore the WASD keys as movement keys, press the <code>FN+W</code> key combination.  You&#8217;ll switch back to WASD keys for movement and be back on top of your game!</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/fix-wasd-keys">How to Fix: Windows WASD Keys Reversed with Arrow Keys</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://davidwalsh.name/fix-wasd-keys/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>HTML popover Attribute</title>
+		<link>https://davidwalsh.name/html-popover-attribute</link>
+		<comments>https://davidwalsh.name/html-popover-attribute#comments</comments>
+		<pubDate>Mon, 15 Apr 2024 11:19:02 +0000</pubDate>
+		<dc:creator><![CDATA[David Walsh]]></dc:creator>
+				<category><![CDATA[CSS]]></category>
+		<category><![CDATA[HTML5]]></category>
+
+		<guid isPermaLink="false">https://davidwalsh.name/?p=27845</guid>
+		<description><![CDATA[<p>Modals have been an important part of websites for two decades. Stacking contents and using fetch to accomplish tasks are a great way to improve UX on both desktop and mobile. Unfortunately most developers don&#8217;t know that the HTML and JavaScript specs have implemented a native modal system via the popover attribute &#8212; let&#8217;s check [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/html-popover-attribute">HTML popover Attribute</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></description>
+				<content:encoded><![CDATA[
+<figure class="wp-block-image"><img src="https://davidwalsh.name/demo/2024/04/SCR-20240414-ozqp-1024x300.png" alt="" class="wp-image-27846" srcset="https://davidwalsh.name/demo/2024/04/SCR-20240414-ozqp-1024x300.png 1024w, https://davidwalsh.name/demo/2024/04/SCR-20240414-ozqp-300x88.png 300w, https://davidwalsh.name/demo/2024/04/SCR-20240414-ozqp-768x225.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Modals have been an important part of websites for two decades.  Stacking contents and using <code>fetch</code> to accomplish tasks are a great way to improve UX on both desktop and mobile.  Unfortunately most developers don&#8217;t know that the HTML and JavaScript specs have implemented a native modal system via the <code>popover</code> attribute &#8212; let&#8217;s check it out!</p>
+
+
+
+<h2>The HTML</h2>
+
+
+
+<p>Creating a native HTML modal consists of using the <code>popovertarget</code> attribute as the trigger and the <code>popover</code> attribute, paired with an <code>id</code>, to identify the content element:</p>
+
+
+
+<pre class="html">
+&lt;!-- 
+  "popovertarget" attribute will map to "id" of popover contents
+--&gt;
+&lt;button popovertarget="popover-contents"&gt;Open popover&lt;/button&gt;
+&lt;div id="popover-contents" popover&gt;This is the contents of the popover&lt;/div&gt;
+</pre>
+
+
+
+<p>Upon clicking the <code>button</code>, the popover will open.  The popover, however, will not have a traditional background layer color so we&#8217;ll need to implement that on our own with some CSS magic.</p>
+
+
+
+<h2>The CSS</h2>
+
+
+
+<p>Styling the contents of the popover content is pretty standard but we can use the browser stylesheet selector&#8217;s pseudo-selector to style the &#8220;background&#8221; of the modal:</p>
+
+
+
+<pre class="css">
+/* contents of the popover */
+[popover] {
+  background: lightblue;
+  padding: 20px;
+}
+
+/* the dialog's "modal" background */
+[popover]:-internal-popover-in-top-layer::backdrop {
+  background: rgba(0, 0, 0, .5);  
+}
+</pre>
+
+
+
+<p><code>:-internal-popover-in-top-layer::backdrop</code> represents the &#8220;background&#8221; of the modal.  Traditionally that UI has been an element with opacity such to show the stacking relationship.</p>
+
+
+
+<figure class="wp-block-embed is-type-rich is-provider-codepen"><div class="wp-block-embed__wrapper">
+<iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" src="https://codepen.io/darkwing/embed/preview/yLrqEvK?default-tabs=css%2Cresult&#038;height=300&#038;host=https%3A%2F%2Fcodepen.io&#038;slug-hash=yLrqEvK#?secret=4zHjD4VqPt" data-secret="4zHjD4VqPt" title="" scrolling="no" frameborder="0" height="300"></iframe>
+</div></figure>
+
+
+
+<p></p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/html-popover-attribute">HTML popover Attribute</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://davidwalsh.name/html-popover-attribute/feed</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+		<item>
+		<title>Get Started in AI and NFTs with the Limewire API (Sponsored)</title>
+		<link>https://davidwalsh.name/get-started-in-ai-and-nfts-with-the-limewire-api</link>
+		<comments>https://davidwalsh.name/get-started-in-ai-and-nfts-with-the-limewire-api#respond</comments>
+		<pubDate>Mon, 25 Mar 2024 21:50:46 +0000</pubDate>
+		<dc:creator><![CDATA[David Walsh]]></dc:creator>
+				<category><![CDATA[Sponsored]]></category>
+
+		<guid isPermaLink="false">https://davidwalsh.name/?p=27840</guid>
+		<description><![CDATA[<p>AI media creation has expanded to incredible video art and a host of other important improvements, and LimeWire is leading the way in creating an awesome interface for the average user to become an AI artist. Limewire has just released its Developer API, a method for engineers like us to create dynamic AI art on [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/get-started-in-ai-and-nfts-with-the-limewire-api">Get Started in AI and NFTs with the Limewire API (Sponsored)</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></description>
+				<content:encoded><![CDATA[
+<figure class="wp-block-image"><a href="https://limewire.com/" target="_blank" rel="noreferrer noopener"><img src="https://davidwalsh.name/demo/limewire-logo.svg" alt="LimeWire"/></a></figure>
+
+
+
+<p>AI media creation has expanded to incredible video art and a host of other important improvements, and LimeWire is leading the way in creating an awesome interface for the average user to become an AI artist.  Limewire has just released its <a href="https://developer.limewire.com/">Developer API</a>, a method for engineers like us to create dynamic AI art on the fly!</p>
+
+
+
+<h2>Quick Hits</h2>
+
+
+
+<ul><li>Free to sign up!</li><li>Provides methods to create a variety of quality images from any number of AI services and algorithms</li><li>Create images based on text and other images</li><li>Modify existing images to scale them, remove backgrounds, and more</li><li>Use JavaScript, PHP, Python, or any of your favorite languages</li><li>Documentation is clean and easy to understand</li><li>Very easy to get started</li></ul>
+
+
+
+<figure class="wp-block-image"><img src="https://davidwalsh.name/demo/2024/03/SCR-20240324-iiuh-1024x892.png" alt="" class="wp-image-27841" srcset="https://davidwalsh.name/demo/2024/03/SCR-20240324-iiuh-1024x892.png 1024w, https://davidwalsh.name/demo/2024/03/SCR-20240324-iiuh-300x261.png 300w, https://davidwalsh.name/demo/2024/03/SCR-20240324-iiuh-768x669.png 768w, https://davidwalsh.name/demo/2024/03/SCR-20240324-iiuh.png 1146w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption><br></figcaption></figure>
+
+
+
+<p>A simple API call is as easy as:</p>
+
+
+
+<pre class="shell">curl -i -X POST \
+  https://api.limewire.com/api/image/generation \
+  -H 'Authorization: Bearer MY_API_KEY' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'X-Api-Version: v1' \
+  -d '{
+    "prompt": "A beautiful princess in front of her kingdom",
+    "aspect_ratio": "1:1"
+  }'
+</pre>
+
+
+
+<figure class="wp-block-image"><img src="https://davidwalsh.name/demo/2024/03/9b61cb1b-ce99-420f-98da-112730ef4a7a.jpeg" alt="" class="wp-image-27842" srcset="https://davidwalsh.name/demo/2024/03/9b61cb1b-ce99-420f-98da-112730ef4a7a.jpeg 1024w, https://davidwalsh.name/demo/2024/03/9b61cb1b-ce99-420f-98da-112730ef4a7a-150x150.jpeg 150w, https://davidwalsh.name/demo/2024/03/9b61cb1b-ce99-420f-98da-112730ef4a7a-300x300.jpeg 300w, https://davidwalsh.name/demo/2024/03/9b61cb1b-ce99-420f-98da-112730ef4a7a-768x768.jpeg 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>You can also upscale an existing, uploaded image:</p>
+
+
+
+<pre class="shell">curl -i -X POST \
+  https://api.limewire.com/api/image/upscaling \
+  -H 'Authorization: Bearer MY_API_KEY' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'X-Api-Version: v1' \
+  -d '{
+    "image_asset_id": "116a972f-666a-44a1-a3df-c9c28a1f56c0",
+    "upscale_factor": 4
+  }'
+</pre>
+
+
+
+<p>The value in creating AI art dynamically is hard to stress the enormity of for engineers and authors alike. Rather than scouring Google Images for image to match my blog post, I can use LimeWire&#8217;s API to send keywords from the article to create a representative image. Likewise, authors can feed their story to LimeWire to generate illustrations! You can even integrate the developer API into your platform for your users to employ!</p>
+
+
+
+<p>Give LimeWire&#8217;s new developer API a try!  LimeWire lets you create AI images where <em>you</em> are!</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/get-started-in-ai-and-nfts-with-the-limewire-api">Get Started in AI and NFTs with the Limewire API (Sponsored)</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://davidwalsh.name/get-started-in-ai-and-nfts-with-the-limewire-api/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>I&#8217;m So Old:  Web Edition</title>
+		<link>https://davidwalsh.name/im-so-old-1</link>
+		<comments>https://davidwalsh.name/im-so-old-1#comments</comments>
+		<pubDate>Mon, 18 Mar 2024 13:00:20 +0000</pubDate>
+		<dc:creator><![CDATA[David Walsh]]></dc:creator>
+				<category><![CDATA[Theory / Ideas]]></category>
+
+		<guid isPermaLink="false">https://davidwalsh.name/?p=27834</guid>
+		<description><![CDATA[<p>Time can be a funny thing. I still remember discovering HTML, CSS, and JavaScript coding. I still remember my first college programming course. I still remember my first day at my first coding job, then my first day at my second coding job, and then my first day at Mozilla. I still remember my first [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/im-so-old-1">I&#8217;m So Old:  Web Edition</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></description>
+				<content:encoded><![CDATA[
+<figure class="wp-block-image"><img src="https://davidwalsh.name/demo/2024/03/5a9a4b1432da8dff1d2cf2e17d5a81d1.gif" alt="" class="wp-image-27835"/></figure>
+
+
+
+<p>Time can be a funny thing. I still remember discovering HTML, CSS, and JavaScript coding. I still remember my first college programming course. I still remember my first day at my first coding job, then my first day at my second coding job, and then my first day at Mozilla. I still remember my first day coding for MetaMask. This year marks my 20th year as a professional software engineer and it&#8217;s happened in the blink of an eye.</p>
+
+
+
+<p>Every once in a while I will make an old programming reference to a much younger engineer and then realize they have no idea what I&#8217;m talking about.</p>
+
+
+
+<p>I&#8217;m so old&#8230;</p>
+
+
+
+<ul><li>Webpage layouts were being done with <code>&lt;table></code>s and this new &#8220;CSS <code>float</code>&#8221; property was becoming the new standard</li><li>Rounded corners were achieved via images and VML hacks for Internet Explorer</li><li>FTP was the best way to upload websites changes</li><li>SVN and copying its <code>trunk</code> was the best versioning tool</li><li><code>alert</code> and <code>confirm</code> were the standard for &#8220;modals&#8221;</li><li>Firebug was the best debugging tool available</li><li>The &#8220;standard&#8221; for getting videos to play properly was finding the right codec to install</li><li>ActionScript knowledge was as valuable as JavaScript knowledge</li><li>Dreamweaver was best in class text editor and design tool</li><li>XML was the future of data structures</li><li>Mobile-first? Mobile didn&#8217;t exist</li><li>Reactive navigation? How about Java Applets&#8230;</li><li>&#8230;or even different <code>&lt;img src=""></code> upon <code>mouseover</code> and <code>mouseleave</code>!</li><li>Want to code a desktop app with web tech? Try Adobe Air!</li><li>NPM stood for &#8220;not performant, man&#8221;</li><li>Voting on a poll meant the page would refresh</li><li>&#8220;Social media&#8221; meant HotOrNot.com</li><li>The love sound of the web was a 56k modem connection purrrrr</li><li>Disabling right-click enforced image security</li><li>Bitmap (<code>.bmp</code>) was a viable image format</li><li>JavaScript had a competitor called <code>JScript</code></li><li><a href="https://davidwalsh.name/ajax-evil-spyjax">SpyJax&#8217;ing</a> let you detect where your user had been</li><li>Cookies were the pinnacle of user tracking</li><li>Social media wall? It&#8217;s called a &#8220;guestbook&#8221;&#8230;</li><li>&#8230;and a friends list? It&#8217;s called a &#8220;web ring&#8217;</li><li>Search engine optimization was spamming the <code>&lt;title></code> with keywords=</li></ul>
+
+
+
+<figure class="wp-block-image"><img src="blob:https://davidwalsh.name/90f2e20a-08f0-4827-926a-af6a08af0169" alt=""/></figure>
+
+
+
+<p></p>
+
+
+
+<p>Whew, those where the days.  How old are you in web?</p>
+
+
+
+<p></p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/im-so-old-1">I&#8217;m So Old:  Web Edition</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://davidwalsh.name/im-so-old-1/feed</wfw:commentRss>
+		<slash:comments>40</slash:comments>
+		</item>
+		<item>
+		<title>Detect Caps Lock with JavaScript</title>
+		<link>https://davidwalsh.name/detect-caps-lock</link>
+		<comments>https://davidwalsh.name/detect-caps-lock#comments</comments>
+		<pubDate>Tue, 06 Feb 2024 10:33:10 +0000</pubDate>
+		<dc:creator><![CDATA[David Walsh]]></dc:creator>
+				<category><![CDATA[JavaScript]]></category>
+
+		<guid isPermaLink="false">https://davidwalsh.name/?p=27828</guid>
+		<description><![CDATA[<p>Anyone is capable of having their caps lock key on at any given time without realizing so. Users can easily spot unwanted caps lock when typing in most inputs, but when using a password input, the problem isn&#8217;t so obvious. That leads to the user&#8217;s password being incorrect, which is an annoyance. Ideally developers could [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/detect-caps-lock">Detect Caps Lock with JavaScript</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></description>
+				<content:encoded><![CDATA[
+<p>Anyone is capable of having their caps lock key on at any given time without realizing so.  Users can easily spot unwanted caps lock when typing in most inputs, but when using a <code>password</code> <code>input</code>, the problem isn&#8217;t so obvious.  That leads to the user&#8217;s password being incorrect, which is an annoyance.  Ideally developers could let the user know their caps lock key is activated.</p>
+
+
+
+<p>To detect if a user has their keyboard&#8217;s caps lock turn on, we&#8217;ll employ <code>KeyboardEvent</code>&#8216;s <code>getModifierState</code> method:</p>
+
+
+
+<pre class="js">
+document.querySelector('input[type=password]').addEventListener('keyup', function (keyboardEvent) {
+    const capsLockOn = keyboardEvent.getModifierState('CapsLock');
+    if (capsLockOn) {
+        // Warn the user that their caps lock is on?
+    }
+});
+</pre>
+
+
+
+<p>I&#8217;d never seen <code>getModifierState</code> used before, so I explored the <a href="https://w3c.github.io/uievents/#event-modifier-initializers">W3C documentation</a> to discover other useful values:</p>
+
+
+
+<pre class="text">
+dictionary EventModifierInit : UIEventInit {
+  boolean ctrlKey = false;
+  boolean shiftKey = false;
+  boolean altKey = false;
+  boolean metaKey = false;
+
+  boolean modifierAltGraph = false;
+  boolean modifierCapsLock = false;
+  boolean modifierFn = false;
+  boolean modifierFnLock = false;
+  boolean modifierHyper = false;
+  boolean modifierNumLock = false;
+  boolean modifierScrollLock = false;
+  boolean modifierSuper = false;
+  boolean modifierSymbol = false;
+  boolean modifierSymbolLock = false;
+};
+</pre>
+
+
+
+<p><code>getModifierState</code> provides a wealth of insight as to the user&#8217;s keyboard during key-centric events.  I wish I had known about <code>getModifier</code> earlier in my career!</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/detect-caps-lock">Detect Caps Lock with JavaScript</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://davidwalsh.name/detect-caps-lock/feed</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>How to Override width and height HTML attributes with CSS</title>
+		<link>https://davidwalsh.name/css-override-width-height</link>
+		<comments>https://davidwalsh.name/css-override-width-height#respond</comments>
+		<pubDate>Mon, 05 Feb 2024 11:28:01 +0000</pubDate>
+		<dc:creator><![CDATA[David Walsh]]></dc:creator>
+				<category><![CDATA[CSS]]></category>
+		<category><![CDATA[HTML5]]></category>
+
+		<guid isPermaLink="false">https://davidwalsh.name/?p=27804</guid>
+		<description><![CDATA[<p>One of the HTML elements that frequently comes into collision with CSS is the img element. As we learned in Request Metrics&#8217; Fixing Cumulative Layout Shift Problems on DavidWalshBlog article, providing image dimensions within the image tag will help to improve your website&#8217;s score. But in a world where responsive design is king, we need [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/css-override-width-height">How to Override width and height HTML attributes with CSS</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></description>
+				<content:encoded><![CDATA[
+<p>One of the HTML elements that frequently comes into collision with CSS is the <code>img</code> element. As we learned in <a href="https://davidwalsh.name/fixing-cumulative-layout-shift-problems-on-davidwalshblog">Request Metrics&#8217; Fixing Cumulative Layout Shift Problems on DavidWalshBlog</a> article, providing image dimensions within the <code>image</code> tag will help to improve your website&#8217;s score. But in a world where responsive design is king, we need CSS and HTML to work together.</p>
+
+
+
+<p>Most responsive design style adjustments are done via <code>max-width</code> values, but when you provide a <code>height</code> value to your image, you can get a distorted image.  The goal should always be a display images in relative dimensions.  So how do we ensure the <code>height</code> attribute doesn&#8217;t conflict with <code>max-width</code> values?</p>
+
+
+
+<p>The answer is as easy as <code>height: auto</code>!</p>
+
+
+
+<pre class="js">
+/* assuming any media query */
+img {
+  /* Ensure the image doesn't go offscreen */
+  max-width: 500px;
+  /* Ensure the image height is responsive regardless of HTML attribute */
+  height: auto;
+}
+</pre>
+
+
+
+<p>The dance to please users and search engines is always a fun balance.  CSS and HTML were never meant to conflict but in some cases they do.  Use this code to optimize for both users and search engines!</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/css-override-width-height">How to Override width and height HTML attributes with CSS</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://davidwalsh.name/css-override-width-height/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Fixing Cumulative Layout Shift Problems on DavidWalshBlog</title>
+		<link>https://davidwalsh.name/fixing-cumulative-layout-shift-problems-on-davidwalshblog</link>
+		<comments>https://davidwalsh.name/fixing-cumulative-layout-shift-problems-on-davidwalshblog#respond</comments>
+		<pubDate>Wed, 24 Jan 2024 11:56:41 +0000</pubDate>
+		<dc:creator><![CDATA[Todd Gardner]]></dc:creator>
+				<category><![CDATA[Optimization]]></category>
+		<category><![CDATA[Performance]]></category>
+
+		<guid isPermaLink="false">https://davidwalsh.name/?p=27819</guid>
+		<description><![CDATA[<p>Over 50 thousand developers visit DavidWalshBlog every month from around the world to learn JavaScript tricks and fix problems in their code. Unfortunately, some of them have a slow experience on the site. David tracks the performance of his Core Web Vitals and overall performance with Request Metrics. Recently, we noticed that his CLS performance [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/fixing-cumulative-layout-shift-problems-on-davidwalshblog">Fixing Cumulative Layout Shift Problems on DavidWalshBlog</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></description>
+				<content:encoded><![CDATA[
+<p>Over 50 thousand developers visit DavidWalshBlog every month from around the world to learn JavaScript tricks and fix problems in their code. Unfortunately, some of them have a slow experience on the site.</p>
+
+
+
+<p>David tracks the performance of his Core Web Vitals and overall performance with <a href="https://requestmetrics.com/?utm_source=davidwalsh_content">Request Metrics</a>. Recently, we noticed that his CLS performance score was trending pretty slow for both desktop and mobile users.</p>
+
+
+
+<figure class="wp-block-image"><img src="https://davidwalsh.name/demo/2024/01/image-4-1024x376.png" alt="" class="wp-image-27823" srcset="https://davidwalsh.name/demo/2024/01/image-4-1024x376.png 1024w, https://davidwalsh.name/demo/2024/01/image-4-300x110.png 300w, https://davidwalsh.name/demo/2024/01/image-4-768x282.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h2 id="Wait, what is CLS?">Wait, what is CLS?</h2>
+
+
+
+<p><a href="https://requestmetrics.com/web-performance/cumulative-layout-shift/?utm_source=davidwalsh_content">Cumulative Layout Shift</a> (CLS) is one of the <a href="https://requestmetrics.com/core-web-vitals/?utm_source=davidwalsh_content">Core Web Vital</a> performance metrics. It doesn&#8217;t measure load time directly, instead it measures how much a page <i>shifts</i> while it is being loaded. You&#8217;ve definitely seen this and been annoyed by it. These shifts make a site <i>feel</i> slow to a user.</p>
+
+
+
+<p>CLS and the rest of the Core Web Vitals are super important. Not only because they measure user experience, but also because they influence the pagerank of a site in search. And search traffic is life for bloggers, media sites, e-commerce stores, and pretty much everyone with a website.</p>
+
+
+
+<p>If we can fix the site&#8217;s CLS problem, we&#8217;ll give readers a faster experience, and boost the search ranking so David can help even more people. Sounds like a great incentive, let&#8217;s figure it out.</p>
+
+
+
+<h2 id="Crashing with Google Lighthouse">Crashing with Google Lighthouse</h2>
+
+
+
+<p>To find a performance problem, many developers will use a tool like Google Lighthouse. I ran a Lighthouse report on David&#8217;s site, and here&#8217;s what I got.</p>
+
+
+
+<figure class="wp-block-image"><img src="https://davidwalsh.name/demo/2024/01/image-3-1024x728.png" alt="" class="wp-image-27822" srcset="https://davidwalsh.name/demo/2024/01/image-3-1024x728.png 1024w, https://davidwalsh.name/demo/2024/01/image-3-300x213.png 300w, https://davidwalsh.name/demo/2024/01/image-3-768x546.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>A perfect score! Let&#8217;s pack it up and go home.</p>
+
+
+
+<p>The trouble is that <b>Google Lighthouse is a lie</b>. Real users won&#8217;t have this performance. That score only represents a single test, from my lightning-fast computer, in the USA, on a fast broadband connection.</p>
+
+
+
+<p>David&#8217;s real users come from all over the world, on varying devices and networks, and at all times of the day. Their performance experience is far from perfect. That&#8217;s why we need to get <a href="https://requestmetrics.com/real-user-monitoring/?utm_source=davidwalsh_content">real user monitoring</a> for the performance, otherwise we might never know that there is a problem.</p>
+
+
+
+<h2 id="Where are the CLS problems?">Where are the CLS problems?</h2>
+
+
+
+<p>David has been writing for a long time and has hundreds of posts on his site. Request Metrics tracks the CLS score per page so we can zero-in on the problems.</p>
+
+
+
+<figure class="wp-block-image"><img src="https://davidwalsh.name/demo/2024/01/image-2-1024x521.png" alt="" class="wp-image-27821" srcset="https://davidwalsh.name/demo/2024/01/image-2-1024x521.png 1024w, https://davidwalsh.name/demo/2024/01/image-2-300x153.png 300w, https://davidwalsh.name/demo/2024/01/image-2-768x391.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>The largest traffic page is the root page, and that has a good CLS. But many of his posts, like <a href="https://davidwalsh.name/play-grand-poo-world-3">Play Grand Poo World</a> and <a href="https://davidwalsh.name/pornhub-interview">Pornhub Interview</a> have troubling CLS scores. We can also track the elements responsible for CLS, and for most of the posts its <code class="code-inline">main &gt; article &gt; p</code>. That means the first paragraph of the article is the thing shifting. Why would it do that?</p>
+
+
+
+<p>What is common about these posts with the worst CLS scores? Images. Images are a very common cause of CLS problems because a browser doesn&#8217;t always know how big an image is until it&#8217;s downloaded. The browser assumes it&#8217;s 0x0 until it has the image, then <i>shifts</i> everything around it to make room.</p>
+
+
+
+<p>Posts with lots of images would shift many times as each image was downloaded and the article shifted to make room for the new content.</p>
+
+
+
+<h2 id="Using images correctly for CLS">Using images correctly for CLS</h2>
+
+
+
+<p>To avoid layout shifts when using images, we need to give the browser hints about how big the images will be. The browser will use these hints to reserve space in the layout for the image when it&#8217;s finished downloading.</p>
+
+
+
+<pre class="html">&lt;img src="/path/to/image" width="300" height="100" /&gt;
+</pre>
+
+
+
+<p>Notice that the width and height are specified as their own attributes — not part of a style tag. These attributes set both a base size of the image as well as the aspect ratio to use. You can still use CSS to make the image bigger or smaller from here.</p>
+
+
+
+<p>Also notice that there is no <code class="code-inline">px</code> unit specified.</p>
+
+
+
+<h3 id="Image Sizes in WordPress">Image Sizes in WordPress</h3>
+
+
+
+<p>DavidWalsh.name is hosted on WordPress, where there are some built-in tools to do this. We can utilize <a href="https://developer.wordpress.org/reference/functions/wp_image_src_get_dimensions/"><code class="code-inline">wp_image_src_get_dimensions</code></a> to get the dimensions of images he&#8217;s using and add them to the markup.</p>
+
+
+
+<h2 id="Proving it works">Proving it works</h2>
+
+
+
+<p>David made the image changes a few days ago, and we&#8217;re already seeing an improvement. CLS has dropped 20% to 0.123. We&#8217;re real close to the “Good” range of CLS now.</p>
+
+
+
+<figure class="wp-block-image"><img src="https://davidwalsh.name/demo/2024/01/image-1024x280.png" alt="" class="wp-image-27820" srcset="https://davidwalsh.name/demo/2024/01/image-1024x280.png 1024w, https://davidwalsh.name/demo/2024/01/image-300x82.png 300w, https://davidwalsh.name/demo/2024/01/image-768x210.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>There&#8217;s still some issues to sort out around fonts, but that will be a story for another time and another post.</p>
+
+
+
+<p>If you&#8217;re looking to improve the real performance of your site, or worried about losing your SEO juice from Core Web Vital problems, have a look at <a href="https://requestmetrics.com/?utm_source=davidwalsh_content">Request Metrics</a>. It&#8217;s got the tools to track your performance and actionable tips to actually fix the problems.</p>
+
+
+
+<p>Plus it&#8217;s free, so it&#8217;s got that going for it.</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/fixing-cumulative-layout-shift-problems-on-davidwalshblog">Fixing Cumulative Layout Shift Problems on DavidWalshBlog</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://davidwalsh.name/fixing-cumulative-layout-shift-problems-on-davidwalshblog/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Date.now()</title>
+		<link>https://davidwalsh.name/date-now</link>
+		<comments>https://davidwalsh.name/date-now#respond</comments>
+		<pubDate>Wed, 17 Jan 2024 12:06:16 +0000</pubDate>
+		<dc:creator><![CDATA[David Walsh]]></dc:creator>
+				<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[Quick Tips]]></category>
+
+		<guid isPermaLink="false">https://davidwalsh.name/?p=27803</guid>
+		<description><![CDATA[<p>Ask any software engineer and they&#8217;ll tell you that coding date logic can be a nightmare. Developers need to consider timezones, weird date defaults, and platform-specific date formats. The easiest way to work with dates is to reduce the date to the most simple format possible &#8212; usually a timestamp. To get the immediate time [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/date-now">Date.now()</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></description>
+				<content:encoded><![CDATA[
+<p>Ask any software engineer and they&#8217;ll tell you that coding date logic can be a nightmare.  Developers need to consider timezones, weird date defaults, and platform-specific date formats.  The easiest way to work with dates is to reduce the date to the most simple format possible &#8212; usually a timestamp.  To get the immediate time in integer format, you can use <code>Date.now</code>:</p>
+
+
+
+<pre class="js">
+const now = Date.now(); // 1705190738870
+</pre>
+
+
+
+<p>I will oftentimes employ <code>Date.now()</code> in my <code>console.log</code> statements to differentiate likewise <code>console.log</code> results from each other.  You could also use that date as a unique identifier for an event in a low-traffic environment.</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/date-now">Date.now()</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://davidwalsh.name/date-now/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Extract a Number from a String with JavaScript</title>
+		<link>https://davidwalsh.name/javascript-extract-string</link>
+		<comments>https://davidwalsh.name/javascript-extract-string#comments</comments>
+		<pubDate>Tue, 16 Jan 2024 11:48:41 +0000</pubDate>
+		<dc:creator><![CDATA[David Walsh]]></dc:creator>
+				<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[Quick Tips]]></category>
+
+		<guid isPermaLink="false">https://davidwalsh.name/?p=27802</guid>
+		<description><![CDATA[<p>User input from HTML form fields is generally provided to JavaScript as a string. We&#8217;ve lived with that fact for decades but sometimes developers need to extract numbers from that string. There are multiple ways to get those numbers but let&#8217;s rely on regular expressions to extract those numbers! To employ a regular expression to [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/javascript-extract-string">Extract a Number from a String with JavaScript</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></description>
+				<content:encoded><![CDATA[
+<p>User input from HTML form fields is generally provided to JavaScript as a string.  We&#8217;ve lived with that fact for decades but sometimes developers need to extract numbers from that string.  There are multiple ways to get those numbers but let&#8217;s rely on regular expressions to extract those numbers!</p>
+
+
+
+<p>To employ a regular expression to get a number within a string, we can use <code>\d+</code>:</p>
+
+
+
+<pre class="javascript">const string = "x12345david";
+const [match] = string.match(/(\d+)/);
+match; // 12345
+</pre>
+
+
+
+<p>Regular expressions are capable of really powerful operations within JavaScript; this practice is one of the easier operations.  Converting the number using a <code>Number()</code> wrapper will give you the number as a <code>Number</code> type.</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/javascript-extract-string">Extract a Number from a String with JavaScript</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://davidwalsh.name/javascript-extract-string/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Thoughts on Streaming Services: 2024 Edition</title>
+		<link>https://davidwalsh.name/streaming-2024</link>
+		<comments>https://davidwalsh.name/streaming-2024#comments</comments>
+		<pubDate>Mon, 15 Jan 2024 11:08:32 +0000</pubDate>
+		<dc:creator><![CDATA[David Walsh]]></dc:creator>
+				<category><![CDATA[Theory / Ideas]]></category>
+
+		<guid isPermaLink="false">https://davidwalsh.name/?p=27800</guid>
+		<description><![CDATA[<p>Streaming services have revolutionized content delivery, sending linear media companies into a panic as they watch traditional cable services decay. &#8220;Cutting the cord&#8221; is a common practice these days, but the streaming landscape isn&#8217;t perfect. We&#8217;re a decade into streaming so I wanted to share my thoughts on the state of new media: first impressions, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/streaming-2024">Thoughts on Streaming Services: 2024 Edition</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></description>
+				<content:encoded><![CDATA[
+<p>Streaming services have revolutionized content delivery, sending linear media companies into a panic as they watch traditional cable services decay. &#8220;Cutting the cord&#8221; is a common practice these days, but the streaming landscape isn&#8217;t perfect. We&#8217;re a decade into streaming so I wanted to share my thoughts on the state of new media: first impressions, second thoughts, and the third degree!</p>
+
+
+
+<figure class="wp-block-image"><img src="https://davidwalsh.name/demo/2024/01/streaming-948x640-1.jpg" alt="" class="wp-image-27801" srcset="https://davidwalsh.name/demo/2024/01/streaming-948x640-1.jpg 948w, https://davidwalsh.name/demo/2024/01/streaming-948x640-1-300x203.jpg 300w, https://davidwalsh.name/demo/2024/01/streaming-948x640-1-768x518.jpg 768w" sizes="(max-width: 948px) 100vw, 948px" /></figure>
+
+
+
+<ul><li>Netflix is king thanks to having first mover advantage, and making smart financial moves over the past six months, but <strong>Netflix&#8217;s content is unremarkable</strong>. Their recent wins are USA&#8217;s Suits and content licensed from Max&#8230;<strong>they need to do better</strong>&#8230;</li><li><strong>The biggest loser</strong> in the current streaming landscape <strong>is the sports fan</strong>. Want to watch American Football? You need YouTubeTV, Peacock, and Amazon Prime. Soccer fan? You need Peacock, ESPN Plus, Paramount Plus, and then AppleTV Plus if you care about MLS. <strong>Being a live sports fan is really, really expensive</strong>.</li><li>The parent companies of HBO and Showtime killed their brands with &#8220;Max&#8221; and &#8220;Paramount Plus&#8221;. HBO&#8217;s brand name and fuzzy fade in are iconic; <strong>&#8220;Max&#8221; means nothing</strong>. Part of me died with this stupid brand change.</li><li>Streaming services lured us in with no advertisements but they&#8217;ve learned that the ad tiers generate more revenue. Now <strong>they&#8217;re trying to price us out</strong> to get us to choose the cheaper, ad-driven tier. Smart business but I&#8217;ll pay more to avoid the ads.</li><li>Apple has all the resources in the world but they treat their streaming service like everything else they do: <strong>offer an unremarkable product</strong> and skate off of name. Ted Lasso was good, as was Shrinking, but everything else is filler&#8230;</li><li>&#8230;and charging for Killers of the Flower Moon during the holidays, then providing it for free once people are back to work, <strong>is an embarrassing money grab</strong>.</li><li>Amazon doesn&#8217;t offer nearly enough in exclusive content. <strong>These tech companies are half in, half out</strong>.</li><li>Warner Brothers Discovery licensing their content, especially the Marvel Comic Universe IP, to Netflix because they need quick cash feels like a self-own. <strong>How do you grow Max by giving your best content to a better service</strong>?</li><li>AppleTV&#8217;s hardware is insanely elegant to use, though I&#8217;m annoyed they didn&#8217;t commit to their gaming offering. <strong>Roku still feels like a Super Nintendo in a N64 world</strong>.</li><li>The free streaming options these days are awesome if you don&#8217;t want to spend money. <strong>YouTube, RokuTV, and Tubi provide loads of great content</strong> at no expense.</li><li>Disney Plus offer loads of great old movies but <strong>my kids rarely watch it</strong> &#8212; they&#8217;re busy watching cringe shows on Netflix&#8230;</li><li>One huge frustration is the lack of a &#8220;previous&#8221; button that cable remotes had. <strong>Navigating between channels in YouTubeTV is painful</strong>&#8230;</li><li>&#8230;and to further improve the experience, it would be great if AppleTV and Roku would <strong>allow users to have two apps side by side</strong>; let us build our own multi-view.</li><li>Part of me wants to bin off all of my sports streaming services and simply use StreamEast&#8230;but the convenience is just too nice.</li></ul>
+
+
+
+<p>Agree or disagree?  What did I miss?  Let me know in the comments below!</p>
+
+
+
+<p></p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/streaming-2024">Thoughts on Streaming Services: 2024 Edition</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://davidwalsh.name/streaming-2024/feed</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>AutoGrow Textareas with CSS</title>
+		<link>https://davidwalsh.name/autogrow-textareas</link>
+		<comments>https://davidwalsh.name/autogrow-textareas#comments</comments>
+		<pubDate>Mon, 18 Dec 2023 11:55:51 +0000</pubDate>
+		<dc:creator><![CDATA[David Walsh]]></dc:creator>
+				<category><![CDATA[CSS]]></category>
+		<category><![CDATA[HTML5]]></category>
+
+		<guid isPermaLink="false">https://davidwalsh.name/?p=27796</guid>
+		<description><![CDATA[<p>As the demands of the web change and developers experiment with different user experiences, the need for more native language improvements expands. Our presentation layer, CSS, has done incredibly well in improving capabilities, even if sometimes too slow. The need for native support for automatically expanding textarea elements has been long known&#8230;and it&#8217;s finally here! [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/autogrow-textareas">AutoGrow Textareas with CSS</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></description>
+				<content:encoded><![CDATA[
+<p>As the demands of the web change and developers experiment with different user experiences, the need for more native language improvements expands. Our presentation layer, CSS, has done incredibly well in improving capabilities, even if sometimes too slow. The need for native support for automatically expanding <code>textarea</code> elements has been long known&#8230;and it&#8217;s finally here!</p>
+
+
+
+<p>To allow <code>textarea</code> elements to grow vertically and horizontally, add the <code>field-sizing</code> property with a value of <code>content</code>:</p>
+
+
+
+<pre class="css">
+textarea {
+  field-sizing: content; // default is `fixed`
+}
+</pre>
+
+
+
+<p>The default value for <code>field-sizing</code> is <code>fixed</code>, signaling current behavior.  The new behavior, <code>content</code>, will expand as much as possible.  To constrain the size a <code>textarea</code> can grow, use traditional <code>width/max-width</code> and <code>height/max-height</code> properties.</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/autogrow-textareas">AutoGrow Textareas with CSS</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://davidwalsh.name/autogrow-textareas/feed</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>How to Play Grand Poo World 3</title>
+		<link>https://davidwalsh.name/play-grand-poo-world-3</link>
+		<comments>https://davidwalsh.name/play-grand-poo-world-3#respond</comments>
+		<pubDate>Tue, 28 Nov 2023 00:35:41 +0000</pubDate>
+		<dc:creator><![CDATA[David Walsh]]></dc:creator>
+				<category><![CDATA[Games]]></category>
+
+		<guid isPermaLink="false">https://davidwalsh.name/?p=27788</guid>
+		<description><![CDATA[<p>The underground world of creating and streaming Super Mario World-based ROM hacks continues to gain popularity. This popularity is a tribute to the creativity of gamers and the quality of the original 30 year old video game&#8217;s mechanics. Over the past decade, incredible ROM hacks like Grand Poo World 1 and 2, Invictus, and Dram [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/play-grand-poo-world-3">How to Play Grand Poo World 3</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></description>
+				<content:encoded><![CDATA[
+<figure class="wp-block-image"><img src="https://davidwalsh.name/demo/2023/11/logo.png" width="400" height="151" alt="" class="wp-image-27789" srcset="https://davidwalsh.name/demo/2023/11/logo.png 400w, https://davidwalsh.name/demo/2023/11/logo-300x113.png 300w" sizes="(max-width: 400px) 100vw, 400px" /></figure>
+
+
+
+<p>The underground world of creating and streaming Super Mario World-based ROM hacks continues to gain popularity. This popularity is a tribute to the creativity of gamers and the quality of the original 30 year old video game&#8217;s mechanics. Over the past decade, incredible ROM hacks like Grand Poo World 1 and 2, Invictus, and Dram World have brought joy (and horror) to the Mario community. Sure, Nintendo released Mario Maker and Mario Maker 2, but I love SMW Central patches because they allow all of us to create, much like open source.</p>
+
+
+
+<p>The most anticipated hack in years, Grand Poo World 3, was just released and is taking the Super Mario World community by storm. You cannot, however, just download GPW3; due to legal reasons, and the ability to modify it further, the process takes some work. Let&#8217;s learn how to build Grand Poo World 3!</p>
+
+
+
+<h2>What You&#8217;ll Need</h2>
+
+
+
+<p>You&#8217;ll need multiple apps and files to build and play Grand Poo World 3:</p>
+
+
+
+<ul><li>The <a href="https://www.smwcentral.net/?p=files&amp;u=32572">Grand Poo World 3 <code>bps</code> file</a> from SMWCentral</li><li>A clean ROM file (with <code>.smc</code> file extension) for Super Mario World (&#8230;Google helps; use <a href="http://bin.smwcentral.net/u/7478/jsromclean.htm">JSRomClean</a> to verify your file)</li><li>A patching utility for your OS (<a href="https://projects.sappharad.com/multipatch/">MultiPatch</a> for macOS, <a href="https://www.smwcentral.net/?p=section&amp;a=details&amp;id=11474">FloatingIPS</a> for Windows)<a href="https://projects.sappharad.com/multipatch/"></a></li><li>An emulator to play the resulting <code>.smc</code> file (<a href="https://davidwalsh.name/console-emulator">OpenEmu for Mac</a>, <a href="https://www.emuparadise.me/Super_Nintendo_Entertainment_System_(SNES)_Emulators/Windows/Snes9x/43">Snes9x for Windows</a>)</li></ul>
+
+
+
+<h2>Patching Grand Poo World 3</h2>
+
+
+
+<p>With the files and utilities available, open the patching utility and provide the path, Super Mario World ROM File, and patched file path:</p>
+
+
+
+<figure class="wp-block-image is-resized"><img src="https://davidwalsh.name/demo/2023/11/SCR-20231127-psbj-1024x702.png" alt="" class="wp-image-27791" width="580" height="397" srcset="https://davidwalsh.name/demo/2023/11/SCR-20231127-psbj-1024x702.png 1024w, https://davidwalsh.name/demo/2023/11/SCR-20231127-psbj-300x206.png 300w, https://davidwalsh.name/demo/2023/11/SCR-20231127-psbj-768x526.png 768w, https://davidwalsh.name/demo/2023/11/SCR-20231127-psbj.png 1030w" sizes="(max-width: 580px) 100vw, 580px" /></figure>
+
+
+
+<p>If the input files are successful, you&#8217;ll get a working <code>.smc</code> file for GPW3! The risk is usually the SMW ROM file, so be sure to validate it with JSRomClean.</p>
+
+
+
+<p>With a successful Grand Poo World 3 created, it&#8217;s time to play!</p>
+
+
+
+<figure class="wp-block-image"><img src="https://davidwalsh.name/demo/2023/11/SCR-20231127-prbg-1024x774.png" width="1024" height="774" alt="" class="wp-image-27792" srcset="https://davidwalsh.name/demo/2023/11/SCR-20231127-prbg-1024x774.png 1024w, https://davidwalsh.name/demo/2023/11/SCR-20231127-prbg-300x227.png 300w, https://davidwalsh.name/demo/2023/11/SCR-20231127-prbg-768x581.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>The whole process of creating Grand Poo World 3 gives me joy due to two  of my loves:  video games and open source coding.  SMWCentral has thousands of patches you can apply on top of and parellel to ROM hacks to implement features like <a href="https://davidwalsh.name/rom-hacks">retry system</a> and loads more.</p>
+
+
+
+<p>Enjoy (the pain of) Grand Poo World 3!</p>
+<p>The post <a rel="nofollow" href="https://davidwalsh.name/play-grand-poo-world-3">How to Play Grand Poo World 3</a> appeared first on <a rel="nofollow" href="https://davidwalsh.name">David Walsh Blog</a>.</p>
+<p><a href="https://tkjs.us/dwb"><img style="margin:0 auto" alt="" src="https://davidwalsh.name/demo/tjs_block-1.svg"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://davidwalsh.name/play-grand-poo-world-3/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

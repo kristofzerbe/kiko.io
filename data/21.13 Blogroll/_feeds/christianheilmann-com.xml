@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Christian Heilmann</title>
+	<atom:link href="https://christianheilmann.com/feed/" rel="self" type="application/rss+xml" />
+	<link>https://christianheilmann.com</link>
+	<description>For a better web with more professional jobs - can talk, will travel</description>
+	<lastBuildDate>Tue, 13 Jan 2026 15:22:27 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.9</generator>
+	<item>
+		<title>Monky Business: Creating a Cistercian Numerals Generator</title>
+		<link>https://christianheilmann.com/2026/01/13/monky-business-creating-a-cistercian-numerals-generator/</link>
+		
+		<dc:creator><![CDATA[Chris Heilmann]]></dc:creator>
+		<pubDate>Tue, 13 Jan 2026 15:20:54 +0000</pubDate>
+				<category><![CDATA[General]]></category>
+		<guid isPermaLink="false">https://christianheilmann.com/?p=9692</guid>
+
+					<description><![CDATA[In the 13th century Cistercian monks came up with a way to show the numbers from 1 to 9999 as a single character. The way it works is to add the lines of different characters to each other until the number is reached. So, if you want to show 161, you take the 1, the [&#8230;]]]></description>
+										<content:encoded><![CDATA[	<p>In the 13th century Cistercian monks came up with a way to <a href="https://en.wikipedia.org/wiki/Cistercian_numerals" title="">show the numbers from 1 to 9999 as a single character</a>.</p>
+
+	<p><a href="https://christianheilmann.com/wp-content/uploads/2026/01/Users_chrisheilmann_Documents_Cistercian_digits_vertical.svgiPhone-SE.png"><img fetchpriority="high" decoding="async" src="https://christianheilmann.com/wp-content/uploads/2026/01/Users_chrisheilmann_Documents_Cistercian_digits_vertical.svgiPhone-SE.png" class="med" alt="The cistercian numerals showing numbers 1 - 9 and 10x multiples of those as different characters" width="400" height="1622" class="alignnone size-full wp-image-9694" /></a></p>
+
+	<p>The way it works is to add the lines of different characters to each other until the number is reached. So, if you want to show 161, you take the 1, the 60 and the 100 and add them together:</p>
+
+	<p><a href="https://christianheilmann.com/wp-content/uploads/2026/01/161.png"><img decoding="async" src="https://christianheilmann.com/wp-content/uploads/2026/01/161.png" alt="Showing the correct numeral for 161 by showing the ones for 1, 60 and 100 and adding them to the same image" width="557" height="295" class="med alignnone size-full wp-image-9700" srcset="https://christianheilmann.com/wp-content/uploads/2026/01/161.png 557w, https://christianheilmann.com/wp-content/uploads/2026/01/161-300x159.png 300w" sizes="(max-width: 557px) 100vw, 557px" /></a></p>
+
+	<p>Same with 1312 as 1000 + 300 + 10 + 2:</p>
+
+	<p><a href="https://christianheilmann.com/wp-content/uploads/2026/01/1312.png"><img decoding="async" src="https://christianheilmann.com/wp-content/uploads/2026/01/1312.png" alt="Showing the correct numeral for 1312 by showing the ones for 2, 10, 300 and 1000 and adding them to the same image" width="690" height="299" class="med alignnone size-full wp-image-9701" srcset="https://christianheilmann.com/wp-content/uploads/2026/01/1312.png 690w, https://christianheilmann.com/wp-content/uploads/2026/01/1312-300x130.png 300w" sizes="(max-width: 690px) 100vw, 690px" /></a></p>
+
+	<p>Which is pretty much incredible, so I thought it would be fun to create a generator for those characters. And <a href="https://codepo8.github.io/cistercian/" title="">here it is</a>:</p>
+
+	<p><a href="https://codepo8.github.io/cistercian/"><img loading="lazy" decoding="async" src="https://christianheilmann.com/wp-content/uploads/2026/01/generator.gif" alt="Screen recording of the generator in action" width="600" height="358" class="med alignnone size-full wp-image-9704" /></a></p>
+
+	<p>And while we&#8217;re at it, why not have a <a href="https://codepo8.github.io/cistercian/clock.html" title="">Cistercian Clock</a> ?</p>
+
+	<p><a href="https://codepo8.github.io/cistercian/clock.html"><img loading="lazy" decoding="async" src="https://christianheilmann.com/wp-content/uploads/2026/01/CistercianClock.gif" alt="" width="484" height="344" class="med alignnone size-full wp-image-9712" /></a></p>
+
+	<h2>How to use the generator</h2>
+
+	<p>Open it in your browser and enter the numbers you want to generate. You can also <a href="https://github.com/codepo8/cistercian/" title="">get the source code</a>, download it and use it offline. You can generate numerals as <span class="caps">PNG</span> or as <span class="caps">SVG</span>, click them to download the images and click the X buttons to remove them.</p>
+
+	<h2>How to use the code in your own products</h2>
+
+	<p>The generator is based on a script I wrote to generate the numerals, all available on the <a href="https://github.com/codepo8/cistercian/" title="">GitHub Repo</a>. There are two flavours, a simple Node based one that returns <span class="caps">SVG</span> strings and a more advanced one that allows for in-browser <span class="caps">PNG</span> and <span class="caps">SVG</span> generation and customisation.</p>
+
+	<h3>toCistercian.js &#8211; Node or browser number to Cistercian numeral converted in <span class="caps">SVG</span></h3>
+
+	<p>You can use this on the command line using:</p>
+
+	<p><pre lang="xml"><br />
+node toCistercian.js {number}<br />
+</pre></p>
+
+	<p>For example `node toCistercian.js 161` results in the following <span class="caps">SVG</span>:</p>
+
+	<p><pre lang="xml"><br />
+<svg width="120" height="180" xmlns="http://www.w3.org/2000/svg"><br />
+<title>Cistercian numeral for 161</title><br />
+<line x1="60" y1="20" x2="60" y2="160" stroke="#000" stroke-linecap="square" stroke-width="4"/><br />
+<line x1="60" y1="20" x2="100" y2="20" stroke="#000" stroke-linecap="square" stroke-width="4"/><br />
+<line x1="60" y1="20" x2="60" y2="160" stroke="#000" stroke-linecap="square" stroke-width="4"/><br />
+<line x1="20" y1="20" x2="20" y2="60" stroke="#000" stroke-linecap="square" stroke-width="4"/><br />
+<line x1="60" y1="20" x2="60" y2="160" stroke="#000" stroke-linecap="square" stroke-width="4"/><br />
+<line x1="100" y1="160" x2="60" y2="160" stroke="#000" stroke-linecap="square" stroke-width="4"/><br />
+</svg><br />
+</pre></p>
+
+	<p>You can also use this in a browser as shown in the <a href="https://codepo8.github.io/cistercian/simple.html" title="">simple example</a>:</p>
+
+	<p><pre lang="xml"><br />
+<output></output><br />
+<script src="toCistercian.js"><br />
+</script><br />
+<script><br />
+const svg = toCistercian(1312);<br />
+document.querySelector(&#8216;output&#8217;).innerHTML = svg;<br />
+</script><br />
+</pre></p>
+
+	<h3>Cistercian.js &#8211; convert to svg/png/canvas with customisation</h3>
+
+	<p>The generator uses the more detailed <a href="https://github.com/codepo8/cistercian/blob/main/cistercian.js" title="">cistercian.js</a> version, which allows you to generate numerals in various versions and formats.</p>
+
+	<p>Usage is in JavaScript and a browser environment.</p>
+
+	<p><pre lang="javascript"><br />
+const converter = new Cistercian();<br />
+converter.rendernumber(1312);<br />
+</pre></p>
+
+	<p>This would add an `output` element to the body and render the numeral with a text representation and a button to remove it again.<br />
+You can configure it to change the look and feel and what gets rendered by calling the `configure` method. See the <a href="https://codepo8.github.io/cistercian/advanced.html" title="">advanced example</a> for that.</p>
+
+	<p>If you want, for example, to render the numeral inside the element with the <span class="caps">ID </span>`mycanvas` as <span class="caps">SVG</span> with a `width` of `400`, lines 10 pixels thick and in the colour `peachpuff` and without any text display or button to delete, you can do the following:</p>
+
+	<p><pre lang="xml"><br />
+<div id="mycanvas"></div><br />
+</pre></p>
+
+	<p><pre lang="javascript"><br />
+myConverter.configure({<br />
+renderer: &#8216;svg&#8217;,<br />
+canvas: { width: 400 },<br />
+stroke: { colour: &#8216;peachpuff&#8217;, width: 10 },<br />
+addtext: false,<br />
+addinteraction: false,<br />
+outputcontainer: document.getElementById(&#8216;mycanvas&#8217;)<br />
+});<br />
+myConverter.rendernumber(1312);<br />
+</pre></p>
+
+	<h2>How I built the thing</h2>
+
+	<p>As with many things I code for fun, this started offline, with me thinking how to approach this issue. In essence, all I had was an image of the numerals. When I got home, I thought I should give this to Copilot to vibe code like all the cool kids do. I asked it to take this image of numerals and create <span class="caps">SVG</span> versions for each of them (so I could link to them). The result was fast, immediate, confident and <a href="https://codepo8.github.io/cistercian/svgbollocks.html" title="">utter garbage</a>.</p>
+
+	<p><img loading="lazy" decoding="async" src="https://christianheilmann.com/wp-content/uploads/2026/01/garbage1.png" alt="Generated SVG for 1-9 of the numerals, all wrong" width="1007" height="400" class="alignnone size-full wp-image-9714" /></p>
+
+	<p>So I went back to analysing the numerals and instead of creating them as SVGs, I created them as a dataset. In essence, these are characters on a 3 by 5 grid. I numbered the points and wrote them down as coordinates:</p>
+
+	<p><img decoding="async" src="https://codepo8.github.io/cistercian/glyphs.jpg" alt="my glyph cheatsheet"></p>
+
+	<p><pre lang="javascript"><br />
+this.points = [<br />
+[10,10],[30,10],[50,10],<br />
+[10,30],[30,30],[50,30],<br />
+[10,50],[30,50],[50,50],<br />
+[10,60],[30,60],[50,60],<br />
+[10,80],[30,80],[50,80]<br />
+];<br />
+</pre></p>
+
+	<p>The middle line is never used in the real numerals, but hey, why not?</p>
+
+	<p>Then I looked at the numerals and noted down which points are connected for each of them. 1 and 13 are always there as this is a vertical line in the middle. This gave me the dataset to use with Canvas or generate <span class="caps">SVG</span> from. Here are the indices of the points array that describe all the glyphs:</p>
+
+	<p><pre lang="javascript"><br />
+this.glyphs = {<br />
+0: [[1,13]],<br />
+1: [[1,2]], 10: [[0,1]], 100: [[14,13]], 1000: [[12,13]],<br />
+2: [[4,5]], 20: [[3,4]], 200: [[10,11]], 2000: [[9,10]],<br />
+3: [[1,5]], 30: [[1,3]], 300: [[13,11]], 3000: [[13,9]],<br />
+4: [[4,2]], 40: [[4,0]], 400: [[10,14]], 4000: [[10,12]],<br />
+5: [[1,2],[2,4]], 50: [[0,1],[0,4]], 500: [[13,14],[14,10]], 5000: [[13,12],[12,10]],<br />
+6: [[2,5]], 60: [[0,3]], 600: [[14,11]], 6000: [[12,9]],<br />
+7: [[1,2],[2,5]], 70: [[0,1],[0,3]], 700: [[13,14],[14,11]], 7000: [[13,12],[12,9]],<br />
+8: [[4,5],[5,2]], 80: [[4,3],[3,0]], 800: [[10,11],[11,14]], 8000: [[12,9],[9,10]],<br />
+9: [[1,2],[2,5],[5,4]], 90: [[0,1],[0,3],[3,4]], 900: [[13,14],[14,11],[11,10]], 9000: [[13,12],[12,9],[9,10]]<br />
+};<br />
+</pre></p>
+
+	<p>The rest was just comparing and looping over this array.</p>
+
+	<p>The logic of adding to the final numeral was not too taxing either. When the number wasn&#8217;t defined in the glyphs array, I turn it into a string and loop over it from the end to the start. Each number then gets the added zeroes to allow for the lookup:</p>
+
+	<p><pre lang="javascript"><br />
+let chunks = number.toString().split(&#8216;&#8217;).reverse();<br />
+chunks.forEach((chunk, index) => {<br />
+let value = chunk + &#8216;0&#8217;.repeat(index);<br />
+</pre></p>
+
+	<p>So, for 1312, this would become 1312 and on each loop iteration I get the data:</p>
+
+	<ul>
+		<li>2</li>
+		<li>10</li>
+		<li>300</li>
+		<li>1000</li>
+	</ul>
+
+	<p>Feel free to check the source of the script for some more fun bits. And yes, I did use Copilot to help with some of the cruft code I didn&#8217;t feel like writing by hand, especially turning functions into methods and such.</p>
+
+	<p>I had fun, I hope you find it interesting, too.</p>
+
+ ]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>You are already behind by not having read this post.</title>
+		<link>https://christianheilmann.com/2026/01/02/you-are-already-behind-by-not-having-read-this-post/</link>
+		
+		<dc:creator><![CDATA[Chris Heilmann]]></dc:creator>
+		<pubDate>Fri, 02 Jan 2026 13:08:34 +0000</pubDate>
+				<category><![CDATA[General]]></category>
+		<guid isPermaLink="false">https://christianheilmann.com/?p=9667</guid>
+
+					<description><![CDATA[Lately, I have found an incredibly annoying pattern in social media&#8212;especially LinkedIn posts: the &#8220;you are already behind&#8221; posts, claiming that by not using product $XYZ you have already been beaten by the competition. These incendiary headlines are often followed up by a testimonial that the author used $XYZ to deliver 10-23x the amount of [&#8230;]]]></description>
+										<content:encoded><![CDATA[	<p><a href="https://christianheilmann.com/wp-content/uploads/2026/01/image-2.jpg"><img loading="lazy" decoding="async" src="https://christianheilmann.com/wp-content/uploads/2026/01/image-2.jpg" alt="A bunch of people running frantically with their laptops and a clock in the background" width="832" height="1248" class="alignnone size-full wp-image-9668" srcset="https://christianheilmann.com/wp-content/uploads/2026/01/image-2.jpg 832w, https://christianheilmann.com/wp-content/uploads/2026/01/image-2-200x300.jpg 200w, https://christianheilmann.com/wp-content/uploads/2026/01/image-2-683x1024.jpg 683w, https://christianheilmann.com/wp-content/uploads/2026/01/image-2-768x1152.jpg 768w" sizes="auto, (max-width: 832px) 100vw, 832px" /></a></p>
+
+	<p>Lately, I have found an incredibly annoying pattern in social media&#8212;especially LinkedIn posts: the &#8220;you are already behind&#8221; posts, claiming that by not using product $XYZ you have already been beaten by the competition. These incendiary headlines are often followed up by a testimonial that the author used $XYZ to deliver 10-23x the amount of work he (yes, most of the time &#8220;he&#8221;) used to deliver. And, of course, the post ends with a special discount to try out product $XYZ.</p>
+
+	<p>I utterly despise this narrative; it is insincere, plays on people&#8217;s worries, and doesn&#8217;t actually deliver any solution. It&#8217;s plain and simply an ad for a product or a crowbar approach to paint the original poster as a thought leader who knows what the future holds.</p>
+
+	<p>Fun fact: in my whole career, I&#8217;ve always been told that I am behind the pack for not embracing certain products or technologies, and many passed me by without affecting my career or the products I built and sold at all.</p>
+
+	<ul>
+		<li>I didn&#8217;t replace web development with Flash/Silverlight.</li>
+		<li>I didn&#8217;t go from the web into Second Life/Metaverse.</li>
+		<li>I didn&#8217;t bet exclusively on Android or iOS.</li>
+		<li>I didn&#8217;t build apps for Facebook/Myspace/WeChat exclusively.</li>
+		<li>I didn&#8217;t bet on Crypto or Blockchain.</li>
+	</ul>
+
+	<p>And yet, here I am, having had a good career and some money. I didn&#8217;t burn out and don&#8217;t really feel like I should have been one of the super early adopters failing to make an impact in the long run. I celebrate the successes of other people and fast implementers, but I also spent far too much time fixing what others innovated to work in production. There&#8217;s always a &#8220;but $PERSON uses $XYZ and delivers much faster and simpler than you do.&#8221; Well, let them. Remember that you are a professional, and you want to deliver great work, which takes time, effort, and quality thinking. So, demand that from your customers and especially from yourself.</p>
+
+	<p>So here&#8217;s my advice: don&#8217;t interact with posts like these, avoid people who post these, and instead find your own pace and peace of mind. You will be most effective when you are happy in achieving what you want to, not what a made-up market or competition demands from you. If I am already behind the people running against a wall, that&#8217;s actually a good thing.</p>
+ ]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Building my faux lego advent calendar feels like current software development</title>
+		<link>https://christianheilmann.com/2025/12/26/building-my-faux-lego-advent-calendar-feels-like-current-software-development/</link>
+		
+		<dc:creator><![CDATA[Chris Heilmann]]></dc:creator>
+		<pubDate>Fri, 26 Dec 2025 12:17:28 +0000</pubDate>
+				<category><![CDATA[General]]></category>
+		<guid isPermaLink="false">https://christianheilmann.com/?p=9655</guid>
+
+					<description><![CDATA[I&#8217;ve stated on several occasions that Lego made me a developer. I was the youngest of four kids who inherited a huge box of bricks with no instruction booklets. So I took lots of smaller bits to build bigger things and re-used skills and ways to connect things. I came up with my own models [&#8230;]]]></description>
+										<content:encoded><![CDATA[	<p>I&#8217;ve stated on several occasions that Lego made me a developer. I was the youngest of four kids who inherited a huge box of bricks with no instruction booklets. So I took lots of smaller bits to build bigger things and re-used skills and ways to connect things. I came up with my own models just to dismantle them and re-arrange things.</p>
+
+	<p>Much like you write software:</p>
+
+	<ul>
+		<li>You write functionality</li>
+		<li>You make it re-usable as functions</li>
+		<li>You componentise them as objects with methods and properties</li>
+		<li>You collate them as classes</li>
+		<li>You pack them up as libraries for people to ignore to go back to the first step</li>
+	</ul>
+
+	<p>Now, this December my partner got me a Blue Brixx advent calendar with Peanuts characters that can be Christmas ornaments. It taught me that Blue Brixx is much more like current software development.</p>
+
+	<p><a href="https://christianheilmann.com/wp-content/uploads/2025/12/montage.jpg"><img loading="lazy" decoding="async" src="https://christianheilmann.com/wp-content/uploads/2025/12/montage.jpg" alt="The advent calendar box, individual boxes and some of the models I already assembled with a plastic bag full of leftover bricks." width="1200" height="675" class="alignnone size-full wp-image-9658" srcset="https://christianheilmann.com/wp-content/uploads/2025/12/montage.jpg 1200w, https://christianheilmann.com/wp-content/uploads/2025/12/montage-300x169.jpg 300w, https://christianheilmann.com/wp-content/uploads/2025/12/montage-1024x576.jpg 1024w, https://christianheilmann.com/wp-content/uploads/2025/12/montage-768x432.jpg 768w" sizes="auto, (max-width: 1200px) 100vw, 1200px" /></a></p>
+
+	<h2>Lego has some unspoken rules and good structure</h2>
+
+	<p>Lego is great to assemble and sometimes tricky to detach. But it is always possible.</p>
+
+	<blockquote>Don&#8217;t tell me you are a child of the 80s if you haven&#8217;t at least chipped one tooth trying to separate some stubborn 4&#215;2 Lego bricks.</blockquote>
+
+	<p>With Lego you get instructions that show you each step of the way which parts are necessary. It&#8217;s a bit like following a tutorial on how to develop a software solution.</p>
+
+	<p>With Lego, you have all the necessary bricks and none should be left over. Much like with <span class="caps">IKEA</span>, any time you have to use force, you&#8217;re doing something wrong and it will hurt you further down the track.</p>
+
+	<h2>Blue Brixx is different</h2>
+
+	<p>Blue Brixx, because of its size, make and price, is different. The models are adorable and fun to build, but you need to prepare a different approach.</p>
+
+	<ul>
+		<li>There are no notches on the underside which means the bricks don&#8217;t mesh as nicely as Lego does. You will sometimes have to use force to keep the half done model together or make a brick fit.</li>
+		<li>Every model so far had missing bricks. Some had bricks in colours that aren&#8217;t in the model and the further I got into the calendar, the more I collected bricks to use later on. Interestingly I often found bricks that were missing in one model as leftovers in the other, so I assume there is a packing issue.</li>
+		<li>Some models have glue-on faces for the characters. These stickers are the worst quality I have ever seen and an exercise in frustration. They also mean that you can&#8217;t detach the model again.</li>
+		<li>The instruction booklets do not list the bricks needed for each step. You need to guess that from the 3D illustration.</li>
+		<li>As there is a low contrast at times this means you will use the wrong bricks and then miss them in a future step. This means detaching the model, which is tough with one this size.</li>
+	</ul>
+
+	<p><a href="https://christianheilmann.com/wp-content/uploads/2025/12/instruction.jpg"><img loading="lazy" decoding="async" src="https://christianheilmann.com/wp-content/uploads/2025/12/instruction.jpg" alt="The instruction booklet and zoomed in showing that you need to guess the bricks in use at each step." width="1200" height="675" class="alignnone size-full wp-image-9659" srcset="https://christianheilmann.com/wp-content/uploads/2025/12/instruction.jpg 1200w, https://christianheilmann.com/wp-content/uploads/2025/12/instruction-300x169.jpg 300w, https://christianheilmann.com/wp-content/uploads/2025/12/instruction-1024x576.jpg 1024w, https://christianheilmann.com/wp-content/uploads/2025/12/instruction-768x432.jpg 768w" sizes="auto, (max-width: 1200px) 100vw, 1200px" /></a></p>
+
+	<h2>Current software development feels similar</h2>
+
+	<p>Which is a bit like software development these days. We use libraries, frameworks, packages and custom-made, reusable solutions. Often we find ourselves assembling a Frankenstein solution that is hard to maintain, tough to debug, has horrible performance and gobbles up memory.</p>
+
+	<p>Just because we re-used bricks we&#8217;re not quite sure if we put them together the right way. And we sometimes have to use force to make them work together in the form of converters and optimisers. We add tons of bricks upfront that are loosely connected and lack structural integrity, so we add even more tools to then analyse what&#8217;s shipped but isn&#8217;t needed and remove it again. We don&#8217;t have a manual to follow and we look at the shiny end results built with a certain library and want to take a shortcut there.</p>
+
+	<p>I&#8217;ve seen far too many products that used several libraries because one component of each was great, resulting in a bloated mess nobody understands.</p>
+
+	<p>This is exacerbated by vibe coding. The idea is never to care about the code, but only about the solution, and that will always result in starting from scratch rather than maintaining and changing a product. Think of this as Lego models you glued together.</p>
+
+	<h2>My workflow: tooling up and structuring</h2>
+
+	<p>OK, the first thing I realised is that I need new glasses. I already have varifocals, but my eyesight must have declined &#8211; spoiler: it did in 3 years. I either can check the instruction booklet with the surprise brick illustrations or find the correct one without my glasses or I need the glasses to find the small brick on the table. This is frustrating, not to even mention the ergonomics of the situation resulting in a hurting back.</p>
+
+	<p>Until my new glasses arrive I am using a <span class="caps">LED</span> panel lamp I normally use for my podcasts to give the bricks more contrast and see much more detail.</p>
+
+	<p>If that is not enough I use my mobile phone as a magnifier to analyse the booklet.</p>
+
+	<p>And last but not least I started to pre-sort the bricks of each model before assembling it. This gives me weird looks by my partner of the &#8220;what a nerd&#8221; variety, but it really helps.</p>
+
+	<p><a href="https://christianheilmann.com/wp-content/uploads/2025/12/model-sorted.jpg"><img loading="lazy" decoding="async" src="https://christianheilmann.com/wp-content/uploads/2025/12/model-sorted.jpg" alt="A model instruction booklet with sorted bricks around it." width="1200" height="675" class="alignnone size-full wp-image-9660" srcset="https://christianheilmann.com/wp-content/uploads/2025/12/model-sorted.jpg 1200w, https://christianheilmann.com/wp-content/uploads/2025/12/model-sorted-300x169.jpg 300w, https://christianheilmann.com/wp-content/uploads/2025/12/model-sorted-1024x576.jpg 1024w, https://christianheilmann.com/wp-content/uploads/2025/12/model-sorted-768x432.jpg 768w" sizes="auto, (max-width: 1200px) 100vw, 1200px" /></a></p>
+
+	<p><a href="https://christianheilmann.com/wp-content/uploads/2025/12/sorted.jpg"><img loading="lazy" decoding="async" src="https://christianheilmann.com/wp-content/uploads/2025/12/sorted.jpg" alt="All the bricks of the current model sorted and collated into 2xsomething 1 x something, angles and connectors, diagonal bricks and non-standard ones and 2x2 or 1x1" width="1200" height="675" class="alignnone size-full wp-image-9656" srcset="https://christianheilmann.com/wp-content/uploads/2025/12/sorted.jpg 1200w, https://christianheilmann.com/wp-content/uploads/2025/12/sorted-300x169.jpg 300w, https://christianheilmann.com/wp-content/uploads/2025/12/sorted-1024x576.jpg 1024w, https://christianheilmann.com/wp-content/uploads/2025/12/sorted-768x432.jpg 768w" sizes="auto, (max-width: 1200px) 100vw, 1200px" /></a></p>
+
+	<p>This is also how I build software and try to find my way in this &#8220;modern&#8221; world of cutting straight to the final product:</p>
+
+	<ul>
+		<li>Find a editor environment you are comfortable with &#8211; I for one still don&#8217;t feel comfortable paying to develop, even if it is tokens</li>
+		<li>Structure the solution you want to build and plan it &#8211; then find the helper tools to make it easy for you to reach that goal</li>
+		<li>Always keep things understandable and documented to make it easy to change parts deep inside the product later without having to dismantle it completely.</li>
+		<li>Leave behind documentation that has all the necessary details and steps to make what you did repeatable.</li>
+	</ul>
+
+	<p>Building these things is work, but it also gives me joy to have assembled them by hand. I also learn a lot how certain parts are always achieved in the same way (hair, arms, legs, parcels&#8230;) and It gets easier the more I do it.</p>
+
+	<p>I doubt that I would feel the same fulfilment if I asked ChatGPT to build me a 3D model and print the thing.</p>
+
+
+ ]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Ad Blockers helped kill the open web</title>
+		<link>https://christianheilmann.com/2025/12/17/ad-blockers-helped-kill-the-open-web/</link>
+		
+		<dc:creator><![CDATA[Chris Heilmann]]></dc:creator>
+		<pubDate>Wed, 17 Dec 2025 11:05:31 +0000</pubDate>
+				<category><![CDATA[General]]></category>
+		<guid isPermaLink="false">https://christianheilmann.com/?p=9628</guid>
+
+					<description><![CDATA[The other day I found out that you can watch YouTube in Albania without ads. Personally I pay for YouTube and I think it is worth while, but I found that curious. Reasons might be that Google has no advertisement contracts in the country or it may just be too small a market to matter [&#8230;]]]></description>
+										<content:encoded><![CDATA[	<p>The other day I found out that you can watch YouTube in Albania without ads.</p>
+
+	<p><a href="https://christianheilmann.com/wp-content/uploads/2025/12/albania.jpg"><img loading="lazy" decoding="async" src="https://christianheilmann.com/wp-content/uploads/2025/12/albania.jpg" alt="Mullvad VPN setting myself to Albania and YouTube not showing any ads." width="1540" height="1670" class="alignnone size-full wp-image-9632" srcset="https://christianheilmann.com/wp-content/uploads/2025/12/albania.jpg 1540w, https://christianheilmann.com/wp-content/uploads/2025/12/albania-277x300.jpg 277w, https://christianheilmann.com/wp-content/uploads/2025/12/albania-944x1024.jpg 944w, https://christianheilmann.com/wp-content/uploads/2025/12/albania-768x833.jpg 768w, https://christianheilmann.com/wp-content/uploads/2025/12/albania-1416x1536.jpg 1416w" sizes="auto, (max-width: 1540px) 100vw, 1540px" /></a></p>
+
+	<p>Personally I pay for YouTube and I think it is worth while, but I found that curious. Reasons might be that Google has no advertisement contracts in the country or it may just be too small a market to matter to them. Regardless, whenever you post something like that there will always be an army of smug people telling you that any service is ad free to them as they use an ad blocker, or other means not to show ads.</p>
+
+	<p>The experience for users who don&#8217;t employ these means is different, though, to the extend that the web is becoming unusable. I also do lament that on social media:</p>
+
+	<p><a href="https://christianheilmann.com/wp-content/uploads/2025/12/merkur.png"><img loading="lazy" decoding="async" src="https://christianheilmann.com/wp-content/uploads/2025/12/merkur.png" alt="Web page of Merkur.de absolutely plastered in ads to a degree that it is unusable" width="770" height="1670" class="alignnone size-full wp-image-9634" srcset="https://christianheilmann.com/wp-content/uploads/2025/12/merkur.png 770w, https://christianheilmann.com/wp-content/uploads/2025/12/merkur-138x300.png 138w, https://christianheilmann.com/wp-content/uploads/2025/12/merkur-472x1024.png 472w, https://christianheilmann.com/wp-content/uploads/2025/12/merkur-768x1666.png 768w, https://christianheilmann.com/wp-content/uploads/2025/12/merkur-708x1536.png 708w" sizes="auto, (max-width: 770px) 100vw, 770px" /></a></p>
+
+	<p>Here&#8217;s the thing: I am 100% sure these things are connected. The more people block ads, the more aggressive advertising became. To the extend that a newspaper site of today reminds you of illegal download or porn sites of the early 2000s. This is not a matter of greed, but survival, as subscriptions don&#8217;t scale. I pay for a few newspapers, but I really can&#8217;t be bothered to subscribe to all that I want to read. The internet replaced paper, after all, and it should also have replaced the means of acquiring news and content.</p>
+
+	<h2>&#8220;I use an ad blocker as I don&#8217;t want to be tracked&#8221;</h2>
+
+	<p>People claim that using ad blockers is about privacy. It can be, but most people use this as a hypocritical defense. Often these are the same people that don&#8217;t have working <span class="caps">SSL</span> on their sites or plaster them with third party &#8220;like&#8221; buttons. Or log in with Facebook/Google/Microsoft into other services. Pick a lane!</p>
+
+	<p>I am a privacy advocate and it is important to defend ourselves from being tracked online. &#8220;I don&#8217;t have anything to hide, so I don&#8217;t care when people know what I do&#8221; only works until your actions become accidentally &#8211; or by design &#8211; part of a bad narrative.</p>
+
+	<p>But there is a difference between tracking prevention and blocking ads. Not every ad is predatory and designed to record your actions &#8211; yet. Tracking prevention is often baked into the <span class="caps">OS </span>- at least in Europe &#8211; or there are specialist browser extensions like Privacy Badger. By using a dedicated &#8220;Ad&#8221; blocker, what you do is trying to get access without paying. That feels like doing a clever thing, but it hurts the web as not many things are free.</p>
+
+	<h2>The web isn&#8217;t free &#8211; it is open, and there&#8217;s a difference</h2>
+
+	<p>When I started on the web, I was a radio journalist. I announced the news and I got faxes and later on emails every morning with what happened in the world and our local area. We paid for getting access to these services, so our radio station played ads to cover these costs and my salary.</p>
+
+	<p>When I got internet access at the radio station (around 1995), I got access to the news tickers of government and international news agencies. I got the news faster, less filtered and for free, as companies and service providers published the information for free to be part of the cool new thing called internet. This also involved excellent innovations like <span class="caps">RSS</span>. The <span class="caps">BBC</span> was great at that and Netscape even had a sidebar displaying news. The platform &#8220;web&#8221; doesn&#8217;t charge you for publishing &#8211; it is an open platform. That was a huge step forward in publishing, and I quit my job and started developing and writing for the open web.</p>
+
+	<p>Hosting isn&#8217;t free, but it was affordable to companies and many people published on platforms that had ads on them &#8211; Geocities and the like. Even back then there were &#8220;framebusting&#8221; scripts that would hide the ads, effectively violating the terms and conditions to publish there.</p>
+
+	<h2>We created an open platform but failed to innovate monetisation</h2>
+
+	<p>The big mistake we made is to treat the web like any other publishing platform. We cherished the reach to get to a 24/7 world-wide audience, but our genius idea of making money was to show ads. That worked in classic media, so why not here?</p>
+
+	<p>I remember that at the radio station this got ridiculous at times when &#8211; for example &#8211; someone sponsored the announcement of the time. I had to play a 20 second jingle and then tell the listeners that it is 9 o&#8217;clock followed by another 4 second jingle that this amazing piece of news was brought to you by company <span class="caps">XYZ</span>. These days, YouTube has similar things where a 10 second video has a long non-skippable ad beforehand.</p>
+
+	<p>This is what I hated about traditional television, too. Watching Mythbusters on a streaming service is fun. Watching it on tele with &#8220;after the break&#8221; and &#8220;before the break&#8221; vignettes repeating what I just saw is grating.</p>
+
+	<p>On the web, we distribute content and leave it to the user to make it consumable to them. We have to support mobiles, desktops, voice interfaces and many other things. We don&#8217;t distribute payment though. Instead, we show ads and hope people click them. Or we ask for people to subscribe to one service at a time. There were some efforts to allow for easier payment, like <a href="https://en.wikipedia.org/wiki/Flattr" title="">Flattr</a>, but they never made it to the mainstream or got baked into an operating system. This is a shame, as I would love to say I pay a lump sum each month and distribute it to publishers once I consumed the content. I fail to see why I should pay upfront to get access. A physical paper I also skim at the store before purchasing it to see if it is worth it.</p>
+
+	<h2>Showing ads was too easy and became predatory</h2>
+
+	<p>When Google came around the whole ad thing exploded. This blog had banners at a time and I did make about 2K a month with them. I vetted the providers and made sure that relevant stuff was shown. But I also found that there were dozens of blogs that scraped my content and drowned it in ads, making more money than I did. Linkfarming, Black Hat <span class="caps">SEO</span> stuff was mushrooming and it all had the goal to show ads around content that wasn&#8217;t made by the people who tried to benefit from it. So, naturally, people were annoyed and started using Adblockers.</p>
+
+	<p>I very much realised that, too. My banner income went towards zero, so I just took them off &#8211; no point in causing more traffic that nobody benefits from. Other people got hit much harder. Publications like Smashing Magazine had to reconsider from scratch how to pay their writers.</p>
+
+	<p>But then something really messed up happened. Google itself turned from a place to get your stuff found <a href="https://christianheilmann.com/2021/12/20/the-web-starts-on-page-four/" title="">to a place that gives you 90% ads and sponsored content</a>, with the first web content showing up on page 4. I worked at Yahoo when Google really became a thing and our business model &#8211; buy content from news agencies and show ads around it &#8211; became the standard model. The more people blocked ads, the more needed to be shown to those who don&#8217;t.</p>
+
+	<p>So this is where we are now. Web search is a mess and becomes more or less useless. And companies stop publishing on the open web because there is no way to be found. Instead, we are pushed into closed environments that promise to use Artificial Intelligence to give us only what we really look for, until the money runs out. Even now ChatGPT and others consider displaying ad content which can&#8217;t be blocked.</p>
+
+	<p>So, yes, I do understand people who use Adblockers, but it also feels like finding and open fire escape at the back of the concert building. Sure, feel smug and clever getting in, but you&#8217;d better go and buy some merch to support the artist.</p>
+ ]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Shuffling a CSS grid using custom properties</title>
+		<link>https://christianheilmann.com/2025/11/24/shuffling-a-css-grid-using-custom-properties/</link>
+		
+		<dc:creator><![CDATA[Chris Heilmann]]></dc:creator>
+		<pubDate>Mon, 24 Nov 2025 08:27:47 +0000</pubDate>
+				<category><![CDATA[General]]></category>
+		<category><![CDATA[about]]></category>
+		<category><![CDATA[casestudies]]></category>
+		<category><![CDATA[contact]]></category>
+		<category><![CDATA[contentgrid]]></category>
+		<category><![CDATA[dk]]></category>
+		<category><![CDATA[news]]></category>
+		<guid isPermaLink="false">https://christianheilmann.com/?p=9538</guid>
+
+					<description><![CDATA[In his excellent talk Get the Core Right and the Resilient Code Will Follow at Beyond Tellerrand in Berlin this year, Andy Bell showed how to sensibly discuss a coding issue amongst your team. He also did a more in-depth write-up on his blog. The problem that Andy described was having a CSS grid with [&#8230;]]]></description>
+										<content:encoded><![CDATA[	<p><a href="https://christianheilmann.com/wp-content/uploads/2025/11/shufflegrid.gif"><img loading="lazy" decoding="async" src="https://christianheilmann.com/wp-content/uploads/2025/11/shufflegrid.gif" alt="Recording of the grid shuffling in action" width="902" height="350" class="alignnone size-full wp-image-9550" /></a></p>
+
+	<p>In his excellent talk <a href="https://beyondtellerrand.com/events/berlin-2025/speakers/andy-bell" title="">Get the Core Right and the Resilient Code Will Follow</a> at <a href="https://beyondtellerrand.com/" title="">Beyond Tellerrand</a> in Berlin this year, Andy Bell showed how to sensibly discuss a coding issue amongst your team. He also did a more in-depth write-up on <a href="https://bell.bz/get-the-core-right-and-the-resilient-code-will-follow/" title="">his blog</a>.</p>
+
+	<p>The problem that Andy described was having a <span class="caps">CSS</span> grid with columns of content next to another and then being asked by the client to randomise the order of the grid on every reload. So that each part of the company will get its 3 seconds in the limelight. Andy is a strong believer in resilient code and rightfully is critical of JavaScript solutions for issues like this. Moving a whole <span class="caps">DOM</span> construct like this around can be slow and writing out the whole grid as a component on each interaction can also be iffy.</p>
+
+	<p>So I pondered what to do and remembered the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/order" title=""><span class="caps">CSS</span> order property</a> applying to flex and grid items. Using this one, you can re-order items visually.</p>
+
+	<p><pre lang="xml"><br />
+<h1>Excellent bands you never heard about</h1><br />
+<ul></p>
+	<p><li>Irie Revoltes</li><br />
+<li>Streetlight Manifesto</li><br />
+<li>Dubioza Kolektiv</li><br />
+<li>Irish Moutarde</li><br />
+</ul></p>
+	<p></pre></p>
+
+	<p>If you change the order of the third element to minus one, it shows up first:</p>
+
+	<p><pre lang="css"><br />
+ul {<br />
+display: flex;<br />
+flex-direction: column;<br />
+gap: 1em;<br />
+}</p>
+	<p><a rel="tag" class="hashtag u-tag u-category" href="https://christianheilmann.com/tag/dk/">#dk</a> {<br />
+order: -1;<br />
+}</p>
+	<p></pre></p>
+
+	<p><a href="https://christianheilmann.com/wp-content/uploads/2025/11/order.png"><img loading="lazy" decoding="async" src="https://christianheilmann.com/wp-content/uploads/2025/11/order.png" alt="CSS order example" width="739" height="444" class="alignnone size-full wp-image-9543" srcset="https://christianheilmann.com/wp-content/uploads/2025/11/order.png 739w, https://christianheilmann.com/wp-content/uploads/2025/11/order-300x180.png 300w" sizes="auto, (max-width: 739px) 100vw, 739px" /></a></p>
+
+	<p>This keeps all the re-ordering work in the <span class="caps">CSS</span> engine. But as you can&#8217;t as yet have random ordering in <span class="caps">CSS</span>, we need some JavaScript to create that functionality. The first idea was to add the order as inline styles, but that would be the same <span class="caps">DOM</span> manipulation and having to loop through all items. Instead, I thought about using <span class="caps">CSS</span> custom properties:</p>
+
+	<p><pre lang="css"><br />
+ul {&#8212;customorder: -1;<br />
+display: flex;<br />
+flex-direction: column;<br />
+}</p>
+	<p><a rel="tag" class="hashtag u-tag u-category" href="https://christianheilmann.com/tag/dk/">#dk</a> {<br />
+order: var(&#8212;customorder);<br />
+}</p>
+	<p></pre></p>
+
+	<p>That way I can access `customorder` on the parent element:</p>
+
+	<p><pre lang="javascript"><br />
+let ul = document.querySelector(&#8216;ul&#8217;);<br />
+ul.style.setProperty(&#8216;&#8212;customorder&#8217;,-1);<br />
+</pre></p>
+
+	<p>Putting all of this together, I give you <a href="https://codepo8.github.io/gridshuffle/" title="">GridShuffle</a> and you can <a href="https://github.com/codepo8/gridshuffle/" title="">check the code on GitHub</a>:</p>
+
+	<p><pre lang="xml"><br />
+<div id="contentgrid"><br />
+<div id="about"><br />
+<h2>About</h2><br />
+This is the order.html file.<br />
+</div><br />
+<div id="news"><br />
+<h2>News</h2><br />
+Latest news will be displayed here.<br />
+</div><br />
+<div id="contact"><br />
+<h2>Contact</h2><br />
+Contact information will be displayed here.<br />
+</div><br />
+<div id="casestudies"><br />
+<h2>Case Studies</h2><br />
+Case studies will be displayed here.<br />
+</div><br />
+</div><br />
+<button>shuffle</button><br />
+</pre></p>
+
+	<p>The grid above shuffles around on every reload or when you active `shuffle` button. There are many ways to achieve this effect, but this example uses only <span class="caps">CSS</span> properties to set the order of the grid items. The <span class="caps">HTML</span> is not altered and there is no <span class="caps">DOM</span> manipulation other than accessing the <span class="caps">CSS</span> properties of the parent element. This should make this highly performant. The JavaScript code rotates the order of the items in the grid by changing the <span class="caps">CSS</span> variables that define their order. Below is the relevant code used to set up the grid and shuffle the items:</p>
+
+	<p><pre lang="css"></p>
+	<p><a rel="tag" class="hashtag u-tag u-category" href="https://christianheilmann.com/tag/contentgrid/">#contentgrid</a> {&#8212;items: 4;&#8212;item1-order: 1;&#8212;item2-order: 1;&#8212;item3-order: 1;&#8212;item4-order: 1;<br />
+display: grid;<br />
+gap: 20px;<br />
+grid-template-columns: repeat(<br />
+auto-fit, minmax(200px, 1fr)<br />
+);<br />
+}</p>
+	<p><a rel="tag" class="hashtag u-tag u-category" href="https://christianheilmann.com/tag/about/">#about</a> { order: var(&#8212;item1-order); }</p>
+	<p><a rel="tag" class="hashtag u-tag u-category" href="https://christianheilmann.com/tag/news/">#news</a> { order: var(&#8212;item2-order); }</p>
+	<p><a rel="tag" class="hashtag u-tag u-category" href="https://christianheilmann.com/tag/contact/">#contact</a> { order: var(&#8212;item3-order); }</p>
+	<p><a rel="tag" class="hashtag u-tag u-category" href="https://christianheilmann.com/tag/casestudies/">#casestudies</a> { order: var(&#8212;item4-order); }<br />
+</pre></p>
+
+	<p>We define the order of each element as `1`, which means that if we set any of them to `0`, it will be displayed first in the grid. For example, if we did the following, the `Case Studies` section would be displayed first:</p>
+
+	<p><pre lang="css"></p>
+	<p><a rel="tag" class="hashtag u-tag u-category" href="https://christianheilmann.com/tag/contentgrid/">#contentgrid</a> {&#8212;items: 4;&#8212;item1-order: 1;&#8212;item2-order: 1;&#8212;item3-order: 1;&#8212;item4-order: 0;<br />
+/* &#8230; */<br />
+}</p>
+	<p><a rel="tag" class="hashtag u-tag u-category" href="https://christianheilmann.com/tag/about/">#about</a> { order: var(&#8212;item1-order); }</p>
+	<p><a rel="tag" class="hashtag u-tag u-category" href="https://christianheilmann.com/tag/news/">#news</a> { order: var(&#8212;item2-order); }</p>
+	<p><a rel="tag" class="hashtag u-tag u-category" href="https://christianheilmann.com/tag/contact/">#contact</a> { order: var(&#8212;item3-order); }</p>
+	<p><a rel="tag" class="hashtag u-tag u-category" href="https://christianheilmann.com/tag/casestudies/">#casestudies</a> { order: var(&#8212;item4-order); }<br />
+</pre></p>
+
+	<p>This could be done on the server-side or with JavaScript as follows:</p>
+
+	<p><pre lang="javascript"><br />
+let root = document.querySelector(&#8216;#contentgrid&#8217;);<br />
+let itemcount = getComputedStyle(root).<br />
+getPropertyValue(&#8216;&#8212;items&#8217;);<br />
+let old = 1;<br />
+const shuffleorder = () => {<br />
+let random = Math.floor(Math.random() * itemcount) + 1;<br />
+root.style.setProperty(&#8216;&#8212;item&#8217; + old + &#8216;-order&#8217;, 1);<br />
+root.style.setProperty(&#8216;&#8212;item&#8217; + random + &#8216;-order&#8217;, 0);<br />
+old = random;<br />
+};<br />
+shuffleorder();<br />
+</pre></p>
+
+	<p>We get the amount of items in the grid by reading the value of `&#8212;items` <span class="caps">CSS</span> property on the root element, and store the current first one in the `old` variable. We then pick a random number between `1` and the total number of items, and set the order of the old item to `1` and the new, random, item to `0`. We then re-define `old` as the new item.</p>
+
+	<p>This is the most basic way of doing this, and it is not a real shuffle, as it only rotates the items in a fixed order. You can see the <a href="https://codepo8.github.io/gridshuffle/shuffle-grid.html">Shuffle Grid</a> example for a more advanced implementation as it randomised the array of all the items. You can also rotate the items by shifting the array of all orders as shown in the <a href="https://codepo8.github.io/gridshuffle/rotate-grid.html">Rotate Grid</a> example.</p>
+
+	<p>The other examples also don&#8217;t need any of the custom properties to be set, but create them instead. This means a tad more <span class="caps">JS </span>+ DOM interaction but makes the process easier.</p>
+
+	<p><pre lang="javascript"><br />
+let root = document.querySelector(&#8216;#contentgrid&#8217;);<br />
+let cssvar = `&#8212;item$x-order`;<br />
+// Get the amount of items<br />
+let elms = root.querySelectorAll(<br />
+root.firstElementChild.tagName<br />
+);<br />
+all = elms.length;<br />
+// Initialize the order array and<br />
+// set the order on the items<br />
+let orders = [];<br />
+for (let i = 1; i <= all; i++) {<br />
+orders.push(i);<br />
+elms[i &#8211; 1].style.setProperty(<br />
+&#8216;order&#8217;, &#8216;var(&#8217; + cssvar.replace(&#8216;$x&#8217;, i) + &#8216;)&#8217;<br />
+);<br />
+root.style.setProperty(cssvar.replace(&#8216;$x&#8217;, i), i);<br />
+}</p>
+	<p></pre></p>
+
+	<p>But what if you wanted to not use any JavaScript at all to achieve this? Andy&#8217;s solution he showed during the talk was to randomise the order server-side, which is easy to do in many languages. His solution using Jekyll was to generate the page every few minutes, <a href="https://alexwlchan.net/til/2024/shuffle-an-array-in-jekyll/">using the sample filter</a> which seems a bit wasteful, but is stable.</p>
+
+	<h2>Current and future <span class="caps">CSS</span>-only solutions</h2>
+
+	<p>Currently there is no way to randomise or shuffle items using only <span class="caps">CSS</span>. However, <a href="https://css-tricks.com/almanac/functions/r/random/">there are solutions involving Sass</a> which requires pre-processing. Another nifty solution <a href="https://medium.com/hypersphere-codes/randomness-in-css-b55a0845c8dd">is this way</a> but it requires the use of `@property` which is not widely supported yet.</p>
+
+	<p>The <span class="caps">CSS</span> spec defines a <a href="https://www.w3.org/TR/css-values-5/#random">random() functionality </a>that could be used to achieve this effect without JavaScript. However, as of now, only <a href="https://webkit.org/blog/17285/rolling-the-dice-with-css-random/">Safari Technology Preview 170</a> supports this feature.</p>
+
+	<p><a href="https://philipwalton.com/articles/the-dark-side-of-polyfilling-css/">Polyfilling <span class="caps">CSS</span> isn&#8217;t easy</a>, so it might make sense for now to add a dash of JavaScript to your solution to achieve effects like this. This way seems to me a good compromise as it keeps the functionality in <span class="caps">CSS</span> instead of shuffling around whole <span class="caps">DOM</span> trees or re-writing the whole grid.</p>
+ ]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>
