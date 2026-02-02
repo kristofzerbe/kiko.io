@@ -24,7 +24,7 @@ jobs:
           cache: 'npm'
       - run: npm install -force
       #---------------------------------------------------
-      - name: Run Grunt & Hexo Generate
+      - name: Run Grunt, Download Feeds & Hexo Generate
         run: npm run generate
       - name: Run Pagefind
         run: npm_config_yes=true npx pagefind
@@ -32,8 +32,8 @@ jobs:
       - name: Commit Changes on MD Files (FM:updated)
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: Apply Hexo Generation Changes
-          file_pattern: 'source/*.md'
+          commit_message: Apply Changes
+          file_pattern: 'source/*.md data/21.13 Blogroll/**'
       #---------------------------------------------------
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
