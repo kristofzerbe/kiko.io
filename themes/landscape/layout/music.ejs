@@ -3,11 +3,8 @@
   <%- partial('_partial/photograph') %>
 <% } %>
 
-<%- partial('_partial/nav-index-stats', { currentClass: "" }) %>
-
-<h1 class="page-title">
-  <small>/Stats</small>
-  Music
+<h1 class="page-title" data-pagefind-meta="title" data-pagefind-meta="type:Page">
+  <%= page.title %>
 </h1>
 
 <div class="page-content">
@@ -16,7 +13,7 @@
   <hr class="divider" />
   
   <% Object.entries(page.data.bandcamp.list).forEach(([key, value]) => { %>
-  <section class="stats-bc" data-key="<%= key %>">
+  <section class="music-bc" data-key="<%= key %>">
     <a class="bc-artist" href="https://www.last.fm/music/<%- value.artist.slug.replaceAll("-", "+") %>">
       <img src="/images/artists/<%- value.artist.slug %>.jpg" />
     </a>

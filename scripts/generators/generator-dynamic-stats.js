@@ -25,21 +25,6 @@ hexo.extend.generator.register("dynamic-stats", async function(locals) {
 
   /** ----------------------------------------------------------------- */
 
-  let music = { name: "stats-music" };
-  music = getMD(hexo, path.join("_dynamic", music.name + ".md"), music);
-  music.data = collector.getMusicStats();
-
-  music.content = music.content
-    .replace("{% bandcamp.count %}", music.data.bandcamp.count);
-
-  result.push({
-    data: music,
-    path: path.join(music.permalink, "index.html"),
-    layout: "stats-music"
-  });
-
-  /** ----------------------------------------------------------------- */
-
   let links = { name: "stats-links" };
   links = getMD(hexo, path.join("_dynamic", links.name + ".md"), links);
   links.data = collector.getLinkStats();
