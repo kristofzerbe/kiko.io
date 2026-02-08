@@ -12,7 +12,7 @@
 	<atom:link href="https://adrianroselli.com/feed" rel="self" type="application/rss+xml" />
 	<link>https://adrianroselli.com</link>
 	<description>Consultant, Writer, Speaker</description>
-	<lastBuildDate>Fri, 23 Jan 2026 02:03:47 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 06 Feb 2026 21:39:08 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -20,6 +20,559 @@
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=5.9.12</generator>
 	<item>
+		<title>Honoring Mobile OS Text Size</title>
+		<link>https://adrianroselli.com/2026/02/honoring-mobile-os-text-size.html</link>
+					<comments>https://adrianroselli.com/2026/02/honoring-mobile-os-text-size.html#comments</comments>
+		
+		<dc:creator><![CDATA[Adrian Roselli]]></dc:creator>
+		<pubDate>Fri, 06 Feb 2026 20:35:57 +0000</pubDate>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[accessibility]]></category>
+		<category><![CDATA[css]]></category>
+		<category><![CDATA[html]]></category>
+		<category><![CDATA[standards]]></category>
+		<category><![CDATA[usability]]></category>
+		<category><![CDATA[UX]]></category>
+		<guid isPermaLink="false">https://adrianroselli.com/?p=48799</guid>
+
+					<description><![CDATA[If your users scale the text size in Android or iDeviceOS, that doesn&#8217;t always affect the size of text on a web page. It&#8217;s a function of browser and authored code, as opposed to a standardized approach. That may be changing. Support The current state of affairs in the three&#8230;]]></description>
+										<content:encoded><![CDATA[<p>
+If your users scale the text size in Android or iDeviceOS, that doesn&#8217;t always affect the size of text on a web page. It&#8217;s a function of browser and authored code, as opposed to a standardized approach. That may be changing.
+</p>
+
+<h2 id="Support">Support</h2>
+
+<p>
+The current state of affairs in the three rendering engines…
+</p>
+
+<h3 id="Firefox">Firefox</h3>
+
+<p>
+Firefox on Android supports scaling a web page&#8217;s text if you adjust the system font size. It doesn&#8217;t seem to care if you use <code>px</code> units. You don&#8217;t need to do anything special; it just works.
+</p>
+
+<h3 id="Safari">Safari</h3>
+
+<p>
+Safari will not scale a web page&#8217;s text with the OS settings unless the author adds some CSS. This code points to the system font properties (such as size):
+</p>
+
+<pre><code>body {
+  font: -apple-system-body;
+  /* other styles, including font-family */
+}</code></pre>
+
+<p>
+This feature query checks for support while trying to limit it to touch devices only, then sets the font size:
+</p>
+
+<pre><code>@supports (font: -apple-system-body) and (not (-webkit-touch-callout: default)) {
+  :root {
+    font-size: 100%;
+  }
+}</code></pre>
+
+<p>
+The rest of your styles have to use relative units or this breaks down.
+</p>
+
+<h3 id="Chrome">Chrome</h3>
+
+<p>
+Google has opted <em>not</em> to follow Firefox&#8217;s lead and support OS text sizes by default. Google has also opted not to mimic Safari and make platform-specific features. Instead, Google has decided to use its weight in the CSSWG to mint a new value for the <code>&lt;meta&gt;</code> element:
+</p>
+
+<pre><code>&lt;meta name="text-scale" content="scale"&gt;</code></pre>
+
+<p>
+For this to work, however, the author will need to &#8220;opt-in&#8221; by <em>not</em> setting a base font size in your CSS:
+</p>
+
+<pre><code>body {
+  /* font-size: yeah, no */
+}</code></pre>
+
+<p>
+You actually can set one, but it should be a percentage. You then need to avoid fixed units (such as <code>px</code>) throughout your site. If this seems familiar, it&#8217;s the core thesis of my aptly-named post <cite><a href="/2024/03/the-ultimate-ideal-bestest-base-font-size-that-everyone-is-keeping-a-secret-especially-chet.html#comment-283164">The Ultimate Ideal Bestest Base Font Size That Everyone Is Keeping a Secret, Especially Chet</a></cite>.
+</p>
+
+<p>
+Read Josh Tumath&#8217;s post <a href="https://www.joshtumath.uk/posts/2026-01-27-try-text-scaling-support-in-chrome-canary/"><cite>Try text scaling support in Chrome Canary</cite></a> for more details.
+</p>
+
+
+<h2 id="Franken">Frankenstyle&#8217;s Monster</h2>
+
+<p>
+Let&#8217;s combine those into one set of code that will work in Safari and now Chrome. Firefox was always on point, so no effort needed there.
+</p>
+
+<p>
+Add this HTML to the <code>&lt;head&gt;</code> of your page (it&#8217;s the CSSWG code):
+</p>
+
+<pre><code>&lt;meta name="text-scale" content="scale"&gt;</code></pre>
+
+<p>
+Add this to the CSS of your page (it&#8217;s Apple&#8217;s code):
+</p>
+
+<pre><code>body {
+  font: -apple-system-body;
+  /* other styles, including font-family */
+}
+@supports (font: -apple-system-body) and (not (-webkit-touch-callout: default)) {
+  :root {
+    font-size: 100%;
+  }
+}</code></pre>
+
+<p>
+Done.
+</p>
+
+
+<h3 id="Demo">Frankenstyle&#8217;s Demo</h3>
+
+<p>
+I made a demo. It has images and a table. <a href="https://cdpn.io/aardrian/debug/azZjgGZ">Visit the debug version</a> in your mobile browser.
+</p>
+
+<p class="codepen" data-height="400" data-default-tab="result" data-slug-hash="azZjgGZ" data-pen-title="Untitled" data-user="aardrian" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+      <span>See the Pen <a href="https://codepen.io/aardrian/pen/azZjgGZ">
+  Untitled</a> by Adrian Roselli (<a href="https://codepen.io/aardrian">@aardrian</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+      </p>
+      <script async src="https://public.codepenassets.com/embed/index.js"></script>
+
+
+<h3 id="How">How to Test Frankenstyle&#8217;s Demo</h3>
+
+<p>
+Seriously, <a href="https://cdpn.io/aardrian/debug/azZjgGZ">visit the debug version</a> in your mobile browser. I&#8217;m not dealing with desktop here.
+</p>
+
+<p>
+With your Android device, <a href="https://play.google.com/store/apps/details?id=com.chrome.canary&#038;hl=en">install Chrome Canary</a> from the Google Play store. If you are using an Android device with another app store, I leave it to you to sort that out. Then, using <a href="chrome://flags/#enable-experimental-web-platform-features">chrome://flags</a>, enable <em>Experimental Web Platform Features</em> in Chrome Canary.
+</p>
+
+
+<h4 id="Android">Android</h4>
+
+<p>
+In Android, go to <em>Settings</em> &rarr; <em>Accessibility</em> &rarr; <em>Display size &amp; text</em>; in the <em>Size options</em> section, go to <em>Font size</em> and make it as large as possible.
+</p>
+
+<figure class="two">
+ <a href="/wp-content/uploads/2026/02/Text-size_default_Android.jpg"><img loading="lazy" src="/wp-content/uploads/2026/02/Text-size_default_Android.jpg" alt="The Android text size settings screen at the smallest size." width="1080" height="2400"></a>
+ <a href="/wp-content/uploads/2026/02/Text-size_largest_Android.jpg"><img loading="lazy" src="/wp-content/uploads/2026/02/Text-size_largest_Android.jpg" alt="The Android text size settings screen at the largest size." width="1080" height="2400"></a>
+ <figcaption>The smallest Android text size setting and then the largest setting.</figcaption>
+</figure>
+
+
+<h4 id="iDevices">iDevices</h4>
+
+<p>
+In iDevices, go to <em>Settings</em> &rarr; <em>Accessibility</em> &rarr; <em>Display &amp; Text Size</em> &rarr; <em>Larger Text</em>, toggle <em>Larger Accessibility Sizes</em>, then drag that slider all the way to the to max.
+</p>
+
+<figure class="two">
+ <a href="/wp-content/uploads/2026/02/Text-size_default_iPadOS.jpg"><img loading="lazy" src="/wp-content/uploads/2026/02/Text-size_default_iPadOS.jpg" alt="The iPadOS text size settings screen at the smallest size." width="1488" height="2266"></a>
+ <a href="/wp-content/uploads/2026/02/Text-size_largest_iPadOS.jpg"><img loading="lazy" src="/wp-content/uploads/2026/02/Text-size_largest_iPadOS.jpg" alt="The iPadOS text size settings screen at the largest size." width="1488" height="2266"></a>
+ <figcaption>The smallest iPadOS text size setting and then the largest setting.</figcaption>
+</figure>
+
+
+
+<h3 id="Results">My Results from Frankenstyle&#8217;s Demo</h3>
+
+<p>
+These are before (small text) and after (largest text) images of Frankenstyle&#8217;s Demo. Your experience may differ. If you&#8217;re reading this from the future, it may differ a lot.
+</p>
+
+<p>
+None of these required a browser reload. It may take a moment, so be patient.
+</p>
+
+
+<h4 id="ResultsFirefox">Firefox</h4>
+
+
+<figure class="two">
+ <a href="/wp-content/uploads/2026/02/Text-size_default_Firefox.jpg"><img loading="lazy" src="/wp-content/uploads/2026/02/Text-size_default_Firefox.jpg" alt="Firefox showing four paragraphs and the embedded photo of Jeff Goldblum." width="1080" height="2400"></a>
+ <a href="/wp-content/uploads/2026/02/Text-size_largest_Firefox.jpg"><img loading="lazy" src="/wp-content/uploads/2026/02/Text-size_largest_Firefox.jpg" alt="Firefox showing twelve lines of text under the massive heading and about 20 characters per line." width="1080" height="2400"></a>
+ <figcaption>Frankenstyle&#8217;s Demo in Firefox on Android, behaving just as it would without the Frankenstyles.</figcaption>
+</figure>
+
+
+
+<h4 id="ResultsSafari">Safari</h4>
+
+<figure class="two">
+ <a href="/wp-content/uploads/2026/02/Text-size_default_Safari.jpg"><img loading="lazy" src="/wp-content/uploads/2026/02/Text-size_default_Safari.jpg" alt="Safari showing about four paragraphs of text and images." width="1488" height="2266"></a>
+ <a href="/wp-content/uploads/2026/02/Text-size_largest_Safari.jpg"><img loading="lazy" src="/wp-content/uploads/2026/02/Text-size_largest_Safari.jpg" alt="Safari showing eight lines of text and about 10 characters per line." width="1488" height="2266"></a>
+ <figcaption>Frankenstyle&#8217;s Demo in Safari on iPadOS. I scrolled the second one a bit to show the inline images.</figcaption>
+</figure>
+
+
+<h4 id="ResultsChrome">Chrome Canary</h4>
+
+<figure class="two">
+ <a href="/wp-content/uploads/2026/02/Text-size_default_Chrome-Canary.jpg"><img loading="lazy" src="/wp-content/uploads/2026/02/Text-size_default_Chrome-Canary.jpg" alt="Chrome Canary showing four paragraphs and the embedded photo of Jeff Goldblum." width="1080" height="2400"></a>
+ <a href="/wp-content/uploads/2026/02/Text-size_largest_Chrome-Canary.jpg"><img loading="lazy" src="/wp-content/uploads/2026/02/Text-size_largest_Chrome-Canary.jpg" alt="Chrome Canary showing twelve lines of text under the massive heading and about 20 characters per line." width="1080" height="2400"></a>
+ <figcaption>Chrome Canary showing Frankenstyle&#8217;s Demo.</figcaption>
+</figure>
+
+
+
+<h2 id="Other">Other Reading</h2>
+
+<p>
+Things that may better inform those words and pictures above:
+</p>
+
+<ul>
+ <li>CSSWG: <a href="https://github.com/w3c/csswg-drafts/blob/main/css-env-1/explainers/meta-text-scale.md">Explainer: meta tag for text scaling behavior</a></li>
+ <li>CSSWG: <a href="https://github.com/w3c/csswg-drafts/blob/main/css-env-1/explainers/env-preferred-text-scale.md">Explainer: <code>env(preferred-text-scale)</code></a> (not addressed in this post)</li>
+ <li>CSS Fonts Module Level 5 <a href="https://drafts.csswg.org/css-fonts-5/#text-scale-meta">&sect;2. Text-Scale <code>&lt;meta&gt;</code> element</a></li>
+ <li>Even though CSSWG issue OP suggests the <a href="https://github.com/w3c/csswg-drafts/issues/12380#issuecomment-2993195860"><code>&lt;meta&gt;</code> might better belong in WHATWG HTML</a>, I could find <a href="https://github.com/whatwg/html/issues?q=is%3Aissue%20state%3Aopen%20meta%20text-scale">no corresponding issue with WHATWG</a>.</li>
+ <li>Just as I was about to post this, I learned Manuel Matuzovic wrote <cite><a href="https://matuzo.at/blog/2026/text-scaling-meta-tag">A new meta tag for respecting text scaling on mobile</a></cite> just this morning.</li>
+ <li>Yesterday Nat Tarnoff made the point that replicating platform features in the browser (ahem, overlays) is a poor idea, and this increased OS-level support bolsters his argument: <cite><a href="https://tarnoff.info/2026/02/05/quick-tip-do-not-replicate-os-behavior/">Quick Tip: Do Not Replicate OS Behavior</a></cite>.
+</ul>
+
+
+]]></content:encoded>
+					
+					<wfw:commentRss>https://adrianroselli.com/2026/02/honoring-mobile-os-text-size.html/feed</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>You Know What? Just Don&#8217;t Split Words into Letters</title>
+		<link>https://adrianroselli.com/2026/02/you-know-what-just-dont-split-words-into-letters.html</link>
+					<comments>https://adrianroselli.com/2026/02/you-know-what-just-dont-split-words-into-letters.html#respond</comments>
+		
+		<dc:creator><![CDATA[Adrian Roselli]]></dc:creator>
+		<pubDate>Thu, 05 Feb 2026 17:45:05 +0000</pubDate>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[accessibility]]></category>
+		<category><![CDATA[ARIA]]></category>
+		<category><![CDATA[html]]></category>
+		<category><![CDATA[standards]]></category>
+		<category><![CDATA[WCAG]]></category>
+		<guid isPermaLink="false">https://adrianroselli.com/?p=48732</guid>
+
+					<description><![CDATA[This is an unplanned part two for Barriers from Links with ARIA. The title reflects my exasperation because this isn&#8217;t new, I&#8217;ve simply failed to be explicit about it over the last decade or so. In 2012 I vented about TypeButter using &#60;kern style="letter-spacing: -0.01em;"&#62; for each letter. In 2020&#8230;]]></description>
+										<content:encoded><![CDATA[<p>
+This is an unplanned part two for <a href="/2026/01/barriers-from-links-with-aria.html"><cite>Barriers from Links with ARIA</cite></a>. The title reflects my exasperation because this isn&#8217;t new, I&#8217;ve simply failed to be explicit about it over the last decade or so.
+</p>
+
+<p>
+In 2012 <a href="https://xcancel.com/aardrian/status/184979227232309248">I vented about TypeButter</a> using <code>&lt;kern style="letter-spacing: -0.01em;"&gt;</code> for each letter. In 2020 <a href="https://xcancel.com/aardrian/status/1220115927011938309">I noted the AWWWards site</a> wrapped every letter in a <code>&lt;div&gt;</code> for animation, which screen readers presented letter by letter. In 2022, <a href="https://xcancel.com/aardrian/status/1494400740286246917">it was BeeLine Reader</a> using <code>&lt;span&gt;</code>s to achieve gradients across a word.
+</p>
+
+<p>
+In 2026 I am finally writing about it because GSAP has its <a href="https://gsap.com/docs/v3/Plugins/SplitText/#screen-reader-accessibility">SplitText plug-in asserting screen reader support</a> that doesn&#8217;t stand up to use. I appreciate the <a href="https://youtu.be/L1afzNAhI40?t=821">embedded video</a> explains how it should work, and even includes an unnamed screen reader demo, but GSAP assumes authors will use SplitText in a very specific way and fails to note potential problems. That&#8217;s a bummer because now I have to be the buzzkill.
+</p>
+
+
+
+
+<h2>GSAP&#8217;s Demo</h2>
+
+<p>
+This is the animation demo on the SplitText page (or go to the <a href="https://cdpn.io/GreenSock/debug/xxmaNYj">debug view</a> if you want to test it):
+</p>
+
+<p class="codepen" data-height="500" data-default-tab="result" data-slug-hash="xxmaNYj" data-pen-title="SplitText Demo" data-user="GreenSock" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+      <span>See the Pen <a href="https://codepen.io/GreenSock/pen/xxmaNYj">
+  SplitText Demo</a> by GSAP (<a href="https://codepen.io/GreenSock">@GreenSock</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+      </p>
+      <script async src="https://public.codepenassets.com/embed/index.js"></script>
+
+<p>
+I also <a href="https://codepen.io/aardrian/pen/dPXjgwG">made a fork</a>, just in case GSAP changes the code later (which would mess with future testing).
+</p>
+
+<p>
+The simplest way to test this is to fire up a screen reader and try navigating the page with whatever method you prefer. You may get different results than I did, but that&#8217;s the fun of testing! Though I did get confirmation <a href="https://dragonscave.space/@MostlyBlindGamer/116014749485642673">from one</a>, <a href="https://node.isonomia.net/@modulux/statuses/01KGNCVAG4WQH82FA6SDZ075P3">then another</a>, <a href="https://dragonscave.space/@menelion/116014953936550552">then a third</a> screen reader user.
+</p>
+
+<p>
+If you press the &#8220;Characters&#8221; button, this is the HTML output of the first line of text (which is in its own <code>&lt;div&gt;</code>):
+</p>
+
+<pre><code>&lt;div aria-hidden="true" style="position: relative; display: block; text-align: center;"&gt;
+  &lt;div aria-hidden="true" style="position: relative; display: inline-block;"&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;B&lt;/div&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;r&lt;/div&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;e&lt;/div&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;a&lt;/div&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;k&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div aria-hidden="true" style="position: relative; display: inline-block;"&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;a&lt;/div&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;p&lt;/div&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;a&lt;/div&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;r&lt;/div&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;t&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div aria-hidden="true" style="position: relative; display: inline-block;"&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;H&lt;/div&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;T&lt;/div&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;M&lt;/div&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;L&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div aria-hidden="true" style="position: relative; display: inline-block;"&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;t&lt;/div&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;e&lt;/div&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;x&lt;/div&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;t&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div aria-hidden="true" style="position: relative; display: inline-block;"&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;i&lt;/div&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;n&lt;/div&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;t&lt;/div&gt;
+    &lt;div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px);"&gt;o&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<p>
+Five words.
+</p>
+
+
+
+<h2 id="ARIA">The ARIA Non-Solution</h2>
+
+<p>
+The demo uses a <a href="https://www.w3.org/TR/html-aam-1.0/#el-div"><code>&lt;div&gt;</code>, which in the HTML AAM maps to the <code>generic</code> role</a>. The problem here is that the <a href="https://w3c.github.io/aria/#namefromprohibited"><code>generic</code> role does not allow itself to be named by the author</a> — which means <a href="https://w3c.github.io/aria/#aria-label"><code>aria-label</code> is prohibited on it</a>.
+</p>
+
+<p>
+The <a href="https://gsap.com/docs/v3/Plugins/SplitText/#built-in-aria">example code GSAP offers</a>, however, shows headings instead (<a href="https://w3c.github.io/aria/#heading">which allow <code>aria-label</code></a>). It makes no mention of the restrictions on which roles allow <code>aria-label</code>. An author might think nothing of using <code>aria-label</code></a> on a <code>&lt;div&gt;</code>. Kind of like the embedded GSAP demo.
+</p>
+
+<p>
+When <code>aria-label</code> is used on an element that allows it, the GSAP page makes no mention of other risks. I&#8217;ve repeatedly said <a href="/2019/11/aria-label-does-not-translate.html"><code>aria-label</code> may not auto-translate for users</a>. It also doesn&#8217;t talk about <a href="https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html">WCAG SC 2.5.3 Label in Name</a> risks when <code>aria-label</code> is applied to any control.
+</p>
+
+
+<h2 id="Hiding">Hiding Content</h2>
+
+<p>
+Kind of a nitpick, but the GSAP page links to a CSS-Tricks post that itself simply links to Scott&#8217;s <a href="https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html"><cite>Inclusively Hidden</cite></a> post. Scott&#8217;s post got an update in 2023. CSS-Tricks&#8217; post did not. I consider that a disservice to both Scott and readers.
+</p>
+
+
+
+<h2 id="Videos">Videos</h2>
+
+<p>
+I hate making these videos. It takes so much time. But it&#8217;s evidence. Or proof. Or something.
+</p>
+
+
+
+<figure>
+ <video preload="metadata" controls="" poster="/wp-content/uploads/2026/02/SplitText-NVDA_poster.jpg">
+  <source src="/wp-content/uploads/2026/02/SplitText-NVDA.mp4" type="video/mp4">
+  <track label="English" kind="subtitles" srclang="en-us" src="/wp-content/uploads/2026/02/SplitText-NVDA.vtt" default="">
+  Sorry, your browser doesn’t support embedded videos, but don’t worry, you can <a href="/wp-content/uploads/2026/02/SplitText-NVDA.mp4">download it</a>. The <a href="/wp-content/uploads/2026/02/SplitText-NVDA.vtt">caption file</a> is also available in case your video player can import it.
+ </video>
+ <figcaption>NVDA 2025.3.2 with Firefox 147.0.2. The text is announced both before and after animation.</figcaption>
+</figure>
+
+
+
+
+<figure>
+ <video preload="metadata" controls="" poster="/wp-content/uploads/2026/02/SplitText-JAWS_poster.jpg">
+  <source src="/wp-content/uploads/2026/02/SplitText-JAWS.mp4" type="video/mp4">
+  <track label="English" kind="subtitles" srclang="en-us" src="/wp-content/uploads/2026/02/SplitText-JAWS.vtt" default="">
+  Sorry, your browser doesn’t support embedded videos, but don’t worry, you can <a href="/wp-content/uploads/2026/02/SplitText-JAWS.mp4">download it</a>. The <a href="/wp-content/uploads/2026/02/SplitText-JAWS.vtt">caption file</a> is also available in case your video player can import it.
+ </video>
+ <figcaption>JAWS 2026.2512.50 with Chrome 144. The text is never announced.</figcaption>
+</figure>
+
+
+
+
+<figure>
+ <video preload="metadata" controls="" poster="/wp-content/uploads/2026/02/SplitText-Narr_poster.jpg">
+  <source src="/wp-content/uploads/2026/02/SplitText-Narr.mp4" type="video/mp4">
+  <track label="English" kind="subtitles" srclang="en-us" src="/wp-content/uploads/2026/02/SplitText-Narr.vtt" default="">
+  Sorry, your browser doesn’t support embedded videos, but don’t worry, you can <a href="/wp-content/uploads/2026/02/SplitText-Narr.mp4">download it</a>. The <a href="/wp-content/uploads/2026/02/SplitText-Narr.vtt">caption file</a> is also available in case your video player can import it.
+ </video>
+ <figcaption>Narrator Win 11 25H2 26200.7623 with Edge 144. Only the first letter of the text is ever announced.</figcaption>
+</figure>
+
+
+
+
+<figure>
+ <video preload="metadata" controls="" poster="/wp-content/uploads/2026/02/SplitText-VO_poster.jpg">
+  <source src="/wp-content/uploads/2026/02/SplitText-VO.mp4" type="video/mp4">
+  <track label="English" kind="subtitles" srclang="en-us" src="/wp-content/uploads/2026/02/SplitText-VO.vtt" default="">
+  Sorry, your browser doesn’t support embedded videos, but don’t worry, you can <a href="/wp-content/uploads/2026/02/SplitText-VO.mp4">download it</a>. The <a href="/wp-content/uploads/2026/02/SplitText-VO.vtt">caption file</a> is also available in case your video player can import it.
+ </video>
+ <figcaption>VoiceOver macOS 26.2 with Safari 26.2. Only a sub-set of the letters is exposed, and those are read letter-by-letter. This video is more sloppy owing to not feeding the audio properly and an electrician poking holes in my walls.</figcaption>
+</figure>
+
+
+
+
+<figure>
+ <video preload="metadata" controls="" poster="/wp-content/uploads/2026/02/SplitText-Orca_poster.jpg">
+  <source src="/wp-content/uploads/2026/02/SplitText-Orca.mp4" type="video/mp4">
+  <track label="English" kind="subtitles" srclang="en-us" src="/wp-content/uploads/2026/02/SplitText-Orca.vtt" default="">
+  Sorry, your browser doesn’t support embedded videos, but don’t worry, you can <a href="/wp-content/uploads/2026/02/SplitText-Orca.mp4">download it</a>. The <a href="/wp-content/uploads/2026/02/SplitText-Orca.vtt">caption file</a> is also available in case your video player can import it.
+ </video>
+ <figcaption>Orca Ubuntu 25.04 with Firefox 146. The text is announced both before and after animation.</figcaption>
+</figure>
+
+
+
+
+
+
+<p>
+I was going to make videos for VoiceOver iPadOS with Safari, TalkBack with Chrome, and TalkBack with Firefox, but I got tired. If you&#8217;ve been reading my blog long enough, then <a href="/2022/11/your-accessibility-claims-are-wrong-unless.html#SRs">you should know the commands to give it a try</a>.
+</p>
+
+<p>
+Similarly, you can <a href="/2023/01/jaws-nvda-and-voiceover-braille-viewers.html">pop open the Braille viewers on the desktop</a> and see how those perform.
+</p>
+
+
+
+
+
+<h2 id="Results">Results</h2>
+
+<p>
+I&#8217;ve reduced these to a binary yes/no. I also added mobile results, for which I made no videos.
+</p>
+
+<table>
+ <caption>SplitText in Screen Readers</caption>
+ <tr>
+  <th>Pairing</th>
+  <th>Works?</th>
+ </tr>
+ <tr>
+  <th>NVDA / Firefox</th>
+  <td>yes</td>
+ </tr>
+ <tr>
+  <th>JAWS / Chrome</th>
+  <td><span aria-hidden="true">❌</span><span class="visually-hidden">no</span></td>
+ </tr>
+ <tr>
+  <th>Narrator / Edge</th>
+  <td><span aria-hidden="true">❌</span><span class="visually-hidden">no</span></td>
+ </tr>
+ <tr>
+  <th>VO macOS / Safari</th>
+  <td><span aria-hidden="true">❌</span><span class="visually-hidden">no</span></td>
+ </tr>
+ <tr>
+  <th>Orca / Firefox</th>
+  <td><span aria-hidden="true">❌</span><span class="visually-hidden">no</span></td>
+ </tr>
+ <tr>
+  <th>TalkBack / Chrome</th>
+  <td>yes</td>
+ </tr>
+ <tr>
+  <th>TalkBack / Firefox</th>
+  <td><span aria-hidden="true">❌</span><span class="visually-hidden">no</span></td>
+ </tr>
+ <tr>
+  <th>VO iPadOS / Safari</th>
+  <td><span aria-hidden="true">❌</span><span class="visually-hidden">no</span></td>
+ </tr>
+</table>
+
+
+
+<h2 id="Bug">Bug Report</h2>
+
+<p>
+This post is a warning to authors. I&#8217;ve also filed an issue with GSAP asking the SplitText page to clarify the risks and limitations: <a href="https://github.com/greensock/GSAP/issues/642">#642 Screen Readers do not expose SplitText</a> 
+
+</p>
+
+<p>
+I don&#8217;t expect them to be able to jump on the bug report immediately, and they will almost definitely want to perform further testing. So until they can tackle it, I strongly recommend avoiding SplitText.
+</p>
+
+
+
+
+
+
+<h2 id="Wrap">Wrap-up</h2>
+
+<p>
+If you need to split words into their constituent letters in order to adjust kerning, give them gradients, animate them, or whatever, well, no you don&#8217;t. Find another method.
+</p>
+
+<p>
+If the GSAP people who guaranteed their approach works with screen readers got it wrong, it seems likely you will too. Unless you have all the screen reader, browser, platform, and TTS variations along with the screen reader navigation skills needed to perform ongoing and robust testing.
+</p>
+
+<p>
+Which you don&#8217;t.
+</p>
+
+
+
+
+
+
+
+
+
+
+<h2 id="Update01">Update: Same Damn Day</h2>
+
+<figure>
+ <video preload="metadata" controls="" poster="/wp-content/uploads/2026/02/ui-dot-shit_poster.jpg">
+  <source src="/wp-content/uploads/2026/02/ui-dot-shit.mp4" type="video/mp4">
+  Sorry, your browser doesn’t support embedded videos, but don’t worry, you can <a href="/wp-content/uploads/2026/02/ui-dot-shit.mp4">download it</a>.
+ </video>
+ <figcaption><q>Turn your terminal into</q> is completed letter by letter first with <q>an interface designer,</q> which is deleted letter by letter and replaced with <q>a frontend wizard,</q> and then replaced by <q>an accessibility expert.</q> The browser dev tools show it&#8217;s all in a <code>&lt;span&gt;</code> with an <code>aria-label</code>.</figcaption>
+</figure>
+
+<p>
+The makers of Tailwind, dissatisfied with pushing verbose class names on human authors only, have decided to target LLMs with <a href="https://ui.sh/" rel="nofollow">ui.sh</a> (pronounced &#8220;wish&#8221;). While this <a href="https://front-end.social/@mayank/116015669183729724">hilarious</a>, <a href="https://toot.cafe/@thomaswilburn/116019993666382011">non-parody</a> home page doesn&#8217;t make the mistake of wrapping every letter in its own element, it does make the mistake of using <code>aria-label</code>.
+</p>
+
+<p>
+I&#8217;ve decided it warrants a mention here.
+</p>
+
+<p>
+The good news is this will help guarantee the need for human accessibility practitioners over poorly-trained LLMs.
+</p>
+
+
+
+
+<style>
+pre { white-space: pre; }
+</style>]]></content:encoded>
+					
+					<wfw:commentRss>https://adrianroselli.com/2026/02/you-know-what-just-dont-split-words-into-letters.html/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
 		<title>Barriers from Links with ARIA</title>
 		<link>https://adrianroselli.com/2026/01/barriers-from-links-with-aria.html</link>
 					<comments>https://adrianroselli.com/2026/01/barriers-from-links-with-aria.html#comments</comments>
@@ -267,6 +820,18 @@ The links with <code>aria-label</code> all fail WCAG SC <a href="https://www.w3.
 <p>
 Don&#8217;t be shy about making your own variations and leaving your results in the comments.
 </p>
+
+
+
+
+
+<h2 id="Update01">Update: 5 February 2026</h2>
+
+<p>
+You know what? Just <a href="/2026/02/you-know-what-just-dont-split-words-into-letters.html">don’t split words into letters</a>. It&#8217;s not just a problem with links, even if it&#8217;s more excitingly wrong with links.
+</p>
+
+
 
 
 <style>
@@ -717,7 +1282,7 @@ tr > * {
 		<item>
 		<title>Brief Note on Application Keyboard Shortcuts</title>
 		<link>https://adrianroselli.com/2026/01/brief-note-on-application-keyboard-shortcuts.html</link>
-					<comments>https://adrianroselli.com/2026/01/brief-note-on-application-keyboard-shortcuts.html#respond</comments>
+					<comments>https://adrianroselli.com/2026/01/brief-note-on-application-keyboard-shortcuts.html#comments</comments>
 		
 		<dc:creator><![CDATA[Adrian Roselli]]></dc:creator>
 		<pubDate>Fri, 09 Jan 2026 18:45:04 +0000</pubDate>
@@ -810,7 +1375,7 @@ dl {
 </style>]]></content:encoded>
 					
 					<wfw:commentRss>https://adrianroselli.com/2026/01/brief-note-on-application-keyboard-shortcuts.html/feed</wfw:commentRss>
-			<slash:comments>0</slash:comments>
+			<slash:comments>1</slash:comments>
 		
 		
 			</item>
@@ -1719,307 +2284,6 @@ In no way is this meant to <a href="/2020/03/i-dont-care-what-google-or-apple-or
 					
 					<wfw:commentRss>https://adrianroselli.com/2025/11/the-value-of-selecting-selects-by-value.html/feed</wfw:commentRss>
 			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Pre-order “Digital Accessibility Ethics”</title>
-		<link>https://adrianroselli.com/2025/11/pre-order-digital-accessibility-ethics.html</link>
-					<comments>https://adrianroselli.com/2025/11/pre-order-digital-accessibility-ethics.html#comments</comments>
-		
-		<dc:creator><![CDATA[Adrian Roselli]]></dc:creator>
-		<pubDate>Wed, 12 Nov 2025 19:04:59 +0000</pubDate>
-				<category><![CDATA[Web]]></category>
-		<category><![CDATA[accessibility]]></category>
-		<category><![CDATA[ethics]]></category>
-		<category><![CDATA[overlay]]></category>
-		<guid isPermaLink="false">https://adrianroselli.com/?p=38746</guid>
-
-					<description><![CDATA[Lainey Feingold, Reginé Gilbert, and Chancey Fleet gathered 36 authors across 10 countries and a commonwealth to write 32 chapters about ethics in digital accessibility. I am one of those 36 authors. The painting on the cover was created by Ana Maria Vidalon, a Spanish-speaking artist with a disability originally&#8230;]]></description>
-										<content:encoded><![CDATA[<p>
-Lainey Feingold, Reginé Gilbert, and Chancey Fleet gathered 36 authors across 10 countries and a commonwealth to write 32 chapters about ethics in digital accessibility. I am one of those 36 authors.
-</p>
-
-<figure class="right">
- <img loading="lazy" src="/wp-content/uploads/2025/11/DigitalAccessibilityEthics-cover.jpg" alt="Book cover, “Digital Accessibility Ethics: Disability Inclusion in All Things Tech” set in blue text above a painting featuring bright arcs of yellow, orange, blue, turquoise, pink, and purple; the lower half of these colors show abstract figures, circles, and building-like shapes and the text “Edited by Lainey Feingold, Reginé Gilbert, Chancey Fleet” and “CRC Press, Taylor &#038; Francis Group.”" width="350" height="528">
- <figcaption>The painting on the cover was created by Ana Maria Vidalon, a Spanish-speaking artist with a disability originally from Peru. She now lives in the United States and is associated with Creativity Explored, a studio in San Francisco that “partners with artists with developmental disabilities to celebrate and nurture the creative potential in all of us.” The cover image, untitled, was created in 2018. Ana Maria had her first solo show at the studio in 2021.</figcaption>
-</figure>
-
-<p>
-The book introduces the first (that I’ve heard of) Digital Accessibility Ethics Framework. It’s a three-part tool intended to influence, change, &#038; disrupt patterns of disability exclusion. <strong>#DigitalAccessibilityEthics</strong> is now a hashtag on <a href="https://toot.cafe/tags/DigitalAccessibilityEthics">Masto</a> (try your own instance), <a href="https://bsky.app/hashtag/DigitalAccessibilityEthics">Bluesky</a>, and <a href="https://www.linkedin.com/search/results/all/?keywords=%23digitalaccessibilityethics">LinkedIn</a>.
-</p>
-
-<p>
-My chapter covers <a href="/tag/overlay">overlays</a> and their false marketing claims.
-</p>
-
-<p>
-The goal of the Framework, and the goal of the book, is to help make the digital world more accessible to disabled people across the globe and to help organizations mitigate the risks of disability exclusion. 
-</p>
-
-
-
-<h2 id="CtA">Call to Action</h2>
-
-<p>
-Get the <a href="https://www.routledge.com/Digital-Accessibility-Ethics-Disability-Inclusion-in-All-Things-Tech/Feingold-Gilbert-Fleet/p/book/9781041018681">details from the publisher</a>, Taylor and Francis, and <a href="https://www.amazon.com/Digital-Accessibility-Ethics-Disability-Inclusion-ebook/dp/B0DQLRKF2K/">pre-order it from Amazon</a>, <a href="https://bookshop.org/p/books/digital-accessibility-ethics-disability-inclusion-in-all-things-tech/2706ddbaeebd9266">Bookshop.org</a> (to support independent book retailers), or contact your local independent book retailer directly. In Canada, try <a href="https://www.indigo.ca/en-ca/digital-accessibility-ethics-disability-inclusion-in-all-things-tech/9781041018681.html">Indigo</a> or <a href="https://anotherstory.ca/item/PBY3knU_Q9SZOv1k2MPfyQ">Another Story</a>. Pre-orders are good as it helps the publisher do things like know that I&#8217;m awesome at marketing the book.
-</p>
-
-<p>
-Maybe also add it to your &#8220;to-read&#8221; pile <a href="https://app.thestorygraph.com/books/42da2fec-4ee9-462f-adbd-6396dc112a19">on The Storygraph</a>.
-</p>
-
-<h2 id="ToC">Table of Contents</h2>
-
-<p>
-Lainey gathered the LinkedIn profiles of all the authors (I haven&#8217;t taken the time to track down their personal pages), so I linked them from their chapters.
-</p>
-
-<ul>
- <li>Introduction: The Digital Accessibility Gap and the Need for an Ethics Framework</li>
- <li>Section One: Foundation
-  <ol>
-   <li>Introducing the Digital Accessibility Ethics Framework; <a href="https://www.linkedin.com/in/laineyfeingold">Lainey Feingold</a>, <a href="https://www.linkedin.com/in/reginegilbert/">Reginé Gilbert</a>, and <a href="https://www.linkedin.com/in/chancey-fleet-35063317/">Chancey Fleet</a></li>
-   <li>Disability and Accessibility: Understanding the Terms at the Heart of this Collection; <a href="https://www.linkedin.com/in/crystalprestonwatson/">Crystal Preston Watson</a></li>
-   <li>The Ethical Dilemmas of Artificial Intelligence; <a href="https://www.linkedin.com/in/juttatreviranus/">Jutta Treviranus</a></li>
-   <li>The Global Digital Accessibility Legal Landscape; <a href="https://www.linkedin.com/in/laineyfeingold">Lainey Feingold</a></li>
-  </ol>
- </li>
- <li>Section Two: Ethical Accessibility Practices
-  <ol start="5">
-   <li>Designing With: Widening Power and Participation of Disabled People in the Design Process; <a href="https://www.linkedin.com/in/joshkimux/">Josh Kim</a></li>
-   <li>Achieving Ethical Accessibility in the Development Process; <a href="https://www.linkedin.com/in/lwatson/">Léonie Watson</a></li>
-   <li>The Ethics of Accessibility Leadership in India and Across the Globe; <a href="https://www.linkedin.com/in/shilpi-kapoor/">Shilpi Kapoor</a></li>
-   <li>Empower All Minds: Cognitive Accessibility Ethics; <a href="https://www.linkedin.com/in/margauxjoffe/">Margaux Joffe</a></li>
-   <li>Don’t Buy Broken Things: Ethical Accessible Procurement; <a href="https://www.linkedin.com/in/sheribyrnehaber/">Sheri Byrne-Haber</a></li>
-   <li>Hackathons, Student Projects, and Digital Accessibility Ethics; <a href="https://www.linkedin.com/in/jamielephd/">Joshua A. Miele</a></li>
-   <li>Deaf Leaders Now! The Ethics of Hiring Disabled People in Science and Technology; <a href="https://www.linkedin.com/in/jennychenlu/">Jenny C. Lu</a> and <a href="https://www.linkedin.com/in/sheilaxu/">Sheila Xu</a></li>
-   <li>Making Every Voice Heard: The Ethics of Voice Recognition Technology; <a href="https://www.linkedin.com/in/meena11/">Meenakshi Das</a></li>
-   <li>Digital Accessibility Ethics in Africa: Progress, Challenges, and Opportunities; <a href="https://www.linkedin.com/in/irene-mbari-kirika/">Irene Mbari-Kirika</a> and Dr. Samuel Kabue</li>
-   <li>Who Sees What?  Ethics Issues in Describing the Visual World; <a href="https://www.linkedin.com/in/nefertiti-matos/">Nefertiti Matos Olivares</a> and <a href="https://www.linkedin.com/in/thomassreid/">Thomas Reid</a></li>
-   <li>Facial Difference, AI Bias, and Digital Accessibility Ethics; <a href="https://www.linkedin.com/in/carly-findlay-oam-60b10221/">Carly Findlay</a></li>
-   <li>Everyone Needs (At Least A Little) Accessibility Education; <a href="https://www.linkedin.com/in/rolypepe/">Rolando J. Méndez Fernández</a> and <a href="https://www.linkedin.com/in/kate-sonka/">Kate Sonka</a></li>
-   <li>Accessibility Overlays and the Harms of Marketing “Quick Fixes”; <a href="https://adrianroselli.com/">Adrian A. Roselli</a></li>
-   <li>Accessibility Practitioner Burnout is an Ethics Issue; <a href="https://www.linkedin.com/in/maymatt/">Matt May</a></li>
-  </ol>
- </li>
- <li>Section Three: Digital Accessibility Ethics Across Sectors
-  <ol start="19">
-   <li>No One Left Behind: Digital Accessibility Ethics and Emergency Preparedness; <a href="https://www.linkedin.com/in/erinbrownconnects/">Erin E. Brown</a></li>
-   <li>When My Seeing Eye Dog and I Surprise a Delivery Robot: New Technologies Need to be Accessible, Too; <a href="https://www.linkedin.com/in/habengirma/">Haben Girma</a></li>
-   <li>Secure by Design, Accessible by Default: Building Cybersecurity Ethics That Include Everyone; <a href="https://www.linkedin.com/in/aligorithm/">Aliyu G. Yisa</a> and <a href="https://www.linkedin.com/in/justinmerhoff/">Justin Merhoff</a></li>
-   <li>From Both Sides of the Stethoscope: Digital Accessibility Ethics in Healthcare; <a href="https://www.linkedin.com/in/heidi-joshi-psy-d/">Dr. Heidi Joshi</a> and <a href="https://www.linkedin.com/in/okanlami/">Dr. Oluwaferanmi O. Okanlami</a></li>
-   <li>Beyond Technology: Ethics and Strategies for Inclusive Smart Cities; <a href="https://www.linkedin.com/in/monica-duhem-94117817/">Monica Duhem</a>, <a href="https://www.linkedin.com/in/josefina-ocampo-guchea-55b77b41/">Josefina Ocampo Guchea</a>, and <a href="https://www.linkedin.com/in/jamesthurston/">James Thurston</a></li>
-   <li>Tech-Facilitated Disability Discrimination and Artificial Intelligence Tools at Work; <a href="https://www.linkedin.com/in/arianaaboulafia/">Ariana Aboulafia</a></li>
-   <li>Who Gets to Read, Who Gets to Publish?  Digital Accessibility Ethics for Authors, Journalists, and Publishers; <a href="https://www.linkedin.com/in/laurab7/">Laura Brady</a> and <a href="https://www.linkedin.com/in/daniellalevypinto/">Daniella Levy-Pinto</a></li>
-   <li>Democracy for All: Addressing Accessibility Challenges for Disabled Voters; <a href="https://www.linkedin.com/in/jessmoorematthews/">Jess Moore Matthews, MA</a></li>
-   <li>Digital Accessibility and Open Source Need Each Other; <a href="https://www.linkedin.com/in/mgifford/">Mike Gifford</a></li>
-   <li>Immersive Technology Needs Digital Accessibility Ethics; <a href="https://www.linkedin.com/in/reginegilbert/">Reginé Gilbert</a></li>
-   <li>Public Relations, Marketing, Accessibility, and Ethics; <a href="https://www.linkedin.com/in/victoria-ottah-7294481ba/">Victoria Ottah Nnenna</a></li>
-   <li>The Future of Game Accessibility is Grounded in Ethics; <a href="https://www.linkedin.com/in/aderyn/">Aderyn Thompson</a></li>
-   <li>Digital Accessibility and Public Digital Amenities; <a href="https://www.linkedin.com/in/chancey-fleet-35063317/">Chancey Fleet</a></li>
-   <li>Legal Ethics, Access to Justice, and the Need for Digital Accessibility; <a href="https://www.linkedin.com/in/laineyfeingold">Lainey Feingold</a></li>
-  </ol>
- </li>
- <li>Conclusion: What’s Next for Digital Accessibility Ethics?</li>
-</ul>
-
-
-<h2 id="Publisher">From the Publisher</h2>
-
-<p>
-Digital Accessibility Ethics is a practical guide with an urgent goal: to help end tech exclusion of 1.3 billion people across the world with disabilities.
-</p>
-
-<p>
-The book introduces the first Digital Accessibility Ethics Framework – an action-oriented, three-part tool designed to influence, change, and disrupt patterns of exclusion with values, actions, and questions. This edited collection is written by 39 authors from 10 countries and one commonwealth, the majority of whom are disabled.
-</p>
-
-<p>
-The editors and authors have over 600 years of combined accessibility and disability advocacy experience. They offer and apply an ethics lens that supports disabled people’s right to fully participate in every facet of digital life. It is a lens that helps organizations reduce the financial, legal, privacy, safety, and other risks and harms of disability exclusion.
-</p>
-
-<p>
-Through stories, recommendations, strategies, and other guidance, the book looks at a wide range of topics through the Digital Accessibility Ethics Framework:  from gaming and smart cities to hackathons, procurement, and cybersecurity.  From accessibility practitioner burnout, to robots, artificial intelligence, workplace software, aerospace, design, healthcare, open source, emergency preparedness, legal ethics, publishing, and much more.
-</p>
-
-<p>
-This book is for leaders in all these fields. And it is for all technologists, educators, students, marketers, policy makers and everyone who has ever posted on social media or sent an email.  It encourages us to stop and ask ourselves: who are we excluding when digital accessibility is ignored? Who are we harming, what are we risking, by our decisions?
-</p>
-
-<p>
-As the world grows more digital, as AI is marketed everywhere, and as the number of people with disabilities continues to grow, there has never been a more urgent time to expose, explore, and act at the intersection of ethics, disability, and digital accessibility. Digital Accessibility Ethics offers a roadmap to show us the way.
-</p>
-
-<p>
-An accessible digital version of the book will be available, upon publication.
-</p>
-
-<ul>
- <li>Paperback: ISBN 9781041018681</li>
- <li>Hardback: ISBN 9781041018698</li>
- <li>368 Pages, 21 color and 20 black-and-white illustrations</li>
- <li>March 26, 2026 by Chapman &#038; Hall</li>
-</ul>
-
-
-
-
-
-<h2 id="Wrap">Wrap-up</h2>
-
-<p>
-If you read this far, you may have skipped that link to <a href="https://www.amazon.com/Digital-Accessibility-Ethics-Disability-Inclusion-ebook/dp/B0DQLRKF2K/">pre-order it from Amazon</a> or, to support independent book retailers, from <a href="https://bookshop.org/p/books/digital-accessibility-ethics-disability-inclusion-in-all-things-tech/2706ddbaeebd9266">Bookshop.org</a>. Though you could also contact your local independent book retailer and ask them to pre-order it.
-</p>
-
-
-
-<h2 id="Update01">Update: 18 November 2025</h2>
-
-<p>
-Laura Brady included more pre-order links <a href="https://laurabrady.ca/blog/digital-a11y-ethics">in her post</a>, which I&#8217;ve integrated into mine above.
-</p>]]></content:encoded>
-					
-					<wfw:commentRss>https://adrianroselli.com/2025/11/pre-order-digital-accessibility-ethics.html/feed</wfw:commentRss>
-			<slash:comments>2</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Shopify Needs a Mirrorfy</title>
-		<link>https://adrianroselli.com/2025/11/shopify-needs-a-mirrorfy.html</link>
-					<comments>https://adrianroselli.com/2025/11/shopify-needs-a-mirrorfy.html#comments</comments>
-		
-		<dc:creator><![CDATA[Adrian Roselli]]></dc:creator>
-		<pubDate>Tue, 04 Nov 2025 01:51:45 +0000</pubDate>
-				<category><![CDATA[Web]]></category>
-		<category><![CDATA[accessibility]]></category>
-		<category><![CDATA[rant]]></category>
-		<guid isPermaLink="false">https://adrianroselli.com/?p=38597</guid>
-
-					<description><![CDATA[Shopify is legitimately angry at drive-by ADA lawsuits, as outlined in its recent post The small business shakedown: Why thousands of entrepreneurs are getting buried in lawsuits. Like thousands of small business owners across the United States, Clay*, an online store owner, was sued without warning for his website allegedly&#8230;]]></description>
-										<content:encoded><![CDATA[<p>
-Shopify is legitimately angry at drive-by ADA lawsuits, as outlined in its recent post <cite><a href="https://www.shopify.com/news/accessibility-lawsuits">The small business shakedown: Why thousands of entrepreneurs are getting buried in lawsuits</a></cite>.
-</p>
-
-<blockquote>
- <p>
- Like thousands of small business owners across the United States, Clay*, an online store owner, was sued without warning for his website allegedly not complying with an accessibility law. 
- </p>
- <footer><cite><a href="https://www.shopify.com/news/accessibility-lawsuits">The small business shakedown: Why thousands of entrepreneurs are getting buried in lawsuits</a>, 22 October 2025, by &#8220;Shopify&#8221;</cite></footer>
-</blockquote>
-
-<p>
-But Shopify is wrong there are “no clear guidelines”:
-</p>
-
-<blockquote>
- <p>
- When it comes to websites, the uncertainty surrounding what constitutes “reasonable accessibility” can be overwhelming. When small business owners attempt to comply they quickly realize there are <a href="https://www.ada.gov/resources/web-guidance/">no clear guidelines or specific steps</a>, and compliance can be subjective.
- </p>
- <footer><cite><a href="https://www.shopify.com/news/accessibility-lawsuits">The small business shakedown: Why thousands of entrepreneurs are getting buried in lawsuits</a>, 22 October 2025, by &#8220;Shopify&#8221;</cite></footer>
-</blockquote>
-
-<p>
-That’s a signal the author didn’t consult Shopify’s own accessibility team, scroll down the linked ADA page to the linked resources, or talk to an attorney with experience in this area. It might also be a signal the unnamed author ignored them.
-</p>
-
-<p>
-Shopify also fails to note it has a role to protect its own clients and, by extension, its clients&#8217; customers. As a platform, Shopify says the following on what it offers:
-</p>
-
-<blockquote>
- <p>
- At Shopify, we actively collaborate with persons with disabilities to identify and address accessibility issues. We provide merchants with accessibility-optimized components, tools like Sidekick for automated alt text generation, and themes built with accessibility standards from the ground up.
- </p>
- <footer><cite><a href="https://www.shopify.com/news/accessibility-lawsuits">The small business shakedown: Why thousands of entrepreneurs are getting buried in lawsuits</a>, 22 October 2025, by &#8220;Shopify&#8221;</cite></footer>
-</blockquote>
-
-<p>
-But with nearly a hundred possible WCAG violations on its home page, Shopify&#8217;s offering is clearly not up to task. These violations are identified by automated tool that, <a href="/2023/01/comparing-manual-and-free-automated-wcag-reviews.html">according to my own testing</a>, reports only around 15% of actual WCAG violations. For example, the autoplaying video on the home page fails Success Criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/audio-only-and-video-only-prerecorded.html">1.2.1: Audio-only and Video-only (Prerecorded)</a> and  <a href="https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html">2.2.2: Pause, Stop, Hide</a>, neither of which was caught by the automated test.
-</p>
-
-<figure class="two">
- <a href="/wp-content/uploads/2025/10/shopify_home.jpg"><img loading="lazy" src="/wp-content/uploads/2025/10/shopify_home.jpg" alt="80 issues: 75 need review, 4 serious, 1 minor; these include 10 misused ARIA attributes, 1 non-unique ID, 1 invalid ARIA attribute, 58 contrast issues, and 10 videos without captions." width="1602" height="1315"></a>
- <a href="/wp-content/uploads/2025/10/shopify-home_30-october.jpg"><img loading="lazy" src="/wp-content/uploads/2025/10/shopify-home_30-october.jpg" alt="99 issues: 95 need review, 3 serious, 1 minor; these include 10 misused ARIA attributes, 1 non-unique ID, 1 invalid ARIA attribute, 77 contrast issues, and 10 videos without captions." width="1668" height="1325"></a>
- <figcaption>Shopify home page as captured on Tuesday, 28 October and again on Thursday, 30 October 2025 using Firefox 144 on Windows 11 with axe DevTools 4.4.2 showing 80 and then 99 WCAG issues.</figcaption>
-</figure>
-
-<p>
-Shopify&#8217;s <em>active collaboration</em> doesn&#8217;t seem to include its own site. Nor does it seem to factor into which sites Shopify promotes on its home page:
-</p>
-
-<figure class="three">
- <a href="/wp-content/uploads/2025/10/shopify_featured-01.jpg"><img loading="lazy" src="/wp-content/uploads/2025/10/shopify_featured-01.jpg" alt="Glossier home page, with 74 total axe issues: 37 need review, 2 are critical, 2 serious, and 2 minor; these include 1 misused ARIA attribute, 1 focusable aria-hidden element, 2 buttons without text, 2 non-unique IDs, 7 lists holding invalid elements, and far more hidden off-screen." width="1602" height="1315"></a>
- <a href="/wp-content/uploads/2025/10/shopify_featured-02.jpg"><img loading="lazy" src="/wp-content/uploads/2025/10/shopify_featured-02.jpg" alt="The Sill home page, with 148 total axe issues: 78 need review, 7 are critical, 61 serious, and 2 minor; these include 2 buttons without text, 121 items with poor contrast, 6 non-unique IDs, 3 images without alt text, and far more hidden off-screen." width="1602" height="1315"></a>
- <a href="/wp-content/uploads/2025/10/shopify_featured-03.jpg"><img loading="lazy" src="/wp-content/uploads/2025/10/shopify_featured-03.jpg" alt="Vacation Inc home home page, with 126 total axe issues: 125 need review and 1 is serious; these include 1 image without alt text, 6 elements misusing ARIA attributes, 1 focusable aria-hidden item, 1113 items with poor contrast, 3 links with same name, and at least one more hidden off-screen." width="1602" height="1315"></a>
- <figcaption>The home pages of the first three Shopify stores promoted on the Shopify home page as captured on Tuesday, 28 October 2025. Between them they have a combined 348 WCAG issues.</figcaption>
-</figure>
-
-<p>
-<a href="https://www.shopify.com/accessibility#product-vpa-ts">Shopify provides VPATs</a>, an industry template for identifying how well a <em>thing</em> conforms to WCAG, for four of its flows — <a href="https://www.shopify.com/accessibility/vpat-checkout">checkout</a> (dated June 2025), <a href="https://www.shopify.com/accessibility/vpat-admin">store admin</a> (September 2023), <a href="https://www.shopify.com/accessibility/vpat-shopify-mobile">mobile admin</a> (October 2023), and the <a href="https://www.shopify.com/accessibility/vpat-theme-dawn">Dawn theme</a> (November 2021). Kudos to Shopify as this is more than many offer. These accessibility conformance reports demonstrate Shopify knows the rules, even if they show gaps in applying them.
-</p>
-
-<p>
-If Shopify is going to complain about frivolous lawsuits, it first needs to reduce its and its clients&#8217; exposure to legitimate claims. Shopify has a duty to prevent some of the basic errors these automated checks found. Some very quick ideas, based on my own experience running a CMS and also an ecommerce platform (though not at the same scale as Shopify):
-</p>
-
-<img loading="lazy" src="/wp-content/uploads/2025/10/shopify-glyph_99-issues.png" alt="The Shopify green bag logo, but the S has been replaced with “Total issues 99”." width="684" height="683" class="right thirds">
-
-<ul>
- <li>Provide accessibility guarantees in the contracts for specific, unmodified templates and features;</li>
- <li>When a customer makes a change to these, warn them, offer an automated check, and require their acknowledgment;</li>
- <li>Prevent publishing content with clear violations;</li>
- <li>Provide access to a response center for clients that have been threatened;</li>
- <li>Provide ready-to-go response letter templates for demands / threats;</li>
- <li>Offer access to attorneys at a reduced rate, ideally free for the couple hours it takes a competent attorney to dispute any demand letters;</li>
- <li>Provide access to experts in a help desk;</li>
- <li>Or use an LLM, given Shopify wants to replace its human employees anyway, and accept liability for the LLM&#8217;s responses;</li>
- <li>Only promote companies that provide proven accessible shops, creating incentive for other shops to follow;</li>
- <li>Offer free trainings on creating accessible content;</li>
- <li>Disallow <a href="https://overlayfactsheet.com/en/">accessibility overlay</a> widgets on any site, as they are a beacon for complaints.</li>
-</ul>
-
-<p>
-And so on.
-</p>
-
-<p>
-Maybe Shopify already offers all this? Its post, however, doesn&#8217;t suggest that. Instead I see a company failing to acknowledge its responsibility. I see Shopify undercutting the ADA, removing motivation to conform to WCAG prior to a complaint.
-</p>
-
-<p>
-Shopify&#8217;s call for “notice and cure” legislation is not new. It was proposed <a href="https://www.govtrack.us/congress/bills/118/hr7668/text">last year</a> and regularly <a href="https://www.jdsupra.com/legalnews/house-votes-to-amend-the-ada-to-provide-86600/">back to 2018</a> or earlier, with <a href="https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB84">California exploring it this year</a>. Disability organizations have always opposed notice and cure, <a href="https://nfbofsc.org/comments-ada-title-ii-website-and-mobile-app-notice-proposed-rulemaking-september-19-2023#:~:text=The%20National%20Federation%20of%20the%20Blind%20unequivocally%20objects%20to%20the%20concept%20of%20notice%20and%20cure.">such as NFB</a>, though the <a href="https://cdrnys.org/wp-content/uploads/2019/11/ADA-2019.pdf">Center for Disability Rights provides a better explanation</a> than I can do here.
-</p>
-
-<p>
-All this aside, the ADA doesn’t provide for monetary damages. Amending the ADA with “notice and cure” won&#8217;t help businesses. These drive-by lawsuits would still happen under state laws (primarily California and New York).
-</p>
-
-<p>
-I wrote a bit about the <a href="/2022/03/ada-web-site-compliance-still-not-a-thing.html">scope of the ADA and the web</a> a few years ago, with occasional updates. I did so because the ADA has been broadly misrepresented by scammers — mostly drive-by litigants and <a href="/tag/overlay">overlay vendors</a>. Shopify feels dangerously close to that line with its article.
-</p>
-
-<p>
-Maybe don’t listen to me. I’m not a lawyer.
-</p>
-
-<p>
-<em>Don’t</em> listen to Shopify, since it’s not a law firm, it seems to not be protecting its clients, and its leadership doesn&#8217;t demonstrate it understands the ADA.
-</p>
-
-<p>
-I can&#8217;t imagine how frustrating this must be for Shopify&#8217;s internal accessibility team(s).
-</p>
-
-<aside>
- <p>
- This post expands a bit and memorializes my <a href="https://toot.cafe/@aardrian/115452320855757430">Mastodon thread</a> and <a href="https://bsky.app/profile/aardrian.bsky.social/post/3m4b6dx32nc2j">Bluesky thread</a>.
- </p>
-</aside>]]></content:encoded>
-					
-					<wfw:commentRss>https://adrianroselli.com/2025/11/shopify-needs-a-mirrorfy.html/feed</wfw:commentRss>
-			<slash:comments>2</slash:comments>
 		
 		
 			</item>

@@ -36,18 +36,18 @@
         let maxCountPlus = maxCount + maxPlus; 
       %>
       <% hosts.forEach(h => { %>
-        <tr data-key="<%= h.host %>">
+        <tr data-key="<%= h.domain %>">
           <th scope="row">
-            <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&size=16&url=https://<%= h.host %>" 
-                 width="16" height="16" alt="<%= h.host %>" loading="lazy">
+            <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&size=16&url=https://<%= h.domain %>" 
+                 width="16" height="16" alt="<%= h.domain %>" loading="lazy">
           </th>
           <td style="--size: calc(<%= h.count %>/<%= maxCountPlus %>);">
             <span class="data"><%= h.count %></span>
           </td>
           <% if (h.count === maxCount) { %>
-          <style>#host-chart tr[data-key="<%= h.host %>"]:after { content: "<%= h.host %>"; right: <%= maxPlus %>px; padding-right: 4%; color: #fff !important; }</style>          
+          <style>#host-chart tr[data-key="<%= h.domain %>"]:after { content: "<%= h.domain %>"; right: <%= maxPlus %>px; padding-right: 4%; color: #fff !important; }</style>          
           <% } else { %>
-          <style>#host-chart tr[data-key="<%= h.host %>"]:after { content: "<%= h.host %>"; left: calc(100% * calc(<%= h.count %>/<%= maxCountPlus %>)); }</style>
+          <style>#host-chart tr[data-key="<%= h.domain %>"]:after { content: "<%= h.domain %>"; left: calc(100% * calc(<%= h.count %>/<%= maxCountPlus %>)); }</style>
           <% } %>
         </tr>
       <% }); %>

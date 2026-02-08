@@ -12,13 +12,266 @@
       <width>125</width>
       <height>125</height>
     </image>
-    <lastBuildDate>Sun, 01 Feb 2026 19:02:05 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Feb 2026 13:02:45 +0000</lastBuildDate>
     <managingEditor>remy@remysharp.com (Remy Sharp)</managingEditor>
     <webMaster>remy@remysharp.com (Remy Sharp)</webMaster>
     <language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Honestly, I don't know what most of these tags do, I copied a lot of them from other people's web site ¯\_(ツ)_/¯</generator>
+    <item>
+      <title>Try text scaling support [link]</title>
+      <guid isPermaLink="false">2026-02-03-d5be6744</guid>
+      <link>https://remysharp.com/links/2026-02-03-d5be6744</link>
+      <pubDate>Tue, 03 Feb 2026 11:01:24 +0000</pubDate>
+      <description><![CDATA[I've had a larger phone because I got fed up with squinting at my screen, but because of that I also have the OS level font bumped to 115% (and I know Jule, my wife, has it bumped to 125%). This meta tag will use the system font size to adjust the font. Importantly, Josh also points out that the default font size shouldn't be touched: Source: www.joshtumath.uk#heading-tip-1:-don't-override-the-initial-font-size /By Josh Tumath, via Jeremy Keith]]></description>
+      <content:encoded><![CDATA[
+<p>I've had a larger phone because I got fed up with squinting at my screen, but because of that I also have the OS level font bumped to 115% (and I know Jule, my wife, has it bumped to 125%). This meta tag will use the system font size to adjust the font. Importantly, Josh also points out that the default font size shouldn't be touched: <em>Source: <a href="https://www.joshtumath.uk/posts/2026-01-27-try-text-scaling-support-in-chrome-canary/">www.joshtumath.uk</a></em>#heading-tip-1:-don't-override-the-initial-font-size /By Josh Tumath, via Jeremy Keith</p>
+<p><em>Originally published on <a href="https://remysharp.com/links/2026-02-03-d5be6744">Remy Sharp's b:log</a></em></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>JS Bin down in 2026 [blog]</title>
+      <guid isPermaLink="false">js-bin-down-in-2026</guid>
+      <link>https://remysharp.com/2026/02/02/js-bin-down-in-2026</link>
+      <pubDate>Mon, 02 Feb 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[January 27th I got an email notification saying that JS Bin had become unavailable. Then next day real life human beings were asking what's going on. By 11pm on the 30th the last of the issues were resolved.
+Earlier today Jake asked me: what went wrong?
+Fucking, everything.]]></description>
+      <content:encoded><![CDATA[
+<p>January 27th I got an email notification saying that JS Bin had become unavailable. Then next day real life human beings were asking what's going on. By <a href="https://github.com/jsbin/jsbin/issues/3583#issuecomment-3826171066">11pm on the 30th</a> the last of the issues were resolved.</p>
+<p>Earlier today <a href="https://jakearchibald.com/">Jake</a> asked me: <em>what went wrong?</em></p>
+<p><strong>Fucking, everything.</strong></p>
+<h2>TL;DR</h2>
+<p>I get it, this is a big wordy blog post. I got carried away and enjoyed telling the story.</p>
+<p>The short version is: CloudFlare, probably best to upgrade everything to latest software (which I couldn't do), 520 status can actually be a mismatched TLS exchange between CloudFlare and the origin. Oh, and don't lean on LLMs too hard when the shit is really hitting the fan - try to take a big step back and make sure you take stock.</p>
+<p>Otherwise, here's the too-long, do-read version -</p>
+<h2>On being in maintenance mode</h2>
+<p>For the last 5 ish/maybe quite a few years or more, JS Bin has run in a fairly automated maintenance mode. There's usually little flurries of wobbles that need my attention every 3/6 months. JS Bin is coming on to 18 years old, which is geriatric by web standards.</p>
+<p>Typically it's <a href="https://remysharp.com/2015/09/15/jsbin-toxic-part-2">dodgy content</a> on the site that I need to put banning in place, sometimes it's take down requests that come through from Amazon (where JS Bin is hosted), sometimes it's a memory exception that takes me a little longer to recover from.</p>
+<p>You can see from the last 11 years of status checks, there's been outages but nothing quite like what happened this time around (ignoring that big one on the far left…):</p>
+<figure><img src="https://remysharp.com/images/jsbin-status-chart.avif" alt="A chart starting from 2014 with spots throughout showing when JS Bin was down" decoding="async"><figcaption>In 2017 the entire server fell over and need to be replaced entirely. Then this were quiet-ish, then…we have the red wall</figcaption></figure>
+<p>The larger hours when the server goes down (as I found out recently) is memory running out on the machine, and the machine will respond by pretty much collapsing. The result of which is that I can't connect to the machine via ssh to attempt restore it. It usually requires a forced reboot via the AWS console.</p>
+<p>Then there's the odd occasion that even reboots from the AWS console, a literal &quot;turn it on and off again&quot;, doesn't fly…</p>
+<h2>It wouldn't come back from a reboot</h2>
+<p>This latest outage just wouldn't come back from a reboot. I would trigger the reboot and then wait on the console attempting to connect over SSH so I could get some eyes on the situation but even then I couldn't get it.</p>
+<p>JS Bin was rebooting and immediately locking up. So this tells me there's some external pressure on the machine that is not easing up.</p>
+<p>The only option I have to hand is to shutdown the machine entirely for an hour or so, to let whatever is clawing at the door to go away for a bit.</p>
+<p>When I eventually looked at the Cloud Watch logs, it was clear there was something absolutely smashing at the walls (and door, yes, I mix my metaphors). The amount of inbound network traffic is unprecedented for jsbin. From the chart below, it shows normal usage in the days prior, a trickle of network inbound traffic by comparison to what I was now seeing.</p>
+<p>The dips that happen after the cliff edge of monitoring is the machine giving up and being unresponsive. From the chart, I can see that even the short outage wasn't enough to get this beast off jsbin's back.</p>
+<figure><img src="https://remysharp.com/images/cloud-watch-chart.avif" alt="The Cloud Watch network traffic logs showing a huge increase of network inbound traffic, going from a typical 1mb to 100mb" decoding="async"><figcaption>The 100mb peak <em>incoming</em> traffic was the real problem.</figcaption></figure>
+<h2>Killing the appropriate process</h2>
+<p>When I finally managed to get into the machine, the first stop was <code>syslog</code> to find out what was responsible for the crash (or rather the symptom, not the cause, not yet).</p>
+<p>I quickly found the garbage collection dump and stacktrace of node running out of memory. First thing's first: let's kill the offending process rather than having a full shit-the-bed approach.</p>
+<pre><code># /etc/sysctl.conf and reload with `sudo sysctl -p`
+vm.oom_kill_allocating_task=1
+</code></pre>
+<p>That would mean node (which was saturating all the memory) would be killed rather than anything the system could get it's hands on - which usually meant I couldn't ssh into the machine.</p>
+<p>This change wouldn't stop things getting sluggish on the machine but it would mean that I could continue to diagnose even whilst the traffic was bombarding the server (albeit with a very slow terminal responding).</p>
+<p>I could see the CPU usage was very, very high, and I could see node steadily increasing it's memory footprint (I use <code>htop</code>).</p>
+<p>CPU usage of 100% is…okay because it means I'm using all the available process, but it leaves zero headroom and rather conspicuous that it wasn't dipping at any point.</p>
+<p>Then chatgpt suggested upgrading node, which was weird because I'd never told Chatgpt what version of node I was running…</p>
+<h2>Side quest: node is <em>really</em> old</h2>
+<p>As with running in maintenance and things being in a status quo, I hadn't really touched node…at all.</p>
+<p>As it happens, jsbin had been running on node 7 (not even &quot;stable&quot; node 8) for, I imagine, well over a decade.</p>
+<p>To me, out of the blue, Chatgpt suggested I could upgrade node. This is a decent suggestion but at no point did I tell Chatgpt what version of node I was running.</p>
+<p>On me querying, Chatgpt told me that <em>I had told the AI</em> which was a straight up lie.</p>
+<p>After more prodding than I'd like, eventually it turned out that the version of node was in my terminal and at some point during the nginx tuning (in the next section), Chatgpt had helped itself to what was on the screen.</p>
+<p>I've no idea if it has access to the scroll back history - I've got to assume it doesn't, but still pretty uncool.</p>
+<p>I don't tend to use the &quot;application&quot; thing that Chatgpt has (I normally use the browser interface) but this definitely taught me a lesson: if there's sensitive data <em>anywhere</em> on the screen (ie. I had just <code>cat</code> an <code>.env</code> file) then it's entirely likely an LLM can see it too.</p>
+<p>Anyway, I bumped from node 7 to node 22 and by some kind miracle it actually worked without any incident. It turned out that back in 2024 I had done some fairly significant work on the codebase so that I could run it on my local machine (which understandably didn't want to run node 7), so I had modernised the requisite parts.</p>
+<p>Phew. At least the event loop is improved and going to be kinder on my CPU.</p>
+<p>Except, it's still fucked and the adventure is far from over. Next I considered whether nginx (the proxy layer) could do with some optimisation.</p>
+<h2>Fine tuning on zip-all resources</h2>
+<p>Until now I've not shared what jsbin's main server runs on. It's a t2.micro AWS instance. Single CPU and 1GB of RAM. I'm often surprised it's managed so long on what I consider so little resources.</p>
+<p>And yes, standing a beefier machine up (aka: throwing money at the problem) might help, but the time to reconfigure a new machine wasn't quick - I don't have an instant &quot;build a new jsbin&quot; script (remember, this server has been in maintenance for a long time and just happily running). It's also worth adding that although jsbin does has a &quot;pro&quot; offering, there's very little actual monetary resources. That's all to say: what can I do right now before creating a new machine (spoiler: I did make a new machine, and double-spoiler: it was terminated the following day as I didn't need it).</p>
+<p>With the help of Chatgpt, Gemini <em>and</em> Claude (because somehow I have access to all of them, and I really don't have the full skills to know the ins and outs of nginx config) I looked at what could be tuned. I used multiple LLMs so that I could attempt to cross verify the advice (though I wasn't as diligent as I'd have liked).</p>
+<p>The adjustments fell into these categories:</p>
+<ul>
+<li>workers spawned</li>
+<li>proxy timeout</li>
+<li>increase file descriptors</li>
+<li>keep alive timings</li>
+<li>remove http2 - to help with memory</li>
+</ul>
+<p>Here's some of the actual config:</p>
+<pre><code class="language-yaml">worker_connections 1024;
+worker_processes auto;
+
+keepalive_timeout 10;
+keepalive_requests 100;
+</code></pre>
+<p>With the kicking I was getting from the inbound network traffic, this made little tangible difference. I'm sure it helps in the long run, but not when the machine is struggling with over 1000 requests a second and many more trying to squeeze in.</p>
+<p>And then there was this:</p>
+<blockquote>
+<p>Remy, have you considered CloudFlare?</p>
+</blockquote>
+<p>I'd thought about add CloudFlare a few times in the past, but I was worried that the configuration adjustment and changes I'd need would be either complicated or would cause some other issue.</p>
+<p>Except, nothing was working, so now was the time to get CloudFlare involved.</p>
+<p>And so begin new problems…</p>
+<h2>Adding CloudFlare</h2>
+<p>Props where due, putting CloudFlare in front of JS Bin was relatively easy. CloudFlare detected <em>most</em> of the domains and where they pointed (the important ones at least) and it was a matter of swapping over the name servers from pointing to AWS's Route 53 to CloudFlare's own name servers.</p>
+<p>Close to midnight on 29-Jan, I started to see <a href="http://jsbin.com">jsbin.com</a> load in the browser.</p>
+<p>I thought there might be a few snags around, but quickly I got replies on github and via email that people were still (mostly) seeing errors.</p>
+<p>In particular <a href="https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-520/">CloudFlare's 520</a> error page, which, as it turns out can be any number of issues.</p>
+<h2>Requests cutting through CloudFlare</h2>
+<p>Although I did have some success in loading, I could also see traffic still hammering through on the server.</p>
+<p>With some help from our LLM overlords (i.e. I would have google'd it…&quot;<a href="https://kagi.com/">kagied</a> it&quot;?), I got the <a href="https://www.cloudflare.com/en-gb/ips/">list of IP ranges</a> that meant the traffic was from CloudFlare.</p>
+<p>There was still a lot of traffic that didn't match those IP ranges. So the next step was to drop non-CloudFlare traffic.</p>
+<p>This is where using the LLM cost me time via newly introduced problems (which wouldn't surface until the next day). I think I was too buried in the thick of things otherwise I might have caught it earlier (and not at the end of the process).</p>
+<p>The first method to blocking non-CloudFlare was to use an nginx rule and variable, and to drop all traffic that wasn't tagged.</p>
+<p>This would mean adding this line to each <code>server {}</code> block - this would say <em>&quot;If the request doesn't have the CloudFlare header, then don't let it through&quot;</em>:</p>
+<pre><code>if ($http_cf_ray = &quot;&quot;) {
+    return 444;
+}
+</code></pre>
+<p>Importantly there was more config directions that I followed (which I've tucked away, but you can read if you want), specifically <code>set_real_ip_from 173.245.48.0/20;</code> - this would trip me up later on.</p>
+<details class="aside"><summary>The http_cf_ray config</summary>
+<p>Via Captain GPT:</p>
+<h4>The correct nginx-level approach (safe + reversible)</h4>
+<h5>1. Tell nginx which IPs belong to Cloudflare</h5>
+<p>Create a file:</p>
+<pre><code>/etc/nginx/cloudflare.conf
+</code></pre>
+<p>Put exactly this in it (current CF IPv4 ranges):</p>
+<pre><code>set_real_ip_from 173.245.48.0/20;
+set_real_ip_from 103.21.244.0/22;
+set_real_ip_from 103.22.200.0/22;
+set_real_ip_from 103.31.4.0/22;
+set_real_ip_from 141.101.64.0/18;
+set_real_ip_from 108.162.192.0/18;
+set_real_ip_from 190.93.240.0/20;
+set_real_ip_from 188.114.96.0/20;
+set_real_ip_from 197.234.240.0/22;
+set_real_ip_from 198.41.128.0/17;
+set_real_ip_from 162.158.0.0/15;
+set_real_ip_from 104.16.0.0/13;
+set_real_ip_from 104.24.0.0/14;
+set_real_ip_from 172.64.0.0/13;
+set_real_ip_from 131.0.72.0/22;
+
+real_ip_header CF-Connecting-IP;
+real_ip_recursive on;
+</code></pre>
+<p>Include it near the top of <code>http {}</code>:</p>
+<pre><code>http {
+    include /etc/nginx/cloudflare.conf;
+    ...
+}
+</code></pre>
+<p>This ensures $remote_addr becomes the real client IP, not Cloudflare.</p>
+<h5>2. Block non-Cloudflare traffic (this is the key)</h5>
+<p>In each public <code>server {}</code> block (ports 80 and 443), add this at the very top:</p>
+<pre><code>if ($http_cf_ray = &quot;&quot;) {
+    return 444;
+}
+</code></pre>
+<p>What this does:</p>
+<ul>
+<li>Cloudflare always sends CF-Ray</li>
+<li>Direct clients never do</li>
+<li>444 silently drops the connection (no response, no load)</li>
+</ul>
+<p>This is extremely effective.</p>
+</details>
+<p>This config was all well and good, but traffic was still coming in. This change would mean that nginx would have to process the traffic than ignoring (or &quot;dropping&quot;) it entirely (<em>#foreshadowing</em>).</p>
+<p>When I ran command below, it would list the connections, and I could <em>still</em> see non-CloudFlare requests being able to complete request (at this specific point in time, I was in a frantic cycle of &quot;try a change - fail - worry a bit - ask LLM - repeat&quot;):</p>
+<pre><code>ss -tan state established '( sport = :443 )'
+</code></pre>
+<p>The next change that I put in place was to drop the request if the IP didn't match the ones in the CloudFlare IP range (whereas before the change was looking for a CloudFlare specific header). Looking back as I write this, I'm not sure why the header method didn't work, but I was sure to add more petrol onto the fire:</p>
+<pre><code>geo $is_cloudflare {
+    default 0;
+
+    173.245.48.0/20    1;
+    103.21.244.0/22    1;
+    # etc
+}
+</code></pre>
+<p>This flags if the remote address is a CloudFlare IP, set the <code>$is_cloudflare=1</code>. Then in my server blocks:</p>
+<pre><code>server {
+    listen 443 ssl http2 default_server;
+    if ($is_cloudflare = 0) { return 444; }
+    if ($cf_valid = 0) { return 444; }
+
+    # rest of config unchanged
+}
+</code></pre>
+<p>What I didn't realise at this point, and took another 24 hours to figure out, is that the first CloudFlare nginx based change would say <em>&quot;if the IP is CloudFlare, then set the $remote_addr to the original request&quot;</em>. Then this code says <em>&quot;if the IP is NOT CloudFlare don't let them through&quot;</em>.</p>
+<p>It's a mess. Now I've got reports from people on github telling me they're still seeing <em>mostly</em> 520 errors, and finally I realise I can replicate by using a VPN because for some reason it was still working for me.</p>
+<p>There's two problems at this point:</p>
+<ol>
+<li>Traffic still coming in that isn't through CloudFlare that's causing a drain on resources</li>
+<li>Real users coming through CloudFlare are, mostly, not getting the site</li>
+</ol>
+<p>Pretty much the worst of both worlds.</p>
+<p>Finally, firewall rules spring to mind. Better late than never.</p>
+<h2>Dropping traffic</h2>
+<p>This was done on two fronts - just for <em>belt-and-braces</em> approach:</p>
+<ol>
+<li><code>ufw</code> (or as I knew it &quot;iptables&quot;) rules one the server to <code>DROP</code> or <code>ALLOW</code> traffic based on IP range</li>
+<li>AWS security policy to do the same.</li>
+</ol>
+<p>Running the rules for <code>ufw</code> was relatively simple. A matter of allowing all the known IP ranges, then denying everything else:</p>
+<pre><code class="language-shell">$ ufw allow from <span class="token number">173.245</span>.48.0/20 to any port <span class="token number">443</span>
+$ ufw allow from <span class="token number">103.21</span>.244.0/22 to any port <span class="token number">443</span>
+$ <span class="token comment"># etc</span>
+$ ufw deny <span class="token number">443</span>
+</code></pre>
+<p>Then repeated for port 80. I did get tripped up during testing when I wanted to allow my IP through, but that was solved with <code>ufw status numbered</code> and then <code>ufw delete N</code>.</p>
+<p>Adding all the IP ranges on AWS was not so simple. The web UI just doesn't allow for large changes - it's very, very clunky.</p>
+<p>Thankfully I could automate some of it from the <a href="https://aws.amazon.com/cli/">command line</a> and script the work. The annoying thing was that the AWS command line doesn't let me bulk modify (or at least I didn't find it) and each command takes a good few seconds to run <em>and</em> requires me to press enter after the response comes back saying it had worked.</p>
+<p>This was the command:</p>
+<pre><code class="language-sh"><span class="token keyword">for</span> <span class="token for-or-select variable">CIDR</span> <span class="token keyword">in</span> <span class="token punctuation">\</span>
+   <span class="token number">103.21</span>.244.0/22 <span class="token punctuation">\</span>
+   <span class="token number">103.22</span>.200.0/22 <span class="token punctuation">\</span>
+   <span class="token number">103.31</span>.4.0/22 <span class="token punctuation">\</span>
+   <span class="token comment"># etc</span>
+<span class="token keyword">do</span>
+   aws ec2 authorize-security-group-ingress --group-id <span class="token variable">$SG_ID</span> <span class="token parameter variable">--protocol</span> tcp <span class="token parameter variable">--port</span> <span class="token number">80</span>  <span class="token parameter variable">--cidr</span> <span class="token variable">$CIDR</span> <span class="token parameter variable">--region</span> us-east-1
+   aws ec2 authorize-security-group-ingress --group-id <span class="token variable">$SG_ID</span> <span class="token parameter variable">--protocol</span> tcp <span class="token parameter variable">--port</span> <span class="token number">443</span> <span class="token parameter variable">--cidr</span> <span class="token variable">$CIDR</span> <span class="token parameter variable">--region</span> us-east-1
+<span class="token keyword">done</span>
+</code></pre>
+<p>With those in place, finally the server was breathing again. However, those pesky CloudFlare 520s were still preventing people from visiting <a href="http://jsbin.com">jsbin.com</a> (except me…somehow…).</p>
+<h2>CloudFlare's 520</h2>
+<p>I naively thought 520 was like a 503 (the entire server is failing to respond to CloudFlare) or a 504 (gateway timeout - usually when node doesn't come back to nginx or CloudFlare), but it's not. It's more like <em>&quot;CloudFlare made a request and the response is incompatible&quot;</em>.</p>
+<p>The only real clue I had was that port 80, plain http wasn't affected. A <a href="https://github.com/jsbin/jsbin/issues/3583#issuecomment-3823361117">helpful comment from @robobuljan</a> showed that it was only the https version causing issues:</p>
+<pre><code class="language-sh">$ <span class="token function">curl</span> jsbin.com             <span class="token comment"># (works!)</span>
+$ <span class="token function">curl</span> http://jsbin.com      <span class="token comment"># (works!)</span>
+$ <span class="token function">curl</span> https://jsbin.com     <span class="token comment"># "error code: 520"</span>
+</code></pre>
+<p>Although this digging took most of the day, it was the part that the LLMs really couldn't help with (and I had thankfully set them aside whilst I chewed on the meat of this problem).</p>
+<p>As I looked for any clues. In the CloudFlare SSL/TLS page a section called &quot;Traffic Served Over TLS&quot; showed that there was a split in the supported TLS versions (I didn't capture a screenshot, but these numbers are from their API):</p>
+<ul>
+<li>TLSv1: 36 requests</li>
+<li>TLSv1.1: 56 requests</li>
+<li>TLSv1.2: 1,922,523 requests</li>
+<li><strong>TLSv1.3: 5,216,795 requests</strong></li>
+</ul>
+<p>That's a lot on TLSv1.3, but I wondered how old (or actually new) v1.3 was given how old my rickety machine was. So I went back to my nginx config and found this line, repeated against each server block that ran SSL:</p>
+<pre><code>ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+</code></pre>
+<p>A conspicuous lack of TLSv1.3, and I wondered what would happen if the user asked for 1.3, CloudFlare tottered off wanting 1.3 and then got back 1.2… or perhaps nothing at all.</p>
+<p>I first tried to add <code>TLSv1.3</code> to the list only for the <code>nginx -t</code> test to fail (the module wasn't installed and I couldn't get it without doing major upgrade work). So let's see if it can be turned off in CloudFlare.</p>
+<p>The short answer is yes, but I struggled to find it.</p>
+<p>The first place to confirm what's being support is the section under &quot;Speed, Settings&quot;. But to completely turn it off, it's located in &quot;SSL/TLS&quot; then &quot;Edge Certificates&quot; and towards the end of the page.</p>
+<p>Disabling this unlocked a lot more genuine traffic and we were cooking again. Almost, nearly. Again, for some, now the static assets weren't loading nor was the frame that actually live runs the authored code (the <code>null.jsbin.com</code> domain).</p>
+<h2>JS Bin was dropping some users</h2>
+<p>It took me a few more hours to solve this last step, and I'm still not entirely sure how it all hung together. But if you recall, earlier in my nginx config, I had told nginx that if the IP of the request was from CloudFlare that we should use <code>set_real_ip_from</code>.</p>
+<p>This specific command was writing the original IP of the requesting user into the <code>$remote_addr</code>, which is what nginx was now using to drop requests with the <code>return 444</code>. Somehow this wasn't in the main server block (the part that returns the index page), but was somehow in the <code>static.jsbin.com</code> and <code>null.jsbin.com</code>.</p>
+<p>This kind of confusion is the result of working late hours, and working in crisis mode. I should have known better and I'm great at dolling out advice but sometimes don't tend to heed it myself.</p>
+<p>After I finally removed the janky checks, IP swapping and quite a bit of the cruft that I had introduced with my pal ChatGPT, this let the last of the traffic come through correctly.</p>
+<p>JS Bin was back. Entirely.</p>
+<h2>The aftermath</h2>
+<p>Now that CloudFlare is in front of the server, life is surprisingly chill on this 1GB single CPU machine. Way more calm than a normal day of traffic. Look at that CPU usage!</p>
+<figure><img src="https://remysharp.com/images/jsbin-htop-2026.avif" alt="A screenshot of the &quot;htop&quot; program showing that the CPU is around 5% and memory usage is about 30% consumed" decoding="async"><figcaption>Just chilling out at an easy 4.6% CPU usage</figcaption></figure>
+<p>I suspect if I hadn't leant on the LLMs so much during the scream-face-the-server-is-down moments, I might have caught the complexity that I was adding. Though equally I should have put CloudFlare in front of JS Bin years ago - and not at a time of crisis.</p>
+<p>I definitely learnt a few gotchas, the TLS and 520 status codes are that for me.</p>
+<p>The traffic has eased out from the AWS CloudWatch logs and I believe CloudFlare is now bouncing a lot of that away from me - and it seems like a lot of that is coming from Hong Kong (which I've set to have a JavaScript based check to get through CloudFlare):</p>
+<figure><img src="https://remysharp.com/images/jsbin-hong-kong.avif" alt="" decoding="async"><figcaption>Hong Kong is so small in this map, you can't even see the deep blue of the chart</figcaption></figure>
+<p>Since I took that screenshot, Hong Kong has 10 million requests in the last 24 hours.</p>
+<p>Even though I don't think I'll ever really know what caused the amount of traffic that caused everything to fall over, my gut suspects scrapers for AI and LLMs just slurping up as much of the web it can. The only evidence I have <em>against</em> that theory is that the traffic didn't come from a single IP.</p>
+<p>Whereas, weirdly, I saw a <a href="https://bsky.app/profile/remysharp.com/post/3mb55uwp3vk2j">single IP bot scraping this blog</a>, accounting for over 3GB of data and over 325,000 requests in a matter of hours. Thankfully this was running on Netlify and is entirely static, and not running on node 7 🤦.</p>
+<p><em>Originally published on <a href="https://remysharp.com/2026/02/02/js-bin-down-in-2026">Remy Sharp's b:log</a></em></p>]]></content:encoded>
+    </item>
     <item>
       <title>Bytes I can delete after all this time [blog]</title>
       <guid isPermaLink="false">bytes-i-can-delete-after-all-this-time</guid>
@@ -282,7 +535,7 @@ Books by decade
 <p>And I'd really like to go to the cinema more. I miss the cinema. Maybe that'll be my thing in 2026 🤔</p>
 <p>If you made it this far, thanks. If you're Remy reading this from the future - I hope things are looking up.</p>
 <p>I'm now looking forward to reading your year-in-review blog posts, and I'll see you in The Future / 2026 💜</p>
-<p><img src="https://remysharp.com/images/family-2025.avif" alt="The family, growing up(wards)!"></p>
+<figure><img src="https://remysharp.com/images/family-2025.avif" alt="The family, growing up(wards)!" decoding="async"></figure>
 <p><em>Originally published on <a href="https://remysharp.com/2025/12/31/my-2025">Remy Sharp's b:log</a></em></p>]]></content:encoded>
     </item>
     <item>
@@ -538,7 +791,7 @@ So now as I sit writing this a full eight days later - sat on the side of the sw
 <p>Finally to close the event two talks from the vast spread of experience starting with <a href="https://2025.ffconf.org/surya">Surya</a> on the journey of 6 to 16 years old and coding. As our industry continues to exist, it's the young people who will breathe life into it, so I wanted to hear about Surya's experience (even if he is a bit of a black swan - making many of us old hats feel rather like underachievers!).</p>
 <p>Then to close, we (FFConf) were lucky to have <a href="https://2025.ffconf.org/sacha">Sacha Judd</a> (because she resides in New Zealand and it's a long old journey) filling our hearts with the joy of what the Good Internet is. Not just a nostalgic memory but alive today and just as weird as always.</p>
 <p>Here are all <a href="https://www.flickr.com/photos/remysharp/albums/72177720330509685/">the photos from FFConf 2025</a> if you'd like to see the lovely time people had.</p>
-<p><img src="https://remysharp.com/images/ffconf-2025.avif" alt="The people attending FFConf waving for the camera"></p>
+<figure><img src="https://remysharp.com/images/ffconf-2025.avif" alt="The people attending FFConf waving for the camera" decoding="async"></figure>
 <h2>Looking for meaning</h2>
 <p>The last few years of FFconf have been hard for me to put into context in a world that honestly frightens me. War. Genocide. Famine. Racism. Fascism. Hate. They're alive and well.</p>
 <p>Sometimes I think it's ridiculous to put on a web event when things outside are so hard on people. In part it feels like a horrible privilege to be able to sink my head down and listen to these amazing speakers.</p>
@@ -593,13 +846,13 @@ Note that you need the es6-string-html VS Code extension for this to highlight c
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>Seen here with VS Code's syntax highlighting - note that the template itself is just green, plain text:</p>
-<p><img src="https://remysharp.com/images/template-highlight-0.png.avif" alt="Although the JavaScript is highlighted, the string of markup applied to the innerHTML is all in green"></p>
+<figure><img src="https://remysharp.com/images/template-highlight-0.png.avif" alt="Although the JavaScript is highlighted, the string of markup applied to the innerHTML is all in green" decoding="async"></figure>
 <p>Using a tag function solves the main issue, but requires extra code or a <em>magic</em> build process which I really don't want or need - and look at that nasty red snake telling me I need to write more code:</p>
-<p><img src="https://remysharp.com/images/template-highlight-2.png.avif" alt="The syntax is nice and tidy now using a tag function, but my linting is highlighted that the html function is missing"></p>
+<figure><img src="https://remysharp.com/images/template-highlight-2.png.avif" alt="The syntax is nice and tidy now using a tag function, but my linting is highlighted that the html function is missing" decoding="async"></figure>
 <p>VS Code does support highlighting if you give it a hint using a comment: <code>/*html*/</code>, but prettier doesn't format it - close, but still no dice:</p>
-<p><img src="https://remysharp.com/images/template-highlight-1.png.avif" alt="The syntax is now fully colourised, but not structured in a way that's nice and easy to read"></p>
+<figure><img src="https://remysharp.com/images/template-highlight-1.png.avif" alt="The syntax is now fully colourised, but not structured in a way that's nice and easy to read" decoding="async"></figure>
 <p>Finally, if you get the comment syntax <em>exactly</em> right, that's uppercase and with spaces around the text, <code>/* HTML */</code>, then you'll get both highlighting and syntax tidy support without the need for build tools:</p>
-<p><img src="https://remysharp.com/images/template-highlight-3.png.avif" alt="The syntax is now fully colourised and it's tidy"></p>
+<figure><img src="https://remysharp.com/images/template-highlight-3.png.avif" alt="The syntax is now fully colourised and it's tidy" decoding="async"></figure>
 <p>I do have the VS Code option <code>&quot;prettier.embeddedLanguageFormatting&quot;: &quot;auto&quot;</code> in my settings, but if I've understood correctly, this should be the default for prettier and not required.</p>
 <p>A large hat tip to <a href="https://front-end.social/@zzzzBov/115535106033886819">Timothy Leverett on Mastodon</a> for helping me.</p>
 <p><em>Originally published on <a href="https://remysharp.com/2025/11/12/syntax-highlighting-in-web-component-templates">Remy Sharp's b:log</a></em></p>]]></content:encoded>
@@ -639,7 +892,7 @@ I think the vibes you came away with in the 2009 and 2010 events would be recogn
 <p>From the talks on the day, you won't learn how to add aria roles to a tabbing system, but you will learn how your junior developers are being affected by learning from LLMs spouting code at them. You won't learn what the latest additions to JavaScript syntax is, but you will learn how the latest technology has been used to exploit your privacy and the ethics of how developers' decisions landed them there.</p>
 <p>You won't learn what a blog post, a tiktok or chatgpt can give you. You'll come away inspired and fired up and (hopefully, usually!) excited to work. It's a hard one to measure, and hard to explain to a business &quot;what's the ROI?&quot;, but if we are happy, keen or even excited to work, then the ROI is <em>always</em> a net positive.</p>
 <p>So that's what FFConf is in 2025. It's an event chooses people over technology, that aims to inspire and motivate, and that champions a better web.</p>
-<p><img src="https://remysharp.com/images/combined-ffconf-group.avif" alt="The audience over the years, looking happy with their hands raised high"></p>
+<figure><img src="https://remysharp.com/images/combined-ffconf-group.avif" alt="The audience over the years, looking happy with their hands raised high" decoding="async"></figure>
 <p><em>Originally published on <a href="https://remysharp.com/2025/10/27/how-has-ffconf-changed-since-it-was-known-as-full-frontal">Remy Sharp's b:log</a></em></p>]]></content:encoded>
     </item>
     <item>
@@ -865,7 +1118,7 @@ The short version of what I want to say is: vibe coding seems to live very squar
 <h2>Robocop</h2>
 <p>Perhaps because I watched it when I was way too young to, but the original (1987) Robocop always pops into my mind when I think about unvetted coded going into a production level environment. Specifically Ed 209 being the prototype with the odd &quot;glitch&quot; (if you want an idea, here's a <a href="https://www.youtube.com/watch?v=TYsulVXpgYg">NSFW clip, heavy on the squibs</a>).</p>
 <p>Robocop however was the version of the machine that had a human at the core to consider the protocols and determine the outcomes.</p>
-<p><img src="https://remysharp.com/images/robocop.jpg" alt="Ed 209 with the words &quot;Vibe Coding&quot; above it, and Robocop with &quot;Human Experience&quot; above it"></p>
+<figure><img src="https://remysharp.com/images/robocop.jpg" alt="Ed 209 with the words &quot;Vibe Coding&quot; above it, and Robocop with &quot;Human Experience&quot; above it" decoding="async"></figure>
 <p>Without Ed 209, there would be no Robocop, and in the world of Robocop, Robocop is (apparently) a good thing for society (which, going by Robocop 3, has rather gone to shit).</p>
 <p>That's to say, in an analogy that I've rather stretched: prototypes entirely belong as part of the process.</p>
 <h2>Vibe coding for toys</h2>
@@ -901,7 +1154,7 @@ Here's how it's going so far. In short: not quite as well as I'd like.]]></descr
 <p>This is the app that will read the epub format (and most other e-book formats). A little frustrating that the Amazon purchased books are read using the original Kindle reader (they're the <a href="https://en.m.wikipedia.org/wiki/Kindle_File_Format">AZW3</a> ebook format - which has Amazon's DRM protection).</p>
 <p>The UI is…not entirely intuitive. I spent probably the course of a week messing around with different settings, losing where the menu options were, being unsure why there's two types of config panels and completely missing the pagination on the settings. Eventually I found that there's a &quot;Menu Search&quot; (in the right hand side hamburger menu in &quot;Help&quot;).</p>
 <p>There's some nice features for when the Kindle is turned off, besides having the book cover, I've got it set to show the cover, title, how long I've been reading it for and my current progress (search for &quot;wallpaper&quot;). I particularly like the &quot;book map&quot; feature (though, I can't say I visit often):</p>
-<p><img src="https://remysharp.com/images/koreader.jpg" alt="A complete map of the book, showing sections, chapters, progress and highlights I've made"></p>
+<figure><img src="https://remysharp.com/images/koreader.jpg" alt="A complete map of the book, showing sections, chapters, progress and highlights I've made" decoding="async"></figure>
 <h2>Getting ebooks / not giving money to Amazon</h2>
 <p>This is really the draw for me. The short version is: this is not straightforward in the slightest, and Amazon have done a pretty good job of making the user experience pretty smooth (I believe, but don't have personal experience, that a Kobo reader has a similar workflow).</p>
 <p>With Amazon, I can find the book I want using my phone, buy it, and sync my Kindle and it's ready to be read. I've managed to do this abroad even without wifi because I can hotspot my Kindle to my phone to pick up the new book.</p>
@@ -1021,7 +1274,7 @@ More recently &quot;vibe coding&quot; has me…wary.]]></description>
 <p>A number, that just didn't feel right at all. I already had a sense of where the result should be, and chatgpt gave me a number that was way too low.</p>
 <p>Intrigued, I decided to repeat the exact same request to a number of other models, including: Gemini, Claude, multiple OpenAI models, and a couple of offline models.</p>
 <p>All, except one got the wrong answer, each having wildly different values. They weren't just a bit off, they were simply wrong. Then the problem with <em>one</em> being right, unless you know the answer ahead of time, how do you tell?</p>
-<p><img src="https://remysharp.com/images/ai-counting.jpg" alt="Multiple LLMs showing different answers to the same question"></p>
+<figure><img src="https://remysharp.com/images/ai-counting.jpg" alt="Multiple LLMs showing different answers to the same question" decoding="async"></figure>
 <p>The actual answer took me a few minutes to code up and I trust my skills for a particularly simple task. But I didn't start by coding it myself because it took less than 30 seconds to describe the problem in written English, and I <em>thought</em> these are the kinds of tasks perfectly suited to LLMs.</p>
 <p>Perhaps if I had asked the LLM to write me a script, it would have had a better outcome, but they would require me then saving and running the script myself, which, sort of defeated the point of throwing the problem to the LLM.</p>
 <h2>Why does this concern me?</h2>
@@ -1218,7 +1471,7 @@ Since it's usually left on at night, I wanted to give the LEDs some smarts so wh
 <li>The control box is responsible for converting the signal from the IR sensor to a relay, if the relay is closed it then powers the LED driver</li>
 <li>The LED driver then lights up the cabinet</li>
 </ol>
-<p><img src="https://remysharp.com/images/cabinet_before.jpg" alt="The wiring before I got my hands on it"></p>
+<figure><img src="https://remysharp.com/images/cabinet_before.jpg" alt="The wiring before I got my hands on it" decoding="async"></figure>
 <p>I'd found that the voltage going to the IR sensor was 5V which was perfect for an ESP32 and I had planned to incept the IR sensor and then send signals to the control box to &quot;pretend&quot; hand movement was detected, and thus turn the lights off.</p>
 <p>That completely failed, and in the end I would connect to the output of the LED driver (which has stepped down to 12V) and add my own relay.</p>
 <h2>First though, here's the mistakes I made</h2>
@@ -1235,7 +1488,7 @@ Since it's usually left on at night, I wanted to give the LEDs some smarts so wh
 <p>After cleaning up the control box I decided that the only damage was my multimeter and the trace (which I had repaired with copious solder). I reinserted the control box, flipped the breaker only for it to immediately flip back down along with a bang (again) from the bathroom.</p>
 <p>The control box had obviously been damaged (and frankly I should have known better), but now it was <em>really</em> dead. Lots of soot like black around components that I don't particularly recognise.</p>
 <p>So now the cabinet lights are dead (well, the trigger mechanism) and it's coming to night time (since the electrics would be off for me to work on it, I'd be in the dark) - so the kids' night light was hosed for the next few nights.</p>
-<p><img src="https://remysharp.com/images/control_blown.jpg" alt="The control box completely blown"></p>
+<figure><img src="https://remysharp.com/images/control_blown.jpg" alt="The control box completely blown" decoding="async"></figure>
 <h3>4. Did I really make a better wheel?</h3>
 <p>Now this is the big mistake: I'm fairly sure I made this smart for the sake of making something smart, <em>not</em> because it would enhance things.</p>
 <p>I was stuck in this mess because I wanted to automate turning the light off at bedtime, but each night the process has been incredibly simple: right before I go to bed (and the kids are finally asleep), I lean into the bathroom, wave my hand, then carry on to bed.</p>
@@ -1244,11 +1497,11 @@ Since it's usually left on at night, I wanted to give the LEDs some smarts so wh
 <h2>The smart LED driver</h2>
 <p>Since I had blown the original control box beyond useful, I had to set my work on the output side of the LED driver.</p>
 <p>I reused the relay from the control box and use a transistor to turn the relay on (because the ESP32-C3 GPIO isn't 5V safe, and the relay needed 5V).</p>
-<p><img src="https://remysharp.com/images/cab_esp_wiring.jpg" alt="The ESP32 wiring"></p>
+<figure><img src="https://remysharp.com/images/cab_esp_wiring.jpg" alt="The ESP32 wiring" decoding="async"></figure>
 <p>This is what the schematic looks like (chatgpt suggested I include a flyback diode, which worked, but I really need to read up as to how and why - it's related to voltage spikes IIRC):</p>
-<p><img src="https://remysharp.com/images/smart-led-driver.png" alt="Smart LED driver schematic" class="bwimg"></p>
+<figure><img src="https://remysharp.com/images/smart-led-driver.png" alt="Smart LED driver schematic" class="bwimg" decoding="async"></figure>
 <p>I also have a heat sink on the back of the 12V regulator. Finally, when this booted up, it was able to control the lights - or rather specifically: I was able to turn the lights <em>on</em> again.</p>
-<p><img src="https://remysharp.com/images/cabinet_lights_up.jpg" alt="The lights are finally on"></p>
+<figure><img src="https://remysharp.com/images/cabinet_lights_up.jpg" alt="The lights are finally on" decoding="async"></figure>
 <p>The <a href="https://esphome.io">esphome</a> config revolves around this small snippet:</p>
 <pre><code class="language-yaml"><span class="token key atrule">light</span><span class="token punctuation">:</span>
   <span class="token punctuation">-</span> <span class="token key atrule">platform</span><span class="token punctuation">:</span> binary
@@ -1261,7 +1514,7 @@ Since it's usually left on at night, I wanted to give the LEDs some smarts so wh
     <span class="token key atrule">id</span><span class="token punctuation">:</span> cabinet_lights_output
 </code></pre>
 <p>It did then appear on my home assistant panel, and although the IR sensor is still disconnected, at least I can turn on the light (plus the littlest can use their Google Home voice thingy to turn the cabinet lights on too).</p>
-<p><img src="https://remysharp.com/images/ha-cabinet.png" alt="Home assistant showing me control over the cabinet lights"></p>
+<figure><img src="https://remysharp.com/images/ha-cabinet.png" alt="Home assistant showing me control over the cabinet lights" decoding="async"></figure>
 <p>What a palava.</p>
 <h2>What remains</h2>
 <p>I do need to restore the IR sensor because that's the primary way of interacting with the light.</p>
@@ -1414,7 +1667,7 @@ All was well until I realised the plug socket nearest the plants already had it'
 <p>The USB-C breakout boards with plugs attached tend to have a ~50K resistor tied to VCC. It needs to be removed, and a 5.1K resistor tied from ground to A5.</p>
 <h2>USB-C breakout boards</h2>
 <p>I was using these 4 pad USB-C breakouts since they're considerably easier to work with given the large solder pads for power and ground, <em>and</em> as I didn't need to use the data lines.</p>
-<p><img src="https://remysharp.com/images/usb-c-breakout.jpg" alt="USB-C breakout"></p>
+<figure><img src="https://remysharp.com/images/usb-c-breakout.jpg" alt="USB-C breakout" decoding="async"></figure>
 <p>I originally snipped off the end of the regular USB plug on the LED strip and then soldered on the new USB-C port. I did a short test injecting power via my bench supply and it appeared to work.</p>
 <p>When I did a <em>real</em> test by plugging it into my wall USB-C socket, absolutely nothing happened. I was quite confused (for a brief moment worried I had killed my socket - I hadn't).</p>
 <p>I also added a USB-C voltmeter between my new plug and the wall socket and it confirmed: zero volts being delivered.</p>
@@ -1423,10 +1676,10 @@ All was well until I realised the plug socket nearest the plants already had it'
 <p>This question and answer process is done through resistors, and possibly magic unicorns. Still, the <a href="https://www.usb.org/document-library/usb-type-cr-cable-and-connector-specification-release-24">specification is here</a> if you're interested.</p>
 <p>The USB-C breakout comes with a 56K resistor tied from A5 (CC) to VCC, which means it's originally suited to making a USB-C to USB 2.0 cable. Not what I need at all.</p>
 <p>To remedy this, the resistor is removed, and a 5.1K resistor is added tying A5 to ground. Thankfully the breakout board does have a preconfigured pads to make this relatively straight forward (both for SMD or THT soldering).</p>
-<p><img src="https://remysharp.com/images/usb-c-changed-resistor.jpg" alt="USB-C with new resistor"></p>
+<figure><img src="https://remysharp.com/images/usb-c-changed-resistor.jpg" alt="USB-C with new resistor" decoding="async"></figure>
 <p>My soldering was a bit crunchy, but the resistor is now correct and when plugged in, the device now correctly pulls 5V from the wall socket.</p>
 <p>The result, after sticking down the LED strip is now we've got some semi-fancy under plant lighting (which I promise you, looks better in real-life!):</p>
-<p><img src="https://remysharp.com/images/plant-led.jpg" alt="LED plant life"></p>
+<figure><img src="https://remysharp.com/images/plant-led.jpg" alt="LED plant life" decoding="async"></figure>
 <p><em>Originally published on <a href="https://remysharp.com/2025/02/24/upgrading-usb-powered-devices-to-usbc">Remy Sharp's b:log</a></em></p>]]></content:encoded>
     </item>
     <item>
@@ -1511,7 +1764,7 @@ However, this last weekend I discovered, so long as you have a smart meter, you 
 <p>Since the Bright is on the web, and there's an API that drives it (as seen in the network requests), there's now a way to get energy data into Home Assistant.</p>
 <h2>The integration</h2>
 <p>From here it's a matter of wiring up the software. The integration is available via HACS with the <a href="https://github.com/HandyHat/ha-hildebrandglow-dcc">install guide on github</a>, and a few clicks later I now have the daily running cost of both electricity <em>and</em> gas and the usage, which can help me make decisions about how we use the energy at home.</p>
-<p><img src="https://remysharp.com/images/hass-energy.png" alt="Visualisation of energy flow on Home Assistant"></p>
+<figure><img src="https://remysharp.com/images/hass-energy.png" alt="Visualisation of energy flow on Home Assistant" decoding="async"></figure>
 <p>Plus, it looks cool 🤓</p>
 <p>I know this is data for data's sake, but it's actually helped us to make a change at home, which should have a positive financial impact (I/we hope!). I have a glass infrared radiator in the office, which although is energy efficient, actually accounts for a fairly large whack of our daily electricity usage.</p>
 <p>Switching back to the gas heating (whilst <em>not</em> heating the entire floor) is what we're testing now and should make an impact on our bills.</p>
@@ -1630,9 +1883,9 @@ This fix isn't Speccy specific, it will fix missing content length for Apache 2 
 <p><strong>&lt;wrong-content&gt;</strong></p>
 <p>A note about debugging with browser tools: browsers are going to augment the &quot;raw&quot; request. Firstly you have caching in play (so fire up the privacy window and disable caching from the network panel), but also they show you how <em>they</em> interpreted the headers.</p>
 <p>This is Firefox for instance on <code>https://www.google.com</code>:</p>
-<p><img src="https://remysharp.com/images/firefox-headers.png" alt="Firefox GET request headers panel"></p>
+<figure><img src="https://remysharp.com/images/firefox-headers.png" alt="Firefox GET request headers panel" decoding="async"></figure>
 <p>Whereas if we tick that &quot;raw&quot; checkbox, we can see the <code>content-length</code> was never part of the headers:</p>
-<p><img src="https://remysharp.com/images/firefox-headers-raw.png" alt="Firefox raw headers"></p>
+<figure><img src="https://remysharp.com/images/firefox-headers-raw.png" alt="Firefox raw headers" decoding="async"></figure>
 <p>Chrome will also add the header (with no option for the original response) but show it as a content length of zero.</p>
 <p><strong>&lt;/wrong-content&gt;</strong></p>
 <hr>
@@ -1696,11 +1949,11 @@ So, with that bulge of joy, let's get on with it.]]></description>
 <p>You can read my <a href="https://remysharp.com/2024/11/30/ffconf-2024">own write up</a> (if you like). The lead up to the event was one of the hardest I've had since we created FFConf back in 2009 though. It really boils down to ticket sales and how the events market has definitely changed post-pandemic. For me, it felt like ticket sales were a constant concern from the date we launched on April 22nd all the way until November 8th - which is a <em>long</em> time (for me).</p>
 <p>We'll be running again in 2025, but we'll be more cognisant of how to sell and market tickets this time.</p>
 <p>Still, a wonderful day of hoomon interaction.</p>
-<p><img src="https://remysharp.com/images/ffconf-2024.jpg" alt="A view of the venue and attendees of FFConf"></p>
+<figure><img src="https://remysharp.com/images/ffconf-2024.jpg" alt="A view of the venue and attendees of FFConf" decoding="async"></figure>
 <h3>Hardware and hacking</h3>
 <p>I continue to enjoy breaking away from software and playing in the land of hardware. I do worry that I might be someone who quickly moves from &quot;hobby&quot; to hobby (I <em>still</em> have a pile of 10 or so Game Boys waiting to be fixed from over 18 months ago!).</p>
 <p>This year I tinkered with customising <a href="https://remysharp.com/2024/05/25/casio-f91w-modding">Casio F-91w watches</a> and have also created a number of my own custom PCBs, one of which takes a Game Boy CPU and outputs on HDMI (using a Raspberry Pico) and takes input from a USB joystick, the other is a Pokemon Mini custom flash cart (which is very, <em>very</em> in progress).</p>
-<p><img src="https://remysharp.com/images/pcbs-2024.jpg" alt="A selection of custom created PCBs"></p>
+<figure><img src="https://remysharp.com/images/pcbs-2024.jpg" alt="A selection of custom created PCBs" decoding="async"></figure>
 <h3>Home Assistant</h3>
 <p>During the school summer holidays, I had told the littlest that we could, in theory, create an automation for her curtains. We wanted to be able to say &quot;Hey Google, open my curtains&quot;. I knew how all the parts would work, it was just the connection from the hardware to the Google intent that I didn't know.</p>
 <p>Which is when I learnt Home Assistant, and boy was this a deep rabbit hole! The missing connection part I needed in my project turned out to be <a href="https://esphome.io/">esphome</a>. With the help of Home Assistant (which I had tried years ago but had quickly given up on, but in those years HA has massively improved), I was able to set up the whole curtain automation.</p>
@@ -1726,7 +1979,7 @@ So, with that bulge of joy, let's get on with it.]]></description>
 <p>I also need to keep an eye on my health. The pandemic did a number on my gym going, but lock down finished quite a while ago and it doesn't hold up that great as an excuse. I've been attending the gym, but it's the diet part that I've been rather slack about. I'm also hoping that this year I'll manage to get through the year without more of me breaking (or getting a diagnosis that tells me something else is crap), though I've got blood tests coming this coming week and I <em>know</em> there's some news on the end of that…</p>
 <p>All that aside, happy new year, and I hope you find some joy in 2025.</p>
 <p>We out 👋</p>
-<p><img src="https://remysharp.com/images/2024-sharps.jpg" alt="Sharp family in 2024"></p>
+<figure><img src="https://remysharp.com/images/2024-sharps.jpg" alt="Sharp family in 2024" decoding="async"></figure>
 <p><em>Originally published on <a href="https://remysharp.com/2024/12/31/my-2024">Remy Sharp's b:log</a></em></p>]]></content:encoded>
     </item>
     <item>
@@ -1756,14 +2009,14 @@ There are two parts this post breaks into: the day itself and the amazing talks,
       <content:encoded><![CDATA[
 <p>Our 16th year, 17th outing (it's complicated with doubles for 3 years and skipping the pandemic years…) completed two weeks ago, and it is high time I post my thoughts.</p>
 <p>There are two parts this post breaks into: the day itself and the amazing talks, and the lead up and its future.</p>
-<p><img src="https://remysharp.com/images/ffconf-2024/ppl.jpg" alt="People queuing to attend FFConf"></p>
+<figure><img src="https://remysharp.com/images/ffconf-2024/ppl.jpg" alt="People queuing to attend FFConf" decoding="async"></figure>
 <h2>The day</h2>
 <p>Due to my role up front and emceeing between the talks, quite often the actual day races by leaving me exhausted whilst I feel like all I did was sit and watch talks.</p>
 <p>I have to admit, with the (extremely) recent news of US elections plus the genocide being delivered to the Palestinians in Gaza (and our role in funding it), the thought of sitting and thinking about how to make the web better seemed awfully trivial.</p>
 <p>I can't remember who said it to me, but actually perhaps this is what we needed, a day of brief reprieve. A day to remember the good, to see how we might make a positive impact on the world. A day of being kind to ourselves.</p>
-<p><img src="https://remysharp.com/images/ffconf-2024/olu.jpg" alt=""></p>
+<figure><img src="https://remysharp.com/images/ffconf-2024/olu.jpg" alt="" decoding="async"></figure>
 <p><a href="https://olu.online/">Olu</a> started the day in a swiftly delivered talk on creating a better webs (plural). If I'm honest, I need to watch it back because it was rammed with content and the day was very full of inspiration. However I <em>do</em> remember that Olu gave me the overall impression that there <em>was</em> hope for the web, and for us, specifically it's amazing that we can, and have leart from shared efforts of people.</p>
-<p><img src="https://remysharp.com/images/ffconf-2024/leonie.jpg" alt=""></p>
+<figure><img src="https://remysharp.com/images/ffconf-2024/leonie.jpg" alt="" decoding="async"></figure>
 <p><a href="https://tink.uk/">Léonie</a> was next with accessibility, AI and the bollocks. Léonie prefix her talk with an incredibly important reminder, and context when it comes to AI:</p>
 <ol>
 <li>The content that powers these LLM has been stolen, and taken without permission from us. There was no payment or retribution.</li>
@@ -1774,21 +2027,21 @@ There are two parts this post breaks into: the day itself and the amazing talks,
 <p>The video will be released soon enough, and (with all the talks) I'd highly recommend watching it.</p>
 <p>Léonie importantly (and you'd probably guess from her title) moved on to so-called Accessibility Overlays and AI. The short version is that they don't work. The slightly longer version is that they don't work and a site using these could well be sued.</p>
 <p>I had this talk in mind for FFConf back in 2023, and really I could only think of Léonie for it, and as I had hoped and expected, she did an amazing job.</p>
-<p><img src="https://remysharp.com/images/ffconf-2024/andy.jpg" alt=""></p>
+<figure><img src="https://remysharp.com/images/ffconf-2024/andy.jpg" alt="" decoding="async"></figure>
 <p><a href="https://piccalil.li/">Andy Bell</a> then spoke around the topic of communication. It's far from rocket science but Andy does a brilliant job (whilst being entertaining) of comparing and contrasting terrible and lazy exchange with subtly tweaked and much more effective exchange.</p>
 <p>I'm sure we're all guilty of the examples that Andy pulled up as shit, and there's some really useful take aways for thinking about how to get what you (or I) really want out of the exchange.</p>
-<p><img src="https://remysharp.com/images/ffconf-2024/kimberley.jpg" alt=""></p>
+<figure><img src="https://remysharp.com/images/ffconf-2024/kimberley.jpg" alt="" decoding="async"></figure>
 <p>To close the first half of the day, <a href="https://builtby.kim/">Kimberley Cook</a>, director and trustee of Codebar, talked about the experience of building a community and the mistakes and learnings she experienced along to way to Codebar becoming 27,000 strong community.</p>
-<p><img src="https://remysharp.com/images/ffconf-2024/amy.jpg" alt=""></p>
+<figure><img src="https://remysharp.com/images/ffconf-2024/amy.jpg" alt="" decoding="async"></figure>
 <p><a href="https://amyhupe.co.uk/">Amy</a> started our second half. I'd seen Amy's talk at State of the Browser in 2023 entitled &quot;It all means nothing, in the end&quot; and I remember thinking at the time that I wanted to share this same message with my audience at FFConf. More importantly and personally the talk itself resonated so much with me.</p>
 <p>So when Amy reprised her talk for us at FFConf not only did it absolutely hit all the notes I had wanted, but she also updated it to include some of the bizarre fallout she was subjected to by random US religious nuts. Someone in the evening commented how there were moments that reminded them of Adam Buxton reading when <a href="https://www.youtube.com/watch?v=gx-WBaSNrTQ">reading out YouTube comments</a>!</p>
-<p><img src="https://remysharp.com/images/ffconf-2024/mike.jpg" alt=""></p>
+<figure><img src="https://remysharp.com/images/ffconf-2024/mike.jpg" alt="" decoding="async"></figure>
 <p><a href="https://www.skeptic.org.uk/author/mike-hall/">Mike Hall</a> was asked to help me understand how to think critically. Mike, with with his two co-hosts runs <a href="https://www.merseysideskeptics.org.uk/podcasts/skeptics-with-a-k">Skeptics with a K podcast</a> which meant he was perfectly placed for this talk.</p>
 <p>Mike started with a non-exhaustive list of biases and showed practical examples of how they work and how we can reframe our thinking whilst then applying it to a practical code example. I would have loved to dive into his brain to explore <em>all</em> the biases.</p>
-<p><img src="https://remysharp.com/images/ffconf-2024/michael.jpg" alt=""></p>
+<figure><img src="https://remysharp.com/images/ffconf-2024/michael.jpg" alt="" decoding="async"></figure>
 <p>Then into the last leg <a href="https://www.uxmichael.co/">Michael Kibedi</a> introduced the idea of death and technology. It's a really interesting topic that's not really considered very much in technology.</p>
 <p>The content is a little hard to put into words (particularly after two weeks), but even today, I read a product I was looking at offered &quot;lifetime cloud storage&quot; when the reality isn't that at all. More likely is that the product dies before I do, then what happens to that &quot;cloud&quot; storage?</p>
-<p><img src="https://remysharp.com/images/ffconf-2024/imran.jpg" alt=""></p>
+<figure><img src="https://remysharp.com/images/ffconf-2024/imran.jpg" alt="" decoding="async"></figure>
 <p>Finally, to close out our day, another talk that I had seen earlier on this year at the excellent <a href="https://heypresents.com/conferences">All Day Hey</a>: <a href="https://www.imranafzal.com">Imran Afzal</a> on <em>the art of reflection</em>.</p>
 <p>To me, one of the most valuable take aways from Imran's talk was taking the time to be still to reflect (though, it's possibly obvious from the title). I never really stop, not in work and not in my personal projects. Quite often it's the exact opposite, I keep piling more and more on perhaps to validate myself in some way.</p>
 <p>Although I curate the event around the idea of us (the attendees, myself included) as learning how to improve the world (and web) around us for others, Imran closed our day on a much more personal and important individual to ask to spend time with: ourselves. It's not about, for me, finding purpose, but finding space to take a breath.</p>
@@ -1796,50 +2049,8 @@ There are two parts this post breaks into: the day itself and the amazing talks,
 <p>I'm always absolutely blown away by the speakers and their talks each year. These eight individuals put a lot of time and effort into making the day what it came to be, and I'm always humbled and grateful.</p>
 <p>This wraps up <em>the day</em> part of my post. There is a second part to this post, but it's taken me a week to write this so far. It'll talk about the lead up and how the event space this year has been particularly hard on organisers. But, like I said, that's for another day.</p>
 <p>If you attended this year, thank you so much for your support!</p>
-<p><img src="https://remysharp.com/images/ffconf-2024/fam.jpg" alt="Remy and his family closing out FFConf"></p>
+<figure><img src="https://remysharp.com/images/ffconf-2024/fam.jpg" alt="Remy and his family closing out FFConf" decoding="async"></figure>
 <p><em>Originally published on <a href="https://remysharp.com/2024/11/30/ffconf-2024">Remy Sharp's b:log</a></em></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>The Answer Is No [book]</title>
-      <guid isPermaLink="false">the-answer-is-no</guid>
-      <link>https://remysharp.com/books/2024/the-answer-is-no</link>
-      <pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate>
-      <description><![CDATA[Brief, sadly, on all aspects.
-I knew this was a short read, and having come out of Frank Herbert's Dune at almost 900 pages, a nice little chomp down on a Backman book was exactly what I wanted.
-Except, frustratingly, I ended up feeling a little cheapened by this book. I've loved Backman's other books (that I've read) and it's the dry humour whilst seeing there's caring a love under every grumpy character that makes their books so appealing to me.
-This short story definitely tries to include that aspect, but the book is so short that it feels more like it's been stuffed full of lovely sentiment to the point where it's feels more trite than anything else.
-I do think it's simply the format that left this story down for me. The sentiment of the actual story is lovely (I appreciate there's no meat to my review here), but it just was blasted out of a cannon rather too quickly for my liking.]]></description>
-      <content:encoded><![CDATA[<p>Brief, sadly, on all aspects.</p>
-<p>I knew this was a short read, and having come out of Frank Herbert's Dune at almost 900 pages, a nice little chomp down on a Backman book was exactly what I wanted.</p>
-<p>Except, frustratingly, I ended up feeling a little cheapened by this book. I've loved Backman's other books (that I've read) and it's the dry humour whilst seeing there's caring a love under every grumpy character that makes their books so appealing to me.</p>
-<p>This short story definitely tries to include that aspect, but the book is so short that it feels more like it's been <em>stuffed</em> full of lovely sentiment to the point where it's feels more trite than anything else.</p>
-<p>I do think it's simply the format that left this story down for me. The sentiment of the actual story is lovely (I appreciate there's no meat to my review here), but it just was blasted out of a cannon rather too quickly for my liking.</p>
-<p><em>Originally published on <a href="https://remysharp.com/books/2024/the-answer-is-no">Remy Sharp's b:log</a></em></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Dune (Dune Chronicles, #1) [book]</title>
-      <guid isPermaLink="false">dune-dune-chronicles-1</guid>
-      <link>https://remysharp.com/books/2024/dune-dune-chronicles-1</link>
-      <pubDate>Sun, 24 Nov 2024 00:00:00 +0000</pubDate>
-      <description><![CDATA[Incredible world building, but I definitely felt the story lost me multiple times.
-I've watched Dune 1 and 2 before having read this book, so I had a distinct advantage that Denis Villeneuve's version was already in my head and gave me an (effective) leg up on the visualisation of the world that Herbert was building.
-Genunienly I found the world building and detail amazing, and even moreso the idea that this book was written in 1965 and that so many people had already fell in love with the book and world. That speaks, I think to the quality of the writing.
-The story (again with the advantage of having watched the films) for the first half was engaging.
-But then around the time in the book that wasn't translated to the screen, the scenes in which Jessica is becoming the Grand Mother, and Paul also drinks the Water of Life - he starts to trip out and I honestly lost the entire thread of the book at this point.
-I was stuck in a period where I wasn't sure if I was reading a description of a dream or if the book had jumped forward in time. It was also around the middle of the story, so it felt important to know whether it was &quot;reality&quot; or not!
-Eventually I just decided that I had misread somewhere along the lines and carried on with the book. I did feel like the 50-80% section of the story sagged quite heaverily and the story really slowed down. Possibly for even more world building, but by that point I was starting to find it hard to muster the motivation to read through a few more pages.
-I did enjoy the final section of the book, and the story definitely accellorated, but, just like the movie Dune, Part Two, the book ends like a car running full pelt into a brick wall. The story is moseying along and then it just sort of ends in a way like someone smashed the book out of my hand and told me I can't read any more.
-I've had lots of people tell me the sequels are great, and I don't doubt it, but I also like to read a book as a complete unit, and…well, the end, literally the last page definitely did not feel like the end of the book at all.]]></description>
-      <content:encoded><![CDATA[<p>Incredible world building, but I definitely felt the story lost me multiple times.</p>
-<p>I've watched Dune 1 and 2 before having read this book, so I had a distinct advantage that Denis Villeneuve's version was already in my head and gave me an (effective) leg up on the visualisation of the world that Herbert was building.</p>
-<p>Genunienly I found the world building and detail amazing, and even moreso the idea that this book was written in 1965 <em>and</em> that so many people had already fell in love with the book and world. That speaks, I think to the quality of the writing.</p>
-<p>The story (again with the advantage of having watched the films) for the first half was engaging.</p>
-<p>But then around the time in the book that wasn't translated to the screen, the scenes in which Jessica is becoming the Grand Mother, and Paul also drinks the Water of Life - he starts to trip out and I honestly lost the entire thread of the book at this point.</p>
-<p>I was stuck in a period where I wasn't sure if I was reading a description of a dream or if the book had jumped forward in time. It was also around the middle of the story, so it felt important to know whether it was &quot;reality&quot; or not!</p>
-<p>Eventually I just decided that I had misread somewhere along the lines and carried on with the book. I did feel like the 50-80% section of the story sagged quite heaverily and the story really slowed down. Possibly for <em>even</em> more world building, but by that point I was starting to find it hard to muster the motivation to read through a few more pages.</p>
-<p>I did enjoy the final section of the book, and the story definitely accellorated, but, just like the movie Dune, Part Two, the book ends like a car running full pelt into a brick wall. The story is moseying along and then it just sort of ends in a way like someone smashed the book out of my hand and told me I can't read any more.</p>
-<p>I've had lots of people tell me the sequels are great, and I don't doubt it, but I also like to read a book as a complete unit, and…well, the end, literally the last page definitely did not feel like the end of the book at all.</p>
-<p><em>Originally published on <a href="https://remysharp.com/books/2024/dune-dune-chronicles-1">Remy Sharp's b:log</a></em></p>]]></content:encoded>
     </item>
   </channel>
 </rss>

@@ -1,31 +1,35 @@
 const log = require('hexo-log')({ debug: false, silent: false });
 const { magenta } = require('chalk');
-const axios = require("axios");
+// const axios = require("axios");
 
+//26-02-08: Generator ... do not access the router directly
 hexo.extend.generator.register("wellknown-webfinger", async function() {
-  log.info("Generating File " + magenta(".well-known/webfinger"));
-
-  const config = this.config;
 
   if(hexo.status === "offline") { 
     log.error("NO NETWORK CONNECTION FOR WEBFINGER GENERATION");
     return null;
   }
 
-  let mastodonUrl = config.profiles.mastodon.split("@");
+  const _path = ".well-known/webfinger";
+
+  log.info("Generating File " + magenta(_path));
+
+  let mastodonUrl = hexo.config.profiles.mastodon.split("@");
   let mastodonServer = mastodonUrl[0];
   let mastodonHost = mastodonServer.replaceAll("/","").replace("https:", "");
   let mastodonUser = mastodonUrl[1];
 
-  const url = 
-    `${mastodonServer}.well-known/webfinger?resource=acct:${mastodonUser}@${mastodonHost}`;
+  const url = `${mastodonServer}${_path}?resource=acct:${mastodonUser}@${mastodonHost}`;
 
-  const _path = ".well-known/webfinger";
+  const response = await fetch(url);
+  const json = await response.json();
+  
+  return {
+    path: _path,
+    data: json
+  }
+});
 
-  axios.get(url).then(response => {
-    let json = response.data;
-    hexo.route.set(_path, json);
-  });
   //HACK: deactivated due to DNS problems @ 2025-07-02
   // let json = `
   // {
@@ -39,5 +43,4 @@ hexo.extend.generator.register("wellknown-webfinger", async function() {
   //   ]
   // }
   // `;
-  // hexo.route.set(_path, json);
-});
+

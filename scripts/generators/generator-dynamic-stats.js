@@ -35,5 +35,10 @@ hexo.extend.generator.register("dynamic-stats", async function(locals) {
     layout: "stats-links"
   });
 
+  result.push({
+    data: JSON.stringify(links.data.lists.hosts),
+    path: ".well-known/links"
+  });
+
   return result;
 });

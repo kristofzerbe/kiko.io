@@ -8,6 +8,25 @@
     <description>Maker of web things, blogger, podcaster, and pizzaiolo. Cat dad and human dad.</description>
     <language>en-gb</language>
       <item>
+        <title>Forgejo Support for EchoFeed</title>
+        <link>https://rknight.me/blog/forgejo-support-for-echofeed/</link>
+        <description>&lt;p&gt;I&#39;ve just merged in support for &lt;a href=&quot;https://forgejo.org&quot;&gt;Forgejo&lt;/a&gt; to EchoFeed. Forgejo is a &amp;quot;&lt;em&gt;self-hosted lightweight software forge&lt;/em&gt;&amp;quot; aka &amp;quot;We have GitHub at home&amp;quot;&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;. &lt;a href=&quot;https://neatnik.net&quot;&gt;Adam&lt;/a&gt; is &lt;a href=&quot;https://source.tube&quot;&gt;running an instance&lt;/a&gt; as part of &lt;a href=&quot;https://omg.lol&quot;&gt;omg.lol&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It works the same at the GitHub integration with one exception: no OAuth. Forgejo can exist on any domain, like Mastodon, but it doesn&#39;t allow for creating applications (like EchoFeed) on-the-fly. Instead, it uses access tokens which isn&#39;t as convenient but I didn&#39;t want to create applications on every instance someone might want to use. Here&#39;s a screenshot of the required permissions but &lt;a href=&quot;https://help.echofeed.app/services/#foregjo&quot;&gt;check the docs&lt;/a&gt; for the details on setting the right permissions.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&quot;https://cdn.rknight.me/echofeed/forgejo-access-token-settings.jpg&quot; alt=&quot;Forgejo settings required for EchoFeed&quot; /&gt;&lt;/figure&gt;
+&lt;p&gt;Forgejo support is available to everyone right now.&lt;/p&gt;
+&lt;hr class=&quot;footnotes-sep&quot; /&gt;
+&lt;section class=&quot;footnotes&quot;&gt;
+&lt;ol class=&quot;footnotes-list&quot;&gt;
+&lt;li id=&quot;fn1&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;I don&#39;t intend this to be mean but the uncanny valley of how close the UI is to GitHub is hard to miss &lt;a href=&quot;#fnref1&quot; class=&quot;footnote-backref&quot;&gt;&amp;#10558;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+        <pubDate>Wed, 04 Feb 2026 12:38:55 +0000</pubDate>
+        <dc:creator>Robb Knight</dc:creator>
+        <guid>https://rknight.me/blog/forgejo-support-for-echofeed/</guid>
+      </item>
+      <item>
         <title>Now (January 2026)</title>
         <link>https://rknight.me/blog/now-january-2026/</link>
         <description>&lt;p&gt;My last now update was &lt;a href=&quot;https://rknight.me/blog/now-november-2025/&quot;&gt;November&lt;/a&gt; and I was hunting for a pink ink. I &lt;a href=&quot;https://rknight.me/blog/hunting-for-the-hottest-pink-ink/&quot;&gt;found it&lt;/a&gt; and I&#39;ve been using it constantly since then.&lt;/p&gt;
@@ -1109,52 +1128,5 @@ pens&lt;/p&gt;
         <pubDate>Thu, 19 Jun 2025 19:51:26 +0000</pubDate>
         <dc:creator>Robb Knight</dc:creator>
         <guid>https://rknight.me/blog/the-rickies-trmnl-plugin/</guid>
-      </item>
-      <item>
-        <title>Self-Hosted Podcast Solutions and Also Apple Can Suck a Big One</title>
-        <link>https://rknight.me/blog/selfhosted-podcast-solutions-and-also-apple-can-suck-a-big-one/</link>
-        <description>&lt;p&gt;Yesterday I &lt;a href=&quot;https://rknight.me/notes/202506171340/&quot;&gt;asked&lt;/a&gt; if anyone knew of an iOS podcast app that also had a self-hostable backend or one with a sanctioned API. I have two requirements I&#39;m interested in:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;A decent podcast experience. This is the &amp;quot;easy&amp;quot; bit. I want to subscribe, download new episodes, and listen to them.&lt;/li&gt;
-&lt;li&gt;An API to access my listening history. I&#39;m doing this in a horrible way right now with Overcast, I would much prefer a proper API.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;I got multiple suggestions which came down to two options: &lt;a href=&quot;https://www.plex.tv&quot;&gt;Plex&lt;/a&gt; with &lt;a href=&quot;https://apps.apple.com/app/id1459223267&quot;&gt;Prologue&lt;/a&gt; and &lt;a href=&quot;https://www.audiobookshelf.org&quot;&gt;audiobookshelf&lt;/a&gt; with either &lt;a href=&quot;https://apps.apple.com/us/app/shelfplayer/id6475221163&quot;&gt;one&lt;/a&gt; &lt;a href=&quot;https://apps.apple.com/us/app/plappa/id6475201956&quot;&gt;of&lt;/a&gt; &lt;a href=&quot;https://apps.apple.com/in/app/soundleaf/id6738635634&quot;&gt;three&lt;/a&gt; third party apps&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
-&lt;p&gt;Forgive me this sidebar about iOS web apps but this is usually a thing I would solve myself with a backend and a nice frontend built exactly as I want. I &lt;em&gt;could&lt;/em&gt; do that, except I need to download podcast episodes offline which you can&#39;t reliably do with webapps on iOS. From the &lt;a href=&quot;https://github.com/podrain/podrain?tab=readme-ov-file#note-about-ios&quot;&gt;Podrain&lt;/a&gt; readme:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;iOS doesn&#39;t have enough storage for for downloading the audio files for offline listening&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I dug a bit deeper on this and came across &lt;a href=&quot;https://www.tigren.com/blog/progressive-web-app-limitations/&quot;&gt;this post on Tigren&lt;/a&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Safari imposes a 50MB limit on cache storage for PWAs. This means your app can only store up to 50MB of data before hitting a hard stop, at which point you’ll be prompted to free up space.&lt;/p&gt;
-&lt;p&gt;While local storage and IndexedDB might seem like alternatives, they come with their own quirks. Some sources suggest that IndexedDB might allow for more storage—up to 500MB or more, depending on the device’s available free disk space.&lt;/p&gt;
-&lt;p&gt;However, this isn’t consistent, so developers need to test and verify the limits for their specific use cases.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;That last sentence does not &lt;s&gt;spark joy&lt;/s&gt; fill me with confidence. Apple have no incentive to make web apps better so I&#39;m not holding out hope. Also, I absolutely will not jump through the hoops to make an iOS app, submit it, hope Apple keeps it there, and pay $100 a year for the privilege.&lt;/p&gt;
-&lt;p&gt;So I need to rely on an existing iOS app and backend. I installed audiobookshelf on &lt;a href=&quot;https://7622.me&quot;&gt;my Coolify instance&lt;/a&gt; after working out &lt;a href=&quot;https://github.com/coollabsio/coolify/issues/5992&quot;&gt;there&#39;s a bug with the latest version&lt;/a&gt;. I subscribed to a couple of podcasts and downloaded the latest episodes.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://cdn.rknight.me/site/2025/audiobookshelf.jpg&quot; alt=&quot;The audiobookshelf interface showing two podcasts - The Lonely Island and Ruminate&quot; /&gt;&lt;figcaption&gt;The audiobookshelf interface&lt;/figcaption&gt;&lt;/figure&gt;
-&lt;p&gt;My first note was that to have an episode available it has to be downloaded. It makes sense in the context of what audiobookshelf is but it&#39;s not usually how dedicated podcast apps work — &lt;a href=&quot;https://overcast.fm&quot;&gt;Overcast&lt;/a&gt; doesn&#39;t download every episode to it&#39;s server only for it to be served up to a mobile app. Along with this downloading requirement comes another issue — to have a history of what I&#39;ve listened to, I need to keep them downloaded.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If you want to keep track of what episodes you have listened to but still delete the files, you will need to track this progress using an external utility.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;If I was going to build a very basic podcast backend, I would store the following:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Every episode that has been fetched - by &amp;quot;fetched&amp;quot; I mean new episodes since I subscribed, or ones I manually downloaded to whatever app I&#39;m using. I would not download the episodes themselves&lt;/li&gt;
-&lt;li&gt;Store the state on each episode - &lt;code&gt;played&lt;/code&gt;, &lt;code&gt;inprogress&lt;/code&gt;, &lt;code&gt;unplayed&lt;/code&gt;, maybe some others&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;What occurred to me while using audiobookshelf is it (and the other suggestion of Plex) is designed to be a &lt;em&gt;library&lt;/em&gt; of audio books and podcasts but in most cases&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn2&quot; id=&quot;fnref2&quot;&gt;[2]&lt;/a&gt;&lt;/sup&gt; I don&#39;t need a full archive of every episode of a show. I just want to listen and then disregard the file — but I still care that I listened to it.&lt;/p&gt;
-&lt;p&gt;I tried out &lt;a href=&quot;https://apps.apple.com/us/app/plappa/id6475201956&quot;&gt;Plappa&lt;/a&gt; and &lt;a href=&quot;https://apps.apple.com/in/app/soundleaf/id6738635634&quot;&gt;SoundLeaf&lt;/a&gt; and they&#39;re both solid apps but I didn&#39;t go any further because of the downloading situation. I don&#39;t want, or need, an ever-expanding podcast library just for the sake of keeping my listening history. I might have another look at &lt;a href=&quot;https://pocketcasts.com&quot;&gt;Pocketcasts&lt;/a&gt; because I have a grandfathered lifetime membership and &lt;a href=&quot;https://www.mikestreety.co.uk/blog/get-your-pocket-casts-data-using-the-unofficial-api-and-php/&quot;&gt;they have an API&lt;/a&gt;, albeit not &amp;quot;official&amp;quot;.&lt;/p&gt;
-&lt;hr class=&quot;footnotes-sep&quot; /&gt;
-&lt;section class=&quot;footnotes&quot;&gt;
-&lt;ol class=&quot;footnotes-list&quot;&gt;
-&lt;li id=&quot;fn1&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;There is a first party app but it&#39;s in beta only and Apple don&#39;t allow just installing any app I want plus they call it &amp;quot;sideloading&amp;quot; instead of &amp;quot;installing&amp;quot; to make it sound scary &lt;a href=&quot;#fnref1&quot; class=&quot;footnote-backref&quot;&gt;&amp;#10558;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&quot;fn2&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;There are &lt;a href=&quot;https://relay.fm/bionic&quot;&gt;some&lt;/a&gt; &lt;a href=&quot;https://hellointernet.fm&quot;&gt;exceptions&lt;/a&gt; &lt;a href=&quot;#fnref2&quot; class=&quot;footnote-backref&quot;&gt;&amp;#10558;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;
-</description>
-        <pubDate>Wed, 18 Jun 2025 12:19:38 +0000</pubDate>
-        <dc:creator>Robb Knight</dc:creator>
-        <guid>https://rknight.me/blog/selfhosted-podcast-solutions-and-also-apple-can-suck-a-big-one/</guid>
       </item></channel>
 </rss>
