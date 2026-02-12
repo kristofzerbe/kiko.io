@@ -1,7 +1,11 @@
 const log = require('hexo-log')({ debug: false, silent: false });
 const { magenta } = require('chalk');
 const path = require('path');
+const fs = require("hexo-fs");
+const handlebars = require("handlebars");
 const { getMD, logobj } = require("../../lib/tools.cjs");
+
+const _rootDir = hexo.source_dir.replace("source", "");
 
 const StatsCollector = require("../../lib/stats-collector.cjs").StatsCollector;
 
@@ -37,7 +41,17 @@ hexo.extend.generator.register("dynamic-stats", async function(locals) {
 
   result.push({
     data: JSON.stringify(links.data.lists.hosts),
-    path: ".well-known/links"
+    path: ".well-known/links.json"
+  });
+
+  const linksTemplate = path.join(_rootDir, hexo.config.template_dir, "well-known-links.handlebars");
+  const linksSource = fs.readFileSync(linksTemplate).toString('utf8');
+  const linksRedirect = handlebars.compile(linksSource);
+  const linksResult = linksRedirect();
+
+  result.push({
+    path: ".well-known/links/index.html",
+    data: linksResult
   });
 
   return result;
