@@ -39,19 +39,20 @@ hexo.extend.generator.register("dynamic-stats", async function(locals) {
     layout: "stats-links"
   });
 
+  let jsonUrl = ".well-known/links.json";
   result.push({
     data: JSON.stringify(links.data.lists.hosts),
-    path: ".well-known/links.json"
+    path: jsonUrl
   });
 
-  const linksTemplate = path.join(_rootDir, hexo.config.template_dir, "well-known-links.handlebars");
+  const linksTemplate = path.join(_rootDir, hexo.config.template_dir, "redirect.handlebars");
   const linksSource = fs.readFileSync(linksTemplate).toString('utf8');
   const linksRedirect = handlebars.compile(linksSource);
-  const linksResult = linksRedirect();
+  const linksResult = linksRedirect({ url: jsonUrl });
 
   result.push({
-    path: ".well-known/links/index.html",
-    data: linksResult
+    data: linksResult,
+    path: ".well-known/links/index.html"
   });
 
   return result;
