@@ -6,12 +6,11 @@ date: 2026-02-18T06:21:22+01:00
 type: link
 rel:
   verb: bookmark-of
-  caption: "{{VALUE:linkTitle}}"
-  url:
-    "{ VALUE:linkUrl }":
+  caption: I miss thinking hard.
+  url: https://www.jernesto.com/articles/thinking_hard
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/116090049082234964
 ---
 This text accurately reflects the main problem with AI: We are gradually losing our cognitive abilities, because we are ceasing to train our  biggest muscle: the brain.
 
