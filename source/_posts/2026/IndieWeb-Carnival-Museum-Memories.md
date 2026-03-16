@@ -27,10 +27,10 @@ syndication:
   - host: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/30
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/116240678591725153
 ---
 
-It seems like fate that [James](https://jamesg.blog/) chose [Museum Memories](https://jamesg.blog/2026/03/01/indieweb-carnival-museum-memories) of this month's [Indieweb Carnival](https://indieweb.org/IndieWeb_Carnival), because just recently, by chance, I visited one of the most impressive places from my childhood after more than 40 years: the **Deutsches Museum in Munich**. My wife and I had traveled to the Bavarian capital for a [rock concert by the band Alter Bridge](/post/Alter-Bridge-Deutsches-Museum-Munich-2026-02-20/) and actually planned to spend the rest of the weekend enjoying the city's atmosphere, but as February in Germany sometimes goes, the weather was, to put it mildly, lousy, and my wife came up with the idea of going to the museum.
+It seems like fate that [James](https://jamesg.blog/) chose [Museum Memories](https://jamesg.blog/2026/03/01/indieweb-carnival-museum-memories) as topic of this month's [Indieweb Carnival](https://indieweb.org/IndieWeb_Carnival), because just recently, by chance, I visited one of the most impressive places from my childhood after more than 40 years: the **Deutsches Museum in Munich**. My wife and I had traveled to the Bavarian capital for a [rock concert by the band Alter Bridge](/post/Alter-Bridge-Deutsches-Museum-Munich-2026-02-20/) and actually planned to spend the rest of the weekend enjoying the city's atmosphere, but as February in Germany sometimes goes, the weather was, to put it mildly, lousy, and my wife came up with the idea of going to the museum.
 
 <!-- more -->
 
