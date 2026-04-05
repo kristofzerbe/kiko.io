@@ -3,7 +3,6 @@ hidden: true
 isLocale: true
 permalink: post/Stickers/de
 #--------------------------------------------------
-slug: Stickers
 title: Stickers
 subtitle: ... und jede Menge Unsinn
 date: 2026-04-05 18:29:20

@@ -1,4 +1,6 @@
 ---
+hasLocale: true
+#--------------------------------------------------
 slug: Stickers
 title: Stickers
 subtitle: ... and a whole lot of nonsense
