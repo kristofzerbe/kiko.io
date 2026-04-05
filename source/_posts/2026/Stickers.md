@@ -23,12 +23,12 @@ bandcamp:
   track: Cosmic Blues For Solitary Moose|3925283450
 syndication:
   - host: GitHub
-    url: null
+    url: https://github.com/kristofzerbe/kiko.io/issues/31
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/116353382492791327
 ---
 
-I'm 57 and currently hooked on stickers, and AI isn't entirely innocent in this, combined with a bit of a guilty conscience - but it's a lot of fun.
+I'm 57 and currently hooked on stickers, and [AI](/ai) isn't entirely innocent in this, combined with a bit of a guilty conscience - but it's a lot of fun.
 
 I recently "retired" my old business laptop after just two short years, with a battery life of 28 minutes after a full charge, and somehow I felt sorry, because the best thing about that otherwise junk of a Dell laptop was the lid with the stickers (see header image). Everything started with the "truck" in the middle, which ended up on my desk one day and seemed to be yelling, "Stick me on your laptop!"
 
