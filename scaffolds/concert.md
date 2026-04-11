@@ -29,8 +29,8 @@ syndication:
 
 <!-- more -->
 
-{% image_masonry
-  "file|title"
+{% photo_masonry
+  "file"
 %}
 
 {% peertube "clip.place" "ID" "PXL_" %}
