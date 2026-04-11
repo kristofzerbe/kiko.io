@@ -19,7 +19,7 @@ syndication:
   - host: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/32
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/116385979269508421
   - host: PeerTube
     url: https://clip.place/w/a7D6xo4V3rzNdSeEosGjRV
   - host: PeerTube
