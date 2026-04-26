@@ -1132,7 +1132,7 @@
   text-decoration-color: #000;
   background-image: var(--brand-github);
   background-size: 16px;
-  background-position: 0 8px;
+  background-position: 1px 8px;
 }
 [data-theme=dark] #syndication-wrapper a.syndication-link.host-github {
   filter: invert(1);
@@ -1187,7 +1187,7 @@
   text-decoration-color: var(--color-mastodon);
   background-image: var(--brand-mastodon);
   background-size: 16px;
-  background-position: 0 9px;
+  background-position: 2px 9px;
 }
 
 #syndication-wrapper a.syndication-link.host-indienews {
@@ -1195,10 +1195,21 @@
   text-decoration-color: var(--color-indienews);
   background-image: var(--brand-indienews);
   background-size: 20px;
-  background-position: 0 7px;
+  background-position: 1px 7px;
 }
 #syndication-wrapper a.syndication-link.host-indienews span {
   padding-left: 3px;
+}
+
+#syndication-wrapper a.syndication-link.host-bubbles {
+  color: var(--color-bubbles);
+  text-decoration-color: var(--color-bubbles);
+  background-image: var(--brand-bubbles);
+  background-size: 18px;
+  background-position: 2px 8px;
+}
+#syndication-wrapper a.syndication-link.host-bubbles span {
+  padding-left: 2px;
 }
 
 #syndication-wrapper a.syndication-link.host-devto {
@@ -1561,6 +1572,15 @@
 [data-theme=dark] #interactions .avatar.origin-peertube:after,
 [data-theme=dark] #interactions .interaction.origin-peertube .author:before {
   background-image: var(--brand-peertube);
+}
+
+#interactions .avatar.origin-bubbles:after,
+#interactions .interaction.origin-bubbles .author:before {
+  background-image: var(--brand-bubbles);
+}
+[data-theme=dark] #interactions .avatar.origin-bubbles:after,
+[data-theme=dark] #interactions .interaction.origin-bubbles .author:before {
+  background-image: var(--brand-bubbles);
 }
 
 /* Extra: Related -------------------------------------- */

@@ -7,6 +7,17 @@
   let synLemmy = syndications?.filter(s => s.host.toLowerCase() === "lemmy");
   let synVernissage = syndications?.filter(s => s.host.toLowerCase() === "vernissage");
   let synPeertube = syndications?.filter(s => s.host.toLowerCase() === "peertube");
+  let synBubbles = syndications?.filter(s => s.host.toLowerCase() === "bubbles");
+%>
+<%#
+// Determine async, if the post is syndicated to Bubbles 
+  // >>> DOESN'T WORK, BECAUSE OF THE RATE LIMIT: 60 Requests/Minute/IP
+  // const bubblesRequest = async () => {
+  //     const response = await fetch("https://bubbles.town/api/resolve?url=" + url_for(post.path));
+  //     const json = await response.json();
+  //     console.log(json);
+  // }
+  // bubblesRequest();
 %>
 
 <div id="webmention" class="article-extra" data-pagefind-ignore>
@@ -77,6 +88,7 @@
   <% if (synLemmy?.length > 0) { %><%- js('js/mentions-united-provider_lemmy.js'); %><% } %>
   <% if (synVernissage?.length > 0) { %><%- js('js/mentions-united-provider_vernissage.js'); %><% } %>
   <% if (synPeertube?.length > 0) { %><%- js('js/mentions-united-provider_peertube.js'); %><% } %>
+  <% if (synBubbles?.length > 0) { %><%- js('js/mentions-united-provider_bubbles.js'); %><% } %>
 
   <script>
     window.addEventListener('load', function () {
@@ -166,6 +178,12 @@
         syndicationTitle: "<%- syn.title %>"
       }));
       <% }); %>
+
+      <% synBubbles?.forEach(syn => { %>
+      mentionsUnited.register(new MentionsUnitedProvider_Bubbles({ 
+        syndicationUrl: "<%- syn.url %>"
+      }));
+      <% }); %>      
 
       mentionsUnited.load()
         .then(() => { 

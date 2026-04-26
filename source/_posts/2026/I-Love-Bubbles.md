@@ -23,10 +23,12 @@ bandcamp:
 syndication:
   - host: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/33
-  - host: IndieNews
-    url: https://news.indieweb.org/en/kiko.io/post/I-Love-Bubbles
   - host: Mastodon
     url: https://indieweb.social/@kiko/116431167065441060
+  - host: IndieNews
+    url: https://news.indieweb.org/en/kiko.io/post/I-Love-Bubbles
+  - host: Bubbles
+    url: https://bubbles.town/entry/114467
 ---
 
 Any new way of interconnecting websites and users on the [IndieWeb](https://indieweb.org/) is not only welcome but also vital for a stable counterbalance to Big Tech's shitty walled gardens. Yesterday I stumbled across a really good and new one, that integrates also the Fediverse: **[Bubbles](https://bubbles.town/)** from [Ben](https://troet.cafe/@viermalbe).
