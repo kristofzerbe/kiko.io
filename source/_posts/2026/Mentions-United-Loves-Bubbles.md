@@ -26,18 +26,18 @@ syndication:
   - host: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/34
   - host: Bubbles
-    url: null
+    url: https://bubbles.town/entry/142718
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/116489125568035255
   - host: IndieNews
-    url: https://news.indieweb.org/en
+    url: https://news.indieweb.org/en/kiko.io/post/Mentions-United-Loves-Bubbles/
 ---
 
 As I wrote recently, [I Love Bubbles](/post/I-Love-Bubbles). The new blog post aggregator (based on the RSS feeds of a curated list of blogs) has become part of my morning routine: making coffee, browsing my blogroll, opening [**Bubbles**](https://bubbles.town), and discovering new posts from blogs I've never heard of before — though that's about to change ;)
 
 Since my blog is also included in Bubbles' list — and I imagine others are in the same boat — I suspect the reach of my posts will increase somewhat. Previously, I could only achieve this by manually syndicating my posts, primarily on Mastodon and IndieNews, and my photos on Vernissage and Pixelfed.
 
-Now Bubbles helps me on that, by autmatically syndicating its entry to its own GoToSocial instance in the Fediverse. And of course, I'm interested in bringing the interactions with my post, that accumulate there, back to my site, just as I already do with the other platforms through my [**Mentions United**](/projects/mentions-united/) project. That's why there's now a new [Bubbles plugin](/projects/mentions-united/) ...
+Now Bubbles helps me on that, by automatically syndicating its entry to its own GoToSocial instance in the Fediverse. And of course, I'm interested in bringing the interactions with my post, that accumulate there, back to my site, just as I already do with the other platforms through my [**Mentions United**](/projects/mentions-united/) project. That's why there's now a new [Bubbles plugin](/projects/mentions-united/) ...
 
 <!-- more -->
 

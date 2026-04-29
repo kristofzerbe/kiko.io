@@ -1,0 +1,46 @@
+---
+slug: {{{key}}}
+title: "{{{title}}}"
+subtitle:
+date: {{{date}}}
+photograph:
+  file: {{{photograph.file}}}
+  name: {{{photograph.name}}}
+  socialmedia: /static/images/social-media/{{{key}}}.jpg
+series: Link Journal
+categories:
+  - Collection
+tags:
+  - xxx
+related:
+  - Link-Journal-26-xx
+  - Link-Journal-26-yy
+  - Link-Journal-26-zz
+syndication:
+  - host: Mastodon
+    url: 
+---
+
+Every month
+
+<!-- more -->
+
+{{#each items}}
+{% discovery "{{{title}}}" "{{{author}}}" "{{{cardlink.url}}}" {{{../key}}} key:{{{key}}} %}
+{{{content}}}
+{% enddiscovery %}
+
+<div data-key="{{{key}}}">
+  <a class="favicon" href="{{{url}}}"><img src="{{{favicon}}}"/></a>
+  <h2 class="title">
+    <a href="{{{url}}}">{{{title}}}</a>
+  </h2>
+  <a class="link" href="{{{url}}}">{{{host}}}</a>
+  <ul class="tags">
+    <li></li>
+  </ul>
+  <p class="description">{{{description}}}</p>
+  <p class="content"></p>
+</div>
+
+{{/each}}
