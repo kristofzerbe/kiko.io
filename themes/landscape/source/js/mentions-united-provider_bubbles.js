@@ -8,7 +8,7 @@
  * @version 1.0.0
  * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub} 
  * 
- * API Documentation: https://bubbles.town/api + https://docs.gotosocial.org/en/latest/
+ * API Documentation: https://bubbles.town/api
  * 
  * Options:
  *  - {String} syndicationUrl = Full URL of the syndicated post on Bubbles
@@ -23,9 +23,7 @@
  * 
  * Remarks:
  *  - bubbles.town has votes (LIKES) for a post and social.bubbles.town all other interactions
- *  - social.bubbles.town (GoToSocial instance) needs an READ-ONLY API token to access the interactions.
- *    
- *    TODO ...
+ *    which are accessible via an API bridge provided by bubbles.town
  */
 class MentionsUnitedProvider_Bubbles extends MentionsUnited.Provider {
   key = "Bubbles"; // must be unique across all provider plugins for registration
@@ -69,7 +67,7 @@ class MentionsUnitedProvider_Bubbles extends MentionsUnited.Provider {
     const entryDataBubbles = Array(this.votes).fill(0).map(e => ({  
       url: this.options.syndicationUrl,
       id: this.entryId,
-      author: "Anonymous",
+      display_name: "Anonymous",
       avatar: `https://api.dicebear.com/9.x/glass/svg?seed=${this.#getseed(5)}&&backgroundColor=3a8a7f&size=128&scale=75`
     }));
     let interactionsVotes = this.#processJsonData(entryDataBubbles, "vote");
@@ -152,24 +150,11 @@ class MentionsUnitedProvider_Bubbles extends MentionsUnited.Provider {
     r.source.id = entry.id;
     r.source.title = "";
 
-    switch (type) {
-      case "vote":
-        r.author.name = entry.author;
-        r.author.avatar = entry.avatar;
-        r.author.profile = entry.url;
-        break;
-      case "reply":
-        r.author.name = entry.account.display_name;
-        r.author.avatar = entry.account.avatar;
-        r.author.profile = entry.account.url;
-        r.content.html = entry.content;
-        break;
-      default:
-        r.author.name = entry.display_name;
-        r.author.avatar = entry.avatar;
-        r.author.profile = entry.url;
-        break;
-    }
+    r.author.name = (type === "reply") ? entry.account.display_name : entry.display_name;
+    r.author.avatar = (type === "reply") ? entry.account.avatar : entry.avatar;
+    r.author.profile = (type === "reply") ? entry.account.url : entry.url;
+
+    r.content.html = (type === "reply") ? entry.content : null;
 
     return r;
   }

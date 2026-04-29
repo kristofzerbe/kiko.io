@@ -22,8 +22,12 @@ bandcamp:
 syndication:
   - host: GitHub
     url: 
+  - host: Bubbles
+    url: 
   - host: Mastodon
     url: 
+  - host: IndieNews
+    url: https://news.indieweb.org/en
 ---
 
 <!-- more -->
