@@ -37,7 +37,7 @@ As I wrote recently, [I Love Bubbles](/post/I-Love-Bubbles). The new blog post a
 
 Since my blog is also included in Bubbles' list — and I imagine others are in the same boat — I suspect the reach of my posts will increase somewhat. Previously, I could only achieve this by manually syndicating my posts, primarily on Mastodon and IndieNews, and my photos on Vernissage and Pixelfed.
 
-Now Bubbles helps me on that, by automatically syndicating its entry to its own GoToSocial instance in the Fediverse. And of course, I'm interested in bringing the interactions with my post, that accumulate there, back to my site, just as I already do with the other platforms through my [**Mentions United**](/projects/mentions-united/) project. That's why there's now a new [Bubbles plugin](/projects/mentions-united/) ...
+Now Bubbles helps me on that, by automatically syndicating its entry to its own GoToSocial instance in the Fediverse. And of course, I'm interested in bringing the interactions with my post, that accumulate there, back to my site, just as I already do with the other platforms through my [**Mentions United**](/projects/mentions-united/) project. That's why there's now a new [Bubbles plugin](https://github.com/kristofzerbe/Mentions-United/blob/main/mentions-united-provider_bubbles.js) ...
 
 <!-- more -->
 
@@ -75,8 +75,10 @@ To integrate the plugin into your website, you just need a little experience wit
 // wait until the page is loaded ...
 window.addEventListener('load', function () {
 
-  // init Mentions United with your name, to distinguish your interactions from others', 
-  // and an array of new instances of the plugins with their options
+  // init Mentions United with your name as option, 
+  // to distinguish your interactions from others', 
+  // and an array of new instances of the plugins 
+  // with their options
   const mentionsUnited = new MentionsUnited({ 
     ownerName: "__MY-NAME__" 
   },[
@@ -100,9 +102,9 @@ window.addEventListener('load', function () {
 }
 ```
 
-<small>(Please replace the ``__VARIABLES__`` in the sample with your data.)</small>
+(Please replace the ``__VARIABLES__`` in the sample with your data.)
 
-3. Let it run
+1. Let it run
 
 ```js
 mentionsUnited.load()
