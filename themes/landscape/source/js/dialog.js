@@ -330,13 +330,18 @@ var dpDialog = {
     const subtitle = document.querySelector('meta[name="description"]').content;
     const text = document.querySelector('meta[name="excerpt"]')?.content;
     const permalink = document.querySelector('link[rel="canonical"]').href;
+    const area = document.querySelector('meta[name="blog:area"]')?.content;
 
     let textarea = jContent.find("#mastodon-text");
     let count = jContent.find("#mastodon-text-count");
     textarea.on('input propertychange', function (e) {
       count[0].innerHTML = e.target.value.length;
     });
-    textarea.val(title + "\n\n" + subtitle + "\n\n" + text + "\n\n" + permalink);
+    if (area.toUpperCase() === "NOTE") {
+      textarea.val(title + "\n\n" + text + "\n\n" + permalink);
+    } else {
+      textarea.val(title + "\n\n" + subtitle + "\n\n" + text + "\n\n" + permalink);
+    }
     textarea[0].dispatchEvent(new Event('input', { bubbles: true }));
 
     jContent.find("#mastodon-share").click(function(e) { 

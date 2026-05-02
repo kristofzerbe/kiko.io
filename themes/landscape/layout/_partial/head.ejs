@@ -182,12 +182,12 @@
       meta.title = page.title + " - " + config.title;
       //--
       if (page.title === "Notes") {
-        meta.description = page.title + " of " + meta.subarea + " " + config.description_short;
+        meta.description = "Notes of " + meta.subarea + " " + config.description_short;
       } else {
         if (page.description) {
           meta.description = page.description;
         } else {
-          meta.description = excerptDesc;
+          meta.description = "Note of " + meta.subarea + " " + config.description_short;
         }
         meta.slug = "Note-" + meta.subarea;
         meta.imageUrl = "/images/social-media/$Notes-" + meta.subarea + ".jpg"; // image = social media image 
@@ -222,6 +222,7 @@
 <% if (excerpt) { %> 
   <meta name="excerpt" content="<%= excerpt %>">
 <% }%>
+  <meta name="blog:area" content="<%= meta.area %>">
 
   <meta property="og:site_name" content="<%= config.title %>">
   <meta property="og:type" content="blog">
