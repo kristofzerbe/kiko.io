@@ -6,14 +6,14 @@
   <%- partial('_partial/photograph') %>
 <% } %>
 
-<%- partial('_partial/nav-index-stats', { currentClass: "" }) %>
+<a%- partial('_partial/nav-index-stats', { currentClass: "" }) %>
 
 <h1 class="page-title" data-pagefind-meta="title" data-pagefind-meta="type:Page">
   <%= page.title %>
 </h1>
 
 <div class="page-content">
-  <%- page.content %>
+  <em%- page.content %>
   
   <hr class="divider" />
 
@@ -32,15 +32,15 @@
     <p>
       During this period I've written 
       <b><%= page.data.counts.articles %></b><em>articles</em> in 
-      <b><%= page.data.counts.categories %></b><em>categories</em> with 
-      <b><%= page.data.counts.tags %></b><em>tags</em> and published 
-      <b><%= page.data.counts.notes %></b><em>notes</em>.
+      <b><%= page.data.counts.categories %></b><a href="/archives">categories</a> with 
+      <b><%= page.data.counts.tags %></b><a href="/archives">tags</a> and published 
+      <b><%= page.data.counts.notes %></b><a href="/notes">notes</a>.
     </p>
     <p>
       <b><%= page.data.counts.series.articles %></b><em>articles</em> belong to one of a total of 
-      <b><%= page.data.counts.series.count %></b><em>series</em> and 
+      <b><%= page.data.counts.series.count %></b><a href="/series">series</a> and 
       <b><%= page.data.counts.projects.articles %></b><em>articles</em> to one of the   
-      <b><%= page.data.counts.projects.count %></b><em>projects</em> I maintain.
+      <b><%= page.data.counts.projects.count %></b><a href="/projects">projects</a> I maintain.
     </p>
   </section>
 
@@ -70,7 +70,7 @@
       <tbody>
       <% Object.entries(page.data.lists.postsPerYear).reverse().forEach(([key, value]) => { %>
         <tr>
-          <th scope="row"><%= key %></th>
+          <th scope="row"><a href="/archives/<%= key %>"><%= key %></a></th>
           <% if (value.articles > 0) { %>
           <td style="--size: calc(<%= value.articles %>/100);">
             <span class="data"><%= value.articles %></span>
@@ -104,7 +104,7 @@
       <% let categories = Object.entries(page.data.lists.postsPerCategory).sort(([,va],[,vb]) => vb-va); %>
       <% categories.forEach(([key, value]) => { %>
         <tr data-key="<%= key %>">
-          <th scope="row"><%= key %></th>
+          <th scope="row"><a href="/archives/categories/<%= key.replace(" ", "").replace(/[ ./]/g, '-') %>"><%= key %></a></th>
           <td style="--size: calc(<%= value %>/<%= categories[0][1] + (categories[0][1]*0.1) %>);">
             <span class="data"><%= value %></span>
           </td>
@@ -127,7 +127,7 @@
       <% let tags = Object.entries(page.data.lists.postsPerTopTenTag).sort(([,va],[,vb]) => vb-va).slice(0,10); %>
       <% tags.forEach(([key, value]) => { %>
         <tr data-key="<%= key %>">
-          <th scope="row"><%= key %></th>
+          <th scope="row"><a href="/archives/tags/<%= key.replace(" ", "").replace(/[ ./]/g, '-') %>"><%= key %></a></th>
           <td style="--size: calc(<%= value %>/<%= tags[0][1] + (tags[0][1]*0.1) %>);">
             <span class="data"><%= value %></span>
           </td>
@@ -155,8 +155,15 @@
       <tbody>
       <% let syn = Object.entries(page.data.lists.syndicationsPerHost).sort(([,va],[,vb]) => vb-va); %>
       <% syn.forEach(([key, value]) => { %>
+        <% let synUrl = config.profiles[key.toLowerCase()]; %>
         <tr data-key="<%= key %>">
-          <th scope="row"><%= key %></th>
+          <th scope="row">
+            <% if (synUrl) { %>
+              <a href="<%= synUrl %>"><%= key %></a>
+            <% } else { %>
+              <span><%= key %></span>
+            <% } %>
+          </th>
           <td style="--size: calc(<%= value %>/<%= syn[0][1] + (syn[0][1]*0.1) %>);">
             <span class="data"><%= value %></span>
           </td>
@@ -170,15 +177,15 @@
     <h2>Photos</h2>
     <p>
       I have published on this website 
-      <b><%= page.data.counts.boxes %></b><em>photo boxes</em> and 
-      <b><%= page.data.counts.photos.total %></b><em>photos in total</em>.<br> 
+      <b><%= page.data.counts.boxes %></b><a href="/photos/boxes/">photo boxes</a> and 
+      <b><%= page.data.counts.photos.total %></b><a href="/photos">photos</a><em>in total</em>.<br> 
       For all my pages, I <em>used</em> <b><%= page.data.counts.photos.used.total %></b> 
       of them as individual header photos and have set aside 
       <b><%= page.data.counts.photos.unused.pool %></b> as <em>pool</em> photos for future articles. 
       <b><%= page.data.counts.photos.unused.reserve %></b> more are already 
       <em>reserved</em> for specific new pages. The remaining 
       <b><%= page.data.counts.photos.unused.shed %></b> photos are stored in the 
-      <em>shed</em> for publication via syndication.
+      <a href="/photos/shed">shed</a> for publication via syndication.
     </p>
   </section>
 
@@ -209,10 +216,12 @@
 
   <section id="other" class="stats">
     <h2>Other</h2>
-    Furthermore I collected 
-    <b><%= page.data.counts.tinytools %></b><em>Tiny Tools</em>, added 
-    <b><%= page.data.counts.blogroll %></b><em>authors</em> to my <em>blogroll</em> and went to 
-    <b><%= page.data.counts.concerts %></b><em>concerts</em>.
+    <p>
+      Furthermore I collected 
+      <b><%= page.data.counts.tinytools %></b><a href="/tools/tiny-tools">Tiny Tools</a>, added 
+      <b><%= page.data.counts.blogroll %></b><em>authors</em> to my <a href="/blogroll">blogroll</a> and went to 
+      <b><%= page.data.counts.concerts %></b><a href="/concerts">concerts</a>.
+    </p>
   </section>
 
 </div>
