@@ -420,6 +420,13 @@
     padding-bottom: 0;
   }
 }
+@media screen and (min-width: 1100px) {
+  .page-content section.concert {
+    grid-template-areas: "image name post" "info info post";
+    grid-template-rows: auto 1fr;
+    padding: var(--space-default);
+  }
+}
 
 .page-content section.concert a.concert-artist {
   grid-area: image;
@@ -441,6 +448,14 @@
 .page-content section.concert div.concert-post {
   grid-area: post;
   margin-bottom: var(--space-medium);
+}
+@media screen and (min-width: 1100px) {
+  .page-content section.concert div.concert-post {
+    margin-bottom: 0;
+  }
+  .page-content section.concert div.concert-post .postimagelink-label {
+    display: none;
+  }
 }
 
 
