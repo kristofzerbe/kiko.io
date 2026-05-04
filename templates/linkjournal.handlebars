@@ -11,36 +11,31 @@ series: Link Journal
 categories:
   - Collection
 tags:
-  - xxx
+  - Links
 related:
   - Link-Journal-26-xx
   - Link-Journal-26-yy
   - Link-Journal-26-zz
 syndication:
+  - host: GitHub
+    url: 
+  - host: Bubbles
+    url: 
   - host: Mastodon
     url: 
 ---
 
-Every month
+Over the past month of {{period.month}}, I've collected {{count}} links for my journal:
 
 <!-- more -->
 
+<div class="linkjournal">
 {{#each items}}
-{% discovery "{{{title}}}" "{{{author}}}" "{{{cardlink.url}}}" {{{../key}}} key:{{{key}}} %}
+{% linkjournal "{{{key}}}" "{{{title}}}" "{{{created}}}" "{{{tags}}}" "{{{url}}}" "{{{host}}}" "{{{favicon}}}" "{{{image}}}" %}
+{{{description}}}
+---
 {{{content}}}
-{% enddiscovery %}
-
-<div data-key="{{{key}}}">
-  <a class="favicon" href="{{{url}}}"><img src="{{{favicon}}}"/></a>
-  <h2 class="title">
-    <a href="{{{url}}}">{{{title}}}</a>
-  </h2>
-  <a class="link" href="{{{url}}}">{{{host}}}</a>
-  <ul class="tags">
-    <li></li>
-  </ul>
-  <p class="description">{{{description}}}</p>
-  <p class="content"></p>
-</div>
+{% endlinkjournal %}
 
 {{/each}}
+</div>
