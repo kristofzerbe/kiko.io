@@ -1,7 +1,6 @@
 ---
 slug: {{{key}}}
 title: "{{{title}}}"
-subtitle:
 date: {{{date}}}
 photograph:
   file: {{{photograph.file}}}
@@ -25,13 +24,15 @@ syndication:
     url: 
 ---
 
-Over the past month of {{period.month}}, I've collected {{count}} links for my journal:
+Over the past month of {{period.month}}, I've collected {{count}} links for my journal.
 
 <!-- more -->
 
-<div class="linkjournal">
+---
+
+<div class="linkjournal panels">
 {{#each items}}
-{% linkjournal "{{{key}}}" "{{{title}}}" "{{{created}}}" "{{{tags}}}" "{{{url}}}" "{{{host}}}" "{{{favicon}}}" "{{{image}}}" %}
+{% linkjournal "{{{key}}}" "{{{title}}}" "{{{created}}}" "{{{tags}}}" "{{{host}}}" "{{{url}}}" "{{{favicon}}}" "{{{image}}}" %}
 {{{description}}}
 ---
 {{{content}}}

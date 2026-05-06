@@ -56,6 +56,12 @@ hexo.on('generateBefore', function() {
 
   // Set Camera (Product) and Year for stats
   photosPublic.forEach((p) => {
+
+    try {
+      let xxx = p.meta.custom;
+    } catch (error) {
+      console.log(p);
+    }
     let cam = cameras.find(c => c.model === p.meta?.Model);
     p.meta.custom.camera = cam ? cam.camera : p.meta?.Model ?? cameraUnknown;
     p.meta.custom.year = new Date(p.meta?.DateTimeOriginal ?? p.meta?.DateCreated).getFullYear();
@@ -318,6 +324,7 @@ function getUnusedPhotos(type, dir) {
   let unused = fs
     .readdirSync(unusedDir)
     .filter(entry => fs.statSync(path.join(unusedDir, entry)).isDirectory())
+    .filter(entry => fs.readdirSync(path.join(unusedDir, entry)).length !== 0) // filter out empty folders
     .map(entry => ({ key: entry, status: "unused", type: type, file: null }));
 
   unused.forEach(entry => {

@@ -2,7 +2,7 @@
   LinkJournal Tag
 
   Syntax
-  {% linkjournal "key" "title" "created" "tags" "url" "host" "favicon" "image" %}
+  {% linkjournal "key" "title" "created" "tags" "host" "url" "favicon" "image" %}
     description
     ---
     content
@@ -18,15 +18,15 @@ hexo.extend.tag.register("linkjournal", function(args, content) {
     title,
     created,
     tags,
-    url,
     host,
+    url,
     favicon,
     image
   ] = args;
 
-  const splitContent = content.split("\n---\n");
-  const description = splitContent[0];
-  content = splitContent[1];
+  let splitContent = content.split("---");
+  let description = splitContent[0].trim();
+  let contentText = splitContent[1].trim();
 
   // Dummy Cardlink
   const regexp = /@@@cardlink\n(.*?)\n@@@/gs
@@ -44,19 +44,21 @@ hexo.extend.tag.register("linkjournal", function(args, content) {
   }).join("\n");
 
   let element = `
-    <div data-key="${key}">
-      <a class="favicon" href="${url}"><img src="${favicon}"/></a>
-      <h2 class="title">
-        <a href="${url}">${title}</a>
-      </h2>
-      <a class="link" href="${url}">${host}</a>
-      <ul class="tags">
-        ${tagElements}
-      </ul>
-      <p class="description">${description}</p>
-      <img src="${image}" />
-      <hr>
-      <p class="content">${description}</p>
+    <div class="panel">
+      <div class="panel-content">
+        <div data-key="${key}" class="panel-content">
+          <a class="panel-favicon" href="${url}"><img src="${favicon}"/></a>
+          <h2><a class="panel-title" href="${url}">${title}</a></h2>
+          <a class="sub-link" href="${url}">${host}</a>
+          <ul class="tags">
+            ${tagElements}
+          </ul>
+          <p class="description">${description}</p>
+          <img src="${image}" />
+          <hr>
+          <p class="content">${contentText}</p>
+        </div>
+      </div>
     </div>
   `;
 
