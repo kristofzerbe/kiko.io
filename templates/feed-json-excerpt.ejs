@@ -7,9 +7,7 @@
   const imageSource = (item) => {
     if (item.photograph) {
       if (item.photograph.socialmedia) {
-        return config.url + item.photograph.socialmedia
-          .replace("/static", "")
-          //.replace(".png", ".thumb.png");
+        return config.url + item.photograph.socialmedia.replace("/static", "");
       } else {
         return config.url + "/photos/mobile/" + item.photograph.file;
       }
@@ -27,6 +25,10 @@
     if (item.photograph) { fc = '<p><img src="' + imageSource(item) + '" /></p>' + fc; }
     return fc;
   }
+  const profileList = Object.entries(config.profiles).map(([key, value]) => ({
+    href: value,
+    rel: (['mastodon', 'github', 'linkedin'].includes(key.toLowerCase())) ? key.toLowerCase() : "me"
+  }));
 _%>
 
 <%- JSON.stringify({
@@ -43,6 +45,20 @@ _%>
     url: config.url,
     avatar: config.url + config.avatar
   }],
+  _byline: {
+    version: "https://bylinespec.org/1.0",
+    contributors: [{
+      id: config.author_id,
+      name: config.author,
+      url: config.url,
+      avatar: config.url + config.avatar,
+      profiles: profileList,
+      uses: config.url + "/uses",
+      theme: {
+        style: "light"
+      }
+    }]
+  },
   items: items.map(item => ({
     id: item.permalink,
     url: item.permalink,
@@ -51,6 +67,10 @@ _%>
     date_published: moment(item.date).toISOString(),
     date_modified: updated(item),    
     content_html: content(item) || '',
+    _byline: {
+      author: config.author_id,
+      perspective: "personal"
+    },
     tags:  (item.tags ? item.tags.toArray() : []).map(({ name }) => name)
   }))
 }, null, 4) _%>

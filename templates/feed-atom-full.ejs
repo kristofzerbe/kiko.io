@@ -7,9 +7,7 @@
   const imageSource = (item) => {
     if (item.photograph) {
       if (item.photograph.socialmedia) {
-        return config.url + item.photograph.socialmedia
-          .replace("/static", "")
-          //.replace(".png", ".thumb.png");
+        return config.url + item.photograph.socialmedia.replace("/static", "");
       } else {
         return config.url + "/photos/mobile/" + item.photograph.file;
       }
@@ -23,7 +21,7 @@
   }
 _%>
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:byline="https://bylinespec.org/1.0">
   <id><%= config.url + "/" %></id>
   <title><%= config.title %> Posts</title>
   <subtitle><%= config.subtitle %></subtitle>
@@ -39,6 +37,18 @@ _%>
     <%_ } _%>
   </author>
   <generator uri="https://hexo.io/">Hexo</generator>
+  <byline:contributors>
+    <byline:person id="<%= config.author_id %>">
+      <byline:name><%= config.author %></byline:name>
+      <byline:url><%= config.url %></byline:url>
+      <byline:avatar><%= config.url %><%= config.avatar %></byline:avatar>
+      <%_ Object.entries(config.profiles).forEach(([key, value]) => { _%>
+        <byline:profile href="<%= value %>" rel="<%= (['mastodon', 'github', 'linkedin'].includes(key.toLowerCase())) ? key.toLowerCase() : "me" %>"/>
+      <%_ }) _%>
+      <byline:uses><%= config.url %>/uses</byline:uses>
+      <byline:theme style="light"/>
+    </byline:person>
+  </byline:contributors>
   <%_ for (const category of (categories || [])) { _%>
   <category term="<%= category.name %>" scheme="<%= config.url + '/' + category.path %>" />
   <%_ } _%>
@@ -52,6 +62,8 @@ _%>
     <published><%= moment(item.date).toISOString() %></published>
     <updated><%= updated(item) %></updated>
     <link href="<%= item.permalink %>"/>
+    <byline:author ref="<%= config.author_id %>"/>
+    <byline:perspective>personal</byline:perspective>
     <%_ if (item.photograph) { _%>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="<%= imageSource(item) %>" height="1200" width="630" />
     <%_ } _%>

@@ -1,5 +1,19 @@
+<%_
+  const slug = (item) => {
+    let slugArray = item.slug.split("/");
+    let slug = slugArray[slugArray.length - 1];
+    return slug;
+  }
+  
+  const regEx = /<(script|style)[^>]*>(?<content>[^<]*)<\/(script|style)>/gim;
+  const content = (item) => {
+    let fc = item.content.replace(regEx, "");
+    if (item.photograph) { fc = '<p><img src="' + config.url + '/images/social-media/' + slug(item) + '.jpg" /></p>' + fc; }
+    return fc;
+  }
+_%>
 <?xml version="1.0"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:byline="https://bylinespec.org/1.0">
   <channel>
     <title><%= config.title %> Posts</title>
     <link><%= config.url %></link>
@@ -12,6 +26,18 @@
     <language><%= config.language %></language>
     <pubDate><%= moment(lastPublishedPostDate).locale('en').format('ddd, DD MMM YYYY HH:mm:ss ZZ') %></pubDate>
     <lastBuildDate><%= moment(lastBuildDate).locale('en').format('ddd, DD MMM YYYY HH:mm:ss ZZ') %></lastBuildDate>
+    <byline:contributors>
+      <byline:person id="<%= config.author_id %>">
+        <byline:name><%= config.author %></byline:name>
+        <byline:url><%= config.url %></byline:url>
+        <byline:avatar><%= config.url %><%= config.avatar %></byline:avatar>
+        <%_ Object.entries(config.profiles).forEach(([key, value]) => { _%>
+          <byline:profile href="<%= value %>" rel="<%= (['mastodon', 'github', 'linkedin'].includes(key.toLowerCase())) ? key.toLowerCase() : "me" %>"/>
+        <%_ }) _%>
+        <byline:uses><%= config.url %>/uses</byline:uses>
+        <byline:theme style="light"/>
+      </byline:person>
+    </byline:contributors>
     <%_ for (const category of (categories || [])) { _%>
     <category><%= category.name %></category>
     <%_ } _%>
@@ -23,6 +49,8 @@
       <guid isPermalink="true"><%= item.permalink %></guid>
       <title><%= item.title %></title>
       <link><%= item.permalink %></link>
+      <byline:author ref="<%= config.author_id %>"/>
+      <byline:perspective>personal</byline:perspective>
       <%_ for (const category of (item.categories ? (Array.isArray(item.categories) ? item.categories : item.categories.toArray()) : [])) { _%>
       <category><%= category.name %></category>
       <%_ } _%>
@@ -31,7 +59,7 @@
       <%_ } _%>
       <pubDate><%= moment(item.date).locale('en').format('ddd, DD MMM YYYY HH:mm:ss ZZ') %></pubDate>
       <description>
-        <![CDATA[ <%= item.content %> ]]>
+        <![CDATA[ <%- content(item) %> ]]>
       </description>
     </item>
     <%_ } _%>

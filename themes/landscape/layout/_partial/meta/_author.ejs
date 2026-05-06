@@ -3,16 +3,10 @@
   "@id": "<%= config.url %>/#person",
   "name": "<%= config.author %>",
   "url": "<%= config.url %>/about",
-  "image": "<%= config.url %><%= config.avatar %>", "sameAs": [
-    "<%= config.profiles.github %>",
-    "<%= config.profiles.mastodon %>",
-    "<%= config.profiles.devto %>",
-    "<%= config.profiles.xing %>",
-    "<%= config.profiles.linkedin %>",
-    "<%= config.profiles.fivehundredpx %>",
-    "<%= config.profiles.flickr %>",
-    "<%= config.profiles.unsplash %>",
-    "<%= config.profiles.pixelfed %>",
-    "<%= config.profiles.bubbles %>"
+  "image": "<%= config.url %><%= config.avatar %>", 
+  "sameAs": [
+  <% Object.entries(config.profiles).forEach(([key, value], idx, arr) => { %>
+    "<%= value %>"<%= (idx === arr.length - 1) ? "" : "," %>
+  <% }) %>
   ]
 }

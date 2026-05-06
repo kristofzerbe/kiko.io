@@ -14,7 +14,7 @@
   }
 _%>
 <?xml version="1.0"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:byline="https://bylinespec.org/1.0">
   <channel>
     <title><%= config.title %> Posts</title>
     <link><%= config.url %></link>
@@ -27,6 +27,18 @@ _%>
     <language><%= config.language %></language>
     <pubDate><%= moment(lastBuildDate).locale('en').format('ddd, DD MMM YYYY HH:mm:ss ZZ') %></pubDate>
     <lastBuildDate><%= moment(lastBuildDate).locale('en').format('ddd, DD MMM YYYY HH:mm:ss ZZ') %></lastBuildDate>
+    <byline:contributors>
+      <byline:person id="<%= config.author_id %>">
+        <byline:name><%= config.author %></byline:name>
+        <byline:url><%= config.url %></byline:url>
+        <byline:avatar><%= config.url %><%= config.avatar %></byline:avatar>
+        <%_ Object.entries(config.profiles).forEach(([key, value]) => { _%>
+          <byline:profile href="<%= value %>" rel="<%= (['mastodon', 'github', 'linkedin'].includes(key.toLowerCase())) ? key.toLowerCase() : "me" %>"/>
+        <%_ }) _%>
+        <byline:uses><%= config.url %>/uses</byline:uses>
+        <byline:theme style="light"/>
+      </byline:person>
+    </byline:contributors>
     <%_ for (const { name } of (tags || [])) { _%>
     <category><%= name %></category>
     <%_ } _%>
@@ -35,6 +47,8 @@ _%>
       <guid isPermalink="true"><%= item.permalink %></guid>
       <title><%= item.title %></title>
       <link><%= item.permalink %></link>
+      <byline:author ref="<%= config.author_id %>"/>
+      <byline:perspective>personal</byline:perspective>
       <%_ for (const tag of (item.tags ? item.tags.toArray() : [])) { _%>
       <category><%= tag.name %></category>
       <%_ } _%>
