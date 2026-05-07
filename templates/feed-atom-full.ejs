@@ -2,7 +2,7 @@
   const updated = (item) => {
     let pub = moment(item.date).toISOString();
     let upd = moment(item.updated).toISOString();
-    return (pub === upd) ? null : upd;
+    return (pub === upd) ? pub : upd;
   }
   const imageSource = (item) => {
     if (item.photograph) {
@@ -60,9 +60,7 @@ _%>
     <id><%= item.permalink %></id>
     <title><%= (item.updated > item.date) ? "Updated: ":"" + item.title %></title>
     <published><%= moment(item.date).toISOString() %></published>
-    <%_ if (updated(item)) { _%>
     <updated><%= updated(item) %></updated>
-    <%_ } _%>
     <link href="<%= item.permalink %>"/>
     <byline:author ref="<%= config.author_id %>"/>
     <byline:perspective>personal</byline:perspective>

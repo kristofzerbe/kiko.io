@@ -25,13 +25,13 @@ bandcamp:
   track: First Blood of Melchor|3255928040
 syndication:
   - host: GitHub
-    url: null
+    url: https://github.com/kristofzerbe/kiko.io/issues/35
   - host: Bubbles
-    url: null
+    url: https://bubbles.town/entry/163506
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/116532933115541973
   - host: IndieNews
-    url: https://news.indieweb.org/en
+    url: https://news.indieweb.org/en/kiko.io/post/Integration-of-the-Byline-Feed-Extension/
 ---
 
 Lately, there's been a lot of buzz in my tech bubble about good old RSS/Atom feeds. Not only are people rediscovering them and making them available on their blogs, but new services are also popping up around this 30-year-old technology. It's just so wonderfully independent and fits the trend of moving away from increasingly terrible platforms at the protocol level and returning to the free, open internet.

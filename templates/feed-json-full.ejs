@@ -2,7 +2,7 @@
   const updated = (item) => {
     let pub = moment(item.date).toISOString();
     let upd = moment(item.updated).toISOString();
-    return (pub === upd) ? null : upd;
+    return (pub === upd) ? pub : upd;
   }
   const imageSource = (item) => {
     if (item.photograph) {
