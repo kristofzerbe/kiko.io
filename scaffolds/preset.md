@@ -24,6 +24,8 @@ syndication:
 
 <!-- more -->
 
+---
+
 ## XXX
 
 ...

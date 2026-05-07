@@ -29,6 +29,8 @@ syndication:
 
 <!-- more -->
 
+---
+
 {% photo_masonry
   "file"
 %}

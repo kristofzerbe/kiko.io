@@ -23,6 +23,8 @@ syndication:
 
 <!-- more -->
 
+---
+
 ## Prerequisites
 
 OS:

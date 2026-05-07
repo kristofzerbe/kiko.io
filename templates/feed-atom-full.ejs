@@ -60,7 +60,9 @@ _%>
     <id><%= item.permalink %></id>
     <title><%= (item.updated > item.date) ? "Updated: ":"" + item.title %></title>
     <published><%= moment(item.date).toISOString() %></published>
+    <%_ if (updated(item)) { _%>
     <updated><%= updated(item) %></updated>
+    <%_ } _%>
     <link href="<%= item.permalink %>"/>
     <byline:author ref="<%= config.author_id %>"/>
     <byline:perspective>personal</byline:perspective>
