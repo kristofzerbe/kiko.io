@@ -68,6 +68,7 @@ hexo.extend.tag.register("linkjournal", function(args, content) {
           ${contentElement}
         </div>
       </div>
+      <hr>
     </div>
   `;
 

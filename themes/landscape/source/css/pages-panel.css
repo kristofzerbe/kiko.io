@@ -51,6 +51,12 @@
   box-shadow: none;
   background-color: inherit;
 }
+.panels.linkjournal .panel-inner + hr {
+  margin-bottom: 0;
+}
+.panels.linkjournal .panel:last-child .panel-inner + hr {
+  display: none;
+}
 
 .panel-inner.today {
   border-top: 8px var(--color-accent) solid;
@@ -107,8 +113,9 @@
 .panels.linkjournal .panel-content blockquote:after { left: -6px; }
 
 .panels.linkjournal .panel-content .cardlink-card {
-  width: 100% !important;
-  max-width: unset !important;
+  width: 100%;
+  max-width: unset;
+  margin-top: var(--space-medium);
 }
 
 .panel-content small.sub-info {
