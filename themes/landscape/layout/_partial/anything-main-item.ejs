@@ -1,7 +1,7 @@
 <div class="anything-item" data-index="<%= index.name %>" data-key="<%= item.key %>">
     
   <header class="anything-header">
-    <% if (photo.file !== item.photograph.file) { %>
+    <% if (photo && photo.file !== item.photograph?.file) { %>
       <%- partial('post/photograph', { post: item, class_name: 'anything-photo', size: 'normal' }) %>
     <% } %>
     <h2>

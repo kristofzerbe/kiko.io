@@ -15,10 +15,16 @@
   .panels {
     column-count: 2;
   }
+  .panels.linkjournal {
+    column-count: 1;
+  }
 }
 @media screen and (min-width:1280px) {
   .panels {
     column-count: 3;
+  }
+  .panels.linkjournal {
+    column-count: 2;
   }
 }
 
@@ -35,6 +41,17 @@
 .panel-inner {
   padding: var(--space-median);
 }
+.panels.linkjournal .panel-inner {
+  box-shadow: inset 0px 0px 12px -4px #aaa;
+  border-radius: var(--border-radius-normal);
+  background-color: var(--color-background);
+}
+.panels.linkjournal .panel:hover .panel-inner,
+.panels.linkjournal .panel-inner:has(.in-view) { 
+  box-shadow: none;
+  background-color: inherit;
+}
+
 .panel-inner.today {
   border-top: 8px var(--color-accent) solid;
 }
@@ -51,6 +68,17 @@
 .panel-content {
   padding: 0 var(--space-small) var(--space-medium);
   overflow: hidden;
+  position: relative;
+}
+.panels.linkjournal .panel-content {
+  padding: var(--space-thin) var(--space-small);
+}
+
+.panel-content h2 {
+  margin: 0 !important;
+}
+.panels.linkjournal .panel-content h2 {
+  padding-block: var(--space-small) var(--space-narrow);
 }
 
 .panel-content p {
@@ -61,6 +89,22 @@
   font-size: var(--font-size-code);
   line-height: var(--line-height-small);
 } */
+ 
+.panel-content blockquote {
+  margin-block: var(--space-median) var(--space-extra);
+  padding: 0 var(--space-medium);
+  text-indent: var(--space-medium);
+  background: none;
+}
+.panels.linkjournal .panel-content blockquote:before {
+  background-color: var(--color-background);
+}
+.panels.linkjournal .panel:hover .panel-inner blockquote:before,
+.panels.linkjournal .panel-inner:has(.in-view) blockquote:before {
+  background-color: var(--color-block);; 
+}
+.panels.linkjournal .panel-content blockquote:before { left: -16px; }
+.panels.linkjournal .panel-content blockquote:after { left: -6px; }
 
 .panel-content small.sub-info {
   display: block; 
@@ -116,6 +160,13 @@
   width: 32px;
   height: 32px;
   margin: 0;
+}
+
+.panels.linkjournal .panel-content time {
+  position: absolute;
+  top: var(--space-median);
+  right: var(--space-median);
+  opacity: 0.5;
 }
 
 .panel-photo {

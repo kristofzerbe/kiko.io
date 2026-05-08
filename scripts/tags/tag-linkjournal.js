@@ -30,33 +30,42 @@ hexo.extend.tag.register("linkjournal", function(args, content) {
 
   // Dummy Cardlink
   const regexp = /@@@cardlink\n(.*?)\n@@@/gs
-  const matches = content.matchAll(regexp);
+  const matches = contentText.matchAll(regexp);
   for (const match of matches) {
     const lines = getDataFromCardlinkDummyBlock(match[0], hexo.config.favicon_service_url);
     const cardlink = compileHandlebar(hexo, "cardlink.handlebars", lines);
-    content = content.replace(match[0], cardlink);
+    contentText = contentText.replace(match[0], cardlink);
+  }
+  
+  let contentElement = "";
+  if (contentText) {
+    contentText = hexo.render.renderSync({ text: contentText, engine: 'markdown' });
+    contentElement = `<p class="content">${contentText}</p>`;
   }
 
-  content = hexo.render.renderSync({ text: content, engine: 'markdown' });
-
   let tagElements = tags.split(",").map((tag) => {
-    return `<li>${tag}</li>`;
+    return `<span>${tag}</span>`;
   }).join("\n");
+
+  let imageElement = ""; 
+  if (image) imageElement = `<img src="${image}" />`;
+
+  let createdDateTime = created.split(" ");
 
   let element = `
     <div class="panel">
-      <div class="panel-content">
+      <div class="panel-inner">
         <div data-key="${key}" class="panel-content">
           <a class="panel-favicon" href="${url}"><img src="${favicon}"/></a>
+          <time datetime="${created}">${createdDateTime[0]}</time>
           <h2><a class="panel-title" href="${url}">${title}</a></h2>
           <a class="sub-link" href="${url}">${host}</a>
-          <ul class="tags">
-            ${tagElements}
-          </ul>
-          <p class="description">${description}</p>
-          <img src="${image}" />
-          <hr>
-          <p class="content">${contentText}</p>
+          <div class="tags">${tagElements}</div>
+          <blockquote class="description view-trigger">
+            <p>${description}</p>
+          </blockquote>
+          ${imageElement}
+          ${contentElement}
         </div>
       </div>
     </div>

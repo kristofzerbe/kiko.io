@@ -120,10 +120,12 @@ function isVisibleInViewPort(e) {
   var eTop = $(e).offset().top;
   var eBottom = eTop + $(e).height();
 
+  console.log(eBottom + "|" + viewBottom + " > " + eTop + "|" + viewTop);
+
   return ((eBottom <= viewBottom) && (eTop >= viewTop));
 }
-function initImageViewportVisibility() {
-  $(".article-photo, .anything-photo, .panel-photo, .img-link, .card-img, .box-img").each(function() { //.card-img, 
+function initViewportVisibility() {
+  $(".article-photo, .anything-photo, .panel-photo, .img-link, .card-img, .box-img, .view-trigger").each(function() { //.card-img, 
     if (isVisibleInViewPort($(this))) {
       $(this).addClass("in-view");
     } else {
