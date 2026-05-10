@@ -21,6 +21,8 @@ syndication:
     url: https://bubbles.town/entry/2067677
   - host: Mastodon
     url: https://indieweb.social/@kiko/116551300879840987
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/959130863066997099
 ---
 
 This year, I was late getting started with taking photos in Thomas' garden. Whereas I'm usually out and about as early as March, I only managed to take the first pictures of his extraordinary plants this weekend, and I've probably missed the early bloomers this year.
