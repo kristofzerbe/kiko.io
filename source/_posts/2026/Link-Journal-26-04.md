@@ -16,12 +16,10 @@ related:
   - Link-Journal-26-02
   - Link-Journal-26-01
 syndication:
-  - host: GitHub
-    url: 
   - host: Bubbles
-    url: 
+    url: https://bubbles.town/entry/1929422
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/116550213193184856
 ---
 
 Over the past month of April, I've collected 16 links for my link journal.
