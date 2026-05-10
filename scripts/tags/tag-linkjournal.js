@@ -48,7 +48,7 @@ hexo.extend.tag.register("linkjournal", function(args, content) {
   }).join("\n");
 
   let imageElement = ""; 
-  if (image) imageElement = `<img src="${image}" />`;
+  if (image) imageElement = `<img src="${image}" class="panel-image" />`;
 
   let createdDateTime = created.split(" ");
 

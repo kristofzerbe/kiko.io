@@ -42,9 +42,10 @@
   padding: var(--space-median);
 }
 .panels.linkjournal .panel-inner {
-  box-shadow: inset 0px 0px 12px -4px #aaa;
+  box-shadow: none; /* inset 0px 0px 12px -4px #aaa; */
   border-radius: var(--border-radius-normal);
   background-color: var(--color-background);
+  transition: all ease-out .6s;
 }
 .panels.linkjournal .panel:hover .panel-inner,
 .panels.linkjournal .panel-inner:has(.in-view) { 
@@ -179,6 +180,13 @@
   top: var(--space-median);
   right: var(--space-median);
   opacity: 0.5;
+}
+
+@media screen and (min-width:840px) and (max-width:1280px) {
+  .panels.linkjournal .panel-content img.panel-image {
+    max-width: 480px;
+    width: auto;
+  }
 }
 
 .panel-photo {

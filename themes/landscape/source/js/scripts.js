@@ -120,8 +120,6 @@ function isVisibleInViewPort(e) {
   var eTop = $(e).offset().top;
   var eBottom = eTop + $(e).height();
 
-  console.log(eBottom + "|" + viewBottom + " > " + eTop + "|" + viewTop);
-
   return ((eBottom <= viewBottom) && (eTop >= viewTop));
 }
 function initViewportVisibility() {
