@@ -85,7 +85,7 @@ Have you ever heard of Disney’s 12 Basic Principles of Animation? In this tuto
 
 {% endlinkjournal %}
 
-{% linkjournal "26-04-15-vanilla-jcrop" "vanilla-jcrop" "2026-04-15 21:48:00" "JS,Component,Imaging" "github.com" "https://github.com/tijoladev/vanilla-jcrop" "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://github.com/tijoladev/vanilla-jcrop&size=32" "https://opengraph.githubassets.com/2f07e9ab42676a14a14ae00da5b90351654cb71448dc9ae624d899421e5da1c6/tijoladev/vanilla-jcrop" %}
+{% linkjournal "26-04-15-vanilla-jcrop" "vanilla-jcrop" "2026-04-15 21:48:00" "JS,Component,Imaging" "github.com" "https://github.com/tijoladev/vanilla-jcrop" "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://github.com/tijoladev/vanilla-jcrop&size=32" "https://raw.githubusercontent.com/tijoladev/vanilla-jcrop/refs/heads/main/docs/screenshot-landscape.png" %}
 Modern, dependency-free image cropping library. Drop-in replacement for the classic JCrop without jQuery. - tijoladev/vanilla-jcrop
 ---
 
@@ -109,7 +109,7 @@ Syntax highlighting and tree view: The add-on improves the display of JSON data,
 
 {% endlinkjournal %}
 
-{% linkjournal "26-04-25-Madblog-A-Markdown-Folder-That-Federates-Everywhere" "Madblog - A Markdown Folder That Federates Everywhere" "2026-04-25 07:18:00" "Blog" "blog.fabiomanganiello.com" "https://blog.fabiomanganiello.com/article/Madblog-federated-blogging-from-markdown" "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://blog.fabiomanganiello.com/article/Madblog-federated-blogging-from-markdown&size=32" "" %}
+{% linkjournal "26-04-25-Madblog-A-Markdown-Folder-That-Federates-Everywhere" "Madblog - A Markdown Folder That Federates Everywhere" "2026-04-25 07:18:00" "Blog" "blog.fabiomanganiello.com" "https://blog.fabiomanganiello.com/article/Madblog-federated-blogging-from-markdown" "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://blog.fabiomanganiello.com/article/Madblog-federated-blogging-from-markdown&size=32" "https://s3.fabiomanganiello.com/fabio/img/madblog.png" %}
 A lightweight blogging engine based on text files, with native Fediverse and IndieWeb support
 ---
 
@@ -133,7 +133,7 @@ favicon: https://developer.mozilla.org/favicon.ico
 @@@
 {% endlinkjournal %}
 
-{% linkjournal "26-04-30-Multi-stroke-text-effect-in-CSS" "Multi-stroke text effect in CSS" "2026-04-30 07:51:00" "CSS" "yuanchuan.dev" "https://yuanchuan.dev/multi-stroke-text-effect-in-css" "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://yuanchuan.dev/multi-stroke-text-effect-in-css&size=32" "" %}
+{% linkjournal "26-04-30-Multi-stroke-text-effect-in-CSS" "Multi-stroke text effect in CSS" "2026-04-30 07:51:00" "CSS" "yuanchuan.dev" "https://yuanchuan.dev/multi-stroke-text-effect-in-css" "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://yuanchuan.dev/multi-stroke-text-effect-in-css&size=32" "https://yuanchuan.dev/assets/images/post/multiple-text-stroke/from-book.webp" %}
 I used to see that retro multi-stroke text effect quite often and    tried to replicate it using the CSS text-stroke property,    but the results never quite matched.    Because text-stroke accepts a single value, stacking elements was the only workaround I could think of, though it didn't seem to work.
 ---
 
