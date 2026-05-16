@@ -21,11 +21,13 @@ bandcamp:
   track: Helter Skelter|682423167
 syndication:
   - host: GitHub
-    url: null
+    url: https://github.com/kristofzerbe/kiko.io/issues/36
   - host: Bubbles
-    url: null
+    url: https://bubbles.town/entry/7596674
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/116585626366832307
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/961329914624482614
 ---
 
 To me, my sweetheart is a phenomenon. With two needles and an indefinite amount of wool in various colours, she whips up all sorts of little marvels at a speed that would take me just to get my fingers back in order.
