@@ -3,7 +3,9 @@ title: Well, for you it's enough
 date: 2026-05-17 14:01
 syndication: 
 - host: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/116590063481841949
+- host: Bubbles
+  url: https://bubbles.town/entry/8351080
 ---
 
 This 20 minute video, I found today, illustrates impressively why AI and above all Generative AI is nothing more than worthless.
