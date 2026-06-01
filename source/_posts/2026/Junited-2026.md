@@ -42,12 +42,14 @@ This month, I'll be collecting links to blog posts as part of Robert's [Junited 
 {% cardlink %}
 url: https://robertbirming.com/junited-blog-love-letter/
 title: "Junited: a blog love letter"
-description: "May has been, and still is, all about the wonderful WeblogPoMo. Just one more week to go. Let’s keep it up, friends!Some folks have been asking if there’..."
+description: "May has been, and still is, all about the wonderful WeblogPoMo. Just one more week to go. Let’s keep it up, friends! Some folks have been asking if there’..."
 host: robertbirming.com
 image: https://bear-images.sfo2.cdn.digitaloceanspaces.com/robert/robertbirming_home.png
 {% endcardlink %}
 
-<!--
 {% cardlink %}
+url: https://tracydurnell.com/2026/05/30/imagining-human-oriented-online-posts/
+title: "Imagining human-oriented online posts – Tracy Durnell's Mind Garden"
+host: tracydurnell.com
 {% endcardlink %}
--->
+
