@@ -28,7 +28,7 @@ syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/116673604970279364
   - host: IndieNews
-    url: https://news.indieweb.org/en
+    url: https://news.indieweb.org/en/kiko.io/post/Junited-2026/
 ---
 
 Back in the day, there were only hunters and gatherers, and I would certainly have been in the latter group. Collecting things is satisfying.
