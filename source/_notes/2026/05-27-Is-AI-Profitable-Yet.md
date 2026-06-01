@@ -8,7 +8,9 @@ rel:
   url: https://isaiprofitable.com/
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/116647328419871011
+  - host: Bubbles
+    url: https://bubbles.town/entry/17497350
 ---
 
 ![Is AI Profitable Yet?](_attachments/Is-AI-Profitable-Yet.jpeg)
