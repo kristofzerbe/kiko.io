@@ -24,9 +24,11 @@ syndication:
   - host: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/37
   - host: Bubbles
-    url: null
+    url: https://bubbles.town/entry/21802675
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/116673604970279364
+  - host: IndieNews
+    url: https://news.indieweb.org/en
 ---
 
 Back in the day, there were only hunters and gatherers, and I would certainly have been in the latter group. Collecting things is satisfying.
