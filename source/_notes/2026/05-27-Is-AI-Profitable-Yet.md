@@ -11,7 +11,7 @@ syndication:
     url:
 ---
 
-![](_attachments/Is-AI-Profitable-Yet.jpg)
+![Is AI Profitable Yet?](_attachments/Is-AI-Profitable-Yet.jpeg)
 
 I've been asking myself for a while now, with all the hype surrounding AI, who's supposed to pay for all the money being thrown into this technological meat grinder... or rather, when the enthusiastic managers will realize that it's them. So every fanboy deserves a look at this website ...
 
