@@ -14,7 +14,6 @@ tags:
 related:
   - Link-Journal-26-04
   - Link-Journal-26-03
-  - Link-Journal-26-02
 ---
 
 Over the past month of January, I've collected 7 links for my link journal.
