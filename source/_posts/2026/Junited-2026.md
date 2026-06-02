@@ -53,3 +53,20 @@ title: "Imagining human-oriented online posts – Tracy Durnell's Mind Garden"
 host: tracydurnell.com
 {% endcardlink %}
 
+{% cardlink %}
+url: https://geoffgraham.me/distinguishing-technology-from-technology/
+title: "Distinguishing Technology From Technology - Geoff Graham"
+description: "This isn't a post on AI (thank God). It also isn't really a post about tech. Well, it sorta is, but tangential to tech in the sense that I've come to a"
+host: geoffgraham.me
+favicon: https://geoffgraham.me/wp-content/uploads/logo.svg
+image: https://geoffgraham.me/wp-content/uploads/toyota-corolla-console.jpg
+{% endcardlink %}
+
+{% cardlink %}
+url: https://moddedbear.com/gmail-thinks-im-stupid-so-i-left
+title: "Gmail Thinks I'm Stupid, So I Left"
+description: "Gmail's rapid descent into belittling their users, powered by AI."
+host: moddedbear.com
+image: https://moddedbear.com/images/share.png
+{% endcardlink %}
+
