@@ -20,11 +20,11 @@ syndication:
   - host: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/38
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/116681413952529905
   - host: Bubbles
-    url: null
+    url: https://bubbles.town/entry/23059974
   - host: Pixelfed
-    url: null
+    url: https://pixelfed.social/p/kristofz/967459045570893199
 ---
 
 The mother of my sunshine has a beautiful garden behind her house, right by the river Ruhr, which her son tends with great passion. There are quite a few gorgeous flowers in bloom at the moment and it's simply lovely. I had to made some photos, even with my crappy smartphone. Here are a few shots. Enjoy.
