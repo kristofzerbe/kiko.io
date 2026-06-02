@@ -16,9 +16,9 @@ related:
   - Link-Journal-26-03
 syndication:
   - host: Bubbles
-    url: 
+    url: https://bubbles.town/entry/22713234
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/116679407260900503
 ---
 
 Over the past month of May, I've collected 17 links for my link journal.
