@@ -3,6 +3,7 @@ slug: Junited-2026
 title: Junited 2026
 subtitle: A month of sharing blog posts
 date: 2026-06-01 07:45:14
+updated: 2026-06-03 09:36:00
 photograph:
   file: 24-12-Suedafrika-1915-D50.jpg
   name: Addo Heart
@@ -30,7 +31,6 @@ syndication:
   - host: IndieNews
     url: https://news.indieweb.org/en/kiko.io/post/Junited-2026/
 ---
-
 Back in the day, there were only hunters and gatherers, and I would certainly have been in the latter group. Collecting things is satisfying.
 
 This month, I'll be collecting links to blog posts as part of Robert's [Junited 2026](https://robertbirming.com/junited/) campaign on this page. Keep an eye on it ...
@@ -68,5 +68,12 @@ title: "Gmail Thinks I'm Stupid, So I Left"
 description: "Gmail's rapid descent into belittling their users, powered by AI."
 host: moddedbear.com
 image: https://moddedbear.com/images/share.png
+{% endcardlink %}
+
+{% cardlink %}
+url: https://blog.jim-nielsen.com/2026/pedantry-of-computing/
+title: "An Ode to the Exacting Pedantry of Computers"
+description: "Writing about the big beautiful mess that is making things for the world wide web."
+host: blog.jim-nielsen.com
 {% endcardlink %}
 
