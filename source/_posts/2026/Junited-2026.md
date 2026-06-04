@@ -3,7 +3,7 @@ slug: Junited-2026
 title: Junited 2026
 subtitle: A month of sharing blog posts
 date: 2026-06-01 07:45:14
-updated: 2026-06-03 09:36:00
+updated: 2026-06-04 09:53:00
 photograph:
   file: 24-12-Suedafrika-1915-D50.jpg
   name: Addo Heart
@@ -75,5 +75,22 @@ url: https://blog.jim-nielsen.com/2026/pedantry-of-computing/
 title: "An Ode to the Exacting Pedantry of Computers"
 description: "Writing about the big beautiful mess that is making things for the world wide web."
 host: blog.jim-nielsen.com
+{% endcardlink %}
+
+{% cardlink %}
+url: https://www.eliostruyf.com/metered-billing-github-copilot-shift/
+title: "GitHub Copilot's metered billing: the wake-up call we needed (but didn't want)"
+description: "Explore the implications of GitHub Copilot's metered billing and how it reshapes developer workflows and AI tool usage."
+host: www.eliostruyf.com
+favicon: https://www.eliostruyf.com/images/favicon.svg
+image: https://www.eliostruyf.com/social/c93507f2-d7e8-4eb4-8420-0799add52fab.png
+{% endcardlink %}
+
+{% cardlink %}
+url: https://idiallo.com/blog/unsubscribed-from-ai-generated-newsletters
+title: "Now that your newsletter is AI-generated, I've Unsubscribed"
+description: "I've remained subscribed to some newsletters for over 20 years. The authors managed to keep my attention all that time. But then, one day, they decided to switch to an AI-generated newsletter without"
+host: idiallo.com
+image: https://cdn.idiallo.com/images/assets/663/thumb.jpg
 {% endcardlink %}
 
