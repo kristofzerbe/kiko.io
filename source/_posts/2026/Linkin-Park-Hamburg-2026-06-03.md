@@ -19,9 +19,9 @@ syndication:
   - host: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/39
   - host: Bubbles
-    url: null
+    url: https://bubbles.town/entry/26701806
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/116703905964437600
   - host: PeerTube
     url: https://clip.place/w/4naCimLgPBs57LZ1eevf8J
   - host: PeerTube
