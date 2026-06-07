@@ -19,11 +19,11 @@ related:
   - Blooming-Velmede
 syndication:
   - host: GitHub
-    url: 
+    url: https://github.com/kristofzerbe/kiko.io/issues/40
   - host: Bubbles
-    url: 
+    url: https://bubbles.town/entry/27452373
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/116708779499775148
 ---
 
 The first settlement, known as [Hammaburg](https://de.wikipedia.org/wiki/Hammaburg), dates back to the 8th century AD. What developed over the following 1,200 years is what we know today as Germany's second-largest city: [Hamburg](https://en.wikipedia.org/wiki/Hamburg).
