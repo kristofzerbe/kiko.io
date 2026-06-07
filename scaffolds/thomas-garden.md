@@ -21,6 +21,8 @@ bandcamp:
 syndication:
   - host: GitHub
     url: 
+  - host: Bubbles
+    url: 
   - host: Mastodon
     url: 
 ---
