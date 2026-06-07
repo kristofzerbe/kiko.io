@@ -21,9 +21,9 @@ syndication:
   - host: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/41
   - host: Bubbles
-    url: 
+    url: https://bubbles.town/entry/27511613
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/116709066397737370
 ---
 
 Many, many years ago, my darling and I planned a long weekend in Hamburg, including a sightseeing bus tour, a harbor cruise, and all the other things you typically do in Germany's northernmost metro area when you're there together for the first time.
@@ -87,3 +87,16 @@ A few shipping containers carrying the building components arrived in Hamburg th
 "PXL_20260604_083605196"
 "PXL_20260604_083957902"
 %}
+
+---
+
+You want to see more photos from the Miniatur Wunderland, Hamburg? Go ahead ...
+
+{% cardlink %}
+url: /photos/boxes/miniatur-wunderland/
+title: "Miniatur Wunderland - kiko.io"
+description: "Photo Box 'Miniatur Wunderland' by Kristof Zerbe"
+host: kiko.io
+favicon: https://kiko.io/favicon.ico
+image: /photos/normal/PXL_20260604_082644406.jpg
+{% endcardlink %}
