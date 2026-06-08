@@ -3,7 +3,7 @@ slug: Junited-2026
 title: Junited 2026
 subtitle: A month of sharing blog posts
 date: 2026-06-01 07:45:14
-updated: 2026-06-04 09:53:00
+updated: 2026-06-08 00:40:00
 photograph:
   file: 24-12-Suedafrika-1915-D50.jpg
   name: Addo Heart
@@ -92,5 +92,20 @@ title: "Now that your newsletter is AI-generated, I've Unsubscribed"
 description: "I've remained subscribed to some newsletters for over 20 years. The authors managed to keep my attention all that time. But then, one day, they decided to switch to an AI-generated newsletter without"
 host: idiallo.com
 image: https://cdn.idiallo.com/images/assets/663/thumb.jpg
+{% endcardlink %}
+
+{% cardlink %}
+url: https://kennethreitz.org/essays/2026-06-06-self-hosting-adventures
+title: "Self-Hosting Adventures"
+description: "The last essay I wrote about mercury was the clean version. One evening, six sites, a tidy migration, a satisfied ending. This is the other version. The one..."
+host: kennethreitz.org
+favicon: data:,
+image: https://kennethreitz.org/og-image/essays/2026-06-06-self-hosting-adventures.png
+{% endcardlink %}
+
+{% cardlink %}
+url: https://tracydurnell.com/2026/06/05/mental-defrag/
+title: "Mental defrag – Tracy Durnell's Mind Garden"
+host: tracydurnell.com
 {% endcardlink %}
 

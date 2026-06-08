@@ -4,7 +4,7 @@ const path = require('path');
 const axios = require('axios');
 const fs = require("hexo-fs");
 const handlebars = require("handlebars");
-const { getHelpers, getNewestDateString } = require("../../lib/tools.cjs");
+const { getHelpers } = require("../../lib/tools.cjs");
 
 const _helpers = getHelpers(hexo);
 const _rootDir = hexo.source_dir.replace("source", "");
@@ -84,6 +84,6 @@ function ensurePermaLink(permalink) {
 function get(entry) {
   return {
     url: ensurePermaLink(entry.permalink).replace("/index.html", "").replace(".html", ""),
-    date: getNewestDateString(entry)
+    date: ((entry.updated || entry.date).toISOString() || "")
   }
 }

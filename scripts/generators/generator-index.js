@@ -5,6 +5,7 @@
 */
 
 const pagination = require('hexo-pagination');
+const { getNewestDate } = require("../../lib/tools.cjs");
 
 hexo.config.index_generator = Object.assign({
   per_page: typeof hexo.config.per_page === 'undefined' ? 10 : hexo.config.per_page,
@@ -16,15 +17,13 @@ hexo.extend.generator.register("index", function (locals) {
   const config = this.config;
 
   //const posts = locals.posts.sort(config.index_generator.order_by);
-  //TODO: Consider Sticky
-  //??? posts.data.sort((a, b) => (b.sticky || 0) - (a.sticky || 0));
   
   // Merge POSTS with NOTES
   const items = [...locals.posts.data, ...locals.notes];
 
-  // Sort over all by date ascending -> date|updated: Moment<...>
-  //TODO: Consider UPDATED ?
-  items.sort((a, b) => a.date.diff(b.date)).reverse();
+  // Sort over all by updated|date ascending
+  items.sort((a, b) => (a.updated || a.date).diff((b.updated || b.date))).reverse();
+  //TODO: Consider Sticky ... (b.sticky || 0) - (a.sticky || 0)
 
   const paginationDir = config.pagination_dir || 'page';
   const path = config.index_generator.path || '';
