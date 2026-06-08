@@ -24,6 +24,8 @@ syndication:
     url: https://bubbles.town/entry/27452373
   - host: Mastodon
     url: https://indieweb.social/@kiko/116708779499775148
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/969538703848808603
 ---
 
 The first settlement, known as [Hammaburg](https://de.wikipedia.org/wiki/Hammaburg), dates back to the 8th century AD. What developed over the following 1,200 years is what we know today as Germany's second-largest city: [Hamburg](https://en.wikipedia.org/wiki/Hamburg).
