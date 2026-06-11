@@ -1,6 +1,6 @@
 ---
 date: 2026-06-11 08:54
-title: Good news on Google's AI Overviews
+title: Good News on Google's AI Overviews
 type: link
 rel:
   verb: bookmark-of
@@ -8,9 +8,12 @@ rel:
   url: https://the-decoder.com/landmark-german-ruling-declares-googles-ai-overviews-are-googles-own-words-and-makes-it-liable-for-false-answers
 syndication:
   - host: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/116730454720640749
+  - host: Bubbles
+    url: https://bubbles.town/entry/30934714
 ---
-It was clear that Google’s unilateral abandonment of the quid pro quo principle of search—now effectively replaced by an AI-generated summary—poses a threat to the internet and will eventually backfire. Now there is a court ruling from Germany that holds Google directly responsible for false statements in its "search" results, whereas previously it could fall back on the excuse of merely listing the most relevant hits. Very good, keep it up. Perhaps this will help prevent the [dystopias announced at this year’s I/O conference](https://blog.google/products-and-platforms/products/search/search-io-2026/#powerful-ai). 
+
+It was clear that Google’s unilateral abandonment of the quid pro quo principle of search — now effectively replaced by an AI-generated summary — poses a threat to the internet and will eventually backfire. Now there is a court ruling from Germany that holds Google directly responsible for false statements in its "search" results, whereas previously it could fall back on the excuse of merely listing the most relevant hits. Very good, keep it up. Perhaps this will help prevent the [dystopias announced at this year’s I/O conference](https://blog.google/products-and-platforms/products/search/search-io-2026/#powerful-ai). 
 
 More Links:
 [TechPolicy: Google’s ‘New Era for AI Search’ May Threaten Democracy](https://www.techpolicy.press/googles-new-era-for-ai-search-may-threaten-democracy/)
