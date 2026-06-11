@@ -13,7 +13,7 @@ syndication:
 It was clear that Google’s unilateral abandonment of the quid pro quo principle of search—now effectively replaced by an AI-generated summary—poses a threat to the internet and will eventually backfire. Now there is a court ruling from Germany that holds Google directly responsible for false statements in its "search" results, whereas previously it could fall back on the excuse of merely listing the most relevant hits. Very good, keep it up. Perhaps this will help prevent the [dystopias announced at this year’s I/O conference](https://blog.google/products-and-platforms/products/search/search-io-2026/#powerful-ai). 
 
 More Links:
-https://www.techpolicy.press/googles-new-era-for-ai-search-may-threaten-democracy/
+[TechPolicy: Google’s ‘New Era for AI Search’ May Threaten Democracy](https://www.techpolicy.press/googles-new-era-for-ai-search-may-threaten-democracy/)
 
 #AI
 
