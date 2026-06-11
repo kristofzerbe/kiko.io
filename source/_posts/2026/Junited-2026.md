@@ -3,7 +3,7 @@ slug: Junited-2026
 title: Junited 2026
 subtitle: A month of sharing blog posts
 date: 2026-06-01 07:45:14
-updated: 2026-06-08 00:40:00
+updated: 2026-06-11
 photograph:
   file: 24-12-Suedafrika-1915-D50.jpg
   name: Addo Heart
@@ -107,5 +107,29 @@ image: https://kennethreitz.org/og-image/essays/2026-06-06-self-hosting-adventur
 url: https://tracydurnell.com/2026/06/05/mental-defrag/
 title: "Mental defrag – Tracy Durnell's Mind Garden"
 host: tracydurnell.com
+{% endcardlink %}
+
+{% cardlink %}
+url: https://brandons-journal.com/post/a-wake-up-call
+title: "A Wake Up Call"
+description: "When I first met my wife, around seven years ago, she was what I would call a typical internet user. She was glued to Facebook and Pinterest and spent a lot of time curating her feeds and her image. She wasn't an influencer, ..."
+host: brandons-journal.com
+favicon: https://scribbles.page/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMW1NQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--9277280bbe0e57c8b263760ab963620de1e13eaf/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lKYW5CbFp3WTZCa1ZVT2hOeVpYTnBlbVZmZEc5ZlptbHNiRnNIYVFJc0FXa0NMQUU2Q25OaGRtVnlld2M2Q25OMGNtbHdWRG9NY1hWaGJHbDBlV2xrIiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--241e89b0e2e060c60d546c6582468ac06151d608/IMG_1610.jpeg
+{% endcardlink %}
+
+{% cardlink %}
+url: https://unsung.aresluna.org/more-molly-guards/
+title: "More molly guards – Unsung"
+description: "A blog about software craft and quality"
+host: unsung.aresluna.org
+favicon: https://unsung.aresluna.org/favicon.png
+image: https://unsung.aresluna.org/_media/more-molly-guards/ogimage.png
+{% endcardlink %}
+
+{% cardlink %}
+url: https://blog.jim-nielsen.com/2026/good-at-things/
+title: "Being “Good” at Things"
+description: "Writing about the big beautiful mess that is making things for the world wide web."
+host: blog.jim-nielsen.com
 {% endcardlink %}
 
