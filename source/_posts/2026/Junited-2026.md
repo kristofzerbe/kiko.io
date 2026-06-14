@@ -3,7 +3,7 @@ slug: Junited-2026
 title: Junited 2026
 subtitle: A month of sharing blog posts
 date: 2026-06-01 07:45:14
-updated: 2026-06-11
+updated: 2026-06-14
 photograph:
   file: 24-12-Suedafrika-1915-D50.jpg
   name: Addo Heart
@@ -131,5 +131,75 @@ url: https://blog.jim-nielsen.com/2026/good-at-things/
 title: "Being “Good” at Things"
 description: "Writing about the big beautiful mess that is making things for the world wide web."
 host: blog.jim-nielsen.com
+{% endcardlink %}
+
+{% cardlink %}
+url: https://correresmidestino.com/dont-you-just-upload-it-to-chatgpt/
+title: "“Don’t You Just Upload It to ChatGPT?”"
+description: "Can ChatGPT replace translators? A freelance translator shares a funny Ottawa story about AI translation, professional judgment and why human expertise still matters."
+host: correresmidestino.com
+favicon: https://correresmidestino.com/wp-content/uploads/2026/05/Favicon-transparent-2.png
+image: https://correresmidestino.com/wp-content/uploads/2026/06/1000014905-rotated-e1781079040455.jpg
+{% endcardlink %}
+
+{% cardlink %}
+url: https://werd.io/the-honest-truth-about-leaders-who-want-to-replace-their-workers-with-ai/
+title: "The honest truth about leaders who want to replace their workers with AI"
+description: "\"The problem tends to show up when a CEO is handed an agentic tool like Claude Code, and has it create something, which will work just fine, and thinks “oh, wait, why do we need so many people, when I can just sit here and make things work?”This is a bad CEO.\""
+host: werd.io
+favicon: https://storage.ghost.io/c/18/7c/187cc681-d3f3-49fc-87de-b01d06b76821/content/images/size/w256h256/format/png/2025/06/thumb.webp
+image: https://images.unsplash.com/photo-1548192746-dd526f154ed9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDJ8fGluZGllfGVufDB8fHx8MTc0OTY5ODcxM3ww&ixlib=rb-4.1.0&q=80&w=2000
+{% endcardlink %}
+
+{% cardlink %}
+url: https://brennan.day/yes-buy-them-a-coffee-support-and-mutual-aid-on-the-indieweb/
+title: "Yes, Buy Them a Coffee: Support and Mutual Aid on the IndieWeb"
+description: "Responding to criticism of 'buy me a coffee' links on blogs, I argue that asking for support isn't commodification—it's mutual aid! Exploring the economic pressures on creators, the history of mutual aid, and why the IndieWeb needs community support mechanisms to sustain independent art."
+host: brennan.day
+favicon: https://brennan.day/assets/images/favicon/favicon.ico
+image: https://brennan.day/assets/images/blog/coffee-cats.jpg
+{% endcardlink %}
+
+{% cardlink %}
+url: https://cauenapier.com/blog/townsquare_release/
+title: "Turn your site into a place people can bump into each other - cauenapier"
+description: "Releasing Town Square. Bring back the feeling that real people are browsing your site with you."
+host: cauenapier.com
+{% endcardlink %}
+
+{% cardlink %}
+url: https://www.theartofdoingstuff.com/i-fired-google/
+title: "I Fired Google"
+description: "One of the most irritating developments of modern life is the way companies keep improving things that were already working. Nobody asked for New Coke. Nobody asked for cars that require IT support and 3"
+host: www.theartofdoingstuff.com
+favicon: https://www.theartofdoingstuff.com/wp-content/uploads/2016/04/cropped-logo-cleaver-1-32x32.jpg
+image: https://www.theartofdoingstuff.com/wp-content/uploads/2026/06/Google-home-revolt.jpg
+{% endcardlink %}
+
+{% cardlink %}
+url: https://kevquirk.com/career-update
+title: "Career Update - Life After Stepping Down - Kev Quirk"
+description: "It's been 8 months since I stepped down as a global exec. Here's how it's going."
+host: kevquirk.com
+favicon: https://kevquirk.com/content/images/favicon.webp
+image: https://kevquirk.com/content/images/og-image.webp
+{% endcardlink %}
+
+{% cardlink %}
+url: https://fstoppers.com/opinion/photography-not-about-photography-901871
+title: "Photography Is Not About Photography | Fstoppers"
+description: "Photography succeeds when rooted in lived experience, not gear. Great photographers study life, literature, cinema, and culture—not just technical specs. Why consciousness matters more than cameras."
+host: fstoppers.com
+favicon: https://cdn.fstoppers.com/fs-dev-app2_0.jpg
+image: https://cdn.fstoppers.com/styles/medium/s3/lead/2026/04/life.png?itok=bQIHPdcH
+{% endcardlink %}
+
+{% cardlink %}
+url: https://netzpolitik.org/2026/degitalisierung-montage/
+title: "Degitalisierung - Montage"
+description: "Ähnlich wie in Propagandafilmen wird heute daran geforscht, wie sich Werbebotschaften gut in KI-Suchen integrieren lassen. Mit Blick auf Google stellt sich die Frage, ob es da nicht einen harten Schnitt braucht."
+host: netzpolitik.org
+favicon: https://cdn.netzpolitik.org/wp-upload/2025/01/cropped-NP_logo_3z_v2-32x32.png
+image: https://cdn.netzpolitik.org/wp-upload/2026/06/denise-jans-Lq6rcifGjOU-unsplash_1900.jpg
 {% endcardlink %}
 
