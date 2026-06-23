@@ -24,6 +24,8 @@ syndication:
     url: https://bubbles.town/entry/27511613
   - host: Mastodon
     url: https://indieweb.social/@kiko/116709066397737370
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/975051448999994381
 ---
 
 Many, many years ago, my darling and I planned a long weekend in Hamburg, including a sightseeing bus tour, a harbor cruise, and all the other things you typically do in Germany's northernmost metro area when you're there together for the first time.
