@@ -1,4 +1,5 @@
 ---
+type: digest
 slug: Link-Journal-26-05
 title: "Link Journal 26-05"
 date: 2026-06-02 08:15:54
@@ -21,13 +22,10 @@ syndication:
     url: https://indieweb.social/@kiko/116679407260900503
 ---
 
-Over the past month of May, I've collected 17 links for my link journal.
+Over the past month of May, I've collected 17 links for my link journal. 
 
 <!-- more -->
 
----
-
-<div class="linkjournal panels">
 {% linkjournal "26-05-07-Chrome-secretly-installs-a-4GB-AI-model-on-Windows-11-heres-how-to-stop-it" "Chrome secretly installs a 4GB AI model on Windows 11 – here’s how to stop it" "2026-05-07 16:42:00" "AI,Browser" "pureinfotech.com" "https://pureinfotech.com/stop-chrome-gemini-nano-download-windows-11/" "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://pureinfotech.com/stop-chrome-gemini-nano-download-windows-11/&size=32" "https://pureinfotech.com/wp-content/uploads/2026/03/chrome-block-ai-gemini-download-pc-hero.webp" %}
 Stop Chrome from silently downloading the 4GB Gemini Nano model on Windows 11. Use this Registry fix to block it for good.
 ---
@@ -167,5 +165,3 @@ Sean Dalton breaks down Lightroom's color grading panel and how to use complemen
 ---
 
 {% endlinkjournal %}
-
-</div>

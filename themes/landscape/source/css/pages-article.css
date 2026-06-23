@@ -148,6 +148,86 @@
   margin-top: calc(var(--space-double) + var(--space-medium));
 }
 
+/* Common Tags */
+
+.article blockquote {
+  position: relative;
+  padding: 1px var(--space-normal);
+  margin: var(--space-default) 0 0;
+  text-align: left;
+  font-style: italic;
+  background-color: rgba(205, 205, 205, .2);
+  border-left: 4px rgba(205, 205, 205, .75) solid;
+  border-radius: var(--border-radius-normal);
+}
+
+.article blockquote:before {
+  position: absolute;
+  width: 41px;
+  height: 41px;
+  top: -13px;
+  left: -22px;
+  display: block;
+  border-radius: 50%;
+  content: "";
+  background: var(--color-block);
+}
+
+.article blockquote:after {
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: -12px;
+  display: inline-block;
+  content: "";
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+  background-image: var(--icon-quote-dimmed);
+}
+
+.article blockquote + cite {
+  display: block;
+  margin: 0;
+  padding: 0 var(--space-median) var(--space-median) var(--space-normal);
+  background-color: rgba(205, 205, 205, .2);
+  border-left: 4px rgba(205, 205, 205, .75) solid;
+}
+
+.article blockquote + cite a {
+  color: #c8c8c8 !important;
+  border: none !important;
+  text-decoration: none !important;
+}
+.article blockquote + cite a:hover {
+  color: var(--color-accent) !important;
+  border: none !important;
+}
+
+.article blockquote ol,
+.article blockquote ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.article blockquote p {
+  line-height: var(--line-height-text);
+  margin: var(--space-medium) 0;
+}
+
+.article blockquote footer {
+  font-size: var(--font-size-normal);
+  margin: var(--space-default) 0;
+  font-family: var(--font-sans);
+}
+
+.article blockquote footer cite:before {
+  content: "—";
+  padding: 0 var(--space-small);
+}
+
 /* Meta -------------------------------------- */
 
 .article-meta {
@@ -415,6 +495,14 @@
   margin-top: var(--space-default);
 }
 
+/* Digest */
+.article.digest .article-header {
+  margin-bottom: var(--space-default);  
+}
+.article.digest .article-header .article-entry {
+  padding: 0;
+}
+
 /* Note */
 .article.note .article-header {
   padding-top: var(--space-double);
@@ -476,7 +564,8 @@
 }
 
 .article-entry img,
-.article-entry video {
+.article-entry video,
+.article.digest .panel img.panel-image {
   max-width: 100%;
   height: auto;
   display: block;
@@ -577,84 +666,6 @@
 
 .article-entry details blockquote + cite {
   margin-left: var(--space-default);
-}
-
-.article-entry blockquote {
-  position: relative;
-  padding: 1px var(--space-normal);
-  margin: var(--space-default) 0 0;
-  text-align: left;
-  font-style: italic;
-  background-color: rgba(205, 205, 205, .2);
-  border-left: 4px rgba(205, 205, 205, .75) solid;
-  border-radius: var(--border-radius-normal);
-}
-
-.article-entry blockquote:before {
-  position: absolute;
-  width: 41px;
-  height: 41px;
-  top: -13px;
-  left: -22px;
-  display: block;
-  border-radius: 50%;
-  content: "";
-  background: var(--color-block);
-}
-
-.article-entry blockquote:after {
-  display: block;
-  position: absolute;
-  top: -2px;
-  left: -12px;
-  display: inline-block;
-  content: "";
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: 24px;
-  width: 24px;
-  height: 24px;
-  background-image: var(--icon-quote-dimmed);
-}
-
-.article-entry blockquote + cite {
-  display: block;
-  margin: 0;
-  padding: 0 var(--space-median) var(--space-median) var(--space-normal);
-  background-color: rgba(205, 205, 205, .2);
-  border-left: 4px rgba(205, 205, 205, .75) solid;
-}
-
-.article-entry blockquote + cite a {
-  color: #c8c8c8 !important;
-  border: none !important;
-  text-decoration: none !important;
-}
-.article-entry blockquote + cite a:hover {
-  color: var(--color-accent) !important;
-  border: none !important;
-}
-
-.article-entry blockquote ol,
-.article-entry blockquote ul {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.article-entry blockquote p {
-  line-height: var(--line-height-text);
-  margin: var(--space-medium) 0;
-}
-
-.article-entry blockquote footer {
-  font-size: var(--font-size-normal);
-  margin: var(--space-default) 0;
-  font-family: var(--font-sans);
-}
-
-.article-entry blockquote footer cite:before {
-  content: "—";
-  padding: 0 var(--space-small);
 }
 
 .article-entry .pullquote {
@@ -952,6 +963,12 @@
   background-image: url("/images/golem-dark-100.png");
 }
 
+/* Digest */
+.article.digest .article-footer { 
+  margin: 0;
+  padding: var(--space-default);
+}
+
 /* Share -------------------------------------- */
 
 .article-share {
@@ -984,6 +1001,11 @@
   color: var(--color-block);
   background-color: var(--color-accent-text);
   box-shadow: inset 0 20px 20px -20px var(--color-shadow-dark);
+}
+
+/* Digest */
+.article.digest .article-share {
+  margin-top: 0;
 }
 
 /* Extra -------------------------------------- */

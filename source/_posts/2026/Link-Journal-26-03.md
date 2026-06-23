@@ -1,4 +1,5 @@
 ---
+type: digest
 slug: Link-Journal-26-03
 title: "Link Journal 26-03"
 date: 2026-04-05 13:52:06
@@ -20,9 +21,6 @@ Over the past month of March, I've collected 22 links for my link journal.
 
 <!-- more -->
 
----
-
-<div class="linkjournal panels">
 {% linkjournal "26-03-04-Light-Dark-Theme-with-Relative-Colors" "Light-Dark Theme with Relative Colors" "2026-03-04 10:05:00" "CSS,Colors" "codepen.io" "https://codepen.io/peterbenoit/pen/azmoXxP" "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://codepen.io/peterbenoit/pen/azmoXxP&size=32" "https://shots.codepen.io/username/pen/azmoXxP-800.jpg?version=1771874210" %}
 A "zero-maintenance" theme switcher for the New Colors challenge. It uses a single brand color to automatically generate an entire light and dark theme...
 ---
@@ -161,5 +159,3 @@ Obs.js reads device and network signals and allows you to build adaptive user ex
 ---
 
 {% endlinkjournal %}
-
-</div>

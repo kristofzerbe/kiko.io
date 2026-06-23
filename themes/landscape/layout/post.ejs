@@ -1,1 +1,3 @@
-<%- partial('_partial/article', {post: page, index: false}) %>
+<% if (!page.type) page.type = "article" %>
+
+<%- partial('_partial/' + page.type, { post: page }) %>

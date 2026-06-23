@@ -1,4 +1,5 @@
 ---
+type: digest
 slug: Link-Journal-26-02
 title: "Link Journal 26-02"
 date: 2026-03-01 13:51:59
@@ -20,9 +21,6 @@ Over the past month of February, I've collected 11 links for my link journal.
 
 <!-- more -->
 
----
-
-<div class="linkjournal panels">
 {% linkjournal "26-02-07-Drawing-Connections-with-CSS-Anchor-Positioning" "Drawing Connections with CSS Anchor Positioning" "2026-02-07 09:06:00" "CSS" "rolandfranke.nl" "https://rolandfranke.nl/frontend-stories/drawing-connections-with-css-anchor-positioning/" "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://rolandfranke.nl/frontend-stories/drawing-connections-with-css-anchor-positioning/&size=32" "https://rolandfranke.nl/_astro/default-og-image.o80cBQWX.png" %}
 A practical exploration of CSS Anchor Positioning and the anchor() function to visually connect related elements without extra markup.
 ---
@@ -132,5 +130,3 @@ Last year I was introduced to the idea of “Dopplr colours” in the IndieWeb c
 ---
 
 {% endlinkjournal %}
-
-</div>

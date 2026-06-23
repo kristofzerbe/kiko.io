@@ -1,4 +1,5 @@
 ---
+type: digest
 slug: Link-Journal-26-04
 title: "Link Journal 26-04"
 date: 2026-05-10 13:52:13
@@ -25,9 +26,6 @@ Over the past month of April, I've collected 16 links for my link journal.
 
 <!-- more -->
 
----
-
-<div class="linkjournal panels">
 {% linkjournal "26-04-03-Introducing-view-transitions-toolkit-" "Introducing view-transitions-toolkit .." "2026-04-03 07:31:00" "CSS/Animation,JavaScript" "www.bram.us" "https://www.bram.us/2026/04/02/view-transitions-toolkit/" "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.bram.us/2026/04/02/view-transitions-toolkit/&size=32" "https://www.bram.us/wordpress/wp-content/uploads/2026/04/view-transitions-toolkit-main-scaled.png" %}
 Over the past years, I’ve published a bunch of View Transitions contents: articles, talks, demos, etc. I’ve also done a bunch of more experimental things with them, such as optimizing the keyframes or driving a View Transition by scroll.What I noticed while doing all those experiments is that I repeated a lot of the code … and they were scattered a bit all over the place as well. So I bundled that all up in a package: view-transitions-toolkit.
 ---
@@ -143,5 +141,3 @@ The new Animation Timeline API allows us to create dynamic scroll animations wit
 ---
 
 {% endlinkjournal %}
-
-</div>

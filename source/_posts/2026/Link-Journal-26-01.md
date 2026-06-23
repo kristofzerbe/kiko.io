@@ -1,4 +1,5 @@
 ---
+type: digest
 slug: Link-Journal-26-01
 title: "Link Journal 26-01"
 date: 2026-02-01 13:51:51
@@ -20,9 +21,6 @@ Over the past month of January, I've collected 7 links for my link journal.
 
 <!-- more -->
 
----
-
-<div class="linkjournal panels">
 {% linkjournal "26-01-09-Building-an-IndieAuth-Comment-System-for-Your-Static-Site" "Building an IndieAuth Comment System for Your Static Site" "2026-01-09 00:01:00" "IndieWeb,Authentication" "brennan.day" "https://brennan.day/building-an-indieauth-comment-system-for-your-static-site/" "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://brennan.day/building-an-indieauth-comment-system-for-your-static-site/&size=32" "https://brennan.day/assets/images/blog/comments.jpg" %}
 A journey through authentication, CORS issues, and the joy of owning your comments! Learn how to build a comment system for your static site using IndieAuth and Netlify Functions, storing the comments in your git repository.
 ---
@@ -64,5 +62,3 @@ CSS relative colour values are now widely supported. In this article, pioneering
 ---
 
 {% endlinkjournal %}
-
-</div>

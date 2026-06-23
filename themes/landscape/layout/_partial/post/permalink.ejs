@@ -5,6 +5,7 @@ if (post.permalink && post.permalink.startsWith(config.url) == false) {
 let cleanSlug = post.slug.replace("/", "-");
 %>
 <div class="article-permalink" id="permalink-<%= cleanSlug %>">
+  <a class="u-url u-uid" href="<%- post.permalink %>" style="display:none;"><%- post.permalink %></a>
   <input value="<%= encodeURI(post.permalink) %>" 
          data-id="<%= cleanSlug %>" data-title="<%= post.title %>" />
   <a class="article-action action-copy" title="Copy URL"></a>

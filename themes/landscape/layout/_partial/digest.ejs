@@ -7,8 +7,16 @@
   body.classList.add("article-view");
 </script>
 
+<%
+  // console.log(post.content);
+  let htmlContent = post.content.split(/\<span id="more"\>\<\/span\>/s);
+  // console.log(htmlContent[0]);
+  // console.log("-----------------------------------");
+  // console.log(htmlContent[1]);
+%>
+
 <article id="<%= post.layout %>-<%= post.slug %>" data-pagefind-meta="type:Article"
-         class="article h-entry">
+         class="article digest h-entry">
 
   <div class="article-meta" data-pagefind-ignore>
     <%- partial('post/author') %>
@@ -16,7 +24,7 @@
     <%- partial('post/category', { class_name: 'article-category p-category' }) %>
   </div>
   
-  <div class="article-inner">
+  <div class="digest-inner">
 
     <%- partial('post/outdates') %>
     <%- partial('post/infotext') %>
@@ -27,12 +35,16 @@
       <%- partial('post/title', { class_name: 'article-title p-name', show_link: false, index: false }) %>
       <%- partial('post/subtitle', { class_name: 'article-subtitle p-summary', index: false }) %>
       <div id="interactions-totalnumber-placeholder"></div>
+      <div class="article-entry e-content">
+        <%- htmlContent[0] %>
+        <span id="more"></span>
+      </div>
     </header>
-    
-    <div class="article-entry e-content">
-      <%- post.content %>
+
+    <div class="panels">
+      <%- htmlContent[1] %>
     </div>
-    
+        
     <footer class="article-footer" data-pagefind-ignore>      
       <%- partial('post/tag', { class_name: 'article-tags' }) %>
       <%- partial('post/permalink') %>
