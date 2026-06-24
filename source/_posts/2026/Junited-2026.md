@@ -3,7 +3,7 @@ slug: Junited-2026
 title: Junited 2026
 subtitle: A month of sharing blog posts
 date: 2026-06-01 07:45:14
-updated: 2026-06-14
+updated: 2026-06-24
 photograph:
   file: 24-12-Suedafrika-1915-D50.jpg
   name: Addo Heart
@@ -201,5 +201,31 @@ description: "Ähnlich wie in Propagandafilmen wird heute daran geforscht, wie s
 host: netzpolitik.org
 favicon: https://cdn.netzpolitik.org/wp-upload/2025/01/cropped-NP_logo_3z_v2-32x32.png
 image: https://cdn.netzpolitik.org/wp-upload/2026/06/denise-jans-Lq6rcifGjOU-unsplash_1900.jpg
+{% endcardlink %}
+
+{% cardlink %}
+url: https://jamesg.blog/2026/06/21/blog-posts-as-starting-points
+title: "Blog posts as starting points - James' Coffee Blog"
+host: jamesg.blog
+favicon: https://jamesg.blog/assets/mascot/mascot.svg
+image: https://screenshots.jamesg.blog/?url=
+{% endcardlink %}
+
+{% cardlink %}
+url: https://forkingmad.blog/my-neighbour-tells-me-i-am-crazy/
+title: "My Neighbour tells me I am Crazy!"
+description: "She may well be correct, but let's have some context.I live on the outskirts of a small village, which has one road in.  There's no out unless you want t..."
+host: forkingmad.blog
+favicon: data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20y='.9em'%20font-size='90'%3E💬%3C/text%3E%3C/svg%3E
+image: https://bear-images.sfo2.cdn.digitaloceanspaces.com/forkingmad/forkingmad-plus-strapline-1200x630.webp
+{% endcardlink %}
+
+{% cardlink %}
+url: https://www.gordonmclean.co.uk/2026/06/23/fuck-brexit/
+title: "Fuck Brexit"
+description: "10 years ago I woke up in a tent in Glastonbury and realised that the utterly unthinkable had happened. We spent the morning, we festival goers, wandering around in a daze. It can’t be true?!…"
+host: www.gordonmclean.co.uk
+favicon: https://i0.wp.com/www.gordonmclean.co.uk/wp-content/uploads/2026/04/cropped-HiLogo.png?fit=32%2C32&ssl=1
+image: https://i0.wp.com/www.gordonmclean.co.uk/wp-content/uploads/2026/04/cropped-HiLogo.png?fit=512%2C512&ssl=1
 {% endcardlink %}
 
