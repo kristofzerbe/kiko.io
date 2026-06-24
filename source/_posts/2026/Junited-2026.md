@@ -3,7 +3,7 @@ slug: Junited-2026
 title: Junited 2026
 subtitle: A month of sharing blog posts
 date: 2026-06-01 07:45:14
-updated: 2026-06-24
+updated: 2026-06-25
 photograph:
   file: 24-12-Suedafrika-1915-D50.jpg
   name: Addo Heart
@@ -227,5 +227,37 @@ description: "10 years ago I woke up in a tent in Glastonbury and realised that 
 host: www.gordonmclean.co.uk
 favicon: https://i0.wp.com/www.gordonmclean.co.uk/wp-content/uploads/2026/04/cropped-HiLogo.png?fit=32%2C32&ssl=1
 image: https://i0.wp.com/www.gordonmclean.co.uk/wp-content/uploads/2026/04/cropped-HiLogo.png?fit=512%2C512&ssl=1
+{% endcardlink %}
+
+{% cardlink %}
+url: https://www.matuzo.at/blog/2026/grid-lanes-accessibility
+title: "Your Grid Lanes will likely fail WCAG 2.4.3 - Manuel Matuzovic"
+description: "I’m a frontend developer, consultant, accessibility auditor, blogger, teacher, and book author from Austria."
+host: www.matuzo.at
+favicon: https://www.matuzo.at/favicon-96x96.png
+image: https://res.cloudinary.com/dp3mem7or/image/upload/w_1200/articles/sm_gridlanesa11y.png?s=111
+{% endcardlink %}
+
+{% cardlink %}
+url: https://blog.jim-nielsen.com/2026/blogging-stating-the-obvious/
+title: "Blogging Can Just Be Stating The Obvious"
+description: "Writing about the big beautiful mess that is making things for the world wide web."
+host: blog.jim-nielsen.com
+{% endcardlink %}
+
+{% cardlink %}
+url: https://paolino.me/founding-a-company-in-germany/
+title: "Founding a Company in Germany: €9,600, 152 Days, and I Still Can’t Send an Invoice"
+description: "I started a company in Germany in late January. By late June I had spent 9,600 euros, registered two companies, and still cannot issue a single invoice of my..."
+host: paolino.me
+image: https://paolino.me/assets/images/og/posts/founding-a-company-in-germany.png
+{% endcardlink %}
+
+{% cardlink %}
+url: https://emilesilvis.com/maybe-is-ai-a-bubble-is-the-wrong-question.html
+title: "Maybe \"is AI a bubble?\" is the wrong question"
+description: "Bulls and bears agree the technology is real—they disagree on the clocks. Not whether AI is a bubble, but whether the payoff arrives before the financing runs out."
+host: emilesilvis.com
+image: https://emilesilvis.com/static/images/profile.png
 {% endcardlink %}
 
