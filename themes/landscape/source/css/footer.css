@@ -16,25 +16,57 @@
 
 #footer .inner {
   position: relative;
-  width: 95%;
+  /* width: 95%; */
   margin-inline: var(--space-medium);
   line-height: var(--line-height-normal);
   font-size: var(--font-size-code);
   display: grid;
   grid-template-columns: max-content auto max-content;
-  grid-template-rows: max-content .75rem max-content max-content max-content;
+  grid-template-rows: max-content .75rem max-content max-content max-content max-content;
   grid-gap: 2px 64px;
-  grid-template-areas: "links . webrings" ". . webrings" "perf . webrings" "info . webrings" "dots . webrings"
+  grid-template-areas: 
+    "links . webrings" 
+    ". . webrings" 
+    "perf . webrings" 
+    "info . webrings" 
+    "dots . webrings"
+    ". townsquare townsquare"
+}
+
+@media screen and (max-width:1279px) {
+  #footer .inner {
+    grid-template-areas: 
+      "links . webrings" 
+      ". . webrings" 
+      "perf . webrings" 
+      "info . webrings" 
+      "dots . webrings"
+      "townsquare townsquare townsquare"    
+    }
 }
 
 @media screen and (max-width:767px) {
   #footer .inner {
     margin-inline: var(--space-thin);
-    grid-template-columns: max-content;
-    grid-template-rows: max-content .75rem max-content max-content .75rem max-content .3rem max-content;
+    grid-template-columns: 100%;
+    grid-template-rows: max-content .75rem max-content max-content .75rem max-content .3rem max-content .75rem max-content;
     grid-gap: 2px 5px;
-    grid-template-areas: "links" "." "perf" "info" "." "webrings" "." "dots"
+    grid-template-areas: 
+      "links" 
+      "." 
+      "perf" 
+      "info" 
+      "." 
+      "webrings" 
+      "." 
+      "dots"
+      "."
+      "townsquare"
   }
+}
+
+#footer #townsquare-root {
+  grid-area: townsquare;
 }
 
 #footer .webrings {
