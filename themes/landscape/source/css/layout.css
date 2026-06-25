@@ -3,9 +3,40 @@ body {
   height: 100%;
 }
 
+html {
+	container-type: scroll-state;
+  container-name: scroller;  
+}
+
 body {
   width: 100%;
   min-height: 100vh; /* Andy Bells Modernized Reset */
+}
+
+#back-to-top {
+  color: var(--color-logo);
+  background-color: var(--color-accent);
+  border-radius: var(--border-radius-small);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--space-extra);
+  width: var(--space-extra);
+  cursor: pointer;
+  position: fixed;
+  bottom: var(--space-small);
+  right: var(--space-small);
+  margin-left: auto;
+  translate: 0 300px;
+  transition: all 0.4s ease;  
+}
+#back-to-top svg {
+    width: var(--space-medium);
+}
+@container scroller scroll-state(scrollable: top) {
+  #back-to-top {
+    translate: 0 0;
+  }
 }
 
 #header {
@@ -70,7 +101,7 @@ main {
 
 #sidebar {
   margin-bottom: var(--space-block);
-  font-size: var(--font-size-medium)
+  font-size: var(--font-size-medium);
 }
 
 @media screen and (min-width:768px) {
@@ -78,7 +109,9 @@ main {
     display: inline;
     float: left;
     width: 23%;
-    margin: 0 1%
+    margin: 0 1%;
+    position: sticky;
+    top: var(--header-offset);
   }
 }
 

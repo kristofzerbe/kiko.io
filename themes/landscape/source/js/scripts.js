@@ -156,7 +156,7 @@ function ensureIconLinkText() {
 var header = {
   height: 0,
   top: 0,
-  offset: 55,
+  offset: parseInt(window.getComputedStyle(document.documentElement).getPropertyValue('--header-offset')),
   photoLinkOpacity: 0,
   titleFontSize: 0
 };
@@ -174,35 +174,47 @@ function initHeader() {
     document.getElementById("header-nav").classList.add("has-nav-index");
   }
 
+  _scDelta = null;
   scrollHeader();
 }
 
+var _scDelta;
 function scrollHeader() {
-  var h = header.height - header.offset,
+  let h = header.height - header.offset,
       st = $(document).scrollTop(),
-      d = (h - st),
-      p = (d / h),
-      hfs = header.titleFontSize / 5 * 3,
-      jSide = $("aside");
-  if (d > 0) {
+      d = (h - st);
+  
+  if (d < 0) d = 0;
+    
+  // console.log("st:" + st + " | d:" + d + " | _scDelta:" + _scDelta );
+
+  if (d !== _scDelta) {
+    _scDelta = d;
+    let p = (d / h);
+
     $("#header").css("height", d + header.offset + "px");
     $("#header-photo-link").css("opacity", header.photoLinkOpacity * p);
     $("#banner").css("opacity", p);
     $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1 - p) );
-    $("#header-title").css("top", header.top - (hfs * (1 - p)) + "px");
+    $("#header-title").css("top", header.top - ((header.titleFontSize / 5 * 3) * (1 - p)) + "px");
     $("#subtitle").css("opacity", p);
-    jSide.css("max-width", "").css("position", "").css("top", "");
-  } else {
-    $("#header").css("height", header.offset + "px");
-    $("#header-photo-link").css("opacity", 0);
-    $("#banner").css("opacity", 0);
-    $("#title-wrap").css("font-size", header.titleFontSize - ( header.titleFontSize / 3) * (1) );
-    $("#header-title").css("top", header.top - (hfs * (1)) + "px");
-    $("#subtitle").css("opacity", 0);
-    if (window.matchMedia("screen and (min-width: 768px)").matches & window.innerHeight > (jSide.height() + 50)) {
-      jSide.css("max-width", $("aside").width()).css("position", "fixed").css("top", "50px");
-    }
-  }
+  } 
+
+}
+
+/** ------------------------------------------------------------ */
+
+function initBackTop() {
+  const eBody  = document.getElementById('body');
+  const eFooter = document.getElementById('footer');
+  const eBack = document.getElementById('back-to-top');
+  const recBody = eBody.getBoundingClientRect();
+  const recFooter = eFooter.getBoundingClientRect();
+  const recBack = eBack.getBoundingClientRect();
+
+  let margin = recFooter.height + recBody.height - recFooter.bottom;
+  if (margin < 0) margin = 0; 
+  eBack.style.setProperty("margin-bottom", margin + "px");
 }
 
 /** ------------------------------------------------------------ */
