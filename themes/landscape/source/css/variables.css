@@ -298,9 +298,6 @@
   --hair-2: unset;
   }
 }
-#townsquare-root#townsquare-root .townsquare-avatar { /* HACK */
-  color: var(--color-footer-link) !important;
-}
 #townsquare-root#townsquare-root .townsquare__stage {
   background: linear-gradient(
     180deg,
@@ -313,4 +310,19 @@
 }
 #townsquare-root#townsquare-root .townsquare__ground {
   background: var(--ground);
+}
+
+/* HACK */
+#townsquare-root#townsquare-root .townsquare-avatar { 
+  color: var(--color-footer-link) !important;
+}
+#townsquare-root#townsquare-root .townsquare {
+  --ts-stage-height: 225px;
+  --ts-toolbar-reserve: 75px;
+}
+#townsquare-root#townsquare-root .townsquare__control,
+#townsquare-root#townsquare-root .townsquare-avatar__plate,
+#townsquare-root#townsquare-root .townsquare-avatar__profile-button, 
+#townsquare-root#townsquare-root .townsquare-avatar__profile-done {
+  border-radius: var(--border-radius-small);
 }
