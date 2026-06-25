@@ -272,8 +272,10 @@
   --you-deep: var(--you);
   --text: var(--ink);
   --muted: var(--ink);
+  /* HACKS */
   --ink-soft: var(--ink);
   --ink-faint: var(--ink);
+  --surface-2: var(--surface);
   --hair: unset;
   --hair-2: unset;
 }
@@ -292,8 +294,10 @@
   --you-deep: var(--you);
   --text: var(--ink);
   --muted: var(--ink);
+  /* HACKS */
   --ink-soft: var(--ink);
   --ink-faint: var(--ink);
+  --surface-2: var(--surface);
   --hair: unset;
   --hair-2: unset;
   }
@@ -323,6 +327,19 @@
 #townsquare-root#townsquare-root .townsquare__control,
 #townsquare-root#townsquare-root .townsquare-avatar__plate,
 #townsquare-root#townsquare-root .townsquare-avatar__profile-button, 
-#townsquare-root#townsquare-root .townsquare-avatar__profile-done {
-  border-radius: var(--border-radius-small);
+#townsquare-root#townsquare-root .townsquare-avatar__profile-done,
+#townsquare-root#townsquare-root .townsquare-avatar__profile,
+#townsquare-root#townsquare-root .townsquare-avatar__composer,
+#townsquare-root#townsquare-root .townsquare-avatar__send,
+#townsquare-root#townsquare-root .townsquare__action {
+  border-radius: var(--border-radius-small) !important;
 }
+#townsquare-root#townsquare-root .townsquare-avatar__composer {
+  padding-block: 2px;
+}
+#townsquare-root#townsquare-root .townsquare-avatar__plate {
+  padding-block: 3px;
+}
+#townsquare-root#townsquare-root .townsquare-avatar__input {
+  font-size: 14px;
+} 
