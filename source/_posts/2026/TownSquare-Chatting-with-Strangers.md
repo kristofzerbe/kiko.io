@@ -24,13 +24,13 @@ bandcamp:
   track: Live it Down|1826128330
 syndication:
   - host: GitHub
-    url: null
+    url: https://github.com/kristofzerbe/kiko.io/issues/42
   - host: Bubbles
-    url: null
+    url: https://bubbles.town/entry/44564983
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/116816551625739701
   - host: IndieNews
-    url: https://news.indieweb.org/en
+    url: https://news.indieweb.org/en/kiko.io/post/TownSquare-Chatting-with-Strangers/
 ---
 
 You stroll around a traditional market in town, stop at a stall and have a look at what's on offer. You're never alone, as others are doing the same. Unless you're in a hurry and you like people, it's quite common to strike up a casual conversation with other stall-goers or even the stallholder. "The stand is quite busy." "The product is rather expensive, though." "It's hot today, but it's finally supposed to rain this afternoon." Conversations that we usually forget quite quickly, but which make us social beings.
