@@ -1,0 +1,88 @@
+#townsquare-root#townsquare-root,
+#townsquare-root#townsquare-root[data-townsquare-theme="dark"] {
+  --scene: var(--color-accent);
+  --page: color-mix(in oklab, var(--color-accent) 85%, #000 15%);
+  --surface: color-mix(in oklab, var(--color-accent) 85%, #fff 15%);
+  --ink: var(--color-footer-link);
+  --you: var(--color-highlight);
+  --tree-trunk: color-mix(in oklab, var(--color-accent) 85%, #fff 20%);
+  --tree-canopy: color-mix(in oklab, var(--color-accent) 85%, #fff 20%);
+  --other: color-mix(in oklab, var(--color-accent) 85%, #fff 20%);
+  --ground: var(--color-accent);
+  --scene-edge: color-mix(in oklab, var(--scene) 88%, var(--page) 12%);
+  --you-deep: var(--you);
+  --text: var(--ink);
+  --muted: var(--ink);
+  /* HACKS */
+  --ink-soft: var(--ink);
+  --ink-faint: var(--ink);
+  --surface-2: var(--surface);
+  --hair: unset;
+  --hair-2: unset;
+}
+@media (prefers-color-scheme: dark) {
+  #townsquare-root#townsquare-root[data-townsquare-theme="auto"] {
+  --scene: var(--color-accent);
+  --page: color-mix(in oklab, var(--color-accent) 85%, #000 15%);
+  --surface: color-mix(in oklab, var(--color-accent) 85%, #fff 15%);
+  --ink: var(--color-footer-link);
+  --you: var(--color-highlight);
+  --tree-trunk: color-mix(in oklab, var(--color-accent) 85%, #fff 20%);
+  --tree-canopy: color-mix(in oklab, var(--color-accent) 85%, #fff 20%);
+  --other: color-mix(in oklab, var(--color-accent) 85%, #fff 20%);
+  --ground: var(--color-accent);
+  --scene-edge: color-mix(in oklab, var(--scene) 88%, var(--page) 12%);
+  --you-deep: var(--you);
+  --text: var(--ink);
+  --muted: var(--ink);
+  /* HACKS */
+  --ink-soft: var(--ink);
+  --ink-faint: var(--ink);
+  --surface-2: var(--surface);
+  --hair: unset;
+  --hair-2: unset;
+  }
+}
+#townsquare-root#townsquare-root .townsquare__stage {
+  background: linear-gradient(
+    180deg,
+    var(--scene) 0%,
+    var(--scene) 72%,
+    var(--scene-edge) 72%,
+    var(--page) 72.4%,
+    var(--page) 100%
+  );
+}
+#townsquare-root#townsquare-root .townsquare__ground {
+  background: var(--ground);
+}
+
+/* HACK */
+#townsquare-root#townsquare-root .townsquare-avatar { 
+  color: var(--color-footer-link) !important;
+}
+#townsquare-root#townsquare-root .townsquare {
+  --ts-stage-height: 215px;
+  --ts-toolbar-reserve: 65px;
+}
+#townsquare-root#townsquare-root .townsquare__control,
+#townsquare-root#townsquare-root .townsquare-avatar__plate,
+#townsquare-root#townsquare-root .townsquare-avatar__profile-button, 
+#townsquare-root#townsquare-root .townsquare-avatar__profile-done,
+#townsquare-root#townsquare-root .townsquare-avatar__profile,
+#townsquare-root#townsquare-root .townsquare-avatar__composer,
+#townsquare-root#townsquare-root .townsquare-avatar__send,
+#townsquare-root#townsquare-root .townsquare-avatar__self-id,
+#townsquare-root#townsquare-root .townsquare-avatar__peer-label,
+#townsquare-root#townsquare-root .townsquare__action {
+  border-radius: var(--border-radius-small) !important;
+}
+#townsquare-root#townsquare-root .townsquare-avatar__composer {
+  padding-block: 2px;
+}
+#townsquare-root#townsquare-root .townsquare-avatar__plate {
+  padding-block: 3px;
+}
+#townsquare-root#townsquare-root .townsquare-avatar__input {
+  font-size: 14px;
+} 

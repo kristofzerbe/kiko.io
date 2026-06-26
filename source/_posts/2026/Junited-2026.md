@@ -261,3 +261,11 @@ host: emilesilvis.com
 image: https://emilesilvis.com/static/images/profile.png
 {% endcardlink %}
 
+{% cardlink %}
+url: https://seanvoisen.com/thinking/2026-06-25-finishing/
+title: "Finishing"
+description: "On perseverance and care as anti-slop."
+host: seanvoisen.com
+favicon: https://seanvoisen.com/favicon.ico
+image: https://seanvoisen.com/assets/images/og/sean_voisen_og@1200x630.png
+{% endcardlink %}
