@@ -2,6 +2,7 @@
 hidden: true
 isLocale: true
 permalink: post/TownSquare-Chatting-with-Strangers
+#--------------------------------------------------
 title: TownSquare -  Chatting with Strangers
 subtitle: Neues Web-Widget für Blog-Interaktionen
 date: 2026-06-26 14:02:17
@@ -39,3 +40,12 @@ Ein Problem des klassischen Internets ist hingegen, dass man meist alleine durch
 Das Projekt ist auf [GitHub](https://github.com/cauenapier/TownSquare) verfügbar (bislang ohne Lizenzangabe) und besteht aus dem besagten Web-Widget und einem Node.js-Server, den man selbst hosten kann, wenn man unabhängig von Cauê's eigener Instanz sein möchte.
 
 TownSquare ist noch keinen Monat alt und Cauê sagt ganz offen, das KI dabei die Hauptarbeit erledigt hat. Das hinterlässt zwar erstmal einen fahlen Beigeschmack, aber ich finde das Konzept überzeugend und vertraue darauf dass er auch alle künftigen Erweiterungen vor dem Release ausreichend prüft. Daher findet ihr im Footer aller meiner Seiten den neuen Marktplatz...
+
+---
+
+{% cardlink %}
+url: https://news.ycombinator.com/item?id=48608570
+title: "Hacker News - Show HN: TownSquare, a tiny presence layer for websites"
+host: news.ycombinator.com
+favicon: y18.svg
+{% endcardlink %}
