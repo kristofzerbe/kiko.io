@@ -269,3 +269,13 @@ host: seanvoisen.com
 favicon: https://seanvoisen.com/favicon.ico
 image: https://seanvoisen.com/assets/images/og/sean_voisen_og@1200x630.png
 {% endcardlink %}
+
+{% cardlink %}
+url: https://brennan.day/every-commit-a-sentence-git-commit-messages-for-bloggers/
+title: "Every Commit A Sentence: Git Commit Messages for Bloggers"
+description: "I had 448 `feat:` commits and 417 `fix:` commits. Nearly the same count, for wildly different kinds of work. Here's why conventional commits were never designed for a writer's blog, and the eleven-type system I built to replace them."
+host: brennan.day
+favicon: https://brennan.day/assets/images/favicon/favicon.ico
+image: https://brennan.day/assets/images/blog/ledger.jpg
+{% endcardlink %}
+
