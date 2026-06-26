@@ -1,7 +1,7 @@
 ---
 hidden: true
 isLocale: true
-permalink: post/TownSquare-Chatting-with-Strangers
+permalink: post/TownSquare-Chatting-with-Strangers/de
 #--------------------------------------------------
 title: TownSquare -  Chatting with Strangers
 subtitle: Neues Web-Widget für Blog-Interaktionen
