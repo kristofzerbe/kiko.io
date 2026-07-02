@@ -8,9 +8,9 @@ rel:
   url: https://robertbirming.com/julyreply-2026-blog-connecting/
 syndication: 
 - host: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/116851585279805536
 - host: Bubbles
-  url: 
+  url: https://bubbles.town/entry/44742264
 ---
 June has just ended, and it was fun to take part in Robert's [Junited](https://robertbirming.com/junited/) campaign, even though I had a few days with gaps and only managed to [collect 29 links](https://kiko.io/post/Junited-2026/). For my first time participating, though, that's pretty near optimal. 
 
@@ -29,4 +29,4 @@ image: https://bear-images.sfo2.cdn.digitaloceanspaces.com/robert/julyreply-2026
 
 ---
 
-This post is part of the [#JulyReply](https://robertbirming.com/julyreply/) campaign that Robert Birming initiated.
+This post is part of the [#JulyReply](https://robertbirming.com/julyreply/) campaign initiated by Robert Birming.
