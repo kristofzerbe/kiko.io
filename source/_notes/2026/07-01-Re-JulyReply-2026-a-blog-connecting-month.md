@@ -1,5 +1,5 @@
 ---
-title: "Re&#58; JulyReply 2026, a blog connecting month"
+title: "Re: JulyReply 2026, a blog connecting month"
 date: 2026-07-02 18:27
 type: link
 rel:
