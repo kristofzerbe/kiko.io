@@ -6,7 +6,7 @@
 .panels.archives {
   margin-block: calc(var(--space-default) * -1);
 }
-.article.digest .panels {
+.article.digest .digest-inner .panels {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -19,7 +19,7 @@
   .panels {
     column-count: 2;
   }
-  .article.digest .panels {
+  .article.digest .digest-inner .panels {
     column-count: 1;
   }
 }
@@ -27,7 +27,7 @@
   .panels {
     column-count: 3;
   }
-  .article.digest .panels {
+  .article.digest .digest-inner .panels {
     column-count: 2;
     margin-bottom: var(--space-default);
   }
@@ -40,7 +40,7 @@
   margin: calc(var(--space-normal) * -1) var(--space-medium);
 }
 
-.article.digest .panel {
+.article.digest .digest-inner .panel {
   padding: 0;
   margin: var(--space-default) var(--space-medium);
 }
@@ -71,10 +71,10 @@
   position: relative;
 }
 
-.article.digest .panel-content {
+.article.digest .digest-inner .panel-content {
   padding: var(--space-thin) var(--space-small);
 }
-.article.digest .panel-content time {
+.article.digest .digest-inner .panel-content time {
   position: absolute;
   top: var(--space-median);
   right: var(--space-median);
@@ -101,21 +101,21 @@
   background: none;
 }
 
-.article.digest blockquote:before { left: -16px; }
-.article.digest blockquote:after { left: -6px; }
+.article.digest .digest-inner blockquote:before { left: -16px; }
+.article.digest .digest-inner blockquote:after { left: -6px; }
 
 .panel-content img.panel-image {
   width: 100%;
 }
 @media screen and (min-width: 840px) and (max-width: 1280px) {
-  .article.digest .panel-content img.panel-image {
+  .article.digest .digest-inner .panel-content img.panel-image {
     max-width: 480px;
     width: auto;
     margin-bottom: var(--space-median)
   }
 }
 
-.article.digest .panel-content .cardlink-card {
+.article.digest .digest-inner .panel-content .cardlink-card {
   width: 100%;
   max-width: unset;
 }

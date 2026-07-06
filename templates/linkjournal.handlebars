@@ -1,4 +1,5 @@
 ---
+type: digest
 slug: {{{key}}}
 title: "{{{title}}}"
 date: {{{date}}}
@@ -25,9 +26,6 @@ Over the past month of {{period.month}}, I've collected {{count}} links for my l
 
 <!-- more -->
 
----
-
-<div class="linkjournal panels">
 {{#each items}}
 {% linkjournal "{{{key}}}" "{{{title}}}" "{{{created}}}" "{{{tags}}}" "{{{host}}}" "{{{url}}}" "{{{favicon}}}" "{{{image}}}" %}
 {{{description}}}
@@ -36,4 +34,3 @@ Over the past month of {{period.month}}, I've collected {{count}} links for my l
 {% endlinkjournal %}
 
 {{/each}}
-</div>
