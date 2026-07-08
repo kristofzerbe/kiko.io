@@ -28,6 +28,9 @@ syndication:
     url: https://bubbles.town/entry/44745436
   - host: Mastodon
     url: https://indieweb.social/@kiko/116884130155942901
+  - host: Pixelfed
+    title: Sea
+    url: https://pixelfed.social/p/kristofz/980490904167940016
 ---
 
 I only take photos occasionally, even though it's one of my great passions. Vacations are, of course, the perfect opportunity for this, although I have to make some compromises here too, because no woman who isn't keen on photography will tolerate waiting for hours for the right moment in the long run. I've reached a tacit agreement with my better half that I'll always lag a little behind on our trips. She turns round every now and then to see where I am.
