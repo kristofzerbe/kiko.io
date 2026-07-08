@@ -23,11 +23,11 @@ bandcamp:
   track: Nazaré|2044224162
 syndication:
   - host: GitHub
-    url: null
+    url: https://github.com/kristofzerbe/kiko.io/issues/43
   - host: Bubbles
-    url: null
+    url: https://bubbles.town/entry/44745436
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/116884130155942901
 ---
 
 I only take photos occasionally, even though it's one of my great passions. Vacations are, of course, the perfect opportunity for this, although I have to make some compromises here too, because no woman who isn't keen on photography will tolerate waiting for hours for the right moment in the long run. I've reached a tacit agreement with my better half that I'll always lag a little behind on our trips. She turns round every now and then to see where I am.
