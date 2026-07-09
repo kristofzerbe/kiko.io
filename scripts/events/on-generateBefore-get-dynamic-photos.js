@@ -394,7 +394,7 @@ function getPostAndPagePhotos() {
 
     let post = postsAndPages.find(p => (p && p.photographFile === entry.file))
     if (post) {
-      entry.name = meta?.ObjectName || post.photographName;
+      entry.name = meta?.ObjectName || post.photographName || meta?.custom?.name;
       entry.type = post.layout;
 
       entry.article = {
@@ -437,6 +437,8 @@ function getDraftPagePhotos() {
     .filter(entry => fs.statSync(path.join(draftDir, entry)).isFile())
     .reduce((used, file) => {
 
+      //console.log("DRAFT: " + file);
+
       const mdSource = path.join(draftDir, file);
       const md = fs.readFileSync(mdSource);
 
@@ -458,7 +460,7 @@ function getDraftPagePhotos() {
           status: "used",
           type: "draft",
           file: fm.photograph.file,
-          name: meta?.ObjectName || fm.photograph.name,
+          name: meta?.ObjectName || fm.photograph.name || meta?.custom?.name,
           article: {
             date: fm.date,
             title: fm.title,
@@ -467,9 +469,12 @@ function getDraftPagePhotos() {
           },
           pathMobile: "/" + path.join(config.photo_dir, "mobile", fm.photograph.file).replace(/\134/g,"/"),
           pathNormal: "/" + path.join(config.photo_dir, "normal", fm.photograph.file).replace(/\134/g,"/"),
-          date: metaCreationDate,
-          meta: meta
+          date: metaCreationDate
         };
+
+        //console.log("ENTRY: " + JSON.stringify(entry, null, 4));
+
+        entry.meta = meta;
 
         used.push(entry);
       }
@@ -511,7 +516,7 @@ function getDynamicPagePhotos() {
           status: "used",
           type: "dynamic",
           file: fm.photograph.file,
-          name: meta?.ObjectName || fm.photograph.name,
+          name: meta?.ObjectName || fm.photograph.name || meta?.custom?.name,
           article: {
             date: fm.date,
             title: fm.title,
@@ -574,7 +579,7 @@ function getAnythingPagePhotos() {
                 status: "used",
                 type: "anything",
                 file: fm.photograph.file,
-                name: meta?.ObjectName || fm.photograph.name,
+                name: meta?.ObjectName || fm.photograph.name || meta?.custom?.name,
                 article: {
                   date: fm.date,
                   title: fm.title,
@@ -633,7 +638,7 @@ function getNotesPhotos() {
             status: "used",
             type: "notes",
             file: fm.photograph.file,
-            name: meta?.ObjectName || fm.photograph.name,
+            name: meta?.ObjectName || fm.photograph.name || meta?.custom?.name,
             article: {
               date: fm.date,
               title: fm.title + " " + dir,

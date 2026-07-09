@@ -5,6 +5,7 @@ subtitle:
 date: 2026-MM-DD hh:mm:ss
 photograph:
   file: 26-05-Sizilien-1080-D50.jpg
+  name: Sacred Singing
   socialmedia: /static/images/social-media/Sicily-People.jpg
 series: New Photos
 categories:
