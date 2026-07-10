@@ -23,11 +23,11 @@ bandcamp:
   track: Cuori Selvaggi|3598823955
 syndication:
   - host: GitHub
-    url: 
+    url: https://github.com/kristofzerbe/kiko.io/issues/44
   - host: Bubbles
-    url: 
+    url: https://bubbles.town/entry/44746555
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/116895107147146394
 ---
 
 This is part two of my photographic review of our journey to [Sicily](/post/Sicily) in May. **Views**. And the island has so many of them – and in those two weeks we were only able to see just a few in the north.
