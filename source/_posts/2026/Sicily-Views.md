@@ -28,6 +28,12 @@ syndication:
     url: https://bubbles.town/entry/44746555
   - host: Mastodon
     url: https://indieweb.social/@kiko/116895107147146394
+  - host: Pixelfed
+    title: Colour
+    url: https://pixelfed.social/p/kristofz/981210808221866203
+  - host: Pixelfed
+    title: Monochrome
+    url: https://pixelfed.social/p/kristofz/981211512685701901
 ---
 
 This is part two of my photographic review of our journey to [Sicily](/post/Sicily) in May. **Views**. And the island has so many of them – and in those two weeks we were only able to see just a few in the north.
