@@ -14,7 +14,7 @@ tags:
   - Imaging
   - Publishing
 related:
-  - Linkin-Park-Hamburg-2026-06-03
+  - Sicily-Views
   - Sweden
   - Hout-Bay-Cape-Town
 bandcamp:
@@ -42,7 +42,7 @@ After returning from vacation, I edit the photos in Lightroom, and depending on 
 I've just finished processing the nearly 1,300 photos from our holiday in Sicily in May, and this time 315 of them managed to score at least 3 stars. It wouldn't make sense to cover them all in a single post, so I'm dividing them into seven topic-based posts and publishing them in stages, starting today with the 5-star photos.
 
 Further Posts:
-* &#8987;&nbsp; Sicily View
+* [Sicily Views](/post/Sicily-Views)
 * &#8987;&nbsp; Sicily Architecture
 * &#8987;&nbsp; Sicily Scenes
 * &#8987;&nbsp; Sicily Stills
