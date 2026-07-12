@@ -15,6 +15,8 @@ tags:
 related:
   - Link-Journal-26-02
   - Link-Journal-26-01
+  - Discoveries-36-Web-Components
+
 ---
 
 Over the past month of March, I've collected 22 links for my link journal.

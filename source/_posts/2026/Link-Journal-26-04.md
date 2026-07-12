@@ -15,6 +15,7 @@ tags:
 related:
   - Link-Journal-26-03
   - Link-Journal-26-02
+  - Link-Journal-26-01
 syndication:
   - host: Bubbles
     url: https://bubbles.town/entry/1929422

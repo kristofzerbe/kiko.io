@@ -23,11 +23,11 @@ bandcamp:
   track: Let the Devil In|1490505131
 syndication:
   - host: GitHub
-    url: null
+    url: https://github.com/kristofzerbe/kiko.io/issues/45
   - host: Bubbles
-    url: null
+    url: https://bubbles.town/entry/44747690
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/116907227385771082
 ---
 
 Sicily is an island where, over the centuries, just about every culture in the Mediterranean has left its mark: Romans, Greeks, Arabs, Normans, etc. We didn't spend much time exploring the history [during our trip in May](/post/Sicily) because it was meant to be a relaxing vacation, not a history lesson, but it's definitely fascinating, and we'll certainly return and visit a few more cultural monuments made of stone. We haven't seen the south yet ...

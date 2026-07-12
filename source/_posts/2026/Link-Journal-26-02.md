@@ -13,8 +13,9 @@ categories:
 tags:
   - Links
 related:
-  - Link-Journal-26-04
-  - Link-Journal-26-03
+  - Link-Journal-26-01
+  - Discoveries-36-Web-Components
+  - Discoveries-35-Visual-Studio-Code-Plugins
 ---
 
 Over the past month of February, I've collected 11 links for my link journal.
