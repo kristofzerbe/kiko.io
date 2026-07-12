@@ -39,11 +39,11 @@ I only take photos occasionally, even though it's one of my great passions. Vaca
 
 After returning from vacation, I edit the photos in Lightroom, and depending on how much time I've got, this process can sometimes take a little longer. First, I flag the good ones, edit them indidually  and then assign star ratings. 5 stars means the image ends up in my [blog's photo pool](/photos/), to be used as a header image someday, as they have the most beautiful colours and shapes. Then, I award 4 stars to those I want to publish on other platforms via my blog (like [Vernissage](https://vernissage.photos/@kiko) et al), and for which a separate photo page is therefore also created when the blog is built. Last but not least, I use the 3-star photos as assets in a related post.
 
-I've just finished processing the nearly 1,300 photos from our holiday in Sicily in May, and this time 315 of them managed to score at least 3 stars. It wouldn't make sense to cover them all in a single post, so I'm dividing them into seven topic-based posts and publishing them in stages, starting today with the 5-star photos.
+I've just finished processing the about 1,300 photos from our holiday in Sicily in May, and this time 315 of them managed to score at least 3 stars. It wouldn't make sense to cover them all in a single post, so I'm dividing them into seven topic-based posts and publishing them in stages, starting today with the 5-star photos.
 
 Further Posts:
 * [Sicily Views](/post/Sicily-Views)
-* &#8987;&nbsp; Sicily Architecture
+* [Sicily Architecture](/post/Sicily-Architecture)
 * &#8987;&nbsp; Sicily Scenes
 * &#8987;&nbsp; Sicily Stills
 * &#8987;&nbsp; Sicily People

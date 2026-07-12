@@ -2,7 +2,7 @@
 slug: Sicily-Architecture
 title: Sicily Architecture
 subtitle:
-date: 2026-MM-DD hh:mm:ss
+date: 2026-07-12 14:52:00
 photograph:
   file: 26-05-Sizilien-956-D50.jpg
   name: Palermo Walls
@@ -15,6 +15,8 @@ tags:
   - Publishing
 related:
   - Sicily
+  - Sicily-Views
+  - Hamburg-Views
 bandcamp:
   artist: Green Lung
   album: Woodland Rites|2971889094
@@ -28,7 +30,7 @@ syndication:
     url: null
 ---
 
-Lorem ipsum ...
+Sicily is an island where, over the centuries, just about every culture in the Mediterranean has left its mark: Romans, Greeks, Arabs, Normans, etc. We didn't spend much time exploring the history [during our trip in May](/post/Sicily) because it was meant to be a relaxing vacation, not a history lesson, but it's definitely fascinating, and we'll certainly return and visit a few more cultural monuments made of stone. We haven't seen the south yet ...
 
 <!-- more -->
 
@@ -52,15 +54,14 @@ Lorem ipsum ...
 "26-05-Sizilien-964-D50-HDR"
 "26-05-Sizilien-972-D50"
 "26-05-Sizilien-981-D50"
+"26-05-Sizilien-1136-D50"
 "26-05-Sizilien-1023-D50"
 "26-05-Sizilien-1050-D50"
 "26-05-Sizilien-1053-D50"
-"26-05-Sizilien-1054-D50"
 "26-05-Sizilien-1056-D50"
 "26-05-Sizilien-1058-D50"
-"26-05-Sizilien-1061-D50-HDR"
 "26-05-Sizilien-1064-D50"
 "26-05-Sizilien-1066-D50"
-"26-05-Sizilien-1136-D50"
+"26-05-Sizilien-1061-D50-HDR"
 "26-05-Sizilien-1187-D50"
 %}
