@@ -14,17 +14,13 @@ tags:
   - Flora
 related:
   - xxx
-bandcamp:
-  artist: xxx
-  album: xxx|0
-  track: xxx|0
 syndication:
-  - host: GitHub
-    url: 
   - host: Bubbles
-    url: 
+    url: null
   - host: Mastodon
-    url: 
+    url: null
+  - host: Pixelfed
+    url: null
 ---
 
 ...
