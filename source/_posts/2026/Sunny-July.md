@@ -18,11 +18,11 @@ related:
   - Benevolent-August
 syndication:
   - host: Bubbles
-    url: null
+    url: https://bubbles.town/entry/44747844
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/116908538327721257
   - host: Pixelfed
-    url: null
+    url: https://pixelfed.social/p/kristofz/981997526712056148
 ---
 
 We're currently experiencing the second major heatwave in Germany. After the 41 degrees Celsius we had a few weeks ago in June, the 35 degrees now actually feel quite pleasant. Contrary to my usual habit, I didn't manage to get around to taking photos in [Thomas' Garden](/series/thomas-garden/) in June, so I'm now posting some new photos from July … and I think there are a few lovely ones amongst them.
