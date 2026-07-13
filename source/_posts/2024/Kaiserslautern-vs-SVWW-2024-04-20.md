@@ -5,7 +5,6 @@ subtitle: Away against relegation
 date: 2024-04-21 13:12:36
 photograph:
   file: PXL_20240420_105723879.RAW.jpg
-  _name: Kaiserslautern vs SVWW @ 2024-04-20
   socialmedia: /static/images/social-media/Kaiserslautern-vs-SVWW-2024-04-20.jpg
 series: SV Wehen Wiesbaden
 categories:

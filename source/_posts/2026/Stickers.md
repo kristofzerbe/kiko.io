@@ -8,6 +8,7 @@ date: 2026-04-05 18:29:20
 photograph:
   file: PXL_20260305_073020511_NB105.jpg
   socialmedia: /static/images/social-media/Stickers.jpg
+  keepOutOfView: true
 categories:
   - Misc
 tags:

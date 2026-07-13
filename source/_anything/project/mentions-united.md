@@ -4,7 +4,7 @@ permalink: /projects/mentions-united
 photograph:
   file: $19-05-Israel-0245.jpg
   name: Ancient Mosaic
-  keepOutOverview: true
+  keepOutOfView: true
 ---
 
 <img src="/images/mentions-united.svg" class="float-left-mini top no-zoom">

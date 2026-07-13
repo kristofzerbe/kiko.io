@@ -10,6 +10,7 @@ date: 2024-12-20 20:02:31
 photograph:
   file: PXL_20241220_172311434.jpg
   socialmedia: /static/images/social-media/Hout-Bay-United-Football-Community.jpg
+  keepOutOfView: true
 categories:
   - Football
 tags:

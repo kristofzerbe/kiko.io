@@ -4,7 +4,7 @@ permalink: /projects/webmention-pushover
 photograph:
   file: $19-05-Israel-0245.jpg
   name: Ancient Mosaic
-  keepOutOverview: true
+  keepOutOfView: true
 ---
 
 **Webmention Pushover** is a small NodeJS service that listens to incoming webhooks from webmention.io and forwards them to an Android/iOS smartphone via Pushover.

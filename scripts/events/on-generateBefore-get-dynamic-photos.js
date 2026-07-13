@@ -366,7 +366,7 @@ function getPostAndPagePhotos() {
   let postsAndPages = [...locals.get("posts").data, ...locals.get("pages").data]
     .filter(p => { return !p.isLocale; })
     .map(fm => {
-      if (fm.photograph && !fm.photograph.keepOutOverview) {
+      if (fm.photograph && !fm.photograph.keepOutOfView) {
         return {
           title: fm.title,
           subTitle: fm.subtitle,
@@ -444,7 +444,7 @@ function getDraftPagePhotos() {
 
       let fm = front.parse(md);
 
-      if (fm.photograph && !fm.photograph.keepOutOverview) {
+      if (fm.photograph && !fm.photograph.keepOutOfView) {
 
         let key = fm.photograph.file.replace(".jpg", "");
 
@@ -500,7 +500,7 @@ function getDynamicPagePhotos() {
       const md = fs.readFileSync(mdSource);
       let fm = front.parse(md);
 
-      if (fm.photograph && !fm.photograph.keepOutOverview) {
+      if (fm.photograph && !fm.photograph.keepOutOfView) {
 
         let key = fm.photograph.file.replace(".jpg", "");
 
@@ -561,7 +561,7 @@ function getAnythingPagePhotos() {
           const md = fs.readFileSync(mdSource);
 
           let fm = front.parse(md);
-          if (fm.photograph && !fm.photograph.keepOutOverview) {
+          if (fm.photograph && !fm.photograph.keepOutOfView) {
 
             let key = fm.photograph.file.replace(".jpg", "");
 
