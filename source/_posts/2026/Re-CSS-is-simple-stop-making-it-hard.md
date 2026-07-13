@@ -19,14 +19,14 @@ related:
   - Favourite-Pens-of-2024-July-Edition
 syndication:
   - host: Bubbles
-    url: null
+    url: https://bubbles.town/entry/44748397
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/116913896367694328
   - host: IndieNews
-    url: https://news.indieweb.org/en
+    url: https://news.indieweb.org/en/kiko.io/post/Re-CSS-is-simple-stop-making-it-hard/
 ---
 
-I came across [Martijn's post on Bubbles](https://bubbles.town/entry/44743163) today and would like to take this opportunity to answer his question...
+I came across [Martijn's post on Bubbles](https://bubbles.town/entry/44743163) today and would like to take this opportunity to answer his question from my point if view ...
 
 > I can already hear you complaining that you shouldn't use tables for layout. Why exactly?
 
