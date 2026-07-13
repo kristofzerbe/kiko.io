@@ -8,9 +8,9 @@ rel:
   url: https://wc26.bogachev.fr
 syndication:
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/116913154376219900
   - host: Bubbles
-    url: 
+    url: https://bubbles.town/entry/44748294
 ---
 
 Football today is an incredibly data-driven sport. Everything is analysed, measured and weighted, and every now and then the fans get to see a little bit of this data, such as on-screen graphics showing ball possession or similar statistics.
