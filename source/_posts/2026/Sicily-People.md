@@ -28,6 +28,8 @@ syndication:
     url: https://bubbles.town/entry/44749214
   - host: Mastodon
     url: https://indieweb.social/@kiko/116922534962683525
+  - host: Pixelfed
+    url: https://pixelfed.social/p/kristofz/982976343980889149
 ---
 
 For many years, what interested me most about photography were shapes and colours. **People** didn't play a major role, because they didn't fit the pattern. That has changed in recent years, and I very often press the shutter button when I spot an interesting scene. Not like a street photographer who actively approaches people to get a good shot, but more as a spectator and observer. By-catch. I don't really know why those photos work always better when I edit them into black-and-white images afterwards. Can anyone explain this to me?
