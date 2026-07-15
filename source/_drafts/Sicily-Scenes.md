@@ -46,6 +46,7 @@ Lorem ipsum ...
 "26-05-Sizilien-392-D50"
 "26-05-Sizilien-519-D50"
 "26-05-Sizilien-545-D50"
+"26-05-Sizilien-877-D50"
 "26-05-Sizilien-954-D50"
 "26-05-Sizilien-975-D50"
 "26-05-Sizilien-986-D50"
@@ -61,7 +62,6 @@ Lorem ipsum ...
 "26-05-Sizilien-1111-D50"
 "26-05-Sizilien-1134-D50"
 "26-05-Sizilien-1179-D50"
-"26-05-Sizilien-1185-D50"
 "26-05-Sizilien-1222-D50"
 "26-05-Sizilien-1274-D50"
 %}

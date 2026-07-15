@@ -44,9 +44,9 @@ I've just finished processing the about 1,300 photos from our holiday in Sicily 
 Further Posts:
 * [Sicily Views](/post/Sicily-Views)
 * [Sicily Architecture](/post/Sicily-Architecture)
+* [Sicily People](/post/Sicily-People)
 * &#8987;&nbsp; Sicily Scenes
 * &#8987;&nbsp; Sicily Stills
-* &#8987;&nbsp; Sicily People
 * &#8987;&nbsp; Sicily Doors
 
 ---
