@@ -23,11 +23,14 @@ bandcamp:
   track: Sky High|2799955569
 syndication:
   - host: GitHub
-    url: null
+    url: https://github.com/kristofzerbe/kiko.io/issues/47
   - host: Bubbles
-    url: null
+    url: https://bubbles.town/entry/44750064
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/116931325544524949
+  - host: Pixelfed
+    title: Animals
+    url: https://pixelfed.social/p/kristofz/983438633621826569
 ---
 
 There are insights, vistas, glimpses and perspectives that don't fit into any particular pattern or category. I like to call them **scenes**, and as photographs they always have their own charm. Here are a few of them from our trip to the wonderful island of [Sicily](/post/Sicily), as the fifth part of my photo series.
