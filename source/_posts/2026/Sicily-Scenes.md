@@ -2,7 +2,7 @@
 slug: Sicily-Scenes
 title: Sicily Scenes
 subtitle:
-date: 2026-MM-DD hh:mm:ss
+date: 2026-07-16 18:22:00
 photograph:
   file: 26-05-Sizilien-1107-D50.jpg
   name: Palermo Night Life
@@ -15,6 +15,8 @@ tags:
   - Publishing
 related:
   - Sicily
+  - Sicily-Views
+  - Sicily-People
 bandcamp:
   artist: Solar Sons
   album: 	Altitude|570176032
@@ -28,7 +30,7 @@ syndication:
     url: null
 ---
 
-Lorem ipsum ...
+There are insights, vistas, glimpses and perspectives that don't fit into any particular pattern or category. I like to call them **scenes**, and as photographs they always have their own charm. Here are a few of them from our trip to the wonderful island of [Sicily](/post/Sicily), as the fifth part of my photo series.
 
 <!-- more -->
 
@@ -36,13 +38,12 @@ Lorem ipsum ...
 
 {% photo_masonry
 "26-05-Sizilien-030-D50"
-"26-05-Sizilien-115-D50"
 "26-05-Sizilien-130-D50"
+"26-05-Sizilien-115-D50"
 "26-05-Sizilien-181-D50"
 "26-05-Sizilien-268-D50"
 "26-05-Sizilien-281-D50"
 "26-05-Sizilien-289-D50"
-"26-05-Sizilien-390-D50"
 "26-05-Sizilien-392-D50"
 "26-05-Sizilien-519-D50"
 "26-05-Sizilien-545-D50"
@@ -62,6 +63,6 @@ Lorem ipsum ...
 "26-05-Sizilien-1111-D50"
 "26-05-Sizilien-1134-D50"
 "26-05-Sizilien-1179-D50"
-"26-05-Sizilien-1222-D50"
 "26-05-Sizilien-1274-D50"
+"26-05-Sizilien-752-D50"
 %}
