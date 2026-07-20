@@ -23,11 +23,11 @@ bandcamp:
   track: Om Shaantih|1038992710
 syndication:
   - host: GitHub
-    url: 
+    url: https://github.com/kristofzerbe/kiko.io/issues/48
   - host: Bubbles
-    url: 
+    url: https://bubbles.town/entry/44751313
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/116952101572155426
 ---
 
 I've already posted most of the following photos in my first post about [Sicily](/post/Sicily), but here they are all again, along with the ones I'm not using as header images. Colours and shapes… you know what I mean ;)
