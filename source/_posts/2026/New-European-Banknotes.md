@@ -19,11 +19,11 @@ related:
   - Crochet-Monsters
 syndication:
   - host: GitHub
-    url: 
+    url: https://github.com/kristofzerbe/kiko.io/issues/49
   - host: Bubbles
-    url: 
+    url: https://bubbles.town/entry/44756188
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/116993608011157766
 ---
 
 In 2025, the number of people in Germany paying by credit or debit card overtook the number of cash payers for the first time. At first glance, it seems that cash (coins and banknotes) will eventually become completely obsolete here too. I've personally noticed this: I pretty much pay for everything via my smartphone now and hardly ever carry any cash with me. It's so convenient, and when abroad, you don't even have to go through the hassle of exchanging money.
