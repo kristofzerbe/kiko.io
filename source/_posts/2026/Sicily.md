@@ -47,7 +47,6 @@ Further Posts:
 * [Sicily People](/post/Sicily-People)
 * [Sicily Scenes](/post/Sicily-Scenes)
 * [Sicily Stills](/post/Sicily-Stills)
-* &#8987;&nbsp; Sicily Doors
 
 ---
 
