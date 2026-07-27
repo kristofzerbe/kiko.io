@@ -42,21 +42,21 @@ Die EZB hat im Vorfeld des Wettbewerbs zwei unterschiedliche [Motivgruppen](http
 ### Europäische Kultur
 
 {% image_slide
-  "design_a.png|Design A - Studio Joost Grootens|360"
-  "design_c.png|Design C - Neue Gestaltung GmbH|360"
-  "design_e.png|Design E - Myrsini Vardopoulou|360"
-  "design_f.png|Design F - Jan Robert Dünnweller|360"
-  "design_g.png|Design G - Rubio & del Amo and Cruz más Cruz|360"
+  "/post/New-European-Banknotes/design_a.png|Design A - Studio Joost Grootens|360"
+  "/post/New-European-Banknotes/design_c.png|Design C - Neue Gestaltung GmbH|360"
+  "/post/New-European-Banknotes/design_e.png|Design E - Myrsini Vardopoulou|360"
+  "/post/New-European-Banknotes/design_f.png|Design F - Jan Robert Dünnweller|360"
+  "/post/New-European-Banknotes/design_g.png|Design G - Rubio & del Amo and Cruz más Cruz|360"
 %}
 
 ### Flüsse und Vögel
 
 {% image_slide
-  "design_b.png|Design B - PunktFormStrich|360"
-  "design_d.png|Design D - Rudy Guedj and François Girard-Meunier|360"
-  "design_h.png|Design H - Atelier Goppel-Toperngpong|360"
-  "design_i.png|Design I - Isabelle Daëron|360"
-  "design_j.png|Design J - Ville Tietäväinen|360"
+  "/post/New-European-Banknotes/design_b.png|Design B - PunktFormStrich|360"
+  "/post/New-European-Banknotes/design_d.png|Design D - Rudy Guedj and François Girard-Meunier|360"
+  "/post/New-European-Banknotes/design_h.png|Design H - Atelier Goppel-Toperngpong|360"
+  "/post/New-European-Banknotes/design_i.png|Design I - Isabelle Daëron|360"
+  "/post/New-European-Banknotes/design_j.png|Design J - Ville Tietäväinen|360"
 %}
 
 ---
