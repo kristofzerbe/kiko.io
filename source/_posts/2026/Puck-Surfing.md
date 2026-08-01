@@ -25,16 +25,16 @@ bandcamp:
   track: The Faun's Rhyme|616059842
 syndication:
   - host: GitHub
-    url: 
+    url: https://github.com/kristofzerbe/kiko.io/issues/50
   - host: Bubbles
-    url: 
+    url: https://bubbles.town/entry/44759088
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/117021839691402317
 ---
 
-We were recently in Puck, a small town on the Bay of Gdańsk (Poland), to take a closer look at the town and the harbor. It was a lovely walk, and of course, as always, I was magically drawn to the water. I can’t really imagine a vacation without the sea.
+We were recently in Puck, a small town on the Bay of Gdańsk (Poland), to take a closer look at the town and the harbor. It was a lovely walk, and of course, as always, I was magically drawn to the water. I can't really imagine a vacation without the sea.
 
-At the pier, a few water sports enthusiasts were getting their surfboards ready, and a couple were already out on the water. The wind in this area is apparently always quite brisk, and I found it absolutely fascinating to see how fast one of them was plowing through the water. He turned just before reaching the pier and, a minute later, seemed to be 5 kilometers away. What an amazing feeling that must be. I stood on a board once 45 years ago, but I didn’t make it out of the water. Photography is obviously more my thing.
+At the pier, a few water sports enthusiasts were getting their surfboards ready, and a couple were already out on the water. The wind in this area is apparently always quite brisk, and I found it absolutely fascinating to see how fast one of them was plowing through the water. He turned just before reaching the pier and, a minute later, seemed to be 5 kilometers away. What an amazing feeling that must be. I stood on a board once 45 years ago, but I didn't make it out of the water. Photography is obviously more my thing.
 
 <!-- more -->
 
