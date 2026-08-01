@@ -10,14 +10,13 @@ const { getPhoto } = require("../../lib/photo-helper.cjs");
 
 hexo.extend.tag.register("photo_masonry", function(args) {
   const that = this;
-
+  
   let masonry = {
     rnd: Math.random().toString(36).substring(2,8),
     items: []
   }
 
   args.forEach(function(e) {
-
     let item = getPhoto(hexo, e, that);
     if (item) {
       masonry.items.push(item);
