@@ -22,13 +22,13 @@ bandcamp:
   track: Broken and Blind|3714999807
 syndication:
   - host: GitHub
-    url: null
+    url: https://github.com/kristofzerbe/kiko.io/issues/51
   - host: Bubbles
-    url: null
+    url: https://bubbles.town/entry/44763792
   - host: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/117065768893948652
   - host: IndieNews
-    url: https://news.indieweb.org/en
+    url: https://news.indieweb.org/en/kiko.io/post/Geohashes-for-my-photos/
 ---
 
 Almost all my photos contain the coordinates of where the shot was taken in the EXIF metadata of the respective file. For this purpose, my Android smartphone has a built-in GPS receiver, and I equipped my Nikon D500 with a [Dawntech di-GPS Eco ProFessional 2](https://www.dawntech.co.uk/shop/index.php?route=product/product&product_id=67) a couple of years ago, although I sometimes forget to switch the thing on and then have to add the location later manually in Lightroom.
@@ -49,7 +49,7 @@ I became aware of this issue when, on my favourite photography site [Vernissage]
 
 ## Geohashes
 
-Last week, I read an article by Frank Edomaruse about so-called [Geohashes](https://en.wikipedia.org/wiki/Geohash), which might help ease my 'problem' somewhat.
+Last week, pinned by [Beto's post](https://robida.net/entries/2026/08/05/using-geohashes-to-share-your-location-on-social-m), I read an article by Frank Edomaruse about so-called [Geohashes](https://en.wikipedia.org/wiki/Geohash), which might help ease my 'problem' somewhat.
 
 {% cardlink %}
 url: https://medium.com/@franksagie1/optimizing-location-based-apps-with-geohash-369738597b8c
