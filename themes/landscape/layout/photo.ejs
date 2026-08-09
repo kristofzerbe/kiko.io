@@ -124,11 +124,21 @@
       <li>
         <label>GPS Coordinates (Lat/Long)</label>
         <span class="p-location h-geo"><i class="p-latitude"><%= page.meta?.latitude ?? "---" %></i> / <i class="p-longitude"><%= page.meta?.longitude ?? "---" %></i></span>
-        <% if (page.meta?.latitude && page.meta?.longitude) { %>
-        <div id="map" class="page-map"></div>
+      </li>
+      <li>
+        <label>Geohash</label>
+        <% if (page.meta?.custom?.geohash) { %>
+        <span><a href="https://www.geohash.es/decode?geohash=<%= page.meta.custom.geohash %>"><%= page.meta.custom.geohash %></a></span>
+        <% } else { %>
+        <span>---</span>
         <% } %>
       </li>
+      <% if (page.meta?.latitude && page.meta?.longitude) { %>
+      <li>
+        <div id="map" class="page-map"></div>
+      </li>
       <li><hr style="margin:0"></li>
+      <% } %>
       <li>
         <label>Camera</label>
         <span><%= page.meta.Make ?? "---" %>, <%= page.meta.Model ?? "---" %></span>
