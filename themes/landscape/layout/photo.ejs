@@ -188,10 +188,12 @@
     page.syndication = [];
     page.meta.custom.links.forEach(link => {
       if (link.url) {
-        page.syndication.push({
+        let syn = {
           host: link.site,
           url: link.url
-        });
+        }
+        if (link.title) { syn.title = link.title; }
+        page.syndication.push(syn);
       }
     });
   }
