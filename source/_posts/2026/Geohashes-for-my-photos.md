@@ -74,7 +74,7 @@ The original website '*geohashes.org*' is no longer available, but there's **[ge
 
 ## node-geohash
 
-Of course, there are libraries available that convert GPS coordinates to geohashes. It's just maths, after all. As my website is based on Hexo and therefore Node.JS, I've extended my photo generator – which reads the EXIF data from new photos and saves it to JSON files – using [Ning Sun](https://github.com/sunng87)'s script **[node-geohash](https://github.com/sunng87/node-geohash)**:
+Of course, there are libraries available that convert GPS coordinates to geohashes. It's just maths, after all. As my website is based on Hexo and therefore Node.JS, I've extended my [photo generator](https://github.com/kristofzerbe/kiko.io/blob/master/lib/photo-generator.cjs) – which reads the EXIF data from new photos while importing and saves it to JSON files – using [Ning Sun](https://github.com/sunng87)'s script **[node-geohash](https://github.com/sunng87/node-geohash)**:
 
 ```js
 const geohash = require('ngeohash');
@@ -94,9 +94,9 @@ title: "Photo Blue Pathway Sign - kiko.io"
 description: "Photo Blue Pathway Sign by Kristof Zerbe"
 host: kiko.io
 favicon: https://kiko.io/favicon.ico
-image: https://kiko.io/pool/25-05-Portugal-0957-D50/normal.jpg
+image: https://kiko.io/photos/mobile/25-05-Portugal-0957-D50.jpg
 {% endcardlink %}
 
 ---
 
-The only thing left to do now is to convince Marcin to introduce Geohash support to Vernissage ;)
+The only thing left to do now is to convince Marcin to [introduce Geohash support to Vernissage](https://github.com/VernissageApp/VernissageWeb/issues/569) ;)
