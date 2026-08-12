@@ -8,9 +8,9 @@ rel:
   url: https://github.com/VernissageApp/VernissageWeb/issues/569
 syndication:
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/117083396084426815
   - host: Bubbles
-    url: 
+    url: https://bubbles.town/entry/44765889
 ---
 
 Three days ago, I wrote the post [Geohashes for my photos](/post/Geohashes-for-my-photos/) about my recent use of Geohashes as a short alternative to long GPS coordinates and expressed my hope that my favorite platform, Vernissage, would support them... and I created a GitHub issue for [Marcin](https://mczachurski.dev), the developer. Three days ago...
