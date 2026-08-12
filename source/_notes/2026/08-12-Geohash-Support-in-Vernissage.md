@@ -1,6 +1,6 @@
 ---
 title: Geohash Support in Vernissage
-date: 2026-08-12 16:50
+date: 2026-08-12 16:55
 type: link
 rel:
   verb: like-of
@@ -8,12 +8,12 @@ rel:
   url: https://github.com/VernissageApp/VernissageWeb/issues/569
 syndication:
   - host: Mastodon
-    url:
+    url: 
   - host: Bubbles
     url: 
 ---
 
-Three days ago, I wrote the post [Geohashes for my photos](https://kiko.io/post/Geohashes-for-my-photos/) about my recent use of Geohashes as a short alternative to long GPS coordinates and expressed my hope that my favorite platform, Vernissage, would support them... and I created a GitHub issue for Marcin, the developer. Three days ago...
+Three days ago, I wrote the post [Geohashes for my photos](/post/Geohashes-for-my-photos/) about my recent use of Geohashes as a short alternative to long GPS coordinates and expressed my hope that my favorite platform, Vernissage, would support them... and I created a GitHub issue for [Marcin](https://mczachurski.dev), the developer. Three days ago...
 
 Marcin released a new version today that now supports Geohashes! \o/
 
