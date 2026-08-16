@@ -18,9 +18,9 @@ related:
   - Puck-Surfing
 syndication:
   - host: Bubbles
-    url: 
+    url: https://bubbles.town/entry/44768186
   - host: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/117106000609064601
   - host: Pixelfed
     url: 
 ---
