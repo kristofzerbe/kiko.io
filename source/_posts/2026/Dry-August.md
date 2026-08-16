@@ -22,7 +22,7 @@ syndication:
   - host: Mastodon
     url: https://indieweb.social/@kiko/117106000609064601
   - host: Pixelfed
-    url: 
+    url: https://pixelfed.social/p/kristofz/994660471123405367
 ---
 
 The heatwave in Germany is continuing and everyone is suffering. We're simply not (yet!) prepared for so many days with temperatures above 35 degrees Celsius. Thomas's plants are also suffering from heat stress, even though he's been watering them as best he can via a drip irrigation system since last year. Anyone who's seen recent pictures of the River Rhine (current water level at Düsseldorf: 0 cm) will understand that even this has its limits. Every drop of water is precious right now.
