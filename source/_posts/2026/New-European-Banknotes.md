@@ -18,11 +18,11 @@ related:
   - Hout-Bay-United-Football-Community
   - Crochet-Monsters
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/49
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/44756188
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116993608011157766
 ---
 

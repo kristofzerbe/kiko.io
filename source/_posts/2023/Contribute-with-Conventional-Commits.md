@@ -18,7 +18,7 @@ related:
   - Mastodon-simply-explained
   - Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111070207610797812
 ---
 

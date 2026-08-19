@@ -7,7 +7,7 @@ rel:
   caption: "granary.io"
   url: https://granary.io/
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/109471776510837100 
 ---
 

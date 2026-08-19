@@ -17,11 +17,11 @@ related:
   - Benevolent-August
   - Busy-July
 syndication:
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/2067677
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116551300879840987
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/959130863066997099
 ---
 

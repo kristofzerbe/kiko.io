@@ -16,7 +16,7 @@ related:
   - Handling-IPTC-metadata-on-Android-and-Windows
   - Photo-Workflow-Re-Thought
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: null
 ---
 

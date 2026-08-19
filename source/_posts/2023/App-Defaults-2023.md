@@ -17,7 +17,7 @@ related:
   - Hexo-WebFinger-and-better-discoverability
   - Add-Link-to-Trello-on-Android-via-Share-Menu
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111672239944572580
 ---
 

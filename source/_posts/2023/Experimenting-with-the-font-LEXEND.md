@@ -18,7 +18,7 @@ related:
   - Pagefind-UI-and-URL-Parameters
   - The-State-of-the-Blog
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111403133122810943
 ---
 

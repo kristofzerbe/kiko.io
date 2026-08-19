@@ -19,7 +19,7 @@ related:
   - Johnny-Decimal-Emerging-from-the-Abyss
   - IndieFediWebVerse
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/113421443081777798
 ---
 

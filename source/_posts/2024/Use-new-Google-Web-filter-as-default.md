@@ -16,7 +16,7 @@ related:
   - Hexo-WebFinger-and-better-discoverability
   - Provide-Blog-Metadata-via-JSON-LD
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112634223188805978
 ---
 

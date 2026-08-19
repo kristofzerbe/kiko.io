@@ -19,7 +19,7 @@ related:
   - Get-and-use-a-dominant-color-that-matches-the-header-image
   - Generate-Content-from-Trello
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111965280439751641
 ---
 

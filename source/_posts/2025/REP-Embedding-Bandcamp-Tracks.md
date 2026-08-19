@@ -25,9 +25,9 @@ bandcamp:
   album: Rise|2549803014
   track: Blood Sacrifice|897654312
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/20
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/115560923679747902
 ---
 

@@ -7,9 +7,9 @@ rel:
   caption: isaiprofitable.com
   url: https://isaiprofitable.com/
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116647328419871011
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/17497350
 ---
 

@@ -20,12 +20,12 @@ related:
   - Best-Pix-from-the-past
   - Berlin-Airlift-75th-Anniversary
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114925344191109878
-  - host: Pixelfed
+  - site: Pixelfed
     title: "New York City"
     url: https://pixelfed.social/p/kristofz/855085386230170833
-  - host: Pixelfed
+  - site: Pixelfed
     title: Paris
     url: https://pixelfed.social/p/kristofz/855533621518476337
 ---

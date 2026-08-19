@@ -7,7 +7,7 @@ rel:
   caption: "GitHub - MikeKovarik/exifr: 📷 The fastest and most versatile JS EXIF reading library."
   url: https://github.com/MikeKovarik/exifr
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/110927684459168884
 ---
 

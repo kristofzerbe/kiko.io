@@ -18,7 +18,7 @@ related:
   - Scotch-Presets-for-Lightroom
   - Israeli-Presets-for-Lightroom
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/110016996004245160
 ---
 

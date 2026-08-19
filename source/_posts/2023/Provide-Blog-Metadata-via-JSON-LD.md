@@ -19,7 +19,7 @@ related:
   - Integration-of-Pagefind-in-Hexo
   - The-State-of-the-Blog
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/109841057119450891
 ---
 

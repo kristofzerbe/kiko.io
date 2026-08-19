@@ -18,21 +18,21 @@ related:
   - Across-the-Country
   - Wales
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114852871790246913
-  - host: Pixelfed
+  - site: Pixelfed
     title: Sundowns
     url: https://pixelfed.social/p/kristofz/850465614594752128
-  - host: Pixelfed
+  - site: Pixelfed
     title: Three more
     url: https://pixelfed.social/p/kristofz/852462742233148752
-  - host: Pixelfed
+  - site: Pixelfed
     title: Queluz
     url: https://pixelfed.social/p/kristofz/852934068033472856
-  - host: Pixelfed
+  - site: Pixelfed
     title: Malveira
     url: https://pixelfed.social/p/kristofz/854317062189098142
-  - host: Pixelfed
+  - site: Pixelfed
     title: Lisbon
     url: https://pixelfed.social/p/kristofz/856996732059176319
 ---

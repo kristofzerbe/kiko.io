@@ -7,7 +7,7 @@ rel:
   caption: "On POSSE and IndieWeb"
   url: https://www.joelotter.com/posts/2023/03/indieweb/
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: 
 ---
 

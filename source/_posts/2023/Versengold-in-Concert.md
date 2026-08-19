@@ -16,9 +16,9 @@ related:
   - Breton-Presets-for-Lightroom
   - Photo-Workflow-Re-Thought
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111040308580076130
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/606431342073184357
 ---
 

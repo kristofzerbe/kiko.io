@@ -7,7 +7,7 @@ rel:
   caption: "My personal website should have support for webmentions now"
   url: https://chisenires.design/blog/my-personal-website-should-have-support-for-webmentions-now/
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114938531244043977
 ---
 

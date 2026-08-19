@@ -18,7 +18,7 @@ related:
   - Colophon-Hosting-Deployment
   - Colophon-Impetus-Technology
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114937732276245938
 ---
 

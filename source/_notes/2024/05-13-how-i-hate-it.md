@@ -3,7 +3,7 @@ title: How I hate it...
 date: 2024-05-13
 type: 
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112434815439483162
 ---
 

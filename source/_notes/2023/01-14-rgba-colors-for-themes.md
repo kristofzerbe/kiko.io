@@ -3,7 +3,7 @@ title: "Background RGBA Color for Theme"
 date: 2023-01-14 16:36:00
 type: til
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/109688344420513474
 ---
 

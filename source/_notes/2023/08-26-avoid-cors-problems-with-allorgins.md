@@ -7,7 +7,7 @@ rel:
   caption: "All Origins"
   url: https://allorigins.win
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/110955054803816724
 ---
 

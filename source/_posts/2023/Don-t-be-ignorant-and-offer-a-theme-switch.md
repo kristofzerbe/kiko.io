@@ -19,7 +19,7 @@ related:
   - Experimenting-with-the-font-LEXEND
   - Get-and-use-a-dominant-color-that-matches-the-header-image
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111624290725749988
 ---
 

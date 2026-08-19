@@ -17,9 +17,9 @@ related:
   - Insects-Heaven
   - Wet-Summer-Solstice
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112949551802763627
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/i/web/post/728616129690736176
 ---
 

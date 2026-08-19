@@ -20,11 +20,11 @@ related:
   - Hexo-and-the-IndieWeb-Sending-Webmentions
   - Hexo-and-the-IndieWeb
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112888146912365667
-  - host: DevTo
+  - site: DevTo
     url: https://dev.to/kristofzerbe/push-over-webmentions-n6n
-  - host: IndieNews
+  - site: IndieNews
     url: https://news.indieweb.org/en/kiko.io/post/Push-Over-Webmentions/
 ---
 

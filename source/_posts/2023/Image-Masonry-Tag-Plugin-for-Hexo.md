@@ -20,7 +20,7 @@ related:
   - GitHub-Tag-Plugins-for-Hexo
   - Forking-Hexo-plugin-hexo-index-anything
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/110991254816820166
 ---
 

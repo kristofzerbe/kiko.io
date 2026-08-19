@@ -20,14 +20,14 @@ related:
   - Monochrome-Portugal
   - Across-the-Country
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/16
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/115470652553437333
-  - host: Pixelfed
+  - site: Pixelfed
     title: Impressions
     url: https://pixelfed.social/p/kristofz/890193504169803379
-  - host: Pixelfed
+  - site: Pixelfed
     title: People
     url: https://pixelfed.social/p/kristofz/893759961050739105
 ---

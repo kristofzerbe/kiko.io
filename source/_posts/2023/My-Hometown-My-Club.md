@@ -18,7 +18,7 @@ related:
   - SVWW-vs-Schalke-2023-09-02
   - SVWW-vs-HSV-2023-10-07
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/110917059328457153
 ---
 

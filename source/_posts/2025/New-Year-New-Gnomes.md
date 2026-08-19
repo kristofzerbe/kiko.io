@@ -17,9 +17,9 @@ related:
   - July-Heat
   - Insects-Heaven
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114212979767704179
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/809485581692272693
 ---
 

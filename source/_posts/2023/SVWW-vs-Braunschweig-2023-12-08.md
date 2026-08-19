@@ -17,7 +17,7 @@ related:
   - SVWW-vs-Hansa-Rostock-2023-10-29
   - My-Hometown-My-Club
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111562801234044569
 ---
 

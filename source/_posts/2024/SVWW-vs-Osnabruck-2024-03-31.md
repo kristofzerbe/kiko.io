@@ -17,7 +17,7 @@ related:
   - SVWW-vs-Paderborn-2024-02-23
   - SVWW-vs-Nurnberg-2024-02-09
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112196475034873122
 ---
 

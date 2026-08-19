@@ -3,7 +3,7 @@ title: "#TIL | Theme Color - Meta vs. Manifest"
 date: 2024-07-20
 type: til
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112821729396540861
 ---
 

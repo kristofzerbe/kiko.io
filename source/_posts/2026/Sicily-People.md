@@ -22,13 +22,13 @@ bandcamp:
   album: Volume I|2739230125
   track: The Black Mirror|1484004691
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/46
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/44749214
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116922534962683525
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/982976343980889149
 ---
 

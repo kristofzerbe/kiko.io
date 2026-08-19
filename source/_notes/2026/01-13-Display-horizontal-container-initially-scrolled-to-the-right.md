@@ -3,7 +3,7 @@ title: "#TIL | Display horizontal container initially scrolled to the right"
 date: 2026-01-13
 type: til
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/115892268584356693
 ---
 On my [/stats](/stats) page, I used the wonderful web component [activity-graph](https://mariohamann.github.io/activity-graph/) to implement an Activity Graph that displays my posts over the entire lifetime of my blog. 

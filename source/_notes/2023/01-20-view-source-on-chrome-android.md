@@ -3,7 +3,7 @@ title: "#TIL | View Source on Chrome for Android"
 date: 2023-01-20
 type: til
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/109718537289542302
 ---
 

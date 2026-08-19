@@ -21,9 +21,9 @@ related:
   - Mentions-United-3-2-1-go
   - Push-Over-Webmentions
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/10
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114960238792894189
 ---
 
@@ -53,7 +53,7 @@ subtitle: Integrate Utterances GitHub Issue Commenting to Hexo
 date: 2020-07-05T14:55:16.000Z
 ...
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/3
 ```
 

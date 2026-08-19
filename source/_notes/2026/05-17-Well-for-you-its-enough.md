@@ -2,9 +2,9 @@
 title: Well, for you it's enough
 date: 2026-05-17 14:01
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/116590063481841949
-- host: Bubbles
+- site: Bubbles
   url: https://bubbles.town/entry/8351080
 ---
 

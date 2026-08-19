@@ -23,9 +23,9 @@ bandcamp:
   album: A Dark Place|1207743579
   track: Voyagers|295152836
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/21
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/115622928872349924
 ---
 

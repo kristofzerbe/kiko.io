@@ -22,13 +22,13 @@ bandcamp:
   album: Acido y Puto|3860834148
   track: Nazaré|2044224162
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/43
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/44745436
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116884130155942901
-  - host: Pixelfed
+  - site: Pixelfed
     title: Sea
     url: https://pixelfed.social/p/kristofz/980490904167940016
 ---

@@ -16,13 +16,13 @@ related:
   - Fury-Live-Twenty-Five-Loreley-2025-07-12
   - WIRTZ-DNA-Tour-2024-Leipzig-2024-02-17
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/29
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116155438793780619
-  - host: PeerTube
+  - site: PeerTube
     url: https://clip.place/w/6thMLbJfyUbijDUS7U9WbT
-  - host: PeerTube
+  - site: PeerTube
     url: https://clip.place/w/6Wt6i2sRkSYWFtUUj9kAAc
 
 ---

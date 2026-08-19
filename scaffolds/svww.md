@@ -17,11 +17,11 @@ related:
   - My-Hometown-My-Club
   - 
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: 
-  - host: Bubbles
+  - site: Bubbles
     url: 
-  - host: Mastodon
+  - site: Mastodon
     url: 
 ---
 

@@ -7,7 +7,7 @@ rel:
   caption: "A (more) Modern CSS Reset"
   url: https://andy-bell.co.uk/a-more-modern-css-reset
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/111127936125931030
 ---
 

@@ -16,7 +16,7 @@ related:
   - Remote-Testing-and-Debugging-with-Chrome
   - Device-Class-Detection-in-JavaScript
 syndication:
-- host: Mastodon
+- site: Mastodon
   url: 
 ---
 

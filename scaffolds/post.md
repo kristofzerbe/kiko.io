@@ -20,13 +20,13 @@ bandcamp:
   album: xxx|0
   track: xxx|0
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: 
-  - host: Bubbles
+  - site: Bubbles
     url: 
-  - host: Mastodon
+  - site: Mastodon
     url: 
-  - host: IndieNews
+  - site: IndieNews
     url: https://news.indieweb.org/en
 ---
 

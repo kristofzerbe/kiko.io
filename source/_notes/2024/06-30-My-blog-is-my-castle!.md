@@ -7,7 +7,7 @@ rel:
   caption: "Why a personal site rather than social media presence?"
   url: https://hamatti.org/posts/why-personal-site-rather-than-social-media-presence/
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/112707451745098035
 ---
 Juha-Matti answers my question of why I'm doing this blog at all. On the one hand, because I am technically able to do it and it is incredible fun **(Playground)** and on the other hand, because I have had the feeling of being utilized for long enough (**Ownership** and **No Middle Man**). 

@@ -17,7 +17,7 @@ related:
   - Adding-Screenshots-to-Trello-Cards-on-Android
   - Generate-Content-from-Trello
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111409517358884472
 ---
 

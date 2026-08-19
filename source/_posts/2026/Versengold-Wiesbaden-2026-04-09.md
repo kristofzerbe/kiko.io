@@ -16,13 +16,13 @@ related:
   - Disturbed-Wasen-Stuttgart-2025-10-03
   - Fury-Live-Twenty-Five-Loreley-2025-07-12
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/32
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116385979269508421
-  - host: PeerTube
+  - site: PeerTube
     url: https://clip.place/w/a7D6xo4V3rzNdSeEosGjRV
-  - host: PeerTube
+  - site: PeerTube
     url: https://clip.place/w/nAXtfnAkG3aDZHobCRp1V7
 ---
 

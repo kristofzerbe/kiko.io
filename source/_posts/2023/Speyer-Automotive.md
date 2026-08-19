@@ -18,7 +18,7 @@ related:
   - Pool-Photo-Generator
   - Automatic-Header-Images-in-Hexo
 syndication:
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/630440527679651863
 ---
 

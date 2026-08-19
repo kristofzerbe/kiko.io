@@ -19,12 +19,12 @@ related:
   - Push-Over-Webmentions
   - Hexo-and-the-IndieWeb
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/113378863170909812
-  - host: Lemmy
+  - site: Lemmy
     title: Lemmy
     url: https://programming.dev/post/21031156
-  - host: Lemmy
+  - site: Lemmy
     title: Programming.dev Meta
     url: https://programming.dev/post/21031933
 ---

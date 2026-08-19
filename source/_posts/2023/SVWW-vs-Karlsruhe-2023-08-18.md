@@ -16,7 +16,7 @@ related:
   - My-Hometown-My-Club
   - SVWW-vs-Schalke-2023-09-02
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/110922099448185014
 ---
 

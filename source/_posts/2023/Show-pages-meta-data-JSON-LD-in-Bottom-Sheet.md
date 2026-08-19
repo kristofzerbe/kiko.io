@@ -19,7 +19,7 @@ related:
   - Discoveries-24-JavaScript-UI
   - Generate-Social-Media-Images-Automatically
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/110526411227460649
 ---
 

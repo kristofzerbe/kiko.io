@@ -7,7 +7,7 @@ rel:
   caption: "Mastodon Poll: excerpt or full article"
   url: https://social.treehouse.systems/@deadsuperhero/110608652068691549
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/110627017988458573
 ---
 

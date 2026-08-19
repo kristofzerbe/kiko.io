@@ -41,7 +41,7 @@ Die Daten für das Plugin, d.h. die Video-URL's liegen bei mir wie immer im Fron
 
 ```yaml
 syndication:
-  - host: PeerTube
+  - site: PeerTube
     url: https://clip.place/w/quf3PWpmKJjRwm89axBLY2
 ```
 

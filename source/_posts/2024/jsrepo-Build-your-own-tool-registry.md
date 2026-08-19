@@ -16,7 +16,7 @@ related:
   - Ensure-Accessibility-on-Icon-Links
   - Mentions-United-3-2-1-go
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/113664203082977292
 ---
 

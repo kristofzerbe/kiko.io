@@ -18,7 +18,7 @@ related:
   - Rising-Cyberspear
   - IndieFediWebVerse
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112270869266405497
 ---
 

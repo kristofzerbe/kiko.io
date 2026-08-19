@@ -20,9 +20,9 @@ related:
   - Read-You-Feed-Reader-for-Android
   - The-Last-Image-Gallery
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/11
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114970648836621777
 ---
 

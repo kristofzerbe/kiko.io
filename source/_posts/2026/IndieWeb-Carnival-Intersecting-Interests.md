@@ -24,9 +24,9 @@ bandcamp:
   album: Glass Future|3605903048
   track: First Blood of Melchor|3255928040
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/28
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116138330377229838
 ---
 

@@ -7,7 +7,7 @@ rel:
   caption: "Richer UI install available for desktop"
   url: https://developer.chrome.com/blog/richer-install-ui-desktop/
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/110332516211065405
 ---
 

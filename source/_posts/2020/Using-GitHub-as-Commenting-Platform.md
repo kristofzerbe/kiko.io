@@ -18,7 +18,7 @@ related:
   - A-New-Blog-Customizing-Hexo
   - A-New-Blog-VS-Code-Hexo-and-GitHub-Pages
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/3
 ---
 

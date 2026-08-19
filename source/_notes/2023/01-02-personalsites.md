@@ -7,7 +7,7 @@ rel:
   caption: "personalsit.es"
   url: https://personalsit.es/
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/109620394679043124
 ---
 

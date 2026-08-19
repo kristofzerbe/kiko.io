@@ -7,7 +7,7 @@ rel:
   caption: "Notable people"
   url: https://tjukanovt.github.io/notable-people
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/110614747963417636
 ---
 

@@ -7,9 +7,9 @@ rel:
   caption: Football Data Portraits
   url: https://wc26.bogachev.fr
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116913154376219900
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/44748294
 ---
 

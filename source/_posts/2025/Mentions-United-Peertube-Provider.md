@@ -21,11 +21,11 @@ related:
   - Mentions-United-Lemmy-plugin-a-few-updates
   - Mentions-United-3-2-1-go
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114444873846639999
-  - host: DevTo
+  - site: DevTo
     url: https://dev.to/kristofzerbe/mentions-united-peertube-provider-179a
-  - host: Lemmy
+  - site: Lemmy
     title: JavaScript
     url: https://programming.dev/post/29679304
 ---
@@ -48,7 +48,7 @@ As always, the data for the plugin, i.e. the video URLs, are in the frontmatter 
 
 ```yaml
 syndication:
-  - host: PeerTube
+  - site: PeerTube
     url: https://clip.place/w/quf3PWpmKJjRwm89axBLY2
 ```
 

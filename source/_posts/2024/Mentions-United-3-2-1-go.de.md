@@ -134,9 +134,9 @@ Hexo verwendet für die Beiträge [Markdown](https://en.wikipedia.org/wiki/Markd
 title: "Batman Comics with pure CSS"
 date: 2024-07-11
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112767128980027149
-  - host: DevTo
+  - site: DevTo
     url: https://dev.to/kristofzerbe/batman-comics-with-pure-css-5ggk
 ---
 ```

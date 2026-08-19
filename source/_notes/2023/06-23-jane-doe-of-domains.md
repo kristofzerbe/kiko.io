@@ -3,7 +3,7 @@ title: "#TIL | Jane Doe of Domains"
 date: 2023-06-23
 type: til
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/110592277910762328
 ---
 

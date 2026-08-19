@@ -7,7 +7,7 @@ rel:
   caption: "janmonschke.com: Adding webmentions to your static blog"
   url: https://janmonschke.com/adding-webmentions-to-your-static-blog
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/111681633236614494
 ---
 

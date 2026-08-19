@@ -18,11 +18,11 @@ related:
   - REP-Embedding-Bandcamp-Tracks
   - Favourite-Pens-of-2024-July-Edition
 syndication:
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/44748397
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116913896367694328
-  - host: IndieNews
+  - site: IndieNews
     url: https://news.indieweb.org/en/kiko.io/post/Re-CSS-is-simple-stop-making-it-hard/
 ---
 

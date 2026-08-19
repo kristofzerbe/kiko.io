@@ -22,11 +22,11 @@ bandcamp:
   album: Woodland Rites|2971889094
   track: Let the Devil In|1490505131
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/45
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/44747690
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116907227385771082
 ---
 

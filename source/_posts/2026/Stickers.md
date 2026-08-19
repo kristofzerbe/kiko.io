@@ -23,9 +23,9 @@ bandcamp:
   album: Cosmic Blues|1224739216
   track: Cosmic Blues For Solitary Moose|3925283450
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/31
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116353382492791327
 ---
 

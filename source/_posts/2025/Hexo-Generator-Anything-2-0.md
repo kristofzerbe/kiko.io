@@ -20,7 +20,7 @@ related:
   - Mentions-United-New-Renderer-and-Refactorings
   - Simplest-Console-File-Logger
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114874909320082032
 ---
 

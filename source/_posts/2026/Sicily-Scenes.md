@@ -22,13 +22,13 @@ bandcamp:
   album: 	Altitude|570176032
   track: Sky High|2799955569
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/47
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/44750064
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116931325544524949
-  - host: Pixelfed
+  - site: Pixelfed
     title: Animals
     url: https://pixelfed.social/p/kristofz/983438633621826569
 ---

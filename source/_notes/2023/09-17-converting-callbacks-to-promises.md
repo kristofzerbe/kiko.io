@@ -7,7 +7,7 @@ rel:
   caption: "Converting Callback APIs to Promises in Node.js"
   url: https://stackabuse.com/converting-callback-apis-to-promises-in-node-js/
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/111079994457491785
 ---
 

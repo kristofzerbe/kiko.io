@@ -18,7 +18,7 @@ related:
   - Top-10-Pens-of-Jon-Kantner
   - Discoveries-20-CSS-UI
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111716205115289289
 ---
 

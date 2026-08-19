@@ -18,7 +18,7 @@ related:
   - Implement-source-switch-for-SPA
   - Native-JavaScript-Multilanguage-Templating
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/109337328502493774
 ---
 

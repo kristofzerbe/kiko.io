@@ -16,17 +16,17 @@ related:
   - Alter-Bridge-Deutsches-Museum-Munich-2026-02-20
   - Disturbed-Wasen-Stuttgart-2025-10-03
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/39
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/26701806
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116703905964437600
-  - host: PeerTube
+  - site: PeerTube
     url: https://clip.place/w/4naCimLgPBs57LZ1eevf8J
-  - host: PeerTube
+  - site: PeerTube
     url: https://clip.place/w/qjZEcxR8qCpmEXxArdXfVv
-  - host: PeerTube
+  - site: PeerTube
     url: https://clip.place/w/xiV4np6VoXYZbqQVsXtMk6
 ---
 

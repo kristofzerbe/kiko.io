@@ -20,7 +20,7 @@ related:
   - Provide-Blog-Metadata-via-JSON-LD
   - The-State-of-the-Blog
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/110617439442558814
 ---
 

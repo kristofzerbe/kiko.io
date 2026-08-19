@@ -7,9 +7,9 @@ rel:
   caption: Geohash Support (alongside GPS coordinates)
   url: https://github.com/VernissageApp/VernissageWeb/issues/569
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/117083396084426815
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/44765889
 ---
 

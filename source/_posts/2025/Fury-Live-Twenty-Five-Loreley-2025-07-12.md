@@ -16,13 +16,13 @@ related:
   - Versengold-in-Concert
   - Impressions-from-the-Carnival-Parade-in-Wiesbaden
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114846144261973485
-  - host: PeerTube
+  - site: PeerTube
     url: https://clip.place/w/1fKJTtvX8oLg7hKuLZMPXb
-  - host: PeerTube
+  - site: PeerTube
     url: https://clip.place/w/cURh7JL4YRXdwaUnxmkiR2
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/850007023460386127
 ---
 

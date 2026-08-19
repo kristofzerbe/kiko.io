@@ -21,9 +21,9 @@ bandcamp:
   album: Spirit of the Void|594818283
   track: Spirit of the Void|573048769
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/23
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/115747353563862786
 ---
 

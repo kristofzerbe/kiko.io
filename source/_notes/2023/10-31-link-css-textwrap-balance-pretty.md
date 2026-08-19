@@ -7,7 +7,7 @@ rel:
   caption: "When to use CSS text-wrap: balance; vs text-wrap: pretty; - Stephanie Stimac's Blog"
   url: https://blog.stephaniestimac.com/posts/2023/10/css-text-wrap/
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/111329744377473872
 ---
 

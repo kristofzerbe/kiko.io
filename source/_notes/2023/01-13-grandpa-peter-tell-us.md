@@ -7,7 +7,7 @@ rel:
   caption: "Opa Peter erzähl doch mal…"
   url: https://opaerzaehldochmalblog.wordpress.com
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/109682675029725273
 ---
 

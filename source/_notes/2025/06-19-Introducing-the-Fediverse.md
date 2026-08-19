@@ -7,7 +7,7 @@ rel:
   caption: "Introducing the Fediverse: a New Era of Social Media"
   url: https://elenarossini.com/portfolio/introducing-the-fediverse/
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114709842460446330
 ---
 It was shared so many times in the last weeks, but because it's so important, here's my ...

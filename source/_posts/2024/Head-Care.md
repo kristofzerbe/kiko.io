@@ -18,11 +18,11 @@ related:
   - Show-pages-meta-data-JSON-LD-in-Bottom-Sheet
   - Get-and-use-a-dominant-color-that-matches-the-header-image
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112808925304713486
-  - host: DevTo
+  - site: DevTo
     url: https://dev.to/kristofzerbe/head-care-cleaning-up-meta-and-link-tags-1a93
-  - host: IndieNews
+  - site: IndieNews
     url: https://news.indieweb.org/en/kiko.io/post/Head-Care/
 ---
 

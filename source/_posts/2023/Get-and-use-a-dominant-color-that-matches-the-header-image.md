@@ -20,7 +20,7 @@ related:
   - Automatic-Duplicate-Image-Shadow
   - Discoveries-19-Visual-Helpers
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: 
 ---
 

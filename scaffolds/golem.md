@@ -19,7 +19,7 @@ tags:
 related:
   - 
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: 
 ---
 

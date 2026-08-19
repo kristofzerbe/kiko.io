@@ -17,9 +17,9 @@ related:
   - Smells-Like-Summer
   - Spring-Awakening
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112797522974732744
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/718884944325910550
 ---
 

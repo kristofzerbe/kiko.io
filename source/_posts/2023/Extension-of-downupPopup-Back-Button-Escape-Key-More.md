@@ -19,7 +19,7 @@ related:
   - Provide-Blog-Metadata-via-JSON-LD
   - Discoveries-24-JavaScript-UI
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/110657193763601130
 ---
 

@@ -7,7 +7,7 @@ rel:
   caption: "Geogen"
   url: https://geogen.stoepel.net/index.html
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/110316281730536246
 ---
 

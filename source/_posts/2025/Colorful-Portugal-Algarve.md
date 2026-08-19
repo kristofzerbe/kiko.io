@@ -18,9 +18,9 @@ related:
   - Across-the-Country
   - Wales
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114885275899801528
-  - host: Pixelfed
+  - site: Pixelfed
     title: Sagres/Burgau
     url: https://pixelfed.social/p/kristofz/858008233286694547
 ---

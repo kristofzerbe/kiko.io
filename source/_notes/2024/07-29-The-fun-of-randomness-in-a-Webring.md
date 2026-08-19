@@ -7,7 +7,7 @@ rel:
   caption: 🕸️👉👈💍 Ordering an IndieWeb webring
   url: https://martymcgui.re/2024/06/23/ordering-an-indieweb-webring/
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112870464946579479
 ---
 

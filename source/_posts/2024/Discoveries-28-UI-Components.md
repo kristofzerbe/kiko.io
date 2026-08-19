@@ -17,7 +17,7 @@ related:
   - Discoveries-26-JavaScript-HowTo-s
   - Discoveries-25-Tutorials-HowTo-s
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111986306738554713
 ---
 

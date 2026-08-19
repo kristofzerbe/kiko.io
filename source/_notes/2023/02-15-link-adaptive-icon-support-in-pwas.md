@@ -7,7 +7,7 @@ rel:
   caption: "Adaptive icon support in PWAs with maskable icons  |  Articles  |  web.dev"
   url: https://web.dev/maskable-icon/
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/109870185482933213
 ---
 

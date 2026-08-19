@@ -18,7 +18,7 @@ related:
   - Colophon-Writing
   - Colophon-Special-Pages
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114376388233094484
 ---
 

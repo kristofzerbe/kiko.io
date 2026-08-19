@@ -2,7 +2,7 @@
 title: "Go, Zuck Yourself"
 date: 2025-05-30
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/114596878275979655
 ---
 

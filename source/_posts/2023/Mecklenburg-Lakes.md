@@ -18,15 +18,15 @@ related:
   - Speyer-Automotive
   - Majorcan-Details
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111479244359603591
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/634452975081842226
     title: Mecklenburg Lakes I
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/i/web/post/634785436120802808
     title: Mecklenburg Lakes II
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/636075202168502860
     title: Mecklenburg Lakes III
 ---

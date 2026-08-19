@@ -20,7 +20,7 @@ related:
   - Extension-of-downupPopup-Back-Button-Escape-Key-More
   - Syndicate-Mastodon-Hashtags-in-your-favorite-Feed-Reader
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111143731714219670
 ---
 

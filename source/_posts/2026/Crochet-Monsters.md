@@ -20,13 +20,13 @@ bandcamp:
   album: Cosmic Blues|1224739216
   track: Helter Skelter|682423167
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/36
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/7596674
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116585626366832307
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/961329914624482614
 ---
 

@@ -251,7 +251,7 @@ hexo.on('generateBefore', function() {
       photo.syndication = photo.meta.custom.links
         .filter(l => l.url.length > 0)
         .map(l => { 
-          return { host: l.site.charAt(0).toUpperCase() + l.site.slice(1), url: l.url }
+          return { site: l.site.charAt(0).toUpperCase() + l.site.slice(1), url: l.url }
       });
     }
     

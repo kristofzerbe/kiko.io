@@ -19,7 +19,7 @@ related:
   - Automatic-Header-Images-in-Hexo
   - Folder-based-publishing-in-Lightroom
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111313781768761478
 ---
 

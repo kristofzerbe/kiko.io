@@ -18,7 +18,7 @@ related:
   - Favourite-Pens-of-2022
   - Top-10-Pens-of-Jon-Kantner
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112882279362201891
 ---
 

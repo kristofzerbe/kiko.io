@@ -2,7 +2,7 @@
 title: Unexpected Visitor
 date: 2026-01-02
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/115826695065216697
 ---
 

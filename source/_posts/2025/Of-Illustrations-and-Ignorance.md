@@ -16,7 +16,7 @@ related:
   - Discoveries-33-Image-Presentation
   - Tringula-And-The-Beauty-Of-Mathematics
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114518325360598940
 ---
 

@@ -18,7 +18,7 @@ related:
   - You-will-never-know-whose-butterfly-you-were
   - How-to-keep-the-GPS-coordinates-accurate-while-shooting
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/113686924295765418
 ---
 

@@ -17,7 +17,7 @@ related:
   - SVWW-vs-Hansa-Rostock-2023-10-29
   - SVWW-vs-HSV-2023-10-07
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111414930653623458
 ---
 

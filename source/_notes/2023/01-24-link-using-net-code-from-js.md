@@ -7,7 +7,7 @@ rel:
   caption: "Using .NET code from JavaScript using WebAssembly - Gérald Barré"
   url: https://www.meziantou.net/using-dotnet-code-from-javascript-using-webassembly.htm
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/109742999808592889
 ---
 

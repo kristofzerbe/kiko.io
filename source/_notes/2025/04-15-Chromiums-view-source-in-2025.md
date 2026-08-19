@@ -3,7 +3,7 @@ title: "#TIL | Chromiums view-source in 2025"
 date: 2025-04-15
 type: til
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114342877382182783
 ---
 

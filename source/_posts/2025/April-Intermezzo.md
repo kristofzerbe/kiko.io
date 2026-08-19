@@ -17,9 +17,9 @@ related:
   - Afternoon-Light
   - July-Heat
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114410379329304799
-  - host: Pixelfed
+  - site: Pixelfed
     url: null
 ---
 

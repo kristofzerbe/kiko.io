@@ -17,7 +17,7 @@ related:
   - Manipulation-of-Lists-within-a-Sentence-of-Natural-Language
   - Experimenting-with-the-font-LEXEND
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112197053480608719
 ---
 

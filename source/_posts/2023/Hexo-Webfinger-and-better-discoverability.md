@@ -19,11 +19,11 @@ related:
   - Mastodon-Share-Bottom-Sheet-Dialog
   - Provide-Blog-Metadata-via-JSON-LD
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111511819358041476
-  - host: IndieNews
+  - site: IndieNews
     url: https://news.indieweb.org/en/kiko.io/post/Hexo-Webfinger-and-better-discoverability/
-  - host: DevTo
+  - site: DevTo
     url: https://dev.to/kristofzerbe/hexo-webfinger-and-better-discoverability-292f
 ---
 

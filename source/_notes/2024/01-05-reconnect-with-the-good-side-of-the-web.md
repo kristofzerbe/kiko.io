@@ -7,7 +7,7 @@ rel:
   caption: "olano.dev: Reclaiming the Web with a Personal Reader"
   url: https://olano.dev/2023-12-12-reclaiming-the-web-with-a-personal-reader/
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/111705709305830580
 ---
 

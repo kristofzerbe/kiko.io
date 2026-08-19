@@ -3,7 +3,7 @@ title: "#TIL | Link NPM Module"
 date: 2022-12-05 16:55:00
 type: til
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/109462482394505029
 ---
 

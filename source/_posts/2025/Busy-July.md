@@ -17,9 +17,9 @@ related:
   - Forgotten-May
   - April-Intermezzo
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114896635890197405
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/853233003117137436
 ---
 

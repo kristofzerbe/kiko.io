@@ -20,7 +20,7 @@ related:
   - Diving-Into-the-World-of-Lemmy
   - Exploit-the-feedback-potential-with-syndication-links
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114337668395997816
 ---
 

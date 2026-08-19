@@ -21,16 +21,16 @@ related:
   - Mentions-United-New-Renderer-and-Refactorings
   - Mentions-United-Native-Mastodon-Provider
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/113248737015518151
-  - host: DevTo
+  - site: DevTo
     url: https://dev.to/kristofzerbe/mentions-united-3-2-1-go-213f
-  - host: IndieNews
+  - site: IndieNews
     url: https://news.indieweb.org/en/kiko.io/post/Mentions-United-3-2-1-go/
-  - host: Lemmy
+  - site: Lemmy
     title: Fediverse
     url: https://programming.dev/post/20878811
-  - host: Lemmy
+  - site: Lemmy
     title: IndieWeb
     url: https://programming.dev/post/20881358
 ---
@@ -146,9 +146,9 @@ Hexo uses [Markdown](https://en.wikipedia.org/wiki/Markdown) files with metadata
 title: "Batman Comics with pure CSS"
 date: 2024-07-11
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112767128980027149
-  - host: DevTo
+  - site: DevTo
     url: https://dev.to/kristofzerbe/batman-comics-with-pure-css-5ggk
 ---
 ```

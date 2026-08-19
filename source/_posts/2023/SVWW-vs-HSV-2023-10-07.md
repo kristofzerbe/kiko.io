@@ -17,9 +17,9 @@ related:
   - SVWW-vs-Karlsruhe-2023-08-18
   - My-Hometown-My-Club
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111199878782019669
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/616643017017178527
 ---
 

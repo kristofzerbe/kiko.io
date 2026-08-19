@@ -19,7 +19,7 @@ related:
   - The-Last-Image-Gallery
   - Generate-Social-Media-Images-Automatically
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/110798153748266303
 ---
 

@@ -22,7 +22,7 @@ related:
   - Mentions-United-Lemmy-plugin-a-few-updates
   - Mentions-United-3-2-1-go
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/113854502773218968
 ---
 

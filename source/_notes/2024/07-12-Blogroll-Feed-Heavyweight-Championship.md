@@ -2,7 +2,7 @@
 title: "Blogroll Feed Heavyweight Championship"
 date: 2024-07-12
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/112773452534554688
 ---
 

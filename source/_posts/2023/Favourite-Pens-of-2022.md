@@ -18,7 +18,7 @@ related:
   - CSS-Columns-and-Drop-Shadow
   - Automatic-Duplicate-Image-Shadow
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/109688223234996799
 ---
 

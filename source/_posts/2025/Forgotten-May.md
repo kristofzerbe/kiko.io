@@ -17,9 +17,9 @@ related:
   - April-Intermezzo
   - New-Year-New-Gnomes
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114760923197482786
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/844549621554554050
 ---
 

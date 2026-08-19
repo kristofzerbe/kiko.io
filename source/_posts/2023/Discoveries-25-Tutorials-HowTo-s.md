@@ -17,7 +17,7 @@ related:
   - Discoveries-23-UI-CSS
   - Discoveries-22-Tips-Tricks
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/110639105939400667
 ---
 

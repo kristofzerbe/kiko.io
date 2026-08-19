@@ -18,7 +18,7 @@ related:
   - Discoveries-30-CSS-HowTo-s
   - Discoveries-29-CSS
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: 
 ---
 

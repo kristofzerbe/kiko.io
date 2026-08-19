@@ -16,11 +16,11 @@ related:
   - Impressions-from-the-Carnival-Parade-in-Wiesbaden
   - SVWW-vs-Nurnberg-2024-02-09
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111954207446583586
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/664916612053494499
-  - host: PeerTube
+  - site: PeerTube
     url: https://clip.place/w/quf3PWpmKJjRwm89axBLY2
 ---
 

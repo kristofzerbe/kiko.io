@@ -20,7 +20,7 @@ related:
   - Include-and-provide-JSON-data-in-Hexo-EJS-Templates
   - Provide-Blog-Metadata-via-JSON-LD
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/110986400682618334
 ---
 

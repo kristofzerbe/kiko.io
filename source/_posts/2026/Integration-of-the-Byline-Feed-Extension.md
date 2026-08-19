@@ -24,13 +24,13 @@ bandcamp:
   album: Glass Future|3605903048
   track: First Blood of Melchor|3255928040
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/35
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/163506
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116532933115541973
-  - host: IndieNews
+  - site: IndieNews
     url: https://news.indieweb.org/en/kiko.io/post/Integration-of-the-Byline-Feed-Extension/
 ---
 

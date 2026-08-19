@@ -19,7 +19,7 @@ related:
   - Discoveries-34-JS-Libraries
   - Discoveries-33-Image-Presentation
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114880457757072374
 ---
 

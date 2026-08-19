@@ -24,9 +24,9 @@ bandcamp:
   album: The Burden of Restlessness|517271917
   track: Burning|1415696170
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/30
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116240678591725153
 ---
 

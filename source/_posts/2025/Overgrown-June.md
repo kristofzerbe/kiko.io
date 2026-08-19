@@ -17,9 +17,9 @@ related:
   - New-Year-New-Gnomes
   - Afternoon-Light
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114711573259355554
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/841388493558460143
 ---
 

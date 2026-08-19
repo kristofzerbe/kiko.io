@@ -3,7 +3,7 @@ title: "#TIL | Force Refresh Android Chrome"
 date: 2022-12-24 10:05:00
 type: til
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/109568040848262163
 ---
 

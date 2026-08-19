@@ -2,9 +2,9 @@
 title: The Bot, Kinder Surprise Edition
 date: 2025-07-31 13:46
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114947853245605812
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/856513002850396462
 ---
 

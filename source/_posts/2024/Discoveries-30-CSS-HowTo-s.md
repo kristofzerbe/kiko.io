@@ -18,7 +18,7 @@ related:
   - Discoveries-28-UI-Components
   - Discoveries-27-JavaScript-Tools
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112762023777510643
 ---
 

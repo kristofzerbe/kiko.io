@@ -18,7 +18,7 @@ related:
   - Discoveries-22-Tips-Tricks
   - Discoveries-21-Sites-Pages
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/110277494782061842
 ---
 

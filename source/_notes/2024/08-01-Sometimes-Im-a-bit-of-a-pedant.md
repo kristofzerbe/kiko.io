@@ -7,7 +7,7 @@ rel:
   caption: "Oh! Dang! Many thanks to ..."
   url: https://martymcgui.re/2024/07/31/103341/
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: 
 ---
 

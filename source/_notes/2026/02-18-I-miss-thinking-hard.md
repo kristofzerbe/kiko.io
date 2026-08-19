@@ -9,7 +9,7 @@ rel:
   caption: I miss thinking hard.
   url: https://www.jernesto.com/articles/thinking_hard
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116090049082234964
 ---
 This text accurately reflects the main problem with AI: We are gradually losing our cognitive abilities, because we are ceasing to train our  biggest muscle: the brain.

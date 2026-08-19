@@ -17,9 +17,9 @@ related:
   - SVWW-vs-Hertha-BSC-2024-01-27
   - SVWW-vs-Braunschweig-2023-12-08
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111919986554554676
-  - host: PeerTube
+  - site: PeerTube
     url: https://clip.place/w/1rYe46Pze3kWAUMYbXgGHt
 ---
 

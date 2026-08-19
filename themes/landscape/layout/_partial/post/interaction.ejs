@@ -1,13 +1,13 @@
 <%
-  let syndications = post.syndication?.filter(s => s.url?.length > 0 && s.host?.length > 0);
-  let synGitHub = syndications?.find(s => s.host.toLowerCase() === "github");
-  let synMastodon = syndications?.find(s => s.host.toLowerCase() === "mastodon");
-  let synDevTo = syndications?.find(s => s.host.toLowerCase() === "devto");
-  let synPixelfed = syndications?.filter(s => s.host.toLowerCase() === "pixelfed");
-  let synLemmy = syndications?.filter(s => s.host.toLowerCase() === "lemmy");
-  let synVernissage = syndications?.filter(s => s.host.toLowerCase() === "vernissage");
-  let synPeertube = syndications?.filter(s => s.host.toLowerCase() === "peertube");
-  let synBubbles = syndications?.filter(s => s.host.toLowerCase() === "bubbles");
+  let syndications = post.syndication?.filter(s => s.url?.length > 0 && s.site?.length > 0);
+  let synGitHub = syndications?.find(s => s.site.toLowerCase() === "github");
+  let synMastodon = syndications?.find(s => s.site.toLowerCase() === "mastodon");
+  let synDevTo = syndications?.find(s => s.site.toLowerCase() === "devto");
+  let synPixelfed = syndications?.filter(s => s.site.toLowerCase() === "pixelfed");
+  let synLemmy = syndications?.filter(s => s.site.toLowerCase() === "lemmy");
+  let synVernissage = syndications?.filter(s => s.site.toLowerCase() === "vernissage");
+  let synPeertube = syndications?.filter(s => s.site.toLowerCase() === "peertube");
+  let synBubbles = syndications?.filter(s => s.site.toLowerCase() === "bubbles");
 %>
 <%#
 // Determine async, if the post is syndicated to Bubbles 

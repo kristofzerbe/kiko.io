@@ -7,9 +7,9 @@ rel:
   caption: Landmark German ruling declares Google's AI Overviews are Google's own words and makes it liable for false answers
   url: https://the-decoder.com/landmark-german-ruling-declares-googles-ai-overviews-are-googles-own-words-and-makes-it-liable-for-false-answers
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116730454720640749
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/30934714
 ---
 

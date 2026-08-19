@@ -17,7 +17,7 @@ related:
   - SVWW-vs-Hansa-Rostock-2024-08-10
   - SVWW-vs-Regensburg-2024-05-28-Relegation
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112976657826182930
 ---
 

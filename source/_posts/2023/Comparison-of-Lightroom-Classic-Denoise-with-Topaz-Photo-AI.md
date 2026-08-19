@@ -18,7 +18,7 @@ related:
   - Speyer-Automotive
   - Photo-Workflow-Re-Thought
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111636128937846531
 ---
 

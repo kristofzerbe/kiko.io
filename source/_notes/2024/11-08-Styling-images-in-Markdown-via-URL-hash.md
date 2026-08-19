@@ -7,7 +7,7 @@ rel:
   caption: Aligning Images In Markdown
   url: https://www.surinderbhomra.com/Blog/2020/05/12/Aligning-Images-In-Markdown
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/113447973418426445
 ---
 

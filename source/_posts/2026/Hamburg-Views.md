@@ -18,13 +18,13 @@ related:
   - Miniatur-Wunderland-Hamburg-2026-06-04
   - Blooming-Velmede
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/40
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/27452373
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116708779499775148
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/969538703848808603
 ---
 

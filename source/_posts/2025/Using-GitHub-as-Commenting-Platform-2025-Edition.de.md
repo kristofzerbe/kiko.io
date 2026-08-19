@@ -49,7 +49,7 @@ subtitle: Integrate Utterances GitHub Issue Commenting to Hexo
 date: 2020-07-05T14:55:16.000Z
 ...
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/3
 ```
 

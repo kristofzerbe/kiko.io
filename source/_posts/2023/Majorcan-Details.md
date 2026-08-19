@@ -18,7 +18,7 @@ related:
   - Automatic-Header-Images-in-Hexo
   - Photo-Workflow-Re-Thought
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: 
 ---
 

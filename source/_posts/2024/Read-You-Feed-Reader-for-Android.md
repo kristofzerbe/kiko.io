@@ -18,7 +18,7 @@ related:
   - My-Switch-to-Obsidian
   - Handling-IPTC-metadata-on-Android-and-Windows
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112740972219391678
 ---
 

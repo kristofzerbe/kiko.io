@@ -18,27 +18,27 @@ related:
   - Schotia-Safaris-Private-Game-Reserve
   - Across-the-Country
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114104768153335701
-  - host: Pixelfed
+  - site: Pixelfed
     title: Sea Impressions
     url: https://pixelfed.social/p/kristofz/806450003667946460
-  - host: Pixelfed
+  - site: Pixelfed
     title: Mountains and Sea
     url: https://pixelfed.social/p/kristofz/807500779985103085
-  - host: Pixelfed
+  - site: Pixelfed
     title: Boulders Beach
     url: https://pixelfed.social/p/kristofz/809036765161646353
-  - host: Pixelfed
+  - site: Pixelfed
     title: Cape Point
     url: https://pixelfed.social/p/kristofz/810414697905607194
-  - host: Pixelfed
+  - site: Pixelfed
     title: Robben Island
     url: https://pixelfed.social/p/kristofz/816607275672874825
-  - host: Pixelfed
+  - site: Pixelfed
     title: Cape Town Heli
     url: https://pixelfed.social/p/kristofz/818173235633381890
-  - host: Pixelfed
+  - site: Pixelfed
     title: Kirstenbosch
     url: https://pixelfed.social/p/kristofz/820268706119411089
 ---

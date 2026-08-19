@@ -18,9 +18,9 @@ related:
   - Don-t-be-ignorant-and-offer-a-theme-switch
   - SVG-Resources
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112848140684070777
-  - host: DevTo
+  - site: DevTo
     url: https://dev.to/kristofzerbe/ensure-accessibility-on-icon-links-4j7g
 ---
 

@@ -18,12 +18,12 @@ related:
   - Hout-Bay-Cape-Town
   - Across-the-Country
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114007573028452315
-  - host: Pixelfed
+  - site: Pixelfed
     title: Animals
     url: https://pixelfed.social/p/kristofz/796880118065513275
-  - host: Pixelfed
+  - site: Pixelfed
     title: Scenic Moments
     url: https://pixelfed.social/p/kristofz/806661282577199656
 ---

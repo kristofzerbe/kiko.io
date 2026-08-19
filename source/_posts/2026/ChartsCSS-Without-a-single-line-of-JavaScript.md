@@ -25,9 +25,9 @@ bandcamp:
   album: Eternity|2409501860
   track: Heading Down|3190982730
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/24
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/115849509743528621
 ---
 

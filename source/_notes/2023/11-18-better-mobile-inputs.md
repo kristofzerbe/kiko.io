@@ -7,7 +7,7 @@ rel:
   caption: "Better Form Inputs for Better Mobile User Experiences"
   url: https://css-tricks.com/better-form-inputs-for-better-mobile-user-experiences
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/111431164571042503
 ---
 

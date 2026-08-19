@@ -17,7 +17,7 @@ related:
   - SVWW-vs-Nurnberg-2024-02-09
   - SVWW-vs-Hertha-BSC-2024-01-27
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111987795546274594
 ---
 

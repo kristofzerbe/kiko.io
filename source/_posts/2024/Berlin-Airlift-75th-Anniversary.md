@@ -18,12 +18,12 @@ related:
   - Smells-Like-Summer
   - Pool-Photo-Generator
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112627596416002110
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/708223680569329089
     title: Part 1
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/i/web/post/708253993614469108
     title: Part 2
 ---

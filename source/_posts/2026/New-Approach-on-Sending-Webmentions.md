@@ -25,11 +25,11 @@ bandcamp:
   album: Distant Thunder|2491836742
   track: Bitter Harvest |1479502368
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/25
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/115862091855262716
-  - host: IndieNews
+  - site: IndieNews
     url: https://news.indieweb.org/en/kiko.io/post/New-Approach-on-Sending-Webmentions/
 ---
 

@@ -20,7 +20,7 @@ related:
   - Hexo-Determine-and-Use-Online-Status
   - Convert-HTML-into-Plain-Text-in-Hexo
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114819276808921125
 ---
 

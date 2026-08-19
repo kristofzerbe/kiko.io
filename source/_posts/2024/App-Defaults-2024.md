@@ -17,7 +17,7 @@ related:
   - My-Switch-to-Obsidian
   - Johnny-Decimal-Emerging-from-the-Abyss
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/113713012309378223
 ---
 

@@ -21,13 +21,13 @@ bandcamp:
   album: Engines of Demolition|3653511559
   track: Broken and Blind|3714999807
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/51
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/44763792
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/117065768893948652
-  - host: IndieNews
+  - site: IndieNews
     url: https://news.indieweb.org/en/kiko.io/post/Geohashes-for-my-photos/
 ---
 

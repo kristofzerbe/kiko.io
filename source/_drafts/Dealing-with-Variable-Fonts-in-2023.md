@@ -12,7 +12,7 @@ tags:
 related:
   - Experimenting-with-the-font-LEXEND
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url:
 ---
 

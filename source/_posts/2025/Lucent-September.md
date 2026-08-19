@@ -17,11 +17,11 @@ related:
   - Busy-July
   - Overgrown-June
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/13
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/115167388110206603
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/870559518490351288
 ---
 

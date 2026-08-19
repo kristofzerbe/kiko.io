@@ -7,7 +7,7 @@ rel:
   caption: "How to vendor npm dependencies"
   url: https://stricker.digital/posts/how-to-vendor-npm-dependencies/
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/109676149040771356
 ---
 

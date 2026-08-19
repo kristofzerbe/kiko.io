@@ -21,13 +21,13 @@ bandcamp:
   album: Acido y Puto|3860834148
   track: Space Nomad|1793241517
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/33
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116431167065441060
-  - host: IndieNews
+  - site: IndieNews
     url: https://news.indieweb.org/en/kiko.io/post/I-Love-Bubbles
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/114467
 ---
 

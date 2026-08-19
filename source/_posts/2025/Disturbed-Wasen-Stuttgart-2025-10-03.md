@@ -16,13 +16,13 @@ related:
   - WIRTZ-DNA-Tour-2024-Leipzig-2024-02-17
   - Versengold-in-Concert
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/14
-  - host: PeerTube
+  - site: PeerTube
     url: https://clip.place/w/g2Au5rvKrBuT2W53qFap3K
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/115321922654933080
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/880570669557468182
 ---
 

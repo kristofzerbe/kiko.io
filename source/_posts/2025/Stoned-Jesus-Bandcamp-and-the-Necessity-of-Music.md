@@ -22,9 +22,9 @@ bandcamp:
   album: Songs To Sun|3905788263
   track: New Dawn|1199798427
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/17
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/115480729807457282
 ---
 

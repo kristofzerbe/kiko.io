@@ -18,24 +18,24 @@ related:
   - Hout-Bay-Cape-Town
   - Across-the-Country
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/113984963798212224
-  - host: Pixelfed
+  - site: Pixelfed
     title: Games Drives
     url: https://pixelfed.social/p/kristofz/794897953733790094
-  - host: Pixelfed
+  - site: Pixelfed
     title: Species
     url: https://pixelfed.social/p/kristofz/795638368102736823
-  - host: Pixelfed
+  - site: Pixelfed
     title: Symmetry 
     url: https://pixelfed.social/p/kristofz/796312439784309513
-  - host: Pixelfed
+  - site: Pixelfed
     title: Elephant Impressions
     url: https://pixelfed.social/p/kristofz/798115893967197390
-  - host: Pixelfed
+  - site: Pixelfed
     title: Landscapes
     url: https://pixelfed.social/i/web/post/798220182517405606
-  - host: Pixelfed
+  - site: Pixelfed
     title: Black & White
     url: https://pixelfed.social/p/kristofz/800260226733847876
 ---

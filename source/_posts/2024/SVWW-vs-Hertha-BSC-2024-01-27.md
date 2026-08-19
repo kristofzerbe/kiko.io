@@ -17,7 +17,7 @@ related:
   - SVWW-vs-Braunschweig-2023-12-08
   - SVWW-vs-Kaiserslautern-2023-11-12
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111833964541078339
 ---
 

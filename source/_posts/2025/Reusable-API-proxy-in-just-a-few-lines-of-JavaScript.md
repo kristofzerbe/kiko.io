@@ -18,11 +18,11 @@ related:
   - Use-and-manage-multiple-Node-js-versions-on-Windows-10
   - jsrepo-Build-your-own-tool-registry
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114409673179039161
-  - host: DevTo
+  - site: DevTo
     url: https://dev.to/kristofzerbe/reusable-api-proxy-in-just-a-few-lines-of-javascript-2044
-  - host: Lemmy
+  - site: Lemmy
     title: JavaScript
     url: https://programming.dev/post/29325800
 ---

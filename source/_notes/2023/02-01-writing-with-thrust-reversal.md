@@ -3,7 +3,7 @@ title: "Writing with Thrust Reversal"
 date: 2023-02-01
 type: 
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/109788893172245782
 ---
 

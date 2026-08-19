@@ -18,13 +18,13 @@ related:
   - Linkin-Park-Hamburg-2026-06-03
   - Crochet-Monsters
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/41
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/27511613
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116709066397737370
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/975051448999994381
 ---
 

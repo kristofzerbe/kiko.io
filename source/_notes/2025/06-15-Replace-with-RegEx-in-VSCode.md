@@ -3,7 +3,7 @@ title: "#TIL | Replace with RegEx in VSCode"
 date: 2025-06-15
 type: til
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114687903770569949
 ---
 

@@ -19,7 +19,7 @@ related:
   - Thanks-Dropbox-but-I-m-off
   - Discoveries-15-Self-Hosted
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/109337764307139701
 ---
 

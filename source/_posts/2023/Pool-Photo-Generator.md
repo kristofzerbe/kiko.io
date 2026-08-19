@@ -19,7 +19,7 @@ related:
   - Generate-Social-Media-Images-Automatically
   - A-New-Blog-Customizing-Hexo
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/110928964865915942
 ---
 

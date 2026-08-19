@@ -17,13 +17,13 @@ related:
   - Belated-May
   - Remaining-Photos-from-2025
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/38
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116681413952529905
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/23059974
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/967459045570893199
 ---
 

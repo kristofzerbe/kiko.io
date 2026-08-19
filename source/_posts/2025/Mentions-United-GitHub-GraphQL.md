@@ -24,13 +24,13 @@ bandcamp:
   album: Crucible & Ruin|578609549
   track: Beholder I, Downfall|508254087
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/18
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/115520553638427371
-  - host: DevTo
+  - site: DevTo
     url: https://dev.to/kristofzerbe/mentions-united-github-graphql-1k4h
-  - host: Lemmy
+  - site: Lemmy
     title: IndieWeb
     url: https://programming.dev/post/40476871
 ---

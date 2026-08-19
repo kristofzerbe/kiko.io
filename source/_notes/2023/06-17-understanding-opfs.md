@@ -7,7 +7,7 @@ rel:
   caption: "Das private Dateisystem des Ursprungs  |  Articles  |  web.dev"
   url: https://web.dev/origin-private-file-system/
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/110558853253873951
 ---
 

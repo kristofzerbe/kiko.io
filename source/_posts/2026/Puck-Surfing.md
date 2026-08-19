@@ -25,11 +25,11 @@ bandcamp:
   album: Winds of Neptune|2922909570
   track: The Faun's Rhyme|616059842
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/50
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/44759088
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/117021839691402317
 ---
 
@@ -77,3 +77,4 @@ host: www.instagram.com
 favicon: https://static.cdninstagram.com/rsrc.php/yr/r/rzWiSjZRxk5.webp
 image: https://scontent-fra5-2.cdninstagram.com/v/t51.82787-19/551739509_17992197926839021_8097054370308019111_n.jpg?stp=dst-jpg_s100x100_tt6&_nc_cat=109&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=er9g4A4m5u0Q7kNvwFv7IOo&_nc_oc=AdozgjbNJD6HTl_AX1GBliKbjs8PCDcjH-F0NtNODzTx8dH6qEb-zpyXw3x5uaihygSSKYKHPksCqFTBlwN5amGH&_nc_zt=24&_nc_ht=scontent-fra5-2.cdninstagram.com&_nc_gid=waatsNJEM-VMvLACLvDOiQ&_nc_ss=79689&oh=00_AQFhqTuwxzjZ7f1-J3EsQnOxmbV1kpiIfl5vqfsTCQuxeA&oe=6A76488D
 {% endcardlink %}
+ 

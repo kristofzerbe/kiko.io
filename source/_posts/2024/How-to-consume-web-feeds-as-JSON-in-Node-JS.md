@@ -18,7 +18,7 @@ related:
   - My-Switch-to-Obsidian
   - Generate-Content-from-Trello
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112581793409878030
 ---
 

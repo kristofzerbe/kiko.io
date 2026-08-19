@@ -17,11 +17,11 @@ related:
   - Include-and-provide-JSON-data-in-Hexo-EJS-Templates
   - Show-pages-meta-data-JSON-LD-in-Bottom-Sheet
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112814832031474529
-  - host: DevTo
+  - site: DevTo
     url: https://dev.to/kristofzerbe/my-well-known-feeds-and-thoughts-beyond-22kp
-  - host: IndieNews
+  - site: IndieNews
     url: https://news.indieweb.org/en/kiko.io/post/My-well-known-feeds-and-thoughts-beyond/
 ---
 

@@ -186,13 +186,8 @@
 
   <% 
     page.syndication = [];
-    page.meta.custom.links.forEach(link => {
-      if (link.url) {
-        let syn = {
-          host: link.site,
-          url: link.url
-        }
-        if (link.title) { syn.title = link.title; }
+    page.meta.custom.links.forEach(syn => {
+      if (syn.url) {
         page.syndication.push(syn);
       }
     });

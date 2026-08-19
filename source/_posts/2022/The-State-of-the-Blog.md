@@ -17,7 +17,7 @@ related:
   - Hexo-Tag-Plugin-Collection
   - Forking-Hexo-plugin-hexo-index-anything
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/109565325472177128
 ---
 

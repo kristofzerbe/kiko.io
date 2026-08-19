@@ -17,7 +17,7 @@ related:
   - Kaiserslautern-vs-SVWW-2024-04-20
   - SVWW-vs-Dusseldorf-2024-04-13
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112365622660400918
 ---
 

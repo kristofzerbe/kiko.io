@@ -17,12 +17,12 @@ related:
   - Spring-Awakening
   - First-of-May
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112666894180695933
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/i/web/post/710531961491491984
     title: Part 1
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/i/web/post/710532301957844299
     title: Part 2
   

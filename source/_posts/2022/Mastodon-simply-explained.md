@@ -18,7 +18,7 @@ related:
   - Hexo-and-the-IndieWeb-Receiving-Webmentions
   - Hexo-and-the-IndieWeb
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/109348995418574427
 ---
 

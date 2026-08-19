@@ -7,7 +7,7 @@ rel:
   caption: "Mastowall"
   url: https://github.com/rstockm/mastowall
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/110994589015920362
 ---
 

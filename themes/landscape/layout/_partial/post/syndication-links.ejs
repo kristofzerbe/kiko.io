@@ -1,14 +1,14 @@
 <% syndication?.forEach(function(syn){ %>
   <% 
-    let hostname = syn.host.charAt(0).toUpperCase() + syn.host.slice(1); // + ((syn.title) ? " (" + syn.title + ")" : "")
-    let synname = hostname;
+    let sitename = syn.site.charAt(0).toUpperCase() + syn.site.slice(1); // + ((syn.title) ? " (" + syn.title + ")" : "")
+    let synname = sitename;
     if (syn.title) {
       synname += " (" + syn.title + ")";
     }
   %>
-  <a class="syndication-link host-<%- syn.host?.toLowerCase() %> u-syndication" 
+  <a class="syndication-link site-<%- syn.site?.toLowerCase() %> u-syndication" 
      href="<%- syn.url %>" rel="syndication" target="_blank"
-     title="Syndication of this <%- type %> on <%- hostname %>">
+     title="Syndication of this <%- type %> on <%- sitename %>">
     <% if (showText === true) { %>
       <span><%- synname %></span>
      <% } %>

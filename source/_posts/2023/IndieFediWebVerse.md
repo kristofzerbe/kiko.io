@@ -19,11 +19,11 @@ related:
   - Mastodon-Share-Bottom-Sheet-Dialog
   - Don-t-be-ignorant-and-offer-a-theme-switch
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/111652881681835667
-  - host: DevTo
+  - site: DevTo
     url: https://dev.to/kristofzerbe/indiefediwebverse-3hpe
-  - host: IndieNews
+  - site: IndieNews
     url: https://news.indieweb.org/en/kiko.io/post/IndieFediWebVerse/
 ---
 

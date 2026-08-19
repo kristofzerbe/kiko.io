@@ -7,7 +7,7 @@ rel:
   caption: "A Beginner’s Guide to Unsplash API in JavaScript"
   url: https://javascript.plainenglish.io/a-beginners-guide-to-unsplash-api-in-javascript-2524c51ae1f3
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/109733922950467221
 ---
 

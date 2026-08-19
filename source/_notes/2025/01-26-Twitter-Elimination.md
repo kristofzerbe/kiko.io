@@ -7,7 +7,7 @@ rel:
   caption: I don't want to link to a Nazi's website...
   url: https://mastodon.social/@matthiasott/113891019122212388
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/113896995446609200
 ---
 

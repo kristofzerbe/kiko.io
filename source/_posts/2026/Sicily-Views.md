@@ -22,16 +22,16 @@ bandcamp:
   album: The Fall of the Gods|2559054622
   track: Cuori Selvaggi|3598823955
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/44
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/44746555
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116895107147146394
-  - host: Pixelfed
+  - site: Pixelfed
     title: Colour
     url: https://pixelfed.social/p/kristofz/981210808221866203
-  - host: Pixelfed
+  - site: Pixelfed
     title: Monochrome
     url: https://pixelfed.social/p/kristofz/981211512685701901
 ---

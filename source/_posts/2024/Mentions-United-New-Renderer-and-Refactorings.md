@@ -20,12 +20,12 @@ related:
   - Mentions-United-Lemmy-plugin-a-few-updates
   - Mentions-United-Native-Mastodon-Provider
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/113499449609783497
-  - host: Lemmy
+  - site: Lemmy
     title: Fediverse
     url: https://programming.dev/post/21827898
-  - host: Lemmy
+  - site: Lemmy
     title: IndieWeb
     url: https://programming.dev/post/21827931
 ---

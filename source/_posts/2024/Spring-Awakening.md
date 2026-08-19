@@ -17,12 +17,12 @@ related:
   - Mecklenburg-Lakes
   - Speyer-Automotive
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112310591058800541
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/687724260686305325
     title: Part 1
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/687725385098115769
     title: Part 2
 

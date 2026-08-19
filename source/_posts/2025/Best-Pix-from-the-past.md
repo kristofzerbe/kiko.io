@@ -18,9 +18,9 @@ related:
   - Hout-Bay-Cape-Town
   - Addo-Elephant-National-Park
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114676815307101037
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/839272657839558183
 ---
 

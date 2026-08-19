@@ -25,9 +25,9 @@ bandcamp:
   album: The Traveler|2477741210
   track: The Traveler|275147839
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/22
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/115643359647175107
 ---
 

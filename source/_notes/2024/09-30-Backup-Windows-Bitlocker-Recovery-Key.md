@@ -3,7 +3,7 @@ title: "#TIL | Backup Windows Bitlocker Recovery Key"
 date: 2024-09-30
 type: til
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/113225955666270226
 ---
 

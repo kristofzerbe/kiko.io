@@ -21,7 +21,7 @@ related:
   - Mentions-United-Lemmy-plugin-a-few-updates
   - Mentions-United-New-Renderer-and-Refactorings
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/113816442246434483
 ---
 

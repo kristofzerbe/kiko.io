@@ -7,7 +7,7 @@ rel:
   caption: StreetPass
   url: https://streetpass.social/
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/109852165969514657
 ---
 

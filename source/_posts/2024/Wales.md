@@ -18,15 +18,15 @@ related:
   - Berlin-Airlift-75th-Anniversary
   - Pool-Photo-Generator
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/113612225900700124
-  - host: Pixelfed
+  - site: Pixelfed
     title: Wales - The South
     url: https://pixelfed.social/p/kristofz/771040180441917384
-  - host: Pixelfed
+  - site: Pixelfed
     title: Wales - The West
     url: https://pixelfed.social/i/web/post/771043709338439853
-  - host: Pixelfed
+  - site: Pixelfed
     title: Wales - The North
     url: https://pixelfed.social/p/kristofz/771047222451419392
 ---

@@ -18,9 +18,9 @@ related:
   - Addo-Elephant-National-Park
   - Schotia-Safaris-Private-Game-Reserve
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114172418666834070
-  - host: Pixelfed
+  - site: Pixelfed
     title: Mossel Bay
     url: https://pixelfed.social/p/kristofz/804975378637115928
 ---

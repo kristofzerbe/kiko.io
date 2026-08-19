@@ -23,13 +23,13 @@ bandcamp:
   album: Gudger III|3596528364
   track: Live it Down|1826128330
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/42
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/44564983
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116816551625739701
-  - host: IndieNews
+  - site: IndieNews
     url: https://news.indieweb.org/en/kiko.io/post/TownSquare-Chatting-with-Strangers/
 ---
 

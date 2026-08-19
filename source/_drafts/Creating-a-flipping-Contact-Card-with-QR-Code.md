@@ -17,7 +17,7 @@ related:
   - Extension-of-downupPopup-Back-Button-Escape-Key-More
   - Show-pages-meta-data-JSON-LD-in-Bottom-Sheet
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: 
 ---
 

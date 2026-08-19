@@ -17,9 +17,9 @@ related:
   - Wet-Summer-Solstice
   - Smells-Like-Summer
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112826024121106437
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/720888002073935771
 ---
 

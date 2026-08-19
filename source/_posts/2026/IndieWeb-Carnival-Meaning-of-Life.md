@@ -24,11 +24,11 @@ bandcamp:
   album: The Ghost of Badon Hill|932635782
   track: Badon|1757217712
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/27
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/115906144490060370
-  - host: IndieNews
+  - site: IndieNews
     url: https://news.indieweb.org/en/kiko.io/post/IndieWeb-Carnival-Meaning-of-Life/
 ---
 

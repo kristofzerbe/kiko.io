@@ -17,7 +17,7 @@ related:
   - Implement-source-switch-for-SPA
   - Better-Input-Change-Event
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/5
 ---
 

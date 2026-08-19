@@ -22,23 +22,23 @@ bandcamp:
   album: Hollow Ground|3467021899
   track: Masters of Man|4046633094
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/26
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/115877386686468659
-  - host: Pixelfed
+  - site: Pixelfed
     title: Chilling
     url: https://pixelfed.social/p/kristofz/916323321803686938
-  - host: Pixelfed
+  - site: Pixelfed
     title: Portraits
     url: https://pixelfed.social/p/kristofz/916763036498505817
-  - host: Pixelfed
+  - site: Pixelfed
     title: Kaja
     url: https://pixelfed.social/p/kristofz/918070385393224935
-  - host: Pixelfed
+  - site: Pixelfed
     title: Roman
     url: https://pixelfed.social/p/kristofz/919194360818474577
-  - host: Pixelfed
+  - site: Pixelfed
     title: Birds
     url: https://pixelfed.social/p/kristofz/919193890541264176
 ---

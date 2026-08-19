@@ -20,7 +20,7 @@ related:
   - Add-website-to-Trello-card-the-better-way
   - Discoveries-21-Sites-Pages
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/109596982760280962
 ---
 
@@ -239,7 +239,7 @@ related:
   - Discoveries-yy
   - Discoveries-zz
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: 
 ---
 

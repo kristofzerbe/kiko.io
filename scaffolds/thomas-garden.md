@@ -15,11 +15,11 @@ tags:
 related:
   - xxx
 syndication:
-  - host: Bubbles
+  - site: Bubbles
     url: null
-  - host: Mastodon
+  - site: Mastodon
     url: null
-  - host: Pixelfed
+  - site: Pixelfed
     url: null
 ---
 

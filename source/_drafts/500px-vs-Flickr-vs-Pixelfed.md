@@ -17,7 +17,7 @@ related:
   - Mecklenburg-Lakes
   - Speyer-Automotive
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: null
 ---
 

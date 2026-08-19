@@ -3,7 +3,7 @@ title: European Elections - Go Vote
 date: 2024-06-09
 type: 
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112585535800009790
 ---
 

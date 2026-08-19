@@ -17,7 +17,7 @@ related:
   - SVWW-vs-Regensburg-2024-05-28-Relegation
   - SVWW-vs-Furth-2024-04-28
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112944247449903499
 ---
 

@@ -18,7 +18,7 @@ related:
   - Pattern-for-dynamic-Hexo-pages
   - The-State-of-the-Blog
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/109715917785769598
 ---
 

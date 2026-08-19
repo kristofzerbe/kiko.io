@@ -7,7 +7,7 @@ rel:
   caption: "Run JavaScript promises in series - 30 seconds of code"
   url: https://www.30secondsofcode.org/js/s/run-promises-in-series
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/111277842918707560
 ---
 

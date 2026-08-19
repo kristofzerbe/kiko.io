@@ -7,7 +7,7 @@ rel:
   caption: "Promises From The Ground Up"
   url: https://www.joshwcomeau.com/javascript/promises/
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112634438675444484
 ---
 

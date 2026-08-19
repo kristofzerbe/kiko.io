@@ -18,15 +18,15 @@ related:
   - Impressions-from-the-Carnival-Parade-in-Wiesbaden
   - Pool-Photo-Generator
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/113341222781469172
-  - host: Pixelfed
+  - site: Pixelfed
     title: Dunkirk Colors
     url: https://pixelfed.social/p/kristofz/753729907216302329
-  - host: Pixelfed
+  - site: Pixelfed
     title: Dunkirk Architecture
     url: https://pixelfed.social/p/kristofz/756159964291267607
-  - host: Pixelfed
+  - site: Pixelfed
     title: Dunkirk Beach
     url: https://pixelfed.social/i/web/post/762991483126879434
 ---

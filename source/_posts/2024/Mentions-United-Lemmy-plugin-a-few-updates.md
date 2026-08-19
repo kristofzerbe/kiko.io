@@ -19,12 +19,12 @@ related:
   - Mentions-United-New-Renderer-and-Refactorings
   - Mentions-United-Native-Mastodon-Provider
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/113425944904022924
-  - host: Lemmy
+  - site: Lemmy
     title: Fediverse
     url: https://programming.dev/post/21346794
-  - host: Lemmy
+  - site: Lemmy
     title: IndieWeb
     url: https://programming.dev/post/21346804
 ---
@@ -54,12 +54,12 @@ The usage here on kiko.io is a little bit different than described in my initial
 title: "Diving-Into-the-World-of-Lemmy"
 date: 2024-10-26
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/113378863170909812
-  - host: Lemmy
+  - site: Lemmy
     title: Lemmy
     url: https://programming.dev/post/21031156
-  - host: Lemmy
+  - site: Lemmy
     title: Programming.dev Meta
     url: https://programming.dev/post/21031933
 ---

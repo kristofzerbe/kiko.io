@@ -21,7 +21,7 @@ related:
   - Dopamine-a-music-player-for-Windows-10-as-it-should-be
   - Gitpod-Visual-Studio-Code-on-the-Web
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/109793797227935594
 ---
 

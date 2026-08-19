@@ -22,14 +22,14 @@ bandcamp:
   album: Hums & Coils|1105938143
   track: Born For More|1698335405
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/19
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/115527306715054429
-  - host: Pixelfed
+  - site: Pixelfed
     title: Colored
     url: https://pixelfed.social/p/kristofz/896757461693798733
-  - host: Pixelfed
+  - site: Pixelfed
     title: Portraits
     url: https://pixelfed.social/p/kristofz/900351704575834699
 ---

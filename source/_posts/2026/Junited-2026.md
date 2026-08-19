@@ -22,13 +22,13 @@ bandcamp:
   album: Acido y Puto|3860834148
   track: Nazaré|2044224162
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/37
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/21802675
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116673604970279364
-  - host: IndieNews
+  - site: IndieNews
     url: https://news.indieweb.org/en/kiko.io/post/Junited-2026/
 ---
 Back in the day, there were only hunters and gatherers, and I would certainly have been in the latter group. Collecting things is satisfying.

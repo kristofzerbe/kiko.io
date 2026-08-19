@@ -16,7 +16,7 @@ related:
   - Impressions-from-the-Carnival-Parade-in-Wiesbaden
   - Favourite-Pens-of-2023
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112185013505270911
 ---
 

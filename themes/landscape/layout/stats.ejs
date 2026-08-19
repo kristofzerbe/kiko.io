@@ -148,12 +148,12 @@
     <table id="syndication-chart" class="charts-css bar show-labels data-spacing-5" style="--labels-size: 120px;">
       <thead>
         <tr>
-          <th scope="col">Host</th>
+          <th scope="col">Site</th>
           <th scope="col">Syndications</th>
         </tr>
       </thead>
       <tbody>
-      <% let syn = Object.entries(page.data.lists.syndicationsPerHost).sort(([,va],[,vb]) => vb-va); %>
+      <% let syn = Object.entries(page.data.lists.syndicationsPerSite).sort(([,va],[,vb]) => vb-va); %>
       <% syn.forEach(([key, value]) => { %>
         <% let synUrl = config.profiles[key.toLowerCase()]; %>
         <tr data-key="<%= key %>">

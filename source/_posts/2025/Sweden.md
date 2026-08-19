@@ -18,26 +18,26 @@ related:
   - Colorful-Portugal-Grande-Lisboa
   - Wales
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/15
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/115361194863671687
-  - host: Pixelfed
+  - site: Pixelfed
     title: Colors
     url: https://pixelfed.social/p/kristofz/882964082089369606
-  - host: Pixelfed
+  - site: Pixelfed
     title: Drottningholm
     url: https://pixelfed.social/p/kristofz/883338135703825200
-  - host: Pixelfed
+  - site: Pixelfed
     title: Birka
     url: https://pixelfed.social/p/kristofz/884084009450445790
-  - host: Pixelfed
+  - site: Pixelfed
     title: Södertälje
     url: https://pixelfed.social/p/kristofz/885452519277032050
-  - host: Pixelfed
+  - site: Pixelfed
     title: Vaxholm
     url: https://pixelfed.social/p/kristofz/888004032551659092
-  - host: Pixelfed
+  - site: Pixelfed
     title: Stockholm
     url: https://pixelfed.social/p/kristofz/889849314406674364
 ---

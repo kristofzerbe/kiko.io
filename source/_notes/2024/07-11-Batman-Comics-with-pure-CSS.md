@@ -7,9 +7,9 @@ rel:
   caption: "Batman-Comic.CSS"
   url: https://alvaromontoro.com/blog/68056/batman-comic-css
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112767128980027149
-  - host: DevTo
+  - site: DevTo
     url: https://dev.to/kristofzerbe/batman-comics-with-pure-css-5ggk
 ---
 

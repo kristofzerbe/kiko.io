@@ -18,7 +18,7 @@ related:
   - Discoveries-33-Image-Presentation
   - Discoveries-32-CSS
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114705389325642812
 ---
 

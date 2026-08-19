@@ -16,7 +16,7 @@ tags:
 related:
   - xxx
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: null
 ---
 

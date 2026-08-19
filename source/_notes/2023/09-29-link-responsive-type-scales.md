@@ -7,7 +7,7 @@ rel:
   caption: "Responsive type scales with composable CSS utilities"
   url: https://tobiasahlin.com/blog/responsive-fluid-css-type-scales
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/111150583926797975
 ---
 

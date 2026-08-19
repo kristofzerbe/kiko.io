@@ -3,7 +3,7 @@ title: "Pixelfed and Bridgy ... It's complicated"
 date: 2023-09-10
 type: 
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/111041958999794580
 ---
 

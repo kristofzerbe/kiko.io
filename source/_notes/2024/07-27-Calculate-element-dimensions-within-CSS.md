@@ -7,7 +7,7 @@ rel:
   caption: "How to Get the Width/Height of Any Element in Only CSS"
   url: https://frontendmasters.com/blog/how-to-get-the-width-height-of-any-element-in-only-css/
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112857928210410688
 ---
 

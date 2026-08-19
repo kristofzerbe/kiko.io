@@ -17,9 +17,9 @@ related:
   - Link-Journal-26-03
   - Link-Journal-26-02
 syndication:
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/22713234
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116679407260900503
 ---
 

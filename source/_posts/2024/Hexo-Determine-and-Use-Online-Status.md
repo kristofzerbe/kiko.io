@@ -18,7 +18,7 @@ related:
   - Image-Masonry-Tag-Plugin-for-Hexo
   - Include-and-provide-JSON-data-in-Hexo-EJS-Templates
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/113731040349316097
 ---
 

@@ -7,7 +7,7 @@ rel:
   caption: "Typographic Hierarchy in Print, Web & App Design - Pimp my Type"
   url: https://pimpmytype.com/hierarchy/
 syndication: 
-- host: Mastodon
+- site: Mastodon
   url: https://indieweb.social/@kiko/109812150349497228
 ---
 

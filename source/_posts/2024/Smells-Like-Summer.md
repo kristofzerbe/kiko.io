@@ -17,9 +17,9 @@ related:
   - First-of-May
   - How-to-keep-the-GPS-coordinates-accurate-while-shooting
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112502590496609233
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/i/web/post/700014248013872447
 ---
 

@@ -17,11 +17,11 @@ related:
   - Belated-May
   - Puck-Surfing
 syndication:
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/44768186
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/117106000609064601
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/994660471123405367
 ---
 

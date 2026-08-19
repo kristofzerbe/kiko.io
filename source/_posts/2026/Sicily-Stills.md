@@ -22,13 +22,13 @@ bandcamp:
   album: Terra Solus|1906045720
   track: Om Shaantih|1038992710
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/48
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/44751313
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116952101572155426
-  - host: Pixelfed
+  - site: Pixelfed
     title: Market
     url: https://pixelfed.social/p/kristofz/985227780130395739
 ---

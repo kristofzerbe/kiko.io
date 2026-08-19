@@ -17,11 +17,11 @@ related:
   - Overgrown-June
   - Forgotten-May
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/12
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/115049091806509053
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/863038966434306919
 ---
 

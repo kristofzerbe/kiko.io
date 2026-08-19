@@ -23,13 +23,13 @@ bandcamp:
   album: Acido y Puto|3860834148
   track: Kosmik Swell|210672741
 syndication:
-  - host: GitHub
+  - site: GitHub
     url: https://github.com/kristofzerbe/kiko.io/issues/34
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/142718
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116489125568035255
-  - host: IndieNews
+  - site: IndieNews
     url: https://news.indieweb.org/en/kiko.io/post/Mentions-United-Loves-Bubbles/
 ---
 

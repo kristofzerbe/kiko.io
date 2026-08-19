@@ -15,11 +15,11 @@ related:
   - My-Hometown-My-Club
   - SGE-vs-HJK-2023-10-26
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/112655180949543395
-  - host: PeerTube
+  - site: PeerTube
     url: https://clip.place/w/47C5EprpphaHEQoEZX59Y5
-  - host: PeerTube
+  - site: PeerTube
     url: https://clip.place/w/8MsfvgSNKPkHXUdNDnTZYg
 ---
 

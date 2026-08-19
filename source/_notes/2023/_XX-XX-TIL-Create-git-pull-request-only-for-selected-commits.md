@@ -3,7 +3,7 @@ title: "TIL | Create Git pull request only for selected commits"
 date: 2022-11-14 12:01:00
 type: til
 syndication: 
-- host: 
+- site: 
   url:  
 hidden: true
 ---

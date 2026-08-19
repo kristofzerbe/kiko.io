@@ -20,15 +20,15 @@ related:
   - Colorful-Portugal-Algarve
   - Across-the-Country
 syndication:
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/114949541704829273
-  - host: Pixelfed
+  - site: Pixelfed
     title: City
     url: https://pixelfed.social/p/kristofz/856572381187343798
-  - host: Pixelfed
+  - site: Pixelfed
     title: Five More
     url: https://pixelfed.social/p/kristofz/857338870652034748
-  - host: Pixelfed
+  - site: Pixelfed
     title: Beach People
     url: https://pixelfed.social/p/kristofz/864800651846129663
 ---

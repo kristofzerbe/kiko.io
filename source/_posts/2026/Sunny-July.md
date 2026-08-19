@@ -17,11 +17,11 @@ related:
   - Lucent-September
   - Benevolent-August
 syndication:
-  - host: Bubbles
+  - site: Bubbles
     url: https://bubbles.town/entry/44747844
-  - host: Mastodon
+  - site: Mastodon
     url: https://indieweb.social/@kiko/116908538327721257
-  - host: Pixelfed
+  - site: Pixelfed
     url: https://pixelfed.social/p/kristofz/981997526712056148
 ---
 
