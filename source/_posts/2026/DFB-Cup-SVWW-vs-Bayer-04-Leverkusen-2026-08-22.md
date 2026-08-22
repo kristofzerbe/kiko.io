@@ -20,9 +20,9 @@ related:
   - SVWW-vs-Energie-Cottbus-2024-09-01
 syndication:
   - site: Bubbles
-    url: null
+    url: https://bubbles.town/entry/44771891
   - site: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/117140853242786223
 ---
 
 {% match_grid "SV-Wehen-Wiesbaden" "0:4" "Bayer-04-Leverkusen" %}
