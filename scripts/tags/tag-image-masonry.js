@@ -9,7 +9,11 @@
 const { compileHandlebar } = require("../../lib/tools.cjs");
 
 hexo.extend.tag.register("image_masonry", function(args){
-    var assetPath = this.path;
+    let assetPath = this.path.replace("//", "/").replace("/de/", "/");
+
+    if (!assetPath.startsWith("/")) {
+      assetPath = "/" + assetPath;
+    }
 
     let masonry = {
       rnd: Math.random().toString(36).substring(2,8),
