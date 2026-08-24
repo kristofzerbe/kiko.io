@@ -3,9 +3,9 @@ title: IndieWeb Is Punk - Sticker
 date: 2026-08-24 17:54
 syndication:
   - site: Mastodon
-    url:
+    url: https://indieweb.social/@kiko/117151464483658010
   - site: Bubbles
-    url:
+    url: https://bubbles.town/entry/44773025
 ---
 I really like the [**IndieWeb Is Punk**](https://indiewebispunk.net/) initiative by [Jim Mitchell](https://indieweb.social/@jimmitchell), because the eight points in his manifesto express exactly what I think about the IndieWeb too. "*Own your domain. Own your data. Own your identity.*" ... "*Have fun, or what's the point?*" ... "*We don't need major platforms.*"
 
