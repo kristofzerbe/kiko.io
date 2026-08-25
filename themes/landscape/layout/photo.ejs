@@ -139,43 +139,51 @@
       </li>
       <li><hr style="margin:0"></li>
       <% } %>
+      <% if (page.meta?.Make && page.meta?.Model) { %>
       <li>
         <label>Camera</label>
-        <span><%= page.meta.Make ?? "---" %>, <%= page.meta.Model ?? "---" %></span>
+        <span><%= page.meta.Make %>, <%= page.meta.Model %></span>
       </li>
+      <% } %>
+      <% if (page.meta?.LensModel) { %>
       <li>
         <label>Lens</label>
-        <span><%= page.meta.LensModel ?? "---" %></span>
+        <span><%= page.meta.LensModel %></span>
       </li>
+      <% } %>
+      <% if (page.meta?.FocalLength) { %>
       <li>
         <label>Focal Length</label>
-        <% if (page.meta.FocalLength) { %>
         <span><%= page.meta.FocalLength %>mm</span>
-        <% } else { %><span>---</span><% } %>
       </li>
+      <% } %>
+      <% if (page.meta?.ISO) { %>
       <li>
         <label>ISO</label>
-        <span><%= page.meta.ISO ?? "---" %></span>
+        <span><%= page.meta.ISO %></span>
       </li>
+      <% } %>
+      <% if(page.meta?.FNumber) { %>
       <li>
         <label>FNumber</label>
-        <% if(page.meta.FNumber) { %>
         <span><em>f&nbsp;</em><%= page.meta.FNumber %></span>
-        <% } else { %><span>---</span><% } %>
       </li>
+      <% } %>
+      <% if (page.meta?.ExposureTime) { %>
       <li>
         <label>Exposure Time</label>
-        <% if (page.meta.ExposureTime) { %>
         <span>
           <%= convertDecimalToFraction(page.meta.ExposureTime.toFixed(4)) ?? "---" %>&nbsp;
           <em style="font-style:normal;opacity:0.5">(<%= page.meta.ExposureTime %>)</em>
         </span>
-        <% } else { %><span>---</span><% } %>
       </li>
+      <% } %>
+      <% if (page.meta?.Software) { %>
       <li>
         <label>Software</label>
-        <span><%= page.meta.Software ?? "---" %></span>
+        <span><%= page.meta.Software %></span>
       </li>
+      <% } %>
     </ul>
   
     <div class="article-footer">
