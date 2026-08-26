@@ -444,7 +444,7 @@ function getDraftPagePhotos() {
 
       let fm = front.parse(md);
 
-      if (fm.photograph && !fm.photograph.keepOutOfView) {
+      if (fm.photograph && !fm.photograph.keepOutOfView && !fm.isLocale) {
 
         let key = fm.photograph.file.replace(".jpg", "");
 
