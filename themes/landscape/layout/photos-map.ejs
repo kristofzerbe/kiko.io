@@ -27,9 +27,15 @@
     zoom: 4,
     zoomControl: false,
   })
-  L.tileLayer('<%= config.osm_tile_layer %>', {
-      maxZoom: 18,
-      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  <% 
+    let osm_attr = "";
+    config.osm.attribution.forEach(a => {
+      osm_attr += `&copy; <a href="${a.url}">${a.caption}</a>&nbsp;`;
+    });
+  %>
+  L.tileLayer('<%= config.osm.tile_layer %>', {
+    maxZoom: <%= config.osm.max_zoom %>,
+    attribution: '<%- osm_attr %>'
   }).addTo(map);
 
   const markerImage = document.getElementById("marker-image");
@@ -41,20 +47,22 @@
     });
     this.remove(); // remove marker object, because we got the SVG code
 
-    let jsonCoords = <%- JSON.stringify(page.coordinates) %>;
-
-    jsonCoords.forEach(item => {
-      let marker = L.marker([item.latitude, item.longitude], { icon: markerIcon }).addTo(map);
+    let coords = <%- JSON.stringify(page.coordinates) %>;
+    coords.forEach(item => {
       let list = item.photos.map(p => {
         return `<li><a href="/photos/${p.name}">${p.title}</a>&nbsp;<span>(${p.year})</span></li>`;
-      }).join('');      
+      }).join(''); 
+
       let popup = `<b>${item.photos.length} ${item.photos.length === 1 ? "Photo":"Photos"}</b><ul>${list}</ul>`;
       let options = {
         'maxWidth': '400',
         'width': '200',
         'className' : 'photoPopup'
       }
-      marker.bindPopup(popup,options);
+
+      let marker = L.marker([item.latitude, item.longitude], { icon: markerIcon })
+        .addTo(map)
+        .bindPopup(popup, options);
     });
   });
 </script>

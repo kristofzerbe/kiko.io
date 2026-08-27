@@ -213,9 +213,15 @@
       zoom: 10,
       zoomControl: false,
     })
-    L.tileLayer('<%= config.osm_tile_layer %>', {
-        maxZoom: 18,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    <% 
+      let osm_attr = "";
+      config.osm.attribution.forEach(a => {
+        osm_attr += `&copy; <a href="${a.url}">${a.caption}</a>&nbsp;`;
+      });
+    %>
+    L.tileLayer('<%= config.osm.tile_layer %>', {
+      maxZoom: <%= config.osm.max_zoom %>,
+      attribution: '<%- osm_attr %>'
     }).addTo(map);
 
     const markerImage = document.getElementById("marker-image");
@@ -227,8 +233,9 @@
       });
       this.remove(); // remove marker object, because we got the SVG code
 
-      const marker = L.marker([<%= page.meta?.latitude %>, <%= page.meta?.longitude %>], 
-        { icon: markerIcon }).addTo(map).on('click', function(e) { window.location.href = "/photos/map"; });
+      const marker = L.marker([<%= page.meta?.latitude %>, <%= page.meta?.longitude %>], { icon: markerIcon })
+        .addTo(map)
+        .on('click', function(e) { window.location.href = "/photos/map"; });
     });
   </script>
   <% } %>
