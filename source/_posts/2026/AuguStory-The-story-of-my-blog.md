@@ -24,12 +24,10 @@ bandcamp:
   album: Noche Del Chupacabra|1275961940
   track: Phantasmagoria|1186467484
 syndication:
-  - site: GitHub
-    url: 
   - site: Bubbles
-    url: 
+    url: https://bubbles.town/entry/44774244
   - site: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/117165958653678539
 ---
 
 When Robert Birming, following [Junited](https://robertbirming.com/junited-2026-blog-sharing/) and [JulyReply](https://robertbirming.com/julyreply-2026-blog-connecting/), called for contributions to [**AuguStory**](https://robertbirming.com/augustory-story-blog/) under the heading '*The Story of your Blog*', I thought to myself: If there's one thing I can do, it's write about my blog … but I found it much harder than I'd expected, simply because I've written about it so many times before.
