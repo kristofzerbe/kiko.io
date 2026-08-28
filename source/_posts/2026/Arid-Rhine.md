@@ -21,9 +21,9 @@ related:
   - Dry-August
 syndication:
   - site: Bubbles
-    url: 
+    url: https://bubbles.town/entry/44775486
   - site: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/117174506467881529
 ---
 
 People who live by a river are used to seeing more or less water flowing past them at different times. We live in a city by the Rhine, but not right next to the water, so at the weekend we popped over to the nearby Rheingau to take a closer look at the current drama of the lowest water levels in decades, although the situation has already eased somewhat over the last two weeks thanks to a bit of rain.
