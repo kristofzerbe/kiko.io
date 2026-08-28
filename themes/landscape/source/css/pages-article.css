@@ -724,21 +724,25 @@
 
 .article-entry .photo-list figure img {
   border-radius: var(--border-radius-normal);
-  box-shadow: 1px 1px 12px 0 var(--color-meta) !important;
+  /* box-shadow: 1px 1px 12px 0 var(--color-meta) !important; */
 }
 @media screen and (min-width:479px) {
   .article-entry .photo-list figure img {
-    max-width: 640px;
+    /* max-width: 640px; */
     max-height: 640px;
   }
 }
 
-.article-entry .photo-list figure figcaption {
+.article-entry .photo-list figure img.no-caption {
+  padding-block-end: var(--space-small);
+}
+
+.article-entry figure figcaption {
   text-align: center;
-  padding-block-start: var(--space-small);
   font-size: var(--font-size-small);
   font-style: italic;
   color: var(--color-meta);
+  padding-block-start: var(--space-thin);
 }
 
 .article-entry .image-compare.image-modified {

@@ -1,10 +1,14 @@
 <div class="photo-list" id="photo-list-{{rnd}}">
-  {{#each items}}
+{{#each items}}
   <figure>
+  {{#if isPhoto}}
     <a href="/photos/{{key}}" class="no-break">
       <img loading="lazy" src="{{urlNormal}}">
     </a>
     <figcaption>{{title}}</figcaption>
+  {{else}}
+    <img loading="lazy" src="{{urlNormal}}" class="no-caption">
+  {{/if}}
   </figure>
-  {{/each}}
+{{/each}}
 </div>

@@ -34,7 +34,7 @@ syndication:
 ---
 
 {% photo_list
-  "name|title"
+  "name"
 %}
 
 {% photo_masonry

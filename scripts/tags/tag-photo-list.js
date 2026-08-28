@@ -2,7 +2,7 @@
     Photo List Tag for global, pool, shed or asset photos
 
     Syntax:
-    {% photo_list ..."photoName|title" %}
+    {% photo_list ..."photoName" %}
 
 */
 
