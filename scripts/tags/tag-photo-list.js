@@ -18,7 +18,6 @@ hexo.extend.tag.register("photo_list", function(args){
   }
 
   args.forEach(function(e) {
-
     let item = getPhoto(hexo, e, that);
     if (item) {
       list.items.push(item);
