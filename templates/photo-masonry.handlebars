@@ -2,12 +2,12 @@
   {{#each items}}
     <div>
       <a class="spotlight" 
-        {{#if isPhoto}}
+        {{#unless isAsset}}
           href="/photos/{{key}}"
           data-button="Photo Page&nbsp;&nbsp;&#10148;"
           data-button-href="/photos/{{key}}"
           data-autohide="10"
-        {{/if}}
+        {{/unless}}
           data-title="{{title}}"
           data-description="{{type}}"
           data-src="{{urlNormal}}">

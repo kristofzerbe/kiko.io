@@ -20,7 +20,6 @@ hexo.extend.tag.register("photo_masonry", function(args) {
     let item = getPhoto(hexo, e, that);
     if (item) {
       masonry.items.push(item);
-
     } else {
       console.error("tag-photo-masonry: " + e + " not found in assets, photos, pool, shed or reserve!");
     }

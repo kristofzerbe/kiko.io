@@ -34,9 +34,7 @@ It was still quite shocking. Sandbanks have emerged away from the shipping chann
 
 Try telling me again that we don't have a problem with the climate. I'll take a few photos of the high water this winter...
 
-{% photo_list
-  "D50_9752-Pano_2608"
-%}
+{% photo "D50_9752-Pano_2608" %}
 
 ---
 

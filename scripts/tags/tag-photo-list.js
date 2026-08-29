@@ -21,7 +21,6 @@ hexo.extend.tag.register("photo_list", function(args){
     let item = getPhoto(hexo, e, that);
     if (item) {
       list.items.push(item);
-
     } else {
       console.error("tag-photo-list: " + e + " not found in assets, photos, pool or shed!");
     }

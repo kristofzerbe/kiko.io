@@ -1,6 +1,10 @@
 <figure>
+{{#if isAsset}}
+  <img loading="lazy" src="{{urlNormal}}" class="no-caption">
+{{else}}
   <a href="/photos/{{key}}" class="no-break">
-    <img loading="lazy" src="{{urlNormal}}" style="max-width: 90%;">
+    <img loading="lazy" src="{{urlNormal}}">
   </a>
   <figcaption>{{title}}</figcaption>
+{{/if}}
 </figure>

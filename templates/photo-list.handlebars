@@ -1,13 +1,13 @@
 <div class="photo-list" id="photo-list-{{rnd}}">
 {{#each items}}
   <figure>
-  {{#if isPhoto}}
+  {{#if isAsset}}
+    <img loading="lazy" src="{{urlNormal}}" class="no-caption">
+  {{else}}
     <a href="/photos/{{key}}" class="no-break">
       <img loading="lazy" src="{{urlNormal}}">
     </a>
     <figcaption>{{title}}</figcaption>
-  {{else}}
-    <img loading="lazy" src="{{urlNormal}}" class="no-caption">
   {{/if}}
   </figure>
 {{/each}}

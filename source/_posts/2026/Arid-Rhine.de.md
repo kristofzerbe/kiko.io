@@ -30,9 +30,7 @@ Es war trotzdem einigermaßen erschreckend. Es sind Sandbänke abseits der Fahrr
 
 Es soll mir noch einmal jemand erzählen, wir hätten mit dem Klima kein Problem. Ich werde im Winter ein paar Fotos vom Hochwasser machen ...
 
-{% photo_list
-  "D50_9752-Pano_2608"
-%}
+{% photo "D50_9752-Pano_2608" %}
 
 ---
 
