@@ -30,9 +30,9 @@ Das zweite Spiel, auswärts gegen [**Würzburg**](https://www.kicker.de/wuerzbur
 
 Heute war aber erstmal Liga-Pause und es wurde die erste Runde des DFB-Pokals ausgespielt. In der Auslosung der Paarungen hatten wir direkt einen Hammer gezogen: der deutsche Fussballmeister von 2023 [**Bayer 04 Leverkusen**](https://www.kicker.de/bayer-04-leverkusen/info/)! Da der Pokal bekanntlich seine eigenen Regeln hat und wir letztes Jahr gegen Bayern München ein wirklich gutes und "knappes" Pokalspiel hingelegt haben, rechnete sich der ein oder andere ein bißchen was aus.
 
----
-
 <!-- more -->
+
+---
 
 In der ersten Halbzeit schien es auch so, das wir Bayer Paroli bieten können. Die Jungs rannten und kämpften, wie alle Fans sich das eigentlich auch in der Liga wünschen würden und kamen das ein oder andere mal auch in den gegnerischen Strafraum, aber die Leverkusener Abwehr war stets zur Stelle und die zwei, drei erkämpften Standards verpufften kläglich. Wir waren nicht gut, aber guten Mutes, bis zur 43. Minute, dem **0:1** von Leverkusen durch Patrik Schick.
 

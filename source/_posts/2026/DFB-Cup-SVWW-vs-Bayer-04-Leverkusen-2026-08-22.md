@@ -34,9 +34,9 @@ The second match, away against [**Würzburg**](https://www.kicker.de/wuerzburg-g
 
 Today, however, there was a break in league play, and the first round of the DFB Cup was played. In the pairing draw, we immediately drew a tough opponent: the 2023 German football champions, [**Bayer 04 Leverkusen**](https://www.kicker.de/bayer-04-leverkusen/info/)! Since the Cup is known to have its own rules, and we put up a really good and “close” Cup match against Bayern Munich last year, some of us were feeling a little hopeful.
 
----
-
 <!-- more -->
+
+---
 
 In the first half, it certainly looked as though we could give Bayer a hard time. The boys ran and fought just as all the fans would actually like to see them do in the league, and managed to get into the opposition's penalty area on a few times, but the Leverkusen defence was always on hand and the two or three standards we won were wasted. We weren’t playing great, but we were in good heart until the 43rd minute, when Leverkusen scored **0:1** through Patrik Schick.
 
