@@ -46,4 +46,3 @@ Try telling me again that we don't have a problem with the climate. I'll take a 
   "D50_9755-HDR_2608"
   "D50_9760-HDR_2608"
 %}
- 
