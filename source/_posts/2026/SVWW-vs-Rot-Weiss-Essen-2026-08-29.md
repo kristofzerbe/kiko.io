@@ -21,9 +21,9 @@ related:
   - DFB-Cup-SVWW-vs-Mainz-05-2024-08-16
 syndication:
   - site: Bubbles
-    url: null
+    url: https://bubbles.town/entry/44776363
   - site: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/117184464334468362
 ---
 
 {% match_grid "SV-Wehen-Wiesbaden" "0:0" "Rot-Weiss-Essen" %}
