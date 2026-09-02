@@ -35,7 +35,7 @@
     <%  let syndication = item.meta?.custom?.links?.filter(l => l.url?.length > 0); //.map(s => ({ host: s.site, url: s.url })); %>
     <div class="card-links">
       <%- partial('_partial/post/syndication-links', { syndication: syndication, type: "photo", showText: false }) %>
-      <% if (!item.meta?.latitude && !item.meta?.longitude) { %>
+      <% if (!item.meta?.latitude && !item.meta?.longitude && item.type !== "asset") { %>
       <span class="info-content info-location">
         <img src="/images/icons/location-none.svg" title="no location" />
       </span>
@@ -43,7 +43,7 @@
       <% if (item.boxlink) { %>
       <span class="info-content info-isinbox">
         <a class="box-link" href="<%= item.boxlink %>">
-          <img src="/images/icons/box.svg" title="In box &laquo;<%= item.meta.custom.box %>&raquo;" />
+          <img src="/images/icons/box.svg" title="In box &laquo;<%= item.meta?.custom.box %>&raquo;" />
         </a>
       </span>
       <% } %>
@@ -56,7 +56,11 @@
       <% } %>
     </div>
     <h3 class="<%= (item.hasCustomName) ? "italic" : "" %>">
+    <% if (item.type !== "asset") { %>
       <a href="/<%= config.photo_dir %>/<%= item.key %>" class="h-link"><%- item.name %></a>
+    <% } else { %>
+      <%- item.name %>
+    <% } %>
     </h3>
   <% } else { %>
     <h3><%- item.name %></h3>

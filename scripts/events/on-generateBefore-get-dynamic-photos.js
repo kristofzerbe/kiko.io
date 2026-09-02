@@ -139,7 +139,7 @@ hexo.on('generateBefore', function() {
   pages.photomap = map;
 
   // PHOTO BOXES page -------------------------------------------------------------------
-  // (get boxes and join photos)
+  // (get boxes)
   let boxesFile = path.join(_rootDir, config.static_dir, "photo-boxes.json");
   let boxesJson;
   if (fs.existsSync(boxesFile)) {
@@ -155,6 +155,7 @@ hexo.on('generateBefore', function() {
     //.sort((x, y) => x.period.localeCompare(y.period))
     //.reverse();
 
+  // (join photos)
   let photoboxCount = 0;
   photosPublic.forEach((p) => {
     //console.log(p);
@@ -166,16 +167,10 @@ hexo.on('generateBefore', function() {
   });
 
   boxesItems.forEach((b) => {
-    b.coverPhoto = b.photos.find(p => p.key === b.cover);
-    b.photos = b.photos.sort((x, y) => new Date(y.meta.DateCreated) - new Date(x.meta.DateCreated))
+
+    // (set period and box photo sort)
+    b.photos = b.photos.sort((x, y) => new Date(y.meta.DateCreated) - new Date(x.meta.DateCreated));
     b.sortPhotos = "ASC";
-
-    // console.log(b.title + " ... " + b.cover);
-    // console.log("------------------------------------------------");
-    // console.log(b.coverPhoto?.key);
-    // console.log("---------");
-    // console.log(b.photos.map(x => x.key));
-
     if (b.period.includes("|")) {
       let period = b.period.split("|");
       b.periodStart = period[0];
@@ -194,6 +189,18 @@ hexo.on('generateBefore', function() {
       b.periodEnd = b.period;
       b.periodString = b.period;
     }
+
+    // (set cover)
+    b.coverPhoto = b.photos.find(p => p.key === b.cover);    
+
+    // (add asset photos)
+    if (b.post_assets !== undefined && b.post_assets.length > 0) {
+      b.post_assets.forEach(pa => {
+        const assets = getAssetPhotos(pa, b.title);
+        b.photos.push(...assets);
+      });
+    }
+
   });
 
   // -----
@@ -219,10 +226,11 @@ hexo.on('generateBefore', function() {
     box.path = path.join(config.photo_dir, "boxes", box.key, "index.html");
     box.slug = box.key;
     box.permalink = "/" + config.photo_dir + "/boxes/" + box.key;
-    if (box.sortPhotos === "ASC") {
-      box.items = box.photos.reverse();
-    } else {
-      box.items = box.photos;
+
+    //box.items = box.photos.sort((x, y) => x.key.replace("$","").localeCompare(y.key.replace("$","")));
+    box.items = box.photos.sort((x, y) => new Date(x.meta.DateCreated ?? x.date) - new Date(y.meta.DateCreated ?? y.date));
+    if (box.sortPhotos === "DESC") {
+      box.items = box.items.reverse();
     }
     // console.log(box);
 
@@ -550,12 +558,12 @@ function getAnythingPagePhotos() {
 
   fs.readdirSync(anythingDir)
     .filter(entry => fs.statSync(path.join(anythingDir, entry)).isDirectory())
-    .forEach((dir) => {
+    .forEach(dir => {
 
       let itemDir = path.join(anythingDir, dir);
       fs.readdirSync(itemDir)
         .filter(entry => fs.statSync(path.join(itemDir, entry)).isFile())
-        .forEach((file) => {
+        .forEach(file => {
 
           const mdSource = path.join(itemDir, file);
           const md = fs.readFileSync(mdSource);
@@ -597,9 +605,9 @@ function getAnythingPagePhotos() {
           }
         });
 
-    }, []);
+    });
 
-  log.info("-> " + magenta(used.length) + " used photos in anything pages 'project'");
+  log.info("-> " + magenta(used.length) + " used photos in anything pages");
   return used;
 }
 
@@ -660,4 +668,67 @@ function getNotesPhotos() {
 
     log.info("-> " + magenta(notes.length) + " used photos in notes");
     return notes;
+}
+
+/** ================================================================================= */
+
+function getAssetPhotos(postAssetString, boxTitle) {
+  const config = hexo.config;
+  const locals = hexo.locals;
+
+  const postAsset = {};
+  [postAsset.year, postAsset.slug, postAsset.filter] = postAssetString.split("/");
+
+  const assetDir = path.join(_rootDir, config.source_dir, "_posts", postAsset.year, postAsset.slug);
+  //console.log(assetDir);
+
+  const post = locals.get("posts").data.find(p => p.slug === postAsset.slug);
+
+  let assets = [];
+  fs.readdirSync(assetDir)
+    .filter(file => {
+      const ext = path.extname(file).toLowerCase();
+      return (ext === ".jpg") || (ext === ".jpeg")
+    })
+    .filter(file => {
+      if (postAsset.filter) {
+        const regex = new RegExp(postAsset.filter + path.extname(file), "g");
+        return file.match(regex);
+      } else {
+        return true;
+      }
+    })
+    .forEach(file => {
+      const filedate = fs.statSync(path.join(assetDir, file)).birthtime;
+      const filename = path.basename(file, path.extname(file));
+      const filepath = "/" + path.join("post", postAsset.slug, file).replace(/\134/g,"/")
+      //console.log(filepath + " ... " + filename  + " ... " + filedate);
+
+      let entry = {
+        key: filename,
+        status: "unused",
+        type: "asset",
+        file: file,
+        name: filename,
+        article: null,
+        pathMobile: filepath,
+        pathNormal: filepath,
+        date: filedate,
+        meta: {
+          custom: {
+            box: boxTitle,
+            featured: {
+              title: post.title,
+              slug: postAsset.slug
+            }
+          }
+        },
+        boxlink: "/" + path.join(config.photo_dir, "boxes", slugify(boxTitle))
+      };
+
+      assets.push(entry)
+    });
+
+  log.info("-> " + magenta(assets.length) + " asset photos in '" + postAssetString + "'");
+  return assets;
 }
