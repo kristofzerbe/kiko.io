@@ -16,9 +16,32 @@
 <hr class="divider" />
 
 <div class="cardset">
+
+  <div class="cardview">
+    <span class="cardcount"><%= page.items.length %></span>
+    <span>photos</span>
+    <%- partial('_partial/view-filter/photo-presentation') %>
+    <%- partial('_partial/view-filter/photo-sort') %>
+  </div>
+  
   <div class="cards grid">
     <% for(var i=0; i < page.items.length; i++) { %>
       <%- partial('_partial/photo-item', { item: page.items[i] }) %>
     <% } %>
   </div>
+
 </div>
+
+<%- partial('_partial/view-filter/photo-common-script') %>
+<script>
+
+  function setView() {
+    setView_Sorting();
+    setView_Presentation();
+  }
+
+  setTimeout(function() { //Hack for returning from external to page
+    setView();
+  }, 500)
+
+</script>

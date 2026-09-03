@@ -1,0 +1,93 @@
+<span>sorted by</span>
+<span id="view-sort-field">
+  <input type="radio" name="view-sort-field" id="sort-field-file"
+          data-sort-field="file"
+          data-next-sort-field="title">
+  <label for="sort-field-file" title="NEXT: Sort by title">
+    <mark>file name</mark>
+  </label>
+  <input type="radio" name="view-sort-field" id="sort-field-title"
+          data-sort-field="title"
+          data-next-sort-field="date-created">
+  <label for="sort-field-title" title="NEXT: Sort by date created">
+    <mark>title</mark>
+  </label>
+  <input type="radio" name="view-sort-field" id="sort-field-date-created" 
+          data-sort-field="date-created"
+          data-next-sort-field="file"
+          checked>
+  <label for="sort-field-date-created" title="NEXT: Sort by file name">
+    <mark>date created</mark>
+  </label>
+</span>
+
+<!---->
+
+<span id="view-sort-order">
+  <input type="radio" name="view-sort-order" id="sort-order-asc"
+          data-sort-order="asc"
+          data-next-sort-order="desc">
+  <label for="sort-order-asc" title="NEXT: Sort descending">
+    <mark>ascending</mark>
+  </label>
+  <input type="radio" name="view-sort-order" id="sort-order-desc" 
+          data-sort-order="desc"
+          data-next-sort-order="asc"
+          checked>
+  <label for="sort-order-desc" title="NEXT: Sort descending">
+    <mark>descending</mark>
+  </label>
+</span>
+
+<!---->
+
+<%- js('js/dist/tinysort.min.js') %>
+
+<script>
+
+  let currentSorting = getCookie("photos-sorting");
+  if (!currentSorting) {
+    currentSorting =
+      document.querySelector("input[name=view-sort-field]:checked").getAttribute("data-sort-field") + "|" +
+      document.querySelector("input[name=view-sort-order]:checked").getAttribute("data-sort-order");
+  }
+
+  // ----
+
+  document.querySelectorAll("input[name=view-sort-field]").forEach(element => {
+    element.addEventListener("click", (event) => {
+      setSortField(element);
+    });
+  });
+  document.querySelectorAll("input[name=view-sort-order]").forEach(element => {
+    element.addEventListener("click", (event) => {
+      setSortOrder(element);
+    });
+  });
+
+  function setSortField(eSortField) {
+    let newSortField = eSortField.getAttribute("data-next-sort-field");
+    let sortOrder = document.querySelector("input[name=view-sort-order]:checked").getAttribute("data-sort-order");
+    currentSorting = newSortField + "|" + sortOrder;
+    setCookie("photos-sorting", currentSorting, 365);
+    setView();
+  }
+
+  function setSortOrder(eSortOrder) {
+    let newSortOrder = eSortOrder.getAttribute("data-next-sort-order");
+    let sortField = document.querySelector("input[name=view-sort-field]:checked").getAttribute("data-sort-field");
+    currentSorting = sortField + "|" + newSortOrder;
+    setCookie("photos-sorting", currentSorting, 365);
+    setView();
+  }
+
+  // ----
+
+  function setView_Sorting() {
+    let aSorting = currentSorting.split("|");
+    document.querySelector("#sort-field-" + aSorting[0]).checked = true;
+    document.querySelector("#sort-order-" + aSorting[1]).checked = true;
+    tinysort('.cards > .card',{data: aSorting[0], order: aSorting[1], forceStrings: true});
+  }
+
+</script>

@@ -1,0 +1,87 @@
+<span>displayed as</span>
+<span id="view-presentation">
+  <input type="radio" name="view-presentation" id="presentation-grid"
+          data-presentation="grid"
+          data-next-presentation="list"
+          checked>
+  <label for="presentation-grid" title="NEXT: Display as list">
+    <mark>grid</mark>
+  </label>
+  <input type="radio" name="view-presentation" id="presentation-list"
+          data-presentation="list"
+          data-next-presentation="grid">
+  <label for="presentation-list" title="NEXT: Display as grid">
+    <mark>list</mark>
+  </label>
+  <!-- <input type="radio" name="view-presentation" id="presentation-masonry"
+          data-presentation="masonry"
+          data-next-presentation="grid">
+  <label for="presentation-masonry" title="Display as grid">
+    <mark>masonry</mark>
+  </label> -->
+</span>
+
+<!---->
+
+<script>
+
+  let macyInstance;
+
+  let currentPresentation = getCookie("photos-presentation");
+  if (!currentPresentation) {
+    currentPresentation =
+      document.querySelector("input[name=view-presentation]:checked").getAttribute("data-presentation");
+  }
+
+  document.querySelectorAll("input[name=view-presentation]").forEach(element => {
+    element.addEventListener("click", (event) => {
+      setPresentation(element);
+    });
+  });
+
+  function setPresentation(ePresentation) {
+    currentPresentation = ePresentation.getAttribute("data-next-presentation");
+    setCookie("photos-presentation", currentPresentation, 365);
+    setView();
+  }
+
+  // ----
+
+  function setView_Presentation() {
+    document.querySelector('.cards').classList = "cards " + currentPresentation;
+    document.querySelector("#presentation-" + currentPresentation).checked = true;
+    //---
+    if (currentPresentation === "masonry") {
+      macyInstance = new Macy({
+        container: '#photos',
+        trueOrder: false,
+        waitForImages: false,
+        useOwnImageLoader: false,
+        debug: true,
+        mobileFirst: true,
+        columns: 2,
+        margin: {
+          y: 6,
+          x: 6
+        },
+        breakAt: {
+          980: {
+            margin: {
+              x: 8,
+              y: 8
+            },
+            columns: 3
+          },
+          768: 2,
+          640: 3
+        }
+      });
+    } else {
+      if (macyInstance) {
+        macyInstance.remove();
+        macyInstance = null;
+      }
+    }
+  }
+
+</script>

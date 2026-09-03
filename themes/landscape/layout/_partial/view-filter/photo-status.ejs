@@ -1,0 +1,170 @@
+<span id="view-filter-status">
+  <input type="radio" name="view-filter-status" id="filter-status-all"
+          data-status="all"
+          data-next-status="unused"
+          checked>
+  <label for="filter-status-all" title="NEXT: Filter for unused photos">
+    <mark>overall</mark>
+  </label>
+  <input type="radio" name="view-filter-status" id="filter-status-unused"
+          data-status="unused"
+          data-next-status="used">
+  <label for="filter-status-unused" title="NEXT: Filter for used photos">
+    <mark>unused</mark>
+  </label>
+  <input type="radio" name="view-filter-status" id="filter-status-used"
+          data-status="used"
+          data-next-status="all">
+  <label for="filter-status-used" title="NEXT: Show all photos">
+    <mark>used</mark>
+  </label>
+</span>
+
+<!---->
+
+<span id="view-filter-unused-type" style="display:none">
+  <input type="radio" name="view-filter-unused-type" id="filter-unused-type-all"
+          data-type="all"
+          data-next-type="pool"
+          checked>
+  <label for="filter-unused-type-all" title="NEXT: Filter for unused in pool">
+    <mark>overall</mark>
+  </label>
+  <input type="radio" name="view-filter-unused-type" id="filter-unused-type-pool"
+          data-type="pool"
+          data-next-type="reserve">
+  <label for="filter-unused-type-pool" title="NEXT: Filter for unused in reserve">
+    <mark>in pool</mark>
+  </label>
+  <input type="radio" name="view-filter-unused-type" id="filter-unused-type-reserve"
+          data-type="reserve"
+          data-next-type="all">
+  <label for="filter-unused-type-reserve" title="NEXT: Filter for all unused">
+    <mark>in reserve</mark>
+  </label>
+  <!-- <input type="radio" name="view-filter-unused-type" id="filter-unused-type-shed"
+          data-type="shed"
+          data-next-type="all">
+  <label for="filter-unused-type-shed" title="Filter for unused in shed">
+    <mark>in shed</mark>
+  </label> -->
+</span>
+
+<!---->
+
+<span id="view-filter-used-type" style="display:none">
+  <input type="radio" name="view-filter-used-type" id="filter-used-type-all"
+          data-type="all"
+          data-next-type="post"
+          checked>
+  <label for="filter-used-type-all" title="NEXT: Filter for used in posts">
+    <mark>overall</mark>
+  </label>
+  <input type="radio" name="view-filter-used-type" id="filter-used-type-post"
+          data-type="post"
+          data-next-type="draft">
+  <label for="filter-used-type-post" title="NEXT: Filter for used in drafts">
+    <mark>for posts</mark>
+  </label>
+  <input type="radio" name="view-filter-used-type" id="filter-used-type-draft"
+          data-type="draft"
+          data-next-type="notes">
+  <label for="filter-used-type-draft" title="NEXT: Filter for used in notes">
+    <mark>for drafts</mark>
+  </label>
+  <input type="radio" name="view-filter-used-type" id="filter-used-type-notes"
+          data-type="notes"
+          data-next-type="page">
+  <label for="filter-used-type-notes" title="NEXT: Filter for used in default pages">
+    <mark>for notes</mark>
+  </label>
+  <input type="radio" name="view-filter-used-type" id="filter-used-type-page"
+          data-type="page"
+          data-next-type="dynamic">
+  <label for="filter-used-type-page" title="NEXT: Filter for used in dynamic pages">
+    <mark>for default pages</mark>
+  </label>
+  <input type="radio" name="view-filter-used-type" id="filter-used-type-dynamic"
+          data-type="dynamic"
+          data-next-type="anything">
+  <label for="filter-used-type-dynamic" title="NEXT: Filter for used in anything pages">
+    <mark>for dynamic pages</mark>
+  </label>
+  <input type="radio" name="view-filter-used-type" id="filter-used-type-anything"
+          data-type="anything"
+          data-next-type="start">
+  <label for="filter-used-type-anything" title="NEXT: Filter for used in start page">
+    <mark>for anything pages</mark>
+  </label>
+  <input type="radio" name="view-filter-used-type" id="filter-used-type-start"
+          data-type="start"
+          data-next-type="all">
+  <label for="filter-used-type-start" title="NEXT: Filter for all used photos">
+    <mark>at start page</mark>
+  </label>
+</span>
+
+<!---->
+
+<script>
+
+  let currentStatus = document.querySelector("input[name=view-filter-status]:checked").getAttribute("data-status");
+  let currentType = (currentStatus !== "all") ? document.querySelector("input[name=view-filter-" + currentStatus + "type]:checked").getAttribute("data-type") : "all";
+
+  // ----
+
+  document.querySelectorAll("input[name=view-filter-status]").forEach(element => {
+    element.addEventListener("click", (event) => {
+      setFilterStatus(element);
+    });
+  });
+  document.querySelectorAll("input[name=view-filter-used-type]").forEach(element => {
+    element.addEventListener("click", (event) => {
+      setFilterType(element);
+    });
+  });
+  document.querySelectorAll("input[name=view-filter-unused-type]").forEach(element => {
+    element.addEventListener("click", (event) => {
+      setFilterType(element);
+    });
+  });
+
+  function setFilterStatus(eStatus) {
+    currentStatus = eStatus.getAttribute("data-next-status");
+    currentType = "all"; // reset TYPE
+    setView();
+  }
+
+  function setFilterType(eType) {
+    currentType = eType.getAttribute("data-next-type");
+    setView();
+  }
+
+  // ----
+
+  function setView_Status() {
+    document.querySelector("#filter-status-" + currentStatus).checked = true;
+    if (currentStatus !== "all") {
+      document.querySelector("#filter-" + currentStatus + "-type-" + currentType).checked = true;
+    }
+    document.getElementById("view-filter-used-type").style.display = (currentStatus === "used") ? "inline-block" : "none";
+    document.getElementById("view-filter-unused-type").style.display = (currentStatus === "unused") ? "inline-block" : "none";
+
+    document.querySelectorAll(".card").forEach(item => {
+      let bShow = false;
+      switch (currentStatus) {
+        case "all":
+          bShow = true;
+          break;
+        default:
+          bShow = (item.getAttribute("data-status") === currentStatus); 
+          if (currentType !== "all") {
+            bShow = (currentType === item.getAttribute("data-type"));
+          } 
+      }
+      if (bShow) { showPhoto(item); } else { hidePhoto(item); }
+    });
+     
+    refreshView();
+  }
+</script>

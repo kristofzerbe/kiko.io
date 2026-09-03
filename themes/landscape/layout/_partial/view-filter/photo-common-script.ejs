@@ -1,0 +1,28 @@
+<script>
+  
+  function refreshView() {
+    setTimeout(() => {
+      let resultCount = document.querySelectorAll(".card:not(.hide)").length;
+      let resultElement = document.querySelector(".cardview .cardcount");
+      resultElement.textContent = resultCount;
+
+      if (macyInstance) macyInstance.reInit(); //from photo-presentation
+    }, 300);
+  }
+
+  function showPhoto(item) {
+    item.style.display = null;
+    setTimeout(() => {
+      item.classList.remove("hide");
+      item.querySelector("a.card-img").classList.add("spotlight");
+    }, 250);
+  }
+  function hidePhoto(item) {
+    item.classList.add("hide");
+    setTimeout(() => {
+      item.style.display = "none";
+      item.querySelector("a.card-img").classList.remove("spotlight");
+    }, 250);
+  }
+
+</script>
