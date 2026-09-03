@@ -18,9 +18,9 @@ related:
   - Link-Journal-26-05
 syndication:
   - site: Bubbles
-    url: 
+    url: https://bubbles.town/entry/44778917
   - site: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/117207443471835168
 ---
 
 Over the past month of August, I've collected 13 links for my link journal.
