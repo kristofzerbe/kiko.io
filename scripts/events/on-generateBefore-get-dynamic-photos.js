@@ -227,7 +227,7 @@ hexo.on('generateBefore', function() {
     box.slug = box.key;
     box.permalink = "/" + config.photo_dir + "/boxes/" + box.key;
 
-    //box.items = box.photos.sort((x, y) => x.key.replace("$","").localeCompare(y.key.replace("$","")));
+    // TODO: Sort by DateOriginal, when 'getAssetPhotos()' supports it
     box.items = box.photos.sort((x, y) => new Date(x.meta.DateCreated ?? x.date) - new Date(y.meta.DateCreated ?? y.date));
     if (box.sortPhotos === "DESC") {
       box.items = box.items.reverse();
@@ -699,10 +699,13 @@ function getAssetPhotos(postAssetString, boxTitle) {
       }
     })
     .forEach(file => {
-      const filedate = fs.statSync(path.join(assetDir, file)).birthtime;
+      const filepath = path.join(assetDir, file);
+      const filedate = fs.statSync(filepath).birthtime;
       const filename = path.basename(file, path.extname(file));
-      const filepath = "/" + path.join("post", postAsset.slug, file).replace(/\134/g,"/")
-      //console.log(filepath + " ... " + filename  + " ... " + filedate);
+      const fileurl = "/" + path.join("post", postAsset.slug, file).replace(/\134/g,"/")
+      //console.log(fileurl + " ... " + filename  + " ... " + filedate);
+
+      //TODO: Get DateOriginal from asset phot somehow to do correct sort later
 
       let entry = {
         key: filename,
@@ -711,14 +714,14 @@ function getAssetPhotos(postAssetString, boxTitle) {
         file: file,
         name: filename,
         article: null,
-        pathMobile: filepath,
-        pathNormal: filepath,
+        pathMobile: fileurl,
+        pathNormal: fileurl,
         date: filedate,
         meta: {
           custom: {
             box: boxTitle,
             featured: {
-              title: post.title,
+              title: post?.title,
               slug: postAsset.slug
             }
           }
