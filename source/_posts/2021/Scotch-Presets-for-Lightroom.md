@@ -28,8 +28,8 @@ Have you ever been in Scotland during summertime? Wonderful tranquility, great s
 So far in the north the light is totally different. When it shines through the clouds, it hits you.
 
 {% image_compare
-  "19-07-Schottland-0025_ORIGINAL.jpg"
-  "19-07-Schottland-0025_PRESET-Lights.jpg"
+  "ORIGINAL_19-07-Schottland-0025.jpg"
+  "PRESET-Lights_19-07-Schottland-0025.jpg"
   "Preset"
 %}
 
@@ -42,9 +42,9 @@ So far in the north the light is totally different. When it shines through the c
 You must be made of different stuff if you are Scottish. There is hardly anything fine and graceful about the landscape and the weather. It's rough and tough and you have to deal with it.
 
 {% image_compare
-  "19-07-Schottland-0080_ORIGINAL.jpg"
-  "19-07-Schottland-0080_PRESET-Strength.jpg"
-  "Preset" 
+  "ORIGINAL_19-07-Schottland-0080.jpg"
+  "PRESET-Strength_19-07-Schottland-0080.jpg"
+  "Preset"
 %}
 
 {% download_link "Scotch Strength.xmp" "Lightroom Preset" %}
@@ -56,9 +56,9 @@ You must be made of different stuff if you are Scottish. There is hardly anythin
 The view over the North Sea at the edge of the continent is really unique, especially at sunset. Hear the the seagulls scream, the waves crashing against the cliffs and see the stunning colors.
 
 {% image_compare
-  "19-07-Schottland-0310_ORIGINAL.jpg"
-  "19-07-Schottland-0310_PRESET-Sunset.jpg"
-  "Preset" 
+  "ORIGINAL_19-07-Schottland-0310.jpg"
+  "PRESET-Sunset_19-07-Schottland-0310.jpg"
+  "Preset"
 %}
 
 {% download_link "Scotch Sunset.xmp" "Lightroom Preset" %}
@@ -70,8 +70,8 @@ The view over the North Sea at the edge of the continent is really unique, espec
 Scotland is bold and so full with energy, even in the details.
 
 {% image_compare
-  "19-07-Schottland-0595_ORIGINAL.jpg"
-  "19-07-Schottland-0595_PRESET-Energy.jpg"
+  "ORIGINAL_19-07-Schottland-0595.jpg"
+  "PRESET-Energy_19-07-Schottland-0595.jpg"
   "Preset"
 %}
 
@@ -84,8 +84,8 @@ Scotland is bold and so full with energy, even in the details.
 The Edinburgh Military Tattoo, which takes place twice a year, is a feast for the senses. The incredible sound on one hand and the colors on the other. The brass, the feathers, the uniforms stand out in the setting sun.
 
 {% image_compare
-  "19-07-Schottland-0935_ORIGINAL.jpg"
-  "19-07-Schottland-0935_PRESET-Tattoo.jpg"
+  "ORIGINAL_19-07-Schottland-0935.jpg"
+  "PRESET-Tattoo_19-07-Schottland-0935.jpg"
   "Preset"
 %}
 

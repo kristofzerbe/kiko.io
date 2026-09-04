@@ -37,23 +37,23 @@ There is a [web version of Triangula](https://rh12503.github.io/triangula/), but
 ### Example with 1.000 Generations
 
 {% image_compare
-  "DSC_7006-HDR_ORIGINAL.jpg"
-  "DSC_7006-HDR_TRIANGULATED.png"
+  "ORIGINAL_DSC_7006-HDR.jpg"
+  "TRIANGULATED_DSC_7006-HDR.png"
   "Triangulated"
 %}
 
 ### Example with 10.000 Generations
 
 {% image_compare
-  "19-07-Schottland-0512_ORIGINAL.jpg"
-  "19-07-Schottland-0512_TRIANGULATED.png"
+  "ORIGINAL_19-07-Schottland-0512.jpg"
+  "TRIANGULATED_19-07-Schottland-0512.png"
   "Triangulated"
 %}
 
 ### Example with 20.000 Generations
 
 {% image_compare
-  "DSC_8860_ORIGINAL.jpg"
-  "DSC_8860_TRIANGULATED.png"
+  "ORIGINAL_DSC_8860.jpg"
+  "TRIANGULATED_DSC_8860.png"
   "Triangulated"
 %}

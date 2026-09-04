@@ -26,16 +26,16 @@ In 2019 I was on a short, stressful business trip to Dehli, India and one night 
 ## Indian Sunset
 
 {% image_compare
-  "IMG_20191009_165823_HDR_ORIGINAL.jpg"
-  "IMG_20191009_165823_HDR_PRESET_Sunset.jpg"
+  "ORIGINAL_IMG_20191009_165823_HDR.jpg"
+  "PRESET_Sunset_IMG_20191009_165823_HDR.jpg"
   "Preset"
 %}
 
 ---
 
 {% image_compare
-  "IMG_20191009_164343_HDR_ORIGINAL.jpg"
-  "IMG_20191009_164343_HDR_PRESET_Sunset.jpg"
+  "ORIGINAL_IMG_20191009_164343_HDR.jpg"
+  "PRESET_Sunset_IMG_20191009_164343_HDR.jpg"
   "Preset"
   "vertical"
 %}

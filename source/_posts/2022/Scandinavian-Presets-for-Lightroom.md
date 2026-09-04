@@ -29,8 +29,8 @@ When it gets late in the city, the artificial light bathes them in a warm veil. 
 Time to get a drink.
 
 {% image_compare
-  "D70_0710_ORIGINAL.jpg"
-  "D70_0710_PRESET-City-Nights.jpg"
+  "ORIGINAL_D70_0710.jpg"
+  "PRESET-City-Nights_D70_0710.jpg"
   "Preset"
 %}
 
@@ -43,8 +43,8 @@ Time to get a drink.
 All over the world, the Blue Hour is a special time of the day. The light is fading away slightly and everything shines in magic colors. Let them shine...
 
 {% image_compare
-  "D70_1197_ORIGINAL.jpg"
-  "D70_1197_PRESET-Blue-Hour.jpg"
+  "ORIGINAL_D70_1197.jpg"
+  "PRESET-Blue-Hour_D70_1197.jpg"
   "Preset"
 %}
 
@@ -57,8 +57,8 @@ All over the world, the Blue Hour is a special time of the day. The light is fad
 Nordic nature is far from being as rich and colorful as that in the south, but it has its own charm and with color you can help a little.
 
 {% image_compare
-  "D70_1752_ORIGINAL.jpg"
-  "D70_1752_PRESET-Colors.jpg"
+  "ORIGINAL_D70_1752.jpg"
+  "PRESET-Colors_D70_1752.jpg"
   "Preset"
 %}
 
@@ -71,8 +71,8 @@ Nordic nature is far from being as rich and colorful as that in the south, but i
 Not only since Shakespeare and his Hamlet, we know about the dramas of the Nordic sagas. The landscape itself is dramatic and the stories are set in it.
 
 {% image_compare
-  "D70_1627_ORIGINAL.jpg"
-  "D70_1627_PRESET-Drama.jpg"
+  "ORIGINAL_D70_1627.jpg"
+  "PRESET-Drama_D70_1627.jpg"
   "Preset"
 %}
 
@@ -85,8 +85,8 @@ Not only since Shakespeare and his Hamlet, we know about the dramas of the Nordi
 The sea plays a big role in the Nordic countries, as they have very long coasts. No one who travels there with a camera manages to resist this beauty.
 
 {% image_compare
-  "D70_0151_ORIGINAL.jpg"
-  "D70_0151_PRESET-Seascape.jpg"
+  "ORIGINAL_D70_0151.jpg"
+  "PRESET-Seascape_D70_0151.jpg"
   "Preset"
 %}
 

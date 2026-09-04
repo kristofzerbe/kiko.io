@@ -228,7 +228,7 @@ hexo.on('generateBefore', function() {
     box.permalink = "/" + config.photo_dir + "/boxes/" + box.key;
 
     // TODO: Sort by DateOriginal, when 'getAssetPhotos()' supports it
-    box.items = box.photos.sort((x, y) => new Date(x.meta.DateCreated ?? x.date) - new Date(y.meta.DateCreated ?? y.date));
+    box.items = box.photos.sort((x, y) => new Date(x.meta.DateTimeOriginal ?? x.meta.DateCreated ?? x.date) - new Date(y.meta.DateTimeOriginal ?? y.meta.DateCreated ?? y.date));
     if (box.sortPhotos === "DESC") {
       box.items = box.items.reverse();
     }
@@ -705,31 +705,30 @@ function getAssetPhotos(postAssetString, boxTitle) {
       const fileurl = "/" + path.join("post", postAsset.slug, file).replace(/\134/g,"/")
       //console.log(fileurl + " ... " + filename  + " ... " + filedate);
 
-      //TODO: Get DateOriginal from asset phot somehow to do correct sort later
+      let metaFile = path.join(assetDir, filename + ".json");
+      // console.log(metaFile);
+      if (fs.existsSync(metaFile)) {
+        let meta = JSON.parse(fs.readFileSync(metaFile));
+        meta.custom.box = boxTitle;
+        meta.custom.featured.title = post?.title;
+        meta.custom.featured.slug = postAsset.slug;
 
-      let entry = {
-        key: filename,
-        status: "unused",
-        type: "asset",
-        file: file,
-        name: filename,
-        article: null,
-        pathMobile: fileurl,
-        pathNormal: fileurl,
-        date: filedate,
-        meta: {
-          custom: {
-            box: boxTitle,
-            featured: {
-              title: post?.title,
-              slug: postAsset.slug
-            }
-          }
-        },
-        boxlink: "/" + path.join(config.photo_dir, "boxes", slugify(boxTitle))
-      };
+        let entry = {
+          key: filename,
+          status: "unused",
+          type: "asset",
+          file: file,
+          name: filename,
+          article: null,
+          pathMobile: fileurl,
+          pathNormal: fileurl,
+          date: filedate,
+          meta: meta,
+          boxlink: "/" + path.join(config.photo_dir, "boxes", slugify(boxTitle))
+        };
 
-      assets.push(entry)
+        assets.push(entry)
+      }
     });
 
   log.info("-> " + magenta(assets.length) + " asset photos in '" + postAssetString + "'");
