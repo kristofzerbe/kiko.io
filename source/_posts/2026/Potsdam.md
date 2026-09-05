@@ -25,7 +25,7 @@ bandcamp:
   track: May Queen|2060183107
 syndication:
   - site: Bubbles
-    url: 
+    url: https://bubbles.town/entry/44780126
   - site: Mastodon
     url: https://indieweb.social/@kiko/117219716013196214
 ---
