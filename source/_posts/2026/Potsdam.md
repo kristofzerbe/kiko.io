@@ -27,7 +27,7 @@ syndication:
   - site: Bubbles
     url: 
   - site: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/117219716013196214
 ---
 
 My wife and I spent our summer vacation this year on the Polish Baltic coast. It was a welcome relief from the unbearable heat in Central Europe. As the 8-hour drive seemed a bit too long for us, we stopped off for two days on the way up in Potsdam, the former royal residence of the Prussian kings, foremost among them Frederick the Great, who shaped the country like no other.
