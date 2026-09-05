@@ -55,12 +55,14 @@ class MentionsUnitedProvider_Lemmy extends MentionsUnited.Provider {
     const msg = `${this.constructor.name}: Retreiving interactions for '${this.options.syndicationUrl}'`;
     args.fStart(msg);
     
-    const apiResponse = await fetch(this.lemmyApiUrl());
-    const apiData = await apiResponse.json();
-
-    let interactions = this.#processJsonData(apiData.comments);
-
-    args.fCount();
+    let interactions = [];
+    try {
+      const apiResponse = await fetch(this.lemmyApiUrl());
+      const apiData = await apiResponse.json();
+      interactions = this.#processJsonData(apiData.comments);      
+    } 
+    catch (e) { console.error(e); }
+    finally { args.fCount(); }
     
     args.fEnd(msg);
     return interactions;
@@ -122,4 +124,5 @@ class MentionsUnitedProvider_Lemmy extends MentionsUnited.Provider {
  * 2.1.0 - Introducing retrieve arguments
  *       - Outsourced time measurement
  * 2.2.0 - Added args.fCount() to count request
+ * 2.2.1 - Improved error handling
  */
