@@ -5,8 +5,8 @@ photograph:
   file: $20-08-Mallorca-7627.jpg
   name: Photographers Mosaic
   keepOutOfView: true
-date: 2021-08-30 03:56:00
-updated: 2026-09-05 16:10:13
+date: 2021-08-30 05:56:00
+updated: 2026-09-07 15:16:07
 ---
 
 Most of the photos shown on this website contain geo-localisations in the form of GPS coordinates in their metadata. These **{% photo.count %} photos** are pinned on this map.
