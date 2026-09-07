@@ -18,9 +18,11 @@ related:
   - Belated-May
 syndication:
   - site: Bubbles
-    url: 
+    url: https://bubbles.town/entry/44781179
   - site: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/117230831410274634
+  - site: Pixelfed
+    url: https://pixelfed.social/p/kristofz/1002619682569167230
 ---
 
 Late summer in Germany is back to normal, following the sweltering heat of the last three months. A pleasant 26 degrees Celsius and already cool nights of around 14 degrees. We're prepared for anything, though, and I will shed a tear or two in memory of the heat. I'm a sun-lover through and through.
