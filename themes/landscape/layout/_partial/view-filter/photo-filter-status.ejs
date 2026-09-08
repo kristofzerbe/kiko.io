@@ -108,8 +108,8 @@
 
 <script>
 
-  let currentStatus = document.querySelector("input[name=view-filter-status]:checked").getAttribute("data-status");
-  let currentType = (currentStatus !== "all") ? document.querySelector("input[name=view-filter-" + currentStatus + "type]:checked").getAttribute("data-type") : "all";
+  let currentFilterStatus = document.querySelector("input[name=view-filter-status]:checked").getAttribute("data-status");
+  let currentFilterType = (currentFilterStatus !== "all") ? document.querySelector("input[name=view-filter-" + currentFilterStatus + "type]:checked").getAttribute("data-type") : "all";
 
   // ----
 
@@ -130,36 +130,36 @@
   });
 
   function setFilterStatus(eStatus) {
-    currentStatus = eStatus.getAttribute("data-next-status");
-    currentType = "all"; // reset TYPE
+    currentFilterStatus = eStatus.getAttribute("data-next-status");
+    currentFilterType = "all"; // reset TYPE
     setView();
   }
 
   function setFilterType(eType) {
-    currentType = eType.getAttribute("data-next-type");
+    currentFilterType = eType.getAttribute("data-next-type");
     setView();
   }
 
   // ----
 
   function setView_Status() {
-    document.querySelector("#filter-status-" + currentStatus).checked = true;
-    if (currentStatus !== "all") {
-      document.querySelector("#filter-" + currentStatus + "-type-" + currentType).checked = true;
+    document.querySelector("#filter-status-" + currentFilterStatus).checked = true;
+    if (currentFilterStatus !== "all") {
+      document.querySelector("#filter-" + currentFilterStatus + "-type-" + currentFilterType).checked = true;
     }
-    document.getElementById("view-filter-used-type").style.display = (currentStatus === "used") ? "inline-block" : "none";
-    document.getElementById("view-filter-unused-type").style.display = (currentStatus === "unused") ? "inline-block" : "none";
+    document.getElementById("view-filter-used-type").style.display = (currentFilterStatus === "used") ? "inline-block" : "none";
+    document.getElementById("view-filter-unused-type").style.display = (currentFilterStatus === "unused") ? "inline-block" : "none";
 
     document.querySelectorAll(".card").forEach(item => {
       let bShow = false;
-      switch (currentStatus) {
+      switch (currentFilterStatus) {
         case "all":
           bShow = true;
           break;
         default:
-          bShow = (item.getAttribute("data-status") === currentStatus); 
-          if (currentType !== "all") {
-            bShow = (currentType === item.getAttribute("data-type"));
+          bShow = (item.getAttribute("data-status") === currentFilterStatus); 
+          if (currentFilterType !== "all") {
+            bShow = (currentFilterType === item.getAttribute("data-type"));
           } 
       }
       if (bShow) { showPhoto(item); } else { hidePhoto(item); }

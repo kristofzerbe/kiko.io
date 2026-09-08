@@ -1,6 +1,12 @@
+<%  
+  let syndication = item.meta?.custom?.links?.filter(l => l.url?.length > 0); //.map(s => ({ host: s.site, url: s.url })); 
+  let synSites = syndication.map(s => { return s.site }).join(",");
+%>
+
 <div class="card photo" 
      data-status="<%- item.status %>" 
      data-type="<%- item.type %>"
+     data-syndication="<%- synSites %>"
      data-file="<%- item.key %>"
      data-title="<%- item.name %>"
      data-date-created="<%- item.meta?.DateTimeOriginal %>">
@@ -31,38 +37,33 @@
   <span class="pre-title">
     <%- item.key %><% if (item.meta?.DateTimeOriginal || item.meta?.DateCreated) { %>, <em><%- new Date(item.meta?.DateTimeOriginal ?? item.meta?.DateCreated).toLocaleString('en-GB', { month:"long", year:"numeric" }) %></em><% } %>
   </span>
-  <% if (item) { %>
-    <%  let syndication = item.meta?.custom?.links?.filter(l => l.url?.length > 0); //.map(s => ({ host: s.site, url: s.url })); %>
-    <div class="card-links">
-      <%- partial('_partial/post/syndication-links', { syndication: syndication, type: "photo", showText: false }) %>
-      <% if (!item.meta?.latitude && !item.meta?.longitude && item.type !== "asset") { %>
-      <span class="info-content info-location">
-        <img src="/images/icons/location-none.svg" title="no location" />
-      </span>
-      <% } %>
-      <% if (item.boxlink) { %>
-      <span class="info-content info-isinbox">
-        <a class="box-link" href="<%= item.boxlink %>">
-          <img src="/images/icons/box.svg" title="In box &laquo;<%= item.meta?.custom.box %>&raquo;" />
-        </a>
-      </span>
-      <% } %>
-      <% if (item.meta?.custom?.featured?.slug) { %>
-      <span class="info-content info-featured">
-        <a class="featured-link" href="/post/<%= item.meta.custom.featured.slug %>">
-          <img src="/images/icons/featured.svg" title="featured in &laquo;<%= item.meta.custom.featured.title %>&raquo;" />
-        </a>
-      </span>
-      <% } %>
-    </div>
-    <h3 class="<%= (item.hasCustomName) ? "italic" : "" %>">
-    <% if (item.type !== "asset") { %>
-      <a href="/<%= config.photo_dir %>/<%= item.key %>" class="h-link"><%- item.name %></a>
-    <% } else { %>
-      <%- item.name %>
+  <div class="card-links">
+    <%- partial('_partial/post/syndication-links', { syndication: syndication, type: "photo", showText: false }) %>
+    <% if (!item.meta?.latitude && !item.meta?.longitude && item.type !== "asset") { %>
+    <span class="info-content info-location">
+      <img src="/images/icons/location-none.svg" title="no location" />
+    </span>
     <% } %>
-    </h3>
+    <% if (item.boxlink) { %>
+    <span class="info-content info-isinbox">
+      <a class="box-link" href="<%= item.boxlink %>">
+        <img src="/images/icons/box.svg" title="In box &laquo;<%= item.meta?.custom.box %>&raquo;" />
+      </a>
+    </span>
+    <% } %>
+    <% if (item.meta?.custom?.featured?.slug) { %>
+    <span class="info-content info-featured">
+      <a class="featured-link" href="/post/<%= item.meta.custom.featured.slug %>">
+        <img src="/images/icons/featured.svg" title="featured in &laquo;<%= item.meta.custom.featured.title %>&raquo;" />
+      </a>
+    </span>
+    <% } %>
+  </div>
+  <h3 class="<%= (item.hasCustomName) ? "italic" : "" %>">
+  <% if (item.type !== "asset") { %>
+    <a href="/<%= config.photo_dir %>/<%= item.key %>" class="h-link"><%- item.name %></a>
   <% } else { %>
-    <h3><%- item.name %></h3>
+    <%- item.name %>
   <% } %>
+  </h3>
 </div>

@@ -19,7 +19,7 @@
   <div class="cardview">
     <span class="cardcount"><%= page.items.length %></span>
     <span>photos</span>
-    <%- partial('_partial/view-filter/photo-status') %>
+    <%- partial('_partial/view-filter/photo-filter-status') %>
     <%- partial('_partial/view-filter/photo-presentation') %>
     <%- partial('_partial/view-filter/photo-sort') %>
   </div>
@@ -37,8 +37,8 @@
 
   function setView() {
     setView_Status();
-    setView_Sorting();
     setView_Presentation();
+    setView_Sorting();
   }
 
   setTimeout(function() { //Hack for returning from external to page

@@ -1,0 +1,69 @@
+<span>syndicated</span>
+<span id="view-filter-syndication">
+  <input type="radio" name="view-filter-syndication" id="filter-syndication-all"
+         data-syndication="all"
+         data-next-syndication="nowhere"
+         checked>
+  <label for="filter-syndication-all" title="NEXT: Filter for photos syndicated nowhere">
+    <mark>or not</mark>
+  </label>
+  <input type="radio" name="view-filter-syndication" id="filter-syndication-nowhere"
+         data-syndication="nowhere"
+         data-next-syndication="somewhere">
+  <label for="filter-syndication-nowhere" title="NEXT: Filter photos syndicated somewhere">
+    <mark>nowhere</mark>
+  </label>
+  <input type="radio" name="view-filter-syndication" id="filter-syndication-somewhere"
+         data-syndication="somewhere"
+         data-next-syndication="all">
+  <label for="filter-syndication-somewhere" title="NEXT: Show all photos">
+    <mark>somewhere</mark>
+  </label>
+</span>
+
+<!---->
+
+<script>
+
+  let currentFilterSyndication = document.querySelector("input[name=view-filter-syndication]:checked").getAttribute("data-syndication");
+  
+  // ----
+
+  document.querySelectorAll("input[name=view-filter-syndication]").forEach(element => {
+    element.addEventListener("click", (event) => {
+      setFilterSyndication(element);
+    });
+  });
+
+  function setFilterSyndication(eType) {
+    currentFilterSyndication = eType.getAttribute("data-next-syndication");
+    setView();
+  }
+
+  // ----
+
+  function setView_Syndication() {
+    document.querySelector("#filter-syndication-" + currentFilterSyndication).checked = true;
+
+    document.querySelectorAll(".card").forEach(item => {
+      let bShow = false;
+      switch (currentFilterSyndication) {
+        case "all":
+          bShow = true;
+          break;
+        case "nowhere":
+          bShow = item.getAttribute("data-syndication").length === 0;
+          break;
+        case "somewhere":
+          bShow = item.getAttribute("data-syndication").length > 0;
+          break;
+        // default:
+        //   bShow = ... 
+      }
+      if (bShow) { showPhoto(item); } else { hidePhoto(item); }
+    });
+     
+    refreshView();
+  }
+
+</script>
