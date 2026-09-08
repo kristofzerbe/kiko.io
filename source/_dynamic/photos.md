@@ -4,8 +4,8 @@ permalink: /photos
 photograph:
   file: $20-08-Mallorca-7627.jpg
   name: Photographers Mosaic
-date: 2021-08-30 05:56:00
-updated: 2026-09-07 15:16:07
+date: 2021-08-30 07:56:00
+updated: 2026-09-07 18:53:21
 ---
 
 <div class="float-right"><img src="/images/cc-free-culture.png" style="width:5rem;" /></div>
