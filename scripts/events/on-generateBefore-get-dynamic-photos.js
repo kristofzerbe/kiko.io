@@ -718,7 +718,7 @@ function getAssetPhotos(postAssetString, boxTitle) {
           status: "unused",
           type: "asset",
           file: file,
-          name: filename,
+          name: meta?.ObjectName || meta?.custom?.name || filename,
           article: null,
           pathMobile: fileurl,
           pathNormal: fileurl,
