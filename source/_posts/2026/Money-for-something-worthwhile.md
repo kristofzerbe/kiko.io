@@ -25,11 +25,13 @@ bandcamp:
   track: Too Broke To Fix|1401867415
 syndication:
   - site: Bubbles
-    url: null
+    url: https://bubbles.town/entry/44783912
   - site: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/117257793961892839
   - site: IndieNews
-    url: https://news.indieweb.org/en
+    url: https://news.indieweb.org/en/kiko.io/post/Money-for-something-worthwhile/
+  - site: DevTo
+    url: https://dev.to/kristofzerbe/money-for-something-worthwhile-3coj
 ---
 
 If you really think about it, we spend loads of money on all sorts of crap that doesn't really enrich our lives.
