@@ -21,9 +21,9 @@ related:
   - DFB-Cup-SVWW-vs-Bayer-04-Leverkusen-2026-08-22
 syndication:
   - site: Bubbles
-    url: 
+    url: https://bubbles.town/entry/44785777
   - site: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/117276593534069122
 ---
 
 {% match_grid "SV-Wehen-Wiesbaden" "0:1" "Waldhof-Mannheim" %}
@@ -32,7 +32,7 @@ I'm a little ticked off. We had a terrible start to the new season over the firs
 
 <!-- more -->
 
-The coach showed courage in his lineup, starting 4 of the 5 new players ([Massimo](https://www.kicker.de/roberto-massimo/spieler/3-liga/2026-27/sv-wehen-wiesbaden), [Brandt](https://www.kicker.de/max-brandt/spieler/3-liga/2026-27/sv-wehen-wiesbaden), [Müller](https://www.kicker.de/marcus-mueller/spieler/3-liga/2026-27/sv-wehen-wiesbaden) and [Paula](https://www.kicker.de/ raul-paula/players/3rd-division/2026-27/sv-wehen-wiesbaden)) and the guys pretty much had the game under control from the start. The effort and the will to win were definitely there. [Fabian Greilinger](https://www.kicker.de/fabian-greilinger/spieler/3-liga/2026-27/sv-wehen-wiesbaden) made a lasting impression on me with his sprints up and down the field during the entire game, until he was substituted. I think he must have gained some oxygen on the bench.
+The coach showed courage in his lineup, starting 4 of the 5 new players ([Massimo](https://www.kicker.de/roberto-massimo/spieler/3-liga/2026-27/sv-wehen-wiesbaden), [Brandt](https://www.kicker.de/max-brandt/spieler/3-liga/2026-27/sv-wehen-wiesbaden), [Müller](https://www.kicker.de/marcus-mueller/spieler/3-liga/2026-27/sv-wehen-wiesbaden) and [Paula](https://www.kicker.de/raul-paula/players/3rd-division/2026-27/sv-wehen-wiesbaden)) and the guys pretty much had the game under control from the start. The effort and the will to win were definitely there. [Fabian Greilinger](https://www.kicker.de/fabian-greilinger/spieler/3-liga/2026-27/sv-wehen-wiesbaden) made a lasting impression on me with his sprints up and down the field during the entire game, until he was substituted. I think he must have gained some oxygen on the bench.
 
 Then, in the 20th minute, the opposing team produced a little piece of art: After a corner kick, a Mannheim player attempted a bicycle kick but didn't hit the ball cleanly; another player tried to pick up the rebound in the exact same way and scored a spectacular goal to make it **0:1**.
 
