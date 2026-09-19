@@ -9,16 +9,47 @@
   <em class="box"></em><%= page.title %>
 </h1>
 
-<div class="page-content">  
-  <p>These <strong><%= page.items.length %></strong> photos were taken during the period <%= page.periodString %></p>
-</div>
-
-<hr class="divider" />
+<!-- <div class="page-content"></div> -->
 
 <div class="cardset">
+  <div class="cardview">
+    <span class="cardcount"><%= page.photos.length %></span>
+    <span>photos taken <%= page.periodString %></span>,
+    <%- partial('_partial/cardview/filter-provision-photo') %>,
+    <%- partial('_partial/cardview/sort-photo') %>
+  </div>
+
+  <hr class="divider" />
+
   <div class="cards grid">
-    <% for(var i=0; i < page.items.length; i++) { %>
-      <%- partial('_partial/photo-item', { item: page.items[i] }) %>
+    <% for(var i=0; i < page.photos.length; i++) { %>
+      <%- partial('_partial/photo-item', { item: page.photos[i] }) %>
     <% } %>
   </div>
 </div>
+
+<%- partial('_partial/cardview/common-script-photo') %>
+<script>
+
+  function setView() {
+    setView_Provision();
+    setView_Sorting();
+  }
+
+  setTimeout(function() { //Hack for returning from external to page
+    setView();
+  }, 500)
+
+</script>
+
+<% if (page.posts && page.posts.length > 0) { %>
+<hr class="divider" />
+<div class="article-extra">
+  <h2>Related Posts: <%= page.posts.length %></h2>
+  <div class="panels archives">
+  <% page.posts.forEach(post => { %>
+    <%- partial('_partial/archive-post', { post: post, show_link: true }) %>
+  <% }); %>   
+  </div>
+</div>
+<% } %>

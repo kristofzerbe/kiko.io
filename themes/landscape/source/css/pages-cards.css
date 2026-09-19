@@ -3,8 +3,11 @@
 }
 
 .cardset .cardview {
-  margin: var(--space-default) var(--space-thin) var(--space-default);
+  margin-block: var(--space-default);
   line-height: var(--line-height-text);
+}
+h1.page-title + .cardset .cardview {
+  margin-top: 0;
 }
 
 .cardset .cardview span { /* wie MARK */
@@ -23,6 +26,7 @@
 .cardset .cardview input[name=view-filter-unused-type]+label,
 .cardset .cardview input[name=view-filter-used-type]+label,
 .cardset .cardview input[name=view-filter-syndication]+label,
+.cardset .cardview input[name=view-filter-provision]+label,
 .cardset .cardview input[name=view-presentation]+label,
 .cardset .cardview input[name=view-sort-field]+label,
 .cardset .cardview input[name=view-sort-order]+label {
@@ -35,6 +39,7 @@
 .cardset .cardview input[name=view-filter-unused-type]:checked+label,
 .cardset .cardview input[name=view-filter-used-type]:checked+label,
 .cardset .cardview input[name=view-filter-syndication]:checked+label,
+.cardset .cardview input[name=view-filter-provision]:checked+label,
 .cardset .cardview input[name=view-presentation]:checked+label,
 .cardset .cardview input[name=view-sort-field]:checked+label,
 .cardset .cardview input[name=view-sort-order]:checked+label {
@@ -78,8 +83,9 @@
 }
 
 .cards .card h3 {
-  line-height: var(--line-height-subtitle);
+  font-size: var(--font-cardtitle-size);
   font-weight: var(--font-weight-bold);
+  line-height: var(line-height-normal);
 }
 
 .cards .card h3 a {
@@ -215,8 +221,7 @@
 }
 
 .cards.list .card h3 {
-  margin: var(--space-medium) 0 0;
-  font-size: var(--font-subtitle-size);
+  margin: var(--space-medium) 0 0;  
   grid-area: title;
   overflow: hidden;
 }
@@ -268,7 +273,8 @@
 }
 
 .cards.list .card.photo h3 {
-  margin: var(--space-moderate) 0 0;
+  margin: var(--space-median) 0 0;
+  /* margin: 0; + center */
   align-self: start;
 }
 
@@ -312,8 +318,7 @@
 }
 
 .cards.grid .card h3 {
-  margin: var(--space-medium) 0 var(--space-default);
-  font-size: var(--font-subtitle-size);
+  margin: var(--space-medium) 0 var(--space-default);  
 }
 
 /* ------------ */

@@ -31,7 +31,7 @@ hexo.extend.generator.register("sitemap", async function(locals) {
   const dynamic = [];
   Object.keys(locals.dynamic).forEach((key, index) => {
     const entry = locals.dynamic[key];
-    if (!entry.hidden) {
+    if (!entry.hidden && entry.slug) {
       dynamic.push(get(entry));
     }
   });

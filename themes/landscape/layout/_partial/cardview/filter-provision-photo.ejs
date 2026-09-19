@@ -1,0 +1,69 @@
+<span>provided</span>
+<span id="view-filter-provision">
+  <input type="radio" name="view-filter-provision" id="filter-provision-all"
+         data-provision="all"
+         data-next-provision="photo"
+         checked>
+  <label for="filter-provision-all" title="NEXT: Filter for photo pages">
+    <mark>somehow</mark>
+  </label>
+  <input type="radio" name="view-filter-provision" id="filter-provision-photo"
+         data-provision="photo"
+         data-next-provision="asset">
+  <label for="filter-provision-photo" title="NEXT: Filter for post assets">
+    <mark>as photo page</mark>
+  </label>
+  <input type="radio" name="view-filter-provision" id="filter-provision-asset"
+         data-provision="asset"
+         data-next-provision="all">
+  <label for="filter-provision-asset" title="NEXT: Show all photos">
+    <mark>as post asset</mark>
+  </label>
+</span>
+
+<!---->
+
+<script>
+
+  let currentFilterProvision = document.querySelector("input[name=view-filter-provision]:checked").getAttribute("data-provision");
+
+// ----
+
+  document.querySelectorAll("input[name=view-filter-provision]").forEach(element => {
+    element.addEventListener("click", (event) => {
+      setFilterProvision(element);
+    });
+  });
+
+  function setFilterProvision(eStatus) {
+    currentFilterProvision = eStatus.getAttribute("data-next-provision");
+    setView();
+  }
+
+  // ----
+
+  function setView_Provision() {
+    document.querySelector("#filter-provision-" + currentFilterProvision).checked = true;
+
+    document.querySelectorAll(".card").forEach(item => {
+      let bShow = false;
+      switch (currentFilterProvision) {
+        case "all":
+          bShow = true;
+          break;
+        case "photo":
+          bShow = item.getAttribute("data-type") !== "asset";
+          break;
+        case "asset":
+          bShow = item.getAttribute("data-type") === "asset";
+          break;
+        // default:
+        //   bShow = ... 
+      }
+      if (bShow) { showPhoto(item); } else { hidePhoto(item); }
+    });
+     
+    refreshView();    
+  }
+
+</script>

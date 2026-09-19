@@ -25,9 +25,7 @@
 
 <script>
 
-  let macyInstance;
-
-  let currentPresentation = getCookie("photos-presentation");
+  let currentPresentation = getCookie("<%- pagetype %>-presentation");
   if (!currentPresentation) {
     currentPresentation =
       document.querySelector("input[name=view-presentation]:checked").getAttribute("data-presentation");
@@ -41,47 +39,49 @@
 
   function setPresentation(ePresentation) {
     currentPresentation = ePresentation.getAttribute("data-next-presentation");
-    setCookie("photos-presentation", currentPresentation, 365);
+    setCookie("<%- pagetype %>-presentation", currentPresentation, 365);
     setView();
   }
 
   // ----
 
+  // let macyInstance;
+
   function setView_Presentation() {
     document.querySelector('.cards').classList = "cards " + currentPresentation;
     document.querySelector("#presentation-" + currentPresentation).checked = true;
     //---
-    if (currentPresentation === "masonry") {
-      macyInstance = new Macy({
-        container: '#photos',
-        trueOrder: false,
-        waitForImages: false,
-        useOwnImageLoader: false,
-        debug: true,
-        mobileFirst: true,
-        columns: 2,
-        margin: {
-          y: 6,
-          x: 6
-        },
-        breakAt: {
-          980: {
-            margin: {
-              x: 8,
-              y: 8
-            },
-            columns: 3
-          },
-          768: 2,
-          640: 3
-        }
-      });
-    } else {
-      if (macyInstance) {
-        macyInstance.remove();
-        macyInstance = null;
-      }
-    }
+    // if (currentPresentation === "masonry") {
+    //   macyInstance = new Macy({
+    //     container: '#photos',
+    //     trueOrder: false,
+    //     waitForImages: false,
+    //     useOwnImageLoader: false,
+    //     debug: true,
+    //     mobileFirst: true,
+    //     columns: 2,
+    //     margin: {
+    //       y: 6,
+    //       x: 6
+    //     },
+    //     breakAt: {
+    //       980: {
+    //         margin: {
+    //           x: 8,
+    //           y: 8
+    //         },
+    //         columns: 3
+    //       },
+    //       768: 2,
+    //       640: 3
+    //     }
+    //   });
+    // } else {
+    //   if (macyInstance) {
+    //     macyInstance.remove();
+    //     macyInstance = null;
+    //   }
+    // }
   }
 
 </script>

@@ -13,27 +13,25 @@
   <%- page.content %>
 </div>
 
-<hr class="divider" />
-
 <div class="cardset">
-
   <div class="cardview">
     <span class="cardcount"><%= page.items.length %></span>
     <span>photos</span>
-    <%- partial('_partial/view-filter/photo-filter-syndication') %>
-    <%- partial('_partial/view-filter/photo-presentation') %>
-    <%- partial('_partial/view-filter/photo-sort') %>
+    <%- partial('_partial/cardview/filter-syndication-photo') %>,
+    <%- partial('_partial/cardview/presentation', { pagetype: "photos" }) %>,
+    <%- partial('_partial/cardview/sort-photo') %>
   </div>
-  
+
+  <hr class="divider" />
+
   <div class="cards grid">
     <% for(var i=0; i < page.items.length; i++) { %>
       <%- partial('_partial/photo-item', { item: page.items[i] }) %>
     <% } %>
   </div>
-
 </div>
 
-<%- partial('_partial/view-filter/photo-common-script') %>
+<%- partial('_partial/cardview/common-script-photo') %>
 <script>
 
   function setView() {

@@ -150,6 +150,7 @@ hexo.on('generateBefore', function() {
     .map((box) => {
       box.key = slugify(box.title);
       box.photos = [];
+      box.posts = [];
       return box;
     })
     //.sort((x, y) => x.period.localeCompare(y.period))
@@ -170,7 +171,7 @@ hexo.on('generateBefore', function() {
 
     // (set period and box photo sort)
     b.photos = b.photos.sort((x, y) => new Date(y.meta.DateCreated) - new Date(x.meta.DateCreated));
-    b.sortPhotos = "ASC";
+    //b.sortPhotos = "ASC";
     if (b.period.includes("|")) {
       let period = b.period.split("|");
       b.periodStart = period[0];
@@ -180,7 +181,7 @@ hexo.on('generateBefore', function() {
         let latestDate = new Date(b.photos[0].meta.DateCreated);
         b.periodEnd = latestDate.toISOString().split('T')[0];
         b.periodString = "since " + b.periodStart;
-        b.sortPhotos = "DESC";
+        //b.sortPhotos = "DESC";
       } else {
         b.periodString = b.periodStart + " to " + b.periodEnd;
       }
@@ -191,13 +192,18 @@ hexo.on('generateBefore', function() {
     }
 
     // (set cover)
-    b.coverPhoto = b.photos.find(p => p.key === b.cover);    
+    b.coverPhoto = b.photos.find(p => p.key === b.cover);
 
-    // (add asset photos)
+    // (add posts and their asset photos)
     if (b.post_assets !== undefined && b.post_assets.length > 0) {
       b.post_assets.forEach(pa => {
-        const assets = getAssetPhotos(pa, b.title);
+        const { post, assets } = getPostAssetPhotos(pa, b.title);
+        if (post) b.posts.push(post);
         b.photos.push(...assets);
+
+        assets.forEach(asset => {
+          pages[asset.key] = asset;
+        });
       });
     }
 
@@ -228,11 +234,11 @@ hexo.on('generateBefore', function() {
     box.permalink = "/" + config.photo_dir + "/boxes/" + box.key;
 
     // TODO: Sort by DateOriginal, when 'getAssetPhotos()' supports it
-    box.items = box.photos.sort((x, y) => new Date(x.meta.DateTimeOriginal ?? x.meta.DateCreated ?? x.date) - new Date(y.meta.DateTimeOriginal ?? y.meta.DateCreated ?? y.date));
-    if (box.sortPhotos === "DESC") {
-      box.items = box.items.reverse();
-    }
-    // console.log(box);
+    // box.items = box.photos.sort((x, y) => new Date(x.meta.DateTimeOriginal ?? x.meta.DateCreated ?? x.date) - new Date(y.meta.DateTimeOriginal ?? y.meta.DateCreated ?? y.date));
+    // if (box.sortPhotos === "DESC") {
+    //   box.items = box.items.reverse();
+    // }
+    //console.log(box);
 
     pages["photosbox-" + box.key] = box;
   });
@@ -672,19 +678,18 @@ function getNotesPhotos() {
 
 /** ================================================================================= */
 
-function getAssetPhotos(postAssetString, boxTitle) {
+function getPostAssetPhotos(postAssetString, boxTitle) {
   const config = hexo.config;
   const locals = hexo.locals;
+
+  let assets = [];
 
   const postAsset = {};
   [postAsset.year, postAsset.slug, postAsset.filter] = postAssetString.split("/");
 
+  const post = locals.get("posts").data.find(p => p.slug === postAsset.slug && !p.hidden);
+
   const assetDir = path.join(_rootDir, config.source_dir, "_posts", postAsset.year, postAsset.slug);
-  //console.log(assetDir);
-
-  const post = locals.get("posts").data.find(p => p.slug === postAsset.slug);
-
-  let assets = [];
   fs.readdirSync(assetDir)
     .filter(file => {
       const ext = path.extname(file).toLowerCase();
@@ -714,7 +719,7 @@ function getAssetPhotos(postAssetString, boxTitle) {
         meta.custom.featured.slug = postAsset.slug;
 
         let entry = {
-          key: filename,
+          key: "asset-" + filename,
           status: "unused",
           type: "asset",
           file: file,
@@ -724,13 +729,18 @@ function getAssetPhotos(postAssetString, boxTitle) {
           pathNormal: fileurl,
           date: filedate,
           meta: meta,
-          boxlink: "/" + path.join(config.photo_dir, "boxes", slugify(boxTitle))
+          boxlink: "/" + path.join(config.photo_dir, "boxes", slugify(boxTitle)),
+          photo: true,
+          title: null,
+          slug: null,
+          path: null,
+          permalink: null
         };
 
         assets.push(entry)
       }
     });
 
-  log.info("-> " + magenta(assets.length) + " asset photos in '" + postAssetString + "'");
-  return assets;
+  log.info("-> " + magenta(assets.length) + " asset photos in " + magenta(post?.slug));
+  return { post, assets };
 }
