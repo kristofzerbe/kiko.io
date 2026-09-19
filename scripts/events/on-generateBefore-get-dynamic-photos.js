@@ -202,7 +202,7 @@ hexo.on('generateBefore', function() {
         b.photos.push(...assets);
 
         assets.forEach(asset => {
-          pages[asset.key] = asset;
+          pages["asset-" + asset.key] = asset;
         });
       });
     }
@@ -232,13 +232,6 @@ hexo.on('generateBefore', function() {
     box.path = path.join(config.photo_dir, "boxes", box.key, "index.html");
     box.slug = box.key;
     box.permalink = "/" + config.photo_dir + "/boxes/" + box.key;
-
-    // TODO: Sort by DateOriginal, when 'getAssetPhotos()' supports it
-    // box.items = box.photos.sort((x, y) => new Date(x.meta.DateTimeOriginal ?? x.meta.DateCreated ?? x.date) - new Date(y.meta.DateTimeOriginal ?? y.meta.DateCreated ?? y.date));
-    // if (box.sortPhotos === "DESC") {
-    //   box.items = box.items.reverse();
-    // }
-    //console.log(box);
 
     pages["photosbox-" + box.key] = box;
   });
@@ -719,7 +712,7 @@ function getPostAssetPhotos(postAssetString, boxTitle) {
         meta.custom.featured.slug = postAsset.slug;
 
         let entry = {
-          key: "asset-" + filename,
+          key: filename,
           status: "unused",
           type: "asset",
           file: file,
