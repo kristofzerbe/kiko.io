@@ -34,6 +34,9 @@ syndication:
   - site: Pixelfed
     title: Sanssouci Spectators
     url: https://pixelfed.social/p/kristofz/1004738770662680636
+  - site: Pixelfed
+    title: Sanssouci Art
+    url: https://pixelfed.social/p/kristofz/1007259574681689756
 ---
 
 My wife and I spent our summer vacation this year on the Polish Baltic coast. It was a welcome relief from the unbearable heat in Central Europe. As the 8-hour drive seemed a bit too long for us, we stopped off for two days on the way up in Potsdam, the former royal residence of the Prussian kings, foremost among them Frederick the Great, who shaped the country like no other.
