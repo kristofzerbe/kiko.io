@@ -21,9 +21,9 @@ related:
   - SVWW-vs-Rot-Weiss-Essen-2026-08-29
 syndication:
   - site: Bubbles
-    url: 
+    url: https://bubbles.town/entry/44789921
   - site: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/117321066936769517
 ---
 
 {% match_grid "SV-Wehen-Wiesbaden" "1:4" "MSV-Duisburg" %}
