@@ -5,8 +5,8 @@ photograph:
   file: $20-08-Mallorca-7627.jpg
   name: Photographers Mosaic
   keepOutOfView: true
-date: 2025-03-15 19:51:00
-updated: 2026-09-23 11:00:51
+date: 2025-03-15 20:51:00
+updated: 2026-09-23 16:32:18
 ---
 
 Besides the photos that are used as hero images on this website, there are many more that were either mentioned in one of the posts or that I might want to use somewhere at some point. Here is an overview of these photos that are, so to speak, lying around in the shed...

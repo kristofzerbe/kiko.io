@@ -16,7 +16,7 @@
     <span class="cardcount"><%= page.photos.length %></span>
     <span>photos taken <em><%= page.periodString %></em></span>,
     <%- partial('_partial/cardview/filter-provision-photo') %>
-    <%- partial('_partial/cardview/sort-photo') %>
+    <%- partial('_partial/cardview/sort-photo', { cookietype: "box-" + page.slug, order: page.sortPhotos }) %>
   </div>
 
   <hr class="divider" />

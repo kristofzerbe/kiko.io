@@ -38,8 +38,9 @@
 <%- js('js/dist/tinysort.min.js') %>
 
 <script>
+  let cookieString_Sorting = "cardview-sorting-tinytools";
 
-  let currentSorting = getCookie("tiny-tools-sorting");
+  let currentSorting = getCookie(cookieString_Sorting);
   if (!currentSorting) {
     currentSorting =
       document.querySelector("input[name=view-sort-field]:checked").getAttribute("data-sort-field") + "|" +
@@ -63,7 +64,7 @@
     let newSortField = eSortField.getAttribute("data-next-sort-field");
     let sortOrder = document.querySelector("input[name=view-sort-order]:checked").getAttribute("data-sort-order");
     currentSorting = newSortField + "|" + sortOrder;
-    setCookie("tiny-tools-sorting", currentSorting, 365);
+    setCookie(cookieString_Sorting, currentSorting, 365);
     setView();
   }
 
@@ -71,7 +72,7 @@
     let newSortOrder = eSortOrder.getAttribute("data-next-sort-order");
     let sortField = document.querySelector("input[name=view-sort-field]:checked").getAttribute("data-sort-field");
     currentSorting = sortField + "|" + newSortOrder;
-    setCookie("tiny-tools-sorting", currentSorting, 365);
+    setCookie(cookieString_Sorting, currentSorting, 365);
     setView();
   }
 

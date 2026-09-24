@@ -170,18 +170,18 @@ hexo.on('generateBefore', function() {
   boxesItems.forEach((b) => {
 
     // (set period and box photo sort)
-    b.photos = b.photos.sort((x, y) => new Date(y.meta.DateCreated) - new Date(x.meta.DateCreated));
-    //b.sortPhotos = "ASC";
+    b.photos = b.photos.sort((x, y) => new Date(y.meta.DateTimeOriginal) - new Date(x.meta.DateTimeOriginal)); //sort for getting first photo
+    b.sortPhotos = "ASC";
     if (b.period.includes("|")) {
       let period = b.period.split("|");
       b.periodStart = period[0];
       b.periodEnd = period[1];
 
       if (b.periodEnd?.length === 0) {
-        let latestDate = new Date(b.photos[0].meta.DateCreated);
+        let latestDate = new Date(b.photos[0].meta.DateTimeOriginal);
         b.periodEnd = latestDate.toISOString().split('T')[0];
         b.periodString = "since " + b.periodStart;
-        //b.sortPhotos = "DESC";
+        b.sortPhotos = "DESC";
       } else {
         b.periodString = b.periodStart + " to " + b.periodEnd;
       }
@@ -205,6 +205,13 @@ hexo.on('generateBefore', function() {
           pages["asset-" + asset.key] = asset;
         });
       });
+    }
+
+    // (final sorting)
+    if (b.sortPhotos === "DESC") {
+      b.photos = b.photos.sort((x, y) => new Date(y.meta.DateTimeOriginal) - new Date(x.meta.DateTimeOriginal));
+    } else {
+      b.photos = b.photos.sort((x, y) => new Date(x.meta.DateTimeOriginal) - new Date(y.meta.DateTimeOriginal));
     }
 
   });

@@ -24,8 +24,9 @@
 <!---->
 
 <script>
+  let cookieString_Presentation = "cardview-presentation-<%- pagetype %>";
 
-  let currentPresentation = getCookie("<%- pagetype %>-presentation");
+  let currentPresentation = getCookie(cookieString_Presentation);
   if (!currentPresentation) {
     currentPresentation =
       document.querySelector("input[name=view-presentation]:checked").getAttribute("data-presentation");
@@ -39,7 +40,7 @@
 
   function setPresentation(ePresentation) {
     currentPresentation = ePresentation.getAttribute("data-next-presentation");
-    setCookie("<%- pagetype %>-presentation", currentPresentation, 365);
+    setCookie(cookieString_Presentation, currentPresentation, 365);
     setView();
   }
 
