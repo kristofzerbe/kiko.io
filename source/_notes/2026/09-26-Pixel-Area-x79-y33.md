@@ -21,7 +21,7 @@ Oleh Providnyk is a little more modest in this regard and recently made [**Pixel
 
 > Each pixel belongs to a real person and links to whatever they have online: a blog, a project, or just a small site they made.
 
-... from https://pxlarea.com/#about
+... from [https://pxlarea.com/#about](https://pxlarea.com/#about)
 
 Nice idea, and although it’s vibe-coded, other good projects are too these days, and this kind of AI use doesn’t leave you with an uneasy feeling or cause any harm. In the end, I agree with Joel, where I found the link:
 
