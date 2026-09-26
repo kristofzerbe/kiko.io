@@ -17,6 +17,8 @@ There are certain ideas that keep popping up. Like websites where you can reserv
 
 Oleh Providnyk is a little more modest in this regard and recently made [**Pixel Area**](https://pxlarea.com/) available to the net community – a 100x100 grid on which anyone can claim a pixel (for free!) as a link to their own website. A kind of two-dimensional webring for browsing and exploring.
 
+<!-- more -->
+
 > Each pixel belongs to a real person and links to whatever they have online: a blog, a project, or just a small site they made.
 
 ... from https://pxlarea.com/#about
