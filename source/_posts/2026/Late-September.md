@@ -18,11 +18,11 @@ related:
   - Sunny-July
 syndication:
   - site: Bubbles
-    url: 
+    url: https://bubbles.town/entry/44792284
   - site: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/117344310375688867
   - site: Pixelfed
-    url: 
+    url: https://pixelfed.social/p/kristofz/1009891379193564144
 ---
 
 The last few days of September, and summer is showing one last time what it's capable of this year: 28 degrees Celsius. People are flooding the city in T-shirts, the parks are packed, and scooters are rattling through the streets. Oh, how I'm going to miss this...
