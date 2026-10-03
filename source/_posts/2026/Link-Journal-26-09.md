@@ -18,7 +18,7 @@ related:
   - Link-Journal-26-06
 syndication:
   - site: Bubbles
-    url: 
+    url: https://bubbles.town/entry/44795607
 ---
 
 Over the past month of September, I've collected 12 links for my link journal.
