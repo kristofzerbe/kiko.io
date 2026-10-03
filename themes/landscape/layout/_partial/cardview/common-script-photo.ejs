@@ -13,12 +13,12 @@
   function showPhoto(item) {
     item.style.display = null;
     setTimeout(() => {
-      item.classList.remove("hide");
+      item.classList.remove("conceal");
       item.querySelector("a.card-img").classList.add("spotlight");
     }, 250);
   }
   function hidePhoto(item) {
-    item.classList.add("hide");
+    item.classList.add("conceal");
     setTimeout(() => {
       item.style.display = "none";
       item.querySelector("a.card-img").classList.remove("spotlight");

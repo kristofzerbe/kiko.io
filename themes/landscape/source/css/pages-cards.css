@@ -183,9 +183,15 @@ h1.page-title + .cardset .cardview {
 
 /* ------------ */
 
-.cards .card.hide,
-.cards .card.trans {
-  transform: scale(0);
+.cards .card {
+  /* transform: scale(1); */
+  opacity: 1;
+  transition: opacity .25s ease;
+              /* transform .25s ease,*/
+}
+
+.cards .card.conceal {
+  /* transform: scale(0); */
   opacity: 0;
 }
 
