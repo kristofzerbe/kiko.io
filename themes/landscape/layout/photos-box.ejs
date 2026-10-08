@@ -2,7 +2,7 @@
   <%- partial('_partial/photograph') %>
 <% } %>
 
-<%- partial('_partial/nav-index-photos', { currentClass: "skip-right" }) %>
+<%- partial('_partial/nav-photos', { currentClass: "skip-right" }) %>
 
 <h1 class="page-title">
   <small>Photos</small>
@@ -21,7 +21,7 @@
 
   <hr class="divider" />
 
-  <div class="cards grid">
+  <div class="cards grid" data-long-press-delay="3000">
     <% for(var i=0; i < page.photos.length; i++) { %>
       <%- partial('_partial/photo-item', { item: page.photos[i] }) %>
     <% } %>
@@ -30,16 +30,20 @@
 
 <%- partial('_partial/cardview/common-script-photo') %>
 <script>
-
   function setView() {
     setView_Provision();
     setView_Sorting();
   }
-
   setTimeout(function() { //Hack for returning from external to page
     setView();
   }, 500)
+</script>
 
+<%- js('js/dist/long-press-event.min.js') %>
+<script>
+  window.addEventListener('load', () => {
+    initPhotoSelection();
+  });
 </script>
 
 <% if (page.posts && page.posts.length > 0) { %>

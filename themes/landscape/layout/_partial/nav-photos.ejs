@@ -1,0 +1,30 @@
+<% let iconDir = process.cwd() + '/static/images/icons/' %>
+<nav class="page-nav">
+
+<% if (page.name === "photos") { %>
+  <a href="/photos" class="current <%= currentClass %>"><%- include(iconDir + "black-diamond.svg") %></a>
+<% } else { %>
+  <a href="/photos">Photos</a>
+<% } %>
+
+<% if (page.name === "photos-shed") { %>
+  <a href="/photos/shed" class="current <%= currentClass %>"><%- include(iconDir + "black-diamond.svg") %></a>
+<% } else { %>
+  <a href="/photos/shed">Shed</a>
+<% } %>
+
+<% if (page.name === "photos-map") { %>
+  <a href="/photos/map" class="current <%= currentClass %>"><%- include(iconDir + "black-diamond.svg") %></a>
+<% } else { %>
+  <a href="/photos/map">Map</a>
+<% } %>
+
+<% if (page.name.startsWith("photos-box")) { %>
+  <a href="/photos/map" class="current <%= currentClass %>"><%- include(iconDir + "black-diamond.svg") %></a>
+<% } else { %>
+  <a href="/photos/boxes">Boxes</a>
+<% } %>
+
+<a href="/photos/selected" id="page-nav-photos-selected" style="display:none;">0</a>
+
+</nav>

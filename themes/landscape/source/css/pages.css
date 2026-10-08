@@ -118,7 +118,7 @@ h2.page-subtitle {
 
 /* ------------------------------------------------------- */
 
-nav.page-index {
+nav.page-nav {
   float: right;
   list-style-type: none;
   display: flex;
@@ -128,12 +128,12 @@ nav.page-index {
   margin: 0 calc(var(--space-small) * -1);
 }
 @media screen and (min-width:768px) {
-  nav.page-index {
+  nav.page-nav {
     margin: 0;
   }
 }
 
-nav.page-index a {
+nav.page-nav a {
   flex: 0 0 auto;
   display: block;
   margin: 0;
@@ -145,7 +145,7 @@ nav.page-index a {
   background-color: transparent;
   color: var(--color-button-text);
 }
-nav.page-index a.current {
+nav.page-nav a.current {
   font-size: var(--font-size-normal);
   background: var(--color-accent);
   border-radius: 0 0 var(--border-radius-small) var(--border-radius-small);
@@ -154,31 +154,40 @@ nav.page-index a.current {
   padding-inline: var(--space-median);
   margin-inline: var(--space-small);
 }
-nav.page-index a.current svg#diamond {
+nav.page-nav a.current svg#diamond {
   display: block;
   width: 16px;
   height: 16px;
   fill: currentColor;
   margin: 2px auto 0;
 }
-nav.page-index a.current.skip-right svg#diamond rect#diamond-right {
+nav.page-nav a.current.skip-right svg#diamond rect#diamond-right {
   display: none;
 }
-nav.page-index a:not(.current):hover {
+nav.page-nav a:not(.current):hover {
   color: var(--color-accent-text);
 }
 
-nav.page-index a.next::after,
-nav.page-index a.prev:before {
+nav.page-nav a.next::after,
+nav.page-nav a.prev:before {
   font-size: var(--font-size-medium-extra);
 }
-nav.page-index a.prev:before {
+nav.page-nav a.prev:before {
   content: "\276E";
   margin-right: 10px;
 }
-nav.page-index a.next::after {
+nav.page-nav a.next::after {
   content: "\276F";
   margin-left: 10px;
+}
+
+nav.page-nav a#page-nav-photos-selected {
+  background-color: var(--color-select);
+  color: var(--color-logo);
+  min-width: var(--space-medium);
+  margin-inline-start: var(--space-small);
+  text-align: center;
+  border-radius: 0 0 var(--border-radius-small) var(--border-radius-small);
 }
 
 /* ------------------------------------------------------- */

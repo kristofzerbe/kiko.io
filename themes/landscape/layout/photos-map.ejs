@@ -5,7 +5,7 @@
   <%- partial('_partial/photograph') %>
 <% } %>
 
-<%- partial('_partial/nav-index-photos', { currentClass: "" }) %>
+<%- partial('_partial/nav-photos', { currentClass: "" }) %>
 
 <h1 class="page-title">
   <small>Photos</small>
@@ -64,5 +64,11 @@
         .addTo(map)
         .bindPopup(popup, options);
     });
+  });
+</script>
+
+<script>
+  window.addEventListener('load', () => {
+    indicateSelectedPhotos();
   });
 </script>

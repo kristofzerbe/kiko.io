@@ -8,7 +8,7 @@
     "genwarning": "npx cross-env NODE_OPTIONS=--trace-deprecation hexo generate",
     "start": "grunt && node lib/download-blogroll-feeds.cjs && hexo generate && npx pagefind && hexo server",
     "refresh": "hexo clean && hexo generate",
-    "go": "node lib/extract_asset_photo_metas.cjs && node lib/download-blogroll-feeds.cjs && hexo generate && hexo server",
+    "go": "grunt && node lib/extract_asset_photo_metas.cjs && node lib/download-blogroll-feeds.cjs && hexo generate && hexo server",
     "blog": "hexo generate && hexo server",
     "feeds": "node lib/download-blogroll-feeds.cjs",
     "all": "grunt && node lib/download-blogroll-feeds.cjs && hexo clean && hexo generate && npx pagefind && hexo server",

@@ -170,8 +170,8 @@ function initHeader() {
   header.photoLinkOpacity = parseFloat($("#header-photo-link").css("opacity"));
   header.titleFontSize = parseFloat($("#title-wrap").css("font-size"));
 
-  if (document.querySelector(".page-index") != null) {
-    document.getElementById("header-nav").classList.add("has-nav-index");
+  if (document.querySelector(".page-nav") != null) {
+    document.getElementById("header-nav").classList.add("has-page-nav");
   }
 
   _scDelta = null;
@@ -425,6 +425,58 @@ function bindWebmentionSending(formName) {
 
   var myform = document.getElementsByName(formName)[0];
   myform.addEventListener("submit", submitWebmention);
+}
+
+/** ============================================================ */
+
+function initPhotoSelection() {
+  let photosSelected = indicateSelectedPhotos();
+  
+  let cards = document.querySelectorAll(".card.photo");
+  cards.forEach(el => {   
+    if (photosSelected.some(photo => photo.file === el.dataset.file)) {
+      el.classList.add("selected");
+    }
+
+    el.addEventListener('long-press', e => {
+      e.preventDefault()
+      selectPhoto(el);
+    });
+  });
+}
+
+function selectPhoto(el) {
+  let photosSelected = JSON.parse(localStorage.getItem("photosSelected") || "[]");
+
+  if (el.classList.contains("selected")) {
+    el.classList.remove("selected");
+    photosSelected = photosSelected.filter(e => e.file !== el.dataset.file); //remove item by filtering out
+  } else {
+    el.classList.add("selected");
+    let photo = {
+      file: el.dataset.file
+    }
+    photosSelected.push(photo);
+  }
+
+  localStorage.setItem("photosSelected", JSON.stringify(photosSelected));
+
+  indicateSelectedPhotos(photosSelected);
+}
+
+function indicateSelectedPhotos(photosSelected) {
+  if (!photosSelected) photosSelected = JSON.parse(localStorage.getItem("photosSelected") || "[]");
+  
+  let el = document.getElementById("page-nav-photos-selected");
+  if (el) { 
+    if (photosSelected.length > 0) {
+      el.textContent = photosSelected.length;
+      el.style.display = "block";
+    } else {
+      el.style.display = "none";
+    }
+  }
+  return photosSelected;
 }
 
 /** ============================================================ */

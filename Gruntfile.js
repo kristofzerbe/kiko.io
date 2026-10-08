@@ -169,6 +169,12 @@ module.exports = function(grunt){
         cwd: 'node_modules/tinycolor2/dist',
         src: [ 'tinycolor-min.js' ],
         dest: 'themes/landscape/source/js/dist'
+      },
+      longpress: {
+        expand: true,
+        cwd: 'themes/landscape/assets/long-press-event',
+        src: [ 'long-press-event.min.js' ],
+        dest: 'themes/landscape/source/js/dist'
       }
     },
     hexo: {
