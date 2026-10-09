@@ -439,7 +439,7 @@ function initPhotoSelection() {
     }
 
     el.querySelector(".pre-title").addEventListener('long-press', e => {
-      e.preventDefault()
+      //e.preventDefault()
       selectPhoto(el);
     });
   });
