@@ -438,7 +438,7 @@ function initPhotoSelection() {
       el.classList.add("selected");
     }
 
-    el.addEventListener('long-press', e => {
+    el.querySelector(".pre-title").addEventListener('long-press', e => {
       e.preventDefault()
       selectPhoto(el);
     });
@@ -454,7 +454,8 @@ function selectPhoto(el) {
   } else {
     el.classList.add("selected");
     let photo = {
-      file: el.dataset.file
+      file: el.dataset.file,
+      html: minifyHtml(el.outerHTML)
     }
     photosSelected.push(photo);
   }

@@ -151,3 +151,10 @@ function htmlencode(str) {
       return "&" + {"&":"amp", "<":"lt", ">":"gt", '"':"quot", "'":"#39"}[$0] + ";";
   });
 }
+
+function minifyHtml(s){
+  return s
+    .replace(/\>[\r\n ]+\</g, "><")
+    .replace(/(<.*?>)|\s+/g, (m, $1) => $1 ? $1 : ' ')
+    .trim()
+}
