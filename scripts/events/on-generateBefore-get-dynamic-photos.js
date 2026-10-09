@@ -243,6 +243,14 @@ hexo.on('generateBefore', function() {
     pages["photosbox-" + box.key] = box;
   });
 
+  // PHOTOS SELECTED page --------------------------------------------------------------
+
+  let selected = { name: "photos-selected" };
+  let mdSelected = path.join("_dynamic", selected.name + ".md");
+  selected = getMD(hexo, mdSelected, selected);
+
+  pages.photosselected = selected;
+
   // individual PHOTO pages --------------------------------------------------------------
   let photoPages = photosPublic
     .filter(p => (p.name)) //filter out all without photo name

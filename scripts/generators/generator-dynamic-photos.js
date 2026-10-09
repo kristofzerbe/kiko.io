@@ -39,6 +39,14 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
     layout: "photos-boxes"
   });
 
+  // photos selected page
+  let selected = locals.dynamic.photosselected;
+  result.push({
+    data: selected,
+    path: path.join(selected.permalink, "index.html"),
+    layout: "photos-selected"
+  });
+
   // photo & photos box pages
   Object.keys(locals.dynamic).forEach(function(key,index) {
 

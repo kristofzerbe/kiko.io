@@ -1,0 +1,48 @@
+<% if (page.photograph){ %>
+  <%- partial('_partial/photograph') %>
+<% } %>
+
+<%- partial('_partial/nav-photos', { currentClass: "skip-right" }) %>
+
+<h1 class="page-title">
+  <small>Photos</small>
+  Selected
+</h1>
+
+<!-- <div class="page-content"></div> -->
+
+<div class="cardset">
+
+  <div class="cardview">
+    <p>You have selected <span class="cardcount">0</span> photos from this website</p>
+    <button class="clear-photos" onclick="clearPhotosSelected();" style="display:none; margin-top: 1em;">Clear</button>
+  </div>
+  
+  <hr class="divider" />
+
+  <div class="cards grid" data-long-press-delay="2000"></div>
+
+</div>
+
+<%- js('js/dist/long-press-event.min.js') %>
+<script>
+  window.addEventListener('load', () => {
+    let cardCount = document.querySelector(".cardcount");
+    let cards = document.querySelector(".cards");
+
+    let photosSelected = indicateSelectedPhotos();
+    photosSelected.forEach(elm => {
+      const template = document.createElement('template');
+      template.innerHTML = elm.html;
+      cards.appendChild(template.content.firstChild);
+      document.querySelector(".clear-photos").style.display = "block";
+    });
+    cardCount.textContent = photosSelected.length; 
+
+    initPhotoSelection(photosSelected);
+  });
+  function clearPhotosSelected() {
+    localStorage.removeItem("photosSelected");
+    window.location.reload();
+  }
+</script>

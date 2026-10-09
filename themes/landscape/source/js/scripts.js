@@ -429,8 +429,8 @@ function bindWebmentionSending(formName) {
 
 /** ============================================================ */
 
-function initPhotoSelection() {
-  let photosSelected = indicateSelectedPhotos();
+function initPhotoSelection(photosSelected) {
+  if (!photosSelected) photosSelected = indicateSelectedPhotos();
   
   let cards = document.querySelectorAll(".card.photo");
   cards.forEach(el => {   
@@ -438,7 +438,7 @@ function initPhotoSelection() {
       el.classList.add("selected");
     }
 
-    el.querySelector(".pre-title").addEventListener('long-press', e => {
+    el.addEventListener('long-press', e => {
       e.preventDefault()
       selectPhoto(el);
     });

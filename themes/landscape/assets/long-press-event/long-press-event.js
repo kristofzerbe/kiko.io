@@ -1,8 +1,5 @@
 /*!
  * long-press-event - v@version@
- * CHANGES for kiko.io:
- * - 26-10-09: comment line 268 - context-menu default
- * 
  * Pure JavaScript long-press-event
  * https://github.com/john-doherty/long-press-event
  * @author John Doherty <www.johndoherty.info>
@@ -265,7 +262,7 @@
 
         // on touch devices, prevent the native context menu and keep the long-press timer running
         if (isTouch) { 
-            //e.preventDefault();
+            e.preventDefault();
             return;
         }
 
