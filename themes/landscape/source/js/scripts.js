@@ -25,7 +25,7 @@ function initAnchorListItems() {
   $("body.article-view ul.anchorlist li").each(function (i, el) {
     var anchor = $(this).data("anchor");
     var text = $(this).text();
-    el.innerHTML = '<a href="' + anchor + '">' + htmlencode(text) + "</a>";
+    el.innerHTML = '<a href="' + anchor + '">' + encodeHtml(text) + "</a>";
   });  
 }
 initAnchorListItems();
@@ -439,7 +439,7 @@ function initPhotoSelection() {
     }
 
     el.querySelector(".pre-title").addEventListener('long-press', e => {
-      //e.preventDefault()
+      e.preventDefault()
       selectPhoto(el);
     });
   });

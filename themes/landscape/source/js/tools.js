@@ -146,7 +146,7 @@ function formatFileSize(size) {
   return (size / Math.pow(1024, i)).toFixed(2) * 1 + ' ' + ['B', 'KB', 'MB', 'GB', 'TB'][i];
 }
 
-function htmlencode(str) {
+function encodeHtml(str) {
   return str.replace(/[&<>"']/g, function($0) {
       return "&" + {"&":"amp", "<":"lt", ">":"gt", '"':"quot", "'":"#39"}[$0] + ";";
   });
