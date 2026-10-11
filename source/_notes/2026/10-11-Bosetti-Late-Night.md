@@ -3,9 +3,9 @@ title: We are being played against each other
 date: 2026-10-11 10:12
 syndication: 
 - site: Mastodon
-  url: 
+  url: https://indieweb.social/@kiko/117421796663177727
 - site: Bubbles
-  url: 
+  url: https://bubbles.town/entry/44799743
 ---
 
 That's pretty much the best text published following the election of the German far-right party to the state parliament of Saxony-Anhalt a few weeks ago.
