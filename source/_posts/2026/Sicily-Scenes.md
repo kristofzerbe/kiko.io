@@ -40,7 +40,6 @@ There are insights, vistas, glimpses and perspectives that don't fit into any pa
 ---
 
 {% photo_masonry
-"26-05-Sizilien-030-D50"
 "26-05-Sizilien-130-D50"
 "26-05-Sizilien-115-D50"
 "26-05-Sizilien-181-D50"
