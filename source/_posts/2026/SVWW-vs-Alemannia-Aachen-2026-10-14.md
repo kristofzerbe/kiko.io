@@ -21,9 +21,7 @@ related:
   - SVWW-vs-Waldhof-Mannheim-2026-09-13
 syndication:
   - site: Bubbles
-    url: 
-  - site: Mastodon
-    url: 
+    url: https://bubbles.town/entry/44803257
 ---
 
 {% match_grid "SV-Wehen-Wiesbaden" "3:0" "Alemannia-Aachen" %}
