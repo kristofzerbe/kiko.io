@@ -2,7 +2,7 @@
  * Mentions United Provider plugin class for retreiving interactions from Mastodon
  * 
  * @author Kristof Zerbe
- * @version 1.1.0
+ * @version 1.1.1
  * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub} 
  * 
  * API Documentation: https://docs.joinmastodon.org/client/intro/
@@ -87,6 +87,17 @@ class MentionsUnitedProvider_Mastodon extends MentionsUnited.Provider {
       const apiResponseReblogged = await fetch(this.rebloggedApiUrl(), fetchOptions);
       const apiDataReblogged = await apiResponseReblogged.json();
       interactionsReblogged = this.#processJsonData(apiDataReblogged ?? [], "repost");        
+
+      let nextRebloggedApiUrl = null;
+      do {
+        nextRebloggedApiUrl = this.#getPaginatedUrlFromResponse(apiResponseReblogged);
+        if (nextRebloggedApiUrl !== null) {
+          apiResponseReblogged = await fetch(nextRebloggedApiUrl, fetchOptions);
+          apiDataReblogged = await apiResponseReblogged.json();
+          interactionsReblogged = [...interactionsReblogged, ...this.#processJsonData(apiDataReblogged ?? [], "like")];
+          args.fCount();
+        }
+      } while (nextRebloggedApiUrl !== null);
     } 
     catch (e) { console.error(e); }
     finally { args.fCount(); }
@@ -94,9 +105,20 @@ class MentionsUnitedProvider_Mastodon extends MentionsUnited.Provider {
     // 2 - Likes
     let interactionsFavorited = [];
     try {
-      const apiResponseFavorited = await fetch(this.favoritedApiUrl(), fetchOptions);
-      const apiDataFavorited = await apiResponseFavorited.json();
-      interactionsFavorited = this.#processJsonData(apiDataFavorited ?? [], "like");        
+      let apiResponseFavorited = await fetch(this.favoritedApiUrl(), fetchOptions);
+      let apiDataFavorited = await apiResponseFavorited.json();
+      interactionsFavorited = this.#processJsonData(apiDataFavorited ?? [], "like");
+
+      let nextFavoritedApiUrl = null;
+      do {
+        nextFavoritedApiUrl = this.#getPaginatedUrlFromResponse(apiResponseFavorited);
+        if (nextFavoritedApiUrl !== null) {
+          apiResponseFavorited = await fetch(nextFavoritedApiUrl, fetchOptions);
+          apiDataFavorited = await apiResponseFavorited.json();
+          interactionsFavorited = [...interactionsFavorited, ...this.#processJsonData(apiDataFavorited ?? [], "like")];
+          args.fCount();
+        }
+      } while (nextFavoritedApiUrl !== null);
     } 
     catch (e) { console.error(e); }
     finally { args.fCount(); }
@@ -120,6 +142,19 @@ class MentionsUnitedProvider_Mastodon extends MentionsUnited.Provider {
   contextApiUrl() { return `${this.options.apiBaseUrl}/api/v1/statuses/${this.sourceId}/context` };
   favoritedApiUrl() { return `${this.options.apiBaseUrl}/api/v1/statuses/${this.sourceId}/favourited_by`; }
   rebloggedApiUrl() { return `${this.options.apiBaseUrl}/api/v1/statuses/${this.sourceId}/reblogged_by`; }
+
+  /**
+   * Get next paginated url from response header
+   * (see https://docs.joinmastodon.org/api/guidelines/#pagination)
+   * @param {*} response 
+   * @returns {String} url
+   */
+  #getPaginatedUrlFromResponse(response) {
+    const link = response.headers.get("link");
+    const match = link.match(/<([^>]+)>;\s*rel="next"/);
+    const nextUrl = match ? match[1] : null;
+    return nextUrl;
+  }
 
   /**
    * Processes retrieved JSON data into flat array of Interaction 
@@ -170,4 +205,5 @@ class MentionsUnitedProvider_Mastodon extends MentionsUnited.Provider {
  * 
  * 1.0.0 - Initial
  * 1.1.0 - Added args.fCount() to count requests
+ * 1.1.1 - Added pagination for favourites and reblogged
  */
