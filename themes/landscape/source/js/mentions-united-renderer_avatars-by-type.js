@@ -2,7 +2,7 @@
  * Mentions United Renderer plugin for displaying Interactions of specific type as avatars only
  * 
  * @author Kristof Zerbe
- * @version 1.1.0
+ * @version 1.1.1
  * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub}
  * 
  * Options:
@@ -56,7 +56,8 @@ class MentionsUnitedRenderer_AvatarsByType extends MentionsUnited.Renderer {
     const templates = new this.#Templates(this.helper);
 
     let listHtml = templates.avatar_list({
-      typeVerbPlural: this.#getPluralType(this.options.typeVerb)
+      typeVerbPlural: this.#getPluralType(this.options.typeVerb),
+      iaCount: typeInteractions.length
     });
     let listElement = this.helper.createElementFromHtml(listHtml);
 
@@ -107,7 +108,7 @@ class MentionsUnitedRenderer_AvatarsByType extends MentionsUnited.Renderer {
       return this.helper.fillLiteralTemplate(
         `
         <div class="interactions-avatars type-${data.typeVerbPlural.toLowerCase()}">
-          <h3>${data.typeVerbPlural}</h3>
+          <h3>${data.typeVerbPlural}<span>: ${data.iaCount}</span></h3>
         </div>
         `,
         data
@@ -139,4 +140,5 @@ class MentionsUnitedRenderer_AvatarsByType extends MentionsUnited.Renderer {
  * 
  * 1.0.0 - Initial
  * 1.1.0 - Changed render arguments
+ * 1.1.1 - Added interaction count to header
  */
