@@ -43,7 +43,7 @@ Ja, es war ein wirklich richtig gutes Spiel und wir haben damit gleich zwei Reko
 Das bemerkenswerte waren aber nicht allein die Tore, sondern die Defensivleistung in Kombination mit einer neuen Agressivität und Zielstrebigkeit nach vorne. Es hat einfach richtig Spaß gemacht zuzuschauen und natürlich sind wir noch nicht Aufstiegskandidat und wir werden auch wieder schlechte Tage erwischen und Spiele verlieren, aber allein die Tatsache, das bei Marcus Müller endlich der Stürmerknoten geplatzt ist, macht mir Hoffnung im 101. Jahr des Vereins 2027 wieder gegen Bochum, Karlsruhe, Hannover oder Pauli in der zweiten Liga zu spielen.
 
 P.S.:
-Gerade ist das heutige Auswärtsspiel gegen **Verl** vorbei und wir haben wieder gewonnen: **1:3**! Sechs Spiele sind wir nun ungeschlagen! Ich glaube neuer Vereinsrekord für den besten Start eines neuen Trainers :D
+Gerade ist das heutige Auswärtsspiel gegen **Verl** vorbei und wir haben wieder gewonnen: **1:4**! Sechs Spiele sind wir nun ungeschlagen! Ich glaube neuer Vereinsrekord für den besten Start eines neuen Trainers :D
 
 ---
 

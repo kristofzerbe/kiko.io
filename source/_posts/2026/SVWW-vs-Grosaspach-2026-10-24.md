@@ -45,7 +45,7 @@ Yes, it was a really, really good game, and we broke two 3. Liga records in the 
 What was impressive wasn't just the goals, but the defensive performance combined with a newfound aggressiveness and determination on offense. It was just really exciting to watch, and of course we're not promotion contenders yet, and we'll have our share of bad days and lose games again, but the mere fact that Marcus Müller has finally broken his scoring drought gives me hope that in the club's 101st year, in 2027, we'll be playing against Bochum, Karlsruhe, Hannover, or Pauli in the second division again.
 
 P.S.:
-Today's away game against **Verl** just ended, and we won again: **1:3**! We are now unbeaten in six games! I think that's a new club record for the best start by a new coach :D
+Today's away game against **Verl** just ended, and we won again: **1:4**! We are now unbeaten in six games! I think that's a new club record for the best start by a new coach :D
 
 ---
 
