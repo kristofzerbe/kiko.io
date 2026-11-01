@@ -21,7 +21,7 @@ related:
   - SVWW-vs-MSV-Duisburg-2026-09-20
 syndication:
   - site: Bubbles
-    url: 
+    url: https://bubbles.town/entry/44811169
 ---
 
 {% match_grid "SV-Wehen-Wiesbaden" "7:1" "SG_Sonnenhof" %}
