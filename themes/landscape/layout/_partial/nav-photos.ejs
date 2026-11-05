@@ -25,6 +25,12 @@
   <a href="/photos/boxes">Boxes</a>
 <% } %>
 
+<% if (page.name.startsWith("photos-more")) { %>
+  <a href="/photos/more" class="current <%= currentClass %>"><%- include(iconDir + "black-diamond.svg") %></a>
+<% } else { %>
+  <a href="/photos/more" style="display:block;font-size:1.75rem;line-height:0.5rem;">...</a>
+<% } %>
+
 <a href="/photos/selected" id="page-nav-photos-selected" style="display:none;">0</a>
 
 </nav>

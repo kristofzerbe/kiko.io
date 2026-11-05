@@ -1,0 +1,28 @@
+<% if (page.photograph){ %>
+  <%- partial('_partial/photograph') %>
+<% } %>
+
+<%- partial('_partial/nav-photos', { currentClass: "" }) %>
+
+<h1 class="page-title">
+  <small>Photos</small>
+  More Stuff
+</h1>
+
+<div class="page-content">
+  <%- page.content %>
+
+  <hr class="divider" />
+
+  <section>
+    <h2><a href="/photos/fotovorschlag">Fotovorschlag</a></h2>
+    <p>
+      Under the Mastodon account <a href="https://mastodon.social/@FotoVorschlag">@FotoVorschlag</a>
+      and the hashtag <a href="https://mastodon.social/tags/FotoVorschlag">#FotoVorschlag</a> 
+      (German for 'Photo Suggestion') a bot posts every day a topic for which the people can
+      submit a photo. I've been contributing to this hashtag challenge since August 2026...
+    </p>
+  </section>
+
+</div>
+
