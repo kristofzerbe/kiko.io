@@ -25,7 +25,7 @@
   <a href="/photos/boxes">Boxes</a>
 <% } %>
 
-<% if (page.name.startsWith("photos-more")) { %>
+<% if (page.name === "photos-more" || page.name === "photos-fotovorschlag") { %>
   <a href="/photos/more" class="current <%= currentClass %>"><%- include(iconDir + "black-diamond.svg") %></a>
 <% } else { %>
   <a href="/photos/more" style="display:block;font-size:1.75rem;line-height:0.5rem;">...</a>

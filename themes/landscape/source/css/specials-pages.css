@@ -363,18 +363,25 @@ activity-graph {
 }
 
 .activity-graph-wrapper {
-  padding-bottom: var(--space-moderate) !important;
+  padding: var(--space-normal);
+  padding-bottom: var(--space-small) !important;
+}
+.activity-graph-wrapper.stats {
+  padding-bottom: var(--space-default) !important;
 }
 
-.activity-graph-wrapper figure {
+.activity-graph-wrapper.stats figure {
   direction: rtl;
 }
 .activity-graph-wrapper figure table {
   direction: ltr;
   margin-right: var(--space-small);
 }
-.activity-graph-wrapper figcaption { 
+.activity-graph-wrapper.stats figcaption {
   direction: ltr;
+}
+.activity-graph-wrapper figcaption { 
+  direction: rtl;
   padding-block-end: var(--space-small);
 }
 

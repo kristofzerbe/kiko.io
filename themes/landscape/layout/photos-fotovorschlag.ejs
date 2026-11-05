@@ -1,0 +1,41 @@
+<script type="module" src="/js/dist/activity-graph.min.js"></script>
+<%- css('css/dist/charts.min.css') %>
+
+<% if (page.photograph){ %>
+  <%- partial('_partial/photograph') %>
+<% } %>
+
+<%- partial('_partial/nav-photos', { currentClass: "skip-right" }) %>
+
+<h1 class="page-title">
+  <small>Photos</small>
+  Fotovorschlag
+</h1>
+
+<div class="page-content">
+  <%- page.content %>
+</div>
+
+<div class="activity-graph-wrapper">
+  <activity-graph
+    range-start="<%- page.dates[page.dates.length - 1] %>"
+    range-end="<%= page.dates[0] %>"
+    activity-data="<%- page.dates %>"
+    activity-levels="0,1"
+    first-day-of-week="1"
+    lang="en"
+    i18n='{"activities": "syndications", "less": "no", "more": "yes"}'>
+  </activity-graph>
+</div>
+
+<div class="cardset">
+
+  <hr class="divider" />
+
+  <div class="cards grid expanded">
+    <% for(var i=0; i < page.items.length; i++) { %>
+      <%- partial('_partial/photo-item', { item: page.items[i] }) %>
+    <% } %>
+  </div>
+  
+</div>

@@ -11,6 +11,19 @@
      data-title="<%- item.name %>"
      data-date-created="<%- item.meta?.DateTimeOriginal %>">
 
+  <% if (item.fotovorschlag) { %>
+    <div class="prehead">
+      <a class="link-mastodon" 
+         href="<%- item.fotovorschlag.replyto.url %>" 
+         title="Link Fotovorschlag"></a>
+      <strong><%- item.fotovorschlag.created %></strong>
+      <p>
+        <%- item.fotovorschlag.topic %><br>
+        <small><%- item.fotovorschlag.topic_en %></small>
+      </p>
+    </div>
+  <% } %>
+
   <% if (item.article){ %>
     <% if (item.article.hidden) { %>
       <span class="status <%- item.status %> <%- item.type %>">Used</span>

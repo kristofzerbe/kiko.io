@@ -47,6 +47,22 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
     layout: "photos-selected"
   });
 
+  // photos more page
+  let more = locals.dynamic.photosmore;
+  result.push({
+    data: more,
+    path: path.join(more.permalink, "index.html"),
+    layout: "photos-more"
+  });
+
+  // photos Fotovorschlag page
+  let fv = locals.dynamic.photosfv;
+  result.push({
+    data: fv,
+    path: path.join(fv.permalink, "index.html"),
+    layout: "photos-fotovorschlag"
+  });
+
   // photo & photos box pages
   Object.keys(locals.dynamic).forEach(function(key,index) {
 

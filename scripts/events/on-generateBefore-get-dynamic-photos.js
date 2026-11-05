@@ -5,6 +5,8 @@ const fs = require('hexo-fs');
 const front = require('hexo-front-matter');
 const { getHelpers, getMD, updateMDField, slugify } = require("../../lib/tools.cjs");
 
+const SynCollector_Fotovorschlag = require("../../lib/syn-collector-fotovorschlag.cjs").SynCollector_Fotovorschlag;
+
 const _helpers = getHelpers(hexo);
 const _rootDir = hexo.source_dir.replace("source", "");
 
@@ -54,21 +56,27 @@ hexo.on('generateBefore', function() {
 
   let photosPublic = [...photos, ...pShed];
 
-  // Set Camera (Product) and Year for stats
-  photosPublic.forEach((p) => {
+  let linksFV = [];
 
-    try {
-      let xxx = p.meta.custom;
-    } catch (error) {
-      console.log(p);
-    }
-    let cam = cameras.find(c => c.model === p.meta?.Model);
+  // Set Camera (Product) and Year for stats
+  // & Collect Fotovorschlag Links
+  photosPublic.forEach((p) => {
+    // try { let xxx = p.meta.custom; } catch (error) { console.log(p); }
+
+    const cam = cameras.find(c => c.model === p.meta?.Model);
     p.meta.custom.camera = cam ? cam.camera : p.meta?.Model ?? cameraUnknown;
     p.meta.custom.year = new Date(p.meta?.DateTimeOriginal ?? p.meta?.DateCreated).getFullYear();
-    //if (!cam) {
-      // console.log(p.meta.custom.year + ", " + p.meta.custom.name + " .. " + p.meta.custom.camera + " >>> " + p.meta?.Make + "/" + p.meta?.Model);
-    //}
+    //if (!cam) { console.log(p.meta.custom.year + ", " + p.meta.custom.name + " .. " + p.meta.custom.camera + " >>> " + p.meta?.Make + "/" + p.meta?.Model); }
+
+    const linkFV = p.meta?.custom?.links?.find(l => l.site === "mastodon" && l.title === "Fotovorschlag");
+    if (linkFV) { 
+      linkFV.key = p.key;
+      linksFV.push(linkFV); } 
   });
+
+  // process found Fotovorschlag links
+  const synCollectorFV = new SynCollector_Fotovorschlag(hexo, linksFV);
+  synCollectorFV.process();
 
   let newestPhotoDate = new Date(Math.max(...photos.map(p => new Date(p.date))));
   // console.log(newestPhotoDate);
@@ -229,7 +237,7 @@ hexo.on('generateBefore', function() {
 
   pages.photoboxes = boxes;
 
-  // PHOTO BOX pages ---------------------------------------------------------------------
+  // PHOTO BOX pages -------------------------------------------------------------------
   let boxTemplate = { name: "photos-box" };
   let mdBox = path.join("_dynamic", boxTemplate.name + ".md");
   boxTemplate = getMD(hexo, mdBox, boxTemplate);
@@ -244,14 +252,46 @@ hexo.on('generateBefore', function() {
   });
 
   // PHOTOS SELECTED page --------------------------------------------------------------
-
   let selected = { name: "photos-selected" };
   let mdSelected = path.join("_dynamic", selected.name + ".md");
   selected = getMD(hexo, mdSelected, selected);
-
   pages.photosselected = selected;
 
-  // individual PHOTO pages --------------------------------------------------------------
+  // PHOTOS MORE page ------------------------------------------------------------------
+  let more = { name: "photos-more" };
+  let mdMore = path.join("_dynamic", more.name + ".md");
+  more = getMD(hexo, mdMore, more);
+  pages.photosmore = more;
+
+  // PHOTOS Fotovorschlag page ------------------------------------------------------------------
+  // (get data)
+  let fvFile = path.join(_rootDir, config.static_dir, "photo-syn-fotovorschlag.json");
+  let fvJson;
+  if (fs.existsSync(fvFile)) {
+    fvJson = JSON.parse(fs.readFileSync(fvFile));
+  }
+  // (get photos)
+  let fvItems = [];
+  fvJson.syndications.forEach((fvs) => {
+    let fvPhoto = photosPublic.find(p => p.key === fvs.key);
+    if (fvPhoto) {
+      const fvPhotoClone = JSON.parse(JSON.stringify(fvPhoto));
+      fvPhotoClone.fotovorschlag = fvs;
+      fvItems.push(fvPhotoClone);
+    }
+  });
+  // -----
+  let fv = { name: "photos-fotovorschlag" };
+  let mdFV = path.join("_dynamic", fv.name + ".md");
+  fv = getMD(hexo, mdFV, fv);
+  fv.items = fvItems;
+  fv.dates = fvJson.syndications.map(s => s.created);
+  fv.content = fv.content
+    .replace("{% items.count %}", fvItems.length);
+  pages.photosfv = fv;
+
+
+  // individual PHOTO pages ------------------------------------------------------------
   let photoPages = photosPublic
     .filter(p => (p.name)) //filter out all without photo name
 
@@ -749,6 +789,6 @@ function getPostAssetPhotos(postAssetString, boxTitle) {
       }
     });
 
-  log.info("-> " + magenta(assets.length) + " asset photos in " + magenta(post?.slug));
+  log.info("-> " + magenta(assets.length) + " asset photos in " + magenta(post?.slug ?? assetDir));
   return { post, assets };
 }

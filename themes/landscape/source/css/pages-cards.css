@@ -364,9 +364,44 @@ h1.page-title + .cardset .cardview {
 /* ------------ */
 
 .cards.grid .card.photo {
-  grid-template-rows: auto auto 2rem 1fr 2rem;
+  grid-template-rows: auto auto auto 1fr 2rem;
   grid-template-areas: "image" "pretitle" "links" "title" "status";
   padding: var(--space-medium) var(--space-medium) 0;
+}
+
+.cards.grid.expanded .card.photo {
+    grid-template-rows: auto auto auto 1fr 4rem;
+    grid-template-areas: "prehead" "image" "pretitle" "links" "title" "status";  
+}
+.cards.grid.expanded .card.photo div.prehead {
+    margin: calc(var(--space-medium) * -1);
+    margin-bottom: calc(var(--space-medium) - var(--border-radius-normal));
+    padding: var(--space-small) var(--space-medium) var(--space-default);
+    background-color: var(--color-background);
+    box-shadow: inset 0 -20px 10px -10px var(--color-border);  
+}
+.cards.grid.expanded .card.photo div.prehead strong {
+    display: block;
+    line-height: var(--line-height-title);
+    font-size: var(--font-size-default);
+}
+.cards.grid.expanded .card.photo div.prehead p {
+    font-size: var(--font-size-medium);
+    line-height: var(--line-height-small);
+}
+.cards.grid.expanded .card.photo div.prehead p small {
+    line-height: var(--line-height-thin);
+    margin-top: var(--space-thin);
+    opacity: 0.5;
+}
+.cards.grid.expanded .card.photo div.prehead a.link-mastodon {
+  position: absolute;
+  top: var(--space-medium);
+  right: var(--space-medium);
+  width: var(--space-medium);
+  height: var(--space-medium);
+  background-image: var(--brand-mastodon);
+  background-repeat: no-repeat;
 }
 
 .cards.grid .card.photo .card-img {
