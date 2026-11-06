@@ -68,7 +68,7 @@ hexo.on('generateBefore', function() {
     p.meta.custom.year = new Date(p.meta?.DateTimeOriginal ?? p.meta?.DateCreated).getFullYear();
     //if (!cam) { console.log(p.meta.custom.year + ", " + p.meta.custom.name + " .. " + p.meta.custom.camera + " >>> " + p.meta?.Make + "/" + p.meta?.Model); }
 
-    const linkFV = p.meta?.custom?.links?.find(l => l.site === "mastodon" && l.title === "Fotovorschlag");
+    const linkFV = p.meta?.custom?.links?.find(l => l.site === "mastodon" && l.title === "Fotovorschlag" && l.url.length > 0);
     if (linkFV) { 
       linkFV.key = p.key;
       linksFV.push(linkFV); } 
