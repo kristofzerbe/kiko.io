@@ -35,11 +35,11 @@ But we seized the opportunity and went to the Wasen before the concert, with MEG
 <!-- more -->
 
 {% photo_masonry
-  "PXL_20251003_143914294"
-  "PXL_20251003_152345894"
-  "PXL_20251003_152806688"
-  "PXL_20251003_153819650"
-  "PXL_20251003_161610193"
+  "PXL_20251003_143914294_Wasen"
+  "PXL_20251003_152345894_Wasen"
+  "PXL_20251003_152806688_Wasen"
+  "PXL_20251003_153819650_Wasen"
+  "PXL_20251003_161610193_Wasen"
   "PXL_20251003_170457157"
   "PXL_20251003_175535694"
   "PXL_20251003_185238137"
@@ -52,7 +52,7 @@ But we seized the opportunity and went to the Wasen before the concert, with MEG
   "PXL_20251003_205511647"
   "PXL_20251003_210012998"
   "PXL_20251003_213508673"
-  "PXL_20251003_214837454"
+  "PXL_20251003_214837454_Wasen"
 %}
 
 Of course, songs like *Stupify* and *Violence Fetish* are among my all-time favourites, but *The Sound of Silence* is such a masterpiece, that even Paul Simon himself is said to have called the best interpretation he has ever heard. And live, it's only slightly less good than on the album:
