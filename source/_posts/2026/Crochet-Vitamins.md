@@ -17,11 +17,11 @@ related:
   - New-European-Banknotes
 syndication:
   - site: Bubbles
-    url: null
+    url: https://bubbles.town/entry/44815801
   - site: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/117583185592412341
   - site: Pixelfed
-    url: 
+    url: https://pixelfed.social/p/kristofz/1025173862695051360
 ---
 
 My sweetheart is crocheting again, and when she does, it's usually a major endeavour that takes several weeks. This time is no exception. A friend of hers wants to gift her daughter a very special Advent calendar featuring crocheted fruit and vegetables, but she doesn't really know how to crochet. The problem is… a calendar like that has 24 little doors ;)
