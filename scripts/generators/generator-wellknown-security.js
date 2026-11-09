@@ -9,12 +9,10 @@ hexo.extend.generator.register("wellknown-security", function() {
   const expires = new Date();
   expires.setMonth(6);
 
-  let content = `
-Contact: mailto:${hexo.config.email}
+  let content = `Contact: mailto:${hexo.config.email}
 Expires: ${expires.toISOString()}
 Preferred-Languages: de,en
-Canonical: ${hexo.config.url}/${_path}
-  `
+Canonical: ${hexo.config.url}/${_path}`;
 
   return {
     path: _path,

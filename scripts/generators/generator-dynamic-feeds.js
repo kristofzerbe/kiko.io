@@ -83,9 +83,9 @@ hexo.extend.generator.register("dynamic-feeds", async function(locals) {
   let result = [];
 
   result.push({
-      data: page,
-      path: path.join(page.permalink, "index.html"),
-      layout: "feeds"
+    data: page,
+    path: path.join(page.permalink, "index.html"),
+    layout: "feeds"
   });
 
   //Render Feed OPML by template and add to result

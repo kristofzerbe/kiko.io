@@ -11,10 +11,6 @@ caption: "/About"
 teaser: "On this page I tell you a little bit about myself..."
 ---
 
-<a id="contact-Link" href="javascript:dialog.contact();" class="float-right">
-<img src="/images/contact-me.png" style="width:5rem;" />
-</a>
-
 I'm Kristof from the lovely snoring Wiesbaden, in sometimes too hot and most times to cold Germany.
 
 I love three things: Software Development, Photography and first and foremost the brightest star in my sky: Leni.
@@ -30,17 +26,17 @@ I'm a creative person and most people are shaking their heads in disbelief, when
 While learning a lot of stuff about business as an industrial clerk trainee at the German headquarter of [Prime Computer](https://de.wikipedia.org/wiki/Prime_Computer) around 1990 (the decent profession), there was a guy in the warehouse, Colin Urquhart, who was working with a new type of computer, a x68 machine from IBM and he taught me something about it and ignited my fascination about the possibilities of a computer.
 
 <div class="career">
-  <img src="logo-prime.png" />
-  <img src="logo-seperator.png" />
-  <img src="logo-fh-wiesbaden.png" />
-  <img src="logo-seperator.png" />
-  <img src="logo-division-by-zero.png" />
-  <img src="logo-seperator.png" />
-  <img src="logo-goetzfried.png" />
-  <img src="logo-seperator.png" />
-  <img src="logo-allgeier-experts.png" />
-  <img src="logo-seperator.png" />
-  <img src="logo-svg.png" />
+<img src="logo-prime.png" />
+<img src="logo-seperator.png" />
+<img src="logo-fh-wiesbaden.png" />
+<img src="logo-seperator.png" />
+<img src="logo-division-by-zero.png" />
+<img src="logo-seperator.png" />
+<img src="logo-goetzfried.png" />
+<img src="logo-seperator.png" />
+<img src="logo-allgeier-experts.png" />
+<img src="logo-seperator.png" />
+<img src="logo-svg.png" />
 </div>
 
 A little later I got in touch with a i386DX computer from Escom and started to fiddle around on how to achieve this or that under MS-DOS, installing Windows 3.x from a dozen of 3.5 discs, connecting via a 14.4k modem to the FidoNet (greets to all the guys from the 45er Infosystems) and talk shop with my fellow students at the [University of Applied Sciences, Wiesbaden](https://de.wikipedia.org/wiki/Hochschule_RheinMain), department of economics.
@@ -53,19 +49,15 @@ I'm still first and foremost fascinated by the technology on building software, 
 
 If you want to talk about the old, recent or new times in IT,  [contact me](javascript:dialog.contact();).
 
----
-
+<div class="profile-links">
+<hr class="divider" />
+  
 <img class="link invert github" src="/images/brands/github.svg" alt="GitHub" />
 
 **GitHub**
 [https://github.com/kristofzerbe](https://github.com/kristofzerbe)
 
 <img class="link invert devto" src="/images/brands/devto.svg" alt="DEV" />
-
-**DEV**
-[https://dev.to/kristofzerbe](https://dev.to/kristofzerbe)
-
-<img class="link xing" src="/images/brands/xing.svg" alt="Xing" />
 
 **Xing**
 [https://www.xing.com/profile/Kristof_Zerbe](https://www.xing.com/profile/Kristof_Zerbe)
@@ -74,7 +66,7 @@ If you want to talk about the old, recent or new times in IT,  [contact me](java
 
 **LinkedIn**
 [https://www.linkedin.com/in/kristof-zerbe-91012510](https://www.linkedin.com/in/kristof-zerbe-91012510)
-
+</div>
 </section>
 
 <section class="about">
@@ -87,7 +79,8 @@ Since then, I'm addicted to photography. I have even tried to become a photograp
 
 Today a have a lot of equipment, knowing that a good picture is done by the photographer and not by the camera, but it's part of the fun, carrying 3 ore more kilos around my shoulder, to grab the right lens for the right shot.
 
----
+<div class="profile-links">
+<hr class="divider" />
 
 <img class="link invert vernissage" src="/images/brands/vernissage.svg" alt="Vernissage" />
 
@@ -113,5 +106,6 @@ Today a have a lot of equipment, knowing that a good picture is done by the phot
 
 **500px**
 [https://500px.com/p/kikon](https://500px.com/p/kikon)
+</div>
 
 </section>

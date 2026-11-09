@@ -78,69 +78,9 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
       });  
 
     }
-
-    // promises.push(new Promise((resolve, reject) => {
-    //   //log.info("Request latest post from " + blue(item.title));
-
-    //   axios.get(item.feed, { 
-    //     validateStatus: () => true,
-    //     headers: { 'User-Agent': customUA } 
-    //   }).then(response => {
-    //     const contentLen = response.headers?.['content-length'];
-    //     const dataLen = response.data.length;
-    //     const feedSize = (contentLen || dataLen) / 1024;
-    //     if (feedSize > 1024) {
-    //       item.feedSize = `${(feedSize / 1024).toFixed(2)} MB`;
-    //     } else {
-    //       item.feedSize = `${feedSize.toFixed(2)} KB`
-    //     }
-    //     //console.log(item.title + ": " + item.feedSize);
-    //     //console.log(response.status);
-        
-    //     if (response.status === 200) {
-    //       feed2json.fromString(response.data, item.feed, (error, json) => {
-          
-    //         if (!error) {
-    //           // json.items.sort((a,b) => a.date_published - b.date_published).reverse();
-    //           json.items.sort((a,b) => _helpers.moment(a.date_published).diff(b.date_published)).reverse();
-  
-    //           item.feedLength = json.items.length;
-              
-    //           let feedItem = json.items[0];
-    //           if (feedItem) {
-    //             item.latest_post = {
-    //               "url": feedItem.url,
-    //               "title": feedItem.title || "- no title -",
-    //               "date_published": feedItem.date_published,
-    //               "today_delta": getDeltaFromToday(feedItem.date_published)
-    //             };
-    //             //console.log(feedItem.date_published + " > " + getDeltaFromToday(feedItem.date_published));
-    //             //console.log(item.title + ": " + item.latest_post.title);  
-    //           }
-    //         } else {
-    //           log.error("Parsing feed from " + item.title + " failed");
-    //         }
-    //       });  
-    //     } else {
-    //       log.error("Fetching feed from " + item.title + " responded with status " + response.status);
-    //       item.errorStatus = response.status;
-    //       if (item.errorStatus === 403) {
-    //         //console.log(response); 
-    //       }
-    //     }
-    //     resolve(); 
-    //   }).catch(err => {
-    //     log.error("Fetching feed from " + item.title + " failed");
-    //     //console.log(err);
-    //     resolve(); // Resolve anyway, to suppress errors
-    //   });
-    // }));
   });
 
   let result = [];
-
-  // Resolve all promises
-  //return Promise.all(promises).then(function() {
 
     // Render Blogroll
     result.push({
@@ -157,7 +97,7 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
 
     handlebars.registerHelper('toISOString', function(number) {
       return number.toISOString()
-    })
+    });
     
     const opmlSource = fs.readFileSync(opmlTemplate).toString('utf8');
     const opml = handlebars.compile(opmlSource);
@@ -165,6 +105,12 @@ hexo.extend.generator.register("dynamic-blogroll", async function(locals) {
 
     result.push({
       path: config.blogroll.opml_path,
+      data: opmlResult
+    });
+
+    // for https://followspec.org
+    result.push({
+      path: config.blogroll.following_path,
       data: opmlResult
     });
 
