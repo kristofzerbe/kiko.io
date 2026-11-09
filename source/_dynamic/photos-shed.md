@@ -6,7 +6,7 @@ photograph:
   name: Photographers Mosaic
   keepOutOfView: true
 date: 2025-03-16 06:51:00
-updated: 2026-11-07 08:03:05
+updated: 2026-11-09 07:21:52
 ---
 
 Besides the photos that are used as hero images on this website, there are many more that were either mentioned in one of the posts or that I might want to use somewhere at some point. Here is an overview of these photos that are, so to speak, lying around in the shed...
