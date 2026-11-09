@@ -16,7 +16,6 @@ FN:${hexo.config.author}
 ADR;TYPE=HOME:${hexo.config.address}
 TZ:${hexo.config.timezone}
 EMAIL;TYPE=HOME:${hexo.config.email}
-TEL;TYPE=CELL:${hexo.config.cell}
 URL;TYPE=HOME:${hexo.config.url}
 SOCIALPROFILE;SERVICE-TYPE=Mastodon:${hexo.config.profiles.mastodon}
 SOCIALPROFILE;SERVICE-TYPE=LinkedIn:${hexo.config.profiles.linkedin}
