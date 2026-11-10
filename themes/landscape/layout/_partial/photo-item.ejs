@@ -50,9 +50,11 @@
      data-src="<%- item.pathNormal %>">
     <img loading="lazy" src="<%- item.pathMobile %>" alt="<%- item.name %>" />
   </a>
+
   <span class="pre-title">
-    <%- item.key %><% if (item.meta?.DateTimeOriginal || item.meta?.DateCreated) { %>, <em><%- new Date(item.meta?.DateTimeOriginal ?? item.meta?.DateCreated).toLocaleString('en-GB', { month:"long", year:"numeric" }) %></em><% } %>
+    <%- (item.key === item.name) ? "" : item.key + ", " %><% if (item.meta?.DateTimeOriginal || item.meta?.DateCreated) { %><em><%- new Date(item.meta?.DateTimeOriginal ?? item.meta?.DateCreated).toLocaleString('en-GB', { month:"long", year:"numeric" }) %></em><% } %>
   </span>
+
   <div class="card-links">
     <%- partial('_partial/post/syndication-links', { syndication: syndication, type: "photo", showText: false }) %>
     <% if (!item.meta?.latitude && !item.meta?.longitude && item.type !== "asset") { %>
@@ -75,11 +77,13 @@
     </span>
     <% } %>
   </div>
-  <h3 class="<%= (item.hasCustomName) ? "italic" : "" %>">
+  
+  <h3 class="<%= (item.hasCustomName) ? "italic" : "" %> <%= (item.key === item.name) ? "dimmed" : "" %>">
   <% if (item.type !== "asset") { %>
     <a href="/<%= config.photo_dir %>/<%= item.key %>" class="h-link"><%- item.name %></a>
   <% } else { %>
     <%- item.name %>
   <% } %>
   </h3>
+
 </div>

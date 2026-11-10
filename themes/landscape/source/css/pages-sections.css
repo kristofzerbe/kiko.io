@@ -648,7 +648,7 @@
 
 /* ------------------------------------------------------- */
 
-.page-content section.image {
+/* .page-content section.image {
   background: 0 0;
   box-shadow: none;
   padding: 0;
@@ -657,17 +657,17 @@
 }
 
 .page-content section.image img {
+} */
+
+.page-content #photo {
+  cursor: help;
   width: 100%;
   height: auto;
   border-radius: var(--border-radius-normal);
   box-shadow: var(--length-shadow) var(--color-border);
 }
 
-.page-content section.image #photo {
-  cursor: help;
-}
-
-.page-content section.image small {
+.page-content #photo ~ small {
   opacity: .33;
   font-size: var(--font-size-tiny);
 }
@@ -689,7 +689,7 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas: "x x" "a1 a2" "b1 b2" "c1 c2";
   gap: var(--space-medium);
-  margin: var(--space-default) 0;
+  margin: calc(var(--space-small)*-1) 0 0;
 }
 
 @media screen and (max-width:600px) {
