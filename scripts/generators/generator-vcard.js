@@ -5,7 +5,7 @@ const { magenta } = require('chalk');
 //https://www.rfc-editor.org/info/rfc9554/
 
 hexo.extend.generator.register("vcard", function() {
-  log.info("Generating vCards");
+  log.info("Generating " + magenta("vCards"));
 
   let result = [];
   let path;

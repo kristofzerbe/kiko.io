@@ -61,4 +61,4 @@ Gerade ist das heutige Auswärtsspiel gegen **Verl** vorbei und wir haben wieder
 "PXL_20261024_135044454"
 %}
 
-&#x21FE;&nbsp;[Spielbereicht auf kicker.de](https://www.kicker.de/wiesbaden-gegen-grossaspach-2026-liga-5233315/analyse)
+&#x21FE;&nbsp;[Spielbericht auf kicker.de](https://www.kicker.de/wiesbaden-gegen-grossaspach-2026-liga-5233315/analyse)
