@@ -9,7 +9,7 @@
      data-syndication="<%- synSites %>"
      data-file="<%- item.key %>"
      data-title="<%- item.name %>"
-     data-date-created="<%- item.meta?.DateTimeOriginal %>">
+     data-date-created="<%- item.meta?.DateTimeOriginal ?? item.meta?.DateCreated %>">
 
   <% if (item.fotovorschlag) { %>
     <div class="prehead">
