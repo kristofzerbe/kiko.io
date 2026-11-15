@@ -21,7 +21,7 @@ related:
   - SVWW-vs-Alemannia-Aachen-2026-10-14
 syndication:
   - site: Bubbles
-    url: 
+    url: https://bubbles.town/entry/44816712
 ---
 
 {% match_grid "SV-Wehen-Wiesbaden" "3:0" "TSV_Havelse" %}

@@ -5,7 +5,7 @@
  * GoToSocial instance. This plugin retrieves both types of interactions.
  * 
  * @author Kristof Zerbe
- * @version 1.0.1
+ * @version 1.0.2
  * @see {@link https://github.com/kristofzerbe/MentionsUnited|GitHub} 
  * 
  * API Documentation: https://bubbles.town/api
@@ -62,7 +62,8 @@ class MentionsUnitedProvider_Bubbles extends MentionsUnited.Provider {
     const apiDataBubbles = await apiResponseBubbles.json();
 
     this.votes = apiDataBubbles.votes ?? 0;
-    this.fediId = apiDataBubbles.fediverse_url.split("/").pop();
+    this.fediId = apiDataBubbles.fediverse_url?.split("/").pop();
+    if (!this.fediId) return [];
 
     const entryDataBubbles = Array(this.votes).fill(0).map(e => ({  
       url: this.options.syndicationUrl,
@@ -179,4 +180,5 @@ class MentionsUnitedProvider_Bubbles extends MentionsUnited.Provider {
  * 
  * 1.0.0 - Initial
  * 1.0.1 - Improved error handling
+ * 1.0.2 - Fix for undefined fediverse_url from API
  */
