@@ -23,9 +23,9 @@ bandcamp:
   track: moonraker|3548077103
 syndication:
   - site: Bubbles
-    url: null
+    url: https://bubbles.town/entry/44822427
   - site: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/117622190534857222
   - site: Pixelfed
     title: 
     url: 
