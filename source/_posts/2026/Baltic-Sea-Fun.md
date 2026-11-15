@@ -30,7 +30,7 @@ syndication:
     title: Kites
     url: https://pixelfed.social/p/kristofz/1027695918523044442
   - site: Pixelfed
-    title: Views
+    title: 
     url:     
 ---
 
