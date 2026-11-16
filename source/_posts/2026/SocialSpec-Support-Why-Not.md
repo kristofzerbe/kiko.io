@@ -25,11 +25,11 @@ bandcamp:
   track: O.G|1992310630
 syndication:
   - site: Bubbles
-    url: null
+    url: https://bubbles.town/entry/44823045
   - site: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/117627525656193185
   - site: IndieNews
-    url: https://news.indieweb.org/en
+    url: https://news.indieweb.org/en/kiko.io/post/SocialSpec-Support-Why-Not/
 ---
 
 A few weeks ago, I read for the first time on the Fediverse about the [SocialSpec](https://socialspec.org/) initiative, which aims to shed some light on the people behind the blog by using specific standardized files in the blog's ``.well-known`` folder and summarizing this information in a sort of profile.
