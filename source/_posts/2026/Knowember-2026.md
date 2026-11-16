@@ -24,9 +24,9 @@ bandcamp:
   track: Weird|861033807
 syndication:
   - site: Bubbles
-    url: null
+    url: https://bubbles.town/entry/44822810
   - site: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/117625878438868442
 ---
 
 Robert Birming has launched a fourth monthly wordplay to encourage people to blog. After [Junited](/post/Junited-2026/), [JulyReply](/notes/2026/Re-JulyReply-2026-a-blog-connecting-month/), and [AuguStory](/post/AuguStory-The-story-of-my-blog/), it's now **Knowember…** and yes, I'm participating so the series doesn't get interrupted. Well played, Robert ;)
