@@ -42,8 +42,9 @@ jobs:
           file_pattern: 'source/*.md static/photo-syn-fotovorschlag.json'
       #---------------------------------------------------
       - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v7
         with:
+          include-hidden-files: true
           path: ./docs
   #===================================================
   deploy:
@@ -58,4 +59,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
