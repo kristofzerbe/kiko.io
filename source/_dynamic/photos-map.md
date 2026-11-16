@@ -6,7 +6,7 @@ photograph:
   name: Photographers Mosaic
   keepOutOfView: true
 date: 2021-09-01 09:56:00
-updated: 2026-11-15 23:07:23
+updated: 2026-11-16 08:22:29
 ---
 
 Most of the photos shown on this website contain geo-localisations in the form of GPS coordinates in their metadata. These **{% photo.count %} photos** are pinned on this map.
