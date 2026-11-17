@@ -18,9 +18,9 @@ tags:
   - Imaging
   - Publishing
 related:
-  - Sicily-Scenes
+  - Gdansk-Baltic-Pearl
+  - Baltic-Sea-Fun
   - Sicily-People
-  - Sunny-July
 bandcamp:
   artist: Winds of Neptune
   album: Winds of Neptune|2922909570

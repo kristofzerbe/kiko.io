@@ -14,9 +14,9 @@ tags:
   - Imaging
   - Publishing
 related:
+  - Gdansk-Baltic-Pearl
   - Puck-Surfing
   - Potsdam
-  - Arid-Rhine
 bandcamp:
   artist: goader
   album: older goods|1398358135
