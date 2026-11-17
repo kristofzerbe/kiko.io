@@ -23,9 +23,9 @@ bandcamp:
   track: U.S.L.|2922439769
 syndication:
   - site: Bubbles
-    url: null
+    url: https://bubbles.town/entry/44823558
   - site: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/117632520578526335
 ---
 
 [Gdańsk](https://en.wikipedia.org/wiki/Gda%C5%84sk) has an eventful [history](https://en.wikipedia.org/wiki/History_of_Gda%C5%84sk), and that was one of the reasons why my loved one and I were drawn to this area for our planned summer vacation on the Polish Baltic Sea. And we weren't disappointed. The city's charm is unmatched, and you can feel and breathe the past centuries at every turn. From the first traces of settlement in the 9th century, through Pomerania's shifting reigns between Polish, Danish, and German rulers, its membership in the Hanseatic League, the Republic of Gdańsk, the Free City of Danzig, all the way to the German Wehrmacht's raid on a Polish ammunition depot on the [Westerplatte](https://en.wikipedia.org/wiki/Westerplatte) peninsula just outside the city in August 1939 (which marks the beginning of World War II) and its subsequent inclusion in the Republic of Poland.
