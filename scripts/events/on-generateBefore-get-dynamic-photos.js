@@ -3,7 +3,7 @@ const { magenta } = require('chalk');
 const path = require('path');
 const fs = require('hexo-fs');
 const front = require('hexo-front-matter');
-const { getHelpers, getMD, updateMDField, slugify } = require("../../lib/tools.cjs");
+const { getHelpers, getMD, updateMDField, slugify, getShortDec } = require("../../lib/tools.cjs");
 
 const SynCollector_Fotovorschlag = require("../../lib/syn-collector-fotovorschlag.cjs").SynCollector_Fotovorschlag;
 
@@ -53,8 +53,11 @@ hexo.on('generateBefore', function() {
   let photos = [...pHero, ...pPool, ...pReserve, ...pPostPages, ...pDrafts, ...pDynamic, ...pAnything, ...pNotes] // ...pShed
     .filter(p => (p.name)) //filter out all without photo name
     .sort((a, b) => a.key.localeCompare(b.key));
+  
+  let newestPhotoDate = new Date(Math.max(...photos.map(p => new Date(p.date))));
 
   let photosPublic = [...photos, ...pShed];
+
 
   let linksFV = [];
 
@@ -71,15 +74,14 @@ hexo.on('generateBefore', function() {
     const linkFV = p.meta?.custom?.links?.find(l => l.site === "mastodon" && l.title === "Fotovorschlag" && l.url.length > 0);
     if (linkFV) { 
       linkFV.key = p.key;
-      linksFV.push(linkFV); } 
+      linksFV.push(linkFV); 
+    } 
   });
 
   // process found Fotovorschlag links
   const synCollectorFV = new SynCollector_Fotovorschlag(hexo, linksFV);
   synCollectorFV.process();
 
-  let newestPhotoDate = new Date(Math.max(...photos.map(p => new Date(p.date))));
-  // console.log(newestPhotoDate);
 
   // PHOTOS page -------------------------------------------------------------------------
   let page = { name: "photos" };
@@ -120,7 +122,7 @@ hexo.on('generateBefore', function() {
   let photomapCount = 0;
   photosPublic.forEach((obj) => {
     if (obj.meta?.latitude && obj.meta?.longitude) {
-      let latlng = shortDec(obj.meta.latitude) + "|" + shortDec(obj.meta.longitude);
+      let latlng = getShortDec(obj.meta.latitude) + "|" + getShortDec(obj.meta.longitude);
       if (!coordinates.hasOwnProperty(latlng)) {
         coordinates[latlng] = {
           latitude: obj.meta.latitude,
@@ -333,12 +335,6 @@ hexo.on('generateBefore', function() {
   let dyn = {...hexo.locals.get('dynamic'), ...pages};
   hexo.locals.set('dynamic', dyn);
 });
-
-/** ================================================================================= */
-
-function shortDec(dec) {
-  return dec.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0];
-}
 
 /** ================================================================================= */
 
