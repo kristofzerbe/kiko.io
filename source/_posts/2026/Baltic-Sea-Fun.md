@@ -31,7 +31,7 @@ syndication:
     url: https://pixelfed.social/p/kristofz/1027695918523044442
   - site: Pixelfed
     title: 
-    url:     
+    url: 
 ---
 
 This summer, my girl and I decided to escape the heat of central Europe and spend our vacation in Poland, more specifically on the Polish Baltic Sea coast. I think it's called a 'coolcation'. And we weren't just lucky with the weather, but also with our destination: Rewa. We didn't know before that this little town, 45 minutes from Gdańsk, is the ultimate water sports paradise, but we spent hour after hour on the beach watching the kites fly.
