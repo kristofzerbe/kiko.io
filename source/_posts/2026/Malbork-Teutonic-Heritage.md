@@ -23,11 +23,10 @@ bandcamp:
   track: Debaser|4065617034
 syndication:
   - site: Bubbles
-    url: null
+    url: https://bubbles.town/entry/44826220
   - site: Mastodon
-    url: null
+    url: https://indieweb.social/@kiko/117660110519679765
   - site: Pixelfed
-    title: 
     url:   
 ---
 
