@@ -1,5 +1,5 @@
 ---
-title: /Music
+title: Music
 date: 2024-12-20 22:39:00
 permalink: /music
 photograph:

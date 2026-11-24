@@ -8,4 +8,4 @@ photograph:
   name: Rusty Handrail
 ---
 
-On the [IndieWeb](https://indieweb.org/), it's becoming more and more fashionable to refer to the descriptive or supporting pages of a blog or website as slash pages ... or **slashes** for short. Useful for saving some space in the footer. Check out Robb's guide on [slashpages.net](https://slashpages.net/) for more info.
+On the [IndieWeb](https://indieweb.org/), it's becoming more and more fashionable to refer to the descriptive or supporting pages of a blog or website as **slash pages** ... or slashes for short. Check out Robb's guide on [slashpages.net](https://slashpages.net/) for more info.
