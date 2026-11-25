@@ -1,5 +1,5 @@
 const log = require('hexo-log')({ debug: false, silent: false });
-const { magenta } = require('chalk');
+const { magenta, red } = require('chalk');
 const path = require('path');
 const fs = require('hexo-fs');
 const front = require('hexo-front-matter');
@@ -58,11 +58,22 @@ hexo.on('generateBefore', function() {
 
   let photosPublic = [...photos, ...pShed];
 
+  let boxesFile = path.join(_rootDir, config.static_dir, "photo-boxes.json");
+  if (!fs.existsSync(boxesFile)) { log.warn("Error loading " + red(boxesFile)); }
+  let boxesJson = JSON.parse(fs.readFileSync(boxesFile));
 
   let linksFV = [];
+  let fvFile = path.join(_rootDir, config.static_dir, "photo-syn-fotovorschlag.json");
+  if (!fs.existsSync(fvFile)) { log.warn("Error loading " + red(fvFile)); }
+  let fvJson = JSON.parse(fs.readFileSync(fvFile));
+
+  let potdFile = path.join(_rootDir, config.static_dir, "photo-of-the-day.json");
+  if (!fs.existsSync(potdFile)) { log.warn("Error loading " + red(potdFile)); }
+  let potdJson = JSON.parse(fs.readFileSync(potdFile));
 
   // Set Camera (Product) and Year for stats
   // & Collect Fotovorschlag Links
+  // & Get Foto-of-the-Day Date
   photosPublic.forEach((p) => {
     const cam = cameras.find(c => c.model === p.meta?.Model);
     p.meta.custom.camera = cam ? cam.camera : p.meta?.Model ?? cameraUnknown;
@@ -73,7 +84,11 @@ hexo.on('generateBefore', function() {
     if (linkFV) { 
       linkFV.key = p.key;
       linksFV.push(linkFV); 
-    } 
+    }
+
+    const potd = potdJson.find(i => i.key === p.key);
+    if (potd) { p.meta.custom.potd = potd.date; }
+
   });
 
   // process found Fotovorschlag links
@@ -132,12 +147,6 @@ hexo.on('generateBefore', function() {
   pages.photomap = map;
 
   // PHOTO BOXES page -------------------------------------------------------------------
-  // (get boxes)
-  let boxesFile = path.join(_rootDir, config.static_dir, "photo-boxes.json");
-  let boxesJson;
-  if (fs.existsSync(boxesFile)) {
-    boxesJson = JSON.parse(fs.readFileSync(boxesFile));
-  }
   let boxesItems = boxesJson
     .filter((b) => b.title.length > 0)
     .map((box) => {
@@ -248,13 +257,6 @@ hexo.on('generateBefore', function() {
   pages.photosmore = more;
 
   // PHOTOS Fotovorschlag page ------------------------------------------------------------------
-  // (get data)
-  let fvFile = path.join(_rootDir, config.static_dir, "photo-syn-fotovorschlag.json");
-  let fvJson;
-  if (fs.existsSync(fvFile)) {
-    fvJson = JSON.parse(fs.readFileSync(fvFile));
-  }
-  // (get photos)
   let fvItems = [];
   fvJson.syndications.forEach((fvs) => {
     let fvPhoto = photosPublic.find(p => p.key === fvs.key);
@@ -286,40 +288,31 @@ hexo.on('generateBefore', function() {
   yday.setDate(yday.getDate() - 1);
   const ydayF = yday.toISOString().split('T')[0];
   //----
-  let potdFile = path.join(_rootDir, config.static_dir, "photo-of-the-day.json");
-  let potdJson, potd;
-  if (fs.existsSync(potdFile)) {
-    potdJson = JSON.parse(fs.readFileSync(potdFile));
+  potdTday = potdJson.find(e => e.date === tdayF);
+  potdYday = potdJson.find(e => e.date === ydayF);
 
-    potdTday = potdJson.find(e => e.date === tdayF);
-    potdYday = potdJson.find(e => e.date === ydayF);
-    console.log("potdTday:" + JSON.stringify(potdTday));
-    console.log("potdYday:" + JSON.stringify(potdYday));
-
-    if (potdTday) {
-      // done for today
-      photoDay.photo = photosPublic.find(p => p.key === potdTday.key);
+  if (potdTday) {
+    // done for today
+    photoDay.photo = photosPublic.find(p => p.key === potdTday.key);
+  } else {
+    // get for today, from yesterday's Fotovorschlag or random
+    const fvYday = fvJson.syndications.find(f => f.created === ydayF);
+    if (fvYday) {
+      photoDay.photo = photosPublic.find(p => p.key === fvYday.key);
     } else {
-      // get for today from yesterday's fv or random
-      const fvYday = fvJson.syndications.find(f => f.created === ydayF);
-      if (fvYday) {
-        photoDay.photo = photosPublic.find(p => p.key === fvYday.key); // yesterdays Fotovorschlag
-      } else {
-        do {
-          photoDay.photo = photosPublic[Math.floor(Math.random() * photosPublic.length)]; // new random
-        } while (potdJson.some((e) => e.key === photoDay.photo.key));        
-      }
-      
-      potdJson.push({
-        "date": tdayF,
-        "key": photoDay.photo.key
-      });
-      fs.writeFileSync(potdFile, JSON.stringify(potdJson));
+      do {
+        photoDay.photo = photosPublic[Math.floor(Math.random() * photosPublic.length)];
+      } while (potdJson.some((e) => e.key === photoDay.photo.key));        
     }
-    photoDay.prev = photosPublic.find(p => p.key === potdYday.key);
+    potdJson.push({
+      "date": tdayF,
+      "key": photoDay.photo.key
+    });
+    fs.writeFileSync(potdFile, JSON.stringify(potdJson));
   }
+  photoDay.prev = photosPublic.find(p => p.key === potdYday.key);
 
-  console.log(">>> " + photoDay.photo?.key + " -> " + photoDay.prev?.key);
+  // console.log(">>> " + photoDay.photo?.key + " -> " + photoDay.prev?.key);
   pages.photoday = photoDay;
   
 

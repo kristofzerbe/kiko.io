@@ -13,16 +13,19 @@
 
   <hr class="divider" />
 
-  <h2 class="page-subtitle <%= (page.photo.hasCustomName) ? "italic" : "" %>"><%= page.photo.name %></h2>
+  <h2 class="section-heading <%= (page.photo.hasCustomName) ? "italic" : "" %>">
+    <a href="/<%= config.photo_dir %>/<%= page.photo.key %>"><%= page.photo.name %></a>
+  </h2>    
 
   <a href="/<%= config.photo_dir %>/<%= page.photo.key %>">
     <img id="photo" src="<%- page.photo.pathNormal %>" alt="<%- page.photo.name %>" />
   </a>
 
-  <p class="small">
-    Last update: <%= page.updated %><br>
-    Previous photo: <a href="/<%= config.photo_dir %>/<%= page.prev?.key %>"><%= page.prev?.name %></a>
+  <p class="small-info">
+    Last update:&nbsp;&nbsp;<%= page.updated %><br>
+    Previous photo:&nbsp;&nbsp;<a href="/<%= config.photo_dir %>/<%= page.prev?.key %>"><%= page.prev?.name %></a><br>
   </p>
+  
 
 </div>
 

@@ -64,6 +64,12 @@
         <span><a href="<%= page.boxlink %>"><%= page.meta.custom.box %></a></span>
       </li>
       <% } %>
+      <% if (page.meta?.custom?.potd) { %>
+      <li>
+        <label>Foto of the Day</label>
+        <span><%= new Date(page.meta?.custom?.potd).toLocaleString('en-GB', { weekday:"long", year:"numeric", month:"long", day:"numeric"}) %></span>
+      </li>
+      <% } %>
     </ul>
   </section>
 

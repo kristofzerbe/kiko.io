@@ -76,33 +76,27 @@ h1.page-title button.title-command {
   display: inline-block;
   position: relative;
   left: 6px;
-  top: 2px;
+  top: -2px;
   width: 20px;
   height: 20px;
-  background: 0 0;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 20px;
+  background-color: transparent;
   border: none;
   opacity: .25;
+  filter: invert(0);
 }
 h1.page-title button.title-command:hover {
   opacity: .75;
 }
-h1.page-title button.title-command:before {
-  display: block;
-  content: "";
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: 20px;
-  width: 20px;
-  height: 20px;
-  filter: invert(0);
-}
-[data-theme=dark] h1.page-title button.title-command:before {
+[data-theme=dark] h1.page-title button.title-command {
   filter: invert(1);
 }
-h1.page-title button.title-command.switch-condensed:before {
+h1.page-title button.title-command.switch-condensed {
   background-image: var(--icon-minimize)
 }
-h1.page-title button.title-command.switch-condensed.condensed:before {
+h1.page-title button.title-command.switch-condensed.condensed {
   background-image: var(--icon-maximize)
 }
 
