@@ -1,0 +1,33 @@
+<% if (page.photograph){ %>
+  <%- partial('_partial/photograph') %>
+<% } %>
+
+<h1 class="page-title" data-pagefind-meta="title" data-pagefind-meta="type:Photo">
+  Photo
+  <small>of the Day</small>
+</h1>
+
+<div class="page-content h-entry">
+
+  <%- page.content %>
+
+  <hr class="divider" />
+
+  <h2 class="page-subtitle <%= (page.photo.hasCustomName) ? "italic" : "" %>"><%= page.photo.name %></h2>
+
+  <a href="/<%= config.photo_dir %>/<%= page.photo.key %>">
+    <img id="photo" src="<%- page.photo.pathNormal %>" alt="<%- page.photo.name %>" />
+  </a>
+
+  <p class="small">
+    Last update: <%= page.updated %><br>
+    Previous photo: <a href="/<%= config.photo_dir %>/<%= page.prev?.key %>"><%= page.prev?.name %></a>
+  </p>
+
+</div>
+
+<script>
+  window.addEventListener('load', () => {
+    indicateSelectedPhotos();
+  });
+</script>

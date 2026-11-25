@@ -63,6 +63,14 @@ hexo.extend.generator.register("dynamic-photos", async function(locals) {
     layout: "photos-fotovorschlag"
   });
 
+  // photo of the day
+  let photoDay = locals.dynamic.photoday;
+  result.push({
+    data: photoDay,
+    path: path.join(photoDay.permalink, "index.html"),
+    layout: "photo-day"
+  });
+
   // photo & photos box pages
   Object.keys(locals.dynamic).forEach(function(key,index) {
 

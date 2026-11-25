@@ -54,7 +54,7 @@ hexo.on('generateBefore', function() {
     .filter(p => (p.name)) //filter out all without photo name
     .sort((a, b) => a.key.localeCompare(b.key));
   
-  let newestPhotoDate = new Date(Math.max(...photos.map(p => new Date(p.date))));
+  //NOT USED... let newestPhotoDate = new Date(Math.max(...photos.map(p => new Date(p.date))));
 
   let photosPublic = [...photos, ...pShed];
 
@@ -64,8 +64,6 @@ hexo.on('generateBefore', function() {
   // Set Camera (Product) and Year for stats
   // & Collect Fotovorschlag Links
   photosPublic.forEach((p) => {
-    // try { let xxx = p.meta.custom; } catch (error) { console.log(p); }
-
     const cam = cameras.find(c => c.model === p.meta?.Model);
     p.meta.custom.camera = cam ? cam.camera : p.meta?.Model ?? cameraUnknown;
     p.meta.custom.year = new Date(p.meta?.DateTimeOriginal ?? p.meta?.DateCreated).getFullYear();
@@ -88,11 +86,6 @@ hexo.on('generateBefore', function() {
   let mdPage = path.join("_dynamic", page.name + ".md");
   page = getMD(hexo, mdPage, page);
   page.items = photos.sort((a,b) => _helpers.moment(a.meta?.DateTimeOriginal ?? a.meta?.DateCreated).diff(b.meta?.DateTimeOriginal ?? b.meta?.DateCreated)).reverse();;
-
-  if (!page.updated || newestPhotoDate > new Date(page.updated)) {
-    page.updated = updateMDField(hexo, mdPage, "updated", newestPhotoDate);
-  }
-
   pages.photos = page;
 
   // PHOTO SHED page -------------------------------------------------------------------------
@@ -100,23 +93,13 @@ hexo.on('generateBefore', function() {
   let mdShed = path.join("_dynamic", shed.name + ".md");
   shed = getMD(hexo, mdShed, shed);
   shed.items = pShed.sort((a,b) => _helpers.moment(a.meta?.DateTimeOriginal ?? a.meta?.DateCreated).diff(b.meta?.DateTimeOriginal ?? b.meta?.DateCreated)).reverse();
-
-  if (!shed.updated || newestPhotoDate > new Date(shed.updated)) {
-    shed.updated = updateMDField(hexo, mdShed, "updated", newestPhotoDate);
-  }
-
   shed.content = shed.content.replace("{% photo.count %}", pShed.length);
-
   pages.photoshed = shed;
 
   // PHOTO MAP page ----------------------------------------------------------------------
   let map = { name: "photos-map" };
   let mdMap = path.join("_dynamic", map.name + ".md");
   map = getMD(hexo, mdMap, map);
-
-  if (!map.updated || newestPhotoDate > new Date(map.updated)) {
-    map.updated = updateMDField(hexo, mdMap, "updated", newestPhotoDate);
-  }
 
   let coordinates = {};
   let photomapCount = 0;
@@ -169,7 +152,6 @@ hexo.on('generateBefore', function() {
   // (join photos)
   let photoboxCount = 0;
   photosPublic.forEach((p) => {
-    //console.log(p);
     let box = boxesItems.find(b => b.title === p.meta.custom.box);
     if (box) {
       photoboxCount++;
@@ -292,6 +274,54 @@ hexo.on('generateBefore', function() {
     .replace("{% items.count %}", fvItems.length);
   pages.photosfv = fv;
 
+  // PHOTO (OF THE DAY) page -----------------------------------------------------------
+  let photoDay = { name: "photo-day" };
+  let mdPhotoDay = path.join("_dynamic", photoDay.name + ".md");
+  photoDay = getMD(hexo, mdPhotoDay, photoDay);
+ 
+  const tday = new Date();
+  const tdayF = tday.toISOString().split('T')[0];
+  photoDay.updated = tdayF;
+  const yday = new Date()
+  yday.setDate(yday.getDate() - 1);
+  const ydayF = yday.toISOString().split('T')[0];
+  //----
+  let potdFile = path.join(_rootDir, config.static_dir, "photo-of-the-day.json");
+  let potdJson, potd;
+  if (fs.existsSync(potdFile)) {
+    potdJson = JSON.parse(fs.readFileSync(potdFile));
+
+    potdTday = potdJson.find(e => e.date === tdayF);
+    potdYday = potdJson.find(e => e.date === ydayF);
+    console.log("potdTday:" + JSON.stringify(potdTday));
+    console.log("potdYday:" + JSON.stringify(potdYday));
+
+    if (potdTday) {
+      // done for today
+      photoDay.photo = photosPublic.find(p => p.key === potdTday.key);
+    } else {
+      // get for today from yesterday's fv or random
+      const fvYday = fvJson.syndications.find(f => f.created === ydayF);
+      if (fvYday) {
+        photoDay.photo = photosPublic.find(p => p.key === fvYday.key); // yesterdays Fotovorschlag
+      } else {
+        do {
+          photoDay.photo = photosPublic[Math.floor(Math.random() * photosPublic.length)]; // new random
+        } while (potdJson.some((e) => e.key === photoDay.photo.key));        
+      }
+      
+      potdJson.push({
+        "date": tdayF,
+        "key": photoDay.photo.key
+      });
+      fs.writeFileSync(potdFile, JSON.stringify(potdJson));
+    }
+    photoDay.prev = photosPublic.find(p => p.key === potdYday.key);
+  }
+
+  console.log(">>> " + photoDay.photo?.key + " -> " + photoDay.prev?.key);
+  pages.photoday = photoDay;
+  
 
   // individual PHOTO pages ------------------------------------------------------------
   let photoPages = photosPublic
