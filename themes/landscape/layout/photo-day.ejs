@@ -22,7 +22,10 @@
   </a>
 
   <p class="small-info">
-    Last update:&nbsp;&nbsp;<%= page.updated %><br>
+    Last update:&nbsp;&nbsp;<%= page.updated %>
+    <br>
+    Origin: <% if (page.origin === "Fotovorschlag") { %><a href="/photos/fotovorschlag/">#<%= page.origin %></a><% } else { %><%= page.origin %><% } %>
+    <br>
     Previous photo:&nbsp;&nbsp;<a href="/<%= config.photo_dir %>/<%= page.prev?.key %>"><%= page.prev?.name %></a><br>
     <br>
   </p>

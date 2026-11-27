@@ -294,19 +294,23 @@ hexo.on('generateBefore', function() {
   if (potdTday) {
     // done for today
     photoDay.photo = photosPublic.find(p => p.key === potdTday.key);
+    photoDay.origin = potdTday.origin;
   } else {
     // get for today, from yesterday's Fotovorschlag or random
     const fvYday = fvJson.syndications.find(f => f.created === ydayF);
     if (fvYday) {
       photoDay.photo = photosPublic.find(p => p.key === fvYday.key);
+      photoDay.origin = "Fotovorschlag";
     } else {
       do {
         photoDay.photo = photosPublic[Math.floor(Math.random() * photosPublic.length)];
+        photoDay.origin = "random";
       } while (potdJson.some((e) => e.key === photoDay.photo.key));        
     }
     potdJson.push({
       "date": tdayF,
-      "key": photoDay.photo.key
+      "key": photoDay.photo.key,
+      "origin": photoDay.origin
     });
     fs.writeFileSync(potdFile, JSON.stringify(potdJson));
   }

@@ -21,7 +21,8 @@
     <ul>
       <li>
         <label>File</label>
-        <a class="download" title="Click to download file" style="text-decoration:none;color:inherit;font-weight:400" href="<%- page.pathNormal %>" download="<%= page.file %>"><%= page.file %></a>
+        <a class="download incognito bold" title="Click to download file"  
+           href="<%- page.pathNormal %>" download="<%= page.file %>"><%= page.file %></a>
       </li>
       <% if (!page.file.startsWith(page.name)) { %>
       <li>
@@ -67,7 +68,9 @@
       <% if (page.meta?.custom?.potd) { %>
       <li>
         <label>Foto of the Day</label>
-        <span><%= new Date(page.meta?.custom?.potd).toLocaleString('en-GB', { weekday:"long", year:"numeric", month:"long", day:"numeric"}) %></span>
+        <a href="/photo" class="incognito">
+          <%= new Date(page.meta?.custom?.potd).toLocaleString('en-GB', { weekday:"long", year:"numeric", month:"long", day:"numeric"}) %>
+        </a>
       </li>
       <% } %>
     </ul>
