@@ -255,6 +255,7 @@ hexo.on('generateBefore', function() {
   let mdMore = path.join("_dynamic", more.name + ".md");
   more = getMD(hexo, mdMore, more);
   pages.photosmore = more;
+  pages.photosmore.items = [];
 
   // PHOTOS Fotovorschlag page ------------------------------------------------------------------
   let fvItems = [];
@@ -270,11 +271,11 @@ hexo.on('generateBefore', function() {
   let fv = { name: "photos-fotovorschlag" };
   let mdFV = path.join("_dynamic", fv.name + ".md");
   fv = getMD(hexo, mdFV, fv);
+  fv.content = fv.content.replace("{% items.count %}", fvItems.length);
   fv.items = fvItems;
   fv.dates = fvJson.syndications.map(s => s.created);
-  fv.content = fv.content
-    .replace("{% items.count %}", fvItems.length);
   pages.photosfv = fv;
+  pages.photosmore.items.push(fv);
 
   // PHOTO (OF THE DAY) page -----------------------------------------------------------
   let photoDay = { name: "photo-day" };
@@ -318,6 +319,7 @@ hexo.on('generateBefore', function() {
 
   // console.log(">>> " + photoDay.photo?.key + " -> " + photoDay.prev?.key);
   pages.photoday = photoDay;
+  pages.photosmore.items.push(photoDay);
   
 
   // individual PHOTO pages ------------------------------------------------------------

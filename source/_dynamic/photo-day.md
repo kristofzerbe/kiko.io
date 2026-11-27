@@ -1,7 +1,6 @@
 ---
 title: Photo of the Day
 date: 2026-10-21 17:47:00
-updated: 
 permalink: /photo
 photograph:
   file: $20-08-Mallorca-7627.jpg

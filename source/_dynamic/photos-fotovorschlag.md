@@ -1,5 +1,5 @@
 ---
-title: Photos Fotovorschlag
+title: Fotovorschlag
 date: 2026-11-04 07:47:00
 permalink: /photos/fotovorschlag
 photograph:

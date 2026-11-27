@@ -14,15 +14,12 @@
 
   <hr class="divider" />
 
-  <section>
-    <h2><a href="/photos/fotovorschlag">Fotovorschlag</a></h2>
-    <p>
-      Under the Mastodon account <a href="https://mastodon.social/@FotoVorschlag">@FotoVorschlag</a>
-      and the hashtag <a href="https://mastodon.social/tags/FotoVorschlag">#FotoVorschlag</a> 
-      (German for 'Photo Suggestion') a bot posts every day a topic for which the people can
-      submit a photo. I've been contributing to this hashtag challenge since August 2026...
-    </p>
-  </section>
+  <% for(var i=0; i < page.items.length; i++) { %>
+    <section>
+      <h2><a href="<%= page.items[i].permalink %>"><%= page.items[i].title %></a></h2>
+      <p><%- page.items[i].content %></p>
+    </section>
+  <% } %>
 
 </div>
 
