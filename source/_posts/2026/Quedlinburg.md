@@ -23,9 +23,9 @@ bandcamp:
   track: In Anima|3468883174
 syndication:
   - site: Bubbles
-    url: 
+    url: https://bubbles.town/entry/44829732
   - site: Mastodon
-    url: 
+    url: https://indieweb.social/@kiko/117694628309019090
 ---
 
 A holiday road trip of over 1,100 kilometers by car to our beautiful neighboring country, Poland, is something you're better off doing with a stopover at our age (50+), because the main point is to get some downtime, and also because that way we could pick up a few nice impressions of other places along the way.
