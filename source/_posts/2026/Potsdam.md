@@ -17,8 +17,8 @@ tags:
   - Publishing
 related:
   - Puck-Surfing
-  - Dry-August
-  - Sunny-July
+  - Gdansk-Baltic-Pearl
+  - Quedlinburg
 bandcamp:
   artist: Green Lung
   album: Woodland Rites|2971889094
